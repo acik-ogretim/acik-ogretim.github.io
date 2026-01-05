@@ -1,0 +1,206 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { getCourses, getQuestions, getUniversities } from "../../../lib/api";
+
+export async function getStaticPaths() {
+  const universities = await getUniversities();
+  const paths = [];
+
+  for (const uni of universities) {
+    const departments = (uni as any).departments || [];
+    for (const dept of departments) {
+      const courses = await getCourses(uni.id, dept.id);
+      for (const course of courses) {
+        paths.push({
+          params: {
+            university: uni.id,
+            department: dept.id,
+            course: course.id,
+          },
+          props: { university: uni, department: dept, course },
+        });
+      }
+    }
+  }
+  return paths;
+}
+
+const { university, department, course } = Astro.props;
+const questions = await getQuestions(university.id, course.id);
+
+// Group questions by unit
+const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
+  (a, b) => a - b,
+);
+---
+
+<Layout title={`${course.name} - ${department.name}`}>
+  <div class="py-12">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumbs -->
+      <nav class="flex mb-8 text-sm text-muted-theme">
+        <a href="/" class="hover:text-primary-theme transition-colors"
+          >Ana Sayfa</a
+        >
+        <span class="mx-2">/</span>
+        <a
+          href={`/${university.id}`}
+          class="hover:text-primary-theme transition-colors"
+          >{university.shortName}</a
+        >
+        <span class="mx-2">/</span>
+        <a
+          href={`/${university.id}/${department.id}`}
+          class="hover:text-primary-theme transition-colors"
+          >{department.name}</a
+        >
+        <span class="mx-2">/</span>
+        <span class="text-theme font-medium">{course.name}</span>
+      </nav>
+
+      <div class="mb-12">
+        <div class="mb-8 md:mb-12">
+          <div class="flex flex-wrap items-center gap-3 md:gap-4 mb-4">
+            <span
+              class="px-2.5 py-0.5 bg-primary-theme/10 text-primary-theme rounded-full text-xs font-medium border border-primary-theme/20"
+            >
+              {course.semester}. Dönem
+            </span>
+            <span class="text-muted-theme font-mono text-xs">{course.code}</span
+            >
+          </div>
+          <h1 class="text-2xl md:text-4xl font-bold text-theme mb-2 md:mb-4">
+            {course.name}
+          </h1>
+          <p class="text-lg md:text-xl text-muted-theme">
+            Toplam {questions.length} soru bulundu.
+          </p>
+        </div>
+
+        <!-- Unit Filter / Quick Jump (Horizontal Scroll on Mobile) -->
+        <div
+          class="sticky top-[64px] z-30 -mx-4 px-4 py-3 bg-[var(--bg-color)]/95 backdrop-blur-md border-b border-theme mb-8 md:static md:bg-transparent md:border-none md:p-0 md:mb-12 transition-colors"
+        >
+          <div
+            class="flex overflow-x-auto gap-2 no-scrollbar pb-2 md:pb-0 md:flex-wrap"
+          >
+            <span
+              class="shrink-0 flex items-center text-xs font-bold text-muted-theme uppercase tracking-wider md:hidden"
+            >
+              Üniteler:
+            </span>
+            {
+              units.map((unit) => (
+                <a
+                  href={`#unite-${unit}`}
+                  class="shrink-0 px-3 py-1.5 bg-button-theme hover:bg-button-hover-theme rounded-lg text-xs text-muted-theme hover:text-theme transition-colors border border-theme flex items-center justify-center min-w-[3.5rem] md:text-sm md:px-4 md:py-2"
+                >
+                  Ü {unit}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="space-y-16">
+          {
+            units.map((unit) => {
+              const unitQuestions = questions.filter(
+                (q) => q.unitNumber === unit,
+              );
+              return (
+                <section id={`unite-${unit}`} class="scroll-mt-24">
+                  <h2 class="text-2xl font-bold text-teal-400 mb-8 pb-2 border-b border-teal-500/20">
+                    Ünite {unit}
+                  </h2>
+
+                  <div class="space-y-8">
+                    {unitQuestions.map((q, idx) => (
+                      <div class="glass p-4 sm:p-6 md:p-8 rounded-2xl border border-theme">
+                        <div class="flex justify-between items-start mb-4 md:mb-6">
+                          <span class="text-[10px] md:text-xs font-mono text-muted-theme uppercase tracking-widest">
+                            Soru {idx + 1}
+                          </span>
+                        </div>
+
+                        <div
+                          class="text-base md:text-lg text-theme mb-6 md:mb-8 leading-relaxed font-medium"
+                          set:html={q.text}
+                        />
+
+                        <div class="grid gap-2 md:grid-gap-3 mb-6 md:mb-8">
+                          {(
+                            (Array.isArray(q.options)
+                              ? q.options
+                              : Object.entries(q.options || {}).map(
+                                  ([key, text]) => ({ key, text }),
+                                )) as any[]
+                          ).map((opt) => (
+                            <div
+                              class="flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-xl border transition-all"
+                              style={
+                                opt.key === q.correctAnswer
+                                  ? "background-color: var(--correct-bg); border-color: var(--correct-border);"
+                                  : "background-color: var(--button-bg); border-color: var(--border-color);"
+                              }
+                            >
+                              <span
+                                class="w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center font-bold text-xs md:text-sm shrink-0"
+                                style={
+                                  opt.key === q.correctAnswer
+                                    ? "background-color: var(--correct-border); color: #fff;"
+                                    : "background-color: var(--button-bg); color: var(--text-color-muted);"
+                                }
+                              >
+                                {opt.key}
+                              </span>
+                              <span
+                                class="pt-1 md:pt-1.5 text-sm md:text-base"
+                                style={
+                                  opt.key === q.correctAnswer
+                                    ? "color: var(--text-color);"
+                                    : "color: var(--text-color-muted);"
+                                }
+                              >
+                                {opt.text}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+
+                        {q.explanation && (
+                          <div class="mt-6 md:mt-8 p-4 md:p-6 bg-primary-theme/5 rounded-xl border border-primary-theme/20">
+                            <div class="flex items-center gap-2 text-primary-theme font-bold mb-2 md:mb-3 text-[10px] md:text-sm uppercase tracking-wider">
+                              <svg
+                                class="w-4 h-4"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                />
+                              </svg>
+                              Çözüm ve Açıklama
+                            </div>
+                            <div
+                              class="text-muted-theme text-sm leading-relaxed"
+                              set:html={q.explanation}
+                            />
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              );
+            })
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

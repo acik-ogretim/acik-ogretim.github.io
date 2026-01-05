@@ -5,95 +5,163 @@
  * Eğitim odaklı, profesyonel renk paleti
  */
 
-:root {
-    /* Primary: Koyu mavi-yeşil (akademik, güvenilir) */
-    --color-primary: #0d9488;
-    --color-primary-light: #14b8a6;
+/*
+ * Theme Definitions
+ */
+
+/* Default (Light) */
+:root,
+[data-theme='light'] {
+    --bg-color: #f8fafc;
+    --text-color: #0f172a;
+    --text-color-muted: #475569;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+    --border-color-hover: #cbd5e1;
+    --button-bg: #f1f5f9;
+    --button-bg-hover: #e2e8f0;
+    --primary-color: #4f46e5;
+    --primary-color-text: #ffffff;
+    --correct-bg: #dcfce7;
+    --correct-border: #22c55e;
+    --incorrect-bg: #fee2e2;
+    --incorrect-border: #ef4444;
+
+    /* Semantic Mappings for Existing Components */
+    --color-bg-dark: var(--bg-color);
+    --color-bg-light: var(--card-bg);
+    --color-border: var(--border-color);
+    --color-primary: var(--primary-color);
+    --color-primary-dark: #4338ca;
+    /* darker indigo */
+    --color-primary-light: #6366f1;
+    /* lighter indigo */
+}
+
+/* Dark Theme */
+[data-theme='dark'] {
+    --bg-color: #1e1e1e;
+    --text-color: #d4d4d4;
+    --text-color-muted: #808080;
+    --card-bg: #252526;
+    --border-color: #3c3c3c;
+    --border-color-hover: #505050;
+    --button-bg: #333333;
+    --button-bg-hover: #444444;
+    --primary-color: #0d9488;
+    --primary-color-text: #ffffff;
+    --correct-bg: rgba(78, 184, 9, 0.2);
+    --correct-border: #4eb809;
+    --incorrect-bg: rgba(255, 30, 30, 0.15);
+    --incorrect-border: #ff1e1e;
+
+    /* Semantic Mappings */
+    --color-bg-dark: var(--bg-color);
+    --color-bg-light: var(--card-bg);
+    --color-border: var(--border-color);
+    --color-primary: var(--primary-color);
     --color-primary-dark: #0f766e;
-
-    /* Secondary: Sıcak turuncu (dikkat çekici, enerji) */
-    --color-secondary: #ea580c;
-    --color-secondary-light: #f97316;
-
-    /* Accent: Indigo (derinlik) */
-    --color-accent: #4f46e5;
-    --color-accent-light: #6366f1;
-
-    /* Neutrals */
-    --color-bg-dark: #0f172a;
-    --color-bg-light: #1e293b;
-    --color-border: #334155;
+    --color-primary-light: #14b8a6;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+/* Sepia Theme */
+[data-theme='sepia'] {
+    --bg-color: #fbf0e4;
+    --text-color: #433422;
+    --text-color-muted: #7d6a55;
+    --card-bg: #fdf6ec;
+    --border-color: #e9decb;
+    --border-color-hover: #d9c8b3;
+    --button-bg: #f2e8da;
+    --button-bg-hover: #e9decb;
+    --primary-color: #8c5a2d;
+    --primary-color-text: #ffffff;
+    --correct-bg: #e4f2e4;
+    --correct-border: #5a8c5a;
+    --incorrect-bg: #f2e4e4;
+    --incorrect-border: #a35a5a;
+
+    /* Semantic Mappings */
+    --color-bg-dark: var(--bg-color);
+    --color-bg-light: var(--card-bg);
+    --color-border: var(--border-color);
+    --color-primary: var(--primary-color);
+    --color-primary-dark: #78350f;
+    --color-primary-light: #b45309;
 }
 
-::-webkit-scrollbar-track {
-    background: var(--color-bg-dark);
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
-::-webkit-scrollbar-thumb {
-    background: var(--color-primary-dark);
-    border-radius: 4px;
+/*
+ * Semantic Utility Classes
+ * Replace hardcoded Tailwind colors with these to support theming
+ */
+.bg-theme {
+    background-color: var(--bg-color);
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: var(--color-primary);
+.bg-card-theme {
+    background-color: var(--card-bg);
 }
 
-/* Smooth animations */
-* {
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+.bg-button-theme {
+    background-color: var(--button-bg);
 }
 
-/* Card hover effects */
-.card-hover {
-    transition: all 0.3s;
+.bg-button-hover-theme:hover {
+    background-color: var(--button-bg-hover);
 }
 
-.card-hover:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.2), 0 8px 10px -6px rgb(0 0 0 / 0.2);
+.text-theme {
+    color: var(--text-color);
 }
 
-/* Gradient text - Teal to Emerald */
-.gradient-text {
-    background: linear-gradient(135deg, #14b8a6, #10b981, #059669);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.text-muted-theme {
+    color: var(--text-color-muted);
 }
 
-/* Glass effect */
+.text-primary-theme {
+    color: var(--primary-color);
+}
+
+.border-theme {
+    border-color: var(--border-color);
+}
+
+/* Overrides for specific components */
 .glass {
-    background: rgba(30, 41, 59, 0.6);
+    background: color-mix(in srgb, var(--card-bg) 90%, transparent);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(51, 65, 85, 0.5);
+    border: 1px solid var(--border-color);
     border-radius: 0.75rem;
 }
 
-/* Button styles - Teal theme */
 .btn-primary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
-    background: linear-gradient(135deg, #0d9488, #0f766e);
+    background-color: var(--primary-color);
+    color: var(--primary-color-text);
     border-radius: 0.5rem;
     font-weight: 500;
-    color: white;
     transition: all 0.3s;
-    box-shadow: 0 4px 14px -3px rgba(13, 148, 136, 0.4);
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, #14b8a6, #0d9488);
-    box-shadow: 0 6px 20px -3px rgba(13, 148, 136, 0.5);
-    transform: translateY(-1px);
+    filter: brightness(110%);
+    box-shadow: 0 4px 14px -3px rgba(0, 0, 0, 0.2);
+}
+
+
+.btn-primary:hover {
+    filter: brightness(110%);
+    box-shadow: 0 4px 14px -3px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary {
@@ -102,25 +170,25 @@
     justify-content: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
-    background: rgba(51, 65, 85, 0.5);
-    border: 1px solid rgba(71, 85, 105, 0.5);
+    background-color: var(--button-bg);
+    border: 1px solid var(--border-color);
     border-radius: 0.5rem;
     font-weight: 500;
-    color: white;
+    color: var(--text-color);
     transition: all 0.3s;
 }
 
 .btn-secondary:hover {
-    background: rgba(71, 85, 105, 0.5);
-    border-color: rgba(100, 116, 139, 0.5);
+    background-color: var(--button-bg-hover);
+    border-color: var(--border-color-hover);
 }
 
 /* Stats card */
 .stat-card {
     padding: 1.5rem;
     border-radius: 0.75rem;
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.6));
-    border: 1px solid rgba(51, 65, 85, 0.5);
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
     backdrop-filter: blur(4px);
 }
 
@@ -128,14 +196,14 @@
 .feature-card {
     padding: 1.5rem;
     border-radius: 0.75rem;
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.6), rgba(30, 41, 59, 0.4));
-    border: 1px solid rgba(51, 65, 85, 0.4);
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
     transition: all 0.3s;
 }
 
 .feature-card:hover {
-    border-color: var(--color-primary-dark);
-    background: linear-gradient(135deg, rgba(13, 148, 136, 0.1), rgba(15, 23, 42, 0.6));
+    border-color: var(--primary-color);
+    background-color: var(--button-bg-hover);
 }
 
 /* University card colors */
@@ -180,4 +248,16 @@
     border-top: 1px solid rgba(51, 65, 85, 0.5);
     font-size: 0.75rem;
     color: #94a3b8;
+}
+
+/* Utilities */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }

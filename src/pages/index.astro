@@ -1,6 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
 
 // Get all universities and departments
 const universities = await getCollection('universities');
@@ -33,35 +33,34 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
   <section class="relative py-20 overflow-hidden">
     <!-- Background decoration -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      <div class="absolute -top-40 -right-40 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
-      <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-600/5 rounded-full blur-3xl"></div>
+      <div class="absolute -top-40 -right-40 w-96 h-96 bg-primary-theme/10 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-secondary-theme/10 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-theme/5 rounded-full blur-3xl"></div>
     </div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-900/30 border border-teal-700/30 text-teal-300 text-sm mb-6">
-        <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-theme/10 border border-primary-theme/20 text-primary-theme text-xs sm:text-sm mb-6">
+        <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-primary-theme animate-pulse"></span>
         Ücretsiz ve Açık Kaynak
       </div>
 
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-        <span class="text-white">Açık Öğretim</span>
-        <br />
-        <span class="gradient-text">Soru ve Çalışma Portalı</span>
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-bold mb-6 px-2">
+        <span class="text-theme">Açık Öğretim</span>
+        <br class="hidden sm:block" />
+        <span class="gradient-text"> Çalışma Portalı</span>
       </h1>
 
-      <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
-        Anadolu, Atatürk ve İstanbul Üniversitesi açık öğretim fakülteleri için
-        hazırlanmış <strong class="text-slate-200">binlerce soru</strong>,
-        <strong class="text-slate-200">çıkmış sınavlar</strong> ve
-        <strong class="text-slate-200">interaktif testler</strong>.
+      <p class="text-base sm:text-lg md:text-xl text-muted-theme max-w-2xl mx-auto mb-10 px-4">
+        Anadolu, Atatürk ve İstanbul Üniversitesi açık öğretim öğrencileri için
+        <strong class="text-theme"> binlerce soru</strong> ve
+        <strong class="text-theme"> interaktif testler</strong>.
       </p>
 
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="#universities" class="btn-primary">
+      <div class="flex flex-col sm:flex-row justify-center gap-4 px-6 sm:px-0">
+        <a href="#universities" class="btn-primary w-full sm:w-auto">
           🎓 Üniversiteleri Keşfet
         </a>
-        <a href="/quiz" class="btn-secondary">
+        <a href="/quiz" class="btn-secondary w-full sm:w-auto">
           🎯 Hemen Test Çöz
         </a>
       </div>
@@ -69,24 +68,24 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
   </section>
 
   <!-- Stats Section -->
-  <section class="py-12 border-y border-slate-700/30 bg-slate-900/30">
+  <section class="py-12 border-y border-theme bg-theme/30">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
         <div class="stat-card text-center">
-          <div class="text-3xl md:text-4xl font-bold text-teal-400 mb-1">{stats.universities}</div>
-          <div class="text-slate-400 text-sm">Üniversite</div>
+          <div class="text-3xl md:text-4xl font-bold text-primary-theme mb-1">{stats.universities}</div>
+          <div class="text-muted-theme text-sm">Üniversite</div>
         </div>
         <div class="stat-card text-center">
-          <div class="text-3xl md:text-4xl font-bold text-teal-400 mb-1">{stats.departments}</div>
-          <div class="text-slate-400 text-sm">Bölüm</div>
+          <div class="text-3xl md:text-4xl font-bold text-primary-theme mb-1">{stats.departments}</div>
+          <div class="text-muted-theme text-sm">Bölüm</div>
         </div>
         <div class="stat-card text-center">
-          <div class="text-3xl md:text-4xl font-bold text-teal-400 mb-1">{stats.courses}+</div>
-          <div class="text-slate-400 text-sm">Ders</div>
+          <div class="text-3xl md:text-4xl font-bold text-primary-theme mb-1">{stats.courses}+</div>
+          <div class="text-muted-theme text-sm">Ders</div>
         </div>
         <div class="stat-card text-center">
-          <div class="text-3xl md:text-4xl font-bold text-teal-400 mb-1">{(stats.questions / 1000).toFixed(1)}K+</div>
-          <div class="text-slate-400 text-sm">Soru</div>
+          <div class="text-3xl md:text-4xl font-bold text-primary-theme mb-1">{(stats.questions / 1000).toFixed(1)}K+</div>
+          <div class="text-muted-theme text-sm">Soru</div>
         </div>
       </div>
     </div>
@@ -97,7 +96,7 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold mb-4">🎓 Üniversiteler</h2>
-        <p class="text-slate-400 max-w-2xl mx-auto">
+        <p class="text-muted-theme max-w-2xl mx-auto">
           Aşağıdaki üniversitelerden birini seçerek ders materyallerine ve soru bankalarına erişebilirsiniz.
         </p>
       </div>
@@ -114,37 +113,37 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
               <div class={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${style.gradient}`}></div>
 
               <div class="flex items-start gap-4 mb-4">
-                <div class={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl bg-gradient-to-br ${style.gradient}`}>
+                <div class={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl bg-gradient-to-br ${style.gradient} text-white`}>
                   {style.icon}
                 </div>
                 <div class="flex-1">
-                  <h3 class="text-xl font-bold text-white group-hover:text-teal-400 transition-colors">
+                  <h3 class="text-xl font-bold text-theme group-hover:text-primary-theme transition-colors">
                     {uni.shortName}
                   </h3>
-                  <p class="text-sm text-slate-400">{uni.faculty}</p>
+                  <p class="text-sm text-muted-theme">{uni.faculty}</p>
                 </div>
               </div>
 
-              <p class="text-slate-300 text-sm mb-4">{uni.name}</p>
+              <p class="text-muted-theme text-sm mb-4">{uni.name}</p>
 
-              <div class="border-t border-slate-600/30 pt-4">
-                <h4 class="text-xs font-medium text-slate-500 uppercase tracking-wider mb-2">Aktif Bölümler</h4>
+              <div class="border-t border-theme pt-4">
+                <h4 class="text-xs font-medium text-muted-theme uppercase tracking-wider mb-2">Aktif Bölümler</h4>
                 <ul class="space-y-1.5">
                   {uni.departments.map((dept) => (
-                    <li class="flex items-center gap-2 text-sm text-slate-300">
-                      <span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
+                    <li class="flex items-center gap-2 text-sm text-muted-theme">
+                      <span class="w-1.5 h-1.5 rounded-full bg-primary-theme"></span>
                       {dept.name}
-                      <span class="ml-auto text-xs text-slate-500">{dept.duration} dönem</span>
+                      <span class="ml-auto text-xs text-muted-theme">{dept.duration} dönem</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div class="mt-4 pt-4 border-t border-slate-600/30 flex items-center justify-between">
-                <span class="text-sm text-teal-400 group-hover:text-teal-300">
+              <div class="mt-4 pt-4 border-t border-theme flex items-center justify-between">
+                <span class="text-sm text-primary-theme group-hover:text-primary-light">
                   Detayları Gör
                 </span>
-                <svg class="w-4 h-4 text-teal-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 text-primary-theme group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                 </svg>
               </div>
@@ -156,11 +155,11 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
   </section>
 
   <!-- Features Section -->
-  <section class="py-20 bg-slate-900/30 border-y border-slate-700/30">
+  <section class="py-20 bg-theme/30 border-y border-theme">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold mb-4">🔧 Özellikler</h2>
-        <p class="text-slate-400 max-w-2xl mx-auto">
+        <p class="text-muted-theme max-w-2xl mx-auto">
           Sınavlarınıza en iyi şekilde hazırlanmanız için sunduğumuz araçlar.
         </p>
       </div>
@@ -168,23 +167,23 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="feature-card text-center">
           <div class="text-4xl mb-4">📝</div>
-          <h3 class="font-semibold mb-2 text-white">Soru Bankası</h3>
-          <p class="text-slate-400 text-sm">Ders ve ünite bazlı binlerce çalışma sorusu</p>
+          <h3 class="font-semibold mb-2 text-theme">Soru Bankası</h3>
+          <p class="text-muted-theme text-sm">Ders ve ünite bazlı binlerce çalışma sorusu</p>
         </div>
         <div class="feature-card text-center">
           <div class="text-4xl mb-4">📊</div>
-          <h3 class="font-semibold mb-2 text-white">İnteraktif Testler</h3>
-          <p class="text-slate-400 text-sm">Anında geri bildirimli çalışma modülleri</p>
+          <h3 class="font-semibold mb-2 text-theme">İnteraktif Testler</h3>
+          <p class="text-muted-theme text-sm">Anında geri bildirimli çalışma modülleri</p>
         </div>
         <div class="feature-card text-center">
           <div class="text-4xl mb-4">🤖</div>
-          <h3 class="font-semibold mb-2 text-white">AI Açıklamalar</h3>
-          <p class="text-slate-400 text-sm">Gemini ile zenginleştirilmiş cevap açıklamaları</p>
+          <h3 class="font-semibold mb-2 text-theme">AI Açıklamalar</h3>
+          <p class="text-muted-theme text-sm">Gemini ile zenginleştirilmiş cevap açıklamaları</p>
         </div>
         <div class="feature-card text-center">
           <div class="text-4xl mb-4">📄</div>
-          <h3 class="font-semibold mb-2 text-white">Çıkmış Sınavlar</h3>
-          <p class="text-slate-400 text-sm">Geçmiş yılların vize ve final soruları</p>
+          <h3 class="font-semibold mb-2 text-theme">Çıkmış Sınavlar</h3>
+          <p class="text-muted-theme text-sm">Geçmiş yılların vize ve final soruları</p>
         </div>
       </div>
     </div>
@@ -196,7 +195,7 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
       <h2 class="text-2xl md:text-3xl font-bold mb-4">
         Sınavlarına hazır mısın?
       </h2>
-      <p class="text-slate-400 mb-8">
+      <p class="text-muted-theme mb-8">
         Hemen bir test çözerek bilgilerini test et, eksiklerini keşfet.
       </p>
       <a href="/quiz" class="btn-primary text-lg px-8 py-4">

@@ -1,17 +1,23 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
   title: string;
   description?: string;
 }
 
-const { title, description = 'Açık öğretim fakülteleri için çalışma portalı' } = Astro.props;
+const { title, description = "Açık öğretim fakülteleri için çalışma portalı" } =
+  Astro.props;
 ---
 
 <!doctype html>
-<html lang="tr">
+<html lang="tr" class="overflow-x-hidden">
   <head>
+    <script is:inline>
+      // Theme Initialization
+      const savedTheme = localStorage.getItem("theme") || "dark";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
@@ -20,43 +26,194 @@ const { title, description = 'Açık öğretim fakülteleri için çalışma por
     <title>{title} | Açık Öğretim Portal</title>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="min-h-screen bg-[#0f172a] text-white font-sans antialiased flex flex-col">
+  <body
+    class="min-h-screen bg-[#0f172a] text-white font-sans antialiased flex flex-col overflow-x-hidden"
+  >
     <!-- Disclaimer Banner -->
-    <div class="bg-amber-900/30 border-b border-amber-700/30 py-2 px-4 text-center text-sm text-amber-200/80">
+    <div
+      class="bg-amber-900/30 border-b border-amber-700/30 py-2 px-4 text-center text-sm text-amber-200/80"
+    >
       ⚠️ Bu portal eğitim amaçlıdır. İçerikler ticari amaçla kullanılamaz.
       <a href="/telif" class="underline hover:text-amber-100">Detaylı bilgi</a>
     </div>
 
     <!-- Header -->
-    <header class="sticky top-0 z-50 backdrop-blur-lg bg-[#0f172a]/90 border-b border-slate-700/50">
-      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        <a href="/" class="flex items-center gap-3 group">
-          <span class="text-2xl">📚</span>
-          <span class="font-bold text-xl text-teal-400 group-hover:text-teal-300 transition-all">
-            Açık Öğretim Portal
+    <header
+      class="sticky top-0 z-50 backdrop-blur-lg bg-[#0f172a]/90 border-b border-slate-700/50"
+    >
+      <nav
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
+      >
+        <a href="/" class="flex items-center gap-2 sm:gap-3 group">
+          <span class="text-xl sm:text-2xl">📚</span>
+          <span
+            class="font-bold text-lg sm:text-xl text-teal-400 group-hover:text-teal-300 transition-all whitespace-nowrap"
+          >
+            AÖF Portal
           </span>
         </a>
 
         <div class="hidden md:flex items-center gap-6">
-          <a href="/anadolu-aof" class="text-slate-300 hover:text-teal-400 transition-colors">Anadolu AÖF</a>
-          <a href="/ataturk-aof" class="text-slate-300 hover:text-teal-400 transition-colors">ATA-AÖF</a>
-          <a href="/auzef" class="text-slate-300 hover:text-teal-400 transition-colors">AUZEF</a>
-          <a href="/quiz" class="btn-primary text-sm py-2">
-            🎯 Quiz Çöz
-          </a>
+          <a
+            href="/anadolu-aof"
+            class="text-muted-theme hover:text-primary-theme transition-colors"
+            >Anadolu AÖF</a
+          >
+          <a
+            href="/ataturk-aof"
+            class="text-muted-theme hover:text-primary-theme transition-colors"
+            >ATA-AÖF</a
+          >
+          <a
+            href="/auzef"
+            class="text-muted-theme hover:text-primary-theme transition-colors"
+            >AUZEF</a
+          >
+          <a href="/quiz" class="btn-primary text-sm py-2"> 🎯 Quiz Çöz </a>
+
+          <!-- Theme Toggles -->
+          <div
+            class="flex items-center gap-2 border-l border-slate-700/50 pl-4 ml-2"
+          >
+            <button
+              onclick="setTheme('light')"
+              class="p-1.5 rounded-full hover:bg-slate-700/50 text-slate-400 hover:text-yellow-400 transition-colors"
+              title="Aydınlık Mod"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                ></path></svg
+              >
+            </button>
+            <button
+              onclick="setTheme('dark')"
+              class="p-1.5 rounded-full hover:bg-slate-700/50 text-slate-400 hover:text-blue-400 transition-colors"
+              title="Koyu Mod"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                ></path></svg
+              >
+            </button>
+            <button
+              onclick="setTheme('sepia')"
+              class="p-1.5 rounded-full hover:bg-slate-700/50 text-slate-400 hover:text-amber-600 transition-colors"
+              title="Sepya Mod"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                ></path></svg
+              >
+            </button>
+          </div>
         </div>
 
         <!-- Mobile menu button -->
-        <button class="md:hidden p-2 rounded-lg hover:bg-slate-700/50" aria-label="Menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        <button
+          id="mobileMenuBtn"
+          class="md:hidden p-2 rounded-lg hover:bg-button-hover-theme text-muted-theme"
+          aria-label="Menu"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              id="menuIcon"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+            <path
+              id="closeIcon"
+              class="hidden"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
       </nav>
+
+      <!-- Mobile navigation overlay -->
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden border-t border-theme bg-theme px-4 py-6 space-y-4 shadow-xl"
+      >
+        <a
+          href="/anadolu-aof"
+          class="block text-lg text-muted-theme hover:text-theme px-2"
+          >Anadolu AÖF</a
+        >
+        <a
+          href="/ataturk-aof"
+          class="block text-lg text-slate-300 hover:text-white px-2">ATA-AÖF</a
+        >
+        <a
+          href="/auzef"
+          class="block text-lg text-slate-300 hover:text-white px-2">AUZEF</a
+        >
+        <a href="/quiz" class="block w-full btn-primary text-center py-3">
+          🎯 Quiz Çöz
+        </a>
+
+        <!-- Mobile Theme Toggles -->
+        <div
+          class="flex justify-center gap-4 pt-4 border-t border-slate-700/50"
+        >
+          <button
+            onclick="setTheme('light')"
+            class="flex items-center gap-2 text-slate-400 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800"
+          >
+            <span class="text-sm font-medium">Aydınlık</span>
+          </button>
+          <button
+            onclick="setTheme('dark')"
+            class="flex items-center gap-2 text-slate-400 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800"
+          >
+            <span class="text-sm font-medium">Koyu</span>
+          </button>
+          <button
+            onclick="setTheme('sepia')"
+            class="flex items-center gap-2 text-slate-400 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800"
+          >
+            <span class="text-sm font-medium">Sepya</span>
+          </button>
+        </div>
+      </div>
     </header>
 
     <!-- Main content -->
@@ -70,28 +227,38 @@ const { title, description = 'Açık öğretim fakülteleri için çalışma por
         <div class="notice-box">
           <p class="text-slate-300">
             <strong class="text-orange-400">⚠️ Telif Hakkı Bildirimi:</strong>
-            Bu portaldaki sorular telif hakkı içerebilir. İçerik yalnızca <strong>ders çalışma amaçlı</strong>
-            hazırlanmış olup, ticari amaçlı kopyalanması veya çoğaltılması hak sahibi tarafından
-            yasal yükümlülükler getirebilir.
+            Bu portaldaki sorular telif hakkı içerebilir. İçerik yalnızca <strong
+              >ders çalışma amaçlı</strong
+            >
+            hazırlanmış olup, ticari amaçlı kopyalanması veya çoğaltılması hak sahibi
+            tarafından yasal yükümlülükler getirebilir.
           </p>
           <p class="mt-2 text-slate-400">
             Telif hakkı bildirimleri için
-            <a href="https://github.com/acik-ogretim/acik-ogretim.github.io/issues" target="_blank" rel="noopener">
+            <a
+              href="https://github.com/acik-ogretim/acik-ogretim.github.io/issues"
+              target="_blank"
+              rel="noopener"
+            >
               GitHub Issues
             </a>
-            bölümünü kullanabilirsiniz. Bildirim üzerine ilgili içerik <strong>7 iş günü</strong> içerisinde kaldırılacaktır.
+            bölümünü kullanabilirsiniz. Bildirim üzerine ilgili içerik <strong
+              >7 iş günü</strong
+            > içerisinde kaldırılacaktır.
           </p>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-700/50 bg-[#0f172a]">
+    <footer class="border-t border-theme bg-theme">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="grid md:grid-cols-3 gap-8 mb-8">
           <!-- About -->
           <div>
-            <h3 class="font-semibold text-teal-400 mb-3">📚 Açık Öğretim Portal</h3>
+            <h3 class="font-semibold text-teal-400 mb-3">
+              📚 Açık Öğretim Portal
+            </h3>
             <p class="text-slate-400 text-sm">
               Türkiye'deki açık öğretim fakülteleri öğrencileri için hazırlanmış
               kapsamlı çalışma materyalleri ve soru bankaları.
@@ -102,9 +269,23 @@ const { title, description = 'Açık öğretim fakülteleri için çalışma por
           <div>
             <h3 class="font-semibold text-slate-300 mb-3">Hızlı Erişim</h3>
             <ul class="space-y-2 text-sm">
-              <li><a href="/anadolu-aof" class="text-slate-400 hover:text-teal-400">Anadolu AÖF</a></li>
-              <li><a href="/ataturk-aof" class="text-slate-400 hover:text-teal-400">Atatürk AÖF</a></li>
-              <li><a href="/auzef" class="text-slate-400 hover:text-teal-400">AUZEF</a></li>
+              <li>
+                <a
+                  href="/anadolu-aof"
+                  class="text-slate-400 hover:text-teal-400">Anadolu AÖF</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/ataturk-aof"
+                  class="text-slate-400 hover:text-teal-400">Atatürk AÖF</a
+                >
+              </li>
+              <li>
+                <a href="/auzef" class="text-slate-400 hover:text-teal-400"
+                  >AUZEF</a
+                >
+              </li>
             </ul>
           </div>
 
@@ -112,11 +293,23 @@ const { title, description = 'Açık öğretim fakülteleri için çalışma por
           <div>
             <h3 class="font-semibold text-slate-300 mb-3">Yasal</h3>
             <ul class="space-y-2 text-sm">
-              <li><a href="/telif" class="text-slate-400 hover:text-teal-400">Telif Hakkı</a></li>
-              <li><a href="/gizlilik" class="text-slate-400 hover:text-teal-400">Gizlilik Politikası</a></li>
               <li>
-                <a href="https://github.com/acik-ogretim/acik-ogretim.github.io/issues"
-                   class="text-slate-400 hover:text-teal-400" target="_blank" rel="noopener">
+                <a href="/telif" class="text-slate-400 hover:text-teal-400"
+                  >Telif Hakkı</a
+                >
+              </li>
+              <li>
+                <a href="/gizlilik" class="text-slate-400 hover:text-teal-400"
+                  >Gizlilik Politikası</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/acik-ogretim/acik-ogretim.github.io/issues"
+                  class="text-slate-400 hover:text-teal-400"
+                  target="_blank"
+                  rel="noopener"
+                >
                   İçerik Bildirimi
                 </a>
               </li>
@@ -124,19 +317,49 @@ const { title, description = 'Açık öğretim fakülteleri için çalışma por
           </div>
         </div>
 
-        <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-6 border-t border-slate-700/50">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-4 pt-6 border-t border-slate-700/50"
+        >
           <p class="text-slate-500 text-sm">
             © 2026 Açık Öğretim Portal. Eğitim amaçlıdır, ticari değildir.
           </p>
           <div class="flex items-center gap-4">
-            <a href="https://github.com/acik-ogretim" class="text-slate-400 hover:text-teal-400 transition-colors" target="_blank" rel="noopener">
+            <a
+              href="https://github.com/acik-ogretim"
+              class="text-slate-400 hover:text-teal-400 transition-colors"
+              target="_blank"
+              rel="noopener"
+            >
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                ></path>
               </svg>
             </a>
           </div>
         </div>
       </div>
     </footer>
+
+    <script is:inline>
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const menu = document.getElementById("mobileMenu");
+      const menuIcon = document.getElementById("menuIcon");
+      const closeIcon = document.getElementById("closeIcon");
+
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener("click", () => {
+          const isHidden = menu?.classList.toggle("hidden");
+          menuIcon?.classList.toggle("hidden", !isHidden);
+          closeIcon?.classList.toggle("hidden", isHidden);
+        });
+      }
+
+      function setTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+      }
+      window.setTheme = setTheme;
+    </script>
   </body>
 </html>

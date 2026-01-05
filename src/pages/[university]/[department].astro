@@ -1,0 +1,193 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getUniversities, getDepartments, getCourses } from "../../lib/api";
+
+export async function getStaticPaths() {
+  const universities = await getUniversities();
+  const paths = [];
+
+  for (const uni of universities) {
+    const departments = (uni as any).departments || [];
+    for (const dept of departments) {
+      paths.push({
+        params: { university: uni.id, department: dept.id },
+        props: { university: uni, department: dept },
+      });
+    }
+  }
+  return paths;
+}
+
+const { university, department } = Astro.props;
+const allCourses = await getCourses(university.id, department.id);
+
+// Group by semester and sort each group alphabetically
+const semesters = Array.from({ length: department.duration }, (_, i) => i + 1);
+const groupedCourses = semesters.map((sem) => ({
+  number: sem,
+  courses: allCourses
+    .filter((c) => c.semester === sem)
+    .sort((a, b) => a.name.localeCompare(b.name, "tr")),
+}));
+---
+
+<Layout title={`${department.name} - ${university.shortName}`}>
+  <div class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumbs -->
+      <nav class="flex mb-8 text-sm text-muted-theme">
+        <a href="/" class="hover:text-primary-theme transition-colors"
+          >Ana Sayfa</a
+        >
+        <span class="mx-2">/</span>
+        <a
+          href={`/${university.id}`}
+          class="hover:text-primary-theme transition-colors"
+          >{university.shortName}</a
+        >
+        <span class="mx-2">/</span>
+        <span class="text-theme font-medium">{department.name}</span>
+      </nav>
+
+      <div
+        class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6"
+      >
+        <div>
+          <h1 class="text-3xl md:text-4xl font-bold text-theme mb-4">
+            {department.name}
+          </h1>
+          <p class="text-xl text-muted-theme">
+            Dönemlere göre ayrılmış ders listesi.
+          </p>
+        </div>
+
+        <div class="relative w-full md:w-80">
+          <div
+            class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+          >
+            <svg
+              class="h-5 w-5 text-muted-theme"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <input
+            type="text"
+            id="courseSearch"
+            placeholder="Ders veya kod ara..."
+            class="block w-full pl-10 pr-3 py-3 border border-theme rounded-xl bg-card-theme text-theme placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-theme focus:border-transparent transition-all"
+          />
+        </div>
+      </div>
+
+      <div class="space-y-16" id="semesterContainer">
+        {
+          groupedCourses.map(
+            (group) =>
+              group.courses.length > 0 && (
+                <section class="semester-section" data-semester={group.number}>
+                  <div class="flex items-center gap-4 mb-8">
+                    <h2 class="text-2xl font-bold text-theme">
+                      {group.number}. Dönem
+                    </h2>
+                    <div class="flex-1 h-px bg-theme/50" />
+                    <span class="text-xs font-medium text-muted-theme uppercase tracking-widest">
+                      {group.courses.length} Ders
+                    </span>
+                  </div>
+
+                  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {group.courses.map((course) => (
+                      <a
+                        href={`/${university.id}/${department.id}/${course.id}`}
+                        class="course-card group glass p-6 card-hover border border-theme bg-card-theme"
+                        data-name={course.name.toLowerCase()}
+                        data-code={course.code?.toLowerCase() || ""}
+                      >
+                        <div class="text-xs font-mono text-muted-theme mb-2">
+                          {course.code}
+                        </div>
+                        <h3 class="text-lg font-bold text-theme group-hover:text-primary-theme transition-colors mb-4 line-clamp-2 min-h-[3.5rem]">
+                          {course.name}
+                        </h3>
+                        <div class="flex items-center justify-between text-sm text-muted-theme">
+                          <span>İncele</span>
+                          <svg
+                            class="w-4 h-4 text-primary-theme group-hover:translate-x-1 transition-transform"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M9 5l7 7-7 7"
+                            />
+                          </svg>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </section>
+              ),
+          )
+        }
+      </div>
+
+      <!-- No results message -->
+      <div id="noResults" class="hidden py-20 text-center">
+        <div class="text-4xl mb-4">🔍</div>
+        <h3 class="text-xl font-medium text-muted-theme">
+          Aradığınız kriterlere uygun ders bulunamadı.
+        </h3>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  const searchInput = document.getElementById("courseSearch");
+  const semesterSections = document.querySelectorAll(".semester-section");
+  const noResults = document.getElementById("noResults");
+
+  searchInput?.addEventListener("input", (e) => {
+    const term = (e.target as HTMLInputElement).value.toLowerCase().trim();
+    let totalVisible = 0;
+
+    semesterSections.forEach((section) => {
+      const cards = section.querySelectorAll(".course-card");
+      let visibleInSemester = 0;
+
+      cards.forEach((card) => {
+        const name = (card as HTMLElement).dataset.name || "";
+        const code = (card as HTMLElement).dataset.code || "";
+
+        if (name.includes(term) || code.includes(term)) {
+          (card as HTMLElement).style.display = "flex";
+          visibleInSemester++;
+          totalVisible++;
+        } else {
+          (card as HTMLElement).style.display = "none";
+        }
+      });
+
+      // Hide or show the whole semester section
+      (section as HTMLElement).style.display =
+        visibleInSemester > 0 ? "block" : "none";
+    });
+
+    if (totalVisible === 0) {
+      noResults?.classList.remove("hidden");
+    } else {
+      noResults?.classList.add("hidden");
+    }
+  });
+</script>

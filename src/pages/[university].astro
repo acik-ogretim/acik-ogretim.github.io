@@ -1,0 +1,107 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getDepartments, getUniversities } from "../lib/api";
+
+export async function getStaticPaths() {
+  const universities = await getUniversities();
+  return universities.map((uni) => ({
+    params: { university: uni.id },
+    props: { university: uni },
+  }));
+}
+
+const { university } = Astro.props;
+const departments = await getDepartments(university.id);
+
+const uniStyles: Record<string, { icon: string; gradient: string }> = {
+  "anadolu-aof": { icon: "🎓", gradient: "from-blue-600 to-blue-800" },
+  "ataturk-aof": { icon: "📕", gradient: "from-red-600 to-red-800" },
+  auzef: { icon: "📗", gradient: "from-purple-600 to-purple-800" },
+};
+
+const style = uniStyles[university.id] || {
+  icon: "📚",
+  gradient: "from-slate-600 to-slate-800",
+};
+---
+
+<Layout title={university.name}>
+  <div class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumbs -->
+      <nav class="flex mb-8 text-sm text-muted-theme">
+        <a href="/" class="hover:text-primary-theme transition-colors"
+          >Ana Sayfa</a
+        >
+        <span class="mx-2">/</span>
+        <span class="text-theme font-medium">{university.shortName}</span>
+      </nav>
+
+      <!-- Header Card -->
+      <div
+        class={`glass p-8 rounded-2xl relative overflow-hidden mb-12 border-theme`}
+      >
+        <div
+          class={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${style.gradient}`}
+        >
+        </div>
+        <div class="flex flex-col md:flex-row gap-8 items-center">
+          <div
+            class={`w-24 h-24 rounded-2xl flex items-center justify-center text-5xl bg-gradient-to-br ${style.gradient} shadow-lg shadow-teal-500/10 text-white`}
+          >
+            {style.icon}
+          </div>
+          <div class="text-center md:text-left">
+            <h1 class="text-3xl md:text-4xl font-bold text-theme mb-2">
+              {university.name}
+            </h1>
+            <p class="text-xl text-muted-theme">{university.faculty}</p>
+          </div>
+          <div class="md:ml-auto flex gap-4">
+            <a
+              href={university.website}
+              target="_blank"
+              class="btn-secondary py-2 px-4 text-sm bg-button-theme hover:bg-button-hover-theme text-theme border border-theme rounded-lg transition-colors"
+            >
+              🌐 Web Sitesi
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold text-theme mb-4">Bölümler</h2>
+        <p class="text-muted-theme">
+          Materyalleri görmek için bir bölüm seçin.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          departments.map((dept) => (
+            <a
+              href={`/${university.id}/${dept.id}`}
+              class="group glass p-6 card-hover flex flex-col border border-theme bg-card-theme"
+            >
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-lg bg-primary-theme/10 flex items-center justify-center text-primary-theme group-hover:bg-primary-theme/20 transition-colors">
+                  📂
+                </div>
+                <h3 class="text-xl font-bold text-theme group-hover:text-primary-theme transition-colors">
+                  {dept.name}
+                </h3>
+              </div>
+
+              <div class="mt-auto pt-4 flex items-center justify-between text-sm border-t border-theme/50">
+                <span class="text-muted-theme">{dept.duration} Dönem</span>
+                <span class="text-primary-theme opacity-0 group-hover:opacity-100 transition-opacity font-medium">
+                  Dersleri Gör →
+                </span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Layout>
