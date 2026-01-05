@@ -1,16 +1,207 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
 
+// Get all universities and departments
+const universities = await getCollection('universities');
+const departments = await getCollection('departments');
+
+// Group departments by university
+const universityData = universities.map(uni => ({
+  ...uni.data,
+  departments: departments.filter(dept => dept.data.universityId === uni.data.id).map(d => d.data)
+})).sort((a, b) => a.order - b.order);
+
+// Stats
+const stats = {
+  universities: universities.length,
+  departments: departments.length,
+  courses: 130,
+  questions: 12500,
+};
+
+// University icons and colors
+const uniStyles: Record<string, { icon: string; gradient: string }> = {
+  'anadolu-aof': { icon: '🎓', gradient: 'from-blue-600 to-blue-800' },
+  'ataturk-aof': { icon: '📕', gradient: 'from-red-600 to-red-800' },
+  'auzef': { icon: '📗', gradient: 'from-purple-600 to-purple-800' },
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Ana Sayfa">
+  <!-- Hero Section -->
+  <section class="relative py-20 overflow-hidden">
+    <!-- Background decoration -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute -top-40 -right-40 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-600/5 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-900/30 border border-teal-700/30 text-teal-300 text-sm mb-6">
+        <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
+        Ücretsiz ve Açık Kaynak
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+        <span class="text-white">Açık Öğretim</span>
+        <br />
+        <span class="gradient-text">Soru ve Çalışma Portalı</span>
+      </h1>
+
+      <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
+        Anadolu, Atatürk ve İstanbul Üniversitesi açık öğretim fakülteleri için
+        hazırlanmış <strong class="text-slate-200">binlerce soru</strong>,
+        <strong class="text-slate-200">çıkmış sınavlar</strong> ve
+        <strong class="text-slate-200">interaktif testler</strong>.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#universities" class="btn-primary">
+          🎓 Üniversiteleri Keşfet
+        </a>
+        <a href="/quiz" class="btn-secondary">
+          🎯 Hemen Test Çöz
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-12 border-y border-slate-700/30 bg-slate-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div class="stat-card text-center">
+          <div class="text-3xl md:text-4xl font-bold text-teal-400 mb-1">{stats.universities}</div>
+          <div class="text-slate-400 text-sm">Üniversite</div>
+        </div>
+        <div class="stat-card text-center">
+          <div class="text-3xl md:text-4xl font-bold text-teal-400 mb-1">{stats.departments}</div>
+          <div class="text-slate-400 text-sm">Bölüm</div>
+        </div>
+        <div class="stat-card text-center">
+          <div class="text-3xl md:text-4xl font-bold text-teal-400 mb-1">{stats.courses}+</div>
+          <div class="text-slate-400 text-sm">Ders</div>
+        </div>
+        <div class="stat-card text-center">
+          <div class="text-3xl md:text-4xl font-bold text-teal-400 mb-1">{(stats.questions / 1000).toFixed(1)}K+</div>
+          <div class="text-slate-400 text-sm">Soru</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Universities Section -->
+  <section id="universities" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">🎓 Üniversiteler</h2>
+        <p class="text-slate-400 max-w-2xl mx-auto">
+          Aşağıdaki üniversitelerden birini seçerek ders materyallerine ve soru bankalarına erişebilirsiniz.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {universityData.map((uni) => {
+          const style = uniStyles[uni.id] || { icon: '📚', gradient: 'from-slate-600 to-slate-800' };
+          return (
+            <a
+              href={`/${uni.id}`}
+              class="group glass p-6 card-hover relative overflow-hidden"
+            >
+              <!-- Gradient accent -->
+              <div class={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${style.gradient}`}></div>
+
+              <div class="flex items-start gap-4 mb-4">
+                <div class={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl bg-gradient-to-br ${style.gradient}`}>
+                  {style.icon}
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-xl font-bold text-white group-hover:text-teal-400 transition-colors">
+                    {uni.shortName}
+                  </h3>
+                  <p class="text-sm text-slate-400">{uni.faculty}</p>
+                </div>
+              </div>
+
+              <p class="text-slate-300 text-sm mb-4">{uni.name}</p>
+
+              <div class="border-t border-slate-600/30 pt-4">
+                <h4 class="text-xs font-medium text-slate-500 uppercase tracking-wider mb-2">Aktif Bölümler</h4>
+                <ul class="space-y-1.5">
+                  {uni.departments.map((dept) => (
+                    <li class="flex items-center gap-2 text-sm text-slate-300">
+                      <span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
+                      {dept.name}
+                      <span class="ml-auto text-xs text-slate-500">{dept.duration} dönem</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div class="mt-4 pt-4 border-t border-slate-600/30 flex items-center justify-between">
+                <span class="text-sm text-teal-400 group-hover:text-teal-300">
+                  Detayları Gör
+                </span>
+                <svg class="w-4 h-4 text-teal-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-slate-900/30 border-y border-slate-700/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">🔧 Özellikler</h2>
+        <p class="text-slate-400 max-w-2xl mx-auto">
+          Sınavlarınıza en iyi şekilde hazırlanmanız için sunduğumuz araçlar.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="feature-card text-center">
+          <div class="text-4xl mb-4">📝</div>
+          <h3 class="font-semibold mb-2 text-white">Soru Bankası</h3>
+          <p class="text-slate-400 text-sm">Ders ve ünite bazlı binlerce çalışma sorusu</p>
+        </div>
+        <div class="feature-card text-center">
+          <div class="text-4xl mb-4">📊</div>
+          <h3 class="font-semibold mb-2 text-white">İnteraktif Testler</h3>
+          <p class="text-slate-400 text-sm">Anında geri bildirimli çalışma modülleri</p>
+        </div>
+        <div class="feature-card text-center">
+          <div class="text-4xl mb-4">🤖</div>
+          <h3 class="font-semibold mb-2 text-white">AI Açıklamalar</h3>
+          <p class="text-slate-400 text-sm">Gemini ile zenginleştirilmiş cevap açıklamaları</p>
+        </div>
+        <div class="feature-card text-center">
+          <div class="text-4xl mb-4">📄</div>
+          <h3 class="font-semibold mb-2 text-white">Çıkmış Sınavlar</h3>
+          <p class="text-slate-400 text-sm">Geçmiş yılların vize ve final soruları</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">
+        Sınavlarına hazır mısın?
+      </h2>
+      <p class="text-slate-400 mb-8">
+        Hemen bir test çözerek bilgilerini test et, eksiklerini keşfet.
+      </p>
+      <a href="/quiz" class="btn-primary text-lg px-8 py-4">
+        🎯 Şimdi Başla
+      </a>
+    </div>
+  </section>
+</Layout>

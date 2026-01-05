@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+/*
+ * Açık Öğretim Portal - Custom Theme
+ * Eğitim odaklı, profesyonel renk paleti
+ */
+
+:root {
+    /* Primary: Koyu mavi-yeşil (akademik, güvenilir) */
+    --color-primary: #0d9488;
+    --color-primary-light: #14b8a6;
+    --color-primary-dark: #0f766e;
+
+    /* Secondary: Sıcak turuncu (dikkat çekici, enerji) */
+    --color-secondary: #ea580c;
+    --color-secondary-light: #f97316;
+
+    /* Accent: Indigo (derinlik) */
+    --color-accent: #4f46e5;
+    --color-accent-light: #6366f1;
+
+    /* Neutrals */
+    --color-bg-dark: #0f172a;
+    --color-bg-light: #1e293b;
+    --color-border: #334155;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary-dark);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+}
+
+/* Smooth animations */
+* {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Card hover effects */
+.card-hover {
+    transition: all 0.3s;
+}
+
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.2), 0 8px 10px -6px rgb(0 0 0 / 0.2);
+}
+
+/* Gradient text - Teal to Emerald */
+.gradient-text {
+    background: linear-gradient(135deg, #14b8a6, #10b981, #059669);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Glass effect */
+.glass {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    border-radius: 0.75rem;
+}
+
+/* Button styles - Teal theme */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #0d9488, #0f766e);
+    border-radius: 0.5rem;
+    font-weight: 500;
+    color: white;
+    transition: all 0.3s;
+    box-shadow: 0 4px 14px -3px rgba(13, 148, 136, 0.4);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #14b8a6, #0d9488);
+    box-shadow: 0 6px 20px -3px rgba(13, 148, 136, 0.5);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(51, 65, 85, 0.5);
+    border: 1px solid rgba(71, 85, 105, 0.5);
+    border-radius: 0.5rem;
+    font-weight: 500;
+    color: white;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background: rgba(71, 85, 105, 0.5);
+    border-color: rgba(100, 116, 139, 0.5);
+}
+
+/* Stats card */
+.stat-card {
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.6));
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+/* Feature card */
+.feature-card {
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.6), rgba(30, 41, 59, 0.4));
+    border: 1px solid rgba(51, 65, 85, 0.4);
+    transition: all 0.3s;
+}
+
+.feature-card:hover {
+    border-color: var(--color-primary-dark);
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.1), rgba(15, 23, 42, 0.6));
+}
+
+/* University card colors */
+.uni-anadolu {
+    --uni-color: #1d4ed8;
+    --uni-color-light: #3b82f6;
+}
+
+.uni-ataturk {
+    --uni-color: #b91c1c;
+    --uni-color-light: #ef4444;
+}
+
+.uni-auzef {
+    --uni-color: #7c3aed;
+    --uni-color-light: #8b5cf6;
+}
+
+/* Disclaimer/Notice box */
+.notice-box {
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    background: rgba(234, 88, 12, 0.1);
+    border: 1px solid rgba(234, 88, 12, 0.3);
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.notice-box a {
+    color: #f97316;
+    text-decoration: underline;
+}
+
+.notice-box a:hover {
+    color: #fb923c;
+}
+
+/* Copyright footer */
+.copyright-notice {
+    padding: 1rem;
+    background: rgba(15, 23, 42, 0.8);
+    border-top: 1px solid rgba(51, 65, 85, 0.5);
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
