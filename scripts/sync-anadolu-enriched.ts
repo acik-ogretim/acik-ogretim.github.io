@@ -220,6 +220,22 @@ function processAll() {
         let allQuestions: AppQuestion[] = [];
         const seenIds = new Set<string>();
 
+        // Map to store known unit numbers for questions
+        const textToUnitMap = new Map<string, number>();
+        const normalizeForMap = (t: string) => t.trim().toLowerCase().replace(/\s+/g, ' ');
+
+        const collect = (list: AppQuestion[]) => {
+            list.forEach(q => {
+                if (!seenIds.has(q.id)) {
+                    allQuestions.push(q);
+                    seenIds.add(q.id);
+                    if (q.unitNumber > 0) {
+                        textToUnitMap.set(normalizeForMap(q.text), q.unitNumber);
+                    }
+                }
+            });
+        };
+
         // Process Exercises
         fileSet.exercises.forEach(fp => {
             try {
@@ -228,12 +244,7 @@ function processAll() {
                 const cleanedRaw = rawContent.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, '');
                 const raw = JSON.parse(cleanedRaw);
                 const questions = processExerciseList(Array.isArray(raw) ? raw : []);
-                questions.forEach(q => {
-                    if (!seenIds.has(q.id)) {
-                        allQuestions.push(q);
-                        seenIds.add(q.id);
-                    }
-                });
+                collect(questions);
             } catch (e: any) { console.warn(`Error processing exercise ${fp}:`, e.message); }
         });
 
@@ -246,19 +257,26 @@ function processAll() {
                 // Exams Enriched often top level array, or inside 'questions'?
                 const list = Array.isArray(raw) ? raw : (raw.questions || []);
                 const questions = processExamList(list);
-                questions.forEach(q => {
-                    if (!seenIds.has(q.id)) {
-                        allQuestions.push(q);
-                        seenIds.add(q.id);
-                    }
-                });
+                collect(questions);
             } catch (e: any) { console.warn(`Error processing exam ${fp}:`, e.message); }
+        });
+
+        // Backfill missing units
+        let backfilledCount = 0;
+        allQuestions.forEach(q => {
+            if (q.unitNumber === 0) {
+                const known = textToUnitMap.get(normalizeForMap(q.text));
+                if (known && known > 0) {
+                    q.unitNumber = known;
+                    backfilledCount++;
+                }
+            }
         });
 
         if (allQuestions.length > 0) {
             const dest = path.join(TARGET_DIR, `${slug}.json`);
             fs.writeFileSync(dest, JSON.stringify(allQuestions, null, 2));
-            console.log(`✅ Synced ${slug} (${allQuestions.length} questions)`);
+            console.log(`✅ Synced ${slug} (${allQuestions.length} questions) [Backfilled: ${backfilledCount}]`);
         }
     }
 
