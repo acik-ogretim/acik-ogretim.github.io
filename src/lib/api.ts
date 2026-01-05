@@ -19,6 +19,9 @@ export interface Department {
     shortName: string;
     code: string;
     duration: number;
+    degree?: 'lisans' | 'onlisans' | 'lisans-tamamlama' | 'uzem-lisans-tamamlama' | 'tezsiz-yuksek-lisans';
+    icon?: string;
+    active?: boolean;
 }
 
 export interface Course {

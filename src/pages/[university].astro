@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { getDepartments, getUniversities } from "../lib/api";
+import { getDepartments, getUniversities, getCourses } from "../lib/api";
+import fs from "node:fs";
+import path from "node:path";
 
 export async function getStaticPaths() {
   const universities = await getUniversities();
@@ -11,7 +13,98 @@ export async function getStaticPaths() {
 }
 
 const { university } = Astro.props;
-const departments = await getDepartments(university.id);
+const allDepartments = await getDepartments(university.id);
+
+// Check which departments have courses with questions
+const COURSES_DIR = path.resolve(process.cwd(), "data/courses", university.id);
+const QUESTIONS_DIR = path.resolve(
+  process.cwd(),
+  "data/questions",
+  university.id,
+);
+
+function departmentHasQuestions(deptId: string): boolean {
+  try {
+    const coursesFile = path.join(COURSES_DIR, `${deptId}.json`);
+    if (!fs.existsSync(coursesFile)) return false;
+
+    const courses = JSON.parse(fs.readFileSync(coursesFile, "utf-8"));
+    if (!Array.isArray(courses) || courses.length === 0) return false;
+
+    // Check if at least one course has questions
+    return courses.some((course: any) => {
+      const questionsFile = path.join(QUESTIONS_DIR, `${course.id}.json`);
+      if (!fs.existsSync(questionsFile)) return false;
+      try {
+        const questions = JSON.parse(fs.readFileSync(questionsFile, "utf-8"));
+        return Array.isArray(questions) && questions.length > 0;
+      } catch {
+        return false;
+      }
+    });
+  } catch {
+    return false;
+  }
+}
+
+// Filter departments that have questions
+const departmentsWithData = allDepartments.filter((dept) =>
+  departmentHasQuestions(dept.id),
+);
+
+// Separate active and inactive departments
+const activeDepartments = departmentsWithData.filter((d) => d.active !== false);
+const inactiveDepartments = departmentsWithData.filter(
+  (d) => d.active === false,
+);
+
+// Group active departments by degree
+const degreeGroups: Record<
+  string,
+  { title: string; icon: string; departments: typeof activeDepartments }
+> = {
+  lisans: { title: "Lisans Programları", icon: "🎓", departments: [] },
+  onlisans: { title: "Ön Lisans Programları", icon: "📘", departments: [] },
+  "lisans-tamamlama": {
+    title: "Lisans Tamamlama",
+    icon: "📗",
+    departments: [],
+  },
+  "uzem-lisans-tamamlama": {
+    title: "UZEM Lisans Tamamlama",
+    icon: "🏥",
+    departments: [],
+  },
+  "tezsiz-yuksek-lisans": {
+    title: "Tezsiz Yüksek Lisans",
+    icon: "🎖️",
+    departments: [],
+  },
+};
+
+activeDepartments.forEach((dept) => {
+  const degree = dept.degree || "lisans";
+  if (degree === "uzem-lisans-tamamlama") {
+    degreeGroups["uzem-lisans-tamamlama"].departments.push(dept);
+  } else if (degree === "tezsiz-yuksek-lisans") {
+    degreeGroups["tezsiz-yuksek-lisans"].departments.push(dept);
+  } else if (
+    degree === "lisans-tamamlama" ||
+    dept.name?.toLowerCase().includes("(lt)")
+  ) {
+    degreeGroups["lisans-tamamlama"].departments.push(dept);
+  } else if (degree === "onlisans") {
+    degreeGroups["onlisans"].departments.push(dept);
+  } else {
+    degreeGroups["lisans"].departments.push(dept);
+  }
+});
+
+// Sort each group alphabetically
+Object.values(degreeGroups).forEach((group) => {
+  group.departments.sort((a, b) => a.name.localeCompare(b.name, "tr"));
+});
+inactiveDepartments.sort((a, b) => a.name.localeCompare(b.name, "tr"));
 
 const uniStyles: Record<string, { icon: string; gradient: string }> = {
   "anadolu-aof": { icon: "🎓", gradient: "from-blue-600 to-blue-800" },
@@ -26,10 +119,10 @@ const style = uniStyles[university.id] || {
 ---
 
 <Layout title={university.name}>
-  <div class="py-12">
+  <div class="py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Breadcrumbs -->
-      <nav class="flex mb-8 text-sm text-muted-theme">
+      <nav class="flex mb-6 text-sm text-muted-theme">
         <a href="/" class="hover:text-primary-theme transition-colors"
           >Ana Sayfa</a
         >
@@ -39,69 +132,234 @@ const style = uniStyles[university.id] || {
 
       <!-- Header Card -->
       <div
-        class={`glass p-8 rounded-2xl relative overflow-hidden mb-12 border-theme`}
+        class={`glass p-6 rounded-2xl relative overflow-hidden mb-8 border-theme`}
       >
         <div
           class={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${style.gradient}`}
         >
         </div>
-        <div class="flex flex-col md:flex-row gap-8 items-center">
+        <div class="flex flex-col md:flex-row gap-6 items-center">
           <div
-            class={`w-24 h-24 rounded-2xl flex items-center justify-center text-5xl bg-gradient-to-br ${style.gradient} shadow-lg shadow-teal-500/10 text-white`}
+            class={`w-20 h-20 rounded-2xl flex items-center justify-center text-4xl bg-gradient-to-br ${style.gradient} shadow-lg text-white`}
           >
             {style.icon}
           </div>
-          <div class="text-center md:text-left">
-            <h1 class="text-3xl md:text-4xl font-bold text-theme mb-2">
+          <div class="text-center md:text-left flex-1">
+            <h1 class="text-2xl md:text-3xl font-bold text-theme mb-1">
               {university.name}
             </h1>
-            <p class="text-xl text-muted-theme">{university.faculty}</p>
+            <p class="text-muted-theme">{university.faculty}</p>
           </div>
-          <div class="md:ml-auto flex gap-4">
-            <a
-              href={university.website}
-              target="_blank"
-              class="btn-secondary py-2 px-4 text-sm bg-button-theme hover:bg-button-hover-theme text-theme border border-theme rounded-lg transition-colors"
-            >
-              🌐 Web Sitesi
-            </a>
-          </div>
+          <a
+            href={university.website}
+            target="_blank"
+            class="py-2 px-4 text-sm bg-button-theme hover:bg-button-hover-theme text-theme border border-theme rounded-lg transition-colors"
+          >
+            🌐 Web Sitesi
+          </a>
         </div>
       </div>
 
-      <div class="mb-8">
-        <h2 class="text-2xl font-bold text-theme mb-4">Bölümler</h2>
-        <p class="text-muted-theme">
-          Materyalleri görmek için bir bölüm seçin.
-        </p>
+      <!-- Favorites Section -->
+      <div id="favorites-section" class="mb-8 hidden">
+        <h2 class="text-xl font-bold text-theme flex items-center gap-2 mb-4">
+          <span>⭐</span> Favorilerim
+          <span
+            id="favorites-count"
+            class="text-sm font-normal text-muted-theme"></span>
+        </h2>
+        <div
+          id="favorites-grid"
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3"
+        >
+        </div>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {
-          departments.map((dept) => (
-            <a
-              href={`/${university.id}/${dept.id}`}
-              class="group glass p-6 card-hover flex flex-col border border-theme bg-card-theme"
-            >
-              <div class="flex items-center gap-3 mb-4">
-                <div class="w-10 h-10 rounded-lg bg-primary-theme/10 flex items-center justify-center text-primary-theme group-hover:bg-primary-theme/20 transition-colors">
-                  📂
+      <!-- Active Departments grouped by degree -->
+      {
+        Object.entries(degreeGroups).map(
+          ([key, group]) =>
+            group.departments.length > 0 && (
+              <div class="mb-8">
+                <h2 class="text-xl font-bold text-theme flex items-center gap-2 mb-4">
+                  <span>{group.icon}</span>
+                  {group.title}
+                  <span class="text-sm font-normal text-muted-theme">
+                    ({group.departments.length})
+                  </span>
+                </h2>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                  {group.departments.map((dept) => (
+                    <div
+                      class="dept-card group"
+                      data-dept-id={dept.id}
+                      data-dept-name={dept.name}
+                      data-dept-icon={dept.icon || ""}
+                      data-uni-id={university.id}
+                    >
+                      <div class="relative glass p-4 rounded-xl border border-theme bg-card-theme hover:border-primary-theme/50 transition-all">
+                        <button
+                          class="favorite-btn absolute top-2 right-2 w-6 h-6 rounded-full hover:bg-yellow-500/20 flex items-center justify-center transition-colors z-10"
+                          title="Favorilere ekle"
+                        >
+                          <span class="fav-icon text-sm">☆</span>
+                        </button>
+                        <a
+                          href={`/${university.id}/${dept.id}`}
+                          class="flex items-center gap-3"
+                        >
+                          {dept.icon ? (
+                            <img
+                              src={dept.icon}
+                              alt=""
+                              class="w-10 h-10 object-contain flex-shrink-0"
+                            />
+                          ) : (
+                            <span class="text-2xl flex-shrink-0">📂</span>
+                          )}
+                          <span class="text-sm font-medium text-theme group-hover:text-primary-theme transition-colors line-clamp-2">
+                            {dept.name}
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <h3 class="text-xl font-bold text-theme group-hover:text-primary-theme transition-colors">
-                  {dept.name}
-                </h3>
               </div>
+            ),
+        )
+      }
 
-              <div class="mt-auto pt-4 flex items-center justify-between text-sm border-t border-theme/50">
-                <span class="text-muted-theme">{dept.duration} Dönem</span>
-                <span class="text-primary-theme opacity-0 group-hover:opacity-100 transition-opacity font-medium">
-                  Dersleri Gör →
-                </span>
-              </div>
-            </a>
-          ))
-        }
-      </div>
+      <!-- Inactive Departments -->
+      {
+        inactiveDepartments.length > 0 && (
+          <div class="mb-8">
+            <h2 class="text-lg font-bold text-muted-theme flex items-center gap-2 mb-4">
+              <span class="opacity-50">📦</span>
+              Pasif Programlar
+              <span class="text-sm font-normal">
+                ({inactiveDepartments.length})
+              </span>
+            </h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2">
+              {inactiveDepartments.map((dept) => (
+                <a
+                  href={`/${university.id}/${dept.id}`}
+                  class="group flex items-center gap-2 p-3 rounded-lg border border-theme/30 bg-card-theme/50 opacity-60 hover:opacity-100 transition-opacity"
+                >
+                  {dept.icon ? (
+                    <img
+                      src={dept.icon}
+                      alt=""
+                      class="w-6 h-6 object-contain opacity-50"
+                    />
+                  ) : (
+                    <span class="text-sm opacity-50">📂</span>
+                  )}
+                  <span class="text-xs text-muted-theme group-hover:text-theme transition-colors line-clamp-1">
+                    {dept.name}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        )
+      }
+
+      {
+        departmentsWithData.length === 0 && (
+          <div class="text-center py-12">
+            <p class="text-muted-theme">Henüz yayınlanmış soru bulunamadı.</p>
+          </div>
+        )
+      }
     </div>
   </div>
+
+  <script>
+    const STORAGE_KEY = "favorite-departments";
+
+    function getFavorites(): string[] {
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+      } catch {
+        return [];
+      }
+    }
+
+    function saveFavorites(favs: string[]) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(favs));
+    }
+
+    function toggleFavorite(deptId: string) {
+      const favs = getFavorites();
+      const index = favs.indexOf(deptId);
+      if (index > -1) favs.splice(index, 1);
+      else favs.push(deptId);
+      saveFavorites(favs);
+      updateUI();
+    }
+
+    function updateUI() {
+      const favs = getFavorites();
+      const favSection = document.getElementById("favorites-section");
+      const favGrid = document.getElementById("favorites-grid");
+      const favCount = document.getElementById("favorites-count");
+
+      document.querySelectorAll(".dept-card").forEach((card) => {
+        const deptId = card.getAttribute("data-dept-id");
+        const icon = card.querySelector(".fav-icon");
+        if (deptId && favs.includes(deptId)) {
+          icon!.textContent = "★";
+          icon!.classList.add("text-yellow-500");
+        } else {
+          icon!.textContent = "☆";
+          icon!.classList.remove("text-yellow-500");
+        }
+      });
+
+      if (favGrid && favSection && favCount) {
+        const favCards = Array.from(
+          document.querySelectorAll(".dept-card"),
+        ).filter((card) =>
+          favs.includes(card.getAttribute("data-dept-id") || ""),
+        );
+
+        if (favCards.length > 0) {
+          favSection.classList.remove("hidden");
+          favCount.textContent = `(${favCards.length})`;
+          favGrid.innerHTML = "";
+          favCards.forEach((card) => {
+            const clone = card.cloneNode(true) as HTMLElement;
+            clone
+              .querySelector(".favorite-btn")
+              ?.addEventListener("click", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleFavorite(clone.getAttribute("data-dept-id") || "");
+              });
+            favGrid.appendChild(clone);
+          });
+        } else {
+          favSection.classList.add("hidden");
+        }
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".favorite-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const deptId = btn
+            .closest(".dept-card")
+            ?.getAttribute("data-dept-id");
+          if (deptId) toggleFavorite(deptId);
+        });
+      });
+      updateUI();
+    });
+  </script>
 </Layout>

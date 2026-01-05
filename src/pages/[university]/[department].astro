@@ -87,6 +87,21 @@ const groupedCourses = semesters.map((sem) => ({
         </div>
       </div>
 
+      <!-- Favorites Section -->
+      <div id="favorites-section" class="mb-12 hidden">
+        <h2 class="text-xl font-bold text-theme flex items-center gap-2 mb-6">
+          <span>⭐</span> Favorilerim
+          <span
+            id="favorites-count"
+            class="text-sm font-normal text-muted-theme"></span>
+        </h2>
+        <div
+          id="favorites-grid"
+          class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+        >
+        </div>
+      </div>
+
       <div class="space-y-16" id="semesterContainer">
         {
           groupedCourses.map(
@@ -103,37 +118,48 @@ const groupedCourses = semesters.map((sem) => ({
                     </span>
                   </div>
 
-                  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                     {group.courses.map((course) => (
-                      <a
-                        href={`/${university.id}/${department.id}/${course.id}`}
-                        class="course-card group glass p-6 card-hover border border-theme bg-card-theme"
-                        data-name={course.name.toLowerCase()}
-                        data-code={course.code?.toLowerCase() || ""}
+                      <div
+                        class="course-card-wrapper dept-card group"
+                        data-course-id={course.id}
+                        data-course-name={course.name}
+                        data-course-code={course.code}
+                        data-university-id={university.id}
+                        data-department-id={department.id}
                       >
-                        <div class="text-xs font-mono text-muted-theme mb-2">
-                          {course.code}
-                        </div>
-                        <h3 class="text-lg font-bold text-theme group-hover:text-primary-theme transition-colors mb-4 line-clamp-2 min-h-[3.5rem]">
-                          {course.name}
-                        </h3>
-                        <div class="flex items-center justify-between text-sm text-muted-theme">
-                          <span>İncele</span>
-                          <svg
-                            class="w-4 h-4 text-primary-theme group-hover:translate-x-1 transition-transform"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
+                        <div class="relative glass p-4 rounded-xl border border-theme bg-card-theme hover:border-primary-theme/50 transition-all h-full">
+                          <button
+                            class="favorite-btn absolute top-2 right-2 w-6 h-6 rounded-full hover:bg-yellow-500/20 flex items-center justify-center transition-colors z-10"
+                            title="Favorilere ekle"
                           >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
+                            <span class="fav-icon text-[10px]">☆</span>
+                          </button>
+
+                          <a
+                            href={`/${university.id}/${department.id}/${course.id}`}
+                            class="flex items-center gap-3 h-full"
+                          >
+                            <div class="w-10 h-10 rounded-lg bg-primary-theme/10 flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-primary-theme/20 transition-colors">
+                              📚
+                            </div>
+                            <div class="flex-1 min-w-0">
+                              <div
+                                class="text-[10px] font-mono text-primary-theme opacity-70 mb-0.5 truncate"
+                                data-code={course.code?.toLowerCase() || ""}
+                              >
+                                {course.code}
+                              </div>
+                              <h3
+                                class="text-sm font-medium text-theme group-hover:text-primary-theme transition-colors line-clamp-2 leading-snug"
+                                data-name={course.name.toLowerCase()}
+                              >
+                                {course.name}
+                              </h3>
+                            </div>
+                          </a>
                         </div>
-                      </a>
+                      </div>
                     ))}
                   </div>
                 </section>
@@ -154,7 +180,96 @@ const groupedCourses = semesters.map((sem) => ({
 </Layout>
 
 <script>
-  const searchInput = document.getElementById("courseSearch");
+  const STORAGE_KEY = "favorite-courses";
+
+  function getFavorites(): any[] {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+    } catch {
+      return [];
+    }
+  }
+
+  function saveFavorites(favs: any[]) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(favs));
+  }
+
+  function toggleFavorite(courseData: any) {
+    const favs = getFavorites();
+    const index = favs.findIndex(
+      (f) => f.id === courseData.id && f.deptId === courseData.deptId,
+    );
+    if (index > -1) favs.splice(index, 1);
+    else favs.push(courseData);
+    saveFavorites(favs);
+    updateUI();
+  }
+
+  function updateUI() {
+    const favs = getFavorites();
+    const favSection = document.getElementById("favorites-section");
+    const favGrid = document.getElementById("favorites-grid");
+    const favCount = document.getElementById("favorites-count");
+
+    // Get current dept URL parts to filter relevant favorites if needed,
+    // but usually favorites section shows all or we filter by current dept.
+    // Let's filter by current department for this page.
+    const currentDeptId = document
+      .querySelector("[data-department-id]")
+      ?.getAttribute("data-department-id");
+
+    document.querySelectorAll(".course-card-wrapper").forEach((card) => {
+      const courseId = card.getAttribute("data-course-id");
+      const deptId = card.getAttribute("data-department-id");
+      const icon = card.querySelector(".fav-icon");
+      const isFav = favs.some((f) => f.id === courseId && f.deptId === deptId);
+
+      if (icon) {
+        if (isFav) {
+          icon.textContent = "★";
+          icon.classList.add("text-yellow-500");
+        } else {
+          icon.textContent = "☆";
+          icon.classList.remove("text-yellow-500");
+        }
+      }
+    });
+
+    if (favGrid && favSection && favCount) {
+      const deptFavs = favs.filter((f) => f.deptId === currentDeptId);
+
+      if (deptFavs.length > 0) {
+        favSection.classList.remove("hidden");
+        favCount.textContent = `(${deptFavs.length})`;
+        favGrid.innerHTML = "";
+
+        deptFavs.forEach((fav) => {
+          // Find original card or create one
+          const original = document.querySelector(
+            `[data-course-id="${fav.id}"][data-department-id="${fav.deptId}"]`,
+          );
+          if (original) {
+            const clone = original.cloneNode(true) as HTMLElement;
+            clone
+              .querySelector(".favorite-btn")
+              ?.addEventListener("click", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleFavorite(fav);
+              });
+            favGrid.appendChild(clone);
+          }
+        });
+      } else {
+        favSection.classList.add("hidden");
+      }
+    }
+  }
+
+  // Search logic
+  const searchInput = document.getElementById(
+    "courseSearch",
+  ) as HTMLInputElement;
   const semesterSections = document.querySelectorAll(".semester-section");
   const noResults = document.getElementById("noResults");
 
@@ -163,15 +278,19 @@ const groupedCourses = semesters.map((sem) => ({
     let totalVisible = 0;
 
     semesterSections.forEach((section) => {
-      const cards = section.querySelectorAll(".course-card");
+      const cards = section.querySelectorAll(".course-card-wrapper");
       let visibleInSemester = 0;
 
       cards.forEach((card) => {
-        const name = (card as HTMLElement).dataset.name || "";
-        const code = (card as HTMLElement).dataset.code || "";
+        const name =
+          (card.querySelector("[data-name]") as HTMLElement)?.dataset.name ||
+          "";
+        const code =
+          (card.querySelector("[data-code]") as HTMLElement)?.dataset.code ||
+          "";
 
         if (name.includes(term) || code.includes(term)) {
-          (card as HTMLElement).style.display = "flex";
+          (card as HTMLElement).style.display = "block";
           visibleInSemester++;
           totalVisible++;
         } else {
@@ -179,15 +298,35 @@ const groupedCourses = semesters.map((sem) => ({
         }
       });
 
-      // Hide or show the whole semester section
       (section as HTMLElement).style.display =
         visibleInSemester > 0 ? "block" : "none";
     });
 
-    if (totalVisible === 0) {
+    if (totalVisible === 0 && term !== "") {
       noResults?.classList.remove("hidden");
     } else {
       noResults?.classList.add("hidden");
     }
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".favorite-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const wrapper = btn.closest(".course-card-wrapper") as HTMLElement;
+        if (wrapper) {
+          toggleFavorite({
+            id: wrapper.dataset.courseId,
+            name: wrapper.dataset.courseName,
+            code: wrapper.dataset.courseCode,
+            uniId: wrapper.dataset.universityId,
+            deptId: wrapper.dataset.departmentId,
+          });
+        }
+      });
+    });
+    updateUI();
+  });
 </script>
+```

@@ -161,9 +161,8 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
                                     ? "color: var(--text-color);"
                                     : "color: var(--text-color-muted);"
                                 }
-                              >
-                                {opt.text}
-                              </span>
+                                set:html={opt.text}
+                              />
                             </div>
                           ))}
                         </div>

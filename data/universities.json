@@ -27,13 +27,644 @@
         "color": "#b91c1c",
         "departments": [
             {
+                "id": "acil-durum-ve-afet-yonetimi",
+                "name": "Acil Durum ve Afet Yönetimi",
+                "shortName": "ADAV",
+                "code": "4031",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/Acil_Durum_ve_Afet.svg"
+            },
+            {
+                "id": "acil-yardim-ve-afet-yonetimi-lisans-tamamlama-programi",
+                "name": "Acil Yardım ve Afet Yönetimi",
+                "shortName": "AYAVLT",
+                "code": "6001",
+                "degree": "lisans-tamamlama",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/Acil_Durum_ve_Afet.svg"
+            },
+            {
+                "id": "adalet",
+                "name": "Adalet",
+                "shortName": "ADL",
+                "code": "4002",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": false,
+                "icon": "/icons/ataturk-aof/Adalet.svg"
+            },
+            {
+                "id": "bankacilik-ve-sigortacilik",
+                "name": "Bankacılık ve Sigortacılık",
+                "shortName": "BANK",
+                "code": "4011",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/bankacilik_ve_sigortacilik.svg"
+            },
+            {
+                "id": "bilgi-yonetimi",
+                "name": "Bilgi Yönetimi",
+                "shortName": "BILY",
+                "code": "4012",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": false,
+                "icon": "/icons/ataturk-aof/bilgi_yonetimi.svg"
+            },
+            {
+                "id": "bilgisayar-programciligi",
+                "name": "Bilgisayar Programcılığı",
+                "shortName": "BP",
+                "code": "4013",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/bilgisayar_pro.svg"
+            },
+            {
+                "id": "buro-yonetimi-ve-yonetici-asistanligi",
+                "name": "Büro Yönetimi ve Yönetici Asistanlığı",
+                "shortName": "BYYA",
+                "code": "4014",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/buro_yonetimi.svg"
+            },
+            {
+                "id": "cagri-merkezi-hizmetleri",
+                "name": "Çağrı Merkezi Hizmetleri",
+                "shortName": "CMH",
+                "code": "4015",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/cagri_merkezi.svg"
+            },
+            {
+                "id": "cocuk-gelisimi",
+                "name": "Çocuk Gelişimi",
+                "shortName": "CG",
+                "code": "4016",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": false,
+                "icon": "/icons/ataturk-aof/cocuk_gelisimi.svg"
+            },
+            {
+                "id": "cocuk-gelisimi-lisans",
+                "name": "Çocuk Gelişimi Lisans",
+                "shortName": "CGL",
+                "code": "5001",
+                "degree": "lisans",
+                "duration": 8,
+                "active": false,
+                "icon": "/icons/ataturk-aof/cocukgelisimi2.svg"
+            },
+            {
+                "id": "dis-ticaret",
+                "name": "Dış Ticaret",
+                "shortName": "DT",
+                "code": "4017",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/dis_ticaret.svg"
+            },
+            {
+                "id": "e-ticaret-ve-pazarlama",
+                "name": "E-Ticaret ve Pazarlama",
+                "shortName": "ETP",
+                "code": "4019",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/E-TicaretvePazarlama.svg"
+            },
+            {
+                "id": "ebelik-uzem",
+                "name": "Ebelik (UZEM)",
+                "shortName": "EBLITAM",
+                "code": "7001",
+                "degree": "uzem-lisans-tamamlama",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/ebitam.svg"
+            },
+            {
+                "id": "egzersiz-ve-spor-bilimleri",
+                "name": "Egzersiz ve Spor Bilimleri",
+                "shortName": "ESB",
+                "code": "5002",
+                "degree": "lisans",
+                "duration": 8,
+                "active": false,
+                "icon": "/icons/ataturk-aof/egzersizvespobilimleri.svg"
+            },
+            {
+                "id": "egitim-programlari-ve-ogretim-tyl",
+                "name": "Eğitim Programları ve Öğretim (TYL)",
+                "shortName": "EPOTYL",
+                "code": "8001",
+                "degree": "tezsiz-yuksek-lisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/egitim_programlari_yonetim_tyl.svg"
+            },
+            {
+                "id": "emlak-yonetimi",
+                "name": "Emlak Yönetimi",
+                "shortName": "EY",
+                "code": "4018",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/emlak_yonetimi.svg"
+            },
+            {
+                "id": "fotografcilik-ve-kameramanlik",
+                "name": "Fotoğrafçılık ve Kameramanlık",
+                "shortName": "FOTO",
+                "code": "4020",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/fotogracilik.svg"
+            },
+            {
                 "id": "grafik-sanatlar",
                 "name": "Grafik Sanatlar",
                 "shortName": "GS",
-                "code": "GS",
+                "code": "5003",
                 "degree": "lisans",
                 "duration": 8,
-                "active": true
+                "active": true,
+                "icon": "/icons/ataturk-aof/grafiksanatlar.svg"
+            },
+            {
+                "id": "guvenlik-ve-adli-bilimler-tyl",
+                "name": "Güvenlik ve Adli Bilimler (TYL)",
+                "shortName": "GABTYL",
+                "code": "8002",
+                "degree": "tezsiz-yuksek-lisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/gab_tyl.svg"
+            },
+            {
+                "id": "halkla-iliskiler-ve-tanitim",
+                "name": "Halkla İlişkiler ve Tanıtım",
+                "shortName": "HIT",
+                "code": "4021",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/halklailiskiler.svg"
+            },
+            {
+                "id": "halkla-iliskiler-ve-tanitim-lisans",
+                "name": "Halkla İlişkiler ve Tanıtım Lisans",
+                "shortName": "HITL",
+                "code": "5004",
+                "degree": "lisans",
+                "duration": 8,
+                "active": true,
+                "icon": "/icons/ataturk-aof/halklailiskiler.svg"
+            },
+            {
+                "id": "hemsirelik-uzem",
+                "name": "Hemşirelik (UZEM)",
+                "shortName": "HELITAM",
+                "code": "7002",
+                "degree": "uzem-lisans-tamamlama",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/helitam.svg"
+            },
+            {
+                "id": "ilahiyat-uzem",
+                "name": "İlahiyat (UZEM)",
+                "shortName": "ILITAM",
+                "code": "7003",
+                "degree": "uzem-lisans-tamamlama",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/ilitam.svg"
+            },
+            {
+                "id": "islami-ilimler",
+                "name": "İslami İlimler (İlahiyat)",
+                "shortName": "II",
+                "code": "4022",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/islami_ilimler.svg"
+            },
+            {
+                "id": "is-sagligi-ve-guvenligi",
+                "name": "İş Sağlığı ve Güvenliği",
+                "shortName": "ISG",
+                "code": "4023",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/is_sagligi_ve.svg"
+            },
+            {
+                "id": "is-sagligi-ve-guvenligi-lisans-tamamlama-programi",
+                "name": "İş Sağlığı ve Güvenliği Lisans Tamamlama",
+                "shortName": "ISGLT",
+                "code": "6002",
+                "degree": "lisans-tamamlama",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/is_sagligi_ve.svg"
+            },
+            {
+                "id": "is-sagligi-ve-guvenligi-tyl",
+                "name": "İş Sağlığı ve Güvenliği (TYL)",
+                "shortName": "ISGTYL",
+                "code": "8003",
+                "degree": "tezsiz-yuksek-lisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/is_sagligi_ve_yonetimi_tyl.svg"
+            },
+            {
+                "id": "isletme",
+                "name": "İşletme",
+                "shortName": "ISL",
+                "code": "5005",
+                "degree": "lisans",
+                "duration": 8,
+                "active": true,
+                "icon": "/icons/ataturk-aof/İşletme.svg"
+            },
+            {
+                "id": "isletme-tyl",
+                "name": "İşletme (TYL)",
+                "shortName": "ISLTYL",
+                "code": "8004",
+                "degree": "tezsiz-yuksek-lisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/isletme_tyl.svg"
+            },
+            {
+                "id": "isletme-ingilizce-tyl",
+                "name": "İşletme İngilizce (TYL)",
+                "shortName": "ISLENTYL",
+                "code": "8005",
+                "degree": "tezsiz-yuksek-lisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/isletme_ingilizce.svg"
+            },
+            {
+                "id": "isletme-yonetimi",
+                "name": "İşletme Yönetimi",
+                "shortName": "IY",
+                "code": "4024",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/isletme_yonetimi.svg"
+            },
+            {
+                "id": "kamu-yonetimi",
+                "name": "Kamu Yönetimi",
+                "shortName": "KY",
+                "code": "5006",
+                "degree": "lisans",
+                "duration": 8,
+                "active": true,
+                "icon": "/icons/ataturk-aof/kamuyonetimi.svg"
+            },
+            {
+                "id": "laborant-ve-veteriner-saglik",
+                "name": "Laborant ve Veteriner Sağlık",
+                "shortName": "LVS",
+                "code": "4025",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": false,
+                "icon": "/icons/ataturk-aof/lobarant.svg"
+            },
+            {
+                "id": "lojistik",
+                "name": "Lojistik",
+                "shortName": "LOJ",
+                "code": "4026",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/Lojistik.svg"
+            },
+            {
+                "id": "matematik-egitimi-tyl",
+                "name": "Matematik Eğitimi (TYL)",
+                "shortName": "MATTYL",
+                "code": "8006",
+                "degree": "tezsiz-yuksek-lisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/matematik_programi.svg"
+            },
+            {
+                "id": "muhasebe-ve-vergi-uygulamalari",
+                "name": "Muhasebe ve Vergi Uygulamaları",
+                "shortName": "MVU",
+                "code": "4027",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/muhasebe_ve_vergi.svg"
+            },
+            {
+                "id": "ozel-guvenlik-ve-koruma",
+                "name": "Özel Güvenlik ve Koruma",
+                "shortName": "OGK",
+                "code": "4028",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": false,
+                "icon": "/icons/ataturk-aof/ozel_guvenlik.svg"
+            },
+            {
+                "id": "pazarlama-tyl",
+                "name": "Pazarlama (TYL)",
+                "shortName": "PAZTYL",
+                "code": "8007",
+                "degree": "tezsiz-yuksek-lisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/pazarlama_ytl.svg"
+            },
+            {
+                "id": "perfuzyon-uzem",
+                "name": "Perfüzyon (UZEM)",
+                "shortName": "PERUZEM",
+                "code": "7004",
+                "degree": "uzem-lisans-tamamlama",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/perfuzyon.svg"
+            },
+            {
+                "id": "radyo-ve-televizyon-programciligi",
+                "name": "Radyo ve Televizyon Programcılığı",
+                "shortName": "RTP",
+                "code": "4029",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": false,
+                "icon": "/icons/ataturk-aof/radyotelevizyon.svg"
+            },
+            {
+                "id": "reklamcilik",
+                "name": "Reklamcılık",
+                "shortName": "REK",
+                "code": "4030",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/reklamcilik.svg"
+            },
+            {
+                "id": "reklamcilik-lisans",
+                "name": "Reklamcılık Lisans",
+                "shortName": "REKL",
+                "code": "5007",
+                "degree": "lisans",
+                "duration": 8,
+                "active": true,
+                "icon": "/icons/ataturk-aof/reklamcilik.svg"
+            },
+            {
+                "id": "rekreasyon",
+                "name": "Rekreasyon",
+                "shortName": "REKR",
+                "code": "5008",
+                "degree": "lisans",
+                "duration": 8,
+                "active": true,
+                "icon": "/icons/ataturk-aof/Rekreasyon.svg"
+            },
+            {
+                "id": "saglik-kurumlari-isletmeciligi",
+                "name": "Sağlık Kurumları İşletmeciliği",
+                "shortName": "SKI",
+                "code": "4032",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/saglik_kurumlari_is.svg"
+            },
+            {
+                "id": "saglik-yonetimi",
+                "name": "Sağlık Yönetimi Lisans",
+                "shortName": "SYL",
+                "code": "5009",
+                "degree": "lisans",
+                "duration": 8,
+                "active": true,
+                "icon": "/icons/ataturk-aof/saglikyonetimi3.svg"
+            },
+            {
+                "id": "saglik-yonetimi-lisans-tamamlama-programi",
+                "name": "Sağlık Yönetimi",
+                "shortName": "SYLT",
+                "code": "6003",
+                "degree": "lisans-tamamlama",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/saglik_yonetimi_tyl.svg"
+            },
+            {
+                "id": "saglik-yonetimi-tyl",
+                "name": "Sağlık Yönetimi (TYL)",
+                "shortName": "SYTYL",
+                "code": "8008",
+                "degree": "tezsiz-yuksek-lisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/saglik_yonetimi_tyl.svg"
+            },
+            {
+                "id": "sivil-hava-ulastirma-isletmeciligi",
+                "name": "Sivil Hava Ulaştırma İşletmeciliği",
+                "shortName": "SHUI",
+                "code": "4033",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/sivil_havacilik.svg"
+            },
+            {
+                "id": "sosyal-hizmet",
+                "name": "Sosyal Hizmet Lisans",
+                "shortName": "SHL",
+                "code": "5010",
+                "degree": "lisans",
+                "duration": 8,
+                "active": true,
+                "icon": "/icons/ataturk-aof/sosyalhizmet2.svg"
+            },
+            {
+                "id": "sosyal-hizmet-lisans-tamamlama-programi",
+                "name": "Sosyal Hizmet Lisans Tamamlama",
+                "shortName": "SHLT",
+                "code": "6004",
+                "degree": "lisans-tamamlama",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/sosyalhizmetler.svg"
+            },
+            {
+                "id": "sosyal-hizmetler",
+                "name": "Sosyal Hizmetler",
+                "shortName": "SH",
+                "code": "4034",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/sosyalhizmetler.svg"
+            },
+            {
+                "id": "sosyoloji",
+                "name": "Sosyoloji",
+                "shortName": "SOS",
+                "code": "5011",
+                "degree": "lisans",
+                "duration": 8,
+                "active": true,
+                "icon": "/icons/ataturk-aof/Sosyoloji.svg"
+            },
+            {
+                "id": "spor-yonetimi",
+                "name": "Spor Yönetimi",
+                "shortName": "SY",
+                "code": "4035",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": false,
+                "icon": "/icons/ataturk-aof/sporyonetimi.svg"
+            },
+            {
+                "id": "tarih",
+                "name": "Tarih",
+                "shortName": "TAR",
+                "code": "5012",
+                "degree": "lisans",
+                "duration": 8,
+                "active": true,
+                "icon": "/icons/ataturk-aof/Tarih.svg"
+            },
+            {
+                "id": "tekstil-ve-moda-tasarimi",
+                "name": "Tekstil ve Moda Tasarımı",
+                "shortName": "TMT",
+                "code": "5013",
+                "degree": "lisans",
+                "duration": 8,
+                "active": true,
+                "icon": "/icons/ataturk-aof/tekstilvemodatasarim.svg"
+            },
+            {
+                "id": "tibbi-dokumantasyon-ve-sekreterlik",
+                "name": "Tıbbi Dökümantasyon ve Sekreterlik",
+                "shortName": "TDS",
+                "code": "4036",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/tibbidokumantasyon.svg"
+            },
+            {
+                "id": "turizm-ve-otel-isletmeciligi",
+                "name": "Turizm ve Otel İşletmeciliği",
+                "shortName": "TOI",
+                "code": "4037",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/turizmveotel.svg"
+            },
+            {
+                "id": "turizm-ve-seyahat-hizmetleri",
+                "name": "Turizm ve Seyahat Hizmetleri",
+                "shortName": "TSH",
+                "code": "4038",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": false,
+                "icon": "/icons/ataturk-aof/turizmveseyahat.svg"
+            },
+            {
+                "id": "turkce-egitimi-tyl",
+                "name": "Türkçe Eğitimi (TYL)",
+                "shortName": "TURTYL",
+                "code": "8009",
+                "degree": "tezsiz-yuksek-lisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/turkce_egitimi_tyl.svg"
+            },
+            {
+                "id": "web-tasarimi-ve-kodlama",
+                "name": "Web Tasarımı ve Kodlama",
+                "shortName": "WEB",
+                "code": "4039",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/webkodlama.svg"
+            },
+            {
+                "id": "yeni-medya-ve-gazetecilik",
+                "name": "Yeni Medya ve Gazetecilik",
+                "shortName": "YMG",
+                "code": "4040",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/yenimedya.svg"
+            },
+            {
+                "id": "yerel-yonetimler",
+                "name": "Yerel Yönetimler",
+                "shortName": "YY",
+                "code": "4041",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/yerelyonetimler.svg"
+            },
+            {
+                "id": "yoneticiler-icin-isletme-tyl",
+                "name": "Yöneticiler için İşletme (TYL)",
+                "shortName": "YIITYL",
+                "code": "8010",
+                "degree": "tezsiz-yuksek-lisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/yoneticiler_icin_isletme.svg"
+            },
+            {
+                "id": "yoneticiler-icin-isletme-ingilizce-tyl",
+                "name": "Yöneticiler için İşletme İngilizce (TYL)",
+                "shortName": "YIIENTYL",
+                "code": "8011",
+                "degree": "tezsiz-yuksek-lisans",
+                "duration": 4,
+                "active": true,
+                "icon": "/icons/ataturk-aof/yoneticileer_icin_isletme_ing.svg"
             }
         ]
     },
