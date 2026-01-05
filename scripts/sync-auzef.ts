@@ -2,47 +2,14 @@
 import fs from 'fs';
 import path from 'path';
 import { cleanHtml } from './utils/clean-html.js';
+import type { AppQuestion } from './utils/sync-core.js';
+import { saveQuestions, slugify } from './utils/sync-core.js';
 
 // Configurations
 const PORTAL_ROOT = process.cwd();
 const DENEMELER_ROOT = path.resolve(PORTAL_ROOT, '../ataaof-denemeler');
 const SOURCE_JSON_DIR = path.join(DENEMELER_ROOT, 'output/Auzef/json');
 const TARGET_DIR = path.join(PORTAL_ROOT, 'data/questions/auzef');
-
-// Ensure target directory exists
-if (!fs.existsSync(TARGET_DIR)) {
-    console.log(`Creating directory: ${TARGET_DIR}`);
-    fs.mkdirSync(TARGET_DIR, { recursive: true });
-}
-
-interface AppQuestion {
-    id: string;
-    unitNumber: number;
-    text: string;
-    options: { [key: string]: string };
-    correctAnswer: string;
-    explanation?: string;
-}
-
-// Slugify handling Turkish chars
-function slugify(text: string): string {
-    const trMap: { [key: string]: string } = {
-        'ç': 'c', 'Ç': 'c',
-        'ğ': 'g', 'Ğ': 'g',
-        'ş': 's', 'Ş': 's',
-        'ü': 'u', 'Ü': 'u',
-        'ö': 'o', 'Ö': 'o',
-        'ı': 'i', 'İ': 'i',
-        'â': 'a', 'î': 'i', 'û': 'u'
-    };
-    return text
-        .split('')
-        .map(c => trMap[c] || c)
-        .join('')
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/^-+|-+$/g, '');
-}
 
 interface SourceQuestion {
     SoruID: string | number;
@@ -103,18 +70,12 @@ function processAll() {
         const files = fs.readdirSync(termPath);
         files.forEach(f => {
             if (!f.endsWith('.json')) return;
-            // Name format: Auzef - Dönem X - Course Name - Type [ - Raw].json
-            // We want to avoid Raw files
+            // Avoid Raw files
             if (f.endsWith(' - Raw.json')) return;
 
             // Pattern: Auzef - Dönem X - [Course Name] - [Type] ...
             const parts = f.replace('.json', '').split(' - ');
             if (parts.length < 4) return;
-
-            // parts[0] = Auzef
-            // parts[1] = Dönem X
-            // parts[2] = Course Name
-            // parts[3] = Type (Alıştırma Soruları, Sorular, etc.)
 
             const courseName = parts[2];
             const slug = slugify(courseName);
@@ -135,15 +96,12 @@ function processAll() {
         filePaths.forEach(fp => {
             try {
                 const rawContent = fs.readFileSync(fp, 'utf-8');
-                // Clean problematic control chars before parse
                 const cleanedRaw = rawContent.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, '');
                 const raw = JSON.parse(cleanedRaw);
                 const list = Array.isArray(raw) ? raw : (raw.questions || []);
                 const questions = processList(list);
 
                 questions.forEach(q => {
-                    // Unique check. Some IDs might collide if they come from different sources but refer to same object?
-                    // Or duplicates across files.
                     if (!seenIds.has(q.id)) {
                         allQuestions.push(q);
                         seenIds.add(q.id);
@@ -154,11 +112,7 @@ function processAll() {
             }
         });
 
-        if (allQuestions.length > 0) {
-            const dest = path.join(TARGET_DIR, `${slug}.json`);
-            fs.writeFileSync(dest, JSON.stringify(allQuestions, null, 2));
-            console.log(`✅ Synced ${slug} (${allQuestions.length} questions)`);
-        }
+        saveQuestions(slug, allQuestions, TARGET_DIR);
     }
 }
 
