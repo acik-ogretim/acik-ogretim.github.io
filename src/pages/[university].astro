@@ -140,9 +140,19 @@ const style = uniStyles[university.id] || {
         </div>
         <div class="flex flex-col md:flex-row gap-6 items-center">
           <div
-            class={`w-20 h-20 rounded-2xl flex items-center justify-center text-4xl bg-gradient-to-br ${style.gradient} shadow-lg text-white`}
+            class={`w-20 h-20 rounded-2xl flex items-center justify-center text-4xl bg-gradient-to-br ${style.gradient} shadow-lg text-white overflow-hidden`}
           >
-            {style.icon}
+            {
+              university.logo ? (
+                <img
+                  src={university.logo}
+                  alt={university.name}
+                  class="w-full h-full object-contain p-4"
+                />
+              ) : (
+                style.icon
+              )
+            }
           </div>
           <div class="text-center md:text-left flex-1">
             <h1 class="text-2xl md:text-3xl font-bold text-theme mb-1">

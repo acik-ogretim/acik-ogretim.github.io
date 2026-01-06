@@ -1,7 +1,9 @@
 import fs from "fs";
 
-const HTML_FILE = "/Users/wildgenie/Projects/ataaof-denemeler/data/curriculum_input.html";
-const OUTPUT_FILE = "/Users/wildgenie/Projects/acik-ogretim-portal/data/courses/ataturk-aof/cocuk-gelisimi-lisans.json";
+import path from "path";
+
+const HTML_FILE = path.join(process.cwd(), "../ataaof-denemeler/data/curriculum_input.html");
+const OUTPUT_FILE = path.join(process.cwd(), "data/courses/ataturk-aof/cocuk-gelisimi-lisans.json");
 
 function slugify(text: string): string {
     return text.toString().toLowerCase()

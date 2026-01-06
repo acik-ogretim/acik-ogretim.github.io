@@ -9,6 +9,7 @@ export interface University {
     shortName: string;
     faculty: string;
     website: string;
+    logo?: string;
     color: string;
 }
 

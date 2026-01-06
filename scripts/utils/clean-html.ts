@@ -36,7 +36,7 @@ export function cleanHtml(text: string): string {
     cleaned = cleaned.replace(/[\u200b\u200c\u200d\ufeff]/g, '');
 
     // Load into Cheerio
-    const $ = cheerio.load(cleaned, { xmlMode: false, decodeEntities: false });
+    const $ = cheerio.load(cleaned, { xmlMode: false });
 
     // 1. Handle o:p
     $('*').each((_, el) => {
@@ -98,9 +98,12 @@ export function cleanHtml(text: string): string {
 
     // 6. Remove empty tags
     $('*').each((_, el) => {
-        if (el.tagName === 'HTML' || el.tagName === 'HEAD' || el.tagName === 'BODY') return;
+        const tagEl = el as any;
+        if (!tagEl.tagName) return;
 
-        const tagName = el.tagName.toLowerCase();
+        if (tagEl.tagName === 'HTML' || tagEl.tagName === 'HEAD' || tagEl.tagName === 'BODY') return;
+
+        const tagName = tagEl.tagName.toLowerCase();
         if (['img', 'br', 'a'].includes(tagName)) return;
 
         const text = $(el).text().trim();
