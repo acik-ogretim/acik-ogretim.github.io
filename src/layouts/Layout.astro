@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import "../styles/print.css";
 
 interface Props {
   title: string;
@@ -137,21 +138,23 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
               >
             </button>
             <button
-              onclick="toggleReaderMode()"
-              class="p-1.5 rounded-full hover:bg-slate-700/50 text-slate-400 hover:text-green-400 transition-colors"
-              title="Okuma Modu"
+              onclick="openQuizSettings()"
+              class="p-1.5 rounded-full hover:bg-slate-700/50 text-slate-400 hover:text-teal-400 transition-colors"
+              title="Sınav Ayarları"
             >
               <svg
+                xmlns="http://www.w3.org/2000/svg"
                 class="w-5 h-5"
+                viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
               >
+                <circle cx="12" cy="12" r="3"></circle>
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
                 ></path>
               </svg>
             </button>
@@ -230,6 +233,12 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
             class="flex items-center gap-2 text-slate-400 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800"
           >
             <span class="text-sm font-medium">Sepya</span>
+          </button>
+          <button
+            onclick="openQuizSettings()"
+            class="flex items-center gap-2 text-slate-400 hover:text-teal-400 px-3 py-2 rounded-lg hover:bg-slate-800"
+          >
+            <span class="text-sm font-medium">Ayarlar</span>
           </button>
         </div>
       </div>
@@ -379,6 +388,31 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
         localStorage.setItem("theme", theme);
       }
       window.setTheme = setTheme;
+
+      function openQuizSettings() {
+        if (window.quizPlayer) {
+          window.quizPlayer.toggleSettings();
+        } else {
+          // Optional: Show a tooltip or ignore if not on quiz page.
+          // For now, we can redirect to quiz page if user wants settings but isn't there,
+          // or just check if we are on a course page that has the player.
+          const player = document.getElementById("quiz-player-container");
+          if (!player) {
+            // Maybe redirect to /quiz?
+            // window.location.href = '/quiz';
+            console.log("Quiz player not active");
+          }
+        }
+      }
+      window.openQuizSettings = openQuizSettings;
+
+      // Global speech cleanup
+      window.addEventListener("pagehide", () => {
+        if (window.speechSynthesis) window.speechSynthesis.cancel();
+      });
+      window.addEventListener("beforeunload", () => {
+        if (window.speechSynthesis) window.speechSynthesis.cancel();
+      });
     </script>
   </body>
 </html>

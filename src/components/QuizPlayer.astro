@@ -1,0 +1,587 @@
+---
+// QuizPlayer.astro
+---
+
+<!-- Settings Drawer -->
+<div
+    id="settings-drawer"
+    class="fixed inset-0 z-[100] hidden items-center justify-center p-4"
+>
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-[#0f172a]/80 backdrop-blur-sm"></div>
+
+    <!-- Modal Content -->
+    <div
+        class="relative w-full max-w-lg bg-[#1e293b] rounded-3xl border border-slate-700 shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300"
+    >
+        <div
+            class="p-6 border-b border-slate-700 flex items-center justify-between"
+        >
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                <span class="text-2xl">⚙️</span> Sınav Ayarları
+            </h3>
+            <button
+                id="btn-close-settings"
+                class="p-2 rounded-xl hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
+                aria-label="Kapat"
+            >
+                <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div class="p-6 space-y-8 max-h-[70vh] overflow-y-auto no-scrollbar">
+            <!-- Filtering Section -->
+            <div class="space-y-4">
+                <h4
+                    class="text-xs font-bold text-slate-400 uppercase tracking-wider"
+                >
+                    Filtreleme ve Soru Seçimi
+                </h4>
+                <div class="grid grid-cols-1 gap-4">
+                    <label
+                        class="flex items-center justify-between p-4 bg-slate-800/50 rounded-2xl border border-slate-700/50 cursor-pointer group hover:border-teal-500/50 transition-all"
+                    >
+                        <div class="flex flex-col">
+                            <span
+                                class="text-sm font-semibold text-white group-hover:text-teal-400 transition-colors"
+                                <span
+                                class="text-sm font-semibold text-white group-hover:text-teal-400 transition-colors"
+                                >Yanlışları Çöz</span
+                            >
+                            <span class="text-xs text-slate-400"
+                                >Hatalı cevaplanan soruları getir</span
+                            >
+                        </div>
+                        <div
+                            class="relative inline-flex items-center cursor-pointer"
+                        >
+                            <input
+                                type="checkbox"
+                                id="setting-incorrect"
+                                class="sr-only peer"
+                            />
+                            <div
+                                class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-500"
+                            >
+                            </div>
+                        </div>
+                    </label>
+
+                    <label
+                        class="flex items-center justify-between p-4 bg-slate-800/50 rounded-2xl border border-slate-700/50 cursor-pointer group hover:border-teal-500/50 transition-all"
+                    >
+                        <div class="flex flex-col">
+                            <span
+                                class="text-sm font-semibold text-white group-hover:text-teal-400 transition-colors"
+                                >Cevaplanmamışları Çöz</span
+                            >
+                            <span class="text-xs text-slate-400"
+                                >Henüz görmediğin soruları getir</span
+                            >
+                        </div>
+                        <div
+                            class="relative inline-flex items-center cursor-pointer"
+                        >
+                            <input
+                                type="checkbox"
+                                id="setting-unanswered"
+                                class="sr-only peer"
+                            />
+                            <div
+                                class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-500"
+                            >
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <span class="text-sm font-semibold text-white"
+                        >Ünite Filtreleme</span
+                    >
+                    <select
+                        id="setting-unit"
+                        class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 focus:ring-2 focus:ring-teal-500 outline-none transition-all"
+                    >
+                        <option value="all">Tüm Üniteler</option>
+                        <option value="first_half">İlk Yarı (1-7)</option>
+                        <option value="second_half">İkinci Yarı (8-14)</option>
+                    </select>
+                </div>
+            </div>
+
+            <hr class="border-slate-700" />
+
+            <!-- View Options -->
+            <div class="space-y-4">
+                <h4
+                    class="text-xs font-bold text-slate-400 uppercase tracking-wider"
+                >
+                    Görünüm ve Kontroller
+                </h4>
+                <div class="grid grid-cols-1 gap-3">
+                    <label
+                        class="flex items-center justify-between cursor-pointer group"
+                    >
+                        <span
+                            class="text-sm font-medium text-slate-300 group-hover:text-teal-400 transition-colors"
+                            >Cevapları Göster</span
+                        >
+                        <div
+                            class="relative inline-flex items-center cursor-pointer"
+                        >
+                            <input
+                                type="checkbox"
+                                id="setting-show-answers"
+                                class="sr-only peer"
+                                checked
+                            />
+                            <div
+                                class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-500"
+                            >
+                            </div>
+                        </div>
+                    </label>
+
+                    <label
+                        class="flex items-center justify-between cursor-pointer group"
+                    >
+                        <span
+                            class="text-sm font-medium text-slate-300 group-hover:text-teal-400 transition-colors"
+                            >Açıklamaları Göster</span
+                        >
+                        <div
+                            class="relative inline-flex items-center cursor-pointer"
+                        >
+                            <input
+                                type="checkbox"
+                                id="setting-show-explanations"
+                                class="sr-only peer"
+                                checked
+                            />
+                            <div
+                                class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-500"
+                            >
+                            </div>
+                        </div>
+                    </label>
+
+                    <label
+                        class="flex items-center justify-between cursor-pointer group"
+                    >
+                        <span
+                            class="text-sm font-medium text-slate-300 group-hover:text-teal-400 transition-colors"
+                            >Sadece Doğru Şıkkı Göster</span
+                        >
+                        <div
+                            class="relative inline-flex items-center cursor-pointer"
+                        >
+                            <input
+                                type="checkbox"
+                                id="setting-hide-incorrect-options"
+                                class="sr-only peer"
+                            />
+                            <div
+                                class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-500"
+                            >
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Audio Settings -->
+            <div class="space-y-4">
+                <h4
+                    class="text-xs font-bold text-slate-400 uppercase tracking-wider"
+                >
+                    Ses Ayarları
+                </h4>
+                <div class="space-y-4">
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-slate-300"
+                            >Ses Modeli</label
+                        >
+                        <select
+                            id="setting-voice"
+                            class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500 transition-colors"
+                        >
+                            <option value="">Varsayılan Ses</option>
+                        </select>
+                        <button
+                            id="btn-test-voice-settings"
+                            class="mt-1 w-full py-1.5 text-xs font-bold text-teal-400 bg-teal-400/10 hover:bg-teal-400/20 border border-teal-400/20 rounded transition-colors"
+                        >
+                            Ses Ayarlarını Test Et
+                        </button>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-slate-300"
+                            >Okuma Hızı</label
+                        >
+                        <select
+                            id="setting-playback-rate"
+                            class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500 transition-colors"
+                        >
+                            <option value="0.8">0.8x - Yavaş</option>
+                            <option value="1.0">1.0x - Normal</option>
+                            <option value="1.2" selected>1.2x - Hızlı</option>
+                            <option value="1.5">1.5x - Çok Hızlı</option>
+                            <option value="2.0">2.0x - Maksimum</option>
+                            <option value="2.5">2.5x - Ultra Hızlı</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="p-4 bg-slate-800/50 border-t border-slate-700 flex justify-end"
+        >
+            <div class="flex gap-2">
+                <button
+                    id="btn-apply-filters"
+                    class="flex-1 py-3 bg-teal-500 hover:bg-teal-400 text-slate-900 rounded-xl font-bold transition-all active:scale-[0.98] shadow-lg shadow-teal-500/20"
+                >
+                    Kapat
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Premium Player Header (Fixed Bottom) -->
+<header
+    id="quiz-player-bar"
+    class="no-print transition-all p-1 fixed bottom-0 left-0 right-0 z-[60] bg-[#0f172a]/80 backdrop-blur-sm border-t border-slate-700/50 transform translate-y-full duration-300 shadow-xl select-none"
+    style="-webkit-touch-callout: none;"
+>
+    <div
+        class="container mx-auto flex items-center justify-between gap-1 sm:gap-4 px-1.5 sm:px-4 h-14 sm:h-16 overflow-hidden md:overflow-visible"
+    >
+        <!-- Left Part: Navigation & Title -->
+        <div class="flex items-center gap-1 sm:gap-2 min-w-0">
+            <div
+                class="flex flex-col min-w-0 cursor-pointer p-0.5 sm:p-1 rounded-lg hover:bg-slate-700/30 transition-all"
+            >
+                <span
+                    id="player-status-text"
+                    class="block text-[8px] sm:text-[10px] md:text-xs text-slate-400 font-bold truncate"
+                    >Ünite Bilgisi</span
+                >
+            </div>
+        </div>
+
+        <!-- Center Part: Statistics (Redesigned) -->
+        <div
+            id="stats-container"
+            class="hidden xs:flex items-center gap-1.5 sm:gap-3 bg-slate-800/50 border border-slate-700/50 rounded-xl px-1.5 sm:px-3 py-1 shadow-inner shrink-0"
+        >
+            <div
+                class="flex flex-col items-center border-r border-slate-700 pr-1.5 sm:pr-3"
+            >
+                <div
+                    class="text-[10px] sm:text-lg font-black text-white leading-none"
+                >
+                    <span id="success-rate">0</span>%
+                </div>
+                <div
+                    id="question-count"
+                    class="text-[8px] sm:text-[9px] text-slate-500 font-bold"
+                >
+                    0/0
+                </div>
+            </div>
+            <div class="flex flex-col gap-0.5 min-w-[1.5rem] sm:min-w-[3rem]">
+                <div class="flex items-center justify-between gap-1">
+                    <span
+                        class="hidden sm:inline text-[8px] sm:text-[9px] font-bold text-slate-500"
+                        >D:</span
+                    >
+                    <span
+                        id="correct-count"
+                        class="text-[9px] sm:text-xs font-black text-green-500"
+                        >0</span
+                    >
+                </div>
+                <div class="flex items-center justify-between gap-1">
+                    <span
+                        class="hidden sm:inline text-[8px] sm:text-[9px] font-bold text-slate-500"
+                        >Y:</span
+                    >
+                    <span
+                        id="wrong-count"
+                        class="text-[9px] sm:text-xs font-black text-red-500"
+                        >0</span
+                    >
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Part: Interaction Controls -->
+        <div class="flex items-center gap-1 sm:gap-2 ml-auto">
+            <!-- Mode Buttons -->
+            <!-- Mode Buttons -->
+            <div
+                class="flex items-center bg-slate-800/80 p-0.5 rounded-xl border border-slate-700/50 gap-0.5 sm:gap-1"
+            >
+                <button
+                    id="btn-toggle-reader"
+                    class="p-1 sm:p-1.5 rounded-full hover:bg-slate-700/50 text-slate-400 hover:text-green-400 transition-colors"
+                    title="Sesli Okuma Modu"
+                >
+                    <svg
+                        class="w-5 h-5 sm:w-5 sm:h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
+                        ></path>
+                    </svg>
+                </button>
+
+                <button
+                    id="btn-speed"
+                    class="hidden md:flex items-center justify-center h-8 px-3 text-[10px] font-black text-slate-400 hover:text-teal-400 transition-colors border-l border-r border-slate-700/50"
+                    >1.2x</button
+                >
+
+                <button
+                    id="btn-toggle-interactive"
+                    class="flex items-center gap-0.5 sm:gap-1.5 h-8 px-1.5 sm:px-4 bg-teal-500 hover:bg-teal-400 text-slate-900 rounded-lg text-[10px] sm:text-xs font-black transition-all shadow-lg active:scale-95 whitespace-nowrap min-w-[32px] sm:min-w-[80px] justify-center mx-0.5 sm:mx-1"
+                    title="İnteraktif Çözüm Modu"
+                >
+                    <span class="btn-icon">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="3"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><polygon points="6 3 20 12 6 21 6 3"
+                            ></polygon></svg
+                        >
+                    </span>
+                    <span class="btn-text hidden md:inline">Çöz</span>
+                </button>
+            </div>
+
+            <!-- Navigation Controls -->
+            <div class="flex items-center gap-0.5 sm:gap-1">
+                <button
+                    id="btn-prev"
+                    class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:bg-slate-700 hover:text-white disabled:opacity-20 transition-all"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><polygon points="11 19 2 12 11 5 11 19"
+                        ></polygon><polygon points="22 19 13 12 22 5 22 19"
+                        ></polygon></svg
+                    >
+                </button>
+
+                <div
+                    id="speech-controls"
+                    class="flex items-center bg-slate-800/80 rounded-lg border border-slate-700/50 overflow-hidden"
+                >
+                    <button
+                        id="btn-read-question"
+                        class="h-8 sm:h-9 px-1.5 sm:px-3 flex items-center gap-1.5 text-slate-400 hover:text-teal-400 hover:bg-slate-700/50 transition-all border-r border-slate-700/50"
+                        title="Soruyu Oku"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><path
+                                d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"
+                            ></path><path d="M19 10v1a7 7 0 0 1-14 0v-1"
+                            ></path><line x1="12" y1="19" x2="12" y2="23"
+                            ></line><line x1="8" y1="23" x2="16" y2="23"
+                            ></line></svg
+                        >
+                        <span
+                            class="text-[10px] font-bold hidden sm:inline text-teal-400/80"
+                            >Soru</span
+                        >
+                    </button>
+
+                    <button
+                        id="btn-read-explanation"
+                        class="h-8 sm:h-9 px-1.5 sm:px-3 flex items-center gap-1.5 text-slate-400 hover:text-teal-400 hover:bg-slate-700/50 transition-all border-r border-slate-700/50"
+                        title="Açıklamayı Oku"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><path d="M12 7v14"></path><path
+                                d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+                            ></path></svg
+                        >
+                        <span
+                            class="text-[10px] font-bold hidden sm:inline text-teal-400/80"
+                            >Analiz</span
+                        >
+                    </button>
+
+                    <button
+                        id="btn-stop-speech"
+                        class="h-8 sm:h-9 w-8 sm:w-9 flex items-center justify-center text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-all"
+                        title="Okumayı Durdur"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><rect x="6" y="6" width="12" height="12"
+                            ></rect></svg
+                        >
+                    </button>
+                </div>
+
+                <button
+                    id="btn-next"
+                    class="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-lg text-slate-400 hover:bg-slate-700 hover:text-white disabled:opacity-20 transition-all"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><polygon points="13 19 22 12 13 5 13 19"
+                        ></polygon><polygon points="2 19 11 12 2 5 2 19"
+                        ></polygon></svg
+                    >
+                </button>
+            </div>
+
+            <!-- Meta Controls -->
+            <button
+                id="btn-open-settings"
+                class="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-lg text-slate-500 hover:bg-slate-700 hover:text-teal-400 transition-all border border-slate-700/50 ml-1"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    ><path
+                        d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+                    ></path><circle cx="12" cy="12" r="3"></circle></svg
+                >
+            </button>
+        </div>
+    </div>
+
+    <!-- Thin Progress Bar Top -->
+    <div class="absolute top-0 left-0 right-0 h-[2px] bg-slate-800">
+        <div
+            id="player-progress"
+            class="h-full bg-teal-500 transition-all duration-300 w-0 shadow-[0_0_8px_rgba(20,184,166,0.6)]"
+        >
+        </div>
+    </div>
+</header>
+
+<style>
+    @keyframes pulse {
+        0%,
+        100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.5;
+        }
+    }
+    .pulse {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    #settings-drawer.flex {
+        display: flex !important;
+    }
+</style>
+
+<script>
+    import { QuizPlayer } from "../scripts/quiz-player.ts";
+
+    if (typeof window !== "undefined") {
+        const init = () => {
+            if (!(window as any).quizPlayer) {
+                (window as any).quizPlayer = new QuizPlayer();
+
+                // Add close button listener here since it's UI specific
+                const closeBtn = document.getElementById("btn-close-settings");
+                const applyBtn = document.getElementById("btn-apply-settings");
+                if (closeBtn)
+                    closeBtn.onclick = () =>
+                        (window as any).quizPlayer.toggleSettings();
+                if (applyBtn)
+                    applyBtn.onclick = () =>
+                        (window as any).quizPlayer.toggleSettings();
+            }
+        };
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", init);
+        } else {
+            init();
+        }
+    }
+</script>

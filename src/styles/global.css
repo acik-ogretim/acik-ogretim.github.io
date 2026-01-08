@@ -251,6 +251,7 @@ body {
 }
 
 /* Utilities */
+/* Utilities */
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
@@ -260,4 +261,124 @@ body {
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
+}
+
+/*
+ * Interactive Quiz Features
+ */
+.hide-explanations .explanation-box:not(.reveal) {
+    display: none;
+}
+
+/* Base state for hidden answers */
+.hide-answers .correct-option:not(.is-correct):not(.is-wrong):not(.was-revealed) {
+    background-color: var(--button-bg) !important;
+    border-color: var(--border-color) !important;
+}
+
+.hide-answers .correct-option:not(.is-correct):not(.is-wrong):not(.was-revealed) .option-key {
+    background-color: var(--button-bg) !important;
+    color: var(--text-color-muted) !important;
+}
+
+.hide-answers .correct-option:not(.is-correct):not(.is-wrong):not(.was-revealed) .option-text {
+    color: var(--text-color-muted) !important;
+    font-weight: normal !important;
+}
+
+.hide-answers .correct-option:not(.is-correct):not(.is-wrong):not(.was-revealed) .option-text {
+    color: var(--text-color-muted) !important;
+    font-weight: normal !important;
+}
+
+/* Hide the explicit correct answer line if answers are hidden */
+.hide-answers .correct-answer-line {
+    display: none !important;
+}
+
+/* Also hide it if "Show Only Correct Answer" mode is active (redundant) */
+.hide-options .correct-answer-line {
+    display: none !important;
+}
+
+/* Result States */
+.option-item.is-correct {
+    background-color: var(--correct-border) !important;
+    border-color: var(--correct-border) !important;
+    color: white !important;
+}
+
+.option-item.is-correct .option-key {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+}
+
+.option-item.is-correct .option-text {
+    color: white !important;
+    font-weight: bold !important;
+}
+
+.option-item.is-wrong {
+    background-color: var(--incorrect-bg) !important;
+    border: 2px solid var(--incorrect-border) !important;
+}
+
+.option-item.is-wrong .option-key {
+    background-color: var(--incorrect-border) !important;
+    color: white !important;
+}
+
+.option-item.is-wrong .option-text {
+    color: var(--text-color) !important;
+    font-weight: bold !important;
+}
+
+/* Revealed Correct Answer (when user gets it wrong) */
+.option-item.was-revealed {
+    background-color: var(--correct-bg) !important;
+    border: 2px solid var(--correct-border) !important;
+}
+
+.option-item.was-revealed .option-key {
+    background-color: var(--correct-border) !important;
+    color: white !important;
+}
+
+.option-item.was-revealed .option-text {
+    color: var(--text-color) !important;
+    font-weight: bold !important;
+}
+
+.hide-options li:not(:has(.correct-option)) {
+    display: none;
+}
+
+.is-interactive-mode .option-item {
+    cursor: pointer;
+}
+
+.pulse {
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
+}
+
+/* Hide print-only answer key on screen */
+.answer-metadata-box {
+    display: none;
 }

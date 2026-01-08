@@ -1,48 +1,8 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import type { Course, Department, Question, University } from './types';
 
 const DATA_DIR = path.resolve(process.cwd(), 'data');
-
-export interface University {
-    id: string;
-    name: string;
-    shortName: string;
-    faculty: string;
-    website: string;
-    logo?: string;
-    color: string;
-}
-
-export interface Department {
-    id: string;
-    universityId: string;
-    name: string;
-    shortName: string;
-    code: string;
-    duration: number;
-    degree?: 'lisans' | 'onlisans' | 'lisans-tamamlama' | 'uzem-lisans-tamamlama' | 'tezsiz-yuksek-lisans';
-    icon?: string;
-    active?: boolean;
-}
-
-export interface Course {
-    id: string;
-    name: string;
-    code?: string;
-    semester: number;
-    universityId: string;
-    departmentId: string;
-    automationId?: string;
-}
-
-export interface Question {
-    id: string;
-    text: string;
-    unitNumber: number;
-    options: { key: string; text: string }[];
-    correctAnswer: string;
-    explanation?: string;
-}
 
 export async function getUniversities(): Promise<University[]> {
     const content = await fs.readFile(path.join(DATA_DIR, 'universities.json'), 'utf-8');

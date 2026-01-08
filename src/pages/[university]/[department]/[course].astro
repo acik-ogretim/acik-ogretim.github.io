@@ -1,4 +1,5 @@
 ---
+import QuizPlayer from "../../../components/QuizPlayer.astro";
 import Layout from "../../../layouts/Layout.astro";
 import { getCourses, getQuestions, getUniversities } from "../../../lib/api";
 
@@ -7,7 +8,7 @@ export async function getStaticPaths() {
   const paths = [];
 
   for (const uni of universities) {
-    const departments = (uni as any).departments || [];
+    const departments = uni.departments || [];
     for (const dept of departments) {
       const courses = await getCourses(uni.id, dept.id);
       for (const course of courses) {
@@ -23,6 +24,14 @@ export async function getStaticPaths() {
     }
   }
   return paths;
+}
+
+import type { Course, Department, University } from "../../../lib/types";
+
+interface Props {
+  university: University;
+  department: Department;
+  course: Course;
 }
 
 const { university, department, course } = Astro.props;
@@ -114,7 +123,8 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
             return (
               <div
                 id={`unite-${unit}`}
-                class={`mb-16 scroll-mt-24 ${idx > 0 ? "mt-24" : ""}`}
+                class={`mb-16 scroll-mt-24 ${idx > 0 ? "mt-24" : ""} unit-separator`}
+                data-unit={unit}
               >
                 <h2
                   class={`text-2xl font-bold text-teal-400 border-b border-teal-500/20 pb-2 mb-8`}
@@ -126,6 +136,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
                   <div
                     class="glass p-4 sm:p-6 md:p-8 rounded-2xl border border-theme break-inside-avoid mb-12 last:mb-0"
                     id={`question-${unit}-${qIdx}`}
+                    data-unit={unit}
                   >
                     <header class="mb-4">
                       <h3 class="text-[10px] md:text-xs font-mono text-muted-theme uppercase tracking-widest">
@@ -150,7 +161,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
                         ).map((opt) => (
                           <li class="relative pl-0">
                             <div
-                              class="flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-xl border transition-all"
+                              class={`flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-xl border transition-all option-item ${opt.key === q.correctAnswer ? "correct-option" : ""}`}
                               style={
                                 opt.key === q.correctAnswer
                                   ? "background-color: var(--correct-bg); border-color: var(--correct-border);"
@@ -161,7 +172,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
                                 <meta content={opt.key} />
                               )}
                               <span
-                                class="w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center font-bold text-xs md:text-sm shrink-0"
+                                class="w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center font-bold text-xs md:text-sm shrink-0 option-key"
                                 style={
                                   opt.key === q.correctAnswer
                                     ? "background-color: var(--correct-border); color: #fff;"
@@ -172,7 +183,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
                                 {opt.key}
                               </span>
                               <span
-                                class="pt-1 md:pt-1.5 text-sm md:text-base block"
+                                class="pt-1 md:pt-1.5 text-sm md:text-base block option-text"
                                 style={
                                   opt.key === q.correctAnswer
                                     ? "color: var(--text-color); font-weight: bold;"
@@ -186,7 +197,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
                       </ul>
 
                       {q.explanation && (
-                        <div class="mt-6 md:mt-8 p-4 md:p-6 bg-primary-theme/5 rounded-xl border border-primary-theme/20">
+                        <div class="mt-6 md:mt-8 p-4 md:p-6 bg-primary-theme/5 rounded-xl border border-primary-theme/20 explanation-box mb-4">
                           <p class="text-muted-theme text-sm leading-relaxed">
                             <strong class="text-primary-theme uppercase tracking-wider mr-2">
                               Açıklama:
@@ -195,6 +206,16 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
                           </p>
                         </div>
                       )}
+
+                      <!-- Correct Answer - Always rendered, control visibility via CSS -->
+                      <div class="mt-4 p-4 bg-primary-theme/5 rounded-xl border border-primary-theme/20 answer-metadata-box correct-answer-line">
+                          <p class="text-muted-theme text-sm leading-relaxed">
+                            <strong class="text-primary-theme uppercase tracking-wider mr-2">
+                              Doğru Cevap:
+                            </strong>
+                            <span class="font-bold">{q.correctAnswer}</span>
+                          </p>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -203,7 +224,57 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
           })
         }
       </article>
+
+      <div class="hidden print-footer mt-8 text-center border-t border-gray-300 pt-4 text-xs text-gray-500 break-inside-avoid">
+        <p class="font-medium text-black">Bu çalışma kağıdı <strong>Açık Öğretim Portal</strong> (<a href="https://acik-ogretim.github.io">acik-ogretim.github.io</a>) üzerinden ücretsiz oluşturulmuştur.</p>
+        <p class="mt-1">Daha fazla ders notu, çıkmış sorular ve denemeler için web sitemizi ziyaret edin.</p>
+        <p class="mt-2 text-[10px] text-gray-400">© {new Date().getFullYear()} Açık Öğretim Portal. Ticari amaçla satılamaz.</p>
+      </div>
     </div>
   </div>
+
+  <QuizPlayer />
 </Layout>
-```
+
+{/* Inject print styles directly to avoid CSS Variable scope issues in @page context */}
+<style set:html={`
+  @media print {
+    @page {
+      margin-top: 2cm;
+      margin-bottom: 2cm;
+
+      @top-left {
+        content: "${university.shortName} - ${department.name} / ${course.semester}. Dönem";
+        font-size: 8pt;
+        color: #888;
+        font-family: monospace;
+        margin-top: 4mm;
+      }
+      @top-right {
+        content: "${course.name}";
+        font-size: 8pt;
+        font-weight: bold;
+        color: #000;
+        margin-top: 4mm;
+      }
+      @bottom-left {
+        content: "acik-ogretim.github.io";
+        font-size: 8pt;
+        color: #aaa;
+        margin-bottom: 4mm;
+      }
+      @bottom-right {
+        content: "© ${new Date().getFullYear()}";
+        font-size: 8pt;
+        color: #aaa;
+        margin-bottom: 4mm;
+      }
+      @bottom-center {
+        content: counter(page);
+        font-size: 10pt;
+        font-weight: bold;
+        margin-bottom: 4mm;
+      }
+    }
+  }
+`} />

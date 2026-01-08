@@ -1,0 +1,328 @@
+/*
+ * Print Styles
+ * Loaded separately to ensure clean separation and avoid editing conflicts in global.css
+ */
+@media print {
+
+    /* Hide site chrome & metadata */
+    header.sticky,
+    nav[class*="sticky"],
+    footer,
+    #settings-drawer,
+    #quiz-player-bar,
+    .btn-primary,
+    button,
+    .notice-box,
+    .bg-amber-900\/30,
+    #mobileMenuBtn,
+    #mobileMenu,
+    [id^="btn-"],
+    .toast,
+    nav.text-muted-theme,
+    header .px-2\.5,
+    header .text-muted-theme,
+    header p {
+        display: none !important;
+    }
+
+    /* Reset body */
+    body {
+        counter-reset: print-question-counter;
+        background-color: white !important;
+        color: black !important;
+        overflow: visible !important;
+        height: auto !important;
+        font-size: 10pt !important;
+        line-height: 1.3 !important;
+    }
+
+    /* Force all questions to be visible */
+    [id^='question-'] {
+        counter-increment: print-question-counter;
+        display: block !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        margin-bottom: 0.8rem !important;
+        border: none !important;
+        background: none !important;
+        box-shadow: none !important;
+        page-break-after: auto;
+    }
+
+    /* Hide original question header "Soru X" */
+    [id^='question-'] header {
+        display: none !important;
+    }
+
+    /* Inject Number: "1. " */
+    [id^='question-'] .prose>p:first-of-type::before {
+        content: counter(print-question-counter) ". ";
+        font-weight: 800;
+        margin-right: 0.3rem;
+    }
+
+    /* Layout flow - 2 Columns */
+    /* Only apply columns to article to avoid nesting (4 columns) */
+    main,
+    section {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        column-count: 1 !important;
+        /* Reset layout */
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    /* The article container holds the questions */
+    article {
+        display: block !important;
+        column-count: 2 !important;
+        column-gap: 2rem !important;
+        column-fill: balance !important;
+        width: 100% !important;
+    }
+
+    /* Styling adjustments */
+    .glass {
+        background: none !important;
+        backdrop-filter: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    h1 {
+        font-size: 16pt !important;
+        margin-bottom: 0.5rem !important;
+        color: black !important;
+        column-span: all !important;
+        /* Title spans both columns */
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 14pt !important;
+        margin-top: 0.5rem !important;
+        /* Reduced spacing as requested */
+        margin-bottom: 0.5rem !important;
+        padding-bottom: 0.2rem !important;
+        border-bottom: 1px solid #ddd !important;
+        color: black !important;
+        /* column-span: all !important; */
+        /* REMOVED: Causes orphan headers */
+        break-after: avoid !important;
+        page-break-after: avoid !important;
+        break-inside: avoid !important;
+        /* Keep the header itself intact */
+        width: 100%;
+    }
+
+    /* Reset text colors */
+    /* Reset text colors and reduce spacing */
+    h3,
+    p,
+    span,
+    div,
+    a {
+        color: black !important;
+        text-shadow: none !important;
+        text-decoration: none !important;
+    }
+
+    p {
+        margin-bottom: 0.3rem !important;
+        /* Tighter paragraphs */
+    }
+
+    /* Tighten question text specifically */
+    [id^='question-'] .prose p {
+        margin-bottom: 0.4rem !important;
+    }
+
+    /* Lists */
+    ul,
+    li {
+        margin-bottom: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    /* Reduce gap before options start */
+    [id^='question-'] ul {
+        margin-top: 0.2rem !important;
+    }
+
+    /* Option styling */
+    .option-item {
+        background-color: white !important;
+        border: none !important;
+        color: black !important;
+        padding: 1px 0 !important;
+        margin-bottom: 2px !important;
+        display: flex !important;
+        align-items: baseline !important;
+        gap: 0.5rem !important;
+    }
+
+    /* Force all states to look plain in print */
+    html body .option-item.is-wrong,
+    html body .option-item.is-correct,
+    html body .option-item.was-revealed {
+        background-color: transparent !important;
+        border: none !important;
+        color: black !important;
+    }
+
+    /* Increased specificty to override global .hide-answers rules */
+    html body .option-key,
+    html body.hide-answers .correct-option .option-key,
+    html body.hide-answers .option-key,
+    /* Override specific state styling for keys (wrong, correct, revealed) */
+    html body .option-item.is-wrong .option-key,
+    html body .option-item.is-correct .option-key,
+    html body .option-item.was-revealed .option-key,
+    /* Nuke Specificity: Match the global rule exactly and add html body prefix */
+    html body.hide-answers .correct-option:not(.is-correct):not(.is-wrong):not(.was-revealed) .option-key {
+        border: none !important;
+        background-color: transparent !important;
+        color: black !important;
+        font-weight: 900 !important;
+        font-size: 11pt !important;
+        width: 1.5rem !important;
+        /* Fixed width for alignment */
+        height: auto !important;
+        display: inline-block !important;
+        text-align: left !important;
+        margin-right: 0 !important;
+        box-shadow: none !important;
+    }
+
+    /* Format A -> A) */
+    .option-key::after {
+        content: ")";
+        display: inline-block;
+        width: 0.5rem;
+    }
+
+    .option-text {
+        color: black !important;
+        font-weight: normal !important;
+        font-size: 10pt !important;
+    }
+
+    /* Correct Answer Visibility */
+    /* Correct Answer Visibility */
+    /* Ensure correct answer looks EXACTLY like others (no background, no bold) */
+    /* Using high specificity to override global .hide-answers rules */
+    html body.hide-answers .correct-option:not(.is-correct):not(.is-wrong):not(.was-revealed),
+    html body .correct-option.correct-option.correct-option.correct-option.correct-option,
+    html body:not(.hide-answers) .correct-option,
+    html body .option-item.was-revealed,
+    html body .option-item.is-correct,
+    html body .correct-option {
+        background-color: transparent !important;
+        background: transparent !important;
+        color: black !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Fix: Ensure correct option key stays heavy like others */
+    html body:not(.hide-answers) .correct-option .option-key,
+    html body .option-item.was-revealed .option-key,
+    html body .option-item.is-correct .option-key {
+        font-weight: 900 !important;
+        color: black !important;
+        background-color: transparent !important;
+        text-decoration: none !important;
+    }
+
+    /* Fix: Ensure correct option text stays normal */
+    html body:not(.hide-answers) .correct-option .option-text,
+    html body .option-item.was-revealed .option-text,
+    html body .option-item.is-correct .option-text,
+    html body .option-item.is-wrong .option-text,
+    /* Nuke Specificity for Text: Match global rule exactly */
+    html body.hide-answers .correct-option:not(.is-correct):not(.is-wrong):not(.was-revealed) .option-text {
+        font-weight: normal !important;
+        color: black !important;
+        background-color: transparent !important;
+        text-decoration: none !important;
+    }
+
+    /* Explanations: Compact text-only style */
+    .explanation-box {
+        border: none !important;
+        padding: 0.2rem 0 !important;
+        margin-top: 0.2rem !important;
+        margin-bottom: 0 !important;
+        background-color: transparent !important;
+        color: #444 !important;
+        font-size: 9pt !important;
+        line-height: 1.2 !important;
+    }
+
+    /* Correct Answer Box - Compact Line */
+    .answer-metadata-box {
+        display: block !important;
+        border: none !important;
+        padding: 0.1rem 0 !important;
+        margin-top: 0 !important;
+        background-color: transparent !important;
+        color: #000 !important;
+        font-size: 9pt !important;
+        line-height: 1.2 !important;
+    }
+
+    .answer-metadata-box p,
+    .explanation-box p {
+        margin-bottom: 0 !important;
+    }
+
+    /* If explanation exists right before, merge visually? No, keep simple. */
+
+    /* Unit Separator */
+    /* Unit Separator */
+    .unit-separator {
+        page-break-before: auto;
+        margin-top: 0.5rem !important;
+        /* Tighten up unit spacing */
+        padding-top: 0.2rem !important;
+    }
+
+    .unit-separator:first-child {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    /* Print Footer - Branding */
+    .print-footer {
+        display: block !important;
+        margin-top: 2rem !important;
+        padding-top: 1rem !important;
+        border-top: 1px solid #ccc !important;
+        text-align: center !important;
+        font-size: 8pt !important;
+        color: #666 !important;
+        width: 100% !important;
+        page-break-inside: avoid !important;
+        column-span: all !important;
+        /* Just in case */
+    }
+
+    .print-footer p {
+        margin-bottom: 0.2rem !important;
+    }
+
+    .print-footer strong {
+        font-weight: bold !important;
+        color: black !important;
+    }
+
+    .print-footer a {
+        color: #2563eb !important;
+        /* Blue color for links */
+        text-decoration: underline !important;
+    }
+}
