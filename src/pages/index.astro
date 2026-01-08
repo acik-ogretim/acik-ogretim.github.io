@@ -1,23 +1,102 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 
-// Get all universities and departments
-const universities = await getCollection('universities');
-const departments = await getCollection('departments');
+import fs from 'node:fs/promises';
+import path from 'node:path';
 
-// Group departments by university
-const universityData = universities.map(uni => ({
-  ...uni.data,
-  departments: departments.filter(dept => dept.data.universityId === uni.data.id).map(d => d.data)
-})).sort((a, b) => a.order - b.order);
+import type { Department, University } from '../lib/types';
+
+// Load raw data for accurate counts and content
+const DATA_DIR = path.resolve(process.cwd(), 'data');
+let allUniversitiesData: University[] = [];
+try {
+  const content = await fs.readFile(path.join(DATA_DIR, 'universities.json'), 'utf-8');
+  allUniversitiesData = JSON.parse(content);
+} catch (e) {
+  console.error('Failed to load universities.json', e);
+}
+
+// Group departments by university and enrich with real counts
+// WE USE data/universities.json AS SOURCE OF TRUTH
+const universityData = allUniversitiesData.map((uni: University) => {
+  return {
+    ...uni,
+    // For display, we keep standard fields.
+    // The raw JSON already has 'departments' array.
+    // We want to count ALL departments in the raw JSON.
+    totalDepartmentCount: uni.departments?.length || 0,
+    // The UI expects 'departments' to be a list of active ones or similar.
+    // In raw JSON, 'departments' contains all objects.
+    // Let's filter for active ones if needed, or just map them to match expected shape.
+    departments: (uni.departments || []).filter((d: Department) => d.active !== false) // default true if undefined
+  };
+}).sort((a, b) => a.order - b.order);
+
+// Calculate real stats from data directory
+async function getStats() {
+  let courseCount = 0;
+  let questionCount = 0;
+
+  // Use the already loaded data for department count
+  const departmentCount = allUniversitiesData.reduce((acc, uni) => acc + (uni.departments?.length || 0), 0);
+
+  try {
+    // Count Courses
+    const coursesDir = path.join(DATA_DIR, 'courses');
+    const uniDirs = await fs.readdir(coursesDir).catch(() => []);
+
+    for (const uni of uniDirs) {
+      if (uni.startsWith('.')) continue;
+      const uniPath = path.join(coursesDir, uni);
+      const deptFiles = await fs.readdir(uniPath).catch(() => []);
+
+      for (const file of deptFiles) {
+        if (!file.endsWith('.json')) continue;
+        try {
+          const content = await fs.readFile(path.join(uniPath, file), 'utf-8');
+          const courses = JSON.parse(content);
+          if (Array.isArray(courses)) {
+            courseCount += courses.length;
+          }
+        } catch {}
+      }
+    }
+
+    // Count Questions
+    const questionsDir = path.join(DATA_DIR, 'questions');
+    const qUniDirs = await fs.readdir(questionsDir).catch(() => []);
+
+    for (const uni of qUniDirs) {
+      if (uni.startsWith('.')) continue;
+      const uniPath = path.join(questionsDir, uni);
+      const courseFiles = await fs.readdir(uniPath).catch(() => []);
+
+      for (const file of courseFiles) {
+        if (!file.endsWith('.json')) continue;
+        try {
+          const content = await fs.readFile(path.join(uniPath, file), 'utf-8');
+          const questions = JSON.parse(content);
+          if (Array.isArray(questions)) {
+            questionCount += questions.length;
+          }
+        } catch {}
+      }
+    }
+  } catch (e) {
+    console.error('Error calculating stats:', e);
+  }
+
+  return { courseCount, questionCount, departmentCount };
+}
+
+const calculatedStats = await getStats();
 
 // Stats
 const stats = {
-  universities: universities.length,
-  departments: departments.length,
-  courses: 130,
-  questions: 12500,
+  universities: allUniversitiesData.length,
+  departments: calculatedStats.departmentCount || 150,
+  courses: calculatedStats.courseCount || 150, // Fallback if 0
+  questions: calculatedStats.questionCount || 15000, // Fallback if 0
 };
 
 // University icons and colors
@@ -35,8 +114,8 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
       "@context": "https://schema.org",
       "@type": "EducationalOrganization",
       "name": "Açık Öğretim Portal",
-      "url": "https://acik-ogretim.vercel.app",
-      "logo": "https://acik-ogretim.vercel.app/favicon.svg",
+      "url": "https://acik-ogretim.github.io",
+      "logo": "https://acik-ogretim.github.io/favicon.svg",
       "description": "Anadolu, Atatürk ve İstanbul Üniversitesi açık öğretim öğrencileri için ücretsiz çalışma portalı.",
       "sameAs": [
         "https://github.com/acik-ogretim"
@@ -50,10 +129,10 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Açık Öğretim Portal",
-      "url": "https://acik-ogretim.vercel.app",
+      "url": "https://acik-ogretim.github.io",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://acik-ogretim.vercel.app/search?q={search_term_string}",
+        "target": "https://acik-ogretim.github.io/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     }
@@ -90,12 +169,46 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
         <a href="#universities" class="btn-primary w-full sm:w-auto">
           🎓 Üniversiteleri Keşfet
         </a>
-        <a href="/quiz" class="btn-secondary w-full sm:w-auto">
-          🎯 Hemen Test Çöz
+        <a href="https://github.com/acik-ogretim/acik-ogretim.github.io/issues/new/choose" target="_blank" class="btn-secondary w-full sm:w-auto">
+          📝 Bölüm/Ders İsteği
         </a>
+        <button id="install-btn" class="hidden btn-secondary w-full sm:w-auto bg-green-600/10 text-green-500 border-green-500/20 hover:bg-green-600/20">
+          📲 Uygulamayı Yükle
+        </button>
       </div>
     </div>
   </header>
+
+  <script>
+    // PWA Install Prompt Logic
+    let deferredPrompt: any;
+    const installBtn = document.getElementById('install-btn');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Prevent Chrome 67 and earlier from automatically showing the prompt
+      e.preventDefault();
+      // Stash the event so it can be triggered later.
+      deferredPrompt = e;
+      // Update UI to notify the user they can add to home screen
+      installBtn?.classList.remove('hidden');
+    });
+
+    installBtn?.addEventListener('click', () => {
+      // Hide our user interface that shows our A2HS button
+      installBtn.classList.add('hidden');
+      // Show the prompt
+      deferredPrompt.prompt();
+      // Wait for the user to respond to the prompt
+      deferredPrompt.userChoice.then((choiceResult: any) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the A2HS prompt');
+        } else {
+          console.log('User dismissed the A2HS prompt');
+        }
+        deferredPrompt = null;
+      });
+    });
+  </script>
 
   <!-- Stats Section -->
   <section class="py-12 border-y border-theme bg-theme/30" aria-label="Portal İstatistikleri">
@@ -114,7 +227,7 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
           <div class="text-muted-theme text-sm" itemprop="unitText">Ders</div>
         </div>
         <div class="stat-card text-center" itemscope itemtype="https://schema.org/QuantitativeValue">
-          <div class="text-3xl md:text-4xl font-bold text-primary-theme mb-1" itemprop="value">{(stats.questions / 1000).toFixed(1)}K+</div>
+          <div class="text-3xl md:text-4xl font-bold text-primary-theme mb-1" itemprop="value">{stats.questions.toLocaleString('tr-TR')}</div>
           <div class="text-muted-theme text-sm" itemprop="unitText">Soru</div>
         </div>
       </div>
@@ -160,15 +273,26 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
               <p class="text-muted-theme text-sm mb-4 line-clamp-2" itemprop="alternateName">{uni.name}</p>
 
               <div class="border-t border-theme pt-4 mt-auto">
-                <h4 class="text-xs font-medium text-muted-theme uppercase tracking-wider mb-2">Aktif Bölümler</h4>
+                <h4 class="text-xs font-medium text-muted-theme uppercase tracking-wider mb-2">
+                  {uni.id === 'ataturk-aof' ? `Tüm Bölümler (${uni.totalDepartmentCount})` : 'Aktif Bölümler'}
+                </h4>
                 <ul class="space-y-1.5">
-                  {uni.departments.map((dept) => (
+                  {uni.id !== 'ataturk-aof' && uni.departments.map((dept) => (
                     <li class="flex items-center gap-2 text-sm text-muted-theme" itemprop="department" itemscope itemtype="https://schema.org/EducationalOrganization">
                       <span class="w-1.5 h-1.5 rounded-full bg-primary-theme shrink-0"></span>
                       <span itemprop="name" class="truncate">{dept.name}</span>
                       <span class="ml-auto text-xs text-muted-theme shrink-0">{dept.duration} dönem</span>
                     </li>
                   ))}
+                  {uni.id === 'ataturk-aof' && (
+                    <li class="text-sm text-muted-theme flex items-center gap-2">
+                       <span class="w-1.5 h-1.5 rounded-full bg-primary-theme shrink-0"></span>
+                       <span>Listeyi görüntülemek için tıklayınız...</span>
+                    </li>
+                  )}
+                  {uni.id !== 'ataturk-aof' && uni.departments.length === 0 && (
+                    <li class="text-xs text-muted-theme italic">Henüz aktif bölüm yok</li>
+                  )}
                 </ul>
               </div>
 
@@ -186,6 +310,54 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
       </div>
     </div>
   </article>
+
+  <!-- How it Works Section -->
+  <section class="py-20" aria-labelledby="steps-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 id="steps-heading" class="text-3xl font-bold mb-4">🚀 Nasıl Çalışır?</h2>
+        <p class="text-muted-theme">Sadece 3 adımda sınavlara hazırlanmaya başlayın.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 relative">
+         <!-- Connector Line (Desktop) -->
+         <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary-theme/30 to-transparent -z-10"></div>
+
+        <!-- Step 1 -->
+        <div class="relative flex flex-col items-center text-center group">
+          <div class="w-24 h-24 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center text-4xl mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300 z-10">
+            🏛️
+          </div>
+          <h3 class="text-xl font-bold text-theme mb-3">1. Üniversiteni Seç</h3>
+          <p class="text-sm text-muted-theme max-w-xs">
+            Anadolu, Atatürk veya İstanbul Üniversitesi seçeneklerinden sana uygun olanı belirle.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="relative flex flex-col items-center text-center group">
+          <div class="w-24 h-24 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center text-4xl mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300 z-10">
+            📚
+          </div>
+          <h3 class="text-xl font-bold text-theme mb-3">2. Dersini Bul</h3>
+          <p class="text-sm text-muted-theme max-w-xs">
+            Kayıtlı olduğun bölümü ve çalışmak istediğin dersi listeden kolayca bul.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="relative flex flex-col items-center text-center group">
+          <div class="w-24 h-24 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center text-4xl mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300 z-10">
+            🎯
+          </div>
+          <h3 class="text-xl font-bold text-theme mb-3">3. Çözmeye Başla</h3>
+          <p class="text-sm text-muted-theme max-w-xs">
+            Ünite sorularını veya deneme sınavlarını interaktif modda çöz, eksiklerini kapat.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Features Section -->
   <section class="py-20 bg-theme/30 border-y border-theme" aria-labelledby="features-heading">
@@ -218,6 +390,85 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
           <h3 class="font-semibold mb-2 text-theme">Çıkmış Sınavlar</h3>
           <p class="text-muted-theme text-sm">Geçmiş yılların vize ve final soruları</p>
         </div>
+        <div class="feature-card text-center">
+          <div class="text-4xl mb-4" role="img" aria-label="Mobil">📲</div>
+          <h3 class="font-semibold mb-2 text-theme">Mobil Uygulama</h3>
+          <p class="text-muted-theme text-sm">PWA desteği ile telefona indirip internetsiz kullanın</p>
+        </div>
+        <div class="feature-card text-center">
+          <div class="text-4xl mb-4" role="img" aria-label="Ses">🗣️</div>
+          <h3 class="font-semibold mb-2 text-theme">Sesli Okuma</h3>
+          <p class="text-muted-theme text-sm">Soruları dinleyerek gözlerinizi yormadan çalışın</p>
+        </div>
+         <div class="feature-card text-center">
+          <div class="text-4xl mb-4" role="img" aria-label="Gece">🌙</div>
+          <h3 class="font-semibold mb-2 text-theme">Koyu Mod</h3>
+          <p class="text-muted-theme text-sm">Göz dostu arayüz ile gece gündüz rahat çalışın</p>
+        </div>
+         <div class="feature-card text-center">
+          <div class="text-4xl mb-4" role="img" aria-label="Topluluk">👥</div>
+          <h3 class="font-semibold mb-2 text-theme">Topluluk</h3>
+          <p class="text-muted-theme text-sm">GitHub üzerinden açık kaynaklı ve şeffaf geliştirme</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20" aria-labelledby="faq-heading">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 id="faq-heading" class="text-3xl font-bold mb-4">🤔 Sıkça Sorulan Sorular</h2>
+      </div>
+
+      <div class="space-y-4">
+        <details class="group bg-slate-900/50 border border-slate-800 rounded-xl overflow-hidden">
+          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-slate-800/50 transition-colors">
+            <span>Bu portal tamamen ücretsiz mi?</span>
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <div class="text-muted-theme text-sm px-5 pb-5">
+            <strong>Evet, tamamen ücretsizdir.</strong> Hiçbir şekilde üyelik ücreti, premium paket veya gizli ödeme yoktur. Proje açık kaynaklıdır ve eğitimde fırsat eşitliğini savunur.
+          </div>
+        </details>
+
+        <details class="group bg-slate-900/50 border border-slate-800 rounded-xl overflow-hidden">
+          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-slate-800/50 transition-colors">
+            <span>Üye olmam gerekiyor mu?</span>
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <div class="text-muted-theme text-sm px-5 pb-5">
+            <strong>Hayır.</strong> Sitedeki tüm sorulara ve testlere üyelik gerektirmeden, doğudan erişebilirsiniz. İlerlemeniz ve favorileriniz tarayıcınızın hafızasında (Local Storage) tutulur.
+          </div>
+        </details>
+
+        <details class="group bg-slate-900/50 border border-slate-800 rounded-xl overflow-hidden">
+          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-slate-800/50 transition-colors">
+            <span>Sorular güncel mi?</span>
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <div class="text-muted-theme text-sm px-5 pb-5">
+            Sorular, üniversitelerin açık erişime sunduğu geçmiş yıl soruları ve ders materyallerinden derlenmektedir. Topluluk desteğiyle sürekli yeni dersler eklenmektedir.
+          </div>
+        </details>
+
+         <details class="group bg-slate-900/50 border border-slate-800 rounded-xl overflow-hidden">
+          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-slate-800/50 transition-colors">
+            <span>Uygulamayı telefonuma indirebilir miyim?</span>
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <div class="text-muted-theme text-sm px-5 pb-5">
+            Evet! Bu site bir <strong>PWA (Progressive Web App)</strong>'tır. Tarayıcınızın menüsünden "Ana Ekrana Ekle" veya "Yükle" seçeneğini kullanarak telefonunuza indirebilir ve internetiniz yavaşken bile kullanabilirsiniz.
+          </div>
+        </details>
       </div>
     </div>
   </section>
@@ -226,13 +477,13 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
   <section class="py-20" aria-label="Harekete Geçirici Mesaj">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-2xl md:text-3xl font-bold mb-4">
-        Sınavlarına hazır mısın?
+        Katkıda Bulunun
       </h2>
       <p class="text-muted-theme mb-8">
-        Hemen bir test çözerek bilgilerini test et, eksiklerini keşfet.
+        Portal açık kaynaklıdır ve topluluk katkılarıyla büyümektedir. Hata bildirebilir, yeni içerik talep edebilir veya geliştirici olarak destek olabilirsiniz.
       </p>
-      <a href="/quiz" class="btn-primary text-lg px-8 py-4">
-        🎯 Şimdi Başla
+      <a href="https://github.com/acik-ogretim/acik-ogretim.github.io/issues" target="_blank" class="btn-primary text-lg px-8 py-4">
+        📢 Talep Oluştur
       </a>
     </div>
   </section>

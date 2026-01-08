@@ -1,0 +1,112 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Telif Hakkı Politikası">
+    <div class="py-12 relative overflow-hidden">
+        <!-- Background Accents -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div
+                class="absolute -top-40 -right-40 w-96 h-96 bg-primary-theme/10 rounded-full blur-3xl"
+            >
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-theme to-transparent"
+            >
+            </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <h1
+                class="text-3xl font-bold text-theme mb-8 flex items-center gap-3"
+            >
+                <span class="text-4xl">⚖️</span>
+                Telif Hakkı Politikası
+            </h1>
+
+            <div class="space-y-8 text-muted-theme">
+                <section
+                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30"
+                >
+                    <h2 class="text-xl font-bold text-theme mb-4">
+                        1. Genel Bilgilendirme
+                    </h2>
+                    <p>
+                        Açık Öğretim Portal ("Portal"), Anadolu Üniversitesi,
+                        Atatürk Üniversitesi ve İstanbul Üniversitesi açık
+                        öğretim fakültelerinde okuyan öğrencilerin ders
+                        çalışmalarına yardımcı olmak amacıyla, <strong
+                            >tamamen eğitim amaçlı ve ticari olmayan</strong
+                        > bir proje olarak geliştirilmiştir.
+                    </p>
+                    <p class="mt-4">
+                        Bu proje, açık kaynak kodludur (Open Source) ve kâr
+                        amacı gütmez. Portal üzerinde yayınlanan içeriklerin
+                        (sorular, ders özetleri vb.) mülkiyeti ilgili
+                        üniversitelere veya hak sahiplerine aittir.
+                    </p>
+                </section>
+
+                <section
+                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30"
+                >
+                    <h2 class="text-xl font-bold text-theme mb-4">
+                        2. İçerik ve Kullanım
+                    </h2>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>
+                            Portalda yer alan sorular, geçmiş yıllarda çıkmış
+                            soruların derlenmesiyle oluşturulmuştur.
+                        </li>
+                        <li>
+                            Bu içerikler yalnızca öğrencilerin bireysel
+                            çalışmaları ve sınavlara hazırlık süreçleri için
+                            sunulmaktadır.
+                        </li>
+                        <li>
+                            İçeriklerin ticari amaçla kopyalanması, satılması
+                            veya ücretli platformlarda dağıtılması kesinlikle
+                            yasaktır ve ilgili üniversitelerin telif hakları
+                            ihlali anlamına gelebilir.
+                        </li>
+                    </ul>
+                </section>
+
+                <section
+                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30"
+                >
+                    <h2 class="text-xl font-bold text-theme mb-4">
+                        3. DMCA ve İçerik Kaldırma Talepleri
+                    </h2>
+                    <p class="mb-4">
+                        Eğer bir içeriğin telif haklarınızı ihlal ettiğini
+                        düşünüyorsanız, lütfen bizimle iletişime geçin. Geçerli
+                        talepler doğrultusunda ilgili içerik <strong
+                            >7 iş günü</strong
+                        > içerisinde sistemden kaldırılacaktır.
+                    </p>
+
+                    <div
+                        class="bg-primary-theme/10 p-4 rounded-xl border border-primary-theme/20"
+                    >
+                        <h3 class="font-bold text-primary-theme mb-2">
+                            Başvuru Yöntemi
+                        </h3>
+                        <p class="text-sm">
+                            Taleplerinizi şeffaf bir şekilde işlemek için GitHub
+                            Issues sistemini kullanıyoruz. Lütfen "Telif Hakkı
+                            Bildirimi" etiketini seçerek sorunu bildirin.
+                        </p>
+                        <a
+                            href="https://github.com/acik-ogretim/acik-ogretim.github.io/issues/new?template=copyright.yml"
+                            target="_blank"
+                            class="inline-block mt-3 px-4 py-2 bg-primary-theme text-white rounded-lg hover:bg-primary-light transition-colors text-sm font-medium"
+                        >
+                            🚨 Telif Hakkı İhlali Bildir
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</Layout>

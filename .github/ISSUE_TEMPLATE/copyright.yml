@@ -1,0 +1,26 @@
+name: Telif Hakkı Bildirimi (DMCA)
+description: Telif hakkı ihlali gerekçesiyle içerik kaldırma talebi.
+title: "[DMCA]: "
+labels: ["telif", "acil"]
+body:
+  - type: textarea
+    id: content_list
+    attributes:
+      label: Bildirilen İçerik(ler)
+      description: Kaldırılmasını talep ettiğiniz soru veya derslerin linkleri/başlıkları.
+    validations:
+      required: true
+  - type: textarea
+    id: proof
+    attributes:
+      label: Hak Sahipliği Beyanı
+      description: Bu içeriğin hak sahibi olduğunuzu veya hak sahibi adına hareket ettiğinizi doğrulayan açıklama.
+    validations:
+      required: true
+  - type: checkbox
+    id: agreement
+    attributes:
+      label: Beyan ve Onay
+      options:
+        - label: Yukarıdaki bilgilerin doğru olduğunu ve yasal sonuçlarını kabul ediyorum.
+          required: true

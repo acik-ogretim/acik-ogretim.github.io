@@ -1,0 +1,68 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Çevrimdışı">
+    <div
+        class="min-h-[60vh] flex flex-col items-center justify-center text-center px-4"
+    >
+        <div
+            class="w-24 h-24 bg-slate-800 rounded-full flex items-center justify-center text-5xl mb-6 animate-pulse"
+        >
+            📡
+        </div>
+
+        <h1 class="text-3xl md:text-5xl font-bold text-theme mb-4">
+            Bağlantı Yok
+        </h1>
+
+        <p class="text-muted-theme text-lg max-w-md mb-8">
+            Şu anda internet bağlantınız yok gibi görünüyor. Daha önce
+            girdiğiniz sayfalara geri dönebilir veya bağlantınız geldiğinde
+            tekrar deneyebilirsiniz.
+        </p>
+
+        <div class="flex gap-4">
+            <a href="/" class="btn-primary"> Ana Sayfaya Dön </a>
+            <button onclick="window.location.reload()" class="btn-secondary">
+                🔄 Yeniden Dene
+            </button>
+        </div>
+
+        <div
+            id="status-msg"
+            class="mt-8 text-sm text-slate-500 animate-pulse hidden"
+        >
+            Bağlantı bekleniyor...
+        </div>
+    </div>
+
+    <script>
+        const statusMsg = document.getElementById("status-msg");
+        if (statusMsg) {
+            statusMsg.classList.remove("hidden");
+        }
+
+        // 1. Listen for standard 'online' event
+        window.addEventListener("online", () => {
+            if (statusMsg)
+                statusMsg.textContent = "Bağlantı kuruldu! Yönlendiriliyor...";
+            setTimeout(() => window.location.reload(), 1000);
+        });
+
+        // 2. Poll for connection (double check)
+        setInterval(async () => {
+            if (navigator.onLine) {
+                try {
+                    // Try to fetch a tiny resource (favicon) to verify actual internet access
+                    const res = await fetch("/favicon.svg", { method: "HEAD" });
+                    if (res.ok) {
+                        window.location.reload();
+                    }
+                } catch (e) {
+                    // Still offline
+                }
+            }
+        }, 5000);
+    </script>
+</Layout>

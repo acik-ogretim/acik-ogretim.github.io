@@ -1,0 +1,29 @@
+name: Hatalı Soru / Cevap Bildirimi
+description: Sistemdeki yanlış bir soruyu veya cevabı bildirin.
+title: "[HATA]: "
+labels: ["hata", "duzeltme"]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Ders ve Ünite Bilgisi
+      description: Hatanın olduğu Üniversite, Bölüm, Ders ve Ünite.
+      placeholder: Örn. Anadolu AÖF > Adalet > Hukuka Giriş > Ünite 3
+    validations:
+      required: true
+  - type: textarea
+    id: question_text
+    attributes:
+      label: Soru Metni (veya ID)
+      description: Hatalı olduğunu düşündüğünüz sorunun başını veya tamamını kopyalayın.
+      placeholder: Sorunun metni buraya...
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Hata Açıklaması
+      description: Neden hatalı olduğunu düşünüyorsunuz? Doğru cevap ne olmalı?
+      placeholder: B şıkkı denmiş ama cevap C olmalı çünkü...
+    validations:
+      required: true

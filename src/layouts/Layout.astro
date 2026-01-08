@@ -23,6 +23,9 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0f172a" />
     <meta name="generator" content={Astro.generator} />
     <title>{title} | Açık Öğretim Portal</title>
 
@@ -33,6 +36,24 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script>
+      // Register Service Worker for PWA
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js").then(
+            (registration) => {
+              console.log(
+                "ServiceWorker registration successful:",
+                registration.scope,
+              );
+            },
+            (err) => {
+              console.log("ServiceWorker registration failed:", err);
+            },
+          );
+        });
+      }
+    </script>
   </head>
   <body
     class="min-h-screen bg-[#0f172a] text-white font-sans antialiased flex flex-col overflow-x-hidden"
@@ -77,7 +98,6 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
             class="text-muted-theme hover:text-primary-theme transition-colors"
             >AUZEF</a
           >
-          <a href="/quiz" class="btn-primary text-sm py-2"> 🎯 Quiz Çöz </a>
 
           <!-- Theme Toggles -->
           <div
@@ -208,9 +228,6 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
           href="/auzef"
           class="block text-lg text-slate-300 hover:text-white px-2">AUZEF</a
         >
-        <a href="/quiz" class="block w-full btn-primary text-center py-3">
-          🎯 Quiz Çöz
-        </a>
 
         <!-- Mobile Theme Toggles -->
         <div
@@ -293,9 +310,9 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
             </p>
           </div>
 
-          <!-- Links -->
+          <!-- Universities -->
           <div>
-            <h3 class="font-semibold text-slate-300 mb-3">Hızlı Erişim</h3>
+            <h3 class="font-semibold text-slate-300 mb-3">Üniversiteler</h3>
             <ul class="space-y-2 text-sm">
               <li>
                 <a
@@ -317,13 +334,25 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
             </ul>
           </div>
 
-          <!-- Legal -->
+          <!-- Corporate & Legal -->
           <div>
-            <h3 class="font-semibold text-slate-300 mb-3">Yasal</h3>
+            <h3 class="font-semibold text-slate-300 mb-3">Kurumsal</h3>
             <ul class="space-y-2 text-sm">
               <li>
-                <a href="/telif" class="text-slate-400 hover:text-teal-400"
-                  >Telif Hakkı</a
+                <a
+                  href="/rehber"
+                  class="text-slate-400 hover:text-teal-400 font-medium text-teal-400/80"
+                  >📖 Kullanım Rehberi</a
+                >
+              </li>
+              <li>
+                <a href="/hakkimizda" class="text-slate-400 hover:text-teal-400"
+                  >Hakkımızda</a
+                >
+              </li>
+              <li>
+                <a href="/iletisim" class="text-slate-400 hover:text-teal-400"
+                  >İletişim</a
                 >
               </li>
               <li>
@@ -332,14 +361,9 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
                 >
               </li>
               <li>
-                <a
-                  href="https://github.com/acik-ogretim/acik-ogretim.github.io/issues"
-                  class="text-slate-400 hover:text-teal-400"
-                  target="_blank"
-                  rel="noopener"
+                <a href="/telif" class="text-slate-400 hover:text-teal-400"
+                  >Telif Hakkı</a
                 >
-                  İçerik Bildirimi
-                </a>
               </li>
             </ul>
           </div>

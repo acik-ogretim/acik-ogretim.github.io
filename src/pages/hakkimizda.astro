@@ -1,0 +1,98 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Hakkımızda">
+    <div class="py-12 relative overflow-hidden">
+        <!-- Background Accents -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div
+                class="absolute -top-40 -right-40 w-96 h-96 bg-primary-theme/10 rounded-full blur-3xl"
+            >
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-theme to-transparent"
+            >
+            </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <h1
+                class="text-3xl font-bold text-theme mb-8 flex items-center gap-3"
+            >
+                <span class="text-4xl">📚</span>
+                Hakkımızda
+            </h1>
+
+            <div class="space-y-8 text-muted-theme">
+                <section
+                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30"
+                >
+                    <h2 class="text-xl font-bold text-theme mb-4">
+                        Misyonumuz
+                    </h2>
+                    <p>
+                        Açık Öğretim Portal, Türkiye'deki açık öğretim
+                        fakültelerinde (Anadolu Üniversitesi, Atatürk
+                        Üniversitesi, İstanbul Üniversitesi) eğitim gören
+                        milyonlarca öğrencinin ders kaynaklarına ve çalışma
+                        sorularına <strong>ücretsiz ve kolay</strong> bir şekilde
+                        erişmesini sağlamak amacıyla kurulmuştur.
+                    </p>
+                    <p class="mt-4">
+                        Eğitimde fırsat eşitliğine inanıyoruz. Bu nedenle,
+                        geliştirdiğimiz tüm araçlar ve sunduğumuz içerikler
+                        herkesin erişimine açıktır.
+                    </p>
+                </section>
+
+                <section
+                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30"
+                >
+                    <h2 class="text-xl font-bold text-theme mb-4">
+                        Neden Açık Kaynak?
+                    </h2>
+                    <p>
+                        Projemiz <strong>Açık Kaynak (Open Source)</strong> felsefesiyle
+                        geliştirilmektedir. Bu, projenin kodlarının şeffaf olduğu
+                        ve topluluk desteğiyle büyüdüğü anlamına gelir.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 ml-4 mt-4">
+                        <li>
+                            Herkes kodları inceleyebilir ve güvenliğinden emin
+                            olabilir.
+                        </li>
+                        <li>
+                            Yazılımcılar projeye katkıda bulunarak yeni
+                            özellikler ekleyebilir.
+                        </li>
+                        <li>Hatalar daha hızlı tespit edilir ve düzeltilir.</li>
+                    </ul>
+                </section>
+
+                <section
+                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30"
+                >
+                    <h2 class="text-xl font-bold text-theme mb-4">
+                        Projeye Katkı
+                    </h2>
+                    <p>
+                        Bu portal bir topluluk projesidir. Siz de eksik
+                        gördüğünüz bölümleri ekleyerek veya yazılım
+                        geliştirmesine katkıda bulunarak bu kaynağın büyümesine
+                        destek olabilirsiniz.
+                    </p>
+                    <div class="mt-6 flex flex-wrap gap-4">
+                        <a
+                            href="https://github.com/acik-ogretim/acik-ogretim.github.io"
+                            target="_blank"
+                            class="btn-primary px-6 py-2 text-sm"
+                        >
+                            GitHub Deposunu İncele
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</Layout>

@@ -1,0 +1,97 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Bize Ulaşın">
+    <div class="py-12 relative overflow-hidden">
+        <!-- Background Accents -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div
+                class="absolute -top-40 -right-40 w-96 h-96 bg-primary-theme/10 rounded-full blur-3xl"
+            >
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-theme to-transparent"
+            >
+            </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <h1
+                class="text-3xl font-bold text-theme mb-8 flex items-center gap-3"
+            >
+                <span class="text-4xl">📬</span>
+                Bize Ulaşın
+            </h1>
+
+            <div class="space-y-8 text-muted-theme">
+                <section
+                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30 text-center"
+                >
+                    <p class="text-lg mb-6">
+                        Açık Öğretim Portal, bir topluluk projesi olduğu için
+                        iletişim kanallarımız da <strong>açık ve şeffaf</strong> bir
+                        şekilde GitHub üzerinden yürütülmektedir.
+                    </p>
+                    <p class="mb-8">
+                        Soru, öneri, hata bildirimi veya işbirliği talepleriniz
+                        için aşağıdaki kanalları kullanabilirsiniz.
+                    </p>
+                </section>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Bug/Request Card -->
+                    <a
+                        href="https://github.com/acik-ogretim/acik-ogretim.github.io/issues"
+                        target="_blank"
+                        class="glass p-6 rounded-2xl border border-theme bg-card-theme/30 hover:border-primary-theme/50 transition-all group text-center"
+                    >
+                        <div class="text-4xl mb-4">🐛</div>
+                        <h3
+                            class="text-xl font-bold text-theme group-hover:text-primary-theme mb-2"
+                        >
+                            Hata Bildirimi & Talep
+                        </h3>
+                        <p class="text-sm text-muted-theme">
+                            Sitede karşılaştığınız teknik sorunlar, hatalı
+                            sorular veya yeni özellik/içerik istekleri için.
+                        </p>
+                    </a>
+
+                    <!-- Discussion Card -->
+                    <a
+                        href="https://github.com/acik-ogretim/acik-ogretim.github.io/discussions"
+                        target="_blank"
+                        class="glass p-6 rounded-2xl border border-theme bg-card-theme/30 hover:border-primary-theme/50 transition-all group text-center"
+                    >
+                        <div class="text-4xl mb-4">💬</div>
+                        <h3
+                            class="text-xl font-bold text-theme group-hover:text-primary-theme mb-2"
+                        >
+                            Soru & Cevap
+                        </h3>
+                        <p class="text-sm text-muted-theme">
+                            Genel sorularınız, tartışmalar ve diğer
+                            kullanıcılarla iletişim için tartışma forumu.
+                        </p>
+                    </a>
+                </div>
+
+                <section
+                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30 mt-8"
+                >
+                    <h2 class="text-xl font-bold text-theme mb-4">
+                        E-Posta Desteği
+                    </h2>
+                    <p>
+                        Proje şu anda aktif bir e-posta destek hattına sahip
+                        değildir. En hızlı yanıtı almak için lütfen yukarıdaki
+                        GitHub bağlantılarını kullanın. Bildirimleriniz
+                        geliştirici ekibimiz tarafından düzenli olarak kontrol
+                        edilmektedir.
+                    </p>
+                </section>
+            </div>
+        </div>
+    </div>
+</Layout>

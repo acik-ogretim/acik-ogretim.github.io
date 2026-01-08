@@ -1,0 +1,19 @@
+title: "[SORU]: "
+labels: ["yardim", "soru-cozumu"]
+body:
+  - type: textarea
+    id: question_details
+    attributes:
+      label: Takıldığınız Soru veya Konu
+      description: Hangi dersin hangi ünitesindeki soruyu anlamadınız?
+      placeholder: "Örn: Anadolu AÖF - Hukuka Giriş - Ünite 3 - Soru 5"
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Anlamadığınız Nokta
+      description: Neresi karışık geldi? Neden cevabın farklı olduğunu düşünüyorsunuz?
+      placeholder: "Ben cevabın B olduğunu düşünüyordum çünkü..."
+    validations:
+      required: true

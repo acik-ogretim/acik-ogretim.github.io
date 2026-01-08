@@ -1,0 +1,115 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Gizlilik Politikası">
+    <div class="py-12 relative overflow-hidden">
+        <!-- Background Accents -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div
+                class="absolute -top-40 -right-40 w-96 h-96 bg-primary-theme/10 rounded-full blur-3xl"
+            >
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-theme to-transparent"
+            >
+            </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <h1
+                class="text-3xl font-bold text-theme mb-8 flex items-center gap-3"
+            >
+                <span class="text-4xl">🛡️</span>
+                Gizlilik Politikası
+            </h1>
+
+            <div class="space-y-8 text-muted-theme">
+                <section
+                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30"
+                >
+                    <h2 class="text-xl font-bold text-theme mb-4">
+                        Veri Toplama ve Kullanım
+                    </h2>
+                    <p>
+                        Açık Öğretim Portal, kullanıcılarından <strong
+                            >herhangi bir kişisel veri (ad, e-posta, telefon
+                            vb.) toplamaz ve saklamaz.</strong
+                        >
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 ml-4 mt-4">
+                        <li>Sistemde üyelik veya kayıt zorunluluğu yoktur.</li>
+                        <li>
+                            Çözdüğünüz soruların istatistikleri ve favori
+                            dersleriniz yalnızca kendi tarayıcınızın <strong
+                                >Local Storage (Yerel Depolama)</strong
+                            > alanında saklanır.
+                        </li>
+                        <li>
+                            Bu veriler sunucularımıza gönderilmez ve bizim
+                            tarafımızdan erişilemez.
+                        </li>
+                        <li>
+                            Tarayıcı geçmişinizi temizlediğinizde bu veriler
+                            silinir.
+                        </li>
+                    </ul>
+                </section>
+
+                <section
+                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30"
+                >
+                    <h2 class="text-xl font-bold text-theme mb-4">
+                        Çerezler (Cookies)
+                    </h2>
+                    <p>
+                        Sitemiz, kullanıcı deneyimini iyileştirmek için sadece
+                        zorunlu yerel depolama özelliklerini kullanır (örneğin:
+                        tema tercihi, son kalınan yer). Reklam veya izleme
+                        amaçlı üçüncü taraf çerezleri kullanılmamaktadır.
+                    </p>
+                </section>
+
+                <section
+                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30"
+                >
+                    <h2 class="text-xl font-bold text-theme mb-4">
+                        Açık Kaynak
+                    </h2>
+                    <p>
+                        Bu projenin tüm kaynak kodları GitHub üzerinde şeffaf
+                        bir şekilde yayınlanmaktadır. Dilerseniz kodları
+                        inceleyerek veri güvenliği konusunda kendi denetiminizi
+                        yapabilirsiniz.
+                    </p>
+                    <a
+                        href="https://github.com/acik-ogretim/acik-ogretim.github.io"
+                        target="_blank"
+                        class="text-primary-theme hover:underline mt-2 inline-block"
+                    >
+                        GitHub Deposunu İncele →
+                    </a>
+                </section>
+
+                <section
+                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30"
+                >
+                    <h2 class="text-xl font-bold text-theme mb-4">
+                        Politika Güncellemeleri
+                    </h2>
+                    <p>
+                        Bu gizlilik politikası zaman zaman güncellenebilir.
+                        Gelecekte siteye çerez (cookie) kullanımı, takip
+                        araçları veya benzeri özelliklerin eklenmesi durumunda,
+                        yapılacak tüm değişiklikler ve kullanım detayları şeffaf
+                        bir şekilde <strong>bu sayfada ilan edilecektir.</strong
+                        >
+                    </p>
+                    <p class="mt-2 text-sm text-slate-400">
+                        Son Güncelleme: {new Date().toLocaleDateString("tr-TR")}
+                    </p>
+                </section>
+            </div>
+        </div>
+    </div>
+</Layout>

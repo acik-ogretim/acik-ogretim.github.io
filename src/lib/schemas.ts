@@ -18,10 +18,18 @@ export const departmentSchema = z.object({
     name: z.string(),
     shortName: z.string(),
     code: z.string(),
-    degree: z.enum(['onlisans', 'lisans', 'yukseklisans']),
+    degree: z.enum([
+        'onlisans',
+        'lisans',
+        'yukseklisans',
+        'lisans-tamamlama',
+        'uzem-lisans-tamamlama',
+        'tezsiz-yuksek-lisans'
+    ]),
     duration: z.number().min(2).max(10),
     active: z.boolean().default(true),
     order: z.number().default(0),
+    icon: z.string().optional(),
 });
 
 export const courseSchema = z.object({
@@ -34,6 +42,7 @@ export const courseSchema = z.object({
     credits: z.number().optional(),
     unitCount: z.number().min(1),
     questionCount: z.number().default(0),
+    automationId: z.string().optional(),
     lastUpdated: z.string().datetime().optional(),
 });
 

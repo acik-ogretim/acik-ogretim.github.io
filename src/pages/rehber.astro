@@ -1,0 +1,285 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Kullanım Rehberi">
+    <div class="py-12 relative overflow-hidden">
+        <!-- Background Accents -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div
+                class="absolute -top-40 -right-40 w-96 h-96 bg-primary-theme/10 rounded-full blur-3xl"
+            >
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-theme to-transparent"
+            >
+            </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <h1
+                class="text-3xl font-bold text-theme mb-8 flex items-center gap-3"
+            >
+                <span class="text-4xl">📖</span>
+                Kullanım Rehberi
+            </h1>
+
+            <div class="space-y-12">
+                <!-- Sınav Ayarları Bölümü -->
+                <section
+                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30"
+                >
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center text-2xl"
+                        >
+                            ⚙️
+                        </div>
+                        <h2 class="text-2xl font-bold text-theme">
+                            Sınav ve Arayüz Ayarları
+                        </h2>
+                    </div>
+
+                    <p class="text-muted-theme mb-6">
+                        Test ekranının sağ alt köşesindeki <strong
+                            >Ayarlar Butonuna</strong
+                        > tıklayarak deneyiminizi kişiselleştirebilirsiniz. Değişiklikleriniz
+                        tarayıcınıza otomatik olarak kaydedilir.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Kart 1: Filtreleme -->
+                        <div
+                            class="bg-black/20 p-6 rounded-xl border border-white/5"
+                        >
+                            <h3
+                                class="font-semibold text-primary-theme mb-3 flex items-center gap-2"
+                            >
+                                <svg
+                                    class="w-5 h-5"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    ><path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
+                                    ></path></svg
+                                >
+                                Soru Filtreleme
+                            </h3>
+                            <ul class="space-y-2 text-sm text-muted-theme">
+                                <li>
+                                    • <strong>Yanlışları Çöz:</strong> Sadece daha
+                                    önce yanlış cevapladığınız soruları getirir. Hatalarınızı
+                                    tekrar etmek için idealdir.
+                                </li>
+                                <li>
+                                    • <strong>Cevaplanmamışları Çöz:</strong> Daha
+                                    önce hiç görmediğiniz soruları getirir.
+                                </li>
+                                <li>
+                                    • <strong>Ünite Seçimi:</strong> Sadece belirli
+                                    ünitelerden (örn. 1-7 arası) soru gelmesini sağlar.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Kart 2: Görünüm -->
+                        <div
+                            class="bg-black/20 p-6 rounded-xl border border-white/5"
+                        >
+                            <h3
+                                class="font-semibold text-primary-theme mb-3 flex items-center gap-2"
+                            >
+                                <svg
+                                    class="w-5 h-5"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    ><path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                                    ></path><path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                                    ></path></svg
+                                >
+                                Görünüm Seçenekleri
+                            </h3>
+                            <ul class="space-y-2 text-sm text-muted-theme">
+                                <li>
+                                    • <strong>Cevapları Göster:</strong> Seçimden
+                                    sonra doğru/yanlış cevabı anında gösterir.
+                                </li>
+                                <li>
+                                    • <strong>Açıklamaları Göster:</strong> Cevabın
+                                    neden doğru olduğunu anlatan AI açıklamasını otomatik
+                                    açar.
+                                </li>
+                                <li>
+                                    • <strong>Sadece Doğru Şık:</strong> Yanlış şıkları
+                                    gizleyerek odaklanmanızı kolaylaştırır.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Özellikler: İnteraktif Mod & Favoriler -->
+                <section
+                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30"
+                >
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-teal-500/20 flex items-center justify-center text-2xl"
+                        >
+                            ⚡
+                        </div>
+                        <h2 class="text-2xl font-bold text-theme">
+                            Çalışma Modları
+                        </h2>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- İnteraktif Mod -->
+                        <div>
+                            <h3 class="font-bold text-lg text-white mb-2">
+                                🖱️ İnteraktif Çözüm Modu
+                            </h3>
+                            <p class="text-sm text-muted-theme mb-3">
+                                Soruları çözerken şıklara tıkladığınızda doğru
+                                veya yanlış olduğunu anında görebilirsiniz.
+                                Ancak dilerseniz alt bardaki <strong
+                                    >"Çöz"</strong
+                                > butonunu kullanarak, önce kafanızdan çözüp sonra
+                                cevabı kontrol edebilirsiniz.
+                            </p>
+                            <div
+                                class="p-3 bg-slate-900 rounded border border-slate-700 text-xs text-slate-400"
+                            >
+                                <span class="text-teal-400 font-bold"
+                                    >İpucu:</span
+                                > Bu mod, sınav simülasyonu yapmak yerine konuyu öğrenerek
+                                ilerlemek istediğinizde önerilir.
+                            </div>
+                        </div>
+
+                        <!-- Favoriler -->
+                        <div>
+                            <h3 class="font-bold text-lg text-white mb-2">
+                                ⭐ Favori Dersler
+                            </h3>
+                            <p class="text-sm text-muted-theme mb-3">
+                                Sık çalıştığınız dersleri kaybetmemek için, ders
+                                sayfasının sağ üst köşesindeki <strong
+                                    >Yıldız (⭐)</strong
+                                > ikonuna tıklayarak favorilerinize ekleyebilirsiniz.
+                            </p>
+                            <ul
+                                class="space-y-1 text-xs text-slate-400 list-disc list-inside"
+                            >
+                                <li>
+                                    Favori dersleriniz ana sayfada veya menüde
+                                    daha hızlı erişim için listelenir.
+                                </li>
+                                <li>
+                                    Bu veriler sadece sizin tarayıcınızda (Local
+                                    Storage) saklanır, sunucuya gönderilmez.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sesli Okuma Bölümü -->
+                <section
+                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30"
+                >
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center text-2xl"
+                        >
+                            🗣️
+                        </div>
+                        <h2 class="text-2xl font-bold text-theme">
+                            Sesli Okuma (TTS)
+                        </h2>
+                    </div>
+                    <p class="text-muted-theme mb-4">
+                        Soruları okumaktan yorulduğunuzda yapay zeka
+                        seslendirmesini kullanabilirsiniz. Alt bardaki
+                        "Hoparlör" simgesine tıklamanız yeterlidir.
+                    </p>
+                    <ul
+                        class="list-disc list-inside space-y-2 ml-4 text-muted-theme"
+                    >
+                        <li>
+                            <strong>Soru & Şıklar:</strong> Soruyu ve tüm şıkları
+                            sırasıyla okur.
+                        </li>
+                        <li>
+                            <strong>Analiz:</strong> Cevap verdikten sonra doğru şıkkın
+                            açıklamasını okur.
+                        </li>
+                        <li>
+                            <strong>Hız Ayarı:</strong> Varsayılan hız 1.2x'tir (hızlı).
+                            Ayarlardan bunu yavaşlatabilir veya hızlandırabilirsiniz.
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- PWA / Kurulum Bölümü -->
+                <section
+                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30"
+                >
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center text-2xl"
+                        >
+                            📲
+                        </div>
+                        <h2 class="text-2xl font-bold text-theme">
+                            Uygulama Olarak Yükle
+                        </h2>
+                    </div>
+                    <p class="text-muted-theme">
+                        Bu portal bir <strong>PWA (Progressive Web App)</strong> uygulamasıdır.
+                        Telefonunuza veya bilgisayarınıza indirerek bir uygulama gibi
+                        kullanabilirsiniz.
+                    </p>
+                    <div class="mt-6 grid sm:grid-cols-2 gap-4">
+                        <div
+                            class="p-4 bg-slate-900 rounded-lg border border-slate-700"
+                        >
+                            <h4 class="font-bold text-white mb-2">
+                                Android / Chrome
+                            </h4>
+                            <p class="text-xs text-slate-400">
+                                Sayfa yüklendiğinde beliren "Uygulamayı Yükle"
+                                butonuna tıklayın veya tarayıcı menüsünden "Ana
+                                Ekrana Ekle"yi seçin.
+                            </p>
+                        </div>
+                        <div
+                            class="p-4 bg-slate-900 rounded-lg border border-slate-700"
+                        >
+                            <h4 class="font-bold text-white mb-2">
+                                iOS (iPhone/iPad)
+                            </h4>
+                            <p class="text-xs text-slate-400">
+                                Safari'de "Paylaş" butonuna basın ve açılan
+                                menüden "Ana Ekrana Ekle" seçeneğini seçin.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</Layout>

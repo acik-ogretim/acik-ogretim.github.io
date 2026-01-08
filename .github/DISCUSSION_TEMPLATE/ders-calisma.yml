@@ -1,0 +1,27 @@
+title: "[TARTIŞMA]: "
+labels: ["ders-calisma", "taktik"]
+body:
+  - type: dropdown
+    id: university
+    attributes:
+      label: Üniversite / Bölüm
+      options:
+        - Anadolu AÖF
+        - ATA-AÖF
+        - AUZEF
+        - Genel
+    validations:
+      required: true
+  - type: textarea
+    id: topic
+    attributes:
+      label: Konu Başlığı
+      description: Hangi ders veya sınav dönemi hakkında konuşmak istiyorsunuz?
+      placeholder: "Örn: Finansal Yönetim dersine nasıl çalışılmalı? Vize tüyoları..."
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: Mesajınız
+      description: Deneyimlerinizi, sorularınızı veya kaynak önerilerinizi paylaşın.

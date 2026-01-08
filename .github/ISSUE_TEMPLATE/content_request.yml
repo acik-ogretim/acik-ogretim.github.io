@@ -1,0 +1,44 @@
+name: Bölüm/Ders İsteği
+description: Sisteme eklenmesini istediğiniz bir üniversite bölümü veya dersi önerin.
+title: "[İSTEK]: "
+labels: ["istek", "yeni-icerik"]
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: İsteğin Türü
+      options:
+        - Yeni Bölüm Ekleme
+        - Yeni Ders Ekleme
+        - Mevcut Derse Soru Ekleme
+    validations:
+      required: true
+  - type: dropdown
+    id: university
+    attributes:
+      label: Üniversite
+      options:
+        - Anadolu AÖF
+        - ATA-AÖF
+        - AUZEF
+    validations:
+      required: true
+  - type: input
+    id: department
+    attributes:
+      label: Bölüm Adı
+      description: Örn. Çocuk Gelişimi, Adalet...
+      placeholder: Bölüm adını yazınız
+    validations:
+      required: true
+  - type: input
+    id: course
+    attributes:
+      label: Ders Adı (Opsiyonel)
+      description: Eğer belirli bir ders için soru istiyorsanız belirtin.
+      placeholder: Ders adını yazınız
+  - type: textarea
+    id: details
+    attributes:
+      label: Ek Bilgiler
+      description: Varsa elinizdeki kaynak linkleri veya diğer notlar.
