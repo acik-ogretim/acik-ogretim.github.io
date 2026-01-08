@@ -13,3 +13,11 @@ body:
         - **💡 Fikir:** Portal için yeni özellik fikirlerinizi paylaşın (Hata bildirimleri için lütfen Issues kullanın).
 
         Lütfen [Davranış Kuralları](../CODE_OF_CONDUCT.md)'na uymayı unutmayın. Saygılı ve yapıcı bir ortam hepimiz için daha iyidir ve eğitim hayatımızda başarıyı getirir!
+  - type: textarea
+    id: intro
+    attributes:
+      label: "Tanışma Mesajınız"
+      description: "Kendinizi tanıtın ve topluluğa merhaba deyin!"
+      placeholder: "Merhaba, ben..."
+    validations:
+      required: true
