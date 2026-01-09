@@ -1,0 +1,1262 @@
+[
+  {
+    "id": "3595090",
+    "unitNumber": 1,
+    "text": "Which of the given functions could be a linear regression model?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "Y = β<sub>0</sub> + β<sub>1</sub> X<sub>1</sub>",
+      "B": "Y = β<sub>0</sub> + β<sup>x</sup>",
+      "C": "Y = β<sub>0</sub> + β<sub>1</sub> X<sup>2</sup>",
+      "D": "Y = β<sub>0</sub> + β<sub>1</sub> log(X<sub>1</sub>)",
+      "E": "Y = β<sub>0</sub> + β<sub>1</sub> X<sup>(-1)</sup>"
+    },
+    "explanation": "Linear regression models the relationship between the dependent variable and explanatory variables where the function is linear in parameters:<br/>Y = β<sub>0</sub> + β<sub>1</sub> X<sub>1</sub>+…+ β<sub>k</sub> X<sub>k</sub>+ u where X<sub>1</sub>, X<sub>2</sub>, …, X<sub>k</sub> are the explanatory variables, Y is the dependent variable e is the error.\n The answer is A."
+  },
+  {
+    "id": "3595103",
+    "unitNumber": 1,
+    "text": "I. According to the Gauss-Markov theorem, have the least variance among the class of estimators that are linear and unbiased. \n II. The minimum variance of an OLS estimator indicates it is the most efficient estimator as it provides the tightest estimates around the population value of the parameter.\n III. According to the Gauss-Markov theorem, have the least variance among the class of estimators that are non-linear and biased. \n What can be said to be true about the OLS estimators?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "Only I",
+      "B": "Only II",
+      "C": "Only III",
+      "D": "I and II",
+      "E": "I and III"
+    },
+    "explanation": "The OLS estimators, according to the Gauss-Markov theorem, have the least variance among the class of estimators that are linear and unbiased. Linear term in the Gauss-Markov theorem, simply indicates that we are working within the linear regression framework. Unbiasedness is crucial for an estimator since it means that the estimator does not systematically miscalculate the estimates. Finally, the minimum variance of an OLS estimator indicates it is the most efficient estimator as it provides the tightest estimates around the population value of the parameter.\n The answer is D"
+  },
+  {
+    "id": "3595140",
+    "unitNumber": 1,
+    "text": "What is the spread, dispersion, or variability of the errors is consistent throughout the range of values of the explanatory variables?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "Homoskedasticity",
+      "B": "Multicollinearity",
+      "C": "Exogeneity",
+      "D": "Normality",
+      "E": "Heteroskedasticity"
+    },
+    "explanation": "Homoskedasticity means that the spread, dispersion, or variability of the errors is consistent<br/>throughout the range of values of the explanatory variables.\n The answer is A."
+  },
+  {
+    "id": "3595144",
+    "unitNumber": 1,
+    "text": "Which of the given could be among the consequences of heteroskedasticity?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "The model becomes non-linear in parameters.",
+      "B": "The t and F statistics are no longer t and F distributed.",
+      "C": "The bias in the standard errors are reliable for hypothesis testing and confidence intervals.",
+      "D": "The LM statistic has an asymptotic chi-square distribution.",
+      "E": "The OLS estimator can still be efficient under heteroskedasticity."
+    },
+    "explanation": "Heteroskedasticity is fundamentally the violation of assumption A5. The assumptions of OLS do not affect each other. Hence the violation of A5 has no effect on the first four assumptions. Consequently, our model is still linear in parameters (A1 is satisfied), the sample used to estimate the coefficients for the model is selected randomly (A2 is satisfied), any variable or a group of them in the data set is not a linear combination of the others (A3 is satisfied), and explanatory variables are not related to the residuals (A4 is satisfied). In other words, heteroskedasticity causes no bias in the estimates of the OLS coefficients.<br/>The OLS estimators are still unbiased, however, the OLS estimates of the standard errors of coefficients, se(b<sub>k</sub>) for k=0,1,…, K, are biased. The bias in the standard errors leads to unreliable hypothesis testing and confidence intervals.\n The t and F statistics are no longer t and F distributed and the LM statistic no longer has an asymptotic chi-square distribution. Therefore, the test statistics we have covered in the quick review portion of the chapter are no longer valid.<br/>The OLS estimator is no longer efficient under heteroskedasticity. When heteroskedasticity is present, the variance of the error term varies with the level of the independent variable. As a result, the OLS estimator tends to give too much weight to observations with smaller errors. Inefficient estimates refer to parameter estimates that have a higher degree of variability or uncertainty compared to the alternative estimators. An estimator is deemed inefficient if it does not make full use of the available information in the data, leading to a greater degree of uncertainty in the estimated parameter values.\n The answer is B."
+  },
+  {
+    "id": "3595696",
+    "unitNumber": 1,
+    "text": "I. LM-test\n II. Model Specification\n III. Robust Standard Errors\n Which of the given can be used to deal with a model with serially correlated residuals?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "Only I",
+      "B": "Only II",
+      "C": "I and II",
+      "D": "I and III",
+      "E": "II and III"
+    },
+    "explanation": "The utilization of OLS without any alteration in inference or any other modifications when residuals<br/>of the model is serially correlated lead to many problems. Here we are discussing how to deal with a model with serially correlated residuals:\n Robust standard errors: As in the heteroskedasticity model can be estimated with OLS then any<br/>inference can be conducted with robust standard errors.\n Model Specification: Although it has a quite humble name, this item incorporates three crucial<br/>topics: differencing, lagged values of variables, and deterministic terms.\n Cochrane-Orcutt and Prais-Winsten procedures: These procedures involve transforming the<br/>original models by quasi-differencing and estimating the model on the transformed data.\n The answer is E."
+  },
+  {
+    "id": "3595703",
+    "unitNumber": 1,
+    "text": "I. Breusch Pagan-Godfrey Test\n II. Durbin’s t tests\n III. Modified White (MWh) Test\n Which of the given tests are used to test heteroskedasticity?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "Only I",
+      "B": "Only II",
+      "C": "I and II",
+      "D": "I and III",
+      "E": "II and III"
+    },
+    "explanation": "We will discuss two main types of tests: auxiliary regression-based tests and an order-based test. BreuschPagan-Godfrey (BPG), White, and Modified White tests are the most elementary and most popular tests of heteroskedasticity. The order-based tests are the most intuitive tests. Here we will examine the GoldfeldQuandt (GQ) test.\n The answer is D."
+  },
+  {
+    "id": "3595710",
+    "unitNumber": 1,
+    "text": "I. R<sup>2</sup> is overstated giving the impression of a well-fitted model\n II. The t and F tests are overstated, and prone to rejecting the null hypothesis even if it is correct\n III. The OLS estimates of the standard errors of coefficients are unbiased\n Which of the given could be among the consequences of serial correlation?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Only I",
+      "B": "Only II",
+      "C": "I and II",
+      "D": "I and III",
+      "E": "II and III"
+    },
+    "explanation": "The consequences of serial correlation resemble those of heteroskedasticity to a great extent. The<br/>regression coefficients are still unbiased since the first four assumptions listed in the quick review remain untouched by serial correlation. However the OLS estimates of the standard errors of coefficients, se( ˆβ k ) for k=0,1,…, K, are biased. The usual t and F tests of significance are no longer valid. Finally, the OLS estimator is no longer efficient under serial correlation.<br/>The only distinction is that we now know the direction of the bias in the residual statistics. With<br/>heteroskedasticity, the direction of the bias cannot be determined. Standard errors are biased downward; therefore, the t and F tests are overstated, and prone to rejecting the null hypothesis even if it is correct. Finally, R<sup>2</sup> is also overstated giving the impression of a well-fitted model.\n The answer is C."
+  },
+  {
+    "id": "3595721",
+    "unitNumber": 1,
+    "text": "I. The explanatory variables must be controlled by the experimenter (non-stochastic) which is never the case.\n II. The model that is tested must include an intercept.\n III. It only tests for second-order autocorrelation in the residuals in models with lagged dependent variables.\n What can be said to be true about the Durbin Watson (DW) d-test?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Only I",
+      "B": "Only II",
+      "C": "I and II",
+      "D": "I and III",
+      "E": "II and III"
+    },
+    "explanation": "Durbin Watson (DW) d test is quite popular despite its disadvantages. First, it only tests for first-order autocorrelation in the residuals in models without lagged dependent variables. Second, the explanatory variables must be controlled by the experimenter (non-stochastic) which is never the case. Economists rarely actually control the explanatory variables. Third, the model that is tested must include an intercept. Rarely in econometrics, we estimate models without intercepts, so this is not a great disadvantage. Finally, its critical values do not come from a distribution. \n The answer is C."
+  },
+  {
+    "id": "3595725",
+    "unitNumber": 1,
+    "text": "I. Generalized Least Squares\n II. Model Specification\n III. Non-Linear Models\n Which of the given can be used to deal with a model with heteroskedasticity?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "Only I",
+      "B": "Only II",
+      "C": "Only III",
+      "D": "I and II",
+      "E": "I and III"
+    },
+    "explanation": "There are numerous ways to handle heteroskedasticity in a regression model:<br/>• Robust standard errors: Adopting robust standard errors, which correct the sample estimate of<br/>the standard errors to take heteroskedasticity into account, is a straightforward option. \n • Generalized Least Squares: Generalized least squares (GLS) estimator gives the squared residuals<br/>various weights depending on how much variance they are anticipated to have.\n • Transformations: The dependent variable or the independent variables can be transformed to<br/>address heteroskedasticity.\n • Non-linear models: Finally, if the heteroskedasticity is too severe, it may be necessary to use<br/>non-linear regression models or other alternative methods that are robust to heteroskedasticity,<br/>such as generalized linear models (GLMs) or quantile regression.\n The answer is E."
+  },
+  {
+    "id": "3595733",
+    "unitNumber": 1,
+    "text": "For a regression TSS (total sum of squares)= 100, ESS (explained sum of squares)=50, and RSS (residual sum of squares) =50; what is the R<sup>2</sup> (R-squared) statistics?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "2",
+      "B": "0,50",
+      "C": "0,40",
+      "D": "0,20",
+      "E": "0,15"
+    },
+    "explanation": "we can obtain R<sup>2</sup> (R-squared) statistics,<br/>R<sup>2</sup>= ESS/TSS = 1− (RSS/TSS) ,\n R<sup>2</sup>=50/100 or 1-(50/100)=1/2=0,50\n The answer is B."
+  },
+  {
+    "id": "3842592",
+    "unitNumber": 1,
+    "text": "What is the meaning of Ordinary Least Squares (OLS)?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "Maximization of robust residuals.",
+      "B": "Minimizing the sum of squared residuals.",
+      "C": "Average of the linear regression.",
+      "D": "Sum of the maximum residuals",
+      "E": "Minimum ratio of the coefficients."
+    },
+    "explanation": "As the name suggests, OLS is base on the least squares principles. Is it equivalent to searching for estimates of the parameters that minimize the sum of squared residuals."
+  },
+  {
+    "id": "3842594",
+    "unitNumber": 1,
+    "text": "What is the two important specialities of OLS estimators?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Nonlinear and unbiased",
+      "B": "Nonlinear and biased",
+      "C": "Linear and unbiased",
+      "D": "Unbiased and parabolic",
+      "E": "Linear and biased"
+    },
+    "explanation": "The OLS estimators, according to the Gauss-Markov theorem, have the least variance among the class of estimators that are linear and unbiased."
+  },
+  {
+    "id": "3842596",
+    "unitNumber": 1,
+    "text": "What is not one of the essential specialities of assumptions in OLS?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "Heteroskedasticity",
+      "B": "No serial correlation",
+      "C": "No perfect multicollinearity",
+      "D": "Strict exogeneity",
+      "E": "Perfectly specified model"
+    },
+    "explanation": "One of the assumptions in OLS is homoskedasticity which describes the equality of variances in the errors of a regression model."
+  },
+  {
+    "id": "3842598",
+    "unitNumber": 1,
+    "text": "Which tool is used for the measure that how much of the variance in the dependent variable is explained by the explanatory variables?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "t-test",
+      "B": "F- test",
+      "C": "LM-test",
+      "D": "Probability value",
+      "E": "R<sup>2</sup> statistics"
+    },
+    "explanation": "R<sup>2</sup> statistics measures how much of the variance in the dependent variable is explained by the explanatory variables."
+  },
+  {
+    "id": "3842599",
+    "unitNumber": 1,
+    "text": "Which undesired process occurs when the spread of the errors in the across all values of the independent variable?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "Heteroskedasticity",
+      "B": "Autocorrelation",
+      "C": "Covariance",
+      "D": "Endogeneity",
+      "E": "Robust standard errors"
+    },
+    "explanation": "Homoskedasticity occurs when the spread of the errors is the same across all values of the independent variable."
+  },
+  {
+    "id": "3842601",
+    "unitNumber": 1,
+    "text": "Which test checks both heteroskedasticity and functional form specification errors?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "Breusch- Pagan- Godfrey (BPG) Test",
+      "B": "Modified White Test",
+      "C": "Goldfeld- Quandt Test",
+      "D": "White Test",
+      "E": "Durbin- Watson Test"
+    },
+    "explanation": "White test not only checks for heteroskedasticity but for function form specification errors as well."
+  },
+  {
+    "id": "3842602",
+    "unitNumber": 1,
+    "text": "Which test is not appropriate for serial correlation when lagged values of the dependent variable occur in the model?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "Durbin Watson <em>h</em> Test",
+      "B": "Durbin Watson<em> d</em> Test",
+      "C": "Durbin Watson<em> t</em> Test",
+      "D": "Breusch- Godfrey Test",
+      "E": "Durbin Watson<em> z </em>Test"
+    },
+    "explanation": "DW d test is not appropriate when lagged values of the dependent variable occur in the model."
+  },
+  {
+    "id": "3842605",
+    "unitNumber": 1,
+    "text": "Which test statistics focuses on the statistical significance of coefficient?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "Probability value",
+      "B": "t-test",
+      "C": "F-test",
+      "D": "LM-test",
+      "E": "R<sup>2</sup> statistics"
+    },
+    "explanation": "We are focusing on a hypothesis known as the statistical significance of a coefficient in t-test. Statistical significance for a coefficient estimate is desirable to a certain extent."
+  },
+  {
+    "id": "3842606",
+    "unitNumber": 1,
+    "text": "In which challenge’s existence, are the Cochrane- Orcutt and Prais- Winsten procedures applied to handle with?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "Serial correlation",
+      "B": "Heteroskedasticity",
+      "C": "Nonlinearity",
+      "D": "Biased residuals",
+      "E": "Robust standard errors"
+    },
+    "explanation": "Cochrane- Orcutt and Prais- Winsten procedures are used to address serial correlation challenge."
+  },
+  {
+    "id": "3842609",
+    "unitNumber": 1,
+    "text": "Which challenge means that residuals are related to each other?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "Serial correlation",
+      "B": "Heteroskedasticity",
+      "C": "Nonlinearity",
+      "D": "Homoskedasticity",
+      "E": "Ordinary Least Squares"
+    },
+    "explanation": "Serial correlation means that residuals are related to each other."
+  },
+  {
+    "id": "3595806",
+    "unitNumber": 2,
+    "text": "What is a endogenous regressors?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "It implies that certain variables within the model are determined within the system itself.",
+      "B": "It implies that certain variables within the model are determined outside the system itself.",
+      "C": "It implies that certain variables within the model are not necessarily determined.",
+      "D": "It implies that certain variables within the model are constant in the system itself.",
+      "E": "It implies that certain variables outside the model are determined within the system itself."
+    },
+    "explanation": "The term “endogenous regressors” implies that certain variables within the model are determined within the system itself. Although our model may consist of only one equation, some variables can be influenced and shaped by hidden or ignored equations operating within the system. This interdependence can lead to the endogeneity problem, impacting the reliability of our results.\n The answer is A."
+  },
+  {
+    "id": "3595808",
+    "unitNumber": 2,
+    "text": "I. A simultaneous equation, also known as a system of equations, is a set of two or more equations with multiple variables that are connected and must be solved together.\n<br/>II. The solution to a simultaneous equation is a set of values for the variables that satisfy all the given equations simultaneously. \n<br/>III. In economics, simultaneous equations are rarely used to model various economic relationships and phenomena.\n<br/>Which of the given statements can be said to be true about simultaneous equations?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Only I",
+      "B": "Only II",
+      "C": "I and II",
+      "D": "I and III",
+      "E": "II and III"
+    },
+    "explanation": "A simultaneous equation, also known as a system of equations, is a set of two or more<br/>equations with multiple variables that are connected and must be solved together. The solution to a<br/>simultaneous equation is a set of values for the variables that satisfy all the given equations simultaneously. In economics, simultaneous equations are frequently used to model various economic relationships and phenomena.\n<br/>The answer is C."
+  },
+  {
+    "id": "3595838",
+    "unitNumber": 2,
+    "text": "I. It is a common issue in statistical and econometric analysis that arises when the explanatory variable(s) used in a regression model are correlated with the error term or disturbance in the model. \n II. The correlation between the explanatory variable(s) used in a regression model and the error term or disturbance violates the assumption of exogeneity, which is a key assumption for obtaining unbiased and consistent parameter estimates in regression analysis.\n III. In simple terms, endogeneity bias occurs when there is a one-way causal relationship between the independent variable and one or more regressors, making it difficult to determine the true cause-and-effect relationship.\n What can be said to be true about the endogeneity bias?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Only I",
+      "B": "Only II",
+      "C": "I and II",
+      "D": "I and III",
+      "E": "II and III"
+    },
+    "explanation": "Endogeneity bias, also known as endogeneity problem, is a common issue in statistical and econometric analysis that arises when the explanatory variable(s) used in a regression model are correlated with the error term or disturbance in the model. This correlation violates the assumption of exogeneity, which is a key assumption for obtaining unbiased and consistent parameter estimates in regression analysis. In simple terms, endogeneity bias occurs when there is a two-way causal relationship between the dependent variable and one or more regressors, making it difficult to determine the true cause and effect relationship, which is shadowed behind so-called endogeneity bias.\n The answer is C."
+  },
+  {
+    "id": "3595850",
+    "unitNumber": 2,
+    "text": "I. The 2SLS method addresses the endogeneity problem by using instrumental variables (IVs) to proxy for the endogenous variables and identify the causal effect more accurately.\n<br/>II. The 2SLS method is unusable when dealing with simultaneous equations models where there is endogeneity and simultaneous causation between variables.\n<br/>III. The two-stage least squares method is an essential tool in econometrics for addressing endogeneity and obtaining reliable estimates of causal relationships. \n<br/>What can be said to be true about the Two-Stage Least Squares method (2SLS)?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "Only I",
+      "B": "Only II",
+      "C": "I and II",
+      "D": "I and III",
+      "E": "II and III"
+    },
+    "explanation": "The 2SLS method provides a way to obtain consistent and unbiased estimates when dealing with<br/>endogeneity problems. First, the 2SLS method addresses the endogeneity problem by using instrumental variables (IVs) to proxy for the endogenous variables and identify the causal effect more accurately. By finding valid instrumental variables, the 2SLS method allows researchers to isolate the exogenous variation in the endogenous variables and obtain consistent estimates of the causal relationship. Moreover, the 2SLS method is particularly useful when dealing with simultaneous equations models where there is endogeneity and simultaneous causation between variables. It allows researchers to break the simultaneity problem and obtain consistent estimates of the underlying relationships. Consequently, the two-stage least squares method is an essential tool in econometrics for addressing endogeneity and obtaining reliable estimates of causal relationships. By using instrumental variables and a two-stage procedure, the 2SLS method provides a robust and effective solution to the challenges posed by endogeneity in regression analysis, making it a valuable tool for empirical research in economics and related fields.\n<br/>The answer is D."
+  },
+  {
+    "id": "3595936",
+    "unitNumber": 2,
+    "text": "Which of the given statements about the reasons to test for endogeneity can be said to be <strong>false</strong>?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "By testing for endogeneity and using appropriate techniques to address it, researchers can obtain more reliable and valid inference from their models.",
+      "B": "Endogeneity can create spurious connections, making it easier to determine the true direction of causality.",
+      "C": "Endogeneity can lead to biased and inconsistent parameter estimates in regression analysis.",
+      "D": "By testing for endogeneity, researchers can identify potential problems with causality and employ appropriate methods to establish causal relationships more accurately.",
+      "E": "If endogeneity is not addressed, the results obtained from the analysis may not reflect the true relationships between variables."
+    },
+    "explanation": "Testing for endogeneity is essential in econometric and statistical analysis for several reasons. In<br/>many economic and social science studies, the main goal is to establish a causal relationship between the explanatory and dependent variables. However, endogeneity can create spurious connections, making it difficult to determine the true direction of causality. By testing for endogeneity, researchers can identify potential problems with causality and employ appropriate methods to establish causal relationships more accurately. Moreover, Endogeneity can lead to biased and inconsistent parameter estimates in regression analysis as we discussed earlier. If endogeneity is not addressed, the results obtained from the analysis may not reflect the true relationships between variables. By testing for endogeneity and using appropriate techniques to address it, researchers can obtain more reliable and valid inference from their models.\n The answer is B."
+  },
+  {
+    "id": "3595940",
+    "unitNumber": 2,
+    "text": "I. Endogeneity problem in regression models occurs when the Gauss-Markov assumption on zero<br/>the conditional expectation is violated. \n II. The endogeneity problem (bias) results from the independence between the model’s error term and regressor(s).\n III. The error term is independent of the regressor if this assumption fails, we cannot control other variables since the error term and regressor move together.\n What can be said to be true about the Endogeneity problem?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "Only I",
+      "B": "Only II",
+      "C": "I and II",
+      "D": "I and III",
+      "E": "II and III"
+    },
+    "explanation": "Endogeneity problem in regression models occurs when the Gauss-Markov assumption on zero<br/>the conditional expectation is violated. Consider a simple linear regression model Y=β<sub>0</sub>+β<sub>1</sub>X+u. The zero conditional expectation assumption can be written as E[u|X ] = cov(u, X) = 0. In this case, we can say that the error term is independent of the regressor; in other words, the error term does not carry any common information with the regressor. This assumption is critical because it is required to ensure the ceteris paribus assumption when we interpret the coefficient β<sub>1</sub>. If this assumption fails, we cannot control other variables since the error term and regressor move together. Moreover, the presence of such a situation engenders bias, sometimes called endogeneity bias. Consequently, the endogeneity problem (bias) results from dependence between the model’s error term and regressor(s). Notice that we can generalize this problem to the multiple linear regression model with the same principles.\n The answer is D."
+  },
+  {
+    "id": "3595944",
+    "unitNumber": 2,
+    "text": "What is the situation where one or more variables used in a statistical analysis are measured imprecisely or with error?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "Errors in Variables",
+      "B": "Simultaneous Equation",
+      "C": "Sample Selection Problem",
+      "D": "Endogeneity Bias",
+      "E": "Endogeneity Problem"
+    },
+    "explanation": "In economics and finance, “errors in variables,” also known as measurement error, refers to the situation where one or more variables used in a statistical analysis are measured imprecisely or with error.\n The answer is A."
+  },
+  {
+    "id": "3596076",
+    "unitNumber": 2,
+    "text": "I. The main idea in testing overidentification restriction is to check whether any instrument is endogenous.\n II. “Exogeneity” of the instruments dictates that the instruments should be related to the error term of the original regression\n III. The test done to testing overidentification restriction can tell us which instrument(s) is(are) problematic.\n Which of the given statements about \"testing overidentification restrictions\" can be said to be true?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "Only I",
+      "B": "Only II",
+      "C": "Only III",
+      "D": "I and II",
+      "E": "I and III"
+    },
+    "explanation": "One particularly important question about the endogeneity testing 2SLS estimation is about the validity of the instruments, which has two dimensions coming from the assumptions on instruments. The first dimension called “relevance” requires that the instruments are related to the endogenous variables. We have already discussed this issue under the “weak instruments problem”. The second issue called “exogeneity” of the instruments dictates that the instruments should not be related to the error term of the original regression. This issue is investigated under the name “overidentification restriction”. The main idea in testing overidentification restriction is to check whether any instrument is endogenous.\n The test done to testing overidentification restriction does not tell us which instrument(s) is(are) problematic.\n The answer is E."
+  },
+  {
+    "id": "3596083",
+    "unitNumber": 2,
+    "text": "I. Supply and Demand Equations\n<br/>II. Economic Profit Equation\n<br/>III. IS-LM Model\n<br/>IV. Investment and Savings Equations\n<br/>Which of the given equations in economics can be listed as simultaneous equations?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "Only I",
+      "B": "I and II",
+      "C": "I, II and III",
+      "D": "I, II and IV",
+      "E": "I, III and IV"
+    },
+    "explanation": "In economics, simultaneous equations are frequently used to model various economic relationships and phenomena. Some examples of simultaneous equations in economics can be listed as follows:\n<br/>1) Supply and Demand Equations\n<br/>2) Investment and Savings Equations\n<br/>3) IS-LM Model\n<br/>The answer is E."
+  },
+  {
+    "id": "3596098",
+    "unitNumber": 2,
+    "text": "Which two conditions should a proper instrument should satisfy?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "Homogeneity and Exogeneity",
+      "B": "Exogeneity and Relevance",
+      "C": "Endogeneity and Relevance",
+      "D": "Exogeneity and Biased",
+      "E": "Linear and Unbiased"
+    },
+    "explanation": "The 2SLS method provides a way to obtain consistent and unbiased estimates when dealing with endogeneity problems. First, the 2SLS method addresses the endogeneity problem by using instrumental variables (IVs) to proxy for the endogenous variables and identify the causal effect more accurately. By finding valid instrumental variables, the 2SLS method allows researchers to isolate the exogenous variation in the endogenous variables and obtain consistent estimates of the causal relationship.\n Accordingly, a proper instrument should satisfy two conditions: exogeneity and relevance.\n The answer is B."
+  },
+  {
+    "id": "3597632",
+    "unitNumber": 3,
+    "text": "Which of the following best describes seasonal variation in a time series?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "Long-term tendency of upward or downward movement over time.",
+      "B": "Oscillations around the long-term trend curve.",
+      "C": "Permanent fluctuations within a specific time period.",
+      "D": "Predictable fluctuations occurring regularly within a year.",
+      "E": "Short-term unpredictable changes due to random events."
+    },
+    "explanation": "Seasonal Change: Permanent fluctuations in a specific time period within a year, such as monthly or quarterly, can indicate seasonal changes in time series."
+  },
+  {
+    "id": "3597633",
+    "unitNumber": 3,
+    "text": "<table> <tbody> <tr> <td> Years\n </td> <td> Y(t)\n </td> <td> t\n </td> <td> Y(t)t\n </td> <td> t<sup>2</sup>\n </td> </tr> <tr> <td> 2015\n </td> <td> 1\n </td> <td> 1\n </td> <td> 1\n </td> <td> 1\n </td> </tr> <tr> <td> 2016\n </td> <td> 3\n </td> <td> 2\n </td> <td> 6\n </td> <td> 4\n </td> </tr> <tr> <td> 2017\n </td> <td> 5\n </td> <td> 3\n </td> <td> 15\n </td> <td> 9\n </td> </tr> </tbody> </table> Using the data in table, which of the following is the estimation value of slope parameters using the least squares method?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "0.5",
+      "B": "-1",
+      "C": "3",
+      "D": "2",
+      "E": "-2"
+    },
+    "explanation": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/4d586eb4d62037ce7d5ee77fffd1e282.jpeg\" alt=\"\" width=\"303\" height=\"123\">"
+  },
+  {
+    "id": "3597636",
+    "unitNumber": 3,
+    "text": "<table> <tbody> <tr> <td> Years\n </td> <td> Y(t)\n </td> <td> t\n </td> <td> Y(t)t\n </td> <td> t<sup>2</sup>\n </td> </tr> <tr> <td> 2015\n </td> <td> 1\n </td> <td> 1\n </td> <td> 1\n </td> <td> 1\n </td> </tr> <tr> <td> 2016\n </td> <td> 3\n </td> <td> 2\n </td> <td> 6\n </td> <td> 4\n </td> </tr> <tr> <td> 2017\n </td> <td> 5\n </td> <td> 3\n </td> <td> 15\n </td> <td> 9\n </td> </tr> </tbody> </table> Using the data in table, which of the following is the equation of the linear trend model by the LS method?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "Y(t)=0.5-2t",
+      "B": "Y(t)=2+8t",
+      "C": "Y(t)=2-t",
+      "D": "Y(t)=-2t",
+      "E": "Y(t)=-1+2t"
+    },
+    "explanation": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/7dfdb6db5d2c434d19c4b53f960c637a.jpeg\" alt=\"\" width=\"488\" height=\"176\">"
+  },
+  {
+    "id": "3597637",
+    "unitNumber": 3,
+    "text": "Which component of a time series reflects the observed but unpredictable changes after decomposing the effects of trend, cyclical movements, and seasonal variation?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "Trend",
+      "B": "Random variation",
+      "C": "Cyclical movements",
+      "D": "Seasonal variation",
+      "E": "Predictable fluctuations"
+    },
+    "explanation": "Random Variation: It is the component that reflects the upward and downward oscillations in a time series after decomposing the effects of trend, cyclical movements and seasonal variation. The random component refers to the observed but unpredictable changes in time series as a result of random events that occur because of unforeseen (unexpected) movements such as political events, natural disasters, war or famines."
+  },
+  {
+    "id": "3597640",
+    "unitNumber": 3,
+    "text": "How does a moving average address short-term fluctuations in a time series?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "By taking successive averages of groups of observations.",
+      "B": "By modeling seasonal variation.",
+      "C": "By detrending the time series.",
+      "D": "By identifying outliers.",
+      "E": "By fitting a polynomial curve."
+    },
+    "explanation": "A moving average removes the short-term fluctuations in a time series by taking successive averages of groups of observations."
+  },
+  {
+    "id": "3597641",
+    "unitNumber": 3,
+    "text": "What is a key advantage of exponential smoothing methods over moving averages?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Exponential smoothing methods are easier to implement.",
+      "B": "Exponential smoothing methods provide forecasts with higher accuracy.",
+      "C": "Exponential smoothing methods remove seasonal variation completely.",
+      "D": "Exponential smoothing methods can handle non-linear trends.",
+      "E": "Exponential smoothing methods do not require historical data."
+    },
+    "explanation": "Moving averages are used in the calculation of seasonal indices as well as in producing a time series that does not contain seasonal variation and has very little random variation (irregular movement) because the moving average series are much smoother and allow the trend or cyclicality of the series to be seen quite clearly."
+  },
+  {
+    "id": "3597644",
+    "unitNumber": 3,
+    "text": "When calculating index numbers, what is the significance of choosing the base period?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "It determines the percentage increase.",
+      "B": "It affects the interpretation of index values.",
+      "C": "It determines the number of commodities used.",
+      "D": "It ensures economic stability.",
+      "E": "It determines the measurement unit."
+    },
+    "explanation": "There are two major definitions of index numbers. Wheldon defines it as follows Index number is a statistical device for indicating the relative movement (dynamics) of data where measurement of actual movement is difficult or incapable of being made”; and according to Edgeworth “Index number shows by its variations (being dynamical) the changes in a magnitude which is not susceptible either of accurate measurement in itself or direct valuation in practice."
+  },
+  {
+    "id": "3597646",
+    "unitNumber": 3,
+    "text": "Price for the base period is 5 and price for the current period is 2. So what is the fixed price indes for the current period?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "20",
+      "B": "30",
+      "C": "40",
+      "D": "50",
+      "E": "60"
+    },
+    "explanation": "I(t)=(2/5)*100=40."
+  },
+  {
+    "id": "3597648",
+    "unitNumber": 3,
+    "text": "Price for period 2020 is 2, price for period 2021 is 5 and price for period 2022 is 6. What is the chain base price index for period 2022?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "100",
+      "B": "110",
+      "C": "115",
+      "D": "120",
+      "E": "125"
+    },
+    "explanation": "I(t)=(6/5)*100=120"
+  },
+  {
+    "id": "3597657",
+    "unitNumber": 3,
+    "text": "What distinguishes a weighted price index from an unweighted price index?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "The choice of base period.",
+      "B": "The number of items in the basket.",
+      "C": "The consumption quantities used as weights.",
+      "D": "The interpretation of index values.",
+      "E": "The calculation method."
+    },
+    "explanation": "In the weighted price index, weights are consumption quantities."
+  },
+  {
+    "id": "3597597",
+    "unitNumber": 4,
+    "text": "Which of the following is a key concept in time series analysis that implies statistical properties remain constant over time?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "Stationary process",
+      "B": "Autocorrelation function (ACF)",
+      "C": "Partial autocorrelation function (PACF)",
+      "D": "White noise processes",
+      "E": "Trend analysis"
+    },
+    "explanation": "Stationary process implies statistical properties remain constant over time."
+  },
+  {
+    "id": "3597598",
+    "unitNumber": 4,
+    "text": "Which univariate time series model captures dependencies within a series based on its own past values?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "Moving Average (MA)",
+      "B": "Autoregressive Integrated Moving Average (ARIMA)",
+      "C": "Autoregressive Moving Average (ARMA)",
+      "D": "Autoregressive (AR)",
+      "E": "Exponential Smoothing"
+    },
+    "explanation": "AR models capture dependencies within a series based on its own past values."
+  },
+  {
+    "id": "3597601",
+    "unitNumber": 4,
+    "text": "There is such a time series that autocovariancesare y(0)=1.45,and y(k)=0 for k&gt;1. Which of the following time series models is the appropriate model for the data?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "MA(1)",
+      "B": "AR(1)",
+      "C": "AR(2)",
+      "D": "MA(2)",
+      "E": "AR(3)"
+    },
+    "explanation": "This process is always stationary. In contrast, for the MA(1) model to be invertible, the root of the equation (1 - θ1L)=0 must be greater than 1 as an absolute value."
+  },
+  {
+    "id": "3597602",
+    "unitNumber": 4,
+    "text": "In an ARIMA(p, d, q) model, what does the 'd' represent?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "The number of autoregressive terms",
+      "B": "The number of moving average terms",
+      "C": "The order of the autoregressive component",
+      "D": "The order of the moving average component",
+      "E": "The number of times the series needs to be differenced to achieve stationarity"
+    },
+    "explanation": "ARIMA(p, d, q), that is, it is an autoregressive integrated moving average time series, where p denotes the number of autoregressive terms, d the number of times the series has to be differenced before it becomes stationary, and q the number of moving average terms."
+  },
+  {
+    "id": "3597604",
+    "unitNumber": 4,
+    "text": "How are ARMA(p,q) models typically identified in time series analysis?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "By conducting hypothesis testing on the time series data",
+      "B": "By comparing the mean and variance of the time series data",
+      "C": "By calculating the sample autocorrelation and partial autocorrelation functions",
+      "D": "By estimating the theoretical autocorrelation and partial autocorrelation functions",
+      "E": "By fitting a linear regression model to the time series data"
+    },
+    "explanation": "In determining the appropriate ARMA(p,q) model, the theoretical autocorrelation of stationary ARMA processes and the general tendency of partial autocorrelation functions are utilized."
+  },
+  {
+    "id": "3597608",
+    "unitNumber": 4,
+    "text": "The autocorrelations for first, second and third lags were calculated as 0.5, 0.3 and 0.2 for a time series of n=100 observations, respectively. Assuming that the adequate model for this time series data is the AR(2) model, which of the following the parameters with the method of moments?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "0,47 and 0,07",
+      "B": "1,4 and 0,6",
+      "C": "0,27 and 0,08",
+      "D": "1,47 and 0,7",
+      "E": "0,5 and -0,64"
+    },
+    "explanation": "The method of moments estimator of the parameters is obtained as follows\n 1. (0,5*(1-0,3))/(1-(0,5*0,5))=0,47\n 2. (0,3-(0,5*0,5))/(1-(0,5*0,5)) =0,07."
+  },
+  {
+    "id": "3597611",
+    "unitNumber": 4,
+    "text": "Which parameter estimation technique is typically used for moving average (MA) models due to their nonlinearity?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "Method of moments",
+      "B": "Linear least squares (LS)",
+      "C": "Nonlinear least squares",
+      "D": "Maximum likelihood estimation (MLE)",
+      "E": "Bayesian estimation"
+    },
+    "explanation": "Due to the nonlinearity of moving average models in terms of their parameters, the linear LS method cannot be used to apply to these models. MA models require the use<br/>of nonlinear estimation methods. It is possible to get estimations of the parameters that will result in the likelihood function maximum if partial derivatives of the logarithmic likelihood function by parameters are taken and equalized to zero."
+  },
+  {
+    "id": "3597629",
+    "unitNumber": 4,
+    "text": "Using time series data consisting of 100 observations, the autocorrelations for the first and second lags are estimated as 0.3 and 0.2. Which of the following is the estimation value of the partial autocorrelation coefficient for the lag one?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "0.2",
+      "B": "0.5",
+      "C": "0.3",
+      "D": "0.7",
+      "E": "0.9"
+    },
+    "explanation": "If k=1 is taken in this system of equations, ρ1 is found as follows<br/>ρ1=ϕ11 ρ0<br/>ϕ11=ρ1 so ρ1=0.3."
+  },
+  {
+    "id": "3597630",
+    "unitNumber": 4,
+    "text": "Using time series data consisting of 100 observations, the autocorrelations for the first and second lags are estimated as 0.5 and 0.325. Which of the following is the estimation value of the partial autocorrelation coefficient for the lag two?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "0.1",
+      "B": "0.3",
+      "C": "0.5",
+      "D": "0.4",
+      "E": "0.6"
+    },
+    "explanation": "If k=1 is taken in this system of equations, ρ1 is found as follows<br/>ρ1=ϕ11 ρ0<br/>ϕ11=ρ1<br/>If k=2 and ρ0=0 are taken, the following equations are obtained<br/>ρ1=ϕ21+ϕ22 ρ1<br/>ρ2=ϕ21 ρ1+ϕ22=0.1"
+  },
+  {
+    "id": "3597631",
+    "unitNumber": 4,
+    "text": "What is the main purpose of the partial autocorrelation function (PACF) in time series analysis?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "To detect outliers and anomalies.",
+      "B": "To estimate the parameters of ARMA models.",
+      "C": "To measure the strength of the relationship between two different time series.",
+      "D": "To identify the direct relationship between observations at different lags after controlling for intermediate lags.",
+      "E": "To identify trends in the time series data."
+    },
+    "explanation": "In practice, since the theoretical autocorrelation and partial autocorrelation functions are unknown, the theoretical autocorrelation and partial autocorrelation functions are estimated by calculating the sample autocorrelation and partial autocorrelation functionsfrom the observed time series. Theoretical autocorrelation and partial autocorrelations can be tested whether they are equal to zero. Thus, the theoretical autocorrelation and partial autocorrelation functions of ARMA models are matched with the pattern of the sample autocorrelation and partial autocorrelation functions to identify the tentative appropriate model."
+  },
+  {
+    "id": "3597350",
+    "unitNumber": 5,
+    "text": "What does the statement \"single equation models could not be enough to explain the relationships among the economic variables because of the bi-directional causality\" imply about the analysis of economic relationships?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Single equation models are always the preferred method for analyzing economic relationships due to their simplicity.",
+      "B": "The use of system equations is unnecessary when analyzing economic variables, as single equation models can handle all types of causality.",
+      "C": "Bi-directional causality among economic variables necessitates the use of system equations rather than single equation models for a more accurate analysis.",
+      "D": "Economic variables do not exhibit bi-directional causality, making single equation models sufficient for all econometric analyses.",
+      "E": "The direction of causality in economic relationships is not important, so single equation models are always adequate."
+    },
+    "explanation": "If your answer is incorrect, then go over the “Introduction” section.<br/>In the single equation models, the direction of the causality is from the independent variable(s) to the dependent variable. On the other hand, we imply that the single equation models could not be enough to explain the relationships among the economic variables because of the bi-directional causality. Therefore, the practitioners would prefer to apply the system of equations."
+  },
+  {
+    "id": "3597351",
+    "unitNumber": 5,
+    "text": "Which of the following statements best reflects the relationship between simultaneity and endogeneity within the framework of classical linear regression models?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "Simultaneity is a phenomenon where variables occur at the same time but has no impact on the concept of endogeneity in regression analysis.",
+      "B": "Simultaneity is a form of endogeneity that arises when an explanatory variable is correlated with the error term, violating the assumption of exogeneity in classical linear regression models.",
+      "C": "Endogeneity only occurs due to omitted variable bias and measurement errors, and simultaneity is a separate issue that does not affect regression models.",
+      "D": "In classical linear regression models, explanatory variables are assumed to be endogenous, which means simultaneity is a condition that is always met.",
+      "E": "Simultaneity and endogeneity are completely unrelated concepts; simultaneity is a technique used to ensure variables are exogenous."
+    },
+    "explanation": "If your answer is incorrect, then go over the “Simultaneity and Simultaneous Equations” section.<br/>Statements regarding simultaneity and endogeneity:\n <ol> <li>\"We observe that some of the variables affect each other simultaneously in the system equations, so the main feature of the system equations is simultaneity.\"</li> <li>\"In simultaneous equations, it is not clear which variable is dependent or independent so we identify the variables as exogenous and endogenous. The endogenous variables are defined as the variables that mutually affect each other within the model.\"</li> </ol> These sentences highlight the concepts of simultaneity and endogeneity within the context of econometric models, particularly focusing on the distinction between exogenous and endogenous variables and the implications of variables affecting each other simultaneously."
+  },
+  {
+    "id": "3597383",
+    "unitNumber": 5,
+    "text": "Why is endogeneity considered problematic in econometric analysis?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "It ensures that the parameter estimates are always accurate and reliable.",
+      "B": "It leads to biased and inconsistent parameter estimates, rendering the econometric analysis results unreliable.",
+      "C": "It simplifies the model by assuming all variables are exogenous, enhancing the reliability of the analysis.",
+      "D": "It simplifies the model by assuming all variables are exogenous, enhancing the reliability of the analysis.",
+      "E": "It has no significant impact on the results of econometric analysis and is generally disregarded by researchers."
+    },
+    "explanation": "If your answer is incorrect, please review the “Simultaneity And Simultaneous Equations”.<br/>section.<br/>The underlying issues related to endogeneity can be inferred from several sections:\n <ol> <li>In the discussion on simultaneity and simultaneous equations, it is mentioned that \"In simultaneous equations, it is not clear which variable is dependent or independent so we identify the variables as exogenous and endogenous. The endogenous variables are defined as the variables that mutually affect each other within the model.\" This highlights the challenge of determining causality and the potential for endogeneity when variables within a model influence each other.</li> <li>The introduction of Vector Autoregression (VAR) Models by Sims (1980) is noted as an alternative to simultaneous equations due to the exogeneity assumptions of some variables in simultaneous equations. The VAR approach, where all variables are treated as endogenous, is presented as a solution to overcome the limitations of traditional models that do not account for the dynamic interrelationships among variables, indirectly pointing to the problems caused by endogeneity.</li> </ol> These sections collectively underscore the complexity and potential issues arising from endogeneity in econometric models, including the risk of biased and inconsistent estimates that can compromise the reliability of econometric analysis."
+  },
+  {
+    "id": "3597384",
+    "unitNumber": 5,
+    "text": "What best describes the concept of simultaneity in econometric analysis?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Simultaneity occurs exclusively when independent variables influence each other without affecting the dependent variable.",
+      "B": "Simultaneity is observed only in linear regression models where the dependent variable does not influence the independent variables.",
+      "C": "Simultaneity occurs when the dependent variable and one or more of the independent variables causally influence each other, often leading to biased estimates if not properly addressed.",
+      "D": "Simultaneity is a phenomenon where the dependent variable is influenced by an external factor that is not included in the model.",
+      "E": "Simultaneity refers to the situation where the independent variables are correlated with the error term, thus violating the assumptions of classical linear regression models."
+    },
+    "explanation": "If your answer is incorrect, please review the “Simultaneity And Simultaneous Equations” section.<br/>The statements that point to the correct answer regarding simultaneity, particularly in the context of econometric analysis, are as follows:\n <ol> <li><strong>Introduction to Simultaneity and Simultaneous Equations</strong>: The document begins with an introduction to the concept of simultaneity in econometric models, explaining that simultaneity occurs when variables within a model affect each other simultaneously. This is a foundational concept that sets the stage for understanding the complexities of simultaneous equations and the need for specialized analytical techniques.</li> <li><strong>Discussion on Single Equation Models</strong>: It contrasts single equation models, where the direction of causality is from the independent variables to the dependent variable, with systems of equations where bi-directional causality exists. This highlights the limitations of single equation models in capturing the simultaneity present in many economic relationships.</li> <li><strong>Explanation of Simultaneous Equations</strong>: The document elaborates on simultaneous equations, illustrating how they are used to model situations where simultaneity is present. It mentions that in these systems, some variables affect each other simultaneously, making it challenging to distinguish between exogenous and endogenous variables without resorting to the reduced forms of these equations for estimation.</li> <li><strong>Vector Autoregression (VAR) Models</strong>: The section on VAR models further emphasizes the concept of simultaneity by presenting VAR as a tool to analyze time series data where all variables are treated as endogenously interrelated. This approach is particularly useful in capturing the dynamic interactions among variables, which are often simultaneous in nature.</li> <li><strong>Example of VAR Model Estimation Results</strong>: The document includes an example of VAR model estimation results, which implicitly relies on the concept of simultaneity by treating all variables in the system as potentially influencing each other. This example serves to illustrate the practical application of econometric techniques designed to address simultaneity.</li> </ol> These sections collectively provide a comprehensive overview of simultaneity in econometric analysis, from theoretical foundations to practical applications, underscoring the importance of using appropriate models and techniques to address the challenges posed by simultaneous relationships among variables."
+  },
+  {
+    "id": "3597385",
+    "unitNumber": 5,
+    "text": "Which of the following best exemplifies the concept of simultaneity in time series analysis as discussed in the context of time series models?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "The relationship between a country's GDP growth rate and its population growth rate, where neither variable directly influences the other.",
+      "B": "The scenario where an increase in consumer confidence leads to higher spending, which in turn boosts economic growth, without any feedback effect from economic growth to consumer confidence.",
+      "C": "The relationship between inflation and unemployment, where an increase in inflation might decrease unemployment due to higher demand for goods (short-term Phillips curve effect), and changes in unemployment can influence inflation through wage pressures.",
+      "D": "The effect of weather conditions on crop yields, where only the weather conditions directly influence the crop yields without any feedback mechanism.",
+      "E": "The situation where changes in a company's operational efficiency directly lead to variations in its stock price, with no influence of the stock price on the company's operational decisions."
+    },
+    "explanation": "If your answer is incorrect, please review the “Simultaneity And Simultaneous Equations” section.<br/>The question is designed to reflect the concept of simultaneity in time series analysis, where two variables can have a bidirectional causal relationship, as illustrated by the relationship between inflation and unemployment, and stock prices and trading volume."
+  },
+  {
+    "id": "3597386",
+    "unitNumber": 5,
+    "text": "Who proposed the Vector Autoregression (VAR) model as an alternative to the simultaneous equations model?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Granger (1969)",
+      "B": "Lütkepohl (2006)",
+      "C": "Sims (1980)",
+      "D": "Jarque and Bera (1987)",
+      "E": "Hannan and Quinn (1979)"
+    },
+    "explanation": "If your answer is incorrect, please review the “Vector Autoregression Models” section.<br/>Sims (1980) pointed out the exogeneity assumptions for some of the variables in the simultaneous equations and proposed the Vector Autoregression (VAR) model as an alternative model to the simultaneous equations."
+  },
+  {
+    "id": "3597387",
+    "unitNumber": 5,
+    "text": "What significant contribution did Sims (1980) make to the field of econometrics regarding the analysis of time series data?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Sims introduced the concept of Granger causality to test for causal relationships between time series variables.",
+      "B": "Sims developed the Impulse-Response Function to analyze how shocks to one variable affect others over time.",
+      "C": "Sims criticized the exogeneity assumptions in simultaneous equations and proposed the Vector Autoregression (VAR) model as an alternative.",
+      "D": "Sims established the method for Variance Decomposition Analysis to understand the variance in one variable explained by shocks to another variable.",
+      "E": "Sims formulated the first comprehensive theory of non-stationary time series analysis, introducing unit roots and cointegration."
+    },
+    "explanation": "If your answer is incorrect, please review the “Vector Autoregression Models” section.<br/>Sims (1980) pointed out the exogeneity assumptions for some of the variables in the simultaneous equations and proposed the Vector Autoregression (VAR) model as an alternative model to the simultaneous equations."
+  },
+  {
+    "id": "3597388",
+    "unitNumber": 5,
+    "text": "What was a key criticism of simultaneous equations models as highlighted by Sims (1980), leading to the proposal of the Vector Autoregression (VAR) model as an alternative?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "The inability of simultaneous equations models to handle large datasets effectively.",
+      "B": "The reliance on strict linear relationships between variables in simultaneous equations models.",
+      "C": "The exogeneity assumptions for some of the variables in simultaneous equations models.",
+      "D": "The lack of statistical software to estimate simultaneous equations models accurately.",
+      "E": "The requirement for variables in simultaneous equations models to be stationary."
+    },
+    "explanation": "If your answer is incorrect, please review the “Vector Autoregression Models” section.<br/>Sims (1980) pointed out the exogeneity assumptions for some of the variables in the simultaneous equations and proposed the Vector Autoregression (VAR) model as an alternative model to the simultaneous equations."
+  },
+  {
+    "id": "3597389",
+    "unitNumber": 5,
+    "text": "What is a distinctive feature of Vector Autoregression (VAR) models regarding the treatment of variables within the model?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "In VAR models, all variables are assumed to follow a linear trend over time.",
+      "B": "VAR models require all variables to be exogenously determined before analysis.",
+      "C": "In VAR models, all the variables are assumed as endogenous.",
+      "D": "VAR models exclusively use stationary variables without requiring any differencing.",
+      "E": "In VAR models, variables are classified into dependent and independent variables for analysis."
+    },
+    "explanation": "If your answer is incorrect, please review the “Vector Autoregression Models” section.<br/>Sims (1980) pointed out the exogeneity assumptions for some of the variables in the simultaneous equations and proposed the Vector Autoregression (VAR) model as an alternative model to the simultaneous equations. The VAR models are linear and in VAR models, all the variables are assumed as endogenous."
+  },
+  {
+    "id": "3597390",
+    "unitNumber": 5,
+    "text": "Which of the following best describes the foundation and applications of Vector Autoregression (VAR) models?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "VAR models are primarily theoretical models that rely heavily on economic theories for their construction and application.",
+      "B": "The use of VAR models is restricted to variance decomposition analyses, with limited applicability in other areas of econometrics.",
+      "C": "VAR models are based on empirical inferences and do not directly depend on economic theories, making them versatile tools for forecasting, causality, impulse-response, and variance decomposition analyses.",
+      "D": "VAR models are exclusively used for impulse-response analysis in macroeconomic policy evaluation, without any relevance to forecasting or causality testing.",
+      "E": "The construction of VAR models is based on strict assumptions of linearity and stationarity, limiting their use to theoretical research."
+    },
+    "explanation": "If your answer is incorrect, please review the “Vector Autoregression Models” section.<br/>The VAR models are based on empirical inferences and do not directly depend on economic theories and VAR models are useful econometric tools for forecasting, causality, impulse-response, and variance decomposition analyses."
+  },
+  {
+    "id": "3597418",
+    "unitNumber": 6,
+    "text": "Which of the following is NOT listed as an advantage of using panel data?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "Increasing the sample size.",
+      "B": "Improving the degrees of freedom.",
+      "C": "Expanding the variability in explanatory variables.",
+      "D": "Guaranteeing the accuracy of predictions.",
+      "E": "Decreasing the level of multicollinearity among explanatory determinants."
+    },
+    "explanation": "If your answer is imcorrect, please review the “Introduction” section.<br/>It is generally known that panel data possesses a great deal of benefits. In order to improve the efficiency of econometric estimators when using panel data, it is possible to summarize the key elements as follows: augmenting the sample size, improving the degrees of freedom, expanding the variability in explanatory variables, and decreasing the level of multilinearity among explanatory determinants. Furthermore, through the process of controlling for individual heterogeneity, panel data models are able to successfully handle the problem of heterogeneity biases. When it comes to tracking the dynamics of adjustment, panel data approaches are suitable."
+  },
+  {
+    "id": "3597431",
+    "unitNumber": 6,
+    "text": "Which of the following is a limitation associated with panel data models?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "They cannot handle large datasets.",
+      "B": "They always require time series data.",
+      "C": "They are frequently gathered from surveys, which can introduce various biases.",
+      "D": "They can only be used for microeconometric analysis.",
+      "E": "They eliminate the need for econometric estimators."
+    },
+    "explanation": "If your answer is incorrecy, please review the “Introduction” section.<br/>There are a few limitations associated with panel data models. Panel data are frequently gathered from surveys. There are a number of factors that might have an impact on panel data, including design and data collecting problems, measurement errors, the selectivity problem, and typically, a limited temporal dimension."
+  },
+  {
+    "id": "3597432",
+    "unitNumber": 6,
+    "text": "What distinguishes panel data from other types of data?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "It is only applicable to macroeconometric analysis.",
+      "B": "It involves monitoring the same individual agents over time.",
+      "C": "It exclusively focuses on cross-sectional units with low observations.",
+      "D": "It is a dataset that excludes time series data.",
+      "E": "It only includes data from nations and cities."
+    },
+    "explanation": "If your answer is wrong, please review the “Introduction” section.<br/>Panel data is a type of cross-sectional data that has been pooled over a period of time and involves the monitoring of the same individual agents over the course of time. In other words, panel data is a dataset that combines data from time series and cross-sectional data. Units of cross-section might be anything from nations and cities to businesses and households."
+  },
+  {
+    "id": "3597433",
+    "unitNumber": 6,
+    "text": "How does panel data contribute to the efficiency of econometric estimators?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "By limiting the sample size.",
+      "B": "By increasing multicollinearity among explanatory determinants.",
+      "C": "By reducing the variability in explanatory variables.",
+      "D": "By expanding the sample size and improving the degrees of freedom.",
+      "E": "By focusing solely on cross-sectional data."
+    },
+    "explanation": "If your answer is wrong, please review the “Introduction” section.<br/>It is generally known that panel data possesses a great deal of benefits. In order to improve the efficiency of econometric estimators when using panel data, it is possible to summarize the key elements as follows: augmenting the sample size, improving the degrees of freedom, expanding the variability in explanatory variables, and decreasing the level of multilinearity among explanatory determinants. Furthermore, through the process of controlling for individual heterogeneity, panel data models are able to successfully handle the problem of heterogeneity biases. When it comes to tracking the dynamics of adjustment, panel data approaches are suitable."
+  },
+  {
+    "id": "3597434",
+    "unitNumber": 6,
+    "text": "What recent developments have occurred in theoretical research on panel data analysis?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "A decline in the application of econometric approaches to panel data.",
+      "B": "The establishment of panel unit root tests, panel co-integration studies, and panel Granger causality tests.",
+      "C": "A complete shift away from using panel data in applied econometric studies.",
+      "D": "The elimination of the need for panel data models.",
+      "E": "A focus on using panel data exclusively for microeconometric analysis."
+    },
+    "explanation": "If your answer is incorrect, please review the “Introduction” section.<br/>In recent years, there has been a proliferation of theoretical research on panel data analysis, particularly with the application of the econometric approaches that are typically employed in time series to panel data. As a consequence of this, panel unit root tests, panel co-integration studies, and panel Granger causality tests have been established within the scope of the theoretical framework. In tandem with these improvements, there has been a rise in the number of applied econometric studies that are based on panel data sets."
+  },
+  {
+    "id": "3597435",
+    "unitNumber": 6,
+    "text": "What is a common issue associated with the collection of panel data?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "It is always collected digitally, leading to high costs.",
+      "B": "It cannot be collected from businesses and households.",
+      "C": "It involves only the monitoring of nations and cities over time.",
+      "D": "Surveys used to gather panel data can introduce biases and other problems.",
+      "E": "Panel data collection does not involve any time dimension."
+    },
+    "explanation": "If your answer is incorrect, please review the “Introduction” section.<br/>There are a few limitations associated with panel data models. Panel data are frequently gathered from surveys. There are a number of factors that might have an impact on panel data, including design and data collecting problems, measurement errors, the selectivity problem, and typically, a limited temporal dimension."
+  },
+  {
+    "id": "3597436",
+    "unitNumber": 6,
+    "text": "What assumption is made in a random effect model regarding individual effects and regressors?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Individual effects are perfectly correlated with regressors.",
+      "B": "Each individual effect has a strong correlation with every regressor.",
+      "C": "Individual effects are assumed to have no correlation with any regressor.",
+      "D": "Regressors are considered time-invariant across all individuals.",
+      "E": "Individual effects and regressors are always constant over time."
+    },
+    "explanation": "If your answer is incorrect, please review the “Panel Data Models” section.<br/>A random effect model makes the assumption that each individual effect has no correlation with any regressor, and then it estimates the error variance that is specific to certain groups."
+  },
+  {
+    "id": "3597437",
+    "unitNumber": 6,
+    "text": "What is assumed in a pooled panel data model regarding intercept and slope coefficients?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "They vary significantly across individuals and time.",
+      "B": "They remain constant across time but vary across individuals.",
+      "C": "They remain the same throughout time and space.",
+      "D": "Only the slope coefficients are assumed to be constant.",
+      "E": "Intercept coefficients are variable, while slope coefficients are constant."
+    },
+    "explanation": "If your answer is incorrect, please review the “Panel Data Models” section.<br/>In a pooled panel data model intercept and slope coefficients are assumed to remain the same throughout time and space."
+  },
+  {
+    "id": "3597438",
+    "unitNumber": 6,
+    "text": "Why is the OLS estimator considered biased and inconsistent in the context of fixed effect models?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Because it perfectly predicts the dependent variable without any error.",
+      "B": "Because it assumes that all variables of interest are observed and included in the model.",
+      "C": "Because it does not account for individual-specific effects that are correlated with the regressors.",
+      "D": "Because it only uses cross-sectional data, ignoring the time series component.",
+      "E": "Because it assumes that the error terms are perfectly correlated with the regressors."
+    },
+    "explanation": "If your answer is incorrect, please review the “Panel Data Models” section.<br/>The fixed effect model can be defined as follows: <strong><em>y</em><sub>it</sub> </strong>= <em>a</em><sub>i</sub> + <strong><em>x</em>'<sub>it</sub><em>β </em>+ε<sub>it</sub> </strong>where <em>a</em><sub>i</sub> defines all individual-specific effects. The OLS estimator is biased and inconsistent because of the bias caused by omitted variables."
+  },
+  {
+    "id": "3597439",
+    "unitNumber": 6,
+    "text": "What does LSDV stand for in the context of estimating the parameters of fixed effect models?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Least Squares Determinant Variable",
+      "B": "Linear Squares Derivative Variable",
+      "C": "Least Squares Dummy Variable",
+      "D": "Linear Systematic Deviation Variable",
+      "E": "Least Significant Dependent Variable"
+    },
+    "explanation": "If your answer is incorrect, please review the “Panel Data Models” section.<br/>LSDV, which stands for least squares dummy variable, is a technique that is frequently utilized in practice for the purpose of estimating the parameters of fixed-effects models."
+  },
+  {
+    "id": "3598974",
+    "unitNumber": 7,
+    "text": "What does the expression E[ Y(1) - Y(0) | D = 1 ] = E[ Y | D = 1 ] - E[ Y | D = 0 ] represent in the context of difference-in-differences (DiD) method?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "It represents the average treatment effect on the treated, comparing the expected outcomes of the treated group before and after the treatment to the control group's outcomes in the same periods.",
+      "B": "It denotes the average treatment effect for the entire population, not just the treated.",
+      "C": "It indicates the difference in outcomes within the treated group only, without comparison to any control group.",
+      "D": "It is a formula used to calculate the variance of the treatment effect.",
+      "E": "It represents the interaction effect of treatment and time in a regression model."
+    },
+    "explanation": "If your answer is wrong, please review the “Introduction” section.<br/>The explanation and proof of ATET: E[Y(1) - Y(0) | D = 1] = E[Y | D = 1] - E[Y | D = 0] is provided under 1YOUr Turn 1\" The answer explains that this expression represents the average treatment effect on the treated (ATET) by comparing the expected outcomes for the treated group under treatment and the expected outcomes if they had not been treated, using the outcomes of the control group as a reference for what would have happened to the treated group in the absence of treatment."
+  },
+  {
+    "id": "3598975",
+    "unitNumber": 7,
+    "text": "What does the consistency assumption imply in the context of the Difference-in-Differences (DiD) method according to the provided document?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "It implies that the treatment effect is consistent across different time periods.",
+      "B": "It suggests that the observed value of an outcome is equal to the potential outcome if the treatment status is the same as the observed treatment status.",
+      "C": "It indicates that the treatment effect must be consistent across different subgroups within the study.",
+      "D": "It requires that the treatment assignment must be random.",
+      "E": "It assumes that the error terms in the regression model are homoscedastic."
+    },
+    "explanation": "If your answer is wrong, please review the “Assumptions of the Difference-in-Differences” section.<br/>The explanation of the consistency assumption is provided under the section \"Assumptions of the Difference-in-Differences\" It states: \"For every time period t, and treatment status D = d, the observed value of an outcome is equal to the potential outcome which is Y_t = Y_t(d).\" This assumption implies that the causal estimand identified can be estimated in the data and will be the statistical estimand. For example, E[Y_0(0) | D = 0] = E[Y_0 | D = 0] is used to illustrate how the average potential outcome under no treatment for the control group can be observed and identified in the data."
+  },
+  {
+    "id": "3598976",
+    "unitNumber": 7,
+    "text": "In the context of the Difference-in-Differences (DiD) method, what does the consistency assumption ensure about the observed outcomes?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "It ensures that the treatment effects are consistent across different geographical locations.",
+      "B": "It guarantees that the treatment effects are the same in both pre-treatment and post-treatment periods.",
+      "C": "It ensures that the observed outcomes are equal to the potential outcomes if the treatment status matches the observed status.",
+      "D": "It ensures that all units receive the treatment at the same time.",
+      "E": "It guarantees that the treatment has no spillover effects on the control group."
+    },
+    "explanation": "If your answer is wrong, please review the \"Assumptions of the Difference-in-Differences\" section<br/>\"For every time period t, and treatment status D = d, the observed value of an outcome is equal to the potential outcome which is Y_t = Y_t(d).\" This assumption is crucial as it implies that the causal estimand that we identify can be estimated in our data and it will be our statistical estimand. For instance, E[Y_0(0) | D = 0] = E[Y_0 | D = 0] demonstrates how the average potential outcome under no treatment for the control group can be observed and identified in the data."
+  },
+  {
+    "id": "3598977",
+    "unitNumber": 7,
+    "text": "What role does the consistency assumption play in the calculation of the Average Treatment Effect on the Treated (ATET) in the Difference-in-Differences (DiD) framework according to the document?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "It ensures that the treatment effect is consistent over different population subgroups.",
+      "B": "It guarantees that the treatment effect remains stable over multiple time periods.",
+      "C": "It confirms that the observed outcomes for a given treatment status are equivalent to the potential outcomes for that status.",
+      "D": "It ensures that the treatment effect is uniformly distributed across all units.",
+      "E": "It verifies that the treatment assignment is random and unbiased."
+    },
+    "explanation": "If your answer is wrong, please review the “Assumptions of the Difference-in-Differences” section.<br/>The explanation of the consistency assumption is provided under the section \"Assumptions of the Difference-in-Differences.\" It states: \"For every time period t, and treatment status D = d, the observed value of an outcome is equal to the potential outcome which is Y_t = Y_t(d).\" This assumption is crucial as it implies that the causal estimand that we identify can be estimated in our data and it will be our statistical estimand. For example, E[Y_0(0) | D = 0] = E[Y_0 | D = 0] is used to illustrate how the average potential outcome under no treatment for the control group can be observed and identified in the data. This is essential for calculating the ATET as it relies on comparing the observed outcomes with the potential outcomes under different treatment statuses."
+  },
+  {
+    "id": "3598978",
+    "unitNumber": 7,
+    "text": "What is the primary purpose of introducing time into the notation of outcomes in the Canonical Difference-in-Differences (DiD) setting?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "To adjust for inflation over different time periods.",
+      "B": "To observe the outcomes of treatment and control groups at multiple time points.",
+      "C": "To compare the outcomes of different geographical locations over time.",
+      "D": "To measure the variability of outcomes within the same group.",
+      "E": "To ensure that the treatment effects are consistent across different subgroups."
+    },
+    "explanation": "If your answer is wrong, please review the “Canonical Difference-in-Differences” section.<br/>The introduction of time into the notation where <em>Y<sub>it</sub></em> is the outcome for unit <em>i</em> at time <em>t</em>, let’s the researcher observing outcomes at two time periods (pre-treatment and post-treatment)."
+  },
+  {
+    "id": "3598979",
+    "unitNumber": 7,
+    "text": "What does the Canonical Difference-in-Differences setting typically involve in terms of observation periods?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Observing outcomes over five consecutive years.",
+      "B": "Comparing outcomes before and after the treatment in a single time period.",
+      "C": "Observing outcomes at two time periods, pre-treatment and post-treatment.",
+      "D": "Continuous monitoring of outcomes throughout the treatment.",
+      "E": "Annual assessment of outcomes post-treatment."
+    },
+    "explanation": "If your answer is wrong, please review the “Canonical Difference-in-Differences” section.<br/>In a simple 2x2 DiD setting, outcomes for treatment and control groups are observed at two time periods: pre-treatment and post-treatment."
+  },
+  {
+    "id": "3598980",
+    "unitNumber": 7,
+    "text": "In the Canonical Difference-in-Differences example involving Card and Krueger (1994), what policy change was analyzed?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Changes in healthcare legislation.",
+      "B": "Introduction of a new educational curriculum.",
+      "C": "Impact of minimum wage introduction in New Jersey.",
+      "D": "Effects of a new tax law.",
+      "E": "Implementation of a new public transportation system."
+    },
+    "explanation": "If your answer is wrong, please review the “Canonical Difference-in-Differences” section.<br/>The example of Card and Krueger (1994) is discussed under \" Canonical Difference-in-Differences\" where they analyze the impact of minimum wage introduction in New Jersey on employment."
+  },
+  {
+    "id": "3598981",
+    "unitNumber": 7,
+    "text": "What does t=0 in the Difference-in-Differences (DiD) setting describe?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "The period during the treatment.",
+      "B": "The post-treatment period.",
+      "C": "The pre-treatment period.",
+      "D": "The recovery period after treatment.",
+      "E": "The initial period."
+    },
+    "explanation": "Canonical Difference-in-Differences<br/>The text states, \"Let’s assume that t = 0 is the pre-treatment period and t = 1 is the period after the treatment (i.e., the post-treatment period).\""
+  },
+  {
+    "id": "3598982",
+    "unitNumber": 7,
+    "text": "In the DiD framework, what does E[Y<sub>1</sub> ∣D=1] represent?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "The expected value of the outcome for the untreated group in the post-treatment period.",
+      "B": "The expected value of the outcome for the treated group in the pre-treatment period.",
+      "C": "The expected value of the outcome for the treated group in the post-treatment period.",
+      "D": "The average treatment effect on the treated.",
+      "E": "The potential outcome of the treated group if they had not received the treatment."
+    },
+    "explanation": "If your answer is wrong, please review the “Canonical Difference-in-Differences” section.<br/>So, E[Y<sub>1</sub> ∣D=1] is the expected value of the outcome (or average outcome) for the treatment group (D = 1) in the post-treatment period (t = 1)."
+  },
+  {
+    "id": "3598983",
+    "unitNumber": 7,
+    "text": "In the DiD analysis, what does the term \"counterfactual\" refer to?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "The observed outcome of the treatment group in the post-treatment period.",
+      "B": "The observed outcome of the control group in the post-treatment period.",
+      "C": "The potential outcome of the treated group in the post-treatment period if they had not received the treatment.",
+      "D": "The difference in outcomes between the pre-treatment and post-treatment periods.",
+      "E": "The average treatment effect on the treated."
+    },
+    "explanation": "If your answer is wrong, please review the “Canonical Difference-in-Differences” section.<br/>The document explains, \"This implies that to find the ATET, we need to know the counterfactual, which is the E[Y<sub>1</sub> (0)∣T=1] (i.e., the potential outcome of the treated group in the post-treatment period if they had not received the treatment).\""
+  },
+  {
+    "id": "3601457",
+    "unitNumber": 8,
+    "text": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/a8f88f7ce3f764bf8b13fd5de1be7b31.png\" alt=\"\" width=\"402\" height=\"99\"> Given the confusion matrix above, what is the accuracy of the related classification model?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "0.960",
+      "B": "0.667",
+      "C": "0.857",
+      "D": "0.750",
+      "E": "0.968"
+    },
+    "explanation": "If your answer is wrong, please review the “Predictive Measures” section.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/e8d60e8bd9d4ca4a235b889068e7413a.png\" alt=\"\" width=\"400\" height=\"118\"> Accuracy = (TP+TN) / (TP+FP+TN+FN)\n Accuracy = 9600 / 10000 = 0.960"
+  },
+  {
+    "id": "3601458",
+    "unitNumber": 8,
+    "text": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/a8f88f7ce3f764bf8b13fd5de1be7b31.png\" alt=\"\" width=\"400\" height=\"99\"> Given the confusion matrix above, what is the precision of the related classification model?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "0.960",
+      "B": "0.667",
+      "C": "0.857",
+      "D": "0.750",
+      "E": "0.968"
+    },
+    "explanation": "If your answer is wrong, please review the “Predictive Measures” section.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/e8d60e8bd9d4ca4a235b889068e7413a.png\" alt=\"\" width=\"400\" height=\"118\"> Precision = TP / (TP+FP)\n Precision = 600 / 900 = 0.667"
+  },
+  {
+    "id": "3601459",
+    "unitNumber": 8,
+    "text": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/a8f88f7ce3f764bf8b13fd5de1be7b31.png\" alt=\"\" width=\"400\" height=\"99\"> Given the confusion matrix above, what is the recall of the related classification model?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "0.960",
+      "B": "0.667",
+      "C": "0.857",
+      "D": "0.750",
+      "E": "0.968"
+    },
+    "explanation": "If your answer is wrong, please review the “Predictive Measures” section.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/e8d60e8bd9d4ca4a235b889068e7413a.png\" alt=\"\" width=\"400\" height=\"118\"> Recall = TP / (TP+FN)\n Recall = 600 / 700 = 0.857"
+  },
+  {
+    "id": "3601460",
+    "unitNumber": 8,
+    "text": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/a8f88f7ce3f764bf8b13fd5de1be7b31.png\" alt=\"\" width=\"400\" height=\"99\"> Given the confusion matrix above, what is the F1 score of the related classification model?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "0.960",
+      "B": "0.667",
+      "C": "0.857",
+      "D": "0.750",
+      "E": "0.968"
+    },
+    "explanation": "If your answer is wrong, please review the “Predictive Measures” section.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/e8d60e8bd9d4ca4a235b889068e7413a.png\" alt=\"\" width=\"400\" height=\"118\"> F1 score = (2×Precision×Recall) / (Precision+Recall)\n F1 score = (2×0.667×0.857) / (0.667+0.857) = 0.750"
+  },
+  {
+    "id": "3601461",
+    "unitNumber": 8,
+    "text": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/a8f88f7ce3f764bf8b13fd5de1be7b31.png\" alt=\"\" width=\"400\" height=\"99\"> Given the confusion matrix above, what is the specificity of the related classification model?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "0.960",
+      "B": "0.667",
+      "C": "0.857",
+      "D": "0.750",
+      "E": "0.968"
+    },
+    "explanation": "If your answer is wrong, please review the “Predictive Measures” section.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/e8d60e8bd9d4ca4a235b889068e7413a.png\" alt=\"\" width=\"400\" height=\"118\"> Specificity = TN / (TN+FP)\n Specificity = 9000 / 9300 = 0.968"
+  },
+  {
+    "id": "3601462",
+    "unitNumber": 8,
+    "text": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/a8f88f7ce3f764bf8b13fd5de1be7b31.png\" alt=\"\" width=\"400\" height=\"99\"> Given the confusion matrix above, what is the recall of the related classification model?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "0.032",
+      "B": "0.072",
+      "C": "0.143",
+      "D": "0.333",
+      "E": "0.667"
+    },
+    "explanation": "If your answer is wrong, please review the “Predictive Measures” section.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/e8d60e8bd9d4ca4a235b889068e7413a.png\" alt=\"\" width=\"400\" height=\"118\"> False Positive Rate = FP / (TN+FP)\n False Positive Rate = 300 / 9300 = 0.032"
+  },
+  {
+    "id": "3601463",
+    "unitNumber": 8,
+    "text": "Which performance measure is most appropriate for balanced datasets?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "Precision",
+      "B": "Recall",
+      "C": "F1 Score",
+      "D": "Specificity",
+      "E": "Accuracy"
+    },
+    "explanation": "If your answer is wrong, please review the “Predictive Measures” section.<br/>Accuracy must be used for balanced datasets where classes are evenly distributed. However, it may be misleading in imbalanced datasets."
+  },
+  {
+    "id": "3601464",
+    "unitNumber": 8,
+    "text": "In which scenario is Precision particularly relevant?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "When the dataset is balanced.",
+      "B": "When minimizing false negatives is critical.",
+      "C": "When the cost of false positives is high.",
+      "D": "When there is a need to balance precision and recall.",
+      "E": "When incorrectly identifying negatives as positives has significant consequences."
+    },
+    "explanation": "If your answer is wrong, please review the “Predictive Measures” section.<br/>Precision emphasizes minimizing false positives. It is relevant in scenarios where the cost of false positives is high."
+  },
+  {
+    "id": "3601465",
+    "unitNumber": 8,
+    "text": "What is the primary benefit of using the F1 Score in model evaluation?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "It minimizes false positives.",
+      "B": "It is useful for balanced datasets.",
+      "C": "It balances precision and recall, especially in imbalanced datasets.",
+      "D": "It emphasizes minimizing false negatives.",
+      "E": "It complements Specificity by focusing on true negatives."
+    },
+    "explanation": "If your answer is wrong, please review the “Predictive Measures” section.<br/>The F1 score is useful when there is a need to balance precision and recall. It is particularly useful in imbalanced datasets."
+  },
+  {
+    "id": "3601466",
+    "unitNumber": 8,
+    "text": "Which performance measure should be prioritized when the identification of negatives correctly is crucial?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "Accuracy",
+      "B": "Precision",
+      "C": "Recall",
+      "D": "Specificity",
+      "E": "F1 Score"
+    },
+    "explanation": "If your answer is wrong, please review the “Predictive Measures” section.<br/>Specificity emphasizes minimizing false negatives in negative predictions and it should be used in cases when correctly identifying negatives is critical."
+  }
+]

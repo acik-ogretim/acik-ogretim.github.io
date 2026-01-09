@@ -35,8 +35,11 @@ export function cleanHtml(text: string): string {
     // Replace non-breaking spaces
     cleaned = cleaned.replace(/\xa0/g, ' ');
 
+    // Normalize various Unicode spaces (U+2000 - U+200B) including U+2003 (Em Space) to actual space
+    cleaned = cleaned.replace(/[\u2000-\u200b]/g, ' ');
+
     // Remove invisible zero-width chars (and Soft Hyphen \u00ad)
-    cleaned = cleaned.replace(/[\u00ad\u200b\u200c\u200d\ufeff]/g, '');
+    cleaned = cleaned.replace(/[\u00ad\ufeff]/g, '');
 
     // Replace unusual line separators with space
     cleaned = cleaned.replace(/[\u2028\u2029]/g, ' ');

@@ -1,0 +1,1696 @@
+[
+  {
+    "id": "3852149",
+    "unitNumber": 1,
+    "text": "Python programlama dili ile ilgili olarak, aşağıdaki bilgilerden hangisi <strong>doğru değildir?</strong>",
+    "correctAnswer": "D",
+    "options": {
+      "A": "Kullanımı ücretsizdir ve kaynak kodu GNU Genel Kamu Lisansı (GPL) altında kullanılmaktadır.",
+      "B": "Platformlar arası bir programlama dilidir, tüm güncel işletim sistemlerinde çalıştırılabilir.",
+      "C": "Bazı diğer diller gibi derleme (compilation) ve çalıştırma (execution) şeklinde ayrı adımları yoktur, yorumlayıcı tarafından satır satır çalıştırılır.",
+      "D": "İsmini bir yılan türünden alır.",
+      "E": "Ticari veri tabanı uygulamalarını destekler."
+    },
+    "explanation": "Sayfa 2’te yer aldığı üzere Python programlama dili ismi, Monty Python’s Flying Circus isimli skeçleri yapan İngiliz komedi grubundan esinlenilerek verilmiştir ve sanıldığının aksine piton yılan türü yılanlarla ilgili değildir.<br/>Çözün D şıkkıdır."
+  },
+  {
+    "id": "3852150",
+    "unitNumber": 1,
+    "text": "İşletim sistemi üzerinde bir terminal penceresi açarak “python” komutunun girilmesi durumunda, konsol ekranında güncel sürümünüz ve sürümün yayınlanma tarihini takiben “ &gt;&gt;&gt;” karakterleri ile başlayan bir satır görülür. Açılan bu ekrana ne ad verilir?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "Immediate mode",
+      "B": "Launchpad",
+      "C": "Cmd",
+      "D": "Metin editörü",
+      "E": "Komut istemi"
+    },
+    "explanation": "Sayfa 5’te yer aldığı üzere “Eğer &gt;&gt;&gt; şeklinde bir veri girişi istenen ekran karşımıza çıkıyorsa, derleyici açılmış demektir. Açılan bu ekrana “immediate mode” adı verilmektedir, …”<br/>Çözüm A şıkkıdır."
+  },
+  {
+    "id": "3852151",
+    "unitNumber": 1,
+    "text": "Programlama dilinden bağımsız olarak, uygulama geliştirme için programcıya kod ipuçları, sözdizimi vurgulama ve denetleme, dosya gezgini vb. gibi yararlı özellikler barındıran, kodun daha hızlı ve kolay bir şekilde tamamlanmasını sağlayan yazılımlara ne ad verilir?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Immediate mode",
+      "B": "Tanımlayıcı",
+      "C": "IDE - (Integrated Development Environment - Tümleşik Geliştirme Ortamı)",
+      "D": "Anahtar kelime",
+      "E": "Kod dokümantasyonu"
+    },
+    "explanation": "Sayfa 6’da belirtildiği üzere IDE, uygulama geliştirme için programcıya kod ipuçları, sözdizimi vurgulama ve denetleme, dosya gezgini vb. Gibi yararlı özellikler barındıran, kodun daha hızlı ve kolay bir şekilde tamamlanmasını sağlayan bir yazılımdır.”<br/>Çözüm C şıkkıdır."
+  },
+  {
+    "id": "3852152",
+    "unitNumber": 1,
+    "text": "Python dilinde kullanılan tanımlayıcılar ile ilgili olarak aşağıdakilerden hangisi <strong>söylenemez?</strong>",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Anahtar kelimeler tanımlayıcı olarak kullanılamaz.",
+      "B": "Bir tanımlayıcı bir rakamla başlayamaz.",
+      "C": "Türkçe karakterler kesinlikle kullanılamaz.",
+      "D": "Büyük ve küçük harfler ve rakamlar kullanılabilir.",
+      "E": "Alt çizgi (_) karakteri kullanılabilir."
+    },
+    "explanation": "Sayfa 8’de yer aldığı üzere “Python 3 sürümünden itibaren Unicode (UTF-8) desteği sağlamaktadır. Böylece hem verilerde hem de program içerisinde kullanılan değişken, metot ve sınıf isimlendirmelerinde Türkçe karakterler kullanılabilir.”<br/>Çözüm C'dir."
+  },
+  {
+    "id": "3852153",
+    "unitNumber": 1,
+    "text": "Aşağıda görülen Python dilinde yazılmış kod satırında, “Eskişehir” değeri hangi değişkene atanmıştır?\n<br/>sayi1, sayi2, metin1, metin2 = 56, 11, \"Eskişehir\", “Çorlu”",
+    "correctAnswer": "C",
+    "options": {
+      "A": "sayi1",
+      "B": "sayi2",
+      "C": "metin1",
+      "D": "metin1 ve metin2",
+      "E": "Tüm değişkenler"
+    },
+    "explanation": "Sayfa 13’te belirtildiği üzere, Python dilinde “çoklu değer atama” yapılabilir. Virgülle ayrılmış olan değişkenlerin her biri, “=” işaretinden sonra gelen virgülle ayrılmış değerlerle eşleştirilmiş olup “Eskişehir” değeri “metin1” değişkenine atanmıştır.<br/>Çözüm C şıkkıdır."
+  },
+  {
+    "id": "3852154",
+    "unitNumber": 1,
+    "text": "demetim = ( 1 , “papatya”, “yabani” )\n<br/>listem = [ 1, “karanfil”, “kırmızı”, 11.25 ]\n<br/>Python dilindeki Tuple (Demet) veri türü, farklı tipteki verilerin bir araya getirildiği List (Liste) veri tipine benzer bir yapıdır. Yukarıdaki kodda Tuple veri türünde “demetim” isimli değişken ve List veri tipinde “listem” isimli değişkenler tanımlanmıştır. Bu değişkenlerin tipleri göz önüne alıdığında, seçeneklerde yer alan kod parçalarından hangisi bir hata mesajı döndürecektir?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "print(\"demetim[1] = \", demetim[1])",
+      "B": "demetim[1] = “kasımpatı”",
+      "C": "print(\"demetim[0:2] = \", demetim[0:2])",
+      "D": "print(\"listem [0:3] = \", listem [0:3])",
+      "E": "listem[2]= “beyaz”"
+    },
+    "explanation": "Sayfa 17’de belirtildiği üzere “Tuple, farklı veri tiplerinin bir araya gelerek oluşturdukları veri tipine denir. Liste ile benzer sıralı bir öğe dizisidir. Tek farkları, Tuple’ın değişmez olmasıdır. Tuple’lar bir kez oluşturulduktan sonra değiştirilemez.” Aynı sayfada verilen örnekte de benzer bir işlemin “TypeError: 'tuple' object does not support item assignment” çıktısı ile sonuçlandığı gösterilmektedir.<br/>Çözüm B şıkkıdır. <em>tuple</em> tipi değişkene ekleme, silme ve güncelleme yapamayız"
+  },
+  {
+    "id": "3852155",
+    "unitNumber": 1,
+    "text": "en = 12\n boy = “10”\n yükseklik = “60”\n hacim = en * boy * yükseklik\n print(\"Odanın hacmi:\",hacim)\n Yukarıdaki kodda, en, boy ve yükseklik isimli değişkenlerin çarpılarak sonucun hacim değişkenine atandığı görülmektedir. Ancak bu işlem gerçekleştirilemeyecek ve sonucunda bir hata mesajı alınacaktır. Bunun sebebi nedir?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "Python dilinde rakamsal değerlerin tümü çift tırnak (“”) işareti içinde verilmelidir. En değişkeni bu şekilde tanımlanmamıştır.",
+      "B": "Yükseklik değişken ismi Türkçe’ye özgü karakter olan ü harfini içerir.",
+      "C": "Python dilinde çıkış işlemleri için (print) işlevi kullanılmaz.",
+      "D": "Python dilinde çarpma işlemi için x karakteri kullanılmalıdır.",
+      "E": "Python, aritmetik işlemler yaparken string (metin dizisi) türündeki değişkenlere örtülü (Implicit) tür dönüşümü uygulamaz."
+    },
+    "explanation": "Sayfa 25’te Tablo 1.3’te * karakteri çarpma operatörü olarak verilmiştir.\n<br/>Sayfa 8’de yer aldığı üzere “Python 3 sürümünden itibaren Unicode (UTF-8) itibaren değişken isimlerinde Türkçe karakter kullanmanın mümkün olduğu ifade edilmiştir.\n<br/>Sayfa 15’te metin dizilerinin, tırnak işaretleri içinde gösterilen bitişik bir karakter kümesi olarak tanımlandığı söylenmektedir. Sayfa 22’de belirtildiği üzere “Verileri standart çıktı aygıtında yani ekranda görüntülemek için print() işlevini kullanırız.” Ancak sayfa 20’de anlatıldığı üzere, tırnak içerisinde metin dizisi olarak tanımlanmış nümerik değerlerin aritmetik olarak işlenebilmeleri için öncelikle açık (explicit) tür dönüştürme yapılmalıdır.<br/>Çözüm E şıkkıdır."
+  },
+  {
+    "id": "3852156",
+    "unitNumber": 1,
+    "text": "en = 12\n<br/>boy = 10\n<br/>yükseklik = “60”\n<br/>\"\"\"Programın doğru çalışması için eklenecek kod burada yer almalıdır.\"\"\"\n<br/>hacim = en * boy * yükseklik\n<br/>Yukarıdaki kodda, en, boy ve yükseklik isimli değişkenlerin çarpılarak sonucun hacim değişkenine atandığı görülmektedir. Ancak bu işlem gerçekleştirilemeyecek ve sonucunda bir hata mesajı alınacaktır. Bu programın doğru çalışması için düzenlenmesi gereken kod parçası aşağıdakilerden hangisidir?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "en = str(en)\n<br/>boy = str(boy)",
+      "B": "en = int(en)\n<br/>boy = int(boy)",
+      "C": "en = str(en)\n<br/>boy = str(boy)\n<br/>yükseklik = int(yükseklik)",
+      "D": "yükseklik = int(yükseklik)",
+      "E": "yükseklik = str(yükseklik)"
+    },
+    "explanation": "Yükseklik değişkenine atanan 60 değeri turnak içine alınarak metin dizisi (string) türünde tanımlanmıştır. Sayfa 20’de anlatıldığı üzere, tırnak içerisinde metin dizisi olarak tanımlanmış nümerik değerlerin aritmetik olarak işlenebilmeleri için öncelikle açık (explicit) tür dönüştürme yapılmalıdır. yükseklik = int(yükseklik) biçiminde verilen kod ilgili satıra eklendiğinde programın doğru çalışması sağlanacaktır.<br/>Çözüm D şıkkıdır. C ve D şıkkı aynı değildir. En ve boy un str ile işleme alınması onu sayısal değil karaktere dönüştürür. Bu durumda hata oluşur en uygun seçenek D dir yani yüksekliği sayıya çevirmektir."
+  },
+  {
+    "id": "3852157",
+    "unitNumber": 1,
+    "text": "“in” ve “”not in Python programlama diline özgü operatörlerdir. Bir dizide (string, list, tuple, set ve dictionary) bir değerin veya değişkenin bulunup bulunmadığını test etmek için kullanılan bu operatörlere ne ad verilir?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "Kimlik operatörü",
+      "B": "Üyelik operatörü",
+      "C": "Mantıksal operatör",
+      "D": "Karşılaştırma operatörü",
+      "E": "Arama operatörü"
+    },
+    "explanation": "Sayfa 29’da açıklandığı üzere bir dizide (string, list, tuple, set ve dictionary) bir değerin veya değişkenin bulunup bulunmadığını test etmek için kullanılan Python programlama diline özgü “in” ve “not in” operatörlerine üyelik operatörü adı verilir.<br/>Çözüm B şıkkıdır."
+  },
+  {
+    "id": "3852158",
+    "unitNumber": 1,
+    "text": "x = 34\n<br/>y = 26\n<br/># I\n<br/>print('x &gt; y is',x&gt;y)\n<br/>#II\n<br/>print('x &lt; y is',x\n<br/>#III\n<br/>print('x == y is',x==y)\n<br/>#IV\n<br/>print('x != y is',x!=y)\n<br/>#V\n<br/>print('x &gt;= y is',x&gt;=y)\n<br/>#VI\n<br/>print('x &lt;= y is',x&lt;=y)\n<br/>Yukarıda sayısal değerler atanmış olan x ve y değişkenleri üzerinde, karşılaştırma operatörleri aracılığı ile işlemler gerçekleştirilmiştir. Bu işlemler, I’den VI’ya kadar numaralandırılmıştır. Buna göre hangi işlemler “FALSE” sonucunu döndürecektir?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "II, III ve VI",
+      "B": "I, IV ve V",
+      "C": "II ve IV",
+      "D": "I ve V",
+      "E": "Sadece V"
+    },
+    "explanation": "Soru sayfa 25-26’da yer alan örneğe dayanarak hazırlanmış olup ikinci, üçüncü ve altıncı mantıksal karşılaştırma komutlarının FALSE sonucunu döndürdüğü görülmektedir.\n<br/>I. 34 büyüktür 26 TRUE\n<br/>II. 34 küçüktür 26 FALSE\n<br/>III. 34 eşittir 26 FALSE\n<br/>IV. 34 eşit değildir 26\n<br/>V. 34 büyük veya eşittir 26 TRUE\n<br/>VI. 34 küçük veya eşittir 26 FALSE<br/>Yanıt A şıkkıdır."
+  },
+  {
+    "id": "3852159",
+    "unitNumber": 2,
+    "text": "sayılar = [11, 26, 20, 34, 42, 77, 55, 3, 4, 91];\n Python programlama dili kullanılarak, yukarıdaki verilen sayılar isimli liste veri tipindeki değişkenin her bir elemanına 5 eklenmek istenmektedir. Bunu yapmak için hangi akış kontrolü yapısını kullanmak uygun olacaktır?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "If… else kontrolü",
+      "B": "for döngüsü",
+      "C": "pass deyimi",
+      "D": "break deyimi",
+      "E": "(range) fonksiyonu"
+    },
+    "explanation": "Sayfa 43’te belirtildiği üzere; Python’daki for döngüsü, bir dizi (list, tuple, string) veya diğer yinelenebilir/tekrarlanabilir nesneler üzerinde yineleme yapmak için kullanılır. Örnekteki liste değişkeninin her bir elemanına 5 eklemek, bu tür bir işlemdir."
+  },
+  {
+    "id": "3852160",
+    "unitNumber": 2,
+    "text": "Python programlama dili kullanarak bir sayı dizisi oluşturmak; örneğin 3’ten 30’a kadar üçer üçer ilerleyen sayılardan oluşan bir liste değişkeni yaratmak için kullanılabilecek en uygun komut hangisidir?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "If… else kontrolü",
+      "B": "continue deyimi",
+      "C": "pass deyimi",
+      "D": "break deyimi",
+      "E": "(range) fonksiyonu"
+    },
+    "explanation": "Sayfa 44’te belirtildiği üzere (range) fonksiyonu bir sayı dizisi oluşturmak için kullanılmaktadır."
+  },
+  {
+    "id": "3852161",
+    "unitNumber": 2,
+    "text": "sayılar = range(0, 10, 2);\n Yukarıdaki range fonksiyonu ile oluşturulan sayılar isimli liste değişkeninin kaç elemanı vardır?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "10",
+      "B": "20",
+      "C": "2",
+      "D": "5",
+      "E": "0"
+    },
+    "explanation": "Sayfa 44’te anlatıldığı üzere range () fonksiyonunda başlangıç, bitiş ve adım değerleri de range (başlangıç, bitiş, adım) olarak tanımlanmaktadır. Adım değeri verilmezse varsayılan olarak 1 alınmaktadır. Verilen kodda başlangıç 0, bitiş 10 ve adım değeri 2 olarak verildiği için sayılar isimli liste dizisinin 5 elemanı olacaktır."
+  },
+  {
+    "id": "3852162",
+    "unitNumber": 2,
+    "text": "Şekildeki akış diyagramı Python programlama dilindeki hangi akış kontrolünü ifade etmektedir?<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/1fdbcabe396dc6ed18585ec50d473a10.png\" alt=\"Akış diyagramı\" width=\"1152\" height=\"864\">",
+    "correctAnswer": "D",
+    "options": {
+      "A": "for döngüsü",
+      "B": "if… elif… else kontrolü",
+      "C": "range fonksiyonu",
+      "D": "while döngüsü",
+      "E": "pass deyimi"
+    },
+    "explanation": "Şekil, Sayfa 46’da yer alan Şekil 2.5 ile benzerlik göstermekte olup while döngüsü akış\n diyagramıdır."
+  },
+  {
+    "id": "3852163",
+    "unitNumber": 2,
+    "text": "Python programlama dilinde kod içerisinde bir ifade için yapılması gereken kontrol işlemleri sayıca fazla ise, C#, Java ve JavaScript gibi programlama dillerindeki switch deyimi if..else blokları yerine kullanılabilecek bir switch… case akış kontrolörü yoktur.\n switch-case yapısı yerine Python programcıları aşağıdakilerden hangisini kullanırlar?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "iç içe if ifadeleri",
+      "B": "sözlük eşleşmesi (dictionary mapping)",
+      "C": "if...elif...else İfadesi",
+      "D": "for...else döngüsü",
+      "E": "break deyimi"
+    },
+    "explanation": "Sayfa 50’de anlatıldığı üzere, Python dilinde diğer dillerdeki switch-case kontrolü yerine, anahtar ve değer çiftlerinden oluşan sözlük (dictionary) veri tipinden faydalanan sözlük eşleşmesi (dictionary mapping) yöntemi kullanılmaktadır."
+  },
+  {
+    "id": "3852164",
+    "unitNumber": 2,
+    "text": "Python’daki for döngüsü, bir dizi (list, tuple, string) veya diğer yinelenebilir/tekrarlanabilir nesneler üzerinde yineleme yapmak için kullanılır. for döngüsünün dizi üzerindeki her bir tekrarına ne ad verilir?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "sözlük eşleşmesi (dictionary mapping)",
+      "B": "geçiş (iterasyon)",
+      "C": "sözdizimi",
+      "D": "ad alanı (namespace)",
+      "E": "liste"
+    },
+    "explanation": "Soruda yer alan tanım Sayfa 43’ten alınmış olup for döngüsünün dizi üzerindeki her bir tekrarına geçiş (iterasyon) adı verilir."
+  },
+  {
+    "id": "3852165",
+    "unitNumber": 2,
+    "text": "Python’un hazır fonksiyonlarından hangisi aracılığıyla bazı nesnelerin RAM’deki adresini alabiliriz?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "range()",
+      "B": "print()",
+      "C": "id()",
+      "D": "len()",
+      "E": "input()"
+    },
+    "explanation": "Sayfa 50’de ifade edildiği üzere id() fonksiyonu ile bazı nesnelerin RAM’deki adresini alabiliriz."
+  },
+  {
+    "id": "3852166",
+    "unitNumber": 2,
+    "text": "Python dilindeki id(), print() vb. gibi yerleşik işlevler programın herhangi bir bölümünde her zaman kullanılabilirler. Bu işlevler hangi ad alanı içinde yer alırlar?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "Genel (Global)",
+      "B": "Yerel (Local)",
+      "C": "Modül",
+      "D": "Fonksiyon",
+      "E": "Ön tanımlı (Built in)"
+    },
+    "explanation": "Sayfa 54’te tanımlandığı üzere yerleşik işlevler ön tanımlı ad alanında bulunurlar."
+  },
+  {
+    "id": "3852167",
+    "unitNumber": 2,
+    "text": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/7d83730d6586fcfe2e97e4fc3e6f921c.png\" alt=\"\" width=\"517\" height=\"266\"><br/>Yukarıdaki kod çalıştırıldığında 3 satırdan oluşan bir çıktı üretecektir. Aşağıdakilerden hangisi bu satırlardan biridir?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Python dilini öğrenmek inanılmaz",
+      "B": "Phyton ile yapabildiklerim muhteşem",
+      "C": "Python ile çalışmak harika",
+      "D": "Python ile çalışmak inanılmaz",
+      "E": "Python dilini öğrenmek harika"
+    },
+    "explanation": "Sayfa 54’te anlatıldığı üzere, satır başlangıçlarına verilen girintilere bağlı olarak fonksiyonların ve bunlar içerisinde tanımlanan değişkenlerin ad alanları değişmektedir. Buna kodun üreteceği çıktı 3 satırdan oluşacak ve satırlar sırası ile “Python dilini öğrenmek muhteşem”, “Phyton ile yapabildiklerim inanılmaz” ve “Python ile çalışmak harika” şeklinde olacaktır.\n<br/>Sadece “Python ile çalışmak harika” cümlesi seçenekler içerisinde yer almaktadır."
+  },
+  {
+    "id": "3852168",
+    "unitNumber": 2,
+    "text": "hayvanlar = [\"Sarman\", \"Minnoş\", \"Tırmık\", \"Karabaş\", \"Pamuk\"]\n for isim in hayvanlar:\n if isim == \"Karabaş\":\n #boş bırakılan yer\n print(isim)\n Yukarıda verilen örnek Python kodunda, isim değişkenin değeri “Karabaş” değerine eşit olduğunda, ekrana yazdırmadan bir sonraki iterasyona devam etmesi için boş bırakılan yere aşağıdaki seçeneklerden hangisi gelmelidir?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "break",
+      "B": "pass",
+      "C": "else",
+      "D": "continue",
+      "E": "next"
+    },
+    "explanation": "Sayfa 49'da anlatıldığı gibi, Türkçe karşılığı devam anlamına gelen continue deyimi, bir döngü içindeyken kendisinden sonraki kodları çalıştırmadan, döngünün başına gelerek işleme bir sonraki eleman ile devam edilmesini sağlar. Yani break deyimindeki gibi döngü sonlandırılmaz, ancak bir sonraki döngü elemanı ile devam eder."
+  },
+  {
+    "id": "3852169",
+    "unitNumber": 2,
+    "text": "Bir problemin çözülmesinde izlenecek mantıklı ve ardışık şekilde gelen işlem dizisine ne ad verilmektedir?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "Akış kontrolü",
+      "B": "Algoritma",
+      "C": "Akış",
+      "D": "Akış diyagramı",
+      "E": "Kontrol elemanları"
+    },
+    "explanation": "Bir problemin çözülmesinde izlenecek mantıklı ve ardışık şekilde gelen işlem dizisine Algoritma denilmektedir. Algoritmanın da tüm dünya tarafından kabul edilmiş çeşitli semboller ile gösterilemesine de Akış Diyagramı adı verilmektedir. Akış diyagramları hazırlanırken kullanılması gereken kontrol elemanları vardır."
+  },
+  {
+    "id": "3852170",
+    "unitNumber": 2,
+    "text": ".......sayı &gt; 0:<br/>print(\"Pozitif sayı\")<br/>...... sayı == 0:<br/>print(\"Sıfır\")<br/>........ :<br/>print(\"Negatif sayı\")\n Yukarıda verilen örnek Python kodunda, bir sayının pozitif, negatif veya sıfır olup olmadığını kontrol ederek uygun bir mesaj göstermek için boş bırakılan yerlere sırasıyla aşağıdaki seçeneklerden hangisi gelmelidir?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "if else, elif, for",
+      "B": "if, elif, else",
+      "C": "if, else, elif",
+      "D": "for, elif, else",
+      "E": "for, else, elif"
+    },
+    "explanation": "Sayının pozitif, negatif veya sıfır olup olmadığını kontrol ederek uygun bir mesaj göstermek için yazılması gereken kod aşağıdaki gibidir. Bu nedenle boş bırakılan yerlere sırasıyla if, elif ve else gelmelidir. \n<br/>if sayı &gt; 0:<br/>print(\"Pozitif sayı\")<br/>elif sayı == 0:<br/>print(\"Sıfır\")<br/>else:<br/>print(\"Negatif sayı\")<br/>Sayının pozitif, negatif veya sıfır olup olmadığını kontrol ederek uygun bir mesaj göstermek için yazılması gereken kod aşağıdaki gibidir. Bu nedenle boş bırakılan yerlere sırasıyla if, elif ve else gelmelidir. \n if sayı &gt; 0:<br/>print(\"Pozitif sayı\")<br/>elif sayı == 0:<br/>print(\"Sıfır\")<br/>else:<br/>print(\"Negatif sayı\")"
+  },
+  {
+    "id": "3852171",
+    "unitNumber": 2,
+    "text": "for döngüsü sözdizimi ile ilgili olarak aşağıda verilen seçeneklerden hangisi doğrudur?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "for, işlem yapılacak her bir değeri diğerlerinden ayırır.",
+      "B": "in, bir döngü başlatır.",
+      "C": "değer, altındaki sekme ile belirtilmiş kod bloğunun çalıştırılma talimatını verir.",
+      "D": "döngü gövdesi, döngünün her bir yenilemesinde sıradaki değeri alan geçici bir değişkendir.",
+      "E": "liste, sıralı olarak üzerinde işlem tekrarı yapmak istenilen nesnedir."
+    },
+    "explanation": "for döngüsündeki söz dizimini inceleyecek olursak;<br/>for: Bir döngü başlatır<br/>değer: Döngünün her bir yenilemesinde sıradaki değeri alan geçici<br/>bir değişkendir<br/>in: İşlem yapılacak her bir değeri diğerlerinden ayırır<br/>liste: Sıralı olarak üzerinde işlem tekrarı yapmak istenilen nesnedir<br/>İki nokta üst üste: altındaki sekme ile belirtilmiş kod bloğunun<br/>çalıştırılma talimatını verir<br/>döngü gövdesi: Tekrar edilerek yapılması istenen işlemlerin yazıldığı kod bloğudur.\n<br/>Bu nedenle doğru seçenek E'dr.<br/>for döngüsündeki söz dizimini inceleyecek olursak;<br/>for: Bir döngü başlatır<br/>değer: Döngünün her bir yenilemesinde sıradaki değeri alan geçici<br/>bir değişkendir<br/>in: İşlem yapılacak her bir değeri diğerlerinden ayırır<br/>liste: Sıralı olarak üzerinde işlem tekrarı yapmak istenilen nesnedir<br/>İki nokta üst üste: altındaki sekme ile belirtilmiş kod bloğunun<br/>çalıştırılma talimatını verir<br/>döngü gövdesi: Tekrar edilerek yapılması istenen işlemlerin yazıldığı kod bloğudur.\n Bu nedenle doğru seçenek E'dr."
+  },
+  {
+    "id": "3852172",
+    "unitNumber": 2,
+    "text": "print(list(range(3, 19, 2)))\n Yukarıda verilen örnek Python kodu sonucunda elde edilecek kod çıktısı aşağıdaki seçeneklerin hangisinde doğru olarak verilmiştir?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "[3, 5, 7, 9, 11, 13, 15, 17, 19]",
+      "B": "[3, 5, 7, 9, 11, 13, 15, 17, 19,21]",
+      "C": "[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]",
+      "D": "[3, 5, 7, 9, 11, 13, 15, 17]",
+      "E": "[1, 17]"
+    },
+    "explanation": "print(list(range(3, 19, 2))) kodunun çıktısı [3, 5, 7, 9, 11, 13, 15, 17] şeklindedir. Bu nedenle cevap D seçeneğidir."
+  },
+  {
+    "id": "3852173",
+    "unitNumber": 2,
+    "text": "öğrenci_adı = 'Semra'<br/>notlar = {'Handan': 90, 'Semra': 75, 'Kamil': 67}\n Yukarıda verilen bilgileri kullanarak Python programında Semra'nın aldığı notu göstermek için kullanılacak kod aşağıdakilerin hangisinde yer almaktadır?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "for öğrenci else notlar:<br/>if öğrenci == öğrenci_adı:<br/>print(notlar[öğrenci])",
+      "B": "for öğrenci in notlar:<br/>if öğrenci == öğrenci_adı:<br/>print(notlar[öğrenci])",
+      "C": "list öğrenci in notlar:<br/>for öğrenci == öğrenci_adı:<br/>print(notlar[öğrenci])",
+      "D": "for öğrenci in notlar:<br/>else öğrenci == öğrenci_adı:<br/>print(notlar[öğrenci])",
+      "E": "for öğrenci in notlar:<br/>while öğrenci == öğrenci_adı:<br/>print(notlar[öğrenci])"
+    },
+    "explanation": "öğrenci_adı = 'Semra'<br/>notlar = {'Handan': 90, 'Semra': 75, 'Kamil': 67} bilgilerini kullanarak Python programında Semra'nın aldığı notu göstermek için kullanılacak kod şöyledir: \n<br/>for öğrenci in notlar:<br/>if öğrenci == öğrenci_adı:<br/>print(notlar[öğrenci])\n<br/>Bu nedenle cevap B seçeneğidir.<br/>öğrenci_adı = 'Semra'<br/>notlar = {'Handan': 90, 'Semra': 75, 'Kamil': 67} bilgilerini kullanarak Python programında Semra'nın aldığı notu göstermek için kullanılacak kod şöyledir: \n for öğrenci in notlar:<br/>if öğrenci == öğrenci_adı:<br/>print(notlar[öğrenci])\n Bu nedenle cevap B seçeneğidir."
+  },
+  {
+    "id": "3852174",
+    "unitNumber": 2,
+    "text": "while döngüsü ile ilgili olarak aşağıda verilen seçeneklerden hangisi yanlıştır?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "Test ifadesi (koşul) doğru olduğu sürece bir kod bloğu içindeki işlemleri tekrar etmek için kullanılır.",
+      "B": "Döngü gövdesini çalıştırmadan önce koşulu test eder.",
+      "C": "Bu döngü genellikle önceden kaç kez işlem tekrarı yapılacağı bilinmeyen durumlarda kullanılır.",
+      "D": "while kod bloğunda yapılan işlemler, test ifadesinden yanlış değeri alınana kadar tekrar eder.",
+      "E": "Diğer operatörlerde olduğu gibi, while döngüsünün gövdesi parantez işareti ile belirlenir."
+    },
+    "explanation": "Python’daki while döngüsü, test ifadesi (koşul) doğru olduğu sürece bir kod bloğu içindeki işlemleri<br/>tekrar etmek için kullanılır. Döngü gövdesini çalıştırmadan önce koşulu test eder. Bu döngü genellikle önceden kaç kez işlem tekrarı yapılacağı bilinmeyen durumlarda kullanılır. while kod bloğunda yapılan işlemler, test ifadesinden yanlış değeri alınana kadar tekrar eder. Diğer operatörlerde olduğu gibi, while döngüsünün gövdesi girinti ile belirlenir. Bu nedenle cevap E seçeneğidir."
+  },
+  {
+    "id": "3852175",
+    "unitNumber": 2,
+    "text": "for döngüsünde olduğu gibi, while döngüsünde de isteğe bağlı bir ......bloğu kullanılabilir. while döngüsündeki koşul Yanlış (False) olarak değerlendirilirse, ...... kısmı yürütülür. Ayrıca while döngüsü bir ........ deyimi ile sonlandırılabilir. \n Yukarıda boş bırakılan yerlere sırayla gelmesi gerekenler aşağıdakilerin hangisinde verilmiştir?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "else, else, break",
+      "B": "break, break, else",
+      "C": "continue, continue, break",
+      "D": "break, break, continue",
+      "E": "continue, else, break"
+    },
+    "explanation": "for döngüsünde olduğu gibi, while döngüsünde de isteğe bağlı bir else bloğu kullanılabilir. while döngüsündeki koşul Yanlış (False) olarak değerlendirilirse, else kısmı yürütülür. Ayrıca while döngüsü bir break deyimi ile sonlandırılabilir. Bu nedenle cevap A seçeneğidir."
+  },
+  {
+    "id": "3852176",
+    "unitNumber": 2,
+    "text": "I. pass deyimi genellikle bir işlevi olmaması gereken fakat sözdizimi olarak bir ifade eklenmesi gereken durumlarda kullanılır.<br/>II. else döngüsü, test ifadesi (koşul) doğru olduğu sürece bir kod bloğu içindeki işlemleri tekrar etmek için kullanılır. \n<br/>III. Eğer kod içerisinde bir ifade için yapılması gereken kontrol işlemleri sayıca fazla ise, if..else blokları yerine switch deyimi kullanılabilir.\n<br/>IV. break deyimi, döngünün başına gelerek işleme bir sonraki eleman ile devam edilmesini sağlar.\n<br/>Yukarıda verilen maddelerden hangileri doğrudur?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "I ve II",
+      "B": "I ve III",
+      "C": "II ve IV",
+      "D": "II ve III",
+      "E": "I ve IV"
+    },
+    "explanation": "while döngüsü, test ifadesi (koşul) doğru olduğu sürece bir kod bloğu içindeki işlemleri tekrar etmek için kullanılır.pass deyimi genellikle bir işlevi olmaması gereken fakat sözdizimi olarak bir ifade eklenmesi gereken durumlarda kullanılır. Eğer kod içerisinde bir ifade için yapılması gereken kontrol işlemleri sayıca fazla ise, if..else blokları yerine switch deyimi kullanılabilir. continue deyimi ise, bir döngü içindeyken kendisinden sonraki kodları çalıştırmadan, döngünün başına gelerek işleme bir sonraki eleman ile devam edilmesini sağlar. Bu nedenle cevap B seçeneğidir."
+  },
+  {
+    "id": "3852177",
+    "unitNumber": 2,
+    "text": "-Aynı amaç için oluşturulmuş sınıflar, fonksiyonlar ve özellikleri bir çatı altında toplayan yapıya<br/>verilen isimdir.\n -İçerisine birbiri ile alakalı sınıf ve fonksiyonların konulmasına dikkat edilmesi gerekir.\n Yukarıda verilen özellikler aşağıda verilen seçeneklerden hangisine aittir?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "Akış kontrolü",
+      "B": "Alanadı (namespace)",
+      "C": "Değişken kapsamı (scope)",
+      "D": "Döngü",
+      "E": "Algoritma"
+    },
+    "explanation": "Ad alanı ise, aynı amaç için oluşturulmuş sınıflar, fonksiyonlar ve özellikleri bir çatı altında toplayan yapıya verilen isimdir. Namespace içerisine birbiri ile alakalı sınıf ve fonksiyonların konulmasına dikkat edilmesi gerekir. Böylece aynı namespace içinde toplanan fonksiyonlar, ihtiyaç duyulan noktada koda eklenerek daha kolay yönetilebilir kod yazmada yardımcı olmaktadır. Her modül kendi global ve yalıtılmış ad alanını oluşturmaktadır. Böylece farklı modüllerde bulunabilecek aynı isim çakışmasının önüne geçilmektedir. Bu nedenle cevap B seçeneğidir."
+  },
+  {
+    "id": "3852178",
+    "unitNumber": 2,
+    "text": "Tanımlanmış çeşitli ad alanları olmasına rağmen, programın her bölümünden hepsine erişilemediği durumlarda hangi kavramı devreye girmektedir?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "Değişken kapsamı (scope)",
+      "B": "Kontrol deneyimleri",
+      "C": "Program akışı",
+      "D": "switch case deyimi",
+      "E": "pass deyimi"
+    },
+    "explanation": "Tanımlanmış çeşitli ad alanları olmasına rağmen, programın her bölümünden hepsine erişilemeyebilir. Bu durumda kapsam (scope) kavramı devreye girmektedir. Bu nedenle cevap A seçeneğidir."
+  },
+  {
+    "id": "3852179",
+    "unitNumber": 3,
+    "text": "Python'da def anahtar kelimesi hangi amaçla kullanılmaktadır?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "Fonksiyon başlığının başlangıcını işaretleyen anahtar sözcüktür.",
+      "B": "Fonksiyon başlığının sonunu işaretlemek için kullanılır.",
+      "C": "Fonksiyon gövdesini oluşturan bir veya daha fazla geçerli python ifadesine verilen isimdir.",
+      "D": "Fonksiyondan bir değer döndürmek için isteğe bağlı olarak kullanılabilen bir dönüş ifadesidir.",
+      "E": "Fonksiyonun parametreleri ve fonksiyonun görevini açıklamak için isteğe bağlı yazılan açıklamaları içerir."
+    },
+    "explanation": "Fonksiyonlar, belirli bir görevi yerine getiren kod bloklarına verilen isimdir. Fonksiyonlar, programları daha küçük ve modüler parçalara ayırmaya yardımcı olur. Program büyüdükçe fonksiyonlar, yazılan kodun daha düzenli ve yönetilebilir hale gelmesinde büyük rol oynamaktadır. Kod tekrarını önleyerek, kodun yeniden kullanılabilir hale getirilmesini sağlar.\n Fonksiyon gibi bir tanımlama yapılmak istendiğinde def anahtar kelimesi kullanılmaktadır.\n Fonksiyon Sözdizimi:\n def fonksiyon_adı(parametre(ler)): \"\"\"docstring\"\"\" kod bloğu"
+  },
+  {
+    "id": "3852180",
+    "unitNumber": 3,
+    "text": "Aşağıdaki kodun çıktısı hangisidir?\n def hesap(sayi): if sayi &lt;=10 : return sayi else: return (sayi*2) print(hesap(10)) print(hesap(15))",
+    "correctAnswer": "A",
+    "options": {
+      "A": "10\n 30",
+      "B": "10\n 225",
+      "C": "10\n 15",
+      "D": "sayi\n sayi*2",
+      "E": "100\n 225"
+    },
+    "explanation": "Soru kökünde verilen hesap fonksiyonundaki return sözdizimi verilen sayının 10 ve 10'dan küçük olması durumunda sayıyı, diğer durumlarda sayının iki katını döndürmektedir.\n<br/>def hesap(sayi):<br/>if sayi &lt;=10 : <br/>return sayi<br/>else:<br/>return (sayi*2)<br/>print(hesap(10))<br/>print(hesap(15))<br/>Return ifadesi, bir fonksiyondan çıkmak ve fonksiyonun çağrıldığı yere geri dönmek için kullanılır.\n return Sözdizimi:\n return [ifade listesi]<br/>Bu ifade, değer hesaplayan veya değer döndürülen bir ifade içerebilir. Deyimde ifade yoksa veya bir\n fonksiyonun içinde return ifadesi bulunmuyorsa, fonksiyon None nesnesini döndürür."
+  },
+  {
+    "id": "3852181",
+    "unitNumber": 3,
+    "text": "Değişkenler ile ilgili aşağıdaki bilgilerden hangisi hatalıdır?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "Bir değişkenin kapsamı, bir programın değişkenin değer ataması yapılabildiği kısmıdır.",
+      "B": "Bir fonksiyon içinde tanımlanan parametreler ve değişkenler fonksiyonun dışından erişilemez.",
+      "C": "Bir değişkenin ömrü, değişkenin tanındığı, bellekte bulunduğu süreye denir.",
+      "D": "Bir fonksiyon içindeki değişkenlerin ömrü, fonksiyonun yürütüldüğü süre kadardır.",
+      "E": "Bir fonksiyon daha önce yapılan çağrılarından bir değişkenin değerini tutabilir."
+    },
+    "explanation": "Kod:\n<br/>def deneme_fonk():<br/>x = 26<br/>print(\"Fonksiyon içindeki x değeri:\",x)<br/>x = 34<br/>deneme_fonk()<br/>print(\"Fonksiyon dışındaki x değeri:\",x)<br/>Kod Çıktısı:\n<br/>Fonksiyon içindeki x değeri: 26<br/>Fonksiyon dışındaki x değeri: 34<br/>Burada x’in değerinin başlangıçta 34 olduğu görülmektedir. deneme_fonk() fonksiyonu, x’in değerini 26 olarak değiştirse de, fonksiyonun dışındaki değeri etkilememektedir. Bunun nedeni, aynı isimlere sahip olmalarına rağmen, farklı kapsamlarda tanımlı iki farklı değişken olmaları sebebiyledir. Fonksiyonun için- deki x değişkeni, fonksiyona özel olarak yerel tanımlanmış, dışarıdaki x değişkeni de genel tanımlanmış bir değişkendir. Ayrıca, fonksiyonun dışındaki değişkenler fonksiyonun içinden erişilebilir. Yani küresel bir kapsamları vardır. \n<br/>&lt;<br/>Bir değişkenin kapsamı, bir programın değişkenin değer ataması yapılabildiği, yani yorumlayıcı tarafın- dan tanındığı kısmıdır. Bir fonksiyon içinde tanımlanan parametreler ve değişkenler fonksiyonun dışından görünmez yani erişilemez. Bu nedenle, yerel bir kapsamları vardır.\n<br/>Bir değişkenin ömrü, değişkenin tanındığı, bellekte bulunduğu süreye denir. Bir fonksiyon içindeki değişkenlerin ömrü, fonksiyonun yürütüldüğü süre kadardır. Fonksiyondan dönüldüğünde yok edilirler. Bu sebeple, bir fonksiyon daha önce yapılan çağrılarından bir değişkenin değerini tutamaz."
+  },
+  {
+    "id": "3852182",
+    "unitNumber": 3,
+    "text": "Aşağıdaki kodda hangi fonksiyon türü kullanılmıştır?\n<br/>def faktöriyel(x): if x == 1: return 1 <br/>else:\n<br/>return (x * faktöriyel(x-1))\n<br/>sayi = 5 print(sayi, \"sayısının faktöriyel değeri: \", faktöriyel(sayi ))",
+    "correctAnswer": "A",
+    "options": {
+      "A": "Özyinelemeli",
+      "B": "Lambda",
+      "C": "Anonim",
+      "D": "Traceback",
+      "E": "Dahili fonksiyon"
+    },
+    "explanation": "Soru kökünde verilen kodda, faktöriyel() kendini çağıran bir özyinelemeli fonksiyondur. Bu fonksiyonu pozitif bir tamsayı ile çağırdığımızda, her adımda sayıyı azaltarak özyinelemeli olarak kendini çağıracaktır. Her fonksiyon çağrısında, sayı bire eşit oluncaya dek, kendinden bir küçük sayının faktöriyeli ile çarpar.<br/>Python’da bir fonksiyonun içerisinden diğer fonksiyonların çağrılabilmesinin yanında, fonksiyonun kendisini çağırması da mümkündür. Bu tür yapılar özyinelemeli fonksiyonlar olarak adlandırılır.\n<br/>Özyineleme, bir şeyi kendi içerisinde tanımlama sürecidir. Daha kolay anlaşılması amacıyla fiziksel dünyadan bir örnek verebiliriz. Birbirine paralel olarak konumlan- dırılmış iki ayna olduğunu düşünelim. Aynaların arasına konulan herhangi bir nesne, özyinelemeli olarak her iki aynada da yansıyacaktır."
+  },
+  {
+    "id": "3852183",
+    "unitNumber": 3,
+    "text": "Aşağıdaki kodun çıktısı hangisidir?\n<br/>sayı_listesi = [1, 5, 4, 6, 8, 11, 3, 12] <br/>yeni_liste = list( filter( lambda x: ( x % 2 == 1 ) , sayı_listesi ) ) <br/>print(yeni_liste)",
+    "correctAnswer": "A",
+    "options": {
+      "A": "[1, 5, 11, 3]",
+      "B": "[6, 8, 11, 3]",
+      "C": "[1, 4, 3, 12]",
+      "D": "[1, 11, 3, 12]",
+      "E": "[4, 6, 8, 12]"
+    },
+    "explanation": "Soru kökünde verilen kod bir listedeki elemanların sadece tek olanlarını filtrelemektedir. Buna göre doğru yanıt A seçeneğidir.<br/>Python’daki filter() fonksiyonu, bir fonksiyonu ve bir listeyi argüman olarak alır. Fonksiyon, listedeki tüm öğelerle birlikte çağrılır ve fonksiyonun Doğru olarak değerlendirdiği öğeleri içeren yeni bir liste döndürür.\n<br/>( x % 2 == 1 ) 2 ye bölümünden kalan 1 yani tek sayıları bulduğundan yeni liste tek sayıları içeren bir liste olacaktır."
+  },
+  {
+    "id": "3852184",
+    "unitNumber": 3,
+    "text": "Aşağıdaki kod ile ilgili seçeneklerden hangisi hatalıdır?\n def a_fonk(): x = 10 def b_fonk(): global x x = 15 print(\"A fonksiyon çağrısından önce x:\", x) b_fonk() print(\"B fonksiyon çağrısından sonra x:\", x) a_fonk() print(\"Kod bloğunda x:\", x)",
+    "correctAnswer": "E",
+    "options": {
+      "A": "İç içe geçmiş b_fonk() fonksiyonu içinde global bir değişken tanımlanmıştır.",
+      "B": "a_ fonk() fonksiyonu içinde, x’in global anahtar sözcüğün hiçbir etkisi yoktur.",
+      "C": "a_fonk() fonksiyonunu çağırmadan önce ve sonra x = 10 olmaktadır.",
+      "D": "a_fonk() fonksiyonunun dışında, x değişkeni x = 15 değerini almaktadır.",
+      "E": "b_fonk() fonksiyonu içinde herhangi bir değişiklik yaparsak, değişiklikler a_fonk() dışında görünmez."
+    },
+    "explanation": "b_fonk() fonksiyonu içinde herhangi bir değişiklik yaparsak, değişiklikler yerel kapsamın dışında, yani a_fonk() dışında görünür. E seçeceği hatalıdır.<br/>Kod Çıktısı:\n A fonksiyon çağrısından önce x: 10 B fonksiyon çağrısından sonra x: 15 Kod bloğunda x: 15 Örnek programda, iç içe geçmiş b_fonk() fonksiyonu içinde global bir değişken tanımlanmıştır. a_ fonk() fonksiyonu içinde, x’in global anahtar sözcüğün hiçbir etkisi yoktur.\n a_fonk() fonksiyonunu çağırmadan önce ve sonra, x değişkeni yerel değişkenin değerini alır, yani x = 10 olmaktadır. a_fonk() fonksiyonunun dışında, x değişkeni b_fonk() fonksiyonunda tanımlanan değeri alır, yani x = 15 değerini almaktadır. Çünkü b_fonk() fonksiyonu (yerel kapsam) içinde global değişken oluşturmak için x için “global” anahtar sözcüğü ile kullanılmıştır.\n b_fonk() fonksiyonu içinde herhangi bir değişiklik yaparsak, değişiklikler yerel kapsamın dışında, yani a_fonk() dışında görünür."
+  },
+  {
+    "id": "3852185",
+    "unitNumber": 3,
+    "text": "Aşağıdaki kod çıktısı hangi seçenekte doğru verilmektedir?\n <img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/247f28858938b0ae05672c6a9cf11dd4.png\" alt=\"\" width=\"356\" height=\"209\">",
+    "correctAnswer": "B",
+    "options": {
+      "A": "Çıktı1: 1\n Çıktı2: 1",
+      "B": "Çıktı1: 2\n Çıktı2: 2",
+      "C": "Çıktı1: 1\n Çıktı2: 2",
+      "D": "Çıktı1: 2\n Çıktı2: 1",
+      "E": "Çıktı1: 1, 2\n Çıktı2: 2"
+    },
+    "explanation": "Yerel olmayan (nonlocal) olarak tanımlanmış bir değişkenin değeri değiştirildiğinde, değişiklikler yerel (local) değişkende de görünür. Doğru seçenek B'dir.<br/>Örnek kodda iç içe oluşturulmuş fonksiyon2() fonksiyonu bulunmaktadır. Yerel olmayan bir değişken oluşturmak için nonlocal anahtar kelimesi kullanılmaktadır. fonksiyon2(), fonksiyon1() fonksiyonunun kapsamında tanımlanır."
+  },
+  {
+    "id": "3852186",
+    "unitNumber": 3,
+    "text": "Python'da modüller ile ilgili bilgilerden hangisi hatalıdır?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "Modül, python koduna sahip bir dosyadır.",
+      "B": "Dosya adı modül adı olarak kullanılır.",
+      "C": "Modüller kodun yeniden kullanılabilirliğini sağlamaktadır.",
+      "D": "Modülü kod içerisinde kullanabilmek için kullanılan “export\" anahtar kelimesi kullanılır.",
+      "E": "Python kodunu içeren bir dosya, örneğin: islemler.py, modül olarak adlandırılır ve modül adı “islemler” olur."
+    },
+    "explanation": "Modülü kod içerisinde kullanabilmek için modüller “import” anahtar kelimesi ile koda dahil edilir.<br/>Modül, python koduna sahip bir dosyadır. Kod, değişkenler, işlevler veya tanımlanmış sınıf biçiminde olabilir. Yani bir kod kütüphanesidir. Uygulamada kullanılacak fonksiyonları içerir. Dosya adı modül adı olarak kullanılır.\n Python kodunu içeren bir dosya, örneğin: islemler.py, modül olarak adlandırılır ve modül adı “islemler” olur.\n Büyük programları küçük yönetilebilir ve düzenlenmiş dosyalara bölmek için modüller kullanılmaktadır. Ayrıca, modüller kodun yeniden kullanılabilirliğini sağlamaktadır. İçeriklerini farklı programlara kopyalamak yerine en çok kullanılan fonksiyonlar bir modül içerisinde tanımlanabilir. Bu modülleri kullanabilmek için import anahtar kelimesi ile koda dahil edilirler."
+  },
+  {
+    "id": "3852187",
+    "unitNumber": 3,
+    "text": "Python programlama dilinde bir dizin yapısı altında toplanmış, birbiri ile bağlantılı, alakalı modüllere ne ad verilir?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "Paket",
+      "B": "Değişken",
+      "C": "Fonksiyon",
+      "D": "Argüman",
+      "E": "Sözdizimi"
+    },
+    "explanation": "Bilgisayar ortamında, benzer nesneler daha hızlı erişim ve kategorizasyon için genellikle aynı isimli kla- sör yapıları içerisinde saklanır. Örneğin tüm fotoğrafları bir klasör altında tutabiliriz. Python programlama dilinde de, bir dizin yapısı altında toplanmış, birbiri ile bağlantılı, alakalı modüllere paket adı verilmekte- dir. Dolayısıyla, paket modüllerden oluşan bir yapıdır.\n Hazırladığımız program çok sayıda modülle büyüdüğü için benzer modülleri bir pakete, farklı modül- leri farklı paketlere yerleştiririz. Bu, bir projeyi (programı) yönetmeyi kolay ve kavramsal olarak net hale getirecektir.\n Benzer şekilde, bir dizin alt dizinleri ve dosyaları içerebileceğinden, bir Python paketinin alt paketleri ve modülleri olabilir. Python’un bir yapıyı paket olarak kabul etmesi için, __init__.py adlı bir dosya içermelidir. Bu dosya boş bırakılabilir, ancak genellikle o paketin başlatma kodu bu dosyaya yerleştirilir."
+  },
+  {
+    "id": "3852188",
+    "unitNumber": 3,
+    "text": "Aşağıdaki kodun çıktısı hangisidir?\n <img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/a3dd5fa25003272a6eaa2007141e05c9.png\" alt=\"\" width=\"269\" height=\"170\">",
+    "correctAnswer": "A",
+    "options": {
+      "A": "16.0\n 4.0\n 4.0",
+      "B": "256.0\n 16.0\n 16.0",
+      "C": "256.0\n 256.0\n 16.0",
+      "D": "256.0\n 16.0\n 4.0",
+      "E": "4.0\n 4.0\n 1.0"
+    },
+    "explanation": "Çözüm açıklamasına göre doğru seçenek A'dır.<br/>Python dilinde, modülü bir bütün olarak içe aktarmadan sadece ihtiyaç duyulan belirli fonksiyonları içe aktarabiliriz. Kod örneğinde matematik modülünden yalnızca sqrt özelliğini içe aktarıldı. Böyle durumlarda nokta operatörü kullanılmaz."
+  },
+  {
+    "id": "3852189",
+    "unitNumber": 3,
+    "text": "I. Belirli bir görev için hazırlanmış fonksiyonlardır. \n II.Python dilinin kullanıma hazır çeşitli fonksiyonlarındandır.\n III. Büyük bir programı küçük bölümlere ayırmaya yardımcı olur. \n IV. Programın anlaşılması, bakımı ve hata ayıklaması zordur. \n Kullanıcı tanımlı fonksiyonlar ile ilgili olarak yukarıda verilen maddelerden hangileri doğrudur?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "I ve II",
+      "B": "II ve III",
+      "C": "I ve III",
+      "D": "II ve IV",
+      "E": "III ve IV"
+    },
+    "explanation": "Kullanıcılar tarafından oluşturulan fonksiyonlardır. Belirli bir görev için hazırlanmış fonksiyonlar, kullanıcı tanımlı fonksiyonlar olarak adlandırılır. Python ile öntanımlı olarak gelen fonksiyonlara yerleşik, dahili fonksiyonlar denir. Kullanıcı tanımlı fonksiyonlar, büyük bir programı küçük bölümlere ayırmaya yardımcı olur, bu da programın anlaşılmasını, bakımını ve hata ayıklamasını kolaylaştırır. Büyük proje üzerinde çalışan programcılar, farklı fonksiyonlar yaparak iş yükünü bölebilir. Bu nedenle cevap C seçeneğidir."
+  },
+  {
+    "id": "3852190",
+    "unitNumber": 3,
+    "text": "I. Kodun temiz ve düzenli görünmesini sağlar.\n II. Bu fonksiyonlarda hata ayıklamak kolaydır. \n III. Bu fonksiyonlar az bellek ve zaman harcadıkları için verimlidir. \n IV. Karmaşık bir görev daha basit alt problemlere bölünebilir.\n Yukarıdakilerden hangileri özyinelemeli fonksiyonların avantajlarındandır?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "I ve II",
+      "B": "II ve III",
+      "C": "I ve IV",
+      "D": "II ve IV",
+      "E": "III ve IV"
+    },
+    "explanation": "Özyinelemeli fonksiyonlar, kodun temiz ve düzenli görünmesini sağlar. Karmaşık bir görev, özyineleme kullanılarak daha basit alt problemlere bölünebilir. Özyinelemeli fonksiyonlar, çok fazla bellek ve zaman harcadıkları için pahalıdır, verimsizdir. Özyinelemeli fonksiyonlarda hata ayıklamak zordur. Bu nedenle cevap C seçeneğidir."
+  },
+  {
+    "id": "3852191",
+    "unitNumber": 3,
+    "text": "Python’da normal işlevler ..... anahtar sözcüğü kullanılarak tanımlanırken, anonim işlevler .... anahtar sözcüğü kullanılarak tanımlanır. \n<br/>Yukarıdaki ifadede boş bırakılan yerlere sırasıyla aşağıdakilerden hangisi gelmelidir?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "def, lambda",
+      "B": "def, filter",
+      "C": "map, def",
+      "D": "list, map",
+      "E": "map,filter"
+    },
+    "explanation": "Python’da normal işlevler def anahtar sözcüğü kullanılarak tanımlanırken, anonim işlevler lambda anahtar sözcüğü kullanılarak tanımlanır. Bu nedenle cevap A seçeneğidir."
+  },
+  {
+    "id": "3852192",
+    "unitNumber": 3,
+    "text": "I. filter() ve map() fonksiyonu, bir fonksiyonu ve bir listeyi argüman olarak alır.\n II. Fonksiyon gövdesinde bildirilen bir değişken yerel olmayan değişken olarak adlandırılır.\n III. Fonksiyonun dışında bildirilen bir değişken global değişkendir.\n IV. Yerel kapsamı tanımlanmamış iç içe fonksiyonlarda yerel değişkenler kullanılır.\n Yukarıda lambda/anonim fonksiyonlar ile ilgili olarak verilenlerden hangileri doğrudur?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "I ve II",
+      "B": "I ve III",
+      "C": "II ve III",
+      "D": "II ve IV",
+      "E": "I ve IV"
+    },
+    "explanation": "Python’da, fonksiyonun dışında veya global kapsamda bildirilen bir değişken, global değişken olarak isimlendirilir. Bu, global bir değişkene fonksiyonun içinden veya dışından erişilebileceği anlamına gelmektedir. Fonksiyon gövdesinde veya yerel kapsamda bildirilen bir değişken, yerel değişken olarak adlandırılır.Yerel kapsamı tanımlanmamış iç içe fonksiyonlarda yerel olmayan değişkenler kullanılır. Bu nedenle cevap B seçeneğidir."
+  },
+  {
+    "id": "3852193",
+    "unitNumber": 3,
+    "text": "-Python koduna sahip bir dosyadır.\n -Kod, değişkenler, işlevler veya tanımlanmış sınıf biçiminde olabilir.\n - Bir kod kütüphanesidir.\n -Uygulamada kullanılacak fonksiyonları içerir.\n -Büyük programları küçük yönetilebilir ve düzenlenmiş dosyalara bölmek için kullanılır.\n Yukarıda özellikleri verilen yapıya ne ad verilmektedir?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "Modül",
+      "B": "Fonksiyon",
+      "C": "Paket",
+      "D": "Paket yöneticisi",
+      "E": "Akış kontrolü"
+    },
+    "explanation": "Modül, python koduna sahip bir dosyadır. Kod, değişkenler, işlevler veya tanımlanmış sınıf biçiminde<br/>olabilir. Yani bir kod kütüphanesidir. Uygulamada kullanılacak fonksiyonları içerir. Dosya adı modül adı olarak kullanılır. Büyük programları küçük yönetilebilir ve düzenlenmiş dosyalara bölmek için modüller kullanılmaktadır. Bu nedenle cevap A seçeneğidir."
+  },
+  {
+    "id": "3852194",
+    "unitNumber": 3,
+    "text": "I. Aktarılan modüllerde yapılacak tüm işlemler, modülün eski adı üzerinden yapılmalıdır. \n II. Bir modülün içindeki tanımlar, başka bir modüle import anahtar sözcüğü ile aktarılır. \n III. Bir modül farklı bir isimlendirme ile programa aktarılabilir. \n IV. Kod içerisinden de yeni verilen isim üzerinden “:” operatörüyle içerdiği fonksiyonlara erişilebilir.\n Yukarıda Python'da modül yapısı ile ilgili olarak verilen ifadelerden hangileri doğrudur?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "I ve II",
+      "B": "II ve III",
+      "C": "I ve III",
+      "D": "II ve IV",
+      "E": "I ve IV"
+    },
+    "explanation": "Bir modülün içindeki tanımlar, başka bir modüle veya Python’daki etkileşimli yorumlayıcıya aktarılabilir. Bunu yapmak için import anahtar sözcüğü kullanılmaktadır. Python’da bir modül, farklı bir isimlendirme ile programa aktarılabilir. Kod içerisinden de yeni verilen isim üzerinden “.” operatörü vasıtasıyla içerdiği fonksiyonlara erişilebilir. Artık yapılacak tüm işlemler, modülün yeni adı üzerinden yapılmalıdır. Eski modül adının bir geçerliliği yoktur. Bu nedenle cevap B seçeneğidir."
+  },
+  {
+    "id": "3852195",
+    "unitNumber": 3,
+    "text": "Python'da paket yapısı ile ilgili olarak aşağıda verilen ifadelerden hangisi yanlıştır?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "Python’un bir yapıyı paket olarak kabul etmesi için, __init__.py adlı bir dosya içermelidir.",
+      "B": "Paket modüllerden oluşan bir yapıdır.",
+      "C": "Nokta (.) operatörü kullanılarak paketlerden modüller içe aktarılır.",
+      "D": "Paket yapısında en az 3 adet dosya bulunmalıdır.",
+      "E": "Paketler içe aktarılıken, modül arama yoluna benzer şekilde sys.path içinde tanımlanan dizinler listesini kontrol edilir."
+    },
+    "explanation": "Python’un bir yapıyı paket olarak kabul etmesi için, __init__.py adlı bir dosya içermelidir. Nokta (.) operatörü kullanılarak paketlerden modüller içe aktarılır. Python, paketleri içe aktarırken, modül arama yoluna benzer şekilde sys.path içinde tanımlanan dizinler listesini kontrol eder. Bu nedenle cevap D seçeneğidir."
+  },
+  {
+    "id": "3852196",
+    "unitNumber": 3,
+    "text": "Python dilinde uygulama geliştirenler, kendi hazırladıkları paketleri diğer kullanıcılarının da erişimine<br/>açabilmektedir. Bu paylaşılan Python paketlerinin yüklenebilmesi amacıyla ortak bir yükleyici oluşturulmuştur. Bu paket yükleme ortamına ..... adı verilmektedir.\n Yukarıda boş bırakılan yere aşağıdakilerden hangisi gelmelidir?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "Paket yöneticisi (pip)",
+      "B": "Paket yapısı",
+      "C": "Akış yapısı",
+      "D": "Modül yapısı",
+      "E": "Fonksiyonlar"
+    },
+    "explanation": "Python dilinde uygulama geliştirenler, kendi hazırladıkları paketleri diğer kullanıcılarının da erişimine<br/>açabilmektedir. Bu paylaşılan Python paketlerinin yüklenebilmesi amacıyla ortak bir yükleyici oluşturulmuştur. Bu paket yükleme ortamına “pip” adı verilmektedir. Pip’in “Pip installs Python” ya da “Pip installs packages” şeklinde açılımları mevcuttur. Bu nedenle cevap A seçeneğidir."
+  },
+  {
+    "id": "3852197",
+    "unitNumber": 3,
+    "text": "I. Python geliştiricileri dışında hazırlanmış ve kullanıcıların hizmetine sunulmuş araçlardır.\n II. Bu paketleri kullanabilmek için kurulumlarının yapılması gerekmektedir.\n III. Bilgisayarda Python kurulum klasörü altında bulunan lib klasöründen erişilebilir.\n IV. Python kurulumu sırasında gelen, kütüphanesinde bulunan paketlerdir. \n Yukarıda verilen ifadelerden hangileri üçüncü şahıs paketleri için doğrudur?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "I ve II",
+      "B": "II ve III",
+      "C": "I ve IV",
+      "D": "II ve IV",
+      "E": "I ve III"
+    },
+    "explanation": "Bu paketler, Python geliştiricileri dışında hazırlanmış ve kullanıcıların hizmetine sunulmuş araçlardır. Bu paketler, standart paketler gibi gelmediğinden, kullanabilmek için kurulumlarının yapılması gerekmektedir. Bu nedenle cevap A seçeneğidir."
+  },
+  {
+    "id": "3852198",
+    "unitNumber": 3,
+    "text": "I. Paket oluşturmak için, Python kodlarını içeren .py uzantılı dosyaları bir klasör altında toplanmalıdır.\n II.Paket klasörünü içeri aktardıktan sonra eklenen klasörün gerçekten bir paket olup olmadığı __ path__ ve __package__ niteliklerini kullanarak test edilir. \n III. __path__ niteliği sadece paketlerde mevcuttur.\n IV. __package__ niteliği bir pakette test edildiğinde boş bir metin döndürecektir. \n Paket oluşturma ile ilgili verilen bilgilerden hangisi yanlıştır?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "Yalnız III",
+      "D": "Yalnız IV",
+      "E": "I ve II"
+    },
+    "explanation": "Paket oluşturmak için, Python kodlarını içeren .py uzantılı dosyaları bir klasör altında toplanması yeterlidir. Böylece klasör adını taşıyan bir paket elde edilecektir.Paket klasörünü içeri aktardıktan sonra eklediğimiz klasörün gerçekten bir paket olup olmadığını __ path__ ve __package__ niteliklerini kullanarak test edebiliriz. __path__ niteliği sadece paketlerde mevcuttur. __package__ niteliği de eğer bir pakette test edilirse paket ismini, bir modülde test edilirse de boş bir metin döndürecektir. Bu nedenle cevap D seçeneğidir."
+  },
+  {
+    "id": "3852199",
+    "unitNumber": 4,
+    "text": "Python dilinde kayan noktalı (float) sayı veri tipi, ondalık sayılar işlemek için kullanılır. Ancak bu veri tipi ile yapılan işlemler beklenenden farklı sonuçlar verebilir. Örneğin 1,1 ve 2,2 sayılarının toplamının 3,3 değerini eşit olması bekleriz, ancak bu değerleri kayan noktalı sayı veri tipinde toplarsak, Python sonucun 3,3’e eşit olmadığını söyler. Bunun sebebi aşağıdakilerden hangisidir?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Python dilinin kendine özgü yapısı",
+      "B": "Python dilinin hatalı bir şekilde geliştirilmiş olması",
+      "C": "Bilgisayarların ikili sayı sisteminden kaynaklanan donanımsal kısıtlamaları",
+      "D": "Python dilinin bilgisayarın donanımını doğru kullanamaması",
+      "E": "Bilgisayarın kapasitesinin Python dilini çalıştırmak için yetersiz kalması"
+    },
+    "explanation": "Sayfa 101 “Bilgisayarın yalnızca iki tabanındaki sayıları (0 ve 1) anlaması nedeniyle, kayan noktalı sayıların bilgisayar donanımında ikili tabanda kesirler olarak uygulandığı görülmektedir. … bu durum Python’da bir hata değildir, sadece bilgisayar donanım sınırlamasıdır.”"
+  },
+  {
+    "id": "3852200",
+    "unitNumber": 4,
+    "text": "Python dilinde kayan noktalı (float) sayı veri tipi, ondalık sayılar işlemek için kullanılır. Ancak bu veri tipi ile yapılan işlemler beklenenden farklı sonuçlar verebilir. Örneğin 1,1 ve 2,2 sayılarının toplamının 3,3 değerini eşit olması bekleriz, ancak bu değerleri kayan noktalı sayı veri tipinde toplarsak, Python sonucun 3,3’e eşit olmadığını söyler.\n Bu durumun önüne geçmek için, söz konusu toplama işlemindeki sayılar hangi veri tipinde ifade edilmelidir?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "Float",
+      "B": "Decimal",
+      "C": "Fraction (kesir)",
+      "D": "Math",
+      "E": "Int (tam sayı)"
+    },
+    "explanation": "Sayfa 101 Sayfa 101 “Bilgisayarın yalnızca iki tabanındaki sayıları (0 ve 1) anlaması nedeniyle, kayan noktalı sayıların bilgisayar donanımında ikili tabanda kesirler olarak uygulandığı \n görülmektedir. … Bu sorunu aşmak için Python ile birlikte gelen ondalık modülü yani “decimal” kullanılabilir.”"
+  },
+  {
+    "id": "3852201",
+    "unitNumber": 4,
+    "text": "film=[\"Barış Akarsu Merhaba\", \"Müjdemi İsterim\", \"Müstakbel Damat\", \"Tamirhane\", \"Hep Yek 5\"]\n Aşağıda yer alan Python kod satırlarından hangisi, yukarıdaki filmler listesi içerisinden birini rastgele olarak seçerek film ismini döndürür?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "print(random.shuffle(film))",
+      "B": "print(random.random())",
+      "C": "print(random.choice(film))",
+      "D": "print(random.randrange(0, 4))",
+      "E": "print(film)"
+    },
+    "explanation": "Sayfa 104’te verilen örnekte de görüldüğü üzere,\n print(random.choice( dizi )) şeklinde verilen bir komut\n “Dizi” isimli liste nesnesi içerisinde yer alan değerlerler içerisinden rastgele bir değer döndürür."
+  },
+  {
+    "id": "3852202",
+    "unitNumber": 4,
+    "text": "import random\n<br/>film=[\"Barış Akarsu Merhaba\", \"Müjdemi İsterim\", \"Müstakbel Damat\", \"Tamirhane\", \"Hep Yek 5\"]\n<br/>Aşağıda yer alan Python kod satırları, yukarıdaki film isimli liste nesnesinden rastgele bir film adını sonuç olarak döndürmektedir. Seçeneklerden hangisi, bu kod parçası ile aynı işlevi yerine <strong>getirmez?</strong>\n<br/>rastgele_film = random.choice(film)\n<br/>print(rastgele_film)",
+    "correctAnswer": "C",
+    "options": {
+      "A": "random.shuffle(film)\n<br/>rastgele_film = film[0]\n<br/>print(rastgele_film)",
+      "B": "rastgele_film = film [random.randrange(0, 4)]\n<br/>print(rastgele_film)",
+      "C": "random.shuffle(film)\n<br/>print(film)",
+      "D": "print(film [random.randrange(0, 4)])",
+      "E": "random.shuffle(film)\n<br/>print(film[0])"
+    },
+    "explanation": "C'de verilen kod diğerleri gibi film isimli liste nesnesinden rastgele bir sonuç döndürmek yerine, listede yer alan nesnelerin sırasını karıştırarak tümünü birden sonuç olarak döndürür. Sayfa 104 ve Sayfa 105’e yer alan örneklerin anlaşılması ile bu sorunun çözümü mümkündür."
+  },
+  {
+    "id": "3852203",
+    "unitNumber": 4,
+    "text": "film=[\"Barış Akarsu Merhaba\", \"Müjdemi İsterim\", \"Müstakbel Damat\", \"Tamirhane\", \"Hep Yek 5\", “Niloya”, “Aya Sihirli Yolculuk”, “Karlar Kraliçesi ve Prenses”, “Aslan Hürkuş Görevimiz Gökbey”]\n Yukarıdaki film isimli liste nesnesinde, “Niloya” ile başlayıp listenin sonuna kadar yer alan filmler, çocuklara yönelik, diğerleri ise yetişkinlere uygun filmlerdir. Aşağıdaki kod parçalarından hangisi ile bu listeden yetişkin ve çocuk filmlerinin ayrıldığı iki ayrı liste nesnesi oluşturulmuştur?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "cocuk_film=film[5:]\n yetiskin_film= film[0:5]",
+      "B": "cocuk_film=film[0:5]\n yetiskin_film= film[5:8]",
+      "C": "cocuk_film = film[0:5]\n del film[0:5]\n yetiskin_film= film [5:8]",
+      "D": "film.reverse()\n cocuk_film= film[0:4]\n yetiskin_film= film[0:5]",
+      "E": "cocuk_film=film[5])\n yetiskin_film=film[1])"
+    },
+    "explanation": "A'daki kod satırları, çocuklara ve yetişkinlere yönelik filmleri doğru olarak iki ayrı değişkene atar. “Film” isimli listenin 6 sıradaki 5 indeksli elemanı olan “Niloya” ile başlayıp en sona kadar tüm elemanlar “cocuk_film” isimli liste nesnesine, 0 indeksli birinci eleman olan \"Barış Akarsu Merhaba\" ile başlayıp 4 indeksli beşinci eleman olan \"Hep Yek 5\" dahil diğer elemanlar “yetişkin_film” isimli liste nesnesine aktarılır. Sayfa 107’deki Liste Dilimleme/Bölme başlığı altında benzer işlemler anlatılmaktadır. Diğer seçeneklerde yer verilen “del” deyimi sayfa 109’da Liste Elemanlarını Silme başlığında, reverse ise Tablo 4.2’de açıklanmaktadır."
+  },
+  {
+    "id": "3852204",
+    "unitNumber": 4,
+    "text": "Demet (Tuple) ve Liste (List) Python dilindeki birden fazla eleman içerebilen veri tipleridir ve üzerlerinde benzer işlemler gerçekleştirilebilir. Bu veri tiplerinin her ikisi için de kullanılamayan işlem hangisidir?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "Negatif indeksler yolu ile elemanlarına erişilebilir.",
+      "B": "Üzerlerinde yineleme döngüsü (for) işlemleri gerçekleştirilebilir.",
+      "C": "Dilimleme operatörü (:) kullanılarak içlerindeki bir grup elemana erişilebilir.",
+      "D": "del anahtar kelimesi ile tamamen silinebilirler.",
+      "E": "İçindeki elemanların bazıları silinebilirler."
+    },
+    "explanation": "Sayfa 118’de anlatıldığı üzere demet (tuple) tipi veriler istelerden farklı olarak, değişmez yapılardır. Bu, bir demetin elemanları atandıktan sonra değiştirilemeyeceği ya da silinemeyeceği anlamına gelmektedir. Sayfa 114’te de “Demetlerde silme, ekleme, indeks değiştirme gibi işlemlere izin verilmez.” denmektedir."
+  },
+  {
+    "id": "3852205",
+    "unitNumber": 4,
+    "text": "yaban_demeti = \"menekşe\", \"leylak\", \"sümbül\", \"gelincik\", \"nergis\"<br/>cicekci_demeti = \"gül\", \"karanfil\", \"zambak\", \"lale\"<br/>karisik_demet = cicekci_demeti + yaban_demeti<br/>Yukarıda Python programlama dilinde, yaban_demeti ve cicekci_demeti isimleri ile paketlenmiş iki demet (tuple) tipi nesne yer almaktadır. Bu nesnelere dayanarak karisik_sepet nesnesi oluşturulmuştur.\n<br/>Buna göre, seçeneklerde verilen kod ve çıktı eşleşmelerinin hangisi <strong>hatalıdır?</strong>",
+    "correctAnswer": "D",
+    "options": {
+      "A": "# Değer olarak 9 döndürür\n<br/>print(len(karisik_demet))",
+      "B": "# Değer olarak “sümbül” döndürür\n<br/>print(karisik_demet[-3])",
+      "C": "# Değer olarak “karanfil” döndürür\n<br/>print(karisik_demet[1])",
+      "D": "# Değer olarak “lale” döndürür\n<br/>print(karisik_demet[-1])",
+      "E": "# Değer olarak “gelincik” döndürür\n<br/>print(karisik_demet[-2])"
+    },
+    "explanation": "D seçeneğinde verilen sonuç hatalıdır. karisik_demet nesnesinin ilk 4 elemanı cicekci_demeti nesnesinin elemanları olan “gül”, “karanfil”, “zambak”, “lale” olup diğer elemanlar sırası ile yaban_demeti nesnesinin elemanları olan “menekşe”, “leylak”, “sümbül”, “gelincik”, “nergis” olacaktır. -1 negatif indeksi “lale” değil “nergis” değerini döndürür."
+  },
+  {
+    "id": "3852206",
+    "unitNumber": 4,
+    "text": "Python dilindeki dize (string) veri tipine ilişkin olarak aşağıdakilerden hangisi <strong>söylenemez?</strong>",
+    "correctAnswer": "B",
+    "options": {
+      "A": "“+” operatörü ile iki veya daha fazla dize birleştirilebilir.",
+      "B": "İndeks kullanılarak bir dize nesnesinin içinde yer alan bir harf değiştirilebilir.",
+      "C": "Bir harf grubunun bir dizede yer alıp almadığı “in” anahtar kelimesi ile test edilebilir.",
+      "D": "len() yerleşik fonksiyonu ile kaç karakterden oluştuğu belirlenebilir.",
+      "E": "for döngüsü kullanılarak dize değişkeni üzerinde yineleme yapılabilir."
+    },
+    "explanation": "“İndeks kullanılarak bir dize nesnesinin içinde yer alan bir harf değiştirilebilir.” önermesi hatalıdır. Sayfa 124’te belirtildiği ve örnekle açıklandığı üzere, “Dizeler de tıpkı demetler gibi değişmezdir. Bir dizenin elemanları atandıktan sonra değiştirilemeyeceği anlamına gelmektedir.”."
+  },
+  {
+    "id": "3852207",
+    "unitNumber": 4,
+    "text": "Elimizde, 3 farklı çiçekçi dükkanında satılan çiçek türlerinin yer aldığı listeler bulunmaktadır. Bazı çiçek türleri birden fazla dükkanda satılmaktadır. Örneğin her üç dükkanda da gül satışı yapılmakta, hem birinci ve hem de üçüncü dükkanda lale bulunmaktadır.\n<br/>Python dili ile geliştirdiğimiz uygulamada, her bir dükkanda yer alan çiçek türlerini ayrı ayrı bilmemiz, ama aynı zamanda tüm çiçekçilerde satılan çiçeklerin yer aldığı bir ortak çoklu eleman veri nesnesi oluşturmamız gerekmektedir. Bu nesnede her çiçek türü bir kez yer almalıdır.\n<br/>Buna göre, çoklu eleman içeren veri tiplerinden hangisi, çiçekçilerde satılan çiçekleri içeren çoklu elemanlı veri nesnelerini oluşturmak için en uygun veri tipidir?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "Liste (list)",
+      "B": "Dize (string)",
+      "C": "Demet (tuple)",
+      "D": "Küme (set)",
+      "E": "Sözlük (Dictionary)"
+    },
+    "explanation": "Yukarıdaki sorunun en kolay çözümü “Küme” veri tipi kullanılmasıdır. union() metodu kullanılarak her bir çiçekçi dükkanı için ayrı ayrı oluşturulan küme tipindeki çoklu elemanlı veri nesneleri birleştirildiğinde, birden fazla dükkanda satılan çiçeklerin yinelenmediği bir küme oluşmuş olur. Union () metoduna sayfa 136’da yer alan Tablo 4.4’te yer verilmiştir. Sayfa 149’a ise “Küme, sıralanmamış bir öğeler topluluğudur. Her küme elemanı benzersizdir yani tekrar etmemeli ve değiştirilemez olmalıdır.” denerek aynı elemanın bir kümede birden fazla tekrarlanamayacağı ifade edilmiştir."
+  },
+  {
+    "id": "3852208",
+    "unitNumber": 4,
+    "text": "kardesler = [{'isim': Neriman', 'yaş': 21},{'isim': Firuzan', 'yaş': 19},{'isim': Altan', 'yaş': 17},{'isim': İlhan', 'yaş': 15},{'isim': Şafak', 'yaş': 12}]<br/>Yukarıdaki değişkende, Python programlama dili veri tiplerinin hangileri kullanılmıştır?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "Demet (tuple) ve dize (string)",
+      "B": "Liste (list) ve sözlük (dictionary)",
+      "C": "Sadece liste (list)",
+      "D": "Sadece sözlük (dictionary)",
+      "E": "Sadece demet (tuple)"
+    },
+    "explanation": "Cevap “Liste (list) ve sözlük (dictionary)”\n Kardesler = [], sayfa 105’te tanımlandığı şekli ile Liste (list) tipi bir değişkendir. Listenin virgülle ayrılmış her bir elemanı, örneğin {'isim': Neriman', 'yaş': 21}, sayfa 109’da tanımlandığı şekli ile anahtar-değer çiftlerinden oluşan sözlük (Dictionary) tipinde değişkenlerdir."
+  },
+  {
+    "id": "3852209",
+    "unitNumber": 5,
+    "text": "dosya = open(\"metin_dosyası.txt\",'w+')\n Python programlama dilinde yukarıdaki kod satırı kullanılarak açılan dosyada yapılabilecek işlemler ile ilgili olarak hangisi <strong>söylenemez?</strong>",
+    "correctAnswer": "E",
+    "options": {
+      "A": "Açılan dosya okunabilir.",
+      "B": "Açılan dosyaya yazma işlemi yapılabilir.",
+      "C": "Dosya metin (text) modunda açılmıştır.",
+      "D": "Dosya mevcut değilse yaratılır.",
+      "E": "Dosya silinir."
+    },
+    "explanation": "Sayfa 160 Tablo 5.1’de belirtildiği üzere +, dosyayı okuma ve yazma güncellemesi için açar.\n “w” ise “Yazmak için bir dosya açar. Mevcut değilse yeni bir dosya oluşturur veya dosya varsa içeriğini siler, sıfırlar.” Dosya varsayılan mod olan text modunda açılmıştır."
+  },
+  {
+    "id": "3852210",
+    "unitNumber": 5,
+    "text": "harita.bmp isimli dosya bir resim dosyasıdır. Hangi kod satırında bu dosyayı Python programlama dilinde açmak için en uygun yöntem kullanılmaktadır?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "harita = open(\"harita.bmp\")",
+      "B": "harita = open(\"harita.bmp\", \"r+\")",
+      "C": "harita = open(\"harita.bmp\", \"b\")",
+      "D": "harita = open(\"harita.bmp\", \"x\")",
+      "E": "harita = open(\"harita.bmp\", \"w\")"
+    },
+    "explanation": "Cevap harita = open(\"harita.bmp\", \"b\")\n harita.bmp bir resim dosyası olduğu için binary veri içerir. Komutta belirtilen “b” modu, Sayfa 160 Tablo 5.1’de belirtildiği üzere dosyayı ikili (binary) modda açar. Yine sayfa 160’te belirtildiği üzere “Bu mod, resim veya yürütülebilir dosyalar (exe uzantılı) gibi metin olmayan dosyalarla\n uğraşırken kullanılacak moddur.” Bu tür veri içeren dosyalarda işlem yapmak için bu modu kullanmak uygun olacaktır."
+  },
+  {
+    "id": "3852211",
+    "unitNumber": 5,
+    "text": "with open(\"metin_dosyası.txt\",'w',encoding = 'utf-8') as dosya:\n dosya.write(\"Python sınavı\\n\")\n <br/>Yukarıdaki kodun ilk satırında yer alan “with…” deyiminin dosya işleminde kullanım sebebi nedir?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "“with…” ifadesinin içindeki bloktan çıkıldığında dosyanın kendiliğinden kapatılması sağlanır.",
+      "B": "“with…” ifadesi sayesinde belirtilen dosya yoksa oluşturulur.",
+      "C": "“with…” ifadesi ile dosyaya yazılanların varolan dosyanın içeriğine eklenmesi sağlanır.",
+      "D": "“with…” ifadesi ile dosyanın tüm içeriği silinir yeni içerikler boş dosyaya eklenir.",
+      "E": "“with…” ifadesi, dosyaya yazma işlemi yapabilmek için zorunludur."
+    },
+    "explanation": "Cevap: “with…” ifadesinin içindeki bloktan çıkıldığında dosyanın kendiliğinden kapatılması sağlanır.\n Sayfa 161’de belirtildiği üzere “Bir dosyayı kapatmanın en iyi yolu “with” deyiminin kullanılmasıdır. “with” deyimi sayesinde, with ifadesinin içindeki bloktan çıkıldığında dosyanın kapatılması sağlanmaktadır. Ayrıca close() fonksiyonu dahili olarak çağrıldığı için tekrar çağrılmasına gerek duyulmaz.”"
+  },
+  {
+    "id": "3852212",
+    "unitNumber": 5,
+    "text": "istiklalMarsi.txt dosyası, İstiklal Marşı’mızın ilk iki kıtasını içermektedir. Buna göre aşağıdaki kod Python’da çalıştırıldığında, hangi sonuç döndürülür?<br/>with open(\"istiklalMarsi.txt\",'r',encoding = 'utf-8') as dosya:\n<br/>print(dosya.readline(6))",
+    "correctAnswer": "A",
+    "options": {
+      "A": "Korkma",
+      "B": "sancak",
+      "C": "Korkma, sönmez bu şafaklarda yüzen al sancak;",
+      "D": "Sana olmaz dökülen kanlarımız sonra helâl,",
+      "E": "Kim bu cennet vatanın uğruna olmaz ki fedâ?"
+    },
+    "explanation": "Cevap: Korkma\n<br/>Tablo 5.2’de (sayfa 163) açıklandığı şekli ile “Dosyadan satırların bir listesini okuyarak döndürür.” Parametre belirtilmişse en fazla parametrede belirtilen bayt/ karakter okur. Sorudaki print(dosya.readline(6)) satırı dosyadaki ilk 7 bayt ile ifade edilen Korkma harflerini döndürecektir."
+  },
+  {
+    "id": "3852213",
+    "unitNumber": 5,
+    "text": "Python ile yaptığımız dosya işlemlerinin hangi dizinde gerçekleştiğini bilmek için, programın mevcut çalışma dizini (Current Working Directory - CWD) bilgisine ihtiyaç duyarız. Bu bilgi nasıl elde edilir?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "“with” deyiminin kullanılması ile",
+      "B": "“try… finally” bloğu kullanılarak",
+      "C": "“os” modülünün “chdir()” yöntemi kullanılarak",
+      "D": "“shutil” modülü içindeki “rmtree()” yöntemi kullanılarak",
+      "E": "“os” modülünün “getcwd()” yöntemi kullanılarak"
+    },
+    "explanation": "Cevap: “os” modülünün “getcwd()” yöntemi kullanılarak\n Sayfa 164’te belirtildiği üzere, “Programın mevcut çalışma dizini (Current Working Directory - CWD), os modülünün getcwd() yöntemi kullanılarak elde edilebilir.”"
+  },
+  {
+    "id": "3852214",
+    "unitNumber": 5,
+    "text": "Python ile yaptığımız dosya işlemleri, programın mevcut çalışma dizini (Current Working Directory - CWD) klasöründe gerçekleştilir. Mevcut çalışma klasörünü D sürüsündeki “Temp” klasörü olarak belirlemek için aşağıdaki kod satırlarından hangisi kullanılmalıdır?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "os.getcwd(“D:\\Temp”)",
+      "B": "os.cwd(“D:\\Temp”)",
+      "C": "os.chdir(“D:\\Temp”)",
+      "D": "os.mkdir(“D:\\Temp”)",
+      "E": "os.rmdir(“D:\\Temp”)"
+    },
+    "explanation": "Cevap:\n os.chdir(“D:\\Temp”)\n Sayfa 165’te belirtildiği üzere “Mevcut çalışma dizini (CWD) değiştirmek için os.chdir() yöntemi kullanılmaktadır.”"
+  },
+  {
+    "id": "3852215",
+    "unitNumber": 5,
+    "text": "Python dilinin için “shutil” modülü içindeki rmtree() metodu, parametre olarak mevcut çalışma dizini (CWD) içerisindeki bir dizin ismi verilerek kullanıldığında, ne sonuç verir?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "İsmi verilen dizinin içeriğini listeler.",
+      "B": "İsmi verilen dizini içerisinde yer alan dosyalar ile beraber siler.",
+      "C": "İsmi verilen dizinin içerisindeki dosyaları siler.",
+      "D": "İsmi verilen dizinin bir kopyasını üretir.",
+      "E": "İsmi verilen dizini mevcut çalışma dizini (CWD) olarak belirler."
+    },
+    "explanation": "Cevap: İsmi verilen dizini içerisinde yer alan dosyalar ile beraber siler.\n Sayfa 167’de belirtildiği üzere “boş olmayan bir dizini kaldırmak için “shutil” modülü içindeki rmtree() metodu kullanılabilir.”"
+  },
+  {
+    "id": "3852216",
+    "unitNumber": 5,
+    "text": "Python dilinin için os modülü içinde yer alan rmdir() yöntemi aşağıdaki durumların hangisinde bir hata mesajı döndürmeden işlemi gerçekleştirebilecektir?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "Parametre olarak ismi verilen bir dosyayı ve içindeki verileri silme",
+      "B": "Parametre olarak ismi verilen bir dizini ve içindeki dosyaları silme",
+      "C": "Mevcut çalışma dizinini (CWD) silme",
+      "D": "Parametre olarak ismi verilen içi boş bir dizini silme",
+      "E": "Parametre olarak ismi verilen boş bir dosyayı silme"
+    },
+    "explanation": "Cevap:\n<br/>Parametre olarak ismi verilen boş bir dizini silme\n<br/>Sayfa 167’de yer alan örnekte görüldüğü üzere os.rmdir() metodu \n<br/>mevcut çalışma dizinini (CWD) içerisindeki bir dizini silmek için kullanılmaktadır. Ancak parametre olarak verilen dizin içerisinde başka dizinler ya da dosyalar var ise, bir OSError hatası döndürmektedir."
+  },
+  {
+    "id": "3852217",
+    "unitNumber": 5,
+    "text": "Python programlama dilinin izin vermediği işlemlerin yapılmaya çalışılması istisnalar oluşturabilir. Bu gibi durumlarda programda bir hata oluştuğunda, bir şeyler ters gittiğinde hata yakalayabilmek için ne kullanılır?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "try, except ve finally işlevleri",
+      "B": "os modülü yöntemleri",
+      "C": "shutil modülü yöntemleri",
+      "D": "locals()[‘__builtins__’] fonksiyonu",
+      "E": "sys.exit() fonksiyonu"
+    },
+    "explanation": "Cevap: try, except ve finally işlevleri\n Sayfa 171’de belirtildiği üzere “Programda bir hata oluştuğunda, bir şeyler ters gittiğinde hata yakalayabilmek için try, except ve finally işlevleri kullanılmaktadır.”"
+  },
+  {
+    "id": "3852218",
+    "unitNumber": 5,
+    "text": "Python programlama dilinde, mod alma ya da bölme işleminin ikinci işleneni sıfır olması hangi yerleşik istisnanın tetiklenmesine sebep olur?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "UnicodeError",
+      "B": "ZeroDivisionError",
+      "C": "RuntimeError",
+      "D": "FloatingPointError",
+      "E": "MemoryError"
+    },
+    "explanation": "Cevap: ZeroDivisionError\n Sayfa 170’te yer alan Tablo 5.3’te belirtildiği üzere ZeroDivisionError, “Mod alma ya da bölme işleminin ikinci işleneni sıfır olduğunda tetiklenir”. Ayrıca sayfa 172’de yer alan örnekte ve açıklamasında da, liste isimli listedeki 0 değerinin “ZeroDivisionError” hatasına sebep olduğu belirtilmektedir."
+  },
+  {
+    "id": "3852219",
+    "unitNumber": 6,
+    "text": "Aşağıdakilerden hangisi,nesne yönelimli programlamada sınıfın içinde tanımlanmış fonksiyonlari ifade eder?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "metotlar",
+      "B": "class",
+      "C": "nesne",
+      "D": "kalıtım",
+      "E": "kod çıktısı"
+    },
+    "explanation": "Metotlar, nesne yönelimli programlamada sınıfın içinde tanımlanmış fonksiyonları ifade eder."
+  },
+  {
+    "id": "3852220",
+    "unitNumber": 6,
+    "text": "Aşağıdakilerden hangisi, mevcut bir sınıfın özellikleri ve davranışları değiştirilmeden yeni bir sınıfın oluşturulmasıni ifade eder?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "metot",
+      "B": "kalıtım",
+      "C": "class",
+      "D": "data",
+      "E": "kod çıktısı"
+    },
+    "explanation": "Kalıtım, mevcut bir sınıfınözellikleri ve davranışları değiştirilmeden yeni bir sınıfın oluşturulmasıni ifade eder."
+  },
+  {
+    "id": "3852221",
+    "unitNumber": 6,
+    "text": "Aşağıdakilerden hangisi nesne yönelimli programlama kullanılarak nesne ve metotlara erişim kısıtlamasıni ifade eder?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "class",
+      "B": "alt sınıf",
+      "C": "kapsülleme",
+      "D": "metot",
+      "E": "data"
+    },
+    "explanation": "Kapsülleme (encapcsulation), nesne yönelimli programlama kullanılarak nesne ve metotlara erişim kısıtlamasıni ifade eder."
+  },
+  {
+    "id": "3852222",
+    "unitNumber": 6,
+    "text": "Aşağıdakilerden hangisi, farklı veri türleri, sınıflar için ortak bir arabirim kullanmayı ifade eder?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "data",
+      "B": "sınıf",
+      "C": "kapsülleme",
+      "D": "Çok biçimlilik (polymorphism)",
+      "E": "kod"
+    },
+    "explanation": "Çok biçimlilik (polymorphism), farklı veri türleri, sınıflar için ortak bir arabirim kullanmayı ifade eder."
+  },
+  {
+    "id": "3852223",
+    "unitNumber": 6,
+    "text": "Python dilinde sınıf tanımlamaları aşağıdaki hangi anahtar kelimesi ile baslar?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "object",
+      "B": "int",
+      "C": "library",
+      "D": "include",
+      "E": "class"
+    },
+    "explanation": "Python dilinde sınıf tanımlamaları class anahtar kelimesi ile başlar."
+  },
+  {
+    "id": "3852224",
+    "unitNumber": 6,
+    "text": "Aşağıdakilerden hangisi python programlama dilinde özel fonksiyon olduğunu gosterir?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "çift altçizgi ile başlayan fonksiyonlar",
+      "B": "class tanımı içindekiler",
+      "C": "bütün nesneler",
+      "D": "iki adet \" ile ifade edilen sözcükler",
+      "E": "include ile başlayan kodlar"
+    },
+    "explanation": "Çift altçizgi ile başlayan fonksiyonlar, python programlama dilinde çzel fonksiyon olduğunu gösterir."
+  },
+  {
+    "id": "3852225",
+    "unitNumber": 6,
+    "text": "Aşağıdakilerden hangisi nesne ve özellik silme işlemi gerçekleştirir?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "def",
+      "B": "del",
+      "C": "print",
+      "D": "altçizgi",
+      "E": "çift altçizgi"
+    },
+    "explanation": "del kullanılarak nesne ve özellik silme işlemi gerçekleşir."
+  },
+  {
+    "id": "3852226",
+    "unitNumber": 6,
+    "text": "Python programlama dilinde bir sınıf boş bırakılacak ise aşağıdaki anahtar kelimelerden hangisi kullanılır?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "del",
+      "B": "class",
+      "C": "pass",
+      "D": "def",
+      "E": "altçizgi işareti"
+    },
+    "explanation": "Python programlama dilinde bir sınıf boş bırakılacak ise, pass anahtar kelimesi kullanılır."
+  },
+  {
+    "id": "3852227",
+    "unitNumber": 6,
+    "text": "Aşağıdakilerden hangisi python dilinde veri kapsülleme (data encapsulation) işlemi için yapılması zorunlu bir işlemdir?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "datanın ayrı bir dosyada tutulması",
+      "B": "datanın ziplenmesi",
+      "C": "yazılan programın tar.gz formatında saklanması",
+      "D": "özellik adından önce çift altçizgi eklenmesi",
+      "E": "python kodlarının sadece ssh ile erişilebilir olması"
+    },
+    "explanation": "Özellik adından önce çift altçizgi eklenmesi, python dilinde veri kapsülleme (data encapsulation) işlemi için yapılmasi zorunludur."
+  },
+  {
+    "id": "3852228",
+    "unitNumber": 6,
+    "text": "Python progragramlama dilinde bellek ayırma ve belleği serbest bırakma / temizleme işlemleri için aşağıdakilerden hangisi yapılır?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "del komutu verilir",
+      "B": "class private olarak tanımlanır",
+      "C": "def için alt çizgi kullanılır",
+      "D": "bu islem için ayrıca bir program yazılır",
+      "E": "herhangi bir özel işleme gerek yoktur, python dilinde otomatik olarak yapılır"
+    },
+    "explanation": "Python progragramlama dilinde bellek ayırma ve belleği serbest bırakma / temizleme işlemleri için herhangi bir özel işleme gerek yoktur, python dilinde otomatik olarak yapılır."
+  },
+  {
+    "id": "3852229",
+    "unitNumber": 7,
+    "text": "MySQL sürücüsünün doğru bir şekilde kurulup kurulmadığı aşağıdaki kodlardan hangisi ile kontrol edilebilir?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "import mysql.connector",
+      "B": "data mysql.connector",
+      "C": "import mysql.connector.connect",
+      "D": "mysql.connector.python",
+      "E": "data mysql.connector. python"
+    },
+    "explanation": "MySQL sürücüsünün doğru bir şekilde kurulduğu da şu kod ile kontrol edilebilir. Kod: import mysql.connector Kod çalıştırıldığında bir hata alınmıyorsa, kurulum başarılı bir şekilde gerçekleşmiş ve MySQL sürücüsü bilgisayarınıza yüklenmiş demektir."
+  },
+  {
+    "id": "3852230",
+    "unitNumber": 7,
+    "text": "MySQL veritabanında kod yazarken kullanılacak bir veritabanı oluşturmak için hangi komutun çalıştırılması gerekmektedir?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "CREATE NEW DATA",
+      "B": "CREATE DATABASE",
+      "C": "IMPORT DATA",
+      "D": "IMPORT DATABASE",
+      "E": "CREATE LOCALHOST"
+    },
+    "explanation": "MySQL veritabanında kod yazarken kullanılacak bir veritabanı oluşturmak için “CREATE DATABASE” komutu çalıştırılması gerekmektedir."
+  },
+  {
+    "id": "3852231",
+    "unitNumber": 7,
+    "text": "MySQL veritabanında uretim isimli bir tablo oluşturulduğunu varsayalım. Tablo oluşturulduktan sonra bu tabloya yeni bir sütun ilave edileceği zaman hangi komut kullanılır?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "cursor.execute (\"ALTER TABLE uretim ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY\")",
+      "B": "\"\"\"CREATE TABLE uretim (\n id INT AUTO_INCREMENT PRIMARY KEY,\n isim VARCHAR(30)\n NOT NULL,\n soyisim\n VARCHAR(30),\n birim VARCHAR(50),\n pozisyon INT,\n dogum_tarihi DATETIME\n )\"\"\"",
+      "C": "cursor.execute (\"ADD CIRCLE uretim ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY\")",
+      "D": "\"\"\"CREATE TABLE uretim (\n id INT AUTO_INCREMENT PRIMARY KEY,\n isim VARCHAR(30)\n NOT NULL,\n )\"\"\"",
+      "E": "veritabani.close()"
+    },
+    "explanation": "Eğer tablo zaten oluşturulmuş ise, tabloya yeni bir sütun ilave etmek için ALTER TABLE komutu kullanılır."
+  },
+  {
+    "id": "3852232",
+    "unitNumber": 7,
+    "text": "Veritabanındaki tablolara tekli veya çoklu veri kaydı yapabilmek için aşağıdaki komutlardan hangisi kullanılır?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "sql = \"INSERT INTO calisan(isim, soyisim, birim) VALUES (%s, %s, %s)\"",
+      "B": "sql = \"EXECUTE INTO calisan(isim, soyisim, birim) VALUES (%s, %s, %s)\"",
+      "C": "sql = \"INSERT DATA calisan(isim, soyisim, birim) VALUES (%s, %s, %s)\"",
+      "D": "sql = \"EXECUTE DATA calisan(isim, soyisim, birim) VALUES (%s, %s, %s)\"",
+      "E": "sql = \"EXECUTEMANY calisan(isim, soyisim, birim) VALUES (%s, %s, %s)\""
+    },
+    "explanation": "“INSERT INTO” anahtar sözcüğü ile başlayan komut, MySQL sunucusuna yapılacak işlem hakkında bilgi vermektedir. Zorunlu bir ifade olmakla birlikte, kendisinden sonra işlem yapılacak tablo adının gelmesi gerekmektedir. Ardından veri girilmesi istenilen tablodaki sütun adları istenilen sırayla tanımlanır. “VALUES” anahtar sözcüğünden sonra da, verilen sütun isim ve veri türlerine göre sıra uyumu gözetilerek, verilerin girilmesi beklenmektedir."
+  },
+  {
+    "id": "3852233",
+    "unitNumber": 7,
+    "text": "Veritabanındaki tablolardan veri çekme, filtreleme, veri güncellemesi ve verilerin silinmesi işlemleri esnasında veri tabanı sorgusu hangi komut kullanılarak yapılır?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "SELECT",
+      "B": "WHERE",
+      "C": "INSERT",
+      "D": "INSERT INTO",
+      "E": "SEARCH"
+    },
+    "explanation": "Veritabanındaki tablolardan veri çekerken kimi zaman bir filtreye ihtiyaç duyulur. Böylece sorgu sonucu dönecek veri setinin boyutu küçülerek aranan verinin daha hızlı bulunması sağlanmaktadır. Ayrıca filtreleme, veri güncellemesi ve verilerin silinmesi işlemlerinde de kullanılmaktadır. Veritabanı sorgusunda “WHERE” komutu kullanılarak sorgu yapılmaktadır."
+  },
+  {
+    "id": "3852234",
+    "unitNumber": 7,
+    "text": "sql = \"SELECT id, isim, soyisim FROM calisan WHERE birim LIKE '%ma%'\" cursor.execute( sql )\n Yukarıdaki örnek kod dikkate alındığında aşağıdaki kod çıktılarından hangisinin ekranda görünmesi beklenir?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "(11, 'KEVSER', 'URUÇ', 'Ulaştırma')",
+      "B": "(11, 'KEVSER', 'URUÇ', 'İletişim')",
+      "C": "(11, 'KEVSER', 'URUÇ', 'Eğitim')",
+      "D": "(11, 'KEVSER', 'URUÇ', 'Sağlık')",
+      "E": "(11, 'KEVSER', 'URUÇ', 'Denetim')"
+    },
+    "explanation": "filtreleme yaparken, aranmak istenen ifade kayıtların başında, içinde veya sonunda olabilir. Böyle durumlar için de joker karakteri olarak “%” sembolü kullanılmaktadır. “%” karakteri aranan ifadenin hem başına hem de sonuna konulduğunda, ifadeden önce ve sonra ne gelirse gelsin ama bu ifadeyi içersin anlamına gelmektedir. Örnek kodda, birim verisinin içinde “ma” geçen kayıtların listesi istenmiş ve ULAŞTIRMA kelimesinin içinde \"ma\" hecesi yer aldığından doğru yanıt A şıkkıdır."
+  },
+  {
+    "id": "3852235",
+    "unitNumber": 7,
+    "text": "Tablo verilerinde istenilen filtreleme sonucunu, istenilen sütuna göre artan veya azalan düzende sıralama yapmak için hangi ifade kullanılır?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "EXECUTE",
+      "B": "ADD",
+      "C": "SELECT",
+      "D": "WHERE",
+      "E": "ORDER BY"
+    },
+    "explanation": "Tablo verilerinde istenilen filtreleme sonucunu, istenilen sütuna göre artan veya azalan düzende sıralama yapmak için ORDER BY ifadesi kullanılmaktadır. ORDER BY ifadesi, varsayılan değer olarak ASC (ASCENDING) artan şekilde sıralamaktadır. Sonucun azalan şekilde sıralanması için de DESC (DESCENDING) anahtar sözcüğü kullanılmaktadır."
+  },
+  {
+    "id": "3852236",
+    "unitNumber": 7,
+    "text": "cursor.execute( \"DELETE FROM calisan WHERE birim = %s\", (\"Muhasebe\",) )\n Yukarıda yer alan örnek kodda hangi kısım yazılmazsa tabloda yer alan verilerin tamamı silinir?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "cursor.execute ()",
+      "B": "cursor.execute",
+      "C": "()",
+      "D": "WHERE",
+      "E": ",) )"
+    },
+    "explanation": "WHERE şartının eklenmediği bir DELETE komutu, tablodaki tüm verileri silecektir."
+  },
+  {
+    "id": "3852237",
+    "unitNumber": 7,
+    "text": "import mysql.connector\n veritabani = mysql.connector.connect(\n host=\"localhost\",\n user=\"kullanıcı_adı\",\n password=\"kurulum_şifresi\",\n database=\"personel\" )\n cursor = veritabani.cursor()\n sql = \"DROP TABLE IF EXIST calisan\"\n cursor.execute( sql )\n Yukarıda yer alan bir kod yazıldığında aşağıdaki işlemlerden hangisi yapılmak istenmiştir?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "Veri tabanında var olan bir tablodan veri çağırmak.",
+      "B": "Veri tabanında var olan bir tabloyu silmek.",
+      "C": "Veri tabanında var olan bir tabloyu güncellemek.",
+      "D": "Veri tabanında var olan bir tablodaki verileri küçükten büyüğe sıralamak.",
+      "E": "Veri tabanında var olan bir tablodaki verileri büyükten küçüğe sıralamak."
+    },
+    "explanation": "Veri tabanında var olan bir tabloyu silmek için DROP TABLE komutu kullanılmaktadır."
+  },
+  {
+    "id": "3852238",
+    "unitNumber": 7,
+    "text": "<em>SELECT sütun1, sütun2,... </em>\n <em>FROM tablo1 </em>\n <em>LEFT JOIN tablo2 ON koşu</em>l\n Söz dizimi için aşağıdakilerden hangisi söylenebilir?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Tablo1 ve Tablo 2'deki verileri döndürmektedir.",
+      "B": "Tablo1 ile ortak olmayan verileri hariç tutarak, Tablo2’deki verileri döndürmektedir.",
+      "C": "Tablo2 ile ortak olmayan verileri hariç tutarak, Tablo1’deki verileri döndürmektedir.",
+      "D": "Tablo1 ve Tablo2'deki verileri birbirinden ayırmaktadır.",
+      "E": "Tablo1 ve Tablo2'deki verileri birleştirmektedir."
+    },
+    "explanation": "Join ve Inner Join komutları aynı şekilde çalışmaktadır. Tabloların kesişim elemanlarını döndürür.\n Söz Dizimi:\n SELECT sütun1, sütun2,...\n FROM tablo1\n JOIN tablo2 ON koşul;\n veya\n SELECT sütun1, sütun2,...\n FROM tablo1\n INNER JOIN tablo2 ON koşul;\n Left Join: Tablo2 ile ortak olmayan verileri hariç tutarak, Tablo1’deki verileri döndürmektedir.\n Söz Dizimi:\n SELECT sütun1, sütun2,...\n FROM tablo1\n LEFT JOIN tablo2 ON koşul;"
+  },
+  {
+    "id": "3852239",
+    "unitNumber": 7,
+    "text": "Python programlama dili ile birlikte kullanılabilen MySQL nedir?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "Veritabanı yönetim sistemidir.",
+      "B": "Veritabanı sürücüsüdür.",
+      "C": "Veri tablosudur.",
+      "D": "Veri girişi arayüzüdür.",
+      "E": "Veri bağlantısı arayüzü komutudur."
+    },
+    "explanation": "CEVAP: Veritabanı yönetim sistemidir.\n Sayfa 225 “MySQL, piyasada kullanılan en popüler açık kaynak kodlu veritabanı yönetim sistemlerinden (DBMS) biridir.”\n Sayfa 248 “MySQL veritabanı ilişkisel veritabanı yönetim sistemidir (RDBMS).”"
+  },
+  {
+    "id": "3852240",
+    "unitNumber": 7,
+    "text": "Python programlama dilinin MySQL programı ile ilişkisi ile ilgili olarak hangi seçenek doğrudur?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "MySQL bir Python sürücüsüdür.",
+      "B": "Python ile üzerinde işlem yapılacak veriler, MySQL ile depolanan veriler olabilir.",
+      "C": "MySQL ile üzerinde işlem yapılacak veriler, Python ile depolanan veriler olabilir.",
+      "D": "MySQL ile depolanacak verilere erişmek için Python mutlaka gereklidir.",
+      "E": "Python ile depolanan veriler üzerinde MySQL ile işlem yapılır."
+    },
+    "explanation": "CEVAP: Python ile üzerinde işlem yapılacak veriler, MySQL ile depolanan veriler olabilir.\n Sayfa 225 “MySQL, piyasada kullanılan en popüler açık kaynak kodlu veritabanı yönetim sistemlerinden (DBMS) biri dir. Çoğu yazılım veriler üzerinde işlem yapması gerektiği için, Python gibi programlama dilleri bu veri kaynakları na erişmek ve depolamak için araçlar sağlamaktadır.”"
+  },
+  {
+    "id": "3852241",
+    "unitNumber": 7,
+    "text": "Çoğu yazılım veriler üzerinde işlem yapması gerektiği için, programlama dilleri bu veri kaynaklarına erişmek ve depolamak için araçlar sağlamaktadır.\n Aşağıdakilerden hangisi Python programlama dilinde MySQL ile hazırlanmış veri kaynaklarına erişim için kullanılan sürücü paketlerinden biridir?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Cursor Execute",
+      "B": "Primary Key",
+      "C": "MySQL Connector",
+      "D": "Inner Join",
+      "E": "Python DB API"
+    },
+    "explanation": "CEVAP: MySQL Connector\n İLGİ: Sayfa 225 “Python, MySQL veritabanına ulaşabilmek için bir MySQL sürücüsüne ihtiyaç duymaktadır. Bu ünitede, sürücü olarak “MySQL Connector” kullanılarak kod örnekleri hazırlanacaktır.”\n Sayfa 241 “Python, MySQL veritabanına ulaşabilmek için bir MySQL sürücüsüne ihtiyaç duymaktadır. Bu sürücülerden biri de “MySQL Connector” ‘dır.”"
+  },
+  {
+    "id": "3852242",
+    "unitNumber": 7,
+    "text": "import mysql.connector\n veritabani = mysql.connector.connect(\n host=\"localhost\",\n user=\"kullanıcı_adı\",\n password=\"kurulum_şifresi\"\n )\n cursor = veritabani.cursor()\n veritabanı_komut= “ ”\n cursor.execute(\"veritabani_komut\")\n Yukarıda verilen kod parçasında, Python programlama dili içerisinden MySQL Connector sürücüsü kullanılarak bir veri bağlantısı nesnesi yaratılmıştır. Son satırda yer alan execute metodu kullanılarak “kitabevi” isimli bir veritabanı yaratmak için, veritabanı_komut değişkeninin değeri olarak ne yazılmalıdır?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "SELECT DATABASE kitabevi",
+      "B": "CREATE TABLE kitabevi",
+      "C": "SELECT TABLE kitabevi",
+      "D": "CREATE DATABASE kitabevi",
+      "E": "CREATE kitabevi"
+    },
+    "explanation": "CEVAP: CREATE DATABASE kitabevi\n İLGİ Sayfa 226-227 Veritabanı Oluşturma kısmında anlatıldığı üzere, Python üzerinden “CREATE DATABASE veritabanıAdı” şeklinde komut vererek bir MySQL veritabanı oluşturulabilir."
+  },
+  {
+    "id": "3852243",
+    "unitNumber": 7,
+    "text": "calisanTablosu = \"\"\"CREATE TABLE calisan (\n id INT AUTO_INCREMENT PRIMARY KEY,\n isim VARCHAR(30) NOT NULL,\n soyisim VARCHAR(30),\n birim VARCHAR(50),\n pozisyon INT,\n dogum_tarihi DATETIME\n )\"\"\"\n Yukarıda yer alan kod parçası, Python programlama dili içerisinden MySQL Connector kullanılarak bağlanılan Personel isimli veri tabanına “calisan” isimli bir tablo eklemek üzere yazılmıştır. Kodun ikinci satırında yer alan ifadenin işlevi nedir?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "Tabloya erişim önceliği tanımak",
+      "B": "Tabloda sadece tam sayı (integer) biçiminde verilerin kaydedilmesini sağlamak",
+      "C": "Tabloyu benzersiz kılmak",
+      "D": "Tabloya eklenen verileri listelemek",
+      "E": "Tabloya eklenen her bir kayıt için benzersiz bir birincil anahtar oluşturmak"
+    },
+    "explanation": "CEVAP: Tabloya eklenen her bir kayıt için benzersiz bir birincil anahtar oluşturmak\n Sayfa 229 Birincil Anahtar (Primary Key) başlığı altındaki örnekte de verildiği üzere, “ … tabloya eklenen her bir kayıt için benzersiz bir anahtar, değer içeren bir sütun da oluşturulmalıdır. Bu sütuna birincil anahtar adı verilmektedir ve sütunda tutulacak veri de “INT AUTO_INCREMENT PRIMARY KEY” ifadesiyle tanımlanmaktadır.”"
+  },
+  {
+    "id": "3852244",
+    "unitNumber": 7,
+    "text": "calisanTablosu = \"\"\"CREATE TABLE calisan (\n id INT AUTO_INCREMENT PRIMARY KEY,\n isim VARCHAR(30) NOT NULL,\n soyisim VARCHAR(30),\n birim VARCHAR(50),\n pozisyon INT,\n dogum_tarihi DATETIME\n )\"\"\"\n cursor.execute(calisanTablosu)\n <br/>Python programlama dili içerisinden MySQL Connector kullanılarak bağlanılan bir veritabanında aşağıdaki komutla “calisan” isimli bir tablo oluşturulmuştur. Bu tabloya “tcKimlikNo” isimli bir sütun eklemek için aşağıdaki komutlardan hangisi kullanılmaldır?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "cursor.execute(\"ALTER TABLE calisan ADD COLUMN tcKimlikNo BIGINT(11)\")",
+      "B": "cursor.execute(\"SELECT TABLE calisan ADD COLUMN tcKimlikNo BIGINT(11)\")",
+      "C": "cursor.execute(\"INSERT calisan ADD COLUMN tcKimlikNo BIGINT(11)\")",
+      "D": "cursor.execute(\"UPDATE calisan ADD COLUMN tcKimlikNo BIGINT(11)\")",
+      "E": "cursor.execute(\"INNER JOIN calisan ADD COLUMN tcKimlikNo BIGINT(11)\")"
+    },
+    "explanation": "CEVAP: cursor.execute(\"ALTER TABLE calisan ADD COLUMN tcKimlikNo BIGINT(11)\")\n Sayfa 229’da belirtildiği üzere “Eğer tablo zaten oluşturulmuş ise, tabloya yeni bir sütun ilave etmek için ALTER TABLE komutu kullanılır.”"
+  },
+  {
+    "id": "3852245",
+    "unitNumber": 7,
+    "text": "Python programlama dili ile MySQL veritabanı üzerine tek bir seferde çok sayıda kayıt girişi yapmak için cursor nesnesi ile beraber kullanılan komut hangisidir?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "execute",
+      "B": "executemany",
+      "C": "fetchall",
+      "D": "fetchone",
+      "E": "rowcount"
+    },
+    "explanation": "CEVAP: cursor.executemany\n Sayfa 231’de belirtildiği üzere “Çoklu kayıt girişinde de benzer şekilde veriler oluşturulmakta ve “execute” metodu, “executemany” ile değiştirilmektedir.”"
+  },
+  {
+    "id": "3852246",
+    "unitNumber": 7,
+    "text": "Aşağıda, Python programlama dili ile MySQL veritabanı üzerinde kayıt işlemleri yapmak üzere cursor metodu için kullanılan bazı komutlar, açıklamalar ile eşleştirilerek verilmiştir. Seçeneklerden hangisindeki açıklama ve komut eşleştirmesi hatalıdır?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "executemany - “insert” sorgusu ile bir kerede birden fazla veri satırı eklemek için kullanılır.",
+      "B": "fetchall - “select” sorgusu sonucu veritabanından okunan tüm satırları döndürür.",
+      "C": "fetchone - “select” sorgusu sonucu veritabanından okunan ilk satırı döndürür.",
+      "D": "rowcount - En son çalıştırılan SQL sorgusundan etkilenen kayıt sayısını döndürür.",
+      "E": "execute - “select” sorgusu sonucu veritabanından okunan tüm satırları siler."
+    },
+    "explanation": "CEVAP: execute - “select” sorgusu sonucu veritabanından okunan tüm satırları siler.” seçeneği hatalıdır. \n <br/>Sayfa 231 “Kod içerisinde kullanılan cursor(), satırlar üzerinde sırayla işlem yapmaktadır. Veritabanına girilmesi istenen verilerin kaydedilmesi için de veritabani.commit() metodu kullanılmaktadır.”\n Sayfa 231 “Çoklu kayıt girişinde de benzer şekilde veriler oluşturulmakta ve “execute” metodu, “executemany” ile değiştirilmektedir.”\n Sayfa 232 “gibi, cursor.execute() kullanılarak komut çalıştırılacak ve cursor.fetchall() ile tablodan alınan veriler bir liste şeklinde döndürülecektir.”\n Sayfa 234 “Ayrıca cursor.fetchone() metodu ile sorgu sonucunda gelen ilk satırın verisi alınabilir.”\n Sayfa 231, 232, 239, 241 Örneklerde rowcount komutuna yer verilmiştir."
+  },
+  {
+    "id": "3852247",
+    "unitNumber": 7,
+    "text": "sql = \"SELECT id, isim, soyisim, birim FROM calisan WHERE isim LIKE %s \"\n arama = (\"%ER%\",)\n cursor.execute( sql, arama )\n Yukarıda, Python programlama dili ile MySQL veritabanı üzerinde yapılan sorguyu içeren bir kod parçası yer almaktadır. Sorgu sonucunda ismi içerisinde yanyana “ER” harflerinin bulunan kişiler döndürülecektir. \n Görüldüğü üzere, sorgu ve parametre değerlerini ayırarak sorgu yapılmıştır. Bunun başlıca sebebi nedir?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "Kodun yazılmasını ve okunmasını kolaylaştırmak.",
+      "B": "SQL injection ile ortaya çıkabilecek sorunlara karşı korunmak.",
+      "C": "Verilerin kullanıcılar tarafından yanlışlıkla silinmesine engel olmak.",
+      "D": "Gereken durumlarda SQL injection yapılmasına olanak sağlamak.",
+      "E": "Kodun güncellenmesi gereken durumlarda kolaylık sağlamak."
+    },
+    "explanation": "CEVAP: SQL injection ile ortaya çıkabilecek sorunlara karşı korunmak.\n Sayfa 236 “Örnek kodda, SQL Injection işlemini engellemek amacıyla sorgu ve parametre değerlerini ayrırarak sorgu yapılmıştır.”\n Sayfa 236 “SQL Injection denilen kavram, yaygın bir web korsanlığı türüdür ve gerekli önlemlerin alınmadığı durumlarda, veri kaybı, kullanıcı ele geçirme gibi can sıkıcı sonuçlara neden olabilir.”"
+  },
+  {
+    "id": "3852248",
+    "unitNumber": 7,
+    "text": "Python programlama dili ile MySQL veritabanı üzerinde yapılan sorgularda, veritabanındaki veriyi değiştiren INSERT, UPDATE, DELETE gibi işlemlerde mutlaka kullanılması gereken bir metod bulunmaktadır. Bu metod kullanılmadığı takdirde veri tabanında bir değişiklik olmayacaktır. Veritabanı bağlantı nesnesi üzerinde etkili olan bu metod nedir?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "commit()",
+      "B": "execute()",
+      "C": "executemany()",
+      "D": "fetchall()",
+      "E": "cursor()"
+    },
+    "explanation": "CEVAP: commit\n Sayfa 231 “Veritabanına girilmesi istenen verilerin kaydedilmesi için de veritabani.commit() metodu kullanılmaktadır.”\n Sayfa 239 “veritabani.commit() metodu çağrılmadan tablo üzerinde yapılan işlemler veritabanında güncellenmeyecektir.”"
+  },
+  {
+    "id": "3852249",
+    "unitNumber": 7,
+    "text": "Python programlama dili ile MySQL veritabanı üzerinde yapılan bir sorguda, iki ayrı tablodaki veri ilişkili sütunlara göre birleştirilerek erişmek istenmektedir. Bunun için hangi yapısal sorgulama dili (SQL) komutu kullanılmalıdır?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "LIMIT",
+      "B": "GROUP BY",
+      "C": "ORDER BY",
+      "D": "JOIN",
+      "E": "ALTER TABLE"
+    },
+    "explanation": "CEVAP: JOIN\n<br/>Sayfa 243 “JOIN komutu ile iki veya daha fazla tablonun verileri, aralarındaki ilişkili sütunlara göre birleştirilir.”"
+  },
+  {
+    "id": "3852250",
+    "unitNumber": 8,
+    "text": "<em>egitim_projesi</em>/\n manage.py\n <em>egitim_projesi</em>/\n __init__.py\n settings.py\n urls.py\n wsgi.py\n Yukarıda bir web uygulaması geliştirmek için öncelikle <em>egitim projesi</em> adlı bir proje oluşturulmuştur. Yukarıdaki komutlardan hangisi bu sitedeki linkleri kontrol eden, tüm bağlantıları ve metotları yönlendiren ana işlevdir?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "<em>egitim_projesi</em>",
+      "B": "__init__.py",
+      "C": "settings.py",
+      "D": "urls.py",
+      "E": "wsgi.py"
+    },
+    "explanation": "Oluşturulan projenin yapısını inceleyecek olursak;\n <strong>proje_adı</strong> klasörü sadece iki tane nesne içeren proje kapsayıcısıdır.\n <strong>manage.py:</strong> Bu dosya, proje ile komut satırı aracılığıyla iletişim kurmak için hazırlanmış yerel bir Django-admin’dir. Veritabanı senkronizasyonu, geliştirme sunucusu başlatma gibi görevleri gerçekleştirmeye yarayan komut satırı yardımcı programıdır.\n <strong>proje_adı (<em>egitim_projesi</em>):</strong> Alt klasördür ve projedeki gerçek Python paketidir. Dört adet dosya içermektedir.\n <strong>__init__.py:</strong> Bu dosya olduğu için, bu klasör bir paket olarak kabul edilir. <strong>settings.py:</strong> Adından da anlaşılacağı gibi, bu dosya projedeki tüm ayarları yönetmektedir.\n <strong>urls.py:</strong> Sitedeki linkleri kontrol eden, tüm bağlantıları ve metotları yönlendiren ana işlevdir.\n <strong>wsgi.py:</strong> Proje WSGI (Web Server Gateway Interface) üzerinden sunulması gerekiyorsa, uyumlu web sunucular için bir giriş noktası görevi görmektedir."
+  },
+  {
+    "id": "3852251",
+    "unitNumber": 8,
+    "text": "Django’da arayüzler aşağıdaki dosyalardan hangisinde oluşturulmalıdır?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "webapp/views.py",
+      "B": "'django.contrib.admin'",
+      "C": "'django.contrib.auth'",
+      "D": "webapp/settings.py",
+      "E": "webapp/ur.py"
+    },
+    "explanation": "Django’da arayüzler, webapp/views.py dosyasında oluşturulmalıdır."
+  },
+  {
+    "id": "3852252",
+    "unitNumber": 8,
+    "text": "Bir projenin ayarlarının tutulduğu settings.py dosyası içinde tanımlı TEMPLATES ayarlarına yeni oluşturulan templates klasörü tanımlanması aşamasında aşağıdaki kodlardan hangisine gereksinim vardır?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "'BACKEND': 'django.template.backends.django.DjangoTemplates',",
+      "B": "'DIRS': [os.path.join(BASE_DIR,'templates')],",
+      "C": "'APP_DIRS': True,",
+      "D": "'OPTIONS': {",
+      "E": "'context_processors': ["
+    },
+    "explanation": "Projenin ayarlarının tutulduğu settings.py dosyası içinde tanımlı TEMPLATES ayarlarına da yeni oluşturulan templates klasörü tanımlanmalıdır. Bu dosya içerisine eklenmesi gereken satır ‘DIRS’: [os. path.join(BASE_DIR,’templates’)], şeklindedir."
+  },
+  {
+    "id": "3852253",
+    "unitNumber": 8,
+    "text": "url parametrelerinde kullanılabilecek veri türü metin ise hangi Url dönüştürücü tipi kullanılmalıdır?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "veri:veri",
+      "B": "algg:veri",
+      "C": "slug:veri",
+      "D": "int:veri",
+      "E": "str:veri"
+    },
+    "explanation": "Şablon dosyalara parametre gönderilebilmektedir. Bu parametreler öncelikle url yönlendirmesi yapılan “urls.py” dosyasına eklenmeli ve sonrasında, “views.py” dosyasına da ilgili parametreyi alan bir metot tanımlanmalıdır. Parametrelerin gösterileceği şablon dosyalar da, templates klasörü altında oluşturulmalıdır. Eğer gönderilecek veri bir sayı ise, urls.py dosyasına url parametresi olarak , veri bir metin ise de şeklinde girilmelidir. Tablo 8.1’de, url parametrelerinde kullanılabilecek veri türleri detaylı olarak gösterilmektedir."
+  },
+  {
+    "id": "3852254",
+    "unitNumber": 8,
+    "text": "web sitesinde oluşturulan html dosyalara parametreler, url üzerinden gönderilmektedir. Buna göre aşağıdakilerden hangisi mesaj_goster şablonu için \"mesajınız: eğitim ücretleri alındı\" görüntüsünü elde edeceğimiz url'dir?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "http://127.0.0.1:8000/webapp/mesaj_goster/Kargo%20zaman%C4%B1nda%20gelmedi",
+      "B": "http://127.0.0.1:8000/webapp/sayi_goster/26020",
+      "C": "http://127.0.0.1:8000/webapp/mesaj_goster/Egitim%20ucretleri%C4%B1%20alindi",
+      "D": "http://127.0.0.1:8000/webapp/mesaj_goster/26020",
+      "E": "http://127.0.0.1:8000/webapp/mesaj zamani_goster/26020"
+    },
+    "explanation": "Oluşturulan html dosyalara parametreler, url üzerinden gönderilmektedir. Sırasıyla iki şablonun parametre ile çağrılmasını inceleyelim. sayi_goster şablonu için kullanılacak url: http://127.0.0.1:8000/webapp/sayi_goster/26020 mesaj_goster şablonu için kullanılacak url: http://127.0.0.1:8000/webapp/mesaj_goster/Egitim%20ucretleri%C4%B1%20alindi"
+  },
+  {
+    "id": "3852255",
+    "unitNumber": 8,
+    "text": "BSD özgür yazılım lisansı ile lisanslanmış, açık kaynak kodlu, Python dili için dizayn edilmiş yüksek seviyeli bir web uygulaması geliştirme platformu .............dır.\n Yukarıdaki boşluğu aşağıdakilerden hangisi doğru bir şekilde tamamlar?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "MVT",
+      "B": "Django",
+      "C": "SQL Injection",
+      "D": "WSGI",
+      "E": "HTML"
+    },
+    "explanation": "Django, BSD yani özgür yazılım lisansı ile lisanslanmış, açık kaynak kodlu, Python dili için dizayn edilmiş yüksek seviyeli bir web uygulaması geliştirme platformudur. Adını caz gitaristi Django Reinhardt’dan almıştır. Kurulumu ve kullanımı oldukça basit olan Django’nun temel hedefi, karmaşık yapıdaki web uygulamalarının kullanımını daha kolay bir hale getirmektir. Modülerlik, tekrar kullanılabilirlik ve hızlı bir geliştirme ortamı sunmak üzere tasarlanmıştır."
+  },
+  {
+    "id": "3852256",
+    "unitNumber": 8,
+    "text": "Projede herhangi bir problem olup olmadığı hangi kod ile bulunabilir?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "python manage.py makemigrations",
+      "B": "python manage.py migrate",
+      "C": "python manage.py check",
+      "D": "python manage.py sort",
+      "E": "python manage.py delete"
+    },
+    "explanation": "Proje içerisindeki tüm modelleri tarayarak migration dosyalarını oluşturan komut şu şekildedir: python manage.py makemigrations. Oluşturulan migration dosyalarının çalıştırılarak veritabanı ile eşleştirilerek güncellenmesi için çalıştırılan komut şu şekildedir: python manage.py migrate. Projede herhangi bir problem olup olmadığı aşağıdaki kod yardımıyla kolayca bulunabilir. python manage.py check."
+  },
+  {
+    "id": "3852257",
+    "unitNumber": 8,
+    "text": "CRUD, veritabanındaki bir tablo üzerinde aşağıdaki işlemlerden hangisini <em><strong>gerçekleştiremez</strong></em>?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "Oluşturma",
+      "B": "Alma",
+      "C": "Güncelleme",
+      "D": "Betimleme",
+      "E": "Silme"
+    },
+    "explanation": "Django, kurulum ve bağımlılık sorunu olmadan hızlı bir şekilde web uygulaması oluşturmaya izin veren bir web geliştirme platformu sunmaktadır. MVT (Model Görünüm Şablon) mimarisini temel alarak CRUD (Oluştur Al Güncelle Sil) işlemlerini gerçekleştirir. CRUD, veritabanındaki bir tablo üzerinde Oluşturma, Alma, Güncelleme ve Silme işlemlerini gerçekleştirmek anlamına gelmektedir."
+  },
+  {
+    "id": "3852258",
+    "unitNumber": 8,
+    "text": "<ol type=\"I\"> <li>Verileri işlemeye hazır hale getirmek için hazırlamak ve yeniden yapılandırmak </li> <li>Veriler için HTML formları oluşturmak</li> <li>İstemciden gönderilen form ile verileri almak ve işlemek</li> <li>Verileri Silmek</li> </ol> Yukarıdakilerden hangisi Django'nun form işlemleri arasında <em><strong>yer almaz</strong></em>?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalınız IV",
+      "C": "I-II",
+      "D": "II-III",
+      "E": "I-II-III"
+    },
+    "explanation": "Django, Django formlarında tanımlanan alanları HTML veri giriş alanları ile eşleştirir. Django, formlarla ilgili üç farklı çalışma yapmaktadır: • Verileri işlemeye hazır hale getirmek için hazırlamak ve yeniden yapılandırmak • Veriler için HTML formları oluşturmak • İstemciden gönderilen form ile verileri almak ve işlemek."
+  },
+  {
+    "id": "3852259",
+    "unitNumber": 8,
+    "text": "Aşağıdakilerden hangisi CRUD'un \"Alma\" işlemini açıklamaktadır?",
+    "correctAnswer": "B",
+    "options": {
+      "A": "Veritabanındaki bir tabloda yeni kayıtlar oluşturma veya ekleme",
+      "B": "Mevcut girdileri bir liste olarak okuma, elde etme, arama, görüntüleme veya belirli bir kaydı ayrıntılı olarak çağırma",
+      "C": "Veritabanındaki bir tablodaki mevcut girişleri güncelleme veya düzenleme",
+      "D": "Veritabanındaki bir tablodaki mevcut girişleri silme, devre dışı bırakma veya kaldırma",
+      "E": "Otomatik olarak her tablo için id alanı ekleme"
+    },
+    "explanation": "CRUD, veritabanındaki bir tablo üzerinde Oluşturma, Alma, Güncelleme ve Silme işlemlerini gerçekleştirmek anlamına gelmektedir. \n Alma işlemi: Mevcut girdileri bir liste olarak okuma, alma, arama veya görüntüleme (Liste Görünümü) veya belirli bir kaydı ayrıntılı olarak alma (Ayrıntılı Görünüm)"
+  },
+  {
+    "id": "3852260",
+    "unitNumber": 8,
+    "text": "Python dili için dizayn edilmiş olan Django içi hangisi <strong>söylenemez?</strong>",
+    "correctAnswer": "D",
+    "options": {
+      "A": "Özgür yazılım (BSD) lisansı ile lisanslanmıştır.",
+      "B": "Açık kaynak kodludur.",
+      "C": "Yüksek seviyeli bir web uygulaması geliştirme platformudur.",
+      "D": "SQL Injection gibi güvenlik açıkları içerir.",
+      "E": "Adını bir caz gitaristinden alır."
+    },
+    "explanation": "CEVAP: SQL Injection gibi güvenlik açıkları içerir.\n Sayfa 255 “Geliştiricilerin siteler arası komut dosyası çalıştırma, csrf ve tıklama hırsızlığının yanında SQL Injection gibi güvenlik hatalarından korunmasına yardımcı olmaktadır.” denilmektedir. Bu sebeple “SQL Injection gibi güvenlik açıkları içerir.” denemez. Diğer seçenekler aynı sayfadan alınmıştır."
+  },
+  {
+    "id": "3852261",
+    "unitNumber": 8,
+    "text": "Python dili için dizayn edilmiş olan Django platformunda oluşturulan bir projede, proje dizininde yer alan “wsgi.py” dosyasının işlevi nedir?",
+    "correctAnswer": "D",
+    "options": {
+      "A": "Bu dosya olduğu için, bu klasör bir paket olarak kabul edilir.",
+      "B": "Bu dosya projedeki tüm ayarları yönetmektedir.",
+      "C": "Sitedeki linkleri kontrol eden, tüm bağlantıları ve metotları yönlendiren ana işlevdir.",
+      "D": "Gerektiğinde uyumlu web sunucular için bir giriş noktası görevi görmektedir.",
+      "E": "Bu dosya bir görünüm şablonudur."
+    },
+    "explanation": "CEVAP: Gerektiğinde uyumlu web sunucular için bir giriş noktası görevi görmektedir.\n Sayfa 256 “wsgi.py: Proje WSGI (Web Server Gateway Interface) üzerinden sunulması gerekiyorsa, uyumlu web sunucular için bir giriş noktası görevi görmektedir.”"
+  },
+  {
+    "id": "3852262",
+    "unitNumber": 8,
+    "text": "Python dili için dizayn edilmiş olan Django platformunda arayüz (view) olarak adlandırılan yapılar ile ilgili olarak hangisi<strong> söylenemez?</strong>",
+    "correctAnswer": "C",
+    "options": {
+      "A": "Web isteği (web request) alır ve web yanıtı (web response) döndürür.",
+      "B": "Web sayfalarının oluşturulması için kullanılır.",
+      "C": "Döndürülen yanıt sadece HTML biçiminde olabilir.",
+      "D": "Sayfa olarak görüntülenmesi için bir URL ile eşleştirilmesi gerekir.",
+      "E": "Projenin views.py dosyasında içerisine tanımlanarak oluşturulmalıdır."
+    },
+    "explanation": "CEVAP: Döndürülen yanıt sadece HTML biçiminde olabilir.\n Sayfa 256 “ ... yanıt, bir XML belgesi, CSV dosyası, 404 hatası, ses dosyası, web sayfasının HTML içeriği gibi farklı içerikler olabilir.” Buna göre “Döndürülen yanıt sadece HTML biçiminde olabilir.” seçeneği hatalıdır. Diğer seçenekler aynı bölümde verilen bilgilerden oluşturulmuştur."
+  },
+  {
+    "id": "3852263",
+    "unitNumber": 8,
+    "text": "def html_footer(request):\n return render(request, \"footer.html\", {})\n <br/>Python dili için dizayn edilmiş olan Django platformunda yapılmış bir projede, view.py dosyası içerisinde, sitede yapılacak bakım çalışmalarında kullanmak üzere bir şablon (template) olarak oluşturulan “bakim.html” dosyası için oluşturulan html_bakim metodu tanımlanmıştır. bakim.html dosyası, projede yer alan “templates” isimli bir klasörde yer almaktadır.\n Buna göre, “bakim.html” içeriğinin web üzerinden erişilerek görüntülenebilmesi aşağıdakilerden hangisi yapılmalıdır?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "“settings.py” dosyası içinde tanımlı TEMPLATES ayarlarında düzenleme yapılmalıdır.",
+      "B": "“settings.py” dosyası şablonların oluşturulduğu “templates” klasörü altına konulmalıdır.",
+      "C": "“settings.py” dosyası üzerinde herhangi bir düzenleme yapmaya gerek yoktur.",
+      "D": "Sadece “settings.py” içerisinde “bakim.html” şablonu tanımlanmalıdır.",
+      "E": "“settings.py” ve “urls.py” dosyalarında “bakim.html” şablonu tanımlanmalıdır."
+    },
+    "explanation": "CEVAP: “settings.py” dosyası içinde tanımlı TEMPLATES ayarlarında düzenleme yapılmalıdır.\n Sayfa 258’de verilen örnekte görülen \"hello.html\" yerine “bakim.html” konarak soru hazırlanmıştır."
+  },
+  {
+    "id": "3852264",
+    "unitNumber": 8,
+    "text": "Python dili için dizayn edilmiş olan Django platformunda oluşturulan şablon dosyalara parametre göndermek de mümkündür. Aşağıdakilerden hangisi parametre olarak kullanılabilecek veri tiplerinden birisi <strong>değildir?</strong>",
+    "correctAnswer": "D",
+    "options": {
+      "A": "slug",
+      "B": "int",
+      "C": "Str",
+      "D": "date",
+      "E": "uuid"
+    },
+    "explanation": "Cevap: date\n<br/>Date veri tipi Sayfa 261 Tablo 8.1’de yer alan veri tiplerinden biri değildir."
+  },
+  {
+    "id": "3852265",
+    "unitNumber": 8,
+    "text": "Python dili için dizayn edilmiş olan Django platformunda yapılmış bir projede, Web tarayıcısına “http://127.0.0.1:8000/webapp/posta_kodu/07050” adresi verildiğinde, “templates” klasöründe yer alan “posta_kodu.html” dosyasının içinde {{pk}} etiketi ile tanımlanmış ilgili alanda “07050” değerinin gösterilmesi amaçlanmaktadır. <br/>Bunun için projeye eklenmesi gereken kodlardan biri şu şekildedir:\n path('posta_kodu/<sr:pk>', views.posta_kodu, name='posta_kodu')</sr:pk>\n Bu kod hangi dosyaya eklenmelidir?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "views.py",
+      "B": "setings.py",
+      "C": "urls.py",
+      "D": "manage.py",
+      "E": "posta_kodu.html"
+    },
+    "explanation": "CEVAP: urls.py\n “Sayfa 260 ve 262’de verilen örneklerde, views.py içerisinde şablon (view) olarak tanımlanan dosyaların çalıştırılabilmesi urls.py dosyasında yer alan “urlpatterns” değikenine path() fonksiyonu ile eklendikleri görülmektedir. Soruda anlatılan durum, Sayfa 262-263’te yer alan “mesaji_goster” şablonu ile benzerdir. “"
+  },
+  {
+    "id": "3852266",
+    "unitNumber": 8,
+    "text": "Python dili için dizayn edilmiş olan Django platformunda yapılmış bir projede, Web tarayıcısına “http://127.0.0.1:8000/webapp/posta_kodu/07050” adresi verildiğinde, “templates” klasöründe yer alan “posta_kodu.html” dosyasının içinde {{pk}} etiketi ile tanımlanmış ilgili alanda “07050” değerinin gösterilmesi amaçlanmaktadır. \n <br/>Bunun için projeye eklenmesi gereken kodlardan biri şu şekildedir:\n def sayi_goster(request, pk):\n return render(request, \"posta_kodu.html\", {'pk' : pk})\n <br/>Bu kod hangi dosyaya eklenmelidir?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "views.py",
+      "B": "setings.py",
+      "C": "urls.py",
+      "D": "manage.py",
+      "E": "posta_kodu.html"
+    },
+    "explanation": "CEVAP: views.py\n “Sayfa 260 ve 262’de verilen örneklerde, views.py içerisinde şablon (view) olarak yapılan tanımların benzer şekilde eklendikleri görülmektedir. Soruda anlatılan durum, Sayfa 262-263’te yer alan “mesaj_goster” şablonu ile benzerdir. “"
+  },
+  {
+    "id": "3852267",
+    "unitNumber": 8,
+    "text": "Python dili için dizayn edilmiş olan Django platformunda kullanılan model nesnesi ile ilgili olarak aşağıdakilerden hangisi <strong>söylenemez</strong>?",
+    "correctAnswer": "E",
+    "options": {
+      "A": "Veritabanında tablo veya koleksiyonu temsil eden bir sınıftır.",
+      "B": "django.db.models.Model’den kalıtım yoluyla türetilir.",
+      "C": "Veritabanında her tablo için id alanı otomatik olarak eklenmektedir.",
+      "D": "models.py dosyası içinde tanımlanırlar.",
+      "E": "Model ile yaratılan tablo model ile aynı adı taşımak zorundadır."
+    },
+    "explanation": "CEVAP: Model ile yaratılan tablo model ile aynı adı taşımak zorundadır.\n Sayfa 264 “Meta sınıfında tanımlanan “db_table” özelliği ile de, veritabanında oluşturulacak olan tablonun adı, programcı tarafından istenildiği gibi isimlendirilebilmektedir.”"
+  },
+  {
+    "id": "3852268",
+    "unitNumber": 8,
+    "text": "Python dili için dizayn edilmiş olan Django platformunda, models.py dosyası üzerinde bir model tanımlanması yapıldıktan sonra makemigrations ve migrate komutları çalıştırılır.\n Bu komutlar ile ilgili olarak hangisi<strong> yanlıştır?</strong>",
+    "correctAnswer": "E",
+    "options": {
+      "A": "“makemigrations” komutu çalıştırılmazsa modelde yapılan değişiklikler veritabanına yansımaz.",
+      "B": "“makemigrations” komutu proje içerisindeki tüm modelleri tarayarak migration dosyalarını oluşturur.",
+      "C": "“migrate” komutu çalıştırılmazsa modelde yapılan değişiklikler veritabanına yansımaz.",
+      "D": "“migrate” komutu veritabanını günceller.",
+      "E": "Komutların hangi sıra ile çalıştırıldığının bir önemi yoktur."
+    },
+    "explanation": "CEVAP: Komutların hangi sıra ile çalıştırıldığının bir önemi yoktur.\n Sayfa 265 Models dosyasında yapılan tüm değişiklikler için öncelikle makemigration sonra da migrate komutu çalıştırılarak veritabanı güncellenmelidir. Bunun haricinde başka bir tablo güncelleme komutu yazılmasına gerek yoktur."
+  },
+  {
+    "id": "3852269",
+    "unitNumber": 8,
+    "text": "Python dili için dizayn edilmiş olan Django platformunda modellerin sağladığı kolaylık nedir?",
+    "correctAnswer": "A",
+    "options": {
+      "A": "Veritabanı işlemleri için SQL sorgusu yapma gereğini ortadan kaldırır.",
+      "B": "Bir XML belgesi, CSV dosyası, web sayfasının HTML içeriği gibi farklı içerikler döndürebilir.",
+      "C": "URL üzerinden parametre gönderilebilmektedir.",
+      "D": "Veritabanında tablo veya koleksiyonu temsil edebilmektedirler.",
+      "E": "Modelde yapılan değişiklikler veritabanına anında yansıtılmaz."
+    },
+    "explanation": "CEVAP: Veritabanı işlemleri için SQL sorgusu yapma gereğini ortadan kaldırır.\n Sayfa 281 “Model, veritabanı işlemlerinin yapıldığı, tablo ve alan bilgilerinin tutulduğu\n sayfalardır. Kullanıcı için arka planda CRUD işlemlerini gerçekleştirdiği için SQL sorguları yazılmasına gerek kalmaz.” Bu çalışma biçim sayfa 266-267’de verilen örnekten de çıkarsanabilir."
+  }
+]
