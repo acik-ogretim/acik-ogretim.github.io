@@ -234,14 +234,16 @@ export class QuizPlayer {
     let filtered = [...this.originalQuestions];
 
     // Unit Filter
+    // Unit Filter
     if (this.settings.filterUnite !== 'all') {
+      // Logic: Max unit (excluding 0) / 2
+      const validUnits = this.originalQuestions.map(q => q.unitNumber).filter(u => u > 0);
+      const maxUnit = validUnits.length > 0 ? Math.max(...validUnits) : 0;
+      const mid = Math.ceil(maxUnit / 2);
+
       if (this.settings.filterUnite === 'first_half') {
-        const maxUnit = Math.max(...this.originalQuestions.map(q => q.unitNumber));
-        const mid = Math.ceil(maxUnit / 2);
         filtered = filtered.filter(q => q.unitNumber <= mid);
       } else if (this.settings.filterUnite === 'second_half') {
-        const maxUnit = Math.max(...this.originalQuestions.map(q => q.unitNumber));
-        const mid = Math.ceil(maxUnit / 2);
         filtered = filtered.filter(q => q.unitNumber > mid);
       } else {
         const targetUnit = parseInt(this.settings.filterUnite);
@@ -324,6 +326,22 @@ export class QuizPlayer {
     const unitSelect = document.getElementById('setting-unit') as HTMLSelectElement;
     if (unitSelect) {
       const uniqueUnits = [...new Set(this.originalQuestions.map(q => q.unitNumber))].sort((a, b) => a - b);
+
+      // Update First/Second Half texts dynamically
+      const validUnits = uniqueUnits.filter(u => u > 0);
+      const maxUnit = validUnits.length > 0 ? Math.max(...validUnits) : 0;
+      const mid = Math.ceil(maxUnit / 2);
+
+      // Check for Option 1 (First Half) and Option 2 (Second Half)
+      if (unitSelect.options.length >= 3) {
+        if (unitSelect.options[1].value === 'first_half') {
+          unitSelect.options[1].text = `İlk Yarı (1-${mid})`;
+        }
+        if (unitSelect.options[2].value === 'second_half') {
+          unitSelect.options[2].text = `İkinci Yarı (${mid + 1}-${maxUnit})`;
+        }
+      }
+
       if (uniqueUnits.length > 0) {
         // Keep only 'all', 'first_half', 'second_half'
         while (unitSelect.options.length > 3) unitSelect.remove(3);
