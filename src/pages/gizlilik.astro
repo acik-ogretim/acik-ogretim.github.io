@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Gizlilik Politikası">
-    <div class="py-12 relative overflow-hidden">
+    <div class="page-header-wrapper">
         <!-- Background Accents -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
             <div
@@ -16,18 +16,14 @@ import Layout from "../layouts/Layout.astro";
             </div>
         </div>
 
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <h1
-                class="text-3xl font-bold text-theme mb-8 flex items-center gap-3"
-            >
+        <div class="container-narrow relative">
+            <h1 class="page-title text-theme">
                 <span class="text-4xl">🛡️</span>
                 Gizlilik Politikası
             </h1>
 
             <div class="space-y-8 text-muted-theme">
-                <section
-                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30"
-                >
+                <section class="content-card">
                     <h2 class="text-xl font-bold text-theme mb-4">
                         Veri Toplama ve Kullanım
                     </h2>
@@ -56,9 +52,7 @@ import Layout from "../layouts/Layout.astro";
                     </ul>
                 </section>
 
-                <section
-                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30"
-                >
+                <section class="content-card">
                     <h2 class="text-xl font-bold text-theme mb-4">
                         Çerezler (Cookies)
                     </h2>
@@ -70,9 +64,7 @@ import Layout from "../layouts/Layout.astro";
                     </p>
                 </section>
 
-                <section
-                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30"
-                >
+                <section class="content-card">
                     <h2 class="text-xl font-bold text-theme mb-4">
                         Açık Kaynak
                     </h2>
@@ -91,9 +83,7 @@ import Layout from "../layouts/Layout.astro";
                     </a>
                 </section>
 
-                <section
-                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30"
-                >
+                <section class="content-card">
                     <h2 class="text-xl font-bold text-theme mb-4">
                         Politika Güncellemeleri
                     </h2>

@@ -1,5 +1,313 @@
 @import "tailwindcss";
 
+/* Shared Component Classes */
+@layer components {
+    .question-card {
+        @apply p-4 sm:p-6 md:p-8 rounded-2xl break-inside-avoid mb-12 last:mb-0;
+        background: color-mix(in srgb, var(--card-bg) 90%, transparent);
+        backdrop-filter: blur(12px);
+        border: 1px solid var(--border-color);
+        border-radius: 0.75rem;
+    }
+
+    .breadcrumb-link {
+        @apply transition-colors;
+    }
+
+    .breadcrumb-link:hover {
+        color: var(--primary-color);
+    }
+
+    .btn-unit-nav {
+        @apply shrink-0 px-3 py-1.5 rounded-lg text-xs transition-colors border flex items-center justify-center min-w-[3.5rem] md:text-sm md:px-4 md:py-2;
+        background-color: var(--button-bg);
+        border-color: var(--border-color);
+        color: var(--text-color-muted);
+    }
+
+    .btn-unit-nav:hover {
+        background-color: var(--button-bg-hover);
+        color: var(--text-color);
+    }
+
+    .option-card {
+        @apply flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-xl border transition-all;
+    }
+
+    .option-key-badge {
+        @apply w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center font-bold text-xs md:text-sm shrink-0;
+    }
+
+    .option-text-content {
+        @apply pt-1 md:pt-1.5 text-sm md:text-base block;
+    }
+
+    .explanation-card {
+        @apply mt-6 md:mt-8 p-4 md:p-6 rounded-xl border mb-4;
+        background-color: color-mix(in srgb, var(--primary-color) 5%, transparent);
+        border-color: color-mix(in srgb, var(--primary-color) 20%, transparent);
+    }
+
+    .answer-meta-card {
+        @apply mt-4 p-4 rounded-xl border;
+        background-color: color-mix(in srgb, var(--primary-color) 5%, transparent);
+        border-color: color-mix(in srgb, var(--primary-color) 20%, transparent);
+    }
+
+    .material-btn-base {
+        @apply text-left px-3 py-2 rounded text-sm transition-colors flex items-center gap-2 border border-transparent focus:border-teal-500/50;
+        color: var(--text-color-muted);
+    }
+
+    .accordion-summary {
+        @apply list-none cursor-pointer flex justify-between items-center p-2 rounded text-sm font-bold uppercase tracking-wider mb-1 transition-colors;
+        background-color: var(--button-bg);
+        border: 1px solid var(--border-color);
+        color: var(--text-color-muted);
+    }
+
+    .accordion-summary:hover {
+        background-color: var(--button-bg-hover);
+        color: var(--text-color);
+    }
+
+    .material-btn-base:hover {
+        background-color: var(--button-bg-hover);
+        color: var(--text-color);
+    }
+
+    .material-btn-base.is-active {
+        background-color: color-mix(in srgb, var(--primary-color) 10%, transparent);
+        color: var(--primary-color);
+        border-color: color-mix(in srgb, var(--primary-color) 30%, transparent);
+    }
+
+    .tab-btn-base {
+        @apply px-3 py-1 text-xs rounded-full border transition-colors;
+        /* Default State */
+        background-color: var(--button-bg);
+        border-color: var(--border-color);
+        color: var(--text-color-muted);
+    }
+
+    .tab-btn-base:hover {
+        border-color: var(--primary-color);
+        color: var(--text-color);
+    }
+
+    .tab-btn-base.is-active {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        color: var(--primary-color-text);
+    }
+
+    /* Layout Components */
+    .layout-header {
+        @apply sticky top-0 z-50 backdrop-blur-lg border-b;
+        background-color: color-mix(in srgb, var(--bg-color) 90%, transparent);
+        border-color: var(--border-color);
+    }
+
+    .nav-link {
+        @apply transition-colors font-medium;
+        color: var(--text-color-muted);
+    }
+
+    .nav-link:hover {
+        color: var(--primary-color);
+    }
+
+    .theme-toggle-btn {
+        @apply p-1.5 rounded-full transition-colors;
+        color: var(--text-color-muted);
+    }
+
+    .theme-toggle-btn:hover {
+        background-color: var(--button-bg-hover);
+        /* Specific colors can be handled via arbitrary variants or inline style if needed,
+           but generally hover text color is nice */
+    }
+
+    .disclaimer-banner {
+        @apply border-b py-2 px-4 text-center text-sm;
+        background-color: color-mix(in srgb, #f59e0b 20%, transparent);
+        border-color: color-mix(in srgb, #b45309 30%, transparent);
+        color: var(--text-color-muted);
+    }
+
+    .footer-link {
+        @apply transition-colors text-sm;
+        color: var(--text-color-muted);
+    }
+
+    .footer-link:hover {
+        color: var(--primary-color);
+    }
+
+    .mobile-menu-link {
+        @apply block text-lg px-2 rounded transition-colors;
+        color: var(--text-color-muted);
+    }
+
+    .mobile-menu-link:hover {
+        background-color: var(--button-bg-hover);
+        color: var(--text-color);
+    }
+
+    /* Index Page Components */
+    .home-section {
+        @apply py-20 border-y;
+        border-color: transparent;
+    }
+
+    .home-section-alt {
+        @apply py-20 border-y;
+        background-color: color-mix(in srgb, var(--bg-color) 95%, black);
+        border-color: var(--border-color);
+    }
+
+    .faq-details {
+        @apply border rounded-xl overflow-hidden mb-4;
+        background-color: var(--button-bg);
+        border-color: var(--border-color);
+    }
+
+    .faq-summary {
+        @apply flex justify-between items-center font-medium cursor-pointer p-5 transition-colors list-none;
+    }
+
+    .faq-summary:hover {
+        background-color: var(--button-bg-hover);
+    }
+
+    .faq-content {
+        @apply text-sm px-5 pb-5;
+        color: var(--text-color-muted);
+    }
+
+    .university-card {
+        @apply p-6 relative overflow-hidden flex flex-col h-full transition-all;
+        background: color-mix(in srgb, var(--card-bg) 90%, transparent);
+        backdrop-filter: blur(12px);
+        border: 1px solid var(--border-color);
+        border-radius: 0.75rem;
+    }
+
+    .university-card:hover {
+        border-color: var(--primary-color);
+        box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Common Layout & Typography Components */
+    .container-base {
+        width: 100%;
+        max-width: 80rem;
+        /* max-w-7xl */
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .container-narrow {
+        width: 100%;
+        max-width: 56rem;
+        /* max-w-4xl */
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .container-reading {
+        width: 100%;
+        max-width: 64rem;
+        /* max-w-5xl */
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    @media (min-width: 640px) {
+
+        .container-base,
+        .container-narrow,
+        .container-reading {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+
+        .container-base,
+        .container-narrow,
+        .container-reading {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+    }
+
+    .section-base {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .section-heading {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .section-description {
+        color: var(--text-color-muted);
+        max-width: 42rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .btn-icon-base {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+    .content-card {
+        padding: 2rem;
+        border-radius: 1rem;
+        border: 1px solid var(--border-color);
+        background: color-mix(in srgb, var(--card-bg) 30%, transparent);
+        backdrop-filter: blur(12px);
+    }
+
+    .icon-box {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+
+    .page-header-wrapper {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .page-title {
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+}
+
 /*
  * Açık Öğretim Portal - Custom Theme
  * Eğitim odaklı, profesyonel renk paleti
@@ -381,4 +689,182 @@ body {
 /* Hide print-only answer key on screen */
 .answer-metadata-box {
     display: none;
+}
+
+/* Modal Components */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.modal-overlay.flex {
+    display: flex;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 32rem;
+    background-color: #1e293b;
+    border-radius: 1.5rem;
+    border: 1px solid #334155;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #334155;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-body {
+    padding: 1.5rem;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.modal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background-color: #475569;
+    border-radius: 20px;
+}
+
+/* Toggle Switch Component */
+.toggle-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: rgba(30, 41, 59, 0.5);
+    border-radius: 1rem;
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.toggle-option:hover {
+    border-color: rgba(20, 184, 166, 0.5);
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.toggle-track {
+    width: 2.75rem;
+    height: 1.5rem;
+    background-color: #334155;
+    border-radius: 9999px;
+    transition: background-color 0.2s;
+}
+
+.toggle-input:checked+.toggle-track {
+    background-color: #14b8a6;
+}
+
+.toggle-knob {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background-color: white;
+    border: 1px solid #d1d5db;
+    border-radius: 9999px;
+    height: 1.25rem;
+    width: 1.25rem;
+    transition: transform 0.2s;
+}
+
+.toggle-input:checked+.toggle-track .toggle-knob {
+    transform: translateX(1.25rem);
+    border-color: white;
+}
+
+/* Player Bar Components */
+.player-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 60;
+    background-color: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(4px);
+    border-top: 1px solid rgba(51, 65, 85, 0.5);
+    transform: translateY(100%);
+    transition: transform 0.3s;
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+    user-select: none;
+}
+
+.player-bar.visible {
+    transform: translateY(0);
+}
+
+.player-btn-icon {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    color: #94a3b8;
+    transition: all 0.2s;
+}
+
+.player-btn-icon:hover {
+    background-color: #334155;
+    color: white;
+}
+
+.player-btn-icon:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+}
+
+.player-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    height: 2rem;
+    padding-left: 0.375rem;
+    padding-right: 0.75rem;
+    border-radius: 0.5rem;
+    background-color: #14b8a6;
+    color: #0f172a;
+    font-size: 0.75rem;
+    font-weight: 900;
+    transition: all 0.2s;
+    box-shadow: 0 4px 6px -1px rgba(20, 184, 166, 0.2);
+}
+
+.player-action-btn:hover {
+    background-color: #2dd4bf;
+}
+
+.player-action-btn:active {
+    transform: scale(0.95);
 }

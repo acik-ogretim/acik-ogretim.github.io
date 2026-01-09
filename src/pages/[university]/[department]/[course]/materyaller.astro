@@ -213,7 +213,7 @@ const getViewerUrl = (item: any) => {
 
 <Layout title={`Materyaller: ${course.name}`}>
   <div class="py-12 min-h-screen">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col">
+    <div class="container-base h-full flex flex-col">
       <!-- Breadcrumbs -->
       <nav class="flex mb-8 text-sm text-muted-theme">
         <a href={`/${university.id}/${department.id}/${course.id}`} class="hover:text-primary-theme transition-colors">
@@ -240,7 +240,7 @@ const getViewerUrl = (item: any) => {
             {Object.keys(groups).length > 0 ? (
                 Object.entries(groups).map(([catName, group]) => (
                     <details class="group/accordion mb-1" open={catName.includes('Ünite') || catName.includes('Canlı')}>
-                        <summary class="list-none cursor-pointer flex justify-between items-center p-2 rounded hover:bg-white/5 text-sm font-bold text-white uppercase tracking-wider bg-[#1e293b]/50 mb-1">
+                        <summary class="accordion-summary">
                             {catName}
                             <span class="group-open/accordion:rotate-180 transition-transform text-xs">▼</span>
                         </summary>
@@ -251,7 +251,7 @@ const getViewerUrl = (item: any) => {
                                 <div class="flex flex-wrap gap-2 mb-2">
                                     {Object.keys(group.subGroups).sort().reverse().map((subKey, idx) => (
                                         <button
-                                            class="tab-btn px-3 py-1 text-xs rounded-full border border-slate-600 hover:border-teal-500 transition-colors bg-slate-800 text-slate-300"
+                                            class="tab-btn tab-btn-base"
                                             data-category={catName}
                                             data-tab={subKey}
                                             data-active-tab={idx === 0}
@@ -273,7 +273,7 @@ const getViewerUrl = (item: any) => {
                                         <button
                                             data-url={item.url}
                                             data-type={item.type}
-                                            class="material-btn text-left px-3 py-2 rounded text-sm text-slate-400 hover:bg-white/5 hover:text-white transition-colors flex items-center gap-2 border border-transparent focus:border-teal-500/50"
+                                            class="material-btn material-btn-base"
                                         >
                                             <span class="text-xs opacity-50 shrink-0">{item.type === 'html' ? '🌍' : (item.type === 'pdf' ? '📄' : '🔗')}</span>
                                             <span class="truncate">{item.title.replace(subKey, '').replace(/^[_\W]+/, '')}</span>
@@ -287,7 +287,7 @@ const getViewerUrl = (item: any) => {
                                 <button
                                     data-url={item.url}
                                     data-type={item.type}
-                                    class="material-btn text-left px-3 py-2 rounded text-sm text-slate-400 hover:bg-white/5 hover:text-white transition-colors flex items-center gap-2 border border-transparent focus:border-teal-500/50"
+                                    class="material-btn material-btn-base"
                                 >
                                     <span class="text-xs opacity-50 shrink-0">{item.type === 'html' ? '🌍' : (item.type === 'pdf' ? '📄' : '🔗')}</span>
                                     <span class="truncate">{item.title}</span>
@@ -350,11 +350,9 @@ const getViewerUrl = (item: any) => {
       btn.addEventListener('click', () => {
           // Highlight active state
           document.querySelectorAll('.material-btn').forEach(b => {
-               b.classList.remove('bg-teal-500/20', 'text-teal-400', 'border-teal-500/30');
-               b.classList.add('text-slate-400', 'border-transparent');
+               b.classList.remove('is-active');
           });
-          btn.classList.remove('text-slate-400', 'border-transparent');
-          btn.classList.add('bg-teal-500/20', 'text-teal-400', 'border-teal-500/30');
+          btn.classList.add('is-active');
 
           // Load content
           const url = btn.getAttribute('data-url');
@@ -368,11 +366,9 @@ const getViewerUrl = (item: any) => {
           }
           if (loader) loader.classList.remove('hidden');
 
-          // Logic match for PDF/HTML
           const isPdf = type === 'pdf' || url.toLowerCase().endsWith('.pdf');
           let finalSrc = url;
 
-          // Helper to convert YouTube links to Embed format
           const convertToEmbed = (u: string) => {
               const youtubeRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
               const match = u.match(youtubeRegex);
@@ -390,9 +386,7 @@ const getViewerUrl = (item: any) => {
 
           setTimeout(() => {
               viewer.src = finalSrc;
-              // Simple load handler
               viewer.onload = () => { if (loader) loader.classList.add('hidden'); };
-              // Fallback timeout
               setTimeout(() => { if (loader) loader.classList.add('hidden'); }, 2000);
           }, 300);
       });
@@ -406,11 +400,9 @@ const getViewerUrl = (item: any) => {
 
           // Toggle tab active state
           document.querySelectorAll(`.tab-btn[data-category="${category}"]`).forEach(t => {
-              t.classList.remove('bg-teal-600', 'border-teal-400', 'text-white');
-              t.classList.add('bg-slate-800', 'border-slate-600', 'text-slate-300');
+              t.classList.remove('is-active');
           });
-          tab.classList.remove('bg-slate-800', 'border-slate-600', 'text-slate-300');
-          tab.classList.add('bg-teal-600', 'border-teal-400', 'text-white');
+          tab.classList.add('is-active');
 
           // Show/Hide Content
           document.querySelectorAll(`.tab-content[data-category="${category}"]`).forEach(content => {
@@ -425,7 +417,6 @@ const getViewerUrl = (item: any) => {
 
   // Init first tabs active design
   document.querySelectorAll('.tab-btn[data-active-tab="true"]').forEach(t => {
-      t.classList.remove('bg-slate-800', 'border-slate-600', 'text-slate-300');
-      t.classList.add('bg-teal-600', 'border-teal-400', 'text-white');
+      t.classList.add('is-active');
   });
 </script>

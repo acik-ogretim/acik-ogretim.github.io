@@ -58,7 +58,7 @@ export class QuizPlayer {
       correctCount: document.getElementById('correct-count'),
       wrongCount: document.getElementById('wrong-count'),
       btnOpenSettings: document.getElementById('btn-open-settings'),
-      settingsDrawer: document.getElementById('settings-drawer'),
+      settingsDrawer: document.getElementById('settings-drawer') || document.getElementById('global-settings-modal'),
       successRate: document.getElementById('success-rate'),
       repeatBtn: document.getElementById('btn-repeat'),
       readQuestionBtn: document.getElementById('btn-read-question'),
@@ -87,7 +87,9 @@ export class QuizPlayer {
       readerMode: false,
       voiceURI: ''
     };
-    return saved ? { ...defaultSettings, ...JSON.parse(saved) } : defaultSettings;
+    const loaded = saved ? { ...defaultSettings, ...JSON.parse(saved) } : defaultSettings;
+
+    return loaded;
   }
 
   saveSettings(): void {
@@ -355,6 +357,14 @@ export class QuizPlayer {
         });
       }
 
+      // Check if saved filter is valid for this specific course content
+      const validValues = Array.from(unitSelect.options).map(o => o.value);
+      if (!validValues.includes(this.settings.filterUnite)) {
+        // If saved unit (e.g. "14") doesn't exist in this course, reset to all
+        this.settings.filterUnite = 'all';
+        this.saveSettings();
+      }
+
       unitSelect.value = this.settings.filterUnite;
       unitSelect.onchange = (e) => {
         this.settings.filterUnite = (e.target as HTMLSelectElement).value;
@@ -430,10 +440,26 @@ export class QuizPlayer {
     });
   }
 
+  public syncSettings(): void {
+    const saved = localStorage.getItem('quiz-settings');
+    if (saved) {
+      this.settings = { ...this.settings, ...JSON.parse(saved) };
+    }
+
+    // Update UI based on new settings
+    this.applyFilters();
+
+    document.body.classList.toggle('hide-answers', !this.settings.showAnswers);
+    document.body.classList.toggle('hide-explanations', !this.settings.showExplanations);
+    document.body.classList.toggle('hide-options', this.settings.hideIncorrectOptions);
+
+    this.updateStatusText();
+    this.updateReaderUI();
+  }
+
   toggleSettings(): void {
-    if (this.ui.settingsDrawer) {
-      this.ui.settingsDrawer.classList.toggle('hidden');
-      this.ui.settingsDrawer.classList.toggle('flex');
+    if ((window as any).openQuizSettings) {
+      (window as any).openQuizSettings();
     }
   }
 

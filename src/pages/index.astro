@@ -147,7 +147,7 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-theme/5 rounded-full blur-3xl"></div>
     </div>
 
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="relative container-base text-center">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-theme/10 border border-primary-theme/20 text-primary-theme text-xs sm:text-sm mb-6">
         <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-primary-theme animate-pulse"></span>
         Ücretsiz ve Açık Kaynak
@@ -169,12 +169,13 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
         <a href="#universities" class="btn-primary w-full sm:w-auto">
           🎓 Üniversiteleri Keşfet
         </a>
-        <a href="https://github.com/acik-ogretim/acik-ogretim.github.io/issues/new?template=content_request.yml&title=[İSTEK]:+" target="_blank" class="btn-secondary w-full sm:w-auto">
-          📝 Bölüm/Ders İsteği
-        </a>
-        <button id="install-btn" class="hidden btn-secondary w-full sm:w-auto bg-green-600/10 text-green-500 border-green-500/20 hover:bg-green-600/20">
+        <a
+          href="/rehber#kurulum"
+          id="install-btn"
+          class="btn-secondary w-full sm:w-auto bg-green-600/10 text-green-500 border-green-500/20 hover:bg-green-600/20"
+        >
           📲 Uygulamayı Yükle
-        </button>
+        </a>
       </div>
     </div>
   </header>
@@ -189,30 +190,30 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
       e.preventDefault();
       // Stash the event so it can be triggered later.
       deferredPrompt = e;
-      // Update UI to notify the user they can add to home screen
-      installBtn?.classList.remove('hidden');
+      // Button is already visible, no need to toggle class
     });
 
-    installBtn?.addEventListener('click', () => {
-      // Hide our user interface that shows our A2HS button
-      installBtn.classList.add('hidden');
-      // Show the prompt
-      deferredPrompt.prompt();
-      // Wait for the user to respond to the prompt
-      deferredPrompt.userChoice.then((choiceResult: any) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('User accepted the A2HS prompt');
-        } else {
-          console.log('User dismissed the A2HS prompt');
-        }
-        deferredPrompt = null;
-      });
+    installBtn?.addEventListener('click', (e) => {
+      // If we have a prompt available, prevent navigation and show prompt
+      if (deferredPrompt) {
+        e.preventDefault();
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult: any) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the A2HS prompt');
+          } else {
+            console.log('User dismissed the A2HS prompt');
+          }
+          deferredPrompt = null;
+        });
+      }
+      // Otherwise, let the link navigate to /rehber#kurulum
     });
   </script>
 
   <!-- Stats Section -->
   <section class="py-12 border-y border-theme bg-theme/30" aria-label="Portal İstatistikleri">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container-base">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
         <div class="stat-card text-center" itemscope itemtype="https://schema.org/QuantitativeValue">
           <div class="text-3xl md:text-4xl font-bold text-primary-theme mb-1" itemprop="value">{stats.universities}</div>
@@ -235,8 +236,8 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
   </section>
 
   <!-- Universities Section -->
-  <article id="universities" class="py-20" aria-labelledby="uni-heading">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <article id="universities" class="section-base" aria-labelledby="uni-heading">
+    <div class="container-base">
       <div class="text-center mb-12">
         <h2 id="uni-heading" class="text-3xl font-bold mb-4">🎓 Üniversiteler</h2>
         <p class="text-muted-theme max-w-2xl mx-auto">
@@ -250,7 +251,7 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
           return (
             <a
               href={`/${uni.id}`}
-              class="group glass p-6 card-hover relative overflow-hidden flex flex-col h-full"
+              class="group university-card"
               itemscope
               itemtype="https://schema.org/CollegeOrUniversity"
             >
@@ -274,23 +275,23 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
 
               <div class="border-t border-theme pt-4 mt-auto">
                 <h4 class="text-xs font-medium text-muted-theme uppercase tracking-wider mb-2">
-                  {uni.id === 'ataturk-aof' ? `Tüm Bölümler (${uni.totalDepartmentCount})` : 'Aktif Bölümler'}
+                  {['ataturk-aof', 'anadolu-aof'].includes(uni.id) ? `Tüm Bölümler (${uni.totalDepartmentCount})` : 'Aktif Bölümler'}
                 </h4>
                 <ul class="space-y-1.5">
-                  {uni.id !== 'ataturk-aof' && uni.departments.map((dept) => (
+                  {!['ataturk-aof', 'anadolu-aof'].includes(uni.id) && uni.departments.map((dept) => (
                     <li class="flex items-center gap-2 text-sm text-muted-theme" itemprop="department" itemscope itemtype="https://schema.org/EducationalOrganization">
                       <span class="w-1.5 h-1.5 rounded-full bg-primary-theme shrink-0"></span>
                       <span itemprop="name" class="truncate">{dept.name}</span>
                       <span class="ml-auto text-xs text-muted-theme shrink-0">{dept.duration} dönem</span>
                     </li>
                   ))}
-                  {uni.id === 'ataturk-aof' && (
+                  {['ataturk-aof', 'anadolu-aof'].includes(uni.id) && (
                     <li class="text-sm text-muted-theme flex items-center gap-2">
                        <span class="w-1.5 h-1.5 rounded-full bg-primary-theme shrink-0"></span>
                        <span>Listeyi görüntülemek için tıklayınız...</span>
                     </li>
                   )}
-                  {uni.id !== 'ataturk-aof' && uni.departments.length === 0 && (
+                  {!['ataturk-aof', 'anadolu-aof'].includes(uni.id) && uni.departments.length === 0 && (
                     <li class="text-xs text-muted-theme italic">Henüz aktif bölüm yok</li>
                   )}
                 </ul>
@@ -312,8 +313,8 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
   </article>
 
   <!-- How it Works Section -->
-  <section class="py-20" aria-labelledby="steps-heading">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="section-base" aria-labelledby="steps-heading">
+    <div class="container-base">
       <div class="text-center mb-16">
         <h2 id="steps-heading" class="text-3xl font-bold mb-4">🚀 Nasıl Çalışır?</h2>
         <p class="text-muted-theme">Sadece 3 adımda sınavlara hazırlanmaya başlayın.</p>
@@ -360,8 +361,8 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
   </section>
 
   <!-- Features Section -->
-  <section class="py-20 bg-theme/30 border-y border-theme" aria-labelledby="features-heading">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="section-base bg-theme/30 border-y border-theme" aria-labelledby="features-heading">
+    <div class="container-base">
       <div class="text-center mb-12">
         <h2 id="features-heading" class="text-3xl font-bold mb-4">🔧 Özellikler</h2>
         <p class="text-muted-theme max-w-2xl mx-auto">
@@ -370,16 +371,16 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="feature-card text-center">
+        <a href="/rehber#interaktif-cozum" class="feature-card text-center block hover:scale-105 transition-transform duration-300">
           <div class="text-4xl mb-4" role="img" aria-label="Not Defteri">📝</div>
           <h3 class="font-semibold mb-2 text-theme">Soru Bankası</h3>
           <p class="text-muted-theme text-sm">Ders ve ünite bazlı binlerce çalışma sorusu</p>
-        </div>
-        <div class="feature-card text-center">
+        </a>
+        <a href="/rehber#interaktif-cozum" class="feature-card text-center block hover:scale-105 transition-transform duration-300">
           <div class="text-4xl mb-4" role="img" aria-label="Grafik">📊</div>
           <h3 class="font-semibold mb-2 text-theme">İnteraktif Testler</h3>
           <p class="text-muted-theme text-sm">Anında geri bildirimli çalışma modülleri</p>
-        </div>
+        </a>
         <div class="feature-card text-center">
           <div class="text-4xl mb-4" role="img" aria-label="Robot">🤖</div>
           <h3 class="font-semibold mb-2 text-theme">AI Açıklamalar</h3>
@@ -390,16 +391,16 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
           <h3 class="font-semibold mb-2 text-theme">Çıkmış Sınavlar</h3>
           <p class="text-muted-theme text-sm">Geçmiş yılların vize ve final soruları</p>
         </div>
-        <div class="feature-card text-center">
+        <a href="/rehber#kurulum" class="feature-card text-center block hover:scale-105 transition-transform duration-300">
           <div class="text-4xl mb-4" role="img" aria-label="Mobil">📲</div>
           <h3 class="font-semibold mb-2 text-theme">Mobil Uygulama</h3>
           <p class="text-muted-theme text-sm">PWA desteği ile telefona indirip internetsiz kullanın</p>
-        </div>
-        <div class="feature-card text-center">
+        </a>
+        <a href="/rehber#sesli-okuma" class="feature-card text-center block hover:scale-105 transition-transform duration-300">
           <div class="text-4xl mb-4" role="img" aria-label="Ses">🗣️</div>
           <h3 class="font-semibold mb-2 text-theme">Sesli Okuma</h3>
           <p class="text-muted-theme text-sm">Soruları dinleyerek gözlerinizi yormadan çalışın</p>
-        </div>
+        </a>
          <div class="feature-card text-center">
           <div class="text-4xl mb-4" role="img" aria-label="Gece">🌙</div>
           <h3 class="font-semibold mb-2 text-theme">Koyu Mod</h3>
@@ -415,15 +416,15 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
   </section>
 
   <!-- FAQ Section -->
-  <section class="py-20" aria-labelledby="faq-heading">
+  <section class="section-base" aria-labelledby="faq-heading">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 id="faq-heading" class="text-3xl font-bold mb-4">🤔 Sıkça Sorulan Sorular</h2>
       </div>
 
       <div class="space-y-4">
-        <details class="group bg-slate-900/50 border border-slate-800 rounded-xl overflow-hidden">
-          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-slate-800/50 transition-colors">
+        <details class="group bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
+          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors text-theme">
             <span>Bu portal tamamen ücretsiz mi?</span>
             <span class="transition group-open:rotate-180">
               <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
@@ -434,8 +435,8 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
           </div>
         </details>
 
-        <details class="group bg-slate-900/50 border border-slate-800 rounded-xl overflow-hidden">
-          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-slate-800/50 transition-colors">
+        <details class="group bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
+          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors text-theme">
             <span>Üye olmam gerekiyor mu?</span>
             <span class="transition group-open:rotate-180">
               <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
@@ -446,8 +447,8 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
           </div>
         </details>
 
-        <details class="group bg-slate-900/50 border border-slate-800 rounded-xl overflow-hidden">
-          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-slate-800/50 transition-colors">
+        <details class="group bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
+          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors text-theme">
             <span>Sorular güncel mi?</span>
             <span class="transition group-open:rotate-180">
               <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
@@ -458,8 +459,8 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
           </div>
         </details>
 
-         <details class="group bg-slate-900/50 border border-slate-800 rounded-xl overflow-hidden">
-          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-slate-800/50 transition-colors">
+         <details class="group bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
+          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors text-theme">
             <span>Uygulamayı telefonuma indirebilir miyim?</span>
             <span class="transition group-open:rotate-180">
               <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
@@ -474,7 +475,7 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
   </section>
 
   <!-- CTA Section -->
-  <section class="py-20" aria-label="Harekete Geçirici Mesaj">
+  <section class="section-base" aria-label="Harekete Geçirici Mesaj">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-2xl md:text-3xl font-bold mb-4">
         Katkıda Bulunun
@@ -482,9 +483,14 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
       <p class="text-muted-theme mb-8">
         Portal açık kaynaklıdır ve topluluk katkılarıyla büyümektedir. Hata bildirebilir, yeni içerik talep edebilir veya geliştirici olarak destek olabilirsiniz.
       </p>
-      <a href="https://github.com/acik-ogretim/acik-ogretim.github.io/issues/new/choose" target="_blank" class="btn-primary text-lg px-8 py-4">
-        📢 Talep Oluştur
-      </a>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="https://github.com/acik-ogretim/acik-ogretim.github.io/issues/new?template=content_request.yml&title=[İSTEK]:+" target="_blank" class="btn-secondary text-lg px-8 py-4">
+          📝 Bölüm/Ders İsteği
+        </a>
+        <a href="https://github.com/acik-ogretim/acik-ogretim.github.io/issues/new/choose" target="_blank" class="btn-primary text-lg px-8 py-4">
+          📢 Genel Talep / Hata Bildir
+        </a>
+      </div>
     </div>
   </section>
 </Layout>

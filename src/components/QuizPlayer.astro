@@ -2,269 +2,10 @@
 // QuizPlayer.astro
 ---
 
-<!-- Settings Drawer -->
-<div
-    id="settings-drawer"
-    class="fixed inset-0 z-[100] hidden items-center justify-center p-4"
->
-    <!-- Backdrop -->
-    <div class="absolute inset-0 bg-[#0f172a]/80 backdrop-blur-sm"></div>
-
-    <!-- Modal Content -->
-    <div
-        class="relative w-full max-w-lg bg-[#1e293b] rounded-3xl border border-slate-700 shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300"
-    >
-        <div
-            class="p-6 border-b border-slate-700 flex items-center justify-between"
-        >
-            <h3 class="text-xl font-bold text-white flex items-center gap-2">
-                <span class="text-2xl">⚙️</span> Sınav Ayarları
-            </h3>
-            <button
-                id="btn-close-settings"
-                class="p-2 rounded-xl hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
-                aria-label="Kapat"
-            >
-                <svg
-                    class="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-        </div>
-
-        <div class="p-6 space-y-8 max-h-[70vh] overflow-y-auto no-scrollbar">
-            <!-- Filtering Section -->
-            <div class="space-y-4">
-                <h4
-                    class="text-xs font-bold text-slate-400 uppercase tracking-wider"
-                >
-                    Filtreleme ve Soru Seçimi
-                </h4>
-                <div class="grid grid-cols-1 gap-4">
-                    <label
-                        class="flex items-center justify-between p-4 bg-slate-800/50 rounded-2xl border border-slate-700/50 cursor-pointer group hover:border-teal-500/50 transition-all"
-                    >
-                        <div class="flex flex-col">
-                            <span
-                                class="text-sm font-semibold text-white group-hover:text-teal-400 transition-colors"
-                                <span
-                                class="text-sm font-semibold text-white group-hover:text-teal-400 transition-colors"
-                                >Yanlışları Çöz</span
-                            >
-                            <span class="text-xs text-slate-400"
-                                >Hatalı cevaplanan soruları getir</span
-                            >
-                        </div>
-                        <div
-                            class="relative inline-flex items-center cursor-pointer"
-                        >
-                            <input
-                                type="checkbox"
-                                id="setting-incorrect"
-                                class="sr-only peer"
-                            />
-                            <div
-                                class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-500"
-                            >
-                            </div>
-                        </div>
-                    </label>
-
-                    <label
-                        class="flex items-center justify-between p-4 bg-slate-800/50 rounded-2xl border border-slate-700/50 cursor-pointer group hover:border-teal-500/50 transition-all"
-                    >
-                        <div class="flex flex-col">
-                            <span
-                                class="text-sm font-semibold text-white group-hover:text-teal-400 transition-colors"
-                                >Cevaplanmamışları Çöz</span
-                            >
-                            <span class="text-xs text-slate-400"
-                                >Henüz görmediğin soruları getir</span
-                            >
-                        </div>
-                        <div
-                            class="relative inline-flex items-center cursor-pointer"
-                        >
-                            <input
-                                type="checkbox"
-                                id="setting-unanswered"
-                                class="sr-only peer"
-                            />
-                            <div
-                                class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-500"
-                            >
-                            </div>
-                        </div>
-                    </label>
-                </div>
-
-                <div class="flex flex-col gap-2">
-                    <span class="text-sm font-semibold text-white"
-                        >Ünite Filtreleme</span
-                    >
-                    <select
-                        id="setting-unit"
-                        class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 focus:ring-2 focus:ring-teal-500 outline-none transition-all"
-                    >
-                        <option value="all">Tüm Üniteler</option>
-                        <option value="first_half">İlk Yarı</option>
-                        <option value="second_half">İkinci Yarı</option>
-                    </select>
-                </div>
-            </div>
-
-            <hr class="border-slate-700" />
-
-            <!-- View Options -->
-            <div class="space-y-4">
-                <h4
-                    class="text-xs font-bold text-slate-400 uppercase tracking-wider"
-                >
-                    Görünüm ve Kontroller
-                </h4>
-                <div class="grid grid-cols-1 gap-3">
-                    <label
-                        class="flex items-center justify-between cursor-pointer group"
-                    >
-                        <span
-                            class="text-sm font-medium text-slate-300 group-hover:text-teal-400 transition-colors"
-                            >Cevapları Göster</span
-                        >
-                        <div
-                            class="relative inline-flex items-center cursor-pointer"
-                        >
-                            <input
-                                type="checkbox"
-                                id="setting-show-answers"
-                                class="sr-only peer"
-                                checked
-                            />
-                            <div
-                                class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-500"
-                            >
-                            </div>
-                        </div>
-                    </label>
-
-                    <label
-                        class="flex items-center justify-between cursor-pointer group"
-                    >
-                        <span
-                            class="text-sm font-medium text-slate-300 group-hover:text-teal-400 transition-colors"
-                            >Açıklamaları Göster</span
-                        >
-                        <div
-                            class="relative inline-flex items-center cursor-pointer"
-                        >
-                            <input
-                                type="checkbox"
-                                id="setting-show-explanations"
-                                class="sr-only peer"
-                                checked
-                            />
-                            <div
-                                class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-500"
-                            >
-                            </div>
-                        </div>
-                    </label>
-
-                    <label
-                        class="flex items-center justify-between cursor-pointer group"
-                    >
-                        <span
-                            class="text-sm font-medium text-slate-300 group-hover:text-teal-400 transition-colors"
-                            >Sadece Doğru Şıkkı Göster</span
-                        >
-                        <div
-                            class="relative inline-flex items-center cursor-pointer"
-                        >
-                            <input
-                                type="checkbox"
-                                id="setting-hide-incorrect-options"
-                                class="sr-only peer"
-                            />
-                            <div
-                                class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-500"
-                            >
-                            </div>
-                        </div>
-                    </label>
-                </div>
-            </div>
-
-            <!-- Audio Settings -->
-            <div class="space-y-4">
-                <h4
-                    class="text-xs font-bold text-slate-400 uppercase tracking-wider"
-                >
-                    Ses Ayarları
-                </h4>
-                <div class="space-y-4">
-                    <div class="space-y-2">
-                        <label class="text-sm font-medium text-slate-300"
-                            >Ses Modeli</label
-                        >
-                        <select
-                            id="setting-voice"
-                            class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500 transition-colors"
-                        >
-                            <option value="">Varsayılan Ses</option>
-                        </select>
-                        <button
-                            id="btn-test-voice-settings"
-                            class="mt-1 w-full py-1.5 text-xs font-bold text-teal-400 bg-teal-400/10 hover:bg-teal-400/20 border border-teal-400/20 rounded transition-colors"
-                        >
-                            Ses Ayarlarını Test Et
-                        </button>
-                    </div>
-                    <div class="space-y-2">
-                        <label class="text-sm font-medium text-slate-300"
-                            >Okuma Hızı</label
-                        >
-                        <select
-                            id="setting-playback-rate"
-                            class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-teal-500 transition-colors"
-                        >
-                            <option value="0.8">0.8x - Yavaş</option>
-                            <option value="1.0">1.0x - Normal</option>
-                            <option value="1.2" selected>1.2x - Hızlı</option>
-                            <option value="1.5">1.5x - Çok Hızlı</option>
-                            <option value="2.0">2.0x - Maksimum</option>
-                            <option value="2.5">2.5x - Ultra Hızlı</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div
-            class="p-4 bg-slate-800/50 border-t border-slate-700 flex justify-end"
-        >
-            <div class="flex gap-2">
-                <button
-                    id="btn-apply-filters"
-                    class="flex-1 py-3 bg-teal-500 hover:bg-teal-400 text-slate-900 rounded-xl font-bold transition-all active:scale-[0.98] shadow-lg shadow-teal-500/20"
-                >
-                    Kapat
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Premium Player Header (Fixed Bottom) -->
+<!-- Settings Drawer removed (moved to Global Layout) --><!-- Premium Player Header (Fixed Bottom) -->
 <header
     id="quiz-player-bar"
-    class="no-print transition-all p-1 fixed bottom-0 left-0 right-0 z-[60] bg-[#0f172a]/80 backdrop-blur-sm border-t border-slate-700/50 transform translate-y-full duration-300 shadow-xl select-none"
+    class="player-bar no-print"
     style="-webkit-touch-callout: none;"
 >
     <div
@@ -338,7 +79,7 @@
             >
                 <button
                     id="btn-toggle-reader"
-                    class="p-1 sm:p-1.5 rounded-full hover:bg-slate-700/50 text-slate-400 hover:text-green-400 transition-colors"
+                    class="player-btn-icon"
                     title="Sesli Okuma Modu"
                 >
                     <svg
@@ -364,7 +105,7 @@
 
                 <button
                     id="btn-toggle-interactive"
-                    class="flex items-center gap-0.5 sm:gap-1.5 h-8 px-1.5 sm:px-4 bg-teal-500 hover:bg-teal-400 text-slate-900 rounded-lg text-[10px] sm:text-xs font-black transition-all shadow-lg active:scale-95 whitespace-nowrap min-w-[32px] sm:min-w-[80px] justify-center mx-0.5 sm:mx-1"
+                    class="player-action-btn"
                     title="İnteraktif Çözüm Modu"
                 >
                     <span class="btn-icon">
@@ -388,10 +129,7 @@
 
             <!-- Navigation Controls -->
             <div class="flex items-center gap-0.5 sm:gap-1">
-                <button
-                    id="btn-prev"
-                    class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:bg-slate-700 hover:text-white disabled:opacity-20 transition-all"
-                >
+                <button id="btn-prev" class="player-btn-icon">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="18"
@@ -486,10 +224,7 @@
                     </button>
                 </div>
 
-                <button
-                    id="btn-next"
-                    class="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-lg text-slate-400 hover:bg-slate-700 hover:text-white disabled:opacity-20 transition-all"
-                >
+                <button id="btn-next" class="player-btn-icon">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="18"
@@ -510,7 +245,7 @@
             <!-- Meta Controls -->
             <button
                 id="btn-open-settings"
-                class="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-lg text-slate-500 hover:bg-slate-700 hover:text-teal-400 transition-all border border-slate-700/50 ml-1"
+                class="player-btn-icon ml-1 border border-slate-700/50"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -575,6 +310,23 @@
                 if (applyBtn)
                     applyBtn.onclick = () =>
                         (window as any).quizPlayer.toggleSettings();
+
+                // Theme listeners
+                const themeBtns = {
+                    light: document.getElementById("btn-theme-light"),
+                    dark: document.getElementById("btn-theme-dark"),
+                    sepia: document.getElementById("btn-theme-sepia"),
+                };
+
+                Object.entries(themeBtns).forEach(([theme, btn]) => {
+                    if (btn) {
+                        btn.addEventListener("click", () => {
+                            if ((window as any).setTheme) {
+                                (window as any).setTheme(theme);
+                            }
+                        });
+                    }
+                });
             }
         };
 

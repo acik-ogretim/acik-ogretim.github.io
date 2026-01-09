@@ -78,6 +78,7 @@
     /* The article container holds the questions */
     article {
         display: block !important;
+        -webkit-column-count: 2 !important;
         column-count: 2 !important;
         column-gap: 2rem !important;
         column-fill: balance !important;

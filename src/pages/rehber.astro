@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Kullanım Rehberi">
-    <div class="py-12 relative overflow-hidden">
+    <div class="page-header-wrapper">
         <!-- Background Accents -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
             <div
@@ -16,10 +16,8 @@ import Layout from "../layouts/Layout.astro";
             </div>
         </div>
 
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <h1
-                class="text-3xl font-bold text-theme mb-8 flex items-center gap-3"
-            >
+        <div class="container-narrow relative">
+            <h1 class="page-title text-theme">
                 <span class="text-4xl">📖</span>
                 Kullanım Rehberi
             </h1>
@@ -27,22 +25,24 @@ import Layout from "../layouts/Layout.astro";
             <div class="space-y-12">
                 <!-- Sınav Ayarları Bölümü -->
                 <section
-                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30"
+                    class="content-card bg-slate-900 border border-slate-700 p-8 rounded-2xl shadow-xl"
                 >
                     <div class="flex items-center gap-4 mb-6">
                         <div
-                            class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center text-2xl"
+                            class="icon-box bg-purple-500/20 text-purple-400 p-3 rounded-xl"
                         >
                             ⚙️
                         </div>
-                        <h2 class="text-2xl font-bold text-theme">
+                        <h2 class="text-2xl font-bold text-white">
                             Sınav ve Arayüz Ayarları
                         </h2>
                     </div>
 
-                    <p class="text-muted-theme mb-6">
+                    <p
+                        class="text-slate-400 mb-6 font-medium text-lg leading-relaxed"
+                    >
                         Test ekranının sağ alt köşesindeki <strong
-                            >Ayarlar Butonuna</strong
+                            class="text-white">Ayarlar Butonuna</strong
                         > tıklayarak deneyiminizi kişiselleştirebilirsiniz. Değişiklikleriniz
                         tarayıcınıza otomatik olarak kaydedilir.
                     </p>
@@ -50,13 +50,13 @@ import Layout from "../layouts/Layout.astro";
                     <div class="grid md:grid-cols-2 gap-6">
                         <!-- Kart 1: Filtreleme -->
                         <div
-                            class="bg-black/20 p-6 rounded-xl border border-white/5"
+                            class="bg-slate-800 rounded-xl border border-slate-700 p-6"
                         >
                             <h3
-                                class="font-semibold text-primary-theme mb-3 flex items-center gap-2"
+                                class="font-bold text-white mb-6 flex items-center gap-2 border-b border-slate-700 pb-4"
                             >
                                 <svg
-                                    class="w-5 h-5"
+                                    class="w-5 h-5 text-teal-400"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
@@ -67,34 +67,99 @@ import Layout from "../layouts/Layout.astro";
                                         d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
                                     ></path></svg
                                 >
-                                Soru Filtreleme
+                                Filtreleme ve Soru Seçimi
                             </h3>
-                            <ul class="space-y-2 text-sm text-muted-theme">
-                                <li>
-                                    • <strong>Yanlışları Çöz:</strong> Sadece daha
-                                    önce yanlış cevapladığınız soruları getirir. Hatalarınızı
-                                    tekrar etmek için idealdir.
-                                </li>
-                                <li>
-                                    • <strong>Cevaplanmamışları Çöz:</strong> Daha
-                                    önce hiç görmediğiniz soruları getirir.
-                                </li>
-                                <li>
-                                    • <strong>Ünite Seçimi:</strong> Sadece belirli
-                                    ünitelerden (örn. 1-7 arası) soru gelmesini sağlar.
-                                </li>
-                            </ul>
+                            <div class="space-y-4">
+                                <!-- Yanlışları Çöz -->
+                                <div
+                                    class="flex items-center justify-between group p-3 rounded-lg bg-slate-900/50 border border-slate-700/50 hover:border-teal-500/30 transition-all"
+                                >
+                                    <div>
+                                        <h4
+                                            class="text-sm font-bold text-white group-hover:text-teal-400 transition-colors"
+                                        >
+                                            Yanlışları Çöz
+                                        </h4>
+                                        <p
+                                            class="text-[11px] text-slate-400 leading-tight mt-1"
+                                        >
+                                            Aktif edildiğinde sadece daha önce
+                                            yanlış yaptığınız sorular karşınıza
+                                            gelir.
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="w-10 h-6 bg-slate-700 rounded-full relative shrink-0"
+                                    >
+                                        <div
+                                            class="absolute left-1 top-1 w-4 h-4 bg-slate-400 rounded-full shadow-sm"
+                                        >
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Cevaplanmamışları Çöz -->
+                                <div
+                                    class="flex items-center justify-between group p-3 rounded-lg bg-slate-900/50 border border-slate-700/50 hover:border-teal-500/30 transition-all"
+                                >
+                                    <div>
+                                        <h4
+                                            class="text-sm font-bold text-white group-hover:text-teal-400 transition-colors"
+                                        >
+                                            Cevaplanmamışları Çöz
+                                        </h4>
+                                        <p
+                                            class="text-[11px] text-slate-400 leading-tight mt-1"
+                                        >
+                                            Hiç çözmediğiniz soruları
+                                            önceliklendirir.
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="w-10 h-6 bg-slate-700 rounded-full relative shrink-0"
+                                    >
+                                        <div
+                                            class="absolute left-1 top-1 w-4 h-4 bg-slate-400 rounded-full shadow-sm"
+                                        >
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Ünite Filtreleme -->
+                                <div
+                                    class="p-3 rounded-lg bg-slate-900/50 border border-slate-700/50 hover:border-teal-500/30 transition-all"
+                                >
+                                    <div class="mb-2">
+                                        <h4
+                                            class="text-sm font-bold text-white group-hover:text-teal-400 transition-colors"
+                                        >
+                                            Ünite Filtreleme
+                                        </h4>
+                                        <p
+                                            class="text-[11px] text-slate-400 leading-tight mt-1"
+                                        >
+                                            Sadece belirli bir ünitenin
+                                            sorularını çözer.
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-300"
+                                    >
+                                        Tüm Üniteler
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Kart 2: Görünüm -->
                         <div
-                            class="bg-black/20 p-6 rounded-xl border border-white/5"
+                            class="bg-slate-800 rounded-xl border border-slate-700 p-6"
                         >
                             <h3
-                                class="font-semibold text-primary-theme mb-3 flex items-center gap-2"
+                                class="font-bold text-white mb-6 flex items-center gap-2 border-b border-slate-700 pb-4"
                             >
                                 <svg
-                                    class="w-5 h-5"
+                                    class="w-5 h-5 text-teal-400"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
@@ -110,152 +175,650 @@ import Layout from "../layouts/Layout.astro";
                                         d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                                     ></path></svg
                                 >
-                                Görünüm Seçenekleri
+                                Görünüm ve Kontroller
                             </h3>
-                            <ul class="space-y-2 text-sm text-muted-theme">
-                                <li>
-                                    • <strong>Cevapları Göster:</strong> Seçimden
-                                    sonra doğru/yanlış cevabı anında gösterir.
-                                </li>
-                                <li>
-                                    • <strong>Açıklamaları Göster:</strong> Cevabın
-                                    neden doğru olduğunu anlatan AI açıklamasını otomatik
-                                    açar.
-                                </li>
-                                <li>
-                                    • <strong>Sadece Doğru Şık:</strong> Yanlış şıkları
-                                    gizleyerek odaklanmanızı kolaylaştırır.
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
+                            <div class="space-y-4">
+                                <!-- Cevapları Göster -->
+                                <div
+                                    class="flex items-center justify-between group p-3 rounded-lg bg-slate-900/50 border border-slate-700/50 hover:border-teal-500/30 transition-all"
+                                >
+                                    <div>
+                                        <h4
+                                            class="text-sm font-bold text-white group-hover:text-teal-400 transition-colors"
+                                        >
+                                            Cevapları Göster
+                                        </h4>
+                                        <p
+                                            class="text-[11px] text-slate-400 leading-tight mt-1"
+                                        >
+                                            Aktif edildiğinde, soruyu çözmenize
+                                            gerek kalmadan doğru cevabı işaretli
+                                            olarak gösterir.
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="w-10 h-6 bg-teal-500 rounded-full relative shrink-0"
+                                    >
+                                        <div
+                                            class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full shadow-sm"
+                                        >
+                                        </div>
+                                    </div>
+                                </div>
 
-                <!-- Özellikler: İnteraktif Mod & Favoriler -->
-                <section
-                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30"
-                >
-                    <div class="flex items-center gap-4 mb-6">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-teal-500/20 flex items-center justify-center text-2xl"
-                        >
-                            ⚡
-                        </div>
-                        <h2 class="text-2xl font-bold text-theme">
-                            Çalışma Modları
-                        </h2>
-                    </div>
+                                <!-- Açıklamaları Göster -->
+                                <div
+                                    class="flex items-center justify-between group p-3 rounded-lg bg-slate-900/50 border border-slate-700/50 hover:border-teal-500/30 transition-all"
+                                >
+                                    <div>
+                                        <h4
+                                            class="text-sm font-bold text-white group-hover:text-teal-400 transition-colors"
+                                        >
+                                            Açıklamaları Göster
+                                        </h4>
+                                        <p
+                                            class="text-[11px] text-slate-400 leading-tight mt-1"
+                                        >
+                                            Aktif edildiğinde, cevap vermenize
+                                            gerek kalmadan soru açıklamasını
+                                            doğrudan gösterir.
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="w-10 h-6 bg-teal-500 rounded-full relative shrink-0"
+                                    >
+                                        <div
+                                            class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full shadow-sm"
+                                        >
+                                        </div>
+                                    </div>
+                                </div>
 
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <!-- İnteraktif Mod -->
-                        <div>
-                            <h3 class="font-bold text-lg text-white mb-2">
-                                🖱️ İnteraktif Çözüm Modu
-                            </h3>
-                            <p class="text-sm text-muted-theme mb-3">
-                                Soruları çözerken şıklara tıkladığınızda doğru
-                                veya yanlış olduğunu anında görebilirsiniz.
-                                Ancak dilerseniz alt bardaki <strong
-                                    >"Çöz"</strong
-                                > butonunu kullanarak, önce kafanızdan çözüp sonra
-                                cevabı kontrol edebilirsiniz.
-                            </p>
-                            <div
-                                class="p-3 bg-slate-900 rounded border border-slate-700 text-xs text-slate-400"
-                            >
-                                <span class="text-teal-400 font-bold"
-                                    >İpucu:</span
-                                > Bu mod, sınav simülasyonu yapmak yerine konuyu öğrenerek
-                                ilerlemek istediğinizde önerilir.
+                                <!-- Sadece Doğru Şıkkı Göster -->
+                                <div
+                                    class="flex items-center justify-between group p-3 rounded-lg bg-slate-900/50 border border-slate-700/50 hover:border-teal-500/30 transition-all"
+                                >
+                                    <div>
+                                        <h4
+                                            class="text-sm font-bold text-white group-hover:text-teal-400 transition-colors"
+                                        >
+                                            Sadece Doğru Şıkkı Göster
+                                        </h4>
+                                        <p
+                                            class="text-[11px] text-slate-400 leading-tight mt-1"
+                                        >
+                                            Aktif edildiğinde yanlış şıklar
+                                            tamamen gizlenir, sadece doğru cevap
+                                            görünür.
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="w-10 h-6 bg-slate-700 rounded-full relative shrink-0"
+                                    >
+                                        <div
+                                            class="absolute left-1 top-1 w-4 h-4 bg-slate-400 rounded-full shadow-sm"
+                                        >
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <!-- Favoriler -->
-                        <div>
-                            <h3 class="font-bold text-lg text-white mb-2">
-                                ⭐ Favori Dersler
-                            </h3>
-                            <p class="text-sm text-muted-theme mb-3">
-                                Sık çalıştığınız dersleri kaybetmemek için, ders
-                                sayfasının sağ üst köşesindeki <strong
-                                    >Yıldız (⭐)</strong
-                                > ikonuna tıklayarak favorilerinize ekleyebilirsiniz.
-                            </p>
-                            <ul
-                                class="space-y-1 text-xs text-slate-400 list-disc list-inside"
-                            >
-                                <li>
-                                    Favori dersleriniz ana sayfada veya menüde
-                                    daha hızlı erişim için listelenir.
-                                </li>
-                                <li>
-                                    Bu veriler sadece sizin tarayıcınızda (Local
-                                    Storage) saklanır, sunucuya gönderilmez.
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                 </section>
+            </div>
 
-                <!-- Sesli Okuma Bölümü -->
-                <section
-                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30"
-                >
-                    <div class="flex items-center gap-4 mb-6">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center text-2xl"
-                        >
-                            🗣️
-                        </div>
-                        <h2 class="text-2xl font-bold text-theme">
-                            Sesli Okuma (TTS)
-                        </h2>
-                    </div>
-                    <p class="text-muted-theme mb-4">
-                        Soruları okumaktan yorulduğunuzda yapay zeka
-                        seslendirmesini kullanabilirsiniz. Alt bardaki
-                        "Hoparlör" simgesine tıklamanız yeterlidir.
-                    </p>
-                    <ul
-                        class="list-disc list-inside space-y-2 ml-4 text-muted-theme"
+            <!-- Özellikler: İnteraktif Mod & Favoriler -->
+            <section
+                class="content-card bg-slate-900 border border-slate-700 p-8 rounded-2xl shadow-xl mt-12"
+            >
+                <div class="flex items-center gap-4 mb-6">
+                    <div
+                        class="icon-box bg-teal-500/20 text-teal-400 p-3 rounded-xl"
                     >
-                        <li>
-                            <strong>Soru & Şıklar:</strong> Soruyu ve tüm şıkları
-                            sırasıyla okur.
-                        </li>
-                        <li>
-                            <strong>Analiz:</strong> Cevap verdikten sonra doğru şıkkın
-                            açıklamasını okur.
-                        </li>
-                        <li>
-                            <strong>Hız Ayarı:</strong> Varsayılan hız 1.2x'tir (hızlı).
-                            Ayarlardan bunu yavaşlatabilir veya hızlandırabilirsiniz.
-                        </li>
-                    </ul>
-                </section>
-
-                <!-- PWA / Kurulum Bölümü -->
-                <section
-                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30"
-                >
-                    <div class="flex items-center gap-4 mb-6">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center text-2xl"
-                        >
-                            📲
-                        </div>
-                        <h2 class="text-2xl font-bold text-theme">
-                            Uygulama Olarak Yükle
-                        </h2>
+                        ⚡
                     </div>
-                    <p class="text-muted-theme">
-                        Bu portal bir <strong>PWA (Progressive Web App)</strong> uygulamasıdır.
-                        Telefonunuza veya bilgisayarınıza indirerek bir uygulama gibi
-                        kullanabilirsiniz.
-                    </p>
-                    <div class="mt-6 grid sm:grid-cols-2 gap-4">
+                    <h2 class="text-2xl font-bold text-white">
+                        Çalışma Modları
+                    </h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- İnteraktif Mod -->
+                    <div id="interaktif-cozum" class="scroll-mt-24">
+                        <h3 class="font-bold text-lg text-white mb-2">
+                            🖱️ İnteraktif Çözüm Modu
+                        </h3>
+                        <p class="text-sm text-slate-400 mb-3 leading-relaxed">
+                            Soruları çözerken şıklara tıkladığınızda doğru veya
+                            yanlış olduğunu anında görebilirsiniz. Ancak
+                            dilerseniz alt bardaki <strong>"Çöz"</strong> butonunu
+                            kullanarak, önce kafanızdan çözüp sonra cevabı kontrol
+                            edebilirsiniz.
+                        </p>
                         <div
-                            class="p-4 bg-slate-900 rounded-lg border border-slate-700"
+                            class="p-3 bg-slate-800 rounded-xl border border-slate-700 text-xs text-slate-400"
+                        >
+                            <span class="text-teal-400 font-bold">İpucu:</span> Bu
+                            mod, sınav simülasyonu yapmak yerine konuyu öğrenerek
+                            ilerlemek istediğinizde önerilir.
+                        </div>
+                    </div>
+
+                    <!-- Favoriler -->
+                    <div id="favoriler" class="scroll-mt-24">
+                        <h3 class="font-bold text-lg text-white mb-2">
+                            ⭐ Favori Dersler
+                        </h3>
+                        <p class="text-sm text-slate-400 mb-3 leading-relaxed">
+                            Sık çalıştığınız dersleri kaybetmemek için, ders
+                            sayfasının sağ üst köşesindeki <strong
+                                class="text-white">Yıldız (⭐)</strong
+                            > ikonuna tıklayarak favorilerinize ekleyebilirsiniz.
+                        </p>
+                        <ul
+                            class="space-y-1 text-xs text-slate-400 list-disc list-inside"
+                        >
+                            <li>
+                                Favori dersleriniz ana sayfada veya menüde daha
+                                hızlı erişim için listelenir.
+                            </li>
+                            <li>
+                                Bu veriler sadece sizin tarayıcınızda (Local
+                                Storage) saklanır, sunucuya gönderilmez.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sesli Okuma Bölümü -->
+            <section
+                id="sesli-okuma"
+                class="content-card bg-slate-900 border border-slate-700 p-8 rounded-2xl shadow-xl mt-12 scroll-mt-24"
+            >
+                <div class="flex items-center gap-4 mb-6">
+                    <div
+                        class="icon-box bg-green-500/20 text-green-400 p-3 rounded-xl"
+                    >
+                        🗣️
+                    </div>
+                    <h2 class="text-2xl font-bold text-white">
+                        Sesli Okuma (TTS)
+                    </h2>
+                </div>
+                <p class="text-slate-400 mb-4 text-lg leading-relaxed">
+                    Soruları okumaktan yorulduğunuzda yapay zeka seslendirmesini
+                    kullanabilirsiniz. Alt bardaki "Hoparlör" simgesine
+                    tıklamanız yeterlidir.
+                </p>
+                <ul class="list-disc list-inside space-y-2 ml-4 text-slate-400">
+                    <li>
+                        <strong class="text-white">Soru & Şıklar:</strong> Soruyu
+                        ve tüm şıkları sırasıyla okur.
+                    </li>
+                    <li>
+                        <strong class="text-white">Analiz:</strong> Cevap verdikten
+                        sonra doğru şıkkın açıklamasını okur.
+                    </li>
+                    <li>
+                        <strong class="text-white">Hız Ayarı:</strong> Varsayılan
+                        hız 1.2x'tir (hızlı). Ayarlardan bunu yavaşlatabilir veya
+                        hızlandırabilirsiniz.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Oyuncu Kontrolleri -->
+            <section
+                class="content-card bg-slate-900 border border-slate-700 p-8 rounded-2xl shadow-xl mt-12"
+            >
+                <div class="flex items-center gap-4 mb-6">
+                    <div
+                        class="icon-box bg-red-500/20 text-red-400 p-3 rounded-xl"
+                    >
+                        🎮
+                    </div>
+                    <h2 class="text-2xl font-bold text-white">
+                        Oyuncu Kontrolleri
+                    </h2>
+                </div>
+                <p class="text-slate-400 mb-6 text-lg leading-relaxed">
+                    Ekranın altında yer alan <strong>Player Bar</strong> üzerindeki
+                    butonların işlevleri şöyledir:
+                </p>
+
+                <div
+                    class="mb-8 p-4 bg-slate-800 rounded-xl border border-slate-700 overflow-x-auto"
+                >
+                    <div
+                        class="min-w-[600px] pointer-events-none select-none opacity-90"
+                    >
+                        <!-- Static Player Bar Replica -->
+                        <div
+                            class="flex items-center justify-between gap-4 px-4 h-16 bg-slate-900 rounded-xl border-t border-slate-700 shadow-xl"
+                        >
+                            <div class="flex items-center gap-2">
+                                <div class="flex flex-col p-1 rounded-lg">
+                                    <span
+                                        class="text-xs text-slate-400 font-bold"
+                                        >Ünite 1 - Giriş</span
+                                    >
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center gap-3 bg-slate-800/50 border border-slate-700/50 rounded-xl px-3 py-1 shadow-inner"
+                            >
+                                <div
+                                    class="flex flex-col items-center border-r border-slate-700 pr-3"
+                                >
+                                    <div
+                                        class="text-lg font-black text-white leading-none"
+                                    >
+                                        75%
+                                    </div>
+                                    <div
+                                        class="text-[9px] text-slate-500 font-bold"
+                                    >
+                                        3/4
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-0.5 min-w-[3rem]">
+                                    <div
+                                        class="flex items-center justify-between gap-1"
+                                    >
+                                        <span
+                                            class="text-[9px] font-bold text-slate-500"
+                                            >D:</span
+                                        >
+                                        <span
+                                            class="text-xs font-black text-green-500"
+                                            >3</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="flex items-center justify-between gap-1"
+                                    >
+                                        <span
+                                            class="text-[9px] font-bold text-slate-500"
+                                            >Y:</span
+                                        >
+                                        <span
+                                            class="text-xs font-black text-red-500"
+                                            >1</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 ml-auto">
+                                <div
+                                    class="flex items-center bg-slate-800/80 p-0.5 rounded-xl border border-slate-700/50 gap-1"
+                                >
+                                    <div
+                                        class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 bg-slate-700/50"
+                                    >
+                                        <svg
+                                            class="w-5 h-5"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                            ><path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
+                                            ></path></svg
+                                        >
+                                    </div>
+                                    <div
+                                        class="flex items-center justify-center h-8 px-3 text-[10px] font-black text-slate-400 border-l border-r border-slate-700/50"
+                                    >
+                                        1.2x
+                                    </div>
+                                    <div
+                                        class="flex items-center gap-1.5 h-8 px-1.5 pr-3 rounded-lg bg-teal-500 text-slate-900 text-xs font-black"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="14"
+                                            height="14"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="3"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            ><polygon
+                                                points="6 3 20 12 6 21 6 3"
+                                            ></polygon></svg
+                                        >
+                                        <span>Çöz</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <div
+                                        class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-500"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="18"
+                                            height="18"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            ><polygon
+                                                points="11 19 2 12 11 5 11 19"
+                                            ></polygon><polygon
+                                                points="22 19 13 12 22 5 22 19"
+                                            ></polygon></svg
+                                        >
+                                    </div>
+                                    <div
+                                        class="flex items-center bg-slate-800/80 rounded-lg border border-slate-700/50 overflow-hidden opacity-50"
+                                    >
+                                        <div
+                                            class="h-9 px-3 flex items-center gap-1.5 text-slate-400 border-r border-slate-700/50"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="16"
+                                                height="16"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                ><path
+                                                    d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"
+                                                ></path><path
+                                                    d="M19 10v1a7 7 0 0 1-14 0v-1"
+                                                ></path><line
+                                                    x1="12"
+                                                    y1="19"
+                                                    x2="12"
+                                                    y2="23"></line><line
+                                                    x1="8"
+                                                    y1="23"
+                                                    x2="16"
+                                                    y2="23"></line></svg
+                                            >
+                                        </div>
+                                        <div
+                                            class="h-9 px-3 flex items-center gap-1.5 text-slate-400 border-r border-slate-700/50"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="16"
+                                                height="16"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                ><path d="M12 7v14"></path><path
+                                                    d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+                                                ></path></svg
+                                            >
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="18"
+                                            height="18"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            ><polygon
+                                                points="13 19 22 12 13 5 13 19"
+                                            ></polygon><polygon
+                                                points="2 19 11 12 2 5 2 19"
+                                            ></polygon></svg
+                                        >
+                                    </div>
+                                </div>
+                                <div
+                                    class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 border border-slate-700/50"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="18"
+                                        height="18"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        ><path
+                                            d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+                                        ></path><circle cx="12" cy="12" r="3"
+                                        ></circle></svg
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div
+                        class="p-4 bg-slate-800 rounded-lg border border-slate-700 hover:border-teal-500/30 transition-colors"
+                    >
+                        <div class="flex items-center gap-3 mb-2">
+                            <div
+                                class="w-8 h-8 rounded bg-slate-700 flex items-center justify-center text-slate-400"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    ><path
+                                        d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
+                                    ></path></svg
+                                >
+                            </div>
+                            <h4 class="font-bold text-white">Okuma Modu</h4>
+                        </div>
+                        <p class="text-xs text-slate-400">
+                            Sesli okumayı açıp kapatır. Aktif olduğunda sorular
+                            otomatik okunur.
+                        </p>
+                    </div>
+
+                    <div
+                        class="p-4 bg-slate-800 rounded-lg border border-slate-700 hover:border-teal-500/30 transition-colors"
+                    >
+                        <div class="flex items-center gap-3 mb-2">
+                            <div
+                                class="w-8 h-8 rounded bg-slate-700 flex items-center justify-center text-slate-400"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="3"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    ><polygon points="6 3 20 12 6 21 6 3"
+                                    ></polygon></svg
+                                >
+                            </div>
+                            <h4 class="font-bold text-white">İnteraktif Mod</h4>
+                        </div>
+                        <p class="text-xs text-slate-400">
+                            Şıklara tıkladığınızda anında doğru/yanlış cevabı
+                            gösterir.
+                        </p>
+                    </div>
+
+                    <div
+                        class="p-4 bg-slate-800 rounded-lg border border-slate-700 hover:border-teal-500/30 transition-colors"
+                    >
+                        <div class="flex items-center gap-3 mb-2">
+                            <div
+                                class="w-8 h-8 rounded bg-slate-700 flex items-center justify-center text-slate-400"
+                            >
+                                <span class="text-xs font-black">1.2x</span>
+                            </div>
+                            <h4 class="font-bold text-white">Hız Kontrolü</h4>
+                        </div>
+                        <p class="text-xs text-slate-400">
+                            Okuma hızını ayarlar. Varsayılan 1.2x (Hızlı)
+                            seviyesindedir.
+                        </p>
+                    </div>
+
+                    <div
+                        class="p-4 bg-slate-800 rounded-lg border border-slate-700 hover:border-teal-500/30 transition-colors"
+                    >
+                        <div class="flex items-center gap-3 mb-2">
+                            <div
+                                class="w-8 h-8 rounded bg-slate-700 flex items-center justify-center text-slate-400"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    ><path d="M12 7v14"></path><path
+                                        d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"
+                                    ></path></svg
+                                >
+                            </div>
+                            <h4 class="font-bold text-white">Analiz</h4>
+                        </div>
+                        <p class="text-xs text-slate-400">
+                            Sadece sorunun açıklamasını okutmak için kullanılır.
+                        </p>
+                    </div>
+
+                    <div
+                        class="p-4 bg-slate-800 rounded-lg border border-slate-700 hover:border-teal-500/30 transition-colors"
+                    >
+                        <div class="flex items-center gap-3 mb-2">
+                            <div
+                                class="w-8 h-8 rounded bg-slate-700 flex items-center justify-center text-slate-400"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    ><path
+                                        d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
+                                    ></path><circle cx="12" cy="12" r="3"
+                                    ></circle></svg
+                                >
+                            </div>
+                            <h4 class="font-bold text-white">Ayarlar</h4>
+                        </div>
+                        <p class="text-xs text-slate-400">
+                            Filtreleme ve görünüm seçeneklerinin olduğu menüyü
+                            açar.
+                        </p>
+                    </div>
+
+                    <div
+                        class="p-4 bg-slate-800 rounded-lg border border-slate-700 hover:border-teal-500/30 transition-colors"
+                    >
+                        <div class="flex items-center gap-3 mb-2">
+                            <div
+                                class="w-8 h-8 rounded bg-slate-700 flex items-center justify-center text-slate-400"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="18"
+                                    height="18"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    ><polygon points="13 19 22 12 13 5 13 19"
+                                    ></polygon><polygon
+                                        points="2 19 11 12 2 5 2 19"
+                                    ></polygon></svg
+                                >
+                            </div>
+                            <h4 class="font-bold text-white">Navigasyon</h4>
+                        </div>
+                        <p class="text-xs text-slate-400">
+                            Önceki ve Sonraki sorular arasında geçiş yapar.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <!-- PWA / Kurulum Bölümü -->
+            <section
+                id="kurulum"
+                class="content-card bg-slate-900 border border-slate-700 p-8 rounded-2xl shadow-xl mt-12 scroll-mt-24"
+            >
+                <div class="flex items-center gap-4 mb-6">
+                    <div
+                        class="icon-box bg-blue-500/20 text-blue-400 p-3 rounded-xl"
+                    >
+                        📲
+                    </div>
+                    <h2 class="text-2xl font-bold text-white">
+                        Uygulama Olarak Yükle
+                    </h2>
+                </div>
+                <p class="text-slate-400 mb-6 text-lg leading-relaxed">
+                    Bu portal bir <strong>PWA (Progressive Web App)</strong> uygulamasıdır.
+                    Telefonunuza veya bilgisayarınıza indirerek bir uygulama gibi
+                    kullanabilirsiniz.
+                </p>
+
+                <div class="flex flex-col gap-4">
+                    <div
+                        class="p-4 bg-slate-800 rounded-lg border border-slate-700"
+                    >
+                        <h4 class="font-bold text-white mb-2">Hemen Yükle</h4>
+                        <p class="text-sm text-slate-400 mb-4">
+                            Tarayıcınız destekliyorsa aşağıdaki butona
+                            tıklayarak uygulamayı cihazınıza yükleyebilirsiniz.
+                        </p>
+                        <button
+                            id="guide-install-btn"
+                            class="btn-primary w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white border-none py-3 px-6 rounded-lg font-bold shadow-lg shadow-green-900/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+                        >
+                            📲 Uygulamayı Yükle
+                        </button>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div
+                            class="p-4 bg-slate-800 rounded-lg border border-slate-700"
                         >
                             <h4 class="font-bold text-white mb-2">
                                 Android / Chrome
@@ -267,7 +830,7 @@ import Layout from "../layouts/Layout.astro";
                             </p>
                         </div>
                         <div
-                            class="p-4 bg-slate-900 rounded-lg border border-slate-700"
+                            class="p-4 bg-slate-800 rounded-lg border border-slate-700"
                         >
                             <h4 class="font-bold text-white mb-2">
                                 iOS (iPhone/iPad)
@@ -278,8 +841,33 @@ import Layout from "../layouts/Layout.astro";
                             </p>
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
         </div>
     </div>
 </Layout>
+
+<script>
+    // Guide Page PWA Install Logic
+    let guideDeferredPrompt: any;
+    const guideInstallBtn = document.getElementById("guide-install-btn");
+
+    window.addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        guideDeferredPrompt = e;
+        // Button is always visible, but now functional
+    });
+
+    guideInstallBtn?.addEventListener("click", async () => {
+        if (guideDeferredPrompt) {
+            guideDeferredPrompt.prompt();
+            const { outcome } = await guideDeferredPrompt.userChoice;
+            console.log(`User response to the install prompt: ${outcome}`);
+            guideDeferredPrompt = null;
+        } else {
+            alert(
+                "Tarayıcınız otomatik kurulumu desteklemiyor veya uygulama zaten yüklü. Lütfen aşağıdaki manuel kurulum adımlarını takip edin.",
+            );
+        }
+    });
+</script>

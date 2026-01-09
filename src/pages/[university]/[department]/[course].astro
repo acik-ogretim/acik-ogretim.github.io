@@ -45,22 +45,22 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
 
 <Layout title={`${course.name} - ${department.name}`}>
   <div class="py-12">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container-reading">
       <!-- Breadcrumbs -->
       <nav class="flex mb-8 text-sm text-muted-theme">
-        <a href="/" class="hover:text-primary-theme transition-colors"
+        <a href="/" class="breadcrumb-link"
           >Ana Sayfa</a
         >
         <span class="mx-2">/</span>
         <a
           href={`/${university.id}`}
-          class="hover:text-primary-theme transition-colors"
+          class="breadcrumb-link"
           >{university.shortName}</a
         >
         <span class="mx-2">/</span>
         <a
           href={`/${university.id}/${department.id}`}
-          class="hover:text-primary-theme transition-colors"
+          class="breadcrumb-link"
           >{department.name}</a
         >
         <span class="mx-2">/</span>
@@ -84,12 +84,19 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
           Toplam {questions.length} soru bulundu.
         </p>
 
-        <a href={`/${university.id}/${department.id}/${course.id}/materyaller`} class="btn-primary inline-flex items-center gap-2 px-6 py-3 text-sm font-medium">
+        <a href={`/${university.id}/${department.id}/${course.id}/materyaller`} class="btn-primary">
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
             </svg>
-            Ders Materyalleri (PDF)
+            Ders Materyalleri
         </a>
+
+        <button onclick="window.print()" class="btn-primary bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 border-none shadow-none ml-2" title="Yazdır / PDF Kaydet">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+            </svg>
+            <span class="hidden sm:inline ml-2">Yazdır</span>
+        </button>
       </header>
 
       <!-- Navigation (Sticky) -->
@@ -110,7 +117,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
             units.map((unit) => (
               <a
                 href={`#unite-${unit}`}
-                class="shrink-0 px-3 py-1.5 bg-button-theme hover:bg-button-hover-theme rounded-lg text-xs text-muted-theme hover:text-theme transition-colors border border-theme flex items-center justify-center min-w-[3.5rem] md:text-sm md:px-4 md:py-2"
+                class="btn-unit-nav"
               >
                 Ü {unit}
               </a>
@@ -141,7 +148,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
 
                 {unitQuestions.map((q, qIdx) => (
                   <div
-                    class="glass p-4 sm:p-6 md:p-8 rounded-2xl border border-theme break-inside-avoid mb-12 last:mb-0"
+                    class="question-card"
                     id={`question-${unit}-${qIdx}`}
                     data-unit={unit}
                   >
@@ -168,7 +175,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
                         ).map((opt) => (
                           <li class="relative pl-0">
                             <div
-                              class={`flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-xl border transition-all option-item ${opt.key === q.correctAnswer ? "correct-option" : ""}`}
+                              class={`option-card option-item ${opt.key === q.correctAnswer ? "correct-option" : ""}`}
                               style={
                                 opt.key === q.correctAnswer
                                   ? "background-color: var(--correct-bg); border-color: var(--correct-border);"
@@ -179,7 +186,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
                                 <meta content={opt.key} />
                               )}
                               <span
-                                class="w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center font-bold text-xs md:text-sm shrink-0 option-key"
+                                class="option-key-badge option-key"
                                 style={
                                   opt.key === q.correctAnswer
                                     ? "background-color: var(--correct-border); color: #fff;"
@@ -190,7 +197,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
                                 {opt.key}
                               </span>
                               <span
-                                class="pt-1 md:pt-1.5 text-sm md:text-base block option-text"
+                                class="option-text-content option-text"
                                 style={
                                   opt.key === q.correctAnswer
                                     ? "color: var(--text-color); font-weight: bold;"
@@ -204,7 +211,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
                       </ul>
 
                       {q.explanation && (
-                        <div class="mt-6 md:mt-8 p-4 md:p-6 bg-primary-theme/5 rounded-xl border border-primary-theme/20 explanation-box mb-4">
+                        <div class="explanation-card explanation-box">
                           <p class="text-muted-theme text-sm leading-relaxed">
                             <strong class="text-primary-theme uppercase tracking-wider mr-2">
                               Açıklama:
@@ -215,7 +222,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
                       )}
 
                       <!-- Correct Answer - Always rendered, control visibility via CSS -->
-                      <div class="mt-4 p-4 bg-primary-theme/5 rounded-xl border border-primary-theme/20 answer-metadata-box correct-answer-line">
+                      <div class="answer-meta-card answer-metadata-box correct-answer-line">
                           <p class="text-muted-theme text-sm leading-relaxed">
                             <strong class="text-primary-theme uppercase tracking-wider mr-2">
                               Doğru Cevap:

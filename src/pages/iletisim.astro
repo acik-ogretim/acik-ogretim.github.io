@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Bize Ulaşın">
-    <div class="py-12 relative overflow-hidden">
+    <div class="page-header-wrapper">
         <!-- Background Accents -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
             <div
@@ -16,18 +16,14 @@ import Layout from "../layouts/Layout.astro";
             </div>
         </div>
 
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <h1
-                class="text-3xl font-bold text-theme mb-8 flex items-center gap-3"
-            >
+        <div class="container-narrow relative">
+            <h1 class="page-title text-theme">
                 <span class="text-4xl">📬</span>
                 Bize Ulaşın
             </h1>
 
             <div class="space-y-8 text-muted-theme">
-                <section
-                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30 text-center"
-                >
+                <section class="content-card text-center">
                     <p class="text-lg mb-6">
                         Açık Öğretim Portal, bir topluluk projesi olduğu için
                         iletişim kanallarımız da <strong>açık ve şeffaf</strong> bir
@@ -77,9 +73,7 @@ import Layout from "../layouts/Layout.astro";
                     </a>
                 </div>
 
-                <section
-                    class="glass p-8 rounded-2xl border border-theme bg-card-theme/30 mt-8"
-                >
+                <section class="content-card mt-8">
                     <h2 class="text-xl font-bold text-theme mb-4">
                         E-Posta Desteği
                     </h2>
