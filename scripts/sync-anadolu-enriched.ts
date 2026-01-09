@@ -28,9 +28,32 @@ function processExerciseList(list: any[]): AppQuestion[] {
             if (q[opt]) mapped.options[opt] = cleanHtml(q[opt]);
         });
 
-        const expl = q.Aciklama || q.AnswerExplanation;
-        if (expl && expl.length > 5) {
-            mapped.explanation = cleanHtml(expl);
+        const rawExpl = q.Aciklama || q.AnswerExplanation || "";
+        const rawTitle = q.Title || "";
+        let finalExpl = rawExpl;
+
+        if (rawTitle) {
+            if (rawExpl) {
+                const tNorm = cleanHtml(rawTitle).replace(/\s+/g, ' ').trim().toLowerCase();
+                const eNorm = cleanHtml(rawExpl).replace(/\s+/g, ' ').trim().toLowerCase();
+
+                if (eNorm.includes(tNorm)) {
+                    // Explanation covers title
+                    finalExpl = rawExpl;
+                } else if (tNorm.includes(eNorm)) {
+                    // Title covers explanation
+                    finalExpl = rawTitle;
+                } else {
+                    // Concatenate
+                    finalExpl = `${rawTitle}<br/>${rawExpl}`;
+                }
+            } else {
+                finalExpl = rawTitle;
+            }
+        }
+
+        if (finalExpl && finalExpl.length > 5) {
+            mapped.explanation = cleanHtml(finalExpl);
         }
 
         out.push(mapped);
@@ -142,7 +165,9 @@ function processAll() {
         fileSet.exercises.forEach(fp => {
             try {
                 const rawContent = fs.readFileSync(fp, 'utf-8');
-                const cleanedRaw = rawContent.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, '');
+                // Aggressive Clean: Replace ALL control chars (including \n \r \t) with space.
+                // This fixes literal newlines in strings, and makes the whole JSON single-line (valid).
+                const cleanedRaw = rawContent.replace(/[\u2028\u2029]/g, ' ').replace(/[\x00-\x1F]/g, ' ');
                 const raw = JSON.parse(cleanedRaw);
                 const questions = processExerciseList(Array.isArray(raw) ? raw : []);
                 collect(questions);
@@ -152,7 +177,7 @@ function processAll() {
         fileSet.exams.forEach(fp => {
             try {
                 const rawContent = fs.readFileSync(fp, 'utf-8');
-                const cleanedRaw = rawContent.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, '');
+                const cleanedRaw = rawContent.replace(/[\u2028\u2029]/g, ' ').replace(/[\x00-\x1F]/g, ' ');
                 const raw = JSON.parse(cleanedRaw);
                 const list = Array.isArray(raw) ? raw : (raw.questions || []);
                 const questions = processExamList(list);

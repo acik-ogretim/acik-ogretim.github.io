@@ -67,10 +67,30 @@ function mapRawToApp(raw: RawAnadoluQuestion): AppQuestion {
     let expl = "";
     if (raw.AnswerExplanation) expl = cleanHtml(raw.AnswerExplanation);
 
-    // Python shared.py logic merges Title?
-    // "if title and explanation... if t_norm in e_norm pass... else concat"
-    // We'll stick to basic explanation usage unless Title is commonly significant in standard exercises.
-    // Assuming AnswerExplanation is the main source.
+    // Smart Merge Logic: Title + Explanation
+    if (raw.Title) {
+        const title = cleanHtml(raw.Title);
+        if (title) {
+            if (expl) {
+                const tNorm = title.replace(/\s+/g, ' ').trim().toLowerCase();
+                const eNorm = expl.replace(/\s+/g, ' ').trim().toLowerCase();
+
+                if (eNorm.includes(tNorm)) {
+                    // Explanation already contains title info, keep explanation
+                } else if (tNorm.includes(eNorm)) {
+                    // Title covers explanation, use title (rare but possible)
+                    expl = title;
+                } else {
+                    // Distinct, concatenate
+                    expl = `${title}<br/>${expl}`;
+                }
+            } else {
+                // Only title exists
+                expl = title;
+            }
+        }
+    }
+
     if (expl && expl !== "") {
         q.explanation = expl;
     }
@@ -84,20 +104,53 @@ function mapRawToApp(raw: RawAnadoluQuestion): AppQuestion {
     return q;
 }
 
-function mapExamToApp(raw: RawAnadoluExamQuestion): AppQuestion {
+interface PreProcessedExamQuestion {
+    id: string;
+    unitNumber: number;
+    text: string;
+    options: { [key: string]: string };
+    correctAnswer: string;
+    explanation?: string;
+    sources?: string[];
+    is_duplicate?: boolean;
+    duplicate_of?: string;
+}
+
+// Union type for input
+type ExamInput = RawAnadoluExamQuestion | PreProcessedExamQuestion;
+
+function mapExamToApp(raw: ExamInput): AppQuestion {
+    // Check if it's already in the new format (App Schema-like)
+    // We can infer this by checking if 'id' is a string starting with 'exam-' and options is an object (not array)
+    if (typeof raw.id === 'string' && raw.id.startsWith('exam-') && !Array.isArray(raw.options)) {
+        const p = raw as PreProcessedExamQuestion;
+
+        // If it's a duplicate and we want to skip or resolve later?
+        // Portal usually wants full objects. If it's a duplicate, maybe we should fetch the original?
+        // For now, we trust the input is self-contained or acceptable.
+
+        return {
+            id: p.id,
+            unitNumber: p.unitNumber,
+            text: cleanHtml(p.text),
+            correctAnswer: p.correctAnswer,
+            options: p.options, // Already a map
+            explanation: p.explanation ? cleanHtml(p.explanation) : undefined
+        };
+    }
+
+    // Fallback: Legacy Mapping Logic
+    const oldRaw = raw as RawAnadoluExamQuestion;
     const q: AppQuestion = {
-        id: `exam-${raw.material_id}-${raw.id}`,
+        id: `exam-${oldRaw.material_id}-${oldRaw.id}`,
         unitNumber: 0,
-        text: cleanHtml(raw.question),
-        correctAnswer: ["A", "B", "C", "D", "E"][raw.correctIndex] || "",
+        text: cleanHtml(oldRaw.question),
+        correctAnswer: ["A", "B", "C", "D", "E"][oldRaw.correctIndex] || "",
         options: {}
     };
 
-    // Append source info?
-    // text += ` <br><small>(${raw.source})</small>`;
-
-    if (raw.options && Array.isArray(raw.options)) {
-        raw.options.forEach((opt, idx) => {
+    if (oldRaw.options && Array.isArray(oldRaw.options)) {
+        oldRaw.options.forEach((opt, idx) => {
             const key = ["A", "B", "C", "D", "E"][idx];
             if (key) {
                 q.options[key] = cleanHtml(opt);
@@ -105,9 +158,8 @@ function mapExamToApp(raw: RawAnadoluExamQuestion): AppQuestion {
         });
     }
 
-    // If exam has explanation (from enrichment or raw field)
-    if (raw.explanation) {
-        const e = cleanHtml(raw.explanation);
+    if (oldRaw.explanation) {
+        const e = cleanHtml(oldRaw.explanation);
         if (e) q.explanation = e;
     }
 
@@ -147,7 +199,7 @@ function processCourse(slug: string) {
         try {
             const content = fs.readFileSync(cikmisPath, 'utf-8');
             const rawData = JSON.parse(content);
-            const rawList: RawAnadoluExamQuestion[] = Array.isArray(rawData) ? rawData : (rawData.questions || []);
+            const rawList: ExamInput[] = Array.isArray(rawData) ? rawData : (rawData.questions || []);
 
             if (Array.isArray(rawList)) {
                 rawList.forEach(r => {

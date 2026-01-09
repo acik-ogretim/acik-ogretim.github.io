@@ -436,7 +436,7 @@
   {
     "id": "3831923",
     "unitNumber": 4,
-    "text": "BSDF, çeşitli görselleştirme motorları ve üç boyutlu modelleme yazılımlarında farklı şekillerde uygulanır. Aşağıdakilerden hangisi doğrudur?<br/><ol style=\"list-style-type: lower-roman;\"> <li>Yaygın BSDF türleri ve kullanım alanlarından bazıları şunlardır:<br/>Lambert Yansıması: Lambert yansıma modeli, ideal bir mat yüzey modelidir. Bu model, ışığın<br/>yüzeye eşit olarak dağıldığını varsayar. Lambert yüzeyleri, her yönde aynı miktarda ışık yansıtır ve bu da difüz yansıma olarak bilinir.</li> <li>Phong Yansıması: Phong yansıma modeli hem speküler (parlak) hem de difüz yansımaları içerir. Speküler yansıma, ışığın yüzeyde belirli bir açıyla yansımasını simüle eder ve parlak noktalar oluşturur.</li> <li>Blinn-Phong Yansıması: Blinn-Phong modeli, Phong modeline benzer ancak hesaplama açısından daha verimlidir. Speküler yansımanın hesaplanmasında kullanılan normal vektörleri ile görüntüleme açısını optimize eder.</li> <li>Cook-Torrance Modeli: Cook-Torrance modeli, metalik ve dielektrik malzemeler için daha gerçekçi yansımalar sağlar. Yüzey pürüzlülüğü ve mikrofacet dağılımı gibi faktörleri dikkate alır.</li> <li>GGX Microfacet Modeli: GGX mikrofacet modeli, modern görselleştirme motorlarında yaygın<br/>olarak kullanılan bir modeldir. Yüzey pürüzlülüğünü ve mikrofacet dağılımını çok hassas bir şekilde simüle eder ve özellikle metalik ve parlak yüzeylerde gerçekçi yansımalar sağlar.</li> </ol>",
+    "text": "BSDF, çeşitli görselleştirme motorları ve üç boyutlu modelleme yazılımlarında farklı şekillerde uygulanır. Aşağıdakilerden hangisi doğrudur?<br/><ol type=\"i\"> <li>Yaygın BSDF türleri ve kullanım alanlarından bazıları şunlardır:<br/>Lambert Yansıması: Lambert yansıma modeli, ideal bir mat yüzey modelidir. Bu model, ışığın<br/>yüzeye eşit olarak dağıldığını varsayar. Lambert yüzeyleri, her yönde aynı miktarda ışık yansıtır ve bu da difüz yansıma olarak bilinir.</li> <li>Phong Yansıması: Phong yansıma modeli hem speküler (parlak) hem de difüz yansımaları içerir. Speküler yansıma, ışığın yüzeyde belirli bir açıyla yansımasını simüle eder ve parlak noktalar oluşturur.</li> <li>Blinn-Phong Yansıması: Blinn-Phong modeli, Phong modeline benzer ancak hesaplama açısından daha verimlidir. Speküler yansımanın hesaplanmasında kullanılan normal vektörleri ile görüntüleme açısını optimize eder.</li> <li>Cook-Torrance Modeli: Cook-Torrance modeli, metalik ve dielektrik malzemeler için daha gerçekçi yansımalar sağlar. Yüzey pürüzlülüğü ve mikrofacet dağılımı gibi faktörleri dikkate alır.</li> <li>GGX Microfacet Modeli: GGX mikrofacet modeli, modern görselleştirme motorlarında yaygın<br/>olarak kullanılan bir modeldir. Yüzey pürüzlülüğünü ve mikrofacet dağılımını çok hassas bir şekilde simüle eder ve özellikle metalik ve parlak yüzeylerde gerçekçi yansımalar sağlar.</li> </ol>",
     "correctAnswer": "E",
     "options": {
       "A": "i ve ii",
@@ -464,7 +464,7 @@
   {
     "id": "3831915",
     "unitNumber": 4,
-    "text": "Doku haritalarında ustalaşmak pratik ve deneme yanılma gerektirir. Aşağıda verilen doku haritaları uygulamalarında yaşanabilecek teknik zorluklar ve başarılı sonuçlar almak için düşünülmesi gereken hususlar verilmiştir hangileri doğrudur?<br/><ol style=\"list-style-type: lower-roman;\"> <li>Doku haritalarının çözünürlüğü doğrudan elde edilebilecek detay seviyesini etkiler. Yüksek çözünürlüklü<br/>haritalar daha ince detaylara ve daha keskin görsellere izin verir ancak aynı zamanda daha<br/>fazla işlem gücü ve bellek gerektirir.</li> <li>Dokular geniş yüzeylere uygulanırken aynı doku deseninin belirgin şekilde tekrarladığı döşeme<br/>problemleriyle karşılaşılabilir. Bir doku deseni belirgin bir şekilde tekrarlanıyor ise yeterince gerçekçi<br/>algılanmayabilir. Doku döşeme ve prosedürel dokular gibi teknikler bu sorunun hafifletilmesine<br/>yardımcı olmaktadır.</li> <li>Ekleme sınırları (seam) açısından, doku haritalarını modelin farklı bölümleri boyunca sorunsuz bir şekilde hizalamak zorlu olabilir. Düzgün ve görsel olarak inandırıcı bir görünüm sağlamak için kaplanacak yüzeyin uygun UV açılımı çok önemlidir.</li> <li>Doku haritalamada sonuçların kalitesi, kaynak dokuların kalitesine bağlıdır. Taklit etmeye çalışılan malzemelerin ince detaylarını yakalayan yüksek çözünürlüklü görüntüler kullanılmalıdır.</li> <li>Birçok üç boyutlu modelleme yazılımı, ahşap, metal veya plastik gibi gerçekçi malzemeler oluşturmak için çeşitli doku haritalarını birleştiren önceden oluşturulmuş malzeme ön ayarları sunar. Sunulan ön ayarlar değerli bir başlangıç noktası olarak düşünebilse de istenilen görünümü elde etmek için ön ayarların özelleştirilmesi önemlidir.</li> <li>Doku haritalarının, son görsel efekti elde etmek için aydınlatma ile birlikte çalıştığı unutulmamalıdır. Işık kaynakları dikkatlice konumlandırılmalı ve gölgeler ayarlanarak modellerin gerçekçiliği daha da arttırılmalıdır.</li> </ol>",
+    "text": "Doku haritalarında ustalaşmak pratik ve deneme yanılma gerektirir. Aşağıda verilen doku haritaları uygulamalarında yaşanabilecek teknik zorluklar ve başarılı sonuçlar almak için düşünülmesi gereken hususlar verilmiştir hangileri doğrudur?<br/><ol type=\"i\"> <li>Doku haritalarının çözünürlüğü doğrudan elde edilebilecek detay seviyesini etkiler. Yüksek çözünürlüklü<br/>haritalar daha ince detaylara ve daha keskin görsellere izin verir ancak aynı zamanda daha<br/>fazla işlem gücü ve bellek gerektirir.</li> <li>Dokular geniş yüzeylere uygulanırken aynı doku deseninin belirgin şekilde tekrarladığı döşeme<br/>problemleriyle karşılaşılabilir. Bir doku deseni belirgin bir şekilde tekrarlanıyor ise yeterince gerçekçi<br/>algılanmayabilir. Doku döşeme ve prosedürel dokular gibi teknikler bu sorunun hafifletilmesine<br/>yardımcı olmaktadır.</li> <li>Ekleme sınırları (seam) açısından, doku haritalarını modelin farklı bölümleri boyunca sorunsuz bir şekilde hizalamak zorlu olabilir. Düzgün ve görsel olarak inandırıcı bir görünüm sağlamak için kaplanacak yüzeyin uygun UV açılımı çok önemlidir.</li> <li>Doku haritalamada sonuçların kalitesi, kaynak dokuların kalitesine bağlıdır. Taklit etmeye çalışılan malzemelerin ince detaylarını yakalayan yüksek çözünürlüklü görüntüler kullanılmalıdır.</li> <li>Birçok üç boyutlu modelleme yazılımı, ahşap, metal veya plastik gibi gerçekçi malzemeler oluşturmak için çeşitli doku haritalarını birleştiren önceden oluşturulmuş malzeme ön ayarları sunar. Sunulan ön ayarlar değerli bir başlangıç noktası olarak düşünebilse de istenilen görünümü elde etmek için ön ayarların özelleştirilmesi önemlidir.</li> <li>Doku haritalarının, son görsel efekti elde etmek için aydınlatma ile birlikte çalıştığı unutulmamalıdır. Işık kaynakları dikkatlice konumlandırılmalı ve gölgeler ayarlanarak modellerin gerçekçiliği daha da arttırılmalıdır.</li> </ol>",
     "correctAnswer": "E",
     "options": {
       "A": "i ve ii",
@@ -520,7 +520,7 @@
   {
     "id": "3831911",
     "unitNumber": 4,
-    "text": "Üç boyutlu modellemede dijital malzeme için aşağıdakilerden hangileri doğrudur.<br/><ol style=\"list-style-type: lower-roman;\"> <li>Bir objenin temel görsel ve fiziksel özelliklerini tanımlar.</li> <li>Objenin neyden yapıldığının “özü” olarak düşünülebilir.</li> <li>Işığın yüzey ile nasıl etkileşime gireceğini kontrol ederek şunları etkiler:<br/>- Renk (dağıtık renk/diffuse color)<br/>- Yansıtıcılık (speküler özellikler/specular properties)<br/>- Parlaklık/Matlık (pürüzlülük/roughness)<br/>- Şeffaflık (opasite ve kırılma indisi/opacity ve refraction index)</li> <li>Örnek olarak ahşap, metal, kumaş, plastik veya cam gösterilebilir.</li> <li>Objenin genel görünümünü ve hissini belirler (ahşap bir masa, parlak krom bir küre).</li> </ol>",
+    "text": "Üç boyutlu modellemede dijital malzeme için aşağıdakilerden hangileri doğrudur.<br/><ol type=\"i\"> <li>Bir objenin temel görsel ve fiziksel özelliklerini tanımlar.</li> <li>Objenin neyden yapıldığının “özü” olarak düşünülebilir.</li> <li>Işığın yüzey ile nasıl etkileşime gireceğini kontrol ederek şunları etkiler:<br/>- Renk (dağıtık renk/diffuse color)<br/>- Yansıtıcılık (speküler özellikler/specular properties)<br/>- Parlaklık/Matlık (pürüzlülük/roughness)<br/>- Şeffaflık (opasite ve kırılma indisi/opacity ve refraction index)</li> <li>Örnek olarak ahşap, metal, kumaş, plastik veya cam gösterilebilir.</li> <li>Objenin genel görünümünü ve hissini belirler (ahşap bir masa, parlak krom bir küre).</li> </ol>",
     "correctAnswer": "E",
     "options": {
       "A": "i ve ii",
@@ -534,7 +534,7 @@
   {
     "id": "3831913",
     "unitNumber": 4,
-    "text": "Üç boyutlu modellemede doku için aşağıdakilerden hangileri söylenebilir?<br/><ol style=\"list-style-type: lower-roman;\"> <li>Bir objenin yüzeyindeki ayrıntıları ve desenleri temsil eder.</li> <li>Yüzeydeki ince ayrıntıları göstererek görsel karmaşıklık ve gerçekçilik katar.</li> <li>Doku uygulamaları olarak şunlar gösterilebilir:<br/>- Tek bir renk (düz doku)<br/>- Ahşap dokusu, kumaş örgüsü veya tuğla desenleri gibi ayrıntıları gösteren bir görüntü dosyası (bitmap dokusu)<br/>- Doğal desenler için matematiksel algoritmalar kullanılarak belirli bir prosedüre bağlı olarak<br/>oluşturulur. Örnek olarak masa yüzeyindeki ahşap damarları, deri ceketteki kırışıklıklar, parke taşlı yoldaki çıkıntılar gösterilebilir.</li> <li>Objenin yüzey gerçekçiliğini ve derinliğini artırır.</li> </ol>",
+    "text": "Üç boyutlu modellemede doku için aşağıdakilerden hangileri söylenebilir?<br/><ol type=\"i\"> <li>Bir objenin yüzeyindeki ayrıntıları ve desenleri temsil eder.</li> <li>Yüzeydeki ince ayrıntıları göstererek görsel karmaşıklık ve gerçekçilik katar.</li> <li>Doku uygulamaları olarak şunlar gösterilebilir:<br/>- Tek bir renk (düz doku)<br/>- Ahşap dokusu, kumaş örgüsü veya tuğla desenleri gibi ayrıntıları gösteren bir görüntü dosyası (bitmap dokusu)<br/>- Doğal desenler için matematiksel algoritmalar kullanılarak belirli bir prosedüre bağlı olarak<br/>oluşturulur. Örnek olarak masa yüzeyindeki ahşap damarları, deri ceketteki kırışıklıklar, parke taşlı yoldaki çıkıntılar gösterilebilir.</li> <li>Objenin yüzey gerçekçiliğini ve derinliğini artırır.</li> </ol>",
     "correctAnswer": "E",
     "options": {
       "A": "i ve ii",
@@ -842,7 +842,7 @@
   {
     "id": "3831031",
     "unitNumber": 7,
-    "text": "Aşağıdakilerden hangisi 3 boyutlu mimari projelerle ilişkili yaygın olarak kullanılan dokümantasyon yöntemlerinden biri <span style=\"text-decoration: underline;\"><strong>değildir?</strong></span>",
+    "text": "Aşağıdakilerden hangisi 3 boyutlu mimari projelerle ilişkili yaygın olarak kullanılan dokümantasyon yöntemlerinden biri <u><strong>değildir?</strong></u>",
     "correctAnswer": "A",
     "options": {
       "A": "Elle çizim",
@@ -856,7 +856,7 @@
   {
     "id": "3831018",
     "unitNumber": 7,
-    "text": "Aşağıdakilerden hangisi 3 boyutlu modelleme için yaygın olarak kullanılan programlardan biri<strong><span style=\"text-decoration: underline;\"> değildir? </span></strong>",
+    "text": "Aşağıdakilerden hangisi 3 boyutlu modelleme için yaygın olarak kullanılan programlardan biri<strong><u> değildir? </u></strong>",
     "correctAnswer": "A",
     "options": {
       "A": "Illustrator",
@@ -870,7 +870,7 @@
   {
     "id": "3831016",
     "unitNumber": 7,
-    "text": "Aşağıdakilerden hangisi 3 boyutlu modelleme sürecinin avantajları yanında dikkate alınması gereken dezavantajlarından biri <span style=\"text-decoration: underline;\"><strong>değildir?</strong></span>",
+    "text": "Aşağıdakilerden hangisi 3 boyutlu modelleme sürecinin avantajları yanında dikkate alınması gereken dezavantajlarından biri <u><strong>değildir?</strong></u>",
     "correctAnswer": "A",
     "options": {
       "A": "Tasarımın Doğruluğunu Artırır",
@@ -884,7 +884,7 @@
   {
     "id": "3831011",
     "unitNumber": 7,
-    "text": "Aşağıdakilerden hangisi 3 boyutlu modelleme sürecinin avantajlarından biri <strong><span style=\"text-decoration: underline;\">değildir?</span></strong>",
+    "text": "Aşağıdakilerden hangisi 3 boyutlu modelleme sürecinin avantajlarından biri <strong><u>değildir?</u></strong>",
     "correctAnswer": "A",
     "options": {
       "A": "Öğrenme ve Kullanım Maliyetleri",

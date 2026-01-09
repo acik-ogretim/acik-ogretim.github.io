@@ -17,6 +17,9 @@ export function cleanHtml(text: string): string {
     // Normalize line endings
     cleaned = cleaned.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
 
+    // Normalize dashes (En dash, Em dash to hyphen)
+    cleaned = cleaned.replace(/[\u2013\u2014]/g, '-');
+
     // Standardize noisy br tags
     cleaned = cleaned.replace(/<br\b[^>]*>/gi, '<br/>');
 
@@ -32,8 +35,11 @@ export function cleanHtml(text: string): string {
     // Replace non-breaking spaces
     cleaned = cleaned.replace(/\xa0/g, ' ');
 
-    // Remove invisible zero-width chars
-    cleaned = cleaned.replace(/[\u200b\u200c\u200d\ufeff]/g, '');
+    // Remove invisible zero-width chars (and Soft Hyphen \u00ad)
+    cleaned = cleaned.replace(/[\u00ad\u200b\u200c\u200d\ufeff]/g, '');
+
+    // Replace unusual line separators with space
+    cleaned = cleaned.replace(/[\u2028\u2029]/g, ' ');
 
     // Load into Cheerio
     const $ = cheerio.load(cleaned, { xmlMode: false });
@@ -46,9 +52,28 @@ export function cleanHtml(text: string): string {
         }
     });
 
+    // Transform OL styles to type attribute (before stripping styles)
+    $('ol').each((_, el) => {
+        const style = $(el).attr('style');
+        if (style && /list-style-type:\s*upper-roman/i.test(style)) {
+            $(el).attr('type', 'I');
+        }
+        if (style && /list-style-type:\s*lower-roman/i.test(style)) {
+            $(el).attr('type', 'i');
+        }
+    });
+
+    // Transform underlined spans to <u>
+    $('span').each((_, el) => {
+        const style = $(el).attr('style');
+        if (style && /text-decoration:\s*underline/i.test(style)) {
+            el.tagName = 'u';
+        }
+    });
+
     // 2. Unwrap noisy block tags with space
     // FIX: Do NOT unwrap body/html/head as they are structural roots in Cheerio
-    const blockTags = ['div', 'article'];
+    const blockTags = ['div', 'article', 'pre'];
     // If input had <html> inside, Cheerio corrects it.
     // We rely on $('body').html() to extract content, which inherently strips wrapper html/body.
 
@@ -76,11 +101,11 @@ export function cleanHtml(text: string): string {
 
     // 5. Smart strip for ol, p, u, span, ins
     const allowedAttrs: Record<string, string[]> = {
-        'ol': ['type', 'start', 'style'],
-        'p': ['style'],
-        'u': ['style'],
-        'ins': ['style'],
-        'span': ['style']
+        'ol': ['type', 'start'],
+        'p': [],
+        'u': [],
+        'ins': [],
+        'span': []
     };
 
     Object.keys(allowedAttrs).forEach(tagName => {
@@ -94,6 +119,13 @@ export function cleanHtml(text: string): string {
                 });
             }
         });
+    });
+
+    // Unwrap attributeless spans
+    $('span').each((_, el) => {
+        if (!el.attribs || Object.keys(el.attribs).length === 0) {
+            $(el).replaceWith($(el).contents());
+        }
     });
 
     // 6. Remove empty tags
