@@ -1,0 +1,68 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/SchemaCourseAnadoluElement"
+    },
+    "definitions": {
+        "SchemaCourseAnadoluElement": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "code": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "semester": {
+                    "type": "integer"
+                },
+                "credits": {
+                    "type": "integer"
+                },
+                "ects": {
+                    "type": "integer"
+                },
+                "universityId": {
+                    "$ref": "#/definitions/UniversityID"
+                },
+                "departmentId": {
+                    "$ref": "#/definitions/DepartmentID"
+                },
+                "automationId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "automationId",
+                "code",
+                "credits",
+                "departmentId",
+                "ects",
+                "id",
+                "name",
+                "semester",
+                "universityId"
+            ],
+            "title": "SchemaCourseAnadoluElement"
+        },
+        "DepartmentID": {
+            "type": "string",
+            "enum": [
+                "acil-durum-ve-afet-yonetimi"
+            ],
+            "title": "DepartmentID"
+        },
+        "UniversityID": {
+            "type": "string",
+            "enum": [
+                "anadolu-aof"
+            ],
+            "title": "UniversityID"
+        }
+    }
+}

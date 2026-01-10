@@ -61,6 +61,9 @@ git push origin ozellik/yeni-header-tasarimi
 Ardından GitHub'daki orijinal projeye giderek **"Compare & pull request"** butonuna tıklayın ve PR'ınızı oluşturun.
 
 ## 📏 Kod Düzeni ve Standartlar
+
+Projenin teknik yapısı ve mimarisi hakkında detaylı bilgi için lütfen **[Teknik Mimari Dokümanı (TAD)](docs/TECHNICAL_ARCHITECTURE.md)**'nı inceleyin. Ayrıca kodlama standartları için **[Proje Standartları](docs/PROJECT_STANDARDS.md)** dokümanına göz atabilirsiniz.
+
 - **Framework:** Astro v5 kullanıyoruz.
 - **Dil:** TypeScript tercih ediyoruz.
 - **Stil:** Tailwind CSS sınıflarını kullanın. `style` tag'i içine css yazmaktan kaçının.

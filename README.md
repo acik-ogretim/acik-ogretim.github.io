@@ -37,21 +37,41 @@ Bu proje aşağıdaki modern web teknolojileri kullanılarak geliştirilmiştir:
 - **İkonlar:** Google Fonts, Custom SVGs
 - **Dağıtım:** GitHub Pages
 
+## 📚 Dokümantasyon
+
+Proje hakkında daha detaylı bilgi için `docs/` klasöründeki dokümanları inceleyebilirsiniz:
+
+- **[Ürün Gereksinim Dokümanı (PRD)](docs/PRD.md):** Ürün vizyonu, gereksinimler ve başarı kriterleri.
+- **[Ürün Vizyon Dokümanı (PVD)](docs/PVD.md):** Projenin uzun vadeli vizyonu ve temel değerleri.
+- **[İş Gereksinimleri Dokümanı (BRD)](docs/BRD.md):** İş hedefleri, paydaşlar ve kısıtlamalar.
+- **[Pazar Gereksinimleri Dokümanı (MRD)](docs/MRD.md):** Hedef pazar, rakipler ve fırsatlar.
+- **[Yazılım Gereksinimleri Spesifikasyonu (SRS)](docs/SRS.md):** Sistem arayüzleri ve detaylı teknik gereksinimler.
+- **[Fonksiyonel Gereksinimler Spesifikasyonu (FRS)](docs/FRS.md):** Fonksiyon bazlı girdi/işlem/çıktı tanımları.
+- **[Ürün Spesifikasyon Dokümanı (PSD)](docs/PRODUCT_SPEC.md):** Projenin amacı, özellikleri ve yol haritası.
+- **[Teknik Mimari Dokümanı (TAD)](docs/TECHNICAL_ARCHITECTURE.md):** Projenin teknik yapısı, veri modelleri ve bileşenleri.
+- **[Proje Standartları](docs/PROJECT_STANDARDS.md):** Kodlama standartları, git akışı ve proje yapısı.
+- **[Kullanım Senaryoları (Use Cases)](docs/USE_CASES.md):** Kullanıcı hikayeleri ve senaryolar.
+- **[Sistem Analizi](docs/SYSTEM_ANALYSIS.md):** Sistem gereksinimleri, performans ve kısıtlamalar.
+- **[Agent Rehberi](docs/AGENT_GUIDELINES.md):** AI asistanları ve geliştiriciler için kurallar.
+- **[Agent Rolleri](docs/AGENT_ROLES.md):** Projede görev alan AI asistanlarının rolleri ve sorumlulukları.
+- **[Katkıda Bulunma Rehberi](CONTRIBUTING.md):** Projeye nasıl katkı sağlayabileceğiniz hakkında detaylı bilgi.
+
 ## 🤝 Katkıda Bulunma
 
 Bu portal tamamen açık kaynaklıdır ve topluluk katkılarıyla büyümektedir. Katkıda bulunmak için:
 
-1.  **Hata Bildirimi & İstek:**
+1. **Hata Bildirimi & İstek:**
     - Hatalı soru bildirmek, yeni bir ders/bölüm talep etmek veya teknik bir sorun için [Issues](https://github.com/acik-ogretim/acik-ogretim.github.io/issues) sayfasını kullanın.
     - Sizin için hazırladığımız hazır şablonları (Bölüm İsteği, Hata Bildirimi, vb.) kullanarak süreci hızlandırabilirsiniz.
 
-2.  **Geliştirme:**
+2. **Geliştirme:**
     - Projeyi fork'layın.
     - Kendi branch'inizi oluşturun (`git checkout -b ozellik/yeni-ozellik`).
     - Değişikliklerinizi yapın ve commit'leyin.
     - Bir **Pull Request (PR)** açın.
 
 ### Veri Yapısı
+
 Site içeriği (`data/` klasörü) JSON dosyalarından oluşur. İstatistikler ve ders içerikleri build aşamasında bu dosyalardan otomatik olarak oluşturulur.
 
 ## 🛡️ Gizlilik ve Yasal
