@@ -198,7 +198,6 @@ export class QuizPlayer {
     if (this.ui.readExplanationBtn) this.ui.readExplanationBtn.onclick = () => this.speakExplanation();
     if (this.ui.btnToggleReader) this.ui.btnToggleReader.onclick = () => this.toggleReader();
     if (this.ui.btnStopSpeech) this.ui.btnStopSpeech.onclick = () => this.stopSpeech();
-    if (this.ui.btnTestVoiceSettings) this.ui.btnTestVoiceSettings.onclick = () => this.testVoiceSettings();
 
     // Stop speech when leaving the page
     const stopSpeech = () => this.synth.cancel();
@@ -865,6 +864,21 @@ export class QuizPlayer {
 
     if (this.speechQueue.length === 0) {
       this.isSpeakingQueue = false;
+
+      // CONTINUOUS READING: Auto-advance in Reader Mode
+      if (this.settings.readerMode && activeSession === this.currentSessionId) {
+        const hasNext = this.currentIndex < this.questions.length - 1;
+        if (hasNext) {
+          // Delay before next question depends on playback rate (shorter for faster rates)
+          const nextDelay = this.rate > 1.5 ? 500 : 1500;
+          setTimeout(() => {
+            // Check session again to prevent race conditions
+            if (activeSession === this.currentSessionId && this.settings.readerMode) {
+              this.next();
+            }
+          }, nextDelay);
+        }
+      }
       return;
     }
 
@@ -952,8 +966,8 @@ export class QuizPlayer {
       this.speechQueue.push(optText);
     }
 
-    // Chunk 3: Answer/Explanation (if not interactive)
-    if (!this.isInteractive) {
+    // Chunk 3: Answer/Explanation (if not interactive OR in reader mode)
+    if (!this.isInteractive || this.settings.readerMode) {
       let ansParts = [];
 
       // If we hid options, we start directly with the Answer

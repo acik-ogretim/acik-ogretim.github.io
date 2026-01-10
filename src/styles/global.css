@@ -799,7 +799,7 @@ body {
 }
 
 .toggle-track {
-    width: 2.75rem;
+    width: 3rem;
     height: 1.5rem;
     background-color: #334155;
     border-radius: 9999px;
@@ -812,19 +812,78 @@ body {
 
 .toggle-knob {
     position: absolute;
-    top: 2px;
-    left: 2px;
+    left: 0.25rem;
+    width: 1rem;
+    height: 1rem;
     background-color: white;
-    border: 1px solid #d1d5db;
     border-radius: 9999px;
-    height: 1.25rem;
-    width: 1.25rem;
     transition: transform 0.2s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .toggle-input:checked+.toggle-track .toggle-knob {
-    transform: translateX(1.25rem);
-    border-color: white;
+    transform: translateX(1.5rem);
+}
+
+/* Compact Modal Variants */
+.modal-content-compact {
+    position: relative;
+    width: 100%;
+    max-width: 25rem;
+    background-color: #0f172a;
+    border-radius: 1rem;
+    border: 1px solid rgba(51, 65, 85, 0.6);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.modal-body-compact {
+    padding: 1rem;
+    /* Reclaimed padding */
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-body-compact select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 0.75rem;
+    padding-right: 1.75rem !important;
+    appearance: none;
+}
+
+.toggle-input-small {
+    appearance: none;
+    width: 2.25rem;
+    height: 1.25rem;
+    background: #334155;
+    border-radius: 9999px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.toggle-input-small:checked {
+    background: #14b8a6;
+}
+
+.toggle-input-small::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 1rem;
+    height: 1rem;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.toggle-input-small:checked::after {
+    transform: translateX(1rem);
 }
 
 /* Player Bar Components (Premium Slate Theme) */
