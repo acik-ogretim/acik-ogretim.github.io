@@ -1,21 +1,48 @@
 import { z } from 'astro:content';
-import { courseSchema, departmentSchema, questionSchema, universitySchema } from './schemas';
+import {
+    courseSchema,
+    DegreeEnum,
+    departmentSchema,
+    DifficultyEnum,
+    ExamTypeEnum,
+    OptionKeyEnum,
+    questionSchema,
+    SourceEnum,
+    universitySchema
+} from './schemas';
 
+/**
+ * Derived Types from Strict Zod Schemas
+ * These types are now as rigid as the schemas themselves.
+ */
 export type University = z.infer<typeof universitySchema>;
 export type Department = z.infer<typeof departmentSchema>;
 export type Course = z.infer<typeof courseSchema>;
 export type Question = z.infer<typeof questionSchema>;
 
+/**
+ * Strict Enum Types
+ */
+export type Degree = z.infer<typeof DegreeEnum>;
+export type Source = z.infer<typeof SourceEnum>;
+export type ExamType = z.infer<typeof ExamTypeEnum>;
+export type Difficulty = z.infer<typeof DifficultyEnum>;
+export type OptionKey = z.infer<typeof OptionKeyEnum>;
+
+/**
+ * Quiz Player Specific Interfaces
+ * Standardized to match the strict Question type
+ */
 export interface PlayerQuestion {
     id: string;
     text: string;
-    correctKey: string;
+    correctKey: OptionKey;
     correctAnswerText: string;
     explanation: string;
     unitNumber: number;
-    source?: string;
+    source: Source;
     el: HTMLElement | null;
-    options: { key: string; text: string }[];
+    options: { key: OptionKey; text: string }[];
 }
 
 export interface QuizSettings {
@@ -51,11 +78,31 @@ export interface PlayerUI {
     btnOpenSettings: HTMLElement | null;
     settingsDrawer: HTMLElement | null;
     successRate: HTMLElement | null;
-    repeatBtn: HTMLElement | null; // This will now map to Read Question
+    repeatBtn: HTMLElement | null;
     readQuestionBtn: HTMLElement | null;
     readExplanationBtn: HTMLElement | null;
     questionCount: HTMLElement | null;
     btnToggleReader: HTMLElement | null;
     btnStopSpeech: HTMLElement | null;
     btnTestVoiceSettings: HTMLElement | null;
+}
+
+/**
+ * Material & CMS Types - Also strictly defined
+ */
+export interface Material {
+    id: string;
+    title: string;
+    url: string;
+    type: 'pdf' | 'html' | 'external';
+}
+
+export interface GroupedMaterials {
+    [category: string]: {
+        isTabbed: boolean;
+        subGroups: {
+            [subGroupKey: string]: Material[];
+        };
+        items: Material[];
+    };
 }

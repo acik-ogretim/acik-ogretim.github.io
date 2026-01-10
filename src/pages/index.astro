@@ -19,18 +19,14 @@ try {
 // Group departments by university and enrich with real counts
 // WE USE data/universities.json AS SOURCE OF TRUTH
 const universityData = allUniversitiesData.map((uni: University) => {
+  const activeDepartments = (uni.departments || []).filter((d: Department) => d.active !== false);
   return {
     ...uni,
-    // For display, we keep standard fields.
-    // The raw JSON already has 'departments' array.
-    // We want to count ALL departments in the raw JSON.
     totalDepartmentCount: uni.departments?.length || 0,
-    // The UI expects 'departments' to be a list of active ones or similar.
-    // In raw JSON, 'departments' contains all objects.
-    // Let's filter for active ones if needed, or just map them to match expected shape.
-    departments: (uni.departments || []).filter((d: Department) => d.active !== false) // default true if undefined
+    departments: activeDepartments
   };
-}).sort((a, b) => a.order - b.order);
+}).filter(uni => uni.departments.length > 0)
+  .sort((a, b) => a.order - b.order);
 
 // Calculate real stats from data directory
 async function getStats() {
@@ -89,7 +85,11 @@ async function getStats() {
   return { courseCount, questionCount, departmentCount };
 }
 
-const calculatedStats = await getStats();
+// Optimization: Fetch real stats only in production or if requested.
+// Heavy filesystem scans in index.astro can cause dev mode timeouts.
+const calculatedStats = import.meta.env.DEV
+  ? { courseCount: 750, questionCount: 25000, departmentCount: 180 }
+  : await getStats();
 
 // Stats
 const stats = {
@@ -252,6 +252,7 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
             <a
               href={`/${uni.id}`}
               class="group university-card"
+              data-testid={`uni-card-${uni.id}`}
               itemscope
               itemtype="https://schema.org/CollegeOrUniversity"
             >

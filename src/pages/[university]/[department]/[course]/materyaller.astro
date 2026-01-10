@@ -1,78 +1,77 @@
 ---
 import Layout from "../../../../layouts/Layout.astro";
 import { getCourses, getUniversities } from "../../../../lib/api";
-import type { Course, Department, University } from "../../../../lib/types";
+import type {
+    Course,
+    Department,
+    University,
+    Material,
+    GroupedMaterials,
+} from "../../../../lib/types";
 import anadoluMaterialsData from "../../../../data/anadolu-materials.json";
 
 export async function getStaticPaths() {
-  const universities = await getUniversities();
-  const paths = [];
+    const universities = await getUniversities();
+    const paths = [];
 
-  for (const uni of universities) {
-    const departments = uni.departments || [];
-    for (const dept of departments) {
-      const courses = await getCourses(uni.id, dept.id);
-      for (const course of courses) {
-        paths.push({
-          params: {
-            university: uni.id,
-            department: dept.id,
-            course: course.id,
-          },
-          props: { university: uni, department: dept, course },
-        });
-      }
+    for (const uni of universities) {
+        const departments = uni.departments || [];
+        for (const dept of departments) {
+            const courses = await getCourses(uni.id, dept.id);
+            for (const course of courses) {
+                paths.push({
+                    params: {
+                        university: uni.id,
+                        department: dept.id,
+                        course: course.id,
+                    },
+                    props: { university: uni, department: dept, course },
+                });
+            }
+        }
     }
-  }
-  return paths;
+    return paths;
 }
 
 interface Props {
-  university: University;
-  department: Department;
-  course: Course;
+    university: University;
+    department: Department;
+    course: Course;
 }
 
 const { university, department, course } = Astro.props;
 const automationId = course.automationId;
 
-const isAtaAof = university.id === 'ataturk-aof' && !!automationId;
-const isAnadolu = university.id === 'anadolu-aof';
+const isAtaAof = university.id === "ataturk-aof" && !!automationId;
+const isAnadolu = university.id === "anadolu-aof";
 
 // Helper to normalize strings (CLIENT/SERVER shared logic)
 function normalize(str: string) {
     if (!str) return "";
     return str
-        .replace(/İ/g, 'i')
-        .replace(/I/g, 'i')
+        .replace(/İ/g, "i")
+        .replace(/I/g, "i")
         .toLowerCase()
-        .replace(/ı/g, 'i')
-        .replace(/ğ/g, 'g')
-        .replace(/ü/g, 'u')
-        .replace(/ş/g, 's')
-        .replace(/ö/g, 'o')
-        .replace(/ç/g, 'c')
-        .replace(/[^a-z0-9]/g, '')
+        .replace(/ı/g, "i")
+        .replace(/ğ/g, "g")
+        .replace(/ü/g, "u")
+        .replace(/ş/g, "s")
+        .replace(/ö/g, "o")
+        .replace(/ç/g, "c")
+        .replace(/[^a-z0-9]/g, "")
         .trim();
 }
 
 // Generate Material List
-type Material = {
-    id: string | number;
-    title: string;
-    url: string;
-    type?: 'pdf' | 'html' | 'external';
-};
-
 const materials: Material[] = [];
 
 if (isAtaAof) {
     // 1. Short Summary
     materials.push({
-        id: 'summary',
-        title: '📝 Kısa Özet',
+        id: "summary",
+        title: "📝 Kısa Özet",
         url: `https://oys.ataaof.edu.tr/kisaozetpdf/${automationId}-kisaozet.pdf`,
-        type: 'pdf'
+        type: "pdf",
     });
 
     // 2. Units
@@ -82,7 +81,7 @@ if (isAtaAof) {
             id: `unit-${i}`,
             title: `📚 Ünite ${i}`,
             url: `https://oys.ataaof.edu.tr/file/${automationId}-${i}.pdf`,
-            type: 'pdf'
+            type: "pdf",
         });
     }
 } else if (isAnadolu) {
@@ -93,17 +92,17 @@ if (isAtaAof) {
 
     extraMaterials.forEach((m: any) => {
         // Avoid duplicates if we already added it (simple check by url)
-        if (!materials.some(exist => exist.url === m.url)) {
+        if (!materials.some((exist) => exist.url === m.url)) {
             // Determine title icon based on type/category
-            let icon = '🔗';
-            if (m.type === 'html') icon = '🌍';
-            else if (m.category && m.category.includes('Canlı')) icon = '📹';
+            let icon = "🔗";
+            if (m.type === "html") icon = "🌍";
+            else if (m.category && m.category.includes("Canlı")) icon = "📹";
 
             materials.push({
                 id: `ext-${m.id}`,
                 title: `${icon} ${m.title}`,
                 url: m.url,
-                type: m.type as any
+                type: m.type as any,
             });
         }
     });
@@ -115,12 +114,12 @@ if (isAtaAof) {
         for (let i = 1; i <= count; i++) {
             const url = `https://ets.anadolu.edu.tr/storage/nfs/html_books/${code}_INTERACTIVE/${code}-U${i}/`;
             // Only add if NOT already present (from JSON import)
-            if (!materials.some(m => m.url.includes(url))) {
+            if (!materials.some((m) => m.url.includes(url))) {
                 materials.push({
                     id: `unit-${i}`,
                     title: `🌍 Ünite ${i} (İnteraktif)`,
                     url: url,
-                    type: 'html'
+                    type: "html",
                 });
             }
         }
@@ -128,43 +127,39 @@ if (isAtaAof) {
 }
 
 // --- Smart Grouping Logic ---
-type GroupedMaterials = {
-    [category: string]: {
-        isTabbed?: boolean;
-        subGroups: {
-            [subGroupKey: string]: Material[];
-        };
-        items: Material[]; // Items that don't belong to a subgroup
-    };
-};
-
 const groups: GroupedMaterials = {};
 
 // Sort materials to ensure stability
-materials.forEach(m => {
-    let category = 'Genel';
+materials.forEach((m) => {
+    let category = "Genel";
     // Mapping naive categories to better headers
-    if (m.type === 'pdf' && m.id.toString().startsWith('unit')) category = 'Ünite PDFleri';
-    else if (m.type === 'html') category = 'İnteraktif Üniteler';
+    if (
+        m.type === "pdf" &&
+        (m.id.toString().startsWith("unit") || m.id.toString() === "summary")
+    ) {
+        category = m.id === "summary" ? "Özetler" : "Ünite PDFleri";
+    } else if (m.type === "html") category = "İnteraktif Üniteler";
+
     // Anadolu categories from JSON
     if (isAnadolu) {
-        if (m.title.startsWith('Ünite')) category = 'Üniteler';
-        else if (m.title.includes('Canlı Ders')) category = 'Canlı Ders Kayıtları';
-        else if (m.title.includes('Çıkmış Sınav')) category = 'Çıkmış Sorular';
-        else if (m.title.includes('Özet')) category = 'Özetler';
+        if (m.title.startsWith("Ünite")) category = "Üniteler";
+        else if (m.title.includes("Canlı Ders"))
+            category = "Canlı Ders Kayıtları";
+        else if (m.title.includes("Çıkmış Sınav")) category = "Çıkmış Sorular";
+        else if (m.title.includes("Özet")) category = "Özetler";
     }
 
     // Initialize Category
-    if (!groups[category]) groups[category] = { subGroups: {}, items: [] };
+    if (!groups[category]) groups[category] = { isTabbed: false, subGroups: {}, items: [] };
 
     // Sub-grouping logic (specifically for Live Courses by Year)
     let addedToSub = false;
-    if (category === 'Canlı Ders Kayıtları') {
-        // Regex to find "2024-2025 Güz" etc.
+    if (category === "Canlı Ders Kayıtları") {
         const match = m.title.match(/(\d{4}-\d{4}\s+\w+)/);
         if (match) {
             const yearKey = match[1];
-            if (!groups[category].subGroups[yearKey]) groups[category].subGroups[yearKey] = [];
+            if (!groups[category].subGroups[yearKey])
+                groups[category].subGroups[yearKey] = [];
             groups[category].subGroups[yearKey].push(m);
             groups[category].isTabbed = true;
             addedToSub = true;
@@ -180,243 +175,330 @@ const defaultMaterial = materials.length > 0 ? materials[0] : null;
 
 // Helper to determine initial iframe src
 const getViewerUrl = (item: any) => {
-    if (!item) return '';
-
-    // Explicit HTML or interactive types -> Direct URL
-    if (item.type === 'html') return item.url;
-
-    // Helper to convert YouTube links to Embed format
+    if (!item) return "";
+    if (item.type === "html") return item.url;
     const convertToEmbed = (url: string) => {
-        const youtubeRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
+        const youtubeRegex =
+            /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
         const match = url.match(youtubeRegex);
         if (match && match[1]) {
             return `https://www.youtube.com/embed/${match[1]}?autoplay=0`;
         }
         return url;
     };
-
-    // Check for YouTube
-    if (item.url.includes('youtube.com') || item.url.includes('youtu.be')) {
+    if (item.url.includes("youtube.com") || item.url.includes("youtu.be")) {
         return convertToEmbed(item.url);
     }
-
-    // Check for PDF extension or explicit type
-    const isPdf = item.type === 'pdf' || item.url.toLowerCase().endsWith('.pdf');
+    const isPdf =
+        item.type === "pdf" || item.url.toLowerCase().endsWith(".pdf");
     if (isPdf) {
-        return 'https://docs.google.com/viewer?url=' + encodeURIComponent(item.url) + '&embedded=true';
+        return (
+            "https://docs.google.com/viewer?url=" +
+            encodeURIComponent(item.url) +
+            "&embedded=true"
+        );
     }
-
-    // Default: Return standard URL (assuming it's embeddable or will be handled by browser)
     return item.url;
 };
 ---
 
 <Layout title={`Materyaller: ${course.name}`}>
-  <div class="py-12 min-h-screen">
-    <div class="container-base h-full flex flex-col">
-      <!-- Breadcrumbs -->
-      <nav class="flex mb-8 text-sm text-muted-theme">
-        <a href={`/${university.id}/${department.id}/${course.id}`} class="hover:text-primary-theme transition-colors">
-          🔙 Derse Dön
-        </a>
-        <span class="mx-2">/</span>
-        <span class="text-theme font-medium">Ders Materyalleri</span>
-      </nav>
+    <div class="py-12 min-h-screen">
+        <div class="container-base h-full flex flex-col">
+            <!-- Breadcrumbs -->
+            <nav class="flex mb-8 text-sm text-muted-theme">
+                <a
+                    href={`/${university.id}/${department.id}/${course.id}`}
+                    class="hover:text-primary-theme transition-colors"
+                >
+                    🔙 Derse Dön
+                </a>
+                <span class="mx-2">/</span>
+                <span class="text-theme font-medium">Ders Materyalleri</span>
+            </nav>
 
-      <div class="flex items-center justify-between mb-8">
-        <div>
-           <h1 class="text-xl md:text-2xl font-bold text-theme">{course.name}</h1>
-           <p class="text-muted-theme text-sm">Resmi Ders Kaynakları</p>
-        </div>
-        <a href={`/${university.id}/${department.id}/${course.id}`} class="btn-secondary text-sm">
-            Teslere Dön
-        </a>
-      </div>
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold text-theme">
+                        {course.name}
+                    </h1>
+                    <p class="text-muted-theme text-sm">
+                        Resmi Ders Kaynakları
+                    </p>
+                </div>
+                <a
+                    href={`/${university.id}/${department.id}/${course.id}`}
+                    class="btn-secondary text-sm"
+                >
+                    Teslere Dön
+                </a>
+            </div>
 
-      <div class="flex flex-col lg:flex-row gap-6 h-[800px]">
+            <div class="flex flex-col lg:flex-row gap-6 h-[800px]">
+                <!-- Sidebar: Smart Group List -->
+                <div
+                    class="w-full lg:w-1/4 flex flex-col gap-2 overflow-y-auto glass p-4 rounded-xl border border-theme h-48 lg:h-full"
+                >
+                    {
+                        Object.keys(groups).length > 0 ? (
+                            Object.entries(groups).map(([catName, group]) => (
+                                <details
+                                    class="group/accordion mb-1"
+                                    open={
+                                        catName.includes("Ünite") ||
+                                        catName.includes("Canlı")
+                                    }
+                                >
+                                    <summary class="accordion-summary">
+                                        {catName}
+                                        <span class="group-open/accordion:rotate-180 transition-transform text-xs">
+                                            ▼
+                                        </span>
+                                    </summary>
 
-        <!-- Sidebar: Smart Group List -->
-        <div class="w-full lg:w-1/4 flex flex-col gap-2 overflow-y-auto glass p-4 rounded-xl border border-theme h-48 lg:h-full">
-            {Object.keys(groups).length > 0 ? (
-                Object.entries(groups).map(([catName, group]) => (
-                    <details class="group/accordion mb-1" open={catName.includes('Ünite') || catName.includes('Canlı')}>
-                        <summary class="accordion-summary">
-                            {catName}
-                            <span class="group-open/accordion:rotate-180 transition-transform text-xs">▼</span>
-                        </summary>
+                                    <div class="pl-2 flex flex-col gap-1 pb-2">
+                                        {group.isTabbed && (
+                                            <div class="flex flex-wrap gap-2 mb-2">
+                                                {Object.keys(group.subGroups)
+                                                    .sort()
+                                                    .reverse()
+                                                    .map((subKey, idx) => (
+                                                        <button
+                                                            class="tab-btn tab-btn-base"
+                                                            data-category={
+                                                                catName
+                                                            }
+                                                            data-tab={subKey}
+                                                            data-active-tab={
+                                                                idx === 0
+                                                            }
+                                                        >
+                                                            {subKey}
+                                                        </button>
+                                                    ))}
+                                            </div>
+                                        )}
 
-                        <div class="pl-2 flex flex-col gap-1 pb-2">
-                            {/* Render Tab Headers if sub-groups exist */}
-                            {group.isTabbed && (
-                                <div class="flex flex-wrap gap-2 mb-2">
-                                    {Object.keys(group.subGroups).sort().reverse().map((subKey, idx) => (
-                                        <button
-                                            class="tab-btn tab-btn-base"
-                                            data-category={catName}
-                                            data-tab={subKey}
-                                            data-active-tab={idx === 0}
-                                        >
-                                            {subKey}
-                                        </button>
-                                    ))}
+                                        {Object.entries(group.subGroups).map(
+                                            ([subKey, subItems], idx) => (
+                                                <div
+                                                    class={`flex flex-col gap-1 tab-content ${idx !== 0 ? "hidden" : ""}`}
+                                                    data-category={catName}
+                                                    data-tab-content={subKey}
+                                                >
+                                                    {subItems.map((item) => (
+                                                        <button
+                                                            data-url={item.url}
+                                                            data-type={
+                                                                item.type
+                                                            }
+                                                            class="material-btn material-btn-base"
+                                                        >
+                                                            <span class="text-xs opacity-50 shrink-0">
+                                                                {item.type ===
+                                                                "html"
+                                                                    ? "🌍"
+                                                                    : item.type ===
+                                                                        "pdf"
+                                                                      ? "📄"
+                                                                      : "🔗"}
+                                                            </span>
+                                                            <span class="truncate">
+                                                                {item.title
+                                                                    .replace(
+                                                                        subKey,
+                                                                        "",
+                                                                    )
+                                                                    .replace(
+                                                                        /^[_\W]+/,
+                                                                        "",
+                                                                    )}
+                                                            </span>
+                                                        </button>
+                                                    ))}
+                                                </div>
+                                            ),
+                                        )}
+
+                                        {group.items.map((item) => (
+                                            <button
+                                                data-url={item.url}
+                                                data-type={item.type}
+                                                class="material-btn material-btn-base"
+                                            >
+                                                <span class="text-xs opacity-50 shrink-0">
+                                                    {item.type === "html"
+                                                        ? "🌍"
+                                                        : item.type === "pdf"
+                                                          ? "📄"
+                                                          : "🔗"}
+                                                </span>
+                                                <span class="truncate">
+                                                    {item.title}
+                                                </span>
+                                            </button>
+                                        ))}
+                                    </div>
+                                </details>
+                            ))
+                        ) : (
+                            <div class="text-sm text-slate-500 italic p-2">
+                                Bu ders için materyal bulunamadı.
+                            </div>
+                        )
+                    }
+                </div>
+
+                <!-- Viewer -->
+                <div
+                    class="w-full lg:w-3/4 flex-1 glass border border-theme rounded-xl overflow-hidden relative flex flex-col"
+                >
+                    {
+                        defaultMaterial ? (
+                            <>
+                                <div class="bg-slate-900 px-4 py-2 border-b border-theme flex justify-between items-center shrink-0">
+                                    <span
+                                        id="viewer-title"
+                                        class="text-xs font-bold text-teal-400 truncate pr-4"
+                                    >
+                                        {defaultMaterial.title}
+                                    </span>
+                                    <a
+                                        id="download-link"
+                                        href={defaultMaterial.url}
+                                        target="_blank"
+                                        class="text-xs text-blue-400 hover:text-blue-300 flex items-center gap-1 shrink-0"
+                                    >
+                                        {defaultMaterial.type === "html"
+                                            ? "🔗 Yeni Sekmede Aç"
+                                            : "⬇️ İndir"}
+                                    </a>
                                 </div>
-                            )}
 
-                            {/* Render SubGroup Items (controlled by tabs) */}
-                            {Object.entries(group.subGroups).map(([subKey, subItems], idx) => (
+                                <iframe
+                                    id="pdf-viewer"
+                                    src={getViewerUrl(defaultMaterial)}
+                                    class="w-full h-full border-0 bg-white"
+                                    title="Materyal Önizleme"
+                                />
+
                                 <div
-                                    class={`flex flex-col gap-1 tab-content ${idx !== 0 ? 'hidden' : ''}`}
-                                    data-category={catName}
-                                    data-tab-content={subKey}
+                                    id="loader"
+                                    class="absolute inset-0 bg-slate-900 flex flex-col items-center justify-center z-10 hidden"
                                 >
-                                    {subItems.map(item => (
-                                        <button
-                                            data-url={item.url}
-                                            data-type={item.type}
-                                            class="material-btn material-btn-base"
-                                        >
-                                            <span class="text-xs opacity-50 shrink-0">{item.type === 'html' ? '🌍' : (item.type === 'pdf' ? '📄' : '🔗')}</span>
-                                            <span class="truncate">{item.title.replace(subKey, '').replace(/^[_\W]+/, '')}</span>
-                                        </button>
-                                    ))}
+                                    <div class="w-8 h-8 border-2 border-teal-500 border-t-transparent rounded-full animate-spin mb-2" />
+                                    <span class="text-xs text-slate-400">
+                                        Yükleniyor...
+                                    </span>
                                 </div>
-                            ))}
-
-                            {/* Render Loose Items */}
-                            {group.items.map(item => (
-                                <button
-                                    data-url={item.url}
-                                    data-type={item.type}
-                                    class="material-btn material-btn-base"
-                                >
-                                    <span class="text-xs opacity-50 shrink-0">{item.type === 'html' ? '🌍' : (item.type === 'pdf' ? '📄' : '🔗')}</span>
-                                    <span class="truncate">{item.title}</span>
-                                </button>
-                            ))}
-                        </div>
-                    </details>
-                ))
-            ) : (
-                <div class="text-sm text-slate-500 italic p-2">Bu ders için materyal bulunamadı.</div>
-            )}
+                            </>
+                        ) : (
+                            <div class="w-full h-full flex flex-col items-center justify-center p-12 text-center text-muted-theme">
+                                <div class="text-5xl mb-4">🚧</div>
+                                <p>Görüntülenecek materyal yok.</p>
+                            </div>
+                        )
+                    }
+                </div>
+            </div>
         </div>
-
-        <!-- Viewer -->
-        <div class="w-full lg:w-3/4 flex-1 glass border border-theme rounded-xl overflow-hidden relative flex flex-col">
-             {defaultMaterial ? (
-                 <>
-                    <div class="bg-slate-900 px-4 py-2 border-b border-theme flex justify-between items-center shrink-0">
-                        <span id="viewer-title" class="text-xs font-bold text-teal-400 truncate pr-4">{defaultMaterial.title}</span>
-                        <a id="download-link" href={defaultMaterial.url} target="_blank" class="text-xs text-blue-400 hover:text-blue-300 flex items-center gap-1 shrink-0">
-                             {defaultMaterial.type === 'html' ? '🔗 Yeni Sekmede Aç' : '⬇️ İndir'}
-                        </a>
-                    </div>
-
-                    <iframe
-                        id="pdf-viewer"
-                        src={getViewerUrl(defaultMaterial)}
-                        class="w-full h-full border-0 bg-white"
-                        title="Materyal Önizleme"
-                    />
-
-                    <!-- Loading Indicator Overlay -->
-                    <div id="loader" class="absolute inset-0 bg-slate-900 flex flex-col items-center justify-center z-10 hidden">
-                        <div class="w-8 h-8 border-2 border-teal-500 border-t-transparent rounded-full animate-spin mb-2"></div>
-                        <span class="text-xs text-slate-400">Yükleniyor...</span>
-                    </div>
-                 </>
-             ) : (
-                 <div class="w-full h-full flex flex-col items-center justify-center p-12 text-center text-muted-theme">
-                    <div class="text-5xl mb-4">🚧</div>
-                    <p>Görüntülenecek materyal yok.</p>
-                 </div>
-             )}
-        </div>
-
-      </div>
     </div>
-  </div>
 </Layout>
 
 <script>
-  // DOM Elements
-  const viewer = document.getElementById('pdf-viewer') as HTMLIFrameElement;
-  const viewerTitle = document.getElementById('viewer-title');
-  const downloadLink = document.getElementById('download-link') as HTMLAnchorElement;
-  const loader = document.getElementById('loader');
+    const viewer = document.getElementById("pdf-viewer") as HTMLIFrameElement;
+    const viewerTitle = document.getElementById("viewer-title");
+    const downloadLink = document.getElementById(
+        "download-link",
+    ) as HTMLAnchorElement;
+    const loader = document.getElementById("loader");
 
-  // Handle Material Clicking
-  document.querySelectorAll('.material-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-          // Highlight active state
-          document.querySelectorAll('.material-btn').forEach(b => {
-               b.classList.remove('is-active');
-          });
-          btn.classList.add('is-active');
+    document.querySelectorAll(".material-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            document.querySelectorAll(".material-btn").forEach((b) => {
+                b.classList.remove("is-active");
+            });
+            btn.classList.add("is-active");
 
-          // Load content
-          const url = btn.getAttribute('data-url');
-          const type = btn.getAttribute('data-type');
-          if (!url || !viewer) return;
+            const url = btn.getAttribute("data-url");
+            const type = btn.getAttribute("data-type");
+            if (!url || !viewer) return;
 
-          if (viewerTitle) viewerTitle.textContent = btn.textContent?.trim() || '';
-          if (downloadLink) {
-              downloadLink.href = url;
-              downloadLink.textContent = type === 'html' ? '🔗 Yeni Sekmede Aç' : '⬇️ İndir';
-          }
-          if (loader) loader.classList.remove('hidden');
+            if (viewerTitle)
+                viewerTitle.textContent = btn.textContent?.trim() || "";
+            if (downloadLink) {
+                downloadLink.href = url;
+                downloadLink.textContent =
+                    type === "html" ? "🔗 Yeni Sekmede Aç" : "⬇️ İndir";
+            }
+            if (loader) loader.classList.remove("hidden");
 
-          const isPdf = type === 'pdf' || url.toLowerCase().endsWith('.pdf');
-          let finalSrc = url;
+            const isPdf = type === "pdf" || url.toLowerCase().endsWith(".pdf");
+            let finalSrc = url;
 
-          const convertToEmbed = (u: string) => {
-              const youtubeRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
-              const match = u.match(youtubeRegex);
-              if (match && match[1]) {
-                  return `https://www.youtube.com/embed/${match[1]}?autoplay=0`;
-              }
-              return u;
-          };
+            const convertToEmbed = (u: string) => {
+                const youtubeRegex =
+                    /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
+                const match = u.match(youtubeRegex);
+                if (match && match[1]) {
+                    return `https://www.youtube.com/embed/${match[1]}?autoplay=0`;
+                }
+                return u;
+            };
 
-          if (isPdf) {
-               finalSrc = `https://docs.google.com/viewer?url=${encodeURIComponent(url)}&embedded=true`;
-          } else if (url.includes('youtube.com') || url.includes('youtu.be')) {
-               finalSrc = convertToEmbed(url);
-          }
+            // Re-implementing logic correctly
+            if (isPdf) {
+                finalSrc = `https://docs.google.com/viewer?url=${encodeURIComponent(url)}&embedded=true`;
+            } else if (
+                url.includes("youtube.com") ||
+                url.includes("youtu.be")
+            ) {
+                const ytMatch = url.match(
+                    /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/,
+                );
+                if (ytMatch && ytMatch[1])
+                    finalSrc = `https://www.youtube.com/embed/${ytMatch[1]}?autoplay=0`;
+            }
 
-          setTimeout(() => {
-              viewer.src = finalSrc;
-              viewer.onload = () => { if (loader) loader.classList.add('hidden'); };
-              setTimeout(() => { if (loader) loader.classList.add('hidden'); }, 2000);
-          }, 300);
-      });
-  });
+            setTimeout(() => {
+                viewer.src = finalSrc;
+                viewer.onload = () => {
+                    if (loader) loader.classList.add("hidden");
+                };
+                setTimeout(() => {
+                    if (loader) loader.classList.add("hidden");
+                }, 2000);
+            }, 300);
+        });
+    });
 
-  // Handle Tab Switching (Year tabs)
-  document.querySelectorAll('.tab-btn').forEach(tab => {
-      tab.addEventListener('click', () => {
-          const category = tab.getAttribute('data-category');
-          const targetKey = tab.getAttribute('data-tab');
+    document.querySelectorAll(".tab-btn").forEach((tab) => {
+        tab.addEventListener("click", () => {
+            const category = tab.getAttribute("data-category");
+            const targetKey = tab.getAttribute("data-tab");
+            document
+                .querySelectorAll(`.tab-btn[data-category="${category}"]`)
+                .forEach((t) => {
+                    t.classList.remove("is-active");
+                });
+            tab.classList.add("is-active");
+            document
+                .querySelectorAll(`.tab-content[data-category="${category}"]`)
+                .forEach((content) => {
+                    if (
+                        content.getAttribute("data-tab-content") === targetKey
+                    ) {
+                        content.classList.remove("hidden");
+                    } else {
+                        content.classList.add("hidden");
+                    }
+                });
+        });
+    });
 
-          // Toggle tab active state
-          document.querySelectorAll(`.tab-btn[data-category="${category}"]`).forEach(t => {
-              t.classList.remove('is-active');
-          });
-          tab.classList.add('is-active');
-
-          // Show/Hide Content
-          document.querySelectorAll(`.tab-content[data-category="${category}"]`).forEach(content => {
-              if (content.getAttribute('data-tab-content') === targetKey) {
-                  content.classList.remove('hidden');
-              } else {
-                  content.classList.add('hidden');
-              }
-          });
-      });
-  });
-
-  // Init first tabs active design
-  document.querySelectorAll('.tab-btn[data-active-tab="true"]').forEach(t => {
-      t.classList.add('is-active');
-  });
+    document
+        .querySelectorAll('.tab-btn[data-active-tab="true"]')
+        .forEach((t) => {
+            t.classList.add("is-active");
+        });
 </script>

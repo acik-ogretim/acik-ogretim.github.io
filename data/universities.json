@@ -1130,5 +1130,39 @@
                 "active": true
             }
         ]
+    },
+    {
+        "id": "test-uni",
+        "name": "Test Üniversitesi",
+        "shortName": "Test AÖF",
+        "faculty": "Test Fakültesi",
+        "website": "https://example.com",
+        "logo": "/icons/universities/test-uni.png",
+        "color": "#000000",
+        "order": 100,
+        "departments": [
+            {
+                "id": "test-dept-active",
+                "universityId": "test-uni",
+                "name": "Aktif Test Bölümü",
+                "shortName": "AKTİF",
+                "code": "1001",
+                "degree": "lisans",
+                "duration": 8,
+                "active": true,
+                "order": 1
+            },
+            {
+                "id": "test-dept-passive",
+                "universityId": "test-uni",
+                "name": "Pasif Test Bölümü",
+                "shortName": "PASİF",
+                "code": "1002",
+                "degree": "onlisans",
+                "duration": 4,
+                "active": false,
+                "order": 2
+            }
+        ]
     }
 ]

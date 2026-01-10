@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { getDepartments, getUniversities, getCourses } from "../lib/api";
+import type { University, Course } from "../lib/types";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -32,7 +33,7 @@ function departmentHasQuestions(deptId: string): boolean {
     if (!Array.isArray(courses) || courses.length === 0) return false;
 
     // Check if at least one course has questions
-    return courses.some((course: any) => {
+    return courses.some((course: Course) => {
       const questionsFile = path.join(QUESTIONS_DIR, `${course.id}.json`);
       if (!fs.existsSync(questionsFile)) return false;
       try {
@@ -207,6 +208,7 @@ const style = uniStyles[university.id] || {
                       data-dept-name={dept.name}
                       data-dept-icon={dept.icon || ""}
                       data-uni-id={university.id}
+                      data-testid={`dept-card-${dept.id}`}
                     >
                       <div class="relative glass p-4 rounded-xl border border-theme bg-card-theme hover:border-primary-theme/50 transition-all">
                         <button

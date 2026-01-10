@@ -1,4 +1,4 @@
-import type { PlayerQuestion, PlayerUI, QuizSettings } from "../lib/types";
+import type { PlayerQuestion, PlayerUI, QuizSettings, OptionKey, Source } from "../lib/types";
 
 export class QuizPlayer {
   questions: PlayerQuestion[];
@@ -115,7 +115,22 @@ export class QuizPlayer {
 
       const correctOption = el.querySelector('.correct-option');
       const correctKeyText = (correctOption?.querySelector('.option-key') as HTMLElement)?.innerText;
-      const correctKey = correctKeyText ? correctKeyText.replace('.', '').trim() : '';
+      const rawKey = correctKeyText ? correctKeyText.replace('.', '').trim() : '';
+      const normalizeKey = (k: string): OptionKey => {
+        const up = k.toUpperCase();
+        switch (up) {
+          case '':
+          case 'A':
+          case 'B':
+          case 'C':
+          case 'D':
+          case 'E':
+            return up as OptionKey;
+          default:
+            return '' as OptionKey;
+        }
+      };
+      const correctKey = normalizeKey(rawKey);
       const correctAnswerText = (correctOption?.querySelector('.option-text') as HTMLElement)?.innerText || '';
 
       const expDiv = el.querySelector('.explanation-box') as HTMLElement;
@@ -129,11 +144,11 @@ export class QuizPlayer {
       const unitNumber = parseInt(unitText);
 
       // Get options
-      const options: { key: string; text: string }[] = [];
+      const options: { key: OptionKey; text: string }[] = [];
       el.querySelectorAll('.option-item').forEach(optNode => {
         const key = (optNode.querySelector('.option-key') as HTMLElement)?.innerText || '';
         const optText = (optNode.querySelector('.option-text') as HTMLElement)?.innerText || '';
-        options.push({ key: key.trim(), text: optText.trim() });
+        options.push({ key: normalizeKey(key.trim()), text: optText.trim() });
       });
 
       const q: PlayerQuestion = {
@@ -143,6 +158,7 @@ export class QuizPlayer {
         correctAnswerText,
         explanation,
         unitNumber,
+        source: 'soru-bankasi' as Source,
         el: el as HTMLElement,
         options
       };

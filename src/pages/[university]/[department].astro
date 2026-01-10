@@ -7,7 +7,7 @@ export async function getStaticPaths() {
   const paths = [];
 
   for (const uni of universities) {
-    const departments = (uni as any).departments || [];
+    const departments = uni.departments || [];
     for (const dept of departments) {
       paths.push({
         params: { university: uni.id, department: dept.id },
@@ -127,6 +127,7 @@ const groupedCourses = semesters.map((sem) => ({
                         data-course-code={course.code}
                         data-university-id={university.id}
                         data-department-id={department.id}
+                        data-testid={`course-card-${course.id}`}
                       >
                         <div class="relative glass p-4 rounded-xl border border-theme bg-card-theme hover:border-primary-theme/50 transition-all h-full">
                           <button

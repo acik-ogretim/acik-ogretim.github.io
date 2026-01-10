@@ -48,19 +48,13 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
     <div class="container-reading">
       <!-- Breadcrumbs -->
       <nav class="flex mb-8 text-sm text-muted-theme">
-        <a href="/" class="breadcrumb-link"
-          >Ana Sayfa</a
-        >
+        <a href="/" class="breadcrumb-link">Ana Sayfa</a>
         <span class="mx-2">/</span>
-        <a
-          href={`/${university.id}`}
-          class="breadcrumb-link"
+        <a href={`/${university.id}`} class="breadcrumb-link"
           >{university.shortName}</a
         >
         <span class="mx-2">/</span>
-        <a
-          href={`/${university.id}/${department.id}`}
-          class="breadcrumb-link"
+        <a href={`/${university.id}/${department.id}`} class="breadcrumb-link"
           >{department.name}</a
         >
         <span class="mx-2">/</span>
@@ -84,18 +78,45 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
           Toplam {questions.length} soru bulundu.
         </p>
 
-        <a href={`/${university.id}/${department.id}/${course.id}/materyaller`} class="btn-primary">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
-            Ders Materyalleri
+        <a
+          href={`/${university.id}/${department.id}/${course.id}/materyaller`}
+          class="btn-primary"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+            ></path>
+          </svg>
+          Ders Materyalleri
         </a>
 
-        <button onclick="window.print()" class="btn-primary bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 border-none shadow-none ml-2" title="Yazdır / PDF Kaydet">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
-            </svg>
-            <span class="hidden sm:inline ml-2">Yazdır</span>
+        <button
+          onclick="window.print()"
+          class="btn-primary bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 border-none shadow-none ml-2"
+          title="Yazdır / PDF Kaydet"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"
+            ></path>
+          </svg>
+          <span class="hidden sm:inline ml-2">Yazdır</span>
         </button>
       </header>
 
@@ -115,10 +136,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
           </span>
           {
             units.map((unit) => (
-              <a
-                href={`#unite-${unit}`}
-                class="btn-unit-nav"
-              >
+              <a href={`#unite-${unit}`} class="btn-unit-nav">
                 Ü {unit}
               </a>
             ))
@@ -151,6 +169,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
                     class="question-card"
                     id={`question-${unit}-${qIdx}`}
                     data-unit={unit}
+                    data-testid="question-card"
                   >
                     <header class="mb-4">
                       <h3 class="text-[10px] md:text-xs font-mono text-muted-theme uppercase tracking-widest">
@@ -165,50 +184,31 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
                       />
 
                       <h4 class="sr-only">Seçenekler</h4>
-                      <ul class="list-none space-y-3 pl-0 mb-6">
-                        {(
-                          (Array.isArray(q.options)
-                            ? q.options
-                            : Object.entries(q.options || {}).map(
-                                ([key, text]) => ({ key, text }),
-                              )) as any[]
-                        ).map((opt) => (
-                          <li class="relative pl-0">
+                      <div class="space-y-3 mb-6">
+                        {q.options.map((opt) => {
+                          const isCorrect = opt.key === q.correctAnswer;
+                          return (
                             <div
-                              class={`option-card option-item ${opt.key === q.correctAnswer ? "correct-option" : ""}`}
-                              style={
-                                opt.key === q.correctAnswer
-                                  ? "background-color: var(--correct-bg); border-color: var(--correct-border);"
-                                  : "background-color: var(--button-bg); border-color: var(--border-color);"
-                              }
+                              class={`option-item p-4 rounded-xl border-2 border-theme flex items-start gap-3 transition-all ${
+                                isCorrect ? "correct-option" : ""
+                              }`}
+                              data-key={opt.key}
+                              data-testid={`option-${opt.key}`}
                             >
-                              {opt.key === q.correctAnswer && (
-                                <meta content={opt.key} />
-                              )}
-                              <span
-                                class="option-key-badge option-key"
-                                style={
-                                  opt.key === q.correctAnswer
-                                    ? "background-color: var(--correct-border); color: #fff;"
-                                    : "background-color: var(--button-bg); color: var(--text-color-muted);"
-                                }
-                                aria-hidden="true"
-                              >
+                              <span class="option-key flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg border-2 border-theme text-sm font-bold transition-colors">
                                 {opt.key}
                               </span>
-                              <span
-                                class="option-text-content option-text"
-                                style={
-                                  opt.key === q.correctAnswer
-                                    ? "color: var(--text-color); font-weight: bold;"
-                                    : "color: var(--text-color-muted);"
-                                }
+                              <div
+                                class="option-text flex-1 pt-0.5 leading-relaxed"
                                 set:html={opt.text}
                               />
+                              <div class="option-marker hidden">
+                                {isCorrect ? "✅" : "❌"}
+                              </div>
                             </div>
-                          </li>
-                        ))}
-                      </ul>
+                          );
+                        })}
+                      </div>
 
                       {q.explanation && (
                         <div class="explanation-card explanation-box">
@@ -221,14 +221,13 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
                         </div>
                       )}
 
-                      <!-- Correct Answer - Always rendered, control visibility via CSS -->
                       <div class="answer-meta-card answer-metadata-box correct-answer-line">
-                          <p class="text-muted-theme text-sm leading-relaxed">
-                            <strong class="text-primary-theme uppercase tracking-wider mr-2">
-                              Doğru Cevap:
-                            </strong>
-                            <span class="font-bold">{q.correctAnswer}</span>
-                          </p>
+                        <p class="text-muted-theme text-sm leading-relaxed">
+                          <strong class="text-primary-theme uppercase tracking-wider mr-2">
+                            Doğru Cevap:
+                          </strong>
+                          <span class="font-bold">{q.correctAnswer}</span>
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -239,10 +238,21 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
         }
       </article>
 
-      <div class="hidden print-footer mt-8 text-center border-t border-gray-300 pt-4 text-xs text-gray-500 break-inside-avoid">
-        <p class="font-medium text-black">Bu çalışma kağıdı <strong>Açık Öğretim Portal</strong> (<a href="https://acik-ogretim.github.io">acik-ogretim.github.io</a>) üzerinden ücretsiz oluşturulmuştur.</p>
-        <p class="mt-1">Daha fazla ders notu, çıkmış sorular ve denemeler için web sitemizi ziyaret edin.</p>
-        <p class="mt-2 text-[10px] text-gray-400">© {new Date().getFullYear()} Açık Öğretim Portal. Ticari amaçla satılamaz.</p>
+      <div
+        class="hidden print-footer mt-8 text-center border-t border-gray-300 pt-4 text-xs text-gray-500 break-inside-avoid"
+      >
+        <p class="font-medium text-black">
+          Bu çalışma kağıdı <strong>Açık Öğretim Portal</strong> (<a
+            href="https://acik-ogretim.github.io">acik-ogretim.github.io</a
+          >) üzerinden ücretsiz oluşturulmuştur.
+        </p>
+        <p class="mt-1">
+          Daha fazla ders notu, çıkmış sorular ve denemeler için web sitemizi
+          ziyaret edin.
+        </p>
+        <p class="mt-2 text-[10px] text-gray-400">
+          © {new Date().getFullYear()} Açık Öğretim Portal. Ticari amaçla satılamaz.
+        </p>
       </div>
     </div>
   </div>
@@ -250,8 +260,11 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
   <QuizPlayer />
 </Layout>
 
-{/* Inject print styles directly to avoid CSS Variable scope issues in @page context */}
-<style set:html={`
+{
+  /* Inject print styles directly to avoid CSS Variable scope issues in @page context */
+}
+<style
+  set:html={`
   @media print {
     @page {
       margin-top: 2cm;
@@ -291,4 +304,5 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
       }
     }
   }
-`} />
+`}
+></style>
