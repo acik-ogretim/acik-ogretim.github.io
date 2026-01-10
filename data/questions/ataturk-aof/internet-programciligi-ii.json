@@ -460,11 +460,11 @@
     "text": "<strong>Aşağıdakilerden hangisi sunucu tarafında kodları çalıştırmak için yazılan ASP kodlarının başına ve sonuna yazılan etiketlerdir?</strong>",
     "correctAnswer": "E",
     "options": {
-      "A": "<%asp ve asp%>",
-      "B": "< asp ve asp >",
-      "C": "<-asp ve asp->",
-      "D": "< ! ve ! >",
-      "E": "<% ve%>"
+      "A": "&lt;%asp ve asp%&gt;",
+      "B": "&lt; asp ve asp &gt;",
+      "C": "&lt;-asp ve asp-&gt;",
+      "D": "&lt; ! ve ! &gt;",
+      "E": "&lt;% ve%&gt;"
     }
   },
   {
@@ -955,10 +955,10 @@
     "correctAnswer": "D",
     "options": {
       "A": "for(;;)",
-      "B": "for(i=0;i<5;i++)",
-      "C": "for(i=0;i<100;i=i+5)",
-      "D": "for(i=a;i>z;i++)",
-      "E": "for(i=10;i>0;i--)"
+      "B": "for(i=0;i&lt;5;i++)",
+      "C": "for(i=0;i&lt;100;i=i+5)",
+      "D": "for(i=a;i&gt;z;i++)",
+      "E": "for(i=10;i&gt;0;i--)"
     }
   },
   {
@@ -1016,7 +1016,7 @@
   {
     "id": "348447",
     "unitNumber": 5,
-    "text": "int i=0;<br />for ( ; ; )<br />{            <br />  if (i<4)<br />    Console.Write(i);<br />  else<br />     break;<br />  i++;<br />}<br /><strong>Yukarıdaki kod parçacığı için ekran çıktısı hangisidir?</strong>",
+    "text": "int i=0;<br />for ( ; ; )<br />{            <br />  if (i&lt;4)<br />    Console.Write(i);<br />  else<br />     break;<br />  i++;<br />}<br /><strong>Yukarıdaki kod parçacığı için ekran çıktısı hangisidir?</strong>",
     "correctAnswer": "B",
     "options": {
       "A": "123",
@@ -1228,7 +1228,7 @@
     "correctAnswer": "A",
     "options": {
       "A": "@",
-      "B": "&",
+      "B": "&amp;",
       "C": "?",
       "D": "!",
       "E": "."
@@ -1451,7 +1451,7 @@
       "A": ".",
       "B": ";",
       "C": "!",
-      "D": ">",
+      "D": "&gt;",
       "E": "|"
     }
   },
@@ -1500,10 +1500,10 @@
     "text": "<strong>Aşağıdaki for döngülerinin hangisinde tekrar sayısı 10’dur?</strong>",
     "correctAnswer": "B",
     "options": {
-      "A": "for($a=2; $a<=12; $a++)",
-      "B": "for($a=2; $a<12; $a++)",
-      "C": "for($a=2; $a<12; $a+=2)",
-      "D": "for($a=2; $a>12; $a++)",
+      "A": "for($a=2; $a&lt;=12; $a++)",
+      "B": "for($a=2; $a&lt;12; $a++)",
+      "C": "for($a=2; $a&lt;12; $a+=2)",
+      "D": "for($a=2; $a&gt;12; $a++)",
       "E": "for($a=2; $a==12; $a++)"
     }
   },
@@ -1601,13 +1601,13 @@
   {
     "id": "354920",
     "unitNumber": 8,
-    "text": "<strong>$a = “<h1>”; echo “$a PHP</h1>”; komutlarının çıktısı aşağıdakilerden hangisidir?</strong>",
+    "text": "<strong>$a = “&lt;h1>”; echo “$a PHP&lt;/h1>”; komutlarının çıktısı aşağıdakilerden hangisidir?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "$a PHP",
       "B": "$a PHP/$a",
-      "C": "<$a>PHP<!--$a-->",
-      "D": "<h1>\tPHP</h1>",
+      "C": "&lt;$a&gt;PHP&lt;!--$a--&gt;",
+      "D": "&lt;h1&gt;\tPHP&lt;/h1&gt;",
       "E": "h1PHP/h1"
     }
   },
@@ -1699,7 +1699,7 @@
       "B": "$a değişkeni içindeki iki ve daha fazla yan yana olan tüm boşlukları siler",
       "C": "$a değişkeni başındaki ve sonundaki tüm boşlukları siler",
       "D": "$a değişkeni içindeki tüm boşlukları alt tire karakteri ile değiştirir",
-      "E": "$a değişkeni içindeki tüm boşlukları &nbsp ile karakteri ile değiştirir."
+      "E": "$a değişkeni içindeki tüm boşlukları &amp;nbsp ile karakteri ile değiştirir."
     }
   },
   {
@@ -1724,7 +1724,7 @@
       "A": "abc.php adındaki sayfayı mevcut sayfaya dahil eder.",
       "B": "Mevcut sayfayı “abc.php” adındaki sayfaya yönlendirir.",
       "C": "Mevcut sayfanın başlığını “abc.php” sayfası ile aynı yapar.",
-      "D": "Sayfaya “abc.php” içeriğinde <title> etiketi ekler.",
+      "D": "Sayfaya “abc.php” içeriğinde &lt;title&gt; etiketi ekler.",
       "E": "Mevcut sayfanın adını “abc.php” olarak değiştirir."
     }
   },
@@ -1864,11 +1864,11 @@
     "text": "<strong>Aşağıdakilerden hangisi PHP’den MySQL sorgusu çalıştırmak için kullanılan bir fonksiyondur?</strong>",
     "correctAnswer": "A",
     "options": {
-      "A": "mysqli->query()",
+      "A": "mysqli-&gt;query()",
       "B": "mysqli_select_db()",
-      "C": "mysqli->sqlstate()",
-      "D": "mysqli->connect()",
-      "E": "mysqli->commit()"
+      "C": "mysqli-&gt;sqlstate()",
+      "D": "mysqli-&gt;connect()",
+      "E": "mysqli-&gt;commit()"
     }
   },
   {
@@ -1890,11 +1890,11 @@
     "text": "<strong>Aşağıdaki sorgulardan hangisi geri dönüşü olmadığı için dikkatli yapılması gereken bir sorgu yapısıdır?</strong>",
     "correctAnswer": "C",
     "options": {
-      "A": "CREATE DATABASE <VERİ_TABANI_ADI>",
-      "B": "USE <VERİ_TABANI_ADI>",
-      "C": "DROP DATABASE <VERİ_TABANI_ADI>",
-      "D": "TRUNCATE DATABASE <VERİ_TABANI_ADI>",
-      "E": "ALTER DATABASE <VERİ_TABANI_ADI>"
+      "A": "CREATE DATABASE &lt;VERİ_TABANI_ADI&gt;",
+      "B": "USE &lt;VERİ_TABANI_ADI&gt;",
+      "C": "DROP DATABASE &lt;VERİ_TABANI_ADI&gt;",
+      "D": "TRUNCATE DATABASE &lt;VERİ_TABANI_ADI&gt;",
+      "E": "ALTER DATABASE &lt;VERİ_TABANI_ADI&gt;"
     }
   },
   {
@@ -1942,11 +1942,11 @@
     "text": "<strong>Aşağıdaki sorgulardan hangisi geri dönüşü olmadığı için dikkatli yapılması gereken bir sorgu yapısıdır?</strong>",
     "correctAnswer": "C",
     "options": {
-      "A": "SELECT <alan_adi1>, <alan_adi2> FROM <tablo_adi> WHERE <koşul></koşul></tablo_adi></alan_adi2></alan_adi1>",
-      "B": "UPDATE DATABASE SET <alan_adi> = <değer>WHERE <koşul></koşul></değer></alan_adi>",
-      "C": "DELETE FROM <tablo_adi> WHERE <kosul></kosul></tablo_adi>",
-      "D": "INSERT INTRO <tablo_adi> (<alan_adi1>, <alan_adi2>) VALUES (<değer1>,<değer2>)</değer2></değer1></alan_adi2></alan_adi1></tablo_adi>",
-      "E": "CREATE TABLE <tablo_adi> (<alan_adi>,<alan_türü>)</alan_türü></alan_adi></tablo_adi>"
+      "A": "SELECT &lt;alan_adi1&gt;, &lt;alan_adi2&gt; FROM &lt;tablo_adi&gt; WHERE &lt;koşul&gt;&lt;/koşul&gt;&lt;/tablo_adi&gt;&lt;/alan_adi2&gt;&lt;/alan_adi1&gt;",
+      "B": "UPDATE DATABASE SET &lt;alan_adi&gt; = &lt;değer&gt;WHERE &lt;koşul&gt;&lt;/koşul&gt;&lt;/değer&gt;&lt;/alan_adi&gt;",
+      "C": "DELETE FROM &lt;tablo_adi&gt; WHERE &lt;kosul&gt;&lt;/kosul&gt;&lt;/tablo_adi&gt;",
+      "D": "INSERT INTRO &lt;tablo_adi&gt; (&lt;alan_adi1&gt;, &lt;alan_adi2&gt;) VALUES (&lt;değer1&gt;,&lt;değer2&gt;)&lt;/değer2&gt;&lt;/değer1&gt;&lt;/alan_adi2&gt;&lt;/alan_adi1&gt;&lt;/tablo_adi&gt;",
+      "E": "CREATE TABLE &lt;tablo_adi&gt; (&lt;alan_adi&gt;,&lt;alan_türü&gt;)&lt;/alan_türü&gt;&lt;/alan_adi&gt;&lt;/tablo_adi&gt;"
     }
   },
   {
@@ -2085,11 +2085,11 @@
     "text": "<strong>mtn = 'Merhaba Dünya!'<br />Aşağıdakilerden hangisi yukarıda verilen mtn değişkeni için ekrana hatalı sonuç basmıştır?</strong>",
     "correctAnswer": "C",
     "options": {
-      "A": ">>> print (mtn [0] )<br />M",
-      "B": ">>> print ( mtn [2:5] )<br />rha",
-      "C": ">>> print ( mtn [2:] )<br />erhaba Dünya!",
-      "D": ">>> print ( mtn * 2 )<br />Merhaba Dünya! Merhaba Dünya!",
-      "E": ">>> print ( mtn + 'TEST' )<br />Merhaba Dünya!TEST"
+      "A": "&gt;&gt;&gt; print (mtn [0] )&lt;br /&gt;M",
+      "B": "&gt;&gt;&gt; print ( mtn [2:5] )&lt;br /&gt;rha",
+      "C": "&gt;&gt;&gt; print ( mtn [2:] )&lt;br /&gt;erhaba Dünya!",
+      "D": "&gt;&gt;&gt; print ( mtn * 2 )&lt;br /&gt;Merhaba Dünya! Merhaba Dünya!",
+      "E": "&gt;&gt;&gt; print ( mtn + 'TEST' )&lt;br /&gt;Merhaba Dünya!TEST"
     }
   },
   {
@@ -2371,11 +2371,11 @@
     "text": "<strong>XSLT'de her biri için doğru sözdizimi nedir?</strong>",
     "correctAnswer": "A",
     "options": {
-      "A": "< xsl:for-each > kodu … < /xsl:for-each >",
-      "B": "< for-each > kodu … < /for-each >",
-      "C": "< xsl: foreach > kodu … < xsl: foreach / >",
-      "D": "< xsl:foreach > kodu … < /xsl:foreach >",
-      "E": "< xsl:each > kodu … < /xsl:each >"
+      "A": "&lt; xsl:for-each &gt; kodu … &lt; /xsl:for-each &gt;",
+      "B": "&lt; for-each &gt; kodu … &lt; /for-each &gt;",
+      "C": "&lt; xsl: foreach &gt; kodu … &lt; xsl: foreach / &gt;",
+      "D": "&lt; xsl:foreach &gt; kodu … &lt; /xsl:foreach &gt;",
+      "E": "&lt; xsl:each &gt; kodu … &lt; /xsl:each &gt;"
     }
   },
   {

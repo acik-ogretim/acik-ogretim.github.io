@@ -1355,7 +1355,7 @@
       "D": "ALT+SHIFT+Y",
       "E": "CTRL+ALT+P"
     },
-    "explanation": "Word programında seçili metnin yazı tipi boyutunu kademeli olarak değiştirmek için kısayol tuş bileşenleri kullanılır. Boyutu büyütmek için <b>Ctrl + Shift + ></b> (veya Ctrl + ]) ve küçültmek için <b>Ctrl + Shift + <</b> (veya Ctrl + [) kullanılır."
+    "explanation": "Word programında seçili metnin yazı tipi boyutunu kademeli olarak değiştirmek için kısayol tuş bileşenleri kullanılır. Boyutu büyütmek için <b>Ctrl + Shift + ></b> (veya Ctrl + ]) ve küçültmek için <b>Ctrl + Shift + &lt;</b> (veya Ctrl + [) kullanılır."
   },
   {
     "id": "376679",
@@ -1997,7 +1997,7 @@
       "B": "=EĞER(E1:E350;”>=5500”)",
       "C": "=TOPLA(E1:E350;”>5500”)",
       "D": "=ORTALAMA(E1:E350;”>5500”)",
-      "E": "=EĞERSAY(E1:E350;”<=5500”)"
+      "E": "=EĞERSAY(E1:E350;”&lt;=5500”)"
     },
     "explanation": "Belirli bir koşulu (5500 TL ve üzeri ücret) sağlayan hücrelerin sayısını bulmak için <b>EĞERSAY (COUNTIF) fonksiyonu</b> kullanılır. Fonksiyonun genel yapısı <b>=EĞERSAY(aralık; ölçüt)</b> şeklindedir.<br>350 personel olduğu ve maaş bilgileri E sütununda yer aldığı için, doğru formül <b>=EĞERSAY(E1:E350; \">=5500\")</b> olmalıdır. Bu formül, E1’den E350’ye kadar olan hücrelerdeki değeri 5500’e eşit veya 5500’den büyük olan kişi sayısını sayar."
   },
@@ -2008,7 +2008,7 @@
     "correctAnswer": "D",
     "options": {
       "A": "=EĞERSAY(A8>=65;”Aşı Zorunluluğu Var”;”Aşı Zorunluluğu Yok”)",
-      "B": "=EĞER(A8<=65;”Aşı Zorunluluğu Var”;”Aşı Zorunluluğu Yok”)",
+      "B": "=EĞER(A8&lt;=65;”Aşı Zorunluluğu Var”;”Aşı Zorunluluğu Yok”)",
       "C": "=EĞER(A8>=65;”Aşı Zorunluluğu Yok”;”Aşı Zorunluluğu Var”)",
       "D": "=EĞER(A8>=65;”Aşı Zorunluluğu Var”;”Aşı Zorunluluğu Yok”)",
       "E": "=EĞER(A8>65;”Aşı Zorunluluğu Var”;”Aşı Zorunluluğu Yok”)"
@@ -2035,10 +2035,10 @@
     "text": "<strong>Ayşe çalıştığı kurumda 65 yaş üzerinde olanların “Sokağa çıkma yasağı var.”, 65 yaş altında olanların ise “Sokağa çıkma yasağı yok.” olarak belirtmek istiyor. Ayşe bu işlemi yapabilmek için aşağıdaki formüllerden hangisini yazmalıdır? (Personel yaş bilgileri C sütununda yer almaktadır)</strong>",
     "correctAnswer": "E",
     "options": {
-      "A": "=EĞERSAY(C1<65; “Sokağa çıkma yasağı var”; “Sokağa çıkma yasağı yok”)",
-      "B": "=EĞER_ORTALA(C1<65; “Sokağa çıkma yasağı var”; “Sokağa çıkma yasağı yok”)",
-      "C": "=EĞER_YAS(C1<65; “Sokağa çıkma yasağı var”; “Sokağa çıkma yasağı yok”)",
-      "D": "=EĞER(C1<65; “Sokağa çıkma yasağı var”; “Sokağa çıkma yasağı yok”)",
+      "A": "=EĞERSAY(C1&lt;65; “Sokağa çıkma yasağı var”; “Sokağa çıkma yasağı yok”)",
+      "B": "=EĞER_ORTALA(C1&lt;65; “Sokağa çıkma yasağı var”; “Sokağa çıkma yasağı yok”)",
+      "C": "=EĞER_YAS(C1&lt;65; “Sokağa çıkma yasağı var”; “Sokağa çıkma yasağı yok”)",
+      "D": "=EĞER(C1&lt;65; “Sokağa çıkma yasağı var”; “Sokağa çıkma yasağı yok”)",
       "E": "=EĞER(C1>65; “Sokağa çıkma yasağı var”; “Sokağa çıkma yasağı yok”)"
     },
     "explanation": "Ayşe’nin yapmak istediği işlem, yaş bilgisine (C sütununda) bağlı olarak iki farklı sonuç döndüren bir <b>koşullu mantık</b> işlemidir. Bunun için <b>EĞER (IF) fonksiyonu</b> kullanılır.<br>Eğer C hücresindeki yaş 65'ten büyükse (<b>C>65</b>), 'Sokağa çıkma yasağı var' sonucu döner, aksi takdirde 'Sokağa çıkma yasağı yok' sonucu döner.<br>Doğru formül: <b>=EĞER(C1>65; \"Sokağa çıkma yasağı var.\"; \"Sokağa çıkma yasağı yok.\")</b> (Hücre referansı C1 alınmıştır.)"

@@ -1569,7 +1569,7 @@
       "B": "=EĞER(E1:E350;”>=5500”)",
       "C": "=TOPLA(E1:E350;”>5500”)",
       "D": "=ORTALAMA(E1:E350;”>5500”)",
-      "E": "=EĞERSAY(E1:E350;”<=5500”)"
+      "E": "=EĞERSAY(E1:E350;”&lt;=5500”)"
     }
   },
   {
@@ -1579,7 +1579,7 @@
     "correctAnswer": "D",
     "options": {
       "A": "=EĞERSAY(A8>=65;”Aşı Zorunluluğu Var”;”Aşı Zorunluluğu Yok”)",
-      "B": "=EĞER(A8<=65;”Aşı Zorunluluğu Var”;”Aşı Zorunluluğu Yok”)",
+      "B": "=EĞER(A8&lt;=65;”Aşı Zorunluluğu Var”;”Aşı Zorunluluğu Yok”)",
       "C": "=EĞER(A8>=65;”Aşı Zorunluluğu Yok”;”Aşı Zorunluluğu Var”)",
       "D": "=EĞER(A8>=65;”Aşı Zorunluluğu Var”;”Aşı Zorunluluğu Yok”)",
       "E": "=EĞER(A8>65;”Aşı Zorunluluğu Var”;”Aşı Zorunluluğu Yok”)"

@@ -1188,11 +1188,11 @@
     "text": "<strong>SQL Serverde oluşturulmuş bir tablonun bir sütununu değiştirmek için hangi komut kullanılır?</strong>",
     "correctAnswer": "D",
     "options": {
-      "A": "TABLE <tablo ismi=\"\"> DROP COLUMN <kolon ismi=\"\"></kolon></tablo>",
-      "B": "ALTER TABLE <tablo ismi=\"\"> DELETE COLUMN <kolon ismi=\"\"></kolon></tablo>",
-      "C": "TABLE <tablo ismi=\"\"> DELETE COLUMN <kolon ismi=\"\"></kolon></tablo>",
-      "D": "ALTER TABLE <tablo ismi=\"\"> ALTER COLUMN <kolon ismi=\"\"></kolon></tablo>",
-      "E": "ALTER TABLE <tablo ismi=\"\"> DROP COLUMN <kolon ismi=\"\"></kolon></tablo>"
+      "A": "TABLE &lt;tablo ismi=\"\"> DROP COLUMN &lt;kolon ismi=\"\">&lt;/kolon>&lt;/tablo>",
+      "B": "ALTER TABLE &lt;tablo ismi=\"\"> DELETE COLUMN &lt;kolon ismi=\"\">&lt;/kolon>&lt;/tablo>",
+      "C": "TABLE &lt;tablo ismi=\"\"> DELETE COLUMN &lt;kolon ismi=\"\">&lt;/kolon>&lt;/tablo>",
+      "D": "ALTER TABLE &lt;tablo ismi=\"\"> ALTER COLUMN &lt;kolon ismi=\"\">&lt;/kolon>&lt;/tablo>",
+      "E": "ALTER TABLE &lt;tablo ismi=\"\"> DROP COLUMN &lt;kolon ismi=\"\">&lt;/kolon>&lt;/tablo>"
     }
   },
   {
@@ -1384,9 +1384,9 @@
     "correctAnswer": "D",
     "options": {
       "A": "Büyük eşit (>=)",
-      "B": "Küçük eşit  (<=)",
+      "B": "Küçük eşit  (&lt;=)",
       "C": "Büyük değil (!>)",
-      "D": "Eşit (<>)",
+      "D": "Eşit (&lt;>)",
       "E": "Eşit değil  (!=)"
     }
   },
@@ -1504,7 +1504,7 @@
       "B": "SELECT * FROM Kitap WHERE SayfaSayisi > 400 ORDER BY YazarAdi",
       "C": "SELECT * FROM Kitap WHERE SayfaSayisi BETWEEN 400 AND 500",
       "D": "SELECT * FROM Kitap WHERE SayfaSayisi BETWEEN 400 AND 500 ORDER BY YazarAdi DESC",
-      "E": "SELECT * FROM Kitap WHERE SayfaSayisi >400 AND SayfaSayisi<500"
+      "E": "SELECT * FROM Kitap WHERE SayfaSayisi >400 AND SayfaSayisi&lt;500"
     }
   },
   {
@@ -2228,11 +2228,11 @@
     "text": "<strong>\"Ogrenci_Bolum\" tablosundan öğrencinin kayıt tarihi verisini kullanarak bu tablodan herhangi bir kaydı silmeden, \"Birey\" tablosundan kayıt tarihi 2005 yılından daha eski olan öğrencilerin kayıtlarını silmek için yazılması gereken sorgu aşağıdakilerden hangisidir?</strong>",
     "correctAnswer": "D",
     "options": {
-      "A": "DELETE FROM Birey B INNER JOIN Ogrenci_Bolum OB ON Ob.Birey_ID = B.ID UNION YEAR(OB.KayitTarihi) < 2005",
-      "B": "DELETE FROM Birey B INNER JOIN Ogrenci_Bolum OB ON Ob.Birey_ID = B.ID INSERT YEAR(OB.KayitTarihi) < 2005",
-      "C": "DELETE FROM Birey FROM Birey B INNER JOIN Ogrenci_Bolum OB ON Ob.Birey_ID = B.ID UPDATE YEAR(OB.KayitTarihi) < 2005",
-      "D": "DELETE FROM Birey B INNER JOIN Ogrenci_Bolum OB ON Ob.Birey_ID = B.ID WHERE YEAR(OB.KayitTarihi) < 2005",
-      "E": "DELETE FROM Birey B INNER JOIN Ogrenci_Bolum OB ON Ob.Birey_ID = B.ID NULL YEAR(OB.KayitTarihi) < 2005"
+      "A": "DELETE FROM Birey B INNER JOIN Ogrenci_Bolum OB ON Ob.Birey_ID = B.ID UNION YEAR(OB.KayitTarihi) &lt; 2005",
+      "B": "DELETE FROM Birey B INNER JOIN Ogrenci_Bolum OB ON Ob.Birey_ID = B.ID INSERT YEAR(OB.KayitTarihi) &lt; 2005",
+      "C": "DELETE FROM Birey FROM Birey B INNER JOIN Ogrenci_Bolum OB ON Ob.Birey_ID = B.ID UPDATE YEAR(OB.KayitTarihi) &lt; 2005",
+      "D": "DELETE FROM Birey B INNER JOIN Ogrenci_Bolum OB ON Ob.Birey_ID = B.ID WHERE YEAR(OB.KayitTarihi) &lt; 2005",
+      "E": "DELETE FROM Birey B INNER JOIN Ogrenci_Bolum OB ON Ob.Birey_ID = B.ID NULL YEAR(OB.KayitTarihi) &lt; 2005"
     }
   },
   {

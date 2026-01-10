@@ -40,6 +40,17 @@ function cleanText(text: string, options: { encode?: boolean, markdown?: boolean
 
     // 1. Always decode first to handle existing entities consistently and restore UTF-8 (e.g. &gbreve; -> ğ)
     let cleaned = he.decode(text);
+
+    // 1.5. Remove Ginger browser extension artifacts (grammar checker pollution)
+    // These are HTML elements injected by the Ginger extension that polluted the source data
+    cleaned = cleaned.replace(/<gdiv[^>]*>[\s\S]*?<\/gdiv>/gi, "");
+    cleaned = cleaned.replace(/<gdiv[^>]*>[\s\S]*/gi, ""); // Handle unclosed gdivs at end
+    cleaned = cleaned.replace(/<ga[^>]*>[\s\S]*?<\/ga>/gi, "");
+    cleaned = cleaned.replace(/<ginger-[^>]*>[\s\S]*?<\/ginger-[^>]*>/gi, "");
+
+    // 1.6. Remove Mozilla-specific br artifacts
+    cleaned = cleaned.replace(/<br\s+type="_moz"\s*\/?>/gi, "");
+
     const useMarkdown = options.markdown !== false;
 
     if (options.encode) {
@@ -50,12 +61,14 @@ function cleanText(text: string, options: { encode?: boolean, markdown?: boolean
         cleaned = cleaned.replace(/&#x27;/g, "'").replace(/&quot;/g, '"');
 
         // 3. Restore whitelist tags that are allowed for formatting
-        // Narrowed to ONLY formatting tags. Elements like ul, ol, li are removed so they show up as text code snippets.
-        const whitelist = ['b', 'strong', 'i', 'em', 'u', 'br', 'span'];
+        // Very restrictive list for HTML teaching courses - only basic text formatting
+        // Excludes span, br, etc. as these are HTML elements being taught
+        const whitelist = ['b', 'strong', 'i', 'em', 'u'];
 
         whitelist.forEach(tag => {
             // Handle he.escape output (which escapes & to &amp;)
-            const openRegex = new RegExp(`&amp;lt;${tag}(.*?)&amp;gt;`, 'gi');
+            // Use word boundary after tag name to prevent 'b' from matching 'body'
+            const openRegex = new RegExp(`&amp;lt;${tag}((?:\\s[^&]*)??)&amp;gt;`, 'gi');
             // We need to capture attributes for span
             cleaned = cleaned.replace(openRegex, (match, attrs) => {
                 return `<${tag}${attrs ? attrs.replace(/&amp;quot;/g, '"') : ''}>`;
@@ -65,7 +78,7 @@ function cleanText(text: string, options: { encode?: boolean, markdown?: boolean
             cleaned = cleaned.replace(closeRegex, `</${tag}>`);
 
             // Handle direct &lt; cases for general safety (redundant but safe)
-            const openRegex2 = new RegExp(`&lt;${tag}(.*?)&gt;`, 'gi');
+            const openRegex2 = new RegExp(`&lt;${tag}((?:\\s[^&]*)??)&gt;`, 'gi');
             cleaned = cleaned.replace(openRegex2, (match, attrs) => {
                 return `<${tag}${attrs ? attrs.replace(/&quot;/g, '"') : ''}>`;
             });
@@ -130,28 +143,42 @@ function cleanText(text: string, options: { encode?: boolean, markdown?: boolean
     result = result.replace(/^(?:<br\s*\/?>\s*)+/i, ""); // remove br AT START
     result = result.replace(/(?:<br\s*\/?>\s*)+$/i, ""); // remove br AT END
 
+    // 7. Escape '<' that are NOT part of known HTML tags to prevent browser misinterpretation
+    // Skip this for encode mode - encode mode already handles escaping via he.escape() with its own whitelist
+    if (!options.encode) {
+        // Known tags: b, i, u, br, p, ul, ol, li, span, div, sub, sup, a, strong, em, table, thead, tbody, tfoot, tr, td, th, img, font, o:p (MS Office)
+        // Also allow HTML comments: <!--
+        result = result.replace(/<(?!\/?(?:b|i|u|br|p|ul|ol|li|span|div|sub|sup|a|strong|em|table|thead|tbody|tfoot|tr|td|th|img|font|o:p)[\s>\/]|!--)/gi, "&lt;");
+    }
+
     return result.trim();
 }
 
 function mapRawToApp(raw: RawQuestion, slug: string): AppQuestion {
-    const shouldEncode = slug === 'web-tasariminin-temelleri';
+    // Courses that teach HTML - options should show HTML as text
+    const htmlTeachingCourses = ['web-tasariminin-temelleri', 'duyarli-web-tasarimi', 'internet-programciligi-i', 'internet-programciligi-ii'];
+    const shouldEncodeOptions = htmlTeachingCourses.includes(slug);
 
     const q: AppQuestion = {
         id: String(raw.SoruID || raw.id),
         unitNumber: raw.Unite || raw.unitNumber || 0,
-        text: cleanText(raw.SoruMetni || raw.text, { encode: shouldEncode }),
+        // Text NEVER uses encode - formatting tags should always render
+        text: cleanText(raw.SoruMetni || raw.text, { encode: false }),
         correctAnswer: (raw.DogruCevap || raw.correctAnswer || "").trim(),
         options: {}
     };
 
     if (raw.Aciklama) {
-        q.explanation = cleanText(raw.Aciklama, { encode: shouldEncode });
+        // Explanation NEVER uses encode - formatting tags should render
+        q.explanation = cleanText(raw.Aciklama, { encode: false });
     }
 
     // Map options A, B, C, D, E
+    // For HTML teaching courses, options get full encoding to show HTML as text
+    // For other courses, formatting is preserved
     ['A', 'B', 'C', 'D', 'E'].forEach(optKey => {
         if (raw[optKey as keyof RawQuestion]) {
-            q.options[optKey] = cleanText(String(raw[optKey as keyof RawQuestion]), { encode: shouldEncode });
+            q.options[optKey] = cleanText(String(raw[optKey as keyof RawQuestion]), { encode: shouldEncodeOptions });
         }
     });
 

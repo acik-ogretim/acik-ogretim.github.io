@@ -135,10 +135,10 @@
     "text": "<b>Aşağıdaki kodun çıktısı nedir?</b>",
     "correctAnswer": "B",
     "options": {
-      "A": "#include <iostream>",
+      "A": "#include &lt;iostream>",
       "B": "using namespace std;",
       "C": "int main() {",
-      "D": "cout << \"Merhaba\\nC++\";",
+      "D": "cout &lt;&lt; \"Merhaba\\nC++\";",
       "E": "return 0;"
     }
   },
@@ -171,7 +171,7 @@
   {
     "id": "415656",
     "unitNumber": 3,
-    "text": "#include <iostream><br />int main() {<br />std::cout << \"Merhaba Dünya!\"<br />return 0;<br />}<br /><strong>Aşağıdaki kod parçasında hangi hata vardır?</strong>",
+    "text": "#include &lt;iostream><br />int main() {<br />std::cout &lt;&lt; \"Merhaba Dünya!\"<br />return 0;<br />}<br /><strong>Aşağıdaki kod parçasında hangi hata vardır?</strong>",
     "correctAnswer": "E",
     "options": {
       "A": "Fazladan return ifadesi vardır.",
@@ -215,8 +215,8 @@
     "options": {
       "A": "using namespace std;",
       "B": "int main()",
-      "C": "#include <iostream></iostream>",
-      "D": "cout<<”Merhaba”;",
+      "C": "#include &lt;iostream>&lt;/iostream>",
+      "D": "cout&lt;&lt;”Merhaba”;",
       "E": "return 0;"
     }
   },
@@ -252,7 +252,7 @@
     "text": "<b>Aşağıdaki kod çalıştırıldığında kullanıcı 25 girerse ekrana ne yazılır?</b>",
     "correctAnswer": "A",
     "options": {
-      "A": "#include <cstdio>",
+      "A": "#include &lt;cstdio>",
       "B": "using namespace std;",
       "C": "int main() {",
       "D": "int sayi;",
@@ -540,8 +540,8 @@
     "options": {
       "A": "!=",
       "B": ">=",
-      "C": "<",
-      "D": "<=",
+      "C": "&lt;",
+      "D": "&lt;=",
       "E": "="
     }
   },
@@ -565,7 +565,7 @@
     "correctAnswer": "D",
     "options": {
       "A": "int x = 5, y = 10;",
-      "B": "(x < y) && (y > 5)",
+      "B": "(x &lt; y) && (y > 5)",
       "C": "Hiçbir zaman",
       "D": "Sadece x=y olduğunda",
       "E": "Koşul Sağlanmaz"
@@ -678,7 +678,7 @@
   {
     "id": "415695",
     "unitNumber": 7,
-    "text": "<b>for (int i = 1; i <= 5; i++) { if (i == 3) continue; printf(\"%d \", i);}Yukarıdaki C++ programı çalıştırıldığında ekrana ne basar?</b>",
+    "text": "<b>for (int i = 1; i &lt;= 5; i++) { if (i == 3) continue; printf(\"%d \", i);}Yukarıdaki C++ programı çalıştırıldığında ekrana ne basar?</b>",
     "correctAnswer": "B",
     "options": {
       "A": "1 2 3 4 5",
@@ -704,7 +704,7 @@
   {
     "id": "415697",
     "unitNumber": 7,
-    "text": "<b>int i = 1;while (i < 4) { printf(\"%d \", i); i++;}Yukarıdaki C++ programı çalıştırıldığında ekran çıktısı ne olur?</b>",
+    "text": "<b>int i = 1;while (i &lt; 4) { printf(\"%d \", i); i++;}Yukarıdaki C++ programı çalıştırıldığında ekran çıktısı ne olur?</b>",
     "correctAnswer": "B",
     "options": {
       "A": "1 2",
@@ -824,11 +824,11 @@
     "text": "<strong>Aşağıdaki C++ kod bloklarından hangisi bir anlam bilimsel hata içermektedir?</strong>",
     "correctAnswer": "D",
     "options": {
-      "A": "int sonuc=1;<br />for(int i=1; sonuc<1000; i++){<br />   sonuc*= i;<br />}",
+      "A": "int sonuc=1;<br />for(int i=1; sonuc&lt;1000; i++){<br />   sonuc*= i;<br />}",
       "B": "int sonuc=2;<br />for(int i=1; i!=10; i++){<br />   sonuc *= i;<br />}",
       "C": "int sonuc=1;<br />for(int i=10; i>0; i--){<br />   sonuc = i * i;<br />}",
-      "D": "int sonuc=1;<br />for(int i=0; i<10; i++){<br />   sonuc *= i;<br />   i--;<br />}",
-      "E": "int sonuc=0;<br />for(int i=0; i<10; i+=2)<br />   sonuc= i * i;<br />i--;"
+      "D": "int sonuc=1;<br />for(int i=0; i&lt;10; i++){<br />   sonuc *= i;<br />   i--;<br />}",
+      "E": "int sonuc=0;<br />for(int i=0; i&lt;10; i+=2)<br />   sonuc= i * i;<br />i--;"
     }
   },
   {
@@ -1107,7 +1107,7 @@
   {
     "id": "115343",
     "unitNumber": 9,
-    "text": "#include <iostream><br />using namespace std;<br /><br />void Yap(int a[], int *b, int boyut) {<br />    for(int i=0; i<boyut; i++)<br />       b[i]=a[boyut-1-i];<br />}<br /><br />int main() {<br />    int sayilar[5] = {5,2,10,8,7};  <br />    int yedek[5];<br />    Yap(sayilar, yedek,5);<br />    for(int i=0; i<5; i++)  <br />         cout<<yedek[i]<<\",\";<br />    cout<<endl;<br />    return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında aşağıdaki ekran çıktılarından hangisi elde edilir?</strong>",
+    "text": "#include &lt;iostream><br />using namespace std;<br /><br />void Yap(int a[], int *b, int boyut) {<br />    for(int i=0; i&lt;boyut; i++)<br />       b[i]=a[boyut-1-i];<br />}<br /><br />int main() {<br />    int sayilar[5] = {5,2,10,8,7};  <br />    int yedek[5];<br />    Yap(sayilar, yedek,5);<br />    for(int i=0; i&lt;5; i++)  <br />         cout&lt;&lt;yedek[i]&lt;&lt;\",\";<br />    cout&lt;&lt;endl;<br />    return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında aşağıdaki ekran çıktılarından hangisi elde edilir?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "2,5,7,8,10",
@@ -1120,7 +1120,7 @@
   {
     "id": "115392",
     "unitNumber": 9,
-    "text": "int dizi[5] = { 5,10,15,20,25 };<br />for (int sayac = 0; sayac< 5; sayac++)<br />     cout<<sayac<<\". sayi=\"<<dizi[sayac] + sayac<<endl;<br /><strong>Verilen C++ kod parçacığı çalıştırıldığında aşağıdaki ekran çıktılarından hangisi elde edilir?</strong>",
+    "text": "int dizi[5] = { 5,10,15,20,25 };<br />for (int sayac = 0; sayac&lt; 5; sayac++)<br />     cout&lt;&lt;sayac&lt;&lt;\". sayi=\"&lt;&lt;dizi[sayac] + sayac&lt;&lt;endl;<br /><strong>Verilen C++ kod parçacığı çalıştırıldığında aşağıdaki ekran çıktılarından hangisi elde edilir?</strong>",
     "correctAnswer": "A",
     "options": {
       "A": "0. sayi=5<br />1. sayi=11<br />2. sayi=17<br />3. sayi=23<br />4. sayi=29",
@@ -1133,7 +1133,7 @@
   {
     "id": "115396",
     "unitNumber": 9,
-    "text": "char  dizi[15] = \"Programlama\";<br />dizi[5]='\\0';<br />cout<<dizi<<endl;<br /><strong>Yukarıdaki C++ kod parçacığı çalıştırıldığında aşağıdaki ekran çıktılarından hangisi elde edilir?</strong>",
+    "text": "char  dizi[15] = \"Programlama\";<br />dizi[5]='\\0';<br />cout&lt;&lt;dizi&lt;&lt;endl;<br /><strong>Yukarıdaki C++ kod parçacığı çalıştırıldığında aşağıdaki ekran çıktılarından hangisi elde edilir?</strong>",
     "correctAnswer": "B",
     "options": {
       "A": "Programlama0000",
@@ -1198,7 +1198,7 @@
   {
     "id": "159186",
     "unitNumber": 9,
-    "text": "#include <iostream><br />using namespace std;<br />int main()<br />{<br />     int dizi[5] = {3,4,5,6,7};<br />     cout << dizi[3];<br />     return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
+    "text": "#include &lt;iostream><br />using namespace std;<br />int main()<br />{<br />     int dizi[5] = {3,4,5,6,7};<br />     cout &lt;&lt; dizi[3];<br />     return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "3",
@@ -1211,7 +1211,7 @@
   {
     "id": "159188",
     "unitNumber": 9,
-    "text": "#include <iostream><br />using namespace std;<br />int main()<br />{<br />     int dizi[5] = { 0,1,2};<br />     cout << dizi[3];<br />     return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
+    "text": "#include &lt;iostream><br />using namespace std;<br />int main()<br />{<br />     int dizi[5] = { 0,1,2};<br />     cout &lt;&lt; dizi[3];<br />     return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
     "correctAnswer": "E",
     "options": {
       "A": "Hata verir, çalışmaz.",
@@ -1224,7 +1224,7 @@
   {
     "id": "159192",
     "unitNumber": 9,
-    "text": "#include <iostream><br />using namespace std;<br />int main()<br />{<br />     int dizi1[5] = {1,2,3,4,5};<br />     int dizi2[5] = { 6,7,8,9,10};<br />     cout << dizi1[3] + dizi2[4];<br />     return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
+    "text": "#include &lt;iostream><br />using namespace std;<br />int main()<br />{<br />     int dizi1[5] = {1,2,3,4,5};<br />     int dizi2[5] = { 6,7,8,9,10};<br />     cout &lt;&lt; dizi1[3] + dizi2[4];<br />     return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "3 9",
@@ -1237,7 +1237,7 @@
   {
     "id": "159193",
     "unitNumber": 9,
-    "text": "#include <iostream><br />using namespace std;<br />int main()<br />{<br />     char dizi[10] = \"deneme\";<br />     cout << dizi;<br />     return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
+    "text": "#include &lt;iostream><br />using namespace std;<br />int main()<br />{<br />     char dizi[10] = \"deneme\";<br />     cout &lt;&lt; dizi;<br />     return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "Dizi değişkenin adresini yazar.",
@@ -1250,7 +1250,7 @@
   {
     "id": "159194",
     "unitNumber": 9,
-    "text": "#include <iostream><br />using namespace std;<br />int main()<br />{<br />char dizi[10] = \"deneme123\";<br />dizi[4] = '\\0';<br />cout << dizi;<br />return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
+    "text": "#include &lt;iostream><br />using namespace std;<br />int main()<br />{<br />char dizi[10] = \"deneme123\";<br />dizi[4] = '\\0';<br />cout &lt;&lt; dizi;<br />return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
     "correctAnswer": "A",
     "options": {
       "A": "Ekrana \"dene\" yazar.",
@@ -1289,7 +1289,7 @@
   {
     "id": "303403",
     "unitNumber": 9,
-    "text": "#include <iostream><br />using namespace std;<br />int main()<br />{<br />        int dizi[5] = {};<br />        cout << dizi[3];<br />        return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
+    "text": "#include &lt;iostream><br />using namespace std;<br />int main()<br />{<br />        int dizi[5] = {};<br />        cout &lt;&lt; dizi[3];<br />        return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
     "correctAnswer": "A",
     "options": {
       "A": "0",
@@ -1302,7 +1302,7 @@
   {
     "id": "303404",
     "unitNumber": 9,
-    "text": "#include <iostream><br />using namespace std;<br />int main()<br />{<br />          int dizi[4] = {1,2,3,4};<br />          cout << dizi;<br />          return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
+    "text": "#include &lt;iostream><br />using namespace std;<br />int main()<br />{<br />          int dizi[4] = {1,2,3,4};<br />          cout &lt;&lt; dizi;<br />          return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
     "correctAnswer": "E",
     "options": {
       "A": "1",
@@ -1315,7 +1315,7 @@
   {
     "id": "303405",
     "unitNumber": 9,
-    "text": "5. #include <iostream><br />using namespace std;<br />int main()<br />{<br />         int dizi[5] = {1,2,3,4,5};<br />         for (int i = 3; i < 5; i++)<br />             cout << dizi[i]<<\" \";<br />         return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
+    "text": "5. #include &lt;iostream><br />using namespace std;<br />int main()<br />{<br />         int dizi[5] = {1,2,3,4,5};<br />         for (int i = 3; i &lt; 5; i++)<br />             cout &lt;&lt; dizi[i]&lt;&lt;\" \";<br />         return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "1",
@@ -1328,7 +1328,7 @@
   {
     "id": "303406",
     "unitNumber": 9,
-    "text": "6. #include <iostream><br />using namespace std;<br />int main()<br />{<br />        char dizi[10] = \"ornek\";<br />        cout << dizi;<br />        return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
+    "text": "6. #include &lt;iostream><br />using namespace std;<br />int main()<br />{<br />        char dizi[10] = \"ornek\";<br />        cout &lt;&lt; dizi;<br />        return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
     "correctAnswer": "A",
     "options": {
       "A": "ornek",
@@ -1341,7 +1341,7 @@
   {
     "id": "303408",
     "unitNumber": 9,
-    "text": "#include <iostream><br />using namespace std;<br />int main()<br />{<br />       char dizi[10] = \"deneme1234\";<br />       cout << dizi[6];<br />       return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
+    "text": "#include &lt;iostream><br />using namespace std;<br />int main()<br />{<br />       char dizi[10] = \"deneme1234\";<br />       cout &lt;&lt; dizi[6];<br />       return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
     "correctAnswer": "E",
     "options": {
       "A": "Ekrana \"deneme1234\" yazar.",
@@ -1354,7 +1354,7 @@
   {
     "id": "303410",
     "unitNumber": 9,
-    "text": "#include <iostream><br />using namespace std;<br />int Fonksiyon(int *A, int n)<br />{<br />       int dondur=0;<br />       for (int i = 0; i < n; i++)<br />{<br />             if (A[i] % 2 == 0)<br />                  dondur++;<br />}<br />       return dondur;<br />}<br />int main()<br />{<br />       int dizi[5] = { 12,5,7,4,9 };<br />       cout << Fonksiyon(dizi, 5);<br />       return 0;<br />}<br /><strong>Yukarıdaki kod çalıştırılmak istendiğinde sonuç ne olur?</strong>",
+    "text": "#include &lt;iostream><br />using namespace std;<br />int Fonksiyon(int *A, int n)<br />{<br />       int dondur=0;<br />       for (int i = 0; i &lt; n; i++)<br />{<br />             if (A[i] % 2 == 0)<br />                  dondur++;<br />}<br />       return dondur;<br />}<br />int main()<br />{<br />       int dizi[5] = { 12,5,7,4,9 };<br />       cout &lt;&lt; Fonksiyon(dizi, 5);<br />       return 0;<br />}<br /><strong>Yukarıdaki kod çalıştırılmak istendiğinde sonuç ne olur?</strong>",
     "correctAnswer": "B",
     "options": {
       "A": "Ekrana \"3\" yazar.",
@@ -1367,7 +1367,7 @@
   {
     "id": "303411",
     "unitNumber": 9,
-    "text": "void Fonksiyon(int *A, int n)<br />{<br />        for (int i = 0; i < n; i++)<br />        {<br />             cout << A[i]<<\" \";<br />        }<br />        cout << endl;<br />}<br /><strong>Yukarıdaki fonksiyon için aşağıdaki çağrımlardan hangisi hata verir?</strong>",
+    "text": "void Fonksiyon(int *A, int n)<br />{<br />        for (int i = 0; i &lt; n; i++)<br />        {<br />             cout &lt;&lt; A[i]&lt;&lt;\" \";<br />        }<br />        cout &lt;&lt; endl;<br />}<br /><strong>Yukarıdaki fonksiyon için aşağıdaki çağrımlardan hangisi hata verir?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "Fonksiyon(dizi, 5);",
@@ -1380,7 +1380,7 @@
   {
     "id": "303412",
     "unitNumber": 9,
-    "text": "#include <iostream><br />using namespace std;<br />void Fonksiyon(int *A, int n)<br />{<br />for (int i = 0; i < n; i++)<br />  for (int j = 0; j < n-1; j++)<br />  {<br />   if (A[j] > A[j + 1])<br />   {<br />    int temp = A[j];<br />    A[j] = A[j + 1];<br />    A[j + 1] = temp;<br />   }<br />  }<br />}<br />int main()<br />{<br />  int dizi[5] = { 12,5,7,4,9 };<br />   Fonksiyon(dizi, 5);<br />  for (int i = 0; i < 5; i++)<br />{<br />   cout << dizi[i] << \" \";<br />}<br />  return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
+    "text": "#include &lt;iostream><br />using namespace std;<br />void Fonksiyon(int *A, int n)<br />{<br />for (int i = 0; i &lt; n; i++)<br />  for (int j = 0; j &lt; n-1; j++)<br />  {<br />   if (A[j] > A[j + 1])<br />   {<br />    int temp = A[j];<br />    A[j] = A[j + 1];<br />    A[j + 1] = temp;<br />   }<br />  }<br />}<br />int main()<br />{<br />  int dizi[5] = { 12,5,7,4,9 };<br />   Fonksiyon(dizi, 5);<br />  for (int i = 0; i &lt; 5; i++)<br />{<br />   cout &lt;&lt; dizi[i] &lt;&lt; \" \";<br />}<br />  return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "12 5 7 4 9",
@@ -1458,7 +1458,7 @@
   {
     "id": "115391",
     "unitNumber": 10,
-    "text": "int a[2][3] = {2, 5, 8};<br />int b = a[0][1] + a[1][1];<br />cout<<b<<endl;<br /><strong>Yukarıdaki C++ kod bloğu çalıştırıldığında üretilecek ekran çıktısı aşağıdakilerden hangisidir?</strong>",
+    "text": "int a[2][3] = {2, 5, 8};<br />int b = a[0][1] + a[1][1];<br />cout&lt;&lt;b&lt;&lt;endl;<br /><strong>Yukarıdaki C++ kod bloğu çalıştırıldığında üretilecek ekran çıktısı aşağıdakilerden hangisidir?</strong>",
     "correctAnswer": "A",
     "options": {
       "A": "5",
@@ -1471,7 +1471,7 @@
   {
     "id": "115399",
     "unitNumber": 10,
-    "text": "void DiziDoldur(int d[][3], int n) {<br />     int a, b;<br />     for (a = 0; a < n; a++)<br />          for (b = 0; b < 3; b++)<br />               d[a][b] = a * b;<br />}<br />int main() {<br />     int dizi[2][3];<br />     ?<br />     return 0;<br />}<br /><strong>Yukarıdaki C++ programının ? karakteri yer alan satırına aşağıdakilerden hangisi yazılırsa ilgili alt fonksiyon doğru şekilde çağrılmış olur?</strong>",
+    "text": "void DiziDoldur(int d[][3], int n) {<br />     int a, b;<br />     for (a = 0; a &lt; n; a++)<br />          for (b = 0; b &lt; 3; b++)<br />               d[a][b] = a * b;<br />}<br />int main() {<br />     int dizi[2][3];<br />     ?<br />     return 0;<br />}<br /><strong>Yukarıdaki C++ programının ? karakteri yer alan satırına aşağıdakilerden hangisi yazılırsa ilgili alt fonksiyon doğru şekilde çağrılmış olur?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "DiziDoldur(2,3);",
@@ -1497,7 +1497,7 @@
   {
     "id": "115464",
     "unitNumber": 10,
-    "text": "int dizi[4][4] = {0};<br />for(int i=0; i<4; i++)<br />   for(int j=i; j<4; j++)<br />      dizi[i][j]= i + 1;<br /><br />for(int i=0; i<4; i++)<br />{<br />   for(int j=0; j<4; j++)<br />      cout<<dizi[i][j]<<\",\";<br />   cout<<endl;<br />}<br /><strong>Yukarıdaki C++ kod bloğu çalıştırıldığında aşağıdaki ekran çıktılarından hangisini üretir?</strong>",
+    "text": "int dizi[4][4] = {0};<br />for(int i=0; i&lt;4; i++)<br />   for(int j=i; j&lt;4; j++)<br />      dizi[i][j]= i + 1;<br /><br />for(int i=0; i&lt;4; i++)<br />{<br />   for(int j=0; j&lt;4; j++)<br />      cout&lt;&lt;dizi[i][j]&lt;&lt;\",\";<br />   cout&lt;&lt;endl;<br />}<br /><strong>Yukarıdaki C++ kod bloğu çalıştırıldığında aşağıdaki ekran çıktılarından hangisini üretir?</strong>",
     "correctAnswer": "E",
     "options": {
       "A": "1,1,1,1,<br />2,2,2,2,<br />3,3,3,3,<br />4,4,4,4,",
@@ -1536,7 +1536,7 @@
   {
     "id": "160000",
     "unitNumber": 10,
-    "text": "for (int i = 0; i < 2; ++i)<br />{<br />  for (int j = 0; j < 3; ++j)<br />  {<br />   for (int k = 0; k < 2; ++k)<br />   {<br />   cout << \"test[\" << i << \"][\" << j<br />     << \"][\" << k << \"] = \" << test[i][j][k] << endl;<br />   }<br />  }<br />}<br /><strong>Yukarıdaki C++ kod parçasının işlevi aşağıdakilerin hangisinde doğru verilmiştir?</strong>",
+    "text": "for (int i = 0; i &lt; 2; ++i)<br />{<br />  for (int j = 0; j &lt; 3; ++j)<br />  {<br />   for (int k = 0; k &lt; 2; ++k)<br />   {<br />   cout &lt;&lt; \"test[\" &lt;&lt; i &lt;&lt; \"][\" &lt;&lt; j<br />     &lt;&lt; \"][\" &lt;&lt; k &lt;&lt; \"] = \" &lt;&lt; test[i][j][k] &lt;&lt; endl;<br />   }<br />  }<br />}<br /><strong>Yukarıdaki C++ kod parçasının işlevi aşağıdakilerin hangisinde doğru verilmiştir?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "test dizinin eleman sayısını bulur.",
@@ -1575,7 +1575,7 @@
   {
     "id": "303478",
     "unitNumber": 10,
-    "text": "for (int n = 0; n<i; n++) <br />{<br />    for (int m = 0; m<j; m++)<br />    {<br />       a[n][m] = n+1;<br />    }<br />}<br /><strong>Bu kod parçacığının yaptığı işlemi aşağıdakilerden hangisi doğru şekilde anlatmaktadır?</strong>",
+    "text": "for (int n = 0; n&lt;i; n++) <br />{<br />    for (int m = 0; m&lt;j; m++)<br />    {<br />       a[n][m] = n+1;<br />    }<br />}<br /><strong>Bu kod parçacığının yaptığı işlemi aşağıdakilerden hangisi doğru şekilde anlatmaktadır?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "a dizisinin i * j adet elemanı silinir.",
@@ -1614,7 +1614,7 @@
   {
     "id": "303481",
     "unitNumber": 10,
-    "text": "for (int i=0; i< 5; i++)<br />{<br />   for(int j=0; j<5; j++)<br />   {<br />       a[i][j] = i * j;<br />   }<br />}<br /><strong>Yukarıdaki kod parçası aşağıdaki işlevlerden hangisini yerine getirmektedir?</strong>",
+    "text": "for (int i=0; i&lt; 5; i++)<br />{<br />   for(int j=0; j&lt;5; j++)<br />   {<br />       a[i][j] = i * j;<br />   }<br />}<br /><strong>Yukarıdaki kod parçası aşağıdaki işlevlerden hangisini yerine getirmektedir?</strong>",
     "correctAnswer": "A",
     "options": {
       "A": "Dizinin tüm elemanlarına bulundukları satır ve sütün indis değerlerinin çarpım sonucunu yazar.",
@@ -1718,7 +1718,7 @@
   {
     "id": "115377",
     "unitNumber": 11,
-    "text": "string metin =\"Beslenme Önemlidir!\";<br />metin.resize(6);<br />cout << metin << endl;<br /><strong>Yukarıdaki C++ kod bloğu çalıştırıldığında aşağıdaki ekran çıktılarından hangisini üretir?</strong>",
+    "text": "string metin =\"Beslenme Önemlidir!\";<br />metin.resize(6);<br />cout &lt;&lt; metin &lt;&lt; endl;<br /><strong>Yukarıdaki C++ kod bloğu çalıştırıldığında aşağıdaki ekran çıktılarından hangisini üretir?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "Beslenme Önemlidir!Beslen",
@@ -1731,7 +1731,7 @@
   {
     "id": "115401",
     "unitNumber": 11,
-    "text": "string metin =\"C++ Dersleri\";<br />cout << metin.size() << endl;<br /><strong>Yukarıdaki C++ kod bloğu çalıştırıldığında aşağıdaki ekran çıktılarından hangisini üretir?</strong>",
+    "text": "string metin =\"C++ Dersleri\";<br />cout &lt;&lt; metin.size() &lt;&lt; endl;<br /><strong>Yukarıdaki C++ kod bloğu çalıştırıldığında aşağıdaki ekran çıktılarından hangisini üretir?</strong>",
     "correctAnswer": "B",
     "options": {
       "A": "2",
@@ -1744,7 +1744,7 @@
   {
     "id": "115435",
     "unitNumber": 11,
-    "text": "string metin1 =\"BILGISAYAR\";<br />string metin2;<br />int j=0;<br />metin2.resize(metin1.size());<br />for(int i=0; i<10; i+=2){<br />   metin2[j]=metin1.at(i);<br />   j++;<br />}<br />cout <<metin2<<endl;<br /><strong>Verilen C++ kod bloğu çalıştırıldığında aşağıdaki ekran çıktılarından hangisini üretir?</strong>",
+    "text": "string metin1 =\"BILGISAYAR\";<br />string metin2;<br />int j=0;<br />metin2.resize(metin1.size());<br />for(int i=0; i&lt;10; i+=2){<br />   metin2[j]=metin1.at(i);<br />   j++;<br />}<br />cout &lt;&lt;metin2&lt;&lt;endl;<br /><strong>Verilen C++ kod bloğu çalıştırıldığında aşağıdaki ekran çıktılarından hangisini üretir?</strong>",
     "correctAnswer": "A",
     "options": {
       "A": "BLIAA",
@@ -1757,7 +1757,7 @@
   {
     "id": "115463",
     "unitNumber": 11,
-    "text": "string s1 = \"14188XF300\";<br />string s2 = \"X\";<br />cout << s1.find(s2) << endl;<br /><strong>Yukarıdaki C++ kod bloğu çalıştırıldığında aşağıdaki ekran çıktılarından hangisi elde edilir?</strong>",
+    "text": "string s1 = \"14188XF300\";<br />string s2 = \"X\";<br />cout &lt;&lt; s1.find(s2) &lt;&lt; endl;<br /><strong>Yukarıdaki C++ kod bloğu çalıştırıldığında aşağıdaki ekran çıktılarından hangisi elde edilir?</strong>",
     "correctAnswer": "A",
     "options": {
       "A": "5",
@@ -1770,7 +1770,7 @@
   {
     "id": "115488",
     "unitNumber": 11,
-    "text": "string metin1 = \"BILGISAYAR\";<br />string metin2 = \"101\";<br />metin1.insert(5,metin2);<br />cout <<metin1<<endl;<br /><strong>Yukarıdaki C++ kod bloğu çalıştırıldığında aşağıdaki ekran çıktılarından hangisini üretir?</strong>",
+    "text": "string metin1 = \"BILGISAYAR\";<br />string metin2 = \"101\";<br />metin1.insert(5,metin2);<br />cout &lt;&lt;metin1&lt;&lt;endl;<br /><strong>Yukarıdaki C++ kod bloğu çalıştırıldığında aşağıdaki ekran çıktılarından hangisini üretir?</strong>",
     "correctAnswer": "E",
     "options": {
       "A": "BILGISAYAR101",
@@ -1903,9 +1903,9 @@
     "text": "<strong>String sınıfı nesnelerini kullanabilmek için tanımlanması gereken kütüphane aşağıdakilerin hangisidir?</strong>",
     "correctAnswer": "C",
     "options": {
-      "A": "#include <iostream> <iostream></iostream>",
-      "B": "#include <cstring> <cstring></cstring>",
-      "C": "#include <string> <string></string>",
+      "A": "#include &lt;iostream> &lt;iostream>&lt;/iostream>",
+      "B": "#include &lt;cstring> &lt;cstring>&lt;/cstring>",
+      "C": "#include &lt;string> &lt;string>&lt;/string>",
       "D": "string ornekString;",
       "E": "using namespace std;"
     }
@@ -2056,7 +2056,7 @@
   {
     "id": "115354",
     "unitNumber": 12,
-    "text": "stack<int> depo;<br />depo.push(5);<br /><strong>Yukarıdaki C++ kod bloğunun son satırında yer alan deyimin işlevi nedir?</strong>",
+    "text": "stack&lt;int> depo;<br />depo.push(5);<br /><strong>Yukarıdaki C++ kod bloğunun son satırında yer alan deyimin işlevi nedir?</strong>",
     "correctAnswer": "A",
     "options": {
       "A": "depo yığınının en üstüne 5 değerinde bir eleman eklemek",
@@ -2069,7 +2069,7 @@
   {
     "id": "115471",
     "unitNumber": 12,
-    "text": "vector<int> yigin;<br />vector<int>::iterator gosterici; <br />for (int i=1; i<=6; i++)<br />     yigin.push_back(i*10);   <br />gosterici=yigin.begin();<br />gosterici++;<br />cout<<*gosterici<<endl;<br /><strong>Yukarıdaki C++ kod bloğu çalıştırıldığında hangi ekran çıktısını üretir?</strong>",
+    "text": "vector&lt;int> yigin;<br />vector&lt;int>::iterator gosterici; <br />for (int i=1; i&lt;=6; i++)<br />     yigin.push_back(i*10);   <br />gosterici=yigin.begin();<br />gosterici++;<br />cout&lt;&lt;*gosterici&lt;&lt;endl;<br /><strong>Yukarıdaki C++ kod bloğu çalıştırıldığında hangi ekran çıktısını üretir?</strong>",
     "correctAnswer": "E",
     "options": {
       "A": "1",
@@ -2082,7 +2082,7 @@
   {
     "id": "115533",
     "unitNumber": 12,
-    "text": "deque<int> tamSayiYigin;<br />for(int i=1; i<10; i++)<br />    tamSayiYigin.push_back( i * i );<br />tamSayiYigin.erase( tamSayiYigin.begin() + 4);<br /><strong>Yukarıda verilen C++ kod bloğunun son satırında yer alan deyimin işlevi aşağıdakilerden hangisidir?</strong>",
+    "text": "deque&lt;int> tamSayiYigin;<br />for(int i=1; i&lt;10; i++)<br />    tamSayiYigin.push_back( i * i );<br />tamSayiYigin.erase( tamSayiYigin.begin() + 4);<br /><strong>Yukarıda verilen C++ kod bloğunun son satırında yer alan deyimin işlevi aşağıdakilerden hangisidir?</strong>",
     "correctAnswer": "B",
     "options": {
       "A": "Depo yapısının başına 4 eleman ekler.",
@@ -2173,7 +2173,7 @@
   {
     "id": "159307",
     "unitNumber": 12,
-    "text": "#include <iostream><br />     #include <list><br />     using namespace std;<br />     int main ()<br />     {<br />        list<int> liste;<br />      int toplam;<br />        liste.push_front(1);<br />      liste.push_front(2);<br />      liste.push_front(10);<br />        liste.push_back(6);<br />        toplam=liste.front()+liste.back();<br />        cout << toplam << endl;<br />        return 0;<br />     }<br /><strong>Yukarıda verilen programın ekran çıktısı hangisidir?</strong>",
+    "text": "#include &lt;iostream><br />     #include &lt;list><br />     using namespace std;<br />     int main ()<br />     {<br />        list&lt;int> liste;<br />      int toplam;<br />        liste.push_front(1);<br />      liste.push_front(2);<br />      liste.push_front(10);<br />        liste.push_back(6);<br />        toplam=liste.front()+liste.back();<br />        cout &lt;&lt; toplam &lt;&lt; endl;<br />        return 0;<br />     }<br /><strong>Yukarıda verilen programın ekran çıktısı hangisidir?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "1",
@@ -2186,7 +2186,7 @@
   {
     "id": "159309",
     "unitNumber": 12,
-    "text": "#include<iostream><br />#include<set><br />using namespace std;<br />int main()<br />{<br />    int ar[]={1,2,3,4,5};<br />    set<int> s(ar,ar+5);<br />    set<int>::iterator itb=s.begin();<br />    int toplam=*itb+5;<br />    cout<<toplam<<endl;<br />    return 0;<br />}<br /><strong>Yukarıda verilen programın ekran çıktısı hangisidir?</strong>",
+    "text": "#include&lt;iostream><br />#include&lt;set><br />using namespace std;<br />int main()<br />{<br />    int ar[]={1,2,3,4,5};<br />    set&lt;int> s(ar,ar+5);<br />    set&lt;int>::iterator itb=s.begin();<br />    int toplam=*itb+5;<br />    cout&lt;&lt;toplam&lt;&lt;endl;<br />    return 0;<br />}<br /><strong>Yukarıda verilen programın ekran çıktısı hangisidir?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "1",
@@ -2212,7 +2212,7 @@
   {
     "id": "159313",
     "unitNumber": 12,
-    "text": "#include <iostream><br />#include <deque><br />using namespace std;<br />int main ()<br />{<br />        deque<int> k;<br />        for (int i=1; i<=6; i++)<br />              k.push_back(i);<br />        k.erase (k.begin(),k.begin()+3);<br />        k.erase(k.begin()+2);<br />        deque<int>::iterator it;<br />        for ( it = k.begin(); it!=k.end(); ++it)<br />               cout << \" \" << *it;<br />        return 0;<br />}<br /><strong>Yukarıda verilen programın ekran çıktısı aşağıdakilerden hangisidir?</strong>",
+    "text": "#include &lt;iostream><br />#include &lt;deque><br />using namespace std;<br />int main ()<br />{<br />        deque&lt;int> k;<br />        for (int i=1; i&lt;=6; i++)<br />              k.push_back(i);<br />        k.erase (k.begin(),k.begin()+3);<br />        k.erase(k.begin()+2);<br />        deque&lt;int>::iterator it;<br />        for ( it = k.begin(); it!=k.end(); ++it)<br />               cout &lt;&lt; \" \" &lt;&lt; *it;<br />        return 0;<br />}<br /><strong>Yukarıda verilen programın ekran çıktısı aşağıdakilerden hangisidir?</strong>",
     "correctAnswer": "E",
     "options": {
       "A": "0 1 2 3",
@@ -2303,7 +2303,7 @@
   {
     "id": "303500",
     "unitNumber": 12,
-    "text": "#include <iostream><br />#include <vector><br />using namespace std;<br /> int main ()<br /> {<br />     vector<int> vek;<br />     int toplam;<br />     vek.push_front(12);<br />     vek.push_back(10);<br />     toplam= vek.front() + vek.back();<br />     cout << toplam << endl;<br />     return 0;<br /> }<br /><strong>Yukarıda verilen programın çıktısı aşağıdakilerden hangisidir?</strong>",
+    "text": "#include &lt;iostream><br />#include &lt;vector><br />using namespace std;<br /> int main ()<br /> {<br />     vector&lt;int> vek;<br />     int toplam;<br />     vek.push_front(12);<br />     vek.push_back(10);<br />     toplam= vek.front() + vek.back();<br />     cout &lt;&lt; toplam &lt;&lt; endl;<br />     return 0;<br /> }<br /><strong>Yukarıda verilen programın çıktısı aşağıdakilerden hangisidir?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "2",
@@ -2319,7 +2319,7 @@
     "text": "<strong>map veri tipinde aşağıdakilerden hangisi ile bir değişken oluşturulur?</strong>",
     "correctAnswer": "A",
     "options": {
-      "A": "map<int,int><int,int></int,int>",
+      "A": "map&lt;int,int>&lt;int,int>&lt;/int,int>",
       "B": "map(int,int)",
       "C": "map[int,int]",
       "D": "map",
@@ -2329,7 +2329,7 @@
   {
     "id": "303521",
     "unitNumber": 12,
-    "text": "#include <iostream><br />#include <vector><br />using namespace std;<br />int main()<br />  {<br />     vector<int> vek(3);<br />     for(unsigned i = 0; i < vek.size(); i++)<br />        vek.at(i) = i;<br />     for(unsigned i = 0; i <vek.size(); i++)<br />        cout << “ “ << vek.at(i);<br />     return 0;<br />  }<br /><strong>Yukarıda verilen programın çıktısı aşağıdakilerden hangisidir?</strong>",
+    "text": "#include &lt;iostream><br />#include &lt;vector><br />using namespace std;<br />int main()<br />  {<br />     vector&lt;int> vek(3);<br />     for(unsigned i = 0; i &lt; vek.size(); i++)<br />        vek.at(i) = i;<br />     for(unsigned i = 0; i &lt;vek.size(); i++)<br />        cout &lt;&lt; “ “ &lt;&lt; vek.at(i);<br />     return 0;<br />  }<br /><strong>Yukarıda verilen programın çıktısı aşağıdakilerden hangisidir?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "1 2 3",
@@ -2466,7 +2466,7 @@
       "B": "ofstream sınıfına ait bir nesne oluşturulur.",
       "C": "Dosya istenilen özelliklerde formatlanır.",
       "D": "open() üye fonksiyonu çağrılarak dosya açılır.",
-      "E": "“<<” akış sembolü kullanılarak yazma işlemi gerçekleştirilir."
+      "E": "“&lt;&lt;” akış sembolü kullanılarak yazma işlemi gerçekleştirilir."
     }
   },
   {
@@ -2515,7 +2515,7 @@
     "correctAnswer": "B",
     "options": {
       "A": "Program sonunda açılan dosya close() fonksiyonu ile kapatılır.",
-      "B": "“<<” akış sembolü kullanılarak okuma işlemi gerçekleştirilir.",
+      "B": "“&lt;&lt;” akış sembolü kullanılarak okuma işlemi gerçekleştirilir.",
       "C": "open() üye fonksiyonu çağrılarak dosya açılır.",
       "D": "ifstream sınıfına ait bir nesne oluşturulur.",
       "E": "Programın baş kısmına fstream kütüphanesi eklenir."
@@ -2683,8 +2683,8 @@
     "text": "<strong>Dosyadan okuma işlemi için aşağıdakilerden hangisi kullanılır?</strong>",
     "correctAnswer": "D",
     "options": {
-      "A": "<<",
-      "B": "<",
+      "A": "&lt;&lt;",
+      "B": "&lt;",
       "C": ">",
       "D": ">>",
       "E": "="
@@ -2696,11 +2696,11 @@
     "text": "<strong>Program içerisinde rastgele erişimli dosyadan okuma yapmak için kaynak koda aşağıdakilerden hangisinin eklenmesi gereklidir?</strong>",
     "correctAnswer": "A",
     "options": {
-      "A": "<fstream> başlık dosyası</fstream>",
-      "B": "<ofstream> başlık dosyası</ofstream>",
-      "C": "<ifstream> başlık dosyası</ifstream>",
-      "D": "<afstream> başlık dosyası </afstream>",
-      "E": "<ffstream> başlık dosyası</ffstream>"
+      "A": "&lt;fstream> başlık dosyası&lt;/fstream>",
+      "B": "&lt;ofstream> başlık dosyası&lt;/ofstream>",
+      "C": "&lt;ifstream> başlık dosyası&lt;/ifstream>",
+      "D": "&lt;afstream> başlık dosyası &lt;/afstream>",
+      "E": "&lt;ffstream> başlık dosyası&lt;/ffstream>"
     }
   },
   {
@@ -2797,7 +2797,7 @@
   {
     "id": "144674",
     "unitNumber": 14,
-    "text": "#include <iostream><br />using namespace std;<br /><br />class deneme {<br />public:<br />int sayi;<br />void Yaz();<br />};<br /><br />void programlama::Yaz() {<br />cout << \"Yaz fonksiyonu kullanıldı\\n\";<br />}<br /><br />int main() {<br />deneme d1;<br />d1.Yaz();<br /><br />return 0;<br />}<br /><br /><strong>Yukarıdaki C++ programı için aşağıdakilerden hangisi <u>yanlıştır</u>?</strong>",
+    "text": "#include &lt;iostream><br />using namespace std;<br /><br />class deneme {<br />public:<br />int sayi;<br />void Yaz();<br />};<br /><br />void programlama::Yaz() {<br />cout &lt;&lt; \"Yaz fonksiyonu kullanıldı\\n\";<br />}<br /><br />int main() {<br />deneme d1;<br />d1.Yaz();<br /><br />return 0;<br />}<br /><br /><strong>Yukarıdaki C++ programı için aşağıdakilerden hangisi <u>yanlıştır</u>?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "Yaz adında üye fonksiyonu tanımlanmıştır.",
@@ -2849,7 +2849,7 @@
   {
     "id": "159371",
     "unitNumber": 14,
-    "text": "#include <iostream><br />using namespace std;<br /><br />class silindir<br />{<br />private:<br />double r, h;<br />const double pi = 3;<br /><br />public:<br />void YaricapOku(double yaricap)<br />{<br />r = yaricap;<br />}<br />void YukseklikOku(double yukseklik)<br />{<br />h = yukseklik;<br />}<br />double HacimHesapla() {<br />return pi*r*r*h;<br />}<br />};<br /><br />int main()<br />{<br />silindir s1;<br />s1.YaricapOku(1);<br />s1.YukseklikOku(3);<br />cout << \"Silindirin hacmi=\" << s1.HacimHesapla();<br />return 0;<br />}<br /><strong>Yukarıdaki kod parçası çalıştırıldığında aşağıdaki ekran çıktılarından hangisi oluşur?</strong>",
+    "text": "#include &lt;iostream><br />using namespace std;<br /><br />class silindir<br />{<br />private:<br />double r, h;<br />const double pi = 3;<br /><br />public:<br />void YaricapOku(double yaricap)<br />{<br />r = yaricap;<br />}<br />void YukseklikOku(double yukseklik)<br />{<br />h = yukseklik;<br />}<br />double HacimHesapla() {<br />return pi*r*r*h;<br />}<br />};<br /><br />int main()<br />{<br />silindir s1;<br />s1.YaricapOku(1);<br />s1.YukseklikOku(3);<br />cout &lt;&lt; \"Silindirin hacmi=\" &lt;&lt; s1.HacimHesapla();<br />return 0;<br />}<br /><strong>Yukarıdaki kod parçası çalıştırıldığında aşağıdaki ekran çıktılarından hangisi oluşur?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "Silindirin hacmi=1",
@@ -2927,7 +2927,7 @@
   {
     "id": "303561",
     "unitNumber": 14,
-    "text": "#include <iostream><br />using namespace std;<br /><br />class deneme{<br />public:<br />int sayi1;<br />int sayi2;<br />void Yaz(){<br />cout << \"c++ ile programlama temelleri\";<br />}<br /><br />};<br /><br />int main(){<br />deneme d1;<br />d1.sayi1 = 7;<br />d1.sayi2 = 8;<br />d1.Yaz();<br />return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında aşağıdaki ekran çıktılarından hangisi oluşur?</strong>",
+    "text": "#include &lt;iostream><br />using namespace std;<br /><br />class deneme{<br />public:<br />int sayi1;<br />int sayi2;<br />void Yaz(){<br />cout &lt;&lt; \"c++ ile programlama temelleri\";<br />}<br /><br />};<br /><br />int main(){<br />deneme d1;<br />d1.sayi1 = 7;<br />d1.sayi2 = 8;<br />d1.Yaz();<br />return 0;<br />}<br /><strong>Yukarıdaki C++ programı çalıştırıldığında aşağıdaki ekran çıktılarından hangisi oluşur?</strong>",
     "correctAnswer": "A",
     "options": {
       "A": "c++ ile programlama temelleri",
@@ -2940,7 +2940,7 @@
   {
     "id": "303562",
     "unitNumber": 14,
-    "text": "<div>\t#include <iostream></div><div>\tusing namespace std;</div><div>\t </div><div>\tclass Calisan {</div><div>\tpublic:</div><div>\t    int maas;</div><div>\t    Calisan() {</div><div>\t        maas = 1000;</div><div>\t    }</div><div>\t    void ZamYap(int miktar) {</div><div>\t        maas += miktar;</div><div>\t        cout << maas << endl;</div><div>\t    }</div><div>\t};</div><div>\t </div><div>\tint main() {</div><div>\t    Calisan c1;</div><div>\t    c1.ZamYap(1000);</div><div>\t    return 0;</div><div>\t}</div><strong>Yukarıdaki C++ kodu çalıştırıldığında aşağıdaki ekran çıktılarından hangisi oluşur?</strong>",
+    "text": "<div>\t#include &lt;iostream></div><div>\tusing namespace std;</div><div>\t </div><div>\tclass Calisan {</div><div>\tpublic:</div><div>\t    int maas;</div><div>\t    Calisan() {</div><div>\t        maas = 1000;</div><div>\t    }</div><div>\t    void ZamYap(int miktar) {</div><div>\t        maas += miktar;</div><div>\t        cout &lt;&lt; maas &lt;&lt; endl;</div><div>\t    }</div><div>\t};</div><div>\t </div><div>\tint main() {</div><div>\t    Calisan c1;</div><div>\t    c1.ZamYap(1000);</div><div>\t    return 0;</div><div>\t}</div><strong>Yukarıdaki C++ kodu çalıştırıldığında aşağıdaki ekran çıktılarından hangisi oluşur?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "1000",

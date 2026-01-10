@@ -1087,7 +1087,7 @@
       "A": "SELECT [all] FROM Kisiler WHERE Ad LIKE ‘Ayşe’",
       "B": "SEECT [all] FROM Kisiler WHERE Ad=‘Ayşe’",
       "C": "SELECT * FROM Kisiler WHERE Ad=‘Ayşe’",
-      "D": "SELECT * FROM Kisiler WHERE Ad<>‘Ayşe’",
+      "D": "SELECT * FROM Kisiler WHERE Ad&lt;>‘Ayşe’",
       "E": "SELECT *.Kisiler WHERE Ad=’Ayşe’"
     }
   },
@@ -2580,7 +2580,7 @@
     "correctAnswer": "C",
     "options": {
       "A": "{ }",
-      "B": "< >",
+      "B": "&lt; >",
       "C": "[ ]",
       "D": "( )",
       "E": "| |"
