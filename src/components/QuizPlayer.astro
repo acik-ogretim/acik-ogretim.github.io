@@ -12,7 +12,7 @@
         class="container mx-auto flex items-center justify-between gap-1 sm:gap-4 px-1.5 sm:px-4 h-14 sm:h-16 overflow-hidden md:overflow-visible"
     >
         <!-- Left Part: Navigation & Title -->
-        <div class="flex items-center gap-1 sm:gap-2 min-w-0">
+        <div class="hidden sm:flex items-center gap-1 sm:gap-2 min-w-0">
             <div
                 class="flex flex-col min-w-0 cursor-pointer p-0.5 sm:p-1 rounded-lg hover:bg-slate-700/30 transition-all"
             >
@@ -27,10 +27,10 @@
         <!-- Center Part: Statistics (Redesigned) -->
         <div
             id="stats-container"
-            class="hidden xs:flex items-center gap-1.5 sm:gap-3 bg-slate-800/50 border border-slate-700/50 rounded-xl px-1.5 sm:px-3 py-1 shadow-inner shrink-0"
+            class="hidden items-center gap-1 sm:gap-2 mr-1 sm:mr-4 border-r border-slate-700/50 pr-1 sm:pr-4"
         >
             <div
-                class="flex flex-col items-center border-r border-slate-700 pr-1.5 sm:pr-3"
+                class="flex flex-col items-center justify-center bg-slate-800/80 rounded-lg px-2 sm:px-3 py-1 border border-slate-700/50"
             >
                 <div
                     class="text-[10px] sm:text-lg font-black text-white leading-none"
@@ -82,6 +82,7 @@
                     class="player-btn-icon"
                     title="Sesli Okuma Modu"
                 >
+                    <span class="sr-only">Sesli Okuma Modu</span>
                     <svg
                         class="w-5 h-5 sm:w-5 sm:h-5"
                         fill="none"
@@ -129,7 +130,7 @@
 
             <!-- Navigation Controls -->
             <div class="flex items-center gap-0.5 sm:gap-1">
-                <button id="btn-prev" class="player-btn-icon">
+                <button id="btn-prev" class="player-btn-icon hidden xs:flex">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="18"
@@ -205,7 +206,7 @@
 
                     <button
                         id="btn-stop-speech"
-                        class="h-8 sm:h-9 w-8 sm:w-9 flex items-center justify-center text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-all"
+                        class="h-8 sm:h-9 w-8 sm:w-9 flex items-center justify-center text-red-500 hover:text-red-400 hover:bg-red-500/10 transition-all"
                         title="Okumayı Durdur"
                     >
                         <svg
@@ -224,7 +225,7 @@
                     </button>
                 </div>
 
-                <button id="btn-next" class="player-btn-icon">
+                <button id="btn-next" class="player-btn-icon hidden xs:flex">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="18"
@@ -303,7 +304,9 @@
 
                 // Add close button listener here since it's UI specific
                 const closeBtn = document.getElementById("btn-close-settings");
-                const applyBtn = document.getElementById("btn-apply-settings");
+                const applyBtn =
+                    document.getElementById("btn-apply-filters") ||
+                    document.getElementById("btn-apply-settings");
                 if (closeBtn)
                     closeBtn.onclick = () =>
                         (window as any).quizPlayer.toggleSettings();

@@ -1,4 +1,4 @@
-import type { PlayerQuestion, PlayerUI, QuizSettings, OptionKey, Source } from "../lib/types";
+import type { OptionKey, PlayerQuestion, PlayerUI, QuizSettings, Source } from "../lib/types";
 
 export class QuizPlayer {
   questions: PlayerQuestion[];
@@ -186,8 +186,12 @@ export class QuizPlayer {
       this.ui.settingsDrawer.onclick = (e) => {
         if (e.target === this.ui.settingsDrawer) this.toggleSettings();
       };
-      const applyBtn = document.getElementById('btn-apply-filters');
+      // Match ID in Layout.astro
+      const applyBtn = document.getElementById('btn-apply-filters') || document.getElementById('btn-apply-settings');
       if (applyBtn) applyBtn.onclick = () => this.toggleSettings();
+
+      const closeBtn = document.getElementById('btn-close-settings');
+      if (closeBtn) closeBtn.onclick = () => this.toggleSettings();
     }
     if (this.ui.repeatBtn) this.ui.repeatBtn.onclick = () => this.repeat();
     if (this.ui.readQuestionBtn) this.ui.readQuestionBtn.onclick = () => this.speakCurrent();
@@ -474,7 +478,9 @@ export class QuizPlayer {
   }
 
   toggleSettings(): void {
-    if ((window as any).openQuizSettings) {
+    if ((window as any).closeGlobalSettings && this.ui.settingsDrawer && (this.ui.settingsDrawer.style.display === 'flex' || this.ui.settingsDrawer.classList.contains('flex'))) {
+      (window as any).closeGlobalSettings();
+    } else if ((window as any).openQuizSettings) {
       (window as any).openQuizSettings();
     }
   }
@@ -494,8 +500,8 @@ export class QuizPlayer {
     document.body.classList.toggle('hide-answers', !this.settings.showAnswers);
     this.saveSettings();
     if (this.ui.btnToggleAnswers) {
-      this.ui.btnToggleAnswers.classList.toggle('text-primary-theme', this.settings.showAnswers);
-      this.ui.btnToggleAnswers.classList.toggle('bg-primary-theme/10', this.settings.showAnswers);
+      this.ui.btnToggleAnswers.classList.toggle('text-teal-400', this.settings.showAnswers);
+      this.ui.btnToggleAnswers.classList.toggle('bg-teal-400/10', this.settings.showAnswers);
     }
   }
 
@@ -504,8 +510,8 @@ export class QuizPlayer {
     document.body.classList.toggle('hide-explanations', !this.settings.showExplanations);
     this.saveSettings();
     if (this.ui.btnToggleExplanations) {
-      this.ui.btnToggleExplanations.classList.toggle('text-primary-theme', this.settings.showExplanations);
-      this.ui.btnToggleExplanations.classList.toggle('bg-primary-theme/10', this.settings.showExplanations);
+      this.ui.btnToggleExplanations.classList.toggle('text-teal-400', this.settings.showExplanations);
+      this.ui.btnToggleExplanations.classList.toggle('bg-teal-400/10', this.settings.showExplanations);
     }
   }
 
@@ -514,8 +520,8 @@ export class QuizPlayer {
     document.body.classList.toggle('hide-options', this.settings.hideIncorrectOptions);
     this.saveSettings();
     if (this.ui.btnToggleOptions) {
-      this.ui.btnToggleOptions.classList.toggle('text-primary-theme', !this.settings.hideIncorrectOptions);
-      this.ui.btnToggleOptions.classList.toggle('bg-primary-theme/10', !this.settings.hideIncorrectOptions);
+      this.ui.btnToggleOptions.classList.toggle('text-teal-400', this.settings.hideIncorrectOptions);
+      this.ui.btnToggleOptions.classList.toggle('bg-teal-400/10', this.settings.hideIncorrectOptions);
     }
   }
 
@@ -538,8 +544,7 @@ export class QuizPlayer {
         if (btnText) btnText.innerHTML = 'Durdur';
         if (btnIcon) btnIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12"></rect></svg>`;
 
-        this.ui.btnToggleInteractive.classList.remove('bg-teal-500', 'text-slate-900');
-        this.ui.btnToggleInteractive.classList.add('bg-red-500', 'text-white');
+        this.ui.btnToggleInteractive.classList.add('is-stopping');
       }
 
       if (this.ui.statsContainer) {
@@ -561,8 +566,7 @@ export class QuizPlayer {
         if (btnText) btnText.innerHTML = 'Çöz';
         if (btnIcon) btnIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>`;
 
-        this.ui.btnToggleInteractive.classList.add('bg-teal-500', 'text-slate-900');
-        this.ui.btnToggleInteractive.classList.remove('bg-red-500', 'text-white');
+        this.ui.btnToggleInteractive.classList.remove('is-stopping');
       }
 
       if (this.ui.statsContainer) {
@@ -593,15 +597,12 @@ export class QuizPlayer {
 
   updateReaderUI(): void {
     if (this.ui.btnToggleReader) {
-      this.ui.btnToggleReader.classList.toggle('bg-teal-500', this.settings.readerMode);
-      this.ui.btnToggleReader.classList.toggle('text-white', this.settings.readerMode);
-      this.ui.btnToggleReader.classList.toggle('bg-slate-800', !this.settings.readerMode);
-      this.ui.btnToggleReader.classList.toggle('text-slate-300', !this.settings.readerMode);
+      this.ui.btnToggleReader.classList.toggle('active', this.settings.readerMode);
     }
 
     const speechControls = document.getElementById('speech-controls');
     if (speechControls) {
-      speechControls.classList.toggle('border-teal-500/50', this.settings.readerMode);
+      speechControls.classList.toggle('border-teal-500/30', this.settings.readerMode);
     }
   }
 
@@ -734,16 +735,14 @@ export class QuizPlayer {
 
   show(): void {
     if (this.ui.bar) {
-      this.ui.bar.classList.remove('translate-y-full', 'translate-y-[-100%]');
-      this.ui.bar.classList.add('translate-y-0');
+      this.ui.bar.classList.add('visible');
     }
   }
 
   hide(): void {
     this.pause();
     if (this.ui.bar) {
-      this.ui.bar.classList.remove('translate-y-0');
-      this.ui.bar.classList.add('translate-y-full');
+      this.ui.bar.classList.remove('visible');
     }
   }
 
@@ -808,8 +807,8 @@ export class QuizPlayer {
       });
       setTimeout(() => { this.isProgrammaticScroll = false; }, 800);
 
-      document.querySelectorAll('.ring-2').forEach(el => el.classList.remove('ring-2', 'ring-primary-theme'));
-      q.el.classList.add('ring-2', 'ring-primary-theme');
+      document.querySelectorAll('.ring-2').forEach(el => el.classList.remove('ring-2', 'ring-teal-500'));
+      q.el.classList.add('ring-2', 'ring-teal-500');
     }
     const pct = ((this.currentIndex + 1) / this.questions.length) * 100;
     if (this.ui.progressBar) this.ui.progressBar.style.width = pct + '%';

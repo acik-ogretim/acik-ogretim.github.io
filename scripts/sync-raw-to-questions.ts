@@ -33,16 +33,55 @@ interface AppQuestion {
     source?: string;
 }
 
-function cleanText(text: string): string {
+import he from "he";
+
+function cleanText(text: string, options: { encode?: boolean, markdown?: boolean } = {}): string {
     if (!text) return "";
-    return text
+
+    let cleaned = text;
+    const useMarkdown = options.markdown !== false;
+
+    if (options.encode) {
+        // 1. Decode first to handle existing entities consistently (prevents &amp;lt;)
+        cleaned = he.decode(cleaned);
+
+        // 2. Encode everything to be safe for innerHTML (converts < to &lt; etc)
+        cleaned = he.encode(cleaned, { useNamedReferences: true });
+
+        // 3. Restore whitelist tags that are allowed for formatting
+        const whitelist = ['b', 'strong', 'i', 'em', 'u', 'br'];
+
+        whitelist.forEach(tag => {
+            const openRegex = new RegExp(`&lt;${tag}\\s*&gt;`, 'gi');
+            cleaned = cleaned.replace(openRegex, `<${tag}>`);
+
+            const closeRegex = new RegExp(`&lt;\\/${tag}\\s*&gt;`, 'gi');
+            cleaned = cleaned.replace(closeRegex, `</${tag}>`);
+
+            const selfRegex = new RegExp(`&lt;${tag}\\s*\\/&gt;`, 'gi');
+            cleaned = cleaned.replace(selfRegex, `<${tag} />`);
+        });
+    }
+
+    // 4. Markdown Bold to HTML (Apply to all unless specifically disabled)
+    // Convert **text** to <b>text</b>
+    if (useMarkdown) {
+        cleaned = cleaned.replace(/\*\*(.*?)\*\*/g, "<b>$1</b>");
+        // Convert `text` to <code>text</code>
+        cleaned = cleaned.replace(/`(.*?)`/g, "<code>$1</code>");
+    }
+
+    // 5. Normalize and trim
+    return cleaned
         .replace(/<br\s+type="_moz"\s*\/?>/gi, "<br />") // Convert Firefox br to normal br
         .replace(/\r\n/g, "") // Remove Windows newlines (often clutter in HTML content)
         .trim()
         .replace(/(<br\s*\/?>)+$/i, ""); // Remove trailing <br> tags
 }
 
-function mapRawToApp(raw: RawQuestion): AppQuestion {
+function mapRawToApp(raw: RawQuestion, slug: string): AppQuestion {
+    const shouldEncode = slug === 'web-tasariminin-temelleri';
+
     const q: AppQuestion = {
         id: String(raw.SoruID || raw.id), // Fallback if id exists
         unitNumber: raw.Unite || raw.unitNumber || 0,
@@ -58,24 +97,10 @@ function mapRawToApp(raw: RawQuestion): AppQuestion {
     }
 
     // Map options
-    // Raw might have A, B, C, D, E directly OR CevapSecenekleri
-    if (raw.A || raw.B) {
-        if (raw.A) q.options['A'] = cleanText(raw.A);
-        if (raw.B) q.options['B'] = cleanText(raw.B);
-        if (raw.C) q.options['C'] = cleanText(raw.C);
-        if (raw.D) q.options['D'] = cleanText(raw.D);
-        if (raw.E) q.options['E'] = cleanText(raw.E);
-    } else if (raw.CevapSecenekleri) {
-        // Need to parse if it's an object or something else
-        // Usually raw file from fetcher flattens A,B,C... or keeps them?
-        // Let's assume A, B, C... properties exist on the raw object from observations
-    }
-
-    // If raw object has A, B... as properties (which ata.py seems to do)
-    // check for those.
     ['A', 'B', 'C', 'D', 'E'].forEach(opt => {
         if (raw[opt] && typeof raw[opt] === 'string') {
-            q.options[opt] = cleanText(raw[opt]);
+            // Apply encode ONLY to options for Web Design, but NO markdown
+            q.options[opt] = cleanText(raw[opt], { encode: shouldEncode, markdown: false });
         }
     });
 
@@ -148,7 +173,7 @@ function start() {
             }
 
             const appData = rawData.map(raw => {
-                const q = mapRawToApp(raw);
+                const q = mapRawToApp(raw, slug);
                 const existing = existingMap.get(q.id);
 
                 // Priority for explanation:
