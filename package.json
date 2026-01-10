@@ -6,9 +6,13 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.6",
     "@astrojs/mdx": "^4.3.13",
     "@astrojs/react": "^4.4.2",
     "@astrojs/sitemap": "^3.6.1",
@@ -22,13 +26,16 @@
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "tailwindcss": "^4.1.18",
-    "turndown": "^7.2.2"
+    "turndown": "^7.2.2",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
     "@playwright/test": "^1.57.0",
     "@types/he": "^1.2.3",
     "@types/turndown": "^5.0.6",
-    "sharp": "^0.34.5"
+    "@vitest/ui": "^4.0.16",
+    "sharp": "^0.34.5",
+    "vitest": "^4.0.16"
   },
   "license": "CC-BY-NC-SA-4.0"
 }

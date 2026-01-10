@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 import path from 'path';
 
 // Define the pages to test
@@ -28,6 +28,11 @@ const pages = [
   { path: '/auzef/cocuk-gelisimi', name: 'auzef_dept' },
   { path: '/auzef/cocuk-gelisimi/anatomi', name: 'auzef_course' },
   { path: '/auzef/cocuk-gelisimi/anatomi/materyaller', name: 'auzef_materials' },
+  // Test University
+  { path: '/test-uni', name: 'test_uni' },
+  { path: '/test-uni/test-dept-active', name: 'test_dept' },
+  { path: '/test-uni/test-dept-active/course-active-1', name: 'test_course' },
+  { path: '/test-uni/test-dept-active/course-active-1/materyaller', name: 'test_materials' },
 ];
 
 const viewports = [
@@ -46,7 +51,7 @@ for (const pageInfo of pages) {
 
       // Additional check to make sure dynamic content is likely loaded
       if (pageInfo.path.includes('materyaller')) {
-         await page.waitForTimeout(2000);
+        await page.waitForTimeout(2000);
       }
 
       // Handle very long pages by avoiding fullPage if marked as partial
@@ -54,21 +59,21 @@ for (const pageInfo of pages) {
       // We will fallback to viewport screenshot if 'partial' is true
 
       if (pageInfo.partial) {
-          // Attempt to scroll a bit to load lazy content then take viewport screenshot
-          await page.evaluate(() => window.scrollTo(0, 500));
-          await page.waitForTimeout(500);
-          await page.evaluate(() => window.scrollTo(0, 0));
-          await page.waitForTimeout(500);
+        // Attempt to scroll a bit to load lazy content then take viewport screenshot
+        await page.evaluate(() => window.scrollTo(0, 500));
+        await page.waitForTimeout(500);
+        await page.evaluate(() => window.scrollTo(0, 0));
+        await page.waitForTimeout(500);
 
-          await page.screenshot({
-            path: path.join('screenshots', `${pageInfo.name}-${viewport.name}.png`),
-            fullPage: false,
-          });
+        await page.screenshot({
+          path: path.join('screenshots', `${pageInfo.name}-${viewport.name}.png`),
+          fullPage: false,
+        });
       } else {
-          await page.screenshot({
-            path: path.join('screenshots', `${pageInfo.name}-${viewport.name}.png`),
-            fullPage: true,
-          });
+        await page.screenshot({
+          path: path.join('screenshots', `${pageInfo.name}-${viewport.name}.png`),
+          fullPage: true,
+        });
       }
     });
   }
