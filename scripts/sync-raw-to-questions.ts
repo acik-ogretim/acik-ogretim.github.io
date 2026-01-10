@@ -112,6 +112,7 @@ function cleanText(text: string, options: { encode?: boolean, markdown?: boolean
         .replace(//g, "&bull;") // U+F0B7 - Bullet
         .replace(/\uF020/g, " ") // U+F020 - Symbol Font Space
         // Pre-strip fixes with support for artifacts (U+FFFD)
+        .replace(/<<</g, "") // Remove artifact '<<<', keep the text after it
         .replace(/yang[\uFFFD]+nın/g, "yangının")
         .replace(/çal[\uFFFD]+şma/g, "çalışma")
         .replace(/([Yy])ar[\uFFFD]+m/g, "$1arım") // Fix Yarım/yarım (safe with +)
@@ -165,9 +166,21 @@ async function syncRawToQuestions() {
         fs.mkdirSync(PORTAL_QUESTIONS_DIR, { recursive: true });
     }
 
+    // Parse command line arguments for filtering
+    const args = process.argv.slice(2);
+    const filterArg = args.find(arg => arg.startsWith('--filter='));
+    const filter = filterArg ? filterArg.split('=')[1] : null;
+
+    if (filter) {
+        console.log(`🔍 Filtering for courses containing: "${filter}"`);
+    }
+
     // Get all course slugs from the raw directory
     const courseDirs = fs.readdirSync(MCP_RAW_DIR).filter(file => {
-        return fs.statSync(path.join(MCP_RAW_DIR, file)).isDirectory();
+        const isDir = fs.statSync(path.join(MCP_RAW_DIR, file)).isDirectory();
+        if (!isDir) return false;
+        if (filter && !file.includes(filter)) return false;
+        return true;
     });
 
     let syncedCount = 0;
