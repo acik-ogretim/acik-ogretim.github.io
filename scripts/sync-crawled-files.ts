@@ -29,8 +29,10 @@ function start() {
         return;
     }
 
-    const unis = JSON.parse(fs.readFileSync(UNIVERSITIES_FILE, "utf-8"));
-    const ata = unis.find(u => u.id === "ataturk-aof");
+    interface DeptLite { id: string; name: string; degree: string }
+    interface UniLite { id: string; departments: DeptLite[] }
+    const unis: UniLite[] = JSON.parse(fs.readFileSync(UNIVERSITIES_FILE, "utf-8"));
+    const ata = unis.find((u: UniLite) => u.id === "ataturk-aof");
     if (!ata) {
         console.error("❌ University 'ataturk-aof' not found in universities.json");
         return;
@@ -47,7 +49,7 @@ function start() {
     let matchCount = 0;
     let renameCount = 0;
 
-    for (const dept of ata.departments) {
+    for (const dept of ata.departments as DeptLite[]) {
         const potentialNames = [];
 
         let baseSlug = slugify(dept.name.split(" (")[0]);

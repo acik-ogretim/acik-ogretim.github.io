@@ -11,9 +11,15 @@ function start() {
         return;
     }
 
-    const unis = JSON.parse(fs.readFileSync(UNIVERSITIES_FILE, "utf-8"));
-    const ata = unis.find(u => u.id === "ataturk-aof");
-    const validIds = new Set(ata.departments.map(d => d.id));
+    const unis: Array<{ id: string; departments: Array<{ id: string }> }> = JSON.parse(
+        fs.readFileSync(UNIVERSITIES_FILE, "utf-8")
+    );
+    const ata = unis.find((u: { id: string }) => u.id === "ataturk-aof");
+    if (!ata) {
+        console.error("❌ University 'ataturk-aof' not found in universities.json");
+        return;
+    }
+    const validIds = new Set(ata.departments.map((d: { id: string }) => d.id));
 
     if (!fs.existsSync(COURSES_DIR)) {
         console.error(`❌ ${COURSES_DIR} not found`);

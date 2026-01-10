@@ -23,8 +23,8 @@ const options = {
 
 const req = https.request(options, (res) => {
     // Note: NOT using setEncoding here to see raw bytes
-    let chunks = [];
-    res.on('data', (d) => chunks.push(d));
+    let chunks: Buffer[] = [];
+    res.on('data', (d: Buffer) => chunks.push(d));
     res.on('end', () => {
         let buffer = Buffer.concat(chunks);
         let text = buffer.toString('utf8');
