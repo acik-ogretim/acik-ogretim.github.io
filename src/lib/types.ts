@@ -56,6 +56,7 @@ export interface QuizSettings {
     playbackRate: number;
     readerMode: boolean;
     voiceURI: string;
+    autoAdvance: boolean;
 }
 
 export interface PlayerUI {

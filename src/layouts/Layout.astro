@@ -67,6 +67,40 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- KaTeX for Math Rendering -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+      integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+      integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8"
+      crossorigin="anonymous"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+      integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+      crossorigin="anonymous"
+      onload="document.addEventListener('DOMContentLoaded', function() {
+        var mathElements = document.getElementsByClassName('math-tex');
+        for (var i = 0; i < mathElements.length; i++) {
+          renderMathInElement(mathElements[i], {
+            delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError : false
+          });
+        }
+    });"
+    ></script>
+
     <script>
       // Register Service Worker for PWA
       if ("serviceWorker" in navigator) {
@@ -394,7 +428,8 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
                     x1="18.36"
                     y1="5.64"
                     x2="19.78"
-                    y2="4.22"></line></svg>
+                    y2="4.22"></line></svg
+                >
               </div>
               <span class="text-[10px] font-bold text-slate-400">Aydınlık</span>
             </button>
@@ -414,7 +449,8 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
                   stroke="currentColor"
                   stroke-width="2.5"
                   ><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
-                  ></path></svg>
+                  ></path></svg
+                >
               </div>
               <span class="text-[10px] font-bold text-slate-400">Koyu</span>
             </button>
@@ -435,7 +471,8 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
                   stroke-width="2.5"
                   ><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path
                     d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
-                  ></path></svg>
+                  ></path></svg
+                >
               </div>
               <span class="text-[10px] font-bold text-[#586e75]">Sepya</span>
             </button>
@@ -567,6 +604,24 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
                 <input
                   type="checkbox"
                   id="setting-hide-incorrect-options"
+                  class="toggle-input-small"
+                />
+              </label>
+              <label
+                class="flex items-center justify-between p-2 hover:bg-white/5 transition-colors cursor-pointer group"
+              >
+                <div class="flex flex-col">
+                  <span
+                    class="text-xs font-medium text-slate-400 group-hover:text-white transition-colors"
+                    >Otomatik İlerle</span
+                  >
+                  <span class="text-[9px] text-slate-500"
+                    >Okuma bitince sonraki soruya geç</span
+                  >
+                </div>
+                <input
+                  type="checkbox"
+                  id="setting-auto-advance"
                   class="toggle-input-small"
                 />
               </label>

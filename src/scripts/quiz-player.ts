@@ -85,7 +85,8 @@ export class QuizPlayer {
       hideIncorrectOptions: false,
       playbackRate: 1.2,
       readerMode: false,
-      voiceURI: ''
+      voiceURI: '',
+      autoAdvance: true
     };
     const loaded = saved ? { ...defaultSettings, ...JSON.parse(saved) } : defaultSettings;
 
@@ -110,7 +111,7 @@ export class QuizPlayer {
     questionEls.forEach((el) => {
       const id = el.id;
       // The question text is in a <p> tag that is a sibling of the header and before the <ul> options
-      const textEl = el.querySelector('.prose p:first-child') || el.querySelector('.prose p') || el.querySelector('.text-base.md\\:text-lg');
+      const textEl = el.querySelector('.question-text') || el.querySelector('.prose p:first-child') || el.querySelector('.prose p');
       const text = textEl ? (textEl as HTMLElement).innerText : '';
 
       const correctOption = el.querySelector('.correct-option');
@@ -343,6 +344,7 @@ export class QuizPlayer {
     bindToggle('setting-show-answers', 'showAnswers');
     bindToggle('setting-show-explanations', 'showExplanations');
     bindToggle('setting-hide-incorrect-options', 'hideIncorrectOptions');
+    bindToggle('setting-auto-advance', 'autoAdvance');
 
     const unitSelect = document.getElementById('setting-unit') as HTMLSelectElement;
     if (unitSelect) {
@@ -440,6 +442,7 @@ export class QuizPlayer {
     if (!voiceSelect) return;
 
     const voices = this.synth.getVoices();
+    console.log('[QuizPlayer] populateVoices: Found voices:', voices.length);
     if (voices.length === 0) return;
 
     // Filter only Turkish voices or keep all if none found
@@ -483,7 +486,6 @@ export class QuizPlayer {
       (window as any).openQuizSettings();
     }
   }
-
 
   togglePlay(): void {
     if (this.isPlaying) {
@@ -535,6 +537,8 @@ export class QuizPlayer {
 
       document.body.classList.add('hide-answers');
       document.body.classList.add('hide-explanations');
+      // Interactive mode requires seeing all options to make a choice
+      document.body.classList.remove('hide-options');
       document.body.classList.add('is-interactive-mode');
 
       if (this.ui.btnToggleInteractive) {
@@ -558,6 +562,9 @@ export class QuizPlayer {
       }
     } else {
       document.body.classList.remove('is-interactive-mode', 'hide-answers', 'hide-explanations');
+
+      // Restore hide-options based on settings when exiting interactive mode
+      document.body.classList.toggle('hide-options', this.settings.hideIncorrectOptions);
 
       if (this.ui.btnToggleInteractive) {
         const btnText = this.ui.btnToggleInteractive.querySelector('.btn-text');
@@ -824,7 +831,15 @@ export class QuizPlayer {
 
   cleanText(text: string | null | undefined): string {
     if (!text) return '';
-    return String(text).replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').trim();
+    // Use DOM parser to handle entities and spacing correctly
+    const div = document.createElement('div');
+    // Replace block tags with spaces to prevent word concatenation
+    div.innerHTML = String(text)
+      .replace(/<br\s*\/?>/gi, ' ')
+      .replace(/<\/p>/gi, ' ')
+      .replace(/<\/div>/gi, ' ')
+      .replace(/<\/li>/gi, ' ');
+    return (div.textContent || div.innerText || '').replace(/\s+/g, ' ').trim();
   }
 
   createUtterance(text: string): SpeechSynthesisUtterance {
@@ -843,7 +858,9 @@ export class QuizPlayer {
       // Fallback to any Turkish voice if no specific selection
       const voices = this.synth.getVoices();
       const trVoice = voices.find(v => v.lang.toLowerCase().replace('_', '-').includes('tr-tr'));
-      if (trVoice) utter.voice = trVoice;
+      if (trVoice) {
+        utter.voice = trVoice;
+      }
     }
 
     return utter;
@@ -860,13 +877,16 @@ export class QuizPlayer {
     const activeSession = sessionId ?? this.currentSessionId;
 
     // Check if this session is still valid
-    if (activeSession !== this.currentSessionId) return;
+    if (activeSession !== this.currentSessionId) {
+      return;
+    }
 
     if (this.speechQueue.length === 0) {
       this.isSpeakingQueue = false;
 
       // CONTINUOUS READING: Auto-advance in Reader Mode
-      if (this.settings.readerMode && activeSession === this.currentSessionId) {
+      // Only auto-advance if NOT in interactive mode AND auto-advance is enabled
+      if (this.settings.readerMode && activeSession === this.currentSessionId && !this.isInteractive && this.settings.autoAdvance) {
         const hasNext = this.currentIndex < this.questions.length - 1;
         if (hasNext) {
           // Delay before next question depends on playback rate (shorter for faster rates)
@@ -895,6 +915,8 @@ export class QuizPlayer {
 
     const utter = this.createUtterance(text);
     this.utterance = utter;
+
+    utter.onstart = () => { }; // Removed console.log
 
     utter.onend = () => {
       // Clear keep-alive timer
@@ -929,7 +951,6 @@ export class QuizPlayer {
         return;
       }
 
-      console.error('Speech chunk error', e);
       // For other errors, skip this chunk to avoid infinite loop
       if (this.speechQueue.length > 0) this.speechQueue.shift();
       setTimeout(() => this.processQueue(activeSession), 10);
@@ -949,7 +970,9 @@ export class QuizPlayer {
   }
 
   speakCurrent(): void {
-    if (this.currentIndex < 0 || this.currentIndex >= this.questions.length) return;
+    if (this.currentIndex < 0 || this.currentIndex >= this.questions.length) {
+      return;
+    }
 
     this.startNewSpeechSession();
     if (this.synth.paused) this.synth.resume();
@@ -957,25 +980,44 @@ export class QuizPlayer {
     const q = this.questions[this.currentIndex];
 
     // Chunk 1: Question
-    const qText = `Soru ${this.currentIndex + 1}. ${this.cleanText(q.text)}.`;
-    this.speechQueue.push(qText);
+    this.speechQueue.push(`Soru ${this.currentIndex + 1}.`);
 
-    // Chunk 2: Options (Skip if hiding incorrect options to avoid redundancy)
+    const rawText = this.cleanText(q.text);
+    // Split by common sentence delimiters to keep chunks short
+    const sentences = rawText.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [rawText];
+    sentences.forEach(s => {
+      if (s.trim()) this.speechQueue.push(s.trim());
+    });
+
+    // Chunk 2: Options
+    // If hiding incorrect options, we still want to read the correct one if it exists
     if (!this.settings.hideIncorrectOptions) {
       const optText = "Seçenekler: " + q.options.map(opt => `${opt.key} şıkkı, ${this.cleanText(opt.text)}`).join('. ') + ".";
       this.speechQueue.push(optText);
+    } else {
+      const correctOpt = q.options.find(opt => opt.key === q.correctKey);
+      if (correctOpt) {
+        // Read the single visible option with key
+        this.speechQueue.push(`Cevap: ${correctOpt.key} şıkkı, ${this.cleanText(correctOpt.text)}.`);
+      }
     }
 
     // Chunk 3: Answer/Explanation (if not interactive OR in reader mode)
     if (!this.isInteractive || this.settings.readerMode) {
       let ansParts = [];
 
-      // If we hid options, we start directly with the Answer
-      if (this.settings.showAnswers) {
+      // Determine if we should reveal the answer
+      // 1. Setting must be Enabled
+      // 2. If Interactive, we must have answered it already
+      const isAnswered = this.answeredQuestions.has(q.id);
+      const shouldReveal = this.settings.showAnswers && (!this.isInteractive || isAnswered);
+
+      // If we already showed/read the single option (hideIncorrectOptions), don't read "Doğru Cevap" again
+      if (shouldReveal && !this.settings.hideIncorrectOptions) {
         ansParts.push(`Doğru Cevap: ${q.correctKey}, ${this.cleanText(q.correctAnswerText)}.`);
       }
 
-      if (this.settings.showExplanations && q.explanation) {
+      if (this.settings.showExplanations && q.explanation && (!this.isInteractive || isAnswered)) {
         ansParts.push(`Açıklama: ${this.cleanText(q.explanation)}`);
       }
 
