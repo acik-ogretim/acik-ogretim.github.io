@@ -1004,3 +1004,56 @@ body {
 .player-action-btn:active {
     transform: scale(0.95);
 }
+
+/* Rich Text Content Formatting (Lists, etc) */
+.question-text ul,
+.explanation-box ul {
+    list-style-type: disc !important;
+    padding-left: 1.5rem !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.question-text ol,
+.explanation-box ol {
+    list-style-type: decimal !important;
+    padding-left: 1.5rem !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Handle specific list types if provided in HTML attributes */
+.question-text ol[type="I"],
+.explanation-box ol[type="I"] {
+    list-style-type: upper-roman !important;
+}
+
+.question-text ol[type="i"],
+.explanation-box ol[type="i"] {
+    list-style-type: lower-roman !important;
+}
+
+.question-text ol[type="A"],
+.explanation-box ol[type="A"] {
+    list-style-type: upper-alpha !important;
+}
+
+.question-text ol[type="a"],
+.explanation-box ol[type="a"] {
+    list-style-type: lower-alpha !important;
+}
+
+.question-text li,
+.explanation-box li {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    display: list-item !important;
+    /* Ensure they aren't forced to block/flex by other rules */
+}
+
+/* Remove excessive spacing if paragraphs are nested inside list items */
+.question-text li p,
+.explanation-box li p {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}

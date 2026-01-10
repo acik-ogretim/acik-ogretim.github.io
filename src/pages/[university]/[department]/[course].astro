@@ -178,8 +178,8 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
                     </header>
 
                     <div class="prose prose-invert max-w-none">
-                      <p
-                        class="text-base md:text-lg text-theme mb-6 md:mb-8 leading-relaxed font-medium"
+                      <div
+                        class="question-text text-base md:text-lg text-theme mb-6 md:mb-8 leading-relaxed font-medium"
                         set:html={q.text}
                       />
 
@@ -211,13 +211,11 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
                       </div>
 
                       {q.explanation && (
-                        <div class="explanation-card explanation-box">
-                          <p class="text-muted-theme text-sm leading-relaxed">
-                            <strong class="text-primary-theme uppercase tracking-wider mr-2">
-                              Açıklama:
-                            </strong>
-                            <span set:html={q.explanation} />
-                          </p>
+                        <div class="explanation-card explanation-box text-muted-theme text-sm leading-relaxed">
+                          <strong class="text-primary-theme uppercase tracking-wider mr-2 mb-1 block">
+                            Açıklama:
+                          </strong>
+                          <div set:html={q.explanation} />
                         </div>
                       )}
 

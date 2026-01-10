@@ -149,6 +149,48 @@
         padding-left: 0 !important;
     }
 
+    /* Restore list styles for rich text in questions/explanations during print */
+    .question-text ul,
+    .explanation-box ul {
+        list-style-type: disc !important;
+        padding-left: 1.5rem !important;
+        margin-bottom: 0.2rem !important;
+    }
+
+    .question-text ol,
+    .explanation-box ol {
+        list-style-type: decimal !important;
+        padding-left: 1.5rem !important;
+        margin-bottom: 0.2rem !important;
+    }
+
+    .question-text li,
+    .explanation-box li {
+        display: list-item !important;
+        padding-left: 0.2rem !important;
+    }
+
+    /* Handle specific list types formatting for print */
+    .question-text ol[type="I"],
+    .explanation-box ol[type="I"] {
+        list-style-type: upper-roman !important;
+    }
+
+    .question-text ol[type="i"],
+    .explanation-box ol[type="i"] {
+        list-style-type: lower-roman !important;
+    }
+
+    .question-text ol[type="A"],
+    .explanation-box ol[type="A"] {
+        list-style-type: upper-alpha !important;
+    }
+
+    .question-text ol[type="a"],
+    .explanation-box ol[type="a"] {
+        list-style-type: lower-alpha !important;
+    }
+
     /* Reduce gap before options start */
     [id^='question-'] ul {
         margin-top: 0.2rem !important;

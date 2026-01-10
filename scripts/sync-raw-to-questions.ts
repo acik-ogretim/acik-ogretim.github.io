@@ -83,12 +83,21 @@ function cleanText(text: string, options: { encode?: boolean, markdown?: boolean
     }
 
     // 5. Normalize and trim
-    return cleaned
+    let result = cleaned
         .replace(/[\u00A0\u1680\u180e\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]/g, " ")
         .replace(/<br\s+type="_moz"\s*\/?>/gi, "<br />")
         .replace(/\r\n/g, "")
-        .trim()
-        .replace(/(<br\s*\/?>)+$/i, "");
+        .trim();
+
+    // 6. Remove <br> tags around list elements to prevent excessive spacing
+    result = result
+        .replace(/(<br\s*\/?>\s*)+(?=<\/?(ul|ol|li))/gi, "") // Remove <br> if followed by list tag
+        .replace(/(<\/?(ul|ol|li)[^>]*>)\s*(<br\s*\/?>\s*)+/gi, "$1"); // Remove <br> if preceded by list tag
+
+    // Final clean of trailing and leading breaks
+    return result
+        .replace(/(<br\s*\/?>)+$/i, "")
+        .replace(/^(<br\s*\/?>)+/i, "");
 }
 
 function mapRawToApp(raw: RawQuestion, slug: string): AppQuestion {
