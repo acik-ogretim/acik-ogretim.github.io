@@ -2173,7 +2173,7 @@
   {
     "id": "159307",
     "unitNumber": 12,
-    "text": "#include <iostream><br />     #include <list>using namespace std;<br />     int main ()<br />     {<br />        list<int> liste;<br />      int toplam;<br />        liste.push_front(1);<br />      liste.push_front(2);<br />      liste.push_front(10);<br />        liste.push_back(6);<br />        toplam=liste.front()+liste.back();<br />        cout << toplam << endl;<br />        return 0;<br />     }<br /><strong>Yukarıda verilen programın ekran çıktısı hangisidir?</strong>",
+    "text": "#include <iostream><br />     #include <list><br />     using namespace std;<br />     int main ()<br />     {<br />        list<int> liste;<br />      int toplam;<br />        liste.push_front(1);<br />      liste.push_front(2);<br />      liste.push_front(10);<br />        liste.push_back(6);<br />        toplam=liste.front()+liste.back();<br />        cout << toplam << endl;<br />        return 0;<br />     }<br /><strong>Yukarıda verilen programın ekran çıktısı hangisidir?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "1",
@@ -2745,7 +2745,7 @@
   {
     "id": "115542",
     "unitNumber": 14,
-    "text": "I.   Fonksiyon adı sınıf adı ile aynıdır.<br />II.  Fonksiyon adı tilda (~) ile başlar.<br />III. Üye değişkenlere ilk değer atamak için kullanılır.<br />IV. Bellek alanını boşaltır.<br /><strong>Yukarıdakilerden hangisi ya da hangileri yıkıcı fonksiyonlar için geçerlidir?</strong>",
+    "text": "I.   Fonksiyon adı sınıf adı ile aynıdır.<br />II.  Fonksiyon adı tilda (&sim;) ile başlar.<br />III. Üye değişkenlere ilk değer atamak için kullanılır.<br />IV. Bellek alanını boşaltır.<br /><strong>Yukarıdakilerden hangisi ya da hangileri yıkıcı fonksiyonlar için geçerlidir?</strong>",
     "correctAnswer": "E",
     "options": {
       "A": "Yanlız IV",
@@ -2918,7 +2918,7 @@
     "correctAnswer": "D",
     "options": {
       "A": "Yıkıcı fonksiyon adı sınıf adı ile aynı olmalıdır.",
-      "B": "Yıkıcı fonksiyon tilda (~) ile başlar.",
+      "B": "Yıkıcı fonksiyon tilda (&sim;) ile başlar.",
       "C": "Yıkıcı fonksiyon geriye değer döndürmez.",
       "D": "Yıkıcı fonksiyon parametre alabilir.",
       "E": "Yıkıcı fonksiyon bellek alanını boşaltır."

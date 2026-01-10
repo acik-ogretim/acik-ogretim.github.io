@@ -51,28 +51,27 @@ function cleanText(text: string, options: { encode?: boolean, markdown?: boolean
 
         // 3. Restore whitelist tags that are allowed for formatting
         // Narrowed to ONLY formatting tags. Elements like ul, ol, li are removed so they show up as text code snippets.
-        const whitelist = ['b', 'strong', 'i', 'em', 'u', 'br'];
+        const whitelist = ['b', 'strong', 'i', 'em', 'u', 'br', 'span'];
 
         whitelist.forEach(tag => {
             // Handle he.escape output (which escapes & to &amp;)
-            const openRegex = new RegExp(`&amp;lt;${tag}\\s*&amp;gt;`, 'gi');
-            cleaned = cleaned.replace(openRegex, `<${tag}>`);
+            const openRegex = new RegExp(`&amp;lt;${tag}(.*?)&amp;gt;`, 'gi');
+            // We need to capture attributes for span
+            cleaned = cleaned.replace(openRegex, (match, attrs) => {
+                return `<${tag}${attrs ? attrs.replace(/&amp;quot;/g, '"') : ''}>`;
+            });
 
             const closeRegex = new RegExp(`&amp;lt;\\/${tag}\\s*&amp;gt;`, 'gi');
             cleaned = cleaned.replace(closeRegex, `</${tag}>`);
 
-            const selfRegex = new RegExp(`&amp;lt;${tag}\\s*\\/&amp;gt;`, 'gi');
-            cleaned = cleaned.replace(selfRegex, `<${tag} />`);
-
-            // Handle direct &lt; cases for general safety
-            const openRegex2 = new RegExp(`&lt;${tag}\\s*&gt;`, 'gi');
-            cleaned = cleaned.replace(openRegex2, `<${tag}>`);
+            // Handle direct &lt; cases for general safety (redundant but safe)
+            const openRegex2 = new RegExp(`&lt;${tag}(.*?)&gt;`, 'gi');
+            cleaned = cleaned.replace(openRegex2, (match, attrs) => {
+                return `<${tag}${attrs ? attrs.replace(/&quot;/g, '"') : ''}>`;
+            });
 
             const closeRegex2 = new RegExp(`&lt;\\/${tag}\\s*&gt;`, 'gi');
             cleaned = cleaned.replace(closeRegex2, `</${tag}>`);
-
-            const selfRegex2 = new RegExp(`&lt;${tag}\\s*\\/&gt;`, 'gi');
-            cleaned = cleaned.replace(selfRegex2, `<${tag} />`);
         });
     }
 
@@ -86,18 +85,51 @@ function cleanText(text: string, options: { encode?: boolean, markdown?: boolean
     let result = cleaned
         .replace(/[\u00A0\u1680\u180e\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]/g, " ")
         .replace(/<br\s+type="_moz"\s*\/?>/gi, "<br />")
+        // .replace(/<\/?span[^>]*>/gi, "") // KEEP SPANS as requested (e.g. math-tex)
         .replace(/\r\n/g, "")
+        // Map to HTML Entities for better consistency and rendering
+        .replace(//g, "&sim;")
+        .replace(/∼/g, "&sim;") // U+223C
+        .replace(/~/g, "&sim;") // ASCII tilde to &sim; (Logic context preference)
+        .replace(//g, "&rArr;")
+        .replace(/⇒/g, "&rArr;") // U+21D2
+        .replace(//g, "&hArr;")
+        .replace(/⇔/g, "&hArr;") // U+21D4
+        .replace(//g, "&or;")
+        .replace(/∨/g, "&or;") // U+2228
+        .replace(//g, "&and;")
+        .replace(/∧/g, "&and;") // U+2227
+        .replace(//g, "&there4;")
+        .replace(/∴/g, "&there4;") // U+2234
+        .replace(//g, "&equiv;")
+        .replace(/≡/g, "&equiv;") // U+2261
+        .replace(//g, "&exist;") // U+F024
+        .replace(/∃/g, "&exist;") // U+2203
+        .replace(//g, "&forall;") // U+F022
+        .replace(/∀/g, "&forall;") // U+2200
+        .replace(//g, "&empty;") // U+F0C6 - Empty Set
+        .replace(//g, "&rarr;") // U+F0E0 - Right Arrow
+        .replace(//g, "&bull;") // U+F0B7 - Bullet
+        .replace(/\uF020/g, " ") // U+F020 - Symbol Font Space
+        // Pre-strip fixes with support for artifacts (U+FFFD)
+        .replace(/yang[\uFFFD]+nın/g, "yangının")
+        .replace(/çal[\uFFFD]+şma/g, "çalışma")
+        .replace(/([Yy])ar[\uFFFD]+m/g, "$1arım") // Fix Yarım/yarım (safe with +)
+        .replace(/sıras[\uFFFD]+yla/g, "sırasıyla") // Fix sırasıyla
+        .replace(/bağıms[\uFFFD]+zlık/g, "bağımsızlık") // Fix bağımsızlık
+        .replace(/\uFFFD/g, "") // Remove replacement characters
+        .replace(/\u007F/g, "") // Remove DELETE characters
+        .replace(//g, "{")
+        .replace(//g, "}")
         .trim();
 
     // 6. Remove <br> tags around list elements to prevent excessive spacing
-    result = result
-        .replace(/(<br\s*\/?>\s*)+(?=<\/?(ul|ol|li))/gi, "") // Remove <br> if followed by list tag
-        .replace(/(<\/?(ul|ol|li)[^>]*>)\s*(<br\s*\/?>\s*)+/gi, "$1"); // Remove <br> if preceded by list tag
+    result = result.replace(/(?:<br\s*\/?>\s*)+(<(?:ul|ol|li)[^>]*>)/gi, "$1"); // remove br BEFORE list
+    result = result.replace(/(<\/(?:ul|ol|li)>)(?:\s*<br\s*\/?>)+/gi, "$1"); // remove br AFTER list
+    result = result.replace(/^(?:<br\s*\/?>\s*)+/i, ""); // remove br AT START
+    result = result.replace(/(?:<br\s*\/?>\s*)+$/i, ""); // remove br AT END
 
-    // Final clean of trailing and leading breaks
-    return result
-        .replace(/(<br\s*\/?>)+$/i, "")
-        .replace(/^(<br\s*\/?>)+/i, "");
+    return result.trim();
 }
 
 function mapRawToApp(raw: RawQuestion, slug: string): AppQuestion {
@@ -113,34 +145,31 @@ function mapRawToApp(raw: RawQuestion, slug: string): AppQuestion {
 
     if (raw.Aciklama) {
         q.explanation = cleanText(raw.Aciklama, { encode: shouldEncode });
-    } else if (raw.explanation) {
-        q.explanation = cleanText(raw.explanation, { encode: shouldEncode });
     }
 
-    // Map options
-    ['A', 'B', 'C', 'D', 'E'].forEach(opt => {
-        if (raw[opt] && typeof raw[opt] === 'string') {
-            q.options[opt] = cleanText(raw[opt], { encode: shouldEncode, markdown: false });
+    // Map options A, B, C, D, E
+    ['A', 'B', 'C', 'D', 'E'].forEach(optKey => {
+        if (raw[optKey as keyof RawQuestion]) {
+            q.options[optKey] = cleanText(String(raw[optKey as keyof RawQuestion]), { encode: shouldEncode });
         }
     });
 
     return q;
 }
 
-function start() {
+async function syncRawToQuestions() {
     console.log("🚀 Syncing Questions from MCP Raw Data...");
 
-    if (!fs.existsSync(MCP_RAW_DIR)) {
-        console.error(`❌ MCP Raw directory not found: ${MCP_RAW_DIR}`);
-        return;
-    }
-
+    // Ensure output directory exists
     if (!fs.existsSync(PORTAL_QUESTIONS_DIR)) {
-        console.error(`❌ Portal Questions directory not found: ${PORTAL_QUESTIONS_DIR}`);
-        return;
+        fs.mkdirSync(PORTAL_QUESTIONS_DIR, { recursive: true });
     }
 
-    const courseDirs = fs.readdirSync(MCP_RAW_DIR);
+    // Get all course slugs from the raw directory
+    const courseDirs = fs.readdirSync(MCP_RAW_DIR).filter(file => {
+        return fs.statSync(path.join(MCP_RAW_DIR, file)).isDirectory();
+    });
+
     let syncedCount = 0;
 
     for (const slug of courseDirs) {
@@ -180,7 +209,7 @@ function start() {
                     const explContent = fs.readFileSync(explanationsFilePath, "utf-8");
                     const explData = JSON.parse(explContent);
                     if (Array.isArray(explData)) {
-                        const shouldEncode = slug === 'web-tasariminin-temelleri';
+                        const shouldEncode = (slug as string) === 'web-tasariminin-temelleri';
                         explData.forEach((item: any) => {
                             if (item.SoruID && item.Aciklama) {
                                 extraExplanationsMap.set(String(item.SoruID), cleanText(item.Aciklama, { encode: shouldEncode }));
@@ -229,4 +258,4 @@ function start() {
     console.log(`\n✨ Sync complete. Updated ${syncedCount} course files.`);
 }
 
-start();
+syncRawToQuestions();

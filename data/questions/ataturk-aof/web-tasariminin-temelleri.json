@@ -445,7 +445,7 @@
       "D": "&lt;article&gt;",
       "E": "&lt;content&gt;"
     },
-    "explanation": "Bu tür sorularda doğru cevap, bir HTML etiketinin yapısına uymayan veya HTML standardında tanımlı olmayan bir öğe olacaktır. HTML etiketleri, küçüktür (&lt;) ve büyüktür (&gt;) işaretleri arasına yazılır (örneğin <b>&lt;body&gt;</b> veya <b>&lt;p&gt;</b>). HTML etiketleri, içeriği yapılandırmak ve anlamlandırmak için kullanılır ve tarayıcıya içeriğin nasıl gösterileceğini bildirir."
+    "explanation": "Bu tür sorularda doğru cevap, bir HTML etiketinin yapısına uymayan veya HTML standardında tanımlı olmayan bir öğe olacaktır. HTML etiketleri, küçüktür (&lt;) ve büyüktür (&gt;) işaretleri arasına yazılır (örneğin <b><body></b> veya <b>&lt;p&gt;</b>). HTML etiketleri, içeriği yapılandırmak ve anlamlandırmak için kullanılır ve tarayıcıya içeriğin nasıl gösterileceğini bildirir."
   },
   {
     "id": "416916",
@@ -453,7 +453,7 @@
     "text": "<b>Bir sayfanın başlık bilgisi hangi etiket içinde bulunur?</b>",
     "correctAnswer": "E",
     "options": {
-      "A": "&lt;body&gt;",
+      "A": "<body>",
       "B": "&lt;footer&gt;",
       "C": "&lt;h1&gt;",
       "D": "&lt;meta&gt;",
@@ -469,11 +469,11 @@
     "options": {
       "A": "&lt;video&gt;",
       "B": "&lt;audio&gt;",
-      "C": "&lt;img&gt;",
+      "C": "<img>",
       "D": "&lt;link&gt;",
       "E": "&lt;canvas&gt;"
     },
-    "explanation": "HTML'de sayfaya görsel (resim) eklemek için kullanılan etiket <b>&lt;img&gt;</b> etiketidir. Bu etiket, kapanış etiketi gerektirmeyen (kendiliğinden kapanan) bir etikettir ve görselin yolunu belirtmek için zorunlu olan <b>src</b> (source) özniteliğini kullanır. Ayrıca <b>alt</b> (alternatif metin) özniteliği de erişilebilirlik açısından önemlidir."
+    "explanation": "HTML'de sayfaya görsel (resim) eklemek için kullanılan etiket <b><img></b> etiketidir. Bu etiket, kapanış etiketi gerektirmeyen (kendiliğinden kapanan) bir etikettir ve görselin yolunu belirtmek için zorunlu olan <b>src</b> (source) özniteliğini kullanır. Ayrıca <b>alt</b> (alternatif metin) özniteliği de erişilebilirlik açısından önemlidir."
   },
   {
     "id": "416918",
@@ -482,12 +482,12 @@
     "correctAnswer": "B",
     "options": {
       "A": "&lt;ol&gt;",
-      "B": "&lt;ul&gt;",
+      "B": "<ul>",
       "C": "&lt;li&gt;",
       "D": "&lt;table&gt;",
       "E": "&lt;div&gt;"
     },
-    "explanation": "HTML'de maddeler halinde gösterilen, numaralandırılmamış (sırasız) bir liste oluşturmak için <b>&lt;ul&gt;</b> (Unordered List) etiketi kullanılır. Listedeki her bir öğe ise <b>&lt;li&gt;</b> (List Item) etiketi içine alınmalıdır."
+    "explanation": "HTML'de maddeler halinde gösterilen, numaralandırılmamış (sırasız) bir liste oluşturmak için <b><ul></b> (Unordered List) etiketi kullanılır. Listedeki her bir öğe ise <b>&lt;li&gt;</b> (List Item) etiketi içine alınmalıdır."
   },
   {
     "id": "416919",
@@ -509,13 +509,13 @@
     "text": "<b>Bir form elemanını tanımlamak için hangi etiket kullanılır?</b>",
     "correctAnswer": "E",
     "options": {
-      "A": "&lt;input&gt;",
-      "B": "&lt;button&gt;",
+      "A": "<input>",
+      "B": "<button>",
       "C": "&lt;form&gt;",
       "D": "&lt;textarea&gt;",
       "E": "&lt;html&gt;"
     },
-    "explanation": "Kullanıcıdan metin, şifre, dosya veya diğer veri türlerini almak için kullanılan temel form elemanlarını tanımlamak amacıyla <b>&lt;input&gt;</b> etiketi kullanılır. Bu etiket, <b>type</b> özniteliği değiştirilerek farklı işlevlerde kullanılabilir. Tüm bu elemanlar genellikle <b>&lt;form&gt;</b> etiketi içinde bulunur."
+    "explanation": "Kullanıcıdan metin, şifre, dosya veya diğer veri türlerini almak için kullanılan temel form elemanlarını tanımlamak amacıyla <b><input></b> etiketi kullanılır. Bu etiket, <b>type</b> özniteliği değiştirilerek farklı işlevlerde kullanılabilir. Tüm bu elemanlar genellikle <b>&lt;form&gt;</b> etiketi içinde bulunur."
   },
   {
     "id": "416921",
@@ -523,13 +523,13 @@
     "text": "<b>Aşağıdakilerden hangisi kullanıcıdan veri toplamak için kullanılan bir HTML etiketidir?</b>",
     "correctAnswer": "B",
     "options": {
-      "A": "&lt;img&gt;",
+      "A": "<img>",
       "B": "&lt;form&gt;",
       "C": "&lt;div&gt;",
-      "D": "&lt;span&gt;",
+      "D": "<span>",
       "E": "&lt;figure&gt;"
     },
-    "explanation": "Kullanıcıdan veri toplamak, yani veri girişi sağlamak için kullanılan temel HTML etiketleri arasında <b>&lt;input&gt;</b>, <b>&lt;textarea&gt;</b> (çok satırlı metin girişi için) ve <b>&lt;select&gt;</b> (açılır menü oluşturmak için) yer alır. Bu etiketler, kullanıcının etkileşimde bulunabileceği arayüz öğelerini oluşturur."
+    "explanation": "Kullanıcıdan veri toplamak, yani veri girişi sağlamak için kullanılan temel HTML etiketleri arasında <b><input></b>, <b>&lt;textarea&gt;</b> (çok satırlı metin girişi için) ve <b>&lt;select&gt;</b> (açılır menü oluşturmak için) yer alır. Bu etiketler, kullanıcının etkileşimde bulunabileceği arayüz öğelerini oluşturur."
   },
   {
     "id": "416922",
@@ -579,13 +579,13 @@
     "text": "<b>Aşağıdaki giriş türlerinden hangisi kullanıcının yalnızca sayı girmesini sağlar?</b>",
     "correctAnswer": "C",
     "options": {
-      "A": "&lt;input type=\"text\"&gt;",
-      "B": "&lt;input type=\"password\"&gt;",
-      "C": "&lt;input type=\"number\"&gt;",
-      "D": "&lt;input type=\"email\"&gt;",
-      "E": "&lt;input type=\"file\"&gt;"
+      "A": "<input type=\"text\">",
+      "B": "<input type=\"password\">",
+      "C": "<input type=\"number\">",
+      "D": "<input type=\"email\">",
+      "E": "<input type=\"file\">"
     },
-    "explanation": "Giriş elemanı (&lt;input&gt;) için kullanılan <b>type=\"number\"</b> giriş türü, kullanıcıların yalnızca sayısal değerler girmesini sağlamak üzere tasarlanmıştır. Bu tür, tarayıcının otomatik olarak doğrulama yapmasına ve mobil cihazlarda kullanıcı deneyimini iyileştirmek için sayısal klavye açmasına olanak tanır."
+    "explanation": "Giriş elemanı (<input>) için kullanılan <b>type=\"number\"</b> giriş türü, kullanıcıların yalnızca sayısal değerler girmesini sağlamak üzere tasarlanmıştır. Bu tür, tarayıcının otomatik olarak doğrulama yapmasına ve mobil cihazlarda kullanıcı deneyimini iyileştirmek için sayısal klavye açmasına olanak tanır."
   },
   {
     "id": "416926",
@@ -599,7 +599,7 @@
       "D": "value",
       "E": "alt"
     },
-    "explanation": "HTML5 ile birlikte gelen <b>required</b> özniteliği, bir form alanının (örneğin &#x60;&lt;input&gt;&#x60;, &#x60;&lt;textarea&gt;&#x60; veya &#x60;&lt;select&gt;&#x60;) <b>boş bırakılmamasını</b> garanti eden istemci tarafı bir doğrulama mekanizmasıdır. Bu öznitelik eklendiğinde, kullanıcı o alanı doldurmadan formu gönderemez."
+    "explanation": "HTML5 ile birlikte gelen <b>required</b> özniteliği, bir form alanının (örneğin &#x60;<input>&#x60;, &#x60;&lt;textarea&gt;&#x60; veya &#x60;&lt;select&gt;&#x60;) <b>boş bırakılmamasını</b> garanti eden istemci tarafı bir doğrulama mekanizmasıdır. Bu öznitelik eklendiğinde, kullanıcı o alanı doldurmadan formu gönderemez."
   },
   {
     "id": "416927",
@@ -669,7 +669,7 @@
       "D": "id",
       "E": "name"
     },
-    "explanation": "<b>alt</b> (alternatif metin) özniteliği, &lt;img&gt; etiketi için zorunlu sayılan ve görselin içeriğini veya işlevini açıklayan metni sağlar. Bu metin, görsel yüklenemediğinde kullanıcıya gösterilir ve en önemlisi, <b>ekran okuyucular</b> tarafından okunarak görme engelli kullanıcılar için <b>erişilebilirliği</b> artırır."
+    "explanation": "<b>alt</b> (alternatif metin) özniteliği, <img> etiketi için zorunlu sayılan ve görselin içeriğini veya işlevini açıklayan metni sağlar. Bu metin, görsel yüklenemediğinde kullanıcıya gösterilir ve en önemlisi, <b>ekran okuyucular</b> tarafından okunarak görme engelli kullanıcılar için <b>erişilebilirliği</b> artırır."
   },
   {
     "id": "416932",
@@ -677,7 +677,7 @@
     "text": "<b>Formların mantıksal olarak gruplanmasını sağlayan ve ekran okuyucular için açıklama ekleyen etiket ikilisi aşağıdakilerden hangisidir?</b>",
     "correctAnswer": "B",
     "options": {
-      "A": "&lt;form&gt; – &lt;input&gt;",
+      "A": "&lt;form&gt; – <input>",
       "B": "&lt;fieldset&gt; – &lt;legend&gt;",
       "C": "&lt;label&gt; – &lt;textarea&gt;",
       "D": "&lt;section&gt; – &lt;article&gt;",
@@ -1223,13 +1223,13 @@
     "text": "<strong>Aşağıdakilerden hangisi “Navbar” yapısı tasarlanırken kullanılabilecek elementlerden biri <u>değildir</u>?</strong>",
     "correctAnswer": "E",
     "options": {
-      "A": "&lt;ul&gt; &lt;/ul&gt;",
-      "B": "&lt;ul&gt; &lt;li&gt;  &lt;/li&gt; &lt;/ul&gt;",
+      "A": "<ul> &lt;/ul&gt;",
+      "B": "<ul> &lt;li&gt;  &lt;/li&gt; &lt;/ul&gt;",
       "C": "&lt;a&gt; &lt;/a&gt;",
       "D": "&lt;ol&gt; &lt;/ol&gt;",
       "E": "&lt;row&gt; &lt;/row&gt;"
     },
-    "explanation": "Modern web tasarımında, gezinme çubukları (Navbar) oluşturmak için genellikle <b>semantik HTML</b> ve liste yapıları kullanılır (&lt;ul&gt;, &lt;li&gt; ve &lt;a&gt;). &lt;header&gt; etiketi genellikle Navbar'ı çevrelemek için kullanılır. Ancak, <b>&lt;table&gt;</b> etiketi sayfa düzeni veya gezinme çubuğu yapısı tasarlamak için kesinlikle <u>kullanılmaz</u>; bu etiket sadece verileri tablo halinde göstermek için tasarlanmıştır."
+    "explanation": "Modern web tasarımında, gezinme çubukları (Navbar) oluşturmak için genellikle <b>semantik HTML</b> ve liste yapıları kullanılır (<ul>, &lt;li&gt; ve &lt;a&gt;). &lt;header&gt; etiketi genellikle Navbar'ı çevrelemek için kullanılır. Ancak, <b>&lt;table&gt;</b> etiketi sayfa düzeni veya gezinme çubuğu yapısı tasarlamak için kesinlikle <u>kullanılmaz</u>; bu etiket sadece verileri tablo halinde göstermek için tasarlanmıştır."
   },
   {
     "id": "332525",
@@ -2013,7 +2013,7 @@
       "D": "screen and (max-with: 250px) {body {background-color:yellow;}}",
       "E": "@media only screen and (max-with: 250px)"
     },
-    "explanation": "Ekran genişliğine göre stil değiştirmek için <b>CSS Medya Sorguları (@media)</b> kullanılır. Ekran genişliğinin 250px altında olması (maksimum genişlik 250px olması) şartını belirleyen kod yapısı şöyledir: &lt;code&gt;@media screen and (<b>max-width: 250px</b>) { body { background-color: yellow; } }&lt;/code&gt;<br />Bu kod, ekran genişliği 250 piksel ve altındayken sayfanın arka plan rengini sarı yapar."
+    "explanation": "Ekran genişliğine göre stil değiştirmek için <b>CSS Medya Sorguları (@media)</b> kullanılır. Ekran genişliğinin 250px altında olması (maksimum genişlik 250px olması) şartını belirleyen kod yapısı şöyledir: &lt;code&gt;@media screen and (<b>max-width: 250px</b>) { body { background-color: yellow; } }&lt;/code&gt;<br/>Bu kod, ekran genişliği 250 piksel ve altındayken sayfanın arka plan rengini sarı yapar."
   },
   {
     "id": "371646",
@@ -2097,7 +2097,7 @@
       "D": "Yeni tarayıcı algılama",
       "E": "Eski tarayıcı algılama"
     },
-    "explanation": "Çapraz tarayıcı uyumluluğu sorunlarının yaygın nedenleri genellikle yanlış veya eksik <b>DOCTYPE</b> kullanımı, CSS/HTML standartlarına uyulmaması, <b>tarayıcı ön eklerinin</b> (vendor prefixes) yanlış kullanımı veya eski/geçersiz teknolojilerin kullanılmasıdır.<br />Ancak, <b>CSS Sıfırlama (CSS Reset)</b> kullanmak, tarayıcılar arası varsayılan stil farklılıklarını gidermeye yarayan bir <b>çözüm ve iyi bir uygulamadır</b>, sorun nedeni değildir."
+    "explanation": "Çapraz tarayıcı uyumluluğu sorunlarının yaygın nedenleri genellikle yanlış veya eksik <b>DOCTYPE</b> kullanımı, CSS/HTML standartlarına uyulmaması, <b>tarayıcı ön eklerinin</b> (vendor prefixes) yanlış kullanımı veya eski/geçersiz teknolojilerin kullanılmasıdır.<br/>Ancak, <b>CSS Sıfırlama (CSS Reset)</b> kullanmak, tarayıcılar arası varsayılan stil farklılıklarını gidermeye yarayan bir <b>çözüm ve iyi bir uygulamadır</b>, sorun nedeni değildir."
   },
   {
     "id": "335341",
@@ -2158,13 +2158,13 @@
   {
     "id": "336588",
     "unitNumber": 13,
-    "text": "<strong>Aşağıdakilerden hangisi W3C (World Wide Web) konsorsiyumunun temel amaçları arasında yer alır?</strong>&lt;br type=\"_moz\" /&gt;",
+    "text": "<strong>Aşağıdakilerden hangisi W3C (World Wide Web) konsorsiyumunun temel amaçları arasında yer alır?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "Yeni yazılım dili oluşturmak",
       "B": "Teknoloji firmaları arasındaki rekabeti artırmak",
       "C": "Büyük teknolojik firmaları korumak",
-      "D": "Web alanında standartlar oluşturmak&lt;br type=\"_moz\" /&gt;",
+      "D": "Web alanında standartlar oluşturmak",
       "E": "İnterneti dünyaya yaymak"
     },
     "explanation": "<b>W3C (World Wide Web Consortium)</b>'nun temel amacı, web'in uzun vadeli gelişimini sağlamak için <b>ortak web standartlarını</b> (HTML, CSS vb.) belirlemek ve geliştirmektir. Bu standartlar, içeriklerin tüm tarayıcı ve cihazlarda tutarlı bir şekilde çalışmasını ve erişilebilir olmasını hedefler."
@@ -2245,7 +2245,7 @@
     "text": "<strong>Aşağıdakilerden hangisinde HTML de kullanılan “BR” etiketinin W3C standartlarına göre kullanımı doğru verilmiştir?</strong>",
     "correctAnswer": "C",
     "options": {
-      "A": " ",
+      "A": "",
       "B": "",
       "C": "",
       "D": "</br>",
