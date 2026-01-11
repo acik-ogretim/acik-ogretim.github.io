@@ -35,263 +35,244 @@ interface AppQuestion {
 
 import he from "he";
 
-function cleanText(text: string, options: { encode?: boolean, markdown?: boolean } = {}): string {
+import { cleanHtml, repairText } from './utils/clean-html.js';
+
+function cleanText(text: string, options: { encode?: boolean, markdown?: boolean, isTechnical?: boolean } = {}): string {
     if (!text) return "";
 
-    // 1. Always decode first to handle existing entities consistently and restore UTF-8 (e.g. &gbreve; -> ğ)
-    let cleaned = he.decode(text);
-
-    // 1.5. Remove Ginger browser extension artifacts (grammar checker pollution)
-    // These are HTML elements injected by the Ginger extension that polluted the source data
-    cleaned = cleaned.replace(/<gdiv[^>]*>[\s\S]*?<\/gdiv>/gi, "");
-    cleaned = cleaned.replace(/<gdiv[^>]*>[\s\S]*/gi, ""); // Handle unclosed gdivs at end
-    cleaned = cleaned.replace(/<ga[^>]*>[\s\S]*?<\/ga>/gi, "");
-    cleaned = cleaned.replace(/<ginger-[^>]*>[\s\S]*?<\/ginger-[^>]*>/gi, "");
-
-    // 1.6. Remove Mozilla-specific br artifacts
-    cleaned = cleaned.replace(/<br\s+type="_moz"\s*\/?>/gi, "");
-
-    const useMarkdown = options.markdown !== false;
+    let cleaned: string;
 
     if (options.encode) {
-        // 2. Escape ONLY critical HTML symbols for safety if requested, keeping Turkish characters as UTF-8
+        // HTML Teaching Mode: Treat content as literal text to be displayed as code
+        // 1. Basic string repair (entities, normalization) without DOM parsing/stripping
+        // We do NOT use cleanHtml here because it strips tags like <input> which are "empty"
+        cleaned = repairText(text, { stripLoneBr: false });
+
+        // Fix: repairText might introduce entities (like &sim; for ~).
+        // Since we are about to he.escape EVERYTHING, we must first decode these entities back to chars
+        // so that logic/math symbols render as symbols (~) and not as entity code (&sim;).
+        cleaned = he.decode(cleaned);
+
+        // 2. Escape ALL chars to ensure they display as code
         cleaned = he.escape(cleaned);
 
         // RESTORE punctuation that he.escape over-encodes for Turkish (e.g., HTML'de)
         cleaned = cleaned.replace(/&#x27;/g, "'").replace(/&quot;/g, '"');
 
-        // 3. Restore whitelist tags that are allowed for formatting
-        // Very restrictive list for HTML teaching courses - only basic text formatting
-        // Excludes span, br, etc. as these are HTML elements being taught
-        const whitelist = ['b', 'strong', 'i', 'em', 'u'];
-
-        whitelist.forEach(tag => {
-            // Handle he.escape output (which escapes & to &amp;)
-            // Use word boundary after tag name to prevent 'b' from matching 'body'
-            const openRegex = new RegExp(`&amp;lt;${tag}((?:\\s[^&]*)??)&amp;gt;`, 'gi');
-            // We need to capture attributes for span
-            cleaned = cleaned.replace(openRegex, (match, attrs) => {
-                return `<${tag}${attrs ? attrs.replace(/&amp;quot;/g, '"') : ''}>`;
-            });
-
-            const closeRegex = new RegExp(`&amp;lt;\\/${tag}\\s*&amp;gt;`, 'gi');
-            cleaned = cleaned.replace(closeRegex, `</${tag}>`);
-
-            // Handle direct &lt; cases for general safety (redundant but safe)
-            const openRegex2 = new RegExp(`&lt;${tag}((?:\\s[^&]*)??)&gt;`, 'gi');
-            cleaned = cleaned.replace(openRegex2, (match, attrs) => {
-                return `<${tag}${attrs ? attrs.replace(/&quot;/g, '"') : ''}>`;
-            });
-
-            const closeRegex2 = new RegExp(`&lt;\\/${tag}\\s*&gt;`, 'gi');
-            cleaned = cleaned.replace(closeRegex2, `</${tag}>`);
-        });
+        // 3. Restore whitelist tags - REMOVED for HTML teaching courses
+        // We generally want "Code" to look like Code (e.g. <b> should show as <b>, not bold text)
+        // If there was legitimate formatting in options, it's a tradeoff we accept to allow <b> tags to be visible as answers.
+    } else {
+        // Standard Mode: Clean and format HTML
+        cleaned = cleanHtml(text, { isTechnical: options.isTechnical });
     }
+
+    // ... post processing handled by cleanHtml or implicitly done
+    // But wait, cleanHtml already returns trimmed string.
 
     // 4. Markdown Bold to HTML (Apply to all unless specifically disabled)
-    if (useMarkdown) {
-        cleaned = cleaned.replace(/\*\*(.*?)\*\*/g, "<b>$1</b>");
-        cleaned = cleaned.replace(/`(.*?)`/g, "<code>$1</code>");
-    }
+    // Note: cleanHtml already does some markdown support, but we keep this for encode path too
 
-    // 5. Normalize and trim
+
+    // 5. Normalize and trim (Most already done by repairText/cleanHtml)
     let result = cleaned
-        .replace(/[\u00A0\u1680\u180e\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]/g, " ")
         .replace(/<br\s+type="_moz"\s*\/?>/gi, "<br />")
-        // .replace(/<\/?span[^>]*>/gi, "") // KEEP SPANS as requested (e.g. math-tex)
-        .replace(/\r\n/g, "")
-        // Map to HTML Entities for better consistency and rendering
-        .replace(//g, "&sim;")
-        .replace(/∼/g, "&sim;") // U+223C
-        .replace(/~/g, "&sim;") // ASCII tilde to &sim; (Logic context preference)
-        .replace(//g, "&rArr;")
-        .replace(/⇒/g, "&rArr;") // U+21D2
-        .replace(//g, "&hArr;")
-        .replace(/⇔/g, "&hArr;") // U+21D4
-        .replace(//g, "&or;")
-        .replace(/∨/g, "&or;") // U+2228
-        .replace(//g, "&and;")
-        .replace(/∧/g, "&and;") // U+2227
-        .replace(//g, "&there4;")
-        .replace(/∴/g, "&there4;") // U+2234
-        .replace(//g, "&equiv;")
-        .replace(/≡/g, "&equiv;") // U+2261
-        .replace(//g, "&exist;") // U+F024
-        .replace(/∃/g, "&exist;") // U+2203
-        .replace(//g, "&forall;") // U+F022
-        .replace(/∀/g, "&forall;") // U+2200
-        .replace(//g, "&empty;") // U+F0C6 - Empty Set
-        .replace(//g, "&rarr;") // U+F0E0 - Right Arrow
-        .replace(//g, "&bull;") // U+F0B7 - Bullet
-        .replace(/\uF020/g, " ") // U+F020 - Symbol Font Space
-        // Pre-strip fixes with support for artifacts (U+FFFD)
-        .replace(/<<</g, "") // Remove artifact '<<<', keep the text after it
-        .replace(/yang[\uFFFD]+nın/g, "yangının")
-        .replace(/çal[\uFFFD]+şma/g, "çalışma")
-        .replace(/([Yy])ar[\uFFFD]+m/g, "$1arım") // Fix Yarım/yarım (safe with +)
-        .replace(/sıras[\uFFFD]+yla/g, "sırasıyla") // Fix sırasıyla
-        .replace(/bağıms[\uFFFD]+zlık/g, "bağımsızlık") // Fix bağımsızlık
-        .replace(/\uFFFD/g, "") // Remove replacement characters
-        .replace(/\u007F/g, "") // Remove DELETE characters
-        .replace(//g, "{")
-        .replace(//g, "}")
         .trim();
 
-    // 6. Remove <br> tags around list elements to prevent excessive spacing
-    result = result.replace(/(?:<br\s*\/?>\s*)+(<(?:ul|ol|li)[^>]*>)/gi, "$1"); // remove br BEFORE list
-    result = result.replace(/(<\/(?:ul|ol|li)>)(?:\s*<br\s*\/?>)+/gi, "$1"); // remove br AFTER list
-    result = result.replace(/^(?:<br\s*\/?>\s*)+/i, ""); // remove br AT START
-    result = result.replace(/(?:<br\s*\/?>\s*)+$/i, ""); // remove br AT END
+    // 6. Remove <br> tags around list elements
+    result = result.replace(/(?:<br\s*\/?>\s*)+(<(?:ul|ol|li)[^>]*>)/gi, "$1");
+    result = result.replace(/(<\/(?:ul|ol|li)>)(?:\s*<br\s*\/?>)+/gi, "$1");
+    result = result.replace(/^(?:<br\s*\/?>\s*)+/i, "");
+    result = result.replace(/(?:<br\s*\/?>\s*)+$/i, "");
 
-    // 7. Escape '<' that are NOT part of known HTML tags to prevent browser misinterpretation
-    // Skip this for encode mode - encode mode already handles escaping via he.escape() with its own whitelist
+    // 7. Fallback: If cleaning resulted in empty string but input had content, use full escape
+    if (result === "" && text.trim() !== "") {
+        // Fallback to fully escaped version of the repaired text
+        const fallback = he.escape(he.decode(repairText(text, { stripLoneBr: false })));
+        return fallback.replace(/&#x27;/g, "'").replace(/&quot;/g, '"').trim();
+    }
+
+    // 7. Escape '<' that are NOT part of known HTML tags for STANDARD mode
     if (!options.encode) {
-        // Known tags: b, i, u, br, p, ul, ol, li, span, div, sub, sup, a, strong, em, table, thead, tbody, tfoot, tr, td, th, img, font, o:p (MS Office)
-        // Also allow HTML comments: <!--
-        result = result.replace(/<(?!\/?(?:b|i|u|br|p|ul|ol|li|span|div|sub|sup|a|strong|em|table|thead|tbody|tfoot|tr|td|th|img|font|o:p)[\s>\/]|!--)/gi, "&lt;");
+        // Known tags whitelist...
+        let knownTags = "b|i|u|br|p|ul|ol|li|dl|dt|dd|sub|sup|strong|em|s|strike|del|ins|small|big|tt|table|thead|tbody|tfoot|tr|td|th|img|blockquote|code|pre|kbd|samp|var";
+
+        // If NOT a technical course, also allow common structural/media tags to be rendered
+        if (!options.isTechnical) {
+            knownTags += "|span|div|a|font|o:p";
+        }
+
+        result = result.replace(new RegExp(`<(?!\\/?(?:${knownTags})[\\s>\\/]|!--)`, 'gi'), "&lt;");
     }
 
     return result.trim();
 }
 
 function mapRawToApp(raw: RawQuestion, slug: string): AppQuestion {
-    // Courses that teach HTML - options should show HTML as text
-    const htmlTeachingCourses = ['web-tasariminin-temelleri', 'duyarli-web-tasarimi', 'internet-programciligi-i', 'internet-programciligi-ii'];
-    const shouldEncodeOptions = htmlTeachingCourses.includes(slug);
+    // Courses that teach HTML/Programming - options should show HTML as text
+
+    const isTechnical = htmlTeachingCourses.includes(slug);
+    const shouldEncodeOptions = isTechnical;
 
     const q: AppQuestion = {
         id: String(raw.SoruID || raw.id),
         unitNumber: raw.Unite || raw.unitNumber || 0,
-        // Text NEVER uses encode - formatting tags should always render
-        text: cleanText(raw.SoruMetni || raw.text, { encode: false }),
+        // Text/Explanation context matches the course type
+        text: cleanText(raw.SoruMetni || raw.text || "", { encode: false, isTechnical }),
         correctAnswer: (raw.DogruCevap || raw.correctAnswer || "").trim(),
         options: {}
     };
 
     if (raw.Aciklama) {
-        // Explanation NEVER uses encode - formatting tags should render
-        q.explanation = cleanText(raw.Aciklama, { encode: false });
+        q.explanation = cleanText(raw.Aciklama, { encode: false, isTechnical });
     }
 
     // Map options A, B, C, D, E
-    // For HTML teaching courses, options get full encoding to show HTML as text
-    // For other courses, formatting is preserved
+    // For HTML teaching courses, options get full encoding to show HTML as text (isTechnical=true)
+    // For other courses, formatting is preserved (isTechnical=false)
     ['A', 'B', 'C', 'D', 'E'].forEach(optKey => {
-        if (raw[optKey as keyof RawQuestion]) {
-            q.options[optKey] = cleanText(String(raw[optKey as keyof RawQuestion]), { encode: shouldEncodeOptions });
+        const optVal = raw[optKey as keyof RawQuestion];
+        if (optVal) {
+            q.options[optKey] = cleanText(String(optVal), { encode: shouldEncodeOptions, isTechnical });
         }
     });
 
     return q;
 }
 
-async function syncRawToQuestions() {
-    console.log("🚀 Syncing Questions from MCP Raw Data...");
+const htmlTeachingCourses = [
+    'web-tasariminin-temelleri',
+    'duyarli-web-tasarimi',
+    'internet-programciligi-i',
+    'internet-programciligi-ii',
+    'programlama-temelleri',
+    'web-editoru',
+    'veri-tabani-yonetim-sistemleri',
+    'web-okuryazarligi',
+    'ileri-web-programlama'
+];
 
-    // Ensure output directory exists
+async function processCourse(slug: string) {
+    const rawFilePath = path.join(MCP_RAW_DIR, slug, "alistirma-sorulari.json");
+    const destFilePath = path.join(PORTAL_QUESTIONS_DIR, `${slug}.json`);
+
+    if (!fs.existsSync(rawFilePath)) return false;
+
+    try {
+        const rawContent = fs.readFileSync(rawFilePath, "utf-8");
+        const rawData: RawQuestion[] = JSON.parse(rawContent);
+
+        if (!Array.isArray(rawData)) {
+            console.warn(`⚠️  Skipping ${slug}: Raw data is not an array`);
+            return false;
+        }
+
+        // Load existing app data to preserve fields (like explanation)
+        const existingMap = new Map<string, AppQuestion>();
+        if (fs.existsSync(destFilePath)) {
+            try {
+                const existingContent = fs.readFileSync(destFilePath, "utf-8");
+                const existingData: AppQuestion[] = JSON.parse(existingContent);
+                if (Array.isArray(existingData)) {
+                    existingData.forEach(q => existingMap.set(q.id, q));
+                }
+            } catch (e) {
+                // Silently skip corrupted existing files
+            }
+        }
+
+        // Load extra explanations if available
+        const extraExplanationsMap = new Map<string, string>();
+        const explanationsFilePath = path.join(MCP_RAW_DIR, slug, "alistirma-sorulari-aciklamalar.json");
+        if (fs.existsSync(explanationsFilePath)) {
+            try {
+                const explContent = fs.readFileSync(explanationsFilePath, "utf-8");
+                const explData = JSON.parse(explContent);
+                if (Array.isArray(explData)) {
+                    const isTechnical = htmlTeachingCourses.includes(slug);
+                    explData.forEach((item: any) => {
+                        if (item.SoruID && item.Aciklama) {
+                            extraExplanationsMap.set(String(item.SoruID), cleanText(item.Aciklama, { encode: false, isTechnical }));
+                        }
+                    });
+                }
+            } catch (e) {
+                console.warn(`WARN: Failed to parse explanations for ${slug}`);
+            }
+        }
+
+        const appData = rawData.map(raw => {
+            const q = mapRawToApp(raw, slug);
+            const existing = existingMap.get(q.id);
+
+            if (extraExplanationsMap.has(q.id)) {
+                q.explanation = extraExplanationsMap.get(q.id);
+            }
+
+            if (!q.explanation && existing?.explanation) {
+                q.explanation = existing.explanation;
+            }
+
+            return q;
+        });
+
+        fs.writeFileSync(destFilePath, JSON.stringify(appData, null, 2));
+        console.log(`✅ Synced ${slug} (${appData.length} questions) [Merged]`);
+        return true;
+
+    } catch (e) {
+        console.error(`❌ Error syncing ${slug}:`, e);
+        return false;
+    }
+}
+
+async function syncRawToQuestions() {
+    console.log("🚀 Syncing Questions from MCP Raw Data (True Parallel Mode)...");
+
     if (!fs.existsSync(PORTAL_QUESTIONS_DIR)) {
         fs.mkdirSync(PORTAL_QUESTIONS_DIR, { recursive: true });
     }
 
-    // Parse command line arguments for filtering
     const args = process.argv.slice(2);
-    const filterArg = args.find(arg => arg.startsWith('--filter='));
-    const filter = filterArg ? filterArg.split('=')[1] : null;
+    const filters = args
+        .filter(arg => arg.startsWith('--filter='))
+        .map(arg => arg.split('=')[1]);
 
-    if (filter) {
-        console.log(`🔍 Filtering for courses containing: "${filter}"`);
+    if (filters.length > 0) {
+        console.log(`🔍 Filtering for courses matching: ${JSON.stringify(filters)}`);
     }
 
-    // Get all course slugs from the raw directory
     const courseDirs = fs.readdirSync(MCP_RAW_DIR).filter(file => {
         const isDir = fs.statSync(path.join(MCP_RAW_DIR, file)).isDirectory();
         if (!isDir) return false;
-        if (filter && !file.includes(filter)) return false;
+        if (filters.length > 0) {
+            return filters.some(f => file.includes(f));
+        }
         return true;
     });
 
+    const CONCURRENCY_LIMIT = 20;
     let syncedCount = 0;
+    const queue = [...courseDirs];
+    const activeTasks: Promise<boolean>[] = [];
 
-    for (const slug of courseDirs) {
-        const rawFilePath = path.join(MCP_RAW_DIR, slug, "alistirma-sorulari.json");
-        const destFilePath = path.join(PORTAL_QUESTIONS_DIR, `${slug}.json`);
-
-        if (!fs.existsSync(rawFilePath)) continue;
-
-        try {
-            const rawContent = fs.readFileSync(rawFilePath, "utf-8");
-            const rawData: RawQuestion[] = JSON.parse(rawContent);
-
-            if (!Array.isArray(rawData)) {
-                console.warn(`⚠️  Skipping ${slug}: Raw data is not an array`);
-                continue;
-            }
-
-            // Load existing app data to preserve fields (like explanation)
-            const existingMap = new Map<string, AppQuestion>();
-            if (fs.existsSync(destFilePath)) {
-                try {
-                    const existingContent = fs.readFileSync(destFilePath, "utf-8");
-                    const existingData: AppQuestion[] = JSON.parse(existingContent);
-                    if (Array.isArray(existingData)) {
-                        existingData.forEach(q => existingMap.set(q.id, q));
-                    }
-                } catch (e) {
-                    console.warn(`⚠️  Could not read existing file ${destFilePath}, creating new.`);
-                }
-            }
-
-            // Load extra explanations if available
-            const extraExplanationsMap = new Map<string, string>();
-            const explanationsFilePath = path.join(MCP_RAW_DIR, slug, "alistirma-sorulari-aciklamalar.json");
-            if (fs.existsSync(explanationsFilePath)) {
-                try {
-                    const explContent = fs.readFileSync(explanationsFilePath, "utf-8");
-                    const explData = JSON.parse(explContent);
-                    if (Array.isArray(explData)) {
-                        const shouldEncode = (slug as string) === 'web-tasariminin-temelleri';
-                        explData.forEach((item: any) => {
-                            if (item.SoruID && item.Aciklama) {
-                                extraExplanationsMap.set(String(item.SoruID), cleanText(item.Aciklama, { encode: shouldEncode }));
-                            }
-                        });
-                        console.log(`INFO: Found ${extraExplanationsMap.size} extra explanations for ${slug}`);
-                    }
-                } catch (e) {
-                    console.warn(`WARN: Failed to parse explanations file for ${slug}`);
-                }
-            }
-
-            const appData = rawData.map(raw => {
-                const q = mapRawToApp(raw, slug);
-                const existing = existingMap.get(q.id);
-
-                // Priority for explanation:
-                // 1. Raw object itself (if present)
-                // 2. Extra explanations file
-                // 3. Existing local file (preservation)
-
-                if (extraExplanationsMap.has(q.id)) {
-                    q.explanation = extraExplanationsMap.get(q.id);
-                }
-
-                // Preserve explanation if missing in raw/extra but present in existing
-                if (!q.explanation && existing?.explanation) {
-                    q.explanation = existing.explanation;
-                }
-
-                // You might also want to preserve other manual fields?
-                // For now, explanation is the critical one mentioned by user.
-
-                return q;
+    while (queue.length > 0 || activeTasks.length > 0) {
+        // Fill slots
+        while (activeTasks.length < CONCURRENCY_LIMIT && queue.length > 0) {
+            const slug = queue.shift()!;
+            const task = processCourse(slug).then(res => {
+                // Remove self from active tasks
+                const index = activeTasks.indexOf(task);
+                if (index !== -1) activeTasks.splice(index, 1);
+                if (res) syncedCount++;
+                return res;
             });
+            activeTasks.push(task);
+        }
 
-            fs.writeFileSync(destFilePath, JSON.stringify(appData, null, 2));
-            console.log(`✅ Synced ${slug} (${appData.length} questions) [Merged]`);
-            syncedCount++;
-
-        } catch (e) {
-            console.error(`❌ Error syncing ${slug}:`, e);
+        // Wait for at least one task to complete
+        if (activeTasks.length > 0) {
+            await Promise.race(activeTasks);
         }
     }
 

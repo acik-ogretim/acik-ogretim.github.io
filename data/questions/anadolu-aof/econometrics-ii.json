@@ -11,12 +11,12 @@
       "D": "Y = β<sub>0</sub> + β<sub>1</sub> log(X<sub>1</sub>)",
       "E": "Y = β<sub>0</sub> + β<sub>1</sub> X<sup>(-1)</sup>"
     },
-    "explanation": "Linear regression models the relationship between the dependent variable and explanatory variables where the function is linear in parameters:<br/>Y = β<sub>0</sub> + β<sub>1</sub> X<sub>1</sub>+…+ β<sub>k</sub> X<sub>k</sub>+ u where X<sub>1</sub>, X<sub>2</sub>, …, X<sub>k</sub> are the explanatory variables, Y is the dependent variable e is the error.\n The answer is A."
+    "explanation": "Linear regression models the relationship between the dependent variable and explanatory variables where the function is linear in parameters:<br/>Y = β<sub>0</sub> + β<sub>1</sub> X<sub>1</sub>+…+ β<sub>k</sub> X<sub>k</sub>+ u where X<sub>1</sub>, X<sub>2</sub>, …, X<sub>k</sub> are the explanatory variables, Y is the dependent variable e is the error.<br/>The answer is A."
   },
   {
     "id": "3595103",
     "unitNumber": 1,
-    "text": "I. According to the Gauss-Markov theorem, have the least variance among the class of estimators that are linear and unbiased. \n II. The minimum variance of an OLS estimator indicates it is the most efficient estimator as it provides the tightest estimates around the population value of the parameter.\n III. According to the Gauss-Markov theorem, have the least variance among the class of estimators that are non-linear and biased. \n What can be said to be true about the OLS estimators?",
+    "text": "I. According to the Gauss-Markov theorem, have the least variance among the class of estimators that are linear and unbiased. <br/>II. The minimum variance of an OLS estimator indicates it is the most efficient estimator as it provides the tightest estimates around the population value of the parameter.<br/>III. According to the Gauss-Markov theorem, have the least variance among the class of estimators that are non-linear and biased. <br/>What can be said to be true about the OLS estimators?",
     "correctAnswer": "D",
     "options": {
       "A": "Only I",
@@ -25,7 +25,7 @@
       "D": "I and II",
       "E": "I and III"
     },
-    "explanation": "The OLS estimators, according to the Gauss-Markov theorem, have the least variance among the class of estimators that are linear and unbiased. Linear term in the Gauss-Markov theorem, simply indicates that we are working within the linear regression framework. Unbiasedness is crucial for an estimator since it means that the estimator does not systematically miscalculate the estimates. Finally, the minimum variance of an OLS estimator indicates it is the most efficient estimator as it provides the tightest estimates around the population value of the parameter.\n The answer is D"
+    "explanation": "The OLS estimators, according to the Gauss-Markov theorem, have the least variance among the class of estimators that are linear and unbiased. Linear term in the Gauss-Markov theorem, simply indicates that we are working within the linear regression framework. Unbiasedness is crucial for an estimator since it means that the estimator does not systematically miscalculate the estimates. Finally, the minimum variance of an OLS estimator indicates it is the most efficient estimator as it provides the tightest estimates around the population value of the parameter.<br/>The answer is D"
   },
   {
     "id": "3595140",
@@ -39,7 +39,7 @@
       "D": "Normality",
       "E": "Heteroskedasticity"
     },
-    "explanation": "Homoskedasticity means that the spread, dispersion, or variability of the errors is consistent<br/>throughout the range of values of the explanatory variables.\n The answer is A."
+    "explanation": "Homoskedasticity means that the spread, dispersion, or variability of the errors is consistent<br/>throughout the range of values of the explanatory variables.<br/>The answer is A."
   },
   {
     "id": "3595144",
@@ -53,12 +53,12 @@
       "D": "The LM statistic has an asymptotic chi-square distribution.",
       "E": "The OLS estimator can still be efficient under heteroskedasticity."
     },
-    "explanation": "Heteroskedasticity is fundamentally the violation of assumption A5. The assumptions of OLS do not affect each other. Hence the violation of A5 has no effect on the first four assumptions. Consequently, our model is still linear in parameters (A1 is satisfied), the sample used to estimate the coefficients for the model is selected randomly (A2 is satisfied), any variable or a group of them in the data set is not a linear combination of the others (A3 is satisfied), and explanatory variables are not related to the residuals (A4 is satisfied). In other words, heteroskedasticity causes no bias in the estimates of the OLS coefficients.<br/>The OLS estimators are still unbiased, however, the OLS estimates of the standard errors of coefficients, se(b<sub>k</sub>) for k=0,1,…, K, are biased. The bias in the standard errors leads to unreliable hypothesis testing and confidence intervals.\n The t and F statistics are no longer t and F distributed and the LM statistic no longer has an asymptotic chi-square distribution. Therefore, the test statistics we have covered in the quick review portion of the chapter are no longer valid.<br/>The OLS estimator is no longer efficient under heteroskedasticity. When heteroskedasticity is present, the variance of the error term varies with the level of the independent variable. As a result, the OLS estimator tends to give too much weight to observations with smaller errors. Inefficient estimates refer to parameter estimates that have a higher degree of variability or uncertainty compared to the alternative estimators. An estimator is deemed inefficient if it does not make full use of the available information in the data, leading to a greater degree of uncertainty in the estimated parameter values.\n The answer is B."
+    "explanation": "Heteroskedasticity is fundamentally the violation of assumption A5. The assumptions of OLS do not affect each other. Hence the violation of A5 has no effect on the first four assumptions. Consequently, our model is still linear in parameters (A1 is satisfied), the sample used to estimate the coefficients for the model is selected randomly (A2 is satisfied), any variable or a group of them in the data set is not a linear combination of the others (A3 is satisfied), and explanatory variables are not related to the residuals (A4 is satisfied). In other words, heteroskedasticity causes no bias in the estimates of the OLS coefficients.<br/>The OLS estimators are still unbiased, however, the OLS estimates of the standard errors of coefficients, se(b<sub>k</sub>) for k=0,1,…, K, are biased. The bias in the standard errors leads to unreliable hypothesis testing and confidence intervals.<br/>The t and F statistics are no longer t and F distributed and the LM statistic no longer has an asymptotic chi-square distribution. Therefore, the test statistics we have covered in the quick review portion of the chapter are no longer valid.<br/>The OLS estimator is no longer efficient under heteroskedasticity. When heteroskedasticity is present, the variance of the error term varies with the level of the independent variable. As a result, the OLS estimator tends to give too much weight to observations with smaller errors. Inefficient estimates refer to parameter estimates that have a higher degree of variability or uncertainty compared to the alternative estimators. An estimator is deemed inefficient if it does not make full use of the available information in the data, leading to a greater degree of uncertainty in the estimated parameter values.<br/>The answer is B."
   },
   {
     "id": "3595696",
     "unitNumber": 1,
-    "text": "I. LM-test\n II. Model Specification\n III. Robust Standard Errors\n Which of the given can be used to deal with a model with serially correlated residuals?",
+    "text": "I. LM-test<br/>II. Model Specification<br/>III. Robust Standard Errors<br/>Which of the given can be used to deal with a model with serially correlated residuals?",
     "correctAnswer": "E",
     "options": {
       "A": "Only I",
@@ -67,12 +67,12 @@
       "D": "I and III",
       "E": "II and III"
     },
-    "explanation": "The utilization of OLS without any alteration in inference or any other modifications when residuals<br/>of the model is serially correlated lead to many problems. Here we are discussing how to deal with a model with serially correlated residuals:\n Robust standard errors: As in the heteroskedasticity model can be estimated with OLS then any<br/>inference can be conducted with robust standard errors.\n Model Specification: Although it has a quite humble name, this item incorporates three crucial<br/>topics: differencing, lagged values of variables, and deterministic terms.\n Cochrane-Orcutt and Prais-Winsten procedures: These procedures involve transforming the<br/>original models by quasi-differencing and estimating the model on the transformed data.\n The answer is E."
+    "explanation": "The utilization of OLS without any alteration in inference or any other modifications when residuals<br/>of the model is serially correlated lead to many problems. Here we are discussing how to deal with a model with serially correlated residuals:<br/>Robust standard errors: As in the heteroskedasticity model can be estimated with OLS then any<br/>inference can be conducted with robust standard errors.<br/>Model Specification: Although it has a quite humble name, this item incorporates three crucial<br/>topics: differencing, lagged values of variables, and deterministic terms.<br/>Cochrane-Orcutt and Prais-Winsten procedures: These procedures involve transforming the<br/>original models by quasi-differencing and estimating the model on the transformed data.<br/>The answer is E."
   },
   {
     "id": "3595703",
     "unitNumber": 1,
-    "text": "I. Breusch Pagan-Godfrey Test\n II. Durbin’s t tests\n III. Modified White (MWh) Test\n Which of the given tests are used to test heteroskedasticity?",
+    "text": "I. Breusch Pagan-Godfrey Test<br/>II. Durbin’s t tests<br/>III. Modified White (MWh) Test<br/>Which of the given tests are used to test heteroskedasticity?",
     "correctAnswer": "D",
     "options": {
       "A": "Only I",
@@ -81,12 +81,12 @@
       "D": "I and III",
       "E": "II and III"
     },
-    "explanation": "We will discuss two main types of tests: auxiliary regression-based tests and an order-based test. BreuschPagan-Godfrey (BPG), White, and Modified White tests are the most elementary and most popular tests of heteroskedasticity. The order-based tests are the most intuitive tests. Here we will examine the GoldfeldQuandt (GQ) test.\n The answer is D."
+    "explanation": "We will discuss two main types of tests: auxiliary regression-based tests and an order-based test. BreuschPagan-Godfrey (BPG), White, and Modified White tests are the most elementary and most popular tests of heteroskedasticity. The order-based tests are the most intuitive tests. Here we will examine the GoldfeldQuandt (GQ) test.<br/>The answer is D."
   },
   {
     "id": "3595710",
     "unitNumber": 1,
-    "text": "I. R<sup>2</sup> is overstated giving the impression of a well-fitted model\n II. The t and F tests are overstated, and prone to rejecting the null hypothesis even if it is correct\n III. The OLS estimates of the standard errors of coefficients are unbiased\n Which of the given could be among the consequences of serial correlation?",
+    "text": "I. R<sup>2</sup> is overstated giving the impression of a well-fitted model<br/>II. The t and F tests are overstated, and prone to rejecting the null hypothesis even if it is correct<br/>III. The OLS estimates of the standard errors of coefficients are unbiased<br/>Which of the given could be among the consequences of serial correlation?",
     "correctAnswer": "C",
     "options": {
       "A": "Only I",
@@ -95,12 +95,12 @@
       "D": "I and III",
       "E": "II and III"
     },
-    "explanation": "The consequences of serial correlation resemble those of heteroskedasticity to a great extent. The<br/>regression coefficients are still unbiased since the first four assumptions listed in the quick review remain untouched by serial correlation. However the OLS estimates of the standard errors of coefficients, se( ˆβ k ) for k=0,1,…, K, are biased. The usual t and F tests of significance are no longer valid. Finally, the OLS estimator is no longer efficient under serial correlation.<br/>The only distinction is that we now know the direction of the bias in the residual statistics. With<br/>heteroskedasticity, the direction of the bias cannot be determined. Standard errors are biased downward; therefore, the t and F tests are overstated, and prone to rejecting the null hypothesis even if it is correct. Finally, R<sup>2</sup> is also overstated giving the impression of a well-fitted model.\n The answer is C."
+    "explanation": "The consequences of serial correlation resemble those of heteroskedasticity to a great extent. The<br/>regression coefficients are still unbiased since the first four assumptions listed in the quick review remain untouched by serial correlation. However the OLS estimates of the standard errors of coefficients, se( ˆβ k ) for k=0,1,…, K, are biased. The usual t and F tests of significance are no longer valid. Finally, the OLS estimator is no longer efficient under serial correlation.<br/>The only distinction is that we now know the direction of the bias in the residual statistics. With<br/>heteroskedasticity, the direction of the bias cannot be determined. Standard errors are biased downward; therefore, the t and F tests are overstated, and prone to rejecting the null hypothesis even if it is correct. Finally, R<sup>2</sup> is also overstated giving the impression of a well-fitted model.<br/>The answer is C."
   },
   {
     "id": "3595721",
     "unitNumber": 1,
-    "text": "I. The explanatory variables must be controlled by the experimenter (non-stochastic) which is never the case.\n II. The model that is tested must include an intercept.\n III. It only tests for second-order autocorrelation in the residuals in models with lagged dependent variables.\n What can be said to be true about the Durbin Watson (DW) d-test?",
+    "text": "I. The explanatory variables must be controlled by the experimenter (non-stochastic) which is never the case.<br/>II. The model that is tested must include an intercept.<br/>III. It only tests for second-order autocorrelation in the residuals in models with lagged dependent variables.<br/>What can be said to be true about the Durbin Watson (DW) d-test?",
     "correctAnswer": "C",
     "options": {
       "A": "Only I",
@@ -109,12 +109,12 @@
       "D": "I and III",
       "E": "II and III"
     },
-    "explanation": "Durbin Watson (DW) d test is quite popular despite its disadvantages. First, it only tests for first-order autocorrelation in the residuals in models without lagged dependent variables. Second, the explanatory variables must be controlled by the experimenter (non-stochastic) which is never the case. Economists rarely actually control the explanatory variables. Third, the model that is tested must include an intercept. Rarely in econometrics, we estimate models without intercepts, so this is not a great disadvantage. Finally, its critical values do not come from a distribution. \n The answer is C."
+    "explanation": "Durbin Watson (DW) d test is quite popular despite its disadvantages. First, it only tests for first-order autocorrelation in the residuals in models without lagged dependent variables. Second, the explanatory variables must be controlled by the experimenter (non-stochastic) which is never the case. Economists rarely actually control the explanatory variables. Third, the model that is tested must include an intercept. Rarely in econometrics, we estimate models without intercepts, so this is not a great disadvantage. Finally, its critical values do not come from a distribution. <br/>The answer is C."
   },
   {
     "id": "3595725",
     "unitNumber": 1,
-    "text": "I. Generalized Least Squares\n II. Model Specification\n III. Non-Linear Models\n Which of the given can be used to deal with a model with heteroskedasticity?",
+    "text": "I. Generalized Least Squares<br/>II. Model Specification<br/>III. Non-Linear Models<br/>Which of the given can be used to deal with a model with heteroskedasticity?",
     "correctAnswer": "E",
     "options": {
       "A": "Only I",
@@ -123,7 +123,7 @@
       "D": "I and II",
       "E": "I and III"
     },
-    "explanation": "There are numerous ways to handle heteroskedasticity in a regression model:<br/>• Robust standard errors: Adopting robust standard errors, which correct the sample estimate of<br/>the standard errors to take heteroskedasticity into account, is a straightforward option. \n • Generalized Least Squares: Generalized least squares (GLS) estimator gives the squared residuals<br/>various weights depending on how much variance they are anticipated to have.\n • Transformations: The dependent variable or the independent variables can be transformed to<br/>address heteroskedasticity.\n • Non-linear models: Finally, if the heteroskedasticity is too severe, it may be necessary to use<br/>non-linear regression models or other alternative methods that are robust to heteroskedasticity,<br/>such as generalized linear models (GLMs) or quantile regression.\n The answer is E."
+    "explanation": "There are numerous ways to handle heteroskedasticity in a regression model:<br/>• Robust standard errors: Adopting robust standard errors, which correct the sample estimate of<br/>the standard errors to take heteroskedasticity into account, is a straightforward option. <br/>• Generalized Least Squares: Generalized least squares (GLS) estimator gives the squared residuals<br/>various weights depending on how much variance they are anticipated to have.<br/>• Transformations: The dependent variable or the independent variables can be transformed to<br/>address heteroskedasticity.<br/>• Non-linear models: Finally, if the heteroskedasticity is too severe, it may be necessary to use<br/>non-linear regression models or other alternative methods that are robust to heteroskedasticity,<br/>such as generalized linear models (GLMs) or quantile regression.<br/>The answer is E."
   },
   {
     "id": "3595733",
@@ -137,7 +137,7 @@
       "D": "0,20",
       "E": "0,15"
     },
-    "explanation": "we can obtain R<sup>2</sup> (R-squared) statistics,<br/>R<sup>2</sup>= ESS/TSS = 1− (RSS/TSS) ,\n R<sup>2</sup>=50/100 or 1-(50/100)=1/2=0,50\n The answer is B."
+    "explanation": "we can obtain R<sup>2</sup> (R-squared) statistics,<br/>R<sup>2</sup>= ESS/TSS = 1− (RSS/TSS) ,<br/>R<sup>2</sup>=50/100 or 1-(50/100)=1/2=0,50<br/>The answer is B."
   },
   {
     "id": "3842592",
@@ -291,12 +291,12 @@
       "D": "It implies that certain variables within the model are constant in the system itself.",
       "E": "It implies that certain variables outside the model are determined within the system itself."
     },
-    "explanation": "The term “endogenous regressors” implies that certain variables within the model are determined within the system itself. Although our model may consist of only one equation, some variables can be influenced and shaped by hidden or ignored equations operating within the system. This interdependence can lead to the endogeneity problem, impacting the reliability of our results.\n The answer is A."
+    "explanation": "The term “endogenous regressors” implies that certain variables within the model are determined within the system itself. Although our model may consist of only one equation, some variables can be influenced and shaped by hidden or ignored equations operating within the system. This interdependence can lead to the endogeneity problem, impacting the reliability of our results.<br/>The answer is A."
   },
   {
     "id": "3595808",
     "unitNumber": 2,
-    "text": "I. A simultaneous equation, also known as a system of equations, is a set of two or more equations with multiple variables that are connected and must be solved together.\n<br/>II. The solution to a simultaneous equation is a set of values for the variables that satisfy all the given equations simultaneously. \n<br/>III. In economics, simultaneous equations are rarely used to model various economic relationships and phenomena.\n<br/>Which of the given statements can be said to be true about simultaneous equations?",
+    "text": "I. A simultaneous equation, also known as a system of equations, is a set of two or more equations with multiple variables that are connected and must be solved together.<br/>II. The solution to a simultaneous equation is a set of values for the variables that satisfy all the given equations simultaneously. <br/>III. In economics, simultaneous equations are rarely used to model various economic relationships and phenomena.<br/>Which of the given statements can be said to be true about simultaneous equations?",
     "correctAnswer": "C",
     "options": {
       "A": "Only I",
@@ -305,12 +305,12 @@
       "D": "I and III",
       "E": "II and III"
     },
-    "explanation": "A simultaneous equation, also known as a system of equations, is a set of two or more<br/>equations with multiple variables that are connected and must be solved together. The solution to a<br/>simultaneous equation is a set of values for the variables that satisfy all the given equations simultaneously. In economics, simultaneous equations are frequently used to model various economic relationships and phenomena.\n<br/>The answer is C."
+    "explanation": "A simultaneous equation, also known as a system of equations, is a set of two or more<br/>equations with multiple variables that are connected and must be solved together. The solution to a<br/>simultaneous equation is a set of values for the variables that satisfy all the given equations simultaneously. In economics, simultaneous equations are frequently used to model various economic relationships and phenomena.<br/>The answer is C."
   },
   {
     "id": "3595838",
     "unitNumber": 2,
-    "text": "I. It is a common issue in statistical and econometric analysis that arises when the explanatory variable(s) used in a regression model are correlated with the error term or disturbance in the model. \n II. The correlation between the explanatory variable(s) used in a regression model and the error term or disturbance violates the assumption of exogeneity, which is a key assumption for obtaining unbiased and consistent parameter estimates in regression analysis.\n III. In simple terms, endogeneity bias occurs when there is a one-way causal relationship between the independent variable and one or more regressors, making it difficult to determine the true cause-and-effect relationship.\n What can be said to be true about the endogeneity bias?",
+    "text": "I. It is a common issue in statistical and econometric analysis that arises when the explanatory variable(s) used in a regression model are correlated with the error term or disturbance in the model. <br/>II. The correlation between the explanatory variable(s) used in a regression model and the error term or disturbance violates the assumption of exogeneity, which is a key assumption for obtaining unbiased and consistent parameter estimates in regression analysis.<br/>III. In simple terms, endogeneity bias occurs when there is a one-way causal relationship between the independent variable and one or more regressors, making it difficult to determine the true cause-and-effect relationship.<br/>What can be said to be true about the endogeneity bias?",
     "correctAnswer": "C",
     "options": {
       "A": "Only I",
@@ -319,12 +319,12 @@
       "D": "I and III",
       "E": "II and III"
     },
-    "explanation": "Endogeneity bias, also known as endogeneity problem, is a common issue in statistical and econometric analysis that arises when the explanatory variable(s) used in a regression model are correlated with the error term or disturbance in the model. This correlation violates the assumption of exogeneity, which is a key assumption for obtaining unbiased and consistent parameter estimates in regression analysis. In simple terms, endogeneity bias occurs when there is a two-way causal relationship between the dependent variable and one or more regressors, making it difficult to determine the true cause and effect relationship, which is shadowed behind so-called endogeneity bias.\n The answer is C."
+    "explanation": "Endogeneity bias, also known as endogeneity problem, is a common issue in statistical and econometric analysis that arises when the explanatory variable(s) used in a regression model are correlated with the error term or disturbance in the model. This correlation violates the assumption of exogeneity, which is a key assumption for obtaining unbiased and consistent parameter estimates in regression analysis. In simple terms, endogeneity bias occurs when there is a two-way causal relationship between the dependent variable and one or more regressors, making it difficult to determine the true cause and effect relationship, which is shadowed behind so-called endogeneity bias.<br/>The answer is C."
   },
   {
     "id": "3595850",
     "unitNumber": 2,
-    "text": "I. The 2SLS method addresses the endogeneity problem by using instrumental variables (IVs) to proxy for the endogenous variables and identify the causal effect more accurately.\n<br/>II. The 2SLS method is unusable when dealing with simultaneous equations models where there is endogeneity and simultaneous causation between variables.\n<br/>III. The two-stage least squares method is an essential tool in econometrics for addressing endogeneity and obtaining reliable estimates of causal relationships. \n<br/>What can be said to be true about the Two-Stage Least Squares method (2SLS)?",
+    "text": "I. The 2SLS method addresses the endogeneity problem by using instrumental variables (IVs) to proxy for the endogenous variables and identify the causal effect more accurately.<br/>II. The 2SLS method is unusable when dealing with simultaneous equations models where there is endogeneity and simultaneous causation between variables.<br/>III. The two-stage least squares method is an essential tool in econometrics for addressing endogeneity and obtaining reliable estimates of causal relationships. <br/>What can be said to be true about the Two-Stage Least Squares method (2SLS)?",
     "correctAnswer": "D",
     "options": {
       "A": "Only I",
@@ -333,7 +333,7 @@
       "D": "I and III",
       "E": "II and III"
     },
-    "explanation": "The 2SLS method provides a way to obtain consistent and unbiased estimates when dealing with<br/>endogeneity problems. First, the 2SLS method addresses the endogeneity problem by using instrumental variables (IVs) to proxy for the endogenous variables and identify the causal effect more accurately. By finding valid instrumental variables, the 2SLS method allows researchers to isolate the exogenous variation in the endogenous variables and obtain consistent estimates of the causal relationship. Moreover, the 2SLS method is particularly useful when dealing with simultaneous equations models where there is endogeneity and simultaneous causation between variables. It allows researchers to break the simultaneity problem and obtain consistent estimates of the underlying relationships. Consequently, the two-stage least squares method is an essential tool in econometrics for addressing endogeneity and obtaining reliable estimates of causal relationships. By using instrumental variables and a two-stage procedure, the 2SLS method provides a robust and effective solution to the challenges posed by endogeneity in regression analysis, making it a valuable tool for empirical research in economics and related fields.\n<br/>The answer is D."
+    "explanation": "The 2SLS method provides a way to obtain consistent and unbiased estimates when dealing with<br/>endogeneity problems. First, the 2SLS method addresses the endogeneity problem by using instrumental variables (IVs) to proxy for the endogenous variables and identify the causal effect more accurately. By finding valid instrumental variables, the 2SLS method allows researchers to isolate the exogenous variation in the endogenous variables and obtain consistent estimates of the causal relationship. Moreover, the 2SLS method is particularly useful when dealing with simultaneous equations models where there is endogeneity and simultaneous causation between variables. It allows researchers to break the simultaneity problem and obtain consistent estimates of the underlying relationships. Consequently, the two-stage least squares method is an essential tool in econometrics for addressing endogeneity and obtaining reliable estimates of causal relationships. By using instrumental variables and a two-stage procedure, the 2SLS method provides a robust and effective solution to the challenges posed by endogeneity in regression analysis, making it a valuable tool for empirical research in economics and related fields.<br/>The answer is D."
   },
   {
     "id": "3595936",
@@ -347,12 +347,12 @@
       "D": "By testing for endogeneity, researchers can identify potential problems with causality and employ appropriate methods to establish causal relationships more accurately.",
       "E": "If endogeneity is not addressed, the results obtained from the analysis may not reflect the true relationships between variables."
     },
-    "explanation": "Testing for endogeneity is essential in econometric and statistical analysis for several reasons. In<br/>many economic and social science studies, the main goal is to establish a causal relationship between the explanatory and dependent variables. However, endogeneity can create spurious connections, making it difficult to determine the true direction of causality. By testing for endogeneity, researchers can identify potential problems with causality and employ appropriate methods to establish causal relationships more accurately. Moreover, Endogeneity can lead to biased and inconsistent parameter estimates in regression analysis as we discussed earlier. If endogeneity is not addressed, the results obtained from the analysis may not reflect the true relationships between variables. By testing for endogeneity and using appropriate techniques to address it, researchers can obtain more reliable and valid inference from their models.\n The answer is B."
+    "explanation": "Testing for endogeneity is essential in econometric and statistical analysis for several reasons. In<br/>many economic and social science studies, the main goal is to establish a causal relationship between the explanatory and dependent variables. However, endogeneity can create spurious connections, making it difficult to determine the true direction of causality. By testing for endogeneity, researchers can identify potential problems with causality and employ appropriate methods to establish causal relationships more accurately. Moreover, Endogeneity can lead to biased and inconsistent parameter estimates in regression analysis as we discussed earlier. If endogeneity is not addressed, the results obtained from the analysis may not reflect the true relationships between variables. By testing for endogeneity and using appropriate techniques to address it, researchers can obtain more reliable and valid inference from their models.<br/>The answer is B."
   },
   {
     "id": "3595940",
     "unitNumber": 2,
-    "text": "I. Endogeneity problem in regression models occurs when the Gauss-Markov assumption on zero<br/>the conditional expectation is violated. \n II. The endogeneity problem (bias) results from the independence between the model’s error term and regressor(s).\n III. The error term is independent of the regressor if this assumption fails, we cannot control other variables since the error term and regressor move together.\n What can be said to be true about the Endogeneity problem?",
+    "text": "I. Endogeneity problem in regression models occurs when the Gauss-Markov assumption on zero<br/>the conditional expectation is violated. <br/>II. The endogeneity problem (bias) results from the independence between the model’s error term and regressor(s).<br/>III. The error term is independent of the regressor if this assumption fails, we cannot control other variables since the error term and regressor move together.<br/>What can be said to be true about the Endogeneity problem?",
     "correctAnswer": "D",
     "options": {
       "A": "Only I",
@@ -361,7 +361,7 @@
       "D": "I and III",
       "E": "II and III"
     },
-    "explanation": "Endogeneity problem in regression models occurs when the Gauss-Markov assumption on zero<br/>the conditional expectation is violated. Consider a simple linear regression model Y=β<sub>0</sub>+β<sub>1</sub>X+u. The zero conditional expectation assumption can be written as E[u|X ] = cov(u, X) = 0. In this case, we can say that the error term is independent of the regressor; in other words, the error term does not carry any common information with the regressor. This assumption is critical because it is required to ensure the ceteris paribus assumption when we interpret the coefficient β<sub>1</sub>. If this assumption fails, we cannot control other variables since the error term and regressor move together. Moreover, the presence of such a situation engenders bias, sometimes called endogeneity bias. Consequently, the endogeneity problem (bias) results from dependence between the model’s error term and regressor(s). Notice that we can generalize this problem to the multiple linear regression model with the same principles.\n The answer is D."
+    "explanation": "Endogeneity problem in regression models occurs when the Gauss-Markov assumption on zero<br/>the conditional expectation is violated. Consider a simple linear regression model Y=β<sub>0</sub>+β<sub>1</sub>X+u. The zero conditional expectation assumption can be written as E[u|X ] = cov(u, X) = 0. In this case, we can say that the error term is independent of the regressor; in other words, the error term does not carry any common information with the regressor. This assumption is critical because it is required to ensure the ceteris paribus assumption when we interpret the coefficient β<sub>1</sub>. If this assumption fails, we cannot control other variables since the error term and regressor move together. Moreover, the presence of such a situation engenders bias, sometimes called endogeneity bias. Consequently, the endogeneity problem (bias) results from dependence between the model’s error term and regressor(s). Notice that we can generalize this problem to the multiple linear regression model with the same principles.<br/>The answer is D."
   },
   {
     "id": "3595944",
@@ -375,12 +375,12 @@
       "D": "Endogeneity Bias",
       "E": "Endogeneity Problem"
     },
-    "explanation": "In economics and finance, “errors in variables,” also known as measurement error, refers to the situation where one or more variables used in a statistical analysis are measured imprecisely or with error.\n The answer is A."
+    "explanation": "In economics and finance, “errors in variables,” also known as measurement error, refers to the situation where one or more variables used in a statistical analysis are measured imprecisely or with error.<br/>The answer is A."
   },
   {
     "id": "3596076",
     "unitNumber": 2,
-    "text": "I. The main idea in testing overidentification restriction is to check whether any instrument is endogenous.\n II. “Exogeneity” of the instruments dictates that the instruments should be related to the error term of the original regression\n III. The test done to testing overidentification restriction can tell us which instrument(s) is(are) problematic.\n Which of the given statements about \"testing overidentification restrictions\" can be said to be true?",
+    "text": "I. The main idea in testing overidentification restriction is to check whether any instrument is endogenous.<br/>II. “Exogeneity” of the instruments dictates that the instruments should be related to the error term of the original regression<br/>III. The test done to testing overidentification restriction can tell us which instrument(s) is(are) problematic.<br/>Which of the given statements about \"testing overidentification restrictions\" can be said to be true?",
     "correctAnswer": "E",
     "options": {
       "A": "Only I",
@@ -389,12 +389,12 @@
       "D": "I and II",
       "E": "I and III"
     },
-    "explanation": "One particularly important question about the endogeneity testing 2SLS estimation is about the validity of the instruments, which has two dimensions coming from the assumptions on instruments. The first dimension called “relevance” requires that the instruments are related to the endogenous variables. We have already discussed this issue under the “weak instruments problem”. The second issue called “exogeneity” of the instruments dictates that the instruments should not be related to the error term of the original regression. This issue is investigated under the name “overidentification restriction”. The main idea in testing overidentification restriction is to check whether any instrument is endogenous.\n The test done to testing overidentification restriction does not tell us which instrument(s) is(are) problematic.\n The answer is E."
+    "explanation": "One particularly important question about the endogeneity testing 2SLS estimation is about the validity of the instruments, which has two dimensions coming from the assumptions on instruments. The first dimension called “relevance” requires that the instruments are related to the endogenous variables. We have already discussed this issue under the “weak instruments problem”. The second issue called “exogeneity” of the instruments dictates that the instruments should not be related to the error term of the original regression. This issue is investigated under the name “overidentification restriction”. The main idea in testing overidentification restriction is to check whether any instrument is endogenous.<br/>The test done to testing overidentification restriction does not tell us which instrument(s) is(are) problematic.<br/>The answer is E."
   },
   {
     "id": "3596083",
     "unitNumber": 2,
-    "text": "I. Supply and Demand Equations\n<br/>II. Economic Profit Equation\n<br/>III. IS-LM Model\n<br/>IV. Investment and Savings Equations\n<br/>Which of the given equations in economics can be listed as simultaneous equations?",
+    "text": "I. Supply and Demand Equations<br/>II. Economic Profit Equation<br/>III. IS-LM Model<br/>IV. Investment and Savings Equations<br/>Which of the given equations in economics can be listed as simultaneous equations?",
     "correctAnswer": "E",
     "options": {
       "A": "Only I",
@@ -403,7 +403,7 @@
       "D": "I, II and IV",
       "E": "I, III and IV"
     },
-    "explanation": "In economics, simultaneous equations are frequently used to model various economic relationships and phenomena. Some examples of simultaneous equations in economics can be listed as follows:\n<br/>1) Supply and Demand Equations\n<br/>2) Investment and Savings Equations\n<br/>3) IS-LM Model\n<br/>The answer is E."
+    "explanation": "In economics, simultaneous equations are frequently used to model various economic relationships and phenomena. Some examples of simultaneous equations in economics can be listed as follows:<br/>1) Supply and Demand Equations<br/>2) Investment and Savings Equations<br/>3) IS-LM Model<br/>The answer is E."
   },
   {
     "id": "3596098",
@@ -417,7 +417,7 @@
       "D": "Exogeneity and Biased",
       "E": "Linear and Unbiased"
     },
-    "explanation": "The 2SLS method provides a way to obtain consistent and unbiased estimates when dealing with endogeneity problems. First, the 2SLS method addresses the endogeneity problem by using instrumental variables (IVs) to proxy for the endogenous variables and identify the causal effect more accurately. By finding valid instrumental variables, the 2SLS method allows researchers to isolate the exogenous variation in the endogenous variables and obtain consistent estimates of the causal relationship.\n Accordingly, a proper instrument should satisfy two conditions: exogeneity and relevance.\n The answer is B."
+    "explanation": "The 2SLS method provides a way to obtain consistent and unbiased estimates when dealing with endogeneity problems. First, the 2SLS method addresses the endogeneity problem by using instrumental variables (IVs) to proxy for the endogenous variables and identify the causal effect more accurately. By finding valid instrumental variables, the 2SLS method allows researchers to isolate the exogenous variation in the endogenous variables and obtain consistent estimates of the causal relationship.<br/>Accordingly, a proper instrument should satisfy two conditions: exogeneity and relevance.<br/>The answer is B."
   },
   {
     "id": "3597632",
@@ -436,7 +436,7 @@
   {
     "id": "3597633",
     "unitNumber": 3,
-    "text": "<table> <tbody> <tr> <td> Years\n </td> <td> Y(t)\n </td> <td> t\n </td> <td> Y(t)t\n </td> <td> t<sup>2</sup>\n </td> </tr> <tr> <td> 2015\n </td> <td> 1\n </td> <td> 1\n </td> <td> 1\n </td> <td> 1\n </td> </tr> <tr> <td> 2016\n </td> <td> 3\n </td> <td> 2\n </td> <td> 6\n </td> <td> 4\n </td> </tr> <tr> <td> 2017\n </td> <td> 5\n </td> <td> 3\n </td> <td> 15\n </td> <td> 9\n </td> </tr> </tbody> </table> Using the data in table, which of the following is the estimation value of slope parameters using the least squares method?",
+    "text": "<table> <tbody> <tr> <td> Years<br/></td> <td> Y(t)<br/></td> <td> t<br/></td> <td> Y(t)t<br/></td> <td> t<sup>2</sup><br/></td> </tr> <tr> <td> 2015<br/></td> <td> 1<br/></td> <td> 1<br/></td> <td> 1<br/></td> <td> 1<br/></td> </tr> <tr> <td> 2016<br/></td> <td> 3<br/></td> <td> 2<br/></td> <td> 6<br/></td> <td> 4<br/></td> </tr> <tr> <td> 2017<br/></td> <td> 5<br/></td> <td> 3<br/></td> <td> 15<br/></td> <td> 9<br/></td> </tr> </tbody> </table> Using the data in table, which of the following is the estimation value of slope parameters using the least squares method?",
     "correctAnswer": "D",
     "options": {
       "A": "0.5",
@@ -450,7 +450,7 @@
   {
     "id": "3597636",
     "unitNumber": 3,
-    "text": "<table> <tbody> <tr> <td> Years\n </td> <td> Y(t)\n </td> <td> t\n </td> <td> Y(t)t\n </td> <td> t<sup>2</sup>\n </td> </tr> <tr> <td> 2015\n </td> <td> 1\n </td> <td> 1\n </td> <td> 1\n </td> <td> 1\n </td> </tr> <tr> <td> 2016\n </td> <td> 3\n </td> <td> 2\n </td> <td> 6\n </td> <td> 4\n </td> </tr> <tr> <td> 2017\n </td> <td> 5\n </td> <td> 3\n </td> <td> 15\n </td> <td> 9\n </td> </tr> </tbody> </table> Using the data in table, which of the following is the equation of the linear trend model by the LS method?",
+    "text": "<table> <tbody> <tr> <td> Years<br/></td> <td> Y(t)<br/></td> <td> t<br/></td> <td> Y(t)t<br/></td> <td> t<sup>2</sup><br/></td> </tr> <tr> <td> 2015<br/></td> <td> 1<br/></td> <td> 1<br/></td> <td> 1<br/></td> <td> 1<br/></td> </tr> <tr> <td> 2016<br/></td> <td> 3<br/></td> <td> 2<br/></td> <td> 6<br/></td> <td> 4<br/></td> </tr> <tr> <td> 2017<br/></td> <td> 5<br/></td> <td> 3<br/></td> <td> 15<br/></td> <td> 9<br/></td> </tr> </tbody> </table> Using the data in table, which of the following is the equation of the linear trend model by the LS method?",
     "correctAnswer": "E",
     "options": {
       "A": "Y(t)=0.5-2t",
@@ -641,7 +641,7 @@
       "D": "1,47 and 0,7",
       "E": "0,5 and -0,64"
     },
-    "explanation": "The method of moments estimator of the parameters is obtained as follows\n 1. (0,5*(1-0,3))/(1-(0,5*0,5))=0,47\n 2. (0,3-(0,5*0,5))/(1-(0,5*0,5)) =0,07."
+    "explanation": "The method of moments estimator of the parameters is obtained as follows<br/>1. (0,5*(1-0,3))/(1-(0,5*0,5))=0,47<br/>2. (0,3-(0,5*0,5))/(1-(0,5*0,5)) =0,07."
   },
   {
     "id": "3597611",
@@ -725,7 +725,7 @@
       "D": "In classical linear regression models, explanatory variables are assumed to be endogenous, which means simultaneity is a condition that is always met.",
       "E": "Simultaneity and endogeneity are completely unrelated concepts; simultaneity is a technique used to ensure variables are exogenous."
     },
-    "explanation": "If your answer is incorrect, then go over the “Simultaneity and Simultaneous Equations” section.<br/>Statements regarding simultaneity and endogeneity:\n <ol> <li>\"We observe that some of the variables affect each other simultaneously in the system equations, so the main feature of the system equations is simultaneity.\"</li> <li>\"In simultaneous equations, it is not clear which variable is dependent or independent so we identify the variables as exogenous and endogenous. The endogenous variables are defined as the variables that mutually affect each other within the model.\"</li> </ol> These sentences highlight the concepts of simultaneity and endogeneity within the context of econometric models, particularly focusing on the distinction between exogenous and endogenous variables and the implications of variables affecting each other simultaneously."
+    "explanation": "If your answer is incorrect, then go over the “Simultaneity and Simultaneous Equations” section.<br/>Statements regarding simultaneity and endogeneity:<br/><ol> <li>\"We observe that some of the variables affect each other simultaneously in the system equations, so the main feature of the system equations is simultaneity.\"</li> <li>\"In simultaneous equations, it is not clear which variable is dependent or independent so we identify the variables as exogenous and endogenous. The endogenous variables are defined as the variables that mutually affect each other within the model.\"</li> </ol> These sentences highlight the concepts of simultaneity and endogeneity within the context of econometric models, particularly focusing on the distinction between exogenous and endogenous variables and the implications of variables affecting each other simultaneously."
   },
   {
     "id": "3597383",
@@ -739,7 +739,7 @@
       "D": "It simplifies the model by assuming all variables are exogenous, enhancing the reliability of the analysis.",
       "E": "It has no significant impact on the results of econometric analysis and is generally disregarded by researchers."
     },
-    "explanation": "If your answer is incorrect, please review the “Simultaneity And Simultaneous Equations”.<br/>section.<br/>The underlying issues related to endogeneity can be inferred from several sections:\n <ol> <li>In the discussion on simultaneity and simultaneous equations, it is mentioned that \"In simultaneous equations, it is not clear which variable is dependent or independent so we identify the variables as exogenous and endogenous. The endogenous variables are defined as the variables that mutually affect each other within the model.\" This highlights the challenge of determining causality and the potential for endogeneity when variables within a model influence each other.</li> <li>The introduction of Vector Autoregression (VAR) Models by Sims (1980) is noted as an alternative to simultaneous equations due to the exogeneity assumptions of some variables in simultaneous equations. The VAR approach, where all variables are treated as endogenous, is presented as a solution to overcome the limitations of traditional models that do not account for the dynamic interrelationships among variables, indirectly pointing to the problems caused by endogeneity.</li> </ol> These sections collectively underscore the complexity and potential issues arising from endogeneity in econometric models, including the risk of biased and inconsistent estimates that can compromise the reliability of econometric analysis."
+    "explanation": "If your answer is incorrect, please review the “Simultaneity And Simultaneous Equations”.<br/>section.<br/>The underlying issues related to endogeneity can be inferred from several sections:<br/><ol> <li>In the discussion on simultaneity and simultaneous equations, it is mentioned that \"In simultaneous equations, it is not clear which variable is dependent or independent so we identify the variables as exogenous and endogenous. The endogenous variables are defined as the variables that mutually affect each other within the model.\" This highlights the challenge of determining causality and the potential for endogeneity when variables within a model influence each other.</li> <li>The introduction of Vector Autoregression (VAR) Models by Sims (1980) is noted as an alternative to simultaneous equations due to the exogeneity assumptions of some variables in simultaneous equations. The VAR approach, where all variables are treated as endogenous, is presented as a solution to overcome the limitations of traditional models that do not account for the dynamic interrelationships among variables, indirectly pointing to the problems caused by endogeneity.</li> </ol> These sections collectively underscore the complexity and potential issues arising from endogeneity in econometric models, including the risk of biased and inconsistent estimates that can compromise the reliability of econometric analysis."
   },
   {
     "id": "3597384",
@@ -753,7 +753,7 @@
       "D": "Simultaneity is a phenomenon where the dependent variable is influenced by an external factor that is not included in the model.",
       "E": "Simultaneity refers to the situation where the independent variables are correlated with the error term, thus violating the assumptions of classical linear regression models."
     },
-    "explanation": "If your answer is incorrect, please review the “Simultaneity And Simultaneous Equations” section.<br/>The statements that point to the correct answer regarding simultaneity, particularly in the context of econometric analysis, are as follows:\n <ol> <li><strong>Introduction to Simultaneity and Simultaneous Equations</strong>: The document begins with an introduction to the concept of simultaneity in econometric models, explaining that simultaneity occurs when variables within a model affect each other simultaneously. This is a foundational concept that sets the stage for understanding the complexities of simultaneous equations and the need for specialized analytical techniques.</li> <li><strong>Discussion on Single Equation Models</strong>: It contrasts single equation models, where the direction of causality is from the independent variables to the dependent variable, with systems of equations where bi-directional causality exists. This highlights the limitations of single equation models in capturing the simultaneity present in many economic relationships.</li> <li><strong>Explanation of Simultaneous Equations</strong>: The document elaborates on simultaneous equations, illustrating how they are used to model situations where simultaneity is present. It mentions that in these systems, some variables affect each other simultaneously, making it challenging to distinguish between exogenous and endogenous variables without resorting to the reduced forms of these equations for estimation.</li> <li><strong>Vector Autoregression (VAR) Models</strong>: The section on VAR models further emphasizes the concept of simultaneity by presenting VAR as a tool to analyze time series data where all variables are treated as endogenously interrelated. This approach is particularly useful in capturing the dynamic interactions among variables, which are often simultaneous in nature.</li> <li><strong>Example of VAR Model Estimation Results</strong>: The document includes an example of VAR model estimation results, which implicitly relies on the concept of simultaneity by treating all variables in the system as potentially influencing each other. This example serves to illustrate the practical application of econometric techniques designed to address simultaneity.</li> </ol> These sections collectively provide a comprehensive overview of simultaneity in econometric analysis, from theoretical foundations to practical applications, underscoring the importance of using appropriate models and techniques to address the challenges posed by simultaneous relationships among variables."
+    "explanation": "If your answer is incorrect, please review the “Simultaneity And Simultaneous Equations” section.<br/>The statements that point to the correct answer regarding simultaneity, particularly in the context of econometric analysis, are as follows:<br/><ol> <li><strong>Introduction to Simultaneity and Simultaneous Equations</strong>: The document begins with an introduction to the concept of simultaneity in econometric models, explaining that simultaneity occurs when variables within a model affect each other simultaneously. This is a foundational concept that sets the stage for understanding the complexities of simultaneous equations and the need for specialized analytical techniques.</li> <li><strong>Discussion on Single Equation Models</strong>: It contrasts single equation models, where the direction of causality is from the independent variables to the dependent variable, with systems of equations where bi-directional causality exists. This highlights the limitations of single equation models in capturing the simultaneity present in many economic relationships.</li> <li><strong>Explanation of Simultaneous Equations</strong>: The document elaborates on simultaneous equations, illustrating how they are used to model situations where simultaneity is present. It mentions that in these systems, some variables affect each other simultaneously, making it challenging to distinguish between exogenous and endogenous variables without resorting to the reduced forms of these equations for estimation.</li> <li><strong>Vector Autoregression (VAR) Models</strong>: The section on VAR models further emphasizes the concept of simultaneity by presenting VAR as a tool to analyze time series data where all variables are treated as endogenously interrelated. This approach is particularly useful in capturing the dynamic interactions among variables, which are often simultaneous in nature.</li> <li><strong>Example of VAR Model Estimation Results</strong>: The document includes an example of VAR model estimation results, which implicitly relies on the concept of simultaneity by treating all variables in the system as potentially influencing each other. This example serves to illustrate the practical application of econometric techniques designed to address simultaneity.</li> </ol> These sections collectively provide a comprehensive overview of simultaneity in econometric analysis, from theoretical foundations to practical applications, underscoring the importance of using appropriate models and techniques to address the challenges posed by simultaneous relationships among variables."
   },
   {
     "id": "3597385",
@@ -1131,7 +1131,7 @@
       "D": "0.750",
       "E": "0.968"
     },
-    "explanation": "If your answer is wrong, please review the “Predictive Measures” section.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/e8d60e8bd9d4ca4a235b889068e7413a.png\" alt=\"\" width=\"400\" height=\"118\"> Accuracy = (TP+TN) / (TP+FP+TN+FN)\n Accuracy = 9600 / 10000 = 0.960"
+    "explanation": "If your answer is wrong, please review the “Predictive Measures” section.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/e8d60e8bd9d4ca4a235b889068e7413a.png\" alt=\"\" width=\"400\" height=\"118\"> Accuracy = (TP+TN) / (TP+FP+TN+FN)<br/>Accuracy = 9600 / 10000 = 0.960"
   },
   {
     "id": "3601458",
@@ -1145,7 +1145,7 @@
       "D": "0.750",
       "E": "0.968"
     },
-    "explanation": "If your answer is wrong, please review the “Predictive Measures” section.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/e8d60e8bd9d4ca4a235b889068e7413a.png\" alt=\"\" width=\"400\" height=\"118\"> Precision = TP / (TP+FP)\n Precision = 600 / 900 = 0.667"
+    "explanation": "If your answer is wrong, please review the “Predictive Measures” section.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/e8d60e8bd9d4ca4a235b889068e7413a.png\" alt=\"\" width=\"400\" height=\"118\"> Precision = TP / (TP+FP)<br/>Precision = 600 / 900 = 0.667"
   },
   {
     "id": "3601459",
@@ -1159,7 +1159,7 @@
       "D": "0.750",
       "E": "0.968"
     },
-    "explanation": "If your answer is wrong, please review the “Predictive Measures” section.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/e8d60e8bd9d4ca4a235b889068e7413a.png\" alt=\"\" width=\"400\" height=\"118\"> Recall = TP / (TP+FN)\n Recall = 600 / 700 = 0.857"
+    "explanation": "If your answer is wrong, please review the “Predictive Measures” section.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/e8d60e8bd9d4ca4a235b889068e7413a.png\" alt=\"\" width=\"400\" height=\"118\"> Recall = TP / (TP+FN)<br/>Recall = 600 / 700 = 0.857"
   },
   {
     "id": "3601460",
@@ -1173,7 +1173,7 @@
       "D": "0.750",
       "E": "0.968"
     },
-    "explanation": "If your answer is wrong, please review the “Predictive Measures” section.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/e8d60e8bd9d4ca4a235b889068e7413a.png\" alt=\"\" width=\"400\" height=\"118\"> F1 score = (2×Precision×Recall) / (Precision+Recall)\n F1 score = (2×0.667×0.857) / (0.667+0.857) = 0.750"
+    "explanation": "If your answer is wrong, please review the “Predictive Measures” section.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/e8d60e8bd9d4ca4a235b889068e7413a.png\" alt=\"\" width=\"400\" height=\"118\"> F1 score = (2×Precision×Recall) / (Precision+Recall)<br/>F1 score = (2×0.667×0.857) / (0.667+0.857) = 0.750"
   },
   {
     "id": "3601461",
@@ -1187,7 +1187,7 @@
       "D": "0.750",
       "E": "0.968"
     },
-    "explanation": "If your answer is wrong, please review the “Predictive Measures” section.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/e8d60e8bd9d4ca4a235b889068e7413a.png\" alt=\"\" width=\"400\" height=\"118\"> Specificity = TN / (TN+FP)\n Specificity = 9000 / 9300 = 0.968"
+    "explanation": "If your answer is wrong, please review the “Predictive Measures” section.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/e8d60e8bd9d4ca4a235b889068e7413a.png\" alt=\"\" width=\"400\" height=\"118\"> Specificity = TN / (TN+FP)<br/>Specificity = 9000 / 9300 = 0.968"
   },
   {
     "id": "3601462",
@@ -1201,7 +1201,7 @@
       "D": "0.333",
       "E": "0.667"
     },
-    "explanation": "If your answer is wrong, please review the “Predictive Measures” section.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/e8d60e8bd9d4ca4a235b889068e7413a.png\" alt=\"\" width=\"400\" height=\"118\"> False Positive Rate = FP / (TN+FP)\n False Positive Rate = 300 / 9300 = 0.032"
+    "explanation": "If your answer is wrong, please review the “Predictive Measures” section.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/e8d60e8bd9d4ca4a235b889068e7413a.png\" alt=\"\" width=\"400\" height=\"118\"> False Positive Rate = FP / (TN+FP)<br/>False Positive Rate = 300 / 9300 = 0.032"
   },
   {
     "id": "3601463",

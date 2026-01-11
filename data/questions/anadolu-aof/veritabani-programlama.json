@@ -240,7 +240,7 @@
   {
     "id": "3739037",
     "unitNumber": 1,
-    "text": "Bolumler (Bolum_No, Bolum_Adi)\n Calisanlar (TC_no, Adi, Bolum_No, Cinsiyet)\n Urunler (Urun_No, Urun_Adi, Urun_Sayisi, Urun_Fiyati, Bolum_No)\n Satislar (Satis_No, Urun_No, Calisan_TC_No, Miktar, Fiyati, Tarih)\n Yukarıda teknoloji ürünlerinin satışının yapıldığı bir mağaza için çalışanların, bölümlerin, ürünlerin ve satışların bilgisinin tutulması için tasarlanmış “Bilişim” veritabanı için ilişkisel şemalar verilmiştir. Buna göre aşağıdakilerden hangisi birincil anahtardır?",
+    "text": "Bolumler (Bolum_No, Bolum_Adi)<br/>Calisanlar (TC_no, Adi, Bolum_No, Cinsiyet)<br/>Urunler (Urun_No, Urun_Adi, Urun_Sayisi, Urun_Fiyati, Bolum_No)<br/>Satislar (Satis_No, Urun_No, Calisan_TC_No, Miktar, Fiyati, Tarih)<br/>Yukarıda teknoloji ürünlerinin satışının yapıldığı bir mağaza için çalışanların, bölümlerin, ürünlerin ve satışların bilgisinin tutulması için tasarlanmış “Bilişim” veritabanı için ilişkisel şemalar verilmiştir. Buna göre aşağıdakilerden hangisi birincil anahtardır?",
     "correctAnswer": "A",
     "options": {
       "A": "Satis_No",
@@ -249,7 +249,7 @@
       "D": "Urun_Fiyati",
       "E": "Tarih"
     },
-    "explanation": "Teknoloji ürünlerinin satışının yapıldığı bir mağaza için çalışanların, bölümlerin, ürünlerin ve satışların bilgisinin tutulması için tasarlanmış “Bilişim” veritabanı için ilişkisel şemalar;\n Bolumler (<u>Bolum_No</u>, Bolum_Adi)\n Calisanlar (<u>TC_no</u>, Adi, Bolum_No, Cinsiyet)\n Urunler (<u>Urun_No</u>, Urun_Adi, Urun_Sayisi, Urun_Fiyati, Bolum_No)\n Satislar (<u>Satis_No</u>, Urun_No, Calisan_TC_No, Miktar, Fiyati, Tarih)\n Bu şemalarda altı çizili alanlar birincil anahtar olan alanlardır. Doğru cevap A’dır."
+    "explanation": "Teknoloji ürünlerinin satışının yapıldığı bir mağaza için çalışanların, bölümlerin, ürünlerin ve satışların bilgisinin tutulması için tasarlanmış “Bilişim” veritabanı için ilişkisel şemalar;<br/>Bolumler (<u>Bolum_No</u>, Bolum_Adi)<br/>Calisanlar (<u>TC_no</u>, Adi, Bolum_No, Cinsiyet)<br/>Urunler (<u>Urun_No</u>, Urun_Adi, Urun_Sayisi, Urun_Fiyati, Bolum_No)<br/>Satislar (<u>Satis_No</u>, Urun_No, Calisan_TC_No, Miktar, Fiyati, Tarih)<br/>Bu şemalarda altı çizili alanlar birincil anahtar olan alanlardır. Doğru cevap A’dır."
   },
   {
     "id": "3739038",
@@ -268,7 +268,7 @@
   {
     "id": "3739039",
     "unitNumber": 1,
-    "text": "CREATE TABLE Bolumler(\n Bolum_No int NOT NULL,\n Bolum_Adi nchar(50)NULL,\n PRIMARY KEY(Bolum_No)\n )\n Aşağıdakilerden hangisi yukarıdaki kod bloğunun SQL Sorgu penceresine yazılıp çalıştırılması ile gerçekleşir?",
+    "text": "CREATE TABLE Bolumler(<br/>Bolum_No int NOT NULL,<br/>Bolum_Adi nchar(50)NULL,<br/>PRIMARY KEY(Bolum_No)<br/>)<br/>Aşağıdakilerden hangisi yukarıdaki kod bloğunun SQL Sorgu penceresine yazılıp çalıştırılması ile gerçekleşir?",
     "correctAnswer": "C",
     "options": {
       "A": "Calisanlar tablosunun oluşturulması",
@@ -277,7 +277,7 @@
       "D": "Urun_No kolonunun oluşturulması",
       "E": "Yabancı Anahtar oluşturulması"
     },
-    "explanation": "Oluşturulan “Bilisim” veritabanına ait tabloların oluşturulması için aşağıdaki kod bloğunun SQL Sorgu penceresine yazılıp çalıştırılması gerekir.\n USE Bilisim\n CREATE TABLE Bolumler(\n Bolum_No int NOT NULL,\n Bolum_Adi nchar(50)NULL,\n PRIMARY KEY(Bolum_No)\n )\n CREATE TABLE Calisanlar(\n TC_No nvarchar(11) NOT NULL,\n Adi nvarchar(100) NULL,\n Bolum_No int NULL,\n Cinsiyet nchar(1) NULL,\n PRIMARY KEY(TC_no),\n FOREIGN KEY(Bolum_No)REFERENCES Bolumler(Bolum_No)\n )\n CREATE TABLE Urunler(\n Urun_No int NOT NULL,\n Urun_Adi nvarchar(50) NULL,\n Urun_Sayisi int NULL,\n Urun_Fiyati decimal(18, 2) NULL,\n Bolum_No int NULL,\n PRIMARY KEY(Urun_No),\n FOREIGN KEY(Bolum_No) REFERENCES Bolumler(Bolum_No)\n )\n CREATE TABLE Satislar(\n Satis_No int NOT NULL,\n Urun_No int NULL,\n Calisan_TC_No nvarchar(11) NULL,\n Miktar int NULL,\n Fiyat decimal(18, 2) NULL,\n Tarih date NULL,\n PRIMARY KEY(Satis_No),\n FOREIGN KEY(Urun_No) REFERENCES Urunler(Urun_No),\n FOREIGN KEY(Calisan_TC_No) REFERENCES Calisanlar(TC_No)\n )\n Doğru cevap C’dir."
+    "explanation": "Oluşturulan “Bilisim” veritabanına ait tabloların oluşturulması için aşağıdaki kod bloğunun SQL Sorgu penceresine yazılıp çalıştırılması gerekir.<br/>USE Bilisim<br/>CREATE TABLE Bolumler(<br/>Bolum_No int NOT NULL,<br/>Bolum_Adi nchar(50)NULL,<br/>PRIMARY KEY(Bolum_No)<br/>)<br/>CREATE TABLE Calisanlar(<br/>TC_No nvarchar(11) NOT NULL,<br/>Adi nvarchar(100) NULL,<br/>Bolum_No int NULL,<br/>Cinsiyet nchar(1) NULL,<br/>PRIMARY KEY(TC_no),<br/>FOREIGN KEY(Bolum_No)REFERENCES Bolumler(Bolum_No)<br/>)<br/>CREATE TABLE Urunler(<br/>Urun_No int NOT NULL,<br/>Urun_Adi nvarchar(50) NULL,<br/>Urun_Sayisi int NULL,<br/>Urun_Fiyati decimal(18, 2) NULL,<br/>Bolum_No int NULL,<br/>PRIMARY KEY(Urun_No),<br/>FOREIGN KEY(Bolum_No) REFERENCES Bolumler(Bolum_No)<br/>)<br/>CREATE TABLE Satislar(<br/>Satis_No int NOT NULL,<br/>Urun_No int NULL,<br/>Calisan_TC_No nvarchar(11) NULL,<br/>Miktar int NULL,<br/>Fiyat decimal(18, 2) NULL,<br/>Tarih date NULL,<br/>PRIMARY KEY(Satis_No),<br/>FOREIGN KEY(Urun_No) REFERENCES Urunler(Urun_No),<br/>FOREIGN KEY(Calisan_TC_No) REFERENCES Calisanlar(TC_No)<br/>)<br/>Doğru cevap C’dir."
   },
   {
     "id": "3739040",
@@ -599,7 +599,7 @@
       "D": "Veritabanı silme dili kullanma",
       "E": "ALTER SQL"
     },
-    "explanation": "Eğer işletme süreçlerinde veri işleme için akış kontrolü, döngü vb. gerektiren bir dil (Java, C / C ++ / C #, COBOL vb. yordamsal dil) ihtiyaç olursa, standart SQL bu işlemlerin yapılması için yeterli olmaz. Bu durum için çözüm yöntemleri veritabanı ile etkileşimi de içermek üzere üç sınıfta toplanabilir:\n Gömülü SQL(Embedded SQL)\n Veritabanı bağlantısı için yazılım kütüphaneleri kullanma\n Veritabanı programlama dili kullanma"
+    "explanation": "Eğer işletme süreçlerinde veri işleme için akış kontrolü, döngü vb. gerektiren bir dil (Java, C / C ++ / C #, COBOL vb. yordamsal dil) ihtiyaç olursa, standart SQL bu işlemlerin yapılması için yeterli olmaz. Bu durum için çözüm yöntemleri veritabanı ile etkileşimi de içermek üzere üç sınıfta toplanabilir:<br/>Gömülü SQL(Embedded SQL)<br/>Veritabanı bağlantısı için yazılım kütüphaneleri kullanma<br/>Veritabanı programlama dili kullanma"
   },
   {
     "id": "3739063",
@@ -641,7 +641,7 @@
       "D": "Set Secondary Key seçilmemelidir.",
       "E": "Object Explorer boş bırakılmalıdır."
     },
-    "explanation": "MS SQL Server 2014 Yardımcısı ile Örnek Veritabanını Oluşturma\n Bolumler(Bolum_No, Bolum_Adi) şemasına uygun olarak alan isimleri ve uygun veri tipleri tanımlanır. Ayrıca veri tekrarı olmaması istenen alanlar için birincil anahtar tanımlaması yapılması gerekir. “Bolum_No” satırına gelip sağ tıklayarak “Set Primary Key” ile birincil anahtar ataması yapılabilir. Sonra menüden Save(Kaydet) dendiğinde tablo ismi girilir. Eğer herhangi bir alan için mutlaka tanımlı bir değer olması isteniyorsa “Allow Nulls” u seçmemek gerekir."
+    "explanation": "MS SQL Server 2014 Yardımcısı ile Örnek Veritabanını Oluşturma<br/>Bolumler(Bolum_No, Bolum_Adi) şemasına uygun olarak alan isimleri ve uygun veri tipleri tanımlanır. Ayrıca veri tekrarı olmaması istenen alanlar için birincil anahtar tanımlaması yapılması gerekir. “Bolum_No” satırına gelip sağ tıklayarak “Set Primary Key” ile birincil anahtar ataması yapılabilir. Sonra menüden Save(Kaydet) dendiğinde tablo ismi girilir. Eğer herhangi bir alan için mutlaka tanımlı bir değer olması isteniyorsa “Allow Nulls” u seçmemek gerekir."
   },
   {
     "id": "3739066",
@@ -716,7 +716,7 @@
   {
     "id": "3739071",
     "unitNumber": 2,
-    "text": "T-SQL’de değişken isimlendirme kuralları ile ilgili hangisi doğrudur?\n I. Değişkenler Türkçe karakter ve boşluk içermez<br/>II. Değişken isimleri ilk karakteri harf ile başlayıp harf, rakam ve alt çizgi (_) ile devam edebiiliir.<br/>III. Değişken isimlerinde küçük veya büyük harf kullanımı fark eder.",
+    "text": "T-SQL’de değişken isimlendirme kuralları ile ilgili hangisi doğrudur?<br/>I. Değişkenler Türkçe karakter ve boşluk içermez<br/>II. Değişken isimleri ilk karakteri harf ile başlayıp harf, rakam ve alt çizgi (_) ile devam edebiiliir.<br/>III. Değişken isimlerinde küçük veya büyük harf kullanımı fark eder.",
     "correctAnswer": "C",
     "options": {
       "A": "Yalnız I",
@@ -772,7 +772,7 @@
   {
     "id": "3739075",
     "unitNumber": 2,
-    "text": "DECLARE @Ders_Sayisi INT;<br/>SELECT @Ders_Sayisi=COUNT(*) FROM Dersler WHERE (Not&gt;49)<br/>IF (@Ders_Sayisi&gt;4)<br/>PRINT 'Sınıfı geçtiniz.'<br/>ELSE IF (@Ders_Sayisi&gt;3)<br/>PRINT '1 dersten sınıfta kaldınız.'<br/>ELSE IF (@Ders_Sayisi&gt;2)<br/>PRINT '2 dersten sınıfta kaldınız.'<br/>ELSE IF (@Ders_Sayisi&gt;1)<br/>PRINT '3 dersten sınıfta kaldınız.'<br/>ELSE<br/>PRINT '4 dersten sınıfta kaldınız.'\n Yukarıdaki programa göre Ders_Sayisi 3 olarak gelirse hangi sonuç görüntülenecektir?",
+    "text": "DECLARE @Ders_Sayisi INT;<br/>SELECT @Ders_Sayisi=COUNT(*) FROM Dersler WHERE (Not&gt;49)<br/>IF (@Ders_Sayisi&gt;4)<br/>PRINT 'Sınıfı geçtiniz.'<br/>ELSE IF (@Ders_Sayisi&gt;3)<br/>PRINT '1 dersten sınıfta kaldınız.'<br/>ELSE IF (@Ders_Sayisi&gt;2)<br/>PRINT '2 dersten sınıfta kaldınız.'<br/>ELSE IF (@Ders_Sayisi&gt;1)<br/>PRINT '3 dersten sınıfta kaldınız.'<br/>ELSE<br/>PRINT '4 dersten sınıfta kaldınız.'<br/>Yukarıdaki programa göre Ders_Sayisi 3 olarak gelirse hangi sonuç görüntülenecektir?",
     "correctAnswer": "C",
     "options": {
       "A": "Sınıfı geçtiniz.",
@@ -786,7 +786,7 @@
   {
     "id": "3739076",
     "unitNumber": 2,
-    "text": "DECLARE @a INT;<br/>DECLARE @b INT;<br/>DECLARE @c INT;\n Set @a=19<br/>Set @b=5<br/>Set @c=@a%@b\n CASE c<br/>WHEN '1' THEN 'Bir'<br/>WHEN '2' THEN 'İki'<br/>WHEN '3' THEN 'Üç'<br/>WHEN '4' THEN 'Dört'<br/>WHEN '5' THEN 'Beş'<br/>END\n T-SQL kodunu görüntüleyen çıktı hangisidir?",
+    "text": "DECLARE @a INT;<br/>DECLARE @b INT;<br/>DECLARE @c INT;<br/>Set @a=19<br/>Set @b=5<br/>Set @c=@a%@b<br/>CASE c<br/>WHEN '1' THEN 'Bir'<br/>WHEN '2' THEN 'İki'<br/>WHEN '3' THEN 'Üç'<br/>WHEN '4' THEN 'Dört'<br/>WHEN '5' THEN 'Beş'<br/>END<br/>T-SQL kodunu görüntüleyen çıktı hangisidir?",
     "correctAnswer": "D",
     "options": {
       "A": "Bir",
@@ -800,7 +800,7 @@
   {
     "id": "3739077",
     "unitNumber": 2,
-    "text": "DECLARE @sayi INT<br/>SET @sayi=1\n WHILE (@sayi&lt;3)<br/>BEGIN<br/>Print '*'<br/>Set @sayi=@sayi+1<br/>END\n Yukarıdaki kod çalıştırıldığında ekran çıktısı ne olur?",
+    "text": "DECLARE @sayi INT<br/>SET @sayi=1<br/>WHILE (@sayi&lt;3)<br/>BEGIN<br/>Print '*'<br/>Set @sayi=@sayi+1<br/>END<br/>Yukarıdaki kod çalıştırıldığında ekran çıktısı ne olur?",
     "correctAnswer": "B",
     "options": {
       "A": "*",
@@ -856,7 +856,7 @@
   {
     "id": "3739081",
     "unitNumber": 2,
-    "text": "DECLARE @PC_alis INT<br/>DECLARE @PC_satis INT<br/>DECLARE @PC_kar INT<br/>SET @PC_alis=400<br/>SET @PC_satis=432<br/>SELECT @PC_satis-@PC_alis\n Yukarıdaki T-SQL kodunun sonucu aşağıdakilerden hangisidir?",
+    "text": "DECLARE @PC_alis INT<br/>DECLARE @PC_satis INT<br/>DECLARE @PC_kar INT<br/>SET @PC_alis=400<br/>SET @PC_satis=432<br/>SELECT @PC_satis-@PC_alis<br/>Yukarıdaki T-SQL kodunun sonucu aşağıdakilerden hangisidir?",
     "correctAnswer": "C",
     "options": {
       "A": "400",
@@ -879,12 +879,12 @@
       "D": "Veri İşleme Dili",
       "E": "Veri Tanımlama Dili"
     },
-    "explanation": "Giriş\n<br/>Veri Tanımlama Dili"
+    "explanation": "Giriş<br/>Veri Tanımlama Dili"
   },
   {
     "id": "3739083",
     "unitNumber": 2,
-    "text": "Hedeflenen çıktıları üretmek üzere belirlenebilecek algoritmaların kodlanabildiği dildir.\n Yukarıdaki tanım aşağıdakilerden hangisine aittir?",
+    "text": "Hedeflenen çıktıları üretmek üzere belirlenebilecek algoritmaların kodlanabildiği dildir.<br/>Yukarıdaki tanım aşağıdakilerden hangisine aittir?",
     "correctAnswer": "E",
     "options": {
       "A": "Komutsal Dil",
@@ -893,7 +893,7 @@
       "D": "İşlevsel Dil",
       "E": "Yordamsal Dil"
     },
-    "explanation": "Giriş\n<br/>Yordamsal Dil"
+    "explanation": "Giriş<br/>Yordamsal Dil"
   },
   {
     "id": "3739084",
@@ -907,7 +907,7 @@
       "D": "##",
       "E": "@"
     },
-    "explanation": "Değişken İşlemleri\n<br/>@"
+    "explanation": "Değişken İşlemleri<br/>@"
   },
   {
     "id": "3739085",
@@ -921,7 +921,7 @@
       "D": "Var",
       "E": "Declare"
     },
-    "explanation": "Değişken İşlemleri\n<br/>Declare"
+    "explanation": "Değişken İşlemleri<br/>Declare"
   },
   {
     "id": "3739086",
@@ -935,7 +935,7 @@
       "D": "Begin…End",
       "E": "Case"
     },
-    "explanation": "Case Yapısı\n<br/>Case"
+    "explanation": "Case Yapısı<br/>Case"
   },
   {
     "id": "3739087",
@@ -949,7 +949,7 @@
       "D": "Return",
       "E": "Break"
     },
-    "explanation": "While Yapısı\n<br/>Break"
+    "explanation": "While Yapısı<br/>Break"
   },
   {
     "id": "3739088",
@@ -963,7 +963,7 @@
       "D": "Case",
       "E": "Cursor"
     },
-    "explanation": "İmleç İşlemleri \n<br/>Cursor"
+    "explanation": "İmleç İşlemleri <br/>Cursor"
   },
   {
     "id": "3739089",
@@ -977,7 +977,7 @@
       "D": "Print",
       "E": "Output"
     },
-    "explanation": "Veritabanı Veri İşlem Değişikliklerinin Kaydedilmesi\n<br/>Output"
+    "explanation": "Veritabanı Veri İşlem Değişikliklerinin Kaydedilmesi<br/>Output"
   },
   {
     "id": "3739090",
@@ -991,7 +991,7 @@
       "D": "“sys.logs” adlı sistem tablosunda",
       "E": "“sys.messages” adlı sistem tablosunda"
     },
-    "explanation": "PROGRAM İZLENİRLİK ARAÇLARI\n<br/>Hata Denetimi\n<br/>“sys.messages” adlı sistem tablosunda"
+    "explanation": "PROGRAM İZLENİRLİK ARAÇLARI<br/>Hata Denetimi<br/>“sys.messages” adlı sistem tablosunda"
   },
   {
     "id": "3739091",
@@ -1005,7 +1005,7 @@
       "D": "Hatayı açıklayan tam metin mesajı döndürür.",
       "E": "Hatanın durum numarasını döndürür."
     },
-    "explanation": "PROGRAM İZLENİRLİK ARAÇLARI\n<br/>Hata Denetimi\n<br/>Hatanın durum numarasını döndürür<br/>Hatanın durum numarasını döndürür."
+    "explanation": "PROGRAM İZLENİRLİK ARAÇLARI<br/>Hata Denetimi<br/>Hatanın durum numarasını döndürür<br/>Hatanın durum numarasını döndürür."
   },
   {
     "id": "3739092",
@@ -1103,7 +1103,7 @@
       "D": "Veri İşleme Dili",
       "E": "Veri Toplama Dili"
     },
-    "explanation": "SQL komutları kullanım amaçlarına göre\n • Veri Tanımlama Dili (DDL)<br/>• Veri İşleme Dili (DML)<br/>• Veri Kontrol Dili (DCL)\n üç genel kategoriye ayrılır."
+    "explanation": "SQL komutları kullanım amaçlarına göre<br/>• Veri Tanımlama Dili (DDL)<br/>• Veri İşleme Dili (DML)<br/>• Veri Kontrol Dili (DCL)<br/>üç genel kategoriye ayrılır."
   },
   {
     "id": "3739099",
@@ -1201,7 +1201,7 @@
       "D": "ERROR_LINE()",
       "E": "ERROR_MESSAGE()"
     },
-    "explanation": "TRY..CATCH komutununda CATCH bloğu içinde kendi değerlerini tutan CATCH bloğu dışında ise NULL değerler döndüren çeşitli fonksiyonları vardır.\n ERROR_SEVERITY(): Hatanın önem düzeyini döndürür."
+    "explanation": "TRY..CATCH komutununda CATCH bloğu içinde kendi değerlerini tutan CATCH bloğu dışında ise NULL değerler döndüren çeşitli fonksiyonları vardır.<br/>ERROR_SEVERITY(): Hatanın önem düzeyini döndürür."
   },
   {
     "id": "3739106",
@@ -1215,7 +1215,7 @@
       "D": "Değişken ismi, SQL’de özel anlamı olan sembollerle (@, @@, #, ##, $) başlamamalıdır.",
       "E": "Değişken isimlerinde küçük veya büyük harf kullanımı fark etmez."
     },
-    "explanation": "T-SQL’ de değişken isimlendirme kuralları diğer diller ile aynı olup bazıları aşağıdaverilmektedir.\n • Değişkenler Türkçe karakter ve boşluk içermez.\n • Değişken isimleri ilk karakteri harf ile başlayıp harf, rakam ve alt çizgi (_) ile devam edebilir.\n • SQL veya T-SQL için kullanılan komutlar ve ayrılmış sözcükler (SELECT, INSERT, UPDATE, NOT vb.) kullanılmaz.\n • Değişken ismi, SQL’de özel anlamı olan sembollerle (@, @@, #, ##, $) başlamamalıdır.\n • Değişken isimlerinde küçük veya büyük harf kullanımı fark etmez."
+    "explanation": "T-SQL’ de değişken isimlendirme kuralları diğer diller ile aynı olup bazıları aşağıdaverilmektedir.<br/>• Değişkenler Türkçe karakter ve boşluk içermez.<br/>• Değişken isimleri ilk karakteri harf ile başlayıp harf, rakam ve alt çizgi (_) ile devam edebilir.<br/>• SQL veya T-SQL için kullanılan komutlar ve ayrılmış sözcükler (SELECT, INSERT, UPDATE, NOT vb.) kullanılmaz.<br/>• Değişken ismi, SQL’de özel anlamı olan sembollerle (@, @@, #, ##, $) başlamamalıdır.<br/>• Değişken isimlerinde küçük veya büyük harf kullanımı fark etmez."
   },
   {
     "id": "3739107",
@@ -1234,7 +1234,7 @@
   {
     "id": "3739108",
     "unitNumber": 3,
-    "text": "‘Veritabanlarında tekrarlı işlemler için oluşturulan komut kümeleridir.’\n Yukarıdaki tanım aşağıdakilerden hangisine aittir?",
+    "text": "‘Veritabanlarında tekrarlı işlemler için oluşturulan komut kümeleridir.’<br/>Yukarıdaki tanım aşağıdakilerden hangisine aittir?",
     "correctAnswer": "D",
     "options": {
       "A": "Saklı Fonksiyonlar",
@@ -1276,7 +1276,7 @@
   {
     "id": "3739111",
     "unitNumber": 3,
-    "text": "‘Açık Veritabanı Bağlantısı (ODBC) uygulamalarını sistem tablolarındaki değişimlerinden izole etmek için kullanılmaktadır.’\n Yukarıdaki kullanım amacı hangi saklı yordama aittir?",
+    "text": "‘Açık Veritabanı Bağlantısı (ODBC) uygulamalarını sistem tablolarındaki değişimlerinden izole etmek için kullanılmaktadır.’<br/>Yukarıdaki kullanım amacı hangi saklı yordama aittir?",
     "correctAnswer": "C",
     "options": {
       "A": "Değişen Veri Yakalama Saklı Yordamları",
@@ -1332,7 +1332,7 @@
   {
     "id": "3739115",
     "unitNumber": 3,
-    "text": "‘Kullanıcılar ve rolleri hakkında bilgi döndüren; User_Id (kullanıcı numarası), User_Name (kullanıcı adı) vb. fonksiyonlardır. ’\n Yukarıda tanımlanan sistem fonksiyonu aşağıdakilerden hangisidir?",
+    "text": "‘Kullanıcılar ve rolleri hakkında bilgi döndüren; User_Id (kullanıcı numarası), User_Name (kullanıcı adı) vb. fonksiyonlardır. ’<br/>Yukarıda tanımlanan sistem fonksiyonu aşağıdakilerden hangisidir?",
     "correctAnswer": "B",
     "options": {
       "A": "Metaveri Fonksiyonları (Metadata Functions)",
@@ -1411,12 +1411,12 @@
       "D": "Veritabanı Motoru Saklı Yordamları",
       "E": "İmleç Saklı Yordamları"
     },
-    "explanation": "Katalog Saklı Yordamları (Catalog Stored<br/>Procedures)\n<br/>Sınıflandırma \n<br/>Açık Veritabanı Bağlantısı (ODBC)<br/>uygulamalarını sistem tablolarındaki<br/>değişimlerinden izole etmek için<br/>kullanılmaktadır.<br/>Değişen Veri Yakalama Saklı Yordamları\n<br/>(Change Data Capture Stored Procedures)<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/53af258b6f16c95087c8677138c2d5d8.jpeg\" alt=\"\" width=\"576\" height=\"578\"><br/>Değişen veri yakalama nesnelerini aktifpasif<br/>hâle getirme veya raporlama için<br/>kullanılmaktadır. İmleç uygulamaları için kullanılmaktadır.\n<br/>XML Saklı Yordamları (XML Stored<br/>Procedures) XML dosya yönetimi için kullanılmaktadır.<br/>İmleç Saklı Yordamları (Cursor Stored Procedures)\n<br/>Veritabanı Motoru Saklı Yordamları<br/>(Database Engine Stored Procedures)<br/>SQL sunucu veritabanı motorunun bakımı için<br/>kullanılmaktadır.<br/>Veritabanı E-mail Saklı Yordamı (Database<br/>Mail Stored Procedures)(T-SQL)<br/>SQL sunucu oluşumlarından e-mail atmak için<br/>kullanılmaktadır.\n<br/>Sistem saklı yordamlarının tüm listesine Nesne tarayıcı (Object Explorer) penceresinde\n<br/>Tanım"
+    "explanation": "Katalog Saklı Yordamları (Catalog Stored<br/>Procedures)<br/>Sınıflandırma <br/>Açık Veritabanı Bağlantısı (ODBC)<br/>uygulamalarını sistem tablolarındaki<br/>değişimlerinden izole etmek için<br/>kullanılmaktadır.<br/>Değişen Veri Yakalama Saklı Yordamları<br/>(Change Data Capture Stored Procedures)<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/53af258b6f16c95087c8677138c2d5d8.jpeg\" alt=\"\" width=\"576\" height=\"578\"><br/>Değişen veri yakalama nesnelerini aktifpasif<br/>hâle getirme veya raporlama için<br/>kullanılmaktadır. İmleç uygulamaları için kullanılmaktadır.<br/>XML Saklı Yordamları (XML Stored<br/>Procedures) XML dosya yönetimi için kullanılmaktadır.<br/>İmleç Saklı Yordamları (Cursor Stored Procedures)<br/>Veritabanı Motoru Saklı Yordamları<br/>(Database Engine Stored Procedures)<br/>SQL sunucu veritabanı motorunun bakımı için<br/>kullanılmaktadır.<br/>Veritabanı E-mail Saklı Yordamı (Database<br/>Mail Stored Procedures)(T-SQL)<br/>SQL sunucu oluşumlarından e-mail atmak için<br/>kullanılmaktadır.<br/>Sistem saklı yordamlarının tüm listesine Nesne tarayıcı (Object Explorer) penceresinde<br/>Tanım"
   },
   {
     "id": "3739121",
     "unitNumber": 3,
-    "text": "__________ veritabanı programlamada performansı yüksek işler yapmak için kullanılan kritik araçlardan birisidir.\n<br/>Yukarıdaki boşluğa hangi kavram gelirse doğru bir ifade elde edilmiş olur?",
+    "text": "__________ veritabanı programlamada performansı yüksek işler yapmak için kullanılan kritik araçlardan birisidir.<br/>Yukarıdaki boşluğa hangi kavram gelirse doğru bir ifade elde edilmiş olur?",
     "correctAnswer": "C",
     "options": {
       "A": "Yerel Yordamlar",
@@ -1439,7 +1439,7 @@
       "D": "Saklı yordam içinde bölüm ikide anlatılan TRY CATCH yapısı ile hata ayıklama opsiyonu varken, fonksiyonlar içinde bu opsiyon yoktur.",
       "E": "Fonksiyon içinde hareket yönetimi varken, saklı yordam içinde bu mümkün değildir."
     },
-    "explanation": "İlk değerlendirmede kullanıcı fonksiyonlarının genel yapısı saklı yordamlara benzemekle beraber aralarında aşağıdaki farklar vardır:\n <ul> <li>Kullanıcı tanımlı fonksiyonların içerisinde herhangi bir yerde WHERE/HAVING/SELECT vb. kullanılabilirken saklı yordam kullanılamaz. Ayrıca saklı yordamda fonksiyonlar çağrılabilirken, fonksiyon içinde saklı yordam çağrılamaz.</li> <li>Kullanıcı tanımlı fonksiyon mutlaka bir tablo veya sayılı değer döndürmelidir. Döndürdüğü tablo değeri, diğer tablolar ile JOIN vb. işlemler yapmak için kullanılabilir. Saklı yordamların mutlaka değer döndürmeleri gerekmez.</li> <li>Saklı yordamlarda veri işleme (INSERT/UPDATE/DELETE) komutları çalıştırılabilirken kullanıcı fonksiyonlarında bu işlemler yapılamaz.</li> <li>Saklı yordam içinde bölüm ikide anlatılan TRY CATCH yapısı ile hata ayıklama opsiyonu varken, fonksiyonlar içinde bu opsiyon yoktur.</li> <li>Saklı yordam içinde ileriki bölümlerde anlatılan hareket yönetimi varken, fonksiyon içinde bu mümkün değildir.</li> <li>Saklı yordamlar derlenmiş olarak veritabanında tutulurken, fonksiyonlar çalışma zamanında derlenir ve çalıştırılır.</li> </ul>"
+    "explanation": "İlk değerlendirmede kullanıcı fonksiyonlarının genel yapısı saklı yordamlara benzemekle beraber aralarında aşağıdaki farklar vardır:<br/><ul> <li>Kullanıcı tanımlı fonksiyonların içerisinde herhangi bir yerde WHERE/HAVING/SELECT vb. kullanılabilirken saklı yordam kullanılamaz. Ayrıca saklı yordamda fonksiyonlar çağrılabilirken, fonksiyon içinde saklı yordam çağrılamaz.</li> <li>Kullanıcı tanımlı fonksiyon mutlaka bir tablo veya sayılı değer döndürmelidir. Döndürdüğü tablo değeri, diğer tablolar ile JOIN vb. işlemler yapmak için kullanılabilir. Saklı yordamların mutlaka değer döndürmeleri gerekmez.</li> <li>Saklı yordamlarda veri işleme (INSERT/UPDATE/DELETE) komutları çalıştırılabilirken kullanıcı fonksiyonlarında bu işlemler yapılamaz.</li> <li>Saklı yordam içinde bölüm ikide anlatılan TRY CATCH yapısı ile hata ayıklama opsiyonu varken, fonksiyonlar içinde bu opsiyon yoktur.</li> <li>Saklı yordam içinde ileriki bölümlerde anlatılan hareket yönetimi varken, fonksiyon içinde bu mümkün değildir.</li> <li>Saklı yordamlar derlenmiş olarak veritabanında tutulurken, fonksiyonlar çalışma zamanında derlenir ve çalıştırılır.</li> </ul>"
   },
   {
     "id": "3739123",
@@ -1486,7 +1486,7 @@
   {
     "id": "3739126",
     "unitNumber": 3,
-    "text": "Aşağıdakilerden hangisi altta verilen yazım şekline uygun fonksiyondur?\n CREATE FUNCTION Fonksiyon_Adi(Parametreler)\n RETURNS geriDonusTipi\n AS\n BEGIN\n -- Sorgular\n RETURN geriDonusDegeri\n END",
+    "text": "Aşağıdakilerden hangisi altta verilen yazım şekline uygun fonksiyondur?<br/>CREATE FUNCTION Fonksiyon_Adi(Parametreler)<br/>RETURNS geriDonusTipi<br/>AS<br/>BEGIN<br/>-- Sorgular<br/>RETURN geriDonusDegeri<br/>END",
     "correctAnswer": "B",
     "options": {
       "A": "Tablo Değerli Fonksiyon",
@@ -1495,7 +1495,7 @@
       "D": "Dizgi Fonksiyonu",
       "E": "Güvenlik Fonksiyonu"
     },
-    "explanation": "Sayıl Değerli Fonksiyonlar: Tek bir sayısal değer döndüren fonksiyonlardır. Genel yazım şekli aşağıdadır.\n CREATE FUNCTION Fonksiyon_Adi(Parametreler)\n RETURNS geriDonusTipi\n AS\n BEGIN\n -- Sorgular\n RETURN geriDonusDegeri\n END"
+    "explanation": "Sayıl Değerli Fonksiyonlar: Tek bir sayısal değer döndüren fonksiyonlardır. Genel yazım şekli aşağıdadır.<br/>CREATE FUNCTION Fonksiyon_Adi(Parametreler)<br/>RETURNS geriDonusTipi<br/>AS<br/>BEGIN<br/>-- Sorgular<br/>RETURN geriDonusDegeri<br/>END"
   },
   {
     "id": "3739127",
@@ -1528,7 +1528,7 @@
   {
     "id": "3739129",
     "unitNumber": 3,
-    "text": "Sunucu üzerinde bulunan veritabanlarını ve boyutlarını öğrenmek için “.....................” sistem saklı yordamı kullanılabilir. \n Yukarıdaki cümlede boş bırakılan yeri aşağıdakilerden hangisi doğru şekilde tamamlar?",
+    "text": "Sunucu üzerinde bulunan veritabanlarını ve boyutlarını öğrenmek için “.....................” sistem saklı yordamı kullanılabilir. <br/>Yukarıdaki cümlede boş bırakılan yeri aşağıdakilerden hangisi doğru şekilde tamamlar?",
     "correctAnswer": "B",
     "options": {
       "A": "EXEC sp",
@@ -1570,7 +1570,7 @@
   {
     "id": "3739132",
     "unitNumber": 3,
-    "text": "CREATE PROCEDURE sp_BolumEkle<br/>(<br/>@BolumAdi nvarchar(50)<br/>)<br/>AS BEGIN<br/>INSERT INTO Bolumler(Bolum_Adi)<br/>VALUES (@BolumAdi)<br/>END\n Yukarıda verilen saklı yordam oluşturma komutunu kullanarak Bölümler tablosuna \"Giyilebilir Teknolojiler\" kaydı ekleyen saklı yordam çalıştırma kodu aşağıdakilerden hangisinde doğru verilmiştir*",
+    "text": "CREATE PROCEDURE sp_BolumEkle<br/>(<br/>@BolumAdi nvarchar(50)<br/>)<br/>AS BEGIN<br/>INSERT INTO Bolumler(Bolum_Adi)<br/>VALUES (@BolumAdi)<br/>END<br/>Yukarıda verilen saklı yordam oluşturma komutunu kullanarak Bölümler tablosuna \"Giyilebilir Teknolojiler\" kaydı ekleyen saklı yordam çalıştırma kodu aşağıdakilerden hangisinde doğru verilmiştir*",
     "correctAnswer": "C",
     "options": {
       "A": "EXEC \"Giyilebilir Teknolojiler\"",
@@ -1626,7 +1626,7 @@
   {
     "id": "3739136",
     "unitNumber": 3,
-    "text": "CREATE FUNCTION fn_SatisBilgileri(@BolumNo int)<br/>RETURNS @BolmSatTablosu TABLE<br/>( Bolum_Adı nvarchar(50),<br/>UrunSayisi int<br/>)<br/>AS BEGIN<br/>INSERT INTO @BolmSatTablosu<br/>SELECT Bl.Bolum_Adi,SUM(Sat.Miktar)<br/>FROM Urunler Ur, Bolumler Bl, Satislar Sat<br/>WHERE Bl.Bolum_No=@BolumNo AND<br/>Ur.Bolum_No=Bl.Bolum_No AND<br/>Ur.Urun_No=Sat.Urun_No<br/>GROUP BY Bl.Bolum_Adi, Bl.Bolum_No<br/>HAVING Bl.Bolum_No=@BolumNo<br/>RETURN\n END\n Örnek veritabanı için hangi bölümden kaç adet ürün satıldığı ile ilgili bölüm adı ve satılan ürün adedi bilgisini dönen fonksiyon yukarıda verilmiştir. Bu fonksiyonu kullanarak 9 nolu bölümden yapılan satışları listeemek için çalıştırılması gereken komut aşağıdakilerden hangisidir?",
+    "text": "CREATE FUNCTION fn_SatisBilgileri(@BolumNo int)<br/>RETURNS @BolmSatTablosu TABLE<br/>( Bolum_Adı nvarchar(50),<br/>UrunSayisi int<br/>)<br/>AS BEGIN<br/>INSERT INTO @BolmSatTablosu<br/>SELECT Bl.Bolum_Adi,SUM(Sat.Miktar)<br/>FROM Urunler Ur, Bolumler Bl, Satislar Sat<br/>WHERE Bl.Bolum_No=@BolumNo AND<br/>Ur.Bolum_No=Bl.Bolum_No AND<br/>Ur.Urun_No=Sat.Urun_No<br/>GROUP BY Bl.Bolum_Adi, Bl.Bolum_No<br/>HAVING Bl.Bolum_No=@BolumNo<br/>RETURN<br/>END<br/>Örnek veritabanı için hangi bölümden kaç adet ürün satıldığı ile ilgili bölüm adı ve satılan ürün adedi bilgisini dönen fonksiyon yukarıda verilmiştir. Bu fonksiyonu kullanarak 9 nolu bölümden yapılan satışları listeemek için çalıştırılması gereken komut aşağıdakilerden hangisidir?",
     "correctAnswer": "E",
     "options": {
       "A": "SELECT BolmSatTablosu WHERE fn_SatisBilgileri(9)",
@@ -1649,7 +1649,7 @@
       "D": "Veritabanı Motoru Saklı Yordamları",
       "E": "Veritabanı E-mail Saklı Yordamı"
     },
-    "explanation": "Katalog Saklı Yordamları (Catalog Stored Procedures): Açık Veritabanı Bağlantısı (ODBC) uygulamalarını sistem tablolarındaki değişimlerinden izole etmek için kullanılmaktadır.\n<br/>Doğru cevap A'dır."
+    "explanation": "Katalog Saklı Yordamları (Catalog Stored Procedures): Açık Veritabanı Bağlantısı (ODBC) uygulamalarını sistem tablolarındaki değişimlerinden izole etmek için kullanılmaktadır.<br/>Doğru cevap A'dır."
   },
   {
     "id": "3739138",
@@ -1663,7 +1663,7 @@
       "D": "Database Engine Stored Procedures",
       "E": "XML Stored Procedures"
     },
-    "explanation": "Veritabanı Motoru Saklı Yordamları (Database Engine Stored Procedures) : SQL sunucu veritabanı motorunun bakımı için kullanılmaktadır.\n<br/>Doğru cevap D'dir."
+    "explanation": "Veritabanı Motoru Saklı Yordamları (Database Engine Stored Procedures) : SQL sunucu veritabanı motorunun bakımı için kullanılmaktadır.<br/>Doğru cevap D'dir."
   },
   {
     "id": "3739139",
@@ -1677,7 +1677,7 @@
       "D": "Database Mail Stored Procedures",
       "E": "XML Stored Procedures"
     },
-    "explanation": "İmleç Saklı Yordamları (Cursor Stored Procedures) : İmleç uygulamaları için kullanılmaktadır.\n Doğru cevap B'dir."
+    "explanation": "İmleç Saklı Yordamları (Cursor Stored Procedures) : İmleç uygulamaları için kullanılmaktadır.<br/>Doğru cevap B'dir."
   },
   {
     "id": "3739140",
@@ -1691,7 +1691,7 @@
       "D": "Catalog Stored Procedures",
       "E": "Cursor Stored Procedures"
     },
-    "explanation": "Veritabanı E-mail Saklı Yordamı (Database Mail Stored Procedures) : SQL sunucu oluşumlarından e-mail atmak için kullanılmaktadır.\n<br/>Doğru cevap B'dir."
+    "explanation": "Veritabanı E-mail Saklı Yordamı (Database Mail Stored Procedures) : SQL sunucu oluşumlarından e-mail atmak için kullanılmaktadır.<br/>Doğru cevap B'dir."
   },
   {
     "id": "3739141",
@@ -1705,7 +1705,7 @@
       "D": "Sunucunun mevcut yapılandırılması hakkında bilgi veren; @@Servername (sunucu adı), @@version (SQL sunucu sürümü) vb. fonksiyonlardır.",
       "E": "Belli bir veri kümesinde işlem yapıp tek değer döndüren; Avg (ortalama alır), Count<br/>(veri kümesi satır sayısını döndürür) vb. fonksiyonlardır."
     },
-    "explanation": "Belli bir veri kümesinde işlem yapıp tek değer döndüren; Avg (ortalama alır), Count (veri kümesi satır sayısını döndürür) vb. fonksiyonlardır.\n<br/>Doğru cevap E'dir."
+    "explanation": "Belli bir veri kümesinde işlem yapıp tek değer döndüren; Avg (ortalama alır), Count (veri kümesi satır sayısını döndürür) vb. fonksiyonlardır.<br/>Doğru cevap E'dir."
   },
   {
     "id": "3739142",
@@ -1719,7 +1719,7 @@
       "D": "Date and Time Functions",
       "E": "Metadata Functions"
     },
-    "explanation": "Matematiksel Fonksiyonlar (Mathematical Functions): Girdi değerlerine bağlı nümerik değer döndüren; Log(logaritma), Abs (mutlak değer) vb. fonksiyonlardır.\n Doğru cevap C'dir."
+    "explanation": "Matematiksel Fonksiyonlar (Mathematical Functions): Girdi değerlerine bağlı nümerik değer döndüren; Log(logaritma), Abs (mutlak değer) vb. fonksiyonlardır.<br/>Doğru cevap C'dir."
   },
   {
     "id": "3739143",
@@ -1733,7 +1733,7 @@
       "D": "Kullanıcılar ve rolleri hakkında bilgi döndüren; User_Id (kullanıcı numarası), User_Name (kullanıcı adı) vb. fonksiyonlardır.",
       "E": "Belli bir veri kümesinde işlem yapıp tek değer döndüren; Avg (ortalama alır), Count<br/>(veri kümesi satır sayısını döndürür) vb. fonksiyonlardır"
     },
-    "explanation": "Güvenlik Fonksiyonları (Security Functions): Kullanıcılar ve rolleri hakkında bilgi döndüren; User_Id (kullanıcı numarası), User_Name (kullanıcı adı) vb. fonksiyonlardır.\n Doğru cevap D'dir."
+    "explanation": "Güvenlik Fonksiyonları (Security Functions): Kullanıcılar ve rolleri hakkında bilgi döndüren; User_Id (kullanıcı numarası), User_Name (kullanıcı adı) vb. fonksiyonlardır.<br/>Doğru cevap D'dir."
   },
   {
     "id": "3739144",
@@ -1747,7 +1747,7 @@
       "D": "Security Functions",
       "E": "Date and Time Functions"
     },
-    "explanation": "Tarih ve zaman fonksiyonlar (Date and Time Functions): Tarih ve zaman üzerinde işlemler yapan ve karakter, nümerik değer veya tarih bilgisi döndüren; Getdate (tarih al), Month (ay) vb. fonksiyonlardır.\n Doğru cevap E'dir."
+    "explanation": "Tarih ve zaman fonksiyonlar (Date and Time Functions): Tarih ve zaman üzerinde işlemler yapan ve karakter, nümerik değer veya tarih bilgisi döndüren; Getdate (tarih al), Month (ay) vb. fonksiyonlardır.<br/>Doğru cevap E'dir."
   },
   {
     "id": "3739145",
@@ -1761,7 +1761,7 @@
       "D": "Girdi değerlerine bağlı nümerik değer döndüren; Log(logaritma), Abs (mutlak değer)vb. fonksiyonlardır.",
       "E": "Kullanıcılar ve rolleri hakkında bilgi döndüren; User_Id (kullanıcı numarası), User_Name (kullanıcı adı) vb. fonksiyonlardır."
     },
-    "explanation": "Dizgi Fonksiyonları (String Functions): Dizgiler üzerinde işlemler yapan; Len (dizgi uzunluğu), Reverse (dizgiyi tersine çeviren) vb. fonksiyonlardır.\n<br/>Doğru cevap A'dır."
+    "explanation": "Dizgi Fonksiyonları (String Functions): Dizgiler üzerinde işlemler yapan; Len (dizgi uzunluğu), Reverse (dizgiyi tersine çeviren) vb. fonksiyonlardır.<br/>Doğru cevap A'dır."
   },
   {
     "id": "3739146",
@@ -1775,7 +1775,7 @@
       "D": "Date and Time Functions",
       "E": "Metadata Functions"
     },
-    "explanation": "Sistem ile ilgili statiksel Fonksiyonlar (System Statistical Functions): İstatiski bilgi sağlayan; @@Total_Errors (toplam hata sayısı), @@Total_Read (toplam okuma sayısı) vb. fonksiyonlardır.\n<br/>Doğru cevap C'dir."
+    "explanation": "Sistem ile ilgili statiksel Fonksiyonlar (System Statistical Functions): İstatiski bilgi sağlayan; @@Total_Errors (toplam hata sayısı), @@Total_Read (toplam okuma sayısı) vb. fonksiyonlardır.<br/>Doğru cevap C'dir."
   },
   {
     "id": "3739147",
@@ -1831,7 +1831,7 @@
       "D": "I-C, II-B, III-A",
       "E": "I-B, II-C, III-A"
     },
-    "explanation": "Değişen Veri Yakalama Saklı Yordamları: Değişen veri yakalama nesnelerini aktif-pasif hale getirme veya raporlama için kullanılırlar.\n Veritabanı Motoru Saklı Yordamları: SQL sunucu veritabanı motorunun bakımı için kullanılmaktadır.\n Veritabanı E-mail Saklı Yordamı: SQL sunucu oluşumlarından e-mail atmak için kullanılmaktadır."
+    "explanation": "Değişen Veri Yakalama Saklı Yordamları: Değişen veri yakalama nesnelerini aktif-pasif hale getirme veya raporlama için kullanılırlar.<br/>Veritabanı Motoru Saklı Yordamları: SQL sunucu veritabanı motorunun bakımı için kullanılmaktadır.<br/>Veritabanı E-mail Saklı Yordamı: SQL sunucu oluşumlarından e-mail atmak için kullanılmaktadır."
   },
   {
     "id": "3739151",
@@ -1859,7 +1859,7 @@
       "D": "I-B, II-A, III-C",
       "E": "I-B, II-C, III-A"
     },
-    "explanation": "CREATE FUNCTION: Fonksiyon oluşturmak için kullanılır.\n ALTER FUNCTION: Fonksiyonda değişiklik yapmak için kullanılır.\n DROP FUNCTION: Mevcut olan fonksiyonu silmek için kullanılır."
+    "explanation": "CREATE FUNCTION: Fonksiyon oluşturmak için kullanılır.<br/>ALTER FUNCTION: Fonksiyonda değişiklik yapmak için kullanılır.<br/>DROP FUNCTION: Mevcut olan fonksiyonu silmek için kullanılır."
   },
   {
     "id": "3739153",
@@ -1901,7 +1901,7 @@
       "D": "I-II-III",
       "E": "I-II-IV"
     },
-    "explanation": "Sayıl değerli fonksiyonlar için doğru olan ifadeler şunlardır:\n <ul> <li>Tek bir sayısal değer döndürürler.</li> <li>Fonksiyonun oluşturulduğu veritabanı ile çağrıldığı veritabanı aynı olmalıdır.</li> <li>Bir sayıl değerli fonksiyonu “master” veritabanı altında oluşturup “Bilisim” veritabanı içinde kullanamazsınız.</li> </ul>"
+    "explanation": "Sayıl değerli fonksiyonlar için doğru olan ifadeler şunlardır:<br/><ul> <li>Tek bir sayısal değer döndürürler.</li> <li>Fonksiyonun oluşturulduğu veritabanı ile çağrıldığı veritabanı aynı olmalıdır.</li> <li>Bir sayıl değerli fonksiyonu “master” veritabanı altında oluşturup “Bilisim” veritabanı içinde kullanamazsınız.</li> </ul>"
   },
   {
     "id": "3739156",
@@ -1915,7 +1915,7 @@
       "D": "Tarih ve zaman fonksiyonları",
       "E": "Dil fonksiyonları"
     },
-    "explanation": "Sistem fonksiyon grupları:\n <ul> <li>Kümeleme fonksiyonları</li> <li>Yapılandırma fonksiyonları</li> <li>İmleç fonksiyonları</li> <li>Tarih ve zaman fonksiyonları</li> <li>Matematiksel fonksiyonlar</li> <li>Metaveri fonksiyonları</li> <li>Güvenlik fonksiyonları</li> <li>Dizgi fonksiyonları</li> <li>Sistem ile ilgili statiksel fonksiyonlar</li> </ul>"
+    "explanation": "Sistem fonksiyon grupları:<br/><ul> <li>Kümeleme fonksiyonları</li> <li>Yapılandırma fonksiyonları</li> <li>İmleç fonksiyonları</li> <li>Tarih ve zaman fonksiyonları</li> <li>Matematiksel fonksiyonlar</li> <li>Metaveri fonksiyonları</li> <li>Güvenlik fonksiyonları</li> <li>Dizgi fonksiyonları</li> <li>Sistem ile ilgili statiksel fonksiyonlar</li> </ul>"
   },
   {
     "id": "3739157",
@@ -2004,7 +2004,7 @@
   {
     "id": "3739163",
     "unitNumber": 4,
-    "text": "“Bir tablodaki bir sütuna ait değerlerin, başka bir tablonun belli bir sütunundan gelmesinin denetlenmesini sağlayan kısıtlayıcıdır.”\n<br/>Yukarıda tanımı verilen kısıtlayıcı aşağıdakilerden hangisidir?",
+    "text": "“Bir tablodaki bir sütuna ait değerlerin, başka bir tablonun belli bir sütunundan gelmesinin denetlenmesini sağlayan kısıtlayıcıdır.”<br/>Yukarıda tanımı verilen kısıtlayıcı aşağıdakilerden hangisidir?",
     "correctAnswer": "D",
     "options": {
       "A": "Birincil anahtar kısıtlayıcısı",
@@ -2102,7 +2102,7 @@
   {
     "id": "3739170",
     "unitNumber": 4,
-    "text": "I. Sıralamanın en yukarısında \"program\" vardır.\n II. Sıralamanın en aşağısında \"tetikleyiciler\" vardır.\n II. \"Kurallar/varsayılanlar\" sıralama olarak \"kısıtların\" bir üzerindedir.\n Veri bütünlüğü sağlama yöntemlerinin fonksiyonellik açısından sıralanmasına göre yukarıda verilen bilgilerden hangileri doğrudur?",
+    "text": "I. Sıralamanın en yukarısında \"program\" vardır.<br/>II. Sıralamanın en aşağısında \"tetikleyiciler\" vardır.<br/>II. \"Kurallar/varsayılanlar\" sıralama olarak \"kısıtların\" bir üzerindedir.<br/>Veri bütünlüğü sağlama yöntemlerinin fonksiyonellik açısından sıralanmasına göre yukarıda verilen bilgilerden hangileri doğrudur?",
     "correctAnswer": "D",
     "options": {
       "A": "Yalnız I.",
@@ -2293,7 +2293,7 @@
       "D": "II, III ve IV",
       "E": "I, II, III ve IV"
     },
-    "explanation": "<u>Tanımlanabilir Veri Bütünlüğü:</u>\n Kısıtlar\n Birincil anahtar kısıtlayıcı\n Tekil alan kısıtlayıcısı\n Kontrol kısıtlayıcı\n Yabancı anahtar kısıtlayıcı\n Varsayılan kısıtlayıcı\n Kurallar\n Varsayılanlar\n <u>Prosedürel (Programsal) Veri Bütünlüğü: </u>\n Tetikleyiciler\n Ekleme\n Silme\n Güncelleme\n Saklı yordamlar\n Program kodları\n Doğru cevap C’dir."
+    "explanation": "<u>Tanımlanabilir Veri Bütünlüğü:</u><br/>Kısıtlar<br/>Birincil anahtar kısıtlayıcı<br/>Tekil alan kısıtlayıcısı<br/>Kontrol kısıtlayıcı<br/>Yabancı anahtar kısıtlayıcı<br/>Varsayılan kısıtlayıcı<br/>Kurallar<br/>Varsayılanlar<br/><u>Prosedürel (Programsal) Veri Bütünlüğü: </u><br/>Tetikleyiciler<br/>Ekleme<br/>Silme<br/>Güncelleme<br/>Saklı yordamlar<br/>Program kodları<br/>Doğru cevap C’dir."
   },
   {
     "id": "3739184",
@@ -2713,7 +2713,7 @@
       "D": "Veritabanı bütünlüğünü sağlamak",
       "E": "Manuel olarak rapor üretmek, e-posta almak"
     },
-    "explanation": "Tetikleyiciler, veritabanı bir eylem gerçeklediğinde otomatik olarak başka eylem / veya eylemler gerçeklemesi amacıyla kullanılan özel saklı yordamlardır. Çeşitli amaçlara uygun olarak tetikleyiciler kullanmak mümkündür. Bu amaçlardan bazıları aşağıdaki gibidir:\n • Satırların tekilliğini sağlamak için birincil anahtar üretmek<br/>• Veritabanına erişimleri ve değişiklikleri takip etmek<br/>• Veritabanının üretmiş olduğu standart hata mesajlarının dışında bir hata mesajı üretmek<br/>• Otomatik olarak rapor üretmek, e-posta atmak<br/>• Karmaşık iş kurallarını düzenlemek<br/>• Veritabanı bütünlüğünü sağlamak"
+    "explanation": "Tetikleyiciler, veritabanı bir eylem gerçeklediğinde otomatik olarak başka eylem / veya eylemler gerçeklemesi amacıyla kullanılan özel saklı yordamlardır. Çeşitli amaçlara uygun olarak tetikleyiciler kullanmak mümkündür. Bu amaçlardan bazıları aşağıdaki gibidir:<br/>• Satırların tekilliğini sağlamak için birincil anahtar üretmek<br/>• Veritabanına erişimleri ve değişiklikleri takip etmek<br/>• Veritabanının üretmiş olduğu standart hata mesajlarının dışında bir hata mesajı üretmek<br/>• Otomatik olarak rapor üretmek, e-posta atmak<br/>• Karmaşık iş kurallarını düzenlemek<br/>• Veritabanı bütünlüğünü sağlamak"
   },
   {
     "id": "3739214",
@@ -2741,7 +2741,7 @@
       "D": "Varsayılan kısıtlayıcı",
       "E": "Saklı yordamlar"
     },
-    "explanation": "Tanımlanabilir Veri Bütünlüğü:\n Kısıtlar\n <ul> <li>Birincil anahtar kısıtlayıcı</li> <li>Tekil alan kısıtlayıcısı</li> <li>Kontrol kısıtlayıcı</li> <li>Yabancı anahtar kısıtlayıcı</li> <li>Varsayılan kısıtlayıcı</li> </ul> Kurallar\n Varsayılanlar"
+    "explanation": "Tanımlanabilir Veri Bütünlüğü:<br/>Kısıtlar<br/><ul> <li>Birincil anahtar kısıtlayıcı</li> <li>Tekil alan kısıtlayıcısı</li> <li>Kontrol kısıtlayıcı</li> <li>Yabancı anahtar kısıtlayıcı</li> <li>Varsayılan kısıtlayıcı</li> </ul> Kurallar<br/>Varsayılanlar"
   },
   {
     "id": "3739216",
@@ -2760,7 +2760,7 @@
   {
     "id": "3739217",
     "unitNumber": 4,
-    "text": "Aktif sistemlerde verilerin sorgulanması veya değiştirilmesi ................. yapılmaktadır. \n Yukarıdaki cümlede boş bırakılan yeri aşağıdakilerden hangisi doğru şekilde tamamlar?",
+    "text": "Aktif sistemlerde verilerin sorgulanması veya değiştirilmesi ................. yapılmaktadır. <br/>Yukarıdaki cümlede boş bırakılan yeri aşağıdakilerden hangisi doğru şekilde tamamlar?",
     "correctAnswer": "D",
     "options": {
       "A": "Kullanıcı tarafından oluşturulan sorgularla",
@@ -2886,7 +2886,7 @@
   {
     "id": "3739226",
     "unitNumber": 4,
-    "text": "(1) başka tablo veya satırlara erişemezler. Ama (2) diğer tablo ve satırlara erişebilirler. Böyle durumlarda (3) üstündür. INSERT işleminden sonra yapılacak olan eylemler (4) tarafından otomatik olarak yapıldığından ekstradan kod yazılması gerekmez.\n <br/>Kısıtlayıcılar ve tetikleyiciler ile ilgili yukarıda verilen metinde sırasıyla gelmesi gereken ifadeler aşağıdaki seçeneklerden hangisinde doğru verilmiştir?",
+    "text": "(1) başka tablo veya satırlara erişemezler. Ama (2) diğer tablo ve satırlara erişebilirler. Böyle durumlarda (3) üstündür. INSERT işleminden sonra yapılacak olan eylemler (4) tarafından otomatik olarak yapıldığından ekstradan kod yazılması gerekmez.<br/>Kısıtlayıcılar ve tetikleyiciler ile ilgili yukarıda verilen metinde sırasıyla gelmesi gereken ifadeler aşağıdaki seçeneklerden hangisinde doğru verilmiştir?",
     "correctAnswer": "A",
     "options": {
       "A": "Kısıtlayıcılar-Tetikleyiciler-Tetikleyiciler-Tetikleyiciler",
@@ -3026,7 +3026,7 @@
   {
     "id": "3739237",
     "unitNumber": 5,
-    "text": "Aşağıdakilerin hangisi veritabanında hareketin (transaction) özelliklerindendir?\n I-Veritabanı üzerinde gerçekleştirilen bir dizi SQL işlemini (SELECT,INSERT,UPDATE ve DELETE) kapsayan iişlemler grubuna veriilen iisiimdiir.<br/>II-Biirbiiriinden bağımsız çalısan SQL işlemleri tek bir ifadeymiş gibi yürütülür.<br/>III-Verilerde meydana gelen değişiikliikler bazı şartlar sağlanmış iise veriitabanına uygulanır ve kalıcı hâle getiiriiliir.",
+    "text": "Aşağıdakilerin hangisi veritabanında hareketin (transaction) özelliklerindendir?<br/>I-Veritabanı üzerinde gerçekleştirilen bir dizi SQL işlemini (SELECT,INSERT,UPDATE ve DELETE) kapsayan iişlemler grubuna veriilen iisiimdiir.<br/>II-Biirbiiriinden bağımsız çalısan SQL işlemleri tek bir ifadeymiş gibi yürütülür.<br/>III-Verilerde meydana gelen değişiikliikler bazı şartlar sağlanmış iise veriitabanına uygulanır ve kalıcı hâle getiiriiliir.",
     "correctAnswer": "E",
     "options": {
       "A": "Yalnız I",
@@ -3054,7 +3054,7 @@
   {
     "id": "3739239",
     "unitNumber": 5,
-    "text": "MS SQL Server VTYS (Veri Tabanı Yönetim Sistemi) hangi modda hareket yönetim desteğini sağlamaktadır?\n I-Otokayıt (autocommit)<br/>II-Açık (explicit)<br/>III-Örtük (implicit)",
+    "text": "MS SQL Server VTYS (Veri Tabanı Yönetim Sistemi) hangi modda hareket yönetim desteğini sağlamaktadır?<br/>I-Otokayıt (autocommit)<br/>II-Açık (explicit)<br/>III-Örtük (implicit)",
     "correctAnswer": "E",
     "options": {
       "A": "Yalnız I",
@@ -3096,7 +3096,7 @@
   {
     "id": "3739242",
     "unitNumber": 5,
-    "text": "Bir veritabanı hareketi öncesi @@TRANSCOUNT=10 iken aşağıdaki başarılı hareket sonrası yeni @@TRANSCOUNT değeri ne olur?\n BEGIN TRANSACTION<br/>SELECT ...<br/>INSERT ...<br/>COMMIT TRANSACTION",
+    "text": "Bir veritabanı hareketi öncesi @@TRANSCOUNT=10 iken aşağıdaki başarılı hareket sonrası yeni @@TRANSCOUNT değeri ne olur?<br/>BEGIN TRANSACTION<br/>SELECT ...<br/>INSERT ...<br/>COMMIT TRANSACTION",
     "correctAnswer": "C",
     "options": {
       "A": "8",
@@ -3264,7 +3264,7 @@
   {
     "id": "3739254",
     "unitNumber": 5,
-    "text": "“Bir veritabanı üzerinde gerçekleştirilen bir dizi SQL işlemini kapsayan işlemler grubudur.”\n Aşağıdakilerden hangisi yukarıdaki tanıma aittir?",
+    "text": "“Bir veritabanı üzerinde gerçekleştirilen bir dizi SQL işlemini kapsayan işlemler grubudur.”<br/>Aşağıdakilerden hangisi yukarıdaki tanıma aittir?",
     "correctAnswer": "E",
     "options": {
       "A": "İzolasyon",
@@ -3273,7 +3273,7 @@
       "D": "Eş Zamanlılık",
       "E": "Hareket"
     },
-    "explanation": "Hareket ve Özellikleri\n<br/>Hareket"
+    "explanation": "Hareket ve Özellikleri<br/>Hareket"
   },
   {
     "id": "3739255",
@@ -3287,12 +3287,12 @@
       "D": "Devamlılık",
       "E": "Sadelik"
     },
-    "explanation": "Hareket ve Özellikleri\n<br/>Sadelik"
+    "explanation": "Hareket ve Özellikleri<br/>Sadelik"
   },
   {
     "id": "3739256",
     "unitNumber": 5,
-    "text": "“Hareket bloğu içinde yer alan SQL ifadelerin tamamının başarılı olarak çalıştırılması ya da hiçbirinin çalıştırılmadan hareket bloğu başlangıç durumuna geri dönülmesidir.”\n Yukarıdaki özellik aşağıdakilerden hangisidir?",
+    "text": "“Hareket bloğu içinde yer alan SQL ifadelerin tamamının başarılı olarak çalıştırılması ya da hiçbirinin çalıştırılmadan hareket bloğu başlangıç durumuna geri dönülmesidir.”<br/>Yukarıdaki özellik aşağıdakilerden hangisidir?",
     "correctAnswer": "E",
     "options": {
       "A": "İzolasyon",
@@ -3301,12 +3301,12 @@
       "D": "Tutarlılık",
       "E": "Bölünmezlik"
     },
-    "explanation": "Hareket ve Özellikleri\n<br/>Bölünmezlik"
+    "explanation": "Hareket ve Özellikleri<br/>Bölünmezlik"
   },
   {
     "id": "3739257",
     "unitNumber": 5,
-    "text": "Hareket tamamlandığında bellekte gerçekleşen veri değişiklikleri fiziksel disk üzerindeki .......... üzerine kaydedilir.\n Yukarıdaki bilgide noktalı yere aşağıdakilerden hangisi gelmelidir?",
+    "text": "Hareket tamamlandığında bellekte gerçekleşen veri değişiklikleri fiziksel disk üzerindeki .......... üzerine kaydedilir.<br/>Yukarıdaki bilgide noktalı yere aşağıdakilerden hangisi gelmelidir?",
     "correctAnswer": "E",
     "options": {
       "A": "Veri sistemleri",
@@ -3315,7 +3315,7 @@
       "D": "Veri ambarı",
       "E": "Veri dosyaları"
     },
-    "explanation": "Devamlılık\n<br/>Veri dosyaları"
+    "explanation": "Devamlılık<br/>Veri dosyaları"
   },
   {
     "id": "3739258",
@@ -3329,7 +3329,7 @@
       "D": "Otomatik, açık, kapalı",
       "E": "Otomatik, açık, örtük"
     },
-    "explanation": "Hareket Yönetimi\n<br/>Otomatik, açık, örtük"
+    "explanation": "Hareket Yönetimi<br/>Otomatik, açık, örtük"
   },
   {
     "id": "3739259",
@@ -3343,7 +3343,7 @@
       "D": "rollback TRANSACTION",
       "E": "@@TRANCOUNT"
     },
-    "explanation": "Açık Hareket\n<br/>@@TRANCOUNT"
+    "explanation": "Açık Hareket<br/>@@TRANCOUNT"
   },
   {
     "id": "3739260",
@@ -3357,12 +3357,12 @@
       "D": "hayalet okuma",
       "E": "tekrarlayan güncelleme"
     },
-    "explanation": "EŞ ZAMANLILIK VE EŞ ZAMANLILIK PROBLEMLERİ\n<br/>tekrarlayan güncelleme"
+    "explanation": "EŞ ZAMANLILIK VE EŞ ZAMANLILIK PROBLEMLERİ<br/>tekrarlayan güncelleme"
   },
   {
     "id": "3739261",
     "unitNumber": 5,
-    "text": "\"Veritabanı kaynakları ya da kayıtlara başka oturum ya da hareketler tarafından yapılacak eş zamanlı erişimin engellenmesi işlemidir.\"\n Aşağıdakilerden hangisi yukarıdaki tanıma aittir?",
+    "text": "\"Veritabanı kaynakları ya da kayıtlara başka oturum ya da hareketler tarafından yapılacak eş zamanlı erişimin engellenmesi işlemidir.\"<br/>Aşağıdakilerden hangisi yukarıdaki tanıma aittir?",
     "correctAnswer": "E",
     "options": {
       "A": "Güncelleştirme Kilit Modu",
@@ -3371,7 +3371,7 @@
       "D": "Kilit Modu",
       "E": "Kilitleme"
     },
-    "explanation": "KİLİTLEME YÖNETİMİ\n<br/>Kilitleme"
+    "explanation": "KİLİTLEME YÖNETİMİ<br/>Kilitleme"
   },
   {
     "id": "3739262",
@@ -3385,7 +3385,7 @@
       "D": "Şema Kararlılık",
       "E": "Şema Değiştirme"
     },
-    "explanation": "Özel Kilit Modları\n<br/>Şema Değiştirme"
+    "explanation": "Özel Kilit Modları<br/>Şema Değiştirme"
   },
   {
     "id": "3739263",
@@ -3399,7 +3399,7 @@
       "D": "Tekrar deneme mantığı kullanılmalıdır.",
       "E": "Varlıklara farklı sırada erişim sağlanmalıdır."
     },
-    "explanation": "Kilitlenme\n<br/>Varlıklara farklı sırada erişim sağlanmalıdır."
+    "explanation": "Kilitlenme<br/>Varlıklara farklı sırada erişim sağlanmalıdır."
   },
   {
     "id": "3739264",
@@ -3413,7 +3413,7 @@
       "D": "Bölünmezlik",
       "E": "Tutarlılık"
     },
-    "explanation": "Eş zamanlılık (concurency): Aynı veya farklı istemciler tarafından gerçekleştirilen veritabanı hareketlerinin, bir veri veya veri grubu üzerinde aynı anda işlem gerçekleştirmeye çalışmasıdır.\n Doğru cevap B'dir."
+    "explanation": "Eş zamanlılık (concurency): Aynı veya farklı istemciler tarafından gerçekleştirilen veritabanı hareketlerinin, bir veri veya veri grubu üzerinde aynı anda işlem gerçekleştirmeye çalışmasıdır.<br/>Doğru cevap B'dir."
   },
   {
     "id": "3739265",
@@ -3427,7 +3427,7 @@
       "D": "Bölünmezlik",
       "E": "Tutarlılık"
     },
-    "explanation": "Hareket (Transaction), temel olarak daha küçük parçalara bölünemeyen en küçük işlem grubudur. Veritabanı üzerinde gerçekleştirilen bir dizi SQL işlemini (SELECT,INSERT,UPDATE ve DELETE) kapsayan işlemler grubuna verilen isimdir.\n Doğru cevap A'dır."
+    "explanation": "Hareket (Transaction), temel olarak daha küçük parçalara bölünemeyen en küçük işlem grubudur. Veritabanı üzerinde gerçekleştirilen bir dizi SQL işlemini (SELECT,INSERT,UPDATE ve DELETE) kapsayan işlemler grubuna verilen isimdir.<br/>Doğru cevap A'dır."
   },
   {
     "id": "3739266",
@@ -3441,7 +3441,7 @@
       "D": "Bölünmezlik",
       "E": "Tutarlılık"
     },
-    "explanation": "Bölünmezlik: Hareket bloğu içinde yer alan SQL ifadelerin tamamının başarılı olarak çalıştırılması ya da hiçbirinin çalıştırılmadan hareket bloğu başlangıç durumuna geri dönülmesidir.\n<br/>Doğru cevap D'dir."
+    "explanation": "Bölünmezlik: Hareket bloğu içinde yer alan SQL ifadelerin tamamının başarılı olarak çalıştırılması ya da hiçbirinin çalıştırılmadan hareket bloğu başlangıç durumuna geri dönülmesidir.<br/>Doğru cevap D'dir."
   },
   {
     "id": "3739267",
@@ -3455,7 +3455,7 @@
       "D": "Tutarlılık",
       "E": "İzolasyon"
     },
-    "explanation": "Tamamlanmış olan ya da devam eden hareketlerin gerçekleştirdiği veri değişikliklerinin VTYS’de bir arıza meydana gelse bile kalıcı olarak kaydedildiğinden emin olunması beklenmektedir. MS SQL Server VTYS’nin en önemli özelliklerinden biri, bu amaçla hareket günlüğü dosyası tutmasıdır.\n<br/>Doğru cevap C'dir."
+    "explanation": "Tamamlanmış olan ya da devam eden hareketlerin gerçekleştirdiği veri değişikliklerinin VTYS’de bir arıza meydana gelse bile kalıcı olarak kaydedildiğinden emin olunması beklenmektedir. MS SQL Server VTYS’nin en önemli özelliklerinden biri, bu amaçla hareket günlüğü dosyası tutmasıdır.<br/>Doğru cevap C'dir."
   },
   {
     "id": "3739268",
@@ -3469,7 +3469,7 @@
       "D": "II. ve III.",
       "E": "I. II. ve III."
     },
-    "explanation": "MS SQL Server VTYS, otokayıt (autocommit), açık (explicit) ve örtük (implicit) olmak üzere üç farklı modda hareket desteği sağlamaktadır.\n<br/>Doğru cevap E'dir."
+    "explanation": "MS SQL Server VTYS, otokayıt (autocommit), açık (explicit) ve örtük (implicit) olmak üzere üç farklı modda hareket desteği sağlamaktadır.<br/>Doğru cevap E'dir."
   },
   {
     "id": "3739269",
@@ -3483,7 +3483,7 @@
       "D": "Update",
       "E": "Select"
     },
-    "explanation": "Bir hareket bloğunun veritabanı üzerinde gerçekleştirdiği değişikliklerin kalıcı hâle getirilmesi için commit ifadesi kullanılır.\n Doğru cevap B'dir."
+    "explanation": "Bir hareket bloğunun veritabanı üzerinde gerçekleştirdiği değişikliklerin kalıcı hâle getirilmesi için commit ifadesi kullanılır.<br/>Doğru cevap B'dir."
   },
   {
     "id": "3739270",
@@ -3497,7 +3497,7 @@
       "D": "Create",
       "E": "Delete"
     },
-    "explanation": "Bir hareket bloğunun veritabanı üzerinde gerçekleştirdiği değişikliklerin geri alınması için rollback ifadesi kullanılır.\n Doğru cevap A'dır."
+    "explanation": "Bir hareket bloğunun veritabanı üzerinde gerçekleştirdiği değişikliklerin geri alınması için rollback ifadesi kullanılır.<br/>Doğru cevap A'dır."
   },
   {
     "id": "3739271",
@@ -3511,7 +3511,7 @@
       "D": "SAVE TRANSACTION",
       "E": "@@TRANCOUNT"
     },
-    "explanation": "SAVE TRANSACTION: Hareket bloğu içinde geri dönüş noktaları oluşturmak için kullanılır\n Doğru cevap D'dir."
+    "explanation": "SAVE TRANSACTION: Hareket bloğu içinde geri dönüş noktaları oluşturmak için kullanılır<br/>Doğru cevap D'dir."
   },
   {
     "id": "3739272",
@@ -3525,7 +3525,7 @@
       "D": "SAVE TRANSACTION",
       "E": "@@TRANCOUNT"
     },
-    "explanation": "BEGIN TRANSACTION: Açık hareket başlangıç noktasını belirler.\n Doğru cevap A'dır."
+    "explanation": "BEGIN TRANSACTION: Açık hareket başlangıç noktasını belirler.<br/>Doğru cevap A'dır."
   },
   {
     "id": "3739273",
@@ -3539,7 +3539,7 @@
       "D": "Serileştirilebilir",
       "E": "Anlık görüntü"
     },
-    "explanation": "Tekrarlanabilir okuma (Repeateble read), aktif edildiğinde kirli okuma ve tekrarlanamayan okuma eş zamanlılık problemleri ortadan kaldırılabilmektedir.\n<br/>Doğru cevap C'dir."
+    "explanation": "Tekrarlanabilir okuma (Repeateble read), aktif edildiğinde kirli okuma ve tekrarlanamayan okuma eş zamanlılık problemleri ortadan kaldırılabilmektedir.<br/>Doğru cevap C'dir."
   },
   {
     "id": "3739274",
@@ -3628,7 +3628,7 @@
   {
     "id": "3739280",
     "unitNumber": 5,
-    "text": "Veritabanında meydana gelebilecek eş zamanlılık problemlerinin önüne geçmek için veritabanı kaynaklarına erişimi kontrol etmek ve hareketlerin birbirinden izole bir şekilde çalışabilmesi amacıyla kilitleme gerçekleştirilir.\n<br/>Aşağıdakilerden hangisi varsayılan MS SQL Server VTYS izolasyon düzeyidir?",
+    "text": "Veritabanında meydana gelebilecek eş zamanlılık problemlerinin önüne geçmek için veritabanı kaynaklarına erişimi kontrol etmek ve hareketlerin birbirinden izole bir şekilde çalışabilmesi amacıyla kilitleme gerçekleştirilir.<br/>Aşağıdakilerden hangisi varsayılan MS SQL Server VTYS izolasyon düzeyidir?",
     "correctAnswer": "B",
     "options": {
       "A": "Kaydedilmemiş okuma",
@@ -3670,7 +3670,7 @@
   {
     "id": "3739283",
     "unitNumber": 5,
-    "text": "Kilitlenmeyi önlemek amacıyla ....... adındaki sistem görev izleyicisi her beş saniyede bir yürütülür. Böylece sistemde bir kilitlenme olup olmadığı kontrol edilmiş olur. <br/>Yukarıdaki cümlede boş bırakılan yeri aşağıdakilerden hangisi doğru şekilde tamamlar?",
+    "text": "Kilitlenmeyi önlemek amacıyla ....... adındaki sistem görev izleyicisi her beş saniyede bir yürütülür. Böylece sistemde bir kilitlenme olup olmadığı kontrol edilmiş olur.<br/>Yukarıdaki cümlede boş bırakılan yeri aşağıdakilerden hangisi doğru şekilde tamamlar?",
     "correctAnswer": "C",
     "options": {
       "A": "Kirli okuma",
@@ -3684,7 +3684,7 @@
   {
     "id": "3739284",
     "unitNumber": 5,
-    "text": "“Bir veritabanı üzerinde gerçekleştirilen bir dizi SQL işlemini kapsayan işlemler grubudur.”\n Aşağıdakilerden hangisi yukarıdaki tanıma aittir?",
+    "text": "“Bir veritabanı üzerinde gerçekleştirilen bir dizi SQL işlemini kapsayan işlemler grubudur.”<br/>Aşağıdakilerden hangisi yukarıdaki tanıma aittir?",
     "correctAnswer": "E",
     "options": {
       "A": "İzolasyon",
@@ -3693,7 +3693,7 @@
       "D": "Eş Zamanlılık",
       "E": "Hareket"
     },
-    "explanation": "Hareket ve Özellikleri\n<br/>Hareket"
+    "explanation": "Hareket ve Özellikleri<br/>Hareket"
   },
   {
     "id": "3739285",
@@ -3707,12 +3707,12 @@
       "D": "Devamlılık",
       "E": "Sadelik"
     },
-    "explanation": "Hareket ve Özellikleri\n<br/>Sadelik"
+    "explanation": "Hareket ve Özellikleri<br/>Sadelik"
   },
   {
     "id": "3739286",
     "unitNumber": 5,
-    "text": "“Hareket bloğu içinde yer alan SQL ifadelerin tamamının başarılı olarak çalıştırılması ya da hiçbirinin çalıştırılmadan hareket bloğu başlangıç durumuna geri dönülmesidir.”\n Yukarıdaki özellik aşağıdakilerden hangisidir?",
+    "text": "“Hareket bloğu içinde yer alan SQL ifadelerin tamamının başarılı olarak çalıştırılması ya da hiçbirinin çalıştırılmadan hareket bloğu başlangıç durumuna geri dönülmesidir.”<br/>Yukarıdaki özellik aşağıdakilerden hangisidir?",
     "correctAnswer": "E",
     "options": {
       "A": "İzolasyon",
@@ -3721,12 +3721,12 @@
       "D": "Tutarlılık",
       "E": "Bölünmezlik"
     },
-    "explanation": "Hareket ve Özellikleri\n<br/>Bölünmezlik"
+    "explanation": "Hareket ve Özellikleri<br/>Bölünmezlik"
   },
   {
     "id": "3739287",
     "unitNumber": 5,
-    "text": "Hareket tamamlandığında bellekte gerçekleşen veri değişiklikleri fiziksel disk üzerindeki .......... üzerine kaydedilir.\n Yukarıdaki bilgide noktalı yere aşağıdakilerden hangisi gelmelidir?",
+    "text": "Hareket tamamlandığında bellekte gerçekleşen veri değişiklikleri fiziksel disk üzerindeki .......... üzerine kaydedilir.<br/>Yukarıdaki bilgide noktalı yere aşağıdakilerden hangisi gelmelidir?",
     "correctAnswer": "E",
     "options": {
       "A": "Veri sistemleri",
@@ -3735,7 +3735,7 @@
       "D": "Veri ambarı",
       "E": "Veri dosyaları"
     },
-    "explanation": "Devamlılık\n<br/>Veri dosyaları"
+    "explanation": "Devamlılık<br/>Veri dosyaları"
   },
   {
     "id": "3739288",
@@ -3749,7 +3749,7 @@
       "D": "Otomatik, açık, kapalı",
       "E": "Otomatik, açık, örtük"
     },
-    "explanation": "Hareket Yönetimi\n<br/>Otomatik, açık, örtük"
+    "explanation": "Hareket Yönetimi<br/>Otomatik, açık, örtük"
   },
   {
     "id": "3739289",
@@ -3777,12 +3777,12 @@
       "D": "hayalet okuma",
       "E": "tekrarlayan güncelleme"
     },
-    "explanation": "EŞ ZAMANLILIK VE EŞ ZAMANLILIK PROBLEMLERİ\n<br/>tekrarlayan güncelleme"
+    "explanation": "EŞ ZAMANLILIK VE EŞ ZAMANLILIK PROBLEMLERİ<br/>tekrarlayan güncelleme"
   },
   {
     "id": "3739291",
     "unitNumber": 5,
-    "text": "\"Veritabanı kaynakları ya da kayıtlara başka oturum ya da hareketler tarafından yapılacak eş zamanlı erişimin engellenmesi işlemidir.\"\n Aşağıdakilerden hangisi yukarıdaki tanıma aittir?",
+    "text": "\"Veritabanı kaynakları ya da kayıtlara başka oturum ya da hareketler tarafından yapılacak eş zamanlı erişimin engellenmesi işlemidir.\"<br/>Aşağıdakilerden hangisi yukarıdaki tanıma aittir?",
     "correctAnswer": "E",
     "options": {
       "A": "Güncelleştirme Kilit Modu",
@@ -3791,7 +3791,7 @@
       "D": "Kilit Modu",
       "E": "Kilitleme"
     },
-    "explanation": "KİLİTLEME YÖNETİMİ\n<br/>Kilitleme"
+    "explanation": "KİLİTLEME YÖNETİMİ<br/>Kilitleme"
   },
   {
     "id": "3739292",
@@ -3805,7 +3805,7 @@
       "D": "Şema Kararlılık",
       "E": "Şema Değiştirme"
     },
-    "explanation": "Özel Kilit Modları\n<br/>Şema Değiştirme"
+    "explanation": "Özel Kilit Modları<br/>Şema Değiştirme"
   },
   {
     "id": "3739293",
@@ -3819,7 +3819,7 @@
       "D": "Tekrar deneme mantığı kullanılmalıdır.",
       "E": "Varlıklara farklı sırada erişim sağlanmalıdır."
     },
-    "explanation": "Kilitlenme\n<br/>Varlıklara farklı sırada erişim sağlanmalıdır."
+    "explanation": "Kilitlenme<br/>Varlıklara farklı sırada erişim sağlanmalıdır."
   },
   {
     "id": "3739294",
@@ -3852,7 +3852,7 @@
   {
     "id": "3739296",
     "unitNumber": 5,
-    "text": "Hareket bloğu içinde başarısız bir işlem bulunuyor ise “.................” mantığıyla, hareket bloğu yürütülmeden önce bulunulan veritabanı durumuna dönülmelidir.\n Yukarıdaki cümlede ............... ile gösterilen yere gelecek ifade aşağıdakilerden hangisidir?",
+    "text": "Hareket bloğu içinde başarısız bir işlem bulunuyor ise “.................” mantığıyla, hareket bloğu yürütülmeden önce bulunulan veritabanı durumuna dönülmelidir.<br/>Yukarıdaki cümlede ............... ile gösterilen yere gelecek ifade aşağıdakilerden hangisidir?",
     "correctAnswer": "B",
     "options": {
       "A": "doğru yada doğru",
@@ -3894,7 +3894,7 @@
   {
     "id": "3739300",
     "unitNumber": 5,
-    "text": "SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED\n Yukarıdaki komutun açıklaması nedir?",
+    "text": "SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED<br/>Yukarıdaki komutun açıklaması nedir?",
     "correctAnswer": "B",
     "options": {
       "A": "Kaydedilmiş okuma aktif",
@@ -3903,12 +3903,12 @@
       "D": "Serileştirilebilir aktif",
       "E": "Anlık görüntü aktif"
     },
-    "explanation": "SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;\n Kaydedilmemiş okuma aktif"
+    "explanation": "SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;<br/>Kaydedilmemiş okuma aktif"
   },
   {
     "id": "3739301",
     "unitNumber": 5,
-    "text": "SET TRANSACTION ISOLATION LEVEL READ SERIALIZABLE;\n Yukarıdaki komutun açıklaması nedir?",
+    "text": "SET TRANSACTION ISOLATION LEVEL READ SERIALIZABLE;<br/>Yukarıdaki komutun açıklaması nedir?",
     "correctAnswer": "E",
     "options": {
       "A": "Anlık görüntü aktif",
@@ -3917,7 +3917,7 @@
       "D": "Tekrarlanabilir okuma aktif",
       "E": "Serileştirilebilir aktif"
     },
-    "explanation": "SET TRANSACTION ISOLATION LEVEL READ SERIALIZABLE;\n Serileştirilebilir aktif"
+    "explanation": "SET TRANSACTION ISOLATION LEVEL READ SERIALIZABLE;<br/>Serileştirilebilir aktif"
   },
   {
     "id": "3739302",
@@ -3959,7 +3959,7 @@
       "D": "Yıldırım",
       "E": "Fiziksel zararlar"
     },
-    "explanation": "Güvenlik açıkları:\n Donanım\n • Kasıtsız Zarar<br/>• Yiyecek - İçeçek<br/>• Hayvanlar<br/>• Toz<br/>• Yıldırım<br/>• Kaba Kullanım<br/>• Su Basması<br/>• Kasıtlı Zarar<br/>• Hırsızlık<br/>• Fiziksel Zararlar (kırma, bozma, parçalama)"
+    "explanation": "Güvenlik açıkları:<br/>Donanım<br/>• Kasıtsız Zarar<br/>• Yiyecek - İçeçek<br/>• Hayvanlar<br/>• Toz<br/>• Yıldırım<br/>• Kaba Kullanım<br/>• Su Basması<br/>• Kasıtlı Zarar<br/>• Hırsızlık<br/>• Fiziksel Zararlar (kırma, bozma, parçalama)"
   },
   {
     "id": "3739305",
@@ -3973,7 +3973,7 @@
       "D": "Solucanlar",
       "E": "Lisanssız kullanım"
     },
-    "explanation": "Güvenlik Açıkları:\n Yazılım\n • Silinme<br/>• Kasıtsız<br/>• Kasıtlı <br/>• Değiştirilme<br/>• Truva Atları<br/>• Virüsler<br/>• Arka Kapılar<br/>• Bilgi Sızdırma<br/>• Solucanlar<br/>• Hırsızlık<br/>• Lisansız Kullanım<br/>• İzinsiz kopyalama"
+    "explanation": "Güvenlik Açıkları:<br/>Yazılım<br/>• Silinme<br/>• Kasıtsız<br/>• Kasıtlı<br/>• Değiştirilme<br/>• Truva Atları<br/>• Virüsler<br/>• Arka Kapılar<br/>• Bilgi Sızdırma<br/>• Solucanlar<br/>• Hırsızlık<br/>• Lisansız Kullanım<br/>• İzinsiz kopyalama"
   },
   {
     "id": "3739306",
@@ -3987,7 +3987,7 @@
       "D": "Veri değişikliği",
       "E": "Sahte veri"
     },
-    "explanation": "Güvenlik açıkları:\n Veri\n • Gizliliğin İhlali<br/>• Dinleme (dinleyiciler, alıcılar)<br/>• Bilgi Sızdırma (insanlar yoluyla)<br/>• Engelleme<br/>• Silme<br/>• Ulaşılamaz ya da kullanılamaz hâle getirme<br/>• Bütünlüğün Bozulması<br/>• Veri Değişikliği<br/>• Sahte Veri"
+    "explanation": "Güvenlik açıkları:<br/>Veri<br/>• Gizliliğin İhlali<br/>• Dinleme (dinleyiciler, alıcılar)<br/>• Bilgi Sızdırma (insanlar yoluyla)<br/>• Engelleme<br/>• Silme<br/>• Ulaşılamaz ya da kullanılamaz hâle getirme<br/>• Bütünlüğün Bozulması<br/>• Veri Değişikliği<br/>• Sahte Veri"
   },
   {
     "id": "3739307",
@@ -4043,7 +4043,7 @@
       "D": "I ve III",
       "E": "I, II ve III"
     },
-    "explanation": "Güvenli bir veritabanı uygulamasını tasarlarken Bilgi Güvenliği Yönetim Sistemi Standardına göre dikkate alınması gereken üç ana hedef olmalıdır.\n • Gizlilik: Kuruma veya bireye özel ve gizliliği olan bilgilere, sadece yetkisi olan kişilerin erişim hakkına sahip olmasının gerekliliğidir. Bunun için gizlilik bilginin yetkisiz kişilerce açığa çıkarılmasının engellenmesidir. Örneğin, bir öğrenciye diğer<br/>öğrencilerin notlarını incelemek için izin verilmemelidir.\n • Bütünlük: Kısaca bilinçli veya bilinçsiz olarak verinin bozulmaması gerekliliğidir.<br/>Kurumsal veya bireysel bilgilerin yetkisiz değişim veya bozulmalara karşı korunması, yalnızca yetkili kullanıcılara verileri değiştirmek için izin verilmesi olarak<br/>özetlenebilir. Örneğin, öğrencilere notlarını görmek için izin verilebilir, ancak notların öğrenciler tarafından değiştirilmesi için izin verilmemesi gerekmektedir.\n • Kullanılabilirlik: Bilgi ve kaynakların ihtiyaç duyan kişilerce sürekli erişilebilir durumda olması olarak özetlenebilir. Örneğin, dersi veren kişinin, öğrencinin notlarına erişebilmesi ve onları düzeltebilmesi gerekmektedir."
+    "explanation": "Güvenli bir veritabanı uygulamasını tasarlarken Bilgi Güvenliği Yönetim Sistemi Standardına göre dikkate alınması gereken üç ana hedef olmalıdır.<br/>• Gizlilik: Kuruma veya bireye özel ve gizliliği olan bilgilere, sadece yetkisi olan kişilerin erişim hakkına sahip olmasının gerekliliğidir. Bunun için gizlilik bilginin yetkisiz kişilerce açığa çıkarılmasının engellenmesidir. Örneğin, bir öğrenciye diğer<br/>öğrencilerin notlarını incelemek için izin verilmemelidir.<br/>• Bütünlük: Kısaca bilinçli veya bilinçsiz olarak verinin bozulmaması gerekliliğidir.<br/>Kurumsal veya bireysel bilgilerin yetkisiz değişim veya bozulmalara karşı korunması, yalnızca yetkili kullanıcılara verileri değiştirmek için izin verilmesi olarak<br/>özetlenebilir. Örneğin, öğrencilere notlarını görmek için izin verilebilir, ancak notların öğrenciler tarafından değiştirilmesi için izin verilmemesi gerekmektedir.<br/>• Kullanılabilirlik: Bilgi ve kaynakların ihtiyaç duyan kişilerce sürekli erişilebilir durumda olması olarak özetlenebilir. Örneğin, dersi veren kişinin, öğrencinin notlarına erişebilmesi ve onları düzeltebilmesi gerekmektedir."
   },
   {
     "id": "3739311",
@@ -4099,7 +4099,7 @@
       "D": "İzinsiz kopyalama",
       "E": "Veri Değişikliği"
     },
-    "explanation": "BİLGİ GÜVENLİĞİ VE BİLGİ MAHREMİYETİ\n<br/>Veri Değişikliği"
+    "explanation": "BİLGİ GÜVENLİĞİ VE BİLGİ MAHREMİYETİ<br/>Veri Değişikliği"
   },
   {
     "id": "3739315",
@@ -4113,12 +4113,12 @@
       "D": "Server Roles",
       "E": "Configuration Manager"
     },
-    "explanation": "SUNUCU VE AĞ GÜVENLİĞİ \n<br/>Configuration Manager"
+    "explanation": "SUNUCU VE AĞ GÜVENLİĞİ <br/>Configuration Manager"
   },
   {
     "id": "3739316",
     "unitNumber": 6,
-    "text": "“Bir sayısal ağ üzerinden geçen trafiği izlemeye yarayan yazılımların genel adıdır.”\n Yukarıdaki tanım aşağıdakilerden hangisine aittir?",
+    "text": "“Bir sayısal ağ üzerinden geçen trafiği izlemeye yarayan yazılımların genel adıdır.”<br/>Yukarıdaki tanım aşağıdakilerden hangisine aittir?",
     "correctAnswer": "E",
     "options": {
       "A": "Truva Atı",
@@ -4127,7 +4127,7 @@
       "D": "Paket toplayıcı",
       "E": "Koklayıcı"
     },
-    "explanation": "SUNUCU VE AĞ GÜVENLİĞİ \n<br/>Koklayıcı"
+    "explanation": "SUNUCU VE AĞ GÜVENLİĞİ <br/>Koklayıcı"
   },
   {
     "id": "3739317",
@@ -4141,7 +4141,7 @@
       "D": "Web ve Windows",
       "E": "Windows ve SQL Server"
     },
-    "explanation": "SUNUCU VE AĞ GÜVENLİĞİ\n<br/>Windows ve SQL Server"
+    "explanation": "SUNUCU VE AĞ GÜVENLİĞİ<br/>Windows ve SQL Server"
   },
   {
     "id": "3739318",
@@ -4155,7 +4155,7 @@
       "D": "Sadelik, Taşınabilirlik, Uyumluluk",
       "E": "Bütünlük, Gizlilik, Kullanılabilirlik"
     },
-    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME\n<br/>Bütünlük, Gizlilik, Kullanılabilirlik"
+    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME<br/>Bütünlük, Gizlilik, Kullanılabilirlik"
   },
   {
     "id": "3739319",
@@ -4169,7 +4169,7 @@
       "D": "UPDATE",
       "E": "GRANT"
     },
-    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME\n<br/>GRANT"
+    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME<br/>GRANT"
   },
   {
     "id": "3739320",
@@ -4183,7 +4183,7 @@
       "D": "UPDATE",
       "E": "REVOKE"
     },
-    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME\n<br/>REVOKE"
+    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME<br/>REVOKE"
   },
   {
     "id": "3739321",
@@ -4197,7 +4197,7 @@
       "D": "DELETE",
       "E": "DENY"
     },
-    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME\n<br/>DENY"
+    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME<br/>DENY"
   },
   {
     "id": "3739322",
@@ -4211,7 +4211,7 @@
       "D": "Kurma Yöneticisi",
       "E": "Güvenlik Yöneticisi"
     },
-    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME\n<br/>Güvenlik Yöneticisi"
+    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME<br/>Güvenlik Yöneticisi"
   },
   {
     "id": "3739323",
@@ -4225,7 +4225,7 @@
       "D": "db_denydatawriter",
       "E": "db_backupoperator"
     },
-    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME\n<br/>db_backupoperator"
+    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME<br/>db_backupoperator"
   },
   {
     "id": "3739324",
@@ -4239,7 +4239,7 @@
       "D": "Lisansız Kullanım",
       "E": "Sahte Veri"
     },
-    "explanation": "Donanımsal veri açıkları şu şekildedir:\n • Kasıtsız Zarar<br/>• Yiyecek - İçeçek<br/>• Hayvanlar<br/>• Toz<br/>• Yıldırım<br/>• Kaba Kullanım<br/>• Su Basması<br/>• Kasıtlı Zarar<br/>• Hırsızlık<br/>• Fiziksel Zararlar (kırma, bozma, parçalama)\n Doğru cevap C'dir."
+    "explanation": "Donanımsal veri açıkları şu şekildedir:<br/>• Kasıtsız Zarar<br/>• Yiyecek - İçeçek<br/>• Hayvanlar<br/>• Toz<br/>• Yıldırım<br/>• Kaba Kullanım<br/>• Su Basması<br/>• Kasıtlı Zarar<br/>• Hırsızlık<br/>• Fiziksel Zararlar (kırma, bozma, parçalama)<br/>Doğru cevap C'dir."
   },
   {
     "id": "3739325",
@@ -4253,7 +4253,7 @@
       "D": "İzinsiz Kopyalama",
       "E": "Arka Kapılar"
     },
-    "explanation": "Yazılımsal güvenlik açıkları şu şekildedir:\n • Silinme<br/>• Kasıtsız<br/>• Kasıtlı <br/>• Değiştirilme<br/>• Truva Atları<br/>• Virüsler<br/>• Arka Kapılar<br/>• Bilgi Sızdırma<br/>• Solucanlar<br/>• Hırsızlık<br/>• Lisansız Kullanım<br/>• İzinsiz kopyalama\n Doğru cevap A'dır."
+    "explanation": "Yazılımsal güvenlik açıkları şu şekildedir:<br/>• Silinme<br/>• Kasıtsız<br/>• Kasıtlı<br/>• Değiştirilme<br/>• Truva Atları<br/>• Virüsler<br/>• Arka Kapılar<br/>• Bilgi Sızdırma<br/>• Solucanlar<br/>• Hırsızlık<br/>• Lisansız Kullanım<br/>• İzinsiz kopyalama<br/>Doğru cevap A'dır."
   },
   {
     "id": "3739326",
@@ -4267,7 +4267,7 @@
       "D": "Dinleme",
       "E": "Truva Atları"
     },
-    "explanation": "Verisel güvenlik açıkları şu şekildedir:\n<br/>• Gizliliğin İhlali<br/>• Dinleme (dinleyiciler, alıcılar)<br/>• Bilgi Sızdırma (insanlar yoluyla)<br/>• Engelleme<br/>• Silme<br/>• Ulaşılamaz ya da kullanılamaz hâle getirme<br/>• Bütünlüğün Bozulması<br/>• Veri Değişikliği<br/>• Sahte Ver\n<br/>Doğru cevap D'dir."
+    "explanation": "Verisel güvenlik açıkları şu şekildedir:<br/>• Gizliliğin İhlali<br/>• Dinleme (dinleyiciler, alıcılar)<br/>• Bilgi Sızdırma (insanlar yoluyla)<br/>• Engelleme<br/>• Silme<br/>• Ulaşılamaz ya da kullanılamaz hâle getirme<br/>• Bütünlüğün Bozulması<br/>• Veri Değişikliği<br/>• Sahte Ver<br/>Doğru cevap D'dir."
   },
   {
     "id": "3739327",
@@ -4281,12 +4281,12 @@
       "D": "Sistemsel Erişim Denetim Mekanizması",
       "E": "Yapılandırma Yöneticisi"
     },
-    "explanation": "Koklayıcı (Sniffer): Paket çözümleyicisi ya da koklayıcı, bir sayısal ağ üzerinden geçen trafiği izlemeye yarayan yazılımların genel adıdır.\n Doğru cevap B'dir."
+    "explanation": "Koklayıcı (Sniffer): Paket çözümleyicisi ya da koklayıcı, bir sayısal ağ üzerinden geçen trafiği izlemeye yarayan yazılımların genel adıdır.<br/>Doğru cevap B'dir."
   },
   {
     "id": "3739328",
     "unitNumber": 6,
-    "text": "I. Gizlilik\n II. Bütünlük\n III. Kullanılabilirlik\n Yukarıdakilerden hangileri Bilgi Güvenliği Yönetim Sistemi Standardının hedefleri arasındadır?",
+    "text": "I. Gizlilik<br/>II. Bütünlük<br/>III. Kullanılabilirlik<br/>Yukarıdakilerden hangileri Bilgi Güvenliği Yönetim Sistemi Standardının hedefleri arasındadır?",
     "correctAnswer": "E",
     "options": {
       "A": "Yalnız I.",
@@ -4295,7 +4295,7 @@
       "D": "II. ve III.",
       "E": "I. II. ve III."
     },
-    "explanation": "3 maddede de verilen hedeflerin hepsi Bilgi Güvenliği Yönetim Sistemi Standardının hedefleri arasındadır.\n Doğru cevap E'dir."
+    "explanation": "3 maddede de verilen hedeflerin hepsi Bilgi Güvenliği Yönetim Sistemi Standardının hedefleri arasındadır.<br/>Doğru cevap E'dir."
   },
   {
     "id": "3739329",
@@ -4309,7 +4309,7 @@
       "D": "Kullanıcıları ve onların erişim haklarını yönetme",
       "E": "Bütün aktiviteleri yapabilme yetkisi"
     },
-    "explanation": "Disk yöneticisi: Dosyaları yönetme hakkı\n Doğru cevap A'dır."
+    "explanation": "Disk yöneticisi: Dosyaları yönetme hakkı<br/>Doğru cevap A'dır."
   },
   {
     "id": "3739330",
@@ -4323,7 +4323,7 @@
       "D": "Süreç yöneticisi",
       "E": "Veritabanı oluşturma"
     },
-    "explanation": "Sistem yöneticisi: Bütün aktiviteleri yapabilme yetkisi.\n Doğru cevap C'dir."
+    "explanation": "Sistem yöneticisi: Bütün aktiviteleri yapabilme yetkisi.<br/>Doğru cevap C'dir."
   },
   {
     "id": "3739331",
@@ -4337,7 +4337,7 @@
       "D": "Kurma yöneticisi",
       "E": "Güvenlik yöneticisi"
     },
-    "explanation": "Güvenlik yöneticisi: Kullanıcıları ve onların erişim haklarını yönetme.\n Doğru cevap E'dir."
+    "explanation": "Güvenlik yöneticisi: Kullanıcıları ve onların erişim haklarını yönetme.<br/>Doğru cevap E'dir."
   },
   {
     "id": "3739332",
@@ -4351,7 +4351,7 @@
       "D": "Kullanıcı tabloları üzerinde SELECT işlemleri yapabilme.",
       "E": "Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapabilme."
     },
-    "explanation": "db_datawriter: Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri<br/>yapabilme.\n Doğru cevap E'dir."
+    "explanation": "db_datawriter: Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri<br/>yapabilme.<br/>Doğru cevap E'dir."
   },
   {
     "id": "3739333",
@@ -4365,7 +4365,7 @@
       "D": "db_owner",
       "E": "db_backupoperator"
     },
-    "explanation": "db_owner: Veritabanı üzerinde tüm ayarlamaları yapabilme ve silebilme.\n Doğru cevap D'dir."
+    "explanation": "db_owner: Veritabanı üzerinde tüm ayarlamaları yapabilme ve silebilme.<br/>Doğru cevap D'dir."
   },
   {
     "id": "3739334",
@@ -4379,12 +4379,12 @@
       "D": "Virüsler",
       "E": "Veri Silme"
     },
-    "explanation": "Bilgi güvenliği açıkları donanım, yazılım ve veri olarak üç kısma bölünmüştür.\n DONANIM<br/>Kasıtsız Zarar, Yiyecek - İçeçek, Hayvanlar, Toz, Yıldırım, Kaba Kullanım, Su Basması, Kasıtlı Zarar, Hırsızlık, Fiziksel Zararlar (kırma, bozma, parçalama)\n YAZILIM<br/>Silinme, Kasıtsız, Kasıtlı, Değiştirilme, Truva Atları, Virüsler, Arka Kapılar, Bilgi Sızdırma, Solucanlar, Hırsızlık, Lisansız Kullanım, İzinsiz kopyalama\n VERİ<br/>Gizliliğin İhlali, Dinleme (dinleyiciler, alıcılar), Bilgi Sızdırma (insanlar yoluyla), Engelleme, Silme, Ulaşılamaz ya da kullanılamaz hâle getirme, Bütünlüğün Bozulması, Veri Değişikliği, Sahte Veri"
+    "explanation": "Bilgi güvenliği açıkları donanım, yazılım ve veri olarak üç kısma bölünmüştür.<br/>DONANIM<br/>Kasıtsız Zarar, Yiyecek - İçeçek, Hayvanlar, Toz, Yıldırım, Kaba Kullanım, Su Basması, Kasıtlı Zarar, Hırsızlık, Fiziksel Zararlar (kırma, bozma, parçalama)<br/>YAZILIM<br/>Silinme, Kasıtsız, Kasıtlı, Değiştirilme, Truva Atları, Virüsler, Arka Kapılar, Bilgi Sızdırma, Solucanlar, Hırsızlık, Lisansız Kullanım, İzinsiz kopyalama<br/>VERİ<br/>Gizliliğin İhlali, Dinleme (dinleyiciler, alıcılar), Bilgi Sızdırma (insanlar yoluyla), Engelleme, Silme, Ulaşılamaz ya da kullanılamaz hâle getirme, Bütünlüğün Bozulması, Veri Değişikliği, Sahte Veri"
   },
   {
     "id": "3739335",
     "unitNumber": 6,
-    "text": "Bilgi Güvenliği Yönetim Sistemi Standardına göre dikkate alınması gereken hedefler nelerdir?\n I. Gizlilik<br/>II. Bütünlük<br/>III. Kullanılabilirlik",
+    "text": "Bilgi Güvenliği Yönetim Sistemi Standardına göre dikkate alınması gereken hedefler nelerdir?<br/>I. Gizlilik<br/>II. Bütünlük<br/>III. Kullanılabilirlik",
     "correctAnswer": "E",
     "options": {
       "A": "Yalnız I",
@@ -4393,12 +4393,12 @@
       "D": "Yalnız II, III",
       "E": "I, II, III"
     },
-    "explanation": "Bilgi Güvenliği Yönetim Sistemi Standardına göre dikkate alınması gereken üç ana hedef olmalıdır.<br/>• Gizlilik: Kuruma veya bireye özel ve gizliliği olan bilgilere, sadece yetkisi olan kişilerin erişim hakkına sahip olmasının gerekliliğidir. Bunun için gizlilik bilginin yetkisiz kişilerce açığa çıkarılmasının engellenmesidir. <br/>• Bütünlük: Kısaca bilinçli veya bilinçsiz olarak verinin bozulmaması gerekliliğidir. Kurumsal veya bireysel bilgilerin yetkisiz değişim veya bozulmalara karşı korunması, yalnızca yetkili kullanıcılara verileri değiştirmek için izin verilmesi olarak özetlenebilir. <br/>• Kullanılabilirlik: Bilgi ve kaynakların ihtiyaç duyan kişilerce sürekli erişilebilir durumda olması olarak özetlenebilir."
+    "explanation": "Bilgi Güvenliği Yönetim Sistemi Standardına göre dikkate alınması gereken üç ana hedef olmalıdır.<br/>• Gizlilik: Kuruma veya bireye özel ve gizliliği olan bilgilere, sadece yetkisi olan kişilerin erişim hakkına sahip olmasının gerekliliğidir. Bunun için gizlilik bilginin yetkisiz kişilerce açığa çıkarılmasının engellenmesidir.<br/>• Bütünlük: Kısaca bilinçli veya bilinçsiz olarak verinin bozulmaması gerekliliğidir. Kurumsal veya bireysel bilgilerin yetkisiz değişim veya bozulmalara karşı korunması, yalnızca yetkili kullanıcılara verileri değiştirmek için izin verilmesi olarak özetlenebilir.<br/>• Kullanılabilirlik: Bilgi ve kaynakların ihtiyaç duyan kişilerce sürekli erişilebilir durumda olması olarak özetlenebilir."
   },
   {
     "id": "3739336",
     "unitNumber": 6,
-    "text": "Aşağıdaki komutlardan hangisi ile kullanıcılara erişim hakkı verilir?\n ALTER<br/>CREATE<br/>DENY<br/>GRANT<br/>REVOKE",
+    "text": "Aşağıdaki komutlardan hangisi ile kullanıcılara erişim hakkı verilir?<br/>ALTER<br/>CREATE<br/>DENY<br/>GRANT<br/>REVOKE",
     "correctAnswer": "D",
     "options": {
       "A": "ALTER",
@@ -4524,7 +4524,7 @@
   {
     "id": "3739345",
     "unitNumber": 6,
-    "text": "1-Toz A-Donanım\n 2-Lisanssız Kullanım B-Yazılım\n 3-Virüsler C-Veri\n 4-Dinleme\n Yukarıda verilen güvenlik açığı ve sınıflandırması aşağıda verilen seçeneklerden hangisinde doğru eşleştirilmiştir?",
+    "text": "1-Toz A-Donanım<br/>2-Lisanssız Kullanım B-Yazılım<br/>3-Virüsler C-Veri<br/>4-Dinleme<br/>Yukarıda verilen güvenlik açığı ve sınıflandırması aşağıda verilen seçeneklerden hangisinde doğru eşleştirilmiştir?",
     "correctAnswer": "B",
     "options": {
       "A": "1-A, 2-B, 3-C, 4-C",
@@ -4533,12 +4533,12 @@
       "D": "1-A, 2-C, 3-B, 4-C",
       "E": "1-A, 2-C, 3-B, 4-B"
     },
-    "explanation": "Tablo 6.1'de görüleceği gibi Toz-Donanım, Lisanssız Kullanım-Yazılım, Virüsler-Yazılım ve Dinleme-Veri eşleşmesi doğrudur. Doğru seçenek B. \n 4-Dinleme"
+    "explanation": "Tablo 6.1'de görüleceği gibi Toz-Donanım, Lisanssız Kullanım-Yazılım, Virüsler-Yazılım ve Dinleme-Veri eşleşmesi doğrudur. Doğru seçenek B. <br/>4-Dinleme"
   },
   {
     "id": "3739346",
     "unitNumber": 6,
-    "text": "Kırılması en zor şifre, ..... sayı, harf ve sembollerin karışımından oluşan ve uzunca karakterli (en az 8-10 karakter) şifrelerdir.\n Yukarıdaki cümlede boş bırakılan yeri aşağıdakilerden hangisi doğru şekilde tamamlar?",
+    "text": "Kırılması en zor şifre, ..... sayı, harf ve sembollerin karışımından oluşan ve uzunca karakterli (en az 8-10 karakter) şifrelerdir.<br/>Yukarıdaki cümlede boş bırakılan yeri aşağıdakilerden hangisi doğru şekilde tamamlar?",
     "correctAnswer": "E",
     "options": {
       "A": "sıralı",
@@ -4673,7 +4673,7 @@
       "D": "İzinsiz kopyalama",
       "E": "Veri Değişikliği"
     },
-    "explanation": "BİLGİ GÜVENLİĞİ VE BİLGİ MAHREMİYETİ\n<br/>Veri Değişikliği"
+    "explanation": "BİLGİ GÜVENLİĞİ VE BİLGİ MAHREMİYETİ<br/>Veri Değişikliği"
   },
   {
     "id": "3739356",
@@ -4687,12 +4687,12 @@
       "D": "Server Roles",
       "E": "Configuration Manager"
     },
-    "explanation": "SUNUCU VE AĞ GÜVENLİĞİ\n<br/>Configuration Manager"
+    "explanation": "SUNUCU VE AĞ GÜVENLİĞİ<br/>Configuration Manager"
   },
   {
     "id": "3739357",
     "unitNumber": 6,
-    "text": "“Bir sayısal ağ üzerinden geçen trafiği izlemeye yarayan yazılımların genel adıdır.”\n Yukarıdaki tanım aşağıdakilerden hangisine aittir?",
+    "text": "“Bir sayısal ağ üzerinden geçen trafiği izlemeye yarayan yazılımların genel adıdır.”<br/>Yukarıdaki tanım aşağıdakilerden hangisine aittir?",
     "correctAnswer": "E",
     "options": {
       "A": "Truva Atı",
@@ -4701,7 +4701,7 @@
       "D": "Paket toplayıcı",
       "E": "Koklayıcı"
     },
-    "explanation": "SUNUCU VE AĞ GÜVENLİĞİ\n<br/>Koklayıcı"
+    "explanation": "SUNUCU VE AĞ GÜVENLİĞİ<br/>Koklayıcı"
   },
   {
     "id": "3739358",
@@ -4715,7 +4715,7 @@
       "D": "Web ve Windows",
       "E": "Windows ve SQL Server"
     },
-    "explanation": "SUNUCU VE AĞ GÜVENLİĞİ \n<br/>Windows ve SQL Server"
+    "explanation": "SUNUCU VE AĞ GÜVENLİĞİ <br/>Windows ve SQL Server"
   },
   {
     "id": "3739359",
@@ -4729,7 +4729,7 @@
       "D": "Sadelik, Taşınabilirlik, Uyumluluk",
       "E": "Bütünlük, Gizlilik, Kullanılabilirlik"
     },
-    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME\n<br/>Bütünlük, Gizlilik, Kullanılabilirlik"
+    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME<br/>Bütünlük, Gizlilik, Kullanılabilirlik"
   },
   {
     "id": "3739360",
@@ -4743,7 +4743,7 @@
       "D": "UPDATE",
       "E": "GRANT"
     },
-    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME\n<br/>GRANT"
+    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME<br/>GRANT"
   },
   {
     "id": "3739361",
@@ -4757,7 +4757,7 @@
       "D": "UPDATE",
       "E": "REVOKE"
     },
-    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME\n<br/>REVOKE"
+    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME<br/>REVOKE"
   },
   {
     "id": "3739362",
@@ -4771,7 +4771,7 @@
       "D": "DELETE",
       "E": "DENY"
     },
-    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME\n<br/>DENY"
+    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME<br/>DENY"
   },
   {
     "id": "3739363",
@@ -4785,7 +4785,7 @@
       "D": "Kurma Yöneticisi",
       "E": "Güvenlik Yöneticisi"
     },
-    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME\n<br/>Güvenlik Yöneticisi"
+    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME<br/>Güvenlik Yöneticisi"
   },
   {
     "id": "3739364",
@@ -4799,7 +4799,7 @@
       "D": "db_denydatawriter",
       "E": "db_backupoperator"
     },
-    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME\n<br/>db_backupoperator"
+    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME<br/>db_backupoperator"
   },
   {
     "id": "3739365",
@@ -4813,7 +4813,7 @@
       "D": "Sahte Veri",
       "E": "Kaba Kullanım"
     },
-    "explanation": "Tabloda güvenlik açıkları donanım, yazılım ve veri olarak üç kısma bölünmüştür.\n <img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/44b8591c0a92e0c86452e8d9a5d34ad9.jpeg\" alt=\"1\" width=\"530\" height=\"488\"> Doğru cevap C’dir."
+    "explanation": "Tabloda güvenlik açıkları donanım, yazılım ve veri olarak üç kısma bölünmüştür.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/44b8591c0a92e0c86452e8d9a5d34ad9.jpeg\" alt=\"1\" width=\"530\" height=\"488\"> Doğru cevap C’dir."
   },
   {
     "id": "3739366",
@@ -4827,7 +4827,7 @@
       "D": "Kasıtsız Zarar",
       "E": "Bütünlüğün Bozulması"
     },
-    "explanation": "Tabloda güvenlik açıkları donanım, yazılım ve veri olarak üç kısma bölünmüştür.\n <img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/44b8591c0a92e0c86452e8d9a5d34ad9.jpeg\" alt=\"2\" width=\"530\" height=\"488\"> Doğru cevap D’dir."
+    "explanation": "Tabloda güvenlik açıkları donanım, yazılım ve veri olarak üç kısma bölünmüştür.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/44b8591c0a92e0c86452e8d9a5d34ad9.jpeg\" alt=\"2\" width=\"530\" height=\"488\"> Doğru cevap D’dir."
   },
   {
     "id": "3739367",
@@ -4883,7 +4883,7 @@
       "D": "II, III ve IV",
       "E": "I, II, III ve IV"
     },
-    "explanation": "Güvenli bir veritabanı uygulamasını tasarlarken Bilgi Güvenliği Yönetim Sistemi Standardına göre dikkate alınması gereken üç ana hedef olmalıdır.\n <ul> <li>Gizlilik</li> <li>Bütünlük</li> <li>Kullanılabilirlik</li> </ul> Doğru cevap D’dir."
+    "explanation": "Güvenli bir veritabanı uygulamasını tasarlarken Bilgi Güvenliği Yönetim Sistemi Standardına göre dikkate alınması gereken üç ana hedef olmalıdır.<br/><ul> <li>Gizlilik</li> <li>Bütünlük</li> <li>Kullanılabilirlik</li> </ul> Doğru cevap D’dir."
   },
   {
     "id": "3739371",
@@ -4911,7 +4911,7 @@
       "D": "Sistem yöneticisi",
       "E": "Sunucu yöneticisi"
     },
-    "explanation": "Veritabanı oluşturma: Veritabanı oluşturabilme, silme ve değişiklik yapabilme\n Disk yöneticisi: Dosyaları yönetme hakkı\n Süreç yöneticisi: Süreçleri / işlemleri yönetme hakkı\n Güvenlik yöneticisi: Kullanıcıları ve onların erişim haklarını yönetme\n Sunucu yöneticisi: Sunucu ayarlarını yapabilme\n Kurma yöneticisi: Birbirine bağlı sunucuların ayarlarını yapabilme ve genişletilmiş saklı yordamları yönetebilme hakkı\n Sistem yöneticisi: Bütün aktiviteleri yapabilme yetkisi\n Doğru cevap A’dır."
+    "explanation": "Veritabanı oluşturma: Veritabanı oluşturabilme, silme ve değişiklik yapabilme<br/>Disk yöneticisi: Dosyaları yönetme hakkı<br/>Süreç yöneticisi: Süreçleri / işlemleri yönetme hakkı<br/>Güvenlik yöneticisi: Kullanıcıları ve onların erişim haklarını yönetme<br/>Sunucu yöneticisi: Sunucu ayarlarını yapabilme<br/>Kurma yöneticisi: Birbirine bağlı sunucuların ayarlarını yapabilme ve genişletilmiş saklı yordamları yönetebilme hakkı<br/>Sistem yöneticisi: Bütün aktiviteleri yapabilme yetkisi<br/>Doğru cevap A’dır."
   },
   {
     "id": "3739373",
@@ -4925,7 +4925,7 @@
       "D": "db_denydatawriter",
       "E": "db_backupoperator"
     },
-    "explanation": "db_owner: Veritabanı üzerinde tüm ayarlamaları yapabilme ve silebilme\n db_accessadmin: Var olan Windows kullanıcıları ve SQL Server hesapları için veritabanına erişim yetkisi verebilme\n db_securityadmin: Veritabanı üzerindeki yetkilendirmeleri değiştirebilme\n db_datareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapabilme\n db_datawriter: Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapabilme\n db_denydatawriter: Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapamaz\n db_denydatareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapamaz\n db_backupoperator: Veritabanı yedeğini alabilme\n Doğru cevap C’dir."
+    "explanation": "db_owner: Veritabanı üzerinde tüm ayarlamaları yapabilme ve silebilme<br/>db_accessadmin: Var olan Windows kullanıcıları ve SQL Server hesapları için veritabanına erişim yetkisi verebilme<br/>db_securityadmin: Veritabanı üzerindeki yetkilendirmeleri değiştirebilme<br/>db_datareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapabilme<br/>db_datawriter: Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapabilme<br/>db_denydatawriter: Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapamaz<br/>db_denydatareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapamaz<br/>db_backupoperator: Veritabanı yedeğini alabilme<br/>Doğru cevap C’dir."
   },
   {
     "id": "3739374",
@@ -5163,7 +5163,7 @@
       "D": "New Database",
       "E": "Deploy Data"
     },
-    "explanation": "Geri yükleme işlemi aşağıdaki adımlarla gerçekleştirilir. “Database” başlığını seçin ve bağlam menüsünden “Restore Database...” seçeneğine tıklayın (Resim 7.5).\n <img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/3ee95bf3a5c1306e445d42aad3cc522e.jpeg\" alt=\"\" width=\"341\" height=\"293\"> Doğru cevap A’dır."
+    "explanation": "Geri yükleme işlemi aşağıdaki adımlarla gerçekleştirilir. “Database” başlığını seçin ve bağlam menüsünden “Restore Database...” seçeneğine tıklayın (Resim 7.5).<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/3ee95bf3a5c1306e445d42aad3cc522e.jpeg\" alt=\"\" width=\"341\" height=\"293\"> Doğru cevap A’dır."
   },
   {
     "id": "3739391",
@@ -5177,7 +5177,7 @@
       "D": "Veritabanı bütünlüğünün sağlanması için kontrol mekanizmaları oluşturmak",
       "E": "Yedek saklamada kapasite sorunu varsa, yedeği alınan veritabanları sıkıştırmak"
     },
-    "explanation": "Genelde uygulanılan veritabanı bakım faaliyetleri aşağıda verilmiştir:\n <ul> <li>Sistem Veritabanlarını ve Kullanıcı veritabanlarını yedeklemek</li> <li>Tutarlılık denetimleri ile veritabanındaki problem ve bozulmaları kontrol ederek veri kaybını en aza indirgemek</li> <li>İndeks bakımı ile indeksleri yeniden yapılandırmak ve organize etmek, fiziksel parçalanmayı ve indeks sayfa bütünlüğünü iyileştirmek</li> <li>İstatistiklerin bakımı ile eski veya bozuk istatistik verilerini düzeltmek</li> <li>Bakım sonrası temizleme görevleri ile eski yedek ve bakım görevi günlük (log) dosyalarını silmek ve Msdb’deki geçmiş tabloları temizlemek</li> <li>Yedek saklamada kapasite sorunu varsa, yedeği alınan veritabanları sıkıştırmak</li> </ul> Doğru cevap D’dir."
+    "explanation": "Genelde uygulanılan veritabanı bakım faaliyetleri aşağıda verilmiştir:<br/><ul> <li>Sistem Veritabanlarını ve Kullanıcı veritabanlarını yedeklemek</li> <li>Tutarlılık denetimleri ile veritabanındaki problem ve bozulmaları kontrol ederek veri kaybını en aza indirgemek</li> <li>İndeks bakımı ile indeksleri yeniden yapılandırmak ve organize etmek, fiziksel parçalanmayı ve indeks sayfa bütünlüğünü iyileştirmek</li> <li>İstatistiklerin bakımı ile eski veya bozuk istatistik verilerini düzeltmek</li> <li>Bakım sonrası temizleme görevleri ile eski yedek ve bakım görevi günlük (log) dosyalarını silmek ve Msdb’deki geçmiş tabloları temizlemek</li> <li>Yedek saklamada kapasite sorunu varsa, yedeği alınan veritabanları sıkıştırmak</li> </ul> Doğru cevap D’dir."
   },
   {
     "id": "3739392",
@@ -5219,7 +5219,7 @@
       "D": "II, III ve IV",
       "E": "I, II, III ve IV"
     },
-    "explanation": "New Job Schedule (Yeni iş zamanlama) sayfası: bakımın çalışma periyodu ya da zamanının dakika hassaslığında ayarlanmasını sağlar.\n <ul> <li>Name (İsim)</li> <li>Schedule type (Zamanlama türü)</li> <li>Frequency (Sıklık)</li> <li>Daily Frequency (Günlük Sıklık)</li> <li>Duration (Süre)</li> </ul> Doğru cevap B’dir."
+    "explanation": "New Job Schedule (Yeni iş zamanlama) sayfası: bakımın çalışma periyodu ya da zamanının dakika hassaslığında ayarlanmasını sağlar.<br/><ul> <li>Name (İsim)</li> <li>Schedule type (Zamanlama türü)</li> <li>Frequency (Sıklık)</li> <li>Daily Frequency (Günlük Sıklık)</li> <li>Duration (Süre)</li> </ul> Doğru cevap B’dir."
   },
   {
     "id": "3739395",
@@ -5443,7 +5443,7 @@
       "D": "New Database",
       "E": "Deploy Data"
     },
-    "explanation": "Geri yükleme işlemi aşağıdaki adımlarla gerçekleştirilir. “Database” başlığını seçin ve bağlam menüsünden “Restore Database...” seçeneğine tıklayın (Resim 7.5).\n <img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/3ee95bf3a5c1306e445d42aad3cc522e.jpeg\" alt=\"se\" width=\"341\" height=\"293\"> Doğru cevap A’dır."
+    "explanation": "Geri yükleme işlemi aşağıdaki adımlarla gerçekleştirilir. “Database” başlığını seçin ve bağlam menüsünden “Restore Database...” seçeneğine tıklayın (Resim 7.5).<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/3ee95bf3a5c1306e445d42aad3cc522e.jpeg\" alt=\"se\" width=\"341\" height=\"293\"> Doğru cevap A’dır."
   },
   {
     "id": "3739411",
@@ -5457,7 +5457,7 @@
       "D": "Veritabanı bütünlüğünün sağlanması için kontrol mekanizmaları oluşturmak",
       "E": "Yedek saklamada kapasite sorunu varsa, yedeği alınan veritabanları sıkıştırmak"
     },
-    "explanation": "Genelde uygulanılan veritabanı bakım faaliyetleri aşağıda verilmiştir:\n <ul> <li>Sistem Veritabanlarını ve Kullanıcı veritabanlarını yedeklemek</li> <li>Tutarlılık denetimleri ile veritabanındaki problem ve bozulmaları kontrol ederek veri kaybını en aza indirgemek</li> <li>İndeks bakımı ile indeksleri yeniden yapılandırmak ve organize etmek, fiziksel parçalanmayı ve indeks sayfa bütünlüğünü iyileştirmek</li> <li>İstatistiklerin bakımı ile eski veya bozuk istatistik verilerini düzeltmek</li> <li>Bakım sonrası temizleme görevleri ile eski yedek ve bakım görevi günlük (log) dosyalarını silmek ve Msdb’deki geçmiş tabloları temizlemek</li> <li>Yedek saklamada kapasite sorunu varsa, yedeği alınan veritabanları sıkıştırmak</li> </ul> Doğru cevap D’dir."
+    "explanation": "Genelde uygulanılan veritabanı bakım faaliyetleri aşağıda verilmiştir:<br/><ul> <li>Sistem Veritabanlarını ve Kullanıcı veritabanlarını yedeklemek</li> <li>Tutarlılık denetimleri ile veritabanındaki problem ve bozulmaları kontrol ederek veri kaybını en aza indirgemek</li> <li>İndeks bakımı ile indeksleri yeniden yapılandırmak ve organize etmek, fiziksel parçalanmayı ve indeks sayfa bütünlüğünü iyileştirmek</li> <li>İstatistiklerin bakımı ile eski veya bozuk istatistik verilerini düzeltmek</li> <li>Bakım sonrası temizleme görevleri ile eski yedek ve bakım görevi günlük (log) dosyalarını silmek ve Msdb’deki geçmiş tabloları temizlemek</li> <li>Yedek saklamada kapasite sorunu varsa, yedeği alınan veritabanları sıkıştırmak</li> </ul> Doğru cevap D’dir."
   },
   {
     "id": "3739412",
@@ -5499,7 +5499,7 @@
       "D": "II, III ve IV",
       "E": "I, II, III ve IV"
     },
-    "explanation": "New Job Schedule (Yeni iş zamanlama) sayfası: bakımın çalışma periyodu ya da zamanının dakika hassaslığında ayarlanmasını sağlar.\n <ul> <li>Name (İsim)</li> <li>Schedule type (Zamanlama türü)</li> <li>Frequency (Sıklık)</li> <li>Daily Frequency (Günlük Sıklık)</li> <li>Duration (Süre)</li> </ul> Doğru cevap B’dir."
+    "explanation": "New Job Schedule (Yeni iş zamanlama) sayfası: bakımın çalışma periyodu ya da zamanının dakika hassaslığında ayarlanmasını sağlar.<br/><ul> <li>Name (İsim)</li> <li>Schedule type (Zamanlama türü)</li> <li>Frequency (Sıklık)</li> <li>Daily Frequency (Günlük Sıklık)</li> <li>Duration (Süre)</li> </ul> Doğru cevap B’dir."
   },
   {
     "id": "3739415",
@@ -5513,7 +5513,7 @@
       "D": ".ldf",
       "E": ".doc"
     },
-    "explanation": "İşlem kayıtlarını tutan hareket dosyaları (“.ldf ”): Kayıt dosyası, bir açıdan veri dosyasında yapılacak işlerin komut dizisidir ve geriye doğru da çalıştırılabilir. Bu sayede bir işlemin geri alınabilmesi ya da sistemin çökmesi durumunda veritabanının kararlı bir noktaya geri döndürülebilmesi mümkün olur.\n<br/>Doğru cevap D'dir."
+    "explanation": "İşlem kayıtlarını tutan hareket dosyaları (“.ldf ”): Kayıt dosyası, bir açıdan veri dosyasında yapılacak işlerin komut dizisidir ve geriye doğru da çalıştırılabilir. Bu sayede bir işlemin geri alınabilmesi ya da sistemin çökmesi durumunda veritabanının kararlı bir noktaya geri döndürülebilmesi mümkün olur.<br/>Doğru cevap D'dir."
   },
   {
     "id": "3739416",
@@ -5527,7 +5527,7 @@
       "D": "Geri Alma",
       "E": "Uyarı"
     },
-    "explanation": "MS SQL Server’ın tüm yapılandırma bilgileri bu veritabanında yer alır. Bu yapılandırma bilgilerinde; genel sistem yapılandırması, oturum açma bilgileri, veritabanlarının konumları, diğer bağlı sunucular, replikasyon ve ikizleme gibi işlemlerin bilgileri yer alır.\n<br/>İkizleme: Mirroring\n<br/>Doğru cevap C'dir."
+    "explanation": "MS SQL Server’ın tüm yapılandırma bilgileri bu veritabanında yer alır. Bu yapılandırma bilgilerinde; genel sistem yapılandırması, oturum açma bilgileri, veritabanlarının konumları, diğer bağlı sunucular, replikasyon ve ikizleme gibi işlemlerin bilgileri yer alır.<br/>İkizleme: Mirroring<br/>Doğru cevap C'dir."
   },
   {
     "id": "3739417",
@@ -5569,7 +5569,7 @@
       "D": "Alınacak yedeği ortam setinin sonuna ekler. Önceki yedekler korunur",
       "E": "Ortam setinde var olan yedeklerin üzerine yazılır."
     },
-    "explanation": "Verify backup when finished: Yedekleme bittikten sonra kalıcı olmayan bir<br/>geri yükleme denemesi gerçekleştirerek yedeği doğrular.\n Doğru cevap A'dır."
+    "explanation": "Verify backup when finished: Yedekleme bittikten sonra kalıcı olmayan bir<br/>geri yükleme denemesi gerçekleştirerek yedeği doğrular.<br/>Doğru cevap A'dır."
   },
   {
     "id": "3739420",
@@ -5583,7 +5583,7 @@
       "D": "Teyp yedekleme ünitesinin, yedekleme bittikten sonra kaseti çıkartmasını sağlar.",
       "E": "Doğrulama sağlanamasa da yedekleme işlemine devam eder."
     },
-    "explanation": "Rewind the tape before unloading: Kaset çıkmadan önce başa sarılmasını sağlar.\n Doğru cevap C'dir."
+    "explanation": "Rewind the tape before unloading: Kaset çıkmadan önce başa sarılmasını sağlar.<br/>Doğru cevap C'dir."
   },
   {
     "id": "3739421",
@@ -5597,12 +5597,12 @@
       "D": "Yedekleme senaryosu",
       "E": "Yüksek erişilebilirlik"
     },
-    "explanation": "Yedeklerin rotasyonu: Yedeklerin kullandığı disk alanının artmaması için bir kısmının (genellikle eski tarihli) otomatik olarak silinmesi ve yenilerine yer açılması.\n Doğru cevap B'dir."
+    "explanation": "Yedeklerin rotasyonu: Yedeklerin kullandığı disk alanının artmaması için bir kısmının (genellikle eski tarihli) otomatik olarak silinmesi ve yenilerine yer açılması.<br/>Doğru cevap B'dir."
   },
   {
     "id": "3739422",
     "unitNumber": 7,
-    "text": "I. Felakete uğrayan veritabanını yerine koymak.\n II. Eski hâline ulaşarak çeşitli araştırmalar yapmak.\n III. Bir ikizleme kurgusunun kurulumunu yapabilmek.\n Yukarıdakilerden hangileri sıklıkla karşılaşılan geri yükleme nedenleri arasındadır?",
+    "text": "I. Felakete uğrayan veritabanını yerine koymak.<br/>II. Eski hâline ulaşarak çeşitli araştırmalar yapmak.<br/>III. Bir ikizleme kurgusunun kurulumunu yapabilmek.<br/>Yukarıdakilerden hangileri sıklıkla karşılaşılan geri yükleme nedenleri arasındadır?",
     "correctAnswer": "E",
     "options": {
       "A": "Yalnız I.",
@@ -5611,7 +5611,7 @@
       "D": "II. ve III.",
       "E": "I. II. ve III."
     },
-    "explanation": "3 maddede de verilenlerin hepsi sıklıkla karşılaşılan geri yükleme nedenleri arasındadır. \n Doğru cevap E'dir."
+    "explanation": "3 maddede de verilenlerin hepsi sıklıkla karşılaşılan geri yükleme nedenleri arasındadır. <br/>Doğru cevap E'dir."
   },
   {
     "id": "3739423",
@@ -5625,7 +5625,7 @@
       "D": "Seçilen yedeklerin geri alınmasından sonra, yedek alınması ya da riskin gerçekleşmesi sırasında tamamlanmadığı için açık kalan işlemleri temizler / geri alır, geri yükleme pozisyonunu sonlandırır, veritabanını etkinleştirir ve kullanıma açar.",
       "E": "Seçilen yedeklerin geri alınmasından sonra veritabanını geri yükleme pozisyonunda bırakır."
     },
-    "explanation": "Overwrite the existing database: Geri yükleme için kullanılan veritabanı ile aynı adda veritabanı var ise üzerine yazar.\n<br/>Doğru cevap C'dir."
+    "explanation": "Overwrite the existing database: Geri yükleme için kullanılan veritabanı ile aynı adda veritabanı var ise üzerine yazar.<br/>Doğru cevap C'dir."
   },
   {
     "id": "3739424",
@@ -5639,7 +5639,7 @@
       "D": "History Cleanup Task",
       "E": "Maintenance Cleanup Task"
     },
-    "explanation": "Geçmiş Temizleme Görevi (History Cleanup Task), bir sistem veritabanı olan Msdb’deki işlemlere ait geçmiş kayıtların belli periyodlar arasında yapılmasını sağlar. Msdb veritabanının boyutunun büyümesini engeller. Haftada bir yapılması önerilir, veritabanı kullanım yoğunluğuna göre zamanlaması değiştirilebilir.\n<br/>Doğru cevap D'dir."
+    "explanation": "Geçmiş Temizleme Görevi (History Cleanup Task), bir sistem veritabanı olan Msdb’deki işlemlere ait geçmiş kayıtların belli periyodlar arasında yapılmasını sağlar. Msdb veritabanının boyutunun büyümesini engeller. Haftada bir yapılması önerilir, veritabanı kullanım yoğunluğuna göre zamanlaması değiştirilebilir.<br/>Doğru cevap D'dir."
   },
   {
     "id": "3739425",
@@ -5667,7 +5667,7 @@
       "D": "Model",
       "E": "Master"
     },
-    "explanation": "<strong>Master</strong>\n MS SQL Server’ın tüm yapılandırma bilgileri bu veritabanında yer alır."
+    "explanation": "<strong>Master</strong><br/>MS SQL Server’ın tüm yapılandırma bilgileri bu veritabanında yer alır."
   },
   {
     "id": "3739427",
@@ -5714,7 +5714,7 @@
   {
     "id": "3739430",
     "unitNumber": 7,
-    "text": "'Ana veritabanında gerçekleşen işlemlerin hareket kayıtları kısa periyotlarla çalışan bir işlem aracılığı ile ayrı bir disk alanına dosya blokları şeklinde bırakılır. Kopya veri tabanları, bu hareket dosyalarını okur ve işlemleri taklit ederek kendilerini ana veritabanı ile eşitlerler.' \n Bu yönteme ne denir?",
+    "text": "'Ana veritabanında gerçekleşen işlemlerin hareket kayıtları kısa periyotlarla çalışan bir işlem aracılığı ile ayrı bir disk alanına dosya blokları şeklinde bırakılır. Kopya veri tabanları, bu hareket dosyalarını okur ve işlemleri taklit ederek kendilerini ana veritabanı ile eşitlerler.' <br/>Bu yönteme ne denir?",
     "correctAnswer": "D",
     "options": {
       "A": "Yedekleme",
@@ -5723,7 +5723,7 @@
       "D": "Replikasyon",
       "E": "İkizleme"
     },
-    "explanation": "Replikasyon\n Ana veritabanında gerçekleşen işlemlerin hareket kayıtları kısa periyotlarla çalışan bir işlem aracılığı ile ayrı bir disk alanına dosya blokları şeklinde bırakılır. Kopya veri tabanları, bu hareket dosyalarını okur ve işlemleri taklit ederek kendilerini ana veritabanı ile eşitlerler."
+    "explanation": "Replikasyon<br/>Ana veritabanında gerçekleşen işlemlerin hareket kayıtları kısa periyotlarla çalışan bir işlem aracılığı ile ayrı bir disk alanına dosya blokları şeklinde bırakılır. Kopya veri tabanları, bu hareket dosyalarını okur ve işlemleri taklit ederek kendilerini ana veritabanı ile eşitlerler."
   },
   {
     "id": "3739431",
@@ -5868,7 +5868,7 @@
   {
     "id": "3739441",
     "unitNumber": 7,
-    "text": "Veritabanı .........., beklenmedik bir hata, felaket ya da istenmeyen durumlarda felaketten dönme ve yüksek erişilebilirliği sağlamak için geliştirmiş olan bir çözümdür.\n<br/>Yukarıda verilen cümlede boş bırakılan yeri aşağıdakilerden hangisi doğru şekilde tamamlar?",
+    "text": "Veritabanı .........., beklenmedik bir hata, felaket ya da istenmeyen durumlarda felaketten dönme ve yüksek erişilebilirliği sağlamak için geliştirmiş olan bir çözümdür.<br/>Yukarıda verilen cümlede boş bırakılan yeri aşağıdakilerden hangisi doğru şekilde tamamlar?",
     "correctAnswer": "A",
     "options": {
       "A": "İkizleme",
@@ -5938,7 +5938,7 @@
   {
     "id": "3739446",
     "unitNumber": 8,
-    "text": "Aşağıdaki kavramlardan hangisi cümledeki boşluğa yerleştirilirse doğru bir tanım ifadesi elde edilir?\n __________ depolama, yazılım ve diğer kaynaklar hizmet sağlayan şirket tarafından genel son kullanıcılara sunulur.",
+    "text": "Aşağıdaki kavramlardan hangisi cümledeki boşluğa yerleştirilirse doğru bir tanım ifadesi elde edilir?<br/>__________ depolama, yazılım ve diğer kaynaklar hizmet sağlayan şirket tarafından genel son kullanıcılara sunulur.",
     "correctAnswer": "B",
     "options": {
       "A": "Bulut Bilişim Hizmet Modellerinde",
@@ -5947,12 +5947,12 @@
       "D": "Karma Bulut Yapılarında",
       "E": "NoSQL Yapılarında"
     },
-    "explanation": "Bulut Bilişim Erişim Modelleri\n Bulut bilişim sistemleri erişim modellerine göre dörde ayrılırlar. Bu sınıflandırma genel bulut, topluluk bulut, özel bulut ve karma bulut şeklindedir.\n Genel bulut yapılarında depolama, yazılım ve diğer kaynaklar hizmet sağlayan şirket tarafından genel son kullanıcılara sunulur. Sunulan hizmet kullandığın kadar öde modeli ile ya da ücretsiz olarak kullanıcılara servis edilir. Sunuculara erişim internet üzerinden sağlanır. Amazon EC2, Google AppEngine, Dropbox vb. ürünleri genel bulut yapısı içerisinde sayabiliriz.\n Topluluk bulut hizmeti ortak ihtiyaçları olan ve bu ihtiyaçları beraber karşılama amaçları olan çeşitli organizasyonların altyapılarını birbirleri ile paylaşarak kaynakları daha etkin bir biçimde kullandıkları bulut yapılardır.\n Özel bulut yapıları sadece tek bir organizasyon için işletilen yapılardır. Bu tür bulutların sadece şirket içi kullanımına izin verilmektedir, dış dünya/son kullanıcı ile herhangi bir bağlantıları yoktur. Bu tür bulut yapıları içerisinde şirkete ait her türlü hassas veri, yazılım kaynağı sadece şirket içerisinde güvenle paylaşılabilir.\n Karma bulut yapıları en az iki veya daha fazla özel, topluluk veya genel bulut yapılarının birleşerek oluşturduğu yapılardır. Karma bulut yapıları içerisinde hem kurumlara ait hassas bilgiler güvenli bir şekilde paylaşılabilirken hem de bazı hizmetler dışarıdaki son kullanıcı ile de paylaşılabilir."
+    "explanation": "Bulut Bilişim Erişim Modelleri<br/>Bulut bilişim sistemleri erişim modellerine göre dörde ayrılırlar. Bu sınıflandırma genel bulut, topluluk bulut, özel bulut ve karma bulut şeklindedir.<br/>Genel bulut yapılarında depolama, yazılım ve diğer kaynaklar hizmet sağlayan şirket tarafından genel son kullanıcılara sunulur. Sunulan hizmet kullandığın kadar öde modeli ile ya da ücretsiz olarak kullanıcılara servis edilir. Sunuculara erişim internet üzerinden sağlanır. Amazon EC2, Google AppEngine, Dropbox vb. ürünleri genel bulut yapısı içerisinde sayabiliriz.<br/>Topluluk bulut hizmeti ortak ihtiyaçları olan ve bu ihtiyaçları beraber karşılama amaçları olan çeşitli organizasyonların altyapılarını birbirleri ile paylaşarak kaynakları daha etkin bir biçimde kullandıkları bulut yapılardır.<br/>Özel bulut yapıları sadece tek bir organizasyon için işletilen yapılardır. Bu tür bulutların sadece şirket içi kullanımına izin verilmektedir, dış dünya/son kullanıcı ile herhangi bir bağlantıları yoktur. Bu tür bulut yapıları içerisinde şirkete ait her türlü hassas veri, yazılım kaynağı sadece şirket içerisinde güvenle paylaşılabilir.<br/>Karma bulut yapıları en az iki veya daha fazla özel, topluluk veya genel bulut yapılarının birleşerek oluşturduğu yapılardır. Karma bulut yapıları içerisinde hem kurumlara ait hassas bilgiler güvenli bir şekilde paylaşılabilirken hem de bazı hizmetler dışarıdaki son kullanıcı ile de paylaşılabilir."
   },
   {
     "id": "3739447",
     "unitNumber": 8,
-    "text": "Aşağıdaki kavramlardan hangisi cümledeki boşluğa yerleştirilirse doğru bir tanım ifadesi elde edilir?\n _______________ , teknoloji işletmeleri veya geliştiriciler için dosya saklama alanı ya da hesap yapabilme gibi kaynakları hizmet olarak sunulduğu yapılardır.",
+    "text": "Aşağıdaki kavramlardan hangisi cümledeki boşluğa yerleştirilirse doğru bir tanım ifadesi elde edilir?<br/>_______________ , teknoloji işletmeleri veya geliştiriciler için dosya saklama alanı ya da hesap yapabilme gibi kaynakları hizmet olarak sunulduğu yapılardır.",
     "correctAnswer": "C",
     "options": {
       "A": "Hizmet olarak yazılım (SaaS)",
@@ -5966,7 +5966,7 @@
   {
     "id": "3739448",
     "unitNumber": 8,
-    "text": "Aşağıdaki kavramlardan hangisi cümledeki boşluğa yerleştirilirse doğru bir tanım ifadesi elde edilir?\n _______________ , teknoloji işletmeleri ve geliştiriciler için bulut bilişime hazır çözümler üretmesini sağlayan yapıların sunulduğu modeldir.",
+    "text": "Aşağıdaki kavramlardan hangisi cümledeki boşluğa yerleştirilirse doğru bir tanım ifadesi elde edilir?<br/>_______________ , teknoloji işletmeleri ve geliştiriciler için bulut bilişime hazır çözümler üretmesini sağlayan yapıların sunulduğu modeldir.",
     "correctAnswer": "E",
     "options": {
       "A": "Hizmet olarak yazılım (SaaS)",
@@ -5980,7 +5980,7 @@
   {
     "id": "3739449",
     "unitNumber": 8,
-    "text": "__________ belirli bir amaç için geliştirilmiş yazılımları son kullanıcıya kiralama yöntemi ile sunmamızı sağlayan bulut yapılardır. Yazılım sağlama hizmeti ile kullanıcıların ihtiyaç duyduğu CRM, ERP, finans ve muhasebe, ofis uygulamaları, e-posta yazılımları gibi programları bulut üzerinde dağıtılır. Bu yöntem ile son kullanıcı yazılımın geliştirilmesi, çalıştırılması gibi maliyetler yazılımı kullanan müşteriler arasında paylaşılacağından bu maliyetler en aza inmiş olur.\n Yukarıda verilen metindeki boşluğa hangi kavram girerse doğru bir tanım elde edilir?",
+    "text": "__________ belirli bir amaç için geliştirilmiş yazılımları son kullanıcıya kiralama yöntemi ile sunmamızı sağlayan bulut yapılardır. Yazılım sağlama hizmeti ile kullanıcıların ihtiyaç duyduğu CRM, ERP, finans ve muhasebe, ofis uygulamaları, e-posta yazılımları gibi programları bulut üzerinde dağıtılır. Bu yöntem ile son kullanıcı yazılımın geliştirilmesi, çalıştırılması gibi maliyetler yazılımı kullanan müşteriler arasında paylaşılacağından bu maliyetler en aza inmiş olur.<br/>Yukarıda verilen metindeki boşluğa hangi kavram girerse doğru bir tanım elde edilir?",
     "correctAnswer": "A",
     "options": {
       "A": "Hizmet olarak yazılım (SaaS)",
@@ -6003,7 +6003,7 @@
       "D": "NoSQL veri tabanlarında tanımlı bir şemalar bulunmaktadır.",
       "E": "NoSQL veritabanı yapıları kolaylıkla dağıtık bir biçimde çalıştırılabilirler."
     },
-    "explanation": "NoSQL kavramının özellikleri\n <ul> <li>Şema Bağımsız: Bildiğiniz üzere ilişkisel veritabanı yapılarında, veritabanı şeması veritabanının saklayabileceği tüm veri ve veri yapılarının tanımını göstermektedir. NoSQL veri tabanlarında tanımlı bir şema bulunmamaktadır.</li> <li>İlişkisel veritabanında tablolar arasındaki bağlantı, tabloların birbirleri ile ilişkili olan alanları üzerinden kurulur. NoSQL veri tabanlarındaki kayıtlar bütün ilişkiyi içeren bir satır olarak tutulur.</li> <li>Büyük boyutlardaki ilişkisel veritabanı yapılarını çalışmak için yüksek maliyetli sunuculara ihtiyaç duyarken, NoSQL veritabanı standart sunucu ile çalışabilir. Daha yüksel hacimli verinin tutulabilmesi için standart sunuculardan daha fazla kullanmak gereklidir.</li> <li>NoSQL veritabanı yapıları kolaylıkla dağıtık bir biçimde çalıştırılabilirler.</li> <li>NoSQL veritabanı yapıları ilişkisel veritabanlarına göre daha büyük veriyi içerisinde saklayabilir.</li> </ul>"
+    "explanation": "NoSQL kavramının özellikleri<br/><ul> <li>Şema Bağımsız: Bildiğiniz üzere ilişkisel veritabanı yapılarında, veritabanı şeması veritabanının saklayabileceği tüm veri ve veri yapılarının tanımını göstermektedir. NoSQL veri tabanlarında tanımlı bir şema bulunmamaktadır.</li> <li>İlişkisel veritabanında tablolar arasındaki bağlantı, tabloların birbirleri ile ilişkili olan alanları üzerinden kurulur. NoSQL veri tabanlarındaki kayıtlar bütün ilişkiyi içeren bir satır olarak tutulur.</li> <li>Büyük boyutlardaki ilişkisel veritabanı yapılarını çalışmak için yüksek maliyetli sunuculara ihtiyaç duyarken, NoSQL veritabanı standart sunucu ile çalışabilir. Daha yüksel hacimli verinin tutulabilmesi için standart sunuculardan daha fazla kullanmak gereklidir.</li> <li>NoSQL veritabanı yapıları kolaylıkla dağıtık bir biçimde çalıştırılabilirler.</li> <li>NoSQL veritabanı yapıları ilişkisel veritabanlarına göre daha büyük veriyi içerisinde saklayabilir.</li> </ul>"
   },
   {
     "id": "3739451",
@@ -6017,7 +6017,7 @@
       "D": "Küme",
       "E": "Anahtar"
     },
-    "explanation": "Sütun Tabanlı NoSQL Yapıları: Bu tür veritabanı yapıları çok miktarda veri tutmak için kullanılır. Anahtar-Değer veritabanlarında olduğu gibi burada da anahtar mevcuttur ancak anahtar tek bir kayıt yerine sütunu gösterir. Bir başka değişle sütun tabanlı yapılarda veriler satır olarak değil sütunlarda gruplanmış olan hücreler şeklinde kaydedilirler. Yapı içerisindeki sütun aileleri sanal olarak oluşturulmuş sonsuz sayıda kolonu içlerinde barındırabilirler. Okuma ve yazma işlemleri tanımlanan sütunlar üzerinden yapılır. Bu tür yapılardaki veri modeli aşağıdaki gibi tanımlanabilir.\n <ul> <li>Sütun Ailesi: Sütun ve süper sütunları içerisinde kolaylıkla gruplayabilen yapıdır.</li> <li>Anahtar: Kayda ait değişmeyen adıdır.</li> <li>Anahtar Alanı: Bu yapının en üst katmanını belirler, örneğin uygulamanın adı yani veritabanının adı olabilir.</li> <li>Sütun: Verilerin isim ve değer ile tutulduğu sıralı listelerdir.</li> <li>Küme: Birden fazla fiziksel sunucuyu ya da birden fazla anahtar alanını içerisinde barındıran yapılardır.</li> </ul>"
+    "explanation": "Sütun Tabanlı NoSQL Yapıları: Bu tür veritabanı yapıları çok miktarda veri tutmak için kullanılır. Anahtar-Değer veritabanlarında olduğu gibi burada da anahtar mevcuttur ancak anahtar tek bir kayıt yerine sütunu gösterir. Bir başka değişle sütun tabanlı yapılarda veriler satır olarak değil sütunlarda gruplanmış olan hücreler şeklinde kaydedilirler. Yapı içerisindeki sütun aileleri sanal olarak oluşturulmuş sonsuz sayıda kolonu içlerinde barındırabilirler. Okuma ve yazma işlemleri tanımlanan sütunlar üzerinden yapılır. Bu tür yapılardaki veri modeli aşağıdaki gibi tanımlanabilir.<br/><ul> <li>Sütun Ailesi: Sütun ve süper sütunları içerisinde kolaylıkla gruplayabilen yapıdır.</li> <li>Anahtar: Kayda ait değişmeyen adıdır.</li> <li>Anahtar Alanı: Bu yapının en üst katmanını belirler, örneğin uygulamanın adı yani veritabanının adı olabilir.</li> <li>Sütun: Verilerin isim ve değer ile tutulduğu sıralı listelerdir.</li> <li>Küme: Birden fazla fiziksel sunucuyu ya da birden fazla anahtar alanını içerisinde barındıran yapılardır.</li> </ul>"
   },
   {
     "id": "3739452",
@@ -6031,7 +6031,7 @@
       "D": "Belgeler, geleneksel veritabalarındaki kayıt (satır) kavramıyla aynıdır.",
       "E": "İçerik yönetim sistemlerinde kullanmak için oldukça kullanışlıdır."
     },
-    "explanation": "<strong>Belge Tabanlı NoSQL Yapıları </strong>\n Temel olarak ilgilendiği alan belgelerin yönetilmesidir. Çalışma prensibi olarak sütun temelli yapılar gibi çalışır ancak iç içe geçmiş belgeler arasında ilişki kurmak bu yapılar ile daha kolaydır. Bu tür veritabanlarına en iyi verilecek örneklerden biri MongoDB isimli üründür. MongoDB aşağıdaki kavramları kullanarak verilerini saklar.\n <ul> <li>Veritabanı: MongoDB veritabanı, koleksiyonların fiziksel olarak barındırıldığı yerdir.</li> <li>Koleksiyon: MongoDB belgelerinin kayıtlı olduğu gruplardır, Geleneksel ilişkisel veritabanındaki karşılığı tablodur.</li> <li>Belge: Belgeler, geleneksel veritabalarındaki kayıt (satır) kavramıyla aynıdır. Her belge yani satır, koleksiyonlar içerisinde XML, JSON, BINARY JSON (BSON) gibi formatında saklanır.</li> </ul> Bu tür veritabanları içerik yönetim sistemleri, blog platformları, analiz platformları, e-ticaret platformları gibi yapılarda kullanmak için oldukça kullanışlıdır."
+    "explanation": "<strong>Belge Tabanlı NoSQL Yapıları </strong><br/>Temel olarak ilgilendiği alan belgelerin yönetilmesidir. Çalışma prensibi olarak sütun temelli yapılar gibi çalışır ancak iç içe geçmiş belgeler arasında ilişki kurmak bu yapılar ile daha kolaydır. Bu tür veritabanlarına en iyi verilecek örneklerden biri MongoDB isimli üründür. MongoDB aşağıdaki kavramları kullanarak verilerini saklar.<br/><ul> <li>Veritabanı: MongoDB veritabanı, koleksiyonların fiziksel olarak barındırıldığı yerdir.</li> <li>Koleksiyon: MongoDB belgelerinin kayıtlı olduğu gruplardır, Geleneksel ilişkisel veritabanındaki karşılığı tablodur.</li> <li>Belge: Belgeler, geleneksel veritabalarındaki kayıt (satır) kavramıyla aynıdır. Her belge yani satır, koleksiyonlar içerisinde XML, JSON, BINARY JSON (BSON) gibi formatında saklanır.</li> </ul> Bu tür veritabanları içerik yönetim sistemleri, blog platformları, analiz platformları, e-ticaret platformları gibi yapılarda kullanmak için oldukça kullanışlıdır."
   },
   {
     "id": "3739453",
@@ -6045,12 +6045,12 @@
       "D": "Depo",
       "E": "Kayıtlar"
     },
-    "explanation": "<strong>Google BigQuery Servisi: </strong>Google BigQuery yapısı üzerinde projeler, veri bloğu, tablolar ve işler olmak üzere dört temel bileşen vardır.\n <strong>Projeler: </strong>Projeler, Google BigQuery yapısı üzerindeki en üst düzeydeki bileşendir. Diğer iki bileşen proje içerisinde yer almaktadır. Projelere erişim hakları, erişim düzeyleri tanımlanabilir.\n <strong>Veri Bloğu: </strong>Veri blokları içerisinde bir ya da daha fazla tabloyu barındıran yapılardır. İşlem yapabilmek için proje içerisinde en az bir tane veri bloğu oluşturulmuş olması gereklidir.\n <strong>Tablolar: </strong>Tablolar kullanıcıya ait verilerin tutulduğu yapılardır. Her tablonun kendine ait bir şeması olabilir. Google BigQuery hem görünüm hem de bulut depoda tutulan dış tabloları desteklemektedir.\n <strong>İşler: </strong>İşler sizin tanımladığınız ve sizin adınıza veri yükleme, veriyi dışarı aktarma, veri üzerinde analiz yapma gibi işlemleri asenkron olarak çalıştıran yapılardır."
+    "explanation": "<strong>Google BigQuery Servisi: </strong>Google BigQuery yapısı üzerinde projeler, veri bloğu, tablolar ve işler olmak üzere dört temel bileşen vardır.<br/><strong>Projeler: </strong>Projeler, Google BigQuery yapısı üzerindeki en üst düzeydeki bileşendir. Diğer iki bileşen proje içerisinde yer almaktadır. Projelere erişim hakları, erişim düzeyleri tanımlanabilir.<br/><strong>Veri Bloğu: </strong>Veri blokları içerisinde bir ya da daha fazla tabloyu barındıran yapılardır. İşlem yapabilmek için proje içerisinde en az bir tane veri bloğu oluşturulmuş olması gereklidir.<br/><strong>Tablolar: </strong>Tablolar kullanıcıya ait verilerin tutulduğu yapılardır. Her tablonun kendine ait bir şeması olabilir. Google BigQuery hem görünüm hem de bulut depoda tutulan dış tabloları desteklemektedir.<br/><strong>İşler: </strong>İşler sizin tanımladığınız ve sizin adınıza veri yükleme, veriyi dışarı aktarma, veri üzerinde analiz yapma gibi işlemleri asenkron olarak çalıştıran yapılardır."
   },
   {
     "id": "3739454",
     "unitNumber": 8,
-    "text": "Cümlede verilen boşluğa hangi kavram girerse doğru bir Google BigQuery Servisi temel bileşen tanımı elde edilmiş olur?\n _________ içerisinde bir ya da daha fazla tabloyu barındıran yapılardır. İşlem yapabilmek için proje içerisinde en az bir tane veri bloğu oluşturulmuş olması gereklidir.",
+    "text": "Cümlede verilen boşluğa hangi kavram girerse doğru bir Google BigQuery Servisi temel bileşen tanımı elde edilmiş olur?<br/>_________ içerisinde bir ya da daha fazla tabloyu barındıran yapılardır. İşlem yapabilmek için proje içerisinde en az bir tane veri bloğu oluşturulmuş olması gereklidir.",
     "correctAnswer": "E",
     "options": {
       "A": "Kayıtlar",
@@ -6059,7 +6059,7 @@
       "D": "Tablolar",
       "E": "Veri blokları"
     },
-    "explanation": "<strong>Google BigQuery Servisi: </strong>Google BigQuery yapısı üzerinde projeler, veri bloğu, tablolar ve işler olmak üzere dört temel bileşen vardır.\n <strong>Projeler: </strong>Projeler, Google BigQuery yapısı üzerindeki en üst düzeydeki bileşendir. Diğer iki bileşen proje içerisinde yer almaktadır. Projelere erişim hakları, erişim düzeyleri tanımlanabilir.\n <strong>Veri Bloğu: </strong>Veri blokları içerisinde bir ya da daha fazla tabloyu barındıran yapılardır. İşlem yapabilmek için proje içerisinde en az bir tane veri bloğu oluşturulmuş olması gereklidir.\n <strong>Tablolar: </strong>Tablolar kullanıcıya ait verilerin tutulduğu yapılardır. Her tablonun kendine ait bir şeması olabilir. Google BigQuery hem görünüm hem de bulut depoda tutulan dış tabloları desteklemektedir.\n <strong>İşler: </strong>İşler sizin tanımladığınız ve sizin adınıza veri yükleme, veriyi dışarı aktarma, veri üzerinde analiz yapma gibi işlemleri asenkron olarak çalıştıran yapılardır."
+    "explanation": "<strong>Google BigQuery Servisi: </strong>Google BigQuery yapısı üzerinde projeler, veri bloğu, tablolar ve işler olmak üzere dört temel bileşen vardır.<br/><strong>Projeler: </strong>Projeler, Google BigQuery yapısı üzerindeki en üst düzeydeki bileşendir. Diğer iki bileşen proje içerisinde yer almaktadır. Projelere erişim hakları, erişim düzeyleri tanımlanabilir.<br/><strong>Veri Bloğu: </strong>Veri blokları içerisinde bir ya da daha fazla tabloyu barındıran yapılardır. İşlem yapabilmek için proje içerisinde en az bir tane veri bloğu oluşturulmuş olması gereklidir.<br/><strong>Tablolar: </strong>Tablolar kullanıcıya ait verilerin tutulduğu yapılardır. Her tablonun kendine ait bir şeması olabilir. Google BigQuery hem görünüm hem de bulut depoda tutulan dış tabloları desteklemektedir.<br/><strong>İşler: </strong>İşler sizin tanımladığınız ve sizin adınıza veri yükleme, veriyi dışarı aktarma, veri üzerinde analiz yapma gibi işlemleri asenkron olarak çalıştıran yapılardır."
   },
   {
     "id": "3739455",
@@ -6213,7 +6213,7 @@
       "D": "karma bulut",
       "E": "sade bulut"
     },
-    "explanation": "Bulut Bilişim\n<br/>sade bulut"
+    "explanation": "Bulut Bilişim<br/>sade bulut"
   },
   {
     "id": "3739466",
@@ -6227,7 +6227,7 @@
       "D": "sade bulut",
       "E": "genel bulut"
     },
-    "explanation": "Bulut Bilişim\n<br/>genel bulut"
+    "explanation": "Bulut Bilişim<br/>genel bulut"
   },
   {
     "id": "3739467",
@@ -6241,12 +6241,12 @@
       "D": "Hizmet olarak üstyapı",
       "E": "Hizmet olarak platform"
     },
-    "explanation": "Bulut Bilişim\n<br/>Hizmet olarak platform"
+    "explanation": "Bulut Bilişim<br/>Hizmet olarak platform"
   },
   {
     "id": "3739468",
     "unitNumber": 8,
-    "text": "“İnternete yüklenen ve gün geçtikçe artan bu veriyi depolayabilmek, yüksek sayıdaki kullanıcıların anlık taleplerine cevap vermek amacı ile ortaya çıkmış yatay olarak ölçeklendirilebilen veritabanı sistemlerine verilen genel isimdir.”\n Yukarıdaki tanım aşağıdakilerden hangisine aittir?",
+    "text": "“İnternete yüklenen ve gün geçtikçe artan bu veriyi depolayabilmek, yüksek sayıdaki kullanıcıların anlık taleplerine cevap vermek amacı ile ortaya çıkmış yatay olarak ölçeklendirilebilen veritabanı sistemlerine verilen genel isimdir.”<br/>Yukarıdaki tanım aşağıdakilerden hangisine aittir?",
     "correctAnswer": "E",
     "options": {
       "A": "BlueLock",
@@ -6255,7 +6255,7 @@
       "D": "ACID",
       "E": "NOSQL"
     },
-    "explanation": "NOSQL YAPILARI\n<br/>NOSQL"
+    "explanation": "NOSQL YAPILARI<br/>NOSQL"
   },
   {
     "id": "3739469",
@@ -6269,7 +6269,7 @@
       "D": "Dayanıklılık",
       "E": "Sadelik"
     },
-    "explanation": "NOSQL YAPILARI\n<br/>Sadelik"
+    "explanation": "NOSQL YAPILARI<br/>Sadelik"
   },
   {
     "id": "3739470",
@@ -6283,7 +6283,7 @@
       "D": "Belge Tabanlı NoSQL Yapıları",
       "E": "Satır Tabanlı NoSQL Yapıları"
     },
-    "explanation": "NOSQL YAPILARI\n<br/>Satır Tabanlı NoSQL Yapıları"
+    "explanation": "NOSQL YAPILARI<br/>Satır Tabanlı NoSQL Yapıları"
   },
   {
     "id": "3739471",
@@ -6297,7 +6297,7 @@
       "D": "Hadoop",
       "E": "Dremel"
     },
-    "explanation": "GOOGLE BigQuery\n<br/>Dremel"
+    "explanation": "GOOGLE BigQuery<br/>Dremel"
   },
   {
     "id": "3739472",
@@ -6311,7 +6311,7 @@
       "D": "İşler",
       "E": "Belgeler"
     },
-    "explanation": "Google BigQuery\n<br/>Belgeler"
+    "explanation": "Google BigQuery<br/>Belgeler"
   },
   {
     "id": "3739473",
@@ -6325,7 +6325,7 @@
       "D": "Belgeler",
       "E": "Veri bloğu"
     },
-    "explanation": "Google BigQuery\n<br/>Veri bloğu"
+    "explanation": "Google BigQuery<br/>Veri bloğu"
   },
   {
     "id": "3739474",
@@ -6339,7 +6339,7 @@
       "D": "Veri bloğu",
       "E": "İşler"
     },
-    "explanation": "Google BigQuery\n<br/>İşler"
+    "explanation": "Google BigQuery<br/>İşler"
   },
   {
     "id": "3739475",
@@ -6353,7 +6353,7 @@
       "D": "Süper Bilgisayar",
       "E": "Dizüstü Bilgisayar"
     },
-    "explanation": "Anaçatı bilgisayar, (mainframe) yüzlerce kullanıcıya aynı zamanda farklı hizmetler verebilen içerisinde çok sayıda işlemci ve sabit disk barındıran güçlü ve pahalı bilgisayarlardır.\n Doğru cevap B'dir."
+    "explanation": "Anaçatı bilgisayar, (mainframe) yüzlerce kullanıcıya aynı zamanda farklı hizmetler verebilen içerisinde çok sayıda işlemci ve sabit disk barındıran güçlü ve pahalı bilgisayarlardır.<br/>Doğru cevap B'dir."
   },
   {
     "id": "3739476",
@@ -6367,12 +6367,12 @@
       "D": "4",
       "E": "5"
     },
-    "explanation": "Bulut bilişim sistemleri erişim modellerine göre dörde ayrılırlar.\n Doğru cevap D'dir."
+    "explanation": "Bulut bilişim sistemleri erişim modellerine göre dörde ayrılırlar.<br/>Doğru cevap D'dir."
   },
   {
     "id": "3739477",
     "unitNumber": 8,
-    "text": "I. Topluluk bulut\n II. Özel bulut\n III. Karma bulut\n Yukarıdakilerden hangileri erişim modellerine göre bulut bilişim sistemleri içerisindedir?",
+    "text": "I. Topluluk bulut<br/>II. Özel bulut<br/>III. Karma bulut<br/>Yukarıdakilerden hangileri erişim modellerine göre bulut bilişim sistemleri içerisindedir?",
     "correctAnswer": "E",
     "options": {
       "A": "Yalnız I.",
@@ -6381,7 +6381,7 @@
       "D": "II. ve III.",
       "E": "I. II. ve III."
     },
-    "explanation": "Bulut bilişim sistemleri erişim modellerine göre bulut, topluluk bulut, özel bulut ve karma bulut şeklindedir.\n Doğru cevap E'dir."
+    "explanation": "Bulut bilişim sistemleri erişim modellerine göre bulut, topluluk bulut, özel bulut ve karma bulut şeklindedir.<br/>Doğru cevap E'dir."
   },
   {
     "id": "3739478",
@@ -6395,7 +6395,7 @@
       "D": "NoSQL",
       "E": "ACID"
     },
-    "explanation": "Hizmet olarak altyapı (IaaS), teknoloji işletmeleri veya geliştiriciler için dosya saklama alanı ya da hesap yapabilme gibi kaynakların hizmet olarak sunulduğu yapılardır.\n<br/>Doğru cevap A'dır."
+    "explanation": "Hizmet olarak altyapı (IaaS), teknoloji işletmeleri veya geliştiriciler için dosya saklama alanı ya da hesap yapabilme gibi kaynakların hizmet olarak sunulduğu yapılardır.<br/>Doğru cevap A'dır."
   },
   {
     "id": "3739479",
@@ -6409,7 +6409,7 @@
       "D": "ACID",
       "E": "CAP"
     },
-    "explanation": "Hizmet olarak yazılım (SaaS), belirli bir amaç için geliştirilmiş yazılımları son kullanıcıya kiralama yöntemi ile sunmamızı sağlayan bulut yapılardır.\n<br/>Doğru cevap C'dir."
+    "explanation": "Hizmet olarak yazılım (SaaS), belirli bir amaç için geliştirilmiş yazılımları son kullanıcıya kiralama yöntemi ile sunmamızı sağlayan bulut yapılardır.<br/>Doğru cevap C'dir."
   },
   {
     "id": "3739480",
@@ -6423,7 +6423,7 @@
       "D": "NoSQL",
       "E": "CAP"
     },
-    "explanation": "Hizmet olarak platform (PaaS), teknoloji işletmeleri ve geliştiriciler için bulut bilişime hazır çözümler üretmesini sağlayan yapıların sunulduğu modeldir.\n<br/>Doğru cevap B'dir."
+    "explanation": "Hizmet olarak platform (PaaS), teknoloji işletmeleri ve geliştiriciler için bulut bilişime hazır çözümler üretmesini sağlayan yapıların sunulduğu modeldir.<br/>Doğru cevap B'dir."
   },
   {
     "id": "3739481",
@@ -6437,12 +6437,12 @@
       "D": "1999",
       "E": "2000"
     },
-    "explanation": "NoSQL kavramı ilk defa 1998 yılında ortaya atılmıştır ve zaman içerisinde gelişerek günümüze kadar gelmiştir\n Doğru cevap C'dir."
+    "explanation": "NoSQL kavramı ilk defa 1998 yılında ortaya atılmıştır ve zaman içerisinde gelişerek günümüze kadar gelmiştir<br/>Doğru cevap C'dir."
   },
   {
     "id": "3739482",
     "unitNumber": 8,
-    "text": "I. Bölünmezlik\n II. Tutarlılık\n III. İzolasyon\n İlişkisel veritabanların kararlı çalışması ve veri bütünlüğünün korunması için ACID yukarıdaki kurallardan hangilerini içermektedir?",
+    "text": "I. Bölünmezlik<br/>II. Tutarlılık<br/>III. İzolasyon<br/>İlişkisel veritabanların kararlı çalışması ve veri bütünlüğünün korunması için ACID yukarıdaki kurallardan hangilerini içermektedir?",
     "correctAnswer": "E",
     "options": {
       "A": "Yalnız I.",
@@ -6451,7 +6451,7 @@
       "D": "II. ve III.",
       "E": "I. II. ve III."
     },
-    "explanation": "İlişkisel veritabanların kararlı çalışması ve veri bütünlüğünün korunması için ACID bölünmezlik, tutarlılık, izolasyon, dayanıklılık kurallarını içermektedir.\n Doğru cevap E'dir."
+    "explanation": "İlişkisel veritabanların kararlı çalışması ve veri bütünlüğünün korunması için ACID bölünmezlik, tutarlılık, izolasyon, dayanıklılık kurallarını içermektedir.<br/>Doğru cevap E'dir."
   },
   {
     "id": "3739483",
@@ -6465,7 +6465,7 @@
       "D": "ACID",
       "E": "CAP"
     },
-    "explanation": "Eric Brewer tarafından 1998 yılında ortaya konan CAP teoremi ya da bir diğer adı ile Brewer teoremi dağıtık sistemlerin aynı anda tutarlılık, ulaşılabilirlik ve bölünebilme toleransı koşullarına sahip olamayacağını söyler.\n<br/>Doğru cevap E'dir."
+    "explanation": "Eric Brewer tarafından 1998 yılında ortaya konan CAP teoremi ya da bir diğer adı ile Brewer teoremi dağıtık sistemlerin aynı anda tutarlılık, ulaşılabilirlik ve bölünebilme toleransı koşullarına sahip olamayacağını söyler.<br/>Doğru cevap E'dir."
   },
   {
     "id": "3739484",
@@ -6479,12 +6479,12 @@
       "D": "II. ve III.",
       "E": "I. II. ve III."
     },
-    "explanation": "Google BigQuery yapısı üzerinde projeler, veri bloğu, tablolar ve işler olmak üzere dört temel bileşen vardır.\n<br/>Doğru cevap E'dir."
+    "explanation": "Google BigQuery yapısı üzerinde projeler, veri bloğu, tablolar ve işler olmak üzere dört temel bileşen vardır.<br/>Doğru cevap E'dir."
   },
   {
     "id": "3739485",
     "unitNumber": 8,
-    "text": "..................., tek bir yerel sunucunun ya da kişisel bir cihazın kaynağına bağlı olarak yapılan hesaplama yerine birden fazla cihazın kaynaklarını beraber kullanarak hesaplama yapma işi olarak tanımlanabilir.\n Yukarıda boş bırakılan yere aşağıdakilerden hangisi getirilmelidir?",
+    "text": "..................., tek bir yerel sunucunun ya da kişisel bir cihazın kaynağına bağlı olarak yapılan hesaplama yerine birden fazla cihazın kaynaklarını beraber kullanarak hesaplama yapma işi olarak tanımlanabilir.<br/>Yukarıda boş bırakılan yere aşağıdakilerden hangisi getirilmelidir?",
     "correctAnswer": "B",
     "options": {
       "A": "Anaçatı bilgisayar",
@@ -6498,7 +6498,7 @@
   {
     "id": "3739486",
     "unitNumber": 8,
-    "text": "I. Bulut bilişim isminde geçen “bulut” kelimesi internet ortamını kastetmektedir.\n II. Bulut bilişim sayesinde internet üzerinden veritabanı, süper hesaplama, dosya paylaşımı vb. gibi hizmetler son kullanıcıya kolaylıkla sunulabilir.\n III. Bulut bilişim, gerek donanım kaynaklarını, gerek yazılım servislerini son kullanıcıya hizmet olarak sunabilen dinamik olarak ölçeklendirilebilen yapılardır.\n Bulut bilişime dair yukarıda verilenlerden hangisi/hangileri doğrudur?",
+    "text": "I. Bulut bilişim isminde geçen “bulut” kelimesi internet ortamını kastetmektedir.<br/>II. Bulut bilişim sayesinde internet üzerinden veritabanı, süper hesaplama, dosya paylaşımı vb. gibi hizmetler son kullanıcıya kolaylıkla sunulabilir.<br/>III. Bulut bilişim, gerek donanım kaynaklarını, gerek yazılım servislerini son kullanıcıya hizmet olarak sunabilen dinamik olarak ölçeklendirilebilen yapılardır.<br/>Bulut bilişime dair yukarıda verilenlerden hangisi/hangileri doğrudur?",
     "correctAnswer": "B",
     "options": {
       "A": "I ve III",
@@ -6526,7 +6526,7 @@
   {
     "id": "3739488",
     "unitNumber": 8,
-    "text": "Amazon EC2, Google AppEngine, Dropbox vb. ürünleri ................ bulut yapısı içerisinde sayabiliriz.\n Yukarıda boş bırakılan yere aşağıdakilerden hangisi getirilmelidir?",
+    "text": "Amazon EC2, Google AppEngine, Dropbox vb. ürünleri ................ bulut yapısı içerisinde sayabiliriz.<br/>Yukarıda boş bırakılan yere aşağıdakilerden hangisi getirilmelidir?",
     "correctAnswer": "A",
     "options": {
       "A": "Genel",
@@ -6652,7 +6652,7 @@
   {
     "id": "3739497",
     "unitNumber": 8,
-    "text": "<table> <tbody> <tr> <td> 1.Hizmet olarak altyapı (IaaS) \n </td> <td> A. Amazon Web Services\n </td> </tr> <tr> <td> 2.Hizmet olarak platform (PaaS) \n </td> <td> B. Salesforce\n </td> </tr> <tr> <td> 3.Hizmet olarak yazılım (SaaS) \n </td> <td> C. Microsoft Office Online\n </td> </tr> <tr> <td> D. Google Apps\n </td> </tr> <tr> <td> E. Microsoft Azure\n </td> </tr> </tbody> </table> Yukarıda verilen bulut bilişim hizmet türü ve örnekleri aşağıdaki seçeneklerden hangisinde doğru eşleştirilmiştir?",
+    "text": "<table> <tbody> <tr> <td> 1.Hizmet olarak altyapı (IaaS) <br/></td> <td> A. Amazon Web Services<br/></td> </tr> <tr> <td> 2.Hizmet olarak platform (PaaS) <br/></td> <td> B. Salesforce<br/></td> </tr> <tr> <td> 3.Hizmet olarak yazılım (SaaS) <br/></td> <td> C. Microsoft Office Online<br/></td> </tr> <tr> <td> D. Google Apps<br/></td> </tr> <tr> <td> E. Microsoft Azure<br/></td> </tr> </tbody> </table> Yukarıda verilen bulut bilişim hizmet türü ve örnekleri aşağıdaki seçeneklerden hangisinde doğru eşleştirilmiştir?",
     "correctAnswer": "C",
     "options": {
       "A": "1-D, 2-C, 3-A",

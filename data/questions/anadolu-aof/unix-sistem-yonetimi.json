@@ -39,7 +39,7 @@
       "D": "SUSE",
       "E": "RHEL"
     },
-    "explanation": "Ticari bir dağıtım olarak tasarlanan Red Hat Linux, Debian’dan kısa bir süre sonra ortaya çıkmıştır. Ticari bir dağıtım olduğundan, RHEL’i kullanmak için bir lisans ücreti (destek ve güncellemeler için) ödenmesi gerekmektedir. Fakat Fedora ve CENTOS dahil olmak üzere birkaç ücretsiz Red Hat tabanlı dağıtımı mevcuttur.\n<br/>Slackware bugün hâlen daha desteklenen en eski Linux dağıtımlarından biridir. Slackware, bu dağıtım ailesinin orijinal “kurucu babası” olmakla birlikte SUSE şu anda daha bilinen bir temel versiyondur. SUSE ticari bir dağıtım olarak tasarlandığından RHEL’e benzemektedir. OpenSUSE bu kategorinin ücretsiz bir varyasyondur.<br/>Linux meraklılarının favorisi olarak bilinen Debian, ilk Linux dağıtımlarından biridir. Debian GNU/Linux dağıtımı, yazılımları paketleme ve yönetme konusunda oldukça başarılı bir ilk Linux dağıtımıydı. Debian, sistemlerindeki tüm yazılım paketlerini yönetmek için *.deb paketleme biçimini ve araçlarını kullanır. Debian ayrıca istikrar konusunda da oldukça popülerdir. Birçok Linux dağıtımının temelinde Debian bulunmaktadır. DistroWatch’a (https://distrowatch.com) göre 130’dan fazla aktif Linux dağıtımı Debian tabanlıdır. Popüler Debian tabanlı dağıtımlar arasında Linux Mint, temel elementary OS, Zorin OS, LXLE, Kali Linux ve Pardus bulunmakla birlikte en çok bilinen Debian dağıtımı Ubuntu’dur."
+    "explanation": "Ticari bir dağıtım olarak tasarlanan Red Hat Linux, Debian’dan kısa bir süre sonra ortaya çıkmıştır. Ticari bir dağıtım olduğundan, RHEL’i kullanmak için bir lisans ücreti (destek ve güncellemeler için) ödenmesi gerekmektedir. Fakat Fedora ve CENTOS dahil olmak üzere birkaç ücretsiz Red Hat tabanlı dağıtımı mevcuttur.<br/>Slackware bugün hâlen daha desteklenen en eski Linux dağıtımlarından biridir. Slackware, bu dağıtım ailesinin orijinal “kurucu babası” olmakla birlikte SUSE şu anda daha bilinen bir temel versiyondur. SUSE ticari bir dağıtım olarak tasarlandığından RHEL’e benzemektedir. OpenSUSE bu kategorinin ücretsiz bir varyasyondur.<br/>Linux meraklılarının favorisi olarak bilinen Debian, ilk Linux dağıtımlarından biridir. Debian GNU/Linux dağıtımı, yazılımları paketleme ve yönetme konusunda oldukça başarılı bir ilk Linux dağıtımıydı. Debian, sistemlerindeki tüm yazılım paketlerini yönetmek için *.deb paketleme biçimini ve araçlarını kullanır. Debian ayrıca istikrar konusunda da oldukça popülerdir. Birçok Linux dağıtımının temelinde Debian bulunmaktadır. DistroWatch’a (https://distrowatch.com) göre 130’dan fazla aktif Linux dağıtımı Debian tabanlıdır. Popüler Debian tabanlı dağıtımlar arasında Linux Mint, temel elementary OS, Zorin OS, LXLE, Kali Linux ve Pardus bulunmakla birlikte en çok bilinen Debian dağıtımı Ubuntu’dur."
   },
   {
     "id": "3852771",
@@ -81,7 +81,7 @@
       "D": "rpm ve dpkgi",
       "E": "apt-get ve zypper"
     },
-    "explanation": "apt-get ve dpkg: Bu iki komut ise Debian, Ubuntu, Mint, ve diğer Debian tabanlı dağıtımlardaki yazılım paketlerini yönetmek için kullanılır.\n<br/>zypper ve rpm: Bu iki komut SUSE ve SUSE tabanlı dağıtımlardaki yazılım paketlerini yönetmek için kullanılır. ,\n<br/>rpm ve dpkgi komutları çok benzer işlevleri yerine getirirler. Lokal sisteme (sunucuya) indirilen paketleri kurmak için kullanılırlar. Paket yükleme işlevi normalde yum, apt-get ve zypper komutları ile de gerçekleştirilmektedir. Aralarındaki fark ise rpm ve dpkgi komutları ile bir yazılım paketi kurulurken kurulacak yazılımın paket bağımlılıkları denetlenmez ve eksik ya da uyumsuz bir paket bağımlılığı varsa kurulum hata verir ve gerçekleşmez. yum, apt-get ve zypper komutları ile yazılım paketi yüklenirken gerekli yazılım paketleri bağımlılıkları da yüklenir ve bu sayede kurulumlar büyük oranda hata gerçekleşmeden sorunsuz bir şekilde tamamlanır.<br/>Ubuntu Yazılım Merkezi gibi bazı paket yönetim araçlarının kullanımı kolayken Portage gibi paket yöneticilerinin kullanımı biraz zor olabilir. Farklı paket yöneticilerini, artılarını ve eksilerini aramanız ve buna göre seçim yapmanız gerekecektir. yum ve rpm: Red Hat Enterprise Linux, CentOS, Fedora, ve diğer RedHat tabanlı dağıtımlardaki yazılım paketlerini yönetmek için kullanılırlar."
+    "explanation": "apt-get ve dpkg: Bu iki komut ise Debian, Ubuntu, Mint, ve diğer Debian tabanlı dağıtımlardaki yazılım paketlerini yönetmek için kullanılır.<br/>zypper ve rpm: Bu iki komut SUSE ve SUSE tabanlı dağıtımlardaki yazılım paketlerini yönetmek için kullanılır. ,<br/>rpm ve dpkgi komutları çok benzer işlevleri yerine getirirler. Lokal sisteme (sunucuya) indirilen paketleri kurmak için kullanılırlar. Paket yükleme işlevi normalde yum, apt-get ve zypper komutları ile de gerçekleştirilmektedir. Aralarındaki fark ise rpm ve dpkgi komutları ile bir yazılım paketi kurulurken kurulacak yazılımın paket bağımlılıkları denetlenmez ve eksik ya da uyumsuz bir paket bağımlılığı varsa kurulum hata verir ve gerçekleşmez. yum, apt-get ve zypper komutları ile yazılım paketi yüklenirken gerekli yazılım paketleri bağımlılıkları da yüklenir ve bu sayede kurulumlar büyük oranda hata gerçekleşmeden sorunsuz bir şekilde tamamlanır.<br/>Ubuntu Yazılım Merkezi gibi bazı paket yönetim araçlarının kullanımı kolayken Portage gibi paket yöneticilerinin kullanımı biraz zor olabilir. Farklı paket yöneticilerini, artılarını ve eksilerini aramanız ve buna göre seçim yapmanız gerekecektir. yum ve rpm: Red Hat Enterprise Linux, CentOS, Fedora, ve diğer RedHat tabanlı dağıtımlardaki yazılım paketlerini yönetmek için kullanılırlar."
   },
   {
     "id": "3852774",
@@ -109,7 +109,7 @@
       "D": "OpenSUSE",
       "E": "Kali Linux"
     },
-    "explanation": "Genellikle kurumlar ihtiyaçlarına en uygun Linux dağıtımını seçtiğinden emin olmak için uzun süreli araştırma yaparlar. Her Linux dağıtımının farklı olması ve “tüm senaryolara uyan tek bir dağıtım” olmadığı gerçeği bu araştırma sürecinin zorlaşması ve uzamasına neden olabilir. Aşağıda Linux dağıtımlarının seçiminde dikkat edilecek kriterlerden bazıları verilmektedir (Rothwell, 2017):\n<br/>• Maliyet: Bazı dağıtımlar tamamen ücretsiz olsa da bazılarında destek ve güncelleme işlemleri ücretlidir.\n<br/>• Özellikler: Bazı dağıtımlar dağıtımın amacı gereği bazı özellikleri ön plana çıkarırken diğerlerini sınırlayabilmektedir. Örneğin, güvenliğin çok sıkı tutulduğu bir dağıtımda yalnızca katı güvenlik kriterlerini karşılayan yazılımlar sunulmaktadır.\n<br/>• İşlev: Bazı dağıtımlar bazı özel işlevleri karşılamak için tasarlanmıştır. Örneğin, dağıtım veri tabanı uygulamalarını barındırmak için tasarlanmış olabilir.\n<br/>• Destek: Dağıtımı çıkaran kuruluş desteği sağlayabilir ya da bu destek tamamen topluluk<br/>Masaüstü tercihlerinizi göz önünde bulundurmak da doğru dağıtım seçiminde önemlidir. Bazı kullanıcılar macOS’a eğilimlidir, diğerleri ise Windows masaüstü sürümünü sever. Yani doğru Linux dağıtımını seçerken masaüstü tercihlerinizi de aklınızda tutmanız gerekecek. Örneğin, macOS masaüstü hissini ve kullanımını tercih ediyorsanız GNOME’u, masaüstünün Windows sürümünü tercih ediyorsanız KDE sizin için uygun olacaktır."
+    "explanation": "Genellikle kurumlar ihtiyaçlarına en uygun Linux dağıtımını seçtiğinden emin olmak için uzun süreli araştırma yaparlar. Her Linux dağıtımının farklı olması ve “tüm senaryolara uyan tek bir dağıtım” olmadığı gerçeği bu araştırma sürecinin zorlaşması ve uzamasına neden olabilir. Aşağıda Linux dağıtımlarının seçiminde dikkat edilecek kriterlerden bazıları verilmektedir (Rothwell, 2017):<br/>• Maliyet: Bazı dağıtımlar tamamen ücretsiz olsa da bazılarında destek ve güncelleme işlemleri ücretlidir.<br/>• Özellikler: Bazı dağıtımlar dağıtımın amacı gereği bazı özellikleri ön plana çıkarırken diğerlerini sınırlayabilmektedir. Örneğin, güvenliğin çok sıkı tutulduğu bir dağıtımda yalnızca katı güvenlik kriterlerini karşılayan yazılımlar sunulmaktadır.<br/>• İşlev: Bazı dağıtımlar bazı özel işlevleri karşılamak için tasarlanmıştır. Örneğin, dağıtım veri tabanı uygulamalarını barındırmak için tasarlanmış olabilir.<br/>• Destek: Dağıtımı çıkaran kuruluş desteği sağlayabilir ya da bu destek tamamen topluluk<br/>Masaüstü tercihlerinizi göz önünde bulundurmak da doğru dağıtım seçiminde önemlidir. Bazı kullanıcılar macOS’a eğilimlidir, diğerleri ise Windows masaüstü sürümünü sever. Yani doğru Linux dağıtımını seçerken masaüstü tercihlerinizi de aklınızda tutmanız gerekecek. Örneğin, macOS masaüstü hissini ve kullanımını tercih ediyorsanız GNOME’u, masaüstünün Windows sürümünü tercih ediyorsanız KDE sizin için uygun olacaktır."
   },
   {
     "id": "3852776",
@@ -179,7 +179,7 @@
       "D": "SUSE",
       "E": "RHEL"
     },
-    "explanation": "Ticari bir dağıtım olarak tasarlanan Red Hat Linux, Debian’dan kısa bir süre sonra ortaya çıkmıştır. Ticari bir dağıtım olduğundan, RHEL’i kullanmak için bir lisans ücreti (destek ve güncellemeler için) ödenmesi gerekmektedir. Fakat Fedora ve CENTOS dahil olmak üzere birkaç ücretsiz Red Hat tabanlı dağıtımı mevcuttur.\n<br/>Slackware bugün hâlen daha desteklenen en eski Linux dağıtımlarından biridir. Slackware, bu dağıtım ailesinin orijinal “kurucu babası” olmakla birlikte SUSE şu anda daha bilinen bir temel versiyondur. SUSE ticari bir dağıtım olarak tasarlandığından RHEL’e benzemektedir. OpenSUSE bu kategorinin ücretsiz bir varyasyondur.<br/>Ubuntu"
+    "explanation": "Ticari bir dağıtım olarak tasarlanan Red Hat Linux, Debian’dan kısa bir süre sonra ortaya çıkmıştır. Ticari bir dağıtım olduğundan, RHEL’i kullanmak için bir lisans ücreti (destek ve güncellemeler için) ödenmesi gerekmektedir. Fakat Fedora ve CENTOS dahil olmak üzere birkaç ücretsiz Red Hat tabanlı dağıtımı mevcuttur.<br/>Slackware bugün hâlen daha desteklenen en eski Linux dağıtımlarından biridir. Slackware, bu dağıtım ailesinin orijinal “kurucu babası” olmakla birlikte SUSE şu anda daha bilinen bir temel versiyondur. SUSE ticari bir dağıtım olarak tasarlandığından RHEL’e benzemektedir. OpenSUSE bu kategorinin ücretsiz bir varyasyondur.<br/>Ubuntu"
   },
   {
     "id": "3853012",
@@ -221,7 +221,7 @@
       "D": "rpm ve dpkgi",
       "E": "apt-get ve zypper"
     },
-    "explanation": "apt-get ve dpkg: Bu iki komut ise Debian, Ubuntu, Mint, ve diğer Debian tabanlı dağıtımlardaki yazılım paketlerini yönetmek için kullanılır.\n<br/>zypper ve rpm: Bu iki komut SUSE ve SUSE tabanlı dağıtımlardaki yazılım paketlerini yönetmek için kullanılır. ,\n<br/>rpm ve dpkgi komutları çok benzer işlevleri yerine getirirler. Lokal sisteme (sunucuya) indirilen paketleri kurmak için kullanılırlar. Paket yükleme işlevi normalde yum, apt-get ve zypper komutları ile de gerçekleştirilmektedir. Aralarındaki fark ise rpm ve dpkgi komutları ile bir yazılım paketi kurulurken kurulacak yazılımın paket bağımlılıkları denetlenmez ve eksik ya da uyumsuz bir paket bağımlılığı varsa kurulum hata verir ve gerçekleşmez. yum, apt-get ve zypper komutları ile yazılım paketi yüklenirken gerekli yazılım paketleri bağımlılıkları da yüklenir ve bu sayede kurulumlar büyük oranda hata gerçekleşmeden sorunsuz bir şekilde tamamlanır.<br/>Ubuntu Yazılım Merkezi gibi bazı paket yönetim araçlarının kullanımı kolayken Portage gibi paket yöneticilerinin kullanımı biraz zor olabilir. Farklı paket yöneticilerini, artılarını ve eksilerini aramanız ve buna göre seçim yapmanız gerekecektir. yum ve rpm: Red Hat Enterprise Linux, CentOS, Fedora, ve diğer RedHat tabanlı dağıtımlardaki yazılım paketlerini yönetmek için kullanılırlar."
+    "explanation": "apt-get ve dpkg: Bu iki komut ise Debian, Ubuntu, Mint, ve diğer Debian tabanlı dağıtımlardaki yazılım paketlerini yönetmek için kullanılır.<br/>zypper ve rpm: Bu iki komut SUSE ve SUSE tabanlı dağıtımlardaki yazılım paketlerini yönetmek için kullanılır. ,<br/>rpm ve dpkgi komutları çok benzer işlevleri yerine getirirler. Lokal sisteme (sunucuya) indirilen paketleri kurmak için kullanılırlar. Paket yükleme işlevi normalde yum, apt-get ve zypper komutları ile de gerçekleştirilmektedir. Aralarındaki fark ise rpm ve dpkgi komutları ile bir yazılım paketi kurulurken kurulacak yazılımın paket bağımlılıkları denetlenmez ve eksik ya da uyumsuz bir paket bağımlılığı varsa kurulum hata verir ve gerçekleşmez. yum, apt-get ve zypper komutları ile yazılım paketi yüklenirken gerekli yazılım paketleri bağımlılıkları da yüklenir ve bu sayede kurulumlar büyük oranda hata gerçekleşmeden sorunsuz bir şekilde tamamlanır.<br/>Ubuntu Yazılım Merkezi gibi bazı paket yönetim araçlarının kullanımı kolayken Portage gibi paket yöneticilerinin kullanımı biraz zor olabilir. Farklı paket yöneticilerini, artılarını ve eksilerini aramanız ve buna göre seçim yapmanız gerekecektir. yum ve rpm: Red Hat Enterprise Linux, CentOS, Fedora, ve diğer RedHat tabanlı dağıtımlardaki yazılım paketlerini yönetmek için kullanılırlar."
   },
   {
     "id": "3853015",
@@ -249,7 +249,7 @@
       "D": "OpenSUSE",
       "E": "Kali Linux"
     },
-    "explanation": "Genellikle kurumlar ihtiyaçlarına en uygun Linux dağıtımını seçtiğinden emin olmak için uzun süreli araştırma yaparlar. Her Linux dağıtımının farklı olması ve “tüm senaryolara uyan tek bir dağıtım” olmadığı gerçeği bu araştırma sürecinin zorlaşması ve uzamasına neden olabilir. Aşağıda Linux dağıtımlarının seçiminde dikkat edilecek kriterlerden bazıları verilmektedir (Rothwell, 2017):\n<br/>• Maliyet: Bazı dağıtımlar tamamen ücretsiz olsa da bazılarında destek ve güncelleme işlemleri ücretlidir.\n<br/>• Özellikler: Bazı dağıtımlar dağıtımın amacı gereği bazı özellikleri ön plana çıkarırken diğerlerini sınırlayabilmektedir. Örneğin, güvenliğin çok sıkı tutulduğu bir dağıtımda yalnızca katı güvenlik kriterlerini karşılayan yazılımlar sunulmaktadır.\n<br/>• İşlev: Bazı dağıtımlar bazı özel işlevleri karşılamak için tasarlanmıştır. Örneğin, dağıtım veri tabanı uygulamalarını barındırmak için tasarlanmış olabilir.\n<br/>• Destek: Dağıtımı çıkaran kuruluş desteği sağlayabilir ya da bu destek tamamen topluluk<br/>Masaüstü tercihlerinizi göz önünde bulundurmak da doğru dağıtım seçiminde önemlidir. Bazı kullanıcılar macOS’a eğilimlidir, diğerleri ise Windows masaüstü sürümünü sever. Yani doğru Linux dağıtımını seçerken masaüstü tercihlerinizi de aklınızda tutmanız gerekecek. Örneğin, macOS masaüstü hissini ve kullanımını tercih ediyorsanız GNOME’u, masaüstünün Windows sürümünü tercih ediyorsanız KDE sizin için uygun olacaktır."
+    "explanation": "Genellikle kurumlar ihtiyaçlarına en uygun Linux dağıtımını seçtiğinden emin olmak için uzun süreli araştırma yaparlar. Her Linux dağıtımının farklı olması ve “tüm senaryolara uyan tek bir dağıtım” olmadığı gerçeği bu araştırma sürecinin zorlaşması ve uzamasına neden olabilir. Aşağıda Linux dağıtımlarının seçiminde dikkat edilecek kriterlerden bazıları verilmektedir (Rothwell, 2017):<br/>• Maliyet: Bazı dağıtımlar tamamen ücretsiz olsa da bazılarında destek ve güncelleme işlemleri ücretlidir.<br/>• Özellikler: Bazı dağıtımlar dağıtımın amacı gereği bazı özellikleri ön plana çıkarırken diğerlerini sınırlayabilmektedir. Örneğin, güvenliğin çok sıkı tutulduğu bir dağıtımda yalnızca katı güvenlik kriterlerini karşılayan yazılımlar sunulmaktadır.<br/>• İşlev: Bazı dağıtımlar bazı özel işlevleri karşılamak için tasarlanmıştır. Örneğin, dağıtım veri tabanı uygulamalarını barındırmak için tasarlanmış olabilir.<br/>• Destek: Dağıtımı çıkaran kuruluş desteği sağlayabilir ya da bu destek tamamen topluluk<br/>Masaüstü tercihlerinizi göz önünde bulundurmak da doğru dağıtım seçiminde önemlidir. Bazı kullanıcılar macOS’a eğilimlidir, diğerleri ise Windows masaüstü sürümünü sever. Yani doğru Linux dağıtımını seçerken masaüstü tercihlerinizi de aklınızda tutmanız gerekecek. Örneğin, macOS masaüstü hissini ve kullanımını tercih ediyorsanız GNOME’u, masaüstünün Windows sürümünü tercih ediyorsanız KDE sizin için uygun olacaktır."
   },
   {
     "id": "3853017",
@@ -907,7 +907,7 @@
       "D": "dir",
       "E": "ayarlar -&gt; Uygulamalar ve özellikler -&gt; istege bağlı özellikler"
     },
-    "explanation": "Windows (ornegin windows 10) işletim sisteminde OpenSSH istemci paketinin yüklü olup olmadigi nin anlasilmasi için, aşağıdakiler uygulanır:\n<br/>Ayarlar -&gt; Uygulamalar ve özellikler -&gt; istege bağlı özellikler"
+    "explanation": "Windows (ornegin windows 10) işletim sisteminde OpenSSH istemci paketinin yüklü olup olmadigi nin anlasilmasi için, aşağıdakiler uygulanır:<br/>Ayarlar -&gt; Uygulamalar ve özellikler -&gt; istege bağlı özellikler"
   },
   {
     "id": "3852803",
@@ -921,7 +921,7 @@
       "D": "Linux diskindeki authorized_keys dosyasi windows diskine kopyalanir",
       "E": "MacOS diskindeki authorized_keys dosyasi windows diskine kopyalanir"
     },
-    "explanation": "Windows (ornegin windows 10) işletim sisteminde OpenSSH istemci paketi yüklü degil ise, yuklemek için aşağıdaki islem yapılır:\n<br/>istege bağlı özellikler altinda, özellik ekle -&gt; istege bağlı özellik ekle -&gt; openssh -&gt; yukle"
+    "explanation": "Windows (ornegin windows 10) işletim sisteminde OpenSSH istemci paketi yüklü degil ise, yuklemek için aşağıdaki islem yapılır:<br/>istege bağlı özellikler altinda, özellik ekle -&gt; istege bağlı özellik ekle -&gt; openssh -&gt; yukle"
   },
   {
     "id": "3852804",
@@ -1061,7 +1061,7 @@
       "D": "dir",
       "E": "ayarlar -&gt; Uygulamalar ve özellikler -&gt; istege bağlı özellikler"
     },
-    "explanation": "Windows (ornegin windows 10) işletim sisteminde OpenSSH istemci paketinin yüklü olup olmadigi nin anlasilmasi için, aşağıdakiler uygulanır:\n<br/>Ayarlar -&gt; Uygulamalar ve özellikler -&gt; istege bağlı özellikler"
+    "explanation": "Windows (ornegin windows 10) işletim sisteminde OpenSSH istemci paketinin yüklü olup olmadigi nin anlasilmasi için, aşağıdakiler uygulanır:<br/>Ayarlar -&gt; Uygulamalar ve özellikler -&gt; istege bağlı özellikler"
   },
   {
     "id": "3853044",
@@ -1075,7 +1075,7 @@
       "D": "Linux diskindeki authorized_keys dosyasi windows diskine kopyalanir",
       "E": "MacOS diskindeki authorized_keys dosyasi windows diskine kopyalanir"
     },
-    "explanation": "Windows (ornegin windows 10) işletim sisteminde OpenSSH istemci paketi yüklü degil ise, yuklemek için aşağıdaki islem yapılır:\n<br/>istege bağlı özellikler altinda, özellik ekle -&gt; istege bağlı özellik ekle -&gt; openssh -&gt; yukle"
+    "explanation": "Windows (ornegin windows 10) işletim sisteminde OpenSSH istemci paketi yüklü degil ise, yuklemek için aşağıdaki islem yapılır:<br/>istege bağlı özellikler altinda, özellik ekle -&gt; istege bağlı özellik ekle -&gt; openssh -&gt; yukle"
   },
   {
     "id": "3853045",
@@ -1159,7 +1159,7 @@
       "D": "Linux işletim sistemi paket yöneticisidir.",
       "E": "Linux komut satırından yazılım kaldırmayı yapar."
     },
-    "explanation": "İşletim sisteminin versiyonunu öğrenmek için lsb_release ya da cat / etc/os-release komutlarından biri çalıştırılabilir.<br/>Sisteme giriş yaptıktan sonra işletim sisteminin versiyonunu öğrenmek için lsb_release ya da cat / etc/os-release komutlarından biri çalıştırılabilir.\n debian@debian:~$ lsb_release -a\n No LSB modules are available.\n Distributor ID: Debian\n Description: Debian GNU/Linux 11 (bullseye)\n Release: 11\n Codename: bullseye"
+    "explanation": "İşletim sisteminin versiyonunu öğrenmek için lsb_release ya da cat / etc/os-release komutlarından biri çalıştırılabilir.<br/>Sisteme giriş yaptıktan sonra işletim sisteminin versiyonunu öğrenmek için lsb_release ya da cat / etc/os-release komutlarından biri çalıştırılabilir.<br/>debian@debian:~$ lsb_release -a<br/>No LSB modules are available.<br/>Distributor ID: Debian<br/>Description: Debian GNU/Linux 11 (bullseye)<br/>Release: 11<br/>Codename: bullseye"
   },
   {
     "id": "3853051",
@@ -1187,7 +1187,7 @@
       "D": "apt purge",
       "E": "apt show"
     },
-    "explanation": "İşletim sistemi kurulurken varsayılan olarak kurulu gelen unzip paketini kaldırmak için kullanılan apt remove komutu kullanılır.<br/>İşletim sistemi kurulurken varsayılan olarak kurulu gelen unzip paketini kaldırmak için kullanılan apt remove komutunun kullanımı aşağıdaki gösterilmektedir:\n linuxmint@linuxmint-VirtualBox:~$ sudo apt remove unzip\n Reading package lists...\n Done Building dependency tree...\n Done Reading state information...\n Done The following packages will be REMOVED:\n file-roller lintian unzip\n 0 upgraded, 0 newly installed, 3 to remove and 59 not upgraded.\n After this operation, 9.662 kB disk space will be freed.\n Do you want to continue? [Y/n] Y"
+    "explanation": "İşletim sistemi kurulurken varsayılan olarak kurulu gelen unzip paketini kaldırmak için kullanılan apt remove komutu kullanılır.<br/>İşletim sistemi kurulurken varsayılan olarak kurulu gelen unzip paketini kaldırmak için kullanılan apt remove komutunun kullanımı aşağıdaki gösterilmektedir:<br/>linuxmint@linuxmint-VirtualBox:~$ sudo apt remove unzip<br/>Reading package lists...<br/>Done Building dependency tree...<br/>Done Reading state information...<br/>Done The following packages will be REMOVED:<br/>file-roller lintian unzip<br/>0 upgraded, 0 newly installed, 3 to remove and 59 not upgraded.<br/>After this operation, 9.662 kB disk space will be freed.<br/>Do you want to continue? [Y/n] Y"
   },
   {
     "id": "3853053",
@@ -1229,7 +1229,7 @@
       "D": "Python API’leri için tam bir dökümantasyonu bulunma",
       "E": "Yum'da DNF'ye göre daha gelişmiş özellikler bulunur."
     },
-    "explanation": "DNF (Dandified yum), paketleri yükleyen, güncelleyen ve kaldıran RPM tabanlı Linux dağıtımları için bir yazılım paketi yöneticisidir. Geleneksel yum paket yöneticisinin yeni nesil versiyonu olduğu için yum’da bulunandan daha gelişmiş özelliklere sahiptir. DNF ve yum arasında özellikler açısından farklılıklar aşağıdaki gibidir:\n<br/>• Modern bağımlılık çözme teknolojisi tabanlı bağımlılık hesaplama\n<br/>• Optimize edilmiş hafızaya duyarlı işlemler\n<br/>• Python 2 ve Python 3’te çalışabilmes ve\n<br/>• Python API’leri için tam bir dökümantasyonu bulunma"
+    "explanation": "DNF (Dandified yum), paketleri yükleyen, güncelleyen ve kaldıran RPM tabanlı Linux dağıtımları için bir yazılım paketi yöneticisidir. Geleneksel yum paket yöneticisinin yeni nesil versiyonu olduğu için yum’da bulunandan daha gelişmiş özelliklere sahiptir. DNF ve yum arasında özellikler açısından farklılıklar aşağıdaki gibidir:<br/>• Modern bağımlılık çözme teknolojisi tabanlı bağımlılık hesaplama<br/>• Optimize edilmiş hafızaya duyarlı işlemler<br/>• Python 2 ve Python 3’te çalışabilmes ve<br/>• Python API’leri için tam bir dökümantasyonu bulunma"
   },
   {
     "id": "3853056",
@@ -1243,7 +1243,7 @@
       "D": "Dependencies Resolved",
       "E": "Loading mirror speeds from cached hostfile"
     },
-    "explanation": "Sisteme giriş yaptıktan sonra işletim sisteminin versiyonunu öğrenmek için lsb_release ya da cat / etc/os-release komutlarından biri çalıştırılabilir.<br/>İşletim sisteminin versiyonunu öğrenmek için cat /etc/redhat-release komutu çalıştırılabilir:\n [root@localhost ~]# cat /etc/redhat-release\n Red Hat Enterprise Linux release 9.0 (Plow)"
+    "explanation": "Sisteme giriş yaptıktan sonra işletim sisteminin versiyonunu öğrenmek için lsb_release ya da cat / etc/os-release komutlarından biri çalıştırılabilir.<br/>İşletim sisteminin versiyonunu öğrenmek için cat /etc/redhat-release komutu çalıştırılabilir:<br/>[root@localhost ~]# cat /etc/redhat-release<br/>Red Hat Enterprise Linux release 9.0 (Plow)"
   },
   {
     "id": "3853057",
@@ -1257,7 +1257,7 @@
       "D": "sudo yum uninstall",
       "E": "sudo yum install"
     },
-    "explanation": "Kurulumu bağımlı paket olarak php yazılımı kurulurken yüklenen Apache2 Web Sunucusu (httpd) yazılım paketini kaldırmak için sudo yum remove komutu kullanılır.<br/>Kurulumu bağımlı paket olarak php yazılımı kurulurken yüklenen Apache2 Web Sunucusu (httpd) yazılım paketini kaldırmak için sudo yum remove komutunun kullanımı aşağıdaki gösterilmektedir:\n [root@localhost centos]# sudo yum remove httpd"
+    "explanation": "Kurulumu bağımlı paket olarak php yazılımı kurulurken yüklenen Apache2 Web Sunucusu (httpd) yazılım paketini kaldırmak için sudo yum remove komutu kullanılır.<br/>Kurulumu bağımlı paket olarak php yazılımı kurulurken yüklenen Apache2 Web Sunucusu (httpd) yazılım paketini kaldırmak için sudo yum remove komutunun kullanımı aşağıdaki gösterilmektedir:<br/>[root@localhost centos]# sudo yum remove httpd"
   },
   {
     "id": "3853058",
@@ -1271,7 +1271,7 @@
       "D": "dnf check-update",
       "E": "dnf uninstall"
     },
-    "explanation": "Sunucuya Nginx web sunucusu ile htop yazılım paketlerinin birlikte kurulması için dnf install komutu kullanılır.<br/>Sunucuya Nginx web sunucusu ile htop yazılım paketlerinin birlikte kurulması için kullanılan dnf install komutuna örnek aşağıda gösterilmektedir:\n [root@fedora ~]# dnf install nginx htop"
+    "explanation": "Sunucuya Nginx web sunucusu ile htop yazılım paketlerinin birlikte kurulması için dnf install komutu kullanılır.<br/>Sunucuya Nginx web sunucusu ile htop yazılım paketlerinin birlikte kurulması için kullanılan dnf install komutuna örnek aşağıda gösterilmektedir:<br/>[root@fedora ~]# dnf install nginx htop"
   },
   {
     "id": "3853059",
@@ -1285,7 +1285,7 @@
       "D": "Bir yazılım paketini kaldırmak",
       "E": "Kurulumu yapılan sunucuya ssh protokolü ile erişim sağlamak"
     },
-    "explanation": "sudo zypper refresh kommutu OpenSuse işletim sisteminde yerel paket veritabanını paket sunucusuyla güncel tutmak için kullanılır.<br/>OpenSuse işletim sisteminde yerel paket veritabanını paket sunucusuyla güncel tutmak için sudo zypper refresh komutu kullanılır:\n suse@localhost:~&gt; sudo zypper refresh"
+    "explanation": "sudo zypper refresh kommutu OpenSuse işletim sisteminde yerel paket veritabanını paket sunucusuyla güncel tutmak için kullanılır.<br/>OpenSuse işletim sisteminde yerel paket veritabanını paket sunucusuyla güncel tutmak için sudo zypper refresh komutu kullanılır:<br/>suse@localhost:~&gt; sudo zypper refresh"
   },
   {
     "id": "3853060",
@@ -1299,7 +1299,7 @@
       "D": "g+x",
       "E": "o+x"
     },
-    "explanation": "Linux kimlik ve erişim düzeylerine göre kaynağın kullancısının çalıştırma erişimini u+x temsil eder.<br/>Bilgi işlem düzeyinde erişim yönetimi aktif bir araştırma alanı olmakla birlikte uzun zamandır işletim sistemi tasarımının en önemli konularından biri olmuştur. Bununla birlikte, geleneksel sistem UNIX ve Linux erişim standardı birçok kurum için temel düzeyde yeterli gelmektedir. Linux işletim sistemindeki standart izinler basit ve nettir ve birçok farklı dosya sistemi ve dosya paylaşım protokolündeki dosyaları ve dosya paylaşımlarını yönetmek için kullanılabilirler. Standart Linux izinleri, üç kimlik ve üç erişim düzeyi içerir.\n • Kimlik düzeyleri aşağıdaki gibidir:\n • Kullanıcı (u): Kaynağın kullanıcısı ya da sahibi\n • Grup (g): Belirlenmiş bir grup\n • Diğerleri Others (o): Yukarıda belirtilen kullanıcı ya da gruba dahil olmayan herkes\n Erişim seviyeleri de dosya ve dizinler için aşağıdaki gibidir:\n • Okuma (r): Dosya ya da dizinin içeriğini görme\n • Yazma (w): Dosya ya da dizinin içine yazma\n • Çalıştırma (x): betik (script) gibi çalıştırılabilir ögeleri çalıştırma ya da cd (change directory) komutu ile dizin değiştirme"
+    "explanation": "Linux kimlik ve erişim düzeylerine göre kaynağın kullancısının çalıştırma erişimini u+x temsil eder.<br/>Bilgi işlem düzeyinde erişim yönetimi aktif bir araştırma alanı olmakla birlikte uzun zamandır işletim sistemi tasarımının en önemli konularından biri olmuştur. Bununla birlikte, geleneksel sistem UNIX ve Linux erişim standardı birçok kurum için temel düzeyde yeterli gelmektedir. Linux işletim sistemindeki standart izinler basit ve nettir ve birçok farklı dosya sistemi ve dosya paylaşım protokolündeki dosyaları ve dosya paylaşımlarını yönetmek için kullanılabilirler. Standart Linux izinleri, üç kimlik ve üç erişim düzeyi içerir.<br/>• Kimlik düzeyleri aşağıdaki gibidir:<br/>• Kullanıcı (u): Kaynağın kullanıcısı ya da sahibi<br/>• Grup (g): Belirlenmiş bir grup<br/>• Diğerleri Others (o): Yukarıda belirtilen kullanıcı ya da gruba dahil olmayan herkes<br/>Erişim seviyeleri de dosya ve dizinler için aşağıdaki gibidir:<br/>• Okuma (r): Dosya ya da dizinin içeriğini görme<br/>• Yazma (w): Dosya ya da dizinin içine yazma<br/>• Çalıştırma (x): betik (script) gibi çalıştırılabilir ögeleri çalıştırma ya da cd (change directory) komutu ile dizin değiştirme"
   },
   {
     "id": "3853061",
@@ -1313,7 +1313,7 @@
       "D": "Yalnızca root hesabı belirli hassas yönetim işlemleri gerçekleştirebilir.",
       "E": "Erişim denetimi ile ilgili kurallar, hangi kullanıcının bir işlemi gerçekleştirmeye çalıştığına bağlı değildir."
     },
-    "explanation": "E seçeneği hatalıdır, olması gereken: \"Erişim denetimi ile ilgili kurallar, hangi kullanıcının bir işlemi gerçekleştirmeye çalıştığına veya bazı durumlarda o kullanıcının bir Unix grubuna üye olmasına bağlıdır.\"<br/>Standard UNIX erişim kontrol modeli, uzunca bir süredir büyük ölçüde değişmeden varlığını devam ettirmektedir. Birkaç geliştirmeyle birlikte Linux işletim sistemi dağıtımlarında varsayılan olarak gelmektedir. Erişim kontrol şemasının izlediği temel kurallardan bazıları aşağıdaki gibidir: • Erişim denetimi ile ilgili kurallar, hangi kullanıcının bir işlemi gerçekleştirmeye çalıştığına veya bazı durumlarda o kullanıcının bir Unix grubuna üye olmasına bağlıdır.\n • Dosyalar ve süreçler gibi nesnelerin sahipleri vardır. Sahipleri, nesneleri üzerinde geniş fakat tam erişimin şart olmadığı kontrole sahiptir.\n • Nesneleri oluşturan aynı zamanda sahibidir.\n • Root kullanıcısı herhangi bir nesnenin sahibi olarak davranabilir.\n • Yalnızca root hesabı belirli hassas yönetim işlemleri gerçekleştirebilir."
+    "explanation": "E seçeneği hatalıdır, olması gereken: \"Erişim denetimi ile ilgili kurallar, hangi kullanıcının bir işlemi gerçekleştirmeye çalıştığına veya bazı durumlarda o kullanıcının bir Unix grubuna üye olmasına bağlıdır.\"<br/>Standard UNIX erişim kontrol modeli, uzunca bir süredir büyük ölçüde değişmeden varlığını devam ettirmektedir. Birkaç geliştirmeyle birlikte Linux işletim sistemi dağıtımlarında varsayılan olarak gelmektedir. Erişim kontrol şemasının izlediği temel kurallardan bazıları aşağıdaki gibidir: • Erişim denetimi ile ilgili kurallar, hangi kullanıcının bir işlemi gerçekleştirmeye çalıştığına veya bazı durumlarda o kullanıcının bir Unix grubuna üye olmasına bağlıdır.<br/>• Dosyalar ve süreçler gibi nesnelerin sahipleri vardır. Sahipleri, nesneleri üzerinde geniş fakat tam erişimin şart olmadığı kontrole sahiptir.<br/>• Nesneleri oluşturan aynı zamanda sahibidir.<br/>• Root kullanıcısı herhangi bir nesnenin sahibi olarak davranabilir.<br/>• Yalnızca root hesabı belirli hassas yönetim işlemleri gerçekleştirebilir."
   },
   {
     "id": "3853062",
@@ -1327,7 +1327,7 @@
       "D": "user@ubuntu:~$ rm /var/log",
       "E": "user@ubuntu:~$ cp /var/log"
     },
-    "explanation": "Bulunulan dizinden /var/log dizinine gitmek için cd komutu aşağıdaki gibi kullanılacaktır:\n<br/>user@ubuntu:~$ cd /var/log<br/>Şekil 6.1''dee gösterilen dizin yapısında içinde bulunduğumuz dizinden /var/log klasörüne giderek dizinimizi değiştirelim. Bunun için öncelikle içinde bulunduğumuz dizini öğrenmek için komut satırı arayüzünde pwd komutunu kullanıyoruz: user@ubuntu:~$ pwd\n /home/lmsuser\n Mavi yazı renkli yoldan görüleceği üzere kullanıcı /home/lmsuser dizinindedir. Bulunulan dizinden /var/log dizinine gitmek için cd komutu aşağıdaki gibi kullanılacaktır:\n user@ubuntu:~$ cd /var/log\n user@ubuntu:/var/log$ pwd\n /var/log"
+    "explanation": "Şekil 6.1''dee gösterilen dizin yapısında içinde bulunduğumuz dizinden /var/log klasörüne giderek dizinimizi değiştirelim. Bunun için öncelikle içinde bulunduğumuz dizini öğrenmek için komut satırı arayüzünde pwd komutunu kullanıyoruz: user@ubuntu:~$ pwd<br/>/home/lmsuser<br/>Mavi yazı renkli yoldan görüleceği üzere kullanıcı /home/lmsuser dizinindedir. Bulunulan dizinden /var/log dizinine gitmek için cd komutu aşağıdaki gibi kullanılacaktır:<br/>user@ubuntu:~$ cd /var/log<br/>user@ubuntu:/var/log$ pwd<br/>/var/log"
   },
   {
     "id": "3853063",
@@ -1341,7 +1341,7 @@
       "D": "Dosyaları boyutlarına göre listeler.",
       "E": "Sadece gizli dosyaları dikey liste olarak listeler."
     },
-    "explanation": "Buna göre ls -al komutu gizli dosyalar dahil tüm dosyaları dikey liste şeklinde listeler.<br/>Bulunulan dizindeki tüm dosya ve klasörleri listelemek için ls komutu kullanılır. Ls komutundan sonra gelen parametreler ile listelemenin hangi bilgileri içerecek şekilde olacağı belirlenir. Aşağıdaki komut satırı arayüz örneğinde kullanılan -alh parametresinde “a” tümü, yani gizli dosyalar dahil herşeyi; “l” dikey liste şeklinde ve “h” ile dosya ve dizinlerin boyutlarının insanın anlayacağı (human readable) formatta listelenmesi sağlanır. “h” parametresi “l” ile kullanıldığı zaman dosya ve klasör boyut bilgisini verir ve tek başına (ls -h) kullanıldığında bu bilgileri sağlamaz.\n Bir başka listeleme örneğinde ise dizindeki dosya ve klasörler değiştirilme tarihine göre geçmişten başlanarak listelenmektedir. Bu komut özellikle hangi dosya ve klasörlerde değişiklik yapıldığını bulmakta sıklıkla kullanılmaktadır. Bu komuttaki “l” parametresi listenin dikey görünümde, “t” parametresi değiştirilme tarihine göre ve “r” parametresi sondan başlayarak dosya ve klasörlerin listeleneceğini belirtir."
+    "explanation": "Buna göre ls -al komutu gizli dosyalar dahil tüm dosyaları dikey liste şeklinde listeler.<br/>Bulunulan dizindeki tüm dosya ve klasörleri listelemek için ls komutu kullanılır. Ls komutundan sonra gelen parametreler ile listelemenin hangi bilgileri içerecek şekilde olacağı belirlenir. Aşağıdaki komut satırı arayüz örneğinde kullanılan -alh parametresinde “a” tümü, yani gizli dosyalar dahil herşeyi; “l” dikey liste şeklinde ve “h” ile dosya ve dizinlerin boyutlarının insanın anlayacağı (human readable) formatta listelenmesi sağlanır. “h” parametresi “l” ile kullanıldığı zaman dosya ve klasör boyut bilgisini verir ve tek başına (ls -h) kullanıldığında bu bilgileri sağlamaz.<br/>Bir başka listeleme örneğinde ise dizindeki dosya ve klasörler değiştirilme tarihine göre geçmişten başlanarak listelenmektedir. Bu komut özellikle hangi dosya ve klasörlerde değişiklik yapıldığını bulmakta sıklıkla kullanılmaktadır. Bu komuttaki “l” parametresi listenin dikey görünümde, “t” parametresi değiştirilme tarihine göre ve “r” parametresi sondan başlayarak dosya ve klasörlerin listeleneceğini belirtir."
   },
   {
     "id": "3853064",
@@ -1355,7 +1355,7 @@
       "D": "ls -al",
       "E": "mkdir"
     },
-    "explanation": "İçinde alt dizin(ler) ve/veya dosya(lar) olan klasörleri silmek için rm komutu -r (yinelemeli- recursively) parametresi ile kullanılmalıdır. Silme işleminin herhangi bir onay almadan zorlayarak gerçekleştirilmesi için -r parametresi ile birlikte “f” (zorla- force) ya da silme işlemi için onay alınması için “i” parametreleri kullanılabilir. Aşağıdaki örnekte /home/lmsuser/ altında içinde 2 adet sıkıştırılmış dosya ve video adında bir dizin olan dosyalar dizini rm -ri komutu ile silinmek istenmektedir. Mavi yazı rengi ile belirtilen komut satırı arayüz çıktısında ilk olarak dosyalar dizininin alt dizinlerine inileceği (descend) ile ilgili bir onay istenmektedir. “y” (evet- yes) ile onay verildikten sonra sırasıyla dizin içinde yer alan tüm dosya ve klasörlerin silinmesi (remove) için onay istenerek silme işlemi gerçekleştirilmektedir. Silinmek istenmeyen dizin ya da dosyalar için “n” (hayır- no) kullanılmalıdır.\n lmsuser@ubuntu:~$ rm -ri dosyalar/\n rm: descend into directory 'dosyalar/'? y\n rm: remove regular file 'dosyalar/lms.zip'? y\n rm: remove regular file 'dosyalar/canvas-lms-master.zip'? n\n rm: remove directory 'dosyalar/video'? y\n rm: remove directory 'dosyalar/'? y"
+    "explanation": "İçinde alt dizin(ler) ve/veya dosya(lar) olan klasörleri silmek için rm komutu -r (yinelemeli- recursively) parametresi ile kullanılmalıdır. Silme işleminin herhangi bir onay almadan zorlayarak gerçekleştirilmesi için -r parametresi ile birlikte “f” (zorla- force) ya da silme işlemi için onay alınması için “i” parametreleri kullanılabilir. Aşağıdaki örnekte /home/lmsuser/ altında içinde 2 adet sıkıştırılmış dosya ve video adında bir dizin olan dosyalar dizini rm -ri komutu ile silinmek istenmektedir. Mavi yazı rengi ile belirtilen komut satırı arayüz çıktısında ilk olarak dosyalar dizininin alt dizinlerine inileceği (descend) ile ilgili bir onay istenmektedir. “y” (evet- yes) ile onay verildikten sonra sırasıyla dizin içinde yer alan tüm dosya ve klasörlerin silinmesi (remove) için onay istenerek silme işlemi gerçekleştirilmektedir. Silinmek istenmeyen dizin ya da dosyalar için “n” (hayır- no) kullanılmalıdır.<br/>lmsuser@ubuntu:~$ rm -ri dosyalar/<br/>rm: descend into directory 'dosyalar/'? y<br/>rm: remove regular file 'dosyalar/lms.zip'? y<br/>rm: remove regular file 'dosyalar/canvas-lms-master.zip'? n<br/>rm: remove directory 'dosyalar/video'? y<br/>rm: remove directory 'dosyalar/'? y"
   },
   {
     "id": "3853065",
@@ -1369,7 +1369,7 @@
       "D": "cp --help",
       "E": "man cp"
     },
-    "explanation": "cp dosya1 dosya2 komutu aynı dizindeki bir dosyanın kopyasını oluşturur.<br/>Bir dosyanın kopyasını oluşturmak için cp komutu cp dosya1 dosya2 şeklinde kullanılmalıdır. Aşağıdaki örnekte lms.zip dosyasının bir kopyası oluşturulmak istenmiştir. Özellikle yapılandırma dosyaları (config files) ya da önemli dosyalar ile çalışma yapmadan önce ilgili dosyanın yedeğinin alınması son derece önemli olduğundan bu komut ile söz konusu dosyaların yedekleri alınabilir. Aşağıdaki örnekte lms. zip dosyasının yedeği lms_yedek.zip olarak alınmıştır.\n lmsuser@ubuntu:~/dosyalar$ cp lms.zip lms_yedek.zip lmsuser@ubuntu:~/dosyalar$ ls\n canvas-lms-master.zip lms_yedek.zip lms.zip video\n cp komutunun kullanımı ile ilgili bir başka örnekte ise sunucuda bir başka konumda bulunan dosyanın o an içinde bulunan dizine kopyalanmasıdır. Bunun için “.” (nokta) karakteri kullanılmaktadır. Aşağıdaki komut satırı arayüz örneğinde /etc altındaki hosts dosyası bulunulan konum olan /home/lmssuer altına kopyalanmıştır. Burada noktadan önce boşluk olduğuna dikkat edilmelidir:\n lmsuser@ubuntu:~$ cp /etc/hosts .\n lmsuser@ubuntu:~$ ls\n dosyalar hosts"
+    "explanation": "cp dosya1 dosya2 komutu aynı dizindeki bir dosyanın kopyasını oluşturur.<br/>Bir dosyanın kopyasını oluşturmak için cp komutu cp dosya1 dosya2 şeklinde kullanılmalıdır. Aşağıdaki örnekte lms.zip dosyasının bir kopyası oluşturulmak istenmiştir. Özellikle yapılandırma dosyaları (config files) ya da önemli dosyalar ile çalışma yapmadan önce ilgili dosyanın yedeğinin alınması son derece önemli olduğundan bu komut ile söz konusu dosyaların yedekleri alınabilir. Aşağıdaki örnekte lms. zip dosyasının yedeği lms_yedek.zip olarak alınmıştır.<br/>lmsuser@ubuntu:~/dosyalar$ cp lms.zip lms_yedek.zip lmsuser@ubuntu:~/dosyalar$ ls<br/>canvas-lms-master.zip lms_yedek.zip lms.zip video<br/>cp komutunun kullanımı ile ilgili bir başka örnekte ise sunucuda bir başka konumda bulunan dosyanın o an içinde bulunan dizine kopyalanmasıdır. Bunun için “.” (nokta) karakteri kullanılmaktadır. Aşağıdaki komut satırı arayüz örneğinde /etc altındaki hosts dosyası bulunulan konum olan /home/lmssuer altına kopyalanmıştır. Burada noktadan önce boşluk olduğuna dikkat edilmelidir:<br/>lmsuser@ubuntu:~$ cp /etc/hosts .<br/>lmsuser@ubuntu:~$ ls<br/>dosyalar hosts"
   },
   {
     "id": "3853066",
@@ -1377,13 +1377,13 @@
     "text": "chmod 764 dosya1 komutu sonrası ls -l komutu aşağıdakilerden hangisini gösterecektir?",
     "correctAnswer": "A",
     "options": {
-      "A": "user@ubuntu:~$ chmod 764 dosya1\n user@ubuntu:~$ ls -l\n -rwxrw-r-- 1 user user 221 Oct 9 07:25 dosya1",
-      "B": "user@ubuntu:~$ chmod 764 dosya1\n user@ubuntu:~$ ls -l\n -rwxrwxrwx 1 user user 221 Oct 9 07:25 dosya1",
-      "C": "user@ubuntu:~$ chmod 764 dosya1\n user@ubuntu:~$ ls -l\n -rwxr---wx 1 user user 221 Oct 9 07:25 dosya1",
-      "D": "user@ubuntu:~$ chmod 764 dosya1\n user@ubuntu:~$ ls -l\n -r-xr--rwx 1 user user 221 Oct 9 07:25 dosya1",
-      "E": "user@ubuntu:~$ chmod 764 dosya1\n user@ubuntu:~$ ls -l\n -r--r---wx 1 user user 221 Oct 9 07:25 dosya1"
+      "A": "user@ubuntu:~$ chmod 764 dosya1<br/>user@ubuntu:~$ ls -l<br/>-rwxrw-r-- 1 user user 221 Oct 9 07:25 dosya1",
+      "B": "user@ubuntu:~$ chmod 764 dosya1<br/>user@ubuntu:~$ ls -l<br/>-rwxrwxrwx 1 user user 221 Oct 9 07:25 dosya1",
+      "C": "user@ubuntu:~$ chmod 764 dosya1<br/>user@ubuntu:~$ ls -l<br/>-rwxr---wx 1 user user 221 Oct 9 07:25 dosya1",
+      "D": "user@ubuntu:~$ chmod 764 dosya1<br/>user@ubuntu:~$ ls -l<br/>-r-xr--rwx 1 user user 221 Oct 9 07:25 dosya1",
+      "E": "user@ubuntu:~$ chmod 764 dosya1<br/>user@ubuntu:~$ ls -l<br/>-r--r---wx 1 user user 221 Oct 9 07:25 dosya1"
     },
-    "explanation": "764 için okuma, yazma ve çalıştırma detaylarını inceleyelim:\n<br/>7 için (r,w,x = 4+2+1) \n<br/>6 için (r,w,-=4+2+0)\n<br/>4 için (r,-,-=4+0+0)\n<br/>Buna göre chmod 764 dosya1 komutu sonrası ls -l komutu şunu gösterecektir:\n<br/>user@ubuntu:~$ chmod 764 dosya1\n<br/>user@ubuntu:~$ ls -l\n<br/>-rwxrw-r-- 1 user user 221 Oct 9 07:25 dosya1<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/48a31bac3a1611db32a13ed95d8844bb.png\" alt=\"\" width=\"506\" height=\"92\"> Yukarıdaki örnekte dosya ya da klasör için dosya sahibinin okuma, yazma ve çalıştırma (r,w,x = 4+2+1) izni bulunmaktadır. Bu izni rakam ile ifade ettiğimizde 4, 2 ve 1 rakamlarının toplamı 7 rakamı kullanılmaktadır. Bu dosya için atandığı grup ve diğerlerinin de okuma, yazma ve çalıştırma izni olduğundan nihayetinde bu dosyanın iznini rakam olarak 777 olarak göstermek mümkündür. Okuma, yazma ve çalıştırma izinlerinden birinin boş olması ilgili iznin olmadığı anlamına gelir.\n 777 izni dosya/klasör için erişebilen herkesin okuma, yazma ve çalıştırma izni olduğu için gerekmediği durumlarda kullanılmamalıdır. Yazılımcılar yazdıkları kod dosyaları ya da bu dosyaların içinde bulundukları klasörle ilgili erişim sorunu yaşadıklarında kolay bir çözüm olarak dosya ya da klasöre 777 erişim izni vererek sorunu çözme yoluna gidebilmektedir. Bu yöntem kesinlikle izlenmemeli ve bunun yerine kod dosyalarına uygun izinler verilerek erişim izinleri düzenlenmelidir."
+    "explanation": "764 için okuma, yazma ve çalıştırma detaylarını inceleyelim:<br/>7 için (r,w,x = 4+2+1) <br/>6 için (r,w,-=4+2+0)<br/>4 için (r,-,-=4+0+0)<br/>Buna göre chmod 764 dosya1 komutu sonrası ls -l komutu şunu gösterecektir:<br/>user@ubuntu:~$ chmod 764 dosya1<br/>user@ubuntu:~$ ls -l<br/>-rwxrw-r-- 1 user user 221 Oct 9 07:25 dosya1<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/48a31bac3a1611db32a13ed95d8844bb.png\" alt=\"\" width=\"506\" height=\"92\"> Yukarıdaki örnekte dosya ya da klasör için dosya sahibinin okuma, yazma ve çalıştırma (r,w,x = 4+2+1) izni bulunmaktadır. Bu izni rakam ile ifade ettiğimizde 4, 2 ve 1 rakamlarının toplamı 7 rakamı kullanılmaktadır. Bu dosya için atandığı grup ve diğerlerinin de okuma, yazma ve çalıştırma izni olduğundan nihayetinde bu dosyanın iznini rakam olarak 777 olarak göstermek mümkündür. Okuma, yazma ve çalıştırma izinlerinden birinin boş olması ilgili iznin olmadığı anlamına gelir.<br/>777 izni dosya/klasör için erişebilen herkesin okuma, yazma ve çalıştırma izni olduğu için gerekmediği durumlarda kullanılmamalıdır. Yazılımcılar yazdıkları kod dosyaları ya da bu dosyaların içinde bulundukları klasörle ilgili erişim sorunu yaşadıklarında kolay bir çözüm olarak dosya ya da klasöre 777 erişim izni vererek sorunu çözme yoluna gidebilmektedir. Bu yöntem kesinlikle izlenmemeli ve bunun yerine kod dosyalarına uygun izinler verilerek erişim izinleri düzenlenmelidir."
   },
   {
     "id": "3853067",
@@ -1411,7 +1411,7 @@
       "D": "Dizinler arası dosya kopyalaması sağlar.",
       "E": "Dizinlerdeki tüm dosyaları listeler."
     },
-    "explanation": "Aşağıda ps komutunun bir örneği verilmiştir:\n<br/>lmsuser@ubuntu:~$ ps u\n<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/4b7d3c19670d8b8a330712ada7b1beca.png\" alt=\"\" width=\"520\" height=\"50\"><br/>Yukarıdaki komut satırı arayüz çıktısında “u” seçeneği (-u olarak da kullanılır) sürecin başladığı zaman, hafıza (%MEM) ve işlemci kullanımı (%CPU) gibi bilgilere ek olarak kullanıcı adlarının görünmesini de sağlamaktadır.<br/>Çalışan süreçleri kontrol etmek için en yaygın yardımcı program ps komutudur. Hangi programların çalıştığını, kullandıkları kaynakları ve bunları kimin çalıştırdığını görmek için kullanılmaktadır."
+    "explanation": "Aşağıda ps komutunun bir örneği verilmiştir:<br/>lmsuser@ubuntu:~$ ps u<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/4b7d3c19670d8b8a330712ada7b1beca.png\" alt=\"\" width=\"520\" height=\"50\"><br/>Yukarıdaki komut satırı arayüz çıktısında “u” seçeneği (-u olarak da kullanılır) sürecin başladığı zaman, hafıza (%MEM) ve işlemci kullanımı (%CPU) gibi bilgilere ek olarak kullanıcı adlarının görünmesini de sağlamaktadır.<br/>Çalışan süreçleri kontrol etmek için en yaygın yardımcı program ps komutudur. Hangi programların çalıştığını, kullandıkları kaynakları ve bunları kimin çalıştırdığını görmek için kullanılmaktadır."
   },
   {
     "id": "3853069",
@@ -1444,7 +1444,7 @@
   {
     "id": "3853071",
     "unitNumber": 7,
-    "text": "\"rpm -q openssh\"\n Yukarıdaki komutun işlevi hangi seçenekte doğru verilmiştir?",
+    "text": "\"rpm -q openssh\"<br/>Yukarıdaki komutun işlevi hangi seçenekte doğru verilmiştir?",
     "correctAnswer": "A",
     "options": {
       "A": "OpenSSH yazılımının hangi versiyonda olduğunu gösterir.",
@@ -1453,7 +1453,7 @@
       "D": "OpenSSH paketinin kurulumunu gerçekleştirir.",
       "E": "OpenSSH paketinin kaldırılmasını sağlar."
     },
-    "explanation": "rpm -q openssh komutu sistemimizde OpenSSH yazılımının hangi versiyonda olduğunu gösterir.<br/>Sistemimizde “OpenSSH” yazılımının hangi versiyonu olduğunu “rpm -q paket_adı” komutu ile öğrenebiliriz:\n [redhat@localhost ~]$ rpm -q openssh\n openssh-8.7p1-10.el9_0.x86_64"
+    "explanation": "rpm -q openssh komutu sistemimizde OpenSSH yazılımının hangi versiyonda olduğunu gösterir.<br/>Sistemimizde “OpenSSH” yazılımının hangi versiyonu olduğunu “rpm -q paket_adı” komutu ile öğrenebiliriz:<br/>[redhat@localhost ~]$ rpm -q openssh<br/>openssh-8.7p1-10.el9_0.x86_64"
   },
   {
     "id": "3853072",
@@ -1472,7 +1472,7 @@
   {
     "id": "3853073",
     "unitNumber": 7,
-    "text": "deb http://tr.archive.ubuntu.com/ubuntu jammy main restricted universe multiverse\n Yukarıdaki komut satırının başında yeralan “deb” aşağıdakilerden hangisini belirtir?",
+    "text": "deb http://tr.archive.ubuntu.com/ubuntu jammy main restricted universe multiverse<br/>Yukarıdaki komut satırının başında yeralan “deb” aşağıdakilerden hangisini belirtir?",
     "correctAnswer": "A",
     "options": {
       "A": "Arşivin normalde kullandığımız önceden derlenmiş paketler olan ikili paketleri içerdiğini gösterir.",
@@ -1481,7 +1481,7 @@
       "D": "Yazılım yönetim paketi apt’ye yazılım paketlerinin nerelerden alınacağı bilgisi verilir.",
       "E": "Yazılım depolarında belirtilen kaynaklardaki yazılım paketlerinin güncel listesi alınır."
     },
-    "explanation": "deb http://tr.archive.ubuntu.com/ubuntu jammy main restricted universe multiverse\n deb-src http://tr.archive.ubuntu.com/ubuntu jammy main restricted universe multiversev\n Her satırdaki ilk kelime olan deb veya deb-src, arşiv türünü belirtir. deb, arşivin normalde kullandığımız önceden derlenmiş paketler olan ikili (binary) paketleri (deb) içerdiğini gösterir. deb-src ise orijinal program kaynaklarına ek olarak Debian kontrol dosyası (.dsc) ve programı paketlemek için gereken değişiklikleri içeren diff.gz olan kaynak paketleri gösterir."
+    "explanation": "deb http://tr.archive.ubuntu.com/ubuntu jammy main restricted universe multiverse<br/>deb-src http://tr.archive.ubuntu.com/ubuntu jammy main restricted universe multiversev<br/>Her satırdaki ilk kelime olan deb veya deb-src, arşiv türünü belirtir. deb, arşivin normalde kullandığımız önceden derlenmiş paketler olan ikili (binary) paketleri (deb) içerdiğini gösterir. deb-src ise orijinal program kaynaklarına ek olarak Debian kontrol dosyası (.dsc) ve programı paketlemek için gereken değişiklikleri içeren diff.gz olan kaynak paketleri gösterir."
   },
   {
     "id": "3853074",
@@ -1495,18 +1495,18 @@
       "D": "+",
       "E": "**"
     },
-    "explanation": "Çift ampersand, birinci komutun başarılı bir şekilde çalışarak sonlandıktan sonra ikinci komutun çalıştırılacağı anlamına gelmektedir.<br/>lmsuser@ubuntu2204:~$ sudo apt update &amp;&amp; sudo apt install apt-mirror\n Yukarıdaki komut satırı arayüzünde görüleceği üzere öncelikle yazılım yüklenmeden önce /etc/apt/sources.list ve varsa /etc/apt/sources.list.d dizini altındaki diğer yazılım deposu listeleri sudo apt update komutu ile güncellenmektedir. Çift ampersand, birinci komutun (sudo apt update) başarılı bir şekilde çalışarak sonlandıktan sonra ikinci komutun (sudo apt install apt-mirror) çalıştırılacağı anlamına gelmektedir."
+    "explanation": "Çift ampersand, birinci komutun başarılı bir şekilde çalışarak sonlandıktan sonra ikinci komutun çalıştırılacağı anlamına gelmektedir.<br/>lmsuser@ubuntu2204:~$ sudo apt update &amp;&amp; sudo apt install apt-mirror<br/>Yukarıdaki komut satırı arayüzünde görüleceği üzere öncelikle yazılım yüklenmeden önce /etc/apt/sources.list ve varsa /etc/apt/sources.list.d dizini altındaki diğer yazılım deposu listeleri sudo apt update komutu ile güncellenmektedir. Çift ampersand, birinci komutun (sudo apt update) başarılı bir şekilde çalışarak sonlandıktan sonra ikinci komutun (sudo apt install apt-mirror) çalıştırılacağı anlamına gelmektedir."
   },
   {
     "id": "3853075",
     "unitNumber": 7,
-    "text": "lmsuser@ubuntu2204:~$ sudo mkdir -p /var/www/html/ubuntu/var lmsuser@ubuntu2204:~$ sudo cp /var/spool/apt-mirror/var/postmirror.sh /var/www/ html/ubuntu/var\n Yukarıdaki komut satırlarının sırasıyla yaptığı işler hangi seçenekte doğru verilmiştir?",
+    "text": "lmsuser@ubuntu2204:~$ sudo mkdir -p /var/www/html/ubuntu/var lmsuser@ubuntu2204:~$ sudo cp /var/spool/apt-mirror/var/postmirror.sh /var/www/ html/ubuntu/var<br/>Yukarıdaki komut satırlarının sırasıyla yaptığı işler hangi seçenekte doğru verilmiştir?",
     "correctAnswer": "A",
     "options": {
       "A": "/var/www/html/ubuntu dizini altında var dizinini oluşturur ve bu dizinin içine /var/spool/apt-mirror/var/ altındaki postmirror.sh dosyasını kopyalar.",
       "B": "/var/www/html/ubuntu dizini altında var dizinini siler ve /var/spool/apt-mirror/var/ altındaki postmirror.sh dosyasını oluşturur.",
       "C": "/var/www/html/ubuntu dizinine konumlanır ve bu dizinin içindeki postmirror.sh dosyasını siler.",
-      "D": "/var/spool/apt-mirror/var/ altındaki postmirror.sh dosyasını sh /var/www/ html/ubuntu/var\n dizinine taşır.",
+      "D": "/var/spool/apt-mirror/var/ altındaki postmirror.sh dosyasını sh /var/www/ html/ubuntu/var<br/>dizinine taşır.",
       "E": "/var/spool/apt-mirror/var/ ve /var/www/ html/ubuntu/var dizinlerini oluşturur."
     },
     "explanation": "Soru kökünde verilen komut satırı /var/www/html/ubuntu dizini altında var dizinini oluşturur ve bu dizinin içine /var/spool/apt-mirror/var/ altındaki postmirror.sh dosyasını kopyalar.<br/>Yazılım deposunu internet üzerinden Ubuntu yazılım depolarıyla senkronize etmeye başlamadan önce yapılması gereken son bir işlem yeni base_path olarak belirlenen /var/www/html/ubuntu dizini altında var dizinini oluşturmak ve bu dizinin içine /var/spool/apt-mirror/var/ altındaki postmirror.sh dosyasını kopyalamaktır. Bunun için komut satırı arayüzünde sırasıyla aşağıdaki komutlar çalıştırılacaktır: lmsuser@ubuntu2204:~$ sudo mkdir -p /var/www/html/ubuntu/var lmsuser@ubuntu2204:~$ sudo cp /var/spool/apt-mirror/var/postmirror.sh /var/www/ html/ubuntu/var"
@@ -1565,7 +1565,7 @@
       "D": "journalctl --disk-usage",
       "E": "journalctl -u nginx.service"
     },
-    "explanation": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/d35a88f893f3f9466e737cc60338d4f8.png\" alt=\"\" width=\"600\" height=\"519\"><br/>journalctl -b\n En son yeniden başlatmadan bu yana toplanan tüm sistem log kayıtlarını gösterir."
+    "explanation": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/d35a88f893f3f9466e737cc60338d4f8.png\" alt=\"\" width=\"600\" height=\"519\"><br/>journalctl -b<br/>En son yeniden başlatmadan bu yana toplanan tüm sistem log kayıtlarını gösterir."
   },
   {
     "id": "3853080",
@@ -1593,7 +1593,7 @@
       "D": "sudo adduser ansible",
       "E": "sudo usermod -L ansible"
     },
-    "explanation": "Ansible paketini Ubuntu yazılım deposundan kurmak için \"sudo apt install ansible\" komutu çalıştırılmalıdır.<br/>SSH protokolü ile kontrol makinesine bağlanıp yazılım depoları güncellendikten sonra (sudo apt update) Ansible paketini Ubuntu yazılım deposundan kurmak için aşağıdaki komut çalıştırılmalıdır:\n <img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/92a4cb4a5d55e462f546913d70d590c9.png\" alt=\"\" width=\"500\" height=\"151\">"
+    "explanation": "Ansible paketini Ubuntu yazılım deposundan kurmak için \"sudo apt install ansible\" komutu çalıştırılmalıdır.<br/>SSH protokolü ile kontrol makinesine bağlanıp yazılım depoları güncellendikten sonra (sudo apt update) Ansible paketini Ubuntu yazılım deposundan kurmak için aşağıdaki komut çalıştırılmalıdır:<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/92a4cb4a5d55e462f546913d70d590c9.png\" alt=\"\" width=\"500\" height=\"151\">"
   },
   {
     "id": "3853082",
@@ -1601,18 +1601,18 @@
     "text": "Aşağıdaki komut kümelerinden hangisi önce /etc/ansible dizinini oluşturur ve ardından Ansible kontrol nodunda /etc/ansible/hosts dosyasını düzenleyici kullanarak açar?",
     "correctAnswer": "A",
     "options": {
-      "A": "sudo mkdir /etc/ansible\n sudo nano /etc/ansible/hosts",
-      "B": "sudo chdir /etc/ansible\n sudo mkdir /etc/ansible/hosts",
-      "C": "sudo nano /etc/ansible\n sudo cp /etc/ansible/hosts",
-      "D": "sudo mkdir /etc/ansible\n sudo cp /etc/ansible/hosts",
-      "E": "sudo mkdir /etc/ansible\n sudo cd /etc/ansible/hosts"
+      "A": "sudo mkdir /etc/ansible<br/>sudo nano /etc/ansible/hosts",
+      "B": "sudo chdir /etc/ansible<br/>sudo mkdir /etc/ansible/hosts",
+      "C": "sudo nano /etc/ansible<br/>sudo cp /etc/ansible/hosts",
+      "D": "sudo mkdir /etc/ansible<br/>sudo cp /etc/ansible/hosts",
+      "E": "sudo mkdir /etc/ansible<br/>sudo cd /etc/ansible/hosts"
     },
-    "explanation": "Varsayılan Ansible envanterinin içeriğini düzenlemek için önce mkdir komutuyla /etc/ansible dizinini oluşturulacaktır. Ardından Ansible kontrol nodunda /etc/ansible/hosts dosyası tercih edilen metin düzenleyici kullanılarak açılacaktır:\n<br/>sudo mkdir /etc/ansible\n<br/>sudo nano /etc/ansible/hosts<br/>Varsayılan Ansible envanterinin içeriğini düzenlemek için önce mkdir komutuyla /etc/ansible dizinini oluşturulacaktır. Ardından Ansible kontrol nodunda /etc/ansible/hosts dosyası tercih edilen metin düzenleyici kullanılarak açılacaktır:\n sudo mkdir /etc/ansible\n sudo nano /etc/ansible/hosts"
+    "explanation": "Varsayılan Ansible envanterinin içeriğini düzenlemek için önce mkdir komutuyla /etc/ansible dizinini oluşturulacaktır. Ardından Ansible kontrol nodunda /etc/ansible/hosts dosyası tercih edilen metin düzenleyici kullanılarak açılacaktır:<br/>sudo mkdir /etc/ansible<br/>sudo nano /etc/ansible/hosts"
   },
   {
     "id": "3853083",
     "unitNumber": 8,
-    "text": "ubuntu@ubuntu-local:~$ echo \"ansible ALL=(ALL) NOPASSWD:ALL\" | sudo tee /etc/ sudoers.d/ansible\n Yukarıdaki komutun işlevi aşağıdakilerden hangisidir?",
+    "text": "ubuntu@ubuntu-local:~$ echo \"ansible ALL=(ALL) NOPASSWD:ALL\" | sudo tee /etc/ sudoers.d/ansible<br/>Yukarıdaki komutun işlevi aşağıdakilerden hangisidir?",
     "correctAnswer": "A",
     "options": {
       "A": "Ansible kullanıcısına süper kullanıcı yetkisi tanımlar.",
@@ -1621,12 +1621,12 @@
       "D": "Her bir makine için ansible adında yeni bir kullanıcı tanımlar.",
       "E": "Kontrol makinesinde ssh anahtarı oluşturur."
     },
-    "explanation": "Soru kökünde verilen komut satırı Ansible kullanıcısına süper kullanıcı yetkisi tanımlamak için kullanılır.<br/>Aşağıdaki komutlar ile önce ansible kullanıcısı oluşturulacak ve sonrasında bu kullanıcı süper yetkili kullanıcı grubuna eklenecektir: \n ubuntu@ubuntu-local:~$ sudo adduser ansible\n Ansible kullanıcısına süper kullanıcı yetkisi tanımlamak için aşağıdaki komut çalıştırılmalıdır: ubuntu@ubuntu-local:~$ echo \"ansible ALL=(ALL) NOPASSWD:ALL\" | sudo tee /etc/ sudoers.d/ansible"
+    "explanation": "Soru kökünde verilen komut satırı Ansible kullanıcısına süper kullanıcı yetkisi tanımlamak için kullanılır.<br/>Aşağıdaki komutlar ile önce ansible kullanıcısı oluşturulacak ve sonrasında bu kullanıcı süper yetkili kullanıcı grubuna eklenecektir: <br/>ubuntu@ubuntu-local:~$ sudo adduser ansible<br/>Ansible kullanıcısına süper kullanıcı yetkisi tanımlamak için aşağıdaki komut çalıştırılmalıdır: ubuntu@ubuntu-local:~$ echo \"ansible ALL=(ALL) NOPASSWD:ALL\" | sudo tee /etc/ sudoers.d/ansible"
   },
   {
     "id": "3853084",
     "unitNumber": 8,
-    "text": "ubuntu@ubuntu-local:~$ ssh-keygen\n Yukarıdaki komut satırı hangi amaçla kullanılır?",
+    "text": "ubuntu@ubuntu-local:~$ ssh-keygen<br/>Yukarıdaki komut satırı hangi amaçla kullanılır?",
     "correctAnswer": "A",
     "options": {
       "A": "SSH anahtarı oluşturulur.",
@@ -1635,7 +1635,7 @@
       "D": "Tüm makinelerde SSH yetkilendirmesi yapılır.",
       "E": "Kontrol makinesinden yönetilen makinelere parolasız erişim sağlanır."
     },
-    "explanation": "Aşağıdaki komut ile ssh anahtarı oluşturulacaktır:\n<br/>ubuntu@ubuntu-local:~$ ssh-keygen<br/>Aşağıdaki komut ile ssh anahtarı oluşturulacaktır:\n ubuntu@ubuntu-local:~$ ssh-keygen\n Generating public/private rsa key pair.\n Enter file in which to save the key (/home/ubuntu/.ssh/id_rsa):\n Enter passphrase (empty for no passphrase):\n Enter same passphrase again:\n Your identification has been saved in /home/ubuntu/.ssh/id_rsa\n Your public key has been saved in /home/ubuntu/.ssh/id_rsa.pub\n The key fingerprint is:\n SHA256:\n The key's randomart image is:\n +---[RSA 3072]----+\n |....E.. |\n | .o.*+==+. |\n | .ooO@O=. |\n +----[SHA256]-----+"
+    "explanation": "Aşağıdaki komut ile ssh anahtarı oluşturulacaktır:<br/>ubuntu@ubuntu-local:~$ ssh-keygen<br/>Generating public/private rsa key pair.<br/>Enter file in which to save the key (/home/ubuntu/.ssh/id_rsa):<br/>Enter passphrase (empty for no passphrase):<br/>Enter same passphrase again:<br/>Your identification has been saved in /home/ubuntu/.ssh/id_rsa<br/>Your public key has been saved in /home/ubuntu/.ssh/id_rsa.pub<br/>The key fingerprint is:<br/>SHA256:<br/>The key's randomart image is:<br/>+---[RSA 3072]----+<br/>|....E.. |<br/>| .o.*+==+. |<br/>| .ooO@O=. |<br/>+----[SHA256]-----+"
   },
   {
     "id": "3853085",
@@ -1649,12 +1649,12 @@
       "D": "ubuntu@ubuntu-local:~$ sudo adduser ansible",
       "E": "ubuntu@ubuntu-local:/etc$ ansible --version"
     },
-    "explanation": "Soru kökünde verilen “ansible kullanıcısı ile bağlantı kontrolü” “ubuntu@ubuntu-local:~$ ansible all -m ping -u ansible” komutu ile gerçekleştirilir.<br/>Aşağıdaki komut ile ansible kullanıcısı ile (-u parametresi ile belirtilen kullanıcı) bağlantı kontrolü yapılabilir:\n ubuntu@ubuntu-local:~$ ansible all -m ping -u ansible\n YonetilenSunucu02 | SUCCESS =&gt; {\n \"changed\": false,\n \"ping\": \"pong\"\n }\n YonetilenSunucu01 | SUCCESS =&gt; {\n \"changed\": false,\n \"ping\": \"pong\"\n }"
+    "explanation": "Soru kökünde verilen “ansible kullanıcısı ile bağlantı kontrolü” “ubuntu@ubuntu-local:~$ ansible all -m ping -u ansible” komutu ile gerçekleştirilir.<br/>Aşağıdaki komut ile ansible kullanıcısı ile (-u parametresi ile belirtilen kullanıcı) bağlantı kontrolü yapılabilir:<br/>ubuntu@ubuntu-local:~$ ansible all -m ping -u ansible<br/>YonetilenSunucu02 | SUCCESS =&gt; {<br/>\"changed\": false,<br/>\"ping\": \"pong\"<br/>}<br/>YonetilenSunucu01 | SUCCESS =&gt; {<br/>\"changed\": false,<br/>\"ping\": \"pong\"<br/>}"
   },
   {
     "id": "3853086",
     "unitNumber": 8,
-    "text": "ufw:<br/>rule: allow<br/>port: '80'<br/>proto: tcp\n Yukarıdaki komut grubunda işlem yapılacak görev türü aşağıdakilerden hangisidir?",
+    "text": "ufw:<br/>rule: allow<br/>port: '80'<br/>proto: tcp<br/>Yukarıdaki komut grubunda işlem yapılacak görev türü aşağıdakilerden hangisidir?",
     "correctAnswer": "A",
     "options": {
       "A": "Güvenlik duvarı",
@@ -1663,7 +1663,7 @@
       "D": "Node",
       "E": "Paket"
     },
-    "explanation": "Aşağıdaki kod bloğunda ufw (uncomplicated firewall) ile işlem yapılacak görev türünün güvenlik duvarı olduğu tanımlanmıştır. rule:allow değişkeni ile kural türünün izin vermek olacağı, port:80 değişkeni ile izin verilecek portun 80 ve proto:tcp ile de bağlantı protokolünün tcp olacağı belirtilmiştir.\n <br/>- name: 80 TCP Portuna İzin Verilmesi<br/>ufw:<br/>rule: allow<br/>port: '80'<br/>proto: tcp"
+    "explanation": "Aşağıdaki kod bloğunda ufw (uncomplicated firewall) ile işlem yapılacak görev türünün güvenlik duvarı olduğu tanımlanmıştır. rule:allow değişkeni ile kural türünün izin vermek olacağı, port:80 değişkeni ile izin verilecek portun 80 ve proto:tcp ile de bağlantı protokolünün tcp olacağı belirtilmiştir.<br/>- name: 80 TCP Portuna İzin Verilmesi<br/>ufw:<br/>rule: allow<br/>port: '80'<br/>proto: tcp"
   },
   {
     "id": "3853087",
@@ -1705,6 +1705,6 @@
       "D": "chown",
       "E": "mkdir"
     },
-    "explanation": "Aşağıdaki kubeadm komutunu yalnızca ana makineden çalıştırılarak Kubernetes kümesinin çalıştırılmasına başlanacaktır.\n ubuntu@k8smaster:~$ sudo kubeadm init --control-plane-endpoint=k8smaster.ornek.net<br/>[init] Using Kubernetes version: v1.25.0<br/>[preflight] Running pre-flight checks<br/>[WARNING SystemVerification]: missing optional cgroups: blkio<br/>[preflight] Pulling images required for setting up a Kubernetes cluster<br/>[preflight] This might take a minute or two, depending on the speed of your internet connection<br/>[preflight] You can also perform this action in beforehand using 'kubeadm config<br/>images pull'<br/>.......<br/>[addons] Applied essential addon: kube-proxy"
+    "explanation": "Aşağıdaki kubeadm komutunu yalnızca ana makineden çalıştırılarak Kubernetes kümesinin çalıştırılmasına başlanacaktır.<br/>ubuntu@k8smaster:~$ sudo kubeadm init --control-plane-endpoint=k8smaster.ornek.net<br/>[init] Using Kubernetes version: v1.25.0<br/>[preflight] Running pre-flight checks<br/>[WARNING SystemVerification]: missing optional cgroups: blkio<br/>[preflight] Pulling images required for setting up a Kubernetes cluster<br/>[preflight] This might take a minute or two, depending on the speed of your internet connection<br/>[preflight] You can also perform this action in beforehand using 'kubeadm config<br/>images pull'<br/>.......<br/>[addons] Applied essential addon: kube-proxy"
   }
 ]

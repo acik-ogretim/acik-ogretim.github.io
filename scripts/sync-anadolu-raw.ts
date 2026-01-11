@@ -1,7 +1,7 @@
 
 import fs from 'fs';
 import path from 'path';
-import { cleanHtml } from './utils/clean-html.js';
+import { cleanHtml } from './utils/clean-html.ts';
 
 // Configurations
 const MCP_ROOT = path.resolve('../acik-ogretim-mcp');
@@ -65,7 +65,9 @@ function mapRawToApp(raw: RawAnadoluQuestion): AppQuestion {
     // For now simple cleaning. Python `map_to_old_format` does complex merge.
     // Let's adopt a robust check:
     let expl = "";
-    if (raw.AnswerExplanation) expl = cleanHtml(raw.AnswerExplanation);
+    if (raw.AnswerExplanation) {
+        expl = cleanHtml(raw.AnswerExplanation);
+    }
 
     // Smart Merge Logic: Title + Explanation
     if (raw.Title) {

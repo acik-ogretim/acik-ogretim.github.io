@@ -179,7 +179,7 @@
       "D": "Linkli Liste",
       "E": "Dizi"
     },
-    "explanation": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/e79f7c775b55f06ae0dcb65875deba11.png\" alt=\"\" width=\"753\" height=\"419\"><br/><strong>Doğrusal (Linear) veri yapısı:</strong> Veri ögelerinin sıralı veya doğrusal olarak düzenlendiği, her ögenin önceki ve sonraki bitişik ögelere eklendiği veri yapısına doğrusal veri yapısı denir. Doğrusal veri yapılarına örnek olarak dizi, yığın, sıra, bağlantılı liste vb. verilebilir.\n <strong>Statik veri yapısı:</strong> Statik veri yapısı sabit bir hafıza boyutuna sahiptir. Statik bir veri yapısındaki ögelere erişmek daha kolaydır. Diziler, bu veri yapısına örnek olarak verilebilir.\n <strong>Dinamik veri yapısı:</strong> Dinamik veri yapısında boyut sabit değildir. Kodun çalışma zamanı sırasında, bellek (alan) karmaşıklığı ile ilgili olarak verimli kabul edilebileceği anda rastgele güncellenebilir. Kuyruk, yığın vb. bu veri yapısının örnekleri olarak verilebilir.\n <strong>Doğrusal olmayan veri yapısı:</strong> Veri ögelerinin sıralı veya doğrusal olarak yerleştirilmediği veri yapılarına doğrusal olmayan veri yapıları denir. Doğrusal olmayan bir veri yapısında, tüm ögeleri yalnızca tek bir döngüde göremeyiz. Bu veri yapısına örnek olarak ağaçlar ve grafikler verilebilir"
+    "explanation": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/e79f7c775b55f06ae0dcb65875deba11.png\" alt=\"\" width=\"753\" height=\"419\"><br/><strong>Doğrusal (Linear) veri yapısı:</strong> Veri ögelerinin sıralı veya doğrusal olarak düzenlendiği, her ögenin önceki ve sonraki bitişik ögelere eklendiği veri yapısına doğrusal veri yapısı denir. Doğrusal veri yapılarına örnek olarak dizi, yığın, sıra, bağlantılı liste vb. verilebilir.<br/><strong>Statik veri yapısı:</strong> Statik veri yapısı sabit bir hafıza boyutuna sahiptir. Statik bir veri yapısındaki ögelere erişmek daha kolaydır. Diziler, bu veri yapısına örnek olarak verilebilir.<br/><strong>Dinamik veri yapısı:</strong> Dinamik veri yapısında boyut sabit değildir. Kodun çalışma zamanı sırasında, bellek (alan) karmaşıklığı ile ilgili olarak verimli kabul edilebileceği anda rastgele güncellenebilir. Kuyruk, yığın vb. bu veri yapısının örnekleri olarak verilebilir.<br/><strong>Doğrusal olmayan veri yapısı:</strong> Veri ögelerinin sıralı veya doğrusal olarak yerleştirilmediği veri yapılarına doğrusal olmayan veri yapıları denir. Doğrusal olmayan bir veri yapısında, tüm ögeleri yalnızca tek bir döngüde göremeyiz. Bu veri yapısına örnek olarak ağaçlar ve grafikler verilebilir"
   },
   {
     "id": "3623932",
@@ -193,7 +193,7 @@
       "D": "Adımlar kesin olarak belirtilmelidir.",
       "E": "Her adımın sonucu benzersiz bir şekilde tanımlanır"
     },
-    "explanation": "Bir algoritmanın özelliklerinden \"sonluluk\" sınırlı sayıda komut yürütüldükten sonra algoritmanın durması olarak tanımlanır.<br/>Bir algoritmanın özellikleri:\n<br/>• Kesinlik - adımlar kesin olarak belirtilmelidir.\n<br/>• Benzersizlik - her adımın sonucu benzersiz bir şekilde tanımlanır ve yalnızca önceki adımların girdisine ve sonucuna bağlıdır.\n<br/>• Sonluluk - sınırlı sayıda komut yürütüldükten sonra algoritma durmalıdır.\n<br/>• Girdi - algoritma girdi alır.\n<br/>• Çıktı - algoritma çıktı üretir.\n<br/>• Genellik, Uygulanabilirlik - algoritma bir dizi girdiye uygulanır."
+    "explanation": "Bir algoritmanın özelliklerinden \"sonluluk\" sınırlı sayıda komut yürütüldükten sonra algoritmanın durması olarak tanımlanır.<br/>Bir algoritmanın özellikleri:<br/>• Kesinlik - adımlar kesin olarak belirtilmelidir.<br/>• Benzersizlik - her adımın sonucu benzersiz bir şekilde tanımlanır ve yalnızca önceki adımların girdisine ve sonucuna bağlıdır.<br/>• Sonluluk - sınırlı sayıda komut yürütüldükten sonra algoritma durmalıdır.<br/>• Girdi - algoritma girdi alır.<br/>• Çıktı - algoritma çıktı üretir.<br/>• Genellik, Uygulanabilirlik - algoritma bir dizi girdiye uygulanır."
   },
   {
     "id": "3623933",
@@ -221,7 +221,7 @@
       "D": "O(N^c) - Polinom Zaman Karmaşıklığı",
       "E": "O(c^N) - Üstel Zaman Karmaşıklığı"
     },
-    "explanation": "Kod 1.8\n<br/>for( int i = 0; i &lt; n; i++)\n<br/>for( int j = 0; j &lt; n; j++)\n<br/>sayac++;<br/>Algoritmanın çalışma süresi, N kez doğrusal bir işlem gerçekleştirmenin bir sonucudur yani N ile N çarpımı olarak hesaplanır. Kabarcıkla sıralama (bubble sort), seçimle sıralama (selection sort) ve araya girerek sıralama (insertion sort) gibi genel olarak kullanılan bir sıralama algoritması O(N²) alır."
+    "explanation": "Kod 1.8<br/>for( int i = 0; i &lt; n; i++)<br/>for( int j = 0; j &lt; n; j++)<br/>sayac++;<br/>Algoritmanın çalışma süresi, N kez doğrusal bir işlem gerçekleştirmenin bir sonucudur yani N ile N çarpımı olarak hesaplanır. Kabarcıkla sıralama (bubble sort), seçimle sıralama (selection sort) ve araya girerek sıralama (insertion sort) gibi genel olarak kullanılan bir sıralama algoritması O(N²) alır."
   },
   {
     "id": "3623935",
@@ -249,7 +249,7 @@
       "D": "O(N³)",
       "E": "O(N!)"
     },
-    "explanation": "Kod 1.7\n<br/>bool asalSayimi(int sayi) {\n<br/>if (sayi == 2) return true;\n<br/>if (sayi &lt; 2) return false;\n<br/>for (int i = 2; i &lt;= sqrt(sayi); i ++)\n<br/>if (sayi%i == 0) return false;\n<br/>return true;\n<br/>}<br/>Algoritmanın çalışma süresi, girdi boyutunun karekökü kadar azaltılır. Örnek olarak, bir sayının asal olup olmadığını sadece karekökü olana kadar döngüye girerek kontrol edilebilir."
+    "explanation": "Kod 1.7<br/>bool asalSayimi(int sayi) {<br/>if (sayi == 2) return true;<br/>if (sayi &lt; 2) return false;<br/>for (int i = 2; i &lt;= sqrt(sayi); i ++)<br/>if (sayi%i == 0) return false;<br/>return true;<br/>}<br/>Algoritmanın çalışma süresi, girdi boyutunun karekökü kadar azaltılır. Örnek olarak, bir sayının asal olup olmadığını sadece karekökü olana kadar döngüye girerek kontrol edilebilir."
   },
   {
     "id": "3841764",
@@ -263,7 +263,7 @@
       "D": "sıkıştırılması - kopyalanması",
       "E": "kontrol edilmesi - aktarılması"
     },
-    "explanation": "Veri yapısı bilgisayardaki dijital verileri <strong>depolamanın</strong> ve bu veriler üzerinde farklı eylemleri <strong>gerçekleştirmenin en kolay yolunu sağlayan</strong> bir veri öğeleri grubudur.<br/><strong>Depolamak:</strong> Verilerin RAM veya disk gibi donanımlarda uygun şekilde saklanmasını sağlar.<br/><strong>İşlemek:</strong> Bu depolanan veriler üzerinde sıralama, arama, güncelleme, ekleme, silme gibi işlemler yapılmasını ifade eder.<br/><strong>A) işlenmesi - yazdırılması:</strong><br/>Yazdırma (output) veri yapısının ana işlevi değildir, bu daha çok \"çıkış işlemi\"dir. Sadece işleme ve yazdırma kombinasyonu eksik bir ifadedir.\n<br/><strong>C) silinmesi - taşınması:</strong><br/>Silme ve taşıma işlemleri veri yapılarıyla yapılabilir ama bunlar temel değil, ikincil işlemlerdir.\n<br/><strong>D) sıkıştırılması - kopyalanması:</strong><br/>Bu işlemler daha çok veri sıkıştırma algoritmaları ve dosya sistemleri ile ilgilidir. Veri yapılarının doğrudan fonksiyonları değildir.\n<br/><strong>E) kontrol edilmesi - aktarılması:</strong><br/>Kontrol ve veri aktarımı, ağ protokolleri ve işletim sistemi düzeyindeki işlemlerdir. Veri yapılarının ana amacıyla ilgili değildir.<br/>Doğru cevap B seçeneğidir."
+    "explanation": "Veri yapısı bilgisayardaki dijital verileri <strong>depolamanın</strong> ve bu veriler üzerinde farklı eylemleri <strong>gerçekleştirmenin en kolay yolunu sağlayan</strong> bir veri öğeleri grubudur.<br/><strong>Depolamak:</strong> Verilerin RAM veya disk gibi donanımlarda uygun şekilde saklanmasını sağlar.<br/><strong>İşlemek:</strong> Bu depolanan veriler üzerinde sıralama, arama, güncelleme, ekleme, silme gibi işlemler yapılmasını ifade eder.<br/><strong>A) işlenmesi - yazdırılması:</strong><br/>Yazdırma (output) veri yapısının ana işlevi değildir, bu daha çok \"çıkış işlemi\"dir. Sadece işleme ve yazdırma kombinasyonu eksik bir ifadedir.<br/><strong>C) silinmesi - taşınması:</strong><br/>Silme ve taşıma işlemleri veri yapılarıyla yapılabilir ama bunlar temel değil, ikincil işlemlerdir.<br/><strong>D) sıkıştırılması - kopyalanması:</strong><br/>Bu işlemler daha çok veri sıkıştırma algoritmaları ve dosya sistemleri ile ilgilidir. Veri yapılarının doğrudan fonksiyonları değildir.<br/><strong>E) kontrol edilmesi - aktarılması:</strong><br/>Kontrol ve veri aktarımı, ağ protokolleri ve işletim sistemi düzeyindeki işlemlerdir. Veri yapılarının ana amacıyla ilgili değildir.<br/>Doğru cevap B seçeneğidir."
   },
   {
     "id": "3841768",
@@ -277,7 +277,7 @@
       "D": "bool",
       "E": "char"
     },
-    "explanation": "<h4>A) <code>int</code></h4><br/><ul><br/><li><br/>Veri türüdür.\n<br/></li><br/><li><br/>Tamsayıları temsil eder. Örneğin: <code>int sayi = 42;</code>\n<br/></li><br/></ul><br/><h4>B) <code>float</code></h4><br/><ul><br/><li><br/>Veri türüdür.\n<br/></li><br/><li><br/>Ondalıklı (kayan noktalı) sayılar için kullanılır. Örneğin: <code>float pi = 3.14f;</code>\n<br/></li><br/></ul><br/><h4>D) <code>bool</code></h4><br/><ul><br/><li><br/>Veri türüdür.\n<br/></li><br/><li><br/>Mantıksal değerleri ifade eder (true/false). Örneğin: <code>bool aktifMi = true;</code>\n<br/></li><br/></ul><br/><h4>E) <code>char</code></h4><br/><ul><br/><li><br/>Veri türüdür.\n<br/></li><br/><li><br/>Tek bir karakter tutar. Örneğin: <code>char harf = 'A';</code>\n<br/></li><br/></ul><br/><h4>C) <code>queue</code></h4><br/><ul><br/><li><br/>Veri türü değil, veri yapısıdır.\n<br/></li><br/><li><br/><code>queue</code> (kuyruk) bir veri yapısıdır ve veri türü gibi doğrudan bir değeri temsil etmez.\n<br/></li><br/><li><br/>Örneğin: C# veya Java’da <code>Queue<int> kuyruk = new Queue<int>();</int></int></code> gibi tanımlanır.\n<br/></li><br/><li><br/>Kuyruk yapısı, \"ilk giren ilk çıkar (FIFO)\" prensibiyle çalışır.\n<br/></li><br/></ul><br/><h3>Temel Fark:</h3><br/><table><thead><tr><th>Kavram</th><th>Tanım</th><th>Örnek</th></tr></thead><tbody><tr><td>Veri Türü</td><td>Değişkenin taşıyacağı veri biçimi</td><td><code>int</code>, <code>float</code>, <code>char</code>, <code>bool</code></td></tr><tr><td>Veri Yapısı</td><td>Verilerin organize edilme şekli</td><td><code>queue</code>, <code>stack</code>, <code>list</code></td></tr></tbody></table>"
+    "explanation": "<h4>A) <code>int</code></h4><br/><ul><br/><li><br/>Veri türüdür.<br/></li><br/><li><br/>Tamsayıları temsil eder. Örneğin: <code>int sayi = 42;</code><br/></li><br/></ul><br/><h4>B) <code>float</code></h4><br/><ul><br/><li><br/>Veri türüdür.<br/></li><br/><li><br/>Ondalıklı (kayan noktalı) sayılar için kullanılır. Örneğin: <code>float pi = 3.14f;</code><br/></li><br/></ul><br/><h4>D) <code>bool</code></h4><br/><ul><br/><li><br/>Veri türüdür.<br/></li><br/><li><br/>Mantıksal değerleri ifade eder (true/false). Örneğin: <code>bool aktifMi = true;</code><br/></li><br/></ul><br/><h4>E) <code>char</code></h4><br/><ul><br/><li><br/>Veri türüdür.<br/></li><br/><li><br/>Tek bir karakter tutar. Örneğin: <code>char harf = 'A';</code><br/></li><br/></ul><br/><h4>C) <code>queue</code></h4><br/><ul><br/><li><br/>Veri türü değil, veri yapısıdır.<br/></li><br/><li><br/><code>queue</code> (kuyruk) bir veri yapısıdır ve veri türü gibi doğrudan bir değeri temsil etmez.<br/></li><br/><li><br/>Örneğin: C# veya Java’da <code>Queue<int> kuyruk = new Queue<int>();</int></int></code> gibi tanımlanır.<br/></li><br/><li><br/>Kuyruk yapısı, \"ilk giren ilk çıkar (FIFO)\" prensibiyle çalışır.<br/></li><br/></ul><br/><h3>Temel Fark:</h3><br/><table><thead><tr><th>Kavram</th><th>Tanım</th><th>Örnek</th></tr></thead><tbody><tr><td>Veri Türü</td><td>Değişkenin taşıyacağı veri biçimi</td><td><code>int</code>, <code>float</code>, <code>char</code>, <code>bool</code></td></tr><tr><td>Veri Yapısı</td><td>Verilerin organize edilme şekli</td><td><code>queue</code>, <code>stack</code>, <code>list</code></td></tr></tbody></table>"
   },
   {
     "id": "3841769",
@@ -291,7 +291,7 @@
       "D": "Kod okunabilirliğini azaltması",
       "E": "Yeniden kullanılabilir olması"
     },
-    "explanation": "<h4>A) Hafızanın verimli kullanılması</h4> <ul> <li> Doğrudur. Veri yapıları, belleğin gereksiz kullanımını engelleyerek verimli depolamaya olanak tanır.<br/>Örneğin, sabit boyutlu dizi yerine bağlı liste kullanmak dinamik alan yönetimi sağlar.\n </li> </ul> <h4>B) İşlem hızının artırılması</h4> <ul> <li> Doğrudur. Etkin veri yapısı kullanımı (örneğin: <code>hash table</code> veya <code>ağaç</code>) işlem sürelerini ciddi şekilde azaltabilir.\n </li> </ul> <h4>C) Soyutlama sağlaması</h4> <ul> <li> Doğrudur. Veri yapıları, verilerin nasıl tutulduğunu soyutlayarak programcının sadece işlevselliğe odaklanmasını sağlar.<br/>Örneğin: Yığın (stack) kullanırken yalnızca push/pop metodunu bilmek yeterlidir, alt yapı detayları soyutlanır.\n </li> </ul> <h4>D) Kod okunabilirliğini azaltması</h4> <ul> <li> Yanlıştır. İyi tanımlanmış veri yapıları kodun okunabilirliğini artırır, azaltmaz.\n <ul> <li> Net sınıf ve metod kullanımı kodun bakımını kolaylaştırır.\n </li> <li> Karmaşık işlemler basitleşir ve modüler hale gelir.\n </li> </ul> </li> </ul> <h4>E) Yeniden kullanılabilir olması</h4> <ul> <li> Doğrudur. Veri yapıları, birden fazla projede tekrar tekrar kullanılabilir. Özellikle kütüphane sınıfları olarak tasarlanmış veri yapıları tekrar kullanımı destekler.\n </li> </ul> <h3> Sonuç:</h3> <ul> <li> Veri yapıları yazılım mühendisliğinde birçok fayda sağlar.\n </li> <li> Ancak D şıkkındaki ifade, veri yapılarının avantajı değil, aksi bir durumdur.\n </li> <li> Bu yüzden doğru cevap: D) Kod okunabilirliğini azaltması\n </li> </ul>"
+    "explanation": "<h4>A) Hafızanın verimli kullanılması</h4> <ul> <li> Doğrudur. Veri yapıları, belleğin gereksiz kullanımını engelleyerek verimli depolamaya olanak tanır.<br/>Örneğin, sabit boyutlu dizi yerine bağlı liste kullanmak dinamik alan yönetimi sağlar.<br/></li> </ul> <h4>B) İşlem hızının artırılması</h4> <ul> <li> Doğrudur. Etkin veri yapısı kullanımı (örneğin: <code>hash table</code> veya <code>ağaç</code>) işlem sürelerini ciddi şekilde azaltabilir.<br/></li> </ul> <h4>C) Soyutlama sağlaması</h4> <ul> <li> Doğrudur. Veri yapıları, verilerin nasıl tutulduğunu soyutlayarak programcının sadece işlevselliğe odaklanmasını sağlar.<br/>Örneğin: Yığın (stack) kullanırken yalnızca push/pop metodunu bilmek yeterlidir, alt yapı detayları soyutlanır.<br/></li> </ul> <h4>D) Kod okunabilirliğini azaltması</h4> <ul> <li> Yanlıştır. İyi tanımlanmış veri yapıları kodun okunabilirliğini artırır, azaltmaz.<br/><ul> <li> Net sınıf ve metod kullanımı kodun bakımını kolaylaştırır.<br/></li> <li> Karmaşık işlemler basitleşir ve modüler hale gelir.<br/></li> </ul> </li> </ul> <h4>E) Yeniden kullanılabilir olması</h4> <ul> <li> Doğrudur. Veri yapıları, birden fazla projede tekrar tekrar kullanılabilir. Özellikle kütüphane sınıfları olarak tasarlanmış veri yapıları tekrar kullanımı destekler.<br/></li> </ul> <h3> Sonuç:</h3> <ul> <li> Veri yapıları yazılım mühendisliğinde birçok fayda sağlar.<br/></li> <li> Ancak D şıkkındaki ifade, veri yapılarının avantajı değil, aksi bir durumdur.<br/></li> <li> Bu yüzden doğru cevap: D) Kod okunabilirliğini azaltması<br/></li> </ul>"
   },
   {
     "id": "3841770",
@@ -305,7 +305,7 @@
       "D": "etki - tepki",
       "E": "analiz - algoritma"
     },
-    "explanation": "<em>Bir algoritma yazmak için şu adımlar izlenmelidir:</em>\n<br/><ul><br/><li><br/>Problemin net tanımı yapılmalıdır\n<br/></li><br/><li><br/>Girdi belirlenmelidir\n<br/></li><br/><li><br/>Beklenen çıktı tanımlanmalıdır\n<br/></li><br/><li><br/>Kısıtlar göz önünde bulundurulmalıdır\n<br/></li><br/><li><br/>Çözüm, bu parametrelere uygun hazırlanmalıdır\n<br/></li><br/></ul><br/><h4>Girdi (Input) Nedir?<br/>Algoritmanın başında kullanıcıdan alınan veya dış dünyadan gelen verilerdir.<br/>Örneğin: Bir dairenin alanını hesaplayan algoritma için yarıçap bir girdidir.</h4><br/><h4>Çıktı (Output) Nedir?<br/>Algoritmanın sonunda üretilen sonuçlardır.<br/>Örneğin: Dairenin alanı (πr²) çıktıdır.</h4><br/>A) çözüm - formül\n<br/><ul><br/><li><br/>\"Çözüm\" sürecin kendisi, \"formül\" sadece bir matematiksel ifadedir. Algoritma tanımında yetersizdir.\n<br/></li><br/></ul><br/>B) çıktı - sonuç\n<br/><ul><br/><li><br/>\"Çıktı\" ve \"sonuç\" aynı anlama gelir, bu ifade tekrar içerir.\n<br/></li><br/></ul><br/>D) etki - tepki\n<br/><ul><br/><li><br/>Bu daha çok fiziksel sistemlerde kullanılan bir kavramdır, algoritma bağlamında belirsizdir.\n<br/></li><br/></ul><br/>E) analiz - algoritma\n<br/><ul><br/><li><br/>Bu ifade de kavram karmaşasına yol açar. Analiz süreciyle algoritma oluşturmak farklı aşamalardır.\n<br/></li><br/></ul><br/>Doğru cevap C) girdi - çıktı çünkü algoritmanın amacı, verilen girdilere göre anlamlı çıktılar üretmektir."
+    "explanation": "<em>Bir algoritma yazmak için şu adımlar izlenmelidir:</em><br/><ul><br/><li><br/>Problemin net tanımı yapılmalıdır<br/></li><br/><li><br/>Girdi belirlenmelidir<br/></li><br/><li><br/>Beklenen çıktı tanımlanmalıdır<br/></li><br/><li><br/>Kısıtlar göz önünde bulundurulmalıdır<br/></li><br/><li><br/>Çözüm, bu parametrelere uygun hazırlanmalıdır<br/></li><br/></ul><br/><h4>Girdi (Input) Nedir?<br/>Algoritmanın başında kullanıcıdan alınan veya dış dünyadan gelen verilerdir.<br/>Örneğin: Bir dairenin alanını hesaplayan algoritma için yarıçap bir girdidir.</h4><br/><h4>Çıktı (Output) Nedir?<br/>Algoritmanın sonunda üretilen sonuçlardır.<br/>Örneğin: Dairenin alanı (πr²) çıktıdır.</h4><br/>A) çözüm - formül<br/><ul><br/><li><br/>\"Çözüm\" sürecin kendisi, \"formül\" sadece bir matematiksel ifadedir. Algoritma tanımında yetersizdir.<br/></li><br/></ul><br/>B) çıktı - sonuç<br/><ul><br/><li><br/>\"Çıktı\" ve \"sonuç\" aynı anlama gelir, bu ifade tekrar içerir.<br/></li><br/></ul><br/>D) etki - tepki<br/><ul><br/><li><br/>Bu daha çok fiziksel sistemlerde kullanılan bir kavramdır, algoritma bağlamında belirsizdir.<br/></li><br/></ul><br/>E) analiz - algoritma<br/><ul><br/><li><br/>Bu ifade de kavram karmaşasına yol açar. Analiz süreciyle algoritma oluşturmak farklı aşamalardır.<br/></li><br/></ul><br/>Doğru cevap C) girdi - çıktı çünkü algoritmanın amacı, verilen girdilere göre anlamlı çıktılar üretmektir."
   },
   {
     "id": "3841771",
@@ -319,7 +319,7 @@
       "D": "Programlama dili belirleme",
       "E": "Problemin net tanımı"
     },
-    "explanation": "Algoritma yazmak için ön koşul olarak aşağıdakilere ihtiyaç vardır:\n <ul> <li> Bu algoritma ile çözülecek problemin net tanımı yapılmalıdır.*\n </li> <li> Girdiler belirlenmelidir\n </li> <li> Beklenen çıktı tanımlanmalıdır\n </li> <li>Kısıtlar göz önüne alınmalıdır\"</li> </ul> <br/>Neden \"problemin net tanımı\" ilk adımdır?\n <ul> <li> Algoritmanın temelini oluşturur.\n </li> <li> Ne çözüleceği bilinmezse neyi yazacağımız da belli olmaz.\n </li> <li> Belirsiz ya da eksik tanımlanmış bir problem → hatalı algoritma.\n </li> <li> Girdiler ve çıktılar ancak problemin ne olduğu anlaşıldıktan sonra belirlenebilir.\n </li> </ul> Bu nedenle ilk yapılması gereken:<br/>“E) Problemin net tanımı”dır."
+    "explanation": "Algoritma yazmak için ön koşul olarak aşağıdakilere ihtiyaç vardır:<br/><ul> <li> Bu algoritma ile çözülecek problemin net tanımı yapılmalıdır.*<br/></li> <li> Girdiler belirlenmelidir<br/></li> <li> Beklenen çıktı tanımlanmalıdır<br/></li> <li>Kısıtlar göz önüne alınmalıdır\"</li> </ul><br/>Neden \"problemin net tanımı\" ilk adımdır?<br/><ul> <li> Algoritmanın temelini oluşturur.<br/></li> <li> Ne çözüleceği bilinmezse neyi yazacağımız da belli olmaz.<br/></li> <li> Belirsiz ya da eksik tanımlanmış bir problem → hatalı algoritma.<br/></li> <li> Girdiler ve çıktılar ancak problemin ne olduğu anlaşıldıktan sonra belirlenebilir.<br/></li> </ul> Bu nedenle ilk yapılması gereken:<br/>“E) Problemin net tanımı”dır."
   },
   {
     "id": "3841772",
@@ -333,7 +333,7 @@
       "D": "I, II ve III",
       "E": "I, II ve IV"
     },
-    "explanation": "Zaman karmaşıklıklarının artış sırası:<br/>O(1) &lt; O(log n) &lt; O(n) &lt; O(n log n) &lt; O(n²) &lt; O(n³) &lt; O(2ⁿ) &lt; O(n!)<br/><em>Hangi karmaşıklık terimleri O(1)’den (sabitten) büyük, ama O(n²)’den küçüktür?</em><br/><h4>I. O(log n)</h4><br/><ul><br/><li><br/>Sabitten büyüktür.\n<br/></li><br/><li><br/>n²’den küçüktür. Dahil edilir.\n<br/></li><br/></ul><br/><h4>II. O(n)</h4><br/><ul><br/><li><br/>O(log n)’den büyük, O(n²)’den küçük Dahil edilir.\n<br/></li><br/></ul><br/><h4>III. O(n log n)</h4><br/><ul><br/><li><br/>O(n)’den büyük ama O(n²)’den küçüktür Dahil edilir.\n<br/></li><br/></ul><br/><h4>IV. O(n³)</h4><br/><ul><br/><li><br/>O(n²)’den büyüktür. Dahil edilmez.\n<br/></li><br/></ul><br/>Doğru cevap: D) I, II ve III"
+    "explanation": "Zaman karmaşıklıklarının artış sırası:<br/>O(1) &lt; O(log n) &lt; O(n) &lt; O(n log n) &lt; O(n²) &lt; O(n³) &lt; O(2ⁿ) &lt; O(n!)<br/><em>Hangi karmaşıklık terimleri O(1)’den (sabitten) büyük, ama O(n²)’den küçüktür?</em><br/><h4>I. O(log n)</h4><br/><ul><br/><li><br/>Sabitten büyüktür.<br/></li><br/><li><br/>n²’den küçüktür. Dahil edilir.<br/></li><br/></ul><br/><h4>II. O(n)</h4><br/><ul><br/><li><br/>O(log n)’den büyük, O(n²)’den küçük Dahil edilir.<br/></li><br/></ul><br/><h4>III. O(n log n)</h4><br/><ul><br/><li><br/>O(n)’den büyük ama O(n²)’den küçüktür Dahil edilir.<br/></li><br/></ul><br/><h4>IV. O(n³)</h4><br/><ul><br/><li><br/>O(n²)’den büyüktür. Dahil edilmez.<br/></li><br/></ul><br/>Doğru cevap: D) I, II ve III"
   },
   {
     "id": "3841773",
@@ -361,7 +361,7 @@
       "D": "O(n)",
       "E": "O(1)"
     },
-    "explanation": "<h4><code>A = 1</code> ve <code>B = 2</code></h4><br/><ul><br/><li><br/>Sabit süreli işlemlerdir → O(1)\n<br/></li><br/></ul><br/><h4><code>for i = 1 to n:</code></h4><br/><code>for j = 1 to n:</code><br/><code>A = A + i + j</code>\n<br/><ul><br/><li><br/>Bu iç içe döngü n × n = n² kez çalışır.<br/>→ O(n²)\n<br/></li><br/></ul><br/><h4><code>for k = 1 to n:</code></h4><br/><code>B = B * k</code>\n<br/><ul><br/><li><br/>Bu tek döngü n kez çalışır.<br/>→ O(n)\n<br/></li><br/></ul><br/><h4>Toplam Karmaşıklık:</h4><br/><ul><br/><li><br/>O(1) + O(n²) + O(n)\n<br/></li><br/><li><br/>Asimptotik olarak baskın olan terim belirleyici olur → Doğru Cevap: B) O(n²)\n<br/></li><br/></ul>"
+    "explanation": "<h4><code>A = 1</code> ve <code>B = 2</code></h4><br/><ul><br/><li><br/>Sabit süreli işlemlerdir → O(1)<br/></li><br/></ul><br/><h4><code>for i = 1 to n:</code></h4><br/><code>for j = 1 to n:</code><br/><code>A = A + i + j</code><br/><ul><br/><li><br/>Bu iç içe döngü n × n = n² kez çalışır.<br/>→ O(n²)<br/></li><br/></ul><br/><h4><code>for k = 1 to n:</code></h4><br/><code>B = B * k</code><br/><ul><br/><li><br/>Bu tek döngü n kez çalışır.<br/>→ O(n)<br/></li><br/></ul><br/><h4>Toplam Karmaşıklık:</h4><br/><ul><br/><li><br/>O(1) + O(n²) + O(n)<br/></li><br/><li><br/>Asimptotik olarak baskın olan terim belirleyici olur → Doğru Cevap: B) O(n²)<br/></li><br/></ul>"
   },
   {
     "id": "3841775",
@@ -375,7 +375,7 @@
       "D": "i'nin her artışında <strong>i = i + 1</strong> işlemi bir <strong>işlem (dikdörtgen)</strong> kutusunda gösterilmelidir.",
       "E": "Döngü başlangıcı (i = 1) için <strong>başlangıç/bitiş (oval)</strong> sembolü kullanılır."
     },
-    "explanation": "<h4>Doğru Cevap: E) Döngü başlangıcı (i = 1) için başlangıç/bitiş (oval) sembolü kullanılır.</h4> <ul> <li> Oval şekil, yalnızca algoritmanın başlatıldığı veya sonlandığı yerdir.\n </li> <li> Değişken başlatma (<code>i = 1</code>) bir işlem olduğu için dikdörtgen ile gösterilmelidir.\n </li> </ul>"
+    "explanation": "<h4>Doğru Cevap: E) Döngü başlangıcı (i = 1) için başlangıç/bitiş (oval) sembolü kullanılır.</h4> <ul> <li> Oval şekil, yalnızca algoritmanın başlatıldığı veya sonlandığı yerdir.<br/></li> <li> Değişken başlatma (<code>i = 1</code>) bir işlem olduğu için dikdörtgen ile gösterilmelidir.<br/></li> </ul>"
   },
   {
     "id": "3841776",
@@ -389,7 +389,7 @@
       "D": "O(n)",
       "E": "O(1)"
     },
-    "explanation": "<h4>Dış döngü:</h4><br/><code>for i in range(n): </code><br/><ul><br/><li><br/><code>n</code> kez döner → O(n)\n<br/></li><br/></ul><br/><h4>Koşul:</h4><br/><code>if i % 2 == 0:</code><br/><ul><br/><li><br/>Bu koşul n/2 kez doğrudur (çift sayılar için), ancak Big O notasyonunda sabit çarpanlar dikkate alınmaz.\n<br/></li><br/><li><br/>Yani bu döngü yaklaşık n/2 kez iç döngüyü çalıştırır → yine de O(n) kabul edilir.\n<br/></li><br/></ul><br/><h4>İç döngü:</h4><br/><code>for j in range(n):</code><br/><ul><br/><li><br/><code>n</code> kez çalışır → O(n)\n<br/></li><br/></ul><br/><h4>Toplam karmaşıklık:</h4><br/><ul><br/><li><br/>İç döngü yaklaşık <code>n/2</code> kez çalışsa da → O(n) × O(n) = O(n²) Doğru cevap budur.\n<br/></li><br/></ul>"
+    "explanation": "<h4>Dış döngü:</h4><br/><code>for i in range(n): </code><br/><ul><br/><li><br/><code>n</code> kez döner → O(n)<br/></li><br/></ul><br/><h4>Koşul:</h4><br/><code>if i % 2 == 0:</code><br/><ul><br/><li><br/>Bu koşul n/2 kez doğrudur (çift sayılar için), ancak Big O notasyonunda sabit çarpanlar dikkate alınmaz.<br/></li><br/><li><br/>Yani bu döngü yaklaşık n/2 kez iç döngüyü çalıştırır → yine de O(n) kabul edilir.<br/></li><br/></ul><br/><h4>İç döngü:</h4><br/><code>for j in range(n):</code><br/><ul><br/><li><br/><code>n</code> kez çalışır → O(n)<br/></li><br/></ul><br/><h4>Toplam karmaşıklık:</h4><br/><ul><br/><li><br/>İç döngü yaklaşık <code>n/2</code> kez çalışsa da → O(n) × O(n) = O(n²) Doğru cevap budur.<br/></li><br/></ul>"
   },
   {
     "id": "3623977",
@@ -408,7 +408,7 @@
   {
     "id": "3623978",
     "unitNumber": 2,
-    "text": "Bir dizi, bitişik bellek konumlarında depolanan ögeler topluluğudur. Buradaki amaç, aynı türden birden fazla ögeyi bir arada saklamaktır. Bu yapıda, bir temel değere yani dizinin ilk ögesinin bellek konumuna (genellikle dizinin adı ile gösterilir) bir ........................... eklenerek her bir ögenin konumunun hesaplanması kolaylaştırılmaktadır.\n Yukarıda yer alan metindeki boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "text": "Bir dizi, bitişik bellek konumlarında depolanan ögeler topluluğudur. Buradaki amaç, aynı türden birden fazla ögeyi bir arada saklamaktır. Bu yapıda, bir temel değere yani dizinin ilk ögesinin bellek konumuna (genellikle dizinin adı ile gösterilir) bir ........................... eklenerek her bir ögenin konumunun hesaplanması kolaylaştırılmaktadır.<br/>Yukarıda yer alan metindeki boşluğa aşağıdakilerden hangisi gelmelidir?",
     "correctAnswer": "B",
     "options": {
       "A": "Küme",
@@ -436,7 +436,7 @@
   {
     "id": "3623980",
     "unitNumber": 2,
-    "text": "Hash tablosunun en önemli varsayımlarından biri; Anahtara dayalı bir Değer için çok hızlı arama<br/>yapabilen, O(1) işlem karmaşıklığında arama işlemi yapabilmesi gerekmektedir. Bu amaca ulaşmak için Hash Fonksiyonu kullanılmaktadır. Değerin bulunabileceği bir Kova dizini (bucket) oluşturmak için ................................................. gerekmektedir.\n Yukarıda yer verilen metindeki boş bırakılan yere aşağıdakilerden hangisi gelmelidir?",
+    "text": "Hash tablosunun en önemli varsayımlarından biri; Anahtara dayalı bir Değer için çok hızlı arama<br/>yapabilen, O(1) işlem karmaşıklığında arama işlemi yapabilmesi gerekmektedir. Bu amaca ulaşmak için Hash Fonksiyonu kullanılmaktadır. Değerin bulunabileceği bir Kova dizini (bucket) oluşturmak için ................................................. gerekmektedir.<br/>Yukarıda yer verilen metindeki boş bırakılan yere aşağıdakilerden hangisi gelmelidir?",
     "correctAnswer": "A",
     "options": {
       "A": "Anahtar",
@@ -450,7 +450,7 @@
   {
     "id": "3623981",
     "unitNumber": 2,
-    "text": "Hashtable sınıfı, hash tablosuyla ilgili sınıfların jenerik olmayan bir varyantıdır ancak anahtar ve değer için bir değişken tipi belirlenmesine izin vermediği için önemli bir sınırlaması vardır. Sözlük veri yapısında bu sınırlama kaldırılmıştır. DictionaryEntry sınıfının Key ve Value özelliklerinin ikisi de nesne türündedir bu nedenle tüm anahtarlar ve değerler aynı tipte olsa bile .......................................................................... işlemleri yapılması gerekmektedir.\n Yukarıda yer verilen metindeki boş kısma aşağıdakilerden hangisi gelmelidir?",
+    "text": "Hashtable sınıfı, hash tablosuyla ilgili sınıfların jenerik olmayan bir varyantıdır ancak anahtar ve değer için bir değişken tipi belirlenmesine izin vermediği için önemli bir sınırlaması vardır. Sözlük veri yapısında bu sınırlama kaldırılmıştır. DictionaryEntry sınıfının Key ve Value özelliklerinin ikisi de nesne türündedir bu nedenle tüm anahtarlar ve değerler aynı tipte olsa bile .......................................................................... işlemleri yapılması gerekmektedir.<br/>Yukarıda yer verilen metindeki boş kısma aşağıdakilerden hangisi gelmelidir?",
     "correctAnswer": "C",
     "options": {
       "A": "Çarpma ve ters fonksiyon",
@@ -478,7 +478,7 @@
   {
     "id": "3623983",
     "unitNumber": 2,
-    "text": "C# dilinde uygulama geliştirirken System.Collections.Generic ad alanından HashSet sınıfının sağladığı yüksek performanslı işlemlerden yararlanılabilir. HashSet sınıfı, kümedeki ögelerin sayısını döndüren Count dahil olmak üzere birkaç özellik içermektedir. Ayrıca, küme işlemlerini gerçekleştirmek için birçok yöntem kullanılabilir.\n Yaygın olarak kullanılan bir yöntemde, parametre olarak gönderilen küme ile yöntemin çağrıldığı geçerli kümeyi değiştirmeyi mümkün kılarak aşağıdakilerden hangisi oluşturulamaz?",
+    "text": "C# dilinde uygulama geliştirirken System.Collections.Generic ad alanından HashSet sınıfının sağladığı yüksek performanslı işlemlerden yararlanılabilir. HashSet sınıfı, kümedeki ögelerin sayısını döndüren Count dahil olmak üzere birkaç özellik içermektedir. Ayrıca, küme işlemlerini gerçekleştirmek için birçok yöntem kullanılabilir.<br/>Yaygın olarak kullanılan bir yöntemde, parametre olarak gönderilen küme ile yöntemin çağrıldığı geçerli kümeyi değiştirmeyi mümkün kılarak aşağıdakilerden hangisi oluşturulamaz?",
     "correctAnswer": "D",
     "options": {
       "A": "Birleşim",
@@ -487,7 +487,7 @@
       "D": "Toplama",
       "E": "Simetrik fark"
     },
-    "explanation": "İlk yöntem grubu, parametre olarak gönderilen küme ile aşağıdakileri oluşturmak için yöntemin çağrıldığı geçerli kümeyi değiştirmeyi mümkün kılmaktadır:<br/>• Birleşim (UnionWith)<br/>• Kesişme (IntersectWith)<br/>• Çıkarma (ExceptWith)<br/>• Simetrik fark (SmetricExceptWith)\n Bunların arasında toplama bulunmamaktadır, doğru yanıt D seçeneğidir."
+    "explanation": "İlk yöntem grubu, parametre olarak gönderilen küme ile aşağıdakileri oluşturmak için yöntemin çağrıldığı geçerli kümeyi değiştirmeyi mümkün kılmaktadır:<br/>• Birleşim (UnionWith)<br/>• Kesişme (IntersectWith)<br/>• Çıkarma (ExceptWith)<br/>• Simetrik fark (SmetricExceptWith)<br/>Bunların arasında toplama bulunmamaktadır, doğru yanıt D seçeneğidir."
   },
   {
     "id": "3623984",
@@ -593,9 +593,9 @@
     "text": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/4545a16b40627ea0ad5e2ab64868c4fc.png\" alt=\"\" width=\"422\" height=\"209\"> Yukarıdaki kod parçacığının çıktısı aşağıdakilerden hangisidir?",
     "correctAnswer": "A",
     "options": {
-      "A": "1 Eskisehir\n 2 Kocaeli\n 3 İstanbul\n 4 Ankara\n 5 Antalya",
-      "B": "Ankara\n Antalya\n Eskişehir\n İstanbul\n Kocaeli",
-      "C": "Eskişehir\n Ankara\n Antalya\n İstanbul\n Kocaeli",
+      "A": "1 Eskisehir<br/>2 Kocaeli<br/>3 İstanbul<br/>4 Ankara<br/>5 Antalya",
+      "B": "Ankara<br/>Antalya<br/>Eskişehir<br/>İstanbul<br/>Kocaeli",
+      "C": "Eskişehir<br/>Ankara<br/>Antalya<br/>İstanbul<br/>Kocaeli",
       "D": "Eskisehir (1), Kocaeli (2), İstanbul (3), Ankara (4), Antalya (5)",
       "E": "Eskisehir, Kocaeli, İstanbul, Ankara, Antalya"
     },
@@ -613,7 +613,7 @@
       "D": "Bir küme, tam sayı veya dize değerleri gibi çeşitli verileri depolayabilir.",
       "E": "A \\ B’nin sonuç kümesi, A’nın üyeleri değil, B’nin üyeleri olan ögeleri içerir."
     },
-    "explanation": "A \\ B’nin sonuç kümesi, B’nin üyeleri değil, A’nın üyeleri olan ögeleri içerir. Aşağıdaki çizimde, A \\ B ve B \\ A olmak üzere iki örnek sunulmaktadır.\n<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/219603af7d5d373e4e6f69fbc96559f0.png\" alt=\"\" width=\"396\" height=\"148\"><br/>Bazı algoritmalarda çeşitli veriler içeren kümeler üzerinde işlem yapmak gerekmektedir. Küme, yinelenen ögeleri ve belirli bir düzeni olmayan farklı nesnelerden oluşan bir koleksiyondur bu nedenle yalnızca belirli bir elemanın kümede olup olmadığını öğrenebilirsiniz. Kümeler; birleştirme, kesişme, çıkarma ve simetrik fark gibi matematiksel modeller ve işlemlerle sıkı bir şekilde ilişkilidir. Bir küme, aşağıdaki şemada gösterildiği gibi tam sayı veya dize değerleri gibi çeşitli verileri depolayabilir. Bunun yanında, kullanıcı tanımlı bir sınıfın örnekleriyle bir küme oluşturulabilir ve istenildiği zaman kümeye öge ekleyip kaldırılabilir."
+    "explanation": "A \\ B’nin sonuç kümesi, B’nin üyeleri değil, A’nın üyeleri olan ögeleri içerir. Aşağıdaki çizimde, A \\ B ve B \\ A olmak üzere iki örnek sunulmaktadır.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/219603af7d5d373e4e6f69fbc96559f0.png\" alt=\"\" width=\"396\" height=\"148\"><br/>Bazı algoritmalarda çeşitli veriler içeren kümeler üzerinde işlem yapmak gerekmektedir. Küme, yinelenen ögeleri ve belirli bir düzeni olmayan farklı nesnelerden oluşan bir koleksiyondur bu nedenle yalnızca belirli bir elemanın kümede olup olmadığını öğrenebilirsiniz. Kümeler; birleştirme, kesişme, çıkarma ve simetrik fark gibi matematiksel modeller ve işlemlerle sıkı bir şekilde ilişkilidir. Bir küme, aşağıdaki şemada gösterildiği gibi tam sayı veya dize değerleri gibi çeşitli verileri depolayabilir. Bunun yanında, kullanıcı tanımlı bir sınıfın örnekleriyle bir küme oluşturulabilir ve istenildiği zaman kümeye öge ekleyip kaldırılabilir."
   },
   {
     "id": "3624157",
@@ -627,7 +627,7 @@
       "D": "Parametre olarak geçirilen kümenin uygun bir üst kümesi",
       "E": "Parametre olarak geçirilen kümenin uygun üyesi"
     },
-    "explanation": "Yöntemin çağrıldığı geçerli kümede aşağıdaki özellikler kontrol edilebilir:\n<br/><ul><br/><li>Parametre olarak iletilen kümenin bir alt kümesi (IsSubsetOf)</li><br/><li>Parametre olarak iletilen kümenin bir üst kümesi (IsSupersetOf)</li><br/><li>Parametre olarak geçirilen kümenin uygun bir alt kümesi (IsProperSubsetOf)</li><br/><li>Parametre olarak geçirilen kümenin uygun bir üst kümesi (IsProperSupersetOf) Ayrıca, iki kümenin aynı ögeleri içerip içermediğini (SetEquals) veya iki kümenin en az bir ortak ögeye sahip olup olmadığını (Overlaps) doğrulayabilirsiniz.</li><br/></ul><br/>Parametre olarak geçirilen kümenin uygun bir üst kümesi (IsProperSupersetOf)yöntemi ile kontrol edilebilir.<br/>C# dilinde uygulama geliştirirken System.Collections.Generic ad alanından HashSet sınıfının sağladığı yüksek performanslı işlemlerden yararlanılabilir. HashSet sınıfı, kümedeki ögelerin sayısını döndüren Count dahil olmak üzere birkaç özellik içermektedir. Ayrıca, aşağıdaki gibi küme işlemlerini gerçekleştirmek için birçok yöntem kullanılabilir. İlk yöntem grubu, parametre olarak gönderilen küme ile aşağıdakileri oluşturmak için yöntemin çağrıldığı geçerli kümeyi değiştirmeyi mümkün kılmaktadır:\n <ul> <li>Birleşim (UnionWith) </li> <li>Kesişme (IntersectWith) </li> <li>Çıkarma (ExceptWith) </li> <li>Simetrik fark (SmetricExceptWith) İki küme arasındaki ilişkiler de kontrol edilebilir.</li> </ul>"
+    "explanation": "Yöntemin çağrıldığı geçerli kümede aşağıdaki özellikler kontrol edilebilir:<br/><ul><br/><li>Parametre olarak iletilen kümenin bir alt kümesi (IsSubsetOf)</li><br/><li>Parametre olarak iletilen kümenin bir üst kümesi (IsSupersetOf)</li><br/><li>Parametre olarak geçirilen kümenin uygun bir alt kümesi (IsProperSubsetOf)</li><br/><li>Parametre olarak geçirilen kümenin uygun bir üst kümesi (IsProperSupersetOf) Ayrıca, iki kümenin aynı ögeleri içerip içermediğini (SetEquals) veya iki kümenin en az bir ortak ögeye sahip olup olmadığını (Overlaps) doğrulayabilirsiniz.</li><br/></ul><br/>Parametre olarak geçirilen kümenin uygun bir üst kümesi (IsProperSupersetOf)yöntemi ile kontrol edilebilir.<br/>C# dilinde uygulama geliştirirken System.Collections.Generic ad alanından HashSet sınıfının sağladığı yüksek performanslı işlemlerden yararlanılabilir. HashSet sınıfı, kümedeki ögelerin sayısını döndüren Count dahil olmak üzere birkaç özellik içermektedir. Ayrıca, aşağıdaki gibi küme işlemlerini gerçekleştirmek için birçok yöntem kullanılabilir. İlk yöntem grubu, parametre olarak gönderilen küme ile aşağıdakileri oluşturmak için yöntemin çağrıldığı geçerli kümeyi değiştirmeyi mümkün kılmaktadır:<br/><ul> <li>Birleşim (UnionWith) </li> <li>Kesişme (IntersectWith) </li> <li>Çıkarma (ExceptWith) </li> <li>Simetrik fark (SmetricExceptWith) İki küme arasındaki ilişkiler de kontrol edilebilir.</li> </ul>"
   },
   {
     "id": "3624158",
@@ -641,12 +641,12 @@
       "D": "List<t>, ArrayList’ten daha yavaş ve daha fazla hataya açık çalışır.</t>",
       "E": "Ögelere bir dizin geçirilerek erişilebilir, örneğin listem[0]. İndeksler birden başlar."
     },
-    "explanation": "Açıklamaya göre List<t>, IList<t> arayüzünü uygulayan ArrayList’in eşdeğeridir.</t></t><br/>List<t>; dizine göre erişilebilen ve sıralama, arama ve listeyi değiştirme yöntemlerine sahip, kesin olarak girilmiş nesneler topluluğudur. System.Collections.Generic ad alanı altında gelen ArrayList’in genel sürümüdür.</t>\n List<t> Özellikleri</t>\n <ul> <li>List<t>, IList<t>varayüzünü uygulayan ArrayList’in eşdeğeridir.</t></t></li> <li>System.Collections.Generic ad alanı altında gelir.</li> <li>List<t>, belirtilen türdeki ögeleri içerebilir. Derleme zamanı tür denetimi sağlar ve genel olduğu için kutulama/kutudan çıkarma (boxing/unboxing) gerçekleştirmez.</t></li> <li>Ögeler, Add(), AddRange() yöntemleri veya koleksiyon başlatıcı sözdizimi kullanılarak eklenebilir.</li> <li>Ögelere bir dizin geçirilerek erişilebilir, örneğin listem[0]. İndeksler sıfırdan başlar.</li> <li>List<t>, ArrayList’ten daha hızlı ve daha az hataya açık çalışır.</t></li> </ul> List<t> genel bir koleksiyondur bu nedenle depolayabileceği veri türü için bir tür parametresi belirtilmesi gerekmektedir.</t>"
+    "explanation": "Açıklamaya göre List<t>, IList<t> arayüzünü uygulayan ArrayList’in eşdeğeridir.</t></t><br/>List<t>; dizine göre erişilebilen ve sıralama, arama ve listeyi değiştirme yöntemlerine sahip, kesin olarak girilmiş nesneler topluluğudur. System.Collections.Generic ad alanı altında gelen ArrayList’in genel sürümüdür.</t><br/>List<t> Özellikleri</t><br/><ul> <li>List<t>, IList<t>varayüzünü uygulayan ArrayList’in eşdeğeridir.</t></t></li> <li>System.Collections.Generic ad alanı altında gelir.</li> <li>List<t>, belirtilen türdeki ögeleri içerebilir. Derleme zamanı tür denetimi sağlar ve genel olduğu için kutulama/kutudan çıkarma (boxing/unboxing) gerçekleştirmez.</t></li> <li>Ögeler, Add(), AddRange() yöntemleri veya koleksiyon başlatıcı sözdizimi kullanılarak eklenebilir.</li> <li>Ögelere bir dizin geçirilerek erişilebilir, örneğin listem[0]. İndeksler sıfırdan başlar.</li> <li>List<t>, ArrayList’ten daha hızlı ve daha az hataya açık çalışır.</t></li> </ul> List<t> genel bir koleksiyondur bu nedenle depolayabileceği veri türü için bir tür parametresi belirtilmesi gerekmektedir.</t>"
   },
   {
     "id": "3845923",
     "unitNumber": 2,
-    "text": "Aşağıdaki C# kodunun çıktısı <strong>nedir</strong>?\n <em>int[] sayilar = { 10, 20, 30, 40, 50 };</em><br/><em>sayilar[2] = sayilar[0] + sayilar[4];</em><br/><em>Console.WriteLine(sayilar[2]);</em>",
+    "text": "Aşağıdaki C# kodunun çıktısı <strong>nedir</strong>?<br/><em>int[] sayilar = { 10, 20, 30, 40, 50 };</em><br/><em>sayilar[2] = sayilar[0] + sayilar[4];</em><br/><em>Console.WriteLine(sayilar[2]);</em>",
     "correctAnswer": "D",
     "options": {
       "A": "10",
@@ -655,7 +655,7 @@
       "D": "60",
       "E": "70"
     },
-    "explanation": "<ol> <li> Dizi tanımı (C# dizilerinde indeksler 0’dan başlar):\n </li> </ol> <ul> <li> <em>sayilar = { 10, 20, 30, 40, 50 }</em>\n </li> <li> İndeksler:<br/>0→10, 1→20, 2→30, 3→40, 4→50\n </li> </ul> <ol start=\"2\"> <li> Atama ifadesi:<br/><em><code>sayilar[2] = sayilar[0] + sayilar[4];</code></em>\n </li> </ol> <ul> <li> sayilar[0] = 10\n </li> <li> sayilar[4] = 50\n </li> <li> Toplam = 10 + 50 = 60\n </li> <li> Bu değer, indeks 2’deki eski değerin (30) üzerine yazılır.<br/>Yeni durum: { 10, 20, <strong>60</strong>, 40, 50 }\n </li> </ul> <ol start=\"3\"> <li> Yazdırma:<br/><em><code>Console.WriteLine(sayilar[2]);</code></em> → ekrana 60 yazar.\n </li> </ol>"
+    "explanation": "<ol> <li> Dizi tanımı (C# dizilerinde indeksler 0’dan başlar):<br/></li> </ol> <ul> <li> <em>sayilar = { 10, 20, 30, 40, 50 }</em><br/></li> <li> İndeksler:<br/>0→10, 1→20, 2→30, 3→40, 4→50<br/></li> </ul> <ol start=\"2\"> <li> Atama ifadesi:<br/><em><code>sayilar[2] = sayilar[0] + sayilar[4];</code></em><br/></li> </ol> <ul> <li> sayilar[0] = 10<br/></li> <li> sayilar[4] = 50<br/></li> <li> Toplam = 10 + 50 = 60<br/></li> <li> Bu değer, indeks 2’deki eski değerin (30) üzerine yazılır.<br/>Yeni durum: { 10, 20, <strong>60</strong>, 40, 50 }<br/></li> </ul> <ol start=\"3\"> <li> Yazdırma:<br/><em><code>Console.WriteLine(sayilar[2]);</code></em> → ekrana 60 yazar.<br/></li> </ol>"
   },
   {
     "id": "3845948",
@@ -669,7 +669,7 @@
       "D": "Hash tablo",
       "E": "Sıralı küme"
     },
-    "explanation": "<ul> <li> <strong> Tek boyutlu dizi</strong> → <code>[ ]</code> şeklinde olur, <code>[,]</code> değil.\n </li> <li> <strong> Çok boyutlu dizi</strong> → <code>[,]</code> ifadesi bu türü belirtir.\n </li> <li> <strong> Pürüzlü (Jagged) dizi</strong> → <code>int[][]</code> şeklinde tanımlanır, satır uzunlukları farklı olabilir.\n </li> <li> <strong> Hash tablo</strong> → Anahtar-değer yapısıdır, dizilerle alakalı değil.\n </li> <li> <strong> Sıralı küme</strong> → Küme veri yapısının özel bir türüdür.\n </li> </ul>"
+    "explanation": "<ul> <li> <strong> Tek boyutlu dizi</strong> → <code>[ ]</code> şeklinde olur, <code>[,]</code> değil.<br/></li> <li> <strong> Çok boyutlu dizi</strong> → <code>[,]</code> ifadesi bu türü belirtir.<br/></li> <li> <strong> Pürüzlü (Jagged) dizi</strong> → <code>int[][]</code> şeklinde tanımlanır, satır uzunlukları farklı olabilir.<br/></li> <li> <strong> Hash tablo</strong> → Anahtar-değer yapısıdır, dizilerle alakalı değil.<br/></li> <li> <strong> Sıralı küme</strong> → Küme veri yapısının özel bir türüdür.<br/></li> </ul>"
   },
   {
     "id": "3845958",
@@ -683,7 +683,7 @@
       "D": "Anahtarı yoksayar",
       "E": "Çalışma zamanında rastgele değer atar"
     },
-    "explanation": "C#’ta <strong>Hashtable</strong>’da <strong>anahtar (key) için <code>null</code> kullanılamaz</strong>. <code>null</code> bir anahtar eklemeye çalışırsanız <strong>çalışma zamanında hata</strong> alırsınız (Hashtable’de key <code>null</code> olamaz).\n Aynı ilke, jenerik sözlükler (Dictionary) için de geçerlidir: <strong>anahtar <code>null</code> olamaz</strong>, ama değer türü izin veriyorsa <strong>value <code>null</code> olabilir</strong>."
+    "explanation": "C#’ta <strong>Hashtable</strong>’da <strong>anahtar (key) için <code>null</code> kullanılamaz</strong>. <code>null</code> bir anahtar eklemeye çalışırsanız <strong>çalışma zamanında hata</strong> alırsınız (Hashtable’de key <code>null</code> olamaz).<br/>Aynı ilke, jenerik sözlükler (Dictionary) için de geçerlidir: <strong>anahtar <code>null</code> olamaz</strong>, ama değer türü izin veriyorsa <strong>value <code>null</code> olabilir</strong>."
   },
   {
     "id": "3845968",
@@ -697,7 +697,7 @@
       "D": "ArrayList",
       "E": "Hash fonksiyonu"
     },
-    "explanation": "<h5><strong>Doğru cevap Hash fonksiyonu;</strong></h5><br/><ul><br/><li><br/><strong>Hash tablolarında</strong> (Hashtable, Dictionary gibi yapılar) veriye hızlı erişim, <strong>hash fonksiyonu</strong> sayesinde olur.\n<br/></li><br/><li><br/><strong>Hash fonksiyonu</strong>, verilen anahtarı (key) bir sayıya dönüştürür ve bu sayı, <strong>verinin tutulduğu “kova” (bucket) indeksini</strong> belirler.\n<br/></li><br/><li><br/>Bu sayede arama işlemi, <strong>koleksiyondaki tüm elemanları tek tek gezmeden</strong>, <strong>doğrudan ilgili kovaya</strong> erişerek yapılır.\n<br/></li><br/><li><br/>İyi tasarlanmış bir hash fonksiyonu ile arama, ekleme ve silme işlemleri <strong>ortalama</strong> olarak <strong>O(1)</strong> zaman karmaşıklığında gerçekleşir.\n<br/></li><br/></ul><br/><strong>A) ContainsKey metodu</strong> → Hızı sağlayan kendisi değil, arka planda kullandığı hash fonksiyonu.<strong><br/>B) Anahtar-değer çifti</strong> → Sadece veriyi saklama yöntemi; hızın kaynağı değil.<br/><strong>C) SortedList</strong> → Sıralı yapı, arama O(log n); O(1) hız sağlamaz.<br/><strong>D) ArrayList</strong> → İndeksle erişimde hızlı, ama anahtara göre arama yok; genelde O(n)."
+    "explanation": "<h5><strong>Doğru cevap Hash fonksiyonu;</strong></h5><br/><ul><br/><li><br/><strong>Hash tablolarında</strong> (Hashtable, Dictionary gibi yapılar) veriye hızlı erişim, <strong>hash fonksiyonu</strong> sayesinde olur.<br/></li><br/><li><br/><strong>Hash fonksiyonu</strong>, verilen anahtarı (key) bir sayıya dönüştürür ve bu sayı, <strong>verinin tutulduğu “kova” (bucket) indeksini</strong> belirler.<br/></li><br/><li><br/>Bu sayede arama işlemi, <strong>koleksiyondaki tüm elemanları tek tek gezmeden</strong>, <strong>doğrudan ilgili kovaya</strong> erişerek yapılır.<br/></li><br/><li><br/>İyi tasarlanmış bir hash fonksiyonu ile arama, ekleme ve silme işlemleri <strong>ortalama</strong> olarak <strong>O(1)</strong> zaman karmaşıklığında gerçekleşir.<br/></li><br/></ul><br/><strong>A) ContainsKey metodu</strong> → Hızı sağlayan kendisi değil, arka planda kullandığı hash fonksiyonu.<strong><br/>B) Anahtar-değer çifti</strong> → Sadece veriyi saklama yöntemi; hızın kaynağı değil.<br/><strong>C) SortedList</strong> → Sıralı yapı, arama O(log n); O(1) hız sağlamaz.<br/><strong>D) ArrayList</strong> → İndeksle erişimde hızlı, ama anahtara göre arama yok; genelde O(n)."
   },
   {
     "id": "3845971",
@@ -711,7 +711,7 @@
       "D": "Çalışma zamanı hatası",
       "E": "Boş string"
     },
-    "explanation": "C#’ta <code>Dictionary</code> için <strong>dizinleyici (indexer) ataması</strong> <em>(<code>sozluk[key] = değer</code>)</em> iki iş yapar:\n<br/><ol><br/><li><br/>Anahtar yoksa <strong>yeni öge ekler</strong>,\n<br/></li><br/><li><br/>Anahtar varsa <strong>mevcut değeri günceller</strong>.<br/>Bu, kitapta “dizin oluşturucu kullanılarak yeni bir öge ekleyebilir <strong>veya</strong> mevcut bir ögenin değeri <strong>güncellenebilir</strong>” diye açıklanır ve hemen altında örnek olarak <code>sozluk[\"anahtar\"] = \"yeni değer\";</code> verilir. \n<br/></li><br/></ol><br/>Dolayısıyla <code>Add(1,\"Elma\")</code> satırı anahtarı ekledikten sonra, <code>sozluk[1] = \"Armut\";</code> satırı <strong>1</strong> anahtarının değerini “Elma”dan <strong>“Armut”</strong>’a çevirir. <code><em>Console.WriteLine(sozluk[</em>1]);</code> da <strong>Armut</strong> yazdırır."
+    "explanation": "C#’ta <code>Dictionary</code> için <strong>dizinleyici (indexer) ataması</strong> <em>(<code>sozluk[key] = değer</code>)</em> iki iş yapar:<br/><ol><br/><li><br/>Anahtar yoksa <strong>yeni öge ekler</strong>,<br/></li><br/><li><br/>Anahtar varsa <strong>mevcut değeri günceller</strong>.<br/>Bu, kitapta “dizin oluşturucu kullanılarak yeni bir öge ekleyebilir <strong>veya</strong> mevcut bir ögenin değeri <strong>güncellenebilir</strong>” diye açıklanır ve hemen altında örnek olarak <code>sozluk[\"anahtar\"] = \"yeni değer\";</code> verilir. <br/></li><br/></ol><br/>Dolayısıyla <code>Add(1,\"Elma\")</code> satırı anahtarı ekledikten sonra, <code>sozluk[1] = \"Armut\";</code> satırı <strong>1</strong> anahtarının değerini “Elma”dan <strong>“Armut”</strong>’a çevirir. <code><em>Console.WriteLine(sozluk[</em>1]);</code> da <strong>Armut</strong> yazdırır."
   },
   {
     "id": "3845974",
@@ -725,7 +725,7 @@
       "D": "Dictionary değerleri sıralı tutar",
       "E": "SortedDictionary null anahtar kabul eder"
     },
-    "explanation": "<ul><br/><li><br/><strong>Dictionary</strong>\n<br/><ul><br/><li><br/>Anahtar-değer çiftlerini <strong>sırasız</strong> olarak saklar.\n<br/></li><br/><li><br/>Ekleme, arama ve silme işlemlerinde <strong>ortalama O(1)</strong> zaman karmaşıklığı vardır.\n<br/></li><br/><li><br/>Anahtarların eklenme sırasını veya alfabetik sırasını <strong>korumaz</strong>.\n<br/></li><br/></ul><br/></li><br/><li><br/><strong>SortedDictionary</strong>\n<br/><ul><br/><li><br/>Anahtar-değer çiftlerini <strong>her zaman anahtara göre sıralı</strong> tutar.\n<br/></li><br/><li><br/>Arama, ekleme ve silme işlemleri <strong>O(log n)</strong> zaman karmaşıklığına sahiptir çünkü altında <strong>dengeli ağaç yapısı</strong> (Red-Black Tree) kullanır.\n<br/></li><br/><li><br/>Sıralı erişim gerektiren durumlarda tercih edilir.\n<br/></li><br/></ul><br/></li><br/></ul><br/><strong>SortedDictionary boxing/unboxing yapar:</strong> Yanlış. Hem Dictionary hem de SortedDictionary doğru veri türü kullanıldığında boxing/unboxing yapmaz<br/><strong>Dictionary O(log n) karmaşıklığa sahiptir:</strong> Yanlış. Dictionary genellikle O(1) karmaşıklığa sahiptir.<br/><strong>Dictionary değerleri sıralı tutar:</strong> Yanlış. Dictionary ve SortedDictionary sadece <strong>anahtarlar</strong> üzerinde çalışır, değerler sıralanmaz.<br/><strong>SortedDictionary null anahtar kabul eder:</strong> Yanlış. Ne Dictionary ne de SortedDictionary null anahtar kabul eder.<br/>Doğru cevap C seçeneğidir."
+    "explanation": "<ul><br/><li><br/><strong>Dictionary</strong><br/><ul><br/><li><br/>Anahtar-değer çiftlerini <strong>sırasız</strong> olarak saklar.<br/></li><br/><li><br/>Ekleme, arama ve silme işlemlerinde <strong>ortalama O(1)</strong> zaman karmaşıklığı vardır.<br/></li><br/><li><br/>Anahtarların eklenme sırasını veya alfabetik sırasını <strong>korumaz</strong>.<br/></li><br/></ul><br/></li><br/><li><br/><strong>SortedDictionary</strong><br/><ul><br/><li><br/>Anahtar-değer çiftlerini <strong>her zaman anahtara göre sıralı</strong> tutar.<br/></li><br/><li><br/>Arama, ekleme ve silme işlemleri <strong>O(log n)</strong> zaman karmaşıklığına sahiptir çünkü altında <strong>dengeli ağaç yapısı</strong> (Red-Black Tree) kullanır.<br/></li><br/><li><br/>Sıralı erişim gerektiren durumlarda tercih edilir.<br/></li><br/></ul><br/></li><br/></ul><br/><strong>SortedDictionary boxing/unboxing yapar:</strong> Yanlış. Hem Dictionary hem de SortedDictionary doğru veri türü kullanıldığında boxing/unboxing yapmaz<br/><strong>Dictionary O(log n) karmaşıklığa sahiptir:</strong> Yanlış. Dictionary genellikle O(1) karmaşıklığa sahiptir.<br/><strong>Dictionary değerleri sıralı tutar:</strong> Yanlış. Dictionary ve SortedDictionary sadece <strong>anahtarlar</strong> üzerinde çalışır, değerler sıralanmaz.<br/><strong>SortedDictionary null anahtar kabul eder:</strong> Yanlış. Ne Dictionary ne de SortedDictionary null anahtar kabul eder.<br/>Doğru cevap C seçeneğidir."
   },
   {
     "id": "3845979",
@@ -739,7 +739,7 @@
       "D": "SymmetricExceptWith",
       "E": "IsSubsetOf"
     },
-    "explanation": "İki küme (<strong>HashSet</strong>) var.<br/>Bir kümeden, diğerinde <strong>ortak olan elemanları çıkarmak</strong> istiyoruz.<br/>Bu işlem matematikte <strong>fark işlemi</strong> (<strong>A \\ B</strong>) olarak bilinir.<br/><strong>UnionWith:</strong> iki kümenin birleşimini oluşturur.\n<br/><ul><br/><li><strong>IntersectWith:</strong> iki kümenin ortak elemanlarını tutar.</li><br/><li><strong>ExceptWith:</strong> mevcut kümeden, verilen kümede bulunan elemanları çıkarır; bu sayede başka bir kümede bulunan elemanlar çıkarılmış olur.</li><br/><li><strong>SymmetricExceptWith:</strong> iki kümede olanlar dışındaki elemanları tutar (eşit fark).</li><br/><li><strong>IsSubsetOf:</strong> bir kümenin başka bir kümede tüm elemanlarının bulunup bulunmadığını kontrol eder.<br/>Bu nedenle, “bir kümeden, başka bir kümede bulunan elemanları çıkarmak” için kullanılan yöntem ExceptWith’tır.</li><br/></ul><br/>Doğru cevap C seçeneğidir."
+    "explanation": "İki küme (<strong>HashSet</strong>) var.<br/>Bir kümeden, diğerinde <strong>ortak olan elemanları çıkarmak</strong> istiyoruz.<br/>Bu işlem matematikte <strong>fark işlemi</strong> (<strong>A \\ B</strong>) olarak bilinir.<br/><strong>UnionWith:</strong> iki kümenin birleşimini oluşturur.<br/><ul><br/><li><strong>IntersectWith:</strong> iki kümenin ortak elemanlarını tutar.</li><br/><li><strong>ExceptWith:</strong> mevcut kümeden, verilen kümede bulunan elemanları çıkarır; bu sayede başka bir kümede bulunan elemanlar çıkarılmış olur.</li><br/><li><strong>SymmetricExceptWith:</strong> iki kümede olanlar dışındaki elemanları tutar (eşit fark).</li><br/><li><strong>IsSubsetOf:</strong> bir kümenin başka bir kümede tüm elemanlarının bulunup bulunmadığını kontrol eder.<br/>Bu nedenle, “bir kümeden, başka bir kümede bulunan elemanları çıkarmak” için kullanılan yöntem ExceptWith’tır.</li><br/></ul><br/>Doğru cevap C seçeneğidir."
   },
   {
     "id": "3845993",
@@ -753,7 +753,7 @@
       "D": "List<t> boxing/unboxing yapar</t>",
       "E": "ArrayList O(1) ekleme yapamaz"
     },
-    "explanation": "Doğru cevap: B) List<t> tür güvenliği sağlar, ArrayList sağlamaz</t>\n Gerekçe:\n <ul> <li>List<t> generic bir koleksiyondur ve belirli bir türe sahip olması garantisini verir. Yani derleme zamanında tip güvenliği sağlanır.</t></li> <li>ArrayList ise eski, generic olmayan bir koleksiyon olduğu için içine hangi türde eleman eklendiği belirsizdir. Bu nedenle çalışma zamanında tip kontrolü yapılır ve tür güvenliği yoktur; her eleman için casting gerekir.<br/>Diğer seçenekler:</li> <li>A) Yanlış: ArrayList generic değildir; List<t> ise generic’tir.</t></li> <li>C) Yanlış: ArrayList herhangi bir tipte nesneleri saklayabilir (object olarak). Sadece int ile sınırlı değildir.</li> <li>D) Yanlış: Boxing/unboxing durumu List<t> için de geçerli olabilir çünkü T, değer tipi ise boxing gerekebilir; ama ana fark türe dayalı güvenliktir.</t></li> <li>E) Yanlış: ArrayList’in ekleme performansı O(1) amortize olabilir; genel olarak da O(1) ortalama ekleme sağlar. Bu, sorunun doğrudan farkını belirtmez.</li> </ul>"
+    "explanation": "Doğru cevap: B) List<t> tür güvenliği sağlar, ArrayList sağlamaz</t><br/>Gerekçe:<br/><ul> <li>List<t> generic bir koleksiyondur ve belirli bir türe sahip olması garantisini verir. Yani derleme zamanında tip güvenliği sağlanır.</t></li> <li>ArrayList ise eski, generic olmayan bir koleksiyon olduğu için içine hangi türde eleman eklendiği belirsizdir. Bu nedenle çalışma zamanında tip kontrolü yapılır ve tür güvenliği yoktur; her eleman için casting gerekir.<br/>Diğer seçenekler:</li> <li>A) Yanlış: ArrayList generic değildir; List<t> ise generic’tir.</t></li> <li>C) Yanlış: ArrayList herhangi bir tipte nesneleri saklayabilir (object olarak). Sadece int ile sınırlı değildir.</li> <li>D) Yanlış: Boxing/unboxing durumu List<t> için de geçerli olabilir çünkü T, değer tipi ise boxing gerekebilir; ama ana fark türe dayalı güvenliktir.</t></li> <li>E) Yanlış: ArrayList’in ekleme performansı O(1) amortize olabilir; genel olarak da O(1) ortalama ekleme sağlar. Bu, sorunun doğrudan farkını belirtmez.</li> </ul>"
   },
   {
     "id": "3845994",
@@ -795,7 +795,7 @@
       "D": "Yığını oluşturmak için kullanılır.",
       "E": "Yığını sıralamak için kullanılır."
     },
-    "explanation": "Yığın için standart model, bir restorandaki tabak yığınıdır. Yığındaki tabaklar her zaman üstten çıka- rılır. Yığına ekleme yapılacaksa da üstten ekleme yapılabilir. Yığın, Son Giren İlk Çıkar (LIFO - Last In First Out) veri yapısı olarak bilinir. \n Bir yığındaki iki temel işlem, yığına ögelerin eklenmesi ve ögelerin yığından çıkarılmasıdır. Yığınlara öge eklemek için Push (itme) işlemi kullanılır. Yığından ögeyi çıkarTmak için ise Pop(Çekme) işlemi kullanılabilir. \n Bir yığın üzerinde gerçekleştirilecek diğer birincil işlem ise en üstteki ögeyi görüntülemektir. Pop işlemi en üstteki ögeyi döndürürken ögeyi yığından kaldırır. Ögeyi yığından kaldırmadan sadece görüntülemek için kullanılan işlem ise C# dilinde Peek(Tepe) olarak adlandırılır."
+    "explanation": "Yığın için standart model, bir restorandaki tabak yığınıdır. Yığındaki tabaklar her zaman üstten çıka- rılır. Yığına ekleme yapılacaksa da üstten ekleme yapılabilir. Yığın, Son Giren İlk Çıkar (LIFO - Last In First Out) veri yapısı olarak bilinir. <br/>Bir yığındaki iki temel işlem, yığına ögelerin eklenmesi ve ögelerin yığından çıkarılmasıdır. Yığınlara öge eklemek için Push (itme) işlemi kullanılır. Yığından ögeyi çıkarTmak için ise Pop(Çekme) işlemi kullanılabilir. <br/>Bir yığın üzerinde gerçekleştirilecek diğer birincil işlem ise en üstteki ögeyi görüntülemektir. Pop işlemi en üstteki ögeyi döndürürken ögeyi yığından kaldırır. Ögeyi yığından kaldırmadan sadece görüntülemek için kullanılan işlem ise C# dilinde Peek(Tepe) olarak adlandırılır."
   },
   {
     "id": "3623986",
@@ -828,7 +828,7 @@
   {
     "id": "3623988",
     "unitNumber": 3,
-    "text": "Stack isimli yeni bir yığın oluşturduğumuzda sırasıyla aşağıdaki işlemler sonrasında yığın görüntüsü ne olacaktır?\n mystack.push(1);<br/>mystack.push(2);<br/>mystack.push(3);<br/>mystack.push(4);<br/>mystack.pop();<br/>mystack.pop();<br/>mystack.push(5);",
+    "text": "Stack isimli yeni bir yığın oluşturduğumuzda sırasıyla aşağıdaki işlemler sonrasında yığın görüntüsü ne olacaktır?<br/>mystack.push(1);<br/>mystack.push(2);<br/>mystack.push(3);<br/>mystack.push(4);<br/>mystack.pop();<br/>mystack.pop();<br/>mystack.push(5);",
     "correctAnswer": "A",
     "options": {
       "A": "5 2 1",
@@ -837,12 +837,12 @@
       "D": "5 4",
       "E": "5"
     },
-    "explanation": "Çözümdeki açıklamalara göre soru kökünde verilen sırada push ve pop işlemleri sonucunda yığın \" 5 2 1\" olacaktır.<br/>Bir yığındaki iki temel işlem, yığına ögelerin eklenmesi ve ögelerin yığından çıkarılmasıdır. Yığınlara öge eklemek için Push (itme) işlemi kullanılır. Yığından ögeyi çıkarTmak için ise Pop(Çekme) işlemi kullanılabilir. Resim 3.1’de yığın üzerinde yapılan Push ve Pop işlemleri gösterilmiştir.\n <img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/26f605f0945d68d4fa82e87c132276b6.png\" alt=\"\" width=\"441\" height=\"207\">"
+    "explanation": "Çözümdeki açıklamalara göre soru kökünde verilen sırada push ve pop işlemleri sonucunda yığın \" 5 2 1\" olacaktır.<br/>Bir yığındaki iki temel işlem, yığına ögelerin eklenmesi ve ögelerin yığından çıkarılmasıdır. Yığınlara öge eklemek için Push (itme) işlemi kullanılır. Yığından ögeyi çıkarTmak için ise Pop(Çekme) işlemi kullanılabilir. Resim 3.1’de yığın üzerinde yapılan Push ve Pop işlemleri gösterilmiştir.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/26f605f0945d68d4fa82e87c132276b6.png\" alt=\"\" width=\"441\" height=\"207\">"
   },
   {
     "id": "3623989",
     "unitNumber": 3,
-    "text": "yenikuyruk isimli yeni bir kuyruk yapısı oluşturduğumuzda sırasıyla aşağıdaki işlemler sonrasında kuyruk görüntüsü ne olacaktır?\n yenikuyruk.enqueue(1);\n yenikuyruk.enqueue(2);\n yenikuyruk.enqueue(3);\n yenikuyruk.enqueue(4);\n yenikuyruk.dequeue();\n yenikuyruk.enqueue(5);\n yenikuyruk.dequeue();",
+    "text": "yenikuyruk isimli yeni bir kuyruk yapısı oluşturduğumuzda sırasıyla aşağıdaki işlemler sonrasında kuyruk görüntüsü ne olacaktır?<br/>yenikuyruk.enqueue(1);<br/>yenikuyruk.enqueue(2);<br/>yenikuyruk.enqueue(3);<br/>yenikuyruk.enqueue(4);<br/>yenikuyruk.dequeue();<br/>yenikuyruk.enqueue(5);<br/>yenikuyruk.dequeue();",
     "correctAnswer": "A",
     "options": {
       "A": "3 4 5",
@@ -851,7 +851,7 @@
       "D": "1 2 3 4 5",
       "E": "1 5"
     },
-    "explanation": "Kuyruk yapıları için üç temel işlem vardır. Bu işlemlerden ikisi listeye eleman eklemek ve listeden ele- man kaldırmak için kullanılır. Kuyruğa yeni öge ekleme işlemi Enqueue (Sıraya Alma) olarak adlandırılır. Kuyruktan öge çıkarma işlemi ise Dequeue (Sıradan Çıkarma) olarak adlandırılır. Enqueue işlemi kuyruk sırasının sonuna bir öge ekler. Dequeue işlemi sıranın önündeki ögeyi kaldırır. Resim 3.2’de Enqueue ve Dequeue işlemleri görsel üzerinde anlatılmıştır.\n<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/f4808ead40f477f6dcfd611cd572c568.png\" alt=\"\" width=\"409\" height=\"65\"><br/>Buna göre doğru seçenek A'dır.<br/>Doğrusal veri yapılarının diğer önemli yapısı Kuyruk (Queue) yapılarıdır. Kuyruk; verilerin liste olarak tutulduğu, yeni gelen verinin listenin arkasına eklendiği, kaldırma işleminin ise listenin önündeki veriye uygulandığı bir yapıdır yani her zaman ilk önce giren veri ilk çıkar (FIFO- First In First Out). Kuyruk yapısına, banka sırası örnek olarak verilebilir. Bankada sırası gelen müşteri işini bitirir ve sıradakinin işlemi başlar. Yeni gelen müşteriler kuyruğun arkasından sıraya eklenir.\n Kuyruklar, ögeleri oluştukları sırayla depolamak için kullanılır. Bir işletim sistemine veya yazdırma biriktiricisine gönderilen işlemleri sipariş etmek için kullanılabilir."
+    "explanation": "Kuyruk yapıları için üç temel işlem vardır. Bu işlemlerden ikisi listeye eleman eklemek ve listeden ele- man kaldırmak için kullanılır. Kuyruğa yeni öge ekleme işlemi Enqueue (Sıraya Alma) olarak adlandırılır. Kuyruktan öge çıkarma işlemi ise Dequeue (Sıradan Çıkarma) olarak adlandırılır. Enqueue işlemi kuyruk sırasının sonuna bir öge ekler. Dequeue işlemi sıranın önündeki ögeyi kaldırır. Resim 3.2’de Enqueue ve Dequeue işlemleri görsel üzerinde anlatılmıştır.<br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/f4808ead40f477f6dcfd611cd572c568.png\" alt=\"\" width=\"409\" height=\"65\"><br/>Buna göre doğru seçenek A'dır.<br/>Doğrusal veri yapılarının diğer önemli yapısı Kuyruk (Queue) yapılarıdır. Kuyruk; verilerin liste olarak tutulduğu, yeni gelen verinin listenin arkasına eklendiği, kaldırma işleminin ise listenin önündeki veriye uygulandığı bir yapıdır yani her zaman ilk önce giren veri ilk çıkar (FIFO- First In First Out). Kuyruk yapısına, banka sırası örnek olarak verilebilir. Bankada sırası gelen müşteri işini bitirir ve sıradakinin işlemi başlar. Yeni gelen müşteriler kuyruğun arkasından sıraya eklenir.<br/>Kuyruklar, ögeleri oluştukları sırayla depolamak için kullanılır. Bir işletim sistemine veya yazdırma biriktiricisine gönderilen işlemleri sipariş etmek için kullanılabilir."
   },
   {
     "id": "3623990",
@@ -865,7 +865,7 @@
       "D": "128",
       "E": "100"
     },
-    "explanation": "Kuyruk yapısında kullanılan temel yöntemleri önceki örnekte inceledik. Bu yöntemleri inceleyebilmek için bir problemi Kuyruk yapısı kullanarak çözen bir program yazmak daha detaylı incelememize olanak sağlayacaktır.\n C# dilinde, Yığın yapısında olduğu gibi, kuyruk yapısını oluşturmak içinde dil ile birlikte gelen nesneler kullanılabilir. Queue nesnesi kullanılarak yeni bir kuyruk oluşturulabilir. Nesne varsayılan olarak 32 eleman kapasiteli bir kuyruk oluşturur. Kuyruğun kapasitesi doldukça bir sonraki kapasite iki katı olacak şekilde art- tırılır. Yani varsayılan değer (32 öge) ile oluşturulan kuyruğun kapasitesi dolduğunda 64 eleman kapasitesine çıkarılacaktır. Buradaki kapasiteyi her defasında iki katına çıkaran sayı, büyüme faktörü olarak adlandırılır."
+    "explanation": "Kuyruk yapısında kullanılan temel yöntemleri önceki örnekte inceledik. Bu yöntemleri inceleyebilmek için bir problemi Kuyruk yapısı kullanarak çözen bir program yazmak daha detaylı incelememize olanak sağlayacaktır.<br/>C# dilinde, Yığın yapısında olduğu gibi, kuyruk yapısını oluşturmak içinde dil ile birlikte gelen nesneler kullanılabilir. Queue nesnesi kullanılarak yeni bir kuyruk oluşturulabilir. Nesne varsayılan olarak 32 eleman kapasiteli bir kuyruk oluşturur. Kuyruğun kapasitesi doldukça bir sonraki kapasite iki katı olacak şekilde art- tırılır. Yani varsayılan değer (32 öge) ile oluşturulan kuyruğun kapasitesi dolduğunda 64 eleman kapasitesine çıkarılacaktır. Buradaki kapasiteyi her defasında iki katına çıkaran sayı, büyüme faktörü olarak adlandırılır."
   },
   {
     "id": "3623991",
@@ -879,7 +879,7 @@
       "D": "Queue kuyruk = new Queue(500, 5+);",
       "E": "Queue kuyruk = new Queue(500, 500);"
     },
-    "explanation": "Çözüm kısmındaki açıklamaya göre soru kökündeki 500 öge kapasiteli ve kapasitesi dolduktan sonra 5 katına çıkacak olan kuyruk tanımlaması B seçeneğindeki gibidir.<br/>Kuyruk kapasitesini belirtirken büyüme faktörünü de değiştirebilirsiniz. Constructura iletilen ikinci değer büyüme faktörünün belirtildiği sayıdır. Aşağıdaki kod bloğunda belirtilen 3 rakamından dolayı kuyruğun kapasitesi dolduktan sonra yeni boyut 300 olacaktır.\n<br/>Queue kuyruk = new Queue(100, 3);"
+    "explanation": "Çözüm kısmındaki açıklamaya göre soru kökündeki 500 öge kapasiteli ve kapasitesi dolduktan sonra 5 katına çıkacak olan kuyruk tanımlaması B seçeneğindeki gibidir.<br/>Kuyruk kapasitesini belirtirken büyüme faktörünü de değiştirebilirsiniz. Constructura iletilen ikinci değer büyüme faktörünün belirtildiği sayıdır. Aşağıdaki kod bloğunda belirtilen 3 rakamından dolayı kuyruğun kapasitesi dolduktan sonra yeni boyut 300 olacaktır.<br/>Queue kuyruk = new Queue(100, 3);"
   },
   {
     "id": "3623992",
@@ -893,7 +893,7 @@
       "D": "Dizi",
       "E": "Liste"
     },
-    "explanation": "Doğrusal veri yapılarının diğer önemli yapısı Kuyruk (Queue) yapılarıdır. Kuyruk; verilerin liste olarak tutulduğu, yeni gelen verinin listenin arkasına eklendiği, kaldırma işleminin ise listenin önündeki veriye uygulandığı bir yapıdır yani her zaman ilk önce giren veri ilk çıkar (FIFO- First In First Out). Kuyruk yapısına, banka sırası örnek olarak verilebilir. Bankada sırası gelen müşteri işini bitirir ve sıradakinin işlemi başlar. Yeni gelen müşteriler kuyruğun arkasından sıraya eklenir.\n Kuyruklar, ögeleri oluştukları sırayla depolamak için kullanılır. Bir işletim sistemine veya yazdırma biriktiricisine gönderilen işlemleri sipariş etmek için kullanılabilir."
+    "explanation": "Doğrusal veri yapılarının diğer önemli yapısı Kuyruk (Queue) yapılarıdır. Kuyruk; verilerin liste olarak tutulduğu, yeni gelen verinin listenin arkasına eklendiği, kaldırma işleminin ise listenin önündeki veriye uygulandığı bir yapıdır yani her zaman ilk önce giren veri ilk çıkar (FIFO- First In First Out). Kuyruk yapısına, banka sırası örnek olarak verilebilir. Bankada sırası gelen müşteri işini bitirir ve sıradakinin işlemi başlar. Yeni gelen müşteriler kuyruğun arkasından sıraya eklenir.<br/>Kuyruklar, ögeleri oluştukları sırayla depolamak için kullanılır. Bir işletim sistemine veya yazdırma biriktiricisine gönderilen işlemleri sipariş etmek için kullanılabilir."
   },
   {
     "id": "3623993",
@@ -907,7 +907,7 @@
       "D": "Bir yığından öge çıkartmak amacıyla kullanılır.",
       "E": "Bir yığına öge eklemek amacıyla kullanılır."
     },
-    "explanation": "Aşağıdaki kod bloğunda Contains yönteminin kullanımını inceleyebilirsiniz. Kod 3.10\n<br/>if (myStack.Contains(“ “))<br/>IslemiDurdur();<br/>else\n<br/>IslemeDevamEt();<br/>Bir ögenin, yığın içerisinde bulunup bulunmadığını kontrol etmek için Contains yöntemi kullanılabi- lir. Contains yöntemi öge yığının içeriğinde mevcut ise True değer, mevcut değilse False değer döndürür.\n Aşağıdaki kod bloğunda Contains yönteminin kullanımını inceleyebilirsiniz. Kod 3.10\n if (myStack.Contains(“ “)) IslemiDurdur(); else\n IslemeDevamEt();"
+    "explanation": "Aşağıdaki kod bloğunda Contains yönteminin kullanımını inceleyebilirsiniz. Kod 3.10<br/>if (myStack.Contains(“ “))<br/>IslemiDurdur();<br/>else<br/>IslemeDevamEt();<br/>Bir ögenin, yığın içerisinde bulunup bulunmadığını kontrol etmek için Contains yöntemi kullanılabi- lir. Contains yöntemi öge yığının içeriğinde mevcut ise True değer, mevcut değilse False değer döndürür.<br/>Aşağıdaki kod bloğunda Contains yönteminin kullanımını inceleyebilirsiniz. Kod 3.10<br/>if (myStack.Contains(“ “)) IslemiDurdur(); else<br/>IslemeDevamEt();"
   },
   {
     "id": "3624142",
@@ -940,7 +940,7 @@
   {
     "id": "3624144",
     "unitNumber": 3,
-    "text": "String[] ulkeler= new string[] {\"Almanya\", \"Çin\", \"Fransa\", \"İtalya\", \"Türkiye\"};\n Stack ulkeYigin= new Stack(ulkeler);\n Yukarıdaki kod parçası ile oluşan yığına Pop işlemi uygulandığında aşağıdakilerden hangisi gerçekleşir?",
+    "text": "String[] ulkeler= new string[] {\"Almanya\", \"Çin\", \"Fransa\", \"İtalya\", \"Türkiye\"};<br/>Stack ulkeYigin= new Stack(ulkeler);<br/>Yukarıdaki kod parçası ile oluşan yığına Pop işlemi uygulandığında aşağıdakilerden hangisi gerçekleşir?",
     "correctAnswer": "A",
     "options": {
       "A": "İlk olarak Türkiye ögesi yığından çıkarılacaktır.",
@@ -963,7 +963,7 @@
       "D": "Clear",
       "E": "Contains"
     },
-    "explanation": "Aşağıdaki kod bloğunda Contains yönteminin kullanımını inceleyebilirsiniz.\n<br/>if (myStack.Contains(\" \"))\n<br/>IslemiDurdur();\n<br/>else\n<br/>IslemeDevamEt();<br/>Bir ögenin, yığın içerisinde bulunup bulunmadığını kontrol etmek için Contains yöntemi kullanılabilir. Contains yöntemi öge yığının içeriğinde mevcut ise True değer, mevcut değilse False değer döndürür."
+    "explanation": "Aşağıdaki kod bloğunda Contains yönteminin kullanımını inceleyebilirsiniz.<br/>if (myStack.Contains(\" \"))<br/>IslemiDurdur();<br/>else<br/>IslemeDevamEt();<br/>Bir ögenin, yığın içerisinde bulunup bulunmadığını kontrol etmek için Contains yöntemi kullanılabilir. Contains yöntemi öge yığının içeriğinde mevcut ise True değer, mevcut değilse False değer döndürür."
   },
   {
     "id": "3624146",
@@ -982,7 +982,7 @@
   {
     "id": "3624147",
     "unitNumber": 3,
-    "text": "I. Külahta alınmış dondurma topları\n II. Bankada sırada duran müşteriler\n III. Bilgisayarda Ctrl+Z(geri alma) işlemi \n IV. Restoranda üst üste duran tabaklar\n Yukarıdakilerden hangisi veya hangileri kuyruk yapısına örnektir?",
+    "text": "I. Külahta alınmış dondurma topları<br/>II. Bankada sırada duran müşteriler<br/>III. Bilgisayarda Ctrl+Z(geri alma) işlemi <br/>IV. Restoranda üst üste duran tabaklar<br/>Yukarıdakilerden hangisi veya hangileri kuyruk yapısına örnektir?",
     "correctAnswer": "A",
     "options": {
       "A": "Yalnız II",
@@ -996,7 +996,7 @@
   {
     "id": "3624148",
     "unitNumber": 3,
-    "text": "Queue kuyruk = new Queue(100, 4);\n Yukarıdaki kod bloğu ile ilgili aşağıda verilen bilgilerden hangisi doğrudur?",
+    "text": "Queue kuyruk = new Queue(100, 4);<br/>Yukarıdaki kod bloğu ile ilgili aşağıda verilen bilgilerden hangisi doğrudur?",
     "correctAnswer": "A",
     "options": {
       "A": "Kuyruk kapasitesi dolduktan sonra yeni boyut 400 olacaktır.",
@@ -1005,7 +1005,7 @@
       "D": "Kuyruk kapasitesi iki katı olacak şekilde arttırılacaktır.",
       "E": "Kuyruk kapasitesi 3 kez arttılabilecektir."
     },
-    "explanation": "Soru kökündeki kod bloğunda belirtilen 4 rakamından dolayı kuyruğun kapasitesi dolduktan sonra yeni boyut 400 olacaktır.\n<br/>Queue kuyruk = new Queue(100, 4);<br/>C# dilinde, Yığın yapısında olduğu gibi, kuyruk yapısını oluşturmak içinde dil ile birlikte gelen nesneler kullanılabilir. Queue nesnesi kullanılarak yeni bir kuyruk oluşturulabilir. Nesne varsayılan olarak 32 eleman kapasiteli bir kuyruk oluşturur. Kuyruğun kapasitesi doldukça bir sonraki kapasite iki katı olacak şekilde arttırılır. Yani varsayılan değer (32 öge) ile oluşturulan kuyruğun kapasitesi dolduğunda 64 eleman kapasitesine çıkarılacaktır. Buradaki kapasiteyi her defasında iki katına çıkaran sayı, büyüme faktörü olarak adlandırılır.\n Kuyruk kapasitesini belirtirken büyüme faktörünü de değiştirebilirsiniz. Constructura iletilen ikinci değer büyüme faktörünün belirtildiği sayıdır. Aşağıdaki kod bloğunda belirtilen 3 rakamından dolayı kuyruğun kapasitesi dolduktan sonra yeni boyut 300 olacaktır.\n Queue kuyruk = new Queue(100, 3);"
+    "explanation": "Soru kökündeki kod bloğunda belirtilen 4 rakamından dolayı kuyruğun kapasitesi dolduktan sonra yeni boyut 400 olacaktır.<br/>Queue kuyruk = new Queue(100, 4);<br/>C# dilinde, Yığın yapısında olduğu gibi, kuyruk yapısını oluşturmak içinde dil ile birlikte gelen nesneler kullanılabilir. Queue nesnesi kullanılarak yeni bir kuyruk oluşturulabilir. Nesne varsayılan olarak 32 eleman kapasiteli bir kuyruk oluşturur. Kuyruğun kapasitesi doldukça bir sonraki kapasite iki katı olacak şekilde arttırılır. Yani varsayılan değer (32 öge) ile oluşturulan kuyruğun kapasitesi dolduğunda 64 eleman kapasitesine çıkarılacaktır. Buradaki kapasiteyi her defasında iki katına çıkaran sayı, büyüme faktörü olarak adlandırılır.<br/>Kuyruk kapasitesini belirtirken büyüme faktörünü de değiştirebilirsiniz. Constructura iletilen ikinci değer büyüme faktörünün belirtildiği sayıdır. Aşağıdaki kod bloğunda belirtilen 3 rakamından dolayı kuyruğun kapasitesi dolduktan sonra yeni boyut 300 olacaktır.<br/>Queue kuyruk = new Queue(100, 3);"
   },
   {
     "id": "3624149",
@@ -1192,7 +1192,7 @@
   {
     "id": "3623994",
     "unitNumber": 4,
-    "text": "Algoritma seçiminde, çalışılabilecek en büyük veri boyutu ve veri sayısı göz önüne alınmalıdır. Sıralama algoritmasında, ideal zaman karmaşıklığı değeri ................... olmalıdır.\n Yukarıdaki metinde boş bırakılan yere aşağıdakilerden hangisi gelmelidir?",
+    "text": "Algoritma seçiminde, çalışılabilecek en büyük veri boyutu ve veri sayısı göz önüne alınmalıdır. Sıralama algoritmasında, ideal zaman karmaşıklığı değeri ................... olmalıdır.<br/>Yukarıdaki metinde boş bırakılan yere aşağıdakilerden hangisi gelmelidir?",
     "correctAnswer": "A",
     "options": {
       "A": "O(1)",
@@ -1206,7 +1206,7 @@
   {
     "id": "3623995",
     "unitNumber": 4,
-    "text": "Sıralama algoritmalarını incelemek için dizi elemanlarının rastgele üretilmiş verilerden oluşması ve<br/>algoritmaya ......................................... verilmesi gerekir.\n<br/>Yukarıdaki metinde boş bırakılan yere aşağıdakilerden hangisi gelmelidir?",
+    "text": "Sıralama algoritmalarını incelemek için dizi elemanlarının rastgele üretilmiş verilerden oluşması ve<br/>algoritmaya ......................................... verilmesi gerekir.<br/>Yukarıdaki metinde boş bırakılan yere aşağıdakilerden hangisi gelmelidir?",
     "correctAnswer": "B",
     "options": {
       "A": "Ardışık olarak",
@@ -1220,7 +1220,7 @@
   {
     "id": "3623996",
     "unitNumber": 4,
-    "text": "Rastgele sayı dizisini oluşturmak için C# ile birlikte gelen ........................................ kullanılabilir.\n Yukarıdaki metinde boş bırakılan yere aşağıdakilerden hangisi gelmelidir?",
+    "text": "Rastgele sayı dizisini oluşturmak için C# ile birlikte gelen ........................................ kullanılabilir.<br/>Yukarıdaki metinde boş bırakılan yere aşağıdakilerden hangisi gelmelidir?",
     "correctAnswer": "C",
     "options": {
       "A": "<em>Array</em> dizisi",
@@ -1234,7 +1234,7 @@
   {
     "id": "3623997",
     "unitNumber": 4,
-    "text": "... Listedeki elemanları, ikili olarak yanındaki ile karşılaştırır ve sıralama yapılmak istenen yönde yer değiştirir. Artan sıralama yapılıyorsa büyük olan eleman sağ tarafa, küçük eleman sol tarafa alınarak yerleştirme yapılır...\n Yukarıdaki metinde açıklanmaya çalışılan, aşağıdaki hangi algoritma sıralamasıdır?",
+    "text": "... Listedeki elemanları, ikili olarak yanındaki ile karşılaştırır ve sıralama yapılmak istenen yönde yer değiştirir. Artan sıralama yapılıyorsa büyük olan eleman sağ tarafa, küçük eleman sol tarafa alınarak yerleştirme yapılır...<br/>Yukarıdaki metinde açıklanmaya çalışılan, aşağıdaki hangi algoritma sıralamasıdır?",
     "correctAnswer": "D",
     "options": {
       "A": "Ekleme sıralama",
@@ -1248,7 +1248,7 @@
   {
     "id": "3623998",
     "unitNumber": 4,
-    "text": "Kod 4.7<br/>public void SecerekSiralama()<br/>{<br/>int min, temp;<br/>for (int dis = 0; dis &lt;= enBuyuk; dis++)<br/>{<br/>min = dis;<br/>for (int ic = dis + 1; ic &lt;= enBuyuk; ic++)<br/>if (arr[ic] &lt; arr[min])<br/>min = ic;<br/>temp = arr[dis];<br/>arr[dis] = arr[min];<br/>arr[min] = temp;<br/>}<br/>}\n Yukarıdaki kod bloğunda Seçerek Sıralama algoritması için C# kodu verilmiştir. Kod yapısı incelendiğinde iç içe iki adet for döngüsü vardır. Algoritmanın BigO notasyonu aşağıdakilerden hangisidir?",
+    "text": "Kod 4.7<br/>public void SecerekSiralama()<br/>{<br/>int min, temp;<br/>for (int dis = 0; dis &lt;= enBuyuk; dis++)<br/>{<br/>min = dis;<br/>for (int ic = dis + 1; ic &lt;= enBuyuk; ic++)<br/>if (arr[ic] &lt; arr[min])<br/>min = ic;<br/>temp = arr[dis];<br/>arr[dis] = arr[min];<br/>arr[min] = temp;<br/>}<br/>}<br/>Yukarıdaki kod bloğunda Seçerek Sıralama algoritması için C# kodu verilmiştir. Kod yapısı incelendiğinde iç içe iki adet for döngüsü vardır. Algoritmanın BigO notasyonu aşağıdakilerden hangisidir?",
     "correctAnswer": "E",
     "options": {
       "A": "+1",
@@ -1262,7 +1262,7 @@
   {
     "id": "3623999",
     "unitNumber": 4,
-    "text": "public void ..................................()<br/>{<br/>int ic, temp;<br/>for (int dis = 1; dis &lt;= enBuyuk; dis++)<br/>{<br/>temp = arr[dis];<br/>ic = dis;<br/>while (ic &gt; 0 &amp;&amp; arr[ic - 1] &gt;= temp)<br/>{<br/>arr[ic] = arr[ic - 1];<br/>ic -= 1;<br/>}<br/>arr[ic] = temp;<br/>}<br/>}\n<br/>Yukarıdaki C# kodu, aşağıdaki hangi sıralama algoritması için yazılmış olabilir?",
+    "text": "public void ..................................()<br/>{<br/>int ic, temp;<br/>for (int dis = 1; dis &lt;= enBuyuk; dis++)<br/>{<br/>temp = arr[dis];<br/>ic = dis;<br/>while (ic &gt; 0 &amp;&amp; arr[ic - 1] &gt;= temp)<br/>{<br/>arr[ic] = arr[ic - 1];<br/>ic -= 1;<br/>}<br/>arr[ic] = temp;<br/>}<br/>}<br/>Yukarıdaki C# kodu, aşağıdaki hangi sıralama algoritması için yazılmış olabilir?",
     "correctAnswer": "A",
     "options": {
       "A": "Ekleme sıralama",
@@ -1276,7 +1276,7 @@
   {
     "id": "3624021",
     "unitNumber": 4,
-    "text": ".................................... algoritması, iki adet döngü içerir. İlk döngü dizi elemanları üzerinde teker teker gezerken ikinci döngü sıradaki elemanı, önceki adımlarda düzenlenmiş olan elemanlar arasında olması gereken yere yerleştirir.\n Yukarıdaki metinde boş bırakılan yere aşağıdakilerden hangisi gelmelidir?",
+    "text": ".................................... algoritması, iki adet döngü içerir. İlk döngü dizi elemanları üzerinde teker teker gezerken ikinci döngü sıradaki elemanı, önceki adımlarda düzenlenmiş olan elemanlar arasında olması gereken yere yerleştirir.<br/>Yukarıdaki metinde boş bırakılan yere aşağıdakilerden hangisi gelmelidir?",
     "correctAnswer": "B",
     "options": {
       "A": "Hızlı sıralama",
@@ -1290,7 +1290,7 @@
   {
     "id": "3624022",
     "unitNumber": 4,
-    "text": "Dizi elemanlarından biri pivot değer olarak seçilerek algoritma başlatılır. Pivot, baştaki eleman seçilebileceği gibi rastgele bir elemanda seçilebilir. Pivotun dizi elemanlarına uygun seçilmesi algoritma başarısını etkileyecektir. Pivot seçildikten sonra dizinin diğer elemanları, pivottan küçük veya büyük olmasına göre iki gruba ayrılır. Sonraki adımda, bu iki grup kendi içlerinde tekrar bölünerek sıralanır. Grupların sıralaması için sıralama algoritması özyinelemeli (recursive) olarak çalıştırılır.\n Yukarıda çalışma sistemi anlatılan sıralama algoritması aşağıdakilerden hangisidir?",
+    "text": "Dizi elemanlarından biri pivot değer olarak seçilerek algoritma başlatılır. Pivot, baştaki eleman seçilebileceği gibi rastgele bir elemanda seçilebilir. Pivotun dizi elemanlarına uygun seçilmesi algoritma başarısını etkileyecektir. Pivot seçildikten sonra dizinin diğer elemanları, pivottan küçük veya büyük olmasına göre iki gruba ayrılır. Sonraki adımda, bu iki grup kendi içlerinde tekrar bölünerek sıralanır. Grupların sıralaması için sıralama algoritması özyinelemeli (recursive) olarak çalıştırılır.<br/>Yukarıda çalışma sistemi anlatılan sıralama algoritması aşağıdakilerden hangisidir?",
     "correctAnswer": "C",
     "options": {
       "A": "Pivot sıralama algoritması",
@@ -1304,7 +1304,7 @@
   {
     "id": "3624023",
     "unitNumber": 4,
-    "text": "Başlangıç Pivot=14<br/>96 15 66 90 35 94 71 61 34 14\n 1. Adım Pivot 96<br/>14 15 66 90 35 94 71 61 34 96\n 2. Adım Pivot 34<br/>14 15 66 90 35 94 71 61 34 96\n 3. Adım Pivot 66<br/>14 15 34 90 35 94 71 61 66 96\n 4. Adım Alt Grup Pivot= 61 Üst Grup Pivot=94<br/>14 15 34 35 61 66 71 90 94 96\n 5. Adım Pivot=90<br/>14 15 34 35 61 66 71 90 94 96\n 6. Adım Tamamlandı<br/>14 15 34 35 61 66 71 90 94 96\n Yukarıda altı aşamada çalışma sistemi verilen sıralama algoritması, aşağıdakilerden hangisidir?",
+    "text": "Başlangıç Pivot=14<br/>96 15 66 90 35 94 71 61 34 14<br/>1. Adım Pivot 96<br/>14 15 66 90 35 94 71 61 34 96<br/>2. Adım Pivot 34<br/>14 15 66 90 35 94 71 61 34 96<br/>3. Adım Pivot 66<br/>14 15 34 90 35 94 71 61 66 96<br/>4. Adım Alt Grup Pivot= 61 Üst Grup Pivot=94<br/>14 15 34 35 61 66 71 90 94 96<br/>5. Adım Pivot=90<br/>14 15 34 35 61 66 71 90 94 96<br/>6. Adım Tamamlandı<br/>14 15 34 35 61 66 71 90 94 96<br/>Yukarıda altı aşamada çalışma sistemi verilen sıralama algoritması, aşağıdakilerden hangisidir?",
     "correctAnswer": "D",
     "options": {
       "A": "Pivot sıralama algoritması",
@@ -1332,7 +1332,7 @@
   {
     "id": "3624169",
     "unitNumber": 4,
-    "text": "Algoritma, sıralanacak diziyi baştan itibaren tarar. Bulduğu en küçük elemanı seçer ve dizinin 0 no’lu indeksindeki eleman ile yer değiştirir. İlk adım tamamlanmış olur. İkinci adımda, dizinin 1 no’lu indeksinden itibaren son elemana kadar tarar ve en küçük elemanı tekrar seçer. Seçilen en küçük elemanın 1 no’lu indekste bulunan elemanla yer değiştirilmesi yapıldıktan sonra 2. adım tamamlanır. n elemana sahip dizide n tekrar yapılarak işlem tamamlanır.\n<br/>Yukarıda sözü edilen sıralama yöntemi aşağıdakilerden hangisidir?",
+    "text": "Algoritma, sıralanacak diziyi baştan itibaren tarar. Bulduğu en küçük elemanı seçer ve dizinin 0 no’lu indeksindeki eleman ile yer değiştirir. İlk adım tamamlanmış olur. İkinci adımda, dizinin 1 no’lu indeksinden itibaren son elemana kadar tarar ve en küçük elemanı tekrar seçer. Seçilen en küçük elemanın 1 no’lu indekste bulunan elemanla yer değiştirilmesi yapıldıktan sonra 2. adım tamamlanır. n elemana sahip dizide n tekrar yapılarak işlem tamamlanır.<br/>Yukarıda sözü edilen sıralama yöntemi aşağıdakilerden hangisidir?",
     "correctAnswer": "A",
     "options": {
       "A": "Selection Sort",
@@ -1346,7 +1346,7 @@
   {
     "id": "3624170",
     "unitNumber": 4,
-    "text": "Dizi elemanlarından biri pivot değer olarak seçilerek algoritma başlatılır. Pivot, baştaki eleman seçilebileceği gibi rastgele bir elemanda seçilebilir. Pivotun dizi elemanlarına uygun seçilmesi algoritma başarısını etkileyecektir. Pivot seçildikten sonra dizinin diğer elemanları, pivottan küçük veya büyük olmasına göre iki gruba ayrılır. Sonraki adımda, bu iki grup kendi içlerinde tekrar bölünerek sıralanır. Grupların sıralaması için sıralama algoritması özyinelemeli (recursive) olarak çalıştırılır.\n Yukarıda anlatılan sıralama türü aşağıdakilerden hangisidir?",
+    "text": "Dizi elemanlarından biri pivot değer olarak seçilerek algoritma başlatılır. Pivot, baştaki eleman seçilebileceği gibi rastgele bir elemanda seçilebilir. Pivotun dizi elemanlarına uygun seçilmesi algoritma başarısını etkileyecektir. Pivot seçildikten sonra dizinin diğer elemanları, pivottan küçük veya büyük olmasına göre iki gruba ayrılır. Sonraki adımda, bu iki grup kendi içlerinde tekrar bölünerek sıralanır. Grupların sıralaması için sıralama algoritması özyinelemeli (recursive) olarak çalıştırılır.<br/>Yukarıda anlatılan sıralama türü aşağıdakilerden hangisidir?",
     "correctAnswer": "A",
     "options": {
       "A": "Hızlı",
@@ -1388,7 +1388,7 @@
   {
     "id": "3624173",
     "unitNumber": 4,
-    "text": "Listedeki elemanları, ikili olarak yanındaki ile karşılaştırır ve sıralama yapılmak istenen yönde yer değiştirir. Artan sıralama yapılıyorsa büyük olan eleman sağ tarafa, küçük eleman sol tarafa alınarak yerleştirme yapılır.\n Yukarıda bahsi geçen sıralama algoritması aşağıdakilerden hangisidir?",
+    "text": "Listedeki elemanları, ikili olarak yanındaki ile karşılaştırır ve sıralama yapılmak istenen yönde yer değiştirir. Artan sıralama yapılıyorsa büyük olan eleman sağ tarafa, küçük eleman sol tarafa alınarak yerleştirme yapılır.<br/>Yukarıda bahsi geçen sıralama algoritması aşağıdakilerden hangisidir?",
     "correctAnswer": "A",
     "options": {
       "A": "Baloncuk",
@@ -1416,7 +1416,7 @@
   {
     "id": "3624175",
     "unitNumber": 4,
-    "text": "Bir başka temel sıralama algoritması ise ------- algoritmasıdır. Çalışma esnasında<br/>dizi aralığındaki en küçük elemanı seçerek çalıştığı için bu isim verilmiştir.\n Yukarıdaki cümlede boş bırakılan yeri aşağıdakilerden hangisi doğru olarak tamamlar?",
+    "text": "Bir başka temel sıralama algoritması ise ------- algoritmasıdır. Çalışma esnasında<br/>dizi aralığındaki en küçük elemanı seçerek çalıştığı için bu isim verilmiştir.<br/>Yukarıdaki cümlede boş bırakılan yeri aşağıdakilerden hangisi doğru olarak tamamlar?",
     "correctAnswer": "A",
     "options": {
       "A": "Seçerek Sıralama",
@@ -1444,7 +1444,7 @@
   {
     "id": "3624177",
     "unitNumber": 4,
-    "text": "Temel sıralama algoritmalarından bir diğeri ise ------- algoritmasıdır. Bu algoritmaya örnek olarak kitaplığına kitapların yerleştirilmesi düşünülebilir. Rastgele dizi hâlinde bulunan kitaplar, sol taraftan başlanarak düzenlenebilir. Her adımda sıradaki kitap önceki kitaplar arasındaki yerine eklenir ve sıradaki kitap alınır.\n Yukarıdaki paragrafta boş bırakılan yeri aşağıdakilerden hangisi doğru olarak tamamlar?",
+    "text": "Temel sıralama algoritmalarından bir diğeri ise ------- algoritmasıdır. Bu algoritmaya örnek olarak kitaplığına kitapların yerleştirilmesi düşünülebilir. Rastgele dizi hâlinde bulunan kitaplar, sol taraftan başlanarak düzenlenebilir. Her adımda sıradaki kitap önceki kitaplar arasındaki yerine eklenir ve sıradaki kitap alınır.<br/>Yukarıdaki paragrafta boş bırakılan yeri aşağıdakilerden hangisi doğru olarak tamamlar?",
     "correctAnswer": "A",
     "options": {
       "A": "Ekleme Sıralama",
@@ -1579,7 +1579,7 @@
       "D": "100.000",
       "E": "1.000.000"
     },
-    "explanation": "<ul><br/><li><br/>Baloncuk sıralama algoritması <strong>n(n-1)/2</strong> kadar karşılaştırma yapar (en kötü durumda).<br/>Çünkü her öğe, tüm diğer öğelerle bir kez karşılaştırılır.\n<br/></li><br/><li><br/>Bu durumda:\n<br/><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mfrac><mrow><mn>1000</mn><mo>×</mo><mn>999</mn></mrow><mn>2</mn></mfrac><mo>=</mo><mn>499.500</mn></mrow><annotation encoding=\"application/x-tex\">\\frac{1000 × 999}{2} = 499.500</annotation></semantics></math>21000×999 =499.500</li><br/><li><br/>Bu sayı <strong>yaklaşık 500.000</strong> olsa da, test sorularında yuvarlama yapılır ve <strong>100.000’e en yakın seçenek D şıkkıdır</strong>.\n<br/></li><br/><li><br/>E şıkkı olan 1.000.000, <strong>n²</strong> yani <strong>1.000 × 1.000</strong> olsa da, her karşılaştırma için bu kadar işlem yapılmaz.\n<br/></li><br/></ul>"
+    "explanation": "<ul><br/><li><br/>Baloncuk sıralama algoritması <strong>n(n-1)/2</strong> kadar karşılaştırma yapar (en kötü durumda).<br/>Çünkü her öğe, tüm diğer öğelerle bir kez karşılaştırılır.<br/></li><br/><li><br/>Bu durumda:<br/><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mfrac><mrow><mn>1000</mn><mo>×</mo><mn>999</mn></mrow><mn>2</mn></mfrac><mo>=</mo><mn>499.500</mn></mrow><annotation encoding=\"application/x-tex\">\\frac{1000 × 999}{2} = 499.500</annotation></semantics></math>21000×999 =499.500</li><br/><li><br/>Bu sayı <strong>yaklaşık 500.000</strong> olsa da, test sorularında yuvarlama yapılır ve <strong>100.000’e en yakın seçenek D şıkkıdır</strong>.<br/></li><br/><li><br/>E şıkkı olan 1.000.000, <strong>n²</strong> yani <strong>1.000 × 1.000</strong> olsa da, her karşılaştırma için bu kadar işlem yapılmaz.<br/></li><br/></ul>"
   },
   {
     "id": "3843628",
@@ -1621,7 +1621,7 @@
       "D": "Aranan eleman bulunana kadar dizi tersine sıralanır",
       "E": "Dizinin boyutu sıfırsa anahtarın bulunduğu indeks döndürülür"
     },
-    "explanation": "Doğrusal Arama Özyinelemeli (Recursive) Yaklaşım konusunu yeniden gözden geçiriniz.<br/>Doğrusal aramayı özyinelemeli olarak çözmek için aşağıdaki adımlar takip edilebilir:\n • Dizinin boyutu sıfırsa ögenin bulunmadığını gösteren -1 döndürülmelidir. Bu aynı zamanda bir özyineleme çağrısının temel koşulu olarak da ele alınabilir.\n • Diğer durumda, dizideki geçerli dizindeki ögenin anahtara eşit olup olmadığı kontrol edilmelidir yani arr[boyut - 1] == aranan_kelime\n • Eşit ise bulunan anahtarın dizinini döndürün."
+    "explanation": "Doğrusal Arama Özyinelemeli (Recursive) Yaklaşım konusunu yeniden gözden geçiriniz.<br/>Doğrusal aramayı özyinelemeli olarak çözmek için aşağıdaki adımlar takip edilebilir:<br/>• Dizinin boyutu sıfırsa ögenin bulunmadığını gösteren -1 döndürülmelidir. Bu aynı zamanda bir özyineleme çağrısının temel koşulu olarak da ele alınabilir.<br/>• Diğer durumda, dizideki geçerli dizindeki ögenin anahtara eşit olup olmadığı kontrol edilmelidir yani arr[boyut - 1] == aranan_kelime<br/>• Eşit ise bulunan anahtarın dizinini döndürün."
   },
   {
     "id": "3700064",
@@ -1691,7 +1691,7 @@
       "D": "Herhangi bir ek alana ihtiyaç duymaz",
       "E": "Her zaman O(n) zaman karmaşıklığına sahiptir"
     },
-    "explanation": "İkili Aramanın Avantajları\n<br/><ul><br/><li>Hem kavramları hem de uygulamayı anlamak son derece basittir.</li><br/><li>Sıralanmış bir dizi gerektirse de, her yinelemede tüm koleksiyonu ikiye böldüğü için uzun listelerdeki bir ögeyi oldukça verimli bir şekilde aramaktadır.</li><br/><li>Hedef eleman dizinin orta elemanı ile eşleştiğinde, arama işi O(1) zaman karmaşıklığında gerçekleşir.</li><br/></ul><br/>İkili Aramanın Avantajları\n <ul> <li>Hem kavramları hem de uygulamayı anlamak son derece basittir.</li> <li>Sıralanmış bir dizi gerektirse de, her yinelemede tüm koleksiyonu ikiye böldüğü için uzun listelerdeki bir ögeyi oldukça verimli bir şekilde aramaktadır.</li> <li>Hedef eleman dizinin orta elemanı ile eşleştiğinde, arama işi O(1) zaman karmaşıklığında gerçekleşir.</li> </ul>"
+    "explanation": "İkili Aramanın Avantajları<br/><ul><br/><li>Hem kavramları hem de uygulamayı anlamak son derece basittir.</li><br/><li>Sıralanmış bir dizi gerektirse de, her yinelemede tüm koleksiyonu ikiye böldüğü için uzun listelerdeki bir ögeyi oldukça verimli bir şekilde aramaktadır.</li><br/><li>Hedef eleman dizinin orta elemanı ile eşleştiğinde, arama işi O(1) zaman karmaşıklığında gerçekleşir.</li><br/></ul><br/>İkili Aramanın Avantajları<br/><ul> <li>Hem kavramları hem de uygulamayı anlamak son derece basittir.</li> <li>Sıralanmış bir dizi gerektirse de, her yinelemede tüm koleksiyonu ikiye böldüğü için uzun listelerdeki bir ögeyi oldukça verimli bir şekilde aramaktadır.</li> <li>Hedef eleman dizinin orta elemanı ile eşleştiğinde, arama işi O(1) zaman karmaşıklığında gerçekleşir.</li> </ul>"
   },
   {
     "id": "3700069",
@@ -2032,7 +2032,7 @@
   {
     "id": "3700073",
     "unitNumber": 6,
-    "text": "I. Ekleme ve silmeler, dizi yapılarına göre daha fazla maliyetle yapılmaktadır.\n II. Önceden bellek ayırmaya gerek yoktur.\n III. Listeyi oluşturan düğümler arasında dolaşmak, dizi yapılarına göre daha zordur.\n IV. Liste elemanlarına rastgele erişim mümkündür.\n <strong>Yukarıdakilerden hangileri bağlantılı liste yapıları için doğrudur?</strong>",
+    "text": "I. Ekleme ve silmeler, dizi yapılarına göre daha fazla maliyetle yapılmaktadır.<br/>II. Önceden bellek ayırmaya gerek yoktur.<br/>III. Listeyi oluşturan düğümler arasında dolaşmak, dizi yapılarına göre daha zordur.<br/>IV. Liste elemanlarına rastgele erişim mümkündür.<br/><strong>Yukarıdakilerden hangileri bağlantılı liste yapıları için doğrudur?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "I ve II",
@@ -2041,7 +2041,7 @@
       "D": "III ve IV",
       "E": "II ve IV"
     },
-    "explanation": "zorluk derecesi: zor<br/>I. Ekleme ve silmeler, dizi yapılarına göre daha <strong>az</strong> maliyetle yapılmaktadır.\n IV. Liste elemanlarına rastgele erişim mümkün <strong>değildir</strong>."
+    "explanation": "zorluk derecesi: zor<br/>I. Ekleme ve silmeler, dizi yapılarına göre daha <strong>az</strong> maliyetle yapılmaktadır.<br/>IV. Liste elemanlarına rastgele erişim mümkün <strong>değildir</strong>."
   },
   {
     "id": "3700074",
@@ -2074,7 +2074,7 @@
   {
     "id": "3700076",
     "unitNumber": 6,
-    "text": "I. Bağlantılı listeyi Başlık(Head) isimli bir düğüm ile başlatmak yaygın bir kullanımdır.\n II. Bağlantılı listenin sonundaki düğüm kilit düğüm olarak adlandırılır.\n III. Bir listede veri 20’ye ulaşmak için öncelikle Veri 10’un olduğu düğüme ulaşılması gerekir.\n IV. Yeni düğümün adresi, ekleneceği sıradan bir önceki düğümün ilk ögesine yazılır.\n <strong>Yukarıdakilerden hangileri bağlantılı listelerde yer alan düğümler için doğrudur?</strong>",
+    "text": "I. Bağlantılı listeyi Başlık(Head) isimli bir düğüm ile başlatmak yaygın bir kullanımdır.<br/>II. Bağlantılı listenin sonundaki düğüm kilit düğüm olarak adlandırılır.<br/>III. Bir listede veri 20’ye ulaşmak için öncelikle Veri 10’un olduğu düğüme ulaşılması gerekir.<br/>IV. Yeni düğümün adresi, ekleneceği sıradan bir önceki düğümün ilk ögesine yazılır.<br/><strong>Yukarıdakilerden hangileri bağlantılı listelerde yer alan düğümler için doğrudur?</strong>",
     "correctAnswer": "B",
     "options": {
       "A": "I ve II",
@@ -2083,7 +2083,7 @@
       "D": "III ve IV",
       "E": "II ve IV"
     },
-    "explanation": "zorluk derecesi: orta<br/>II. Bağlantılı listenin sonundaki düğüm <strong>Son</strong> düğüm olarak adlandırılır.\n IV. Yeni düğümün adresi, ekleneceği sıradan bir önceki düğümün <strong>Sonraki</strong> ögesine yazılır."
+    "explanation": "zorluk derecesi: orta<br/>II. Bağlantılı listenin sonundaki düğüm <strong>Son</strong> düğüm olarak adlandırılır.<br/>IV. Yeni düğümün adresi, ekleneceği sıradan bir önceki düğümün <strong>Sonraki</strong> ögesine yazılır."
   },
   {
     "id": "3700077",
@@ -2116,7 +2116,7 @@
   {
     "id": "3700079",
     "unitNumber": 6,
-    "text": "I. Bir düğüm kolayca silinmez.\n II. Bellekte daha fazla alan kaplar.\n III. Ögelere rastgele erişim imkânı yoktur.\n IV. Diğer çeşitli veri yapılarının uygulanması zordur.\n <strong>Yukarıdakilerden hangileri çift bağlantılı liste yapıları ile ilgili olarak doğrudur?</strong>",
+    "text": "I. Bir düğüm kolayca silinmez.<br/>II. Bellekte daha fazla alan kaplar.<br/>III. Ögelere rastgele erişim imkânı yoktur.<br/>IV. Diğer çeşitli veri yapılarının uygulanması zordur.<br/><strong>Yukarıdakilerden hangileri çift bağlantılı liste yapıları ile ilgili olarak doğrudur?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "I ve II",
@@ -2125,7 +2125,7 @@
       "D": "III ve IV",
       "E": "II ve IV"
     },
-    "explanation": "zorluk derecesi: orta<br/>I. Bir düğüm kolayca <strong>silinebilir</strong>.\n IV. Diğer çeşitli veri yapılarının uygulanması <strong>kolaydır</strong>."
+    "explanation": "zorluk derecesi: orta<br/>I. Bir düğüm kolayca <strong>silinebilir</strong>.<br/>IV. Diğer çeşitli veri yapılarının uygulanması <strong>kolaydır</strong>."
   },
   {
     "id": "3700080",
@@ -2438,7 +2438,7 @@
   {
     "id": "3719353",
     "unitNumber": 7,
-    "text": "İki çocuk düğümü de dolu olan ögeleri kaldırmak, daha önceki kaldırma yöntemlerine göre biraz daha farklıdır. Öge kaldırıldıktan sonra yerine atanacak ...... düğümün belirlenmesi gerekir.\n Yukarıdaki metinde boş bırakılan yere aşağıdaki kavramlardan hangisi gelmelidir?",
+    "text": "İki çocuk düğümü de dolu olan ögeleri kaldırmak, daha önceki kaldırma yöntemlerine göre biraz daha farklıdır. Öge kaldırıldıktan sonra yerine atanacak ...... düğümün belirlenmesi gerekir.<br/>Yukarıdaki metinde boş bırakılan yere aşağıdaki kavramlardan hangisi gelmelidir?",
     "correctAnswer": "A",
     "options": {
       "A": "varis",
@@ -2489,7 +2489,7 @@
       "D": "I, II ve IV",
       "E": "II, III ve IV"
     },
-    "explanation": "Bir <strong>ikili arama ağacı (binary search tree - BST)</strong> oluşturulurken, verilerin eklenme sırası çok önemlidir. Çünkü:\n <ul> <li> Her yeni düğüm, önceki düğümlere göre konumlandırılır (küçükse sola, büyükse sağa).\n </li> <li> Dolayısıyla <strong>aynı veriler farklı sıralarda eklendiğinde</strong>, ağacın <strong>şekli</strong> değişir.\n </li> <li> Bu da doğrudan ağacın <strong>yüksekliğini</strong> etkiler. Bazı sıralamalar dengeli bir yapı oluştururken, bazıları ağacı sarkaç gibi tek tarafa yatık yapabilir.\n </li> </ul> Veri türü, sıralamadan bağımsızdır. Programlama dili veya uygulamaya göre belirlenir. Düğümlerin isimleri (etiketleri), verinin içeriğine bağlıdır, sıralama bunları değiştirmez.<br/>Buna göre doğru cevap B seçeneğidir."
+    "explanation": "Bir <strong>ikili arama ağacı (binary search tree - BST)</strong> oluşturulurken, verilerin eklenme sırası çok önemlidir. Çünkü:<br/><ul> <li> Her yeni düğüm, önceki düğümlere göre konumlandırılır (küçükse sola, büyükse sağa).<br/></li> <li> Dolayısıyla <strong>aynı veriler farklı sıralarda eklendiğinde</strong>, ağacın <strong>şekli</strong> değişir.<br/></li> <li> Bu da doğrudan ağacın <strong>yüksekliğini</strong> etkiler. Bazı sıralamalar dengeli bir yapı oluştururken, bazıları ağacı sarkaç gibi tek tarafa yatık yapabilir.<br/></li> </ul> Veri türü, sıralamadan bağımsızdır. Programlama dili veya uygulamaya göre belirlenir. Düğümlerin isimleri (etiketleri), verinin içeriğine bağlıdır, sıralama bunları değiştirmez.<br/>Buna göre doğru cevap B seçeneğidir."
   },
   {
     "id": "3840723",
@@ -2517,7 +2517,7 @@
       "D": "Boş bir konum bulunana kadar karşılaştırmalar yapıldıktan sonra",
       "E": "Sol çocuk düğüme geçmeden önce"
     },
-    "explanation": "Bir <strong>ikili arama ağacı (BST)</strong>'na veri eklerken, ekleme işlemi <strong>karşılaştırmalar yapılarak</strong> uygun bir konumda yapılır. Bu süreç şu şekilde işler:\n <ol> <li> <strong>Kök düğüm</strong>'den başlanır ve her bir düğüm ile karşılaştırmalar yapılır.\n </li> <li> <strong>Ekleme işlemi</strong>, yeni verinin mevcut düğüm ile karşılaştırılarak sol ya da sağ alt ağaçlara doğru ilerlenmesiyle gerçekleşir.\n </li> <li> Bu karşılaştırmalar sonucunda, uygun <strong>boş konum</strong> (sol ya da sağ çocukta) bulunur.\n </li> <li> Verinin bu boş konumda, belirlenen yere yerleştirilmesi sağlanır.\n </li> </ol> Bu işlem <strong>ağaçta sıralama</strong>yı koruyarak yapılır. Yani, veriyi yerleştirme işlemi <strong>karşılaştırmalar sonucu</strong> uygun boş düğüm bulunana kadar devam eder.<br/><strong>Verinin okunmasından hemen sonra:</strong> Verinin hemen okunması yeterli değildir; karşılaştırmalar yapılarak doğru konuma yerleştirilmelidir.<br/><strong>Rastgele bir konuma:</strong> Ekleme işlemi rastgele bir konumda yapılmaz, her veri doğru yerinde sıralı bir şekilde yerleştirilir.<br/><strong>Kök düğüme atandıktan sonra:</strong> Kök düğümden başladıktan sonra karşılaştırmalar yapılır, ancak kök düğüme yerleştirmek yeterli değildir.<br/><strong>Sol çocuk düğüme geçmeden önce:</strong> Sol ya da sağ çocuklara geçilmeden önce, karşılaştırmalar sonucunda boş bir düğüm bulunmalıdır.<br/>Ekleme işlemi, verinin doğru konumda yerleştirilmesi için karşılaştırmaların yapılması sonucu uygun boş konumda gerçekleştirilir, bu yüzden doğru cevap <strong>D seçeneğidir.</strong>"
+    "explanation": "Bir <strong>ikili arama ağacı (BST)</strong>'na veri eklerken, ekleme işlemi <strong>karşılaştırmalar yapılarak</strong> uygun bir konumda yapılır. Bu süreç şu şekilde işler:<br/><ol> <li> <strong>Kök düğüm</strong>'den başlanır ve her bir düğüm ile karşılaştırmalar yapılır.<br/></li> <li> <strong>Ekleme işlemi</strong>, yeni verinin mevcut düğüm ile karşılaştırılarak sol ya da sağ alt ağaçlara doğru ilerlenmesiyle gerçekleşir.<br/></li> <li> Bu karşılaştırmalar sonucunda, uygun <strong>boş konum</strong> (sol ya da sağ çocukta) bulunur.<br/></li> <li> Verinin bu boş konumda, belirlenen yere yerleştirilmesi sağlanır.<br/></li> </ol> Bu işlem <strong>ağaçta sıralama</strong>yı koruyarak yapılır. Yani, veriyi yerleştirme işlemi <strong>karşılaştırmalar sonucu</strong> uygun boş düğüm bulunana kadar devam eder.<br/><strong>Verinin okunmasından hemen sonra:</strong> Verinin hemen okunması yeterli değildir; karşılaştırmalar yapılarak doğru konuma yerleştirilmelidir.<br/><strong>Rastgele bir konuma:</strong> Ekleme işlemi rastgele bir konumda yapılmaz, her veri doğru yerinde sıralı bir şekilde yerleştirilir.<br/><strong>Kök düğüme atandıktan sonra:</strong> Kök düğümden başladıktan sonra karşılaştırmalar yapılır, ancak kök düğüme yerleştirmek yeterli değildir.<br/><strong>Sol çocuk düğüme geçmeden önce:</strong> Sol ya da sağ çocuklara geçilmeden önce, karşılaştırmalar sonucunda boş bir düğüm bulunmalıdır.<br/>Ekleme işlemi, verinin doğru konumda yerleştirilmesi için karşılaştırmaların yapılması sonucu uygun boş konumda gerçekleştirilir, bu yüzden doğru cevap <strong>D seçeneğidir.</strong>"
   },
   {
     "id": "3840750",
@@ -2573,7 +2573,7 @@
       "D": "Sonra Kök",
       "E": "Ters Önce Kök"
     },
-    "explanation": "<em><strong>İç Kök (Sol-Kök-Sağ)</strong> </em>(infix / inorder) gezinme yöntemiyle, ikili arama ağacında veriler <strong>küçükten büyüğe sıralı</strong> şekilde elde edilir. Bu yöntem sıralama işlemleri için en ideal gezinti yöntemidir.\n<br/><ul><br/><li><br/>İlk olarak sol alt ağaç,\n<br/></li><br/><li><br/>sonra kök düğüm,\n<br/></li><br/><li><br/>en son sağ alt ağaç gezilir.\n<br/></li><br/></ul><br/><em><strong><br/>Ters İç Kök (Sağ-Kök-Sol); </strong></em>Inorder’ın tam tersi. Önce sağ alt ağaç → sonra kök → sonra sol alt ağaç. Verileri azalan sırada elde etmek istiyorsan kullanılır. Sıralama yapar ama azalan (büyükten küçüğe) şekilde.<em><strong><br/>Önce Kök (Kök-Sol-Sağ); </strong></em>İlk olarak kök düğüm ziyaret edilir. Daha sonra sol ve sağ alt ağaçlar sırasıyla gezilir. Ağacın önce yapısı, sonra içeriği önemlidir. Genellikle ağaç yapısını dosyaya yazmak veya kopyalamak için kullanılır. Verileri artan sırayla sıralamaz. Çünkü kök düğüm, sol çocuklardan önce yazıldığından sıralama özelliği bozulur.<br/><strong>Sonra Kök (Sol-Sağ-Kök);</strong> İlk olarak sol ve sağ alt ağaçlar tamamen gezilir, en son kök düğüm ziyaret edilir. Ağaç yapısını silme gibi işlemlerde kullanılır (önce çocukları temizle, sonra kökü). Verileri sıralı biçimde vermez.<br/><strong>Ters Önce Kök (Kök-Sağ-Sol);</strong> Preorder’ın tersidir. Önce kök → sağ çocuk → sol çocuk. Nadir durumlarda veya bazı özel yazdırma işlemlerinde tercih edilebilir. Artan sıralama sağlamaz."
+    "explanation": "<em><strong>İç Kök (Sol-Kök-Sağ)</strong> </em>(infix / inorder) gezinme yöntemiyle, ikili arama ağacında veriler <strong>küçükten büyüğe sıralı</strong> şekilde elde edilir. Bu yöntem sıralama işlemleri için en ideal gezinti yöntemidir.<br/><ul><br/><li><br/>İlk olarak sol alt ağaç,<br/></li><br/><li><br/>sonra kök düğüm,<br/></li><br/><li><br/>en son sağ alt ağaç gezilir.<br/></li><br/></ul><br/><em><strong><br/>Ters İç Kök (Sağ-Kök-Sol); </strong></em>Inorder’ın tam tersi. Önce sağ alt ağaç → sonra kök → sonra sol alt ağaç. Verileri azalan sırada elde etmek istiyorsan kullanılır. Sıralama yapar ama azalan (büyükten küçüğe) şekilde.<em><strong><br/>Önce Kök (Kök-Sol-Sağ); </strong></em>İlk olarak kök düğüm ziyaret edilir. Daha sonra sol ve sağ alt ağaçlar sırasıyla gezilir. Ağacın önce yapısı, sonra içeriği önemlidir. Genellikle ağaç yapısını dosyaya yazmak veya kopyalamak için kullanılır. Verileri artan sırayla sıralamaz. Çünkü kök düğüm, sol çocuklardan önce yazıldığından sıralama özelliği bozulur.<br/><strong>Sonra Kök (Sol-Sağ-Kök);</strong> İlk olarak sol ve sağ alt ağaçlar tamamen gezilir, en son kök düğüm ziyaret edilir. Ağaç yapısını silme gibi işlemlerde kullanılır (önce çocukları temizle, sonra kökü). Verileri sıralı biçimde vermez.<br/><strong>Ters Önce Kök (Kök-Sağ-Sol);</strong> Preorder’ın tersidir. Önce kök → sağ çocuk → sol çocuk. Nadir durumlarda veya bazı özel yazdırma işlemlerinde tercih edilebilir. Artan sıralama sağlamaz."
   },
   {
     "id": "3840754",
@@ -2592,7 +2592,7 @@
   {
     "id": "3719357",
     "unitNumber": 8,
-    "text": "Verilen bir G grafı üzerinde tanımlı di ve dj iki düğüm, kenar kümesinde tanımlı bir kenar ile ilişkilendiriliyorsa bu iki düğüm ------- düğümlerdir?\n<br/>Yukarıdaki cümlede boş bırakılan yeri aşağıdakilerden hangisi doğru olarak tamamlar?",
+    "text": "Verilen bir G grafı üzerinde tanımlı di ve dj iki düğüm, kenar kümesinde tanımlı bir kenar ile ilişkilendiriliyorsa bu iki düğüm ------- düğümlerdir?<br/>Yukarıdaki cümlede boş bırakılan yeri aşağıdakilerden hangisi doğru olarak tamamlar?",
     "correctAnswer": "A",
     "options": {
       "A": "Komşu",
@@ -2676,7 +2676,7 @@
   {
     "id": "3719554",
     "unitNumber": 8,
-    "text": "Bir grafiğin veya ağaç veri yapısının tüm düğümlerini aramak için kullanılan yinelemeli (recursive) bir algoritmadır. Geçiş, bir grafiğin tüm düğümlerini ziyaret etmek anlamına gelmektedir.\n <strong>Yukarıdaki paragrafta sözü edilen algoritma aşağıdakilerden hangisidir?</strong>",
+    "text": "Bir grafiğin veya ağaç veri yapısının tüm düğümlerini aramak için kullanılan yinelemeli (recursive) bir algoritmadır. Geçiş, bir grafiğin tüm düğümlerini ziyaret etmek anlamına gelmektedir.<br/><strong>Yukarıdaki paragrafta sözü edilen algoritma aşağıdakilerden hangisidir?</strong>",
     "correctAnswer": "A",
     "options": {
       "A": "Önce Derinlik Araması",
@@ -2727,7 +2727,7 @@
       "D": "I, II, IV ve VI",
       "E": "I, III, IV, V ve VI"
     },
-    "explanation": "BFS algoritmasının çalışma mantığı;<br/>1. Grafın düğümlerinden herhangi birini kuyruğun sonuna ekleyerek başlayın.<br/>2. Kuyruğun ilk ögesini alın ve ziyaret edilenler listesine ekleyin.<br/>3. Bu düğümün bitişik düğümlerinin bir listesini oluşturun. Ziyaret edilenler listesinde olmayanları sıranın en arkasına ekleyin.<br/>4. Kuyruk boşalana kadar 2. ve 3. adımları tekrarlamaya devam edin.\n<br/>DFS algoritmasının çalışma mantığı;\n<br/>1. Grafiğin düğümlerinden herhangi birini bir yığına (stack) ekleyerek başlayın.<br/>2. Yığının en üst ögesini alın ve ziyaret edilenler listesine ekleyin.<br/>3. Bu düğümün bitişik düğümlerinin bir listesini oluşturun. Ziyaret edilenler listesinde olmayanları<br/>yığının en üstüne ekleyin.<br/>4. Yığın boşalana kadar 2. ve 3. adımları tekrarlamaya devam edin."
+    "explanation": "BFS algoritmasının çalışma mantığı;<br/>1. Grafın düğümlerinden herhangi birini kuyruğun sonuna ekleyerek başlayın.<br/>2. Kuyruğun ilk ögesini alın ve ziyaret edilenler listesine ekleyin.<br/>3. Bu düğümün bitişik düğümlerinin bir listesini oluşturun. Ziyaret edilenler listesinde olmayanları sıranın en arkasına ekleyin.<br/>4. Kuyruk boşalana kadar 2. ve 3. adımları tekrarlamaya devam edin.<br/>DFS algoritmasının çalışma mantığı;<br/>1. Grafiğin düğümlerinden herhangi birini bir yığına (stack) ekleyerek başlayın.<br/>2. Yığının en üst ögesini alın ve ziyaret edilenler listesine ekleyin.<br/>3. Bu düğümün bitişik düğümlerinin bir listesini oluşturun. Ziyaret edilenler listesinde olmayanları<br/>yığının en üstüne ekleyin.<br/>4. Yığın boşalana kadar 2. ve 3. adımları tekrarlamaya devam edin."
   },
   {
     "id": "3842858",
@@ -2853,7 +2853,7 @@
       "D": "III ve IV",
       "E": "I, II ve IV"
     },
-    "explanation": "zorluk derecesi: orta<br/>I. DFS, yığın veri yapısı kullanır.<br/>II. BFS, kuyruk veri yapısı kullanır.<br/>öncülleri doğrudur.<br/>III. Yanlış (DFS kenar tabanlıdır, düğüm tabanlı değildir).\n<br/>IV. Yanlış (BFS düğüm tabanlıdır, kenar tabanlı değildir)."
+    "explanation": "zorluk derecesi: orta<br/>I. DFS, yığın veri yapısı kullanır.<br/>II. BFS, kuyruk veri yapısı kullanır.<br/>öncülleri doğrudur.<br/>III. Yanlış (DFS kenar tabanlıdır, düğüm tabanlı değildir).<br/>IV. Yanlış (BFS düğüm tabanlıdır, kenar tabanlı değildir)."
   },
   {
     "id": "3842885",
@@ -2867,6 +2867,6 @@
       "D": "II ve IV",
       "E": "III ve IV"
     },
-    "explanation": "zorluk derecesi: zor<br/>I. Doğru (Yönlendirilmiş graflarda ok yönü vardır).\n II. Doğru (Ağırlıksız graflarda değer atanmaz).\n III. Doğru (Komple graflarda tüm düğümler birbirine bağlıdır).\n IV. <strong>Yanlış</strong> (Alt graflar, üst grafın alt kümesidir; tümünü içermez)."
+    "explanation": "zorluk derecesi: zor<br/>I. Doğru (Yönlendirilmiş graflarda ok yönü vardır).<br/>II. Doğru (Ağırlıksız graflarda değer atanmaz).<br/>III. Doğru (Komple graflarda tüm düğümler birbirine bağlıdır).<br/>IV. <strong>Yanlış</strong> (Alt graflar, üst grafın alt kümesidir; tümünü içermez)."
   }
 ]
