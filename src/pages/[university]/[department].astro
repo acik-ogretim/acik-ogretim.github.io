@@ -102,6 +102,14 @@ const groupedCourses = semesters.map((sem) => ({
         </div>
       </div>
 
+      <!-- Flat Search Results Container -->
+      <div
+        id="searchResultsContainer"
+        class="hidden grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-12"
+      >
+        <!-- Search results will be injected here -->
+      </div>
+
       <div class="space-y-16" id="semesterContainer">
         {
           groupedCourses.map(
@@ -118,7 +126,7 @@ const groupedCourses = semesters.map((sem) => ({
                     </span>
                   </div>
 
-                  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 course-grid">
                     {group.courses.map((course) => (
                       <div
                         class="course-card-wrapper dept-card group"
@@ -251,6 +259,9 @@ const groupedCourses = semesters.map((sem) => ({
           );
           if (original) {
             const clone = original.cloneNode(true) as HTMLElement;
+            // Remove hidden class if it was hidden by search
+            clone.classList.remove("hidden");
+            clone.style.display = "";
             clone
               .querySelector(".favorite-btn")
               ?.addEventListener("click", (e) => {
@@ -267,48 +278,108 @@ const groupedCourses = semesters.map((sem) => ({
     }
   }
 
-  // Search logic
+  import { createFuse, normalizeTurkish } from "../../lib/search";
+
   const searchInput = document.getElementById(
     "courseSearch",
   ) as HTMLInputElement;
-  const semesterSections = document.querySelectorAll(".semester-section");
+  const courseCards = Array.from(
+    document.querySelectorAll(".course-card-wrapper"),
+  ) as HTMLElement[];
+  const semesterContainer = document.getElementById("semesterContainer");
+  const searchResultsContainer = document.getElementById(
+    "searchResultsContainer",
+  );
   const noResults = document.getElementById("noResults");
 
-  searchInput?.addEventListener("input", (e) => {
-    const term = (e.target as HTMLInputElement).value.toLowerCase().trim();
-    let totalVisible = 0;
+  // Create Fuse instance with DOM elements associated
+  // We search in the dataset directly
+  const searchData = courseCards.map((card, index) => ({
+    name: card.dataset.courseName || "",
+    normalizedName: normalizeTurkish(card.dataset.courseName || ""),
+    code: card.dataset.courseCode || "",
+    id: index, // Track original index to map back to DOM
+    element: card,
+  }));
 
-    semesterSections.forEach((section) => {
-      const cards = section.querySelectorAll(".course-card-wrapper");
-      let visibleInSemester = 0;
+  const fuse = createFuse(searchData, ["name", "code", "normalizedName"], 0.4);
 
-      cards.forEach((card) => {
-        const name =
-          (card.querySelector("[data-name]") as HTMLElement)?.dataset.name ||
-          "";
-        const code =
-          (card.querySelector("[data-code]") as HTMLElement)?.dataset.code ||
-          "";
+  function applySearch(query: string) {
+    const q = query.trim();
+    let visibleCount = 0;
 
-        if (name.includes(term) || code.includes(term)) {
-          (card as HTMLElement).style.display = "block";
-          visibleInSemester++;
-          totalVisible++;
-        } else {
-          (card as HTMLElement).style.display = "none";
-        }
-      });
-
-      (section as HTMLElement).style.display =
-        visibleInSemester > 0 ? "block" : "none";
-    });
-
-    if (totalVisible === 0 && term !== "") {
-      noResults?.classList.remove("hidden");
+    if (!q) {
+      // Reset view: Show grouped list, hide search results
+      courseCards.forEach((card) => card.classList.remove("hidden"));
+      semesterContainer?.classList.remove("hidden");
+      searchResultsContainer?.classList.add("hidden");
+      searchResultsContainer!.innerHTML = ""; // Clean up
+      visibleCount = courseCards.length;
     } else {
-      noResults?.classList.add("hidden");
+      // Perform search
+      const results = fuse.search(q);
+
+      // Hide original grouped container
+      semesterContainer?.classList.add("hidden");
+
+      // Show search container and populate it
+      searchResultsContainer?.classList.remove("hidden");
+      searchResultsContainer!.innerHTML = "";
+
+      if (results.length > 0) {
+        results.forEach((result) => {
+          // Clone the original card to display in the flat list
+          // We clone to avoid moving elements around and breaking the semester groups
+          const originalCard = result.item.element;
+          const clonedCard = originalCard.cloneNode(true) as HTMLElement;
+
+          clonedCard.classList.remove("hidden");
+          clonedCard.style.order = ""; // No need for order, we append in order
+
+          // Re-bind favorite button
+          clonedCard
+            .querySelector(".favorite-btn")
+            ?.addEventListener("click", (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              // Trigger click on original button to reuse logic acting on data attributes
+              originalCard
+                .querySelector(".favorite-btn")
+                ?.dispatchEvent(new Event("click"));
+
+              // Visual update is handled by global updateUI, but might need a tick or manual sync for the clone?
+              // updateUI handles ALL .course-card-wrapper, so it should update our clone too if it has the class!
+              // Yes, cloneNode copies classes.
+              // BUT matched elements in updateUI rely on document.querySelectorAll.
+              // Since clone is appended, next updateUI call will find it. Good.
+            });
+
+          searchResultsContainer!.appendChild(clonedCard);
+        });
+      }
+
+      visibleCount = results.length;
     }
-  });
+
+    // Handle no results message
+    if (noResults) {
+      noResults.classList.toggle("hidden", visibleCount > 0);
+    }
+
+    // Refresh UI state (favorites icons) for the new clones
+    // We need to defer slightly or just call updateUI if available globally
+    // Luckily updateUI is scoped inside script but we can call it.
+    if (typeof updateUI === "function") {
+      updateUI();
+    }
+  }
+
+  searchInput?.addEventListener("input", (e) =>
+    applySearch((e.target as HTMLInputElement).value),
+  );
+
+  // Initial help text
+  applySearch("");
 
   document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".favorite-btn").forEach((btn) => {

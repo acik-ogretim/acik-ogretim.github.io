@@ -120,6 +120,33 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
         </button>
       </header>
 
+      <!-- Search Shortcut Hint -->
+      <div class="mb-6 print:hidden">
+        <button
+          onclick="document.getElementById('toggleSearch')?.click()"
+          class="inline-flex items-center gap-2 px-3 py-2 bg-primary-theme/10 hover:bg-primary-theme/20 border border-primary-theme/30 rounded-lg text-sm text-primary-theme transition-colors group"
+        >
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+          <span>Sorularda ara</span>
+          <kbd
+            class="px-2 py-1 bg-card-theme border border-theme rounded text-xs font-mono group-hover:border-primary-theme transition-colors"
+          >
+            Ctrl+K
+          </kbd>
+        </button>
+      </div>
+
       <!-- Navigation (Sticky) -->
       <nav
         class="sticky top-[64px] z-30 -mx-4 px-4 py-3 bg-[var(--bg-color)]/95 backdrop-blur-md border-b border-theme mb-12 md:static md:bg-transparent md:border-none md:p-0 transition-colors print:hidden"
@@ -256,6 +283,242 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
   </div>
 
   <QuizPlayer />
+
+  <!-- Floating Search Button -->
+  <button
+    id="toggleSearch"
+    class="fixed bottom-6 right-6 w-14 h-14 bg-primary-theme text-white rounded-full shadow-2xl flex items-center justify-center z-50 hover:scale-110 active:scale-95 transition-all print:hidden"
+    aria-label="Soru Ara"
+  >
+    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+    </svg>
+  </button>
+
+  <!-- Search Modal/Panel -->
+  <div
+    id="searchPanel"
+    class="fixed inset-0 bg-black/0 pointer-events-none z-[60] flex items-end justify-center px-4 pb-24 print:hidden transition-colors duration-300"
+  >
+    <div
+      id="searchInner"
+      class="w-full max-w-2xl bg-card-theme border-2 border-primary-theme rounded-2xl shadow-2xl p-4 transform translate-y-full opacity-0 transition-all duration-300 relative z-10"
+    >
+      <div class="flex items-center gap-3">
+        <input
+          type="text"
+          id="questionSearch"
+          placeholder="Sorularda ara... (Örn: dom eleman) • Ctrl+K"
+          class="flex-1 bg-transparent text-theme text-lg outline-none py-2"
+        />
+        <button id="closeSearch" class="p-2 text-muted-theme hover:text-theme">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div id="searchCounter" class="text-xs text-muted-theme mt-2 font-medium">
+      </div>
+      <div id="searchResults" class="mt-3 hidden">
+        <div class="text-xs font-semibold text-primary-theme mb-2">
+          Sonuçlar:
+        </div>
+        <div id="unitResults" class="flex flex-wrap gap-2"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    import { createFuse, normalizeTurkish } from "../../../lib/search";
+
+    const toggleBtn = document.getElementById("toggleSearch");
+    const searchPanel = document.getElementById("searchPanel");
+    const searchInner = document.getElementById("searchInner");
+    const searchInput = document.getElementById(
+      "questionSearch",
+    ) as HTMLInputElement;
+    const closeBtn = document.getElementById("closeSearch");
+    const counter = document.getElementById("searchCounter");
+    const questionCards = Array.from(
+      document.querySelectorAll(".question-card"),
+    );
+    const unitSections = document.querySelectorAll(".unit-separator");
+
+    // Prepare Fuse Index for Questions
+    const searchData = questionCards.map((card, index) => {
+      const text = (card as HTMLElement).innerText;
+      return {
+        text: text,
+        normalizedText: normalizeTurkish(text),
+        id: index,
+        element: card as HTMLElement,
+      };
+    });
+
+    const fuse = createFuse(searchData, ["text", "normalizedText"], 0.4);
+
+    function openSearch() {
+      searchPanel?.classList.remove("pointer-events-none");
+      searchPanel?.classList.remove("bg-black/0");
+      searchPanel?.classList.add("bg-black/20");
+      searchInner?.classList.remove("translate-y-full", "opacity-0");
+      searchInput?.focus();
+    }
+
+    function closeSearch() {
+      searchPanel?.classList.add("pointer-events-none");
+      searchPanel?.classList.add("bg-black/0");
+      searchPanel?.classList.remove("bg-black/20");
+      searchInner?.classList.add("translate-y-full", "opacity-0");
+      if (searchInput) searchInput.value = "";
+      applySearch("");
+    }
+
+    function applySearch(query: string) {
+      const q = query.trim().toLowerCase();
+      let visibleCount = 0;
+      const unitMatches = new Map<string, number>();
+
+      // COMMAND LOGIC
+      if (q.startsWith("/")) {
+        const parts = q.split(" ");
+        const cmd = parts[0];
+        const arg = parts[1];
+
+        questionCards.forEach((card) => {
+          const unit = (card as HTMLElement).dataset.unit;
+          const qIdx = questionCards.indexOf(card) + 1;
+          const choices = (card as HTMLElement).querySelectorAll(
+            ".option-item",
+          );
+          const correctKey = Array.from(choices)
+            .find((c) => c.classList.contains("correct-option"))
+            ?.getAttribute("data-key")
+            ?.toLowerCase();
+
+          let visible = false;
+          if (cmd === "/u" || cmd === "/unite") visible = unit === arg;
+          else if (cmd === "/q" || cmd === "/soru")
+            visible = qIdx.toString() === arg;
+          else if (cmd === "/correct" || cmd === "/dogru")
+            visible = correctKey === arg;
+          else visible = true;
+
+          (card as HTMLElement).classList.toggle("hidden", !visible);
+          if (visible) {
+            visibleCount++;
+            if (unit) unitMatches.set(unit, (unitMatches.get(unit) || 0) + 1);
+          }
+        });
+      } else {
+        // NORMAL SEARCH (FUSE)
+        if (!q) {
+          // Reset
+          questionCards.forEach((card) => {
+            (card as HTMLElement).classList.remove("hidden");
+            visibleCount++;
+            const unit = (card as HTMLElement).dataset.unit;
+            if (unit) unitMatches.set(unit, (unitMatches.get(unit) || 0) + 1);
+          });
+        } else {
+          const results = fuse.search(q);
+          const foundIndices = new Set(results.map((r) => r.item.id));
+
+          questionCards.forEach((card, index) => {
+            const visible = foundIndices.has(index);
+            (card as HTMLElement).classList.toggle("hidden", !visible);
+            if (visible) {
+              visibleCount++;
+              const unit = (card as HTMLElement).dataset.unit;
+              if (unit) unitMatches.set(unit, (unitMatches.get(unit) || 0) + 1);
+            }
+          });
+        }
+      }
+
+      unitSections.forEach((section) => {
+        const hasVisible =
+          section.querySelectorAll(".question-card:not(.hidden)").length > 0;
+        (section as HTMLElement).classList.toggle("hidden", !hasVisible);
+      });
+
+      const resultsDiv = document.getElementById("searchResults");
+      const unitResultsDiv = document.getElementById("unitResults");
+
+      if (counter) {
+        if (!query) {
+          counter.innerHTML =
+            '<span class="opacity-50">İpucu: <b>/u 5</b> (Ünite 5), <b>/q 10</b> (Soru 10), <b>/correct A</b></span>';
+          resultsDiv?.classList.add("hidden");
+        } else {
+          counter.innerHTML = `<b>${visibleCount}</b> soru bulundu`;
+
+          if (visibleCount > 0 && unitMatches.size > 0) {
+            resultsDiv?.classList.remove("hidden");
+            if (unitResultsDiv) {
+              unitResultsDiv.innerHTML = "";
+              Array.from(unitMatches.entries())
+                .sort((a, b) => parseInt(a[0]) - parseInt(b[0]))
+                .forEach(([unit, count]) => {
+                  const badge = document.createElement("button");
+                  badge.className =
+                    "px-2 py-1 bg-primary-theme/20 hover:bg-primary-theme/30 text-primary-theme rounded text-xs font-medium transition-colors";
+                  badge.textContent = `Ünite ${unit} (${count})`;
+                  badge.onclick = () => {
+                    const unitEl = document.getElementById(`unite-${unit}`);
+                    unitEl?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                    closeSearch();
+                  };
+                  unitResultsDiv.appendChild(badge);
+                });
+            }
+          } else {
+            resultsDiv?.classList.add("hidden");
+          }
+        }
+      }
+    }
+
+    toggleBtn?.addEventListener("click", openSearch);
+    closeBtn?.addEventListener("click", closeSearch);
+
+    // Close when clicking backdrop (outside search box)
+    searchPanel?.addEventListener("click", (e) => {
+      if (e.target === searchPanel) closeSearch();
+    });
+
+    searchInput?.addEventListener("input", (e) =>
+      applySearch((e.target as HTMLInputElement).value),
+    );
+
+    // Initial help text
+    applySearch("");
+
+    // Shortcut: Ctrl/Cmd + K (like command palette)
+    window.addEventListener("keydown", (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === "k") {
+        e.preventDefault();
+        openSearch();
+      }
+      if (e.key === "Escape") closeSearch();
+    });
+  </script>
 </Layout>
 
 {
