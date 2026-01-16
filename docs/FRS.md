@@ -11,8 +11,7 @@ Bu doküman, sistemin her bir fonksiyonunun girdilerini, işlemlerini ve çıkt�
     1.  URL parametreleri veya kayıtlı ayarlar (`localStorage`) okunur.
     2.  **Ünite Filtresi:** "İlk Yarı", "İkinci Yarı" veya belirli bir ünite seçildiyse sorular buna göre elenir.
     3.  **Durum Filtresi:** "Yanlışlar" veya "Boşlar" seçildiyse, `quiz-progress-[slug]` verisine bakılarak filtreleme yapılır.
-    4.  **Karıştırma:** `shuffleQuestions` aktifse Fisher-Yates algoritması uygulanır.
-    5.  DOM'daki ilgili soru elementleri (`display: block/none`) güncellenir.
+    4.  DOM'daki ilgili soru elementleri (`display: block/none`) güncellenir.
 *   **Çıktı:** Test ekranı filtrelenmiş sorularla açılır.
 
 ### F-02: Cevap Verme (Normal Mod)
@@ -52,3 +51,13 @@ Bu doküman, sistemin her bir fonksiyonunun girdilerini, işlemlerini ve çıkt�
     2.  `localStorage`'a yazılır.
     3.  `applyFilters()` fonksiyonu tetiklenerek arayüz anında güncellenir.
 *   **Çıktı:** Arayüz değişikliği ve kalıcı ayar saklama.
+
+### F-06: AI ile Açıklama Zenginleştirme
+*   **Girdi:** Kullanıcı bir sorunun açıklama alanındaki AI menü butonuna tıklar.
+*   **İşlem:**
+    1.  Kullanıcının Gemini API anahtarı `localStorage`'dan okunur. Yoksa uyarı verilir.
+    2.  Seçilen aksiyona göre (Yeniden Yaz, Daha Uzun, Daha Kısa, Hafıza Tekniği) prompt oluşturulur.
+    3.  Soru metni, doğru cevap ve mevcut açıklama ile birlikte Google Gemini API'ye gönderilir.
+    4.  API yanıtı alındığında açıklama alanı HTML olarak güncellenir.
+    5.  Üretilen içerik `quiz-ai-explanations-{courseSlug}` anahtarı altında `localStorage`'a kaydedilir.
+*   **Çıktı:** AI tarafından zenginleştirilmiş açıklama gösterilir ve kalıcı olarak saklanır.

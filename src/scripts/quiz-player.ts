@@ -76,7 +76,7 @@ export class QuizPlayer {
   loadSettings(): QuizSettings {
     const saved = localStorage.getItem('quiz-settings');
     const defaultSettings: QuizSettings = {
-      shuffleQuestions: false,
+      // Removed shuffleQuestions
       filterUnite: 'all',
       filterIncorrect: false,
       filterUnanswered: false,
@@ -107,6 +107,10 @@ export class QuizPlayer {
   }
 
   init(): void {
+    // Load AI explanations override store
+    const aiStoreKey = `quiz-ai-explanations-${this.courseSlug}`;
+    const aiStore = JSON.parse(localStorage.getItem(aiStoreKey) || '{}');
+
     const questionEls = document.querySelectorAll('[id^="question-"]');
     questionEls.forEach((el) => {
       const id = el.id;
@@ -137,8 +141,38 @@ export class QuizPlayer {
       const expDiv = el.querySelector('.explanation-box') as HTMLElement;
       let explanation = '';
       if (expDiv) {
-        const contentSpan = (expDiv.querySelector('span[set\\:html]') || expDiv.querySelector('span')) as HTMLElement;
-        explanation = contentSpan ? contentSpan.innerText : expDiv.innerText.replace('AÇIKLAMA:', '').trim();
+        // Check for AI Override in loaded store
+        const parts = id.split('-'); // question-1-5
+        if (parts.length === 3) {
+          const unitVal = parts[1];
+          const qIdxVal = parts[2];
+          const itemKey = `${unitVal}-${qIdxVal}`;
+
+          if (aiStore[itemKey]) {
+            const savedAI = aiStore[itemKey];
+            console.log(`[QuizPlayer] Loaded AI override for ${id}`);
+            const contentEl = document.getElementById(`content-${unitVal}-${qIdxVal}`);
+            if (contentEl) {
+              contentEl.innerHTML = savedAI;
+            }
+            explanation = savedAI; // Use AI content for player state (TTS)
+          }
+        }
+
+        if (!explanation) {
+          const contentSpan = (expDiv.querySelector('span[set\\:html]') || expDiv.querySelector('span')) as HTMLElement;
+          explanation = contentSpan ? contentSpan.innerText : expDiv.innerText.replace('AÇIKLAMA:', '').trim();
+        } else {
+          // If explanation was set by AI above, we might want to strip HTML for clean text usage if needed elsewhere,
+          // but PlayerQuestion.explanation usually keeps the raw text/html for display?
+          // Actually looking at original logic, it takes .innerText.
+          // If we want TTS to read it nicely, we might need a clean text version.
+          // But existing code takes innerText.
+          // Let's create a temp div to get clean innerText from the HTML if we loaded AI content.
+          const temp = document.createElement('div');
+          temp.innerHTML = explanation;
+          explanation = temp.innerText;
+        }
       }
 
       const unitText = el.getAttribute('data-unit') || '0';
@@ -293,10 +327,8 @@ export class QuizPlayer {
       });
     }
 
-    // Shuffle
-    if (this.settings.shuffleQuestions) {
-      filtered = filtered.sort(() => Math.random() - 0.5);
-    }
+    // Shuffle logic removed as per user request
+    // if (this.settings.shuffleQuestions) { ... }
 
     this.questions = filtered;
     this.currentIndex = this.questions.length > 0 ? 0 : -1;
@@ -338,7 +370,7 @@ export class QuizPlayer {
       }
     };
 
-    bindToggle('setting-shuffle', 'shuffleQuestions');
+    // bindToggle('setting-shuffle', 'shuffleQuestions'); // Removed
     bindToggle('setting-incorrect', 'filterIncorrect');
     bindToggle('setting-unanswered', 'filterUnanswered');
     bindToggle('setting-show-answers', 'showAnswers');
@@ -1017,8 +1049,11 @@ export class QuizPlayer {
         ansParts.push(`Doğru Cevap: ${q.correctKey}, ${this.cleanText(q.correctAnswerText)}.`);
       }
 
-      if (this.settings.showExplanations && q.explanation && (!this.isInteractive || isAnswered)) {
-        ansParts.push(`Açıklama: ${this.cleanText(q.explanation)}`);
+      if (this.settings.showExplanations && (!this.isInteractive || isAnswered)) {
+        const latestExp = this.getLatestExplanation(q);
+        if (latestExp) {
+          ansParts.push(`Açıklama: ${this.cleanText(latestExp)}`);
+        }
       }
 
       if (ansParts.length > 0) {
@@ -1038,7 +1073,8 @@ export class QuizPlayer {
   speakExplanation(): void {
     if (this.currentIndex < 0 || this.currentIndex >= this.questions.length) return;
     const q = this.questions[this.currentIndex];
-    if (!q.explanation) return;
+    const latestExp = this.getLatestExplanation(q);
+    if (!latestExp) return;
 
     // Visually reveal explanation and answer
     if (q.el) {
@@ -1056,7 +1092,7 @@ export class QuizPlayer {
 
     this.startNewSpeechSession();
 
-    const expText = `Açıklama: ${this.cleanText(q.explanation)}`;
+    const expText = `Açıklama: ${this.cleanText(latestExp)}`;
     this.speechQueue.push(expText);
 
     const mySessionId = this.currentSessionId;
@@ -1068,5 +1104,23 @@ export class QuizPlayer {
     const text = "Bu bir ses denemesidir. Bir, iki, üç.";
     const utter = this.createUtterance(text);
     this.synth.speak(utter);
+  }
+
+  getLatestExplanation(q: PlayerQuestion): string {
+    // Always consult the live store for latest override
+    const aiStoreKey = `quiz-ai-explanations-${this.courseSlug}`;
+    const aiStore = JSON.parse(localStorage.getItem(aiStoreKey) || '{}');
+    const itemKey = `${q.unitNumber}-${q.id.split('-').pop()}`; // reconstruct short key or check how q.id is formed
+    // q.id is "question-1-5", we need "1-5"
+    // or easier: q.id "question-{unit}-{qIdx}" -> replace "question-" with ""
+    const key = q.id.replace('question-', '');
+
+    if (aiStore[key]) {
+      // If HTML, we might need to strip it? cleanText handles stripping.
+      // But wait, cleanText handles <br> etc.
+      // If stored text is HTML, we return HTML here and let cleanText handle it later.
+      return aiStore[key];
+    }
+    return q.explanation || '';
   }
 }

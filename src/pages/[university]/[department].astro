@@ -36,13 +36,13 @@ const groupedCourses = semesters.map((sem) => ({
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Breadcrumbs -->
       <nav class="flex mb-8 text-sm text-muted-theme">
-        <a href="/" class="hover:text-primary-theme transition-colors"
+        <a href="/" class="hover:text-primary-theme"
           >Ana Sayfa</a
         >
         <span class="mx-2">/</span>
         <a
           href={`/${university.id}`}
-          class="hover:text-primary-theme transition-colors"
+          class="hover:text-primary-theme"
           >{university.shortName}</a
         >
         <span class="mx-2">/</span>
@@ -139,7 +139,7 @@ const groupedCourses = semesters.map((sem) => ({
                       >
                         <div class="relative glass p-4 rounded-xl border border-theme bg-card-theme hover:border-primary-theme/50 transition-all h-full">
                           <button
-                            class="favorite-btn absolute top-2 right-2 w-6 h-6 rounded-full hover:bg-yellow-500/20 flex items-center justify-center transition-colors z-10"
+                            class="favorite-btn absolute top-2 right-2 w-6 h-6 rounded-full hover:bg-yellow-500/20 flex items-center justify-center z-10"
                             title="Favorilere ekle"
                           >
                             <span class="fav-icon text-[10px]">☆</span>
@@ -149,7 +149,7 @@ const groupedCourses = semesters.map((sem) => ({
                             href={`/${university.id}/${department.id}/${course.id}`}
                             class="flex items-center gap-3 h-full"
                           >
-                            <div class="w-10 h-10 rounded-lg bg-primary-theme/10 flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-primary-theme/20 transition-colors">
+                            <div class="w-10 h-10 rounded-lg bg-primary-theme/10 flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-primary-theme/20">
                               📚
                             </div>
                             <div class="flex-1 min-w-0">
@@ -160,7 +160,7 @@ const groupedCourses = semesters.map((sem) => ({
                                 {course.code}
                               </div>
                               <h3
-                                class="text-sm font-medium text-theme group-hover:text-primary-theme transition-colors line-clamp-2 leading-snug"
+                                class="text-sm font-medium text-theme group-hover:text-primary-theme line-clamp-2 leading-snug"
                                 data-name={course.name.toLowerCase()}
                               >
                                 {course.name}

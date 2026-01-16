@@ -1,5 +1,7 @@
 ---
 import QuizPlayer from "../../../components/QuizPlayer.astro";
+import AISettings from "../../../components/AISettings.astro";
+import AIMenu from "../../../components/AIMenu.astro";
 import Layout from "../../../layouts/Layout.astro";
 import { getCourses, getQuestions, getUniversities } from "../../../lib/api";
 
@@ -124,7 +126,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
       <div class="mb-6 print:hidden">
         <button
           onclick="document.getElementById('toggleSearch')?.click()"
-          class="inline-flex items-center gap-2 px-3 py-2 bg-primary-theme/10 hover:bg-primary-theme/20 border border-primary-theme/30 rounded-lg text-sm text-primary-theme transition-colors group"
+          class="inline-flex items-center gap-2 px-3 py-2 bg-primary-theme/10 hover:bg-primary-theme/20 border border-primary-theme/30 rounded-lg text-sm text-primary-theme group"
         >
           <svg
             class="w-4 h-4"
@@ -140,7 +142,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
           </svg>
           <span>Sorularda ara</span>
           <kbd
-            class="px-2 py-1 bg-card-theme border border-theme rounded text-xs font-mono group-hover:border-primary-theme transition-colors"
+            class="px-2 py-1 bg-card-theme border border-theme rounded text-xs font-mono group-hover:border-primary-theme"
           >
             Ctrl+K
           </kbd>
@@ -149,7 +151,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
 
       <!-- Navigation (Sticky) -->
       <nav
-        class="sticky top-[64px] z-30 -mx-4 px-4 py-3 bg-[var(--bg-color)]/95 backdrop-blur-md border-b border-theme mb-12 md:static md:bg-transparent md:border-none md:p-0 transition-colors print:hidden"
+        class="sticky top-[64px] z-30 -mx-4 px-4 py-3 bg-[var(--bg-color)]/95 backdrop-blur-md border-b border-theme mb-12 md:static md:bg-transparent md:border-none md:p-0 print:hidden"
         aria-label="Ünite Navigasyonu"
         data-reader-ignore
       >
@@ -222,7 +224,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
                               data-key={opt.key}
                               data-testid={`option-${opt.key}`}
                             >
-                              <span class="option-key flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg border-2 border-theme text-sm font-bold transition-colors">
+                              <span class="option-key flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg border-2 border-theme text-sm font-bold">
                                 {opt.key}
                               </span>
                               <div
@@ -238,11 +240,27 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
                       </div>
 
                       {q.explanation && (
-                        <div class="explanation-card explanation-box text-muted-theme text-sm leading-relaxed">
-                          <strong class="text-primary-theme uppercase tracking-wider mr-2 mb-1 block">
-                            Açıklama:
-                          </strong>
-                          <div set:html={q.explanation} />
+                        <div class="explanation-card explanation-box text-muted-theme text-sm leading-relaxed relative group" data-explanation-id={`exp-${unit}-${qIdx}`}>
+                          <div class="flex justify-between items-start mb-2">
+                            <strong class="text-primary-theme uppercase tracking-wider block">
+                              Açıklama:
+                            </strong>
+
+                            <!-- AI Enrichment Menu (Hidden by default) -->
+                            <!-- AI Enrichment Menu Trigger -->
+                            <div class="ai-enrichment-controls hidden relative z-10">
+                              <button
+                                class="btn-ai-menu p-1 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-400 hover:text-teal-400 "
+                                title="AI İşlemleri"
+                                onclick={`openGlobalAIMenu(event, '${unit}', '${qIdx}')`}
+                              >
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                              </button>
+                            </div>
+                          </div>
+
+                          <div class="explanation-content" id={`content-${unit}-${qIdx}`} set:html={q.explanation} />
+                          <div class="original-content-store hidden" id={`original-${unit}-${qIdx}`} set:html={q.explanation} />
                         </div>
                       )}
 
@@ -283,6 +301,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
   </div>
 
   <QuizPlayer />
+  <AISettings />
 
   <!-- Floating Search Button -->
   <button
@@ -302,7 +321,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
   <!-- Search Modal/Panel -->
   <div
     id="searchPanel"
-    class="fixed inset-0 bg-black/0 pointer-events-none z-[60] flex items-end justify-center px-4 pb-24 print:hidden transition-colors duration-300"
+    class="fixed inset-0 bg-black/0 pointer-events-none z-[60] flex items-end justify-center px-4 pb-24 print:hidden duration-300"
   >
     <div
       id="searchInner"
@@ -341,8 +360,16 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
     </div>
   </div>
 
+
+
   <script>
     import { createFuse, normalizeTurkish } from "../../../lib/search";
+
+    declare global {
+      interface Window {
+        openAISettings: () => void;
+      }
+    }
 
     const toggleBtn = document.getElementById("toggleSearch");
     const searchPanel = document.getElementById("searchPanel");
@@ -475,7 +502,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
                 .forEach(([unit, count]) => {
                   const badge = document.createElement("button");
                   badge.className =
-                    "px-2 py-1 bg-primary-theme/20 hover:bg-primary-theme/30 text-primary-theme rounded text-xs font-medium transition-colors";
+                    "px-2 py-1 bg-primary-theme/20 hover:bg-primary-theme/30 text-primary-theme rounded text-xs font-medium";
                   badge.textContent = `Ünite ${unit} (${count})`;
                   badge.onclick = () => {
                     const unitEl = document.getElementById(`unite-${unit}`);
@@ -507,6 +534,12 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
       applySearch((e.target as HTMLInputElement).value),
     );
 
+    searchInput?.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeSearch();
+      }
+    });
+
     // Initial help text
     applySearch("");
 
@@ -519,6 +552,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
       if (e.key === "Escape") closeSearch();
     });
   </script>
+  <AIMenu />
 </Layout>
 
 {

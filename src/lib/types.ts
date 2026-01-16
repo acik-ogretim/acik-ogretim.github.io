@@ -46,7 +46,6 @@ export interface PlayerQuestion {
 }
 
 export interface QuizSettings {
-    shuffleQuestions: boolean;
     filterUnite: string;
     filterIncorrect: boolean;
     filterUnanswered: boolean;

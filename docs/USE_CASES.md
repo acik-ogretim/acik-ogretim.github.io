@@ -57,10 +57,26 @@ Bu doküman, **Açık Öğretim Çalışma Portalı**'nın kullanıcı etkileşi
 *   **Akış:**
     1.  Öğrenci, ayarlar menüsünü açar.
     2.  Tercihine göre aşağıdaki ayarları değiştirir:
-        *   Karanlık Mod / Aydınlık Mod
+        *   Karanlık Mod / Aydınlık Mod / Sepya
         *   Cevapları Gizle / Göster
-        *   Sesli Okuma Hızı
+        *   Sesli Okuma Hızı ve Ses Modeli
+        *   AI Açıklama Zenginleştirme (Gemini API)
     3.  Sistem, tercihleri kaydeder ve arayüzü anında günceller.
+
+### UC-06: AI ile Açıklama Zenginleştirme
+*   **Aktör:** Öğrenci
+*   **Ön Koşul:** Kullanıcı Gemini API anahtarını ayarlar menüsünden girmiş ve "Açıklama Zenginleştirme" özelliğini aktif etmiştir.
+*   **Akış:**
+    1.  Öğrenci, bir sorunun açıklama alanındaki AI menü butonuna tıklar.
+    2.  Açılan menüden bir işlem seçer:
+        *   **Yeniden Yaz:** Açıklamayı farklı bir perspektiften yeniden oluşturur.
+        *   **Daha Uzun:** Daha detaylı açıklama üretir.
+        *   **Daha Kısa:** Özet bir açıklama üretir.
+        *   **Hafıza Tekniği:** Doğru cevabı hatırlamak için mnemonic oluşturur.
+        *   **Orijinale Dön:** Orijinal açıklamayı geri yükler.
+    3.  Sistem, soruyu ve mevcut açıklamayı Google Gemini API'ye gönderir.
+    4.  AI yanıtı geldiğinde, açıklama alanı güncellenir ve `localStorage`'a kaydedilir.
+*   **Sonuç:** Kişiselleştirilmiş AI destekli açıklama gösterilir.
 
 ### UC-05: Hata Bildirimi
 *   **Aktör:** Öğrenci
@@ -76,3 +92,5 @@ Bu doküman, **Açık Öğretim Çalışma Portalı**'nın kullanıcı etkileşi
 *   **US-2:** Görme problemi yaşayan bir kullanıcı olarak, soruları okumakta zorlandığım için sistemin bana soruları sesli okumasını istiyorum.
 *   **US-3:** Bir öğrenci olarak, internet bağlantım kopsa bile daha önce yüklediğim sayfalarda test çözmeye devam edebilmek istiyorum (PWA/Offline desteği - *Gelecek Özellik*).
 *   **US-4:** Bir öğrenci olarak, hangi derslerde ne kadar ilerlediğimi görerek çalışma planımı ona göre yapmak istiyorum.
+*   **US-5:** Bir öğrenci olarak, anlamadığım bir açıklamayı AI yardımıyla daha basit veya daha detaylı hale getirmek istiyorum.
+*   **US-6:** Bir öğrenci olarak, zor kavramları hatırlamak için AI'ın bana hafıza teknikleri (mnemonic) üretmesini istiyorum.

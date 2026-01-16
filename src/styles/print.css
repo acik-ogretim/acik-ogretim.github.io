@@ -4,7 +4,7 @@
  */
 @media print {
 
-    /* Hide site chrome & metadata */
+    /* Hide site chrome, metadata, and non-essential UI */
     header.sticky,
     nav[class*="sticky"],
     footer,
@@ -21,7 +21,26 @@
     nav.text-muted-theme,
     header .px-2\.5,
     header .text-muted-theme,
-    header p {
+    header p,
+    /* AI Controls */
+    .ai-enrichment-controls,
+    .ai-menu-dropdown,
+    #global-ai-menu,
+    /* Modals and overlays */
+    .modal-backdrop,
+    [id$="-modal"],
+    /* Decorative elements */
+    .blur-3xl,
+    .bg-gradient-to-r,
+    .bg-gradient-to-b,
+    [class*="animate-"],
+    /* Interactive elements */
+    input,
+    select,
+    .toggle-input-small,
+    /* SVG icons in headers (but not in content) */
+    header svg,
+    nav svg {
         display: none !important;
     }
 
@@ -32,8 +51,42 @@
         color: black !important;
         overflow: visible !important;
         height: auto !important;
-        font-size: 10pt !important;
-        line-height: 1.3 !important;
+        font-size: 9pt !important;
+        line-height: 1.25 !important;
+    }
+
+    /* Disable all transitions, animations, and GPU-heavy effects for print */
+    *,
+    *::before,
+    *::after {
+        /* Disable animations */
+        transition: none !important;
+        animation: none !important;
+        transition-duration: 0s !important;
+        animation-duration: 0s !important;
+
+        /* Disable GPU-heavy effects */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        filter: none !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+
+        /* Disable transforms */
+        transform: none !important;
+
+        /* Simplify backgrounds */
+        background-attachment: scroll !important;
+
+        /* Force simple rendering */
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        /* Disable will-change hints */
+        will-change: auto !important;
+
+        /* Disable perspective */
+        perspective: none !important;
     }
 
     /* Force all questions to be visible */
@@ -42,7 +95,8 @@
         display: block !important;
         break-inside: avoid;
         page-break-inside: avoid;
-        margin-bottom: 0.8rem !important;
+        margin-bottom: 0.75rem !important;
+        padding: 0.5rem !important;
         border: none !important;
         background: none !important;
         box-shadow: none !important;
@@ -54,11 +108,32 @@
         display: none !important;
     }
 
-    /* Inject Number: "1. " */
-    [id^='question-'] .prose>p:first-of-type::before {
-        content: counter(print-question-counter) ". ";
-        font-weight: 800;
-        margin-right: 0.3rem;
+
+    /* Reset space-y gaps */
+    .space-y-3 {
+        gap: 0 !important;
+    }
+
+    .space-y-3>*+* {
+        margin-top: 2px !important;
+    }
+
+    /* Question text styling */
+    .question-text {
+        font-size: 9pt !important;
+        line-height: 1.3 !important;
+        margin-bottom: 0.15rem !important;
+        padding: 0 !important;
+    }
+
+    /* Inject Number: "1) " - Must override global ::before reset */
+    [id^='question-'] .question-text::before {
+        content: counter(print-question-counter) ") " !important;
+        font-weight: 800 !important;
+        margin-right: 0.2rem !important;
+        display: inline !important;
+        visibility: visible !important;
+        font-size: 9pt !important;
     }
 
     /* Layout flow - 2 Columns */
@@ -95,8 +170,8 @@
     }
 
     h1 {
-        font-size: 16pt !important;
-        margin-bottom: 0.5rem !important;
+        font-size: 12pt !important;
+        margin-bottom: 0.3rem !important;
         color: black !important;
         column-span: all !important;
         /* Title spans both columns */
@@ -104,19 +179,15 @@
     }
 
     h2 {
-        font-size: 14pt !important;
-        margin-top: 0.5rem !important;
-        /* Reduced spacing as requested */
-        margin-bottom: 0.5rem !important;
-        padding-bottom: 0.2rem !important;
+        font-size: 10pt !important;
+        margin-top: 0.3rem !important;
+        margin-bottom: 0.3rem !important;
+        padding-bottom: 0.1rem !important;
         border-bottom: 1px solid #ddd !important;
         color: black !important;
-        /* column-span: all !important; */
-        /* REMOVED: Causes orphan headers */
         break-after: avoid !important;
         page-break-after: avoid !important;
         break-inside: avoid !important;
-        /* Keep the header itself intact */
         width: 100%;
     }
 
@@ -193,7 +264,25 @@
 
     /* Reduce gap before options start */
     [id^='question-'] ul {
-        margin-top: 0.2rem !important;
+        margin-top: 0.1rem !important;
+    }
+
+    /* Reset Tailwind spacing classes for print */
+    .mb-6,
+    .mb-8 {
+        margin-bottom: 0.25rem !important;
+    }
+
+    .mb-4 {
+        margin-bottom: 0.15rem !important;
+    }
+
+    .mb-2 {
+        margin-bottom: 0.1rem !important;
+    }
+
+    .p-4 {
+        padding: 2px !important;
     }
 
     /* Option styling */
@@ -201,11 +290,11 @@
         background-color: white !important;
         border: none !important;
         color: black !important;
-        padding: 1px 0 !important;
+        padding: 0 !important;
         margin-bottom: 2px !important;
         display: flex !important;
         align-items: baseline !important;
-        gap: 0.5rem !important;
+        gap: 0.3rem !important;
     }
 
     /* Force all states to look plain in print */
@@ -231,7 +320,7 @@
         background-color: transparent !important;
         color: black !important;
         font-weight: 900 !important;
-        font-size: 11pt !important;
+        font-size: 9pt !important;
         width: 1.5rem !important;
         /* Fixed width for alignment */
         height: auto !important;
@@ -251,7 +340,7 @@
     .option-text {
         color: black !important;
         font-weight: normal !important;
-        font-size: 10pt !important;
+        font-size: 9pt !important;
     }
 
     /* Correct Answer Visibility */
@@ -297,30 +386,40 @@
     /* Explanations: Compact text-only style */
     .explanation-box {
         border: none !important;
-        padding: 0.2rem 0 !important;
-        margin-top: 0.2rem !important;
+        padding: 0.1rem 0 !important;
+        margin-top: 0.1rem !important;
         margin-bottom: 0 !important;
         background-color: transparent !important;
         color: #444 !important;
-        font-size: 9pt !important;
+        font-size: 8pt !important;
         line-height: 1.2 !important;
     }
 
     /* Correct Answer Box - Compact Line */
-    .answer-metadata-box {
+    .answer-metadata-box,
+    .answer-meta-card {
         display: block !important;
         border: none !important;
-        padding: 0.1rem 0 !important;
-        margin-top: 0 !important;
+        padding: 0 !important;
+        margin-top: 0.1rem !important;
+        margin-bottom: 0 !important;
         background-color: transparent !important;
         color: #000 !important;
-        font-size: 9pt !important;
+        font-size: 8pt !important;
         line-height: 1.2 !important;
     }
 
     .answer-metadata-box p,
+    .answer-meta-card p,
     .explanation-box p {
         margin-bottom: 0 !important;
+        font-size: 8pt !important;
+    }
+
+    .answer-meta-card strong,
+    .answer-metadata-box strong {
+        font-size: 8pt !important;
+        font-weight: bold !important;
     }
 
     /* If explanation exists right before, merge visually? No, keep simple. */

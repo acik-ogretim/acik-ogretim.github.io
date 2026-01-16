@@ -1,0 +1,251 @@
+---
+// AISettings.astro - Pure logic component, no UI
+// UI has been migrated to Layout.astro global settings modal
+---
+
+<script>
+    import { GoogleGenAI } from "@google/genai";
+
+    // Declare global window extensions
+    declare global {
+        interface Window {
+            toggleAIMenu: (menuId: string) => void;
+            handleAIAction: (
+                btn: HTMLElement,
+                action: string,
+                unit: string,
+                qIdx: string,
+            ) => Promise<void>;
+            openQuizSettings?: () => void;
+        }
+    }
+
+    // Global Window Functions for Inline HTML Event Handlers
+    window.toggleAIMenu = function (menuId: string) {
+        const menu = document.getElementById(menuId);
+        const allMenus = document.querySelectorAll(".ai-menu-dropdown");
+
+        // Close all other menus first
+        allMenus.forEach((m) => {
+            if (m.id !== menuId) m.classList.add("hidden");
+        });
+
+        // Toggle current
+        if (menu) {
+            menu.classList.toggle("hidden");
+        }
+    };
+
+    // Close menus when clicking outside
+    document.addEventListener("click", (e) => {
+        const target = e.target as HTMLElement;
+        if (!target.closest(".ai-enrichment-controls")) {
+            document
+                .querySelectorAll(".ai-menu-dropdown")
+                .forEach((m) => m.classList.add("hidden"));
+        }
+    });
+
+    window.handleAIAction = async function (
+        btn: HTMLElement,
+        action: string,
+        unit: string,
+        qIdx: string,
+    ) {
+        const contentId = `content-${unit}-${qIdx}`;
+        const originalId = `original-${unit}-${qIdx}`;
+        const contentEl = document.getElementById(contentId);
+        const originalEl = document.getElementById(originalId);
+        const menuId = `menu-${unit}-${qIdx}`;
+        const questionCardId = `question-${unit}-${qIdx}`;
+
+        // Close menu
+        document.getElementById(menuId)?.classList.add("hidden");
+
+        if (!contentEl || !originalEl) return;
+
+        if (action === "reset") {
+            // Restore original HTML
+            contentEl.innerHTML = originalEl.innerHTML;
+
+            // Remove from storage object
+            const slug = window.location.pathname.split("/").pop() || "default";
+            const storageKey = `quiz-ai-explanations-${slug}`;
+            const store = JSON.parse(localStorage.getItem(storageKey) || "{}");
+            const itemKey = `${unit}-${qIdx}`;
+
+            if (store[itemKey]) {
+                delete store[itemKey];
+                localStorage.setItem(storageKey, JSON.stringify(store));
+            }
+
+            // Visual feedback
+            contentEl.classList.add("animate-pulse");
+            setTimeout(() => contentEl.classList.remove("animate-pulse"), 500);
+            return;
+        }
+
+        const apiKey = localStorage.getItem("gemini-api-key");
+        if (!apiKey) {
+            alert(
+                "Lütfen önce Ayarlar menüsünden Gemini API anahtarınızı girin.",
+            );
+            window.openQuizSettings?.();
+            const apiKeyInput = document.getElementById(
+                "gemini-api-key",
+            ) as HTMLInputElement;
+            if (apiKeyInput) apiKeyInput.focus();
+            return;
+        }
+
+        // Loading State
+        contentEl.innerHTML = `
+        <div class="flex items-center gap-2 text-teal-400 py-2 animate-pulse">
+            <svg class="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <span class="text-xs font-mono">Gemini düşünüyor...</span>
+        </div>
+      `;
+
+        try {
+            const ai = new GoogleGenAI({ apiKey });
+            const questionCard = document.getElementById(questionCardId);
+            const questionText =
+                (questionCard?.querySelector(".question-text") as HTMLElement)
+                    ?.innerText || "";
+            const correctInfo =
+                (
+                    questionCard?.querySelector(
+                        ".answer-meta-card",
+                    ) as HTMLElement
+                )?.innerText || "";
+            const originalExplanation = originalEl.innerText;
+
+            let instruction = "";
+            const systemInstruction =
+                "You are an expert AI in educational materials and test preparation. Your goal is to help students learn effectively. Your outputs must be in Turkish and formatted with basic HTML tags (like <b>, <ul>, <li>, <br>) for readability. Do NOT use Markdown.";
+
+            switch (action) {
+                case "regenerate":
+                    instruction =
+                        "Rewrite the existing explanation in a clear and balanced way, about 1-2 paragraphs long, perhaps from a different perspective.";
+                    break;
+                case "longer":
+                    instruction =
+                        "Expand upon the existing explanation by adding more details, examples, or deeper context. Aim for 3-4 paragraphs.";
+                    break;
+                case "shorter":
+                    instruction =
+                        "Condense the existing explanation into a concise summary of about one paragraph, focusing only on the main idea.";
+                    break;
+                case "mnemonic":
+                    instruction =
+                        "Create a creative and effective memory aid (like an acronym, analogy, a short story, or a visual image suggestion) to help a student remember the correct answer. Be creative but concise.";
+                    break;
+            }
+
+            const prompt = `
+                **Question:** ${questionText}
+                **Correct Answer:** ${correctInfo}
+                **Existing Explanation:** ${originalExplanation}
+
+                **Instruction:** ${instruction}
+
+                **Formatting Rules:**
+                1. Format with HTML tags like <b> for emphasis and <br> for line breaks.
+                2. The output must be in Turkish.
+            `;
+
+            const response = await ai.models.generateContent({
+                model: "gemini-2.5-flash-lite",
+                contents: prompt,
+                config: {
+                    systemInstruction: systemInstruction,
+                },
+            });
+
+            // The SDK returns text via .text() method or property depending on version.
+            // safely handle both.
+            let text = "";
+            // @ts-ignore
+            if (typeof response.text === "function") {
+                // @ts-ignore
+                text = response.text();
+            } else if (typeof response.text === "string") {
+                text = response.text;
+            } else {
+                text =
+                    response.candidates?.[0]?.content?.parts?.[0]?.text ||
+                    "Cevap alınamadı.";
+            }
+
+            contentEl.innerHTML = text;
+
+            // Save to LocalStorage (Grouped by Course)
+            const slug = window.location.pathname.split("/").pop() || "default";
+            const storageKey = `quiz-ai-explanations-${slug}`;
+            const store = JSON.parse(localStorage.getItem(storageKey) || "{}");
+
+            store[`${unit}-${qIdx}`] = text;
+            localStorage.setItem(storageKey, JSON.stringify(store));
+        } catch (error: any) {
+            console.error("Gemini AI Hatası:", error);
+            let errorMsg = "Bir hata oluştu.";
+            if (
+                error.message.includes("401") ||
+                error.message.includes("API key")
+            ) {
+                errorMsg = "API Anahtarı geçersiz veya yetkisiz.";
+            } else if (error.message.includes("429")) {
+                errorMsg = "Çok fazla istek yapıldı. Lütfen biraz bekleyin.";
+            }
+
+            contentEl.innerHTML = `
+          <div class="p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-sm text-red-400">
+            <strong>Hata:</strong> ${errorMsg} <br>
+            <span class="text-xs opacity-75">${error.message}</span>
+            <div class="mt-2 text-xs text-slate-400">
+                Orijinal içeriğe dönmek için menüden "Orijinale Dön" seçeneğini kullanabilirsiniz.
+            </div>
+          </div>
+      `;
+        }
+    };
+
+    // Restore saved AI explanations on load
+    function restoreAIExplanations() {
+        const slug = window.location.pathname.split("/").pop() || "default";
+        const storageKey = `quiz-ai-explanations-${slug}`;
+        const store = JSON.parse(localStorage.getItem(storageKey) || "{}");
+
+        // If empty, nothing to do
+        if (Object.keys(store).length === 0) return;
+
+        const explanationCards = document.querySelectorAll(".explanation-card");
+
+        explanationCards.forEach((card) => {
+            const idAttr = card.getAttribute("data-explanation-id"); // exp-{unit}-{qIdx}
+            if (!idAttr) return;
+
+            const [_, unit, qIdx] = idAttr.split("-");
+            const itemKey = `${unit}-${qIdx}`;
+            const savedContent = store[itemKey];
+
+            if (savedContent) {
+                const contentEl = document.getElementById(
+                    `content-${unit}-${qIdx}`,
+                );
+                if (contentEl) {
+                    contentEl.innerHTML = savedContent;
+                }
+            }
+        });
+    }
+
+    // Run restore on load
+    window.addEventListener("DOMContentLoaded", restoreAIExplanations);
+    // Also run immediately in case DOMContentLoaded fired
+    restoreAIExplanations();
+</script>

@@ -272,25 +272,25 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
         <div class="flex justify-center gap-4 pt-4 border-t border-theme/50">
           <button
             onclick="setTheme('light')"
-            class="flex items-center gap-2 text-muted-theme hover:text-theme px-3 py-2 rounded-lg hover:bg-button-hover-theme transition-colors"
+            class="flex items-center gap-2 text-muted-theme hover:text-theme px-3 py-2 rounded-lg hover:bg-button-hover-theme"
           >
             <span class="text-sm font-medium">Aydınlık</span>
           </button>
           <button
             onclick="setTheme('dark')"
-            class="flex items-center gap-2 text-muted-theme hover:text-theme px-3 py-2 rounded-lg hover:bg-button-hover-theme transition-colors"
+            class="flex items-center gap-2 text-muted-theme hover:text-theme px-3 py-2 rounded-lg hover:bg-button-hover-theme"
           >
             <span class="text-sm font-medium">Koyu</span>
           </button>
           <button
             onclick="setTheme('sepia')"
-            class="flex items-center gap-2 text-muted-theme hover:text-theme px-3 py-2 rounded-lg hover:bg-button-hover-theme transition-colors"
+            class="flex items-center gap-2 text-muted-theme hover:text-theme px-3 py-2 rounded-lg hover:bg-button-hover-theme"
           >
             <span class="text-sm font-medium">Sepya</span>
           </button>
           <button
             onclick="openQuizSettings()"
-            class="flex items-center gap-2 text-muted-theme hover:text-primary-theme px-3 py-2 rounded-lg hover:bg-button-hover-theme transition-colors"
+            class="flex items-center gap-2 text-muted-theme hover:text-primary-theme px-3 py-2 rounded-lg hover:bg-button-hover-theme"
           >
             <span class="text-sm font-medium">Ayarlar</span>
           </button>
@@ -367,13 +367,13 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
             <a
               href="/rehber"
               target="_blank"
-              class="p-1 px-2 text-[10px] font-bold text-slate-400 hover:text-teal-400 bg-slate-800 rounded-md transition-colors"
+              class="p-1 px-2 text-[10px] font-bold text-slate-400 hover:text-teal-400 bg-slate-800 rounded-md"
               title="Kullanım Rehberi">YARDIM</a
             >
             <button
               id="btn-close-settings"
               onclick="closeGlobalSettings()"
-              class="p-1.5 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-white transition-colors"
+              class="p-1.5 rounded-lg hover:bg-slate-800 text-slate-400 hover:text-white"
               aria-label="Kapat"
             >
               <svg
@@ -491,25 +491,7 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
               >
                 <div class="flex flex-col">
                   <span
-                    class="text-xs font-bold text-slate-300 group-hover:text-teal-400 transition-colors"
-                    >Soruları Karıştır</span
-                  >
-                  <span class="text-[9px] text-slate-500"
-                    >Soru sırasını rastgele belirle</span
-                  >
-                </div>
-                <input
-                  type="checkbox"
-                  id="setting-shuffle"
-                  class="toggle-input-small"
-                />
-              </label>
-              <label
-                class="flex items-center justify-between p-2.5 bg-slate-800/40 border border-slate-700/30 rounded-xl hover:bg-slate-800/60 transition-all cursor-pointer group"
-              >
-                <div class="flex flex-col">
-                  <span
-                    class="text-xs font-bold text-slate-300 group-hover:text-teal-400 transition-colors"
+                    class="text-xs font-bold text-slate-300 group-hover:text-teal-400 "
                     >Yanlışları Çöz</span
                   >
                   <span class="text-[9px] text-slate-500"
@@ -527,7 +509,7 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
               >
                 <div class="flex flex-col">
                   <span
-                    class="text-xs font-bold text-slate-300 group-hover:text-teal-400 transition-colors"
+                    class="text-xs font-bold text-slate-300 group-hover:text-teal-400"
                     >Cevaplanmamışları Çöz</span
                   >
                   <span class="text-[9px] text-slate-500"
@@ -567,10 +549,10 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
               class="bg-slate-800/30 border border-slate-700/30 rounded-xl divide-y divide-slate-700/20 overflow-hidden"
             >
               <label
-                class="flex items-center justify-between p-2 hover:bg-white/5 transition-colors cursor-pointer group"
+                class="flex items-center justify-between p-2 hover:bg-white/5 cursor-pointer group"
               >
                 <span
-                  class="text-xs font-medium text-slate-400 group-hover:text-white transition-colors"
+                  class="text-xs font-medium text-slate-400 group-hover:text-white"
                   >Cevapları Göster</span
                 >
                 <input
@@ -581,10 +563,10 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
                 />
               </label>
               <label
-                class="flex items-center justify-between p-2 hover:bg-white/5 transition-colors cursor-pointer group"
+                class="flex items-center justify-between p-2 hover:bg-white/5 cursor-pointer group"
               >
                 <span
-                  class="text-xs font-medium text-slate-400 group-hover:text-white transition-colors"
+                  class="text-xs font-medium text-slate-400 group-hover:text-white"
                   >Açıklamaları Göster</span
                 >
                 <input
@@ -595,10 +577,10 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
                 />
               </label>
               <label
-                class="flex items-center justify-between p-2 hover:bg-white/5 transition-colors cursor-pointer group"
+                class="flex items-center justify-between p-2 hover:bg-white/5 cursor-pointer group"
               >
                 <span
-                  class="text-xs font-medium text-slate-400 group-hover:text-white transition-colors"
+                  class="text-xs font-medium text-slate-400 group-hover:text-white"
                   >Sadece Doğru Şık</span
                 >
                 <input
@@ -608,11 +590,11 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
                 />
               </label>
               <label
-                class="flex items-center justify-between p-2 hover:bg-white/5 transition-colors cursor-pointer group"
+                class="flex items-center justify-between p-2 hover:bg-white/5 cursor-pointer group"
               >
                 <div class="flex flex-col">
                   <span
-                    class="text-xs font-medium text-slate-400 group-hover:text-white transition-colors"
+                    class="text-xs font-medium text-slate-400 group-hover:text-white"
                     >Otomatik İlerle</span
                   >
                   <span class="text-[9px] text-slate-500"
@@ -663,6 +645,87 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
             >
               SES AYARLARINI TEST ET
             </button>
+          </div>
+
+          <!-- Section: AI Assistant -->
+          <div class="space-y-2.5">
+            <h4
+              class="text-[9px] font-black text-slate-500 uppercase tracking-widest px-1"
+            >
+              🤖 AI Asistan
+            </h4>
+            <div
+              class="bg-blue-500/5 border border-blue-500/20 rounded-xl p-3 space-y-3"
+            >
+              <label
+                class="flex items-center justify-between cursor-pointer group"
+              >
+                <div class="flex flex-col">
+                  <span
+                    class="text-xs font-medium text-blue-300 group-hover:text-white"
+                    >Açıklama Zenginleştirme</span
+                  >
+                  <span class="text-[9px] text-slate-500"
+                    >Sorularda AI menüsünü aktif et</span
+                  >
+                </div>
+                <input
+                  type="checkbox"
+                  id="ai-enrichment-toggle"
+                  class="toggle-input-small"
+                />
+              </label>
+
+              <div class="space-y-1.5">
+                <label
+                  class="text-[9px] font-bold text-slate-500 uppercase px-1"
+                  >Gemini API Anahtarı</label
+                >
+                <div class="relative">
+                  <input
+                    type="password"
+                    id="gemini-api-key"
+                    class="w-full bg-slate-900 border border-slate-700/50 rounded-lg py-2 px-3 pr-10 text-xs text-white focus:border-blue-500 outline-none transition-all placeholder-slate-600"
+                    placeholder="AIzaSy..."
+                  />
+                  <button
+                    type="button"
+                    id="toggle-api-key-visibility"
+                    class="absolute right-2 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-[9px] text-slate-600"
+                    >Sadece tarayıcınızda saklanır.</span
+                  >
+                  <a
+                    href="https://aistudio.google.com/app/apikey"
+                    target="_blank"
+                    class="text-[9px] text-blue-400 hover:text-blue-300 hover:underline"
+                    >Anahtar Al ↗</a
+                  >
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -753,7 +816,7 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
           <div class="flex items-center gap-4">
             <a
               href="https://github.com/acik-ogretim"
-              class="text-muted-theme hover:text-primary-theme transition-colors"
+              class="text-muted-theme hover:text-primary-theme "
               target="_blank"
               rel="noopener"
             >
@@ -810,6 +873,57 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
 
         // Initialize inputs if they exist
         const settings = loadStoredSettings();
+
+        // AI Settings Logic (Migrated from AISettings.astro)
+        const apiKeyInput = document.getElementById("gemini-api-key");
+        const aiToggle = document.getElementById("ai-enrichment-toggle");
+
+        if (apiKeyInput) {
+          apiKeyInput.value = localStorage.getItem("gemini-api-key") || "";
+          apiKeyInput.addEventListener("change", (e) => {
+            const val = e.target.value.trim();
+            if (val) localStorage.setItem("gemini-api-key", val);
+            else localStorage.removeItem("gemini-api-key");
+          });
+        }
+
+        // API Key visibility toggle
+        const toggleApiKeyVisibility = document.getElementById(
+          "toggle-api-key-visibility",
+        );
+        if (toggleApiKeyVisibility && apiKeyInput) {
+          toggleApiKeyVisibility.addEventListener("click", () => {
+            if (apiKeyInput.type === "password") {
+              apiKeyInput.type = "text";
+            } else {
+              apiKeyInput.type = "password";
+            }
+          });
+        }
+
+        if (aiToggle) {
+          aiToggle.checked =
+            localStorage.getItem("ai-enrichment-enabled") === "true";
+          aiToggle.addEventListener("change", (e) => {
+            const checked = e.target.checked;
+            localStorage.setItem("ai-enrichment-enabled", String(checked));
+            // Trigger UI update globally if needed
+            document
+              .querySelectorAll(".ai-enrichment-controls")
+              .forEach((btn) => {
+                if (checked) btn.classList.remove("hidden");
+                else btn.classList.add("hidden");
+              });
+          });
+        }
+
+        // Initial UI state for AI buttons
+        const aiEnabled =
+          localStorage.getItem("ai-enrichment-enabled") === "true";
+        document.querySelectorAll(".ai-enrichment-controls").forEach((btn) => {
+          if (aiEnabled) btn.classList.remove("hidden");
+          else btn.classList.add("hidden");
+        });
 
         function populateDefaultUnits() {
           const unitSelect = document.getElementById("setting-unit");

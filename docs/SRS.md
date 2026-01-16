@@ -30,9 +30,16 @@ Bu doküman, Açık Öğretim Çalışma Portalı'nın yazılım gereksinimlerin
 *   **REQ-03:** Hatalı JSON formatı veya eksik alan (örn. `correctAnswer`) tespit edilirse build işlemi hata vererek durdurulmalıdır (Fail Fast).
 
 ### 3.2 Quiz Mantığı
-*   **REQ-04:** "Karıştır" seçeneği aktifse, sorular Fisher-Yates algoritması ile rastgele sıralanmalıdır.
+*   **REQ-04:** *(Kaldırıldı - Shuffle özelliği kaldırılmıştır)*
 *   **REQ-05:** "Yanlışları Filtrele" seçeneği aktifse, `localStorage`'dan geçmiş veriler okunmalı ve sadece `false` olarak işaretlenmiş sorular listelenmelidir.
 *   **REQ-06:** **İnteraktif Mod:** Bu modda cevaplar gizlenmeli, doğru/yanlış geri bildiriminden sonra otomatik geçiş (Timer) devreye girmelidir.
+
+### 3.4 AI Asistan Entegrasyonu
+*   **REQ-11:** Kullanıcı, Gemini API anahtarını ayarlar menüsünden girebilmeli ve bu anahtar yalnızca `localStorage`'da saklanmalıdır.
+*   **REQ-12:** "Açıklama Zenginleştirme" özelliği aktif edildiğinde, her soru açıklaması yanında AI menü butonu görünmelidir.
+*   **REQ-13:** AI menüsü, "Yeniden Yaz", "Daha Uzun", "Daha Kısa", "Hafıza Tekniği" ve "Orijinale Dön" seçeneklerini sunmalıdır.
+*   **REQ-14:** AI tarafından üretilen açıklamalar, `quiz-ai-explanations-{courseSlug}` anahtarı altında `localStorage`'a kaydedilmeli ve sayfa yenilendiğinde geri yüklenmelidir.
+*   **REQ-15:** API hatası durumunda kullanıcıya anlaşılır bir hata mesajı gösterilmelidir.
 
 ### 3.3 Sesli Okuma (TTS)
 *   **REQ-07:** Okuma işlemi sırasında metin parçalara (chunk) bölünmelidir.

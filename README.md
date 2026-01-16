@@ -76,7 +76,11 @@ Site içeriği (`data/` klasörü) JSON dosyalarından oluşur. İstatistikler v
 
 ## 🛡️ Gizlilik ve Yasal
 
-- **Gizlilik:** Bu proje kullanıcılarından **hiçbir kişisel veri** toplamaz. İlerlemeleriniz sadece kendi cihazınızda (tarayıcı) saklanır. Detaylar için [Gizlilik Politikası](https://acik-ogretim.github.io/gizlilik).
+- **Gizlilik:** Bu proje kullanıcılarından **hiçbir kişisel veri** toplamaz. İlerlemeleriniz sadece kendi cihazınızda (tarayıcı) saklanır.
+- **AI Asistan:** İsteğe bağlı Gemini AI özelliğini kullanırsanız:
+  - API anahtarınız yalnızca tarayıcınızda (`localStorage`) saklanır, sunucularımıza gönderilmez.
+  - Soru içerikleri işlenmek üzere Google'ın sunucularına gönderilir ve Google'ın [Gizlilik Politikası](https://policies.google.com/privacy)'na tabidir.
+- Detaylar için [Gizlilik Politikası](https://acik-ogretim.github.io/gizlilik).
 - **Telif Hakkı:** İçerikler eğitim amaçlıdır. Telif hakkı ihlali bildirimleri (DMCA) için GitHub Issues üzerinden bizimle iletişime geçebilirsiniz. Detaylar için [Telif Hakkı Politikası](https://acik-ogretim.github.io/telif).
 
 ## 💻 Yerel Geliştirme (Local Development)

@@ -10,16 +10,14 @@
         border-radius: 0.75rem;
     }
 
-    .breadcrumb-link {
-        @apply transition-colors;
-    }
+    .breadcrumb-link {}
 
     .breadcrumb-link:hover {
         color: var(--primary-color);
     }
 
     .btn-unit-nav {
-        @apply shrink-0 px-3 py-1.5 rounded-lg text-xs transition-colors border flex items-center justify-center min-w-[3.5rem] md:text-sm md:px-4 md:py-2;
+        @apply shrink-0 px-3 py-1.5 rounded-lg text-xs border flex items-center justify-center min-w-[3.5rem] md:text-sm md:px-4 md:py-2;
         background-color: var(--button-bg);
         border-color: var(--border-color);
         color: var(--text-color-muted);
@@ -55,12 +53,12 @@
     }
 
     .material-btn-base {
-        @apply text-left px-3 py-2 rounded text-sm transition-colors flex items-center gap-2 border border-transparent focus:border-teal-500/50;
+        @apply text-left px-3 py-2 rounded text-sm flex items-center gap-2 border border-transparent focus:border-teal-500/50;
         color: var(--text-color-muted);
     }
 
     .accordion-summary {
-        @apply list-none cursor-pointer flex justify-between items-center p-2 rounded text-sm font-bold uppercase tracking-wider mb-1 transition-colors;
+        @apply list-none cursor-pointer flex justify-between items-center p-2 rounded text-sm font-bold uppercase tracking-wider mb-1;
         background-color: var(--button-bg);
         border: 1px solid var(--border-color);
         color: var(--text-color-muted);
@@ -83,7 +81,7 @@
     }
 
     .tab-btn-base {
-        @apply px-3 py-1 text-xs rounded-full border transition-colors;
+        @apply px-3 py-1 text-xs rounded-full border;
         /* Default State */
         background-color: var(--button-bg);
         border-color: var(--border-color);
@@ -109,7 +107,7 @@
     }
 
     .nav-link {
-        @apply transition-colors font-medium;
+        @apply font-medium;
         color: var(--text-color-muted);
     }
 
@@ -118,7 +116,7 @@
     }
 
     .theme-toggle-btn {
-        @apply p-1.5 rounded-full transition-colors;
+        @apply p-1.5 rounded-full;
         color: var(--text-color-muted);
     }
 
@@ -136,7 +134,7 @@
     }
 
     .footer-link {
-        @apply transition-colors text-sm;
+        @apply text-sm;
         color: var(--text-color-muted);
     }
 
@@ -145,7 +143,7 @@
     }
 
     .mobile-menu-link {
-        @apply block text-lg px-2 rounded transition-colors;
+        @apply block text-lg px-2 rounded;
         color: var(--text-color-muted);
     }
 
@@ -173,7 +171,7 @@
     }
 
     .faq-summary {
-        @apply flex justify-between items-center font-medium cursor-pointer p-5 transition-colors list-none;
+        @apply flex justify-between items-center font-medium cursor-pointer p-5 list-none;
     }
 
     .faq-summary:hover {

@@ -1,0 +1,307 @@
+---
+// Global AI Menu Component
+// This component should be mounted ONCE per page.
+// It is triggered by buttons with onclick="openGlobalAIMenu(event, unit, qIdx)"
+---
+
+<div id="global-ai-menu-container" class="relative z-[100]">
+    <div
+        id="global-ai-menu"
+        class="hidden ai-menu-dropdown fixed z-[100] bg-white dark:bg-slate-900
+           rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700
+           p-2 w-64 md:w-56 overflow-hidden ring-1 ring-black/5"
+        style="display: none;"
+    >
+        <!-- Header -->
+        <div
+            class="px-3 py-2 bg-slate-50/50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-800 -mx-2 -mt-2 mb-2 rounded-t-xl"
+        >
+            <div class="flex justify-between items-center">
+                <div>
+                    <div
+                        class="text-[10px] font-bold text-slate-400 uppercase tracking-wider"
+                    >
+                        AI Asistan
+                    </div>
+                    <div
+                        class="text-xs font-medium text-slate-700 dark:text-slate-200 mt-0.5"
+                    >
+                        İşlem Seçiniz
+                    </div>
+                </div>
+                <!-- Mobile Close Icon -->
+                <button
+                    onclick="closeGlobalAIMenu()"
+                    class="md:hidden text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><path d="M18 6 6 18"></path><path d="m6 6 12 12"
+                        ></path></svg
+                    >
+                </button>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="space-y-0.5">
+            <button
+                onclick="triggerGlobalAction('regenerate')"
+                class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-900/30 hover:text-teal-600 dark:hover:text-teal-400 rounded-lg flex items-center gap-3  group"
+            >
+                <span
+                    class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-slate-100 dark:bg-slate-800 group-hover:bg-teal-100 dark:group-hover:bg-teal-800 "
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><path
+                            d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"
+                        ></path><path d="M21 3v5h-5"></path><path
+                            d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"
+                        ></path><path d="M8 16H3v5"></path></svg
+                    >
+                </span>
+                Tekrar Oluştur
+            </button>
+            <button
+                onclick="triggerGlobalAction('longer')"
+                class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg flex items-center gap-3  group"
+            >
+                <span
+                    class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-slate-100 dark:bg-slate-800 group-hover:bg-blue-100 dark:group-hover:bg-blue-800 "
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><path
+                            d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+                        ></path><polyline points="14 2 14 8 20 8"
+                        ></polyline><line x1="16" y1="13" x2="8" y2="13"
+                        ></line><line x1="16" y1="17" x2="8" y2="17"
+                        ></line><polyline points="10 9 9 9 8 9"></polyline></svg
+                    >
+                </span>
+                Daha Detaylı Anlat
+            </button>
+            <button
+                onclick="triggerGlobalAction('shorter')"
+                class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-amber-50 dark:hover:bg-amber-900/30 hover:text-amber-600 dark:hover:text-amber-400 rounded-lg flex items-center gap-3  group"
+            >
+                <span
+                    class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-slate-100 dark:bg-slate-800 group-hover:bg-amber-100 dark:group-hover:bg-amber-800 "
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><path
+                            d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"
+                        ></path></svg
+                    >
+                </span>
+                Özetle / Kısalt
+            </button>
+            <button
+                onclick="triggerGlobalAction('mnemonic')"
+                class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-purple-50 dark:hover:bg-purple-900/30 hover:text-purple-600 dark:hover:text-purple-400 rounded-lg flex items-center gap-3  group"
+            >
+                <span
+                    class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-slate-100 dark:bg-slate-800 group-hover:bg-purple-100 dark:group-hover:bg-purple-800 "
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><path
+                            d="M12 4.5a2.5 2.5 0 0 0-4.96-.46 2.5 2.5 0 0 0-1.98 3 2.5 2.5 0 0 0-1.32 3 2.5 2.5 0 0 0 0 2 2.5 2.5 0 0 0 1.32 3 2.5 2.5 0 0 0 1.98 3 2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 0-13.08Z"
+                        ></path></svg
+                    >
+                </span>
+                Hafıza İpucu
+            </button>
+        </div>
+
+        <div class="h-px bg-slate-200 dark:bg-slate-700 mx-2 my-1.5"></div>
+
+        <div class="">
+            <button
+                onclick="triggerGlobalAction('reset')"
+                class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-rose-50 dark:hover:bg-rose-900/30 hover:text-rose-600 dark:hover:text-rose-400 rounded-lg flex items-center gap-3  group"
+            >
+                <span
+                    class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-slate-100 dark:bg-slate-800 group-hover:bg-rose-100 dark:group-hover:bg-rose-800 "
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><path
+                            d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"
+                        ></path><path d="M3 3v5h5"></path></svg
+                    >
+                </span>
+                Orijinale Dön
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Backdrop -->
+    <div
+        id="global-ai-menu-backdrop"
+        class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-[99] md:hidden transition-opacity"
+        onclick="closeGlobalAIMenu()"
+    >
+    </div>
+</div>
+
+<script is:inline>
+    window.activeAIContext = { unit: null, qIdx: null, triggerBtn: null };
+
+    window.openGlobalAIMenu = function (event, unit, qIdx) {
+        event.stopPropagation();
+        const btn = event.currentTarget;
+        window.activeAIContext = { unit, qIdx, triggerBtn: btn };
+
+        const menu = document.getElementById("global-ai-menu");
+        const backdrop = document.getElementById("global-ai-menu-backdrop");
+
+        if (!menu) return;
+
+        // Show elements
+        menu.classList.remove("hidden");
+        menu.style.display = "block";
+
+        // Responsive positioning
+        if (window.innerWidth < 768) {
+            // Mobile: Bottom Sheet
+            backdrop.classList.remove("hidden");
+            menu.style.top = "auto";
+            menu.style.bottom = "0";
+            menu.style.left = "0";
+            menu.style.right = "0";
+            menu.style.width = "100%";
+            menu.style.borderRadius = "16px 16px 0 0";
+            menu.style.transform = "none";
+
+            // Add animation
+            menu.classList.add("animate-in", "slide-in-from-bottom");
+        } else {
+            // Desktop: Popover
+            backdrop.classList.add("hidden");
+            const rect = btn.getBoundingClientRect();
+            const scrollTop =
+                window.pageYOffset || document.documentElement.scrollTop;
+
+            // Reset styles for desktop
+            menu.style.bottom = "auto";
+            menu.style.right = "auto";
+            menu.style.width = "14rem"; // 56 * 0.25rem = 14rem
+            menu.style.borderRadius = "0.75rem";
+
+            // Calculate position (Top-Right aligned to button or Bottom-Right)
+            // Default: Open upwards (bottom of menu at top of button)
+            const menuHeight = 320; // Approx height
+
+            // If enough space above, open upwards
+            if (rect.top > menuHeight) {
+                menu.style.top = rect.top + scrollTop - menuHeight + 20 + "px"; // A bit overlapping or just above
+                // Safer: use bottom positioning relative to viewport if using fixed?
+                // If fixed, use clientRect directly.
+                menu.style.top = "auto";
+                menu.style.bottom = window.innerHeight - rect.top + 8 + "px";
+            } else {
+                // Open downwards
+                menu.style.bottom = "auto";
+                menu.style.top = rect.bottom + 8 + "px";
+            }
+
+            // Horizontal alignment: right align with button
+            const rightSpace = window.innerWidth - rect.right;
+            menu.style.left = "auto";
+            menu.style.right = rightSpace + "px";
+        }
+    };
+
+    window.closeGlobalAIMenu = function () {
+        const menu = document.getElementById("global-ai-menu");
+        const backdrop = document.getElementById("global-ai-menu-backdrop");
+        if (menu) {
+            menu.classList.add("hidden");
+            menu.style.display = "none";
+        }
+        if (backdrop) backdrop.classList.add("hidden");
+        window.activeAIContext = { unit: null, qIdx: null, triggerBtn: null };
+    };
+
+    window.triggerGlobalAction = function (action) {
+        if (!window.activeAIContext.unit) return;
+
+        const { unit, qIdx, triggerBtn } = window.activeAIContext;
+
+        // Call the main handler (defined in AISettings)
+        if (window.handleAIAction) {
+            window.handleAIAction(triggerBtn, action, unit, qIdx);
+        }
+
+        closeGlobalAIMenu();
+    };
+
+    // Close on resize to prevent positioning glitches
+    window.addEventListener("resize", () => {
+        // Only close if visible
+        const menu = document.getElementById("global-ai-menu");
+        if (menu && !menu.classList.contains("hidden")) {
+            closeGlobalAIMenu();
+        }
+    });
+
+    // Close on outside click (Desktop)
+    document.addEventListener("click", (e) => {
+        const menu = document.getElementById("global-ai-menu");
+        if (menu && !menu.classList.contains("hidden")) {
+            if (!menu.contains(e.target) && !e.target.closest(".btn-ai-menu")) {
+                closeGlobalAIMenu();
+            }
+        }
+    });
+</script>
