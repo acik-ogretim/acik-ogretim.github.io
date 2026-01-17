@@ -31,9 +31,16 @@ export class QuizPlayer {
     this.isPlaying = false;
     this.isInteractive = false;
     this.corrects = 0;
+    // Generate slug using University and Course ID only (skipping department)
+    // Common courses are shared across departments within the same university.
+    // URL: /anadolu/isletme/genel-muhasebe -> anadolu-genel-muhasebe
+    const pathParts = window.location.pathname.split('/').filter(p => p);
+    this.courseSlug = pathParts.length >= 3
+      ? `${pathParts[0]}-${pathParts[pathParts.length - 1]}`
+      : (pathParts.join('-') || 'default-course');
+
     this.wrongs = 0;
     this.answeredQuestions = new Set();
-    this.courseSlug = window.location.pathname.split('/').pop() || 'default-course';
 
     this.settings = this.loadSettings();
     this.progress = this.loadProgress();
@@ -160,9 +167,11 @@ export class QuizPlayer {
     const aiStoreKey = `quiz-ai-explanations-${this.courseSlug}`;
     const aiStore = JSON.parse(localStorage.getItem(aiStoreKey) || '{}');
 
-    const questionEls = document.querySelectorAll('[id^="question-"]');
+    // Select using class instead of ID valid pattern dependency
+    const questionEls = document.querySelectorAll('.question-card');
     questionEls.forEach((el) => {
-      const id = el.id;
+      // Use data-id which contains the stable DB ID, fallback to DOM ID if needed
+      const id = (el as HTMLElement).dataset.id || el.id;
       // The question text is in a <p> tag that is a sibling of the header and before the <ul> options
       const textEl = el.querySelector('.question-text') || el.querySelector('.prose p:first-child') || el.querySelector('.prose p');
       // Use innerHTML instead of innerText to preserve <ol>/<ul> tags for cleanText's new DOM parsing
@@ -192,21 +201,21 @@ export class QuizPlayer {
       let explanation = '';
       if (expDiv) {
         // Check for AI Override in loaded store
-        const parts = id.split('-'); // question-1-5
-        if (parts.length === 3) {
-          const unitVal = parts[1];
-          const qIdxVal = parts[2];
-          const itemKey = `${unitVal}-${qIdxVal}`;
+        // We use the question's stable ID to look up in the store.
+        if (aiStore[id]) {
+          const savedAI = aiStore[id];
+          //console.log(`[QuizPlayer] Loaded AI override for ${id}`);
 
-          if (aiStore[itemKey]) {
-            const savedAI = aiStore[itemKey];
-            console.log(`[QuizPlayer] Loaded AI override for ${id}`);
-            const contentEl = document.getElementById(`content-${unitVal}-${qIdxVal}`);
-            if (contentEl) {
-              contentEl.innerHTML = savedAI;
-            }
-            explanation = savedAI; // Use AI content for player state (TTS)
+          // If we are in the main document context (not just logical player), update the DOM
+          // Note: QuizPlayer logic runs on the page where these elements exist.
+          // But we need to find the specific content element for this question.
+          // Since `el` is the question-card, we can find the explanation content inside it.
+          const contentEl = el.querySelector('.explanation-content');
+
+          if (contentEl) {
+            contentEl.innerHTML = savedAI;
           }
+          explanation = savedAI; // Use AI content for player state (TTS)
         }
 
         if (!explanation) {
@@ -313,7 +322,9 @@ export class QuizPlayer {
 
       const visibleEntry = entries.find(entry => entry.isIntersecting);
       if (visibleEntry) {
-        const qId = visibleEntry.target.id;
+        // Use data-id (DB ID) to match what we stored in this.questions, fallback to DOM ID
+        const targetEl = visibleEntry.target as HTMLElement;
+        const qId = targetEl.dataset.id || targetEl.id;
         const index = this.questions.findIndex(q => q.id === qId);
         if (index !== -1 && index !== this.currentIndex && !this.isPlaying && !this.synth.speaking) {
           this.currentIndex = index;
@@ -804,7 +815,8 @@ export class QuizPlayer {
       // Use the clicked question for feedback text, now guaranteed by index sync
       const q = this.questions[this.currentIndex];
       const ansText = `${q.correctKey}, ${this.cleanText(q.correctAnswerText)}`;
-      const expText = q.explanation ? `Açıklama: ${this.cleanText(q.explanation)}` : '';
+      const latestExp = this.getLatestExplanation(q);
+      const expText = latestExp ? `Açıklama: ${this.cleanText(latestExp)}` : '';
 
       if (this.settings.readerMode) {
         const utter = this.createUtterance(`Yanlış! Doğru cevap: ${ansText}. ${expText}`);
@@ -958,18 +970,31 @@ export class QuizPlayer {
     const div = document.createElement('div');
     // Pre-clean messy br tags inside lists that might break structure
     // Some data has <ol><br><li>... which is invalid and might confuse parsers
-    let rawHtml = String(text).replace(/<br\s*\/?>/gi, ' ');
+    // Replace <br> with ". " to enforce pause in TTS, as requested by user regarding Romen numeral lists separated by BR
+    let rawHtml = String(text).replace(/<br\s*\/?>/gi, '. ');
     div.innerHTML = rawHtml;
 
     // 1. Handle Lists - Prepend numbers to OL items using DOM
-    div.querySelectorAll('ol').forEach(list => {
-      // Get LIs specifically, ignoring improved hierarchy issues
+    div.querySelectorAll('ol, ul').forEach(list => {
+      // Ensure there's a pause before the list starts if it follows text
+      const prev = list.previousSibling;
+      if (prev && prev.textContent && !prev.textContent.trim().match(/[.!?::;]$/)) {
+        // If previous text doesn't end with punctuation (including : ;), force a pause
+        prev.textContent += '. ';
+      }
+
+      // Get LIs specifically
       const items = list.querySelectorAll('li');
       items.forEach((item, index) => {
-        // Prepend number safely
-        // Add a space after to ensure separation
-        const prefix = `${index + 1}. `;
+        // Prepend number safely for OL, bullet for UL
+        // If list is OL or mapped from Roman numerals
+        const prefix = (list.tagName === 'OL') ? `${index + 1}. ` : '- ';
         item.prepend(document.createTextNode(prefix));
+
+        // Ensure item ends with punctuation for pause
+        if (!item.innerText.trim().match(/[.!?::;]$/)) {
+          item.appendChild(document.createTextNode('. '));
+        }
       });
     });
 
@@ -978,10 +1003,34 @@ export class QuizPlayer {
     let extracted = div.innerText;
 
     // 3. Convert newlines to pauses and collapse spaces
-    extracted = extracted.replace(/[\n\r]+/g, '. ');
+    // Only add a dot if the line doesn't already end with punctuation (including : ; ,)
+    // We want to avoid "Title:. Description"
+    extracted = extracted.replace(/([^.!?::;,])[\n\r]+/g, '$1. '); // Add dot if missing
+    extracted = extracted.replace(/[\n\r]+/g, ' '); // Just space if punctuation exists
+
     extracted = extracted.replace(/\s+/g, ' ').trim();
 
-    // 4. Normalize Roman Numerals
+    // Fix " .", " .", " ." occurrences (space before punctuation)
+    // Also handling : ; , ? !
+    extracted = extracted.replace(/\s+([.!?::;,])/g, '$1');
+
+    // Fix double punctuation ("..", "!!", ".,")
+    extracted = extracted.replace(/\.{2,}/g, '.'); // .. -> .
+    extracted = extracted.replace(/\!{2,}/g, '!'); // !! -> !
+    // Fix cases like ;. or ,. generated by previous steps if regex missed something
+    extracted = extracted.replace(/([::;,])\./g, '$1'); // ;. -> ;
+
+    // 4. Ensure pause before Roman Numeral list items (e.g. "Text I. Item")
+    // If we have "something II. something", it should be "something. II. something"
+    // We look for: Non-punctuation + Space + (Roman) + Dot
+    extracted = extracted.replace(/([^.!?::;])\s+(I|II|III|IV|V|VI|VII|VIII|IX|X)\./g, '$1. $2.');
+
+    // 5. Convert ellipses (..., …) or dashes (---) to "nokta nokta" for fill-in-the-blank questions
+    // This makes TTS say "nokta nokta" instead of silence or weird pauses.
+    // Matches 3+ dots OR one or more unicode ellipsis characters OR 3+ dashes
+    extracted = extracted.replace(/(\.{3,}|…+|-{3,})/g, ' (nokta nokta) ');
+
+    // 6. Normalize Roman Numerals
     return this.normalizeRomanNumerals(extracted);
   }
 
@@ -1083,6 +1132,7 @@ export class QuizPlayer {
 
     // Peek current text (don't remove yet, in case we need to retry)
     const text = this.speechQueue[0];
+    console.log('[DEBUG TTS]:', text);
 
     if (!text) {
       this.speechQueue.shift();
@@ -1303,16 +1353,11 @@ export class QuizPlayer {
     // Always consult the live store for latest override
     const aiStoreKey = `quiz-ai-explanations-${this.courseSlug}`;
     const aiStore = JSON.parse(localStorage.getItem(aiStoreKey) || '{}');
-    const itemKey = `${q.unitNumber}-${q.id.split('-').pop()}`; // reconstruct short key or check how q.id is formed
-    // q.id is "question-1-5", we need "1-5"
-    // or easier: q.id "question-{unit}-{qIdx}" -> replace "question-" with ""
-    const key = q.id.replace('question-', '');
 
-    if (aiStore[key]) {
-      // If HTML, we might need to strip it? cleanText handles stripping.
-      // But wait, cleanText handles <br> etc.
+    // We now use q.id directly as it holds the stable ID (or fallback) used everywhere
+    if (aiStore[q.id]) {
       // If stored text is HTML, we return HTML here and let cleanText handle it later.
-      return aiStore[key];
+      return aiStore[q.id];
     }
     return q.explanation || '';
   }

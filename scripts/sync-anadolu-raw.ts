@@ -51,57 +51,54 @@ interface AppQuestion {
     explanation?: string;
 }
 
-function mapRawToApp(raw: RawAnadoluQuestion): AppQuestion {
+function mapRawToApp(raw: RawAnadoluQuestion, isTechnical: boolean = false): AppQuestion {
     const q: AppQuestion = {
         id: String(raw.QuestionId),
         unitNumber: raw.UniteNo || 0,
-        text: cleanHtml(raw.Text),
+        text: cleanHtml(raw.Text, { isTechnical }),
         correctAnswer: (raw.CorrectAnswer || "").trim().toUpperCase(),
         options: {}
     };
 
-    // Explanation logic from Python:
-    // If Title exists and is not in Explanation, concat?
-    // For now simple cleaning. Python `map_to_old_format` does complex merge.
-    // Let's adopt a robust check:
     let expl = "";
     if (raw.AnswerExplanation) {
-        expl = cleanHtml(raw.AnswerExplanation);
+        expl = cleanHtml(raw.AnswerExplanation, { isTechnical, isExplanation: true, disableChoiceCleanup: true, debug: process.env.DEBUG === 'true' });
     }
 
     // Smart Merge Logic: Title + Explanation
     if (raw.Title) {
-        const title = cleanHtml(raw.Title);
+        const title = cleanHtml(raw.Title, { isTechnical });
         if (title) {
             if (expl) {
-                const tNorm = title.replace(/\s+/g, ' ').trim().toLowerCase();
-                const eNorm = expl.replace(/\s+/g, ' ').trim().toLowerCase();
+                const stripTags = (h: string) => h.replace(/<[^>]*>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim().toLowerCase();
+                const tNorm = stripTags(title);
+                const eNorm = stripTags(expl);
 
-                if (eNorm.includes(tNorm)) {
-                    // Explanation already contains title info, keep explanation
-                } else if (tNorm.includes(eNorm)) {
-                    // Title covers explanation, use title (rare but possible)
-                    expl = title;
+                // If one contains the other (ignoring tags), keep the longer one
+                if (eNorm.includes(tNorm) || tNorm.includes(eNorm)) {
+                    if (tNorm.length > eNorm.length) {
+                        expl = title;
+                    }
+                    // Else: expl already has it, keep expl
                 } else {
                     // Distinct, concatenate
-                    expl = `${title}<br/>${expl}`;
+                    expl = `${title} ${expl}`;
                 }
             } else {
-                // Only title exists
                 expl = title;
             }
         }
     }
 
-    if (expl && expl !== "") {
-        q.explanation = expl;
+    if (expl && expl.trim() !== "") {
+        q.explanation = expl.trim();
     }
 
-    if (raw.A) q.options['A'] = cleanHtml(raw.A);
-    if (raw.B) q.options['B'] = cleanHtml(raw.B);
-    if (raw.C) q.options['C'] = cleanHtml(raw.C);
-    if (raw.D) q.options['D'] = cleanHtml(raw.D);
-    if (raw.E) q.options['E'] = cleanHtml(raw.E);
+    if (raw.A) q.options['A'] = cleanHtml(raw.A, { isTechnical });
+    if (raw.B) q.options['B'] = cleanHtml(raw.B, { isTechnical });
+    if (raw.C) q.options['C'] = cleanHtml(raw.C, { isTechnical });
+    if (raw.D) q.options['D'] = cleanHtml(raw.D, { isTechnical });
+    if (raw.E) q.options['E'] = cleanHtml(raw.E, { isTechnical });
 
     return q;
 }
@@ -121,23 +118,17 @@ interface PreProcessedExamQuestion {
 // Union type for input
 type ExamInput = RawAnadoluExamQuestion | PreProcessedExamQuestion;
 
-function mapExamToApp(raw: ExamInput): AppQuestion {
+function mapExamToApp(raw: ExamInput, isTechnical: boolean = false): AppQuestion {
     // Check if it's already in the new format (App Schema-like)
-    // We can infer this by checking if 'id' is a string starting with 'exam-' and options is an object (not array)
     if (typeof raw.id === 'string' && raw.id.startsWith('exam-') && !Array.isArray(raw.options)) {
         const p = raw as PreProcessedExamQuestion;
-
-        // If it's a duplicate and we want to skip or resolve later?
-        // Portal usually wants full objects. If it's a duplicate, maybe we should fetch the original?
-        // For now, we trust the input is self-contained or acceptable.
-
         return {
             id: p.id,
             unitNumber: p.unitNumber,
-            text: cleanHtml(p.text),
+            text: cleanHtml(p.text, { isTechnical }),
             correctAnswer: p.correctAnswer,
-            options: p.options, // Already a map
-            explanation: p.explanation ? cleanHtml(p.explanation) : undefined
+            options: p.options,
+            explanation: p.explanation ? cleanHtml(p.explanation, { isTechnical, isExplanation: true, disableChoiceCleanup: true, debug: process.env.DEBUG === 'true' }) : undefined
         };
     }
 
@@ -146,7 +137,7 @@ function mapExamToApp(raw: ExamInput): AppQuestion {
     const q: AppQuestion = {
         id: `exam-${oldRaw.material_id}-${oldRaw.id}`,
         unitNumber: 0,
-        text: cleanHtml(oldRaw.question),
+        text: cleanHtml(oldRaw.question, { isTechnical }),
         correctAnswer: ["A", "B", "C", "D", "E"][oldRaw.correctIndex] || "",
         options: {}
     };
@@ -155,13 +146,13 @@ function mapExamToApp(raw: ExamInput): AppQuestion {
         oldRaw.options.forEach((opt, idx) => {
             const key = ["A", "B", "C", "D", "E"][idx];
             if (key) {
-                q.options[key] = cleanHtml(opt);
+                q.options[key] = cleanHtml(opt, { isTechnical });
             }
         });
     }
 
     if (oldRaw.explanation) {
-        const e = cleanHtml(oldRaw.explanation);
+        const e = cleanHtml(oldRaw.explanation, { isTechnical, isExplanation: true, disableChoiceCleanup: true, debug: process.env.DEBUG === 'true' });
         if (e) q.explanation = e;
     }
 
@@ -171,6 +162,16 @@ function mapExamToApp(raw: ExamInput): AppQuestion {
 function processCourse(slug: string) {
     const courseRawDir = path.join(RAW_ANADOLU_DIR, slug);
     const destFilePath = path.join(TARGET_ANADOLU_DIR, `${slug}.json`);
+
+    // Detect if this is a technical course (e.g. coding, web design)
+    // We only want courses that actually teach/show HTML/Code as content.
+    const technicalKeywords = ['programlama', 'algoritma', 'kodlama', 'web', 'veritabani', 'internet-prog', 'yazilim-müh', 'yazilim-gelistirme'];
+    let isTechnical = technicalKeywords.some(kw => slug.toLowerCase().includes(kw));
+
+    // Explicit exclusions
+    if (slug === 'algoritmalar-ve-programlama') {
+        isTechnical = false;
+    }
 
     const questions: AppQuestion[] = [];
     const ids = new Set<string>();
@@ -183,7 +184,7 @@ function processCourse(slug: string) {
             const rawData: RawAnadoluQuestion[] = JSON.parse(content);
             if (Array.isArray(rawData)) {
                 rawData.forEach(r => {
-                    const mapped = mapRawToApp(r);
+                    const mapped = mapRawToApp(r, isTechnical);
                     if (!ids.has(mapped.id)) {
                         questions.push(mapped);
                         ids.add(mapped.id);
@@ -205,7 +206,7 @@ function processCourse(slug: string) {
 
             if (Array.isArray(rawList)) {
                 rawList.forEach(r => {
-                    const mapped = mapExamToApp(r);
+                    const mapped = mapExamToApp(r, isTechnical);
                     if (!ids.has(mapped.id)) {
                         questions.push(mapped);
                         ids.add(mapped.id);

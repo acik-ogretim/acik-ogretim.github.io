@@ -7,6 +7,9 @@ import TurndownService from 'turndown';
 interface CleanHtmlOptions {
     preserveCode?: boolean;
     isTechnical?: boolean;
+    isExplanation?: boolean;
+    disableChoiceCleanup?: boolean;
+    debug?: boolean;
 }
 
 export interface RepairOptions {
@@ -35,13 +38,35 @@ export function repairText(text: string, options: RepairOptions = { stripLoneBr:
     // Fix specific encoding artifacts (Anadolu)
     cleaned = cleaned.replace(/\x1e/g, 'i').replace(/\x1f/g, 'i');
 
-    // Fix corrupted words (ATA specific)
+    // 1. Strip HTML Comments (e.g. <!-- [if !supportLists]-->)
+    cleaned = cleaned.replace(/<!--[\s\S]*?-->/g, "");
+
+    // 2. Unwrap dir, o:p, and other legacy wrappers
+    cleaned = cleaned.replace(/<(dir|o:p)\b[^>]*>([\s\S]*?)<\/\1>/gi, "$2");
+    cleaned = cleaned.replace(/<(dir|o:p)\b[^>]*\/>/gi, "");
+
+    // 3. Remove known UI/AI artifacts (e.g. ChatGPT copy-paste buttons, svgs)
+    cleaned = cleaned.replace(/<(button|svg|script|style|noscript|canvas|iframe)\b[^>]*>[\s\S]*?<\/\1>/gi, "");
+
+    // 4. Remove empty containers but PRESERVE SPACE if they were acting as separators
+    // We catch tags that are empty or only contain whitespace/nested empty tags
+    const junkPattern = /<(pre|code|span|div|font|p|strong|b|em|i|u)\b[^>]*>(?:[\s\xa0]|<(span|font|strong|b|em|i|u)\b[^>]*>[\s\xa0]*<\/\2>)*<\/\1>/gi;
+    cleaned = cleaned.replace(junkPattern, (match) => {
+        return (match.includes(' ') || match.includes('\xa0') || match.includes('&nbsp;')) ? " " : "";
+    });
+    cleaned = cleaned.replace(junkPattern, ""); // Second pass for nesting
+
+    // Fix corrupted words (ATA/Anadolu specific)
     cleaned = cleaned
         .replace(/yang[\uFFFD]+nın/g, "yangının")
         .replace(/çal[\uFFFD]+şma/g, "çalışma")
         .replace(/([Yy])ar[\uFFFD]+m/g, "$1arım")
         .replace(/sıras[\uFFFD]+yla/g, "sırasıyla")
         .replace(/bağıms[\uFFFD]+zlık/g, "bağımsızlık")
+        .replace(/\bınterest/gi, "interest")
+        .replace(/\bıncome\b/gi, "income")
+        .replace(/\bbasıs\b/gi, "basis")
+        .replace(/\baccountıng/gi, "accounting")
         .replace(/\uFFFD/g, "") // Remove remaining replacement chars
         .replace(/\u007F/g, "") // Remove DELETE chars
         .replace(/<<</g, ""); // Remove artifact '<<<'
@@ -79,9 +104,10 @@ export function repairText(text: string, options: RepairOptions = { stripLoneBr:
     cleaned = cleaned.replace(/<ginger-[^>]*>[\s\S]*?<\/ginger-[^>]*>/gi, "");
     cleaned = cleaned.replace(/<\/ginger-[^>]*>/gi, ""); // Handle stray closing ginger tags
 
-    // Remove noisy span/div/font wrappers that have styles or classes (artifacts from Word/Web)
-    cleaned = cleaned.replace(/<(span|div|font)\b[^>]*?(?:style|class|face|mso)="[^"]*"[^>]*?>([\s\S]*?)<\/\1>/gi, "$2");
-    cleaned = cleaned.replace(/<(span|div|font)\b[^>]*?(?:style|class|face|mso)="[^"]*"[^>]*?>([\s\S]*?)<\/\1>/gi, "$2");
+    // Remove noisy div/font wrappers that have styles or classes (artifacts from Word/Web)
+    // Spans are handled later in Cheerio to preserve underlines
+    cleaned = cleaned.replace(/<(div|font)\b[^>]*?(?:style|class|face|mso)="[^"]*"[^>]*?>([\s\S]*?)<\/\1>/gi, "$2");
+    cleaned = cleaned.replace(/<(div|font)\b[^>]*?(?:style|class|face|mso)="[^"]*"[^>]*?>([\s\S]*?)<\/\1>/gi, "$2");
 
     // Remove Mozilla-specific br artifacts
     cleaned = cleaned.replace(/<br\s+type="_moz"\s*\/?>/gi, "");
@@ -89,8 +115,9 @@ export function repairText(text: string, options: RepairOptions = { stripLoneBr:
     // Remove "tel:" links (often introduced by browser extensions or OS phone number detection misidentifying numeric ranges)
     cleaned = cleaned.replace(/<a[^>]*href=["']tel:[^"']*["'][^>]*>([\s\S]*?)<\/a>/gi, "$1");
 
-    // Fix sticky words: If there's a BR between two alphanumeric parts, ensure there's a space
-    cleaned = cleaned.replace(/([a-zğüşıöçA-ZĞÜŞİÖÇ0-9])<br\b[^>]*>([a-zğüşıöçA-ZĞÜŞİÖÇ0-9])/gi, "$1 $2");
+    // Fix sticky words: If there's a BR followed by a lowercase letter, it's likely a broken line/sentence.
+    // We join them with a space. If it's followed by an Uppercase letter, Digit, or List Marker (e.g. a., b.), we keep the BR.
+    cleaned = cleaned.replace(/([a-zğüşıöçA-ZĞÜŞİÖÇ0-9])<br\b[^>]*>([a-zğüşıöç](?![.)]))/g, "$1 $2");
 
     // FINAL CLEANUP: Remove leading/trailing line breaks, horizontal rules and whitespace
     if (options.stripLoneBr) {
@@ -118,6 +145,7 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
     // 1. Initial Unification: Markdown backticks to <code> tags
     // This allows us to handle `code` and <code>code</code> under the same logic.
     let processed = text.replace(/`([^`]+)`/g, '<code>$1</code>');
+    processed = he.decode(processed);
 
     // 2. Placeholder & Protection Phase
     // Extract code segments that should be literal text and replace them with unique markers.
@@ -127,8 +155,21 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
     const blockRegex = new RegExp(`<(${blockTypes.join('|')})\\b[^>]*>([\\s\\S]*?)<\\/\\1>`, 'gi');
 
     processed = processed.replace(blockRegex, (match, tag, content) => {
-        // Deep decode then escape to ensure it's literal (e.g. <div> inside code becomes &lt;div&gt;)
-        const escapedContent = he.escape(he.decode(content));
+        const decodedContent = he.decode(content);
+        const plainText = decodedContent.replace(/<[^>]*>/g, '').trim();
+
+        // If the content is basically empty or just a single &nbsp; variant, skip it
+        if (plainText === "" || plainText === " ") {
+            return "";
+        }
+
+        // If it's a pre/code tag but contains obvious Word artifacts (lang=, MsoNormal, font-family),
+        // it's likely a fake enclosure. Don't protect it.
+        if ((tag === 'pre' || tag === 'code') && (content.includes('lang=') || content.includes('MsoNormal') || content.includes('font-family:'))) {
+            return match;
+        }
+
+        const escapedContent = he.escape(decodedContent);
         const index = protectedBlocks.length;
         protectedBlocks.push(`<${tag}>${escapedContent}</${tag}>`);
         return `%%PROTECTED_BLOCK_${index}%%`;
@@ -163,6 +204,7 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
         'b', 'strong', 'i', 'em', 'u', 's', 'strike', 'del', 'ins', 'sub', 'sup', 'small', 'big', 'tt', 'font',
         'code', 'pre', 'kbd', 'samp', 'var',
         'br', 'p', 'ul', 'ol', 'li', 'dl', 'dt', 'dd', 'blockquote',
+        'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
         'figure', 'figcaption', 'img'
     ]);
 
@@ -170,20 +212,28 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
     if (!options.isTechnical) {
         [
             'span', 'div', 'article', 'section', 'header', 'footer', 'nav', 'main', 'aside',
-            'table', 'thead', 'tbody', 'tfoot', 'tr', 'td', 'th', 'caption', 'a',
+            'table', 'thead', 'tbody', 'tfoot', 'tr', 'td', 'th', 'caption', 'colgroup', 'col', 'a',
             'html', 'body', 'head', 'title', 'meta', 'link', 'script', 'style',
             'form', 'input', 'button', 'select', 'option', 'textarea', 'label'
         ].forEach(t => validTags.add(t));
     }
 
     // Escape unknown tags in the rest of the text (both opening and closing tags)
-    cleaned = cleaned.replace(/<\/?([a-zA-Z!?][a-zA-Z0-9\-]*)([^>]*)>/g, (match, tagName, attrs) => {
+    // We include colons in tag name recognition to correctly identify and handle namespaced tags like o:p
+    cleaned = cleaned.replace(/<\/?([a-zA-Z!?][a-zA-Z0-9\-:]*)([^>]*)>/g, (match, tagName, attrs) => {
         const lowerTag = tagName.toLowerCase();
 
         // Special Case: In technical courses, we want to escape structural tags to show them as code.
         // BUT we must NOT escape real <img> tags that have a 'src' (they are likely diagrams/source images).
         if (options.isTechnical) {
-            const structuralTags = ['span', 'div', 'article', 'section', 'header', 'footer', 'nav', 'main', 'aside', 'table', 'thead', 'tbody', 'tfoot', 'tr', 'td', 'th', 'caption', 'a', 'form', 'input', 'button', 'select', 'option', 'textarea', 'label'];
+            const structuralTags = [
+                'article', 'section', 'header', 'footer', 'nav', 'main', 'aside',
+                'table', 'thead', 'tbody', 'tfoot', 'tr', 'td', 'th', 'caption', 'colgroup', 'col',
+                'a', 'form', 'input', 'button', 'select', 'option', 'textarea', 'label',
+                'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'html', 'body', 'head', 'title', 'meta', 'link'
+            ];
+            // We EXCLUDE p, span, div from escaping because they are common noise wrappers in raw data
+            // even in technical courses. If they are intended as code, they should be in code/pre tags.
             if (structuralTags.includes(lowerTag)) return match.replace('<', '&lt;');
             // Only escape <img> if it DOES NOT have a 'src' attribute
             if (lowerTag === 'img' && !attrs.toLowerCase().includes('src=')) return match.replace('<', '&lt;');
@@ -200,11 +250,45 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
     // Load into Cheerio for structural cleaning
     const $ = cheerio.load(cleaned, { xmlMode: false });
 
-    // 1. Handle o:p
+    // 1. Strip UI/Technical Junk
+    $('button, svg, script, style, noscript, canvas, iframe, map, area').remove();
+
+    // 2. Handle o:p and AI/Word Artifacts
     $('*').each((_, el) => {
-        if (el.type === 'tag' && el.name.toLowerCase().startsWith('o:')) {
-            $(el).before(' ');
-            $(el).replaceWith($(el).contents());
+        const $el = $(el);
+        const tagName = (el as any).name?.toLowerCase();
+        if (!tagName) return;
+
+        if (tagName.startsWith('o:')) {
+            $el.before(' ');
+            $el.replaceWith($el.contents());
+            return;
+        }
+
+        // Unwrap H1-H6 (we prefer flat text with bolding for quizzes)
+        if (['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tagName)) {
+            $el.before(' ');
+            $el.replaceWith($el.contents());
+            return;
+        }
+
+        // Strip tags that have AI-related or Office-related attributes
+        // typically spans or redundant wrappers like <span lang="en">
+        const attribs = (el as any).attribs;
+        if (attribs) {
+            const hasArtifactAttr = attribs['data-start'] || attribs['data-end'] || attribs['lang'] || attribs['class']?.includes('Mso');
+            if (hasArtifactAttr) {
+                // NEVER unwrap li, as it destroys list structure.
+                // Keep structural integrity for basic formatting.
+                const formattingTags = ['strong', 'b', 'i', 'em', 'u', 'sub', 'sup', 'ins', 'del', 'code', 'pre', 'li', 'ul', 'ol'];
+                if (!formattingTags.includes(tagName)) {
+                    if (['p', 'div', 'section', 'article'].includes(tagName)) {
+                        $el.before(' ');
+                    }
+                    $el.replaceWith($el.contents());
+                    return;
+                }
+            }
         }
     });
 
@@ -246,7 +330,7 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
     });
 
     // 4. Strip attributes from strict tags
-    const strictTags = ['strong', 'b', 'i', 'em', 'table', 'tr', 'td', 'th', 'tbody', 'thead', 'tfoot', 'ul', 'li', 'blockquote', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'code', 'pre', 'sup', 'sub', 'ins'];
+    const strictTags = ['strong', 'b', 'i', 'em', 'u', 'table', 'tr', 'td', 'th', 'tbody', 'thead', 'tfoot', 'colgroup', 'col', 'ul', 'li', 'blockquote', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'code', 'pre', 'sup', 'sub', 'ins'];
     strictTags.forEach(tag => {
         $(tag).each((_, el) => {
             if ('attribs' in el) {
@@ -284,23 +368,31 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
         }
     });
 
-    // 6. Remove empty tags
+    // 6. Remove empty tags (only for noise wrappers)
     $('*').each((_, el) => {
         const tagEl = el as any;
         if (!tagEl.tagName) return;
 
-        if (tagEl.tagName === 'HTML' || tagEl.tagName === 'HEAD' || tagEl.tagName === 'BODY') return;
-
         const tagName = tagEl.tagName.toLowerCase();
-        // Protect void elements and common contentless tags
-        const protectedTags = ['img', 'br', 'a', 'input', 'hr', 'meta', 'link', 'area', 'base', 'col', 'embed', 'param', 'source', 'track', 'wbr'];
-        if (protectedTags.includes(tagName)) return;
+        if (['html', 'head', 'body'].includes(tagName)) return;
 
-        const text = $(el).text().trim();
-        const hasProtectedChild = $(el).find(protectedTags.join(', ')).length > 0;
+        const isVoid = ['img', 'br', 'hr', 'input', 'meta', 'link', 'col', 'wbr', 'area', 'base', 'embed', 'param', 'source', 'track'].includes(tagName);
+        if (isVoid) return;
 
-        if (!text && !hasProtectedChild) {
-            $(el).remove();
+        const text = $(el).text();
+        const hasProtectedChild = $(el).find('img, br, hr, col').length > 0 || ($(el).html() || '').includes('%%PROTECTED_BLOCK_');
+
+        if (!text.trim() && !hasProtectedChild) {
+            // Only remove empty tags if they are typical noise wrappers
+            // Avoid removing empty <table>, <tr>, <td>, <ol>, <ul> since they might be parts of code snippets
+            const noiseWrappers = ['span', 'div', 'font', 'p', 'o:p', 'dir', 'article', 'section', 'header', 'footer', 'nav', 'main', 'aside'];
+            if (noiseWrappers.includes(tagName)) {
+                if (/\s| /.test(text)) {
+                    $(el).replaceWith(' ');
+                } else {
+                    $(el).remove();
+                }
+            }
         }
     });
 
@@ -340,10 +432,70 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
     protectedBlocks.forEach((block, index) => {
         finalResult = finalResult.replace(`%%PROTECTED_BLOCK_${index}%%`, block);
     });
-
     // 6. Post-Restoration Cleanup: Collapse nested identical tags (e.g., <strong><strong>...</strong></strong>)
     // Sometimes typo correction or raw data artifacts create redundant nesting.
     finalResult = finalResult.replace(/<(b|strong|i|em|u)>\s*<\1>([\s\S]*?)<\/\1>\s*<\/\1>/gi, '<$1>$2</$1>');
+
+    // 7. Redundant Phrase Cleanup (Turkish markers)
+    // These markers often appear at the end of explanations in raw data and are redundant.
+    if (options.isExplanation) {
+        const choiceMarker = /\b[a-e]\b/i;
+        const containsChoice = choiceMarker.test(finalResult);
+
+        // Pattern for "cevap/yanıt" with common typos found in raw data
+        const ans = '(?:cevap|vavap|cavap|vavab|vabap|cvp|yanıt|yanit)';
+
+        const markers = [
+            // 1. Sentence-level markers (Conjunction + Choice)
+            new RegExp(`\\b(?:bu kapsamda|bu nedenle|buna göre|bu durumda|bu yüzden|bu sorunun)\\s*(?:${ans})?\\s*\\b[a-e]\\b(?:\\s*(?:şıkkı|seçeneği|şıkkıdır|seçeneğidir))?\\s*(?:doğru)?\\s*(?:cevaptır|yanıttır|v[av]aptır|şıkkıdır|seçeneğidir)?(?:\\s*['’‘]?[dsbt][\\. ]*[ıiüu][\\. ]*r)?\\.?\\s*`, 'gi'),
+
+            // 2. Clear Choice Deletion (Choice-centric)
+            new RegExp(`\\b(?:doğru\\s+)?(?:${ans})\\s+\\b[a-e]\\b(?=[\\s\\.\\)\\']|$)(?:\\s*(?:şıkkı|seçeneği|şıkkıdır|seçeneğidir))?(?:\\s*['’‘]?[dsbt][\\. ]*[ıiüu][\\. ]*r)?\\.?\\s*`, 'gi'),
+            /\b(?:the\s+)?correct\s+answer\s+is\s+\b[a-e]\b(?=[\s\.\)\'’‘]|$)\.?\s*/gi,
+            new RegExp(`\\bdoğru\\s+(?:yanıt|${ans})\\s+\\b[a-e]\b(?=[\\s\\.\)\'’‘]|$)\\.?`, 'gi'),
+
+            // 3. English Review Instructions
+            /\bif your answer is incorrect,?\s*review(?: the)?\s*['"“'”].*?['"“'”]\s*section\.?\s*/gi,
+
+            // 4. Anchored Leftovers (Strictly at start/end)
+            /\baçıklama\s*(?:yok|bulunmamaktadır|eklenmemiş)(?:\.?\s*)/gi,
+            /^(?:dir|dır|dur|dür|tir|tır|tur|tür)[\s]+(?:\s*)/gi,
+            /^['’‘]?[dsbt][\. ]*[ıiüu][\\. ]*r\.?\s*$/gi,
+            /\s+\b[a-e]\b\.?\s*$/gi, // Lone choice at end
+            /\s+['’‘]?[dsbt][\. ]*[ıiüu][\\. ]*r\.?\s*$/gi, // Dangling suffix at end
+            /\s*\b[a-e]\b şıkkı doğru (?:cevaptır|yanıttır)\b\.?\s*$/gi,
+            /\s*\b[a-e](?:[ ,]+[a-e])* (?:ve|veya|or|and) \b[a-e]\b\s+(?:şıkları|options|seçenekleri)\b\s*.*?arasındadır\.?\s*$/gi,
+        ];
+
+        if (!options.disableChoiceCleanup) {
+            markers.forEach(pattern => {
+                const patternSource = typeof pattern === 'string' ? pattern : pattern.source;
+                const patternHasChoice = patternSource.includes('[a-e]');
+
+                // Safety Rule: Only apply markers IF:
+                // 1. The marker itself specifically includes a choice reference (e.g., "Cevap A'dır")
+                // 2. OR the whole explanation contains a choice reference [A-E], making generic cleanup safer.
+                if (!patternHasChoice && !containsChoice) {
+                    return;
+                }
+
+                if (options.debug) {
+                    const match = finalResult.match(pattern);
+                    if (match) {
+                        console.log(`[cleanHtml Debug] Matched pattern: ${pattern}`);
+                        console.log(`[cleanHtml Debug] Removed text: "${match[0].trim()}"`);
+                    }
+                }
+                finalResult = finalResult.replace(pattern, '');
+            });
+        }
+    }
+
+    // Final trim and cleanup of leftover punctuation/whitespace
+    finalResult = finalResult.replace(/\s+/g, ' ').trim();
+    if (finalResult === "." || finalResult === ".." || finalResult === "...") {
+        finalResult = "";
+    }
 
     return finalResult;
 }

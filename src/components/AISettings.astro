@@ -50,14 +50,21 @@
         btn: HTMLElement,
         action: string,
         unit: string,
-        qIdx: string,
+        qIdx: string, // Kept for legacy signature, but we'll use IDs
     ) {
+        // Find parent card to get reliable ID
+        const card = btn.closest(".question-card") as HTMLElement;
+        if (!card) return;
+
+        const questionId = card.dataset.id || `${unit}-${qIdx}`; // Fallback to old composite key if data-id missing
+
+        // Element Selection using legacy IDs for now as they are generated in HTML
+        // Ideally we should refactor HTML IDs too, but this bridges the logic.
         const contentId = `content-${unit}-${qIdx}`;
         const originalId = `original-${unit}-${qIdx}`;
         const contentEl = document.getElementById(contentId);
         const originalEl = document.getElementById(originalId);
         const menuId = `menu-${unit}-${qIdx}`;
-        const questionCardId = `question-${unit}-${qIdx}`;
 
         // Close menu
         document.getElementById(menuId)?.classList.add("hidden");
@@ -69,13 +76,16 @@
             contentEl.innerHTML = originalEl.innerHTML;
 
             // Remove from storage object
-            const slug = window.location.pathname.split("/").pop() || "default";
+            const slug =
+                window.location.pathname
+                    .replace(/^\/|\/$/g, "")
+                    .replace(/\//g, "-") || "default-course";
             const storageKey = `quiz-ai-explanations-${slug}`;
             const store = JSON.parse(localStorage.getItem(storageKey) || "{}");
-            const itemKey = `${unit}-${qIdx}`;
 
-            if (store[itemKey]) {
-                delete store[itemKey];
+            // Remove using Question ID
+            if (store[questionId]) {
+                delete store[questionId];
                 localStorage.setItem(storageKey, JSON.stringify(store));
             }
 
@@ -111,16 +121,13 @@
 
         try {
             const ai = new GoogleGenAI({ apiKey });
-            const questionCard = document.getElementById(questionCardId);
+
             const questionText =
-                (questionCard?.querySelector(".question-text") as HTMLElement)
+                (card.querySelector(".question-text") as HTMLElement)
                     ?.innerText || "";
             const correctInfo =
-                (
-                    questionCard?.querySelector(
-                        ".answer-meta-card",
-                    ) as HTMLElement
-                )?.innerText || "";
+                (card.querySelector(".answer-meta-card") as HTMLElement)
+                    ?.innerText || "";
             const originalExplanation = originalEl.innerText;
 
             let instruction = "";
@@ -130,7 +137,7 @@
             switch (action) {
                 case "regenerate":
                     instruction =
-                        "Rewrite the existing explanation in a clear and balanced way, about 1-2 paragraphs long, perhaps from a different perspective.";
+                        "Write a concise explanation that focuses on the core logic and most important keywords. It should be memorable and strictly to the point, avoiding unnecessary fluff. Limit to 1 short paragraph if possible.";
                     break;
                 case "longer":
                     instruction =
@@ -154,8 +161,11 @@
                 **Instruction:** ${instruction}
 
                 **Formatting Rules:**
-                1. Format with HTML tags like <b> for emphasis and <br> for line breaks.
-                2. The output must be in Turkish.
+                1. STRICTLY use HTML tags only. Use <b> or <strong> for emphasis. Use <br> for line breaks. Use <ul><li></li></ul> for lists.
+                2. Do NOT use Markdown syntax at all. No **bold**, no *italic*, no # headers, no - lists.
+                3. Do not include phrases like 'Here is the summary', 'Revised explanation:', or 'Doğru cevap X şıkkıdır'. Just give the content.
+                4. Do NOT explicitly state which option is correct (e.g. "Doğru cevap A"). The user already sees this. Focus on the *reasoning*.
+                5. The output must be in Turkish.
             `;
 
             const response = await ai.models.generateContent({
@@ -181,14 +191,33 @@
                     "Cevap alınamadı.";
             }
 
+            // Post-process to fix any Markdown leakage (e.g. **bold** to <b>bold</b>)
+            text = text.replace(/\*\*(.*?)\*\*/g, "<b>$1</b>");
+            text = text.replace(/\*(.*?)\*/g, "<i>$1</i>");
+            // Basic list conversion if it hallucinates markdown lists
+            if (text.includes("- ")) {
+                text = text.replace(/^\s*-\s+(.*)$/gm, "<li>$1</li>");
+                // Wrap in ul if we created li elements and no ul exists
+                if (text.includes("<li>") && !text.includes("<ul>")) {
+                    text = "<ul>" + text + "</ul>";
+                }
+            }
+
             contentEl.innerHTML = text;
 
             // Save to LocalStorage (Grouped by Course)
-            const slug = window.location.pathname.split("/").pop() || "default";
+            // Save to LocalStorage (Grouped by Course)
+            const pathParts = window.location.pathname
+                .split("/")
+                .filter((p) => p);
+            const slug =
+                pathParts.length >= 3
+                    ? `${pathParts[0]}-${pathParts[pathParts.length - 1]}`
+                    : pathParts.join("-") || "default-course";
             const storageKey = `quiz-ai-explanations-${slug}`;
             const store = JSON.parse(localStorage.getItem(storageKey) || "{}");
 
-            store[`${unit}-${qIdx}`] = text;
+            store[questionId] = text; // Use Question ID as key
             localStorage.setItem(storageKey, JSON.stringify(store));
         } catch (error: any) {
             console.error("Gemini AI Hatası:", error);
@@ -216,7 +245,11 @@
 
     // Restore saved AI explanations on load
     function restoreAIExplanations() {
-        const slug = window.location.pathname.split("/").pop() || "default";
+        const pathParts = window.location.pathname.split("/").filter((p) => p);
+        const slug =
+            pathParts.length >= 3
+                ? `${pathParts[0]}-${pathParts[pathParts.length - 1]}`
+                : pathParts.join("-") || "default-course";
         const storageKey = `quiz-ai-explanations-${slug}`;
         const store = JSON.parse(localStorage.getItem(storageKey) || "{}");
 
@@ -225,21 +258,25 @@
 
         const explanationCards = document.querySelectorAll(".explanation-card");
 
-        explanationCards.forEach((card) => {
-            const idAttr = card.getAttribute("data-explanation-id"); // exp-{unit}-{qIdx}
-            if (!idAttr) return;
+        explanationCards.forEach((expCard) => {
+            // Find parent question card to get reliable ID
+            const qCard = expCard.closest(".question-card") as HTMLElement;
+            if (!qCard) return;
 
-            const [_, unit, qIdx] = idAttr.split("-");
-            const itemKey = `${unit}-${qIdx}`;
-            const savedContent = store[itemKey];
+            const qId = qCard.dataset.id;
+            const unit = qCard.dataset.unit;
+            // qIdx is tricky to get back from DOM structure reliable without ID parsing
+            // But we need to target the content div which has ID composed of unit-index
+            // Let's assume the content div is inside the expCard
+            const contentEl = expCard.querySelector(".explanation-content");
+
+            if (!qId || !contentEl) return;
+
+            // Check if we have saved content for this Question ID
+            const savedContent = store[qId];
 
             if (savedContent) {
-                const contentEl = document.getElementById(
-                    `content-${unit}-${qIdx}`,
-                );
-                if (contentEl) {
-                    contentEl.innerHTML = savedContent;
-                }
+                contentEl.innerHTML = savedContent;
             }
         });
     }

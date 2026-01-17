@@ -24,7 +24,7 @@ interface SourceQuestion {
     Aciklama?: string;
 }
 
-function processList(list: any[]): AppQuestion[] {
+function processList(list: any[], isTechnical: boolean = false): AppQuestion[] {
     const out: AppQuestion[] = [];
     list.forEach(q => {
         if (!q.SoruMetni) return;
@@ -32,17 +32,17 @@ function processList(list: any[]): AppQuestion[] {
         const mapped: AppQuestion = {
             id: String(q.SoruID),
             unitNumber: q.Unite || 0,
-            text: cleanHtml(q.SoruMetni),
+            text: cleanHtml(q.SoruMetni, { isTechnical }),
             correctAnswer: (q.DogruCevap || "").trim().toUpperCase(),
             options: {}
         };
 
         ['A', 'B', 'C', 'D', 'E'].forEach(opt => {
-            if (q[opt]) mapped.options[opt] = cleanHtml(q[opt]);
+            if (q[opt]) mapped.options[opt] = cleanHtml(q[opt], { isTechnical });
         });
 
         if (q.Aciklama && q.Aciklama.length > 5) {
-            mapped.explanation = cleanHtml(q.Aciklama);
+            mapped.explanation = cleanHtml(q.Aciklama, { isTechnical, isExplanation: true, disableChoiceCleanup: true, debug: process.env.DEBUG === 'true' });
         }
 
         out.push(mapped);
@@ -93,13 +93,20 @@ function processAll() {
         let allQuestions: AppQuestion[] = [];
         const seenIds = new Set<string>();
 
+        const technicalKeywords = ['programlama', 'algoritma', 'kodlama', 'web', 'veritabanı', 'internet-prog', 'yazılım-müh', 'yazılım-gelistirme'];
+        let isTechnical = technicalKeywords.some(kw => slug.toLowerCase().includes(kw));
+
+        if (slug === 'algoritmalar-ve-programlama') {
+            isTechnical = false;
+        }
+
         filePaths.forEach(fp => {
             try {
                 const rawContent = fs.readFileSync(fp, 'utf-8');
                 const cleanedRaw = rawContent.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, '');
                 const raw = JSON.parse(cleanedRaw);
                 const list = Array.isArray(raw) ? raw : (raw.questions || []);
-                const questions = processList(list);
+                const questions = processList(list, isTechnical);
 
                 questions.forEach(q => {
                     if (!seenIds.has(q.id)) {

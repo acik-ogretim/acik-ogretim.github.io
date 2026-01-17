@@ -198,6 +198,7 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
                     class="question-card"
                     id={`question-${unit}-${qIdx}`}
                     data-unit={unit}
+                    data-id={q.id}
                     data-testid="question-card"
                   >
                     <header class="mb-4">
