@@ -436,7 +436,7 @@
   {
     "id": "3852180",
     "unitNumber": 3,
-    "text": "Aşağıdaki kodun çıktısı hangisidir?<br/>def hesap(sayi): if sayi &lt;=10 : return sayi else: return (sayi*2) print(hesap(10)) print(hesap(15))",
+    "text": "Aşağıdaki kodun çıktısı hangisidir?<br/><pre>def hesap(sayi): if sayi &lt;=10 : </pre> <pre> return sayi</pre> <pre> else:</pre> <pre> return (sayi*2)</pre> <pre>print(hesap(10)) print(hesap(15)) </pre>",
     "correctAnswer": "A",
     "options": {
       "A": "10<br/>30",
@@ -464,7 +464,7 @@
   {
     "id": "3852182",
     "unitNumber": 3,
-    "text": "Aşağıdaki kodda hangi fonksiyon türü kullanılmıştır?<br/>def faktöriyel(x): if x == 1: return 1 <br/>else:<br/>return (x * faktöriyel(x-1))<br/>sayi = 5 print(sayi, \"sayısının faktöriyel değeri: \", faktöriyel(sayi ))",
+    "text": "Aşağıdaki kodda hangi fonksiyon türü kullanılmıştır?<br/><pre>def faktöriyel(x): if x == 1: return 1 </pre><br/>else:<br/>return (x * faktöriyel(x-1))<br/><pre> sayi = 5 print(sayi, \"sayısının faktöriyel değeri: \", faktöriyel(sayi )) </pre>",
     "correctAnswer": "A",
     "options": {
       "A": "Özyinelemeli",
@@ -492,7 +492,7 @@
   {
     "id": "3852184",
     "unitNumber": 3,
-    "text": "Aşağıdaki kod ile ilgili seçeneklerden hangisi hatalıdır?<br/><pre>def a_fonk(): x = 10 def b_fonk(): global x </pre> x = 15 <pre> print(&quot;A fonksiyon çağrısından önce x:&quot;, x) b_fonk() print(&quot;B fonksiyon çağrısından sonra x:&quot;, x) </pre> <pre> a_fonk() print(&quot;Kod bloğunda x:&quot;, x) </pre>",
+    "text": "Aşağıdaki kod ile ilgili seçeneklerden hangisi hatalıdır?<br/><pre>def a_fonk(): x = 10 def b_fonk(): global x </pre> <pre> x = 15</pre> <pre> print(&quot;A fonksiyon çağrısından önce x:&quot;, x) b_fonk() print(&quot;B fonksiyon çağrısından sonra x:&quot;, x) </pre> <pre> a_fonk() print(&quot;Kod bloğunda x:&quot;, x) </pre>",
     "correctAnswer": "E",
     "options": {
       "A": "İç içe geçmiş b_fonk() fonksiyonu içinde global bir değişken tanımlanmıştır.",
@@ -1528,7 +1528,7 @@
   {
     "id": "3852258",
     "unitNumber": 8,
-    "text": "<ol type=\"I\"> <li>Verileri işlemeye hazır hale getirmek için hazırlamak ve yeniden yapılandırmak </li> <li>Veriler için HTML formları oluşturmak</li> <li>İstemciden gönderilen form ile verileri almak ve işlemek</li> <li>Verileri Silmek</li> </ol> Yukarıdakilerden hangisi Django'nun form işlemleri arasında <em><strong>yer almaz</strong></em>?",
+    "text": "<ol type=\"I\"><li>Verileri işlemeye hazır hale getirmek için hazırlamak ve yeniden yapılandırmak</li><li>Veriler için HTML formları oluşturmak</li><li>İstemciden gönderilen form ile verileri almak ve işlemek</li><li>Verileri Silmek</li></ol>Yukarıdakilerden hangisi Django'nun form işlemleri arasında <em><strong>yer almaz</strong></em>?",
     "correctAnswer": "B",
     "options": {
       "A": "Yalnız I",

@@ -112,6 +112,10 @@ export function repairText(text: string, options: RepairOptions = { stripLoneBr:
     // Remove Mozilla-specific br artifacts
     cleaned = cleaned.replace(/<br\s+type="_moz"\s*\/?>/gi, "");
 
+    // Fix hyphenated words broken across spans (PDF/OCR artifacts)
+    // Matches: "sis-" + optional tags/whitespace + "temi"
+    cleaned = cleaned.replace(/([a-zğüşıöçA-ZĞÜŞİÖÇ])-\s*<\/span>\s*<span[^>]*>\s*([a-zğüşıöçA-ZĞÜŞİÖÇ])/g, "$1$2");
+
     // Remove "tel:" links (often introduced by browser extensions or OS phone number detection misidentifying numeric ranges)
     cleaned = cleaned.replace(/<a[^>]*href=["']tel:[^"']*["'][^>]*>([\s\S]*?)<\/a>/gi, "$1");
 
@@ -187,17 +191,15 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
     // Roman Numeral Lists
     cleaned = cleaned.replace(/\n\s*(?=(?:I|V|X|L|C|D|M)+\s*\.)/g, '<br/>');
 
-    // Bullet points
+    // Bullet points - convert newlines before bullets to BR
     cleaned = cleaned.replace(/\n\s*(?=[•\-\*])/g, '<br/>');
 
-    // Collapse br
-    cleaned = cleaned.replace(/(?:\s*<br\/>\s*)+/gi, '<br/>');
-
-    // Convert newlines to br
+    // Convert newlines to br, but preserve existing brs
     cleaned = cleaned.replace(/[\r\n]+/g, '<br/>');
 
-    // Final cleanup of br
-    cleaned = cleaned.replace(/(<br\/>)+/g, '<br/>');
+    // Collapse multiple brs into one
+    cleaned = cleaned.replace(/(?:\s*<br\s*\/?>\s*)+/gi, '<br/>');
+
 
     // 4. White-list based Tag Protection (for the non-protected parts)
     const validTags = new Set([
@@ -263,35 +265,8 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
             $el.before(' ');
             $el.replaceWith($el.contents());
             return;
-
         }
 
-
-        // Unwrap H1-H6 (we prefer flat text with bolding for quizzes)
-        if (['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tagName)) {
-            $el.before(' ');
-            $el.replaceWith($el.contents());
-            return;
-        }
-
-        // Strip tags that have AI-related or Office-related attributes
-        // typically spans or redundant wrappers like <span lang="en">
-        const attribs = (el as any).attribs;
-        if (attribs) {
-            const hasArtifactAttr = attribs['data-start'] || attribs['data-end'] || attribs['lang'] || attribs['class']?.includes('Mso');
-            if (hasArtifactAttr) {
-                // NEVER unwrap li, as it destroys list structure.
-                // Keep structural integrity for basic formatting.
-                const formattingTags = ['strong', 'b', 'i', 'em', 'u', 'sub', 'sup', 'ins', 'del', 'code', 'pre', 'li', 'ul', 'ol'];
-                if (!formattingTags.includes(tagName)) {
-                    if (['p', 'div', 'section', 'article'].includes(tagName)) {
-                        $el.before(' ');
-                    }
-                    $el.replaceWith($el.contents());
-                    return;
-                }
-            }
-        }
     });
 
     // Transform OL styles to type attribute (before stripping styles)
@@ -315,7 +290,7 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
 
     // 2. Unwrap noisy block tags with space
     // FIX: Do NOT unwrap body/html/head as they are structural roots in Cheerio
-    const blockTags = ['div', 'article', 'pre'];
+    const blockTags = ['div', 'article'];
     // If input had <html> inside, Cheerio corrects it.
     // We rely on $('body').html() to extract content, which inherently strips wrapper html/body.
 
@@ -324,6 +299,20 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
             $(el).before(' ');
             $(el).replaceWith($(el).contents());
         });
+    });
+
+    // Detect and convert styled code spans to <code> tags
+    $('span').each((_, el) => {
+        const $el = $(el);
+        const style = $el.attr('style') || "";
+        const cls = $el.attr('class') || "";
+
+        const isMonospace = /font-family:\s*['"]?(?:courier|monospace|consolas|lucida console)/i.test(style);
+        const isSyntaxHighlighter = /tagnamecolor|attributevaluecolor|tagcolor|comment/i.test(cls);
+
+        if (isMonospace || isSyntaxHighlighter) {
+            el.tagName = 'code';
+        }
     });
 
     // 3. Unwrap noisy inline tags (no space)
@@ -423,6 +412,15 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
 
     // Final cleanup of BRs
     result = result.replace(/(<br\b[^>]*>\s*)+/gi, '<br/>');
+
+    // LIST CLEANUP: Aggressively remove BRs AND WHITESPACE around list elements (ul, ol, li)
+    // 1. Remove BRs/Whitespace immediately before list tags (opening or closing)
+    result = result.replace(/(?:<br\b[^>]*>|\s)+(<\/?(?:ul|ol|li)\b[^>]*>)/gi, '$1');
+    // 2. Remove BRs/Whitespace immediately after list tags (opening or closing)
+    result = result.replace(/(<\/?(?:ul|ol|li)\b[^>]*>)(?:<br\b[^>]*>|\s)+/gi, '$1');
+    // 3. Clean up any remaining BRs strictly BETWEEN list items if the previous step missed them (e.g. </li><br/><li>)
+    // The previous patterns should catch most, but "text<br><ul>" -> "text<ul>" is good.
+    // "</ul><br>text" -> "</ul>text" is also good.
 
     // Remove leading/trailing line breaks and whitespace
     result = result.replace(/^(<br\b[^>]*>|\s)+/i, '');

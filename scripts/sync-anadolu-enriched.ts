@@ -1,9 +1,9 @@
 
 import fs from 'fs';
 import path from 'path';
-import { cleanHtml } from './utils/clean-html.js';
-import type { AppQuestion } from './utils/sync-core.js';
-import { normalizeTextForMap, saveQuestions, slugify } from './utils/sync-core.js';
+import { cleanHtml } from './utils/clean-html.ts';
+import type { AppQuestion } from './utils/sync-core.ts';
+import { normalizeTextForMap, saveQuestions, slugify } from './utils/sync-core.ts';
 
 // Configurations
 const PORTAL_ROOT = process.cwd();

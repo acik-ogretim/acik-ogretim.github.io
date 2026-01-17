@@ -940,7 +940,7 @@
   {
     "id": "3770879",
     "unitNumber": 1,
-    "text": "Aşağıdakilerden hangileri analizci karar vericinin özelliklerindendir?<br/><ol type=\"I\"><li>Başarı yönelimli</li><li>Yenilikçi</li><li>Destekleyici ve ikna edici</li><li>İyi bir iletişimci</li><li>Problem çözmekten hoşlanma</li></ol>",
+    "text": "Aşağıdakilerden hangileri analizci karar vericinin özelliklerindendir?<ol type=\"I\"><li>Başarı yönelimli</li><li>Yenilikçi</li><li>Destekleyici ve ikna edici</li><li>İyi bir iletişimci</li><li>Problem çözmekten hoşlanma</li></ol>",
     "correctAnswer": "E",
     "options": {
       "A": "I,II",
@@ -1374,7 +1374,7 @@
   {
     "id": "3770565",
     "unitNumber": 2,
-    "text": "<ol type=\"I\"> <li>İdeal ve eksi-ideal çözümlerin belirlenmesi</li> <li>Bastırılamayan çözümün hesaplanması</li> <li>Ağırlaştırılmış standart karar matrisinin oluşturulması</li> <li>Standart karar matrisinin oluşturulması</li> <li>Ayırma ölçüsünün hesaplanması</li> </ol> Hangisi/hangileri ideal çözüme benzerlik prensibine sahip tekniğin basamakları arasında yer alır?",
+    "text": "<ol type=\"I\"><li>İdeal ve eksi-ideal çözümlerin belirlenmesi</li><li>Bastırılamayan çözümün hesaplanması</li><li>Ağırlaştırılmış standart karar matrisinin oluşturulması</li><li>Standart karar matrisinin oluşturulması</li><li>Ayırma ölçüsünün hesaplanması</li></ol>Hangisi/hangileri ideal çözüme benzerlik prensibine sahip tekniğin basamakları arasında yer alır?",
     "correctAnswer": "D",
     "options": {
       "A": "I, II, III, IV ve V",
@@ -1775,7 +1775,7 @@
       "D": "Hedef belli bir değerin altında kalmak ise, hedef kısıtı ≤ olarak tanımlanır. (s<sub>i</sub><sup>+</sup>) değişkeninin sıfırdan büyük değer alması <em>istenmez</em>.",
       "E": "Hedef tam olarak belli bir değere ulaşmak ise, hedef kısıtı eşitlik şeklinde tanımlanır ve ne (s<sub>i</sub><sup>+</sup>) değişkeninin ne de (s<sub>i</sub><sup>-</sup>) değişkeninin sıfırdan büyük değer alması <em>istenmez</em>."
     },
-    "explanation": "Hedefin yapısına bağlı olarak sapma değişkenlerinin pozitif değer alması <em>istenebilir </em>veya <em>istenmeyebilir</em>. Hedef programlama yaklaşımında amaç fonksiyonu hedeflerin <em>istenmeyen yöndeki sapmaları toplamımın enküçüklenmesidir</em>. Üç farklı hedef yapısı söz konusudur;<br/><ul> <li><strong> Hedef belli bir değerin üzerine çıkmak ise</strong>, hedef kısıtı <strong>≥ </strong>olarak tanımlanır ve <em>s-i </em>değişkeninin pozitif değer alması <em>istenmez</em>.</li> <li><strong>Hedef belli bir değerin altında kalmak ise, </strong>hedef kısıtı ≤ olarak tanımlanır. <em>s+i </em>değişkeninin sıfırdan büyük değer alması <em>istenmez</em>.</li> </ul> • <strong>Hedef tam olarak belli bir değere ulaşmak ise, </strong>hedef kısıtı eşitlik şeklinde tanımlanır ve ne <em>s+i </em>değişkeninin ne de <em>s-i </em>değişkeninin sıfırdan büyük değer alması <em>istenmez</em>."
+    "explanation": "Hedefin yapısına bağlı olarak sapma değişkenlerinin pozitif değer alması <em>istenebilir </em>veya <em>istenmeyebilir</em>. Hedef programlama yaklaşımında amaç fonksiyonu hedeflerin <em>istenmeyen yöndeki sapmaları toplamımın enküçüklenmesidir</em>. Üç farklı hedef yapısı söz konusudur;<ul><li><strong> Hedef belli bir değerin üzerine çıkmak ise</strong>, hedef kısıtı <strong>≥ </strong>olarak tanımlanır ve <em>s-i </em>değişkeninin pozitif değer alması <em>istenmez</em>.</li><li><strong>Hedef belli bir değerin altında kalmak ise, </strong>hedef kısıtı ≤ olarak tanımlanır. <em>s+i </em>değişkeninin sıfırdan büyük değer alması <em>istenmez</em>.</li></ul>• <strong>Hedef tam olarak belli bir değere ulaşmak ise, </strong>hedef kısıtı eşitlik şeklinde tanımlanır ve ne <em>s+i </em>değişkeninin ne de <em>s-i </em>değişkeninin sıfırdan büyük değer alması <em>istenmez</em>."
   },
   {
     "id": "3770850",
@@ -1957,7 +1957,7 @@
       "D": "2x1 + 3x2 + 60 = 0",
       "E": "2x<sub>1</sub> + 3x<sub>2</sub> &lt; 60"
     },
-    "explanation": "Modelin açık yazımı sırasında LINGO formatında uyulması gereken yazım kuralları aşağıdaki gibidir:<br/><ul><li>Genel bir anlayış olarak modelin amaç fonksiyonu ilk satırda, kısıtlarda diğer satırlarda yazılmaktadır. Ancak LINGO’da bu bir zorunluluk değildir.</li><li>Bütün matematiksel ifadeler birbirinden ‘;’ işareti kullanılarak ayrılmalıdır. Sonuçta LINGO ‘;’ ile ayrılmış ifadeleri algılar.</li><li>LINGO MAX= veya MIN= ile başlayan satırı amaç fonksiyonu satırı olarak, diğer satırları ise kısıt olarak kabul eder. Her kısıtın yeni bir satırdan başlaması önerilir, kısıt sırasının önemi yoktur.</li><li>Değişken isimleri bir harf (A-Z) ile başlamalı ve en çok 32 karakter uzunluğunda olmalıdır.</li><li>Büyük ya da küçük harf kullanımları arasında fark yoktur. “TALEP” ve “talep” aynı değişken olarak kabul edilir.</li><li>Değişken ve parametreler arasında ‘*’ işaretinin olması gerekir. Örnek; ‘2x1+3x2’ ifadesi LINGO’da ‘2*x1+3*x2’ olarak yazılır.</li><li>≤ ve ≥ işaretleri LINGO’da &lt;= ve &gt;= olarak y</li></ul> 2*x1 + 3*x2 &gt; = 60"
+    "explanation": "Modelin açık yazımı sırasında LINGO formatında uyulması gereken yazım kuralları aşağıdaki gibidir:<ul><li>Genel bir anlayış olarak modelin amaç fonksiyonu ilk satırda, kısıtlarda diğer satırlarda yazılmaktadır. Ancak LINGO’da bu bir zorunluluk değildir.</li><li>Bütün matematiksel ifadeler birbirinden ‘;’ işareti kullanılarak ayrılmalıdır. Sonuçta LINGO ‘;’ ile ayrılmış ifadeleri algılar.</li><li>LINGO MAX= veya MIN= ile başlayan satırı amaç fonksiyonu satırı olarak, diğer satırları ise kısıt olarak kabul eder. Her kısıtın yeni bir satırdan başlaması önerilir, kısıt sırasının önemi yoktur.</li><li>Değişken isimleri bir harf (A-Z) ile başlamalı ve en çok 32 karakter uzunluğunda olmalıdır.</li><li>Büyük ya da küçük harf kullanımları arasında fark yoktur. “TALEP” ve “talep” aynı değişken olarak kabul edilir.</li><li>Değişken ve parametreler arasında ‘*’ işaretinin olması gerekir. Örnek; ‘2x1+3x2’ ifadesi LINGO’da ‘2*x1+3*x2’ olarak yazılır.</li><li>≤ ve ≥ işaretleri LINGO’da &lt;= ve &gt;= olarak y</li></ul> 2*x1 + 3*x2 &gt; = 60"
   },
   {
     "id": "3770291",
@@ -2153,7 +2153,7 @@
       "D": "bul ve değiştir",
       "E": "onay kutuları"
     },
-    "explanation": "bu özellikler şu şekilde sıralanabilir: <br/><ul><li>Excel çalışma sayfaları yapısı itibariyle veri girişi, güncellenmesi, değiştirilmesi, silinmesi ya da istenilen şekilde formatlanması gibi veri yönetim işlemlerinin gerçekleştirilmesine olanak sağlaması</li><li>Sıralama (Sort)</li><li>Otomatik/Gelişmiş Filtreleme (AutoFilter/Advanced Filter)</li><li>Özet Tablo (PivotTable)</li><li>Tablo (Table)</li><li>Bul ve Değiştir (Find and Replace)</li><li>Dış Veri Al (Get External Data)</li><li>Veritabanı İşlevleri (Database Functions)</li><li>Veri Doğrulama (Data Validation).</li></ul> onay kutuları"
+    "explanation": "bu özellikler şu şekilde sıralanabilir:<ul><li>Excel çalışma sayfaları yapısı itibariyle veri girişi, güncellenmesi, değiştirilmesi, silinmesi ya da istenilen şekilde formatlanması gibi veri yönetim işlemlerinin gerçekleştirilmesine olanak sağlaması</li><li>Sıralama (Sort)</li><li>Otomatik/Gelişmiş Filtreleme (AutoFilter/Advanced Filter)</li><li>Özet Tablo (PivotTable)</li><li>Tablo (Table)</li><li>Bul ve Değiştir (Find and Replace)</li><li>Dış Veri Al (Get External Data)</li><li>Veritabanı İşlevleri (Database Functions)</li><li>Veri Doğrulama (Data Validation).</li></ul> onay kutuları"
   },
   {
     "id": "3770399",
@@ -2167,7 +2167,7 @@
       "D": "Liste Kutusu ve Birleşik Giriş Kutusu",
       "E": "özet tablo oluşturma"
     },
-    "explanation": "bu özellikler şu şekilde özetlenebilir:<br/><ul><li>konuşma</li><li>Veri giriş ve Mesaj Kutuları</li><li>Excel Çalışma Sayfasının Hücre Yapısı</li><li>Liste Kutusu ve Birleşik Giriş Kutusu</li><li>Onay Kutuları ve Seçenek Düğmeleri</li><li>Etiketler ve Metin Kutusu</li><li>Hazır Form (Built-In Form)</li><li>Kullanıcı Formu</li></ul> özet tablo oluşturma"
+    "explanation": "bu özellikler şu şekilde özetlenebilir:<ul><li>konuşma</li><li>Veri giriş ve Mesaj Kutuları</li><li>Excel Çalışma Sayfasının Hücre Yapısı</li><li>Liste Kutusu ve Birleşik Giriş Kutusu</li><li>Onay Kutuları ve Seçenek Düğmeleri</li><li>Etiketler ve Metin Kutusu</li><li>Hazır Form (Built-In Form)</li><li>Kullanıcı Formu</li></ul> özet tablo oluşturma"
   },
   {
     "id": "3770406",
@@ -2256,7 +2256,7 @@
   {
     "id": "3770452",
     "unitNumber": 3,
-    "text": "<ol type=\"I\"> <li>KDS Mimarisini Oluşturma</li> <li>KDS Geliştirme Seçeneklerinin Değerlendirilmesi</li> <li>KDS’nin Bakımı ve Güncellenmesi</li> <li>KDS’yi Kurma, Test etme ve Kullanıma Sunma (Deployment)</li> <li>KDS’yi Planlama, Tasarlama ve Geçerliliğini Değerlendirme</li> </ol> Yukarıda KDS geliştirirken yerine getirilmesi gereken işlevler karışık olarak verilmiştir. Aşağıdakilerden hangisinde bu işlevler doğru sıralanmıştır?",
+    "text": "<ol type=\"I\"><li>KDS Mimarisini Oluşturma</li><li>KDS Geliştirme Seçeneklerinin Değerlendirilmesi</li><li>KDS’nin Bakımı ve Güncellenmesi</li><li>KDS’yi Kurma, Test etme ve Kullanıma Sunma (Deployment)</li><li>KDS’yi Planlama, Tasarlama ve Geçerliliğini Değerlendirme</li></ol>Yukarıda KDS geliştirirken yerine getirilmesi gereken işlevler karışık olarak verilmiştir. Aşağıdakilerden hangisinde bu işlevler doğru sıralanmıştır?",
     "correctAnswer": "D",
     "options": {
       "A": "I- II- III- IV- V",
@@ -2811,7 +2811,7 @@
       "D": "Maliyet genellikle çok yüksektir.",
       "E": "Karar vericinin probleme ilişkin yeni keşif ve analizler yapmasına fırsat vermez."
     },
-    "explanation": "KDS geliştirme sürecinin üçüncü adımı, karar vericinin kendi KDS’sini geliştirmesi yönünde sonuçlanırsa, bu tercih bazı avantajların yanı sıra bazı riskleri de içerecektir. Karar vericinin kendi KDS’sini geliştirmesinin avantajlarından bazıları şunlardır:<br/><ol> <li>Geliştirme süresi kısadır.</li> <li>KDS için ayrıntılı bir gerekçeler listesinin ve spesifikasyonlarının raporlanması ve sözleşme formatında hazırlanmasına gerek kalmaz.</li> <li>KDS geliştirmeye yönelik problemler azalır.</li> <li>Maliyet genellikle çok düşüktür.</li> <li>KDS’nin bakımı, güncellenmesi ve iyileştirilmesi süreçlerinin etkinliği karar vericinin kontrolü altındadır.</li> <li>Karar vericinin probleme ilişkin yeni keşif ve analizler yapmasına fırsat verir.</li> </ol> Belirtilen faydalarının yanı sıra, kişisel KDS geliştirmek bazı sakıncaları da yanında getirmektedir. Bunlardan bazıları şunlardır:<br/><ol> <li>KDS’nin sahip olduğu özelliklerin düzeyi ve kalitesi, karar vericinin bilgi sistemleri ve bilgisayar programlama konusundaki bilgi ve becerileri ile sınırlı olacaktır.</li> <li>Veri ve bilgi güvenliği konusunda eksikler olabilir.</li> <li>KDS’nin taşıdığı özelliklere, kullanımı ve bakımına ilişkin belgelendirmelerin eksik olma olasılığı vardır.</li> </ol>"
+    "explanation": "KDS geliştirme sürecinin üçüncü adımı, karar vericinin kendi KDS’sini geliştirmesi yönünde sonuçlanırsa, bu tercih bazı avantajların yanı sıra bazı riskleri de içerecektir. Karar vericinin kendi KDS’sini geliştirmesinin avantajlarından bazıları şunlardır:<ol><li>Geliştirme süresi kısadır.</li><li>KDS için ayrıntılı bir gerekçeler listesinin ve spesifikasyonlarının raporlanması ve sözleşme formatında hazırlanmasına gerek kalmaz.</li><li>KDS geliştirmeye yönelik problemler azalır.</li><li>Maliyet genellikle çok düşüktür.</li><li>KDS’nin bakımı, güncellenmesi ve iyileştirilmesi süreçlerinin etkinliği karar vericinin kontrolü altındadır.</li><li>Karar vericinin probleme ilişkin yeni keşif ve analizler yapmasına fırsat verir.</li></ol>Belirtilen faydalarının yanı sıra, kişisel KDS geliştirmek bazı sakıncaları da yanında getirmektedir. Bunlardan bazıları şunlardır:<ol><li>KDS’nin sahip olduğu özelliklerin düzeyi ve kalitesi, karar vericinin bilgi sistemleri ve bilgisayar programlama konusundaki bilgi ve becerileri ile sınırlı olacaktır.</li><li>Veri ve bilgi güvenliği konusunda eksikler olabilir.</li><li>KDS’nin taşıdığı özelliklere, kullanımı ve bakımına ilişkin belgelendirmelerin eksik olma olasılığı vardır.</li></ol>"
   },
   {
     "id": "3770855",
@@ -3278,7 +3278,7 @@
   {
     "id": "3770356",
     "unitNumber": 4,
-    "text": "Bütünleşik Planlama Modeli için Değişkenler ve Kısıtlarla ilgili aşağıda yer alan ifadelerden hangisi doğru <strong>değildir?</strong><br/><ol type=\"I\"><li>Amaç (değeri) hücresi, Toplam maliyettir. </li><li>Kullanılan fazla mesai süresi ≤ İzin verilen maksimum fazla mesai süresidir.</li><li>Üretim ≤ Kapasite</li><li>Üretimden sonra eldeki stok miktarı ≥ Talep</li><li> Üretimden sonra eldeki stok miktarı = Üretim miktarı</li></ol>",
+    "text": "Bütünleşik Planlama Modeli için Değişkenler ve Kısıtlarla ilgili aşağıda yer alan ifadelerden hangisi doğru <strong>değildir?</strong><ol type=\"I\"><li>Amaç (değeri) hücresi, Toplam maliyettir.</li><li>Kullanılan fazla mesai süresi ≤ İzin verilen maksimum fazla mesai süresidir.</li><li>Üretim ≤ Kapasite</li><li>Üretimden sonra eldeki stok miktarı ≥ Talep</li><li>Üretimden sonra eldeki stok miktarı = Üretim miktarı</li></ol>",
     "correctAnswer": "E",
     "options": {
       "A": "I",
@@ -3399,7 +3399,7 @@
       "D": "Kısıtlar için ekle butonunu kullanarak diyalog oluşturma",
       "E": "Değişken hücreleri kutusunu düzenle"
     },
-    "explanation": "<em>Çözücü Parametreleri </em>diyalog kutusunun ilgili bölümlerini sırasıyla şöyledir:<br/><ul> <li>Hedef ayarla hücre kutusunu düzenleme</li> <li>Değişken hücreleri kutusunu düzenle</li> <li>Kısıtlar için ekle butonunu kullanarak diyalog oluşturma</li> <li>Kısıtlanmamış değişkenleri pozitif yap kutucuğunu aktifleştirme</li> <li>Çözme yöntemini basit LP olarak belirleme</li> </ul> Dolayısıyla doğru cevap C' dir."
+    "explanation": "<em>Çözücü Parametreleri </em>diyalog kutusunun ilgili bölümlerini sırasıyla şöyledir:<ul><li>Hedef ayarla hücre kutusunu düzenleme</li><li>Değişken hücreleri kutusunu düzenle</li><li>Kısıtlar için ekle butonunu kullanarak diyalog oluşturma</li><li>Kısıtlanmamış değişkenleri pozitif yap kutucuğunu aktifleştirme</li><li>Çözme yöntemini basit LP olarak belirleme</li></ul>Dolayısıyla doğru cevap C' dir."
   },
   {
     "id": "3770620",
@@ -3614,7 +3614,7 @@
   {
     "id": "3770839",
     "unitNumber": 4,
-    "text": "Karar problemleri çözümlemesinin en iyilenmesinde kullanılan solver ile ilgili aşağıdaki ifadelerden hangileri doğrudur?<br/><ol type=\"I\"> <li>Amaç, \"hedef ayarla\" bölümüne tanımlanır.</li> <li>Karar değişkenleri, \"değişken hücreleri değiştirerek\" bölümüne tanımlanır.</li> <li>Excel programına eklenti olarak eklenen bir uygulamadır.</li> <li>Çözme yöntemi çeşitliliğine izin vermez.</li> <li>Yalnızca en büyükleme ya da en küçükleme amaç fonksiyonları kullanılabilir.</li> </ol>",
+    "text": "Karar problemleri çözümlemesinin en iyilenmesinde kullanılan solver ile ilgili aşağıdaki ifadelerden hangileri doğrudur?<ol type=\"I\"><li>Amaç, \"hedef ayarla\" bölümüne tanımlanır.</li><li>Karar değişkenleri, \"değişken hücreleri değiştirerek\" bölümüne tanımlanır.</li><li>Excel programına eklenti olarak eklenen bir uygulamadır.</li><li>Çözme yöntemi çeşitliliğine izin vermez.</li><li>Yalnızca en büyükleme ya da en küçükleme amaç fonksiyonları kullanılabilir.</li></ol>",
     "correctAnswer": "B",
     "options": {
       "A": "I-II",
@@ -3623,7 +3623,7 @@
       "D": "II-III-IV",
       "E": "III-IV-V"
     },
-    "explanation": "<ul> <li>Amaç, \"hedef ayarla\" bölümüne tanımlanır.</li> <li>Karar değişkenleri, \"değişken hücreleri değiştirerek\" bölümüne tanımlanır.</li> <li>Excel programına eklenti olarak eklenen bir uygulamadır. </li> <li>Çözme yöntemi çeşitliliğine izin verir. </li> <li>Amaç fonksiyonlarında, en büyükleme, en küçükleme ya da eşit değer uygulamaları kullanılabilir.</li> </ul> Yanıt B seçeneğidir."
+    "explanation": "<ul><li>Amaç, \"hedef ayarla\" bölümüne tanımlanır.</li><li>Karar değişkenleri, \"değişken hücreleri değiştirerek\" bölümüne tanımlanır.</li><li>Excel programına eklenti olarak eklenen bir uygulamadır.</li><li>Çözme yöntemi çeşitliliğine izin verir.</li><li>Amaç fonksiyonlarında, en büyükleme, en küçükleme ya da eşit değer uygulamaları kullanılabilir.</li></ul>Yanıt B seçeneğidir."
   },
   {
     "id": "3770840",
@@ -3642,7 +3642,7 @@
   {
     "id": "3770841",
     "unitNumber": 4,
-    "text": "Çok değişkenli bir modelin kurulması ve en iyilenmesi ile aşağıdakilerden hangileri yapılabilir?<br/><ol type=\"I\"> <li>Birden fazla kaynak kısıtı probleme dahil edilebilir.</li> <li>Duyarlılık analizleri yapılabilir.</li> <li>Toplu planlama modelleri yapılabilir</li> <li>Bütünleşik planlama modelleri yapılabilir</li> </ol>",
+    "text": "Çok değişkenli bir modelin kurulması ve en iyilenmesi ile aşağıdakilerden hangileri yapılabilir?<ol type=\"I\"><li>Birden fazla kaynak kısıtı probleme dahil edilebilir.</li><li>Duyarlılık analizleri yapılabilir.</li><li>Toplu planlama modelleri yapılabilir</li><li>Bütünleşik planlama modelleri yapılabilir</li></ol>",
     "correctAnswer": "E",
     "options": {
       "A": "I-II",
@@ -3992,7 +3992,7 @@
   {
     "id": "3770273",
     "unitNumber": 5,
-    "text": "Aşağıdaki seçeneklerden hangisinde makro kaydetmenin standart satırları doğru olarak verilmiştir?<br/><ol><li>Sub Benim Makrom()</li><li>BenimMakrom Makro</li><li>'AOF YBS402 U DR.ATLAS 11.TEMMUZ.2023</li><li>SolverReset</li><li>SolverOk SetCell:=</li></ol>",
+    "text": "Aşağıdaki seçeneklerden hangisinde makro kaydetmenin standart satırları doğru olarak verilmiştir?<ol><li>Sub Benim Makrom()</li><li>BenimMakrom Makro</li><li>'AOF YBS402 U DR.ATLAS 11.TEMMUZ.2023</li><li>SolverReset</li><li>SolverOk SetCell:=</li></ol>",
     "correctAnswer": "A",
     "options": {
       "A": "1,2,3",
@@ -4841,7 +4841,7 @@
       "D": "Türev ve dışbükeylik gerektirmeyen stokastik sezgisel yöntemlerin yaygınlaşması",
       "E": "Matematiksel modellerin otomatik olarak kurulabilmesi konusundaki gelişmeler"
     },
-    "explanation": "Gerçek-yaşam problemleri açısından, optimizasyona eniyi çözümü garanti eden yöntemler bağlamında bakıldığında dikkate değer sınırlamalar vardır. Bunlardan bazıları aşağıda ifade edilmiştir.<br/><ul> <li>Klasik optimizasyon matematiksel modellemeyi gerektirir ve modelleme zaman alıcıdır, i</li> <li>Modellerin güncel parametrelerle kullanılması zorunluluğu bazen aşılması güç bir engel olabilmektedir,</li> <li>Bazı yerel eniyileme yöntemleri türevlenebilirlik ve dışbükey (convex) çözüm uzayına sahip olma gibi bazı koşulların yerine gelmesine ihtiyaç duymaktadırlar,</li> <li>Karar problemlerinin önemli bir kısmı tamsayılı ve kombinatoriyal problemler olup, dışbükeylik ve türevlenebilirlik özelliklerinin sağladığı ayrıcalıklara sahip değildirler,</li> <li>Birden fazla çelişen amaç olduğunda, karar vericilerin doğrudan veya dolaylı etkileşimi optimizasyon için şarttır,</li> <li>Bazen küçük, genellikle de orta veya büyük boyutlu problemleri kabul edilebilir zaman pencerelerinde çözebilecek algoritmalara sahip az sayıda problem vardır.</li> </ul>"
+    "explanation": "Gerçek-yaşam problemleri açısından, optimizasyona eniyi çözümü garanti eden yöntemler bağlamında bakıldığında dikkate değer sınırlamalar vardır. Bunlardan bazıları aşağıda ifade edilmiştir.<ul><li>Klasik optimizasyon matematiksel modellemeyi gerektirir ve modelleme zaman alıcıdır, i</li><li>Modellerin güncel parametrelerle kullanılması zorunluluğu bazen aşılması güç bir engel olabilmektedir,</li><li>Bazı yerel eniyileme yöntemleri türevlenebilirlik ve dışbükey (convex) çözüm uzayına sahip olma gibi bazı koşulların yerine gelmesine ihtiyaç duymaktadırlar,</li><li>Karar problemlerinin önemli bir kısmı tamsayılı ve kombinatoriyal problemler olup, dışbükeylik ve türevlenebilirlik özelliklerinin sağladığı ayrıcalıklara sahip değildirler,</li><li>Birden fazla çelişen amaç olduğunda, karar vericilerin doğrudan veya dolaylı etkileşimi optimizasyon için şarttır,</li><li>Bazen küçük, genellikle de orta veya büyük boyutlu problemleri kabul edilebilir zaman pencerelerinde çözebilecek algoritmalara sahip az sayıda problem vardır.</li></ul>"
   },
   {
     "id": "3770969",
@@ -4855,7 +4855,7 @@
       "D": "Optimizasyon-yönelimli karar destek sistemlerinin karşılıklı etkileşimi desteklemesi ile insan-deneyiminin çözüme katkısının önünün açılması",
       "E": "Bazı yerel eniyileme yöntemleri türevlenebilirlik ve dışbükey (convex) çözüm uzayına sahip olma gibi bazı koşulların yerine gelmesine ihtiyaç duymaktadırlar."
     },
-    "explanation": "Gerçek-yaşam problemleri açısından, optimizasyona eniyi çözümü garanti eden yöntemler bağlamında bakıldığında dikkate değer sınırlamalar vardır. Bu sınırlamaların her birinde umut verici ve kullanımını yüreklendiren gelişmeler de yok değildir. Bu gelişmeler,<br/><ul> <li>Matematiksel modellerin otomatik olarak kurulabilmesi konusundaki gelişmeler,</li> <li>İşletme analitiği, veri ambarı ve veri marketi yaklaşımlarının sunduğu betimsel ve kestirimci bilgilerden yararlanarak parametrelerin belirlenmesi konusundaki gelişmeler,</li> <li>Türev ve dışbükeylik gerektirmeyen stokastik sezgisel yöntemlerin yaygınlaşması,</li> <li>Tamsayılı ve kombinatoryel problemlere özel modelleme ve çözümleme yaklaşımlarının ortaya çıkması,</li> <li>Optimizasyon-yönelimli karar destek sistemlerinin karşılıklı etkileşimi desteklemesi ile insan-deneyiminin çözüme katkısının önünün açılması,</li> <li>Değişik boyutlardaki problemlerin stokastik sezgisel yöntemlerle çözülmesinde elde edilen başarılar.</li> </ul>"
+    "explanation": "Gerçek-yaşam problemleri açısından, optimizasyona eniyi çözümü garanti eden yöntemler bağlamında bakıldığında dikkate değer sınırlamalar vardır. Bu sınırlamaların her birinde umut verici ve kullanımını yüreklendiren gelişmeler de yok değildir. Bu gelişmeler,<ul><li>Matematiksel modellerin otomatik olarak kurulabilmesi konusundaki gelişmeler,</li><li>İşletme analitiği, veri ambarı ve veri marketi yaklaşımlarının sunduğu betimsel ve kestirimci bilgilerden yararlanarak parametrelerin belirlenmesi konusundaki gelişmeler,</li><li>Türev ve dışbükeylik gerektirmeyen stokastik sezgisel yöntemlerin yaygınlaşması,</li><li>Tamsayılı ve kombinatoryel problemlere özel modelleme ve çözümleme yaklaşımlarının ortaya çıkması,</li><li>Optimizasyon-yönelimli karar destek sistemlerinin karşılıklı etkileşimi desteklemesi ile insan-deneyiminin çözüme katkısının önünün açılması,</li><li>Değişik boyutlardaki problemlerin stokastik sezgisel yöntemlerle çözülmesinde elde edilen başarılar.</li></ul>"
   },
   {
     "id": "3770970",
@@ -4874,7 +4874,7 @@
   {
     "id": "3770971",
     "unitNumber": 5,
-    "text": "<ol type=\"I\"> <li>Karar vericilerin öncelik ve tercihlerinin zamanla değişmesi</li> <li>Çözümlerin farklı varsayımlar altında duyarlılıklarının incelenmesi</li> <li>Bazı bilgi ve parametrelerdeki belirsizliğin içerdiği riskin analizi</li> <li>Karar vericilerin kendi kararlarının geçerliliğini ve uygunluğunu görme arzusu</li> </ol> Yukarıdakilerden hangileri bir işletmenin optimizasyon-yönelimli karar destek sistemlerinden (OKDS) etkili bir şekilde yararlanabileceği durumlar arasında yeralır?",
+    "text": "<ol type=\"I\"><li>Karar vericilerin öncelik ve tercihlerinin zamanla değişmesi</li><li>Çözümlerin farklı varsayımlar altında duyarlılıklarının incelenmesi</li><li>Bazı bilgi ve parametrelerdeki belirsizliğin içerdiği riskin analizi</li><li>Karar vericilerin kendi kararlarının geçerliliğini ve uygunluğunu görme arzusu</li></ol>Yukarıdakilerden hangileri bir işletmenin optimizasyon-yönelimli karar destek sistemlerinden (OKDS) etkili bir şekilde yararlanabileceği durumlar arasında yeralır?",
     "correctAnswer": "E",
     "options": {
       "A": "Yalnız I",
@@ -4883,7 +4883,7 @@
       "D": "I, II, IV",
       "E": "I, II, III, IV"
     },
-    "explanation": "Bir işletmenin OKDS’den etkili bir şekilde yararlanabileceği bazı durumlar şunlardır:<br/><ol> <li>İşletmelerin kurumsal amaçları konusunda farklı departmanların anlayışlarının farklı olması ve bu farklı amaçlar açısından problemin analizine ve çözümün duyarlılığına ihtiyaç duyulması,</li> <li>Karar vericilerin öncelik ve tercihlerinin zamanla değişmesi,</li> <li>Rekabet karşısında işletmenin stratejik yönelimlerindeki değişimin kararlara yansıtılması,</li> <li>Modele yansıtılan gerçeklerin niceliksel olması; niteliksel gerçeklerin modellerde yer almaması veya son derece sınırlı yer bulması,</li> <li>Çözümlerin farklı varsayımlar altında duyarlılıklarının incelenmesi,</li> <li>Bazı bilgi ve parametrelerdeki belirsizliğin içerdiği riskin analizi,</li> <li>Karar vericilerin kendi kararlarının geçerliliğini ve uygunluğunu görme arzusu,</li> <li>Kontrol dışı etmenlerin veya rakiplerin olası hamlelerine karşı alternatif planların oluşturulması.</li> </ol>"
+    "explanation": "Bir işletmenin OKDS’den etkili bir şekilde yararlanabileceği bazı durumlar şunlardır:<ol><li>İşletmelerin kurumsal amaçları konusunda farklı departmanların anlayışlarının farklı olması ve bu farklı amaçlar açısından problemin analizine ve çözümün duyarlılığına ihtiyaç duyulması,</li><li>Karar vericilerin öncelik ve tercihlerinin zamanla değişmesi,</li><li>Rekabet karşısında işletmenin stratejik yönelimlerindeki değişimin kararlara yansıtılması,</li><li>Modele yansıtılan gerçeklerin niceliksel olması; niteliksel gerçeklerin modellerde yer almaması veya son derece sınırlı yer bulması,</li><li>Çözümlerin farklı varsayımlar altında duyarlılıklarının incelenmesi,</li><li>Bazı bilgi ve parametrelerdeki belirsizliğin içerdiği riskin analizi,</li><li>Karar vericilerin kendi kararlarının geçerliliğini ve uygunluğunu görme arzusu,</li><li>Kontrol dışı etmenlerin veya rakiplerin olası hamlelerine karşı alternatif planların oluşturulması.</li></ol>"
   },
   {
     "id": "3770972",
@@ -4897,7 +4897,7 @@
       "D": "Optimizasyon modelinin yeterince iyi tanımlanamaması",
       "E": "Modellerin çözülmesinde karşılaşılan güçlükler"
     },
-    "explanation": "Karar analitiğinin en üst düzeyde prestijli konumu, yanında aşılması gereken güçlükleri de beraberinde getirmektedir. Karar analitiğinin gerçekleşmesi ancak aşağıdaki güçlüklerin aşılmasıyla mümkün olabilir:<br/><ol> <li>Optimizasyon problemlerinin modellenmesinde karşılaşılan güçlükler,</li> <li>Modellerin çözülmesinde karşılaşılan güçlükler,</li> <li>Model için gerekli verilerin bulunması ve modelle ilişkilendirilmesinde karşılaşılan güçlükler,</li> <li>Modellerin manipülasyonunun analitik bir çevikliği olmaması,</li> <li>Karar vericiyi analitikle buluşturacak etkili sistemlerin yokluğu.</li> </ol>"
+    "explanation": "Karar analitiğinin en üst düzeyde prestijli konumu, yanında aşılması gereken güçlükleri de beraberinde getirmektedir. Karar analitiğinin gerçekleşmesi ancak aşağıdaki güçlüklerin aşılmasıyla mümkün olabilir:<ol><li>Optimizasyon problemlerinin modellenmesinde karşılaşılan güçlükler,</li><li>Modellerin çözülmesinde karşılaşılan güçlükler,</li><li>Model için gerekli verilerin bulunması ve modelle ilişkilendirilmesinde karşılaşılan güçlükler,</li><li>Modellerin manipülasyonunun analitik bir çevikliği olmaması,</li><li>Karar vericiyi analitikle buluşturacak etkili sistemlerin yokluğu.</li></ol>"
   },
   {
     "id": "3770973",
@@ -4911,12 +4911,12 @@
       "D": "Hangi eylemler gerekli?",
       "E": "Ne oldu?"
     },
-    "explanation": "Karar analitiği’nin yanıt aradığı sorular;<br/><ul> <li>Belirsizliğin etkilerini gözeterek en iyi sonuca nasıl ulaşabiliriz?</li> <li>Değişkenliğin etkilerini gözeterek en iyi sonuca nasıl ulaşabiliriz?</li> <li>En iyi sonuca nasıl ulaşabiliriz?</li> </ul>"
+    "explanation": "Karar analitiği’nin yanıt aradığı sorular;<ul><li>Belirsizliğin etkilerini gözeterek en iyi sonuca nasıl ulaşabiliriz?</li><li>Değişkenliğin etkilerini gözeterek en iyi sonuca nasıl ulaşabiliriz?</li><li>En iyi sonuca nasıl ulaşabiliriz?</li></ul>"
   },
   {
     "id": "3770974",
     "unitNumber": 5,
-    "text": "<ol type=\"I\"> <li>Doğrusal olmayan programlar için sunduğu General Reduced Gradient algoritması olması</li> <li>Her tür model için kullanılabilecek olan evrimsel algoritma desteği sunması</li> <li>Makrolarla hızlandırılmış bir Visual Basic for Applications nesne tabanlı programlama desteği sunması</li> <li>ActiveX denetim araçlarının sunduğu arayüz bileşenleri model yönetimi aracı olması</li> </ol> Yukarıdakilerden hangileri Excel VBA’nın sunduğu olanaklar arasında yer almaktadır?",
+    "text": "<ol type=\"I\"><li>Doğrusal olmayan programlar için sunduğu General Reduced Gradient algoritması olması</li><li>Her tür model için kullanılabilecek olan evrimsel algoritma desteği sunması</li><li>Makrolarla hızlandırılmış bir Visual Basic for Applications nesne tabanlı programlama desteği sunması</li><li>ActiveX denetim araçlarının sunduğu arayüz bileşenleri model yönetimi aracı olması</li></ol>Yukarıdakilerden hangileri Excel VBA’nın sunduğu olanaklar arasında yer almaktadır?",
     "correctAnswer": "E",
     "options": {
       "A": "Yalnız I",
@@ -4930,7 +4930,7 @@
   {
     "id": "3770975",
     "unitNumber": 5,
-    "text": "<ol type=\"I\"> <li>Ele alınan problemin incelenmesi</li> <li>Modelinin kurulması</li> <li>Model parametrelerinin düzenlenmesi</li> <li>modelin ve parametrelerinin güncellenmesi</li> </ol> Yukarıdakilerden hangileri optimizasyon-yönelimli karar destek sistemleri tasarımında takip edilen adımlar arasında yer almaktadır?",
+    "text": "<ol type=\"I\"><li>Ele alınan problemin incelenmesi</li><li>Modelinin kurulması</li><li>Model parametrelerinin düzenlenmesi</li><li>modelin ve parametrelerinin güncellenmesi</li></ol>Yukarıdakilerden hangileri optimizasyon-yönelimli karar destek sistemleri tasarımında takip edilen adımlar arasında yer almaktadır?",
     "correctAnswer": "E",
     "options": {
       "A": "Yalnız I",
@@ -5084,7 +5084,7 @@
   {
     "id": "3771033",
     "unitNumber": 5,
-    "text": "<ol type=\"I\"> <li>Yapay zeka</li> <li>Yöneylem araştırması</li> <li>Deterministik arama</li> <li>Tam Sayımlama</li> <li>Kısmi Sayımlama</li> </ol> <ol> <li> Tüm çözüm uzayını taramak zorunda kalmadan, yalnızca bir kısmını tarayarak çözüm bulan yaklaşımlardır.<br/></li> <li> Aynı girdi değerleri ve başlangıç koşulları ile her zaman aynı çözümü döndüren arama yöntemleri ve algoritmalar için kullanılır.<br/></li> <li> İnsan zekâsı düzeyinde problem çözme yeteneğine sahip olan bilgisayarlı sistemlerin geliştirilmesi çabalarını karşılayan bir terimdir.<br/></li> </ol> Yukarıdaki kavramlar ve tanımlarının doğru eşleştirilmesi aşağıdaki seçeneklerden hangisinde verilmiştir?",
+    "text": "<ol type=\"I\"><li>Yapay zeka</li><li>Yöneylem araştırması</li><li>Deterministik arama</li><li>Tam Sayımlama</li><li>Kısmi Sayımlama</li></ol><ol><li>Tüm çözüm uzayını taramak zorunda kalmadan, yalnızca bir kısmını tarayarak çözüm bulan yaklaşımlardır.</li><li>Aynı girdi değerleri ve başlangıç koşulları ile her zaman aynı çözümü döndüren arama yöntemleri ve algoritmalar için kullanılır.</li><li>İnsan zekâsı düzeyinde problem çözme yeteneğine sahip olan bilgisayarlı sistemlerin geliştirilmesi çabalarını karşılayan bir terimdir.</li></ol>Yukarıdaki kavramlar ve tanımlarının doğru eşleştirilmesi aşağıdaki seçeneklerden hangisinde verilmiştir?",
     "correctAnswer": "A",
     "options": {
       "A": "A-V, B-III, C-I",
@@ -5093,7 +5093,7 @@
       "D": "A-V, B-IV, C-I",
       "E": "A-IV, B-III, C-I"
     },
-    "explanation": "<ul> <li> Tüm çözüm uzayını taramak zorunda kalmadan, yalnızca bir kısmını tarayarak çözüm bulan yaklaşımlara kısmı sayımlama denir.<br/></li> <li> Aynı girdi değerleri ve başlangıç koşulları ile her zaman aynı çözümü döndüren arama yöntemleri ve algoritmalar için kullanılan kavram deterministik aramadır.<br/></li> <li> İnsan zekâsı düzeyinde problem çözme yeteneğine sahip olan bilgisayarlı sistemlerin geliştirilmesi çabalarını karşılayan terim yapa zekadır.<br/></li> </ul>"
+    "explanation": "<ul><li>Tüm çözüm uzayını taramak zorunda kalmadan, yalnızca bir kısmını tarayarak çözüm bulan yaklaşımlara kısmı sayımlama denir.</li><li>Aynı girdi değerleri ve başlangıç koşulları ile her zaman aynı çözümü döndüren arama yöntemleri ve algoritmalar için kullanılan kavram deterministik aramadır.</li><li>İnsan zekâsı düzeyinde problem çözme yeteneğine sahip olan bilgisayarlı sistemlerin geliştirilmesi çabalarını karşılayan terim yapa zekadır.</li></ul>"
   },
   {
     "id": "3771034",
@@ -5126,7 +5126,7 @@
   {
     "id": "3771036",
     "unitNumber": 5,
-    "text": "<ol type=\"I\"> <li>Rekabet gücüne katkısı</li> <li>Karmaşık karar problemlerini çözmesi</li> <li>Betimsel analitik özelliklerini kullanması</li> <li>Geliri enbüyüklerken maliyeti enküçüklemeyi göz ardı etmesi</li> <li>Kestirimci analitik özelliklerini diğer analitik türlerine devretmesi</li> </ol> Yukarıdakilerden hangileri karar analitiğinin işletme analitiğinin en üst basamağında yer almasını açıklamak için kullanılabilir?",
+    "text": "<ol type=\"I\"><li>Rekabet gücüne katkısı</li><li>Karmaşık karar problemlerini çözmesi</li><li>Betimsel analitik özelliklerini kullanması</li><li>Geliri enbüyüklerken maliyeti enküçüklemeyi göz ardı etmesi</li><li>Kestirimci analitik özelliklerini diğer analitik türlerine devretmesi</li></ol>Yukarıdakilerden hangileri karar analitiğinin işletme analitiğinin en üst basamağında yer almasını açıklamak için kullanılabilir?",
     "correctAnswer": "D",
     "options": {
       "A": "IV-V",
@@ -5140,7 +5140,7 @@
   {
     "id": "3771037",
     "unitNumber": 5,
-    "text": "<ol type=\"I\"> <li>Optimizasyon problemlerinin modellenmesinde karşılaşılan güçlükler,</li> <li>Modellerin çözülmesinde karşılaşılan güçlükler,</li> <li>Model için gerekli verilerin bulunması ve modelle ilişkilendirilmesinde karşılaşılan güçlükler,</li> <li>Modellerin manipülasyonunun analitik bir çevikliği olmaması,</li> <li>Karar vericiyi analitikle buluşturacak etkili sistemlerin yokluğu,</li> </ol> Yukarıda karar analitiğinin gerçekleşmesi için aşması gereken güçlükler sıralanmıştır. Bu güçlükler aşılırken hangileri işlem tablolarının model yönetim özelliklerinden faydalanmaktadır?",
+    "text": "<ol type=\"I\"><li>Optimizasyon problemlerinin modellenmesinde karşılaşılan güçlükler,</li><li>Modellerin çözülmesinde karşılaşılan güçlükler,</li><li>Model için gerekli verilerin bulunması ve modelle ilişkilendirilmesinde karşılaşılan güçlükler,</li><li>Modellerin manipülasyonunun analitik bir çevikliği olmaması,</li><li>Karar vericiyi analitikle buluşturacak etkili sistemlerin yokluğu,</li></ol>Yukarıda karar analitiğinin gerçekleşmesi için aşması gereken güçlükler sıralanmıştır. Bu güçlükler aşılırken hangileri işlem tablolarının model yönetim özelliklerinden faydalanmaktadır?",
     "correctAnswer": "E",
     "options": {
       "A": "I-III",
@@ -5154,7 +5154,7 @@
   {
     "id": "3771038",
     "unitNumber": 5,
-    "text": "<ol type=\"I\"> <li>Çözücü</li> <li>Ad yöneticisi</li> <li>ActiveX denetim araçları</li> <li>Makrolar ve VBA</li> <li>Dilimleyici</li> </ol> Excel ile OKDS geliştirilirken yukarıdaki araçlardan hangileri kullanılır?",
+    "text": "<ol type=\"I\"><li>Çözücü</li><li>Ad yöneticisi</li><li>ActiveX denetim araçları</li><li>Makrolar ve VBA</li><li>Dilimleyici</li></ol>Excel ile OKDS geliştirilirken yukarıdaki araçlardan hangileri kullanılır?",
     "correctAnswer": "A",
     "options": {
       "A": "I-II-III-IV",
@@ -5555,7 +5555,7 @@
       "D": "Çevrimiçi kayıt işleme",
       "E": "Veri sunumu"
     },
-    "explanation": "Kurumsal raporlama sistemlerinin bileşenleri, her işletme için farklılık göstermekle beraber en yaygın olanları şunlardır:<br/><ul> <li>Çevrimiçi kayıt işleme (online transaction processing-OLTP): İşletme faaliyetlerine ilişkin gerçek kayıtlarının anında kurumsal veritabanlarına aktarılması ve saklanmasıdır. Kurumsal kaynak planlama sistemleri, POS (Point-of-Sale) sistemler, web sunucuları, RFID okuyucular OLTP örnekleridir.</li> <li>Veri sunumu: İşletme veritabanlarından bilgileri raporlama sistemine aktarmakla yükümlü sistemdir.</li> <li>Veri göçerimi (extract, transform, load-ETL): Bu aşamada verilerin kalite ve formata uygunluğu denetlenir ve düzenlenir.</li> <li>Veri depolama (data storage): Veri ve metaverilerin (metadata) saklandığı yerdir. Bir işlemtablosu ortamı olabilmekle beraber genellikle bir veri ambarı veya veri marketi olarak kullanılan bir ilişkisel veritabanı yönetim sistemidir.</li> <li>İşletme Kuralları (business logic): İşletme kayıtlarından performans göstergelerinin, kurumsal karnelerin ve gösterge panellerinin nasıl oluşturulacağına ilişkin işletme kurallarının bütünüdür.</li> <li>Yayınlama (publication): Raporların çoğaltılması ve dağıtılmasını içeren sistemdir.</li> <li>Güvence: Raporlama sistemi doğru bilginin, doğru yerde ve doğru zamanda olacağını garantilemelidir.</li> </ul> Dolayısıyla doğru cevap A'dır."
+    "explanation": "Kurumsal raporlama sistemlerinin bileşenleri, her işletme için farklılık göstermekle beraber en yaygın olanları şunlardır:<ul><li>Çevrimiçi kayıt işleme (online transaction processing-OLTP): İşletme faaliyetlerine ilişkin gerçek kayıtlarının anında kurumsal veritabanlarına aktarılması ve saklanmasıdır. Kurumsal kaynak planlama sistemleri, POS (Point-of-Sale) sistemler, web sunucuları, RFID okuyucular OLTP örnekleridir.</li><li>Veri sunumu: İşletme veritabanlarından bilgileri raporlama sistemine aktarmakla yükümlü sistemdir.</li><li>Veri göçerimi (extract, transform, load-ETL): Bu aşamada verilerin kalite ve formata uygunluğu denetlenir ve düzenlenir.</li><li>Veri depolama (data storage): Veri ve metaverilerin (metadata) saklandığı yerdir. Bir işlemtablosu ortamı olabilmekle beraber genellikle bir veri ambarı veya veri marketi olarak kullanılan bir ilişkisel veritabanı yönetim sistemidir.</li><li>İşletme Kuralları (business logic): İşletme kayıtlarından performans göstergelerinin, kurumsal karnelerin ve gösterge panellerinin nasıl oluşturulacağına ilişkin işletme kurallarının bütünüdür.</li><li>Yayınlama (publication): Raporların çoğaltılması ve dağıtılmasını içeren sistemdir.</li><li>Güvence: Raporlama sistemi doğru bilginin, doğru yerde ve doğru zamanda olacağını garantilemelidir.</li></ul>Dolayısıyla doğru cevap A'dır."
   },
   {
     "id": "3770631",
@@ -5583,7 +5583,7 @@
       "D": "ActiveChart.ChartArea.Left",
       "E": "Sheets(“Transport”).ChartObjects.Count"
     },
-    "explanation": "Ünitede paylaşılan örnek incelendiğinde:<br/><ul> <li>Sheets(“Transport”).ChartObjects.Count ifadesi Transport isimli sayfada kaç adet grafik nesnesi olduğunu saymaktadır.</li> <li>Sheets(“Transport”).ChartObjects.Delete ifadesi çalışma sayfası üzerindeki grafik objelerinin tamamının silinmesini sağlamaktadır.</li> <li>Range(“U3:V23”).Select ifadesinin ardından ActiveSheet.Shapes.AddChart2(240,xlXYScatterLinesNoMarkers).Select ifadesinin gelmesi, XY dağılım grafiğinin bir türünün U3:V23 aralığını esas alarak oluşturulduğunu göstermektedir.</li> <li>ActiveChart.SetSourceData Source:=Range(“Transport!$U$3:$V$23”) ifadesinin bu aralığı kullanmış olmasının sebebi bir önceki Select ifadesinin seçimindendir.</li> <li>ActiveChart.Axes(xlCategory).MinimumScale = 25000 değerine set edilerek grafiğin 0 değerinden başlamasının önüne geçilmiştir.</li> <li><em>ActiveChart.ChartTitle.Text=“Z1-Z2 Pareto Grafigi” ifadesi grafiğin üzerine bir başlık eklemektedir.</em></li> <li>ActiveChart.ChartArea.Left = 0 ve ActiveChart.ChartArea.Top = 0 grafiğin, Excel ekranı üzerinde görüneceği konumu ayarlamaktadır. Dolayısıyla doğru cevap B'dir. </li> </ul>"
+    "explanation": "Ünitede paylaşılan örnek incelendiğinde:<ul><li>Sheets(“Transport”).ChartObjects.Count ifadesi Transport isimli sayfada kaç adet grafik nesnesi olduğunu saymaktadır.</li><li>Sheets(“Transport”).ChartObjects.Delete ifadesi çalışma sayfası üzerindeki grafik objelerinin tamamının silinmesini sağlamaktadır.</li><li>Range(“U3:V23”).Select ifadesinin ardından ActiveSheet.Shapes.AddChart2(240,xlXYScatterLinesNoMarkers).Select ifadesinin gelmesi, XY dağılım grafiğinin bir türünün U3:V23 aralığını esas alarak oluşturulduğunu göstermektedir.</li><li>ActiveChart.SetSourceData Source:=Range(“Transport!$U$3:$V$23”) ifadesinin bu aralığı kullanmış olmasının sebebi bir önceki Select ifadesinin seçimindendir.</li><li>ActiveChart.Axes(xlCategory).MinimumScale = 25000 değerine set edilerek grafiğin 0 değerinden başlamasının önüne geçilmiştir.</li><li><em>ActiveChart.ChartTitle.Text=“Z1-Z2 Pareto Grafigi” ifadesi grafiğin üzerine bir başlık eklemektedir.</em></li><li>ActiveChart.ChartArea.Left = 0 ve ActiveChart.ChartArea.Top = 0 grafiğin, Excel ekranı üzerinde görüneceği konumu ayarlamaktadır. Dolayısıyla doğru cevap B'dir.</li></ul>"
   },
   {
     "id": "3770633",
@@ -6064,7 +6064,7 @@
   {
     "id": "3770913",
     "unitNumber": 6,
-    "text": "Aşağıdakilerden hangisi ya da hangileri işlevlerine göre analitik türlerine örnektir?<br/><ol type=\"I\"> <li>Dijital analitik</li> <li>Karar analitik</li> <li>Finansal analitik</li> <li>Tanısal analitik</li> <li>Kestirimci analitik</li> </ol>",
+    "text": "Aşağıdakilerden hangisi ya da hangileri işlevlerine göre analitik türlerine örnektir?<ol type=\"I\"><li>Dijital analitik</li><li>Karar analitik</li><li>Finansal analitik</li><li>Tanısal analitik</li><li>Kestirimci analitik</li></ol>",
     "correctAnswer": "C",
     "options": {
       "A": "Yalnız II",
@@ -6073,7 +6073,7 @@
       "D": "I, III ve IV",
       "E": "I, II, III, IV ve V"
     },
-    "explanation": "İşlevlerine göre analitik türleri:<br/><ul> <li>Karar Analitik</li> <li>Kestirimci analitik</li> <li>Buşuşsal Analitik</li> <li>Tanısal Analitik</li> <li>Betimleyici Analitik</li> </ul>"
+    "explanation": "İşlevlerine göre analitik türleri:<ul><li>Karar Analitik</li><li>Kestirimci analitik</li><li>Buşuşsal Analitik</li><li>Tanısal Analitik</li><li>Betimleyici Analitik</li></ul>"
   },
   {
     "id": "3770914",
@@ -6092,7 +6092,7 @@
   {
     "id": "3770915",
     "unitNumber": 6,
-    "text": "Aşağıdakilerden hangisi ya da hangileri kurumsal raporların en yaygın kullanım amaçları arasında gösterilebilir?<br/><ol type=\"I\"> <li>Tüm departmanların beklenen performansta çalıştığından emin olmak,</li> <li>Durumbilgisi gereksinimini gidermek,</li> <li>Analiz ve araştırmaların sonuçlarını sunmak,</li> <li>Yetkilileri bir konuda harekete geçmeye ikna etmek, </li> <li>Kurumsal bir bellek oluşturmak. </li> </ol>",
+    "text": "Aşağıdakilerden hangisi ya da hangileri kurumsal raporların en yaygın kullanım amaçları arasında gösterilebilir?<ol type=\"I\"><li>Tüm departmanların beklenen performansta çalıştığından emin olmak,</li><li>Durumbilgisi gereksinimini gidermek,</li><li>Analiz ve araştırmaların sonuçlarını sunmak,</li><li>Yetkilileri bir konuda harekete geçmeye ikna etmek,</li><li>Kurumsal bir bellek oluşturmak.</li></ol>",
     "correctAnswer": "E",
     "options": {
       "A": "Yalnız V",
@@ -6101,7 +6101,7 @@
       "D": "I, III, IV ve V",
       "E": "I, II, III, IV ve V"
     },
-    "explanation": "Raporların en yaygın kullanım amaçları arasında şunlar sayılabilir:<br/><ul> <li>Tüm departmanların beklenen performansta çalıştığından emin olmak,</li> <li>Durumbilgisi gereksinimini gidermek,</li> <li>Analiz ve araştırmaların sonuçlarını sunmak,</li> <li>Yetkilileri bir konuda harekete geçmeye ikna etmek, </li> <li>Kurumsal bir bellek oluşturmak.</li> </ul>"
+    "explanation": "Raporların en yaygın kullanım amaçları arasında şunlar sayılabilir:<ul><li>Tüm departmanların beklenen performansta çalıştığından emin olmak,</li><li>Durumbilgisi gereksinimini gidermek,</li><li>Analiz ve araştırmaların sonuçlarını sunmak,</li><li>Yetkilileri bir konuda harekete geçmeye ikna etmek,</li><li>Kurumsal bir bellek oluşturmak.</li></ul>"
   },
   {
     "id": "3770916",
@@ -6115,7 +6115,7 @@
       "D": "Yayınlama",
       "E": "Güvence"
     },
-    "explanation": "Kurumsal raporlama sistemlerinin bileşenleri, her işletme için farklılık göstermekle beraber en yaygın olanları şunlardır:<br/><ul> <li>Çevrimiçi kayıt işleme (online transaction processing-OLTP)</li> <li>Veri sunumu</li> <li>Veri göçerimi (extract, transform, load-ETL)</li> <li>Veri depolama (data storage)</li> <li>İşletme Kuralları (business logic)</li> <li>Yayınlama (publication)</li> <li>Güvence</li> </ul>"
+    "explanation": "Kurumsal raporlama sistemlerinin bileşenleri, her işletme için farklılık göstermekle beraber en yaygın olanları şunlardır:<ul><li>Çevrimiçi kayıt işleme (online transaction processing-OLTP)</li><li>Veri sunumu</li><li>Veri göçerimi (extract, transform, load-ETL)</li><li>Veri depolama (data storage)</li><li>İşletme Kuralları (business logic)</li><li>Yayınlama (publication)</li><li>Güvence</li></ul>"
   },
   {
     "id": "3770917",
@@ -6129,7 +6129,7 @@
       "D": "Bu aşamada verilerin kalite ve formata uygunluğu denetlenir ve düzenlenir.",
       "E": "Bir işlemtablosu ortamı olabilmekle beraber genellikle bir veri ambarı veya veri marketi olarak kullanılan bir ilişkisel veritabanı yönetim sistemidir."
     },
-    "explanation": "<ul> <li>Çevrimiçi kayıt işleme (online transaction processing-OLTP): İşletme faaliyetlerine ilişkin gerçek kayıtlarının anında kurumsal veritabanlarına aktarılması ve saklanmasıdır. Kurumsal kaynak planlama sistemleri, POS (Point-of-Sale) sistemler, web sunucuları, RFID okuyucular OLTP örnekleridir.</li> <li>Veri sunumu: İşletme veritabanlarından bilgileri raporlama sistemine aktarmakla yükümlü sistemdir.</li> <li>Veri göçerimi (extract, transform, load-ETL): Bu aşamada verilerin kalite ve formata uygunluğu denetlenir ve düzenlenir. </li> <li>Veri depolama (data storage): Veri ve metaverilerin (metadata) saklandığı yerdir. Bir işlemtablosu ortamı olabilmekle beraber genellikle bir veri ambarı veya veri marketi olarak kullanılan bir ilişkisel veritabanı yönetim sistemidir.</li> <li>İşletme Kuralları (business logic): İşletme kayıtlarından performans göstergelerinin, kurumsal karnelerin ve gösterge panellerinin nasıl oluşturulacağına ilişkin işletme kurallarının bütünüdür.</li> <li>Yayınlama (publication): Raporların çoğaltılması ve dağıtılmasını içeren sistemdir. </li> <li>Güvence: Raporlama sistemi doğru bilginin, doğru yerde ve doğru zamanda olacağını garantilemelidir.</li> </ul>"
+    "explanation": "<ul><li>Çevrimiçi kayıt işleme (online transaction processing-OLTP): İşletme faaliyetlerine ilişkin gerçek kayıtlarının anında kurumsal veritabanlarına aktarılması ve saklanmasıdır. Kurumsal kaynak planlama sistemleri, POS (Point-of-Sale) sistemler, web sunucuları, RFID okuyucular OLTP örnekleridir.</li><li>Veri sunumu: İşletme veritabanlarından bilgileri raporlama sistemine aktarmakla yükümlü sistemdir.</li><li>Veri göçerimi (extract, transform, load-ETL): Bu aşamada verilerin kalite ve formata uygunluğu denetlenir ve düzenlenir.</li><li>Veri depolama (data storage): Veri ve metaverilerin (metadata) saklandığı yerdir. Bir işlemtablosu ortamı olabilmekle beraber genellikle bir veri ambarı veya veri marketi olarak kullanılan bir ilişkisel veritabanı yönetim sistemidir.</li><li>İşletme Kuralları (business logic): İşletme kayıtlarından performans göstergelerinin, kurumsal karnelerin ve gösterge panellerinin nasıl oluşturulacağına ilişkin işletme kurallarının bütünüdür.</li><li>Yayınlama (publication): Raporların çoğaltılması ve dağıtılmasını içeren sistemdir.</li><li>Güvence: Raporlama sistemi doğru bilginin, doğru yerde ve doğru zamanda olacağını garantilemelidir.</li></ul>"
   },
   {
     "id": "3770918",
@@ -6157,7 +6157,7 @@
       "D": "Yapay sinir ağları",
       "E": "Bulanık mantık"
     },
-    "explanation": "Kümelemede kullanılabilecek yöntemler aşağıdaki temel yöntemlerden bir veya birkaçının üzerine inşa edilmiş olabilir.<br/><ul> <li>Sezgisel ve meta-sezgisel yöntemler,</li> <li>İstatistiksel yöntemler (k-ortalamalar, k-medoids, k-mod vb) </li> <li>Optimal yöntemler,</li> <li>Yapay sinir ağları,</li> <li>Bulanık mantık,</li> <li>Genetik algoritmalar</li> </ul>"
+    "explanation": "Kümelemede kullanılabilecek yöntemler aşağıdaki temel yöntemlerden bir veya birkaçının üzerine inşa edilmiş olabilir.<ul><li>Sezgisel ve meta-sezgisel yöntemler,</li><li>İstatistiksel yöntemler (k-ortalamalar, k-medoids, k-mod vb)</li><li>Optimal yöntemler,</li><li>Yapay sinir ağları,</li><li>Bulanık mantık,</li><li>Genetik algoritmalar</li></ul>"
   },
   {
     "id": "3770920",
@@ -6171,7 +6171,7 @@
       "D": "Ölçeklenebilirlik",
       "E": "Yorumlanabilirlik"
     },
-    "explanation": "Yöntemler birbirleri ile karşılaştırılırken şu faktörlere dikkat edilir:<br/><ul> <li>Sınıflama doğruluğu: Kabaca örnek test veri setlerindeki doğru sınıflanmış veri yüzdesidir. Yapılan yanlış sınıflamaların sapma yüzdeleri de bu ölçüye yansıtılabilir.</li> <li>Hız: Sınıflandırma modeli veya algoritmasının çalışma süresidir. </li> <li>Gürbüzlük: Verilerin kirli ve eksik veriye sahip olması halinde doğru sınıflandırmanın yapılabilmesidir.</li> <li>Ölçeklenebilirlik: Farklı boyutlardaki veri setleri için benzer etkinlikle kullanılabilir olmasıdır. </li> <li>Yorumlanabilirlik: Yöntemin önerdiği sınıflamanın veya sınıflama modelinin anlaşılır olmasıdır.</li> </ul>"
+    "explanation": "Yöntemler birbirleri ile karşılaştırılırken şu faktörlere dikkat edilir:<ul><li>Sınıflama doğruluğu: Kabaca örnek test veri setlerindeki doğru sınıflanmış veri yüzdesidir. Yapılan yanlış sınıflamaların sapma yüzdeleri de bu ölçüye yansıtılabilir.</li><li>Hız: Sınıflandırma modeli veya algoritmasının çalışma süresidir.</li><li>Gürbüzlük: Verilerin kirli ve eksik veriye sahip olması halinde doğru sınıflandırmanın yapılabilmesidir.</li><li>Ölçeklenebilirlik: Farklı boyutlardaki veri setleri için benzer etkinlikle kullanılabilir olmasıdır.</li><li>Yorumlanabilirlik: Yöntemin önerdiği sınıflamanın veya sınıflama modelinin anlaşılır olmasıdır.</li></ul>"
   },
   {
     "id": "3770921",
@@ -6190,7 +6190,7 @@
   {
     "id": "3770922",
     "unitNumber": 6,
-    "text": "Aşağıdakilerden hangisi ya da hangileri sınıflandırma algoritması ve yaklaşımlarına örnektir?<br/><ol type=\"I\"> <li>İstatistiksel analiz </li> <li>Yapay sinir ağları </li> <li>Vaka-tabanlı akıl yürütme </li> <li>Bayes sınıflandırıcılar</li> <li>Genetik algoritmalar </li> <li>Kaba küme yaklaşımı.</li> </ol>",
+    "text": "Aşağıdakilerden hangisi ya da hangileri sınıflandırma algoritması ve yaklaşımlarına örnektir?<ol type=\"I\"><li>İstatistiksel analiz</li><li>Yapay sinir ağları</li><li>Vaka-tabanlı akıl yürütme</li><li>Bayes sınıflandırıcılar</li><li>Genetik algoritmalar</li><li>Kaba küme yaklaşımı.</li></ol>",
     "correctAnswer": "E",
     "options": {
       "A": "IV ve V",
@@ -6199,7 +6199,7 @@
       "D": "I, II, III, IV ve V",
       "E": "I, II, III, IV, V ve VI"
     },
-    "explanation": "Pek çok sınıflandırma algoritması ve yaklaşımı mevcut olup bunlardan bazıları şunlardır: <br/><ul> <li>Karar ağacı algoritmaları</li> <li>İstatistiksel analiz </li> <li>Yapay sinir ağları </li> <li>Vaka-tabanlı akıl yürütme (case-based reasoning) </li> <li>Bayes sınıflandırıcılar </li> <li>Genetik algoritmalar</li> <li>Kaba küme yaklaşımı.</li> </ul>"
+    "explanation": "Pek çok sınıflandırma algoritması ve yaklaşımı mevcut olup bunlardan bazıları şunlardır:<ul><li>Karar ağacı algoritmaları</li><li>İstatistiksel analiz</li><li>Yapay sinir ağları</li><li>Vaka-tabanlı akıl yürütme (case-based reasoning)</li><li>Bayes sınıflandırıcılar</li><li>Genetik algoritmalar</li><li>Kaba küme yaklaşımı.</li></ul>"
   },
   {
     "id": "3771013",
@@ -6218,7 +6218,7 @@
   {
     "id": "3771014",
     "unitNumber": 6,
-    "text": "<ol type=\"I\"> <li>Spor (sport) analitiği</li> <li>Görsel (visual) analitik</li> <li>Analog (Analog) analitiği</li> <li>Satış (sales) analitiği</li> <li>Veri (data) analitiği</li> </ol> Yukarıdakilerden hangisi/hangileri kullanım alanı ve amacına göre başlıca analitik sistemlerdendir?",
+    "text": "<ol type=\"I\"><li>Spor (sport) analitiği</li><li>Görsel (visual) analitik</li><li>Analog (Analog) analitiği</li><li>Satış (sales) analitiği</li><li>Veri (data) analitiği</li></ol>Yukarıdakilerden hangisi/hangileri kullanım alanı ve amacına göre başlıca analitik sistemlerdendir?",
     "correctAnswer": "B",
     "options": {
       "A": "II, III ve V",
@@ -6246,7 +6246,7 @@
   {
     "id": "3771016",
     "unitNumber": 6,
-    "text": "<ol type=\"I\"> <li>Her düzeydeki karar vericileri veri keşfetme yöntemlerinden ve analitik olanaklardan yararlandırmak üzere, kullanımı kolay ve web üzerinden karşılıklı etkileşimli olarak gerçek verilerle buluşturmak</li> <li>Karmaşık soruların yanıtları ile analitik çalışanların yeteneklerini buluşturmak</li> <li>Her türlü elektronik cihazdan (tabletler, akıllı telefonlar ve amaca yönelik tüm sayısal ortamlar) erişilebilir ve gerçek verileri kullanan analitik araçlar üzerinden işletme içi bilgi paylaşımı ve işbirliğini genişletmek</li> <li>Bilgi-işlem departmanlarından beklenen analizlerin çok daha kısa sürede gerçekleştirilmesini sağlayarak bilgi-işlem personelinin iş yükünü azaltmak</li> </ol> Yukarıdakilerden hangileri görsel analitik araçlarının sunduğu olanaklardandır?",
+    "text": "<ol type=\"I\"><li>Her düzeydeki karar vericileri veri keşfetme yöntemlerinden ve analitik olanaklardan yararlandırmak üzere, kullanımı kolay ve web üzerinden karşılıklı etkileşimli olarak gerçek verilerle buluşturmak</li><li>Karmaşık soruların yanıtları ile analitik çalışanların yeteneklerini buluşturmak</li><li>Her türlü elektronik cihazdan (tabletler, akıllı telefonlar ve amaca yönelik tüm sayısal ortamlar) erişilebilir ve gerçek verileri kullanan analitik araçlar üzerinden işletme içi bilgi paylaşımı ve işbirliğini genişletmek</li><li>Bilgi-işlem departmanlarından beklenen analizlerin çok daha kısa sürede gerçekleştirilmesini sağlayarak bilgi-işlem personelinin iş yükünü azaltmak</li></ol>Yukarıdakilerden hangileri görsel analitik araçlarının sunduğu olanaklardandır?",
     "correctAnswer": "D",
     "options": {
       "A": "I ve IV",
@@ -6288,7 +6288,7 @@
   {
     "id": "3771019",
     "unitNumber": 6,
-    "text": "<ol type=\"I\"> <li>Yapay sinir ağları ve Weibull analizinden yararlanılması</li> <li>Betimleyici istatistikler</li> <li>SQL sorguları</li> <li>Çevrimiçi analitik işleme (OLAP)</li> </ol> Yukarıdakilerden hangisi/hangileri yapılandırılmış veri madenciliğine örnek olarak verilebilir?",
+    "text": "<ol type=\"I\"><li>Yapay sinir ağları ve Weibull analizinden yararlanılması</li><li>Betimleyici istatistikler</li><li>SQL sorguları</li><li>Çevrimiçi analitik işleme (OLAP)</li></ol>Yukarıdakilerden hangisi/hangileri yapılandırılmış veri madenciliğine örnek olarak verilebilir?",
     "correctAnswer": "B",
     "options": {
       "A": "I, II, III ve IV",
@@ -6372,7 +6372,7 @@
   {
     "id": "3771025",
     "unitNumber": 6,
-    "text": "<ol type=\"i\"> <li>Veri arama</li> <li>Göstergeler</li> <li>Hesaplama</li> <li>Görselleştirme</li> <li>Raporlama</li> </ol> Yukarıdakilerden hangileri analiz araçlarındandır ?",
+    "text": "<ol type=\"i\"><li>Veri arama</li><li>Göstergeler</li><li>Hesaplama</li><li>Görselleştirme</li><li>Raporlama</li></ol>Yukarıdakilerden hangileri analiz araçlarındandır ?",
     "correctAnswer": "B",
     "options": {
       "A": "Hiçbiri",
@@ -6549,7 +6549,7 @@
       "D": "Yetkilileri bir konuda harekete geçmeye ikna etmek",
       "E": "Kurumsal bir bellek oluşturmak"
     },
-    "explanation": "Raporların en yaygın kullanım amaçları arasında şunlar sayılabilir:<br/><ul> <li>Tüm departmanların beklenen performansta çalıştığından emin olmak,</li> <li>Durumbilgisi gereksinimini gidermek,</li> <li>Analiz ve araştırmaların sonuçlarını sunmak,</li> <li>Yetkilileri bir konuda harekete geçmeye ikna etmek,</li> <li>Kurumsal bir bellek oluşturmak.</li> </ul>"
+    "explanation": "Raporların en yaygın kullanım amaçları arasında şunlar sayılabilir:<ul><li>Tüm departmanların beklenen performansta çalıştığından emin olmak,</li><li>Durumbilgisi gereksinimini gidermek,</li><li>Analiz ve araştırmaların sonuçlarını sunmak,</li><li>Yetkilileri bir konuda harekete geçmeye ikna etmek,</li><li>Kurumsal bir bellek oluşturmak.</li></ul>"
   },
   {
     "id": "3771058",
@@ -6619,7 +6619,7 @@
       "D": "Hız",
       "E": "Sınıflama doğruluğu"
     },
-    "explanation": "Yöntemler birbirleri ile karşılaştırılırken şu faktörlere dikkat edilir:<br/><ul> <li>Sınıflama doğruluğu: Kabaca örnek test veri setlerindeki doğru sınıflanmış veri yüzdesidir. Yapılan yanlış sınıflamaların sapma yüzdeleri de bu ölçüye yansıtılabilir.</li> <li>Hız: Sınıflandırma modeli veya algoritmasının çalışma süresidir.</li> <li>Gürbüzlük: Verilerin kirli ve eksik veriye sahip olması halinde doğru sınıflandırmanın yapılabilmesidir.</li> <li>Ölçeklenebilirlik: Farklı boyutlardaki veri setleri için benzer etkinlikle kullanılabilir olmasıdır.</li> <li>Yorumlanabilirlik: Yöntemin önerdiği sınıflamanın veya sınıflama modelinin anlaşılır olmasıdır.</li> </ul>"
+    "explanation": "Yöntemler birbirleri ile karşılaştırılırken şu faktörlere dikkat edilir:<ul><li>Sınıflama doğruluğu: Kabaca örnek test veri setlerindeki doğru sınıflanmış veri yüzdesidir. Yapılan yanlış sınıflamaların sapma yüzdeleri de bu ölçüye yansıtılabilir.</li><li>Hız: Sınıflandırma modeli veya algoritmasının çalışma süresidir.</li><li>Gürbüzlük: Verilerin kirli ve eksik veriye sahip olması halinde doğru sınıflandırmanın yapılabilmesidir.</li><li>Ölçeklenebilirlik: Farklı boyutlardaki veri setleri için benzer etkinlikle kullanılabilir olmasıdır.</li><li>Yorumlanabilirlik: Yöntemin önerdiği sınıflamanın veya sınıflama modelinin anlaşılır olmasıdır.</li></ul>"
   },
   {
     "id": "3770301",
@@ -7310,7 +7310,7 @@
   {
     "id": "3770933",
     "unitNumber": 7,
-    "text": "Karar vericiler ile ilgili aşağıdakilerden hangileri doğrudur?<br/><ol type=\"I\"> <li>Karar verici, yapılan öngörüler ve farklı senaryoların analizi ile gelecek için doğru kararlar vererek, işletmenin işlevlerini sürdürebilmesini sağlayabilir.</li> <li>Karar verici işlem tablolarının sahip olduğu benzetim araçlarını kullanabilir.</li> <li>Karar verici, geleceğe dönük planlama ve planların uygulamaya geçmesi sürecinde elindeki verileri kullanır.</li> <li>Karar verici vereceği sipariş ve buna bağlı yatırımları farklı senaryolar ile detaylı bir şekilde analiz eder.</li> <li>Karar vericiler rekabet etmeden uygun kararları şirket içinde uygularlar.</li> </ol>",
+    "text": "Karar vericiler ile ilgili aşağıdakilerden hangileri doğrudur?<ol type=\"I\"><li>Karar verici, yapılan öngörüler ve farklı senaryoların analizi ile gelecek için doğru kararlar vererek, işletmenin işlevlerini sürdürebilmesini sağlayabilir.</li><li>Karar verici işlem tablolarının sahip olduğu benzetim araçlarını kullanabilir.</li><li>Karar verici, geleceğe dönük planlama ve planların uygulamaya geçmesi sürecinde elindeki verileri kullanır.</li><li>Karar verici vereceği sipariş ve buna bağlı yatırımları farklı senaryolar ile detaylı bir şekilde analiz eder.</li><li>Karar vericiler rekabet etmeden uygun kararları şirket içinde uygularlar.</li></ol>",
     "correctAnswer": "A",
     "options": {
       "A": "I,II,III,IV",
@@ -7338,7 +7338,7 @@
   {
     "id": "3770935",
     "unitNumber": 7,
-    "text": "Tek-yönlü veri tablosu ve İki-yönlü veri tablosu ile ilgili aşağıdakilerden hangileri doğrudur?<br/><ol type=\"I\"> <li>Tek-yönlü veri tablosu, belirli bir amaç için oluşturulan formüldeki tek bir değişkenin değiştirilmesi sonucunda çıktı değerlerinin nasıl değiştiğini göstermektedir.</li> <li>İki-yönlü veri tablosu, oluşturulan formüldeki iki değişkenin farklı değerler alması durumunda çıktı değerlerinin nasıl değiştiğini görmek için kullanılmaktadır.</li> <li>Tek-yönlü veri tablosu,oluşturulan formüldeki iki değişkenin farklı değerler alması durumunda çıktı değerlerinin nasıl değiştiğini görmek için kullanılmaktadır.</li> </ol>",
+    "text": "Tek-yönlü veri tablosu ve İki-yönlü veri tablosu ile ilgili aşağıdakilerden hangileri doğrudur?<ol type=\"I\"><li>Tek-yönlü veri tablosu, belirli bir amaç için oluşturulan formüldeki tek bir değişkenin değiştirilmesi sonucunda çıktı değerlerinin nasıl değiştiğini göstermektedir.</li><li>İki-yönlü veri tablosu, oluşturulan formüldeki iki değişkenin farklı değerler alması durumunda çıktı değerlerinin nasıl değiştiğini görmek için kullanılmaktadır.</li><li>Tek-yönlü veri tablosu,oluşturulan formüldeki iki değişkenin farklı değerler alması durumunda çıktı değerlerinin nasıl değiştiğini görmek için kullanılmaktadır.</li></ol>",
     "correctAnswer": "B",
     "options": {
       "A": "II,III",
@@ -7352,7 +7352,7 @@
   {
     "id": "3770936",
     "unitNumber": 7,
-    "text": "Benzetim yaklaşım sütun grafiği için yapılması gerekenler ile ilgili aşağıdakilerden hangileri doğrudur?<br/><ol type=\"I\"> <li> İşlem tablosunda L21:M33 hücrelerini seçin.</li> <li>Ekle → Önerilen Grafikler adımından Kümelenmiş Sütun grafiğini seçin ve Tamam tuşunu tıklayın.</li> <li>Tasarım → Grafik Öğesi Ekle menüsündeki seçenekleri kullanarak gerekli bilgileri tabloya ilave edin.</li> <li>Çubuk grafiği, sipariş miktarı karar değişkenindeki değişiklikler karşısında ortalama kâr’ın hangi noktada en büyüklendiğini görselleştirmektedir.</li> <li>Çubuk grafiği, sipariş miktarı karar değişkenindeki değişiklikler karşısında ortalama kâr’ın angi noktada zarar oluşturduğunu düşük bir okunaklılıkla görselleştirmektedir. </li> </ol>",
+    "text": "Benzetim yaklaşım sütun grafiği için yapılması gerekenler ile ilgili aşağıdakilerden hangileri doğrudur?<ol type=\"I\"><li>İşlem tablosunda L21:M33 hücrelerini seçin.</li><li>Ekle → Önerilen Grafikler adımından Kümelenmiş Sütun grafiğini seçin ve Tamam tuşunu tıklayın.</li><li>Tasarım → Grafik Öğesi Ekle menüsündeki seçenekleri kullanarak gerekli bilgileri tabloya ilave edin.</li><li>Çubuk grafiği, sipariş miktarı karar değişkenindeki değişiklikler karşısında ortalama kâr’ın hangi noktada en büyüklendiğini görselleştirmektedir.</li><li>Çubuk grafiği, sipariş miktarı karar değişkenindeki değişiklikler karşısında ortalama kâr’ın angi noktada zarar oluşturduğunu düşük bir okunaklılıkla görselleştirmektedir.</li></ol>",
     "correctAnswer": "A",
     "options": {
       "A": "I,II,III,IV",
@@ -7380,7 +7380,7 @@
   {
     "id": "3770938",
     "unitNumber": 7,
-    "text": "En yaygın işlemtablosu olan Excel, benzetimi gerçekleştirmek üzere hangi araçları kullanmaktadır ?<br/><ol type=\"I\"> <li>Veri Tabloları</li> <li>Senaryo Yöneticisi</li> <li>İşlem Tabloları</li> </ol>",
+    "text": "En yaygın işlemtablosu olan Excel, benzetimi gerçekleştirmek üzere hangi araçları kullanmaktadır ?<ol type=\"I\"><li>Veri Tabloları</li><li>Senaryo Yöneticisi</li><li>İşlem Tabloları</li></ol>",
     "correctAnswer": "B",
     "options": {
       "A": "II,III",
@@ -7394,7 +7394,7 @@
   {
     "id": "3770939",
     "unitNumber": 7,
-    "text": "Veri tabloları ile ilgili aşağıdakilerden hangileri doğrudur?<br/><ol type=\"I\"> <li>Veri tabloları, girdi verilerinde yapılan bir değişikliğin çıktıları nasıl etkilediğini analiz etmek için kullanılmaktadır.</li> <li>Veri tabloları ile girdilerde tek bir veri veya iki farklı verinin değişmesine bağlı olarak sonuçların nasıl değiştiğini analiz etmek mümkündür</li> <li>Senaryo Yöneticisi, 32 girdi verisine kadar değişiklik yapılmasına</li> <li>Senaryo Yöneticisi sonuçlarının karşılaştırmalı bir tablo ile değerlendirilmesine imkân vermektedir.</li> <li>Senaryo Yöneticisi, 64 girdi verisine kadar değişiklik yapılmasına imkân vermektedir.</li> </ol>",
+    "text": "Veri tabloları ile ilgili aşağıdakilerden hangileri doğrudur?<ol type=\"I\"><li>Veri tabloları, girdi verilerinde yapılan bir değişikliğin çıktıları nasıl etkilediğini analiz etmek için kullanılmaktadır.</li><li>Veri tabloları ile girdilerde tek bir veri veya iki farklı verinin değişmesine bağlı olarak sonuçların nasıl değiştiğini analiz etmek mümkündür</li><li>Senaryo Yöneticisi, 32 girdi verisine kadar değişiklik yapılmasına</li><li>Senaryo Yöneticisi sonuçlarının karşılaştırmalı bir tablo ile değerlendirilmesine imkân vermektedir.</li><li>Senaryo Yöneticisi, 64 girdi verisine kadar değişiklik yapılmasına imkân vermektedir.</li></ol>",
     "correctAnswer": "A",
     "options": {
       "A": "I,II,III,IV",
@@ -7422,7 +7422,7 @@
   {
     "id": "3770941",
     "unitNumber": 7,
-    "text": "Çubuk grafiği ile ilgili aşağıdakilerden hangileri doğrudur?<br/><ol type=\"I\"><li>Sipariş miktarı karar değişkenindeki değişiklikler karşısında ortalama kâr’ın hangi noktada en büyüklendiğini görselleştirmektedir.</li><li> Sipariş miktarı karar değişkenindeki değişiklikler karşısında ortalama kâr’ın hangi noktada zarar oluşturduğunu görselleştirmektedir.</li><li>Ortalama kâr’ın sipariş miktarındaki değişikliklere ne kadar duyarlı olduğunu grafikten görmek mümkündür.</li><li>Risk değerlendirmesi yapacak bir yönetici için kullanışlı bir görseldir.</li><li>Sadece sipariş miktarı karar değişkenindeki değişiklikler karşısında ortalama kâr’ın hangi noktada en büyüklendiğini yüksek bir okunaklılıkla görselleştirmektedir.</li></ol>",
+    "text": "Çubuk grafiği ile ilgili aşağıdakilerden hangileri doğrudur?<ol type=\"I\"><li>Sipariş miktarı karar değişkenindeki değişiklikler karşısında ortalama kâr’ın hangi noktada en büyüklendiğini görselleştirmektedir.</li><li>Sipariş miktarı karar değişkenindeki değişiklikler karşısında ortalama kâr’ın hangi noktada zarar oluşturduğunu görselleştirmektedir.</li><li>Ortalama kâr’ın sipariş miktarındaki değişikliklere ne kadar duyarlı olduğunu grafikten görmek mümkündür.</li><li>Risk değerlendirmesi yapacak bir yönetici için kullanışlı bir görseldir.</li><li>Sadece sipariş miktarı karar değişkenindeki değişiklikler karşısında ortalama kâr’ın hangi noktada en büyüklendiğini yüksek bir okunaklılıkla görselleştirmektedir.</li></ol>",
     "correctAnswer": "A",
     "options": {
       "A": "I,II,III,IV",
@@ -7450,7 +7450,7 @@
   {
     "id": "3770963",
     "unitNumber": 7,
-    "text": "Veri tablosu hakkında aşağıda verilenlerden hangileri doğrudur?<br/><ol type=\"I\"> <li>Veri tabloları, işlem tablolarını kullanırlar. </li> <li>Üç tip veri tablosu vardır.</li> <li>Tek-yönlü veri tablosu, girdideki bir değişimin çıktılardaki değerleri nasıl değiştirdiğini belirler.</li> <li>İki yönlü veri tablosu, iki girdi değişiminin tek çıktı değerini nasıl değiştirdiğini gösterebilir. </li> <li>Üç yönlü veri tablosunda, üç çalışma sayfası kullanılır.</li> </ol>",
+    "text": "Veri tablosu hakkında aşağıda verilenlerden hangileri doğrudur?<ol type=\"I\"><li>Veri tabloları, işlem tablolarını kullanırlar.</li><li>Üç tip veri tablosu vardır.</li><li>Tek-yönlü veri tablosu, girdideki bir değişimin çıktılardaki değerleri nasıl değiştirdiğini belirler.</li><li>İki yönlü veri tablosu, iki girdi değişiminin tek çıktı değerini nasıl değiştirdiğini gösterebilir.</li><li>Üç yönlü veri tablosunda, üç çalışma sayfası kullanılır.</li></ol>",
     "correctAnswer": "D",
     "options": {
       "A": "I-II",
@@ -7464,7 +7464,7 @@
   {
     "id": "3770964",
     "unitNumber": 7,
-    "text": "Senaryo yöneticisi hakkında aşağıda verilenlerden hangileri doğrudur?<br/><ol type=\"I\"> <li>24 girdi hücresine kadar, çeşitli değer veya senaryo ve birçok çıktı hücresinin sonucundaki değişiklikleri gözlemlemeye imkân verir.</li> <li>Girdi değerlerinin her senaryosu için sonuç çıktı değerlerini gösteren Senaryo Raporları üretir.</li> <li>İşlem tablolarının hazırlığı için kullanılan Senaryo Yöneticisi, Veri Tabloları’ndan daha karmaşıktır.</li> <li>İşlem tablolarının hazırlığı için bütün gerekli olan, girdilerin veya çıktıların yer alacağı başlangıç listesinin hazırlanmasıdır.</li> </ol>",
+    "text": "Senaryo yöneticisi hakkında aşağıda verilenlerden hangileri doğrudur?<ol type=\"I\"><li>24 girdi hücresine kadar, çeşitli değer veya senaryo ve birçok çıktı hücresinin sonucundaki değişiklikleri gözlemlemeye imkân verir.</li><li>Girdi değerlerinin her senaryosu için sonuç çıktı değerlerini gösteren Senaryo Raporları üretir.</li><li>İşlem tablolarının hazırlığı için kullanılan Senaryo Yöneticisi, Veri Tabloları’ndan daha karmaşıktır.</li><li>İşlem tablolarının hazırlığı için bütün gerekli olan, girdilerin veya çıktıların yer alacağı başlangıç listesinin hazırlanmasıdır.</li></ol>",
     "correctAnswer": "D",
     "options": {
       "A": "I",
@@ -7478,7 +7478,7 @@
   {
     "id": "3770965",
     "unitNumber": 7,
-    "text": "Senaryo raporu hakkında aşağıda verilenlerden hangileri doğrudur?<br/><ol type=\"I\"> <li>Senaryo raporlarını, senaryo yöneticisi üretir. </li> <li>Her senaryo için çıktı hücre değerlerine ilave olarak başlangıç tablosundaki girdi değerlerini sunmaktadır.</li> <li>Senaryo Raporu’nun en alt satırı incelenerek; En İyi, En Kötü ve En Olası Senaryo için net bugünkü değerler kolay bir şekilde analiz edilebilir.</li> <li>Senaryo Raporu’nun birinci sütununda gösterilen isimleri görmek için girdi ve çıktı hücrelerini adlandırılır.</li> </ol>",
+    "text": "Senaryo raporu hakkında aşağıda verilenlerden hangileri doğrudur?<ol type=\"I\"><li>Senaryo raporlarını, senaryo yöneticisi üretir.</li><li>Her senaryo için çıktı hücre değerlerine ilave olarak başlangıç tablosundaki girdi değerlerini sunmaktadır.</li><li>Senaryo Raporu’nun en alt satırı incelenerek; En İyi, En Kötü ve En Olası Senaryo için net bugünkü değerler kolay bir şekilde analiz edilebilir.</li><li>Senaryo Raporu’nun birinci sütununda gösterilen isimleri görmek için girdi ve çıktı hücrelerini adlandırılır.</li></ol>",
     "correctAnswer": "E",
     "options": {
       "A": "I-II",
@@ -7492,7 +7492,7 @@
   {
     "id": "3770996",
     "unitNumber": 7,
-    "text": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/e40563335c9f1d2586cf3b580718da93.png\" alt=\"\" width=\"549\" height=\"178\"> Yukarıda verilen tabloya ulaşmak için izlememiz gereken basamakların doğru sıralaması hangi şıkta verilmiştir?<br/><ol type=\"i\"> <li>Veri Tablosu</li> <li>Durum Çözümleyici</li> <li>Veri Araçları</li> <li>Veri</li> </ol>",
+    "text": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/e40563335c9f1d2586cf3b580718da93.png\" alt=\"\" width=\"549\" height=\"178\"> Yukarıda verilen tabloya ulaşmak için izlememiz gereken basamakların doğru sıralaması hangi şıkta verilmiştir?<ol type=\"i\"><li>Veri Tablosu</li><li>Durum Çözümleyici</li><li>Veri Araçları</li><li>Veri</li></ol>",
     "correctAnswer": "B",
     "options": {
       "A": "i, ii, iii, iv",
@@ -7506,7 +7506,7 @@
   {
     "id": "3770997",
     "unitNumber": 7,
-    "text": "Senaryo Yöneticisi ile ilgili verilen bilgilerden hangileri doğrudur?<br/><ol type=\"i\"> <li>35 girdi hücresine kadar, çeşitli değer veya senaryo ve birçok çıktı hücresinin sonucundaki değişiklikleri gözlemlemeye imkân vermektedir.</li> <li>Girdi değerlerinin her senaryosu için sonuç çıktı değerlerini gösteren Senaryo Raporları üretmektedir.</li> <li>İşlem tablolarının hazırlığı için kullanılan Senaryo Yöneticisi, Veri Tabloları’ndan daha basittir.</li> <li>Bütün gerekli olan, girdilerin veya çıktıların yer alacağı çıktı listesinin hazırlanmasıdır.</li> </ol>",
+    "text": "Senaryo Yöneticisi ile ilgili verilen bilgilerden hangileri doğrudur?<ol type=\"i\"><li>35 girdi hücresine kadar, çeşitli değer veya senaryo ve birçok çıktı hücresinin sonucundaki değişiklikleri gözlemlemeye imkân vermektedir.</li><li>Girdi değerlerinin her senaryosu için sonuç çıktı değerlerini gösteren Senaryo Raporları üretmektedir.</li><li>İşlem tablolarının hazırlığı için kullanılan Senaryo Yöneticisi, Veri Tabloları’ndan daha basittir.</li><li>Bütün gerekli olan, girdilerin veya çıktıların yer alacağı çıktı listesinin hazırlanmasıdır.</li></ol>",
     "correctAnswer": "A",
     "options": {
       "A": "ii, iii",
@@ -7515,7 +7515,7 @@
       "D": "i, ii, iii",
       "E": "i, iii, iv"
     },
-    "explanation": "Senaryo Yöneticisi,<br/><ol type=\"i\"> <li><strong>32</strong> girdi hücresine kadar, çeşitli değer veya senaryo ve birçok çıktı hücresinin sonucundaki değişiklikleri gözlemlemeye imkân vermektedir.</li> <li>Senaryo Yöneticisi, girdi değerlerinin her senaryosu için sonuç çıktı değerlerini gösteren Senaryo Raporları üretmektedir.</li> <li>İşlem tablolarının hazırlığı için kullanılan Senaryo Yöneticisi, Veri Tabloları’ndan daha basittir.</li> <li>Bütün gerekli olan, girdilerin veya çıktıların yer alacağı<strong> başlangıç</strong> listesinin hazırlanmasıdır.</li> </ol>"
+    "explanation": "Senaryo Yöneticisi,<ol type=\"i\"><li><strong>32</strong> girdi hücresine kadar, çeşitli değer veya senaryo ve birçok çıktı hücresinin sonucundaki değişiklikleri gözlemlemeye imkân vermektedir.</li><li>Senaryo Yöneticisi, girdi değerlerinin her senaryosu için sonuç çıktı değerlerini gösteren Senaryo Raporları üretmektedir.</li><li>İşlem tablolarının hazırlığı için kullanılan Senaryo Yöneticisi, Veri Tabloları’ndan daha basittir.</li><li>Bütün gerekli olan, girdilerin veya çıktıların yer alacağı<strong> başlangıç</strong> listesinin hazırlanmasıdır.</li></ol>"
   },
   {
     "id": "3770998",
@@ -7534,7 +7534,7 @@
   {
     "id": "3770999",
     "unitNumber": 7,
-    "text": "Aşağıda \"S_SAYI_ÜRET\" fonksiyonu ile ilgi olarak verilen bilgilerden hangileri doğrudur?<br/><ol type=\"i\"> <li>Rassal sayıları üretmek için kullanılmaktadır.</li> <li>Belirli bir parametreye sahiptir.</li> <li>0 ve 1/2 arasında rassal olarak seçilen kesirli sayıları geri döndürür.</li> <li>Rassal örneklerde herhangi bir veri veya test verisi oluşturmak için kullanışlıdır.</li> <li>TAMSAYI fonksiyonu ile birlikte kullanılarak rassal tamsayılar oluşturulabilir.</li> </ol>",
+    "text": "Aşağıda \"S_SAYI_ÜRET\" fonksiyonu ile ilgi olarak verilen bilgilerden hangileri doğrudur?<ol type=\"i\"><li>Rassal sayıları üretmek için kullanılmaktadır.</li><li>Belirli bir parametreye sahiptir.</li><li>0 ve 1/2 arasında rassal olarak seçilen kesirli sayıları geri döndürür.</li><li>Rassal örneklerde herhangi bir veri veya test verisi oluşturmak için kullanışlıdır.</li><li>TAMSAYI fonksiyonu ile birlikte kullanılarak rassal tamsayılar oluşturulabilir.</li></ol>",
     "correctAnswer": "C",
     "options": {
       "A": "i, iii",
@@ -7543,7 +7543,7 @@
       "D": "ii, iii, iv",
       "E": "i, iii, v"
     },
-    "explanation": "<ol type=\"i\"> <li>S_SAYI_ÜRET ve RASTGELEARALIK fonksiyonları, rassal sayıları üretmek için kullanılmaktadır.</li> <li>S_SAYI_ÜRET fonksiyonu, <strong>herhangi bir parametreye sahip değildir. </strong></li> <li>S_SAYI_ÜRET fonksiyonu,<strong> 0 ve 1</strong> arasında rassal olarak seçilen kesirli sayıları geri döndürür. </li> <li>S_SAYI_ÜRET fonksiyonu, rassal örneklerde herhangi bir veri veya test verisi oluşturmak için kullanışlıdır. Eğer, 0 ve 1 aralığı dışındaki aralıkta da veriler oluşturmak istiyorsanız S_SAYI_ÜRET değerini kullanabilirsiniz. 1 ve n arasında sayıları üretmek istiyorsanız, aşağıdaki gibi S_SAYI_ÜRET değerini (n-1) ile çarpın ve 1 ilave ediniz. = S_SAYI_ÜRET ()*(n-1) + 1</li> <li>S_SAYI_ÜRET fonksiyonu, TAMSAYI fonksiyonu ile birlikte kullanılarak rassal tamsayılar oluşturulabilir. TAMSAYI fonksiyonu; ondalık sayıyı, en yakın aşağıya doğru tamsayı değerine yuvarlamaktadır.</li> </ol>"
+    "explanation": "<ol type=\"i\"><li>S_SAYI_ÜRET ve RASTGELEARALIK fonksiyonları, rassal sayıları üretmek için kullanılmaktadır.</li><li>S_SAYI_ÜRET fonksiyonu, <strong>herhangi bir parametreye sahip değildir. </strong></li><li>S_SAYI_ÜRET fonksiyonu,<strong> 0 ve 1</strong> arasında rassal olarak seçilen kesirli sayıları geri döndürür.</li><li>S_SAYI_ÜRET fonksiyonu, rassal örneklerde herhangi bir veri veya test verisi oluşturmak için kullanışlıdır. Eğer, 0 ve 1 aralığı dışındaki aralıkta da veriler oluşturmak istiyorsanız S_SAYI_ÜRET değerini kullanabilirsiniz. 1 ve n arasında sayıları üretmek istiyorsanız, aşağıdaki gibi S_SAYI_ÜRET değerini (n-1) ile çarpın ve 1 ilave ediniz. = S_SAYI_ÜRET ()*(n-1) + 1</li><li>S_SAYI_ÜRET fonksiyonu, TAMSAYI fonksiyonu ile birlikte kullanılarak rassal tamsayılar oluşturulabilir. TAMSAYI fonksiyonu; ondalık sayıyı, en yakın aşağıya doğru tamsayı değerine yuvarlamaktadır.</li></ol>"
   },
   {
     "id": "3771000",
@@ -7562,7 +7562,7 @@
   {
     "id": "3771001",
     "unitNumber": 7,
-    "text": "S_SAYI_ÜRET ya da RASTGELEARADA fonksiyonu kullanıldığında, otomatik yeniden hesaplamayı önlemek amacıyla aşağıdaki işlemler hangi sırayla uygulanır?<br/><ol type=\"i\"> <li>Çalışma Kitabı Hesaplaması</li> <li>Dosya</li> <li>Formüller</li> <li>Seçenekler </li> <li>El ile</li> </ol>",
+    "text": "S_SAYI_ÜRET ya da RASTGELEARADA fonksiyonu kullanıldığında, otomatik yeniden hesaplamayı önlemek amacıyla aşağıdaki işlemler hangi sırayla uygulanır?<ol type=\"i\"><li>Çalışma Kitabı Hesaplaması</li><li>Dosya</li><li>Formüller</li><li>Seçenekler</li><li>El ile</li></ol>",
     "correctAnswer": "A",
     "options": {
       "A": "ii, iv, iii, i, v",
@@ -7571,7 +7571,7 @@
       "D": "ii, iii, iv, i, v",
       "E": "i, ii, iii, iv, v"
     },
-    "explanation": "S_SAYI_ÜRET ya da RASTGELEARADA fonksiyonu kullanıldığında, çalışma sayfasında her işlem gerçekleştirildiğinde üretilen sayılar değişecektir. Tablo oluşturulduktan sonra, aynı çalışma sayfasında daha sonra yeni metin veya veri diğer hücrelere yazılırsa, gösterilen başlangıç rassal sayılar ilgili aralıkta yeni rassal sayıları otomatik olarak hesaplayacaktır. Otomatik yeniden hesaplamayı önlemek amacıyla,<br/><ol> <li><strong>Dosya → </strong></li> <li><strong>Seçenekler → </strong></li> <li><strong>Formüller → </strong></li> <li><strong>Çalışma Kitabı Hesaplaması adımında </strong></li> <li><strong>El ile</strong> seçeneğini tercih ediniz</li> </ol>"
+    "explanation": "S_SAYI_ÜRET ya da RASTGELEARADA fonksiyonu kullanıldığında, çalışma sayfasında her işlem gerçekleştirildiğinde üretilen sayılar değişecektir. Tablo oluşturulduktan sonra, aynı çalışma sayfasında daha sonra yeni metin veya veri diğer hücrelere yazılırsa, gösterilen başlangıç rassal sayılar ilgili aralıkta yeni rassal sayıları otomatik olarak hesaplayacaktır. Otomatik yeniden hesaplamayı önlemek amacıyla,<ol><li><strong>Dosya → </strong></li><li><strong>Seçenekler → </strong></li><li><strong>Formüller → </strong></li><li><strong>Çalışma Kitabı Hesaplaması adımında </strong></li><li><strong>El ile</strong> seçeneğini tercih ediniz</li></ol>"
   },
   {
     "id": "3771002",
@@ -7716,7 +7716,7 @@
   {
     "id": "3771012",
     "unitNumber": 7,
-    "text": "Veri tablolarının hazırlanması ile ilgili olarak aşağıdaki ifadelerin uygulama sıralaması nedir?<br/><ol type=\"I\"> <li>Gözlem için hesaplamak istenen Veri Tablosuna çıktı formülleri girilir.</li> <li>Girdi ve çıktı değerlerine referans ad tanımlaması yapılır.</li> <li>Girdilerin ve çıktı değerlerin yer alacağı hücreler belirlenir.</li> <li>Analiz etmek istenilen farklı girdi değerlerin listesini hazırlanarak, denemeler yapılır. </li> </ol>",
+    "text": "Veri tablolarının hazırlanması ile ilgili olarak aşağıdaki ifadelerin uygulama sıralaması nedir?<ol type=\"I\"><li>Gözlem için hesaplamak istenen Veri Tablosuna çıktı formülleri girilir.</li><li>Girdi ve çıktı değerlerine referans ad tanımlaması yapılır.</li><li>Girdilerin ve çıktı değerlerin yer alacağı hücreler belirlenir.</li><li>Analiz etmek istenilen farklı girdi değerlerin listesini hazırlanarak, denemeler yapılır.</li></ol>",
     "correctAnswer": "A",
     "options": {
       "A": "III-II-IV-I",
@@ -8346,7 +8346,7 @@
   {
     "id": "3770827",
     "unitNumber": 8,
-    "text": "<ol type=\"I\"> <li>İnsansız Sistemler</li> <li>Yöntembilgisi Yönetimi</li> <li>Metasezgisel Yöntemler</li> <li>Tecrübeye Dayalı Sezgisel Sistemler</li> <li>Uzman Sistemler</li> <li>Yapay Zekâ</li> </ol> Sürdürülebilir kurumsal zekâ için gerekli yaklaşımlar arasında yukarıdakilerden hangileri yer alır?",
+    "text": "<ol type=\"I\"><li>İnsansız Sistemler</li><li>Yöntembilgisi Yönetimi</li><li>Metasezgisel Yöntemler</li><li>Tecrübeye Dayalı Sezgisel Sistemler</li><li>Uzman Sistemler</li><li>Yapay Zekâ</li></ol>Sürdürülebilir kurumsal zekâ için gerekli yaklaşımlar arasında yukarıdakilerden hangileri yer alır?",
     "correctAnswer": "C",
     "options": {
       "A": "I, II, III ve IV",
@@ -8355,7 +8355,7 @@
       "D": "II, IV ve V",
       "E": "IV, V ve VI"
     },
-    "explanation": "Sürdürülebilir kurumsal zekâ için gerekli yaklaşımlar şunlardır:<br/><ul> <li>Yöntembilgisi Yönetimi</li> <li>Metasezgisel Yöntemler</li> <li>Uzman Sistemler</li> <li>Yapay Zekâ</li> </ul>"
+    "explanation": "Sürdürülebilir kurumsal zekâ için gerekli yaklaşımlar şunlardır:<ul><li>Yöntembilgisi Yönetimi</li><li>Metasezgisel Yöntemler</li><li>Uzman Sistemler</li><li>Yapay Zekâ</li></ul>"
   },
   {
     "id": "3770828",
@@ -8388,7 +8388,7 @@
   {
     "id": "3770830",
     "unitNumber": 8,
-    "text": "<ol type=\"I\"> <li>Sembolik problem çözme</li> <li>Akıl yürütme</li> <li>Makine öğrenmesi</li> <li>Açıklama üretme</li> <li>Doğal dil oluşturma</li> </ol> Yapay Zeka tekniklerini diğer bilgisayar alanındaki çalışmalardan ayıran özellikler arasında yukarıdakilerden hangileri yer alır?",
+    "text": "<ol type=\"I\"><li>Sembolik problem çözme</li><li>Akıl yürütme</li><li>Makine öğrenmesi</li><li>Açıklama üretme</li><li>Doğal dil oluşturma</li></ol>Yapay Zeka tekniklerini diğer bilgisayar alanındaki çalışmalardan ayıran özellikler arasında yukarıdakilerden hangileri yer alır?",
     "correctAnswer": "A",
     "options": {
       "A": "I, II ve III",
@@ -8425,12 +8425,12 @@
       "D": "Düşük maliyet",
       "E": "Tutarlılık"
     },
-    "explanation": "YZ’nin sahip olduğu önemli üstünlükler şunlardır:<br/><ul> <li>Kalıcı olma</li> <li>Çoğaltma ve yaygınlaştırma kolaylığı</li> <li>Düşük maliyet</li> <li>Tutarlılık</li> <li>Belgelendirilebilirlik</li> <li>Hız</li> </ul> İnsan zekâsının, YZ’ye göre dikkate değer üstünlükleri bulunmaktadır. Bunlardan ikisi şunlardır:<br/><ul> <li>İnsan zekâsı, yaratıcı olmasına karşın YZ, geldiği nokta itibariyle yaratıcı zekâdan yoksundur. Bilgi edinme ve öğrenme yeteneği insanın doğasında vardır. Buna karşın YZ’de yöntembilgisi, özenle hazırlanıp sisteme eklenir.</li> <li>İnsan zekâsı, insanların duyusal deneyimlerini doğrudan kullanmasını ve onlardan yararlanmasını mümkün kılmaktadır. Buna karşın YZ sistemleri, sembolik girdi ve gösterimlerle çalışmak zorundadır.</li> </ul>"
+    "explanation": "YZ’nin sahip olduğu önemli üstünlükler şunlardır:<ul><li>Kalıcı olma</li><li>Çoğaltma ve yaygınlaştırma kolaylığı</li><li>Düşük maliyet</li><li>Tutarlılık</li><li>Belgelendirilebilirlik</li><li>Hız</li></ul>İnsan zekâsının, YZ’ye göre dikkate değer üstünlükleri bulunmaktadır. Bunlardan ikisi şunlardır:<ul><li>İnsan zekâsı, yaratıcı olmasına karşın YZ, geldiği nokta itibariyle yaratıcı zekâdan yoksundur. Bilgi edinme ve öğrenme yeteneği insanın doğasında vardır. Buna karşın YZ’de yöntembilgisi, özenle hazırlanıp sisteme eklenir.</li><li>İnsan zekâsı, insanların duyusal deneyimlerini doğrudan kullanmasını ve onlardan yararlanmasını mümkün kılmaktadır. Buna karşın YZ sistemleri, sembolik girdi ve gösterimlerle çalışmak zorundadır.</li></ul>"
   },
   {
     "id": "3770833",
     "unitNumber": 8,
-    "text": "<ol type=\"I\"> <li>Sembolik akıl yürütme</li> <li>Yüksek düzeyde yaratıcı çözüm sağlama</li> <li>Evrimsel stratejiler yaratma</li> <li>Derin yöntembilgisi </li> <li>Kendini bilme</li> </ol> Bir uzman sistemin taşıması gereken özellikler arasında yukarıdakilerden hangileri yer alır?",
+    "text": "<ol type=\"I\"><li>Sembolik akıl yürütme</li><li>Yüksek düzeyde yaratıcı çözüm sağlama</li><li>Evrimsel stratejiler yaratma</li><li>Derin yöntembilgisi</li><li>Kendini bilme</li></ol>Bir uzman sistemin taşıması gereken özellikler arasında yukarıdakilerden hangileri yer alır?",
     "correctAnswer": "B",
     "options": {
       "A": "I, II ve II",
@@ -8439,7 +8439,7 @@
       "D": "II, IV ve V",
       "E": "III, IV ve V"
     },
-    "explanation": "Bir uzman sistemin taşıması gereken özelliklerden bazıları şunlardır:<br/><ul> <li><em>Uzmanbilgisi</em></li> <li><em>Sembolik akıl yürütme</em></li> <li><em>Derin yöntembilgisi </em> </li> <li><em>Kendini bilme</em></li> </ul>"
+    "explanation": "Bir uzman sistemin taşıması gereken özelliklerden bazıları şunlardır:<ul><li><em>Uzmanbilgisi</em></li><li><em>Sembolik akıl yürütme</em></li><li><em>Derin yöntembilgisi </em></li><li><em>Kendini bilme</em></li></ul>"
   },
   {
     "id": "3770834",
@@ -8472,7 +8472,7 @@
   {
     "id": "3770836",
     "unitNumber": 8,
-    "text": "<ol type=\"I\"> <li>Başlatma</li> <li>Çaprazlama</li> <li>Değerlendirme</li> <li>Durma</li> <li>Mutasyon</li> <li>Seçim ve kopyalama</li> </ol> Yukarıda genetik algoritmanın adımları karışık olarak verilmiştir. Buna göre adımların doğru sıralaması aşağıdakilerden hangisidir?",
+    "text": "<ol type=\"I\"><li>Başlatma</li><li>Çaprazlama</li><li>Değerlendirme</li><li>Durma</li><li>Mutasyon</li><li>Seçim ve kopyalama</li></ol>Yukarıda genetik algoritmanın adımları karışık olarak verilmiştir. Buna göre adımların doğru sıralaması aşağıdakilerden hangisidir?",
     "correctAnswer": "B",
     "options": {
       "A": "I - V - II - VI - III - IV",
@@ -8481,7 +8481,7 @@
       "D": "V - VI - II - I - III - IV",
       "E": "VI - II- V - I- III- IV"
     },
-    "explanation": "Genetik Algoritmanın Adımları şunlardır:<br/><ul> <li><strong>A.1 Başlatma: </strong>Belirli bir sayıda rassal kromozomlardan bir popülasyon oluştur. En fazla koşulacak iterasyon (jenerasyon) sayısını belirle.</li> <li><strong>A.2 Değerlendirme: </strong>Kromozomların uyum değerlerini hesapla.</li> <li><strong>A.3 Durma: </strong>En fazla koşulacak iterasyon sayısı aşıldı ise dur. Aksi halde A.4’e git.</li> <li><strong>A.4 Seçim ve kopyalama: </strong>Kromozomlardan incelemeye değer olmayanları sil. Mevcut kromozomlardan katkısının daha fazla olacağı düşünülenlerin kopyalarını türet.</li> <li><strong>A.5 Çaprazlama: </strong>Mevcut çözümlerin kendi aralarında eşleştirilmesine ve bazı parçalarını birbirlerine aktararak daha iyi çözümlerin oluşmasına zemin hazırla.</li> <li><strong>A.6 Mutasyon: </strong>Kromozomda rassal değişiklikler yaparak daha iyi özelliklerin dolayısı ile daha iyi çözümlerin keşfedilmesine fırsat ver. A.2’ye dön.</li> </ul>"
+    "explanation": "Genetik Algoritmanın Adımları şunlardır:<ul><li><strong>A.1 Başlatma: </strong>Belirli bir sayıda rassal kromozomlardan bir popülasyon oluştur. En fazla koşulacak iterasyon (jenerasyon) sayısını belirle.</li><li><strong>A.2 Değerlendirme: </strong>Kromozomların uyum değerlerini hesapla.</li><li><strong>A.3 Durma: </strong>En fazla koşulacak iterasyon sayısı aşıldı ise dur. Aksi halde A.4’e git.</li><li><strong>A.4 Seçim ve kopyalama: </strong>Kromozomlardan incelemeye değer olmayanları sil. Mevcut kromozomlardan katkısının daha fazla olacağı düşünülenlerin kopyalarını türet.</li><li><strong>A.5 Çaprazlama: </strong>Mevcut çözümlerin kendi aralarında eşleştirilmesine ve bazı parçalarını birbirlerine aktararak daha iyi çözümlerin oluşmasına zemin hazırla.</li><li><strong>A.6 Mutasyon: </strong>Kromozomda rassal değişiklikler yaparak daha iyi özelliklerin dolayısı ile daha iyi çözümlerin keşfedilmesine fırsat ver. A.2’ye dön.</li></ul>"
   },
   {
     "id": "3770903",
@@ -8495,7 +8495,7 @@
       "D": "Uzman Sistemler",
       "E": "Yapay Zekâ"
     },
-    "explanation": "Sürdürülebilir kurumsal zekâ için gerekli yaklaşımlar:<br/><ul> <li>Yöntembilgisi Yönetimi</li> <li>Metasezgisel Yöntemler</li> <li>Uzman Sistemler</li> <li>Yapay Zekâ</li> </ul>"
+    "explanation": "Sürdürülebilir kurumsal zekâ için gerekli yaklaşımlar:<ul><li>Yöntembilgisi Yönetimi</li><li>Metasezgisel Yöntemler</li><li>Uzman Sistemler</li><li>Yapay Zekâ</li></ul>"
   },
   {
     "id": "3770904",
@@ -8528,7 +8528,7 @@
   {
     "id": "3770906",
     "unitNumber": 8,
-    "text": "Aşağıdakilerden hangisi ya da hangileri YY’nin yaşama geçirilmesinde yararlanılacak temel teknolojilerdendir?<br/><ol type=\"I\"> <li>İletişim teknolojileri</li> <li>Bilişim teknolojileri</li> <li>Depolama ve erişim teknolojileri</li> <li>İşbirliği teknolojileri</li> <li>Bakım teknolojileri</li> </ol>",
+    "text": "Aşağıdakilerden hangisi ya da hangileri YY’nin yaşama geçirilmesinde yararlanılacak temel teknolojilerdendir?<ol type=\"I\"><li>İletişim teknolojileri</li><li>Bilişim teknolojileri</li><li>Depolama ve erişim teknolojileri</li><li>İşbirliği teknolojileri</li><li>Bakım teknolojileri</li></ol>",
     "correctAnswer": "D",
     "options": {
       "A": "I ve II",
@@ -8537,12 +8537,12 @@
       "D": "I, III ve IV",
       "E": "I, II, III ve V"
     },
-    "explanation": "YY’nin yaşama geçirilmesinde yararlanılacak üç temel teknoloji vardır. Bunlar:<br/><ol> <li>İletişim teknolojileri,</li> <li>İşbirliği teknolojileri,</li> <li>Depolama ve erişim teknolojileri.</li> </ol>"
+    "explanation": "YY’nin yaşama geçirilmesinde yararlanılacak üç temel teknoloji vardır. Bunlar:<ol><li>İletişim teknolojileri,</li><li>İşbirliği teknolojileri,</li><li>Depolama ve erişim teknolojileri.</li></ol>"
   },
   {
     "id": "3770907",
     "unitNumber": 8,
-    "text": "Aşağıdakilerden hangisi ya da hangileri Moodle’ı kurumsal yöntembilgisi portalı yapan özelliklerdendir?<br/><ol type=\"I\"><li>Yeni yöntembilgisi paket ve dolabı tanımlama ve ekleme,</li><li>Tüm faaliyetleri zaman-damgalama, </li><li>İzin tanımlama, </li><li>Yöntembilgisi paketlerini yedekleme (backup) yeniden yükleme (restore) ve taşıma (import), </li><li>Katılımcılara veya öğrencilere performanslarına göre başarı rozetleri (badge) verme.</li></ol>",
+    "text": "Aşağıdakilerden hangisi ya da hangileri Moodle’ı kurumsal yöntembilgisi portalı yapan özelliklerdendir?<ol type=\"I\"><li>Yeni yöntembilgisi paket ve dolabı tanımlama ve ekleme,</li><li>Tüm faaliyetleri zaman-damgalama,</li><li>İzin tanımlama,</li><li>Yöntembilgisi paketlerini yedekleme (backup) yeniden yükleme (restore) ve taşıma (import),</li><li>Katılımcılara veya öğrencilere performanslarına göre başarı rozetleri (badge) verme.</li></ol>",
     "correctAnswer": "E",
     "options": {
       "A": "Yalnız I",
@@ -8551,12 +8551,12 @@
       "D": "I, II, III, IV",
       "E": "I, II, III, IV ve V"
     },
-    "explanation": "Moodle’ı kurumsal yöntembilgisi portalı yapan özellikleri şunlardır:<br/><ul><li>Katılım ve katılımcı tanımlama, izleme ve raporlama,</li><li>Katılımcılara yönelik kimlik denetimi ve yetkilendirme, </li><li>Yeni yöntembilgisi paket ve dolabı tanımlama ve ekleme, </li><li>Tüm faaliyetleri zaman-damgalama, </li><li>Katılımcılardan veya öğrencilerden gruplar oluşturma, </li><li>İzin tanımlama, </li><li>Yöntembilgisi paketlerini yedekleme (backup) yeniden yükleme (restore) ve taşıma (import), </li><li>Katılımcılara veya öğrencilere performanslarına göre başarı rozetleri (badge) verme.</li></ul>"
+    "explanation": "Moodle’ı kurumsal yöntembilgisi portalı yapan özellikleri şunlardır:<ul><li>Katılım ve katılımcı tanımlama, izleme ve raporlama,</li><li>Katılımcılara yönelik kimlik denetimi ve yetkilendirme,</li><li>Yeni yöntembilgisi paket ve dolabı tanımlama ve ekleme,</li><li>Tüm faaliyetleri zaman-damgalama,</li><li>Katılımcılardan veya öğrencilerden gruplar oluşturma,</li><li>İzin tanımlama,</li><li>Yöntembilgisi paketlerini yedekleme (backup) yeniden yükleme (restore) ve taşıma (import),</li><li>Katılımcılara veya öğrencilere performanslarına göre başarı rozetleri (badge) verme.</li></ul>"
   },
   {
     "id": "3770908",
     "unitNumber": 8,
-    "text": "Bir kurumun öğrenen bir kurum olup olmadığını anlamanın yolu aşağıdaki koşulların hangisinin ya da hangilerinin gözlenmesine bağlıdır?<br/><ol type=\"I\"> <li>Problemleri sistemli bir şekilde çözme,</li> <li>Yeni bir duruma hızlı ve başarılı bir şekilde cevap verebilme,</li> <li>Geçmiş deneyimlerinden öğrenme,</li> <li>Diğer işletmelerin en iyi uygulamalarından yararlanma,</li> <li>Bilgilerin kurumsal zeminde aktarılmasını hızlı ve etkin bir şekilde gerçekleştirme.</li> </ol>",
+    "text": "Bir kurumun öğrenen bir kurum olup olmadığını anlamanın yolu aşağıdaki koşulların hangisinin ya da hangilerinin gözlenmesine bağlıdır?<ol type=\"I\"><li>Problemleri sistemli bir şekilde çözme,</li><li>Yeni bir duruma hızlı ve başarılı bir şekilde cevap verebilme,</li><li>Geçmiş deneyimlerinden öğrenme,</li><li>Diğer işletmelerin en iyi uygulamalarından yararlanma,</li><li>Bilgilerin kurumsal zeminde aktarılmasını hızlı ve etkin bir şekilde gerçekleştirme.</li></ol>",
     "correctAnswer": "D",
     "options": {
       "A": "III ve IV",
@@ -8565,7 +8565,7 @@
       "D": "I, III, IV ve V",
       "E": "I, II, III, IV ve V"
     },
-    "explanation": "Bir kurumun öğrenen bir kurum olup olmadığını anlamanın yolu aşağıdaki koşulların gözlenmesidir.<br/><ol> <li>Problemleri sistemli bir şekilde çözme,</li> <li>Problem çözmede yaratıcı olmak,</li> <li>Geçmiş deneyimlerinden öğrenme,</li> <li>Diğer işletmelerin eniyi uygulamalarından yararlanma,</li> <li>Bilgilerin kurumsal zeminde aktarılmasını hızlı ve etkin bir şekilde gerçekleştirme.</li> </ol>"
+    "explanation": "Bir kurumun öğrenen bir kurum olup olmadığını anlamanın yolu aşağıdaki koşulların gözlenmesidir.<ol><li>Problemleri sistemli bir şekilde çözme,</li><li>Problem çözmede yaratıcı olmak,</li><li>Geçmiş deneyimlerinden öğrenme,</li><li>Diğer işletmelerin eniyi uygulamalarından yararlanma,</li><li>Bilgilerin kurumsal zeminde aktarılmasını hızlı ve etkin bir şekilde gerçekleştirme.</li></ol>"
   },
   {
     "id": "3770909",
@@ -8593,7 +8593,7 @@
       "D": "Konuşma anlama",
       "E": "Görsel tanıma"
     },
-    "explanation": "YZ’nin KDS ile kesişimi olan ve yakın gelecekte olması beklenen uygulamaları kısaca şu şekildedir:<br/><ul> <li>Doğal Dil İşleme</li> <li>Konuşma Anlama </li> <li>Robotik ve Duyusal Sistemler (Robotics and Sensory Systems)</li> <li>Görsel Tanıma</li> <li>Zeki Bilgisayar Destekli Eğitim</li> <li>Yapay Sinir Ağları</li> <li>Otomatik Tercüme</li> <li>Bulanık Mantık</li> <li>Akıllı Erkinler</li> </ul>"
+    "explanation": "YZ’nin KDS ile kesişimi olan ve yakın gelecekte olması beklenen uygulamaları kısaca şu şekildedir:<ul><li>Doğal Dil İşleme</li><li>Konuşma Anlama</li><li>Robotik ve Duyusal Sistemler (Robotics and Sensory Systems)</li><li>Görsel Tanıma</li><li>Zeki Bilgisayar Destekli Eğitim</li><li>Yapay Sinir Ağları</li><li>Otomatik Tercüme</li><li>Bulanık Mantık</li><li>Akıllı Erkinler</li></ul>"
   },
   {
     "id": "3770911",
@@ -8621,7 +8621,7 @@
       "D": "Kendini bilme",
       "E": "Doğal dil işleme"
     },
-    "explanation": "Uzmanlık eğitim, okuma ve deneyimle edinilir ve pratikle geliştirilebilir. Bir uzman sistemin taşıması gereken özelliklerden bazıları şunlardır:<br/><ol> <li>Uzmanbilgisi</li> <li>Sembolik akıl yürütme</li> <li>Derin yöntembilgisi (deep knowledge)</li> <li>Kendini bilme (self-knowledge)</li> </ol>"
+    "explanation": "Uzmanlık eğitim, okuma ve deneyimle edinilir ve pratikle geliştirilebilir. Bir uzman sistemin taşıması gereken özelliklerden bazıları şunlardır:<ol><li>Uzmanbilgisi</li><li>Sembolik akıl yürütme</li><li>Derin yöntembilgisi (deep knowledge)</li><li>Kendini bilme (self-knowledge)</li></ol>"
   },
   {
     "id": "3770953",
@@ -8640,7 +8640,7 @@
   {
     "id": "3770954",
     "unitNumber": 8,
-    "text": "Yönetim bilişim sistemleri ile ilgili aşağıdakilerden hngileri doğrudur?<br/><ol type=\"I\"> <li>açık durum bilgilerinin yakalanmasına dönüktür.</li> <li>açık durum bilgilerinin depolanmasına dönüktür.</li> <li>açık durum bilgilerinin yönetilmesine dönüktür.</li> <li>açık durum bilgilerinin raporlanmasına dönüktür.</li> <li>açık durum bilgilerinin geliştirilmesine dönüktür.</li> </ol>",
+    "text": "Yönetim bilişim sistemleri ile ilgili aşağıdakilerden hngileri doğrudur?<ol type=\"I\"><li>açık durum bilgilerinin yakalanmasına dönüktür.</li><li>açık durum bilgilerinin depolanmasına dönüktür.</li><li>açık durum bilgilerinin yönetilmesine dönüktür.</li><li>açık durum bilgilerinin raporlanmasına dönüktür.</li><li>açık durum bilgilerinin geliştirilmesine dönüktür.</li></ol>",
     "correctAnswer": "A",
     "options": {
       "A": "I,II,III,IV",
@@ -8654,7 +8654,7 @@
   {
     "id": "3770955",
     "unitNumber": 8,
-    "text": "Yöntembilgisi yönetiminin yaşama geçirilmesinde yararlanılacak teknolojiler ile ilgili aşağıdakilerden hangileri doğrudur?<br/><ol type=\"I\"><li> İletişim teknolojileri</li><li>İşbirliği teknolojileri</li><li>Depolama teknolojileri.</li><li>Erişim teknolojileri.</li><li>Çözümleme teknolojileri.</li></ol>",
+    "text": "Yöntembilgisi yönetiminin yaşama geçirilmesinde yararlanılacak teknolojiler ile ilgili aşağıdakilerden hangileri doğrudur?<ol type=\"I\"><li>İletişim teknolojileri</li><li>İşbirliği teknolojileri</li><li>Depolama teknolojileri.</li><li>Erişim teknolojileri.</li><li>Çözümleme teknolojileri.</li></ol>",
     "correctAnswer": "A",
     "options": {
       "A": "I,II,III,IV",
@@ -8668,7 +8668,7 @@
   {
     "id": "3770956",
     "unitNumber": 8,
-    "text": "Aşağıdakilerden hangileri Yapay Zeka tekniklerini diğer bilgisayar alanındaki çalışmalardan ayıran özelliklerdendir?<br/><ol type=\"I\"> <li>sembolik problem çözme</li> <li>akıl yürütme</li> <li>makine öğrenmesi</li> <li>rasyonel yollarla yorum ve çıkarsama yapma</li> </ol>",
+    "text": "Aşağıdakilerden hangileri Yapay Zeka tekniklerini diğer bilgisayar alanındaki çalışmalardan ayıran özelliklerdendir?<ol type=\"I\"><li>sembolik problem çözme</li><li>akıl yürütme</li><li>makine öğrenmesi</li><li>rasyonel yollarla yorum ve çıkarsama yapma</li></ol>",
     "correctAnswer": "A",
     "options": {
       "A": "I,II,III",
@@ -8738,7 +8738,7 @@
   {
     "id": "3770961",
     "unitNumber": 8,
-    "text": "Genetik Algoritmaların en emel operatörleri aşağıdakilerden hangileridir?<br/><ol type=\"I\"> <li>seçim</li> <li>çaprazlama</li> <li>mutasyon</li> <li>durma</li> </ol>",
+    "text": "Genetik Algoritmaların en emel operatörleri aşağıdakilerden hangileridir?<ol type=\"I\"><li>seçim</li><li>çaprazlama</li><li>mutasyon</li><li>durma</li></ol>",
     "correctAnswer": "A",
     "options": {
       "A": "I,II,III",

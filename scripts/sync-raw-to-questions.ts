@@ -35,7 +35,7 @@ interface AppQuestion {
 
 import he from "he";
 
-import { cleanHtml, repairText } from './utils/clean-html.js';
+import { cleanHtml, repairText } from './utils/clean-html.ts';
 
 function cleanText(text: string, options: { encode?: boolean, markdown?: boolean, isTechnical?: boolean } = {}): string {
     if (!text) return "";
