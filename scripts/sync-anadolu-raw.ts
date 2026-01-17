@@ -1,17 +1,19 @@
-
 import fs from 'fs';
+import os from 'os';
 import path from 'path';
+import { Worker, isMainThread, parentPort, workerData } from 'worker_threads';
 import { cleanHtml } from './utils/clean-html.ts';
 
 // Configurations
+const NUM_WORKERS = Math.max(1, os.cpus().length - 1);
 const MCP_ROOT = path.resolve('../acik-ogretim-mcp');
 const PORTAL_ROOT = process.cwd();
 
 const RAW_ANADOLU_DIR = path.join(MCP_ROOT, 'data/raw/anadolu-aof');
 const TARGET_ANADOLU_DIR = path.join(PORTAL_ROOT, 'data/questions/anadolu-aof');
 
-// Ensure target directory exists
-if (!fs.existsSync(TARGET_ANADOLU_DIR)) {
+// Ensure target directory exists (Main thread only)
+if (isMainThread && !fs.existsSync(TARGET_ANADOLU_DIR)) {
     console.log(`Creating directory: ${TARGET_ANADOLU_DIR}`);
     fs.mkdirSync(TARGET_ANADOLU_DIR, { recursive: true });
 }
@@ -36,10 +38,22 @@ interface RawAnadoluExamQuestion {
     question: string;
     options: string[];
     correctIndex: number;
-    explanation?: string; // Sometimes present in exams if enriched?
+    explanation?: string;
     exam_question_number: number;
     source: string;
     material_id: string;
+}
+
+interface PreProcessedExamQuestion {
+    id: string;
+    unitNumber: number;
+    text: string;
+    options: { [key: string]: string };
+    correctAnswer: string;
+    explanation?: string;
+    sources?: string[];
+    is_duplicate?: boolean;
+    duplicate_of?: string;
 }
 
 interface AppQuestion {
@@ -50,6 +64,9 @@ interface AppQuestion {
     correctAnswer: string;
     explanation?: string;
 }
+
+// Union type for input
+type ExamInput = RawAnadoluExamQuestion | PreProcessedExamQuestion;
 
 function mapRawToApp(raw: RawAnadoluQuestion, isTechnical: boolean = false): AppQuestion {
     const q: AppQuestion = {
@@ -103,21 +120,6 @@ function mapRawToApp(raw: RawAnadoluQuestion, isTechnical: boolean = false): App
     return q;
 }
 
-interface PreProcessedExamQuestion {
-    id: string;
-    unitNumber: number;
-    text: string;
-    options: { [key: string]: string };
-    correctAnswer: string;
-    explanation?: string;
-    sources?: string[];
-    is_duplicate?: boolean;
-    duplicate_of?: string;
-}
-
-// Union type for input
-type ExamInput = RawAnadoluExamQuestion | PreProcessedExamQuestion;
-
 function mapExamToApp(raw: ExamInput, isTechnical: boolean = false): AppQuestion {
     // Check if it's already in the new format (App Schema-like)
     if (typeof raw.id === 'string' && raw.id.startsWith('exam-') && !Array.isArray(raw.options)) {
@@ -163,20 +165,16 @@ function processCourse(slug: string) {
     const courseRawDir = path.join(RAW_ANADOLU_DIR, slug);
     const destFilePath = path.join(TARGET_ANADOLU_DIR, `${slug}.json`);
 
-    // Detect if this is a technical course (e.g. coding, web design)
-    // We only want courses that actually teach/show HTML/Code as content.
     const technicalKeywords = ['programlama', 'algoritma', 'kodlama', 'web', 'veritabani', 'internet-prog', 'yazilim-müh', 'yazilim-gelistirme'];
     let isTechnical = technicalKeywords.some(kw => slug.toLowerCase().includes(kw));
 
-    // Explicit exclusions
-    if (slug === 'algoritmalar-ve-programlama') {
+    if (slug === 'algoritmalar-ve-programlama' || slug === 'programlama-ii') {
         isTechnical = false;
     }
 
     const questions: AppQuestion[] = [];
     const ids = new Set<string>();
 
-    // 1. Process Alistirma Sorulari
     const alistirmaPath = path.join(courseRawDir, 'alistirma-sorulari.json');
     if (fs.existsSync(alistirmaPath)) {
         try {
@@ -192,11 +190,10 @@ function processCourse(slug: string) {
                 });
             }
         } catch (e) {
-            console.warn(`Error parsing alistirma-sorulari for ${slug}:`, e);
+            // console.warn(`Error parsing alistirma-sorulari for ${slug}:`, e);
         }
     }
 
-    // 2. Process Cikmis Sorular
     const cikmisPath = path.join(courseRawDir, 'cikmis-sorular.json');
     if (fs.existsSync(cikmisPath)) {
         try {
@@ -214,7 +211,7 @@ function processCourse(slug: string) {
                 });
             }
         } catch (e) {
-            console.warn(`Error parsing cikmis-sorular for ${slug}:`, e);
+            // console.warn(`Error parsing cikmis-sorular for ${slug}:`, e);
         }
     }
 
@@ -226,30 +223,69 @@ function processCourse(slug: string) {
 
     if (validQuestions.length > 0) {
         fs.writeFileSync(destFilePath, JSON.stringify(validQuestions, null, 2));
-        console.log(`✅ Synced ${slug} (${validQuestions.length} questions)`);
-    } else {
-        // console.log(`⚠️  No valid questions found for ${slug}`);
+        if (isMainThread) {
+            console.log(`✅ Synced ${slug} (${validQuestions.length} questions)`);
+        } else {
+            parentPort?.postMessage(`✅ Synced ${slug} (${validQuestions.length} questions)`);
+        }
     }
 }
 
-function start() {
+// MAIN LOGIC
+if (isMainThread) {
     if (!fs.existsSync(RAW_ANADOLU_DIR)) {
         console.error(`Cannot find raw directory: ${RAW_ANADOLU_DIR}`);
-        return;
+        process.exit(1);
     }
 
-    const items = fs.readdirSync(RAW_ANADOLU_DIR);
-    console.log(`Scanning ${items.length} folders in ${RAW_ANADOLU_DIR}...`);
-
-    items.forEach(item => {
-        if (item === '.DS_Store') return;
-        const fullPath = path.join(RAW_ANADOLU_DIR, item);
-        if (fs.statSync(fullPath).isDirectory()) {
-            processCourse(item);
-        }
+    const allItems = fs.readdirSync(RAW_ANADOLU_DIR).filter(item => {
+        if (item === '.DS_Store') return false;
+        try {
+            return fs.statSync(path.join(RAW_ANADOLU_DIR, item)).isDirectory();
+        } catch { return false; }
     });
 
-    console.log("Sync complete.");
-}
+    console.log(`Scanning ${allItems.length} folders in ${RAW_ANADOLU_DIR}...`);
+    console.log(`Starting parallel sync with ${NUM_WORKERS} workers...`);
 
-start();
+    const chunkCount = NUM_WORKERS;
+    const itemsPerChunk = Math.ceil(allItems.length / chunkCount);
+
+    let activeWorkers = 0;
+    const startTime = Date.now();
+
+    for (let i = 0; i < chunkCount; i++) {
+        const start = i * itemsPerChunk;
+        const end = start + itemsPerChunk;
+        const chunk = allItems.slice(start, end);
+
+        if (chunk.length === 0) continue;
+
+        activeWorkers++;
+        // Use import.meta.url for self-reference in module mode
+        const worker = new Worker(new URL(import.meta.url), {
+            workerData: chunk
+        });
+
+        worker.on('message', (msg) => {
+            console.log(msg);
+        });
+
+        worker.on('error', (err) => {
+            console.error(`Worker error:`, err);
+        });
+
+        worker.on('exit', (code) => {
+            activeWorkers--;
+            if (activeWorkers === 0) {
+                const duration = ((Date.now() - startTime) / 1000).toFixed(1);
+                console.log(`Sync complete in ${duration}s.`);
+            }
+        });
+    }
+
+} else {
+    // Worker Thread
+    const slugs: string[] = workerData;
+    slugs.forEach(processCourse);
+}

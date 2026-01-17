@@ -263,7 +263,9 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
             $el.before(' ');
             $el.replaceWith($el.contents());
             return;
+
         }
+
 
         // Unwrap H1-H6 (we prefer flat text with bolding for quizzes)
         if (['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tagName)) {
