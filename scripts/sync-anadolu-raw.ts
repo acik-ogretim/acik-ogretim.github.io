@@ -217,11 +217,17 @@ function processCourse(slug: string) {
         }
     }
 
-    if (questions.length > 0) {
-        fs.writeFileSync(destFilePath, JSON.stringify(questions, null, 2));
-        console.log(`✅ Synced ${slug} (${questions.length} questions)`);
+    const validQuestions = questions.filter(q => {
+        const hasCorrectAnswer = q.correctAnswer && q.correctAnswer.trim() !== "";
+        const hasOptions = q.options && Object.keys(q.options).length > 0;
+        return hasCorrectAnswer && hasOptions;
+    });
+
+    if (validQuestions.length > 0) {
+        fs.writeFileSync(destFilePath, JSON.stringify(validQuestions, null, 2));
+        console.log(`✅ Synced ${slug} (${validQuestions.length} questions)`);
     } else {
-        // console.log(`⚠️  No questions found for ${slug}`);
+        // console.log(`⚠️  No valid questions found for ${slug}`);
     }
 }
 

@@ -38,11 +38,17 @@ export function ensureDir(dirPath: string) {
 }
 
 export function saveQuestions(slug: string, questions: AppQuestion[], targetDir: string, extraLog?: string) {
-    if (questions.length === 0) return;
+    const validQuestions = questions.filter(q => {
+        const hasCorrectAnswer = q.correctAnswer && q.correctAnswer.trim() !== "";
+        const hasOptions = q.options && Object.keys(q.options).length > 0;
+        return hasCorrectAnswer && hasOptions;
+    });
+
+    if (validQuestions.length === 0) return;
     ensureDir(targetDir);
     const dest = path.join(targetDir, `${slug}.json`);
-    fs.writeFileSync(dest, JSON.stringify(questions, null, 2));
-    console.log(`✅ Synced ${slug} (${questions.length} questions)${extraLog ? ' ' + extraLog : ''}`);
+    fs.writeFileSync(dest, JSON.stringify(validQuestions, null, 2));
+    console.log(`✅ Synced ${slug} (${validQuestions.length} questions)${extraLog ? ' ' + extraLog : ''}`);
 }
 
 export function normalizeTextForMap(t: string): string {

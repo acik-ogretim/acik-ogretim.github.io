@@ -85,6 +85,7 @@ export interface PlayerUI {
     btnToggleReader: HTMLElement | null;
     btnStopSpeech: HTMLElement | null;
     btnTestVoiceSettings: HTMLElement | null;
+    captionText: HTMLElement | null;
 }
 
 /**

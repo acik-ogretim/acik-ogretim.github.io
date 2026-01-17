@@ -20,6 +20,7 @@ export class QuizPlayer {
   isSpeakingQueue: boolean = false;
   currentSessionId: number = 0;
   speechTimeout: any = null;
+  silentAudio: HTMLAudioElement;
 
   constructor() {
     this.questions = [];
@@ -40,6 +41,13 @@ export class QuizPlayer {
     this.synth = window.speechSynthesis;
     this.utterance = null;
 
+    // Initialize silent audio for iOS background playback
+    // Using a valid 10s silent WAV file to prevent tight-loop CPU issues
+    // Using explicit path, Astro will resolve this if in public or handled via import
+    this.silentAudio = new Audio("/silent.wav");
+    this.silentAudio.loop = true;
+    this.silentAudio.volume = 0.01; // Audible but quiet
+
     this.ui = {
       bar: document.getElementById('quiz-player-bar'),
       playBtn: document.getElementById('btn-play'),
@@ -50,6 +58,7 @@ export class QuizPlayer {
       iconPlay: document.getElementById('icon-play'),
       iconPause: document.getElementById('icon-pause'),
       progressBar: document.getElementById('player-progress'),
+      captionText: document.getElementById('player-caption-text'),
       btnToggleAnswers: document.getElementById('btn-toggle-answers'),
       btnToggleExplanations: document.getElementById('btn-toggle-explanations'),
       btnToggleOptions: document.getElementById('btn-toggle-options'),
@@ -69,8 +78,48 @@ export class QuizPlayer {
       btnTestVoiceSettings: document.getElementById('btn-test-voice-settings')
     };
 
+    // iOS AudioSession handling (experimental/polyfill support)
+    if ('audioSession' in navigator) {
+      try {
+        (navigator as any).audioSession.type = 'playback';
+      } catch (e) {
+        console.warn('[QuizPlayer] AudioSession API not supported:', e);
+      }
+    }
+
     this.init();
     this.updateReaderUI();
+  }
+
+  enableBackgroundAudio(): void {
+    if (this.silentAudio.paused) {
+      this.silentAudio.play().catch(e => console.warn("[QuizPlayer] Background audio blocked:", e));
+    }
+
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: `Soru ${(this.currentIndex + 1)}`,
+        artist: 'Açık Öğretim Portal',
+        album: 'Ders Çalışma Modu',
+        artwork: [
+          { src: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+          { src: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' }
+        ]
+      });
+
+      navigator.mediaSession.setActionHandler('play', () => { if (!this.isPlaying) this.play(); });
+      navigator.mediaSession.setActionHandler('pause', () => { if (this.isPlaying) this.pause(); });
+      navigator.mediaSession.setActionHandler('previoustrack', () => this.prev());
+      navigator.mediaSession.setActionHandler('nexttrack', () => this.next());
+      navigator.mediaSession.setActionHandler('seekbackward', () => this.prev());
+      navigator.mediaSession.setActionHandler('seekforward', () => this.next());
+    }
+  }
+
+  disableBackgroundAudio(): void {
+    if (!this.silentAudio.paused) {
+      this.silentAudio.pause();
+    }
   }
 
   loadSettings(): QuizSettings {
@@ -235,7 +284,8 @@ export class QuizPlayer {
     if (this.ui.btnStopSpeech) this.ui.btnStopSpeech.onclick = () => this.stopSpeech();
 
     // Stop speech when leaving the page
-    const stopSpeech = () => this.synth.cancel();
+    // Stop speech when leaving the page
+    const stopSpeech = () => this.stopSpeech();
     window.addEventListener('beforeunload', stopSpeech);
 
     // Ensure voices are loaded
@@ -243,7 +293,7 @@ export class QuizPlayer {
     if (this.synth.onvoiceschanged !== undefined) {
       this.synth.onvoiceschanged = () => this.populateVoices();
     }
-    window.addEventListener('pagehide', stopSpeech);
+    //window.addEventListener('pagehide', stopSpeech);
 
     this.setupOptionListeners();
     this.setupSettingsListeners();
@@ -267,6 +317,18 @@ export class QuizPlayer {
         if (index !== -1 && index !== this.currentIndex && !this.isPlaying && !this.synth.speaking) {
           this.currentIndex = index;
           this.updateStatusText();
+
+          if ('mediaSession' in navigator && !this.silentAudio.paused) {
+            navigator.mediaSession.metadata = new MediaMetadata({
+              title: `Soru ${(this.currentIndex + 1)}`,
+              artist: 'Açık Öğretim Portal',
+              album: 'Ders Çalışma Modu',
+              artwork: [
+                { src: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+                { src: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' }
+              ]
+            });
+          }
         }
       }
     }, {
@@ -654,6 +716,9 @@ export class QuizPlayer {
     }
     this.synth.cancel();
     this.isPlaying = false;
+    this.disableBackgroundAudio();
+    // Force reset audio state to clean slate
+    this.silentAudio.currentTime = 0;
     this.updateUIState();
   }
 
@@ -786,9 +851,14 @@ export class QuizPlayer {
 
   play(): void {
     this.isPlaying = true;
+    this.enableBackgroundAudio();
     this.updateUIState();
+
     if (this.synth.paused) {
       this.synth.resume();
+    } else if (this.speechQueue.length > 0) {
+      // If we have items in queue but not paused (e.g. paused during gap), resume queue
+      this.processQueue();
     } else {
       this.speakCurrent();
     }
@@ -796,8 +866,13 @@ export class QuizPlayer {
 
   pause(): void {
     this.isPlaying = false;
+    this.disableBackgroundAudio();
     this.updateUIState();
-    this.synth.cancel();
+
+    // Use pause() instead of cancel() to allow resuming
+    if (this.synth.speaking) {
+      this.synth.pause();
+    }
   }
 
   next(): void {
@@ -858,7 +933,20 @@ export class QuizPlayer {
   }
 
   updateUIState(): void {
-    // Legacy method, icons handled by dedicated updateReaderUI or similar
+    if (this.ui.iconPlay) this.ui.iconPlay.style.display = this.isPlaying ? 'none' : 'block';
+    if (this.ui.iconPause) this.ui.iconPause.style.display = this.isPlaying ? 'block' : 'none';
+    if (this.ui.playBtn) {
+      if (this.isPlaying) {
+        this.ui.playBtn.classList.add('is-playing', 'bg-teal-500/20', 'text-teal-400');
+        this.ui.playBtn.title = 'Durdur';
+      } else {
+        this.ui.playBtn.classList.remove('is-playing', 'bg-teal-500/20', 'text-teal-400');
+        this.ui.playBtn.title = 'Başlat';
+        // Clear caption if stop/pause (optional, maybe keep last spoken?)
+        // If fully stopped (not paused), clear.
+        if (!this.isPlaying && this.ui.captionText) this.ui.captionText.innerText = '';
+      }
+    }
   }
 
   cleanText(text: string | null | undefined): string {
@@ -913,6 +1001,13 @@ export class QuizPlayer {
       return;
     }
 
+    // NEW: If user paused, stop processing queue.
+    // The queue remains intact, so play() can resume it.
+    if (!this.isPlaying) {
+      this.isSpeakingQueue = false;
+      return;
+    }
+
     if (this.speechQueue.length === 0) {
       this.isSpeakingQueue = false;
 
@@ -929,7 +1024,17 @@ export class QuizPlayer {
               this.next();
             }
           }, nextDelay);
+        } else {
+          // End of all questions
+          this.isPlaying = false;
+          this.disableBackgroundAudio(); // Stop iOS background audio
+          this.updateUIState();
         }
+      } else {
+        // Queue finished and no auto-advance
+        this.isPlaying = false;
+        this.disableBackgroundAudio(); // Stop iOS background audio
+        this.updateUIState();
       }
       return;
     }
@@ -948,7 +1053,38 @@ export class QuizPlayer {
     const utter = this.createUtterance(text);
     this.utterance = utter;
 
-    utter.onstart = () => { }; // Removed console.log
+    // Caption Logic
+    utter.onstart = () => {
+      // Update Caption
+      let displayText = text;
+      if (displayText.startsWith('Soru')) displayText = displayText.substring(displayText.indexOf(':') + 1).trim();
+
+      if (this.ui.captionText) {
+        let caption = displayText;
+        if (caption.length > 50) caption = caption.substring(0, 48) + '...';
+
+        this.ui.captionText.innerText = caption;
+        this.ui.captionText.title = text; // Full text on hover
+      }
+
+      // Update Media Center / Lock Screen
+      // Update Media Center / Lock Screen
+      if ('mediaSession' in navigator) {
+        // Generate dynamic artwork
+        const artworkBlob = this.generateArtwork(this.currentIndex + 1);
+
+        const courseName = document.querySelector('h1')?.innerText || 'Açık Öğretim';
+
+        navigator.mediaSession.metadata = new MediaMetadata({
+          title: displayText.length > 60 ? displayText.substring(0, 60) + '...' : displayText,
+          artist: courseName,
+          album: `Soru ${this.currentIndex + 1}`,
+          artwork: [
+            { src: artworkBlob, sizes: '512x512', type: 'image/png' }
+          ]
+        });
+      }
+    }; // Removed console.log
 
     utter.onend = () => {
       // Clear keep-alive timer
@@ -992,7 +1128,10 @@ export class QuizPlayer {
 
     // Start keep-alive timer to prevent 15s timeout
     const keepAlive = () => {
+      // Don't force resume if paused by user
+      if (!this.isPlaying) return;
       if (!this.synth.speaking) return;
+
       this.synth.pause();
       this.synth.resume();
       this.speechTimeout = setTimeout(keepAlive, 10000);
@@ -1005,6 +1144,12 @@ export class QuizPlayer {
     if (this.currentIndex < 0 || this.currentIndex >= this.questions.length) {
       return;
     }
+
+    this.enableBackgroundAudio(); // Ensure activity for iOS
+
+    // Ensure we mark as playing, otherwise processQueue will abort
+    this.isPlaying = true;
+    this.updateUIState();
 
     this.startNewSpeechSession();
     if (this.synth.paused) this.synth.resume();
@@ -1076,6 +1221,12 @@ export class QuizPlayer {
     const latestExp = this.getLatestExplanation(q);
     if (!latestExp) return;
 
+    this.enableBackgroundAudio();
+
+    // Ensure we mark as playing
+    this.isPlaying = true;
+    this.updateUIState();
+
     // Visually reveal explanation and answer
     if (q.el) {
       const expBox = q.el.querySelector('.explanation-box') as HTMLElement;
@@ -1122,5 +1273,40 @@ export class QuizPlayer {
       return aiStore[key];
     }
     return q.explanation || '';
+  }
+
+  generateArtwork(questionNum: number): string {
+    const canvas = document.createElement('canvas');
+    canvas.width = 512;
+    canvas.height = 512;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return '/android-chrome-512x512.png';
+
+    // Background - Dark Blue like Theme
+    ctx.fillStyle = '#0f172a';
+    ctx.fillRect(0, 0, 512, 512);
+
+    // Circle Outline - Teal
+    ctx.strokeStyle = '#14b8a6';
+    ctx.lineWidth = 20;
+    ctx.beginPath();
+    ctx.arc(256, 256, 230, 0, Math.PI * 2);
+    ctx.stroke();
+
+    // Text - Question Number
+    ctx.fillStyle = '#14b8a6';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+
+    // "SORU" text
+    ctx.font = 'bold 80px sans-serif';
+    ctx.fillText('SORU', 256, 180);
+
+    // Number text
+    ctx.font = 'bold 220px sans-serif';
+    ctx.fillStyle = '#f8fafc';
+    ctx.fillText(questionNum.toString(), 256, 340);
+
+    return canvas.toDataURL('image/png');
   }
 }

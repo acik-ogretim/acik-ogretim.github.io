@@ -201,20 +201,26 @@ async function processCourse(slug: string) {
             }
         }
 
-        const appData = rawData.map(raw => {
-            const q = mapRawToApp(raw, slug);
-            const existing = existingMap.get(q.id);
+        const appData = rawData
+            .map(raw => {
+                const q = mapRawToApp(raw, slug);
+                const existing = existingMap.get(q.id);
 
-            if (extraExplanationsMap.has(q.id)) {
-                q.explanation = extraExplanationsMap.get(q.id);
-            }
+                if (extraExplanationsMap.has(q.id)) {
+                    q.explanation = extraExplanationsMap.get(q.id);
+                }
 
-            if (!q.explanation && existing?.explanation) {
-                q.explanation = existing.explanation;
-            }
+                if (!q.explanation && existing?.explanation) {
+                    q.explanation = existing.explanation;
+                }
 
-            return q;
-        });
+                return q;
+            })
+            .filter(q => {
+                const hasCorrectAnswer = q.correctAnswer && q.correctAnswer.trim() !== "";
+                const hasOptions = q.options && Object.keys(q.options).length > 0;
+                return hasCorrectAnswer && hasOptions;
+            });
 
         fs.writeFileSync(destFilePath, JSON.stringify(appData, null, 2));
         console.log(`✅ Synced ${slug} (${appData.length} questions) [Merged]`);
