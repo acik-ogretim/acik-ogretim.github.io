@@ -165,7 +165,8 @@ export class QuizPlayer {
       const id = el.id;
       // The question text is in a <p> tag that is a sibling of the header and before the <ul> options
       const textEl = el.querySelector('.question-text') || el.querySelector('.prose p:first-child') || el.querySelector('.prose p');
-      const text = textEl ? (textEl as HTMLElement).innerText : '';
+      // Use innerHTML instead of innerText to preserve <ol>/<ul> tags for cleanText's new DOM parsing
+      const text = textEl ? (textEl as HTMLElement).innerHTML : '';
 
       const correctOption = el.querySelector('.correct-option');
       const correctKeyText = (correctOption?.querySelector('.option-key') as HTMLElement)?.innerText;
@@ -951,15 +952,54 @@ export class QuizPlayer {
 
   cleanText(text: string | null | undefined): string {
     if (!text) return '';
-    // Use DOM parser to handle entities and spacing correctly
+    console.log('[DEBUG cleanText IN]:', text);
+
+    // Use DOM parser
     const div = document.createElement('div');
-    // Replace block tags with spaces to prevent word concatenation
-    div.innerHTML = String(text)
-      .replace(/<br\s*\/?>/gi, ' ')
-      .replace(/<\/p>/gi, ' ')
-      .replace(/<\/div>/gi, ' ')
-      .replace(/<\/li>/gi, ' ');
-    return (div.textContent || div.innerText || '').replace(/\s+/g, ' ').trim();
+    // Pre-clean messy br tags inside lists that might break structure
+    // Some data has <ol><br><li>... which is invalid and might confuse parsers
+    let rawHtml = String(text).replace(/<br\s*\/?>/gi, ' ');
+    div.innerHTML = rawHtml;
+
+    // 1. Handle Lists - Prepend numbers to OL items using DOM
+    div.querySelectorAll('ol').forEach(list => {
+      // Get LIs specifically, ignoring improved hierarchy issues
+      const items = list.querySelectorAll('li');
+      items.forEach((item, index) => {
+        // Prepend number safely
+        // Add a space after to ensure separation
+        const prefix = `${index + 1}. `;
+        item.prepend(document.createTextNode(prefix));
+      });
+    });
+
+    // 2. Use innerText to get text representation
+    // innerText preserves newlines for <br> and block elements, which is what we want for speech pauses.
+    let extracted = div.innerText;
+
+    // 3. Convert newlines to pauses and collapse spaces
+    extracted = extracted.replace(/[\n\r]+/g, '. ');
+    extracted = extracted.replace(/\s+/g, ' ').trim();
+
+    // 4. Normalize Roman Numerals
+    return this.normalizeRomanNumerals(extracted);
+  }
+
+  // Helper method for Roman numeral normalization, extracted from original cleanText
+  private normalizeRomanNumerals(text: string): string {
+    // Note: \b ensure we don't replace "I" inside words, though "I" is tricky in English/Turkish mix.
+    // In Turkish context provided: "I." usually appears as "I." or " I "
+    return text
+      .replace(/\bI\b/g, '1')
+      .replace(/\bII\b/g, '2')
+      .replace(/\bIII\b/g, '3')
+      .replace(/\bIV\b/g, '4')
+      .replace(/\bV\b/g, '5')
+      .replace(/\bVI\b/g, '6')
+      .replace(/\bVII\b/g, '7')
+      .replace(/\bVIII\b/g, '8')
+      .replace(/\bIX\b/g, '9')
+      .replace(/\bX\b/g, '10');
   }
 
   createUtterance(text: string): SpeechSynthesisUtterance {
@@ -1169,8 +1209,10 @@ export class QuizPlayer {
     // Chunk 2: Options
     // If hiding incorrect options, we still want to read the correct one if it exists
     if (!this.settings.hideIncorrectOptions) {
-      const optText = "Seçenekler: " + q.options.map(opt => `${opt.key} şıkkı, ${this.cleanText(opt.text)}`).join('. ') + ".";
-      this.speechQueue.push(optText);
+      this.speechQueue.push("Seçenekler.");
+      q.options.forEach(opt => {
+        this.speechQueue.push(`${opt.key} şıkkı: ${this.cleanText(opt.text)}.`);
+      });
     } else {
       const correctOpt = q.options.find(opt => opt.key === q.correctKey);
       if (correctOpt) {
