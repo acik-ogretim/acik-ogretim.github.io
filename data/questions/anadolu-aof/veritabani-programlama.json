@@ -11,7 +11,7 @@
       "D": "Veri ile ilgili yapılacak işlemi veritabanı yönetim sistemine tarif eder.",
       "E": "Verinin tasarım ve yönetimi için geliştirilmiştir."
     },
-    "explanation": "SQL kısaltması ile kullanılan Yapısal Sorgu Dili verinin yönetilmesi ve tasarımı için<br/>geliştirilmiş bir dildir. SQL, veri ile ilgili yapılacak işlemi VTYS’ye tarif eden bir bildirim dilidir. İşlemin nasıl yapılacağı ile ilgilenmez bu süreç VTYS programları tarafından yürütülür. SQL herhangi bir veri tabanı ortamında kullanılan bir alt dildir. Programlama dili değildir. Doğru Cevap A"
+    "explanation": "SQL kısaltması ile kullanılan Yapısal Sorgu Dili verinin yönetilmesi ve tasarımı için geliştirilmiş bir dildir. SQL, veri ile ilgili yapılacak işlemi VTYS’ye tarif eden bir bildirim dilidir. İşlemin nasıl yapılacağı ile ilgilenmez bu süreç VTYS programları tarafından yürütülür. SQL herhangi bir veri tabanı ortamında kullanılan bir alt dildir. Programlama dili değildir. Doğru Cevap A"
   },
   {
     "id": "3739021",
@@ -95,7 +95,7 @@
       "D": "Lisanslama (License Terms)",
       "E": "Özellik Seçimi (Feature Selection)"
     },
-    "explanation": "MS SQL Server 2014 veritabanı motoru servisine yönetici olarak erişirken<br/>kullanılacak kimlik doğrulama yöntemi Veritabanı Motoru Yapılandırması (Database Engine Configuration) adımında belirlenir. Doğru cevap B."
+    "explanation": "MS SQL Server 2014 veritabanı motoru servisine yönetici olarak erişirken kullanılacak kimlik doğrulama yöntemi Veritabanı Motoru Yapılandırması (Database Engine Configuration) adımında belirlenir. Doğru cevap B."
   },
   {
     "id": "3739027",
@@ -277,7 +277,7 @@
       "D": "Urun_No kolonunun oluşturulması",
       "E": "Yabancı Anahtar oluşturulması"
     },
-    "explanation": "Oluşturulan “Bilisim” veritabanına ait tabloların oluşturulması için aşağıdaki kod bloğunun SQL Sorgu penceresine yazılıp çalıştırılması gerekir.<br/>USE Bilisim<br/>CREATE TABLE Bolumler(<br/>Bolum_No int NOT NULL,<br/>Bolum_Adi nchar(50)NULL,<br/>PRIMARY KEY(Bolum_No)<br/>)<br/>CREATE TABLE Calisanlar(<br/>TC_No nvarchar(11) NOT NULL,<br/>Adi nvarchar(100) NULL,<br/>Bolum_No int NULL,<br/>Cinsiyet nchar(1) NULL,<br/>PRIMARY KEY(TC_no),<br/>FOREIGN KEY(Bolum_No)REFERENCES Bolumler(Bolum_No)<br/>)<br/>CREATE TABLE Urunler(<br/>Urun_No int NOT NULL,<br/>Urun_Adi nvarchar(50) NULL,<br/>Urun_Sayisi int NULL,<br/>Urun_Fiyati decimal(18, 2) NULL,<br/>Bolum_No int NULL,<br/>PRIMARY KEY(Urun_No),<br/>FOREIGN KEY(Bolum_No) REFERENCES Bolumler(Bolum_No)<br/>)<br/>CREATE TABLE Satislar(<br/>Satis_No int NOT NULL,<br/>Urun_No int NULL,<br/>Calisan_TC_No nvarchar(11) NULL,<br/>Miktar int NULL,<br/>Fiyat decimal(18, 2) NULL,<br/>Tarih date NULL,<br/>PRIMARY KEY(Satis_No),<br/>FOREIGN KEY(Urun_No) REFERENCES Urunler(Urun_No),<br/>FOREIGN KEY(Calisan_TC_No) REFERENCES Calisanlar(TC_No)<br/>)<br/>Doğru cevap C’dir."
+    "explanation": "Oluşturulan “Bilisim” veritabanına ait tabloların oluşturulması için aşağıdaki kod bloğunun SQL Sorgu penceresine yazılıp çalıştırılması gerekir.<br/>USE Bilisim<br/>CREATE TABLE Bolumler(<br/>Bolum_No int NOT NULL,<br/>Bolum_Adi nchar(50)NULL,<br/>PRIMARY KEY(Bolum_No)<br/>)<br/>CREATE TABLE Calisanlar(<br/>TC_No nvarchar(11) NOT NULL,<br/>Adi nvarchar(100) NULL,<br/>Bolum_No int NULL,<br/>Cinsiyet nchar(1) NULL,<br/>PRIMARY KEY(TC_no),<br/>FOREIGN KEY(Bolum_No)REFERENCES Bolumler(Bolum_No)<br/>)<br/>CREATE TABLE Urunler(<br/>Urun_No int NOT NULL,<br/>Urun_Adi nvarchar(50) NULL,<br/>Urun_Sayisi int NULL,<br/>Urun_Fiyati decimal(18, 2) NULL,<br/>Bolum_No int NULL,<br/>PRIMARY KEY(Urun_No),<br/>FOREIGN KEY(Bolum_No) REFERENCES Bolumler(Bolum_No)<br/>)<br/>CREATE TABLE Satislar(<br/>Satis_No int NOT NULL,<br/>Urun_No int NULL,<br/>Calisan_TC_No nvarchar(11) NULL,<br/>Miktar int NULL,<br/>Fiyat decimal(18, 2) NULL,<br/>Tarih date NULL,<br/>PRIMARY KEY(Satis_No),<br/>FOREIGN KEY(Urun_No) REFERENCES Urunler(Urun_No),<br/>FOREIGN KEY(Calisan_TC_No) REFERENCES Calisanlar(TC_No)<br/>)"
   },
   {
     "id": "3739040",
@@ -431,7 +431,7 @@
       "D": "güvenlik sistemi",
       "E": "yenileme sistemi"
     },
-    "explanation": "\"Günümüzde en yaygın kullanıma<br/>sahip olan ilişkisel veritabanları<br/>yönetim yazılımlarına MS<br/>SQL Server, MySQL, Oracle örnek<br/>verilebilir.\" boşluğa hangisi gelmelidir?"
+    "explanation": "\"Günümüzde en yaygın kullanıma sahip olan ilişkisel veritabanları yönetim yazılımlarına MS<br/>SQL Server, MySQL, Oracle örnek verilebilir.\" boşluğa hangisi gelmelidir?"
   },
   {
     "id": "3739051",
@@ -445,7 +445,7 @@
       "D": "javascript",
       "E": "pithon"
     },
-    "explanation": "<strong>SQL</strong> kısaltması ile kullanılan<br/>Yapısal Sorgu Dili (Structured<br/>Query Language) verinin<br/>yönetilmesi ve tasarımı için<br/>geliştirilmiş bir dildir.<br/>SQL Komutları kullanım<br/>amaçlarına göre üç ayrı<br/>kategoriye ayrılmaktadır. Bunlar<br/>Veri Tanımlama Dili (DDL -Data<br/>Definition Language), Veri İşleme<br/>Dili (DML - Data Manipulation<br/>Language) ve Veri Kontrol Dilidir<br/>(DCL Data Control Language).<br/>SQL, veri ile ilgili yapılacak işlemi<br/>VTYS’ye tarif eden bir bildirim<br/>dilidir (Declarativelanguage).<br/>Bu işlemin nasıl yapılacağı<br/>ile ilgilenmez bu süreç VTYS<br/>programları tarafından yürütülür."
+    "explanation": "<strong>SQL</strong> kısaltması ile kullanılan<br/>Yapısal Sorgu Dili (Structured<br/>Query Language) verinin yönetilmesi ve tasarımı için geliştirilmiş bir dildir.<br/>SQL Komutları kullanım amaçlarına göre üç ayrı kategoriye ayrılmaktadır. Bunlar<br/>Veri Tanımlama Dili (DDL -Data<br/>Definition Language), Veri İşleme<br/>Dili (DML - Data Manipulation<br/>Language) ve Veri Kontrol Dilidir<br/>(DCL Data Control Language).<br/>SQL, veri ile ilgili yapılacak işlemi<br/>VTYS’ye tarif eden bir bildirim dilidir (Declarativelanguage).<br/>Bu işlemin nasıl yapılacağı ile ilgilenmez bu süreç VTYS<br/>programları tarafından yürütülür."
   },
   {
     "id": "3739052",
@@ -464,7 +464,7 @@
   {
     "id": "3739053",
     "unitNumber": 1,
-    "text": "\".............. (API-Application programming interface) yazılımların diğer yazılımlar tarafından kullanılmasına olanak sağlayan fonksiyonlar ve tanımları içeren bir yapıdır.\" boşluğa hangisi gelmelidir?",
+    "text": "\".............. (API-Application programming interface)<br/>yazılımların diğer yazılımlar tarafından kullanılmasına olanak sağlayan fonksiyonlar ve tanımları içeren bir yapıdır.\" boşluğa hangisi gelmelidir?",
     "correctAnswer": "A",
     "options": {
       "A": "Uygulama programlama arayüzü",
@@ -473,7 +473,7 @@
       "D": "java",
       "E": "oracle"
     },
-    "explanation": "Uygulama programlama<br/>arayüzü: (API-Application<br/>programming interface)<br/>yazılımların diğer yazılımlar<br/>tarafından kullanılmasına olanak<br/>sağlayan fonksiyonlar ve tanımları<br/>içeren bir yapıdır."
+    "explanation": "Uygulama programlama arayüzü: (API-Application programming interface)<br/>yazılımların diğer yazılımlar tarafından kullanılmasına olanak sağlayan fonksiyonlar ve tanımları içeren bir yapıdır."
   },
   {
     "id": "3739054",
@@ -487,7 +487,7 @@
       "D": "oracle",
       "E": "exception"
     },
-    "explanation": "Görünüm (View) Veritabanı<br/>yönetim sistemlerinde<br/>kullanıcıların ihtiyaçlarına<br/>göre verinin farklı şekillerde<br/>görüntülenmesini sağlayan<br/>yapılardır."
+    "explanation": "Görünüm (View) Veritabanı yönetim sistemlerinde kullanıcıların ihtiyaçlarına göre verinin farklı şekillerde görüntülenmesini sağlayan yapılardır."
   },
   {
     "id": "3739055",
@@ -501,7 +501,7 @@
       "D": "Lisanslama (License Terms):",
       "E": "Kurulum Tipi (Installation Type)"
     },
-    "explanation": "Evrensel Kurallar (Global Rules): Bu adım için sizden bir girdi beklememekte<br/>olup kurulum yardımcısı tarafından kullanılacak dosyaların kurulumu sırasında<br/>bir problemle karşılaşılmaması için bazı kontroller yapılır. Problem yoksa sonraki<br/>adıma geçer."
+    "explanation": "Evrensel Kurallar (Global Rules): Bu adım için sizden bir girdi beklememekte olup kurulum yardımcısı tarafından kullanılacak dosyaların kurulumu sırasında bir problemle karşılaşılmaması için bazı kontroller yapılır. Problem yoksa sonraki adıma geçer."
   },
   {
     "id": "3739056",
@@ -515,7 +515,7 @@
       "D": "Databases",
       "E": "exception"
     },
-    "explanation": "Birincil Anahtar (Primary Key)<br/>olarak tanımlanan alan ya da<br/>alanlar, ilgili tabloda benzersiz<br/>değer alırlar. Diğer bir deyişle<br/>aynı değerin faklı satırda yer<br/>almamasını garanti altına alırlar."
+    "explanation": "olarak tanımlanan alan ya da alanlar, ilgili tabloda benzersiz değer alırlar. Diğer bir deyişle aynı değerin faklı satırda yer almamasını garanti altına alırlar."
   },
   {
     "id": "3739057",
@@ -529,7 +529,7 @@
       "D": "group by",
       "E": "and"
     },
-    "explanation": "join"
+    "explanation": ""
   },
   {
     "id": "3739058",
@@ -543,12 +543,12 @@
       "D": "order by",
       "E": "group by"
     },
-    "explanation": "A"
+    "explanation": ""
   },
   {
     "id": "3739059",
     "unitNumber": 1,
-    "text": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Farklı üreticilere ait Veri Tabanı Yönetim Sistemi üzerinde işlemleri yapmak üzere en yaygın olarak ortak kullanılan dil aşağıdakilerden hangisidir?<br/>&lt;/div&gt; &lt;/div&gt;",
+    "text": "Farklı üreticilere ait Veri Tabanı Yönetim Sistemi üzerinde işlemleri yapmak üzere en yaygın olarak ortak kullanılan dil aşağıdakilerden hangisidir?",
     "correctAnswer": "E",
     "options": {
       "A": "C+",
@@ -557,12 +557,12 @@
       "D": "Android",
       "E": "SQL"
     },
-    "explanation": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Farklı üreticilere ait Veri Tabanı Yönetim Sistemi üzerinde işlemleri yapmak üzere en yaygın olarak ortak kullanılan dil Yapısal Sorgu Dili (SQL)’dir.<br/>&lt;/div&gt; &lt;/div&gt;"
+    "explanation": "Farklı üreticilere ait Veri Tabanı Yönetim Sistemi üzerinde işlemleri yapmak üzere en yaygın olarak ortak kullanılan dil Yapısal Sorgu Dili (SQL)’dir."
   },
   {
     "id": "3739060",
     "unitNumber": 1,
-    "text": "&lt;div class=\"column\"&gt; SQL komutları kullanım amaçlarına göre üç genel kategoriye ayrılır. Aşağıdakilerden hangisi bu kategorilerden biridir?<br/>&lt;/div&gt;",
+    "text": "SQL komutları kullanım amaçlarına göre üç genel kategoriye ayrılır. Aşağıdakilerden hangisi bu kategorilerden biridir?",
     "correctAnswer": "C",
     "options": {
       "A": "Veri Derleme Dili",
@@ -571,26 +571,26 @@
       "D": "Veri Oluşturma Dili",
       "E": "Veri Kaydetme Dili"
     },
-    "explanation": "&lt;div class=\"column\"&gt; SQL Komutları kullanım amaçlarına göre üç ayrı kategoriye ayrılmaktadır. Bunlar Veri Tanımlama Dili (DDL -Data Definition Language), Veri İşleme Dili (DML - Data Manipulation Language) ve Veri Kontrol Dilidir (DCL Data Control Language).<br/>&lt;/div&gt;"
+    "explanation": "SQL Komutları kullanım amaçlarına göre üç ayrı kategoriye ayrılmaktadır. Bunlar Veri Tanımlama Dili (DDL -Data Definition Language), Veri İşleme Dili (DML - Data Manipulation Language) ve Veri Kontrol Dilidir (DCL Data Control Language)."
   },
   {
     "id": "3739061",
     "unitNumber": 1,
-    "text": "&lt;div class=\"column\"&gt; \"Veri girmek, değiştirmek, silmek ve verileri almak için kullanılan komutların tümüdür. Bu kategoride, veri seçmek için SELECT, veri silmek için DELETE, veri güncellemek için UPDATE ve veri girmek için INSERT en sık kullanılan komutlarıdır.\" şeklinde tanımlanan SQL komut kategorisi aşağıdakilerden hangisidir?<br/>&lt;/div&gt;",
+    "text": "\"Veri girmek, değiştirmek, silmek ve verileri almak için kullanılan komutların tümüdür. Bu kategoride, veri seçmek için SELECT, veri silmek için DELETE, veri güncellemek için UPDATE ve veri girmek için INSERT en sık kullanılan komutlarıdır.\" şeklinde tanımlanan SQL komut kategorisi aşağıdakilerden hangisidir?",
     "correctAnswer": "C",
     "options": {
-      "A": "&lt;div class=\"column\"&gt; Veri Tanımlama Dili<br/>&lt;/div&gt;",
-      "B": "&lt;div class=\"column\"&gt; Veri Derleme Dili<br/>&lt;/div&gt;",
-      "C": "&lt;div class=\"column\"&gt; Veri İşleme Dili<br/>&lt;/div&gt;",
-      "D": "&lt;div class=\"column\"&gt; Veri Kontrol Dili<br/>&lt;/div&gt;",
-      "E": "&lt;div class=\"column\"&gt; Veri Tasarlama Dili<br/>&lt;/div&gt;"
+      "A": "Veri Tanımlama Dili",
+      "B": "Veri Derleme Dili",
+      "C": "Veri İşleme Dili",
+      "D": "Veri Kontrol Dili",
+      "E": "Veri Tasarlama Dili"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Veri İşleme Dili (DML Data Manipulation Language): DML veri girmek, değiştirmek, silmek ve verileri almak için kullanılan komutların tümüdür. Bu kategoride, veri seçmek için SELECT, veri silmek için DELETE, veri güncellemek için UPDATE ve veri girmek için INSERT en sık kullanılan DML komutlarıdır.<br/>&lt;/div&gt;"
+    "explanation": "Veri İşleme Dili (DML Data Manipulation Language): DML veri girmek, değiştirmek, silmek ve verileri almak için kullanılan komutların tümüdür. Bu kategoride, veri seçmek için SELECT, veri silmek için DELETE, veri güncellemek için UPDATE ve veri girmek için INSERT en sık kullanılan DML komutlarıdır."
   },
   {
     "id": "3739062",
     "unitNumber": 1,
-    "text": "&lt;div class=\"column\"&gt; Eğer işletme süreçlerinde veri işleme için akış kontrolü, döngü vb. gerektiren bir dil (Java, C / C ++ / C #, COBOL vb. yordamsal dil) ihtiyaç olursa, standart SQL bu işlemlerin yapılması için yeterli olmaz. Bu durum için çözüm yöntemleri veritabanı ile etkileşimi de içermek üzere üç sınıfta toplanabilir. Aşağıdakilerden hangisi bu sınıflardan biridir?<br/>&lt;/div&gt;",
+    "text": "Eğer işletme süreçlerinde veri işleme için akış kontrolü, döngü vb. gerektiren bir dil (Java, C / C ++ / C #, COBOL vb. yordamsal dil) ihtiyaç olursa, standart SQL bu işlemlerin yapılması için yeterli olmaz. Bu durum için çözüm yöntemleri veritabanı ile etkileşimi de içermek üzere üç sınıfta toplanabilir. Aşağıdakilerden hangisi bu sınıflardan biridir?",
     "correctAnswer": "B",
     "options": {
       "A": "Organic SQL",
@@ -599,12 +599,12 @@
       "D": "Veritabanı silme dili kullanma",
       "E": "ALTER SQL"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Eğer işletme süreçlerinde veri işleme için akış kontrolü, döngü vb. gerektiren bir dil (Java, C / C ++ / C #, COBOL vb. yordamsal dil) ihtiyaç olursa, standart SQL bu işlemlerin yapılması için yeterli olmaz. Bu durum için çözüm yöntemleri veritabanı ile etkileşimi de içermek üzere üç sınıfta toplanabilir:<br/>Gömülü SQL(Embedded SQL)<br/>Veritabanı bağlantısı için yazılım kütüphaneleri kullanma<br/>Veritabanı programlama dili kullanma<br/>&lt;/div&gt;"
+    "explanation": "Eğer işletme süreçlerinde veri işleme için akış kontrolü, döngü vb. gerektiren bir dil (Java, C / C ++ / C #, COBOL vb. yordamsal dil) ihtiyaç olursa, standart SQL bu işlemlerin yapılması için yeterli olmaz. Bu durum için çözüm yöntemleri veritabanı ile etkileşimi de içermek üzere üç sınıfta toplanabilir:<br/>Gömülü SQL(Embedded SQL)<br/>Veritabanı bağlantısı için yazılım kütüphaneleri kullanma<br/>Veritabanı programlama dili kullanma"
   },
   {
     "id": "3739063",
     "unitNumber": 1,
-    "text": "&lt;div class=\"column\"&gt; SQL Server 2014 Express yazılımını kurmadan önce birtakım hazırlık ve kontrolleri yapmanız gerekmektedir. Yazılımın çalışabilmesi için bilgisayarınızın işletim sisteminin minimum kaç bit olması gereklidir?<br/>&lt;/div&gt;",
+    "text": "SQL Server 2014 Express yazılımını kurmadan önce birtakım hazırlık ve kontrolleri yapmanız gerekmektedir. Yazılımın çalışabilmesi için bilgisayarınızın işletim sisteminin minimum kaç bit olması gereklidir?",
     "correctAnswer": "E",
     "options": {
       "A": "1",
@@ -613,12 +613,12 @@
       "D": "8",
       "E": "32"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Bilgisayarlarınıza SQL Server 2014 Express yazılımını kurmadan önce birtakım hazırlık ve kontrolleri yapmanız gerekmektedir. Yazılımın çalışabilmesi için bilgisayarınızın sağlaması gereken minumum sistem gereksinimleri sağlayıp sağlamadığı, işletim sisteminizin 32 bit ya da 64 bit olup olmadığı bilgilerini kontrol ederek http://www.microsoft.com/en-us/download/details.aspx?id=42299 adresinden kurulum dosyasının indirilmesi gerekmektedir.<br/>&lt;/div&gt;"
+    "explanation": "Bilgisayarlarınıza SQL Server 2014 Express yazılımını kurmadan önce birtakım hazırlık ve kontrolleri yapmanız gerekmektedir. Yazılımın çalışabilmesi için bilgisayarınızın sağlaması gereken minumum sistem gereksinimleri sağlayıp sağlamadığı, işletim sisteminizin 32 bit ya da 64 bit olup olmadığı bilgilerini kontrol ederek http://www.microsoft.com/en-us/download/details.aspx?id=42299 adresinden kurulum dosyasının indirilmesi gerekmektedir."
   },
   {
     "id": "3739064",
     "unitNumber": 1,
-    "text": "&lt;div class=\"column\"&gt; MS SQL Server 2014 Express Kurulumu esnasında Veritabanı Motoru Yapılandırması (Database Engine Configuration) adımı uygulanırken Authentication Mode sekmesi altında aşağıdaki hangi Mode seçilmelidir?<br/>&lt;/div&gt;",
+    "text": "MS SQL Server 2014 Express Kurulumu esnasında Veritabanı Motoru Yapılandırması (Database Engine Configuration) adımı uygulanırken Authentication Mode sekmesi altında aşağıdaki hangi Mode seçilmelidir?",
     "correctAnswer": "D",
     "options": {
       "A": "Single Mode",
@@ -627,12 +627,12 @@
       "D": "Mixed Mode",
       "E": "Embedded Mode"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Veritabanı Motoru Yapılandırması (Database Engine Configuration): Bu adımda, MS SQL Server 2014 veritabanı motoru servisine yönetici olarak erişirken kullanılacak kimlik doğrulama yöntemi belirlenir. “Mixed Mode (SQL Server authentication and Windows authentication)” seçeneği ile hem Windows kullanıcılarını hem de SQL kullanıcısı tanımlanarak devam edilebilir.<br/>&lt;/div&gt;"
+    "explanation": "Veritabanı Motoru Yapılandırması (Database Engine Configuration): Bu adımda, MS SQL Server 2014 veritabanı motoru servisine yönetici olarak erişirken kullanılacak kimlik doğrulama yöntemi belirlenir. “Mixed Mode (SQL Server authentication and Windows authentication)” seçeneği ile hem Windows kullanıcılarını hem de SQL kullanıcısı tanımlanarak devam edilebilir."
   },
   {
     "id": "3739065",
     "unitNumber": 1,
-    "text": "&lt;div class=\"column\"&gt; MS SQL Server 2014 Yardımcısı ile Örnek Veritabanını Oluşturma aşamasında herhangi bir alan için mutlaka tanımlı bir değer olması isteniyorsa aşağıdakilerden hangisi yapılmalıdır?<br/>&lt;/div&gt;",
+    "text": "MS SQL Server 2014 Yardımcısı ile Örnek Veritabanını Oluşturma aşamasında herhangi bir alan için mutlaka tanımlı bir değer olması isteniyorsa aşağıdakilerden hangisi yapılmalıdır?",
     "correctAnswer": "B",
     "options": {
       "A": "Allow Nulls seçilmelidir",
@@ -641,7 +641,7 @@
       "D": "Set Secondary Key seçilmemelidir.",
       "E": "Object Explorer boş bırakılmalıdır."
     },
-    "explanation": "&lt;div class=\"column\"&gt; &lt;div class=\"page\" title=\"Page 11\"&gt; &lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; MS SQL Server 2014 Yardımcısı ile Örnek Veritabanını Oluşturma<br/>&lt;/div&gt; Bolumler(Bolum_No, Bolum_Adi) şemasına uygun olarak alan isimleri ve uygun veri tipleri tanımlanır. Ayrıca veri tekrarı olmaması istenen alanlar için birincil anahtar tanımlaması yapılması gerekir. “Bolum_No” satırına gelip sağ tıklayarak “Set Primary Key” ile birincil anahtar ataması yapılabilir. Sonra menüden Save(Kaydet) dendiğinde tablo ismi girilir. Eğer herhangi bir alan için mutlaka tanımlı bir değer olması isteniyorsa “Allow Nulls” u seçmemek gerekir.<br/>&lt;/div&gt; &lt;/div&gt; &lt;/div&gt;"
+    "explanation": "MS SQL Server 2014 Yardımcısı ile Örnek Veritabanını Oluşturma<br/>Bolumler(Bolum_No, Bolum_Adi) şemasına uygun olarak alan isimleri ve uygun veri tipleri tanımlanır. Ayrıca veri tekrarı olmaması istenen alanlar için birincil anahtar tanımlaması yapılması gerekir. “Bolum_No” satırına gelip sağ tıklayarak “Set Primary Key” ile birincil anahtar ataması yapılabilir. Sonra menüden Save(Kaydet) dendiğinde tablo ismi girilir. Eğer herhangi bir alan için mutlaka tanımlı bir değer olması isteniyorsa “Allow Nulls” u seçmemek gerekir."
   },
   {
     "id": "3739066",
@@ -660,21 +660,21 @@
   {
     "id": "3739067",
     "unitNumber": 1,
-    "text": "&lt;div class=\"column\"&gt; Yazılımların diğer yazılımlar tarafından kullanılmasına olanak sağlayan fonksiyonlar ve tanımları içeren yapı aşağıdakilerden hangisidir?<br/>&lt;/div&gt;",
+    "text": "Yazılımların diğer yazılımlar tarafından kullanılmasına olanak sağlayan fonksiyonlar ve tanımları içeren yapı aşağıdakilerden hangisidir?",
     "correctAnswer": "A",
     "options": {
       "A": "Uygulama programlama arayüzü",
-      "B": "&lt;div class=\"column\"&gt; Veritabanı programlama dili kullanma<br/>&lt;/div&gt;",
+      "B": "Veritabanı programlama dili kullanma",
       "C": "Derleyici kullanma arayüzü",
       "D": "Tasarım arayüzü",
       "E": "Veri kontrol arayüzü"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Uygulama programlama arayüzü: (API-Application programming interface) yazılımların diğer yazılımlar tarafından kullanılmasına olanak sağlayan fonksiyonlar ve tanımları içeren bir yapıdır.<br/>&lt;/div&gt;"
+    "explanation": "Uygulama programlama arayüzü: (API-Application programming interface) yazılımların diğer yazılımlar tarafından kullanılmasına olanak sağlayan fonksiyonlar ve tanımları içeren bir yapıdır."
   },
   {
     "id": "3739068",
     "unitNumber": 1,
-    "text": "&lt;div class=\"column\"&gt; &lt;div class=\"page\" title=\"Page 3\"&gt; &lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Veri Kontrol Dili (DCL - Data Control Language), veritabanı kullanıcısı veya rolü ile ilgili izinlerin düzenlenmesini sağlar. Bu kategoride, daha önce yapılmış olan yetki ve izinleri kaldırmak için aşağıdaki komut kullanılmaktadır?<br/>&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;",
+    "text": "Veri Kontrol Dili (DCL - Data Control Language), veritabanı kullanıcısı veya rolü ile ilgili izinlerin düzenlenmesini sağlar. Bu kategoride, daha önce yapılmış olan yetki ve izinleri kaldırmak için aşağıdaki komut kullanılmaktadır?",
     "correctAnswer": "E",
     "options": {
       "A": "SELECT",
@@ -683,7 +683,7 @@
       "D": "DENY",
       "E": "REVOKE"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Veri Kontrol Dili (DCL - Data Control Language): DCL veritabanı kullanıcısı veya rolü ile ilgili izinlerin düzenlenmesini sağlar. Bu kategoride, kullanıcıya yetki tanımlama için GRANT, kullanıcı yetkilerini engellemek için DENY ve daha önce yapılmış olan yetki ve izinleri kaldırmak için REVOKE komutları kullanılır.<br/>&lt;/div&gt;"
+    "explanation": "Veri Kontrol Dili (DCL - Data Control Language): DCL veritabanı kullanıcısı veya rolü ile ilgili izinlerin düzenlenmesini sağlar. Bu kategoride, kullanıcıya yetki tanımlama için GRANT, kullanıcı yetkilerini engellemek için DENY ve daha önce yapılmış olan yetki ve izinleri kaldırmak için REVOKE komutları kullanılır."
   },
   {
     "id": "3739069",
@@ -907,7 +907,7 @@
       "D": "##",
       "E": "@"
     },
-    "explanation": "Değişken İşlemleri<br/>@"
+    "explanation": "Değişken İşlemleri"
   },
   {
     "id": "3739085",
@@ -1005,7 +1005,7 @@
       "D": "Hatayı açıklayan tam metin mesajı döndürür.",
       "E": "Hatanın durum numarasını döndürür."
     },
-    "explanation": "PROGRAM İZLENİRLİK ARAÇLARI<br/>Hata Denetimi<br/>Hatanın durum numarasını döndürür<br/>Hatanın durum numarasını döndürür."
+    "explanation": "PROGRAM İZLENİRLİK ARAÇLARI<br/>Hata Denetimi<br/>Hatanın durum numarasını döndürür"
   },
   {
     "id": "3739092",
@@ -1094,7 +1094,7 @@
   {
     "id": "3739098",
     "unitNumber": 2,
-    "text": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; SQL komutları kullanım amaçlarına göre üç genel kategoriye ayrılır. Aşağıdakilerden hangisi bu kategorilerden biridir?<br/>&lt;/div&gt; &lt;/div&gt;",
+    "text": "SQL komutları kullanım amaçlarına göre üç genel kategoriye ayrılır. Aşağıdakilerden hangisi bu kategorilerden biridir?",
     "correctAnswer": "D",
     "options": {
       "A": "Veri Tamamlama Dili",
@@ -1103,12 +1103,12 @@
       "D": "Veri İşleme Dili",
       "E": "Veri Toplama Dili"
     },
-    "explanation": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; SQL komutları kullanım amaçlarına göre<br/>• Veri Tanımlama Dili (DDL)<br/>• Veri İşleme Dili (DML)<br/>• Veri Kontrol Dili (DCL)<br/>üç genel kategoriye ayrılır.<br/>&lt;/div&gt; &lt;/div&gt;"
+    "explanation": "SQL komutları kullanım amaçlarına göre<br/>• Veri Tanımlama Dili (DDL)<br/>• Veri İşleme Dili (DML)<br/>• Veri Kontrol Dili (DCL)<br/>üç genel kategoriye ayrılır."
   },
   {
     "id": "3739099",
     "unitNumber": 2,
-    "text": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Veri Tanımlama Dili (DDL), verilerin tutulduğu nesnelerolan tabloların oluşturulmasını, silinmesini ve bazı temel özelliklerinin düzenlenmesinisağlar. Bu kategoride, tabloda değişiklik yapmak için kullanılan komut aşağıdakilerden hangisidir?<br/>&lt;/div&gt; &lt;/div&gt;",
+    "text": "Veri Tanımlama Dili (DDL), verilerin tutulduğu nesnelerolan tabloların oluşturulmasını, silinmesini ve bazı temel özelliklerinin düzenlenmesinisağlar. Bu kategoride, tabloda değişiklik yapmak için kullanılan komut aşağıdakilerden hangisidir?",
     "correctAnswer": "C",
     "options": {
       "A": "DROP TABLE",
@@ -1117,12 +1117,12 @@
       "D": "DENY TABLE",
       "E": "INSERT TABLE"
     },
-    "explanation": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Bu kategoride, yeni bir tablo oluşturmak için CREATE TABLE, tabloda değişiklik yapmak için ALTER TABLE ve tabloyu silmek için DROP TABLE kullanılan bazı yaygın komutlardır.<br/>&lt;/div&gt; &lt;/div&gt;"
+    "explanation": "Bu kategoride, yeni bir tablo oluşturmak için CREATE TABLE, tabloda değişiklik yapmak için ALTER TABLE ve tabloyu silmek için DROP TABLE kullanılan bazı yaygın komutlardır."
   },
   {
     "id": "3739100",
     "unitNumber": 2,
-    "text": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Veri Kontrol Dili (DCL) veritabanı kullanıcısı veya rolü ile ilgili izinlerin düzenlenmesini sağlar. Bu kategoride, daha önce yapılmış olan yetki ve izinleri kaldırmak için kullanılan komut aşağıdakilerden hangisidir?<br/>&lt;/div&gt; &lt;/div&gt;",
+    "text": "Veri Kontrol Dili (DCL) veritabanı kullanıcısı veya rolü ile ilgili izinlerin düzenlenmesini sağlar. Bu kategoride, daha önce yapılmış olan yetki ve izinleri kaldırmak için kullanılan komut aşağıdakilerden hangisidir?",
     "correctAnswer": "E",
     "options": {
       "A": "INSERT",
@@ -1131,12 +1131,12 @@
       "D": "DENY",
       "E": "REVOKE"
     },
-    "explanation": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Veri Kontrol Dili (DCL) veritabanı kullanıcısı veya rolü ile ilgili izinlerin düzenlenmesini sağlar. Bu kategoride, kullanıcıya yetki tanımlama için GRANT, kullanıcı yetkilerini engellemek için DENY ve daha önce yapılmış olan yetki ve izinleri kaldırmak için REVOKE komutları kullanılır.<br/>&lt;/div&gt; &lt;/div&gt;"
+    "explanation": "Veri Kontrol Dili (DCL) veritabanı kullanıcısı veya rolü ile ilgili izinlerin düzenlenmesini sağlar. Bu kategoride, kullanıcıya yetki tanımlama için GRANT, kullanıcı yetkilerini engellemek için DENY ve daha önce yapılmış olan yetki ve izinleri kaldırmak için REVOKE komutları kullanılır."
   },
   {
     "id": "3739101",
     "unitNumber": 2,
-    "text": "&lt;div class=\"column\"&gt; T-SQL’ de değişken isimlendirme kuralları diğer diller ile aynıdır. T-SQL'de değişken tanımlama aşağıdaki hangi komut ile yapılmaktadır?<br/>&lt;/div&gt;",
+    "text": "T-SQL’ de değişken isimlendirme kuralları diğer diller ile aynıdır. T-SQL'de değişken tanımlama aşağıdaki hangi komut ile yapılmaktadır?",
     "correctAnswer": "C",
     "options": {
       "A": "NOT",
@@ -1145,12 +1145,12 @@
       "D": "INSERT",
       "E": "SELECT"
     },
-    "explanation": "&lt;div class=\"column\"&gt; T-SQL’ de değişken isimlendirme kuralları diğer diller ile aynıdır. Değişken tanımlama DECLARE komutu ile yapılır.<br/>&lt;/div&gt;"
+    "explanation": "T-SQL’ de değişken isimlendirme kuralları diğer diller ile aynıdır. Değişken tanımlama DECLARE komutu ile yapılır."
   },
   {
     "id": "3739102",
     "unitNumber": 2,
-    "text": "&lt;div class=\"column\"&gt; Birden fazla koşulun kontrol edilmesi gerektiğinde kolay kullanım sağlayan bir akış kontrolü komutu olan ve SQL sorgu ifadelerinin içinde de koşul amacıyla kullanılan T-SQL komutu aşağıdakilerden hangisidir?<br/>&lt;/div&gt;",
+    "text": "Birden fazla koşulun kontrol edilmesi gerektiğinde kolay kullanım sağlayan bir akış kontrolü komutu olan ve SQL sorgu ifadelerinin içinde de koşul amacıyla kullanılan T-SQL komutu aşağıdakilerden hangisidir?",
     "correctAnswer": "A",
     "options": {
       "A": "CASE",
@@ -1159,7 +1159,7 @@
       "D": "IF",
       "E": "WHEN"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Case komutu, birden fazla koşulun kontrol edilmesi gerektiğinde kolay kullanım sağlayan bir akış kontrolü komutudur. Case yapısı SQL sorgu ifadelerinin içinde de koşul amacıyla kullanılmaktadır.<br/>&lt;/div&gt;"
+    "explanation": "Case komutu, birden fazla koşulun kontrol edilmesi gerektiğinde kolay kullanım sağlayan bir akış kontrolü komutudur. Case yapısı SQL sorgu ifadelerinin içinde de koşul amacıyla kullanılmaktadır."
   },
   {
     "id": "3739103",
@@ -1167,60 +1167,60 @@
     "text": "T-SQL'de WHILE komutunun kullanılış amacı aşağıdakilerden hangisidir?",
     "correctAnswer": "C",
     "options": {
-      "A": "&lt;div class=\"column\"&gt; Belirli koşullar sağlandığı takdirde gerçekleştirmesi istenen işlemler için kullanılır.<br/>&lt;/div&gt;",
-      "B": "&lt;div class=\"column\"&gt; Birden fazla koşulun kontrol edilmesi gerektiğinde kolay kullanım sağlayan bir akış kontrolü komutudur.<br/>&lt;/div&gt;",
-      "C": "&lt;div class=\"column\"&gt; Verilen bir koşulun sağlanması durumunda belirlenen komut bloğununu tekrar eden bir yapıdır.<br/>&lt;/div&gt;",
+      "A": "Belirli koşullar sağlandığı takdirde gerçekleştirmesi istenen işlemler için kullanılır.",
+      "B": "Birden fazla koşulun kontrol edilmesi gerektiğinde kolay kullanım sağlayan bir akış kontrolü komutudur.",
+      "C": "Verilen bir koşulun sağlanması durumunda belirlenen komut bloğununu tekrar eden bir yapıdır.",
       "D": "Açıklama eklemek için kullanılır.",
-      "E": "&lt;div class=\"column\"&gt; SQL sorgularının sırasıyla yığınlar olarak çalıştırılması amacıyla kullanılır.<br/>&lt;/div&gt;"
+      "E": "SQL sorgularının sırasıyla yığınlar olarak çalıştırılması amacıyla kullanılır."
     },
-    "explanation": "&lt;div class=\"column\"&gt; Programlama dillerinde döngüler, tekrar gerektiren işlemler için kullanılmaktadır. WHILE döngüsü birçok programlama dilinde olduğu gibi verilen bir koşulun sağlanması durumunda belirlenen komut bloğununu tekrar eden bir yapıdır.<br/>&lt;/div&gt;"
+    "explanation": "Programlama dillerinde döngüler, tekrar gerektiren işlemler için kullanılmaktadır. WHILE döngüsü birçok programlama dilinde olduğu gibi verilen bir koşulun sağlanması durumunda belirlenen komut bloğununu tekrar eden bir yapıdır."
   },
   {
     "id": "3739104",
     "unitNumber": 2,
-    "text": "&lt;div class=\"column\"&gt; İmleç (cursor,) veri kümelerinin satırları arasında birer birer ilerlemeyi sağlayan programlama yapılarıdır. İmleç işlemlerindeki FETCH komutu aşağıda verilen hangi işlemi gerçekleştirmek için kullanılır?<br/>&lt;/div&gt;",
+    "text": "İmleç (cursor,) veri kümelerinin satırları arasında birer birer ilerlemeyi sağlayan programlama yapılarıdır. İmleç işlemlerindeki FETCH komutu aşağıda verilen hangi işlemi gerçekleştirmek için kullanılır?",
     "correctAnswer": "E",
     "options": {
-      "A": "&lt;div class=\"column\"&gt; Kullanıcının atayacağı değişkenlere göre veri oluşturmak için<br/>&lt;/div&gt;",
-      "B": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Kod içerisinde belirlenen bir etikete direkt geçiş yapılıp bu etiketten sonra devam etmek için<br/>&lt;/div&gt; &lt;/div&gt;",
-      "C": "&lt;div class=\"column\"&gt; Tekrar gerektiren işlemler için<br/>&lt;/div&gt;",
-      "D": "&lt;div class=\"column\"&gt; Belirli koşullar sağlandığı takdirde gerçekleştirmesi istenen işlemler için<br/>&lt;/div&gt;",
-      "E": "&lt;div class=\"column\"&gt; Kayıtlar arasında gezinmek için<br/>&lt;/div&gt;"
+      "A": "Kullanıcının atayacağı değişkenlere göre veri oluşturmak için",
+      "B": "Kod içerisinde belirlenen bir etikete direkt geçiş yapılıp bu etiketten sonra devam etmek için",
+      "C": "Tekrar gerektiren işlemler için",
+      "D": "Belirli koşullar sağlandığı takdirde gerçekleştirmesi istenen işlemler için",
+      "E": "Kayıtlar arasında gezinmek için"
     },
-    "explanation": "&lt;div class=\"column\"&gt; İmleç işlemlerindeki FETCH komutu kayıtlar arasında gezinmeyi sağlar, FETCH NEXT bir sonraki, FETCH PRIOR bir önceki, FETCH LAST son kayda ve FETCH FIRST ilk kayda ilerlemeyi sağlar.<br/>&lt;/div&gt;"
+    "explanation": "İmleç işlemlerindeki FETCH komutu kayıtlar arasında gezinmeyi sağlar, FETCH NEXT bir sonraki, FETCH PRIOR bir önceki, FETCH LAST son kayda ve FETCH FIRST ilk kayda ilerlemeyi sağlar."
   },
   {
     "id": "3739105",
     "unitNumber": 2,
-    "text": "&lt;div class=\"column\"&gt; TRY..CATCH komutununda CATCH bloğu içinde kendi değerlerini tutan CATCH bloğu dışında ise NULL değerler döndüren çeşitli fonksiyonları vardır. Bu fonksiyonlardan işlevi \"Hatanın önem düzeyini döndürür.\" şeklinde tanımlanan fonksiyon aşağıdakilerden hangisidir?<br/>&lt;/div&gt;",
+    "text": "TRY..CATCH komutununda CATCH bloğu içinde kendi değerlerini tutan CATCH bloğu dışında ise NULL değerler döndüren çeşitli fonksiyonları vardır. Bu fonksiyonlardan işlevi \"Hatanın önem düzeyini döndürür.\" şeklinde tanımlanan fonksiyon aşağıdakilerden hangisidir?",
     "correctAnswer": "B",
     "options": {
-      "A": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; ERROR_NUMBER()<br/>&lt;/div&gt; &lt;/div&gt;",
-      "B": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; ERROR_SEVERITY()<br/>&lt;/div&gt; &lt;/div&gt;",
-      "C": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; ERROR_STATE()<br/>&lt;/div&gt; &lt;/div&gt;",
-      "D": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; ERROR_LINE()<br/>&lt;/div&gt; &lt;/div&gt;",
-      "E": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; ERROR_MESSAGE()<br/>&lt;/div&gt; &lt;/div&gt;"
+      "A": "ERROR_NUMBER()",
+      "B": "ERROR_SEVERITY()",
+      "C": "ERROR_STATE()",
+      "D": "ERROR_LINE()",
+      "E": "ERROR_MESSAGE()"
     },
-    "explanation": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; &lt;div class=\"page\" title=\"Page 14\"&gt; &lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; TRY..CATCH komutununda CATCH bloğu içinde kendi değerlerini tutan CATCH bloğu dışında ise NULL değerler döndüren çeşitli fonksiyonları vardır.<br/>&lt;/div&gt; ERROR_SEVERITY(): Hatanın önem düzeyini döndürür.<br/>&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;"
+    "explanation": "TRY..CATCH komutununda CATCH bloğu içinde kendi değerlerini tutan CATCH bloğu dışında ise NULL değerler döndüren çeşitli fonksiyonları vardır.<br/>ERROR_SEVERITY(): Hatanın önem düzeyini döndürür."
   },
   {
     "id": "3739106",
     "unitNumber": 2,
-    "text": "&lt;div class=\"column\"&gt; Diğer diller ile aynı olan T-SQL’ deki değişken isimlendirme kurallarından yanlış olanı aşağıdakilerden hangisidir?<br/>&lt;/div&gt;",
+    "text": "Diğer diller ile aynı olan T-SQL’ deki değişken isimlendirme kurallarından yanlış olanı aşağıdakilerden hangisidir?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;div class=\"column\"&gt; Değişkenler Türkçe karakter ve boşluk içermektedir.<br/>&lt;/div&gt;",
-      "B": "&lt;div class=\"column\"&gt; Değişken isimleri ilk karakteri harf ile başlayıp harf, rakam ve alt çizgi (_) ile devam edebilir.<br/>&lt;/div&gt;",
-      "C": "&lt;div class=\"column\"&gt; SQL veya T-SQL için kullanılan komutlar ve ayrılmış sözcükler (SELECT, INSERT, UPDATE, NOT vb.) kullanılmaz.<br/>&lt;/div&gt;",
-      "D": "&lt;div class=\"column\"&gt; Değişken ismi, SQL’de özel anlamı olan sembollerle (@, @@, #, ##, $) başlamamalıdır.<br/>&lt;/div&gt;",
-      "E": "&lt;div class=\"column\"&gt; Değişken isimlerinde küçük veya büyük harf kullanımı fark etmez.<br/>&lt;/div&gt;"
+      "A": "Değişkenler Türkçe karakter ve boşluk içermektedir.",
+      "B": "Değişken isimleri ilk karakteri harf ile başlayıp harf, rakam ve alt çizgi (_) ile devam edebilir.",
+      "C": "SQL veya T-SQL için kullanılan komutlar ve ayrılmış sözcükler (SELECT, INSERT, UPDATE, NOT vb.) kullanılmaz.",
+      "D": "Değişken ismi, SQL’de özel anlamı olan sembollerle (@, @@, #, ##, $) başlamamalıdır.",
+      "E": "Değişken isimlerinde küçük veya büyük harf kullanımı fark etmez."
     },
-    "explanation": "&lt;div class=\"column\"&gt; T-SQL’ de değişken isimlendirme kuralları diğer diller ile aynı olup bazıları aşağıdaverilmektedir.<br/>• Değişkenler Türkçe karakter ve boşluk içermez.<br/>• Değişken isimleri ilk karakteri harf ile başlayıp harf, rakam ve alt çizgi (_) ile devam edebilir.<br/>• SQL veya T-SQL için kullanılan komutlar ve ayrılmış sözcükler (SELECT, INSERT, UPDATE, NOT vb.) kullanılmaz.<br/>• Değişken ismi, SQL’de özel anlamı olan sembollerle (@, @@, #, ##, $) başlamamalıdır.<br/>• Değişken isimlerinde küçük veya büyük harf kullanımı fark etmez.<br/>&lt;/div&gt;"
+    "explanation": "T-SQL’ de değişken isimlendirme kuralları diğer diller ile aynı olup bazıları aşağıdaverilmektedir.<br/>• Değişkenler Türkçe karakter ve boşluk içermez.<br/>• Değişken isimleri ilk karakteri harf ile başlayıp harf, rakam ve alt çizgi (_) ile devam edebilir.<br/>• SQL veya T-SQL için kullanılan komutlar ve ayrılmış sözcükler (SELECT, INSERT, UPDATE, NOT vb.) kullanılmaz.<br/>• Değişken ismi, SQL’de özel anlamı olan sembollerle (@, @@, #, ##, $) başlamamalıdır.<br/>• Değişken isimlerinde küçük veya büyük harf kullanımı fark etmez."
   },
   {
     "id": "3739107",
     "unitNumber": 2,
-    "text": "&lt;div class=\"column\"&gt; While yapısı içinde döngüden çıkmayı sağlayan komut aşağıdakilerden hangisidir?<br/>&lt;/div&gt;",
+    "text": "While yapısı içinde döngüden çıkmayı sağlayan komut aşağıdakilerden hangisidir?",
     "correctAnswer": "D",
     "options": {
       "A": "CONTINUE",
@@ -1229,7 +1229,7 @@
       "D": "BREAK",
       "E": "DECLARE"
     },
-    "explanation": "&lt;div class=\"column\"&gt; While yapısı içinde CONTINUE ve BREAK komutları bir sonraki adıma geçme ve döngüden çıkmak için kullanılabilir. CONTINUE komutundan sonra gelen ifadeler göz ardı edilerek bir sonraki adımdan döngü devam eder. BREAK komutu ise While yapısı içinde döngüden çıkmayı sağlar.<br/>&lt;/div&gt;"
+    "explanation": "While yapısı içinde CONTINUE ve BREAK komutları bir sonraki adıma geçme ve döngüden çıkmak için kullanılabilir. CONTINUE komutundan sonra gelen ifadeler göz ardı edilerek bir sonraki adımdan döngü devam eder. BREAK komutu ise While yapısı içinde döngüden çıkmayı sağlar."
   },
   {
     "id": "3739108",
@@ -1411,7 +1411,7 @@
       "D": "Veritabanı Motoru Saklı Yordamları",
       "E": "İmleç Saklı Yordamları"
     },
-    "explanation": "Katalog Saklı Yordamları (Catalog Stored<br/>Procedures)<br/>Sınıflandırma<br/>Açık Veritabanı Bağlantısı (ODBC)<br/>uygulamalarını sistem tablolarındaki<br/>değişimlerinden izole etmek için<br/>kullanılmaktadır.<br/>Değişen Veri Yakalama Saklı Yordamları<br/>(Change Data Capture Stored Procedures)<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/53af258b6f16c95087c8677138c2d5d8.jpeg\" alt=\"\" width=\"576\" height=\"578\"/><br/>Değişen veri yakalama nesnelerini aktifpasif<br/>hâle getirme veya raporlama için<br/>kullanılmaktadır. İmleç uygulamaları için kullanılmaktadır.<br/>XML Saklı Yordamları (XML Stored<br/>Procedures) XML dosya yönetimi için kullanılmaktadır.<br/>İmleç Saklı Yordamları (Cursor Stored Procedures)<br/>Veritabanı Motoru Saklı Yordamları<br/>(Database Engine Stored Procedures)<br/>SQL sunucu veritabanı motorunun bakımı için<br/>kullanılmaktadır.<br/>Veritabanı E-mail Saklı Yordamı (Database<br/>Mail Stored Procedures)(T-SQL)<br/>SQL sunucu oluşumlarından e-mail atmak için<br/>kullanılmaktadır.<br/>Sistem saklı yordamlarının tüm listesine Nesne tarayıcı (Object Explorer) penceresinde<br/>Tanım"
+    "explanation": "Katalog Saklı Yordamları (Catalog Stored<br/>Procedures)<br/>Sınıflandırma<br/>Açık Veritabanı Bağlantısı (ODBC)<br/>uygulamalarını sistem tablolarındaki değişimlerinden izole etmek için kullanılmaktadır.<br/>Değişen Veri Yakalama Saklı Yordamları<br/>(Change Data Capture Stored Procedures)<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/53af258b6f16c95087c8677138c2d5d8.jpeg\" alt=\"\" width=\"576\" height=\"578\"/><br/>Değişen veri yakalama nesnelerini aktifpasif hâle getirme veya raporlama için kullanılmaktadır. İmleç uygulamaları için kullanılmaktadır.<br/>XML Saklı Yordamları (XML Stored<br/>Procedures) XML dosya yönetimi için kullanılmaktadır.<br/>İmleç Saklı Yordamları (Cursor Stored Procedures)<br/>Veritabanı Motoru Saklı Yordamları<br/>(Database Engine Stored Procedures)<br/>SQL sunucu veritabanı motorunun bakımı için kullanılmaktadır.<br/>Veritabanı E-mail Saklı Yordamı (Database<br/>Mail Stored Procedures)(T-SQL)<br/>SQL sunucu oluşumlarından e-mail atmak için kullanılmaktadır.<br/>Sistem saklı yordamlarının tüm listesine Nesne tarayıcı (Object Explorer) penceresinde<br/>Tanım"
   },
   {
     "id": "3739121",
@@ -1570,7 +1570,7 @@
   {
     "id": "3739132",
     "unitNumber": 3,
-    "text": "CREATE PROCEDURE sp_BolumEkle (<br/>@BolumAdi nvarchar(50)<br/>)<br/>AS BEGIN<br/>INSERT INTO Bolumler(Bolum_Adi)<br/>VALUES (@BolumAdi)<br/>END<br/>Yukarıda verilen saklı yordam oluşturma komutunu kullanarak Bölümler tablosuna \"Giyilebilir Teknolojiler\" kaydı ekleyen saklı yordam çalıştırma kodu aşağıdakilerden hangisinde doğru verilmiştir*",
+    "text": "CREATE PROCEDURE sp_BolumEkle<br/>(<br/>@BolumAdi nvarchar(50)<br/>)<br/>AS BEGIN<br/>INSERT INTO Bolumler(Bolum_Adi)<br/>VALUES (@BolumAdi)<br/>END<br/>Yukarıda verilen saklı yordam oluşturma komutunu kullanarak Bölümler tablosuna \"Giyilebilir Teknolojiler\" kaydı ekleyen saklı yordam çalıştırma kodu aşağıdakilerden hangisinde doğru verilmiştir*",
     "correctAnswer": "C",
     "options": {
       "A": "EXEC \"Giyilebilir Teknolojiler\"",
@@ -1626,7 +1626,7 @@
   {
     "id": "3739136",
     "unitNumber": 3,
-    "text": "CREATE FUNCTION fn_SatisBilgileri(@BolumNo int)<br/>RETURNS @BolmSatTablosu TABLE ( Bolum_Adı nvarchar(50),<br/>UrunSayisi int<br/>)<br/>AS BEGIN<br/>INSERT INTO @BolmSatTablosu<br/>SELECT Bl.Bolum_Adi,SUM(Sat.Miktar)<br/>FROM Urunler Ur, Bolumler Bl, Satislar Sat<br/>WHERE Bl.Bolum_No=@BolumNo AND<br/>Ur.Bolum_No=Bl.Bolum_No AND<br/>Ur.Urun_No=Sat.Urun_No<br/>GROUP BY Bl.Bolum_Adi, Bl.Bolum_No<br/>HAVING Bl.Bolum_No=@BolumNo<br/>RETURN<br/>END<br/>Örnek veritabanı için hangi bölümden kaç adet ürün satıldığı ile ilgili bölüm adı ve satılan ürün adedi bilgisini dönen fonksiyon yukarıda verilmiştir. Bu fonksiyonu kullanarak 9 nolu bölümden yapılan satışları listeemek için çalıştırılması gereken komut aşağıdakilerden hangisidir?",
+    "text": "CREATE FUNCTION fn_SatisBilgileri(@BolumNo int)<br/>RETURNS @BolmSatTablosu TABLE<br/>( Bolum_Adı nvarchar(50),<br/>UrunSayisi int<br/>)<br/>AS BEGIN<br/>INSERT INTO @BolmSatTablosu<br/>SELECT Bl.Bolum_Adi,SUM(Sat.Miktar)<br/>FROM Urunler Ur, Bolumler Bl, Satislar Sat<br/>WHERE Bl.Bolum_No=@BolumNo AND<br/>Ur.Bolum_No=Bl.Bolum_No AND<br/>Ur.Urun_No=Sat.Urun_No<br/>GROUP BY Bl.Bolum_Adi, Bl.Bolum_No<br/>HAVING Bl.Bolum_No=@BolumNo<br/>RETURN<br/>END<br/>Örnek veritabanı için hangi bölümden kaç adet ürün satıldığı ile ilgili bölüm adı ve satılan ürün adedi bilgisini dönen fonksiyon yukarıda verilmiştir. Bu fonksiyonu kullanarak 9 nolu bölümden yapılan satışları listeemek için çalıştırılması gereken komut aşağıdakilerden hangisidir?",
     "correctAnswer": "E",
     "options": {
       "A": "SELECT BolmSatTablosu WHERE fn_SatisBilgileri(9)",
@@ -1649,7 +1649,7 @@
       "D": "Veritabanı Motoru Saklı Yordamları",
       "E": "Veritabanı E-mail Saklı Yordamı"
     },
-    "explanation": "Katalog Saklı Yordamları (Catalog Stored Procedures): Açık Veritabanı Bağlantısı (ODBC) uygulamalarını sistem tablolarındaki değişimlerinden izole etmek için kullanılmaktadır.<br/>Doğru cevap A'dır."
+    "explanation": "Katalog Saklı Yordamları (Catalog Stored Procedures): Açık Veritabanı Bağlantısı (ODBC) uygulamalarını sistem tablolarındaki değişimlerinden izole etmek için kullanılmaktadır."
   },
   {
     "id": "3739138",
@@ -1663,7 +1663,7 @@
       "D": "Database Engine Stored Procedures",
       "E": "XML Stored Procedures"
     },
-    "explanation": "Veritabanı Motoru Saklı Yordamları (Database Engine Stored Procedures) : SQL sunucu veritabanı motorunun bakımı için kullanılmaktadır.<br/>Doğru cevap D'dir."
+    "explanation": "Veritabanı Motoru Saklı Yordamları (Database Engine Stored Procedures) : SQL sunucu veritabanı motorunun bakımı için kullanılmaktadır."
   },
   {
     "id": "3739139",
@@ -1677,7 +1677,7 @@
       "D": "Database Mail Stored Procedures",
       "E": "XML Stored Procedures"
     },
-    "explanation": "İmleç Saklı Yordamları (Cursor Stored Procedures) : İmleç uygulamaları için kullanılmaktadır.<br/>Doğru cevap B'dir."
+    "explanation": "İmleç Saklı Yordamları (Cursor Stored Procedures) : İmleç uygulamaları için kullanılmaktadır."
   },
   {
     "id": "3739140",
@@ -1691,7 +1691,7 @@
       "D": "Catalog Stored Procedures",
       "E": "Cursor Stored Procedures"
     },
-    "explanation": "Veritabanı E-mail Saklı Yordamı (Database Mail Stored Procedures) : SQL sunucu oluşumlarından e-mail atmak için kullanılmaktadır.<br/>Doğru cevap B'dir."
+    "explanation": "Veritabanı E-mail Saklı Yordamı (Database Mail Stored Procedures) : SQL sunucu oluşumlarından e-mail atmak için kullanılmaktadır."
   },
   {
     "id": "3739141",
@@ -1700,12 +1700,12 @@
     "correctAnswer": "E",
     "options": {
       "A": "Veritabanı ve veritabanı nesneleri üzerinde bilgi döndüren; Object_Id(Nesne numarası),<br/>Object_Name(Nesne Adı) vb. fonksiyonlardır.",
-      "B": "Girdi değerlerine bağlı nümerik değer döndüren; Log(logaritma), Abs (mutlak değer) vb. fonksiyonlardır.",
+      "B": "Girdi değerlerine bağlı nümerik değer döndüren; Log(logaritma), Abs (mutlak değer)<br/>vb. fonksiyonlardır.",
       "C": "Tarih ve zaman üzerinde işlemler yapan ve karakter, nümerik değer veya tarih bilgisi döndüren; Getdate (tarih al), Month (ay) vb. fonksiyonlardır.",
       "D": "Sunucunun mevcut yapılandırılması hakkında bilgi veren; @@Servername (sunucu adı), @@version (SQL sunucu sürümü) vb. fonksiyonlardır.",
-      "E": "Belli bir veri kümesinde işlem yapıp tek değer döndüren; Avg (ortalama alır), Count (veri kümesi satır sayısını döndürür) vb. fonksiyonlardır."
+      "E": "Belli bir veri kümesinde işlem yapıp tek değer döndüren; Avg (ortalama alır), Count<br/>(veri kümesi satır sayısını döndürür) vb. fonksiyonlardır."
     },
-    "explanation": "Belli bir veri kümesinde işlem yapıp tek değer döndüren; Avg (ortalama alır), Count (veri kümesi satır sayısını döndürür) vb. fonksiyonlardır.<br/>Doğru cevap E'dir."
+    "explanation": ""
   },
   {
     "id": "3739142",
@@ -1719,7 +1719,7 @@
       "D": "Date and Time Functions",
       "E": "Metadata Functions"
     },
-    "explanation": "Matematiksel Fonksiyonlar (Mathematical Functions): Girdi değerlerine bağlı nümerik değer döndüren; Log(logaritma), Abs (mutlak değer) vb. fonksiyonlardır.<br/>Doğru cevap C'dir."
+    "explanation": "Matematiksel Fonksiyonlar (Mathematical Functions): Girdi değerlerine bağlı nümerik değer döndüren; Log(logaritma), Abs (mutlak değer) vb. fonksiyonlardır."
   },
   {
     "id": "3739143",
@@ -1728,12 +1728,12 @@
     "correctAnswer": "D",
     "options": {
       "A": "İstatiski bilgi sağlayan; @@Total_Errors (toplam hata sayısı), @@Total_Read (toplam okuma sayısı) vb. fonksiyonlardır.",
-      "B": "Dizgiler üzerinde işlemler yapan; Len (dizgi uzunluğu), Reverse (dizgiyi tersine çeviren) vb. fonksiyonlardır.",
+      "B": "Dizgiler üzerinde işlemler yapan; Len (dizgi uzunluğu), Reverse (dizgiyi tersine çeviren)<br/>vb. fonksiyonlardır.",
       "C": "Veritabanı ve veritabanı nesneleri üzerinde bilgi döndüren; Object_Id(Nesne numarası), Object_Name(Nesne Adı) vb. fonksiyonlardır.",
       "D": "Kullanıcılar ve rolleri hakkında bilgi döndüren; User_Id (kullanıcı numarası), User_Name (kullanıcı adı) vb. fonksiyonlardır.",
-      "E": "Belli bir veri kümesinde işlem yapıp tek değer döndüren; Avg (ortalama alır), Count (veri kümesi satır sayısını döndürür) vb. fonksiyonlardır"
+      "E": "Belli bir veri kümesinde işlem yapıp tek değer döndüren; Avg (ortalama alır), Count<br/>(veri kümesi satır sayısını döndürür) vb. fonksiyonlardır"
     },
-    "explanation": "Güvenlik Fonksiyonları (Security Functions): Kullanıcılar ve rolleri hakkında bilgi döndüren; User_Id (kullanıcı numarası), User_Name (kullanıcı adı) vb. fonksiyonlardır.<br/>Doğru cevap D'dir."
+    "explanation": "Güvenlik Fonksiyonları (Security Functions): Kullanıcılar ve rolleri hakkında bilgi döndüren; User_Id (kullanıcı numarası), User_Name (kullanıcı adı) vb. fonksiyonlardır."
   },
   {
     "id": "3739144",
@@ -1747,7 +1747,7 @@
       "D": "Security Functions",
       "E": "Date and Time Functions"
     },
-    "explanation": "Tarih ve zaman fonksiyonlar (Date and Time Functions): Tarih ve zaman üzerinde işlemler yapan ve karakter, nümerik değer veya tarih bilgisi döndüren; Getdate (tarih al), Month (ay) vb. fonksiyonlardır.<br/>Doğru cevap E'dir."
+    "explanation": "Tarih ve zaman fonksiyonlar (Date and Time Functions): Tarih ve zaman üzerinde işlemler yapan ve karakter, nümerik değer veya tarih bilgisi döndüren; Getdate (tarih al), Month (ay) vb. fonksiyonlardır."
   },
   {
     "id": "3739145",
@@ -1755,13 +1755,13 @@
     "text": "Aşağıdakilerden hangisinde String Functions fonksiyonunun işlevi verilmiştir?",
     "correctAnswer": "A",
     "options": {
-      "A": "Dizgiler üzerinde işlemler yapan; Len (dizgi uzunluğu), Reverse (dizgiyi tersine çeviren) vb. fonksiyonlardır.",
+      "A": "Dizgiler üzerinde işlemler yapan; Len (dizgi uzunluğu), Reverse (dizgiyi tersine çeviren)<br/>vb. fonksiyonlardır.",
       "B": "Veritabanı ve veritabanı nesneleri üzerinde bilgi döndüren; Object_Id(Nesne numarası), Object_Name(Nesne Adı) vb. fonksiyonlardır",
       "C": "Sunucunun mevcut yapılandırılması hakkında bilgi veren; @@Servername (sunucu adı), @@version (SQL sunucu sürümü) vb. fonksiyonlardır",
       "D": "Girdi değerlerine bağlı nümerik değer döndüren; Log(logaritma), Abs (mutlak değer)vb. fonksiyonlardır.",
       "E": "Kullanıcılar ve rolleri hakkında bilgi döndüren; User_Id (kullanıcı numarası), User_Name (kullanıcı adı) vb. fonksiyonlardır."
     },
-    "explanation": "Dizgi Fonksiyonları (String Functions): Dizgiler üzerinde işlemler yapan; Len (dizgi uzunluğu), Reverse (dizgiyi tersine çeviren) vb. fonksiyonlardır.<br/>Doğru cevap A'dır."
+    "explanation": "Dizgi Fonksiyonları (String Functions): Dizgiler üzerinde işlemler yapan; Len (dizgi uzunluğu), Reverse (dizgiyi tersine çeviren) vb. fonksiyonlardır."
   },
   {
     "id": "3739146",
@@ -1775,7 +1775,7 @@
       "D": "Date and Time Functions",
       "E": "Metadata Functions"
     },
-    "explanation": "Sistem ile ilgili statiksel Fonksiyonlar (System Statistical Functions): İstatiski bilgi sağlayan; @@Total_Errors (toplam hata sayısı), @@Total_Read (toplam okuma sayısı) vb. fonksiyonlardır.<br/>Doğru cevap C'dir."
+    "explanation": "Sistem ile ilgili statiksel Fonksiyonlar (System Statistical Functions): İstatiski bilgi sağlayan; @@Total_Errors (toplam hata sayısı), @@Total_Read (toplam okuma sayısı) vb. fonksiyonlardır."
   },
   {
     "id": "3739147",
@@ -2293,7 +2293,7 @@
       "D": "II, III ve IV",
       "E": "I, II, III ve IV"
     },
-    "explanation": "<u>Tanımlanabilir Veri Bütünlüğü:</u><br/>Kısıtlar<br/>Birincil anahtar kısıtlayıcı<br/>Tekil alan kısıtlayıcısı<br/>Kontrol kısıtlayıcı<br/>Yabancı anahtar kısıtlayıcı<br/>Varsayılan kısıtlayıcı<br/>Kurallar<br/>Varsayılanlar<br/><u>Prosedürel (Programsal) Veri Bütünlüğü: </u><br/>Tetikleyiciler<br/>Ekleme<br/>Silme<br/>Güncelleme<br/>Saklı yordamlar<br/>Program kodları<br/>Doğru cevap C’dir."
+    "explanation": "<u>Tanımlanabilir Veri Bütünlüğü:</u><br/>Kısıtlar<br/>Birincil anahtar kısıtlayıcı<br/>Tekil alan kısıtlayıcısı<br/>Kontrol kısıtlayıcı<br/>Yabancı anahtar kısıtlayıcı<br/>Varsayılan kısıtlayıcı<br/>Kurallar<br/>Varsayılanlar<br/><u>Prosedürel (Programsal) Veri Bütünlüğü: </u><br/>Tetikleyiciler<br/>Ekleme<br/>Silme<br/>Güncelleme<br/>Saklı yordamlar<br/>Program kodları"
   },
   {
     "id": "3739184",
@@ -2349,7 +2349,7 @@
       "D": "Resim",
       "E": "Para"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Kötü tasarlanmış veritabanı uygulaması kullanıcının, bir hücreye girilmesi gereken veri tipinden farklı verileri girmesine izin verebilir. Örneğin, Türkiye Cumhuriyeti kimlik numarasını girmek için metin veri tipi seçilebilir.<br/>&lt;/div&gt;"
+    "explanation": "Kötü tasarlanmış veritabanı uygulaması kullanıcının, bir hücreye girilmesi gereken veri tipinden farklı verileri girmesine izin verebilir. Örneğin, Türkiye Cumhuriyeti kimlik numarasını girmek için metin veri tipi seçilebilir."
   },
   {
     "id": "3739188",
@@ -2363,12 +2363,12 @@
       "D": "YILMAZ",
       "E": "Şeyma Durmaz"
     },
-    "explanation": "&lt;div class=\"column\"&gt;<br/>Bazı durumlarda ise bu tür kontrollerin yapılması zor olmaktadır. Örneğin, bir kişi- nin soy isminin tutulması gereken bir veritabanı uygulaması düşünelim. Bu uygulamada soy isminin tutulacağı sütunun veri tipi metin olarak seçilmesi gerekir. Veritabanı veya kullanıcı ara yüzünde yapılacak kontroller ile o sütun için sadece metin girilmesi sağlanabilir ama metnin içeriğinin kontrol edilmesi mümkün olmayabilir. Örneğin soyisim için girilmesi gereken yere “aaaaaa” veya “12345” gibi soyisim olamayacak metinler girilirse, yapılan kontrollerde hatalı kayıt olmayacak (çünkü iki örnek de veri türü olarak bakıldığında metindir) ancak mantıksal olarak hatalı olacaktır.<br/>&lt;/div&gt;"
+    "explanation": "Bazı durumlarda ise bu tür kontrollerin yapılması zor olmaktadır. Örneğin, bir kişi- nin soy isminin tutulması gereken bir veritabanı uygulaması düşünelim. Bu uygulamada soy isminin tutulacağı sütunun veri tipi metin olarak seçilmesi gerekir. Veritabanı veya kullanıcı ara yüzünde yapılacak kontroller ile o sütun için sadece metin girilmesi sağlanabilir ama metnin içeriğinin kontrol edilmesi mümkün olmayabilir. Örneğin soyisim için girilmesi gereken yere “aaaaaa” veya “12345” gibi soyisim olamayacak metinler girilirse, yapılan kontrollerde hatalı kayıt olmayacak (çünkü iki örnek de veri türü olarak bakıldığında metindir) ancak mantıksal olarak hatalı olacaktır."
   },
   {
     "id": "3739189",
     "unitNumber": 4,
-    "text": "&lt;div class=\"column\"&gt; Veritabanında bütünlüğü sağlamak için veri üzerindeki oluşturulmuş mantıksal sınırlamalara ne ad verilir?<br/>&lt;/div&gt;",
+    "text": "Veritabanında bütünlüğü sağlamak için veri üzerindeki oluşturulmuş mantıksal sınırlamalara ne ad verilir?",
     "correctAnswer": "D",
     "options": {
       "A": "Tetikleyici",
@@ -2377,7 +2377,7 @@
       "D": "Kısıt",
       "E": "Veri bütünlüğü"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Veritabanında bütünlüğü sağlamak için veri üzerindeki oluşturulmuş mantıksal sınırlamalara kısıt adı verilir. Kısıtların kullanılmasının en temel sebebi veritabanına hatalı gi- riş yapılmasını engellemektir.<br/>&lt;/div&gt;"
+    "explanation": "Veritabanında bütünlüğü sağlamak için veri üzerindeki oluşturulmuş mantıksal sınırlamalara kısıt adı verilir. Kısıtların kullanılmasının en temel sebebi veritabanına hatalı gi- riş yapılmasını engellemektir."
   },
   {
     "id": "3739190",
@@ -2391,49 +2391,49 @@
       "D": "Kurallar",
       "E": "Tekil alan kısıtlayıcısı"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Referanssal bütünlük kısıtları bir kolondaki bilginin diğer bir kolon ile eşleşmesi zorunluluğunu sağlayarak bütünlüğü korur. Eşleşen kolonlar farklı iki tablonun kolonları olabileceği gibi aynı tablonun kolonları da olabilir. Bunu da yabancı anahtar kısıtlayıcı ile yapar.<br/>&lt;/div&gt;"
+    "explanation": "Referanssal bütünlük kısıtları bir kolondaki bilginin diğer bir kolon ile eşleşmesi zorunluluğunu sağlayarak bütünlüğü korur. Eşleşen kolonlar farklı iki tablonun kolonları olabileceği gibi aynı tablonun kolonları da olabilir. Bunu da yabancı anahtar kısıtlayıcı ile yapar."
   },
   {
     "id": "3739191",
     "unitNumber": 4,
-    "text": "&lt;div class=\"column\"&gt; Tabloya girilen kayıtlardan her bir kaydın diğer kayıtlardan farklı bir değer olmasını sağlayan ve her tabloda yalnızca bir adet bulunabilen kısıtlayıcı aşağıdakilerden hangisidir?<br/>&lt;/div&gt;",
+    "text": "Tabloya girilen kayıtlardan her bir kaydın diğer kayıtlardan farklı bir değer olmasını sağlayan ve her tabloda yalnızca bir adet bulunabilen kısıtlayıcı aşağıdakilerden hangisidir?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;div class=\"column\"&gt; Birincil Anahtar Kısıtlayıcısı<br/>&lt;/div&gt;",
-      "B": "&lt;div class=\"column\"&gt; Tekil Alan Kısıtlayıcısı<br/>&lt;/div&gt;",
-      "C": "&lt;div class=\"column\"&gt; Kontrol Kısıtlayıcı<br/>&lt;/div&gt;",
-      "D": "&lt;div class=\"column\"&gt; Yabancı Anahtar Kısıtlayıcı<br/>&lt;/div&gt;",
-      "E": "&lt;div class=\"column\"&gt; Varsayılan Kısıtlayıcısı<br/>&lt;/div&gt;"
+      "A": "Birincil Anahtar Kısıtlayıcısı",
+      "B": "Tekil Alan Kısıtlayıcısı",
+      "C": "Kontrol Kısıtlayıcı",
+      "D": "Yabancı Anahtar Kısıtlayıcı",
+      "E": "Varsayılan Kısıtlayıcısı"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Veritabanında satır bütünlüğü sağlamak için kullanılan bu kısıtlayıcı bir tablodaki bir sa tıra girilen verilerden her bir satırı diğer satırlardan ayıran tanımlayıcı bir değer olmasını sağlar. Birinci kısıtlayıcı ile bir satıra daha önce girilmemiş değerler girilmesi sağlanır. Bu sayede her satırın diğer satırlardan farklı olmasını gerçekleştirir ve her satırın tekilliğini sağlar. Bir sütuna birincil anahtar kısıtlayıcısı tanımlanır ise o sütundaki tüm satırlara bir değer girilmesini zorlar yani NULL kalamaz. Her tabloda en fazla bir adet birincil anahtar kısıtlayıcısı bulunabilir. Birincil anahtar alana girilen veriler tekil olmak zorundadır. Bir sütunda Türkiye Cumhuriyet’i kimlik numarası tutulmak isteniyor ise o sütuna birincil anahtar kısıtlayıcısı tanımlanabilinir. Çünkü Türkiye Cumhuriyeti’ndeki her bir vatanda şın TC Kimlik numarası vardır (dolayısıyla NULL değeri olmaz) ve her kişinin kimlik numarası birbirinden farklıdır.<br/>&lt;/div&gt;"
+    "explanation": "Veritabanında satır bütünlüğü sağlamak için kullanılan bu kısıtlayıcı bir tablodaki bir sa tıra girilen verilerden her bir satırı diğer satırlardan ayıran tanımlayıcı bir değer olmasını sağlar. Birinci kısıtlayıcı ile bir satıra daha önce girilmemiş değerler girilmesi sağlanır. Bu sayede her satırın diğer satırlardan farklı olmasını gerçekleştirir ve her satırın tekilliğini sağlar. Bir sütuna birincil anahtar kısıtlayıcısı tanımlanır ise o sütundaki tüm satırlara bir değer girilmesini zorlar yani NULL kalamaz. Her tabloda en fazla bir adet birincil anahtar kısıtlayıcısı bulunabilir. Birincil anahtar alana girilen veriler tekil olmak zorundadır. Bir sütunda Türkiye Cumhuriyet’i kimlik numarası tutulmak isteniyor ise o sütuna birincil anahtar kısıtlayıcısı tanımlanabilinir. Çünkü Türkiye Cumhuriyeti’ndeki her bir vatanda şın TC Kimlik numarası vardır (dolayısıyla NULL değeri olmaz) ve her kişinin kimlik numarası birbirinden farklıdır."
   },
   {
     "id": "3739192",
     "unitNumber": 4,
-    "text": "&lt;div class=\"column\"&gt; Tablodaki birden fazla sütuna tanımlanabilen, sütundaki değer NULL olabilen ve satır bütünlüğünü sağlamak için kullanılan kısıtlayıcı aşağıdakilerden hangisidir?<br/>&lt;/div&gt;",
+    "text": "Tablodaki birden fazla sütuna tanımlanabilen, sütundaki değer NULL olabilen ve satır bütünlüğünü sağlamak için kullanılan kısıtlayıcı aşağıdakilerden hangisidir?",
     "correctAnswer": "B",
     "options": {
-      "A": "&lt;div class=\"column\"&gt; Birincil Anahtar Kısıtlayıcısı<br/>&lt;/div&gt;",
-      "B": "&lt;div class=\"column\"&gt; Tekil Alan Kısıtlayıcısı<br/>&lt;/div&gt;",
-      "C": "&lt;div class=\"column\"&gt; Kontrol Kısıtlayıcı<br/>&lt;/div&gt;",
-      "D": "&lt;div class=\"column\"&gt; Varsayılan Kısıtlayıcısı<br/>&lt;/div&gt;",
-      "E": "&lt;div class=\"column\"&gt; Yabancı Anahtar Kısıtlayıcı<br/>&lt;/div&gt;"
+      "A": "Birincil Anahtar Kısıtlayıcısı",
+      "B": "Tekil Alan Kısıtlayıcısı",
+      "C": "Kontrol Kısıtlayıcı",
+      "D": "Varsayılan Kısıtlayıcısı",
+      "E": "Yabancı Anahtar Kısıtlayıcı"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Birincil anahtar kısıtlayıcı gibi veritabanındaki satır bütünlüğünü sağlamak üzere kullanılan bu kısıtlayıcı ile istenilen sütundaki verilerin tekil ( her değerden sadece bir tane) olması sağlanır. Birincil anahtar kısıtlayıcısının aksine tablodaki birden fazla sütuna tekil kısıtlayıcı tanımlanabilir ve sütundaki değer NULL olabilir. Eğer sütunu girilen değer NULL değil ise tekil alan kısıtlayıcısı tanımlanan sütuna mutlaka farklı değerler girilmesini sağlar.<br/>&lt;/div&gt;"
+    "explanation": "Birincil anahtar kısıtlayıcı gibi veritabanındaki satır bütünlüğünü sağlamak üzere kullanılan bu kısıtlayıcı ile istenilen sütundaki verilerin tekil ( her değerden sadece bir tane) olması sağlanır. Birincil anahtar kısıtlayıcısının aksine tablodaki birden fazla sütuna tekil kısıtlayıcı tanımlanabilir ve sütundaki değer NULL olabilir. Eğer sütunu girilen değer NULL değil ise tekil alan kısıtlayıcısı tanımlanan sütuna mutlaka farklı değerler girilmesini sağlar."
   },
   {
     "id": "3739193",
     "unitNumber": 4,
-    "text": "&lt;div class=\"column\"&gt; Bir tablodaki bir sütundaki değerin diğer tablolardaki değerlerle denetlenmesini sağlayan kısıtlayıcı aşağıdakilerden hangisidir?<br/>&lt;/div&gt;",
+    "text": "Bir tablodaki bir sütundaki değerin diğer tablolardaki değerlerle denetlenmesini sağlayan kısıtlayıcı aşağıdakilerden hangisidir?",
     "correctAnswer": "E",
     "options": {
-      "A": "&lt;div class=\"column\"&gt; Tekil Alan Kısıtlayıcısı<br/>&lt;/div&gt;",
-      "B": "&lt;div class=\"column\"&gt; Birincil Anahtar Kısıtlayıcısı<br/>&lt;/div&gt;",
-      "C": "&lt;div class=\"column\"&gt; Kontrol Kısıtlayıcı<br/>&lt;/div&gt;",
-      "D": "&lt;div class=\"column\"&gt; Varsayılan Kısıtlayıcısı<br/>&lt;/div&gt;",
-      "E": "&lt;div class=\"column\"&gt; Yabancı Anahtar Kısıtlayıcı<br/>&lt;/div&gt;"
+      "A": "Tekil Alan Kısıtlayıcısı",
+      "B": "Birincil Anahtar Kısıtlayıcısı",
+      "C": "Kontrol Kısıtlayıcı",
+      "D": "Varsayılan Kısıtlayıcısı",
+      "E": "Yabancı Anahtar Kısıtlayıcı"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Bir tablodaki bir sütuna ait değerlerin, başka bir tablonun belli bir sütunundan gelmesinin denetlenmesinin istendiği durumlarda kullanılan yabancı anahtar kısıtlayıcı, tablolar arasındaki veri bütünlüğünü sağladığı gibi ilişkili tabloları da gösterir. Bir tabloya yabancı anahtar kısıtlayıcısı tanımlandığı zaman referans edilen ve referans eden iki tablo arasında bir ilişki kurulması sağlanır. Böylece bir tablo için yabancı anahtar kısıtlayıcısı tanımlanmış ise bu tabloya girilecek her kaydın referans edilen tablodaki kayıtla eşleşmesi gerekir. Eğer yabancı anahtar kısıtlayıcı olan sütun NULL değerler alabiliyorsa bu durumda eşleşme aranmaz.<br/>&lt;/div&gt;"
+    "explanation": "Bir tablodaki bir sütuna ait değerlerin, başka bir tablonun belli bir sütunundan gelmesinin denetlenmesinin istendiği durumlarda kullanılan yabancı anahtar kısıtlayıcı, tablolar arasındaki veri bütünlüğünü sağladığı gibi ilişkili tabloları da gösterir. Bir tabloya yabancı anahtar kısıtlayıcısı tanımlandığı zaman referans edilen ve referans eden iki tablo arasında bir ilişki kurulması sağlanır. Böylece bir tablo için yabancı anahtar kısıtlayıcısı tanımlanmış ise bu tabloya girilecek her kaydın referans edilen tablodaki kayıtla eşleşmesi gerekir. Eğer yabancı anahtar kısıtlayıcı olan sütun NULL değerler alabiliyorsa bu durumda eşleşme aranmaz."
   },
   {
     "id": "3739194",
@@ -2447,180 +2447,180 @@
       "D": "ALTER",
       "E": "TRUNCATE TABLE"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Tetikleyiciler, veritabanında bir eylem gerçeklendiğinde veya gerçeklenmeye başladığında tetiklenebilir. Veritabanında bir eylem gerçeklendiğinde bir tetikleyici tetiklenir ise eylem ile tetikleyici RAM’de geçici bir hafıza bloğunda ele alınır. Bu sayede tetikleyiciyi çağıran işlem başarılı olmadığında işlemi geçersiz kılabilir. Tetikleyici çalıştığı zaman RAM’de tetikleyicinin tetiklendiği tabloyla eş değer alanlara sahip INSERTED ve DELETED adı verilen sahte tablolar oluşturularak bu tablolar kullanır. Asıl tabloya bir kayıt eklendiğinde tetikleyici tetiklenerek asıl tabloya yapılan kayıt aynı zamanda INSERTED sahte tablosuna, bir kayıt silindiğinde ise silinen kayıt DELETED sahte tablosuna da eklenir. Güncelleme işleminde ise önce silme işlemi ve ardından bir kayıt ekleme işlemi ardışık olarak yapılır. Güncelleme işlemi sırasında asıl kayıt DELETED, değişen kayıt da INSERTED sahte tablosuna yazılır. Tüm bu işlemler RAM’de gerçekleştirildiği için TRUNCATE TABLE gibi RAM’e yazılmayan tablolara yansımayan değişiklikler tetikleyici tarafından fark edilemez. Ayrıca tetikleyicilere dışarıdan parametre göndermek mümkün değildir. Ancak, sahte tablolar sayesinde son işlemden etkilenmekte olan kayıt veya kayıtların tespit edilebilmesi mümkün olmaktadır.<br/>&lt;/div&gt;"
+    "explanation": "Tetikleyiciler, veritabanında bir eylem gerçeklendiğinde veya gerçeklenmeye başladığında tetiklenebilir. Veritabanında bir eylem gerçeklendiğinde bir tetikleyici tetiklenir ise eylem ile tetikleyici RAM’de geçici bir hafıza bloğunda ele alınır. Bu sayede tetikleyiciyi çağıran işlem başarılı olmadığında işlemi geçersiz kılabilir. Tetikleyici çalıştığı zaman RAM’de tetikleyicinin tetiklendiği tabloyla eş değer alanlara sahip INSERTED ve DELETED adı verilen sahte tablolar oluşturularak bu tablolar kullanır. Asıl tabloya bir kayıt eklendiğinde tetikleyici tetiklenerek asıl tabloya yapılan kayıt aynı zamanda INSERTED sahte tablosuna, bir kayıt silindiğinde ise silinen kayıt DELETED sahte tablosuna da eklenir. Güncelleme işleminde ise önce silme işlemi ve ardından bir kayıt ekleme işlemi ardışık olarak yapılır. Güncelleme işlemi sırasında asıl kayıt DELETED, değişen kayıt da INSERTED sahte tablosuna yazılır. Tüm bu işlemler RAM’de gerçekleştirildiği için TRUNCATE TABLE gibi RAM’e yazılmayan tablolara yansımayan değişiklikler tetikleyici tarafından fark edilemez. Ayrıca tetikleyicilere dışarıdan parametre göndermek mümkün değildir. Ancak, sahte tablolar sayesinde son işlemden etkilenmekte olan kayıt veya kayıtların tespit edilebilmesi mümkün olmaktadır."
   },
   {
     "id": "3739195",
     "unitNumber": 4,
-    "text": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Bir tablo üzerinde yeni kayıt veya kayıtlar girildikten sonra otomatik olarak bir eylem veya eylemler yapılması istenildiği zaman aşağıdakilerden hangisi kullanılır?<br/>&lt;/div&gt; &lt;/div&gt;",
+    "text": "Bir tablo üzerinde yeni kayıt veya kayıtlar girildikten sonra otomatik olarak bir eylem veya eylemler yapılması istenildiği zaman aşağıdakilerden hangisi kullanılır?",
     "correctAnswer": "A",
     "options": {
       "A": "INSERT Tetikleyicisi",
-      "B": "&lt;div class=\"column\"&gt; DELETE Tetikleyicisi<br/>&lt;/div&gt;",
-      "C": "&lt;div class=\"column\"&gt; UPDATE Tetikleyicisi<br/>&lt;/div&gt;",
-      "D": "&lt;div class=\"column\"&gt; Varsayılan Kısıtlayıcısı<br/>&lt;/div&gt;",
-      "E": "&lt;div class=\"column\"&gt; Yabancı Anahtar Kısıtlayıcı<br/>&lt;/div&gt;"
+      "B": "DELETE Tetikleyicisi",
+      "C": "UPDATE Tetikleyicisi",
+      "D": "Varsayılan Kısıtlayıcısı",
+      "E": "Yabancı Anahtar Kısıtlayıcı"
     },
-    "explanation": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Bir tablo üzerinde yeni kayıt veya kayıtlar girildikten sonra otomatik olarak bir eylem veya eylemler yapılması istenildiği zaman INSERT tetikleyicisi kullanılır. INSERT tetikleyici devreye girdikten sonra yeni eklenen kayıtların bir kopyasının tutulduğu sahte bir tablo oluşturulur. Bu sahte tablo, tetikleyici sonlana kadar saklanan bu tablo asıl tablonun yapısal bir kopyasıdır. SQL Server, satır bazında tetikleyici desteği sağlamamaktadır ve dolayısıyla eğer bir tabloya birden fazla kayıt girildiyse tetikleyici her kayıt için ayrı ayrı devreye girmeyip tek seferde bütün eklenen kayıtlar için yapılması istenen işlemi gerçekleştirir.<br/>&lt;/div&gt; &lt;/div&gt;"
+    "explanation": "Bir tablo üzerinde yeni kayıt veya kayıtlar girildikten sonra otomatik olarak bir eylem veya eylemler yapılması istenildiği zaman INSERT tetikleyicisi kullanılır. INSERT tetikleyici devreye girdikten sonra yeni eklenen kayıtların bir kopyasının tutulduğu sahte bir tablo oluşturulur. Bu sahte tablo, tetikleyici sonlana kadar saklanan bu tablo asıl tablonun yapısal bir kopyasıdır. SQL Server, satır bazında tetikleyici desteği sağlamamaktadır ve dolayısıyla eğer bir tabloya birden fazla kayıt girildiyse tetikleyici her kayıt için ayrı ayrı devreye girmeyip tek seferde bütün eklenen kayıtlar için yapılması istenen işlemi gerçekleştirir."
   },
   {
     "id": "3739196",
     "unitNumber": 4,
-    "text": "&lt;div class=\"column\"&gt; Ekleme işlemi için geçerli olan ve bir tabloya veri girişi esnasında verinin girildiği alan için alacağı varsayılan bir değerin tanımlanması için kullanılan kısıtlayıcı aşağıdakilerden hangisidir?<br/>&lt;/div&gt;",
+    "text": "Ekleme işlemi için geçerli olan ve bir tabloya veri girişi esnasında verinin girildiği alan için alacağı varsayılan bir değerin tanımlanması için kullanılan kısıtlayıcı aşağıdakilerden hangisidir?",
     "correctAnswer": "E",
     "options": {
-      "A": "&lt;div class=\"column\"&gt; Yabancı Anahtar Kısıtlayıcı<br/>&lt;/div&gt;",
-      "B": "&lt;div class=\"column\"&gt; Kontrol Kısıtlayıcı<br/>&lt;/div&gt;",
-      "C": "&lt;div class=\"column\"&gt; Tekil Alan Kısıtlayıcısı<br/>&lt;/div&gt;",
-      "D": "&lt;div class=\"column\"&gt; Birincil Anahtar Kısıtlayıcısı<br/>&lt;/div&gt;",
-      "E": "&lt;div class=\"column\"&gt; &lt;div class=\"page\" title=\"Page 10\"&gt; &lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Varsayılan Kısıtlayıcısı<br/>&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;"
+      "A": "Yabancı Anahtar Kısıtlayıcı",
+      "B": "Kontrol Kısıtlayıcı",
+      "C": "Tekil Alan Kısıtlayıcısı",
+      "D": "Birincil Anahtar Kısıtlayıcısı",
+      "E": "Varsayılan Kısıtlayıcısı"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Ekleme işlemi için geçerli olan ve bir tabloya veri girişi esnasında verinin girildiği alan için alacağı varsayılan bir değerin tanımlanması için kullanılan kısıtlayıcıdır. Varsayılan kısıtlayıcılar için en pratik uygulama alanı işlemlerin gerçekleşme tarihlerini kaydetmek için sistem tarihini alan bir sütun tanımlamaktır.<br/>&lt;/div&gt;"
+    "explanation": "Ekleme işlemi için geçerli olan ve bir tabloya veri girişi esnasında verinin girildiği alan için alacağı varsayılan bir değerin tanımlanması için kullanılan kısıtlayıcıdır. Varsayılan kısıtlayıcılar için en pratik uygulama alanı işlemlerin gerçekleşme tarihlerini kaydetmek için sistem tarihini alan bir sütun tanımlamaktır."
   },
   {
     "id": "3739197",
     "unitNumber": 4,
-    "text": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;Aşağıdakilerden hangisi, tanımlanabilir veri bütünlüğü kısıtlayıcısı <strong>değildir</strong> ?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
+    "text": "Aşağıdakilerden hangisi, tanımlanabilir veri bütünlüğü kısıtlayıcısı <strong>değildir</strong> ?",
     "correctAnswer": "B",
     "options": {
-      "A": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;tekil alan&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "B": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>güncelleme</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "C": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>kontrol</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "D": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;yabancı anahtar&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "E": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;varsayılan&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+      "A": "tekil alan",
+      "B": "<em>güncelleme</em>",
+      "C": "<em>kontrol</em>",
+      "D": "yabancı anahtar",
+      "E": "varsayılan"
     },
-    "explanation": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>Güncelleme. sf. 62. Doğru cevap B</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+    "explanation": "<em>Güncelleme. sf. 62. Doğru cevap B</em>"
   },
   {
     "id": "3739198",
     "unitNumber": 4,
-    "text": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;Aşağıdakilerden hangisi, programsal veri bütünlüğü tetikleyicisidir ?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
+    "text": "Aşağıdakilerden hangisi, programsal veri bütünlüğü tetikleyicisidir ?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;silme&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "B": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;kısıtlama&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "C": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;varsayma&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "D": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;anahtarlama&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "E": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;kontrol&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+      "A": "silme",
+      "B": "kısıtlama",
+      "C": "varsayma",
+      "D": "anahtarlama",
+      "E": "kontrol"
     },
-    "explanation": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>Silme. sf. 62. Doğru cevap A'dır</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+    "explanation": "<em>Silme. sf. 62. Doğru cevap A'dır</em>"
   },
   {
     "id": "3739199",
     "unitNumber": 4,
-    "text": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;Satır bütünlüğü için aşağıdakilerden hangisi kullanılır ?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
+    "text": "Satır bütünlüğü için aşağıdakilerden hangisi kullanılır ?",
     "correctAnswer": "D",
     "options": {
-      "A": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;yabancı anahtar kısıtlayıcı&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "B": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>kontrol kısıtlayıcısı</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "C": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>kural kısıtlayıcı</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "D": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;tekil alan kısıtlayıcı&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "E": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;varsayılan kısıtlayıcı&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+      "A": "yabancı anahtar kısıtlayıcı",
+      "B": "<em>kontrol kısıtlayıcısı</em>",
+      "C": "<em>kural kısıtlayıcı</em>",
+      "D": "tekil alan kısıtlayıcı",
+      "E": "varsayılan kısıtlayıcı"
     },
-    "explanation": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>Tekil alan kısıtlayıcı. sf. 64. Doğru cevap D'dir</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+    "explanation": "<em>Tekil alan kısıtlayıcı. sf. 64. Doğru cevap D'dir</em>"
   },
   {
     "id": "3739200",
     "unitNumber": 4,
-    "text": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;Sütun bütünlüğü için aşağıdakilerden hangisi kullanılır ? &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
+    "text": "Sütun bütünlüğü için aşağıdakilerden hangisi kullanılır ?",
     "correctAnswer": "B",
     "options": {
-      "A": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;tekil alan kısıtlayıcı&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "B": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;varsayılan kısıtlayıcı&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "C": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;yabancı anahtar kısıtlayıcı&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "D": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;ikincil anahtar kısıtlayıcı&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "E": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;birincil alan kısıtlayıcı&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+      "A": "tekil alan kısıtlayıcı",
+      "B": "varsayılan kısıtlayıcı",
+      "C": "yabancı anahtar kısıtlayıcı",
+      "D": "ikincil anahtar kısıtlayıcı",
+      "E": "birincil alan kısıtlayıcı"
     },
-    "explanation": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>Varsayılan kısıtlayıcı. sf. 64. Doğru cevap B'dir</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+    "explanation": "<em>Varsayılan kısıtlayıcı. sf. 64. Doğru cevap B'dir</em>"
   },
   {
     "id": "3739201",
     "unitNumber": 4,
-    "text": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;Referanssal bütünlük için aşağıdakilerden hangisi kullanılır ?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
+    "text": "Referanssal bütünlük için aşağıdakilerden hangisi kullanılır ?",
     "correctAnswer": "E",
     "options": {
-      "A": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;ikincil anahtar kısıtlayıcı&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "B": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;tekil alan kısıtlayıcı&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "C": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;kontrol kısıtlayıcısı&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "D": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;varsayılan kısıtlayıcı&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "E": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;yabancı anahtar kısıtlayıcı&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+      "A": "ikincil anahtar kısıtlayıcı",
+      "B": "tekil alan kısıtlayıcı",
+      "C": "kontrol kısıtlayıcısı",
+      "D": "varsayılan kısıtlayıcı",
+      "E": "yabancı anahtar kısıtlayıcı"
     },
-    "explanation": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>Yabancı anahtar kısıtlayıcı. sf. 64. Doğru cevap E'dir</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+    "explanation": "<em>Yabancı anahtar kısıtlayıcı. sf. 64. Doğru cevap E'dir</em>"
   },
   {
     "id": "3739202",
     "unitNumber": 4,
-    "text": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;İşlemden önce araya giren tetikleyici, aşağıdakilerden hangisidir ?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
+    "text": "İşlemden önce araya giren tetikleyici, aşağıdakilerden hangisidir ?",
     "correctAnswer": "B",
     "options": {
-      "A": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;tekil&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "B": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;yerine&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "C": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;birincil&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "D": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;ikincil&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "E": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;varsayılan&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+      "A": "tekil",
+      "B": "yerine",
+      "C": "birincil",
+      "D": "ikincil",
+      "E": "varsayılan"
     },
-    "explanation": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>Yerine tetikleyici. sf. 68. Doğru cevap B'dir</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+    "explanation": "<em>Yerine tetikleyici. sf. 68. Doğru cevap B'dir</em>"
   },
   {
     "id": "3739203",
     "unitNumber": 4,
-    "text": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;Veritabanının üretmiş olduğu standart hata mesajlarının dışında bir hata mesajı üretmek için aşağıdakilerden hangisi kullanılır ?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
+    "text": "Veritabanının üretmiş olduğu standart hata mesajlarının dışında bir hata mesajı üretmek için aşağıdakilerden hangisi kullanılır ?",
     "correctAnswer": "D",
     "options": {
-      "A": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;kısıtlayıcı&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "B": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;varsayma&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "C": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;tekilleme&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "D": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;tetikleyici&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "E": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;anahtarlama&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+      "A": "kısıtlayıcı",
+      "B": "varsayma",
+      "C": "tekilleme",
+      "D": "tetikleyici",
+      "E": "anahtarlama"
     },
-    "explanation": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>Tetikleyici. sf. 68. Doğru cevap D'dir</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+    "explanation": "<em>Tetikleyici. sf. 68. Doğru cevap D'dir</em>"
   },
   {
     "id": "3739204",
     "unitNumber": 4,
-    "text": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;Bir tetikleyici tetiklendiğinde eylem ile tetikleyici nerede ele alınır ?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
+    "text": "Bir tetikleyici tetiklendiğinde eylem ile tetikleyici nerede ele alınır ?",
     "correctAnswer": "C",
     "options": {
-      "A": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;veri tabanı&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "B": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;dizin&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "C": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;rasgele erişimli bellek&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "D": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;dosya&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "E": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;kütük&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+      "A": "veri tabanı",
+      "B": "dizin",
+      "C": "rasgele erişimli bellek",
+      "D": "dosya",
+      "E": "kütük"
     },
-    "explanation": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>Rasgele erişimli bellek. sf. 68. Doğru cevap C'dir</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+    "explanation": "<em>Rasgele erişimli bellek. sf. 68. Doğru cevap C'dir</em>"
   },
   {
     "id": "3739205",
     "unitNumber": 4,
-    "text": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;Aşağıdakilerden hangisi ile tetikleyicilere dışarıdan parametre gönderilebilir ?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
+    "text": "Aşağıdakilerden hangisi ile tetikleyicilere dışarıdan parametre gönderilebilir ?",
     "correctAnswer": "C",
     "options": {
-      "A": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;anahtarlama &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "B": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;varsayma&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "C": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;gönderilemez&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "D": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;kısıtlama&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "E": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;kontrol&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+      "A": "anahtarlama",
+      "B": "varsayma",
+      "C": "gönderilemez",
+      "D": "kısıtlama",
+      "E": "kontrol"
     },
-    "explanation": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>Gönderilemez. sf. 68. Doğru cevap C'dir</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+    "explanation": "<em>Gönderilemez. sf. 68. Doğru cevap C'dir</em>"
   },
   {
     "id": "3739206",
     "unitNumber": 4,
-    "text": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;Tetikleyici, aşağıdakilerden hangisidir ?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
+    "text": "Tetikleyici, aşağıdakilerden hangisidir ?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;özel saklı yordam&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "B": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;liste&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "C": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;dosya&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "D": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;parametre&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "E": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;kütük&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+      "A": "özel saklı yordam",
+      "B": "liste",
+      "C": "dosya",
+      "D": "parametre",
+      "E": "kütük"
     },
-    "explanation": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>Özel saklı yordam&lt;span lang=\"tr-TR\"&gt;. sf. 68. Doğru cevap A'dır&lt;/span&gt;</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+    "explanation": "<em>Özel saklı yordam. sf. 68. Doğru cevap A'dır</em>"
   },
   {
     "id": "3739207",
     "unitNumber": 4,
-    "text": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; \"Veri bütünlüğü, bir tabloda verilere ...., .... veya ...... gibi işlemler yapılırken diğer tablo ya da tablolardaki verilerin birbirleriyle uyum içinde olmasının sağlanmasıdır.\" cümlesinde boş bırakılan yerlere aşağıdakilerden hangisi getirilmelidir?<br/>&lt;/div&gt; &lt;/div&gt;",
+    "text": "\"Veri bütünlüğü, bir tabloda verilere ...., .... veya ...... gibi işlemler yapılırken diğer tablo ya da tablolardaki verilerin birbirleriyle uyum içinde olmasının sağlanmasıdır.\" cümlesinde boş bırakılan yerlere aşağıdakilerden hangisi getirilmelidir?",
     "correctAnswer": "C",
     "options": {
       "A": "Upload, Download, Print Scr",
@@ -2629,12 +2629,12 @@
       "D": "Ctrl, Alt, Delete",
       "E": "Shift, Space, F5"
     },
-    "explanation": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Veri bütünlüğü, bir tabloda verilere UPDATE, DELETE veya INSERT gibi işlemler yapılırken diğer tablo ya da tablolardaki verilerin birbirleriyle uyum içinde olmasının sağlanmasıdır.<br/>&lt;/div&gt; &lt;/div&gt;"
+    "explanation": "Veri bütünlüğü, bir tabloda verilere UPDATE, DELETE veya INSERT gibi işlemler yapılırken diğer tablo ya da tablolardaki verilerin birbirleriyle uyum içinde olmasının sağlanmasıdır."
   },
   {
     "id": "3739208",
     "unitNumber": 4,
-    "text": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Veritabanı içinden veya dışından gelen olaylara oluşturulacak kurallar sayesinde otomatik olarak tepki üreten veritabanına verilen ad aşağıdakilerden hangisidir?<br/>&lt;/div&gt; &lt;/div&gt;",
+    "text": "Veritabanı içinden veya dışından gelen olaylara oluşturulacak kurallar sayesinde otomatik olarak tepki üreten veritabanına verilen ad aşağıdakilerden hangisidir?",
     "correctAnswer": "A",
     "options": {
       "A": "Aktif",
@@ -2643,12 +2643,12 @@
       "D": "Nötr",
       "E": "Pozitif"
     },
-    "explanation": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Veritabanı içinden veya dışından gelen olaylara oluşturulacak kurallar sayesinde otomatik olarak tepki üreten veritabanına aktif veritabanı denir.<br/>&lt;/div&gt; &lt;/div&gt;"
+    "explanation": "Veritabanı içinden veya dışından gelen olaylara oluşturulacak kurallar sayesinde otomatik olarak tepki üreten veritabanına aktif veritabanı denir."
   },
   {
     "id": "3739209",
     "unitNumber": 4,
-    "text": "&lt;div class=\"column\"&gt; Veritabanı ister aktif ister pasif olsun, en genel anlamda ilişkisel bir veritabanı birbiriyle ilişkili tablolardan, tablolar da satır ve sütunlardan oluşmaktadır. Bu kapsamdan bakıldığında bir veritabanı, birden fazla çalışma sayfasından oluşan aşağıdaki hangi Microsoft uygulama dosyası olarak düşünülebilir?<br/>&lt;/div&gt;",
+    "text": "Veritabanı ister aktif ister pasif olsun, en genel anlamda ilişkisel bir veritabanı birbiriyle ilişkili tablolardan, tablolar da satır ve sütunlardan oluşmaktadır. Bu kapsamdan bakıldığında bir veritabanı, birden fazla çalışma sayfasından oluşan aşağıdaki hangi Microsoft uygulama dosyası olarak düşünülebilir?",
     "correctAnswer": "B",
     "options": {
       "A": "Word",
@@ -2657,12 +2657,12 @@
       "D": "Access",
       "E": "Outlook"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Veritabanı ister aktif ister pasif olsun, en genel anlamda ilişkisel bir veritabanı birbiriyle ilişkili tablolardan, tablolar da satır ve sütunlardan oluşmaktadır. Bu kapsamdan bakıldığında bir veritabanı, birden fazla çalışma sayfasından oluşan bir EXCEL dosyası olarak düşünülebilir.<br/>&lt;/div&gt;"
+    "explanation": "Veritabanı ister aktif ister pasif olsun, en genel anlamda ilişkisel bir veritabanı birbiriyle ilişkili tablolardan, tablolar da satır ve sütunlardan oluşmaktadır. Bu kapsamdan bakıldığında bir veritabanı, birden fazla çalışma sayfasından oluşan bir EXCEL dosyası olarak düşünülebilir."
   },
   {
     "id": "3739210",
     "unitNumber": 4,
-    "text": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Aşağıdakilerden hangisi \"prosedürel veri bütünlüğü sağlama tekniği olup fonksiyonellik açısından gelişmiş bir koruma yöntemidir. Ancak bu yöntem, veritabanında yapılan değişiklerden sonra devreye girdiği için veritabanına fazladan yük binmesine sebep olabilir.\" şeklinde tanımlanan veri bütünlüğü öğesidir?<br/>&lt;/div&gt; &lt;/div&gt;",
+    "text": "Aşağıdakilerden hangisi \"prosedürel veri bütünlüğü sağlama tekniği olup fonksiyonellik açısından gelişmiş bir koruma yöntemidir. Ancak bu yöntem, veritabanında yapılan değişiklerden sonra devreye girdiği için veritabanına fazladan yük binmesine sebep olabilir.\" şeklinde tanımlanan veri bütünlüğü öğesidir?",
     "correctAnswer": "D",
     "options": {
       "A": "Kısıtlar",
@@ -2671,7 +2671,7 @@
       "D": "Tetikleyiciler",
       "E": "Kodlar"
     },
-    "explanation": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Tetikleyiciler, prosedürel veri bütünlüğü sağlama tekniği olup fonksiyonellik açısından gelişmiş bir koruma yöntemidir. Ancak bu yöntem, adı geçen iki yönteme göre veritabanında yapılan değişiklerden sonra devreye girdiği için veritabanına fazladan yük binmesine sebep olabilir.<br/>&lt;/div&gt; &lt;/div&gt;"
+    "explanation": "Tetikleyiciler, prosedürel veri bütünlüğü sağlama tekniği olup fonksiyonellik açısından gelişmiş bir koruma yöntemidir. Ancak bu yöntem, adı geçen iki yönteme göre veritabanında yapılan değişiklerden sonra devreye girdiği için veritabanına fazladan yük binmesine sebep olabilir."
   },
   {
     "id": "3739211",
@@ -2685,40 +2685,40 @@
       "D": "Varsayılan Kısıtlayıcı",
       "E": "Yabancı Anahtar Kısıtlayıcı"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Kontrol kısıtlayıcısı (Check Constraint) tablodaki herhangi bir sütunun hangi gruptan verileri alabileceğini ve girilebilecek verileri bir koşul ile kısıtlayarak istenilen verilerin girilmesini sağlayan bütünlüktür.<br/>&lt;/div&gt;"
+    "explanation": "Kontrol kısıtlayıcısı (Check Constraint) tablodaki herhangi bir sütunun hangi gruptan verileri alabileceğini ve girilebilecek verileri bir koşul ile kısıtlayarak istenilen verilerin girilmesini sağlayan bütünlüktür."
   },
   {
     "id": "3739212",
     "unitNumber": 4,
-    "text": "&lt;div class=\"column\"&gt; Bir tablodaki bir sütundaki değerin diğer tablolardaki değerlerle denetlenmesini sağlayan kısıtlayıcı aşağıdakilerden hangisidir?<br/>&lt;/div&gt;",
+    "text": "Bir tablodaki bir sütundaki değerin diğer tablolardaki değerlerle denetlenmesini sağlayan kısıtlayıcı aşağıdakilerden hangisidir?",
     "correctAnswer": "D",
     "options": {
-      "A": "&lt;div class=\"column\"&gt; Primary Key Constraint<br/>&lt;/div&gt;",
-      "B": "&lt;div class=\"column\"&gt; Unique Constraint<br/>&lt;/div&gt;",
-      "C": "&lt;div class=\"column\"&gt; Check Constraint<br/>&lt;/div&gt;",
-      "D": "&lt;div class=\"column\"&gt; Foreign Key Constraint<br/>&lt;/div&gt;",
-      "E": "&lt;div class=\"column\"&gt; Default Constraint<br/>&lt;/div&gt;"
+      "A": "Primary Key Constraint",
+      "B": "Unique Constraint",
+      "C": "Check Constraint",
+      "D": "Foreign Key Constraint",
+      "E": "Default Constraint"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Yabancı anahtar kısıtlayıcısı(Foreign Key Constraint): Bir tablodaki bir sütundaki değerin diğer tablolardaki değerlerle denetlenmesini sağlayan kısıtlayıcıdır.<br/>&lt;/div&gt;"
+    "explanation": "Yabancı anahtar kısıtlayıcısı(Foreign Key Constraint): Bir tablodaki bir sütundaki değerin diğer tablolardaki değerlerle denetlenmesini sağlayan kısıtlayıcıdır."
   },
   {
     "id": "3739213",
     "unitNumber": 4,
-    "text": "&lt;div class=\"column\"&gt; Tetikleyiciler, veritabanı bir eylem gerçeklediğinde otomatik olarak başka eylem / veya eylemler gerçeklemesi amacıyla kullanılan özel saklı yordamlardır. Çeşitli amaçlara uygun olarak tetikleyiciler kullanmak mümkündür. Bu amaçlardan olmayan tetikleyici özelliği aşağıdakilerden hangisidir?<br/>&lt;/div&gt;",
+    "text": "Tetikleyiciler, veritabanı bir eylem gerçeklediğinde otomatik olarak başka eylem / veya eylemler gerçeklemesi amacıyla kullanılan özel saklı yordamlardır. Çeşitli amaçlara uygun olarak tetikleyiciler kullanmak mümkündür. Bu amaçlardan olmayan tetikleyici özelliği aşağıdakilerden hangisidir?",
     "correctAnswer": "E",
     "options": {
-      "A": "&lt;div class=\"column\"&gt; Satırların tekilliğini sağlamak için birincil anahtar üretmek<br/>&lt;/div&gt;",
-      "B": "&lt;div class=\"column\"&gt; Veritabanının üretmiş olduğu standart hata mesajlarının dışında bir hata mesajı üretmek<br/>&lt;/div&gt;",
-      "C": "&lt;div class=\"column\"&gt; Karmaşık iş kurallarını düzenlemek<br/>&lt;/div&gt;",
-      "D": "&lt;div class=\"column\"&gt; Veritabanı bütünlüğünü sağlamak<br/>&lt;/div&gt;",
-      "E": "&lt;div class=\"column\"&gt; Manuel olarak rapor üretmek, e-posta almak<br/>&lt;/div&gt;"
+      "A": "Satırların tekilliğini sağlamak için birincil anahtar üretmek",
+      "B": "Veritabanının üretmiş olduğu standart hata mesajlarının dışında bir hata mesajı üretmek",
+      "C": "Karmaşık iş kurallarını düzenlemek",
+      "D": "Veritabanı bütünlüğünü sağlamak",
+      "E": "Manuel olarak rapor üretmek, e-posta almak"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Tetikleyiciler, veritabanı bir eylem gerçeklediğinde otomatik olarak başka eylem / veya eylemler gerçeklemesi amacıyla kullanılan özel saklı yordamlardır. Çeşitli amaçlara uygun olarak tetikleyiciler kullanmak mümkündür. Bu amaçlardan bazıları aşağıdaki gibidir:<br/>&lt;/div&gt; &lt;div class=\"column\"&gt; • Satırların tekilliğini sağlamak için birincil anahtar üretmek<br/>• Veritabanına erişimleri ve değişiklikleri takip etmek<br/>• Veritabanının üretmiş olduğu standart hata mesajlarının dışında bir hata mesajı üretmek<br/>• Otomatik olarak rapor üretmek, e-posta atmak<br/>• Karmaşık iş kurallarını düzenlemek<br/>• Veritabanı bütünlüğünü sağlamak<br/>&lt;/div&gt;"
+    "explanation": "Tetikleyiciler, veritabanı bir eylem gerçeklediğinde otomatik olarak başka eylem / veya eylemler gerçeklemesi amacıyla kullanılan özel saklı yordamlardır. Çeşitli amaçlara uygun olarak tetikleyiciler kullanmak mümkündür. Bu amaçlardan bazıları aşağıdaki gibidir:<br/>• Satırların tekilliğini sağlamak için birincil anahtar üretmek<br/>• Veritabanına erişimleri ve değişiklikleri takip etmek<br/>• Veritabanının üretmiş olduğu standart hata mesajlarının dışında bir hata mesajı üretmek<br/>• Otomatik olarak rapor üretmek, e-posta atmak<br/>• Karmaşık iş kurallarını düzenlemek<br/>• Veritabanı bütünlüğünü sağlamak"
   },
   {
     "id": "3739214",
     "unitNumber": 4,
-    "text": "&lt;div class=\"column\"&gt; Veritabanında bir eylem gerçeklendiği zaman başka bir eylem veya eylemlerin gerçeklenmesi istediği zaman kullanılan tetikleyicilere verilen ad aşağıdakilerden hangisidir?<br/>&lt;/div&gt;",
+    "text": "Veritabanında bir eylem gerçeklendiği zaman başka bir eylem veya eylemlerin gerçeklenmesi istediği zaman kullanılan tetikleyicilere verilen ad aşağıdakilerden hangisidir?",
     "correctAnswer": "A",
     "options": {
       "A": "Ardı sıra tetikleyiciler",
@@ -2727,7 +2727,7 @@
       "D": "Tekrarlı tetikleyiciler",
       "E": "Tek zamanlı tetikleyiciler"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Ardı Sıra Tetikleyiciler: Veritabanında bir eylem gerçeklendiği zaman başka bir eylem veya eylemlerin gerçeklenmesi istediği zaman kullanılan tetikleyicilere ardı sıra tetikleyicileri denilmektedir.<br/>&lt;/div&gt;"
+    "explanation": "Ardı Sıra Tetikleyiciler: Veritabanında bir eylem gerçeklendiği zaman başka bir eylem veya eylemlerin gerçeklenmesi istediği zaman kullanılan tetikleyicilere ardı sıra tetikleyicileri denilmektedir."
   },
   {
     "id": "3739215",
@@ -2741,26 +2741,26 @@
       "D": "Varsayılan kısıtlayıcı",
       "E": "Saklı yordamlar"
     },
-    "explanation": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Tanımlanabilir Veri Bütünlüğü:<br/>Kısıtlar<ul><li>Birincil anahtar kısıtlayıcı</li><li>Tekil alan kısıtlayıcısı</li><li>Kontrol kısıtlayıcı</li><li>Yabancı anahtar kısıtlayıcı</li><li>Varsayılan kısıtlayıcı</li></ul>Kurallar<br/>Varsayılanlar<br/>&lt;/div&gt; &lt;/div&gt;"
+    "explanation": "Tanımlanabilir Veri Bütünlüğü:<br/>Kısıtlar<ul><li>Birincil anahtar kısıtlayıcı</li><li>Tekil alan kısıtlayıcısı</li><li>Kontrol kısıtlayıcı</li><li>Yabancı anahtar kısıtlayıcı</li><li>Varsayılan kısıtlayıcı</li></ul>Kurallar<br/>Varsayılanlar"
   },
   {
     "id": "3739216",
     "unitNumber": 4,
-    "text": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Bir tablo üzerinde yeni kayıt veya kayıtlar girildikten sonra otomatik olarak bir eylem veya eylemler yapılması istenildiği zaman aşağıdakilerden hangisi kullanılmalıdır?<br/>&lt;/div&gt; &lt;/div&gt;",
+    "text": "Bir tablo üzerinde yeni kayıt veya kayıtlar girildikten sonra otomatik olarak bir eylem veya eylemler yapılması istenildiği zaman aşağıdakilerden hangisi kullanılmalıdır?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; INSERT tetikleyicisi<br/>&lt;/div&gt; &lt;/div&gt;",
+      "A": "INSERT tetikleyicisi",
       "B": "DELETE tetikleyicisi",
       "C": "ALTER tetikleyicisi",
       "D": "UPDATE tetikleyicisi",
       "E": "ROLLBACK tetikleyicisi"
     },
-    "explanation": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Bir tablo üzerinde yeni kayıt veya kayıtlar girildikten sonra otomatik olarak bir eylem veya eylemler yapılması istenildiği zaman INSERT tetikleyicisi kullanılır.<br/>&lt;/div&gt; &lt;/div&gt;"
+    "explanation": "Bir tablo üzerinde yeni kayıt veya kayıtlar girildikten sonra otomatik olarak bir eylem veya eylemler yapılması istenildiği zaman INSERT tetikleyicisi kullanılır."
   },
   {
     "id": "3739217",
     "unitNumber": 4,
-    "text": "&lt;span style=\"left: 113.008px; top: 1062.52px; font-size: 17.3333px; font-family: serif; transform: scaleX(0.984476);\"&gt;Aktif sistemlerde verilerin sorgulanması &lt;/span&gt;&lt;span style=\"left: 113.008px; top: 1085.57px; font-size: 17.3333px; font-family: serif; transform: scaleX(0.994859);\"&gt;veya değiştirilmesi ................. yapılmakta&lt;/span&gt;&lt;span style=\"left: 113.008px; top: 1108.62px; font-size: 17.3333px; font-family: serif; transform: scaleX(1.01352);\"&gt;dır. &lt;/span&gt;<br/>&lt;span style=\"left: 113.008px; top: 1108.62px; font-size: 17.3333px; font-family: serif; transform: scaleX(1.01352);\"&gt;Yukarıdaki cümlede boş bırakılan yeri aşağıdakilerden hangisi doğru şekilde tamamlar?&lt;/span&gt;",
+    "text": "Aktif sistemlerde verilerin sorgulanması veya değiştirilmesi ................. yapılmaktadır.<br/>Yukarıdaki cümlede boş bırakılan yeri aşağıdakilerden hangisi doğru şekilde tamamlar?",
     "correctAnswer": "D",
     "options": {
       "A": "Kullanıcı tarafından oluşturulan sorgularla",
@@ -2769,12 +2769,12 @@
       "D": "Otomatik oluşturulan sorgularla",
       "E": "Sistem yöneticisi sorgularıyla"
     },
-    "explanation": "&lt;span style=\"left: 113.008px; top: 1154.73px; font-size: 17.3333px; font-family: serif; transform: scaleX(1.00453);\"&gt;Sorgulamaya gerek kalmadan veritabanının kendisi &lt;/span&gt;&lt;span style=\"left: 113.008px; top: 1177.78px; font-size: 17.3333px; font-family: serif; transform: scaleX(1.00253);\"&gt;otomatik olarak bir tepki üretebiliyor ise artık bu veritabanı sistemi aktif olur ve böylece &lt;/span&gt;&lt;span style=\"left: 113.008px; top: 1200.84px; font-size: 17.3333px; font-family: serif; transform: scaleX(0.977003);\"&gt;birçok yararlı özellikleri bu aktif davranış tarafından sağlanabilir. Kullanıcı, arayüz, web formu veya sistem yöneticisinden gelen sorgularla çalışan sistem pasif sistemdir. Doğru cevap D.<br/>&lt;/span&gt;"
+    "explanation": "Sorgulamaya gerek kalmadan veritabanının kendisi otomatik olarak bir tepki üretebiliyor ise artık bu veritabanı sistemi aktif olur ve böylece birçok yararlı özellikleri bu aktif davranış tarafından sağlanabilir. Kullanıcı, arayüz, web formu veya sistem yöneticisinden gelen sorgularla çalışan sistem pasif sistemdir. Doğru cevap D."
   },
   {
     "id": "3739218",
     "unitNumber": 4,
-    "text": "<ol type=\"I\"><li>&lt;span style=\"left: 280.063px; top: 821.233px; font-size: 10pt; font-family: verdana, geneva, sans-serif; transform: scaleX(0.959543);\"&gt;&lt;span style=\"left: 255.496px; top: 152.687px; transform: scaleX(0.989788);\"&gt;&lt;span style=\"left: 255.496px; top: 291.007px; transform: scaleX(0.99172);\"&gt; Tanımlanabilir veri bütünlüğü &lt;span style=\"left: 255.496px; top: 314.06px; transform: scaleX(0.998532);\"&gt;tanımlanan nesnelerin kendi özellikleri sayesinde sağlanabilen veri bütünlüğüdür.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=\"left: 255.496px; top: 198.793px; transform: scaleX(1.0169);\"&gt;<br/>&lt;/span&gt;&lt;/span&gt;</li><li>&lt;span style=\"left: 280.063px; top: 821.233px; font-size: 10pt; font-family: verdana, geneva, sans-serif; transform: scaleX(0.959543);\"&gt;&lt;span style=\"left: 255.496px; top: 152.687px; transform: scaleX(0.989788);\"&gt;&lt;span style=\"left: 255.496px; top: 291.007px; transform: scaleX(0.99172);\"&gt;&lt;span style=\"left: 255.496px; top: 314.06px; transform: scaleX(0.998532);\"&gt;&lt;span style=\"left: 255.496px; top: 337.113px; transform: scaleX(1.00792);\"&gt;Tanımlanabilir bütünlüğünde, fazla müdahale edilememesi ve programlama imkânının sağ&lt;/span&gt;&lt;span style=\"left: 255.496px; top: 360.167px; transform: scaleX(0.950187);\"&gt;lanamaması dezavantajlardır.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;</li><li>&lt;span style=\"left: 280.063px; top: 821.233px; font-size: 10pt; font-family: verdana, geneva, sans-serif; transform: scaleX(0.959543);\"&gt;&lt;span style=\"left: 255.496px; top: 152.687px; transform: scaleX(0.989788);\"&gt;&lt;span style=\"left: 255.496px; top: 291.007px; transform: scaleX(0.99172);\"&gt;&lt;span style=\"left: 255.496px; top: 314.06px; transform: scaleX(0.998532);\"&gt;&lt;span style=\"left: 255.496px; top: 360.167px; transform: scaleX(0.950187);\"&gt;&lt;span style=\"left: 255.496px; top: 429.327px; transform: scaleX(0.986307);\"&gt;Prosedürel veri bütünlüğü sağlamaya çalışırken kötü yazılacak program ile &lt;/span&gt;&lt;span style=\"left: 255.496px; top: 452.38px; transform: scaleX(0.988335);\"&gt;veritabanına ek yük getirebilir.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;</li><li>&lt;span style=\"left: 280.063px; top: 821.233px; font-size: 10pt; font-family: verdana, geneva, sans-serif; transform: scaleX(0.959543);\"&gt;&lt;span style=\"left: 255.496px; top: 152.687px; transform: scaleX(0.989788);\"&gt;&lt;span style=\"left: 255.496px; top: 291.007px; transform: scaleX(0.99172);\"&gt;&lt;span style=\"left: 255.496px; top: 314.06px; transform: scaleX(0.998532);\"&gt;&lt;span style=\"left: 255.496px; top: 360.167px; transform: scaleX(0.950187);\"&gt;&lt;span style=\"left: 255.496px; top: 452.38px; transform: scaleX(0.988335);\"&gt;Prosedürel veri bütünlüğü, tanımlanabilir veri bütünlüğüne göre daha basittir.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;</li></ol>&lt;span style=\"left: 280.063px; top: 821.233px; font-size: 17.3333px; font-family: serif; transform: scaleX(0.959543);\"&gt;&lt;span style=\"font-family: verdana, geneva, sans-serif; font-size: 10pt;\"&gt;Prosedürel ve tanımlanabilir veri bütünlüğü ile ilgili yukarıda verilen bilgilerden hangileri doğrudur?&lt;/span&gt;<br/>&lt;/span&gt;",
+    "text": "<ol type=\"I\"><li>Tanımlanabilir veri bütünlüğü tanımlanan nesnelerin kendi özellikleri sayesinde sağlanabilen veri bütünlüğüdür.</li><li>Tanımlanabilir bütünlüğünde, fazla müdahale edilememesi ve programlama imkânının sağlanamaması dezavantajlardır.</li><li>Prosedürel veri bütünlüğü sağlamaya çalışırken kötü yazılacak program ile veritabanına ek yük getirebilir.</li><li>Prosedürel veri bütünlüğü, tanımlanabilir veri bütünlüğüne göre daha basittir.</li></ol>Prosedürel ve tanımlanabilir veri bütünlüğü ile ilgili yukarıda verilen bilgilerden hangileri doğrudur?",
     "correctAnswer": "A",
     "options": {
       "A": "I, II ve III",
@@ -2805,11 +2805,11 @@
     "text": "Veri bütünlüğü sağlamak için en geniş manada fonksiyonellik sunmalarına rağmen performans olarak en zayıf kalan veri bütünlüğü sağlama yöntemi aşağıdakilerden hangisidir?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;span style=\"left: 113.008px; top: 175.74px; font-size: 17.3333px; font-family: serif; transform: scaleX(0.987516);\"&gt;Programlar&lt;/span&gt;",
-      "B": "&lt;span style=\"left: 357.121px; top: 554.406px; font-size: 15.6px; font-family: sans-serif; transform: scaleX(0.920116);\"&gt;Kurallar<br/>&lt;/span&gt;",
+      "A": "Programlar",
+      "B": "Kurallar",
       "C": "Kısıtlar",
       "D": "Tetikleyiciler",
-      "E": "&lt;span style=\"left: 418.007px; top: 554.406px; font-size: 15.6px; font-family: sans-serif; transform: scaleX(0.905991);\"&gt;Varsayılanlar&lt;/span&gt;"
+      "E": "Varsayılanlar"
     },
     "explanation": "En üst katman olan saklı yordamlar / programlar veritabanı dı-şında programlama dilleri ile geliştirilirler. Veri bütünlüğü sağlamak için en geniş manada fonksiyonellik sunmalarına rağmen performans olarak en az zayıf kalan veri bütünlüğü sağlama yöntemleridir."
   },
@@ -3124,128 +3124,128 @@
   {
     "id": "3739244",
     "unitNumber": 5,
-    "text": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;Temel olarak daha küçük parçalara bölünemeyen en küçük işlem gurubu aşağıdakilerden hangisidir ?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
+    "text": "Temel olarak daha küçük parçalara bölünemeyen en küçük işlem gurubu aşağıdakilerden hangisidir ?",
     "correctAnswer": "C",
     "options": {
-      "A": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;atom&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "B": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>hece</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "C": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>hareket</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "D": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;hücre&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "E": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;sözcük&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+      "A": "atom",
+      "B": "<em>hece</em>",
+      "C": "<em>hareket</em>",
+      "D": "hücre",
+      "E": "sözcük"
     },
-    "explanation": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>Hareket (= transaction), temel olarak daha küçük parçalara bölünemeyen en küçük işlem grubudur. sf. 79. Doğru cevap C'dir</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+    "explanation": "<em>Hareket (= transaction), temel olarak daha küçük parçalara bölünemeyen en küçük işlem grubudur. sf. 79. Doğru cevap C'dir</em>"
   },
   {
     "id": "3739245",
     "unitNumber": 5,
-    "text": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;Bölünmezlikle ilişkili kavram aşağıdakilerden hangisidir ?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
+    "text": "Bölünmezlikle ilişkili kavram aşağıdakilerden hangisidir ?",
     "correctAnswer": "B",
     "options": {
-      "A": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;oldu bitti&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "B": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;ya hep ya hiç&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "C": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;olana dek tekrar&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "D": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;olduğu kadar&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "E": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;olmasa da olur&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+      "A": "oldu bitti",
+      "B": "ya hep ya hiç",
+      "C": "olana dek tekrar",
+      "D": "olduğu kadar",
+      "E": "olmasa da olur"
     },
-    "explanation": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>Ya hep ya hiç. sf. 80. Doğru cevap B'dir</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+    "explanation": "<em>Ya hep ya hiç. sf. 80. Doğru cevap B'dir</em>"
   },
   {
     "id": "3739246",
     "unitNumber": 5,
-    "text": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;Kısıtların dışına çıkıldığı durumda veritabanında değişikliklere izin verilmemesi aşağıdakilerden hangisi ile ilişkilidir ?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
+    "text": "Kısıtların dışına çıkıldığı durumda veritabanında değişikliklere izin verilmemesi aşağıdakilerden hangisi ile ilişkilidir ?",
     "correctAnswer": "E",
     "options": {
-      "A": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;bölünmezlik&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "B": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>devamlılık</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "C": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>kütükleme</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "D": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;izolasyon&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "E": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;tutarlılık&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+      "A": "bölünmezlik",
+      "B": "<em>devamlılık</em>",
+      "C": "<em>kütükleme</em>",
+      "D": "izolasyon",
+      "E": "tutarlılık"
     },
-    "explanation": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>Tutarlılık : Kısıtların dışına çıkıldığı durumda veritabanı yönetim sistemi (VTYS) tarafından değişikliklere izin verilmemelidir. sf. 80. Doğru cevap E'dir</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+    "explanation": "<em>Tutarlılık : Kısıtların dışına çıkıldığı durumda veritabanı yönetim sistemi (VTYS) tarafından değişikliklere izin verilmemelidir. sf. 80. Doğru cevap E'dir</em>"
   },
   {
     "id": "3739247",
     "unitNumber": 5,
-    "text": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;Veri üzerinde değişiklik yapılırken başkası bu veriyi okumak istediğinde veri değişikliği bitene dek verinin okunmasının engellenmesi aşağıdakilerden hangisi ile ilişkilidir ? &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
+    "text": "Veri üzerinde değişiklik yapılırken başkası bu veriyi okumak istediğinde veri değişikliği bitene dek verinin okunmasının engellenmesi aşağıdakilerden hangisi ile ilişkilidir ?",
     "correctAnswer": "C",
     "options": {
-      "A": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;tutarlılık&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "B": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;kütükleme&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "C": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;izolasyon&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "D": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;devamlılık&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "E": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;bölünmezlik&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+      "A": "tutarlılık",
+      "B": "kütükleme",
+      "C": "izolasyon",
+      "D": "devamlılık",
+      "E": "bölünmezlik"
     },
-    "explanation": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>İzolasyon. sf. 81. Doğru cevap C'dir</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+    "explanation": "<em>İzolasyon. sf. 81. Doğru cevap C'dir</em>"
   },
   {
     "id": "3739248",
     "unitNumber": 5,
-    "text": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;Veri değişiklikleri önce nereye yazılır ?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
+    "text": "Veri değişiklikleri önce nereye yazılır ?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;hareket günlüğü&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "B": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;veri tabanı&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "C": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;sürüm listesi&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "D": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;çarşaf liste&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "E": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;kayıt listesi&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+      "A": "hareket günlüğü",
+      "B": "veri tabanı",
+      "C": "sürüm listesi",
+      "D": "çarşaf liste",
+      "E": "kayıt listesi"
     },
-    "explanation": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>Hareket günlüğü (= transaction log). sf. 81. Doğru cevap A'dır</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+    "explanation": "<em>Hareket günlüğü (= transaction log). sf. 81. Doğru cevap A'dır</em>"
   },
   {
     "id": "3739249",
     "unitNumber": 5,
-    "text": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;Veri değişikliklerinin farklı yere de kaydedilmesi aşağıdakilerden hangisi ile ilişkilidir ?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
+    "text": "Veri değişikliklerinin farklı yere de kaydedilmesi aşağıdakilerden hangisi ile ilişkilidir ?",
     "correctAnswer": "C",
     "options": {
-      "A": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;izolasyon&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "B": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;tutarlılık&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "C": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;devamlılık&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "D": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;listeleme&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "E": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;bölünmezlik&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+      "A": "izolasyon",
+      "B": "tutarlılık",
+      "C": "devamlılık",
+      "D": "listeleme",
+      "E": "bölünmezlik"
     },
-    "explanation": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>Devamlılık. sf. 81. Doğru cevap C'dir</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+    "explanation": "<em>Devamlılık. sf. 81. Doğru cevap C'dir</em>"
   },
   {
     "id": "3739250",
     "unitNumber": 5,
-    "text": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;Aşağıdakilerden hangisi, veri değişikliklerinin kalıcı hale getirilmesidir ?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
+    "text": "Aşağıdakilerden hangisi, veri değişikliklerinin kalıcı hale getirilmesidir ?",
     "correctAnswer": "E",
     "options": {
-      "A": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;rollback&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "B": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;write&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "C": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;save&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "D": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;log&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "E": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;commit&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+      "A": "rollback",
+      "B": "write",
+      "C": "save",
+      "D": "log",
+      "E": "commit"
     },
-    "explanation": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>Commit (= işlemek). sf. 82. Doğru cevap E'dir</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+    "explanation": "<em>Commit (= işlemek). sf. 82. Doğru cevap E'dir</em>"
   },
   {
     "id": "3739251",
     "unitNumber": 5,
-    "text": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;Aşağıdakilerden hangisi, veri değişikliklerinin iptal edilmesidir ?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
+    "text": "Aşağıdakilerden hangisi, veri değişikliklerinin iptal edilmesidir ?",
     "correctAnswer": "D",
     "options": {
-      "A": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;log&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "B": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;commit&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "C": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;write&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "D": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;rollback&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "E": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;save&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+      "A": "log",
+      "B": "commit",
+      "C": "write",
+      "D": "rollback",
+      "E": "save"
     },
-    "explanation": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>Rollback (= geri sarmak). sf. 82. Doğru cevap D'dir</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+    "explanation": "<em>Rollback (= geri sarmak). sf. 82. Doğru cevap D'dir</em>"
   },
   {
     "id": "3739252",
     "unitNumber": 5,
-    "text": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;Örtük hareket modundan çıkarken aşağıdakilerden hangisi yapılmazsa tabloya başka bağlantı yapılması engellenir ?&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
+    "text": "Örtük hareket modundan çıkarken aşağıdakilerden hangisi yapılmazsa tabloya başka bağlantı yapılması engellenir ?",
     "correctAnswer": "D",
     "options": {
-      "A": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;write &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "B": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;log&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "C": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;save&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "D": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;rollback&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "E": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;delete&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+      "A": "write",
+      "B": "log",
+      "C": "save",
+      "D": "rollback",
+      "E": "delete"
     },
-    "explanation": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>Rollback (= geri sarmak) veya commit (= işlemek) ; örtük hareket modu (= implicit transaction mode). sf. 83. Doğru cevap D'dir</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+    "explanation": "<em>Rollback (= geri sarmak) veya commit (= işlemek) ; örtük hareket modu (= implicit transaction mode). sf. 83. Doğru cevap D'dir</em>"
   },
   {
     "id": "3739253",
@@ -3253,13 +3253,13 @@
     "text": "Değiştirilmiş fakat kalıcı hale getirilmemiş bir verinin başkası tarafından geçerli bir veri gibi okunması aşağıdakilerden hangisidir ?",
     "correctAnswer": "B",
     "options": {
-      "A": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;düzensiz okuma&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "B": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;kirli okuma&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "C": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;eğreti okuma&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "D": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;geçici okuma&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;",
-      "E": "&lt;span style=\"color: #000000;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;kaçak okuma&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+      "A": "düzensiz okuma",
+      "B": "kirli okuma",
+      "C": "eğreti okuma",
+      "D": "geçici okuma",
+      "E": "kaçak okuma"
     },
-    "explanation": "&lt;span style=\"color: #404040;\"&gt;&lt;span style=\"font-family: 'Times New Roman', serif;\"&gt;&lt;span style=\"font-size: small;\"&gt;<em>Kirli okuma (= dirty read)&lt;span lang=\"tr-TR\"&gt;. sf. 86. Doğru cevap B'dir&lt;/span&gt;</em>&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;"
+    "explanation": "<em>Kirli okuma (= dirty read). sf. 86. Doğru cevap B'dir</em>"
   },
   {
     "id": "3739254",
@@ -3357,7 +3357,7 @@
       "D": "hayalet okuma",
       "E": "tekrarlayan güncelleme"
     },
-    "explanation": "EŞ ZAMANLILIK VE EŞ ZAMANLILIK PROBLEMLERİ<br/>tekrarlayan güncelleme"
+    "explanation": "EŞ ZAMANLILIK VE EŞ ZAMANLILIK PROBLEMLERİ<br/>tekrarlayan güncelleme tekrarlayan güncelleme"
   },
   {
     "id": "3739261",
@@ -3399,7 +3399,7 @@
       "D": "Tekrar deneme mantığı kullanılmalıdır.",
       "E": "Varlıklara farklı sırada erişim sağlanmalıdır."
     },
-    "explanation": "Kilitlenme<br/>Varlıklara farklı sırada erişim sağlanmalıdır."
+    "explanation": ""
   },
   {
     "id": "3739264",
@@ -3413,7 +3413,7 @@
       "D": "Bölünmezlik",
       "E": "Tutarlılık"
     },
-    "explanation": "Eş zamanlılık (concurency): Aynı veya farklı istemciler tarafından gerçekleştirilen veritabanı hareketlerinin, bir veri veya veri grubu üzerinde aynı anda işlem gerçekleştirmeye çalışmasıdır.<br/>Doğru cevap B'dir."
+    "explanation": "Eş zamanlılık (concurency): Aynı veya farklı istemciler tarafından gerçekleştirilen veritabanı hareketlerinin, bir veri veya veri grubu üzerinde aynı anda işlem gerçekleştirmeye çalışmasıdır."
   },
   {
     "id": "3739265",
@@ -3427,7 +3427,7 @@
       "D": "Bölünmezlik",
       "E": "Tutarlılık"
     },
-    "explanation": "Hareket (Transaction), temel olarak daha küçük parçalara bölünemeyen en küçük işlem grubudur. Veritabanı üzerinde gerçekleştirilen bir dizi SQL işlemini (SELECT,INSERT,UPDATE ve DELETE) kapsayan işlemler grubuna verilen isimdir.<br/>Doğru cevap A'dır."
+    "explanation": "Hareket (Transaction), temel olarak daha küçük parçalara bölünemeyen en küçük işlem grubudur. Veritabanı üzerinde gerçekleştirilen bir dizi SQL işlemini (SELECT,INSERT,UPDATE ve DELETE) kapsayan işlemler grubuna verilen isimdir."
   },
   {
     "id": "3739266",
@@ -3441,7 +3441,7 @@
       "D": "Bölünmezlik",
       "E": "Tutarlılık"
     },
-    "explanation": "Bölünmezlik: Hareket bloğu içinde yer alan SQL ifadelerin tamamının başarılı olarak çalıştırılması ya da hiçbirinin çalıştırılmadan hareket bloğu başlangıç durumuna geri dönülmesidir.<br/>Doğru cevap D'dir."
+    "explanation": "Bölünmezlik: Hareket bloğu içinde yer alan SQL ifadelerin tamamının başarılı olarak çalıştırılması ya da hiçbirinin çalıştırılmadan hareket bloğu başlangıç durumuna geri dönülmesidir."
   },
   {
     "id": "3739267",
@@ -3455,7 +3455,7 @@
       "D": "Tutarlılık",
       "E": "İzolasyon"
     },
-    "explanation": "Tamamlanmış olan ya da devam eden hareketlerin gerçekleştirdiği veri değişikliklerinin VTYS’de bir arıza meydana gelse bile kalıcı olarak kaydedildiğinden emin olunması beklenmektedir. MS SQL Server VTYS’nin en önemli özelliklerinden biri, bu amaçla hareket günlüğü dosyası tutmasıdır.<br/>Doğru cevap C'dir."
+    "explanation": "Tamamlanmış olan ya da devam eden hareketlerin gerçekleştirdiği veri değişikliklerinin VTYS’de bir arıza meydana gelse bile kalıcı olarak kaydedildiğinden emin olunması beklenmektedir. MS SQL Server VTYS’nin en önemli özelliklerinden biri, bu amaçla hareket günlüğü dosyası tutmasıdır."
   },
   {
     "id": "3739268",
@@ -3469,7 +3469,7 @@
       "D": "II. ve III.",
       "E": "I. II. ve III."
     },
-    "explanation": "MS SQL Server VTYS, otokayıt (autocommit), açık (explicit) ve örtük (implicit) olmak üzere üç farklı modda hareket desteği sağlamaktadır.<br/>Doğru cevap E'dir."
+    "explanation": "MS SQL Server VTYS, otokayıt (autocommit), açık (explicit) ve örtük (implicit) olmak üzere üç farklı modda hareket desteği sağlamaktadır."
   },
   {
     "id": "3739269",
@@ -3483,7 +3483,7 @@
       "D": "Update",
       "E": "Select"
     },
-    "explanation": "Bir hareket bloğunun veritabanı üzerinde gerçekleştirdiği değişikliklerin kalıcı hâle getirilmesi için commit ifadesi kullanılır.<br/>Doğru cevap B'dir."
+    "explanation": "Bir hareket bloğunun veritabanı üzerinde gerçekleştirdiği değişikliklerin kalıcı hâle getirilmesi için commit ifadesi kullanılır."
   },
   {
     "id": "3739270",
@@ -3497,7 +3497,7 @@
       "D": "Create",
       "E": "Delete"
     },
-    "explanation": "Bir hareket bloğunun veritabanı üzerinde gerçekleştirdiği değişikliklerin geri alınması için rollback ifadesi kullanılır.<br/>Doğru cevap A'dır."
+    "explanation": "Bir hareket bloğunun veritabanı üzerinde gerçekleştirdiği değişikliklerin geri alınması için rollback ifadesi kullanılır."
   },
   {
     "id": "3739271",
@@ -3511,7 +3511,7 @@
       "D": "SAVE TRANSACTION",
       "E": "@@TRANCOUNT"
     },
-    "explanation": "SAVE TRANSACTION: Hareket bloğu içinde geri dönüş noktaları oluşturmak için kullanılır<br/>Doğru cevap D'dir."
+    "explanation": "SAVE TRANSACTION: Hareket bloğu içinde geri dönüş noktaları oluşturmak için kullanılır"
   },
   {
     "id": "3739272",
@@ -3525,7 +3525,7 @@
       "D": "SAVE TRANSACTION",
       "E": "@@TRANCOUNT"
     },
-    "explanation": "BEGIN TRANSACTION: Açık hareket başlangıç noktasını belirler.<br/>Doğru cevap A'dır."
+    "explanation": "BEGIN TRANSACTION: Açık hareket başlangıç noktasını belirler."
   },
   {
     "id": "3739273",
@@ -3539,7 +3539,7 @@
       "D": "Serileştirilebilir",
       "E": "Anlık görüntü"
     },
-    "explanation": "Tekrarlanabilir okuma (Repeateble read), aktif edildiğinde kirli okuma ve tekrarlanamayan okuma eş zamanlılık problemleri ortadan kaldırılabilmektedir.<br/>Doğru cevap C'dir."
+    "explanation": "Tekrarlanabilir okuma (Repeateble read), aktif edildiğinde kirli okuma ve tekrarlanamayan okuma eş zamanlılık problemleri ortadan kaldırılabilmektedir."
   },
   {
     "id": "3739274",
@@ -3763,7 +3763,7 @@
       "D": "rollback TRANSACTION",
       "E": "@@TRANCOUNT"
     },
-    "explanation": "Açık Hareket<br/>@@TRANCOUNT"
+    "explanation": ""
   },
   {
     "id": "3739290",
@@ -3777,7 +3777,7 @@
       "D": "hayalet okuma",
       "E": "tekrarlayan güncelleme"
     },
-    "explanation": "EŞ ZAMANLILIK VE EŞ ZAMANLILIK PROBLEMLERİ<br/>tekrarlayan güncelleme"
+    "explanation": "EŞ ZAMANLILIK VE EŞ ZAMANLILIK PROBLEMLERİ<br/>tekrarlayan güncelleme tekrarlayan güncelleme"
   },
   {
     "id": "3739291",
@@ -3819,7 +3819,7 @@
       "D": "Tekrar deneme mantığı kullanılmalıdır.",
       "E": "Varlıklara farklı sırada erişim sağlanmalıdır."
     },
-    "explanation": "Kilitlenme<br/>Varlıklara farklı sırada erişim sağlanmalıdır."
+    "explanation": ""
   },
   {
     "id": "3739294",
@@ -3833,7 +3833,7 @@
       "D": "Eş zamanlılık",
       "E": "Devamlılık"
     },
-    "explanation": "Hareket"
+    "explanation": ""
   },
   {
     "id": "3739295",
@@ -3875,7 +3875,7 @@
       "D": "Revoke",
       "E": "Fetch"
     },
-    "explanation": "Rollback"
+    "explanation": ""
   },
   {
     "id": "3739299",
@@ -3889,7 +3889,7 @@
       "D": "Bütünleşik okuma",
       "E": "Hayalet Okuma"
     },
-    "explanation": "Kirli Okuma"
+    "explanation": ""
   },
   {
     "id": "3739300",
@@ -3903,7 +3903,7 @@
       "D": "Serileştirilebilir aktif",
       "E": "Anlık görüntü aktif"
     },
-    "explanation": "SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;<br/>Kaydedilmemiş okuma aktif"
+    "explanation": "SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;"
   },
   {
     "id": "3739301",
@@ -3917,7 +3917,7 @@
       "D": "Tekrarlanabilir okuma aktif",
       "E": "Serileştirilebilir aktif"
     },
-    "explanation": "SET TRANSACTION ISOLATION LEVEL READ SERIALIZABLE;<br/>Serileştirilebilir aktif"
+    "explanation": "SET TRANSACTION ISOLATION LEVEL READ SERIALIZABLE;"
   },
   {
     "id": "3739302",
@@ -3931,7 +3931,7 @@
       "D": "Amaç Güncelleştirme ile Paylaşılan",
       "E": "Ayrıcalıklı"
     },
-    "explanation": "Amaç Ayrıcalıklı ile Paylaşılan"
+    "explanation": ""
   },
   {
     "id": "3739303",
@@ -3945,7 +3945,7 @@
       "D": "Amaç Ayrıcalıklı ile Güncelleştirme",
       "E": "Toplu Güncelleştirme"
     },
-    "explanation": "Toplu Güncelleştirme: Bir tablo içine toplu kopyalama işlemi<br/>yapıldığında kullanılır."
+    "explanation": "Toplu Güncelleştirme: Bir tablo içine toplu kopyalama işlemi yapıldığında kullanılır."
   },
   {
     "id": "3739304",
@@ -4001,7 +4001,7 @@
       "D": "Sahte veri",
       "E": "Bilinçsiz tehditler"
     },
-    "explanation": "Bununla birlikte, bilgi güvenliği tehditleri arasında, organizasyon bünyesinde çalışan<br/>kişilerin oluşturabileceği bilinçli veya bilinçsiz tehditler olarak tanımlayabileceğimiz gizliliğin ihlali çok önemli bir yer tutmaktadır. Bilinçli tehditler; bilgiye erişimi olan kişilerin bilgiyi kötü amaçla kullanması veya bir kişinin başka birine ait erişim bilgilerini elde<br/>ederek normalde erişmemesi gereken bilgilere erişmesi ve bunu kötü amaçlı kullanması<br/>olarak iki katagoriye ayrılabilir. Bilinçsiz tehditlere örnek olarak veri tabanına erişimi bulunan bir kişinin, kullanmış olduğu şifreyi farkında olmadan paylaşması veya kolay tahmin edilebilen bir şifre seçmesi gösterilebilir."
+    "explanation": "Bununla birlikte, bilgi güvenliği tehditleri arasında, organizasyon bünyesinde çalışan kişilerin oluşturabileceği bilinçli veya bilinçsiz tehditler olarak tanımlayabileceğimiz gizliliğin ihlali çok önemli bir yer tutmaktadır. Bilinçli tehditler; bilgiye erişimi olan kişilerin bilgiyi kötü amaçla kullanması veya bir kişinin başka birine ait erişim bilgilerini elde ederek normalde erişmemesi gereken bilgilere erişmesi ve bunu kötü amaçlı kullanması olarak iki katagoriye ayrılabilir. Bilinçsiz tehditlere örnek olarak veri tabanına erişimi bulunan bir kişinin, kullanmış olduğu şifreyi farkında olmadan paylaşması veya kolay tahmin edilebilen bir şifre seçmesi gösterilebilir."
   },
   {
     "id": "3739308",
@@ -4015,7 +4015,7 @@
       "D": "Koklayıcılar",
       "E": "Dinleyiciler"
     },
-    "explanation": "SQL Server bilindiği üzere sunucu / istemci ve istemci / sunucu bir yapıdadır. Bu yapılardan dolayı, doğal olarak ağ üzerinden haberleşirler. Yine ağ üzerinden veri girişleri ve<br/>veri sorgulamaları yapılır. SQL Server ile istemciler arasındaki haberleşmenin ağ üzerinde, koklayıcı dediğimiz araçlar ile izlenmesi gayet kolaydır. Koklayıcı araçları ile bir saldırganın bir sistemdeki SQL sunucuları ve bu sunuculara<br/>bağlı istemcileri tespit etmesi oldukça kolaydır."
+    "explanation": "SQL Server bilindiği üzere sunucu / istemci ve istemci / sunucu bir yapıdadır. Bu yapılardan dolayı, doğal olarak ağ üzerinden haberleşirler. Yine ağ üzerinden veri girişleri ve veri sorgulamaları yapılır. SQL Server ile istemciler arasındaki haberleşmenin ağ üzerinde, koklayıcı dediğimiz araçlar ile izlenmesi gayet kolaydır. Koklayıcı araçları ile bir saldırganın bir sistemdeki SQL sunucuları ve bu sunuculara bağlı istemcileri tespit etmesi oldukça kolaydır."
   },
   {
     "id": "3739309",
@@ -4029,7 +4029,7 @@
       "D": "Protocols",
       "E": "Flags"
     },
-    "explanation": "Koklayıcı araçları ile bir saldırganın bir sistemdeki SQL sunucuları ve bu sunuculara<br/>bağlı istemcileri tespit etmesi oldukça kolaydır. Eğer ağınızdaki SQL Server’ın koklayıcılar<br/>kullanılarak tespit edilmesini istemiyor iseniz bir SSL setifikası almanız gerekmektedir."
+    "explanation": "Koklayıcı araçları ile bir saldırganın bir sistemdeki SQL sunucuları ve bu sunuculara bağlı istemcileri tespit etmesi oldukça kolaydır. Eğer ağınızdaki SQL Server’ın koklayıcılar kullanılarak tespit edilmesini istemiyor iseniz bir SSL setifikası almanız gerekmektedir."
   },
   {
     "id": "3739310",
@@ -4043,7 +4043,7 @@
       "D": "I ve III",
       "E": "I, II ve III"
     },
-    "explanation": "Güvenli bir veritabanı uygulamasını tasarlarken Bilgi Güvenliği Yönetim Sistemi Standardına göre dikkate alınması gereken üç ana hedef olmalıdır.<br/>• Gizlilik: Kuruma veya bireye özel ve gizliliği olan bilgilere, sadece yetkisi olan kişilerin erişim hakkına sahip olmasının gerekliliğidir. Bunun için gizlilik bilginin yetkisiz kişilerce açığa çıkarılmasının engellenmesidir. Örneğin, bir öğrenciye diğer<br/>öğrencilerin notlarını incelemek için izin verilmemelidir.<br/>• Bütünlük: Kısaca bilinçli veya bilinçsiz olarak verinin bozulmaması gerekliliğidir.<br/>Kurumsal veya bireysel bilgilerin yetkisiz değişim veya bozulmalara karşı korunması, yalnızca yetkili kullanıcılara verileri değiştirmek için izin verilmesi olarak<br/>özetlenebilir. Örneğin, öğrencilere notlarını görmek için izin verilebilir, ancak notların öğrenciler tarafından değiştirilmesi için izin verilmemesi gerekmektedir.<br/>• Kullanılabilirlik: Bilgi ve kaynakların ihtiyaç duyan kişilerce sürekli erişilebilir durumda olması olarak özetlenebilir. Örneğin, dersi veren kişinin, öğrencinin notlarına erişebilmesi ve onları düzeltebilmesi gerekmektedir."
+    "explanation": "Güvenli bir veritabanı uygulamasını tasarlarken Bilgi Güvenliği Yönetim Sistemi Standardına göre dikkate alınması gereken üç ana hedef olmalıdır.<br/>• Gizlilik: Kuruma veya bireye özel ve gizliliği olan bilgilere, sadece yetkisi olan kişilerin erişim hakkına sahip olmasının gerekliliğidir. Bunun için gizlilik bilginin yetkisiz kişilerce açığa çıkarılmasının engellenmesidir. Örneğin, bir öğrenciye diğer öğrencilerin notlarını incelemek için izin verilmemelidir.<br/>• Bütünlük: Kısaca bilinçli veya bilinçsiz olarak verinin bozulmaması gerekliliğidir.<br/>Kurumsal veya bireysel bilgilerin yetkisiz değişim veya bozulmalara karşı korunması, yalnızca yetkili kullanıcılara verileri değiştirmek için izin verilmesi olarak özetlenebilir. Örneğin, öğrencilere notlarını görmek için izin verilebilir, ancak notların öğrenciler tarafından değiştirilmesi için izin verilmemesi gerekmektedir.<br/>• Kullanılabilirlik: Bilgi ve kaynakların ihtiyaç duyan kişilerce sürekli erişilebilir durumda olması olarak özetlenebilir. Örneğin, dersi veren kişinin, öğrencinin notlarına erişebilmesi ve onları düzeltebilmesi gerekmektedir."
   },
   {
     "id": "3739311",
@@ -4071,7 +4071,7 @@
       "D": "GRANT INSERT ON Kullanici TO Tablo",
       "E": "GRANT UPDATE ON Kullanici TO Tablo"
     },
-    "explanation": "SELECT: Nesne olarak belirtilen tablo veya görünümlerin tüm sütunlarına erişme<br/>hakkı (okuma) verilmesi istendiği zaman kullanılır.<br/>GRANT SELECT ON Urunler TO Ali<br/>Yukarıdaki komut satırıyla Ali kullanıcısına Urunler tablosuna erişim hakkı (okuma)<br/>verilmiş olmaktadır."
+    "explanation": "SELECT: Nesne olarak belirtilen tablo veya görünümlerin tüm sütunlarına erişme hakkı (okuma) verilmesi istendiği zaman kullanılır.<br/>GRANT SELECT ON Urunler TO Ali<br/>Yukarıdaki komut satırıyla Ali kullanıcısına Urunler tablosuna erişim hakkı (okuma)<br/>verilmiş olmaktadır."
   },
   {
     "id": "3739313",
@@ -4085,7 +4085,7 @@
       "D": "db_datawriter",
       "E": "db_denydatawriter"
     },
-    "explanation": "db_owner: Veritabanı üzerinde tüm ayarlamaları yapabilme ve silebilme<br/>db_accessadmin: Var olan Windows kullanıcıları ve SQL Server hesapları için<br/>veritabanına erişim yetkisi verebilme<br/>db_securityadmin: Veritabanı üzerindeki yetkilendirmeleri değiştirebilme<br/>db_datareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapabilme<br/>db_datawriter: Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri<br/>yapabilme<br/>db_denydatawriter: Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri<br/>yapamaz<br/>db_denydatareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapamaz<br/>db_backupoperator: Veritabanı yedeğini alabilme"
+    "explanation": "db_owner: Veritabanı üzerinde tüm ayarlamaları yapabilme ve silebilme db_accessadmin: Var olan Windows kullanıcıları ve SQL Server hesapları için veritabanına erişim yetkisi verebilme db_securityadmin: Veritabanı üzerindeki yetkilendirmeleri değiştirebilme db_datareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapabilme db_datawriter: Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapabilme db_denydatawriter: Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapamaz db_denydatareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapamaz db_backupoperator: Veritabanı yedeğini alabilme"
   },
   {
     "id": "3739314",
@@ -4225,7 +4225,7 @@
       "D": "db_denydatawriter",
       "E": "db_backupoperator"
     },
-    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME<br/>db_backupoperator"
+    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME<br/>db_backupoperator db_backupoperator"
   },
   {
     "id": "3739324",
@@ -4239,12 +4239,12 @@
       "D": "Lisansız Kullanım",
       "E": "Sahte Veri"
     },
-    "explanation": "Donanımsal veri açıkları şu şekildedir:<br/>• Kasıtsız Zarar<br/>• Yiyecek - İçeçek<br/>• Hayvanlar<br/>• Toz<br/>• Yıldırım<br/>• Kaba Kullanım<br/>• Su Basması<br/>• Kasıtlı Zarar<br/>• Hırsızlık<br/>• Fiziksel Zararlar (kırma, bozma, parçalama)<br/>Doğru cevap C'dir."
+    "explanation": "Donanımsal veri açıkları şu şekildedir:<br/>• Kasıtsız Zarar<br/>• Yiyecek - İçeçek<br/>• Hayvanlar<br/>• Toz<br/>• Yıldırım<br/>• Kaba Kullanım<br/>• Su Basması<br/>• Kasıtlı Zarar<br/>• Hırsızlık<br/>• Fiziksel Zararlar (kırma, bozma, parçalama)"
   },
   {
     "id": "3739325",
     "unitNumber": 6,
-    "text": "Aşağıdakilerden hangisi yazılımsal güvenlik açıkları arasında &lt;span style=\"text-decoration: underline;\"&gt;değildir&lt;/span&gt;?",
+    "text": "Aşağıdakilerden hangisi yazılımsal güvenlik açıkları arasında <u>değildir</u>?",
     "correctAnswer": "A",
     "options": {
       "A": "Yıldırım",
@@ -4253,7 +4253,7 @@
       "D": "İzinsiz Kopyalama",
       "E": "Arka Kapılar"
     },
-    "explanation": "Yazılımsal güvenlik açıkları şu şekildedir:<br/>• Silinme<br/>• Kasıtsız<br/>• Kasıtlı<br/>• Değiştirilme<br/>• Truva Atları<br/>• Virüsler<br/>• Arka Kapılar<br/>• Bilgi Sızdırma<br/>• Solucanlar<br/>• Hırsızlık<br/>• Lisansız Kullanım<br/>• İzinsiz kopyalama<br/>Doğru cevap A'dır."
+    "explanation": "Yazılımsal güvenlik açıkları şu şekildedir:<br/>• Silinme<br/>• Kasıtsız<br/>• Kasıtlı<br/>• Değiştirilme<br/>• Truva Atları<br/>• Virüsler<br/>• Arka Kapılar<br/>• Bilgi Sızdırma<br/>• Solucanlar<br/>• Hırsızlık<br/>• Lisansız Kullanım<br/>• İzinsiz kopyalama"
   },
   {
     "id": "3739326",
@@ -4267,7 +4267,7 @@
       "D": "Dinleme",
       "E": "Truva Atları"
     },
-    "explanation": "Verisel güvenlik açıkları şu şekildedir:<br/>• Gizliliğin İhlali<br/>• Dinleme (dinleyiciler, alıcılar)<br/>• Bilgi Sızdırma (insanlar yoluyla)<br/>• Engelleme<br/>• Silme<br/>• Ulaşılamaz ya da kullanılamaz hâle getirme<br/>• Bütünlüğün Bozulması<br/>• Veri Değişikliği<br/>• Sahte Ver<br/>Doğru cevap D'dir."
+    "explanation": "Verisel güvenlik açıkları şu şekildedir:<br/>• Gizliliğin İhlali<br/>• Dinleme (dinleyiciler, alıcılar)<br/>• Bilgi Sızdırma (insanlar yoluyla)<br/>• Engelleme<br/>• Silme<br/>• Ulaşılamaz ya da kullanılamaz hâle getirme<br/>• Bütünlüğün Bozulması<br/>• Veri Değişikliği<br/>• Sahte Ver"
   },
   {
     "id": "3739327",
@@ -4281,7 +4281,7 @@
       "D": "Sistemsel Erişim Denetim Mekanizması",
       "E": "Yapılandırma Yöneticisi"
     },
-    "explanation": "Koklayıcı (Sniffer): Paket çözümleyicisi ya da koklayıcı, bir sayısal ağ üzerinden geçen trafiği izlemeye yarayan yazılımların genel adıdır.<br/>Doğru cevap B'dir."
+    "explanation": "Koklayıcı (Sniffer): Paket çözümleyicisi ya da koklayıcı, bir sayısal ağ üzerinden geçen trafiği izlemeye yarayan yazılımların genel adıdır."
   },
   {
     "id": "3739328",
@@ -4295,7 +4295,7 @@
       "D": "II. ve III.",
       "E": "I. II. ve III."
     },
-    "explanation": "3 maddede de verilen hedeflerin hepsi Bilgi Güvenliği Yönetim Sistemi Standardının hedefleri arasındadır.<br/>Doğru cevap E'dir."
+    "explanation": "3 maddede de verilen hedeflerin hepsi Bilgi Güvenliği Yönetim Sistemi Standardının hedefleri arasındadır."
   },
   {
     "id": "3739329",
@@ -4309,7 +4309,7 @@
       "D": "Kullanıcıları ve onların erişim haklarını yönetme",
       "E": "Bütün aktiviteleri yapabilme yetkisi"
     },
-    "explanation": "Disk yöneticisi: Dosyaları yönetme hakkı<br/>Doğru cevap A'dır."
+    "explanation": "Disk yöneticisi: Dosyaları yönetme hakkı"
   },
   {
     "id": "3739330",
@@ -4323,7 +4323,7 @@
       "D": "Süreç yöneticisi",
       "E": "Veritabanı oluşturma"
     },
-    "explanation": "Sistem yöneticisi: Bütün aktiviteleri yapabilme yetkisi.<br/>Doğru cevap C'dir."
+    "explanation": "Sistem yöneticisi: Bütün aktiviteleri yapabilme yetkisi."
   },
   {
     "id": "3739331",
@@ -4337,7 +4337,7 @@
       "D": "Kurma yöneticisi",
       "E": "Güvenlik yöneticisi"
     },
-    "explanation": "Güvenlik yöneticisi: Kullanıcıları ve onların erişim haklarını yönetme.<br/>Doğru cevap E'dir."
+    "explanation": "Güvenlik yöneticisi: Kullanıcıları ve onların erişim haklarını yönetme."
   },
   {
     "id": "3739332",
@@ -4351,7 +4351,7 @@
       "D": "Kullanıcı tabloları üzerinde SELECT işlemleri yapabilme.",
       "E": "Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapabilme."
     },
-    "explanation": "db_datawriter: Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri<br/>yapabilme.<br/>Doğru cevap E'dir."
+    "explanation": ""
   },
   {
     "id": "3739333",
@@ -4365,7 +4365,7 @@
       "D": "db_owner",
       "E": "db_backupoperator"
     },
-    "explanation": "db_owner: Veritabanı üzerinde tüm ayarlamaları yapabilme ve silebilme.<br/>Doğru cevap D'dir."
+    "explanation": "db_owner: Veritabanı üzerinde tüm ayarlamaları yapabilme ve silebilme."
   },
   {
     "id": "3739334",
@@ -4449,7 +4449,7 @@
       "D": "db_datawriter",
       "E": "db_backupoperator"
     },
-    "explanation": "Veritabanı için otomatik olarak oluşturulan rolleri:<br/>db_owner: Veritabanı üzerinde tüm ayarlamaları yapabilme ve silebilme<br/>db_accessadmin: Var olan Windows kullanıcıları ve SQL Server hesapları için veritabanına erişim yetkisi verebilme<br/>db_securityadmin: Veritabanı üzerindeki yetkilendirmeleri değiştirebilme<br/>db_datareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapabilme<br/>db_datawriter. Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapabilme<br/>db_denydatawriter: Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapamaz<br/>db_denydatareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapamaz<br/>db_backupoperator: Veritabanı yedeğini alabilme"
+    "explanation": "Veritabanı için otomatik olarak oluşturulan rolleri:<br/>db_owner: Veritabanı üzerinde tüm ayarlamaları yapabilme ve silebilme db_accessadmin: Var olan Windows kullanıcıları ve SQL Server hesapları için veritabanına erişim yetkisi verebilme db_securityadmin: Veritabanı üzerindeki yetkilendirmeleri değiştirebilme db_datareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapabilme db_datawriter. Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapabilme db_denydatawriter: Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapamaz db_denydatareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapamaz db_backupoperator: Veritabanı yedeğini alabilme"
   },
   {
     "id": "3739340",
@@ -4463,7 +4463,7 @@
       "D": "db_datawriter",
       "E": "db_backupoperator"
     },
-    "explanation": "Veritabanı için otomatik olarak oluşturulan rolleri:<br/>db_owner: Veritabanı üzerinde tüm ayarlamaları yapabilme ve silebilme<br/>db_accessadmin: Var olan Windows kullanıcıları ve SQL Server hesapları için veritabanına erişim yetkisi verebilme<br/>db_securityadmin: Veritabanı üzerindeki yetkilendirmeleri değiştirebilme<br/>db_datareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapabilme<br/>db_datawriter. Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapabilme<br/>db_denydatawriter: Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapamaz<br/>db_denydatareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapamaz<br/>db_backupoperator: Veritabanı yedeğini alabilme"
+    "explanation": "Veritabanı için otomatik olarak oluşturulan rolleri:<br/>db_owner: Veritabanı üzerinde tüm ayarlamaları yapabilme ve silebilme db_accessadmin: Var olan Windows kullanıcıları ve SQL Server hesapları için veritabanına erişim yetkisi verebilme db_securityadmin: Veritabanı üzerindeki yetkilendirmeleri değiştirebilme db_datareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapabilme db_datawriter. Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapabilme db_denydatawriter: Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapamaz db_denydatareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapamaz db_backupoperator: Veritabanı yedeğini alabilme"
   },
   {
     "id": "3739341",
@@ -4477,7 +4477,7 @@
       "D": "db_datawriter",
       "E": "db_backupoperator"
     },
-    "explanation": "Veritabanı için otomatik olarak oluşturulan rolleri:<br/>db_owner: Veritabanı üzerinde tüm ayarlamaları yapabilme ve silebilme<br/>db_accessadmin: Var olan Windows kullanıcıları ve SQL Server hesapları için veritabanına erişim yetkisi verebilme<br/>db_securityadmin: Veritabanı üzerindeki yetkilendirmeleri değiştirebilme<br/>db_datareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapabilme<br/>db_datawriter. Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapabilme<br/>db_denydatawriter: Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapamaz<br/>db_denydatareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapamaz<br/>db_backupoperator: Veritabanı yedeğini alabilme"
+    "explanation": "Veritabanı için otomatik olarak oluşturulan rolleri:<br/>db_owner: Veritabanı üzerinde tüm ayarlamaları yapabilme ve silebilme db_accessadmin: Var olan Windows kullanıcıları ve SQL Server hesapları için veritabanına erişim yetkisi verebilme db_securityadmin: Veritabanı üzerindeki yetkilendirmeleri değiştirebilme db_datareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapabilme db_datawriter. Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapabilme db_denydatawriter: Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapamaz db_denydatareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapamaz db_backupoperator: Veritabanı yedeğini alabilme"
   },
   {
     "id": "3739342",
@@ -4799,7 +4799,7 @@
       "D": "db_denydatawriter",
       "E": "db_backupoperator"
     },
-    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME<br/>db_backupoperator"
+    "explanation": "VERİTABANI YÖNETİM SİSTEMİNDE YETKİLENDİRME<br/>db_backupoperator db_backupoperator"
   },
   {
     "id": "3739365",
@@ -4911,7 +4911,7 @@
       "D": "Sistem yöneticisi",
       "E": "Sunucu yöneticisi"
     },
-    "explanation": "Veritabanı oluşturma: Veritabanı oluşturabilme, silme ve değişiklik yapabilme<br/>Disk yöneticisi: Dosyaları yönetme hakkı<br/>Süreç yöneticisi: Süreçleri / işlemleri yönetme hakkı<br/>Güvenlik yöneticisi: Kullanıcıları ve onların erişim haklarını yönetme<br/>Sunucu yöneticisi: Sunucu ayarlarını yapabilme<br/>Kurma yöneticisi: Birbirine bağlı sunucuların ayarlarını yapabilme ve genişletilmiş saklı yordamları yönetebilme hakkı<br/>Sistem yöneticisi: Bütün aktiviteleri yapabilme yetkisi<br/>Doğru cevap A’dır."
+    "explanation": "Veritabanı oluşturma: Veritabanı oluşturabilme, silme ve değişiklik yapabilme<br/>Disk yöneticisi: Dosyaları yönetme hakkı<br/>Süreç yöneticisi: Süreçleri / işlemleri yönetme hakkı<br/>Güvenlik yöneticisi: Kullanıcıları ve onların erişim haklarını yönetme<br/>Sunucu yöneticisi: Sunucu ayarlarını yapabilme<br/>Kurma yöneticisi: Birbirine bağlı sunucuların ayarlarını yapabilme ve genişletilmiş saklı yordamları yönetebilme hakkı<br/>Sistem yöneticisi: Bütün aktiviteleri yapabilme yetkisi"
   },
   {
     "id": "3739373",
@@ -4925,7 +4925,7 @@
       "D": "db_denydatawriter",
       "E": "db_backupoperator"
     },
-    "explanation": "db_owner: Veritabanı üzerinde tüm ayarlamaları yapabilme ve silebilme<br/>db_accessadmin: Var olan Windows kullanıcıları ve SQL Server hesapları için veritabanına erişim yetkisi verebilme<br/>db_securityadmin: Veritabanı üzerindeki yetkilendirmeleri değiştirebilme<br/>db_datareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapabilme<br/>db_datawriter: Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapabilme<br/>db_denydatawriter: Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapamaz<br/>db_denydatareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapamaz<br/>db_backupoperator: Veritabanı yedeğini alabilme<br/>Doğru cevap C’dir."
+    "explanation": "db_owner: Veritabanı üzerinde tüm ayarlamaları yapabilme ve silebilme db_accessadmin: Var olan Windows kullanıcıları ve SQL Server hesapları için veritabanına erişim yetkisi verebilme db_securityadmin: Veritabanı üzerindeki yetkilendirmeleri değiştirebilme db_datareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapabilme db_datawriter: Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapabilme db_denydatawriter: Kullanıcı tabloları üzerinde INSERT/DELETE/UPDATE işlemleri yapamaz db_denydatareader: Kullanıcı tabloları üzerinde SELECT işlemleri yapamaz db_backupoperator: Veritabanı yedeğini alabilme"
   },
   {
     "id": "3739374",
@@ -5065,7 +5065,7 @@
       "D": "Geri Yükleme",
       "E": "Bozulma"
     },
-    "explanation": "Veritabanı bütünlüğünü kontrol eden görev (Check Database Integrity Task) için DBCC<br/>CHECKDB yordamını çalıştırıp seçilmiş veritabanlarında, veri bozulması olup olmadığı<br/>kontrol edilir. Bu görev kontrol sırasında veritabanı tarafında bozuk olan kısmına erişildiğinde SQL Server bozulma hatası verir."
+    "explanation": "Veritabanı bütünlüğünü kontrol eden görev (Check Database Integrity Task) için DBCC<br/>CHECKDB yordamını çalıştırıp seçilmiş veritabanlarında, veri bozulması olup olmadığı kontrol edilir. Bu görev kontrol sırasında veritabanı tarafında bozuk olan kısmına erişildiğinde SQL Server bozulma hatası verir."
   },
   {
     "id": "3739384",
@@ -5513,7 +5513,7 @@
       "D": ".ldf",
       "E": ".doc"
     },
-    "explanation": "İşlem kayıtlarını tutan hareket dosyaları (“.ldf ”): Kayıt dosyası, bir açıdan veri dosyasında yapılacak işlerin komut dizisidir ve geriye doğru da çalıştırılabilir. Bu sayede bir işlemin geri alınabilmesi ya da sistemin çökmesi durumunda veritabanının kararlı bir noktaya geri döndürülebilmesi mümkün olur.<br/>Doğru cevap D'dir."
+    "explanation": "İşlem kayıtlarını tutan hareket dosyaları (“.ldf ”): Kayıt dosyası, bir açıdan veri dosyasında yapılacak işlerin komut dizisidir ve geriye doğru da çalıştırılabilir. Bu sayede bir işlemin geri alınabilmesi ya da sistemin çökmesi durumunda veritabanının kararlı bir noktaya geri döndürülebilmesi mümkün olur."
   },
   {
     "id": "3739416",
@@ -5527,7 +5527,7 @@
       "D": "Geri Alma",
       "E": "Uyarı"
     },
-    "explanation": "MS SQL Server’ın tüm yapılandırma bilgileri bu veritabanında yer alır. Bu yapılandırma bilgilerinde; genel sistem yapılandırması, oturum açma bilgileri, veritabanlarının konumları, diğer bağlı sunucular, replikasyon ve ikizleme gibi işlemlerin bilgileri yer alır.<br/>İkizleme: Mirroring<br/>Doğru cevap C'dir."
+    "explanation": "MS SQL Server’ın tüm yapılandırma bilgileri bu veritabanında yer alır. Bu yapılandırma bilgilerinde; genel sistem yapılandırması, oturum açma bilgileri, veritabanlarının konumları, diğer bağlı sunucular, replikasyon ve ikizleme gibi işlemlerin bilgileri yer alır.<br/>İkizleme: Mirroring"
   },
   {
     "id": "3739417",
@@ -5541,7 +5541,7 @@
       "D": "Master",
       "E": "MS SQL Server"
     },
-    "explanation": "Msdb: MS SQL Server SQL Agent servisinin yapılandırma bilgilerini içerir. Veritabanı uyarı ve<br/>işleri ile ilgili bilgileri tutar. Doğru cevap A'dır."
+    "explanation": "Msdb: MS SQL Server SQL Agent servisinin yapılandırma bilgilerini içerir. Veritabanı uyarı ve işleri ile ilgili bilgileri tutar. Doğru cevap A'dır."
   },
   {
     "id": "3739418",
@@ -5569,7 +5569,7 @@
       "D": "Alınacak yedeği ortam setinin sonuna ekler. Önceki yedekler korunur",
       "E": "Ortam setinde var olan yedeklerin üzerine yazılır."
     },
-    "explanation": "Verify backup when finished: Yedekleme bittikten sonra kalıcı olmayan bir<br/>geri yükleme denemesi gerçekleştirerek yedeği doğrular.<br/>Doğru cevap A'dır."
+    "explanation": "Verify backup when finished: Yedekleme bittikten sonra kalıcı olmayan bir geri yükleme denemesi gerçekleştirerek yedeği doğrular."
   },
   {
     "id": "3739420",
@@ -5583,7 +5583,7 @@
       "D": "Teyp yedekleme ünitesinin, yedekleme bittikten sonra kaseti çıkartmasını sağlar.",
       "E": "Doğrulama sağlanamasa da yedekleme işlemine devam eder."
     },
-    "explanation": "Rewind the tape before unloading: Kaset çıkmadan önce başa sarılmasını sağlar.<br/>Doğru cevap C'dir."
+    "explanation": "Rewind the tape before unloading: Kaset çıkmadan önce başa sarılmasını sağlar."
   },
   {
     "id": "3739421",
@@ -5597,7 +5597,7 @@
       "D": "Yedekleme senaryosu",
       "E": "Yüksek erişilebilirlik"
     },
-    "explanation": "Yedeklerin rotasyonu: Yedeklerin kullandığı disk alanının artmaması için bir kısmının (genellikle eski tarihli) otomatik olarak silinmesi ve yenilerine yer açılması.<br/>Doğru cevap B'dir."
+    "explanation": "Yedeklerin rotasyonu: Yedeklerin kullandığı disk alanının artmaması için bir kısmının (genellikle eski tarihli) otomatik olarak silinmesi ve yenilerine yer açılması."
   },
   {
     "id": "3739422",
@@ -5611,7 +5611,7 @@
       "D": "II. ve III.",
       "E": "I. II. ve III."
     },
-    "explanation": "3 maddede de verilenlerin hepsi sıklıkla karşılaşılan geri yükleme nedenleri arasındadır.<br/>Doğru cevap E'dir."
+    "explanation": "3 maddede de verilenlerin hepsi sıklıkla karşılaşılan geri yükleme nedenleri arasındadır."
   },
   {
     "id": "3739423",
@@ -5625,7 +5625,7 @@
       "D": "Seçilen yedeklerin geri alınmasından sonra, yedek alınması ya da riskin gerçekleşmesi sırasında tamamlanmadığı için açık kalan işlemleri temizler / geri alır, geri yükleme pozisyonunu sonlandırır, veritabanını etkinleştirir ve kullanıma açar.",
       "E": "Seçilen yedeklerin geri alınmasından sonra veritabanını geri yükleme pozisyonunda bırakır."
     },
-    "explanation": "Overwrite the existing database: Geri yükleme için kullanılan veritabanı ile aynı adda veritabanı var ise üzerine yazar.<br/>Doğru cevap C'dir."
+    "explanation": "Overwrite the existing database: Geri yükleme için kullanılan veritabanı ile aynı adda veritabanı var ise üzerine yazar."
   },
   {
     "id": "3739424",
@@ -5639,7 +5639,7 @@
       "D": "History Cleanup Task",
       "E": "Maintenance Cleanup Task"
     },
-    "explanation": "Geçmiş Temizleme Görevi (History Cleanup Task), bir sistem veritabanı olan Msdb’deki işlemlere ait geçmiş kayıtların belli periyodlar arasında yapılmasını sağlar. Msdb veritabanının boyutunun büyümesini engeller. Haftada bir yapılması önerilir, veritabanı kullanım yoğunluğuna göre zamanlaması değiştirilebilir.<br/>Doğru cevap D'dir."
+    "explanation": "Geçmiş Temizleme Görevi (History Cleanup Task), bir sistem veritabanı olan Msdb’deki işlemlere ait geçmiş kayıtların belli periyodlar arasında yapılmasını sağlar. Msdb veritabanının boyutunun büyümesini engeller. Haftada bir yapılması önerilir, veritabanı kullanım yoğunluğuna göre zamanlaması değiştirilebilir."
   },
   {
     "id": "3739425",
@@ -5653,12 +5653,12 @@
       "D": "Tempdb",
       "E": "Master"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Uygulamaların kullanması için açılan veritabanları “kullanıcı veritabanı” olarak adlandırılır.<br/>&lt;/div&gt;"
+    "explanation": "Uygulamaların kullanması için açılan veritabanları “kullanıcı veritabanı” olarak adlandırılır."
   },
   {
     "id": "3739426",
     "unitNumber": 7,
-    "text": "&lt;div class=\"column\"&gt; MS SQL Server’ın tüm yapılandırma bilgileri hangi veritabanında yer alır?<br/>&lt;/div&gt;",
+    "text": "MS SQL Server’ın tüm yapılandırma bilgileri hangi veritabanında yer alır?",
     "correctAnswer": "E",
     "options": {
       "A": "Yedekleme veritabanı",
@@ -5667,12 +5667,12 @@
       "D": "Model",
       "E": "Master"
     },
-    "explanation": "&lt;div class=\"column\"&gt; <strong>Master</strong><br/>MS SQL Server’ın tüm yapılandırma bilgileri bu veritabanında yer alır.<br/>&lt;/div&gt;"
+    "explanation": "MS SQL Server’ın tüm yapılandırma bilgileri bu veritabanında yer alır."
   },
   {
     "id": "3739427",
     "unitNumber": 7,
-    "text": "&lt;div class=\"column\"&gt; Sürüm yönetimi bulunan tablolarda verilerdeki değişiklikler nerede depolanır?<br/>&lt;/div&gt;",
+    "text": "Sürüm yönetimi bulunan tablolarda verilerdeki değişiklikler nerede depolanır?",
     "correctAnswer": "B",
     "options": {
       "A": "Model",
@@ -5681,12 +5681,12 @@
       "D": "Master",
       "E": "Yedekleme veri tabanı"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Sürüm yönetimi bulunan tablolarda verilerdeki değişiklikler Tempdb’de depolanır.<br/>&lt;/div&gt;"
+    "explanation": "Sürüm yönetimi bulunan tablolarda verilerdeki değişiklikler Tempdb’de depolanır."
   },
   {
     "id": "3739428",
     "unitNumber": 7,
-    "text": "&lt;div class=\"column\"&gt; Verinin, veritabanı sunucusunun dışına çıkartılması ve güvenlik altına alınmasına ne denir?<br/>&lt;/div&gt;",
+    "text": "Verinin, veritabanı sunucusunun dışına çıkartılması ve güvenlik altına alınmasına ne denir?",
     "correctAnswer": "C",
     "options": {
       "A": "Replikasyon",
@@ -5695,12 +5695,12 @@
       "D": "Geri yükleme",
       "E": "Veri tabanı bakımı"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Yedekleme; verinin, veritabanı sunucusunun dışına çıkartılması ve güvenlik altına alınmasıdır.<br/>&lt;/div&gt;"
+    "explanation": "Yedekleme; verinin, veritabanı sunucusunun dışına çıkartılması ve güvenlik altına alınmasıdır."
   },
   {
     "id": "3739429",
     "unitNumber": 7,
-    "text": "&lt;div class=\"column\"&gt; Son alınan yedekten itibaren yapılmış hareket kayıtlarını kaydeden yedekleme türü hangisidir?<br/>&lt;/div&gt;",
+    "text": "Son alınan yedekten itibaren yapılmış hareket kayıtlarını kaydeden yedekleme türü hangisidir?",
     "correctAnswer": "A",
     "options": {
       "A": "Hareket günlük yedeklemesi",
@@ -5709,7 +5709,7 @@
       "D": "İkizleme",
       "E": "Replikasyon"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Hareket günlük yedeklemesi, son alınan yedekten itibaren yapılmış hareket kayıtlarını kaydeder.<br/>&lt;/div&gt;"
+    "explanation": "Hareket günlük yedeklemesi, son alınan yedekten itibaren yapılmış hareket kayıtlarını kaydeder."
   },
   {
     "id": "3739430",
@@ -5723,12 +5723,12 @@
       "D": "Replikasyon",
       "E": "İkizleme"
     },
-    "explanation": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Replikasyon<br/>Ana veritabanında gerçekleşen işlemlerin hareket kayıtları kısa periyotlarla çalışan bir işlem aracılığı ile ayrı bir disk alanına dosya blokları şeklinde bırakılır. Kopya veri tabanları, bu hareket dosyalarını okur ve işlemleri taklit ederek kendilerini ana veritabanı ile eşitlerler.<br/>&lt;/div&gt; &lt;/div&gt;"
+    "explanation": "Ana veritabanında gerçekleşen işlemlerin hareket kayıtları kısa periyotlarla çalışan bir işlem aracılığı ile ayrı bir disk alanına dosya blokları şeklinde bırakılır. Kopya veri tabanları, bu hareket dosyalarını okur ve işlemleri taklit ederek kendilerini ana veritabanı ile eşitlerler."
   },
   {
     "id": "3739431",
     "unitNumber": 7,
-    "text": "&lt;div class=\"column\"&gt; Beklenmedik bir hata, felaket ya da istenmeyen durumlarda felaketten dönme ve yüksek erişilebilirliği sağlamak için geliştirmiş olan çözüm aşağıdakilerden hangisidir?<br/>&lt;/div&gt;",
+    "text": "Beklenmedik bir hata, felaket ya da istenmeyen durumlarda felaketten dönme ve yüksek erişilebilirliği sağlamak için geliştirmiş olan çözüm aşağıdakilerden hangisidir?",
     "correctAnswer": "D",
     "options": {
       "A": "Senaryo oluşturma",
@@ -5737,12 +5737,12 @@
       "D": "İkizleme",
       "E": "Yedekleme"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Veritabanı ikizleme, beklenmedik bir hata, felaket ya da istenmeyen durumlarda felaketten dönme ve yüksek erişilebilirliği sağlamak için geliştirmiş olan bir çözümdür.<br/>&lt;/div&gt;"
+    "explanation": "Veritabanı ikizleme, beklenmedik bir hata, felaket ya da istenmeyen durumlarda felaketten dönme ve yüksek erişilebilirliği sağlamak için geliştirmiş olan bir çözümdür."
   },
   {
     "id": "3739432",
     "unitNumber": 7,
-    "text": "&lt;div class=\"column\"&gt; Yedeklerin kullandığı disk alanının artmaması için bir kısmının (genellikle eski tarihli) otomatik olarak silinmesi ve yenilerine yer açılmasına ne denir?<br/>&lt;/div&gt;",
+    "text": "Yedeklerin kullandığı disk alanının artmaması için bir kısmının (genellikle eski tarihli) otomatik olarak silinmesi ve yenilerine yer açılmasına ne denir?",
     "correctAnswer": "A",
     "options": {
       "A": "Yedeklerin rotasyonu",
@@ -5751,12 +5751,12 @@
       "D": "Geri yükleme",
       "E": "İkizleme"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Yedeklerin rotasyonu: Yedeklerin kullandığı disk alanının artmaması için bir kısmının (genellikle eski tarihli) otomatik olarak silinmesi ve yenilerine yer açılması.<br/>&lt;/div&gt;"
+    "explanation": "Yedeklerin rotasyonu: Yedeklerin kullandığı disk alanının artmaması için bir kısmının (genellikle eski tarihli) otomatik olarak silinmesi ve yenilerine yer açılması."
   },
   {
     "id": "3739433",
     "unitNumber": 7,
-    "text": "&lt;div class=\"column\"&gt; İki ya da daha çok birbirinden bağımsız sunucunun aralarında iletişim kurulduktan sonra tek bir sistem gibi çalışarak, bir veya birden fazla uygulamayı çalıştırmasına olanak tanıyan çözüme ne denir?<br/>&lt;/div&gt;",
+    "text": "İki ya da daha çok birbirinden bağımsız sunucunun aralarında iletişim kurulduktan sonra tek bir sistem gibi çalışarak, bir veya birden fazla uygulamayı çalıştırmasına olanak tanıyan çözüme ne denir?",
     "correctAnswer": "E",
     "options": {
       "A": "Geri yükleme",
@@ -5765,12 +5765,12 @@
       "D": "Yedekleme",
       "E": "Kümeleme"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Veritabanı kümeleme: Kümeleme, sürekli hizmet vermesi gereken ve en ufak kesintiyebile toleransı olmayan işletmeler tarafından tercih edilen, iki ya da daha çok birbirinden bağımsız sunucunun aralarında iletişim kurulduktan sonra tek bir sistem gibi çalışarak, bir veya birden fazla uygulamayı çalıştırmasına olanak tanıyan çözüme verilen geneladdır.<br/>&lt;/div&gt;"
+    "explanation": "Veritabanı kümeleme: Kümeleme, sürekli hizmet vermesi gereken ve en ufak kesintiyebile toleransı olmayan işletmeler tarafından tercih edilen, iki ya da daha çok birbirinden bağımsız sunucunun aralarında iletişim kurulduktan sonra tek bir sistem gibi çalışarak, bir veya birden fazla uygulamayı çalıştırmasına olanak tanıyan çözüme verilen geneladdır."
   },
   {
     "id": "3739434",
     "unitNumber": 7,
-    "text": "&lt;div class=\"column\"&gt; Blokların içlerinde oluşan boşlukların düzenlenmesi ve veri dosyalarındaki boş blokların dosya sonuna taşınarak MS SQL Server’ın daha etkin çalışmasını sağlamak için hangi işlem uygulanır?<br/>&lt;/div&gt;",
+    "text": "Blokların içlerinde oluşan boşlukların düzenlenmesi ve veri dosyalarındaki boş blokların dosya sonuna taşınarak MS SQL Server’ın daha etkin çalışmasını sağlamak için hangi işlem uygulanır?",
     "correctAnswer": "C",
     "options": {
       "A": "Parçalanma",
@@ -5779,7 +5779,7 @@
       "D": "Yedekleme",
       "E": "İkizleme"
     },
-    "explanation": "&lt;div class=\"column\"&gt; Blokların içlerinde oluşan boşlukların düzenlenmesi ve veri dosyalarındaki boş blokların dosya sonuna taşınarak MS SQL Server’ın daha etkin çalışmasını sağlamak için küçültme işlemi uygulanır.<br/>&lt;/div&gt;"
+    "explanation": "Blokların içlerinde oluşan boşlukların düzenlenmesi ve veri dosyalarındaki boş blokların dosya sonuna taşınarak MS SQL Server’ın daha etkin çalışmasını sağlamak için küçültme işlemi uygulanır."
   },
   {
     "id": "3739435",
@@ -5905,7 +5905,7 @@
       "D": "Kümeleme",
       "E": "Rotasyon"
     },
-    "explanation": "Kümeleme, sürekli hizmet vermesi gereken ve en ufak kesintiye<br/>bile toleransı olmayan işletmeler tarafından tercih edilen, iki ya da daha çok birbirinden bağımsız sunucunun aralarında iletişim kurulduktan sonra tek bir sistem gibi çalışarak, bir veya birden fazla uygulamayı çalıştırmasına olanak tanıyan çözüme verilen genel addır. Kısaca birden fazla sunucu tek bir sunucu gibi davranmaktadır.Doğru şık D."
+    "explanation": "Kümeleme, sürekli hizmet vermesi gereken ve en ufak kesintiye bile toleransı olmayan işletmeler tarafından tercih edilen, iki ya da daha çok birbirinden bağımsız sunucunun aralarında iletişim kurulduktan sonra tek bir sistem gibi çalışarak, bir veya birden fazla uygulamayı çalıştırmasına olanak tanıyan çözüme verilen genel addır. Kısaca birden fazla sunucu tek bir sunucu gibi davranmaktadır.Doğru şık D."
   },
   {
     "id": "3739444",
@@ -6213,7 +6213,7 @@
       "D": "karma bulut",
       "E": "sade bulut"
     },
-    "explanation": "Bulut Bilişim<br/>sade bulut"
+    "explanation": "Bulut Bilişim sade bulut sade bulut"
   },
   {
     "id": "3739466",
@@ -6227,7 +6227,7 @@
       "D": "sade bulut",
       "E": "genel bulut"
     },
-    "explanation": "Bulut Bilişim<br/>genel bulut"
+    "explanation": "Bulut Bilişim genel bulut genel bulut"
   },
   {
     "id": "3739467",
@@ -6353,7 +6353,7 @@
       "D": "Süper Bilgisayar",
       "E": "Dizüstü Bilgisayar"
     },
-    "explanation": "Anaçatı bilgisayar, (mainframe) yüzlerce kullanıcıya aynı zamanda farklı hizmetler verebilen içerisinde çok sayıda işlemci ve sabit disk barındıran güçlü ve pahalı bilgisayarlardır.<br/>Doğru cevap B'dir."
+    "explanation": "Anaçatı bilgisayar, (mainframe) yüzlerce kullanıcıya aynı zamanda farklı hizmetler verebilen içerisinde çok sayıda işlemci ve sabit disk barındıran güçlü ve pahalı bilgisayarlardır."
   },
   {
     "id": "3739476",
@@ -6367,7 +6367,7 @@
       "D": "4",
       "E": "5"
     },
-    "explanation": "Bulut bilişim sistemleri erişim modellerine göre dörde ayrılırlar.<br/>Doğru cevap D'dir."
+    "explanation": "Bulut bilişim sistemleri erişim modellerine göre dörde ayrılırlar."
   },
   {
     "id": "3739477",
@@ -6381,7 +6381,7 @@
       "D": "II. ve III.",
       "E": "I. II. ve III."
     },
-    "explanation": "Bulut bilişim sistemleri erişim modellerine göre bulut, topluluk bulut, özel bulut ve karma bulut şeklindedir.<br/>Doğru cevap E'dir."
+    "explanation": "Bulut bilişim sistemleri erişim modellerine göre bulut, topluluk bulut, özel bulut ve karma bulut şeklindedir."
   },
   {
     "id": "3739478",
@@ -6395,7 +6395,7 @@
       "D": "NoSQL",
       "E": "ACID"
     },
-    "explanation": "Hizmet olarak altyapı (IaaS), teknoloji işletmeleri veya geliştiriciler için dosya saklama alanı ya da hesap yapabilme gibi kaynakların hizmet olarak sunulduğu yapılardır.<br/>Doğru cevap A'dır."
+    "explanation": "Hizmet olarak altyapı (IaaS), teknoloji işletmeleri veya geliştiriciler için dosya saklama alanı ya da hesap yapabilme gibi kaynakların hizmet olarak sunulduğu yapılardır."
   },
   {
     "id": "3739479",
@@ -6409,7 +6409,7 @@
       "D": "ACID",
       "E": "CAP"
     },
-    "explanation": "Hizmet olarak yazılım (SaaS), belirli bir amaç için geliştirilmiş yazılımları son kullanıcıya kiralama yöntemi ile sunmamızı sağlayan bulut yapılardır.<br/>Doğru cevap C'dir."
+    "explanation": "Hizmet olarak yazılım (SaaS), belirli bir amaç için geliştirilmiş yazılımları son kullanıcıya kiralama yöntemi ile sunmamızı sağlayan bulut yapılardır."
   },
   {
     "id": "3739480",
@@ -6423,7 +6423,7 @@
       "D": "NoSQL",
       "E": "CAP"
     },
-    "explanation": "Hizmet olarak platform (PaaS), teknoloji işletmeleri ve geliştiriciler için bulut bilişime hazır çözümler üretmesini sağlayan yapıların sunulduğu modeldir.<br/>Doğru cevap B'dir."
+    "explanation": "Hizmet olarak platform (PaaS), teknoloji işletmeleri ve geliştiriciler için bulut bilişime hazır çözümler üretmesini sağlayan yapıların sunulduğu modeldir."
   },
   {
     "id": "3739481",
@@ -6437,7 +6437,7 @@
       "D": "1999",
       "E": "2000"
     },
-    "explanation": "NoSQL kavramı ilk defa 1998 yılında ortaya atılmıştır ve zaman içerisinde gelişerek günümüze kadar gelmiştir<br/>Doğru cevap C'dir."
+    "explanation": "NoSQL kavramı ilk defa 1998 yılında ortaya atılmıştır ve zaman içerisinde gelişerek günümüze kadar gelmiştir"
   },
   {
     "id": "3739482",
@@ -6451,7 +6451,7 @@
       "D": "II. ve III.",
       "E": "I. II. ve III."
     },
-    "explanation": "İlişkisel veritabanların kararlı çalışması ve veri bütünlüğünün korunması için ACID bölünmezlik, tutarlılık, izolasyon, dayanıklılık kurallarını içermektedir.<br/>Doğru cevap E'dir."
+    "explanation": "İlişkisel veritabanların kararlı çalışması ve veri bütünlüğünün korunması için ACID bölünmezlik, tutarlılık, izolasyon, dayanıklılık kurallarını içermektedir."
   },
   {
     "id": "3739483",
@@ -6465,7 +6465,7 @@
       "D": "ACID",
       "E": "CAP"
     },
-    "explanation": "Eric Brewer tarafından 1998 yılında ortaya konan CAP teoremi ya da bir diğer adı ile Brewer teoremi dağıtık sistemlerin aynı anda tutarlılık, ulaşılabilirlik ve bölünebilme toleransı koşullarına sahip olamayacağını söyler.<br/>Doğru cevap E'dir."
+    "explanation": "Eric Brewer tarafından 1998 yılında ortaya konan CAP teoremi ya da bir diğer adı ile Brewer teoremi dağıtık sistemlerin aynı anda tutarlılık, ulaşılabilirlik ve bölünebilme toleransı koşullarına sahip olamayacağını söyler."
   },
   {
     "id": "3739484",
@@ -6479,7 +6479,7 @@
       "D": "II. ve III.",
       "E": "I. II. ve III."
     },
-    "explanation": "Google BigQuery yapısı üzerinde projeler, veri bloğu, tablolar ve işler olmak üzere dört temel bileşen vardır.<br/>Doğru cevap E'dir."
+    "explanation": "Google BigQuery yapısı üzerinde projeler, veri bloğu, tablolar ve işler olmak üzere dört temel bileşen vardır."
   },
   {
     "id": "3739485",
@@ -6563,7 +6563,7 @@
       "D": "IaaS",
       "E": "NoSQL"
     },
-    "explanation": "Günümüzde, oluşan bu kadar büyük verinin analizinin ve sorgulamalarının yapılması için gerekli olan elemanlar NoSQL kavramı içerisinde bulunmaktadır. İlişkisel veritabanları kararlı çalışması ve veri bütünlüğünün korunması için ACID bölünmezlik, tutarlılık, izolasyon, dayanıklılık kurallarını içermektedir. Eric Brewer tarafından 1998 yılında ortaya konan CAP teoremi ya da bir diğer adı<br/>ile Brewer teoremi dağıtık sistemlerin aynı anda tutarlılık, ulaşılabilirlik ve bölünebilme toleransı koşullarına sahip olamayacağını söyleyen bir teoridir. IaaS ve SaaS, bulut bilişim hizmet modellerindendir. Verilen tanım NoSQL'e aittir. Doğru cevap E'dir."
+    "explanation": "Günümüzde, oluşan bu kadar büyük verinin analizinin ve sorgulamalarının yapılması için gerekli olan elemanlar NoSQL kavramı içerisinde bulunmaktadır. İlişkisel veritabanları kararlı çalışması ve veri bütünlüğünün korunması için ACID bölünmezlik, tutarlılık, izolasyon, dayanıklılık kurallarını içermektedir. Eric Brewer tarafından 1998 yılında ortaya konan CAP teoremi ya da bir diğer adı ile Brewer teoremi dağıtık sistemlerin aynı anda tutarlılık, ulaşılabilirlik ve bölünebilme toleransı koşullarına sahip olamayacağını söyleyen bir teoridir. IaaS ve SaaS, bulut bilişim hizmet modellerindendir. Verilen tanım NoSQL'e aittir. Doğru cevap E'dir."
   },
   {
     "id": "3739491",
@@ -6652,7 +6652,7 @@
   {
     "id": "3739497",
     "unitNumber": 8,
-    "text": "&lt;table&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td width=\"312\"&gt; 1.Hizmet olarak altyapı (IaaS) <br/>&lt;/td&gt; &lt;td width=\"312\"&gt; A. Amazon Web Services<br/>&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td width=\"312\"&gt; 2.Hizmet olarak platform (PaaS) <br/>&lt;/td&gt; &lt;td width=\"312\"&gt; B. Salesforce<br/>&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td width=\"312\"&gt; 3.Hizmet olarak yazılım (SaaS) <br/>&lt;/td&gt; &lt;td width=\"312\"&gt; C. Microsoft Office Online<br/>&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td width=\"312\"&gt; &lt;/td&gt; &lt;td width=\"312\"&gt; D. Google Apps<br/>&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td width=\"312\"&gt; &lt;/td&gt; &lt;td width=\"312\"&gt; E. Microsoft Azure<br/>&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt; Yukarıda verilen bulut bilişim hizmet türü ve örnekleri aşağıdaki seçeneklerden hangisinde doğru eşleştirilmiştir?",
+    "text": "<table><tbody><tr><td>1.Hizmet olarak altyapı (IaaS)</td><td>A. Amazon Web Services</td></tr><tr><td>2.Hizmet olarak platform (PaaS)</td><td>B. Salesforce</td></tr><tr><td>3.Hizmet olarak yazılım (SaaS)</td><td>C. Microsoft Office Online</td></tr><tr><td>D. Google Apps</td></tr><tr><td>E. Microsoft Azure</td></tr></tbody></table><br/>Yukarıda verilen bulut bilişim hizmet türü ve örnekleri aşağıdaki seçeneklerden hangisinde doğru eşleştirilmiştir?",
     "correctAnswer": "C",
     "options": {
       "A": "1-D, 2-C, 3-A",

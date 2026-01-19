@@ -1,16 +1,17 @@
 import fs from 'fs';
-import os from 'os';
+
 import path from 'path';
 import { Worker, isMainThread, parentPort, workerData } from 'worker_threads';
-import { areTextsSimilar, cleanHtml, toPlainText } from './utils/clean-html.ts';
+import { areTextsSimilar, cleanHtml, isGarbage, toPlainText } from './utils/clean-html.ts';
 
 // Configurations
-const NUM_WORKERS = Math.max(1, os.cpus().length - 1);
+const NUM_WORKERS = 4; // Stable count
 const MCP_ROOT = path.resolve('../acik-ogretim-mcp');
 const PORTAL_ROOT = process.cwd();
 
 const RAW_ANADOLU_DIR = path.join(MCP_ROOT, 'data/raw/anadolu-aof');
 const TARGET_ANADOLU_DIR = path.join(PORTAL_ROOT, 'data/questions/anadolu-aof');
+const DEBUG = process.env.DEBUG === '1';
 
 // Ensure target directory exists (Main thread only)
 if (isMainThread && !fs.existsSync(TARGET_ANADOLU_DIR)) {
@@ -65,65 +66,132 @@ interface AppQuestion {
     explanation?: string;
 }
 
-// Union type for input
 type ExamInput = RawAnadoluExamQuestion | PreProcessedExamQuestion;
 
+
+/**
+ * Maps a single raw question to the app format.
+ */
 function mapRawToApp(raw: RawAnadoluQuestion, isTechnical: boolean = false): AppQuestion {
     const q: AppQuestion = {
         id: String(raw.QuestionId),
         unitNumber: raw.UniteNo || 0,
-        text: cleanHtml(raw.Text, { isTechnical }),
+        text: cleanHtml(raw.Text, { isTechnical, university: 'anadolu' }),
         correctAnswer: (raw.CorrectAnswer || "").trim().toUpperCase(),
-        options: {}
+        options: {},
+        explanation: ""
     };
 
     // Smart Merge Logic: Title + Explanation
-    // User insisted: The explanation is a distinct field. Clean them separately.
     let combinedExpl = "";
+    let rawTitle = (raw.Title || "").trim();
+    let rawExpl = (raw.AnswerExplanation || "").trim();
 
-    const rawTitle = (raw.Title || "").trim();
-    const rawExpl = (raw.AnswerExplanation || "").trim();
+
+    if (isGarbage(rawTitle)) rawTitle = "";
+    if (isGarbage(rawExpl)) rawExpl = "";
+
+    // Swap Logic
+    if (rawTitle.length > 200 && rawExpl.length < 100) {
+        const temp = rawTitle;
+        rawTitle = rawExpl;
+        rawExpl = temp;
+    }
 
     if (rawTitle && rawExpl) {
-        // Clean independently
-        const cTitle = cleanHtml(rawTitle, { isTechnical });
-        const cExpl = cleanHtml(rawExpl, { isTechnical, isExplanation: true, disableChoiceCleanup: true });
-
+        const cTitle = cleanHtml(rawTitle, { isTechnical, university: 'anadolu' });
+        const cExpl = cleanHtml(rawExpl, { isTechnical, isExplanation: true, disableChoiceCleanup: true, university: 'anadolu' });
         const tNorm = toPlainText(rawTitle);
         const eNorm = toPlainText(rawExpl);
 
-        // If content is duplicated, prefer the version that is "fuller" (has more HTML/content)
-        // Use the robust utility checking strict inclusion, fuzzy match, and safe token overlap
         if (areTextsSimilar(tNorm, eNorm)) {
-            // Compare cleaned HTML lengths for the tie-break to preserve images/formatting
             combinedExpl = (cExpl.length >= cTitle.length) ? cExpl : cTitle;
         } else {
-            // Distinct content: Independent Clean & Merge
-            // Merging cleaned strings ensures that unclosed tags in Title don't swallow Explanation content
             combinedExpl = cTitle + "<br/>" + cExpl;
         }
     } else if (rawTitle) {
-        combinedExpl = cleanHtml(rawTitle, { isTechnical, isExplanation: true, disableChoiceCleanup: true });
+        combinedExpl = cleanHtml(rawTitle, { isTechnical, isExplanation: true, disableChoiceCleanup: true, university: 'anadolu' });
     } else if (rawExpl) {
-        combinedExpl = cleanHtml(rawExpl, { isTechnical, isExplanation: true, disableChoiceCleanup: true });
+        combinedExpl = cleanHtml(rawExpl, { isTechnical, isExplanation: true, disableChoiceCleanup: true, university: 'anadolu' });
     }
+
+    // Populate options
+    if (raw.A !== undefined) q.options['A'] = cleanHtml(raw.A || "", { isTechnical, university: 'anadolu' });
+    if (raw.B !== undefined) q.options['B'] = cleanHtml(raw.B || "", { isTechnical, university: 'anadolu' });
+    if (raw.C !== undefined) q.options['C'] = cleanHtml(raw.C || "", { isTechnical, university: 'anadolu' });
+    if (raw.D !== undefined) q.options['D'] = cleanHtml(raw.D || "", { isTechnical, university: 'anadolu' });
+    if (raw.E !== undefined) q.options['E'] = cleanHtml(raw.E || "", { isTechnical, university: 'anadolu' });
 
     if (combinedExpl && combinedExpl.trim() !== "") {
-        // Run cleanHtml one last time on the combined string to trigger self-deduplication
-        q.explanation = cleanHtml(combinedExpl.trim(), { isTechnical, isExplanation: true, disableChoiceCleanup: true });
-    }
+        // FIRST: Check if explanation has an image or table BEFORE cleaning
+        const hasImage = combinedExpl.includes('<img');
+        const hasTable = combinedExpl.includes('<table');
 
-    if (raw.A !== undefined) q.options['A'] = cleanHtml(raw.A || "", { isTechnical });
-    if (raw.B !== undefined) q.options['B'] = cleanHtml(raw.B || "", { isTechnical });
-    if (raw.C !== undefined) q.options['C'] = cleanHtml(raw.C || "", { isTechnical });
-    if (raw.D !== undefined) q.options['D'] = cleanHtml(raw.D || "", { isTechnical });
-    if (raw.E !== undefined) q.options['E'] = cleanHtml(raw.E || "", { isTechnical });
+        let finalExpl = cleanHtml(combinedExpl.trim(), { isTechnical, isExplanation: true, disableChoiceCleanup: true });
+
+        if (hasImage || hasTable) {
+            // Do nothing - preserve explanation exactly as-is
+        } else if (raw.CorrectAnswer && q.options[raw.CorrectAnswer]) {
+            const optPlain = toPlainText(q.options[raw.CorrectAnswer] || "").trim().toLowerCase();
+
+            // 1. Line-based Surgical Trimming (Only standalone lines)
+            let lines = finalExpl.split(/<br\s*\/?>/i);
+            let changed = false;
+
+            if (lines.length > 0) {
+                // Check first line
+                const first = lines[0];
+                const firstPlain = toPlainText(first).trim().toLowerCase();
+                if (isGarbage(first) || (optPlain && areTextsSimilar(firstPlain, optPlain))) {
+                    lines.shift();
+                    changed = true;
+                }
+            }
+
+            if (lines.length > 0) {
+                // Check last line
+                const last = lines[lines.length - 1];
+                const lastPlain = toPlainText(last).trim().toLowerCase();
+
+                if (isGarbage(last) || (optPlain && areTextsSimilar(lastPlain, optPlain))) {
+                    lines.pop();
+                    changed = true;
+                }
+            }
+
+            if (changed) {
+                const joined = lines.join('<br/>').trim();
+                const joinedPlain = toPlainText(joined).trim();
+                if (joinedPlain.length < 15) {
+                    finalExpl = ""; // It was all garbage
+                } else {
+                    finalExpl = joined;
+                }
+            }
+
+            // 2. Conservative Full Clear Check
+            if (finalExpl !== "") {
+                // Original logic for non-image explanations
+                const plain = toPlainText(finalExpl).trim().toLowerCase();
+                const charDiff = Math.abs(plain.length - optPlain.length);
+                const lenRatio = Math.min(plain.length, optPlain.length) / (Math.max(plain.length, optPlain.length) || 1);
+
+                if (plain.length < 2 || isGarbage(finalExpl) || (optPlain && areTextsSimilar(plain, optPlain) && (lenRatio > 0.8 || charDiff < 20))) {
+                    finalExpl = "";
+                }
+            }
+        }
+
+        q.explanation = finalExpl.trim() === "" ? "" : finalExpl.trim();
+    }
 
     return q;
 }
 
+/**
+ * Maps raw exam questions to app format.
+ */
 function mapExamToApp(raw: ExamInput, isTechnical: boolean = false): AppQuestion {
-    // Check if it's already in the new format (App Schema-like)
     if (typeof raw.id === 'string' && raw.id.startsWith('exam-') && !Array.isArray(raw.options)) {
         const p = raw as PreProcessedExamQuestion;
         return {
@@ -132,40 +200,56 @@ function mapExamToApp(raw: ExamInput, isTechnical: boolean = false): AppQuestion
             text: cleanHtml(p.text, { isTechnical }),
             correctAnswer: p.correctAnswer,
             options: p.options,
-            explanation: p.explanation ? cleanHtml(p.explanation, { isTechnical, isExplanation: true, disableChoiceCleanup: true, debug: process.env.DEBUG === 'true' }) : undefined
+            explanation: p.explanation ? cleanHtml(p.explanation, { isTechnical, isExplanation: true, disableChoiceCleanup: true }) : undefined
         };
     }
 
-    // Fallback: Legacy Mapping Logic
     const oldRaw = raw as RawAnadoluExamQuestion;
     const q: AppQuestion = {
         id: `exam-${oldRaw.material_id}-${oldRaw.id}`,
         unitNumber: 0,
         text: cleanHtml(oldRaw.question, { isTechnical }),
         correctAnswer: ["A", "B", "C", "D", "E"][oldRaw.correctIndex] || "",
-        options: {}
+        options: {},
+        explanation: ""
     };
 
     if (oldRaw.options && Array.isArray(oldRaw.options)) {
         oldRaw.options.forEach((opt, idx) => {
             const key = ["A", "B", "C", "D", "E"][idx];
-            if (key) {
-                q.options[key] = cleanHtml(opt, { isTechnical });
-            }
+            if (key) q.options[key] = cleanHtml(opt, { isTechnical });
         });
     }
 
     if (oldRaw.explanation) {
-        const e = cleanHtml(oldRaw.explanation, { isTechnical, isExplanation: true, disableChoiceCleanup: true, debug: process.env.DEBUG === 'true' });
-        if (e) q.explanation = e;
+        let e = cleanHtml(oldRaw.explanation, { isTechnical, isExplanation: true, disableChoiceCleanup: true });
+        const correctOptKey = q.correctAnswer;
+        const optPlain = q.options[correctOptKey] ? toPlainText(q.options[correctOptKey]).trim().toLowerCase() : "";
+
+        const hasImage = e.includes('<img');
+        const plain = toPlainText(e).trim().toLowerCase();
+
+        if (!hasImage) {
+            const charDiff = plain.length - optPlain.length;
+            const lenRatio = optPlain.length / (plain.length || 1);
+
+            if (plain.length < 2 || isGarbage(e) || (optPlain && areTextsSimilar(plain, optPlain) && (lenRatio > 0.8 || charDiff < 25))) {
+                e = "";
+            }
+        }
+        q.explanation = e.trim() === "" ? "" : e.trim();
+    } else {
+        q.explanation = "";
     }
 
     return q;
 }
 
-function processCourse(slug: string) {
+/**
+ * Process a single course folder.
+ */
+export async function processCourse(slug: string) {
     const courseRawDir = path.join(RAW_ANADOLU_DIR, slug);
-    // console.log(`Processing ${slug}...`); // Too noisy for all, but good for debug
     const destFilePath = path.join(TARGET_ANADOLU_DIR, `${slug}.json`);
 
     const technicalKeywords = ['programlama', 'algoritma', 'kodlama', 'web', 'veritabanı', 'internet-prog', 'yazılım-müh', 'yazılım-gelistirme', 'veri-yapilari', 'veri-madenciligi', 'tasarim', 'modelleme'];
@@ -190,16 +274,18 @@ function processCourse(slug: string) {
 
             if (rawList.length > 0) {
                 rawList.forEach(r => {
-                    const mapped = mapRawToApp(r, isTechnical);
-                    if (!ids.has(mapped.id)) {
-                        questions.push(mapped);
-                        ids.add(mapped.id);
+                    try {
+                        const mapped = mapRawToApp(r, isTechnical);
+                        if (!ids.has(mapped.id)) {
+                            questions.push(mapped);
+                            ids.add(mapped.id);
+                        }
+                    } catch (err) {
+                        if (DEBUG) console.error(`Failed to map question ${r.QuestionId}:`, err);
                     }
                 });
             }
-        } catch (e) {
-            // console.warn(`Error parsing alistirma-sorulari for ${slug}:`, e);
-        }
+        } catch (e) { }
     }
 
     const cikmisPath = path.join(courseRawDir, 'cikmis-sorular.json');
@@ -219,16 +305,18 @@ function processCourse(slug: string) {
 
             if (rawList.length > 0) {
                 rawList.forEach(r => {
-                    const mapped = mapExamToApp(r, isTechnical);
-                    if (!ids.has(mapped.id)) {
-                        questions.push(mapped);
-                        ids.add(mapped.id);
+                    try {
+                        const mapped = mapExamToApp(r, isTechnical);
+                        if (!ids.has(mapped.id)) {
+                            questions.push(mapped);
+                            ids.add(mapped.id);
+                        }
+                    } catch (err) {
+                        if (DEBUG) console.error(`Failed to map exam question ${r.id}:`, err);
                     }
                 });
             }
-        } catch (e) {
-            // console.warn(`Error parsing cikmis-sorular for ${slug}:`, e);
-        }
+        } catch (e) { }
     }
 
     const validQuestions = questions.filter(q => {
@@ -247,35 +335,30 @@ function processCourse(slug: string) {
                 shouldWrite = false;
             }
         }
-
         if (shouldWrite) {
             fs.writeFileSync(destFilePath, newContent);
-            const msg = `✅ Synced ${slug} (${validQuestions.length} questions)`;
-            if (isMainThread) console.log(msg);
-            else parentPort?.postMessage(msg);
+            if (parentPort) {
+                parentPort.postMessage(`✅ Synced ${slug} (${validQuestions.length} questions)`);
+            } else {
+                console.log(`✅ Synced ${slug} (${validQuestions.length} questions)`);
+            }
         }
     }
 }
 
-// MAIN LOGIC
+// MAIN EXECUTION
 if (isMainThread) {
     if (!fs.existsSync(RAW_ANADOLU_DIR)) {
         console.error(`Cannot find raw directory: ${RAW_ANADOLU_DIR}`);
         process.exit(1);
     }
 
-    // Parse command line arguments
     const args = process.argv.slice(2);
     const technicalOnly = args.includes('--technical');
     const courseArg = args.find(a => a.startsWith('--course='));
     const singleCourse = courseArg ? courseArg.split('=')[1] : null;
 
-    // Technical keywords for filtering
-    const technicalKeywords = [
-        'programlama', 'algoritma', 'kodlama', 'web', 'veritaban',
-        'internet', 'yazilim', 'veri', 'tasarim', 'modelleme',
-        'bilgisayar', 'grafik'
-    ];
+    const technicalKeywords = ['programlama', 'algoritma', 'kodlama', 'web', 'veritaban', 'internet', 'yazilim', 'veri', 'tasarim', 'modelleme', 'bilgisayar', 'grafik'];
 
     let allItems = fs.readdirSync(RAW_ANADOLU_DIR).filter(item => {
         if (item === '.DS_Store') return false;
@@ -284,7 +367,6 @@ if (isMainThread) {
         } catch { return false; }
     });
 
-    // Filter by single course
     if (singleCourse) {
         allItems = allItems.filter(item => item === singleCourse);
         if (allItems.length === 0) {
@@ -294,13 +376,9 @@ if (isMainThread) {
         console.log(`Processing single course: ${singleCourse}`);
     }
 
-    // Filter by technical courses only
     if (technicalOnly) {
-        allItems = allItems.filter(slug => {
-            const lowerSlug = slug.toLowerCase();
-            return technicalKeywords.some(kw => lowerSlug.includes(kw));
-        });
-        console.log(`Filtering to ${allItems.length} technical courses only...`);
+        allItems = allItems.filter(slug => technicalKeywords.some(kw => slug.toLowerCase().includes(kw)));
+        console.log(`Filtering to ${allItems.length} technical courses...`);
     }
 
     console.log(`Scanning ${allItems.length} folders in ${RAW_ANADOLU_DIR}...`);
@@ -308,7 +386,6 @@ if (isMainThread) {
 
     const chunkCount = NUM_WORKERS;
     const itemsPerChunk = Math.ceil(allItems.length / chunkCount);
-
     let activeWorkers = 0;
     const startTime = Date.now();
 
@@ -320,21 +397,14 @@ if (isMainThread) {
         if (chunk.length === 0) continue;
 
         activeWorkers++;
-        // Use import.meta.url for self-reference in module mode
         const worker = new Worker(new URL(import.meta.url), {
             workerData: chunk,
-            execArgv: process.execArgv // Ensure tsx loader is used in workers
+            execArgv: process.execArgv
         });
 
-        worker.on('message', (msg) => {
-            console.log(msg);
-        });
-
-        worker.on('error', (err) => {
-            console.error(`Worker error:`, err);
-        });
-
-        worker.on('exit', (code) => {
+        worker.on('message', (msg) => console.log(msg));
+        worker.on('error', (err) => console.error(`Worker error:`, err));
+        worker.on('exit', () => {
             activeWorkers--;
             if (activeWorkers === 0) {
                 const duration = ((Date.now() - startTime) / 1000).toFixed(1);
@@ -342,10 +412,11 @@ if (isMainThread) {
             }
         });
     }
-
 } else {
-    // Worker Thread
     const slugs: string[] = workerData;
     console.log(`Worker has ${slugs.length} items to process`);
-    slugs.forEach(processCourse);
+    slugs.forEach(s => {
+        if (parentPort) parentPort.postMessage(`Processing ${s}...`);
+        processCourse(s);
+    });
 }

@@ -43,25 +43,21 @@ function cleanText(text: string, options: { encode?: boolean, markdown?: boolean
     let cleaned: string;
 
     if (options.encode) {
-        // HTML Teaching Mode: Treat content as literal text to be displayed as code
-        // 1. Basic string repair (entities, normalization) without DOM parsing/stripping
-        // We do NOT use cleanHtml here because it strips tags like <input> which are "empty"
-        cleaned = repairText(text, { stripLoneBr: false });
+        // HTML/Programming Teaching Mode: Extract the code content from potential HTML containers
+        // 1. Strip all container HTML tags (like spans with styles often found in Atatürk AÖF)
+        cleaned = text.replace(/<[^>]+>/g, ' ');
 
-        // Fix: repairText might introduce entities (like &sim; for ~).
-        // Since we are about to he.escape EVERYTHING, we must first decode these entities back to chars
-        // so that logic/math symbols render as symbols (~) and not as entity code (&sim;).
+        // 2. Decode entities (so &lt;img&gt; becomes <img>)
         cleaned = he.decode(cleaned);
 
-        // 2. Escape ALL chars to ensure they display as code
+        // 3. Normalize whitespace
+        cleaned = cleaned.replace(/\s+/g, ' ').trim();
+
+        // 4. Escape EVERYTHING back to ensure it displays as literal code
         cleaned = he.escape(cleaned);
 
-        // RESTORE punctuation that he.escape over-encodes for Turkish (e.g., HTML'de)
+        // RESTORE punctuation that he.escape over-encodes for Turkish
         cleaned = cleaned.replace(/&#x27;/g, "'").replace(/&quot;/g, '"');
-
-        // 3. Restore whitelist tags - REMOVED for HTML teaching courses
-        // We generally want "Code" to look like Code (e.g. <b> should show as <b>, not bold text)
-        // If there was legitimate formatting in options, it's a tradeoff we accept to allow <b> tags to be visible as answers.
     } else {
         // Standard Mode: Clean and format HTML
         cleaned = cleanHtml(text, { isTechnical: options.isTechnical });
@@ -95,7 +91,7 @@ function cleanText(text: string, options: { encode?: boolean, markdown?: boolean
     // 7. Escape '<' that are NOT part of known HTML tags for STANDARD mode
     if (!options.encode) {
         // Known tags whitelist...
-        let knownTags = "b|i|u|br|p|ul|ol|li|dl|dt|dd|sub|sup|strong|em|s|strike|del|ins|small|big|tt|table|thead|tbody|tfoot|tr|td|th|img|blockquote|code|pre|kbd|samp|var";
+        let knownTags = "b|i|u|br|p|ul|ol|li|dl|dt|dd|sub|sup|strong|em|s|strike|del|ins|small|big|tt|table|thead|tbody|tfoot|tr|td|th|img|blockquote|code|pre|kbd|samp|var|math|semantics|mrow|mtext|mo|mfrac|mi|annotation|msup|msub|msubsup|munder|mover|munderover|msqrt|mroot|mstyle|merror|mpadded|mphantom|mfenced|menclose|mtable|mtr|mtd|maligngroup|malignmark|ms|mspace|mglyph";
 
         // If NOT a technical course, also allow common structural/media tags to be rendered
         if (!options.isTechnical) {
@@ -149,7 +145,8 @@ const htmlTeachingCourses = [
     'web-editoru',
     'veri-tabani-yonetim-sistemleri',
     'web-okuryazarligi',
-    'ileri-web-programlama'
+    'ileri-web-programlama',
+    'internet-ve-web-programlama'
 ];
 
 async function processCourse(slug: string) {
@@ -222,8 +219,20 @@ async function processCourse(slug: string) {
                 return hasCorrectAnswer && hasOptions;
             });
 
-        fs.writeFileSync(destFilePath, JSON.stringify(appData, null, 2));
-        console.log(`✅ Synced ${slug} (${appData.length} questions) [Merged]`);
+        const newContent = JSON.stringify(appData, null, 2);
+        let shouldWrite = true;
+
+        if (fs.existsSync(destFilePath)) {
+            const existingContent = fs.readFileSync(destFilePath, "utf-8");
+            if (existingContent === newContent) {
+                shouldWrite = false;
+            }
+        }
+
+        if (shouldWrite) {
+            fs.writeFileSync(destFilePath, newContent);
+            console.log(`✅ Synced ${slug} (${appData.length} questions) [Merged]`);
+        }
         return true;
 
     } catch (e) {

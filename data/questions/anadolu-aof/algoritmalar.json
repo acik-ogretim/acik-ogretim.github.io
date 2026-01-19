@@ -25,7 +25,7 @@
       "D": "Lambda Cebiri",
       "E": "Turing Makinesi"
     },
-    "explanation": "Algoritma kavramı Antik Çağlardan beri bilinmektedir. Babilli (MÖ 2500) ve Mısırlı (MÖ 1550)<br/>matematikçilerin bölme işlemleri için algoritmalar kullandıkları bilinmektedir. Yunanlı (MÖ 240) matematikçilerin asal sayıları bulmak için Eratosten Kalburunu, en büyük ortak bölenleri bulmak için de Öklid algoritmasını kullandıkları bilinmektedir. 9. yüzyılda Kindî gibi Arap matematikçilerin şifreleri kırabilmek<br/>için frekans analizlerine dayalı şifreleme algoritmaları kullanmıştır. Tarihte Mısır, Yunan ve Roma uygarlıklarında, hesaplama işlerinin herkes tarafından seri biçimde yapılabilmesi amacıyla dört işlem ve bazı<br/>basit fonksiyonlar için algoritmaların yaygın olarak kullanıldığı görülmüştür. Daha yakın zamanlarda ise<br/>(18.-19. yy.) Araplar ve Ruslar tarafından iki temel çarpma algoritması geliştirilmiş ve kullanılmıştır."
+    "explanation": "Algoritma kavramı Antik Çağlardan beri bilinmektedir. Babilli (MÖ 2500) ve Mısırlı (MÖ 1550)<br/>matematikçilerin bölme işlemleri için algoritmalar kullandıkları bilinmektedir. Yunanlı (MÖ 240) matematikçilerin asal sayıları bulmak için Eratosten Kalburunu, en büyük ortak bölenleri bulmak için de Öklid algoritmasını kullandıkları bilinmektedir. 9. yüzyılda Kindî gibi Arap matematikçilerin şifreleri kırabilmek için frekans analizlerine dayalı şifreleme algoritmaları kullanmıştır. Tarihte Mısır, Yunan ve Roma uygarlıklarında, hesaplama işlerinin herkes tarafından seri biçimde yapılabilmesi amacıyla dört işlem ve bazı basit fonksiyonlar için algoritmaların yaygın olarak kullanıldığı görülmüştür. Daha yakın zamanlarda ise<br/>(18.-19. yy.) Araplar ve Ruslar tarafından iki temel çarpma algoritması geliştirilmiş ve kullanılmıştır."
   },
   {
     "id": "3768704",
@@ -39,12 +39,12 @@
       "D": "I-II-V",
       "E": "II-IV-V"
     },
-    "explanation": "Bir algoritmanın aşağıdaki özelliklere sahip olması gerekir.<br/>1. Girdi: Girdi, algoritmanın üzerinde işlem yaparak çıktı üreteceği veri kümesini tanımlar. Algoritmanın girdi olarak alacağı verinin karakteristiklerinin (ör: pozitif sayılar listesi) çok iyi tanımlanması gerekir. Aksi hâlde algoritmanın üzerinde işlem yapamayacağı verilerle karşılaşarak hata üretmesi<br/>ya da yanlış karakteristiklerden dolayı hatalı çıktılar üretmesi olasılığı belirecektir. Örneğin bir<br/>sayı listesini sıralamak üzere üretilmiş bir algoritmaya metin cinsinden girdi gönderilmesi sorun<br/>yaratacaktır. Bu bölümde Algoritma Türleri başlığı altında kısaca açıklanan Rastgele Algoritmalar<br/>gibi algoritmalar dışarıdan özel bir girdi almasalar da üretecekleri çıktılar için kendileri iyi tanımlı<br/>girdiler (ör: Kartezyen düzlemde düzlemde (0,0) ile (1,1) noktaları arasında kalan alan içindeki<br/>noktalar kümesi) üretmektedir.<br/>2. Çıktı: Çıktı, verilen girdi kümesinin işlenmesi sonucu üretilen veridir. Algoritmaların verilen girdiye göre bir ya da daha fazla iyi tanımlı çıktı üretmesi beklenir. Algoritma çıktılarının veri türü ve<br/>miktarı gibi karakteristiklerinin tanımlanmış olması beklenir.<br/>3. Açıklık: Algoritmanın verilen girdi kümesinden çıktı üretmek için gerekli tüm adımları ve bu adımların işletilme sırasını açık bir şekilde tanımlaması gerekir. Algoritmanın her adımının açık ve yanlış anlaşılmaya mahal vermeyecek şekilde iyi tanımlanması gerekir. Özellikle günlük dil ile yazılan<br/>algoritmalarda açıklık ilkesini ihlal edebilecek ifadelerin bulunması olasıdır. Örneğin iki sayının<br/>çarpılması gerektiği ab, a.b, a*b ya ad a x b şeklinde gösterilebilir. Burada a x b hem a ve b’nin çarpımı hem de a, x ve b değişkenlerinin çarpımı şeklinde algılanabilir. Bu tür karmaşalara yol açmamak<br/>için gerekli açıklamalar algoritma öncesinde yapılmalı ve bir örnek satırlar yazılmalıdır. Verilen<br/>örnekler arasından a*b en açık olanıdır. Bunun yanında, işlem adımlarında çıkabilecek olası hata<br/>durumlarının engellenmesi ve bu hataların oluşması hâlinde nelerin yapılacağının (ör.: bir bölme<br/>işleminde bölenin sıfır olmasının kontrolü) da tanımlanması beklenir.<br/>4. Sonluluk: Algoritmaların bir noktada sonlanması gerekir. Algoritma verilen girdiye ilişkin çıktı<br/>üreterek ya da olası bir çözüm olmadığını belirterek sonlanabilir. Algoritmanın içinde gerekli kontroller yapılarak bir çıktı üretilmesi ve sona erdirilmesi gerekmektedir.<br/>5. Başarım ve Performans: Algoritmanın başarım ve performansı verilen bilgisayar kaynaklarının kullanımı ile ilgili bir kavramdır. Başarım, algoritmanın tanımlanan bilgisayar kaynakları ile çıktı üretebilmesini ifade eder. Performans ise algoritmanın işlem zamanı ve bellek alanını etkin kullanımı ile<br/>ilgilidir. Çıktı üretmek için işletilmesi gerekmeyen adımların kullanılması algoritma performansının düşük olduğunun bir göstergesidir. Örneğin bir sayının asal olup olmadığını anlamak için bölenlerini arayan bir algoritmanın, sayının karekökünden daha büyük bölenler araması gereksizdir.<br/>6. Bağımsızlık: Algoritmalar, programlama dilleri ve platformlardan bağımsızdır. Tanımlanan adımların herhangi bir programlama dili ve bu dilin yürütülebileceği platformlar (ör.: masaüstü cihazlar,<br/>sunucular, mobil cihazlar) üzerinde çalışabilmesi gerekir."
+    "explanation": "Bir algoritmanın aşağıdaki özelliklere sahip olması gerekir.<br/>1. Girdi: Girdi, algoritmanın üzerinde işlem yaparak çıktı üreteceği veri kümesini tanımlar. Algoritmanın girdi olarak alacağı verinin karakteristiklerinin (ör: pozitif sayılar listesi) çok iyi tanımlanması gerekir. Aksi hâlde algoritmanın üzerinde işlem yapamayacağı verilerle karşılaşarak hata üretmesi ya da yanlış karakteristiklerden dolayı hatalı çıktılar üretmesi olasılığı belirecektir. Örneğin bir sayı listesini sıralamak üzere üretilmiş bir algoritmaya metin cinsinden girdi gönderilmesi sorun yaratacaktır. Bu bölümde Algoritma Türleri başlığı altında kısaca açıklanan Rastgele Algoritmalar gibi algoritmalar dışarıdan özel bir girdi almasalar da üretecekleri çıktılar için kendileri iyi tanımlı girdiler (ör: Kartezyen düzlemde düzlemde (0,0) ile (1,1) noktaları arasında kalan alan içindeki noktalar kümesi) üretmektedir.<br/>2. Çıktı: Çıktı, verilen girdi kümesinin işlenmesi sonucu üretilen veridir. Algoritmaların verilen girdiye göre bir ya da daha fazla iyi tanımlı çıktı üretmesi beklenir. Algoritma çıktılarının veri türü ve miktarı gibi karakteristiklerinin tanımlanmış olması beklenir.<br/>3. Açıklık: Algoritmanın verilen girdi kümesinden çıktı üretmek için gerekli tüm adımları ve bu adımların işletilme sırasını açık bir şekilde tanımlaması gerekir. Algoritmanın her adımının açık ve yanlış anlaşılmaya mahal vermeyecek şekilde iyi tanımlanması gerekir. Özellikle günlük dil ile yazılan algoritmalarda açıklık ilkesini ihlal edebilecek ifadelerin bulunması olasıdır. Örneğin iki sayının çarpılması gerektiği ab, a.b, a*b ya ad a x b şeklinde gösterilebilir. Burada a x b hem a ve b’nin çarpımı hem de a, x ve b değişkenlerinin çarpımı şeklinde algılanabilir. Bu tür karmaşalara yol açmamak için gerekli açıklamalar algoritma öncesinde yapılmalı ve bir örnek satırlar yazılmalıdır. Verilen örnekler arasından a*b en açık olanıdır. Bunun yanında, işlem adımlarında çıkabilecek olası hata durumlarının engellenmesi ve bu hataların oluşması hâlinde nelerin yapılacağının (ör.: bir bölme işleminde bölenin sıfır olmasının kontrolü) da tanımlanması beklenir.<br/>4. Sonluluk: Algoritmaların bir noktada sonlanması gerekir. Algoritma verilen girdiye ilişkin çıktı üreterek ya da olası bir çözüm olmadığını belirterek sonlanabilir. Algoritmanın içinde gerekli kontroller yapılarak bir çıktı üretilmesi ve sona erdirilmesi gerekmektedir.<br/>5. Başarım ve Performans: Algoritmanın başarım ve performansı verilen bilgisayar kaynaklarının kullanımı ile ilgili bir kavramdır. Başarım, algoritmanın tanımlanan bilgisayar kaynakları ile çıktı üretebilmesini ifade eder. Performans ise algoritmanın işlem zamanı ve bellek alanını etkin kullanımı ile ilgilidir. Çıktı üretmek için işletilmesi gerekmeyen adımların kullanılması algoritma performansının düşük olduğunun bir göstergesidir. Örneğin bir sayının asal olup olmadığını anlamak için bölenlerini arayan bir algoritmanın, sayının karekökünden daha büyük bölenler araması gereksizdir.<br/>6. Bağımsızlık: Algoritmalar, programlama dilleri ve platformlardan bağımsızdır. Tanımlanan adımların herhangi bir programlama dili ve bu dilin yürütülebileceği platformlar (ör.: masaüstü cihazlar,<br/>sunucular, mobil cihazlar) üzerinde çalışabilmesi gerekir."
   },
   {
     "id": "3768725",
     "unitNumber": 1,
-    "text": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; &lt;div class=\"page\" title=\"Page 3\"&gt; &lt;div class=\"section\"&gt; &lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Algoritmalar içinde belirli bir şart sağlandığı sürece tekrar tekrar işletilen kod bloklarına ne ad verilir?<br/>&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;",
+    "text": "Algoritmalar içinde belirli bir şart sağlandığı sürece tekrar tekrar işletilen kod bloklarına ne ad verilir?",
     "correctAnswer": "D",
     "options": {
       "A": "Girdiler",
@@ -53,12 +53,12 @@
       "D": "Döngüler",
       "E": "Yönergeler"
     },
-    "explanation": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Döngüler algoritmalar içinde belirli bir şart sağlandığı sürece tekrar tekrar işletilen kod bloklarıdır.<br/>&lt;/div&gt; &lt;/div&gt;"
+    "explanation": "Döngüler algoritmalar içinde belirli bir şart sağlandığı sürece tekrar tekrar işletilen kod bloklarıdır."
   },
   {
     "id": "3768726",
     "unitNumber": 1,
-    "text": "Aşağıdakilerden hangisi algoritmaların sahip olması gereken özelliklerden biri &lt;span style=\"text-decoration: underline;\"&gt;<strong>değildir</strong>&lt;/span&gt;?",
+    "text": "Aşağıdakilerden hangisi algoritmaların sahip olması gereken özelliklerden biri <u><strong>değildir</strong></u>?",
     "correctAnswer": "E",
     "options": {
       "A": "Girdi",
@@ -67,12 +67,12 @@
       "D": "Sonluluk",
       "E": "Bağımlılık"
     },
-    "explanation": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Bağımsızlık: Algoritmalar, programlama dilleri ve platformlardan bağımsızdır. Tanımlanan adımların herhangi bir programlama dili ve bu dilin yürütülebileceği platformlar (ör.:masaüstü cihazlar, sunucular, mobil cihazlar) üzerinde çalışabilmesi gerekir.<br/>&lt;/div&gt; &lt;/div&gt;"
+    "explanation": "Bağımsızlık: Algoritmalar, programlama dilleri ve platformlardan bağımsızdır. Tanımlanan adımların herhangi bir programlama dili ve bu dilin yürütülebileceği platformlar (ör.:masaüstü cihazlar, sunucular, mobil cihazlar) üzerinde çalışabilmesi gerekir."
   },
   {
     "id": "3768727",
     "unitNumber": 1,
-    "text": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Algoritmaların sahip olması gereken özelliklerinden hangisi algoritmanın tanımlanan bilgisayar kaynakları ile çıktı üretebilmesi ve işlem zamanı ve bellek alanını etkin kullanımı ile ilgilidir?<br/>&lt;/div&gt; &lt;/div&gt;",
+    "text": "Algoritmaların sahip olması gereken özelliklerinden hangisi algoritmanın tanımlanan bilgisayar kaynakları ile çıktı üretebilmesi ve işlem zamanı ve bellek alanını etkin kullanımı ile ilgilidir?",
     "correctAnswer": "E",
     "options": {
       "A": "Girdi",
@@ -81,91 +81,91 @@
       "D": "Sonluluk",
       "E": "Başarım ve performans"
     },
-    "explanation": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Başarım ve Performans: Algoritmanın başarım ve performansı verilen bilgisayar kaynaklarının kullanımı ile ilgili bir kavramdır. Başarım, algoritmanın tanımlanan bilgisayar kaynakları ile çıktı üretebilmesini ifade eder. Performans ise algoritmanın işlem zamanı ve bellek alanını etkin kullanımı ile ilgilidir. Çıktı üretmek için işletilmesi gerekmeyen adımların kullanılması algoritma performansının düşük olduğunun bir göstergesidir. Örneğin bir sayının asal olup olmadığını anlamak için bölenlerini arayan bir algoritmanın, sayının karekökünden daha büyük bölenler araması gereksizdir.<br/>&lt;/div&gt; &lt;/div&gt;"
+    "explanation": "Başarım ve Performans: Algoritmanın başarım ve performansı verilen bilgisayar kaynaklarının kullanımı ile ilgili bir kavramdır. Başarım, algoritmanın tanımlanan bilgisayar kaynakları ile çıktı üretebilmesini ifade eder. Performans ise algoritmanın işlem zamanı ve bellek alanını etkin kullanımı ile ilgilidir. Çıktı üretmek için işletilmesi gerekmeyen adımların kullanılması algoritma performansının düşük olduğunun bir göstergesidir. Örneğin bir sayının asal olup olmadığını anlamak için bölenlerini arayan bir algoritmanın, sayının karekökünden daha büyük bölenler araması gereksizdir."
   },
   {
     "id": "3768728",
     "unitNumber": 1,
-    "text": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Algoritmanın alan karmaşıklığı aşağıdakilerden hangisi ile ilgilidir?<br/>&lt;/div&gt; &lt;/div&gt;",
+    "text": "Algoritmanın alan karmaşıklığı aşağıdakilerden hangisi ile ilgilidir?",
     "correctAnswer": "B",
     "options": {
-      "A": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Çözüm üretmek için harcadığı işlemci zamanı<br/>&lt;/div&gt; &lt;/div&gt;",
-      "B": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Çözüm üretmek için harcadığı bellek alanı<br/>&lt;/div&gt; &lt;/div&gt;",
+      "A": "Çözüm üretmek için harcadığı işlemci zamanı",
+      "B": "Çözüm üretmek için harcadığı bellek alanı",
       "C": "Çözüm üretmek için kullandığı işletim sistemi",
       "D": "Çözüm üretmek için işlettiği görev sayısı",
       "E": "Çözüm üretmek için kullandığı program"
     },
-    "explanation": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Algoritmanın alan karmaşıklığı ise çözüm üretmek için harcadığı bellek alanı ile ilgilidir. Algoritma tarafından tanımlanan her bir değişken ya da her bir fonksiyon çağrısının bir bellek maliyeti bulunur. Örneğin, kendi kendini tekrar çağırabilen özyinelemeli bir fonksiyon her çağrıldığında, bu fonksiyonun kodları ve fonksiyon içinde tanımlanan değişkenler için tekrar bellek alanı ayrılması gerekir. Örneğin bellek maliyeti 4 B (Bayt) olan bir faktöriyel hesaplama fonksiyonunun 1000! Sayısını hesaplayabilmesi için kendi kendini 1000 kez çağırması gerekir. Bunun anlamı bu hesaplama için yaklaşık 4 KB (Kilo Bayt) bellek alanı harcanması gerektiğidir. Fakat dinamik programlama gibi yaklaşımlar kullanılarak özyinelemeden kaçınılarak tekrarlayan çağrı sayıları ciddi oranda azaltılabilir. Bunun sonucu olarak da harcanacak bellek alanları ciddi oranda düşebilir.<br/>&lt;/div&gt; &lt;/div&gt;"
+    "explanation": "Algoritmanın alan karmaşıklığı ise çözüm üretmek için harcadığı bellek alanı ile ilgilidir. Algoritma tarafından tanımlanan her bir değişken ya da her bir fonksiyon çağrısının bir bellek maliyeti bulunur. Örneğin, kendi kendini tekrar çağırabilen özyinelemeli bir fonksiyon her çağrıldığında, bu fonksiyonun kodları ve fonksiyon içinde tanımlanan değişkenler için tekrar bellek alanı ayrılması gerekir. Örneğin bellek maliyeti 4 B (Bayt) olan bir faktöriyel hesaplama fonksiyonunun 1000! Sayısını hesaplayabilmesi için kendi kendini 1000 kez çağırması gerekir. Bunun anlamı bu hesaplama için yaklaşık 4 KB (Kilo Bayt) bellek alanı harcanması gerektiğidir. Fakat dinamik programlama gibi yaklaşımlar kullanılarak özyinelemeden kaçınılarak tekrarlayan çağrı sayıları ciddi oranda azaltılabilir. Bunun sonucu olarak da harcanacak bellek alanları ciddi oranda düşebilir."
   },
   {
     "id": "3768729",
     "unitNumber": 1,
-    "text": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Metinler ve işleçleri girdi olarak alan, ilgili veri tabanı üzerinde arama yapıp olası sonuçları öneren algoritmalar aşağıdakilerden hangisidir?<br/>&lt;/div&gt; &lt;/div&gt;",
+    "text": "Metinler ve işleçleri girdi olarak alan, ilgili veri tabanı üzerinde arama yapıp olası sonuçları öneren algoritmalar aşağıdakilerden hangisidir?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Arama Motoru Algoritmaları<br/>&lt;/div&gt; &lt;/div&gt;",
-      "B": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Şifreleme Algoritmaları<br/>&lt;/div&gt; &lt;/div&gt;",
-      "C": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; &lt;div class=\"page\" title=\"Page 7\"&gt; &lt;div class=\"section\"&gt; &lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Açgözlü (Greedy) Algoritmalar<br/>&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;",
-      "D": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Özyinelemeli (Recursive) Algoritmalar<br/>&lt;/div&gt; &lt;/div&gt;",
-      "E": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Sıralama Algoritmaları<br/>&lt;/div&gt; &lt;/div&gt;"
+      "A": "Arama Motoru Algoritmaları",
+      "B": "Şifreleme Algoritmaları",
+      "C": "Açgözlü (Greedy) Algoritmalar",
+      "D": "Özyinelemeli (Recursive) Algoritmalar",
+      "E": "Sıralama Algoritmaları"
     },
-    "explanation": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Arama Motoru Algoritmaları; Metinler ve işleçleri girdi olarak (ör.: “izmir VE konser”) alan, ilgili veri tabanı üzerinde arama yapıp olası sonuçları öneren (ör.: internet siteleri, restoranlar, kitaplar, kişiler) algoritmalardır. İnternet siteleri ya da kütüphanelerdeki kitapları bulmaya yarayan arama motorlarında bu algoritmalar kullanılmaktadır.<br/>&lt;/div&gt; &lt;/div&gt;"
+    "explanation": "Arama Motoru Algoritmaları; Metinler ve işleçleri girdi olarak (ör.: “izmir VE konser”) alan, ilgili veri tabanı üzerinde arama yapıp olası sonuçları öneren (ör.: internet siteleri, restoranlar, kitaplar, kişiler) algoritmalardır. İnternet siteleri ya da kütüphanelerdeki kitapları bulmaya yarayan arama motorlarında bu algoritmalar kullanılmaktadır."
   },
   {
     "id": "3768730",
     "unitNumber": 1,
-    "text": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Optimizasyon problemlerinin çözümü için bilinen verilere dayalı kararlar veren algoritma türü aşağıdakilerden hangisidir?<br/>&lt;/div&gt; &lt;/div&gt;",
+    "text": "Optimizasyon problemlerinin çözümü için bilinen verilere dayalı kararlar veren algoritma türü aşağıdakilerden hangisidir?",
     "correctAnswer": "C",
     "options": {
-      "A": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Arama Motoru Algoritmaları<br/>&lt;/div&gt; &lt;/div&gt;",
-      "B": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Şifreleme Algoritmaları<br/>&lt;/div&gt; &lt;/div&gt;",
-      "C": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Açgözlü (Greedy) Algoritmalar<br/>&lt;/div&gt; &lt;/div&gt;",
-      "D": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Özyinelemeli (Recursive) Algoritmalar<br/>&lt;/div&gt; &lt;/div&gt;",
-      "E": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Kaba Güç (Brute-force) Algoritmaları<br/>&lt;/div&gt; &lt;/div&gt;"
+      "A": "Arama Motoru Algoritmaları",
+      "B": "Şifreleme Algoritmaları",
+      "C": "Açgözlü (Greedy) Algoritmalar",
+      "D": "Özyinelemeli (Recursive) Algoritmalar",
+      "E": "Kaba Güç (Brute-force) Algoritmaları"
     },
-    "explanation": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Açgözlü (Greedy) Algoritmalar: Bu algoritmalar optimizasyon problemlerinin çözümü için bilinen verilere dayalı kararlar verir. Kısıtlı verilere dayanarak çözüm arandığından bu algoritmalar en iyi çözümü garanti etmezler. Şehirler arası bir yolculuk için en kısa yolu arayan açgözlü bir algoritma bir sonraki şehrin seçiminde her zaman en kısa yolu tercih edebilir.<br/>&lt;/div&gt; &lt;/div&gt;"
+    "explanation": "Açgözlü (Greedy) Algoritmalar: Bu algoritmalar optimizasyon problemlerinin çözümü için bilinen verilere dayalı kararlar verir. Kısıtlı verilere dayanarak çözüm arandığından bu algoritmalar en iyi çözümü garanti etmezler. Şehirler arası bir yolculuk için en kısa yolu arayan açgözlü bir algoritma bir sonraki şehrin seçiminde her zaman en kısa yolu tercih edebilir."
   },
   {
     "id": "3768731",
     "unitNumber": 1,
-    "text": "&lt;div class=\"layoutArea\"&gt;<br/>&lt;div class=\"column\"&gt;<br/>Verilen problemin çözümü için herhangi bir strateji geliştirmeden tüm olasılıkları deneyen algoritma türü aşağıdakilerden hangisidir?<br/>&lt;/div&gt;<br/>&lt;/div&gt;",
+    "text": "Verilen problemin çözümü için herhangi bir strateji geliştirmeden tüm olasılıkları deneyen algoritma türü aşağıdakilerden hangisidir?",
     "correctAnswer": "E",
     "options": {
-      "A": "&lt;div class=\"layoutArea\"&gt;<br/>&lt;div class=\"column\"&gt;<br/>Sıralama Algoritmaları<br/>&lt;/div&gt;<br/>&lt;/div&gt;",
-      "B": "&lt;div class=\"layoutArea\"&gt;<br/>&lt;div class=\"column\"&gt;<br/>Şifreleme Algoritmaları<br/>&lt;/div&gt;<br/>&lt;/div&gt;",
-      "C": "&lt;div class=\"layoutArea\"&gt;<br/>&lt;div class=\"column\"&gt;<br/>Açgözlü (Greedy) Algoritmalar<br/>&lt;/div&gt;<br/>&lt;/div&gt;",
-      "D": "&lt;div class=\"layoutArea\"&gt;<br/>&lt;div class=\"column\"&gt;<br/>Özyinelemeli (Recursive) Algoritmalar<br/>&lt;/div&gt;<br/>&lt;/div&gt;",
-      "E": "&lt;div class=\"layoutArea\"&gt;<br/>&lt;div class=\"column\"&gt;<br/>Kaba Güç (Brute-force) Algoritmaları<br/>&lt;/div&gt;<br/>&lt;/div&gt;"
+      "A": "Sıralama Algoritmaları",
+      "B": "Şifreleme Algoritmaları",
+      "C": "Açgözlü (Greedy) Algoritmalar",
+      "D": "Özyinelemeli (Recursive) Algoritmalar",
+      "E": "Kaba Güç (Brute-force) Algoritmaları"
     },
-    "explanation": "&lt;div class=\"layoutArea\"&gt;<br/>&lt;div class=\"column\"&gt;<br/>Kaba güç algoritmaları verilen problemin çözümü herhangi bir strateji geliştirmeden tüm olasılıkları deneyen algoritmalardır. Bu algoritmaların çalışma stili dört haneli bir şifrenin bulunması için 0000’dan başlayarak 9999’a kadar tüm sayıların denenmesine benzetilebilir.<br/>&lt;/div&gt;<br/>&lt;/div&gt;"
+    "explanation": "Kaba güç algoritmaları verilen problemin çözümü herhangi bir strateji geliştirmeden tüm olasılıkları deneyen algoritmalardır. Bu algoritmaların çalışma stili dört haneli bir şifrenin bulunması için 0000’dan başlayarak 9999’a kadar tüm sayıların denenmesine benzetilebilir."
   },
   {
     "id": "3768732",
     "unitNumber": 1,
-    "text": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; &lt;div class=\"page\" title=\"Page 10\"&gt; &lt;div class=\"section\"&gt; &lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; 1, 2, 3, 4, 5 ve 6 sayılarının altılı kare kümeleri, satırlar ve sütunlarda çakışmadan dağıtılmasını amaçlayan 6x6’lık bir sudoku probleminin çözümünde hangi algoritma türü işe koşulabilir?<br/>&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;",
+    "text": "1, 2, 3, 4, 5 ve 6 sayılarının altılı kare kümeleri, satırlar ve sütunlarda çakışmadan dağıtılmasını amaçlayan 6x6’lık bir sudoku probleminin çözümünde hangi algoritma türü işe koşulabilir?",
     "correctAnswer": "D",
     "options": {
-      "A": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Açgözlü (Greedy) Algoritmalar<br/>&lt;/div&gt; &lt;/div&gt;",
-      "B": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Özyinelemeli (Recursive) Algoritmalar<br/>&lt;/div&gt; &lt;/div&gt;",
-      "C": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Kaba Güç (Brute-force) Algoritmaları<br/>&lt;/div&gt; &lt;/div&gt;",
-      "D": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Gerileme (Backtracking) Algoritmaları<br/>&lt;/div&gt; &lt;/div&gt;",
-      "E": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Böl ve Fethet (Divide and Conquer) Algoritmaları<br/>&lt;/div&gt; &lt;/div&gt;"
+      "A": "Açgözlü (Greedy) Algoritmalar",
+      "B": "Özyinelemeli (Recursive) Algoritmalar",
+      "C": "Kaba Güç (Brute-force) Algoritmaları",
+      "D": "Gerileme (Backtracking) Algoritmaları",
+      "E": "Böl ve Fethet (Divide and Conquer) Algoritmaları"
     },
-    "explanation": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Gerileme algoritmaları, verilen problemler gelişen çözüm ağaçları oluşturarak çözmeye çalışır. 6x6’lık bir sudoku probleminin amacı 1, 2, 3, 4, 5 ve 6 sayılarının altılı kare kümeleri, satırlar ve sütunlarda çakışmadan dağıtılmasıdır. Bu tür problemlerin çözümlerinin aranması için gerileme algoritmaları işe koşulabilir.<br/>&lt;/div&gt; &lt;/div&gt;"
+    "explanation": "Gerileme algoritmaları, verilen problemler gelişen çözüm ağaçları oluşturarak çözmeye çalışır. 6x6’lık bir sudoku probleminin amacı 1, 2, 3, 4, 5 ve 6 sayılarının altılı kare kümeleri, satırlar ve sütunlarda çakışmadan dağıtılmasıdır. Bu tür problemlerin çözümlerinin aranması için gerileme algoritmaları işe koşulabilir."
   },
   {
     "id": "3768733",
     "unitNumber": 1,
-    "text": "&lt;div class=\"layoutArea\"&gt;<br/>&lt;div class=\"column\"&gt;<br/>Problemleri küçük alt problemlere bölerek çözümleyen, özyinelemenin optimizasyonu olan algoritma türü aşağıdaki seçeneklerden hangisidir?<br/>&lt;/div&gt;<br/>&lt;/div&gt;",
+    "text": "Problemleri küçük alt problemlere bölerek çözümleyen, özyinelemenin optimizasyonu olan algoritma türü aşağıdaki seçeneklerden hangisidir?",
     "correctAnswer": "C",
     "options": {
-      "A": "&lt;div class=\"layoutArea\"&gt;<br/>&lt;div class=\"column\"&gt;<br/>Gerileme (Backtracking) Algoritmaları<br/>&lt;/div&gt;<br/>&lt;/div&gt;",
-      "B": "&lt;div class=\"layoutArea\"&gt;<br/>&lt;div class=\"column\"&gt;<br/>Kaba Güç (Brute-force) Algoritmaları<br/>&lt;/div&gt;<br/>&lt;/div&gt;",
-      "C": "&lt;div class=\"layoutArea\"&gt;<br/>&lt;div class=\"column\"&gt;<br/>Dinamik Programlama Algoritmaları<br/>&lt;/div&gt;<br/>&lt;/div&gt;",
-      "D": "&lt;div class=\"layoutArea\"&gt;<br/>&lt;div class=\"column\"&gt;<br/>Karıştırma (Hashing) Algoritmaları<br/>&lt;/div&gt;<br/>&lt;/div&gt;",
-      "E": "&lt;div class=\"layoutArea\"&gt;<br/>&lt;div class=\"column\"&gt;<br/>Rastgele (Randomized) Algoritmalar<br/>&lt;/div&gt;<br/>&lt;/div&gt;"
+      "A": "Gerileme (Backtracking) Algoritmaları",
+      "B": "Kaba Güç (Brute-force) Algoritmaları",
+      "C": "Dinamik Programlama Algoritmaları",
+      "D": "Karıştırma (Hashing) Algoritmaları",
+      "E": "Rastgele (Randomized) Algoritmalar"
     },
-    "explanation": "&lt;div class=\"layoutArea\"&gt;<br/>&lt;div class=\"column\"&gt;<br/>Dinamik programlama algoritmaları problemleri küçük alt problemlere bölerek çözümler. Bununla birlikte, bu yaklaşımda çözümler saklanarak ileriki hesaplamalara uygulanır. Dinamik programlama özünde özyinelemenin optimizasyonudur. Özyineleme yoluyla çözülebilecek problemler dinamik programlama yaklaşımı ile çözülebilir. Üretilen ara çözümlerin saklanması sayesinde ara hesaplamaların tekrar yapılmasına gerek kalmaz. Bu sayede özellikle özyinelemeli işlemlerde işlem yükü ciddi oranda azaltılabilir.<br/>&lt;/div&gt;<br/>&lt;/div&gt;"
+    "explanation": "Dinamik programlama algoritmaları problemleri küçük alt problemlere bölerek çözümler. Bununla birlikte, bu yaklaşımda çözümler saklanarak ileriki hesaplamalara uygulanır. Dinamik programlama özünde özyinelemenin optimizasyonudur. Özyineleme yoluyla çözülebilecek problemler dinamik programlama yaklaşımı ile çözülebilir. Üretilen ara çözümlerin saklanması sayesinde ara hesaplamaların tekrar yapılmasına gerek kalmaz. Bu sayede özellikle özyinelemeli işlemlerde işlem yükü ciddi oranda azaltılabilir."
   },
   {
     "id": "3768734",
@@ -173,13 +173,13 @@
     "text": "Monte Carlo tekniği hangi algoritma türünün önemli örneklerinden biridir?",
     "correctAnswer": "E",
     "options": {
-      "A": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Gerileme (Backtracking) Algoritmaları<br/>&lt;/div&gt; &lt;/div&gt;",
-      "B": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Böl ve Fethet (Divide and Conquer) Algoritmaları<br/>&lt;/div&gt; &lt;/div&gt;",
-      "C": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Dinamik Programlama Algoritmaları<br/>&lt;/div&gt; &lt;/div&gt;",
-      "D": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Karıştırma (Hashing) Algoritmaları<br/>&lt;/div&gt; &lt;/div&gt;",
-      "E": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Rastgele (Randomized) Algoritmalar<br/>&lt;/div&gt; &lt;/div&gt;"
+      "A": "Gerileme (Backtracking) Algoritmaları",
+      "B": "Böl ve Fethet (Divide and Conquer) Algoritmaları",
+      "C": "Dinamik Programlama Algoritmaları",
+      "D": "Karıştırma (Hashing) Algoritmaları",
+      "E": "Rastgele (Randomized) Algoritmalar"
     },
-    "explanation": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; Rastgele algoritmaların önemli örneklerinden biri Monte Carlo tekniğidir. Monte Carlo tekniği sayısal değerlerin hesaplanması için yüksek sayıda rastgele değer üretilmesi esasına dayanır. Pi sabitinin yakınsak değerlerinin bulunması için bu teknik kullanılabilir. Pi sabiti irrasyonel bir sayı olduğundan, bu sayının gerçek değeri bulunamasa da gerçek değerine yakınsayan değerlerin hesaplanması önemli bir çalışma alanıdır.<br/>&lt;/div&gt; &lt;/div&gt;"
+    "explanation": "Rastgele algoritmaların önemli örneklerinden biri Monte Carlo tekniğidir. Monte Carlo tekniği sayısal değerlerin hesaplanması için yüksek sayıda rastgele değer üretilmesi esasına dayanır. Pi sabitinin yakınsak değerlerinin bulunması için bu teknik kullanılabilir. Pi sabiti irrasyonel bir sayı olduğundan, bu sayının gerçek değeri bulunamasa da gerçek değerine yakınsayan değerlerin hesaplanması önemli bir çalışma alanıdır."
   },
   {
     "id": "3768739",
@@ -193,7 +193,7 @@
       "D": "Kabagüç algoritmaları",
       "E": "Sıralama algoritmaları"
     },
-    "explanation": "gözlü (Greedy) Algoritmalar<br/>Bu algoritmalar optimizasyon problemlerinin çözümü için bilinen verilere dayalı kararlar verir. Kısıtlı<br/>verilere dayanarak çözüm arandığından bu algoritmalar en iyi çözümü garanti etmezler."
+    "explanation": "gözlü (Greedy) Algoritmalar<br/>Bu algoritmalar optimizasyon problemlerinin çözümü için bilinen verilere dayalı kararlar verir. Kısıtlı verilere dayanarak çözüm arandığından bu algoritmalar en iyi çözümü garanti etmezler."
   },
   {
     "id": "3768740",
@@ -207,7 +207,7 @@
       "D": "Özyinelemeli algoritmalar",
       "E": "Kabagüç algoritmaları"
     },
-    "explanation": "Özyinelemeli algoritmalar bir problemin çözümüne ulaşabilmek için kendi kendilerini sürekli çağırırlar. Bu algoritmaların en bilinen örneği, bir sayının faktöriyelinin hesaplanmasıdır. Bu amaçla tanımlanan<br/>fonksiyon içinde parametre olarak gelen sayının 1’den büyük olma durumu kontrol edilir. Sayı 1 ise geriye<br/>1 değeri döndürülür. Sayı 1’den büyükse fonksiyon içinden aynı fonksiyona sayının 1 eksiği ile çağrı yapılır ve bu çağrıdan gelen değer sayı ile çarpılarak geri çevrilir"
+    "explanation": "Özyinelemeli algoritmalar bir problemin çözümüne ulaşabilmek için kendi kendilerini sürekli çağırırlar. Bu algoritmaların en bilinen örneği, bir sayının faktöriyelinin hesaplanmasıdır. Bu amaçla tanımlanan fonksiyon içinde parametre olarak gelen sayının 1’den büyük olma durumu kontrol edilir. Sayı 1 ise geriye<br/>1 değeri döndürülür. Sayı 1’den büyükse fonksiyon içinden aynı fonksiyona sayının 1 eksiği ile çağrı yapılır ve bu çağrıdan gelen değer sayı ile çarpılarak geri çevrilir"
   },
   {
     "id": "3768741",
@@ -221,7 +221,7 @@
       "D": "Böl ve fethet algoritmaları",
       "E": "Dinamik programlama algoritmaları"
     },
-    "explanation": "Kaba güç algoritmaları verilen problemin çözümü herhangi bir strateji geliştirmeden tüm olasılıkları<br/>deneyen algoritmalardır. Bu algoritmaların çalışma stili dört haneli bir şifrenin bulunması için 0000’dan<br/>başlayarak 9999’a kadar tüm sayıların denenmesine benzetilebilir."
+    "explanation": "Kaba güç algoritmaları verilen problemin çözümü herhangi bir strateji geliştirmeden tüm olasılıkları deneyen algoritmalardır. Bu algoritmaların çalışma stili dört haneli bir şifrenin bulunması için 0000’dan başlayarak 9999’a kadar tüm sayıların denenmesine benzetilebilir."
   },
   {
     "id": "3768742",
@@ -235,7 +235,7 @@
       "D": "Dinamik programlama algoritmaları",
       "E": "Böl ve fethet algoritmaları"
     },
-    "explanation": "Sıralama algoritmaları girdi olarak verilen veri setini, belirlenen kriterlere göre düzene koyan algoritmalardır. Bir sıralama algoritması verilen girdi setini küçükten büyüğe ya da büyükten küçüğe doğru sıralayarak çıktı verebilir. Sıralama algoritmaları ile verilerin sıralanması sayesinde verilerin insanlar tarafından<br/>daha rahat okunması ya da aranan değerlerin daha kolay bulunması sağlanabilir. Oldukça sık kullanılan<br/>bir işlem olduğundan sıralama işleminin zaman ve alan bakımından verimli yapılabilmesi çok önemlidir."
+    "explanation": "Sıralama algoritmaları girdi olarak verilen veri setini, belirlenen kriterlere göre düzene koyan algoritmalardır. Bir sıralama algoritması verilen girdi setini küçükten büyüğe ya da büyükten küçüğe doğru sıralayarak çıktı verebilir. Sıralama algoritmaları ile verilerin sıralanması sayesinde verilerin insanlar tarafından daha rahat okunması ya da aranan değerlerin daha kolay bulunması sağlanabilir. Oldukça sık kullanılan bir işlem olduğundan sıralama işleminin zaman ve alan bakımından verimli yapılabilmesi çok önemlidir."
   },
   {
     "id": "3768743",
@@ -277,7 +277,7 @@
       "D": "Açgözlü algoritmalar",
       "E": "Sıralama algoritmaları"
     },
-    "explanation": "Rastgele algoritmaların önemli örneklerinden biri Monte Carlo tekniğidir. Monte Carlo tekniği sayısal<br/>değerlerin hesaplanması için yüksek sayıda rastgele değer üretilmesi esasına dayanır. Pi sabitinin yakınsak değerlerinin bulunması için bu teknik kullanılabilir. Pi sabiti irrasyonel bir sayı olduğundan, bu sayının gerçek<br/>değeri bulunamasa da gerçek değerine yakınsayan değerlerin hesaplanması önemli bir çalışma alanıdır. Bu<br/>amaçla yarıçapı 1 birim olan bir birim çember üretilir."
+    "explanation": "Rastgele algoritmaların önemli örneklerinden biri Monte Carlo tekniğidir. Monte Carlo tekniği sayısal değerlerin hesaplanması için yüksek sayıda rastgele değer üretilmesi esasına dayanır. Pi sabitinin yakınsak değerlerinin bulunması için bu teknik kullanılabilir. Pi sabiti irrasyonel bir sayı olduğundan, bu sayının gerçek değeri bulunamasa da gerçek değerine yakınsayan değerlerin hesaplanması önemli bir çalışma alanıdır. Bu amaçla yarıçapı 1 birim olan bir birim çember üretilir."
   },
   {
     "id": "3768602",
@@ -319,7 +319,7 @@
       "D": "Double",
       "E": "Unicode"
     },
-    "explanation": "&lt;span style=\"font-family: arial, helvetica, sans-serif;\"&gt;C# programlama dilinde tam sayıları tutmak üzere Byte ve Integer türleri tanımlanmıştır (Microsoft, t.y.). 8 bit genişlikte tanımlanan Byte türü -127 ile +128 arasındaki sayıları tutabilirken 64 bite kadar çıkabilen Integer türünde <code>-2147483648 ile 2147483647</code> arasındaki değerler tutulabilmektedir. Benzer şekilde ondalıklı sayılar için Float (32b) ve Double (64b) veri türleri tanımlanmıştır. Bu tanımlamalara baktığımızda -52 sayısının tutulması ve bellek alanının etkin kullanımı için 8 bit (1 byte) olan Byte veri türünün kullanımının uygun olduğu görülmektedir&lt;/span&gt;."
+    "explanation": "C# programlama dilinde tam sayıları tutmak üzere Byte ve Integer türleri tanımlanmıştır (Microsoft, t.y.). 8 bit genişlikte tanımlanan Byte türü -127 ile +128 arasındaki sayıları tutabilirken 64 bite kadar çıkabilen Integer türünde <code>-2147483648 ile 2147483647</code> arasındaki değerler tutulabilmektedir. Benzer şekilde ondalıklı sayılar için Float (32b) ve Double (64b) veri türleri tanımlanmıştır. Bu tanımlamalara baktığımızda -52 sayısının tutulması ve bellek alanının etkin kullanımı için 8 bit (1 byte) olan Byte veri türünün kullanımının uygun olduğu görülmektedir."
   },
   {
     "id": "3768650",
@@ -333,7 +333,7 @@
       "D": "I ve III",
       "E": "II ve III"
     },
-    "explanation": "Veri yapıları konusunda verilen ifadeleri tek tek değerlendirelim:<br/><strong>I. \"Bilgisayar sistemleri üzerinde veri yapılarının uygulayıcıları programlama dilleridir.\"</strong><br/>✅ <strong>Doğru.</strong><br/>Veri yapıları kavramsal yapılardır, bunların bilgisayar sistemlerinde somut olarak uygulanması programlama dilleri aracılığıyla yapılır. Örneğin; C++, Java, Python gibi dillerde dizi, liste, yığın, kuyruk, ağaç gibi veri yapıları kod ile hayata geçirilir.<br/><strong>II. \"Veri yapılarının amacı bilgisayar sistemi ile programcının zihni arasında bir köprü kurmaktır.\"</strong><br/>✅ <strong>Doğru.</strong><br/>Veri yapıları, verilerin düzenlenmesini, erişimini ve yönetimini kolaylaştırarak programcının zihinsel modelini bilgisayara aktarmasına yardımcı olur. Bu yönüyle bir \"köprü\" işlevi görürler.<br/><strong>III. \"Her veri yapısının yeterlikleri, avantajları ve sınırlılıkları birbirinin aynıdır.\"</strong><br/>❌ <strong>Yanlış.</strong><br/>Veri yapılarının her birinin farklı avantajları ve sınırlamaları vardır. Örneğin, bir <strong>dizi</strong> sabit boyutludur ve rastgele erişim hızlıdır ama ekleme/silme işlemleri yavaştır. Buna karşın <strong>bağlı listeler</strong> dinamik bellek kullanır, ekleme/silme işlemleri daha kolaydır ama rastgele erişim zordur. Bu nedenle her veri yapısının yeterlilikleri ve kullanım alanları farklıdır.<br/>Doğru cevap C seçeneğidir."
+    "explanation": "Veri yapıları konusunda verilen ifadeleri tek tek değerlendirelim:<br/><strong>I. \"Bilgisayar sistemleri üzerinde veri yapılarının uygulayıcıları programlama dilleridir.\"</strong><br/>✅ <strong>Doğru.</strong><br/>Veri yapıları kavramsal yapılardır, bunların bilgisayar sistemlerinde somut olarak uygulanması programlama dilleri aracılığıyla yapılır. Örneğin; C++, Java, Python gibi dillerde dizi, liste, yığın, kuyruk, ağaç gibi veri yapıları kod ile hayata geçirilir.<br/><strong>II. \"Veri yapılarının amacı bilgisayar sistemi ile programcının zihni arasında bir köprü kurmaktır.\"</strong><br/>✅ <strong>Doğru.</strong><br/>Veri yapıları, verilerin düzenlenmesini, erişimini ve yönetimini kolaylaştırarak programcının zihinsel modelini bilgisayara aktarmasına yardımcı olur. Bu yönüyle bir \"köprü\" işlevi görürler.<br/><strong>III. \"Her veri yapısının yeterlikleri, avantajları ve sınırlılıkları birbirinin aynıdır.\"</strong><br/>❌ <strong>Yanlış.</strong><br/>Veri yapılarının her birinin farklı avantajları ve sınırlamaları vardır. Örneğin, bir <strong>dizi</strong> sabit boyutludur ve rastgele erişim hızlıdır ama ekleme/silme işlemleri yavaştır. Buna karşın <strong>bağlı listeler</strong> dinamik bellek kullanır, ekleme/silme işlemleri daha kolaydır ama rastgele erişim zordur. Bu nedenle her veri yapısının yeterlilikleri ve kullanım alanları farklıdır."
   },
   {
     "id": "3768651",
@@ -370,7 +370,7 @@
     "correctAnswer": "C",
     "options": {
       "A": "A değeri B değerine eşit midir gibi sorgulamaları yapan mantıksal ifadelerin sonucu boolean türündedir.",
-      "B": "&lt;span class=\"_fadeIn_m1hgl_8\"&gt;Float &lt;/span&gt;&lt;span class=\"_fadeIn_m1hgl_8\"&gt;veri &lt;/span&gt;&lt;span class=\"_fadeIn_m1hgl_8\"&gt;türü, &lt;/span&gt;&lt;span class=\"_fadeIn_m1hgl_8\"&gt;ondalıklı &lt;/span&gt;&lt;span class=\"_fadeIn_m1hgl_8\"&gt;sayıları &lt;/span&gt;&lt;span class=\"_fadeIn_m1hgl_8\"&gt;temsil &lt;/span&gt;&lt;span class=\"_fadeIn_m1hgl_8\"&gt;eder; &lt;/span&gt;&lt;span class=\"_fadeIn_m1hgl_8\"&gt;ayrıca &lt;/span&gt;&lt;span class=\"_fadeIn_m1hgl_8\"&gt;tam &lt;/span&gt;&lt;span class=\"_fadeIn_m1hgl_8\"&gt;sayılar &lt;/span&gt;&lt;span class=\"_fadeIn_m1hgl_8\"&gt;da &lt;/span&gt;&lt;span class=\"_fadeIn_m1hgl_8\"&gt;float &lt;/span&gt;&lt;span class=\"_fadeIn_m1hgl_8\"&gt;biçiminde &lt;/span&gt;&lt;span class=\"_fadeIn_m1hgl_8\"&gt;ifade &lt;/span&gt;&lt;span class=\"_fadeIn_m1hgl_8\"&gt;edilebilir.&lt;/span&gt;",
+      "B": "Float veri türü, ondalıklı sayıları temsil eder; ayrıca tam sayılar da float biçiminde ifade edilebilir.",
       "C": "Integer veri türünde pozitif ya da negatif tam sayılar ve ondalıklı sayılar tutulabilir.",
       "D": "Karakter veri türünde büyük ya da küçük harfler, rakamlar ve özel işaretler tutulabilir.",
       "E": "Gösterge veri türü, bellekte tutulan başka bir değişkenin fiziksel adresini saklamak amacıyla kullanılır."
@@ -445,7 +445,7 @@
       "D": "Katman-yükseklik-düğüm derinliği",
       "E": "Katman-düğüm derinliği-yükseklik"
     },
-    "explanation": "I- Kök düğümden başlayarak aşağı doğru açılan düğüm düzeylerine katman denir.<br/>II- Düğüm derinliği (depth): Bir düğüme, kök düğümden gelen yolun uzunluğudur.<br/>III- Yükseklik (height): Bir düğümden, yaprak düğüme giden yolun uzunluğudur.<br/>Doğru cevap E seçeneğidir."
+    "explanation": "I- Kök düğümden başlayarak aşağı doğru açılan düğüm düzeylerine katman denir.<br/>II- Düğüm derinliği (depth): Bir düğüme, kök düğümden gelen yolun uzunluğudur.<br/>III- Yükseklik (height): Bir düğümden, yaprak düğüme giden yolun uzunluğudur."
   },
   {
     "id": "3768659",
@@ -487,7 +487,7 @@
       "D": "Farklı türdeki birden fazla değeri saklaması",
       "E": "Bellekte tutulan bir değişkenin fiziksel adresini saklaması"
     },
-    "explanation": "Bağlı listelerin dizilere oranla en önemli avantajı element sayılarını dinamik olarak arttırılabilmesidir. Diziler tanımlandıkları boyutun ötesinde element tutamazken dinamik bellek kullanabilme yeteneği<br/>sayesinde bağlı listelere kolaylıkla element eklenebilmektedir. Dizilerde araya değer ekleme ya da değer<br/>silme işlemleri oldukça karmaşıktır. Örneğin araya bir değer eklenmesi istendiğinde dizide bu konumdan<br/>sonraki tüm elementlerin yerinin kaydırılması gerekmektedir. Bağlı listelerde bu işlem bellek adreslerinin değiştirilmesi yoluyla kolaylıkla yapılabilmektedir. Çalışma zamanında dizilerin boyutunun artırılması<br/>olanaksızken bağlı listelere ekleme yapılabilmektedir. Bu sayede programcının liste boyutu belirlemesine<br/>gerek kalmaz. Düğüm sayısı dinamik olarak düzenlenebildiğinden, dizilerde olduğu gibi gereksiz bellek<br/>kaynağı ayrılması problemleri yaşanmaz. Ayrıca bellekteki herhangi bir alan kullanılabildiğinden kuramsal<br/>olarak tüm bellek alanı kullanılabilir durumdadır. Dizilerde elementlerin yan yana tutulması gereksinimi<br/>bu kullanıma izin vermeyebilir."
+    "explanation": "Bağlı listelerin dizilere oranla en önemli avantajı element sayılarını dinamik olarak arttırılabilmesidir. Diziler tanımlandıkları boyutun ötesinde element tutamazken dinamik bellek kullanabilme yeteneği sayesinde bağlı listelere kolaylıkla element eklenebilmektedir. Dizilerde araya değer ekleme ya da değer silme işlemleri oldukça karmaşıktır. Örneğin araya bir değer eklenmesi istendiğinde dizide bu konumdan sonraki tüm elementlerin yerinin kaydırılması gerekmektedir. Bağlı listelerde bu işlem bellek adreslerinin değiştirilmesi yoluyla kolaylıkla yapılabilmektedir. Çalışma zamanında dizilerin boyutunun artırılması olanaksızken bağlı listelere ekleme yapılabilmektedir. Bu sayede programcının liste boyutu belirlemesine gerek kalmaz. Düğüm sayısı dinamik olarak düzenlenebildiğinden, dizilerde olduğu gibi gereksiz bellek kaynağı ayrılması problemleri yaşanmaz. Ayrıca bellekteki herhangi bir alan kullanılabildiğinden kuramsal olarak tüm bellek alanı kullanılabilir durumdadır. Dizilerde elementlerin yan yana tutulması gereksinimi bu kullanıma izin vermeyebilir."
   },
   {
     "id": "3768662",
@@ -501,7 +501,7 @@
       "D": "Karakter",
       "E": "Yığınlar"
     },
-    "explanation": "Yığınlar Son Giren İlk Çıkar (LIFO - Last In First Out) prensibinde çalışan doğrusal veri yapılarıdır.<br/>Bu veri yapılarının en tepesine veri eklenebilir ve en tepedeki veri çıkarılabilir. Bu yapılar bir kitap yığınına<br/>benzetilebilir. Yığının üzerine bir kitap eklenebilir ya da en üstteki kitap yığından çıkarılabilir. Bu veri<br/>yapılarında en tepedeki elementi işaret den tek bir gösterge tutulur. Ekleme ve çıkarma işlemlerinde bu<br/>gösterge güncellenir."
+    "explanation": "Yığınlar Son Giren İlk Çıkar (LIFO - Last In First Out) prensibinde çalışan doğrusal veri yapılarıdır.<br/>Bu veri yapılarının en tepesine veri eklenebilir ve en tepedeki veri çıkarılabilir. Bu yapılar bir kitap yığınına benzetilebilir. Yığının üzerine bir kitap eklenebilir ya da en üstteki kitap yığından çıkarılabilir. Bu veri yapılarında en tepedeki elementi işaret den tek bir gösterge tutulur. Ekleme ve çıkarma işlemlerinde bu gösterge güncellenir."
   },
   {
     "id": "3768663",
@@ -515,7 +515,7 @@
       "D": "I-III",
       "E": "II-III-IV"
     },
-    "explanation": "Kuyruklar bir uçlarından ekleme, diğer uçlarından silme işlemleri yapılabilen doğrusal veri yapılarıdır.<br/>Ekleme işlemi yapılan sona arka, silme işlemi yapılan sona ise ön adı verilir. Kuyruklar gerçek hayattaki<br/>bilet kuyruklarına benzetilebilir. En önden biletini alan elemanlar kuyruktan çıkarken bilet almak isteyenler kuyruğun sonuna eklenirler. Yığınların aksine kuyruklar İlk Giren İlk Çıkar (FIFO - First In First Out)<br/>prensibinde çalışır. Kuyruklar da yığınlar gibi pek çok alanda kullanım bulmaktadır. Örneğin donanımsal<br/>düzeyde diskler ve yazıcılar işlemlerinin takibini yapabilmek için kuyruklar tutar. İşletim sistemlerinde<br/>kesmelerin işletilmesi için kuyruklar tutulmaktadır. Sistemler arasında ya da sistemlerin kendi içindeki<br/>veri transferlerinin takibi için de özel kuyruklar tanımlanabilmektedir. Kullanıcı uygulamaları düzeyinde<br/>medya oynatıcılarının oynatma listeleri kuyruklar şeklinde düzenlenmektedir."
+    "explanation": "Kuyruklar bir uçlarından ekleme, diğer uçlarından silme işlemleri yapılabilen doğrusal veri yapılarıdır.<br/>Ekleme işlemi yapılan sona arka, silme işlemi yapılan sona ise ön adı verilir. Kuyruklar gerçek hayattaki bilet kuyruklarına benzetilebilir. En önden biletini alan elemanlar kuyruktan çıkarken bilet almak isteyenler kuyruğun sonuna eklenirler. Yığınların aksine kuyruklar İlk Giren İlk Çıkar (FIFO - First In First Out)<br/>prensibinde çalışır. Kuyruklar da yığınlar gibi pek çok alanda kullanım bulmaktadır. Örneğin donanımsal düzeyde diskler ve yazıcılar işlemlerinin takibini yapabilmek için kuyruklar tutar. İşletim sistemlerinde kesmelerin işletilmesi için kuyruklar tutulmaktadır. Sistemler arasında ya da sistemlerin kendi içindeki veri transferlerinin takibi için de özel kuyruklar tanımlanabilmektedir. Kullanıcı uygulamaları düzeyinde medya oynatıcılarının oynatma listeleri kuyruklar şeklinde düzenlenmektedir."
   },
   {
     "id": "3768664",
@@ -543,7 +543,7 @@
       "D": "Bir düğümden, yaprak düğüme giden yolun uzunluğudur.",
       "E": "Aynı ebeveynden gelen düğümlerdir."
     },
-    "explanation": "Derinlik (depth): Bir düğüme, kök düğümden gelen yolun uzunluğudur. Bu uzunluğu bulmak için<br/>yol üzerindeki kenarlar sayılır."
+    "explanation": "Derinlik (depth): Bir düğüme, kök düğümden gelen yolun uzunluğudur. Bu uzunluğu bulmak için yol üzerindeki kenarlar sayılır."
   },
   {
     "id": "3768666",
@@ -557,7 +557,7 @@
       "D": "Yaprak-Çocuk",
       "E": "Katman-Derinlik"
     },
-    "explanation": "Çizgeler G(V, E) fonksiyonu ile tanımlanabilir. Bu tanımlamada V kümesi düğümleri, E kümesi ise<br/>kenarları ifade etmektedir. Örneğin; V(V1, V2, V3, V4, V5) kümesi 5 adet düğümü ifade etmektedir.<br/>Bu düğümler arasındaki 6 kenar ise E((V1, V2), (V1, V3), (V2, V4), (V1, V4), (V1, V5), (V4, V1))<br/>kümesi ile ifade edilir."
+    "explanation": "Çizgeler G(V, E) fonksiyonu ile tanımlanabilir. Bu tanımlamada V kümesi düğümleri, E kümesi ise kenarları ifade etmektedir. Örneğin; V(V1, V2, V3, V4, V5) kümesi 5 adet düğümü ifade etmektedir.<br/>Bu düğümler arasındaki 6 kenar ise E((V1, V2), (V1, V3), (V2, V4), (V1, V4), (V1, V5), (V4, V1))<br/>kümesi ile ifade edilir."
   },
   {
     "id": "3768735",
@@ -683,7 +683,7 @@
       "D": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/741cd0bc285fb80b1541340650387bfe.jpeg\" alt=\"\" width=\"117\" height=\"214\"/>",
       "E": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/b9dbefcb3e59be12818ea79716fd36f1.jpeg\" alt=\"\" width=\"224\" height=\"231\"/>"
     },
-    "explanation": "İki sayıdan büyük olanı bulup ekrana yazdıran algoritma:<br/>1. Başla<br/>2. Kullanıcı iki sayı girsin. (x, y)<br/>3. x, y’den büyükse x’i yazdır, değilse y’yi yazdır.<br/>4. Bitir<br/>şeklinde olacaktır. Doğru yanıt B seçeneğidir."
+    "explanation": "İki sayıdan büyük olanı bulup ekrana yazdıran algoritma:<br/>1. Başla<br/>2. Kullanıcı iki sayı girsin. (x, y)<br/>3. x, y’den büyükse x’i yazdır, değilse y’yi yazdır.<br/>4. Bitir şeklinde olacaktır. Doğru yanıt B seçeneğidir."
   },
   {
     "id": "3768751",
@@ -842,7 +842,7 @@
   {
     "id": "3768705",
     "unitNumber": 4,
-    "text": "&lt;span style=\"font-size: 11.0pt; color: #211d1e;\"&gt;Değerleri karşılaştıran ve doğru veya yanlış döndüren operatörler aşağıdakilerden hangisidir? &lt;/span&gt;",
+    "text": "Değerleri karşılaştıran ve doğru veya yanlış döndüren operatörler aşağıdakilerden hangisidir?",
     "correctAnswer": "A",
     "options": {
       "A": "Karşılaştırma operatörleri",
@@ -907,7 +907,7 @@
       "D": "XO",
       "E": "YZ"
     },
-    "explanation": "Karar Yapıları / Çift Seçimli Yapılar (if - else Yapısı)<br/>If - else yapısı If yapısının en az üç aşamalı olanı olarak düşünülebilir. Belli bir bilgi karşılığında programın ne yapacağı karar aşamaları için bilginin verildiği bölüm “if ”, bilgi doğru ise gerçekleştirilecek ifadenin verildiği bölüm “then”, bilgi yanlış ise gerçekleştirilecek ifadenin verildiği bölüm ise “else” olarak tanımlanır.<br/>Bu soruda, if-else yapısının akış diyagramı izlendiğinde, soruda verilen değerlere göre sadece<br/>Hava1&gt;Hava2 yani 50&gt;30 koşulu sağlandığından, X değeri<br/>ve akabine<br/>Hava3&gt;Hava2 yani 15&gt;30 koşulu sağlanmadığından, O değeri<br/>ekrana yazılacaktır.<br/>Doğru cevap \"XO\" olmak üzere, D seçeneğidir."
+    "explanation": "Karar Yapıları / Çift Seçimli Yapılar (if - else Yapısı)<br/>If - else yapısı If yapısının en az üç aşamalı olanı olarak düşünülebilir. Belli bir bilgi karşılığında programın ne yapacağı karar aşamaları için bilginin verildiği bölüm “if ”, bilgi doğru ise gerçekleştirilecek ifadenin verildiği bölüm “then”, bilgi yanlış ise gerçekleştirilecek ifadenin verildiği bölüm ise “else” olarak tanımlanır.<br/>Bu soruda, if-else yapısının akış diyagramı izlendiğinde, soruda verilen değerlere göre sadece<br/>Hava1&gt;Hava2 yani 50&gt;30 koşulu sağlandığından, X değeri ve akabine<br/>Hava3&gt;Hava2 yani 15&gt;30 koşulu sağlanmadığından, O değeri ekrana yazılacaktır.<br/>Doğru cevap \"XO\" olmak üzere, D seçeneğidir."
   },
   {
     "id": "3768710",
@@ -954,7 +954,7 @@
   {
     "id": "3768713",
     "unitNumber": 4,
-    "text": "Sayi = 1<br/>DO<br/>PRINT sayi<br/>sayi = sayi + 1<br/>WHILE ( sayi &lt; 100)<br/>Yukarıdaki do-while döngüsüne yönelik pseudo kod ile yazılmış döngü sonucu hangi sayı aralığı basılacaktır?",
+    "text": "Sayi = 1<br/>DO<br/>PRINT sayi sayi = sayi + 1<br/>WHILE ( sayi &lt; 100)<br/>Yukarıdaki do-while döngüsüne yönelik pseudo kod ile yazılmış döngü sonucu hangi sayı aralığı basılacaktır?",
     "correctAnswer": "C",
     "options": {
       "A": "1-10",
@@ -1010,7 +1010,7 @@
   {
     "id": "3768795",
     "unitNumber": 4,
-    "text": "Aşağıdakilerden hangisi, tek seçimli yapılar için &lt;span style=\"text-decoration: underline;\"&gt;<em><strong>yanlış</strong> </em>&lt;/span&gt;bir bilgidir?",
+    "text": "Aşağıdakilerden hangisi, tek seçimli yapılar için <u><em><strong>yanlış</strong> </em></u>bir bilgidir?",
     "correctAnswer": "E",
     "options": {
       "A": "Programlamada karar verme aşamasında kullanılır.",
@@ -1066,7 +1066,7 @@
   {
     "id": "3768809",
     "unitNumber": 4,
-    "text": "kelimeler = [“demet”,”trafo”,”telsiz”,”kafa”,”çubuk”,”tat”]<br/>for x in kelimeler: if (len(x) == 3): print(x)<br/>Yukarıdaki kod çalıştırıldığında ekran çıktısı aşağıdakilerden hangisi olacaktır?",
+    "text": "kelimeler = [“demet”,”trafo”,”telsiz”,”kafa”,”çubuk”,”tat”]<br/>for x in kelimeler:<br/>if (len(x) == 3):<br/>print(x)<br/>Yukarıdaki kod çalıştırıldığında ekran çıktısı aşağıdakilerden hangisi olacaktır?",
     "correctAnswer": "E",
     "options": {
       "A": "demet",
@@ -1080,7 +1080,7 @@
   {
     "id": "3768810",
     "unitNumber": 4,
-    "text": "kelimeler = [“demet”,”trafo”,”telsiz”,”kafa”,”tat”]<br/>for x in kelimeler: if (len(x) == 4): print(x)<br/>Yukarıdaki kod çalıştırıldığında ekran çıktısı aşağıdakilerden hangisi olacaktır?",
+    "text": "kelimeler = [“demet”,”trafo”,”telsiz”,”kafa”,”tat”]<br/>for x in kelimeler:<br/>if (len(x) == 4):<br/>print(x)<br/>Yukarıdaki kod çalıştırıldığında ekran çıktısı aşağıdakilerden hangisi olacaktır?",
     "correctAnswer": "D",
     "options": {
       "A": "demet",
@@ -1094,7 +1094,7 @@
   {
     "id": "3768811",
     "unitNumber": 4,
-    "text": "for x in range(1,9,3): print(x)<br/>Yukarıdaki kod çalıştırıldığında ekran görüntüsü aşağıdakilerden hangisi olacaktır?",
+    "text": "for x in range(1,9,3):<br/>print(x)<br/>Yukarıdaki kod çalıştırıldığında ekran görüntüsü aşağıdakilerden hangisi olacaktır?",
     "correctAnswer": "D",
     "options": {
       "A": "4,7",
@@ -1215,7 +1215,7 @@
       "D": "<em>Θ(g(n)) = O(g(n)) </em><strong>∩ </strong><em>Ω (g(x))</em>",
       "E": "<em>Θ(g(n)) ≠O(g(n)) </em><strong>∩ </strong><em>Ω (g(x))</em>"
     },
-    "explanation": "Asimptotik Gösterim / Big Omega Gösterimi<br/>Big theta gösterimi Big-O gösterimi ile Big-Omega gösterimi arasında ortalama bir karmaşıklığı ifade eder. Bir başka deyişle algoritmanın ortalama çalışma zamanını göstermektedir.<br/>Matematiksel olarak ifade etmek gerekirse;<br/>Bir f(x) fonksiyonu için her durumda<br/>c1.g(x) &lt;=f(x) &lt;=c2.g(x) koşullarını sağlayan pozitif, sabit c1, c2 değerleri bulunabiliyorsa<br/>f(x)= Θ(g(x))<br/>şeklinde ifade edilebilir.<br/>Bunlara ek olarak big-tetha fonksiyonunu aşağıdaki şekilde ifade etmekte mümkündür.<br/><em>Θ(g(n)) = O(g(n)) </em><strong>∩ </strong><em>Ω (g(x))</em>"
+    "explanation": "Asimptotik Gösterim / Big Omega Gösterimi<br/>Big theta gösterimi Big-O gösterimi ile Big-Omega gösterimi arasında ortalama bir karmaşıklığı ifade eder. Bir başka deyişle algoritmanın ortalama çalışma zamanını göstermektedir.<br/>Matematiksel olarak ifade etmek gerekirse;<br/>Bir f(x) fonksiyonu için her durumda c1.g(x) &lt;=f(x) &lt;=c2.g(x) koşullarını sağlayan pozitif, sabit c1, c2 değerleri bulunabiliyorsa f(x)= Θ(g(x))<br/>şeklinde ifade edilebilir.<br/>Bunlara ek olarak big-tetha fonksiyonunu aşağıdaki şekilde ifade etmekte mümkündür."
   },
   {
     "id": "3768722",
@@ -1229,7 +1229,7 @@
       "D": "|f(x)| = c. |g(x)| + k",
       "E": "|f(x)| ≥c. |g(x)| + k"
     },
-    "explanation": "Asimptotik Gösterim / Big Omega Gösterimi<br/>Big-O gösterimi diğer asimptotik gösterimlerde de olduğu gibi birçok ifadeyi sadeleştirerek elde edilir. Örneğin çalışma zamanı T(n)=n4+n2+2n+8 olan bir algoritma için Big-O gösterimi O(n4) şeklinde olacaktır. Bu işlem bir fonksiyonun büyümesi şeklinde de tanımlanmaktadır. Matematiksel olarak ifade etmek gerekirse;<br/>f ve g reel sayılarda tanımlı iki fonksiyon olsun.<br/>f(x) fonksiyonu için<br/>c ve k sabit olmak üzere O(g(x)) fonksiyonu aşağıdaki gibi tanımlanmaktadır.<br/>O(g(x)) = c. |g(x)| + k olmak üzere;<br/>|f(x)| ≤ c. |g(x)| + k"
+    "explanation": "Asimptotik Gösterim / Big Omega Gösterimi<br/>Big-O gösterimi diğer asimptotik gösterimlerde de olduğu gibi birçok ifadeyi sadeleştirerek elde edilir. Örneğin çalışma zamanı T(n)=n4+n2+2n+8 olan bir algoritma için Big-O gösterimi O(n4) şeklinde olacaktır. Bu işlem bir fonksiyonun büyümesi şeklinde de tanımlanmaktadır. Matematiksel olarak ifade etmek gerekirse;<br/>f ve g reel sayılarda tanımlı iki fonksiyon olsun.<br/>f(x) fonksiyonu için c ve k sabit olmak üzere O(g(x)) fonksiyonu aşağıdaki gibi tanımlanmaktadır.<br/>O(g(x)) = c. |g(x)| + k olmak üzere;"
   },
   {
     "id": "3768723",
@@ -1285,7 +1285,7 @@
       "D": "Platon",
       "E": "Aristoteles"
     },
-    "explanation": "Giriş<br/>Harezmi"
+    "explanation": ""
   },
   {
     "id": "3768925",
@@ -1299,7 +1299,7 @@
       "D": "Genellenebilirlik",
       "E": "Ürün verme"
     },
-    "explanation": "Giriş<br/>Ürün verme"
+    "explanation": ""
   },
   {
     "id": "3768926",
@@ -1313,7 +1313,7 @@
       "D": "Optimisyon",
       "E": "Kitap yazma"
     },
-    "explanation": "<strong>Algoritma</strong>, belirli bir problemi çözmek için sıralı, sonlu ve açık adımlardan oluşan bir işlemler dizisidir.<br/>Temel özellikleri:<ul><li>Giriş (input) alabilir,</li><li>Adım adım işlem yapar,</li><li>Çıkış (output) üretir,</li><li>Sonlu sayıda işlemde tamamlanır,</li><li>Belirsizliğe yer vermez.</li></ul>&lt;hr data-start=\"511\" data-end=\"514\" /&gt;<br/>&lt;h3 data-start=\"516\" data-end=\"544\"&gt;<strong>Şıkların Analizi:</strong>&lt;/h3&gt;<br/>&lt;h4 data-start=\"546\" data-end=\"576\"&gt;A) <strong>Bellek Yönetimi:</strong>&lt;/h4&gt;<br/>- Bilgisayar bilimlerinde, bellek yönetimi için algoritmalar vardır (örneğin: Garbage Collection, Paging, Segmentation).<br/><strong>Bir algoritma ile yönetilebilir.</strong><br/>&lt;h4 data-start=\"740\" data-end=\"764\"&gt;B) <strong>Paketleme:</strong>&lt;/h4&gt;<br/>- Paketleme problemleri için algoritmalar geliştirilmiştir (örneğin: Knapsack algoritması).<br/><strong>Matematiksel optimizasyon problemlerine dayalı algoritmalar içerir.</strong><br/>&lt;h4 data-start=\"934\" data-end=\"956\"&gt;C) <strong>Genetik:</strong>&lt;/h4&gt;<br/>- Genetik algoritmalar, evrimsel kurallara dayanan optimizasyon algoritmalarıdır.<br/><strong>Bizzat bir algoritma türüdür.</strong><br/>&lt;h4 data-start=\"1078\" data-end=\"1105\"&gt;D) <strong>Optimizasyon:</strong>&lt;/h4&gt;<br/>- Optimizasyon, birçok algoritmanın konusudur (örneğin: Lineer programlama, genetik algoritmalar, greedy algoritmalar).<br/><strong>Algoritmalara dayalı bir alandır.</strong><br/>&lt;h4 data-start=\"1269\" data-end=\"1295\"&gt;E) <strong>Kitap yazma:</strong>&lt;/h4&gt;<br/>- Yaratıcı, sanatsal ve kişisel kararlar içeren bir süreçtir.<br/>- Belirli, sıralı ve sonlu adımlarla yapılması <strong>mümkün değildir.</strong><br/><strong>Bu süreç algoritma değildir.</strong><br/>&lt;hr data-start=\"1466\" data-end=\"1469\" /&gt;<br/>&lt;h3 data-start=\"1471\" data-end=\"1508\"&gt;<strong>Doğru Cevap: E) Kitap yazma</strong>&lt;/h3&gt;<br/>&lt;hr data-start=\"1510\" data-end=\"1513\" /&gt;<br/>&lt;h3 data-start=\"1515\" data-end=\"1528\"&gt;Neden?&lt;/h3&gt;<br/>“Kitap yazma” süreci:<ul><li>Belirsizlik içerir,</li><li>Sonlu ve açık adımlar halinde tanımlanamaz,</li><li>Yaratıcılık ve sezgi gerektirir.</li></ul>Bu nedenle <strong>algoritma değildir.</strong>"
+    "explanation": "Giriş"
   },
   {
     "id": "3768927",
@@ -1341,7 +1341,7 @@
       "D": "Bellek yönetimi",
       "E": "Zaman analizi"
     },
-    "explanation": "Algoritma analizi"
+    "explanation": ""
   },
   {
     "id": "3768929",
@@ -1369,7 +1369,7 @@
       "D": "Np-complete",
       "E": "T-zaman"
     },
-    "explanation": "Big-O Gösterimi"
+    "explanation": ""
   },
   {
     "id": "3768931",
@@ -1383,7 +1383,7 @@
       "D": "T-zaman",
       "E": "Big-O"
     },
-    "explanation": "Big Omega gösterimi<br/>Big-Omega"
+    "explanation": "Big Omega gösterimi"
   },
   {
     "id": "3768932",
@@ -1397,7 +1397,7 @@
       "D": "Ortalama durum (average case)",
       "E": "Karmaşık durum"
     },
-    "explanation": "En iyi/En Kötü ve Ortalama Durumlar<br/>En iyi durum (best case)"
+    "explanation": "En iyi/En Kötü ve Ortalama Durumlar"
   },
   {
     "id": "3768943",
@@ -1458,7 +1458,7 @@
   {
     "id": "3768947",
     "unitNumber": 5,
-    "text": "Aşağıdakilerden hangisi zaman karmaşıklığında alt sınırı gösterir, bir başka deyişle onunla ölçülen değerden daha iyi daha hızlı bir değer &lt;span style=\"text-decoration: underline;\"&gt;bulunamaz&lt;/span&gt;?",
+    "text": "Aşağıdakilerden hangisi zaman karmaşıklığında alt sınırı gösterir, bir başka deyişle onunla ölçülen değerden daha iyi daha hızlı bir değer <u>bulunamaz</u>?",
     "correctAnswer": "A",
     "options": {
       "A": "Big-Omega gösterimi",
@@ -1481,7 +1481,7 @@
       "D": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/c0f1d4dc0dc6c61f5d6790d358ae4c03.png\" alt=\"\" width=\"61\" height=\"33\"/>",
       "E": "O(n!)"
     },
-    "explanation": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/3bb5ae8701f40dbae283687940428d21.png\" alt=\"\" width=\"637\" height=\"89\"/>"
+    "explanation": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/3bb5ae8701f40dbae283687940428d21.png\" alt=\"\" width=\"608\" height=\"85\"/><br/><img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/3bb5ae8701f40dbae283687940428d21.png\" alt=\"\" width=\"637\" height=\"89\"/>"
   },
   {
     "id": "3768949",
@@ -1663,7 +1663,7 @@
       "D": "Little-o",
       "E": "Little-omega"
     },
-    "explanation": "Bir f(x) fonksiyonu için her durumda<br/>c<sub>1</sub>.g(x) &lt;=f(x) &lt;=c<sub>2</sub>.g(x) koşullarını sağlayan pozitif, sabit c<sub>1</sub> , c<sub>2</sub> değerleri bulunabiliyorsa f fonksiyonu f(x)= Θ(g(x))<br/>şeklinde ifade edilebilir. Bunlara ek olarak big-tetha fonksiyonunu aşağıdaki şekilde ifade etmekte mümkündür.<br/>Θ(g(n)) = O(g(n)) ∩ Ω (g(x))<br/>Doğru cevap C'dir."
+    "explanation": "Bir f(x) fonksiyonu için her durumda c<sub>1</sub>.g(x) &lt;=f(x) &lt;=c<sub>2</sub>.g(x) koşullarını sağlayan pozitif, sabit c<sub>1</sub> , c<sub>2</sub> değerleri bulunabiliyorsa f fonksiyonu f(x)= Θ(g(x))<br/>şeklinde ifade edilebilir. Bunlara ek olarak big-tetha fonksiyonunu aşağıdaki şekilde ifade etmekte mümkündür.<br/>Θ(g(n)) = O(g(n)) ∩ Ω (g(x))"
   },
   {
     "id": "3768972",
@@ -1691,7 +1691,7 @@
       "D": "Böl ve Yönet Sıralama",
       "E": "Numaralandırmalı Sıralama"
     },
-    "explanation": "Değiştirerek Sıralama: Bu sıralama stratejisinde, karşılaştırılan iki veri öncelikle sıraya konulur. Ardından bu işlem tüm veriler sıralanana kadar devam ettirilir. Soruda bahsedilen stratejide:<ul><li><strong>İkili karşılaştırmalar yapılır,</strong></li><li><strong>Yer değiştirme işlemi uygulanır,</strong></li><li>Bu işlem <strong>tüm elemanlar sıralanana kadar devam eder.</strong></li></ul>Bu tanım en çok <strong>Bubble Sort (Kabarcık Sıralama)</strong> algoritmasına uyar. Çünkü:<ul><li>Her iki komşu öğe karşılaştırılır,</li><li>Yer değiştirilir,</li><li>Bu işlem tekrarlanarak veriler sıralanır.</li></ul>&lt;h3 data-start=\"906\" data-end=\"920\"&gt;Bu mantık:&lt;/h3&gt;<br/>\"Değiştirerek sıralama\" olarak adlandırılan yöntemin özüdür.<br/>&lt;hr data-start=\"986\" data-end=\"989\" /&gt;<br/>&lt;h3 data-start=\"991\" data-end=\"1023\"&gt;Diğer Şıkların İncelemesi:&lt;/h3&gt;<br/>&lt;h3 data-start=\"1025\" data-end=\"1071\"&gt;A) <strong>Seçerek Sıralama (Selection Sort)</strong>&lt;/h3&gt;<br/>- Minimum (veya maksimum) değer bulunur, başa alınır.<br/>- <strong>Yer değiştirme yapılmaz, tüm elemanlar karşılaştırılır.</strong><br/>Bu tanıma tam olarak uymaz.<br/>&lt;h3 data-start=\"1223\" data-end=\"1270\"&gt;B) <strong>Eklemeli Sıralama (Insertion Sort)</strong>&lt;/h3&gt;<br/>- Her yeni eleman uygun yere eklenir.<br/>- Daha çok kart dizmeye benzer.<br/>Bu da “karşılaştır - değiştir - devam et” mantığını kapsamaz.<br/>&lt;h3 data-start=\"1410\" data-end=\"1465\"&gt;D) <strong>Böl ve Yönet Sıralama (Divide and Conquer)</strong>&lt;/h3&gt;<br/>- Merge Sort veya Quick Sort gibi algoritmaların stratejisidir.<br/>- Veri küçük parçalara bölünür, sonra birleştirilir.<br/>Sorudaki sırayla ilerleyen, sürekli karşılaştırmalı yapıya uymaz.<br/>&lt;h3 data-start=\"1656\" data-end=\"1694\"&gt;E) <strong>Numaralandırmalı Sıralama</strong>&lt;/h3&gt;<br/>- Böyle bilinen bir algoritma türü yoktur.<br/>- Mümkünse dikkat dağıtıcı bir şık olarak eklenmiş.<br/>Tanımsal bir karşılığı yok.<br/>&lt;hr data-start=\"1825\" data-end=\"1828\" /&gt;<br/>&lt;h3 data-start=\"1830\" data-end=\"1843\"&gt;Sonuç:&lt;/h3&gt;<br/>Sorudaki işlem tarzı birebir <strong>\"değiştirerek sıralama\" (Bubble Sort gibi)</strong> yaklaşımına uygundur.<br/><strong>✔ Doğru cevap: C) Değiştirerek Sıralama</strong>"
+    "explanation": "Değiştirerek Sıralama: Bu sıralama stratejisinde, karşılaştırılan iki veri öncelikle sıraya konulur. Ardından bu işlem tüm veriler sıralanana kadar devam ettirilir."
   },
   {
     "id": "3768814",
@@ -1705,7 +1705,7 @@
       "D": "II,III",
       "E": "I,II ve III"
     },
-    "explanation": "Değiştirerek Sıralama: Bu sıralama stratejisinde, karşılaştırılan iki veri öncelikle sıraya konulur. Ardından bu işlem tüm veriler sıralanana kadar devam ettirilir.<br/>Seçerek Sıralama: Veriler içerisinde en küçük olanı bulunur ve sıraya yerleştirilir. Ardından kalan veriler arasında en küçük veri bulunur ve tekrar sıraya konulur. Bu işlem veri seti sıralanana kadar devam ettirilir.<br/>Eklemeli Sıralama: Verileri birer birer alarak boş bir veri yapısı içerisine uygun sırada eklenir.<br/>Böl ve Yönet Sıralama: Verinin sıralanması amacı ile bir veya iki veri kalana kadar problem daha küçük parçalara bölünür. Ardından en alt seviyede sıralanan parçalar yukarı seviyelere doğru birleştirilerek tüm verinin sıralanması sağlanır.<br/>Numaralandırmalı Sıralama: Her bir veri diğer tüm verilerle karşılaştırarak ve daha küçük değere sahip veri sayısını bulunur. Ardından veri bu pozisyona yerleştirilir.<br/>Tüm bu stratejiler, ögeleri karşılaştırmaya ve ardından bunları buna göre yen<br/>I,II ve III"
+    "explanation": "Değiştirerek Sıralama: Bu sıralama stratejisinde, karşılaştırılan iki veri öncelikle sıraya konulur. Ardından bu işlem tüm veriler sıralanana kadar devam ettirilir.<br/>Seçerek Sıralama: Veriler içerisinde en küçük olanı bulunur ve sıraya yerleştirilir. Ardından kalan veriler arasında en küçük veri bulunur ve tekrar sıraya konulur. Bu işlem veri seti sıralanana kadar devam ettirilir.<br/>Eklemeli Sıralama: Verileri birer birer alarak boş bir veri yapısı içerisine uygun sırada eklenir.<br/>Böl ve Yönet Sıralama: Verinin sıralanması amacı ile bir veya iki veri kalana kadar problem daha küçük parçalara bölünür. Ardından en alt seviyede sıralanan parçalar yukarı seviyelere doğru birleştirilerek tüm verinin sıralanması sağlanır.<br/>Numaralandırmalı Sıralama: Her bir veri diğer tüm verilerle karşılaştırarak ve daha küçük değere sahip veri sayısını bulunur. Ardından veri bu pozisyona yerleştirilir.<br/>Tüm bu stratejiler, ögeleri karşılaştırmaya ve ardından bunları buna göre yen"
   },
   {
     "id": "3768815",
@@ -1733,7 +1733,7 @@
       "D": "II,III",
       "E": "I,II ve III"
     },
-    "explanation": "Genel olarak, büyük listeleri sıralamak için kabarcık sıralama algoritması kullanılmamalıdır. Ancak, nispeten küçük listelerde oldukça iyi bir performans sergilemektedir.<br/>Kabarcık sıralama en kötü sıralama türlerinden biridir. Bunun nedeni mümkün olan her çifti karşılaştırmasıdır.<br/>Kabarcık sıralama, en basit sıralama algoritmalarından biridir.<br/>II,III"
+    "explanation": "Genel olarak, büyük listeleri sıralamak için kabarcık sıralama algoritması kullanılmamalıdır. Ancak, nispeten küçük listelerde oldukça iyi bir performans sergilemektedir.<br/>Kabarcık sıralama en kötü sıralama türlerinden biridir. Bunun nedeni mümkün olan her çifti karşılaştırmasıdır.<br/>Kabarcık sıralama, en basit sıralama algoritmalarından biridir."
   },
   {
     "id": "3768817",
@@ -1747,7 +1747,7 @@
       "D": "II,III",
       "E": "I,II ve III"
     },
-    "explanation": "Tıpkı kabarcık sıralamada olduğu gibi eklemeli sıralama da değiştirerek sıralama stratejisini kullanmaktadır. Eklemeli sıralama algoritmasında, listenin belirli bir bölümünün zaten sıralanmış olduğunu, diğer bölümün ise sıralanmamış kaldığını varsayılmaktadır. Bu varsayımla her seferinde sıralanmamış bölümden bir eleman seçilerek sıralanmış bölümdeki uygun sıraya eklenmektedir.<br/>Yine, bu sıralama algoritması, iç içe döngüler nedeniyle kabarcık sıralama gibi O(n2) zaman karmaşıklığına sahiptir.<br/>I,II ve III"
+    "explanation": "Tıpkı kabarcık sıralamada olduğu gibi eklemeli sıralama da değiştirerek sıralama stratejisini kullanmaktadır. Eklemeli sıralama algoritmasında, listenin belirli bir bölümünün zaten sıralanmış olduğunu, diğer bölümün ise sıralanmamış kaldığını varsayılmaktadır. Bu varsayımla her seferinde sıralanmamış bölümden bir eleman seçilerek sıralanmış bölümdeki uygun sıraya eklenmektedir.<br/>Yine, bu sıralama algoritması, iç içe döngüler nedeniyle kabarcık sıralama gibi O(n2) zaman karmaşıklığına sahiptir."
   },
   {
     "id": "3768818",
@@ -1761,7 +1761,7 @@
       "D": "I,III",
       "E": "I,II ve III"
     },
-    "explanation": "Kabarcık sıralama, eklemeli sıralama ve seçmeli sıralamanın hepsinin iç içe iki döngü içermesinden dolayı tam karşılaştırma sayısını hesaplamak zorunda kalmadan genel karmaşıklıklarının O(n2) olacağı kolaylıkla söylenebilir.<br/>I,II ve III"
+    "explanation": "Kabarcık sıralama, eklemeli sıralama ve seçmeli sıralamanın hepsinin iç içe iki döngü içermesinden dolayı tam karşılaştırma sayısını hesaplamak zorunda kalmadan genel karmaşıklıklarının O(n2)<br/>olacağı kolaylıkla söylenebilir."
   },
   {
     "id": "3768819",
@@ -1775,7 +1775,7 @@
       "D": "Kabarcık Sıralama",
       "E": "Ağaç Sıralama"
     },
-    "explanation": "Bir diğer sıralama algoritması da kabuk (shell) sıralamadır. İsmini algoritmayı geliştiren Donald<br/>Shell’den almaktadır. Bu algoritma temel olarak başka sıralama algoritmalarının verimliliğini artıran bir algoritmadır ve içerisinde başka sıralama algoritmaları çalıştırır.<br/>Kabuk sıralama"
+    "explanation": "Bir diğer sıralama algoritması da kabuk (shell) sıralamadır. İsmini algoritmayı geliştiren Donald<br/>Shell’den almaktadır. Bu algoritma temel olarak başka sıralama algoritmalarının verimliliğini artıran bir algoritmadır ve içerisinde başka sıralama algoritmaları çalıştırır."
   },
   {
     "id": "3768824",
@@ -1789,12 +1789,12 @@
       "D": "Yeniden yığınlama işlemi, Takas işlemi, Kaldırma işlemi, İşlemin tekrarı",
       "E": "Kaldırma işlemi, Yeniden yığınlama işlemi, Takas işlemi, İşlemin tekrarı"
     },
-    "explanation": "Yığın ağaç yapısından bahsettikten sonra yığın sıralama yönteminin nasıl çalıştığını inceleyelim. Bahsedildiği üzere yığın ağaçlarında en büyük veri daima kök düğümde yani ilk indiste tutulmaktadır. Buradan hareket ile algoritma temel olarak 4 basamaktan oluşmaktadır:<br/>1. Takas işlemi: Kök elemanı alarak bir diziye yerleştirin yığının son elemanını kök elmanın yerine yerleştirin.<br/>2. Kaldırma işlemi: Yığın boyutunu 1 azaltın.<br/>3. Yeniden yığınlama işlemi (Heapify): Kökteki en yüksek ögeye sahip olmamız için kök ögeyi tekrar yığınlayın.<br/>4. Bu işlemi, listenin tüm ögeleri sıralanana kadar tekrarlayın.<br/>Takas işlemi, Kaldırma işlemi, Yeniden yığınlama işlemi, İşlemin tekrarı"
+    "explanation": "Yığın ağaç yapısından bahsettikten sonra yığın sıralama yönteminin nasıl çalıştığını inceleyelim. Bahsedildiği üzere yığın ağaçlarında en büyük veri daima kök düğümde yani ilk indiste tutulmaktadır. Buradan hareket ile algoritma temel olarak 4 basamaktan oluşmaktadır:<br/>1. Takas işlemi: Kök elemanı alarak bir diziye yerleştirin yığının son elemanını kök elmanın yerine yerleştirin.<br/>2. Kaldırma işlemi: Yığın boyutunu 1 azaltın.<br/>3. Yeniden yığınlama işlemi (Heapify): Kökteki en yüksek ögeye sahip olmamız için kök ögeyi tekrar yığınlayın.<br/>4. Bu işlemi, listenin tüm ögeleri sıralanana kadar tekrarlayın."
   },
   {
     "id": "3768828",
     "unitNumber": 6,
-    "text": "Aşağıda verilen sıralama algoritmalarından hangisi sıralama problemine çözüm getirirken veriyi bir bütün olarak &lt;span style=\"text-decoration: underline;\"&gt;<strong>almaz?</strong>&lt;/span&gt;",
+    "text": "Aşağıda verilen sıralama algoritmalarından hangisi sıralama problemine çözüm getirirken veriyi bir bütün olarak <u><strong>almaz?</strong></u>",
     "correctAnswer": "A",
     "options": {
       "A": "Böl ve Yönet",
@@ -1817,7 +1817,7 @@
       "D": "II,III",
       "E": "I,II ve III"
     },
-    "explanation": "Birleştirmeli sıralama (merge sort) algoritması böl ve yönet yaklaşımını kullanan diğer bir algoritmadır.<br/>Bu algoritmadaki genel fikir daha önce de bahsedildiği üzere, verilen listeyi, birinci alt dizideki tüm elemanlar ikinci alt dizideki tüm elemanlardan daha küçük olacak şekilde tekrar tekrar bölmek ve ardından tüm alt dizileri birleştirmektir.<br/>II ve III"
+    "explanation": "II ve III<br/>Birleştirmeli sıralama (merge sort) algoritması böl ve yönet yaklaşımını kullanan diğer bir algoritmadır.<br/>Bu algoritmadaki genel fikir daha önce de bahsedildiği üzere, verilen listeyi, birinci alt dizideki tüm elemanlar ikinci alt dizideki tüm elemanlardan daha küçük olacak şekilde tekrar tekrar bölmek ve ardından tüm alt dizileri birleştirmektir."
   },
   {
     "id": "3768913",
@@ -1845,7 +1845,7 @@
       "D": "Hızlı (Quick) sıralama",
       "E": "Ekleme (Insertion) sıralama"
     },
-    "explanation": "&lt;div class=\"relative flex h-full w-full flex-row\"&gt;<br/>&lt;div class=\"relative flex h-full max-w-full flex-1 flex-col\"&gt;&lt;main class=\"transition-width relative h-full w-full flex-1 overflow-auto\" id=\"main\" z-index=\"-1\"&gt;<br/>&lt;div id=\"thread\" class=\"group/thread @container/thread h-full w-full\"&gt;<br/>&lt;div role=\"presentation\" class=\"composer-parent flex flex-col focus-visible:outline-0 h-full\"&gt;<br/>&lt;div class=\"flex basis-auto flex-col -mb-(--composer-overlap-px) [--composer-overlap-px:24px] grow overflow-hidden\"&gt;<br/>&lt;div class=\"relative h-full\"&gt;<br/>&lt;div class=\"flex h-full flex-col overflow-y-auto [scrollbar-gutter:stable_both-edges] @[84rem]/thread:pt-(--header-height)\"&gt;<br/>&lt;div class=\"@thread-xl/thread:pt-header-height mt-1.5 flex flex-col text-sm pb-25\"&gt;<br/>&lt;article class=\"text-token-text-primary w-full\" dir=\"auto\" data-testid=\"conversation-turn-12\" data-scroll-anchor=\"true\"&gt;<br/>&lt;div class=\"text-base my-auto mx-auto py-5 [--thread-content-margin:--spacing(4)] @[37rem]:[--thread-content-margin:--spacing(6)] @[72rem]:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)\"&gt;<br/>&lt;div class=\"[--thread-content-max-width:32rem] @[34rem]:[--thread-content-max-width:40rem] @[64rem]:[--thread-content-max-width:48rem] mx-auto flex max-w-(--thread-content-max-width) flex-1 text-base gap-4 md:gap-5 lg:gap-6 group/turn-messages focus-visible:outline-hidden\" tabindex=\"-1\"&gt;<br/>&lt;div class=\"group/conversation-turn relative flex w-full min-w-0 flex-col agent-turn\"&gt;<br/>&lt;div class=\"relative flex-col gap-1 md:gap-3\"&gt;<br/>&lt;div class=\"flex max-w-full flex-col grow\"&gt;<br/>&lt;div data-message-author-role=\"assistant\" data-message-id=\"5c5c0b97-c906-49e5-bcce-a66355adca83\" dir=\"auto\" class=\"min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-5\" data-message-model-slug=\"gpt-4o\"&gt;<br/>&lt;div class=\"flex w-full flex-col gap-1 empty:hidden first:pt-[3px]\"&gt;<br/>&lt;div class=\"markdown prose dark:prose-invert w-full break-words light\"&gt;<br/>Verilen tanım, <strong>kabarcık sıralama (bubble sort)</strong> algoritmasını tarif eder. Bu algoritmada, her adımda ardışık iki eleman karşılaştırılır ve gerekiyorsa yer değiştirir. Bu işlem tüm liste sıralanana kadar devam eder. Diğer algoritmalar (örneğin quick sort ya da merge sort) daha karmaşık bölme-birleştirme ya da pivot seçimi stratejileri içerir.<br/>&lt;/div&gt;<br/>&lt;/div&gt;<br/>&lt;/div&gt;<br/>&lt;/div&gt;<br/>&lt;/div&gt;<br/>&lt;/div&gt;<br/>&lt;/article&gt;<br/>&lt;/div&gt;<br/>&lt;/div&gt;<br/>&lt;/div&gt;<br/>&lt;/div&gt;<br/>&lt;/div&gt;<br/>&lt;/div&gt;<br/>&lt;/main&gt;&lt;/div&gt;<br/>&lt;/div&gt;<br/>&lt;/div&gt;<br/>&lt;/div&gt;"
+    "explanation": "Verilen tanım, <strong>kabarcık sıralama (bubble sort)</strong> algoritmasını tarif eder. Bu algoritmada, her adımda ardışık iki eleman karşılaştırılır ve gerekiyorsa yer değiştirir. Bu işlem tüm liste sıralanana kadar devam eder. Diğer algoritmalar (örneğin quick sort ya da merge sort) daha karmaşık bölme-birleştirme ya da pivot seçimi stratejileri içerir."
   },
   {
     "id": "3768915",
@@ -1971,7 +1971,7 @@
       "D": "Böl ve yönet sıralama",
       "E": "Dahili sıralama"
     },
-    "explanation": "Sıralama algoritmaları<br/>Dahili sıralama"
+    "explanation": "Sıralama algoritmaları"
   },
   {
     "id": "3768934",
@@ -1990,7 +1990,7 @@
   {
     "id": "3768935",
     "unitNumber": 6,
-    "text": "temp=x<br/>x=y<br/>y=temp<br/>Yukarıda algoritmalarda tanımlanan işlem aşağıdakilerden hangisidir?",
+    "text": "temp=x x=y y=temp<br/>Yukarıda algoritmalarda tanımlanan işlem aşağıdakilerden hangisidir?",
     "correctAnswer": "A",
     "options": {
       "A": "Takas işlemi",
@@ -1999,7 +1999,7 @@
       "D": "Eşleme",
       "E": "Numaralandırma"
     },
-    "explanation": "Kabarcık sıralama<br/>Takas işlemi"
+    "explanation": "Kabarcık sıralama"
   },
   {
     "id": "3768936",
@@ -2013,7 +2013,7 @@
       "D": "Seçmeli sıralama",
       "E": "Radyal sıralama"
     },
-    "explanation": "Kabuk sıralama"
+    "explanation": ""
   },
   {
     "id": "3768937",
@@ -2027,7 +2027,7 @@
       "D": "Petrus",
       "E": "Python"
     },
-    "explanation": "Radix sıralama"
+    "explanation": ""
   },
   {
     "id": "3768938",
@@ -2041,7 +2041,7 @@
       "D": "Bu yapıda üst düğüm daima çocuklarından büyüktür.",
       "E": "Bu yapıda üst düğüm daima en küçük olandır."
     },
-    "explanation": "Yığın (heap) sıralama<br/>Bu yapıda üst düğüm daima en küçük olandır."
+    "explanation": "Yığın (heap) sıralama"
   },
   {
     "id": "3768939",
@@ -2069,7 +2069,7 @@
       "D": "Yığın",
       "E": "Indis"
     },
-    "explanation": "Hızlı sıralama<br/>pivot"
+    "explanation": "Hızlı sıralama pivot"
   },
   {
     "id": "3768941",
@@ -2083,7 +2083,7 @@
       "D": "Bu işlemde pivot 20 dir.",
       "E": "Bu işlemde pivot 60 dir."
     },
-    "explanation": "Hızlı sıralama<br/>Bu işlemde pivot 40 veya 45 tir."
+    "explanation": ""
   },
   {
     "id": "3768942",
@@ -2125,7 +2125,7 @@
       "D": "II-I-III-IV-V",
       "E": "V-II-I-III-IV"
     },
-    "explanation": "Liste başına ekleme operasyonunda ilk olarak yeni bir düğüm yaratılmalıdır. Bu işlemde bellekte bir düğüm yaratılır, veri düğüm içine aktarılır ve işaretçi değeri olarak BOŞ atanır. Daha sonra listenin geçerliliği yani en azından ilk düğümü içermesi durumu kontrol edilir. Geçerli bir liste var ise yeni düğüm işaretçisine listede bulunan ilk düğümün adresi yani listenin adresi atanmalıdır. Bu atama ile yeni düğüm ile liste bağlanmış olacaktır. Bu bağlama sonrasında listenin başlangıç düğümü artık yeni düğüm olmalıdır. Bu sebeple listenin adresi olarak yeni düğümün adresi atanmalıdır. Diğer bir deyişle listeye erişim için artık yeni düğüm kullanılmalıdır.<br/>Doğru cevap D seçeneğidir."
+    "explanation": "Liste başına ekleme operasyonunda ilk olarak yeni bir düğüm yaratılmalıdır. Bu işlemde bellekte bir düğüm yaratılır, veri düğüm içine aktarılır ve işaretçi değeri olarak BOŞ atanır. Daha sonra listenin geçerliliği yani en azından ilk düğümü içermesi durumu kontrol edilir. Geçerli bir liste var ise yeni düğüm işaretçisine listede bulunan ilk düğümün adresi yani listenin adresi atanmalıdır. Bu atama ile yeni düğüm ile liste bağlanmış olacaktır. Bu bağlama sonrasında listenin başlangıç düğümü artık yeni düğüm olmalıdır. Bu sebeple listenin adresi olarak yeni düğümün adresi atanmalıdır. Diğer bir deyişle listeye erişim için artık yeni düğüm kullanılmalıdır."
   },
   {
     "id": "3768694",
@@ -2228,7 +2228,7 @@
   {
     "id": "3768701",
     "unitNumber": 7,
-    "text": "Ağaç yapılarına ait aşağıdaki ifadelerden hangisi doğru &lt;span style=\"text-decoration: underline;\"&gt;<strong>değildir?</strong>&lt;/span&gt;",
+    "text": "Ağaç yapılarına ait aşağıdaki ifadelerden hangisi doğru <u><strong>değildir?</strong></u>",
     "correctAnswer": "B",
     "options": {
       "A": "Ağacın yüksekliği kök düğümün yüksekliğine eşittir.",
@@ -2251,7 +2251,7 @@
       "D": "Yalnızca Boole verilerini depolayan bir veri yapısı.",
       "E": "Yalnızca String verilerini depolayan bir veri yapısı."
     },
-    "explanation": "Bağlı listelerde düğümler bir sonraki düğümün adresini gösterdiğinden bellekte farklı yerlerde yer alabilirler. Listeler dizi (İng. array) yapılarına benzer şekilde belirli bir veri koleksiyonunu işlemek/saklamak amaçlı kullanılırlar. Ancak bellek kullanımı açısından daha avantajlı oldukları durumlar söz konusudur. Örneğin, 100 adet sayının dizi yapısı ile saklanması durumunda bu kümenin tümünün tek bir bellek bloğu içinde saklanması gerekirken liste yapısında her bir düğüm bellekteki farklı bir lokasyonda bulunabilir<br/>Dopru yanıt B seçeneğinde verilmiştir."
+    "explanation": "Dopru yanıt B seçeneğinde verilmiştir.<br/>Bağlı listelerde düğümler bir sonraki düğümün adresini gösterdiğinden bellekte farklı yerlerde yer alabilirler. Listeler dizi (İng. array) yapılarına benzer şekilde belirli bir veri koleksiyonunu işlemek/saklamak amaçlı kullanılırlar. Ancak bellek kullanımı açısından daha avantajlı oldukları durumlar söz konusudur. Örneğin, 100 adet sayının dizi yapısı ile saklanması durumunda bu kümenin tümünün tek bir bellek bloğu içinde saklanması gerekirken liste yapısında her bir düğüm bellekteki farklı bir lokasyonda bulunabilir"
   },
   {
     "id": "3768894",
@@ -2279,7 +2279,7 @@
       "D": "Dairesel çift yönlü bağlı liste",
       "E": "Dizisel Liste"
     },
-    "explanation": "Listeler işaretçilerin sayısı ve kullanımına bağlı olarak dört temel sınıfa ayrılırlar. Bunlar<br/>1. Tek yönlü bağlı liste<br/>2. Çift yönlü bağlı liste<br/>3. Dairesel tek yönlü bağlı liste<br/>4. Dairesel çift yönlü bağlı liste<br/>Bu soruda E seçeneğini işaretlemeniz gerekir."
+    "explanation": "Bu soruda E seçeneğini işaretlemeniz gerekir.<br/>Listeler işaretçilerin sayısı ve kullanımına bağlı olarak dört temel sınıfa ayrılırlar. Bunlar<br/>1. Tek yönlü bağlı liste<br/>2. Çift yönlü bağlı liste<br/>3. Dairesel tek yönlü bağlı liste<br/>4. Dairesel çift yönlü bağlı liste"
   },
   {
     "id": "3768896",
@@ -2335,7 +2335,7 @@
       "D": "Katman -1 de bulunur.",
       "E": "Her katmandaki düğüm kök düğümü olduğundan her katmanda bulunur."
     },
-    "explanation": "Ağaçlar düğümlerin hiyerarşik bir yapıya sahip olacak şekilde birbirine bağlandığı doğrusal olmayan yapılardır. Bu yapılarda ilk düğüm kök olarak adlandırılır. Kök düğümden başlayarak her düğümün adreslerini sakladığı çocuk düğümleri olabilir. Görsel olarak kök düğüm en üst katman olan katman 0 da yer alır ve diğer düğümler katmanlar hâlinde yerleştirilirler.<br/>Doğru yanıt C seçeneğinde verilmiştir."
+    "explanation": "Doğru yanıt C seçeneğinde verilmiştir.<br/>Ağaçlar düğümlerin hiyerarşik bir yapıya sahip olacak şekilde birbirine bağlandığı doğrusal olmayan yapılardır. Bu yapılarda ilk düğüm kök olarak adlandırılır. Kök düğümden başlayarak her düğümün adreslerini sakladığı çocuk düğümleri olabilir. Görsel olarak kök düğüm en üst katman olan katman 0 da yer alır ve diğer düğümler katmanlar hâlinde yerleştirilirler."
   },
   {
     "id": "3768900",
@@ -2349,7 +2349,7 @@
       "D": "3",
       "E": "2^2 = 4"
     },
-    "explanation": "İkili ağaçlarda her bir düğümün en fazla iki çocuk düğümü olabilmektedir. Bu düğümler sağ ve sol çocuk olarak adlandırılmaktadır. İkili ağaçlar derleyiciler tarafından söz dizimi ağaçlarının oluşturulması, ifade derleyici ve çözücülerde kullanılmaktadır<br/>Doğru yanıt C seçeneğinde verilmiştir."
+    "explanation": "Doğru yanıt C seçeneğinde verilmiştir.<br/>İkili ağaçlarda her bir düğümün en fazla iki çocuk düğümü olabilmektedir. Bu düğümler sağ ve sol çocuk olarak adlandırılmaktadır. İkili ağaçlar derleyiciler tarafından söz dizimi ağaçlarının oluşturulması, ifade derleyici ve çözücülerde kullanılmaktadır"
   },
   {
     "id": "3768901",
@@ -2363,7 +2363,7 @@
       "D": "İkili arama ağaçlarının düğümlerinin sol tarafındaki düğümler sağ taraftaki düğümlerden küçük ögeler içermek zorundadır. İkili ağaçlarda bu zorunluluk yoktur.",
       "E": "İkili arama ağaçlarında her düğümün mutlaka bir sol ve sağ düğümü olması gerekirken ikili ağaçlarda bu zorunluluk yoktur."
     },
-    "explanation": "İkili arama ağaçları her düğümün sağ ve sol çocuğunun olabileceği yapıya sahiptir. Bu ağaçlarda sol çocuk her zaman ebeveyninden küçük veya eşit değeri saklarken sağ çocuk ise her zaman ebeveyninden büyük bir değer saklamak durumundadır.<br/>Doğru yanıt D seçeneğinde verilmiştir."
+    "explanation": "Doğru yanıt D seçeneğinde verilmiştir.<br/>İkili arama ağaçları her düğümün sağ ve sol çocuğunun olabileceği yapıya sahiptir. Bu ağaçlarda sol çocuk her zaman ebeveyninden küçük veya eşit değeri saklarken sağ çocuk ise her zaman ebeveyninden büyük bir değer saklamak durumundadır."
   },
   {
     "id": "3768902",
@@ -2545,7 +2545,7 @@
       "D": "Yazım hatası",
       "E": "Adreslerin önemsiz olması"
     },
-    "explanation": "Düğümler arası ilişkilerin sadece ok kullanılarak ve işaretçi çizilmeden gösterilmesinin nedeni gösterim kolaylığıdır. Veri yapılarında düğümler arası ilişki, genellikle bir <strong>işaretçi (pointer)</strong> ile kurulsa da, diyagramlarda bu işaretçileri <strong>ayrıntılı olarak çizmek yerine</strong> sadece <strong>bir ok (→)</strong> ile temsil etmek <strong>hem pratiklik hem de okunabilirlik açısından</strong> tercih edilir.<br/>&lt;h4 data-start=\"875\" data-end=\"910\"&gt;Bu yöntem neden kullanılır?&lt;/h4&gt;<ul><li>Gerçek bellekte işaretçiler vardır, ancak çizimlerde <strong>soyut bir temsil</strong> kullanmak daha kolay ve görseldir.</li><li>İşaretçi çizmek yerine ok kullanmak:<ul><li>Diyagramın <strong>sade görünmesini sağlar.</strong></li><li><strong>Karmaşıklığı azaltır.</strong></li><li>Eğitim ve sunumlarda <strong>anlatımı kolaylaştırır.</strong></li></ul></li></ul>&lt;hr data-start=\"1189\" data-end=\"1192\" /&gt;<br/>&lt;h3 data-start=\"1194\" data-end=\"1226\"&gt;Diğer Şıklar Neden Yanlış?&lt;/h3&gt;<br/><strong>A) İşaretçinin önemsiz olması:</strong><br/>→ Tam tersi, işaretçiler oldukça önemlidir. Gösterilmemesi, önemsenmediği anlamına gelmez.<br/><strong>C) Programcı tercihi:</strong><br/>→ Bu bir bireysel tercih değil, <strong>görsel gösterim konvansiyonudur.</strong><br/><strong>D) Yazım hatası:</strong><br/>→ Bilinçli olarak yapılan bir gösterimdir, hata değildir.<br/><strong>E) Adreslerin önemsiz olması:</strong><br/>→ Bellek adresleri uygulama için önemlidir, sadece görsel temsil sırasında soyutlanır.<br/>&lt;hr data-start=\"1677\" data-end=\"1680\" /&gt;<br/>&lt;h3 data-start=\"1682\" data-end=\"1695\"&gt;Sonuç:&lt;/h3&gt;<br/>Düğümler arası ilişkiler diyagramlarda <strong>işaretçi yerine okla</strong> gösterilir çünkü bu <strong>gösterim kolaylığı ve görsel sadelik</strong> sağlar.<br/><strong>Doğru cevap: B) Gösterim kolaylığı</strong>"
+    "explanation": "Düğümler arası ilişkilerin sadece ok kullanılarak ve işaretçi çizilmeden gösterilmesinin nedeni gösterim kolaylığıdır."
   },
   {
     "id": "3768975",
@@ -2615,7 +2615,7 @@
       "D": "4",
       "E": "5"
     },
-    "explanation": "ikili ağaçlarda her bir düğümün en fazla iki çocuk düğümü olabilir.<br/>2"
+    "explanation": "ikili ağaçlarda her bir düğümün en fazla iki çocuk düğümü olabilir."
   },
   {
     "id": "3768980",
@@ -2643,7 +2643,7 @@
       "D": "ağaç yapısındaki yaprak düğümleri",
       "E": "liste yapısındaki bütün düğümler"
     },
-    "explanation": "Ağaç yapısındaki yaprak düğümleri, geçerli bir adres bilgisinin saklanmadığı düğümlerdir"
+    "explanation": "Ağaç yapısındaki yaprak düğümleri, geçerli bir adres bilgisinin saklanmadığı düğümlerdir ağaç yapısındaki yaprak düğümleri"
   },
   {
     "id": "3768982",
@@ -2671,7 +2671,7 @@
       "D": "II,III",
       "E": "I,II ve III"
     },
-    "explanation": "Gözetimli öğrenmede iki temel problem üzerinde çözüm üretilebilir. Bunlardan ilki sınıflandırma problemidir. Gözetimli algoritmalar sınıflandırma dışında değer tahminleme amaçlı da kullanılırlar. Bu durumda ilgili problem sürekli bir problem olarak kabul edilerek regresyon ismiyle anılır.<br/>Gözetimli öğrenmede iki temel problem üzerinde çözüm üretilebilir. Bunlardan ilki sınıflandırma problemidir. Sınıflandırma verilen bir örneğin bilinen sınıflardan hangisine ait olduğunun saptanmasıdır.<br/>Gözetimli algoritmalar sınıflandırma dışında değer tahminleme amaçlı da kullanılırlar. Bu durumda ilgili problem sürekli bir problem olarak kabul edilerek regresyon ismiyle anılır. Regresyon algoritmalarında mevcut örneklerin değerleri göz önünde bulundurularak bir tahminde bulunulur.<br/>Doğru cevap C seçeneğidir."
+    "explanation": "Gözetimli öğrenmede iki temel problem üzerinde çözüm üretilebilir. Bunlardan ilki sınıflandırma problemidir. Gözetimli algoritmalar sınıflandırma dışında değer tahminleme amaçlı da kullanılırlar. Bu durumda ilgili problem sürekli bir problem olarak kabul edilerek regresyon ismiyle anılır.<br/>Gözetimli öğrenmede iki temel problem üzerinde çözüm üretilebilir. Bunlardan ilki sınıflandırma problemidir. Sınıflandırma verilen bir örneğin bilinen sınıflardan hangisine ait olduğunun saptanmasıdır.<br/>Gözetimli algoritmalar sınıflandırma dışında değer tahminleme amaçlı da kullanılırlar. Bu durumda ilgili problem sürekli bir problem olarak kabul edilerek regresyon ismiyle anılır. Regresyon algoritmalarında mevcut örneklerin değerleri göz önünde bulundurularak bir tahminde bulunulur."
   },
   {
     "id": "3768844",
@@ -2685,7 +2685,7 @@
       "D": "II,III",
       "E": "I,II ve III"
     },
-    "explanation": "Diğer bir bakış açısıyla etiketli veri olmaması durumunda gözetimsiz yöntemler tercih edilir. Sınıflandırma problemine benzer şekilde verilerin belirli kümeler altında toplanması işlemi kümeleme algoritmaları ile sağlanır. Bu yaklaşımda her bir örnek kendine en benzer örnekler ile bir küme oluşturur ancak ilgili kümeye bir sınıf etiketi atanamaz. Gözetimsiz öğrenmenin diğer bir uygulama hedefi ise bir modeldeki öznitelik sayısını, boyut azaltma yoluyla düşürmek için kullanılmasıdır.<br/>I,II"
+    "explanation": "Diğer bir bakış açısıyla etiketli veri olmaması durumunda gözetimsiz yöntemler tercih edilir. Sınıflandırma problemine benzer şekilde verilerin belirli kümeler altında toplanması işlemi kümeleme algoritmaları ile sağlanır. Bu yaklaşımda her bir örnek kendine en benzer örnekler ile bir küme oluşturur ancak ilgili kümeye bir sınıf etiketi atanamaz. Gözetimsiz öğrenmenin diğer bir uygulama hedefi ise bir modeldeki öznitelik sayısını, boyut azaltma yoluyla düşürmek için kullanılmasıdır."
   },
   {
     "id": "3768845",
@@ -2699,7 +2699,7 @@
       "D": "I,III",
       "E": "I,II ve III"
     },
-    "explanation": "Pekiştirmeli öğrenme, doğru girdi/çıktı eşleşmelerinin diğer bir deyişle etiket bilgisinin verilmemesi, optimal olmayan eylemlerin düzeltilmemesi, ortamla etkileşimin sürekli olması gibi çeşitli yönleriyle gözetimli öğrenmeden ayrışmaktadır.<br/>I,II ve III"
+    "explanation": "Pekiştirmeli öğrenme, doğru girdi/çıktı eşleşmelerinin diğer bir deyişle etiket bilgisinin verilmemesi, optimal olmayan eylemlerin düzeltilmemesi, ortamla etkileşimin sürekli olması gibi çeşitli yönleriyle gözetimli öğrenmeden ayrışmaktadır."
   },
   {
     "id": "3768846",
@@ -2727,7 +2727,7 @@
       "D": "II,III",
       "E": "I,II ve III"
     },
-    "explanation": "Yapay sinir hücrelerinin girdi işleme sürecinde aktivasyon fonksiyonu, ağırlık değeri ve toplama/birleştirme fonksiyonu temel bileşenler olarak kabul edilir<br/>I,II ve III"
+    "explanation": "Yapay sinir hücrelerinin girdi işleme sürecinde aktivasyon fonksiyonu, ağırlık değeri ve toplama/birleştirme fonksiyonu temel bileşenler olarak kabul edilir"
   },
   {
     "id": "3768854",
@@ -2741,7 +2741,7 @@
       "D": "II,III",
       "E": "I,II ve III"
     },
-    "explanation": "Tek katmanlı algılayıcılarda bir girdi bir de çıktı katmanı olur. Çok katmanlı ağlarda ise giriş, gizli katmanlar ve çıktı katmanı yer alır<br/>II,III"
+    "explanation": "Tek katmanlı algılayıcılarda bir girdi bir de çıktı katmanı olur. Çok katmanlı ağlarda ise giriş, gizli katmanlar ve çıktı katmanı yer alır"
   },
   {
     "id": "3768858",
@@ -2755,7 +2755,7 @@
       "D": "II,III",
       "E": "I,II ve III"
     },
-    "explanation": "Genetik algoritmalarda performansı çaprazlama ve mutasyon işlemlerinin olasılıklarının yanı sıra popülasyon büyüklüğü, maksimum nesil sayısı gibi faktörler de etkiler<br/>I,II ve III"
+    "explanation": "Genetik algoritmalarda performansı çaprazlama ve mutasyon işlemlerinin olasılıklarının yanı sıra popülasyon büyüklüğü, maksimum nesil sayısı gibi faktörler de etkiler"
   },
   {
     "id": "3768866",
@@ -2783,7 +2783,7 @@
       "D": "I,III",
       "E": "I,II ve III"
     },
-    "explanation": "Simetrik algoritmalar anahtar boyunun kısa olması, donanım ile birlikte kullanılabilmeleri, hızlı olmaları gibi güçlü yanlara sahiptir.<br/>I,II ve III"
+    "explanation": "Simetrik algoritmalar anahtar boyunun kısa olması, donanım ile birlikte kullanılabilmeleri, hızlı olmaları gibi güçlü yanlara sahiptir."
   },
   {
     "id": "3768871",
@@ -2797,7 +2797,7 @@
       "D": "I,III",
       "E": "I, II ve III"
     },
-    "explanation": "Asimetrik şifrelerin farklı anahtar kullanılarak oluşturulması sebebi ile şifrelemenin kırılması simetrik şifrelemeye göre daha zordur. Farklı anahtarlar kullanılması sebebi ile simetrik şifrelemede karşılaşılan anahtar dağıtma problemi de mevcut değildir. Bununla birlikte anahtarları kullanarak bilgileri çözme işlemlerinde CPU zamanının çok fazla olması asimetrik şifrelemenin zayıf yönüdür<br/>II"
+    "explanation": "Asimetrik şifrelerin farklı anahtar kullanılarak oluşturulması sebebi ile şifrelemenin kırılması simetrik şifrelemeye göre daha zordur. Farklı anahtarlar kullanılması sebebi ile simetrik şifrelemede karşılaşılan anahtar dağıtma problemi de mevcut değildir. Bununla birlikte anahtarları kullanarak bilgileri çözme işlemlerinde CPU zamanının çok fazla olması asimetrik şifrelemenin zayıf yönüdür"
   },
   {
     "id": "3768873",
@@ -2951,7 +2951,7 @@
       "D": "Birçok resmi inceleyip resmin hayvan resmi içerip içwermediğine karar vermek.",
       "E": "Güvenlik kameralarından plaka tanımlamak."
     },
-    "explanation": "Gözetimsiz öğrenme, kümeleme algoritmalarında kullanılmaktadır. Bilgisayar kullanıcısının girdiği WEB sitelerini diğer girilmeyen siteler arasında belirleyip hangi tür sitelere girildiğinin analizi bu sitelerle benzer içeriklerin bulunması ve o içeriklerin önerilmesi doğrudan bir kümeleme algoritmasıdır. Bu yüzden A seçeneği bu problem için uygundur.<br/>Doğru yanıt A seçeneğinde verilmiştir."
+    "explanation": "Doğru yanıt A seçeneğinde verilmiştir.<br/>Gözetimsiz öğrenme, kümeleme algoritmalarında kullanılmaktadır. Bilgisayar kullanıcısının girdiği WEB sitelerini diğer girilmeyen siteler arasında belirleyip hangi tür sitelere girildiğinin analizi bu sitelerle benzer içeriklerin bulunması ve o içeriklerin önerilmesi doğrudan bir kümeleme algoritmasıdır. Bu yüzden A seçeneği bu problem için uygundur."
   },
   {
     "id": "3768884",
@@ -2965,7 +2965,7 @@
       "D": "Müşterileri davranışlarına veya tercihlerine göre gruplara ayırma",
       "E": "Finansal verilerdeki hileli işlemlerin tespiti."
     },
-    "explanation": "B seçeneğinde verilen problem çözümü regresyon için son derece elverişli bir örnektir. Ai D ve E seçeneklerinde verile problemler kümeledirme problemi olup gözetimcisiz öğrenme için uygundur. C seçeneğinde ise veri sıkıştırma yöntemi kulannılmakta bu da gözetimcisiz öğrenme için uygun bir problem sunmaktadır.<br/>Doğru yanıt B seçeneğinde verilmiştir."
+    "explanation": "Doğru yanıt B seçeneğinde verilmiştir.<br/>B seçeneğinde verilen problem çözümü regresyon için son derece elverişli bir örnektir. Ai D ve E seçeneklerinde verile problemler kümeledirme problemi olup gözetimcisiz öğrenme için uygundur. C seçeneğinde ise veri sıkıştırma yöntemi kulannılmakta bu da gözetimcisiz öğrenme için uygun bir problem sunmaktadır."
   },
   {
     "id": "3768885",
@@ -2993,7 +2993,7 @@
       "D": "TP değerinin TP-FP değerine bölünmesiyle elde edilir.",
       "E": "TP değerinin TP+FP değerine bölünmesiyle elde edilir."
     },
-    "explanation": "Kesinlik metriği hata matrisinde yer alan TP değerinin TP+FP değerine bölünmesi ile elde edilir. Diğer bir deyişle verilen bir sınıf için doğru tahminlenen örnek sayısının o sınıf etiketi ile etiketlenen toplam örnek sayısına oranıdır. Çok sınıflı problemlerde her bir sınıf için ilgili değer hesaplanarak ortalama kesinlik değeri başarım sonucu olarak kullanılır. Hata matrisi, bir sınıflandırma modelinin tahmin sonuçlarını gerçek değerlerle karşılaştırarak 4 temel kategoride özetleyen bir tablodur.<br/>&lt;h4 data-start=\"480\" data-end=\"536\"&gt;İkili sınıflandırma için tipik bir hata matrisi:&lt;/h4&gt;<br/>&lt;table data-start=\"538\" data-end=\"845\" class=\"w-fit min-w-(--thread-content-width)\"&gt;<br/>&lt;thead data-start=\"538\" data-end=\"613\"&gt;<br/>&lt;tr data-start=\"538\" data-end=\"613\"&gt;<br/>&lt;th data-start=\"538\" data-end=\"562\" data-col-size=\"sm\"&gt;&lt;/th&gt;<br/>&lt;th data-start=\"562\" data-end=\"587\" data-col-size=\"sm\"&gt;<strong>Gerçek Pozitif (1)</strong>&lt;/th&gt;<br/>&lt;th data-start=\"587\" data-end=\"613\" data-col-size=\"sm\"&gt;<strong>Gerçek Negatif (0)</strong>&lt;/th&gt;<br/>&lt;/tr&gt;<br/>&lt;/thead&gt;<br/>&lt;tbody data-start=\"690\" data-end=\"845\"&gt;<br/>&lt;tr data-start=\"690\" data-end=\"767\"&gt;<br/>&lt;td data-start=\"690\" data-end=\"715\" data-col-size=\"sm\"&gt;<strong>Tahmin Pozitif (1)</strong>&lt;/td&gt;<br/>&lt;td data-col-size=\"sm\" data-start=\"715\" data-end=\"740\"&gt;True Positive (TP)&lt;/td&gt;<br/>&lt;td data-col-size=\"sm\" data-start=\"740\" data-end=\"767\"&gt;False Positive (FP)&lt;/td&gt;<br/>&lt;/tr&gt;<br/>&lt;tr data-start=\"768\" data-end=\"845\"&gt;<br/>&lt;td data-start=\"768\" data-end=\"793\" data-col-size=\"sm\"&gt;<strong>Tahmin Negatif (0)</strong>&lt;/td&gt;<br/>&lt;td data-col-size=\"sm\" data-start=\"793\" data-end=\"818\"&gt;False Negative (FN)&lt;/td&gt;<br/>&lt;td data-col-size=\"sm\" data-start=\"818\" data-end=\"845\"&gt;True Negative (TN)&lt;/td&gt;<br/>&lt;/tr&gt;<br/>&lt;/tbody&gt;<br/>&lt;/table&gt;<br/><strong><br/>Kesinlik</strong>, modelin pozitif olarak tahmin ettiklerinin <strong>ne kadarının gerçekten pozitif olduğunu</strong> gösterir.<br/>&lt;span class=\"katex-display\"&gt;&lt;span class=\"katex\"&gt;&lt;span class=\"katex-mathml\"&gt;&lt;math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mtext&gt;Kesinlik (Precision)&lt;/mtext&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;F&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=\"application/x-tex\"&gt;\\text{Kesinlik (Precision)} = \\frac{TP}{TP + FP}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=\"katex-html\" aria-hidden=\"true\"&gt;&lt;span class=\"base\"&gt;&lt;span class=\"mord\"&gt;&lt;span class=\"mfrac\"&gt;&lt;/span&gt; &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;<strong>Açılım:</strong><ul><li><strong>TP (True Positive):</strong> Modelin \"pozitif\" deyip, gerçekten pozitif olan örnekler</li><li><strong>FP (False Positive):</strong> Modelin \"pozitif\" deyip, aslında negatif olan hatalı örnekler</li></ul>&lt;h3 data-start=\"1251\" data-end=\"1265\"&gt;Anlamı:&lt;/h3&gt;<br/>Model “bu örnek pozitiftir” dediğinde, bu tahminin <strong>ne kadar güvenilir </strong>olduğunu açıklamaktadır.<br/>Doğru cevap E seçeneğinde verilmiştir."
+    "explanation": "Kesinlik metriği hata matrisinde yer alan TP değerinin TP+FP değerine bölünmesi ile elde edilir. Diğer bir deyişle verilen bir sınıf için doğru tahminlenen örnek sayısının o sınıf etiketi ile etiketlenen toplam örnek sayısına oranıdır. Çok sınıflı problemlerde her bir sınıf için ilgili değer hesaplanarak ortalama kesinlik değeri başarım sonucu olarak kullanılır.<br/>Hata matrisi, bir sınıflandırma modelinin tahmin sonuçlarını gerçek değerlerle karşılaştırarak 4 temel kategoride özetleyen bir tablodur.<br/>İkili sınıflandırma için tipik bir hata matrisi:<table><thead><tr><th><strong>Gerçek Pozitif (1)</strong></th><th><strong>Gerçek Negatif (0)</strong></th></tr></thead><tbody><tr><td><strong>Tahmin Pozitif (1)</strong></td><td>True Positive (TP)</td><td>False Positive (FP)</td></tr><tr><td><strong>Tahmin Negatif (0)</strong></td><td>False Negative (FN)</td><td>True Negative (TN)</td></tr></tbody></table><br/><strong><br/>Kesinlik</strong>, modelin pozitif olarak tahmin ettiklerinin <strong>ne kadarının gerçekten pozitif olduğunu</strong> gösterir.<br/><math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mtext>Kesinlik (Precision)</mtext><mo>=</mo><mfrac><mrow><mi>T</mi><mi>P</mi></mrow><mrow><mi>T</mi><mi>P</mi><mo>+</mo><mi>F</mi><mi>P</mi></mrow></mfrac></mrow><annotation encoding=\"application/x-tex\">\\text{Kesinlik (Precision)} = \\frac{TP}{TP + FP}</annotation></semantics></math> <strong>Açılım:</strong><ul><li><strong>TP (True Positive):</strong> Modelin \"pozitif\" deyip, gerçekten pozitif olan örnekler</li><li><strong>FP (False Positive):</strong> Modelin \"pozitif\" deyip, aslında negatif olan hatalı örnekler</li></ul>Anlamı:<br/>Model “bu örnek pozitiftir” dediğinde, bu tahminin <strong>ne kadar güvenilir </strong>olduğunu açıklamaktadır.<br/>Doğru cevap E seçeneğinde verilmiştir."
   },
   {
     "id": "3768887",
@@ -3007,7 +3007,7 @@
       "D": "TN değerin TN+FN toplamına bölünmesiyle elde edilir.",
       "E": "TN değerin TN+FP toplamına bölünmesiyle elde edilir."
     },
-    "explanation": "Duyarlılık değeri; verilen bir sınıf için doğru tahminlenen örnek sayısının (TP) o sınıfa ait toplam örnek sayısına (TP+FN) oranı olarak hesaplanır. Diğer bir deyişle bir sınıfa ait örneklerin ne oranda o sınıfa ait olarak tahminlendiğini gösteren bir göstergedir.<br/>Duyarlılık değeri ise verilen bir sınıf için doğru tahminlenen örnek sayısının (TP) o sınıfa ait toplam örnek sayısına (TP+FN) oranı olarak hesaplanır. Diğer bir deyişle<br/>bir sınıfa ait örneklerin ne oranda o sınıfa ait olarak tahminlendiğini gösteren bir göstergedir"
+    "explanation": "Duyarlılık değeri; verilen bir sınıf için doğru tahminlenen örnek sayısının (TP) o sınıfa ait toplam örnek sayısına (TP+FN) oranı olarak hesaplanır. Diğer bir deyişle bir sınıfa ait örneklerin ne oranda o sınıfa ait olarak tahminlendiğini gösteren bir göstergedir.<br/>Duyarlılık değeri ise verilen bir sınıf için doğru tahminlenen örnek sayısının (TP) o sınıfa ait toplam örnek sayısına (TP+FN) oranı olarak hesaplanır. Diğer bir deyişle bir sınıfa ait örneklerin ne oranda o sınıfa ait olarak tahminlendiğini gösteren bir göstergedir"
   },
   {
     "id": "3768888",
@@ -3021,7 +3021,7 @@
       "D": "F1 değeri hesaplanmasında TN (Doğru Negatif) değeri kullanılır.",
       "E": "F1 değeri hesaplanmasında FP (Yanlış Pozitif) değeri kullanılır."
     },
-    "explanation": "Kesinlik metriği hata matrisinde yer alan TP değerinin TP+FP değerine bölünmesi ile elde edilir. Diğer bir deyişle verilen bir sınıf için doğru tahminlenen örnek sayısının o sınıf etiketi ile etiketlenen toplam örnek sayısına oranıdır. Çok sınıflı problemlerde her bir sınıf için ilgili değer hesaplanarak ortalama kesinlik değeri başarım sonucu olarak kullanılır. Duyarlılık değeri ise verilen bir sınıf için doğru tahminlenen örnek sayısının (TP) o sınıfa ait toplam örnek sayısına (TP+FN) oranı olarak hesaplanır. Diğer bir deyişle bir sınıfa ait örneklerin ne oranda o sınıfa ait olarak tahminlendiğini gösteren bir göstergedir. Bu iki metriğin harmonik ortalaması F1 değerini verir. Ortalama kare hatası ise regresyon problemlerinde sıklıkla kullanılan bir performans metriğidir. Basitçe, tahminlenen değer ile gerçek değer arasındaki farkların ortalamasıdır. Ortalama kare hatası değerinin yüksek olması tahminlerin hatalı olduğu ve tahminlerde gerçek değerlerden uzaklaşıldığına dair belirti olarak kabul edil<br/>F1 değeri hesabında TN kullanılmaz. O yüzden D seçeneği işaretlenmelidir."
+    "explanation": "F1 değeri hesabında TN kullanılmaz. O yüzden D seçeneği işaretlenmelidir.<br/>Kesinlik metriği hata matrisinde yer alan TP değerinin TP+FP değerine bölünmesi ile elde edilir. Diğer bir deyişle verilen bir sınıf için doğru tahminlenen örnek sayısının o sınıf etiketi ile etiketlenen toplam örnek sayısına oranıdır. Çok sınıflı problemlerde her bir sınıf için ilgili değer hesaplanarak ortalama kesinlik değeri başarım sonucu olarak kullanılır. Duyarlılık değeri ise verilen bir sınıf için doğru tahminlenen örnek sayısının (TP) o sınıfa ait toplam örnek sayısına (TP+FN) oranı olarak hesaplanır. Diğer bir deyişle bir sınıfa ait örneklerin ne oranda o sınıfa ait olarak tahminlendiğini gösteren bir göstergedir. Bu iki metriğin harmonik ortalaması F1 değerini verir. Ortalama kare hatası ise regresyon problemlerinde sıklıkla kullanılan bir performans metriğidir. Basitçe, tahminlenen değer ile gerçek değer arasındaki farkların ortalamasıdır. Ortalama kare hatası değerinin yüksek olması tahminlerin hatalı olduğu ve tahminlerde gerçek değerlerden uzaklaşıldığına dair belirti olarak kabul edil"
   },
   {
     "id": "3768889",
@@ -3063,7 +3063,7 @@
       "D": "Genetik Algoritmalar",
       "E": "Şifreleme Algoritmaları"
     },
-    "explanation": "Sembolik fonksiyonların kullanıldığı parametrik olmayan algoritmaların en bilinen örneği karar ağaçlarıdır. Karar ağaçlarında temel amaç veri kümesini adımsal olarak böl-fethet yöntemiyle alt gruplara bölerek çözüme yaklaşmaktır. Karar ağaçlarında kök düğüm, düğümler, yapraklar (terminal düğüm) şeklinde isimlendirilen yapılar bulunur<br/>Doğru yanıt C seçeneğinde verilmiştir."
+    "explanation": "Doğru yanıt C seçeneğinde verilmiştir.<br/>Sembolik fonksiyonların kullanıldığı parametrik olmayan algoritmaların en bilinen örneği karar ağaçlarıdır. Karar ağaçlarında temel amaç veri kümesini adımsal olarak böl-fethet yöntemiyle alt gruplara bölerek çözüme yaklaşmaktır. Karar ağaçlarında kök düğüm, düğümler, yapraklar (terminal düğüm) şeklinde isimlendirilen yapılar bulunur"
   },
   {
     "id": "3768892",
@@ -3077,7 +3077,7 @@
       "D": "Kriptografik Algoritmalar",
       "E": "Asimetrik Anahtar Algoritmaları"
     },
-    "explanation": "Yapay sinir ağları insan beyninin karar verme mekanizmasının taklit edilmesine dayalı bir algoritmalar grubudur. Bu algoritmaların temel amacı bir dizi verideki temel ilişkileri tanımaya çalışmaktır. Yapay sinir ağlarının temel birimi sinir hücresidir. Sinir hücreleri biyolojik sinir hücrelerine benzer bir yapıda tasarlanmıştır.<br/>Doğru yanıt A seçeneği olmalıdır."
+    "explanation": "Doğru yanıt A seçeneği olmalıdır.<br/>Yapay sinir ağları insan beyninin karar verme mekanizmasının taklit edilmesine dayalı bir algoritmalar grubudur. Bu algoritmaların temel amacı bir dizi verideki temel ilişkileri tanımaya çalışmaktır. Yapay sinir ağlarının temel birimi sinir hücresidir. Sinir hücreleri biyolojik sinir hücrelerine benzer bir yapıda tasarlanmıştır."
   },
   {
     "id": "3768950",

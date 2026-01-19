@@ -1,6 +1,8 @@
 import { load } from 'cheerio';
 import he from 'he';
 
+const ALLOWED_TAGS = new Set(['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'br', 'b', 'strong', 'i', 'em', 'u', 's', 'strike', 'ins', 'del', 'code', 'pre', 'ul', 'ol', 'li', 'img', 'a', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'blockquote', 'sup', 'sub', 'kbd', 'samp', 'var', 'span', 'div', 'math', 'semantics', 'mrow', 'mtext', 'mo', 'mfrac', 'mi', 'annotation', 'mover', 'munder', 'munderover', 'msqrt', 'mroot', 'mstyle', 'merror', 'mpadded', 'mphantom', 'mfenced', 'menclose', 'mtable', 'mtr', 'mtd', 'maligngroup', 'malignmark', 'ms', 'mspace', 'mglyph', 'mn', 'msup', 'msub', 'mmsubsup', 'form', 'input', 'select', 'option', 'label', 'textarea', 'keygen', 'article', 'section', 'aside', 'header', 'footer', 'main', 'nav', 'address']);
+
 // Interface for configuration
 export interface CleanHtmlOptions {
     preserveCode?: boolean;
@@ -11,12 +13,15 @@ export interface CleanHtmlOptions {
     applyTechnicalLogic?: boolean;
     normalizePlaceholders?: boolean;
     normalizeUnicode?: boolean;
+    university?: string;
+    source?: string;
 }
 
 export interface RepairOptions {
     stripLoneBr?: boolean;
     normalizePlaceholders?: boolean;
     normalizeUnicode?: boolean;
+    isTechnical?: boolean;
 }
 
 export function repairText(text: string, options: RepairOptions = { stripLoneBr: true, normalizePlaceholders: false, normalizeUnicode: false }): string {
@@ -44,29 +49,164 @@ export function repairText(text: string, options: RepairOptions = { stripLoneBr:
     // Fix common AÖF OCR typos
     cleaned = cleaned.replace(/temeliolarak/gi, 'temeli olarak');
 
+    // 4. Anadolu AÖF specific junk (exposed attributes as plain text)
+    const attributeArtifactRegex = /\b(?:data-[a-z0-9_-]+|positionpattern|toolbar|formatter|handler)\s*=\s*"(?:[^"\\]|\\.)*"/gi;
+    cleaned = cleaned.replace(attributeArtifactRegex, '');
+
+    // 5. Strip broken HTML-like fragments that often remain after stripping attributes
+    const bracketArtifactRegex = /<(?:table|tbody|tr|td|p|div|span|font)\b[^>]*?(?:data-|positionpattern|toolbar|formatter|handler)\s*=[^>]*?>/gi;
+    cleaned = cleaned.replace(bracketArtifactRegex, '');
+
+    // 6. Final Cleanup: Remove stray closing brackets that often follow attribute junk at the start
+    // UNLESS it looks like a math operator or placeholder start (followed by space and alphanumeric)
+    cleaned = cleaned.replace(/^\s*(?:&gt;|>)(?!\s*[\w\u00C0-\u017F])/, '');
+
+    // 7. Repair double-encoded tags (e.g. &amp;lt;dir&amp;gt; -> <dir>)
+    cleaned = cleaned.replace(/&amp;(?:lt|gt);/gi, (match) => match.toLowerCase() === '&amp;lt;' ? '&lt;' : '&gt;');
+
     // Remove basic comments (safer here)
     cleaned = cleaned.replace(/<!--[\s\S]*?-->/g, "");
 
+    // Remove <br type="_moz"> artifacts which are common in rich text editors
+    cleaned = cleaned.replace(/<br\s+type="_moz"\s*\/?>/gi, "");
+
+    // Remove text-encoded HR artifacts
+    cleaned = cleaned.replace(/&lt;hr\s*\/?>/gi, "");
+
+    // Remove Ginger extension artifacts (iframes/divs)
+    cleaned = cleaned.replace(/&lt;iframe[^&]*ginger-extension[^&]*&gt;/gi, "");
+    cleaned = cleaned.replace(/<iframe[^>]*ginger-extension[^>]*>/gi, "");
+
+    // Remove encoded or real Angular artifacts like <source-footnote...> or &lt;source-footnote...&gt; immediately
+    // Broaden regex to handle more variations and nested structures, stopping at the first > or &gt;
+    // Also covers qb-div, chat-app, etc. if they appear in this pattern
+    cleaned = cleaned.replace(/(?:<|&lt;)\/?(?:source|sources|qb-div|chat-app|side-navigation-v2|bard-sidenav-container|bard-sidenav-content|chat-window|immersive-panel|learning-immersive-panel|activity-set|question)[\s\S]*?(?:>|&gt;)/gi, "");
+
+    // 8. Tag Healing: Convert escaped tags (like &lt;strong&gt;) back to real tags
+    // CRITICAL: We only heal OPENING tags to prevent orphaned closing tags like </p> from leaking
+    // EXCEPTION: We allow healing CLOSING tags for known safe inline formatting to prevent broken bold/strong ranges.
+    // Matches patterns like &lt;B&gt; or &lt;span style="..."&gt;, but NOT &lt;/p&gt;
+    // We use (?:(?!&gt;).)*? for attributes to allow ANYTHING until the closing &gt; without consuming it
+    // Updated whitelist to include iframe, article, section, div, p and allow technical prefixes like mat-, chat-, ng-
+    // Improved attribute matching to handle spaces before the closing &gt; more reliably
+    const tagHealingRegex = /&lt;(\/?)((?:B|STRONG|I|EM|U|S|STRIKE|SUB|SUP|HR|BR|ARTICLE|SECTION|DIV|P|LABEL|LEGEND|FIELDSET|IFRAME|SPAN|OL|UL|LI|BLOCKQUOTE|A|TABLE|TBODY|THEAD|TFOOT|TR|TH|TD|CODE|PRE|H[1-6]|CHAT-[A-Z0-9-]+|MAT-[A-Z0-9-]+|NG-[A-Z0-9-]+|IMG|META|COLGROUP|COL|FORM|INPUT|SELECT|OPTION|TEXTAREA|FONT)\b)((?:\s+(?:(?!&gt;).)*?)?)&gt;/gi;
+    cleaned = cleaned.replace(tagHealingRegex, (match, slash, tagName, attrs) => {
+        const lower = tagName.toLowerCase();
+        const isTechnical = options.isTechnical ?? false;
+
+        // Structural elements should NOT be healed if they are lone closing tags in technical content
+        // to prevent them from being stripped by Cheerio or stability loops.
+        const structuralTags = ['p', 'div', 'ul', 'ol', 'li', 'tr', 'td', 'th', 'table', 'tbody', 'thead', 'tfoot'];
+        if (slash && isTechnical && structuralTags.includes(lower)) {
+            return match;
+        }
+
+        // KEYGEN, CANVAS and other specific technical snippets should NOT be healed in technical context
+        // if they would just be removed as junk later.
+        if (isTechnical && ['keygen', 'canvas'].includes(lower)) {
+            return match;
+        }
+
+        const safeClosingTags = ['b', 'strong', 'i', 'em', 'u', 's', 'strike', 'span', 'small', 'mark', 'sub', 'sup', 'article', 'section', 'div', 'p', 'label', 'legend', 'fieldset', 'font', 'center', 'aside', 'header', 'footer', 'main', 'nav'];
+        if (slash) {
+            return safeClosingTags.includes(lower) ? he.decode(match) : match;
+        }
+
+        // Return opening tag
+        return `<${tagName}${attrs || ""}>`;
+    });
+
     return cleaned;
 }
+
+// ... (rest of file)
+
 
 export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string {
     if (!text) return "";
 
     const useTechnicalLogic = options.applyTechnicalLogic ?? options.isTechnical ?? false;
 
-    // Pre-processing
+    // --- PRE-PROCESSING ---
+    // Protect #include <...> or #include &lt;...&gt; directives IMMEDIATELY before any decoding
+    text = text.replace(/#include\s*(&lt;|<)([^&gt;>]+)(&gt;|>)/gi, (match, open, content, close) => `#include &lt;${content}&gt;`);
+
     // Use repairText for basic normalization (spaces, dashes, dots)
     // Pass down the normalization preferences (default to false to focus on errors)
     let cleaned = repairText(text, {
         stripLoneBr: true,
         normalizePlaceholders: options.normalizePlaceholders ?? false,
-        normalizeUnicode: options.normalizeUnicode ?? false
+        normalizeUnicode: options.normalizeUnicode ?? false,
+        isTechnical: useTechnicalLogic
+    });
+
+    // 1. Markdown Support
+    // Convert **bold** strictly in:
+    // - Explanations
+    // - Non-technical courses
+    // - Anadolu university content
+    // - 'alistirma-sorulari' source
+    const allowBold = options.isExplanation ||
+        !options.isTechnical ||
+        options.university === 'anadolu' ||
+        options.source === 'alistirma-sorulari';
+
+    if (allowBold) {
+        cleaned = cleaned.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+    }
+    // STOP: NO italics (*) or underscores (_) supported to protect math formulas and snake_case
+
+    // Protect common keyboard keys in angle brackets (e.g. <SHIFT>, <CTRL>)
+    cleaned = cleaned.replace(/<(SHIFT|CTRL|ALT|ESC|ENTER|TAB|F\d+|HOME|END|PGUP|PGDN|SPACE|BACKSPACE)>/gi, '&lt;$1&gt;');
+
+    // Protect PHP tags from being interpreted as processing instructions
+    cleaned = cleaned.replace(/<\?php/gi, '&lt;?php');
+    cleaned = cleaned.replace(/\?>/g, '?&gt;');
+
+    // Protect linguistic formulas containing + (e.g. <urug+ın+dın>)
+    // Restricted to simple word-like segments to avoid catching <img> with base64
+    cleaned = cleaned.replace(/<([a-zA-Z0-9şıöçğüÜİÖÇĞŞ]+\+[a-zA-Z0-9şıöçğüÜİÖÇĞŞ\+]*)>/gi, '&lt;$1&gt;');
+
+    // Remove invisible control characters (DEL U+007F)
+    cleaned = cleaned.replace(/\x7F/g, '');
+
+    // 145: Protect mathematical notation and linguistic formulas (e.g. AR<AVC, <urug+ın)
+    // 146: We escape '<' only if it's NOT followed by a valid white-listed HTML tag
+    // 147: We ALSO check for junk tags and tags to unwrap so they reach Cheerio as tags
+    const TO_UNWRAP = ['dir', 'font', 'center', 'o:p'];
+    const JUNK_TAGS_LOCAL = ['button', 'svg', 'canvas', 'script', 'style', 'audio', 'video', 'iframe', 'object', 'embed', 'form', 'input', 'textarea', 'select', 'option', 'fieldset', 'legend', 'datalist', 'output', 'meta', 'colgroup', 'col', 'xml', 'mat-icon', 'chat-app', 'side-navigation-v2', 'bard-sidenav-container', 'bard-sidenav-content', 'chat-window', 'immersive-panel', 'learning-immersive-panel', 'activity-set', 'question', 'main', 'source-footnote', 'source-inline-chip', 'sources-carousel', 'qb-div'];
+
+    // Escape tags that are NOT in allowed whitelist or known special lists
+    // This protects SQL-like placeholders and math inequalities from being parsed as tags by Cheerio
+    cleaned = cleaned.replace(/<([a-zA-Z0-9+_:-]+)\b/g, (match, tagName) => {
+        const lowerTag = tagName.toLowerCase();
+        const isTechnical = options.isTechnical ?? false;
+
+        if (ALLOWED_TAGS.has(lowerTag) ||
+            TO_UNWRAP.some(t => lowerTag.startsWith(t)) ||
+            JUNK_TAGS_LOCAL.includes(lowerTag) ||
+            lowerTag.startsWith('mat-') || lowerTag.startsWith('chat-') || lowerTag.startsWith('ng-')) {
+
+            // In technical contexts, we should escape tags that would otherwise be removed as junk
+            // unless they are explicitly allowed formatting tags.
+            if (isTechnical && JUNK_TAGS_LOCAL.includes(lowerTag) && !ALLOWED_TAGS.has(lowerTag)) {
+                return "&lt;" + tagName;
+            }
+            return match;
+        }
+        return "&lt;" + tagName;
     });
 
     // 2. Identify and handle encoded artifacts immediately but safely
-    const encodedArtifactRegex = /&lt;(?:span|div)\s+[^&gt;]*style=[^&gt;]*?(?:left|top|font-family|transform|position):[^&gt;]*?&gt;([\s\S]*?)&lt;\/(?:span|div)&gt;/gi;
+    // Broaden logic to handle both style AND class artifacts (Tailwind, AI containers, rich text snippets)
+    // We target common property markers like left, top, font-family, background-color, color, transform, position, min-h-, text-message
+    const artifactProperties = 'left|top|font-family|background-color|color|transform|position|min-h-|text-message|flex|items-start|whitespace-pre-wrap';
+    const encodedArtifactRegex = new RegExp(`&lt;(?:span|div|p)\\s+[^&gt;]*(?:style|class)=[^&gt;]*?(?:${artifactProperties})[:=][^&gt;]*?&gt;([\\s\\S]*?)&lt;\\/(?:span|div|p)&gt;`, 'gi');
     cleaned = cleaned.replace(encodedArtifactRegex, '$1');
+
+    // Also catch unclosed or truncated encoded artifacts (very common in some raw extractions)
+    // We consume everything from the trigger until the next encoded tag or the end of the string
+    cleaned = cleaned.replace(new RegExp(`&lt;(?:span|div|p)\\s+[^&lt;&gt;]*(?:style|class)=[^&lt;&gt;]*?(?:${artifactProperties})[:=][\\s\\S]*?(?=&lt;|$)`, 'gi'), '');
 
     // Convert apple-converted-space spans and nested whitespace tags
     let prevCleaned;
@@ -102,13 +242,12 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
     // --- NODE BASED CLEANING ---
 
     // 1. Remove UI/Technical Junk & Extension Artifacts
-    const junkTags = 'button, svg, script, style, noscript, canvas, iframe, map, area, gdiv, ga, ginger-word, ginger-correction';
-    root.find(junkTags).remove();
+    // (Moved to iterative loop loop below to handle nested artifacts)
 
     // 2. Handle o:p and legacy wrappers
     root.find('*').each((_, el) => {
         const tagName = el.tagName.toLowerCase();
-        if (tagName.startsWith('o:') || tagName === 'dir') {
+        if (tagName.startsWith('o:') || tagName === 'dir' || tagName === 'font' || tagName === 'center') {
             $(el).replaceWith($(el).contents());
         }
     });
@@ -159,35 +298,239 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
     root.find('ol').each((_, el) => {
         const $el = $(el);
         const style = $el.attr('style') || "";
-        if (/list-style-type:\s*upper-roman/i.test(style)) {
+        const firstLi = $el.find('li').first();
+        const firstText = firstLi.text().trim();
+
+        // Detect Roman numerals (e.g. I., II., III.)
+        const isRoman = /^[IVXLCDM]+\b[\.\-\)]/i.test(firstText) || /list-style-type:\s*upper-roman/i.test(style);
+        const isLowerRoman = /^[ivxlcdm]+\b[\.\-\)]/.test(firstText) || /list-style-type:\s*lower-roman/i.test(style);
+
+        if (isRoman) {
             $el.attr('type', 'I').removeAttr('style');
-        } else if (/list-style-type:\s*lower-roman/i.test(style)) {
+            // Clean up the markers if they are hardcoded in the text
+            $el.find('li').each((_, li) => {
+                const $li = $(li);
+                let t = $li.html() || '';
+                // Only strip if it's at the very start
+                // t = t.replace(/^\s*(?:&nbsp;|\s)*([IVXLCDM]+)\s*[\.\-\)]\s*(?:&nbsp;|\s)*/i, '');
+                $li.html(t);
+            });
+        } else if (isLowerRoman) {
             $el.attr('type', 'i').removeAttr('style');
+            $el.find('li').each((_, li) => {
+                const $li = $(li);
+                let t = $li.html() || '';
+                // t = t.replace(/^\s*(?:&nbsp;|\s)*([ivxlcdm]+)\s*[\.\-\)]\s*(?:&nbsp;|\s)*/, '');
+                $li.html(t);
+            });
         }
     });
 
-    // Unwrap layout containers
-    const layoutTags = ['div', 'article', 'section', 'header', 'footer', 'nav', 'main', 'aside', 'figure', 'figcaption', 'span', 'font', 'center', 'a'];
-    if (!options.isTechnical) layoutTags.push('pre');
+    // Handle alpha lists (A., B., C.) if they appear as ol
+    root.find('ol:not([type])').each((_, el) => {
+        const $el = $(el);
+        const firstText = $el.find('li').first().text().trim();
+        if (/^[a-e]\s*[\.\-\)]/i.test(firstText)) {
+            $el.attr('type', 'A');
+            $el.find('li').each((_, li) => {
+                const $li = $(li);
+                let t = $li.html() || '';
+                // t = t.replace(/^\s*(?:&nbsp;|\s)*([a-e])\s*[\.\-\)]\s*(?:&nbsp;|\s)*/i, '');
+                $li.html(t);
+            });
+        }
+    });
 
-    let changed = true, iterations = 0;
-    while (changed && iterations < 10) {
-        changed = false;
-        const currentRoot = root; // Re-query checks
+    // 6. Unwrap Layout Containers (Table, Div, Span, P, Article, Section, etc.)
+    // We want to preserve their textual content but remove the container if it's just layout
+    // We iterate until stable (max 15 iterations) to handle deep nesting
+    // Unwrapped tags: tags where we keep the content but remove the tag
+    const layoutTags = ['table', 'tbody', 'tr', 'td', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'header', 'footer', 'ul', 'ol', 'dir', 'font', 'center', 'article', 'section', 'a', 'legend', 'fieldset', 'datalist', 'output', 'main'];
+
+    // Junk tags: tags where we remove the tag AND its content
+    // We target common UI artifacts and metadata
+    const junkTags = [
+        'button', 'svg', 'canvas', 'script', 'style', 'audio', 'video', 'iframe', 'object', 'embed',
+        'form', 'input', 'textarea', 'select', 'option',
+        'meta', 'colgroup', 'col', 'xml', 'head', 'title', 'link',
+        'mat-icon', 'chat-app', 'side-navigation-v2', 'bard-sidenav-container', 'bard-sidenav-content',
+        'chat-window', 'immersive-panel', 'learning-immersive-panel', 'activity-set', 'question',
+        'source-footnote', 'source-citation', 'source-inline-chip', 'source-inline-chips', 'sources-carousel-inline'
+    ];
+
+    // 0. Remove junk tags GLOBALLY (entire document) before we narrow to body
+    junkTags.forEach(tag => {
+        $.root().find(tag).remove();
+    });
+    // Target specific classes for iframes/other junk that might bypass tag name check
+    $.root().find('.ginger-extension-definitionpopup').remove();
+    $.root().find('.ginger-extension-single-word').each((_, el) => {
+        const $el = $(el);
+        $el.replaceWith($el.html() || "");
+    });
+
+    // Nested List Flattening: Convert nested lists to line breaks within parent LI
+    // This handles the case where I. II. III. are nested but should be flat.
+    $('li').each((_, li) => {
+        const $li = $(li);
+        $li.find('ul, ol').each((_, nested) => {
+            const $n = $(nested);
+            const items: string[] = [];
+            $n.find('li').each((_, nli) => {
+                const content = $(nli).html() || "";
+                if (content.trim()) items.push(content);
+            });
+            if (items.length > 0) {
+                $n.replaceWith('<br/>' + items.join('<br/>'));
+            } else {
+                $n.remove();
+            }
+        });
+    });
+
+    // Root-level List Flattening: If the entire content is a single-item list, unwrap it.
+    // Especially common in options fields.
+    const rootNodes = $.root().children();
+    if (rootNodes.length === 1 && ['ul', 'ol'].includes(rootNodes[0].tagName?.toLowerCase())) {
+        const $list = $(rootNodes[0]);
+        if ($list.find('> li').length === 1) {
+            const $li = $list.find('> li');
+            $list.replaceWith($li.html() || "");
+        }
+    }
+
+    let stable = false;
+    let iterations = 0;
+    while (!stable && iterations < 15) {
+        let changed = false;
+
         layoutTags.forEach(tag => {
-            currentRoot.find(tag).each((_, el) => {
+            root.find(tag).each((_, el) => {
                 const $el = $(el);
+
+                // Table/Cell/List Handling: unwrap layout-only containers
+                if (['table', 'tbody', 'tr', 'td', 'ul', 'ol'].includes(tag)) {
+
+                    // 1. Single-item List Check (Priority 1)
+                    // We unwrap single items to avoid nested structures for one-liners
+                    // Aggressive unwrap for non-explanations (likely options)
+                    const isSingleItemList = ['ul', 'ol'].includes(tag) && $el.find('li').length === 1;
+                    if (isSingleItemList) {
+                        if (tag === 'ol') {
+                            // Smart Unwrapping: Preserve semantics by prepending marker if missing
+                            const startVal = $el.attr('start');
+                            const typeVal = $el.attr('type');
+                            const $li = $el.find('li');
+                            const text = $li.text().trim();
+
+                            if (startVal && startVal !== '0') {
+                                const num = parseInt(startVal, 10);
+                                if (!isNaN(num) && !text.startsWith(`${num}.`)) {
+                                    $li.prepend(`${num}. `);
+                                }
+                            } else if (typeVal === 'A' || typeVal === 'I') {
+                                // Simple heuristic for A/I, assuming 1st item
+                                const marker = typeVal === 'A' ? 'A.' : 'I.';
+                                if (!text.match(/^[A-Z][\.\)]/i) && !text.startsWith(marker)) {
+                                    // Only prepend if strictly missing, to avoid "A) A. Text"
+                                    // Actually, usually A) is present. If not, safe to add.
+                                }
+                            }
+                        }
+
+                        $el.find('li').replaceWith($el.find('li').contents());
+                        $el.replaceWith($el.contents()); // Unwrap the list tag too
+                        changed = true;
+                        return;
+                    }
+
+                    // 2. Flatten Multi-item Semantic Lists (Priority 2)
+                    // PRESERVE OL with start/type attributes (Semantic Lists), BUT allow unwrapping if start="0" (junk)
+                    if (tag === 'ol') {
+                        const startVal = $el.attr('start');
+                        const hasType = !!$el.attr('type');
+
+                        // User Request: Flatten lists with 'start' attribute (e.g. start="2" -> "2. Text")
+                        // Also treat start="0" as junk wrapper (unwrap without prefix)
+                        if (startVal) {
+                            const startNum = parseInt(startVal, 10);
+                            if (!isNaN(startNum)) {
+                                // Flatten logic
+                                const $lis = $el.find('li');
+                                $lis.each((i, li) => {
+                                    const $li = $(li);
+                                    // Threshold: if startNum is very high (e.g. > 100), it's likely a question/section marker rather than a list
+                                    // Prepend number if > 0 AND reasonable for a list
+                                    if (startNum > 0 && startNum < 100) {
+                                        const liText = $li.text().trim();
+                                        if (!liText.startsWith(`${startNum + i}.`)) {
+                                            $li.prepend(`${startNum + i}. `);
+                                        }
+                                    }
+
+                                    // Add separator if not last item
+                                    if (i < $lis.length - 1) {
+                                        $li.append('<br/>');
+                                    }
+                                    $li.replaceWith($li.contents());
+                                });
+                                $el.replaceWith($el.contents());
+                                changed = true;
+                                return;
+                            }
+                        }
+
+                        // Fallback: Preserve semantic lists with 'type' (e.g. I. II. A. B.)
+                        if (hasType) {
+                            return; // Do NOT unwrap semantic lists
+                        }
+                    }
+
+                    const parentTable = $el.closest('table');
+
+                    // 1. Artifact Check: If it's a tbody/tr/td but its parent table was already removed
+                    if (!parentTable.length && ['tbody', 'tr', 'td'].includes(tag)) {
+                        $el.replaceWith($el.contents());
+                        changed = true;
+                        return;
+                    }
+
+                    // 2. Metadata Check: If the table has layout-only attributes
+                    const attrs = Object.keys(el.attribs || {}).join(' ');
+                    const parentAttrs = parentTable.length ? Object.keys(parentTable.attr() || {}).join(' ') : '';
+
+                    const isLayoutChild = parentTable.attr('id')?.includes('question-table') ||
+                        parentTable.attr('class')?.includes('table-light') ||
+                        /pattern|toggle|url|action|toolbar/i.test(parentAttrs);
+
+                    const isLayoutTable = $el.attr('id')?.includes('question-table') ||
+                        $el.attr('class')?.includes('table-light') ||
+                        ($el.is('table') && $el.find('td').length <= 1) ||
+                        isLayoutChild ||
+                        /pattern|toggle|url|action|toolbar|visible|view|formatter|handler/i.test(attrs);
+
+                    if (!isLayoutTable) return;
+                }
+
                 // When unwrapping block elements, ensure we don't merge text
-                // e.g. <p>Title</p><p>Content</p> -> "Title Content" not "TitleContent"
-                // Adding a space is safe; regex cleanup later handles multiple spaces.
-                if (tag === 'p' || tag === 'div' || tag === 'header' || tag === 'footer' || tag === 'section' || tag === 'article' || tag === 'br') {
-                    $el.before('<br/>');
-                    $el.after('<br/>');
+                // But avoid adding excessive BRs if one exists nearby
+                if (['p', 'div', 'header', 'footer', 'section', 'article'].includes(tag)) {
+                    // Safety check: Ensure element is still attached before checking siblings
+                    if (el.parentNode) {
+                        try {
+                            if (!$el.prev().is('br')) $el.before('<br/>');
+                            if (!$el.next().is('br')) $el.after('<br/>');
+                        } catch (e) {
+                            // Ignore traversal errors on corrupt nodes
+                        }
+                    }
                 }
                 $el.replaceWith($el.contents());
                 changed = true;
             });
         });
+
+        if (!changed) stable = true;
         iterations++;
     }
 
@@ -209,7 +552,7 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
         const inTable = $br.closest('table').length > 0;
 
         // In explanation text, we want to preserve structure more aggressively, especially manual lists
-        const aggressiveMerge = !options.isExplanation && !options.preserveCode;
+        const aggressiveMerge = !options.isExplanation && !options.preserveCode && !options.isTechnical;
 
         if (aggressiveMerge && !inTable && !isListMarker && !startsWithUppercase && isMidSentence && prev && prev.type === 'text' && next && next.type === 'text') {
             prev.data = prevTextRaw.trimEnd() + ' ';
@@ -222,7 +565,7 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
     });
 
     // Whitelist
-    const whitelist = new Set(['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'br', 'hr', 'b', 'strong', 'i', 'em', 'u', 'code', 'pre', 'ul', 'ol', 'li', 'img', 'a', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'blockquote', 'sup', 'sub', 'kbd', 'samp', 'var', 'span', 'math', 'semantics', 'mrow', 'mtext', 'mo', 'mfrac', 'mi', 'annotation', 'mover', 'munder', 'munderover', 'msqrt', 'mroot', 'mstyle', 'merror', 'mpadded', 'mphantom', 'mfenced', 'menclose', 'mtable', 'mtr', 'mtd', 'maligngroup', 'malignmark', 'ms', 'mspace', 'mglyph']);
+    const whitelist = ALLOWED_TAGS;
 
     root.find('*').each((_, el) => {
         const tag = el.tagName.toLowerCase();
@@ -241,6 +584,11 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
             if (tag === 'a' && a === 'href') return;
             if ((tag === 'td' || tag === 'th') && ['colspan', 'rowspan'].includes(a)) return;
             if (tag === 'ol' && ['type', 'start'].includes(a)) return;
+            // Allow form element attributes for technical courses
+            if (['input', 'keygen', 'form', 'select', 'option', 'textarea', 'label'].includes(tag) &&
+                ['type', 'name', 'value', 'action', 'method', 'for', 'placeholder', 'id'].includes(a)) return;
+            // Allow MathML attributes
+            if (['xmlns', 'display', 'mathvariant', 'stretchy', 'encoding', 'fence', 'separator', 'linethickness', 'open', 'close', 'actuate', 'show', 'alttext'].includes(a)) return;
             $(el).removeAttr(a);
         });
     });
@@ -253,11 +601,11 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
             const $el = $(el);
             if ($el.parent().length === 0) return;
             const tag = el.tagName.toLowerCase();
-            if (!tag || ['html', 'head', 'body', 'img', 'br', 'hr'].includes(tag)) return;
+            if (!tag || ['html', 'head', 'body', 'img', 'br', 'hr', 'input', 'select', 'textarea', 'keygen', 'form'].includes(tag)) return;
 
             const textContent = $el.text().trim();
             const hasProtected = textContent.includes('%%PROTECTED_BLOCK_');
-            const hasContentTags = $el.find('img, br, hr, p, li, blockquote').length > 0;
+            const hasContentTags = $el.find('img, br, hr, p, li, blockquote, input, select, textarea, keygen, form').length > 0;
 
             if (!textContent.length && !hasProtected && !hasContentTags) {
                 // If it has spaces but no visible text, replace with single space
@@ -270,6 +618,15 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
             }
         });
     } while (tagCleanupChanged);
+
+
+    // Remove list tags that don't contain list items (invalid structure)
+    root.find('ol, ul').each((_, el) => {
+        const $el = $(el);
+        if ($el.find('li').length === 0) {
+            $el.replaceWith($el.contents());
+        }
+    });
 
     // List & Table Normalizations
     root.find('img').each((_, el) => { if (!$(el).attr('src')) { $(el).replaceWith(he.escape($.html(el))); } });
@@ -363,17 +720,57 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
     // Only strip BR before UL/OL start, or after UL/OL end IF followed by another block
     // BUT we must be careful not to merge text.
     // Safest: Don't strip BR after list closing tags </ul>, </ol>, </li>.
-    // Just strip BR before the list starts <ul>, <ol>.
+    // List Spacing Cleanup: Remove BRs immediately BEFORE and AFTER lists
+    // Pre-list BR removal
+    result = result.replace(/(?:<br\s*\/?>\s*)+(<(?:ul|ol)\b[^>]*>)/gi, '$1');
+    // Post-list BR removal
+    result = result.replace(/(<\/(?:ul|ol)\b[^>]*>)(?:\s*<br\s*\/?>)+/gi, '$1');
+    // Inside List Item BR removal (Leading/Trailing)
+    // <li><br/>Text...</li> -> <li>Text...</li>
+    result = result.replace(/<li\b[^>]*>\s*(?:<br\s*\/?>\s*)+/gi, (match) => match.replace(/<br\s*\/?>\s*/gi, ''));
+    result = result.replace(/(?:<br\s*\/?>\s*)+<\/li>/gi, '</li>');
 
-    // result = result.replace(/<br\s*\/?>\s*(<(?:ul|ol)\b[^>]*>)/gi, '$1');
-    // We comment out the aggressive "strip after" regex because it causes merging
-    // result = result.replace(/(<\/?(?:ul|ol|li)\b[^>]*>)\s*<br\s*\/?>/gi, '$1');
+    // Table Cell Cleaning: Strip BR from start/end of TD/TH
+    result = result.replace(/<(td|th)\b[^>]*>\s*(?:<br\s*\/?>\s*)+/gi, (match) => match.replace(/<br\s*\/?>\s*/gi, ''));
+    result = result.replace(/(?:<br\s*\/?>\s*)+<\/(td|th)>/gi, '</$1>');
+
+    // Remove empty Blockquotes
+    result = result.replace(/<blockquote>\s*(?:<br\s*\/?>\s*)*<\/blockquote>/gi, '');
+
+    // Sentence Repair: Remove BRs that break sentences (lowercase to lowercase)
+    // e.g. "fonksiyonu<br/>olarak" -> "fonksiyonu olarak"
+    // We utilize a look-behind and look-ahead pattern simulation via replace
+    result = result.replace(/([a-zğüşıöç])\s*<br\s*\/?>\s*([a-zğüşıöç])/g, '$1 $2');
 
     // Self-close IMG
     result = result.replace(/<img([^>]*)>/gi, (match, attrs) => `<img ${attrs.trim()}/>`);
 
+    // 2. Self-Deduplication (Moved BEFORE merge to prevent breaking Title+Explanation combos)
+    // If it looks like "Text A <br/> Text A (longer)" or vice versa, keep only the longer one.
+    if (options.isExplanation && result.includes('<br')) {
+        const parts = result.split(/<br\s*\/?>/i);
+        if (parts.length >= 2) {
+            const p1 = toPlainText(parts[0]);
+            const p2 = toPlainText(parts.slice(1).join('<br/>'));
+
+            if (p1 && p2) {
+                if (p1.length > 5 && p2.length > 5) {
+                    if (p2.includes(p1) || p1.includes(p2)) {
+                        result = (p2.length >= p1.length) ? parts.slice(1).join('<br/>') : parts[0];
+                    }
+                }
+            }
+        }
+    }
+
     // Merge adjacent formatting
     ['strong', 'b', 'i', 'em', 'u'].forEach(tag => {
+        result = result.replace(new RegExp(`</${tag}>(\\s*|<br\\s*/>\\s*)<${tag}>`, 'gi'), (match, middle) => {
+            // Merge but PRESERVE the whitespace/br content between them
+            // e.g. "</strong> <strong>" -> " " (effectively "<strong>... ...</strong>")
+            return middle;
+        });
+        // Strict adjacency merge (no whitespace)
         result = result.replace(new RegExp(`</${tag}><${tag}>`, 'gi'), '');
     });
 
@@ -398,7 +795,7 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
         try { return decodeRecursive(mmlEncoded); } catch { return match; }
     });
 
-    result = result.replace(/^(<br\b[^>]*>|\s|&gt;|>)+/i, '').replace(/(<br\b[^>]*>|\s)+$/i, '');
+    result = result.replace(/^(<br\b[^>]*>|\s)+/i, '').replace(/(<br\b[^>]*>|\s)+$/i, '');
 
     // Restore Protected
     protectedBlocks.forEach((block, index) => {
@@ -415,26 +812,8 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
         .replace(/^(<br\s*\/?>|\s)+/gi, '')
         .replace(/(<br\s*\/?>|\s)+$/gi, '');
 
-    while (/<br\s*\/?>[\s\xa0]*<br\s*\/?>/i.test(result)) {
-        result = result.replace(/<br\s*\/?>[\s\xa0]*<br\s*\/?>/gi, '<br/>');
-    }
-
-    // 2. Self-Deduplication (Common in Explanation fields)
-    // If it looks like "Text A <br/> Text A (longer)" or vice versa, keep only the longer one.
-    if (result.includes('<br')) {
-        const parts = result.split(/<br\s*\/?>/i);
-        if (parts.length >= 2) {
-            const p1 = toPlainText(parts[0]);
-            const p2 = toPlainText(parts.slice(1).join('<br/>'));
-
-            if (p1 && p2) {
-                if (p1.length > 5 && p2.length > 5) {
-                    if (p2.includes(p1) || p1.includes(p2)) {
-                        result = (p2.length >= p1.length) ? parts.slice(1).join('<br/>') : parts[0];
-                    }
-                }
-            }
-        }
+    while (/<br\s*\/?>[\s\xa0\n]*<br\s*\/?>/i.test(result)) {
+        result = result.replace(/<br\s*\/?>[\s\xa0\n]*<br\s*\/?>/gi, '<br/>');
     }
 
     return result.trim();
@@ -447,9 +826,11 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
 export function toPlainText(html: string): string {
     if (!html) return "";
 
-    // Replace <br> and other tags with a space to avoid merging words
-    // e.g. "word1<br/>word2" -> "word1 word2" instead of "word1word2"
-    const spaced = html.replace(/<[^>]+>/g, ' ');
+    // Replace <br> and other tags with a space
+    let spaced = html.replace(/<[^>]+>/g, ' ');
+
+    // Remove truncated tags at the end (e.g. "<span style="...)
+    spaced = spaced.replace(/<[^>]*$/, '');
 
     return he.decode(spaced)
         .replace(/\s+/g, ' ')
@@ -472,7 +853,7 @@ export function areTextsSimilar(t1: string, t2: string): boolean {
     // If one includes the other, check if they are roughly same length (e.g. > 50% overlap ratio)
     // This prevents "I" matching "II" or "cat" matching "catch".
     if (t1.includes(t2) || t2.includes(t1)) {
-        // For very short texts, avoid partial word matches or slight diffs like "I" vs "II"
+        // For very short texts, avoid partial word matches or slight diffs
         if (t1.length < 50 || t2.length < 50) {
             // Tokenize by splitting on any non-alphanumeric chars
             const tokenizer = (text: string) => text.toLowerCase().split(/[^a-z0-9şğüöçı]+/).filter(t => t.length > 0);
@@ -485,13 +866,18 @@ export function areTextsSimilar(t1: string, t2: string): boolean {
 
             // If strict subset of tokens
             const allExist = shortTokens.every(st => longTokens.includes(st));
-            if (allExist) return true;
 
-            // If tokens didn't match perfectly (e.g. punctuation attached to word), fall back to high ratio
+            // Even if all tokens exist, we must enforce a length ratio.
             const lenRatio = Math.min(t1.length, t2.length) / Math.max(t1.length, t2.length);
+            if (allExist && lenRatio > 0.8) return true;
+
+            // If tokens didn't match perfectly, fall back to high ratio
             return lenRatio > 0.95;
         }
-        return true;
+
+        // For longer texts, we STILL need a ratio check to avoid matching "long paragraph" with "contained sentence"
+        const lenRatio = Math.min(t1.length, t2.length) / Math.max(t1.length, t2.length);
+        return lenRatio > 0.8;
     }
 
     // 2. Alphanumeric Inclusion (ignores punctuation/whitespace)
@@ -502,21 +888,57 @@ export function areTextsSimilar(t1: string, t2: string): boolean {
     if (!s1 || !s2) return false;
 
     if (s2.includes(s1) || s1.includes(s2)) {
-        // Same length ratio safety check
         const lenRatio = Math.min(s1.length, s2.length) / Math.max(s1.length, s2.length);
-        if (s1.length < 15 || s2.length < 15) {
-            return lenRatio > 0.9;
-        }
+        return lenRatio > 0.9;
+    }
+
+    return false;
+}
+
+/**
+ * Checks if a string is considered "garbage" or redundant (e.g. just an answer marker).
+ */
+export function isGarbage(s: string): boolean {
+    if (!s) return true;
+    if (s.includes('<img')) return false;
+    if (s.includes('<hr')) return true;
+
+    const plain = toPlainText(s).toLowerCase().trim();
+
+    // 1. Minimum content check
+    if (plain.length < 2) return true;
+
+    // Technical content protection: if it contains tech symbols like <, >, &, /, it's likely content
+    // PROTECT ARABIC/OTTOMAN TEXT
+    if (/[\u0600-\u06FF]/.test(plain)) return false;
+
+    if (/[<>&/\\{}[\]]/.test(plain) || s.includes('&lt;') || s.includes('&gt;') || s.includes('&amp;')) return false;
+
+    // Check if it's a list item (e.g., "I- İş", "1. Test", "A) Option")
+    const listPattern = /^([ivxIVX]+|[0-9]+|[a-eA-E])[\.\-\)]\s*.+/;
+    if (listPattern.test(plain)) return false;
+
+    // Numerical/short options (e.g. "100", "A", "10") should NOT be garbage if they are numbers or single characters
+    if (plain.length < 5 && /^[a-e0-9\W]+$/.test(plain)) {
+        // If it's a pure number or a-e choice letter, it's not garbage as it might be a short option
+        if (/^\d+(\.\d+)*%?$/.test(plain) || /^[a-e]$/i.test(plain)) return false;
         return true;
     }
 
-    // 3. Start Overlap + Length Heuristic for long texts
-    // If both are long (>200 chars) and start with the same 50 chars.
-    if (t1.length > 200 && t2.length > 200) {
-        if (t1.substring(0, 50) === t2.substring(0, 50)) {
-            return true;
-        }
-    }
+    // 2. Answer key markers (Entirely)
+    // Matches "Doğru yanıt A", "C evrenseldir", "C şıkkıdır", etc.
+    const markerRegex = /^(?:doğru\s*)?(?:yanıt|cevap|şık|seçene[kğ])(?:lar|ler)?\s*:?\s*[a-e](?:'|’)?(?:dır|dir|dur|dür|tır|tur|tir|tür|lar|ler)*(?:\s+(?:şık|seçenek|seçene[kğ]|cevap|yanıt)(?:lar|ler)?(?:ı|i|u|ü)?(?:dır|dir|dur|dür|tır|tur|tir|tür|lar|ler)*)?\.?$/;
+    const englishMarkerRegex = /^(?:the\s+)?correct\s+answer\s+is\s+[a-e]\.?$/;
+    if (markerRegex.test(plain) || englishMarkerRegex.test(plain)) return true;
+
+    // 3. Page references
+    const pageRegex = /^(?:sayfa|unit)\s*[:\-\s]*\d+$/;
+    if (pageRegex.test(plain)) return true;
+
+    // 4. Standalone noise fragments
+    // Support plural everywhere: "seçenekleridir", "seçeneğidirler", "yanıtlarıdır"
+    const noiseRegex = /^(?:şık|seçene[kğ]|cevap|yanıt)(?:lar|ler)?(?:ı|i|u|ü)?(?:dır|dir|dur|dür|tır|tur|tir|tür|lar|ler)*\.?$/;
+    if (noiseRegex.test(plain)) return true;
 
     return false;
 }

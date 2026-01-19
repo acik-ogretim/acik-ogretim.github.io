@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { cleanHtml, toPlainText } from './utils/clean-html.ts';
+import { areTextsSimilar, cleanHtml, isGarbage, toPlainText } from './utils/clean-html.ts';
 import type { AppQuestion } from './utils/sync-core.ts';
 import { normalizeTextForMap, saveQuestions, slugify } from './utils/sync-core.ts';
 
@@ -9,6 +9,7 @@ const PORTAL_ROOT = process.cwd();
 const DENEMELER_ROOT = path.resolve(PORTAL_ROOT, '../ataaof-denemeler');
 const SOURCE_JSON_DIR = path.join(DENEMELER_ROOT, 'output/Anadolu/json');
 const TARGET_DIR = path.join(PORTAL_ROOT, 'data/questions/anadolu-aof');
+
 
 function processExerciseList(list: any[]): AppQuestion[] {
     const out: AppQuestion[] = [];
@@ -20,15 +21,28 @@ function processExerciseList(list: any[]): AppQuestion[] {
             unitNumber: q.Unite || q.UniteNo || 0,
             text: cleanHtml(q.SoruMetni || q.Text),
             correctAnswer: (q.DogruCevap || q.CorrectAnswer || "").trim().toUpperCase(),
-            options: {}
+            options: {},
+            explanation: ""
         };
 
         ['A', 'B', 'C', 'D', 'E'].forEach(opt => {
             if (q[opt]) mapped.options[opt] = cleanHtml(q[opt]);
         });
 
-        const rawExpl = q.Aciklama || q.AnswerExplanation || "";
-        const rawTitle = q.Title || "";
+        let rawExpl = q.Aciklama || q.AnswerExplanation || "";
+        let rawTitle = q.Title || "";
+
+        if (isGarbage(rawTitle)) rawTitle = "";
+        if (isGarbage(rawExpl)) rawExpl = "";
+
+        // 2. Swap Logic
+        // If Title is unusually long (>200 chars) AND Explanation is short (<100 chars)
+        if (rawTitle.length > 200 && rawExpl.length < 100) {
+            const temp = rawTitle;
+            rawTitle = rawExpl;
+            rawExpl = temp;
+        }
+
         let finalExpl = rawExpl;
 
         if (rawTitle) {
@@ -55,7 +69,60 @@ function processExerciseList(list: any[]): AppQuestion[] {
         }
 
         if (finalExpl && finalExpl.length > 5) {
-            mapped.explanation = cleanHtml(finalExpl, { isExplanation: true, disableChoiceCleanup: true });
+            // FIRST: Check if explanation has an image or table BEFORE cleaning
+            const hasImage = finalExpl.includes('<img');
+            const hasTable = finalExpl.includes('<table');
+
+            let cleanedExpl = cleanHtml(finalExpl, { isExplanation: true, disableChoiceCleanup: true });
+
+            if (hasImage || hasTable) {
+                // Do nothing - preserve explanation exactly as-is
+            } else {
+                const correctOptKey = mapped.correctAnswer.trim().toUpperCase();
+                const optPlain = mapped.options[correctOptKey] ? toPlainText(mapped.options[correctOptKey]).trim().toLowerCase() : "";
+
+                // 1. Line-based Surgical Trimming (Only standalone lines)
+                let explLines = cleanedExpl.split(/<br\s*\/?>/i);
+                let explChanged = false;
+
+                if (explLines.length > 0) {
+                    const first = explLines[0];
+                    const firstPlain = toPlainText(first).trim().toLowerCase();
+                    if (isGarbage(first) || (optPlain && areTextsSimilar(firstPlain, optPlain))) {
+                        explLines.shift();
+                        explChanged = true;
+                    }
+                }
+
+                if (explLines.length > 0) {
+                    const last = explLines[explLines.length - 1];
+                    if (isGarbage(last)) {
+                        explLines.pop();
+                        explChanged = true;
+                    }
+                }
+
+                if (explChanged) {
+                    const joined = explLines.join('<br/>').trim();
+                    const residue = toPlainText(joined).trim();
+                    if (residue.length < 15) {
+                        cleanedExpl = "";
+                    } else {
+                        cleanedExpl = joined;
+                    }
+                }
+
+                // 2. Conservative Full Clear Check
+                const plain = toPlainText(cleanedExpl).trim().toLowerCase();
+                const charDiff = plain.length - optPlain.length;
+                const lenRatio = Math.min(plain.length, optPlain.length) / (Math.max(plain.length, optPlain.length) || 1);
+
+                if (plain.length < 2 || isGarbage(cleanedExpl) || (optPlain && areTextsSimilar(plain, optPlain) && (lenRatio > 0.8 || charDiff < 20))) {
+                    cleanedExpl = "";
+                }
+            }
+
+            mapped.explanation = cleanedExpl.trim() === "" ? "" : cleanedExpl.trim();
         }
 
         out.push(mapped);
@@ -82,7 +149,8 @@ function processExamList(list: any[]): AppQuestion[] {
             unitNumber: uNo,
             text: cleanHtml(txt),
             correctAnswer: ["A", "B", "C", "D", "E"][q.correctIndex] || "",
-            options: {}
+            options: {},
+            explanation: ""
         };
 
         if (q.options && Array.isArray(q.options)) {
@@ -92,8 +160,62 @@ function processExamList(list: any[]): AppQuestion[] {
             });
         }
 
-        if (q.explanation && q.explanation.length > 5) {
-            mapped.explanation = cleanHtml(q.explanation);
+        if (q.explanation) {
+            // FIRST: Check if explanation has an image or table BEFORE cleaning
+            const hasImage = q.explanation.includes('<img');
+            const hasTable = q.explanation.includes('<table');
+
+            let cleanedExpl = cleanHtml(q.explanation, { isExplanation: true, disableChoiceCleanup: true });
+
+            if (hasImage || hasTable) {
+                // Do nothing - preserve explanation exactly as-is
+            } else {
+                const correctOptKey = mapped.correctAnswer.trim().toUpperCase();
+                const optPlain = mapped.options[correctOptKey] ? toPlainText(mapped.options[correctOptKey]).trim().toLowerCase() : "";
+
+                // 1. Line-based Surgical Trimming
+                let explLines = cleanedExpl.split(/<br\s*\/?>/i);
+                let explChanged = false;
+
+                if (explLines.length > 0) {
+                    const first = explLines[0];
+                    const firstPlain = toPlainText(first).trim().toLowerCase();
+                    if (isGarbage(first) || (optPlain && areTextsSimilar(firstPlain, optPlain))) {
+                        explLines.shift();
+                        explChanged = true;
+                    }
+                }
+
+                if (explLines.length > 0) {
+                    const last = explLines[explLines.length - 1];
+                    if (isGarbage(last)) {
+                        explLines.pop();
+                        explChanged = true;
+                    }
+                }
+
+                if (explChanged) {
+                    const joined = explLines.join('<br/>').trim();
+                    const residue = toPlainText(joined).trim();
+                    if (residue.length < 15) {
+                        cleanedExpl = "";
+                    } else {
+                        cleanedExpl = joined;
+                    }
+                }
+
+                // 2. Conservative Full Clear Check
+                const plain = toPlainText(cleanedExpl).trim().toLowerCase();
+                const charDiff = plain.length - optPlain.length;
+                const lenRatio = Math.min(plain.length, optPlain.length) / (Math.max(plain.length, optPlain.length) || 1);
+
+                if (plain.length < 2 || isGarbage(cleanedExpl) || (optPlain && areTextsSimilar(plain, optPlain) && (lenRatio > 0.8 || charDiff < 20))) {
+                    cleanedExpl = "";
+                }
+            }
+            mapped.explanation = cleanedExpl.trim() === "" ? "" : cleanedExpl.trim();
+        } else {
+            mapped.explanation = "";
         }
 
         out.push(mapped);

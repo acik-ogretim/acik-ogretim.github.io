@@ -243,7 +243,7 @@
       "B": "&lt;ul&gt; &lt;/ul&gt;",
       "C": "&lt;ol&gt; &lt;/ol&gt;",
       "D": "&lt;dl&gt; &lt;/dl&gt;",
-      "E": "&lt;dl&gt; &lt;dt&gt;  &lt;/dt&gt; &lt;/dl&gt;"
+      "E": "&lt;dl&gt; &lt;dt&gt; &lt;/dt&gt; &lt;/dl&gt;"
     }
   },
   {
@@ -970,8 +970,8 @@
       "A": "&lt;readytoplay&gt;&lt;/readytoplay&gt;",
       "B": "&lt;embed&gt;&lt;/embed&gt;",
       "C": "&lt;object&gt;&lt;/object&gt;",
-      "D": "&lt;video&gt;  &lt;/video&gt;",
-      "E": "&lt;audio&gt;  &lt;/audio&gt;"
+      "D": "&lt;video&gt; &lt;/video&gt;",
+      "E": "&lt;audio&gt; &lt;/audio&gt;"
     }
   },
   {
@@ -1305,11 +1305,11 @@
     "text": "<strong>Arka plan resmi olarak “arka-plan.jpg” dosyasını kullanan, arka plan resmini yatayda tekrarlayan ve arka plan görüntüsünün sayfanın geri kalanıyla birlikte kaymadığı stil tanımı aşağıdakilerden hangisidir?</strong>",
     "correctAnswer": "C",
     "options": {
-      "A": "body {background-image:url(arka-plan.jpg); background-repeat: repeat-y;  background-attachment: fixed;}",
-      "B": "body {border-image:url(arka-plan.jpg); background-repeat: repeat-x;  background-attachment: fixed;}",
-      "C": "body {background-image:url(arka-plan.jpg); background-repeat: repeat-x;  background-attachment: fixed;}",
-      "D": "img {background-image:url(arka-plan.jpg); background-repeat: repeat-x;  background-attachment: scroll;}",
-      "E": "body {background-image:url(arka-plan.jpg); background-repeat: repeat-x;  background-attachment: scroll;}"
+      "A": "body {background-image:url(arka-plan.jpg); background-repeat: repeat-y; background-attachment: fixed;}",
+      "B": "body {border-image:url(arka-plan.jpg); background-repeat: repeat-x; background-attachment: fixed;}",
+      "C": "body {background-image:url(arka-plan.jpg); background-repeat: repeat-x; background-attachment: fixed;}",
+      "D": "img {background-image:url(arka-plan.jpg); background-repeat: repeat-x; background-attachment: scroll;}",
+      "E": "body {background-image:url(arka-plan.jpg); background-repeat: repeat-x; background-attachment: scroll;}"
     }
   },
   {
@@ -1744,7 +1744,7 @@
   {
     "id": "324827",
     "unitNumber": 10,
-    "text": "<strong>Aşağıdaki işlemin sonucunda t değişkeninin değeri ne olur?</strong><br/>var t=1, y=5; if(t != y % 2) t *= 5; else t += y;",
+    "text": "<strong>Aşağıdaki işlemin sonucunda t değişkeninin değeri ne olur?</strong><br/>var t=1, y=5;<br/>if(t != y % 2)<br/>t *= 5;<br/>else t += y;",
     "correctAnswer": "C",
     "options": {
       "A": "false",
@@ -1757,7 +1757,7 @@
   {
     "id": "324828",
     "unitNumber": 10,
-    "text": "<strong>Aşağıdaki işlemin sonucunda a değişkeninin değeri ne olur?</strong><br/>var a=10, b=5; a += b++;",
+    "text": "<strong>Aşağıdaki işlemin sonucunda a değişkeninin değeri ne olur?</strong><br/>var a=10, b=5;<br/>a += b++;",
     "correctAnswer": "A",
     "options": {
       "A": "15",
@@ -1770,7 +1770,7 @@
   {
     "id": "324829",
     "unitNumber": 10,
-    "text": "var a=3, b=4, c=5; var sonuc = a &gt; b || c % b == 0;<br/><strong>Yukarıdaki işlem sonrasında sonuç değişkeninin değeri hangisidir?</strong>",
+    "text": "var a=3, b=4, c=5;<br/>var sonuc = a &gt; b || c % b == 0;<br/><strong>Yukarıdaki işlem sonrasında sonuç değişkeninin değeri hangisidir?</strong>",
     "correctAnswer": "B",
     "options": {
       "A": "true",
@@ -1861,7 +1861,7 @@
   {
     "id": "333475",
     "unitNumber": 10,
-    "text": "var a=[10,20,30,40,50]; var b= a[1] + a[2]; var c= b &gt; a[4]; document.write(\"c = \" + c + \" tür: \"+ typeof(c));<br/><strong>Yukarınaki işlemin çıktısı aşağıdakilerden hangisidir?</strong>",
+    "text": "var a=[10,20,30,40,50];<br/>var b= a[1] + a[2];<br/>var c= b &gt; a[4];<br/>document.write(\"c = \" + c + \" tür: \"+ typeof(c));<br/><strong>Yukarınaki işlemin çıktısı aşağıdakilerden hangisidir?</strong>",
     "correctAnswer": "A",
     "options": {
       "A": "c = false tür: boolean",
@@ -1887,7 +1887,7 @@
   {
     "id": "334718",
     "unitNumber": 10,
-    "text": "var t=1, a=2, b=5; var c= a * a + b * b var d = a++ * b; if(t != d % 2) t *= 5; else t += c;<br/><strong>Yukarıdaki işlemin sonucunda t değişkeninin değeri ne olur?</strong>",
+    "text": "var t=1, a=2, b=5;<br/>var c= a * a + b * b var d = a++ * b;<br/>if(t != d % 2)<br/>t *= 5;<br/>else t += c;<br/><strong>Yukarıdaki işlemin sonucunda t değişkeninin değeri ne olur?</strong>",
     "correctAnswer": "A",
     "options": {
       "A": "5",
@@ -1900,7 +1900,7 @@
   {
     "id": "371557",
     "unitNumber": 10,
-    "text": "<strong>Aşağıdaki işlemlerin sonrasında m değişkeninin değeri ne olur?</strong><br/>var m=10, k=20; if(m % 2 == 0) m *= ++k; else m -= k % 5;",
+    "text": "<strong>Aşağıdaki işlemlerin sonrasında m değişkeninin değeri ne olur?</strong><br/>var m=10, k=20;<br/>if(m % 2 == 0)<br/>m *= ++k;<br/>else m -= k % 5;",
     "correctAnswer": "D",
     "options": {
       "A": "5",
@@ -2062,14 +2062,14 @@
       "A": "for(s &lt; 20; s++) { a += s; }",
       "B": "for(s = 1 , s &lt; 20 , s++) { a += s; }",
       "C": "for(s = 1) ; (s &lt; 20) ; (s++); { a += s; }",
-      "D": "for(1&lt;s&lt;20;  s++) { a += s; }",
+      "D": "for(1&lt;s&lt;20; s++) { a += s; }",
       "E": "for(s = 1 ; s &lt; 20; s++) { a += s; }"
     }
   },
   {
     "id": "324844",
     "unitNumber": 11,
-    "text": "<strong>Aşağıdaki iki satır sonucunda, b değişkeninin değeri ne olur?</strong><br/>a=”merhaba”; b=a.indexOf(“a”);",
+    "text": "<strong>Aşağıdaki iki satır sonucunda, b değişkeninin değeri ne olur?</strong><br/>a=”merhaba”;<br/>b=a.indexOf(“a”);",
     "correctAnswer": "C",
     "options": {
       "A": "true",
@@ -2095,7 +2095,7 @@
   {
     "id": "333538",
     "unitNumber": 11,
-    "text": "var sayilar=[10,20,30,40,50,60,70]; var sayac, toplam = 0; var ortalama; for(sayac= 1; sayac &lt; sayilar.length; sayac+=2){<br/>toplam += sayilar[sayac];<br/>}<br/>ortalama = toplam / (sayilar.length-1); document.write(ortalama);<br/><strong>Yukarıdaki kodun ekran çıktısı hangisidir?</strong>",
+    "text": "var sayilar=[10,20,30,40,50,60,70];<br/>var sayac, toplam = 0;<br/>var ortalama;<br/>for(sayac= 1; sayac &lt; sayilar.length; sayac+=2){<br/>toplam += sayilar[sayac];<br/>}<br/>ortalama = toplam / (sayilar.length-1);<br/>document.write(ortalama);<br/><strong>Yukarıdaki kodun ekran çıktısı hangisidir?</strong>",
     "correctAnswer": "B",
     "options": {
       "A": "0",
@@ -2147,7 +2147,7 @@
   {
     "id": "392525",
     "unitNumber": 11,
-    "text": "var sayac; for (sayac=1; sayac&lt;=5; sayac++) document.write(\"Merhaba Dünya\");<br/><strong>Verilen JavaScript kod bloğunun ekrana yazdırdığı \"Merhaba Dünya\" sayısı aşağıdakilerden hangisidir?</strong>",
+    "text": "var sayac;<br/>for (sayac=1; sayac&lt;=5; sayac++)<br/>document.write(\"Merhaba Dünya\");<br/><strong>Verilen JavaScript kod bloğunun ekrana yazdırdığı \"Merhaba Dünya\" sayısı aşağıdakilerden hangisidir?</strong>",
     "correctAnswer": "B",
     "options": {
       "A": "4",

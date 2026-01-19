@@ -80,7 +80,7 @@
   {
     "id": "338970",
     "unitNumber": 1,
-    "text": "<strong>SMTP (Simple Mail Transfer Protocol)</strong> <strong>nedir?</strong>",
+    "text": "<strong>SMTP (Simple Mail Transfer Protocol) nedir?</strong>",
     "correctAnswer": "A",
     "options": {
       "A": "Giden e-posta iletim protokolüdür.",
@@ -1003,7 +1003,7 @@
   {
     "id": "348446",
     "unitNumber": 5,
-    "text": "class Ornek<br/>{<br/>int i; int j; double k; public Ornek (int i1, int j1, double k1)<br/>{<br/>i = i1; j = j1; k = k1;<br/>}<br/>}<br/><strong>Yukarıdaki kod parçasındaki Ornek sınıfından bir nesne oluşturmak için aşağıdakilerden hangisi kullanılabilir?</strong>",
+    "text": "class Ornek<br/>{<br/>int i;<br/>int j;<br/>double k;<br/>public Ornek (int i1, int j1, double k1)<br/>{<br/>i = i1;<br/>j = j1;<br/>k = k1;<br/>}<br/>}<br/><strong>Yukarıdaki kod parçasındaki Ornek sınıfından bir nesne oluşturmak için aşağıdakilerden hangisi kullanılabilir?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "Ornek o1 = new Ornek();",
@@ -1016,7 +1016,7 @@
   {
     "id": "348447",
     "unitNumber": 5,
-    "text": "int i=0; for ( ; ; )<br/>{<br/>if (i&lt;4)<br/>Console.Write(i); else break; i++;<br/>}<br/><strong>Yukarıdaki kod parçacığı için ekran çıktısı hangisidir?</strong>",
+    "text": "int i=0;<br/>for ( ; ; )<br/>{<br/>if (i&lt;4)<br/>Console.Write(i);<br/>else break;<br/>i++;<br/>}<br/><strong>Yukarıdaki kod parçacığı için ekran çıktısı hangisidir?</strong>",
     "correctAnswer": "B",
     "options": {
       "A": "123",
@@ -1224,7 +1224,7 @@
   {
     "id": "348460",
     "unitNumber": 6,
-    "text": "<strong>Razor</strong> <strong>blok yazım kurallarına göre View içerisinde sunucu taraflı kodlar hangi karakterden sonra yazılır?</strong>",
+    "text": "<strong>Razor blok yazım kurallarına göre View içerisinde sunucu taraflı kodlar hangi karakterden sonra yazılır?</strong>",
     "correctAnswer": "A",
     "options": {
       "A": "@",
@@ -2043,7 +2043,7 @@
   {
     "id": "349189",
     "unitNumber": 11,
-    "text": "<strong>Python programlama dilinin etkileşimli ara yüzü kullanılarak (8/2-3+25/5*2)/11 matematiksel işlemi yapıldığında ekrana aşağıdakilerden hangisi basılır?</strong>",
+    "text": "<strong>Python programlama dilinin etkileşimli ara yüzü kullanılarak<br/>(8/2-3+25/5*2)/11 matematiksel işlemi yapıldığında ekrana aşağıdakilerden hangisi basılır?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "11",
@@ -2108,7 +2108,7 @@
   {
     "id": "354954",
     "unitNumber": 11,
-    "text": "<strong>Python programlama dilinin etkileşimli ara yüzü kullanılarak (8/2/2+5/5+2)/(11-3*2)+4 matematiksel işlemi yapıldığında ekrana aşağıdakilerden hangisi basılır?</strong>",
+    "text": "<strong>Python programlama dilinin etkileşimli ara yüzü kullanılarak<br/>(8/2/2+5/5+2)/(11-3*2)+4 matematiksel işlemi yapıldığında ekrana aşağıdakilerden hangisi basılır?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "1.0",
@@ -2124,11 +2124,11 @@
     "text": "<strong>Python'da if (koşul) ifadesinin doğru söz dizimi aşağıdakilerden hangisidir?</strong>",
     "correctAnswer": "B",
     "options": {
-      "A": "if [sayi %4 ]== 0: print (\"4'e bölünebilir.\")",
-      "B": "if sayi %4 == 0: print (\"4'e bölünebilir.\")",
+      "A": "if [sayi %4 ]== 0: print (\"4'e bölünebilir.\")",
+      "B": "if sayi %4 == 0: print (\"4'e bölünebilir.\")",
       "C": "if {sayi %4 == 0} print (\"4'e bölünebilir.\")",
-      "D": "if {sayi %4 == 0]: print (\"4'e bölünebilir.\")",
-      "E": "if |sayi %4| == 0: print (\"4'e bölünebilir.\")"
+      "D": "if {sayi %4 == 0]: print (\"4'e bölünebilir.\")",
+      "E": "if |sayi %4| == 0: print (\"4'e bölünebilir.\")"
     }
   },
   {
@@ -2178,7 +2178,7 @@
     "options": {
       "A": "Print (\"\\Merhaba Dünya\\\")",
       "B": "print (\"\\Merhaba Dünya\"\\)",
-      "C": "print  (\"Merhaba Dünya\\\")",
+      "C": "print (\"Merhaba Dünya\\\")",
       "D": "print (\"\\Merhaba Dünya\")",
       "E": "print (Merhaba Dünya)"
     }
