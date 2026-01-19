@@ -2,7 +2,7 @@ import fs from 'fs';
 import os from 'os';
 import path from 'path';
 import { Worker, isMainThread, parentPort, workerData } from 'worker_threads';
-import { cleanHtml, toPlainText } from './utils/clean-html.ts';
+import { areTextsSimilar, cleanHtml, toPlainText } from './utils/clean-html.ts';
 
 // Configurations
 const NUM_WORKERS = Math.max(1, os.cpus().length - 1);
@@ -93,7 +93,8 @@ function mapRawToApp(raw: RawAnadoluQuestion, isTechnical: boolean = false): App
         const eNorm = toPlainText(rawExpl);
 
         // If content is duplicated, prefer the version that is "fuller" (has more HTML/content)
-        if (eNorm.includes(tNorm) || tNorm.includes(eNorm)) {
+        // Use the robust utility checking strict inclusion, fuzzy match, and safe token overlap
+        if (areTextsSimilar(tNorm, eNorm)) {
             // Compare cleaned HTML lengths for the tie-break to preserve images/formatting
             combinedExpl = (cExpl.length >= cTitle.length) ? cExpl : cTitle;
         } else {

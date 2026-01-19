@@ -193,7 +193,7 @@
       "D": "while döngüsü",
       "E": "pass deyimi"
     },
-    "explanation": "Şekil, Sayfa 46’da yer alan Şekil 2.5 ile benzerlik göstermekte olup while döngüsü akış diyagramıdır."
+    "explanation": "Şekil, Sayfa 46’da yer alan Şekil 2.5 ile benzerlik göstermekte olup while döngüsü akış<br/>diyagramıdır."
   },
   {
     "id": "3852163",
@@ -305,7 +305,7 @@
       "D": "for, elif, else",
       "E": "for, else, elif"
     },
-    "explanation": "Sayının pozitif, negatif veya sıfır olup olmadığını kontrol ederek uygun bir mesaj göstermek için yazılması gereken kod aşağıdaki gibidir. Bu nedenle boş bırakılan yerlere sırasıyla if, elif ve else gelmelidir.<br/>if sayı &gt; 0: print(\"Pozitif sayı\") elif sayı == 0: print(\"Sıfır\") else: print(\"Negatif sayı\")"
+    "explanation": "Sayının pozitif, negatif veya sıfır olup olmadığını kontrol ederek uygun bir mesaj göstermek için yazılması gereken kod aşağıdaki gibidir. Bu nedenle boş bırakılan yerlere sırasıyla if, elif ve else gelmelidir.<br/>if sayı &gt; 0:<br/>print(\"Pozitif sayı\")<br/>elif sayı == 0:<br/>print(\"Sıfır\")<br/>else:<br/>print(\"Negatif sayı\")"
   },
   {
     "id": "3852171",
@@ -319,7 +319,7 @@
       "D": "döngü gövdesi, döngünün her bir yenilemesinde sıradaki değeri alan geçici bir değişkendir.",
       "E": "liste, sıralı olarak üzerinde işlem tekrarı yapmak istenilen nesnedir."
     },
-    "explanation": "for döngüsündeki söz dizimini inceleyecek olursak; for: Bir döngü başlatır değer: Döngünün her bir yenilemesinde sıradaki değeri alan geçici bir değişkendir in: İşlem yapılacak her bir değeri diğerlerinden ayırır liste: Sıralı olarak üzerinde işlem tekrarı yapmak istenilen nesnedir<br/>İki nokta üst üste: altındaki sekme ile belirtilmiş kod bloğunun çalıştırılma talimatını verir döngü gövdesi: Tekrar edilerek yapılması istenen işlemlerin yazıldığı kod bloğudur.<br/>Bu nedenle doğru seçenek E'dr."
+    "explanation": "for döngüsündeki söz dizimini inceleyecek olursak;<br/>for: Bir döngü başlatır<br/>değer: Döngünün her bir yenilemesinde sıradaki değeri alan geçici<br/>bir değişkendir<br/>in: İşlem yapılacak her bir değeri diğerlerinden ayırır<br/>liste: Sıralı olarak üzerinde işlem tekrarı yapmak istenilen nesnedir<br/>İki nokta üst üste: altındaki sekme ile belirtilmiş kod bloğunun<br/>çalıştırılma talimatını verir<br/>döngü gövdesi: Tekrar edilerek yapılması istenen işlemlerin yazıldığı kod bloğudur.<br/>Bu nedenle doğru seçenek E'dr."
   },
   {
     "id": "3852172",
@@ -347,7 +347,7 @@
       "D": "for öğrenci in notlar: else öğrenci == öğrenci_adı: print(notlar[öğrenci])",
       "E": "for öğrenci in notlar: while öğrenci == öğrenci_adı: print(notlar[öğrenci])"
     },
-    "explanation": "öğrenci_adı = 'Semra'<br/>notlar = {'Handan': 90, 'Semra': 75, 'Kamil': 67} bilgilerini kullanarak Python programında Semra'nın aldığı notu göstermek için kullanılacak kod şöyledir: for öğrenci in notlar: if öğrenci == öğrenci_adı: print(notlar[öğrenci])<br/>Bu nedenle cevap B seçeneğidir."
+    "explanation": "öğrenci_adı = 'Semra'<br/>notlar = {'Handan': 90, 'Semra': 75, 'Kamil': 67} bilgilerini kullanarak Python programında Semra'nın aldığı notu göstermek için kullanılacak kod şöyledir:<br/>for öğrenci in notlar:<br/>if öğrenci == öğrenci_adı:<br/>print(notlar[öğrenci])<br/>Bu nedenle cevap B seçeneğidir."
   },
   {
     "id": "3852174",
@@ -361,7 +361,7 @@
       "D": "while kod bloğunda yapılan işlemler, test ifadesinden yanlış değeri alınana kadar tekrar eder.",
       "E": "Diğer operatörlerde olduğu gibi, while döngüsünün gövdesi parantez işareti ile belirlenir."
     },
-    "explanation": "Python’daki while döngüsü, test ifadesi (koşul) doğru olduğu sürece bir kod bloğu içindeki işlemleri tekrar etmek için kullanılır. Döngü gövdesini çalıştırmadan önce koşulu test eder. Bu döngü genellikle önceden kaç kez işlem tekrarı yapılacağı bilinmeyen durumlarda kullanılır. while kod bloğunda yapılan işlemler, test ifadesinden yanlış değeri alınana kadar tekrar eder. Diğer operatörlerde olduğu gibi, while döngüsünün gövdesi girinti ile belirlenir. Bu nedenle cevap E seçeneğidir."
+    "explanation": "Python’daki while döngüsü, test ifadesi (koşul) doğru olduğu sürece bir kod bloğu içindeki işlemleri<br/>tekrar etmek için kullanılır. Döngü gövdesini çalıştırmadan önce koşulu test eder. Bu döngü genellikle önceden kaç kez işlem tekrarı yapılacağı bilinmeyen durumlarda kullanılır. while kod bloğunda yapılan işlemler, test ifadesinden yanlış değeri alınana kadar tekrar eder. Diğer operatörlerde olduğu gibi, while döngüsünün gövdesi girinti ile belirlenir. Bu nedenle cevap E seçeneğidir."
   },
   {
     "id": "3852175",
@@ -627,7 +627,7 @@
       "D": "Paket yöneticisi",
       "E": "Akış kontrolü"
     },
-    "explanation": "Modül, python koduna sahip bir dosyadır. Kod, değişkenler, işlevler veya tanımlanmış sınıf biçiminde olabilir. Yani bir kod kütüphanesidir. Uygulamada kullanılacak fonksiyonları içerir. Dosya adı modül adı olarak kullanılır. Büyük programları küçük yönetilebilir ve düzenlenmiş dosyalara bölmek için modüller kullanılmaktadır. Bu nedenle cevap A seçeneğidir."
+    "explanation": "Modül, python koduna sahip bir dosyadır. Kod, değişkenler, işlevler veya tanımlanmış sınıf biçiminde<br/>olabilir. Yani bir kod kütüphanesidir. Uygulamada kullanılacak fonksiyonları içerir. Dosya adı modül adı olarak kullanılır. Büyük programları küçük yönetilebilir ve düzenlenmiş dosyalara bölmek için modüller kullanılmaktadır. Bu nedenle cevap A seçeneğidir."
   },
   {
     "id": "3852194",
@@ -669,7 +669,7 @@
       "D": "Modül yapısı",
       "E": "Fonksiyonlar"
     },
-    "explanation": "Python dilinde uygulama geliştirenler, kendi hazırladıkları paketleri diğer kullanıcılarının da erişimine açabilmektedir. Bu paylaşılan Python paketlerinin yüklenebilmesi amacıyla ortak bir yükleyici oluşturulmuştur. Bu paket yükleme ortamına “pip” adı verilmektedir. Pip’in “Pip installs Python” ya da “Pip installs packages” şeklinde açılımları mevcuttur. Bu nedenle cevap A seçeneğidir."
+    "explanation": "Python dilinde uygulama geliştirenler, kendi hazırladıkları paketleri diğer kullanıcılarının da erişimine<br/>açabilmektedir. Bu paylaşılan Python paketlerinin yüklenebilmesi amacıyla ortak bir yükleyici oluşturulmuştur. Bu paket yükleme ortamına “pip” adı verilmektedir. Pip’in “Pip installs Python” ya da “Pip installs packages” şeklinde açılımları mevcuttur. Bu nedenle cevap A seçeneğidir."
   },
   {
     "id": "3852197",
@@ -725,7 +725,7 @@
       "D": "Math",
       "E": "Int (tam sayı)"
     },
-    "explanation": "Sayfa 101 Sayfa 101 “Bilgisayarın yalnızca iki tabanındaki sayıları (0 ve 1) anlaması nedeniyle, kayan noktalı sayıların bilgisayar donanımında ikili tabanda kesirler olarak uygulandığı görülmektedir. … Bu sorunu aşmak için Python ile birlikte gelen ondalık modülü yani “decimal” kullanılabilir.”"
+    "explanation": "Sayfa 101 Sayfa 101 “Bilgisayarın yalnızca iki tabanındaki sayıları (0 ve 1) anlaması nedeniyle, kayan noktalı sayıların bilgisayar donanımında ikili tabanda kesirler olarak uygulandığı<br/>görülmektedir. … Bu sorunu aşmak için Python ile birlikte gelen ondalık modülü yani “decimal” kullanılabilir.”"
   },
   {
     "id": "3852201",
@@ -739,7 +739,7 @@
       "D": "print(random.randrange(0, 4))",
       "E": "print(film)"
     },
-    "explanation": "Sayfa 104’te verilen örnekte de görüldüğü üzere, print(random.choice( dizi )) şeklinde verilen bir komut<br/>“Dizi” isimli liste nesnesi içerisinde yer alan değerlerler içerisinden rastgele bir değer döndürür."
+    "explanation": "Sayfa 104’te verilen örnekte de görüldüğü üzere,<br/>print(random.choice( dizi )) şeklinde verilen bir komut<br/>“Dizi” isimli liste nesnesi içerisinde yer alan değerlerler içerisinden rastgele bir değer döndürür."
   },
   {
     "id": "3852202",
@@ -865,7 +865,7 @@
       "D": "harita = open(\"harita.bmp\", \"x\")",
       "E": "harita = open(\"harita.bmp\", \"w\")"
     },
-    "explanation": "Cevap harita = open(\"harita.bmp\", \"b\") harita.bmp bir resim dosyası olduğu için binary veri içerir. Komutta belirtilen “b” modu, Sayfa 160 Tablo 5.1’de belirtildiği üzere dosyayı ikili (binary) modda açar. Yine sayfa 160’te belirtildiği üzere “Bu mod, resim veya yürütülebilir dosyalar (exe uzantılı) gibi metin olmayan dosyalarla uğraşırken kullanılacak moddur.” Bu tür veri içeren dosyalarda işlem yapmak için bu modu kullanmak uygun olacaktır."
+    "explanation": "Cevap harita = open(\"harita.bmp\", \"b\")<br/>harita.bmp bir resim dosyası olduğu için binary veri içerir. Komutta belirtilen “b” modu, Sayfa 160 Tablo 5.1’de belirtildiği üzere dosyayı ikili (binary) modda açar. Yine sayfa 160’te belirtildiği üzere “Bu mod, resim veya yürütülebilir dosyalar (exe uzantılı) gibi metin olmayan dosyalarla<br/>uğraşırken kullanılacak moddur.” Bu tür veri içeren dosyalarda işlem yapmak için bu modu kullanmak uygun olacaktır."
   },
   {
     "id": "3852211",
@@ -921,7 +921,7 @@
       "D": "os.mkdir(“D:\\Temp”)",
       "E": "os.rmdir(“D:\\Temp”)"
     },
-    "explanation": "Cevap: os.chdir(“D:\\Temp”)<br/>Sayfa 165’te belirtildiği üzere “Mevcut çalışma dizini (CWD) değiştirmek için os.chdir() yöntemi kullanılmaktadır.”"
+    "explanation": "Cevap:<br/>os.chdir(“D:\\Temp”)<br/>Sayfa 165’te belirtildiği üzere “Mevcut çalışma dizini (CWD) değiştirmek için os.chdir() yöntemi kullanılmaktadır.”"
   },
   {
     "id": "3852215",
@@ -949,7 +949,7 @@
       "D": "Parametre olarak ismi verilen içi boş bir dizini silme",
       "E": "Parametre olarak ismi verilen boş bir dosyayı silme"
     },
-    "explanation": "Cevap:<br/>Parametre olarak ismi verilen boş bir dizini silme<br/>Sayfa 167’de yer alan örnekte görüldüğü üzere os.rmdir() metodu mevcut çalışma dizinini (CWD) içerisindeki bir dizini silmek için kullanılmaktadır. Ancak parametre olarak verilen dizin içerisinde başka dizinler ya da dosyalar var ise, bir OSError hatası döndürmektedir."
+    "explanation": "Cevap:<br/>Parametre olarak ismi verilen boş bir dizini silme<br/>Sayfa 167’de yer alan örnekte görüldüğü üzere os.rmdir() metodu<br/>mevcut çalışma dizinini (CWD) içerisindeki bir dizini silmek için kullanılmaktadır. Ancak parametre olarak verilen dizin içerisinde başka dizinler ya da dosyalar var ise, bir OSError hatası döndürmektedir."
   },
   {
     "id": "3852217",
@@ -1257,7 +1257,7 @@
       "D": "Tablo1 ve Tablo2'deki verileri birbirinden ayırmaktadır.",
       "E": "Tablo1 ve Tablo2'deki verileri birleştirmektedir."
     },
-    "explanation": "Join ve Inner Join komutları aynı şekilde çalışmaktadır. Tabloların kesişim elemanlarını döndürür.<br/>Söz Dizimi:<br/>SELECT sütun1, sütun2,...<br/>FROM tablo1<br/>JOIN tablo2 ON koşul; veya<br/>SELECT sütun1, sütun2,...<br/>FROM tablo1<br/>INNER JOIN tablo2 ON koşul;<br/>Left Join: Tablo2 ile ortak olmayan verileri hariç tutarak, Tablo1’deki verileri döndürmektedir.<br/>Söz Dizimi:<br/>SELECT sütun1, sütun2,...<br/>FROM tablo1<br/>LEFT JOIN tablo2 ON koşul;"
+    "explanation": "Join ve Inner Join komutları aynı şekilde çalışmaktadır. Tabloların kesişim elemanlarını döndürür.<br/>Söz Dizimi:<br/>SELECT sütun1, sütun2,...<br/>FROM tablo1<br/>JOIN tablo2 ON koşul;<br/>veya<br/>SELECT sütun1, sütun2,...<br/>FROM tablo1<br/>INNER JOIN tablo2 ON koşul;<br/>Left Join: Tablo2 ile ortak olmayan verileri hariç tutarak, Tablo1’deki verileri döndürmektedir.<br/>Söz Dizimi:<br/>SELECT sütun1, sütun2,...<br/>FROM tablo1<br/>LEFT JOIN tablo2 ON koşul;"
   },
   {
     "id": "3852239",
@@ -1691,6 +1691,6 @@
       "D": "Veritabanında tablo veya koleksiyonu temsil edebilmektedirler.",
       "E": "Modelde yapılan değişiklikler veritabanına anında yansıtılmaz."
     },
-    "explanation": "CEVAP: Veritabanı işlemleri için SQL sorgusu yapma gereğini ortadan kaldırır.<br/>Sayfa 281 “Model, veritabanı işlemlerinin yapıldığı, tablo ve alan bilgilerinin tutulduğu sayfalardır. Kullanıcı için arka planda CRUD işlemlerini gerçekleştirdiği için SQL sorguları yazılmasına gerek kalmaz.” Bu çalışma biçim sayfa 266-267’de verilen örnekten de çıkarsanabilir."
+    "explanation": "CEVAP: Veritabanı işlemleri için SQL sorgusu yapma gereğini ortadan kaldırır.<br/>Sayfa 281 “Model, veritabanı işlemlerinin yapıldığı, tablo ve alan bilgilerinin tutulduğu<br/>sayfalardır. Kullanıcı için arka planda CRUD işlemlerini gerçekleştirdiği için SQL sorguları yazılmasına gerek kalmaz.” Bu çalışma biçim sayfa 266-267’de verilen örnekten de çıkarsanabilir."
   }
 ]

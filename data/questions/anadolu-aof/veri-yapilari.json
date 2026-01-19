@@ -221,7 +221,7 @@
       "D": "O(N^c) - Polinom Zaman Karmaşıklığı",
       "E": "O(c^N) - Üstel Zaman Karmaşıklığı"
     },
-    "explanation": "Kod 1.8 for( int i = 0; i &lt; n; i++) for( int j = 0; j &lt; n; j++) sayac++;<br/>Algoritmanın çalışma süresi, N kez doğrusal bir işlem gerçekleştirmenin bir sonucudur yani N ile N çarpımı olarak hesaplanır. Kabarcıkla sıralama (bubble sort), seçimle sıralama (selection sort) ve araya girerek sıralama (insertion sort) gibi genel olarak kullanılan bir sıralama algoritması O(N²) alır."
+    "explanation": "Kod 1.8<br/>for( int i = 0; i &lt; n; i++)<br/>for( int j = 0; j &lt; n; j++)<br/>sayac++;<br/>Algoritmanın çalışma süresi, N kez doğrusal bir işlem gerçekleştirmenin bir sonucudur yani N ile N çarpımı olarak hesaplanır. Kabarcıkla sıralama (bubble sort), seçimle sıralama (selection sort) ve araya girerek sıralama (insertion sort) gibi genel olarak kullanılan bir sıralama algoritması O(N²) alır."
   },
   {
     "id": "3623935",
@@ -249,7 +249,7 @@
       "D": "O(N³)",
       "E": "O(N!)"
     },
-    "explanation": "Kod 1.7 bool asalSayimi(int sayi) {<br/>if (sayi == 2) return true; if (sayi &lt; 2) return false; for (int i = 2; i &lt;= sqrt(sayi); i ++) if (sayi%i == 0) return false; return true;<br/>}<br/>Algoritmanın çalışma süresi, girdi boyutunun karekökü kadar azaltılır. Örnek olarak, bir sayının asal olup olmadığını sadece karekökü olana kadar döngüye girerek kontrol edilebilir."
+    "explanation": "Kod 1.7<br/>bool asalSayimi(int sayi) {<br/>if (sayi == 2) return true;<br/>if (sayi &lt; 2) return false;<br/>for (int i = 2; i &lt;= sqrt(sayi); i ++)<br/>if (sayi%i == 0) return false;<br/>return true;<br/>}<br/>Algoritmanın çalışma süresi, girdi boyutunun karekökü kadar azaltılır. Örnek olarak, bir sayının asal olup olmadığını sadece karekökü olana kadar döngüye girerek kontrol edilebilir."
   },
   {
     "id": "3841764",
@@ -319,7 +319,7 @@
       "D": "Programlama dili belirleme",
       "E": "Problemin net tanımı"
     },
-    "explanation": "Algoritma yazmak için ön koşul olarak aşağıdakilere ihtiyaç vardır:<ul><li>Bu algoritma ile çözülecek problemin net tanımı yapılmalıdır.*</li><li>Girdiler belirlenmelidir</li><li>Beklenen çıktı tanımlanmalıdır</li><li>Kısıtlar göz önüne alınmalıdır\"</li></ul>Neden \"problemin net tanımı\" ilk adımdır?<ul><li>Algoritmanın temelini oluşturur.</li><li>Ne çözüleceği bilinmezse neyi yazacağımız da belli olmaz.</li><li>Belirsiz ya da eksik tanımlanmış bir problem → hatalı algoritma.</li><li>Girdiler ve çıktılar ancak problemin ne olduğu anlaşıldıktan sonra belirlenebilir.</li></ul>Bu nedenle ilk yapılması gereken:<br/>“E) Problemin net tanımı”dır."
+    "explanation": "Algoritma yazmak için ön koşul olarak aşağıdakilere ihtiyaç vardır:<ul><li>Bu algoritma ile çözülecek problemin net tanımı yapılmalıdır.*</li><li>Girdiler belirlenmelidir</li><li>Beklenen çıktı tanımlanmalıdır</li><li>Kısıtlar göz önüne alınmalıdır\"</li></ul><br/>Neden \"problemin net tanımı\" ilk adımdır?<ul><li>Algoritmanın temelini oluşturur.</li><li>Ne çözüleceği bilinmezse neyi yazacağımız da belli olmaz.</li><li>Belirsiz ya da eksik tanımlanmış bir problem → hatalı algoritma.</li><li>Girdiler ve çıktılar ancak problemin ne olduğu anlaşıldıktan sonra belirlenebilir.</li></ul>Bu nedenle ilk yapılması gereken:<br/>“E) Problemin net tanımı”dır."
   },
   {
     "id": "3841772",
@@ -338,14 +338,14 @@
   {
     "id": "3841773",
     "unitNumber": 1,
-    "text": "<ol><li>Algoritma başlatılır.</li><li>Kullanıcıdan bir sayi alınır.</li><li>sayi % 2 == 0 koşulu test edilir.</li><li>Koşul doğruysa “Çift sayı” yazdırılır.</li><li>Koşul yanlışsa “Tek sayı” yazdırılır.</li><li>Algoritma sonlandırılır.</li></ol>Yukarıda verilen algoritma adımları için doğru sembol eşleştirmesi aşağıdaki seçeneklerden hangisinde <strong>yer almaktadır</strong>?",
+    "text": "<ol><li>Algoritma başlatılır.<br/></li><li>Kullanıcıdan bir sayi alınır.<br/></li><li>sayi % 2 == 0 koşulu test edilir.<br/></li><li>Koşul doğruysa “Çift sayı” yazdırılır.<br/></li><li>Koşul yanlışsa “Tek sayı” yazdırılır.<br/></li><li>Algoritma sonlandırılır.</li></ol>Yukarıda verilen algoritma adımları için doğru sembol eşleştirmesi aşağıdaki seçeneklerden hangisinde <strong>yer almaktadır</strong>?",
     "correctAnswer": "A",
     "options": {
       "A": "<ol><li>Başlangıç/Bitiş</li><li>Giriş/Çıkış</li><li>Karar</li><li>İşlem</li><li>İşlem</li><li>Başlangıç/Bitiş</li></ol>",
       "B": "<ol><li>İşlem</li><li>Giriş/Çıkış</li><li>Giriş/Çıkış</li><li>Karar</li><li>İşlem</li><li>İşlem</li></ol>",
       "C": "<ol><li>Giriş/Çıkış</li><li>İşlem</li><li>Karar</li><li>İşlem</li><li>Giriş/Çıkış</li><li>Başlangıç/Bitiş</li></ol>",
       "D": "<ol><li>Başlangıç/Bitiş</li><li>İşlem</li><li>İşlem</li><li>Karar</li><li>İşlem</li><li>Başlangıç/Bitiş</li></ol>",
-      "E": "<ol><li>Başlangıç/Bitiş</li><li>Giriş/Çıkış</li><li>Karar</li><li>Giriş/Çıkış</li><li>Giriş/Çıkış</li><li>İşlem</li></ol>"
+      "E": "<ol><li>Başlangıç/Bitiş<br/></li><li>Giriş/Çıkış<br/></li><li>Karar<br/></li><li>Giriş/Çıkış<br/></li><li>Giriş/Çıkış<br/></li><li>İşlem</li></ol>"
     },
     "explanation": "<table><thead><tr><th>Adım No</th><th>Ne yapılıyor?</th><th>Doğru Sembol</th><th>Açıklama</th></tr></thead><tbody><tr><td>1</td><td>Başlat</td><td>Başlangıç/Bitiş (oval)</td><td>Algoritmanın başlangıcıdır.</td></tr><tr><td>2</td><td>Veri girişi (<code>sayi</code>)</td><td>Giriş/Çıkış (paralelkenar)</td><td>Kullanıcıdan bilgi alınır.</td></tr><tr><td>3</td><td>Koşul testi (<code>sayi % 2 == 0</code>)</td><td>Karar (elmas)</td><td>Mantıksal kontrol yapılır.</td></tr><tr><td>4</td><td>“Çift sayı” yazdırılır</td><td>İşlem (dikdörtgen)</td><td>Bir işlem gerçekleştirilir.</td></tr><tr><td>5</td><td>“Tek sayı” yazdırılır</td><td>İşlem (dikdörtgen)</td><td>Alternatif bir işlem yapılır.</td></tr><tr><td>6</td><td>Sonlandırma</td><td>Başlangıç/Bitiş (oval)</td><td>Akış sona erer.</td></tr></tbody></table>"
   },
@@ -725,7 +725,7 @@
       "D": "Dictionary değerleri sıralı tutar",
       "E": "SortedDictionary null anahtar kabul eder"
     },
-    "explanation": "<ul><li><strong>Dictionary&lt;TKey,TValue&gt;</strong><ul><li>Anahtar-değer çiftlerini <strong>sırasız</strong> olarak saklar.</li><li>Ekleme, arama ve silme işlemlerinde <strong>ortalama O(1)</strong> zaman karmaşıklığı vardır.</li><li>Anahtarların eklenme sırasını veya alfabetik sırasını <strong>korumaz</strong>.</li></ul></li><li><strong>SortedDictionary&lt;TKey,TValue&gt;</strong><ul><li>Anahtar-değer çiftlerini <strong>her zaman anahtara göre sıralı</strong> tutar.</li><li>Arama, ekleme ve silme işlemleri <strong>O(log n)</strong> zaman karmaşıklığına sahiptir çünkü altında <strong>dengeli ağaç yapısı</strong> (Red-Black Tree) kullanır.</li><li>Sıralı erişim gerektiren durumlarda tercih edilir.</li></ul></li></ul><strong>SortedDictionary boxing/unboxing yapar:</strong> Yanlış. Hem Dictionary hem de SortedDictionary doğru veri türü kullanıldığında boxing/unboxing yapmaz<br/><strong>Dictionary O(log n) karmaşıklığa sahiptir:</strong> Yanlış. Dictionary genellikle O(1) karmaşıklığa sahiptir.<br/><strong>Dictionary değerleri sıralı tutar:</strong> Yanlış. Dictionary ve SortedDictionary sadece <strong>anahtarlar</strong> üzerinde çalışır, değerler sıralanmaz.<br/><strong>SortedDictionary null anahtar kabul eder:</strong> Yanlış. Ne Dictionary ne de SortedDictionary null anahtar kabul eder.<br/>Doğru cevap C seçeneğidir."
+    "explanation": "<ul><li><strong>Dictionary&lt;TKey,TValue&gt;</strong><ul><li>Anahtar-değer çiftlerini <strong>sırasız</strong> olarak saklar.</li><li>Ekleme, arama ve silme işlemlerinde <strong>ortalama O(1)</strong> zaman karmaşıklığı vardır.</li><li>Anahtarların eklenme sırasını veya alfabetik sırasını <strong>korumaz</strong>.</li></ul></li><li><strong>SortedDictionary&lt;TKey,TValue&gt;</strong><ul><li>Anahtar-değer çiftlerini <strong>her zaman anahtara göre sıralı</strong> tutar.</li><li>Arama, ekleme ve silme işlemleri <strong>O(log n)</strong> zaman karmaşıklığına sahiptir çünkü altında <strong>dengeli ağaç yapısı</strong> (Red-Black Tree) kullanır.</li><li>Sıralı erişim gerektiren durumlarda tercih edilir.</li></ul></li></ul><br/><strong>SortedDictionary boxing/unboxing yapar:</strong> Yanlış. Hem Dictionary hem de SortedDictionary doğru veri türü kullanıldığında boxing/unboxing yapmaz<br/><strong>Dictionary O(log n) karmaşıklığa sahiptir:</strong> Yanlış. Dictionary genellikle O(1) karmaşıklığa sahiptir.<br/><strong>Dictionary değerleri sıralı tutar:</strong> Yanlış. Dictionary ve SortedDictionary sadece <strong>anahtarlar</strong> üzerinde çalışır, değerler sıralanmaz.<br/><strong>SortedDictionary null anahtar kabul eder:</strong> Yanlış. Ne Dictionary ne de SortedDictionary null anahtar kabul eder.<br/>Doğru cevap C seçeneğidir."
   },
   {
     "id": "3845979",
@@ -963,7 +963,7 @@
       "D": "Clear",
       "E": "Contains"
     },
-    "explanation": "Aşağıdaki kod bloğunda Contains yönteminin kullanımını inceleyebilirsiniz.<br/>if (myStack.Contains(\" \"))<br/>IslemiDurdur(); else<br/>IslemeDevamEt();<br/>Bir ögenin, yığın içerisinde bulunup bulunmadığını kontrol etmek için Contains yöntemi kullanılabilir. Contains yöntemi öge yığının içeriğinde mevcut ise True değer, mevcut değilse False değer döndürür."
+    "explanation": "Aşağıdaki kod bloğunda Contains yönteminin kullanımını inceleyebilirsiniz.<br/>if (myStack.Contains(\" \"))<br/>IslemiDurdur();<br/>else<br/>IslemeDevamEt();<br/>Bir ögenin, yığın içerisinde bulunup bulunmadığını kontrol etmek için Contains yöntemi kullanılabilir. Contains yöntemi öge yığının içeriğinde mevcut ise True değer, mevcut değilse False değer döndürür."
   },
   {
     "id": "3624146",
@@ -1425,7 +1425,7 @@
       "D": "Hızlı Sıralama",
       "E": "Yavaş Sıralama"
     },
-    "explanation": "diğer temel sıralama algoritması Seçerek Sıralama algoritmasıdır. Çalışma esnasında dizi aralığındaki en küçük elemanı seçerek çalıştığı için bu isim verilmiştir."
+    "explanation": "diğer temel sıralama algoritması Seçerek Sıralama algoritmasıdır. Çalışma esnasında<br/>dizi aralığındaki en küçük elemanı seçerek çalıştığı için bu isim verilmiştir."
   },
   {
     "id": "3624176",
@@ -1467,7 +1467,7 @@
       "D": "O(n2)",
       "E": "O(n^n)"
     },
-    "explanation": "Sıralama algoritmasında, ideal zaman karmaşıklığı değeri O(1) olmalıdır."
+    "explanation": "Sıralama algoritmasında, ideal zaman karmaşıklığı değeri O(1)<br/>olmalıdır."
   },
   {
     "id": "3843531",
@@ -1803,7 +1803,7 @@
       "D": "4",
       "E": "5"
     },
-    "explanation": "zorluk derecesi: orta dizinler 0 dan başlamaktadır. soruda aranan ise \"10\" elamanıdır. Dizini 0 dan başlattığımız \"10\" elemanı 3. dizin de yer almaktadır."
+    "explanation": "zorluk derecesi: orta<br/>dizinler 0 dan başlamaktadır. soruda aranan ise \"10\" elamanıdır. Dizini 0 dan başlattığımız \"10\" elemanı 3. dizin de yer almaktadır."
   },
   {
     "id": "3840617",
@@ -1831,7 +1831,7 @@
       "D": "A[3]",
       "E": "A[4]"
     },
-    "explanation": "zorluk derecesi: kolay dizinler 0 dan başladığı için ilk öge olan \"3\", 0. dizinde yer almaktadır."
+    "explanation": "zorluk derecesi: kolay<br/>dizinler 0 dan başladığı için ilk öge olan \"3\", 0. dizinde yer almaktadır."
   },
   {
     "id": "3840623",
@@ -2713,7 +2713,7 @@
       "D": "BFS'de yığın veri yapısı veya özyineleme, DFS'de ise kuyruk veri yapısı kullanılmıştır.",
       "E": "BFS, kenar tabanlı bir algoritma iken DFS, düğüm tabanlı bir algoritmadır."
     },
-    "explanation": "DFS, kenar tabanlı bir algoritma iken BFS, düğüm tabanlı bir algoritma olarak tasarlanmıştır.<br/>• DFS yığın veri yapısı veya özyineleme kullanırken BFS’de kuyruk veri yapısı kullanılmıştır.<br/>• DFS’de bellek alanı daha verimli bir şekilde kullanılırken BFS’de bellek alanının verimli şekilde kullanımı göz ardı edilmektedir.<br/>• BFS en uygun algoritma iken DFS en uygun değildir.<br/>• DFS, dar ve uzun ağaçlar oluştururken BFS, geniş ve kısa bir ağaç oluşturmaktadır.<br/>BFS ve DFS grafik arama algoritmalarının çalışma süreleri birbirine yakındır fakat algoritmaların kullanıldığı alanlar değişmektedir. BFS her düğümü hafızada tutarken DFS keşfedilmemiş düğümler üzerinden tek bir yol bilgisini tutabilmek için doğrusal alan kaplamaktadır.<br/>BFS ilk sırada en uygun ve verimli hedefi aradığı için DFS’e göre daha uygun bir tercihtir. DFS ise derin çözümler sunar ve çözüm yoğun olduğunda daha verimli çalışmaktadır."
+    "explanation": "DFS, kenar tabanlı bir algoritma iken BFS, düğüm tabanlı bir algoritma olarak tasarlanmıştır.<br/>• DFS yığın veri yapısı veya özyineleme kullanırken BFS’de kuyruk veri yapısı kullanılmıştır.<br/>• DFS’de bellek alanı daha verimli bir şekilde kullanılırken BFS’de bellek alanının verimli şekilde<br/>kullanımı göz ardı edilmektedir.<br/>• BFS en uygun algoritma iken DFS en uygun değildir.<br/>• DFS, dar ve uzun ağaçlar oluştururken BFS, geniş ve kısa bir ağaç oluşturmaktadır.<br/>BFS ve DFS grafik arama algoritmalarının çalışma süreleri birbirine yakındır fakat algoritmaların kullanıldığı alanlar değişmektedir. BFS her düğümü hafızada tutarken DFS keşfedilmemiş düğümler üzerinden tek bir yol bilgisini tutabilmek için doğrusal alan kaplamaktadır.<br/>BFS ilk sırada en uygun ve verimli hedefi aradığı için DFS’e göre daha uygun bir tercihtir. DFS ise<br/>derin çözümler sunar ve çözüm yoğun olduğunda daha verimli çalışmaktadır."
   },
   {
     "id": "3719561",
@@ -2727,7 +2727,7 @@
       "D": "I, II, IV ve VI",
       "E": "I, III, IV, V ve VI"
     },
-    "explanation": "BFS algoritmasının çalışma mantığı;<br/>1. Grafın düğümlerinden herhangi birini kuyruğun sonuna ekleyerek başlayın.<br/>2. Kuyruğun ilk ögesini alın ve ziyaret edilenler listesine ekleyin.<br/>3. Bu düğümün bitişik düğümlerinin bir listesini oluşturun. Ziyaret edilenler listesinde olmayanları sıranın en arkasına ekleyin.<br/>4. Kuyruk boşalana kadar 2. ve 3. adımları tekrarlamaya devam edin.<br/>DFS algoritmasının çalışma mantığı;<br/>1. Grafiğin düğümlerinden herhangi birini bir yığına (stack) ekleyerek başlayın.<br/>2. Yığının en üst ögesini alın ve ziyaret edilenler listesine ekleyin.<br/>3. Bu düğümün bitişik düğümlerinin bir listesini oluşturun. Ziyaret edilenler listesinde olmayanları yığının en üstüne ekleyin.<br/>4. Yığın boşalana kadar 2. ve 3. adımları tekrarlamaya devam edin."
+    "explanation": "BFS algoritmasının çalışma mantığı;<br/>1. Grafın düğümlerinden herhangi birini kuyruğun sonuna ekleyerek başlayın.<br/>2. Kuyruğun ilk ögesini alın ve ziyaret edilenler listesine ekleyin.<br/>3. Bu düğümün bitişik düğümlerinin bir listesini oluşturun. Ziyaret edilenler listesinde olmayanları sıranın en arkasına ekleyin.<br/>4. Kuyruk boşalana kadar 2. ve 3. adımları tekrarlamaya devam edin.<br/>DFS algoritmasının çalışma mantığı;<br/>1. Grafiğin düğümlerinden herhangi birini bir yığına (stack) ekleyerek başlayın.<br/>2. Yığının en üst ögesini alın ve ziyaret edilenler listesine ekleyin.<br/>3. Bu düğümün bitişik düğümlerinin bir listesini oluşturun. Ziyaret edilenler listesinde olmayanları<br/>yığının en üstüne ekleyin.<br/>4. Yığın boşalana kadar 2. ve 3. adımları tekrarlamaya devam edin."
   },
   {
     "id": "3842858",

@@ -25,7 +25,7 @@
       "D": "Lambda Cebiri",
       "E": "Turing Makinesi"
     },
-    "explanation": "Algoritma kavramı Antik Çağlardan beri bilinmektedir. Babilli (MÖ 2500) ve Mısırlı (MÖ 1550) matematikçilerin bölme işlemleri için algoritmalar kullandıkları bilinmektedir. Yunanlı (MÖ 240) matematikçilerin asal sayıları bulmak için Eratosten Kalburunu, en büyük ortak bölenleri bulmak için de Öklid algoritmasını kullandıkları bilinmektedir. 9. yüzyılda Kindî gibi Arap matematikçilerin şifreleri kırabilmek için frekans analizlerine dayalı şifreleme algoritmaları kullanmıştır. Tarihte Mısır, Yunan ve Roma uygarlıklarında, hesaplama işlerinin herkes tarafından seri biçimde yapılabilmesi amacıyla dört işlem ve bazı basit fonksiyonlar için algoritmaların yaygın olarak kullanıldığı görülmüştür. Daha yakın zamanlarda ise (18.-19. yy.) Araplar ve Ruslar tarafından iki temel çarpma algoritması geliştirilmiş ve kullanılmıştır."
+    "explanation": "Algoritma kavramı Antik Çağlardan beri bilinmektedir. Babilli (MÖ 2500) ve Mısırlı (MÖ 1550)<br/>matematikçilerin bölme işlemleri için algoritmalar kullandıkları bilinmektedir. Yunanlı (MÖ 240) matematikçilerin asal sayıları bulmak için Eratosten Kalburunu, en büyük ortak bölenleri bulmak için de Öklid algoritmasını kullandıkları bilinmektedir. 9. yüzyılda Kindî gibi Arap matematikçilerin şifreleri kırabilmek<br/>için frekans analizlerine dayalı şifreleme algoritmaları kullanmıştır. Tarihte Mısır, Yunan ve Roma uygarlıklarında, hesaplama işlerinin herkes tarafından seri biçimde yapılabilmesi amacıyla dört işlem ve bazı<br/>basit fonksiyonlar için algoritmaların yaygın olarak kullanıldığı görülmüştür. Daha yakın zamanlarda ise<br/>(18.-19. yy.) Araplar ve Ruslar tarafından iki temel çarpma algoritması geliştirilmiş ve kullanılmıştır."
   },
   {
     "id": "3768704",
@@ -39,7 +39,7 @@
       "D": "I-II-V",
       "E": "II-IV-V"
     },
-    "explanation": "Bir algoritmanın aşağıdaki özelliklere sahip olması gerekir.<br/>1. Girdi: Girdi, algoritmanın üzerinde işlem yaparak çıktı üreteceği veri kümesini tanımlar. Algoritmanın girdi olarak alacağı verinin karakteristiklerinin (ör: pozitif sayılar listesi) çok iyi tanımlanması gerekir. Aksi hâlde algoritmanın üzerinde işlem yapamayacağı verilerle karşılaşarak hata üretmesi ya da yanlış karakteristiklerden dolayı hatalı çıktılar üretmesi olasılığı belirecektir. Örneğin bir sayı listesini sıralamak üzere üretilmiş bir algoritmaya metin cinsinden girdi gönderilmesi sorun yaratacaktır. Bu bölümde Algoritma Türleri başlığı altında kısaca açıklanan Rastgele Algoritmalar gibi algoritmalar dışarıdan özel bir girdi almasalar da üretecekleri çıktılar için kendileri iyi tanımlı girdiler (ör: Kartezyen düzlemde düzlemde (0,0) ile (1,1) noktaları arasında kalan alan içindeki noktalar kümesi) üretmektedir.<br/>2. Çıktı: Çıktı, verilen girdi kümesinin işlenmesi sonucu üretilen veridir. Algoritmaların verilen girdiye göre bir ya da daha fazla iyi tanımlı çıktı üretmesi beklenir. Algoritma çıktılarının veri türü ve miktarı gibi karakteristiklerinin tanımlanmış olması beklenir.<br/>3. Açıklık: Algoritmanın verilen girdi kümesinden çıktı üretmek için gerekli tüm adımları ve bu adımların işletilme sırasını açık bir şekilde tanımlaması gerekir. Algoritmanın her adımının açık ve yanlış anlaşılmaya mahal vermeyecek şekilde iyi tanımlanması gerekir. Özellikle günlük dil ile yazılan algoritmalarda açıklık ilkesini ihlal edebilecek ifadelerin bulunması olasıdır. Örneğin iki sayının çarpılması gerektiği ab, a.b, a*b ya ad a x b şeklinde gösterilebilir. Burada a x b hem a ve b’nin çarpımı hem de a, x ve b değişkenlerinin çarpımı şeklinde algılanabilir. Bu tür karmaşalara yol açmamak için gerekli açıklamalar algoritma öncesinde yapılmalı ve bir örnek satırlar yazılmalıdır. Verilen örnekler arasından a*b en açık olanıdır. Bunun yanında, işlem adımlarında çıkabilecek olası hata durumlarının engellenmesi ve bu hataların oluşması hâlinde nelerin yapılacağının (ör.: bir bölme işleminde bölenin sıfır olmasının kontrolü) da tanımlanması beklenir.<br/>4. Sonluluk: Algoritmaların bir noktada sonlanması gerekir. Algoritma verilen girdiye ilişkin çıktı üreterek ya da olası bir çözüm olmadığını belirterek sonlanabilir. Algoritmanın içinde gerekli kontroller yapılarak bir çıktı üretilmesi ve sona erdirilmesi gerekmektedir.<br/>5. Başarım ve Performans: Algoritmanın başarım ve performansı verilen bilgisayar kaynaklarının kullanımı ile ilgili bir kavramdır. Başarım, algoritmanın tanımlanan bilgisayar kaynakları ile çıktı üretebilmesini ifade eder. Performans ise algoritmanın işlem zamanı ve bellek alanını etkin kullanımı ile ilgilidir. Çıktı üretmek için işletilmesi gerekmeyen adımların kullanılması algoritma performansının düşük olduğunun bir göstergesidir. Örneğin bir sayının asal olup olmadığını anlamak için bölenlerini arayan bir algoritmanın, sayının karekökünden daha büyük bölenler araması gereksizdir.<br/>6. Bağımsızlık: Algoritmalar, programlama dilleri ve platformlardan bağımsızdır. Tanımlanan adımların herhangi bir programlama dili ve bu dilin yürütülebileceği platformlar (ör.: masaüstü cihazlar, sunucular, mobil cihazlar) üzerinde çalışabilmesi gerekir."
+    "explanation": "Bir algoritmanın aşağıdaki özelliklere sahip olması gerekir.<br/>1. Girdi: Girdi, algoritmanın üzerinde işlem yaparak çıktı üreteceği veri kümesini tanımlar. Algoritmanın girdi olarak alacağı verinin karakteristiklerinin (ör: pozitif sayılar listesi) çok iyi tanımlanması gerekir. Aksi hâlde algoritmanın üzerinde işlem yapamayacağı verilerle karşılaşarak hata üretmesi<br/>ya da yanlış karakteristiklerden dolayı hatalı çıktılar üretmesi olasılığı belirecektir. Örneğin bir<br/>sayı listesini sıralamak üzere üretilmiş bir algoritmaya metin cinsinden girdi gönderilmesi sorun<br/>yaratacaktır. Bu bölümde Algoritma Türleri başlığı altında kısaca açıklanan Rastgele Algoritmalar<br/>gibi algoritmalar dışarıdan özel bir girdi almasalar da üretecekleri çıktılar için kendileri iyi tanımlı<br/>girdiler (ör: Kartezyen düzlemde düzlemde (0,0) ile (1,1) noktaları arasında kalan alan içindeki<br/>noktalar kümesi) üretmektedir.<br/>2. Çıktı: Çıktı, verilen girdi kümesinin işlenmesi sonucu üretilen veridir. Algoritmaların verilen girdiye göre bir ya da daha fazla iyi tanımlı çıktı üretmesi beklenir. Algoritma çıktılarının veri türü ve<br/>miktarı gibi karakteristiklerinin tanımlanmış olması beklenir.<br/>3. Açıklık: Algoritmanın verilen girdi kümesinden çıktı üretmek için gerekli tüm adımları ve bu adımların işletilme sırasını açık bir şekilde tanımlaması gerekir. Algoritmanın her adımının açık ve yanlış anlaşılmaya mahal vermeyecek şekilde iyi tanımlanması gerekir. Özellikle günlük dil ile yazılan<br/>algoritmalarda açıklık ilkesini ihlal edebilecek ifadelerin bulunması olasıdır. Örneğin iki sayının<br/>çarpılması gerektiği ab, a.b, a*b ya ad a x b şeklinde gösterilebilir. Burada a x b hem a ve b’nin çarpımı hem de a, x ve b değişkenlerinin çarpımı şeklinde algılanabilir. Bu tür karmaşalara yol açmamak<br/>için gerekli açıklamalar algoritma öncesinde yapılmalı ve bir örnek satırlar yazılmalıdır. Verilen<br/>örnekler arasından a*b en açık olanıdır. Bunun yanında, işlem adımlarında çıkabilecek olası hata<br/>durumlarının engellenmesi ve bu hataların oluşması hâlinde nelerin yapılacağının (ör.: bir bölme<br/>işleminde bölenin sıfır olmasının kontrolü) da tanımlanması beklenir.<br/>4. Sonluluk: Algoritmaların bir noktada sonlanması gerekir. Algoritma verilen girdiye ilişkin çıktı<br/>üreterek ya da olası bir çözüm olmadığını belirterek sonlanabilir. Algoritmanın içinde gerekli kontroller yapılarak bir çıktı üretilmesi ve sona erdirilmesi gerekmektedir.<br/>5. Başarım ve Performans: Algoritmanın başarım ve performansı verilen bilgisayar kaynaklarının kullanımı ile ilgili bir kavramdır. Başarım, algoritmanın tanımlanan bilgisayar kaynakları ile çıktı üretebilmesini ifade eder. Performans ise algoritmanın işlem zamanı ve bellek alanını etkin kullanımı ile<br/>ilgilidir. Çıktı üretmek için işletilmesi gerekmeyen adımların kullanılması algoritma performansının düşük olduğunun bir göstergesidir. Örneğin bir sayının asal olup olmadığını anlamak için bölenlerini arayan bir algoritmanın, sayının karekökünden daha büyük bölenler araması gereksizdir.<br/>6. Bağımsızlık: Algoritmalar, programlama dilleri ve platformlardan bağımsızdır. Tanımlanan adımların herhangi bir programlama dili ve bu dilin yürütülebileceği platformlar (ör.: masaüstü cihazlar,<br/>sunucular, mobil cihazlar) üzerinde çalışabilmesi gerekir."
   },
   {
     "id": "3768725",
@@ -193,7 +193,7 @@
       "D": "Kabagüç algoritmaları",
       "E": "Sıralama algoritmaları"
     },
-    "explanation": "gözlü (Greedy) Algoritmalar<br/>Bu algoritmalar optimizasyon problemlerinin çözümü için bilinen verilere dayalı kararlar verir. Kısıtlı verilere dayanarak çözüm arandığından bu algoritmalar en iyi çözümü garanti etmezler."
+    "explanation": "gözlü (Greedy) Algoritmalar<br/>Bu algoritmalar optimizasyon problemlerinin çözümü için bilinen verilere dayalı kararlar verir. Kısıtlı<br/>verilere dayanarak çözüm arandığından bu algoritmalar en iyi çözümü garanti etmezler."
   },
   {
     "id": "3768740",
@@ -207,7 +207,7 @@
       "D": "Özyinelemeli algoritmalar",
       "E": "Kabagüç algoritmaları"
     },
-    "explanation": "Özyinelemeli algoritmalar bir problemin çözümüne ulaşabilmek için kendi kendilerini sürekli çağırırlar. Bu algoritmaların en bilinen örneği, bir sayının faktöriyelinin hesaplanmasıdır. Bu amaçla tanımlanan fonksiyon içinde parametre olarak gelen sayının 1’den büyük olma durumu kontrol edilir. Sayı 1 ise geriye<br/>1 değeri döndürülür. Sayı 1’den büyükse fonksiyon içinden aynı fonksiyona sayının 1 eksiği ile çağrı yapılır ve bu çağrıdan gelen değer sayı ile çarpılarak geri çevrilir"
+    "explanation": "Özyinelemeli algoritmalar bir problemin çözümüne ulaşabilmek için kendi kendilerini sürekli çağırırlar. Bu algoritmaların en bilinen örneği, bir sayının faktöriyelinin hesaplanmasıdır. Bu amaçla tanımlanan<br/>fonksiyon içinde parametre olarak gelen sayının 1’den büyük olma durumu kontrol edilir. Sayı 1 ise geriye<br/>1 değeri döndürülür. Sayı 1’den büyükse fonksiyon içinden aynı fonksiyona sayının 1 eksiği ile çağrı yapılır ve bu çağrıdan gelen değer sayı ile çarpılarak geri çevrilir"
   },
   {
     "id": "3768741",
@@ -221,7 +221,7 @@
       "D": "Böl ve fethet algoritmaları",
       "E": "Dinamik programlama algoritmaları"
     },
-    "explanation": "Kaba güç algoritmaları verilen problemin çözümü herhangi bir strateji geliştirmeden tüm olasılıkları deneyen algoritmalardır. Bu algoritmaların çalışma stili dört haneli bir şifrenin bulunması için 0000’dan başlayarak 9999’a kadar tüm sayıların denenmesine benzetilebilir."
+    "explanation": "Kaba güç algoritmaları verilen problemin çözümü herhangi bir strateji geliştirmeden tüm olasılıkları<br/>deneyen algoritmalardır. Bu algoritmaların çalışma stili dört haneli bir şifrenin bulunması için 0000’dan<br/>başlayarak 9999’a kadar tüm sayıların denenmesine benzetilebilir."
   },
   {
     "id": "3768742",
@@ -235,7 +235,7 @@
       "D": "Dinamik programlama algoritmaları",
       "E": "Böl ve fethet algoritmaları"
     },
-    "explanation": "Sıralama algoritmaları girdi olarak verilen veri setini, belirlenen kriterlere göre düzene koyan algoritmalardır. Bir sıralama algoritması verilen girdi setini küçükten büyüğe ya da büyükten küçüğe doğru sıralayarak çıktı verebilir. Sıralama algoritmaları ile verilerin sıralanması sayesinde verilerin insanlar tarafından daha rahat okunması ya da aranan değerlerin daha kolay bulunması sağlanabilir. Oldukça sık kullanılan bir işlem olduğundan sıralama işleminin zaman ve alan bakımından verimli yapılabilmesi çok önemlidir."
+    "explanation": "Sıralama algoritmaları girdi olarak verilen veri setini, belirlenen kriterlere göre düzene koyan algoritmalardır. Bir sıralama algoritması verilen girdi setini küçükten büyüğe ya da büyükten küçüğe doğru sıralayarak çıktı verebilir. Sıralama algoritmaları ile verilerin sıralanması sayesinde verilerin insanlar tarafından<br/>daha rahat okunması ya da aranan değerlerin daha kolay bulunması sağlanabilir. Oldukça sık kullanılan<br/>bir işlem olduğundan sıralama işleminin zaman ve alan bakımından verimli yapılabilmesi çok önemlidir."
   },
   {
     "id": "3768743",
@@ -277,7 +277,7 @@
       "D": "Açgözlü algoritmalar",
       "E": "Sıralama algoritmaları"
     },
-    "explanation": "Rastgele algoritmaların önemli örneklerinden biri Monte Carlo tekniğidir. Monte Carlo tekniği sayısal değerlerin hesaplanması için yüksek sayıda rastgele değer üretilmesi esasına dayanır. Pi sabitinin yakınsak değerlerinin bulunması için bu teknik kullanılabilir. Pi sabiti irrasyonel bir sayı olduğundan, bu sayının gerçek değeri bulunamasa da gerçek değerine yakınsayan değerlerin hesaplanması önemli bir çalışma alanıdır. Bu amaçla yarıçapı 1 birim olan bir birim çember üretilir."
+    "explanation": "Rastgele algoritmaların önemli örneklerinden biri Monte Carlo tekniğidir. Monte Carlo tekniği sayısal<br/>değerlerin hesaplanması için yüksek sayıda rastgele değer üretilmesi esasına dayanır. Pi sabitinin yakınsak değerlerinin bulunması için bu teknik kullanılabilir. Pi sabiti irrasyonel bir sayı olduğundan, bu sayının gerçek<br/>değeri bulunamasa da gerçek değerine yakınsayan değerlerin hesaplanması önemli bir çalışma alanıdır. Bu<br/>amaçla yarıçapı 1 birim olan bir birim çember üretilir."
   },
   {
     "id": "3768602",
@@ -473,7 +473,7 @@
       "D": "Kuyruklar",
       "E": "Göstergeler"
     },
-    "explanation": "Bağlı listeler, birbirine bağlı düğüm serilerinden oluşan doğrusal veri yapılarıdır. Bu düğümler bilgisayar belleğinde rastgele yerlerde saçılmış durumdadır. Her bir düğüm, veri ve bağlantı adresi (gösterge) bölümlerinden oluşur."
+    "explanation": "Bağlı listeler, birbirine bağlı düğüm serilerinden oluşan doğrusal veri yapılarıdır. Bu düğümler bilgisayar belleğinde rastgele yerlerde saçılmış durumdadır. Her bir düğüm, veri ve bağlantı adresi (gösterge)<br/>bölümlerinden oluşur."
   },
   {
     "id": "3768661",
@@ -487,7 +487,7 @@
       "D": "Farklı türdeki birden fazla değeri saklaması",
       "E": "Bellekte tutulan bir değişkenin fiziksel adresini saklaması"
     },
-    "explanation": "Bağlı listelerin dizilere oranla en önemli avantajı element sayılarını dinamik olarak arttırılabilmesidir. Diziler tanımlandıkları boyutun ötesinde element tutamazken dinamik bellek kullanabilme yeteneği sayesinde bağlı listelere kolaylıkla element eklenebilmektedir. Dizilerde araya değer ekleme ya da değer silme işlemleri oldukça karmaşıktır. Örneğin araya bir değer eklenmesi istendiğinde dizide bu konumdan sonraki tüm elementlerin yerinin kaydırılması gerekmektedir. Bağlı listelerde bu işlem bellek adreslerinin değiştirilmesi yoluyla kolaylıkla yapılabilmektedir. Çalışma zamanında dizilerin boyutunun artırılması olanaksızken bağlı listelere ekleme yapılabilmektedir. Bu sayede programcının liste boyutu belirlemesine gerek kalmaz. Düğüm sayısı dinamik olarak düzenlenebildiğinden, dizilerde olduğu gibi gereksiz bellek kaynağı ayrılması problemleri yaşanmaz. Ayrıca bellekteki herhangi bir alan kullanılabildiğinden kuramsal olarak tüm bellek alanı kullanılabilir durumdadır. Dizilerde elementlerin yan yana tutulması gereksinimi bu kullanıma izin vermeyebilir."
+    "explanation": "Bağlı listelerin dizilere oranla en önemli avantajı element sayılarını dinamik olarak arttırılabilmesidir. Diziler tanımlandıkları boyutun ötesinde element tutamazken dinamik bellek kullanabilme yeteneği<br/>sayesinde bağlı listelere kolaylıkla element eklenebilmektedir. Dizilerde araya değer ekleme ya da değer<br/>silme işlemleri oldukça karmaşıktır. Örneğin araya bir değer eklenmesi istendiğinde dizide bu konumdan<br/>sonraki tüm elementlerin yerinin kaydırılması gerekmektedir. Bağlı listelerde bu işlem bellek adreslerinin değiştirilmesi yoluyla kolaylıkla yapılabilmektedir. Çalışma zamanında dizilerin boyutunun artırılması<br/>olanaksızken bağlı listelere ekleme yapılabilmektedir. Bu sayede programcının liste boyutu belirlemesine<br/>gerek kalmaz. Düğüm sayısı dinamik olarak düzenlenebildiğinden, dizilerde olduğu gibi gereksiz bellek<br/>kaynağı ayrılması problemleri yaşanmaz. Ayrıca bellekteki herhangi bir alan kullanılabildiğinden kuramsal<br/>olarak tüm bellek alanı kullanılabilir durumdadır. Dizilerde elementlerin yan yana tutulması gereksinimi<br/>bu kullanıma izin vermeyebilir."
   },
   {
     "id": "3768662",
@@ -501,7 +501,7 @@
       "D": "Karakter",
       "E": "Yığınlar"
     },
-    "explanation": "Yığınlar Son Giren İlk Çıkar (LIFO - Last In First Out) prensibinde çalışan doğrusal veri yapılarıdır.<br/>Bu veri yapılarının en tepesine veri eklenebilir ve en tepedeki veri çıkarılabilir. Bu yapılar bir kitap yığınına benzetilebilir. Yığının üzerine bir kitap eklenebilir ya da en üstteki kitap yığından çıkarılabilir. Bu veri yapılarında en tepedeki elementi işaret den tek bir gösterge tutulur. Ekleme ve çıkarma işlemlerinde bu gösterge güncellenir."
+    "explanation": "Yığınlar Son Giren İlk Çıkar (LIFO - Last In First Out) prensibinde çalışan doğrusal veri yapılarıdır.<br/>Bu veri yapılarının en tepesine veri eklenebilir ve en tepedeki veri çıkarılabilir. Bu yapılar bir kitap yığınına<br/>benzetilebilir. Yığının üzerine bir kitap eklenebilir ya da en üstteki kitap yığından çıkarılabilir. Bu veri<br/>yapılarında en tepedeki elementi işaret den tek bir gösterge tutulur. Ekleme ve çıkarma işlemlerinde bu<br/>gösterge güncellenir."
   },
   {
     "id": "3768663",
@@ -515,7 +515,7 @@
       "D": "I-III",
       "E": "II-III-IV"
     },
-    "explanation": "Kuyruklar bir uçlarından ekleme, diğer uçlarından silme işlemleri yapılabilen doğrusal veri yapılarıdır.<br/>Ekleme işlemi yapılan sona arka, silme işlemi yapılan sona ise ön adı verilir. Kuyruklar gerçek hayattaki bilet kuyruklarına benzetilebilir. En önden biletini alan elemanlar kuyruktan çıkarken bilet almak isteyenler kuyruğun sonuna eklenirler. Yığınların aksine kuyruklar İlk Giren İlk Çıkar (FIFO - First In First Out) prensibinde çalışır. Kuyruklar da yığınlar gibi pek çok alanda kullanım bulmaktadır. Örneğin donanımsal düzeyde diskler ve yazıcılar işlemlerinin takibini yapabilmek için kuyruklar tutar. İşletim sistemlerinde kesmelerin işletilmesi için kuyruklar tutulmaktadır. Sistemler arasında ya da sistemlerin kendi içindeki veri transferlerinin takibi için de özel kuyruklar tanımlanabilmektedir. Kullanıcı uygulamaları düzeyinde medya oynatıcılarının oynatma listeleri kuyruklar şeklinde düzenlenmektedir."
+    "explanation": "Kuyruklar bir uçlarından ekleme, diğer uçlarından silme işlemleri yapılabilen doğrusal veri yapılarıdır.<br/>Ekleme işlemi yapılan sona arka, silme işlemi yapılan sona ise ön adı verilir. Kuyruklar gerçek hayattaki<br/>bilet kuyruklarına benzetilebilir. En önden biletini alan elemanlar kuyruktan çıkarken bilet almak isteyenler kuyruğun sonuna eklenirler. Yığınların aksine kuyruklar İlk Giren İlk Çıkar (FIFO - First In First Out)<br/>prensibinde çalışır. Kuyruklar da yığınlar gibi pek çok alanda kullanım bulmaktadır. Örneğin donanımsal<br/>düzeyde diskler ve yazıcılar işlemlerinin takibini yapabilmek için kuyruklar tutar. İşletim sistemlerinde<br/>kesmelerin işletilmesi için kuyruklar tutulmaktadır. Sistemler arasında ya da sistemlerin kendi içindeki<br/>veri transferlerinin takibi için de özel kuyruklar tanımlanabilmektedir. Kullanıcı uygulamaları düzeyinde<br/>medya oynatıcılarının oynatma listeleri kuyruklar şeklinde düzenlenmektedir."
   },
   {
     "id": "3768664",
@@ -543,7 +543,7 @@
       "D": "Bir düğümden, yaprak düğüme giden yolun uzunluğudur.",
       "E": "Aynı ebeveynden gelen düğümlerdir."
     },
-    "explanation": "Derinlik (depth): Bir düğüme, kök düğümden gelen yolun uzunluğudur. Bu uzunluğu bulmak için yol üzerindeki kenarlar sayılır."
+    "explanation": "Derinlik (depth): Bir düğüme, kök düğümden gelen yolun uzunluğudur. Bu uzunluğu bulmak için<br/>yol üzerindeki kenarlar sayılır."
   },
   {
     "id": "3768666",
@@ -557,7 +557,7 @@
       "D": "Yaprak-Çocuk",
       "E": "Katman-Derinlik"
     },
-    "explanation": "Çizgeler G(V, E) fonksiyonu ile tanımlanabilir. Bu tanımlamada V kümesi düğümleri, E kümesi ise kenarları ifade etmektedir. Örneğin; V(V1, V2, V3, V4, V5) kümesi 5 adet düğümü ifade etmektedir.<br/>Bu düğümler arasındaki 6 kenar ise E((V1, V2), (V1, V3), (V2, V4), (V1, V4), (V1, V5), (V4, V1)) kümesi ile ifade edilir."
+    "explanation": "Çizgeler G(V, E) fonksiyonu ile tanımlanabilir. Bu tanımlamada V kümesi düğümleri, E kümesi ise<br/>kenarları ifade etmektedir. Örneğin; V(V1, V2, V3, V4, V5) kümesi 5 adet düğümü ifade etmektedir.<br/>Bu düğümler arasındaki 6 kenar ise E((V1, V2), (V1, V3), (V2, V4), (V1, V4), (V1, V5), (V4, V1))<br/>kümesi ile ifade edilir."
   },
   {
     "id": "3768735",
@@ -683,7 +683,7 @@
       "D": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/741cd0bc285fb80b1541340650387bfe.jpeg\" alt=\"\" width=\"117\" height=\"214\"/>",
       "E": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/b9dbefcb3e59be12818ea79716fd36f1.jpeg\" alt=\"\" width=\"224\" height=\"231\"/>"
     },
-    "explanation": "İki sayıdan büyük olanı bulup ekrana yazdıran algoritma:<br/>1. Başla<br/>2. Kullanıcı iki sayı girsin. (x, y)<br/>3. x, y’den büyükse x’i yazdır, değilse y’yi yazdır.<br/>4. Bitir şeklinde olacaktır. Doğru yanıt B seçeneğidir."
+    "explanation": "İki sayıdan büyük olanı bulup ekrana yazdıran algoritma:<br/>1. Başla<br/>2. Kullanıcı iki sayı girsin. (x, y)<br/>3. x, y’den büyükse x’i yazdır, değilse y’yi yazdır.<br/>4. Bitir<br/>şeklinde olacaktır. Doğru yanıt B seçeneğidir."
   },
   {
     "id": "3768751",
@@ -879,7 +879,7 @@
       "D": "(Hacim&lt;3 &amp;&amp; etiketRenk==’Turuncu’) || (Hacim&gt;=3 &amp;&amp; etiketRenk==’Siyah’)",
       "E": "(Hacim&lt;=3 &amp;&amp; etiketRenk==’Turuncu’) || (Hacim&gt;3 &amp;&amp; etiketRenk==’Siyah’)"
     },
-    "explanation": "Karar Yapıları / Mantıksal Operatörler<br/>Mantıksal operatörler karar durumlarında birden fazla karşılaştırma gerektiğinde kullanılmaktadır. Bazı durumlarda birden fazla mantıksal operatörün aynı anda kullanılması gerekebilir. Bu gibi durumlarda koşul ifadeleri parantezler kullanılarak gruplanmalıdır. Bu durumda koşul ifadesi: (Hacim&lt;3 &amp;&amp; etiketRenk==’Turuncu’) || (Hacim&gt;=3 &amp;&amp; etiketRenk==’Siyah’) şeklinde olacaktır."
+    "explanation": "Karar Yapıları / Mantıksal Operatörler<br/>Mantıksal operatörler karar durumlarında birden fazla karşılaştırma gerektiğinde kullanılmaktadır. Bazı durumlarda birden fazla mantıksal operatörün aynı anda kullanılması gerekebilir. Bu gibi durumlarda koşul ifadeleri parantezler kullanılarak gruplanmalıdır. Bu durumda koşul ifadesi:<br/>(Hacim&lt;3 &amp;&amp; etiketRenk==’Turuncu’) || (Hacim&gt;=3 &amp;&amp; etiketRenk==’Siyah’) şeklinde olacaktır."
   },
   {
     "id": "3768708",
@@ -907,7 +907,7 @@
       "D": "XO",
       "E": "YZ"
     },
-    "explanation": "Karar Yapıları / Çift Seçimli Yapılar (if - else Yapısı)<br/>If - else yapısı If yapısının en az üç aşamalı olanı olarak düşünülebilir. Belli bir bilgi karşılığında programın ne yapacağı karar aşamaları için bilginin verildiği bölüm “if ”, bilgi doğru ise gerçekleştirilecek ifadenin verildiği bölüm “then”, bilgi yanlış ise gerçekleştirilecek ifadenin verildiği bölüm ise “else” olarak tanımlanır.<br/>Bu soruda, if-else yapısının akış diyagramı izlendiğinde, soruda verilen değerlere göre sadece<br/>Hava1&gt;Hava2 yani 50&gt;30 koşulu sağlandığından, X değeri ve akabine<br/>Hava3&gt;Hava2 yani 15&gt;30 koşulu sağlanmadığından, O değeri ekrana yazılacaktır.<br/>Doğru cevap \"XO\" olmak üzere, D seçeneğidir."
+    "explanation": "Karar Yapıları / Çift Seçimli Yapılar (if - else Yapısı)<br/>If - else yapısı If yapısının en az üç aşamalı olanı olarak düşünülebilir. Belli bir bilgi karşılığında programın ne yapacağı karar aşamaları için bilginin verildiği bölüm “if ”, bilgi doğru ise gerçekleştirilecek ifadenin verildiği bölüm “then”, bilgi yanlış ise gerçekleştirilecek ifadenin verildiği bölüm ise “else” olarak tanımlanır.<br/>Bu soruda, if-else yapısının akış diyagramı izlendiğinde, soruda verilen değerlere göre sadece<br/>Hava1&gt;Hava2 yani 50&gt;30 koşulu sağlandığından, X değeri<br/>ve akabine<br/>Hava3&gt;Hava2 yani 15&gt;30 koşulu sağlanmadığından, O değeri<br/>ekrana yazılacaktır.<br/>Doğru cevap \"XO\" olmak üzere, D seçeneğidir."
   },
   {
     "id": "3768710",
@@ -1215,7 +1215,7 @@
       "D": "<em>Θ(g(n)) = O(g(n)) </em><strong>∩ </strong><em>Ω (g(x))</em>",
       "E": "<em>Θ(g(n)) ≠O(g(n)) </em><strong>∩ </strong><em>Ω (g(x))</em>"
     },
-    "explanation": "Asimptotik Gösterim / Big Omega Gösterimi<br/>Big theta gösterimi Big-O gösterimi ile Big-Omega gösterimi arasında ortalama bir karmaşıklığı ifade eder. Bir başka deyişle algoritmanın ortalama çalışma zamanını göstermektedir.<br/>Matematiksel olarak ifade etmek gerekirse;<br/>Bir f(x) fonksiyonu için her durumda c1.g(x) &lt;=f(x) &lt;=c2.g(x) koşullarını sağlayan pozitif, sabit c1, c2 değerleri bulunabiliyorsa f(x)= Θ(g(x)) şeklinde ifade edilebilir.<br/>Bunlara ek olarak big-tetha fonksiyonunu aşağıdaki şekilde ifade etmekte mümkündür.<br/><em>Θ(g(n)) = O(g(n)) </em><strong>∩ </strong><em>Ω (g(x))</em>"
+    "explanation": "Asimptotik Gösterim / Big Omega Gösterimi<br/>Big theta gösterimi Big-O gösterimi ile Big-Omega gösterimi arasında ortalama bir karmaşıklığı ifade eder. Bir başka deyişle algoritmanın ortalama çalışma zamanını göstermektedir.<br/>Matematiksel olarak ifade etmek gerekirse;<br/>Bir f(x) fonksiyonu için her durumda<br/>c1.g(x) &lt;=f(x) &lt;=c2.g(x) koşullarını sağlayan pozitif, sabit c1, c2 değerleri bulunabiliyorsa<br/>f(x)= Θ(g(x))<br/>şeklinde ifade edilebilir.<br/>Bunlara ek olarak big-tetha fonksiyonunu aşağıdaki şekilde ifade etmekte mümkündür.<br/><em>Θ(g(n)) = O(g(n)) </em><strong>∩ </strong><em>Ω (g(x))</em>"
   },
   {
     "id": "3768722",
@@ -1229,7 +1229,7 @@
       "D": "|f(x)| = c. |g(x)| + k",
       "E": "|f(x)| ≥c. |g(x)| + k"
     },
-    "explanation": "Asimptotik Gösterim / Big Omega Gösterimi<br/>Big-O gösterimi diğer asimptotik gösterimlerde de olduğu gibi birçok ifadeyi sadeleştirerek elde edilir. Örneğin çalışma zamanı T(n)=n4+n2+2n+8 olan bir algoritma için Big-O gösterimi O(n4) şeklinde olacaktır. Bu işlem bir fonksiyonun büyümesi şeklinde de tanımlanmaktadır. Matematiksel olarak ifade etmek gerekirse; f ve g reel sayılarda tanımlı iki fonksiyon olsun.<br/>f(x) fonksiyonu için c ve k sabit olmak üzere O(g(x)) fonksiyonu aşağıdaki gibi tanımlanmaktadır.<br/>O(g(x)) = c. |g(x)| + k olmak üzere;<br/>|f(x)| ≤ c. |g(x)| + k"
+    "explanation": "Asimptotik Gösterim / Big Omega Gösterimi<br/>Big-O gösterimi diğer asimptotik gösterimlerde de olduğu gibi birçok ifadeyi sadeleştirerek elde edilir. Örneğin çalışma zamanı T(n)=n4+n2+2n+8 olan bir algoritma için Big-O gösterimi O(n4) şeklinde olacaktır. Bu işlem bir fonksiyonun büyümesi şeklinde de tanımlanmaktadır. Matematiksel olarak ifade etmek gerekirse;<br/>f ve g reel sayılarda tanımlı iki fonksiyon olsun.<br/>f(x) fonksiyonu için<br/>c ve k sabit olmak üzere O(g(x)) fonksiyonu aşağıdaki gibi tanımlanmaktadır.<br/>O(g(x)) = c. |g(x)| + k olmak üzere;<br/>|f(x)| ≤ c. |g(x)| + k"
   },
   {
     "id": "3768723",
@@ -1537,7 +1537,7 @@
       "D": "S(n) = n<sup>3</sup>",
       "E": "S(n) = n(n<sup>2</sup>+1)"
     },
-    "explanation": "C şıkkındaki fonksiyonun n=100 için değeri 10*100+100<sup>2</sup>=11.000 olmaktadır.<br/>(A şıkkındaki fonksiyonun n=100 için değeri 1000*100=100.000 olarak daha büyüktür. Diğer seçenekler ise n<sup>3</sup> = 100<sup>3</sup> = 1.000.000 veya daha fazla bir değere sahip olmaktadır. Bu sebeple A şıkkından da büyük alan kaplamaktadır. Alan karmaşıklığı daha fazladır.) n=100 için en küçük değerin elde edildiği fonksiyon c şıkkındaki fonksiyon olduğundan doğru cevap (C) şıkkıdır."
+    "explanation": "C şıkkındaki fonksiyonun n=100 için değeri 10*100+100<sup>2</sup>=11.000 olmaktadır.<br/>(A şıkkındaki fonksiyonun n=100 için değeri 1000*100=100.000 olarak daha büyüktür. Diğer seçenekler ise n<sup>3</sup> = 100<sup>3</sup> = 1.000.000 veya daha fazla bir değere sahip olmaktadır. Bu sebeple A şıkkından da büyük alan kaplamaktadır. Alan karmaşıklığı daha fazladır.)<br/>n=100 için en küçük değerin elde edildiği fonksiyon c şıkkındaki fonksiyon olduğundan doğru cevap (C) şıkkıdır."
   },
   {
     "id": "3768957",
@@ -1663,7 +1663,7 @@
       "D": "Little-o",
       "E": "Little-omega"
     },
-    "explanation": "Bir f(x) fonksiyonu için her durumda c<sub>1</sub>.g(x) &lt;=f(x) &lt;=c<sub>2</sub>.g(x) koşullarını sağlayan pozitif, sabit c<sub>1</sub> , c<sub>2</sub> değerleri bulunabiliyorsa f fonksiyonu f(x)= Θ(g(x)) şeklinde ifade edilebilir. Bunlara ek olarak big-tetha fonksiyonunu aşağıdaki şekilde ifade etmekte mümkündür.<br/>Θ(g(n)) = O(g(n)) ∩ Ω (g(x))<br/>Doğru cevap C'dir."
+    "explanation": "Bir f(x) fonksiyonu için her durumda<br/>c<sub>1</sub>.g(x) &lt;=f(x) &lt;=c<sub>2</sub>.g(x) koşullarını sağlayan pozitif, sabit c<sub>1</sub> , c<sub>2</sub> değerleri bulunabiliyorsa f fonksiyonu f(x)= Θ(g(x))<br/>şeklinde ifade edilebilir. Bunlara ek olarak big-tetha fonksiyonunu aşağıdaki şekilde ifade etmekte mümkündür.<br/>Θ(g(n)) = O(g(n)) ∩ Ω (g(x))<br/>Doğru cevap C'dir."
   },
   {
     "id": "3768972",
@@ -2069,7 +2069,7 @@
       "D": "Yığın",
       "E": "Indis"
     },
-    "explanation": "Hızlı sıralama pivot"
+    "explanation": "Hızlı sıralama<br/>pivot"
   },
   {
     "id": "3768941",
@@ -3007,7 +3007,7 @@
       "D": "TN değerin TN+FN toplamına bölünmesiyle elde edilir.",
       "E": "TN değerin TN+FP toplamına bölünmesiyle elde edilir."
     },
-    "explanation": "Duyarlılık değeri; verilen bir sınıf için doğru tahminlenen örnek sayısının (TP) o sınıfa ait toplam örnek sayısına (TP+FN) oranı olarak hesaplanır. Diğer bir deyişle bir sınıfa ait örneklerin ne oranda o sınıfa ait olarak tahminlendiğini gösteren bir göstergedir.<br/>Duyarlılık değeri ise verilen bir sınıf için doğru tahminlenen örnek sayısının (TP) o sınıfa ait toplam örnek sayısına (TP+FN) oranı olarak hesaplanır. Diğer bir deyişle bir sınıfa ait örneklerin ne oranda o sınıfa ait olarak tahminlendiğini gösteren bir göstergedir"
+    "explanation": "Duyarlılık değeri; verilen bir sınıf için doğru tahminlenen örnek sayısının (TP) o sınıfa ait toplam örnek sayısına (TP+FN) oranı olarak hesaplanır. Diğer bir deyişle bir sınıfa ait örneklerin ne oranda o sınıfa ait olarak tahminlendiğini gösteren bir göstergedir.<br/>Duyarlılık değeri ise verilen bir sınıf için doğru tahminlenen örnek sayısının (TP) o sınıfa ait toplam örnek sayısına (TP+FN) oranı olarak hesaplanır. Diğer bir deyişle<br/>bir sınıfa ait örneklerin ne oranda o sınıfa ait olarak tahminlendiğini gösteren bir göstergedir"
   },
   {
     "id": "3768888",

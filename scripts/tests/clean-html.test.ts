@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { cleanHtml, toPlainText } from '../utils/clean-html.ts';
+import { areTextsSimilar, cleanHtml, toPlainText } from '../utils/clean-html.ts';
 
 describe('cleanHtml Deduplication Logic', () => {
     it('should deduplicate when explanation contains title content fully', () => {
@@ -25,6 +25,18 @@ describe('cleanHtml Deduplication Logic', () => {
         expect(cleaned).toBe(p2.replace('<br/>', '<br/>')); // cleanHtml normalizes <br>
     });
 
+    it('should preserve BR tags before list markers in explanations', () => {
+        const input = "Intro<br/>a. Option A<br/>b. Option B";
+        const cleaned = cleanHtml(input, { isExplanation: true });
+        expect(cleaned).toContain("a. Option A<br/>b. Option B");
+    });
+
+    it('should deduplicate when title is a subset of explanation (V. Mehmet Reşat case)', () => {
+        const title = "V. Mehmet Reşat";
+        const expl = "Değişikliklerle padişahın... V. Mehmet Reşat, Padişahlığı meclis tarafından onaylanan... ilk padişah olmuştur.";
+        expect(areTextsSimilar(title, expl)).toBe(true);
+    });
+
     it('should deduplicate complex HTML structures', () => {
         const p1 = "<p>Sanayi devriminden önce toplumlarda...</p>";
         const p2 = "<p>Doğru yanıt C. Sanayi devriminden önce toplumlarda...</p><ul><li>Madde 1</li></ul>";
@@ -32,20 +44,8 @@ describe('cleanHtml Deduplication Logic', () => {
         const input = `${p1}<br/>${p2}`;
         const cleaned = cleanHtml(input);
 
-        // It should pick the longer, more detailed one
-        // Note: cleanHtml strips <p> tags usually, so we expect the content of p2
         expect(cleaned).toContain("Doğru yanıt C");
         expect(cleaned).toContain("Madde 1");
-        // Ensure p1's text isn't repeated explicitly at the start if it's contained in p2
-        const p1Text = toPlainText(p1);
-        const cleanedText = toPlainText(cleaned);
-
-        // Count occurrences of a unique phrase
-        const phrase = "Sanayi devriminden önce";
-        const matches = cleanedText.match(new RegExp(phrase.toLowerCase(), 'g'));
-        // Ideally should be 1 if deduplication worked, or at least not 2 separate blocks
-        // But since our logic depends on EXACT inclusion of normalized text:
-        // Let's verify it didn't just concatenate blindly.
     });
 });
 
@@ -60,5 +60,29 @@ describe('toPlainText Utility', () => {
         const html = "<p>Para 1</p><br/><span>Para 2</span>";
         const text = toPlainText(html);
         expect(text).toBe("para 1 para 2");
+    });
+});
+
+describe('areTextsSimilar Utility', () => {
+    it('should match strict inclusion', () => {
+        expect(areTextsSimilar("hello world", "hello")).toBe(true);
+    });
+
+    it('should match fuzzy inclusion (ignoring special chars)', () => {
+        const t1 = "lorem ipsum dolor sit amet";
+        const t2 = "lorem ipsum dolor sit amet (link)";
+        // Normalized: "loremipsumdolorsitamet" vs "loremipsumdolorsitametlink"
+        expect(areTextsSimilar(t1, t2)).toBe(true);
+    });
+
+    it('should match long texts that start identical', () => {
+        const longBase = "a".repeat(300);
+        const t1 = longBase + "suffix1";
+        const t2 = longBase + "suffix2";
+        expect(areTextsSimilar(t1, t2)).toBe(true);
+    });
+
+    it('should NOT match distinct short texts', () => {
+        expect(areTextsSimilar("Question I", "Question II")).toBe(false);
     });
 });

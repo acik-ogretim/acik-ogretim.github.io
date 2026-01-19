@@ -167,7 +167,7 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
     });
 
     // Unwrap layout containers
-    const layoutTags = ['div', 'article', 'section', 'header', 'footer', 'nav', 'main', 'aside', 'figure', 'figcaption', 'span', 'font', 'center'];
+    const layoutTags = ['div', 'article', 'section', 'header', 'footer', 'nav', 'main', 'aside', 'figure', 'figcaption', 'span', 'font', 'center', 'a'];
     if (!options.isTechnical) layoutTags.push('pre');
 
     let changed = true, iterations = 0;
@@ -176,7 +176,15 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
         const currentRoot = root; // Re-query checks
         layoutTags.forEach(tag => {
             currentRoot.find(tag).each((_, el) => {
-                $(el).replaceWith($(el).contents());
+                const $el = $(el);
+                // When unwrapping block elements, ensure we don't merge text
+                // e.g. <p>Title</p><p>Content</p> -> "Title Content" not "TitleContent"
+                // Adding a space is safe; regex cleanup later handles multiple spaces.
+                if (tag === 'p' || tag === 'div' || tag === 'header' || tag === 'footer' || tag === 'section' || tag === 'article' || tag === 'br') {
+                    $el.before('<br/>');
+                    $el.after('<br/>');
+                }
+                $el.replaceWith($el.contents());
                 changed = true;
             });
         });
@@ -194,13 +202,16 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
         const prevText = he.decode(prevTextRaw).trimEnd();
         const nextText = he.decode(nextTextRaw).trimStart();
 
-        const isListMarker = /^([•\-–—]|[IVXivx]+\.|[0-9]+[\.\-]|\([0-9]+\)|\([a-zA-Z]\)\s)/.test(nextText);
+        const isListMarker = /^([•\-–—]|[IVXivx]+\.|[0-9]+[\.\-]|\([0-9]+\)|\([a-zA-Z]\)\s|[a-zA-Z]\.\s)/.test(nextText);
         const startsWithUppercase = /^[A-ZÇĞİÖŞÜÂÎÛ]/.test(nextText) && !/^[a-zçğıöşüâîû]/.test(nextText);
         const isMidSentence = /[a-zA-ZçğıöşüİĞÜÖŞçâîûÂÎÛ0-9,;:\)\s]$/.test(prevText) &&
             (/^[a-zçğıöşüâîû]/.test(nextText) || nextText.startsWith('('));
         const inTable = $br.closest('table').length > 0;
 
-        if (!inTable && !isListMarker && !startsWithUppercase && isMidSentence && prev && prev.type === 'text' && next && next.type === 'text') {
+        // In explanation text, we want to preserve structure more aggressively, especially manual lists
+        const aggressiveMerge = !options.isExplanation && !options.preserveCode;
+
+        if (aggressiveMerge && !inTable && !isListMarker && !startsWithUppercase && isMidSentence && prev && prev.type === 'text' && next && next.type === 'text') {
             prev.data = prevTextRaw.trimEnd() + ' ';
             next.data = nextTextRaw.trimStart();
             $br.remove();
@@ -265,16 +276,40 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
     root.find('a').each((_, el) => { if (!$(el).attr('href')) { $(el).replaceWith($(el).contents()); } });
 
     // Merge lists
+    // Merge lists ONLY if they are strictly adjacent or separated by whitespace/BR
     root.find('ul, ol').each((_, el) => {
         const $el = $(el);
         if ($el.parent().length === 0) return;
         const tag = el.tagName.toLowerCase();
-        let $next = $el.next();
-        while ($next.length && $next[0].tagName.toLowerCase() === tag) {
-            if (tag === 'ol' && $el.attr('type') !== $next.attr('type')) break;
-            $el.append($next.contents());
-            $next.remove();
-            $next = $el.next();
+
+        // We need to check siblings manually to catch text nodes
+        let nextNode = el.nextSibling;
+        while (nextNode) {
+            // Skip text nodes that are just whitespace
+            if (nextNode.type === 'text' && !nextNode.data?.trim()) {
+                nextNode = nextNode.nextSibling;
+                continue;
+            }
+            // If BR, skip it (it's just partial formatting, we can merge across BR)
+            if (nextNode.type === 'tag' && nextNode.tagName === 'br') {
+                nextNode = nextNode.nextSibling;
+                continue;
+            }
+
+            // If it's the same list tag, merge!
+            if (nextNode.type === 'tag' && nextNode.tagName === tag) {
+                const $next = $(nextNode);
+                if (tag === 'ol' && $el.attr('type') !== $next.attr('type')) break;
+
+                $el.append($next.contents());
+                const nextToDel = nextNode;
+                nextNode = nextNode.nextSibling; // Advance before removing
+                $(nextToDel).remove();
+                continue; // Continue checking for more
+            }
+
+            // If we hit anything else (text content, other tag), STOP merging
+            break;
         }
     });
 
@@ -325,8 +360,14 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
     result = result.replace(/\s*<br\s*\/?>\s*/gi, '<br/>');
 
     // Lists cleanup: no BR around lists
-    result = result.replace(/<br\s*\/?>\s*(<\/?(?:ul|ol|li)\b[^>]*>)/gi, '$1');
-    result = result.replace(/(<\/?(?:ul|ol|li)\b[^>]*>)\s*<br\s*\/?>/gi, '$1');
+    // Only strip BR before UL/OL start, or after UL/OL end IF followed by another block
+    // BUT we must be careful not to merge text.
+    // Safest: Don't strip BR after list closing tags </ul>, </ol>, </li>.
+    // Just strip BR before the list starts <ul>, <ol>.
+
+    // result = result.replace(/<br\s*\/?>\s*(<(?:ul|ol)\b[^>]*>)/gi, '$1');
+    // We comment out the aggressive "strip after" regex because it causes merging
+    // result = result.replace(/(<\/?(?:ul|ol|li)\b[^>]*>)\s*<br\s*\/?>/gi, '$1');
 
     // Self-close IMG
     result = result.replace(/<img([^>]*)>/gi, (match, attrs) => `<img ${attrs.trim()}/>`);
@@ -414,6 +455,70 @@ export function toPlainText(html: string): string {
         .replace(/\s+/g, ' ')
         .trim()
         .toLowerCase();
+}
+
+/**
+ * Checks if two texts are substantially similar, useful for deduplication.
+ * It handles cases where one text is a subset of another, or they differ only by
+ * minor artifacts (like a missing link or extra whitespace).
+ */
+export function areTextsSimilar(t1: string, t2: string): boolean {
+    if (!t1 || !t2) return false;
+
+    t1 = t1.toLowerCase();
+    t2 = t2.toLowerCase();
+
+    // 1. Strict Inclusion (fastest) but safe for short texts
+    // If one includes the other, check if they are roughly same length (e.g. > 50% overlap ratio)
+    // This prevents "I" matching "II" or "cat" matching "catch".
+    if (t1.includes(t2) || t2.includes(t1)) {
+        // For very short texts, avoid partial word matches or slight diffs like "I" vs "II"
+        if (t1.length < 50 || t2.length < 50) {
+            // Tokenize by splitting on any non-alphanumeric chars
+            const tokenizer = (text: string) => text.toLowerCase().split(/[^a-z0-9şğüöçı]+/).filter(t => t.length > 0);
+
+            const tokens1 = tokenizer(t1);
+            const tokens2 = tokenizer(t2);
+
+            const shortTokens = tokens1.length < tokens2.length ? tokens1 : tokens2;
+            const longTokens = tokens1.length < tokens2.length ? tokens2 : tokens1;
+
+            // If strict subset of tokens
+            const allExist = shortTokens.every(st => longTokens.includes(st));
+            if (allExist) return true;
+
+            // If tokens didn't match perfectly (e.g. punctuation attached to word), fall back to high ratio
+            const lenRatio = Math.min(t1.length, t2.length) / Math.max(t1.length, t2.length);
+            return lenRatio > 0.95;
+        }
+        return true;
+    }
+
+    // 2. Alphanumeric Inclusion (ignores punctuation/whitespace)
+    const s1 = t1.replace(/[^a-z0-9şğüöçı]/g, '');
+    const s2 = t2.replace(/[^a-z0-9şğüöçı]/g, '');
+
+    // Safety check for empty strings after strip
+    if (!s1 || !s2) return false;
+
+    if (s2.includes(s1) || s1.includes(s2)) {
+        // Same length ratio safety check
+        const lenRatio = Math.min(s1.length, s2.length) / Math.max(s1.length, s2.length);
+        if (s1.length < 15 || s2.length < 15) {
+            return lenRatio > 0.9;
+        }
+        return true;
+    }
+
+    // 3. Start Overlap + Length Heuristic for long texts
+    // If both are long (>200 chars) and start with the same 50 chars.
+    if (t1.length > 200 && t2.length > 200) {
+        if (t1.substring(0, 50) === t2.substring(0, 50)) {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 export function questionsToMarkdown(questions: any[]): string {

@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { cleanHtml, toPlainText } from './utils/clean-html.ts';
+import { areTextsSimilar, cleanHtml, toPlainText } from './utils/clean-html.ts';
 import type { AppQuestion } from './utils/sync-core.ts';
 import { saveQuestions } from './utils/sync-core.ts';
 
@@ -43,7 +43,7 @@ function processCourse(slug: string) {
 
             let finalExpl = "";
             if (raw.AnswerExplanation && raw.Title) {
-                if (eNorm.includes(tNorm) || tNorm.includes(eNorm)) {
+                if (areTextsSimilar(tNorm, eNorm)) {
                     finalExpl = (cExpl.length >= cTitle.length) ? cExpl : cTitle;
                 } else {
                     finalExpl = cTitle + "<br/>" + cExpl;
@@ -99,8 +99,12 @@ function syncAll() {
         return fs.statSync(path.join(SOURCE_DIR, f)).isDirectory();
     });
 
-    console.log(`Found ${slugs.length} AUZEF courses in MCP.`);
-    slugs.forEach(processCourse);
+    console.log(`Found ${slugs.length} AUZEF courses.`);
+
+    // Process sequentially to check for errors easier
+    for (const slug of slugs) {
+        processCourse(slug);
+    }
 }
 
 syncAll();
