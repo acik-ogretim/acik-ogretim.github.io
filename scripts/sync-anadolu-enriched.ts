@@ -1,7 +1,7 @@
 
 import fs from 'fs';
 import path from 'path';
-import { cleanHtml } from './utils/clean-html.ts';
+import { cleanHtml, toPlainText } from './utils/clean-html.ts';
 import type { AppQuestion } from './utils/sync-core.ts';
 import { normalizeTextForMap, saveQuestions, slugify } from './utils/sync-core.ts';
 
@@ -34,26 +34,29 @@ function processExerciseList(list: any[]): AppQuestion[] {
 
         if (rawTitle) {
             if (rawExpl) {
-                const tNorm = cleanHtml(rawTitle).replace(/\s+/g, ' ').trim().toLowerCase();
-                const eNorm = cleanHtml(rawExpl).replace(/\s+/g, ' ').trim().toLowerCase();
+                const tNorm = toPlainText(rawTitle);
+                const eNorm = toPlainText(rawExpl);
+                const cTitle = cleanHtml(rawTitle);
+                const cExpl = cleanHtml(rawExpl);
 
-                if (eNorm.includes(tNorm)) {
-                    // Explanation covers title
-                    finalExpl = rawExpl;
-                } else if (tNorm.includes(eNorm)) {
-                    // Title covers explanation
-                    finalExpl = rawTitle;
+                if (eNorm.includes(tNorm) || tNorm.includes(eNorm)) {
+                    // Prefer the version that has more content (HTML/Images)
+                    finalExpl = (cExpl.length >= cTitle.length) ? cExpl : cTitle;
                 } else {
-                    // Concatenate
-                    finalExpl = `${rawTitle}<br/>${rawExpl}`;
+                    // Concatenate CLEANED strings to prevent unclosed tag swallowing
+                    finalExpl = `${cTitle}<br/>${cExpl}`;
                 }
             } else {
-                finalExpl = rawTitle;
+                finalExpl = cleanHtml(rawTitle);
             }
+        } else if (rawExpl) {
+            finalExpl = cleanHtml(rawExpl);
+        } else {
+            finalExpl = "";
         }
 
         if (finalExpl && finalExpl.length > 5) {
-            mapped.explanation = cleanHtml(finalExpl);
+            mapped.explanation = cleanHtml(finalExpl, { isExplanation: true, disableChoiceCleanup: true });
         }
 
         out.push(mapped);

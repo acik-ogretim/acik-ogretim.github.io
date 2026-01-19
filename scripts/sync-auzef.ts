@@ -1,126 +1,106 @@
-
 import fs from 'fs';
 import path from 'path';
-import { cleanHtml } from './utils/clean-html.js';
-import type { AppQuestion } from './utils/sync-core.js';
-import { saveQuestions, slugify } from './utils/sync-core.js';
+import { cleanHtml, toPlainText } from './utils/clean-html.ts';
+import type { AppQuestion } from './utils/sync-core.ts';
+import { saveQuestions } from './utils/sync-core.ts';
 
 // Configurations
 const PORTAL_ROOT = process.cwd();
-const DENEMELER_ROOT = path.resolve(PORTAL_ROOT, '../ataaof-denemeler');
-const SOURCE_JSON_DIR = path.join(DENEMELER_ROOT, 'output/Auzef/json');
+const MCP_ROOT = path.resolve(PORTAL_ROOT, '../acik-ogretim-mcp');
+const SOURCE_DIR = path.join(MCP_ROOT, 'data/raw/auzef');
 const TARGET_DIR = path.join(PORTAL_ROOT, 'data/questions/auzef');
 
-interface SourceQuestion {
-    SoruID: string | number;
-    SoruMetni: string;
-    A?: string;
-    B?: string;
-    C?: string;
-    D?: string;
-    E?: string;
-    DogruCevap: string;
-    Unite?: number;
-    Aciklama?: string;
+interface RawMcpQuestion {
+    QuestionId: number;
+    UniteNo: number;
+    AnswerExplanation?: string;
+    Title?: string;
+    Text: string;
+    A: string;
+    B: string;
+    C: string;
+    D: string;
+    E: string;
+    CorrectAnswer: string;
 }
 
-function processList(list: any[], isTechnical: boolean = false): AppQuestion[] {
-    const out: AppQuestion[] = [];
-    list.forEach(q => {
-        if (!q.SoruMetni) return;
+function processCourse(slug: string) {
+    const rawFilePath = path.join(SOURCE_DIR, slug, 'alistirma-sorulari.json');
+    if (!fs.existsSync(rawFilePath)) return;
 
-        const mapped: AppQuestion = {
-            id: String(q.SoruID),
-            unitNumber: q.Unite || 0,
-            text: cleanHtml(q.SoruMetni, { isTechnical }),
-            correctAnswer: (q.DogruCevap || "").trim().toUpperCase(),
-            options: {}
-        };
+    try {
+        const rawContent = fs.readFileSync(rawFilePath, 'utf-8');
+        const rawData: RawMcpQuestion[] = JSON.parse(rawContent);
 
-        ['A', 'B', 'C', 'D', 'E'].forEach(opt => {
-            if (q[opt]) mapped.options[opt] = cleanHtml(q[opt], { isTechnical });
+        const technicalKeywords = ['programlama', 'algoritma', 'kodlama', 'web', 'veritabanı', 'internet-prog', 'yazılım-müh', 'yazılım-gelistirme', 'veri-yapilari', 'veri-madenciligi', 'tasarim', 'modelleme'];
+        const isTechnical = technicalKeywords.some(kw => slug.toLowerCase().includes(kw));
+
+        const appQuestions: AppQuestion[] = rawData.map(raw => {
+            const cTitle = cleanHtml(raw.Title || "");
+            const cExpl = cleanHtml(raw.AnswerExplanation || "");
+            const tNorm = toPlainText(raw.Title || "");
+            const eNorm = toPlainText(raw.AnswerExplanation || "");
+
+            let finalExpl = "";
+            if (raw.AnswerExplanation && raw.Title) {
+                if (eNorm.includes(tNorm) || tNorm.includes(eNorm)) {
+                    finalExpl = (cExpl.length >= cTitle.length) ? cExpl : cTitle;
+                } else {
+                    finalExpl = cTitle + "<br/>" + cExpl;
+                }
+            } else {
+                finalExpl = cExpl || cTitle;
+            }
+
+            if (finalExpl) {
+                finalExpl = cleanHtml(finalExpl, { isExplanation: true, disableChoiceCleanup: true });
+            }
+
+            const q: AppQuestion = {
+                id: String(raw.QuestionId),
+                unitNumber: raw.UniteNo || 0,
+                text: cleanHtml(raw.Text, { isTechnical }),
+                correctAnswer: (raw.CorrectAnswer || "").trim().toUpperCase(),
+                options: {
+                    A: cleanHtml(raw.A, { isTechnical }),
+                    B: cleanHtml(raw.B, { isTechnical }),
+                    C: cleanHtml(raw.C, { isTechnical }),
+                    D: cleanHtml(raw.D, { isTechnical }),
+                    E: cleanHtml(raw.E, { isTechnical })
+                }
+            };
+
+            if (finalExpl && finalExpl.length > 5) {
+                q.explanation = cleanHtml(finalExpl, { isTechnical, isExplanation: true, disableChoiceCleanup: true });
+            }
+
+            return q;
         });
 
-        if (q.Aciklama && q.Aciklama.length > 5) {
-            mapped.explanation = cleanHtml(q.Aciklama, { isTechnical, isExplanation: true, disableChoiceCleanup: true, debug: process.env.DEBUG === 'true' });
-        }
+        saveQuestions(slug, appQuestions, TARGET_DIR);
+        console.log(`✅ Synced AUZEF: ${slug} (${appQuestions.length} questions)`);
 
-        out.push(mapped);
-    });
-    return out;
+    } catch (e: any) {
+        console.warn(`Error processing ${slug}:`, e.message);
+    }
 }
 
-function processAll() {
-    if (!fs.existsSync(SOURCE_JSON_DIR)) {
-        console.error(`Source directory not found: ${SOURCE_JSON_DIR}`);
+function syncAll() {
+    if (!fs.existsSync(SOURCE_DIR)) {
+        console.error(`Source directory not found: ${SOURCE_DIR}`);
         return;
     }
 
-    const courseFiles: { [slug: string]: string[] } = {};
+    if (!fs.existsSync(TARGET_DIR)) {
+        fs.mkdirSync(TARGET_DIR, { recursive: true });
+    }
 
-    // 1. Gather files
-    const terms = fs.readdirSync(SOURCE_JSON_DIR);
-    terms.forEach(term => {
-        if (term === '.DS_Store') return;
-        const termPath = path.join(SOURCE_JSON_DIR, term);
-        try {
-            if (!fs.statSync(termPath).isDirectory()) return;
-        } catch { return; }
-
-        const files = fs.readdirSync(termPath);
-        files.forEach(f => {
-            if (!f.endsWith('.json')) return;
-            // Avoid Raw files
-            if (f.endsWith(' - Raw.json')) return;
-
-            // Pattern: Auzef - Dönem X - [Course Name] - [Type] ...
-            const parts = f.replace('.json', '').split(' - ');
-            if (parts.length < 4) return;
-
-            const courseName = parts[2];
-            const slug = slugify(courseName);
-
-            if (!courseFiles[slug]) courseFiles[slug] = [];
-            courseFiles[slug].push(path.join(termPath, f));
-        });
+    const slugs = fs.readdirSync(SOURCE_DIR).filter(f => {
+        return fs.statSync(path.join(SOURCE_DIR, f)).isDirectory();
     });
 
-    console.log(`Found ${Object.keys(courseFiles).length} courses in AUZEF source.`);
-
-    // 2. Process
-    for (const slug of Object.keys(courseFiles)) {
-        const filePaths = courseFiles[slug];
-        let allQuestions: AppQuestion[] = [];
-        const seenIds = new Set<string>();
-
-        const technicalKeywords = ['programlama', 'algoritma', 'kodlama', 'web', 'veritabanı', 'internet-prog', 'yazılım-müh', 'yazılım-gelistirme'];
-        let isTechnical = technicalKeywords.some(kw => slug.toLowerCase().includes(kw));
-
-        if (slug === 'algoritmalar-ve-programlama') {
-            isTechnical = false;
-        }
-
-        filePaths.forEach(fp => {
-            try {
-                const rawContent = fs.readFileSync(fp, 'utf-8');
-                const cleanedRaw = rawContent.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F]/g, '');
-                const raw = JSON.parse(cleanedRaw);
-                const list = Array.isArray(raw) ? raw : (raw.questions || []);
-                const questions = processList(list, isTechnical);
-
-                questions.forEach(q => {
-                    if (!seenIds.has(q.id)) {
-                        allQuestions.push(q);
-                        seenIds.add(q.id);
-                    }
-                });
-            } catch (e: any) {
-                console.warn(`Error processing ${fp}:`, e.message);
-            }
-        });
-
-        saveQuestions(slug, allQuestions, TARGET_DIR);
-    }
+    console.log(`Found ${slugs.length} AUZEF courses in MCP.`);
+    slugs.forEach(processCourse);
 }
 
-processAll();
+syncAll();

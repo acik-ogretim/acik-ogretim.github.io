@@ -1,577 +1,433 @@
-
-import * as cheerio from 'cheerio';
+import { load } from 'cheerio';
 import he from 'he';
-import TurndownService from 'turndown';
 
-// Interface for configuration if needed later
-interface CleanHtmlOptions {
+// Interface for configuration
+export interface CleanHtmlOptions {
     preserveCode?: boolean;
     isTechnical?: boolean;
     isExplanation?: boolean;
     disableChoiceCleanup?: boolean;
     debug?: boolean;
+    applyTechnicalLogic?: boolean;
+    normalizePlaceholders?: boolean;
+    normalizeUnicode?: boolean;
 }
 
 export interface RepairOptions {
     stripLoneBr?: boolean;
+    normalizePlaceholders?: boolean;
+    normalizeUnicode?: boolean;
 }
 
-export function repairText(text: string, options: RepairOptions = { stripLoneBr: true }): string {
+export function repairText(text: string, options: RepairOptions = { stripLoneBr: true, normalizePlaceholders: false, normalizeUnicode: false }): string {
     if (!text) return "";
 
-    // Decode entities
-    let cleaned = he.decode(text);
+    // 0. Unicode Normalization (Optional)
+    let cleaned = options.normalizeUnicode ? text.normalize('NFC') : text;
 
-    // 1. Normalize characters (Move quite early to ensure regexes work on clean text)
-    // Normalize line endings
-    cleaned = cleaned.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
-    // Replace non-breaking spaces
-    cleaned = cleaned.replace(/\xa0/g, ' ');
-    // Normalize various Unicode spaces (U+2000 - U+200B) including U+2003 (Em Space) to actual space
-    cleaned = cleaned.replace(/[\u2000-\u200b]/g, ' ');
-    // Remove invisible zero-width chars (and Soft Hyphen \u00ad)
-    cleaned = cleaned.replace(/[\u00ad\ufeff]/g, '');
-    // Replace unusual line separators with space
-    cleaned = cleaned.replace(/[\u2028\u2029]/g, ' ');
-    // Normalize dashes (En dash, Em dash to hyphen)
-    cleaned = cleaned.replace(/[\u2013\u2014]/g, '-');
-    // Fix specific encoding artifacts (Anadolu)
-    cleaned = cleaned.replace(/\x1e/g, 'i').replace(/\x1f/g, 'i');
+    // 1. Basic Text Normalization (Before Parsing)
+    // Replace non-breaking spaces and other special spaces
+    cleaned = cleaned.replace(/\r\n/g, '\n')
+        .replace(/\r/g, '\n')
+        .replace(/\xa0/g, ' ')
+        .replace(/[\u2000-\u200b]/g, ' ')
+        .replace(/[\u00ad\ufeff]/g, '')
+        .replace(/[\u2028\u2029]/g, ' ')
+        .replace(/[\u2013\u2014]/g, '-')
+        .replace(/\x1e/g, 'i').replace(/\x1f/g, 'i');
 
-    // 1. Strip HTML Comments (e.g. <!-- [if !supportLists]-->)
-    cleaned = cleaned.replace(/<!--[\s\S]*?-->/g, "");
-
-    // 2. Unwrap dir, o:p, and other legacy wrappers
-    cleaned = cleaned.replace(/<(dir|o:p)\b[^>]*>([\s\S]*?)<\/\1>/gi, "$2");
-    cleaned = cleaned.replace(/<(dir|o:p)\b[^>]*\/>/gi, "");
-
-    // 3. Remove known UI/AI artifacts (e.g. ChatGPT copy-paste buttons, svgs)
-    cleaned = cleaned.replace(/<(button|svg|script|style|noscript|canvas|iframe)\b[^>]*>[\s\S]*?<\/\1>/gi, "");
-
-    // 4. Remove empty containers but PRESERVE SPACE if they were acting as separators
-    // We catch tags that are empty or only contain whitespace/nested empty tags
-    const junkPattern = /<(pre|code|span|div|font|p|strong|b|em|i|u)\b[^>]*>(?:[\s\xa0]|<(span|font|strong|b|em|i|u)\b[^>]*>[\s\xa0]*<\/\2>)*<\/\1>/gi;
-    cleaned = cleaned.replace(junkPattern, (match) => {
-        return (match.includes(' ') || match.includes('\xa0') || match.includes('&nbsp;')) ? " " : "";
-    });
-    cleaned = cleaned.replace(junkPattern, ""); // Second pass for nesting
-
-    // Fix corrupted words (ATA/Anadolu specific)
-    cleaned = cleaned
-        .replace(/yang[\uFFFD]+nın/g, "yangının")
-        .replace(/çal[\uFFFD]+şma/g, "çalışma")
-        .replace(/([Yy])ar[\uFFFD]+m/g, "$1arım")
-        .replace(/sıras[\uFFFD]+yla/g, "sırasıyla")
-        .replace(/bağıms[\uFFFD]+zlık/g, "bağımsızlık")
-        .replace(/\bınterest/gi, "interest")
-        .replace(/\bıncome\b/gi, "income")
-        .replace(/\bbasıs\b/gi, "basis")
-        .replace(/\baccountıng/gi, "accounting")
-        .replace(/\uFFFD/g, "") // Remove remaining replacement chars
-        .replace(/\u007F/g, "") // Remove DELETE chars
-        .replace(/<<</g, ""); // Remove artifact '<<<'
-
-    // Map legacy fonts/symbols to HTML Entities (ATA Logic/Math courses)
-    cleaned = cleaned
-        .replace(//g, "&sim;").replace(/∼/g, "&sim;").replace(/~/g, "&sim;")
-        .replace(//g, "&rArr;").replace(/⇒/g, "&rArr;")
-        .replace(//g, "&hArr;").replace(/⇔/g, "&hArr;")
-        .replace(//g, "&or;").replace(/∨/g, "&or;")
-        .replace(//g, "&and;").replace(/∧/g, "&and;")
-        .replace(//g, "&there4;").replace(/∴/g, "&there4;")
-        .replace(//g, "&equiv;").replace(/≡/g, "&equiv;")
-        .replace(//g, "&exist;").replace(/∃/g, "&exist;")
-        .replace(//g, "&forall;").replace(/∀/g, "&forall;")
-        .replace(//g, "&empty;")
-        .replace(//g, "&rarr;")
-        .replace(//g, "&bull;")
-        .replace(/\uF020/g, " ")
-        .replace(//g, "{").replace(//g, "}");
-
-    // Correct common tag typos from raw data
-    cleaned = cleaned.replace(/<(stong|strongg|strng|srong|storng)\b/gi, '<strong');
-    cleaned = cleaned.replace(/<\/(stong|strongg|strng|srong|storng)>/gi, '</strong>');
-
-    // Markdown-style formatting support
-    cleaned = cleaned.replace(/\*\*(.*?)\*\*/g, "<b>$1</b>");
-
-    // Remove Ginger browser extension artifacts (grammar checker pollution)
-    cleaned = cleaned.replace(/<gdiv[^>]*>[\s\S]*?<\/gdiv>/gi, "");
-    cleaned = cleaned.replace(/<gdiv[^>]*>[\s\S]*/gi, ""); // Handle unclosed gdivs
-    cleaned = cleaned.replace(/<\/gdiv>/gi, ""); // Handle stray closing gdivs
-    cleaned = cleaned.replace(/<ga[^>]*>[\s\S]*?<\/ga>/gi, "");
-    cleaned = cleaned.replace(/<\/ga>/gi, ""); // Handle stray closing ga tags
-    cleaned = cleaned.replace(/<ginger-[^>]*>[\s\S]*?<\/ginger-[^>]*>/gi, "");
-    cleaned = cleaned.replace(/<\/ginger-[^>]*>/gi, ""); // Handle stray closing ginger tags
-
-    // Remove noisy div/font wrappers that have styles or classes (artifacts from Word/Web)
-    // Spans are handled later in Cheerio to preserve underlines
-    cleaned = cleaned.replace(/<(div|font)\b[^>]*?(?:style|class|face|mso)="[^"]*"[^>]*?>([\s\S]*?)<\/\1>/gi, "$2");
-    cleaned = cleaned.replace(/<(div|font)\b[^>]*?(?:style|class|face|mso)="[^"]*"[^>]*?>([\s\S]*?)<\/\1>/gi, "$2");
-
-    // Remove Mozilla-specific br artifacts
-    cleaned = cleaned.replace(/<br\s+type="_moz"\s*\/?>/gi, "");
-
-    // Fix hyphenated words broken across spans (PDF/OCR artifacts)
-    // Matches: "sis-" + optional tags/whitespace + "temi"
-    cleaned = cleaned.replace(/([a-zğüşıöçA-ZĞÜŞİÖÇ])-\s*<\/span>\s*<span[^>]*>\s*([a-zğüşıöçA-ZĞÜŞİÖÇ])/g, "$1$2");
-
-    // Remove "tel:" links (often introduced by browser extensions or OS phone number detection misidentifying numeric ranges)
-    cleaned = cleaned.replace(/<a[^>]*href=["']tel:[^"']*["'][^>]*>([\s\S]*?)<\/a>/gi, "$1");
-
-    // Fix sticky words: If there's a BR followed by a lowercase letter, it's likely a broken line/sentence.
-    // We join them with a space. If it's followed by an Uppercase letter, Digit, or List Marker (e.g. a., b.), we keep the BR.
-    cleaned = cleaned.replace(/([a-zğüşıöçA-ZĞÜŞİÖÇ0-9])<br\b[^>]*>([a-zğüşıöç](?![.)]))/g, "$1 $2");
-
-    // FINAL CLEANUP: Remove leading/trailing line breaks, horizontal rules and whitespace
-    if (options.stripLoneBr) {
-        cleaned = cleaned.replace(/^(?:\s*<(?:br|hr)\b[^>]*>\s*|\s)+/gi, '');
-        cleaned = cleaned.replace(/(?:\s*<(?:br|hr)\b[^>]*>\s*|\s)+$/gi, '');
-    } else {
-        // Technical mode (stripLoneBr: false):
-        // 1. Proactively strip trailing BR/HR IF there is punctuation before them (Sentence cleanup)
-        cleaned = cleaned.replace(/([.?!,;:])(?:\s*<(?:br|hr)\b[^>]*>\s*|\s)+$/gi, '$1');
-
-        // 2. Otherwise only strip if it's not the ONLY content
-        // We check if the string consists ONLY of <br/> and <hr/> tags
-        const isOnlyTags = /^(?:\s*<(?:br|hr)\b[^>]*>\s*|\s)*$/i.test(cleaned);
-        if (!isOnlyTags) {
-            cleaned = cleaned.replace(/(?:\s*<(?:br|hr)\b[^>]*>\s*|\s)+$/gi, '');
-        }
+    // Normalize placeholders (dots, hyphens, underscores) to THREE standard HTML ellipses (user preference)
+    if (options.normalizePlaceholders) {
+        cleaned = cleaned.replace(/[\.\-_]{3,}/g, '&hellip;&hellip;&hellip;');
     }
 
-    return cleaned.trim();
+    // Fix common AÖF OCR typos
+    cleaned = cleaned.replace(/temeliolarak/gi, 'temeli olarak');
+
+    // Remove basic comments (safer here)
+    cleaned = cleaned.replace(/<!--[\s\S]*?-->/g, "");
+
+    return cleaned;
 }
 
 export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string {
     if (!text) return "";
 
-    // 1. Initial Unification: Markdown backticks to <code> tags
-    // This allows us to handle `code` and <code>code</code> under the same logic.
-    let processed = text.replace(/`([^`]+)`/g, '<code>$1</code>');
-    processed = he.decode(processed);
+    const useTechnicalLogic = options.applyTechnicalLogic ?? options.isTechnical ?? false;
 
-    // 2. Placeholder & Protection Phase
-    // Extract code segments that should be literal text and replace them with unique markers.
-    // We protect code, pre, kbd, samp, and var tags which are typically used for technical content.
-    const protectedBlocks: string[] = [];
-    const blockTypes = ['code', 'pre', 'kbd', 'samp', 'var'];
-    const blockRegex = new RegExp(`<(${blockTypes.join('|')})\\b[^>]*>([\\s\\S]*?)<\\/\\1>`, 'gi');
-
-    processed = processed.replace(blockRegex, (match, tag, content) => {
-        const decodedContent = he.decode(content);
-        const plainText = decodedContent.replace(/<[^>]*>/g, '').trim();
-
-        // If the content is basically empty or just a single &nbsp; variant, skip it
-        if (plainText === "" || plainText === " ") {
-            return "";
-        }
-
-        // If it's a pre/code tag but contains obvious Word artifacts (lang=, MsoNormal, font-family),
-        // it's likely a fake enclosure. Don't protect it.
-        if ((tag === 'pre' || tag === 'code') && (content.includes('lang=') || content.includes('MsoNormal') || content.includes('font-family:'))) {
-            return match;
-        }
-
-        const escapedContent = he.escape(decodedContent);
-        const index = protectedBlocks.length;
-        protectedBlocks.push(`<${tag}>${escapedContent}</${tag}>`);
-        return `%%PROTECTED_BLOCK_${index}%%`;
+    // Pre-processing
+    // Use repairText for basic normalization (spaces, dashes, dots)
+    // Pass down the normalization preferences (default to false to focus on errors)
+    let cleaned = repairText(text, {
+        stripLoneBr: true,
+        normalizePlaceholders: options.normalizePlaceholders ?? false,
+        normalizeUnicode: options.normalizeUnicode ?? false
     });
 
-    // 3. Perform standard cleaning on the remaining text (where the placeholders are safe strings)
-    let cleaned = repairText(processed);
+    // 2. Identify and handle encoded artifacts immediately but safely
+    const encodedArtifactRegex = /&lt;(?:span|div)\s+[^&gt;]*style=[^&gt;]*?(?:left|top|font-family|transform|position):[^&gt;]*?&gt;([\s\S]*?)&lt;\/(?:span|div)&gt;/gi;
+    cleaned = cleaned.replace(encodedArtifactRegex, '$1');
 
-    // Standardize noisy br tags
-    cleaned = cleaned.replace(/<br\b[^>]*>/gi, '<br/>');
+    // Convert apple-converted-space spans and nested whitespace tags
+    let prevCleaned;
+    do {
+        prevCleaned = cleaned;
+        cleaned = cleaned.replace(/<(b|strong|i|em|u|span)\b[^>]*>\s*<\/\1>/gi, ' ');
+        cleaned = cleaned.replace(/<span\s+class="apple-converted-space"[^>]*>([\s\S]*?)<\/span>/gi, (match, content) => {
+            const trimmed = content.trim();
+            if (!trimmed || trimmed === "&nbsp;") return ' ';
+            return content;
+        });
+    } while (cleaned !== prevCleaned);
 
-    // Smart Fix: Broken sentences
-    cleaned = cleaned.replace(/(?:\n|<br\s*\/?>)\s*(?=[a-zğüşıöç](?![).]))/g, ' ');
-
-    // Roman Numeral Lists
-    cleaned = cleaned.replace(/\n\s*(?=(?:I|V|X|L|C|D|M)+\s*\.)/g, '<br/>');
-
-    // Bullet points - convert newlines before bullets to BR
-    cleaned = cleaned.replace(/\n\s*(?=[•\-\*])/g, '<br/>');
-
-    // Convert newlines to br, but preserve existing brs
-    cleaned = cleaned.replace(/[\r\n]+/g, '<br/>');
-
-    // Collapse multiple brs into one
-    cleaned = cleaned.replace(/(?:\s*<br\s*\/?>\s*)+/gi, '<br/>');
-
-
-    // 4. White-list based Tag Protection (for the non-protected parts)
-    const validTags = new Set([
-        'b', 'strong', 'i', 'em', 'u', 's', 'strike', 'del', 'ins', 'sub', 'sup', 'small', 'big', 'tt', 'font',
-        'code', 'pre', 'kbd', 'samp', 'var',
-        'br', 'p', 'ul', 'ol', 'li', 'dl', 'dt', 'dd', 'blockquote',
-        'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-        'figure', 'figcaption', 'img'
-    ]);
-
-    // If NOT a technical course, allow structural/meta/noisy tags to be preserved (not escaped)
-    if (!options.isTechnical) {
-        [
-            'span', 'div', 'article', 'section', 'header', 'footer', 'nav', 'main', 'aside',
-            'table', 'thead', 'tbody', 'tfoot', 'tr', 'td', 'th', 'caption', 'colgroup', 'col', 'a',
-            'html', 'body', 'head', 'title', 'meta', 'link', 'script', 'style',
-            'form', 'input', 'button', 'select', 'option', 'textarea', 'label'
-        ].forEach(t => validTags.add(t));
+    // Protect Blocks & Literalize logic - largely simplified by Cheerio but we keep protection for regex-based safety
+    const protectedBlocks: string[] = [];
+    if (useTechnicalLogic) {
+        cleaned = cleaned.replace(/<pre\b[^>]*>[\s\S]*?<\/pre>/gi, (match) => {
+            protectedBlocks.push(match);
+            return `%%PROTECTED_BLOCK_${protectedBlocks.length - 1}%%`;
+        });
+        cleaned = cleaned.replace(/<code\b[^>]*>[\s\S]*?<\/code>/gi, (match) => {
+            protectedBlocks.push(match);
+            return `%%PROTECTED_BLOCK_${protectedBlocks.length - 1}%%`;
+        });
     }
 
-    // Escape unknown tags in the rest of the text (both opening and closing tags)
-    // We include colons in tag name recognition to correctly identify and handle namespaced tags like o:p
-    cleaned = cleaned.replace(/<\/?([a-zA-Z!?][a-zA-Z0-9\-:]*)([^>]*)>/g, (match, tagName, attrs) => {
-        const lowerTag = tagName.toLowerCase();
+    // Cheerio Loading
+    // xmlMode: false ensures HTML tolerance and auto-closing (fixes the split tag issue)
+    // decodeEntities: false prevents Cheerio from decoding entities prematurely
+    const $ = load(cleaned, { xmlMode: false, decodeEntities: false } as any);
+    const root = $('body'); // Operate on body
 
-        // Special Case: In technical courses, we want to escape structural tags to show them as code.
-        // BUT we must NOT escape real <img> tags that have a 'src' (they are likely diagrams/source images).
-        if (options.isTechnical) {
-            const structuralTags = [
-                'article', 'section', 'header', 'footer', 'nav', 'main', 'aside',
-                'table', 'thead', 'tbody', 'tfoot', 'tr', 'td', 'th', 'caption', 'colgroup', 'col',
-                'a', 'form', 'input', 'button', 'select', 'option', 'textarea', 'label',
-                'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'html', 'body', 'head', 'title', 'meta', 'link'
-            ];
-            // We EXCLUDE p, span, div from escaping because they are common noise wrappers in raw data
-            // even in technical courses. If they are intended as code, they should be in code/pre tags.
-            if (structuralTags.includes(lowerTag)) return match.replace('<', '&lt;');
-            // Only escape <img> if it DOES NOT have a 'src' attribute
-            if (lowerTag === 'img' && !attrs.toLowerCase().includes('src=')) return match.replace('<', '&lt;');
-            // Special Case: NEVER escape real images (containing src)
-            if (lowerTag === 'img' && attrs.toLowerCase().includes('src=')) return match;
-        }
+    // --- NODE BASED CLEANING ---
 
-        if (!validTags.has(lowerTag)) {
-            return match.replace('<', '&lt;');
-        }
-        return match;
-    });
+    // 1. Remove UI/Technical Junk & Extension Artifacts
+    const junkTags = 'button, svg, script, style, noscript, canvas, iframe, map, area, gdiv, ga, ginger-word, ginger-correction';
+    root.find(junkTags).remove();
 
-    // Load into Cheerio for structural cleaning
-    const $ = cheerio.load(cleaned, { xmlMode: false });
-
-    // 1. Strip UI/Technical Junk
-    $('button, svg, script, style, noscript, canvas, iframe, map, area').remove();
-
-    // 2. Handle o:p and AI/Word Artifacts
-    $('*').each((_, el) => {
-        const $el = $(el);
-        const tagName = (el as any).name?.toLowerCase();
-        if (!tagName) return;
-
-        if (tagName.startsWith('o:')) {
-            $el.before(' ');
-            $el.replaceWith($el.contents());
-            return;
-        }
-
-    });
-
-    // Transform OL styles to type attribute (before stripping styles)
-    $('ol').each((_, el) => {
-        const style = $(el).attr('style');
-        if (style && /list-style-type:\s*upper-roman/i.test(style)) {
-            $(el).attr('type', 'I');
-        }
-        if (style && /list-style-type:\s*lower-roman/i.test(style)) {
-            $(el).attr('type', 'i');
-        }
-    });
-
-    // Transform underlined spans to <u>
-    $('span').each((_, el) => {
-        const style = $(el).attr('style');
-        if (style && /text-decoration:\s*underline/i.test(style)) {
-            el.tagName = 'u';
-        }
-    });
-
-    // 2. Unwrap noisy block tags with space
-    // FIX: Do NOT unwrap body/html/head as they are structural roots in Cheerio
-    const blockTags = ['div', 'article'];
-    // If input had <html> inside, Cheerio corrects it.
-    // We rely on $('body').html() to extract content, which inherently strips wrapper html/body.
-
-    blockTags.forEach(tag => {
-        $(tag).each((_, el) => {
-            $(el).before(' ');
+    // 2. Handle o:p and legacy wrappers
+    root.find('*').each((_, el) => {
+        const tagName = el.tagName.toLowerCase();
+        if (tagName.startsWith('o:') || tagName === 'dir') {
             $(el).replaceWith($(el).contents());
-        });
+        }
     });
 
-    // Detect and convert styled code spans to <code> tags
-    $('span').each((_, el) => {
+    // 3. Symbol Mapping
+    const symbolMap: Record<string, string> = {
+        '': '~', '∼': '~', '': '&rArr;', '⇒': '&rArr;',
+        '': '&hArr;', '⇔': '&hArr;', '': '&or;', '∨': '&or;',
+        '': '&and;', '∧': '&and;', '': '&there4;', '∴': '&there4;',
+        '': '&equiv;', '≡': '&equiv;', '': '&exist;', '∃': '&exist;',
+        '': '&forall;', '∀': '&forall;', '': '&empty;', '': '&rarr;',
+        '': '&bull;', '': '{', '': '}'
+    };
+
+    const processTextSymbols = (elem: any) => {
+        $(elem).contents().each((_, child) => {
+            if (child.type === 'text') {
+                let t = child.data || '';
+                for (const [sym, rep] of Object.entries(symbolMap)) {
+                    if (t.includes(sym)) t = t.split(sym).join(rep);
+                }
+                child.data = t;
+            } else if (child.type === 'tag') {
+                processTextSymbols(child);
+            }
+        });
+    };
+    processTextSymbols(root);
+
+    // Transform Spans/Divs/OL Types
+    root.find('span, div').each((_, el) => {
         const $el = $(el);
         const style = $el.attr('style') || "";
         const cls = $el.attr('class') || "";
 
-        const isMonospace = /font-family:\s*['"]?(?:courier|monospace|consolas|lucida console)/i.test(style);
-        const isSyntaxHighlighter = /tagnamecolor|attributevaluecolor|tagcolor|comment/i.test(cls);
-
-        if (isMonospace || isSyntaxHighlighter) {
-            el.tagName = 'code';
+        if (/text-decoration:\s*underline/i.test(style)) {
+            const content = $el.html() || '';
+            $el.replaceWith(`<u>${content}</u>`);
+        } else if (/font-family:\s*['"]?(?:courier|monospace|consolas|lucida console)/i.test(style) ||
+            /tagnamecolor|attributevaluecolor|tagcolor|comment/i.test(cls)) {
+            const content = $el.html() || '';
+            $el.replaceWith(`<code>${content}</code>`);
+        } else if (/position:\s*absolute|left:|top:|transform:/i.test(style)) {
+            $el.replaceWith($el.contents());
         }
     });
 
-    // 3. Unwrap noisy inline tags (no space)
-    $('font').each((_, el) => {
-        $(el).replaceWith($(el).contents());
+    root.find('ol').each((_, el) => {
+        const $el = $(el);
+        const style = $el.attr('style') || "";
+        if (/list-style-type:\s*upper-roman/i.test(style)) {
+            $el.attr('type', 'I').removeAttr('style');
+        } else if (/list-style-type:\s*lower-roman/i.test(style)) {
+            $el.attr('type', 'i').removeAttr('style');
+        }
     });
 
-    // 4. Strip attributes from strict tags
-    const strictTags = ['strong', 'b', 'i', 'em', 'u', 'table', 'tr', 'td', 'th', 'tbody', 'thead', 'tfoot', 'colgroup', 'col', 'ul', 'li', 'blockquote', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'code', 'pre', 'sup', 'sub', 'ins'];
-    strictTags.forEach(tag => {
-        $(tag).each((_, el) => {
-            if ('attribs' in el) {
-                Object.keys(el.attribs).forEach(attr => $(el).removeAttr(attr));
-            }
+    // Unwrap layout containers
+    const layoutTags = ['div', 'article', 'section', 'header', 'footer', 'nav', 'main', 'aside', 'figure', 'figcaption', 'span', 'font', 'center'];
+    if (!options.isTechnical) layoutTags.push('pre');
+
+    let changed = true, iterations = 0;
+    while (changed && iterations < 10) {
+        changed = false;
+        const currentRoot = root; // Re-query checks
+        layoutTags.forEach(tag => {
+            currentRoot.find(tag).each((_, el) => {
+                $(el).replaceWith($(el).contents());
+                changed = true;
+            });
         });
+        iterations++;
+    }
+
+    // BR Handling
+    root.find('br').each((_, br) => {
+        const $br = $(br);
+        const prev = br.prev;
+        const next = br.next;
+
+        const prevTextRaw = (prev && prev.type === 'text') ? (prev.data || '') : '';
+        const nextTextRaw = (next && next.type === 'text') ? (next.data || '') : '';
+        const prevText = he.decode(prevTextRaw).trimEnd();
+        const nextText = he.decode(nextTextRaw).trimStart();
+
+        const isListMarker = /^([•\-–—]|[IVXivx]+\.|[0-9]+[\.\-]|\([0-9]+\)|\([a-zA-Z]\)\s)/.test(nextText);
+        const startsWithUppercase = /^[A-ZÇĞİÖŞÜÂÎÛ]/.test(nextText) && !/^[a-zçğıöşüâîû]/.test(nextText);
+        const isMidSentence = /[a-zA-ZçğıöşüİĞÜÖŞçâîûÂÎÛ0-9,;:\)\s]$/.test(prevText) &&
+            (/^[a-zçğıöşüâîû]/.test(nextText) || nextText.startsWith('('));
+        const inTable = $br.closest('table').length > 0;
+
+        if (!inTable && !isListMarker && !startsWithUppercase && isMidSentence && prev && prev.type === 'text' && next && next.type === 'text') {
+            prev.data = prevTextRaw.trimEnd() + ' ';
+            next.data = nextTextRaw.trimStart();
+            $br.remove();
+        } else {
+            if (prev && prev.type === 'text') prev.data = prev.data.trimEnd();
+            if (next && next.type === 'text') next.data = next.data.trimStart();
+        }
     });
 
-    // 5. Smart strip for ol, p, u, span, ins
-    const allowedAttrs: Record<string, string[]> = {
-        'ol': ['type', 'start'],
-        'p': [],
-        'u': [],
-        'ins': [],
-        'span': []
-    };
+    // Whitelist
+    const whitelist = new Set(['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'br', 'hr', 'b', 'strong', 'i', 'em', 'u', 'code', 'pre', 'ul', 'ol', 'li', 'img', 'a', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'blockquote', 'sup', 'sub', 'kbd', 'samp', 'var', 'span', 'math', 'semantics', 'mrow', 'mtext', 'mo', 'mfrac', 'mi', 'annotation', 'mover', 'munder', 'munderover', 'msqrt', 'mroot', 'mstyle', 'merror', 'mpadded', 'mphantom', 'mfenced', 'menclose', 'mtable', 'mtr', 'mtd', 'maligngroup', 'malignmark', 'ms', 'mspace', 'mglyph']);
 
-    Object.keys(allowedAttrs).forEach(tagName => {
-        const allowed = allowedAttrs[tagName];
-        $(tagName).each((_, el) => {
-            if ('attribs' in el) {
-                Object.keys(el.attribs).forEach(attr => {
-                    if (!allowed.includes(attr)) {
-                        $(el).removeAttr(attr);
-                    }
-                });
-            }
-        });
-    });
-
-    // Unwrap attributeless spans
-    $('span').each((_, el) => {
-        if (!el.attribs || Object.keys(el.attribs).length === 0) {
+    root.find('*').each((_, el) => {
+        const tag = el.tagName.toLowerCase();
+        if (tag && !whitelist.has(tag)) {
             $(el).replaceWith($(el).contents());
         }
     });
 
-    // 6. Remove empty tags (only for noise wrappers)
-    $('*').each((_, el) => {
-        const tagEl = el as any;
-        if (!tagEl.tagName) return;
+    // Attributes Strip
+    root.find('*').each((_, el) => {
+        const tag = el.tagName.toLowerCase();
+        if (!tag || ['html', 'head', 'body'].includes(tag)) return;
+        const attrs = Object.keys(el.attribs || {});
+        attrs.forEach(a => {
+            if (tag === 'img' && ['src', 'alt', 'width', 'height'].includes(a)) return;
+            if (tag === 'a' && a === 'href') return;
+            if ((tag === 'td' || tag === 'th') && ['colspan', 'rowspan'].includes(a)) return;
+            if (tag === 'ol' && ['type', 'start'].includes(a)) return;
+            $(el).removeAttr(a);
+        });
+    });
 
-        const tagName = tagEl.tagName.toLowerCase();
-        if (['html', 'head', 'body'].includes(tagName)) return;
+    // Empty Tag Cleanup
+    let tagCleanupChanged;
+    do {
+        tagCleanupChanged = false;
+        root.find('*').each((_, el) => {
+            const $el = $(el);
+            if ($el.parent().length === 0) return;
+            const tag = el.tagName.toLowerCase();
+            if (!tag || ['html', 'head', 'body', 'img', 'br', 'hr'].includes(tag)) return;
 
-        const isVoid = ['img', 'br', 'hr', 'input', 'meta', 'link', 'col', 'wbr', 'area', 'base', 'embed', 'param', 'source', 'track'].includes(tagName);
-        if (isVoid) return;
+            const textContent = $el.text().trim();
+            const hasProtected = textContent.includes('%%PROTECTED_BLOCK_');
+            const hasContentTags = $el.find('img, br, hr, p, li, blockquote').length > 0;
 
-        const text = $(el).text();
-        const hasProtectedChild = $(el).find('img, br, hr, col').length > 0 || ($(el).html() || '').includes('%%PROTECTED_BLOCK_');
-
-        if (!text.trim() && !hasProtectedChild) {
-            // Only remove empty tags if they are typical noise wrappers
-            // Avoid removing empty <table>, <tr>, <td>, <ol>, <ul> since they might be parts of code snippets
-            const noiseWrappers = ['span', 'div', 'font', 'p', 'o:p', 'dir', 'article', 'section', 'header', 'footer', 'nav', 'main', 'aside'];
-            if (noiseWrappers.includes(tagName)) {
-                if (/\s| /.test(text)) {
-                    $(el).replaceWith(' ');
+            if (!textContent.length && !hasProtected && !hasContentTags) {
+                // If it has spaces but no visible text, replace with single space
+                if ($el.text().length > 0 && !['p', 'br', 'li', 'td', 'th', 'tr'].includes(tag)) {
+                    $el.replaceWith(' ');
                 } else {
-                    $(el).remove();
+                    $el.remove();
+                }
+                tagCleanupChanged = true;
+            }
+        });
+    } while (tagCleanupChanged);
+
+    // List & Table Normalizations
+    root.find('img').each((_, el) => { if (!$(el).attr('src')) { $(el).replaceWith(he.escape($.html(el))); } });
+    root.find('a').each((_, el) => { if (!$(el).attr('href')) { $(el).replaceWith($(el).contents()); } });
+
+    // Merge lists
+    root.find('ul, ol').each((_, el) => {
+        const $el = $(el);
+        if ($el.parent().length === 0) return;
+        const tag = el.tagName.toLowerCase();
+        let $next = $el.next();
+        while ($next.length && $next[0].tagName.toLowerCase() === tag) {
+            if (tag === 'ol' && $el.attr('type') !== $next.attr('type')) break;
+            $el.append($next.contents());
+            $next.remove();
+            $next = $el.next();
+        }
+    });
+
+    // Unwrap nested P
+    root.find('li, td, th').each((_, el) => {
+        $(el).find('p').each((_, p) => {
+            $(p).after('\n').replaceWith($(p).contents());
+        });
+    });
+    root.find('ol > ul, ol > ol, ul > ol, ul > ul').each((_, inner) => {
+        $(inner).replaceWith($(inner).contents());
+    });
+
+    // Unwrap P and Heading tags
+    root.find('p, h1, h2, h3, h4, h5, h6').each((_, el) => {
+        $(el).after('\n').replaceWith($(el).contents());
+    });
+
+    // Final Encoding
+    // Final Encoding
+    const encodeTextNodes = (elem: any) => {
+        $(elem).contents().each((_, child) => {
+            if (child.type === 'text') {
+                let decoded = he.decode(child.data || '');
+                decoded = decoded.replace(/[\u00A0\u2000-\u200b]/g, ' ')
+                    .replace(/\u00AD/g, '')
+                    .replace(/[\u2013\u2014\u2212]/g, '-')
+                    .replace(/\u223C/g, '~');
+
+                // Direct assignment: Cheerio handles necessary escaping (e.g. & -> &amp;) upon serialization
+                child.data = decoded;
+            } else if (child.type === 'tag') {
+                encodeTextNodes(child);
+            }
+        });
+    };
+    encodeTextNodes(root);
+
+    let result = root.html() || '';
+
+    // Post-processing strings
+    result = result.replace(/[ \t\u00A0]+/g, ' ');
+    result = result.replace(/\r/g, '');
+    result = result.replace(/\n\s*\n+/g, '\n');
+    const structuralBoundaries = /<\/?(?:table|thead|tbody|tfoot|tr|td|th|ul|ol|li|p|div|section|article|blockquote|br)\b[^>]*>/gi;
+    result = result.replace(new RegExp(`\\s*(${structuralBoundaries.source})\\s*`, 'gi'), '$1');
+    result = result.replace(/\n/g, '<br/>');
+    result = result.replace(/\s*<br\s*\/?>\s*/gi, '<br/>');
+
+    // Lists cleanup: no BR around lists
+    result = result.replace(/<br\s*\/?>\s*(<\/?(?:ul|ol|li)\b[^>]*>)/gi, '$1');
+    result = result.replace(/(<\/?(?:ul|ol|li)\b[^>]*>)\s*<br\s*\/?>/gi, '$1');
+
+    // Self-close IMG
+    result = result.replace(/<img([^>]*)>/gi, (match, attrs) => `<img ${attrs.trim()}/>`);
+
+    // Merge adjacent formatting
+    ['strong', 'b', 'i', 'em', 'u'].forEach(tag => {
+        result = result.replace(new RegExp(`</${tag}><${tag}>`, 'gi'), '');
+    });
+
+    // Link healing
+    result = result.replace(/<a\s+href="([^"]+)">([\s\S]+?)([\.,:;!])\s*<\/a>/gi, (match, href, text, punct) => {
+        let newHref = href.endsWith(punct) ? href.slice(0, -1) : href;
+        return `<a href="${newHref}">${text}</a>${punct}`;
+    });
+    result = result.replace(/<a\s+href="([^"]+)">([^<]+)<\/a>(\.(?:tr|com|net|org|gov|edu|info|tv|me|com\.tr)\b)/gi, (match, href, text, suffix) => {
+        const newHref = href.endsWith(suffix) ? href : href + suffix;
+        return `<a href="${newHref}">${text}${suffix}</a>`;
+    });
+    result = result.replace(/([“"'])\s*<a\b[^>]*>(.*?)<\/a>\s*([”"'])/gi, '$1$2$3');
+
+    // Wiris
+    const wirisRegex = /(?:<img\b[^>]*src=["']|)(https?:\/\/(?:www\.)?wiris\.net\/[^\s"']*?mml=)([^\s"'&]+)(?:&[^\s"']*|)(?:["'][^>]*>|)/gi;
+    const decodeRecursive = (s: string, depth = 0): string => {
+        if (depth > 3) return s;
+        try { const d = decodeURIComponent(s); return d === s ? d : decodeRecursive(d, depth + 1); } catch { return s; }
+    };
+    result = result.replace(wirisRegex, (match, prefix, mmlEncoded) => {
+        try { return decodeRecursive(mmlEncoded); } catch { return match; }
+    });
+
+    result = result.replace(/^(<br\b[^>]*>|\s|&gt;|>)+/i, '').replace(/(<br\b[^>]*>|\s)+$/i, '');
+
+    // Restore Protected
+    protectedBlocks.forEach((block, index) => {
+        result = result.replace(`%%PROTECTED_BLOCK_${index}%%`, block);
+    });
+
+    // Aggressive cleanup (double encoded)
+    result = result.replace(/&lt;p&gt;&amp;nbsp;&lt;\/p&gt;/gi, '')
+        .replace(/<p>&nbsp;<\/p>/gi, '')
+        .replace(/<p>\s*<\/p>/gi, '')
+        .replace(/<p\s+class="(Pa?\d+|Default|p\d+|Secenekler|Soru|Cevap|Baslik|Metin|Normal|BodyText|ListParagraph)"\s*>/gi, '<p>')
+        .replace(/&lt;p&gt;\s*&lt;\/p&gt;/gi, '')
+        .replace(/&lt;(li|span|b|i|strong|em)&gt;\s*&lt;\/\1&gt;/gi, '')
+        .replace(/^(<br\s*\/?>|\s)+/gi, '')
+        .replace(/(<br\s*\/?>|\s)+$/gi, '');
+
+    while (/<br\s*\/?>[\s\xa0]*<br\s*\/?>/i.test(result)) {
+        result = result.replace(/<br\s*\/?>[\s\xa0]*<br\s*\/?>/gi, '<br/>');
+    }
+
+    // 2. Self-Deduplication (Common in Explanation fields)
+    // If it looks like "Text A <br/> Text A (longer)" or vice versa, keep only the longer one.
+    if (result.includes('<br')) {
+        const parts = result.split(/<br\s*\/?>/i);
+        if (parts.length >= 2) {
+            const p1 = toPlainText(parts[0]);
+            const p2 = toPlainText(parts.slice(1).join('<br/>'));
+
+            if (p1 && p2) {
+                if (p1.length > 5 && p2.length > 5) {
+                    if (p2.includes(p1) || p1.includes(p2)) {
+                        result = (p2.length >= p1.length) ? parts.slice(1).join('<br/>') : parts[0];
+                    }
                 }
             }
         }
-    });
-
-    // 7. Unwrap p tags (causing line breaks)
-    // We insert a structural marker (newline) which we will later convert to <br/>
-    $('p').each((_, el) => {
-        if ($(el).text().trim()) {
-            $(el).after('\n');
-        }
-        $(el).replaceWith($(el).contents());
-    });
-
-    // Extract result
-    let result = $('body').html() || "";
-
-    // Collapse multiple spaces and remove isPasted
-    result = result.replace(/id="isPasted"/g, '');
-    result = result.replace(/[ \t]+/g, ' ');
-
-    // Remove empty tags artifacts
-    result = result.replace(/<([a-z0-9]+)[^>]*>\s*<\/\1>/gi, '');
-
-    // Collapse multiple newlines/br and Convert newlines to BR
-    // Since we introduced newlines for P tags to imply structure, these should now be BRs.
-    result = result.replace(/\n/g, '<br/>');
-
-    // Final cleanup of BRs
-    result = result.replace(/(<br\b[^>]*>\s*)+/gi, '<br/>');
-
-    // LIST CLEANUP: Aggressively remove BRs AND WHITESPACE around list elements (ul, ol, li)
-    // 1. Remove BRs/Whitespace immediately before list tags (opening or closing)
-    result = result.replace(/(?:<br\b[^>]*>|\s)+(<\/?(?:ul|ol|li)\b[^>]*>)/gi, '$1');
-    // 2. Remove BRs/Whitespace immediately after list tags (opening or closing)
-    result = result.replace(/(<\/?(?:ul|ol|li)\b[^>]*>)(?:<br\b[^>]*>|\s)+/gi, '$1');
-    // 3. Clean up any remaining BRs strictly BETWEEN list items if the previous step missed them (e.g. </li><br/><li>)
-    // The previous patterns should catch most, but "text<br><ul>" -> "text<ul>" is good.
-    // "</ul><br>text" -> "</ul>text" is also good.
-
-    // Remove leading/trailing line breaks and whitespace
-    result = result.replace(/^(<br\b[^>]*>|\s)+/i, '');
-    result = result.replace(/(<br\b[^>]*>|\s)+$/i, '');
-
-    // 5. Restoration Phase
-    // Replace placeholders with the original (and now properly escaped) protected blocks.
-    let finalResult = result.trim();
-    protectedBlocks.forEach((block, index) => {
-        finalResult = finalResult.replace(`%%PROTECTED_BLOCK_${index}%%`, block);
-    });
-    // 6. Post-Restoration Cleanup: Collapse nested identical tags (e.g., <strong><strong>...</strong></strong>)
-    // Sometimes typo correction or raw data artifacts create redundant nesting.
-    finalResult = finalResult.replace(/<(b|strong|i|em|u)>\s*<\1>([\s\S]*?)<\/\1>\s*<\/\1>/gi, '<$1>$2</$1>');
-
-    // 7. Redundant Phrase Cleanup (Turkish markers)
-    // These markers often appear at the end of explanations in raw data and are redundant.
-    if (options.isExplanation) {
-        const choiceMarker = /\b[a-e]\b/i;
-        const containsChoice = choiceMarker.test(finalResult);
-
-        // Pattern for "cevap/yanıt" with common typos found in raw data
-        const ans = '(?:cevap|vavap|cavap|vavab|vabap|cvp|yanıt|yanit)';
-
-        const markers = [
-            // 1. Sentence-level markers (Conjunction + Choice)
-            new RegExp(`\\b(?:bu kapsamda|bu nedenle|buna göre|bu durumda|bu yüzden|bu sorunun)\\s*(?:${ans})?\\s*\\b[a-e]\\b(?:\\s*(?:şıkkı|seçeneği|şıkkıdır|seçeneğidir))?\\s*(?:doğru)?\\s*(?:cevaptır|yanıttır|v[av]aptır|şıkkıdır|seçeneğidir)?(?:\\s*['’‘]?[dsbt][\\. ]*[ıiüu][\\. ]*r)?\\.?\\s*`, 'gi'),
-
-            // 2. Clear Choice Deletion (Choice-centric)
-            new RegExp(`\\b(?:doğru\\s+)?(?:${ans})\\s+\\b[a-e]\\b(?=[\\s\\.\\)\\']|$)(?:\\s*(?:şıkkı|seçeneği|şıkkıdır|seçeneğidir))?(?:\\s*['’‘]?[dsbt][\\. ]*[ıiüu][\\. ]*r)?\\.?\\s*`, 'gi'),
-            /\b(?:the\s+)?correct\s+answer\s+is\s+\b[a-e]\b(?=[\s\.\)\'’‘]|$)\.?\s*/gi,
-            new RegExp(`\\bdoğru\\s+(?:yanıt|${ans})\\s+\\b[a-e]\b(?=[\\s\\.\)\'’‘]|$)\\.?`, 'gi'),
-
-            // 3. English Review Instructions
-            /\bif your answer is incorrect,?\s*review(?: the)?\s*['"“'”].*?['"“'”]\s*section\.?\s*/gi,
-
-            // 4. Anchored Leftovers (Strictly at start/end)
-            /\baçıklama\s*(?:yok|bulunmamaktadır|eklenmemiş)(?:\.?\s*)/gi,
-            /^(?:dir|dır|dur|dür|tir|tır|tur|tür)[\s]+(?:\s*)/gi,
-            /^['’‘]?[dsbt][\. ]*[ıiüu][\\. ]*r\.?\s*$/gi,
-            /\s+\b[a-e]\b\.?\s*$/gi, // Lone choice at end
-            /\s+['’‘]?[dsbt][\. ]*[ıiüu][\\. ]*r\.?\s*$/gi, // Dangling suffix at end
-            /\s*\b[a-e]\b şıkkı doğru (?:cevaptır|yanıttır)\b\.?\s*$/gi,
-            /\s*\b[a-e](?:[ ,]+[a-e])* (?:ve|veya|or|and) \b[a-e]\b\s+(?:şıkları|options|seçenekleri)\b\s*.*?arasındadır\.?\s*$/gi,
-        ];
-
-        if (!options.disableChoiceCleanup) {
-            markers.forEach(pattern => {
-                const patternSource = typeof pattern === 'string' ? pattern : pattern.source;
-                const patternHasChoice = patternSource.includes('[a-e]');
-
-                // Safety Rule: Only apply markers IF:
-                // 1. The marker itself specifically includes a choice reference (e.g., "Cevap A'dır")
-                // 2. OR the whole explanation contains a choice reference [A-E], making generic cleanup safer.
-                if (!patternHasChoice && !containsChoice) {
-                    return;
-                }
-
-                if (options.debug) {
-                    const match = finalResult.match(pattern);
-                    if (match) {
-                        console.log(`[cleanHtml Debug] Matched pattern: ${pattern}`);
-                        console.log(`[cleanHtml Debug] Removed text: "${match[0].trim()}"`);
-                    }
-                }
-                finalResult = finalResult.replace(pattern, '');
-            });
-        }
     }
 
-    // Final trim and cleanup of leftover punctuation/whitespace
-    finalResult = finalResult.replace(/\s+/g, ' ').trim();
-    if (finalResult === "." || finalResult === ".." || finalResult === "...") {
-        finalResult = "";
-    }
-
-    return finalResult;
+    return result.trim();
 }
 
-export function safeHtmlToMarkdown(text: string): string {
-    if (!text) return "";
-    let processed = text.replace(/\s*<br\b[^>]*>\s*/gi, '\n');
-    processed = processed.replace(/<\/br>/gi, '');
+/**
+ * Extracts plain text from HTML, similar to browser's innerText.
+ * Uses Cheerio for reliable DOM-based extraction without regex.
+ */
+export function toPlainText(html: string): string {
+    if (!html) return "";
 
-    const protect = (s: string) => s.replace(/&lt;/g, '[[LT]]').replace(/&gt;/g, '[[GT]]').replace(/&LT;/g, '[[LT]]').replace(/&GT;/g, '[[GT]]');
-    processed = protect(processed);
+    // Replace <br> and other tags with a space to avoid merging words
+    // e.g. "word1<br/>word2" -> "word1 word2" instead of "word1word2"
+    const spaced = html.replace(/<[^>]+>/g, ' ');
 
-    const turndownService = new TurndownService({
-        headingStyle: 'atx',
-        codeBlockStyle: 'fenced',
-        emDelimiter: '_',
-    });
-
-    turndownService.keep(['sup', 'sub', 'u', 'b', 'i', 'em', 'strong', 'ins']);
-
-    let converted = turndownService.turndown(processed).trim();
-
-    const restore = (s: string) => s.replace(/\[\[LT\]\]/g, '&lt;').replace(/\[\[GT\]\]/g, '&gt;');
-    converted = restore(converted);
-
-    converted = converted.replace(/^(\d+)\./gm, '$1\\.');
-    converted = converted.replace(/\\\*\\\*/g, '**').replace(/\\\*/g, '*');
-    converted = converted.replace(/\\_/g, '_');
-    converted = converted.replace(/\\\./g, '.');
-    converted = converted.replace(/ +$/gm, '');
-
-    return converted;
+    return he.decode(spaced)
+        .replace(/\s+/g, ' ')
+        .trim()
+        .toLowerCase();
 }
 
 export function questionsToMarkdown(questions: any[]): string {
-    let md = "";
-    questions.forEach((q, i) => {
-        const qTextContent = q.SoruMetni || q.question || "";
-        const qTextRaw = safeHtmlToMarkdown(qTextContent);
-        let qTextFormatted = qTextRaw.replace(/\n/g, '<br />');
-        qTextFormatted = qTextFormatted.replace(/\s*(<br\b[^>]*>\s*)+/g, '<br />');
-
-        const idx = i + 1;
-        md += `${idx}. ${qTextFormatted}\n`;
-
-        const options = ['A', 'B', 'C', 'D', 'E'];
-        options.forEach(opt => {
-            let isCorrect = false;
-            const correctKey = q.DogruCevap || q.correctAnswer;
-            if (correctKey && String(correctKey).trim().toUpperCase() === opt) {
-                isCorrect = true;
-            }
-
-            const prefix = isCorrect ? "**Cevap " : "";
-            const suffix = isCorrect ? "**" : "";
-            const listItemPrefix = `    - ${prefix}${opt}-) `;
-
-            const optContent = q[opt] || (q.options ? q.options[opt] || q.options[options.indexOf(opt)] : "");
-            let optTextFormatted = "";
-            if (optContent) {
-                const raw = safeHtmlToMarkdown(String(optContent));
-                optTextFormatted = raw.replace(/\n/g, ' ');
-                optTextFormatted = optTextFormatted.replace(/<br\b[^>]*>/gi, ' ');
-                optTextFormatted = optTextFormatted.replace(/\s+/g, ' ').trim();
-            }
-
-            md += `${listItemPrefix}${optTextFormatted}${suffix}\n`;
-        });
-
-        if (q.Aciklama) {
-            let explanation = safeHtmlToMarkdown(q.Aciklama);
-            explanation = explanation.replace(/\n/g, '<br />');
-            explanation = explanation.replace(/(<br\b[^>]*>\s*)+/g, '<br />');
-            md += `\n    > **Açıklama:** ${explanation}\n\n`;
+    return questions.map((q, i) => {
+        let md = `### Soru ${i + 1}\n\n${q.text}\n\n`;
+        if (q.options) {
+            Object.keys(q.options).forEach(key => {
+                md += `- **${key})** ${q.options[key]}\n`;
+            });
         }
-        md += "    <hr />\n";
-    });
-    return md;
+        md += `\n**Doğru Cevap:** ${q.correctAnswer}\n`;
+        if (q.explanation) {
+            md += `\n> **Açıklama:** ${q.explanation}\n`;
+        }
+        return md;
+    }).join('\n---\n\n');
 }

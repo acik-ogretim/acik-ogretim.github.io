@@ -2,7 +2,7 @@ import fs from 'fs';
 import os from 'os';
 import path from 'path';
 import { Worker, isMainThread, parentPort, workerData } from 'worker_threads';
-import { cleanHtml } from './utils/clean-html.ts';
+import { cleanHtml, toPlainText } from './utils/clean-html.ts';
 
 // Configurations
 const NUM_WORKERS = Math.max(1, os.cpus().length - 1);
@@ -77,45 +77,46 @@ function mapRawToApp(raw: RawAnadoluQuestion, isTechnical: boolean = false): App
         options: {}
     };
 
-    let expl = "";
-    if (raw.AnswerExplanation) {
-        expl = cleanHtml(raw.AnswerExplanation, { isTechnical, isExplanation: true, disableChoiceCleanup: true, debug: process.env.DEBUG === 'true' });
-    }
-
     // Smart Merge Logic: Title + Explanation
-    if (raw.Title) {
-        const title = cleanHtml(raw.Title, { isTechnical });
-        if (title) {
-            if (expl) {
-                const stripTags = (h: string) => h.replace(/<[^>]*>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim().toLowerCase();
-                const tNorm = stripTags(title);
-                const eNorm = stripTags(expl);
+    // User insisted: The explanation is a distinct field. Clean them separately.
+    let combinedExpl = "";
 
-                // If one contains the other (ignoring tags), keep the longer one
-                if (eNorm.includes(tNorm) || tNorm.includes(eNorm)) {
-                    if (tNorm.length > eNorm.length) {
-                        expl = title;
-                    }
-                    // Else: expl already has it, keep expl
-                } else {
-                    // Distinct, concatenate
-                    expl = `${title} ${expl}`;
-                }
-            } else {
-                expl = title;
-            }
+    const rawTitle = (raw.Title || "").trim();
+    const rawExpl = (raw.AnswerExplanation || "").trim();
+
+    if (rawTitle && rawExpl) {
+        // Clean independently
+        const cTitle = cleanHtml(rawTitle, { isTechnical });
+        const cExpl = cleanHtml(rawExpl, { isTechnical, isExplanation: true, disableChoiceCleanup: true });
+
+        const tNorm = toPlainText(rawTitle);
+        const eNorm = toPlainText(rawExpl);
+
+        // If content is duplicated, prefer the version that is "fuller" (has more HTML/content)
+        if (eNorm.includes(tNorm) || tNorm.includes(eNorm)) {
+            // Compare cleaned HTML lengths for the tie-break to preserve images/formatting
+            combinedExpl = (cExpl.length >= cTitle.length) ? cExpl : cTitle;
+        } else {
+            // Distinct content: Independent Clean & Merge
+            // Merging cleaned strings ensures that unclosed tags in Title don't swallow Explanation content
+            combinedExpl = cTitle + "<br/>" + cExpl;
         }
+    } else if (rawTitle) {
+        combinedExpl = cleanHtml(rawTitle, { isTechnical, isExplanation: true, disableChoiceCleanup: true });
+    } else if (rawExpl) {
+        combinedExpl = cleanHtml(rawExpl, { isTechnical, isExplanation: true, disableChoiceCleanup: true });
     }
 
-    if (expl && expl.trim() !== "") {
-        q.explanation = expl.trim();
+    if (combinedExpl && combinedExpl.trim() !== "") {
+        // Run cleanHtml one last time on the combined string to trigger self-deduplication
+        q.explanation = cleanHtml(combinedExpl.trim(), { isTechnical, isExplanation: true, disableChoiceCleanup: true });
     }
 
-    if (raw.A) q.options['A'] = cleanHtml(raw.A, { isTechnical });
-    if (raw.B) q.options['B'] = cleanHtml(raw.B, { isTechnical });
-    if (raw.C) q.options['C'] = cleanHtml(raw.C, { isTechnical });
-    if (raw.D) q.options['D'] = cleanHtml(raw.D, { isTechnical });
-    if (raw.E) q.options['E'] = cleanHtml(raw.E, { isTechnical });
+    if (raw.A !== undefined) q.options['A'] = cleanHtml(raw.A || "", { isTechnical });
+    if (raw.B !== undefined) q.options['B'] = cleanHtml(raw.B || "", { isTechnical });
+    if (raw.C !== undefined) q.options['C'] = cleanHtml(raw.C || "", { isTechnical });
+    if (raw.D !== undefined) q.options['D'] = cleanHtml(raw.D || "", { isTechnical });
+    if (raw.E !== undefined) q.options['E'] = cleanHtml(raw.E || "", { isTechnical });
 
     return q;
 }
@@ -163,14 +164,11 @@ function mapExamToApp(raw: ExamInput, isTechnical: boolean = false): AppQuestion
 
 function processCourse(slug: string) {
     const courseRawDir = path.join(RAW_ANADOLU_DIR, slug);
+    // console.log(`Processing ${slug}...`); // Too noisy for all, but good for debug
     const destFilePath = path.join(TARGET_ANADOLU_DIR, `${slug}.json`);
 
-    const technicalKeywords = ['programlama', 'algoritma', 'kodlama', 'web', 'veritabani', 'internet-prog', 'yazilim-müh', 'yazilim-gelistirme'];
+    const technicalKeywords = ['programlama', 'algoritma', 'kodlama', 'web', 'veritabanı', 'internet-prog', 'yazılım-müh', 'yazılım-gelistirme', 'veri-yapilari', 'veri-madenciligi', 'tasarim', 'modelleme'];
     let isTechnical = technicalKeywords.some(kw => slug.toLowerCase().includes(kw));
-
-    if (slug === 'algoritmalar-ve-programlama' || slug === 'programlama-ii') {
-        isTechnical = false;
-    }
 
     const questions: AppQuestion[] = [];
     const ids = new Set<string>();
@@ -179,9 +177,18 @@ function processCourse(slug: string) {
     if (fs.existsSync(alistirmaPath)) {
         try {
             const content = fs.readFileSync(alistirmaPath, 'utf-8');
-            const rawData: RawAnadoluQuestion[] = JSON.parse(content);
+            const rawData: any = JSON.parse(content);
+            let rawList: RawAnadoluQuestion[] = [];
             if (Array.isArray(rawData)) {
-                rawData.forEach(r => {
+                rawList = rawData;
+            } else if (rawData && typeof rawData === 'object') {
+                if (Array.isArray(rawData.questions)) rawList = rawData.questions;
+                else if (Array.isArray(rawData.data)) rawList = rawData.data;
+                else if (Array.isArray(rawData.Sorular)) rawList = rawData.Sorular;
+            }
+
+            if (rawList.length > 0) {
+                rawList.forEach(r => {
                     const mapped = mapRawToApp(r, isTechnical);
                     if (!ids.has(mapped.id)) {
                         questions.push(mapped);
@@ -198,10 +205,18 @@ function processCourse(slug: string) {
     if (fs.existsSync(cikmisPath)) {
         try {
             const content = fs.readFileSync(cikmisPath, 'utf-8');
-            const rawData = JSON.parse(content);
-            const rawList: ExamInput[] = Array.isArray(rawData) ? rawData : (rawData.questions || []);
+            const rawData: any = JSON.parse(content);
+            let rawList: ExamInput[] = [];
 
-            if (Array.isArray(rawList)) {
+            if (Array.isArray(rawData)) {
+                rawList = rawData;
+            } else if (rawData && typeof rawData === 'object') {
+                if (Array.isArray(rawData.questions)) rawList = rawData.questions;
+                else if (Array.isArray(rawData.data)) rawList = rawData.data;
+                else if (Array.isArray(rawData.Sorular)) rawList = rawData.Sorular;
+            }
+
+            if (rawList.length > 0) {
                 rawList.forEach(r => {
                     const mapped = mapExamToApp(r, isTechnical);
                     if (!ids.has(mapped.id)) {
@@ -222,11 +237,21 @@ function processCourse(slug: string) {
     });
 
     if (validQuestions.length > 0) {
-        fs.writeFileSync(destFilePath, JSON.stringify(validQuestions, null, 2));
-        if (isMainThread) {
-            console.log(`✅ Synced ${slug} (${validQuestions.length} questions)`);
-        } else {
-            parentPort?.postMessage(`✅ Synced ${slug} (${validQuestions.length} questions)`);
+        const newContent = JSON.stringify(validQuestions, null, 2);
+        let shouldWrite = true;
+
+        if (fs.existsSync(destFilePath)) {
+            const existingContent = fs.readFileSync(destFilePath, 'utf-8');
+            if (existingContent === newContent) {
+                shouldWrite = false;
+            }
+        }
+
+        if (shouldWrite) {
+            fs.writeFileSync(destFilePath, newContent);
+            const msg = `✅ Synced ${slug} (${validQuestions.length} questions)`;
+            if (isMainThread) console.log(msg);
+            else parentPort?.postMessage(msg);
         }
     }
 }
@@ -238,12 +263,44 @@ if (isMainThread) {
         process.exit(1);
     }
 
-    const allItems = fs.readdirSync(RAW_ANADOLU_DIR).filter(item => {
+    // Parse command line arguments
+    const args = process.argv.slice(2);
+    const technicalOnly = args.includes('--technical');
+    const courseArg = args.find(a => a.startsWith('--course='));
+    const singleCourse = courseArg ? courseArg.split('=')[1] : null;
+
+    // Technical keywords for filtering
+    const technicalKeywords = [
+        'programlama', 'algoritma', 'kodlama', 'web', 'veritaban',
+        'internet', 'yazilim', 'veri', 'tasarim', 'modelleme',
+        'bilgisayar', 'grafik'
+    ];
+
+    let allItems = fs.readdirSync(RAW_ANADOLU_DIR).filter(item => {
         if (item === '.DS_Store') return false;
         try {
             return fs.statSync(path.join(RAW_ANADOLU_DIR, item)).isDirectory();
         } catch { return false; }
     });
+
+    // Filter by single course
+    if (singleCourse) {
+        allItems = allItems.filter(item => item === singleCourse);
+        if (allItems.length === 0) {
+            console.error(`Course not found: ${singleCourse}`);
+            process.exit(1);
+        }
+        console.log(`Processing single course: ${singleCourse}`);
+    }
+
+    // Filter by technical courses only
+    if (technicalOnly) {
+        allItems = allItems.filter(slug => {
+            const lowerSlug = slug.toLowerCase();
+            return technicalKeywords.some(kw => lowerSlug.includes(kw));
+        });
+        console.log(`Filtering to ${allItems.length} technical courses only...`);
+    }
 
     console.log(`Scanning ${allItems.length} folders in ${RAW_ANADOLU_DIR}...`);
     console.log(`Starting parallel sync with ${NUM_WORKERS} workers...`);
@@ -264,7 +321,8 @@ if (isMainThread) {
         activeWorkers++;
         // Use import.meta.url for self-reference in module mode
         const worker = new Worker(new URL(import.meta.url), {
-            workerData: chunk
+            workerData: chunk,
+            execArgv: process.execArgv // Ensure tsx loader is used in workers
         });
 
         worker.on('message', (msg) => {
@@ -287,5 +345,6 @@ if (isMainThread) {
 } else {
     // Worker Thread
     const slugs: string[] = workerData;
+    console.log(`Worker has ${slugs.length} items to process`);
     slugs.forEach(processCourse);
 }

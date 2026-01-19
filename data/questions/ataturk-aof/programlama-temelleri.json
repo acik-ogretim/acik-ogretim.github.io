@@ -93,7 +93,7 @@
   {
     "id": "415650",
     "unitNumber": 2,
-    "text": "YAZ \"Tekrar deneyin EĞER BİTTİ Oval → Paralelkenar → Elmas Oval → Dikdörtgen → Elmas Oval → Elmas → Paralelkenar Paralelkenar → Oval → Elmas Oval → Silindir → Dikdörtgen<br/><b>Aşağıdakilerden hangisi sözde kodun okunabilirliğini artıran temel bir konvansiyondur?</b>",
+    "text": "YAZ \"Tekrar deneyin<br/>EĞER BİTTİ<br/>Oval → Paralelkenar → Elmas<br/>Oval → Dikdörtgen → Elmas<br/>Oval → Elmas → Paralelkenar<br/>Paralelkenar → Oval → Elmas<br/>Oval → Silindir → Dikdörtgen<br/><b>Aşağıdakilerden hangisi sözde kodun okunabilirliğini artıran temel bir konvansiyondur?</b>",
     "correctAnswer": "C",
     "options": {
       "A": "Tüm adımları tek satırda yazmak",
@@ -145,7 +145,7 @@
   {
     "id": "415654",
     "unitNumber": 3,
-    "text": "Merhaba C++<br/>Merhaba Merhaba\\nC++<br/>Merhaba C++\\n Hata verir<br/><b>C++ programının çalışmaya başladığı nokta aşağıdakilerden hangisidir?</b>",
+    "text": "Merhaba C++<br/>Merhaba<br/>Merhaba\\nC++<br/>Merhaba C++\\n<br/>Hata verir<br/><b>C++ programının çalışmaya başladığı nokta aşağıdakilerden hangisidir?</b>",
     "correctAnswer": "E",
     "options": {
       "A": "#include",
@@ -171,7 +171,7 @@
   {
     "id": "415656",
     "unitNumber": 3,
-    "text": "#include &lt;iostream&gt; int main() { std::cout &lt;&lt; \"Merhaba Dünya!\" return 0;<br/>}<br/><strong>Aşağıdaki kod parçasında hangi hata vardır?</strong>",
+    "text": "#include &lt;iostream&gt;<br/>int main() {<br/>std::cout &lt;&lt; \"Merhaba Dünya!\"<br/>return 0;<br/>}<br/><strong>Aşağıdaki kod parçasında hangi hata vardır?</strong>",
     "correctAnswer": "E",
     "options": {
       "A": "Fazladan return ifadesi vardır.",
@@ -184,7 +184,7 @@
   {
     "id": "415657",
     "unitNumber": 3,
-    "text": "Fazladan return ifadesi vardır. std:: ifadesi yanlış kullanılmıştır. main fonksiyonunun dönüş tipi int yerine void olmalıdır. cout yanlış yazılmıştır.<br/>Noktalı virgül (;) eksiktir.<br/><b>Aşağıdaki ifadelerden hangisi doğrudur?</b>",
+    "text": "Fazladan return ifadesi vardır.<br/>std:: ifadesi yanlış kullanılmıştır.<br/>main fonksiyonunun dönüş tipi int yerine void olmalıdır.<br/>cout yanlış yazılmıştır.<br/>Noktalı virgül (;) eksiktir.<br/><b>Aşağıdaki ifadelerden hangisi doğrudur?</b>",
     "correctAnswer": "D",
     "options": {
       "A": "C++ büyük/küçük harf duyarlı değildir.",
@@ -600,7 +600,7 @@
   {
     "id": "415689",
     "unitNumber": 6,
-    "text": "x = 0 olduğunda. x = 10 olduğunda. x herhangi bir pozitif değerde olduğunda.<br/><b>Çoklu koşullar için hangi yapı daha uygundur?</b>",
+    "text": "x = 0 olduğunda.<br/>x = 10 olduğunda.<br/>x herhangi bir pozitif değerde olduğunda.<br/><b>Çoklu koşullar için hangi yapı daha uygundur?</b>",
     "correctAnswer": "E",
     "options": {
       "A": "if",
@@ -824,11 +824,11 @@
     "text": "<strong>Aşağıdaki C++ kod bloklarından hangisi bir anlam bilimsel hata içermektedir?</strong>",
     "correctAnswer": "D",
     "options": {
-      "A": "int sonuc=1;&lt;br /&gt;\nfor(int i=1; sonuc&lt;1000; i++){&lt;br /&gt;\n   sonuc*= i;&lt;br /&gt;\n}",
-      "B": "int sonuc=2;&lt;br /&gt;\nfor(int i=1; i!=10; i++){&lt;br /&gt;\n   sonuc *= i;&lt;br /&gt;\n}",
-      "C": "int sonuc=1;&lt;br /&gt;\nfor(int i=10; i&gt;0; i--){&lt;br /&gt;\n   sonuc = i * i;&lt;br /&gt;\n}",
-      "D": "int sonuc=1;&lt;br /&gt;\nfor(int i=0; i&lt;10; i++){&lt;br /&gt;\n   sonuc *= i;&lt;br /&gt;\n   i--;&lt;br /&gt;\n}",
-      "E": "int sonuc=0;&lt;br /&gt;\nfor(int i=0; i&lt;10; i+=2)&lt;br /&gt;\n   sonuc= i * i;&lt;br /&gt;\ni--;"
+      "A": "int sonuc=1;&lt;br /&gt;\nfor(int i=1; sonuc&lt;1000; i++){&lt;br /&gt;\n   sonuc*= i;&lt;br /&gt;\n}",
+      "B": "int sonuc=2;&lt;br /&gt;\nfor(int i=1; i!=10; i++){&lt;br /&gt;\n   sonuc *= i;&lt;br /&gt;\n}",
+      "C": "int sonuc=1;&lt;br /&gt;\nfor(int i=10; i&gt;0; i--){&lt;br /&gt;\n   sonuc = i * i;&lt;br /&gt;\n}",
+      "D": "int sonuc=1;&lt;br /&gt;\nfor(int i=0; i&lt;10; i++){&lt;br /&gt;\n   sonuc *= i;&lt;br /&gt;\n   i--;&lt;br /&gt;\n}",
+      "E": "int sonuc=0;&lt;br /&gt;\nfor(int i=0; i&lt;10; i+=2)&lt;br /&gt;\n   sonuc= i * i;&lt;br /&gt;\ni--;"
     }
   },
   {
@@ -1198,7 +1198,7 @@
   {
     "id": "159186",
     "unitNumber": 9,
-    "text": "#include &lt;iostream&gt; using namespace std; int main()<br/>{ int dizi[5] = {3,4,5,6,7}; cout &lt;&lt; dizi[3]; return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
+    "text": "#include &lt;iostream&gt;<br/>using namespace std; int main()<br/>{<br/>int dizi[5] = {3,4,5,6,7}; cout &lt;&lt; dizi[3]; return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "3",
@@ -1211,7 +1211,7 @@
   {
     "id": "159188",
     "unitNumber": 9,
-    "text": "#include &lt;iostream&gt; using namespace std; int main()<br/>{ int dizi[5] = { 0,1,2}; cout &lt;&lt; dizi[3]; return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
+    "text": "#include &lt;iostream&gt;<br/>using namespace std; int main()<br/>{<br/>int dizi[5] = { 0,1,2}; cout &lt;&lt; dizi[3]; return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
     "correctAnswer": "E",
     "options": {
       "A": "Hata verir, çalışmaz.",
@@ -1224,7 +1224,7 @@
   {
     "id": "159192",
     "unitNumber": 9,
-    "text": "#include &lt;iostream&gt; using namespace std; int main()<br/>{ int dizi1[5] = {1,2,3,4,5}; int dizi2[5] = { 6,7,8,9,10}; cout &lt;&lt; dizi1[3] + dizi2[4]; return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
+    "text": "#include &lt;iostream&gt;<br/>using namespace std; int main()<br/>{<br/>int dizi1[5] = {1,2,3,4,5}; int dizi2[5] = { 6,7,8,9,10}; cout &lt;&lt; dizi1[3] + dizi2[4]; return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "3 9",
@@ -1237,7 +1237,7 @@
   {
     "id": "159193",
     "unitNumber": 9,
-    "text": "#include &lt;iostream&gt; using namespace std; int main()<br/>{ char dizi[10] = \"deneme\"; cout &lt;&lt; dizi; return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
+    "text": "#include &lt;iostream&gt;<br/>using namespace std; int main()<br/>{<br/>char dizi[10] = \"deneme\"; cout &lt;&lt; dizi; return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "Dizi değişkenin adresini yazar.",
@@ -1250,7 +1250,7 @@
   {
     "id": "159194",
     "unitNumber": 9,
-    "text": "#include &lt;iostream&gt; using namespace std; int main()<br/>{ char dizi[10] = \"deneme123\"; dizi[4] = '\\0'; cout &lt;&lt; dizi; return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
+    "text": "#include &lt;iostream&gt;<br/>using namespace std; int main()<br/>{<br/>char dizi[10] = \"deneme123\"; dizi[4] = '\\0'; cout &lt;&lt; dizi; return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
     "correctAnswer": "A",
     "options": {
       "A": "Ekrana \"dene\" yazar.",
@@ -1289,7 +1289,7 @@
   {
     "id": "303403",
     "unitNumber": 9,
-    "text": "#include &lt;iostream&gt; using namespace std; int main()<br/>{ int dizi[5] = {}; cout &lt;&lt; dizi[3]; return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
+    "text": "#include &lt;iostream&gt;<br/>using namespace std; int main()<br/>{<br/>int dizi[5] = {}; cout &lt;&lt; dizi[3]; return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
     "correctAnswer": "A",
     "options": {
       "A": "0",
@@ -1302,7 +1302,7 @@
   {
     "id": "303404",
     "unitNumber": 9,
-    "text": "#include &lt;iostream&gt; using namespace std; int main()<br/>{ int dizi[4] = {1,2,3,4}; cout &lt;&lt; dizi; return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
+    "text": "#include &lt;iostream&gt;<br/>using namespace std; int main()<br/>{<br/>int dizi[4] = {1,2,3,4}; cout &lt;&lt; dizi; return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
     "correctAnswer": "E",
     "options": {
       "A": "1",
@@ -1315,7 +1315,7 @@
   {
     "id": "303405",
     "unitNumber": 9,
-    "text": "5. #include &lt;iostream&gt; using namespace std; int main()<br/>{ int dizi[5] = {1,2,3,4,5}; for (int i = 3; i &lt; 5; i++) cout &lt;&lt; dizi[i]&lt;&lt;\" \"; return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
+    "text": "5. #include &lt;iostream&gt;<br/>using namespace std; int main()<br/>{<br/>int dizi[5] = {1,2,3,4,5}; for (int i = 3; i &lt; 5; i++) cout &lt;&lt; dizi[i]&lt;&lt;\" \"; return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "1",
@@ -1328,7 +1328,7 @@
   {
     "id": "303406",
     "unitNumber": 9,
-    "text": "6. #include &lt;iostream&gt; using namespace std; int main()<br/>{ char dizi[10] = \"ornek\"; cout &lt;&lt; dizi; return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
+    "text": "6. #include &lt;iostream&gt;<br/>using namespace std; int main()<br/>{<br/>char dizi[10] = \"ornek\"; cout &lt;&lt; dizi; return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
     "correctAnswer": "A",
     "options": {
       "A": "ornek",
@@ -1341,7 +1341,7 @@
   {
     "id": "303408",
     "unitNumber": 9,
-    "text": "#include &lt;iostream&gt; using namespace std; int main()<br/>{ char dizi[10] = \"deneme1234\"; cout &lt;&lt; dizi[6]; return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
+    "text": "#include &lt;iostream&gt;<br/>using namespace std; int main()<br/>{<br/>char dizi[10] = \"deneme1234\"; cout &lt;&lt; dizi[6]; return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
     "correctAnswer": "E",
     "options": {
       "A": "Ekrana \"deneme1234\" yazar.",
@@ -1354,7 +1354,7 @@
   {
     "id": "303410",
     "unitNumber": 9,
-    "text": "#include &lt;iostream&gt; using namespace std; int Fonksiyon(int *A, int n)<br/>{ int dondur=0; for (int i = 0; i &lt; n; i++)<br/>{ if (A[i] % 2 == 0) dondur++;<br/>} return dondur;<br/>} int main()<br/>{ int dizi[5] = { 12,5,7,4,9 }; cout &lt;&lt; Fonksiyon(dizi, 5); return 0;<br/>}<br/><strong>Yukarıdaki kod çalıştırılmak istendiğinde sonuç ne olur?</strong>",
+    "text": "#include &lt;iostream&gt;<br/>using namespace std; int Fonksiyon(int *A, int n)<br/>{<br/>int dondur=0; for (int i = 0; i &lt; n; i++)<br/>{<br/>if (A[i] % 2 == 0) dondur++;<br/>}<br/>return dondur;<br/>}<br/>int main()<br/>{<br/>int dizi[5] = { 12,5,7,4,9 }; cout &lt;&lt; Fonksiyon(dizi, 5); return 0;<br/>}<br/><strong>Yukarıdaki kod çalıştırılmak istendiğinde sonuç ne olur?</strong>",
     "correctAnswer": "B",
     "options": {
       "A": "Ekrana \"3\" yazar.",
@@ -1367,7 +1367,7 @@
   {
     "id": "303411",
     "unitNumber": 9,
-    "text": "void Fonksiyon(int *A, int n)<br/>{ for (int i = 0; i &lt; n; i++)<br/>{ cout &lt;&lt; A[i]&lt;&lt;\" \";<br/>} cout &lt;&lt; endl;<br/>}<br/><strong>Yukarıdaki fonksiyon için aşağıdaki çağrımlardan hangisi hata verir?</strong>",
+    "text": "void Fonksiyon(int *A, int n)<br/>{<br/>for (int i = 0; i &lt; n; i++)<br/>{<br/>cout &lt;&lt; A[i]&lt;&lt;\" \";<br/>}<br/>cout &lt;&lt; endl;<br/>}<br/><strong>Yukarıdaki fonksiyon için aşağıdaki çağrımlardan hangisi hata verir?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "Fonksiyon(dizi, 5);",
@@ -1380,7 +1380,7 @@
   {
     "id": "303412",
     "unitNumber": 9,
-    "text": "#include &lt;iostream&gt; using namespace std; void Fonksiyon(int *A, int n)<br/>{ for (int i = 0; i &lt; n; i++) for (int j = 0; j &lt; n-1; j++)<br/>{ if (A[j] &gt; A[j + 1])<br/>{ int temp = A[j];<br/>A[j] = A[j + 1];<br/>A[j + 1] = temp;<br/>}<br/>}<br/>} int main()<br/>{ int dizi[5] = { 12,5,7,4,9 };<br/>Fonksiyon(dizi, 5); for (int i = 0; i &lt; 5; i++)<br/>{ cout &lt;&lt; dizi[i] &lt;&lt; \" \";<br/>} return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
+    "text": "#include &lt;iostream&gt;<br/>using namespace std; void Fonksiyon(int *A, int n)<br/>{<br/>for (int i = 0; i &lt; n; i++) for (int j = 0; j &lt; n-1; j++)<br/>{<br/>if (A[j] &gt; A[j + 1])<br/>{<br/>int temp = A[j];<br/>A[j] = A[j + 1];<br/>A[j + 1] = temp;<br/>}<br/>}<br/>}<br/>int main()<br/>{<br/>int dizi[5] = { 12,5,7,4,9 };<br/>Fonksiyon(dizi, 5); for (int i = 0; i &lt; 5; i++)<br/>{<br/>cout &lt;&lt; dizi[i] &lt;&lt; \" \";<br/>}<br/>return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında ekrana hangi çıktıyı yansıtır?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "12 5 7 4 9",
@@ -1471,7 +1471,7 @@
   {
     "id": "115399",
     "unitNumber": 10,
-    "text": "void DiziDoldur(int d[][3], int n) { int a, b; for (a = 0; a &lt; n; a++) for (b = 0; b &lt; 3; b++) d[a][b] = a * b;<br/>} int main() { int dizi[2][3];<br/>? return 0;<br/>}<br/><strong>Yukarıdaki C++ programının ? karakteri yer alan satırına aşağıdakilerden hangisi yazılırsa ilgili alt fonksiyon doğru şekilde çağrılmış olur?</strong>",
+    "text": "void DiziDoldur(int d[][3], int n) {<br/>int a, b; for (a = 0; a &lt; n; a++) for (b = 0; b &lt; 3; b++) d[a][b] = a * b;<br/>}<br/>int main() {<br/>int dizi[2][3];<br/>?<br/>return 0;<br/>}<br/><strong>Yukarıdaki C++ programının ? karakteri yer alan satırına aşağıdakilerden hangisi yazılırsa ilgili alt fonksiyon doğru şekilde çağrılmış olur?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "DiziDoldur(2,3);",
@@ -1536,7 +1536,7 @@
   {
     "id": "160000",
     "unitNumber": 10,
-    "text": "for (int i = 0; i &lt; 2; ++i)<br/>{ for (int j = 0; j &lt; 3; ++j)<br/>{ for (int k = 0; k &lt; 2; ++k)<br/>{ cout &lt;&lt; \"test[\" &lt;&lt; i &lt;&lt; \"][\" &lt;&lt; j<br/>&lt;&lt; \"][\" &lt;&lt; k &lt;&lt; \"] = \" &lt;&lt; test[i][j][k] &lt;&lt; endl;<br/>}<br/>}<br/>}<br/><strong>Yukarıdaki C++ kod parçasının işlevi aşağıdakilerin hangisinde doğru verilmiştir?</strong>",
+    "text": "for (int i = 0; i &lt; 2; ++i)<br/>{<br/>for (int j = 0; j &lt; 3; ++j)<br/>{<br/>for (int k = 0; k &lt; 2; ++k)<br/>{<br/>cout &lt;&lt; \"test[\" &lt;&lt; i &lt;&lt; \"][\" &lt;&lt; j<br/>&lt;&lt; \"][\" &lt;&lt; k &lt;&lt; \"] = \" &lt;&lt; test[i][j][k] &lt;&lt; endl;<br/>}<br/>}<br/>}<br/><strong>Yukarıdaki C++ kod parçasının işlevi aşağıdakilerin hangisinde doğru verilmiştir?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "test dizinin eleman sayısını bulur.",
@@ -1614,7 +1614,7 @@
   {
     "id": "303481",
     "unitNumber": 10,
-    "text": "for (int i=0; i&lt; 5; i++)<br/>{ for(int j=0; j&lt;5; j++)<br/>{ a[i][j] = i * j;<br/>}<br/>}<br/><strong>Yukarıdaki kod parçası aşağıdaki işlevlerden hangisini yerine getirmektedir?</strong>",
+    "text": "for (int i=0; i&lt; 5; i++)<br/>{<br/>for(int j=0; j&lt;5; j++)<br/>{<br/>a[i][j] = i * j;<br/>}<br/>}<br/><strong>Yukarıdaki kod parçası aşağıdaki işlevlerden hangisini yerine getirmektedir?</strong>",
     "correctAnswer": "A",
     "options": {
       "A": "Dizinin tüm elemanlarına bulundukları satır ve sütün indis değerlerinin çarpım sonucunu yazar.",
@@ -2173,7 +2173,7 @@
   {
     "id": "159307",
     "unitNumber": 12,
-    "text": "#include &lt;iostream&gt;<br/>#include &lt;list&gt; using namespace std; int main ()<br/>{ list&lt;int&gt; liste; int toplam; liste.push_front(1); liste.push_front(2); liste.push_front(10); liste.push_back(6); toplam=liste.front()+liste.back(); cout &lt;&lt; toplam &lt;&lt; endl; return 0;<br/>}<br/><strong>Yukarıda verilen programın ekran çıktısı hangisidir?</strong>",
+    "text": "#include &lt;iostream&gt;<br/>#include &lt;list&gt;<br/>using namespace std; int main ()<br/>{<br/>list&lt;int&gt; liste; int toplam; liste.push_front(1); liste.push_front(2); liste.push_front(10); liste.push_back(6); toplam=liste.front()+liste.back(); cout &lt;&lt; toplam &lt;&lt; endl; return 0;<br/>}<br/><strong>Yukarıda verilen programın ekran çıktısı hangisidir?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "1",
@@ -2212,7 +2212,7 @@
   {
     "id": "159313",
     "unitNumber": 12,
-    "text": "#include &lt;iostream&gt;<br/>#include &lt;deque&gt; using namespace std; int main ()<br/>{ deque&lt;int&gt; k; for (int i=1; i&lt;=6; i++)<br/>k.push_back(i);<br/>k.erase (k.begin(),k.begin()+3);<br/>k.erase(k.begin()+2); deque&lt;int&gt;::iterator it; for ( it = k.begin(); it!=k.end(); ++it) cout &lt;&lt; \" \" &lt;&lt; *it; return 0;<br/>}<br/><strong>Yukarıda verilen programın ekran çıktısı aşağıdakilerden hangisidir?</strong>",
+    "text": "#include &lt;iostream&gt;<br/>#include &lt;deque&gt;<br/>using namespace std; int main ()<br/>{<br/>deque&lt;int&gt; k; for (int i=1; i&lt;=6; i++) k.push_back(i); k.erase (k.begin(),k.begin()+3); k.erase(k.begin()+2); deque&lt;int&gt;::iterator it; for ( it = k.begin(); it!=k.end(); ++it) cout &lt;&lt; \" \" &lt;&lt; *it; return 0;<br/>}<br/><strong>Yukarıda verilen programın ekran çıktısı aşağıdakilerden hangisidir?</strong>",
     "correctAnswer": "E",
     "options": {
       "A": "0 1 2 3",
@@ -2303,7 +2303,7 @@
   {
     "id": "303500",
     "unitNumber": 12,
-    "text": "#include &lt;iostream&gt;<br/>#include &lt;vector&gt; using namespace std; int main ()<br/>{ vector&lt;int&gt; vek; int toplam; vek.push_front(12); vek.push_back(10); toplam= vek.front() + vek.back(); cout &lt;&lt; toplam &lt;&lt; endl; return 0;<br/>}<br/><strong>Yukarıda verilen programın çıktısı aşağıdakilerden hangisidir?</strong>",
+    "text": "#include &lt;iostream&gt;<br/>#include &lt;vector&gt;<br/>using namespace std; int main ()<br/>{<br/>vector&lt;int&gt; vek; int toplam; vek.push_front(12); vek.push_back(10); toplam= vek.front() + vek.back(); cout &lt;&lt; toplam &lt;&lt; endl; return 0;<br/>}<br/><strong>Yukarıda verilen programın çıktısı aşağıdakilerden hangisidir?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "2",
@@ -2329,7 +2329,7 @@
   {
     "id": "303521",
     "unitNumber": 12,
-    "text": "#include &lt;iostream&gt;<br/>#include &lt;vector&gt; using namespace std; int main()<br/>{ vector&lt;int&gt; vek(3); for(unsigned i = 0; i &lt; vek.size(); i++) vek.at(i) = i; for(unsigned i = 0; i &lt;vek.size(); i++) cout &lt;&lt; “ “ &lt;&lt; vek.at(i); return 0;<br/>}<br/><strong>Yukarıda verilen programın çıktısı aşağıdakilerden hangisidir?</strong>",
+    "text": "#include &lt;iostream&gt;<br/>#include &lt;vector&gt;<br/>using namespace std; int main()<br/>{<br/>vector&lt;int&gt; vek(3); for(unsigned i = 0; i &lt; vek.size(); i++) vek.at(i) = i; for(unsigned i = 0; i &lt;vek.size(); i++) cout &lt;&lt; “ “ &lt;&lt; vek.at(i); return 0;<br/>}<br/><strong>Yukarıda verilen programın çıktısı aşağıdakilerden hangisidir?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "1 2 3",
@@ -2368,7 +2368,7 @@
   {
     "id": "333027",
     "unitNumber": 12,
-    "text": "<strong>Aşağıdakilerden hangisi s</strong><strong>tack veri yapısının fonksiyonlarından biri <u>değildir</u>?</strong>",
+    "text": "<strong>Aşağıdakilerden hangisi stack veri yapısının fonksiyonlarından biri <u>değildir</u>?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "push",
@@ -2732,7 +2732,7 @@
   {
     "id": "115524",
     "unitNumber": 14,
-    "text": "class Silindir { double yaricap; double yukseklik; double HacimHesapla()<br/>{ return en * boy * yukseklik;<br/>} double TabanAlaniHesapla()<br/>{ return yaricap * yaricap * 3.1417;<br/>}<br/>};<br/><strong>Yukarıdaki sınıf tanımlamasına göre hangisi <u>yanlıştır</u>?</strong>",
+    "text": "class Silindir {<br/>double yaricap; double yukseklik; double HacimHesapla()<br/>{<br/>return en * boy * yukseklik;<br/>}<br/>double TabanAlaniHesapla()<br/>{<br/>return yaricap * yaricap * 3.1417;<br/>}<br/>};<br/><strong>Yukarıdaki sınıf tanımlamasına göre hangisi <u>yanlıştır</u>?</strong>",
     "correctAnswer": "E",
     "options": {
       "A": "Sınıfın adı Silindir'dir.",
@@ -2771,7 +2771,7 @@
   {
     "id": "115670",
     "unitNumber": 14,
-    "text": "class Koli { private: double en; double boy; double yukseklik; public: double agirlik; double Hacim(){ return en * boy * yukseklik;};<br/>};<br/><strong>Yukarıdaki sınıf tanımına göre aşağıdakilerden hangisi <u>yanlıştır</u>?</strong>",
+    "text": "class Koli {<br/>private: double en; double boy; double yukseklik; public: double agirlik; double Hacim(){ return en * boy * yukseklik;};<br/>};<br/><strong>Yukarıdaki sınıf tanımına göre aşağıdakilerden hangisi <u>yanlıştır</u>?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "en isimli üye değişkenine sınıfın nesneleri tarafından doğrudan erişilemez.",
@@ -2784,7 +2784,7 @@
   {
     "id": "115708",
     "unitNumber": 14,
-    "text": "class Ornek { private: int a; public:<br/>Ornek(int b) {a=b;}<br/>};<br/><strong>Yukarıdaki sınıf tanımlamasına göre hangisi doğrudur?</strong>",
+    "text": "class Ornek {<br/>private: int a; public:<br/>Ornek(int b) {a=b;}<br/>};<br/><strong>Yukarıdaki sınıf tanımlamasına göre hangisi doğrudur?</strong>",
     "correctAnswer": "B",
     "options": {
       "A": "Yaratılan tüm nesnelere, a üye değişkenine ek olarak b üye değişkeni de eklenir.",
@@ -2797,7 +2797,7 @@
   {
     "id": "144674",
     "unitNumber": 14,
-    "text": "#include &lt;iostream&gt; using namespace std;<br/>class deneme { public: int sayi; void Yaz();<br/>};<br/>void programlama::Yaz() { cout &lt;&lt; \"Yaz fonksiyonu kullanıldı\\n\";<br/>}<br/>int main() { deneme d1; d1.Yaz();<br/>return 0;<br/>}<br/><strong>Yukarıdaki C++ programı için aşağıdakilerden hangisi <u>yanlıştır</u>?</strong>",
+    "text": "#include &lt;iostream&gt;<br/>using namespace std;<br/>class deneme {<br/>public: int sayi; void Yaz();<br/>};<br/>void programlama::Yaz() {<br/>cout &lt;&lt; \"Yaz fonksiyonu kullanıldı\\n\";<br/>}<br/>int main() {<br/>deneme d1; d1.Yaz();<br/>return 0;<br/>}<br/><strong>Yukarıdaki C++ programı için aşağıdakilerden hangisi <u>yanlıştır</u>?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "Yaz adında üye fonksiyonu tanımlanmıştır.",
@@ -2849,7 +2849,7 @@
   {
     "id": "159371",
     "unitNumber": 14,
-    "text": "#include &lt;iostream&gt; using namespace std;<br/>class silindir<br/>{ private: double r, h; const double pi = 3;<br/>public: void YaricapOku(double yaricap)<br/>{ r = yaricap;<br/>} void YukseklikOku(double yukseklik)<br/>{ h = yukseklik;<br/>} double HacimHesapla() { return pi*r*r*h;<br/>}<br/>};<br/>int main()<br/>{ silindir s1; s1.YaricapOku(1); s1.YukseklikOku(3); cout &lt;&lt; \"Silindirin hacmi=\" &lt;&lt; s1.HacimHesapla(); return 0;<br/>}<br/><strong>Yukarıdaki kod parçası çalıştırıldığında aşağıdaki ekran çıktılarından hangisi oluşur?</strong>",
+    "text": "#include &lt;iostream&gt;<br/>using namespace std;<br/>class silindir<br/>{<br/>private: double r, h; const double pi = 3;<br/>public: void YaricapOku(double yaricap)<br/>{<br/>r = yaricap;<br/>}<br/>void YukseklikOku(double yukseklik)<br/>{<br/>h = yukseklik;<br/>}<br/>double HacimHesapla() {<br/>return pi*r*r*h;<br/>}<br/>};<br/>int main()<br/>{<br/>silindir s1; s1.YaricapOku(1); s1.YukseklikOku(3); cout &lt;&lt; \"Silindirin hacmi=\" &lt;&lt; s1.HacimHesapla(); return 0;<br/>}<br/><strong>Yukarıdaki kod parçası çalıştırıldığında aşağıdaki ekran çıktılarından hangisi oluşur?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "Silindirin hacmi=1",
@@ -2862,7 +2862,7 @@
   {
     "id": "303556",
     "unitNumber": 14,
-    "text": "<strong>Aşağıdakilerden hangisi n</strong><strong>esneye yönelik programlamanın özelliklerinden <u>değildir</u>?</strong>",
+    "text": "<strong>Aşağıdakilerden hangisi nesneye yönelik programlamanın özelliklerinden <u>değildir</u>?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "Nesneler birbirleriyle iletişim kurabilir.",
@@ -2927,7 +2927,7 @@
   {
     "id": "303561",
     "unitNumber": 14,
-    "text": "#include &lt;iostream&gt; using namespace std;<br/>class deneme{ public: int sayi1; int sayi2; void Yaz(){ cout &lt;&lt; \"c++ ile programlama temelleri\";<br/>}<br/>};<br/>int main(){ deneme d1; d1.sayi1 = 7; d1.sayi2 = 8; d1.Yaz(); return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında aşağıdaki ekran çıktılarından hangisi oluşur?</strong>",
+    "text": "#include &lt;iostream&gt;<br/>using namespace std;<br/>class deneme{<br/>public: int sayi1; int sayi2; void Yaz(){<br/>cout &lt;&lt; \"c++ ile programlama temelleri\";<br/>}<br/>};<br/>int main(){<br/>deneme d1; d1.sayi1 = 7; d1.sayi2 = 8; d1.Yaz(); return 0;<br/>}<br/><strong>Yukarıdaki C++ programı çalıştırıldığında aşağıdaki ekran çıktılarından hangisi oluşur?</strong>",
     "correctAnswer": "A",
     "options": {
       "A": "c++ ile programlama temelleri",
@@ -2966,7 +2966,7 @@
   {
     "id": "303564",
     "unitNumber": 14,
-    "text": "<strong>Aşağıdakilerden hangisi </strong><strong>nesneye yönelik programlamanın önemli yapı taşlarından biri <u>değildir</u>?</strong>",
+    "text": "<strong>Aşağıdakilerden hangisi nesneye yönelik programlamanın önemli yapı taşlarından biri <u>değildir</u>?</strong>",
     "correctAnswer": "E",
     "options": {
       "A": "Kalıtım",

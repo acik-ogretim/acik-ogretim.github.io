@@ -262,7 +262,7 @@
   {
     "id": "324071",
     "unitNumber": 2,
-    "text": "public int Toplam (........ , ........)<br/>{ int sonuc = sayi1 + sayi2; return sonuc;<br/>}<br/><strong>Yukarıda verilen kodlarda noktalı yerlere aşağıdakilerden hangisi gelmelidir?</strong>",
+    "text": "public int Toplam (........ , ........)<br/>{<br/>int sonuc = sayi1 + sayi2; return sonuc;<br/>}<br/><strong>Yukarıda verilen kodlarda noktalı yerlere aşağıdakilerden hangisi gelmelidir?</strong>",
     "correctAnswer": "B",
     "options": {
       "A": "sayi1,sonuc",
@@ -418,7 +418,7 @@
   {
     "id": "396638",
     "unitNumber": 2,
-    "text": "...I.... Araba<br/>{ private int renk; public int Renk<br/>{ get<br/>{<br/>......II..... renk;<br/>} set<br/>{ renk = ....III......;<br/>}<br/>}<br/>}<br/><strong>Yukarıdaki kodlarda noktalı yerlere hangisi gelmelidir?</strong>",
+    "text": "...I.... Araba<br/>{ private int renk; public int Renk<br/>{<br/>get<br/>{<br/>......II..... renk;<br/>}<br/>set<br/>{<br/>renk = ....III......;<br/>}<br/>}<br/>}<br/><strong>Yukarıdaki kodlarda noktalı yerlere hangisi gelmelidir?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "I: value, II: class, III:return",
@@ -444,7 +444,7 @@
   {
     "id": "324402",
     "unitNumber": 3,
-    "text": "Aşağıdakilerden hangisi derlerken programcının karşısına hata mesajı verir? class SinifA { } abstract class SinifB { } abstract class SinifC { abstract void method(); }",
+    "text": "Aşağıdakilerden hangisi derlerken programcının karşısına hata mesajı verir?<br/>class SinifA { }<br/>abstract class SinifB { }<br/>abstract class SinifC { abstract void method(); }",
     "correctAnswer": "E",
     "options": {
       "A": "SinifA",
@@ -457,7 +457,7 @@
   {
     "id": "324403",
     "unitNumber": 3,
-    "text": "<strong>Aşağıdakilerden hangisi derlerken programcının karşısına hata mesajı verir?</strong> class SinifA { } abstract class SinifB { } class SinifC { abstract void method(); }",
+    "text": "<strong>Aşağıdakilerden hangisi derlerken programcının karşısına hata mesajı verir?</strong><br/>class SinifA { }<br/>abstract class SinifB { }<br/>class SinifC { abstract void method(); }",
     "correctAnswer": "D",
     "options": {
       "A": "SinifA",
@@ -535,7 +535,7 @@
   {
     "id": "324535",
     "unitNumber": 3,
-    "text": "using System; public class SaymayiDurdur<br/>{ public static int OrnekSayimi = 0;<br/>// bir sınıfın örneğini oluştur public SaymayiDurdur()<br/>{<br/>}<br/>} class Program<br/>{ static void Main(string[] args)<br/>{<br/>SaymayiDurdur yeniornek1 = new SaymayiDurdur();<br/>Console.WriteLine(SaymayiDurdur.OrnekSayimi);<br/>SaymayiDurdur yeniornek2 = new SaymayiDurdur();<br/>SaymayiDurdur yeniornek3 = new SaymayiDurdur();<br/>SaymayiDurdur yeniornek4 = new SaymayiDurdur();<br/>Console.WriteLine(SaymayiDurdur.OrnekSayimi);<br/>}<br/>}<br/><strong>Yukarıdaki programın çıktısı aşağıdakilerden hangisidir?</strong>",
+    "text": "using System; public class SaymayiDurdur<br/>{<br/>public static int OrnekSayimi = 0;<br/>// bir sınıfın örneğini oluştur public SaymayiDurdur()<br/>{<br/>}<br/>}<br/>class Program<br/>{<br/>static void Main(string[] args)<br/>{<br/>SaymayiDurdur yeniornek1 = new SaymayiDurdur();<br/>Console.WriteLine(SaymayiDurdur.OrnekSayimi);<br/>SaymayiDurdur yeniornek2 = new SaymayiDurdur();<br/>SaymayiDurdur yeniornek3 = new SaymayiDurdur();<br/>SaymayiDurdur yeniornek4 = new SaymayiDurdur();<br/>Console.WriteLine(SaymayiDurdur.OrnekSayimi);<br/>}<br/>}<br/><strong>Yukarıdaki programın çıktısı aşağıdakilerden hangisidir?</strong>",
     "correctAnswer": "A",
     "options": {
       "A": "0<br/>0",
@@ -548,7 +548,7 @@
   {
     "id": "324538",
     "unitNumber": 3,
-    "text": "using System; class TestProgramim<br/>{ static void Main(string[] args)<br/>{ int numara = 2; testFonk1 (ref numara);<br/>Console.WriteLine(numara);<br/>Console.ReadLine();<br/>} static void testFonk1 (ref int numara)<br/>{ numara = numara * numara * numara;<br/>}<br/>}<br/><strong>Yukarıdaki programın çıktısı hangisidir?</strong>",
+    "text": "using System; class TestProgramim<br/>{<br/>static void Main(string[] args)<br/>{<br/>int numara = 2; testFonk1 (ref numara);<br/>Console.WriteLine(numara);<br/>Console.ReadLine();<br/>}<br/>static void testFonk1 (ref int numara)<br/>{<br/>numara = numara * numara * numara;<br/>}<br/>}<br/><strong>Yukarıdaki programın çıktısı hangisidir?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "Derleme hatası ile karşılaşırız",
@@ -652,7 +652,7 @@
   {
     "id": "396732",
     "unitNumber": 3,
-    "text": "using System; class Program { static void Main(string[] args)<br/>{ int sayi = 5;<br/>Console.WriteLine(\"Başlangıç değeri: \" + sayi);<br/>DegeriArttir(ref sayi);<br/>Console.WriteLine(\"Değer artırıldıktan sonra: \" + sayi);<br/>Console.ReadLine();<br/>} static void DegeriArttir(ref int deger)<br/>{ deger += 10;<br/>}<br/>}<br/><strong>Yukarıdaki programın çıktısı hangisidir?</strong>",
+    "text": "using System; class Program {<br/>static void Main(string[] args)<br/>{<br/>int sayi = 5;<br/>Console.WriteLine(\"Başlangıç değeri: \" + sayi);<br/>DegeriArttir(ref sayi);<br/>Console.WriteLine(\"Değer artırıldıktan sonra: \" + sayi);<br/>Console.ReadLine();<br/>}<br/>static void DegeriArttir(ref int deger)<br/>{<br/>deger += 10;<br/>}<br/>}<br/><strong>Yukarıdaki programın çıktısı hangisidir?</strong>",
     "correctAnswer": "D",
     "options": {
       "A": "Derleme hatası ile karşılaşırız.",
@@ -834,7 +834,7 @@
   {
     "id": "326775",
     "unitNumber": 4,
-    "text": "class Ogrenci<br/>{ public string adSoyad; private double girisNotu;<br/>}<br/>Ogrenci ogr1 = new Ogrenci(); ogr1.adSoyad = \"Mehmet Polat\";<br/><strong>Yukarıdaki C# kod bloğu için aşağıdakilerden hangisi <u>yanlıştır</u>?</strong>",
+    "text": "class Ogrenci<br/>{<br/>public string adSoyad; private double girisNotu;<br/>}<br/>Ogrenci ogr1 = new Ogrenci(); ogr1.adSoyad = \"Mehmet Polat\";<br/><strong>Yukarıdaki C# kod bloğu için aşağıdakilerden hangisi <u>yanlıştır</u>?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "Ogrenci isminde bir sınıf oluşturulmuştur.",
@@ -2199,7 +2199,7 @@
   {
     "id": "371481",
     "unitNumber": 10,
-    "text": "private void IslemYap_Click(object sender, EventArgs e)<br/>{ double anaPara=default;<br/>IslemSonucu.Text = ParaKazan(out anaPara, 10) + \"\\n\";<br/>} public static double ParaKazan(……………… anaPara, double kazancOrani)<br/>{ anaPara = 100; anaPara = anaPara + anaPara * kazancOrani / 100; return anaPara;<br/>}<br/><strong>Kod bloğunda boş bırakılan yere aşağıdakilerden hangisi getirilmelidir?</strong>",
+    "text": "private void IslemYap_Click(object sender, EventArgs e)<br/>{<br/>double anaPara=default;<br/>IslemSonucu.Text = ParaKazan(out anaPara, 10) + \"\\n\";<br/>}<br/>public static double ParaKazan(……………… anaPara, double kazancOrani)<br/>{<br/>anaPara = 100; anaPara = anaPara + anaPara * kazancOrani / 100; return anaPara;<br/>}<br/><strong>Kod bloğunda boş bırakılan yere aşağıdakilerden hangisi getirilmelidir?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "Double out",
@@ -2576,7 +2576,7 @@
   {
     "id": "335758",
     "unitNumber": 13,
-    "text": "<strong>Listem adında \"string\" tipinde elemanlar içeren bir List nesnesinin tanımlanması ve bu nesnenin sonuna \"kalem\" değerine sahip bir eleman eklemeyi sağlayan kod parçası </strong><strong>aşağıdakilerden hangisidir?</strong>",
+    "text": "<strong>Listem adında \"string\" tipinde elemanlar içeren bir List nesnesinin tanımlanması ve bu nesnenin sonuna \"kalem\" değerine sahip bir eleman eklemeyi sağlayan kod parçası aşağıdakilerden hangisidir?</strong>",
     "correctAnswer": "C",
     "options": {
       "A": "List&lt;int&gt; Listem= new List&lt;int&gt;();<br/>Listem.AddRange(\"Listem\");",
