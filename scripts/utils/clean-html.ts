@@ -1,7 +1,12 @@
 import { load } from 'cheerio';
+import { createHash } from 'crypto';
 import he from 'he';
 
-const ALLOWED_TAGS = new Set(['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'br', 'b', 'strong', 'i', 'em', 'u', 's', 'strike', 'ins', 'del', 'code', 'pre', 'ul', 'ol', 'li', 'img', 'a', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'blockquote', 'sup', 'sub', 'kbd', 'samp', 'var', 'span', 'div', 'math', 'semantics', 'mrow', 'mtext', 'mo', 'mfrac', 'mi', 'annotation', 'mover', 'munder', 'munderover', 'msqrt', 'mroot', 'mstyle', 'merror', 'mpadded', 'mphantom', 'mfenced', 'menclose', 'mtable', 'mtr', 'mtd', 'maligngroup', 'malignmark', 'ms', 'mspace', 'mglyph', 'mn', 'msup', 'msub', 'mmsubsup', 'form', 'input', 'select', 'option', 'label', 'textarea', 'keygen', 'article', 'section', 'aside', 'header', 'footer', 'main', 'nav', 'address']);
+// Cache for cleaned HTML results - keyed by hash of input
+const cleanHtmlCache = new Map<string, string>();
+const CACHE_MAX_SIZE = 10000;  // Prevent memory bloat
+
+const ALLOWED_TAGS = new Set(['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'br', 'b', 'strong', 'i', 'em', 'u', 'code', 'pre', 'ul', 'ol', 'li', 'img', 'a', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'blockquote', 'sup', 'sub', 'kbd', 'samp', 'var', 'span', 'div', 'math', 'semantics', 'mrow', 'mtext', 'mo', 'mfrac', 'mi', 'annotation', 'mover', 'munder', 'munderover', 'msqrt', 'mroot', 'mstyle', 'merror', 'mpadded', 'mphantom', 'mfenced', 'menclose', 'mtable', 'mtr', 'mtd', 'maligngroup', 'malignmark', 'ms', 'mspace', 'mglyph', 'mn', 'msup', 'msub', 'mmsubsup', 'form', 'input', 'select', 'option', 'label', 'textarea', 'keygen', 'article', 'section', 'aside', 'header', 'footer', 'main', 'nav', 'address', 'colgroup', 'col']);
 
 // Interface for configuration
 export interface CleanHtmlOptions {
@@ -39,8 +44,8 @@ export function repairText(text: string, options: RepairOptions = { stripLoneBr:
         .replace(/[\u00ad\ufeff]/g, '')
         .replace(/[\u2028\u2029]/g, ' ')
         .replace(/[\u2013\u2014]/g, '-')
-        .replace(/\x1e/g, 'i').replace(/\x1f/g, 'i');
-
+        .replace(/[\x1d\x1e\x1f]/g, 'i')
+        .replace(/[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]/g, '')
     // Normalize placeholders (dots, hyphens, underscores) to THREE standard HTML ellipses (user preference)
     if (options.normalizePlaceholders) {
         cleaned = cleaned.replace(/[\.\-_]{3,}/g, '&hellip;&hellip;&hellip;');
@@ -54,7 +59,7 @@ export function repairText(text: string, options: RepairOptions = { stripLoneBr:
     cleaned = cleaned.replace(attributeArtifactRegex, '');
 
     // 5. Strip broken HTML-like fragments that often remain after stripping attributes
-    const bracketArtifactRegex = /<(?:table|tbody|tr|td|p|div|span|font)\b[^>]*?(?:data-|positionpattern|toolbar|formatter|handler)\s*=[^>]*?>/gi;
+    const bracketArtifactRegex = /<(?:table|tbody|tr|td|p|div|span|font|colgroup|col)\b[^>]*?(?:data-|positionpattern|toolbar|formatter|handler)\s*=[^>]*?>/gi;
     cleaned = cleaned.replace(bracketArtifactRegex, '');
 
     // 6. Final Cleanup: Remove stray closing brackets that often follow attribute junk at the start
@@ -89,7 +94,7 @@ export function repairText(text: string, options: RepairOptions = { stripLoneBr:
     // We use (?:(?!&gt;).)*? for attributes to allow ANYTHING until the closing &gt; without consuming it
     // Updated whitelist to include iframe, article, section, div, p and allow technical prefixes like mat-, chat-, ng-
     // Improved attribute matching to handle spaces before the closing &gt; more reliably
-    const tagHealingRegex = /&lt;(\/?)((?:B|STRONG|I|EM|U|S|STRIKE|SUB|SUP|HR|BR|ARTICLE|SECTION|DIV|P|LABEL|LEGEND|FIELDSET|IFRAME|SPAN|OL|UL|LI|BLOCKQUOTE|A|TABLE|TBODY|THEAD|TFOOT|TR|TH|TD|CODE|PRE|H[1-6]|CHAT-[A-Z0-9-]+|MAT-[A-Z0-9-]+|NG-[A-Z0-9-]+|IMG|META|COLGROUP|COL|FORM|INPUT|SELECT|OPTION|TEXTAREA|FONT)\b)((?:\s+(?:(?!&gt;).)*?)?)&gt;/gi;
+    const tagHealingRegex = /&lt;(\/?)((?:B|STRONG|I|EM|U|S|STRIKE|SUB|SUP|HR|BR|ARTICLE|SECTION|DIV|P|LABEL|LEGEND|FIELDSET|IFRAME|SPAN|OL|UL|LI|BLOCKQUOTE|A|TABLE|TBODY|THEAD|TFOOT|TR|TH|TD|CODE|PRE|H[1-6]|CHAT-[A-Z0-9-]+|MAT-[A-Z0-9-]+|NG-[A-Z0-9-]+|IMG|FONT)\b)((?:\s+(?:(?!&gt;).)*?)?)&gt;/gi;
     cleaned = cleaned.replace(tagHealingRegex, (match, slash, tagName, attrs) => {
         const lower = tagName.toLowerCase();
         const isTechnical = options.isTechnical ?? false;
@@ -112,6 +117,33 @@ export function repairText(text: string, options: RepairOptions = { stripLoneBr:
             return safeClosingTags.includes(lower) ? he.decode(match) : match;
         }
 
+        // Special check for ambiguous layout/code tags (A, DIV, P, SPAN)
+        // If these appear without "rich" attributes in a technical context, they are likely code snippets.
+        // We only heal them if they look like layout/formatting (style, class, href, src, face, align).
+        if (['a', 'div', 'p', 'span'].includes(lower)) {
+            const hasRichAttr = /(?:style|class|href|src|face|align|width|height)\s*=/i.test(attrs || "");
+            const looksLikeCode = /(?:id|name|type|value|onClick|onMouse)\s*=/i.test(attrs || "");
+
+            // If it has NO attributes, assume it's code (e.g. "Use the <a> tag") unless it's a known non-empty container we want?
+            // Actually, bare <a> is useless as a link. Bare <p> is okay but rare as encoded.
+            if (!attrs || !attrs.trim()) {
+                return match; // Keep as &lt;a&gt;
+            }
+
+            // If it has code-like attributes, keep it escaped
+            if (looksLikeCode) {
+                return match;
+            }
+
+            // If it strictly has rich attributes, heal it
+            if (hasRichAttr) {
+                return `<${tagName}${attrs || ""}>`;
+            }
+
+            // Default: if we are unsure, and it's technical, tend to preserve.
+            if (isTechnical) return match;
+        }
+
         // Return opening tag
         return `<${tagName}${attrs || ""}>`;
     });
@@ -125,11 +157,21 @@ export function repairText(text: string, options: RepairOptions = { stripLoneBr:
 export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string {
     if (!text) return "";
 
+    // Generate cache key from input + options hash to ensure correctness
+    const optionsKey = `${options.isTechnical}|${options.isExplanation}|${options.university}|${options.applyTechnicalLogic}|${options.normalizePlaceholders}|${options.normalizeUnicode}`;
+    const cacheKey = createHash('sha1').update(text + optionsKey).digest('hex');
+
+    // Check cache first
+    if (cleanHtmlCache.has(cacheKey)) {
+        return cleanHtmlCache.get(cacheKey)!;
+    }
+
     const useTechnicalLogic = options.applyTechnicalLogic ?? options.isTechnical ?? false;
 
     // --- PRE-PROCESSING ---
     // Protect #include <...> or #include &lt;...&gt; directives IMMEDIATELY before any decoding
-    text = text.replace(/#include\s*(&lt;|<)([^&gt;>]+)(&gt;|>)/gi, (match, open, content, close) => `#include &lt;${content}&gt;`);
+    // We use a strict content match (word chars + dots + hyphens) to avoid matching </p> or other structural tags.
+    text = text.replace(/#include\s*(?:&lt;|<)([\w\.\/-]+)(?:&gt;|>)/gi, (match, content) => `#include &lt;${content.trim()}&gt;`);
 
     // Use repairText for basic normalization (spaces, dashes, dots)
     // Pass down the normalization preferences (default to false to focus on errors)
@@ -192,9 +234,27 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
             if (isTechnical && JUNK_TAGS_LOCAL.includes(lowerTag) && !ALLOWED_TAGS.has(lowerTag)) {
                 return "&lt;" + tagName;
             }
+
+            // Special Case: In technical contexts, 'del', 's', 'strike', 'ins' often appear in code examples (like HTML tags)
+            // If they are in the allowed list but we are in technical mode, we might want to escape them if they look like code
+            // But since they are formatting tags, we usually keep them.
+            // HOWEVER, based on diffs, <del>metin</del> is being stripped or rendered.
+            // If the user wants to see <del> literally, it should have been escaped in source or we need robust detection.
+            // Let's rely on the JUNK protection above for now, and add specific technical escapes below.
             return match;
         }
         return "&lt;" + tagName;
+    });
+
+    // Also escape closing tags for the same set if opening tags were escaped
+    cleaned = cleaned.replace(/<\/([a-zA-Z0-9+_:-]+)\b/g, (match, tagName) => {
+        const lowerTag = tagName.toLowerCase();
+        if (!ALLOWED_TAGS.has(lowerTag) &&
+            !TO_UNWRAP.some(t => lowerTag.startsWith(t)) &&
+            !['mat-', 'chat-', 'ng-'].some(p => lowerTag.startsWith(p))) {
+            return "&lt;/" + tagName;
+        }
+        return match;
     });
 
     // 2. Identify and handle encoded artifacts immediately but safely
@@ -390,8 +450,9 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
 
     // Root-level List Flattening: If the entire content is a single-item list, unwrap it.
     // Especially common in options fields.
+    // SKIP if technical content or explanation, where structure matters.
     const rootNodes = $.root().children();
-    if (rootNodes.length === 1 && ['ul', 'ol'].includes(rootNodes[0].tagName?.toLowerCase())) {
+    if (!options.isTechnical && !options.isExplanation && rootNodes.length === 1 && ['ul', 'ol'].includes(rootNodes[0].tagName?.toLowerCase())) {
         const $list = $(rootNodes[0]);
         if ($list.find('> li').length === 1) {
             const $li = $list.find('> li');
@@ -815,8 +876,18 @@ export function cleanHtml(text: string, options: CleanHtmlOptions = {}): string 
     while (/<br\s*\/?>[\s\xa0\n]*<br\s*\/?>/i.test(result)) {
         result = result.replace(/<br\s*\/?>[\s\xa0\n]*<br\s*\/?>/gi, '<br/>');
     }
+    // Normalize <br /> to <br/> for consistency with tests
+    result = result.replace(/<br\s+\/>/g, '<br/>');
 
-    return result.trim();
+    const finalResult = result.trim();
+
+    // Store in cache
+    if (cleanHtmlCache.size > CACHE_MAX_SIZE) {
+        cleanHtmlCache.clear(); // Simple eviction to prevent bloat
+    }
+    cleanHtmlCache.set(cacheKey, finalResult);
+
+    return finalResult;
 }
 
 /**

@@ -1910,9 +1910,9 @@
     "correctAnswer": "B",
     "options": {
       "A": "&lt;page&gt;başlık&lt;/page&gt;",
-      "B": "&lt;th&gt;başlık&lt;/th&gt;",
+      "B": "başlık&lt;/th&gt;",
       "C": "&lt;hd&gt;başlık&lt;/hd&gt;",
-      "D": "&lt;table&gt;başlık&lt;/table&gt;",
+      "D": "başlık&lt;/table&gt;",
       "E": "&lt;ht&gt;başlık&lt;/ht&gt;"
     },
     "explanation": "Bir tabloya başlık eklemek için kullanılan HTML etiketi şöyledir:"
@@ -1923,11 +1923,11 @@
     "text": "Bir HTML sayfasında numaralı liste oluşturmak için hangi etiket kullanılır?",
     "correctAnswer": "A",
     "options": {
-      "A": "<ol><li>..</li></ol>",
-      "B": "<ul><li>..</li></ul>",
-      "C": "<dt><li>..</li></dt>",
-      "D": "<dl><li>..</li></dl>",
-      "E": "<li><tt>..</tt></li>"
+      "A": "..&lt;/ol&gt;",
+      "B": "..&lt;/ul&gt;",
+      "C": "&lt;dt&gt;<br/><li>..&lt;/dt&gt;</li>",
+      "D": "&lt;dl&gt;<br/><li>..&lt;/dl&gt;</li>",
+      "E": "&lt;tt&gt;<br/><li>..&lt;/tt&gt;</li>"
     },
     "explanation": "Bir HTML sayfasında numaralı liste oluşturmak için şu etiket kullanılır:"
   },
@@ -1937,11 +1937,11 @@
     "text": "Bir tablodaki çerçeve kalınlığını belirlemek için hangi etiket kullanılır?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;table border=”1”&gt;",
-      "B": "&lt;table colour=”1”&gt;",
-      "C": "&lt;table line=”1”&gt;",
-      "D": "&lt;table format=”1”&gt;",
-      "E": "&lt;table frame=”1”&gt;"
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
     },
     "explanation": "Bir tablodaki çerçeve kalınlığını belirlemek için şu etiket kullanılır:"
   },
@@ -1979,10 +1979,10 @@
     "text": "Bir tabloda yeni satır eklemek için hangi etiket kullanılır?",
     "correctAnswer": "D",
     "options": {
-      "A": "&lt;td&gt;",
+      "A": "",
       "B": "",
-      "C": "&lt;th&gt;",
-      "D": "&lt;tr&gt;",
+      "C": "",
+      "D": "",
       "E": "&lt;nl&gt;"
     },
     "explanation": "Bir tabloda yeni satır eklemek için etiketi kullanılır."
@@ -2022,10 +2022,10 @@
     "correctAnswer": "A",
     "options": {
       "A": "<img src=\"”resim.gif\"/>",
-      "B": "&lt;img href=”resim.gif&gt;",
+      "B": "&lt;img&gt;",
       "C": "&lt;img&gt;resim.gif&lt;/img&gt;",
       "D": "&lt;pic src=”resim.gif ”&gt;",
-      "E": "&lt;img abc=”resim.gif ”&gt;"
+      "E": "&lt;img&gt;"
     },
     "explanation": "Resim eklemek için<br/><img src=\"”resim.gif\"/><br/>kullanılır"
   },
@@ -2049,13 +2049,13 @@
     "text": "Web sayfası tasarlanırken paragraf açarken ve kapatırken hangi etiketler kullanılır?",
     "correctAnswer": "C",
     "options": {
-      "A": "&lt;-p&gt;,",
-      "B": ",",
-      "C": ",",
+      "A": "&lt;-p&gt;, &lt;/p&gt;",
+      "B": "&lt;/p&gt;, &lt;/p&gt;",
+      "C": "&lt;p&gt;, &lt;/p&gt;",
       "D": "&lt;-p&gt;, &lt;-p&gt;",
-      "E": ","
+      "E": "&lt;/p&gt;, &lt;/p&gt;"
     },
-    "explanation": "Tasarladığımız web sayfasına paragraf içeriği eklemek için kullanılan HTML etiketidir. Her paragrafın başına açma etiketini, sonuna ise&lt;/p&gt; kapatma etiketini koymamız gerekmektedir."
+    "explanation": "Tasarladığımız web sayfasına paragraf içeriği eklemek için kullanılan HTML etiketidir. Her paragrafın başına &lt;p&gt; açma etiketini, sonuna ise&lt;/p&gt; kapatma etiketini koymamız gerekmektedir."
   },
   {
     "id": "3524660",
@@ -2066,7 +2066,7 @@
       "A": "",
       "B": "",
       "C": "",
-      "D": "",
+      "D": "&lt;del&gt;",
       "E": ""
     },
     "explanation": "<em> etiketi metni italik hale getirmek için kullanılır.</em>"
@@ -2077,11 +2077,11 @@
     "text": "HTML programlama esnasında tablo oluşturulurken satır ve sütun etiketleri sırasıyla nasıl gösterilir?",
     "correctAnswer": "E",
     "options": {
-      "A": "&lt;th&gt;, &lt;tr&gt;",
-      "B": "&lt;th&gt;, &lt;td&gt;",
-      "C": "&lt;td&gt;, &lt;th&gt;",
-      "D": "&lt;tr&gt;, &lt;th&gt;",
-      "E": "&lt;tr&gt;, &lt;td&gt;"
+      "A": ",",
+      "B": ",",
+      "C": ",",
+      "D": ",",
+      "E": ","
     },
     "explanation": "Tablo oluşturulurken, satır ve sütunlar ise , etiketleri ile oluşturulur."
   },
@@ -2093,8 +2093,8 @@
     "options": {
       "A": "&lt;header&gt;",
       "B": "&lt;nav&gt;",
-      "C": "&lt;article&gt;",
-      "D": "&lt;section&gt;",
+      "C": "",
+      "D": "",
       "E": "&lt;aside&gt;"
     },
     "explanation": "<aside>&lt;aside&gt; etiketi HTML5'de yan menü olarak kullanılır.</aside>"
@@ -2161,11 +2161,11 @@
     "text": "Video eklemek için doğru yöntem aşağıdakilerden hangisidir?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;source src=\"movie.mp4\" type=\"video/mp4\"&gt;",
-      "B": "&lt;source \"movie.mp4\" type=\"video/mp4\"&gt;",
-      "C": "&lt;source \"movie.mp4\", \"video/mp4\"&gt;",
-      "D": "&lt;source src=\"movie.mp4\"&gt;",
-      "E": "&lt;source type=\"video/mp4\"&gt;"
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
     },
     "explanation": "Video eklemek için, , kodu kullanılır."
   },
@@ -2178,7 +2178,7 @@
       "A": "<b>metin</b>",
       "B": "<em>metin</em>",
       "C": "<i>metin</i>",
-      "D": "<del>metin</del>",
+      "D": "&lt;del&gt;metin&lt;/del&gt;",
       "E": "<u>metin</u>"
     },
     "explanation": "veya etiketleri kalın metin yazılmasını sağlar."
@@ -2186,7 +2186,7 @@
   {
     "id": "3524827",
     "unitNumber": 3,
-    "text": "Aşağıdaki sıralı liste (<ol>) için hangi tür (type) değeri ondalık tabanda numaralama içindir?</ol>",
+    "text": "Aşağıdaki sıralı liste (<br/>) için hangi tür (type) değeri ondalık tabanda numaralama içindir?",
     "correctAnswer": "A",
     "options": {
       "A": "",
@@ -2203,11 +2203,11 @@
     "text": "Hangisi tabloya ait bir etiket değildir?",
     "correctAnswer": "E",
     "options": {
-      "A": "&lt;table&gt; &lt;/table&gt;",
-      "B": "&lt;th&gt; &lt;/th&gt;",
-      "C": "&lt;tr&gt; &lt;/tr&gt;",
-      "D": "&lt;td&gt; &lt;/td&gt;",
-      "E": ""
+      "A": "&lt;/table&gt;",
+      "B": "&lt;/th&gt;",
+      "C": "&lt;/tr&gt;",
+      "D": "&lt;/td&gt;",
+      "E": "&lt;tt&gt; &lt;/tt&gt;"
     },
     "explanation": "&lt;tt&gt; etiketi metnin daktilo fontunda yazılmasını sağlar."
   },
@@ -2217,7 +2217,7 @@
     "text": "Aşağıdakilerden hangisi HTML5 tarafından kullanılan, HTML tarafından kullanılmayan etikettir?",
     "correctAnswer": "D",
     "options": {
-      "A": "&lt;a&gt; &lt;/a&gt;",
+      "A": "&lt;/a&gt;",
       "B": "",
       "C": "&lt;head&gt; &lt;head&gt;",
       "D": "&lt;header&gt; &lt;/header&gt;",
@@ -2232,9 +2232,9 @@
     "correctAnswer": "C",
     "options": {
       "A": "&lt;address&gt;",
-      "B": "&lt;article&gt;",
+      "B": "",
       "C": "&lt;aside&gt;",
-      "D": "&lt;section&gt;",
+      "D": "",
       "E": "&lt;footer&gt;"
     },
     "explanation": "&lt;aside&gt; etiketi yan menü olarak kullanılır."
@@ -2279,7 +2279,7 @@
       "D": "#0000FF",
       "E": "#FFFFFF"
     },
-    "explanation": "Renk bilgisi CSS içerisindeki “color” özelliği ile verilmektediir. Bu i\u001dişlem için rengiin İngilizce iismiinii giirerek veya rengii oluş\u001dturan kırmızı, yeşiil ve mavii (RGB) değerleriinii tanımlayarak yapılabiiliir. #000000 siyah rengi, #FF0000 kırmızı rengi, #00FF00 yeşil rengi, #0000FF mavi rengi, #FFFFFF beyaz rengi oluştururur."
+    "explanation": "Renk bilgisi CSS içerisindeki “color” özelliği ile verilmektediir. Bu iiişlem için rengiin İngilizce iismiinii giirerek veya rengii oluşituran kırmızı, yeşiil ve mavii (RGB) değerleriinii tanımlayarak yapılabiiliir. #000000 siyah rengi, #FF0000 kırmızı rengi, #00FF00 yeşil rengi, #0000FF mavi rengi, #FFFFFF beyaz rengi oluştururur."
   },
   {
     "id": "3524834",
@@ -2298,7 +2298,7 @@
   {
     "id": "3524835",
     "unitNumber": 3,
-    "text": "Metiinleriin normal akış\u001dlarının dışında gazete veya dergiilerde olduğu giibii çok kolonlu olarak gösterilmesini aşağıdakilerden hangi CSS stili sağlar?",
+    "text": "Metiinleriin normal akışilarının dışında gazete veya dergiilerde olduğu giibii çok kolonlu olarak gösterilmesini aşağıdakilerden hangi CSS stili sağlar?",
     "correctAnswer": "A",
     "options": {
       "A": "column-count",
@@ -2497,13 +2497,13 @@
     "text": "<em>Aşağıdakilerden hangisi HTML paragraf etiketidir?</em>",
     "correctAnswer": "B",
     "options": {
-      "A": "&lt;h1&gt;Başlık&lt;/h1&gt;",
-      "B": "Başlık",
+      "A": "Başlık&lt;/h1&gt;",
+      "B": "&lt;p&gt; Başlık&lt;/p&gt;",
       "C": "&lt;body&gt; Başlık&lt;/body &gt;",
-      "D": "&lt;head&gt; Başlık<!-- head -->",
-      "E": "&lt;html&gt; Başlık<!-- html -->"
+      "D": "&lt;head&gt; Başlık&lt;/ head &gt;",
+      "E": "&lt;html&gt; Başlık&lt;/ html &gt;"
     },
-    "explanation": "HTML paragraf etiket tasarlanılan web sayfasına paragraf içeriği eklemek için kullanılan HTML etiketidir. Her paragrafın başına açma etiketini, sonuna ise &lt;/p&gt; kapatma etiketi koyulmalıdır. Her bir paragraf yeni satırda başlar."
+    "explanation": "HTML paragraf etiket tasarlanılan web sayfasına paragraf içeriği eklemek için kullanılan HTML etiketidir. Her paragrafın başına &lt;p&gt; açma etiketini, sonuna ise &lt;/p&gt; kapatma etiketi koyulmalıdır. Her bir paragraf yeni satırda başlar."
   },
   {
     "id": "3525090",
@@ -2511,13 +2511,13 @@
     "text": "<em>Aşağıdakilerden hangisi bağlantı eklemek için kullanılır?</em>",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;a&gt;Başlık&lt;/a&gt;",
-      "B": "Başlık",
+      "A": "Başlık&lt;/a&gt;",
+      "B": "&lt;p&gt; Başlık&lt;/p&gt;",
       "C": "&lt;body&gt; Başlık&lt;/body &gt;",
-      "D": "&lt;head&gt; Başlık<!-- head -->",
-      "E": "&lt;html&gt; Başlık<!-- html -->"
+      "D": "&lt;head&gt; Başlık&lt;/ head &gt;",
+      "E": "&lt;html&gt; Başlık&lt;/ html &gt;"
     },
-    "explanation": "Vermek istediğimiz linkleri ve &lt;/a&gt; etiketleri arasına aşağıdaki gibi yazmalıyız. Burada dikkat edilmesi gereken husus, bağlantı verilirken hem bağlantı adresinin hem de ekranda yazmasını istediğimiz bilginin girilmesinin gerekli olduğudur. Aşağıdaki örnekte, ekranda “Bu bir link’tir.” Yazmasına karşın kullanıcı bu bağlantıya tıkladığında Anadolu Üniversitesi’ne ait http://www.anadolu.edu.tr/ web adresine bağlanacaktır."
+    "explanation": "Vermek istediğimiz linkleri &lt;a&gt; ve &lt;/a&gt; etiketleri arasına aşağıdaki gibi yazmalıyız. Burada dikkat edilmesi gereken husus, bağlantı verilirken hem bağlantı adresinin hem de ekranda yazmasını istediğimiz bilginin girilmesinin gerekli olduğudur. Aşağıdaki örnekte, ekranda “Bu bir link’tir.” Yazmasına karşın kullanıcı bu bağlantıya tıkladığında Anadolu Üniversitesi’ne ait http://www.anadolu.edu.tr/ web adresine bağlanacaktır."
   },
   {
     "id": "3525091",
@@ -2525,11 +2525,11 @@
     "text": "Aşağıdakilerden hangisi semantik etiketlerden biri <strong>değildir</strong><em>?</em>",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;table&gt; etiketi",
+      "A": "etiketi",
       "B": "&lt;header&gt; etiketi",
       "C": "&lt;nav&gt; etiketi",
-      "D": "&lt;article&gt; etiketi",
-      "E": "&lt;section&gt; etiketi"
+      "D": "etiketi",
+      "E": "etiketi"
     },
     "explanation": "<ul><li>&lt;header&gt; etiketi sayfanın tanımı, sayfanın başlığı gibi bilgileri içerir.</li><li>&lt;nav&gt; etiketi daha çok sayfa içerisindeki bağlantılar veya site dışı bağlantılar için kullanılır.</li><li>etiketi bir makale ya da yazı alanını temsil</li><li>etiketi HTML sayfası içinde bir kısmı belli eder, bölümleme öğesi olarak kullanılır.</li><li>&lt;aside&gt; etiketi yan menü olarak kullanılır.</li><li>&lt;footer&gt; etiketi bir sayfa veya bir kısım için alt bilgi belirten bölümdür.</li><li>&lt;address&gt; etiketi iletişim bilgilerinin yer aldığı bölümdür.</li><li>etiketi tablo oluşturmak için kullanılan bir etikettir. Semantik etiket değildir.</li></ul>"
   },
@@ -2570,7 +2570,7 @@
       "A": "&lt;body&gt;",
       "B": "&lt;etiket_adı&gt;",
       "C": "&lt;meta charset=\"\"&gt;",
-      "D": "etiket&gt;.",
+      "D": "&lt;p&gt;etiket&gt;.&lt;/p&gt;",
       "E": "&lt;/html&gt;"
     },
     "explanation": "HTML etiketleri &lt;etiket_adı&gt; şeklinde açılır ve mutlaka sayfanın içerisinde kapatılması gerekir. Etiketi kapatmak için “&lt;&gt;” ifadesi içine yazdığınız “etiket adı”’nın başına “/” (slash) işareti yazılarak kapatılır, örneğin &lt;etiket_adı&gt; şeklinde açılan bir etiket &lt;/etiket_adı&gt; ile kapatılır. Yorum satırları ise web sayfalarında hiçbir zaman gösterilmez. Kullanıcı, sayfanın kaynak koduna baktığı takdirde yorum satırlarını görebilir."
@@ -2581,13 +2581,13 @@
     "text": "Aşağıdaki seçeneklerden hangi HTML etiketi paragraf açmak için kullanılır?",
     "correctAnswer": "A",
     "options": {
-      "A": "",
+      "A": "&lt;p&gt;",
       "B": "&lt;body&gt;",
       "C": "&lt;head&gt;",
       "D": "&lt;meta charset=\"\"&gt;",
       "E": "&lt;/html&gt;"
     },
-    "explanation": "Tasarladığımız web sayfasına paragraf içeriği eklemek için kullanılan HTML etiketidir. Her paragrafın başına açma etiketini, sonuna ise &lt;/p&gt; kapatma etiketini koymamız gerekmektedir. Her bir paragraf yeni satırda başlar."
+    "explanation": "Tasarladığımız web sayfasına paragraf içeriği eklemek için kullanılan HTML etiketidir. Her paragrafın başına &lt;p&gt; açma etiketini, sonuna ise &lt;/p&gt; kapatma etiketini koymamız gerekmektedir. Her bir paragraf yeni satırda başlar."
   },
   {
     "id": "3525107",
@@ -2596,12 +2596,12 @@
     "correctAnswer": "C",
     "options": {
       "A": "&lt;head&gt;",
-      "B": "",
-      "C": "&lt;a&gt;",
+      "B": "&lt;p&gt;",
+      "C": "",
       "D": "&lt;body&gt;",
       "E": "&lt;/html&gt;"
     },
-    "explanation": "<strong>Bağlantı Ekleme </strong><br/>Sayfamızda başka web sayfalarına bağlantı (link) vermek için kullanabileceğimiz HTML etiketidir. Vermek istediğimiz linkleri ve &lt;/a&gt; etiketleri arasına aşağıdaki gibi yazmalıyız. Burada dikkat edilmesi gereken husus, bağlantı verilirken hem bağlantı adresinin hem de ekranda yazmasını istediğimiz bilginin girilmesinin gerekli olduğudur. Aşağıdaki örnekte, ekranda “Bu bir link’tir.” yazmasına karşın kullanıcı bu bağlantıya tıkladığında Anadolu Üniversitesi’ne ait http://www.anadolu.edu.tr/ web adresine bağlanacaktır."
+    "explanation": "<strong>Bağlantı Ekleme </strong><br/>Sayfamızda başka web sayfalarına bağlantı (link) vermek için kullanabileceğimiz HTML etiketidir. Vermek istediğimiz linkleri &lt;a&gt; ve &lt;/a&gt; etiketleri arasına aşağıdaki gibi yazmalıyız. Burada dikkat edilmesi gereken husus, bağlantı verilirken hem bağlantı adresinin hem de ekranda yazmasını istediğimiz bilginin girilmesinin gerekli olduğudur. Aşağıdaki örnekte, ekranda “Bu bir link’tir.” yazmasına karşın kullanıcı bu bağlantıya tıkladığında Anadolu Üniversitesi’ne ait http://www.anadolu.edu.tr/ web adresine bağlanacaktır."
   },
   {
     "id": "3525108",
@@ -2627,7 +2627,7 @@
       "B": "",
       "C": "",
       "D": "<u><br/></u>",
-      "E": ""
+      "E": "&lt;tt&gt;"
     },
     "explanation": "<strong>Metin Biçimlendirme Etiketleri </strong><br/>Tasarladığımız web sayfasında bulunan metinleri biçimlendirmek için aşağıdaki etiketleri kullanabiliriz:<br/>• <strong> etiketi: Metni daha kalınlaştırmak için kullanılır, aynı şekilde <b> etiketi de aynı etkiyi verir.<br/>• <em> etiketi: Metni eğik (italik) hâle getirmek için kullanılır. Benzer şekilde kullanacağımız <i> etiketi aynı etkiyi yaratacaktır.<br/>• <sub> etiketi: Metni alt yazı hâline getirir.</sub><br/>• <sup> etiketi: Metni üst yazı hâline getirir.</sup><br/>• &lt;del&gt; etiketi: Metnin üzerine çizgi çizer.<br/>• <u> etiketi: Metnin altına çizgi çizer.<br/>• &lt;small&gt; etiketi: Metnin fontunu küçültür.<br/>• &lt;big&gt; etiketi: Metnin fontunu büyütür.<br/>• &lt;tt&gt; etiketi: Metnin daktilo fontunda yazılmasını sağlar.<br/>• &lt;cite&gt; etiketi: Metni alıntı olarak yazdığımızda bu etiketi kullanırız.<br/>• &lt;abbr&gt; etiketi: Kısaltma şeklinde yazılan bir kelimenin tanımını verir, “title” özelliği ile yazılan bilgi fare imleci ile kısaltılmış kelimenin üzerine gelince tanım olarak ortaya çıkar.<br/>•<br/>etiketi: Bu etiket boş etikettir. Bir satırlık boşluk oluşturmak için kullanılır.<br/>• &lt;hr /&gt; etiketi: Bu etiket boş etikettir. Bir satırlık yatay bir çizgi oluşturmaya yarar."
   },
@@ -2655,7 +2655,7 @@
       "B": "<em><br/></em>",
       "C": "&lt;hr /&gt;",
       "D": "",
-      "E": ""
+      "E": "&lt;big&gt;"
     },
     "explanation": "<strong>Metin Biçimlendirme Etiketleri </strong><br/>Tasarladığımız web sayfasında bulunan metinleri biçimlendirmek için aşağıdaki etiketleri kullanabiliriz:<br/>• <strong> etiketi: Metni daha kalınlaştırmak için kullanılır, aynı şekilde <b> etiketi de aynı etkiyi verir.<br/>• <em> etiketi: Metni eğik (italik) hâle getirmek için kullanılır. Benzer şekilde kullanacağımız <i> etiketi aynı etkiyi yaratacaktır.<br/>• <sub> etiketi: Metni alt yazı hâline getirir.</sub><br/>• <sup> etiketi: Metni üst yazı hâline getirir.</sup><br/>• &lt;del&gt; etiketi: Metnin üzerine çizgi çizer.<br/>• <u> etiketi: Metnin altına çizgi çizer.<br/>• &lt;small&gt; etiketi: Metnin fontunu küçültür.<br/>• &lt;big&gt; etiketi: Metnin fontunu büyütür.<br/>• &lt;tt&gt; etiketi: Metnin daktilo fontunda yazılmasını sağlar.<br/>• &lt;cite&gt; etiketi: Metni alıntı olarak yazdığımızda bu etiketi kullanırız.<br/>• &lt;abbr&gt; etiketi: Kısaltma şeklinde yazılan bir kelimenin tanımını verir, “title” özelliği ile yazılan bilgi fare imleci ile kısaltılmış kelimenin üzerine gelince tanım olarak ortaya çıkar.<br/>•<br/>etiketi: Bu etiket boş etikettir. Bir satırlık boşluk oluşturmak için kullanılır.<br/>• &lt;hr /&gt; etiketi: Bu etiket boş etikettir. Bir satırlık yatay bir çizgi oluşturmaya yarar."
   },
@@ -2671,7 +2671,7 @@
       "D": "&lt;progress&gt;",
       "E": "&lt;meter&gt;"
     },
-    "explanation": "<strong>&lt;output&gt; Etiketi </strong><br/>Hesaplama sonucunu tanımlar. Aşağıdaki örnekte, iki adet “number” giriş tipindeki değer toplanıp, sonucu ekrana <strong>&lt; output &gt; </strong>etiketi vasıtasıyla yazılmaktadır.<br/>&lt;!DOCTYPE html&gt;<br/>&lt;html&gt;<br/>&lt;body&gt;"
+    "explanation": "<strong>&lt;output&gt; Etiketi </strong><br/>Hesaplama sonucunu tanımlar. Aşağıdaki örnekte, iki adet “number” giriş tipindeki değer toplanıp, sonucu ekrana <strong>&lt; output &gt; </strong>etiketi vasıtasıyla yazılmaktadır.<br/>&lt;!DOCTYPE html&gt;<br/>&lt;html&gt;<br/>&lt;body&gt;<br/>&lt;form oninput=<strong>\"x.value=parseInt(a.value)+parseInt(b.value)\"</strong>&gt;<br/>&lt;input type=<strong>\"number\" </strong>id=<strong>\"a\" </strong>value=<strong>\"50\"</strong>&gt; <strong>+ </strong><br/>&lt;input type=<strong>\"number\" </strong>id=<strong>\"b\" </strong>value=<strong>\"50\"</strong>&gt; <strong>= </strong><br/>&lt;output name=<strong>\"x\" </strong>for=<strong>\"a b\"</strong>&gt;&lt;/output&gt;<br/>&lt;/form&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;"
   },
   {
     "id": "3525113",
@@ -2737,9 +2737,9 @@
     "options": {
       "A": "&lt;details&gt;",
       "B": "&lt;footer&gt;",
-      "C": "&lt;section&gt;",
+      "C": "",
       "D": "&lt;aside&gt;",
-      "E": "&lt;article&gt;"
+      "E": ""
     },
     "explanation": "HTML5 sürümü ile gelen &lt;details&gt; ve &lt;summary&gt; etiketleri genelde birlikte kullanılırlar. &lt;details&gt; etiketi detay bilgilerini içerirken &lt;summary&gt; etiketi sayfanın ya da yazının özet bilgisini içerir. Sayfa görüntülendiğinde ilk olarak &lt;summary&gt; etiketindeki bilgi görünür, bu bilginin yanındaki küçük üçgene basıldığında diğer bilgiler de görünür.<br/>Bu nedenle doğru yanıt a) seçeneğidir."
   },
@@ -4155,7 +4155,7 @@
       "D": "Sonlandırma (render) süresi oluşturmadan nesneye yükseklik ve derinlik katma hilesi sağlayan haritadır.",
       "E": "Nesnenin ana rengini oluşturan ve tek renk bilgisi barındıran haritaya verilen addır."
     },
-    "explanation": "Dağılım Haritası (Di\u0019use Map): Nesnenin ana rengini oluşturan ve tek renk bilgisi barındıran haritaya verilen addır. Temel olarak, herhangi bir özel etki içermeden sadece modelin etrafını saran bir haritadır. Doğru cevap E'dir."
+    "explanation": "Dağılım Haritası (Diuse Map): Nesnenin ana rengini oluşturan ve tek renk bilgisi barındıran haritaya verilen addır. Temel olarak, herhangi bir özel etki içermeden sadece modelin etrafını saran bir haritadır. Doğru cevap E'dir."
   },
   {
     "id": "3525030",
@@ -5728,7 +5728,7 @@
   {
     "id": "3525261",
     "unitNumber": 6,
-    "text": "cihaz NUM_BLOCKS, BLOCK_WIDTH &gt;&gt;&gt;();<br/>Yukarıdaki komut ne işe yaramaktadır?",
+    "text": "cihaz &lt;&lt;&lt; NUM_BLOCKS, BLOCK_WIDTH &gt;&gt;&gt;();<br/>Yukarıdaki komut ne işe yaramaktadır?",
     "correctAnswer": "D",
     "options": {
       "A": "Ana fonksiyondan sadece blok sayısı çağrılmak istendiğinde kullanılır.",
@@ -6941,7 +6941,7 @@
       "D": "Yalnız I, III, IV",
       "E": "I, II, III, IV"
     },
-    "explanation": "Büyük verii; geleneksel yöntemlerle iiş\u001dlenmesii zor olan, haciimsel olarak büyük olan ve karmaş\u001dık yapıdakii veriidiir."
+    "explanation": "Büyük verii; geleneksel yöntemlerle iişilenmesii zor olan, haciimsel olarak büyük olan ve karmaşiık yapıdakii veriidiir."
   },
   {
     "id": "3524950",
@@ -7637,11 +7637,11 @@
     "options": {
       "A": "Hacimsel olarak küçük",
       "B": "Haciimsel olarak büyük",
-      "C": "İşi\u001dlenmesii zor",
-      "D": "Karmaş\u001dık yapıda",
+      "C": "İşiilenmesii zor",
+      "D": "Karmaşiık yapıda",
       "E": "Çok çeşitli yerlerde saklanabilen"
     },
-    "explanation": "Büyük verii; geleneksel yöntemlerle işi\u001dlenmesii zor olan, haciimsel olarak büyük olan ve karmaş\u001dık yapıdakii veriidiir.<br/>Ancak büyük verii, iilişiikiisel verii tabanlarında tutulamayan çok çeşiiitlii biirleşiiimlerden oluimaktadır."
+    "explanation": "Büyük verii; geleneksel yöntemlerle işiilenmesii zor olan, haciimsel olarak büyük olan ve karmaşiık yapıdakii veriidiir.<br/>Ancak büyük verii, iilişiikiisel verii tabanlarında tutulamayan çok çeşiiitlii biirleşiiimlerden oluimaktadır."
   },
   {
     "id": "3525427",
@@ -7926,7 +7926,7 @@
   {
     "id": "3525013",
     "unitNumber": 8,
-    "text": "İlk gerçek tiicariileş\u001dmi\u001diş bulut biilişii\u001dim hiizmetii hangi \u001dişirket tarafından geliştirilmiştir?",
+    "text": "İlk gerçek tiicariileşimiiiş bulut biilişiiiim hiizmetii hangi iişirket tarafından geliştirilmiştir?",
     "correctAnswer": "A",
     "options": {
       "A": "Amazon",
@@ -7935,12 +7935,12 @@
       "D": "Oracle",
       "E": "Google"
     },
-    "explanation": "İlk gerçek tiicariileş\u001dmi\u001diş bulut biilişii\u001dim hiizmetii olan Amazon S3, 2006 yılında hiizmete giirmişi\u001dtiir."
+    "explanation": "İlk gerçek tiicariileşimiiiş bulut biilişiiiim hiizmetii olan Amazon S3, 2006 yılında hiizmete giirmişiitiir."
   },
   {
     "id": "3525014",
     "unitNumber": 8,
-    "text": "Bulut biilişii\u001dim günümüzde kullanılan “kullandıkça öde” modelii hangi \u001dişirket tarafından geliştirilmiştir?",
+    "text": "Bulut biilişiiiim günümüzde kullanılan “kullandıkça öde” modelii hangi iişirket tarafından geliştirilmiştir?",
     "correctAnswer": "A",
     "options": {
       "A": "Amazon",
@@ -7949,12 +7949,12 @@
       "D": "Oracle",
       "E": "Google"
     },
-    "explanation": "Amazon S3, 2006 yılında hiizmete giirmişi\u001dtiir. Amazon bu hiizmeti iile esnek, güvenlii ve düş\u001dük maliiyetlii biir serviis yaratmı\u001dştır. Burada daha önemlii olan husus, Amazon.com şiirketii tarafından gelişi\u001dtiiriilen “kullandıkça öde” modeliidiir. Bu model son kullanıcılar tarafından çok hızla beniimsenmi\u001diş olup, günümüzde bulut biilişii\u001dim hiizmetleriiniin fiiyatlandırılması içiin biir standart haliine gelmişi\u001dtiir."
+    "explanation": "Amazon S3, 2006 yılında hiizmete giirmişiitiir. Amazon bu hiizmeti iile esnek, güvenlii ve düşiük maliiyetlii biir serviis yaratmıiştır. Burada daha önemlii olan husus, Amazon.com şiirketii tarafından gelişiitiiriilen “kullandıkça öde” modeliidiir. Bu model son kullanıcılar tarafından çok hızla beniimsenmiiiş olup, günümüzde bulut biilişiiiim hiizmetleriiniin fiiyatlandırılması içiin biir standart haliine gelmişiitiir."
   },
   {
     "id": "3525015",
     "unitNumber": 8,
-    "text": "Gelişi\u001dtiiriilen iilk açık kaynak kod yazılım (open-source software) hangi \u001dişirket tarafından geliştirilmiştir?",
+    "text": "Gelişiitiiriilen iilk açık kaynak kod yazılım (open-source software) hangi iişirket tarafından geliştirilmiştir?",
     "correctAnswer": "D",
     "options": {
       "A": "Amazon",
@@ -7963,12 +7963,12 @@
       "D": "NASA",
       "E": "Google"
     },
-    "explanation": "2008 yılında NASA’nın OpenNebula iisiimlii uygulaması, gelişi\u001dtiiriilen iilk açık kaynak kod yazılım (open-source software) olarak tariihtekii yeriinii almış\u001dtır. Uygulama sayesiinde kullanıcılar özel ve karma bulutları olu\u001dşturabiilmektediirler."
+    "explanation": "2008 yılında NASA’nın OpenNebula iisiimlii uygulaması, gelişiitiiriilen iilk açık kaynak kod yazılım (open-source software) olarak tariihtekii yeriinii almışitır. Uygulama sayesiinde kullanıcılar özel ve karma bulutları oluişturabiilmektediirler."
   },
   {
     "id": "3525017",
     "unitNumber": 8,
-    "text": "Aşağıdakilerden hangisi bulut biilişii\u001dim erişii\u001dim modelleriinden farklı bir sınıftır?",
+    "text": "Aşağıdakilerden hangisi bulut biilişiiiim erişiiiim modelleriinden farklı bir sınıftır?",
     "correctAnswer": "E",
     "options": {
       "A": "genel bulut",
@@ -7977,12 +7977,12 @@
       "D": "karma bulut",
       "E": "akıllı bulut"
     },
-    "explanation": "Bulut biilişii\u001dim siistemleri erişii\u001dim modelleriine göre dört sınıfa ayrılmaktadır. Bu sınıfandırma genel bulut, topluluk bulut, özel bulut ve karma bulut \u001dşekliindediir."
+    "explanation": "Bulut biilişiiiim siistemleri erişiiiim modelleriine göre dört sınıfa ayrılmaktadır. Bu sınıfandırma genel bulut, topluluk bulut, özel bulut ve karma bulut işekliindediir."
   },
   {
     "id": "3525018",
     "unitNumber": 8,
-    "text": "Aşağıdakilerden hangi bulut bilişim erişii\u001dim modeli depolama, yazılım ve diğer kaynaklar, hizmet sağlayan şi\u001drket tarafından son kullanıcılara sunulur?",
+    "text": "Aşağıdakilerden hangi bulut bilişim erişiiiim modeli depolama, yazılım ve diğer kaynaklar, hizmet sağlayan şiirket tarafından son kullanıcılara sunulur?",
     "correctAnswer": "A",
     "options": {
       "A": "genel bulut",
@@ -7991,7 +7991,7 @@
       "D": "karma bulut",
       "E": "akıllı bulut"
     },
-    "explanation": "Genel bulut yapılarında depolama, yazılım ve diğer kaynaklar, hizmet sağlayan şi\u001drket tarafından son kullanıcılara sunulur."
+    "explanation": "Genel bulut yapılarında depolama, yazılım ve diğer kaynaklar, hizmet sağlayan şiirket tarafından son kullanıcılara sunulur."
   },
   {
     "id": "3525019",
@@ -8010,7 +8010,7 @@
   {
     "id": "3525020",
     "unitNumber": 8,
-    "text": "Bulut biilişii\u001dim hizmet modellerini en alttan en üst katmanda göre soldan sağa sıralayınız?",
+    "text": "Bulut biilişiiiim hizmet modellerini en alttan en üst katmanda göre soldan sağa sıralayınız?",
     "correctAnswer": "A",
     "options": {
       "A": "Hiizmet olarak Altyapı katmanı - Hiizmet olarak Platform - Hiizmet olarak Yazılım",
@@ -8019,7 +8019,7 @@
       "D": "Hiizmet olarak Platform - Hiizmet olarak Altyapı katmanı - Hiizmet olarak Yazılım",
       "E": "Hiizmet olarak Yazılım - Hiizmet olarak Altyapı katmanı - Hiizmet olarak Platform"
     },
-    "explanation": "Bulut biilişii\u001dim hizmet modellerinde en alt katmanda olan Hiizmet olarak Altyapı katmanı, üstündekii diiğer iikii katman iiçiin temel oluş\u001dturur. Aynı \u001dşekiilde, Hiizmet olarak Platform katmanı da Hiizmet olarak Yazılım katmanına temel oluş\u001dturur."
+    "explanation": "Bulut biilişiiiim hizmet modellerinde en alt katmanda olan Hiizmet olarak Altyapı katmanı, üstündekii diiğer iikii katman iiçiin temel oluşiturur. Aynı işekiilde, Hiizmet olarak Platform katmanı da Hiizmet olarak Yazılım katmanına temel oluşiturur."
   },
   {
     "id": "3525022",
@@ -8038,16 +8038,16 @@
   {
     "id": "3525023",
     "unitNumber": 8,
-    "text": "Aşağıdakilerden hangisi bulut biilişii\u001dim hizmet modellerinden H\u001dizmet Olarak Yazılım (Software as a Serv\u001dice - SaaS) açısından doğrudur?",
+    "text": "Aşağıdakilerden hangisi bulut biilişiiiim hizmet modellerinden Hiizmet Olarak Yazılım (Software as a Serviice - SaaS) açısından doğrudur?",
     "correctAnswer": "D",
     "options": {
       "A": "Hizmet olarak profesyonellere kullanımı içindir",
-      "B": "Yazılımın gelii\u001dştiiriilmesiinda maliiyetleri artar",
-      "C": "Yazılımın çalış\u001dtırılmasında maliiyetleri artar",
-      "D": "Tek biir yazılım biirden çok müş\u001dterii tarafından kullanılılır",
+      "B": "Yazılımın geliiiştiiriilmesiinda maliiyetleri artar",
+      "C": "Yazılımın çalışitırılmasında maliiyetleri artar",
+      "D": "Tek biir yazılım biirden çok müşiterii tarafından kullanılılır",
       "E": "Hizmete tek bir noktadan erişim sağlanır"
     },
-    "explanation": "Bu model, biir hiizmet sağlayıcı şi\u001dirkete aiit sunucularda çalış\u001darak beliirlii biir i\u001diişi gerçekleş\u001dtiiren yazılımın, hizmet olarak son kullanıcıya dağıtılmasına karşılık gelmektedir. Yazılım sağlama hiizmeti iile kullanıcıların iihtiiyaç duyduğu CRM, ERP, fiinans, muhasebe, e-posta giibii yazılımlar bulut üzeriinden dağıtılır. Bu yöntem sayesiinde son kullanıcılar yazılımın gelii\u001dştiiriilmesii, çalış\u001dtırılması giibii maliiyetlerii en aza iindiirgeyebiiliirler. Tek biir yazılım biirden çok müş\u001dterii tarafından kullanıldığı içiin iilgiilii maliiyetler yazılımı kullanan müş\u001dteriiler arasında paylaş\u001dılmış\u001d olur. Genelliikle bu modelde yazılıma web tarayıcı üzeriinden erişii\u001dim sağlanır. Bu durum, son kullanıcının herhangii ek biir yazılım kurmadan, dünya üzeriindekii herhangii biir noktadan sunulan hiizmetii kullanabiilmesii anlamına gelmektediir."
+    "explanation": "Bu model, biir hiizmet sağlayıcı şiiirkete aiit sunucularda çalışiarak beliirlii biir iiiişi gerçekleşitiiren yazılımın, hizmet olarak son kullanıcıya dağıtılmasına karşılık gelmektedir. Yazılım sağlama hiizmeti iile kullanıcıların iihtiiyaç duyduğu CRM, ERP, fiinans, muhasebe, e-posta giibii yazılımlar bulut üzeriinden dağıtılır. Bu yöntem sayesiinde son kullanıcılar yazılımın geliiiştiiriilmesii, çalışitırılması giibii maliiyetlerii en aza iindiirgeyebiiliirler. Tek biir yazılım biirden çok müşiterii tarafından kullanıldığı içiin iilgiilii maliiyetler yazılımı kullanan müşiteriiler arasında paylaşiılmışi olur. Genelliikle bu modelde yazılıma web tarayıcı üzeriinden erişiiiim sağlanır. Bu durum, son kullanıcının herhangii ek biir yazılım kurmadan, dünya üzeriindekii herhangii biir noktadan sunulan hiizmetii kullanabiilmesii anlamına gelmektediir."
   },
   {
     "id": "3525035",

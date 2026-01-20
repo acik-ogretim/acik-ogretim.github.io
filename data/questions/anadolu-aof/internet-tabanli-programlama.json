@@ -142,7 +142,7 @@
   {
     "id": "3306234",
     "unitNumber": 1,
-    "text": "&lt;html&gt;<br/>&lt;head&gt;<br/>&lt;title&gt;Anadolu Üniversitesi Açıköğretim Fakültesi&lt;/title&gt;<br/>&lt;/head&gt;<br/>&lt;body&gt;<br/>Merhaba Dünya!<br/>&lt;/body&gt;<br/>&lt;/html&gt;<br/>Yukarıda verilen kodlar aşağıda verilen seçeneklerden hangi ortama aittir?",
+    "text": "&lt;html&gt;<br/>&lt;head&gt;<br/>&lt;title&gt;Anadolu Üniversitesi Açıköğretim Fakültesi&lt;/title&gt;<br/>&lt;/head&gt;<br/>&lt;body&gt;<br/>&lt;p&gt;Merhaba Dünya!&lt;/p&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;<br/>Yukarıda verilen kodlar aşağıda verilen seçeneklerden hangi ortama aittir?",
     "correctAnswer": "C",
     "options": {
       "A": "C++",
@@ -300,10 +300,10 @@
     "correctAnswer": "A",
     "options": {
       "A": "&lt;head&gt; &lt;/head&gt;",
-      "B": "",
-      "C": "&lt;a href&gt; &lt;/a&gt;",
+      "B": "&lt;/ul&gt;",
+      "C": "&lt;/a&gt;",
       "D": "",
-      "E": "&lt;tr&gt; &lt;/tr&gt;"
+      "E": "&lt;/tr&gt;"
     },
     "explanation": "Javascript ile yazılan fonksiyonlar&lt;/ head &gt; HTML etiketleri arasına yazılmalıdır."
   },
@@ -579,11 +579,11 @@
     "text": "Javascript ile yazılan fonksiyonlar HTML kodlarında hangi etiketler arasına yazılmalıdır?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;head&gt; <!-- head -->",
-      "B": "",
-      "C": "&lt;a href&gt; &lt;/a&gt;",
+      "A": "&lt;head&gt; &lt;/ head &gt;",
+      "B": "&lt;/ul&gt;",
+      "C": "&lt;/a&gt;",
       "D": "",
-      "E": "&lt;tr&gt; &lt;/tr&gt;"
+      "E": "&lt;/tr&gt;"
     },
     "explanation": "Javascript ile yazılan fonksiyonlar HTML kodlarında<br/>&lt;head&gt; &lt;/ head &gt;<br/>etiketleri arasına yazılmalıdır."
   },
@@ -3684,7 +3684,7 @@
   {
     "id": "3306484",
     "unitNumber": 4,
-    "text": "1<br/>Uzun süredir işlem yapmadınız. 60 saniye içinde herhangi bir işlem yapmazsanız hesabınızı korumak için otomatik olarak çıkış yapılacak.&lt;/p&gt;<br/>2<br/>&lt;/p&gt;<br/>3 &lt;script&gt;<br/>4 var kontrol=X(cikis, 60000);<br/>5 function cikis(){<br/>6 // çıkış rutinlerini çalıştır<br/>7 document.getElementById(“sonuc”).innerHTML=”Çıkış işlemi gerçekleşti.”;<br/>8 }<br/>9 &lt;/script&gt;<br/>Yukarıdaki JS kod örneğinde cikis isimli fonksiyonun 60 sn sonra çalışması için X ile gösterilen yere hangi fonksiyon gelmelidir?",
+    "text": "1 &lt;p&gt;Uzun süredir işlem yapmadınız. 60 saniye içinde herhangi bir işlem yapmazsanız hesabınızı korumak için otomatik olarak çıkış yapılacak.&lt;/p&gt;<br/>2 &lt;p id=”sonuc”&gt;&lt;/p&gt;<br/>3 &lt;script&gt;<br/>4 var kontrol=X(cikis, 60000);<br/>5 function cikis(){<br/>6 // çıkış rutinlerini çalıştır<br/>7 document.getElementById(“sonuc”).innerHTML=”Çıkış işlemi gerçekleşti.”;<br/>8 }<br/>9 &lt;/script&gt;<br/>Yukarıdaki JS kod örneğinde cikis isimli fonksiyonun 60 sn sonra çalışması için X ile gösterilen yere hangi fonksiyon gelmelidir?",
     "correctAnswer": "A",
     "options": {
       "A": "setTimeout",

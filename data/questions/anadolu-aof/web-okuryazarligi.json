@@ -3124,7 +3124,7 @@
   {
     "id": "3896945",
     "unitNumber": 3,
-    "text": "\"Harici bir stil sayfasında stiller tanımlanır ve &lt;span style=\"font-family: AGaramondPro-Regular; font-size: medium;\"&gt;sayfalara &lt;/span&gt;<em>&lt;span style=\"font-family: AGaramondPro-Italic; font-size: medium;\"&gt;................ &lt;/span&gt;</em>&lt;span style=\"font-family: AGaramondPro-Regular; font-size: medium;\"&gt;yöntemi ile eklenerek, ilerleyen süreçte, &lt;/span&gt;stillerde bir değişiklik yapmak için tüm sayfaları tek tek açıp renkleri boyutları vs. değiştirmek yerine, stil sayfasında gerekli değerleri değiştirerek, hızlıca tüm sayfalarda değişiklikler yapılmış olur.\" ifadesi aşağıdakilerden hangisi ile tamamlanmalıdır?",
+    "text": "\"Harici bir stil sayfasında stiller tanımlanır ve sayfalara <em>................ </em>yöntemi ile eklenerek, ilerleyen süreçte, stillerde bir değişiklik yapmak için tüm sayfaları tek tek açıp renkleri boyutları vs. değiştirmek yerine, stil sayfasında gerekli değerleri değiştirerek, hızlıca tüm sayfalarda değişiklikler yapılmış olur.\" ifadesi aşağıdakilerden hangisi ile tamamlanmalıdır?",
     "correctAnswer": "A",
     "options": {
       "A": "import",
@@ -3423,7 +3423,7 @@
     "options": {
       "A": "&lt;BODY&gt;",
       "B": "&lt;HEAD&gt;",
-      "C": "",
+      "C": "&lt;P&gt;",
       "D": "&lt;TITLE&gt;",
       "E": "&lt;HR&gt;"
     },
@@ -3439,7 +3439,7 @@
       "B": "&lt;CENTER&gt;<b>Merhaba&lt;/CENTER&gt;</b>",
       "C": "<b><i>Merhaba</i></b>",
       "D": "<i><u>Merhaba</u></i>",
-      "E": "<u>Merhaba</u>"
+      "E": "<u>&lt;P&gt;Merhaba&lt;/P&gt;</u>"
     },
     "explanation": "<b><i>Merhaba</i></b> ifadesi, hem kalın hem de eğik harflerle \"Merhaba\" yazmak için kullanılır. İfadede kullanılan <b> etiketi kalın harflerle yazılmasını sağlarken, <i> etiketi eğik harflerle yazım sağar.</i></b>"
   },
@@ -3674,7 +3674,7 @@
     "correctAnswer": "D",
     "options": {
       "A": "<u>...</u>",
-      "B": "",
+      "B": "&lt;p&gt;...&lt;/p&gt;",
       "C": "&lt;center&gt;...&lt;/center&gt;",
       "D": "<b>...</b>",
       "E": "<i>...</i>"
@@ -3955,7 +3955,7 @@
     "options": {
       "A": "&lt;META&gt;",
       "B": "&lt;TITLE&gt;",
-      "C": "&lt;FORM&gt;",
+      "C": "",
       "D": "&lt;BODY&gt;",
       "E": "&lt;HEAD&gt;"
     },
@@ -4250,10 +4250,10 @@
       "A": "<b>..</b>",
       "B": "<i>..</i>",
       "C": "<u>..</u>",
-      "D": "&lt;h1&gt;..&lt;/h1&gt;",
-      "E": ""
+      "D": "..&lt;/h1&gt;",
+      "E": "&lt;p&gt;..&lt;/p&gt;"
     },
-    "explanation": "<b>....</b> Aradaki metni koyu (bold) yazar <i>....</i> Aradaki metni eğik (italic) yazar. <u>....</u> Aradaki metni altı çizili (underline) olarak yazar.<br/>.... Başlık (heading) imi. h1 en büyük, h6 en küçük.<br/>....&lt;/p&gt; Aradaki metin paragraf özelliği kazanır."
+    "explanation": "<b>....</b> Aradaki metni koyu (bold) yazar <i>....</i> Aradaki metni eğik (italic) yazar. <u>....</u> Aradaki metni altı çizili (underline) olarak yazar.<br/>.... Başlık (heading) imi. h1 en büyük, h6 en küçük. &lt;p&gt;....&lt;/p&gt; Aradaki metin paragraf özelliği kazanır."
   },
   {
     "id": "3897026",
@@ -4264,10 +4264,10 @@
       "A": "<b>..</b>",
       "B": "<i>..</i>",
       "C": "<u>..</u>",
-      "D": "&lt;h1&gt;..&lt;/h1&gt;",
-      "E": ""
+      "D": "..&lt;/h1&gt;",
+      "E": "&lt;p&gt;..&lt;/p&gt;"
     },
-    "explanation": "<b>....</b> Aradaki metni koyu (bold) yazar <i>....</i> Aradaki metni eğik (italic) yazar. <u>....</u> Aradaki metni altı çizili (underline) olarak yazar.<br/>.... Başlık (heading) imi. h1 en büyük, h6 en küçük.<br/>....&lt;/p&gt; Aradaki metin paragraf özelliği kazanır."
+    "explanation": "<b>....</b> Aradaki metni koyu (bold) yazar <i>....</i> Aradaki metni eğik (italic) yazar. <u>....</u> Aradaki metni altı çizili (underline) olarak yazar.<br/>.... Başlık (heading) imi. h1 en büyük, h6 en küçük. &lt;p&gt;....&lt;/p&gt; Aradaki metin paragraf özelliği kazanır."
   },
   {
     "id": "3897027",
@@ -4575,7 +4575,7 @@
       "D": "3,1,2,4",
       "E": "2,3,1,4"
     },
-    "explanation": "Doğru yanıt C şıkkıdır.Ekrana bakan kişinin göz hareketlerini belirle\u0002yen cihazlarla yapılan araştırma sonuçlarına göre bilgisayar ekranının görsel taranma çizgisinin;<br/>1. Sol üst köşeden sağ üst köşeye<br/>2. Sağ üst köşeden sağ alt köşeye doğru genel tarama<br/>3. Yeniden sol üstten itibaren okuma<br/>4. Üst orta noktadan aşağı doğru okumayı sürdürme tarzında olduğu saptanmıştır."
+    "explanation": "Doğru yanıt C şıkkıdır.Ekrana bakan kişinin göz hareketlerini belirleyen cihazlarla yapılan araştırma sonuçlarına göre bilgisayar ekranının görsel taranma çizgisinin;<br/>1. Sol üst köşeden sağ üst köşeye<br/>2. Sağ üst köşeden sağ alt köşeye doğru genel tarama<br/>3. Yeniden sol üstten itibaren okuma<br/>4. Üst orta noktadan aşağı doğru okumayı sürdürme tarzında olduğu saptanmıştır."
   },
   {
     "id": "3897048",

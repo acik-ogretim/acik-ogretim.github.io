@@ -3539,7 +3539,7 @@
       "D": "Bu yaklaşımın çıkış noktası, hızlı, verimli ve ucuz bilgisayar üretmektir.",
       "E": "Bu modeli kullanan üretici firmalara örnek olarak Power PC ve Sun Sparc gösterilebilir."
     },
-    "explanation": "Dilimize “Azaltılmış Komut KümeliB\u001dlg\u001dsayar” olarak geçen bu yaklaşımda, komut kümes\u001dn\u001dn olab\u001dlecek en yalın sev\u001d-yeye \u001dnd\u001drgenmes\u001d hede\u0018en\u001dr. Bu yaklaşıma göre, b\u001dr \u001dşlemc\u001dn\u001dn komut kümes\u001dnde temel komutların olması yeterl\u001dd\u001dr ve temel komutların çeş\u001dtl\u001d organ\u001dzasyonuyla, her türlü karmaşık \u001dşlem yapılab\u001dl\u001dr. Bu yaklaşımın çıkış noktası, hızlı, ver\u001dml\u001d ve ucuz bilgisayarlar üretmektir. R*SC modelini kullanan işlemci üretici firmalar, Po-wer PC ve Sun Sparc olarak örneklendirilebilir."
+    "explanation": "Dilimize “Azaltılmış Komut KümeliBilgisayar” olarak geçen bu yaklaşımda, komut kümesinin olabilecek en yalın sevi-yeye indirgenmesi hedeenir. Bu yaklaşıma göre, bir işlemcinin komut kümesinde temel komutların olması yeterlidir ve temel komutların çeşitli organizasyonuyla, her türlü karmaşık işlem yapılabilir. Bu yaklaşımın çıkış noktası, hızlı, verimli ve ucuz bilgisayarlar üretmektir. R*SC modelini kullanan işlemci üretici firmalar, Po-wer PC ve Sun Sparc olarak örneklendirilebilir."
   },
   {
     "id": "3644526",
@@ -3567,7 +3567,7 @@
       "D": "İşlenen Sonuç Referansı",
       "E": "Sıradaki Komut Referansı"
     },
-    "explanation": "İşlenen kaynak referansı (Source operand reference): Yapılacak işlemde girdi olarak kullanılan elemanlardır. Bi\u001dr i\u001dşlemde, b\u001dir veya bi\u001drden çok i\u001dşlenen kaynak olab\u001dili\u001dr."
+    "explanation": "İşlenen kaynak referansı (Source operand reference): Yapılacak işlemde girdi olarak kullanılan elemanlardır. Biir iişlemde, biir veya biirden çok iişlenen kaynak olabiiliir."
   },
   {
     "id": "3644528",
@@ -6367,7 +6367,7 @@
       "D": "II-III",
       "E": "I-II-III"
     },
-    "explanation": "İşleç Çeşitleri<br/>İşleçleri iyi anlayabilmek için işlevlerine göre sını\u0018andırabiliriz:<br/>• Aritmetik İşleçler<br/>• İlişkisel İşleçler<br/>• Mantıksal İşleçler<br/>• Bit İşleçleri<br/>• Atama İşleci<br/>• Diğer İşleçler"
+    "explanation": "İşleç Çeşitleri<br/>İşleçleri iyi anlayabilmek için işlevlerine göre sınıandırabiliriz:<br/>• Aritmetik İşleçler<br/>• İlişkisel İşleçler<br/>• Mantıksal İşleçler<br/>• Bit İşleçleri<br/>• Atama İşleci<br/>• Diğer İşleçler"
   },
   {
     "id": "3644700",
@@ -8346,7 +8346,7 @@
   {
     "id": "3644844",
     "unitNumber": 8,
-    "text": "I.Hazır matematiksel fonksiyonları kullanabilmek için önişlemci tanımları bölümüne #include adlı başlık dosyası eklenmelidir.<br/>II.Matematiksel fonksiyonların kullandığı sayılar double tipindedir.<br/>III. acos(), asin(), atan(), ceil() başlıca matematiksel fonksiyonlar arasında gösterilebilir.<br/>Yukarıda matematiksel kütüphane fonksiyonları ile ilgili verilen bilgilerden hangisi ya da hangileri doğrudur?",
+    "text": "I.Hazır matematiksel fonksiyonları kullanabilmek için önişlemci tanımları bölümüne #include &lt;math.h&gt; adlı başlık dosyası eklenmelidir.<br/>II.Matematiksel fonksiyonların kullandığı sayılar double tipindedir.<br/>III. acos(), asin(), atan(), ceil() başlıca matematiksel fonksiyonlar arasında gösterilebilir.<br/>Yukarıda matematiksel kütüphane fonksiyonları ile ilgili verilen bilgilerden hangisi ya da hangileri doğrudur?",
     "correctAnswer": "E",
     "options": {
       "A": "Yalnız I",
@@ -8355,12 +8355,12 @@
       "D": "II ve III",
       "E": "I, II ve III"
     },
-    "explanation": "Hazır matematiksel fonksiyonları kullanabilmek için önişlemci tanımları bölümüne #include adlı başlık dosyası eklenmelidir. Matematiksel fonksiyonların kullandığı sayılar double tipindedir. Başlıca matematiksel fonksiyonlar acos(), asin(), atan(), ceil(), cos(), cosh(), exp(), \u0018oor(), log(), log10(), pow(), sin(), sqrt(), tan(), tanh(), ceil() olarak sıralanabilir. Doğru yanıt E seçeneğidir."
+    "explanation": "Hazır matematiksel fonksiyonları kullanabilmek için önişlemci tanımları bölümüne #include &lt;math.h&gt; adlı başlık dosyası eklenmelidir. Matematiksel fonksiyonların kullandığı sayılar double tipindedir. Başlıca matematiksel fonksiyonlar acos(), asin(), atan(), ceil(), cos(), cosh(), exp(), oor(), log(), log10(), pow(), sin(), sqrt(), tan(), tanh(), ceil() olarak sıralanabilir. Doğru yanıt E seçeneğidir."
   },
   {
     "id": "3644845",
     "unitNumber": 8,
-    "text": "#include<br/>#include<br/>#include<br/>int main(void)<br/>{ char ad[10], n;<br/>printf(“Bir isim giriniz:ali”);<br/>scanf(“%s”, &amp;ad);<br/>n=strlen(ad);<br/>printf(“Girdiginiz isim: %s, %d karakter uzunlugundadir\\n”, ad, n); getch();<br/>return 0;<br/>}<br/>Yukarıda verilen fonksiyonun program çıktısı aşağıdakilerden hangisidir?",
+    "text": "#include &lt;/p&gt;<br/>#include &lt;/p&gt;<br/>#include &lt;/p&gt;<br/>int main(void)<br/>{ char ad[10], n;<br/>printf(“Bir isim giriniz:ali”);<br/>scanf(“%s”, &amp;ad);<br/>n=strlen(ad);<br/>printf(“Girdiginiz isim: %s, %d karakter uzunlugundadir\\n”, ad, n); getch();<br/>return 0;<br/>}<br/>Yukarıda verilen fonksiyonun program çıktısı aşağıdakilerden hangisidir?",
     "correctAnswer": "D",
     "options": {
       "A": "Bir isim giriniz:ali<br/>Girdiginiz isim:ali, 3 karakterden oluşmaktadır.",
@@ -8556,7 +8556,7 @@
   {
     "id": "3644861",
     "unitNumber": 8,
-    "text": "Verilenlerden değişken türlerinden hangileri herhangi bir Fonksiyon tipi olabilir?<ol type=\"I\"><li>int\u0018</li><li>oat</li><li>double</li></ol>",
+    "text": "Verilenlerden değişken türlerinden hangileri herhangi bir Fonksiyon tipi olabilir?<ol type=\"I\"><li>intfl</li><li>oat</li><li>double</li></ol>",
     "correctAnswer": "E",
     "options": {
       "A": "Yalnız I",
@@ -8565,7 +8565,7 @@
       "D": "I ve II",
       "E": "I, II ve III"
     },
-    "explanation": "Fonksiyon tipi; int, \u0018oat, double, char vb. değişken türlerinden herhangi bir tanesi olabilir. Yanıt E."
+    "explanation": "Fonksiyon tipi; int, oat, double, char vb. değişken türlerinden herhangi bir tanesi olabilir. Yanıt E."
   },
   {
     "id": "3644862",
@@ -8635,7 +8635,7 @@
       "D": "Karakter fonksiyonları",
       "E": "Döngüsel fonksiyonlar"
     },
-    "explanation": "Hazır matematiksel fonksiyonları kullanabilmek için ön işlemci tanımları bölümüne #include&lt;math.h&gt; adlı başlık dosyası eklenmelidir. Yanıt A."
+    "explanation": "Hazır matematiksel fonksiyonları kullanabilmek için ön işlemci tanımları bölümüne #include &lt;math.h&gt; adlı başlık dosyası eklenmelidir. Yanıt A."
   },
   {
     "id": "3644867",
@@ -9237,7 +9237,7 @@
       "D": "toascii()",
       "E": "toupper()"
     },
-    "explanation": "Bir diğer dizgi fonksiyonu, strcmp() fonksiyonudur. strcmp() ile karakter dizilerinin sayısal olarak karşılaştırılması sağlanmaktadır. Karakterlerin her birinin ASCII olarak sayısal bir karşılığı bulunmaktadır. strcmp() ile bu har\u0018erin sayısal karşılıkları kullanılarak dizilim sırası karşılaştırılmaktadır."
+    "explanation": "Bir diğer dizgi fonksiyonu, strcmp() fonksiyonudur. strcmp() ile karakter dizilerinin sayısal olarak karşılaştırılması sağlanmaktadır. Karakterlerin her birinin ASCII olarak sayısal bir karşılığı bulunmaktadır. strcmp() ile bu harerin sayısal karşılıkları kullanılarak dizilim sırası karşılaştırılmaktadır."
   },
   {
     "id": "3644910",
@@ -9343,11 +9343,11 @@
     "text": "Hazır matematiksel fonksiyonları kullanabilmek için önişlemci tanımları bölümüne hangi başlık dosyası eklenmelidir?",
     "correctAnswer": "D",
     "options": {
-      "A": "&lt;div class=\"column\"&gt; #define<br/>&lt;/div&gt;",
-      "B": "&lt;div class=\"column\"&gt; #include<br/>&lt;/div&gt;",
+      "A": "#define",
+      "B": "#include &lt;/p&gt;",
       "C": "#include &lt;math.&gt;",
-      "D": "&lt;div class=\"column\"&gt; #include &lt;math.h&gt;<br/>&lt;/div&gt;",
-      "E": "&lt;div class=\"column\"&gt; acos()<br/>&lt;/div&gt;"
+      "D": "#include &lt;math.h&gt;",
+      "E": "acos()"
     },
     "explanation": "Hazır matematiksel fonksiyonları kullanabilmek için önişlemci tanımları bölümüne #include adlı başlık dosyası eklenmelidir. Doğru cevap D'dir."
   },

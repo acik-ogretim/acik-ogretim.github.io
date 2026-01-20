@@ -376,6 +376,30 @@ if (isMainThread) {
         console.log(`Processing single course: ${singleCourse}`);
     }
 
+    const incremental = args.includes('--incremental');
+    if (incremental) {
+        console.log("Running in INCREMENTAL mode (only processing changed files)...");
+        allItems = allItems.filter(slug => {
+            const rawPath = path.join(RAW_ANADOLU_DIR, slug, 'alistirma-sorulari.json');
+            const destPath = path.join(TARGET_ANADOLU_DIR, slug + '.json');
+
+            // If destination doesn't exist, we must process
+            if (!fs.existsSync(destPath)) return true;
+
+            // If raw doesn't exist (e.g. course folder empty), skip unless we want to delete?
+            // Current script doesn't handle deletions efficiently, so we just check existence.
+            if (!fs.existsSync(rawPath)) return false;
+
+            const rawStats = fs.statSync(rawPath);
+            const destStats = fs.statSync(destPath);
+
+            // Process if Raw is NEWER than Dest
+            // We use a small buffer margin to avoid float precision issues, though explicit comparison is usually fine.
+            return rawStats.mtimeMs > destStats.mtimeMs;
+        });
+        console.log(`Incremental filter reduced count to ${allItems.length} courses.`);
+    }
+
     if (technicalOnly) {
         allItems = allItems.filter(slug => technicalKeywords.some(kw => slug.toLowerCase().includes(kw)));
         console.log(`Filtering to ${allItems.length} technical courses...`);

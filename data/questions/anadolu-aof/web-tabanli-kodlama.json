@@ -1141,8 +1141,8 @@
     "options": {
       "A": "&lt;html&gt; - &lt;/html&gt;",
       "B": "&lt;body&gt; - &lt;/body&gt;",
-      "C": "&lt;table&gt; - &lt;/table&gt;",
-      "D": "-",
+      "C": "- &lt;/table&gt;",
+      "D": "&lt;p&gt; - &lt;/p&gt;",
       "E": "&lt;head&gt; - &lt;/head&gt;"
     },
     "explanation": "Bir web sayfasına ait HTML kodları &lt;html&gt; başlangıç tagı ile başlamakta ve &lt;/html&gt; bitiş tagı ile sonlandırılmaktadır."
@@ -1192,14 +1192,14 @@
   {
     "id": "3643615",
     "unitNumber": 2,
-    "text": "HTML kodlamasında <em><strong>alıntı </strong></em><br/><pre>&lt;code&gt;“&lt;/code&gt;</pre><br/>karakterinin yazımında hangi özel karakter seti kullanılmalıdır?",
+    "text": "HTML kodlamasında <em><strong>alıntı </strong></em><br/><pre class=\"language-markup\"><code>“</code></pre><br/>karakterinin yazımında hangi özel karakter seti kullanılmalıdır?",
     "correctAnswer": "E",
     "options": {
       "A": "Özel karakter seti kullanımına gerek yoktur. Olduğu gibi kullanılabilir.",
-      "B": "",
-      "C": "<pre>&lt;code&gt;&gt;&lt;/code&gt;</pre>",
-      "D": "<pre>&lt;code&gt;&amp;&lt;/code&gt;</pre>",
-      "E": "<pre>&lt;code&gt;&quot;&lt;/code&gt;</pre>"
+      "B": "<pre class=\"language-markup\"><code>&amp;nbsp;</code></pre>",
+      "C": "<pre class=\"language-markup\"><code>&gt;</code></pre>",
+      "D": "<pre class=\"language-markup\"><code>&amp;amp;</code></pre>",
+      "E": "<pre class=\"language-markup\"><code>&amp;quot;</code></pre>"
     },
     "explanation": "Özel karakterler doğrudan html metin yazımında kullanılamazlar. <em><strong>Alıntı (“)</strong></em> için<br/><pre class=\"language-markup\"><code>&amp;quot;</code></pre><br/>seti kullanılır."
   },
@@ -1234,7 +1234,7 @@
   {
     "id": "3643620",
     "unitNumber": 2,
-    "text": "<dl><br/>Açıköğretim Fakültesi<br/>Yönetim Bilişim Sistemleri Programı<br/></dl><br/>Yukarıda verilen kod ile ilgili aşağıdakilerden hangisi söylenebilir?",
+    "text": "&lt;dl&gt;<br/>Açıköğretim Fakültesi<br/>Yönetim Bilişim Sistemleri Programı<br/>&lt;/dl&gt;<br/>Yukarıda verilen kod ile ilgili aşağıdakilerden hangisi söylenebilir?",
     "correctAnswer": "A",
     "options": {
       "A": "Kategorik liste oluşturulmuştur.",
@@ -1323,8 +1323,8 @@
     "options": {
       "A": "",
       "B": "&lt;fr&gt;",
-      "C": "",
-      "D": "&lt;div class=\"layoutArea\"&gt;<br/>&lt;div class=\"column\"&gt;<br/>&lt;span style=\"font-family: verdana, geneva, sans-serif;\"&gt;<br/>&lt;/span&gt;<br/>&lt;/div&gt;<br/>&lt;/div&gt;",
+      "C": "&lt;p&gt;",
+      "D": "",
       "E": "&lt;lr&gt;"
     },
     "explanation": "Web tasarımlarında sıklıkla kullanılan alt satıra geçiş işlemi için ilgili metnin sonrasına etiketi kullanılmalıdır."
@@ -1700,9 +1700,9 @@
     "correctAnswer": "A",
     "options": {
       "A": "<pre class=\"language-markup\"><code></code></pre>",
-      "B": "",
+      "B": "<pre class=\"language-markup\"><code>\n</code></pre>",
       "C": "<pre class=\"language-markup\"><code></code></pre>",
-      "D": "",
+      "D": "<pre class=\"language-markup\"><code>&lt;dl></code></pre>",
       "E": "<pre class=\"language-markup\"><code></code></pre>"
     },
     "explanation": "Bu konu Listelerin Oluşturulması başlığı altında okunabilir.<br/>Html dilinde sıralı liste<br/><pre class=\"language-markup\"><code><ol>\n</code></pre><br/>etiketi ile oluşturulur."
@@ -1716,7 +1716,7 @@
       "A": "&lt;-a href=\"...\"-&gt;",
       "B": "&lt;-link rel=\"...\"-&gt;",
       "C": "@import \"...\"",
-      "D": "&lt;a&gt;&lt;-a link=\"...\"-&gt;&lt;/a&gt;",
+      "D": "&lt;-a link=\"...\"-&gt;",
       "E": "&lt;-style type=\"...\"-&gt;"
     },
     "explanation": "Bu konu Köprü ve Bağlantıların Kurulması başlığı altında okunabilir.<br/>Link verme etiketi &lt;-a href=\"...\"-&gt;'dir."
@@ -1780,7 +1780,7 @@
   {
     "id": "3643671",
     "unitNumber": 2,
-    "text": "Aşağıdakilerden hangisi<br/><pre>&lt;code&gt;&quot;&lt;&quot; &lt;/code&gt;</pre><br/>işaretinin<br/><pre>&lt;code&gt;&quot;&amp;&quot; &lt;/code&gt;</pre><br/>ile <br/><pre>&lt;code&gt;&quot;;&quot;&lt;/code&gt;</pre><br/>karakterleri arasında yazılan özel karakter setidir?",
+    "text": "Aşağıdakilerden hangisi<br/><pre class=\"language-markup\"><code>\"&lt;\" </code></pre><br/>işaretinin<br/><pre class=\"language-markup\"><code>\"&amp;\" </code></pre><br/>ile<br/><pre class=\"language-markup\"><code>\";\"</code></pre><br/>karakterleri arasında yazılan özel karakter setidir?",
     "correctAnswer": "C",
     "options": {
       "A": "nbsp",
@@ -1864,7 +1864,7 @@
   {
     "id": "3643677",
     "unitNumber": 2,
-    "text": "&lt;a href=”anasayfa.html” style=”background-color: #FFFF00; color: red;”&gt; kod bloğunun işlevi nedir?",
+    "text": "kod bloğunun işlevi nedir?",
     "correctAnswer": "A",
     "options": {
       "A": "Link için renk düzenlemeleri",
@@ -1878,7 +1878,7 @@
   {
     "id": "3643678",
     "unitNumber": 2,
-    "text": "&lt;a href=\"anasayfa.html\"&gt;&lt;a href=\"https://ets.anadolu.edu.tr/”anasayfa.html”\"&gt;XXX &lt;/a&gt;&lt;/a&gt; kod bloğunun işlevi nedir?",
+    "text": "XXX &lt;/a&gt; kod bloğunun işlevi nedir?",
     "correctAnswer": "C",
     "options": {
       "A": "Metnin mevcut karakter setini değişir.",
@@ -1896,9 +1896,9 @@
     "correctAnswer": "D",
     "options": {
       "A": "&lt;dz&gt;",
-      "B": "",
+      "B": "&lt;dd&gt;",
       "C": "&lt;dg&gt;",
-      "D": "",
+      "D": "&lt;dl&gt;",
       "E": "&lt;db&gt;"
     },
     "explanation": ""
@@ -1923,11 +1923,11 @@
     "text": "Html kodlama sisteminde kalın yazılmak istenen bölüm için o bölümden hemen önce <img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/99220da1b2dd2980c6634c44cee6509c.png\" alt=\"\" width=\"36\" height=\"22\"/> etiketi ilave edilir, bitirmek için hangi etiket kullanılır?",
     "correctAnswer": "A",
     "options": {
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
+      "A": "<pre class=\"language-markup\"><code></ b></code></pre>",
+      "B": "<pre class=\"language-markup\"><code>&lt;-h></code></pre>",
+      "C": "<pre class=\"language-markup\"><code>&lt;-b></code></pre>",
+      "D": "<pre class=\"language-markup\"><code></ font></code></pre>",
+      "E": "<pre class=\"language-markup\"><code>&lt;-font></code></pre>"
     },
     "explanation": "Yanıt A. html kodlama sisteminde ilgili metnin içerisinde kendisini takip eden metinden hemen önce <img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/99220da1b2dd2980c6634c44cee6509c.png\" alt=\"\" width=\"36\" height=\"22\"/><br/><strong> etiketi ilave edilir. Eğer bu etiket sonlandırılmazsa kendisinden sonra gelecek tüm metinleri koyulaştıracaktır. Bunu engellemek için </strong><br/><pre class=\"language-markup\"><code></ b></code></pre><br/><strong>etiketi ile koyu olması istenilen yerden hemen sonra sonlandırmak gerekir.</strong>"
   },
@@ -2051,8 +2051,8 @@
     "options": {
       "A": "",
       "B": "",
-      "C": "&lt;tr&gt;",
-      "D": "&lt;td&gt;",
+      "C": "",
+      "D": "",
       "E": ""
     },
     "explanation": "etiketi html’de enter tuşunun işlevini yerine getirmekte, tarayıcı da alt satıra geçişi sağlamaktadır."
@@ -2063,7 +2063,7 @@
     "text": "Aşağıdakilerden hangisi HTML’de özel karakter kullanımı söz konusudur?",
     "correctAnswer": "D",
     "options": {
-      "A": "a<b< p=\"\"></b<>",
+      "A": "a&lt;b",
       "B": "c&gt;d",
       "C": "a&amp;a",
       "D": "",
@@ -2093,9 +2093,9 @@
     "options": {
       "A": "&lt;HEAD&gt;..&lt;/HEAD&gt;",
       "B": "&lt;BODY&gt;..&lt;/BODY&gt;",
-      "C": "&lt;TITLE&gt;..<!-- TITLE -->",
+      "C": "&lt;TITLE&gt;..&lt;/ TITLE &gt;",
       "D": "&lt;HTML&gt;..&lt;/HTML&gt;",
-      "E": ""
+      "E": "&lt;STYLE&gt;..&lt;/STYLE&gt;"
     },
     "explanation": "Bir web sayfaı html tasarımı etiketi ile başlar ve etiketi ile biter."
   },
@@ -2108,8 +2108,8 @@
       "A": "<b>..</b>",
       "B": "<u>..</u>",
       "C": "&lt;a&gt;..&lt;/a&gt;",
-      "D": "&lt;h2&gt;..&lt;/h2&gt;",
-      "E": ""
+      "D": "..&lt;/h2&gt;",
+      "E": "&lt;p&gt;..&lt;/p&gt;"
     },
     "explanation": "Bir web sayfasındaki yazının başlık türü etiketi ile belirtilir. Bu etiket yanına 1’den 6’ya kadar sayı alır ve böylece yazı başlığının hangi derecede öneme sahip olduğu belirtilebilir. Bir kitabın içindekiler sayfası düşünüldüğünde bunların her biri bir başlıktır ve metin içinde etiketi ile işaretlenmelidirler. Ancak başlık biter bitmez metin bilgisinin başlık olmadığını belirtmek için etiketi kullanılmalıdır."
   },
@@ -2119,11 +2119,11 @@
     "text": "Günümüz <i>dijital teknolojilerinden</i> en önemlilerinden biri de Tabletlerdir. Tabletler özellikle çocuklar için…. Günümüzde fiyatları da oldukça ekonomik hale gelmiştir.<br/>Yukarıdaki HTML parçasına göre aşağıdakilerden hangisi oluşur.",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;table style=\"height: 107px;\" width=\"524\"&gt;<br/>&lt;tbody&gt;<br/>&lt;tr&gt;<br/>&lt;td width=\"330\"&gt;<br/>Günümüz <em>dijital teknolojilerinden </em>en önemlilerinden biri de &lt;span style=\"color: #0070c0;\"&gt;Tabletlerdir&lt;/span&gt;. Tabletler özellikle çocuklar için…. Günümüzde fiyatları da oldukça ekonomik hale gelmiştir.<br/>&lt;/td&gt;<br/>&lt;/tr&gt;<br/>&lt;/tbody&gt;<br/>&lt;/table&gt;",
-      "B": "&lt;table style=\"height: 93px;\" width=\"534\"&gt;<br/>&lt;tbody&gt;<br/>&lt;tr&gt;<br/>&lt;td width=\"349\"&gt;<br/>Günümüz <em>dijital teknolojilerinden </em>en önemlilerinden biri de &lt;span style=\"color: #0070c0;\"&gt;Tabletlerdir&lt;/span&gt;. Tabletler özellikle çocuklar için…. Günümüzde fiyatları da oldukça ekonomik hale gelmiştir.<br/>&lt;/td&gt;<br/>&lt;/tr&gt;<br/>&lt;/tbody&gt;<br/>&lt;/table&gt;",
-      "C": "&lt;table style=\"height: 96px;\" width=\"543\"&gt;<br/>&lt;tbody&gt;<br/>&lt;tr&gt;<br/>&lt;td width=\"349\"&gt;<br/>Günümüz <strong>dijital</strong><em> teknolojilerinden </em>en önemlilerinden biri de &lt;span style=\"color: #0070c0;\"&gt;Tabletlerdir. Tabletler özellikle çocuklar için…. Günümüzde fiyatları da oldukça ekonomik hale gelmiştir.&lt;/span&gt;<br/>&lt;/td&gt;<br/>&lt;/tr&gt;<br/>&lt;/tbody&gt;<br/>&lt;/table&gt;",
-      "D": "&lt;table style=\"height: 87px;\" width=\"545\"&gt;<br/>&lt;tbody&gt;<br/>&lt;tr&gt;<br/>&lt;td width=\"349\"&gt;<br/>Günümüz <strong><em>dijital</em></strong><em> teknolojilerinden </em>en önemlilerinden biri de &lt;span style=\"color: #0070c0;\"&gt;Tabletlerdir&lt;/span&gt;. Tabletler özellikle çocuklar için…. Günümüzde fiyatları da oldukça ekonomik hale gelmiştir.<br/>&lt;/td&gt;<br/>&lt;/tr&gt;<br/>&lt;/tbody&gt;<br/>&lt;/table&gt;",
-      "E": "&lt;table style=\"height: 104px;\" width=\"572\"&gt;<br/>&lt;tbody&gt;<br/>&lt;tr&gt;<br/>&lt;td width=\"349\"&gt;<br/>Günümüz <strong>dijital</strong><em> teknolojilerinden </em>en önemlilerinden biri de &lt;span style=\"color: #0070c0;\"&gt;Tabletlerdir. Tabletler özellikle çocuklar için…. Günümüzde fiyatları da oldukça ekonomik &lt;/span&gt;&lt;span style=\"color: #0070c0;\"&gt;hale gelmiştir.&lt;/span&gt;<br/>&lt;/td&gt;<br/>&lt;/tr&gt;<br/>&lt;/tbody&gt;<br/>&lt;/table&gt;"
+      "A": "Günümüz <em>dijital teknolojilerinden </em>en önemlilerinden biri de Tabletlerdir. Tabletler özellikle çocuklar için…. Günümüzde fiyatları da oldukça ekonomik hale gelmiştir.",
+      "B": "Günümüz <em>dijital teknolojilerinden </em>en önemlilerinden biri de Tabletlerdir. Tabletler özellikle çocuklar için…. Günümüzde fiyatları da oldukça ekonomik hale gelmiştir.",
+      "C": "Günümüz <strong>dijital</strong><em> teknolojilerinden </em>en önemlilerinden biri de Tabletlerdir. Tabletler özellikle çocuklar için…. Günümüzde fiyatları da oldukça ekonomik hale gelmiştir.",
+      "D": "Günümüz <strong><em>dijital</em></strong><em> teknolojilerinden </em>en önemlilerinden biri de Tabletlerdir. Tabletler özellikle çocuklar için…. Günümüzde fiyatları da oldukça ekonomik hale gelmiştir.",
+      "E": "Günümüz <strong>dijital</strong><em> teknolojilerinden </em>en önemlilerinden biri de Tabletlerdir. Tabletler özellikle çocuklar için…. Günümüzde fiyatları da oldukça ekonomik hale gelmiştir."
     },
     "explanation": "Paragrafı iki yana yaslar, <em>dijital teknolojilerinden</em> eğik yazar, Tabletlerdir. Mavi yazar."
   },
@@ -2147,11 +2147,11 @@
     "text": "Aşağıdakilerden hangisi kendi sunucumuzda bulanan bir web sayfasına bir bağlantı etiketidir?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;span class=\"tagnamecolor\" style=\"color: brown;\"&gt;\"&lt;a href&lt;span class=\"attributevaluecolor\" style=\"color: mediumblue;\"&gt;=\"muzik.mp3\"&lt;/span&gt;&lt;/span&gt;&lt;span class=\"tagcolor\" style=\"color: mediumblue;\"&gt;&gt;&lt;/span&gt;&lt;/span&gt;muzik&lt;span class=\"tagnamecolor\" style=\"color: brown;\"&gt;&lt;span class=\"tagcolor\" style=\"color: mediumblue;\"&gt;&lt;&lt;/span&gt;/a&lt;span class=\"tagcolor\" style=\"color: mediumblue;\"&gt;&gt;\"&lt;/span&gt;&lt;/span&gt;",
-      "B": "&lt;span class=\"tagnamecolor\" style=\"color: brown;\"&gt;\"&lt;a href&lt;span class=\"attributevaluecolor\" style=\"color: mediumblue;\"&gt;=\"https://www.anadolu.edu.tr/muzik.mp3\"&lt;/span&gt;&lt;/span&gt;&lt;span class=\"tagcolor\" style=\"color: mediumblue;\"&gt;&gt;&lt;/span&gt;&lt;/span&gt;muzik&lt;span class=\"tagnamecolor\" style=\"color: brown;\"&gt;&lt;span class=\"tagcolor\" style=\"color: mediumblue;\"&gt;&lt;&lt;/span&gt;/a&lt;span class=\"tagcolor\" style=\"color: mediumblue;\"&gt;&gt;\"&lt;/span&gt;&lt;/span&gt;",
-      "C": "&lt;span class=\"tagnamecolor\" style=\"color: brown;\"&gt;\"&lt;a herf&lt;span class=\"attributevaluecolor\" style=\"color: mediumblue;\"&gt;=\"https://www.anadolu.edu.tr/keman/muzik.mp3\"&lt;/span&gt;&lt;/span&gt;&lt;span class=\"tagcolor\" style=\"color: mediumblue;\"&gt;&gt;&lt;/span&gt;&lt;/span&gt;muzik&lt;span class=\"tagnamecolor\" style=\"color: brown;\"&gt;&lt;span class=\"tagcolor\" style=\"color: mediumblue;\"&gt;&lt;&lt;/span&gt;/a&lt;span class=\"tagcolor\" style=\"color: mediumblue;\"&gt;&gt;\"&lt;/span&gt;&lt;/span&gt;",
-      "D": "&lt;span class=\"tagnamecolor\" style=\"color: brown;\"&gt;\"&lt;a hrf&lt;span class=\"attributevaluecolor\" style=\"color: mediumblue;\"&gt;=\"muzik.mp3\"&lt;/span&gt;&lt;/span&gt;&lt;span class=\"tagcolor\" style=\"color: mediumblue;\"&gt;&gt;&lt;/span&gt;&lt;/span&gt;muzik&lt;span class=\"tagnamecolor\" style=\"color: brown;\"&gt;&lt;span class=\"tagcolor\" style=\"color: mediumblue;\"&gt;&lt;&lt;/span&gt;/a&lt;span class=\"tagcolor\" style=\"color: mediumblue;\"&gt;&gt;\"&lt;/span&gt;&lt;/span&gt;",
-      "E": "&lt;span class=\"tagnamecolor\" style=\"color: brown;\"&gt;\"&lt;a&lt;span class=\"attributevaluecolor\" style=\"color: mediumblue;\"&gt;=\"https://www.anadolu.edu.tr/muzik.mp3\"&lt;/span&gt;&lt;/span&gt;&lt;span class=\"tagcolor\" style=\"color: mediumblue;\"&gt;&gt;&lt;/span&gt;&lt;/span&gt;muzik&lt;span class=\"tagnamecolor\" style=\"color: brown;\"&gt;&lt;span class=\"tagcolor\" style=\"color: mediumblue;\"&gt;&lt;&lt;/span&gt;/a&lt;span class=\"tagcolor\" style=\"color: mediumblue;\"&gt;&gt;\"&lt;/span&gt;&lt;/span&gt;"
+      "A": "<code>\" href=\"muzik.mp3\"</code><code>&gt;</code>muzik<code>&lt;/a&gt;\"</code>",
+      "B": "<code>\" href=\"https://www.anadolu.edu.tr/muzik.mp3\"</code><code>&gt;</code>muzik<code>&lt;/a&gt;\"</code>",
+      "C": "<code>\" herf=\"https://www.anadolu.edu.tr/keman/muzik.mp3\"</code><code>&gt;</code>muzik<code>&lt;/a&gt;\"</code>",
+      "D": "<code>\" hrf=\"muzik.mp3\"</code><code>&gt;</code>muzik<code>&lt;/a&gt;\"</code>",
+      "E": "<code>\"=\"https://www.anadolu.edu.tr/muzik.mp3\"</code><code>&gt;</code>muzik<code>&lt;/a&gt;\"</code>"
     },
     "explanation": "Kendi sunucumuzda bulunan bir web sayfasına adres yazmak zorunda değiliz."
   },
@@ -2175,8 +2175,8 @@
     "text": "Aşağıdakilerden hangisi web sayfasında \"birinci derece başlık\" için kullanılmaktadır?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;h1&gt;",
-      "B": "",
+      "A": "",
+      "B": "&lt;p&gt;",
       "C": "&lt;hr&gt;",
       "D": "&lt;title&gt;",
       "E": ""
@@ -2220,7 +2220,7 @@
       "A": "",
       "B": "<li></li>",
       "C": "&lt;pl&gt;",
-      "D": "",
+      "D": "&lt;dl&gt;",
       "E": ""
     },
     "explanation": "Html işaretleme dilinde sıralı liste (<br/>), sırasız liste () ve kategorik liste (&lt;dl&gt;) olmak üzere üç farklı liste seçeneği bulunmaktadır."
@@ -2233,7 +2233,7 @@
     "options": {
       "A": "",
       "B": "",
-      "C": "",
+      "C": "&lt;dl&gt;",
       "D": "&lt;pl&gt;",
       "E": "<li></li>"
     },
@@ -2284,7 +2284,7 @@
   {
     "id": "3643709",
     "unitNumber": 2,
-    "text": "Paragraf ortalanır. <br/>Yukarıdaki HTML kodunda paragrafın ortalanması için \"p\" etiketinin hangi align özelliğini alması gerekmektedir?",
+    "text": "Paragraf ortalanır. &lt;/p&gt;<br/>Yukarıdaki HTML kodunda paragrafın ortalanması için \"p\" etiketinin hangi align özelliğini alması gerekmektedir?",
     "correctAnswer": "C",
     "options": {
       "A": "left",
@@ -2293,7 +2293,7 @@
       "D": "justify",
       "E": "top"
     },
-    "explanation": "etiketinin içerisinde align parametresi kullanılmalıdır. Dört değer almaktadır. Right sağa, left sola, justify iki yana, <strong>center ortaya hizalama</strong> için align parametresine atanmalıdır. Yazılan bir paragrafı iki yana yaslı yazmak isteyen bir kodlayıcı align parametresini aşağıdaki şekilde paragraf içerisinde yazmalıdır."
+    "explanation": "&lt;p&gt; etiketinin içerisinde align parametresi kullanılmalıdır. Dört değer almaktadır. Right sağa, left sola, justify iki yana, <strong>center ortaya hizalama</strong> için align parametresine atanmalıdır. Yazılan bir paragrafı iki yana yaslı yazmak isteyen bir kodlayıcı align parametresini aşağıdaki şekilde paragraf içerisinde yazmalıdır."
   },
   {
     "id": "3643710",
@@ -2318,8 +2318,8 @@
       "A": "<pre class=\"language-markup\"><code> </code></pre>",
       "B": "<pre class=\"language-markup\"><code> </code></pre>",
       "C": "<pre class=\"language-markup\"><code> </code></pre>",
-      "D": "",
-      "E": ""
+      "D": "<pre class=\"language-markup\"><code>&lt;a&gt;&lt;/a&gt;</code></pre>",
+      "E": "<pre class=\"language-markup\"><code>&lt;x&gt;&lt;/x&gt;</code></pre>"
     },
     "explanation": "(underline) etiketi arasına yazılanlar altı çizili olarak gösterilir."
   },
@@ -2329,24 +2329,24 @@
     "text": "Html dilinde sıralı bir liste oluşturulmak istenirse aşağıdakilerden hangisinin kullanılması gerekir?",
     "correctAnswer": "D",
     "options": {
-      "A": "",
-      "B": "",
-      "C": "&lt;h3&gt;&lt;/h3&gt;",
-      "D": "",
-      "E": ""
+      "A": "<li>&lt;/li&gt;</li>",
+      "B": "&lt;/ul&gt;",
+      "C": "&lt;/h3&gt;",
+      "D": "&lt;/ol&gt;",
+      "E": "&lt;/br&gt;"
     },
     "explanation": "Sıralı bir liste oluşturmak için<br/>&lt;/ol&gt; (ordered list) etiketi kullanılmalıdır."
   },
   {
     "id": "3643714",
     "unitNumber": 2,
-    "text": "<ul><li>şeklinde liste oluşturmak için aşağıdaki etiketlerden hangisinin kullanılması gerekir?</li></ul>",
+    "text": "şeklinde liste oluşturmak için aşağıdaki etiketlerden hangisinin kullanılması gerekir?",
     "correctAnswer": "A",
     "options": {
       "A": "ul",
       "B": "ol",
       "C": "li",
-      "D": "dl",
+      "D": "&lt;dl&gt;&lt;/dl&gt;<br/>dl",
       "E": "dd"
     },
     "explanation": "ul etiketi ile içi dolu kare kutucuk listeleri oluşturulur."
@@ -2480,7 +2480,7 @@
   {
     "id": "3644249",
     "unitNumber": 2,
-    "text": "Html’de &lt;a&gt; &lt;a&gt;etiketi ile aşağıdakilerden hangisi yapılmaktadır?&lt;/a&gt;",
+    "text": "Html’de &lt;a&gt; etiketi ile aşağıdakilerden hangisi yapılmaktadır?",
     "correctAnswer": "B",
     "options": {
       "A": "Sıralı liste",
@@ -2489,7 +2489,7 @@
       "D": "Başlık",
       "E": "Stil kullanımı"
     },
-    "explanation": "Köprü veya diğer adı ile link verme html sayfa tasarımlarında kullanılan en önemli özelliklerden biridir. Bu kapsamda kullanılması gereken etiket etiketidir."
+    "explanation": "Köprü veya diğer adı ile link verme html sayfa tasarımlarında kullanılan en önemli özelliklerden biridir. Bu kapsamda kullanılması gereken etiket &lt;a&gt; etiketidir."
   },
   {
     "id": "3720157",
@@ -2501,7 +2501,7 @@
       "B": "",
       "C": "",
       "D": "",
-      "E": "&lt;h1&gt;"
+      "E": ""
     },
     "explanation": "HTML'de <code><u></code> etiketi, metnin altını çizmek için kullanılır.<br/>HTML'de <code><u></code> etiketi, metnin altını çizmek için kullanılır."
   },
@@ -2528,10 +2528,10 @@
       "A": "",
       "B": "",
       "C": "",
-      "D": "&lt;a&gt;",
+      "D": "",
       "E": "&lt;img&gt;"
     },
-    "explanation": "HTML’de bağlantı (köprü) oluşturmak için kullanılan etiket <code><a></code> etiketidir.<br/>HTML’de bağlantı (köprü) oluşturmak için kullanılan etiket <code><a></code> etiketidir."
+    "explanation": "HTML’de bağlantı (köprü) oluşturmak için kullanılan etiket <code>&lt;a&gt;</code> etiketidir.<br/>HTML’de bağlantı (köprü) oluşturmak için kullanılan etiket <code><a></code> etiketidir."
   },
   {
     "id": "3643332",
@@ -2713,7 +2713,7 @@
       "D": "usemap",
       "E": "border"
     },
-    "explanation": "Resim haritaları (image maps) resimlerin üzerindeki bir veya daha fazla noktaya link verme amacı ile kullanılmaktadır. Örnek olarak yedi coğrafi bölgeden oluşan Türkiye Coğrafi Bölgesi haritası göz önünde bulundurulur ve <em>bolgeler.html </em>sayfasında kullanıldığı varsayılırsa, her bir bölge için resim üzerinde resim haritası ile belirli alan link olarak oluşturulabilir ve yedi bölgeden herhangi birini oluşturan alana tıklanması durumunda kendi bölgesine ait html (örneğin <em>marmara.html, akdeniz.html vb.</em>) dosyasının açılması sağlanabilir. Resim haritalarının oluşturulmasında <em>&lt;img&gt; </em>etiketi <em>usemap </em>parametresi ile kullanılmalıdır. Bu kullanımda ilişkilendirme değeri kullanılırken önüne # işareti unutulmamalıdır. Sonrasında ise <em>&lt;map&gt; </em>etiketi ile resim haritalarının alanları ve link işlemleri atanır."
+    "explanation": "Resim haritaları (image maps) resimlerin üzerindeki bir veya daha fazla noktaya link verme amacı ile kullanılmaktadır. Örnek olarak yedi coğrafi bölgeden oluşan Türkiye Coğrafi Bölgesi haritası göz önünde bulundurulur ve <em>bolgeler.html </em>sayfasında kullanıldığı varsayılırsa, her bir bölge için resim üzerinde resim haritası ile belirli alan link olarak oluşturulabilir ve yedi bölgeden herhangi birini oluşturan alana tıklanması durumunda kendi bölgesine ait html (örneğin <em>marmara.html, akdeniz.html vb.</em>) dosyasının açılması sağlanabilir. Resim haritalarının oluşturulmasında <em>&lt;img&gt; </em>etiketi <em>usemap </em>parametresi ile kullanılmalıdır. Bu kullanımda ilişkilendirme değeri kullanılırken önüne # işareti unutulmamalıdır. Sonrasında ise <em>&lt;map&gt; &lt;/map&gt;</em>etiketi ile resim haritalarının alanları ve link işlemleri atanır."
   },
   {
     "id": "3643346",
@@ -2876,8 +2876,8 @@
     "correctAnswer": "C",
     "options": {
       "A": "Mp2",
-      "B": "Mp3<br/>&lt;audio src=\"https://ets.anadolu.edu.tr/”muzikler/muzik1.mp3”\"&gt;",
-      "C": "Mp4<br/>&lt;audio src=\"https://ets.anadolu.edu.tr/”muzikler/muzik1.mp3”&lt;audio src=\"https://ets.anadolu.edu.tr/”muzikler/muzik1.mp3”",
+      "B": "Mp3<br/>&lt;audio src=\"https://ets.anadolu.edu.tr/”muzikler/muzik1.mp3”\"&gt; &lt;/audio&gt;",
+      "C": "Mp4<br/>&lt;audio src=\"https://ets.anadolu.edu.tr/”muzikler/muzik1.mp3”&lt;audio src=\"https://ets.anadolu.edu.tr/”muzikler/muzik1.mp3”&lt;/audio&gt;&lt;/audio&gt;",
       "D": "Mp5",
       "E": "Mp6"
     },
@@ -2956,7 +2956,7 @@
   {
     "id": "3643724",
     "unitNumber": 4,
-    "text": "&lt;tr&gt; etiketinin işlevi nedir?",
+    "text": "etiketinin işlevi nedir?",
     "correctAnswer": "C",
     "options": {
       "A": "Tablo kapatılır",
@@ -3015,11 +3015,11 @@
     "text": "Hangisi tablo verilerini tanımlamak için kullanılmaktadır?",
     "correctAnswer": "E",
     "options": {
-      "A": "&lt;tr&gt;",
-      "B": "&lt;th&gt;",
+      "A": "",
+      "B": "",
       "C": "&lt;tb&gt;",
-      "D": "",
-      "E": "&lt;td&gt;"
+      "D": "&lt;tt&gt;",
+      "E": ""
     },
     "explanation": "Tabloların oluşturulması ve düzenlenmesi için kullanılacak temel etiketler bulunmaktadır. elementi tablo satırlarını, elementi tablo başlıklarını tanımlamak için kullanılmaktadır. &lt;tb&gt; ve &lt;tt&gt; şeklinde bir element bulunmamaktadır. Doğru cevap E'dir."
   },
@@ -3155,11 +3155,11 @@
     "text": "Html’de tabloların oluşturulması ve düzenlenmesi ile ilgili olarak kolonları ve satırları bölmede kullanılan etiket ikilisi (kolon-satır) aşağıda seçeneklerin hangisinde doğru verilmiştir?",
     "correctAnswer": "C",
     "options": {
-      "A": "<pre>&lt;code&gt;&lt;tr&gt; - &lt;td&gt;&lt;/code&gt;</pre>",
-      "B": "<pre>&lt;code&gt;&lt;tr&gt; - &lt;th&gt;&lt;/code&gt;</pre>",
-      "C": "<pre>&lt;code&gt;colspan - rowspan&lt;/code&gt;</pre>",
-      "D": "<pre>&lt;code&gt;colspan - &lt;th&gt;&lt;/code&gt;</pre>",
-      "E": "<pre>&lt;code&gt;rowspan- &lt;td&gt;&lt;/code&gt;</pre>"
+      "A": "<pre class=\"language-markup\"><code><tr> - <td></code></pre>",
+      "B": "<pre class=\"language-markup\"><code><tr> - <th></code></pre>",
+      "C": "<pre class=\"language-markup\"><code>colspan - rowspan</code></pre>",
+      "D": "<pre class=\"language-markup\"><code>colspan - <th></code></pre>",
+      "E": "<pre class=\"language-markup\"><code>rowspan- <td></code></pre>"
     },
     "explanation": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/2b6d217cf350bda05f025612cf7be688.png\" alt=\"\" width=\"717\" height=\"417\"/>"
   },
@@ -3264,7 +3264,7 @@
   {
     "id": "3643747",
     "unitNumber": 4,
-    "text": "<pre>&lt;code&gt;table, th, td { border: 1px solid black; }&lt;/code&gt;</pre><br/>Tabloya yukarıdaki gibi style tanımlandığında tablo ve hücrelerin her birinin kendi kenarları olacağı için görüntüde iki tane kenar görünecektir. Kenar sayısını bire düşürmek için aşağıdaki komutlardan hangisi bu style tanımlamasına eklenmelidir?",
+    "text": "<pre class=\"language-markup\"><code>table, th, td {\n      border: 1px solid black;\n}</code></pre><br/>Tabloya yukarıdaki gibi style tanımlandığında tablo ve hücrelerin her birinin kendi kenarları olacağı için görüntüde iki tane kenar görünecektir. Kenar sayısını bire düşürmek için aşağıdaki komutlardan hangisi bu style tanımlamasına eklenmelidir?",
     "correctAnswer": "B",
     "options": {
       "A": "border-collapse: separate;",
@@ -3348,7 +3348,7 @@
   {
     "id": "3643753",
     "unitNumber": 4,
-    "text": "ifadesinde width: işlevi nedir?",
+    "text": "<pre class=\"language-markup\"><code><table style=”width:100%” ></code></pre><br/>ifadesinde width: işlevi nedir?",
     "correctAnswer": "C",
     "options": {
       "A": "Derinlik bilgisi 100% olarak gönderilir.",
@@ -3575,11 +3575,11 @@
     "text": "Tablonun birinci satırında \"Personel\" başlığı tanımlanıyor ve ad ve soyad verilerinin ayrı girilmesi için iki sütuna bölünmek isteniyor. Doğru biçimlendirme hangisidir?",
     "correctAnswer": "B",
     "options": {
-      "A": "&lt;td rowspan=”2”&gt;Personel&lt;/td&gt;",
-      "B": "&lt;th colspan=”2”&gt;Personel&lt;/th&gt;",
-      "C": "&lt;th rowspan=”2”&gt;Personel&lt;/th&gt;",
-      "D": "&lt;tr colspan=”2”&gt;Personel&lt;/tr&gt;",
-      "E": "&lt;tr rowspan=”2”&gt;Personel&lt;/tr&gt;"
+      "A": "Personel&lt;/td&gt;",
+      "B": "Personel&lt;/th&gt;",
+      "C": "Personel&lt;/th&gt;",
+      "D": "Personel&lt;/tr&gt;",
+      "E": "Personel&lt;/tr&gt;"
     },
     "explanation": "Tablolarda “colspan” sütunların bölünmesi için kullanılırken, “rowspan” satırların bölünmesi için kullanılmaktadır. Başaığın altında iki sütun oluşturmak için şu biçimlendirme yapılmalıdır: <em>Personel&lt;/th&gt;</em>"
   },
@@ -3620,7 +3620,7 @@
       "A": "&lt;newrow&gt;",
       "B": "&lt;row&gt;",
       "C": "&lt;rr&gt;",
-      "D": "&lt;tr&gt;",
+      "D": "",
       "E": ""
     },
     "explanation": "etiketi tablo içerisinde yeni bir satır açmak için kullanılır. Doğru cevap D şıkkıdır."
@@ -3631,11 +3631,11 @@
     "text": "Aşağıdakilerden hangisinde \"Adres\" isimli bir tablo başlığı oluşturulmuştur?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;th&gt;Adres&lt;/th&gt;",
-      "B": "&lt;Table&gt;Adres&lt;/Table&gt;",
-      "C": "&lt;td&gt;Adres&lt;/td&gt;",
-      "D": "&lt;tr&gt;Adres&lt;/tr&gt;",
-      "E": "<tt>Adres</tt>"
+      "A": "Adres&lt;/th&gt;",
+      "B": "Adres&lt;/Table&gt;",
+      "C": "Adres&lt;/td&gt;",
+      "D": "Adres&lt;/tr&gt;",
+      "E": "&lt;tt&gt;Adres&lt;/tt&gt;"
     },
     "explanation": "\"Adres&lt;/th&gt;\" ile \"Adres\" isimli bir tablo başlığı oluşturulur. Doğru cevap A şıkkıdır."
   },
@@ -3687,11 +3687,11 @@
     "text": "Aşağıdakilerden hangisinde rowspan kullanımı yanlıştır?",
     "correctAnswer": "E",
     "options": {
-      "A": "&lt;th rowspan=\"2\"&gt;Adres&lt;/th&gt;",
-      "B": "&lt;th rowspan=\"3\"&gt;Telefon&lt;/th&gt;",
-      "C": "&lt;th rowspan=\"8\"&gt;E-Posta&lt;/th&gt;",
-      "D": "&lt;th rowspan=\"1\"&gt;Kimlik No&lt;/th&gt;",
-      "E": "&lt;th&gt;Özet&lt;/th rowspan=\"7\"&gt;"
+      "A": "Adres&lt;/th&gt;",
+      "B": "Telefon&lt;/th&gt;",
+      "C": "E-Posta&lt;/th&gt;",
+      "D": "Kimlik No&lt;/th&gt;",
+      "E": "Özet&lt;/th rowspan=\"7\"&gt;"
     },
     "explanation": "Rowspan kapanış etiketinin içerisinde yer alamaz. Doğru cevap E şıkkıdır."
   },
@@ -3716,10 +3716,10 @@
     "correctAnswer": "A",
     "options": {
       "A": "&lt;style&gt;",
-      "B": "&lt;tr&gt;",
-      "C": "&lt;td&gt;",
-      "D": "&lt;table&gt;",
-      "E": "&lt;th&gt;"
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
     },
     "explanation": ""
   },
@@ -3785,11 +3785,11 @@
     "text": "web sayfasının (solda-sağa) tamamını kaplayacak şekilde bir tablo oluşturmak için yazılması gereken etiket aşağıdakilerden hangisinde doğru olarak verilmiştir?",
     "correctAnswer": "B",
     "options": {
-      "A": "&lt;table style:\"width=100%”&gt;",
-      "B": "&lt;table style=”width:100%”&gt;",
-      "C": "&lt;table width:100%&gt;",
-      "D": "&lt;table width=\"100%\"&gt;",
-      "E": "&lt;table style=\"100%&gt;"
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
     },
     "explanation": "&lt;tablestyle=”width:100%”&gt;//12.Satırda,websayfasınıenine(solda-sağa)tamamınıkaplayacak (yüzdeyüzünü)şekildebirtablooluşturuluyor.Burada“width:”işleviilegenişlikbilgisi100% olarak gönderiliyor."
   },
@@ -3841,11 +3841,11 @@
     "text": "Tabloda yeni satır oluşturmak için kullanılan etiket aşağıdakilerden hangisi kullanılır?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;tr&gt;",
-      "B": "&lt;th&gt;",
-      "C": "&lt;td&gt;",
-      "D": "&lt;table&gt;",
-      "E": "&lt;h1&gt;"
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
     },
     "explanation": "table rows ifadesinin kısaltmasıdır ve tabloda bir satır oluşturur."
   },
@@ -3855,10 +3855,10 @@
     "text": "Tabloda yer alan satırda bir hücre oluşturmak için kullanılan etiket aşağıdakilerden hangisidir?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;td&gt;",
-      "B": "&lt;th&gt;",
-      "C": "&lt;tr&gt;",
-      "D": "&lt;table&gt;",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
       "E": "&lt;colspan&gt;"
     },
     "explanation": "etiketi daha önce ile açılan satırda bir hücre oluştur."
@@ -3869,10 +3869,10 @@
     "text": "Tablonun ilk satırının ilk hücresinin tablo başlığı olduğunu belirterek koyu ve hücrenin ortasında yazılmasını sağlayan etiket aşağıdakilerden hangisidir?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;th&gt;",
-      "B": "&lt;td&gt;",
-      "C": "&lt;tr&gt;",
-      "D": "&lt;table&gt;",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
       "E": "&lt;rowspan&gt;"
     },
     "explanation": "tablonun ilk satırının ilk hücresinin tablo başlığı olduğunu belirterek koyu ve hücrenin ortasında yazılmasını sağlar."
@@ -3883,7 +3883,7 @@
     "text": "Aşağıdakilerden hangisinde tablolara ilişkin bir stil tanımlaması <strong><u>yapılmamıştır</u></strong>?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;tr&gt;&lt;th&gt;rowspan&lt;/th&gt;&lt;/tr&gt;",
+      "A": "rowspan",
       "B": "table { border-collapse:collapse;}",
       "C": "th, td { border: 1px solid black;}",
       "D": "th { height:50px;}",
@@ -3953,11 +3953,11 @@
     "text": "Hücredeki sütun sayısını 4 olarak belirleyen etiket aşağıdakilerden hangisidir?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;td colspan=”4”&gt; &lt;/td&gt;",
-      "B": "&lt;tr rowspan=”4”&gt;&lt;/tr&gt;",
+      "A": "&lt;/td&gt;",
+      "B": "&lt;/tr&gt;",
       "C": "colspan=”4”",
       "D": "rowspan=4”",
-      "E": "&lt;td&gt;colspan=”4” &lt;/td&gt;"
+      "E": "colspan=”4” &lt;/td&gt;"
     },
     "explanation": "&lt;/td&gt; satır 4 sütuna bölünüyor."
   },
@@ -3982,10 +3982,10 @@
     "correctAnswer": "C",
     "options": {
       "A": "&lt;head&gt; &lt;/head&gt;",
-      "B": "&lt;th&gt; &lt;/th&gt;",
-      "C": "&lt;table&gt; &lt;/table&gt;",
-      "D": "&lt;td&gt; &lt;/td&gt;",
-      "E": "&lt;tr&gt; &lt;/tr&gt;"
+      "B": "&lt;/th&gt;",
+      "C": "&lt;/table&gt;",
+      "D": "&lt;/td&gt;",
+      "E": "&lt;/tr&gt;"
     },
     "explanation": "HTML'de bir tablonun açılışı ile başlar ve &lt;/table&gt; ile sonlanır."
   },
@@ -4009,10 +4009,10 @@
     "text": "Aşağıdakilerden hangisinde HTML'de biçim oluşturmada bir tablo başlığı tanımlanmaktadır?",
     "correctAnswer": "E",
     "options": {
-      "A": "&lt;tr&gt;Tablo Başlığı&lt;/tr&gt;",
-      "B": "&lt;table&gt;Tablo Başlığı&lt;/table&gt;",
-      "C": "&lt;td&gt;Tablo Başlığı&lt;/td&gt;",
-      "D": "&lt;th&gt;Tablo Başlığı&lt;/th&gt;",
+      "A": "Tablo Başlığı&lt;/tr&gt;",
+      "B": "Tablo Başlığı&lt;/table&gt;",
+      "C": "Tablo Başlığı&lt;/td&gt;",
+      "D": "Tablo Başlığı&lt;/th&gt;",
       "E": "&lt;caption&gt;Tablo Başlığı&lt;/caption&gt;"
     },
     "explanation": "HTML'de biçim oluştururken bir tablo başlığı tanımlamak istersek &lt;caption&gt;Tablo Başlığı&lt;/caption&gt; şeklinde bir kod yazmamız gerekir."
@@ -4079,18 +4079,18 @@
     "text": "Html tablolarına veri eklemek istenildiğinde aşağıdaki etiketlerden hangisi kullanılmalıdır?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;td&gt;&lt;/td&gt;",
-      "B": "&lt;tr&gt;&lt;/tr&gt;",
-      "C": "&lt;table&gt;&lt;/table&gt;",
-      "D": "&lt;th&gt;&lt;/th&gt;",
-      "E": ""
+      "A": "&lt;/td&gt;",
+      "B": "&lt;/tr&gt;",
+      "C": "&lt;/table&gt;",
+      "D": "&lt;/th&gt;",
+      "E": "&lt;dt&gt;&lt;/dt&gt;"
     },
     "explanation": "&lt;/td&gt; table data etiketinin arasına tabloya eklemek istediğimiz veriler yazılır"
   },
   {
     "id": "3643811",
     "unitNumber": 4,
-    "text": "Html tablolarında &lt;th&gt;&lt;/th&gt; etiketinin görevi aşağıdakilerden hangisidir?",
+    "text": "Html tablolarında &lt;/th&gt; etiketinin görevi aşağıdakilerden hangisidir?",
     "correctAnswer": "D",
     "options": {
       "A": "Tabloya veri eklemek için kullanılır.",
@@ -4121,11 +4121,11 @@
     "text": "Aşağıdaki html etiketlerinden hangisi ile tabloda satır oluşturulur?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;tr&gt; …&lt;/tr&gt;",
-      "B": "&lt;td&gt; …&lt;/td&gt;",
+      "A": "…&lt;/tr&gt;",
+      "B": "…&lt;/td&gt;",
       "C": "&lt;ts&gt; …&lt;/ts&gt;",
-      "D": "<tt> …</tt>",
-      "E": "…"
+      "D": "&lt;tt&gt; …&lt;/tt&gt;",
+      "E": "&lt;p&gt; …&lt;/p&gt;"
     },
     "explanation": "…&lt;/tr&gt; // Table rows ifadesinin kısaltmasıdır ve tabloda bir satır oluşturur."
   },
@@ -4135,11 +4135,11 @@
     "text": "Aşağıdaki html etiketlerinden hangisi hücrenin tablo başlığı olduğunu belirtir?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;th&gt;...&lt;/th&gt;",
-      "B": "&lt;tr&gt;...&lt;/tr&gt;",
-      "C": "&lt;td&gt;...&lt;/td&gt;",
-      "D": "&lt;table&gt;...&lt;/table&gt;",
-      "E": ""
+      "A": "...&lt;/th&gt;",
+      "B": "...&lt;/tr&gt;",
+      "C": "...&lt;/td&gt;",
+      "D": "...&lt;/table&gt;",
+      "E": "...&lt;/br&gt;"
     },
     "explanation": "...&lt;/th&gt; // tablodaki ilgili hücrenin tablo başlığı olduğunu belirterek koyu ve hücrenin ortasında yazılmasını sağlıyor."
   },
@@ -4244,7 +4244,7 @@
   {
     "id": "3643826",
     "unitNumber": 4,
-    "text": "&lt;td colspan=\"3\"&gt;&lt;/td&gt; kod parçacığında bulunan colspan=3 parametresi ne işe yarar?",
+    "text": "&lt;/td&gt; kod parçacığında bulunan colspan=3 parametresi ne işe yarar?",
     "correctAnswer": "B",
     "options": {
       "A": "Satır sayısını 3 katına çıkarır.",
@@ -4337,7 +4337,7 @@
       "D": "output (sonuç çıktısı)",
       "E": "meter (gösterge)"
     },
-    "explanation": "Input elemanı genellikle"
+    "explanation": "Input elemanı genellikle &lt;form&gt; etiketi içinde kullanılır ve birçok formatta veri girebilmesini sağlar. Veri girişi tipi type komutuyla belirlenir ve kapama etiketi kullanılmadan özellikler eklenir."
   },
   {
     "id": "3643832",
@@ -4846,7 +4846,7 @@
   {
     "id": "3643869",
     "unitNumber": 5,
-    "text": "&lt;form&gt;Form etiketi içinde action, method ve target gibi kodlara ne ad verilir?&lt;/form&gt;",
+    "text": "",
     "correctAnswer": "B",
     "options": {
       "A": "Şablon",
@@ -4925,7 +4925,7 @@
       "D": "Tel",
       "E": "Time"
     },
-    "explanation": "Input elemanı genellikle"
+    "explanation": "Input elemanı genellikle &lt;form&gt; etiketi içinde kullanılır ve birçok formatta veri girebilmesini sağlar. Veri girişi tipi type komutuyla belirlenir ve kapama etiketi kullanılmadan özellikler eklenir."
   },
   {
     "id": "3643875",
@@ -4953,7 +4953,7 @@
       "D": "&lt;input type=“date” name=“siparisgunu”&gt;",
       "E": "&lt;input type=“checkbox” name=“siparis”&gt;"
     },
-    "explanation": "ile siparisgunu isimli bir tarih alanı oluşturulmaktadır."
+    "explanation": "&lt;input type=“date” name=“siparisgunu”&gt; ile siparisgunu isimli bir tarih alanı oluşturulmaktadır."
   },
   {
     "id": "3643877",
@@ -5126,7 +5126,7 @@
   {
     "id": "3643889",
     "unitNumber": 5,
-    "text": "Aşağıdakilerden hangisi, &lt;form&gt; etiketi içinde yer alan özelliklerden olan action ın tanımıdır?",
+    "text": "Aşağıdakilerden hangisi,",
     "correctAnswer": "B",
     "options": {
       "A": "Form verilerinin gönderilmesinde hangi HTTP yönteminin kullanılacağını belirtir.",
@@ -5331,7 +5331,7 @@
       "D": "&lt;input type=“url” name=“ticaret”&gt;",
       "E": "&lt;input type=“date” name=“ticaret”&gt;"
     },
-    "explanation": "Kullanıcının işaretleyebilmesi için onay kutusu oluşturan form tasarımı şeklindedir."
+    "explanation": "Kullanıcının işaretleyebilmesi için onay kutusu oluşturan form tasarımı &lt;input type=“checkbox” name=“ticaret”&gt; şeklindedir."
   },
   {
     "id": "3643904",
@@ -5359,7 +5359,7 @@
       "D": "&lt;input type=”file” name=”resim”&gt;",
       "E": "&lt;input type=”submit” name=”resim” multiple&gt;"
     },
-    "explanation": "ile tarayıcı üzerinden birden fazla dosya gönderilebilir."
+    "explanation": "&lt;input type=”file” name=”resim” multiple&gt; ile tarayıcı üzerinden birden fazla dosya gönderilebilir."
   },
   {
     "id": "3643906",
@@ -6701,7 +6701,7 @@
       "B": "HTML elemanlarının diğer elemanlarla arasındaki mesafeyi ayarlama",
       "C": "Bulunduğu ortamın tüm genişliğini kullanma",
       "D": "Elemanın genişliği için en büyük değeri gösterme",
-      "E": "etiketinin sayfada blok olarak görüntülenmesi sağlama"
+      "E": "&lt;a&gt; etiketinin sayfada blok olarak görüntülenmesi sağlama"
     },
     "explanation": "BÖLÜM ÖZELLİKLERİNİN BELİRLENMESİ<br/>Position kelimesi mevki, konum anlamları gelmektedir. Position özelliği ile elemanların ne tür bir konuma sahip olacağı belirlenir. Position özelliğine static, relative, fixed ve absolute değerleri verilebilmektedir. HTML sayfasındaki elemanların konumları left, right, top ve bottom özellikleri ile ayarlanabilir.<br/>Ancak bu ayarlamaların istenilen şekilde çalışabilmesini sağlamak için öncelikle position özelliği ile konum türü belirlenmelidir."
   },
@@ -7039,7 +7039,7 @@
       "D": "&lt;html5&gt;",
       "E": "&lt;header&gt;"
     },
-    "explanation": "HTML4 ile farklı programcılar başlık bölümü için<br/>, gibi farklı tanımlamalar yapabilirken HTML5 ile tüm programcılar &lt;header&gt; şeklinde bir tanımlama yapabilecektir. Doğru cevap E şıkkıdır."
+    "explanation": "HTML4 ile farklı programcılar başlık bölümü için &lt;div id=”header”&gt;, &lt;div id=”ustbolum”&gt; gibi farklı tanımlamalar yapabilirken HTML5 ile tüm programcılar &lt;header&gt; şeklinde bir tanımlama yapabilecektir. Doğru cevap E şıkkıdır."
   },
   {
     "id": "3644032",
@@ -7669,7 +7669,7 @@
       "D": "text",
       "E": "send"
     },
-    "explanation": "button elementi düğme olarak kullanılabilir. Bununla birlikte ve &lt;button&gt; elementleri de düğme olarak kullanılabilir. Düğmeler oluşturulurken btn sınıfı ile birlikte, en az bir kavramsal sınıf ya da btn-default sınıfının eklenmesi gerekmektedir."
+    "explanation": "button elementi düğme olarak kullanılabilir. Bununla birlikte ve &lt;button&gt; elementleri de düğme olarak kullanılabilir. Düğmeler oluşturulurken btn sınıfı ile birlikte, en az bir kavramsal sınıf ya da btn-default sınıfının eklenmesi gerekmektedir.&lt;/button&gt;"
   },
   {
     "id": "3644077",
@@ -7856,14 +7856,14 @@
   {
     "id": "3644090",
     "unitNumber": 7,
-    "text": "&lt;h2&gt;TATLI TARİFİ&lt;/h2&gt; Malzemeler<ul><li>0,5 lt su</li><li>100 gr şeker</li></ul>Yukarıdaki yazıları oluşturmak için aşağıda sunulan etiketlerin hangisi doğrudur?",
+    "text": "TATLI TARİFİ<br/>Malzemeler<ul><li>0,5 lt su</li><li>100 gr şeker</li></ul>Yukarıdaki yazıları oluşturmak için aşağıda sunulan etiketlerin hangisi doğrudur?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;h1&gt;TATLI TARİFİ&lt;/h1&gt;<br/>&lt;h2&gt;Malzemeler&lt;/h2&gt;<ul><li>0,5 lt su</li><li>100 gr şeker</li></ul>",
-      "B": "&lt;h5&gt;TATLI TARİFİ&lt;/h5&gt;<br/>&lt;h1&gt;Malzemeler&lt;/h1&gt;<ul><li>0,5 lt su</li><li>100 gr şeker</li></ul>",
-      "C": "&lt;h1&gt;TATLI TARİFİ&lt;/h1&gt;<br/>&lt;h2&gt;Malzemeler&lt;/h2&gt;<li><ul>0,5 lt su</ul><ul>100 gr şeker</ul></li>",
-      "D": "&lt;h1&gt;TATLI TARİFİ&lt;/h1&gt;<br/>&lt;h2&gt;Malzemeler&lt;/h2&gt;<ol><li>0,5 lt su</li><li>100 gr şeker</li></ol>",
-      "E": "&lt;h1&gt;TATLI TARİFİ&lt;/h1&gt;<br/>&lt;h2&gt;Malzemeler&lt;/h2&gt;<br/><dt><br/></dt><dd>0,5 lt su</dd><br/><dd>100 gr şeker&lt;/d&gt;<br/>&lt;/td&gt;</dd>"
+      "A": "TATLI TARİFİ<br/>Malzemeler<ul><br/><li>0,5 lt su</li><br/><li>100 gr şeker</li><br/></ul>",
+      "B": "TATLI TARİFİ<br/>Malzemeler<ul><br/><li>0,5 lt su</li><br/><li>100 gr şeker</li><br/></ul>",
+      "C": "TATLI TARİFİ<br/>Malzemeler<br/><li></li>",
+      "D": "TATLI TARİFİ<br/>Malzemeler<ol><br/><li>0,5 lt su</li><br/><li>100 gr şeker</li><br/></ol>",
+      "E": "TATLI TARİFİ<br/>Malzemeler<br/>&lt;dt&gt;<br/>&lt;dd&gt;0,5 lt su&lt;/dd&gt;<br/>&lt;dd&gt;100 gr şeker&lt;/d&gt;"
     },
     "explanation": "<img src=\"https://ets.anadolu.edu.tr/storage/nfs/questions/1571a154f6383e101409699dd74aa3f0.png\" alt=\"\" width=\"633\" height=\"224\"/>"
   },
@@ -7898,7 +7898,7 @@
   {
     "id": "3644093",
     "unitNumber": 7,
-    "text": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; &lt; del&gt;metin metne etkisi aşağıdakilerden hangisidir?<br/>&lt;/div&gt; &lt;/div&gt;",
+    "text": "&lt; del&gt;metin&lt;/del &gt; metne etkisi aşağıdakilerden hangisidir?",
     "correctAnswer": "C",
     "options": {
       "A": "Metnin arkasını boyayarak vurgular.",
@@ -7912,7 +7912,7 @@
   {
     "id": "3644094",
     "unitNumber": 7,
-    "text": "&lt;div class=\"layoutArea\"&gt; &lt;div class=\"column\"&gt; <strong>metin<!-- strong--> kodunun metne etkisi aşağıdakilerden hangisidir?</strong><br/><strong> &lt;/div&gt; &lt;/div&gt;</strong>",
+    "text": "<strong>metin&lt;/ strong&gt; kodunun metne etkisi aşağıdakilerden hangisidir?</strong>",
     "correctAnswer": "A",
     "options": {
       "A": "Metni vurgulamak için kalın yazar.",
@@ -7977,7 +7977,7 @@
       "D": "II ve III",
       "E": "I, II ve III"
     },
-    "explanation": "Üç farklı HTML elementi düğme olarak kullanılabilir:<br/>, &lt;button&gt; ve ."
+    "explanation": "Üç farklı HTML elementi düğme olarak kullanılabilir:<br/>&lt;a&gt;, &lt;button&gt; ve &lt;input&gt;."
   },
   {
     "id": "3644099",
@@ -8042,9 +8042,9 @@
     "correctAnswer": "A",
     "options": {
       "A": "&lt;mark&gt;",
-      "B": "",
-      "C": "",
-      "D": "",
+      "B": "&lt;s&gt;",
+      "C": "&lt;del&gt;",
+      "D": "&lt;ins&gt;",
       "E": ""
     },
     "explanation": "mark : Metnin arkasını boyayarak vurgular. &lt;mark&gt;metin&lt;/mark&gt;"
@@ -8052,7 +8052,7 @@
   {
     "id": "3644104",
     "unitNumber": 7,
-    "text": "<del>metin</del><br/>Yukarıda verilen etiketin kullanımı sonucunda aşağıdakilerden hangisinin olması beklenir?",
+    "text": "&lt;del&gt;metin&lt;/del&gt;<br/>Yukarıda verilen etiketin kullanımı sonucunda aşağıdakilerden hangisinin olması beklenir?",
     "correctAnswer": "A",
     "options": {
       "A": "Silinmiş metni vurgulamak için üstünü çizer",

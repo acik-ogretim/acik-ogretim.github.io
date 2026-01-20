@@ -1,5 +1,5 @@
 
-import { cleanHtml } from './utils/clean-html';
+import { cleanHtml } from './utils/clean-html.ts';
 
 const testCases = [
     {
@@ -31,6 +31,34 @@ const testCases = [
         name: "User Data: Pre tags",
         input: "Aşağıdaki işlemler sonrasında yığın görüntüsü ne olacaktır?<br/><pre> mystack.push(1);<br /> mystack.push(2);</pre>",
         expected: "Aşağıdaki işlemler sonrasında yığın görüntüsü ne olacaktır?<br/><pre> mystack.push(1);<br/> mystack.push(2);</pre>"
+    },
+    {
+        name: "C/C++ Include Directives",
+        input: "#include <stdio.h><br/>#include <math.h><br/>int main()",
+        expected: "#include &lt;stdio.h&gt;<br/>#include &lt;math.h&gt;<br/>int main()"
+    },
+    {
+        name: "OCR Artifacts: Control Characters to Letters",
+        // \x1d -> i, \x1e -> i, \x1f -> i
+        input: "B\u001dlgisayar İşlemc\u001ds\u001d",
+        expected: "Bilgisayar İşlemcisi"
+    },
+    {
+        name: "OCR Artifacts: Ligatures",
+        // \x18 -> fl, \x19 -> fi
+        input: "hede\u0018enir ve sını\u0018andırılır",
+        expected: "hedeflenir ve sınıflandırılır"
+    },
+    {
+        name: "OCR Artifacts: Turkish Characters",
+        // \x16 -> ü, \x12 -> ş, \x14 -> ğ
+        input: "\u0016retim ve da\u0014ıtım a\u0014ı",
+        expected: "üretim ve dağıtım ağı"
+    },
+    {
+        name: "Technical <del> tags",
+        input: "<del>metin</del>",
+        expected: "&lt;del&gt;metin&lt;/del&gt;"
     }
 ];
 

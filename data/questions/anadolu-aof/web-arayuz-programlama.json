@@ -117,11 +117,11 @@
     "text": "Ofis programlarında hazırlanan tablolara benzer yapıda tabloları HTML sayfalarında da hazırlamak için hangi etiket kullanılır ?",
     "correctAnswer": "A",
     "options": {
-      "A": "&lt;table&gt;",
-      "B": "&lt;thead&gt;",
-      "C": "&lt;tbody&gt;",
-      "D": "&lt;th&gt;",
-      "E": "&lt;td&gt;"
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
     },
     "explanation": "Ofis programlarında hazırlanan tablolara benzer yapıda tabloları HTML sayfalarında da hazırlamamız gerekebilir. Bunun için etiketi bu amaçla hazırlanmıştır."
   },
@@ -268,7 +268,21 @@
   {
     "id": "3852499",
     "unitNumber": 1,
-    "text": "HTML sayfalarında tablo oluşturmak için başlık kısmında <pre> &lt;thead&gt; kullanıldıktan sonra içerisine bir &lt;tr&gt; etiketi alır ve bu etiket içerisine hücre başlıkları ..... ile eklenir.</pre><br/>Yukarıdaki ifadede boş bırakılan yere aşağıdaki kod etiketlerinden hangisi gelmelidir?",
+    "text": "HTML sayfalarında tablo oluşturmak için başlık kısmında <pre> <thead> kullanıldıktan sonra içerisine bir <tr> etiketi alır ve bu etiket içerisine hücre başlıkları ..... ile eklenir.</pre><br/>Yukarıdaki ifadede boş bırakılan yere aşağıdaki kod etiketlerinden hangisi gelmelidir?",
+    "correctAnswer": "C",
+    "options": {
+      "A": "<pre><td></pre>",
+      "B": "<pre><tbody></pre>",
+      "C": "<pre><th></pre>",
+      "D": "<pre>&lt;textarea&gt;</pre>",
+      "E": "<pre>&lt;select&gt;</pre>"
+    },
+    "explanation": "Başlık kısmında kullanıldıktan sonra içerisine bir etiketi alır ve bu etiket içerisine hücre başlıkları ile eklenir.<br/>Başlık kısmında <pre><thead> kullanıldıktan sonra içerisine bir <tr> etiketi alır ve bu etiket içerisine hücre başlıkları <th> ile eklenir. </pre> Bu nedenle C seçeneği doğrudur."
+  },
+  {
+    "id": "3852500",
+    "unitNumber": 1,
+    "text": "Başlık kısmında kullanıldıktan sonra içerisine bir etiketi alır ve bu etiket içerisine hücre başlıkları ..... ile eklenir.<br/>Yukarıda yer verilen ifadede boş bırakılan yere aşağıda verilen kodlardan hangisi gelmelidir?",
     "correctAnswer": "C",
     "options": {
       "A": "",
@@ -276,20 +290,6 @@
       "C": "",
       "D": "",
       "E": ""
-    },
-    "explanation": "Başlık kısmında kullanıldıktan sonra içerisine bir etiketi alır ve bu etiket içerisine hücre başlıkları ile eklenir.<br/>Başlık kısmında <pre><thead> kullanıldıktan sonra içerisine bir <tr> etiketi alır ve bu etiket içerisine hücre başlıkları <th> ile eklenir. </pre> Bu nedenle C seçeneği doğrudur."
-  },
-  {
-    "id": "3852500",
-    "unitNumber": 1,
-    "text": "Başlık kısmında &lt;thead&gt; kullanıldıktan sonra içerisine bir &lt;tr&gt; etiketi alır ve bu etiket içerisine hücre başlıkları ..... ile eklenir.<br/>Yukarıda yer verilen ifadede boş bırakılan yere aşağıda verilen kodlardan hangisi gelmelidir?",
-    "correctAnswer": "C",
-    "options": {
-      "A": "&lt;td&gt;",
-      "B": "&lt;tbody&gt;",
-      "C": "&lt;th&gt;",
-      "D": "&lt;textarea&gt;",
-      "E": "&lt;select&gt;"
     },
     "explanation": "Başlık kısmında kullanıldıktan sonra içerisine bir etiketi alır ve bu etiket içerisine hücre başlıkları ile eklenir. bu nedenle C seçeneği doğrudur."
   },
@@ -310,14 +310,14 @@
   {
     "id": "3852767",
     "unitNumber": 1,
-    "text": "HTML sayfalarında tablo oluşturmak için başlık kısmında <pre> &lt;thead&gt; kullanıldıktan sonra içerisine bir &lt;tr&gt; etiketi alır ve bu etiket içerisine hücre başlıkları ..... ile eklenir.</pre><br/>Yukarıdaki ifadede boş bırakılan yere aşağıdaki kod etiketlerinden hangisi gelmelidir?",
+    "text": "HTML sayfalarında tablo oluşturmak için başlık kısmında <pre> <thead> kullanıldıktan sonra içerisine bir <tr> etiketi alır ve bu etiket içerisine hücre başlıkları ..... ile eklenir.</pre><br/>Yukarıdaki ifadede boş bırakılan yere aşağıdaki kod etiketlerinden hangisi gelmelidir?",
     "correctAnswer": "C",
     "options": {
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
+      "A": "<pre><td></pre>",
+      "B": "<pre><tbody></pre>",
+      "C": "<pre><th></pre>",
+      "D": "<pre><textarea></pre>",
+      "E": "<pre><select></pre>"
     },
     "explanation": "Başlık kısmında kullanıldıktan sonra içerisine bir etiketi alır ve bu etiket içerisine hücre başlıkları ile eklenir.<br/>Başlık kısmında <pre><thead> kullanıldıktan sonra içerisine bir <tr> etiketi alır ve bu etiket içerisine hücre başlıkları <th> ile eklenir. </pre> Bu nedenle C seçeneği doğrudur."
   },
@@ -879,7 +879,7 @@
       "D": "Satır ve sütunlar arasında boşluk oluşturmak",
       "E": "Grid ögelerini başka hücrelere taşımak"
     },
-    "explanation": "Grid Oluşturma<br/>Grid ile ilgili özellikleri öğrenirken, 3 satır ve 4 sütundan oluşan bir grid tasarlayıp örnekteki elemanları bu gride yerleştirelim.<br/>KOD:<br/>.container{<br/>display: grid;<br/>grid-template-rows: 200px 200px 200px;<br/>grid-template-columns: 200px 200px 200px 200px;<br/>}<br/>Kapsayıcı elemanı grid yapmak için<br/>• display:grid komutunu yazıyoruz. Komut bu şekliyle block yapısında olacaktır.<br/>display:inline-grid ile inline yapıda grid oluşturabilirsiniz. Bu özelliklerin yanında, elema\u0002nımız hem bir gridin elemanı hem de başka bir grid yapısının kapsayıcısı ise display:subgrid özelliği uygulanabilir.<br/>• <strong>Gridin satır sayısını belirtmek için grid-template-rows:</strong> 200px 200px 200px; komutunu giriyoruz. Burada 3 satır olmasını istediğimiz için 3 adet değer giriyoruz. Satır boyutlarını auto girerek boyutlandırmanın alana yayılmasını sağlayabiliriz."
+    "explanation": "Grid Oluşturma<br/>Grid ile ilgili özellikleri öğrenirken, 3 satır ve 4 sütundan oluşan bir grid tasarlayıp örnekteki elemanları bu gride yerleştirelim.<br/>KOD:<br/>.container{<br/>display: grid;<br/>grid-template-rows: 200px 200px 200px;<br/>grid-template-columns: 200px 200px 200px 200px;<br/>}<br/>Kapsayıcı elemanı grid yapmak için<br/>• display:grid komutunu yazıyoruz. Komut bu şekliyle block yapısında olacaktır.<br/>display:inline-grid ile inline yapıda grid oluşturabilirsiniz. Bu özelliklerin yanında, elemanımız hem bir gridin elemanı hem de başka bir grid yapısının kapsayıcısı ise display:subgrid özelliği uygulanabilir.<br/>• <strong>Gridin satır sayısını belirtmek için grid-template-rows:</strong> 200px 200px 200px; komutunu giriyoruz. Burada 3 satır olmasını istediğimiz için 3 adet değer giriyoruz. Satır boyutlarını auto girerek boyutlandırmanın alana yayılmasını sağlayabiliriz."
   },
   {
     "id": "3852462",
@@ -1500,7 +1500,7 @@
   {
     "id": "3852693",
     "unitNumber": 6,
-    "text": "açıklama 1<br/>açıklama 2<br/>açıklama 3<br/>Yukarıda yer alan HTML dokümanına dayalı olarak “açıklama 3” metnini dokümandan kaldırmak için aşağıdaki kod kullanımlarından hangisi doğrudur?",
+    "text": "&lt;p class=\"paragraf\" id=\"a1\"&gt;açıklama 1&lt;/p&gt;<br/>&lt;p class=\"paragraf\" id=\"a2\"&gt;açıklama 2&lt;/p&gt;<br/>&lt;p class=\"paragraf\" id=\"a3\"&gt;açıklama 3&lt;/p&gt;<br/>&lt;/div&gt;<br/>Yukarıda yer alan HTML dokümanına dayalı olarak “açıklama 3” metnini dokümandan kaldırmak için aşağıdaki kod kullanımlarından hangisi doğrudur?",
     "correctAnswer": "A",
     "options": {
       "A": "document.getElementById(\"a3\").remove()",
@@ -1514,7 +1514,7 @@
   {
     "id": "3852694",
     "unitNumber": 6,
-    "text": "parça 1<br/>parça 2<br/>parça 3<br/>Yukarıdaki yer alan HTML dokümanında “parça 2” metnini, “yeni parça” olarak değiştirmek için aşağıdaki kod kullanımlarından hangisi doğru olarak verilmiştir?",
+    "text": "&lt;p class=\"parça\" id=\"p1\"&gt;parça 1&lt;/p&gt;<br/>&lt;p class=\"parça\" id=\"p2\"&gt;parça 2&lt;/p&gt;<br/>&lt;p class=\"parça\" id=\"p3\"&gt;parça 3&lt;/p&gt;<br/>&lt;/div&gt;<br/>Yukarıdaki yer alan HTML dokümanında “parça 2” metnini, “yeni parça” olarak değiştirmek için aşağıdaki kod kullanımlarından hangisi doğru olarak verilmiştir?",
     "correctAnswer": "A",
     "options": {
       "A": "document.querySelector(\"#p2\").innerHTML=\"yeni parça\"",

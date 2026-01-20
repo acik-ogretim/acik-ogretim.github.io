@@ -25,7 +25,7 @@ def normalize(text: str) -> str:
 
     # 1. REMOVE all <br> variants completely (treat as whitespace)
     # Also remove HR
-    t = re.sub(r'<br\s*/?\s*>', ' ', text, flags=re.IGNORECASE)
+    t = re.sub(r'<br\s*/?\s*>', ' ', t, flags=re.IGNORECASE)
     t = re.sub(r'<hr\s*/?\s*>', ' ', t, flags=re.IGNORECASE)
 
     # 2. Normalize <a ...>text</a> -> text (remove all links, keep text)
@@ -41,14 +41,19 @@ def normalize(text: str) -> str:
     t = re.sub(r'\s+alt=""', ' alt', t)
     t = re.sub(r'\s+alt=""\s*', ' alt ', t)
 
-    # Remove DEL char (U+007F)
-    t = re.sub(r'\x7f', '', t)
+    # Remove soft hyphens and other zero-width artifacts
+    t = re.sub(r'[\xad\ufeff\u200b]', '', t)
+
+    # Handle AÖF specific control characters (map 1d, 1e, 1f to 'i', remove others)
+    # Handle both raw characters and JSON-escaped versions (\u001d, \b, etc.)
+    t = re.sub(r'[\x1d\x1e\x1f]|\\u001[def]', 'i', t)
+    t = re.sub(r'[\x00-\x1f\x7f]|\\u00(?:0[0-9a-f]|1[0-9a-bc]|20|7f)|\\(?:[bnrtf])', '', t, flags=re.IGNORECASE)
 
     # 5. REMOVE all dashes/hyphens completely
     t = re.sub(r'[\u2013\u2014\u2212\u2010\u2011\u2012\u2015\-]', '', t)
 
     # 6. Remove semantic/formatting containers but keep content
-    t = re.sub(r'</?(?:blockquote|h[1-6]|section|article|div|span|header|footer|font|strong|b|em|i|u|small|big|code|pre)[^>]*>', '', t, flags=re.IGNORECASE)
+    t = re.sub(r'</?(?:blockquote|h[1-6]|section|article|div|span|header|footer|font|strong|b|em|i|u|small|big|code|pre|ul|ol|li|p|table|tbody|tr|td|th)[^>]*>', '', t, flags=re.IGNORECASE)
 
     # 7. Normalize self-closing tags
     t = re.sub(r'\s*/+>', '>', t)
