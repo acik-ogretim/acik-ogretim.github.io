@@ -7,26 +7,26 @@ import { normalizeTextForMap, saveQuestions, slugify } from './utils/sync-core.t
 // Configurations
 const PORTAL_ROOT = process.cwd();
 const DENEMELER_ROOT = path.resolve(PORTAL_ROOT, '../ataaof-denemeler');
-const SOURCE_JSON_DIR = path.join(DENEMELER_ROOT, 'output/Anadolu/json');
-const TARGET_DIR = path.join(PORTAL_ROOT, 'data/questions/anadolu-aof');
+const MCP_ROOT = path.resolve(PORTAL_ROOT, '../acik-ogretim-mcp');
 
+const TARGET_DIR = path.join(PORTAL_ROOT, 'data/questions/anadolu-aof');
 
 function processExerciseList(list: any[]): AppQuestion[] {
     const out: AppQuestion[] = [];
     list.forEach(q => {
-        if (!q.SoruMetni && !q.Text) return; // Basic validation
+        if (!q.SoruMetni && !q.Text) return;
 
         const mapped: AppQuestion = {
             id: String(q.SoruID || q.QuestionId),
             unitNumber: q.Unite || q.UniteNo || 0,
-            text: cleanHtml(q.SoruMetni || q.Text),
+            text: cleanHtml(q.SoruMetni || q.Text, { university: 'anadolu' }),
             correctAnswer: (q.DogruCevap || q.CorrectAnswer || "").trim().toUpperCase(),
             options: {},
             explanation: ""
         };
 
         ['A', 'B', 'C', 'D', 'E'].forEach(opt => {
-            if (q[opt]) mapped.options[opt] = cleanHtml(q[opt]);
+            if (q[opt]) mapped.options[opt] = cleanHtml(q[opt], { university: 'anadolu' });
         });
 
         let rawExpl = q.Aciklama || q.AnswerExplanation || "";
@@ -35,8 +35,6 @@ function processExerciseList(list: any[]): AppQuestion[] {
         if (isGarbage(rawTitle)) rawTitle = "";
         if (isGarbage(rawExpl)) rawExpl = "";
 
-        // 2. Swap Logic
-        // If Title is unusually long (>200 chars) AND Explanation is short (<100 chars)
         if (rawTitle.length > 200 && rawExpl.length < 100) {
             const temp = rawTitle;
             rawTitle = rawExpl;
@@ -44,44 +42,32 @@ function processExerciseList(list: any[]): AppQuestion[] {
         }
 
         let finalExpl = rawExpl;
-
         if (rawTitle) {
             if (rawExpl) {
                 const tNorm = toPlainText(rawTitle);
                 const eNorm = toPlainText(rawExpl);
-                const cTitle = cleanHtml(rawTitle);
-                const cExpl = cleanHtml(rawExpl);
-
+                const cTitle = cleanHtml(rawTitle, { university: 'anadolu' });
+                const cExpl = cleanHtml(rawExpl, { university: 'anadolu' });
                 if (eNorm.includes(tNorm) || tNorm.includes(eNorm)) {
-                    // Prefer the version that has more content (HTML/Images)
                     finalExpl = (cExpl.length >= cTitle.length) ? cExpl : cTitle;
                 } else {
-                    // Concatenate CLEANED strings to prevent unclosed tag swallowing
                     finalExpl = `${cTitle}<br/>${cExpl}`;
                 }
             } else {
-                finalExpl = cleanHtml(rawTitle);
+                finalExpl = cleanHtml(rawTitle, { university: 'anadolu' });
             }
         } else if (rawExpl) {
-            finalExpl = cleanHtml(rawExpl);
-        } else {
-            finalExpl = "";
+            finalExpl = cleanHtml(rawExpl, { university: 'anadolu' });
         }
 
         if (finalExpl && finalExpl.length > 5) {
-            // FIRST: Check if explanation has an image or table BEFORE cleaning
             const hasImage = finalExpl.includes('<img');
             const hasTable = finalExpl.includes('<table');
+            let cleanedExpl = cleanHtml(finalExpl, { isExplanation: true, disableChoiceCleanup: true, university: 'anadolu' });
 
-            let cleanedExpl = cleanHtml(finalExpl, { isExplanation: true, disableChoiceCleanup: true });
-
-            if (hasImage || hasTable) {
-                // Do nothing - preserve explanation exactly as-is
-            } else {
+            if (!hasImage && !hasTable) {
                 const correctOptKey = mapped.correctAnswer.trim().toUpperCase();
                 const optPlain = mapped.options[correctOptKey] ? toPlainText(mapped.options[correctOptKey]).trim().toLowerCase() : "";
-
-                // 1. Line-based Surgical Trimming (Only standalone lines)
                 let explLines = cleanedExpl.split(/<br\s*\/?>/i);
                 let explChanged = false;
 
@@ -93,7 +79,6 @@ function processExerciseList(list: any[]): AppQuestion[] {
                         explChanged = true;
                     }
                 }
-
                 if (explLines.length > 0) {
                     const last = explLines[explLines.length - 1];
                     if (isGarbage(last)) {
@@ -101,30 +86,19 @@ function processExerciseList(list: any[]): AppQuestion[] {
                         explChanged = true;
                     }
                 }
-
                 if (explChanged) {
                     const joined = explLines.join('<br/>').trim();
-                    const residue = toPlainText(joined).trim();
-                    if (residue.length < 15) {
-                        cleanedExpl = "";
-                    } else {
-                        cleanedExpl = joined;
-                    }
+                    cleanedExpl = toPlainText(joined).trim().length < 15 ? "" : joined;
                 }
-
-                // 2. Conservative Full Clear Check
                 const plain = toPlainText(cleanedExpl).trim().toLowerCase();
                 const charDiff = plain.length - optPlain.length;
                 const lenRatio = Math.min(plain.length, optPlain.length) / (Math.max(plain.length, optPlain.length) || 1);
-
                 if (plain.length < 2 || isGarbage(cleanedExpl) || (optPlain && areTextsSimilar(plain, optPlain) && (lenRatio > 0.8 || charDiff < 20))) {
                     cleanedExpl = "";
                 }
             }
-
-            mapped.explanation = cleanedExpl.trim() === "" ? "" : cleanedExpl.trim();
+            mapped.explanation = cleanedExpl.trim();
         }
-
         out.push(mapped);
     });
     return out;
@@ -136,18 +110,13 @@ function processExamList(list: any[]): AppQuestion[] {
         const qId = q.id;
         const matId = q.material_id || "unknown";
         const uniqueId = `exam-${matId}-${qId}`;
-
-        let uNo = 0;
-        if (typeof q.unitNumber === 'number') uNo = q.unitNumber;
-        else if (typeof q.UniteNo === 'number') uNo = q.UniteNo;
-        else if (typeof q.Unite === 'number') uNo = q.Unite;
+        let uNo = q.unitNumber ?? q.UniteNo ?? q.Unite ?? 0;
 
         const txt = q.question || q.text || "";
-
         const mapped: AppQuestion = {
             id: uniqueId,
             unitNumber: uNo,
-            text: cleanHtml(txt),
+            text: cleanHtml(txt, { university: 'anadolu' }),
             correctAnswer: ["A", "B", "C", "D", "E"][q.correctIndex] || "",
             options: {},
             explanation: ""
@@ -156,36 +125,27 @@ function processExamList(list: any[]): AppQuestion[] {
         if (q.options && Array.isArray(q.options)) {
             q.options.forEach((opt: string, idx: number) => {
                 const key = ["A", "B", "C", "D", "E"][idx];
-                if (key) mapped.options[key] = cleanHtml(opt);
+                if (key) mapped.options[key] = cleanHtml(opt, { university: 'anadolu' });
             });
         }
 
         if (q.explanation) {
-            // FIRST: Check if explanation has an image or table BEFORE cleaning
             const hasImage = q.explanation.includes('<img');
             const hasTable = q.explanation.includes('<table');
+            let cleanedExpl = cleanHtml(q.explanation, { isExplanation: true, disableChoiceCleanup: true, university: 'anadolu' });
 
-            let cleanedExpl = cleanHtml(q.explanation, { isExplanation: true, disableChoiceCleanup: true });
-
-            if (hasImage || hasTable) {
-                // Do nothing - preserve explanation exactly as-is
-            } else {
+            if (!hasImage && !hasTable) {
                 const correctOptKey = mapped.correctAnswer.trim().toUpperCase();
                 const optPlain = mapped.options[correctOptKey] ? toPlainText(mapped.options[correctOptKey]).trim().toLowerCase() : "";
-
-                // 1. Line-based Surgical Trimming
                 let explLines = cleanedExpl.split(/<br\s*\/?>/i);
                 let explChanged = false;
-
                 if (explLines.length > 0) {
                     const first = explLines[0];
-                    const firstPlain = toPlainText(first).trim().toLowerCase();
-                    if (isGarbage(first) || (optPlain && areTextsSimilar(firstPlain, optPlain))) {
+                    if (isGarbage(first) || (optPlain && areTextsSimilar(toPlainText(first).trim().toLowerCase(), optPlain))) {
                         explLines.shift();
                         explChanged = true;
                     }
                 }
-
                 if (explLines.length > 0) {
                     const last = explLines[explLines.length - 1];
                     if (isGarbage(last)) {
@@ -193,85 +153,78 @@ function processExamList(list: any[]): AppQuestion[] {
                         explChanged = true;
                     }
                 }
-
                 if (explChanged) {
                     const joined = explLines.join('<br/>').trim();
-                    const residue = toPlainText(joined).trim();
-                    if (residue.length < 15) {
-                        cleanedExpl = "";
-                    } else {
-                        cleanedExpl = joined;
-                    }
+                    cleanedExpl = toPlainText(joined).trim().length < 15 ? "" : joined;
                 }
-
-                // 2. Conservative Full Clear Check
                 const plain = toPlainText(cleanedExpl).trim().toLowerCase();
                 const charDiff = plain.length - optPlain.length;
                 const lenRatio = Math.min(plain.length, optPlain.length) / (Math.max(plain.length, optPlain.length) || 1);
-
                 if (plain.length < 2 || isGarbage(cleanedExpl) || (optPlain && areTextsSimilar(plain, optPlain) && (lenRatio > 0.8 || charDiff < 20))) {
                     cleanedExpl = "";
                 }
             }
-            mapped.explanation = cleanedExpl.trim() === "" ? "" : cleanedExpl.trim();
-        } else {
-            mapped.explanation = "";
+            mapped.explanation = cleanedExpl.trim();
         }
-
         out.push(mapped);
     });
     return out;
 }
 
-
-function processAll() {
-    if (!fs.existsSync(SOURCE_JSON_DIR)) {
-        console.error(`Source directory not found: ${SOURCE_JSON_DIR}`);
-        return;
-    }
+async function processAll() {
+    const enrichedSource = path.join(MCP_ROOT, 'data/raw/anadolu-aof');
+    const legacySource = path.join(DENEMELER_ROOT, 'output/Anadolu/json');
 
     const courseFiles: { [slug: string]: { exercises: string[], exams: string[] } } = {};
-    const terms = fs.readdirSync(SOURCE_JSON_DIR);
 
-    terms.forEach(term => {
-        if (term === '.DS_Store') return;
-        const termPath = path.join(SOURCE_JSON_DIR, term);
-        try { if (!fs.statSync(termPath).isDirectory()) return; } catch { return; }
-
-        const files = fs.readdirSync(termPath);
-        files.forEach(f => {
-            if (!f.endsWith('.json')) return;
-            const parts = f.replace('.json', '').split(' - ');
-            if (parts.length < 4) return;
-
-            const courseName = parts[2];
-            const type = parts[3];
-            const suffix = parts[4] || "";
-
-            if (suffix === 'Raw') return;
-            if (type !== 'Alıştırma Soruları' && type !== 'Çıkmış Sorular') return;
-            if (type === 'Çıkmış Sorular' && suffix !== 'Enriched') return;
-
-            const slug = slugify(courseName);
+    if (fs.existsSync(enrichedSource)) {
+        console.log(`Using Enriched source: ${enrichedSource}`);
+        const slugs = fs.readdirSync(enrichedSource);
+        slugs.forEach(slug => {
+            if (slug === '.DS_Store') return;
+            const coursePath = path.join(enrichedSource, slug);
+            if (!fs.statSync(coursePath).isDirectory()) return;
             if (!courseFiles[slug]) courseFiles[slug] = { exercises: [], exams: [] };
-
-            const fullPath = path.join(termPath, f);
-
-            if (type === 'Alıştırma Soruları') {
-                courseFiles[slug].exercises.push(fullPath);
-            } else if (type === 'Çıkmış Sorular') {
-                courseFiles[slug].exams.push(fullPath);
-            }
+            const exPath = path.join(coursePath, 'alistirma-sorulari.json');
+            if (fs.existsSync(exPath)) courseFiles[slug].exercises.push(exPath);
+            const emPath = path.join(coursePath, 'cikmis-sorular.json');
+            if (fs.existsSync(emPath)) courseFiles[slug].exams.push(emPath);
         });
-    });
+    }
 
-    console.log(`Found ${Object.keys(courseFiles).length} courses in Enriched source.`);
+    if (fs.existsSync(legacySource)) {
+        console.log(`Checking Legacy source: ${legacySource}`);
+        const terms = fs.readdirSync(legacySource);
+        terms.forEach(term => {
+            if (term === '.DS_Store') return;
+            const termPath = path.join(legacySource, term);
+            try { if (!fs.statSync(termPath).isDirectory()) return; } catch { return; }
+            const files = fs.readdirSync(termPath);
+            files.forEach(f => {
+                if (!f.endsWith('.json')) return;
+                const parts = f.replace('.json', '').split(' - ');
+                if (parts.length < 4) return;
+                const courseName = parts[2];
+                const type = parts[3];
+                const suffix = parts[4] || "";
+                if (suffix === 'Raw') return;
+                if (type !== 'Alıştırma Soruları' && type !== 'Çıkmış Sorular') return;
+                if (type === 'Çıkmış Sorular' && suffix !== 'Enriched') return;
+                const slug = slugify(courseName);
+                if (!courseFiles[slug]) courseFiles[slug] = { exercises: [], exams: [] };
+                const fullPath = path.join(termPath, f);
+                if (type === 'Alıştırma Soruları') courseFiles[slug].exercises.push(fullPath);
+                else if (type === 'Çıkmış Sorular') courseFiles[slug].exams.push(fullPath);
+            });
+        });
+    }
+
+    console.log(`Processing ${Object.keys(courseFiles).length} courses...`);
 
     for (const slug of Object.keys(courseFiles)) {
         const fileSet = courseFiles[slug];
         let allQuestions: AppQuestion[] = [];
         const seenIds = new Set<string>();
-
         const textToUnitMap = new Map<string, number>();
 
         const collect = (list: AppQuestion[]) => {
@@ -279,34 +232,26 @@ function processAll() {
                 if (!seenIds.has(q.id)) {
                     allQuestions.push(q);
                     seenIds.add(q.id);
-                    if (q.unitNumber > 0) {
-                        textToUnitMap.set(normalizeTextForMap(q.text), q.unitNumber);
-                    }
+                }
+                if (q.unitNumber > 0) {
+                    textToUnitMap.set(normalizeTextForMap(q.text), q.unitNumber);
                 }
             });
         };
 
         fileSet.exercises.forEach(fp => {
             try {
-                const rawContent = fs.readFileSync(fp, 'utf-8');
-                // Aggressive Clean: Replace ALL control chars (including \n \r \t) with space.
-                // This fixes literal newlines in strings, and makes the whole JSON single-line (valid).
-                const cleanedRaw = rawContent.replace(/[\u2028\u2029]/g, ' ').replace(/[\x00-\x1F]/g, ' ');
-                const raw = JSON.parse(cleanedRaw);
-                const questions = processExerciseList(Array.isArray(raw) ? raw : []);
-                collect(questions);
-            } catch (e: any) { console.warn(`Error processing exercise ${fp}:`, e.message); }
+                const raw = JSON.parse(fs.readFileSync(fp, 'utf-8').replace(/[\u2028\u2029]/g, ' ').replace(/[\x00-\x1F]/g, ' '));
+                collect(processExerciseList(Array.isArray(raw) ? raw : []));
+            } catch (e: any) { console.warn(`Error ${fp}:`, e.message); }
         });
 
         fileSet.exams.forEach(fp => {
             try {
-                const rawContent = fs.readFileSync(fp, 'utf-8');
-                const cleanedRaw = rawContent.replace(/[\u2028\u2029]/g, ' ').replace(/[\x00-\x1F]/g, ' ');
-                const raw = JSON.parse(cleanedRaw);
+                const raw = JSON.parse(fs.readFileSync(fp, 'utf-8').replace(/[\u2028\u2029]/g, ' ').replace(/[\x00-\x1F]/g, ' '));
                 const list = Array.isArray(raw) ? raw : (raw.questions || []);
-                const questions = processExamList(list);
-                collect(questions);
-            } catch (e: any) { console.warn(`Error processing exam ${fp}:`, e.message); }
+                collect(processExamList(list));
+            } catch (e: any) { console.warn(`Error ${fp}:`, e.message); }
         });
 
         let backfilledCount = 0;
@@ -320,10 +265,8 @@ function processAll() {
             }
         });
 
-        const extraLog = backfilledCount > 0 ? `[Backfilled: ${backfilledCount}]` : '';
-        saveQuestions(slug, allQuestions, TARGET_DIR, extraLog);
+        saveQuestions(slug, allQuestions, TARGET_DIR, backfilledCount > 0 ? `[Backfilled: ${backfilledCount}]` : '');
     }
-
     console.log("Sync Enriched Complete.");
 }
 

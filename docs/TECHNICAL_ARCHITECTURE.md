@@ -54,6 +54,12 @@ Veri modelleri `src/lib/schemas.ts` dosyasında **Zod** kütüphanesi ile tanım
 3.  **Doğrulama:** Zod şemaları ile veri bütünlüğü kontrol edilir. Hatalı veri varsa derleme başarısız olur.
 4.  **Render:** Sayfalar statik HTML olarak oluşturulur ve `dist/` klasörüne çıktılanır.
 
+### 4.3 Veri İşleme ve Senkronizasyon (Data Processing & Sync)
+Proje, ham verileri (raw JSON) işleyerek uygulamada kullanılabilir temiz formata dönüştüren güçlü bir veri işleme hattına (pipeline) sahiptir.
+
+*   **HTML Temizleme:** Ham verilerdeki bozuk HTML etiketleri, gereksiz stiller ve OCR hataları temizlenir. Performans için **Cheerio** yerine **htmlparser2** tabanlı "Fast Cleaner" (`cleanHtmlFast`) kullanılır. Bu geçiş, büyük veri setlerinin işlenme hızını **10 kat** artırmıştır.
+*   **Senkronizasyon Scriptleri:** `scripts/sync-anadolu.ts` ve `scripts/sync-auzef.ts`, ham verileri kaynak dizinlerden okur, temizler, şemalara uygunluğunu dener ve `data/` klasörüne yazar.
+
 ## 5. Temel Bileşenler ve Mantık
 
 ### 5.1 Quiz Player (Test Modülü)

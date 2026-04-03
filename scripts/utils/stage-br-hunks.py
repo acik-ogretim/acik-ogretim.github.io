@@ -31,6 +31,10 @@ def normalize(text: str) -> str:
     # 2. Normalize <a ...>text</a> -> text (remove all links, keep text)
     t = re.sub(r'<a\s+(?:[^>]*?)>(.*?)</a>', r'\1', t, flags=re.IGNORECASE)
 
+    # 2.1. Normalize &nbsp; to space before other normalizations
+    t = t.replace('&nbsp;', ' ')
+    t = t.replace('\u00A0', ' ')
+
     # 3. Normalize <img...> to <img.../> (self-closing)
     t = re.sub(r'<img([^>]*?)/?>', r'<img\1/>', t, flags=re.IGNORECASE)
 

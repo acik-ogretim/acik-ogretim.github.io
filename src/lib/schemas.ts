@@ -80,7 +80,7 @@ export const courseSchema = z.object({
     unitCount: z.number().default(14),
     questionCount: z.number().default(0),
     automationId: z.string().default(''),
-    lastUpdated: z.string().optional(),
+    lastUpdated: z.string().optional().default(() => new Date().toISOString()),
 });
 
 /**

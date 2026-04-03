@@ -7,7 +7,7 @@ const PORTAL_ROOT = process.cwd();
 const RAW_ANADOLU_DIR = path.join(MCP_ROOT, 'data/raw/anadolu-aof');
 const TARGET_ANADOLU_DIR = path.join(PORTAL_ROOT, 'data/questions/anadolu-aof');
 
-const slug = 'webde-telif-haklari-ve-etik';
+const slug = 'hadis';
 const courseRawDir = path.join(RAW_ANADOLU_DIR, slug);
 const destFilePath = path.join(TARGET_ANADOLU_DIR, slug + '.json');
 
@@ -40,20 +40,23 @@ if (fs.existsSync(alistirmaPath)) {
     console.log(`   Found ${rawList.length} questions\n`);
 
     rawList.forEach((raw: any, idx: number) => {
+        const questionId = String(raw.QuestionId || raw.id || raw.ID);
+        const isDebugTarget = questionId === '3494189';
+
         // Combine Title and AnswerExplanation for richer explanation
         let explanation = '';
         if (raw.Title) {
             explanation = cleanHtml(raw.Title, { isTechnical });
         }
         if (raw.AnswerExplanation) {
-            const answerExp = cleanHtml(raw.AnswerExplanation, { isTechnical });
+            const answerExp = cleanHtml(raw.AnswerExplanation, { isTechnical, isExplanation: true });
             if (answerExp && answerExp !== explanation) {
                 explanation = explanation ? `${explanation}<br/>${answerExp}` : answerExp;
             }
         }
 
         const mapped: AppQuestion = {
-            id: String(raw.QuestionId || raw.id || raw.ID),
+            id: questionId,
             unitNumber: Number(raw.UniteNo || raw.unitNumber || 0),
             text: cleanHtml(raw.Text || raw.question || raw.text || '', { isTechnical }),
             correctAnswer: (raw.CorrectAnswer || raw.correctAnswer || '').trim().toUpperCase(),
@@ -61,16 +64,20 @@ if (fs.existsSync(alistirmaPath)) {
             explanation: explanation || undefined
         };
 
+        if (isDebugTarget) {
+            console.log(`🔍 DEBUG Question ${questionId}:`);
+            console.log(`   Text Before: ${raw.Text.substring(0, 100)}...`);
+            console.log(`   Text After:  ${mapped.text}`);
+        }
+
         ['A', 'B', 'C', 'D', 'E'].forEach(opt => {
             if (raw[opt] !== undefined) {
                 const cleaned = cleanHtml(raw[opt] || '', { isTechnical });
                 mapped.options[opt] = cleaned;
 
-                // Debug: Show first 5 questions with class attributes
-                if (idx < 5 && raw[opt] && raw[opt].includes('class=')) {
-                    console.log(`   Q${idx + 1} Option ${opt}:`);
-                    console.log(`      Before: ${raw[opt].substring(0, 100)}...`);
-                    console.log(`      After:  ${cleaned.substring(0, 100)}...`);
+                if (isDebugTarget) {
+                    console.log(`   Option ${opt} Before: ${raw[opt]}`);
+                    console.log(`   Option ${opt} After:  ${cleaned}`);
                 }
             }
         });
