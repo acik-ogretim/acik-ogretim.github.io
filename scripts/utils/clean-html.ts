@@ -1,4 +1,5 @@
 import * as cheerio from 'cheerio';
+import he from 'he';
 
 const OCR_FIX_MAP: Record<string, string> = {
     'düşnür': 'düşünür',
@@ -8,6 +9,9 @@ const OCR_FIX_MAP: Record<string, string> = {
     'işletmecilii': 'işletmeciliği'
 };
 
+/**
+ * Performs regex-based text cleaning and repair before HTML parsing.
+ */
 export function repairText(html: string, options: { isTechnical?: boolean } = {}): string {
     if (!html) return "";
     let cl = html.normalize('NFC');
@@ -25,7 +29,7 @@ export function repairText(html: string, options: { isTechnical?: boolean } = {}
            .replace(/\b_ngh[a-z0-9-]*="[^"]*"/gi, '')
            .replace(/\bng-version="[^"]*"/gi, '');
 
-    // L578 FIX: Handle encoded start but literal or missing end (truncated text)
+    // v166/v167 Fix for truncated or mixed-encoded span artifacts
     cl = cl.replace(/&lt;span\b(?:(?!&gt;|[>$]).)*?font-family:\s*monospace;?.*?(&gt;|[>$])/gi, '')
            .replace(/<span\b[^>]*?font-family:\s*monospace;?.*?>/gi, '');
 
@@ -48,6 +52,41 @@ export function repairText(html: string, options: { isTechnical?: boolean } = {}
     return cl;
 }
 
+/**
+ * Converts HTML to plain text by stripping tags and decoding entities.
+ */
+export function toPlainText(html: string): string {
+    if (!html) return "";
+    let spaced = html.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ');
+    spaced = spaced.replace(/(?:<|&lt;)[^>]*$/, '');
+    return he.decode(spaced).replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * Checks if two texts are substantially similar, useful for deduplication.
+ */
+export function areTextsSimilar(t1: string, t2: string): boolean {
+    if (!t1 || !t2) return false;
+    const s1 = t1.toLowerCase().replace(/[^a-z0-9şğüöçı]/g, '');
+    const s2 = t2.toLowerCase().replace(/[^a-z0-9şğüöçı]/g, '');
+    if (!s1 || !s2) return false;
+    return s2.includes(s1) || s1.includes(s2) || s1 === s2;
+}
+
+/**
+ * Checks if a string is considered "garbage" or redundant UI artifacts.
+ */
+export function isGarbage(s: string): boolean {
+    if (!s) return true;
+    if (s.includes('<img')) return false;
+    const plain = toPlainText(s).toLowerCase();
+    if (plain.length < 2) return true;
+    if (plain.length < 5 && /^[a-e0-9\W]+$/.test(plain)) return true;
+    if (/^(?:doğru\s*)?(?:yanıt|cevap|şık|seçenek)\s*:?\s*[a-e](?:'|’)?(?:dır|dir|dur|dür|tır|tur|tir|tür)?(?:\s+(?:şık|seçenek|cevap|yanıt)(?:ı|i|u|ü)?(?:dır|dir|dur|dür|tır|tur|tir|tür)?)?\.?$/.test(plain)) return true;
+    if (plain === 'hatırlatma' || plain === 'hatırlatma sorusu' || plain === 'soru') return true;
+    return false;
+}
+
 function stripWrappers(h: string): string {
     let c = h.trim();
     let ch = true;
@@ -65,7 +104,10 @@ function stripWrappers(h: string): string {
     return c;
 }
 
-export function cleanHtml(html: string, options: { university?: string; isExplanation?: boolean; stripLoneBr?: boolean; isTechnical?: boolean } = {}): string {
+/**
+ * Main cleaning utility for HTML content used in questions and explanations.
+ */
+export function cleanHtml(html: string, options: { university?: string; isExplanation?: boolean; stripLoneBr?: boolean; isTechnical?: boolean; disableChoiceCleanup?: boolean } = {}): string {
     if (!html) return "";
     const isAnad = options.university === 'anadolu';
     
