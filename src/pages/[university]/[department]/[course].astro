@@ -4,6 +4,14 @@ import AISettings from "../../../components/AISettings.astro";
 import AIMenu from "../../../components/AIMenu.astro";
 import Layout from "../../../layouts/Layout.astro";
 import { Check, X } from "lucide-react";
+import { createElement } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+// Icons go into one <symbol> sprite per page and every answer option points at it with <use>:
+// an inline SVG per option added megabytes per page and pushed the Pages artifact past 10 GB.
+const inner = (icon: typeof Check) => renderToStaticMarkup(createElement(icon)).replace(/^<svg[^>]*>|<\/svg>$/g, "");
+const iconSprite = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner(Check)}</symbol><symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner(X)}</symbol></svg>`;
+const checkSvg = '<svg class="w-4 h-4" aria-hidden="true"><use href="#i-check"/></svg>';
+const xSvg = '<svg class="w-4 h-4" aria-hidden="true"><use href="#i-x"/></svg>';
 import SohbetCekmece from "../../../components/sohbet/SohbetCekmece.tsx";
 import { getCourses, getQuestions, getUniversities } from "../../../lib/api";
 
@@ -49,6 +57,7 @@ const EXAM_LABEL: Record<string, string> = { vize: "Vize", final: "Final", butun
 ---
 
 <Layout title={`${course.name} - ${department.name}`}>
+  <Fragment set:html={iconSprite} />
   <div class="py-12">
     <div class="container-reading">
       <!-- Breadcrumbs -->
@@ -244,7 +253,7 @@ const EXAM_LABEL: Record<string, string> = { vize: "Vize", final: "Final", butun
                                 set:html={opt.text}
                               />
                               <div class="option-marker hidden">
-                                {isCorrect ? <Check className="w-4 h-4" aria-hidden="true" /> : <X className="w-4 h-4" aria-hidden="true" />}
+                                <Fragment set:html={isCorrect ? checkSvg : xSvg} />
                               </div>
                             </div>
                           );

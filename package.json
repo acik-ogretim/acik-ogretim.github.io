@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "postbuild": "node scripts/extract-inline-images.mjs dist",
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest",
