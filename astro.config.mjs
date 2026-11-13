@@ -12,7 +12,11 @@ export default defineConfig({
   site: 'https://acik-ogretim.github.io',
   output: 'static',
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    // The chat loads provider adapters on demand; pre-bundle them so the dev server does not re-optimize mid-session.
+    optimizeDeps: {
+      include: ['@tanstack/ai-gemini', '@tanstack/ai-openai', '@tanstack/ai-anthropic', '@tanstack/ai-openrouter', '@tanstack/ai-openrouter/model-meta']
+    }
   },
   integrations: [mdx(), react(), sitemap()]
 });

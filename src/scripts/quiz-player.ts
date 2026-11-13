@@ -823,13 +823,13 @@ export class QuizPlayer {
         const utter = this.createUtterance("Doğru!");
         utter.onend = () => {
           setTimeout(() => {
-            if (this.isInteractive) this.next();
+            if (this.isInteractive && this.settings.autoAdvance) this.next(); // stay on the question when auto-advance is off
           }, 500);
         };
         this.synth.speak(utter);
       } else {
         setTimeout(() => {
-          if (this.isInteractive) this.next();
+          if (this.isInteractive && this.settings.autoAdvance) this.next(); // stay on the question when auto-advance is off
         }, 5000);
       }
     } else {
@@ -847,13 +847,13 @@ export class QuizPlayer {
         const utter = this.createUtterance(`Yanlış! Doğru cevap: ${ansText}. ${expText}`);
         utter.onend = () => {
           setTimeout(() => {
-            if (this.isInteractive) this.next();
+            if (this.isInteractive && this.settings.autoAdvance) this.next(); // stay on the question when auto-advance is off
           }, 1000);
         };
         this.synth.speak(utter);
       } else {
         setTimeout(() => {
-          if (this.isInteractive) this.next();
+          if (this.isInteractive && this.settings.autoAdvance) this.next(); // stay on the question when auto-advance is off
         }, 5000);
       }
     }

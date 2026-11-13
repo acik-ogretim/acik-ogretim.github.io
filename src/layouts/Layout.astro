@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import "../styles/print.css";
+import SaglayiciAyarlari from "../components/sohbet/SaglayiciAyarlari.tsx";
 
 interface Props {
   title: string;
@@ -125,7 +126,7 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
   >
     <!-- Disclaimer Banner -->
     <div class="disclaimer-banner no-print">
-      ⚠️ Bu portal eğitim amaçlıdır. İçerikler ticari amaçla kullanılamaz.
+      Bu portal eğitim amaçlıdır. İçerikler ticari amaçla kullanılamaz.
       <a href="/telif" class="underline hover:text-amber-100">Detaylı bilgi</a>
     </div>
 
@@ -133,7 +134,7 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
     <header class="layout-header no-print">
       <nav class="container-base h-16 flex items-center justify-between">
         <a href="/" class="flex items-center gap-2 sm:gap-3 group">
-          <span class="text-xl sm:text-2xl">📚</span>
+          <img src="/favicon.svg" alt="" class="w-7 h-7 sm:w-8 sm:h-8" width="32" height="32" />
           <span
             class="font-bold text-lg sm:text-xl text-teal-400 group-hover:text-teal-300 transition-all whitespace-nowrap"
           >
@@ -308,7 +309,7 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
       <div class="max-w-4xl mx-auto px-4 py-6">
         <div class="notice-box">
           <p class="text-slate-300">
-            <strong class="text-orange-400">⚠️ Telif Hakkı Bildirimi:</strong>
+            <strong class="text-orange-400">Telif Hakkı Bildirimi:</strong>
             Bu portaldaki sorular telif hakkı içerebilir. İçerik yalnızca <strong
               >ders çalışma amaçlı</strong
             >
@@ -667,7 +668,7 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
             <h4
               class="text-[9px] font-black text-slate-500 uppercase tracking-widest px-1"
             >
-              🤖 AI Asistan
+              AI Asistan
             </h4>
             <div
               class="bg-blue-500/5 border border-blue-500/20 rounded-xl p-3 space-y-3"
@@ -678,10 +679,7 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
                 <div class="flex flex-col">
                   <span
                     class="text-xs font-medium text-blue-300 group-hover:text-white"
-                    >Açıklama Zenginleştirme</span
-                  >
-                  <span class="text-[9px] text-slate-500"
-                    >Sorularda AI menüsünü aktif et</span
+                    >Açıklama menüsü</span
                   >
                 </div>
                 <input
@@ -691,54 +689,8 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
                 />
               </label>
 
-              <div class="space-y-1.5">
-                <label
-                  class="text-[9px] font-bold text-slate-500 uppercase px-1"
-                  >Gemini API Anahtarı</label
-                >
-                <div class="relative">
-                  <input
-                    type="password"
-                    id="gemini-api-key"
-                    class="w-full bg-slate-900 border border-slate-700/50 rounded-lg py-2 px-3 pr-10 text-xs text-white focus:border-blue-500 outline-none transition-all placeholder-slate-600"
-                    placeholder="AIzaSy..."
-                  />
-                  <button
-                    type="button"
-                    id="toggle-api-key-visibility"
-                    class="absolute right-2 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300"
-                  >
-                    <svg
-                      class="w-4 h-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-                <div class="flex justify-between items-center">
-                  <span class="text-[9px] text-slate-600"
-                    >Sadece tarayıcınızda saklanır.</span
-                  >
-                  <a
-                    href="https://aistudio.google.com/app/apikey"
-                    target="_blank"
-                    class="text-[9px] text-blue-400 hover:text-blue-300 hover:underline"
-                    >Anahtar Al ↗</a
-                  >
-                </div>
+              <div class="yz-ayar-koyu">
+                <SaglayiciAyarlari client:idle />
               </div>
             </div>
           </div>
@@ -771,7 +723,7 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
           <!-- About -->
           <div>
             <h3 class="font-semibold text-teal-400 mb-3">
-              📚 Açık Öğretim Portal
+              Açık Öğretim Portal
             </h3>
             <p class="text-slate-400 text-sm">
               Türkiye'deki açık öğretim fakülteleri öğrencileri için hazırlanmış
@@ -803,7 +755,7 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
                 <a
                   href="/rehber"
                   class="footer-link font-medium text-primary-primary/80"
-                  >📖 Kullanım Rehberi</a
+                  >Kullanım Rehberi</a
                 >
               </li>
               <li>
@@ -891,31 +843,7 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
         const settings = loadStoredSettings();
 
         // AI Settings Logic (Migrated from AISettings.astro)
-        const apiKeyInput = document.getElementById("gemini-api-key");
         const aiToggle = document.getElementById("ai-enrichment-toggle");
-
-        if (apiKeyInput) {
-          apiKeyInput.value = localStorage.getItem("gemini-api-key") || "";
-          apiKeyInput.addEventListener("change", (e) => {
-            const val = e.target.value.trim();
-            if (val) localStorage.setItem("gemini-api-key", val);
-            else localStorage.removeItem("gemini-api-key");
-          });
-        }
-
-        // API Key visibility toggle
-        const toggleApiKeyVisibility = document.getElementById(
-          "toggle-api-key-visibility",
-        );
-        if (toggleApiKeyVisibility && apiKeyInput) {
-          toggleApiKeyVisibility.addEventListener("click", () => {
-            if (apiKeyInput.type === "password") {
-              apiKeyInput.type = "text";
-            } else {
-              apiKeyInput.type = "password";
-            }
-          });
-        }
 
         if (aiToggle) {
           aiToggle.checked =
@@ -1051,17 +979,32 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
               const trVoices = voices.filter((v) =>
                 v.lang.toLowerCase().replace("_", "-").includes("tr-tr"),
               );
-              const voicesToShow = trVoices.length > 0 ? trVoices : voices;
+              // Multilingual voices (e.g. Edge "...Multilingual") read Turkish text too
+              const multiVoices = voices.filter(
+                (v) => /multilingual/i.test(v.name) && !trVoices.includes(v),
+              );
+              const addGroup = (label, list) => {
+                if (list.length === 0) return;
+                const group = document.createElement("optgroup");
+                group.label = label;
+                list.forEach((voice) => {
+                  const opt = document.createElement("option");
+                  opt.value = voice.voiceURI;
+                  opt.text = `${voice.name} (${voice.lang})`;
+                  if (voice.voiceURI === settings.voiceURI) opt.selected = true;
+                  group.appendChild(opt);
+                });
+                voiceSelect.appendChild(group);
+              };
 
               voiceSelect.innerHTML =
                 '<option value="">Varsayılan Ses</option>';
-              voicesToShow.forEach((voice) => {
-                const opt = document.createElement("option");
-                opt.value = voice.voiceURI;
-                opt.text = `${voice.name} (${voice.lang})`;
-                if (voice.voiceURI === settings.voiceURI) opt.selected = true;
-                voiceSelect.add(opt);
-              });
+              if (trVoices.length === 0 && multiVoices.length === 0) {
+                addGroup("Tüm sesler", voices);
+              } else {
+                addGroup("Türkçe", trVoices);
+                addGroup("Çok dilli", multiVoices);
+              }
             };
 
             populateVoices();

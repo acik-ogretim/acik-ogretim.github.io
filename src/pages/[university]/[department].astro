@@ -1,4 +1,5 @@
 ---
+import Simge from "../../components/Simge.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getUniversities, getDepartments, getCourses } from "../../lib/api";
 
@@ -90,7 +91,7 @@ const groupedCourses = semesters.map((sem) => ({
       <!-- Favorites Section -->
       <div id="favorites-section" class="mb-12 hidden">
         <h2 class="text-xl font-bold text-theme flex items-center gap-2 mb-6">
-          <span>⭐</span> Favorilerim
+          <span><Simge ad="Star" /></span> Favorilerim
           <span
             id="favorites-count"
             class="text-sm font-normal text-muted-theme"></span>
@@ -142,7 +143,7 @@ const groupedCourses = semesters.map((sem) => ({
                             class="favorite-btn absolute top-2 right-2 w-6 h-6 rounded-full hover:bg-yellow-500/20 flex items-center justify-center z-10"
                             title="Favorilere ekle"
                           >
-                            <span class="fav-icon text-[10px]">☆</span>
+                            <Simge ad="Star" size={12} class="fav-icon" />
                           </button>
 
                           <a
@@ -150,7 +151,7 @@ const groupedCourses = semesters.map((sem) => ({
                             class="flex items-center gap-3 h-full"
                           >
                             <div class="w-10 h-10 rounded-lg bg-primary-theme/10 flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-primary-theme/20">
-                              📚
+                              <Simge ad="Library" />
                             </div>
                             <div class="flex-1 min-w-0">
                               <div
@@ -179,7 +180,7 @@ const groupedCourses = semesters.map((sem) => ({
 
       <!-- No results message -->
       <div id="noResults" class="hidden py-20 text-center">
-        <div class="text-4xl mb-4">🔍</div>
+        <div class="text-4xl mb-4"><Simge ad="Search" /></div>
         <h3 class="text-xl font-medium text-muted-theme">
           Aradığınız kriterlere uygun ders bulunamadı.
         </h3>
@@ -235,10 +236,10 @@ const groupedCourses = semesters.map((sem) => ({
 
       if (icon) {
         if (isFav) {
-          icon.textContent = "★";
+          icon.setAttribute("fill", "currentColor");
           icon.classList.add("text-yellow-500");
         } else {
-          icon.textContent = "☆";
+          icon.setAttribute("fill", "none");
           icon.classList.remove("text-yellow-500");
         }
       }

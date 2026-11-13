@@ -1,4 +1,6 @@
 ---
+import type { SimgeAdi } from "../lib/simge";
+import Simge from "../components/Simge.astro";
 import Layout from "../layouts/Layout.astro";
 import { getDepartments, getUniversities, getCourses } from "../lib/api";
 import type { University, Course } from "../lib/types";
@@ -62,23 +64,23 @@ const inactiveDepartments = departmentsWithData.filter(
 // Group active departments by degree
 const degreeGroups: Record<
   string,
-  { title: string; icon: string; departments: typeof activeDepartments }
+  { title: string; icon: SimgeAdi; departments: typeof activeDepartments }
 > = {
-  lisans: { title: "Lisans Programları", icon: "🎓", departments: [] },
-  onlisans: { title: "Ön Lisans Programları", icon: "📘", departments: [] },
+  lisans: { title: "Lisans Programları", icon: "GraduationCap", departments: [] },
+  onlisans: { title: "Ön Lisans Programları", icon: "BookText", departments: [] },
   "lisans-tamamlama": {
     title: "Lisans Tamamlama",
-    icon: "📗",
+    icon: "BookOpen",
     departments: [],
   },
   "uzem-lisans-tamamlama": {
     title: "UZEM Lisans Tamamlama",
-    icon: "🏥",
+    icon: "HeartPulse",
     departments: [],
   },
   "tezsiz-yuksek-lisans": {
     title: "Tezsiz Yüksek Lisans",
-    icon: "🎖️",
+    icon: "Medal",
     departments: [],
   },
 };
@@ -107,14 +109,14 @@ Object.values(degreeGroups).forEach((group) => {
 });
 inactiveDepartments.sort((a, b) => a.name.localeCompare(b.name, "tr"));
 
-const uniStyles: Record<string, { icon: string; gradient: string }> = {
-  "anadolu-aof": { icon: "🎓", gradient: "from-blue-600 to-blue-800" },
-  "ataturk-aof": { icon: "📕", gradient: "from-red-600 to-red-800" },
-  auzef: { icon: "📗", gradient: "from-purple-600 to-purple-800" },
+const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
+  "anadolu-aof": { icon: "GraduationCap", gradient: "from-blue-600 to-blue-800" },
+  "ataturk-aof": { icon: "Book", gradient: "from-red-600 to-red-800" },
+  auzef: { icon: "BookOpen", gradient: "from-purple-600 to-purple-800" },
 };
 
 const style = uniStyles[university.id] || {
-  icon: "📚",
+  icon: "Library",
   gradient: "from-slate-600 to-slate-800",
 };
 ---
@@ -149,7 +151,7 @@ const style = uniStyles[university.id] || {
                   class="w-full h-full object-contain p-4"
                 />
               ) : (
-                style.icon
+                <Simge ad={style.icon} size={40} />
               )
             }
           </div>
@@ -164,7 +166,7 @@ const style = uniStyles[university.id] || {
             target="_blank"
             class="py-2 px-4 text-sm bg-button-theme hover:bg-button-hover-theme text-theme border border-theme rounded-lg"
           >
-            🌐 Web Sitesi
+            Web Sitesi
           </a>
         </div>
       </div>
@@ -199,7 +201,7 @@ const style = uniStyles[university.id] || {
         <!-- Favorites Section -->
         <div id="favorites-section" class="mb-8 hidden">
           <h2 class="text-xl font-bold text-theme flex items-center gap-2 mb-4">
-            <span>⭐</span> Favorilerim
+            <span><Simge ad="Star" /></span> Favorilerim
             <span
               id="favorites-count"
               class="text-sm font-normal text-muted-theme"></span>
@@ -219,7 +221,7 @@ const style = uniStyles[university.id] || {
                 group.departments.length > 0 && (
                   <div class="mb-8 degree-section">
                     <h2 class="text-xl font-bold text-theme flex items-center gap-2 mb-4">
-                      <span>{group.icon}</span>
+                      <Simge ad={group.icon} size={18} />
                       {group.title}
                       <span class="text-sm font-normal text-muted-theme">
                         ({group.departments.length})
@@ -241,7 +243,7 @@ const style = uniStyles[university.id] || {
                               class="favorite-btn absolute top-2 right-2 w-6 h-6 rounded-full hover:bg-yellow-500/20 flex items-center justify-center z-10"
                               title="Favorilere ekle"
                             >
-                              <span class="fav-icon text-sm">☆</span>
+                              <Simge ad="Star" size={14} class="fav-icon" />
                             </button>
                             <a
                               href={`/${university.id}/${dept.id}`}
@@ -254,7 +256,7 @@ const style = uniStyles[university.id] || {
                                   class="w-10 h-10 object-contain flex-shrink-0"
                                 />
                               ) : (
-                                <span class="text-2xl flex-shrink-0">📂</span>
+                                <span class="text-2xl flex-shrink-0"><Simge ad="FolderOpen" /></span>
                               )}
                               <span class="text-sm font-medium text-theme group-hover:text-primary-theme line-clamp-2">
                                 {dept.name}
@@ -282,7 +284,7 @@ const style = uniStyles[university.id] || {
           inactiveDepartments.length > 0 && (
             <div id="inactiveDepartments" class="mb-8">
               <h2 class="text-lg font-bold text-muted-theme flex items-center gap-2 mb-4">
-                <span class="opacity-50">📦</span>
+                <span class="opacity-50"><Simge ad="Package" /></span>
                 Pasif Programlar
                 <span class="text-sm font-normal">
                   ({inactiveDepartments.length})
@@ -302,7 +304,7 @@ const style = uniStyles[university.id] || {
                         class="w-6 h-6 object-contain opacity-50"
                       />
                     ) : (
-                      <span class="text-sm opacity-50">📂</span>
+                      <span class="text-sm opacity-50"><Simge ad="FolderOpen" /></span>
                     )}
                     <span class="text-xs text-muted-theme group-hover:text-theme line-clamp-1">
                       {dept.name}
@@ -324,7 +326,7 @@ const style = uniStyles[university.id] || {
 
         <!-- No visible results message (for search) -->
         <div id="noResults" class="hidden py-12 text-center">
-          <div class="text-4xl mb-4">🔍</div>
+          <div class="text-4xl mb-4"><Simge ad="Search" /></div>
           <h3 class="text-xl font-medium text-muted-theme">
             Aradığınız kriterlere uygun bölüm bulunamadı.
           </h3>
@@ -367,10 +369,10 @@ const style = uniStyles[university.id] || {
             const deptId = card.getAttribute("data-dept-id");
             const icon = card.querySelector(".fav-icon");
             if (deptId && favs.includes(deptId)) {
-              icon!.textContent = "★";
+              icon!.setAttribute("fill", "currentColor");
               icon!.classList.add("text-yellow-500");
             } else {
-              icon!.textContent = "☆";
+              icon!.setAttribute("fill", "none");
               icon!.classList.remove("text-yellow-500");
             }
           });

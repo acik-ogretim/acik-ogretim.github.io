@@ -4,7 +4,6 @@
 ---
 
 <script>
-    import { GoogleGenAI } from "@google/genai";
 
     // Declare global window extensions
     declare global {
@@ -95,114 +94,33 @@
             return;
         }
 
-        const apiKey = localStorage.getItem("gemini-api-key");
-        if (!apiKey) {
-            alert(
-                "Lütfen önce Ayarlar menüsünden Gemini API anahtarınızı girin.",
-            );
-            window.openQuizSettings?.();
-            const apiKeyInput = document.getElementById(
-                "gemini-api-key",
-            ) as HTMLInputElement;
-            if (apiKeyInput) apiKeyInput.focus();
+        if (action === "ask") {
+            const q = (card.querySelector(".question-text") as HTMLElement)?.innerText.trim() || "";
+            window.dispatchEvent(new CustomEvent("sohbet:sor", { detail: { text: `Bu soruyu bana anlat:\n\n${q}` } }));
             return;
         }
 
-        // Loading State
+        // Enrichment runs through the chat's BYOK providers (TanStack AI); loaded only on first use.
+        const { enrich, isEnrichAction, NoKeyError } = await import("../lib/chat/enrich");
+        if (!isEnrichAction(action)) return;
+
+        const previous = contentEl.innerHTML;
         contentEl.innerHTML = `
-        <div class="flex items-center gap-2 text-teal-400 py-2 animate-pulse">
-            <svg class="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <div class="flex items-center gap-2 text-teal-400 py-2" role="status">
+            <svg class="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
               <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
             </svg>
-            <span class="text-xs font-mono">Gemini düşünüyor...</span>
+            <span class="text-xs">Yazılıyor</span>
         </div>
       `;
 
         try {
-            const ai = new GoogleGenAI({ apiKey });
-
-            const questionText =
-                (card.querySelector(".question-text") as HTMLElement)
-                    ?.innerText || "";
-            const correctInfo =
-                (card.querySelector(".answer-meta-card") as HTMLElement)
-                    ?.innerText || "";
-            const originalExplanation = originalEl.innerText;
-
-            let instruction = "";
-            const systemInstruction =
-                "You are an expert AI in educational materials and test preparation. Your goal is to help students learn effectively. Your outputs must be in Turkish and formatted with basic HTML tags (like <b>, <ul>, <li>, <br>) for readability. Do NOT use Markdown.";
-
-            switch (action) {
-                case "regenerate":
-                    instruction =
-                        "Write a concise explanation that focuses on the core logic and most important keywords. It should be memorable and strictly to the point, avoiding unnecessary fluff. Limit to 1 short paragraph if possible.";
-                    break;
-                case "longer":
-                    instruction =
-                        "Expand upon the existing explanation by adding more details, examples, or deeper context. Aim for 3-4 paragraphs.";
-                    break;
-                case "shorter":
-                    instruction =
-                        "Condense the existing explanation into a concise summary of about one paragraph, focusing only on the main idea.";
-                    break;
-                case "mnemonic":
-                    instruction =
-                        "Create a creative and effective memory aid (like an acronym, analogy, a short story, or a visual image suggestion) to help a student remember the correct answer. Be creative but concise.";
-                    break;
-            }
-
-            const prompt = `
-                **Question:** ${questionText}
-                **Correct Answer:** ${correctInfo}
-                **Existing Explanation:** ${originalExplanation}
-
-                **Instruction:** ${instruction}
-
-                **Formatting Rules:**
-                1. STRICTLY use HTML tags only. Use <b> or <strong> for emphasis. Use <br> for line breaks. Use <ul><li></li></ul> for lists.
-                2. Do NOT use Markdown syntax at all. No **bold**, no *italic*, no # headers, no - lists.
-                3. Do not include phrases like 'Here is the summary', 'Revised explanation:', or 'Doğru cevap X şıkkıdır'. Just give the content.
-                4. Do NOT explicitly state which option is correct (e.g. "Doğru cevap A"). The user already sees this. Focus on the *reasoning*.
-                5. The output must be in Turkish.
-            `;
-
-            const response = await ai.models.generateContent({
-                model: "gemini-2.5-flash-lite",
-                contents: prompt,
-                config: {
-                    systemInstruction: systemInstruction,
-                },
+            const text = await enrich(action, {
+                question: (card.querySelector(".question-text") as HTMLElement)?.innerText || "",
+                answer: (card.querySelector(".answer-meta-card") as HTMLElement)?.innerText || "",
+                explanation: originalEl.innerText,
             });
-
-            // The SDK returns text via .text() method or property depending on version.
-            // safely handle both.
-            let text = "";
-            // @ts-ignore
-            if (typeof response.text === "function") {
-                // @ts-ignore
-                text = response.text();
-            } else if (typeof response.text === "string") {
-                text = response.text;
-            } else {
-                text =
-                    response.candidates?.[0]?.content?.parts?.[0]?.text ||
-                    "Cevap alınamadı.";
-            }
-
-            // Post-process to fix any Markdown leakage (e.g. **bold** to <b>bold</b>)
-            text = text.replace(/\*\*(.*?)\*\*/g, "<b>$1</b>");
-            text = text.replace(/\*(.*?)\*/g, "<i>$1</i>");
-            // Basic list conversion if it hallucinates markdown lists
-            if (text.includes("- ")) {
-                text = text.replace(/^\s*-\s+(.*)$/gm, "<li>$1</li>");
-                // Wrap in ul if we created li elements and no ul exists
-                if (text.includes("<li>") && !text.includes("<ul>")) {
-                    text = "<ul>" + text + "</ul>";
-                }
-            }
-
             contentEl.innerHTML = text;
 
             // Save to LocalStorage (Grouped by Course)
@@ -219,27 +137,22 @@
 
             store[questionId] = text; // Use Question ID as key
             localStorage.setItem(storageKey, JSON.stringify(store));
-        } catch (error: any) {
-            console.error("Gemini AI Hatası:", error);
-            let errorMsg = "Bir hata oluştu.";
-            if (
-                error.message.includes("401") ||
-                error.message.includes("API key")
-            ) {
-                errorMsg = "API Anahtarı geçersiz veya yetkisiz.";
-            } else if (error.message.includes("429")) {
-                errorMsg = "Çok fazla istek yapıldı. Lütfen biraz bekleyin.";
+        } catch (error: unknown) {
+            if (error instanceof NoKeyError) {
+                contentEl.innerHTML = previous;
+                window.dispatchEvent(new CustomEvent("sohbet:anahtar"));
+                return;
             }
-
-            contentEl.innerHTML = `
-          <div class="p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-sm text-red-400">
-            <strong>Hata:</strong> ${errorMsg} <br>
-            <span class="text-xs opacity-75">${error.message}</span>
-            <div class="mt-2 text-xs text-slate-400">
-                Orijinal içeriğe dönmek için menüden "Orijinale Dön" seçeneğini kullanabilirsiniz.
-            </div>
-          </div>
-      `;
+            const m = error instanceof Error ? error.message : "";
+            const errorMsg = /401|403|api key|unauthori/i.test(m)
+                ? "Anahtar kabul edilmedi. Anahtarını kontrol et."
+                : /429|quota|rate/i.test(m)
+                  ? "Kullanım sınırı doldu. Biraz sonra yeniden dene."
+                  : "Açıklama yazılamadı. Yeniden dene.";
+            const box = document.createElement("div");
+            box.className = "p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-sm text-red-400";
+            box.textContent = errorMsg;
+            contentEl.replaceChildren(box);
         }
     };
 

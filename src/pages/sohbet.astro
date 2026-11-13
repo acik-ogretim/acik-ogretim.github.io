@@ -1,0 +1,30 @@
+---
+// Course chat. Static page: prerendered at build, the chat hydrates in the browser and calls the provider with the user's own key.
+import "../styles/global.css";
+import SohbetApp from "../components/sohbet/Sohbet.tsx";
+---
+
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Ders asistanı | Açık Öğretim Portal</title>
+    <meta name="description" content="Derslerinin soruları ve açıklamalarıyla çalışan sohbet asistanı. Kendi anahtarınla çalışır." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script is:inline>
+      try {
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
+      } catch {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    </script>
+    <style is:global>
+      body { background: var(--bg-color); color: var(--text-color); margin: 0; }
+    </style>
+  </head>
+  <body>
+    <h1 class="sr-only">Ders asistanı</h1>
+    <SohbetApp client:load />
+  </body>
+</html>

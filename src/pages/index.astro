@@ -1,4 +1,6 @@
 ---
+import type { SimgeAdi } from "../lib/simge";
+import Simge from "../components/Simge.astro";
 import Layout from '../layouts/Layout.astro';
 
 import fs from 'node:fs/promises';
@@ -100,10 +102,10 @@ const stats = {
 };
 
 // University icons and colors
-const uniStyles: Record<string, { icon: string; gradient: string }> = {
-  'anadolu-aof': { icon: '🎓', gradient: 'from-blue-600 to-blue-800' },
-  'ataturk-aof': { icon: '📕', gradient: 'from-red-600 to-red-800' },
-  'auzef': { icon: '📗', gradient: 'from-purple-600 to-purple-800' },
+const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
+  'anadolu-aof': { icon: 'GraduationCap', gradient: 'from-blue-600 to-blue-800' },
+  'ataturk-aof': { icon: 'Book', gradient: 'from-red-600 to-red-800' },
+  'auzef': { icon: 'BookOpen', gradient: 'from-purple-600 to-purple-800' },
 };
 ---
 
@@ -167,14 +169,14 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
 
       <div class="flex flex-col sm:flex-row justify-center gap-4 px-6 sm:px-0">
         <a href="#universities" class="btn-primary w-full sm:w-auto">
-          🎓 Üniversiteleri Keşfet
+          Üniversiteleri Keşfet
         </a>
         <a
           href="/rehber#kurulum"
           id="install-btn"
           class="btn-secondary w-full sm:w-auto bg-green-600/10 text-green-500 border-green-500/20 hover:bg-green-600/20"
         >
-          📲 Uygulamayı Yükle
+          Uygulamayı Yükle
         </a>
       </div>
     </div>
@@ -239,7 +241,7 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
   <article id="universities" class="section-base" aria-labelledby="uni-heading">
     <div class="container-base">
       <div class="text-center mb-12">
-        <h2 id="uni-heading" class="text-3xl font-bold mb-4">🎓 Üniversiteler</h2>
+        <h2 id="uni-heading" class="text-3xl font-bold mb-4">Üniversiteler</h2>
         <p class="text-muted-theme max-w-2xl mx-auto">
           Aşağıdaki üniversitelerden birini seçerek ders materyallerine ve soru bankalarına erişebilirsiniz.
         </p>
@@ -247,7 +249,7 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
 
       <div class="grid md:grid-cols-3 gap-6">
         {universityData.map((uni) => {
-          const style = uniStyles[uni.id] || { icon: '📚', gradient: 'from-slate-600 to-slate-800' };
+          const style = uniStyles[uni.id] ?? { icon: 'Library' as const, gradient: 'from-slate-600 to-slate-800' };
           return (
             <a
               href={`/${uni.id}`}
@@ -262,7 +264,7 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
 
               <div class="flex items-start gap-4 mb-4">
                 <div class={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl bg-gradient-to-br ${style.gradient} text-white shrink-0`}>
-                  {style.icon}
+                  <Simge ad={style.icon} size={28} />
                 </div>
                 <div class="flex-1 min-w-0">
                   <h3 class="text-xl font-bold text-theme group-hover:text-primary-theme truncate" itemprop="name">
@@ -317,7 +319,7 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
   <section class="section-base" aria-labelledby="steps-heading">
     <div class="container-base">
       <div class="text-center mb-16">
-        <h2 id="steps-heading" class="text-3xl font-bold mb-4">🚀 Nasıl Çalışır?</h2>
+        <h2 id="steps-heading" class="text-3xl font-bold mb-4">Nasıl Çalışır?</h2>
         <p class="text-muted-theme">Sadece 3 adımda sınavlara hazırlanmaya başlayın.</p>
       </div>
 
@@ -328,7 +330,7 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
         <!-- Step 1 -->
         <div class="relative flex flex-col items-center text-center group">
           <div class="w-24 h-24 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center text-4xl mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300 z-10">
-            🏛️
+            <Simge ad="Landmark" />
           </div>
           <h3 class="text-xl font-bold text-theme mb-3">1. Üniversiteni Seç</h3>
           <p class="text-sm text-muted-theme max-w-xs">
@@ -339,7 +341,7 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
         <!-- Step 2 -->
         <div class="relative flex flex-col items-center text-center group">
           <div class="w-24 h-24 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center text-4xl mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300 z-10">
-            📚
+            <Simge ad="Library" />
           </div>
           <h3 class="text-xl font-bold text-theme mb-3">2. Dersini Bul</h3>
           <p class="text-sm text-muted-theme max-w-xs">
@@ -350,7 +352,7 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
         <!-- Step 3 -->
         <div class="relative flex flex-col items-center text-center group">
           <div class="w-24 h-24 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center text-4xl mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300 z-10">
-            🎯
+            <Simge ad="Target" />
           </div>
           <h3 class="text-xl font-bold text-theme mb-3">3. Çözmeye Başla</h3>
           <p class="text-sm text-muted-theme max-w-xs">
@@ -365,7 +367,7 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
   <section class="section-base bg-theme/30 border-y border-theme" aria-labelledby="features-heading">
     <div class="container-base">
       <div class="text-center mb-12">
-        <h2 id="features-heading" class="text-3xl font-bold mb-4">🔧 Özellikler</h2>
+        <h2 id="features-heading" class="text-3xl font-bold mb-4">Özellikler</h2>
         <p class="text-muted-theme max-w-2xl mx-auto">
           Sınavlarınıza en iyi şekilde hazırlanmanız için sunduğumuz araçlar.
         </p>
@@ -373,42 +375,42 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <a href="/rehber#interaktif-cozum" class="feature-card text-center block hover:scale-105 transition-transform duration-300">
-          <div class="text-4xl mb-4" role="img" aria-label="Not Defteri">📝</div>
+          <div class="text-4xl mb-4" role="img" aria-label="Not Defteri"><Simge ad="NotebookPen" /></div>
           <h3 class="font-semibold mb-2 text-theme">Soru Bankası</h3>
           <p class="text-muted-theme text-sm">Ders ve ünite bazlı binlerce çalışma sorusu</p>
         </a>
         <a href="/rehber#interaktif-cozum" class="feature-card text-center block hover:scale-105 transition-transform duration-300">
-          <div class="text-4xl mb-4" role="img" aria-label="Grafik">📊</div>
+          <div class="text-4xl mb-4" role="img" aria-label="Grafik"><Simge ad="ChartColumn" /></div>
           <h3 class="font-semibold mb-2 text-theme">İnteraktif Testler</h3>
           <p class="text-muted-theme text-sm">Anında geri bildirimli çalışma modülleri</p>
         </a>
         <div class="feature-card text-center">
-          <div class="text-4xl mb-4" role="img" aria-label="Robot">🤖</div>
+          <div class="text-4xl mb-4" role="img" aria-label="Robot"><Simge ad="Bot" /></div>
           <h3 class="font-semibold mb-2 text-theme">AI Açıklamalar</h3>
           <p class="text-muted-theme text-sm">Gemini ile zenginleştirilmiş cevap açıklamaları</p>
         </div>
         <div class="feature-card text-center">
-          <div class="text-4xl mb-4" role="img" aria-label="Belge">📄</div>
+          <div class="text-4xl mb-4" role="img" aria-label="Belge"><Simge ad="FileText" /></div>
           <h3 class="font-semibold mb-2 text-theme">Çıkmış Sınavlar</h3>
           <p class="text-muted-theme text-sm">Geçmiş yılların vize ve final soruları</p>
         </div>
         <a href="/rehber#kurulum" class="feature-card text-center block hover:scale-105 transition-transform duration-300">
-          <div class="text-4xl mb-4" role="img" aria-label="Mobil">📲</div>
+          <div class="text-4xl mb-4" role="img" aria-label="Mobil"><Simge ad="Smartphone" /></div>
           <h3 class="font-semibold mb-2 text-theme">Mobil Uygulama</h3>
           <p class="text-muted-theme text-sm">PWA desteği ile telefona indirip internetsiz kullanın</p>
         </a>
         <a href="/rehber#sesli-okuma" class="feature-card text-center block hover:scale-105 transition-transform duration-300">
-          <div class="text-4xl mb-4" role="img" aria-label="Ses">🗣️</div>
+          <div class="text-4xl mb-4" role="img" aria-label="Ses"><Simge ad="AudioLines" /></div>
           <h3 class="font-semibold mb-2 text-theme">Sesli Okuma</h3>
           <p class="text-muted-theme text-sm">Soruları dinleyerek gözlerinizi yormadan çalışın</p>
         </a>
          <div class="feature-card text-center">
-          <div class="text-4xl mb-4" role="img" aria-label="Gece">🌙</div>
+          <div class="text-4xl mb-4" role="img" aria-label="Gece"><Simge ad="Moon" /></div>
           <h3 class="font-semibold mb-2 text-theme">Koyu Mod</h3>
           <p class="text-muted-theme text-sm">Göz dostu arayüz ile gece gündüz rahat çalışın</p>
         </div>
          <div class="feature-card text-center">
-          <div class="text-4xl mb-4" role="img" aria-label="Topluluk">👥</div>
+          <div class="text-4xl mb-4" role="img" aria-label="Topluluk"><Simge ad="Users" /></div>
           <h3 class="font-semibold mb-2 text-theme">Topluluk</h3>
           <p class="text-muted-theme text-sm">GitHub üzerinden açık kaynaklı ve şeffaf geliştirme</p>
         </div>
@@ -420,7 +422,7 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
   <section class="section-base" aria-labelledby="faq-heading">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 id="faq-heading" class="text-3xl font-bold mb-4">🤔 Sıkça Sorulan Sorular</h2>
+        <h2 id="faq-heading" class="text-3xl font-bold mb-4">Sıkça Sorulan Sorular</h2>
       </div>
 
       <div class="space-y-4">
@@ -486,10 +488,10 @@ const uniStyles: Record<string, { icon: string; gradient: string }> = {
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="https://github.com/acik-ogretim/acik-ogretim.github.io/issues/new?template=content_request.yml&title=[İSTEK]:+" target="_blank" class="btn-secondary text-lg px-8 py-4">
-          📝 Bölüm/Ders İsteği
+          Bölüm/Ders İsteği
         </a>
         <a href="https://github.com/acik-ogretim/acik-ogretim.github.io/issues/new/choose" target="_blank" class="btn-primary text-lg px-8 py-4">
-          📢 Genel Talep / Hata Bildir
+          Genel Talep / Hata Bildir
         </a>
       </div>
     </div>

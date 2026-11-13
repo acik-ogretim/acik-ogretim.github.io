@@ -1,4 +1,5 @@
 ---
+import Simge from "../../../../components/Simge.astro";
 import Layout from "../../../../layouts/Layout.astro";
 import { getCourses, getUniversities } from "../../../../lib/api";
 import type {
@@ -69,7 +70,7 @@ if (isAtaAof) {
     // 1. Short Summary
     materials.push({
         id: "summary",
-        title: "📝 Kısa Özet",
+        title: "Kısa Özet",
         url: `https://oys.ataaof.edu.tr/kisaozetpdf/${automationId}-kisaozet.pdf`,
         type: "pdf",
     });
@@ -79,7 +80,7 @@ if (isAtaAof) {
     for (let i = 1; i <= count; i++) {
         materials.push({
             id: `unit-${i}`,
-            title: `📚 Ünite ${i}`,
+            title: `Ünite ${i}`,
             url: `https://oys.ataaof.edu.tr/file/${automationId}-${i}.pdf`,
             type: "pdf",
         });
@@ -93,14 +94,9 @@ if (isAtaAof) {
     extraMaterials.forEach((m: any) => {
         // Avoid duplicates if we already added it (simple check by url)
         if (!materials.some((exist) => exist.url === m.url)) {
-            // Determine title icon based on type/category
-            let icon = "🔗";
-            if (m.type === "html") icon = "🌍";
-            else if (m.category && m.category.includes("Canlı")) icon = "📹";
-
             materials.push({
                 id: `ext-${m.id}`,
-                title: `${icon} ${m.title}`,
+                title: m.title,
                 url: m.url,
                 type: m.type as any,
             });
@@ -117,7 +113,7 @@ if (isAtaAof) {
             if (!materials.some((m) => m.url.includes(url))) {
                 materials.push({
                     id: `unit-${i}`,
-                    title: `🌍 Ünite ${i} (İnteraktif)`,
+                    title: `Ünite ${i} (İnteraktif)`,
                     url: url,
                     type: "html",
                 });
@@ -211,7 +207,7 @@ const getViewerUrl = (item: any) => {
                     href={`/${university.id}/${department.id}/${course.id}`}
                     class="hover:text-primary-theme"
                 >
-                    🔙 Derse Dön
+                    Derse Dön
                 </a>
                 <span class="mx-2">/</span>
                 <span class="text-theme font-medium">Ders Materyalleri</span>
@@ -252,7 +248,7 @@ const getViewerUrl = (item: any) => {
                                     <summary class="accordion-summary">
                                         {catName}
                                         <span class="group-open/accordion:rotate-180 transition-transform text-xs">
-                                            ▼
+                                            <Simge ad="ChevronDown" size={16} />
                                         </span>
                                     </summary>
 
@@ -295,13 +291,7 @@ const getViewerUrl = (item: any) => {
                                                             class="material-btn material-btn-base"
                                                         >
                                                             <span class="text-xs opacity-50 shrink-0">
-                                                                {item.type ===
-                                                                "html"
-                                                                    ? "🌍"
-                                                                    : item.type ===
-                                                                        "pdf"
-                                                                      ? "📄"
-                                                                      : "🔗"}
+                                                                <Simge ad={item.type === "html" ? "Globe" : item.type === "pdf" ? "FileText" : "Link"} size={14} />
                                                             </span>
                                                             <span class="truncate">
                                                                 {item.title
@@ -327,11 +317,7 @@ const getViewerUrl = (item: any) => {
                                                 class="material-btn material-btn-base"
                                             >
                                                 <span class="text-xs opacity-50 shrink-0">
-                                                    {item.type === "html"
-                                                        ? "🌍"
-                                                        : item.type === "pdf"
-                                                          ? "📄"
-                                                          : "🔗"}
+                                                    <Simge ad={item.type === "html" ? "Globe" : item.type === "pdf" ? "FileText" : "Link"} size={14} />
                                                 </span>
                                                 <span class="truncate">
                                                     {item.title}
@@ -370,8 +356,8 @@ const getViewerUrl = (item: any) => {
                                         class="text-xs text-blue-400 hover:text-blue-300 flex items-center gap-1 shrink-0"
                                     >
                                         {defaultMaterial.type === "html"
-                                            ? "🔗 Yeni Sekmede Aç"
-                                            : "⬇️ İndir"}
+                                            ? "Yeni Sekmede Aç"
+                                            : "İndir"}
                                     </a>
                                 </div>
 
@@ -394,7 +380,7 @@ const getViewerUrl = (item: any) => {
                             </>
                         ) : (
                             <div class="w-full h-full flex flex-col items-center justify-center p-12 text-center text-muted-theme">
-                                <div class="text-5xl mb-4">🚧</div>
+                                <div class="text-5xl mb-4"><Simge ad="Construction" /></div>
                                 <p>Görüntülenecek materyal yok.</p>
                             </div>
                         )
@@ -429,7 +415,7 @@ const getViewerUrl = (item: any) => {
             if (downloadLink) {
                 downloadLink.href = url;
                 downloadLink.textContent =
-                    type === "html" ? "🔗 Yeni Sekmede Aç" : "⬇️ İndir";
+                    type === "html" ? "Yeni Sekmede Aç" : "İndir";
             }
             if (loader) loader.classList.remove("hidden");
 

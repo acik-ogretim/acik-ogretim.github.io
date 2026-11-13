@@ -1,4 +1,10 @@
 ---
+import { Lightbulb, ListChecks, MessageCircle } from "lucide-react";
+const extra = [
+  { action: "options", label: "Şıkları Açıkla", Icon: ListChecks },
+  { action: "example", label: "Örnekle Anlat", Icon: Lightbulb },
+  { action: "ask", label: "Sohbette Sor", Icon: MessageCircle },
+];
 // Global AI Menu Component
 // This component should be mounted ONCE per page.
 // It is triggered by buttons with onclick="openGlobalAIMenu(event, unit, qIdx)"
@@ -153,6 +159,17 @@
                 </span>
                 Hafıza İpucu
             </button>
+            {extra.map(({ action, label, Icon }) => (
+                <button
+                    onclick={`triggerGlobalAction('${action}')`}
+                    class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-900/30 hover:text-teal-600 dark:hover:text-teal-400 rounded-lg flex items-center gap-3 group"
+                >
+                    <span class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-slate-100 dark:bg-slate-800 group-hover:bg-teal-100 dark:group-hover:bg-teal-800">
+                        <Icon size={14} aria-hidden="true" />
+                    </span>
+                    {label}
+                </button>
+            ))}
         </div>
 
         <div class="h-px bg-slate-200 dark:bg-slate-700 mx-2 my-1.5"></div>
