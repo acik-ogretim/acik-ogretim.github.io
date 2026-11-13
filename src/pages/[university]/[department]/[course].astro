@@ -9,9 +9,9 @@ import { renderToStaticMarkup } from "react-dom/server";
 // Icons go into one <symbol> sprite per page and every answer option points at it with <use>:
 // an inline SVG per option added megabytes per page and pushed the Pages artifact past 10 GB.
 const inner = (icon: typeof Check) => renderToStaticMarkup(createElement(icon)).replace(/^<svg[^>]*>|<\/svg>$/g, "");
-const iconSprite = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner(Check)}</symbol><symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner(X)}</symbol></svg>`;
-const checkSvg = '<svg class="w-4 h-4" aria-hidden="true"><use href="#i-check"/></svg>';
-const xSvg = '<svg class="w-4 h-4" aria-hidden="true"><use href="#i-x"/></svg>';
+const iconSprite = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner(Check)}</symbol><symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner(X)}</symbol><symbol id="i-more" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></symbol></svg>`;
+const checkSvg = '<svg aria-hidden="true"><use href="#i-check"/></svg>';
+const xSvg = '<svg aria-hidden="true"><use href="#i-x"/></svg>';
 import SohbetCekmece from "../../../components/sohbet/SohbetCekmece.tsx";
 import { getCourses, getQuestions, getUniversities } from "../../../lib/api";
 
@@ -219,7 +219,7 @@ const EXAM_LABEL: Record<string, string> = { vize: "Vize", final: "Final", butun
                     data-testid="question-card"
                   >
                     <header class="mb-4">
-                      <h3 class="text-[10px] md:text-xs font-mono text-muted-theme uppercase tracking-widest">
+                      <h3 class="q-label">
                         Soru {qIdx + 1}
                         {q.source === "cikmis-soru" && q.year && (
                           <span class="normal-case tracking-normal"> · {q.year} {EXAM_LABEL[q.examType] ?? ""}</span>
@@ -229,7 +229,7 @@ const EXAM_LABEL: Record<string, string> = { vize: "Vize", final: "Final", butun
 
                     <div class="prose prose-invert max-w-none">
                       <div
-                        class="question-text text-base md:text-lg text-theme mb-6 md:mb-8 leading-relaxed font-medium"
+                        class="question-text"
                         set:html={q.text}
                       />
 
@@ -239,17 +239,17 @@ const EXAM_LABEL: Record<string, string> = { vize: "Vize", final: "Final", butun
                           const isCorrect = opt.key === q.correctAnswer;
                           return (
                             <div
-                              class={`option-item p-4 rounded-xl border-2 border-theme flex items-start gap-3 transition-all ${
+                              class={`option-item ${
                                 isCorrect ? "correct-option" : ""
                               }`}
                               data-key={opt.key}
                               data-testid={`option-${opt.key}`}
                             >
-                              <span class="option-key flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg border-2 border-theme text-sm font-bold">
+                              <span class="option-key">
                                 {opt.key}
                               </span>
                               <div
-                                class="option-text flex-1 pt-0.5 leading-relaxed"
+                                class="option-text"
                                 set:html={opt.text}
                               />
                               <div class="option-marker hidden">
@@ -275,7 +275,7 @@ const EXAM_LABEL: Record<string, string> = { vize: "Vize", final: "Final", butun
                                 title="AI İşlemleri"
                                 onclick={`openGlobalAIMenu(event, '${unit}', '${qIdx}')`}
                               >
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                                <svg class="w-5 h-5" aria-hidden="true"><use href="#i-more"/></svg>
                               </button>
                             </div>
                           </div>
