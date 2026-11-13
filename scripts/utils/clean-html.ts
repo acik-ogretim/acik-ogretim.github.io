@@ -205,9 +205,9 @@ export function cleanHtml(html: string, options: { university?: string; isExplan
              .replace(/<\/u>(\s*)<u>/gi, '$1')
              .replace(/<\/(strong|b|em|i|u)>(?:\s|&nbsp;)*<br\s*\/?>\s*<(strong|b|em|i|u)>/gi, ' ')
              .replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ')
-             .replace(/<br\s*\/?>\s*(<br\s*\/?>)+/gi, '<br/>')
-             .replace(/^\s*<br\s*\/?>|<br\s*\/?>\s*$/gi, '')
              .replace(/<(b|strong|i|em|u)>\s*<\/\1>/gi, '')
+             .replace(/\s*<br\s*\/?>\s*/gi, '<br/>')
+             .replace(/<br\s*\/?>\s*(<br\s*\/?>)+/gi, '<br/>')
              .replace(/<br>/g, '<br/>')
              .replace(/([a-zğüşıöç0-9,;:\)])\s*<br\s*\/?>\s*([a-züşıöç0-9\()])/g, (m, p1, p2) => {
                  if (isAnad && !options.isExplanation) return `${p1}<br/>${p2}`;

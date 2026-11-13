@@ -2,8 +2,7 @@ import fs from 'fs';
 
 import path from 'path';
 import { Worker, isMainThread, parentPort, workerData } from 'worker_threads';
-import { cleanHtmlFast as cleanHtml } from './utils/clean-html-fast.ts';
-import { areTextsSimilar, isGarbage, toPlainText } from './utils/text-repair.ts';
+import { cleanHtml, areTextsSimilar, isGarbage, toPlainText } from './utils/clean-html.ts';
 
 // Configurations
 const NUM_WORKERS = 4; // Stable count
@@ -230,6 +229,8 @@ function mapExamToApp(raw: ExamInput, isTechnical: boolean = false): AppQuestion
         const hasImage = e.includes('<img');
         const plain = toPlainText(e).trim().toLowerCase();
 
+        /* 
+        // TEMPORARY: Disabling aggressive cleanup as per user request to keep all explanations
         if (!hasImage) {
             const charDiff = plain.length - optPlain.length;
             const lenRatio = optPlain.length / (plain.length || 1);
@@ -238,6 +239,7 @@ function mapExamToApp(raw: ExamInput, isTechnical: boolean = false): AppQuestion
                 e = "";
             }
         }
+        */
         q.explanation = e.trim() === "" ? "" : e.trim();
     } else {
         q.explanation = "";
