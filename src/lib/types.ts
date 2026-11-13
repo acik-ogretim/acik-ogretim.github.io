@@ -47,6 +47,7 @@ export interface PlayerQuestion {
 
 export interface QuizSettings {
     filterUnite: string;
+    filterSource: 'all' | 'cikmis-soru' | 'alistirma';
     filterIncorrect: boolean;
     filterUnanswered: boolean;
     showAnswers: boolean;

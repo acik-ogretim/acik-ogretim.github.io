@@ -524,6 +524,21 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
               </label>
             </div>
             <div class="space-y-1.5 mt-1.5">
+              <label
+                for="setting-source"
+                class="text-[9px] font-bold text-slate-500 uppercase px-1"
+                >Soru Türü</label
+              >
+              <select
+                id="setting-source"
+                class="w-full bg-slate-800 border border-slate-700/50 rounded-lg p-2 text-xs text-slate-300 outline-none focus:border-teal-500 transition-all"
+              >
+                <option value="all">Tüm Sorular</option>
+                <option value="cikmis-soru">Çıkmış Sınav Soruları</option>
+                <option value="alistirma">Alıştırma ve Deneme</option>
+              </select>
+            </div>
+            <div class="space-y-1.5 mt-1.5">
               <label class="text-[9px] font-bold text-slate-500 uppercase px-1"
                 >Ünite Filtreleme</label
               >
@@ -853,6 +868,7 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
           showExplanations: true,
           hideIncorrectOptions: false,
           filterUnite: "all",
+          filterSource: "all",
           filterIncorrect: false,
           filterUnanswered: false,
           voiceURI: "",
@@ -988,6 +1004,7 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
 
           populateDefaultUnits();
           bindSelect("setting-unit", "filterUnite");
+          bindSelect("setting-source", "filterSource");
 
           bindSelect("setting-playback-rate", "playbackRate");
           bindSelect("setting-voice", "voiceURI");

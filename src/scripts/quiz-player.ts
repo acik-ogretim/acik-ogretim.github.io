@@ -134,6 +134,7 @@ export class QuizPlayer {
     const defaultSettings: QuizSettings = {
       // Removed shuffleQuestions
       filterUnite: 'all',
+      filterSource: 'all',
       filterIncorrect: false,
       filterUnanswered: false,
       showAnswers: true,
@@ -252,7 +253,7 @@ export class QuizPlayer {
         correctAnswerText,
         explanation,
         unitNumber,
-        source: 'soru-bankasi' as Source,
+        source: (el.getAttribute('data-source') || 'soru-bankasi') as Source,
         el: el as HTMLElement,
         options
       };
@@ -381,6 +382,13 @@ export class QuizPlayer {
       }
     }
 
+    // Source filter: real exam questions vs practice (question bank, deneme, sorularla öğrenelim)
+    if (this.settings.filterSource === 'cikmis-soru') {
+      filtered = filtered.filter(q => q.source === 'cikmis-soru');
+    } else if (this.settings.filterSource === 'alistirma') {
+      filtered = filtered.filter(q => q.source !== 'cikmis-soru');
+    }
+
     // Incorrect/Unanswered Progress Filters
     if (this.settings.filterIncorrect || this.settings.filterUnanswered) {
       filtered = filtered.filter(q => {
@@ -495,6 +503,23 @@ export class QuizPlayer {
       unitSelect.value = this.settings.filterUnite;
       unitSelect.onchange = (e) => {
         this.settings.filterUnite = (e.target as HTMLSelectElement).value;
+        this.saveSettings();
+        this.applyFilters();
+      };
+    }
+
+    const sourceSelect = document.getElementById('setting-source') as HTMLSelectElement;
+    if (sourceSelect) {
+      const hasExam = this.originalQuestions.some(q => q.source === 'cikmis-soru');
+      // a course without exam questions has nothing to split, so the choice is hidden and reset
+      (sourceSelect.parentElement as HTMLElement).hidden = !hasExam;
+      if (!hasExam && this.settings.filterSource !== 'all') {
+        this.settings.filterSource = 'all';
+        this.saveSettings();
+      }
+      sourceSelect.value = this.settings.filterSource;
+      sourceSelect.onchange = (e) => {
+        this.settings.filterSource = (e.target as HTMLSelectElement).value as QuizSettings['filterSource'];
         this.saveSettings();
         this.applyFilters();
       };

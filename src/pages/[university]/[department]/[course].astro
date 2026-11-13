@@ -43,6 +43,7 @@ const questions = await getQuestions(university.id, course.id);
 const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
   (a, b) => a - b,
 );
+const EXAM_LABEL: Record<string, string> = { vize: "Vize", final: "Final", butunleme: "Bütünleme", "tek-ders": "Tek Ders", genel: "" };
 ---
 
 <Layout title={`${course.name} - ${department.name}`}>
@@ -199,11 +200,15 @@ const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
                     id={`question-${unit}-${qIdx}`}
                     data-unit={unit}
                     data-id={q.id}
+                    data-source={q.source}
                     data-testid="question-card"
                   >
                     <header class="mb-4">
                       <h3 class="text-[10px] md:text-xs font-mono text-muted-theme uppercase tracking-widest">
                         Soru {qIdx + 1}
+                        {q.source === "cikmis-soru" && q.year && (
+                          <span class="normal-case tracking-normal"> · {q.year} {EXAM_LABEL[q.examType] ?? ""}</span>
+                        )}
                       </h3>
                     </header>
 
