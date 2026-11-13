@@ -55,9 +55,9 @@ Bu doküman, sistemin her bir fonksiyonunun girdilerini, işlemlerini ve çıkt�
 ### F-06: AI ile Açıklama Zenginleştirme
 *   **Girdi:** Kullanıcı bir sorunun açıklama alanındaki AI menü butonuna tıklar.
 *   **İşlem:**
-    1.  Kullanıcının Gemini API anahtarı `localStorage`'dan okunur. Yoksa uyarı verilir.
+    1.  Seçili sağlayıcının API anahtarı `localStorage`'dan okunur. Yoksa anahtar ayarı açılır.
     2.  Seçilen aksiyona göre (Yeniden Yaz, Daha Uzun, Daha Kısa, Hafıza Tekniği) prompt oluşturulur.
-    3.  Soru metni, doğru cevap ve mevcut açıklama ile birlikte Google Gemini API'ye gönderilir.
+    3.  Soru metni, doğru cevap ve mevcut açıklama ile birlikte TanStack AI üzerinden seçili sağlayıcıya gönderilir; model Markdown döner, güvenli HTML'e çevrilir.
     4.  API yanıtı alındığında açıklama alanı HTML olarak güncellenir.
     5.  Üretilen içerik `quiz-ai-explanations-{courseSlug}` anahtarı altında `localStorage`'a kaydedilir.
 *   **Çıktı:** AI tarafından zenginleştirilmiş açıklama gösterilir ve kalıcı olarak saklanır.

@@ -376,7 +376,7 @@ import Layout from "../layouts/Layout.astro";
                     </h2>
                 </div>
                 <p class="text-slate-400 mb-4 text-lg leading-relaxed">
-                    Soruları okumaktan yorulduğunuzda yapay zeka seslendirmesini
+                    Soruları okumaktan yorulduğunuzda tarayıcının seslendirmesini
                     kullanabilirsiniz. Alt bardaki "Hoparlör" simgesine
                     tıklamanız yeterlidir.
                 </p>
@@ -393,6 +393,62 @@ import Layout from "../layouts/Layout.astro";
                         <strong class="text-white">Hız Ayarı:</strong> Varsayılan
                         hız 1.2x'tir (hızlı). Ayarlardan bunu yavaşlatabilir veya
                         hızlandırabilirsiniz.
+                    </li>
+                    <li>
+                        <strong class="text-white">Ses Seçimi:</strong> Ayarlardaki
+                        ses listesinde önce Türkçe sesler, altında Türkçeyi de
+                        okuyabilen çok dilli sesler yer alır.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Ders Asistanı Bölümü -->
+            <section
+                id="ders-asistani"
+                class="content-card bg-slate-900 border border-slate-700 p-8 rounded-2xl shadow-xl mt-12 scroll-mt-24"
+            >
+                <div class="flex items-center gap-4 mb-6">
+                    <div
+                        class="icon-box bg-teal-500/20 text-teal-400 p-3 rounded-xl"
+                    >
+                        <Simge ad="MessageCircle" />
+                    </div>
+                    <h2 class="text-2xl font-bold text-white">
+                        Ders Asistanı
+                    </h2>
+                </div>
+                <p class="text-slate-400 mb-4 text-lg leading-relaxed">
+                    Ders sayfasındaki "Derse sor" düğmesi, o dersin sorularını,
+                    açıklamalarını ve ünite özetlerini kullanarak cevap veren bir
+                    sohbet açar. Kendi API anahtarınla çalışır; anahtarın yalnız
+                    tarayıcında kalır.
+                </p>
+                <ul class="list-disc list-inside space-y-2 ml-4 text-slate-400">
+                    <li>
+                        <strong class="text-white">Anahtar:</strong> Ayarlarda
+                        Google Gemini, OpenAI, Anthropic ya da OpenRouter seç,
+                        anahtarını gir ve "Anahtarı dene" ile kontrol et.
+                    </li>
+                    <li>
+                        <strong class="text-white">Konu anlatımı:</strong> "3.
+                        üniteyi anlat" gibi isteklerde ünite özetinden yararlanır,
+                        dayandığı sorulara bağlantı verir.
+                    </li>
+                    <li>
+                        <strong class="text-white">Mini sınav:</strong> "Bana 5
+                        soruluk mini sınav yap" dersen sohbetin içinde çözülen bir
+                        sınav kartı açar; cevapların ders sayfandaki kayda da işlenir.
+                    </li>
+                    <li>
+                        <strong class="text-white">Zayıf konular:</strong> "Neye
+                        çalışmalıyım?" dersen yanlış yaptığın sorulara bakıp bir
+                        çalışma planı önerir.
+                    </li>
+                    <li>
+                        <strong class="text-white">Açıklama menüsü:</strong> Her
+                        açıklamanın yanındaki üç nokta menüsüyle açıklamayı
+                        kısaltabilir, genişletebilir, şıkları tek tek açıklatabilir
+                        ya da soruyu sohbete taşıyabilirsin.
                     </li>
                 </ul>
             </section>

@@ -1,43 +1,45 @@
-# 🎓 Açık Öğretim Çalışma Portalı
+# Açık Öğretim Çalışma Portalı
 
 **Anadolu Üniversitesi, Atatürk Üniversitesi ve İstanbul Üniversitesi açık öğretim öğrencileri için geliştirilmiş ücretsiz, açık kaynaklı ve modern çalışma platformu.**
 
 Bu proje, öğrencilerin ders kaynaklarına ve geçmiş yıl sorularına kolayca erişmesini sağlamak, interaktif testlerle sınavlara hazırlanmalarına yardımcı olmak amacıyla geliştirilmiştir.
 
-🔗 **Canlı Demo:** [acik-ogretim.github.io](https://acik-ogretim.github.io)
+**Canlı Demo:** [acik-ogretim.github.io](https://acik-ogretim.github.io)
 
 ---
 
-## 🚀 Özellikler
+## Özellikler
 
 - **Geniş Kapsam:** 3 büyük açık öğretim fakültesinin (Anadolu AÖF, ATA-AÖF, AUZEF) derslerini kapsar.
 - **İnteraktif Test Modülü:** Soruları çözerken anında geri bildirim alabileceğiniz gelişmiş test arayüzü.
-  - ✅ Doğru/Yanlış analizi
-  - 🤖 **Gemini AI** destekli soru açıklamaları
-  - 🗣️ Sesli okuma desteği (TTS)
-  - 🌙 Koyu Mod / Aydınlık Mod / Sepya Modu seçenekleri
+  - Doğru/Yanlış analizi
+  - Ders asistanı: kendi API anahtarınla (Gemini, OpenAI, Anthropic, OpenRouter) dersin soruları, açıklamaları ve ünite özetleri üzerinden sohbet, sohbet içinde mini sınav
+  - Açıklama menüsü: açıklamayı kısalt, genişlet, şıkları açıkla, hafıza ipucu
+  - Sesli okuma desteği (TTS)
+  - Koyu Mod / Aydınlık Mod / Sepya Modu seçenekleri
 - **Kişiselleştirme:** Favori derslerinizi kaydedin ve ilerlemenizi takip edin (Local Storage ile %100 gizlilik).
 - **Hafif ve Hızlı:** [Astro](https://astro.build) ve statik site mimarisi sayesinde ultra hızlı sayfa yüklemeleri.
 
-## 🏫 Desteklenen Üniversiteler
+## Desteklenen Üniversiteler
 
 | Üniversite | Kısaltma | Durum | Kapsam |
 |---|---|---|---|
-| Anadolu Üniversitesi | **Anadolu AÖF** | ✅ Aktif | ⚠️ Tek Bölüm (Görsel İletişim) |
-| Atatürk Üniversitesi | **ATA-AÖF** | ✅ Aktif | 🌍 **Tüm Bölümler** |
-| İstanbul Üniversitesi | **AUZEF** | ✅ Aktif | ⚠️ Tek Bölüm (Çocuk Gelişimi) |
+| Anadolu Üniversitesi | **Anadolu AÖF** | Aktif | Tek Bölüm (Görsel İletişim) |
+| Atatürk Üniversitesi | **ATA-AÖF** | Aktif | **Tüm Bölümler** |
+| İstanbul Üniversitesi | **AUZEF** | Aktif | Tek Bölüm (Çocuk Gelişimi) |
 
-## 🛠️ Teknolojiler
+## Teknolojiler
 
 Bu proje aşağıdaki modern web teknolojileri kullanılarak geliştirilmiştir:
 
 - **Framework:** [Astro v5](https://astro.build)
 - **Stil:** [Tailwind CSS](https://tailwindcss.com)
 - **Dil:** TypeScript
-- **İkonlar:** Google Fonts, Custom SVGs
+- **İkonlar:** [Lucide](https://lucide.dev)
+- **Yapay zekâ:** [TanStack AI](https://tanstack.com/ai) (tarayıcıda, kullanıcının kendi anahtarıyla), [Base UI](https://base-ui.com) çekmece ve iletişim kutuları
 - **Dağıtım:** GitHub Pages
 
-## 📚 Dokümantasyon
+## Dokümantasyon
 
 Proje hakkında daha detaylı bilgi için `docs/` klasöründeki dokümanları inceleyebilirsiniz:
 
@@ -56,7 +58,7 @@ Proje hakkında daha detaylı bilgi için `docs/` klasöründeki dokümanları i
 - **[Agent Rolleri](docs/AGENT_ROLES.md):** Projede görev alan AI asistanlarının rolleri ve sorumlulukları.
 - **[Katkıda Bulunma Rehberi](CONTRIBUTING.md):** Projeye nasıl katkı sağlayabileceğiniz hakkında detaylı bilgi.
 
-## 🤝 Katkıda Bulunma
+## Katkıda Bulunma
 
 Bu portal tamamen açık kaynaklıdır ve topluluk katkılarıyla büyümektedir. Katkıda bulunmak için:
 
@@ -74,16 +76,16 @@ Bu portal tamamen açık kaynaklıdır ve topluluk katkılarıyla büyümektedir
 
 Site içeriği (`data/` klasörü) JSON dosyalarından oluşur. İstatistikler ve ders içerikleri build aşamasında bu dosyalardan otomatik olarak oluşturulur.
 
-## 🛡️ Gizlilik ve Yasal
+## Gizlilik ve Yasal
 
 - **Gizlilik:** Bu proje kullanıcılarından **hiçbir kişisel veri** toplamaz. İlerlemeleriniz sadece kendi cihazınızda (tarayıcı) saklanır.
-- **AI Asistan:** İsteğe bağlı Gemini AI özelliğini kullanırsanız:
-  - API anahtarınız yalnızca tarayıcınızda (`localStorage`) saklanır, sunucularımıza gönderilmez.
-  - Soru içerikleri işlenmek üzere Google'ın sunucularına gönderilir ve Google'ın [Gizlilik Politikası](https://policies.google.com/privacy)'na tabidir.
+- **Ders asistanı:** İsteğe bağlıdır ve kendi API anahtarınızla çalışır:
+  - Anahtarınız yalnızca tarayıcınızda (`localStorage`) saklanır; sitenin sunucusu yoktur.
+  - Mesajlarınız ve ilgili ders içeriği tarayıcınızdan doğrudan seçtiğiniz sağlayıcıya gönderilir ve o sağlayıcının gizlilik politikasına tabidir.
 - Detaylar için [Gizlilik Politikası](https://acik-ogretim.github.io/gizlilik).
 - **Telif Hakkı:** İçerikler eğitim amaçlıdır. Telif hakkı ihlali bildirimleri (DMCA) için GitHub Issues üzerinden bizimle iletişime geçebilirsiniz. Detaylar için [Telif Hakkı Politikası](https://acik-ogretim.github.io/telif).
 
-## 💻 Yerel Geliştirme (Local Development)
+## Yerel Geliştirme (Local Development)
 
 Projeyi kendi bilgisayarınızda çalıştırmak için:
 
@@ -103,13 +105,13 @@ npm run dev
 
 Tarayıcınızda `http://localhost:4321` adresine giderek önizleme yapabilirsiniz.
 
-## 📄 Lisans
+## Lisans
 
 Bu proje **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)** ile lisanslanmıştır.
 
-❌ **Ticari Kullanım Yasaktır:** Bu projeyi, kodlarını veya içeriklerini ticari bir amaçla kullanamaz, satamaz veya ticari bir hizmetin parçası yapamazsınız.
+**Ticari Kullanım Yasaktır:** Bu projeyi, kodlarını veya içeriklerini ticari bir amaçla kullanamaz, satamaz veya ticari bir hizmetin parçası yapamazsınız.
 
-✅ **Eğitim Amaçlı Paylaşım Serbesttir:** Kaynak göstermek ve aynı lisansla paylaşmak şartıyla projeyi geliştirebilir, değiştirebilir ve eğitim amaçlı kullanabilirsiniz.
+**Eğitim Amaçlı Paylaşım Serbesttir:** Kaynak göstermek ve aynı lisansla paylaşmak şartıyla projeyi geliştirebilir, değiştirebilir ve eğitim amaçlı kullanabilirsiniz.
 
 Detaylı bilgi için [Lisans Dosyası](LICENSE) veya [Özet Metni](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.tr) inceleyebilirsiniz.
 

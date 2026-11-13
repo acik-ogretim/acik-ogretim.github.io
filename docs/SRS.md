@@ -35,7 +35,7 @@ Bu doküman, Açık Öğretim Çalışma Portalı'nın yazılım gereksinimlerin
 *   **REQ-06:** **İnteraktif Mod:** Bu modda cevaplar gizlenmeli, doğru/yanlış geri bildiriminden sonra otomatik geçiş (Timer) devreye girmelidir.
 
 ### 3.4 AI Asistan Entegrasyonu
-*   **REQ-11:** Kullanıcı, Gemini API anahtarını ayarlar menüsünden girebilmeli ve bu anahtar yalnızca `localStorage`'da saklanmalıdır.
+*   **REQ-11:** Kullanıcı, sağlayıcı (Gemini, OpenAI, Anthropic, OpenRouter), model ve API anahtarını ayarlar menüsünden girebilmeli ve bu anahtar yalnızca `localStorage`'da saklanmalıdır.
 *   **REQ-12:** "Açıklama Zenginleştirme" özelliği aktif edildiğinde, her soru açıklaması yanında AI menü butonu görünmelidir.
 *   **REQ-13:** AI menüsü, "Yeniden Yaz", "Daha Uzun", "Daha Kısa", "Hafıza Tekniği" ve "Orijinale Dön" seçeneklerini sunmalıdır.
 *   **REQ-14:** AI tarafından üretilen açıklamalar, `quiz-ai-explanations-{courseSlug}` anahtarı altında `localStorage`'a kaydedilmeli ve sayfa yenilendiğinde geri yüklenmelidir.

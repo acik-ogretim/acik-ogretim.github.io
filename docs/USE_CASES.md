@@ -60,12 +60,12 @@ Bu doküman, **Açık Öğretim Çalışma Portalı**'nın kullanıcı etkileşi
         *   Karanlık Mod / Aydınlık Mod / Sepya
         *   Cevapları Gizle / Göster
         *   Sesli Okuma Hızı ve Ses Modeli
-        *   AI Açıklama Zenginleştirme (Gemini API)
+        *   AI Açıklama Zenginleştirme (kendi anahtarıyla: Gemini, OpenAI, Anthropic, OpenRouter)
     3.  Sistem, tercihleri kaydeder ve arayüzü anında günceller.
 
 ### UC-06: AI ile Açıklama Zenginleştirme
 *   **Aktör:** Öğrenci
-*   **Ön Koşul:** Kullanıcı Gemini API anahtarını ayarlar menüsünden girmiş ve "Açıklama Zenginleştirme" özelliğini aktif etmiştir.
+*   **Ön Koşul:** Kullanıcı sağlayıcısını seçip API anahtarını ayarlar menüsünden girmiş ve "Açıklama Zenginleştirme" özelliğini aktif etmiştir.
 *   **Akış:**
     1.  Öğrenci, bir sorunun açıklama alanındaki AI menü butonuna tıklar.
     2.  Açılan menüden bir işlem seçer:
@@ -74,7 +74,7 @@ Bu doküman, **Açık Öğretim Çalışma Portalı**'nın kullanıcı etkileşi
         *   **Daha Kısa:** Özet bir açıklama üretir.
         *   **Hafıza Tekniği:** Doğru cevabı hatırlamak için mnemonic oluşturur.
         *   **Orijinale Dön:** Orijinal açıklamayı geri yükler.
-    3.  Sistem, soruyu ve mevcut açıklamayı Google Gemini API'ye gönderir.
+    3.  Sistem, soruyu ve mevcut açıklamayı TanStack AI ile tarayıcıdan seçili sağlayıcıya gönderir.
     4.  AI yanıtı geldiğinde, açıklama alanı güncellenir ve `localStorage`'a kaydedilir.
 *   **Sonuç:** Kişiselleştirilmiş AI destekli açıklama gösterilir.
 

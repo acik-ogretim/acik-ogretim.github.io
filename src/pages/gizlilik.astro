@@ -71,35 +71,38 @@ import Layout from "../layouts/Layout.astro";
                     </h2>
                     <div class="space-y-3">
                         <p>
-                            Açık Öğretim Portal, soruların açıklamalarını
-                            zenginleştirmek ve mnemonic (hafıza teknikleri)
-                            oluşturmak için <strong>Google Gemini API</strong> entegrasyonu
-                            sunmaktadır. Bu özelliğin kullanımı tamamen isteğe bağlıdır.
+                            Ders asistanı ve açıklama menüsü isteğe bağlıdır ve kendi
+                            API anahtarınızla çalışır. Desteklenen sağlayıcılar:
+                            Google Gemini, OpenAI, Anthropic ve OpenRouter.
                         </p>
                         <ul class="list-disc list-inside space-y-2 ml-4">
                             <li>
                                 <strong>API Anahtarı Saklama:</strong> Girdiğiniz
-                                Gemini API anahtarı, yalnızca sizin tarayıcınızın
-                                <strong>Local Storage</strong> alanında şifrelenmeden
-                                saklanır. Bu anahtar kesinlikle sunucularımıza gönderilmez
-                                veya kaydedilmez.
+                                anahtar yalnızca tarayıcınızın <strong>Local Storage</strong>
+                                alanında şifrelenmeden saklanır. Bu sitenin sunucusu
+                                yoktur; anahtar bize gönderilmez ve kaydedilmez.
                             </li>
                             <li>
-                                <strong>Veri İşleme:</strong> Bir soru için "Açıklamayı
-                                Yeniden Yaz" veya benzeri bir AI komutu kullandığınızda,
-                                ilgili sorunun metni ve seçenekleri Google'ın sunucularına
-                                işlenmek üzere gönderilir.
+                                <strong>Veri İşleme:</strong> Sohbete yazdıklarınız,
+                                ilgili soru, şık, açıklama ve ünite özetleri, istek
+                                sırasında tarayıcınızdan doğrudan seçtiğiniz sağlayıcıya
+                                gönderilir. Sohbet geçmişiniz yalnızca tarayıcınızda tutulur.
                             </li>
                             <li>
-                                <strong>Üçüncü Taraf Politikaları:</strong> Bu işlem
-                                sırasında verileriniz Google'ın Gizlilik Politikası
-                                ve Hizmet Şartlarına tabidir. Uygulamamız sadece aracı
-                                görevi görür.
+                                <strong>Çözüm Kaydı:</strong> Asistan, zayıf konuları
+                                bulmak için tarayıcınızda tutulan çözüm kaydınızı okuyabilir;
+                                bu kayıt da yalnızca seçtiğiniz sağlayıcıya iletilir.
                             </li>
                             <li>
-                                <strong>İstediğiniz An Silme:</strong> API anahtarınızı
-                                tarayıcınızdan silmek için Ayarlar menüsünü kullanabilir
-                                veya tarayıcı geçmişinizi temizleyebilirsiniz.
+                                <strong>Üçüncü Taraf Politikaları:</strong> Gönderilen
+                                veriler seçtiğiniz sağlayıcının gizlilik politikası ve
+                                hizmet şartlarına tabidir.
+                            </li>
+                            <li>
+                                <strong>İstediğiniz An Silme:</strong> Anahtarınızı
+                                Ayarlar menüsünden silebilir, sohbeti "Yeni sohbet"
+                                düğmesiyle temizleyebilir ya da tarayıcı verilerini
+                                silebilirsiniz.
                             </li>
                         </ul>
                     </div>
