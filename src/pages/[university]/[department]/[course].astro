@@ -3,6 +3,7 @@ import QuizPlayer from "../../../components/QuizPlayer.astro";
 import AISettings from "../../../components/AISettings.astro";
 import AIMenu from "../../../components/AIMenu.astro";
 import Layout from "../../../layouts/Layout.astro";
+import YouTubeVideolari from "../../../components/YouTubeVideolari.astro";
 import { Check, X } from "lucide-react";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -136,6 +137,7 @@ const EXAM_LABEL: Record<string, string> = { vize: "Vize", final: "Final", butun
           <span class="hidden sm:inline ml-2">Yazdır</span>
         </button>
         </div>
+        <YouTubeVideolari anahtar={`${university.id}/${course.id}`} />
       </header>
 
       <!-- Search Shortcut Hint -->

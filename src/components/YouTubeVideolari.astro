@@ -1,0 +1,33 @@
+---
+// Course video summaries on our YouTube channel, linked both ways with the video descriptions
+// (Zeki, 19 Nov 2026: grow channel subscribers from the site). Data: src/data/youtube-videolar.json,
+// written by auzeff-tui scripts/site_youtube_json.py.
+import veri from "../data/youtube-videolar.json";
+
+interface Props { anahtar: string }
+const { anahtar } = Astro.props;
+const videolar = (veri.dersler as Record<string, { baslik: string; url: string; liste?: string | null }[]>)[anahtar] ?? [];
+const kimlik = (url: string) => url.split("/").pop() ?? "";
+---
+{videolar.length > 0 && (
+  <section class="mt-6 rounded-xl border border-primary-theme/20 p-4" aria-labelledby="video-ozet-baslik">
+    <h2 id="video-ozet-baslik" class="text-base font-semibold text-theme mb-3">Bu dersin video özeti</h2>
+    <ul class="grid gap-3 sm:grid-cols-2">
+      {videolar.map((v) => (
+        <li>
+          <a href={v.url} target="_blank" rel="noopener" class="flex gap-3 items-center group">
+            <img src={`https://i.ytimg.com/vi/${kimlik(v.url)}/mqdefault.jpg`} alt="" width="160" height="90"
+              loading="lazy" class="rounded-md w-32 h-18 object-cover shrink-0" />
+            <span class="text-sm text-theme group-hover:underline line-clamp-2">{v.baslik}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <div class="flex flex-wrap gap-2 mt-4">
+      <a href={veri.kanal} target="_blank" rel="noopener" class="btn-primary">Kanala abone ol</a>
+      {videolar[0].liste && (
+        <a href={videolar[0].liste} target="_blank" rel="noopener" class="btn-primary bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 border-none shadow-none">Bölümün bütün özetleri</a>
+      )}
+    </div>
+  </section>
+)}
