@@ -7,10 +7,32 @@ import Layout from "../layouts/Layout.astro";
   <div class="page-header-wrapper">
     <div class="container-narrow relative">
       <h1 class="page-title text-theme">
-        <span class="text-4xl"><Simge ad="ArrowLeftRight" /></span>
+        <span class="text-4xl"><Simge ad="RefreshCw" /></span>
         Kayıtlarını taşı
       </h1>
       <div class="space-y-6 text-muted-theme">
+        <section class="content-card">
+          <h2 class="text-xl font-bold text-theme mb-3">Çevrim içi eşitle</h2>
+          <p class="mb-4">
+            Kayıtların bu tarayıcıda senin parolanla şifrelenir ve kendi GitHub hesabındaki gizli bir gist'e yazılır. Site
+            hiçbir kaydını görmez, GitHub da yalnız şifreli metni görür. Her cihazda aynı anahtar ve parolayla "Eşitle"ye bas;
+            iki taraftaki kayıtlar birleşir. Parolayı unutursan kayıt açılamaz.
+          </p>
+          <p class="mb-4 text-sm">
+            Anahtar için GitHub'da <a class="underline" href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">yeni ince ayarlı anahtar</a>
+            oluştur, "Gists" iznini "Read and write" yap.
+          </p>
+          <div class="grid gap-3 max-w-md">
+            <label class="grid gap-1 text-sm">GitHub anahtarı
+              <input id="esit-token" type="password" autocomplete="off" class="rounded-lg border px-3 min-h-11 bg-transparent" style="border-color: var(--border-color)" />
+            </label>
+            <label class="grid gap-1 text-sm">Parola (en az 8 karakter)
+              <input id="esit-parola" type="password" autocomplete="new-password" class="rounded-lg border px-3 min-h-11 bg-transparent" style="border-color: var(--border-color)" />
+            </label>
+            <button id="esit-dugme" type="button" class="btn-primary min-h-11 px-4 rounded-lg">Eşitle</button>
+            <p id="esit-durum" role="status" class="text-sm"></p>
+          </div>
+        </section>
         <section class="content-card">
           <h2 class="text-xl font-bold text-theme mb-3">Bu cihazdan al</h2>
           <p class="mb-4">
@@ -38,6 +60,28 @@ import Layout from "../layouts/Layout.astro";
 
 <script>
   import { topla, yukle } from "../lib/yedek";
+  import { TOKEN_ANAHTARI, esitle } from "../lib/bulut-esitle";
+
+  const tokenGirdi = document.getElementById("esit-token") as HTMLInputElement;
+  const parolaGirdi = document.getElementById("esit-parola") as HTMLInputElement;
+  const esitDurum = document.getElementById("esit-durum")!;
+  tokenGirdi.value = localStorage.getItem(TOKEN_ANAHTARI) ?? "";
+  document.getElementById("esit-dugme")?.addEventListener("click", async (e) => {
+    const dugme = e.currentTarget as HTMLButtonElement;
+    const token = tokenGirdi.value.trim();
+    if (!token) return void (esitDurum.textContent = "Önce GitHub anahtarını gir.");
+    localStorage.setItem(TOKEN_ANAHTARI, token);
+    dugme.disabled = true;
+    esitDurum.textContent = "Eşitleniyor";
+    try {
+      const r = await esitle(token, parolaGirdi.value);
+      esitDurum.textContent = `Eşitlendi: ${r.gelen} kayıt birleşti, şifreli kopya güncellendi.`;
+    } catch (err) {
+      esitDurum.textContent = err instanceof Error ? err.message : "Eşitlenemedi.";
+    } finally {
+      dugme.disabled = false;
+    }
+  });
 
   const durum = document.getElementById("yedek-durum")!;
   document.getElementById("yedek-al")?.addEventListener("click", () => {
