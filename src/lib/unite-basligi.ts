@@ -22,13 +22,15 @@ export function uniteBasligi(ham: string): { baslik: string; alt: string[] } {
 // They are not units: keeping them shifts every later unit (week 8 "Öğrenme" is book unit 5).
 const SINAV_HAFTASI = new RegExp(
   [
-    String.raw`^\s*(\d+\s*[.-]?\s*)?(ara\s*sınav|arasınav|vize|final|finai|dönem\s*sonu|dönüm\s*sonu|dönem\s*soru|son\s*sınav|bütünleme|yarıyıl\s*sonu|genel\s*tekrar|konu\s*tekrar|tekrar|genel\s*değerlendirme|değerlendirme|sınav)`,
+    String.raw`^\s*(\d+\s*[.-]?\s*)?(ara\s*sınav|arasınav|vize|final|finai|dönem\s*sonu|dönüm\s*sonu|dönem\s*soru|son\s*sınav|bütünleme|yarıyıl\s*sonu|genel\s*tekrar|konu\s*tekrar|tekrar|genel\s*değerlendirme|değerlendirme\s*$)`,
     String.raw`soru\s*çözüm`,
     String.raw`sınav(ına|a)?\s*hazırlık`,
     String.raw`sınav\s*öncesi`,
     String.raw`sınav\s*soru`,
     String.raw`tekrar(ı)?(\s|$)`,
     String.raw`genel\s*tekrar`,
+    String.raw`tekrarlan`,
+    String.raw`ders\s*değerlendirme`,
     String.raw`gözden\s*geçiril`,
     String.raw`sınav(ı)?\s*$`,
   ].join("|"),
