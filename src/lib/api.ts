@@ -107,6 +107,22 @@ export async function getKitapKonulari(uniId: string, courseId: string): Promise
     }
 }
 
+const kitapUniteOnbellek = new Map<string, Record<string, string[]>>();
+
+/** Book unit titles in order (data/kitap-uniteleri/<uni>.json, keyed by course code), e.g. from Anadolu eKampüs. */
+export async function getKitapUniteAdlari(uniId: string, courseCode: string | undefined): Promise<string[]> {
+    if (!courseCode) return [];
+    if (!kitapUniteOnbellek.has(uniId)) {
+        try {
+            const d = JSON.parse(await fs.readFile(path.join(DATA_DIR, 'kitap-uniteleri', `${uniId}.json`), 'utf-8'));
+            kitapUniteOnbellek.set(uniId, d.dersler ?? {});
+        } catch {
+            kitapUniteOnbellek.set(uniId, {});
+        }
+    }
+    return kitapUniteOnbellek.get(uniId)?.[courseCode] ?? [];
+}
+
 export async function getDersIcerik(uniId: string, courseId: string): Promise<DersIcerik | null> {
     try {
         const filePath = path.join(DATA_DIR, 'ders-icerik', uniId, `${courseId}.json`);

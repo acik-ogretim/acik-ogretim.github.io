@@ -16,7 +16,7 @@ const xSvg = '<svg aria-hidden="true"><use href="#i-x"/></svg>';
 import SohbetCekmece from "../../../components/sohbet/SohbetCekmece.tsx";
 import MobilMenu from "../../../components/MobilMenu.tsx";
 import Icindekiler, { type IcKonu, type IcUnite } from "../../../components/Icindekiler.tsx";
-import { getCourses, getDersIcerik, getKitapKonulari, getQuestions, getUniversities, type KitapKonu } from "../../../lib/api";
+import { getCourses, getDersIcerik, getKitapKonulari, getKitapUniteAdlari, getQuestions, getUniversities, type KitapKonu } from "../../../lib/api";
 import { uniteBasligi } from "../../../lib/unite-basligi";
 import { soruSirala } from "../../../lib/soru-sirasi";
 import { canonicalDepartments, coursePath } from "../../../lib/kanonik";
@@ -64,6 +64,9 @@ const icerik = await getDersIcerik(university.id, course.id);
 const enBuyukUnite = Math.max(0, ...questions.map((q) => q.unitNumber));
 const resmiListe = (icerik?.konular ?? []).length >= enBuyukUnite ? (icerik?.konular ?? []) : [];
 const uniteAdi = new Map(resmiListe.map((k) => [k.no, uniteBasligi(k.baslik)]));
+// The book's own unit list wins over the weekly plan (weekly plans have exam weeks and differ from the book)
+const kitapUniteleri = await getKitapUniteAdlari(university.id, course.code);
+kitapUniteleri.forEach((baslik, i) => uniteAdi.set(i + 1, uniteBasligi(baslik)));
 // Book topic tree: unit titles where the official list has none, and the topic shown on each question
 const kitap = await getKitapKonulari(university.id, course.id);
 const konuAdi = new Map<string, string>();
