@@ -1,1 +1,1526 @@
-[]
+[
+  {
+    "id": "s-edf97fc1fe7a",
+    "unitNumber": 1,
+    "text": "Bir kuyruk sisteminde ‘kullanım oranı’ (utilization) aşağıdakilerden hangisini ifade eder?",
+    "options": {
+      "A": "Sistemdeki toplam müşteri sayısını",
+      "B": "Servisin meşgul olduğu zamanın toplam zamana oranını",
+      "C": "Müşterilerin ortalama varış hızını",
+      "D": "Kuyruğun maksimum uzunluğunu",
+      "E": "Servis süresinin standart sapmasını"
+    },
+    "correctAnswer": "B",
+    "explanation": "Kullanım oranı (utilization. genellikle ρ ile gösterilir); bir servis biriminin meşgul olduğu sürenin toplam süreye oranını ifade eder ve varış hızının servis hızına bölünmesiyle (λ/μ) hesaplanır. Bu oran 1’e yaklaştıkça sistemin doygunluğa ulaştığını ve kuyrukların uzadığını gösterir. Kararlı bir sistem için kullanım oranının 1’den küçük olması gerekir. Doğru cevap B’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-24fe76dc7c2a",
+    "unitNumber": 2,
+    "text": "Müşteri varış zamanları tablosu: 1. müşteri 2. 2. müşteri 4. 3. müşteri 5. 4. müşteri 7. 5. müşteri 9. 6. müşteri 12. Yukarıda verilen tabloya göre 4. müşteri sisteme kaçıncı dakikada gelmiştir?",
+    "options": {
+      "A": "9",
+      "B": "18",
+      "C": "15",
+      "D": "7",
+      "E": "11"
+    },
+    "correctAnswer": "B",
+    "explanation": "Tablodaki sayılar mutlak varış zamanı değil, ardışık varış aralıkları (interarrival times) olarak yorumlanıyor. Bu yüzden 4. müşterinin varış zamanı ilk 4 aralığın toplamıdır: Bu yüzden cevap anahtarındaki 18 doğru.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4acec0a3456b",
+    "unitNumber": 3,
+    "text": "Aşağıdakilerden hangisi simülasyon saatinin ilerletilmesinde kullanılan yaklaşımlardan biridir?",
+    "options": {
+      "A": "En geç olay zamanı",
+      "B": "Sabit artışlarla zaman ilerletme",
+      "C": "En yakın servis zamanı",
+      "D": "Değişken artışlarla zaman ilerletme",
+      "E": "En uzak olay zamanı"
+    },
+    "correctAnswer": "B",
+    "explanation": "Simülasyon saatinin ilerletilmesinde iki temel yaklaşım vardır: sabit artışlarla zaman ilerletme (fixed-increment) ve olaydan olaya zaman ilerletme (next-event). Sabit artışlarla yaklaşımda saat eşit zaman dilimleriyle (örneğin her dakika) ilerletilir. PDF cevap anahtarına göre doğru seçenek B’dir. (Not: ‘değişken artışlarla zaman ilerletme’ ifadesi de olaydan olaya yaklaşımı çağrıştırsa da anahtar B’yi işaretlemiştir.) Doğru cevap B’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-bafa4c8ef091",
+    "unitNumber": 4,
+    "text": "Benzetim çalışmasında ‘doğrulama’ (verification) kavramı aşağıdakilerden hangisini ifade eder?",
+    "options": {
+      "A": "Modelin gerçek sistemi doğru temsil edip etmediğini",
+      "B": "Bilgisayar programının kavramsal modeli doğru biçimde uygulayıp uygulamadığını",
+      "C": "Girdi verilerinin dağılımının belirlenmesini",
+      "D": "Çıktıların istatistiksel analizini",
+      "E": "Modelin maliyetinin hesaplanmasını"
+    },
+    "correctAnswer": "B",
+    "explanation": "Doğrulama (verification); benzetim modelinin bilgisayar programına (koda) doğru biçimde aktarılıp aktarılmadığını. yani ‘modeli doğru mu kurduk’ sorusunu kontrol etmeyi ifade eder. Geçerleme (validation) ise modelin gerçek sistemi doğru temsil edip etmediğini. yani ‘doğru modeli mi kurduk’ sorusunu inceler. Bu iki kavram benzetim güvenilirliğinin temelidir. Doğru cevap B’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-dee31be8c1bc",
+    "unitNumber": 5,
+    "text": "Aşağıda benzetim hakkında verilen bilgilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Benzetim birçok bilim dallarında uygulama alanı geniş bir tekniktir.",
+      "B": "Benzetim. sistemlerin zamana bağlı işleyişlerinin taklit edilmesidir.",
+      "C": "Benzetim uygulamalarına akademik araştırmalarda ve iş dünyasında sıkça rastlanmaktadır.",
+      "D": "Benzetim sadece bilgisayar tabanlı bir yöntemdir.",
+      "E": "Bir benzetim modeli. sistemin işleyişi ile ilgili bazı kabullerden oluşur."
+    },
+    "correctAnswer": "D",
+    "explanation": "Benzetim yalnızca bilgisayar tabanlı bir yöntem değildir; elle (manuel). fiziksel maketlerle ya da matematiksel modellerle de gerçekleştirilebilir. Bilgisayarlar benzetimi kolaylaştırsa da zorunlu değildir. Diğer seçenekler doğrudur: benzetim geniş uygulama alanına sahiptir. sistemlerin zamana bağlı işleyişini taklit eder ve belirli kabullere dayanır. Doğru cevap D’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-fa34ffd4a4e1",
+    "unitNumber": 6,
+    "text": "Aşağıdaki ikililerden hangisi sürekli-kesikli dağılım ikilisidir?",
+    "options": {
+      "A": "Normal-Poisson",
+      "B": "Binom-Geometrik",
+      "C": "Bernoulli-Poisson",
+      "D": "Üstel-Normal",
+      "E": "Üçgen-Normal"
+    },
+    "correctAnswer": "A",
+    "explanation": "Sürekli dağılımlar (Normal. Üstel. Üçgen. Gama vb.) sayılamayan. herhangi bir aralıkta değer alabilen değişkenleri; kesikli dağılımlar (Poisson. Binom. Geometrik. Bernoulli vb.) ise sayılabilen tam sayı değerleri modeller. Normal sürekli. Poisson kesikli bir dağılım olduğundan Normal-Poisson sürekli-kesikli ikilisidir. Binom-Geometrik ve Bernoulli-Poisson her ikisi de kesikli. Üstel-Normal ve Üçgen-Normal her ikisi de süreklidir. Doğru cevap A’dır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8918b460efa0",
+    "unitNumber": 7,
+    "text": "Bilgisayar üreten bir firma ürünlerinin dayanıklılık süresini değerlendirmek istemektedir. 100 tane rassal olarak seçilen bilgisayarın standart sapması 120 gün. ortalama dayanıklılık süreleri de 1440 gündür.<br> güvenle anakütle ortalama dayanıklılık süresi aşağıdaki aralıklardan hangisidir? (Zα/2=1.65)",
+    "options": {
+      "A": "[1400 - 1471]",
+      "B": "[1420.2 - 1459.8]",
+      "C": "[1320 - 1560]",
+      "D": "[1398.5 - 1481.5]",
+      "E": "[1202.4 - 1667.6]"
+    },
+    "correctAnswer": "B",
+    "explanation": "Güven aralığı formülü: ortalama ± Z(α/2) x (standart sapma / kök n) şeklindedir. Hata payı = 1.65 x (120 / kök100) = 1.65 x (120/10) = 1.65 x 12 = 19.8 olarak hesaplanır. Alt sınır = 1440 – 19.8 = 1420.2. üst sınır = 1440 + 19.8 = 1459.8 bulunur. Böylece %90 güven aralığı [1420.2 – 1459.8] olur. Doğru cevap B’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-2a2f597e8174",
+    "unitNumber": 8,
+    "text": "Aşağıdaki sistem – varlık eşleştirmelerinden hangisi yanlıştır?",
+    "options": {
+      "A": "Karayolları-Araç",
+      "B": "Acil servis-Hasta",
+      "C": "Banka-Müşteri",
+      "D": "Fabrika-Talep",
+      "E": "Hava yolları-Yolcu"
+    },
+    "correctAnswer": "D",
+    "explanation": "Benzetimde varlık (entity); sistemde işlem gören. hareket eden somut nesnedir. Karayollarında araç. acil serviste hasta. bankada müşteri. hava yollarında yolcu birer varlıktır. Fabrika sisteminde varlık ise ‘talep’ değil. üretilen ürün ya da iş parçasıdır; talep soyut bir kavram olup bir varlık olarak değerlendirilemez. Bu nedenle Fabrika-Talep eşleştirmesi yanlıştır. Doğru cevap D’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c56d6f870966",
+    "unitNumber": 9,
+    "text": "Aşağıdakilerden hangisi doğrusal eşlik yönteminde tam periyot elde etmek için kullanılan Hull-Dobell teoremi şartlarındandır?",
+    "options": {
+      "A": "m değeri asal sayı olmalıdır.",
+      "B": "Eğer m 4'e bölünüyorsa c-1 de 4'e bölünebilmelidir.",
+      "C": "c değeri tek sayı olmalıdır.",
+      "D": "m değerinin tüm bölenlerine b-1 de bölünebilmelidir.",
+      "E": "b değeri asal sayı olmalıdır."
+    },
+    "correctAnswer": "B",
+    "explanation": "Doğrusal eşlik (linear congruential) yönteminde tam periyot elde etmek için Hull-Dobell teoreminin üç şartı vardır: (1) c ile m aralarında asal olmalı. (2) m’yi bölen her asal sayı a-1’i de bölmeli. (3) Eğer m 4’e bölünüyorsa a-1 de 4’e bölünebilmelidir. Seçenekler arasında bu teoremin şartına en uygun ifade B şıkkıdır. Doğru cevap B’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a05e70368b9b",
+    "unitNumber": 10,
+    "text": "Aşağıdakilerden hangisi bir banka kuyruk modelinin servisi olamaz?",
+    "options": {
+      "A": "ATM",
+      "B": "Vezne",
+      "C": "Mobil bankacılık bilgisayarı",
+      "D": "Güvenlik görevlisi",
+      "E": "Telefon bankacılığı kabini"
+    },
+    "correctAnswer": "D",
+    "explanation": "Kuyruk modelinde ‘servis’. müşterinin beklediği ve hizmet aldığı birimdir. ATM. vezne. mobil bankacılık ve telefon bankacılığı; müşterilerin işlem yaptığı ve sıra beklediği servis birimleridir. Güvenlik görevlisi ise müşterilere bankacılık hizmeti veren bir servis birimi değildir; güvenlik sağlama görevi taşır. Bu nedenle banka kuyruk modelinin servisi olamaz. Doğru cevap D’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2a27e01d0d7a",
+    "unitNumber": 11,
+    "text": "Little Yasası’na göre bir kuyruk sisteminde ortalama müşteri sayısı (L). aşağıdaki ilişkilerden hangisiyle ifade edilir? (λ: varış hızı. W: sistemde ortalama geçirilen süre)",
+    "options": {
+      "A": "L = &lambda; / W",
+      "B": "L = &lambda; x W",
+      "C": "L = W / &lambda;",
+      "D": "L = &lambda; + W",
+      "E": "L = &lambda; - W"
+    },
+    "correctAnswer": "B",
+    "explanation": "Little Yasası; bir kararlı kuyruk sisteminde ortalama müşteri sayısının (L). ortalama varış hızı (λ) ile müşterilerin sistemde geçirdiği ortalama süre (W) çarpımına eşit olduğunu ifade eder: L = λ x W. Bu yasa kuyruk teorisinin en temel ve genel ilişkilerinden biridir; sistemin dağılımından bağımsız olarak geçerlidir. Doğru cevap B’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-bcd0c196940e",
+    "unitNumber": 12,
+    "text": "Faaliyetlerin meydana gelmesinde görev alan personel. alet. alan. enerji. zaman. para gibi birimler aşağıdakilerden hangisini ifade etmektedir?",
+    "options": {
+      "A": "Faaliyet",
+      "B": "Varlık",
+      "C": "Kaynak",
+      "D": "Kontrol",
+      "E": "Özellik"
+    },
+    "correctAnswer": "C",
+    "explanation": "Benzetim modellemesinde kaynak (resource); faaliyetlerin gerçekleştirilebilmesi için gerekli olan personel. alet. alan. enerji. zaman ve para gibi birimleri ifade eder. Kaynaklar sınırlıdır ve faaliyetler bu kaynakları kullanarak gerçekleşir. Varlık (entity) sistemde işlem gören nesneyi. faaliyet ise gerçekleştirilen eylemi ifade eder. Doğru cevap C’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-dc7987e86c3a",
+    "unitNumber": 13,
+    "text": "Kendall (1953)’de kuyruk sistemi modellerini sınıflandırmak için kullandığı A/B/c/N/K notasyonundaki c aşağıdakilerden hangisini temsil etmektedir?",
+    "options": {
+      "A": "Servis sayısı",
+      "B": "Servis prosesi",
+      "C": "Müşterinin geldiği yığının genişliği",
+      "D": "Varış prosesi",
+      "E": "Sistemde izin verilen müşteri sayısı"
+    },
+    "correctAnswer": "A",
+    "explanation": "Kendall notasyonu A/B/c/N/K’da; A varış sürecini (dağılımını). B servis sürecini. c servis kanalı (sunucu) sayısını. N sistemde izin verilen maksimum müşteri sayısını. K ise müşteri kaynağının (popülasyonun) büyüklüğünü temsil eder. Buna göre ‘c’ servis sayısını (sunucu/kanal sayısını) ifade eder. Doğru cevap A’dır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-cc1ff160b9c0",
+    "unitNumber": 14,
+    "text": "Monte Carlo benzetim yöntemi temel olarak aşağıdakilerden hangisine dayanır?",
+    "options": {
+      "A": "Sistemin diferansiyel denklemlerle kesin çözümüne",
+      "B": "Rassal sayılar kullanılarak olasılıksal sistemlerin tekrarlı örneklemeyle modellenmesine",
+      "C": "Yalnızca deterministik sistemlerin analizine",
+      "D": "Doğrusal programlama ile en iyi çözümün bulunmasına",
+      "E": "Sistemin gerçek zamanlı gözlemlenmesine"
+    },
+    "correctAnswer": "B",
+    "explanation": "Monte Carlo yöntemi; belirsizlik ve rassallık içeren sistemleri analiz etmek için rassal sayılar üretip çok sayıda tekrarlı deneme (örnekleme) yaparak sonuçların olasılık dağılımını tahmin etmeye dayanır. Karmaşık olasılıksal problemlerin analitik çözümü zor olduğunda kullanılır. Yöntem; rassal örneklemenin tekrarıyla ortalama davranışı yaklaşık olarak belirler. Doğru cevap B’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-66dc257cf158",
+    "unitNumber": 15,
+    "text": "Aşağıdakilerden hangisi “son giren ilk çıkar” prensibine göre servis veren kuyruk disiplini kısaltmasıdır?",
+    "options": {
+      "A": "PR",
+      "B": "SPT",
+      "C": "LIFO",
+      "D": "FIFO",
+      "E": "SIRO"
+    },
+    "correctAnswer": "C",
+    "explanation": "LIFO (Last In First Out – Son Giren İlk Çıkar); kuyruğa en son giren müşterinin ilk olarak servis aldığı kuyruk disiplinidir. FIFO (First In First Out) ilk giren ilk çıkar. SPT (Shortest Processing Time) en kısa işlem süresi. SIRO (Service In Random Order) rassal sıra. PR ise öncelik (priority) disiplinini ifade eder. Son giren ilk çıkar prensibi LIFO’dur. Doğru cevap C’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ab7a1030b677",
+    "unitNumber": 16,
+    "text": "Aşağıdakilerden hangisi darboğaz tanımına uygun bir örnektir?",
+    "options": {
+      "A": "Bir teknoloji ürününe çok fazla talep gelmesi",
+      "B": "Bilgisayar donanımında ekran kartının görüntü kalitesini artması",
+      "C": "Fabrikada depoda fazla hammadde bulunması",
+      "D": "Bir konser alanının çok kalabalık olması",
+      "E": "Üretim atölyelerinde ara stokların artması"
+    },
+    "correctAnswer": "E",
+    "explanation": "Darboğaz (bottleneck); bir sistemde akışı yavaşlatan. kapasitesi diğer aşamalardan düşük olan ve önünde birikmeye yol açan noktadır. Üretim atölyelerinde ara stokların artması; bir iş istasyonunun kendinden sonraki aşamadan daha hızlı çalıştığını ve sonraki aşamanın darboğaz oluşturarak ürünleri biriktirdiğini gösterir. Bu klasik bir darboğaz örneğidir. Doğru cevap E’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-97fb458028d8",
+    "unitNumber": 17,
+    "text": "Gözlemlerin düz bir doğru etrafında yayılım gösterip göstermediğine bakılarak verinin belirlenen dağılımdan gelip gelmediği hakkında sonuca varılan girdi analizi yöntemi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Kolmogorov-Smirnov Testi",
+      "B": "Ki-kare Testi",
+      "C": "Q-Q grafikleri",
+      "D": "P-P Grafikleri",
+      "E": "Histogram"
+    },
+    "correctAnswer": "C",
+    "explanation": "Q-Q (Quantile-Quantile) grafikleri; gözlem değerlerinin kuantillerini teorik dağılımın kuantillerine karşı çizerek noktaların düz bir doğru etrafında yayılıp yayılmadığını incelemeye dayanır. Noktalar doğruya yakın dizilirse verinin belirtilen dağılımdan geldiği sonucuna varılır. Kolmogorov-Smirnov ve Ki-kare ise sayısal hipotez testleridir. Doğru cevap C’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c5b59f7918e9",
+    "unitNumber": 18,
+    "text": "{9. 2. 16. 7. 5. 18. 13. 9. 14. 8. 9} Yukarıda verilen serinin medyanı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "9",
+      "B": "10",
+      "C": "7",
+      "D": "11",
+      "E": "8"
+    },
+    "correctAnswer": "A",
+    "explanation": "Medyan; veriler küçükten büyüğe sıralandığında ortadaki değerdir. Seri sıralandığında: 2. 5. 7. 8. 9. 9. 9. 13. 14. 16. 18 olur. Toplam 11 eleman bulunduğundan ortadaki (6.) değer medyandır. 6. sıradaki değer 9 olduğundan medyan 9’dur. Doğru cevap A’dır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0b91aeb6b6b3",
+    "unitNumber": 19,
+    "text": "Aşağıdakilerden hangisi rassal sayı üreteçlerinden istenilen özelliklerdendir?",
+    "options": {
+      "A": "Küçük periyot",
+      "B": "Tek seferlik üretim",
+      "C": "Rassallık",
+      "D": "Hesaplanabilir olmaması",
+      "E": "Belli bir yazılım diline bağlılık"
+    },
+    "correctAnswer": "C",
+    "explanation": "İyi bir rassal sayı üretecinden beklenen temel özellik. ürettiği sayıların istatistiksel olarak rassal (bağımsız ve düzgün dağılımlı) olmasıdır. Ayrıca uzun periyot. hızlı ve tekrarlanabilir üretim. yazılım diline bağımsızlık ve hesaplanabilir olma da istenen özelliklerdir. Küçük periyot. tek seferlik üretim ve dile bağlılık ise istenmeyen özelliklerdir. Doğru cevap C’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d65e45ce94aa",
+    "unitNumber": 20,
+    "text": "Aşağıdaki ikililerden hangisi Deterministik-Stokastik sistem ikilisine örnektir?",
+    "options": {
+      "A": "Fabrika-Borsa",
+      "B": "Differansiyel denklem-Meteoroloji",
+      "C": "Kalite kontrol-Stok kontrol",
+      "D": "Üretim-İletişim",
+      "E": "Hava yolları-Karayolları"
+    },
+    "correctAnswer": "B",
+    "explanation": "Deterministik sistemde sonuçlar belirli ve öngörülebilirdir; aynı girdiler her zaman aynı çıktıyı verir. Diferansiyel denklemle modellenen sistemler deterministiktir. Stokastik sistemde ise rassallık ve belirsizlik vardır; meteoroloji (hava tahmini) olasılıksal ve değişkendir. Bu nedenle Diferansiyel denklem (deterministik) – Meteoroloji (stokastik) ikilisi bu ayrıma uygun örnektir. Doğru cevap B’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b75328a50afa",
+    "unitNumber": 21,
+    "text": "Aşağıdakilerden hangisi benzetim tekniğinin avantajlarından biridir?",
+    "options": {
+      "A": "Bireysel gözleme dayalı değil. gerçekte sistemin işleyişine dair bilgi kazandırması",
+      "B": "Rassallıktan kaynaklanan bir sonuç olup olmadığını gözlemlemenin güçlüğü",
+      "C": "Bilgisayarlarda benzetim modellerinin koşum maliyetinin yüksek olması",
+      "D": "En iyi çözüme ulaşamaması",
+      "E": "Maliyetli ve zaman alıcı bir teknik olması"
+    },
+    "correctAnswer": "A",
+    "explanation": "Benzetimin temel avantajlarından biri; gerçek sistem üzerinde deney yapmadan. sistemin zamana bağlı işleyişine dair kapsamlı bilgi edinilmesini sağlamasıdır. Diğer seçenekler (rassallığın gözlem güçlüğü. yüksek koşum maliyeti. en iyi çözüme ulaşamama. zaman alıcı olma) benzetimin dezavantajları arasında sayılır. Bu nedenle tek avantaj A şıkkındadır. Doğru cevap A’dır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-cbe7f24b476b",
+    "unitNumber": 22,
+    "text": "Olaydan olaya (next-event) zaman ilerletme yaklaşımının sabit artışlı yaklaşıma göre temel avantajı nedir?",
+    "options": {
+      "A": "Daha fazla bellek kullanması",
+      "B": "Hiçbir olayın gerçekleşmediği zaman dilimlerini atlayarak hesaplama verimliliği sağlaması",
+      "C": "Yalnızca deterministik sistemlerde çalışması",
+      "D": "Zaman kavramını tamamen ortadan kaldırması",
+      "E": "Rassal sayı gerektirmemesi"
+    },
+    "correctAnswer": "B",
+    "explanation": "Olaydan olaya zaman ilerletme yaklaşımında simülasyon saati. bir sonraki olayın gerçekleşeceği ana doğrudan atlatılır; arada hiçbir olayın olmadığı boş zaman dilimleri işlenmez. Bu sayede sabit artışlı yaklaşıma göre gereksiz hesaplamalardan kaçınılır ve hesaplama verimliliği artar. Özellikle olayların seyrek gerçekleştiği sistemlerde önemli bir avantaj sağlar. Doğru cevap B’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f9446061f7e0",
+    "unitNumber": 23,
+    "text": "n denemedeki başarı sayısını modelleyen dağılım aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Normal",
+      "B": "Gama",
+      "C": "Negatif Binom",
+      "D": "Binom",
+      "E": "Beta"
+    },
+    "correctAnswer": "D",
+    "explanation": "Binom dağılımı; sabit sayıda (n) bağımsız Bernoulli denemesinde gözlenen başarı sayısını modelleyen kesikli olasılık dağılımıdır. Her denemenin iki olası sonucu (başarı/başarısızlık) ve sabit bir başarı olasılığı (p) vardır. Negatif Binom ise belirli sayıda başarıya ulaşana kadar gereken deneme sayısını modeller. Doğru cevap D’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2659f06bec26",
+    "unitNumber": 24,
+    "text": "Kesikli X rassal değişkeninin dağılım fonksiyonu F(x); x<1 için 0. 1<=x<2 için 0.25. 2<=x<3 için 0.55. 3<=x=4 için 1 şeklindedir. Aşağıdakilerden hangisi ters dönüşüm yöntemini kullanarak elde edilen rassal değişken aralıklarından değildir?",
+    "options": {
+      "A": "0.25&lt;R&lt;0.54 ise X=2",
+      "B": "0.55&lt;R&lt;0.69 ise X=3",
+      "C": "0&lt;R&lt;0.24 ise X=1",
+      "D": "0.7&lt;R&lt;1 ise X=4",
+      "E": "0.25&lt;R&lt;0.55 ise X=2"
+    },
+    "correctAnswer": "E",
+    "explanation": "Ters dönüşüm yönteminde rassal sayı R’nin aralıkları. dağılım fonksiyonunun kümülatif değerlerine göre belirlenir. X=1 için 0-0.25. X=2 için 0.25-0.55. X=3 için 0.55-0.70. X=4 için 0.70-1.00 aralıkları kullanılır. Diğer şıklar bu kümülatif değerlerle (yaklaşık) uyumludur; ancak E şıkkındaki 0.25-0.55 aralığı X=3’ün başlangıç sınırı olan 0.55’i de kapsadığından ve diğer seçeneklerle çelişen bir biçimde verildiğinden hatalıdır. Doğru cevap E’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ce79822a575d",
+    "unitNumber": 25,
+    "text": "Müşterilerin toplam bekleme süresi 142 dakikadır ve sistemde 6 müşteri bulunmaktadır. Bu varsayıma göre müşterilerin sistemde ortalama bekleme süresi kaç dakikadır?",
+    "options": {
+      "A": "16.33",
+      "B": "13.66",
+      "C": "26.33",
+      "D": "14.2",
+      "E": "23.66"
+    },
+    "correctAnswer": "E",
+    "explanation": "Ortalama bekleme süresi; toplam bekleme süresinin müşteri sayısına bölünmesiyle bulunur. Toplam bekleme süresi 142 dakika. müşteri sayısı 6 olduğundan ortalama bekleme süresi = 142 / 6 = 23.66 dakika olarak hesaplanır. Doğru cevap E’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-00e39f5527b8",
+    "unitNumber": 26,
+    "text": "AutoMod ürün ailesindeki çalıştırma yöneticisi ve istatistiksel analiz ürünü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "AutoStat",
+      "B": "SimRunner",
+      "C": "OptQuest",
+      "D": "PROCESS ANALYZER",
+      "E": "OUTPUT ANALYZER"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5a2de9dc9936",
+    "unitNumber": 28,
+    "text": "En düşük işlem süresine sahip varlığın ilk işlem görmesini sağlayacak kuyruk disiplini aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "FIFO",
+      "B": "LIFO",
+      "C": "PR",
+      "D": "Highest Attribute Value (first)",
+      "E": "Lowest Attribute Value (first)"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-6b73d7b67ad7",
+    "unitNumber": 29,
+    "text": "Bir acil servise saatte ortalama 4 hasta gelmektedir. Her bir hastaya ortalama müdahale süresi 12 dakikadır. Gelişler arası süre ve servis süresi üstel dağılıma uymaktadır. Bu durumda hastaların sistemde geçirdiği ortalama süre aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "80 dk",
+      "B": "30 dk",
+      "C": "40 dk",
+      "D": "20 dk",
+      "E": "60 dk"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-581f9d601e02",
+    "unitNumber": 30,
+    "text": "Aşağıdakilerden hangisi PROCESS modülündeki Action penceresindeki seçeneklerden değildir?",
+    "options": {
+      "A": "Seize Delay Release",
+      "B": "Seize Delay",
+      "C": "Random",
+      "D": "Delay",
+      "E": "Delay Release"
+    },
+    "correctAnswer": "C",
+    "explanation": "ARENA’daki PROCESS modülünün “Action” (Eylem) penceresi, varlığın kaynakla olan etkileşimini tanımlar. Seçenekler arasında kaynağı ele geçirme (Seize), bekleme (Delay) ve kaynağı bırakma (Release) eylemlerinin kombinasyonları bulunur. “Random” ise bir eylem türü değil, bir olasılık dağılımı türüdür.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-69043ac132eb",
+    "unitNumber": 31,
+    "text": "Aşağıdaki simülasyon yazılımlarından hangisi 1993 yılında ilk defa piyasaya sürülmüştür?",
+    "options": {
+      "A": "EXTEND",
+      "B": "AUTOMOD",
+      "C": "ARENA",
+      "D": "SIMUL8",
+      "E": "PROMODEL"
+    },
+    "correctAnswer": "C",
+    "explanation": "Systems Modeling Corporation tarafından geliştirilen ve SIMAN ile Cinema animasyon yazılımını birleştiren, Windows tabanlı popüler benzetim yazılımı ARENA, ilk olarak 1993 yılında piyasaya sürülmüştür.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a565805d2bdc",
+    "unitNumber": 32,
+    "text": "Bir berbere gelen müşterilerin %20’si saç tıraşı ve %80’i sakal tıraşı olmaktadır. Bu müşteri tipleri ASSIGN modülü ile tanımlanmıştır. Bu işlemler farklı personeller tarafından gerçekleştirildiğinden DECIDE modülü ile bu müşteriler farklı PROCESS modüllerine yönlendirilecektir. DECIDE modülene yazılacak koşul/condition aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "DISC(1,2)",
+      "B": "TIP",
+      "C": "%80",
+      "D": "%20",
+      "E": "TIP=1"
+    },
+    "correctAnswer": "E",
+    "explanation": "ASSIGN modülünde müşteri tipleri genellikle bir nitelik (attribute) ile tanımlanır (örneğin, TIP niteliği saç için 1, sakal için 2 değeri alabilir). DECIDE modülünde bu müşterileri ayırmak için “2-way by Condition” (Koşula Göre İkiye Ayır) seçeneği kullanılır ve koşul olarak “TIP == 1” (Eğer TIP niteliği 1’e eşitse) gibi bir ifade yazılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8055bb0c6d5c",
+    "unitNumber": 33,
+    "text": "Aşağıdakilerden hangisi Statik-Dinamik sistem ikilisine örnektir?",
+    "options": {
+      "A": "Kalite Kontrol - Stok Kontrol",
+      "B": "Havayolları - Karayolları",
+      "C": "Üretim İletişim",
+      "D": "Banka Baraj",
+      "E": "Güneş Sistemi - Sindirim Sistemi"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-2fb1eca1bc94",
+    "unitNumber": 34,
+    "text": "Bir üretim tesisinin benzetim modelinde makine kullanımları için arızalara kadar geçen süreyi modelleyen dağılım aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Normal",
+      "B": "Weibull",
+      "C": "Üçgen",
+      "D": "Negatif Binom",
+      "E": "Ampirik"
+    },
+    "correctAnswer": "B",
+    "explanation": "Weibull dağılımı, özellikle bir sistemin veya makinenin arızalanmasına kadar geçen süreyi, yani ömür verilerini modellemek için mühendislik ve güvenilirlik analizlerinde yaygın olarak kullanılan bir olasılık dağılımıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-6c08ceaf6b3f",
+    "unitNumber": 35,
+    "text": "Tek bir uzun çalışmanın birden çok çoğaltma çalıştırmaya tercih edilebilme sebebi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Sonuçlarda bağımsızlık sağlar.",
+      "B": "Tahmini ortalama değer daha doğrudur.",
+      "C": "Güven aralıkları daha kolay hesaplanabilir.",
+      "D": "Isınma süresinin yalnızca bir kez çalıştırılması gerekir, bu da deneyleri çalıştırmak için gereken süreyi azaltır.",
+      "E": "Standart sapma değeri daha yaklaşık sonuçlar verir."
+    },
+    "correctAnswer": "D",
+    "explanation": "Kararlı durum benzetimlerinde, sistemin istikrarlı hale gelmesi için bir “ısınma periyodu”na ihtiyaç vardır. Birden çok çoğaltma (replikasyon) yapmak yerine tek bir uzun benzetim çalıştırmanın en önemli avantajı, bu ısınma periyodunun sadece bir kez çalıştırılması ve böylece toplam benzetim süresinin kısalmasıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-0413a4b97eba",
+    "unitNumber": 37,
+    "text": "ARENA çalışma sonuçları raporlarından Resources (Kaynaklar) raporunda aşağıdakilerden hangisi bir kaynağın meşgul birimlerinin sayısını ifade eder?",
+    "options": {
+      "A": "TOTAL NUMBER SEIZED",
+      "B": "INSTANTANEOUS UTILIZATION",
+      "C": "NUMBER SCHEDULED",
+      "D": "SCHEDULED UTILIZATION",
+      "E": "NUMBER BUSY"
+    },
+    "correctAnswer": "E",
+    "explanation": "ARENA çıktı raporlarında, “Resources” bölümü altında “Number Busy” ifadesi, benzetim anında o kaynaktan kaç birimin meşgul olduğunu, yani anlık olarak kullanımda olan kaynak sayısını gösterir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c519f369b844",
+    "unitNumber": 38,
+    "text": "Modelin geçerli olarak kabul edilip edilmeyeceğinin veya modelin iyileştirilip iyileştirilmeyeceğinin belirlenmesi, güven aralığının ima ettiği en iyi durum ve en kötü durum hatasına bağlıdır. Bir süpermarket benzetim çalışmasında müşterilerin kasa kuyruğunda bekleme süreleri güven aralığı [8.15-10.30] olarak belirlenmiştir. Gözlemlenen sistemin bekleme ortalamalarının 9.25 dakika olduğu bilinmektedir. Bu durum ε=1 için en iyi durum ve en kötü durum hatasına göre incelendiğinde aşağıdaki sonuçlardan hangisine ulaşılır?",
+    "options": {
+      "A": "En iyi durum hatası &le; &epsilon;'dur ancak en kötü durum hatası &gt; &epsilon;'dur. Bir sonuca varılıncaya kadar ek simülasyon çalıştırmalarına ihtiyaç vardır.",
+      "B": "En iyi durum hatası &lt; s dur. Sistem ve model performansları arasındaki fark, en iyi durumda bile yeterince büyük olduğundan model iyileştirilmelidir.",
+      "C": "En kötü durum hatası &le;&epsilon; 'dur, simülasyon modeli reddedilir ve yeni bir model kurulur.",
+      "D": "En iyi durum veya en kötü durum hatası &gt; &epsilon; 'dur. Bir sonuca varılımcaya kadar ek simülasyon çalıştırmalarına ihtiyaç vardır.",
+      "E": "En kötü durum hatası &le;&epsilon; dur. Simülasyon modeli yeterince yakın ve geçerli kabul edilir."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5e36ff243be0",
+    "unitNumber": 39,
+    "text": "Yukarıda verilen ARENA çıktısına göre triyaj ve kayıt işlemi için ortalama hasta bekleme süresinin güven aralığı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "0.2620-0.3420",
+      "B": "0.04-0.3020",
+      "C": "0.04-0.3887",
+      "D": "0.2353-0.3020",
+      "E": "0.2356-0.3887"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-55b6fce5caf5",
+    "unitNumber": 40,
+    "text": "Bir fabrika sisteminin benzetim modeli aşağıdaki tanımlardan hangisi ile ifade edilmektedir?",
+    "options": {
+      "A": "Geçici durum simülasyonu",
+      "B": "Kararlı simülasyon",
+      "C": "Sonlu ufuklu simülasyon",
+      "D": "Sonsuz ufuklu simülasyon",
+      "E": "Kararsız durum simülasyonu"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-adae8a385329",
+    "unitNumber": 41,
+    "text": "Kararlı durum modellerinin doğal sonlandırma süreleri olmadığına göre replikasyon uzunluğu belirlenme zamanı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "İstenen sonuçlar alındığında",
+      "B": "Sistemde belli bir miktarda varlık olduğunda",
+      "C": "İstenmeyen sonuçlar alınmaya başlandığında",
+      "D": "Önceden belirlenmiş birkaç ardışık zaman artımından sonra",
+      "E": "İlgilenilen istatistikler sabitlendiğinde"
+    },
+    "correctAnswer": "E",
+    "explanation": "Kararlı durum (steady-state) benzetimlerinde, sistemin başlangıçtaki geçici durumdan çıkıp istikrarlı bir davranış sergilemeye başladığı noktayı bulmak önemlidir. Replikasyon uzunluğu, kuyruk uzunluğu veya bekleme süresi gibi ilgilenilen performans istatistikleri artık büyük dalgalanmalar göstermeyip “sabitlendiğinde” belirlenir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-961f913b5ba4",
+    "unitNumber": 42,
+    "text": "OUTPUT ANALYZER aracı ile farklı senaryolarda çalıştırılan modellerin ortalamalarının karşılaştırılması için aşağıdakilerden hangisi kullanılır?",
+    "options": {
+      "A": "Correlogram",
+      "B": "Compare Variances",
+      "C": "Conf.Interval on Mean",
+      "D": "Compare Means",
+      "E": "One-Way ANOVA"
+    },
+    "correctAnswer": "D",
+    "explanation": "ARENA yazılımının bir parçası olan Output Analyzer’da, farklı benzetim senaryolarından elde edilen sonuçların ortalamalarını istatistiksel olarak karşılaştırmak için “Compare Means” (Ortalamaları Karşılaştır) aracı kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-550a7d9d3cb3",
+    "unitNumber": 43,
+    "text": "Aşağıdaki modüllerden hangisi bir taşıyıcı birimin durumunu devre dışı olarak değiştirmek için kullanılır?",
+    "options": {
+      "A": "STORE",
+      "B": "HALT",
+      "C": "ACCESS",
+      "D": "UNSTORE",
+      "E": "HOLD"
+    },
+    "correctAnswer": "B",
+    "explanation": "ARENA gibi benzetim yazılımlarında, taşıyıcılar (transporters) gibi hareketli kaynakların programın belirli bir noktasında durdurulması veya “devre dışı” bırakılması için “HALT” modülü veya komutu kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-53b6294de063",
+    "unitNumber": 44,
+    "text": "Aşağıdakilerden hangisi bir iletişim sistemi kuyruk modelinde müşteri olamaz?",
+    "options": {
+      "A": "Arama",
+      "B": "Baz istasyonu",
+      "C": "E-posta",
+      "D": "Sesli mesaj",
+      "E": "Video görüşme"
+    },
+    "correctAnswer": "B",
+    "explanation": "Kuyruk teorisinde sistem üç temel bileşenden oluşur: müşteriler (hizmet talep eden varlıklar), sunucular/hizmet kanalları (hizmeti sağlayan kaynaklar) ve bekleme kuyruğu. “Müşteri” kavramı kuyruk teorisinde çok geniş bir anlam taşır; insanlar, araçlar, makineler, veri paketleri, telefon çağrıları veya herhangi bir iş birimi müşteri olabilir. Bir iletişim sistemi kuyruk modelinde aramalar (telefon çağrıları), e-postalar, sesli mesajlar ve video görüşmeler hizmeti talep eden varlıklar olarak müşteri rolünü üstlenir. Baz istasyonu ise bu iletişim taleplerini işleyen sunucu konumundadır: sinyal alır, iletir ve aktarır. Dolayısıyla baz istasyonu, kuyruk modelinin “servis kanalı” (server) bileşenidir, “müşteri” bileşeni değildir. Bu ayrım kuyruk modellemesinde temel bir kavrayışı yansıtır: kim hizmet alıyor (müşteri) ve kim hizmet veriyor (sunucu) soruları doğru cevaplanmadan model kurulamaz. Hatalı atama yapıldığında sistemin tamamı yanlış modellenir; örneğin baz istasyonunun müşteri sayılması, talebin sunucu olarak modellenmesi anlamına gelir ki bu analitik açıdan tamamen hatalıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b9c714f8afb6",
+    "unitNumber": 45,
+    "text": "Parametreleri maksimum 8, en olası 5 ve minimum 2 olan üçgensel dağılım için uygulanan ters dönüşüm formülüne göre R₁ = 0,6 için Xᵢ değeri aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "5,29",
+      "B": "4,68",
+      "C": "4,71",
+      "D": "5,60",
+      "E": "5,32"
+    },
+    "correctAnswer": "E",
+    "explanation": "Üçgen dağılımdan ters dönüşüm yöntemiyle değer üretmek için adım adım hesaplama şu şekilde yapılır. Verilen parametreler: minimum a = 2, maksimum b = 8, en olası (mod) c = 5, rassal sayı R = 0,6. Adım 1: Kritik kümülatif olasılık değeri Fc hesaplanır. Fc = (c – a) / (b – a) = (5 – 2) / (8 – 2) = 3 / 6 = 0,5. Adım 2: R değeri Fc ile karşılaştırılır. R = 0,6 > Fc = 0,5 olduğundan üst dal formülü kullanılır. Adım 3: Üst dal formülü uygulanır: Xᵢ = b – √[(1 – R) · (b – a) · (b – c)] = 8 – √[(1 – 0,6) · (8 – 2) · (8 – 5)] = 8 – √[0,4 · 6 · 3] = 8 – √7,2 = 8 – 2,683 = 5,317 ≈ 5,32. Eğer R ≤ Fc olsaydı, alt dal formülü kullanılırdı: Xᵢ = a + √[R · (b – a) · (c – a)]. Üçgen dağılımın ters dönüşüm yöntemi, bilgi sistemleri, proje süre tahminleri, proje yönetiminde PERT analizi ve uzman görüşüne dayalı her türlü belirsizlik modelinde yaygın olarak kullanılmaktadır. Formülün iki dallı olması, üçgen dağılımın CDF’sinin parçalı yapısından kaynaklanmaktadır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-54da8d8f7a9a",
+    "unitNumber": 46,
+    "text": "Aşağıdakilerden hangisi örnek benzetim yazılımlarından değildir?",
+    "options": {
+      "A": "Flexsim",
+      "B": "AutoCAD",
+      "C": "Arena",
+      "D": "ProModel",
+      "E": "WITNESS"
+    },
+    "correctAnswer": "B",
+    "explanation": "AutoCAD (Autodesk Computer-Aided Design), Autodesk şirketi tarafından geliştirilen ve 1982’den bu yana kullanılan bir bilgisayar destekli tasarım (CAD) yazılımıdır. Amacı 2 boyutlu teknik çizim ve 3 boyutlu modelleme yapmaktır; mühendislik, mimarlık ve inşaat sektörlerinde yaygın biçimde kullanılır. Simülasyon (benzetim) fonksiyonelliği içermez. Gerçek benzetim yazılımlarına bakıldığında: ARENA (Rockwell Automation, 1993), ayrık olaylı simülasyon için lider yazılımlardan olup süreç akışı modelleme ve istatistiksel analiz konusunda güçlüdür. Flexsim, 3 boyutlu görselleştirme desteğiyle üretim ve lojistik sistemleri için kullanılan ileri seviye bir simülasyon yazılımıdır. ProModel, sağlık, üretim ve hizmet sektörlerine yönelik ayrık olaylı simülasyon çözümleri sunar. WITNESS (Lanner Group), imalat ve hizmet sistemleri için süreç simülasyonu yapan ticari bir yazılımdır. AnyLogic, ayrık olaylı, ajan tabanlı ve sürekli simülasyonu tek bir platformda birleştiren modern bir yazılımdır. Simul8 ve ExtendSim de ayrık olaylı simülasyon yazılımları arasında sayılabilir. Bu yazılımların tümü rassal değişkenler, kuyruk yönetimi, kaynak modelleme ve istatistiksel raporlama gibi özelliklere sahipken AutoCAD bu özelliklerin hiçbirini barındırmaz.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-eabee6b31682",
+    "unitNumber": 48,
+    "text": "Aşağıdaki sistem – durum değişkenleri eşleştirmelerinden hangisi yanlıştır?",
+    "options": {
+      "A": "Banka - Müşteri hesap meblağları",
+      "B": "Hızlı tren - Bekleyen yolcu sayısı",
+      "C": "Okul - Mezun olan öğrenci sayısı",
+      "D": "Fabrika - Arızalı makine oranı",
+      "E": "Stok - Gecikmiş talep miktarı"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1fa126a4fc16",
+    "unitNumber": 49,
+    "text": "x₀ = 4283 başlangıç sayısı olsun. Orta kare yöntemi ile x₁ değeri aşağıdaki hangi seçenekte doğru verilmiştir?",
+    "options": {
+      "A": "8344",
+      "B": "1834",
+      "C": "4089",
+      "D": "4408",
+      "E": "3440"
+    },
+    "correctAnswer": "E",
+    "explanation": "Orta kare (Middle Square) yöntemi, John von Neumann tarafından 1946 yılında önerilen ve tarihsel öneme sahip bir rassal sayı üretme algoritmasıdır. Yöntemin çalışma prensibi şu adımlardan oluşur: (1) Başlangıç değerinin (seed/tohum) karesi alınır, (2) Elde edilen sayının ortasındaki N basamak yeni değer olarak seçilir. Burada N, tohum değerinin basamak sayısıdır. Adım adım hesaplama: x₀ = 4283 (4 basamaklı sayı), x₀² = 4283² hesaplanır: 4283 × 4283 = (4000 + 283)² = 16.000.000 + 2 × 4000 × 283 + 283² = 16.000.000 + 2.264.000 + 80.089 = 18.344.089. Sonuç 8 basamaklı: 18.344.089. Ortadaki 4 basamak seçilir: 1[8344]089 → x₁ = 3440. Sezgisel doğrulama: 18.344.089’da 8 basamak var; ortadaki 4 basamak 2. ve 5. basamaklar arasındadır: 1-8-3-4-4-0-8-9 → 3, 4, 4, 0 → 3440. Bu yöntemin önemli bir zayıflığı, bazı başlangıç değerleri için değerin sıfıra yakınsayabileceği veya çok kısa periyotlar oluşturabileceğidir. Bu nedenle günümüz benzetim yazılımlarında Mersenne Twister veya gelişmiş doğrusal eşlik üreteçleri tercih edilmektedir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c17407edf82b",
+    "unitNumber": 50,
+    "text": "Bağımsız olaylar arasındaki zamanı veya hafızasız bir işlem süresini modelleyen dağılım aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Normal",
+      "B": "Poisson",
+      "C": "Üstel",
+      "D": "Düzgün",
+      "E": "Weibull"
+    },
+    "correctAnswer": "C",
+    "explanation": "Üstel dağılım, olasılık teorisinin en özel ve benzersiz dağılımlarından biridir; sahip olduğu “hafızasızlık (memoryless) özelliği” onu diğer tüm sürekli dağılımlardan ayıran yegâne özelliğidir. Matematiksel olarak bu özellik P(X > s + t | X > s) = P(X > t) biçiminde ifade edilir. Pratik anlamı şudur: bir makine zaten s süre çalışmış olsa bile, bundan sonra t süre daha arızasız çalışma olasılığı, sıfırdan başlayan bir makinenin t süre çalışma olasılığıyla aynıdır. Yani geçmiş, geleceği etkilemez. Üstel dağılımın parametresi λ (oran parametresi) olup ortalama değer 1/λ’dır. Olasılık yoğunluk fonksiyonu f(x) = λe^(-λx) (x ≥ 0) şeklindedir. Poisson dağılımı da bağımsız olaylarla ilişkilidir; ancak bu dağılım birim zamandaki olay sayısını (sayma değişkeni) modelleyen kesikli bir dağılımdır. İki dağılım arasında şu köklü ilişki vardır: Eğer birim zamandaki olay sayısı Poisson(λ) dağılımlıysa, olaylar arasındaki süre Üstel(λ) dağılımlıdır. Normal dağılım simetrik olup geçmiş bilgisine ihtiyaç duyar; Weibull dağılımı ise yaşlanma (hafıza) etkilerini modellemek için kullanılır. Düzgün dağılım ise rassal sayı üretiminde temel dağılım olarak kullanılır ve hafızasızlık özelliği taşımaz.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d96aade1c7d6",
+    "unitNumber": 51,
+    "text": "Müşteri gelişlerinin ortalaması 9 dk, standart sapması 3 dk olan normal dağılıma uyduğu belirlenmiştir. Rassal sayı tablosundan RS = 0,5 seçildiğinde müşteri geliş süresi kaç dakikadır?",
+    "options": {
+      "A": "10,5",
+      "B": "9,5",
+      "C": "10",
+      "D": "9",
+      "E": "11"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f8025c15354f",
+    "unitNumber": 52,
+    "text": "Servis sürelerinin minimum 8 dakika (dk) maksimum 15 dk arasında düzgün dağılıma uyduğu belirlenmiştir. Rassal sayı tablosundan RS = 0,72 seçildiğinde servis süresi kaç dakika olacaktır?",
+    "options": {
+      "A": "12,04",
+      "B": "15,04",
+      "C": "14,04",
+      "D": "11,04",
+      "E": "13,04"
+    },
+    "correctAnswer": "E",
+    "explanation": "Sürekli düzgün (Uniform) dağılım için ters dönüşüm yöntemi, tüm dağılımlar arasında en basit ve doğrudan hesaplanabilir olanıdır. Bunun nedeni, düzgün dağılımın birikimli dağılım fonksiyonunun (CDF) F(x) = (x – a)/(b – a) doğrusal bir fonksiyon olup tersinin kolayca alınabilmesidir. Verilen bilgiler: a = 8 dk (minimum), b = 15 dk (maksimum), RS = 0,72. Formül: Xᵢ = a + RS · (b – a). Hesaplama: Xᵢ = 8 + 0,72 · (15 – 8) = 8 + 0,72 · 7 = 8 + 5,04 = 13,04 dakika. Doğrulama: 13,04 değeri [8, 15] aralığında yer almakta mıdır? Evet, 8 ≤ 13,04 ≤ 15 ✓. RS = 0 olsaydı Xᵢ = 8 (minimum değer), RS = 1 olsaydı Xᵢ = 15 (maksimum değer), RS = 0,5 olsaydı Xᵢ = 11,5 (orta nokta) elde edilirdi. Bu formül, rassal sayıları her türlü aralıktaki düzgün dağılıma çevirmek için evrensel olarak kullanılır ve benzetim uygulamalarında doğrusal ölçekleme olarak da bilinir. Sınav sorularında bu hesaplamayı hızlı yapmak için (b – a) = 7 hesabından başlamak ve RS ile çarpmak pratik bir yaklaşımdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-41b5bab6cf74",
+    "unitNumber": 53,
+    "text": "Tek taraflı hipotez testi için sıfır hipotezi işareti aşağıdakilerden hangisi olabilir?",
+    "options": {
+      "A": "= veya &lt;",
+      "B": "&gt;",
+      "C": "= veya &gt;",
+      "D": "= veya &ge;",
+      "E": "&ne;"
+    },
+    "correctAnswer": "D",
+    "explanation": "Hipotez testleri istatistiksel çıkarımın temel araçlarından biri olup benzetim çıktılarının doğrulanmasında ve karşılaştırılmasında sıklıkla kullanılır. Çift taraflı (two-tailed) testlerde sıfır hipotezi H₀: μ = μ₀ biçiminde kurulur; hem büyüklük hem küçüklük farkları reddedilebilir. Tek taraflı (one-tailed) testlerde ise iki farklı yön söz konusudur: Üst kuyruk testi (right-tailed): H₀: μ ≤ μ₀ veya H₀: μ = μ₀ (eşit veya büyük eşit yok, eşit veya küçük eşit var). Alt kuyruk testi (left-tailed): H₀: μ ≥ μ₀ veya H₀: μ = μ₀ (eşit veya küçük eşit). Sıfır hipotezi daima “=” veya eşitlik içeren bir işaret (“≤” ya da “≥”) barındırmalıdır; çünkü test istatistiği belirli bir parametre değeri (H₀ altında) referans alınarak hesaplanır. Bu nedenle sıfır hipotezinde “>” veya “<\" veya \"≠\" kesinlikle yer almaz. \"= veya ≥\" ifadesi, H₀: μ ≥ μ₀ biçimindeki sıfır hipotezini doğru ifade eder ve bu yapı alt kuyruk testinin (sola tek kuyruklu) sıfır hipotezidir. Alternatif hipotez bu durumda H₁: μ < μ₀ olur. Benzetim bağlamında bu tip testler, bir sistemin performans metriğinin hedef değeri karşılayıp karşılamadığını belirlemekte kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-42e08d6426d9",
+    "unitNumber": 54,
+    "text": "Kolmogorov Smirnov testi ile verilerin normal dağılıma uyup uymadığı test edilmiş ve D=0,1408 < D₀.₀₅,₂₀ =0,272 sonucu elde edilmiştir. Buna göre aşağıdakilerden hangisine karar verilir?",
+    "options": {
+      "A": "Verilerin düzgün dağılıma uymakta olduğu kabul edilir.",
+      "B": "Karar vermeden önce yeni testler yapılır.",
+      "C": "Verilerin normal dağılıma uymakta olduğu kabul edilir.",
+      "D": "Verilerin düzgün dağılıma uymakta olduğu reddedilir.",
+      "E": "Verilerin normal dağılıma uymakta olduğu reddedilir."
+    },
+    "correctAnswer": "C",
+    "explanation": "İstatistiksel hipotez (uygunluk) testlerinde, hesaplanan test istatistiği değeri (bu soruda D = 0,1408), belirlenen anlamlılık düzeyindeki (alfa=0.05) tablo kritik değerinden (D = 0,272) küçükse (Hesaplanan < Tablo Değeri), Sıfır Hipotezi (H0) RADDEDİLEMEZ (yani KABUL EDİLİR). K-S testinde H0 hipotezi genellikle “Veriler, varsayılan teorik dağılıma (soruda Normal Dağılım) uygundur” şeklindedir. 0,1408 değeri 0,272’den küçük olduğuna göre H0 kabul edilir ve “verilerin normal dağılıma uyduğu” sonucuna varılır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-69c3bdcaca25",
+    "unitNumber": 55,
+    "text": "Aşağıdakilerden hangisi bir banka sisteminin yapısal varsayımlarına örnek değildir?",
+    "options": {
+      "A": "Müşteriler vezneler önünde tek sıra halinde kuyruk oluşturur.",
+      "B": "Bazı müşteriler hatlardan biri hareket ediyorsa hatları değiştirebilir.",
+      "C": "Bireysel müşteriler için hizmet süreleri 5 dk. ortalamalı üstel dağılıma uymaktadır.",
+      "D": "Çok sayıda hat varsa müşterilere ilk gelene ilk hizmet esasına göre servis verilir.",
+      "E": "Her vezne için ayrı bir hat oluşturulur."
+    },
+    "correctAnswer": "C",
+    "explanation": "Simülasyon modelleri kurulurken “Yapısal Varsayımlar” ve “Veri/Parametre Varsayımları” olmak üzere ayrımlar yapılır. Kuyruğun tek mi çok mu olacağı (A, E), kuyruk disiplininin FCFS (ilk giren ilk çıkar) mı olacağı (D) veya müşterilerin kuyruk değiştirmesi (Jockeying – B) gibi kurallar, sistemin fiziksel işleyişini belirleyen “Yapısal (Structural)” varsayımlardır. Ancak işlem sürelerinin “5 dakika ortalamalı üstel dağılıma” uyması, istatistiksel bir sayısal veridir; dolayısıyla yapısal değil, tamamen bir “Veri (Data/Parametrik)” varsayımıdır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f38388109fee",
+    "unitNumber": 56,
+    "text": "Aşağıdakilerden hangisi Arena şablon paneli değildir?",
+    "options": {
+      "A": "ADVANCED PROCESS",
+      "B": "BASIC PROCESS",
+      "C": "ADVANCED TRANSPORT",
+      "D": "REPORTS",
+      "E": "BASIC TRANSPORT"
+    },
+    "correctAnswer": "E",
+    "explanation": "Arena simülasyon programında, kullanıcıların modelleme yaparken ihtiyaç duydukları modülleri içeren farklı şablon panelleri (template panels) bulunur. Bunların en temel olanları “Basic Process”, “Advanced Process” ve transfer/taşıma işlemlerinin detaylı yapıldığı “Advanced Transfer” panelleridir. Raporlama için “Reports” paneli mevcuttur. Ancak literatürde ve Arena yazılım mimarisinde “Basic Transport” adında ayrı bir standart şablon paneli bulunmamaktadır. Taşıma işlemleri genellikle Basic Process içindeki Route/Station veya Advanced Transfer içindeki modüllerle halledilir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-caf343c73690",
+    "unitNumber": 57,
+    "text": "SIMAN dili iki sınıftan oluşmaktadır. Aşağıdakilerden hangisi SIMAN sınıflarından bloklara örnek değildir?",
+    "options": {
+      "A": "DELAY",
+      "B": "SEIZE",
+      "C": "ASSIGN",
+      "D": "RESOURCE",
+      "E": "RELEASE"
+    },
+    "correctAnswer": "D",
+    "explanation": "Arena’nın temelini oluşturan SIMAN simülasyon dili, genel olarak “Model Çerçevesi” (Model Frame – Bloklar) ve “Deney Çerçevesi” (Experiment Frame – Elemanlar) olmak üzere ikiye ayrılır. SEIZE (Kaynağı tut), DELAY (Geciktir/İşlem yap), RELEASE (Kaynağı bırak) ve ASSIGN (Değer ata) gibi komutlar, varlıkların (entity) sistem içindeki hareketlerini ve eylemlerini tanımlayan aktif “Bloklar”dır. Ancak RESOURCE (Kaynak), varlıkların kullandığı bir kapasite birimidir; aktif bir işlem bloğu değil, deney çerçevesinde tanımlanan yapısal bir “Eleman”dır (Element).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-70cb860a54b5",
+    "unitNumber": 58,
+    "text": "Bir bankaya gelen müşterilerin yüzde 20’si fatura yatırmaktadır ve yüzde 80’i para çekmektedir. Bu müşteri tipleri ASSIGN modülü ile tanımlanmıştır. Bu işlemler farklı personeller tarafindan gerçekleştirildiğinden DECIDE modülü ile bu müşteriler farklı PROCESS modüllerine yönlendirilecektir. Buna göre DECIDE modüle yazılacak koşul/condition aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "yüzde 20",
+      "B": "TIP==yüzde 20",
+      "C": "TIP=0,8",
+      "D": "DISC(2,1)",
+      "E": "TIP==1"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-927ced62420c",
+    "unitNumber": 59,
+    "text": "RECORD modülündeki TYPE alanında, üretilecek olan istatistiklerin tipi belirlenir. Aşağıdakilerden hangisi modüle gelen varlıklar arasındaki zamanı kayıt altına alır?",
+    "options": {
+      "A": "Entity Statistics",
+      "B": "Time Between",
+      "C": "Time Interval",
+      "D": "Expression",
+      "E": "Count"
+    },
+    "correctAnswer": "B",
+    "explanation": "Arena’da RECORD (Kayıt) modülü istatistik toplamak için kullanılır. “Count” sadece sayma işlemi yapar, “Time Interval” bir varlığın modele girmesinden (veya markalanmasından) itibaren ne kadar süre sistemde kaldığını hesaplar. “Time Between” seçeneği ise, Record modülünden geçen ardışık iki varlık (entity) arasındaki geçen süreyi (zaman farkını) ölçüp kayıt altına almak için özel olarak tasarlanmış istatistik tipidir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5e37fd1ed086",
+    "unitNumber": 60,
+    "text": "I. Uygun dağılımı seçmek II. Veri değerlerini içeren bir metin dosyası oluşturmak III. Oluşturulan dağılım ifadesini Arena modelinde uygun alana kopyalamak IV. Verilere bir veya daha fazla dağılım uygunluğu için deney yapmak INPUT ANALYZER kullanmak için gereken eylemlerin doğru sıralaması aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "II-IV-I-III",
+      "B": "I-I-III-IV",
+      "C": "II-IV-III-1",
+      "D": "III-II-I-IV",
+      "E": "II-I-III-IV"
+    },
+    "correctAnswer": "A",
+    "explanation": "Arena Input Analyzer aracı, eldeki ham gerçek hayat verilerinin hangi istatistiksel dağılıma (Normal, Üstel, Poisson vb.) uyduğunu bulmak için kullanılır. İşlem adımları kronolojik olarak şöyledir: Önce sahadan toplanan sayısal veriler (.txt uzantılı) bir metin dosyasına yazılır ve araca yüklenir (II). Sonra yazılım bu veriler üzerinde hangi dağılıma uyduğunu bulmak için istatistiksel testler/deneyler (Fit All gibi) yapar (IV). Test sonuçlarına bakılarak hata payı (Square Error) en düşük olan, yani gerçeği en iyi yansıtan “uygun dağılım” seçilir (I). Son olarak bu dağılımın matematiksel ifadesi (örneğin NORM(10,2)) kopyalanıp Arena modelindeki (Create, Process vb.) ilgili modülün içine yapıştırılır (III).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-2bea676a4e14",
+    "unitNumber": 61,
+    "text": "En iyi senaryoyu belirlemek için istatistiksel bir prosedür sağlayan ARENA programı aracı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "FACTORY ANALYZER",
+      "B": "OUTPUT ANALYZER",
+      "C": "INPUT ANALYZER",
+      "D": "OPTQUEST",
+      "E": "PROCESS ANALYZER"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-bb9a55970cf1",
+    "unitNumber": 62,
+    "text": "Bir havaalanı sisteminin benzetim modeli aşağıdaki tanımlardan hangisi ile ifade edilmektedir?",
+    "options": {
+      "A": "Kararsız durum simülasyonu",
+      "B": "Geçici durum simülasyonu",
+      "C": "Sonlu ufuklu simülasyon",
+      "D": "Sonsuz ufuklu simülasyon",
+      "E": "Kalıcı durum simülasyonu"
+    },
+    "correctAnswer": "D",
+    "explanation": "Simülasyon modelleri çalışma sürelerine göre “Sonlu Ufuklu” (Terminating) ve “Sonsuz Ufuklu” (Non-terminating / Kalıcı Durum) olarak ikiye ayrılır. Bir banka veya mağaza sabah açılıp akşam tamamen kapandığı ve sistem boşaldığı için sonlu (terminating) bir sistemdir. Ancak büyük uluslararası havaalanları, acil servisler veya internet sunucuları 7 gün 24 saat kesintisiz çalışır; sistemin doğal bir başlangıç (boş) ve bitiş durumu yoktur. Bu tür kesintisiz sistemlerin simülasyonlarına “Sonsuz ufuklu (Kalıcı durum/Steady-state) simülasyon” adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-fff3e1869fba",
+    "unitNumber": 63,
+    "text": "Aşağıdakilerden hangisi bir benzetim yazılımı seçilirken dikkat edilecek model oluşturma özelliklerinden biri değildir?",
+    "options": {
+      "A": "Hareket kalitesi",
+      "B": "Dünya görüşü",
+      "C": "Modelin tutarlılığı",
+      "D": "Girdi esnekliği",
+      "E": "Söz dizimi (syntax)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Benzetim (simülasyon) yazılımları seçilirken yazılımın programlama dili yapısı (söz dizimi/syntax), modelin gerçeği ne kadar doğru temsil edebildiği (modelin tutarlılığı/doğruluğu), verileri nasıl kabul ettiği (girdi esnekliği) ve yazılımın olayları nasıl algıladığı (olay yönelimli, süreç yönelimli gibi dünya görüşü) en temel mühendislik ve model oluşturma kriterleridir. “Hareket kalitesi” (veya animasyonun görsel kalitesi) ise modelin arka plandaki matematiksel ve mantıksal doğruluğunu (model oluşturma gücünü) değil, sadece sunum ve görselleştirme (animasyon) boyutunu ilgilendiren yüzeysel bir özelliktir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e8ecd6b20df0",
+    "unitNumber": 64,
+    "text": "Bir havalimanında check-in yaptıran yolculara dair bir benzetim çalışması yapılmıştır. Sistem ARENA yardımıyla modellenirken CREATE modülünde “yolcu” bilgisi hangi pencereye yazılmalıdır?",
+    "options": {
+      "A": "Max Arrivals",
+      "B": "Name",
+      "C": "Entity Type",
+      "D": "Value",
+      "E": "Entities per Arrival"
+    },
+    "correctAnswer": "C",
+    "explanation": "Arena’da CREATE (Oluştur) modülü, sisteme dışarıdan giren varlıkları (örneğin parçalar, müşteriler, arabalar, belgeler) yaratmak için kullanılır. Sisteme giren bu varlığın cinsinin veya tipinin ne olduğunu (sorudaki örnekte bu varlık bir “Yolcu”dur) belirleyen ve bu varlığa bir isim/kimlik atayan kutucuğun adı “Entity Type” (Varlık Tipi) penceresidir. “Name” sadece o modülün adıdır, “Max Arrivals” sisteme maksimum kaç tane yolcu gireceğini sınırlar, “Entities per Arrival” ise her bir geliş anında kaçar kaçar (tek tek mi grup halinde mi) geldiklerini belirler.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-658e7cec8bb4",
+    "unitNumber": 66,
+    "text": "1979-1986 yıllarını kapsayan simülasyon tarihçesi dönemi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Konsolidasyon ve yenileme dönemi",
+      "B": "Gelişim dönemi",
+      "C": "Arama dönemi",
+      "D": "Entegre ortamlar dönemi",
+      "E": "Biçimlendirici dönem"
+    },
+    "correctAnswer": "A",
+    "explanation": "Bilgisayar destekli simülasyon yazılımlarının tarihsel gelişimi dönemlere ayrılır. 1950’ler ve 1960’lar “Arama ve Biçimlendirici” dönemlerdir. 1970’ler “Gelişim” dönemidir. 1979-1986 yılları arası ise kişisel bilgisayarların (PC) yaygınlaşmaya başlamasıyla mevcut dillerin (GPSS, SIMAN, SLAM) PC’lere uyarlandığı, standartlaştığı, grafik yeteneklerinin yenilendiği ve güçlendiği “Konsolidasyon (Pekiştirme) ve Yenileme (Regeneration) Dönemi” olarak literatüre geçmiştir. Bu dönemden sonra (1987 ve sonrası) ise yazılımların birbirine bağlandığı “Entegre Ortamlar Dönemi” başlamıştır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-37e0e3460b28",
+    "unitNumber": 67,
+    "text": "Yukarıda verilen formül ( λ / μ*c ) aşağıdakilerden hangisini hesaplamak için kullanılır?",
+    "options": {
+      "A": "Varış oranı",
+      "B": "Trafik yoğunluğu",
+      "C": "Servis oranı",
+      "D": "Ortalama kuyruktaki müşteri sayısı",
+      "E": "Ortalama sistemdeki müşteri sayısı"
+    },
+    "correctAnswer": "B",
+    "explanation": "Kuyruk teorisinde (Queueing Theory) sistemin ne kadar yoğun çalıştığını, yani sunucuların ne oranda meşgul olduğunu gösteren çok önemli bir parametre vardır. Bu parametre “Trafik Yoğunluğu” veya “Sistem Kullanım Oranı” (Utilization factor) olarak adlandırılır ve genellikle rho (ρ) sembolü ile gösterilir. Formülü; sisteme geliş hızının ( λ), toplam servis hızına (μ x c) bölünmesidir. Burada λ varış oranını, μ tek bir sunucunun servis oranını, ‘c’ ise paralel sunucu (vezne/makine) sayısını ifade eder.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4c53a43d14e7",
+    "unitNumber": 68,
+    "text": "Aşağıdaki yöntemlerden hangisi sınırları uygun nokta tahminleri kullanılarak hesaplanan bir aralık içinde bulunduğu doğru istatistiksel parametrenin güvenini sayısallaştırmaktadır?",
+    "options": {
+      "A": "Bonferri yöntemi",
+      "B": "Güven aralığı",
+      "C": "Rejeneratif yöntem",
+      "D": "Parti ortalamaları",
+      "E": "Nokta tahmini"
+    },
+    "correctAnswer": "B",
+    "explanation": "İstatistik biliminde, tek bir rakam vererek yapılan tahminlere “nokta tahmini” denir ve yanılma payı çok yüksektir. Bunun yerine, evren (popülasyon) parametresinin (örneğin gerçek ortalamanın) belirli bir olasılıkla (örneğin yüzde 95 güvenle) içine düşeceği alt ve üst sınırları belli olan bir aralık hesaplanır. Hem nokta tahminini kullanan hem de varyansı hesaba katarak parametrenin bu aralıkta bulunma “güvenini sayısallaştıran” bu istatistiksel kavrama “Güven Aralığı” (Confidence Interval) adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  }
+]

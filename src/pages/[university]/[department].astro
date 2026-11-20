@@ -3,6 +3,7 @@ import Simge from "../../components/Simge.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getUniversities, getDepartments, getCourses } from "../../lib/api";
 import { dersSimgesi, KATEGORI_ADI } from "../../lib/ders-simge";
+import { canonicalDepartments } from "../../lib/kanonik";
 
 export async function getStaticPaths() {
   const universities = await getUniversities();
@@ -22,6 +23,8 @@ export async function getStaticPaths() {
 
 const { university, department } = Astro.props;
 const allCourses = await getCourses(university.id, department.id);
+const canonical = await canonicalDepartments();
+const courseHref = (id: string) => `/${university.id}/${canonical.get(`${university.id}/${id}`) ?? department.id}/${id}`;
 
 // Group by semester and sort each group alphabetically
 const semesters = Array.from({ length: department.duration }, (_, i) => i + 1);
@@ -174,7 +177,7 @@ const groupedCourses = semesters.map((sem) => {
                           </button>
 
                           <a
-                            href={`/${university.id}/${department.id}/${course.id}`}
+                            href={courseHref(course.id)}
                             class="flex items-center gap-3 h-full"
                           >
                             <div class="w-10 h-10 rounded-lg bg-primary-theme/10 flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-primary-theme/20">
@@ -227,7 +230,7 @@ const groupedCourses = semesters.map((sem) => {
                                 </button>
 
                                 <a
-                                  href={`/${university.id}/${department.id}/${course.id}`}
+                                  href={courseHref(course.id)}
                                   class="flex items-center gap-3 h-full"
                                 >
                                   <div class="w-10 h-10 rounded-lg bg-primary-theme/10 flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-primary-theme/20">

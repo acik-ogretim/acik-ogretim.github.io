@@ -1,1 +1,370 @@
-[]
+[
+  {
+    "id": "s-e8a3ccaf6d5c",
+    "unitNumber": 1,
+    "text": "Aşağıdakilerden hangisi Naive Bayes Sınıflandırıcı ile ilgili yanlış bir ifadedir?",
+    "options": {
+      "A": "Naive Bayes Sınıflandırıcı adındaki \"naive\", bu algoritmanın sınıflandırma için kullanılan tahmini sağlayan nitelikler arasındaki bağımsızlık varsayımı nedeni ile verilmiştir.",
+      "B": "Naive Bayes Sınıflandırıcı Bayes Teoremi'ne dayanır.",
+      "C": "Naive Bayes Sınıflandırıcı ile Bayes Sınıflandırıcı (Full Bayes Classifier) birbirinin aynısı yöntemlerdir.",
+      "D": "Naive Bayes Sınıflandırıcı ile çalışırken niteliklerin veri tipinin sürekli olması durumunda normal dağılıma uygun dağıldığı kabul edilerek, normal dağılım için olasılık yoğunluk fonksiyonu hesaplanabilir.",
+      "E": "Naive Bayes Sınıflandırıcı ile gerçekleştirilen analizler sonucunda olasılığı en yüksek çıkan sınıf değeri, sınıfı bilinmeyen örneğin sınıfı olarak atanır."
+    },
+    "correctAnswer": "C",
+    "explanation": "Naive Bayes ve Tam (Full) Bayes sınıflandırıcıları temelini aynı teoremden (Bayes Teoremi) alsalar da, matematiksel işleyişleri açısından birbirinin aynısı değildirler. Tam Bayes sınıflandırıcıları, nitelikler (features) arasındaki her türlü ortak etkileşimi ve koşullu bağımlılığı hesaplamak zorundadır ve bu nedenle devasa bir işlem yükü gerektirir. “Naive” (Saf) Bayes ise, problemin çözümünü inanılmaz derecede basitleştirmek için veri setindeki tüm özelliklerin birbirinden “tamamen bağımsız” olduğu gibi gerçek dışı (safça) bir varsayıma dayanır. Bu bağımsızlık varsayımı, iki algoritmayı birbirinden ayıran en temel farktır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-965a65f0e2ac",
+    "unitNumber": 2,
+    "text": "Aşağıdaki seçeneklerden hangisi ayrık (discret) veri örneği değildir?",
+    "options": {
+      "A": "Zar atıldığında üst yüze gelen nokta sayısı.",
+      "B": "Bir sınıftaki öğrenci sayısı.",
+      "C": "Bir kişinin boyu.",
+      "D": "Bir futbol takımının attığı gol sayısı.",
+      "E": "Bir fabrikanın günlük ürettiği ürün adedi."
+    },
+    "correctAnswer": "C",
+    "explanation": "İstatistiksel veriler nicel (sayısal) bağlamda “Ayrık” (Discrete) ve “Sürekli” (Continuous) olmak üzere ikiye ayrılır. Ayrık veriler belirli bir aralıktaki sadece tam sayı değerlerini alabilen, sayılabilen (counted) ve aralarında küsuratlı değer bulunmayan verilerdir (öğrenci sayısı, zarın üst yüzü, gol sayısı gibi). Ancak “bir kişinin boyu” (veya ağırlığı, yaşı, sıcaklık), iki değer arasında sonsuz sayıda ondalık (küsuratlı) değer alabilen, sayılmayan ancak ölçülebilen (measured) verilerdir; bu nedenle ayrık değil “Sürekli Veri” örneğidir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-58be50e14c49",
+    "unitNumber": 3,
+    "text": "……..import KNeighborsClassifier k-En Yakın Komşu Algoritması ile Python’da çalışmak isteyen bir araştırmacı yukarıda … ile verilen kod satırını aşağıdaki seçeneklerden hangisi ile tamamlamalıdır?",
+    "options": {
+      "A": "from sklearn.model_selection",
+      "B": "from sklearn.metrics",
+      "C": "from sklearn.preprocessing",
+      "D": "from sklearn.neighbors",
+      "E": "import matplotlib.pyplot"
+    },
+    "correctAnswer": "D",
+    "explanation": "Python’da makine öğrenmesi uygulamaları geliştirmek için standart kabul edilen kütüphane “scikit-learn” (sklearn)’dir. Bu kütüphanenin alt modülleri algoritmaların türlerine göre gruplandırılmıştır. k-En Yakın Komşu (k-NN) algoritması, mesafelere (komşuluk ilişkilerine) dayalı bir model olduğu için `neighbors` modülünün altında yer alır. Sınıflandırma problemi için bu kütüphaneyi içeri aktarırken kullanılması gereken doğru ve tam kod satırı `from sklearn.neighbors import KNeighborsClassifier` şeklindedir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a52627ea8c50",
+    "unitNumber": 4,
+    "text": "Bir akıllı telefon üreticisi, farklı kullanım alışkanlıklarının günlük batarya tüketimine nasıl etki ettiğini anlamak amacıyla bir çoklu doğrusal regresyon modeli kurmuştur. Analiz sonucunda edilen model sabiti (𝛽0 ), CPU kullanım oranı katsayısı (𝛽1 ) ve ekran parlaklığı katsayısı (𝛽2 ) aşağıda verilmiştir: 𝛽0 = 2 . 5𝛽1 = 0 . 05𝛽2 = 0 . 03 Bu çoklu doğrusal regresyon modeline göre, CPU kullanım oranı 40 ve ekran parlaklık seviyesi 70 birim olan bir akıllı telefonun tahmini günlük ortalama batarya tüketimi miktarı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "5.5",
+      "B": "2.5",
+      "C": "6.6",
+      "D": "3.7",
+      "E": "8.3"
+    },
+    "correctAnswer": "C",
+    "explanation": "Çoklu doğrusal regresyon modelinde tahmin denklemi: Y = β₀ + β₁X₁ + β₂X₂ şeklindedir. Verilen değerlere göre: Y = 2.5 + (0.05 × 40) + (0.03 × 70) Y = 2.5 + 2 + 2.1 Y = 6.6 Buna göre CPU kullanım oranı 40 ve ekran parlaklığı seviyesi 70 olan bir akıllı telefonun tahmini günlük ortalama batarya tüketimi 6.6 birimdir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-0ec320928893",
+    "unitNumber": 5,
+    "text": "I. Euclidean (Öklid) II. Manhattan III. Chebyshev IV. Cosine V. Jaccard VI. Adam Yukarıdaki uzaklık fonksiyonlarından hangisi ya da hangileri k-En Yakın Komşu Algoritması’nın uzaklık fonksiyonu olarak kullanılabilir?",
+    "options": {
+      "A": "I, II, III, IV ve V",
+      "B": "I ve II",
+      "C": "I, II ve III",
+      "D": "I, II, III ve IV",
+      "E": "I ve VI"
+    },
+    "correctAnswer": "A",
+    "explanation": "k-NN algoritması, veri noktaları arasındaki mesafeyi ölçerek sınıflandırma veya regresyon yapar. Bu mesafeyi ölçmek için veri setinin tipine (sayısal, kategorik, metin) göre farklı uzaklık/benzerlik metrikleri kullanılır. Sayısal verilerde en çok Öklid (Euclidean), Manhattan ve Chebyshev kullanılırken; metin madenciliği veya yönsel benzerliklerde Cosine (Kosinüs) benzerliği; kategorik/ikili verilerde ise Jaccard katsayısı uzaklık fonksiyonu olarak kullanılabilir. Ancak VI numaralı “Adam” bir uzaklık fonksiyonu değil, derin öğrenmede (yapay sinir ağlarında) kullanılan bir optimizasyon algoritmasıdır. Bu nedenle doğru grup I, II, III, IV ve V’tir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-064ef9c44fdc",
+    "unitNumber": 6,
+    "text": "Aşağıdaki seçeneklerde verilenlerden hangisi büyük dil modellerine (large language models) bir örnektir?",
+    "options": {
+      "A": "IoT",
+      "B": "Deep Blue",
+      "C": "Turing Testi",
+      "D": "API",
+      "E": "ChatGPT"
+    },
+    "correctAnswer": "E",
+    "explanation": "Büyük Dil Modelleri (Large Language Models – LLM), devasa boyutlardaki metin verileri üzerinde eğitilen, doğal dili işleme, anlama ve insan benzeri metinler üretme kapasitesine sahip Derin Öğrenme tabanlı yapay zeka modelleridir. (Transformer mimarisine dayanırlar). OpenAI tarafından geliştirilen GPT (Generative Pre-trained Transformer) tabanlı sohbet botu “ChatGPT”, LLM teknolojisinin günümüzdeki en ünlü ve en güçlü temsilcilerinden (örneklerinden) biridir. Deep Blue bir satranç programı, IoT (Nesnelerin İnterneti) bir donanım ağı konsepti, Turing Testi ise zeka ölçüm metodolojisidir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e4ccc171e95b",
+    "unitNumber": 7,
+    "text": "x = veri.yas y = veri.mutluluk … plt.xlabel(“Yaş”) plt.ylabel(“Mutluluk Oranı”) Yukarıdaki Python kod bloğu ile iki nitelik arasında doğrusal bir ilişkinin olup olmadığı grafik üzerinde incelenmek isteniyor. Bunun için yukarıda … ile boş bırakılan boşluğa aşağıdaki seçeneklerden hangisi getirilmelidir?",
+    "options": {
+      "A": "plt.hist(x, y)",
+      "B": "plt.heatmap(x, y)",
+      "C": "plt.boxplot(x, y)",
+      "D": "plt.pic(x,y)",
+      "E": "plt.scatter(x,y)"
+    },
+    "correctAnswer": "E",
+    "explanation": "Veri biliminde ve istatistikte iki sürekli değişken (örneğin yaş ve mutluluk oranı) arasındaki doğrusal veya doğrusal olmayan ilişkiyi (korelasyonu) görsel olarak incelemek için en uygun grafik türü “Serpilme Diyagramı” (Scatter Plot)’dır. Python’un Matplotlib kütüphanesinde bu grafiği çizdirmek için `plt.scatter()` fonksiyonu kullanılır. `plt.hist()` tek değişkenin dağılımını (histogram), `plt.boxplot()` ise verinin çeyrekliklerini ve aykırı değerlerini (kutu grafiği) gösterir; iki değişken arası ilişki tayininde doğrudan kullanılmazlar.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e2a98f33474c",
+    "unitNumber": 8,
+    "text": "Aşağıdakilerden hangisi yapay sinir ağlarında kullanılan bir öğrenme algoritmasıdır?",
+    "options": {
+      "A": "Geriye Yayılım Algoritması",
+      "B": "C5.0 Algoritması",
+      "C": "k-En Yakın Komşu Algoritması",
+      "D": "k-Ortalamalar Algoritması",
+      "E": "Naive Bayes Algoritması"
+    },
+    "correctAnswer": "A",
+    "explanation": "Yapay Sinir Ağları (Artificial Neural Networks – ANN), insan beyninin çalışma prensibini taklit eden katmanlı matematiksel modellerdir. Bu ağların “öğrenme” (ağırlıklarını güncelleme) aşamasında en yaygın kullanılan temel algoritma “Geriye Yayılım” (Backpropagation) algoritmasıdır. İleri yönlü beslemeden sonra elde edilen tahmin hatası (loss/error), türev kuralları (zincir kuralı) yardımıyla çıkış katmanından giriş katmanına doğru geriye doğru yayılır ve aradaki bağlantı ağırlıkları bu hatayı minimize edecek şekilde güncellenir. Diğer seçenekler geleneksel makine öğrenmesi algoritmalarıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7b00a254fd3c",
+    "unitNumber": 9,
+    "text": "from sklearn.model_selection import StratifiedKFold k = 10 n = 2 perf_deg = StratifiedKFold(n_splits=k, shuffle=True, random_state=5) Bir araştırmacı model performans değerlendirmesi aşaması için yukarıdaki Python kod bloğunu çağırıyorsa aşağıda verilen performans değerlendirme yöntemlerinden hangisini kullanmaktadır?",
+    "options": {
+      "A": "Tabakalı 5-kat çapraz geçerleme",
+      "B": "Tabakalı ikili ayırma",
+      "C": "Tabakalı 2-kat çapraz geçerleme",
+      "D": "Tabakalı 10-kat çapraz geçerleme",
+      "E": "Tekrarlı ikili ayırma"
+    },
+    "correctAnswer": "D",
+    "explanation": "Makine öğrenmesi modellerinde modelin genelleştirme yeteneğini ölçmek ve overfitting’i önlemek için çapraz geçerleme (cross-validation) yöntemleri kullanılır. Sınıf dengesizliği olan veri setlerinde her katmanda (fold) sınıfların orijinal oranda temsil edilmesini sağlayan yöntem “Tabakalı” (Stratified) çapraz geçerlemedir. Kod bloğunda `StratifiedKFold` fonksiyonu çağrılmış ve parametre olarak `n_splits=k` verilmiştir. `k` değişkeninin değeri 10 olarak tanımlandığı için, bu işlem doğrudan “Tabakalı 10-kat çapraz geçerleme” (Stratified 10-Fold Cross-Validation) anlamına gelir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4e8a8232e837",
+    "unitNumber": 10,
+    "text": "I. ID3 II. ID4.5 III. C4.5 IV. C5.0 V. CART Yukarıda verilenlerden hangisi ya da hangileri sınıflandırma için kullanılabilen karar ağacı algoritmalarındandır?",
+    "options": {
+      "A": "I, II ve III",
+      "B": "I, III, IV ve V",
+      "C": "Yanlızca I",
+      "D": "I, III ve IV",
+      "E": "Yalnızca III"
+    },
+    "correctAnswer": "B",
+    "explanation": "Makine öğrenmesinde karar ağacı yapısını kullanan temel algoritmaların tarihsel bir gelişim süreci vardır. Ross Quinlan tarafından geliştirilen ID3 algoritması, daha sonra sırasıyla C4.5 ve C5.0 algoritmalarına evrilerek gelişmiştir. Öte yandan Leo Breiman ve ekibi tarafından geliştirilen CART (Classification and Regression Trees) algoritması da (Gini safsızlığını kullanarak) hem sınıflandırma hem regresyon yapan bir diğer ünlü karar ağacı modelidir. Ancak “ID4.5” diye bir karar ağacı algoritması makine öğrenmesi literatürğinde mevcut değildir (C4.5 ile karıştırılmak için konmuş bir çeldiricidir). Dolayısıyla doğru karar ağacı algoritmaları I, III, IV ve V numaralı olanlardır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c7121fc67d08",
+    "unitNumber": 11,
+    "text": "from sklearn.metrics import … Çoklu doğrusal regresyon analizi sonucunda modelin performansını değerlendirmek isteyen bir araştırmacının yukarıda … ile verilen boşluğu aşağıdaki seçeneklerin hangisi ile doldurması uygun olur?",
+    "options": {
+      "A": "mean_squared_error",
+      "B": "classification_report",
+      "C": "recall_score",
+      "D": "ConfusionMatrixDisplay",
+      "E": "confusion_matrix"
+    },
+    "correctAnswer": "A",
+    "explanation": "Makine öğrenmesinde metrikler problemin türüne (sınıflandırma veya regresyon) göre tamamen değişir. Soru kökünde bir “Çoklu Doğrusal Regresyon” probleminden bahsedilmiştir. Regresyon algoritmaları kategorik değil, sürekli/sayısal (fiyat, yaş, tüketim vb.) tahminler yapar. Bu yüzden gerçek değerler ile tahmin edilen değerler arasındaki “hatayı” (farkı) ölçen Ortalama Kare Hata (MSE – mean_squared_error), Ortalama Mutlak Hata (MAE) veya R-Kare gibi metrikler kullanılır. Diğer şıklarda yer alan classification_report, recall_score ve confusion_matrix yalnızca sınıflandırma (kategorik) algoritmalarının başarısını ölçen metriklerdir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d438d95b29ac",
+    "unitNumber": 12,
+    "text": "Bir araştırmacı veri setinde yer alan tüm nümerik nitelikleri [0,1] aralığına ölçeklendirmek istiyor. Bunun için aşağıda verilen Python kodlarından hangisi kullanılabilir?",
+    "options": {
+      "A": "from sklearn.model_selection import train_test_split",
+      "B": "from matplotlib.cbook import boxplot_stats",
+      "C": "from sklearn.preprocessing import MinMaxScaler",
+      "D": "from sklearn.preprocessing import StandardScaler",
+      "E": "import seaborn as sns"
+    },
+    "correctAnswer": "C",
+    "explanation": "Veri setindeki farklı ölçeklere sahip sayısal niteliklerin makine öğrenmesi algoritmaları (özellikle KNN, SVM veya yapay sinir ağları) tarafından yanlış ağırlıklandırılmasını önlemek için “Normalizasyon” (Ölçeklendirme) yapılır. Tüm verileri [0, 1] aralığına doğrusal olarak sıkıştıran işlem “Min-Max Normalizasyonu”dur ve Python’da scikit-learn kütüphanesindeki `MinMaxScaler` sınıfı ile uygulanır. (`StandardScaler` veriyi ortalaması 0, standart sapması 1 olacak şekilde Z-skoruna göre ölçeklendirir, aralığı [0,1] değildir).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-703a10bd4968",
+    "unitNumber": 13,
+    "text": "k-En Yakın Komşu Algoritması’nın karar aşamasında kullanılan çoğunluk oylaması (majority voting) ile ilgili aşağıda verilenlerden hangisi doğrudur?",
+    "options": {
+      "A": "Sınıfı etiketi bilinmeyen x örneğine en yakın k komşunun sınıf etiketlerine bakılır. Sayıca en az olan sınıf etiketi atanır.",
+      "B": "Sınıfı etiketi bilinmeyen x örneğine en yakın k komşu arasında her zaman en yakınındaki gözleme ait sınıf etiketi atanır.",
+      "C": "Sınıfı etiketi bilinmeyen x örneğine en yakın k komşu arasında ağırlığı (weight) en az olan sınıf etiketi atanır.",
+      "D": "Sınıfı etiketi bilinmeyen x örneğine en yakın k komşunun sınıf etiketlerine bakılır. Sayıca en fazla olan sınıf etiketi atanır.",
+      "E": "Sınıfı etiketi bilinmeyen x örneğine en yakın k komşu arasında ağırlığı (weight) en fazla olan sınıf etiketi atanır."
+    },
+    "correctAnswer": "D",
+    "explanation": "k-En Yakın Komşu (k-NN – k-Nearest Neighbors) algoritması tembel bir öğrenme (lazy learning) algoritmasıdır. Sınıflandırma problemlerinde, yeni gelen ve sınıfı bilinmeyen veri noktasının (x örneğinin), eğitim veri setindeki diğer noktalara olan uzaklıkları hesaplanır. En yakın ‘k’ adet komşu seçilir. “Çoğunluk oylaması” (majority voting) mantığı gereği, bu ‘k’ adet komşu arasında hangi sınıf etiketine ait veri sayısı daha fazlaysa, yeni gelen veri noktasına o sınıfın etiketi atanır. Ağırlıklı oylama (weighted voting) farklı bir yöntemdir, standart çoğunluk oylamasında sadece sınıfların frekansına (sayıca çokluğuna) bakılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-fb2874af2834",
+    "unitNumber": 14,
+    "text": "…, bilgisayarların deneyimlerden (verilerden) öğrenmesini sağlamak ve dünyayı bir kavramlar hiyerarşisi açısından anlamak (yani karmaşık kavramları daha basit olanlardan oluşturarak öğrenmek) olarak görülebilir. Yukarıda … ile verilen boşluğa aşağıdaki seçeneklerden hangisi getirilmelidir?",
+    "options": {
+      "A": "Pekiştirmeli öğrenme",
+      "B": "Derin öğrenme",
+      "C": "Danışmanlı öğrenme",
+      "D": "Tembel öğrenme",
+      "E": "Danışmansız öğrenme"
+    },
+    "correctAnswer": "B",
+    "explanation": "Geleneksel makine öğrenmesi modellerinde özellik çıkarımı (feature extraction) insanlar tarafından elle yapılır. Ancak “Derin Öğrenme” (Deep Learning), yapay sinir ağlarının çok sayıda gizli katman (deep layers) kullanılarak eğitildiği bir alt daldır. Bu katmanlar, veriyi hiyerarşik olarak işler; ilk katmanlar basit kenarları veya pikselleri (kavramları) öğrenirken, derinlere inildikçe bu basit özellikler birleşerek yüzler, şekiller ve karmaşık anlamlar oluşturur. Bu “kavramlar hiyerarşisi” inşa ederek öğrenme süreci doğrudan Derin Öğrenmenin felsefi ve teknik tanımıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7469682188dd",
+    "unitNumber": 15,
+    "text": "model = …(criterion=”gini”, max_depth=3, random_state = 123) Yukarıdaki Python kod satırında bir CART sınıflandırıcı modeli oluşturulmak istenmektedir. Bunun için … ile verilen boşluğa aşağıdaki seçeneklerde verilen ifadelerden hangisi getirilmelidir?",
+    "options": {
+      "A": "TClassifier",
+      "B": "DecisionTreeClassifier",
+      "C": "DecisionTreeRegressor",
+      "D": "DTRegressor",
+      "E": "DecisionClassifier"
+    },
+    "correctAnswer": "B",
+    "explanation": "Python makine öğrenmesi kütüphanesi scikit-learn (sklearn) içerisinde CART (Classification and Regression Trees) tabanlı Karar Ağacı modellerini kurmak için modüller bulunur. Soruda bir “sınıflandırıcı” (classifier) modeli oluşturulmak istendiği açıkça belirtilmiştir; regresyon (tahmin) değil. Sınıflandırma işlemleri için kullanılan doğru sınıfın adı DecisionTreeClassifier şeklindedir. Kod bloğu model = DecisionTreeClassifier(criterion=”gini”, max_depth=3, random_state=123) olarak tanımlanır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-61cccaf41070",
+    "unitNumber": 16,
+    "text": "model = Sequential(name=”YSA Modelim”) Keras kütüphanesi yardımı ile bir yapay sinir ağı modeli oluşturulurken, modele bir girdi katmanı eklemek için aşağıdaki seçeneklerin hangisi kullanılabilir?",
+    "options": {
+      "A": "model.get(InputLayer(input_shape=(X_train.shape[1],), name=\"Girdi_Katmani\"))",
+      "B": "model.append(InputLayer(input_shape=(X_train.shape[1],), name=\"Girdi_Katmani\"))",
+      "C": "model.insert(InputLayer(input_shape=(X_train.shape[1],), name=\"Girdi_Katmani\"))",
+      "D": "model.create(InputLayer(input_shape=(X_train.shape[1],), name=\"Girdi_Katmanı\"))",
+      "E": "model.add(InputLayer(input_shape=(X_train.shape[1],), name=\"Girdi_Katmani\"))"
+    },
+    "correctAnswer": "E",
+    "explanation": "Python’da derin öğrenme ve yapay sinir ağları mimarilerini hızlıca tasarlamak için kullanılan yüksek seviyeli kütüphanelerden biri Keras’tır. Keras’ın `Sequential` (Sıralı) API’si kullanılarak bir sinir ağı tasarlanırken; ağa girdi katmanı (InputLayer), gizli katmanlar (Dense, Dropout vb.) veya çıktı katmanları eklemek için özel olarak `.add()` (ekle) metodu (fonksiyonu) kullanılır. Python listelerindeki `.append()` veya `.insert()` fonksiyonları bu nesne yapısında katman eklemek için kullanılmaz. Ağın inşası ancak `.add()` komutuyla zincirleme olarak sağlanır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  }
+]

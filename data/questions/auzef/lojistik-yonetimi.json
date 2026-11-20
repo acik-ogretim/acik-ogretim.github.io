@@ -1,1 +1,3849 @@
-[]
+[
+  {
+    "id": "s-dc555da161cd",
+    "unitNumber": 1,
+    "text": "Aşağıdakilerden hangisi tedarik süresince oluşacak talep değişikliğinde, stoksuz kalmamak için elde bulundurulan stok türüdür?",
+    "options": {
+      "A": "Elde Bulundurulmayan Stok",
+      "B": "Düzeysel Stok",
+      "C": "Emniyet Stoku",
+      "D": "Boru Hattı Stoku",
+      "E": "Ayrıştırma Stoku"
+    },
+    "correctAnswer": "C",
+    "explanation": "Lojistikte tahminler her zaman yüzde 100 tutmaz. Beklenmedik bir şekilde müşteri talebinin aniden artması veya tedarikçinin malı getirmekte gecikmesi (tedarik süresi sapmaları) riskine karşı, üretim hattının durmaması veya müşterinin boş çevrilmemesi (yok satmamak) için depolarda fazladan tutulan tampon stoklara literatürde “Emniyet Stoku” (Safety Stock) adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0ace152d81f0",
+    "unitNumber": 2,
+    "text": "İzleme Sinyali (TS, Tracking Signal) aşağıdakilerden hangisine eşittir?",
+    "options": {
+      "A": "Ortalama Mutlak Sapma (MAD, Mean Absolute Deviation)",
+      "B": "RSFE/MAD oranı",
+      "C": "Ortalama Mutlak Yüzde Hata (MAPE, Mean Absolute Percentage Error)",
+      "D": "Tahmin Hataları Toplamı (CFE, Cummulative Forecast Error)",
+      "E": "Hareketli Tahmin Hataları Toplamı (RSFE, Running Sum of the Forecast Errors)"
+    },
+    "correctAnswer": "B",
+    "explanation": "İzleme sinyali (Tracking Signal), bir tahmin modelinin zaman içinde gerçek değerlerden sürekli sapıp sapmadığını (sistematik bir hata olup olmadığını) kontrol eden bir göstergedir. Matematiksel olarak İzleme Sinyali, Hareketli Tahmin Hataları Toplamının (RSFE) Ortalama Mutlak Sapmaya (MAD) bölünmesiyle elde edilen bir orandır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-7076582ca500",
+    "unitNumber": 3,
+    "text": "Yukarıda detayı verilen stok maliyeti için neler söylenebilir?",
+    "options": {
+      "A": "Sipariş başına toplam maliyet sabittir.",
+      "B": "Sipariş miktarı arttıkça toplam maliyet azalır.",
+      "C": "Sipariş miktarı arttıkça toplam maliyet artar.",
+      "D": "Sigorta giderleri arttıkça toplam maliyet azalır.",
+      "E": "Birim maliyet hesaplamasında kullanılır."
+    },
+    "correctAnswer": "C",
+    "explanation": "Tabloda detaylandırılan fırsat maliyeti, fiziksel alan, fire, elleçleme ve sigorta giderleri gibi unsurların tamamı Stok Elde Bulundurma Maliyeti’nin bileşenleridir. Lojistik formüllerine göre birim elde bulundurma maliyeti sabittir; ancak depoya konulan sipariş miktarı arttıkça, depoda tutulan ortalama stok seviyesi yükseleceği için doğal olarak bu stokları korumaya harcanan toplam elde bulundurma maliyeti de artar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1214675433a4",
+    "unitNumber": 4,
+    "text": "Aşağıdakilerden hangisi Kırbaç Etkisi”ni ifade etmektedir?”",
+    "options": {
+      "A": "Tahmin yokluğundan dolayı, pazarda bir ürüne yönelen talebin karşılanmasında zamanlamanın tutturulamaması",
+      "B": "Mamul zincirinin, geleceğe yönelik tahmin yapılmasını kolaylaştırması",
+      "C": "Tahmin yokluğundan dolayı, yeni bir tesise ne zaman ihtiyaç duyulacağının öngörülememesi",
+      "D": "Tüketiciden gelen bilgi ham madde kaynağına ulaşana kadar tahmine kaynaklık eden verinin değişmesi",
+      "E": "Tüketiciden gelen talep doğrultusunda iş gücüne yönelen dönemsel talebin değişmesi"
+    },
+    "correctAnswer": "D",
+    "explanation": "Tedarik zinciri yönetimindeki en büyük problemlerden biri olan Kırbaç Etkisi (Bullwhip Effect); uç tüketiciden gelen küçük bir talep dalgalanmasının, zincirin gerisine (perakendeci \\rightarrow toptancı \\rightarrow üretici \\rightarrow ham madde tedarikçisi) doğru ilerledikçe her aşamada abartılarak şişmesi ve “tahmine kaynaklık eden verinin ciddi şekilde değişerek büyümesi” durumunu ifade eder.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3ffde40b900f",
+    "unitNumber": 5,
+    "text": "Belli bir malzemenin tedarik zinciri içerisinde, bir noktadan başka bir noktaya taşınması ile ilgili lojistik süreç aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Sipariş",
+      "B": "Dağıtım",
+      "C": "Satış",
+      "D": "Üretim",
+      "E": "Depolama"
+    },
+    "correctAnswer": "B",
+    "explanation": "Lojistiğin en fiziksel ve görünür aşamasıdır. Fabrikada üretilen veya depoda bekleyen bir malzemenin (ham madde, yarı mamul veya bitmiş ürün), tedarik zinciri ağı üzerinde coğrafi olarak bir A noktasından (tesisten) B noktasına (bölge deposuna veya müşteriye) ulaştırılması, taşınması ve sevk edilmesi sürecinin tamamına “Dağıtım” (veya Taşıma/Transportasyon) süreci adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-23ccb79c290a",
+    "unitNumber": 6,
+    "text": "ABC Stok sınıflandırması yapıldığında “yıllık kullanım kümülatif yüzdesi” olarak yüzde 83’e denk gelen stok birimi hangisidir?",
+    "options": {
+      "A": "A010",
+      "B": "A003",
+      "C": "A005",
+      "D": "A009",
+      "E": "A001"
+    },
+    "correctAnswer": "E",
+    "explanation": "Tablodaki kalemlerin Yıllık Kullanım Değerleri (Birim Maliyet \\times Yıllık Kullanım) bulunur: A001=8100, A002=1400, A003=39000, A004=4800, A005=3000, A006=3600, A007=1700, A008=16000, A009=3000, A010=24000. Toplam Değer: 104.600’dür. Değerler büyükten küçüğe sıralandığında: A003 (yüzde 37.28), A010 (yüzde 22.94), A008 (yüzde 15.29) ve A001 (yüzde 7.74) şeklinde ilerler. Kümülatif yüzdeler toplandığında: yüzde 37.28 + yüzde 22.94 + yüzde 15.29 + yüzde 7.74 = yüzde 83.25 oranına denk gelir. Bu hesaplamaya göre kümülatif eğride yüzde 83 sınırına tam olarak denk gelen birim “A001″dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-53d401cfcd57",
+    "unitNumber": 7,
+    "text": "Bir ürüne ait ESM 90 birim olarak bulunmuştur, 90 TL olan sipariş maliyetinin 10 TL’ye düşmesi ile yeni ESM değeri için hangisi söylenir?",
+    "options": {
+      "A": "Dokuz katı artar.",
+      "B": "Üç katı artar.",
+      "C": "1/9'u olur.",
+      "D": "1/3'ü olur.",
+      "E": "Tahmin edilemez."
+    },
+    "correctAnswer": "D",
+    "explanation": "ESM formülünde sipariş maliyeti karekök içindedir. Sipariş maliyeti 90 TL’den 10 TL’ye düşerse, önceki maliyetin tam 1/9’u seviyesine inmiş olur. Karekök içindeki bir ifadenin dokuzda birine inmesi, dışarıya 1/3 olarak çıkar. Dolayısıyla yeni Ekonomik Sipariş Miktarı (ESM) eski değerinin tam olarak üçte biri (1/3’ü) düzeyine düşecektir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f9a7e160106e",
+    "unitNumber": 8,
+    "text": "Ekmek üreten bir fırın bir sonraki günün üretim miktarını belirlerken, yaklaşık olarak bir önceki gün satılan ekmek adetini dikkate almakta ve malzemeyi buna göre planlamaktadır. Buna göre, aşağıdaki üstel düzeltme katsayılarından hangisi, bu model için en uygunudur?",
+    "options": {
+      "A": "0",
+      "B": "0,50",
+      "C": "0,75",
+      "D": "0,9",
+      "E": "0,10"
+    },
+    "correctAnswer": "D",
+    "explanation": "Üstel düzeltme yönteminde kullanılan alfa (\\alpha) katsayısı 0 ile 1 arasında değer alır. Eğer firma sadece en son (bir önceki günkü) gerçekleşen veriye en büyük önemi veriyor ve uzak geçmişi neredeyse tamamen görmezden geliyorsa, \\alpha değeri 1’e çok yakın seçilmelidir. Fırın, yaklaşık olarak bir önceki günü (naif modele yakın) baz aldığına göre, şıklar arasında en son veriye en yüksek ağırlığı veren (1’e en yakın olan) “0,9” düzeltme katsayısı bu model için en uygunudur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-afbd9c4932ba",
+    "unitNumber": 9,
+    "text": "Lojistik ve stok yönetiminde Boru Hattı Stoku” (Transit / In-Transit Stock) kavramı aşağıdakilerden hangisini ifade etmektedir?”",
+    "options": {
+      "A": "Fabrikada makine içinde henüz işlem gören ham maddeleri",
+      "B": "Sadece doğal gaz veya petrol borularında bekleyen yakıtı",
+      "C": "Müşteriye satışı yapılmış, yüklemesi tamamlanmış ve tır, gemi gibi araçlarda hareket (taşıma) hâlinde olan stokları",
+      "D": "Kalite kontrolden geçememiş defolu ürünleri",
+      "E": "Sezon sonu elde kalan modası geçmiş ürünleri"
+    },
+    "correctAnswer": "C",
+    "explanation": "Lojistik ağında malzemeler bir depodan diğerine veya son tüketiciye giderken günler veya haftalarca yolda (örneğin okyanus aşan bir kargo gemisinde) geçebilir. Depolarda fiziksel olarak bulunmayan ancak sistemde mülkiyeti firmaya ait olan ve an itibarıyla yolda/seferde (transfer sürecinde) olan bu uçan stoklara literatürde “Boru Hattı Stoku” veya Transit Stok adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9b9157ff5cf4",
+    "unitNumber": 10,
+    "text": "I. Basit yöntem bir sonraki talebin bir öncekiyle aynı olacağını varsayar. II. Hareketli ortalama, tahminde bulunmak için son birkaç dönemin ortalamasını kullanır. III. Düzeltme katsayısı, üstel düzeltmede kullanılan bir tartma faktörüdür. IV. Ortalama Mutlak Sapma (MAD) bir model için genel tahmin hatalarının bir ölçümüdür. V. Trend projeksiyonu, tarihsel veriyi bir trend çizgisine uygun şekilde ifade eden bir zaman serisi tahmin yöntemidir. VI. Korelasyon katsayısı iki değişken arasındaki ilişkinin gücünü ölçer. VII. İzleme sinyalleri tahminin gerçek değerleri ne kadar isabetli bir şekilde tahmin ettiğini ölçer. Yukarıdaki cümlelerden kaç tanesi yanlıştır?",
+    "options": {
+      "A": "1",
+      "B": "0",
+      "C": "3",
+      "D": "2",
+      "E": "4"
+    },
+    "correctAnswer": "B",
+    "explanation": "Verilen yedi cümlenin tamamı pazarlama ve lojistik tahmin yöntemlerindeki akademik tanımların kusursuz doğrularıdır. Basit yöntem (naive) bir önceki dönemi kopyalar, hareketli ortalama son birkaç dönemi dikkate alır, üstel düzeltme katsayıyla ağırlıklandırır, MAD mutlak hatayı ölçer, trend projeksiyonu tarihsel veriye çizgi oturtur, korelasyon katsayısı ilişkiyi ölçer ve izleme sinyali sapmayı saptar. Bu yüzden yanlış olan hiçbir cümle (0) yoktur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b960ad32b9f2",
+    "unitNumber": 11,
+    "text": "Geçmiş dönem talep verilerindeki mevsimsel dalgalanmaları veya rastgele hareketleri yumuşatmak için kullanılan ve tahminin her seferinde en eski veriyi atıp en yeni veriyi seriye dahil ederek yeniden hesaplandığı nicel tahmin yöntemi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Delphi Metodu",
+      "B": "Tüketici Paneli",
+      "C": "Satış Gücü Tahmini",
+      "D": "Hareketli Ortalama (Moving Average)",
+      "E": "Pazar Araştırması"
+    },
+    "correctAnswer": "D",
+    "explanation": "Zaman serisi modellerinden olan “Hareketli Ortalama” yönteminde, gelecek dönemin tahmini için son ‘n’ dönemin verileri toplanıp n’e bölünür. Sistem her yeni dönem geldiğinde, zaman penceresini bir adım ileri kaydırarak (hareket ettirerek) en eski veriyi dışarıda bırakır ve sadece en güncel olan pencere aralığını kullanır. Bu sayede verilerdeki aşırı zıplamalar tıraşlanarak yumuşatılmış bir eğilim (trend) elde edilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d36a52ea6cf7",
+    "unitNumber": 12,
+    "text": "Genellikle tüm stok birimleri içerisinde yüzde 30’luk bir paya sahiptirler. Bu yüzde 30’luk birim yıllık kullanım değeri olarak (DV) tüm stok değerleri içerisinde; yüzde 15 değerine karşılık gelir. Yukarıdaki ifade hangi stok türü için doğrudur?",
+    "options": {
+      "A": "Boru Hattı Stoku",
+      "B": "Çevrim Stoku",
+      "C": "A Tipi Stoklar",
+      "D": "C Tipi Stoklar",
+      "E": "B Tipi Stoklar"
+    },
+    "correctAnswer": "E",
+    "explanation": "Pareto prensibine (80/20 kuralı) dayanan ABC stok sınıflandırmasında kalemler parasal hacimlerine göre ayrılır. A tipi stoklar miktar olarak çok az (yüzde 10-20) ama değer olarak devasa (yüzde 70-80) yer tutarlar. C tipi stoklar miktar olarak çok fazla (yüzde 50) ama değer olarak çok ucuzdurlar (yüzde 5). Soru kökündeki gibi, miktar olarak orta seviye sayılabilecek yüzde 30’luk bir yer kaplayan ve değer olarak da “orta düzey” yüzde 15 civarında katkı sağlayan bu ara grup “B Tipi Stoklar” sınıflandırmasıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-74e25bc10508",
+    "unitNumber": 13,
+    "text": "Bir ürün için yıllık talep miktarı (D), sipariş verme maliyeti (S) ve birim elde bulundurma maliyeti (H) bilindiğinde, işletmenin toplam stok maliyetini (sipariş verme + elde bulundurma) minimum yapacak ideal sipariş miktarını bulmayı amaçlayan klasik model aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "JIT (Tam Zamanında Üretim)",
+      "B": "MRP (Malzeme İhtiyaç Planlaması)",
+      "C": "ESM (Ekonomik Sipariş Miktarı / EOQ)",
+      "D": "VMI (Satıcı Yönetimli Stok)",
+      "E": "ERP (Kurumsal Kaynak Planlama)"
+    },
+    "correctAnswer": "C",
+    "explanation": "Ford W. Harris tarafından geliştirilen Ekonomik Sipariş Miktarı (ESM/EOQ) modeli, stok yönetiminin en temel matematiksel aracıdır. Az sipariş verirseniz elde bulundurma maliyetiniz düşer ama sürekli kamyon çağıracağınız için sipariş verme (kargo/işlem) maliyetiniz patlar; çok sipariş verirseniz kargo ucuzlar ama depo kiranız patlar. Bu iki maliyet eğrisinin kesiştiği ve toplam maliyetin “en düşük (minimum)” olduğu altın denge noktasına ESM (Ekonomik Sipariş Miktarı) denir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b8f50b80ec79",
+    "unitNumber": 14,
+    "text": "Aşağıdakilerden hangisi Tedarik Süresi (L)” faktörü için söylenebilir?”",
+    "options": {
+      "A": "Üretim durumunda, sadece üretim süresidir.",
+      "B": "Üretim durumunda hazırlık süresi ve kontrol süresi üretim süresine eklenerek bulunur.",
+      "C": "Her zaman sabittir ve kesin bilinir.",
+      "D": "Her zaman değişkendir ve bir olasılık dağılımıyla ifade edilir.",
+      "E": "Satın alma durumunda, sadece taşıma süresidir."
+    },
+    "correctAnswer": "B",
+    "explanation": "Tedarik süresi (Lead Time), siparişin verilmesi ile malzemenin kullanıma hazır hâle gelmesi arasında geçen toplam zamandır. Kendi içinde üretim yapıldığı durumlarda bu süre sadece makinedeki “üretim süresinden” ibaret değildir; siparişin işleme alınması, makinelerin hazırlık (setup) süresi, asıl üretim süresi ve üretilen ürünlerin kalite kontrol sürelerinin tamamının birbiri ardına eklenmesiyle elde edilen toplam süredir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f8381efc7712",
+    "unitNumber": 15,
+    "text": "Aşağıdakilerden hangisi tedarik zinciri yönetiminin iş süreçlerinden biri değildir?",
+    "options": {
+      "A": "Üretim Yönetimi",
+      "B": "Satınalma",
+      "C": "Finans",
+      "D": "Müşteri İlişkileri Yönetimi",
+      "E": "Ürün Geliştirme"
+    },
+    "correctAnswer": "C",
+    "explanation": "Küresel Tedarik Zinciri Forumu (GSCF) modeline göre; üretim yönetimi, satın alma (tedarikçi yönetimi), müşteri ilişkileri yönetimi, ürün geliştirme, sipariş karşılama ve iade yönetimi gibi operasyonel adımlar tedarik zincirinin ana iş süreçlerindendir. Ancak “Finans”, şirketlerin sermaye yönetimi ile ilgili destekleyici bir yapısal fonksiyondur ve operasyonel mal/bilgi akışını ifade eden tedarik zinciri “iş süreçlerinden” biri olarak sayılmaz.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-221e8aa94e93",
+    "unitNumber": 16,
+    "text": "İki yöntem arasından uygun tahmin yöntemini seçerken aşağıdaki değerlerden hangisi kullanılır?",
+    "options": {
+      "A": "MAPE",
+      "B": "Alfa",
+      "C": "Medyan",
+      "D": "Ortalama",
+      "E": "Mod"
+    },
+    "correctAnswer": "A",
+    "explanation": "İşletmeler genellikle birden fazla tahmin yöntemi (örneğin üstel düzeltme veya trend analizi) çalıştırır ve hangisinin daha isabetli sonuç verdiğini bulmaya çalışır. Bunun için tahminlerin geçmiş gerçek değerlerden ne kadar saptığına (hata oranına) bakılır. Ortalama Mutlak Yüzde Hata (MAPE – Mean Absolute Percentage Error), Ortalama Mutlak Sapma (MAD) veya Ortalama Hata Karesi (MSE) gibi “hata” ölçütleri iki yöntem arasından en uygununu seçmek için karar aracı olarak kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ba20f5f0346f",
+    "unitNumber": 17,
+    "text": "Aşağıdakilerden hangisi lojistik yönetimi için kullanılan diğer isimlerden değildir?",
+    "options": {
+      "A": "Hizmetler Yönetimi",
+      "B": "Tedarik Zinciri Yönetimi",
+      "C": "Kanal Yönetimi",
+      "D": "Endüstriyel Lojistik",
+      "E": "Malzeme Yönetimi"
+    },
+    "correctAnswer": "A",
+    "explanation": "Lojistik yönetimi; fiziksel ürünlerin tedariki, depolanması ve dağıtımını kapsayan geniş bir alandır ve literatürde Tedarik Zinciri Yönetimi, Kanal Yönetimi, Endüstriyel Lojistik ve Malzeme Yönetimi gibi birbirini kapsayan eş anlamlı veya ilişkili terimlerle ifade edilir. Ancak “Hizmetler Yönetimi”, elle tutulmayan soyut hizmetlerin pazarlanması ve operasyonlarını (örneğin otelcilik, bankacılık) kapsadığı için lojistik kavramının doğrudan bir eş anlamlısı veya muadili değildir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-681af0a0e8ec",
+    "unitNumber": 18,
+    "text": "ABC Stok sınıflandırması sisteminde miktar olarak stok kalemlerinin çok küçük bir yüzdesini (yaklaşık yüzde 10-20) oluşturmasına rağmen, firmanın toplam stok yatırım değerinin (Yıllık Kullanım Değeri) çok büyük bir kısmını (yaklaşık yüzde 70-80) oluşturan ve en sıkı kontrole tabi tutulması gereken stok grubu aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "A Tipi Stoklar",
+      "B": "B Tipi Stoklar",
+      "C": "C Tipi Stoklar",
+      "D": "Boru Hattı Stokları",
+      "E": "MRO Stokları"
+    },
+    "correctAnswer": "A",
+    "explanation": "ABC analizinde, depoları dolduran ürünlerin parasal hacimleri sınıflandırılır. İşletmenin en değerli, en kritik ve birim maliyeti en yüksek olan ürünleri A grubuna girer. Depodaki kalem sayısı olarak az yer kaplasalar da, firmanın sermayesinin büyük çoğunluğu bu ürünlere bağlandığı için israfa karşı en sıkı gözetim A Tipi Stoklar için yapılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-af3eb040f9d7",
+    "unitNumber": 19,
+    "text": "Bir ürüne ait ESM 400 birim olarak bulunmuştur, Talepte oluşacak yüzde 50 artış ile yeni ESM değeri için hangisi söylenir?",
+    "options": {
+      "A": "yüzde 50'den az artar.",
+      "B": "yüzde 50 artar.",
+      "C": "Değişmez.",
+      "D": "Tahmin edilemez.",
+      "E": "yüzde 50'den fazla artar."
+    },
+    "correctAnswer": "A",
+    "explanation": "Ekonomik Sipariş Miktarı (ESM) formülü ESM = \\sqrt{2 \\times D \\times S / H} şeklindedir. Talep (D) karekök içindedir. Eğer talep (D) yüzde 50 artarsa yani 1,5 katına çıkarsa, yeni ESM eski değerinin \\sqrt{1,5}’i oranında artacaktır. Kök 1,5 yaklaşık olarak 1,22 değerini verir. Yani talep yüzde 50 (1,5 kat) arttığında ESM sadece yüzde 22 (1,22 kat) oranında artış gösterir, bu da yüzde 50’den daha az bir artış demektir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-7bae97be32df",
+    "unitNumber": 20,
+    "text": "Üretim sürecinde bir iş istasyonunda meydana gelebilecek makine arızalarının, hammadde gecikmelerinin veya üretim duruşlarının, zincirin geri kalanını durdurmasını engellemek amacıyla ardışık istasyonlar arasına stratejik olarak yerleştirilen tampon stoka ne ad verilir?",
+    "options": {
+      "A": "Ölü Stok",
+      "B": "Çevrim Stoku",
+      "C": "Ayrıştırma Stoku (Decoupling Stock)",
+      "D": "Promosyon Stoku",
+      "E": "Transit Stok"
+    },
+    "correctAnswer": "C",
+    "explanation": "Birbiri ardına işleyen ve birbirine bağımlı olan üretim hatlarında (örneğin A makinesinden çıkan ürün doğrudan B makinesine giriyorsa), A makinesindeki küçük bir duruş anında B makinesini de felç eder. Üretim operasyonlarını birbirinden bağımsızlaştırmak (ayrıştırmak) ve sistemin esnek çalışmasını sağlamak için iki istasyon arasına konulan bu hayati tampon stoklara “Ayrıştırma Stoku” denir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d5ce11abf5e0",
+    "unitNumber": 21,
+    "text": "Aşağıdakilerden hangisi talep miktarını etkileyebilecek mikro iktisadi etkenlerden biri değildir?",
+    "options": {
+      "A": "Rakip ürünlerin fiyatı",
+      "B": "Pazarlama bütçesi",
+      "C": "Ürünün fiyatı",
+      "D": "Promosyon stratejileri",
+      "E": "İşsizlik oranı"
+    },
+    "correctAnswer": "E",
+    "explanation": "Ekonomi iki ana dala ayrılır: Mikroekonomi (firma ve tüketici bazlı kararlar) ve Makroekonomi (ülke çapındaki devasa göstergeler). Ürünün kendi fiyatı, reklam bütçesi, şirket promosyonları ve rakiplerin fiyat hamleleri doğrudan o ürüne özel “mikro” düzeydeki etkenlerdir. Ancak enflasyon, faizler ve ülkedeki “İşsizlik oranı” gibi tüm ekonomiyi derinden sarsan büyük etkenler mikro değil, “makro iktisadi” değişkenlerdir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-449062cf7d2f",
+    "unitNumber": 22,
+    "text": "Aşağıdaki stok modellerinin hangisinde talebin yapısı ve/veya tedarik süresi kesin olarak bilinmemekte ve bir olasılık dağılımı ile ifade edilmektedir?",
+    "options": {
+      "A": "Sürekli Gözden Geçirmeye Dayalı Modeller",
+      "B": "Deterministik Modeller",
+      "C": "Boru Hattı Modeli",
+      "D": "Stokastik Modeller",
+      "E": "Ayrıştırma Stoku Modeli"
+    },
+    "correctAnswer": "D",
+    "explanation": "Stok yönetiminde modeller çevrenin belirliliğine göre sınıflandırılır. Talep miktarının ve tedarik süresinin sabit olduğu, kesin olarak bilindiği risksiz ortamlara Deterministik Modeller denir. Ancak geleceğin kesin olarak bilinemediği, talebin rastgele dalgalandığı ve ancak ihtimallerle (bir olasılık dağılımı ile) ifade edilebildiği belirsizlik altındaki modellere ise matematiksel istatistikte “Stokastik Modeller” adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-7cd116a35afd",
+    "unitNumber": 23,
+    "text": "Aşağıdakilerden hangisi Ürün Yaşam (Hayat) Eğrisi’nin aşamalarından biri değildir?",
+    "options": {
+      "A": "Geliştirme",
+      "B": "Olgunluk",
+      "C": "Bebeklik",
+      "D": "Düşüş",
+      "E": "Büyüme"
+    },
+    "correctAnswer": "C",
+    "explanation": "Ürün Hayat Eğrisi, bir ürünün pazara girişinden pazardan kalkışına kadar olan süreci tanımlar ve literatürde temelde 4 veya 5 aşama ile ifade edilir: Ürün Geliştirme/Giriş, Büyüme, Olgunluk ve Düşüş. Ürünün yeni piyasaya sürüldüğü evreye giriş denir, ancak işletme literatüründe Bebeklik diye resmî bir aşama adlandırması bulunmaz.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-daebb6cf3d6f",
+    "unitNumber": 24,
+    "text": "Kısa, orta ve uzun vadeli tahminlerle ilgili olarak aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Kısa vadeli tahmin genelde 3 aydan kısa bir süre için yapılır.",
+      "B": "Yeni tesis kurma kararı uzun vadeli tahmin gerektirir.",
+      "C": "Orta vadeli tahmin 3 yıldan kısa bir süre için yapılır.",
+      "D": "Üretim planlama için kısa-orta-uzun vadeli tahminler kullanılabilir.",
+      "E": "AR-GE çalışmalarında kısa vadeli tahminlere başvurulur."
+    },
+    "correctAnswer": "E",
+    "explanation": "Planlama ufku kararın niteliğine göre değişir. Günlük iş çizelgeleri veya kısa süreli satın almalar için kısa vadeli (genelde 3 aydan kısa) tahminler, yeni fabrika kurmak içinse uzun vadeli tahminler kullanılır. Ancak Araştırma ve Geliştirme (AR-GE) çalışmaları; yeni bir icadın laboratuvardan çıkıp ticarileşmesinin yılları (bazen 5-10 yıl) aldığı stratejik yatırımlar olduğu için, AR-GE planlamasında “kısa vadeli” tahminlere değil, uzun vadeli (gelecek projeksiyonlu) tahminlere başvurulur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e922c25a06d6",
+    "unitNumber": 25,
+    "text": "Aşağıdakilerden hangisi nicel tahmin yöntemleri arasında yer alan zaman serisi modellerinden biri değildir?",
+    "options": {
+      "A": "Regresyon analizi",
+      "B": "Trend analizi",
+      "C": "Ağırlıklı ortalama",
+      "D": "Tekli üstel düzeltme",
+      "E": "Hareketli ortalama"
+    },
+    "correctAnswer": "A",
+    "explanation": "Nicel tahmin yöntemleri Zaman Serisi Modelleri ve Nedensel Modeller olarak ikiye ayrılır. Zaman serisi modelleri geçmiş zaman verilerine dayanır (Trend analizi, hareketli ortalama ve üstel düzeltme bu gruptadır). Ancak Regresyon analizi, zamanı değil, iki veya daha fazla değişken arasındaki nedensel ilişkiyi inceleyen zaman serisi olmayan ilişkisel bir modeldir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2564c1e4e6c9",
+    "unitNumber": 26,
+    "text": "Aşağıdakilerden hangisi zamansal nicel tahminler için söylenemez?",
+    "options": {
+      "A": "t\" zamanı için \"t-1\" değerine müracaat edilir.\"",
+      "B": "Bağımlı değişken talep, bağımsız değişken ise zamandır.",
+      "C": "Geçmiş verilerin hangi dönemi kapsayacağı belirlenir.",
+      "D": "Talep üzerinde etkili olan çeşitli bağımsız değişkenler hesaba katılır.",
+      "E": "Geçmişteki satış verileri kullanılır."
+    },
+    "correctAnswer": "D",
+    "explanation": "Zamansal (zaman serileri) tahmin yöntemleri, gelecekteki talebi sadece ve sadece “zaman (ay/yıl)” ve “geçmiş dönemin (t-1) verilerine” (A, B, C, E) bakarak hesaplar; olayların arkasındaki nedenleri araştırmaz. Eğer bir modelde talebi etkileyen “çeşitli bağımsız değişkenler (örneğin hava durumu, reklam harcaması, faiz oranları)” hesaba katılıyorsa, bu yöntem zaman serisi değil “Nedensel (Regresyon/Ekonometrik)” tahmin modelidir. Bu nedenle D şıkkı zamansal tahminler için söylenemez.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-77496d42990f",
+    "unitNumber": 27,
+    "text": "Aşağıdaki yöntemlerden hangisi en uygun tahmin yöntemini seçmede kullanılır?",
+    "options": {
+      "A": "Regresyon Analizi",
+      "B": "Mevsim İndeksi",
+      "C": "Hareketli Ortalamalar Yöntemi",
+      "D": "Üssel Düzeltme Yöntemi",
+      "E": "İzleme Sinyali Yöntemi"
+    },
+    "correctAnswer": "E",
+    "explanation": "A, C ve D şıkları (Regresyon, Hareketli Ortalama, Üssel Düzeltme) talep tahmini yapmak için kullanılan “yöntemlerin kendileridir”. Yöneticiler bu yöntemlerle farklı tahminler yaparlar. Yaptıkları bu tahminlerin gerçek (gerçekleşen) taleple arasındaki sapmayı/hatayı (Mean Absolute Deviation – MAD) ölçen, modelin doğruluk oranını denetleyip “hangi yöntemin daha uygun olduğunu (seçilmesini)” sağlayan kontrol ve denetim mekanizmasına “İzleme Sinyali (Tracking Signal) Yöntemi” adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-9971317baeca",
+    "unitNumber": 28,
+    "text": "Geleneksel anlamda malzeme ve ürün stoklarının tutulduğu, saklandığı ve korunduğu yere verilen genel isim nedir?",
+    "options": {
+      "A": "Raf",
+      "B": "Fabrika",
+      "C": "Depo",
+      "D": "Kasa",
+      "E": "Mağaza"
+    },
+    "correctAnswer": "C",
+    "explanation": "Hammaddelerin, yarı mamullerin veya bitmiş ürünlerin üretildikten sonra sevkiyat veya satış zamanı gelene kadar güvenle bekletildiği, hava şartlarından ve hırsızlıktan korunduğu kapalı (veya açık) lojistik tesislerine genel terminolojide “Depo (Warehouse)” adı verilmektedir. Raf sadece depo içindeki bir donanımdır, fabrika ise üretim yeridir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-30f1f86005f0",
+    "unitNumber": 29,
+    "text": "Kullanım fonksiyonunu tamamlayan ürünler, bir kaynaktan tek bir merkeze ulaşmakta ise hangi lojistik faaliyetten bahsedilmektedir?",
+    "options": {
+      "A": "Geriye doğru dağıtım",
+      "B": "Stok yönetimi",
+      "C": "Talep yönetimi",
+      "D": "Üretim",
+      "E": "Tedarik zinciri yönetimi"
+    },
+    "correctAnswer": "A",
+    "explanation": "Klasik dağıtım (ileri lojistik) ürünleri fabrikadan binlerce müşteriye (çoğa) ulaştırır. Kullanım ömrünü (fonksiyonunu) tamamlamış veya iade edilmiş (örneğin boş şişeler veya arızalı elektronik eşyalar) ürünlerin ise müşterilerden (dağınık kaynaklardan) toplanıp geri dönüşüm/imha için tek bir fabrika veya merkeze gönderilmesi sürecine “Tersine (Geriye doğru) dağıtım” veya tersine lojistik adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-3361856cfd17",
+    "unitNumber": 30,
+    "text": "Bağlı bulunduğu depoya “gereksinime göre” sipariş veren bir mağaza son bir ayda her hafta başında dört kez sipariş vermiştir. Verdiği her sipariş eşit miktarda ve 25 adettir. Sipariş maliyeti 30 TL, elde bulundurma maliyeti ise birim başına haftalık 2 TL’dir. Mağazada, dönem başında stok bulunmamaktadır. Yukarıdaki açıklamaya göre mağazanın bir aylık toplam sipariş maliyeti kaç TL’dir?",
+    "options": {
+      "A": "100",
+      "B": "30",
+      "C": "25",
+      "D": "0 (sıfır)",
+      "E": "120"
+    },
+    "correctAnswer": "E",
+    "explanation": "Soruda sadece “Toplam SİPARİŞ Maliyeti” sorulmaktadır. Sipariş miktarı (25 adet) veya elde bulundurma maliyeti (2 TL) sipariş verme maliyetini (sabit maliyeti) değiştirmez. Her bir siparişin maliyeti 30 TL olarak verilmiştir. Mağaza bir ayda toplam 4 kez sipariş verdiğine göre: 4 (sipariş sayısı) x 30 TL (bir siparişin maliyeti) = 120 TL aylık toplam sipariş maliyeti oluşur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-93c38341e2d0",
+    "unitNumber": 31,
+    "text": "Başlıca lojistik operasyonlardan biri olan ve temel işlevi malların ve insanların bir yerden başka bir yere transfer edilmesi olarak ifade edilen kavram hangisidir?",
+    "options": {
+      "A": "Üretim",
+      "B": "Taşımacılık",
+      "C": "Satış",
+      "D": "Geri Dönüşüm",
+      "E": "Tedarik Zinciri Yönetimi"
+    },
+    "correctAnswer": "B",
+    "explanation": "Lojistiğin en görünür ve maliyeti en yüksek fonksiyonlarından biri olan, hammadde veya bitmiş ürünlerin (kara, hava, deniz veya demiryolu aracılığıyla) fiziksel olarak bir noktadan (depodan/fabrikadan) başka bir coğrafi noktaya (müşteriye) hareket ettirilmesi (transfer edilmesi) sürecine “Taşımacılık (Ulaştırma)” adı verilmektedir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-cf9d520f202e",
+    "unitNumber": 32,
+    "text": "Dağıtım ağının her aşaması için kullanılabilen zaman pencereli stok yenileme planına …….… denir. Yukarıdaki cümlede boş bırakılan yere aşağıdakilerden hangisi getirilmelidir?",
+    "options": {
+      "A": "CRP",
+      "B": "MRP 2",
+      "C": "ERP",
+      "D": "MRP",
+      "E": "DRP"
+    },
+    "correctAnswer": "E",
+    "explanation": "Dağıtım kanallarında (depolar, perakendeciler, toptancılar) ürünlerin ne zaman ve ne miktarda bulunması gerektiğini belirleyen sisteme İngilizce “Distribution Requirements Planning” kelimelerinin kısaltması olan DRP (Dağıtım Gereksinim Planlama) denir. Zaman pencereli (time-phased) mantıkla çalışan bu sistem stok ikmal (yenileme) optimizasyonunu sağlar. (MRP üretim/malzeme planlaması içindir).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c1d5a7b7fbf4",
+    "unitNumber": 33,
+    "text": "Bir şirketin hammadde alımından başlayarak üretim, depolama, nakliye ve son müşteriye teslime kadar devam eden tüm “malzeme, bilgi ve para (finans)” akışlarının bir bütün (tek bir sistem) olarak planlanması, entegre edilmesi ve yönetilmesine ne ad verilir?",
+    "options": {
+      "A": "Üretim Planlama",
+      "B": "Depo Yönetimi",
+      "C": "Tedarik Zinciri Yönetimi (SCM)",
+      "D": "Satın Alma Yönetimi",
+      "E": "CRM (Müşteri İlişkileri Yönetimi)"
+    },
+    "correctAnswer": "C",
+    "explanation": "Lojistik sadece taşıma ve depolama gibi işin fiziksel kısmıdır. “Tedarik Zinciri Yönetimi (Supply Chain Management – SCM)” ise lojistiği de içine alan, tedarikçinin tedarikçisinden müşterinin müşterisine kadar olan tüm süreçlerdeki işbirliklerinin, bilgi akışının ve stratejinin rekabet avantajı sağlamak için entegre ve eşgüdümlü olarak yönetilmesidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-19cf035e7de7",
+    "unitNumber": 34,
+    "text": "Ürünün fonksiyonunun ve benzerliğinin değişmesine neden olan tersine lojistik türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Geri dönüşüm",
+      "B": "Yeniden üretim",
+      "C": "Yenilenebilirlik",
+      "D": "Yenileme",
+      "E": "Tamir"
+    },
+    "correctAnswer": "A",
+    "explanation": "Tersine lojistikte arızalı veya ömrü bitmiş ürünler geri toplanır. Tamir, yenileme veya yeniden üretim işlemlerinde (örneğin bozuk bir buzdolabının motorunun değiştirilip tekrar satılması), ürünün buzdolabı olma “fonksiyonu ve şekli” değişmez. Ancak eski bir bilgisayar kasasının toplanıp eritilerek içindeki plastiğin ve bakırın ham maddeye çevrilmesi (örneğin bir plastik leğene dönüşmesi) işleminde ürünün hem fiziksel yapısı (benzerliği) hem de fonksiyonu tamamen kaybolur; bu sürece “Geri dönüşüm (Recycling)” adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-9e095e06244d",
+    "unitNumber": 35,
+    "text": "Aşağıdakilerden hangisi depolamanın nedenlerinden değildir?",
+    "options": {
+      "A": "Dağıtım ücretlerinden kazanç elde etmek",
+      "B": "Üretim ücretlerinden kazanç elde etmek",
+      "C": "Üretimi hızlandırmak",
+      "D": "Tedarik kaynağının devamını sağlamak",
+      "E": "Miktar iskontosundan faydalanmak"
+    },
+    "correctAnswer": "C",
+    "explanation": "Firmalar ürünleri hemen satmak yerine depolamayı şu nedenlerle seçer: Çok alıp miktar indirimi kazanmak (E), nakliyeyi toplu yaparak taşıma maliyetini düşürmek (A) ve üretimde malzemenin kesilmesini önlemek (D). Ancak depolama eyleminin kendisi (malzemeyi bekletmek), fabrikanın makinelerinin daha hızlı çalışmasını veya “üretimi hızlandırmasını” sağlayan teknik bir parametre değildir; üretim hızı fabrika teknolojisiyle ilgilidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-3c7881d53d77",
+    "unitNumber": 36,
+    "text": "Bir ürüne olan yıllık talep 40.000 birim, sipariş maliyeti 20 TL ve yıllık elde bulundurma maliyeti 2 TL’dir. Yukarıda verilen miktar iskontosu modeline göre ekonomik sipariş miktarı nedir?",
+    "options": {
+      "A": "894",
+      "B": "1.500",
+      "C": "1.499",
+      "D": "4.999",
+      "E": "5.000"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1faddd971fba",
+    "unitNumber": 37,
+    "text": "Dağıtım merkezlerine gelen kamyonlardaki ürünlerin (malların), hiç depolanmadan (rafa kaldırılmadan) doğrudan kısa süreli bir ayrıştırma işlemiyle aynı gün içinde sevkiyata gidecek diğer kamyonlara yüklenmesi şeklindeki hızlı transfer yöntemine lojistikte ne denir?",
+    "options": {
+      "A": "Soğuk Zincir Dağıtımı",
+      "B": "Tersine Lojistik",
+      "C": "Antrepo Depolama",
+      "D": "Çapraz Sevkiyat (Cross-Docking)",
+      "E": "Intermodal Taşımacılık"
+    },
+    "correctAnswer": "D",
+    "explanation": "Özellikle perakende ve market zincirlerinde çok kullanılır (Örn: BİM veya A101 depoları). Tedarikçiden gelen farklı ürünler depoya (platforma) indirilir, ancak raflara depolanmak yerine anında mağazaların siparişlerine göre ayrıştırılıp platformun (dock’un) diğer tarafındaki bekleyen sevkiyat kamyonlarına (çapraz geçişle) yüklenir. Stok bekleme süresini (depolama maliyetini) sıfırlar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-596113cac11c",
+    "unitNumber": 38,
+    "text": "Aşağıdakilerden hangisi çekme sistemi uygulayan bir işletme için söylenebilir?",
+    "options": {
+      "A": "Stok maliyeti yükselir.",
+      "B": "Klasik üretim planlama faaliyetleri yapılmaktadır.",
+      "C": "Tedarikçi tüm yükü üstlenmiştir.",
+      "D": "Mamul stokları fazlalaşır.",
+      "E": "Müşterinin isteği ile üretim yapılır."
+    },
+    "correctAnswer": "E",
+    "explanation": "İtme (Push) sisteminde mallar önceden üretilip depolara (stoğa) yığılır ve satılmaya çalışılır (Mamul stoku fazlalaşır, maliyet artar). Tam Zamanında Üretim (JIT/Kanban) gibi modern “Çekme (Pull) Sistemi”nde ise, üretim bandı sadece bir müşteri gelip “sipariş verdiğinde (istediğinde)” çalışmaya başlar. Her aşama bir önceki aşamadan ihtiyaç kadar mal çeker. Bu sistemin en temel özelliği “Müşterinin isteği (kesin siparişi) ile üretimin başlamasıdır” (Sıfıra yakın stok tutulur).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f0ea67d220e2",
+    "unitNumber": 39,
+    "text": "Aşağıdaki ifadelerden hangisi ABC Analizi için söylenemez?",
+    "options": {
+      "A": "C Tipi stok kalemleri için toplu sipariş verilebilir.",
+      "B": "Toplam maliyeti en yüksek stok kalemleri A tipi olarak adlandırılır.",
+      "C": "Her stok biriminin aynı dikkatle yönetilmesini savunur.",
+      "D": "Temeli Pareto Analizine dayanmaktadır.",
+      "E": "Az sayıda stok biriminin stok maliyetlerinin yüksek olduğu varsayımına dayanır."
+    },
+    "correctAnswer": "C",
+    "explanation": "ABC analizi (Pareto’nun 80/20 kuralına dayanır), bir depodaki tüm ürünlerin önem/değer derecesinin aynı OLMADIĞINI savunur. Değeri çok yüksek olan “A sınıfı” ürünler sıkı bir şekilde (adet adet) takip edilirken, değeri düşük olan (örneğin cıvata/somun) “C sınıfı” ürünler gevşek kontrolle ve topluca sipariş edilir. Yani, “Her stok biriminin aynı dikkatle (ve aynı mesai harcanarak) yönetilmesini” kesinlikle “savunmaz”, aksine seçici (farklı) bir dikkat önerir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-96700e09325f",
+    "unitNumber": 40,
+    "text": "Sipariş miktarından etkilenmeyen ve sabit olan maliyet kalemi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Birim Maliyeti",
+      "B": "Elde Bulundurmama Maliyeti",
+      "C": "Elde Bulundurma Maliyeti",
+      "D": "Hazırlık Maliyeti",
+      "E": "İşgücü Maliyeti"
+    },
+    "correctAnswer": "D",
+    "explanation": "Lojistik ve stok yönetiminde (EOQ modelinde), sipariş verirken (veya üretim bantlarını hazırlarken) oluşan kırtasiye, form düzenleme, iletişim veya makine ayarı gibi masraflara “Hazırlık Maliyeti (Sipariş Verme Maliyeti)” denir. Bu maliyet, siparişin içinde 10 tane veya 1000 tane ürün olmasından bağımsız olarak, her sipariş veya üretim partisi başına sadece “bir kez ve sabit” olarak gerçekleşir, yani siparişin miktarından etkilenmez.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-908ffc33419a",
+    "unitNumber": 41,
+    "text": "Dağıtım ağının her şebekesi için kullanılan zaman aşamalı stok ikmal planı olarak aşağıdaki ifadelerden hangisi kullanılır?",
+    "options": {
+      "A": "Bütünleşik Planlama",
+      "B": "Ana Üretim Programlama (MPS)",
+      "C": "Kurumsal Kaynak Planlama (ERP)",
+      "D": "Dağıtım Gereksinim Planlama (DRP)",
+      "E": "Malzeme Gereksinim Planlama (MRP)"
+    },
+    "correctAnswer": "D",
+    "explanation": "DRP (Distribution Requirements Planning), merkezi depodan bölgesel depolara ve oradan da mağazalara kadar uzanan dağıtım kanallarındaki (şebekelerdeki) ihtiyaçları ve bu ihtiyaçların ne zaman gönderileceğini (zaman aşamalı stok yenilemesini) hesaplayan en temel dağıtım lojistiği planlama sistemidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a8081c59b4fb",
+    "unitNumber": 42,
+    "text": "Modern lojistik yönetiminde 3PL (Üçüncü Parti Lojistik) kavramı aşağıdakilerden hangisini ifade etmektedir?",
+    "options": {
+      "A": "Şirketin kendi kamyon filosuyla dağıtım yapmasını",
+      "B": "Üretim ve pazarlama dışında kalan lojistik faaliyetlerin tamamının uzman bir lojistik firmasına devredilmesini",
+      "C": "Sadece hava kargo taşımacılığı yapan firmaları",
+      "D": "Üç farklı ülkenin gümrük birliği anlaşmasını",
+      "E": "Fabrikanın kendi içindeki depolarını"
+    },
+    "correctAnswer": "B",
+    "explanation": "Ana işi (core business) üretim veya satış olan bir şirketin (örneğin bir tekstil markasının), lojistikle uğraşmamak ve maliyetleri düşürmek amacıyla depolama, taşıma ve sipariş yönetimi gibi operasyonlarını bu işte uzmanlaşmış “bağımsız” (üçüncü şahıs) lojistik şirketlerine bırakmasına 3PL (Third Party Logistics) denir (Outsourcing – Dış Kaynak Kullanımı).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b6f437b8a29d",
+    "unitNumber": 43,
+    "text": "Aşağıdakilerden hangisi “Malzeme Elleçleme Ekipmanları” olarak gösterilemez?",
+    "options": {
+      "A": "Sipariş Toplama Ekipmanı",
+      "B": "Üretim Ekipmanı",
+      "C": "Sınıflandırma Ekipmanı",
+      "D": "Taşıma Ekipmanı",
+      "E": "Saklama Ekipmanı"
+    },
+    "correctAnswer": "B",
+    "explanation": "Malzeme elleçleme (Material Handling), ürünlerin depoya girdiği andan çıktığı ana kadar yüklenmesi, istiflenmesi, kısa mesafeli taşınması (forklift vb.) ve raflara yerleştirilmesidir (Taşıma, Saklama, Sınıflandırma ve Toplama ekipmanları bu kapsama girer). Ancak fabrikadaki tornalar, CNC tezgahları veya montaj robotları gibi doğrudan ürünü imal eden (şekil veren) “Üretim Ekipmanları”, lojistik/elleçleme donanımı değil, üretim/imalat mühendisliği donanımlarıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-0b0ab2cc7f75",
+    "unitNumber": 44,
+    "text": "Lojistikte farklı taşıma modlarının (karayolu, denizyolu, demiryolu) birbirine entegre kullanıldığı sistemlerde; içindeki mallara hiç dokunulmadan (yük aktarması yapılmadan) sadece standart boyutlardaki taşıma ünitesinin (kasanın) araçtan araca aktarıldığı uluslararası taşıma biçimine ne denir?",
+    "options": {
+      "A": "Unimodal Taşımacılık",
+      "B": "Karayolu Taşımacılığı",
+      "C": "Hava Kargo Taşımacılığı",
+      "D": "Boru Hattı Taşımacılığı",
+      "E": "İntermodal Taşımacılık"
+    },
+    "correctAnswer": "E",
+    "explanation": "Yüklerin (çoğunlukla standart “Konteynerler” veya tır dorseleri içinde), kapıları hiç açılmadan sırasıyla örneğin önce tıra (karayolu), sonra trene (demiryolu) ve ardından gemiye (Ro-Ro) yüklendiği çoklu taşıma modüllerinin birleştirildiği yüksek verimli, çevreci sisteme “İntermodal Taşımacılık” adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f7e4e79266c0",
+    "unitNumber": 45,
+    "text": "Taşıyıcının sabit maliyet, değişken maliyet toplamına kar oranını eklemesiyle oluşan fiyatlandırma türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Hizmetin Maliyetine Göre",
+      "B": "Kara Göre",
+      "C": "Taşıma Türüne Göre",
+      "D": "Rekabet Şartlarına Göre",
+      "E": "Hizmetin Fiyatına Göre"
+    },
+    "correctAnswer": "A",
+    "explanation": "Lojistikte navlun (taşıma ücreti) belirleme yöntemlerinden biridir. Bir nakliye firması fiyatını belirlerken pazardaki rakiplerine (rekabet) veya müşterinin ödeme gücüne bakmak yerine; kamyonun amortismanı (sabit maliyet) ve yaktığı mazot (değişken maliyet) gibi kendi katlandığı tüm nakliye masraflarının üstüne belirli bir kâr marjı (örneğin yüzde 15) ekleyerek satış fiyatını hesaplıyorsa, içe dönük bu temel ve basit sisteme “Hizmetin Maliyetine Göre” fiyatlandırma modeli denir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e9f75e3bc647",
+    "unitNumber": 46,
+    "text": "Bir otomobil üreticisi, birim maliyeti 1.000 TL olan bir ham maddeyi tek seferde 600 adetten fazla sipariş vermesi durumunda yüzde 10 indirim almaktadır. Buna göre, tek seferde 400 adet sipariş vermesi durumunda ham maddenin “toplam maliyeti” kaç TL olur?",
+    "options": {
+      "A": "450.000",
+      "B": "600.000",
+      "C": "320.000",
+      "D": "400.000",
+      "E": "1.000"
+    },
+    "correctAnswer": "D",
+    "explanation": "Miktar iskontosu modeline göre, yüzde 10’luk indirim baremi 600 adet ve üzeri siparişler için geçerlidir. Üretici, bu sınırın altında olan 400 adet sipariş verdiğine göre indirimden yararlanamaz. Birim maliyet indirimsiz olarak 1.000 TL kalır. Toplam hammadde maliyeti ise: 400 adet x 1.000 TL = 400.000 TL olarak hesaplanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-2da40766fe92",
+    "unitNumber": 47,
+    "text": "Aşağıdakilerden hangisi “ekonomik sipariş miktarı” hesaplanırken kesinlikle kullanılmaz?",
+    "options": {
+      "A": "Elde Bulundurma Maliyeti",
+      "B": "Maksimum Stok Düzeyi",
+      "C": "Hazırlık Maliyeti",
+      "D": "Talep Miktarı",
+      "E": "Sipariş Maliyeti"
+    },
+    "correctAnswer": "B",
+    "explanation": "Ekonomik Sipariş Miktarı (Wilson EOQ) formülünde sadece 3 parametre (değişken) kullanılır: Yıllık Talep Miktarı (D), Sipariş (Hazırlık) Maliyeti (S) ve Elde Bulundurma (Stoklama) Maliyeti (H). Bu üçü birleştirilerek en ucuz (optimum) sipariş adedi bulunur. Deponun ne kadar mal alabildiği yani “Maksimum Stok Düzeyi”, bu spesifik matematiksel (EOQ) formülün bir parçası değildir ve kesinlikle hesaplamada kullanılmaz.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-89a2b93e3296",
+    "unitNumber": 48,
+    "text": "Üretim sürecindeki malzeme veya parçaların (örneğin otomobil kapılarının), tam olarak “üretim hattında ihtiyaç duyulduğu anda ve sadece ihtiyaç duyulan miktarda” istasyona getirilmesi prensibine dayanan ve stokları neredeyse sıfıra indirmeyi hedefleyen üretim/lojistik felsefesine ne ad verilir?",
+    "options": {
+      "A": "MRP (Malzeme Gereksinim Planlaması)",
+      "B": "EOQ (Ekonomik Sipariş Miktarı)",
+      "C": "JIT (Just in Time - Tam Zamanında Üretim)",
+      "D": "VMI (Tedarikçi Yönetimli Stok)",
+      "E": "Cross-Docking (Çapraz Sevkiyat)"
+    },
+    "correctAnswer": "C",
+    "explanation": "Toyota tarafından geliştirilen Japon “Yalın Üretim” felsefesidir. Malzemeler depolarda beklemez (sıfır stok felsefesi). Montaj hattında bir parçaya ihtiyaç duyulduğunda, tedarikçi o parçayı “tam zamanında (Just In Time)” getirir, böylece depolama ve sermaye bağlama maliyetleri ortadan kalkar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1a87d77c1925",
+    "unitNumber": 49,
+    "text": "Aşağıdakilerden hangisi paketlemenin işlevlerinden biri değildir?",
+    "options": {
+      "A": "İletişim",
+      "B": "Kolaylık",
+      "C": "Üretilebilme",
+      "D": "Koruma",
+      "E": "İçerme"
+    },
+    "correctAnswer": "C",
+    "explanation": "Lojistikte ve pazarlamada ambalajın (paketlemenin) temel fonksiyonları vardır: Ürünü dış etkenlerden korumak (D), bir arada tutmak/içermek (E), taşımayı ve depolamayı kolaylaştırmak (B) ve üzerindeki yazılarla müşteriyle iletişim kurmak, markayı satmaktır (A). Ancak “Üretilebilme” (ürünün imalat süreci), paketlemenin değil, ürün tasarımı ve fabrika imalat hattının bir fonksiyonudur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-47761c0c4081",
+    "unitNumber": 50,
+    "text": "Aşağıdakilerden hangisi nitel tahmin yöntemlerinden biridir?",
+    "options": {
+      "A": "Delphi Yöntemi",
+      "B": "Regresyon Analizi",
+      "C": "Simülasyon Modelleri",
+      "D": "Hareketli Ortalama Yöntemi",
+      "E": "Zaman Serileri"
+    },
+    "correctAnswer": "A",
+    "explanation": "Talep tahmin yöntemleri, matematiksel verilere dayanan “nicel (kantitatif)” ve kişisel yargılara/uzman görüşlerine dayanan “nitel (kalitatif)” olarak ikiye ayrılır. Regresyon, hareketli ortalamalar ve zaman serileri sayısal verilere dayanan nicel yöntemlerdir. Ancak bir konu hakkında uzmanların ortak görüşlerine başvurularak ve anketler yoluyla ortak bir karara varılmasına dayanan “Delphi Yöntemi”, tamamen nitel bir tahmin modelidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d248159a990a",
+    "unitNumber": 51,
+    "text": "Aşağıdaki düzeltme katsayılarından hangisinde, üstel düzeltmeye dayalı tahmin değeri basit yönteme dayalı tahmin değeriyle aynı olur?",
+    "options": {
+      "A": "0,5",
+      "B": "0,9",
+      "C": "0",
+      "D": "1",
+      "E": "0,1"
+    },
+    "correctAnswer": "D",
+    "explanation": "Üstel düzeltme formülü şu şekildedir: T gelecek = alfa x D mevcut + (1 – alfa) x T mevcut Burada: T gelecek: Gelecek dönemin tahmini, alfa: Düzeltme katsayısı, D mevcut: Mevcut dönem talebi, T mevcut: Mevcut dönem tahmini. Basit Yöntem: Bir sonraki dönemin tahmini, mevcut dönemin talebine eşittir. Formül olarak: T gelecek = D mevcut Eğer alfa (düzeltme katsayısı) 1 seçilirse, üstel düzeltme formülü şu hale gelir: T gelecek = 1 x D mevcut + (1 – 1) x T mevcut T gelecek = D mevcut Bu durumda, üstel düzeltme tahmini ile basit yöntem tahmini aynı olur. Sonuç: Düzeltme katsayısı 1 olduğunda üstel düzeltme, basit yöntemle aynı tahmini verir. Doğru Cevap: D) 1",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ec69c8283a61",
+    "unitNumber": 52,
+    "text": "İki değişken arasında mükemmel korelasyon ilişkisi varsa korelasyon değeri hangisine eşit olur?",
+    "options": {
+      "A": "r&le;0",
+      "B": "-1 veya 1",
+      "C": "0&le;r",
+      "D": "r&gt;1",
+      "E": "0"
+    },
+    "correctAnswer": "B",
+    "explanation": "Korelasyon değeri -1 veya 1 olduğunda mükemmel ilişkiyi ifade eder.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-833c6a02c0e9",
+    "unitNumber": 53,
+    "text": "Talebin elde bulundurmama sonucu karşılanamaması durumunda bir işletme için aşağıdakilerden hangisi kesinlikle gerçekleşmez?",
+    "options": {
+      "A": "Hazırlık maliyeti artışı",
+      "B": "Müşteri kaybı",
+      "C": "Ek nakliye gideri",
+      "D": "Arz fazlası",
+      "E": "Karın kaybı"
+    },
+    "correctAnswer": "D",
+    "explanation": "Talebin karşılanamaması arz fazlasına değil, müşteri kaybı ve kar kaybına yol açar.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-dc8d399e6e5f",
+    "unitNumber": 54,
+    "text": "ABC stok sınıflandırması yapıldığında hangi parça kesinlikle A sınıfı stok kalemidir?",
+    "options": {
+      "A": "A004",
+      "B": "A002",
+      "C": "A003",
+      "D": "A001",
+      "E": "A006"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-02b8ea25549c",
+    "unitNumber": 56,
+    "text": "Malzemenin yapısından dolayı sürekli sayılıp, sipariş verilen stok modeli için aşağıdakilerden hangisi söylenebilir?",
+    "options": {
+      "A": "Sürekli gözden geçirmeye dayalı stok modelidir.",
+      "B": "Talep kesikli dağılımla ifade edilir.",
+      "C": "Yenileme (ikmal) çok hızlı gerçekleşmektedir.",
+      "D": "Periyodik gözden geçirmeye dayalı stok modelidir.",
+      "E": "Talep deterministiktir."
+    },
+    "correctAnswer": "A",
+    "explanation": "Sürekli gözden geçirme modeli, stok seviyesi azaldığında hemen sipariş verilmesini gerektirir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b3c6971d1716",
+    "unitNumber": 57,
+    "text": "ABC stok sınıflandırması yapıldığında aşağıdakilerden hangi stok biriminin “yıllık kullanım yüzdesi“ yüzde 4’ün altındadır?",
+    "options": {
+      "A": "A006",
+      "B": "A004",
+      "C": "A010",
+      "D": "A008",
+      "E": "A003"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ec0f07ea2aa1",
+    "unitNumber": 58,
+    "text": "Aşağıdakilerden hangisi lojistik girdilerden değildir?",
+    "options": {
+      "A": "Taşıma Kaynağı",
+      "B": "İnsan Kaynağı",
+      "C": "Doğal Kaynaklar",
+      "D": "Bilgi Kaynağı",
+      "E": "Finansal Kaynaklar"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-52c346c3381b",
+    "unitNumber": 59,
+    "text": "“Müşteri istedikçe üretim ve stok yapmanın gerekliliği esas alınmaktadır ve talep üretimi tetiklemektedir.” olarak tanımlanan ifade aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Tedarik Sistemi",
+      "B": "İtme Sistemi",
+      "C": "Dağıtım Sistemi",
+      "D": "Çekme Sistemi",
+      "E": "Üretim Sistemi"
+    },
+    "correctAnswer": "D",
+    "explanation": "Üretim ve lojistikte, faaliyetlerin müşteri talebi (siparişi) ile tetiklendiği, stokların talep oldukça yerine konduğu sisteme **Çekme Sistemi** (Pull System) denir. (Zıttı İtme Sistemidir).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-94df1078117f",
+    "unitNumber": 60,
+    "text": "Aşağıdaki işlerden hangisi depolamanın “hareket” fonksiyonunun içerisinde yer almaz?",
+    "options": {
+      "A": "Saklama",
+      "B": "Müşteri siparişi toplama",
+      "C": "Transfer",
+      "D": "Taşıma",
+      "E": "Mal alımı"
+    },
+    "correctAnswer": "A",
+    "explanation": "Depolamanın temel fonksiyonları “Hareket” ve “Saklama” (Bekletme) olarak ikiye ayrılır. Mal alımı, transfer, sipariş toplama ve taşıma işlemleri ürünün yer değiştirdiği “Hareket” fonksiyonlarıdır. **Saklama** ise ürünün stokta bekletildiği durağan fonksiyondur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-00ed4a321ce8",
+    "unitNumber": 61,
+    "text": "Bir ürüne olan yıllık talep 40.000 birim, sipariş maliyeti 20 TL ve yıllık elde bulundurma maliyeti 2 TL’dir. Tabloya göre miktar iskontosu modeline göre ekonomik sipariş miktarı nedir?",
+    "options": {
+      "A": "1499",
+      "B": "1500",
+      "C": "5000",
+      "D": "894",
+      "E": "4999"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-01c661e5e66b",
+    "unitNumber": 62,
+    "text": "Ürünleri almak için yatay veya dikey belirli bir rotada çeviren mekanik araçlara verilen genel ad aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Hareketli bant",
+      "B": "Akış rafları",
+      "C": "Karuzel",
+      "D": "Küçük gözlü raflar",
+      "E": "AS/RS"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f9d2f84f96be",
+    "unitNumber": 63,
+    "text": "Yenileme miktarından etkilenmeyen sabit olan maliyet kalemi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Birim maliyet",
+      "B": "Hazırlık maliyeti",
+      "C": "Elde bulundurmama maliyeti",
+      "D": "Ceza maliyeti",
+      "E": "Elde bulundurma maliyeti"
+    },
+    "correctAnswer": "B",
+    "explanation": "Hazırlık (Setup) veya Sipariş maliyeti, siparişin miktarından bağımsız olarak, her sipariş veya üretim partisi için bir kez katlanılan **sabit** bir maliyettir. (Birim, elde bulundurma ve ceza maliyetleri miktarla ilişkilidir).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8277b5f4c4f3",
+    "unitNumber": 64,
+    "text": "Aşağıdakilerden hangisi temel taşıma türlerinden değildir?",
+    "options": {
+      "A": "Deniz yolu",
+      "B": "Kara yolu",
+      "C": "Demir yolu",
+      "D": "Çapraz sevkiyat",
+      "E": "Boru hattı"
+    },
+    "correctAnswer": "D",
+    "explanation": "Temel taşıma türleri (modları); Karayolu, Demiryolu, Denizyolu, Havayolu ve Boru hattıdır. **Çapraz Sevkiyat** (Cross-docking) ise bir taşıma türü değil, bir depo/transfer merkezi **operasyon stratejisidir**.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f9ac82cac33e",
+    "unitNumber": 65,
+    "text": "Aşağıdakilerden hangisi tüketici anketleri ve pazar araştırmasının işe yaradığı alanlardan biri değildir?",
+    "options": {
+      "A": "Aylık satış ortalamalarının tespiti",
+      "B": "Müşteri eğilimlerini ve beklentilerini görme",
+      "C": "Yeni ürün planlama süreçleri",
+      "D": "Talep tahmini",
+      "E": "Ürün tasarımı geliştirme"
+    },
+    "correctAnswer": "A",
+    "explanation": "Müşteri eğilimleri, yeni ürün planlaması ve talep tahmini gibi geleceğe dönük veya kalitatif veriler için anketler kullanılır. Ancak **Aylık satış ortalamalarının tespiti**, geçmişe dönük kesin sayısal verilere (muhasebe/satış kayıtlarına) dayanır, anketle tahmin edilmez, doğrudan hesaplanır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-de916b025d52",
+    "unitNumber": 66,
+    "text": "Aşağıdakilerden hangisi üretim işletmesi için tedarik ağının bir parçası sayılmaz?",
+    "options": {
+      "A": "Malzeme ihtiyaç planlaması",
+      "B": "Satın alma işlemleri",
+      "C": "Ana üretim programı",
+      "D": "İş emirlerinin oluşturulması",
+      "E": "Dağıtım gereksinim planlaması"
+    },
+    "correctAnswer": "E",
+    "explanation": "Üretim işletmesinin “Tedarik Ağı” (Inbound Logistics), hammadde ve malzemenin temini ve üretime hazırlanması ile ilgilidir. Malzeme ihtiyaç planlaması (MRP), satın alma ve üretim programları bu kapsamdadır. Ancak **Dağıtım Gereksinim Planlaması (DRP)**, üretilen bitmiş ürünlerin müşteriye ulaştırılmasıyla (Outbound Logistics) ilgili olup dağıtım ağının bir parçasıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-6ea4de6aeb4a",
+    "unitNumber": 67,
+    "text": "Ürünlerin elle alındığı, genelde küçük ürünler için kullanılan ve bir insanın yetişeceği boyda olan raflara verilen ad aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Konveyör",
+      "B": "Karuzel",
+      "C": "AS/RS",
+      "D": "Küçük gözlü raflar",
+      "E": "Akış rafları"
+    },
+    "correctAnswer": "D",
+    "explanation": "İnsan erişimine uygun yükseklikte, genellikle kutulu veya parça halindeki küçük ürünlerin saklandığı ve elle toplama yapılan raflara **Küçük Gözlü Raflar** (Bin Shelving) denir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ee9b0ced4fe1",
+    "unitNumber": 68,
+    "text": "Eğer talep değeri herhangi bir zaman biriminde sıfır olarak gerçekleşirse, sıfıra bölme işlemini gerçekleştirmek gerekecektir ki bu işlem matematiksel olarak geçersizdir. Eğer tahmini talep değeri ile gerçekleşen talep değeri aynı olursa MAPE değeri 0 olur ki bu da üst seviye açısından MAPE’nin herhangi bir sınırlamaya sahip olmaması anlamına gelir. Yukarıdaki Ortalama Mutlak Yüzde Hata (MAPE) yöntemiyle ilgili bazı sınırlılıklara yer verilmiştir. Aşağıdakilerden hangisi bu gibi dezavantajlar sebebiyle başvurulan alternatif yöntemlerden değildir?",
+    "options": {
+      "A": "Gerçek Toplu Yüzde Hata (RAPE, Real Aggregated Percentage Error)",
+      "B": "Asimetrik MAPE (AMAPE)",
+      "C": "Ağırlıklı Mutlak Yüzde Hata (WAPE, Weighted Absolute Percentage Error)",
+      "D": "Göreli Güvenilirlik Ölçüsü (ROMA, Relative Measure of Accuracy) - (Bu seçenek soruda şık olarak verilmiş ancak standart literatürde yaygın değildir, muhtemelen çeldiricidir veya özel bir yöntemdir. Ancak MAPE alternatifi olarak SMAPE vb. yaygındır.)",
+      "E": "Simetrik MAPE (SMAPE)"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5b1ad43926aa",
+    "unitNumber": 69,
+    "text": "Bir firma kendi markası olan ayakkabı tabanını günde 100 birimlik üretim hızıyla 40 TL hazırlık maliyetine katlanarak üretebiliyor ve birimini 1,28 TL’ye mal ediyor. Aynı tabanı 5 TL sipariş maliyetine katlanarak, 1,30 TL’ye başka bir tedarikçiden alabiliyor. Yıllık talep 7.000 birim, 1 yıl 250 İşgünü ve elde bulundurma oranı 0,20 TL/yıldır. Firma üretim yapmayı tercih ederse, yıllık üretim maliyeti ne kadar olur?",
+    "options": {
+      "A": "160",
+      "B": "9100",
+      "C": "9281",
+      "D": "8960",
+      "E": "67"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-6a5c867d6da4",
+    "unitNumber": 70,
+    "text": "Aşağıdakilerden hangisi ölçek ekonomisinden yararlanarak stok bulunduran işletmenin amaçları arasında yer alır?",
+    "options": {
+      "A": "Muhasebe kayıtlarında olabilecek aksaklığı engellemek",
+      "B": "Belirsizliği gidermek",
+      "C": "Birim hazırlık maliyetini düşürmek",
+      "D": "Mevsim etkisinden kurtulmak",
+      "E": "Emniyet stokunu azaltmak"
+    },
+    "correctAnswer": "C",
+    "explanation": "Ölçek ekonomisi, üretim veya sipariş miktarını artırarak birim maliyetleri düşürmeyi hedefler. Büyük partiler halinde üretim veya satın alma yapmak (stok tutmak), sabit olan **hazırlık (setup) veya sipariş maliyetinin** daha fazla ürüne bölünmesini sağlayarak **birim başına düşen maliyeti azaltır**.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-cf91c7d3064d",
+    "unitNumber": 71,
+    "text": "Stok politikası “stok düzeyi 36 birime düştüğünde 320 adet sipariş ver” şeklinde ise aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "36 çevrim stok miktarı, 320 ekonomik sipariş miktarıdır",
+      "B": "320 yeniden sipariş noktasıdır, 36 ekonomik sipariş miktarıdır.",
+      "C": "36 yeniden sipariş noktası, 320 ekonomik sipariş miktarıdır.",
+      "D": "320 tedarik süresinde oluşan talep miktarıdır.",
+      "E": "36 emniyet stoku, 320 ekonomik sipariş miktarıdır."
+    },
+    "correctAnswer": "C",
+    "explanation": "Stok politikasında “stok düzeyi X birime düştüğünde” ifadesi, siparişin tetiklendiği seviyeyi yani **Yeniden Sipariş Noktası**nı (ROP) belirtir (36 birim). “Y adet sipariş ver” ifadesi ise verilecek siparişin büyüklüğünü, genellikle optimize edilmiş olan **Ekonomik Sipariş Miktarı**nı (EOQ) belirtir (320 birim). Doğru eşleşme C şıkkıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7272ef90815d",
+    "unitNumber": 72,
+    "text": "Bozuk parçaların onarılmasını hedefleyen ve bu amaçla bazı parçaların demontesini ardından tekrar montajını içeren tersine lojistik türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Yenileme",
+      "B": "Bakım",
+      "C": "Yeniden üretim",
+      "D": "Geri dönüşüm",
+      "E": "Tamir"
+    },
+    "correctAnswer": "E",
+    "explanation": "Ürünün bozulan veya çalışmayan spesifik parçalarının onarılması veya değiştirilmesi işlemine **Tamir** (Repair) denir. Yeniden üretim (Remanufacturing) ürünü tamamen “sıfır gibi” yapmayı, Yenileme (Refurbishing) ise kozmetik ve hafif onarımları içerir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-696fcf6ad5c8",
+    "unitNumber": 73,
+    "text": "Bu anlaşma tek bir müşteri için o müşteriye özel olarak hazırlanmış ve eşsiz bir depolama ve lojistik hizmetleri sunmaktadır. Bu anlaşmaya göre operasyondan oluşabilecek riskler her iki tarafın da sorumluluğundadır. Bir anlaşmaya dayalı olarak, tek bir müşteri için o müşteriye özel hazırlanmış depolama ve lojistik hizmetinin sunulduğu depolama türüne verilen ad aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Özel depolama",
+      "B": "Doğrudan sevkiyat",
+      "C": "Sözleşmeli depolama",
+      "D": "Genel depolama",
+      "E": "Çapraz sevkiyat"
+    },
+    "correctAnswer": "C",
+    "explanation": "**Sözleşmeli Depolama** (Contract Warehousing), üçüncü parti lojistik (3PL) sağlayıcının belirli bir müşteri için özel olarak ayırdığı, o müşterinin ihtiyaçlarına göre tasarlanmış ve risklerin paylaşıldığı uzun vadeli bir depolama çözümüdür.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b9e7672b05a5",
+    "unitNumber": 162,
+    "text": "Aşağıda verilen sipariş miktarı belirleme yöntemlerinden hangisinde, sipariş verilme aralığı belli ve sabit bir değerdir?",
+    "options": {
+      "A": "Sabit Sipariş Miktarı Yöntemi",
+      "B": "Ekonomik Sipariş Miktarı Modeli",
+      "C": "Sabit Sipariş Periyodu Yöntemi",
+      "D": "En Düşük Birim Maliyet Yöntemi",
+      "E": "En Düşük Toplam Maliyet Yöntemi"
+    },
+    "correctAnswer": "C",
+    "explanation": "Stok kontrol sistemlerinde, siparişlerin belirli ve sabit zaman aralıklarında (örneğin her hafta Pazartesi) verildiği, ancak sipariş miktarının o anki stok seviyesine göre değiştiği yöntem **Sabit Sipariş Periyodu** (P) Yöntemidir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a179265a0ec6",
+    "unitNumber": 74,
+    "text": "Bir lojistik firmasının gelecek dönemdeki iş hacmini miktar olarak tahmin etmesi lojistiğin hangi faaliyeti ile ilgilidir?",
+    "options": {
+      "A": "Talep yönetimi",
+      "B": "Satın alma",
+      "C": "Elleçleme",
+      "D": "Dağıtım",
+      "E": "Tersine lojistik"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b64be4a21c89",
+    "unitNumber": 75,
+    "text": "Aşağıdaki modellerin hangisinde talebin yapısı ve tedarik süresi kesin olarak bilinmektedir?",
+    "options": {
+      "A": "Tek periyotlu modeller",
+      "B": "Olasılıklı modeller",
+      "C": "Deterministik modeller",
+      "D": "Periyodik gözden geçirmeye dayalı modeller",
+      "E": "Sürekli gözden geçirmeye dayalı modeller"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-fd25c79d84ee",
+    "unitNumber": 76,
+    "text": "Aşağıdakilerden hangisi Elde Bulundurma Maliyeti hesabında kullanılabilir?",
+    "options": {
+      "A": "Raf maliyeti",
+      "B": "Elde bulundurmama maliyeti",
+      "C": "Elleçleme maliyeti",
+      "D": "Ceza maliyeti",
+      "E": "Birim maliyet"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-98416e6a3109",
+    "unitNumber": 77,
+    "text": "Bir stok kaleminin belirli bir süre stokta kalmasıyla oluşan tüm maliyetlerin toplamını ifade eder. Bu maliyetler; stoğa yapılan yatırımın fırsat maliyeti, stoklama için kullanılan fiziksel alanın maliyetleri (kira, aydınlatma, isitma, soğutma, havalandırma, depocuya ödenen ücret) vergiler, sigorta ve fire maliyetleri olarak sıralanabilir. Yukarıda ifade edilen stok maliyeti aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Ceza maliyeti",
+      "B": "Elde bulundurma maliyeti",
+      "C": "Elde bulundurmama maliyeti",
+      "D": "Hazırlık maliyeti",
+      "E": "Birim maliyet"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1aec13a4a0c7",
+    "unitNumber": 78,
+    "text": "Tedarik zincirindeki dağıtım kanalları arasındaki veya birbirine komşu iki montaj hattı arasındaki stok türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Boru Hattı Stoku",
+      "B": "Ayrıştırma Stoku",
+      "C": "Çevrim Stoku",
+      "D": "Emniyet Stoku",
+      "E": "Tedarik Stoku"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-71c9d587b7a8",
+    "unitNumber": 79,
+    "text": "Aşağıdakilerden hangisi değişkenlik türüne göre talep tiplerinden biridir?",
+    "options": {
+      "A": "Aylık talep",
+      "B": "Haftalık talep",
+      "C": "Mevsimlik talep",
+      "D": "Yıllık talep",
+      "E": "Günlük talep"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a60a2687010e",
+    "unitNumber": 80,
+    "text": "Genellikle tüm stok birimleri içerisinde %30’luk bir paya sahiptirler. Bu %30’luk birim yıllık kullanım değeri olarak (ΣDv) tüm stok değerleri içerisinde; %15 değerine karşılık gelir. Yukarıdaki ifade hangi stok türü için doğrudur?",
+    "options": {
+      "A": "D Tipi Stoklar",
+      "B": "A Tipi Stoklar",
+      "C": "ABC Tipi Stoklar",
+      "D": "C Tipi Stoklar",
+      "E": "B Tipi Stoklar"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6f97a1aa45f0",
+    "unitNumber": 81,
+    "text": "Aşağıdakilerden hangisi tahminde bulunmanın zor olmasının sebeplerinden biri değildir?",
+    "options": {
+      "A": "Tahminî satış miktarı gerçekleşen miktarla uyuşmak zorundadır.",
+      "B": "Hiçbir tahmin kusursuz değildir.",
+      "C": "Tek bir tahmin tekniği yoktur.",
+      "D": "Tahmin maliyetli ve zaman alan bir iştir.",
+      "E": "Tahminde bulunmak için düzenli ve ayrıntılı veri setlerine ihtiyaç duyulur."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-df96be8b01ed",
+    "unitNumber": 82,
+    "text": "Ham madde, yarı mamul, mamul ve yardımcı malzeme olarak stok sınıflandırması yapıldığında stoklar neye göre sınıflandırılmıştır?",
+    "options": {
+      "A": "Fonksiyonlarına göre",
+      "B": "Malzemenin kimyasal özelliklerine göre",
+      "C": "Malzemenin Değerine Göre",
+      "D": "Arz-Talebe göre",
+      "E": "Malzemenin şekline göre"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8ac57d9b6093",
+    "unitNumber": 83,
+    "text": "“6 aylık hareketli ortalama tahmini 3 aylık hareketli ortalama tahmininden iyi sonuç verir.” Gerçekleşen taleple ilgili aşağıdakilerden hangisi geçerli olduğunda, yukarıda belirtilen durum doğru olur?",
+    "options": {
+      "A": "Talep mevsimsel bir eğri takip etmekte ve yılda iki defa tekrar etmektedir.",
+      "B": "Talep yükseliş göstermektedir.",
+      "C": "Talep aşağı doğru bir iniş göstermektedir.",
+      "D": "Talep görece durağandır.",
+      "E": "Talep üç aydır süregelen reklam kampanyası sonucu değişmektedir."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-df0d43122716",
+    "unitNumber": 84,
+    "text": "Ürün taşınmayı ya da satılmayı beklemek üzere bir yerde bekletiliyorsa lojistiğin hangi fonksiyonundan bahsediliyordur?",
+    "options": {
+      "A": "Talep yönetimi",
+      "B": "Dağıtım",
+      "C": "Depolama",
+      "D": "Paketleme",
+      "E": "Elleçleme"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0368d4f823e5",
+    "unitNumber": 85,
+    "text": "Üretim için gerekli olan malzemenin zamanında temin edilmesi gerekmektedir. Bu ifade lojistik yönetiminin hangi fonksiyonunu ifade etmektedir?",
+    "options": {
+      "A": "Dağıtım",
+      "B": "Stok yönetimi",
+      "C": "Bilgi yönetimi",
+      "D": "Elleçleme",
+      "E": "Talep yönetimi"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f1abb44e65f6",
+    "unitNumber": 86,
+    "text": "I. Yeni ürün planlaması için kısa vadeli tahminlere başvurulur. II. En isabetli tahminlere genellikle nitel ve nicel yöntemlerin birlikte kullanılmasıyla ulaşılır. III. Hiçbir tahmin yöntemi bütün durumlara uygun değildir. IV. Uzun vadeli tahminler kısa vadeli tahminlere göre daha kesindir. V. Tüketici anketi nicel tahmin yöntemlerinden biridir. Yukarıdaki ifadelerden hangileri doğrudur?",
+    "options": {
+      "A": "II ve III",
+      "B": "III ve IV",
+      "C": "I, II ve III",
+      "D": "II, III ve IV",
+      "E": "I ve V"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b7eadf5e5f52",
+    "unitNumber": 87,
+    "text": "Tedarik edilen bir malzemenin günlük tüketim hızı 30 adettir. Tedarik süresi 6 gün olduğuna göre yeniden sipariş noktası kaç birimdir?",
+    "options": {
+      "A": "6",
+      "B": "18",
+      "C": "180",
+      "D": "5",
+      "E": "30"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-bc60086b9c45",
+    "unitNumber": 89,
+    "text": "Nicel talep tahminlerinde kullanılan bilgilerle ve üretimle ilgili olarak aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Bilgi akışında satıcı üreticiden önce gelir.",
+      "B": "Üretici tüketiciden gelen bilgilere göre satıcıya sipariş geçer.",
+      "C": "Talep tahmininde kullanılan bilginin ve mamulün hareket yönü birbirine terstir.",
+      "D": "Mamul akışında hammadde dağıtıcıdan önce gelir.",
+      "E": "Nihai tüketici beğeni, şikayet, istek, sipariş gibi bilgiler sunar."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0b0ff7788d47",
+    "unitNumber": 168,
+    "text": "Bir mağazada nihai müşteriye satılan ürüne olan talep için aşağıdakilerden hangisi söylenebilir?",
+    "options": {
+      "A": "Talep süreklidir.",
+      "B": "Talep kesiklidir.",
+      "C": "Talep yapısı bağımlıdır.",
+      "D": "Talep yapısı bağımsızdır.",
+      "E": "Hiçbiri"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0a224ca7b333",
+    "unitNumber": 169,
+    "text": "Siparişi verilen bir ipliğin tonu 1.560 TL, yıllık elde bulundurma oranı ise %25 ise, bu ipliği bir hafta elde bulundurmanın maliyeti nedir?",
+    "options": {
+      "A": "15,6 TL",
+      "B": "390 TL",
+      "C": "390 TL",
+      "D": "7,5 TL",
+      "E": "39 TL"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-7fad851b5460",
+    "unitNumber": 170,
+    "text": "Bir firmanın son bir yılda kullandığı parçalar, yıllık kullanım miktarları ve her parçanın birim maliyeti aşağıda verilmiştir. ABC Stok sınıflandırması yapıldığında aşağıdakilerden hangi stok biriminin “yıllık kullanım yüzdesi” %4 ‘ün altındadır?",
+    "options": {
+      "A": "A009",
+      "B": "A008",
+      "C": "A002",
+      "D": "A001",
+      "E": "A006"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b356277dae79",
+    "unitNumber": 171,
+    "text": "Ekonomik Sipariş Miktarı modelinde diğer tüm maliyetler sabit kalmak kaydıyla sipariş maliyeti 2 katına çıkarsa ESM değişimi ne olur?",
+    "options": {
+      "A": "Yaklaşık %100 artar.",
+      "B": "Yaklaşık %41 artar.",
+      "C": "Değişmez.",
+      "D": "Yaklaşık %60 artar.",
+      "E": "Artar fakat soruya göre oran değişir."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-efa9cb877100",
+    "unitNumber": 172,
+    "text": "Bir ürüne olan yıllık talep 1000 birimdir, sipariş maliyeti 20 TL, elde bulundurma maliyeti ise yıllık 4 TL’dir. Minimum maliyeti veren sipariş miktarına göre …..",
+    "options": {
+      "A": "Her siparişte 10 birim verilir.",
+      "B": "Her 10 günde bir sipariş verilir.",
+      "C": "Yılda 10 defa sipariş verilir.",
+      "D": "1000 adetin hepsi bir defada sipariş verilir.",
+      "E": "Hiçbiri"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c419bf76255c",
+    "unitNumber": 173,
+    "text": "Deniz yolu ile taşınan bir hammaddenin acil olarak havayolu ile sipariş verilmesi, işletmenin hangi stok maliyetiyle karşılaştığından dolayı bu siparişi verdiğinin göstergesidir?",
+    "options": {
+      "A": "Elde Bulundurma",
+      "B": "Sipariş",
+      "C": "Elde Bulundurmama",
+      "D": "Hazırlık",
+      "E": "Hepsi"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-7084dc654918",
+    "unitNumber": 174,
+    "text": "Önümüzdeki aya ilişkin satış rakamlarını tahmin etmek için önceki üç aylık verilere başvuruyorsak ve son aya %50, önceki iki aya ise %25’er pay ayırıyorsak, aşağıdaki yöntemlerden hangisine başvurmuşuz demektir?",
+    "options": {
+      "A": "Basit Ortalama Yöntemi",
+      "B": "Hareketli Ortalama",
+      "C": "Ağırlıklı Hareketli Ortalama",
+      "D": "Ağırlıklı Hareketli Ortalama",
+      "E": "Mevsimsel Etki Ayrıştırma Yöntemi"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-fae8d0f95f73",
+    "unitNumber": 175,
+    "text": "Aşağıdaki maliyetlerden hangisi elde bulundurma maliyeti içerisinde en yüksek paya sahiptir?",
+    "options": {
+      "A": "Fire Maliyeti",
+      "B": "Yönetim Giderleri",
+      "C": "Fırsat Maliyeti",
+      "D": "Depo Maliyeti",
+      "E": "Taşıma Maliyeti"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c8cfaffebeb5",
+    "unitNumber": 176,
+    "text": "Korelasyon için aşağıdakilerden hangisi söylenemez?",
+    "options": {
+      "A": "Zaman faktörünün dışındaki faktörleri de değerlendirebilir.",
+      "B": "Birden fazla bağımsız değişkenle bir bağımlı değişkenin ilişkisini tarif edebilir.",
+      "C": "Mükemmel korelasyon %100 korelasyon yahut r = 1 şeklinde ifade edilir.",
+      "D": "Sıfır korelasyon iki değişken arasında ilişkisizlik anlamına gelir.",
+      "E": "Korelasyon her zaman neden sonuç ilişkisine dayanır."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-bd5aafea74de",
+    "unitNumber": 177,
+    "text": "İşletmelerin stok yönetimi hedefleriyle ilgili aşağıdakilerden hangisi söylenebilir?",
+    "options": {
+      "A": "Ne zaman sipariş verileceği",
+      "B": "Stokların azaltılması gerektiği",
+      "C": "Ne kadar sipariş verileceği",
+      "D": "Elde bulundurma maliyetinden kaçınılması gerektiği",
+      "E": "Hepsi"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f99d0ca0c9d6",
+    "unitNumber": 178,
+    "text": "ESM 100 adetse ve günlük talep 10 adetse, tedarik süresi 12 gün olduğunda yeniden sipariş noktası nedir?",
+    "options": {
+      "A": "120",
+      "B": "12",
+      "C": "20",
+      "D": "100",
+      "E": "10"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-34ac9b980cd7",
+    "unitNumber": 179,
+    "text": "Stok politikası “stok düzeyi 16 birime düştüğünde 120 adet sipariş ver” şeklinde ise aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "16 yeniden sipariş noktası, 120 ekonomik sipariş miktarıdır.",
+      "B": "16 emniyet stoku, 120 ekonomik sipariş miktarıdır.",
+      "C": "120 tedarik süresinde oluşan talep miktarıdır.",
+      "D": "120 yeniden sipariş noktasıdır, 16 ekonomik sipariş miktarıdır.",
+      "E": "16 çevrim stok miktarı, 120 ekonomik sipariş miktarıdır"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3a5c3c97a86e",
+    "unitNumber": 180,
+    "text": "Bir baskı atölyesinde, yeni bir baskıya geçebilmek için 35 dk harcanmaktadır. Muhasebe kayıtlarına göre 35 dakika işletmeye 58 TL’ye mal olmaktadır. 58 TL aşağıdakilerden hangi stok maliyeti olarak kabul edilir?",
+    "options": {
+      "A": "Elde Bulundurma",
+      "B": "Birim",
+      "C": "Elde Bulundurmama",
+      "D": "Hazırlık",
+      "E": "Hiçbiri"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-bf144657bbec",
+    "unitNumber": 181,
+    "text": "Belli bir modeldeki bilgisayar 2000 TL’ye alınmaktadırç Yıllık elde bulundurma oranı %30, yıllık talep 10.000 birimdir. Sipariş maliyeti sipariş başına 150 TL olduğuna göre, yaklaşık ESM nedir?",
+    "options": {
+      "A": "14",
+      "B": "70",
+      "C": "100",
+      "D": "140",
+      "E": "600"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-78fa2bfb38fd",
+    "unitNumber": 182,
+    "text": "Bir süpermarkete tedarikçiden gelen çocuk bezleri önce sayılmakta ve stoklara kaydedilmektedir. Müşteriler tarafından satın alınan çocuk bezlerine ait stok kayıtları, kasadan geçerken güncellenmekte ve stok miktarı belli bir düzeye düştüğünde tedarikçiye sipariş verilmekte ve tekrardan stok yenilemesi gerçekleşmektedir. Bu doğrultuda stok yönetimi için aşağıdakilerden hangisi söylenebilir?",
+    "options": {
+      "A": "Periyodik gözden geçirmeye dayalı stok modelidir.",
+      "B": "Sürekli gözden geçirmeye dayalı stok modelidir.",
+      "C": "Yenileme çok hızlı gerçekleşmektedir.",
+      "D": "Talep deterministiktir.",
+      "E": "Talep kesikli dağılımla ifade edilir."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e60799666de9",
+    "unitNumber": 183,
+    "text": "Bir firmanın son bir yılda kullandığı parçalar, yıllık kullanım miktarları ve her parçanın birim maliyeti aşağıda verilmiştir. ABC Stok sınıflandırması yapıldığında “yıllık kullanım kümülatif yüzdesi” olarak %77’ye denk gelen stok birimi hangisidir?",
+    "options": {
+      "A": "A002",
+      "B": "A003",
+      "C": "A001",
+      "D": "A002",
+      "E": "A010"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-604277772db1",
+    "unitNumber": 184,
+    "text": "Aşağıdakilerden hangisi talep tahmini sırasında dayanılabilecek verilerden değildir?",
+    "options": {
+      "A": "İşletmenin geçmişe dair kazanç ve kayıplarının dökümü",
+      "B": "Uzmanların talep miktarına ilişkin görüşleri",
+      "C": "Tüketicilerle yapılan anketlerde çıkan talep miktarları",
+      "D": "Satış miktarını etkileyebilecek dışsal faktörlere ilişkin ölçümler",
+      "E": "Geçmişe dair düzenli ve ayrıntılı satış kayıtları"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a4e90eb58218",
+    "unitNumber": 185,
+    "text": "Bir firmanın son bir yılda kullandığı parçalar, yıllık kullanım miktarları ve her parçanın birim maliyeti aşağıda verilmiştir. ABC stok sınıflandırması yapıldığında, stok birimlerinin %30’u B sınıfı stok kalemlerine girdiğine göre, aşağıdakilerden hangisi B Sınıfı Stok kalemidir?",
+    "options": {
+      "A": "A005",
+      "B": "A002",
+      "C": "A003",
+      "D": "A008",
+      "E": "A007"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-237f31691aab",
+    "unitNumber": 186,
+    "text": "Bir firmanın son bir yılda kullandığı parçalar, yıllık kullanım miktarları ve her parçanın birim maliyeti aşağıda verilmiştir. ABC stok sınıflandırması yapıldığında hangi parça kesinlikle C sınıfı stok kalemidir?",
+    "options": {
+      "A": "A001",
+      "B": "A002",
+      "C": "A009",
+      "D": "A008",
+      "E": "A007"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2b0bf250939b",
+    "unitNumber": 187,
+    "text": "Korelasyon katsayısı (r) ile ilgili olarak aşağıdakilerden hangisi söylenemez?",
+    "options": {
+      "A": "Bir bağımsız değişken ile bağımlı değişken değişken arasındaki ilişkiyi inceler.",
+      "B": "(-) değerlerde, bağımlı değişken bağımsız değişkenden olumsuz etkilenir.",
+      "C": "r’nin bulunabileceği aralık 0 ile 1 arasıdır.",
+      "D": "Bağımsız değişken arttığında bağımlı değişken de artıyorsa 0 < 𝑟 ≤ 1’dir.",
+      "E": "r değerinin 0 olması, söz konusu iki değişken arasında korelasyon olmadığı anlamına gelir."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4d47fc1892b5",
+    "unitNumber": 90,
+    "text": "Lojistik kavramı bilimsel olarak ilk hangi sektör üzerinde incelenmiştir?",
+    "options": {
+      "A": "Tekstil",
+      "B": "Otomotiv",
+      "C": "Beyaz Eşya",
+      "D": "Zirai",
+      "E": "Endüstriyel"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-14038a359d4b",
+    "unitNumber": 91,
+    "text": "Aşağıdakilerden hangisi değişkenlik durumuna göre talep tiplerinden biri değildir?",
+    "options": {
+      "A": "Sabit Talep",
+      "B": "Mevsimlik Talep",
+      "C": "Doğrusal Talep",
+      "D": "Dalgalı/Düzensiz Talep",
+      "E": "Günlük Talep"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e996ea53bba4",
+    "unitNumber": 92,
+    "text": "Aşağıdakilerden hangisi piyasaya yeni sürülen bir ürünün satış tahminine yönelik olarak yapılan işlemlerden biri değildir?",
+    "options": {
+      "A": "Geçmiş satış rakamlarını incelemek",
+      "B": "Karar alıcıların tecrübe ve sezgilerine bakmak",
+      "C": "Kamuoyu yoklamalarıyla tüketicilerin potansiyel ilgilisini ölçmek",
+      "D": "Benzer ürünlerin satış miktarlarına bakmak",
+      "E": "Satış elemanlarının kanaatlerini öğrenmek"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-565b0a087276",
+    "unitNumber": 99,
+    "text": "Bir firma kendi markası olan ayakkabı tabanını günde 500 birimlik üretim hızıyla 20 TL hazırlık maliyetine katlanarak üretebiliyor ve birimini 1,23 TL’ye mal ediyor. Aynı tabanı 3 TL sipariş maliyetine katlanarak, 1,26 TL’ye başka bir tedarikçiden alabiliyor. Yıllık talep 10.000 birim, 1 yıl 250 işgünü ve elde bulundurma oranı 0,24 TL/TL/yıldır. Günlük talep kaç birimdir?",
+    "options": {
+      "A": "250",
+      "B": "400",
+      "C": "40",
+      "D": "25",
+      "E": "100"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e39f040a2066",
+    "unitNumber": 103,
+    "text": "İşletmedeki planlama ve karar verme faaliyetlerinin sonucu olarak başlamayan aksine bu faaliyetleri başlatan müşteriler veya ağ üzerinde bulunan daha ilerideki bir nokta olan lojistik türünün genel ismi hangisidir?",
+    "options": {
+      "A": "Çevik Üretim",
+      "B": "İleri Lojistik",
+      "C": "Geri Dönüşüm",
+      "D": "Tersine Lojistik",
+      "E": "Satış"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-7f8c01f57ccd",
+    "unitNumber": 104,
+    "text": "Aşağıdakilerden hangisi terisne lojistiğin özelliklerindendir?",
+    "options": {
+      "A": "Ürün kalitesi sabittir.",
+      "B": "Ürün ambalajı sabittir.",
+      "C": "Hız genellikle bir öncelik değildir.",
+      "D": "İzlenecek rota belirlidir.",
+      "E": "Dağıtım seçenekleri bellidir."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-49c92ccb3d62",
+    "unitNumber": 105,
+    "text": "Amacı bozuk parçanın onarılması ya da değiştirilmesi olan, diğer parçaların bu işlemden etkilenmediği tersine lojistik türü nedir?",
+    "options": {
+      "A": "Geri dönüşüm",
+      "B": "Tamir",
+      "C": "Parça kullanımı",
+      "D": "Yeniden Üretim",
+      "E": "Yakmak"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-692010208642",
+    "unitNumber": 106,
+    "text": "Kullanılmış ürün öncelikle birimlere (modül) ayrılır, her bir kritik birim kontrol edilir ve onarılır veya değiştirilir, İşlem sonunda kalite artırımı olmasına rağmen, hizmet süresi yenisinin hizmet süresine göre oldukça düşük olur. Yukarıda tanımlanan tersine lojistik türü nedir?",
+    "options": {
+      "A": "Yeniden Üretim",
+      "B": "Tamir",
+      "C": "Yenileme",
+      "D": "Geri Dönüşüm",
+      "E": "Parça Kullanımı"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-c4d2638f9fcd",
+    "unitNumber": 107,
+    "text": "Tüm birimler ve parçalar sökülür ve kontrol edilir. Bozulmuş veya zamanı geçmiş parçalar tek tek yenileriyle değiştirilir, işlem sonunda daha düşük maliyetle yeni ürün kalitesi yakalanır. Yukarıda tanımlanan tersine lojistik türü nedir?",
+    "options": {
+      "A": "Yeniden Üretim",
+      "B": "Tamir",
+      "C": "Yenileme",
+      "D": "Geri Dönüşüm",
+      "E": "Parça Kullanımı"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-c169b5a1831d",
+    "unitNumber": 108,
+    "text": "Eskiyen bir aletin kullanılabilir parçasını başka bir alete monte işlemine ne denir?",
+    "options": {
+      "A": "Yeniden Üretim",
+      "B": "Tamir",
+      "C": "Yenileme",
+      "D": "Geri Dönüşüm",
+      "E": "Parça Kullanımı"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-a25e5c2ccdcf",
+    "unitNumber": 109,
+    "text": "Ürün sökülerek birimlere ayrılır onlar da en küçük parçalara ayrılır. Bu ayrılan en küçük parçalar başka bir üretimde kullanılır. Yukarıda tanımlanan tersine lojistik türü nedir?",
+    "options": {
+      "A": "Yeniden Üretim",
+      "B": "Tamir",
+      "C": "Yenileme",
+      "D": "Geri Dönüşüm",
+      "E": "Parça Kullanımı"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-6fedec251d19",
+    "unitNumber": 110,
+    "text": "Lojistik kavramını bugünkü tanımına uygun tanımlayan kimdir?",
+    "options": {
+      "A": "Ralph Borsodi",
+      "B": "John F. Crowell",
+      "C": "Fred E. Clark",
+      "D": "Arch W. Shaw",
+      "E": "L.D.H. Weld"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-0248226b0762",
+    "unitNumber": 111,
+    "text": "Lojistik Yönetimi pazarlamanın 4P’si içerisinde en uygun hangisiyle örtüşmektedir?",
+    "options": {
+      "A": "Ürün",
+      "B": "Üretim",
+      "C": "Yer",
+      "D": "Tanıtım",
+      "E": "Fiyat"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-a98d38ce112c",
+    "unitNumber": 112,
+    "text": "Yapılan araştırmalar firmaların gelirlerinin yarısından çoğunun dış kaynak kullanımına gittiğini göstermektedir. Yukarıdaki ifade hangi lojistik faaliyetin önemini göstermektedir?",
+    "options": {
+      "A": "Talep Tahmini",
+      "B": "Müşteri Hizmetleri",
+      "C": "Satın Alma",
+      "D": "Depolama",
+      "E": "Dağıtım"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-1ffffe91066b",
+    "unitNumber": 113,
+    "text": "Önceden belirlenmiş maliyet ve hizmet düzeyi dengesinde, tüm süreçleri müşteri odaklı olarak ele alan lojistik faaliyet hangisidir?",
+    "options": {
+      "A": "Talep Tahmini",
+      "B": "Müşteri Hizmetleri",
+      "C": "Satın Alma",
+      "D": "Depolama",
+      "E": "Dağıtım"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-0ad4abcb2129",
+    "unitNumber": 114,
+    "text": "Aşağıdakilerden hangisi, talep tahmininde bulunmanın gerekliliğine işaret eden sebeplerden değildir?",
+    "options": {
+      "A": "Talepteki değişimleri öngörme ihtiyacı",
+      "B": "Talebin zamanında karşılanmasını sağlama ihtiyacı",
+      "C": "Tesiste gerekli değişiklikleri zamanında gerçekleştirme ihtiyacı",
+      "D": "İşgücü hacmiyle ilgili gerekli düzenleme ve hazırlıkları zamanında yapma ihtiyacı",
+      "E": "İşletmeyi satın almaya yönelik talepleri zamanında öngörme ihtiyacı"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-bd1f76215740",
+    "unitNumber": 115,
+    "text": "Aşağıdaki isimlerden hangisi lojistikte “dağıtım kanalı” kavramını tanımlamıştır?",
+    "options": {
+      "A": "Ralph Borsodi",
+      "B": "John F. Crowell",
+      "C": "Fred E. Clark",
+      "D": "Arch W. Shaw",
+      "E": "L.D.H. Weld"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-91069a9c6ebf",
+    "unitNumber": 116,
+    "text": "Aşağıdakilerden hangisi nitel tahmin yöntemlerinden biri değildir?",
+    "options": {
+      "A": "Delfi Yöntemi",
+      "B": "Tüketici / Pazar Araştırması",
+      "C": "Yönetici Araştırması",
+      "D": "Üstel Düzeltme Yöntemi",
+      "E": "Satış Gücü Araştırması"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-897fa0ffccb0",
+    "unitNumber": 117,
+    "text": "“Tedarik Zinciri sürecinin bir parçası olan ………; müşteri gereksinimlerini karşılayabilmek için, kaynaklardan tüketim noktalarına malzemenin, hizmetin ve bilginin etkin ve verimli akışını planlar, uygular ve kontrol eder. “ Yukarıdaki boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Üretim Yönetimi",
+      "B": "Perakende Yönetimi",
+      "C": "Malzeme İhtiyaç Planlaması",
+      "D": "Malzeme İhtiyaç Planlaması",
+      "E": "Lojistik Yönetimi"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-2fbfa66cd8a4",
+    "unitNumber": 118,
+    "text": "Aşağıdakilerden hangisi tahminde bulunmanın zorluklarından biridir?",
+    "options": {
+      "A": "Geçmişe dair düzenli ve ayrıntılı kayıtlara ihtiyaç duyurması",
+      "B": "Her vaka için her seferinde en uygun tahmin yöntemini bulma gerekliliği",
+      "C": "Hiçbir tahminin kusursuzluğa ulaşamayışı",
+      "D": "Tahminin geçerliliğinin ve hata payının ancak sonradan hesaplanabilmesi",
+      "E": "Tahminin maliyetli ve zaman alan bir iş olması"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-7eaa81e2b8d9",
+    "unitNumber": 119,
+    "text": "Tahminler, ilişkin oldukları zaman dilimine göre kısa, orta ve uzun vadeli tahminler olarak üçe ayrılır. Aşağıdakilerden hangisi orta ve uzun vadeli tahminlerin kısa vadeli tahminlerden farklarından biri değildir?",
+    "options": {
+      "A": "Daha karmaşık konularla ilgili olmaları",
+      "B": "3 aydan uzun bir süreyi kapsamaları",
+      "C": "Satın alma, iş çizelgeleme, işgücü seviyeleri, iş tahsisi ve üretim seviyesini planlama için başvurulmaları",
+      "D": "Nitel tahmin metodolojileri gerektirmeleri",
+      "E": "Daha az yanlışsız olmaları"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-1d373daf1e3d",
+    "unitNumber": 120,
+    "text": "Lojistik Yönetimi kavramının dünya tarafından tanınması ve önemsenmesi hangi olayla gerçekleşmiştir?",
+    "options": {
+      "A": "Petrol Krizi",
+      "B": "Birinci Dünya Savaşı",
+      "C": "Fordizm Akımı",
+      "D": "Çitleme Hareketi",
+      "E": "İkinci Dünya Savaşı"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-c18bdeaae352",
+    "unitNumber": 121,
+    "text": "Aşağıdakilerden hangisine Delfi Yöntemi’nde başvurulmaz?",
+    "options": {
+      "A": "Uzman analizi",
+      "B": "Pazar araştırması",
+      "C": "Uzman görüşü",
+      "D": "Anket hazırlama",
+      "E": "Anket sonuçlarının değerlendirilmesi"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-fc57a602b371",
+    "unitNumber": 122,
+    "text": "Aşağıdakilerden hangileri iktisadi tahmin alanına girer? I– Enflasyon Oranı II– Para Arzı III– Uluslararası Ekonomik Krizler IV– Yeni Teknolojilerin Girişi V– Talep Miktarları",
+    "options": {
+      "A": "I ve II",
+      "B": "I, II ve III",
+      "C": "I, II, III ve IV",
+      "D": "Yalnız V",
+      "E": "Hepsi"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-52b83f6aada0",
+    "unitNumber": 124,
+    "text": "Aşağıdakilerden hangisi, talep tahminleri sayesinde kolaylaşan yönetim fonksiyonlarından biri değildir?",
+    "options": {
+      "A": "Şirketin satışına karar vermek",
+      "B": "İstihdam düzeyine karar vermek",
+      "C": "Stok seviyesine karar vermek",
+      "D": "Tesis kapasitesine karar vermek",
+      "E": "Üretim miktartına karar vermek"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-8ced36f4f05c",
+    "unitNumber": 125,
+    "text": "İki ana tahmin yöntemi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Matematiksel ve istatistiki",
+      "B": "Yargısal ve nitel",
+      "C": "Nitel ve nicel",
+      "D": "Pozitif ve negatif",
+      "E": "Tarihsel ve mantıksal"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-d351fe999548",
+    "unitNumber": 126,
+    "text": "Müşterilerin gelecekte ihtiyaç duyacakları ürün ya da hizmetin miktarının belirlemeye yönelik lojistik faaliyet hangisidir?",
+    "options": {
+      "A": "Talep Tahmini",
+      "B": "Müşteri Hizmetleri",
+      "C": "Satın Alma",
+      "D": "Depolama",
+      "E": "Dağıtım"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-9bb8c8cd4897",
+    "unitNumber": 127,
+    "text": "Özellikle depoların içinde vagon veya arabaları çekmek için kullanılan, operatör tarafından yönetilen araçlara ne denir?",
+    "options": {
+      "A": "Reach Truck",
+      "B": "Transpalet",
+      "C": "Karşı Ağırlıklı Forklift",
+      "D": "Tow Tractor",
+      "E": "Kamyon"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-1fae19765edb",
+    "unitNumber": 128,
+    "text": "MAD değerinin 0,8 olduğu bir durumda, üretim miktarı (n) yüksek olan bir ürün için, aşağıdaki RSFE değerlerinden hangileri uygun aralıktadır?",
+    "options": {
+      "A": "5",
+      "B": "4",
+      "C": "-4",
+      "D": "-3",
+      "E": "-5"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-402089933dbb",
+    "unitNumber": 129,
+    "text": "Depoda ürünlerin beklemediği, deponun bir dağıtım merkezi halini aldığı depo türüne ne denir?",
+    "options": {
+      "A": "Özel Depo",
+      "B": "Genel Depo",
+      "C": "Çapraz Sevkiyat",
+      "D": "Sözleşmeli Depo",
+      "E": "Antrepo"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-42d8e5cf96e1",
+    "unitNumber": 130,
+    "text": "Tahmin modelinin ne derece sağlıklı olduğunu ölçmek için kullanılan yönteme ne ad verilir?",
+    "options": {
+      "A": "İzleme Sinyali",
+      "B": "Hata Analizi",
+      "C": "Tahmin Hataları Toplamı",
+      "D": "Mutlak Ortalama Sapma",
+      "E": "Ortalama Hata İzleme"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-65c45256bfff",
+    "unitNumber": 131,
+    "text": "Talepteki değişimlere önceden hazırlıklı olmak için elde tutulan stok türü aşağıdakilerden hangisi olabilir?",
+    "options": {
+      "A": "Tahmin Stoku",
+      "B": "Çevrim Stoku",
+      "C": "Ayrıştırma Stoku",
+      "D": "Boru Hattı Stoku",
+      "E": "Yardımcı Malzeme"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-32b502a5af40",
+    "unitNumber": 132,
+    "text": "Aynı boyut ve şekli taşıyan ürünler bu raf dizilimi için son derece uygundur. Ürünler öne eğimli bir rafa yerleştirilir ve sonrasında materyaller alındıkça arkadaki ürünler personele doğru kayar. Yukarıda tanımı yapılan raflama sistemi hangisidir?",
+    "options": {
+      "A": "Çift Kutu Raflama",
+      "B": "Akış Raflama",
+      "C": "Gözlü Raflama",
+      "D": "Sırt Sırta Raflama",
+      "E": "Normal Raflama"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-67486889fdcb",
+    "unitNumber": 133,
+    "text": "Doğrudan el ile ya da çeşitli araçlar yardımı ve insan gücü ile çalışan elleçleme sistemlerinin genel ismi nedir?",
+    "options": {
+      "A": "Forklift",
+      "B": "Raf",
+      "C": "Manuel Sistem",
+      "D": "Otomatik Sistem",
+      "E": "Akış Rafları"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-02816fbbbdef",
+    "unitNumber": 134,
+    "text": "Bazı şirketler ürünlerini müşterilere direk pazarlayabilir ve bu şekilde sahada bir depo ihtiyacını elerler. Bu tür bir operasyona ne denir?",
+    "options": {
+      "A": "Doğrudan Sevkıyat",
+      "B": "Hareket",
+      "C": "Saklama",
+      "D": "Antrepo",
+      "E": "Sözleşmeye Dayalı Depolama"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-bd413fd6b444",
+    "unitNumber": 135,
+    "text": "Herhangi bir yükü çatallı kolları ile alıp kaldırarak belirli bir mesafeye taşıyıp istifetmeye yarayan taşıma ve kaldırma makinelerine ne denir?",
+    "options": {
+      "A": "Forklift",
+      "B": "Raf",
+      "C": "Vagon",
+      "D": "Palet",
+      "E": "Kamyon"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-b0c22a5eee51",
+    "unitNumber": 136,
+    "text": "Soğuk Hava Deposu, Dökme Mallar Deposu gibi depolara verilen genel depo ismi hangisidir?",
+    "options": {
+      "A": "Özel Depo",
+      "B": "Genel Depo",
+      "C": "Çapraz Sevkiyat",
+      "D": "Sözleşmeli Depo",
+      "E": "Antrepo"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-dfb8d814ca4d",
+    "unitNumber": 137,
+    "text": "Özellikle dar koridorlu depolarda kullanılan malzeme taşıma aracı hangisidir?",
+    "options": {
+      "A": "Reach Truck",
+      "B": "Transpalet",
+      "C": "Karşı Ağırlıklı Forklift",
+      "D": "Tow Tractor",
+      "E": "Kamyon"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-33c81c80b6f1",
+    "unitNumber": 138,
+    "text": "…, malzeme ve ürünlerin hareketleri ve bulundurması ile ilgili tüm işlemleri kapsamaktadır. Yukarıdaki boşluğa gelen en uygun kelime hangisidir?",
+    "options": {
+      "A": "Malzeme Elleçleme",
+      "B": "Dağıtım",
+      "C": "Taşıma",
+      "D": "Lojistik Yönetimi",
+      "E": "Depolama"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-21fc151c695a",
+    "unitNumber": 139,
+    "text": "Üçüncü ayın MAD değeri nedir?",
+    "options": {
+      "A": "764",
+      "B": "-764",
+      "C": "255",
+      "D": "-255",
+      "E": "-40"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-6b192425714c",
+    "unitNumber": 140,
+    "text": "4 aylık hareketli ortalama kullanılarak Mayıs ayı için aşağıdakilerden hangisi tahmin edilir? Kasım-39 , Aralık-36 , Ocak-40 , Şubat-38 , Mart-48 , Nisan-46,",
+    "options": {
+      "A": "38",
+      "B": "41",
+      "C": "42",
+      "D": "43",
+      "E": "46"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-6edb40196a61",
+    "unitNumber": 141,
+    "text": "Raflar, malzeme taşıma araçlarının hangi işlevini yerine getirir?",
+    "options": {
+      "A": "Saklama",
+      "B": "Sınıflandırma",
+      "C": "Nakliyat",
+      "D": "Saklama ve Sınıflandırma",
+      "E": "Hepsi"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-c16e232c5962",
+    "unitNumber": 142,
+    "text": "Malzeme Elleçleme aşağıdaki operasyonların hangisini kapsamaz?",
+    "options": {
+      "A": "İstifleme",
+      "B": "Yükleme",
+      "C": "Mal Kabul",
+      "D": "Dağıtım",
+      "E": "Paket Açma"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-825d77cce48d",
+    "unitNumber": 143,
+    "text": "Aşağıdakilerden hangisi izleme sinyalinin (TS, Tracking Signal) doğru hesaplanışıdır?",
+    "options": {
+      "A": "RSFE x MAD",
+      "B": "RSFE + MAD",
+      "C": "RSFE - MAD",
+      "D": "|MAD – RSFE|",
+      "E": "RSFE/MAD"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-c7530670628b",
+    "unitNumber": 144,
+    "text": "“Petrol, Orta Doğudan, Avrupa ülkelerine boru hatları ile gitmektedir. Avrupa ülkeleri bu hatlardaki petrole yüksek para bağlamaktadır.” İfadesi, hangi stok bulundurma sebebinden olabilir?",
+    "options": {
+      "A": "Mevsimsellik",
+      "B": "Spekülasyon",
+      "C": "Taşıma",
+      "D": "Kontrol Maliyetleri",
+      "E": "Belirsizlik"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-1654b27b9a31",
+    "unitNumber": 145,
+    "text": "Önceki tahmin ve tahmin hatasının yüzdesine dayanan tahmin aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Basit Tahmin",
+      "B": "Hareketli Ortalama",
+      "C": "Ağırlıklı Hareketli Ortalama",
+      "D": "Üstel Düzeltme",
+      "E": "Nitel Tahmin"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e22472f22669",
+    "unitNumber": 146,
+    "text": "Hangi zaman serisi modeli, yeni tahminde bulunmak için eski tahminleri ve eski talep bilgilerini kullanır?",
+    "options": {
+      "A": "Basit",
+      "B": "Hareketli Ortalama",
+      "C": "Ağırlıklı Hareketli Ortalama",
+      "D": "Üstel Düzeltme",
+      "E": "Regresyon Analizi"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-5bcd2025f698",
+    "unitNumber": 147,
+    "text": "Mevcut talep 64, bu talebe ilişkin önceki tahmin 59, α değeri ise 0,3 ise, basit üstel düzeltme kullanılarak bir dahaki döneme ilişkin yapılan tahmin aşağıdakilerden hangisi olur?",
+    "options": {
+      "A": "36,9",
+      "B": "57,5",
+      "C": "60,5",
+      "D": "62,5",
+      "E": "65,5"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-f6a3c16e7a7a",
+    "unitNumber": 148,
+    "text": "Üretime hazırlık maliyetlerinin yüksek olması nedeniyle, işletmeler stok birimlerini tek tek üretmek yerine belli bir miktarda üretirlerse bu stok türüne ne denir?",
+    "options": {
+      "A": "Ölçek Ekonomisi Stokları",
+      "B": "Çevrim Stoku",
+      "C": "Mamul",
+      "D": "Hammadde",
+      "E": "Boru Hattı Stoku"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-57b28b6f43e0",
+    "unitNumber": 149,
+    "text": "Mevcut talep 103, bu talebe ilişkin önceki tahmin 97, α değeri ise 0,4 ise, basit üstel düzeltme kullanılarak bir dahaki döneme ilişkin yapılan tahmin aşağıdakilerden hangisi olur?",
+    "options": {
+      "A": "94,6",
+      "B": "99,4",
+      "C": "100,2",
+      "D": "102,4",
+      "E": "103,0"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-df0234ac0f22",
+    "unitNumber": 150,
+    "text": "İkinci ayın RSFE değeri nedir?",
+    "options": {
+      "A": "724",
+      "B": "180",
+      "C": "362",
+      "D": "-724",
+      "E": "-362"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-9d0790050d08",
+    "unitNumber": 151,
+    "text": "Aşağıdakilerden hangileri yıllık kullanıma göre yapılan stok sınıflandırmasına bir örnektir?",
+    "options": {
+      "A": "A Tipi Stoklar",
+      "B": "Hammadde",
+      "C": "Çevrim Stokları",
+      "D": "Emniyet Stoku",
+      "E": "Boru Hattı Stoku"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e9ff914077ee",
+    "unitNumber": 152,
+    "text": "Tahmin hataları -1, 4, 8 ve -3 şeklinde gerçekleşmiş olsun. Bu durumda Ortama Mutlak Sapma (MAD) değeri kaç olur?",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "8",
+      "E": "16"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-284d86a908d8",
+    "unitNumber": 153,
+    "text": "Pazar ile ilgili faktörler de taşıma maliyetlerine ve fiyatlandırmasına etki etmektedir. Bunlar, rekabetin derecesi, pazarın bulunduğu yer, devletin düzenlemeleri, pazardaki yük trafiği, mevsimsellik, iç hatlarla mı uluslararası mı taşınacağı. Aşağıdakilerden hangisinin istif edilebilirliği diğerlerine göre daha fazladır?",
+    "options": {
+      "A": "İnsan",
+      "B": "Otomotiv",
+      "C": "Petrol",
+      "D": "Oyuncak",
+      "E": "Tekstil Ürünleri"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-f9d1c521ab7d",
+    "unitNumber": 154,
+    "text": "Minimum 2 taşıma türünün kullanıldığı taşımacılık türüne verilen isim nedir?",
+    "options": {
+      "A": "İntermodal",
+      "B": "Havayolu",
+      "C": "Karayolu",
+      "D": "Denizyolu",
+      "E": "Boru Hattı"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-124b7827ddba",
+    "unitNumber": 155,
+    "text": "Bir tekstil işletmesinde, bir ürüne ait toplam yıllık talep 400 adettir. Sipariş maliyeti sipariş başına 40TL ve elde bulundurma maliyeti birim başına yıllık 5 TL’dir. Yıllık sipariş sayısı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "5",
+      "B": "7",
+      "C": "8",
+      "D": "9",
+      "E": "10"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-be4a4ca0906e",
+    "unitNumber": 156,
+    "text": "Dört aşamalı bir dağıtım ağının en üstünde bulunan bir fabrikanın Brüt Gereksinim satırının doldurulması için aşağıdaki hangi bilgiler toplanır?",
+    "options": {
+      "A": "Mağazalara ait eldeki stok miktarları",
+      "B": "Ana depolara ait planlanan sipariş miktarları",
+      "C": "Fabrikaya ait eldeki stok miktarı",
+      "D": "Mağazaya ait brüt gereksinimler",
+      "E": "Ana depolara ait brüt gereksinimler"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e3246917ff3a",
+    "unitNumber": 157,
+    "text": "Aşağıdakilerden hangisi taşımacılık fiyatı belirlerken etkili olan Pazar ile ilgili faktörlerden değildir?",
+    "options": {
+      "A": "Rekabetin Derecesi",
+      "B": "Pazarın yeri",
+      "C": "Devlet Düzenlemeleri",
+      "D": "Malzeme taşıma kolaylığı",
+      "E": "Mevsimsellik"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-29b96c20d661",
+    "unitNumber": 158,
+    "text": "Değer/ağırlık oranı yüksek ürünlerin taşıma maliyetleriyle ilgili aşağıdakilerden hangi faktörle ilgilidir?",
+    "options": {
+      "A": "Yoğunluk",
+      "B": "İstif Edilebilirlik",
+      "C": "Elleçleme Kolaylığı",
+      "D": "Sorumluluk",
+      "E": "Yeterlilik"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-72d5aa0e1868",
+    "unitNumber": 159,
+    "text": "Müşteri Odaklılık beraberinde birçok yenilik getirirken bunlardan en önemlisi de talebe göre üretim yapma yaklaşımı olmuştur. Yukarıda bahsedilen yöntem aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "İtme Yöntemi",
+      "B": "MRP Yöntemi",
+      "C": "DRP Yöntemi",
+      "D": "Çekme Yöntemi",
+      "E": "İtme-Çekme Yöntemi"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-84c4d7a24c40",
+    "unitNumber": 160,
+    "text": "Bir tekstil işletmesinde, bir ürüne ait toplam yıllık talep 400 adettir. Sipariş maliyeti sipariş başına 40TL ve elde bulundurma maliyeti birim başına yıllık 5 TL’dir. Ekonomik Sipariş Miktarı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "50",
+      "B": "80",
+      "C": "70",
+      "D": "10",
+      "E": "20"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-fcf6f7c6d554",
+    "unitNumber": 161,
+    "text": "DRP kayıtlarının oluşturulması için aşağıdaki verilerden hangisi kesin olarak gerekmez?",
+    "options": {
+      "A": "Talep",
+      "B": "Sipariş Miktarı",
+      "C": "Tedarik Süresi",
+      "D": "Emniyet Stoku",
+      "E": "Hepsi"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-c4cecb5d5247",
+    "unitNumber": 163,
+    "text": "Aşağıdakilerden hangisi taşıma maliyetlerine etki eden ürünle ilgili faktörlerden değildir?",
+    "options": {
+      "A": "Yoğunluk",
+      "B": "İstif Edilebilirlik",
+      "C": "Elleçleme Kolaylığı",
+      "D": "Sorumluluk",
+      "E": "Yeterlilik"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-2cdca16db0f0",
+    "unitNumber": 164,
+    "text": "Bir gıda firmasında belirli bir ürüne ait olan yıllık talep miktarı 200 adettir. Sipariş maliyeti 20 TL ve yıllık elde bulundurma maliyeti birim başına 5 TL dir. Sorudaki verilere göre yıllık sipariş sayısı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "5",
+      "B": "4",
+      "C": "8",
+      "D": "2",
+      "E": "10"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-88544f1ee5f2",
+    "unitNumber": 165,
+    "text": "Bir gıda firmasında belirli bir ürüne ait olan yıllık talep miktarı 200 adettir. Sipariş maliyeti 20 TL ve yıllık elde bulundurma maliyeti birim başına 5 TL dir. Buna göre Ekonomik Sipariş Miktarı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "54",
+      "B": "20",
+      "C": "42",
+      "D": "40",
+      "E": "32"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-8b85bc61fd31",
+    "unitNumber": 166,
+    "text": "Bir kilograma düşen Oyuncağın hacmi konserveye göre fazla olduğundan, kilogram başına taşıma maliyeti daha yüksekse, bu hangi faktörle ilgilidir?",
+    "options": {
+      "A": "Yoğunluk",
+      "B": "İstif Edilebilirlik",
+      "C": "Elleçleme Kolaylığı",
+      "D": "Sorumluluk",
+      "E": "Yeterlilik"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-53470468ff7d",
+    "unitNumber": 167,
+    "text": "Taşımacılık fiyatlandırmada, taşıyıcının sabit maliyet, değişken maliyetine kar oranının eklenmesiyle oluşan fiyatlandırma türü nedir?",
+    "options": {
+      "A": "Hizmetin Değerine Göre Fiyatlandırma",
+      "B": "Hizmetin Maliyetine Göre Fiyatlandırma",
+      "C": "Rekabete Göre Fiyatlandırma",
+      "D": "Alıcıya Göre Fiyatlandırma",
+      "E": "Zaman Bazlı Fiyatlandırma"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-b568a87df8df",
+    "unitNumber": 189,
+    "text": "Aşağıdakilerden hangisi Hareketli Tahmin Hataları Toplamı (RSFE, Running Sum of the Forecast Errors) formülüdür?",
+    "options": {
+      "A": "∑|𝐷𝑡−𝐹𝑡| 𝑛",
+      "B": "∑(𝐷𝑡 − 𝐹𝑡)",
+      "C": "∑(𝐷𝑡−𝐹𝑡) 𝑛",
+      "D": "∑|𝐷𝑡 − 𝐹𝑡|",
+      "E": "∑ |𝐷𝑡−𝐹𝑡 𝐷𝑡 |𝑛 𝑡=1"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-9a0b7fa2a24d",
+    "unitNumber": 190,
+    "text": "Aşağıdakilerden hangisi Ortalama Mutlak Sapma (MAD, Mean Absolute Deviation) formülüdür?",
+    "options": {
+      "A": "∑ |𝐷𝑡−𝐹𝑡 𝐷𝑡 |𝑛 𝑡=1",
+      "B": "√∑ 𝐸𝑡2 𝑛 𝑡=1 𝑛",
+      "C": "∑|𝐷𝑡−𝐹𝑡| 𝑛",
+      "D": "∑(𝐷𝑡−𝐹𝑡) ∑|𝐷𝑡−𝐹𝑡| 𝑛",
+      "E": "∑|𝐹𝑡−𝐸𝑡| 𝑛"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-ebb6323dbbc4",
+    "unitNumber": 191,
+    "text": "Üretim miktarı (n) düşük olan bir ürün söz konusu olduğuna göre, aşağıdaki TS değerlerinden hangisi uygun aralıkta değildir?",
+    "options": {
+      "A": "10",
+      "B": "5",
+      "C": "2",
+      "D": "0",
+      "E": "-5"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-c12e8f2b0f61",
+    "unitNumber": 193,
+    "text": "ABC stok sınıflandırması yapıldığında hangi parça kesinlikle C sınıfı stok kalemidir?",
+    "options": {
+      "A": "A001",
+      "B": "A002",
+      "C": "A009",
+      "D": "A008",
+      "E": "A007"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-99ea90809c40",
+    "unitNumber": 194,
+    "text": "ABC Stok sınıflandırması yapıldığında “yıllık kullanım kümülatif yüzdesi” olarak %77’ye denk gelen stok birimi hangisidir?",
+    "options": {
+      "A": "A002",
+      "B": "A003",
+      "C": "A001",
+      "D": "A002",
+      "E": "A010"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-ac4a551e524c",
+    "unitNumber": 195,
+    "text": "ABC Stok sınıflandırması yapıldığında aşağıdakilerden hangi stok biriminin “yıllık kullanım yüzdesi” %4 ‘ün altındadır?",
+    "options": {
+      "A": "A009",
+      "B": "A008",
+      "C": "A002",
+      "D": "A001",
+      "E": "A006"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-3788f8736cb3",
+    "unitNumber": 196,
+    "text": "ABC stok sınıflandırması yapıldığında, stok birimlerinin %30’u B sınıfı stok kalemlerine girdiğine göre, aşağıdakilerden hangisi B Sınıfı Stok kalemidir?",
+    "options": {
+      "A": "A005",
+      "B": "A002",
+      "C": "A003",
+      "D": "A008",
+      "E": "A007"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-5947006f0156",
+    "unitNumber": 197,
+    "text": "A1 için tek seferde verilmesi gereken sipariş miktarı kaçtır?",
+    "options": {
+      "A": "19",
+      "B": "10",
+      "C": "100",
+      "D": "119",
+      "E": "81"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-d37fc3a35e0d",
+    "unitNumber": 198,
+    "text": "A1 için Ekonomik Sipariş Miktarındaki toplam yıllık maliyet kaçtır?",
+    "options": {
+      "A": "5972,42 TL",
+      "B": "5962,29 TL",
+      "C": "5689,87 TL",
+      "D": "4600,42 TL",
+      "E": "5975,29 TL"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-4b98dd68005f",
+    "unitNumber": 199,
+    "text": "B1 parçasında indirim olmasaydı, tek seferde verilmesi gereken sipariş miktarı kaç olacaktır?",
+    "options": {
+      "A": "28",
+      "B": "20",
+      "C": "100",
+      "D": "120",
+      "E": "80"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-de32b4e8e421",
+    "unitNumber": 200,
+    "text": "B1 parçasının ekonomik sipariş miktarına ait, toplam maliyet formülünde bir birimi bir yıl elde bulundurmanın maliyeti kaç TL olarak alınmalıdır?",
+    "options": {
+      "A": "0,24",
+      "B": "3,10",
+      "C": "3,038",
+      "D": "0,729",
+      "E": "0,744"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-408b5ee5c89a",
+    "unitNumber": 201,
+    "text": "C1 parçasından tek seferde kaç adet sipariş verilmelidir?",
+    "options": {
+      "A": "149",
+      "B": "49",
+      "C": "100",
+      "D": "51",
+      "E": "Hiçbiri"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-b2a39c7632c8",
+    "unitNumber": 202,
+    "text": "Günlük talep kaç birimdir?",
+    "options": {
+      "A": "250",
+      "B": "400",
+      "C": "40",
+      "D": "25",
+      "E": "100"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-ce0db6680868",
+    "unitNumber": 203,
+    "text": "Ayakkabı tabanını üretmesi durumunda bir defada kaç adet üretilmelidir?",
+    "options": {
+      "A": "446",
+      "B": "1117",
+      "C": "1214",
+      "D": "10000",
+      "E": "500"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-8b954241a953",
+    "unitNumber": 204,
+    "text": "Ayakkabı tabanını tedarikçiden satın alması durumunda bir defada ne kadar sipariş vermelidir?",
+    "options": {
+      "A": "446",
+      "B": "1117",
+      "C": "1214",
+      "D": "10000",
+      "E": "500"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-e386431de848",
+    "unitNumber": 205,
+    "text": "Firma ayakkabı tabanını,",
+    "options": {
+      "A": "Üretmelidir.",
+      "B": "Satın almalıdır.",
+      "C": "Fark etmez.",
+      "D": "Yarısını üretmeli yarısını satın almalıdır.",
+      "E": "Hiçbiri"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-310eb5e52a78",
+    "unitNumber": 206,
+    "text": "Aşağıdakilerden hangisinin istif edilebilirliği diğerlerine göre daha fazladır?",
+    "options": {
+      "A": "İnsan",
+      "B": "Otomotiv",
+      "C": "Petrol",
+      "D": "Oyuncak",
+      "E": "Tekstil Ürünleri"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-eb5bc1e37a88",
+    "unitNumber": 207,
+    "text": "Ekonomik Sipariş Miktarı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "50",
+      "B": "80",
+      "C": "70",
+      "D": "10",
+      "E": "20"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  }
+]

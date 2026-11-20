@@ -1,1 +1,1842 @@
-[]
+[
+  {
+    "id": "s-a038557fa99b",
+    "unitNumber": 1,
+    "text": "Aşağıdakilerden hangisi “3B modellerin yüzeylerine uygulanan karmaşık malzeme, ışık ve gölge bilgilerinin daha hızlı ve etkili bir şekilde işlenmesine olanak tanıyan bir tekniktir.” tanımına uygundur?",
+    "options": {
+      "A": "UV haritalama",
+      "B": "Doku pişirme",
+      "C": "Box haritalama",
+      "D": "Sub-D modelleme",
+      "E": "Malzeme oluşturma"
+    },
+    "correctAnswer": "B",
+    "explanation": "Doku pişirme (texture baking veya baking); 3B sahnedeki karmaşık ışık hesaplamalarını (ambient occlusion, global illumination, gölgeler, yansımalar) önceden hesaplayarak sonucu 2B doku haritasına kaydetme işlemidir. Bu sayede gerçek zamanlı render esnasında bu hesaplamalar her karede yeniden yapılmak zorunda kalınmaz ve işlem performansı artar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-84e0b3674262",
+    "unitNumber": 2,
+    "text": "3B modelleme yazılımlarında materyaller (malzeme), nesnelere renk ve dokular kazandırmak için kullanılır. Bu materyaller, genellikle bir veya daha fazla harita (map) kullanılarak tanımlanır. Aşağıdakilerden hangisi malzemeyi oluşturan haritalardan biri değildir?",
+    "options": {
+      "A": "Diffuse / albedo",
+      "B": "Specular map",
+      "C": "UV map",
+      "D": "Normal map",
+      "E": "Bump map"
+    },
+    "correctAnswer": "C",
+    "explanation": "Bir malzemeyi oluşturan harita türleri arasında diffuse/albedo map (temel renk), specular map (parlaklık-yansıma), normal map (yüzey pürüzlülüğü), bump map (sahte derinlik) ve roughness map sayılabilir. UV map ise malzeme haritası değildir; 3B modelin yüzeyinin düz 2B düzlem üzerine açılarak hangi bölgesine hangi doku piksellerinin karşılık geleceğini belirleyen koordinat sistemidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-936473895fdd",
+    "unitNumber": 3,
+    "text": "UV haritalamada modelin yüzeylerinin düzlem bir yüzey üzerinde projekte edilmesidir. Bu yöntem, düz yüzeyli nesneler için kullanışlıdır. Yukarıdaki cümle aşağıdakilerden hangisini açıklamaktadır?",
+    "options": {
+      "A": "Unwrapping",
+      "B": "Spherical Mapping",
+      "C": "Box Mapping",
+      "D": "Planar Mapping",
+      "E": "Cylindrical Mapping"
+    },
+    "correctAnswer": "D",
+    "explanation": "UV haritalama; 3B nesnenin yüzeyini 2B düzleme açarak doku koordinatlarını oluşturma sürecidir. Planar Mapping (düzlemsel haritalama); 3B modelin yüzeyini tek bir düz düzlemden ışın göndererek projekte eder. Düz veya hafif eğimli yüzeyler için (duvar, zemin, kapı gibi) idealdir; karmaşık geometrilerde doku uzaması sorununa yol açar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-747274f59663",
+    "unitNumber": 4,
+    "text": "Aşağıdakilerden hangisi nesne alt bileşenlerinden birisidir?",
+    "options": {
+      "A": "Doku (Texture)",
+      "B": "Izgara (Grid)",
+      "C": "Kartezyen",
+      "D": "Modifikatör",
+      "E": "Kenar (Edge)"
+    },
+    "correctAnswer": "E",
+    "explanation": "3B modelleme yazılımlarında poligon tabanlı nesneler üç temel alt bileşenden oluşur: köşe noktaları (vertex/vertices), kenarlar (edge) ve yüzeyler (face/polygon). Vertex uzayda tek bir noktayı, edge iki vertex arasındaki çizgiyi ve face en az üç kenarın oluşturduğu düzlemi ifade eder. Düzenleme modunda bu alt bileşenler seçilerek modelin şekli düzenlenir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-af4234f4a69b",
+    "unitNumber": 5,
+    "text": "Normal map ve displacement map karşılaştırması: Hangisi ne zaman tercih edilmelidir?",
+    "options": {
+      "A": "Normal map her zaman displacement map'ten üstündür.",
+      "B": "Normal map; yüzey geometrisini değiştirmeden sahte pürüzlülük illüzyonu yaratır; hızlıdır ancak silhouette değişmez. Displacement map ise gerçek geometrik deformasyon yapar; yüksek poligon gerektirir ama fotorealistik sonuç üretir. Silhouette değişimi gerektiğinde displacement tercih edilir.",
+      "C": "Normal map ve displacement map özdeş tekniklerdir.",
+      "D": "Displacement map yalnızca zemin dokuları için kullanılır.",
+      "E": "Normal map geometrik değişim yapar; displacement yalnızca illüzyon yaratır."
+    },
+    "correctAnswer": "B",
+    "explanation": "Normal map, RGB renk kanallarıyla ışık kırılma açılarını taklit ederek düşük poligonlu modellere sahte detaylar ekler ve oyun motorlarında hızı korur. Displacement map ise dokudaki yükseklik verilerine göre modelin poligonlarını fiziksel olarak yukarı-aşağı hareket ettirir; nesne kenarlarındaki (silhouette) gerçekçi kırılmalar ve yüksek kaliteli render detayları için şarttır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-16005626864a",
+    "unitNumber": 6,
+    "text": "Render motorlarında path tracing ve rasterization arasındaki fark nedir?",
+    "options": {
+      "A": "Path tracing ve rasterization aynı algoritmayı kullanan farklı isimlerdir.",
+      "B": "Path tracing; ışık ışınlarının gerçek fizik yasalarına uygun biçimde izlendiği fotorealistik ancak yavaş render yöntemidir. Rasterization ise gerçek zamanlı uygulamalarda kullanılan hızlı ama daha az gerçekçi yöntemdir.",
+      "C": "Rasterization film prodüksiyonunda, path tracing oyun motorlarında kullanılır.",
+      "D": "Path tracing yalnızca CPU üzerinde çalışır.",
+      "E": "Rasterization fotorealistik; path tracing hız odaklıdır."
+    },
+    "correctAnswer": "B",
+    "explanation": "Path tracing, her piksel için çok sayıda ışın simüle ederek fiziksel olarak doğru global aydınlatma, gölge ve yansımalar üretir (sinema ve görsel efektlerde standarttır). Rasterization ise 3B nesneleri hızlıca 2B ekrana projekte eder ve saniyede yüksek kare hızı gerektiren oyun motorlarında tercih edilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a9be5dbc58e6",
+    "unitNumber": 7,
+    "text": "Motion capture (hareket yakalama) teknolojisi nedir?",
+    "options": {
+      "A": "Motion capture yalnızca askeri uygulamalarda kullanılır.",
+      "B": "Motion capture; gerçek bir oyuncunun hareketlerini sensörler veya marker'lar aracılığıyla kayıt altına alarak bu verileri 3B karaktere aktaran teknolojidir. Film, oyun ve spor analizi alanlarında yaygın kullanılır.",
+      "C": "Motion capture kullanıldığında animatörlere hiç gerek kalmaz.",
+      "D": "Motion capture yalnızca yüz ifadelerini kaydedebilir.",
+      "E": "Motion capture yalnızca oyun sektörüne özgüdür."
+    },
+    "correctAnswer": "B",
+    "explanation": "Motion capture (mocap); stüdyo ortamında özel kıyafetler ve kameralarla oyuncunun fiziksel hareket verilerinin dijitalleştirilip doğrudan 3B dijital karakter iskeletine giydirilmesi işlemidir. Bu teknoloji, karakter animasyonlarına yüksek derecede insani gerçekçilik, detay ve ritim kazandırır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a1b8969279de",
+    "unitNumber": 8,
+    "text": "Sub-division surface (alt bölüm yüzey) modelleme nedir?",
+    "options": {
+      "A": "Sub-D modelleme yalnızca mühendislik uygulamalarında kullanılır.",
+      "B": "Sub-D modelleme; düşük poligonlu bir kafes geometrinin matematiksel algoritma kullanılarak pürüzsüz ve yüksek detaylı bir yüzeye dönüştürülmesi tekniğidir. Düşük poligonlu modelin kolaylıkla düzenlenmesine olanak tanırken yüksek kaliteli pürüzsüz yüzey elde edilmesini sağlar.",
+      "C": "Sub-D modelleme Nurbs modellemin tam anlamıyla aynısıdır.",
+      "D": "Sub-D modelleme yalnızca mimari görselleştirmede kullanılır.",
+      "E": "Sub-D modelleme poligon sayısını azaltmak için kullanılan optimizasyon tekniğidir."
+    },
+    "correctAnswer": "B",
+    "explanation": "Sub-division surface (Sub-D) modelleme; Catmull-Clark gibi matematiksel algoritmalar kullanarak düşük poligonlu bir kontrol kafesini pürüzsüz, organik ve yüksek çözünürlüklü yüzeye dönüştüren tekniktir. Animatör düşük poligonlu kafes üzerinde rahatça çalışırken, yazılım arka planda pürüzsüzleştirme yapar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1b094054d2fa",
+    "unitNumber": 9,
+    "text": "….., malzemeye uygulanan bir programlama kodudur. Malzemelerin gerçekçi bir şekilde yansıması, yüzeyin ışıkla etkileşimi gibi özelliklerin ayarlanmasını sağlar. Işık, yansıma, gölge, yüzey pürüzlülüğü, yansıtma gibi malzeme özelliklerini kontrol ederler.” Yukarıdaki cümlede boş bırakılan yer için en uygun seçenek aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Malzeme",
+      "B": "Düzlemsel Haritalama (Planar Mapping)",
+      "C": "Tulum Çıkarma (Pelt)",
+      "D": "Gölgelendirici (Shader)",
+      "E": "Doku (Texture)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Shader (gölgelendirici); GPU üzerinde çalışan ve 3B nesnelerin yüzeylerinin nasıl görüneceğini belirleyen bir programlama kodudur. Işığın yüzeyle etkileşimini hesaplayarak; yansıma, kırılma, dağılma, gölge, yüzey pürüzlülüğü ve metaliklik gibi görsel özellikleri kontrol eder. Fizik tabanlı render (PBR) yaklaşımında shader’lar ışığın gerçek dünyada davranışını taklit ederek fotorealistik sonuçlar üretir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-177c72c80b55",
+    "unitNumber": 10,
+    "text": "“Günümüzde gerçek hayatta olmayan nesnelerin tasarımını yapmak kadar, gerçek dünya nesnelerinin de dijital kopyalarının yapılması için ….. kullanılmaktadır.” Yukarıdaki cümlede boş bırakılan yeri aşağıdakilerden hangisiyle tamamlayabiliriz?",
+    "options": {
+      "A": "3B modelleme",
+      "B": "Eklemleme",
+      "C": "Doku kaplama",
+      "D": "Montaj",
+      "E": "İşleme (Render)"
+    },
+    "correctAnswer": "A",
+    "explanation": "3B modelleme; üç boyutlu dijital nesnelerin bilgisayar ortamında oluşturulması sürecidir. Bu süreç; gerçek dünyada var olan nesnelerin dijital kopyalarını üretmek ve gerçekte olmayan hayali nesnelerin tasarımını yapmak amacıyla kullanılır. Film prodüksiyonu, oyun geliştirme, mimari görselleştirme, tıp ve mühendislik gibi pek çok alanda 3B modelleme; gerçek dünyanın ve hayal gücünün dijital temsili için vazgeçilmez bir araçtır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2b3ea6e9af5d",
+    "unitNumber": 11,
+    "text": "3B animasyonda forward kinematics (FK) ve inverse kinematics (IK) arasındaki fark nedir?",
+    "options": {
+      "A": "FK ve IK aynı kavramın farklı isimleridir.",
+      "B": "FK; zincirdeki her eklemi sırayla döndürerek uç noktanın konumunu belirlerken IK, uç noktanın hedef konumu belirlenerek zincirdeki eklemlerin otomatik hesaplanmasını sağlar.",
+      "C": "FK gerçek zamanlıda, IK yalnızca sinemada kullanılır.",
+      "D": "IK yalnızca robot animasyonlarına özgüdür.",
+      "E": "FK her zaman IK yerine tercih edilir."
+    },
+    "correctAnswer": "B",
+    "explanation": "Forward Kinematics (FK) hiyerarşik olarak ana eklemden uç ekleme doğru (omuz-dirsek-bilek sıralı dönüşü) çalışırken, Inverse Kinematics (IK) uç noktanın hareket ettirilmesiyle (örneğin elin veya ayağın hedefe yerleşmesi) ara eklemlerin rotasyon açılarının yazılım tarafından otomatik olarak geriye dönük hesaplanması sürecidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ee54b835f7f7",
+    "unitNumber": 12,
+    "text": "Aşağıdakilerden hangisi animasyonun prensiplerinden biri değildir?",
+    "options": {
+      "A": "Beklenti / hazırlık (anticipation)",
+      "B": "Kare hızı (framerate)",
+      "C": "Sahneleme / düzenleme (staging)",
+      "D": "Sıkıştırma ve esnetme (squash and stretch)",
+      "E": "Yörüngeler / yaylar (arcs)"
+    },
+    "correctAnswer": "B",
+    "explanation": "Disney animatörleri Ollie Johnston ve Frank Thomas; animasyonun 12 temel prensibini tanımlamıştır. Bu prensipler: sıkıştırma ve esnetme, beklenti/hazırlık, sahneleme, düz ileri animasyon ve poz üzerine poz, takip ve örtüşen hareket, yavaş giriş-yavaş çıkış, yörüngeler, ikincil hareket, zamanlama, abartma, sağlam çizim ve cazibedir. Kare hızı (framerate) ise saniyede gösterilen kare sayısını ifade eden teknik bir parametredir; 12 animasyon prensibinden biri değildir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-43dd36f603e9",
+    "unitNumber": 13,
+    "text": "“….., hareket eden bir nesnenin belirli bir konum, rotasyon veya ölçek özelliğini belirleyen kilit noktalardır. Başka bir ifadeyle nesnelerin pozisyonları, rotasyonları ve ölçekleri gibi özelliklerinin belirli zamanlarda kaydedilmesi işlemidir.” Yukarıdaki cümlede boş bırakılan yer için uygun seçenek aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Zaman çizelgesi (Timeline)",
+      "B": "Eğri editörü (Graph Editor)",
+      "C": "Stop-motion",
+      "D": "Anahtar kareler (Keyframes)",
+      "E": "Tanjant kontrolleri"
+    },
+    "correctAnswer": "D",
+    "explanation": "Anahtar kareler (keyframes); bilgisayar animasyonunun temel yapı taşıdır. Animatör belirli zaman noktalarında nesnenin konum, rotasyon, ölçek veya başka özelliklerini kaydeder; bu kayıt anları anahtar kareler olarak tanımlanır. Yazılım; iki anahtar kare arasındaki değerleri otomatik olarak hesaplayarak (interpolasyon) akıcı hareketi oluşturur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b3ab11b8545f",
+    "unitNumber": 14,
+    "text": "Yürürken aynı zamanda el sallayan bir 3B karakter animasyonu aşağıdaki hangi animasyon prensibine uygun düzenlenmiştir?",
+    "options": {
+      "A": "Sıkıştırma ve Esnetme (Squash and Stretch)",
+      "B": "Hazırlama / Beklenti (Anticipation)",
+      "C": "Cazibe (Appeal)",
+      "D": "Yörünge / Yay (Arcs)",
+      "E": "İkincil hareket (Secondary Action)"
+    },
+    "correctAnswer": "E",
+    "explanation": "İkincil hareket (secondary action) prensibi; karakterin ana hareketini destekleyen ve ona gerçekçilik katan ek hareketleri tanımlar. Yürümek (ana hareket) ile eş zamanlı olarak kolların sallanması veya el sallanması bu prensibe örnektir. İkincil hareketler; ana harekete bağımlıdır ve onu destekler; ancak hiçbir zaman ana hareketi gölgede bırakmamalıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-cb4ae58efb24",
+    "unitNumber": 15,
+    "text": "3B modellemede düzenleme / edit modu niçin aktifleştirilir?",
+    "options": {
+      "A": "Nesneyi boyamak için",
+      "B": "Nesneyi çoğaltmak için",
+      "C": "Nesneyi döndürebilmek için",
+      "D": "Nesneyi hareket ettirebilmek için",
+      "E": "Nesne alt bileşenlerini düzenleyebilmek için"
+    },
+    "correctAnswer": "E",
+    "explanation": "3B modelleme yazılımlarında nesneler iki temel modda çalışılır: nesne modu ve düzenleme modu. Nesne modunda nesnenin tamamı bir birim olarak seçilir, taşınır, döndürülür ve ölçeklendirilir. Düzenleme modunda ise nesnenin alt bileşenlerine erişim sağlanır. Bu alt bileşenler; köşe noktaları (vertex), kenarlar (edge) ve yüzeyler (face) olarak üçe ayrılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e046b90245a6",
+    "unitNumber": 16,
+    "text": "Bu prensip, karakterin hareketi bittiğinde vücudun geri kalanında hareketin devam ettiğini gösterir. Böylece karakterin hareketinin doğal görünmesi sağlanır. Yukarıdaki cümlede aşağıdakilerden hangisinin açıklaması yapılmıştır?",
+    "options": {
+      "A": "Appeal",
+      "B": "Follow Through and Overlapping Action",
+      "C": "Solid Drawing",
+      "D": "Staging",
+      "E": "Exaggeration"
+    },
+    "correctAnswer": "B",
+    "explanation": "Follow through and overlapping action; 12 animasyon prensibinden biridir. Follow through (takip hareketi); karakterin ana hareketi durduğunda vücudun farklı bölümlerinin (saç, kıyafet, kulak gibi sarkan unsurların) bir süre daha hareket etmeye devam etmesidir. Overlapping action (örtüşen hareket) ise vücudun farklı bölümlerinin farklı zamanlarda harekete geçmesidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d52ec96ed617",
+    "unitNumber": 17,
+    "text": "Aşağıdaki seçeneklerden hangisi yaygın olarak kullanılan, popüler bir render (işleme) motoru değildir?",
+    "options": {
+      "A": "Blender",
+      "B": "Octane",
+      "C": "Arnold",
+      "D": "Keyshot",
+      "E": "Vray"
+    },
+    "correctAnswer": "A",
+    "explanation": "Octane Render, Arnold, Keyshot ve V-Ray; bağımsız render motorlarıdır. Blender ise kendi içinde Cycles ve EEVEE adlı render motorlarını barındıran açık kaynaklı bir 3B modelleme ve animasyon yazılımıdır. Blender render motoru değil kapsamlı bir prodüksiyon yazılımıdır. Bu nedenle popüler bir render motoru olarak sayılamaz.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e1228becede6",
+    "unitNumber": 18,
+    "text": "“Üç boyutlu koordinat sisteminde bir objenin döndürüldüğü noktaya ….. denmektedir.” Yukarıdaki cümlede boş bırakılan yer için en uygun seçenek aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Eksen noktası",
+      "B": "Ölçek noktası",
+      "C": "Kutup noktası",
+      "D": "Pivot noktası",
+      "E": "Yönlendirme noktası"
+    },
+    "correctAnswer": "D",
+    "explanation": "Pivot noktası (pivot point); 3B yazılımlarda bir nesnenin döndürme, ölçekleme ve hareket işlemlerinin etrafında gerçekleştiği referans noktasıdır. Varsayılan olarak nesnenin geometrik merkezine yerleştirilen pivot noktası; kullanıcı tarafından istenen herhangi bir konuma taşınabilir (örneğin kapı modelinde menteşeye taşınması gibi).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-55b298af4301",
+    "unitNumber": 19,
+    "text": "3B modelleme ve animasyon yapım aşamaları kapsamında aşağıdaki seçeneklerin hangisi yapım öncesi (pre-production) aşamasında değerlendirilmesi gereken bir süreçtir?",
+    "options": {
+      "A": "İşleme (Render)",
+      "B": "Ses ve Montaj",
+      "C": "Konsept tasarımı",
+      "D": "Eklemleme - İskelet sistemi oluşturma",
+      "E": "Malzeme ve Işık oluşturma"
+    },
+    "correctAnswer": "C",
+    "explanation": "3B animasyon yapımı üç ana aşamaya ayrılır. Yapım öncesi (pre-production); projenin planlama ve tasarım aşamasıdır. Bu aşamada hikaye geliştirme, senaryo yazımı, konsept tasarımı (karakter, ortam, prop tasarımları), storyboard ve animatik yer alır. Yapım (production) aşamasında 3B modelleme, malzeme, ışıklandırma, rigging, animasyon ve render gerçekleştirilir. Yapım sonrası (post-production) aşamasında ses tasarımı, montaj ve görsel efektler uygulanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-db96819f3f09",
+    "unitNumber": 20,
+    "text": "Malzeme oluştururken kullanılan ….. Map objenin yüzey geometrisini değiştirmeden deformasyonu yapay olarak gerçekleştirirken ….. Map’te, objenin polygon sayısı önemli olmakla birlikte, yüzeyde değişiklik de yapmaktadır. Yukarıdaki cümlede boş bırakılan yerlere sırasıyla aşağıdaki seçeneklerden hangisi gelmelidir?",
+    "options": {
+      "A": "Specular / Diffuse",
+      "B": "Displacement / Bump",
+      "C": "Bump / Displacement",
+      "D": "Normal / Ambient",
+      "E": "Diffuse / Specular"
+    },
+    "correctAnswer": "C",
+    "explanation": "Bump map; nesnenin gerçek geometrisini değiştirmez; yalnızca ışığın yüzeye çarpış açısını değiştirerek sahte yükseklik illüzyonu yaratır. Silhouette üzerinde herhangi bir değişiklik görülmez ve hesaplama maliyeti düşüktür. Displacement map ise gerçek anlamda nesnenin geometrisini deforme eder; render sırasında poligonlar fiziksel olarak hareket ettirilir. Nesnenin poligon sayısı sonucu doğrudan etkiler.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e028c57727c7",
+    "unitNumber": 21,
+    "text": "Aşağıdaki seçeneklerde yer alan yazılımlardan hangisinde 3B modelleme ve animasyon yapılabilir?",
+    "options": {
+      "A": "Adobe Illustrator",
+      "B": "Adobe After Effects",
+      "C": "Adobe Photoshop",
+      "D": "Microsoft Word",
+      "E": "Autodesk Maya"
+    },
+    "correctAnswer": "E",
+    "explanation": "Autodesk Maya; profesyonel 3B modelleme, animasyon, simülasyon, görsel efekt ve render işlemlerini gerçekleştirmek için kullanılan endüstri standardı bir yazılımdır. Film, televizyon, oyun ve görsel efekt sektörlerinde en yaygın kullanılan 3B yazılımlardan biridir. Adobe Illustrator 2B vektör grafik, Adobe After Effects 2B/2.5B hareket grafik, Adobe Photoshop raster görüntü düzenleme aracıdır; Microsoft Word ise kelime işlemcidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-43f4a4c50096",
+    "unitNumber": 22,
+    "text": "“Hareketin anahtar karelerde hızlandırılması veya yavaşlatılması eğri editöründe ….. eğri kontrolleriyle kolaylıkla sağlanabilir.” Yukarıdaki cümlede boş bırakılan yere aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Stop-motion animasyonu",
+      "B": "Tanjant",
+      "C": "Klasik (cell) animasyon",
+      "D": "Zaman çizelgesi (timeline)",
+      "E": "Cazibe (appeal)"
+    },
+    "correctAnswer": "B",
+    "explanation": "3B animasyon yazılımlarında eğri editörü; anahtar kareler arasındaki hareketin interpolasyon biçimini görsel olarak kontrol etmeye yarayan araçtır. Tanjant kontrolleri; eğri üzerindeki her anahtar kare noktasının giriş ve çıkış eğimini belirler. Tanjant açısı ve uzunluğu değiştirilerek nesnenin belirli bir anahtar kareye yaklaşırken yavaşlaması (ease in) veya uzaklaşırken hızlanması (ease out) sağlanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-7bbe33a40dfd",
+    "unitNumber": 23,
+    "text": "Bilgisayarda yaygın olarak kullanılan 3 boyutlu koordinat sisteminin adı nedir?",
+    "options": {
+      "A": "Metrik",
+      "B": "Ortografik",
+      "C": "Kartezyen",
+      "D": "İzometrik",
+      "E": "Analitik"
+    },
+    "correctAnswer": "C",
+    "explanation": "Kartezyen koordinat sistemi; Fransız matematikçi René Descartes tarafından geliştirilen ve birbirine dik üç eksen (X, Y, Z) üzerine kurulu üç boyutlu uzay tanımlama sistemidir. 3B modelleme yazılımlarının tamamında bu sistem kullanılır: X ekseni yatay, Y ekseni dikey ve Z ekseni derinlik yönünü temsil eder. Her nokta (X, Y, Z) koordinatlarıyla benzersiz biçimde tanımlanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-455995f256ae",
+    "unitNumber": 24,
+    "text": "3B modelleme yazılımlarında, nesnelerin görünüm ve davranışlarını değiştirmek için kullanılan bu araçlar, nesnelerin modellemesinde ya da animasyonunda farklı şekillerde kullanılabilir. Yukarıda verilen ifade aşağıdakilerden hangisinin açıklamasıdır?",
+    "options": {
+      "A": "Yüzey ağı (Mesh)",
+      "B": "Primitif",
+      "C": "Kenar",
+      "D": "Dönüşüm (Transformation)",
+      "E": "Modifikatör (Modifier)"
+    },
+    "correctAnswer": "E",
+    "explanation": "3ds Max veya Blender gibi 3B yazılımlarda, nesnenin temel geometrisini kalıcı olarak bozmadan onu büken (Bend), buran (Twist), yumuşatan (Subdivision Surface / TurboSmooth) veya kalınlık veren algoritmik eklentilere “Modifikatör” (Modifier) denir. İstenildiği zaman kapatılabilir veya değiştirilebilir olmaları sayesinde yıkıcı olmayan (non-destructive) bir modelleme ve animasyon imkânı sunarlar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-501619a35b73",
+    "unitNumber": 25,
+    "text": "Dalgalanan bir bayrak animasyonu yapmak isteyen bir tasarımcı aşağıdaki hangi simülasyon yöntemini seçmelidir? (Soru iptal edilmiştir.)",
+    "options": {
+      "A": "Fluid Sim",
+      "B": "Sculpting",
+      "C": "Cloth Sim",
+      "D": "Softbody Sim",
+      "E": "Rigid Body Sim"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4b9e0217c382",
+    "unitNumber": 26,
+    "text": "3B modele bağlanan iskelet sistemini (rig) daha efektif olarak kullanabilmek ve hareketleri kolaylıkla yapabilmek için aşağıdakilerden hangisi kullanılır?",
+    "options": {
+      "A": "Ağırlıklı Boyama (Weight Painting)",
+      "B": "Hiyerarşik Bağlama (Parenting)",
+      "C": "Deflektör",
+      "D": "Kontrolör Nesne (Controller Object)",
+      "E": "Doku Kaplama (Texturing)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Karakter animasyonu yaparken animatörlerin yüzlerce ince kemiği tek tek seçmeye çalışması çok zor ve hatalara açık bir işlemdir. Bu karmaşayı önlemek için, kemiklerin dışına renkli ve kolayca tıklanıp sürüklenebilen çizgisel şekiller (halkalar, küpler, oklar) eklenir. İskeleti dışarıdan bir kukla ipi gibi yönetmeyi sağlayan bu araçlara “Kontrolör Nesne” (Controller Object veya Control Shape) adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-c273c0e583f7",
+    "unitNumber": 27,
+    "text": "Aşağıdakilerden hangisi HDRI kısaltmasının anlamını içermektedir?",
+    "options": {
+      "A": "Çevresel Perdeleme",
+      "B": "Görüntü Temelli Işıklandırma",
+      "C": "Alan Derinliği",
+      "D": "Küresel Aydınlatma",
+      "E": "Yüksek Dinamik Aralıklı Görüntü"
+    },
+    "correctAnswer": "E",
+    "explanation": "HDRI, “High Dynamic Range Image” (Yüksek Dinamik Aralıklı Görüntü) teriminin kısaltmasıdır. Standart görüntülere (JPG, PNG) kıyasla çok daha geniş bir parlaklık ve ışık bilgisi aralığı barındırdığı için 3B sahnelerde gerçekçi bir güneş veya gökyüzü ışığı kaynağı olarak (Environment Map olarak) aydınlatma amacıyla kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-3d832c531dee",
+    "unitNumber": 28,
+    "text": "Parçacık simülasyonlarında partiküllere etki eden kuvvetleri saptırmaya yarayan araçlar aşağıdaki hangi seçenekte verilmiştir?",
+    "options": {
+      "A": "Kısıtlamalar",
+      "B": "Deflektör",
+      "C": "Efektör",
+      "D": "Emisyon",
+      "E": "Simülatör"
+    },
+    "correctAnswer": "B",
+    "explanation": "Yağmur damlalarının yere düştüklerinde sekmesi veya akan bir suyun bir engele çarparak yön değiştirmesi gibi parçacık (particle) simülasyonu durumlarında, partiküllerin içinden geçip gitmesini engelleyen ve onları saptırarak (sekmesini, yansımasını) bir fiziksel sınır oluşturan görünmez veya görünür çarpışma nesnelerine “Deflektör” (Deflector / Yansıtıcı-Saptırıcı) adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-47bc84601ad6",
+    "unitNumber": 29,
+    "text": "Aşağıdaki terimlerden hangisi işlemede (render) yüzeylerin birbirlerine yansıttığı, yuttuğu veya geçirdiği ışığın tüm yönlerini hesaplar ve bu sayede gerçekçi gölgeler, yansımalar oluşturur?",
+    "options": {
+      "A": "Yüksek Dinamik Aralıklı Görüntü (HDRi)",
+      "B": "Çevresel Perdeleme (AO)",
+      "C": "Küresel Aydınlatma (GI)",
+      "D": "Görüntü Temelli Işıklandırma (IBL)",
+      "E": "Fiziksel Temelli İşleme (PBR)"
+    },
+    "correctAnswer": "C",
+    "explanation": "Işığın sadece doğrudan aydınlattığı yerleri değil; bir yüzeye çarptıktan sonra sekerek (bounce light) diğer nesneleri ve karanlık alanları da dolaylı olarak aydınlatması, renklerin birbirinin üzerine yansıması olayına “Küresel Aydınlatma” (Global Illumination – GI) denir. 3B render motorlarında fotogerçekçi (photorealistic) sonuçlar elde etmenin en temel şartı GI hesaplamalarının yapılmasıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-54ed77207a23",
+    "unitNumber": 30,
+    "text": "Sahnedeki farklı nesnelerin maskeleme bilgisini içeren ….. render elementi, sahnede farkı alanları maskelemek veya bir nesnenin arkasında olan öğeleri ayırmak için kullanılabilir. Yukarıdaki cümlede boş bırakılan yere aşağıdakilerden hangisi getirilmelidir?",
+    "options": {
+      "A": "matte pass",
+      "B": "reflection pass",
+      "C": "beauty pass",
+      "D": "normal pass",
+      "E": "z depth pass"
+    },
+    "correctAnswer": "A",
+    "explanation": "3B çıktıları kompozisyon yazılımlarına alırken, sahnedeki onlarca obje arasından sadece belirli bir nesnenin (örneğin sadece arabanın) seçilip rengiyle oynanmasını sağlamak amacıyla, o nesneye özel siyah/beyaz veya saf RGB renklerinde bir silüet çıktısı veren render kanalına “Matte Pass” (Maske Kanalı / ID Pass / Cryptomatte) denir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-cac35fd72261",
+    "unitNumber": 31,
+    "text": "A nesnenin yüzey özelliklerini belirleyen özellikleri içeren bir yapıdır. 3B modelin şeffaflık, yansıtma, pürüzlülük, opaklık gibi özelliklerini belirler ve her model kendine özgü bir ….. sahip olabilir. Yukarıdaki cümlede boş bırakılan yer için en uygun seçenek aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "renge",
+      "B": "poligona",
+      "C": "haritaya",
+      "D": "malzemeye",
+      "E": "ızgaraya"
+    },
+    "correctAnswer": "D",
+    "explanation": "3B tasarımda bir nesnenin ahşap mı, cam mı yoksa metal mi olduğunu anlamamızı sağlayan; yüzeyin ışığa nasıl tepki vereceğini, ne kadar parlayacağını (glossiness/roughness) veya ne kadar saydam (opacity) olacağını matematiksel parametrelerle belirleyen dijital yüzey atamalarına “Malzeme” (Material) adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-673fba635f12",
+    "unitNumber": 32,
+    "text": "“Üç boyutlu modellerin hareketini sağlamak için kemik sistemlerinin oluşturulması, bir diğer adıyla….., özellikle karakter animasyonunda en önemli aşamalardan biridir diyebiliriz.” Yukarıdaki cümledeki boşluğa aşağıdakilerden hangisinin gelmesi en uygundur?",
+    "options": {
+      "A": "animasyon",
+      "B": "rigging",
+      "C": "ışıklandırma",
+      "D": "rendering",
+      "E": "texturing"
+    },
+    "correctAnswer": "B",
+    "explanation": "Üç boyutlu modelleme ve animasyon sürecinde, statik bir modele hareket yeteneği kazandırmak amacıyla içine sanal bir iskelet veya kemik sistemi yerleştirilmesi ve bu kemiklerin modele bağlanması işlemine “Rigging” (İskeletleme/Donatma) adı verilir. Karakterin doğal ve anatomik olarak doğru hareket edebilmesi tamamen başarılı bir rigging işlemine bağlıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-817af6690ccd",
+    "unitNumber": 33,
+    "text": "…… bir 3B sahnenin render işleminden sonra elde edilen ayrı ayrı render edilmiş kanallardır. Bu kanallar daha sonra post prodüksiyon aşamasında kullanılmak üzere ayrı ayrı kaydedilir. Örneğin, gölge, yansıma, ışık, materyal, z-buffer vb. kanallar ayrı ayrı kaydedilebilir. Yukarıdaki cümlede boş bırakılan yere aşağıdakilerden hangisi getirilmelidir?",
+    "options": {
+      "A": "Render elements",
+      "B": "Efektler",
+      "C": "Beauty pass",
+      "D": "Normal haritaları",
+      "E": "Alfa kanalları"
+    },
+    "correctAnswer": "A",
+    "explanation": "3B sahneyi tek bir görsel (“Beauty Pass”) olarak dışa aktarmak yerine, kompozisyon aşamasında (Örn: Nuke veya After Effects’te) yansımayı kısabilmek, gölgelerin koyuluğuyla oynayabilmek veya belirli nesneleri maskeleyebilmek için sahnenin yapıtaşlarına bölünerek ayrı ayrı görseller halinde kaydedilmesine “Render Elements” veya “Render Passes” adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-fb021e73ae66",
+    "unitNumber": 34,
+    "text": "Aşağıdakilerden hangisi simülasyonlarda kullanılan bir kuvvet türü olarak tanımlanamaz?",
+    "options": {
+      "A": "Kumaş",
+      "B": "Rüzgâr",
+      "C": "Yer çekimi",
+      "D": "Motor",
+      "E": "İtici-sürükleyici güçler"
+    },
+    "correctAnswer": "A",
+    "explanation": "Fiziksel 3B simülasyonlarda Rüzgar (Wind), Yer çekimi (Gravity) ve Motor gibi unsurlar nesnelere dışarıdan etki eden, onlara yön veya ivme kazandıran birer “Kuvvet”tir (Force). Ancak Kumaş (Cloth) bir kuvvet değil, bu kuvvetlerden etkilenen, şekil değiştiren veya savrulan simülasyonun bizzat uygulandığı dinamik bir nesnedir/objedir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a3cfc0ad0dd9",
+    "unitNumber": 35,
+    "text": "3B yazılımlar genellikle ….. olarak adlandırılan bir özellikle birlikte gelir. Bu özellik, 3B sahneye HDRI görüntüsünü yüklemenizi ve sahnenin çevresine göre nasıl yansıdığını ve gölgelediğini ayarlamak ve sahneyi aydınlatmak için HDRI görüntüsünü kullanmanızı sağlar. Yukarıdaki cümledeki boş bırakılan yere aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Ambient Occlusion (AO)",
+      "B": "GI Map (Global Illumination)",
+      "C": "IES Light",
+      "D": "Environment Map (Ortam / yansıma haritası)",
+      "E": "Ray Tracing (Işın izleme)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Sahnede hiçbir fiziksel lamba olmasa bile sadece fotoğrafik bir panorama (HDRI) kullanılarak sahnedeki objelerin aydınlatılmasını ve krom/cam gibi parlak objelerin üzerindeki 360 derecelik yansımaların (bulutlar, ağaçlar vb.) oluşmasını sağlayan küresel dış kaplama alanına “Environment Map” (Ortam Haritası) denir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8cffa9aab5db",
+    "unitNumber": 36,
+    "text": "3B modelleme ve animasyonda, farklı bileşenlerin (render görüntüleri, arkaplanlar, efektler, renk düzenleme, ses vb.) bir araya getirilmesi işlemi aşağıdaki hangi seçenekte verilmiştir?",
+    "options": {
+      "A": "İşleme Elemanları (Render Elements)",
+      "B": "Kompozisyon (Compositing)",
+      "C": "Montaj",
+      "D": "Alfa Kanalı",
+      "E": "Miksaj"
+    },
+    "correctAnswer": "B",
+    "explanation": "3B yazılımdan alınan ham render kanallarının (gölge, yansıma, renk), yeşil perdede çekilmiş gerçek videoların, sonradan eklenen duman veya ateş gibi özel efektlerin ve arkaplan görsellerinin üst üste bindirilerek tek ve kusursuz bir final karesi (frame) oluşturacak şekilde harmanlanması işlemine “Kompozisyon” (Compositing) adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-dfe50768cbc6",
+    "unitNumber": 37,
+    "text": "3B modellenmiş bir robot kolun hareket ettirildiği bir animasyonda aşağıdakilerden hangisi kullanılmaz?",
+    "options": {
+      "A": "İskelet Bağlama (rigging)",
+      "B": "Hiyerarşi Bağlama (parenting)",
+      "C": "Parçacık Deflektörü",
+      "D": "Ters ve İleri Kinematik",
+      "E": "Ağırlıklı Boyama (weight painting)"
+    },
+    "correctAnswer": "C",
+    "explanation": "Bir robot kol animasyonunda eklemlerin birbirini takip etmesi için Hiyerarşi Bağlama (Parenting), kemiklerin kontrolü için Ters/İleri Kinematik (IK/FK) ve modele hareket kabiliyeti kazandırmak için Rigging işlemleri mutlaka kullanılır. Ancak “Parçacık Deflektörü” (Particle Deflector), yağmur, kar, toz veya ateş gibi parçacık sistemlerinin (particles) çarpıp sekmesini veya yön değiştirmesini sağlayan bir simülasyon aracıdır; katı bir robot kolun animasyonunda yeri yoktur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-754d9eca8b32",
+    "unitNumber": 47,
+    "text": "Aşağıdakilerden hangisi objelerin birbirlerinin ışığını engellemesi ve dolayısıyla gölgelerinin oluşumunun farklılaşmasını simüle eden işleme (render) özelliğidir?",
+    "options": {
+      "A": "UV Haritalama",
+      "B": "Yüksek Dinamik Aralıklı Görselleştirme (HDRi)",
+      "C": "Küresel Aydınlatma (Global Illumination)",
+      "D": "Doku Pişirme (Texture Baking)",
+      "E": "Çevresel Perdeleme (Ambient Occlusion)"
+    },
+    "correctAnswer": "E",
+    "explanation": "Çevresel perdeleme (Ambient Occlusion – AO), ortam ışığının objelerin çok yakınlaştığı veya kesiştiği iç köşe, çatlak ve kıvrımlara ulaşamamasını hesaplayarak o bölgelerde oluşan mikroskobik gölgelenmeleri ve kararmaları simüle eden son derece gerçekçi bir render parametresidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-59e291c07389",
+    "unitNumber": 55,
+    "text": "……, animasyon sahnesindeki nesnelerin çarpışma davranışını, yer çekimi, sürtünme, elastiklik vb. etkileşimleri hesaplayarak animasyonun gerçekçiliğini artırır. Yukarıdaki cümlede boş bırakılan yere aşağıdaki seçeneklerden hangisi gelebilir?",
+    "options": {
+      "A": "Eğri editörü",
+      "B": "Malzeme editörü",
+      "C": "Zaman çizelgesi (timeline)",
+      "D": "Fizik motoru",
+      "E": "Deflektör (saptırıcı)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Bir animasyonda yer çekimi, çarpışma, sürtünme gibi gerçek dünya fiziği kurallarını simüle ederek nesnelerin davranışlarını otomatik olarak hesaplayan sisteme ”fizik motoru” (physics engine) denir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-89edfc4754ec",
+    "unitNumber": 58,
+    "text": "Aşağıdakilerden hangisi bir işleme (render) motoru değildir?",
+    "options": {
+      "A": "Arnold",
+      "B": "Maya",
+      "C": "Cycles",
+      "D": "Redshift",
+      "E": "Vray"
+    },
+    "correctAnswer": "B",
+    "explanation": "Maya, 3B modelleme, animasyon ve rigleme gibi birçok işlemi yapabilen kapsamlı bir yazılım paketidir. Arnold, Cycles, Redshift ve Vray ise bu ve benzeri yazılımlar içinde kullanılan, sadece render (işleme) görevine odaklanmış motorlardır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e8275943568a",
+    "unitNumber": 70,
+    "text": "Aşağıdakilerden hangisi post prodüksiyon aşamasında yer alan bir süreç değildir?",
+    "options": {
+      "A": "Ses ve müzik",
+      "B": "Kompozisyon",
+      "C": "Doku kaplama",
+      "D": "Video düzenleme",
+      "E": "Efektler"
+    },
+    "correctAnswer": "C",
+    "explanation": "Doku kaplama işlemi modelleme ve sahne hazırlığı aşamasında yapılır. Post prodüksiyon ise render sonrası yapılan düzenleme işlemlerini kapsar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-0828409cdbfb",
+    "unitNumber": 71,
+    "text": "Görsel, bir 3 boyutlu modelleme ve animasyon programının hangi bölümünden alınmış olabilir?",
+    "options": {
+      "A": "Eğri editörü",
+      "B": "Malzeme editörü",
+      "C": "Obje düzenleme (edit) modu",
+      "D": "Zaman çizelgesi (Timeline)",
+      "E": "UV haritalama paneli"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-51981a898406",
+    "unitNumber": 72,
+    "text": "3B modelin animasyonunda yalnızca bizim belirlediğimiz eksende hareket etmesini sağlamak için aşağıdakilerden hangisini kullanmalıyız?",
+    "options": {
+      "A": "Ağırlıklı Boyama (Weight Painting)",
+      "B": "UV Haritalama",
+      "C": "Ters Kinematik (IK)",
+      "D": "Hiyerarşi Bağlama (Parenting)",
+      "E": "Kısıtlamalar (Constraints)"
+    },
+    "correctAnswer": "E",
+    "explanation": "Kısıtlamalar (Constraints), nesnelerin hareketlerini belirli eksenlere ya da başka nesnelere bağlı olarak sınırlandırarak daha kontrollü animasyonlar oluşturmaya yardımcı olur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-ee7d4a373a97",
+    "unitNumber": 73,
+    "text": "“Bu yaklaşımda, malzeme yüzeyleri ve ışıklandırma gerçekçi fiziksel özellikler kullanılarak hesaplanır…… gerçekçi sonuçlar elde etmede doku sanatçılarına daha hızlı bir çözüm sunar ve çeşitli platformlarda daha tutarlı sonuçlar verir.” Cümlede yer alan boşluğa aşağıdaki seçeneklerden hangisinin gelmesi uygundur?",
+    "options": {
+      "A": "global İllumination (küresel aydınlatma)",
+      "B": "timeline (zaman çizelgesi)",
+      "C": "UV haritalama",
+      "D": "eğri editörü",
+      "E": "PBR (Physically Based Rendering - fiziksel tabanlı işleme)"
+    },
+    "correctAnswer": "E",
+    "explanation": "PBR, fiziksel gerçeklik temel alınarak yapılan bir işleme yöntemidir. Bu yöntem ile daha doğru ışık etkileşimleri ve malzeme görünümü elde edilir, böylece daha gerçekçi sahneler oluşturulabilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-1eacd4611c22",
+    "unitNumber": 74,
+    "text": "Aşağıdakilerden hangisi animasyon sahnesindeki nesnelerm belirli davranışlar sergilemesini sağlayan matematiksel modeller ve fiziksel yasalar kullanarak gerçekçi sonuçlar üretilmesi işlemidir?",
+    "options": {
+      "A": "Zaman çizelgesi",
+      "B": "Doku boyama",
+      "C": "Keyframe yerleştirme",
+      "D": "Simülasyon",
+      "E": "Post prodüksiyon"
+    },
+    "correctAnswer": "D",
+    "explanation": "Simülasyonlar, doğadaki fiziksel olayların (yerçekimi, çarpışma, esneme vb.) bilgisayar ortamında modellenerek nesnelere uygulanmasını sağlar. Gerçekçi hareket ve etkileşimler bu sayede elde edilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-7c3ed69581e6",
+    "unitNumber": 77,
+    "text": "“Bu işlem sırasında, öğeler katmanlar halinde yerleştirilir ve birbirleri üzerinde değişiklikler yapılır. Görüntü parçalarının saydamlık ayarları, pozisyonları, boyutları, renkleri ve efektleri gibi özellikleri ayarlanabilir.” cümlesinde açıklanan işleme ne ad verilmektedir?",
+    "options": {
+      "A": "Alfa kanalı",
+      "B": "Kompozisyon (Compositing - Birleştirme)",
+      "C": "Color correction (Renk düzeltme)",
+      "D": "Post prodüksiyon",
+      "E": "Color grading (Renk sınıflandırma)"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-3de0bb876fb4",
+    "unitNumber": 78,
+    "text": "Aşağıdakilerden hangisi 3B modelleme iş akışında yer alan aşamalardan biri değildir?",
+    "options": {
+      "A": "İşleme (Render)",
+      "B": "Reklam",
+      "C": "Post Prodüksiyon",
+      "D": "Doku Kaplama",
+      "E": "İskelet Oluşturma"
+    },
+    "correctAnswer": "B",
+    "explanation": "Modelleme iş akışı; fikir üretimi, skeç, 3B modelleme, doku kaplama ve animasyon gibi teknik aşamaları içerir. Reklam ise modelleme sürecine dışsal bir etkinliktir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-16e096beb406",
+    "unitNumber": 79,
+    "text": "Rigid Body simülasyonu aşağıdaki hangi nesnelerin animasyonunda kullanılır?",
+    "options": {
+      "A": "Kumaşlar",
+      "B": "Sıvı animasyonları",
+      "C": "Duman animasyonları",
+      "D": "Katı nesneler",
+      "E": "Yumuşak nesneler"
+    },
+    "correctAnswer": "D",
+    "explanation": "Rigid Body simülasyonları, sert ve esnemeyen katı cisimlerin gerçekçi hareketlerini hesaplamak için kullanılır. Bu simülasyon, yerçekimi, çarpışma gibi fiziksel kurallar altında çalışan animasyonlar üretir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-1d29222c1e17",
+    "unitNumber": 80,
+    "text": "Animasyonda renk düzeltme, renk düzenleme, ses, müzik ve montaj işlemlerinin yapıldığı aşama aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Post prodüksiyon",
+      "B": "Montaj",
+      "C": "Efekt",
+      "D": "Ön prodüksiyon",
+      "E": "Miksaj (ses)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Post prodüksiyon, render sonrası işlemleri kapsar. Bu süreçte sahneye ses, renk düzeltmeleri, efektler ve montaj gibi son rötuşlar eklenir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-bb2c1922fbf9",
+    "unitNumber": 38,
+    "text": "Aşağıdakilerden hangisi 3B modelleme sırasında modelin üzerine düzlem bir yüzeyde 2B koordinatlar atayarak 3B nesneler üzerinde detaylı doku kaplama işlemleri yapmayı mümkün hale getiren işlemi ifade etmektedir?",
+    "options": {
+      "A": "UV Haritalama",
+      "B": "Çevresel Perdeleme",
+      "C": "Küresel Aydınlatma",
+      "D": "Doku Pişirme",
+      "E": "Malzeme Atama"
+    },
+    "correctAnswer": "A",
+    "explanation": "UV Haritalama (UV Mapping), 3 boyutlu bir modelin matematiksel düzlemde dikişlerinden (seam) kesilerek 2 boyutlu boş bir kağıt (U ve V koordinatları) üzerine tamamen düzleştirilmesi ve serilmesidir. Kaplama ustaları bu açılmış düz serimin üzerine detaylı resimler ve dokular boyayarak modeli kusursuz biçimde giydirirler.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8ee41a988bef",
+    "unitNumber": 39,
+    "text": "Aşağıdakilerden hangisi “insan gözünün bir görüntüyü izledikten sonra bile bu görüntüyü bir süre daha algılamasıdır” fenomenini ifade etmektedir?",
+    "options": {
+      "A": "Sıkıştırma ve Esnetme (Squash and Stretch)",
+      "B": "Zaman Çizelgesi (Timeline)",
+      "C": "Zamanlama (Timing)",
+      "D": "Görüntünün Sürekliliği (Persistence of Vision)",
+      "E": "Anahtar Kare (Keyframe)"
+    },
+    "correctAnswer": "D",
+    "explanation": "İnsan gözünün, gördüğü bir kareyi saliselik bir süre de olsa retinasında tutmaya devam etmesi “görüntünün sürekliliği” fenomenidir. Hareketli görüntülerin (animasyon ve sinemanın) temelini bu optik illüzyon oluşturur; art arda hızlıca gösterilen sabit resimler beynimizde kesintisiz bir hareket yanılsaması yaratır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9346f81605b6",
+    "unitNumber": 40,
+    "text": "“….., nesnelerin modelleme işlemini hızlandırmak, karmaşık değişiklikler yapmak veya animasyon yapmak için kullanılır. Bükme, eğme, burkma, aynalama onlarcasından yalnızca birkaçına örnek verilebilir.” Cümlede yer alan boşluk için en uygun seçenek aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Izgaralar",
+      "B": "Küresel koordinat sistemi",
+      "C": "Modifikatörler",
+      "D": "Yerel koordinat sistemi",
+      "E": "Poligonlar"
+    },
+    "correctAnswer": "C",
+    "explanation": "Modifikatörler (modifiers), nesnelerin orijinal topolojisine ve alt bileşenlerine kalıcı bir zarar vermeden uygulanan fonksiyonel tasarım araçlarıdır. Modifikatörler yığını aracılığıyla bir objeye kolayca bükme (bend), burkma (twist), yumuşatma (turbosmooth) veya simetri (symmetry/aynalama) uygulanabilir ve istendiğinde bu etkiler geri alınabilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-564f57683b20",
+    "unitNumber": 41,
+    "text": "“Daha çok mühendislik alanındaki 3B modellemede kullanılan…… tekniği, matematiksel eğriler ve yüzeyler kullanarak modeli oluşturur.” Yukarıdaki cümlede boş bırakılan yer için en uygun seçenek aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Doku kaplama",
+      "B": "Box modelleme",
+      "C": "Sculpture (dijital heykel)",
+      "D": "Poligon modelleme",
+      "E": "Nurbs modelleme"
+    },
+    "correctAnswer": "E",
+    "explanation": "NURBS (Non-Uniform Rational B-Splines), poligon yüzeylerden farklı olarak köşeleri bulunmayan, objeyi tamamen pürüzsüz matematiksel eğriler ve denklemler kullanarak hesaplayan bir modelleme tekniğidir. Mükemmel pürüzsüzlük gerektiren havacılık, otomotiv sanayi ve endüstriyel tasarımlarda standart modelleme metodudur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5fcd4a25aae7",
+    "unitNumber": 42,
+    "text": "“Animasyonda nesnenin hareketinin başlangıç ve bitişindeki hız değişimlerinin kontrol edilmesini sağlayan tekniklerdir. Bu teknikler, hareketin doğal görünmesini sağlamak ve nesnenin aniden durup başlamamasını engellemek için kullanılır.” cümlesi aşağıdakilerden hangisinin tanımı olabilir?",
+    "options": {
+      "A": "UV haritalama",
+      "B": "Ara kare (inbetween)",
+      "C": "Yavaşlathızlandır (ease in /ease out)",
+      "D": "Sıkıştırma ve esnetme",
+      "E": "Anahtar kare (keyframe)"
+    },
+    "correctAnswer": "C",
+    "explanation": "Fiziksel dünyada kütlesi olan hiçbir nesne aniden maksimum hıza ulaşmaz ve aniden durmaz. Bu fiziksel gerçekliği yansıtmak adına, animasyonda hareketin başlangıcında yavaşça ivmelenmesi (ease out / slow out) ve hareketin sonunda yavaşlayarak durması (ease in / slow in) prensibi kullanılır. Bu sayede hareketler robotik değil organik ve doğal görünür.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0be83397335e",
+    "unitNumber": 45,
+    "text": "“Objelerin birbirlerinin ışığını engellemesi ve dolayısıyla gölgelerinin oluşumunun farklılaşmasını simüle eder.” cümlesi aşağıdakilerden hangisini tanımlarken kullanılabilir?",
+    "options": {
+      "A": "Doku (texture)",
+      "B": "Çevresel perdeleme (ambient occlusion)",
+      "C": "Poligon modelleme",
+      "D": "Gölgelendirici (shader)",
+      "E": "UV haritalama"
+    },
+    "correctAnswer": "B",
+    "explanation": "Bir önceki soruyla paralel olarak, ambient occlusion (çevresel perdeleme) render esnasında ışık ışınlarının ulaşamadığı dip köşe ve nesne kesişim noktalarında gerçekçi mikro koyuluklar (perdelemeler) oluşturarak derinlik hissini ciddi oranda güçlendiren önemli bir yöntemdir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-df867f25858a",
+    "unitNumber": 46,
+    "text": "“Bu prensip, bir karakterin yapacağı hareket öncesinde, hareketin olacağı yönü ve karakterin niyetini belirten küçük bir hareketin yapılmasıdır. Bu, izleyicinin karakterin ne yapacağını tahmin etmesine yardımcı olur ve karakterin hareketinin daha doğal görünmesini sağlar.” Yukarıdaki cümlede aşağıdaki hangi prensip tanımlanmaktadır?",
+    "options": {
+      "A": "Sahneleme / düzenleme (staging)",
+      "B": "Sıkıştırma &amp; esnetme (squash &amp; stretch)",
+      "C": "İkincil hareket (secondary action)",
+      "D": "Zamanlama (timing)",
+      "E": "Beklenti/hazırlık (anticipation)"
+    },
+    "correctAnswer": "E",
+    "explanation": "Disney’in ünlü 12 animasyon prensibinden biri olan “Beklenti/Hazırlık” (Anticipation); bir ana eylemden önce gerçekleşen zıt yönlü hazırlık hareketidir. Örneğin karakter ileri atılmadan önce geriye doğru eğilir veya fırlatmadan önce kolunu geriye çeker. Bu durum eyleme hem ağırlık ve güç katar hem de izleyicinin dikkatinin çekilmesini sağlar.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-33df3b91ea7f",
+    "unitNumber": 48,
+    "text": "Aşağıdaki işleme elemanlarından (render elements) hangisi gölgeleri daha belirgin hâle getirmek, sahneyi derinleştirmek ve daha gerçekçi bir görünüm elde etmek için kullanılır?",
+    "options": {
+      "A": "Z-depth pass",
+      "B": "Shadow pass",
+      "C": "Matte pass",
+      "D": "Normal pass",
+      "E": "Reflection pass"
+    },
+    "correctAnswer": "B",
+    "explanation": "”Shadow Pass”, sahnedeki gölgeleri ayrı bir katman olarak render eder. Bu, kompozisyon aşamasında gölgelerin yoğunluğunu, rengini ve bulanıklığını bağımsız olarak ayarlayarak daha fazla kontrol ve derinlik elde etmeyi sağlar.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a2450790ba12",
+    "unitNumber": 49,
+    "text": "Aşağıdakilerden hangisinde işleme elemanlarının (render elements) kullanım amacı verilmiştir?",
+    "options": {
+      "A": "Kompozisyon işlemi için gerekli ayrıntıları sağlamak",
+      "B": "Ses düzenlemesi yapmak",
+      "C": "Animasyonda akıcılığı sağlamak",
+      "D": "Renk sınıflandırması yapmak",
+      "E": "Malzeme oluşturmak"
+    },
+    "correctAnswer": "A",
+    "explanation": "İşleme elemanları (Render Elements), bir sahnenin son render’ını yansıma, gölge, ışık gibi farklı katmanlara ayırır. Bu, sanatçıya kompozisyon (birleştirme) aşamasında her bir katman üzerinde tam kontrol imkanı sağlar.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7cbee760dfef",
+    "unitNumber": 50,
+    "text": "Duman ve ateş animasyonları genellikle akışkan fiziği prensiplerine dayalı olarak oluşturulur. Bu tür animasyonlar için çoğunlukla ….. yöntemi kullanılır. Yukarıdaki cümlede boş bırakılan yere aşağıdaki seçeneklerden hangisi gelebilir?",
+    "options": {
+      "A": "ters kinematik",
+      "B": "klasik animasyon",
+      "C": "ileri kinematik",
+      "D": "parenting (hiyerarşi bağlama)",
+      "E": "simülasyon"
+    },
+    "correctAnswer": "E",
+    "explanation": "Duman, ateş, sıvı gibi akışkanların gerçekçi hareketleri, fizik kurallarını hesaplayan ”simülasyon” motorları kullanılarak oluşturulur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c86b2e439ef8",
+    "unitNumber": 51,
+    "text": "…… her bir kemik için karakterin hangi bölümlerinin ne kadar etkileneceğini belirler. Kemiklerin her biri, kendilerine bağlı olan yüzey bölgelerinin deformasyonunu kontrol eder. Yukarıdaki cümlede boş bırakılan yere aşağıdaki seçeneklerden hangisi yazılabilir?",
+    "options": {
+      "A": "Hiyerarşi bağlama (parenting)",
+      "B": "İleri kinematik",
+      "C": "Ağırlık boyama (weight painting)",
+      "D": "Ters kinematik",
+      "E": "Kontrolör"
+    },
+    "correctAnswer": "C",
+    "explanation": "Ağırlık boyama (Weight Painting), bir 3B modelin yüzeyindeki noktaların (vertex), iskeletteki hangi kemikten ne kadar etkileneceğinin belirlendiği işlemdir. Bu sayede deformasyonlar kontrol edilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-94d094b7fc69",
+    "unitNumber": 52,
+    "text": "Bu yaklaşımda, malzeme yüzeyleri ve ışıklandırma gerçekçi fiziksel özellikler kullanılarak hesaplanır. Özellikle doku sanatçılarına daha hızlı bir çözüm sunar ve çeşitli platformlarda daha tutarlı sonuçlar verir. Yukarıdaki cümle aşağıdakilerden hangisini açıklamaktadır?",
+    "options": {
+      "A": "Işın izleme (ray tracing)",
+      "B": "PBR (fiziksel tabanlı işleme)",
+      "C": "IES light",
+      "D": "IBL (görsel tabanlı aydınlatma)",
+      "E": "VFX (visual effects)"
+    },
+    "correctAnswer": "B",
+    "explanation": "PBR (Physically Based Rendering), materyallerin ışıkla gerçek dünyadaki gibi etkileşime girmesini sağlayan bir yaklaşımdır. Fiziksel olarak doğru prensiplere dayandığı için farklı ışık koşullarında tutarlı ve gerçekçi sonuçlar verir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-becc1449fe56",
+    "unitNumber": 53,
+    "text": "……, temel olarak birbirine bağlanan bir dizi eklemden (joint) oluşur. Bu bağlantılar, bir eklemin hareketine bağlı olarak diğer eklemlerin de uyumlu bir şekilde hareket etmesini sağlar. Yukarıdaki cümlede boş bırakılan yere aşağıdakilerden hangisi getirilmelidir?",
+    "options": {
+      "A": "İskelet sistemi",
+      "B": "Doku kaplama",
+      "C": "Kısıtlamalar",
+      "D": "UV haritası",
+      "E": "Malzeme sistemi"
+    },
+    "correctAnswer": "A",
+    "explanation": "Bir karakteri veya nesneyi canlandırmak için kullanılan, hiyerarşik olarak birbirine bağlı eklemler (joints) ve kemikler (bones) bütününe ”iskelet sistemi” (skeleton veya rig) denir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-306d3f441a19",
+    "unitNumber": 56,
+    "text": "Hikayenizin ilk görsel temsilidir. Kamera sahneleme ile ilgili erken fikirleri, olası görsel efektlerin erken temsillerini ve projede yer alacak bazı temel karakter pozlarını veya sahne olaylarını içerir. Kısaca senaryonun görsel öykü biçimidir. Aşağıdakilerden hangisi yukarıdaki ifadede boş bırakılan yer için en doğru seçenektir?",
+    "options": {
+      "A": "3B Modelleme",
+      "B": "karakter tasarımı",
+      "C": "hikaye panosu / tahtası",
+      "D": "senaryo",
+      "E": "ortam tasarımı"
+    },
+    "correctAnswer": "C",
+    "explanation": "Hikaye panosu (Storyboard), bir projenin (animasyon, film vb.) sahnelerinin çekimlerden önce çizimlerle görselleştirildiği bir taslaktır. Senaryonun görsel öykü biçimi olarak tanımlanır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-40b4db74f345",
+    "unitNumber": 57,
+    "text": "Aşağıdakilerden hangisi üç boyutlu nesnelerin pozisyonlarını, rotasyonlarını ve ölçeklerini değiştirme işlemlerine karşılık gelen ifadedir?",
+    "options": {
+      "A": "Izgara sistemi",
+      "B": "Kartezyen koordinat sistemi",
+      "C": "Dönüşüm",
+      "D": "Yerel koordinat sistemi",
+      "E": "Pivot noktası"
+    },
+    "correctAnswer": "C",
+    "explanation": "3B uzayda bir nesnenin konumunu (taşıma), yönünü (döndürme) ve boyutunu (ölçekleme) değiştiren temel işlemlerin tümüne birden ”Dönüşüm” (Transformation) denir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-92033c954f3a",
+    "unitNumber": 59,
+    "text": "Rigging işleminde (iskelet oluşturma) kullanılan kontrolörün (controllers) tanımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Bir nesnenin diğer nesneye bağlanması işlemi",
+      "B": "Ağırlık boyamada (weight paint) kullanılan bir araç",
+      "C": "Doku kaplamada kullanılan önemli bir teknik",
+      "D": "Karakterin hareketlerini kontrol etmek için kullanılan bir nesne veya araç",
+      "E": "Animasyonun hızını belirlemek için kullanılan bir teknik"
+    },
+    "correctAnswer": "D",
+    "explanation": "Kontrolörler (controllers), animatörlerin karmaşık iskelet yapılarını doğrudan manipüle etmek yerine, karakterin hareketlerini kolayca kontrol etmek için kullandıkları basit ve sezgisel nesnelerdir (genellikle eğriler veya şekiller).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f97cb33d9eb4",
+    "unitNumber": 60,
+    "text": "3 Boyutlu Modelleme programlarında belirli bir yöne doğru yoğunlaşmış ışığı temsil eder. Bir el feneri gibi kullanılabilir. Yukarıdaki cümle aşağıdaki ışık türlerinden hangisini açıklamaktadır?",
+    "options": {
+      "A": "Spot light",
+      "B": "Area light",
+      "C": "Directional light",
+      "D": "Point light",
+      "E": "Ambient light"
+    },
+    "correctAnswer": "A",
+    "explanation": "”Spot light” (spot ışık), tek bir noktadan çıkarak koni şeklinde belirli bir alana yayılan ışık türüdür. Tıpkı bir el feneri veya sahne spotu gibi çalışır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a344bce5f337",
+    "unitNumber": 62,
+    "text": "Aşağıdakilerden hangisi animasyonda post prodüksiyon ve kompozisyon aşamasında kullanılan yazılımlardan biri değildir?",
+    "options": {
+      "A": "Nuke",
+      "B": "After effects",
+      "C": "Davinci resolve",
+      "D": "Fusion",
+      "E": "Zbrush"
+    },
+    "correctAnswer": "E",
+    "explanation": "Zbrush, dijital heykel modelleme yazılımıdır, post prodüksiyon ve kompozisyon işlemleri için kullanılmaz.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-90641aa0622e",
+    "unitNumber": 63,
+    "text": "“Dolaylı aydınlatma, genel aydınlatma üzerinde çok güçlü bir etkiye sahiptir. Pencerelerden ve yapay kaynaklardan gelen ışık duvarlardan, masalardan, sandalyelerden ve odadaki diğer her şeyden yansır.“ cümlesinde bahsedilen teknik aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "RT (Raytracing - Işın İzleme)",
+      "B": "Ambient Light (Çevre Işığı)",
+      "C": "AO (Ambient Occlusion - Çevresel Perdeleme)",
+      "D": "IBL (Image Based Lighting - Görüntü Temelli Işıklandırma)",
+      "E": "GI (Global illumination - Küresel Aydınlatma)"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-62474a35889a",
+    "unitNumber": 64,
+    "text": "Aşağıdakilerden hangisi bir simülasyon tekniği değildir?",
+    "options": {
+      "A": "Rigid Body",
+      "B": "Sculpting",
+      "C": "Fluids",
+      "D": "Soft Body",
+      "E": "Cloth"
+    },
+    "correctAnswer": "B",
+    "explanation": "Sculpting (heykel) bir modelleme tekniğidir, simülasyon ile doğrudan ilgili değildir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d3a8382f3837",
+    "unitNumber": 65,
+    "text": "Parçacık sistemlerinde partikülleri yollarından saptırmaya yarayan araçlara ne isim verilmektedir?",
+    "options": {
+      "A": "Cloth Sim",
+      "B": "Rigid Body",
+      "C": "Deflektör",
+      "D": "Soft Body",
+      "E": "UV Map"
+    },
+    "correctAnswer": "C",
+    "explanation": "Deflektörler, parçacık sistemlerinde partiküllerin belirli nesnelerle çarpışmasını ve yön değiştirmesini sağlar.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5c47e06e29fe",
+    "unitNumber": 67,
+    "text": "Aşağıdakilerden hangisi bir nesnenin diğer bir nesneye bağlanarak onun rotasyonunu (dönme) takip etmesini sağlar, ifadesinde açıklanmıştır?",
+    "options": {
+      "A": "Ölçeklendirme kısıtlaması (Scale constraint)",
+      "B": "Kamera kısıtlaması (Camera constraint)",
+      "C": "Pozisyon kısıtlaması (Position constraint)",
+      "D": "Oryantasyon kısıtlaması (Orientation constraint)",
+      "E": "Bakış kısıtlaması (Look at constraint)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Orientation constraint, bir nesnenin diğer bir nesneye bağlanarak onun yönelimini takip etmesini sağlar.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-90d8f802ac18",
+    "unitNumber": 69,
+    "text": "“Modelin yüzeyinin fiziksel özelliklerini belirleyen dosyalardır.“ açıklaması aşağıdaki seçeneklerden hangisine aittir?",
+    "options": {
+      "A": "Post-tulum çıkarma (pelt mapping)",
+      "B": "Açma (unwrapping)",
+      "C": "Çevresel perdeleme (ambient occlusion)",
+      "D": "Malzeme haritası (material map)",
+      "E": "Doku pişirme"
+    },
+    "correctAnswer": "D",
+    "explanation": "Malzeme haritası, bir modelin yüzeyine uygulanan dokular ve ışıklandırma bilgilerini içeren bir dosya türüdür.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  }
+]

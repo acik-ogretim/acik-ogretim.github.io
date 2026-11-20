@@ -1,1 +1,3714 @@
-[]
+[
+  {
+    "id": "s-d930748630ec",
+    "unitNumber": 1,
+    "text": "Örneklem almanın motivasyonu aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Veri kümesini karmaşık hale getirmek",
+      "B": "Küçük veri setlerini işleme gerekliliği",
+      "C": "Maliyetli veya zaman alıcı analizleri kolaylaştırmak",
+      "D": "Veri analizini örneklerle daha kolay anlamak",
+      "E": "Veri madenciliği algoritmalarını artırmak"
+    },
+    "correctAnswer": "C",
+    "explanation": "Büyük veri (Big Data) setlerinde popülasyonun (ana kitlenin) tamamını incelemek hesaplama gücü açısından aşırı zaman alıcı ve pahalıdır. Bu devasa veriyi temsil edebilecek, istatistiksel olarak anlamlı küçük bir alt küme (örneklem) seçilerek, analizlerin çok daha hızlı, düşük maliyetli ve kolay bir şekilde gerçekleştirilmesi sağlanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f021812c6ea4",
+    "unitNumber": 2,
+    "text": "Aşağıdakilerden hangisi bir sürekli değişken örneğidir?",
+    "options": {
+      "A": "Bir öğrencinin sınav sonucu",
+      "B": "Bir kişinin doğum tarihi",
+      "C": "Bir kitabın yayın tarihi",
+      "D": "Bir restoranın haftalık ziyaretçi sayısı",
+      "E": "Bir otomobilin yakıt tüketimi"
+    },
+    "correctAnswer": "E",
+    "explanation": "Sürekli değişkenler, belirli bir aralıktaki ondalıklı veya kesirli değerler dahil olmak üzere sonsuz sayıda değer alabilen, ölçümle elde edilen değişkenlerdir. Otomobilin yakıt tüketimi (örneğin 5.4 litre, 6.25 litre gibi) küsuratlı değerler alabileceği için sürekli değişkendir. Ziyaretçi sayısı kesikli, doğum ve yayın tarihleri ise zaman/kategorik değişkenlerdir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-65a25e26cf10",
+    "unitNumber": 3,
+    "text": "Veri birleştirme işlemi yapılırken detayların kaybolma riski hangi durumda daha yüksektir?",
+    "options": {
+      "A": "Yıllık bazda verileri birleştirme",
+      "B": "Günlük bazda verileri birleştirme",
+      "C": "Aylık bazda verileri birleştirme",
+      "D": "Çeyreklik bazda verileri birleştirme",
+      "E": "Haftalık bazda verileri birleştirme"
+    },
+    "correctAnswer": "A",
+    "explanation": "Veri toplama/birleştirme (aggregation) işleminde, verinin gruplandırıldığı zaman aralığı ne kadar genişlerse, verinin içindeki anlık dalgalanmalar ve kısa vadeli detaylar o kadar kaybolur. Günlük verilerde detay çok yüksektir, ancak tüm verileri koca bir yıla toplayıp özetlediğinizde mevsimsel etkiler ve anlık detaylar tamamen gözden kaybolur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-6c235460fa0a",
+    "unitNumber": 4,
+    "text": "Aşağıdakilerden hangisi kök ve yaprak grafiklerinin bir özelliğidir?",
+    "options": {
+      "A": "Değerlerin yoğunluğunu belirtmek için alan oranlarına dayanır.",
+      "B": "Yalnızca kategorik veriler için uygundur.",
+      "C": "Eşit genişlikte bölümlere ayrılır ve her bölümdeki değerler sayılır.",
+      "D": "Sadece sürekli veriler için kullanılır.",
+      "E": "Her bir değer kendi grubunu oluşturur."
+    },
+    "correctAnswer": "C",
+    "explanation": "Kök ve yaprak grafikleri (Stem-and-leaf plot), sayısal verilerin dağılımını gösteren bir histograma benzer. Veriler kök (onlar veya yüzler basamağı) ve yaprak (birler basamağı) olarak ayrılır. Her kök eşit genişlikte bir sınıf aralığını temsil eder ve o aralığa düşen gerçek yaprak değerleri teker teker yazılarak sayısal yoğunluk görünür hale getirilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ea4af17e82c4",
+    "unitNumber": 5,
+    "text": "Aşağıdakilerden hangisi yapısal veri örneği değildir?",
+    "options": {
+      "A": "Bir blog yazısının metni",
+      "B": "Bir müşterinin telefon numarası",
+      "C": "Bir müşterinin adı ve soyadı",
+      "D": "Bir ürünün fiyatı",
+      "E": "Bir öğrencinin doğum tarihi"
+    },
+    "correctAnswer": "A",
+    "explanation": "Yapısal veriler; satır ve sütunlar halinde organize edilebilen, veri tabanlarında (SQL) kolayca saklanabilen belirli formatlara sahip verilerdir (telefon, isim, fiyat). Ancak bir blog yazısının metni, e-postalar veya videolar serbest formattadır ve geleneksel veri tabanı kurallarına uymazlar; bu nedenle “yapısal olmayan” (unstructured) veri olarak adlandırılırlar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2426442e9237",
+    "unitNumber": 6,
+    "text": "Aşağıdaki ifadelerden hangisi tanımlayıcı istatistiklerde frekans ve mod ile ilgili doğrudur?",
+    "options": {
+      "A": "Mod, veri setinde bir değerin en az sık (seyrek) görülen değeridir.",
+      "B": "Frekans, veri setindeki en küçük değeri ifade eder.",
+      "C": "Frekans, bir veri setinde belirli bir değerin kaç kez tekrarlandığını gösterir.",
+      "D": "Mod, veri setindeki tüm değerlerin ortalamasıdır.",
+      "E": "Mod, veri setinde en az sık görülen değerin frekans değeridir."
+    },
+    "correctAnswer": "C",
+    "explanation": "İstatistikte “Frekans”, belirli bir olayın veya değerin bir veri seti içerisinde kaç defa ortaya çıktığını (sıklığını) ifade eder. Mod ise frekansı en yüksek olan, yani en çok tekrar eden değerin ta kendisidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-754c9caded3f",
+    "unitNumber": 7,
+    "text": "I. Veri madenciliğinde hipotez testleri, elde edilen veri örüntülerinin istatistiksel olarak anlamlı olup olmadığını değerlendirir. II. Hipotez testleri, değişkenler arasındaki ilişkilerin istatistiksel anlamılığını değerlendirmek için kullanılabilir. III. Hipotez testleri, veri madenciliğinde kullanılan algoritmaların doğruluğunu belirlemek için kullanılır. Hipotez testleri ile ilgili yukarıdaki ifadelerden hangisi veya hangileri doğrudur?",
+    "options": {
+      "A": "Yalnız III",
+      "B": "I ve II",
+      "C": "I ve III",
+      "D": "II ve III",
+      "E": "Yalnız I"
+    },
+    "correctAnswer": "B",
+    "explanation": "İstatistiksel hipotez testleri, verilerde tesadüfen mi yoksa gerçek bir nedene bağlı olarak mı bir örüntü veya ilişki oluştuğunu (istatistiksel anlamlılığı) ölçmek için kullanılır. Bu sayede I. ve II. öncüller doğrudur. Ancak algoritmaların performansını veya tahmin doğruluğunu ölçmek için hipotez testleri değil, karışıklık matrisi, doğruluk oranı, ROC eğrisi gibi makine öğrenmesi değerlendirme metrikleri kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-c0ed3251cc36",
+    "unitNumber": 8,
+    "text": "Bir araştırmacı, bir otomobilin hızı ile yakıt tüketimi arasındaki ilişkiyi incelemek için korelasyon analizi yapmaktadır. Araştırmacı bu iki değişken arasında pozitif bir korelasyon olduğunu bulursa bunun anlamı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Otomobilin hızı arttıkça yakıt tüketimi de artar.",
+      "B": "Otomobilin hızı ile yakıt tüketimi arasında herhangi bir ilişki",
+      "C": "Otomobilin hızı ile yakıt tüketimi arasındaki ilişki tamamen rastlantısaldır.",
+      "D": "Otomobilin hızı düştükçe yakıt tüketimi artar.",
+      "E": "Otomobilin hızı arttıkça yakıt tüketimi azalır."
+    },
+    "correctAnswer": "A",
+    "explanation": "Pozitif korelasyon, iki değişkenin aynı yönde birlikte hareket ettiğini gösterir. Yani bağımsız değişkenin (hız) değeri arttığında, bağımlı değişkenin (yakıt tüketimi) değeri de doğrusal olarak artış gösterir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c8ac9a3197e5",
+    "unitNumber": 9,
+    "text": "Aşağıdakilerden hangisi çoklu doğrusal regresyon analizinin bir özelliğidir?",
+    "options": {
+      "A": "Yalnızca sürekli değişkenlerle çalışır.",
+      "B": "Sadece kategorik değişkenlerle çalışır.",
+      "C": "Yalnızca bir bağımsız değişkenin bağımlı değişken üzerindeki etkisini incelemek için kullanılır.",
+      "D": "Sadece bağımlı değişkenin değerlerini kullanarak tahminler yapar.",
+      "E": "Birden fazla bağımsız değişkenin bağımlı değişken üzerindeki etkilerini incelemek için kullanılır."
+    },
+    "correctAnswer": "E",
+    "explanation": "Regresyon analizi, değişkenler arasındaki ilişkiyi modellemek için kullanılır. Basit doğrusal regresyon tek bir bağımsız değişken kullanırken, çoklu doğrusal regresyon, bağımlı değişkeni tahmin etmek veya açıklamak için birden fazla bağımsız değişkenin aynı anda modele dahil edilmesine olanak tanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-87e82c96da4e",
+    "unitNumber": 10,
+    "text": "Lojistik regresyonda en uygun eğriyi bulmak için aşağıdaki yöntemlerden hangisi kullanılır?",
+    "options": {
+      "A": "En olası tahmin",
+      "B": "Logaritmik dönüşüm",
+      "C": "Gradyan inişi",
+      "D": "S şeklindeki eğri",
+      "E": "En küçük kareler"
+    },
+    "correctAnswer": "A",
+    "explanation": "Klasik doğrusal regresyonda model parametreleri genellikle “En Küçük Kareler” yöntemiyle bulunurken; lojistik regresyonda katsayıları hesaplamak ve verilere en uygun S şeklindeki sigmoid eğrisini oturtmak için En Çok Olabilirlik / Maksimum Olabilirlik Tahmini (Maximum Likelihood Estimation) adı verilen istatistiksel yöntem kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ae4e0748b630",
+    "unitNumber": 11,
+    "text": "Bir şirket, pazarlama stratejilerini optimize etmek için veri madenciliği yöntemlerini kullanıyor. Yeni bir reklam kampanyası başlatmadan önce, müşterilerin geçmiş alışveriş alışkanlıklarını analiz etmek istiyorlar. Bu amaçla, mevcut müşteri veri seti üzerinde bir model oluşturulmuştur. Şirket, oluşturulan modelin gerçek dünya verileriyle ne kadar uyumlu olduğunu belirlemek için hangi teknikleri kullanmalıdır?",
+    "options": {
+      "A": "Örüntü Tanıma",
+      "B": "Tahmin ve Karar Destek",
+      "C": "Modelleme",
+      "D": "Ön İşleme",
+      "E": "Doğrulama ve Değerlendirme"
+    },
+    "correctAnswer": "E",
+    "explanation": "Veri madenciliğinde bir tahmin modeli oluşturulduktan sonra, bu modelin daha önce hiç görmediği yeni (gerçek dünya) veriler üzerinde ne kadar doğru ve başarılı çalışacağını test etmek zorunludur. Modelin güvenilirliğini ölçen bu aşamaya Doğrulama (Validation) ve Değerlendirme (Evaluation) denir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3e49f0f333f6",
+    "unitNumber": 12,
+    "text": "Aşağıdakilerden hangisi binomial cevaplara örnektir?",
+    "options": {
+      "A": "Okul notları ve öğrenci katılımı",
+      "B": "İşe alma veya almama kararı",
+      "C": "Ürünün fiyatı ve kalitesi",
+      "D": "Şehirler arası mesafe ve seyahat süresi",
+      "E": "Doğal afetler ve etkilenen bölge sayısı"
+    },
+    "correctAnswer": "B",
+    "explanation": "Binomial (iki terimli) değişkenler, yalnızca iki olası sonucu veya durumu olan kategorik değişkenlerdir (Evet/Hayır, Geçti/Kaldı, Var/Yok). “İşe alma veya almama kararı” sadece bu iki net sonuca sahip olduğu için klasik bir binomial değişkendir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-30bca6d89294",
+    "unitNumber": 13,
+    "text": "Öznitelik ayrıklaştırması aşağıdakilerden hangisini içerir?",
+    "options": {
+      "A": "Sürekli değişkenleri ikili hale getirme",
+      "B": "Sürekli bir değişkenin kategorik bir değişkene dönüştürülmesi",
+      "C": "Veri setindeki her kategorik değeri bir sayıya eşleme",
+      "D": "Veri setindeki her değeri bir aralığa atama",
+      "E": "Kategorik bir değişkenin sürekli hale getirilmesi"
+    },
+    "correctAnswer": "B",
+    "explanation": "Veri ön işlemede kullanılan ayrıklaştırma (discretization) işlemi, geniş ve sürekli değerler alan sayısal bir değişkenin aralıklara bölünerek gruplandırılması ve bu aralıkların kategorik etiketlere dönüştürülmesidir (Örneğin: Yaş değerlerini Genç, Orta Yaşlı, Yaşlı gibi kategorilere ayırmak).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c5d39d66e181",
+    "unitNumber": 14,
+    "text": "Değiştirme olmadan örneklem alma yöntemi nedir?",
+    "options": {
+      "A": "Örneklemde her bir öğenin seçilme olasılığının eşit olduğu yöntem",
+      "B": "Öğelerin veri kümesinden çıkarılmadığı, aynı öğenin birden fazla seçilebildiği yöntem",
+      "C": "Öğelerin değerlerinin değiştirmeden kullanıldığı yöntem",
+      "D": "Seçilen her öğenin veri kümesinden çıkarıldığı yöntem",
+      "E": "Öğelerin eşit sayıda seçildiği yöntem"
+    },
+    "correctAnswer": "D",
+    "explanation": "İstatistikte “Yerine koymadan örneklem alma” (Sampling without replacement), ana kitleden seçilen bir elemanın örnekleme dâhil edildikten sonra tekrar ana kitleye (veri kümesine) geri konulmamasıdır. Bu sayede aynı öğenin ikinci kez seçilme ihtimali tamamen ortadan kalkar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-278253d933af",
+    "unitNumber": 15,
+    "text": "Bir üretim hattında çalışan mavi yakalıların işleri konusunda aldıkları eğitimin süresinin (saat cinsinden), günde hatasız ürettikleri parça sayısı üzerindeki etkisi tahmin edilmek isteniyor. Bu amaçla örneklem alınan 8 çalışan için toplanan veriler yukarıdaki gibidir. Yukarıdaki bilgilere göre 6 saat eğitim alan bir çalışanın üreteceği hatasız ürün sayısı, regresyon analiziyle tahmin edildiğinde aşağıdakilerden hangisi doğru olur?",
+    "options": {
+      "A": "9",
+      "B": "7",
+      "C": "6",
+      "D": "10",
+      "E": "8"
+    },
+    "correctAnswer": "D",
+    "explanation": "Bu sorunun çözümü, 16. sorudaki regresyon denklemi bulunduktan sonra yapılabilir. Verilere göre hesaplanan regresyon denklemi Y = 0.625 1.5X şeklindedir. Tahmin için eğitim süresi olan X yerine 6 koyduğumuzda: Y = 0.625 (1.5 * 6) => Y = 0.625 9 = 9.625 elde edilir. Tam sayıya yuvarlandığında sonuç 10 olarak tahmin edilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8a167c3e9a99",
+    "unitNumber": 16,
+    "text": "Saçılım grafiği ile ilgili aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Noktaların rastgele dağılması, değişkenler arasında bir ilişki olmadığını gösterir.",
+      "B": "Y ekseni bağımlı değişkeni temsil eder.",
+      "C": "Aykırı değerleri görmek için kullanılamaz.",
+      "D": "Doğru boyunca düzenlenmiş noktalar, değişkenler arasında bir ilişki olduğunu gösterir.",
+      "E": "X ekseni bağımsız değişkeni temsil eder."
+    },
+    "correctAnswer": "C",
+    "explanation": "Saçılım grafikleri (Scatter plots), iki sayısal değişken arasındaki ilişkiyi ve korelasyonu görselleştirmek için mükemmeldir. Bu grafikler aynı zamanda genel veri eğiliminden çok uzakta, izole edilmiş noktaları (aykırı değerleri / outliers) görsel olarak tespit etmenin en kolay ve etkili yollarından biridir. Bu nedenle C şıkkı kesinlikle yanlıştır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-83b2ae18d816",
+    "unitNumber": 17,
+    "text": "Aşağıdaki özet istatistiklerden hangisi veri setinin genel dağılımı hakkında temel bir fikir verir, ancak tüm değerleri dikkate almaz?",
+    "options": {
+      "A": "Medyan",
+      "B": "Varyans",
+      "C": "Mod",
+      "D": "Ortalama",
+      "E": "Aralık"
+    },
+    "correctAnswer": "E",
+    "explanation": "Aralık (Range), bir veri setindeki en büyük değer ile en küçük değer arasındaki farktır. Verinin ne kadar geniş bir alana yayıldığına dair temel bir fikir verir, ancak aradaki diğer hiçbir değeri (merkezi yığılımı veya frekansları) hesaba katmaz. Sadece uç noktalara odaklanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0eb694d646e4",
+    "unitNumber": 18,
+    "text": "Veri madenciliği, aşağıdakilerden hangisini ifade eder?",
+    "options": {
+      "A": "Sadece yapısal verilerin analiz edilmesi",
+      "B": "Veri setlerinden değerli bilgilerin çıkarılması için kullanılan bir dizi teknik ve yöntem bütünü",
+      "C": "Veri analizinde kullanılan tek bir teknik",
+      "D": "Sadece işletmelerin stratejik kararları için kullanılan bir araç",
+      "E": "Sadece sağlık sektöründe kullanılan bir yöntem"
+    },
+    "correctAnswer": "B",
+    "explanation": "Veri madenciliği, devasa büyüklükteki veri yığınları içerisindeki gizli kalmış, daha önce bilinmeyen, geçerli ve eyleme dönüştürülebilir değerli örüntüleri (paternleri) ve ilişkileri keşfetmek için yapay zeka, makine öğrenmesi ve istatistiksel algoritmaları bir arada kullanan çok disiplinli geniş bir yöntemler bütünüdür.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3666fad2640a",
+    "unitNumber": 19,
+    "text": "Aşağıdakilerden hangisi boyut azaltmanın avantajları ile ilgili doğru bir bilgidir?",
+    "options": {
+      "A": "Veri manipülasyonuna ihtiyaç yoktur.",
+      "B": "Model performansını sabit tutar.",
+      "C": "Gürültülü verileri artırarak kapsamlı analize imkân verir.",
+      "D": "Veri işleme sürelerini kısaltır.",
+      "E": "Depolama alanı gereksinimlerine ihtiyacı yoktur."
+    },
+    "correctAnswer": "D",
+    "explanation": "Veri madenciliğinde boyut azaltma (PCA vb.), modelin öğrenmesi gereken öznitelik (sütun/değişken) sayısını azaltarak gereksiz ve tekrar eden bilgileri eler. Daha az ve öz veri ile çalışan algoritmaların hesaplama yükü hafifler, bu da veri işleme ve model eğitim sürelerini önemli ölçüde kısaltır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1cf6c03f773d",
+    "unitNumber": 45,
+    "text": "I={Şeker, Kalem, Un, Silgi, Su} kümesinde {Kalem, Silgi} ögelerinin seyrek öge kümesi olduğu durumda aşağıdakilerden hangisi sık öge kümesinde yer alır?",
+    "options": {
+      "A": "{Şeker, Kalem, Silgi}",
+      "B": "{Kalem, Un, Silgi, Su}",
+      "C": "{Şeker, Kalem, Su}",
+      "D": "{Kalem, Su, Silgi}",
+      "E": "{Şeker, Kalem, Un, Silgi}"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1580eb262965",
+    "unitNumber": 46,
+    "text": "Duygu analizi hangi soruya cevap vermeye çalışmaktadır?",
+    "options": {
+      "A": "İnsanlar belirli bir konuda ne hissediyor?",
+      "B": "Hangi ürün en pahalı?",
+      "C": "Hangi insanlar duygusal yakınlık içinde?",
+      "D": "Hangi ürün en çok beğeniliyor?",
+      "E": "Hangi ürünler en çok satılıyor?"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-31cf81089c51",
+    "unitNumber": 47,
+    "text": "K-ortalamalar algoritmasında küme merkezini hesaplamak için hangi yöntem kullanılır?",
+    "options": {
+      "A": "Manhattan mesafesi kullanılarak belirlenir.",
+      "B": "Tüm veri noktalarının aritmetik ortalaması hesaplanır.",
+      "C": "Her veri noktasının en yakın merkeze olan uzaklıklarının toplamı alınır.",
+      "D": "Her veri noktasının en yakın merkeze olan Öklidyen mesafesinin karesi alınır.",
+      "E": "Kosinüs benzerliği kullanılarak belirlenir."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8a1e7d520505",
+    "unitNumber": 48,
+    "text": "Sigmoid fonksiyonunun S şeklindeki eğrisi neyi temsil eder?",
+    "options": {
+      "A": "Doğrusal regresyonun sürekli değerlerini",
+      "B": "Doğrusal kombinasyonun çıktısını",
+      "C": "Negatif girdi değerlerini",
+      "D": "Türevlenebilirlik özelliğini",
+      "E": "Doğrusal kombinasyonun çıktısının olasılıksal yorumunu"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-67e981eef1ea",
+    "unitNumber": 49,
+    "text": "F1 skoru hangi metriklerin harmonik ortalamasıdır?",
+    "options": {
+      "A": "Doğruluk, hassasiyet ve duyarlılık",
+      "B": "Doğruluk ve güven",
+      "C": "Doğruluk ve duyarlılık",
+      "D": "Doğruluk ve hassasiyet",
+      "E": "Hassasiyet ve duyarlılık"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1c1aeb894e4a",
+    "unitNumber": 50,
+    "text": "K değeri çift bir sayı olarak belirlendiğinde bir K-NN algoritmasında ne gibi bir sorun ortaya çıkabilir?",
+    "options": {
+      "A": "Modelin tahmin doğruluğu artar.",
+      "B": "Küme sayısı belirsiz hâle gelir.",
+      "C": "Modelin hesaplama yoğunluğu artar.",
+      "D": "Eşit sayıda en yakın sınıfın oy kullanması durumunda karar verme belirsizleşir.",
+      "E": "K değeri arttıkça modelin performansı azalır."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-6f9c414aafd8",
+    "unitNumber": 51,
+    "text": "Birliktelik kuralı keşfi için kullanılan strateji aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Tüm olası kural için güveni hesaplamak",
+      "B": "Tüm olası kural için destek ve güveni hesaplamak",
+      "C": "Minimum destek eşiği belirlemek",
+      "D": "Minimum destek ve minimum güven eşik değerlerini belirlemek",
+      "E": "Sık öge kümesi üretimi ve kural üretimi"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7191b894ca39",
+    "unitNumber": 52,
+    "text": "Aşağıdaki durumların hangisinde binomial lojistik regresyon kullanılır?",
+    "options": {
+      "A": "İkili bir yanıt değişkeni için",
+      "B": "Tahmin edici değişkenlerin doğrusal ilişkisi için",
+      "C": "Sıralı kategorilere sahip olan yanıt değişkeni için",
+      "D": "Heteroskedastisite gösteren hatalar için",
+      "E": "İki veya daha fazla sınıf içeren yanıt değişkeni için"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d979043f219c",
+    "unitNumber": 53,
+    "text": "Sıralı kategorilere sahip olan bir yanıt değişkeni için kullanılan lojistik regresyon türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Binomial lojistik regresyon",
+      "B": "Poisson regresyon",
+      "C": "Lineer regresyon",
+      "D": "Ordinal lojistik regresyon",
+      "E": "Multinomial lojistik regresyon"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d94287715fd3",
+    "unitNumber": 54,
+    "text": "Bir sınıflandırma modeli ne amaçla kullanılır?",
+    "options": {
+      "A": "Nesneleri farklı sınıflara ayırt etmek ve bilinmeyen kayıtların sınıflarını tahmin etmek için",
+      "B": "Nesneleri farklı sınıflara ayırt etmek ve bilinmeyen kayıtlara yeni sınıflar bulmak için",
+      "C": "Öznitelikleri özetlemek ve bu özniteliklerin bir müşterinin hangi sınıfa ait olduğunu açıklamak için",
+      "D": "Öznitelikleri özetlemek ve bu özniteliklerin bir iris çiçeğinin hangi sınıfa ait olduğunu açıklamak için",
+      "E": "Öznitelikleri özetlemek ve bu özniteliklerin bir galaksinin şekline göre sınıflandırılmasını açıklamak için"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-9429afc53fc7",
+    "unitNumber": 55,
+    "text": "I={Şeker, Kalem, Un, Silgi, Su} kümesinden oluşturulan {Şeker, Kalem, Un}→{Silgi} kuralı düşük güven oranlı bir kuralsa aşağıdaki kurallardan hangisi düşük oranlı bir kuraldır?",
+    "options": {
+      "A": "{Şeker, Silgi}&rarr;{Kalem, Un}",
+      "B": "{Kalem, Silgi}&rarr;{Şeker, Un}",
+      "C": "{Şeker, Kalem}&rarr;{Un, Silgi}",
+      "D": "{Şeker, Kalem, Su}&rarr;{Un}",
+      "E": "{Silgi}&rarr;{Şeker, Kalem, Un}"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a48ec71e9052",
+    "unitNumber": 56,
+    "text": "Kendi kendini organize eden haritalar yönteminin hangi özelliği diğer yapay sinir ağlarından farklıdır?",
+    "options": {
+      "A": "Hataları düzelterek öğrenir.",
+      "B": "Rekabetçi öğrenmeyi uygular ve komşuluk fonksiyonu kullanır.",
+      "C": "Gizli katmanlara sahiptir.",
+      "D": "İleri beslemeli ağlardır.",
+      "E": "Geri yayılım algoritmasını kullanır."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b338e38f9baf",
+    "unitNumber": 57,
+    "text": "Metin madenciliği ile ilgili hangi yöntem, metindeki her kelimenin bir vektör içinde temsil edildiği bir modeldir?",
+    "options": {
+      "A": "Enformasyon çıkarma",
+      "B": "Kelime gömme",
+      "C": "Kök çıkarma",
+      "D": "Durak kelimeler",
+      "E": "Terim frekansı-Ters belge frekansı (TF-IDF)"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4afb88df3473",
+    "unitNumber": 59,
+    "text": "Prototip temelli bir küme nedir?",
+    "options": {
+      "A": "Her veri noktasının birden fazla kümeyle ilişkilendirilebileceği prototip bir model",
+      "B": "Belirli bir belirsizlik düzeyinde birden fazla kümeye ait olabilecek bir model",
+      "C": "Her bir veri noktasının tek elemanlı prototip kümelerine karşılık gelmesi",
+      "D": "Her bir nesnenin, kümenin tanımını yapan prototipe, diğer herhangi bir kümenin prototipi yerine daha yakın olduğu bir nesne kümesi",
+      "E": "Her bir nesnenin sadece bir kümeye ait olduğu bir model"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f6d31e039b72",
+    "unitNumber": 60,
+    "text": "Metin madenciliği hangi ana konuya odaklanır?",
+    "options": {
+      "A": "Kelime dağarcığı analizi",
+      "B": "Enformasyon geri alma",
+      "C": "Metinsel veri kaynaklarından yeni ve faydalı bilgi keşfetme",
+      "D": "Doğal dil işleme",
+      "E": "Duygu analizi"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a14a6d3cea5b",
+    "unitNumber": 61,
+    "text": "Aşağıdaki işlemlerden hangisi basit fonksiyonel dönüşümlere bir örnektir?",
+    "options": {
+      "A": "Değişkenlerin orijinal dağılımını koruma",
+      "B": "Mutlak değer alma",
+      "C": "Değişkenlerin boyutunu azaltma",
+      "D": "Değişkenler arasındaki korelasyonu analiz etme",
+      "E": "Veri setindeki tüm değişkenleri alfabetik sıralama"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-04da8fa06c7b",
+    "unitNumber": 20,
+    "text": "Lojistik regresyonun doğrusal regresyondan farkı nedir?",
+    "options": {
+      "A": "Lojistik regresyon daha karmaşık problemler için kullanılırken doğrusal regresyon hesaplaması kolay olan problemler için daha uygundur.",
+      "B": "Lojistik regresyon kategorik bir sonucun olasılığını hesaplar, doğrusal regresyon ise sürekli bir değeri tahmin eder.",
+      "C": "Lojistik regresyon ve doğrusal regresyon arasında bir fark yoktur.",
+      "D": "Lojistik regresyon sadece bir bağımsız değişkene dayanır, doğrusal regresyon ise birden fazla bağımsız değişkene dayanır.",
+      "E": "Doğrusal regresyon, lojistik regresyonun genelleştirilmiş hâlidir."
+    },
+    "correctAnswer": "B",
+    "explanation": "Lojistik regresyon, sınıflandırma problemleri için uygundur ve kategorik sonuçların olasılığını hesaplar. Doğrusal regresyon ise sürekli değerlerin tahmini için kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-ecf8cd3c7dd3",
+    "unitNumber": 21,
+    "text": "Bir belgenin ana temalarını belirleme ve bu temellere dayalı olarak belgeyi önceden belirlenmiş bir kategori setine yerleştirmeyi içeren metin madenciliği adımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Kategorizasyon",
+      "B": "Özetleme",
+      "C": "Enformasyon çıkarma",
+      "D": "Konu takibi",
+      "E": "Kümeleme"
+    },
+    "correctAnswer": "A",
+    "explanation": "Kategorizasyon, bir belgenin ana temalarını belirleme ve bu temellere dayalı olarak belgeyi belirli kategorilere yerleştirme işlemidir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-50529cc813cf",
+    "unitNumber": 22,
+    "text": "I={a,b,c,d,e} kümesinde {b,d} ögelerinin seyrek öge kümesi olduğu durumda aşağıdakilerden hangisi sık öge kümesinde yer alır?",
+    "options": {
+      "A": "{a,b,c,d,e}",
+      "B": "{a,b,c,d}",
+      "C": "{a,b,e}",
+      "D": "{b,c,d,e}",
+      "E": "{a,b,d}"
+    },
+    "correctAnswer": "C",
+    "explanation": "{a,b,e} kümesi, b ve d öğelerinin seyrek olduğu bir durumda daha sık bir öge kümesi olabilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-51e5c3d7e1bd",
+    "unitNumber": 23,
+    "text": "Kategorik bir özniteliğin ikili hâle getirilmesinde en yaygın kullanılan yöntem aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Her kategori için bir sütun oluşturma",
+      "B": "Tek vuruş kodlaması",
+      "C": "Tüm kategorik değerleri bir sütunda birleştirme",
+      "D": "Kategorik değerlerin sıralamasını kullanma",
+      "E": "Her kategori için yalnızca bir sütun oluşturma"
+    },
+    "correctAnswer": "B",
+    "explanation": "Tek vuruş kodlaması, kategorik bir özniteliği ikili hâle getirmenin en yaygın yöntemlerinden biridir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-e5f74885febe",
+    "unitNumber": 24,
+    "text": "Metin madenciliğinde belirli kategorilere sınıflandırmak veya doğal gruplara kümelendirmek için kullanılan ve kelimelerin sırasını veya dil bilgisini dikkate almayan temsil modeline ne ad verilir?",
+    "options": {
+      "A": "Terim frekansı-Ters belge frekansı (TF-IDF)",
+      "B": "Kök çıkarma",
+      "C": "Doğal dil işleme",
+      "D": "Kelime torbası",
+      "E": "Lemmatizasyon"
+    },
+    "correctAnswer": "D",
+    "explanation": "Kelime torbası, kelimelerin sırası ve dil bilgisi dikkate alınmaksızın metni temsil eden bir modeldir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-d77d1c1e9642",
+    "unitNumber": 25,
+    "text": "Lojistik regresyonda logit dönüşümü hangi amaçla kullanılır?",
+    "options": {
+      "A": "Modelin karmaşıklığını artırmak için",
+      "B": "Yorumlama ve performans değerlendirmesini karmaşık hâle getirmek için",
+      "C": "Sonuçları daha karmaşık hâle getirmek için",
+      "D": "Olasılıkların doğrusal bir şekilde modellemesini sağlamak için",
+      "E": "Modelin eğitimini zorlaştırmak için"
+    },
+    "correctAnswer": "D",
+    "explanation": "Logit dönüşümü, lojistik regresyonda olasılıkların doğrusal bir şekilde modellenmesini sağlar.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-ee00088cf3b5",
+    "unitNumber": 26,
+    "text": "Sigmoid fonksiyonu hangi aralıkta değerler üretir?",
+    "options": {
+      "A": "0 ile 1 arasında",
+      "B": "0 ile 2 arasında",
+      "C": "1 ile 10 arasında",
+      "D": "-1 ile 1 arasında",
+      "E": "-&infin; ile +&infin; arasında"
+    },
+    "correctAnswer": "A",
+    "explanation": "Sigmoid fonksiyonu, genellikle lojistik regresyonda kullanılan bir aktivasyon fonksiyonudur ve 0 ile 1 arasında değerler üretir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-5f3387bc13eb",
+    "unitNumber": 27,
+    "text": "Çapraz doğrulama hangi amaçla kullanılır?",
+    "options": {
+      "A": "Veri setinin sınıflandırma performansını değerlendirmek için",
+      "B": "Veri madenciliği algoritmalarının tarihçesini incelemek için",
+      "C": "Veri madenciliği algoritmalarının matematiksel adımlarını açıklamak için",
+      "D": "k-NN algoritmasının çalışma prensibini anlamak için",
+      "E": "Bir dizi bilinmeyen model parametresi için en uygun değerleri belirlemek için"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-fee5ede410b4",
+    "unitNumber": 28,
+    "text": "Doğrusal regresyonda hangi yöntemle en uygun çizgi bulmaya çalışılır?",
+    "options": {
+      "A": "S-şeklindeki eğri",
+      "B": "En olası tahmin",
+      "C": "Logaritmik dönüşüm",
+      "D": "Gradyan inişi",
+      "E": "En küçük kareler"
+    },
+    "correctAnswer": "E",
+    "explanation": "En küçük kareler yöntemi, doğrusal regresyonda en uygun çizgiyi bulmak için kullanılan bir yöntemdir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-8cc61a4d7c99",
+    "unitNumber": 29,
+    "text": "Metni küçük parçalara yani belirteçlere bölen bir işlemi ifade eden metin madenciliği adımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Metin ön işleme",
+      "B": "Model değerlendirmesi",
+      "C": "Model oluşturma",
+      "D": "Özellik mühendisliği",
+      "E": "Tokenizasyon"
+    },
+    "correctAnswer": "E",
+    "explanation": "Tokenizasyon, metni küçük parçalara, yani belirteçlere bölen bir işlemdir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-321c49b5ef79",
+    "unitNumber": 30,
+    "text": "I={a,b,c,d,e} kümesinden oluşturulan {a,b,c}→{d} kuralı düşük güven oranlı bir kuralsa aşağıdakilerden hangisi düşük oranlı bir kuraldır?",
+    "options": {
+      "A": "{b,d}&rarr;{a,c}",
+      "B": "{a,d}&rarr;{b,c}",
+      "C": "{a,b,d}&rarr;{c}",
+      "D": "{a,b}&rarr;{c,d}",
+      "E": "{d}&rarr;{a,b,c}"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-09394bcb59bc",
+    "unitNumber": 31,
+    "text": "Hangi kümeleme türünde veri noktaları belirsizliğe göre birden fazla kümeye ait olabilir?",
+    "options": {
+      "A": "Örtüşen kümeleme",
+      "B": "Hiyerarşik kümeleme",
+      "C": "Bulanık kümeleme",
+      "D": "Bölütlenmiş kümeleme",
+      "E": "Özel kümeleme"
+    },
+    "correctAnswer": "C",
+    "explanation": "Bulanık kümeleme, veri noktalarının belirsizliğe göre birden fazla kümeye ait olabileceği bir kümeleme türüdür.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-74b6948cdd3e",
+    "unitNumber": 32,
+    "text": "Duyarlılık metriği neyi ölçer?",
+    "options": {
+      "A": "Yanlış negatiflerin sınırlanmasını",
+      "B": "Yanlış pozitiflerin sınırlanmasını",
+      "C": "Gerçekten pozitif olan örneklerin ne kadarını kaçırdığımızın olasılığını",
+      "D": "Modelin toplam yanlış tahmin sayısını",
+      "E": "Gerçekten negatif olan örneklerin doğru negatif olma olasılığını"
+    },
+    "correctAnswer": "C",
+    "explanation": "Duyarlılık metriği, gerçek pozitif örneklerin ne kadarının model tarafından doğru bir şekilde tespit edilmediğini ölçer.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-b60ea3c57a45",
+    "unitNumber": 33,
+    "text": "Örtüşen kümeleme türü hangi özelliği ifade eder?",
+    "options": {
+      "A": "Her veri nesnesinin sadece bir kümeye ait olduğu model",
+      "B": "Her veri nesnesinin bir belirsizlik düzeyinde kümelere atandığı model",
+      "C": "Bazı veri nesnelerini hiçbir kümeye atamayabilecek bir kümeleme türü",
+      "D": "Her veri nesnesini bir kümeye atayan bir kümeleme türü",
+      "E": "Her veri nesnesinin birden fazla küme içinde yer alabileceği model"
+    },
+    "correctAnswer": "E",
+    "explanation": "Örtüşen kümeleme, bir veri nesnesinin birden fazla kümeye ait olabileceği durumu ifade eder.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-bf6b94c4b8a3",
+    "unitNumber": 34,
+    "text": "Min­Max Normalizasyonu hangi aralığa dönüştürme işlemi yapar?",
+    "options": {
+      "A": "Değerleri ortalaması 0 ve standart sapması 1 olacak şekilde dönüştürme",
+      "B": "Değişken değerlerini 0 ile 1 arasında bir aralığa dönüştürme",
+      "C": "Değişkenleri logaritmik olarak dönüştürme",
+      "D": "Değişkenlerin tersini alma",
+      "E": "Değişkenlerin karekökünü alma"
+    },
+    "correctAnswer": "B",
+    "explanation": "Min­Max Normalizasyonu, değişken değerlerini 0 ile 1 arasında bir aralığa dönüştüren bir normalizasyon yöntemidir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-46e4c0c11033",
+    "unitNumber": 35,
+    "text": "k­NN algoritması hangi türdeki tahmin görevleri için kullanılabilir?",
+    "options": {
+      "A": "Yalnızca çapraz doğrulama türündeki tahmin görevleri için",
+      "B": "Sadece sınıflandırma türündeki tahmin görevleri için",
+      "C": "Karar ağaçlarının yetersiz kaldığı tahminler için",
+      "D": "Hem sınıflandırma hem de regresyon türündeki tahmin görevleri için",
+      "E": "Sadece regresyon türündeki tahmin görevleri için"
+    },
+    "correctAnswer": "D",
+    "explanation": "k­NN algoritması, hem sınıflandırma hem de regresyon görevlerinde kullanılabilen esnek bir algoritmadır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-ce3eacb3af65",
+    "unitNumber": 36,
+    "text": "Birliktelik analizinde güven oranı neyi ölçer?",
+    "options": {
+      "A": "Bir kuralın verilen bir veri setine ne sıklıkta uygulandığını",
+      "B": "Bir kuralın güvenilirliğini",
+      "C": "Bir kuralın çıkarımını",
+      "D": "Bir kuralın gücünü",
+      "E": "Bir kuralın önemini"
+    },
+    "correctAnswer": "B",
+    "explanation": "Birliktelik analizinde güven oranı, bir kuralın ne kadar güvenilir olduğunu ölçer.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-ecd60da78949",
+    "unitNumber": 37,
+    "text": "Tam kümeleme türü hangi durumu ifade eder?",
+    "options": {
+      "A": "Her veri nesnesini mutlaka bir kümeye atayan kümeleme türü",
+      "B": "Veri nesnelerini tam olarak doğru kümeye atayan kümeleme türü",
+      "C": "Özel kümeleme",
+      "D": "Bazı veri nesnelerini hiçbir kümeye atamayabilecek bir kümeleme türü",
+      "E": "Örtüşen kümeleme"
+    },
+    "correctAnswer": "A",
+    "explanation": "Tam kümeleme, her veri nesnesini mutlaka bir kümeye atayan bir kümeleme türüdür.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-7de28c021d8a",
+    "unitNumber": 38,
+    "text": "Veri birleştirme işlemi aşağıdaki amaçlardan hangisini hedefler?",
+    "options": {
+      "A": "Detayları koruyarak istikrarlı bir genel bakış sağlamak",
+      "B": "Grupların davranışlarını daha değişken hale getirmek",
+      "C": "Yüksek seviyeli bir bakış açısı elde etmek ve ölçeği değiştirmek",
+      "D": "Veri boyutunu artırmak ve detaylandırmak",
+      "E": "Bellek kullanımını azaltmak ve işlem süresini artırmak"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6b0bdcdd009b",
+    "unitNumber": 39,
+    "text": "Bir e­ticaret platformu, kullanıcılarının alışveriş geçmişlerini analiz etmek ve öneri sistemlerini geliştirmek istiyor. Ancak, kullanıcı veri setlerinde eksik veya bozuk veriler bulunmaktadır. Şirket, hangi veri madenciliği aşamasını uygulamalıdır?",
+    "options": {
+      "A": "Örüntü Tanıma",
+      "B": "Modelleme",
+      "C": "Tahmin ve Karar Destek",
+      "D": "Doğrulama ve Değerlendirme",
+      "E": "Ön İşleme"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-72f06e3e1e5e",
+    "unitNumber": 40,
+    "text": "Yukarıda bir öğrenci grubundaki kişilerin boy ve ağırlık ölçümleri verilmektedir. Ağırlık gözlem değerleri, en büyük değer 1 olacak şekilde normalize edildiğinde 72 kg’lık gözlem değerinin normalize edilmiş yeni değeri kaç olur?",
+    "options": {
+      "A": "0,78",
+      "B": "0,67",
+      "C": "0,83",
+      "D": "0,89",
+      "E": "0,80"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d248d1c78895",
+    "unitNumber": 42,
+    "text": "Özellik oluşturma, hangi durumda orijinal veri setindeki özniteliklerden daha faydalı olabilir?",
+    "options": {
+      "A": "Orijinal veri setindeki öznitelikler, analiz için uygun bir formda değilse",
+      "B": "Orijinal veri seti çok az öznitelik içeriyorsa",
+      "C": "Orijinal veri setindeki öznitelikler, diğer veri setlerinde de mevcutsa",
+      "D": "Orijinal veri seti çok sayıda öznitelik içeriyorsa",
+      "E": "Orijinal veri seti yalnızca sayısal değerler içeriyorsa"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-fe188bf3ded9",
+    "unitNumber": 43,
+    "text": "Veri madenciliği dersini alan 200 öğrencinin dönem sonu başarı notu, ortalaması 55 ve standart sapmasının 15 olduğu normal dağılıma uymaktadır. Yönetmelik gereği 85 ve yukarı puana sahip olan öğrencilerin harf notu AA olacağına göre, yaklaşık kaç öğrenci AA almıştır?",
+    "options": {
+      "A": "5",
+      "B": "4",
+      "C": "6",
+      "D": "3",
+      "E": "7"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8648152ef011",
+    "unitNumber": 44,
+    "text": "Normalizasyon neden önemlidir?",
+    "options": {
+      "A": "Değişkenler arasındaki korelasyonu azaltmak için",
+      "B": "Ölçekler arasındaki farklılıkları dengelemek için",
+      "C": "Algoritmaların duyarlılığını azaltmak için",
+      "D": "Veri setindeki tüm değişkenleri aynı aralığa sıkıştırmak için",
+      "E": "Değişkenleri farklı bir dağılımında temsil etmek için"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2a87a47f963e",
+    "unitNumber": 62,
+    "text": "Etkin şekilde veriye ulaşmayı sağlayan belirli döneme ait konu odaklı ve bütünleşik veri tabanlarına ne ad verilmektedir?",
+    "options": {
+      "A": "veri martı",
+      "B": "veri ambarı",
+      "C": "olap",
+      "D": "oltp",
+      "E": "veri küpü"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-46d1b3c0c04f",
+    "unitNumber": 63,
+    "text": "Bir ikili sınıflandirma probleminde, sınıf niteliğinin 7 örnek için Evet, 3 örnek için Hayır olduğu gözlemlenmiştir. Sınıf niteliğinin entropisi hesaplandığında aşağıdaki hangi değeri elde eder?",
+    "options": {
+      "A": "0,881",
+      "B": "0,672",
+      "C": "0,970",
+      "D": "1",
+      "E": "0,785"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-13a004cb51e1",
+    "unitNumber": 64,
+    "text": "Bir sınıflandırma probleminin çözümünde kullanılan sınıflandırma modelinin test kümesi üzerindeki performansına göre oluşturulan matrisi yukarıdaki şekildedir. Bu sınıflandırma modelinin F ölçüsününün değeri nedir?",
+    "options": {
+      "A": "0,909",
+      "B": "0,892",
+      "C": "0981",
+      "D": "0,833",
+      "E": "0,962"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-78c50a57dd9d",
+    "unitNumber": 65,
+    "text": "Aşağıdakilerden hangisi bir sınıflandırıcının performansının değerlendirilmesinde kullanılan performans ölçütlerinden biri değildir?",
+    "options": {
+      "A": "Silhouette indeksi",
+      "B": "Anma",
+      "C": "Kesinlik",
+      "D": "F-Ölçüsü",
+      "E": "ROC Alanı"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a15a34432af5",
+    "unitNumber": 66,
+    "text": "Aşağıdaki değerlere sahip müşteri yaş verisi için 1-10 aralığında doğrusal dönüşüm uygulanırsa, 32 değerinin veri dönüşümü sonrası yeni değeri aşağıdakilerden hangisidir? 24, 40, 36, 28, 32, 44, 25, 31, 50, 33",
+    "options": {
+      "A": "4.769",
+      "B": "3.769",
+      "C": "0.307",
+      "D": "2.769",
+      "E": "1.769"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-fcf29861b8c9",
+    "unitNumber": 67,
+    "text": "Bir ikili sınıflandırma probleminin çözümünde ID3 algoritması kullanılmak istenmektedir. Sınıf niteliği 2 “Evet” ve 8 “Hayır” dan oluşmaktadır. Bu durumda, sınıf niteliğinin entropisi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "0.625",
+      "B": "0.811",
+      "C": "0,479",
+      "D": "0.909",
+      "E": "0.234"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-37cfc3aef766",
+    "unitNumber": 68,
+    "text": "Veri ambarları üzerinde karar vermeye yardımcı olacak şekilde gerçekleştirilen sorgulama işlemlerine ne ad verilir?",
+    "options": {
+      "A": "oltp",
+      "B": "veritabanı",
+      "C": "olap",
+      "D": "veri madenciliği",
+      "E": "veri martı"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-591da67601d4",
+    "unitNumber": 69,
+    "text": "Dolandırıcılık riskinin tahmini için kullanılan bir ikili sınıflandırma modelinin uygulanması sonucunda elde edilen karışıklık matrisi yukarıdaki gibidir. Bu sınıflandırıcının doğruluk oranı nedir?",
+    "options": {
+      "A": "%93.7",
+      "B": "%99.1",
+      "C": "%95.9",
+      "D": "%91.5",
+      "E": "%97.3"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9f1f781d46a1",
+    "unitNumber": 70,
+    "text": "Bir ikili sınıflandırma problemi için bir sınıflandırma modelinin çalıştırılması sonucunda elde edilen karışıklık matrisinde doğru pozitif (TP) sayısı 400, yanlış pozitif sayısı (FP) 100, yanlış negatif sayısı (FN) 240 ve yanlış pozitif sayısı (TN) 1600 olarak belirlenmiştir. Bu sınıflandırma modelinin F-ölçüsünün değeri aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "0,736",
+      "B": "0,718",
+      "C": "0,702",
+      "D": "0,745",
+      "E": "0,724"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-198b915e9562",
+    "unitNumber": 71,
+    "text": "6 Farklı ürün için stok adedi ve fiyatı bağlı olarak bir perakende mağazasının satış değerleri yukarıdaki tabloda sunulmkatadır. Uzaklık ağırlık k-en yakın komşusu uygulandığında (K=1), stok adedi 30 ve fiyatı 28 tl olan bir ürün için Satış=YÜKSEK sınıfının ağırlık değeri aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "5.12",
+      "B": "9.88",
+      "C": "10.56",
+      "D": "7.64",
+      "E": "0"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3cd85c028a5c",
+    "unitNumber": 72,
+    "text": "Yukarıdaki tabloda eğitim verisi yer almaktadır. Bu veri kümesinde X1, X2, X3 nitelik değişkenleri ve Y ise sınıf etiketidir. Naive Bayes sınıflandırıcısını kullanarak X1=0, X2 =0, X3=0 verisi, Y=0 sınıfına hangi olasılıkla aittir?",
+    "options": {
+      "A": "%20.81",
+      "B": "%63.32",
+      "C": "%42.85",
+      "D": "%58.18",
+      "E": "%35.64"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6899ee256cf4",
+    "unitNumber": 73,
+    "text": "Yukarıdaki veri kümesi için Entropi (Y) değeri aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "1",
+      "B": "0.5",
+      "C": "-0.5",
+      "D": "-1",
+      "E": "0"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-eff3af8e8339",
+    "unitNumber": 74,
+    "text": "Bir sigorta şirketinin 3 müşterisi için yıllık gelir ve yaş değerlerine göre risk değerleri yukarıdaki tablodaki gibidir. Geliri 16000 ve yaşı 32 olan bir müsterinin risk değeri uzaklık aralık en yakın komşu algoritması (k-1) kullanılarak tahmin edilirse Yüksek sınıfın toplam ağırlığı ne olacaktır?",
+    "options": {
+      "A": "20",
+      "B": "1,47",
+      "C": "12,5",
+      "D": "32,5",
+      "E": "21,47"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-59b80608600a",
+    "unitNumber": 75,
+    "text": "Aşağıdaki listenen değerlere sahip sürekli bir nitelik eşit frekanslı olarak 4 bölüme ayrılır ise ilk bölüm kaç elemandan oluşur? 13,25,12,16,32,13,45,42,46, 32, 39, 64, 10, 14, 21, 17",
+    "options": {
+      "A": "4",
+      "B": "6",
+      "C": "7",
+      "D": "3",
+      "E": "5"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-dd02920476bb",
+    "unitNumber": 76,
+    "text": "Denetimli öğrenmeyi kullanan veri madenciliği fonksiyonları aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Kümeleme",
+      "B": "Sınıflandırma-Birliktelik",
+      "C": "Kümeleme- Sınıflandırma",
+      "D": "kümeleme- Birliktelik",
+      "E": "Sınıflandırma- Regresyon"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-63279b6ff506",
+    "unitNumber": 77,
+    "text": "Doğal dil işleme (NLP) ile ilgili olarak hangisi doğrudur?",
+    "options": {
+      "A": "Sadece sayısal verilerle çalışır.",
+      "B": "İnsan dilini bilgisayar programlarının anlaması için bir yöntem içermez.",
+      "C": "Metin madenciliğinin bir alt alanıdır.",
+      "D": "Kelime türü etiketleme, metin bölümleme gibi zorlukları içerir.",
+      "E": "Yalnızca yapılandırılmış metinsel veriyi analiz eder."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-7f4751d05884",
+    "unitNumber": 78,
+    "text": "Veri setinde en sık tekrar eden değeri ifade eden istatistik hangisidir?",
+    "options": {
+      "A": "Ortalama",
+      "B": "Standart Sapma",
+      "C": "Medyan",
+      "D": "Mod",
+      "E": "Varyans"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-41a9c8434813",
+    "unitNumber": 79,
+    "text": "Gizli dirichlet analizi ne işe yarar?",
+    "options": {
+      "A": "Konu modelleme için yaygın olarak kullanılan bir olasılık temelli modelleme tekniğidir.",
+      "B": "Çevrimiçi alışverişlerde öneri sistemlerini güçlendiren bir algoritmadır.",
+      "C": "Görüntü tanıma problemlerinde kullanılan bir derin öğrenme modelidir.",
+      "D": "Konum tabanlı hizmetlerde harita oluşturmak için kullanılır.",
+      "E": "Genetik algoritmaları temsil etmek için kullanılan bir modelleme tekniğidir."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e64795ab98d9",
+    "unitNumber": 80,
+    "text": "Hangi kümeleme türünde nesneler sadece bir kümeye ait olabilir?",
+    "options": {
+      "A": "Bulanık Kümeleme",
+      "B": "Hiyerarşik Kümeleme",
+      "C": "Örtüşen Kümeleme",
+      "D": "Özel Kümeleme",
+      "E": "Bölütlenmiş Kümeleme"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-17fed20a3981",
+    "unitNumber": 81,
+    "text": "Metin madenciliği adımları arasında hangisi metni belirli parçalara böler?",
+    "options": {
+      "A": "Metin ön işleme",
+      "B": "Model oluşturma",
+      "C": "Özellik mühendisliği",
+      "D": "Tokenizasyon",
+      "E": "Doğal Dil İşleme"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-70678c7df4e0",
+    "unitNumber": 82,
+    "text": "Histogram hangi veri özelliklerini göstermek için kullanılır?",
+    "options": {
+      "A": "Belli bir aralıktaki dağılım",
+      "B": "Medyan",
+      "C": "Çeyreklikler",
+      "D": "Aykırı değerler",
+      "E": "Ortalama"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-b7c79b23bfa1",
+    "unitNumber": 83,
+    "text": "Reklam için harcanan miktara bağlı olarak bir ürünün satışlarını tahmin etmek istediğimizi varsayalım. – Bağımsız değişkenin katsayısı (b) kaçtır?",
+    "options": {
+      "A": "1,90",
+      "B": "1,04",
+      "C": "5,40",
+      "D": "1,60",
+      "E": "3,30"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-3d877999da25",
+    "unitNumber": 84,
+    "text": "Aşırı değerlerin bulunduğu bir veri setinde hangi merkezi eğilim ölçüsü, genellikle yanıltıcı olabilir?",
+    "options": {
+      "A": "Mod",
+      "B": "Medyan",
+      "C": "Standart Sapma",
+      "D": "Varyans",
+      "E": "Aralık"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-b7cd48f9101d",
+    "unitNumber": 85,
+    "text": "Pasta grafiği hangi tür verilerin görsel analizi için kullanılır?",
+    "options": {
+      "A": "Sürekli veriler",
+      "B": "Kategorik veriler",
+      "C": "Dağılım verileri",
+      "D": "Aritmetik veriler",
+      "E": "Her tür veri"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-ae31ea7e338c",
+    "unitNumber": 86,
+    "text": "Reklam için harcanan miktara bağlı olarak bir ürünün satışlarını tahmin etmek istediğimizi varsayalım. – 200’lük bir satış miktarı elde etmek için kaç TL harcanmalıdır?",
+    "options": {
+      "A": "150",
+      "B": "112",
+      "C": "128",
+      "D": "98",
+      "E": "136"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-2909379f8386",
+    "unitNumber": 87,
+    "text": "K-ortalamalar kümeleme yönteminde, merkezi prototip genellikle hangi tür veriler için kullanılır?",
+    "options": {
+      "A": "Nicel Veriler",
+      "B": "Kategorik Veriler",
+      "C": "Metin Verileri",
+      "D": "Büyük veriler",
+      "E": "Örnek veriler"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-194980bb9239",
+    "unitNumber": 88,
+    "text": "Hangi durum, duygu analizi için en uygun bir uygulama alanıdır?",
+    "options": {
+      "A": "Meteorolojik verilerin analizi",
+      "B": "Hisse senedi piyasası tahminleri",
+      "C": "Yemek tariflerinin sınıflandırılması",
+      "D": "İç organların anatomik incelemesi",
+      "E": "Galaksiler arası uzaklık ölçümleri"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-14e44598f70b",
+    "unitNumber": 89,
+    "text": "Aşağıdaki durumlardan hangisi metin analitiği ile ilgili değildir?",
+    "options": {
+      "A": "Anahtar kelime çıkarma",
+      "B": "Bilgi çıkarma",
+      "C": "Hava durumu tahmini",
+      "D": "Veri madenciliği",
+      "E": "İlgili belge arama"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-d99fdc58e9d3",
+    "unitNumber": 90,
+    "text": "Regresyon analizinde kullanılan en küçük kareler yöntemi neyi amaçlar?",
+    "options": {
+      "A": "Hata terimlerinin varyansını maksimize etmeyi",
+      "B": "Gerçek ve tahmin edilen değerler arasındaki farkı en aza indirmeyi",
+      "C": "Korelasyon katsayısını hesaplamayı",
+      "D": "Bağımsız değişkenler arasındaki ilişkiyi belirlemeyi",
+      "E": "Hiçbir şık doğru değil"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-5a51978c6d47",
+    "unitNumber": 91,
+    "text": "DBSCAN algoritmasının öne çıkan özellikleri nelerdir?",
+    "options": {
+      "A": "Veri setinin ortalamasını hesaplamak",
+      "B": "Aykırı değerleri saptama ve silme yeteneği",
+      "C": "Matematiksel denklemleri çözme kabiliyeti",
+      "D": "Yalnızca dışbükey (konveks) veri kümeleriyle çalışma",
+      "E": "Epsilon ve minPts parametrelerine bağlı olarak yoğunluk tabanlı kümeleme"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-45a873344ffd",
+    "unitNumber": 92,
+    "text": "Veri setindeki en büyük ve en küçük değer arasındaki farkı gösteren istatistik hangisidir?",
+    "options": {
+      "A": "Mod",
+      "B": "Aralık",
+      "C": "Medyan",
+      "D": "Ortalama",
+      "E": "Standart Sapma"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-f11073096588",
+    "unitNumber": 93,
+    "text": "SOM’un (Kendi Kendini Düzenleyen Haritalar) avantajları nelerdir?",
+    "options": {
+      "A": "Aykırı değerleri temizleme yeteneği",
+      "B": "Boyut azaltma özelliği",
+      "C": "Sadece sayısal verilerle çalışabilme",
+      "D": "Yalnızca küresel kümeleri tanıma",
+      "E": "Epsilon parametresine bağlı olarak çalışma"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-03db05e3185d",
+    "unitNumber": 94,
+    "text": "Hangi kümeleme türü, veriyi kesinlikle örtüşmeyen alt kümelerine böler?",
+    "options": {
+      "A": "Hiyerarşik Kümeleme",
+      "B": "Özel Kümeleme",
+      "C": "Örtüşen Kümeleme",
+      "D": "Bölütlenmiş Kümeleme",
+      "E": "Bulanık Kümeleme"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-136a0bb63bb9",
+    "unitNumber": 95,
+    "text": "Bir regresyon modelinde bağımlı değişken ile bir bağımsız değişken arasında bulunan katsayı (b) 2, sabit terim (a) ise 5 olarak bulunmuştur. Bu durumda, bağımlı değişkenin değeri 4 olduğunda tahmini sonuç ne olur?",
+    "options": {
+      "A": "22",
+      "B": "13",
+      "C": "9",
+      "D": "3",
+      "E": "12"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-d49007ae3ff2",
+    "unitNumber": 96,
+    "text": "Hangisi yapısal bir veri türüdür?",
+    "options": {
+      "A": "Metin belgeleri",
+      "B": "Sosyal medya gönderileri",
+      "C": "Tarihler",
+      "D": "Ses dosyaları",
+      "E": "İlişkisel veritabanlarındaki tablolar"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-cd8dd942cef6",
+    "unitNumber": 97,
+    "text": "Katmanlı (stratified) örnekleme hangi durumda kullanılır?",
+    "options": {
+      "A": "Tüm nesne tiplerini yeterince temsil etmeyen durumlarda",
+      "B": "Öğelerin eşit sayıda seçildiği durumlarda",
+      "C": "Örneklem büyüklüğünü belirlemek için",
+      "D": "Küçük veri setlerini işlemek için",
+      "E": "Örneklemde her bir öğenin seçilme olasılığını artırmak için"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-53500db231b7",
+    "unitNumber": 98,
+    "text": "Hangi adım, veri madenciliği sürecindeki en zahmetli ve zaman alıcı adımdır?",
+    "options": {
+      "A": "Modelleme",
+      "B": "Tahmin ve Karar Destek",
+      "C": "Örüntü Tanıma",
+      "D": "Doğrulama ve Değerlendirme",
+      "E": "Ön İşleme"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-5228645ca8c7",
+    "unitNumber": 99,
+    "text": "Yaşlı ve genç yetişkinler arasındaki algılanan yaşam doyumunun farklarını incelemek amacıyla bir araştırma yapılmıştır. 10 kişilik iki gruptan oluşan, 70 yaş üstü yaşlı yetişkinlere ve 20 – 30 yaş arası genç yetişkinlere yüksek güvenilirlik ve geçerliliği olduğu bilinen bir yaşam memnuniyeti testi verilmiştir. Ölçüm puanları 0 (en düşük) – 60 (en yüksek) arasındadır. Yaşlı yetişkinlerin verdiği puanların ortalaması 44.5 ve varyansı 75.39 iken genç yetişkinlerin verdiği puanların ortalaması 28.1 ve varyansı 72.99 olarak hesaplanmıştır. Yaşlı ve genç yetişkinler arasındaki ortalama yaşam memnuniyetinin farklı olduğu iddiasını %5 anlam düzeyinde test ediniz ve yorumlayınız. – Yukarıdaki örneğe göre kritik test istatistiği değeri kaçtır?",
+    "options": {
+      "A": "3,91",
+      "B": "3,59",
+      "C": "4,26",
+      "D": "3,02",
+      "E": "2,23"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-afa406bf8002",
+    "unitNumber": 100,
+    "text": "Hangisi yapısal olmayan veri türüne örnektir?",
+    "options": {
+      "A": "Doğum tarihleri",
+      "B": "Hız verisi",
+      "C": "Satış tablosundaki satılan ürün miktarı",
+      "D": "Ses dosyaları",
+      "E": "Sınav sonuçları"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-1e42e9067ce2",
+    "unitNumber": 101,
+    "text": "Aşağıdaki ifadelerin hangileri yanlıştır? – I. Veri madenciliğinde hipotez testleri, elde edilen veri örüntülerinin istatistiksel olarak anlamlı olup olmadığını değerlendirir. – II. Hipotez testleri, değişkenler arasındaki ilişkilerin istatistiksel anlamlılığını değerlendirmek için kullanılabilir. – III. Hipotez testleri, veri madenciliğinde kullanılan algoritmaların doğruluğunu belirlemek için kullanılır.",
+    "options": {
+      "A": "I-II-III",
+      "B": "Hepsi doğru",
+      "C": "Yalnız III",
+      "D": "I-II",
+      "E": "II-III"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-184dc40972b9",
+    "unitNumber": 103,
+    "text": "Bir veri madenciliği analizi için ihtiyacımız olan tüm verileri toplamak ve işlemek için yeterli zamanımız olmadığında, örneklem büyüklüğü nasıl belirlenir?",
+    "options": {
+      "A": "Deneme yanılma yoluyla",
+      "B": "Katmanlı örneklemeyle",
+      "C": "Uyarlanabilir örneklemeyle",
+      "D": "Uzman görüşleriyle",
+      "E": "Değiştirme olmadan yapılan örneklemeyle"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-869c4a092e2b",
+    "unitNumber": 104,
+    "text": "Veri madenciliği ve makine öğrenimi ile ilgili aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Her ikisi de belirli bir amaca hizmet eden modeller geliştirmeyi amaçlar.",
+      "B": "İkisi de yapay zeka alanının bir alt kategorileridir ve bu alanda daha somut görevleri gerçekleştirmek için kullanılır.",
+      "C": "Veri setlerindeki örüntüleri keşfetmeyi hedefler.",
+      "D": "İkisinin de odakları aynıdır.",
+      "E": "Veri madenciliği ve makine öğrenimi, aynı süreci ifade eder ve birbirinin yerine kullanılabilir terimlerdir."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e05d0c5186c4",
+    "unitNumber": 105,
+    "text": "Korelasyon katsayısı hangi durumda sıfıra eşit olur?",
+    "options": {
+      "A": "Tam ters orantılı ilişkide",
+      "B": "Doğrusal ilişkide",
+      "C": "Herhangi bir ilişki olmadığında",
+      "D": "Hiçbir şık doğru değil",
+      "E": "Her durumda farklı bir değer alır"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-27cee39fb148",
+    "unitNumber": 106,
+    "text": "Bir regresyon analizinde bağımsız değişkenin katsayısının 2,16 bulunması neyi ifade eder?",
+    "options": {
+      "A": "Bağımsız değişken ile bağımlı değişken arasındaki ilişkinin güçlü olduğunu gösterir.",
+      "B": "Bağımsız değişkenin bağımlı değişken üzerindeki etkisinin bir birim artışla 2,16 birim arttığını gösterir.",
+      "C": "Modelin anlamsız olduğunu gösterir.",
+      "D": "Bağımsız değişkenin bağımlı değişken üzerindeki etkisinin olmadığını gösterir.",
+      "E": "Bağımsız değişkenin bağımlı değişken üzerindeki etkisinin bir birim artışla 2,16 birim azaldığını gösterir."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-014b0329b90a",
+    "unitNumber": 107,
+    "text": "Z-Skor Normalizasyonu nedir?",
+    "options": {
+      "A": "Değişken değerlerini 0 ile 1 arasında bir aralığa dönüştürme",
+      "B": "Değişkenleri logaritmik olarak dönüştürme",
+      "C": "Değişkenlerin tersini alma",
+      "D": "Değerleri ortalaması 0 ve standart sapması 1 olacak şekilde dönüştürme",
+      "E": "Değişkenlerin karekökünü alma"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-dcee91dd7be9",
+    "unitNumber": 108,
+    "text": "A firması tarafından üretilen ampullerden 80 adet seçilmiş ve ortalama 1258 saat çalıştığı görülmüştür. Ana kütleye ait standart sapma 94 saattir. B firması tarafından üretilen ampullerden 60 adet seçilmiş ve ortalama 1029 saat çalıştığı görülmüştür. Ana kütleye ait standart sapma 68 saattir. A firmasının ampul fiyatı daha fazla olduğu için bir test yapılacaktır. A firması tarafından üretilen ampullerin çalışma süresi, B firması tarafından üretilen ampullerin çalışma süresinden 200 saat fazlaysa, A firmasının ampulleri satın alınacaktır. ???????? = 0.011 için hangi firmanın ampullerinin satın alınacağını test ediniz. – Yukarıdaki örneğe göre hesaplanan test istatistiği değeri kaçtır?",
+    "options": {
+      "A": "2,58",
+      "B": "2,12",
+      "C": "1,96",
+      "D": "3,02",
+      "E": "2,33"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-3bbd79865b14",
+    "unitNumber": 109,
+    "text": "Reklam için harcanan miktara bağlı olarak bir ürünün satışlarını tahmin etmek istediğimizi varsayalım. – 150 TL’lik reklam harcaması yapıldığı durumdaki tahmini satış miktarı ne kadar olur?",
+    "options": {
+      "A": "290",
+      "B": "145",
+      "C": "240",
+      "D": "260",
+      "E": "223"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-fbb35fbf565f",
+    "unitNumber": 110,
+    "text": "Reklam için harcanan miktara bağlı olarak bir ürünün satışlarını tahmin etmek istediğimizi varsayalım. – Sabit katsayı (a) kaçtır?",
+    "options": {
+      "A": "41,90",
+      "B": "48,96",
+      "C": "54,30",
+      "D": "66,86",
+      "E": "33,43"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-cb6620113ddb",
+    "unitNumber": 111,
+    "text": "Veri madenciliği sürecinde kullanılan modeller, hangi amaç(lar) için kullanılır? I. Veri setlerindeki gizli örüntüleri bulmak II. Çıktıları değerlendirmek III. Ön işleme IV. Tahmin yapmak",
+    "options": {
+      "A": "I ve II",
+      "B": "I ve IV",
+      "C": "I, II ve IV",
+      "D": "III ve IV",
+      "E": "II, III ve IV"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-0a5cd5bc959a",
+    "unitNumber": 112,
+    "text": "Belli bir parçanın üretimi için gereken ortalama zamanın 11.5 dakika olduğu biliniyor. İşe alınan 10 işçinin bu mamulü üretim süreleri gözlemleniyor ve aşağıdaki sonuçlar elde ediliyor. %5 anlam düzeyinde yeni işe alınan işçilerin bu mamulü üretim süresinin eski işçilerden daha fazla olup olmadığını araştırınız. (İpucu: Bu soru için toplanan verilerin kendisi verilmiştir. Daha önceki örneklerde ve sorularda toplanan verilerden elde edilen ortalamalar veya standart sapmalar verilmişti.) – Yukarıdaki örneğe göre hesaplanan test istatistiği değeri kaçtır?",
+    "options": {
+      "A": "2,91",
+      "B": "3,19",
+      "C": "2,26",
+      "D": "1,83",
+      "E": "2,06"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-33e368da5fce",
+    "unitNumber": 113,
+    "text": "Regresyon analizindeki eş varyanslık (homoscedasticity) kavramı ne anlama gelir?",
+    "options": {
+      "A": "Hataların sabit bir varyansa sahip olduğunu",
+      "B": "Değişkenler arasındaki doğrusal ilişkiyi",
+      "C": "Hata terimlerinin normal dağıldığını",
+      "D": "Değişkenlerin eşit ağırlıklarla katkıda bulunduğunu",
+      "E": "Hiçbiri"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-5517ef995f11",
+    "unitNumber": 114,
+    "text": "Hangi yaklaşım özniteliklerin, veri madenciliği algoritması çalıştırılmadan önce, veri madenciliği görevinden bağımsız bir şekilde seçilmesini benimser?",
+    "options": {
+      "A": "Filtre yaklaşım",
+      "B": "Sarıcı yaklaşım",
+      "C": "Gömülü yaklaşım",
+      "D": "Veriyi yeni bir uzaya eşleme yaklaşımı",
+      "E": "Örneklem alma yaklaşımı"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e5871f23aa3a",
+    "unitNumber": 115,
+    "text": "kNN’nin sınırlamalarından biri nedir?",
+    "options": {
+      "A": "Optimal k değerinin bulunması",
+      "B": "Öklid Mesafesi'nin kullanımı",
+      "C": "Dengesiz sınıfların etkisi",
+      "D": "Çapraz doğrulama kullanımı",
+      "E": "Karar ağaçları ile rekabet etme"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-09b4dc6503e0",
+    "unitNumber": 116,
+    "text": "Metin analitiği ile ilgili olarak aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Yapılandırılmamış metinsel veriyi anlamak ve bilgi çıkarmayı hedefler.",
+      "B": "Metin madenciliğini içinde barındırır.",
+      "C": "Müşteri geri bildirimleri üzerinde etkili bir şekilde çalışır.",
+      "D": "Nominal veri türleriyle sınırlıdır.",
+      "E": "Metin verilerini anlamak için özel teknikleri içerir."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-2be4e7258aeb",
+    "unitNumber": 117,
+    "text": "Sınıflandırma teknikleri genellikle hangi tür veri kümeleri üzerinde etkilidir?",
+    "options": {
+      "A": "Sayısal veriler",
+      "B": "Sıralı kategoriler",
+      "C": "Metin verileri",
+      "D": "İki kategorili veriler",
+      "E": "Hiçbiri"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-1a3d3b756b5a",
+    "unitNumber": 118,
+    "text": "Gizli anlam çözümlemesi (LSA) nedir?",
+    "options": {
+      "A": "Bir dilin kökenini inceleyen bir dilbilim teorisidir.",
+      "B": "Bir metin kümesindeki ana fikirleri çıkarmak ve temsil etmek için kullanılan bir istatistiksel yöntemdir.",
+      "C": "Bir belgenin anlamını yorumlamak için kullanılan bir dil işleme tekniğidir.",
+      "D": "Yalnızca kelime frekansını değil, aynı zamanda metindeki yazım hatalarını düzeltir.",
+      "E": "LSA, anlamsal olarak bağlantılı kelimeleri gruplandırmak için kullanılan bir semantik ağdır."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-245837f93d8d",
+    "unitNumber": 119,
+    "text": "F1 skoru, neden hassasiyet ve duyarlılık metriklerinin harmonik ortalamasını kullanarak denge kurar?",
+    "options": {
+      "A": "Hassasiyet ve duyarlılık arasındaki doğrusal ilişkiyi vurgular.",
+      "B": "Modelin yanlış pozitiflerine odaklanır, yanlış negatiflere dikkat etmez.",
+      "C": "Hassasiyet ve duyarlılığın ortalamasını alarak dengeyi sağlar.",
+      "D": "Yüksek F1 skoru, modelin sadece bir metriğe odaklandığını gösterir.",
+      "E": "Modelin performansını değerlendirmek için uygun bir metrik değildir."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-6593bb69ba90",
+    "unitNumber": 120,
+    "text": "Duygu analizi neyi amaçlar?",
+    "options": {
+      "A": "Metin verilerini sadece sayısal formata dönüştürmeyi",
+      "B": "Pozitif, negatif veya nötr duygusal kategorilere ayırmayı",
+      "C": "Sadece finansal verileri analiz etmeyi",
+      "D": "Tokenizasyon işlemini gerçekleştirmeyi",
+      "E": "Metin ön işleme adımını atlamayı"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-ba132c123d2b",
+    "unitNumber": 121,
+    "text": "Sınıflandırma teknikleri hangi durumda daha az etkili olabilir?",
+    "options": {
+      "A": "Dengesiz sınıfların olduğu veri kümelerinde",
+      "B": "Sayısal veri kümelerinde",
+      "C": "Küçük boyutlu veri setlerinde",
+      "D": "Sıralı kategoriler içeren veri setlerinde",
+      "E": "Hiçbiri"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-003bad81d85e",
+    "unitNumber": 122,
+    "text": "Kosinüs mesafesi genellikle hangi tür veri kümesinde kullanılır?",
+    "options": {
+      "A": "Sayısal veriler",
+      "B": "Metin verileri",
+      "C": "Görüntü verileri",
+      "D": "Sıralı kategoriler",
+      "E": "Karmaşık yapıdaki veriler"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-815d7f3a44f7",
+    "unitNumber": 123,
+    "text": "Metin madenciliği ile ilgili olarak hangisi yanlıştır?",
+    "options": {
+      "A": "Tokenizasyon metni belirli parçalara böler.",
+      "B": "Özellik mühendisliği, metni sayısal formata dönüştürmek için özellikler ekler.",
+      "C": "Model oluşturma, metni analiz etmek için kullanılan bir adımdır.",
+      "D": "Doğal dil işlemede yapılanları kapsar.",
+      "E": "Metin verilerini anlamak için özel teknikleri içermez."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-de8e891284ef",
+    "unitNumber": 124,
+    "text": "Metin madenciliği hangi adımda gürültüyü azaltarak veri kalitesini artırmayı amaçlar?",
+    "options": {
+      "A": "Model oluşturma",
+      "B": "Tokenizasyon",
+      "C": "Özellik mühendisliği",
+      "D": "Metin ön işleme",
+      "E": "Doğal dil işleme"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-a9f64941f41c",
+    "unitNumber": 130,
+    "text": "Lojistik regresyonda en uygun eğriyi bulmak için hangi yöntem kullanılır?",
+    "options": {
+      "A": "Ortalama Kareler Hatası",
+      "B": "R-Kare",
+      "C": "En Küçük Kareler Yöntemi",
+      "D": "En Olası Tahmin Yöntemi",
+      "E": "Doğrusal Dönüşüm"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-0359addc24a7",
+    "unitNumber": 131,
+    "text": "Apriori prensibine göre, bir sık öge kümesinin alt kümeleri hakkında hangisi doğrudur?",
+    "options": {
+      "A": "Alt kümelerin hiçbiri sık olamaz",
+      "B": "Sadece bir alt küme sık olabilir",
+      "C": "Tüm alt kümeler sık olabilir",
+      "D": "Yalnızca en büyük alt küme sık olabilir",
+      "E": "Hiçbir alt küme sık olamaz"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-3ceaa7b0e9c9",
+    "unitNumber": 132,
+    "text": "Boyut azaltmanın avantajlarından hangisi doğrudur?",
+    "options": {
+      "A": "Model performansını azaltır",
+      "B": "Veri işleme sürelerini kısaltır",
+      "C": "Depolama alanı gereksinimlerini artırır",
+      "D": "Gürültüyü artırır",
+      "E": "Veri manipülasyonunu zorlaştırır"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-c0a4bc94ef76",
+    "unitNumber": 133,
+    "text": "Olasılıklar oranı neyi ifade eder?",
+    "options": {
+      "A": "Bir olayın gerçekleşmeme olasılığının gerçekleşme olasılığına oranı",
+      "B": "Bir olayın gerçekleşme olasılığı",
+      "C": "Tahmin edicideki bir birim değişiklikten sonraki olasılıkların orijinal olasılıklara oranı",
+      "D": "Bir olayın gerçekleşme olasılığının gerçekleşmeme olasılığına oranı",
+      "E": "İki bağımsız değişkenin gerçekleşme olasılıklarının oranı"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-2402e6a5a3ef",
+    "unitNumber": 134,
+    "text": "Aşağıdakilerden hangisi birleştirme (aggregation) işleminin bir riskidir?",
+    "options": {
+      "A": "Veri kaynaklarının karmaşıklığının artması",
+      "B": "Ölçeklerin değişmesi",
+      "C": "Detaylardan bazılarının kaybolması",
+      "D": "Veri boyutlarının artması",
+      "E": "Hiçbiri"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-5cb82692ff4c",
+    "unitNumber": 135,
+    "text": "Bir birliktelik kuralının desteği nedir?",
+    "options": {
+      "A": "Bir kuralın ne sıklıkta uygulandığını",
+      "B": "X'i içeren işlemlerde X ve Y ögelerinin ne sıklıkta göründüğünü",
+      "C": "X ve Y ögelerini içeren işlemlerin ne sıklıkta göründüğünü",
+      "D": "Bir öge setini içeren işlem sayısı",
+      "E": "Veri setindeki işlem genişliği"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-2de59c634cbf",
+    "unitNumber": 136,
+    "text": "Hangi durumda Basit Fonksiyonel Dönüşümler veya Normalizasyon kullanılabilir?",
+    "options": {
+      "A": "Veri setindeki değişkenlerin sayısını artırmak için",
+      "B": "Veri setindeki değişkenlerin değerlerini bozmak için",
+      "C": "Veri setinin analizde daha anlamlı ve doğrusal bir şekle getirilmesi için",
+      "D": "Veri setindeki değişkenlerin orijinal dağılımını korumak için",
+      "E": "Veri setindeki değişkenlerin arasındaki ilişkiyi kesmek için"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-79285c128257",
+    "unitNumber": 137,
+    "text": "Destek tabanlı kesme neden önemlidir?",
+    "options": {
+      "A": "Tüm kuralları eler",
+      "B": "Güveni artırır",
+      "C": "Alt küme oluşturur",
+      "D": "Kural kümesini bulur",
+      "E": "Sık öge kümesini bulur"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-602438f3d0d4",
+    "unitNumber": 138,
+    "text": "Hangi lojistik regresyon türü, “Kırmızı/Yeşil/Mavi” gibi sıralı kategorilere sahip bir yanıt değişkeni için kullanılır?",
+    "options": {
+      "A": "Binomial Lojistik Regresyon",
+      "B": "Multinomial Lojistik Regresyon",
+      "C": "Ordinal Lojistik Regresyon",
+      "D": "Çoklu Değişkenli Lojistik Regresyon",
+      "E": "Hiçbiri, sıralı kategorilere uygun bir regresyon türü yok"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-a30d04643b5e",
+    "unitNumber": 139,
+    "text": "Lojistik regresyonda, çıktı değişkeni 0 ile 1 arasında olan olasılık değerini ifade eder. Eğer bir modelin hesapladığı olasılık değeri 0.7 ise, bu durum neyi öngörür?",
+    "options": {
+      "A": "Eşik değerin üzerinde olduğu için olayın gerçekleşme olasılığının yüksek olduğunu öngörür",
+      "B": "Olayın hiç gerçekleşmeyeceğini öngörür",
+      "C": "Modelin yanlış olduğunu gösterir",
+      "D": "Modelin kararsız olduğunu gösterir",
+      "E": "Eşik değerin altında olduğu için olayın gerçekleşme olasılığının düşük olduğunu öngörür"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-3c4622689eef",
+    "unitNumber": 140,
+    "text": "Aday öge kümesi sayısını azaltma ve karşılaştırmaların sayısını azaltma işlemleri hangi amaç için yapılır?<",
+    "options": {
+      "A": "Gereksiz kuralları kesmek",
+      "B": "Yüksek güvenli kurallar oluşturmak",
+      "C": "Alt küme oluşturmak",
+      "D": "Kurallar oluşturmak",
+      "E": "Sık öge kümelerini oluşturmak"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e48f4663f1e4",
+    "unitNumber": 141,
+    "text": "I = {a, b, c, d, e} kümesinden oluşturulan {a, b} → {d} kuralı düşük güven oranlı bir kuralsa aşağıdaki kurallardan hangisi düşük oranlı bir kuraldır?",
+    "options": {
+      "A": "{b} &rarr; {c}",
+      "B": "{a} &rarr; {b}",
+      "C": "{d} &rarr; {b}",
+      "D": "{c} &rarr; {e}",
+      "E": "{b} &rarr; {e}"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e349b5624557",
+    "unitNumber": 142,
+    "text": "Kategorik bir özniteliğin ikili hale getirilmesinde aşağıdakilerden hangileri yanlıştır? – I. Veri özelliği sıralı ise, atama yaparken sıralamayı korumak gerekir – II. Kategorik değerleri ikili formata dönüştürürken 0 ve 1’leri istenilen şekilde atanabilir – III. Kategori sayısı kadar sütun oluşturmak gerekir",
+    "options": {
+      "A": "I-II",
+      "B": "II-III",
+      "C": "Yalnız II",
+      "D": "Yalnız III",
+      "E": "Hiçbiri"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-330e2b839150",
+    "unitNumber": 143,
+    "text": "Aşağıdaki yöntemlerden hangileri özellik oluşturma (feature creation) için kullanılabilir? – I. Öznitelik oluşturma – II. Veriyi yeni bir uzaya eşleme – III. Öznitelik inşası",
+    "options": {
+      "A": "I-II",
+      "B": "II-III",
+      "C": "I-II-III",
+      "D": "Yalnız I"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-680f31788e40",
+    "unitNumber": 145,
+    "text": "Veri setindeki değerlerin ortalama etrafındaki yayılımı ölçen istatistik hangisidir?",
+    "options": {
+      "A": "Medyan",
+      "B": "Varyans",
+      "C": "Mod",
+      "D": "Aralık",
+      "E": "Standart Sapma"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-7a91b4ab1bdc",
+    "unitNumber": 146,
+    "text": "Saçılım grafiği hangi tür ilişkileri görsel olarak göstermek için kullanılır?",
+    "options": {
+      "A": "Lineer ilişkiler",
+      "B": "Kategorik ilişkiler",
+      "C": "Karmaşık ilişkiler",
+      "D": "İki değişken arasındaki ilişkiler",
+      "E": "Eşzamanlı ilişkiler"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-c4d305fce6df",
+    "unitNumber": 147,
+    "text": "Kök ve yaprak diyagramı hangi amaçla kullanılır?",
+    "options": {
+      "A": "İki değişken arasındaki ilişkiyi göstermek için",
+      "B": "Sürekli verilerin dağılımını göstermek için",
+      "C": "Aşırı değerleri belirlemek için",
+      "D": "Veri setinin merkezi eğilimini göstermek için",
+      "E": "Kategorik verilerin oransal dağılımını göstermek için"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-f9a5072dba57",
+    "unitNumber": 148,
+    "text": "Kutu grafiği hangi istatistikleri görsel olarak temsil eder?",
+    "options": {
+      "A": "Oransal dağılım",
+      "B": "Standart Sapma",
+      "C": "Çeyreklikler",
+      "D": "Medyan",
+      "E": "Varyans"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-cbf06c97f6d0",
+    "unitNumber": 149,
+    "text": "Veri setindeki değerlerin yarısından fazlasını/ortasını belirten istatistik hangisidir?",
+    "options": {
+      "A": "Ortalama",
+      "B": "Standart Sapma",
+      "C": "Medyan",
+      "D": "Mod",
+      "E": "Aralık"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e62992ab0f10",
+    "unitNumber": 150,
+    "text": "Logit dönüşümü, lojistik regresyon modelinde hangi olasılık değerini daha doğrusal ve düzgün bir şekilde modellemeyi sağlar?",
+    "options": {
+      "A": "Olasılıklar oranını (odds ratio)",
+      "B": "Toplam olasılığı",
+      "C": "Gerçekleşme olasılığını",
+      "D": "Mutlak olasılığı",
+      "E": "Ortalama olasılığı"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-5b4c83b22958",
+    "unitNumber": 151,
+    "text": "Birliktelik analizi için kullanılan destek ve güven oranları hangi bilgiyi sağlar?",
+    "options": {
+      "A": "Ürünlerin fiyat değişimlerini",
+      "B": "Bir kuralın ne sıklıkta uygulandığını ve çıkarımın güvenilirliğini",
+      "C": "Ürünlerin stok durumlarını",
+      "D": "Bir ürünün popülerliğini",
+      "E": "Reklam kampanyalarının etkisini"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-9cbf466cd069",
+    "unitNumber": 153,
+    "text": "Hangisi Logaritmik dönüşüm yapılma gerekçesi değildir?",
+    "options": {
+      "A": "Doğrusal bir ilişki elde etmek için",
+      "B": "Orijinal verilerin yorumlanmasını kolaylaştırmak için",
+      "C": "Modelin performansını değerlendirmek için",
+      "D": "Veri normal dağılıma sahip olduğu için",
+      "E": "Modelin eğitimini kolaylaştırmak için"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-328397a1dbce",
+    "unitNumber": 154,
+    "text": "Lojistik regresyon, hangi tür veri setleri üzerinde çalışmaya daha uygundur?",
+    "options": {
+      "A": "Yalnızca sürekli değerler",
+      "B": "Sürekli veya kategorik değerler",
+      "C": "Yalnızca ordinal değerler",
+      "D": "Kategorik ve ikili sonuçlar",
+      "E": "Sadece nominal değerler"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-ea65e92117e3",
+    "unitNumber": 155,
+    "text": "Sigmoid fonksiyonunun temel özelliklerinden biri nedir?",
+    "options": {
+      "A": "Doğrusal bir çıktı üretir",
+      "B": "Herhangi bir gerçel sayıyı 0 ile 1 arasında bir değere dönüştürür",
+      "C": "Negatif sayılar için sonsuzluğa yakınsar",
+      "D": "Pozitif girdiler için 2'ye yakınsar",
+      "E": "Türevi sabit bir değere sahiptir"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-2f226f07ff5f",
+    "unitNumber": 156,
+    "text": "Apriori algoritmasının amacı nedir?",
+    "options": {
+      "A": "Veri setini düzenlemek",
+      "B": "Minimum destek eşiğini belirlemek",
+      "C": "Sık öge kümelerini bulmak",
+      "D": "Güven tabanlı kesmeyi uygulamak",
+      "E": "Kuralları görselleştirmek"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-74c2e903bd71",
+    "unitNumber": 157,
+    "text": "Doğrusal regresyonun ikili sonuçlar için uygun olmamasının nedeni nedir?",
+    "options": {
+      "A": "İkili sonuçların doğrusal olmayan doğasını göz ardı etmesi",
+      "B": "Hata terimlerinin sabit varyansa sahip olması",
+      "C": "Sürekli değerler yerine kategorik çıktılar üretmesi",
+      "D": "Değişen varyansın varsayım ihlali yapması",
+      "E": "Lojistik regresyonun kullanımını zorunlu kılması"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-4f0d23078eda",
+    "unitNumber": 158,
+    "text": "Güven tabanlı kesme stratejisi hangi durumu ele alır?",
+    "options": {
+      "A": "Tüm kuralları eler",
+      "B": "Güveni artırır",
+      "C": "Alt küme oluşturur",
+      "D": "Kural kümesini bulur",
+      "E": "Sık öge kümesini bulur"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-42697fbbdf9d",
+    "unitNumber": 159,
+    "text": "Veri madenciliği sürecinde hangi adım veri setlerinin temizlenmesini, düzenlenmesini ve hazırlanmasını içerir?",
+    "options": {
+      "A": "Modelleme",
+      "B": "Örüntü Tanıma",
+      "C": "Doğrulama ve Değerlendirme",
+      "D": "Tahmin ve Karar Destek",
+      "E": "Ön İşleme"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-13f940ad4aba",
+    "unitNumber": 160,
+    "text": "Nominal değişkenler hangi özelliğe sahiptir?",
+    "options": {
+      "A": "Kategoriler arasında belirli bir sıralama vardır.",
+      "B": "Kategoriler arasında hiçbir sıralama yoktur.",
+      "C": "Kesirli değerler alabilirler.",
+      "D": "Yapısal veriye örnektirler.",
+      "E": "Sayılar, metinler gibi sütun ve satırlardan oluşurlar."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-c12277baf238",
+    "unitNumber": 161,
+    "text": "Veri madenciliği ve bilgi keşfi arasındaki ilişkiyi doğru ifade eden aşağıdaki seçeneklerden hangisidir?",
+    "options": {
+      "A": "Veri madenciliği, bilgi keşfinin bir parçasıdır ve veri analizlerini içerir.",
+      "B": "Veri madenciliği, bilgi keşfi ile eş anlamlıdır ve aynı süreci ifade eder.",
+      "C": "Veri madenciliği, bilgi keşfi sürecindeki en zahmetli adımdır.",
+      "D": "Veri madenciliğiyle bilgi keşfi arasında doğrudan bir ilişki yoktur.",
+      "E": "Bilgi keşfi, veri madenciliği sürecinin son adımıdır."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e9cc620f47d6",
+    "unitNumber": 162,
+    "text": "Hangi değişken türü, sayısal bir ilişkiye sahip değildir ancak sıralanabilir?",
+    "options": {
+      "A": "Nominal Değişkenler",
+      "B": "Sürekli Değişkenler",
+      "C": "Kesikli Değişkenler",
+      "D": "Ordinal Değişkenler",
+      "E": "Yapısal Değişkenler"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-45476590447d",
+    "unitNumber": 163,
+    "text": "Hangisi veri, enformasyon ve bilgi arasındaki ilişkiyi doğru ifade eder?",
+    "options": {
+      "A": "Veri, enformasyonun işlenmiş haliyken, bilgi bu verilerin düzenlenmiş hali olarak tanımlanır.",
+      "B": "Bilgi, enformasyonun daha detaylı bir versiyonudur ve veri en basit formudur.",
+      "C": "Veri, ham ve işlenmemiş bilgileri ifade ederken, enformasyon bu verilerin işlenmiş ve düzenlenmiş hali olarak tanımlanır, bilgi ise enformasyonun işlenmiş ve kullanılabilir hali olarak tanımlanır.",
+      "D": "Bilgi, verilerin anlamlı hale geldiği durumu temsil ederken, enformasyon bu verilerin anlam kazanmış hali olarak tanımlanır.",
+      "E": "Veri, enformasyonun daha basit bir formu iken, bilgi bu verilerin en kapsamlı hali olarak tanımlanır."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-07a2b790dc5c",
+    "unitNumber": 164,
+    "text": "Ağaç yapısında alt kümeler oluşturan kümeleme türü hangisidir?",
+    "options": {
+      "A": "Özel Kümeleme",
+      "B": "Bulanık Kümeleme",
+      "C": "Hiyerarşik Kümeleme",
+      "D": "Örtüşen Kümeleme",
+      "E": "Bölütlenmiş Kümeleme"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-d9fe413563f1",
+    "unitNumber": 165,
+    "text": "Sınıflandırma modelinin performansı nasıl değerlendirilir?",
+    "options": {
+      "A": "RMSE kullanılarak",
+      "B": "Karışıklık matrisi ile",
+      "C": "Doğruluk değeri ile",
+      "D": "Ağırlıklandırma kullanılarak",
+      "E": "Duyarlılık metriği ile"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-182683b8116c",
+    "unitNumber": 166,
+    "text": "K-ortalamalar kümeleme yönteminde, veri noktalarının kümelere atanmasında hangi kritere göre karar verilir?",
+    "options": {
+      "A": "En uzak noktaya göre",
+      "B": "Küme merkezine olan uzaklığa göre",
+      "C": "Rastgele seçime göre",
+      "D": "Küme içi benzerliklere göre",
+      "E": "Veri sıralamasına göre"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-37f0d563a19d",
+    "unitNumber": 167,
+    "text": "Performans metrikleri arasında doğruluk (accuracy) neyi ölçer?",
+    "options": {
+      "A": "Modelin eğitim süresini",
+      "B": "Modelin karmaşıklığını",
+      "C": "Modelin doğru tahmin ettiği kayıtların oranını",
+      "D": "Modelin yanlış tahmin ettiği kayıtların oranını",
+      "E": "Modelin genel başarı seviyesini"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-c10bacaaaf2c",
+    "unitNumber": 168,
+    "text": "SOM’un (Kendi Kendini Düzenleyen Haritalar) eğitim süreci nasıl işler?",
+    "options": {
+      "A": "Hataların geri yayılma prensibine dayanır.",
+      "B": "Rekabetçi öğrenme kullanarak ağırlıkları günceller.",
+      "C": "İleri beslemeli bir ağ mimarisine sahiptir.",
+      "D": "Epsilon ve minPts parametrelerini kullanır.",
+      "E": "Sadece sayısal verilerle çalışır."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-86f1ff9730ca",
+    "unitNumber": 169,
+    "text": "Karar ağaçları hangi tür düğümleri içerir?",
+    "options": {
+      "A": "Sadece kök düğümler",
+      "B": "Yaprak düğümleri ve iç düğümler",
+      "C": "Sadece yaprak düğümleri",
+      "D": "Sadece iç düğümler",
+      "E": "Sadece son düğümler"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-830226968c05",
+    "unitNumber": 170,
+    "text": "Sınıflandırma görevi nedir?",
+    "options": {
+      "A": "Bir nesneyi belirli bir kategoriye atama işlemi",
+      "B": "Sayıları sıralama işlemi",
+      "C": "Rastgele öznitelikleri seçme işlemi",
+      "D": "Veri setini bölme işlemi",
+      "E": "Örneklem çıkarma işlemi"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-ad671960db76",
+    "unitNumber": 171,
+    "text": "DBSCAN algoritmasında kullanılan epsilon (ε) nedir?",
+    "options": {
+      "A": "Matris determinantı",
+      "B": "Yoğunluk eşiği",
+      "C": "Veri setinin boyutu",
+      "D": "Algoritmanın adım büyüklüğü",
+      "E": "En küçük yoğunluğa sahip alan"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e732b6250a5d",
+    "unitNumber": 172,
+    "text": "kNN algoritmasının temel prensibi nedir?",
+    "options": {
+      "A": "Rastgele seçim yapma",
+      "B": "Komşuların çoğunluk oyunu kullanma",
+      "C": "Doğrusal regresyon uygulama",
+      "D": "Ağırlıklandırma kullanma",
+      "E": "Karar ağaçları oluşturma"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-c4e7e4a7a8de",
+    "unitNumber": 173,
+    "text": "Nesnelerin birden fazla kümeye ait olabileceği kümeleme türü hangisidir?",
+    "options": {
+      "A": "Hiyerarşik Kümeleme",
+      "B": "Bölütlenmiş Kümeleme",
+      "C": "Özel Kümeleme",
+      "D": "Bulanık Kümeleme",
+      "E": "Örtüşen Kümeleme"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-903e9b0a38e6",
+    "unitNumber": 175,
+    "text": "(1) Modeli kullanma, (2) Veriyi anlama, (3) Modeli Değerlendirme, (4) Modelleme, (5) Veriyi Hazırlama, (6) Problemi Tanımlama olmak üzere standart bir veri madenciliği sürecinde izlenecek sıra aşağıdakilerin hangisinde doğru olarak verilmiştir?",
+    "options": {
+      "A": "6-2-4-5-3-1",
+      "B": "6-2-5-4-3-1",
+      "C": "2-5-6-4-1-3",
+      "D": "2-6-5-3-1-4",
+      "E": "6-5-2-4-3-1"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-9bf42b6b9387",
+    "unitNumber": 176,
+    "text": "Veri madenciliği aşağıdaki alanların hangisi ile yakın derecede ilişkilidit?",
+    "options": {
+      "A": "İstatistik",
+      "B": "Veritabanı Yönetimi",
+      "C": "Algoritma Geliştirme",
+      "D": "Makine Öğrenmesi",
+      "E": "Hepsi"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-3d74de29ec46",
+    "unitNumber": 177,
+    "text": "Bir işletme aşağıdaki çalışmalardan hangisinde veri madenciliği uygulamalarından faydalanabilir?",
+    "options": {
+      "A": "Satış elemanlarının 6 aylık satış hacimlerinin hesaplanması",
+      "B": "Şubelerin stok devir hızı raporlarının çıkarılması",
+      "C": "Senelik şube bazlı karlılık raporlarının oluşturulması",
+      "D": "Yapılacak kampanyaya yanıt verebilecek hedef kitlenin belirlenmesi",
+      "E": "Şubelerin işgücü ve vardiya planlamasının yapılması"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-bc00ae447275",
+    "unitNumber": 178,
+    "text": "Aşağıdakilerin hangisinde denetimsiz öğrenmeyi kullanan veri madenciliği fonksiyonları doğru olarak verilmiştir?",
+    "options": {
+      "A": "Kümeleme-Sınıflandırma",
+      "B": "Birliktelik-Regresyon",
+      "C": "Kümeleme-Birliktelik",
+      "D": "Kümeleme-Regresyon",
+      "E": "Sınıflandırma-Aykırılık"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-9280a48fa595",
+    "unitNumber": 179,
+    "text": "Aşağıdakilerin hangisinde veri madenciliğinin fonksiyonunun işlevi doğru olarak belirtilmiştir?",
+    "options": {
+      "A": "SınıflandırmaTanımlayıcı",
+      "B": "KümelemeTanımlayıcı",
+      "C": "Birliktelik Tahminleyici",
+      "D": "Ardıl desen keşfiTahminleyici",
+      "E": "RegresyonTanımlayıcı"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-ac43ca01c06c",
+    "unitNumber": 180,
+    "text": "Pazar sepet analizi ile müşteri işlem verisinin değerlendirilmesi hangi veri madenciliği fonksiyonu ile gerçekleştirilmektedir?",
+    "options": {
+      "A": "Kümeleme",
+      "B": "Sınıflandırma",
+      "C": "Aykırılık",
+      "D": "Birliktelik",
+      "E": "Veri önişleme"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-6f481a542235",
+    "unitNumber": 181,
+    "text": "Aşağıdakilerden hangisi veri madenciliğinde sınıflandırma problemlerinin çözümü için kullanılan algoritmalardan biri değildir?",
+    "options": {
+      "A": "Karar Ağaçları",
+      "B": "Sade Bayes",
+      "C": "K-ortalamalar",
+      "D": "Lojistik Regresyon",
+      "E": "Destek Vektör Makineleri"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-eb1ca0200f1f",
+    "unitNumber": 182,
+    "text": "Aşağıdakilerden hangisi veri madenciliğinde kümeleme problemlerinin çözümü için kullanılan algoritmalardan biri değildir?",
+    "options": {
+      "A": "Bulanık c-ortalamalar",
+      "B": "Beklenti maksimizasyonu",
+      "C": "Yoğunluk tabanlı yöntemler",
+      "D": "Hiyerarşik yöntemler",
+      "E": "Doğrusal Regresyon"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-e98bd2af1117",
+    "unitNumber": 183,
+    "text": "Aşağıdaki hangisi veri önişlemede veri azaltımı için kullanılan tekniklerden biri değildir?",
+    "options": {
+      "A": "Korelasyon Analizi",
+      "B": "Örnekleme Metodu",
+      "C": "Kutu Grafiği",
+      "D": "Temel Bileşen Analizi",
+      "E": "Dalgacık Dönüşümü"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-b6c10dfd2378",
+    "unitNumber": 184,
+    "text": "Niteliği kesikli hale getirmek için eşit genişlikli dört bölüme ayırırsak, birinci bölümde (en küçük değerlerin olduğu bölüm) kaç değer yer alacaktır?",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5",
+      "E": "6"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-a58e6bfffa40",
+    "unitNumber": 185,
+    "text": "Nitelik için Z-skor normalleştirmesi yapılırsa, niteliğin 3. elemanı (59 değeri) hangi değere dönüşecektir? (nitelik ortalaması=32.16, nitelik standart sapması=22.91)",
+    "options": {
+      "A": "3.98",
+      "B": "3.92",
+      "C": "2.46",
+      "D": "1.17",
+      "E": "1.12"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-c893b58a318a",
+    "unitNumber": 186,
+    "text": "Niteliğin 4.değeri için (10 değeri) min-maks normalleştirmesi yapılırsa, niteliğin 5. elemanının (32 değeri) yeni değeri ne olacaktır?",
+    "options": {
+      "A": "0.412",
+      "B": "0.453",
+      "C": "0.494",
+      "D": "0.535",
+      "E": "0.576"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-dbf04a8065ee",
+    "unitNumber": 187,
+    "text": "Sınıf niteliğinin entropisi hesaplandığında hangi değer elde edilir?",
+    "options": {
+      "A": "0",
+      "B": "0.724",
+      "C": "0.836",
+      "D": "0.918",
+      "E": "0.970"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-19cb6672802a",
+    "unitNumber": 188,
+    "text": "Karar ağacının ilk olarak motor niteliğine göre dallandırılmasının bilgi kazancı nedir?",
+    "options": {
+      "A": "0.074",
+      "B": "0.085",
+      "C": "0.115",
+      "D": "0.121",
+      "E": "0.212"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-8ed40bdd40cf",
+    "unitNumber": 190,
+    "text": "ID3 algoritmasına göre karar ağacı ilk olarak hangi niteliğe göre dallandırılmalıdır?",
+    "options": {
+      "A": "Model",
+      "B": "Motor",
+      "C": "SC/Turbo",
+      "D": "Ağırlık",
+      "E": "Yakıt Tüketimi"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-42c2648b6c98",
+    "unitNumber": 191,
+    "text": "Bayes teoremi ve bayes sınıflandırıcısı ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
+    "options": {
+      "A": "Bayes sınıflandırıcısı, nesnenin hangi sınıfa ait olduğunu olasılıksal olarak tahmin etmektedir.",
+      "B": "Sade bayes sınıflandırıcısı, nitelikler arasındaki bağımlılık ilişkisini dikkate almaktadır.",
+      "C": "Sade bayes sınıflandırıcısında, niteliklerin hepsi eşit derecede önemlidir",
+      "D": "Bayes teoremi, koşullu olasılık hesaplamalarına dayanmaktadır.",
+      "E": "Sade bayes sınıflandırıcısında, bir niteliğin değeri başka bir niteliğin değeri hakkında bilgi içermemektedir."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-9fa117ed72d5",
+    "unitNumber": 192,
+    "text": "P(Oyun=Evet)|P(x’=(Hava=Güneşli, Isı=Soğuk, Nem=Yüksek, Rüzgar=Var)) olasılığını hesaplayınız?",
+    "options": {
+      "A": "0.0053",
+      "B": "0.0106",
+      "C": "0.0159",
+      "D": "0.0212",
+      "E": "0.0265"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-b6cf975fdafc",
+    "unitNumber": 193,
+    "text": "x’=(Hava=Güneşli, Isı=Soğuk, Nem=Yüksek, Rüzgar=Var) test örneğinin Oyun=Hayır sınıfına hangi olasılıkla ait olduğunu sade bayes sınıflandırısını kullanarak bulunuz?",
+    "options": {
+      "A": "%50",
+      "B": "%60",
+      "C": "%70",
+      "D": "%80",
+      "E": "%90"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-032689e21fb3",
+    "unitNumber": 195,
+    "text": "M1 sınıflandırma modelinin toplam maliyeti nedir?",
+    "options": {
+      "A": "3850",
+      "B": "3910",
+      "C": "4010",
+      "D": "4050",
+      "E": "4150"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-d3a60cbfef95",
+    "unitNumber": 196,
+    "text": "M1 sınıflandırma modelinin doğruluk oranı nedir?",
+    "options": {
+      "A": "% 60",
+      "B": "% 70",
+      "C": "% 80",
+      "D": "% 90",
+      "E": "% 100"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-715f8a0c489f",
+    "unitNumber": 197,
+    "text": "M1 sınıflandırma modelinin F-ölçüsünün değeri nedir?",
+    "options": {
+      "A": "0.55",
+      "B": "0.60",
+      "C": "0.65",
+      "D": "0.70",
+      "E": "0.75"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-19a34efd560e",
+    "unitNumber": 198,
+    "text": "Bir mağazanın, 6 farklı ürününün sergileme miktarı ve reklam harcamalarına bağlı olarak, satış değerleri aşağıdaki tablodaki gibidir. Sergileme miktarı 240 ve reklam harcaması 2000 olan bir ürünün k en yakın komşu algoritması (k=3) ile elde edilen komşularının sınıf etiketinin dağılımı nasıldır? Sergileme Reklam Satış 180 1600 ORTA 260 1800 YÜKSEK 320 2000 YÜKSEK 200 1400 DÜŞÜK 140 1600 DÜŞÜK 220 2600 YÜKSEK",
+    "options": {
+      "A": "3 YÜKSEK",
+      "B": "2 YÜKSEK, 1 ORTA",
+      "C": "1 YÜKSEK, 2 ORTA",
+      "D": "2 YÜKSEK, 1 DÜŞÜK",
+      "E": "1 YÜKSEK, 1 ORTA, 1 DÜŞÜK"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-9f781d2900b9",
+    "unitNumber": 199,
+    "text": "Aşağıdakilerden hangisi, kontrol diyagramlarında kontrol dışı olma duurumunu ifade etmez?",
+    "options": {
+      "A": "Herhangi bir noktanın  3 dışında olması",
+      "B": "Ardışık 4 noktanın  1 aralığında olması",
+      "C": "7 ya da daha fazla ardışık noktanın merkez çizgisinin üzerinde ya da altında olması",
+      "D": "Ardışık 6 noktanın sürekli olarak artması ya da azalması",
+      "E": "Ardışık 3 noktanın 2’sinin  2 aralığının dışında olması"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-4a4e1a954ec7",
+    "unitNumber": 200,
+    "text": "Cevap zamanı için X-R kontrol diyagramı oluşturulduğunda, X ve R diyagramlarının merkez çizgisi olarak sırasıyla hangi değerler elde edilir?",
+    "options": {
+      "A": "5.04 – 2.14",
+      "B": "5.04 – 2.34",
+      "C": "5.04 – 2.64",
+      "D": "5.64 – 2.14",
+      "E": "5.64 – 2.64"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-fe79540f96c8",
+    "unitNumber": 201,
+    "text": "Cevap zamanı için X-R kontrol diyagramı oluşturulduğunda, X diyagramının alt kontrol limitinin hesaplanan değeri nedir?",
+    "options": {
+      "A": "3.16",
+      "B": "2.22",
+      "C": "2.89",
+      "D": "3.12",
+      "E": "4.01"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-21bcfabadf3c",
+    "unitNumber": 202,
+    "text": "R diyagramının üst kontrol limiti hesaplandığında, hangi değer elde edilir?",
+    "options": {
+      "A": "6.02",
+      "B": "5.74",
+      "C": "5.56",
+      "D": "4.56",
+      "E": "0"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-28a22971979d",
+    "unitNumber": 203,
+    "text": "Ölçülemeyen özellikler için kullanılan u kontrol diyagramı hangi olasılık dağılımını esas almaktadır?",
+    "options": {
+      "A": "Normal Dağılım",
+      "B": "Binom Dağılımı",
+      "C": "Hipergeometrik Dağılım",
+      "D": "Gama Dağılımı",
+      "E": "Poisson Dağılımı"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-8e834c87b4f2",
+    "unitNumber": 204,
+    "text": "Bölgesel bir havaalanı şirketinin zamanında ucuş performansına ilişkin kayıtlar ile illgilenmektedir. Haftanın her günü 20 uçuş yapılmaktadır. Geçmiş 7 günün zamanında ucuş kayıtları 17,16,18,19,16,15,20 şeklindedir. Zamanında ucuş performansı için p-kontrol diyagramı oluşturulduğunda elde edilecek alt ve üst kontrol limitleri nedir?",
+    "options": {
+      "A": "0.6345 – 1.0940",
+      "B": "0.6345 - 1",
+      "C": "0.8643 - 1",
+      "D": "0.8643 – 1.0940",
+      "E": "0.6345 – 0.8643"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-f875d06322fb",
+    "unitNumber": 205,
+    "text": "Bir operatör, bir üretim vardiyasında her biri 300 üründen oluşan 8 farklı örneklem almış ve her bir örneklemdeki hatalı parça sayısını belirleyerek kaydetmiştir. Hata sayıları aşağıdaki tablodaki gibidir. Alt Grup Hatalı sayısı 1 3 2 4 3 6 4 4 5 3 6 5 7 7 8 4 Bu veri kümesi kullanılarak üretim süreci için np kontrol diyagramı oluşturulduğunda, kontrol diyagramının üst kontrol limiti değeri nedir?",
+    "options": {
+      "A": "5.64",
+      "B": "6.89",
+      "C": "8.32",
+      "D": "9.56",
+      "E": "10.82"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-4e18cd811059",
+    "unitNumber": 206,
+    "text": "Halı yapımında kullanılan , kumaş üretim prosesinde malzeme yüzeyleri görsel olarak kontrol edilmektedir. Farklı büyüklüklerde halılar olmasından dolayı, birim alan başına kusur sayısı kullanılmaktadır. 6 farklı örnekten elde edilen değerler aşağıdaki tablodaki gibidir: Malzeme No Malzeme Boyutu Hata Sayısı 1 180 1 2 120 0 3 150 2 4 120 1 5 200 3 6 200 3 6 nolu malzeme için u kontrol diyagramının üst kontrol limiti hesaplanırsa, hangi değer elde edilir?",
+    "options": {
+      "A": "0.0100",
+      "B": "0.0121",
+      "C": "0.0212",
+      "D": "0.0312",
+      "E": "0.0432"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-e61a6574021b",
+    "unitNumber": 207,
+    "text": "Paslanmaz çelik levhaların yüzeyindeki kırıklar için c kontrol diyagramının yapılacaktır. 10 ürün için elde edilen kusur sayısı sırasıyla 3, 1, 0, 2, 2, 1, 0, 1, 2, 1 şeklindedir. c kontrol diyagramının alt kontrol limiti nedir?",
+    "options": {
+      "A": "0",
+      "B": "0.371",
+      "C": "0.534",
+      "D": "0.713",
+      "E": "0.958"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-ff393d8cc88e",
+    "unitNumber": 208,
+    "text": "Altı sigma projelerinde yarı zamanlı çalışan ve ağırlıklı olarak veri analizine odaklanan proje üyesi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Şampiyon",
+      "B": "Uzman siyah kuşak",
+      "C": "Siyah kuşak",
+      "D": "Yeşil kuşak",
+      "E": "Proses sahibi"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-4912dcfc387c",
+    "unitNumber": 209,
+    "text": "Altı sigma yönetim metodolojisi evreleri aşağıdakilerin hangisinde doğru olarak sıralanmıştır?",
+    "options": {
+      "A": "Tanımlama-Analiz-Ölçme-Kontrol-İyileştirme",
+      "B": "Tanımlama-Kontrol-Ölçme-Analiz-İyileştirme",
+      "C": "Tanımlama-Ölçme-Analiz-Kontrol-İyileştirme",
+      "D": "Tanımlama-Analiz-Ölçme-İyileştirme-Kontrol",
+      "E": "Tanımlama-Ölçme-Analiz-İyileştirme-Kontrol"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-96003861a948",
+    "unitNumber": 210,
+    "text": "Altı sigma kalite seviyesi, milyon fırsatta kaç hata yapılmasını hedeflemektedir?",
+    "options": {
+      "A": "344",
+      "B": "34",
+      "C": "3.4",
+      "D": "0.34",
+      "E": "0.034"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-538c13022de4",
+    "unitNumber": 211,
+    "text": "Bir işletmenin lojistik operasyonlarına yönelik bir altı sigma projesi yürütülmektedir. Bu proje kapsamında, mevcut sevkiyat performansı ölçülmek istenmiş ve toplanan veriler sonucunda 20000 adet günlük sevkiyatın 100 adetinin hatalı olduğu belirlenmiştir. Bu değerlere gore, prosesin sigma kalite seviyesini hesaplayınız?",
+    "options": {
+      "A": "2.58",
+      "B": "3.08",
+      "C": "3.58",
+      "D": "4.08",
+      "E": "4.58"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-e4ac9e089fab",
+    "unitNumber": 212,
+    "text": "Bir prosesteki ardışık 3 operasyonun başarı oranları (ilk seferde doğru yapma) sırasıyla %93, %87 ve %98’dir. Bu prosesin toplam süreç verimliliği nedir?",
+    "options": {
+      "A": "% 74",
+      "B": "% 79",
+      "C": "% 83",
+      "D": "% 87",
+      "E": "% 98"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-eebaeddb9b38",
+    "unitNumber": 213,
+    "text": "Bu sürecin Cp yeterlilik indeksi nedir?",
+    "options": {
+      "A": "0.97",
+      "B": "1.17",
+      "C": "1.37",
+      "D": "1.57",
+      "E": "1.77"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-37fcf3775a65",
+    "unitNumber": 215,
+    "text": "Bir prosesin ortalaması, müşteri spesifikasyon limitinin dışında ise Cpk indeksinin değeri aşağıdakilerden hangisi olabilir?",
+    "options": {
+      "A": "-0.5",
+      "B": "0",
+      "C": "0.5",
+      "D": "1",
+      "E": "2"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-71c04bc66f78",
+    "unitNumber": 216,
+    "text": "Bir vardiyada üretilen ürünlerden, örnek büyüklüğü 5 olacak şekilde 10 alt grup alınarak tartılmış ve gram olarak ağırlıkları aşağıdaki tablodaki gibi kaydedilmiştir. Başlangıçta; üst spesifikasyon limiti 26 gr. ve alt spesifikasyon limiti 23 gr. olarak belirlenmiştir. Bu verilere göre, prosesin Cpk yeterlilik indeksi nedir? Alt Grup No X1 X2 X3 X4 X5 1 24.1 24.1 24.4 24.2 24.1 2 24.4 24.3 24.7 24.5 24.1 3 24.2 24.3 24.3 24.1 24.4 4 24.3 24.3 24.2 24.2 24.3 5 24.4 24.9 24.7 24.2 24.4 6 24.7 24.3 24.3 24.5 24.2 7 24.6 24.4 24.7 24.6 24.4 8 24.3 24.7 24.7 24.3 24.6 9 24.5 24.2 24.8 24.5 24 10 24.6 24.7 24.7 24.3 24.1",
+    "options": {
+      "A": "1.43",
+      "B": "1.73",
+      "C": "2.13",
+      "D": "2.53",
+      "E": "2.93"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-d40a76d2feb6",
+    "unitNumber": 217,
+    "text": "Proses yeterlilik indeksleri ile ilgili olarak aşağıdaki ifadelerden hangisi yanlıştır?",
+    "options": {
+      "A": "Cp değeri, Cpk değerinden her zaman için küçük ya da eşittir.",
+      "B": "Cpk =0 ise, ortalama spesifikasyon limitlerine eşittir.",
+      "C": "Cp 1 ise, proses yeterli değildir",
+      "D": "Proses merkezi değiştiğinde, Cp değeri değişmez",
+      "E": "Cp = Cpk ise proses merkezidir."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  }
+]

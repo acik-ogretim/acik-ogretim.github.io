@@ -15,9 +15,11 @@ const checkSvg = '<svg aria-hidden="true"><use href="#i-check"/></svg>';
 const xSvg = '<svg aria-hidden="true"><use href="#i-x"/></svg>';
 import SohbetCekmece from "../../../components/sohbet/SohbetCekmece.tsx";
 import { getCourses, getQuestions, getUniversities } from "../../../lib/api";
+import { canonicalDepartments, coursePath } from "../../../lib/kanonik";
 
 export async function getStaticPaths() {
   const universities = await getUniversities();
+  const canonical = await canonicalDepartments();
   const paths = [];
 
   for (const uni of universities) {
@@ -31,7 +33,7 @@ export async function getStaticPaths() {
             department: dept.id,
             course: course.id,
           },
-          props: { university: uni, department: dept, course },
+          props: { university: uni, department: dept, course, canonicalDept: canonical.get(`${uni.id}/${course.id}`) ?? dept.id },
         });
       }
     }
@@ -45,9 +47,11 @@ interface Props {
   university: University;
   department: Department;
   course: Course;
+  canonicalDept: string;
 }
 
-const { university, department, course } = Astro.props;
+const { university, department, course, canonicalDept } = Astro.props;
+if (canonicalDept !== department.id) return Astro.redirect(coursePath(university.id, canonicalDept, course.id));
 const questions = await getQuestions(university.id, course.id);
 
 // Group questions by unit

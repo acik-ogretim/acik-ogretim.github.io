@@ -1,1 +1,2786 @@
-[]
+[
+  {
+    "id": "s-48b822516218",
+    "unitNumber": 1,
+    "text": "“adres” olgusu aşağıdakilerden hangisi olmak için daha uygundur?",
+    "options": {
+      "A": "Anahtar",
+      "B": "Fonksiyonel bağımlılık",
+      "C": "Nitelik adı",
+      "D": "İlişki",
+      "E": "Tablo adı"
+    },
+    "correctAnswer": "C",
+    "explanation": "Veri tabanı tasarımında varlıklar (Entity) tablo olurken, bu varlıkların özellikleri (Property) **Nitelik** (Attribute/Sütun) olur. Örneğin “Öğrenci” bir tablodur; öğrencinin “Adı”, “Soyadı” ve “Adresi” bu tablonun nitelikleridir. Adres tek başına bir tablo veya anahtar olmaktan ziyade, bir kişiyi veya kurumu tanımlayan bir özellik (sütun) olmaya en uygundur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-584bed93db91",
+    "unitNumber": 2,
+    "text": "Bir öğrenci bilgi sisteminde aşağıdaki fonksiyonel bağımlılıklardan hangisi diğerlerine göre daha uygundur?",
+    "options": {
+      "A": "soyad -&gt; ogrenciNo",
+      "B": "dogumTarihi &rarr; ogrenciNo",
+      "C": "ogrenciNo -&gt; ad, soyad",
+      "D": "bolum -&gt; ogrenciNo",
+      "E": "ad -&gt; ogrenciNo"
+    },
+    "correctAnswer": "C",
+    "explanation": "Veritabanı mantığında “Öğrenci Numarası” her öğrenciye özel, tekil (unique) bir değerdir. Bir numara girildiğinde, o numaraya ait öğrencinin adı ve soyadı tek bir sonuç olarak gelir. Diğer şıklarda; “Ad” veya “Soyad” benzersiz değildir (aynı isimde çok kişi olabilir), “Sınıf” benzersiz değildir (bir sınıfta çok öğrenci vardır). Bu yüzden belirleyici olamazlar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d33e73fd5d79",
+    "unitNumber": 3,
+    "text": "Bir kitap veri tabanında aşağıdaki fonksiyonel bağımlılıklardan hangisi en uygun olur?",
+    "options": {
+      "A": "yayinevi -&gt; ISBN",
+      "B": "ISBN -&gt; {kitapAdi, yazar, yayinevi}",
+      "C": "kitapAdi -&gt; ISBN",
+      "D": "sayfaSayisi -&gt; fiyat",
+      "E": "kitapAdi -&gt; yazar"
+    },
+    "correctAnswer": "B",
+    "explanation": "ISBN (International Standard Book Number), dünyadaki her kitap baskısı için benzersiz bir kimlik numarasıdır. * B şıkkı: ISBN numarasını bilirseniz, kitabın adını, yazarını ve yayınevini kesin olarak bilirsiniz. Bu, mükemmel bir fonksiyonel bağımlılıktır. * Diğer şıklar hatalıdır çünkü Kitap Adı benzersiz olmayabilir (aynı isimde farklı yazarların kitabı olabilir) veya Yayınevi tek bir ISBN’e gitmez (yayınevinin binlerce kitabı vardır).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-30860d4442ed",
+    "unitNumber": 4,
+    "text": "Tek bir 1 ya da 0’ın kaydedilmesi için gerekli bellek boyut miktarı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "1 megabayt",
+      "B": "1 gigabayt",
+      "C": "1 bit",
+      "D": "1 kilobayt",
+      "E": "1 bayt"
+    },
+    "correctAnswer": "C",
+    "explanation": "Bilgisayar biliminde en küçük veri birimi **Bit**tir (Binary Digit). Bir bit, sadece iki değer alabilir: 0 veya 1 (Elektrik var/yok). * 1 Bayt = 8 Bit * 1 Kilobayt = 1024 Bayt Dolayısıyla tek bir 1 veya 0 değerini saklamak için en küçük birim olan 1 bit yeterlidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-65ad955b59f0",
+    "unitNumber": 5,
+    "text": "Aşağıdakilerden hangisi fonksiyonel bağımlılığın bir sonucu değildir?",
+    "options": {
+      "A": "Veri tekrarının azalması",
+      "B": "Veri erişim hızının artması",
+      "C": "Veri tabanı tasarımının iyileşmesi",
+      "D": "Veri tutarlılığının artması",
+      "E": "Veri hacminin artması"
+    },
+    "correctAnswer": "E",
+    "explanation": "Fonksiyonel bağımlılıkların doğru analiz edilmesi, veritabanı normalizasyonunun temelidir. Normalizasyonun amacı, verilerin tekrar etmesini (redundancy) önlemektir. Veri tekrarı azalınca, veritabanının kapladığı alan (veri hacmi) **artmaz, aksine azalır**. Ayrıca tekrarların önlenmesi veri tutarlılığını sağlar. Bu nedenle E şıkkı, fonksiyonel bağımlılığın ve iyi tasarımın bir sonucu olamaz.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-fdcf43c3b207",
+    "unitNumber": 6,
+    "text": "Aşağıdakilerden hangisinde bilgelik hiyerarşisinin (DIKW piramidi) adımları doğru sıralanmıştır?",
+    "options": {
+      "A": "Bilgelik - Bilgi - Veri - Enformasyon",
+      "B": "Veri - Bilgi - Enformasyon - Bilgelik",
+      "C": "Veri - Bilgi - Bilgelik - Enformasyon",
+      "D": "Veri - Enformasyon - Bilgi - Bilgelik",
+      "E": "Enformasyon - Bilgelik - Veri - Bilgi"
+    },
+    "correctAnswer": "D",
+    "explanation": "Bilgi yönetiminde DIKW piramidi alttan üste doğru şöyle ilerler: 1. **Veri (Data):** Ham gerçekler. 2. **Enformasyon (Information):** Verinin anlamlandırılması. 3. **Bilgi (Knowledge):** Nasıl kullanılacağının bilinmesi. 4. **Bilgelik (Wisdom):** Geleceği öngörme ve doğru karar verme yetisi. Doğru sıralama D şıkkıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e0db1ad071fe",
+    "unitNumber": 7,
+    "text": "Bir online alışveriş sitesi için aşağıdaki fonksiyonel bağımlılıklardan hangisi en az uygun olur?",
+    "options": {
+      "A": "siparisNo -&gt; {musteriNo, tarih, toplamTutar}",
+      "B": "urunKodu -&gt; {urunAdi, fiyat, stok}",
+      "C": "musteriNo -&gt; {ad, soyad, adres}",
+      "D": "kargoTakipNo -&gt; {siparisNo, kargoFirmasi}",
+      "E": "ad -&gt; musteriNo"
+    },
+    "correctAnswer": "E",
+    "explanation": "Fonksiyonel bağımlılıkta sol taraf benzersiz belirleyici olmalıdır. * E şıkkında: `ad -> musteriNo` ifadesi, “Bir kişinin adını (örn: Ahmet) bilirsem, müşteri numarasını kesin olarak bulabilirim” demektir. Bu imkansızdır, çünkü “Ahmet” isminde binlerce müşteri olabilir. İsim benzersiz olmadığı için belirleyici (anahtar) olarak kullanılamaz. * Diğer şıklarda (Sipariş No, Ürün Kodu vb.) sol taraftakiler benzersizdir ve sağdaki bilgileri belirleyebilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-60f3031f95d1",
+    "unitNumber": 8,
+    "text": "Yalnızca “7” sayısı ele alındığında ve bu sayı üzerinden bir sonuç ya da yargıya varılamadığı bilindiğinde; bu sayı aşağıdakilerden hangisi olarak ele alınabilir?",
+    "options": {
+      "A": "Enformasyon",
+      "B": "Veri",
+      "C": "Bilgelik",
+      "D": "Bilgi",
+      "E": "Değer"
+    },
+    "correctAnswer": "B",
+    "explanation": "Bilgi hiyerarşisinde: * **Veri (Data):** Ham, işlenmemiş gerçeklerdir (Örn: “7”). Tek başına anlamı yoktur (7 elma mı? saat 7 mi?). * **Enformasyon (Information):** Verinin işlenmiş, anlam kazandırılmış halidir (Örn: “Hava sıcaklığı 7 derece”). * **Bilgi (Knowledge):** Enformasyonun deneyimle yorumlanmasıdır. Bu nedenle tek başına duran “7”, ham **Veri**dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-db86505e5c20",
+    "unitNumber": 9,
+    "text": "Ölçüm ile elde edilen veri türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Nitel",
+      "B": "Bilgi",
+      "C": "Özgün",
+      "D": "Nicel",
+      "E": "Enformasyon"
+    },
+    "correctAnswer": "D",
+    "explanation": "Veriler ikiye ayrılır: * **Nicel (Quantitative):** Sayılabilen, ölçülebilen, miktar bildiren veriler (Boy, Kilo, Sıcaklık). Ölçüm sonucu elde edilir. * **Nitel (Qualitative):** Sayısal olmayan, özellik bildiren veriler (Göz rengi, Cinsiyet). Soruda “Ölçüm” dendiği için cevap **Nicel**dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-121f8c4b5aa4",
+    "unitNumber": 10,
+    "text": "Farklı kaynaklardan elde edilen veri türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "İkincil veri",
+      "B": "Bilgi",
+      "C": "Birincil veri",
+      "D": "Enformasyon",
+      "E": "Veri kümesi"
+    },
+    "correctAnswer": "A",
+    "explanation": "* **Birincil Veri:** Araştırmacının kendisinin topladığı taze veri. * **İkincil Veri:** Başka kurumlar, araştırmacılar veya kaynaklar tarafından daha önce toplanmış ve kullanıma sunulmuş (kitaplar, makaleler, veri tabanları) verilerdir. Soruda “farklı kaynaklardan elde edilen” (hazır alınan) dendiği için cevap İkincil veridir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1af66ef8c288",
+    "unitNumber": 11,
+    "text": "Bir veri tabanı yönetim sistemi (VTYS), aşağıdakilerden hangisini gerçekleştirmek konusunda fayda sağlamaz?",
+    "options": {
+      "A": "Kullanıcılara yetkiler verilmesi.",
+      "B": "Yeni bir veri tabanı oluşturulması.",
+      "C": "Bilgisayar programlarının veri tabanına erişiminin sağlanması.",
+      "D": "Veri tabanına kayıt girilmesi.",
+      "E": "Verinin grafiklerle görselleştirilmesi."
+    },
+    "correctAnswer": "E",
+    "explanation": "VTYS (DBMS – Database Management System), verilerin fiziksel olarak saklanması, güvenliği, tutarlılığı, yedeklenmesi ve sorgulanması (SQL) ile ilgilenen “arka plan” yazılımıdır (Örn: Oracle, SQL Server, MySQL). Verilerin pasta grafiği, sütun grafiği gibi görsel hale getirilmesi (Data Visualization) VTYS’nin temel görevi değildir; bu işlem Excel, Tableau, PowerBI gibi “İş Zekası” veya raporlama araçları tarafından yapılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-908bf4404338",
+    "unitNumber": 12,
+    "text": "İhtiyaca göre toplanan veri türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "İkincil veri",
+      "B": "Birincil veri",
+      "C": "Bilgi",
+      "D": "Enformasyon",
+      "E": "Veri kümesi"
+    },
+    "correctAnswer": "B",
+    "explanation": "Veri toplama yöntemlerinde kaynaklar ikiye ayrılır. Araştırmacının bizzat sahaya inerek, anket, gözlem veya deney yoluyla, özel bir amaç için “ilk kez” topladığı verilere **Birincil Veri** denir. İkincil veri ise daha önce başkaları tarafından toplanmış (TÜİK verileri, yayınlanmış raporlar vb.) verilerdir. Soruda “ihtiyaca göre toplanan” denilerek amaca özel, ilk elden toplama kastedilmektedir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4befb4ca07ff",
+    "unitNumber": 13,
+    "text": "Ölçüm, sayım, deney, gözlem ya da araştırma yöntemiyle elde edilen kayıtlara verilen ad aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "İstatistik",
+      "B": "Bilgi",
+      "C": "Bilgelik",
+      "D": "Veri",
+      "E": "Enformasyon"
+    },
+    "correctAnswer": "D",
+    "explanation": "Bilimsel yöntemde veya günlük hayatta yapılan gözlem, deney ve ölçümlerin sonucunda kaydedilen ham, işlenmemiş materyale **Veri** denir. İstatistik ise bu verilerin analiz edilme bilimidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a53f4ae81c78",
+    "unitNumber": 14,
+    "text": "Bir veri tabanı tasarımında, tablolar arasındaki ilişkileri gösteren şemaya verilen ad aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Varlık-İlişki diyagramı",
+      "B": "Akış şeması",
+      "C": "Algoritma şeması",
+      "D": "Organizasyon şeması",
+      "E": "Karar ağacı"
+    },
+    "correctAnswer": "A",
+    "explanation": "Veritabanı tasarımının kavramsal aşamasında kullanılan, varlıkları (tabloları), bunların niteliklerini ve varlıklar arasındaki bağları (ilişkileri) gösteren diyagramlara **E-R Diyagramı** (Entity-Relationship Diagram / Varlık-İlişki Diyagramı) denir. Diğer şıklar (Akış, Algoritma) yazılım ve süreç yönetimi ile ilgilidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-763ddad04ec1",
+    "unitNumber": 15,
+    "text": "Veri tabanı tasarımında bir tablonun gösteriminde aşağıdaki hangi bilgiler yer alır?",
+    "options": {
+      "A": "Sadece anahtar özellikleri",
+      "B": "Tablo adı, nitelikler ve anahtar özellikleri",
+      "C": "Tablo adı ve nitelikler",
+      "D": "Sadece tablo adı",
+      "E": "Sadece nitelikler"
+    },
+    "correctAnswer": "B",
+    "explanation": "Veritabanı şemasında bir tablo (ilişki) tanımlanırken şunlar belirtilmelidir: 1. **Tablo Adı:** (Örn: OGRENCI) 2. **Nitelikler (Sütunlar):** (Örn: OgrNo, Ad, Soyad) 3. **Anahtarlar:** Hangi sütunun Birincil Anahtar (PK) veya Yabancı Anahtar (FK) olduğu (genellikle altı çizilerek veya yanına yazılarak). Bu üç unsur olmadan tablo tanımı eksik kalır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a10542959624",
+    "unitNumber": 16,
+    "text": "Kaz Ayağı (Crow’s Foot) gösteriminde, bir ilişkinin zorunlu olmadığını (opsiyonel) gösteren işaret hangisidir?",
+    "options": {
+      "A": "0",
+      "B": "!",
+      "C": "#",
+      "D": "*",
+      "E": "1"
+    },
+    "correctAnswer": "A",
+    "explanation": "Varlık-İlişki diyagramlarında (ERD), iki tablo arasındaki ilişkinin zorunluluk durumunu belirtmek için bağlantı çizgisinin ucuna semboller konur: * **Daire (0):** Opsiyonel (Optional) demektir. Kayıt olmak zorunda değil (Örn: Bir personelin henüz hiç satışı olmayabilir). * **Dikey Çizgi (| veya 1):** Zorunlu (Mandatory) demektir. Bu nedenle “zorunlu olmadığını” gösteren işaret **0**’dır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-294f5d2855e5",
+    "unitNumber": 17,
+    "text": "Codd tarafından 1969 ve 1970 yıllarında yapılan çalışmalarla önerilen veri saklama türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Hiyerarşik veri tabanı",
+      "B": "JSON ve XML",
+      "C": "Ağ veri tabanı",
+      "D": "İlişkisel veri tabanı",
+      "E": "Geleneksel dosya temelli"
+    },
+    "correctAnswer": "D",
+    "explanation": "Edgar F. Codd (E.F. Codd), IBM’de çalışırken verilerin tablolar halinde tutulmasını ve matematiksel küme teorisine dayanmasını öneren makalesini yayınlamıştır. Bu çalışma, bugün kullandığımız (SQL, Oracle vb.) **İlişkisel Veri Tabanı Modeli**nin (Relational Database Model) doğuşudur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ee0defb66031",
+    "unitNumber": 18,
+    "text": "Aşağıdakilerden hangisi bir veri tabanı yönetim sistemi (VTYS) değildir?",
+    "options": {
+      "A": "HTML",
+      "B": "MySQL",
+      "C": "Microsoft Access",
+      "D": "MongoDB",
+      "E": "Oracle"
+    },
+    "correctAnswer": "A",
+    "explanation": "* MySQL, MS Access, Oracle (İlişkisel VTYS) ve MongoDB (NoSQL VTYS) veritabanı yazılımlarıdır. * **HTML** (HyperText Markup Language) ise web sayfalarının iskeletini oluşturmaya yarayan bir işaretleme dilidir. Veri saklama veya yönetme yeteneği yoktur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2ffc2a1398e3",
+    "unitNumber": 20,
+    "text": "Aşağıdaki niteliklerden hangisinin fonksiyonel bağımlılık ifadesinin sağ tarafında bulunması en uygundur?",
+    "options": {
+      "A": "barkod",
+      "B": "soyad",
+      "C": "yas",
+      "D": "isbn (kitaplar için ayırt edici sayı)",
+      "E": "tcKimlikNo (TC Kimlik No)"
+    },
+    "correctAnswer": "C",
+    "explanation": "Fonksiyonel bağımlılıkta (A -> B) sol taraf belirleyici (anahtar), sağ taraf ise ona bağlı olan bilgidir. Yaş niteliği, doğum tarihi veya TC kimlik numarası gibi bir belirleyiciye bağımlı olduğu için sağ tarafta bulunmaya en uygun adaydır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f6e79692fab0",
+    "unitNumber": 22,
+    "text": "Bir niteliğin, başka bir nitelik üzerine işlem uygulanarak elde edilmemesi gerekliliği aşağıdaki hangi normal form ile vurgulanmaktadır?",
+    "options": {
+      "A": "Dördüncü normal form",
+      "B": "Beşinci normal form",
+      "C": "Üçüncü normal form",
+      "D": "Alan/anahtar normal form",
+      "E": "Boyce-Codd normal form"
+    },
+    "correctAnswer": "D",
+    "explanation": "Üçüncü Normal Form (3NF); “Geçişli Bağımlılıkların” (Transitive Dependency) ve “Hesaplanabilir Alanların” (Calculated Fields) kaldırılmasını şart koşar. Eğer bir sütun (örn: Toplam Fiyat), tablodaki diğer sütunlardan (Birim Fiyat x Adet) işlem yapılarak elde edilebiliyorsa, bu sütun veri tabanında fiziksel olarak saklanmamalıdır. Bu kural 3NF’nin konusudur. Ancak bazı akademik kaynaklar DKNF’nin bu tür kısıtlamaları nihai olarak kapsadığını vurguladığı için cevap anahtarında D olarak işaretlenmiştir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-db5dbf6bfe7f",
+    "unitNumber": 23,
+    "text": "Konferans için geliştirilen veri tabanında aşağıdaki tablolardan hangisinin bulunması en az uygundur?",
+    "options": {
+      "A": "Urun",
+      "B": "Katilimci (katılımcı)",
+      "C": "Salon",
+      "D": "Oturum",
+      "E": "Katilim (katılım)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Bir konferans yönetim sisteminde; Katılımcılar, Salonlar, Oturumlar ve kimin hangi oturuma katıldığı (Katılım) temel tablolardır. Ancak “Ürün” (Product) tablosu, ticari bir satış/stok sistemi (e-ticaret) için gereklidir. Konferans organizasyonunun ana işlevi ürün satmak değil, bilgi paylaşımı ve oturum yönetimidir. Bu nedenle “Ürün” tablosu bağlama en uzak olandır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-cb5361684615",
+    "unitNumber": 24,
+    "text": "Alan/Anahtar Normal Form (Domain/Key Normal Form) aşağıdaki norm formların hangisinden sonra gelir?",
+    "options": {
+      "A": "Dördüncü Normal Form",
+      "B": "Altıncı Normal Form",
+      "C": "Boyce-Codd Normal Form",
+      "D": "Üçüncü Normal Form",
+      "E": "Beşinci Normal Form"
+    },
+    "correctAnswer": "E",
+    "explanation": "Normalizasyon seviyeleri hiyerarşisi şöyledir: 1NF -> 2NF -> 3NF -> BCNF -> 4NF -> 5NF. Alan/Anahtar Normal Form (DKNF), normalizasyon teorisinin ulaşabileceği en üst ve teorik seviyedir. Tüm kısıtlamaların alan (domain) ve anahtar (key) tanımlarıyla sağlanabildiği ideal durumdur ve Beşinci Normal Formdan (5NF) sonra gelir (veya onu da kapsayan nihai formdur).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7f57c110aae1",
+    "unitNumber": 25,
+    "text": "Aşağıdaki niteliklerden hangisi fonksiyonel bağımlılık ifadesinin sol tarafına eklenmek için en uygundur?",
+    "options": {
+      "A": "evAdresi",
+      "B": "ePosta",
+      "C": "ad",
+      "D": "soyad",
+      "E": "baslik"
+    },
+    "correctAnswer": "B",
+    "explanation": "Fonksiyonel bağımlılıkta (X -> Y), sol taraftaki nitelik (Belirleyen/Determinant), sağ taraftaki veriyi tekil olarak belirleyebilmelidir. Yani sol tarafın “ayırt edici” (unique) olması tercih edilir. – Ad, Soyad, Adres veya Başlık; birden fazla kişide veya kayıtta aynı olabilir (Tekil değildir). – e-Posta adresi ise kişiye özeldir ve benzersizdir (Unique). Bir e-posta adresi bilindiğinde, o kişiye ait diğer bilgilere (Ad, Soyad vb.) kesin olarak ulaşılabilir. Bu nedenle anahtar (key) olmaya en uygun adaydır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-903065bf6dd5",
+    "unitNumber": 26,
+    "text": "Urun (ürün) ile Musteri (müşteri) tabloları arasındaki ilişki türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Bire çok",
+      "B": "Çoğa çok",
+      "C": "Çoğa az",
+      "D": "Çoğa bir",
+      "E": "Bire bir"
+    },
+    "correctAnswer": "B",
+    "explanation": "E-ticaret veya stok mantığında; “Bir müşteri birden fazla ürün satın alabilir” ve aynı zamanda “Bir ürün türü birden fazla müşteri tarafından satın alınabilir”. İki tarafta da çoğul ilişki olduğu için bu yapı “Çoğa Çok” (Many-to-Many / M:N) ilişkidir. Veri tabanı tasarımında bu ilişki doğrudan kurulamaz; araya bir “Satış” veya “Sipariş Detay” tablosu (bağlantı tablosu) konularak iki adet “Bire-Çok” ilişkiye dönüştürülür.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-0df3806f771b",
+    "unitNumber": 34,
+    "text": "Verilerin satır ve sütunlar şeklinde kaydedildiği yapıya verilen ad aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Birincil veri",
+      "B": "Veri ambarı",
+      "C": "JSON",
+      "D": "Veri kümesi",
+      "E": "Veri tabanı"
+    },
+    "correctAnswer": "D",
+    "explanation": "Veri kümesi (Dataset), belirli bir yapı içinde (genellikle satır ve sütunlardan oluşan tablolar halinde) organize edilmiş veri topluluğudur. Veri tabanı bu kümeleri yöneten sistemin genel adıyken, veri kümesi bu sistem içindeki veya dışındaki (örn. bir CSV dosyası) somut veri grubunu ifade eder.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e44da7b7f85f",
+    "unitNumber": 35,
+    "text": "Şifreleri veri tabanında saklamak için sıklıkla tercih edilen yöntem aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Dönüştürme",
+      "B": "Nitelik haline getirme",
+      "C": "Özetleme",
+      "D": "İlişkilendirme",
+      "E": "Sıkıştırma"
+    },
+    "correctAnswer": "C",
+    "explanation": "Güvenlik gereği kullanıcı şifreleri veri tabanlarında asla açık metin (plain text) olarak saklanmaz. Bunun yerine şifreler, tek yönlü bir fonksiyon olan “Özetleme” (Hashing) algoritmaları (MD5, SHA-256 vb.) ile şifrelenerek saklanır. Kullanıcı giriş yaparken girdiği şifrenin özeti alınır ve veri tabanındaki özetle karşılaştırılır. Bu sayede veri tabanı çalınsa bile şifrelerin aslı ele geçirilemez.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-abd95194a477",
+    "unitNumber": 42,
+    "text": "Bir tablonun kendisiyle ilişkili olması durumunda aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "İlişki türü her zaman bire birdir",
+      "B": "Bire çok ilişkide ikincil anahtar kullanılır",
+      "C": "İkincil anahtar kullanılmaz",
+      "D": "Çoğa çok ilişki mümkün değildir",
+      "E": "Bire çok ilişki mümkün değildir"
+    },
+    "correctAnswer": "B",
+    "explanation": "Bir tablonun kendisiyle ilişki kurmasına “Özyinelemeli İlişki” (Recursive Relationship) denir (Örn: Bir personelin yöneticisinin yine aynı personel tablosunda olması). Bu durumda, ilişkiyi sağlamak için tablonun içinde, yine tablonun kendi birincil anahtarını referans alan bir **Yabancı Anahtar/İkincil Anahtar (Foreign Key)** sütunu (örn: `yonetici_id`) kullanılır. Bu yapı genellikle hiyerarşik verilerde (Bire-Çok) kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-10ea05fa6343",
+    "unitNumber": 44,
+    "text": "Double veri tipi sayesinde… Yukarıdaki cümleden boşluk bırakılan yere aşağıdakilerden hangisinin getirilmesi daha uygundur?",
+    "options": {
+      "A": "daha büyük ondanlıklı sayılar saklanabilir.",
+      "B": "tam sayılar iki katı büyüklüğünde saklanır.",
+      "C": "ikili tipte veri saklanabilir.",
+      "D": "iki sayı birden saklanabilir.",
+      "E": "iki karakter birlikte saklanabilir."
+    },
+    "correctAnswer": "A",
+    "explanation": "Programlama ve veri tabanlarında `Double` veri tipi, “Double Precision Floating Point” (Çift Duyarlıklı Kayan Noktalı Sayı) anlamına gelir. Standart `Float` veri tipine göre bellekte iki kat daha fazla yer kaplar (64-bit) ve bu sayede çok daha büyük ve hassas ondalıklı sayıların (virgülden sonraki basamak sayısı fazla olan) saklanmasına olanak tanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-1f9bdd60a299",
+    "unitNumber": 45,
+    "text": "Farklı veri kaynaklarının bir araya getirilmesiyle oluşturulan birleşik veri yapısına verilen ad aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Veri ambarı",
+      "B": "XML",
+      "C": "Veri kümesi",
+      "D": "Veri tabanı",
+      "E": "İkincil veri"
+    },
+    "correctAnswer": "A",
+    "explanation": "Farklı operasyonel sistemlerden (ERP, CRM, Excel vb.) gelen verilerin temizlenip, dönüştürülüp tek bir merkezde toplandığı, tarihçeli ve analize uygun büyük veri yapılarına **”Veri Ambarı” (Data Warehouse)** denir. Amacı raporlama ve iş zekası analizleridir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a664b0b6b3bc",
+    "unitNumber": 46,
+    "text": "Ders ve Ogrenci (öğrenci) tabloları arasındaki ilişki türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Çoğa bir",
+      "B": "Bire bir",
+      "C": "Çoğa çok",
+      "D": "Bire çok",
+      "E": "İlişkisi yok"
+    },
+    "correctAnswer": "C",
+    "explanation": "Üniversite sisteminde; “Bir öğrenci birden fazla ders alabilir” ve “Bir dersi birden fazla öğrenci alabilir”. Bu çift yönlü çoklu yapı **”Çoğa Çok” (Many-to-Many)** ilişkidir. Veritabanında bu ilişkiyi yönetmek için genellikle “Notlar” veya “DersKayit” gibi bir ara tablo kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-2aaaab7c40fc",
+    "unitNumber": 47,
+    "text": "Veri eklemek için kullanılan SQL komutu hangisidir?",
+    "options": {
+      "A": "UPDATE",
+      "B": "INSERT INTO",
+      "C": "DELETE",
+      "D": "SHOW",
+      "E": "SELECT"
+    },
+    "correctAnswer": "B",
+    "explanation": "SQL (Structured Query Language) veri manipülasyon dilinde (DML); bir tabloya yeni bir kayıt (satır) eklemek için **`INSERT INTO`** komutu kullanılır. `UPDATE` var olan veriyi günceller, `DELETE` siler, `SELECT` veriyi çeker/okur, `SHOW` ise veritabanı nesnelerini listeler.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b8acafd42427",
+    "unitNumber": 48,
+    "text": "Araç satışı portalı için oluşturulan veri tabanı tasarımında yıldız şema yapısındaki kayıt (fact) tablosu aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Model",
+      "B": "Marka",
+      "C": "Araba",
+      "D": "Kisi",
+      "E": "Satis"
+    },
+    "correctAnswer": "E",
+    "explanation": "Yıldız Şema (Star Schema) tasarımında merkezde, sayısal verilerin ve olayların tutulduğu “Fact” (Olay/Olgu) tablosu bulunur. Etrafında ise “Dimension” (Boyut) tabloları vardır. Araç satışı sisteminde; Marka, Model, Kişi ve Araba; satışı niteleyen boyutlardır. Merkezdeki olay, yani ölçülebilir hareket ise **”Satış” (Satis)** işlemidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-2aa6cd810213",
+    "unitNumber": 49,
+    "text": "Bir veritabanı, mümkün olan en az sayıda tablo ile oluşturulmalıdır. Bu durum hangi normal form ile uygulanmaktadır?",
+    "options": {
+      "A": "Dördüncü normal form",
+      "B": "Altıncı normal form",
+      "C": "Beşinci normal form",
+      "D": "Boyce-Codd normal form",
+      "E": "Üçüncü normal form"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-6fe80f8e53b4",
+    "unitNumber": 50,
+    "text": "Bağlantısız varlıklar ile ilgili aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Veri tabanında bulunmaları bir hatadır.",
+      "B": "Sistem ayarlarını tutmak için kullanılabilir.",
+      "C": "Diğer tablolarla ilişkisi olmayan tablolardır.",
+      "D": "Analiz amaçlı veri tabanlarında bulunabilirler.",
+      "E": "Birden fazla bağlantısız varlık grubu olabilir."
+    },
+    "correctAnswer": "A",
+    "explanation": "Bir veritabanında diğer tablolarla ilişkisi olmayan (bağlantısız) tabloların bulunması teknik bir **hata değildir**. Bu tablolar; sistem parametrelerini, log kayıtlarını, geçici verileri veya raporlama özetlerini tutmak için (B, C, D şıkları) bilinçli olarak tasarlanabilir. Dolayısıyla A şıkkındaki ifade yanlıştır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-2a7168cb8304",
+    "unitNumber": 51,
+    "text": "Bir tablonun kendisiyle çoğa çok ilişkili olması durumunda yapılması gereken aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Tek tabloda çözülmelidir",
+      "B": "İlişki bire çoğa dönüştürülmelidir",
+      "C": "Bağlantı tablosu oluşturulmalıdır",
+      "D": "İki ayrı tablo oluşturulmalıdır",
+      "E": "İlişki kurulamaz"
+    },
+    "correctAnswer": "C",
+    "explanation": "İlişki ister iki farklı tablo arasında olsun, ister tablonun kendisiyle olsun (Recursive); eğer ilişki türü “Çoğa Çok” (M:N) ise, bu ilişkiyi fiziksel veritabanında yönetebilmek için mutlaka araya bir **”Bağlantı/Ara Tablo” (Junction Table)** konulmalıdır. Bu ara tablo, ana tablonun birincil anahtarını iki kez (farklı rollerde) yabancı anahtar olarak tutar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-779101b7503f",
+    "unitNumber": 52,
+    "text": "Bir tabloda hem id hem de plaka niteliklerinin bulunması aşağıdaki hangi normal forma aykırıdır?",
+    "options": {
+      "A": "İkinci normal form",
+      "B": "Beşinci normal form",
+      "C": "Birinci normal form",
+      "D": "Üçüncü normal form",
+      "E": "Dördüncü normal form"
+    },
+    "correctAnswer": "D",
+    "explanation": "Eğer bir tabloda hem yapay bir `ID` (Birincil Anahtar) hem de doğal bir anahtar olan `Plaka` bulunuyorsa ve tablodaki diğer özellikler (Marka, Model vb.) aslında Plaka’ya bağlıysa; bu durum teknik olarak `ID -> Plaka -> AraçBilgileri` şeklinde bir **Geçişli Bağımlılık (Transitive Dependency)** yaratır. Anahtar olmayan bir alanın (Plaka), diğer alanları belirlemesi durumu **Üçüncü Normal Form (3NF)** kurallarına aykırılık teşkil eder. (Pratikte sıkça yapılsa da teorik normalizasyon kuralı budur).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-0aee369a98c2",
+    "unitNumber": 53,
+    "text": "Ses tabanlı sosyal medya yazılımı için oluşturulan veri tabanı tasarımında ses kayıtları saklanma biçimi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Harici bir veri tabanında",
+      "B": "Kullanici tablosunda",
+      "C": "Ileti tablosunda blob olarak",
+      "D": "Dosya yolu veri tabanında, dosya sunucuda",
+      "E": "Doğrudan veri tabanında"
+    },
+    "correctAnswer": "D",
+    "explanation": "Büyük boyutlu medya dosyalarını (ses, video, resim) veritabanının içinde (BLOB olarak) saklamak, veritabanını şişirir ve performansını düşürür. Endüstri standardı olan en verimli yöntem; dosyanın kendisini bir **Dosya Sunucusunda (File Server/Storage)** fiziksel olarak saklamak ve veritabanında sadece bu dosyanın **yolunu/adresini (Path/URL)** metin olarak tutmaktır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-6e7536157701",
+    "unitNumber": 55,
+    "text": "Bit-Bayt dönüşümü dışındaki birim dönüşümler, bir alt birimin kaç katı olarak hesaplanmaktadır? (Örneğin; 1 gigabayt = ? megabayt)",
+    "options": {
+      "A": "10",
+      "B": "1000",
+      "C": "1024",
+      "D": "2048",
+      "E": "100"
+    },
+    "correctAnswer": "C",
+    "explanation": "Bilgisayar bilimlerinde veri depolama birimleri ikilik sisteme (2 tabanı) göre artar. 1 Bayt 8 bittir (istisna). Ancak ondan sonraki her adım (Kilobayt, Megabayt, Gigabayt, Terabayt) bir öncekinin **1024** (2^10) katıdır. (1 GB = 1024 MB).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-92a18ead4dbb",
+    "unitNumber": 56,
+    "text": "Aşağıdakilerden hangisi birincil anahtar türlerinden biri değildir?",
+    "options": {
+      "A": "Azalan sayısal",
+      "B": "Rastgele sayısal",
+      "C": "Alfanümerik",
+      "D": "Kontrollü",
+      "E": "Sıralı sayısal"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-ff0559ca2756",
+    "unitNumber": 57,
+    "text": "Para transfer yazılımı için oluşturulan veri tabanı tasarımında SistemAyarlari tablosunun diğer tablolarla ilişki biçimi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Çoğa bir",
+      "B": "Bire bir",
+      "C": "Çoğa çok",
+      "D": "Bire çok",
+      "E": "İlişkisi yok"
+    },
+    "correctAnswer": "E",
+    "explanation": "“SistemAyarlari” gibi tablolar genellikle uygulamanın genel konfigürasyonlarını (tema rengi, varsayılan dil, limitler vb.) tutan tek satırlık veya az satırlı tablolardır. Bu tabloların müşteri veya işlem tablolarıyla (para transferi vb.) doğrudan bir ilişkisi (Foreign Key bağı) yoktur; uygulama tarafından ihtiyaç duyulduğunda bağımsız olarak okunurlar. Bu nedenle **”İlişkisi yok”** (Bağlantısız varlık) cevabı doğrudur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-e46f4dcaea07",
+    "unitNumber": 78,
+    "text": "Bir hastane yönetim sistemi için geliştirilen veri tabanında aşağıdaki tablolardan hangisinin bulunması en uygunsuzdur?",
+    "options": {
+      "A": "Doktor",
+      "B": "Recete",
+      "C": "Tedavi",
+      "D": "Hasta",
+      "E": "Marka"
+    },
+    "correctAnswer": "E",
+    "explanation": "Hastane veri tabanında Doktor, Reçete, Tedavi ve Hasta tabloları temel süreçler için gereklidir. “Marka” tablosu ise hastane yönetim süreçleri için doğrudan ilişkili veya öncelikli bir tablo değildir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-80d126ef4d4c",
+    "unitNumber": 111,
+    "text": "Stok kayıtlarının saklanması için geliştirilen veri tabanında aşağıdaki tablolardan hangisinin bulunması en uygunsuzdur?",
+    "options": {
+      "A": "Marka",
+      "B": "Model",
+      "C": "Sehir (şehir)",
+      "D": "Depo",
+      "E": "Urun (ürün)"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-886586073b93",
+    "unitNumber": 112,
+    "text": "Bir ilişkisel veritabanı kurmak için hangi araca ihtiyaç vardır?",
+    "options": {
+      "A": "Veri kümesi",
+      "B": "Dokümantasyon",
+      "C": "Birincil veri",
+      "D": "Yazılım",
+      "E": "Veri tabanı yönetim sistemi"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-4aea9c659be7",
+    "unitNumber": 113,
+    "text": "Bir metnin, girdi boyutundan bağımsız olarak sabit bir boyutta karakterle ifade edilmesine ne ad verilir?",
+    "options": {
+      "A": "Sıkıştırma",
+      "B": "Özetleme",
+      "C": "Küçültme",
+      "D": "Normalize etme",
+      "E": "Fonksiyonel hale getirme"
+    },
+    "correctAnswer": "B",
+    "explanation": "Kriptolojide ve veri tabanlarında, herhangi bir uzunluktaki veriyi (girdiyi) matematiksel bir algoritmadan geçirerek sabit uzunlukta (örneğin 128 bit veya 256 bit) bir çıktıya dönüştürme işlemine “Özetleme” (Hashing) denir. Bu işlem sonucunda oluşan değere “Özet Değer” (Hash Value/Digest) adı verilir. Girdi ne kadar büyük olursa olsun, özetin boyutu sabittir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-fc02d700e458",
+    "unitNumber": 114,
+    "text": "Bilgilerin bir araya gelmesiyle birlikte, karar verme yeteneğini kazandıran olgu nedir?",
+    "options": {
+      "A": "Enformasyon",
+      "B": "Veri tabanı",
+      "C": "Bilgelik",
+      "D": "Veri ambarı",
+      "E": "Veri"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-df81a9dd5774",
+    "unitNumber": 115,
+    "text": "Hangisi veri tabanı gösterim şekillerinden biri değildir?",
+    "options": {
+      "A": "Chen",
+      "B": "Kaz ayağı",
+      "C": "IDEF1X",
+      "D": "SQL",
+      "E": "EXPRESS"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c1e61701e536",
+    "unitNumber": 116,
+    "text": "Aşağıdakilerden hangisi, normalizasyon sürecinin test edilememesinin sebeplerinden birisidir?",
+    "options": {
+      "A": "Sürecin nesnel olması.",
+      "B": "Sürecin sonlandırılamaması.",
+      "C": "Sürecin adımlardan oluşması.",
+      "D": "Sürecin otomatik olması.",
+      "E": "Sürecin öznel olması."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c7c5a3b87a2b",
+    "unitNumber": 117,
+    "text": "Hangi niteliğin, kesinlikle fonksiyonel bağımlılığın sağ tarafında olması gerekir?",
+    "options": {
+      "A": "yil (yıl)",
+      "B": "ulke (ülke)",
+      "C": "siraNo (sıra no)",
+      "D": "sarkiSozu (şarkı sözü)",
+      "E": "sanatci_id (sanatçı ID)"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-6a0cb575d56b",
+    "unitNumber": 118,
+    "text": "Aşağıdakilerden hangisi uygun bir veri tabanı tablosu değişkeni adıdır?",
+    "options": {
+      "A": "evAdresi",
+      "B": "Telefon Numarasi",
+      "C": "Kullanıcı",
+      "D": "KULLANICI BİLGİLERİ",
+      "E": "isyeriadresi"
+    },
+    "correctAnswer": "A",
+    "explanation": "Küçük harf ve kelime ayraçlarıyla doğru bir değişken adıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7389cd56fb0a",
+    "unitNumber": 119,
+    "text": "Enformasyonların bir araya getirilmesiyle elde edilen olguya ne ad verilir?",
+    "options": {
+      "A": "Veri ambarı",
+      "B": "Veri",
+      "C": "Bilgi",
+      "D": "Bilgelik",
+      "E": "Veri tabanı"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-4c5213ab6f30",
+    "unitNumber": 120,
+    "text": "Veri tabanı tasarlamakla ilgili, aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Sistem analizi ve tasarımı sürecinin bir parçasıdır.",
+      "B": "Bilgisayar programlama esnasında gerçekleştirilir.",
+      "C": "Deneyim gerektirmektedir.",
+      "D": "Öznel bir süreçtir.",
+      "E": "Bu sürecin çıktısı dokümantasyondur."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-1479b42bdccf",
+    "unitNumber": 121,
+    "text": "Aşağıdakilerden hangisi geçerli bir zaman damgasıdır?",
+    "options": {
+      "A": "2022-09-21 / 22:45:30 / +02:00",
+      "B": "2022-09-21T22:45:30+02:00",
+      "C": "2022-09-21 22:45:30 +02:00",
+      "D": "2022-09-21-22:45:30+02:00",
+      "E": "2022-09-21 22:45:30 02:00"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a1fba91b25f2",
+    "unitNumber": 122,
+    "text": "Hangi niteliğin fonksiyonel bağımlılık ifadesinin sağ tarafında bulunması en uygundur?",
+    "options": {
+      "A": "soyad",
+      "B": "cinsiyet",
+      "C": "ucusNo (uçuş no)",
+      "D": "id",
+      "E": "yil"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-d914a3ce0eee",
+    "unitNumber": 123,
+    "text": "Bir tablonun birincil anahtarının ilişki sağlayabilmek için diğer tabloda bulunmasıyla oluşan niteliğe ne ad verilir?",
+    "options": {
+      "A": "Azalan anahtar",
+      "B": "Kontrol anahtarı",
+      "C": "Sıralı sayısal anahtar",
+      "D": "Birincil anahtar",
+      "E": "İkincil anahtar"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5cd42b953c07",
+    "unitNumber": 21,
+    "text": "Aşağıdakilerden hangisi uygun bir veri tabanı tablosu değişkeni (alan/sütun) adıdır?",
+    "options": {
+      "A": "SistemeGirisZamani",
+      "B": "KAYIT TARİHİ",
+      "C": "sistem zamani",
+      "D": "songorulduguipadresi",
+      "E": "sonGorulmeTarihi"
+    },
+    "correctAnswer": "E",
+    "explanation": "Veri tabanı yönetim sistemlerinde değişken ve sütun isimlendirmeleri yapılırken belirli standartlara uyulması gerekir. İsimlendirmede boşluk bırakılmamalı, Türkçe karakterlerden kaçınılmalı ve kelimelerin birbirinden ayırt edilebilmesi için “camelCase” (sonGorulmeTarihi gibi) veya “snake_case” (son_gorulme_tarihi) gibi yapılar kullanılmalıdır. “KAYIT TARİHİ” ve “sistem zamani” boşluk içerdiği için hatalıdır; “songorulduguipadresi” ise okunabilirliği düşük olduğu için profesyonel tasarımda tercih edilmez. “sonGorulmeTarihi” hem teknik standartlara hem de okunabilirliğe en uygun olan seçenektir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-acd27d719201",
+    "unitNumber": 27,
+    "text": "Sürekli kayıt alan, merkezi bir kayıt tablosu bulunduran veri tabanı tasarımlarına verilen ortak ad aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "İlişkisel veri tabanı",
+      "B": "Normal form",
+      "C": "Yıldız şema",
+      "D": "Hiyerarşik veri",
+      "E": "Bağlantı tablosu"
+    },
+    "correctAnswer": "C",
+    "explanation": "Veri ambarı (Data Warehouse) tasarımlarında sıklıkla kullanılan “Yıldız Şema” (Star Schema); merkezde “Olay/Olgu” (Fact) tablosu adı verilen, sürekli veri girişi yapılan ve sayısal verileri tutan büyük bir tablonun bulunduğu, etrafında ise bu verileri niteleyen (zaman, ürün, müşteri gibi) “Boyut” (Dimension) tablolarının yer aldığı bir yapıdır. Merkezin etrafındaki yıldız şeklini andıran bu yapı, sorgulama performansını artırmak için kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-299da75bec65",
+    "unitNumber": 28,
+    "text": "Aşağıdaki hangi normal form, aynı hücrenin tek bir veri almasını zorunlu kılar?",
+    "options": {
+      "A": "Boyce-Codd normal formu",
+      "B": "Birinci normal form",
+      "C": "Dördüncü normal form",
+      "D": "Üçüncü normal form",
+      "E": "İkinci normal form"
+    },
+    "correctAnswer": "B",
+    "explanation": "Normalizasyonun ilk kuralı olan Birinci Normal Form (1NF); “Atomiklik” ilkesini şart koşar. Buna göre bir tablonun her hücresinde (kesişim noktasında) sadece tek bir değer bulunmalıdır. Virgülle ayrılmış birden fazla değer (tekrarlayan grupler) bir hücreye yazılamaz.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-169d8b1a82d6",
+    "unitNumber": 30,
+    "text": "Bir banka için geliştirilen veri tabanında aşağıdaki tablolardan hangisinin bulunması en az uygundur?",
+    "options": {
+      "A": "Arac (araç)",
+      "B": "Kisi (kişi)",
+      "C": "Transfer",
+      "D": "Kasa",
+      "E": "Hesap"
+    },
+    "correctAnswer": "A",
+    "explanation": "Bankacılık sisteminin temel varlıkları; Müşteriler (Kişi), Hesaplar, Para transferleri ve Kasa hareketleridir. Ancak “Araç” tablosu, bankanın ana faaliyet konusuyla doğrudan ilgili değildir (Taşıt kredisi gibi spesifik bir alt modül değilse). Ana bankacılık işlemlerinde araç takibi yapılmaz. Bu nedenle en az uygun olan tablodur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-db7038869ae7",
+    "unitNumber": 32,
+    "text": "Aşağıdakilerden hangisi tablolar arasında bulunan bağlantı türlerinden biri değildir?",
+    "options": {
+      "A": "Çoğa bir",
+      "B": "Bire çok",
+      "C": "Çoğa çok",
+      "D": "Çoğa az",
+      "E": "Bire bir"
+    },
+    "correctAnswer": "D",
+    "explanation": "Varlık-İlişki (E-R) modelinde standart ilişki türleri (kardinaliteler) şunlardır: 1. Bire-Bir (1:1) 2. Bire-Çok (1:N) – veya tersi Çoğa-Bir (N:1) 3. Çoğa-Çok (M:N) Literatürde “Çoğa Az” (Many-to-Few) diye standart bir ilişki tanımlaması bulunmamaktadır. “Az” kavramı sayısal bir belirsizlik içerir ve veri tabanı mantığında “Çok” (N) kavramının karşılığıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-cbf6661605c3",
+    "unitNumber": 33,
+    "text": "Aşağıdakilerden hangisi veri saklama türlerinden biri değildir?",
+    "options": {
+      "A": "İlişkisel veri tabanları",
+      "B": "Hiyerarşik veri tabanları",
+      "C": "Web servisler",
+      "D": "Geleneksel dosya saklama yöntemi",
+      "E": "Ağ veri tabanları"
+    },
+    "correctAnswer": "C",
+    "explanation": "Veri saklama (depolama) modelleri; İlişkisel (RDBMS), Hiyerarşik, Ağ (Network) veri tabanları ve Dosya sistemlerini içerir. Ancak “Web Servisler” (SOAP, REST vb.) bir veri saklama yöntemi değil; farklı uygulamaların birbiriyle haberleşmesini ve veri alışverişini sağlayan bir iletişim/protokol teknolojisidir. Web servisi veriyi taşıyan kuryedir, verinin saklandığı depo değildir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7f1e2c1acc63",
+    "unitNumber": 38,
+    "text": "Bir veri tabanı yönetim sistemi, aşağıdakilerden hangisini gerçekleştirmek konusunda fayda sağlamaz?",
+    "options": {
+      "A": "Veri tabanına kayıt girilmesi",
+      "B": "Kullanıcılara yetkiler verilmesi.",
+      "C": "Verinin grafiklerle g&ouml;rselleştirilmesi.",
+      "D": "Yeni bir veri tabanı oluşturulması.",
+      "E": "Bilgisayar programlarının veri tabanına erişiminin sağlanması."
+    },
+    "correctAnswer": "C",
+    "explanation": "VTYS (DBMS) temel olarak veri girişi, yönetimi, güvenliği ve erişimini sağlar (A, B, D, E). **Verinin grafiklerle görselleştirilmesi** (raporlama, Dashboard oluşturma) ise genellikle **iş zekası (BI)** veya ayrı raporlama yazılımlarının görevidir, VTYS’nin doğrudan faydası değildir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-513d51e74351",
+    "unitNumber": 90,
+    "text": "Futbol maçları yapılan bir oyun için geliştirilen veri tabanında aşağıdaki tablolardan hangisinin bulunması en uygunsuzdur?",
+    "options": {
+      "A": "Mac (maç)",
+      "B": "Hakem",
+      "C": "Stadyum",
+      "D": "Takim (takım)",
+      "E": "Altyapi (altyapı)"
+    },
+    "correctAnswer": "E",
+    "explanation": "Bir futbol oyunu veri tabanında Maç, Hakem, Stadyum ve Takım temel varlıklardır. Ancak “Altyapı” genellikle fiziksel veya sistemsel bir kavramdır ve oyunun operasyonel veri tabloları arasında (bir varlık olarak) yer alması diğerlerine göre en az uygundur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e7cf44e9f3ab",
+    "unitNumber": 79,
+    "text": "Aşağıdakilerden hangisi yıldız şema veri tabanına daha uygun bir örnektir?",
+    "options": {
+      "A": "Konferans katılımcıları",
+      "B": "Otoyol geçişleri",
+      "C": "Teknoloji marketi ürün kayıtları",
+      "D": "Yayınevi kayıtları",
+      "E": "Banka hesap bilgileri"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4311097a00e5",
+    "unitNumber": 80,
+    "text": "Aşağıdakilerden hangisi, uygun bir veri tabanı tablosu adıdır?",
+    "options": {
+      "A": "SİSTEM",
+      "B": "kullanıcı",
+      "C": "bilgi",
+      "D": "Siparis",
+      "E": "değişken"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ec138a94e87f",
+    "unitNumber": 83,
+    "text": "Aşağıdakilerden hangisi bir veri tabanı yönetim sistemi değildir?",
+    "options": {
+      "A": "MongoDB",
+      "B": "Java",
+      "C": "SQLite",
+      "D": "Microsoft Access",
+      "E": "MySQL"
+    },
+    "correctAnswer": "B",
+    "explanation": "MongoDB, SQLite, Access ve MySQL birer Veri Tabanı Yönetim Sistemidir (DBMS). Java ise bir programlama dilidir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-0eb53c3770b4",
+    "unitNumber": 84,
+    "text": "Aşağıdakilerden hangisi normal formun özelliklerinden biri değildir?",
+    "options": {
+      "A": "3 adımdan oluşur.",
+      "B": "Test etmek zor olabilir.",
+      "C": "Veri tabanı tasarlama sürecinin bileşenleridir.",
+      "D": "Sürecin sonunda normalize veri tabanına ulaşılır.",
+      "E": "Kurallardan meydana gelir."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-0da5e385c448",
+    "unitNumber": 85,
+    "text": "Aşağıdakilerden hangisinin fonksiyonel bağımlılık ifadesinin sağ tarafında yer alması daha uygundur?",
+    "options": {
+      "A": "gorusmeIcerigi",
+      "B": "gorusmeZamani",
+      "C": "arayan",
+      "D": "aranan",
+      "E": "sebeke"
+    },
+    "correctAnswer": "A",
+    "explanation": "Fonksiyonel bağımlılıkta (A -> B), A belirleyen, B ise belirlenendir. “Arayan”, “Aranan” veya “Zaman” genellikle anahtar (belirleyen) rolü oynarken, “Görüşme İçeriği” bu anahtarlara bağlı olan (belirlenen) veridir ve sağ tarafta yer alır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-dea531643566",
+    "unitNumber": 86,
+    "text": "Aşağıdakilerden hangisi nitelik, fonksiyonel bağımlılık ifadesinin sol tarafına kesinlikle eklenemeyecek bir seçenektir?",
+    "options": {
+      "A": "kategori",
+      "B": "ipAdresi",
+      "C": "aciklama",
+      "D": "adi",
+      "E": "siraNumarasi"
+    },
+    "correctAnswer": "C",
+    "explanation": "Fonksiyonel bağımlılığın sol tarafı (belirleyen), diğer verileri tanımlayan anahtar veya benzersiz bir nitelik olmalıdır. “Açıklama” gibi uzun metin içeren ve benzersizliği garanti edilmeyen alanlar belirleyici (anahtar) olarak kullanılamaz.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e9a8d51a5ae1",
+    "unitNumber": 88,
+    "text": "Kullanici (kullanıcı) ve Tweet (metin içerikli sosyal medya gönderisi) tabloları arasındaki ilişki türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Bire çok",
+      "B": "Çoğa bir",
+      "C": "Bire bir",
+      "D": "Çoğa çok",
+      "E": "Çoğa az"
+    },
+    "correctAnswer": "A",
+    "explanation": "Bir kullanıcı birden fazla tweet atabilir, ancak bir tweet tek bir kullanıcıya aittir. Bu nedenle ilişki Kullanıcıdan Tweete doğru “Bire Çok”tur.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-0fbdc29ed2a1",
+    "unitNumber": 89,
+    "text": "Bir perakende satış sistemi için geliştirilen veri tabanında aşağıdaki tablolardan hangisinin bulunması en uygunsuzdur?",
+    "options": {
+      "A": "Urun",
+      "B": "Stok",
+      "C": "Havuz",
+      "D": "Satis",
+      "E": "Musteri"
+    },
+    "correctAnswer": "C",
+    "explanation": "Perakende sisteminde Ürün, Stok, Satış ve Müşteri tabloları temeldir. “Havuz” isminde bir tablo perakende süreçleri için standart veya anlamlı bir varlık değildir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e743e679e647",
+    "unitNumber": 91,
+    "text": "10 karakterlik bir metnin bellekte kapladığı bayt miktarı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "32",
+      "B": "16",
+      "C": "8",
+      "D": "10",
+      "E": "1"
+    },
+    "correctAnswer": "D",
+    "explanation": "Standart ASCII/ANSI kodlamasında 1 karakter 1 bayt (8 bit) yer kaplar. Dolayısıyla 10 karakterlik bir metin bellekte 10 bayt yer kaplar.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-fecb1a7abc59",
+    "unitNumber": 92,
+    "text": "Bir tabloda; bir nitelik ya da nitelik grubunun, birden fazla niteliğe fonksiyonel bağımlı olması durumu aşağıdaki hangi normal forma aykırıdır?",
+    "options": {
+      "A": "İkinci normal form",
+      "B": "Birinci normal form",
+      "C": "Dördüncü normal form",
+      "D": "Üçüncü normal form",
+      "E": "Boyce-Codd normal form"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e34106a31531",
+    "unitNumber": 93,
+    "text": "Aşağıdakilerden hangisi temel veri tiplerinden biri değildir?",
+    "options": {
+      "A": "İkili",
+      "B": "Ondalıklı sayı",
+      "C": "Tam sayı",
+      "D": "Karakter katarı (string)",
+      "E": "Karakter"
+    },
+    "correctAnswer": "D",
+    "explanation": "Programlama ve veri tabanı teorisinde Tam sayı (Integer), Karakter (Char), Ondalıklı sayı (Float/Decimal) ve İkili (Binary/Boolean) temel (primitive) veri tipleri olarak kabul edilirken; “Karakter Katarı” (String) genellikle karakterlerin bir dizisi (array) olduğu için türetilmiş/bileşik bir veri tipi olarak sınıflandırılır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4235111db837",
+    "unitNumber": 95,
+    "text": "Aşağıdakilerden hangisi literatürde yer alan normal formlardan biri değildir?",
+    "options": {
+      "A": "İkinci Normal Form",
+      "B": "Sıfırıncı Normal Form",
+      "C": "Birinci Normal Form",
+      "D": "Dördüncü Normal Form",
+      "E": "Üçüncü Normal Form"
+    },
+    "correctAnswer": "B",
+    "explanation": "Literatürde normalizasyon süreci 1. Normal Form ile başlar. “Sıfırıncı Normal Form” diye tanımlanmış standart bir normalizasyon seviyesi yoktur (Genellikle normalize edilmemiş hali ifade eder ama bir form adı değildir).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-55ce3b2de558",
+    "unitNumber": 97,
+    "text": "Aşağıdakilerden hangisi Codd’un motivasyonlarından biri değildir?",
+    "options": {
+      "A": "Bir üst seviye dil oluşturulması",
+      "B": "Tüm kullanıcı ve programcıların anlayabilecekleri basit bir yapı ortaya koyulması",
+      "C": "Daha yüksek saklama kapasitesi elde edilmesi",
+      "D": "SQL tarzı bir dil oluşturulması",
+      "E": "Fiziksel ve mantıksal beklentilerin birbirinden ayrılması"
+    },
+    "correctAnswer": "C",
+    "explanation": "Codd’un asıl motivasyonu saklama kapasitesinden çok, verilerin yapılandırılmasıdır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-965285c8a8cc",
+    "unitNumber": 99,
+    "text": "Verilerin bir araya getirilmesiyle elde edilen anlamlı yargılara verilen ad aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Veri kümesi",
+      "B": "Bilgelik",
+      "C": "Bilgi",
+      "D": "Enformasyon",
+      "E": "Veri tabanı"
+    },
+    "correctAnswer": "D",
+    "explanation": "Verilerin anlamlı hale getirilmesi “Enformasyon“ olarak adlandırılır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-6c417024f5e4",
+    "unitNumber": 100,
+    "text": "Aşağıdakilerden hangisi fonksiyonel bağımlılık ifadesinin sol tarafında yer almak için en uygundur?",
+    "options": {
+      "A": "radyoFrekansi",
+      "B": "sehir",
+      "C": "ulke",
+      "D": "dil",
+      "E": "radyoAdi"
+    },
+    "correctAnswer": "A",
+    "explanation": "Radyo frekansı, benzersiz olduğu için fonksiyonel bağımlılık sol tarafında yer alabilir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-20fcd3e92e85",
+    "unitNumber": 102,
+    "text": "Hangi nitelik fonksiyonel bağımlılık ifadesinin sol tarafına eklenmek için uygun değildir?",
+    "options": {
+      "A": "id",
+      "B": "sarkiSozu",
+      "C": "isbn",
+      "D": "plaka",
+      "E": "siraNumarasi"
+    },
+    "correctAnswer": "B",
+    "explanation": "Şarkı sözleri genellikle benzersiz değildir ve fonksiyonel bağımlılık için uygun değildir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-07ef09a6c857",
+    "unitNumber": 104,
+    "text": "Aşağıdakilerden hangisi fonksiyonel bağımlılık gösterimine uygundur?",
+    "options": {
+      "A": "a &rarr; {b, c, d}",
+      "B": "a &rarr; b; c; d",
+      "C": "a,b &rarr; c",
+      "D": "a &rarr; a",
+      "E": "[a, b] &rarr; c"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f0828c9b4899",
+    "unitNumber": 107,
+    "text": "Aşağıdakilerden hangisi birincil verinin avantajlarındandır?",
+    "options": {
+      "A": "Çok hızlı elde edilmesi",
+      "B": "Verinin entegre edilmesi gerekliliği",
+      "C": "İsteğe uygun toplanması",
+      "D": "Daha düşük maliyetli olması",
+      "E": "Farklı kaynaklardan elde edilmesi"
+    },
+    "correctAnswer": "C",
+    "explanation": "Birincil veri, doğrudan ihtiyaçlara uygun olarak toplanır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9f4b57d5aea5",
+    "unitNumber": 108,
+    "text": "Hangi nitelik fonksiyonel bağımlılık ifadesinin sol tarafına eklenmek için en uygundur?",
+    "options": {
+      "A": "dosyaTuru",
+      "B": "dosyaOlusturmaTarihi",
+      "C": "dosyaAdi",
+      "D": "dosyaBoyutu",
+      "E": "dosyaSahibi"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e5026b67d019",
+    "unitNumber": 109,
+    "text": "Bilgisayarların çalışmasını sağlayan 1’ler ve O’lar, aşağıda verilen seçeneklerden hangisinin varlığı ve yokluğu ile oluşturulur?",
+    "options": {
+      "A": "Görüntü",
+      "B": "Ses",
+      "C": "Elektrik",
+      "D": "Veri",
+      "E": "Işık"
+    },
+    "correctAnswer": "C",
+    "explanation": "Bilgisayarların temel çalışma prensibi elektrik akımının varlığına ve yokluğuna dayanır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-de1f18d93b48",
+    "unitNumber": 124,
+    "text": "Aşağıdakilerden hangisi ikincil verinin avantajlarındandır?",
+    "options": {
+      "A": "İsteğe uygun toplanması.",
+      "B": "Amaca tam uyumlu olması.",
+      "C": "Veri toplandıktan sonra ön işleme zorunluluğu olması.",
+      "D": "Toplanacak veriyle ilgili ayrıntılı çalışma gerektirmesi.",
+      "E": "Düşük maliyetle elde edilmesi."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-68ae00ddafdb",
+    "unitNumber": 127,
+    "text": "Hangi nitelik, fonksiyonel bağımlılık ifadesinin sol tarafına eklenmek için uygundur?",
+    "options": {
+      "A": "id",
+      "B": "cinsiyet",
+      "C": "kimlikSeri",
+      "D": "telefonNumarasi",
+      "E": "postaKodu"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d26312f792fb",
+    "unitNumber": 134,
+    "text": "Araştırma ve benzeri faaliyetler ile elde ettiğimiz, ifade, durum, özellik ve benzeri sayısal olmayan veri türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Nitel",
+      "B": "Nicel",
+      "C": "Özgün",
+      "D": "Bilgi",
+      "E": "Enformasyon"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-51be81b3425e",
+    "unitNumber": 135,
+    "text": "Bir uçak yolculuğu için geliştirilen veri tabanında aşağıdaki tablolardan hangisinin bulunması en uygunsuzdur?",
+    "options": {
+      "A": "Yolcu",
+      "B": "HavalimaniTransfer (havalimanı transfer)",
+      "C": "Personel",
+      "D": "Ucus (uçuş)",
+      "E": "Havalimani (havalimanı)"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-25ae47d267c8",
+    "unitNumber": 136,
+    "text": "Bir nakliye firması için geliştirilen veri tabanında aşağıdaki tablolardan hangisinin bulunması en uygunsuzdur?",
+    "options": {
+      "A": "Vergi",
+      "B": "Urun (ürün)",
+      "C": "Arac (araç)",
+      "D": "Surucu (sürücü)",
+      "E": "Depo"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f6360d191213",
+    "unitNumber": 139,
+    "text": "Sistem ayarları gibi diğer tablolarla ilişki kurmadan oluşturulan tablolara ne ad verilir?",
+    "options": {
+      "A": "Normalize",
+      "B": "İlişkisel",
+      "C": "Hiyerarşik",
+      "D": "Ağ",
+      "E": "Bağlantısız"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-86f6db5f2feb",
+    "unitNumber": 140,
+    "text": "Aynı tablonun kendisiyle ilişkili olması durumunda ortaya çıkan veri tabanı yapısına ne ad verilir?",
+    "options": {
+      "A": "Ağ",
+      "B": "Geleneksel",
+      "C": "Hiyerarşik",
+      "D": "Bağlantılı",
+      "E": "İlişkisel"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-af655b4d7505",
+    "unitNumber": 126,
+    "text": "Hangisi, Codd’un motivasyonlarından biri değildir?",
+    "options": {
+      "A": "Tüm kullanıcı ve programcıların anlayabilecekleri basit bir yapı ortaya koymak.",
+      "B": "Daha yüksek saklama kapasitesi elde edilmesi.",
+      "C": "SQL tarzı bir dil oluşturulması.",
+      "D": "Bir üst seviye dil oluşturmak.",
+      "E": "Fiziksel ve mantıksal beklentilerin birbirinden ayrılması."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f5acb6d595e7",
+    "unitNumber": 129,
+    "text": "Hangisi, uygun bir veri tabanı tablosu değişkeni adıdır?",
+    "options": {
+      "A": "sonGorulmeTarihi",
+      "B": "sistem_zamani",
+      "C": "SistemeGirisZamani",
+      "D": "songorulduguipadresi",
+      "E": "KAYIT_TARİHİ"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-fddbc1961780",
+    "unitNumber": 130,
+    "text": "Hangisi, ilişkisel veri tabanının avantajlarından biri değildir?",
+    "options": {
+      "A": "Çok kullanıcıya destek sağlaması.",
+      "B": "Veri tekrarının olmaması.",
+      "C": "Yüksek bellek kapasitesi gerektirmesi.",
+      "D": "Tutarsızlıktan kaçınma.",
+      "E": "İçerik ve yöntemden bağımsızlık."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-98d40ae8dad1",
+    "unitNumber": 133,
+    "text": "1 kilobayt kaç bittir?",
+    "options": {
+      "A": "16384",
+      "B": "4096",
+      "C": "1024",
+      "D": "8192",
+      "E": "2048"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f82b5de8afdd",
+    "unitNumber": 144,
+    "text": "Bir mahkeme süreci için geliştirilen veri tabanında aşağıdaki tablolardan hangisinin bulunması en uygunsuzdur?",
+    "options": {
+      "A": "Sehir (şehir)",
+      "B": "Davalı (davalı)",
+      "C": "Hakim",
+      "D": "Davaci (davacı)",
+      "E": "Yil (yıl)"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2021-2022",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-bc0239221dc3",
+    "unitNumber": 146,
+    "text": "Ders kaydı için geliştirilen veri tabanında aşağıdaki tablolardan hangisinin bulunması en uygunsuzdur?",
+    "options": {
+      "A": "Ders",
+      "B": "OgretimUyesi (öğretim üyesi)",
+      "C": "Ogrenci (öğrenci)",
+      "D": "Diploma",
+      "E": "Kampus"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2021-2022",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a92a087bf8f2",
+    "unitNumber": 58,
+    "text": "Mümkün olan en fazla/küçük tablolara bölünme gerekliliğini belirten normal form aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Üçüncü NF",
+      "B": "Dördüncü NF",
+      "C": "Boyce-Codd NF",
+      "D": "Beşinci NF",
+      "E": "Alan/anahtar NF"
+    },
+    "correctAnswer": "D",
+    "explanation": "Normalizasyon ilerledikçe tablolar daha küçük parçalara bölünür. **Beşinci Normal Form (5NF)**, “birleşim bağımlılıklarını” (Join Dependencies) ele alır ve veri kaybı olmadan tablonun mümkün olan en küçük, ilişkili tablolara bölünmesini sağlar.",
+    "source": "deneme"
+  },
+  {
+    "id": "s-d5bc3c6daf0c",
+    "unitNumber": 59,
+    "text": "Hangisi şema gösterim şekillerinden biri değildir?",
+    "options": {
+      "A": "Kaz Ayağı",
+      "B": "Martin",
+      "C": "EXPRESS",
+      "D": "CRUD",
+      "E": "Merise"
+    },
+    "correctAnswer": "D",
+    "explanation": "Kaz Ayağı (Crow’s Foot), Martin, EXPRESS ve Merise, varlık-ilişki (ER) diyagramları ve veri tabanı şemalarını görselleştirmek için kullanılan modelleme gösterim şekilleridir. **CRUD** ise Create (Oluştur), Read (Oku), Update (Güncelle), Delete (Sil) işlemlerinin kısaltmasıdır, bir şema gösterimi değildir.",
+    "source": "deneme"
+  },
+  {
+    "id": "s-51b401c1180c",
+    "unitNumber": 60,
+    "text": "Bir tablo içerisinde birden fazla birincil anahtar özellikli niteliğin olmaması gerekliliği hangi normal form ile belirtilmektedir?",
+    "options": {
+      "A": "Birinci NF",
+      "B": "İkinci NF",
+      "C": "Üçüncü NF",
+      "D": "Dördüncü NF",
+      "E": "Beşinci NF"
+    },
+    "correctAnswer": "C",
+    "explanation": "Normal formlar veri bütünlüğünü ve tutarlılığı sağlar. Birinci NF atomikliği sağlar. İkinci NF kısmi bağımlılığı kaldırır. **Üçüncü NF (3NF)**, geçişli bağımlılıkları (transitive dependencies) kaldırır; bu da birincil anahtar olmayan sütunların, birincil anahtarın sadece kendisine tam olarak bağlı olmasını ve başka bir anahtar olmayan niteliğe bağlı olmamasını sağlar.",
+    "source": "deneme"
+  },
+  {
+    "id": "s-180d0335155b",
+    "unitNumber": 61,
+    "text": "Hangisi bağlantısız varlıklara örnek verilebilir?",
+    "options": {
+      "A": "SistemAyarlari",
+      "B": "Kullanici",
+      "C": "Satis",
+      "D": "Sinif",
+      "E": "Ogrenci"
+    },
+    "correctAnswer": "A",
+    "explanation": "`Kullanici`, `Satis`, `Sinif`, `Ogrenci` gibi varlıklar genellikle veri tabanındaki diğer tablolarla (Satış-Kullanıcı, Öğrenci-Sınıf vb.) yoğun ilişkiler içinde olan temel varlıklardır. **SistemAyarlari** (Sistem Ayarları) tablosu ise genellikle web sitesinin başlığı, bakım modu durumu gibi diğer tablolara doğrudan bağlanmayan, bağımsız konfigürasyon verilerini tutan bir tablodur.",
+    "source": "deneme"
+  },
+  {
+    "id": "s-a850405a3ebe",
+    "unitNumber": 62,
+    "text": "Rowley Bilgelik Hiyerarşisi’ndeki sıralamayı aşağıdan yukarıya doğru belirtiniz.",
+    "options": {
+      "A": "Veri - Enformasyon - Bilgi - Bilgelik",
+      "B": "Enformasyon - Veri - Bilgi - Bilgelik",
+      "C": "Bilgi - Veri - Enformasyon - Bilgelik",
+      "D": "Bilgi - Enformasyon - Bilgelik - Veri",
+      "E": "Bilgelik - Bilgi - Enformasyon - Veri"
+    },
+    "correctAnswer": "A",
+    "explanation": "Rowley Bilgelik Hiyerarşisi (DIKW Piramidi), ham gerçekler olan **Veri** (Data) ile başlar. Veri işlenip anlam kazandığında **Enformasyon** (Information) olur. Enformasyon içselleştirilip bağlam kazandığında **Bilgi** (Knowledge) olur. Bilginin uygulanması ve anlaşılmasıyla **Bilgelik** (Wisdom) oluşur. Sıralama (aşağıdan yukarıya) A şıkkıdır.",
+    "source": "deneme"
+  },
+  {
+    "id": "s-39a790027dad",
+    "unitNumber": 63,
+    "text": "Hangi niteliğin temsil ediciliği daha yüksektir?",
+    "options": {
+      "A": "ders",
+      "B": "bolum",
+      "C": "ogrenciSayisi",
+      "D": "sinif",
+      "E": "dersKodu"
+    },
+    "correctAnswer": "E",
+    "explanation": "“Temsil edicilik” (uniqueness/identification) bir kaydı diğerlerinden ayırma gücüdür. `ders`, `bolum`, `ogrenciSayisi`, `sinif` gibi nitelikler birden fazla kayıtta aynı olabilir (tekrarlanabilir). Ancak **dersKodu**, her dersi benzersiz olarak tanımlayan bir anahtar (key) niteliğindedir ve temsil ediciliği en yüksektir.",
+    "source": "deneme"
+  },
+  {
+    "id": "s-dc8f6a092c05",
+    "unitNumber": 64,
+    "text": "Kaç çeşit anahtar vardır?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4",
+      "E": "5"
+    },
+    "correctAnswer": "B",
+    "explanation": "İlişkisel veri tabanlarında tablolar arası ilişkileri kurmak ve veri bütünlüğünü sağlamak için kullanılan **iki** temel anahtar türü vardır: **Birincil Anahtar (Primary Key)** ve **Yabancı Anahtar (Foreign Key)**.",
+    "source": "deneme"
+  },
+  {
+    "id": "s-b1671c60e7cf",
+    "unitNumber": 65,
+    "text": "Hangisi tabloların kendi kendisiyle ilişkili olması konusunda doğrudur?",
+    "options": {
+      "A": "Bir veri tabanında sadece bir tablo kendisiyle ilişkili olabilir.",
+      "B": "Kendisiyle ilişkili tablo başka tabloyla ilişkili olamaz.",
+      "C": "Kendisiyle ilişkili tablolar genellikle bağlantı tablolarıdır.",
+      "D": "Kendisiyle ilişkili tablolar birincil anahtar bulundurmazlar.",
+      "E": "Kendisiyle ilişkili tablo bağlantı tablosu gerektirebilir."
+    },
+    "correctAnswer": "E",
+    "explanation": "Bir tablo kendi kendisiyle ilişkili olabilir (Recursive Relationship). Örneğin, “Çalışanlar” tablosunda “YöneticiID” sütunu, yine “Çalışanlar” tablosundaki başka bir çalışanın “ÇalışanID”sine bağlanır (bu 1’e Çok ilişkidir). Eğer bu ilişki “Çoğa Çok” olsaydı (örn: Parçalar tablosunda hangi parçaların birbirine bağlı olduğu), o zaman bir **bağlantı tablosu gerektirebilirdi**.",
+    "source": "deneme"
+  },
+  {
+    "id": "s-5881d1b14aad",
+    "unitNumber": 66,
+    "text": "Çoğa çok bağlantı için oluşturulması gereken ek tabloya ne ad verilir?",
+    "options": {
+      "A": "Bağlantı",
+      "B": "Nitelik",
+      "C": "Kayıt",
+      "D": "Anahtar",
+      "E": "İlişki"
+    },
+    "correctAnswer": "A",
+    "explanation": "İki tablo arasında çoğa çok (N-N) bir ilişki olduğunda (Örn: Öğrenciler ve Dersler), bu ilişkiyi çözümlemek için iki tablonun birincil anahtarlarını içeren üçüncü bir ara tablo oluşturulur. Bu tabloya **Bağlantı Tablosu** (Junction Table veya İlişki Tablosu) denir.",
+    "source": "deneme"
+  },
+  {
+    "id": "s-646240ee4766",
+    "unitNumber": 67,
+    "text": "SQL’de yeni kayıt ekleme komutu hangisidir?",
+    "options": {
+      "A": "SELECT",
+      "B": "UPDATE",
+      "C": "INSERT INTO",
+      "D": "DELETE",
+      "E": "CRUD"
+    },
+    "correctAnswer": "C",
+    "explanation": "SQL’de DML (Veri İşleme Dili) komutlarından **INSERT INTO**, bir tabloya yeni bir kayıt (satır) eklemek için kullanılır. SELECT (sorgulama), UPDATE (güncelleme) ve DELETE (silme) diğer DML komutlarıdır. CRUD ise bu işlemlerin genel adıdır.",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e034cbf2d972",
+    "unitNumber": 68,
+    "text": "İki tablo arasındaki ilişkinin sağlanması için tablodaki bir niteliğin kazandırıldığı özelliğe ne ad verilir?",
+    "options": {
+      "A": "Bir",
+      "B": "Çok",
+      "C": "Tek",
+      "D": "Anahtar",
+      "E": "Nitelik"
+    },
+    "correctAnswer": "D",
+    "explanation": "İki tablo arasındaki ilişkiyi kuran nitelik (sütun), Yabancı Anahtar (Foreign Key) olarak adlandırılır. Yabancı Anahtar, bir tablodaki değerleri diğer tablonun Birincil Anahtarı ile eşleştiren bir **Anahtar** özelliğidir.",
+    "source": "deneme"
+  },
+  {
+    "id": "s-48eea441fee6",
+    "unitNumber": 69,
+    "text": "Hangisi uygun bir tablo adıdır?",
+    "options": {
+      "A": "Satislar",
+      "B": "kullanicilar",
+      "C": "blog_yaziları",
+      "D": "Kişisel Bilgiler",
+      "E": "son_kullanici_hareketleri"
+    },
+    "correctAnswer": "A",
+    "explanation": "Veri tabanı tablo adlandırmasında genellikle boşluk (`Kişisel Bilgiler`) veya Türkçe karakter (`blog_yaziları`) kullanılmasından kaçınılır. `Satislar` ve `kullanicilar` geçerli adlardır. `Satislar` (PascalCase) veya `satislar` (lowercase) yaygın bir adlandırma standardıdır ve uygundur.",
+    "source": "deneme"
+  },
+  {
+    "id": "s-ab76ca2de8b4",
+    "unitNumber": 70,
+    "text": "Hangisi geçerli bir fonksiyonel bağımlılık tanımlamasıdır?",
+    "options": {
+      "A": "A &lt;-&gt; B",
+      "B": "A == B",
+      "C": "A -&gt; B",
+      "D": "A (B)",
+      "E": "A | B"
+    },
+    "correctAnswer": "C",
+    "explanation": "Fonksiyonel bağımlılık, “A niteliği, B niteliğini belirler” (A determines B) anlamına gelir ve standart olarak A -> B şeklinde gösterilir. Diğer seçenekler (çift yönlü ok, eşitlik, parantez, vb.) fonksiyonel bağımlılık için geçerli bir gösterim değildir Fonksiyonel bağımlılık, veritabanı teorisinde bir ilişkinin (relation) öznitelikleri (attributes) arasında bir bağımlılığı ifade eder. Bir öznitelik kümesi A, başka bir öznitelik kümesi B‘yi fonksiyonel olarak belirlerse, bu durum A -> B şeklinde gösterilir. Bu, A‘nın her bir değeri için B‘nin yalnızca tek bir değerinin olması anlamına gelir. Diğer seçenekleri inceleyelim: A) A <-> B: Bu, iki yönlü bir bağımlılığı ifade eder ve fonksiyonel bağımlılık için standart bir gösterim değildir. B) A == B: Bu, eşitlik ifade eder ve fonksiyonel bağımlılığı temsil etmez. D) A (B): Bu, fonksiyonel bağımlılık için kullanılan bir gösterim değildir; daha çok fonksiyon çağrısı gibi matematiksel bir ifadeyi andırır. E) A | B: Bu, genellikle mantıksal OR operatörünü temsil eder ve fonksiyonel bağımlılıkla ilgili değildir. Bu nedenle, fonksiyonel bağımlılığı doğru şekilde ifade eden gösterim A -> B‘dir.",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e763747cddc0",
+    "unitNumber": 72,
+    "text": "İlişkisel veri tabanları için önerilmiş sorgu dili hangisidir?",
+    "options": {
+      "A": "Python",
+      "B": "PHP",
+      "C": "SQL",
+      "D": "Java",
+      "E": "SQLite"
+    },
+    "correctAnswer": "C",
+    "explanation": "**SQL** (Structured Query Language – Yapılandırılmış Sorgu Dili), ilişkisel veri tabanlarını yönetmek (veri eklemek, sorgulamak, güncellemek, silmek) için kullanılan standart sorgu dilidir. SQLite ise SQL dilini kullanan bir VTYS yazılımıdır.",
+    "source": "deneme"
+  },
+  {
+    "id": "s-ea9fabfe6c3b",
+    "unitNumber": 73,
+    "text": "Hangisi ilişkisel veri tabanı avantajlarından değildir?",
+    "options": {
+      "A": "Hızlı olması",
+      "B": "Tutarsızlıktan kaçınması",
+      "C": "Az yer kaplaması",
+      "D": "Az işlem gücü gerektirmesi",
+      "E": "Çok az veri türünü desteklemesi"
+    },
+    "correctAnswer": "E",
+    "explanation": "İlişkisel veri tabanları (RDBMS), karmaşık ve modern veri türlerini (XML, JSON, coğrafi veriler vb.) destekleme konusunda esnektirler ve çok sayıda veri türünü desteklerler. “Çok az veri türünü desteklemesi” bir avantaj değil, yanlış bir ifadedir.",
+    "source": "deneme"
+  },
+  {
+    "id": "s-69fbf1ec9e08",
+    "unitNumber": 75,
+    "text": "Biçimsiz metinleri görüntülemek için kullandığımız en temel Windows yazılımı nedir?",
+    "options": {
+      "A": "MS Word",
+      "B": "MS Excel",
+      "C": "Not Defteri",
+      "D": "Powerpoint",
+      "E": "Paint"
+    },
+    "correctAnswer": "C",
+    "explanation": "**Not Defteri** (Notepad), Windows’un en temel metin editörüdür ve metinlere herhangi bir stil (kalın, italik, renk vb.) uygulamaz, yani **biçimsiz (unformatted)** metinleri görüntüler.",
+    "source": "deneme"
+  },
+  {
+    "id": "s-7561f2d02d3a",
+    "unitNumber": 77,
+    "text": "Veri tabanının iyi bir şekilde tasarlanması sonucunda ulaştığı duruma verilen ad nedir?",
+    "options": {
+      "A": "Enformasyon",
+      "B": "Normalize",
+      "C": "Veri ambarı",
+      "D": "Normal form",
+      "E": "Bilgelik"
+    },
+    "correctAnswer": "B",
+    "explanation": "Bir veri tabanının, normal form kurallarına (1NF, 2NF, 3NF vb.) uygun olarak tasarlandığı, veri tekrarının en aza indirildiği ve tutarlılığın sağlandığı duruma **Normalize** (Normalized) edilmiş denir.",
+    "source": "deneme"
+  }
+]

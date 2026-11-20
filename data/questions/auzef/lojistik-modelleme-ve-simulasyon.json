@@ -1,1 +1,930 @@
-[]
+[
+  {
+    "id": "s-9b36db351004",
+    "unitNumber": 1,
+    "text": "Yukarıda verilen dağıtım planına göre sırasıyla kaç tane dolu hücre (dolu taş), kaç tane boş hücre bulunmaktadır?",
+    "options": {
+      "A": "4-9",
+      "B": "5-9",
+      "C": "5-4",
+      "D": "3-3",
+      "E": "4-5"
+    },
+    "correctAnswer": "C",
+    "explanation": "İlgili matriste 3 kaynak ve 3 hedef bulunduğundan toplam 9 adet hücre vardır. Şekil incelendiğinde atama yapılmış, yani daire içinde değer barındıran tam 5 adet dolu hücre bulunmaktadır. Geriye kalan 4 hücre ise boş (atama yapılmamış) hücredir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f1ada8eb227e",
+    "unitNumber": 2,
+    "text": "Yukarıda verilen atama problemi bilgilerine göre MS Excel kullanarak E7 ve B10 hücrelerine yazılması gereken formül aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "=TOPLA(B8:D8)",
+      "B": "=DÇARP(B7:D7) ve =DÇARP(B7:B9)",
+      "C": "= TOPLA(B4:D4)",
+      "D": "=TOPLA(B2:D2) ve =TOPLA(B2:B4)",
+      "E": "=TOPLA(B7:D7) ve =TOPLA(B7:B9)"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-28c4bbdfe83c",
+    "unitNumber": 3,
+    "text": "Yukarıda verilen lojistik taşıma modelinde minimum maliyetli hücre yöntemi uygulanırsa ilk dağıtım sonrası toplam taşıma maliyeti ne kadar olur?",
+    "options": {
+      "A": "720",
+      "B": "500",
+      "C": "420",
+      "D": "860",
+      "E": "900"
+    },
+    "correctAnswer": "B",
+    "explanation": "Minimum maliyetli hücre yönteminde atamaya en düşük birim maliyete sahip hücreden başlanır. 2 maliyetli D2-M1 hücresine 60 birim atanır. Daha sonra 3 maliyetli D1-M2 hücresine 100 birim ve 4 maliyetli D2-M2 hücresine kalan 20 birim atanır. Toplam maliyet: (60 x 2) (100 x 3) (20 x 4) = 120 300 80 = 500 olur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a49c11a187a4",
+    "unitNumber": 4,
+    "text": "Yukarıda verilen atama problemi bilgilerine göre F2 hücresinin değeri kaç olur?",
+    "options": {
+      "A": "22",
+      "B": "24",
+      "C": "30",
+      "D": "12",
+      "E": "14"
+    },
+    "correctAnswer": "B",
+    "explanation": "F2 hücresinde projenin toplam maliyeti hesaplanmaktadır. Atama tablosunda değeri 1 olan atamaların ilgili birim maliyetleri: İşçi 1 Mak 2’ye (maliyeti 2), İşçi 2 Mak 3’e (maliyeti 10), İşçi 3 Mak 1’e (maliyeti 12). Bu atamaların toplam maliyeti 2 10 12 = 24’tür.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-aa2c7215d613",
+    "unitNumber": 5,
+    "text": "Aşağıdaki yöntemlerden hangisi optimizasyon temelli modellemedir?",
+    "options": {
+      "A": "Benzetilmiş tavlama",
+      "B": "Genetik algoritma",
+      "C": "Doğrusal programlama",
+      "D": "Karınca koloni algoritması",
+      "E": "Tabu arama"
+    },
+    "correctAnswer": "C",
+    "explanation": "Seçeneklerdeki genetik algoritma, tabu arama ve karınca kolonisi gibi yöntemler meta-sezgisel yaklaşımlardır ve yaklaşık çözümler sunarlar. Doğrusal programlama ise matematiksel olarak kesin ve optimum (en iyi) sonucu bulmaya yönelik optimizasyon temelli bir tekniktir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-eae0c62663e3",
+    "unitNumber": 6,
+    "text": "4 düğümü 4 dalı olan yukarıda verilen şebekede aşağıdaki yollardan hangisi bir döngü (cycle) oluşturur?",
+    "options": {
+      "A": "B-C-A",
+      "B": "A-B-C",
+      "C": "B-C-D",
+      "D": "C-A-B-C",
+      "E": "A-B-C-D"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-10d273c18a34",
+    "unitNumber": 7,
+    "text": "Yukarıda verilen dağıtım planına göre toplam taşıma maliyeti aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "750",
+      "B": "540",
+      "C": "600",
+      "D": "720",
+      "E": "420"
+    },
+    "correctAnswer": "A",
+    "explanation": "Toplam maliyet, her hücredeki atanan miktar ile o hücrenin birim taşıma maliyetinin çarpılıp toplanmasıyla bulunur. Maliyet: (100 x 3) (60 x 2) (20 x 4) (40 x 5) (50 x 1) = 300 120 80 200 50 = 750 olarak hesaplanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d828a61febf4",
+    "unitNumber": 8,
+    "text": "Yukarıda verilen minimum maliyetli akış probleminde toplam maliyet kaç olur?",
+    "options": {
+      "A": "300",
+      "B": "270",
+      "C": "450",
+      "D": "335",
+      "E": "375"
+    },
+    "correctAnswer": "D",
+    "explanation": "Düğüm 1’den 35 birim arz çıkıp Düğüm 4’e ulaşmalıdır. Kapasite sınırları dikkate alınarak en ucuz rotalara yükleme yapılır: 1-2-4 rotasından 15 birim (15×9 = 135), 1-3-4 rotasından 15 birim (15×10 = 150) ve 1-2-3-4 rotasından kalan 5 birim (5×10 = 50) gönderilir. Toplam maliyet 135 150 50 = 335 olarak bulunur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-37a12a4f969e",
+    "unitNumber": 9,
+    "text": "İki depodan üç mağazaya, depo kapasiteleri ve mağaza talepleri dikkate alınarak ürün dağıtımı yapılması probleminde matematiksel modelde bulunan karar değişken sayısı kaç tane olur?",
+    "options": {
+      "A": "6",
+      "B": "1",
+      "C": "2",
+      "D": "3",
+      "E": "12"
+    },
+    "correctAnswer": "A",
+    "explanation": "Ulaştırma modellerinde karar değişkenleri, belirli bir kaynaktan belirli bir hedefe gönderilen miktarı temsil eder. 2 depo (kaynak) ve 3 mağaza (hedef) olduğundan, ihtimal dahilindeki rota sayısı 2 x 3 = 6 olup, karar değişkeni sayısı 6’dır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-9897c2344544",
+    "unitNumber": 10,
+    "text": "“Üç şehirden birine depo kurulmalıdır” kararına ilişkin doğrusal programlama model kısıtı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "x1+x2=1",
+      "B": "x1+x2+x3=1",
+      "C": "x1+x2+x3=2",
+      "D": "x1+x2=2",
+      "E": "x1+x2+x3=3"
+    },
+    "correctAnswer": "B",
+    "explanation": "Karar değişkenleri 0 veya 1 değerini alan (binary) değişkenler olarak tanımlanır. Üç şehirden sadece ”birine” depo kurulması istendiği için, bu üç değişkenin toplamının tam olarak 1’e eşit olması gerekir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1926f5cf166c",
+    "unitNumber": 11,
+    "text": "Yukarıda verilen 5 düğümlü şebekede kaç yol bulunmaktadır?",
+    "options": {
+      "A": "15",
+      "B": "8",
+      "C": "12",
+      "D": "5",
+      "E": "6"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-683b052257bc",
+    "unitNumber": 12,
+    "text": "Yukarıda verilen lojistik taşıma modelinde VAM yöntemi uygulanırsa ilk dağıtım sonrası toplam taşıma maliyeti ne kadar olur?",
+    "options": {
+      "A": "720",
+      "B": "860",
+      "C": "420",
+      "D": "360",
+      "E": "500"
+    },
+    "correctAnswer": "E",
+    "explanation": "Vogel Yaklaşım Yöntemine (VAM) göre hesaplandığında en büyük ceza 1. sütundadır (7-2=5). 2 birim maliyetli D2-M1 hücresine maksimum atanabilecek 60 birim gönderilir. Ardından D1-M2’ye 100 birim ve kalan D2-M2’ye 20 birim atanır. Dağıtımın maliyeti: (60 x 2) (100 x 3) (20 x 4) = 120 300 80 = 500’dür.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-aa5c4a838e2a",
+    "unitNumber": 13,
+    "text": "Yukarıda verilen atama probleminin MS Excel Solver kullanılarak çözümü yapılması istenirse, Çözücü parametreleri ekranında “Hedef Ayarla” hücresine aşağıdakilerden hangisi yazılır?",
+    "options": {
+      "A": "F2",
+      "B": "$B$10: $D$10",
+      "C": "$F$2",
+      "D": "$E$7:$E$9",
+      "E": "B7:D9"
+    },
+    "correctAnswer": "C",
+    "explanation": "MS Excel Çözücü parametreleri penceresindeki ”Hedef Ayarla” (Set Objective) sekmesine, maksimize veya minimize edilmek istenen sonucun yer aldığı formül hücresi girilir. Atama probleminde hesaplanan Toplam Maliyet formülü F2 hücresinde olduğu için bu alan $F$2 olarak ayarlanmalıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8e22c42c9325",
+    "unitNumber": 14,
+    "text": "MS Excel Çözücü (Solver) aracı kullanılarak bir “Atama Problemi” modellenirken, karar değişkenlerinin (işçi-iş eşleşmelerinin) sadece “0” veya “1” değerini almasını sağlamak için Kısıtlamalar penceresinde hangi operatör seçilmelidir?",
+    "options": {
+      "A": "&lt;= (Küçük eşittir)",
+      "B": "= (Eşittir)",
+      "C": "int (Tamsayı)",
+      "D": "bin (İkili / Binary)",
+      "E": "dif (Farklı)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Atama problemlerinde karar değişkenleri, bir görevin atanıp atanmadığını mantıksal olarak (evet/hayır) temsil ettikleri için sadece 0 veya 1 değerlerini almak zorundadırlar. MS Excel Çözücü parametrelerinde bu matematiksel zorunluluğu sisteme tanımlamak için değişken hücreleri kısıtlanırken operatör menüsünden “bin” (binary/ikili) seçeneği mutlaka işaretlenmelidir. Bu sayede Çözücü, arama algoritmasını herhangi bir ondalık sayı üretmeden sadece 0 ve 1 tam sayıları üzerinde çalışacak şekilde sınırlar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-cb771bf905a3",
+    "unitNumber": 15,
+    "text": "Lojistik ve taşımacılık modellerinde, bir fabrikanın (kaynağın) üretebileceği veya gönderebileceği maksimum ürün miktarını ifade eden kısıt türüne ne ad verilir?",
+    "options": {
+      "A": "Talep kısıtı",
+      "B": "Kapasite (Arz) kısıtı",
+      "C": "İşaret kısıtı",
+      "D": "Denge kısıtı",
+      "E": "Atama kısıtı"
+    },
+    "correctAnswer": "B",
+    "explanation": "Doğrusal programlama ile kurulan ulaştırma modellerinde her kaynağın (fabrika veya depo) gönderebileceği ürün miktarı belirli bir sınırla kısıtlanmıştır. Bu maksimum üretim veya gönderim sınırını ifade eden matematiksel eşitsizliklere ”kapasite” veya ”arz” kısıtı adı verilir. Matematiksel çözümün fiziksel gerçekliğe uygun ve uygulanabilir olması için bu kısıtların modele mutlaka doğru bir şekilde eklenmesi gerekmektedir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b7b73b1ec083",
+    "unitNumber": 16,
+    "text": "Aşağıdakilerden hangisi klasik bir “Atama Problemi”nin (Assignment Problem) temel varsayımlarından veya özelliklerinden biri değildir?",
+    "options": {
+      "A": "Kaynak (işçi) sayısı ile hedef (iş) sayısı birbirine eşit olmalıdır (Kare matris).",
+      "B": "Her bir işçi sadece tek bir işe atanabilir.",
+      "C": "Her bir iş sadece tek bir işçi tarafından yapılabilir.",
+      "D": "Amaç genellikle toplam maliyeti veya zamanı minimize etmektir.",
+      "E": "Karar değişkenleri herhangi bir ondalıklı veya kesirli değer alabilir."
+    },
+    "correctAnswer": "E",
+    "explanation": "Atama problemleri, belirli sayıdaki kaynağın belirli sayıdaki işe birebir ve en uygun şekilde dağıtılmasını sağlayan özel bir doğrusal programlama (şebeke) türüdür. Bu modelin en temel matematiksel özelliği, bir işin yapılıp yapılmadığını gösteren karar değişkenlerinin sadece 0 veya 1 (ikili/binary) tam sayı değerlerini alabilmesidir. Karar değişkenlerinin kesirli veya ondalıklı değerler alması, bir işçinin bir işin sadece yarısını yapması gibi bir durumu ifade edeceğinden klasik atama varsayımlarına kesinlikle aykırıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f8fc001a9410",
+    "unitNumber": 17,
+    "text": "Yukarıda verilen atama probleminin MS Excel Solver kullanılarak çözümü yapılması istenirse, Çözücü Parametreleri ekranında “Değişken Hücreleri Değiştirerek” kısmına aşağıdakilerden hangisi yazılır?",
+    "options": {
+      "A": "$B$10:$D$10",
+      "B": "$E$7:$E$9",
+      "C": "$F$2",
+      "D": "$B$2:$D$4",
+      "E": "$B$7:$D$9"
+    },
+    "correctAnswer": "E",
+    "explanation": "Excel Çözücü’de “Değişken Hücreleri Değiştirerek” alanı, karar değişkenlerinin (0 veya 1 değerini alacak hücrelerin) yer aldığı matris aralığıdır. Atama matrisi görselde 7. satır ile 9. satır arasında B ve D sütunları aralığında yer aldığı için doğru tanımlama $B$7:$D$9 olmalıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-bf25dea03d90",
+    "unitNumber": 18,
+    "text": "Yukarıda verilen ulaştırma problemi için sırasıyla VAM veya RAM yöntemi ile atama yapılmış olursa, ilk olarak hangi hücreye kaç atama yapılır?",
+    "options": {
+      "A": "D3-M3 &rarr;90",
+      "B": "D2-M1 &rarr;60",
+      "C": "D3-M3 &rarr;50",
+      "D": "D1-M2 &rarr;100",
+      "E": "D1-M3 &rarr;90"
+    },
+    "correctAnswer": "C",
+    "explanation": "Vogel Yaklaşım Yöntemi (VAM) kullanıldığında her satır ve sütunun en küçük iki maliyeti arasındaki ceza puanı hesaplanır. En yüksek ceza değeri (7-1=6) ile 3. satırda (D3) bulunur. Bu satırdaki en düşük maliyetli hücre D3-M3’tür (maliyeti 1). Bu hücreye kapasite ve talep kısıtlarından küçük olanı, yani 50 birim atanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0da110e41eb6",
+    "unitNumber": 19,
+    "text": "Bir ürünün bir üretim noktasından (kaynak) tüketim noktasına (hedef) taşınmasında toplam maliyet aşağıdaki formüllerden hangisi ile hesaplanır?",
+    "options": {
+      "A": "Birim taşıma maliyeti ile taşınan ürün miktarı çarpılır.",
+      "B": "Toplam taşıma maliyeti taşınan ürün miktarına bölünür.",
+      "C": "Üretim maliyetinin üzerine toplam taşıma maliyeti eklenir.",
+      "D": "Toplam taşıma maliyeti ile taşınan ürün miktarı çarpılır.",
+      "E": "Toplam taşıma maliyeti birim taşıma maliyetine bölünür."
+    },
+    "correctAnswer": "A",
+    "explanation": "Ulaştırma matematiği modellemelerinde, belirli bir rota üzerindeki maliyeti bulmak için o güzergaha tahsis edilen ürün miktarı ile o güzergahın birim taşıma maliyeti doğrudan çarpılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b33e6be690a9",
+    "unitNumber": 20,
+    "text": "Yukarıda verilen bilgisayar sunucu şebekesinde kaynaktan (server) diğer tüm noktalara ulaşacak minimum kablo uzunluğu kaç olmalıdır?",
+    "options": {
+      "A": "208",
+      "B": "221",
+      "C": "175",
+      "D": "203",
+      "E": "236"
+    },
+    "correctAnswer": "D",
+    "explanation": "Ağdaki tüm düğümleri bağlamak için Minimum Kapsayan Ağaç (MST) problemi çözülür. Kruskal algoritması kullanılarak en küçük ağırlıklı bağlantılar sırasıyla eklenir: Kaynak-D (15), A-B (28), D-E (28), E-G (30), F-G (32), C-G (35) ve A-E (35). Döngü oluşturmayan bu bağların toplamı 203’tür.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6db205bf4c17",
+    "unitNumber": 21,
+    "text": "Vogel Yaklaşım Yöntemi (VAM) kullanılarak bir ulaştırma probleminin başlangıç temel uygun çözümü bulunurken hesaplanan “ceza” (satır veya sütun farkı) değeri nasıl bulunur?",
+    "options": {
+      "A": "İlgili satır veya sütundaki en büyük iki maliyet toplanarak",
+      "B": "İlgili satır veya sütundaki en küçük iki maliyetin mutlak farkı alınarak",
+      "C": "İlgili satır veya sütundaki tüm maliyetlerin ortalaması alınarak",
+      "D": "Satırdaki en büyük maliyetten en küçük maliyet çıkarılarak",
+      "E": "İlgili satır ve sütun kapasiteleri birbirine bölünerek"
+    },
+    "correctAnswer": "B",
+    "explanation": "Vogel Yaklaşım Yöntemi (VAM), ulaştırma problemlerinde maliyetleri optimize eden bir başlangıç çözümü bulmak için maliyet farklarına dayanan analitik bir algoritmadır. Bu yöntemde her satır ve sütun için ayrı ayrı ceza puanları hesaplanırken, o satır veya sütundaki en küçük (en ucuz) iki taşıma maliyeti arasındaki mutlak fark alınır. Algoritmanın ilerleyişinde en yüksek ceza puanına sahip satır veya sütun öncelikli seçilerek, o rotadaki fırsat maliyeti en aza indirilmeye çalışılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6983f852a2c6",
+    "unitNumber": 22,
+    "text": "Yukarıdaki verilen dağıtım tablosuna göre D1-P2’ye ait dual fiyatın belirlenmesi sonrası yer değiştirme yapıldıktan sonra D1-P1 dolu hücrede atanmış değer kaç olur?",
+    "options": {
+      "A": "30",
+      "B": "50",
+      "C": "70",
+      "D": "100",
+      "E": "20"
+    },
+    "correctAnswer": "A",
+    "explanation": "Atlama taşı (Stepping Stone) yöntemi ile D1-P2 hücresine atama yapılırken kapalı bir döngü kurulur ( D1-P2, -D2-P2, D2-P1, -D1-P1). Eksi işaretli hücrelerdeki 70 ve 100 değerlerinden küçük olan 70 birim döngüde kaydırılır. Eksi işareti alan D1-P1 hücresinin yeni değeri 100 – 70 = 30 olur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d4ddb2f9489b",
+    "unitNumber": 23,
+    "text": "Aşağıdaki yöntemlerden hangisi lojistik süreçlerinin optimizasyon modellerinden değildir?",
+    "options": {
+      "A": "Tamsayılı programlama",
+      "B": "Doğrusal programlama",
+      "C": "0-1 tamsayılı programlama",
+      "D": "Lojistik programlama",
+      "E": "Doğrusal olmayan programlama"
+    },
+    "correctAnswer": "D",
+    "explanation": "Yöneylem araştırması literatüründe doğrusal, tamsayılı ve doğrusal olmayan programlama matematiksel optimizasyon modelleridir. Lojistik süreçlerde bu modeller kullanılsa da, ”Lojistik programlama” adıyla anılan spesifik bir bağımsız matematiksel optimizasyon modeli türü bulunmamaktadır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-cff9ea942d38",
+    "unitNumber": 24,
+    "text": "Şebeke (Ağ) modellerinden biri olan “En Kısa Yol Problemi”nin (Shortest Path Problem) temel amacı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Şebekedeki tüm düğümleri birbirine bağlayan en az maliyetli kablo ağını kurmak.",
+      "B": "Belirli bir başlangıç noktasından belirli bir bitiş noktasına giden en düşük maliyetli (veya en kısa mesafeli) rotayı bulmak.",
+      "C": "Bir boru hattından geçebilecek maksimum sıvı miktarını hesaplamak.",
+      "D": "Şebekedeki en yüksek maliyetli rotaları sistemden çıkarmak.",
+      "E": "Kaynaklardan hedeflere tüm talepleri karşılayacak şekilde ürün dağıtmak."
+    },
+    "correctAnswer": "B",
+    "explanation": "En Kısa Yol Problemi (Dijkstra algoritması vb.), lojistik ve rotalama optimizasyonunda kullanılan en temel şebeke analizi modellerinden biridir. Bu modelin tek ve temel amacı, belirli bir başlangıç (kaynak) düğümünden yola çıkarak hedeflenen spesifik bir bitiş (varış) düğümüne ulaşan olası tüm güzergahlar arasından toplam mesafesi (veya maliyeti) en az olan tekil rotayı matematiksel olarak tespit etmektir. Navigasyon cihazları, kurye dağıtım planlamaları ve telekomünikasyon ağlarındaki veri paketlerinin yönlendirilmesi bu algoritmanın en yaygın gerçek hayat uygulamalarıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e177e4eb31f0",
+    "unitNumber": 25,
+    "text": "Depo ve etrafında bulunan 6 şehirli bir şebekede, bu 6 şehirden istenen talepler aşağıda verilmektedir. q=(7 10 8 5 10 10). Bu yükleri depodan şehirlere taşıması ve depoya geri dönmesi gereken kaç araç rotalama yapılması gerekir? (Araç kapasitelerinin her biri Q=25 Ton kapasiteye sahiptir.)",
+    "options": {
+      "A": "2",
+      "B": "0",
+      "C": "3",
+      "D": "1",
+      "E": "4"
+    },
+    "correctAnswer": "A",
+    "explanation": "Toplam Talep = 7 + 10 + 8 + 5 + 10 + 10 = **50 Ton**. Araç kapasitesi 25 Ton olduğuna göre; 50 / 25 = **2 araç** tam kapasite ile bu talebi karşılayabilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-cfbe70c9d0a5",
+    "unitNumber": 26,
+    "text": "MS Excel kullanarak, yukarıda verilen atama problemi bilgilerine göre F2 hücresine yazılması gerekli formül aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "=TOPLA.ÇARPIM(A1:D4; A6:D9)",
+      "B": "=DÇARP(B2:D4;B7:D9)",
+      "C": "=DÇARP(A1:D4;A6:D9)",
+      "D": "=TOPLA(B2:D4;B7:D9)",
+      "E": "=TOPLA.ÇARPIM(B2:D4;B7:D9)"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-eff392f5b6bf",
+    "unitNumber": 27,
+    "text": "Sürücülerin araçlara atanması problemlerinde arz ve talep toplamlarının 1 olması istendiğinde genellikle aşağıdaki yöntemlerden hangisi kullanılır?",
+    "options": {
+      "A": "Atlama taşı yöntemi",
+      "B": "Kuzeybatı köşe yöntemi",
+      "C": "VAM",
+      "D": "RAM",
+      "E": "MACAR algoritması"
+    },
+    "correctAnswer": "E",
+    "explanation": "Arz ve talebin 1 olduğu (birebir eşleme) özel taşıma problemlerine “Atama Problemi” denir ve çözümünde en yaygın olarak **Macar Algoritması** (Hungarian Method) kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d20b52020a2a",
+    "unitNumber": 28,
+    "text": "D-6-2-3-D-1-5-D-6-D-D Yukarıda verilen rotaya göre, bu ARP probleminde araçlar yola çıkmadan önce depoda kaç araç bulunmaktadır?",
+    "options": {
+      "A": "2",
+      "B": "4",
+      "C": "3",
+      "D": "1",
+      "E": "5"
+    },
+    "correctAnswer": "B",
+    "explanation": "Rota diziliminde “D” (Depo) harfi her araç turunun başlangıç ve bitişini simgeler. Dizilimdeki D’lerin ayırdığı tur sayılarına bakıldığında (D-Rota-D yapıları), toplamda **4** farklı araç turu/seferi tanımlandığı görülmektedir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-6cadfc19e3b2",
+    "unitNumber": 29,
+    "text": "Yukarıda verilen A, B ve C nesneleri bilgilerine göre, 6 kg kapasitesi olan bir çantaya hangi nesne veya nesneler yerleştirilirse çantanın toplam değeri (p) maksimum olur?",
+    "options": {
+      "A": "Yalnız B",
+      "B": "Yalnız C",
+      "C": "A ve B",
+      "D": "A ve C",
+      "E": "Yalnız A"
+    },
+    "correctAnswer": "D",
+    "explanation": "Kapasite 6kg. A+B = 5kg, Değer 3TL. A+C = 6kg, Değer 1+5 = **6TL**. B+C = 7kg (Kapasiteyi aşar). Maksimum değer A ve C nesneleriyle sağlanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a713e8a4c529",
+    "unitNumber": 30,
+    "text": "n adet depo ve m adet şehrin bulunduğu bir ağda araç rotalama problemi modelinde minimum kaç araç olmalıdır?",
+    "options": {
+      "A": "3",
+      "B": "2",
+      "C": "4",
+      "D": "5",
+      "E": "1"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-9359ba53c499",
+    "unitNumber": 31,
+    "text": "Doğrusal programlama matematiksel modelinde karar değişkenlerinden bazılarının tamsayı olması isteniyorsa bu hangi tür tamsayılı programlama grubuna girer?",
+    "options": {
+      "A": "Doğrusal olmayan programlama",
+      "B": "Doğrusal programlama",
+      "C": "Saf tamsayılı programlama",
+      "D": "Karma tamsayılı programlama",
+      "E": "0-1 tamsayılı programlama"
+    },
+    "correctAnswer": "D",
+    "explanation": "Değişkenlerin tamamı değil, sadece **”bazıları”** tamsayı olmak zorundaysa bu modele **Karma (Mixed) Tamsayılı Programlama** denir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-23819f38890b",
+    "unitNumber": 32,
+    "text": "MS Excel’de A1 hücresine “=RATGELEARADA(20:50)” formülü yazılırsa sonuç aşağıdakilerden hangisi hiçbir zaman olamaz?",
+    "options": {
+      "A": "49",
+      "B": "51",
+      "C": "25",
+      "D": "32",
+      "E": "45"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-9984f4322657",
+    "unitNumber": 33,
+    "text": "Bir firmada herhangi bir ürünün mevcut stoğu 7, ürüne olan talep ve olasılığı da yukarıda verildiğine göre, talep miktarı için belirlenen rassal sayı 87 ise, karşılanan talep kaç olur?",
+    "options": {
+      "A": "7",
+      "B": "9",
+      "C": "10",
+      "D": "6",
+      "E": "8"
+    },
+    "correctAnswer": "A",
+    "explanation": "Kümülatif olasılıklar: 5 birim (0-19), 7 birim (20-79), 8 birim (80-99). Rassal sayı 87, 80-99 aralığına düştüğü için **Talep = 8** olur. Ancak **Stok = 7** olduğu için karşılanan talep stoğu geçemez, yani **7** olur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-34be31f50829",
+    "unitNumber": 34,
+    "text": "MS Excel’de A1 hücresine “=S_SAYI_ÜRET()” formülü yazılırsa aşağıdakilerden hangisi hiçbir zaman sonuç olamaz?",
+    "options": {
+      "A": "0,9900",
+      "B": "0,3524",
+      "C": "1,0102",
+      "D": "0,1975",
+      "E": "0,2022"
+    },
+    "correctAnswer": "C",
+    "explanation": "Excel’deki **S_SAYI_ÜRET (RAND)** fonksiyonu 0 ile 1 arasında (0 dahil, 1 hariç) rastgele bir sayı üretir. **1,0102** sayısı 1’den büyük olduğu için bu fonksiyonun sonucu olamaz.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-6a0ff92125bc",
+    "unitNumber": 35,
+    "text": "Yukarıda verilen MS Excel tablosuna göre karar değişkenleri (çantaya konmuş olmak 1 veya konmamış olmak 0) B5:E5 hücreleri aralığında yazılmıştır. Bu bilgilere göre çantaya hangi nesne veya nesneler konmuştur?",
+    "options": {
+      "A": "1, 2 ve 3 nesneleri",
+      "B": "1 ve 3 nesneleri",
+      "C": "Sadece 4",
+      "D": "Sadece 2",
+      "E": "2 ve 4 nesneleri"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8d0f1870d782",
+    "unitNumber": 36,
+    "text": "Bir öğrenci haftada ortalama 150 TL harçlık almaktadır. Standart sapma 25 olduğuna göre, yüzde 95 güven düzeyinde bu öğrencinin haftalık harçlık miktarı en az kaç TL olur?",
+    "options": {
+      "A": "101",
+      "B": "150",
+      "C": "90",
+      "D": "121",
+      "E": "200"
+    },
+    "correctAnswer": "A",
+    "explanation": "“En az” dendiği için alt sınır sorulmaktadır. Alt Sınır = 150 – (1.96 * 25) = 150 – 49 = **101 TL**.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-83c93f4ff96e",
+    "unitNumber": 37,
+    "text": "Yukarıda verilen boru şebekesinde kaynaktan hedefe gidebilen maksimum akış aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "9",
+      "B": "10",
+      "C": "11",
+      "D": "13",
+      "E": "12"
+    },
+    "correctAnswer": "B",
+    "explanation": "Maksimum akış / Minimum kesim teoremine göre, şebekeyi kesen darboğaz kapasitesi hesaplandığında (örneğin Kaynak-1 ve Kaynak-3 çıkış kapasiteleri toplamı veya ara yollar) maksimum akış **10** birim olarak bulunur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c987eec249f2",
+    "unitNumber": 38,
+    "text": "Yukarıda verilen şebekede bir projeye ait yapılması gereken 4 faaliyet ve bu faaliyetlere ilişkin süreler gün cinsinden verilmiştir. Buna göre D faaliyetinin erken başlama zamanı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "11",
+      "B": "10",
+      "C": "9",
+      "D": "14",
+      "E": "16"
+    },
+    "correctAnswer": "C",
+    "explanation": "D faaliyetine gelen yollar: A->B (4+5=9) ve A->C (4+3=7). Erken başlama zamanı (ES), öncül faaliyetlerin en geç bitiş süresine eşittir. Max(9, 7) = **9**.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-35cb337d2a7e",
+    "unitNumber": 39,
+    "text": "Aritmetik ortalaması 20, varyansı 16 olan bir değişkenin yüzde 95 güven aralığı aşağıdaki sınırların hangisi arasındadır?",
+    "options": {
+      "A": "12,16-20",
+      "B": "20-27,84",
+      "C": "12,16-27,84",
+      "D": "4-36",
+      "E": "16-24"
+    },
+    "correctAnswer": "C",
+    "explanation": "Varyans 16 ise Standart Sapma 4’tür. yüzde 95 güven aralığı için Z değeri yaklaşık 1.96’dır. Aralık = Ortalama ± (Z * Sapma) = 20 ± (1.96 * 4) = 20 ± 7.84. Alt sınır: 12.16, Üst sınır: 27.84.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d0ee6306c0c0",
+    "unitNumber": 40,
+    "text": "Yukarıdaki atama modelinde MACAR algoritma adımları kullanarak elde edilen minimum maliyet kaç olur?",
+    "options": {
+      "A": "19",
+      "B": "21",
+      "C": "27",
+      "D": "9",
+      "E": "30"
+    },
+    "correctAnswer": "D",
+    "explanation": "Macar algoritması ile satır ve sütun indirgemeleri yapıldığında optimal atama: A->2 (Maliyet 2), B->1 (Maliyet 3), C->3 (Maliyet 4). Toplam Maliyet = 2 + 3 + 4 = **9**.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  }
+]

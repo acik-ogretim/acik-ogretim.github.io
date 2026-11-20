@@ -1,1 +1,1800 @@
-[]
+[
+  {
+    "id": "s-c637dacb5d60",
+    "unitNumber": 1,
+    "text": "“Bir yazarın birden fazla kitabı olabilir” ilişkisini Laravel’de tanımlamak için yazarın model sınıfında aşağıdaki ilişki metotlarından hangisini kullanmalıyız?",
+    "options": {
+      "A": "hasManyThrough",
+      "B": "hasMany",
+      "C": "hasOne",
+      "D": "belongsToMany",
+      "E": "belongsTo"
+    },
+    "correctAnswer": "B",
+    "explanation": "Laravel Eloquent ORM yapısında veritabanı tabloları arasındaki ilişkiler (relationships) tanımlanırken; bir (1) kaydın, başka bir tabloda çok (N) sayıda kayda sahip olduğu “Bire-Çok (One-to-Many)” ilişkilerinde, ana modelde (Yazar) hasMany() metodu kullanılır (Yazar’ın çok kitabı vardır/has many). Kitap modelinde ise ilişkinin tersi olan belongsTo() kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-bde04583eb7b",
+    "unitNumber": 2,
+    "text": "Web sayfası geliştirirken kullanılan “localhost” ifadesi ile aşağıdakilerden hangisi belirtilir?",
+    "options": {
+      "A": "Bir uzak sunucuya bağlantı için kullanılan IP adresi",
+      "B": "Google'ın localhost sunucusuna bağlantı",
+      "C": "Bilgisayarın yerel sunucusuna ulaşmak için kullanılan genel bir alan adı",
+      "D": "Sadece Windows işletim sistemlerinde çalışan bir sunucu",
+      "E": "İnternet üzerinde bulunan herhangi bir web sitesi"
+    },
+    "correctAnswer": "C",
+    "explanation": "Yazılım geliştiriciler, kodladıkları web sitelerini doğrudan internete yüklemeden önce kendi bilgisayarlarında test ederler (XAMPP, WAMP vb. programlarla). “localhost” terimi (IP karşılığı 127.0.0.1’dir), ağa çıkmadan kişinin “kendi bilgisayarına (yerel makinesine)” işaret eden, yani bilgisayarın içindeki “yerel sunucuya” bağlanmayı sağlayan standart ve genel bir ağ/alan adıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b5a138355a14",
+    "unitNumber": 3,
+    "text": "MVC yapısındaki bir projede Model katmanı hakkında aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Her bir model genellikle bir veri tabanı tablosuyla ilişkilendirilir",
+      "B": "ORM teknolojisi ile çeşitli sorgular SQL komutu yazmadan çalıştırılabilir",
+      "C": "Model, projenin veri tabanıyla bağlantı kuran katmanıdır",
+      "D": "Model katmanı sadece kullanıcı giriş işlemlerini gerçekleştirir",
+      "E": "Modeller, varlık ilişki diyagramı ile tanımlanan bağlantıları içerir"
+    },
+    "correctAnswer": "D",
+    "explanation": "MVC mimarisinde “Model” katmanı tamamen veritabanı operasyonlarından (veriyi okuma, yazma, güncelleme, silme – CRUD) ve iş kurallarından (data logic) sorumludur (A, B, C, E şıkları doğrudur). Model “sadece kullanıcı giriş işlemlerini (login)” gerçekleştirmez; ürünleri listelemek, siparişleri kaydetmek, yorumları çekmek gibi sistemdeki her türlü veritabanı tablosunun ve verinin yönetiminden sorumludur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-7d8d8e720e07",
+    "unitNumber": 4,
+    "text": "Aşağıdakilerden hangisi MVC’nin avantajlarından biri değildir?",
+    "options": {
+      "A": "Yeniden kullanılabilirlik",
+      "B": "Veri tabanı şemalarını otomatik olarak oluşturma",
+      "C": "Kolay bakım ve geliştirme",
+      "D": "Paralel geliştirme",
+      "E": "Modülerlik ve ayrışma"
+    },
+    "correctAnswer": "B",
+    "explanation": "MVC (Model-View-Controller) bir “yazılım tasarım deseni” (mimari örüntü) dir. Projeyi modüllere ayırır (E), farklı yazılımcıların aynı anda (biri tasarımda biri arka uçta) çalışmasını sağlar (D), kodlar tekrar kullanılabilir (A) ve bakım kolaylaşır (C). Ancak “veritabanı şemalarını otomatik oluşturmak” MVC felsefesinin bir özelliği değildir; bu işlem framework’lerin (Laravel vb.) ORM sistemlerinde yer alan “Migration” araçlarının bir işlevidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3d4bd6e5f63c",
+    "unitNumber": 5,
+    "text": "PHP’nin geliştirilme amacı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Veritabanı yönetmek",
+      "B": "Oyun geliştirmek",
+      "C": "Mobil uygulamalar oluşturmak",
+      "D": "Masaüstü uygulamaları geliştirmek",
+      "E": "Dinamik web uygulamaları gerçekleştirebilmek"
+    },
+    "correctAnswer": "E",
+    "explanation": "PHP (Hypertext Preprocessor), 1994 yılında Rasmus Lerdorf tarafından, sunucu tarafında (backend) çalışan ve HTML içerisine gömülebilen bir betik dili olarak tasarlanmıştır. Temel varoluş amacı; kullanıcının isteklerine (giriş yapma, veri okuma/yazma) anında yanıt verebilen, veritabanıyla konuşan ve anlık olarak HTML üreten “dinamik web siteleri ve web uygulamaları” oluşturmaktır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0c4eea93bb7b",
+    "unitNumber": 6,
+    "text": "Web adresinin tipik yapısındaki bileşenler hangi sırayla yer alır?",
+    "options": {
+      "A": "hostname://port:protocol/path/filename",
+      "B": "filename://hostname:port/protocol/path",
+      "C": "protocol://port:hostname/filename/path",
+      "D": "hostname://protocol:port/path/filename",
+      "E": "protocol://hostname:port/path/filename"
+    },
+    "correctAnswer": "E",
+    "explanation": "İnternetteki standart bir URL (Uniform Resource Locator) yapısı uluslararası kurallara göre belirli bir sırayı takip eder. Önce iletişim kuralı (protocol) yazılır (http veya https), ardından “//” gelir. Sonra sunucunun adı veya IP adresi (hostname) yazılır. Eğer özel bir port kullanılıyorsa iki nokta üst üste ile port numarası eklenir (:port). Ardından sunucudaki dizin/klasör yolu (path) ve en son çağrılan dosyanın adı (filename) yer alır. Örnek: https://www.ornek.com:8080/dosyalar/resim.jpg",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-eef49dcf0224",
+    "unitNumber": 7,
+    "text": "Laravel’de bir migration dosyasında tam sayı türünde bir sütun eklemek için hangi metod kullanılır?",
+    "options": {
+      "A": "digit()",
+      "B": "integer()",
+      "C": "number()",
+      "D": "numeric()",
+      "E": "int()"
+    },
+    "correctAnswer": "B",
+    "explanation": "Laravel Blueprint sınıfı, veritabanı sütun tiplerini belirlemek için kendi özel metotlarına sahiptir. Migration dosyasında tam sayı (integer) verisi tutacak bir sütun (Örneğin: stok miktarı, yaş) tanımlamak istiyorsak $table->integer(‘sutun_adi’); metodunu kullanırız. Diğer yaygın tipler string(), text() ve boolean() şeklindedir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8556d261c8ca",
+    "unitNumber": 8,
+    "text": "TCP/IP mimarisinde kaç katman bulunmaktadır?",
+    "options": {
+      "A": "5",
+      "B": "2",
+      "C": "1",
+      "D": "4",
+      "E": "3"
+    },
+    "correctAnswer": "D",
+    "explanation": "Günümüz internetinin temelini oluşturan TCP/IP (Transmission Control Protocol/Internet Protocol) referans modeli, 7 katmanlı OSI modelinin daha basitleştirilmiş ve pratik halidir. TCP/IP modeli toplam “4 katmandan” oluşur. Bu katmanlar en üstten aşağıya doğru sırasıyla: 1- Uygulama Katmanı (Application), 2- Taşıma Katmanı (Transport), 3- İnternet Katmanı (Internet/Network) ve 4- Ağ Erişim/Arayüz Katmanı (Network Access/Link)’dır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c38caf32fa43",
+    "unitNumber": 9,
+    "text": "Laravel’de rotalara isim vermenin amacı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Rotaları güvenli hale getirmek için",
+      "B": "Rotaları gizlemek için",
+      "C": "Rotaları daha sonra kolayca çağırabilmek için",
+      "D": "Rotaların çalışma hızını artırmak için",
+      "E": "Rotaları önbelleğe alabilmek için"
+    },
+    "correctAnswer": "C",
+    "explanation": "Laravel’de yönlendirmelere (Route) name() metoduyla bir isim verilir (Örn: Route::get(‘/profil/kullanici/detay’, …)->name(‘profil.detay’);). Bunun amacı; uygulamanın başka yerlerinde (controller veya blade dosyalarında) URL’yi uzun uzun yazmak yerine route(‘profil.detay’) şeklinde ismiyle dinamik ve “kolayca çağırabilmektir”. İleride URL adresi değişse bile, isme bağlı çağrılar bozulmadan çalışmaya devam eder.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-75ca92595149",
+    "unitNumber": 10,
+    "text": "Laravel’de bir modele ait tüm kayıtları almak için hangi metod kullanılır?",
+    "options": {
+      "A": "select()",
+      "B": "get()",
+      "C": "all()",
+      "D": "retrieve()",
+      "E": "fetch()"
+    },
+    "correctAnswer": "C",
+    "explanation": "Laravel Eloquent ORM’de, bir veritabanı tablosundaki koşulsuz ve filtresiz “tüm kayıtları” (satırları) bir koleksiyon olarak çekmek için modelin üzerinde doğrudan all() statik metodu kullanılır. Örneğin: $kullanicilar = User::all(); (Eğer bir koşul eklenecekse where()->get() şeklinde get() metodu kullanılır, tek başına tümünü almanın en kısa yolu all()’dur).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ef564feae561",
+    "unitNumber": 11,
+    "text": "Blade Template kavramı tanımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "MVC yapısında kullanılan bir grafik işleme motorudur.",
+      "B": "Sadece mobil uygulamalarda kullanılan bir arayüz geliştirme aracıdır.",
+      "C": "Laravel'de kullanılan bir veritabanı yönetim sistemidir.",
+      "D": "Yapay zeka destekli kod tamamlama sistemidir.",
+      "E": "HTML dosyası içerisinde dinamik olması gereken koşulları kontrolcü tarafından değiştirilebilir hale getiren bir yaklaşımdır."
+    },
+    "correctAnswer": "E",
+    "explanation": "Laravel’in varsayılan şablon motoru (template engine) olan “Blade”, MVC’nin View (Görünüm) katmanında kullanılır. Blade, saf PHP kodları yazmak yerine; @if, @foreach, {{ $degisken }} gibi kendine özgü etiketler kullanarak, Controller’dan (Kontrolcü) gönderilen dinamik verileri HTML sayfalarının içerisine kolayca, güvenli ve temiz bir şekilde basmayı sağlayan güçlü bir yaklaşımdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e30967ec7fed",
+    "unitNumber": 12,
+    "text": "WWW’nin açılımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Web World Wide",
+      "B": "World Web Window",
+      "C": "Wide World Web",
+      "D": "Windows World Web",
+      "E": "World Wide Web"
+    },
+    "correctAnswer": "E",
+    "explanation": "WWW, internet üzerinde köprü metinleri (hypertext) ile birbirine bağlı belgelerden oluşan küresel bilgi paylaşım sisteminin adıdır. Açılımı İngilizce “Dünya Çapında Ağ” anlamına gelen “World Wide Web”dir. Tim Berners-Lee tarafından 1989 yılında icat edilmiştir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-7c50c095b71a",
+    "unitNumber": 13,
+    "text": "Laravel’de bir GET rotasını tanımlamak için hangi kod yapısı kullanılır?",
+    "options": {
+      "A": "Route::get('/', function () { return view('welcome'); });",
+      "B": "Route-&gt;get('/', function () { return view('welcome'); });",
+      "C": "Route('get', '/', function () { return view('welcome'); });",
+      "D": "get::Route('/', function () { return view('welcome'); });",
+      "E": "Route.get('/', function () { return view('welcome'); })"
+    },
+    "correctAnswer": "A",
+    "explanation": "Laravel framework’ünde HTTP isteklerini yakalamak için Route sınıfı (facade) kullanılır. Bu sınıfın statik metotlarına erişmek için PHP’nin kapsam çözümleme operatörü olan çift iki nokta üst üste (::) kullanılır. GET istekleri için Route::get(), POST istekleri için Route::post() yazılır. Diğer şıklardaki ok işareti (->) veya nokta (.) kullanımı Laravel rota tanımlama mimarisine (ve PHP’nin statik metot çağırma kurallarına) aykırıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-976809505191",
+    "unitNumber": 14,
+    "text": "Servis Odaklı Mimari (SOA) nedir?",
+    "options": {
+      "A": "Tek bir proje içerisinde tüm bileşenlerin hazırlandığı bir sistem",
+      "B": "Yalnızca masaüstü uygulamalar için kullanılan bir mimari",
+      "C": "Yalnızca oyun geliştirmek için kullanılan bir mimari",
+      "D": "Bağımsız geliştirilen alt sistemlerden (servislerden) oluşan bir yazılım mimarisi",
+      "E": "Yalnızca mobil uygulamalar için kullanılan bir mimari"
+    },
+    "correctAnswer": "D",
+    "explanation": "Servis Odaklı Mimari (SOA – Service-Oriented Architecture), yazılım bileşenlerinin (servislerin) ağ üzerinden bir iletişim protokolü (genellikle HTTP) kullanarak birbirlerine hizmet sunduğu bir yazılım tasarımıdır. Monolitik (tek parça) yapının aksine, her biri belirli bir işlevi yerine getiren “bağımsız” ve tekrar kullanılabilir “alt sistemlerden (servislerden)” oluşur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8469dea63f7f",
+    "unitNumber": 15,
+    "text": "SSL sertifikası aşağıdaki protokollerden hangisi ile ilişkilidir?",
+    "options": {
+      "A": "HTTPS",
+      "B": "HTTP",
+      "C": "SMTP",
+      "D": "FTP",
+      "E": "SSH"
+    },
+    "correctAnswer": "A",
+    "explanation": "SSL (Secure Sockets Layer) sertifikası, kullanıcı ile sunucu arasındaki veri iletimini kriptografik olarak şifreleyen bir güvenlik teknolojisidir. Normalde veriler düz metin olarak iletilen HTTP protokolüne SSL güvenlik sertifikası eklendiğinde, bu protokol şifrelenmiş ve güvenli hali olan “HTTPS” (Hyper Text Transfer Protocol Secure) ismini alır. (Sondaki “S” harfi Secure/Güvenli anlamına gelir ve SSL/TLS ile ilişkilidir).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-035416d5a297",
+    "unitNumber": 16,
+    "text": "Aşağıdakilerden hangisi MVC’nin öğrenme eğrisi dezavantajıyla ilgili doğru bir ifadedir?",
+    "options": {
+      "A": "MVC yapısını sadece deneyimli geliştiriciler öğrenebilir",
+      "B": "MVC yapısı doğası gereği öğrenilemez",
+      "C": "MVC yapısını öğrenmek için çok uzun yıllar gerekir",
+      "D": "MVC konseptini anlamak ve etkili bir şekilde uygulamak için belirli bir öğrenme süresi gerekebilir, özellikle yeni başlayan geliştiriciler için zorlayıcı olabilir",
+      "E": "MVC yapısını öğrenmek için formal bir eğitim şarttır"
+    },
+    "correctAnswer": "D",
+    "explanation": "MVC (Model-View-Controller) mimarisi çok güçlü ve modüler bir yapı olmasına rağmen, “dik bir öğrenme eğrisine” sahiptir. Kodların spagetti (karmaşık) yazılmak yerine üç farklı mantıksal katmana bölünmesi, bu katmanlar arasındaki iletişimin (veri akışının) nasıl kurgulanacağı ve klasör hiyerarşisi, programlamaya yeni başlayan “junior” geliştiriciler için ilk aşamada karmaşık ve zorlayıcı gelir. Öğrenilmesi için belirli bir adaptasyon ve pratik süresi gerektirir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5769aca9c8de",
+    "unitNumber": 17,
+    "text": "PHP’de indeksli dizi tanımlanma biçimi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "create array $dizi = [\"a\", \"b\", \"c\"]",
+      "B": "$dizi = [\"a\", \"b\", \"c\"]",
+      "C": "$dizi(0) = \"a\"; $dizi(1) = \"b\"; $dizi(2) = \"c\";",
+      "D": "$dizi -&gt; push(\"a\", \"b\", \"c\")",
+      "E": "$dizi = {\"a\", \"b\", \"c\"}"
+    },
+    "correctAnswer": "B",
+    "explanation": "PHP 5.4 sürümünden itibaren, eski array(“a”, “b”, “c”) fonksiyonuna alternatif olarak çok daha kısa ve okunaklı olan köşeli parantez sözdizimi (Short Array Syntax) getirilmiştir. Değişken adından sonra köşeli parantez içinde virgülle ayrılarak değerlerin yazılması indeksli (sıralı numaralandırılmış) bir dizi tanımlar. (Soru kökündeki şıkların dizilimi hatalı basılmış olsa da, köşeli parantez içeren B şıkkı en doğru yapıyı temsil eder).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5489110a2b7c",
+    "unitNumber": 18,
+    "text": "PHP’de switch-case yapısı ne için kullanılır?",
+    "options": {
+      "A": "Bir değişkenin değerine göre farklı komutları çalıştırmak için",
+      "B": "Dizilerin elemanlarını sıralamak için",
+      "C": "Döngülerde her bir elemanı kontrol etmek için",
+      "D": "Veri tabanı bağlantısını kurmak için",
+      "E": "Fonksiyonların parametre değerlerini kontrol etmek için"
+    },
+    "correctAnswer": "A",
+    "explanation": "Programlamada switch-case yapısı, if-elseif-else şart bloklarına alternatif bir kontrol mekanizmasıdır. İfade karmaşıklığını önlemek için kullanılır. Tek bir “değişkenin” durumu kontrol edilir ve bu değişkenin aldığı spesifik değere (case) göre farklı kod bloklarının “çalıştırılmasına” ve ardından kırılıp (break) çıkılmasına karar verilir. Özellikle bir değişkenin alabileceği 3’ten fazla belirli seçenek (örneğin haftanın günleri, işlem tipleri) varsa tercih edilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-39fc554b8e36",
+    "unitNumber": 19,
+    "text": "PHP’de iki diziyi birleştirmek için hangi fonksiyon kullanılır?",
+    "options": {
+      "A": "array_merge()",
+      "B": "concat()",
+      "C": "merge()",
+      "D": "join()",
+      "E": "combine()"
+    },
+    "correctAnswer": "A",
+    "explanation": "PHP programlama dilinde, birden fazla diziyi (array) elemanlarını uc uca ekleyerek tek bir dizi haline getirmek için özel olarak array_merge() fonksiyonu kullanılır. (Not: Metinleri birleştirmek için nokta (.) operatörü, bir diziyi metne dönüştürmek için implode() veya join(), iki diziyi anahtar-değer eşleşmesi yapmak için array_combine() kullanılır).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-07bc2347e868",
+    "unitNumber": 20,
+    "text": "Laravel’de bir migration dosyasının “up” metodu kullanım amacı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Veri tabanı bağlantısını yapılandırır",
+      "B": "Veri eklemek için gerekli işlemleri tanımlar",
+      "C": "Tabloyu oluşturmak veya değiştirmek için gerekli işlemleri tanımlar",
+      "D": "Migration'ı geri almak için gerekli işlemleri tanımlar",
+      "E": "Tabloyu silmek için gerekli işlemleri tanımlar"
+    },
+    "correctAnswer": "C",
+    "explanation": "Laravel’de migration (veritabanı göç) dosyaları veritabanı şemasını kodla yönetmek için kullanılır. Migration dosyaları iki temel metod içerir: up() ve down(). up() metodu veritabanında yeni bir “tablo oluşturmak”, sütun eklemek veya değiştirmek için (ileriye dönük işlemler) kullanılır. down() metodu ise yapılan bu işlemleri “geri almak” (örneğin tabloyu düşürmek/silmek) için kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-24ae7b4c7af6",
+    "unitNumber": 40,
+    "text": "Laravel projesini çalıştırmak için kullanılan komut aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "php start server",
+      "B": "laravel serve",
+      "C": "php -S localhost:8000",
+      "D": "php laravel run",
+      "E": "php artisan serve"
+    },
+    "correctAnswer": "E",
+    "explanation": "php artisan serve, yerleşik PHP sunucusunu 127.0.0.1:8000 adresinde başlatarak projenin hızlı test edilmesini sağlar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-337c0fb10d83",
+    "unitNumber": 41,
+    "text": "PHP’nin açık kaynak kodlu olmasının sağladığı avantajlardan birisi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Sadece belirli şirketler tarafından geliştirilebilmesi",
+      "B": "Daha güvenli, daha güncel ve sürekli yenilenen bir yapıya sahip olması",
+      "C": "Ücretli lisans gerektirmemesi ancak kaynak kodunun kapalı olması",
+      "D": "Değiştirilemeyen ve sabit bir yapıya sahip olması",
+      "E": "Yalnızca belirli sistemlerde çalışabilmesi"
+    },
+    "correctAnswer": "B",
+    "explanation": "Açık kaynak topluluk modeli hataları hızla düzeltir, yeni özellikleri geri bildirimle entegre eder.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8b9b4fe62b6b",
+    "unitNumber": 42,
+    "text": "Laravel ifadesinin tanımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "CSS ön işlemcisi",
+      "B": "JavaScript tabanlı bir frontend kütüphanesi",
+      "C": "PHP ile yazılmış, web uygulamaları geliştirmek için kullanılan bir framework",
+      "D": "Sunucu işletim sistemi",
+      "E": "Veritabanı yönetim sistemi"
+    },
+    "correctAnswer": "C",
+    "explanation": "Laravel, PHP dilinde MVC mimarisini temel alan, hazır routing, ORM (Eloquent) ve blade şablon motoru gibi bileşenlerle hızlı geliştirme sunan açık kaynak bir uygulama çatısıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-dee32ef611dc",
+    "unitNumber": 43,
+    "text": "MVC yapısında iş akışı gerçekleştirme yöntemi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Kullanıcı talebini Controller karşılar, gerekirse Model'den veri alır, View ile kullanıcıya sunar.",
+      "B": "Kullanıcı talebi doğrudan API katmanı tarafından işlenir.",
+      "C": "Kullanıcı talebini doğrudan Model karşılar, Controller'a iletir, Controller View'i kullanarak sonucu döndürür.",
+      "D": "Kullanıcı talebini servis katmanı karşılar, tüm işlemi kendisi gerçekleştirir.",
+      "E": "Kullanıcı talebini doğrudan View karşılar, Model'e iletir, Model sonucu Controller aracılığıyla döndürür."
+    },
+    "correctAnswer": "A",
+    "explanation": "MVC’de Controller iş isteğini, Model veri & iş mantığını, View sunum katmanını temsil eder.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4d8d5be99e61",
+    "unitNumber": 44,
+    "text": "Laravel framework’ünde kullanılan ORM teknolojisinin adı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Active Record",
+      "B": "Eloquent",
+      "C": "Hibernate",
+      "D": "Entity Framework",
+      "E": "Doctrine"
+    },
+    "correctAnswer": "B",
+    "explanation": "Eloquent, Laravel ile entegre aktif kayıt (Active Record) stilinde bir PHP ORM’dır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3c372b72ffdc",
+    "unitNumber": 45,
+    "text": "Modern web geliştirmede “rotalama” kavramı tanımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Arama motorunda üst sıralara çıkma",
+      "B": "URL kısaltma",
+      "C": "URL'leri uygulama içindeki belirli işlevlere yönlendirme",
+      "D": "Web sayfaları arasında geçiş yapma",
+      "E": "Sunucuyu yapılandırma"
+    },
+    "correctAnswer": "C",
+    "explanation": "Route tabloları, /blog/5 isteğini PostController@show metoduna eşler; RESTful tasarımın bel kemiğidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5575463e624d",
+    "unitNumber": 46,
+    "text": "URI ve URL arasındaki temel fark aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "URL bir URI türüdür ve bir kaynağın nasıl erişilebileceğini belirtir",
+      "B": "URI statik kaynakları, URL dinamik kaynakları tanımlar",
+      "C": "URI güvenli bağlantıları, URL güvensiz bağlantıları tanımlar",
+      "D": "URI yalnızca web sayfalarını tanımlarken, URL tüm internet kaynaklarını tanımlar",
+      "E": "URL sadece HTTP protokolünü kullanırken, URI tüm protokolleri kullanabilir"
+    },
+    "correctAnswer": "A",
+    "explanation": "URI tanımlayıcı kavramını, URL ise tanımlayıcının konum bilgisini içeren alt setini temsil eder.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3a5c4b557ed3",
+    "unitNumber": 47,
+    "text": "ORM ifadesinin tanımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Object Rendering Method anlamına gelen bir görüntüleme tekniğidir.",
+      "B": "Operasyonel Risk Yönetimi (Operational Risk Management) anlamına gelen risk analiz yaklaşımıdır.",
+      "C": "Nesne ilişkisel eşleme (object-relational mapping) anlamına gelen, veri tabanı tablosu-sınıf arasında köprü kuran yapıdır.",
+      "D": "Output Resource Management anlamına gelen bellek yönetim tekniğidir.",
+      "E": "Online Request Manager anlamına gelen istek yönetim sistemidir."
+    },
+    "correctAnswer": "C",
+    "explanation": "ORM katmanı, SQL sorgusu yazmadan sınıf ⟶ tablo / özellik ⟶ sütun eşlemesiyle CRUD işlemlerini kod okunabilirliği ve taşınabilirliği yüksek hale getirir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-74c287827d5c",
+    "unitNumber": 48,
+    "text": "MVC’de aşırı mühendislik riski ifadesinin tanımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Basit uygulamalarda MVC kullanımının gereksiz karmaşıklığa yol açabileceği durumu",
+      "B": "Mühendislik ekibinin çok büyük olmasından kaynaklanan riski",
+      "C": "Model sınıflarının sayısının kontrolden çıkma riski",
+      "D": "Veritabanı tablolarının karmaşıklaşma riski",
+      "E": "Her zaman aşırı mühendisliğin gerekli olduğu durumu"
+    },
+    "correctAnswer": "A",
+    "explanation": "Over-engineering, çözümün karmaşıklığının gereksinimi aşmasıdır; küçük CRUD projesinde katmanlı mimari fazlalık olabilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e11bdc891e4b",
+    "unitNumber": 49,
+    "text": "Laravel’de bir modelin hangi sütunlarının toplu atama ile doldurulabileceğini belirten özellik aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "$columns",
+      "B": "$guarded",
+      "C": "$table",
+      "D": "$fillable",
+      "E": "$attributes"
+    },
+    "correctAnswer": "D",
+    "explanation": "$fillable beyaz liste yaklaşımıdır; Model::create($request->all()) gibi işlemlerde kitle ataması güvenliğini sağlar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6a450604bf3f",
+    "unitNumber": 50,
+    "text": "Laravel’de model ve migration dosyasını aynı anda oluşturmak için aşağıdaki komutlardan hangisi kullanılır?",
+    "options": {
+      "A": "php artisan make:model ModelAdı --table",
+      "B": "php artisan make:model ModelAdı --migration",
+      "C": "php artisan make:model ModelAdı --create",
+      "D": "php artisan make:model ModelAdı --structure",
+      "E": "php artisan make:model ModelAdı --database"
+    },
+    "correctAnswer": "B",
+    "explanation": "--migration veya kısaca -m bayrağı, aynı isimli migration dosyasını database/migrations klasöründe oluşturur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4182b03a057e",
+    "unitNumber": 51,
+    "text": "Web 3.0’ın en önemli felsefesi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Daha hızlı web sayfaları sunmak",
+      "B": "Daha güvenli web sayfaları sunmak",
+      "C": "Daha az kaynak tüketimi",
+      "D": "Daha çok kullanıcıya hizmet verebilmek",
+      "E": "Kullanıcıların kendi verisine sahip olması ve merkezi otoritelerden bağımsızlık"
+    },
+    "correctAnswer": "E",
+    "explanation": "Web 3.0; blok zincir, semantik veri ve dağıtık mimariyle merkezsiz kimlik ve veri egemenliği vizyonu sunar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-eb904e419919",
+    "unitNumber": 52,
+    "text": "Web 2.0’ın Web 1.0’dan en önemli farkı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Daha az kodlama gerektirmesi",
+      "B": "Daha güvenli olması",
+      "C": "Daha hızlı olması",
+      "D": "Kullanıcıların içerik ekleyebilmesi ve etkileşime geçebilmesi",
+      "E": "Daha az sunucu kaynağı kullanması"
+    },
+    "correctAnswer": "D",
+    "explanation": "Web 2.0, sosyal ağlar & etiketleme gibi kullanıcı-taraflı içerik üreten interaktif platformlarla tanımlanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d98169963391",
+    "unitNumber": 53,
+    "text": "Web uygulamalarında URL yapılandırmasının SEO açısından önemi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "URL'lerin Türkçe karakterler içermesi SEO açısından avantajlıdır",
+      "B": "İyi yapılandırılmış URL'ler, arama motorlarının içeriği anlamasına ve indekslemesine yardımcı olur",
+      "C": "URL uzunluğu ne kadar fazlaysa SEO için o kadar iyidir",
+      "D": "URL'ler mümkün olduğunca karmaşık olmalıdır",
+      "E": "URL yapısı SEO için önemsizdir, içerik daha önemlidir"
+    },
+    "correctAnswer": "B",
+    "explanation": "Anlamlı slug (örn. /kategori/urun-adi) sıralama algoritmasında konu alaka düzeyini artırır, tıklama oranını yükseltir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-866eb45b57bf",
+    "unitNumber": 54,
+    "text": "Aşağıdaki seçeneklerin hangisinde PHP’de doğru şekilde değişken tanımlaması yapılmıştır?",
+    "options": {
+      "A": "$isim = \"Emre\";",
+      "B": "const isim = \"Emre\";",
+      "C": "var isim = \"Emre\";",
+      "D": "dim isim as String",
+      "E": "let isim = \"Emre\";"
+    },
+    "correctAnswer": "A",
+    "explanation": "PHP’de değişkenler $ önekiyle başlar; const ise sabit tanımlar, var/let JavaScript sözdizimidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2e7e1d5f49ff",
+    "unitNumber": 55,
+    "text": "MVC tasarım deseninin temel amacı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Sadece veri tabanı işlemlerini kolaylaştırmak",
+      "B": "Yazılım geliştirme maliyetlerini düşürmek",
+      "C": "Donanım gereksinimlerini azaltmak",
+      "D": "Yazılım geliştirme sürecinde kodun daha modüler, esnek ve yönetilebilir olmasını sağlamak",
+      "E": "Kullanıcı arayüzlerini daha görsel hale getirmek"
+    },
+    "correctAnswer": "D",
+    "explanation": "MVC ayrık sorumluluk ilkesiyle bakım-test kolaylığı ve ekip içi paralel çalışma sağlar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b17da87a41e1",
+    "unitNumber": 56,
+    "text": "Eloquent ORM’in en önemli avantajı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Sunucu performansını artırmak",
+      "B": "Veri tabanını otomatik yedeklemek",
+      "C": "Uygulamayı çeşitli tarayıcılara uyumlu hale getirmek",
+      "D": "Arayüz tasarımını iyileştirmek",
+      "E": "SQL yerine PHP sözdizimini kullanarak veri tabanı işlemlerini yapabilmek"
+    },
+    "correctAnswer": "E",
+    "explanation": "Eloquent, User::where('id',1)->first() gibi zincirlenebilir yöntemlerle SQL’i soyutlayarak üretkenliği artırır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f95729a1507d",
+    "unitNumber": 57,
+    "text": "UDP protokolünün TCP’ye göre avantajı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Daha iyi şifreleme sunması",
+      "B": "Daha yüksek veri bütünlüğü sağlaması",
+      "C": "Daha hızlı olması",
+      "D": "Daha az kaynak tüketmesi",
+      "E": "Daha güvenli olması"
+    },
+    "correctAnswer": "C",
+    "explanation": "UDP başlık alanı küçüktür, elde sıkışma & yeniden iletim mekanizması barındırmaz; bu da düşük gecikme ve daha az üst yük getirir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5197fc20dd72",
+    "unitNumber": 58,
+    "text": "TCP/IP mimarisinde veri iletim güvenliğinden sorumlu katman aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Uygulama Katmanı (Application Layer)",
+      "B": "Sunum Katmanı (Presentation Layer)",
+      "C": "İnternet Katmanı (Internet Layer)",
+      "D": "Ağ Erişim Katmanı (Network Access Layer)",
+      "E": "Taşıma Katmanı (Transport Layer)"
+    },
+    "correctAnswer": "E",
+    "explanation": "Transport katmanı (TCP/UDP), bağlantı kurma, oturum numaralandırma, uçtan uca bütünlük ve akış kontrolü işlevleriyle veri güvenilirliğini üstlenir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-eaf681bdf2d8",
+    "unitNumber": 59,
+    "text": "Laravel’de Request sınıfı kullanılma biçimi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Rota tanımlaması yapmak için",
+      "B": "Görünüm dosyalarını oluşturmak için",
+      "C": "Veritabanı bağlantısı kurmak için",
+      "D": "İstemciden gelen parametreleri kontrol etmek için",
+      "E": "Kontrolcü sınıfları yaratmak için"
+    },
+    "correctAnswer": "D",
+    "explanation": "Illuminate\\Http\\Request nesnesi, input verisine erişim, doğrulama ve sanitizasyon işlemlerini merkezîleştirir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-74ab2c36985a",
+    "unitNumber": 21,
+    "text": "ARPANET ilk aşamada kaç üniversite dahil edilerek genişletilmiştir?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "5",
+      "E": "4"
+    },
+    "correctAnswer": "E",
+    "explanation": "İnternetin atası sayılan ve ABD Savunma Bakanlığı (DARPA) tarafından geliştirilen ARPANET (Gelişmiş Araştırma Projeleri Ajansı Ağı), 1969 yılında kurulan ilk aşamasında birbirine bağlı sadece 4 üniversite/araştırma merkezinden (UCLA, Stanford Araştırma Enstitüsü, UC Santa Barbara ve Utah Üniversitesi) oluşan bir ağ olarak hayata geçirilmiş ve genişletilmiştir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-70800eeeeda6",
+    "unitNumber": 22,
+    "text": "DDOS saldırılarına karşı aşağıdaki Laravel özelliklerinden hangisi kullanılabilir?",
+    "options": {
+      "A": "Validation",
+      "B": "Encryption",
+      "C": "Authentication",
+      "D": "Middleware",
+      "E": "Rate Limiting"
+    },
+    "correctAnswer": "E",
+    "explanation": "DDoS (Dağıtık Hizmet Engelleme) veya brute-force (kaba kuvvet) saldırıları, sunucuyu aynı anda binlerce istek (request) göndererek çökertmeyi amaçlar. Laravel’de bu tarz aşırı trafik tüketimini engellemek için, belirli bir IP adresinden belirli bir süre içinde yapılabilecek maksimum istek sayısını sınırlayan “Rate Limiting” (İstek Sınırlandırma / Throttle) özelliği kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7d10b486e9a5",
+    "unitNumber": 23,
+    "text": "Veri tabanı bağlantı ayarları Laravel’de hangi dosyada yapılandırılır?",
+    "options": {
+      "A": "app.php",
+      "B": ".env",
+      "C": "routes.php",
+      "D": "web.php",
+      "E": "composer.json"
+    },
+    "correctAnswer": "B",
+    "explanation": "Laravel’de projenin kök dizininde bulunan .env (environment) dosyası, uygulamanın çalıştığı ortama özgü (lokal, test veya canlı sunucu) hassas konfigürasyon ayarlarını barındırır. Veritabanı türü (DB_CONNECTION), sunucu adresi (DB_HOST), veritabanı adı (DB_DATABASE), kullanıcı adı (DB_USERNAME) ve şifre (DB_PASSWORD) gibi kritik veritabanı bağlantı ayarları doğrudan bu dosyada tanımlanır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-500353a8d1d6",
+    "unitNumber": 24,
+    "text": "Aşağıdakilerden hangisi önbellekleme kullanılırken dikkat edilmesi gereken önemli bir noktadır?",
+    "options": {
+      "A": "Önbellek anahtarlarının her zaman rakamsal olması",
+      "B": "Tüm verilerin önbelleğe alınması",
+      "C": "Her zaman file sürücüsünün kullanılması",
+      "D": "Önbelleklenecek verinin ne kadar süreyle saklanacağının iyi planlanması",
+      "E": "Önbelleğin her HTTP isteğinde temizlenmesi"
+    },
+    "correctAnswer": "D",
+    "explanation": "Önbellekleme (Caching), sık erişilen verilerin hızlı okunabilmesi için RAM veya dosya sisteminde geçici olarak saklanmasıdır. Sistem performansını artırır ancak verinin güncelliği kritik bir sorundur. Bu nedenle önbellekteki verinin ne zaman zaman aşımına uğrayıp (TTL – Time To Live) yeniden veritabanından çekileceğinin (saklanma süresinin) uygulamanın ihtiyaçlarına göre çok iyi planlanması gerekir. Aksi takdirde kullanıcılar güncel olmayan (bayat) verilerle karşılaşabilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-9b466207ac50",
+    "unitNumber": 25,
+    "text": "Laravel’de gerçek zamanlı veri yayını için hangi yapı kullanılır?",
+    "options": {
+      "A": "Model-View-Controller",
+      "B": "Repository Pattern",
+      "C": "Middleware",
+      "D": "Event Broadcasting",
+      "E": "Service Container"
+    },
+    "correctAnswer": "D",
+    "explanation": "Web uygulamalarında sayfayı yenilemeden sunucudaki bir değişikliğin anında istemciye (kullanıcının tarayıcısına) iletilmesi işlemine gerçek zamanlı veri yayını denir. Laravel’de bu işlem WebSocket teknolojisi üzerinden “Event Broadcasting” (Olay Yayını) yapısı ile sağlanır. Laravel Echo ve Pusher (veya Laravel Reverb) gibi araçlarla entegre çalışarak bildirimler, canlı sohbetler veya anlık veri güncellemeleri kolayca gerçekleştirilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-3137378d0c50",
+    "unitNumber": 26,
+    "text": "Laravel’de bir Middleware oluşturulma biçimi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "php artisan new:middleware Logging",
+      "B": "php artisan add:middleware Logging",
+      "C": "php artisan make:middleware Logging",
+      "D": "php artisan generate:middleware Logging",
+      "E": "php artisan create:middleware Logging"
+    },
+    "correctAnswer": "C",
+    "explanation": "Middleware (Ara Katman), uygulamaya gelen HTTP isteklerini rotalara veya kontrolcülere ulaşmadan önce filtreleyen ve denetleyen yapılardır (örneğin kullanıcı giriş yapmış mı diye kontrol etmek). Laravel’de yeni bir Middleware sınıfı oluşturmak için standart artisan komutu php artisan make:middleware MiddlewareAdi şeklinde kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7fe1c9bb6ba2",
+    "unitNumber": 27,
+    "text": "Blade’de {{ __(‘metin’) }} sözdiziminin amacı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Metni HTML güvenli hale getirmek",
+      "B": "Metni JavaScript ile işlenebilir hale getirmek",
+      "C": "Çoklu dil desteği için metni çeviri sistemine göndermek",
+      "D": "Metni veritabanına kaydetmek",
+      "E": "Metni büyük harfe dönüştürmek"
+    },
+    "correctAnswer": "C",
+    "explanation": "Laravel’in şablon motoru olan Blade’de iki alt çizgi __(‘kelime’) fonksiyonu, uygulamanın yerelleştirme (Localization) ve çeviri servisini çağırır. Bu fonksiyon, içine yazılan anahtar kelimeyi (key) projenin dil dosyalarında (lang klasöründe) arar ve kullanıcının seçtiği aktif dile göre uygun çeviriyi ekrana yazdırır. Bu sayede web sitesine çoklu dil (Multi-language) desteği kazandırılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ab905693d9ef",
+    "unitNumber": 28,
+    "text": "Laravel’de MVC mimarisinde Kontrolcü katmanının temel görevi nedir?",
+    "options": {
+      "A": "Rota tanımlamalarını yapmaktır",
+      "B": "Veri tabanı tablolarını oluşturmak ve yönetmektir",
+      "C": "Arayüz tasarımını oluşturmak ve düzenlemektir",
+      "D": "Modeller arasındaki ilişkileri tanımlamaktır",
+      "E": "Gelen istekleri yönetmek ve uygun yanıtları oluşturmaktır"
+    },
+    "correctAnswer": "E",
+    "explanation": "Model-View-Controller (MVC) tasarım deseninde Kontrolcü (Controller), Model (veritabanı) ile View (arayüz) arasında bir köprü görevi görür. Temel görevi, kullanıcıdan veya sistemden gelen HTTP isteklerini (Request) almak, gerekirse Model üzerinden veritabanı işlemlerini yapmak ve sonuçları derleyip kullanıcıya uygun bir HTML görünümü (View) veya JSON yanıtı (Response) olarak döndürmektir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a82b4d50504f",
+    "unitNumber": 29,
+    "text": "Laravel’de bir kontrolcüde form verilerine erişmek için hangi yapı kullanılır?",
+    "options": {
+      "A": "Request sınıfı",
+      "B": "Values sınıfı",
+      "C": "Data sınıfı",
+      "D": "Input sınıfı",
+      "E": "Form sınıfı"
+    },
+    "correctAnswer": "A",
+    "explanation": "Kullanıcının bir HTML formu üzerinden gönderdiği verilere, URL sorgu parametrelerine veya yüklediği dosyalara kontrolcü (Controller) içerisinde güvenli ve nesne yönelimli bir şekilde erişmek için Illuminate\\Http\\Request sınıfı kullanılır. Metotlara enjekte edilen Request request nesnesi üzerinden request->input(‘isim’) veya request->all() gibi komutlarla verilere ulaşılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-eaef8a927785",
+    "unitNumber": 30,
+    "text": "Laravel’de API rotaları aşağıdaki dosyalardan hangisinde tanımlanır?",
+    "options": {
+      "A": "routes/rest.php",
+      "B": "routes/endpoints.php",
+      "C": "routes/web.php",
+      "D": "routes/services.php",
+      "E": "routes/api.php"
+    },
+    "correctAnswer": "E",
+    "explanation": "Laravel’de uygulama rotaları (routes) işlevlerine göre ayrı dosyalara bölünmüştür. Tarayıcı üzerinden erişilen, Session (Oturum) ve CSRF koruması kullanan normal web sayfaları routes/web.php dosyasında tanımlanır. Ancak mobil uygulamalar veya dış servisler için hazırlanan, durumsuz (stateless) ve token bazlı çalışan API (REST) uç noktaları routes/api.php dosyası içerisine yazılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c2ce0d9bc2ce",
+    "unitNumber": 31,
+    "text": "Hash::check() fonksiyonu ne işe yarar?",
+    "options": {
+      "A": "Verilen özet değerinin hangi şifre algoritması ile oluşturulduğunu tespit eder",
+      "B": "Metnin doğruluğunu denetler",
+      "C": "Verilen metnin özeti (hash) ile saklanmış özet değerinin eşleşip eşleşmediğini kontrol eder",
+      "D": "Özet değerleri oluşturmaya yarar",
+      "E": "Verilen metnin geçerli bir hash olup olmadığını kontrol eder"
+    },
+    "correctAnswer": "C",
+    "explanation": "Laravel’de şifreler veritabanında düz metin (plain-text) olarak değil, geri döndürülemez hash’lenmiş (Bcrypt veya Argon2) algoritmalarıyla saklanır. Kullanıcı giriş yaparken girdiği düz şifrenin, veritabanındaki karmaşık hash değeriyle eşleşip eşleşmediğini güvenli bir şekilde doğrulamak (verify) için Hash::check(‘girilen_sifre’, $veritabanindaki_hash) metodu kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f44b98ba7f84",
+    "unitNumber": 32,
+    "text": "WebSocket teknolojisinin web uygulamalarındaki temel kullanım amacı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Statik dosyaları yüklemek",
+      "B": "Oturum kontrolü sağlamak",
+      "C": "Sayfayı yenilemeden gerçek zamanlı veri almak",
+      "D": "Cookie yönetimi yapmak",
+      "E": "Form verileri göndermek"
+    },
+    "correctAnswer": "C",
+    "explanation": "Geleneksel HTTP protokolü tek yönlüdür; istemci istek atar, sunucu yanıt verir ve bağlantı kapanır. WebSocket teknolojisi ise istemci ile sunucu arasında sürekli açık kalan, çift yönlü (full-duplex) bir iletişim kanalı kurar. Bu sayede sunucu, yeni bir veri veya bildirim olduğunda kullanıcının sayfayı yenilemesine gerek kalmadan anlık olarak “gerçek zamanlı (real-time)” veriyi tarayıcıya itebilir (push).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-94ea8dd18b67",
+    "unitNumber": 33,
+    "text": "Modern web çerçevelerinde URL’lerin kullanımı geleneksel yaklaşımdan nasıl farklılaşmıştır?",
+    "options": {
+      "A": "URL'ler dosya yolları yerine uygulama içindeki belirli işlevlere yönlendiren parametrik komutlar olarak kullanılır.",
+      "B": "URL'ler sadece statik sayfaları göstermek için kullanılır.",
+      "C": "URL'ler artık yalnızca ana sayfalara erişim için kullanılır.",
+      "D": "URL'ler artık kullanılmamakta, yerini API anahtarları almaktadır.",
+      "E": "URL'ler sadece GET istekleri için kullanılır."
+    },
+    "correctAnswer": "A",
+    "explanation": "Geleneksel PHP veya HTML projelerinde bir URL (örneğin site.com/hakkimizda.php), sunucudaki fiziksel bir dosyanın yolunu işaret ederdi. Laravel gibi modern MVC web iskeletlerinde ise URL’ler fiziksel dosyaları değil, uygulamanın Route (Rota) mekanizması üzerinden belirli bir Controller metodunu tetikleyen semantik ve parametrik uç noktaları (endpoint) ifade eder.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1ae59f267d0c",
+    "unitNumber": 34,
+    "text": "Laravel’de yerelleştirme (localization) dosyaları hangi klasörde saklanır?",
+    "options": {
+      "A": "lang",
+      "B": "languages",
+      "C": "locales",
+      "D": "i18n",
+      "E": "translations"
+    },
+    "correctAnswer": "A",
+    "explanation": "Laravel uygulamalarında çoklu dil desteğine ait JSON veya PHP formatındaki çeviri dosyaları (İngilizce için en, Türkçe için tr vb.), projenin ana dizininde (veya eski sürümlerde resources dizini altında) bulunan lang klasöründe barındırılır ve yönetilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-3c5f5b776321",
+    "unitNumber": 35,
+    "text": "Laravel’de kimlik doğrulama işleminde, sunucu tarafında kullanıcının giriş yaptığını hatırlayabilmek için hangi teknoloji kullanılır?",
+    "options": {
+      "A": "JWT (JSON Web Token)",
+      "B": "LocalStorage",
+      "C": "Cookie (Çerez)",
+      "D": "Session (Oturum)",
+      "E": "OAuth"
+    },
+    "correctAnswer": "D",
+    "explanation": "Standart web tabanlı Laravel uygulamalarında kimlik doğrulama (Authentication) stateful (durum tutan) bir yapıdır. Kullanıcı başarılı bir şekilde giriş yaptığında, kullanıcının kimlik bilgileri sunucu belleğinde veya veritabanında “Session (Oturum)” olarak saklanır. Sunucu bu oturuma ait bir Session ID’yi kullanıcının tarayıcısına çerez olarak gönderir ve sonraki sayfa geçişlerinde kullanıcının sistemde “hatırlanması” bu oturum yapısı sayesinde gerçekleşir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b2853cf713b6",
+    "unitNumber": 36,
+    "text": "Laravel kontrolcüsünden görünüme veri aktarmak için view() fonksiyonunun hangi parametresi kullanılır?",
+    "options": {
+      "A": "Üçüncü parametre (opsiyonel değerler)",
+      "B": "İkinci parametre (bir dizi veya değişkenler)",
+      "C": "with() metodunun parametresi",
+      "D": "Birinci parametre (görünüm adı)",
+      "E": "Dördüncü parametre (konfigurasyon değerleri)"
+    },
+    "correctAnswer": "B",
+    "explanation": "view() yardımcı fonksiyonu (helper) temel olarak iki parametre alır. Birinci parametre çağrılacak Blade şablonunun adını (Örn: ‘kullanicilar.index’) temsil eder. İkinci parametre ise bu görünüme (view) aktarılacak olan verileri içeren bir dizidir (array). Örneğin: return view(‘profil’, [‘isim’ => ‘Ahmet’]); kodunda ikinci parametre ile veri aktarımı sağlanır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f68891d0d49b",
+    "unitNumber": 37,
+    "text": "Bir kontrolcü sınıfının (Controller) diğer katmanlarla ilişkisi hakkında aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Bir kontrolcü yalnızca kendisiyle ilgili modelle etkileşime geçmek zorunda değildir, birçok modelle etkileşime geçebilir",
+      "B": "Bir kontrolcü sadece bir model sınıfıyla etkileşime geçebilir",
+      "C": "Kontrolcüler sadece middleware katmanıyla etkileşime geçebilir",
+      "D": "Kontrolcüler veri tabanına doğrudan erişim sağlayamazlar",
+      "E": "Bir kontrolcü View katmanıyla hiçbir şekilde etkileşimde bulunamaz"
+    },
+    "correctAnswer": "A",
+    "explanation": "Controller (Kontrolcü), MVC mimarisinin orkestra şefidir. Genellikle bir Controller kendi adıyla eşleşen bir Model ile çalışsa da (Örn: UserController -> User modeli), kompleks iş mantıklarını yürütmek için aynı metot içerisinde Siparis, Yorum veya Kategori gibi farklı birden fazla Model sınıfını çağırabilir ve bunlarla serbestçe etkileşime girebilir. Katı bir “tek model” sınırı yoktur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-0c3c6263162c",
+    "unitNumber": 38,
+    "text": "Laravel’de Breeze paketi kullanım amacı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Performans optimizasyonu yapmak",
+      "B": "Başlangıç seviyesinde bir tasarım ve temel kullanıcı yönetimi özellikleri sağlamak",
+      "C": "Veritabanı migrasyon işlemlerini otomatikleştirmek",
+      "D": "API dokümantasyonu oluşturmak",
+      "E": "Güvenlik testleri gerçekleştirmek"
+    },
+    "correctAnswer": "B",
+    "explanation": "Laravel Breeze, Laravel’in sunduğu en hafif ve basit resmi kimlik doğrulama (Authentication) başlangıç paketidir. Geliştiricilere sıfırdan yazmak yerine; kullanıcı kayıt olma (register), giriş yapma (login), şifre sıfırlama ve e-posta doğrulama gibi temel özellikleri, Tailwind CSS ile stillendirilmiş hazır görünümleriyle birlikte sunar.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f7315dbf258e",
+    "unitNumber": 39,
+    "text": "PHP’de temel koşul yapısı nasıl oluşturulur?",
+    "options": {
+      "A": "condition (koşul) ? komutlar : diğer komutlar",
+      "B": "check (koşul) { komutlar } default { diğer komutlar }",
+      "C": "when (koşul) { komutlar } otherwise { diğer komutlar }",
+      "D": "if (koşul) { komutlar } else { diğer komutlar }",
+      "E": "if koşul then komutlar else diğer komutlar endif"
+    },
+    "correctAnswer": "D",
+    "explanation": "PHP programlama dilinde, diğer birçok C tabanlı dilde olduğu gibi kontrol akışı ve karar verme işlemleri “if-else” yapılarıyla sağlanır. Doğru sözdizimi (syntax); if anahtar kelimesinin yanına parantez içinde koşulun yazılması ve ardından süslü parantezler {} içerisinde koşul doğruysa (true) çalışacak komutların, else bloğunda ise koşul yanlışsa (false) çalışacak komutların yazılması şeklindedir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-80ca36aa3e4b",
+    "unitNumber": 60,
+    "text": "Laravel’de Middleware handle() fonksiyonunda $next($request) ifadesi aşağıdakilerden hangisine yerleştirilirse, Middleware kontrolcü fonksiyonundan sonra çalışır?",
+    "options": {
+      "A": "handle() fonksiyonu yerine after() fonksiyonu kullanılırsa",
+      "B": "return $next($request) ifadesinden sonra kod bloğu yazılırsa",
+      "C": "return $next($request) ifadesinden önce kod bloğu yazılırsa",
+      "D": "return $next($request) ifadesi kullanılmazsa",
+      "E": "Middleware sınıfının constructor metodunda belirtilirse"
+    },
+    "correctAnswer": "B",
+    "explanation": "Middleware’de `$next($request)` komutu, isteği bir sonraki katmana (veya kontrolcüye) iletir. Bu komuttan önce yazılan kodlar kontrolcüden önce, bu komuttan sonra yazılan kodlar ise kontrolcü çalışıp yanıtı oluşturduktan sonra çalışır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c3c4c25f2115",
+    "unitNumber": 61,
+    "text": "Laravel’de Middleware (Ara Katman) kavramının temel amacı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Veritabanı sorgularını optimize etmek",
+      "B": "Bir rotaya erişildiğinde kontrolcü fonksiyonu çalıştırılmadan önce veya sonra kod bloğu çalıştırmak",
+      "C": "HTTP yanıtlarını sıkıştırmak",
+      "D": "Yalnızca kullanıcı kimlik doğrulaması yapmak",
+      "E": "Görünüm (view) dosyalarını işlemek"
+    },
+    "correctAnswer": "B",
+    "explanation": "Middleware (Ara Katman), gelen HTTP isteklerini filtrelemek için bir mekanizma sağlar. Temel amacı, bir istek hedefine (kontrolcüye) ulaşmadan önce veya hedeften bir yanıt döndükten sonra belirli işlemleri (kimlik doğrulama, loglama, CORS ayarları vb.) gerçekleştirmektir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8c00775af5ff",
+    "unitNumber": 62,
+    "text": "Aşağıdakilerden hangisi Controller sınıfı oluştururken kullanılan –resource parametresinin sağladığı metodlardan biri değildir?",
+    "options": {
+      "A": "index",
+      "B": "store",
+      "C": "destroy",
+      "D": "login",
+      "E": "create"
+    },
+    "correctAnswer": "D",
+    "explanation": "`–resource` parametresi, bir kaynakla ilgili temel CRUD (Create, Read, Update, Delete) işlemleri için `index`, `create`, `store`, `show`, `edit`, `update`, ve `destroy` metotlarını otomatik olarak oluşturur. `login` metodu ise genellikle kimlik doğrulama işlemleri için kullanılır ve standart bir resource metodu değildir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7ea1a6c476cd",
+    "unitNumber": 63,
+    "text": "Laravel’de veri tabanı tablolarını oluşturmak için kullanılan yapı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Migration",
+      "B": "Route",
+      "C": "Middleware",
+      "D": "Factory",
+      "E": "Seeder"
+    },
+    "correctAnswer": "A",
+    "explanation": "Laravel’de ”Migration” (Taşıma) dosyaları, veritabanı şemasının (tablolar, sütunlar vb.) kod aracılığıyla oluşturulmasını ve yönetilmesini sağlayan bir sürüm kontrol sistemi görevi görür.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-0ff6f1946d55",
+    "unitNumber": 64,
+    "text": "Önbellekleme (caching) kullanımının temel amacı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Kullanıcı oturumlarını yönetmek",
+      "B": "Uygulama güvenliğini artırmak",
+      "C": "Veritabanı bağlantı sayısını azaltmak",
+      "D": "Aynı sonucu üretmek için her istekte tekrar kaynak tüketimini önleyerek performansı artırmak",
+      "E": "HTTP isteklerini sıralamak"
+    },
+    "correctAnswer": "D",
+    "explanation": "Önbellekleme, veritabanı sorgusu gibi zaman alan veya kaynak tüketen işlemlerin sonuçlarını geçici bir süreliğine hızlı erişilebilir bir bellekte saklar. Aynı istek tekrar geldiğinde, işlem yeniden yapılmak yerine sonuç doğrudan önbellekten alınır, bu da performansı önemli ölçüde artırır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-2e981e5e8203",
+    "unitNumber": 65,
+    "text": "Laravel’de bir kaydı güncellemek için kontrolcüde aşağıdaki hangi iki metot kullanılır?",
+    "options": {
+      "A": "modify ve save",
+      "B": "edit ve update",
+      "C": "change ve persist",
+      "D": "refresh ve commit",
+      "E": "update ve save"
+    },
+    "correctAnswer": "B",
+    "explanation": "Resource controller yapısında, `edit` metodu güncellenecek kaydın formunu kullanıcıya göstermek için, `update` metodu ise bu formdan gelen verilerle kaydı veritabanında güncellemek için kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ff61a092638d",
+    "unitNumber": 66,
+    "text": "Laravel’de API sürüm yönetimi için tercih edilen rotalama yaklaşımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Controller sürüm isimlendirmesi yapılır",
+      "B": "Namespace tanımlamaları kullanılır",
+      "C": "Model sürüm tanımlamaları yapılır",
+      "D": "Middleware tanımlamaları kullanılır",
+      "E": "Route ön ekleri kullanılır (prefix)"
+    },
+    "correctAnswer": "E",
+    "explanation": "API’leri sürümlere ayırmak için en yaygın ve temiz yöntemlerden biri, rota tanımlamalarında ön ek (prefix) kullanmaktır. Örneğin, rotalar `/api/v1/` ve `/api/v2/` gibi ön eklerle gruplandırılarak farklı sürümler yönetilebilir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-14b8df441f91",
+    "unitNumber": 67,
+    "text": "arasındaki fark aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "HTML yorumları CSS'i etkilerken, Blade yorumları etkilemez",
+      "B": "HTML yorumları kaynak kodunda görünürken, Blade yorumları sunucu tarafinda tamamen kaldırılır",
+      "C": "HTML yorumları tarayıcıda görünürken, Blade yorumları görünmez",
+      "D": "HTML yorumları JavaScript tarafından okunabilirken, Blade yorumları okunamaz",
+      "E": "HTML yorumları sadece geliştiriciler tarafından görülebilirken, Blade yorumları herkes tarafından görülebilir"
+    },
+    "correctAnswer": "B",
+    "explanation": "HTML yorumları (“) istemciye gönderilen dosyanın içinde yer alır ve tarayıcının ”kaynağı görüntüle” seçeneğiyle görülebilir. Blade yorumları (`{{– –}}`) ise sunucu tarafında Blade şablon motoru tarafından işlenirken tamamen kaldırılır ve istemciye gönderilen son HTML dosyasına dahil edilmez.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1290891630f3",
+    "unitNumber": 68,
+    "text": "Laravel’de JSON formatında yanıt döndürmek için kontrolcüde aşağıdaki yapılardan hangisi kullanılır?",
+    "options": {
+      "A": "echo json_encode($data);",
+      "B": "$data-&gt;asJson();",
+      "C": "return response()-&gt;json($data);",
+      "D": "json_encode($data);",
+      "E": "return $data-&gt;toJson();"
+    },
+    "correctAnswer": "C",
+    "explanation": "Laravel, JSON yanıtları oluşturmak için `response()` yardımcısını sunar. `response()->json($data)` kullanımı, verilen diziyi veya nesneyi JSON formatına dönüştürür ve `Content-Type` başlığını otomatik olarak `application/json` olarak ayarlar. Bu, en doğru ve standart yöntemdir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-65688e211a38",
+    "unitNumber": 69,
+    "text": "HTTP Client ile JSON formatında yanıt almak için aşağıdaki metotlardan hangisi kullanılır?",
+    "options": {
+      "A": "parseJson()",
+      "B": "toJson()",
+      "C": "asJson()",
+      "D": "json()",
+      "E": "getJson()"
+    },
+    "correctAnswer": "D",
+    "explanation": "Laravel’in HTTP istemcisini kullanarak bir API’den yanıt alındığında, yanıt gövdesinin JSON formatında olduğu biliniyorsa, bu JSON verisini bir PHP dizisine dönüştürmek için yanıt nesnesi üzerinde `.json()` metodu çağrılır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-78305781efff",
+    "unitNumber": 70,
+    "text": "MVC’de Model katmanının amacı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Sistemin bileşenlerinin fonksiyonel hale getirildiği katmandır.",
+      "B": "Projenin yetkilendirmesini sağlayan katmandır.",
+      "C": "Projenin veri tabanıyla bağlantı kuran katmanıdır ve tablolarla ilişkilendirilir.",
+      "D": "Sadece veri doğrulaması yapan katmandır.",
+      "E": "Sistemin kullanıcıyla etkileşiminin sağlandığı katmandır."
+    },
+    "correctAnswer": "C",
+    "explanation": "MVC (Model-View-Controller) mimarisinde Model katmanı, uygulamanın veri yapısını ve iş mantığını temsil eder. Genellikle veritabanı tablolarıyla etkileşime girerek veri okuma, yazma, güncelleme ve silme gibi işlemleri yönetir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-0956a2e98791",
+    "unitNumber": 71,
+    "text": "IP adreslerinden alan adlarına erişim sağlayan sistem aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "DNS (Domain Name System)",
+      "B": "HTTP (Hypertext Transfer Protocol)",
+      "C": "FTP (File Transfer Protocol)",
+      "D": "SMTP (Simple Mail Transfer Protocol)",
+      "E": "HTML (Hypertext Markup Language)"
+    },
+    "correctAnswer": "A",
+    "explanation": "DNS (Alan Adı Sistemi), insanların okuyabildiği alan adlarını (örneğin, http://www.google.com) makinelerin anlayabildiği IP adreslerine (örneğin, 172.217.16.142) çeviren ve internetin telefon rehberi gibi çalışan sistemdir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b593bb6e9a94",
+    "unitNumber": 72,
+    "text": "Laravel kütüphanesinin üçüncü temel katmanı olan Tasarım katmanının temel görevi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Sunucu güvenliğinin sağlanması",
+      "B": "Kullanıcı kimlik doğrulama işlemlerinin yapılması",
+      "C": "Veri tabanı işlemlerinin yönetilmesi",
+      "D": "İstek yönlendirme ve yönetiminin sağlanması",
+      "E": "İstemciye gönderilecek arayüz dosyalarının dinamik olarak güncellenmesi ve iletilmesi"
+    },
+    "correctAnswer": "E",
+    "explanation": "MVC mimarisindeki Tasarım (View) katmanı, kullanıcıya gösterilecek olan arayüzü oluşturmaktan sorumludur. Bu katman, kontrolcüden gelen verileri alarak HTML dosyaları gibi arayüz dosyalarını dinamik olarak işler ve sonuç olarak istemcinin tarayıcısına gönderir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-2e6b351305ce",
+    "unitNumber": 73,
+    "text": "HTTP protokolünde en sık kullanılan iki istek metodu aşağıdaki hangisidir?",
+    "options": {
+      "A": "PUSH ve PULL",
+      "B": "INPUT ve OUTPUT",
+      "C": "FETCH ve SEND",
+      "D": "GET ve POST",
+      "E": "READ ve WRITE"
+    },
+    "correctAnswer": "D",
+    "explanation": "HTTP protokolünde birçok istek metodu bulunsa da, sunucudan veri istemek (sayfa görüntülemek vb.) için `GET` ve sunucuya veri göndermek (form doldurmak vb.) için `POST` metotları en temel ve en sık kullanılan iki metottur.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-59fd650e12ce",
+    "unitNumber": 74,
+    "text": "PHP’de ilişkisel bir dizinin elemanına erişilme biçimi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "$dizi(anahtar)",
+      "B": "$dizi.anahtar",
+      "C": "$dizi[\"anahtar\"]",
+      "D": "$dizi-&gt;anahtar",
+      "E": "dizi.get(\"anahtar\")"
+    },
+    "correctAnswer": "C",
+    "explanation": "PHP dilinde ilişkisel dizilerdeki (associative arrays) bir elemanın değerine, o elemana ait anahtar (key) değeri kullanılarak köşeli parantez `[]` içinde erişilir. Örneğin: `$dizi[”anahtar”]`.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-3f05bb72c0bc",
+    "unitNumber": 75,
+    "text": "Blade’de bir değişkenin değerini güvenli bir şekilde yazdırmak için hangi sözdizimi kullanılır?",
+    "options": {
+      "A": "{!! $degisken !!}",
+      "B": "&lt;% $degisken %&gt;",
+      "C": "{{ $degisken }}",
+      "D": "($degisken)",
+      "E": "{% $degisken %}"
+    },
+    "correctAnswer": "C",
+    "explanation": "Laravel’in Blade şablon motorunda, `{{ $degisken }}` sözdizimi, değişkenin içeriğini ekrana yazdırırken olası XSS (Siteler Arası Betik Çalıştırma) saldırılarını önlemek için otomatik olarak HTML karakterlerinden arındırır (escape eder). Bu, güvenli yazdırma yöntemidir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1f57d2c89220",
+    "unitNumber": 76,
+    "text": "Laravel Breeze kurulumu sonrasında aşağıdaki hangi URL’ler otomatik olarak oluşturulur?",
+    "options": {
+      "A": "/enter ve /exit",
+      "B": "/auth ve /logout",
+      "C": "/signin ve /signup",
+      "D": "/connect ve /disconnect",
+      "E": "/login ve /register"
+    },
+    "correctAnswer": "E",
+    "explanation": "Laravel Breeze başlangıç paketi, bir uygulama için temel kimlik doğrulama (authentication) sistemini kurar. Bu kurulum sonucunda kullanıcı girişi için `/login` ve yeni kullanıcı kaydı için `/register` URL’lerine sahip rotalar ve görünümler otomatik olarak oluşturulur.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-3184656f877e",
+    "unitNumber": 77,
+    "text": "Laravel’in session ve cookie verilerini yönetirken, güvenlik açısından aşağıdakilerden hangisi daha güvenlidir?",
+    "options": {
+      "A": "Session, çünkü veriler sunucuda saklanır.",
+      "B": "İkisi de aynı güvenlik seviyesindedir.",
+      "C": "Cookie, çünkü veriler şifrelenir.",
+      "D": "Session, çünkü daha uzun süreli saklanır.",
+      "E": "Cookie, çünkü tarayıcıda saklanır"
+    },
+    "correctAnswer": "A",
+    "explanation": "Session (Oturum) verileri sunucu tarafında saklandığı için daha güvenlidir. Tarayıcıda sadece oturumu tanımlayan bir kimlik (ID) saklanır. Cookie (Çerez) verileri ise doğrudan kullanıcının tarayıcısında saklandığı için daha kolay erişilebilir ve manipüle edilebilir, bu da onu daha az güvenli yapar.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-27b676f92c72",
+    "unitNumber": 78,
+    "text": "Laravel’de süreç yönetimi için kullanılan sınıf aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Process",
+      "B": "Terminal",
+      "C": "Executor",
+      "D": "Shell",
+      "E": "Command"
+    },
+    "correctAnswer": "A",
+    "explanation": "Laravel, harici komut satırı süreçlerini (external command-line processes) uygulama içinden kolayca çalıştırmak ve yönetmek için `Process` cephesini (facade) ve arkasındaki `IlluminateProcessFactory` sınıfını sağlar.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  }
+]

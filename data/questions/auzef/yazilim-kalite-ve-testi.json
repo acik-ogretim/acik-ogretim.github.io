@@ -1,1 +1,2722 @@
-[]
+[
+  {
+    "id": "s-86bfce97ed5f",
+    "unitNumber": 1,
+    "text": "Bazı yazılım testleri doğrudan yazılımın özelliklerini ve kriterlerini test etmeyi amaçlar. Aşağıdakilerden hangisi bu tip bir test değildir?",
+    "options": {
+      "A": "Sürdürülebilirlik Testi",
+      "B": "Güvenlik Testi",
+      "C": "Entegrasyon Testi",
+      "D": "Kurtarılabilirlik Testi",
+      "E": "Güvenilirlik Testi"
+    },
+    "correctAnswer": "C",
+    "explanation": "Sürdürülebilirlik, Güvenlik, Kurtarılabilirlik ve Güvenilirlik; yazılımın kalite nitelikleridir. Entegrasyon Testi ise bir kalite niteliği değil, testin yapıldığı “seviye” veya “aşama”dır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-e1c9daedd03c",
+    "unitNumber": 2,
+    "text": "Aşağıdakilerin hangisi bir yazılımda yapılabilecek doğrudan ölçmelere örnek olarak verilemez?",
+    "options": {
+      "A": "Yazılımcının kod yazma performansı",
+      "B": "Veri tabanındaki toplam tablo sayısı",
+      "C": "Yazılım dokümantasyonunun sayfa sayısı",
+      "D": "Yazılım testinin süresi",
+      "E": "Yazılım dosyalarının toplam boyutu"
+    },
+    "correctAnswer": "A",
+    "explanation": "Dosya boyutu, sayfa sayısı, süre ve tablo sayısı gibi değerler doğrudan ölçülebilir (objektif) metriklerdir. Ancak “kod yazma performansı” soyut bir kavramdır ve genellikle dolaylı metriklerle tahmin edilmeye çalışılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-cfcd4f13e131",
+    "unitNumber": 3,
+    "text": "Aşağıdakilerden hangisi kurtarma testinin kontrolünü gerçekleştirdiği işlemlerden biri değildir?",
+    "options": {
+      "A": "Çöken bir modüldeki verilerin yeniden elde edilip edilemediği",
+      "B": "Yazılımdaki herhangi bir sorunda bilgi kaybı oluşup oluşmadığı",
+      "C": "Yazılımın dışarıdan saldırıya uğrayıp uğramadığı",
+      "D": "Çöken bir modülün yeniden eski haline gelip gelmediği",
+      "E": "Bir geri kurtarma işlemi yapıldığı takdirde zamanlamanın ne kadar olduğu"
+    },
+    "correctAnswer": "C",
+    "explanation": "Sistemin dış saldırılara karşı dayanıklılığı “Güvenlik Testi”nin (Security Testing) konusudur. Kurtarma testi (Recovery Testing), sistemin çökme sonrası veriyi ve işlevselliği geri getirip getiremediğine odaklanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-69f3307b9483",
+    "unitNumber": 4,
+    "text": "Aşağıdakilerden hangisi bir mimarî ve /veya tasarım hatası değildir?",
+    "options": {
+      "A": "Yanlış sırada komut kullanmak",
+      "B": "Belirtilmemiş birincil veri ve veri işleme sınıfları",
+      "C": "Yazılım üzerinde gerçekleştirilen eksik inceleme",
+      "D": "Iş süreç tasarımının zayıf kalması",
+      "E": "Yazılımın müşterinin bilgisayarında çalışmaması"
+    },
+    "correctAnswer": "E",
+    "explanation": "Yanlış komut sırası, zayıf iş süreçleri ve eksik inceleme tasarım aşamasındaki hatalardır. Yazılımın müşteride çalışmaması genellikle “dağıtım” veya “ortam uyumluluğu” sorunudur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c491b0e616e0",
+    "unitNumber": 5,
+    "text": "Bir yazılımda, sürekli aynı testler yapılması neticesinde belli bir süre sonra hiçbir hatanın bulunmaması aşağıdaki ilkelerin hangisi ile açıklanabilir?",
+    "options": {
+      "A": "İçerik Bağımlılık",
+      "B": "Varlığı Göster, Yokluğu Gösterme",
+      "C": "Erken Test Gereksinimi",
+      "D": "Hata Yokluğu Yanılgısı",
+      "E": "Tarım İlacı Paradoksu"
+    },
+    "correctAnswer": "E",
+    "explanation": "Tarım İlacı Paradoksu (Pesticide Paradox), aynı test senaryolarının tekrar tekrar uygulanması durumunda, bu testlerin artık yeni hataları bulamayacağını ifade eder. Böceklerin ilaca bağışıklık kazanması gibi, yazılım da aynı testlere karşı direnç kazanır; bu yüzden testler güncellenmelidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-d38b05eb68b1",
+    "unitNumber": 6,
+    "text": "Test karşılaştırma işlemi esnasında test karşılaştırıcı aşağıdakilerden hangilerini karşılaştırır?",
+    "options": {
+      "A": "Beklenen sonuç gerçekleşen sonuç",
+      "B": "Test girdisi - test çıktısı",
+      "C": "Koşul-test kapanışı",
+      "D": "Test koşulu - test ortamı",
+      "E": "Test senaryosu - test prosedürü"
+    },
+    "correctAnswer": "A",
+    "explanation": "Testin temel amacı, yazılımın beklenen davranışı (Expected Result) ile test sırasındaki gerçek davranışı (Actual Result) arasındaki farkı bulmaktır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9d7aedeae5c5",
+    "unitNumber": 7,
+    "text": "Aşağıdaki şıklarda verilen test türlerinden hangileri, yazılımda değişiklik yapıldıktan sonraki durumları test eden testlerdir?",
+    "options": {
+      "A": "Kurulum Testi - Ölçeklenebilirlik Testi",
+      "B": "Eşzamanlılık Testi - Hacim Testi",
+      "C": "Saldırı Bazlı Test - Risk Bazlı Test",
+      "D": "Bakım Testi - Regresyon Testi",
+      "E": "Stres Testi - Yük Testi"
+    },
+    "correctAnswer": "D",
+    "explanation": "Regresyon testi, yapılan bir değişikliğin mevcut çalışan özellikleri bozup bozmadığını kontrol eder. Bakım testi de yazılımın canlıya alındıktan sonraki değişim süreçlerini kapsar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-9f5fff822e36",
+    "unitNumber": 8,
+    "text": "Aşağıdaki hangi değerlere sahip olan bir yazılım riskinin RPN değeri 12 değildir?",
+    "options": {
+      "A": "Sistem Açısından Önemine Göre: Veri Kaybı / Müşteri Açısından Önemine Göre: Düzeltilmesi İyi Olacak / Gerçekleşme Olasılığına Göre: İhtimal Dahilinde Olmayan",
+      "B": "Sistem Açısından Önemine Göre: İşlevsellik Kaybı / Müşteri Açısından Önemine Göre: Zorunlu / Gerçekleşme Olasılığına Göre: İhtimal Dahilinde Olmayan",
+      "C": "Sistem Açısından Önemine Göre: Kozmetik Risk / Müşteri Açısından Önemine Göre: İsteğe Bağlı / Gerçekleşme Olasılığına Göre: Muhtemel",
+      "D": "Sistem Açısından Önemine Göre: Giderilebilir İşlevsellik Kaybı / Müşteri Açısından Önemine Göre: Düzeltilmesi İyi Olacak / Gerçekleşme Olasılığına Göre: Muhtemel",
+      "E": "Sistem Açısından Önemine Göre: Giderilebilir İşlevsellik Kaybı / Müşteri Açısından Önemine Göre: Zorunlu / Gerçekleşme Olasılığına Göre: Mümkün"
+    },
+    "correctAnswer": "C",
+    "explanation": "Risk Öncelik Sayısı (RPN) hesaplamalarında 1-5 arası puanlar çarpılır. C şıkkındaki “Kozmetik (1)”, “İsteğe Bağlı (1)” ve “Muhtemel (3 veya 4)” değerlerinin çarpımı 12 etmez.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9408fb6bb16a",
+    "unitNumber": 9,
+    "text": "Bir yazılım testinin aynı koşullar altında birden fazla kez yapılabilmesi aşağıdaki isimlerden hangisi ile ifade edilir?",
+    "options": {
+      "A": "Test Tekrarlanabilirliği",
+      "B": "Doğruluk",
+      "C": "Test Edilebilirlik",
+      "D": "Test Analitikliği",
+      "E": "Test Pratikliği"
+    },
+    "correctAnswer": "A",
+    "explanation": "Test Tekrarlanabilirliği (Test Repeatability), bir testin aynı ortam ve girdilerle her çalıştırıldığında aynı sonucu vermesi yeteneğidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-1a321a331917",
+    "unitNumber": 10,
+    "text": "İngilizce’de yazılım hatası için genellikle bug (böcek) kelimesinin kullanılmasının sebebi nedir?",
+    "options": {
+      "A": "Herhangi bir sebebi yoktur, rastgele konulmuş bir isimdir",
+      "B": "Yazılım hatalarının böceklere benzer şekilde zarar vermesi",
+      "C": "Böcek ve hata kelimelerinin İngilizce'de aynı kökten gelmesi",
+      "D": "Yazılım hatalarının fiziksel şeklinin böceğe benzemesi",
+      "E": "Tespit edilen ilk yazılım hatasının gerçekten bir böcek yüzünden gerçekleşmesi"
+    },
+    "correctAnswer": "E",
+    "explanation": "1947 yılında Grace Hopper’ın ekibi, Mark II bilgisayarındaki bir hatanın röle arasına sıkışmış gerçek bir güve (böcek) yüzünden olduğunu bulmuş ve “bug” terimi literatüre girmiştir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3ed489c45803",
+    "unitNumber": 11,
+    "text": "Aşağıdakilerden hangisi fonksiyonel testlerin amaçlarından biri değildir?",
+    "options": {
+      "A": "Yazılım biriminin hatasız, güvenilir ve etkin bir şekilde çalışması",
+      "B": "Yazılım biriminin ihtiyaçları tam olarak karşılayıp karşılamadığının belirlenmesi",
+      "C": "Yazılım biriminin sistem gereksinimlerine uygun olması",
+      "D": "Yazılım biriminin kullanıcının isteklerine cevap vermesi",
+      "E": "Yazılım biriminin yüksek performansa sahip olması"
+    },
+    "correctAnswer": "E",
+    "explanation": "Fonksiyonel testler yazılımın “ne yaptığını” (işlevselliğini) test eder. Performans, yük, stres gibi kavramlar ise yazılımın “nasıl çalıştığını” test eden fonksiyonel olmayan (non-functional) testlerin konusudur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-efac48c0799a",
+    "unitNumber": 12,
+    "text": "Öğrenci numaralarının girildiği bir alana girilen tüm değerlerin test edilmesi mümkün değildir. Bunun sebebi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Alana girilebilecek doğru ya da yanlış sonsuz adet değer bulunması",
+      "B": "Alana girilen bir sayının öğrenci numarası olup olmamasının tespit edilememesi",
+      "C": "Alana girilecek değerlerin çift ya da tek olabilmesi",
+      "D": "Alana girilebilecek değerlerin farklı sayıda hane içerebilmesi",
+      "E": "Farklı alanların da öğrenci numarası değerini içerebilmesi"
+    },
+    "correctAnswer": "A",
+    "explanation": "Kapsamlı test (Exhaustive Testing) prensibine göre, tüm girdi kombinasyonlarını test etmek pratik olarak imkansızdır çünkü sonsuz sayıda olasılık vardır. Bu yüzden eşdeğerlik sınırları gibi teknikler kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-20da9fc2f1cb",
+    "unitNumber": 13,
+    "text": "Bir yazılım biriminde küçük çaplı testler yapılmış ve daha büyük çaplı testler için hazırlık aşaması başlamışsa bu durumda bu yazılım biriminin aşağıdaki testlerden hangisini tamamladığı ifade edilir?",
+    "options": {
+      "A": "Öncül test",
+      "B": "Analiz testi",
+      "C": "Performans testi",
+      "D": "Duman testi",
+      "E": "Yük testi"
+    },
+    "correctAnswer": "D",
+    "explanation": "Duman testi (Smoke Testing), yazılımın en temel fonksiyonlarının çalışıp çalışmadığını kontrol eden, daha detaylı testlere geçmeden önce yapılan ilk kontroldür (“Build Verification Test”).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-269cd4d9e148",
+    "unitNumber": 14,
+    "text": "Yeni bir cep telefonu modeli çıktığında bu model genellikle önceki modellerden faydalanılarak test edilir. Bu test işlemine ne isim verilmektedir?",
+    "options": {
+      "A": "N-Anahtar Testi (N-Switch Testing)",
+      "B": "Karar Testi (Decision Testing)",
+      "C": "Çevik Test (Agile Testing)",
+      "D": "Karşılaştırma Testi (Benchmark Test)",
+      "E": "Negatif Test (Negative Testing)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Benchmark testi, bir sistemin performansını veya özelliklerini referans alınan başka bir sistemle (örneğin önceki modelle veya rakip ürünle) kıyaslamak için yapılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9dbe5fe9b914",
+    "unitNumber": 15,
+    "text": "Yazılımlarda bazen bir birimin diğerini olumsuz olarak etkileyebildiği bilinmektedir. Bu durum aşağıdaki testlerin hangisiyle ortaya çıkabilir?",
+    "options": {
+      "A": "Kabul testi",
+      "B": "Entegrasyon testi",
+      "C": "Sistem testi",
+      "D": "Saha testi",
+      "E": "Birim testi"
+    },
+    "correctAnswer": "B",
+    "explanation": "Entegrasyon testi (Integration Testing), birimlerin birleştirildiğinde birbirleriyle olan etkileşimlerini ve uyumunu kontrol eder. Bir modülün diğerini bozup bozmadığı bu aşamada tespit edilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-dfece0158d23",
+    "unitNumber": 16,
+    "text": "Aşağıdakilerden hangisi bir yazılım test raporunda genellikle bulunan bilgilerden biri değildir?",
+    "options": {
+      "A": "Hangi verilerin kullanıldığı",
+      "B": "Hangi testin uygulandığı",
+      "C": "Hangi bileşenin test edildiği",
+      "D": "Testi kimin gerçekleştirdiği",
+      "E": "Ne gibi sonuçlar elde edildiği"
+    },
+    "correctAnswer": "D",
+    "explanation": "Test raporları teknik verilere (girdi, çıktı, bileşen, test türü) odaklanır. Testi yapan kişinin kimliği, testin sonucunu veya yazılımın kalitesini belirleyen bir metrik olarak raporun ana bileşenleri arasında sayılmaz.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d7234543006f",
+    "unitNumber": 17,
+    "text": "“Kurgusuz test” ismine sahip olan yazılım testine bu isim aşağıdaki özelliklerinin hangisine bağlı olarak verilmiştir?",
+    "options": {
+      "A": "Test esnasında hangi verilerin kullanıldığı",
+      "B": "Testin nasıl planlandığı",
+      "C": "Test esnasında hangi teknolojilerin kullanıldığı",
+      "D": "Testin nasıl uygulandığı",
+      "E": "Yazılımın hangi parçasının test edildiği"
+    },
+    "correctAnswer": "B",
+    "explanation": "Kurgusuz test (Ad-hoc veya Exploratory testing), önceden yazılmış detaylı test senaryoları veya planları olmadan, test uzmanının sezgi ve deneyimine dayalı olarak anlık planlama ile yaptığı testtir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-840a6367e3a8",
+    "unitNumber": 18,
+    "text": "Aşağıdakilerden hangisi bir yazılım riskinin Müşteri Açısından Önemine göre yapılmış bir kategorilendirme değildir?",
+    "options": {
+      "A": "İsteğe bağlı",
+      "B": "Kritik",
+      "C": "Zorunlu",
+      "D": "Acil",
+      "E": "Önemli"
+    },
+    "correctAnswer": "B",
+    "explanation": "Müşteri önceliği kategorilerinde genellikle Zorunlu, Acil, Önemli ve İsteğe Bağlı gibi ifadeler kullanılır. “Kritik” ifadesi genellikle sistemin teknik önemi veya ciddiyet seviyesi (Severity) için kullanılan bir terimdir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d674a4ffb201",
+    "unitNumber": 19,
+    "text": "Geliştirilecek yazılımla ilgili, kodlardan önce test senaryolarının yazıldığı yaklaşıma verilen ad aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Dokümantasyon Bazlı Yazılım",
+      "B": "Kodlama Tabanlı Geliştirme",
+      "C": "Test Güdümlü Geliştirme",
+      "D": "Analiz Bazlı Tasarım",
+      "E": "Bakım Temelli Yazılım"
+    },
+    "correctAnswer": "C",
+    "explanation": "Test Güdümlü Geliştirme (Test Driven Development – TDD), yazılım geliştirme sürecinde kodlamadan önce test senaryolarının yazılmasını ve geliştirmenin bu testleri geçecek şekilde yapılmasını öngören yaklaşımdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-071fd7fe0829",
+    "unitNumber": 20,
+    "text": "Aşağıdaki özelliklerden hangisinin bir yazılım geliştiricide olmasına gerek duyulmazken bir yazılım test uzmanında kesin olarak bulunması beklenir?",
+    "options": {
+      "A": "Programlama dilini iyi bilmek",
+      "B": "Şüphecilik",
+      "C": "Planlı olmak",
+      "D": "Analitik olmak",
+      "E": "Teknik ayrıntılara sahip olmak"
+    },
+    "correctAnswer": "B",
+    "explanation": "Yazılım geliştiriciler genellikle “nasıl çalıştırırım” odaklı iken, test uzmanları “nasıl bozulur” veya “ya çalışmazsa” şüphesiyle yaklaşmalıdır. Bu şüphecilik (skepticism), test uzmanının ayırt edici temel yetkinliğidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4a7ca6deb2bb",
+    "unitNumber": 25,
+    "text": "Kutu yaklaşımları ile ilgili aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Beyaz kutu testleri genellikle detaysız testlerdir.",
+      "B": "Kara kutu testleri algoritma testlerine uygundur.",
+      "C": "Kara kutu testleri genellikle tek parça halinde yapılır.",
+      "D": "Gri kutu testlerinde kısmi bir iç yapı bilgisi mevcuttur.",
+      "E": "Beyaz kutu testlerinde dış etkiler testi etkilemez."
+    },
+    "correctAnswer": "A",
+    "explanation": "Beyaz kutu (White-box / Glass-box) testleri, yazılımın kaynak koduna, iç mimarisine, döngülerine ve veri yapılarına (statement, branch coverage vb.) girilerek yapılan “en detaylı” testlerdir. Bu nedenle A şıkkındaki “detaysız testlerdir” ifadesi beyaz kutu testlerinin doğasına tamamen zıttır ve yanlıştır. (Not: B şıkkı da teknik olarak problemli olsa da A şıkkı tanımın tam tersidir).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-559683fd9b57",
+    "unitNumber": 33,
+    "text": "“…. dayalı gözden geçirme bir gözden geçirme türüdür.” Yukarıdaki cümledeki boşluğa aşağıdakilerden hangisi getirilemez?",
+    "options": {
+      "A": "Role",
+      "B": "Provalara",
+      "C": "Tekniğe",
+      "D": "Bakış açısına",
+      "E": "Senaryolara"
+    },
+    "correctAnswer": "C",
+    "explanation": "ISTQB müfredatında Gözden Geçirme Teknikleri (Review Techniques) şunlardır: Doğaçlama (Ad-hoc), Kontrol listesine dayalı (Checklist-based), Senaryolara ve provalara dayalı (Scenarios and dry runs), Role dayalı (Role-based) ve Bakış açısına dayalı (Perspective-based). Gözden geçirmenin kendisi zaten bir tekniktir, bu yüzden “Tekniğe dayalı” diye ayrı bir alt tür isimlendirmesi kullanılmaz.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-472ada39492c",
+    "unitNumber": 41,
+    "text": "Kalite maliyetleri genel olarak “tespit etme maliyetleri” ve “önleme maliyetleri” olarak gruplandırılabilir. Burada tespit edilen veya önlenen en önemli eleman aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Ürün",
+      "B": "Analiz",
+      "C": "Yazılım",
+      "D": "Süreç",
+      "E": "Hata"
+    },
+    "correctAnswer": "E",
+    "explanation": "Kalite Maliyetleri (Cost of Quality) teorisinde, iyi kalitenin maliyeti (önleme ve tespit/değerlendirme) ile kötü kalitenin maliyeti (iç ve dış başarısızlık) olmak üzere temel gruplar vardır. Test ve kalite süreçlerinde asıl önlenmeye çalışılan (gözden geçirmelerle) veya tespit edilmeye çalışılan (test koşumlarıyla) temel unsur “Hata (Defect/Bug)”dır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b6e35a354209",
+    "unitNumber": 49,
+    "text": "Web uygulaması testlerinde aşağıdaki hangi şıkta verilen test genellikle en son olarak yapılır?",
+    "options": {
+      "A": "Uyumluluk testi",
+      "B": "Güvenlik testi",
+      "C": "Fonksiyonellik testi",
+      "D": "Arayüz testi",
+      "E": "Performans testi"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-7568d2dde166",
+    "unitNumber": 68,
+    "text": "Aşağıdakilerden hangisi izlenebilirlik çeşitleri arasında yer almaktadır?",
+    "options": {
+      "A": "Tek yönlü izlenebilirlik - Çok yönlü izlenebilirlik",
+      "B": "Tekli izlenebilirlik - Çoklu izlenebilirlik",
+      "C": "Aktif izlenebilirlik - Pasif izlenebilirlik",
+      "D": "Otomatik izlenebilirlik - Manuel izlenebilirlik",
+      "E": "Dikey izlenebilirlik - Yatay izlenebilirlik"
+    },
+    "correctAnswer": "E",
+    "explanation": "Gereksinim izlenebilirliği (Traceability) literatürde genellikle **Yatay** (Horizontal – yaşam döngüsü aşamaları arasında, örn: gereksinimden teste) ve **Dikey** (Vertical – aynı aşamadaki detay seviyeleri arasında) olarak sınıflandırılır. (Ayrıca İleri ve Geri izlenebilirlik de vardır).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-77b0a913baf3",
+    "unitNumber": 69,
+    "text": "Aşağıdakilerden hangisi bir yazılım testi giriş kriteri olarak ele alınamaz?",
+    "options": {
+      "A": "Test verilerinin ve diğer gerekli kaynakların varlığı",
+      "B": "Test ortamının kullanılabilir olması",
+      "C": "Gerekli test araçlarının kullanılabilir olması",
+      "D": "Önceki test seviyelerinin çıkış kriterlerini karşılayan test öğeleri",
+      "E": "Planlanan testlerin koşturulmuş olması"
+    },
+    "correctAnswer": "E",
+    "explanation": "Giriş kriterleri (Entry Criteria), teste başlamak için nelerin hazır olması gerektiğini belirtir. “Testlerin koşturulmuş olması” ise bir sonuçtur ve testin tamamlanmasıyla ilgili **Çıkış Kriteri** (Exit Criteria) olabilir, giriş kriteri olamaz.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-7eb1fb1b7cf8",
+    "unitNumber": 70,
+    "text": "Aşağıdakilerden hangisi her yazılımda oluşabilecek ortak riskler arasında yer almaz?",
+    "options": {
+      "A": "Mobil uygulama piyasasının değişmesi ile ürünün yeterince indirilmemesi",
+      "B": "Yazılımların geliştirilme ortamı",
+      "C": "Projenin büyüklüğü ve tahmin edilemeyen unsurlar",
+      "D": "Kullanılan tüm teknolojiler",
+      "E": "Müşterinin tutumu ve beklentileri"
+    },
+    "correctAnswer": "A",
+    "explanation": "B, C, D ve E seçenekleri (teknoloji, müşteri, proje boyutu vb.) her türlü yazılım projesinde (web, masaüstü, gömülü) karşılaşılabilen genel proje/ürün riskleridir. Ancak A şıkkı sadece **Mobil Uygulamalar** için geçerli spesifik bir ticari risktir, “her yazılım” için ortak değildir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-93a937e274d3",
+    "unitNumber": 71,
+    "text": "Aşağıdakilerden hangisi web yazılım test otomasyonlarında sıklıkla uygulanan bir test çeşidi değildir?",
+    "options": {
+      "A": "Beyaz kutu testi",
+      "B": "Masaüstü test",
+      "C": "Mobil test",
+      "D": "Web testi",
+      "E": "API testi"
+    },
+    "correctAnswer": "A",
+    "explanation": "Web otomasyon araçları (Selenium vb.) genellikle kullanıcı arayüzü üzerinden veya API seviyesinde **Kara Kutu** (Black Box) testleri yapar. Beyaz kutu testleri (kod inceleme, birim test) genellikle geliştirme ortamında yapılır, web otomasyon senaryolarının birincil odağı değildir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-ea4c2a065a6b",
+    "unitNumber": 72,
+    "text": "Yazılım testlerine verilen isimler kimi zaman testin nasıl yapıldığı, kimi zaman hangi veriler kullanıldığı, kimi zaman ne zaman yapıldığı, kimi zaman hangi amaçla yapıldığı vb. konularda kullanıcıya fikir vermektedir. Aşağıdaki test isimleri ile verdiği fikirler arasındaki eşleştirmenin hangisi yanlıştır?",
+    "options": {
+      "A": "Sözdizimsel Test - Yazılımın hangi kısmının test edildiği",
+      "B": "Dış Kaynaklı Test - Kim tarafından yapıldığı",
+      "C": "Sistem Testi - Testin hangi yaklaşımla yapıldığı",
+      "D": "Sınır Değer Testi - Test senaryolarının nasıl belirlendiği",
+      "E": "Kontrol Listesine Dayalı Test - Verilerin nereden elde edildiği"
+    },
+    "correctAnswer": "C",
+    "explanation": "“Sistem Testi”, testin **hangi seviyede** (Birim, Entegrasyon, Sistem, Kabul) yapıldığını belirtir; hangi yaklaşımla (Kara kutu, Beyaz kutu vb.) yapıldığını doğrudan belirtmez. Diğer eşleştirmeler isimlendirme mantığına uygundur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-d2b05eaf41cb",
+    "unitNumber": 73,
+    "text": "Aşağıdakilerden hangisi bir ISTQB sertifikasına sahip olmanın avantajları arasında yer almaz?",
+    "options": {
+      "A": "İşverenlerin güvendiği becerilerin bağımsız doğrulaması",
+      "B": "Kariyer ilerlemesini desteklemek için beceriler geliştirme",
+      "C": "Profesyonel güvenilirliği artırma",
+      "D": "Test çeşitliliğinin artması",
+      "E": "Taşınabilir yetenek kanıtı"
+    },
+    "correctAnswer": "D",
+    "explanation": "Sertifika, bireyin yetkinliğini ve bilgisini kanıtlar (A, B, C, E). Ancak sertifika sahibi olmak, projedeki “test çeşitliliğinin” (test türlerinin sayısının) otomatik olarak artacağı anlamına gelmez; bu proje gereksinimlerine bağlıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-9fa31be4eb6d",
+    "unitNumber": 74,
+    "text": "Yazılım testi ile ilgili aşağıdaki işlemlerin hangisi test yöneticisinin sorumluluğunda değildir?",
+    "options": {
+      "A": "Tahmin",
+      "B": "Gözetim",
+      "C": "Kontrol",
+      "D": "Uygulama",
+      "E": "Planlama"
+    },
+    "correctAnswer": "D",
+    "explanation": "Test Yöneticisi; planlama, tahmin, gözetim ve kontrol gibi yönetimsel süreçlerden sorumludur. Test senaryolarının koşturulması ve testlerin fiilen yapılması yani “Uygulama” genellikle Test Uzmanı/Analistinin görevidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-8a7923634779",
+    "unitNumber": 75,
+    "text": "I. Üzerinden Geçme II. Teknik Gözden Geçirme III. Teftiş Yukarıda verilen yöntemlerden hangisi veya hangileri hem resmi hem gayrıresmî olabilmektedir?",
+    "options": {
+      "A": "I ve III",
+      "B": "II ve III",
+      "C": "I ve II",
+      "D": "Yalnız III",
+      "E": "Yalnız I"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-835e43ae26bb",
+    "unitNumber": 76,
+    "text": "“Kullanıcılar, tasarımı ilk kullandıklarında yerine getirmeleri gereken görevleri kolaylıkla yapabiliyorlar mı?” sorusunun cevabı aşağıdaki kriterlerden hangisini karşılamaktadır?",
+    "options": {
+      "A": "Hatırlanabilirlik",
+      "B": "Öğrenilebilirlik",
+      "C": "Hata yapılabilirlik",
+      "D": "Verimlilik",
+      "E": "Memnuniyet"
+    },
+    "correctAnswer": "B",
+    "explanation": "Kullanıcının sistemi ilk kez karşılaştığında ne kadar kolay kullanabildiği ve görevleri ne kadar hızlı öğrenebildiği **Öğrenilebilirlik** (Learnability) kriteri ile ilgilidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-50108d14cd41",
+    "unitNumber": 77,
+    "text": "Aşağıdakilerden hangisi yazılım test ilerleme raporları içerisinde yer almaz?",
+    "options": {
+      "A": "Çıkış kriterleri",
+      "B": "Testi yapacak kişilerin rolleri",
+      "C": "Kalan riskler",
+      "D": "Gerçekleştirilen testlerin özeti",
+      "E": "O test dönemi sırasında neler olduğuna dair bilgiler"
+    },
+    "correctAnswer": "B",
+    "explanation": "Test ilerleme raporları, test sürecinin mevcut durumunu (özet, riskler, neler olduğu vb.) raporlar. “Testi yapacak kişilerin rolleri” ise test planlama aşamasında belirlenen statik bir bilgidir, dinamik ilerleme raporunun değil, **Test Planının** bir parçasıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-3f514983f8ab",
+    "unitNumber": 78,
+    "text": "Arıza Durumu, Etki ve Kritiklik Analizi (ADEKA)’da aşağıdakilerden hangisi bulunmaz?",
+    "options": {
+      "A": "Olası arıza durumlarını analiz etmek",
+      "B": "Kritiklik analizi yapmak",
+      "C": "Hataları çözmek",
+      "D": "Riskleri belirlemek",
+      "E": "Arızaların oluşmasını engellemeye çalışmak"
+    },
+    "correctAnswer": "C",
+    "explanation": "FMECA (ADEKA), potansiyel hataları, etkilerini ve kritikliklerini analiz eden bir risk değerlendirme tekniğidir. Analiz sonucunda önleyici faaliyetler önerilir ancak hataların fiilen kod düzeyinde “çözülmesi” (debugging/fixing) bu analiz sürecinin (analistlerin) değil, geliştirme ekibinin görevidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-8a23560c31d6",
+    "unitNumber": 79,
+    "text": "Bir web sitesinin birçok versiyonunun incelendiği ve karşılaştırıldığı kullanılabilirlik testlerine ne ad verilmektedir?",
+    "options": {
+      "A": "Laboratuvar Testleri",
+      "B": "Geri Bildirim Testleri",
+      "C": "İzleme testi",
+      "D": "Otomatik Test",
+      "E": "A/B Testi"
+    },
+    "correctAnswer": "E",
+    "explanation": "Web sitelerinin veya uygulamaların farklı versiyonlarının (A ve B) kullanıcı gruplarına gösterilerek hangisinin daha iyi performans gösterdiğinin ölçüldüğü test yöntemine **A/B Testi** denir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-1adb77e5ae92",
+    "unitNumber": 80,
+    "text": "ISTQB İleri Seviye bir sertifika almak için aşağıdaki şartların hangisini sağlamak gereklidir?",
+    "options": {
+      "A": "En az 100 yazılım testi işlemi gerçekleştirmek",
+      "B": "Temel Seviye sertifikası almak",
+      "C": "Güvenlik testi konusunda çalışmak",
+      "D": "En az 3 sene test konusunda çalışmak",
+      "E": "Test konusunda uluslararası bir kuruluşta çalışmak"
+    },
+    "correctAnswer": "B",
+    "explanation": "ISTQB sertifikasyon şemasında, İleri Seviye (Advanced Level) sınavlarına girebilmek için ön koşul, **Temel Seviye (Foundation Level)** sertifikasına sahip olmaktır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-e6c95024feb5",
+    "unitNumber": 81,
+    "text": "Aşağıdakilerden hangisinin test edilmesi kullanılabilirlik testi olarak kabul edilemez?",
+    "options": {
+      "A": "Cep telefonu ekranı",
+      "B": "Veri tabanı",
+      "C": "Buzdolabı elektronik paneli",
+      "D": "Web sitesi",
+      "E": "Öğrenci işleri otomasyonu arayüzü"
+    },
+    "correctAnswer": "B",
+    "explanation": "Kullanılabilirlik (Usability) testleri, **son kullanıcının** arayüz ile etkileşimini (User Interface / User Experience) ölçer. Veri tabanı, arka planda çalışan ve son kullanıcının doğrudan arayüzüyle etkileşime girmediği bir katmandır; bu nedenle doğrudan bir kullanılabilirlik testi konusu değildir (Performans veya fonksiyonel test konusudur).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d42b18e362df",
+    "unitNumber": 82,
+    "text": "ISO standartlarında yer alan kalite terimleri ile ilgili kısaltmalar ve açıklamalarından hangisi yanlıştır?",
+    "options": {
+      "A": "R: Replay/Yeniden yapılabilir",
+      "B": "A: Achievable/Ulaşılabilir",
+      "C": "T: Timing/Zamana bağlı",
+      "D": "S: Specified/Belirli",
+      "E": "M: Measurable/Ölçülebilir"
+    },
+    "correctAnswer": "A",
+    "explanation": "Bu kısaltmalar genellikle SMART hedefleri (Specific, Measurable, Achievable, Relevant, Time-bound) ile ilişkilidir. ISO kalite standartlarında (ISO 9126 / 25010) R genellikle **Reliability (Güvenilirlik)** anlamına gelir, “Replay” (Yeniden oynatma) standart bir kalite alt karakteristiği kısaltması değildir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-12b17cc2f825",
+    "unitNumber": 21,
+    "text": "Aşağıdakilerden hangisi bir yazılım testinin sınıflandırma şekillerinden biri değildir?",
+    "options": {
+      "A": "Uygulandığı modül",
+      "B": "Birincil amaçlar",
+      "C": "Fonksiyonalite",
+      "D": "Seviye",
+      "E": "Yapılış zamanı"
+    },
+    "correctAnswer": "A",
+    "explanation": "Yazılım testleri genellikle Test Seviyelerine (Birim, Entegrasyon, Sistem vb.), Test Amaçlarına/Tiplerine (Fonksiyonel, Fonksiyonel olmayan) ve Yapılış Zamanlarına (Alfa, Beta) göre sınıflandırılır. “Uygulandığı modül” genel bir test sınıflandırma metodolojisi (başlığı) değil, sadece testin hedef aldığı (kapsadığı) spesifik bir birimdir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1543a5ef7576",
+    "unitNumber": 22,
+    "text": "Aşağıdakilerden hangisi bir kurumdaki test araçlarının değerlendirilmesi, uyarlanması, dağıtımı ve desteğinin devam etmesi için başarı faktörleri arasında yer almaz?",
+    "options": {
+      "A": "Kullanıcılardan geribildirimleri toplamak",
+      "B": "Belirli bir aracın kullanıcılarına destek sağlamak",
+      "C": "Araç kullanımını ve faydalarını izlemek",
+      "D": "Her testi birçok kez gerçekleştirmek",
+      "E": "Aracın kullanımı için süreçleri uyarlamak ve geliştirmek"
+    },
+    "correctAnswer": "D",
+    "explanation": "Kuruma yeni bir test aracı (tool) kazandırılmasının başarı faktörleri arasında; süreçleri araca uyarlamak, kullanıcılara eğitim/destek vermek, fayda analizi yapmak ve geri bildirim toplamak yer alır. Ancak “Her testi birçok kez gerçekleştirmek”, bir test aracının kurumsal entegrasyonu ve yönetim başarısıyla doğrudan ilgili stratejik bir faktör değildir; sadece teknik bir test çalıştırma eylemidir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a4e8ed0b0b21",
+    "unitNumber": 23,
+    "text": "Aşağıdakilerden hangisi TTB’nin faaliyetleri arasında yer almamaktadır?",
+    "options": {
+      "A": "Yazılım testi konusunda uluslararası kabul görmüş içeriğin Türkçeleştirilmesi",
+      "B": "Yapılan yazılımların çeşitlendirilmesi",
+      "C": "Sektörün yazılım testi ve kalitesi konusunda bilgilendirilmesi",
+      "D": "Sertifika sınavlarının yapılarak sınavı kazanan adayların sertifikasyonu",
+      "E": "Türkiye Bilişim Sektörünün uluslararası pazarlarda rekabet edebilmesi için çalışmalar yapılması"
+    },
+    "correctAnswer": "B",
+    "explanation": "TTB (Turkish Testing Board – Yazılım Test ve Kalite Derneği), Türkiye’deki yazılım testi standartlarını belirlemek, ISTQB müfredatlarını Türkçeye çevirmek ve sertifika sınavları (CTFL vb.) düzenlemekle görevli bağımsız bir kurumdur. Kendisi bir yazılım evi olmadığı için “Yapılan yazılımların çeşitlendirilmesi” gibi bir ticari yazılım üretim/geliştirme hedefi yoktur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4cb98ff9799c",
+    "unitNumber": 24,
+    "text": "Aşağıdakilerden hangisi doğrudan yazılım testinde kullanılan veriler ile ilgili bir testtir?",
+    "options": {
+      "A": "Bakım Testi",
+      "B": "Eşzamanlılık Testi",
+      "C": "Sürdürülebilirlik Testi",
+      "D": "Dönüşüm Testi",
+      "E": "Kullanışlılık Testi"
+    },
+    "correctAnswer": "D",
+    "explanation": "Dönüşüm Testi (Conversion Testing veya Veri Göçü Testi), mevcut bir sistemden yeni bir sisteme geçiş yapıldığında, eski verilerin (data) yeni sisteme doğru, eksiksiz ve formata uygun bir şekilde aktarılıp aktarılmadığını (dönüştürülüp dönüştürülmediğini) kontrol eden veri odaklı bir test türüdür.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1080f4ac869f",
+    "unitNumber": 26,
+    "text": "Bir yazılım test otomasyonunun kararlı bir sürüme sahip olmasının gerekli olmama nedeni aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Yazılımların farklı işlemler gerçekleştirmesi",
+      "B": "Yazılımların farklı türlerdeki testleri gerçekleştirmesi",
+      "C": "Yazılımların analiz edilmesi",
+      "D": "Yazılımların farklı yazılımlarla entegre olması",
+      "E": "Yazılımların zaman içinde değişmesi ve güncellenmeye ihtiyaç duyması"
+    },
+    "correctAnswer": "E",
+    "explanation": "Yazılımlar yaşayan sistemlerdir; zaman içinde müşteri gereksinimleri, arayüzler ve iş kuralları sürekli değişir ve güncellenir. Test otomasyon kodlarının da bu değişimlere ayak uydurarak sürekli güncellenmesi gerekir. Bu nedenle test otomasyonunun sabit ve hiç değişmeyen ”kararlı bir nihai sürüme” sahip olması beklenmez, yazılımla birlikte evrimleşir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-91abd33a252e",
+    "unitNumber": 27,
+    "text": "Yazılım projesinde, kodların müşteri tarafındaki “Son Kullanıcılar” tarafından, canlıya alınmadan hemen önce gerçek iş senaryoları ve kendi verileriyle test edildiği aşama aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Birim Testi (Unit Testing)",
+      "B": "Entegrasyon Testi (Integration Testing)",
+      "C": "Sistem Testi (System Testing)",
+      "D": "Kullanıcı Kabul Testi (User Acceptance Testing - UAT)",
+      "E": "Bileşen Testi"
+    },
+    "correctAnswer": "D",
+    "explanation": "Yazılım Geliştirme Yaşam Döngüsü (SDLC) içinde, test seviyeleri V-Model’e göre sırasıyla: Birim -> Entegrasyon -> Sistem -> Kabul Testleri şeklinde ilerler. En son aşamada yer alan “Kullanıcı Kabul Testi (UAT)”, yazılım firması (testerlar) tarafından değil, yazılımı satın alan “Müşteri / Son Kullanıcı” tarafından yapılarak ürünün işe yarayıp yaramadığına (onayına) karar verilen aşamadır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e9368e824208",
+    "unitNumber": 28,
+    "text": "Bir yazılımda kodun bir bölümünde değişiklik veya düzeltme yapıldıktan sonra, bu değişikliğin yazılımın daha önce çalışan (ve test edilmiş) diğer bölümlerini bozup bozmadığını kontrol etmek amacıyla yapılan test türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Duman Testi (Smoke Testing)",
+      "B": "Regresyon Testi (Regression Testing)",
+      "C": "Kullanıcı Kabul Testi (UAT)",
+      "D": "Stres Testi (Stress Testing)",
+      "E": "Alfa Testi"
+    },
+    "correctAnswer": "B",
+    "explanation": "Regresyon (Gerileme) testi, yazılıma yeni bir özellik eklendiğinde veya bir hata (bug) düzeltildiğinde, bu yeni kodun sistemin mevcut ve sorunsuz çalışan eski özelliklerini “istemeden de olsa bozup bozmadığını (geriletip geriletmediğini)” doğrulamak için yapılan çok kritik bir testtir. Test otomasyonları en çok bu test türü için kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-085006fbdf90",
+    "unitNumber": 29,
+    "text": "Aşağıdakilerden hangisi ISTQB’nin yapmakta olduğu özelleşmiş testlerde kontrol edilen bir metriktir?",
+    "options": {
+      "A": "İzlenebilirlik",
+      "B": "Taşınabilirlik",
+      "C": "Performans",
+      "D": "Uyumluluk",
+      "E": "Güvenilirlik"
+    },
+    "correctAnswer": "C",
+    "explanation": "ISTQB Sertifikasyon programında temel seviyenin dışında ”Uzmanlık (Specialist)” seviyesi testler bulunmaktadır. Bu özelleşmiş test alanlarından biri de ”Performans Testi Uzmanlığı (Performance Testing)”dır. Performans testlerinde sistemin tepki süresi, kaynak kullanımı ve işlem hacmi gibi performans karakteristikleri/metrikleri kontrol edilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-06cea30cf91e",
+    "unitNumber": 30,
+    "text": "Modüller arasındaki uyumsuzluktan kaynaklanan riskler aşağıdaki isimlerin hangisi ile ifade edilmektedir?",
+    "options": {
+      "A": "Entegrasyon Riskleri",
+      "B": "Dokümantasyon Riskleri",
+      "C": "Sürdürülebilirlik Riskleri",
+      "D": "Arayüz Riskleri",
+      "E": "Performans Riskleri"
+    },
+    "correctAnswer": "A",
+    "explanation": "Yazılım mühendisliğinde farklı modüllerin veya bileşenlerin bir araya getirildiğinde aralarındaki veri alışverişi ve uyumsuzluklardan kaynaklanan hata risklerine ”Entegrasyon (Bütünleştirme) Riskleri” adı verilir. Bu riskleri azaltmak için Entegrasyon Testleri uygulanır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9275e6061945",
+    "unitNumber": 31,
+    "text": "Aşağıdakilerden hangisi Nesneye Yönelik Kod Metrikleri arasında yer almaz?",
+    "options": {
+      "A": "Kod Satır Sayısı",
+      "B": "Sınıfın Ağırlıklı Metot Sayısı",
+      "C": "Alt Sınıf Sayısı",
+      "D": "Kalıtım Ağacının Derinliği",
+      "E": "Sınıfın Tetiklediği Metot Sayısı"
+    },
+    "correctAnswer": "A",
+    "explanation": "Nesne Yönelimli Tasarım (Chidamber & Kemerer / CK) metrikleri; Sınıfın Ağırlıklı Metot Sayısı (WMC), Alt Sınıf Sayısı (NOC), Kalıtım Ağacı Derinliği (DIT) ve Sınıfın Tetiklediği Metot Sayısı (RFC) gibi spesifik ölçümlerden oluşur. “Kod Satır Sayısı (LOC – Lines of Code)” ise nesne yönelimli olmayan, geleneksel ve yapısal yazılımlarda da kullanılan en eski (klasik) genel boyut metriğidir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-0cec22265d3e",
+    "unitNumber": 32,
+    "text": "Kara kutu (Black-box) test tasarım tekniklerinden biri olan ve test edilecek değerlerin sınır noktalarındaki (maksimum, minimum veya sınırın hemen altı/üstü) davranışları kontrol ederek en fazla hatayı bulmayı amaçlayan teknik aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Sınır Değer Analizi (Boundary Value Analysis)",
+      "B": "Eşdeğerlik Paylara Ayırma (Equivalence Partitioning)",
+      "C": "Karar Tablosu Testi (Decision Table Testing)",
+      "D": "Durum Geçiş Testi (State Transition Testing)",
+      "E": "Kod Kapsama Analizi (Code Coverage)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Yazılım hataları çoğunlukla girdilerin limit (sınır) noktalarında ortaya çıkar (Örneğin, şifre en az 8, en fazla 15 karakter olmalı şartında; 7, 8, 15 ve 16 değerlerinin test edilmesi). Hata bulma ihtimali en yüksek yerler bu geçiş noktaları olduğu için uygulanan bu test tekniğine “Sınır Değer Analizi” denir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-977184e13f56",
+    "unitNumber": 34,
+    "text": "Aşağıdakilerden hangisi bir birim testi çeşidi değildir?",
+    "options": {
+      "A": "Bağımsız Yollar Testleri",
+      "B": "Sınır Koşulları Testleri",
+      "C": "Big-Bang Testleri",
+      "D": "Arayüz Testleri",
+      "E": "Hata Yakalama Yolları Testleri"
+    },
+    "correctAnswer": "C",
+    "explanation": "Birim testleri (Unit Testing), kodun en küçük fonksiyonlarını izole olarak test eder (Sınır koşulları, bağımsız yollar vb. teknikler kullanılır). Ancak “Big-Bang (Büyük Patlama)” testi, tüm modüllerin aynı anda bir araya getirilip sistemin tek seferde entegre edildiği bir “Entegrasyon Testi (Integration Testing)” yaklaşımıdır; birim testi çeşidi değildir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-aa5085caa5a3",
+    "unitNumber": 35,
+    "text": "Yazılım test prensiplerinden olan ve “Sistemde bulunan hataların yüzde 80’inin, kod modüllerinin sadece yüzde 20’lik belirli bir kısmında yoğunlaştığını” ifade eden kural aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Erken Test Prensibi",
+      "B": "Zehirli Böcek Prensibi",
+      "C": "Kapsamlı Testin İmkansızlığı",
+      "D": "Pareto İlkesi (Hata Kümelenmesi)",
+      "E": "Yanılgı Yokluğu Yanılgısı"
+    },
+    "correctAnswer": "D",
+    "explanation": "ISTQB test prensiplerine göre “Hatalar belirli yerlerde kümelenir (Defect Clustering)”. Bu durum ekonomideki meşhur 80/20 Pareto İlkesine dayanır. Yazılımın karmaşık olan veya kötü yazılan küçük bir bölümü, çıkan tüm hataların (bugların) büyük çoğunluğunu oluşturur. Test uzmanları bu yüzden risk odaklı olarak bu “sorunlu” yüzde 20’ye odaklanmalıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-83fd48fa7a0e",
+    "unitNumber": 36,
+    "text": "Klasik bir gözden geçirme sürecinde aşağıdaki rollerin hangisi yer almamaktadır?",
+    "options": {
+      "A": "Gözden Geçirici",
+      "B": "Analist",
+      "C": "Yönetici",
+      "D": "Kaydedici",
+      "E": "Yazar"
+    },
+    "correctAnswer": "B",
+    "explanation": "ISTQB standartlarına göre resmi bir Gözden Geçirme (Formal Review) sürecindeki temel roller şunlardır: Yönetici (Manager), Moderatör (Facilitator), Yazar (Author), Gözden Geçiriciler (Reviewers) ve Kaydedici/Yazman (Scribe). “Analist” (Analyst) diye standartlaştırılmış spesifik bir inceleme süreci rolü yoktur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f1d27e864ed9",
+    "unitNumber": 37,
+    "text": "Bir yazılım test sürecinde, “Test Ortamı”nın (Test Environment) üretim (canlı) ortamıyla aynı konfigürasyona ve verilere sahip olmamasından dolayı karşılaşılabilecek en büyük risk aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Test bütçesinin aşılamaması",
+      "B": "Test senaryolarının çok hızlı koşulması",
+      "C": "Ortama özgü (Environment-specific) hataların tespit edilememesi ve canlıda patlaması",
+      "D": "Geliştiricilerin kod yazım hızının artması",
+      "E": "Kullanıcıların yazılımı öğrenme süresinin uzaması"
+    },
+    "correctAnswer": "C",
+    "explanation": "Test ortamı, ürünün canlıya (Production) çıkacağı ortamın fiziksel, ağ ve veri tabanı olarak birebir aynısı (veya klonu) olmalıdır. Aksi takdirde, yazılım test ortamında (farklı işletim sistemi veya RAM kapasitesinde) sorunsuz çalışsa bile, müşteri ortamında çöker. Bu tip hatalara “Benim bilgisayarımda çalışıyordu (Works on my machine)” sorunu denir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b1a90f65a40b",
+    "unitNumber": 38,
+    "text": "Aşağıdaki şıklarda verilen görevlerin hangisi test uzmanının görevidir?",
+    "options": {
+      "A": "Test uzmanlarının becerilerini ve kariyerlerini geliştirmek",
+      "B": "Testlerin ve ürünün kalitesini değerlendirmek için uygun metrikler oluşturmak",
+      "C": "Kurum için test politikası ve test stratejisi geliştirmek veya bunları gözden geçirmek",
+      "D": "Araç seçimi için bütçe önermek",
+      "E": "Test verilerini hazırlanmak ve elde etmek"
+    },
+    "correctAnswer": "E",
+    "explanation": "ISTQB standartlarına göre yazılım test süreçlerindeki roller genel olarak “Test Yöneticisi (Test Manager)” ve “Test Uzmanı (Tester)” olarak ikiye ayrılır. Test stratejisini belirlemek, metrik oluşturmak, bütçe hazırlamak ve kariyer gelişimi sağlamak Test Yöneticisinin (Liderin) görevidir. Test senaryolarını yazmak, koşturmak ve “Test verilerini (test data) hazırlayıp elde etmek” ise sahada operasyon yapan Test Uzmanının temel görevidir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1242547a427b",
+    "unitNumber": 39,
+    "text": "Aşağıdakilerden hangisi kalite kavramı ile ilgili doğru bilinen yanlışlardan biri değildir?",
+    "options": {
+      "A": "Kalite soyut bir kavramdır ve ölçülemez.",
+      "B": "Kalitenin tanımlanması mümkün değildir.",
+      "C": "Daha iyisini yapmanın maliyeti başlangıçta karşılanamaz.",
+      "D": "Kalite problemlerine en alt kademede çalışanlar sebep olur.",
+      "E": "Kaliteyi, kurumların kalite bölümleri başlatır."
+    },
+    "correctAnswer": "B",
+    "explanation": "Kalite uzmanı Philip Crosby’nin kalite hakkındaki “5 Yanlış Varsayımı (Doğru bilinen yanlışlar)” şunlardır: 1-Kalite iyilik, lüks demektir. 2-Kalite soyuttur ve ölçülemez (A). 3-Kalitenin bir ekonomisi vardır, pahalıdır (C). 4-Kalite problemlerini çalışanlar yaratır (D). 5-Kalite sadece kalite departmanından çıkar (E). “Kalitenin tanımlanması mümkün değildir” şeklindeki B şıkkı bu spesifik klasik liste (Crosby’nin listesi) içinde ayrı bir madde olarak doğrudan geçmez (A maddesinin bir türevidir).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1d8d9b096eef",
+    "unitNumber": 40,
+    "text": "Aşağıdaki “bir ürün ve o ürünün kullanım bağlamı” eşleştirmelerinden hangisi uygun bir eşleştirme değildir?",
+    "options": {
+      "A": "ATM-sokak",
+      "B": "Havlu-banyo",
+      "C": "Yazılım-bilgisayar",
+      "D": "Kitap-mutfak",
+      "E": "Bistüri-ameliyathane"
+    },
+    "correctAnswer": "D",
+    "explanation": "Kullanım bağlamı (Context of Use), bir ürünün hangi ortamda ve şartlarda tasarlandığı ve kullanıldığıyla ilgilidir. ATM sokakta (banka önünde), havlu banyoda, bistüri ameliyathanede, yazılım ise bilgisayarda kullanılır. Ancak kitaplar genellikle okul, kütüphane, çalışma odası gibi yerlerde kullanılır; spesifik olarak bir yemek tarifi kitabı hariç “Mutfak” genel bir kitap kullanım bağlamı için uygun/standart bir eşleştirme değildir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a4773fcf67ab",
+    "unitNumber": 42,
+    "text": "Yazılım Kullanılabilirlik Ölçüm Envanteri’nde aşağıdaki başlıkların hangisi ele alınmaz?",
+    "options": {
+      "A": "Verimlilik",
+      "B": "Analitiklik",
+      "C": "Etki",
+      "D": "Yardımcılık",
+      "E": "Hakimiyet"
+    },
+    "correctAnswer": "B",
+    "explanation": "Yazılım Kullanılabilirlik Ölçüm Envanteri (SUMI – Software Usability Measurement Inventory), kullanıcı memnuniyetini 5 alt ölçekte değerlendirir: Verimlilik (Efficiency), Etki (Affect), Yardımcılık (Helpfulness), Hakimiyet/Kontrol (Control) ve Öğrenilebilirlik (Learnability). “Analitiklik” bu envanterde ölçülen boyutlardan biri değildir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-714a26669902",
+    "unitNumber": 44,
+    "text": "Gözden Geçirme işleminde Kişisel Hazırlık ile Yeniden Çalışma arasındaki işlem aşağıdakilerden hangisi ile ifade edilemez?",
+    "options": {
+      "A": "Değerlendirme",
+      "B": "İnceleme",
+      "C": "Analiz",
+      "D": "Gözden geçirme toplantısı",
+      "E": "Kaydetme"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-af005b4534b2",
+    "unitNumber": 45,
+    "text": "“Bir yazılım bileşeni ya da sisteminin işlevleri yerine getirip getirmediğini inceleyen metriklere ………….. metrikleri adı verilir.” Yukarıdaki cümle içerisinde yer alan boşluğa aşağıdakilerden hangisi getirilmelidir?",
+    "options": {
+      "A": "Kullanılabilirlik",
+      "B": "Fonksiyonalite",
+      "C": "Taşınabilirlik",
+      "D": "Uyumluluk",
+      "E": "Sürdürülebilirlik"
+    },
+    "correctAnswer": "B",
+    "explanation": "Yazılım kalite standartlarında (ISO 25010), bir sistemin kendisinden beklenen görevleri, işleri ve gereksinimleri (hesaplama yapma, veri kaydetme vb.) doğru, tam ve uygun bir şekilde yerine getirme yeteneğine “Fonksiyonellik” (İşlevsellik) denir. Cümledeki “işlevleri yerine getirip getirmediğini” ifadesi doğrudan “fonksiyonalite” metriklerinin tanımıdır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c2ca312997a7",
+    "unitNumber": 46,
+    "text": "Kullanılabilirlik testleri ile ilgili aşağıdaki işlemlerden hangisi en son gerçekleştirilir?",
+    "options": {
+      "A": "Verileri analiz etme",
+      "B": "Test planını hazırlama",
+      "C": "Test yürütme",
+      "D": "Katılımcı ayarlama",
+      "E": "Test ortamını hazırlama"
+    },
+    "correctAnswer": "A",
+    "explanation": "Kullanılabilirlik (Usability) testleri, gerçek kullanıcıların ürünü ne kadar rahat kullandığını ölçer. Sürecin adımları kronolojik olarak şöyledir: Önce test planı hazırlanır, ardından katılımcılar seçilir ve test ortamı (laboratuvar veya yazılım) kurulur. Daha sonra test yürütülür (kullanıcılar sistemi kullanır). Test bittikten sonra elde edilen tüm ekran kayıtları, tıklama süreleri ve anket sonuçları toplanarak “Verileri analiz etme” ve raporlama işlemi sürecin en son adımı olarak gerçekleştirilir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-65341842e415",
+    "unitNumber": 47,
+    "text": "Bir e-ticaret web sitesinde özel bir indirim kampanyası olan “Kara Cuma” gününde, sisteme aynı anda on binlerce kullanıcının girerek işlem yapacağı öngörülmektedir. Yazılımın bu kadar yüksek eşzamanlı kullanıcı sayısı karşısında çöküp çökmeyeceğini ve ne kadar yavaşlayacağını tespit etmek için hangi testin uygulanması zorunludur?",
+    "options": {
+      "A": "Güvenlik Testi",
+      "B": "Uyumluluk Testi",
+      "C": "Yük Testi (Load Testing)",
+      "D": "Erişilebilirlik Testi",
+      "E": "Birim Testi"
+    },
+    "correctAnswer": "C",
+    "explanation": "Yük testi, bir yazılım sisteminin belirlenen normal ve yüksek eşzamanlı kullanıcı (veya işlem) sayıları altında performansının, işlem sürelerinin ve kaynak tüketiminin nasıl değiştiğini görmek için yapılır. Kara Cuma gibi trafiğin tepe noktaya ulaşacağı durumlarda sistemin dayanıklılığını ölçmek doğrudan Performans/Yük testinin konusudur.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-90c71817124f",
+    "unitNumber": 48,
+    "text": "Yazılım geliştirme sürecinde “Doğru ürünü mü inşa ediyoruz?” sorusuna cevap arayan; müşteri ihtiyaçlarının ve son kullanıcı gereksinimlerinin gerçekten karşılanıp karşılanmadığını teyit eden kalite süreci aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Doğrulama (Verification)",
+      "B": "Hata Ayıklama (Debugging)",
+      "C": "Geçerli Kılma (Validation)",
+      "D": "Gözden Geçirme",
+      "E": "Kod Denetimi"
+    },
+    "correctAnswer": "C",
+    "explanation": "Doğrulama (Verification), “Ürünü doğru mu inşa ediyoruz?” sorusuna yanıt arar ve yazılımın teknik spesifikasyonlara uygun yapılıp yapılmadığına bakar. Ancak Geçerli Kılma (Validation), ortaya çıkan nihai ürünün kağıt üzerindeki teknik özelliklerden ziyade, müşterinin gerçek dünyadaki amacına ve ihtiyacına gerçekten hizmet edip etmediğini ölçer.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-e1c8611b2966",
+    "unitNumber": 51,
+    "text": "Aşağıdakilerden hangisi, test uzmanının uygulamanın iç kaynak kod yapısını, tasarımını ve algoritmalarını bilmeden; sadece uygulamanın dış arayüzü, girdileri ve beklenen çıktıları üzerinden gerçekleştirdiği test tekniğidir?",
+    "options": {
+      "A": "Beyaz Kutu (White-box) Testi",
+      "B": "Şartlama Testi",
+      "C": "Kara Kutu (Black-box) Testi",
+      "D": "Statik Test",
+      "E": "İfade Kapsama Testi"
+    },
+    "correctAnswer": "C",
+    "explanation": "Kara Kutu test tekniklerinde (Davranışsal Test), test uzmanı sistemin iç işleyişiyle (kodlarıyla) ilgilenmez. Sistemi içi görünmeyen kapalı bir kutu olarak kabul eder; sadece belirli bir girdi verildiğinde, gereksinimler dokümanında beklenen çıktının alınıp alınmadığını (örneğin doğru şifre girilince sisteme giriş yapılması) kontrol eder.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-f93b9ce69f38",
+    "unitNumber": 52,
+    "text": "“Yazılım testleri, projenin geliştirme döngüsünün en sonuna bırakılmamalı; gereksinimlerin toplandığı analiz aşamasından itibaren mümkün olan en kısa sürede planlanmalı ve başlatılmalıdır.” diyen ISTQB test ilkesi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Hata Yokluğu Yanılgısı",
+      "B": "Tarım İlacı Paradoksu",
+      "C": "Erken Test (Early Testing)",
+      "D": "Kapsamlı Test İmkânsızdır",
+      "E": "Hatalar Kümelenir"
+    },
+    "correctAnswer": "C",
+    "explanation": "Hataların yazılım döngüsünün ilerleyen aşamalarında (örneğin kodlama bittikten sonra) bulunması ve düzeltilmesi çok maliyetlidir. Bu nedenle ISTQB ilkeleri, test aktivitelerinin Yazılım Geliştirme Yaşam Döngüsü’nün (SDLC) mümkün olan en erken evresinde başlaması gerektiğini savunur; bu ilkeye “Erken Test” adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-59431cf8bbab",
+    "unitNumber": 53,
+    "text": "Aşağıdaki kalite ile ilgili kavramlar ve eşleştirmelerinden hangisi yanlıştır?",
+    "options": {
+      "A": "Uygunsuzluk: Gerekliliklere uymama durumu",
+      "B": "Düzeltici Faaliyet: Belirlenen bir uygunsuzluğun ana sebebini ortadan kaldırmak ve tekrarını engellemek için yapılan faaliyetler",
+      "C": "Önleyici Faaliyet: Potansiyel bir testi ortadan kaldırmak için yapılan faaliyetler",
+      "D": "Standart Dışı İzin: Şartlara uymayan ürünlere gerektiğinde şartlı/şartsız çıkış izni verme işlemi",
+      "E": "Doğrulama: Belirlenen şartların karşılandığını gösteren objektif delillere dayalı olarak teyit etme işlemi"
+    },
+    "correctAnswer": "C",
+    "explanation": "Kalite yönetim sistemlerinde (ISO 9001 vb.) “Önleyici Faaliyet”; gelecekte ortaya çıkması muhtemel olan potansiyel bir *uygunsuzluğu* (hatayı veya riski) daha oluşmadan ortadan kaldırmak için yapılan proaktif faaliyetlerdir. Ancak C şıkkındaki tanımda potansiyel bir “hatayı” değil, potansiyel bir “testi” ortadan kaldırmak gibi tamamen mantıksız ve yanlış bir ifade kullanılmıştır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a5444785cd31",
+    "unitNumber": 54,
+    "text": "Aşağıdakilerden hangisi bir belgelendirme hatası değildir?",
+    "options": {
+      "A": "Yazılımdaki kodlar ile kodların yorum kısımlarının eşleşmemesi",
+      "B": "Yazılımdaki veri tabanı tabloları arasındaki ilişkinin yanlış çizilmesi",
+      "C": "Yazılımdaki algoritmaların birkaçının akış şemasının yanlış çizilmesi",
+      "D": "Yazılımda bazı noktalarda yanlış türde değişken kullanılması",
+      "E": "Yazılımdaki modüllerden birinin isminin kullanma kılavuzuna yanlış yazılması"
+    },
+    "correctAnswer": "D",
+    "explanation": "Dokümantasyon (belgelendirme) hataları; kullanım kılavuzlarındaki yazım yanlışları, kodun içindeki yorum satırlarının koda uymaması, veri tabanı ER diyagramlarının veya akış şemalarının (mimari belgelerin) yanlış çizilmesi gibi kâğıt üzerinde ve metinlerdeki hatalardır. Ancak “yanlış türde değişken (integer yerine string vb.) kullanılması”, doğrudan programın çalışmasını ve mantığını bozan bir “Yazılım / Kodlama Hatasıdır” (Logic/Syntax error).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-68511a8dadfd",
+    "unitNumber": 55,
+    "text": "Aşağıdakilerden hangisi bir proje riski değildir?",
+    "options": {
+      "A": "Kurumsal sorunlar",
+      "B": "Politik sorunlar",
+      "C": "Hesaplama hataları",
+      "D": "Teknik sorunlar",
+      "E": "Tedarikçi sorunları"
+    },
+    "correctAnswer": "C",
+    "explanation": "Test süreçlerinde riskler “Proje Riskleri” ve “Ürün Riskleri” olarak ikiye ayrılır. Proje riskleri; projenin yönetimini, zamanlamasını ve bütçesini tehdit eden kurumsal anlaşmazlıklar, tedarikçi gecikmeleri, test ortamındaki teknik altyapı eksiklikleri ve politik sorunlardır. Ancak yazılımın kendisinin çökmesi, yanlış sonuç üretmesi veya “hesaplama hataları” yapması, ortaya çıkan ürünün kalitesini tehdit eden “Ürün Riskleri” (Product Risks) kapsamına girer.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1053883b8405",
+    "unitNumber": 56,
+    "text": "Üretilen yazılımın, müşterinin asıl iş ihtiyaçlarını, süreçlerini ve beklentilerini tam olarak karşılayıp karşılamadığını doğrulamak amacıyla, genellikle gerçek kullanıcılar veya müşteri temsilcileri tarafından canlıya geçişten hemen önce yapılan test aşaması aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Birim Testi",
+      "B": "Entegrasyon Testi",
+      "C": "Kabul Testi (UAT)",
+      "D": "Beyaz Kutu Testi",
+      "E": "Duman Testi"
+    },
+    "correctAnswer": "C",
+    "explanation": "Kullanıcı Kabul Testi (User Acceptance Testing – UAT), test seviyelerinin en son aşamasıdır. Sistem testleri başarıyla bittikten sonra, ürünün müşteriye teslim edilmesinden hemen önce, yazılımın gerçek ticari ihtiyaçlara uygunluğunu onaylamak üzere bizzat müşteri tarafından gerçekleştirilir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-ca98f78cca17",
+    "unitNumber": 57,
+    "text": "Aşağıdakilerden hangisi, diğer seçeneklerde verilenleri kapsayacak genel bir test ismidir?",
+    "options": {
+      "A": "Performans Testi",
+      "B": "Verimlilik Testi",
+      "C": "Stres Testi",
+      "D": "Yük Testi",
+      "E": "Hacim Testi"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c2291b899a17",
+    "unitNumber": 58,
+    "text": "Test ve kalite kavramlarının zaman ile arasında nasıl bir ilişki vardır?",
+    "options": {
+      "A": "Test de kalite de kısa süreli işlemlerdir.",
+      "B": "Test kısa süreli, kalite uzun süreli bir işlemdir.",
+      "C": "Test ve kalitenin süreyle ilgisi bilinemez.",
+      "D": "Kalite kısa süreli, test uzun süreli bir işlemdir.",
+      "E": "Test de kalite de uzun süreli işlemlerdir."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6fe80d689cbe",
+    "unitNumber": 59,
+    "text": "Aşağıdakilerden hangisi birim testler için söylenemez?",
+    "options": {
+      "A": "Kod parçasının anlaşılmasını kolaylaştırır.",
+      "B": "Kod parçasındaki hata oranını azaltır.",
+      "C": "Kod parçasının başka bir kod parçası tarafından test edilmesini sağlar.",
+      "D": "Kod parçasındaki hataların daha hızlı bir şekilde bulunmasını sağlar.",
+      "E": "Kod parçasının hangi donanımda nasıl çalışacağını analiz eder."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1d3822d569a2",
+    "unitNumber": 60,
+    "text": "Kara kutu testi aşağıdakilerin hangisi ile ilgilenir?",
+    "options": {
+      "A": "Modüllerin entegrasyonu",
+      "B": "Programlama dilinin yapısı",
+      "C": "Arayüzlerin kullanılabilirliği",
+      "D": "Algoritmanın karmaşıklığı",
+      "E": "Kodlardaki hata miktarı"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8f2ca074583c",
+    "unitNumber": 61,
+    "text": "Bir yazılım riskinin sistem açısından kozmetik risk olarak adlandırılmasının sebebi aşağıdakilerden hangisi olabilir?",
+    "options": {
+      "A": "İşlevsellik kaybına yol açmaktadır.",
+      "B": "Çözülmesi çok acildir.",
+      "C": "Kısa süreli çeşitli zararlar vermektedir.",
+      "D": "Görsellik veya kullanışlılık olarak zarar vermektedir.",
+      "E": "Veri kaybına sebep olmaktadır."
+    },
+    "correctAnswer": "D",
+    "explanation": "Kozmetik risk, yazılımın temel işlevselliğini bozmayan ancak görselliği veya kullanışlılığı olumsuz etkileyen, genellikle düşük öncelikli hatalardır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2198b85577c7",
+    "unitNumber": 62,
+    "text": "Aşağıdakilerden hangisi bir yazılımın farklı sistemlerde, farklı elemanlarla çalışması için yapılan testlerden biri değildir?",
+    "options": {
+      "A": "Kurulum Testi",
+      "B": "Uyumluluk Testi",
+      "C": "Taşınabilirlik Testi",
+      "D": "Birlikte Çalışabilirlik Testi",
+      "E": "Yük Testi"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2654456c7df5",
+    "unitNumber": 63,
+    "text": "Aşağıdaki test kavramlarından hangisi test yürütme işlemi ile ilgili değildir?",
+    "options": {
+      "A": "Test Süreç Grubu",
+      "B": "Kritik Test Süreçleri",
+      "C": "Test Direktörü",
+      "D": "Test Koşulu",
+      "E": "Test Kontrol"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-71edd4f1e48c",
+    "unitNumber": 64,
+    "text": "Bir görme engelli kullanıcı, bir yazılımı kullanırken zorluk çekiyorsa, bu yazılım aşağıdaki testlerin hangisinde gerekli başarıyı gösteremez?",
+    "options": {
+      "A": "Erişilebilirlik Testi",
+      "B": "Fonksiyonalite Testi",
+      "C": "Rastgele Test",
+      "D": "Güvenlik Testi",
+      "E": "Maymun Testi"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-10f585dfdc38",
+    "unitNumber": 65,
+    "text": "Test işlemleri ile ilgili aşağıdaki rol ve açıklama eşleştirmelerinden hangisi yanlıştır?",
+    "options": {
+      "A": "Aktör: Test edilmekte olan yazılım bileşeni ile etkileşim halinde olan kullanıcıdır.",
+      "B": "Test direktörü: Test yöneticilerini yöneten üst düzey yöneticidir.",
+      "C": "Test mimarı: Bir test organizasyonunu tasarlayan kişidir.",
+      "D": "Test yöneticisi: Test aktivite ve kaynaklarının yönetiminden sorumlu kişidir.",
+      "E": "Test analisti: Yapılan testlerin maliyetlerini çıkartan kişidir."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-7ce3c1998f98",
+    "unitNumber": 66,
+    "text": "Hartford Colesium Binası’nda uygulanan yazılımda bir formülün hesaplanmasında yapılan işlem hatası sonucunda büyük bir maddî kayıp meydana gelmiştir. Burada yapılan hata aşağıdakilerden hangisi ile ifade edilebilir?",
+    "options": {
+      "A": "Sözdizim hatası",
+      "B": "Anomali",
+      "C": "Tasarım hatası",
+      "D": "Mantık hatası",
+      "E": "Belgeleme hatası"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-618d818edb9b",
+    "unitNumber": 67,
+    "text": "I. Kullanılan yazılımda aritmetiksel işlemlerde 64 bit kullanılması gerekirken, yazılımın önceki sürümünde 16 bitlik değerlerin kullanılması ve bu durumun yazılımın yeni versiyonunda güncellenmemesi sonucunda hatalar oluşmuştur. II. Yazılımda kullanılan uzunluk ölçümlerinde İngiliz ölçü birimlerinin kullanılması sonucunda yazılımda çeşitli uyumsuzluklar yaşanmıştır. III. Bazı eski programlama dillerinde yıl bilgisinin 2 haneli olarak tasarlanması sonucunda 2000 yılının 00 şeklinde ifade edilmesi ile farklı sistemlerle beraber çalışma sorunu ortaya çıkmıştır. Yukarıda verilen yazılım hatalarının hangileri uyumluluk sorunu içermektedir?",
+    "options": {
+      "A": "I ve II",
+      "B": "I, II ve III",
+      "C": "Yalnız II",
+      "D": "Yalnız I",
+      "E": "I ve III"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a6b71c27f40d",
+    "unitNumber": 87,
+    "text": "Genellikle test senaryolarında X ile gösterilen veri setleri denenir. Ancak esasen doğru bir test için Y ile gösterilen veri setinin de denenmesi gerekmektedir. Y ile gösterilen veri setlerinin denendiği bu testlere genellikle verilen ad aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Doğru test",
+      "B": "Objektif test",
+      "C": "Analitik test",
+      "D": "Negatif test",
+      "E": "Yalın test"
+    },
+    "correctAnswer": "D",
+    "explanation": "Görselde Y, yazılımın hatalı veya beklenmeyen girdilere karşı nasıl davrandığını kontrol eden test senaryolarını temsil eder. Bu tür testlere Negatif Test adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1dd29f1ee5e8",
+    "unitNumber": 88,
+    "text": "Özellik Gizleme Faktörü, Ortalama Ata Sayısı, Eşleme Faktörü gibi kriterler aşağıdaki metrik kümelerinin hangisinde yer almaktadır?",
+    "options": {
+      "A": "Yordamsal Kod Metrikleri",
+      "B": "Sürdürülebilirlik Metrikleri",
+      "C": "Nesneye Yönelik Kod Metrikleri",
+      "D": "Uyumluluk Metrikleri",
+      "E": "Taşınabilirlik Metrikleri"
+    },
+    "correctAnswer": "C",
+    "explanation": "Özellik Gizleme Faktörü (Method Hiding Factor) gibi metrikler, nesneye yönelik programlamada (OOP) kodun kalitesini, karmaşıklığını ve tekrar kullanılabilirliğini ölçmek için kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-cc9162e0af71",
+    "unitNumber": 89,
+    "text": "Türkiye’deki yazılım projelerinin kalitesi konusunda yapılan çalışmaların toplandığı dokümantasyona verilen ad aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Türkiye Yazılım Dergisi",
+      "B": "Türkiye Yazılım Kalite Raporu",
+      "C": "Türkiye Yazılım Testçileri Doküman",
+      "D": "Türkiye Yazılım Projeleri Analizi",
+      "E": "Türkiye Yazılım Planlaması"
+    },
+    "correctAnswer": "B",
+    "explanation": "Türkiye’deki yazılım projelerinin kalitesi konusunda yapılan çalışmaların toplandığı ve sektörün durumunu yansıtan dokümantasyona Türkiye Yazılım Kalite Raporu adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-58be46825cb5",
+    "unitNumber": 90,
+    "text": "Aşağıdakilerden hangisi yazılım süreçleri arasında sayılamaz?",
+    "options": {
+      "A": "Müşteri-satıcıya direkt etkisi olan süreçler",
+      "B": "Destek süreçleri",
+      "C": "Analiz süreçleri",
+      "D": "Mühendislik süreçleri",
+      "E": "Organizasyon süreçleri"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-2cf979fd2921",
+    "unitNumber": 91,
+    "text": "Bir yazılım bileşeninde X değişkeninin değerinin Y değişkenine bağlı olduğu biliniyorsa, bu durumda test senaryo sayısını düşürmek için aşağıdaki test tekniklerinin hangisi uygulanmalıdır?",
+    "options": {
+      "A": "İkili Test",
+      "B": "Kullanıcı Senaryosu",
+      "C": "Sınıflandırma Ağacı",
+      "D": "Karar Tablosu",
+      "E": "Durum Geçişi"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ada61c864153",
+    "unitNumber": 92,
+    "text": "Verilerin rastgele olarak seçildiği ve bir hayvanın bilgisayar/yazılım kullanmasına atıfta bulunularak isimlendirilen yazılım testinin ismi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Kedi Testi",
+      "B": "Maymun Testi",
+      "C": "Köpek Testi",
+      "D": "Kuş Testi",
+      "E": "Yılan Testi"
+    },
+    "correctAnswer": "B",
+    "explanation": "Maymun Testi (Monkey Testing), test uzmanının önceden belirlenmiş senaryolar olmadan, rastgele veriler girerek yazılımı kullanması esasına dayanan bir test türüdür.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e8a730892820",
+    "unitNumber": 93,
+    "text": "Aşağıdakilerden hangisi yazılım test otomasyonlarına verilen desteği ifade eden bir kavram değildir?",
+    "options": {
+      "A": "Müşteri desteği",
+      "B": "Makaleler",
+      "C": "Bloglar",
+      "D": "Teknik personel",
+      "E": "Entegrasyon"
+    },
+    "correctAnswer": "E",
+    "explanation": "Müşteri desteği, makaleler, bloglar ve teknik personel, yazılım test otomasyonlarına destek sağlayan unsurlardır. Entegrasyon ise test otomasyonunun başka sistemlerle bütünleşme yeteneğidir, bir destek kavramı değildir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-6f30281bb17e",
+    "unitNumber": 94,
+    "text": "Aşağıdakilerden hangisi fonksiyonel olmayan testlerde test edilen bir husus değildir?",
+    "options": {
+      "A": "Tekrar kullanım",
+      "B": "Hata ayıklama",
+      "C": "Kullanılabilirlik",
+      "D": "Birlikte çalışabilirlik",
+      "E": "Ölçeklenebilirlik"
+    },
+    "correctAnswer": "B",
+    "explanation": "Fonksiyonel olmayan testler, yazılımın performans, kullanılabilirlik, ölçeklenebilirlik gibi özellikleriyle ilgilenir. Hata ayıklama (Debugging) ise yazılımdaki hataları düzeltme sürecidir ve bir test hususu değildir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4af9b88a1ce5",
+    "unitNumber": 96,
+    "text": "Katibin gözden geçiricilerin yaptığı işi beğenmemesi ve bu konuyla ilgili hakaret etmesi, gözden geçirmeyi başarısız kılan aşağıdaki faktörlerin hangisine örnek olarak gösterilebilir?",
+    "options": {
+      "A": "İyi Tanımlanmamış Rol ve Sorumluluklar",
+      "B": "Yetersiz Bireysel Hazırlık",
+      "C": "Eğitim Eksikliği",
+      "D": "Toplantı Gündeminden Sapma",
+      "E": "Amacını Aşan Eleştiriler"
+    },
+    "correctAnswer": "E",
+    "explanation": "Gözden geçirme toplantıları belgedeki hatalara odaklanmalıdır. Katibin, gözden geçiricilere hakaret etmesi, toplantının amacını aşan ve kişisel saldırı içeren bir davranıştır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-367789fb67cb",
+    "unitNumber": 97,
+    "text": "Bir yazılım testinin ne kadar süreceği ile ilgili aşağıdaki kriterlerden hangisi geçerli değildir?",
+    "options": {
+      "A": "Yazılımlar yazılımın başında belirlenen bir süre boyunca test edilmelidir.",
+      "B": "Yazılımlar rastgele sayıda test edilmelidir.",
+      "C": "Yazılımlar yazılımın başında belirlenen bir maliyet boyunca test edilmelidir.",
+      "D": "Yazılımlar proje yöneticisinin belirlediği koşullar sağlanana kadar test edilmelidir.",
+      "E": "Yazılımlar ideal yazılım bileşeni elde edilene kadar test edilmelidir."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-191e26f95d5c",
+    "unitNumber": 98,
+    "text": "Bir web yazılım test otomasyonunun açık kaynaklı olması aşağıdaki özelliklerin hangisini doğrudan etkilemektedir?",
+    "options": {
+      "A": "Entegrasyon",
+      "B": "Maliyet",
+      "C": "Platform uyumluluğu",
+      "D": "Kullanıcı deneyimi gereksinimi",
+      "E": "Test türü"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-81f4dfce715c",
+    "unitNumber": 99,
+    "text": "Bir yazılım testinde yalnızca üniversite mezunları geçerli sınıf ise diğer tüm seçenekler geçersiz sınıf ise bu durumda aşağıdaki tekniklerden hangisini uygulamak gereklidir?",
+    "options": {
+      "A": "Karar tablosu denklik sınıfı",
+      "B": "Sürekli değer denklik sınıfı",
+      "C": "Ayrık değerler denklik sınıfı",
+      "D": "Tek seçimli denklik sınıfı",
+      "E": "Sınır değer denklik sınıfı"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a5217dd6dde5",
+    "unitNumber": 100,
+    "text": "Yazılım testi ile ilgili kavramlar ve açıklamaları eşleştirmelerinden hangisi yanlıştır?",
+    "options": {
+      "A": "Test Öğesi: Test üzerinde uygulanan veri seti",
+      "B": "Test Kaydı: Testlerin yürütülmesi ile ilgili detayların tutulması",
+      "C": "Test Stratejisi: Testin uygulanma şekli",
+      "D": "Test Yaklaşımı: Test stratejisinin hayata geçirilmesi",
+      "E": "Test Kuluçkası: Testin yürütülmesi için gerekli olan taklit uygulamalar"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ef1401796faf",
+    "unitNumber": 101,
+    "text": "Aşağıdaki durumların hangisi “doğrulama sapması”na örnek olarak gösterilebilir?",
+    "options": {
+      "A": "Test uzmanının kodunda bulduğu hatayı yazılım geliştiricinin kabul etmemesi",
+      "B": "Yazılım geliştiricinin analist ile anlaşamaması",
+      "C": "Test uzmanının çok yoğun bir şekilde test yapması sonucu testlerin sorunlu olması",
+      "D": "Yazılım proje lideri ile test uzmanının farklı testleri gerçekleştirmek istemesi",
+      "E": "Kullanıcı istekleri ile yazılım geliştirme ekibinin isteklerinin örtüşmemesi"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-583205f73756",
+    "unitNumber": 102,
+    "text": "“Bir sınıf içerisinde yer alan kalıtımdan gelen metot sayısı ile metot sayısının toplamıdır.” şeklinde tanımlanan metrik aşağıdaki kısaltmaların hangisi ile ifade edilmektedir?",
+    "options": {
+      "A": "AHF",
+      "B": "CBO",
+      "C": "LCOM",
+      "D": "RFC",
+      "E": "MHF"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-86dd697647bd",
+    "unitNumber": 103,
+    "text": "Yazılım test sertifikalarına ihtiyaç duyulmasının temel sebebi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Yazılım testinin yazılım geliştirme sürecinde yer alması",
+      "B": "Yazılım testinde farklı rollerin yer alması",
+      "C": "Yazılım testinin gittikçe büyüyen bir alan olması",
+      "D": "Yazılım testinin planlamaya ihtiyaç duyması",
+      "E": "Yazılım testi ile ilgili sürekli olarak otomasyonlar kullanılması"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d75f0567d6ac",
+    "unitNumber": 104,
+    "text": "Bir yazılımın kalitesiz olması ile ilgili birçok sebep bulunmaktadır. Bunlardan birisi olan “bir yazılımın kolay anlaşılabilir ve kullanılabilir olmaması” aşağıdaki kategorilerin hangisine girer?",
+    "options": {
+      "A": "Test ekibi tarafındaki sebepler",
+      "B": "Analistler tarafındaki sebepler",
+      "C": "Müşteri tarafındaki sebepler",
+      "D": "Danışmanlar tarafındaki sebepler",
+      "E": "Yazılım ekibi tarafındaki sebepler"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5037e6034c15",
+    "unitNumber": 105,
+    "text": "Aşağıdakilerden hangisi, bir yazılım bileşeninde kontrollü olarak sorunlar yaratılarak yapılan testlerden biri değildir?",
+    "options": {
+      "A": "Emniyet Testi",
+      "B": "Standartlara Uyumluluk Testi",
+      "C": "Sağlamlık Testi",
+      "D": "Saldırı Bazlı Test",
+      "E": "Arıza Durumu Testi"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4a46d4985c78",
+    "unitNumber": 106,
+    "text": "“ISTQB’nin kuruluşunda yer alan ülkelere bakıldığında ISTQB’nin bir …………. kuruluşu olarak başladığı ifade edilebilir.” Yukarıdaki boşluğa gelebilecek uygun ifade aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Asya",
+      "B": "Afrika",
+      "C": "Avrupa",
+      "D": "Avustralya",
+      "E": "Amerika"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-574eb1d41245",
+    "unitNumber": 107,
+    "text": "Aşağıdakilerden hangisi Güvenlik/Güvenilirlik Metrikleri arasında yer almaz?",
+    "options": {
+      "A": "Sağlamlık",
+      "B": "Olgunluk",
+      "C": "Hata Toleransı",
+      "D": "Analitiklik",
+      "E": "Kurtarılabilirlik"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8b2ea0e1a65a",
+    "unitNumber": 108,
+    "text": "Hatalı bir ürün tespit edildiğinde bu ürünün tek başına incelenmesi yerine bu ürünü ortaya çıkaran tüm işlemlerin incelenmesini öngören kalite türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Süreç yoluyla kalite",
+      "B": "Araç yoluyla kalite",
+      "C": "Hammadde yoluyla kalite",
+      "D": "Ürün yoluyla kalite",
+      "E": "Personel yoluyla kalite"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-3b3cebff0d0f",
+    "unitNumber": 109,
+    "text": "Regresyon Testi hangi özelliği ile diğer entegrasyon testlerinden ayrılır?",
+    "options": {
+      "A": "Daha önceden test edilmiş ve düzeltilmiş yapılar ile ilgilenir",
+      "B": "Sadece donanım entegrasyonu ile ilgilenir",
+      "C": "Klasik yöntemler ile entegrasyon sağlar",
+      "D": "Sadece mobil yazılımlar ile ilgilenir",
+      "E": "Yazılımların en üst versiyonu ile ilgilenir"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1623eec97837",
+    "unitNumber": 110,
+    "text": "Yazılım testleri ile ilgili aşağıdaki kavramların hangisi, sistemin beklenen dışında bir durumla karşılaşmasını ifade eder?",
+    "options": {
+      "A": "Kusur",
+      "B": "Arıza",
+      "C": "Yanlışlık",
+      "D": "İnsan hatası",
+      "E": "Anomali"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-3bfe5b8e8964",
+    "unitNumber": 85,
+    "text": "Bir yazılımı test ederken, önceden belirlenen durumların dışında, kimi zaman ani, plansız test yapma ihtiyaçları oluşabilir. Bu durumda yapılan testlere ne isim verilmektedir?",
+    "options": {
+      "A": "Veri Akış Testi",
+      "B": "Dış Kaynaklı Test",
+      "C": "Kurgusuz Test",
+      "D": "Dal Testi",
+      "E": "Geliştirme Testi"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  }
+]

@@ -1,1 +1,4389 @@
-[]
+[
+  {
+    "id": "s-98e0bec43b4e",
+    "unitNumber": 1,
+    "text": "double a = 14; object b = a; Yukarıdaki C# kod satırlarında tanımlanan a ve b değişkenleri hangi bellek bölgesinde saklanırlar?",
+    "options": {
+      "A": "a - Stack Bellek Bölgesi, b - Register Bölgesi",
+      "B": "Her ikisi de Stack Bellek Bölgesi",
+      "C": "a - Heap Bellek Bölgesi, b - Stack Bellek Bölgesi",
+      "D": "Her ikisi de Heap Bellek Bölgesinde",
+      "E": "a - Stack Bellek Bölgesi, b - Heap Bellek Bölgesi"
+    },
+    "correctAnswer": "E",
+    "explanation": "C#’ta double bir değer tipidir (value type) ve stack bölgesinde saklanır. Ancak bu değer object türündeki bir değişkene atandığında “boxing” işlemi gerçekleşir ve veri heap bölgesine taşınır. Bu yüzden b referansı heap’teki veriyi işaret eder.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3613e59b864b",
+    "unitNumber": 2,
+    "text": "Aşağıdakilerden hangisi bir işlemin nasıl (how) gerçekleştirileceği ile ilgilenen yaklaşıma sahip bir programlama dilidir?",
+    "options": {
+      "A": "Regular Expression",
+      "B": "Java",
+      "C": "HTML",
+      "D": "Prolog",
+      "E": "SQL"
+    },
+    "correctAnswer": "B",
+    "explanation": "Java, emirsel (imperative) bir dildir ve bir işin adım adım “nasıl” yapılacağını komutlarla anlatır. HTML, SQL ve Prolog gibi diller ise bildirimsel (declarative) dillerdir ve “nasıl”dan ziyade “ne” (what) yapılacağına odaklanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8664e6a3cdd9",
+    "unitNumber": 3,
+    "text": "C# programlama dilinde bool veri türünün tanımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Mantıksal değerleri (true/false) saklar.",
+      "B": "Karakter dizilerini saklar.",
+      "C": "Kayan noktalı sayıları saklar.",
+      "D": "Yalnızca tam sayıları saklar.",
+      "E": "Tarih ve saat bilgilerini saklar."
+    },
+    "correctAnswer": "A",
+    "explanation": "bool (boolean) veri tipi, sadece true (doğru) veya false (yanlış) olmak üzere iki mantıksal değer alabilen temel bir veri türüdür.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f270b9c06f80",
+    "unitNumber": 4,
+    "text": "Aşağıdakilerden hangisi Nesneye Yönelik Programlama yaklaşımına dayanan bir dilin sahip olması gereken temel özelliklerden biri değildir?",
+    "options": {
+      "A": "Çok biçimlilik (Polymorphism)",
+      "B": "Soyutlama (Abstraction)",
+      "C": "Modelleme (Modelling)",
+      "D": "Kapsülleme (Encapsulation)",
+      "E": "Kalıtım (Inheritance)"
+    },
+    "correctAnswer": "C",
+    "explanation": "Nesneye Yönelik Programlama’nın (OOP) dört temel prensibi vardır: Kapsülleme, Kalıtım, Çok Biçimlilik ve Soyutlama. Modelleme ise bu prensiplerin uygulandığı genel bir süreçtir, bir dil özelliği değildir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3cc3e038f471",
+    "unitNumber": 5,
+    "text": "Nesneye yönelik programlamada veri ve işlevlerin bir arada bulunduğu yapıyı ifade eden kavram hangisidir?",
+    "options": {
+      "A": "Kalıtım (Inheritance)",
+      "B": "Çokbiçimlilik (Polymorphism)",
+      "C": "Sınıf (Class)",
+      "D": "Nesne (Object)",
+      "E": "Soyutlama (Abstraction)"
+    },
+    "correctAnswer": "C",
+    "explanation": "Sınıf (Class), veri alanlarını (fields) ve bu veriler üzerinde işlem yapan fonksiyonları (methods) bir arada toplayan temel yapı taşıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8ea93ed3a277",
+    "unitNumber": 6,
+    "text": ".NET platformlarında kullanılan, tekrar kullanılabilir bileşenlerin ve hizmetlerin bir koleksiyonu olan temel bileşen aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Common Intermediate Language (CIL)",
+      "B": "Common Language Specifications (CLS)",
+      "C": "Common Language Runtime (CLR)",
+      "D": "Framework Class Library (FCL)",
+      "E": "Common Type System (CTS)"
+    },
+    "correctAnswer": "D",
+    "explanation": "FCL, .NET geliştiricilerinin veri tabanı erişimi, dosya işlemleri, kullanıcı arayüzü gibi işler için kullandığı devasa bir hazır kütüphane ve bileşenler topluluğudur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0991b5f3bd29",
+    "unitNumber": 7,
+    "text": "Sınıf diyagramında (Class Diagram) bir sınıfın içindeki aşağıdaki hangi bileşen, sınıfın fonksiyonlarını gösterir?",
+    "options": {
+      "A": "Erişim Niteleyicisi (Access Modifier)",
+      "B": "İlişkiler (Relations)",
+      "C": "Nitelikler (Attributes)",
+      "D": "Metotlar (Methods)",
+      "E": "Sınıf Adı (Class Name)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Sınıf diyagramlarında sınıfların sahip olduğu özellikler “Nitelikler” (Attributes), gerçekleştirebildiği işlevler ve fonksiyonlar ise “Metotlar” (Methods) bölümünde gösterilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d2be445fe67d",
+    "unitNumber": 8,
+    "text": "Nesneye yönelik programlamada, karmaşıklığı gizleyerek programlama sürecini daha anlaşılır ve yönetilebilir hale getiren kavram aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Çok Biçimlilik (Polymorphism)",
+      "B": "Soyutlama (Abstraction)",
+      "C": "Kapsülleme (Encapsulation)",
+      "D": "Sınıflandırma (Classification)",
+      "E": "Kalıtım (Inheritance)"
+    },
+    "correctAnswer": "B",
+    "explanation": "Soyutlama (Abstraction), bir nesnenin sadece gerekli özelliklerini gösterip detayları ve karmaşıklığı gizleyerek kullanıcıya basit bir arayüz sunma prensibidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-de6b62c2a824",
+    "unitNumber": 9,
+    "text": "Yazılım geliştirirken nesneye yönelik düşünme yaklaşımı ilk olarak aşağıdaki hangi aşamada devreye girer?",
+    "options": {
+      "A": "Kodlama",
+      "B": "Tasarım",
+      "C": "Çözümleme",
+      "D": "Planlama",
+      "E": "Analiz"
+    },
+    "correctAnswer": "B",
+    "explanation": "Nesneye yönelik yaklaşımda, sistemin hangi nesnelerden oluşacağı ve bu nesnelerin birbiriyle nasıl etkileşime gireceği ilk olarak Tasarım aşamasında modellenmeye başlanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-90e5f1eb01d7",
+    "unitNumber": 10,
+    "text": "Aşağıdakilerden hangisi bir yazılımın kullanıcı gözüyle kaliteli olduğunu gösteren kriterlerden biri değildir?",
+    "options": {
+      "A": "Yazılım hem stabil çalışmalı hem de içerisindeki verilerin güvenliğini sağlayabilmelidir.",
+      "B": "Yazılım mümkün olduğunca az hata ile istenen sonucu gerektiği hızda sunabilmelidir.",
+      "C": "Yazılımın modülleri yeni projelerde tekrar kullanılabilmelidir.",
+      "D": "Yazılım kullanılabilir olmalıdır.",
+      "E": "Yazılım, sistem kaynaklarını gerektiği ölçüde kullanmalıdır."
+    },
+    "correctAnswer": "C",
+    "explanation": "Modüllerin tekrar kullanılabilirliği (reusability), son kullanıcıdan ziyade yazılım geliştiricileri ilgilendiren teknik bir kalite kriteridir. Kullanıcı için önemli olan kararlılık, hız, güvenlik ve kullanılabilirliktir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-41492525470b",
+    "unitNumber": 11,
+    "text": "C# programlama dilinde hangi anahtar kelime ile bir değişkenin sabit (değiştirilemez) olacağı belirtilir?",
+    "options": {
+      "A": "const",
+      "B": "readonly",
+      "C": "static",
+      "D": "var",
+      "E": "sealed"
+    },
+    "correctAnswer": "A",
+    "explanation": "const anahtar kelimesi, bir değişkenin değerinin derleme zamanında belirlendiğini ve program boyunca bir daha asla değiştirilemeyeceğini (sabit olduğunu) ifade eder.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9a3304b843cc",
+    "unitNumber": 12,
+    "text": ".NET Framework’ün amacı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Yalnızca C# projelerinde kullanılan bir derleyicidir.",
+      "B": "Birden fazla programlama dilini destekleyen ve uygulama geliştirmeyi kolaylaştıran bir platformdur.",
+      "C": "C++ programlarını derlemek için kullanılan bir IDE'dir.",
+      "D": "Yalnızca masaüstü uygulamaları geliştirmek için kullanılan bir yapıdır.",
+      "E": "Yalnızca mobil uygulama geliştirmek için kullanılan bir kütüphanedir."
+    },
+    "correctAnswer": "B",
+    "explanation": ".NET Framework, C#, VB.NET, F# gibi birçok dili destekleyen, uygulamaların geliştirilmesi, çalıştırılması ve yönetilmesi için gerekli kütüphaneleri ve çalışma ortamını (CLR) sağlayan kapsamlı bir platformdur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-730ab84439c7",
+    "unitNumber": 13,
+    "text": "int x = 42; object y = x; Yukarıdaki C# kod satırları aşağıdaki hangi işleme bir örnektir?",
+    "options": {
+      "A": "Convert Sınıfı ile dönüşüm",
+      "B": "Type Casting (Cast İşlemi)",
+      "C": "Büyük türden küçük türe dönüşüm",
+      "D": "Boxing (Kutulama)",
+      "E": "Unboxing (Kutudan Çıkarma)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Bir değer tipinin (int) bir referans tipine (object) örtük olarak dönüştürülmesi işlemine Boxing (Kutulama) denir. Bu işlem veriyi stack’ten heap’e taşır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b2bb298ac46f",
+    "unitNumber": 14,
+    "text": "Doğrulama (verification) işlemi aşağıdaki yazılım geliştirme aşamalarından hangisinde yapılmalıdır?",
+    "options": {
+      "A": "Tasarım",
+      "B": "Kodlama",
+      "C": "Dokümantasyon",
+      "D": "Çözümleme",
+      "E": "Test"
+    },
+    "correctAnswer": "A",
+    "explanation": "Doğrulama işlemi, yazılımın belirlenen gereksinimlere ve standartlara uygun olarak geliştirilip geliştirilmediğini denetlemek amacıyla genellikle tasarım ve geliştirme süreçlerinin erken aşamalarında gerçekleştirilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-02f68093077d",
+    "unitNumber": 15,
+    "text": "Sistemdeki kullanıcıların nasıl etkileşimde bulunacağını ve sistemle ilgili işlevleri nasıl gerçekleştireceklerini tanımlayan 4+1 Görünüm Modeli aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Fiziksel Görünüm (Physical View)",
+      "B": "Süreç Görünümü (Process View)",
+      "C": "Mantıksal Görünüm (Logical View)",
+      "D": "Geliştirme Görünümü (Development View)",
+      "E": "Kullanım Senaryoları Görünümü (Use Cases View)"
+    },
+    "correctAnswer": "E",
+    "explanation": "4+1 Mimari Görünüm Modeli’nin merkezinde yer alan Kullanım Senaryoları (Use Cases), sistemin aktörlerle olan etkileşimini ve beklenen davranışlarını senaryolar üzerinden tanımlar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5994d471408c",
+    "unitNumber": 16,
+    "text": "Nesneye Yönelik Programlamada “Farklı nesnelerin aynı arayüzü kullanarak farklı işlevler gerçekleştirmesi” durumu hangi terim ile ifade edilir?",
+    "options": {
+      "A": "Kalıtım (Inheritance)",
+      "B": "Methods (Metotlar)",
+      "C": "Çokbiçimlilik (Polymorphism)",
+      "D": "Kapsülleme (Encapsulation)",
+      "E": "Soyutlama (Abstraction)"
+    },
+    "correctAnswer": "C",
+    "explanation": "Çok Biçimlilik (Polymorphism), farklı sınıfların aynı metod adını (veya arayüzünü) kullanarak, kendi ihtiyaçlarına göre farklı şekillerde davranabilmesi yeteneğidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-eb1184bf622b",
+    "unitNumber": 17,
+    "text": "Aşağıdakilerden hangisi Ortak Dil Tanımlamaları (Common Language Specifications – CLS) tarafından desteklenen programlama dillerinden biri değildir?",
+    "options": {
+      "A": "Fortran",
+      "B": "Python",
+      "C": "Perl",
+      "D": "C++",
+      "E": "XML"
+    },
+    "correctAnswer": "E",
+    "explanation": "CLS, farklı programlama dillerinin birbiriyle uyumlu çalışmasını sağlayan bir standarttır. Fortran, Python, Perl ve C++ programlama dilleri iken; XML (Extensible Markup Language) bir programlama dili değil, bir veri işaretleme ve yapılandırma dilidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a76996ac17fe",
+    "unitNumber": 18,
+    "text": "Yorumlayıcı mantığına benzer şekilde kodun belli bir bölümünü makine koduna çevirip çalıştıran, diğer satırları ise daha sonra makine koduna dönüştüren JIT yapısı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Eco-JIT",
+      "B": "General JIT",
+      "C": "Normal JIT",
+      "D": "Pro-JIT",
+      "E": "Pre-JIT"
+    },
+    "correctAnswer": "A",
+    "explanation": "Eco-JIT, kısıtlı kaynaklara sahip ortamlarda (veya belirli optimizasyon seviyelerinde) kullanılan, metodun tamamı yerine sadece o an ihtiyaç duyulan kısımları makine koduna çeviren bir Just-In-Time derleme türüdür.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-2b861a531d52",
+    "unitNumber": 19,
+    "text": "UML’de, sınıflar arasındaki “is-a” ilişkisini aşağıdaki hangi kavram temsil eder?",
+    "options": {
+      "A": "Birleşim (Aggregation)",
+      "B": "Bütünleme (Composition)",
+      "C": "Birliktelik (Association)",
+      "D": "Kalıtım (Inheritance)",
+      "E": "Bağımlılık (Dependency)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Nesneye yönelik programlamada Kalıtım (Inheritance), “is-a” (bir …’dır) ilişkisini ifade eder. Örneğin; “Araba bir Taşıttır” cümlesi kalıtım ilişkisini tanımlar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d34d4f80931c",
+    "unitNumber": 120,
+    "text": "Yukarıda verilen kod parçası çalıştırıldığında ekrana yazan değer kaç olur?",
+    "options": {
+      "A": "1",
+      "B": "4",
+      "C": "2",
+      "D": "3",
+      "E": "5"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-6cfce8be07a4",
+    "unitNumber": 121,
+    "text": "C# Programlama Dilinde bir yıkıcı (destructor) tanımlamak için aşağıdaki işaretlerden hangisi kullanılır?",
+    "options": {
+      "A": "/",
+      "B": "-",
+      "C": "+",
+      "D": "=",
+      "E": "&sim;"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-c55108f05402",
+    "unitNumber": 122,
+    "text": "C# Programlama Dilinde yazılan bir kodun çalışabilmesi için bir derleyeci ile derlenmesi gerekmektedir. Bu derleme işlemi sonucunda ortaya çıkan çıktı hangisinde verilmiştir?",
+    "options": {
+      "A": "Çöp Toplayıcı (GC)",
+      "B": "Metin Kodu",
+      "C": "Ara Dil (Intermediate Language - IL)",
+      "D": "Orçak Çalışma Zamanı (CLR)",
+      "E": "Kaynak Kod"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-afb44c459c19",
+    "unitNumber": 123,
+    "text": "Bir sınıf birden fazla arabirim kullanmak isterse, arabirimlerin ayrımında kullanılan ayraç hangisi olmalıdır?",
+    "options": {
+      "A": ",(virgül)",
+      "B": "# (diyez)",
+      "C": ";(noktalı virgül)",
+      "D": ".(nokta)",
+      "E": ":(iki nokta)"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-c97816c330c9",
+    "unitNumber": 124,
+    "text": "Aşağıda verilenlerden hangisi Birleşik Modelleme Dili (UML) standardına ait bir diyagram türü değildir?",
+    "options": {
+      "A": "Faaliyet Diyagramı",
+      "B": "Kullanım Senaryosu Diyagramı",
+      "C": "Statik Kod Analiz Diyagramı",
+      "D": "Bileşen Diyagramı",
+      "E": "Sıra Diyagramı"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-4299f16998a9",
+    "unitNumber": 125,
+    "text": "Bir nesnenin önceki durumunun kaydedilmesine ve geri yüklenmesine olanak sağlayan davranışsal tasarım deseni aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Yineleyici (Iterator)",
+      "B": "Komut (Command)",
+      "C": "Arabulucu (Mediator)",
+      "D": "Sorumluluklar Zinciri (Chain of Responsibility)",
+      "E": "Hatırlayıcı (Memento)"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-5bd8fc70585d",
+    "unitNumber": 126,
+    "text": "C# Programlama Dilinde bir yapı (struct) tanımı verilmiştir. Bu yapıya ait x değişkenine 10 değerinin atanması aşağıdakilerden hangisinde doğru ifade edilmektedir?",
+    "options": {
+      "A": "Islem islem = new Islem(); x = 10;",
+      "B": "Islem islem = new Islem(); islem.x = 10;",
+      "C": "Islem islem = new Islem(); islem-&gt;x = 10;",
+      "D": "Islem islem = new Islem(); x = \"0\";",
+      "E": "Islem islem = new Islem(); islem.x = \"0\";"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-8d3d8166f037",
+    "unitNumber": 127,
+    "text": "C# Programlama Dilinde hataları yakalamak için kullanılan bloklar aşağıdaki seçeneklerden hangisinde verilmiştir?",
+    "options": {
+      "A": "do while",
+      "B": "for",
+      "C": "try catch finally",
+      "D": "struct",
+      "E": "class"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-be8d971c8436",
+    "unitNumber": 128,
+    "text": "Yukarıda verilen örnek metot tanımı için aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "i opsiyonel bir parametredir.",
+      "B": "b zorunlu bir parametredir.",
+      "C": "a zorunlu bir parametredir.",
+      "D": "Dönüş değeri double türündedir.",
+      "E": "i zorunlu bir parametredir."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-81e10ebfc0aa",
+    "unitNumber": 129,
+    "text": "I- Vekil (Proxy) II- Adaptör (Adapter) III-Tekil (Singleton) Yukarıda verilenlerden hangisi ya da hangileri yapısal tasarım desenidir?",
+    "options": {
+      "A": "I ve II",
+      "B": "Yalnız II",
+      "C": "Yalnız I",
+      "D": "I ve III",
+      "E": "II ve III"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-e93a0aa119c7",
+    "unitNumber": 130,
+    "text": "Mevcut veri yapısı değiştirilmeden, veri yapısını genişletmeye olanak sağlayan tasarım deseni aşağıdakilerden hangisindir?",
+    "options": {
+      "A": "Fabrika (Factory)",
+      "B": "Vekil (Proxy)",
+      "C": "Köprü (Bridge)",
+      "D": "Dekoratör (Decorator)",
+      "E": "Cephe (Facade)"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-0b66f3e32147",
+    "unitNumber": 131,
+    "text": "Simula programlama dili ile ilgili aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Nesneye yönelik geliştirilen ilk programlama dilidir.",
+      "B": "Fonksiyonel bir dildir.",
+      "C": "Simula ile ortaya atılan kavramlar artık geçerliliğini yitirmiştir.",
+      "D": "Microsoft tarafından geliştirilmiştir.",
+      "E": "İlk olarak 1990'larda geliştirilmiştir."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-0e126bf87477",
+    "unitNumber": 132,
+    "text": "I- Oluşturucu (Creational) II- Mantıksal (Logical) III- Davranışsal (Behavioral) Yukarıda verilenlerden hangisi yada hangileri tasarım desenlerinin ana kategorilerindedir?",
+    "options": {
+      "A": "I ve II",
+      "B": "II ve III",
+      "C": "Yalnız II",
+      "D": "I ve III",
+      "E": "Yalnız I"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-86022cdc1dd7",
+    "unitNumber": 133,
+    "text": "C# Programlama Dilinde bir hata (Exception) oluşturmak için hangi anahtar kelime kullanılır?",
+    "options": {
+      "A": "return",
+      "B": "if",
+      "C": "throw",
+      "D": "switch",
+      "E": "for"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-3d55e5d8af3a",
+    "unitNumber": 134,
+    "text": "Mevcut bir nesneyi kopyalayarak yeni bir nesne oluşturma prensibine dayalı tasarım deseni aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Prototip (Prototype)",
+      "B": "Vekil (Proxy)",
+      "C": "Yapıcı (Builder)",
+      "D": "Tekil (Singleton)",
+      "E": "Soyut Fabrika (Abstract Factory)"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-37054b6bb202",
+    "unitNumber": 135,
+    "text": "I- Bir sınıfın sahip olduğu özelliklerin değişime kapalı olmasıdır. II – Bir sınıfın yeni davranışlar eklenerek genişletilmesidir. III – Bağımlılıkların tersine çevrilmesidir. Açık/Kapalı prensibi ile ilgili yukarıda verilenlerden hangisi veya hangileri doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "I ve II",
+      "C": "Yalnız II",
+      "D": "II ve III",
+      "E": "I ve III"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-49aa68c05e96",
+    "unitNumber": 136,
+    "text": "Yukarıdaki örnek kod bloğu derlenme zamanında hata almaktadır. Bu hatanın sebebi aşağıdakilerden hangisinde verilmiştir?",
+    "options": {
+      "A": "Interface anahtar kelimesi hatalıdır",
+      "B": "Metot parametreleri hatalıdır.",
+      "C": "Metot dönüş türü hatalıdır.",
+      "D": "Private olan erişim seviyesi hatalıdır.",
+      "E": "Metot ismi hatalıdır."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-fcf66fddc34f",
+    "unitNumber": 137,
+    "text": "Aşağıda verilenlerden hangisi koleksiyon türlerine örnek değildir?",
+    "options": {
+      "A": "SortedSet",
+      "B": "Stack",
+      "C": "Queue",
+      "D": "Struct",
+      "E": "Dictionary"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-9fe5a761728e",
+    "unitNumber": 138,
+    "text": "Nesneye Yönelik Programlamada bir sınıfın (class) sorumluluklarını sınırlandırarak, bir sınıfa ait birden fazla sorumluluğun tanımlanmasının tasarım sorunlarına sebep olabileceğini belirten ilke aşağıdakilerden hangisinde verilmiştir?",
+    "options": {
+      "A": "Açık/Kapalı Prensibi",
+      "B": "Tek Sorumluluk Prensibi",
+      "C": "Arabirim Ayırma Prensibi",
+      "D": "Bağımlığı Tersine Çevirme Prensibi",
+      "E": "Liskov İkame Prensibi"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-696876b61ae0",
+    "unitNumber": 20,
+    "text": "C# dilinde aynı isimde birden fazla metodun (fonksiyonun) bulunabilmesine, ancak bu metotların aldıkları “parametre sayılarının veya parametre veri tiplerinin” birbirinden farklı olmasına ne ad verilir?",
+    "options": {
+      "A": "Metot Ezme (Method Overriding)",
+      "B": "Metot Aşırı Yükleme (Method Overloading)",
+      "C": "Soyut Metot (Abstract Method)",
+      "D": "Sanal Metot (Virtual Method)",
+      "E": "Kapsülleme (Encapsulation)"
+    },
+    "correctAnswer": "B",
+    "explanation": "Aşırı yükleme (Overloading), bir sınıf içinde aynı isme sahip ama imzaları (parametre türleri veya sayıları) farklı metotlar yazabilme yeteneğidir. Örneğin “Topla(int a, int b)” ve “Topla(double a, double b, double c)” metotları aynı isimdedir ama farklı çalışırlar.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8fc1e8cb0b0f",
+    "unitNumber": 21,
+    "text": "Aşağıdakilerden hangisi Sınıf ve o sınıfa ait bir Nesne örneği olamaz?",
+    "options": {
+      "A": "Sınıf: Canlılar - Nesne: Cansızlar",
+      "B": "Sınıf: Canlılar - Nesne: Hayvanlar",
+      "C": "Sınıf: Taşıt - Nesne: Otobüs",
+      "D": "Sınıf: Taşıt - Nesne: Otomobil",
+      "E": "Sınıf: Canlılar - Nesne: Bitkiler"
+    },
+    "correctAnswer": "A",
+    "explanation": "Sınıf (Class) genel bir şablondur, Nesne (Object) ise o şablona uyan somut bir örnektir. Canlılar sınıfından Hayvanlar veya Bitkiler türeyebilir; Taşıt sınıfından Otobüs veya Otomobil birer nesnedir. Ancak ‘Cansızlar’, ‘Canlılar’ sınıfının bir üyesi veya örneği olamaz (Mantıksal olarak birbirinin zıttıdır).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-74e1f5153c00",
+    "unitNumber": 22,
+    "text": "Aşağıdakilerden hangisi “private” olarak tanımlanan bir sınıf üyesine erişimin nasıl sağlandığını açıklar?",
+    "options": {
+      "A": "Yalnızca diğer sınıflardan erişilebilir.",
+      "B": "Erişim belirteci kullanmadan doğrudan erişilir.",
+      "C": "Herhangi bir yerden erişilebilir, erişim belirteci fark etmez.",
+      "D": "Sadece aynı sınıf içinden erişilebilir.",
+      "E": "Sadece alt sınıf içinden erişilebilir."
+    },
+    "correctAnswer": "D",
+    "explanation": "Nesneye yönelik programlamada erişim belirleyiciler (access modifiers) üyelerin görünürlüğünü belirler. ‘private’ (özel) olarak tanımlanan bir değişkene veya metoda sadece tanımlandığı (bulunduğu) sınıfın kendi içinden doğrudan erişilebilir. Dışarıdan veya kalıtım alan alt sınıflardan (protected değilse) erişilemez.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a5d7363220e5",
+    "unitNumber": 23,
+    "text": "C#’da bir sınıfın çoklu kalıtım yöntemi ile özelliklerini miras alabileceği maksimum üst sınıf sayısı kaçtır?",
+    "options": {
+      "A": "12",
+      "B": "4",
+      "C": "Sonsuz",
+      "D": "2",
+      "E": "1"
+    },
+    "correctAnswer": "E",
+    "explanation": "C# ve Java gibi dillerde ‘Çoklu Sınıf Kalıtımı (Multiple Class Inheritance)’ desteklenmez (Elmas / Diamond problemi nedeniyle). Bir sınıf yalnızca ve en fazla 1 (BİR) adet üst sınıftan (base class) miras alabilir. Çoklu kalıtım davranışı sadece ‘Arayüzler (Interfaces)’ kullanılarak simüle edilebilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5b6653efa056",
+    "unitNumber": 24,
+    "text": "Diğer sınıflar için bir temel oluşturan ve abstract anahtar sözcüğü ile işaretlenmiş üye yöntemleri, özellikleri veya olayları içeren sınıflara verilen ad aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Türetilmiş Sınıf",
+      "B": "Soyut Sınıf",
+      "C": "Temel Sınıf",
+      "D": "Ana Sınıf",
+      "E": "Üst Sınıf"
+    },
+    "correctAnswer": "B",
+    "explanation": "Kendisi doğrudan new kelimesiyle örneklendirilemeyen (nesnesi yaratılamayan), sadece diğer alt sınıflara şablon/temel oluşturmak için tasarlanmış ve içinde ‘abstract’ (gövdesiz) metotlar barındırabilen sınıflara ‘Soyut Sınıf (Abstract Class)’ denir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c71a608a4590",
+    "unitNumber": 25,
+    "text": ".NET destekli dillerde ilgili tiplerin, sınıfların, yapıların, arayüzlerin ve diğer öğelerin gruplandığı konteyner yapıya verilen ad aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Assembly",
+      "B": "Domain Name",
+      "C": "Common Type System",
+      "D": "Application Domain",
+      "E": "Namespace"
+    },
+    "correctAnswer": "E",
+    "explanation": ".NET mimarisinde, binlerce sınıf ve arayüzün birbirine karışmasını engellemek, onları mantıksal klasörler (gruplar) halinde organize etmek ve isim çakışmalarını (name collision) önlemek için kullanılan kapsayıcı / isim uzayı yapılarına ‘Namespace’ (İsim Alanı) denir (Örn: System.IO, System.Data).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-23e3e6e29c29",
+    "unitNumber": 26,
+    "text": "Bir sınıfın başka bir sınıf içerisinde kullanılması anlamına gelen tasarım deseni aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Kalıtım (Inheritance)",
+      "B": "Arayüzler (Interface)",
+      "C": "Mühürlü Sınıf (Sealed Class)",
+      "D": "Bileşim (Composition)",
+      "E": "Çok Biçimlilik (Polymorphism)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Nesneye yönelik tasarımda ‘Is-a (dır/dir)’ ilişkisi Kalıtımı temsil ederken (Otomobil bir Taşıttır); ‘Has-a (sahiptir)’ ilişkisi bir sınıfın içinde başka bir sınıfın nesnesinin özellik (field) olarak kullanılmasını ifade eder (Otomobilin bir Motoru vardır). Bir sınıfın başka sınıfları kapsayarak/içererek yeni bir bütün oluşturmasına ‘Bileşim (Composition)’ veya ‘Aggregation’ denir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-180c24b00493",
+    "unitNumber": 27,
+    "text": "C#’ta soyutlamayı oluşturan iki ana bileşen aşağıdaki seçeneklerden hangisinde doğru verilmiştir?",
+    "options": {
+      "A": "Soyut Sınıflar - Kalıtım",
+      "B": "Arayüzler - Kalıtım",
+      "C": "Soyut Sınıflar - Modelleme",
+      "D": "Soyut Sınıflar - Arayüzler",
+      "E": "Arayüzler - Modelleme"
+    },
+    "correctAnswer": "D",
+    "explanation": "Nesneye yönelik programlamada (OOP) ‘Soyutlama (Abstraction)’ prensibi, karmaşıklığı gizleyip sadece gerekli olan iskeleti göstermek demektir. C# dilinde soyutlamayı teknik olarak gerçekleştiren iki temel yapı ‘Soyut Sınıflar (Abstract Classes)’ ve ‘Arayüzler (Interfaces)’dir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-406468769a31",
+    "unitNumber": 28,
+    "text": "Özellik ve metotlarının başka sınıflar tarafından miras alınması engellenmiş sınıflara verilen ad aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Mükemmel Sınıf",
+      "B": "Sarmalama",
+      "C": "Yok Sayılan Sınıf",
+      "D": "Kapsülleme",
+      "E": "Mühürlü Sınıf"
+    },
+    "correctAnswer": "E",
+    "explanation": "C# dilinde bir sınıfın başına ‘sealed’ (mühürlü) anahtar kelimesi getirilirse, o sınıftan başka bir sınıf türetilemez (kalıtım alınamaz / inheritance yapılamaz). Bu tür katı ve miras vermeyen sınıflara ‘Mühürlü Sınıf (Sealed Class)’ denir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e65daf23ad81",
+    "unitNumber": 29,
+    "text": "Yukarıdaki program çalıştırıldığında ekran çıktısı aşağıdakilerden hangisi olur?",
+    "options": {
+      "A": "5<br>11<br>4",
+      "B": "4<br>11<br>5",
+      "C": "4<br>4<br>11",
+      "D": "11<br>4<br>4",
+      "E": "11<br>4<br>5"
+    },
+    "correctAnswer": "E",
+    "explanation": "Adım adım takip: 1) Main içinde value = 11 atanır ve ekrana basılır. Çıktı1: 11 2) Metoda ‘ref’ (referans) ile gönderilir. Metot içinde number (aslında value’nun kendisi) 4 yapılır ve ekrana basılır. Çıktı2: 4 3) Metottan Main’e dönüldüğünde value artık 4’tür (çünkü ref ile değiştirildi). ‘++value’ işlemi önce değeri 1 artırır (5 yapar), sonra ekrana basar. Çıktı3: 5 Sonuç: 11, 4, 5.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-aa7f19f917db",
+    "unitNumber": 30,
+    "text": "C# dilinde operatör aşırı yükleme ile ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Bir operatör aşırı yüklendiğinde, operatörün işlevselliği belirli bir sınıfın özel gereksinimlerine uyacak şekilde özelleştirilebilir.",
+      "B": "Bir operatör yalnızca bir sınıfın içerisinde değil, aynı zamanda bir metodun içinde de aşırı yüklenebilir.",
+      "C": "Operatör aşırı yükleme, yalnızca matematiksel operatörlerle sınırlıdır ve diğer operatör türlerini kapsamaz.",
+      "D": "Operatör aşırı yükleme, yalnızca yerleşik veri tipleri üzerinde çalışabilir ve kullanıcı tanımlı veri tiplerine uygulanamaz.",
+      "E": "Operatör aşırı yükleme, bir operatörü yeni işlevlerle genişletmek yerine mevcut işlevselliğini kısıtlar."
+    },
+    "correctAnswer": "A",
+    "explanation": "Operatör aşırı yükleme (Operator Overloading), ‘+’ veya ‘==’ gibi standart operatörlerin, kendi oluşturduğumuz özel sınıflar (kullanıcı tanımlı tipler) üzerinde de çalışabilmesini (örneğin iki Vektör veya Karmaşık Sayı nesnesinin toplanmasını) sağlar. Yani operatörün işlevselliği, o sınıfın ihtiyaçlarına göre tamamen ‘özelleştirilir’. A şıkkı bu tanımı tam olarak verir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5455a1682dd2",
+    "unitNumber": 31,
+    "text": "Aşağıdaki erişim belirleyicilerden (Access Modifiers) hangisi, tanımlandığı üyeye sadece o sınıfın içinden ve o sınıftan miras alan (türeyen) “alt sınıflardan” erişilmesine izin verirken, dış dünyadan (başka sınıflardan) erişimi engeller?",
+    "options": {
+      "A": "public",
+      "B": "private",
+      "C": "internal",
+      "D": "protected",
+      "E": "sealed"
+    },
+    "correctAnswer": "D",
+    "explanation": "“protected” (korumalı) erişim belirleyicisi, “private” gibi dışarıdan erişimi tamamen kapatır. Ancak private’tan farklı olarak, o sınıftan kalıtım (inheritance) alan alt sınıfların (child classes) bu değişkene/metoda serbestçe erişmesine izin verir. Aile içi bir mirastır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-2b6d28128665",
+    "unitNumber": 32,
+    "text": "Bir sınıf içindeki değişken veya metodun başına “static” anahtar kelimesi eklendiğinde, bu durum değişkenin veya metodun bellekteki davranışını nasıl etkiler?",
+    "options": {
+      "A": "Değişken sadece o metoda özel olur ve dışarıdan erişilemez.",
+      "B": "Metot alt sınıflar tarafından override edilemez hale gelir.",
+      "C": "Metoda veya değişkene sınıfın bir nesnesini (örneğini) oluşturmadan doğrudan \"SınıfAdı.MetotAdı\" şeklinde erişilebilir.",
+      "D": "Değişken program kapandığında bellekte kalmaya devam eder.",
+      "E": "Metodun yalnızca constructor (yapıcı) içinde çalışmasına izin verilir."
+    },
+    "correctAnswer": "C",
+    "explanation": "“static” olarak işaretlenen üyeler (metot, özellik) nesneye değil, doğrudan sınıfın kendisine aittir. Bu yüzden “new” kelimesiyle nesne oluşturmaya gerek kalmadan “Math.Pow()” veya “Console.WriteLine()” gibi SınıfIsmi üzerinden doğrudan çağrılabilirler.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-677f4dc4b0ec",
+    "unitNumber": 33,
+    "text": "Nesneye Yönelik Programlamanın (OOP) dört temel prensibinden biri olan ve bir nesnenin iç detaylarını (değişkenlerini) dışarıdan gizleyerek, bu değişkenlere sadece “get” ve “set” gibi kontrollü metotlar (properties) aracılığıyla erişilmesini sağlayan prensip hangisidir?",
+    "options": {
+      "A": "Çok Biçimlilik (Polymorphism)",
+      "B": "Soyutlama (Abstraction)",
+      "C": "Kalıtım (Inheritance)",
+      "D": "Kapsülleme (Sarmalama / Encapsulation)",
+      "E": "Aşırı Yükleme (Overloading)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Kapsülleme, nesnenin değişkenlerini “private” yaparak dış dünyadan (diğer sınıflardan) saklamak ve bu değişkenleri okumak/yazmak için kontrollü özellikler (Property / Getter-Setter) tanımlamaktır. Bu sayede hatalı veri girişi engellenir ve veri güvenliği sağlanır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-409695648481",
+    "unitNumber": 34,
+    "text": "C# dilinde bir sınıfın yapıcı metodu (constructor) çağrılma zamanı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Sınıfın ilk kez tanımlandığı anda",
+      "B": "Bir sınıfın bir metodu çağırıldığında",
+      "C": "Bir sınıf, new anahtar sözcüğü kullanarak bellekte örneklendiğinde",
+      "D": "Sınıf içinde hiçbir değişken tanımlanmadığında",
+      "E": "Sınıfın yıkıcı metodu (destructor) çalıştıktan sonra"
+    },
+    "correctAnswer": "C",
+    "explanation": "Yapıcı metotlar (constructors), bir sınıftan nesne üretilirken çalışan ilk metotlardır. C# dilinde bir sınıftan ‘new’ anahtar kelimesi kullanılarak yeni bir nesne (instance/örnek) oluşturulduğu (bellekte yer ayrıldığı) anda yapıcı metot otomatik olarak çağrılır ve çalışır (ilk değer atamaları yapılır).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e7ef3345015b",
+    "unitNumber": 35,
+    "text": "Aşağıdaki hangi operatörün aşırı yüklenmesinde, zıt anlamlı operatör ile her ikisinin de aynı anda yüklenmiş olması zorunluluğu yoktur?",
+    "options": {
+      "A": "&gt;=",
+      "B": "+",
+      "C": "!=",
+      "D": "==",
+      "E": "&lt;"
+    },
+    "correctAnswer": "B",
+    "explanation": "C# dilinde karşılaştırma operatörleri aşırı yüklenirken (overloading) mutlaka çift olarak (zıt anlamlılarıyla birlikte) yüklenmek zorundadır. Yani ‘==’ yüklenirse ‘!=’ de yüklenmek zorundadır; ‘>’ yüklenirse ‘<‘ de yüklenmek zorundadır. Ancak aritmetik operatörler (örneğin toplama ‘+’ veya çıkarma ‘-‘) tek başına aşırı yüklenebilir, zıttını (çıkarma) yüklemek zorunlu değildir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-9b7ee4d565f8",
+    "unitNumber": 36,
+    "text": "UML’de arayüzler ile sınıflar arasındaki ilişkiyi modellemek için kullanılan ve kesikli çizgi ile ifade edilen ilişki türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "İlişki (Association)",
+      "B": "Gerçekleştirme (Realization)",
+      "C": "Dönüşlü (Reflexive)",
+      "D": "Genelleme (Generalization)",
+      "E": "Kalıtım (Inheritance)"
+    },
+    "correctAnswer": "B",
+    "explanation": "UML diyagramlarında, bir sınıfın (Class) bir arayüzü (Interface) uygulamasını (implement etmesini) göstermek için ucu boş üçgen olan ‘kesikli çizgi’ kullanılır. Bu ilişki türüne ‘Gerçekleştirme (Realization / Implementation)’ adı verilir. (Kalıtım/Genelleme ise ucu boş üçgen ve düz çizgi ile gösterilir).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-6fc8f59989ad",
+    "unitNumber": 37,
+    "text": "Bir metoda parametre olarak, değişkenin değeri yerine bellek adresini aktarmak için kullanılan anahtar sözcükler aşağıdakilerden hangisinde doğru verilmiştir?",
+    "options": {
+      "A": "out-bool",
+      "B": "out-double",
+      "C": "ref-bool",
+      "D": "ref-out",
+      "E": "ref-float"
+    },
+    "correctAnswer": "D",
+    "explanation": "C#’ta metotlara değişkenler varsayılan olarak değerleriyle (pass by value) aktarılır. Ancak değişkenin referansını (bellek adresini) aktarmak (pass by reference) istersek, metot tanımlamasında ve çağrısında ‘ref’ veya ‘out’ anahtar kelimeleri kullanılır. Bu sayede metot içinde yapılan değişiklikler orijinal değişkeni de etkiler.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c240cb22d74a",
+    "unitNumber": 38,
+    "text": "Yukarıdaki kod parçası çalıştırıldığında ekran çıktısı aşağıdakilerden hangisi olur?",
+    "options": {
+      "A": "x=6, y=10, z=17, w=20, f=4.8",
+      "B": "x=6, y=10, z=17, w=20, f=3.8",
+      "C": "x=6, y=9, z=17, w=21, f=5.8",
+      "D": "x=6, y=11, z=16, w=20, f=4.8",
+      "E": "x=5, y=10, z=18, w=20, f=4.8"
+    },
+    "correctAnswer": "A",
+    "explanation": "Değişkenler: x=9, y=5, z=21, w=18, f=3.8 İşlemler: ++x; (Önce artır) -> x = 10 y++; (Sonra artır, tek başına olduğu için y hemen 6 olur) –w–; (Bu satırda muhtemelen PDF’te bir dizgi hatası var. Sınav mantığında ‘–z;’ ve ‘w–;’ yan yana dizilmişse z=20, w=17 olur. Ancak formatın A şıkkına uyması için ‘–z; ++w;’ işlemi olduğu varsayılır. WriteLine parametreleri {0}=y, {1}=x, {2}=w, {3}=z, {4}=f’dir. Şıklardaki dizilim WriteLine içindeki string formatının sonucunu yansıtmaktadır: y=6, x=10, w=17 (veya 20), z=17, f=4.8.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-0137911f1b7a",
+    "unitNumber": 39,
+    "text": "Aşağıdakilerden hangisi değerlerin kendileri yerine bellekteki konumlarına işaret eden veri türlerine bir örnek olabilir?",
+    "options": {
+      "A": "float",
+      "B": "int",
+      "C": "string",
+      "D": "byte",
+      "E": "bool"
+    },
+    "correctAnswer": "C",
+    "explanation": "C#’ta veri tipleri Değer Tipleri (Value Types) ve Referans Tipleri (Reference Types) olarak ikiye ayrılır. Değer tipleri (int, float, byte, bool) veriyi doğrudan Stack bellekte tutar. Ancak Referans tipleri veriyi Heap bellekte tutar ve Stack’te sadece o verinin ‘konumunu/adresini (referansını)’ saklar. ‘String’, C#’ta bir referans tipidir (Reference Type).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-abe825463238",
+    "unitNumber": 40,
+    "text": "Yukarıdaki C# kodu çalıştırıldığında çıktısı ne olacaktır?",
+    "options": {
+      "A": "Canlı nefes alıyor.",
+      "B": "İnsan nefes alıyor.",
+      "C": "Hata: Virtual metod base sınıfta bulunmuyor.",
+      "D": "Hata: Canli sınıfı override edilmediği için çalıştırılamaz.",
+      "E": "Canlı nefes alıyor. İnsan nefes alıyor."
+    },
+    "correctAnswer": "B",
+    "explanation": "C#’ta çok biçimlilik (polymorphism) örneğidir. ‘Canli c = new Insan();’ satırında, referans tipi ‘Canli’ olsa da, bellekte oluşturulan gerçek nesne ‘Insan’dır. Metot ‘virtual’ (sanal) ve ‘override’ (ezilmiş) olduğu için geç bağlama (late binding) çalışır ve her zaman nesnenin gerçek tipindeki (Insan sınıfındaki) metot çalışır. Çıktı: ‘İnsan nefes alıyor.’ olur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-054fd906ef35",
+    "unitNumber": 41,
+    "text": "C# dilinde hataların ve istisnaların (Exceptions) çalışma zamanında programı çökertmesini engellemek ve hatayı güvenli bir şekilde yönetmek için kullanılan temel yapı (blok) aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "if - else blokları",
+      "B": "switch - case blokları",
+      "C": "for - foreach döngüleri",
+      "D": "do - while döngüleri",
+      "E": "try - catch - finally blokları"
+    },
+    "correctAnswer": "E",
+    "explanation": "Nesne yönelimli programlamada “İstisna Yönetimi (Exception Handling)” çok kritiktir. Hata verme ihtimali olan kodlar “try” bloğu içine yazılır, bir hata oluştuğunda programın çökmesi engellenir ve “catch” bloğu hatayı yakalar. “finally” bloğu ise hata olsa da olmasa da mutlaka çalıştırılması gereken temizlik (bağlantı kapatma vb.) kodları için kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a1f9b837f230",
+    "unitNumber": 42,
+    "text": "Bir sınıf birden fazla arayüzü uygulayarak Nesneye Yönelik Programlamanın aşağıdaki hangi özelliğinin yerine geçebilir?",
+    "options": {
+      "A": "Kapsülleme",
+      "B": "Sarmalama",
+      "C": "Çoklu Kalıtım",
+      "D": "Soyutlama",
+      "E": "Çok Biçimlilik"
+    },
+    "correctAnswer": "C",
+    "explanation": "9. soruda açıklandığı gibi C#’ta bir sınıf birden fazla sınıftan miras alamaz (Çoklu Kalıtım yoktur). Ancak bir sınıf birden fazla ‘Arayüzü (Interface)’ virgülle ayırarak implement edebilir (uygulayabilir). Bu yapı, dilde bulunmayan ‘Çoklu Kalıtım (Multiple Inheritance)’ özelliğinin simüle edilmesini ve eksikliğinin giderilmesini sağlar.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f481784e8d3f",
+    "unitNumber": 43,
+    "text": "C# dilinde “this” anahtar sözcüğü aşağıdaki durumlardan hangisinde kullanılır?",
+    "options": {
+      "A": "Aynı isimde yerel ve sınıf değişkenleri olduğunda sınıf değişkenine erişmek için",
+      "B": "Sınıfın soyut metotlarına erişmek için",
+      "C": "Sınıfın tüm statik üyelerine erişmek için",
+      "D": "Başka bir sınıfın üyelerine erişmek için",
+      "E": "Sınıfın yıkıcı metodunu çağırmak için"
+    },
+    "correctAnswer": "A",
+    "explanation": "Nesne yönelimli programlamada ‘this’ kelimesi, o an üzerinde çalışılan mevcut nesneyi (current object) temsil eder. En yaygın kullanım alanı; bir metodun parametre ismi ile sınıfın alan (field) ismi aynı olduğunda isim çakışmasını (shadowing) çözmek ve “bu sınıfın değişkenine” (this.degisken = degisken) atıfta bulunmaktır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d907ce314cda",
+    "unitNumber": 46,
+    "text": "C# Programlama Dilinde genel hata sınıfı aşağıdakilerden hangisinde verilmiştir?",
+    "options": {
+      "A": "Collections",
+      "B": "Generics",
+      "C": "DateTime",
+      "D": "Math",
+      "E": "Exception"
+    },
+    "correctAnswer": "E",
+    "explanation": "C# dilinde (ve .NET çatısında), programın çalışması sırasında meydana gelen tüm hatalar veya anormal durumlar “istisna” (Exception) olarak adlandırılır. Tüm hata sınıfları (DivideByZeroException, NullReferenceException vb.) System.Exception adlı bu genel (temel) sınıftan türer.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-80a414ffc26a",
+    "unitNumber": 47,
+    "text": "Aşağıda verilenlerden hangisi koleksiyon türlerine örnektir?",
+    "options": {
+      "A": "String",
+      "B": "Int",
+      "C": "Class",
+      "D": "HashSet",
+      "E": "Array"
+    },
+    "correctAnswer": "D",
+    "explanation": "Koleksiyon (Collection) türleri, birden fazla veriyi bir arada tutan gelişmiş veri yapılarıdır. Array (Dizi) temel bir yapıdır. String ve Int ilkel/temel veri türleridir. HashSet, List, Dictionary gibi yapılar C#’taki gelişmiş koleksiyon türlerine örnektir. HashSet, matematiksel küme mantığıyla çalışan, tekrarsız elemanları tutan bir koleksiyondur.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ef99ce3d7ecb",
+    "unitNumber": 48,
+    "text": "I. Tekil (Singleton) II. Fabrika (Factory) III. Adaptör (Adapter) IV. Gözlemci (Observer). Yukarıda verilenlerden hangisi yada hangileri Oluşturucu (Creational) Tasarım Deseni kategorisine özgüdür?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "I ve II",
+      "C": "Yalnız II",
+      "D": "I ve IV",
+      "E": "I, II, III, IV"
+    },
+    "correctAnswer": "B",
+    "explanation": "Tasarım desenleri 3’e ayrılır: Oluşturucu (Creational): Nesne yaratma mekanizmalarıyla ilgilenir. Örnek: Tekil (Singleton), Fabrika (Factory). Yapısal (Structural): Örnek: Adaptör (Adapter). Davranışsal (Behavioral): Örnek: Gözlemci (Observer). Soruda Oluşturucu desenler sorulduğu için doğru cevap I ve II’dir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ff7ab458d215",
+    "unitNumber": 49,
+    "text": "Yukarda verilen metot, f(9) değeri için çağrıldığında nihai sonuç değeri kaç olur?",
+    "options": {
+      "A": "13",
+      "B": "43",
+      "C": "24",
+      "D": "34",
+      "E": "54"
+    },
+    "correctAnswer": "D",
+    "explanation": "Kod, return f(n-1) f(n-2) ifadesini içerir. Bu, Fibonacci dizisinin özyinelemeli tanımıdır. <br>f(0)=0, f(1)=1, f(2)=1, f(3)=2, f(4)=3, f(5)=5, f(6)=8, f(7)=13, f(8)=21.<br>f(9) = f(8) f(7) = 21 13 = 34.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-0c87a2b85ab7",
+    "unitNumber": 50,
+    "text": "C# Programlama Dilinde double türündeki bir değişkenin boyutu kaç byte’tır?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "4",
+      "D": "8",
+      "E": "16"
+    },
+    "correctAnswer": "D",
+    "explanation": "C# veri türlerinde: int (tamsayı) 4 byte yer kaplar. double (çift duyarlıklı ondalıklı sayı) ise int’in iki katı, yani 8 byte yer kaplar.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6666c225e608",
+    "unitNumber": 51,
+    "text": "Yukarda verilen kod bloğu çalıştırıldığında üretilen çıktı aşağıdakilerden hangisinde verilmiştir?",
+    "options": {
+      "A": "16, 15, 39, 6.5, 6.5",
+      "B": "16, 11, 39, 6, 6",
+      "C": "16, 11, 133, 6.5, 6.5",
+      "D": "16, 11, 39, 6.5, 6.5",
+      "E": "16, 11, 39, 6, 6.5"
+    },
+    "correctAnswer": "E",
+    "explanation": "C#’ta işlemlerin sonuçları:<br>13 3 = 16<br>13 – 2 = 11<br>13 * 3 = 39<br>13 / 2 = İki tamsayının (int) bölünmesi tamsayı (int) sonucunu verir: 6<br>13.0 / 2.0 = İki ondalıklı sayının (double) bölünmesi ondalıklı (double) sonuç verir: 6.5.<br>Çıktı: 16,11,39,6,6.5.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-21a8dfd85ef5",
+    "unitNumber": 52,
+    "text": "Aşağıdakilerden hangisi Nesneye Yönelik Tasarım Prensiplerinden (SOLID prensipleri) biri değildir?",
+    "options": {
+      "A": "Liskov İkame Prensibi (Liskov Substitution Principle)",
+      "B": "Tek Sorumluluk Prensibi (Single Responsibility Principle)",
+      "C": "Kaynak Kod Yönetim Prensibi",
+      "D": "Açık Kapalı Prensibi (Open/Close Principle)",
+      "E": "Arabirim Ayırma Prensibi (Interface Segregation Principle)"
+    },
+    "correctAnswer": "C",
+    "explanation": "SOLID, Nesneye Yönelik Programlamanın 5 temel prensibinin baş harflerinden oluşur: Single Responsibility (Tek Sorumluluk), Open/Close (Açık/Kapalı), Liskov Substitution (Liskov İkame), Interface Segregation (Arabirim Ayırma) ve Dependency Inversion (Bağımlılığı Tersine Çevirme). “Kaynak Kod Yönetim Prensibi” diye bir SOLID prensibi yoktur.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-bac33470f235",
+    "unitNumber": 53,
+    "text": "……. takip edilmekte olan bir nesnede meydana gelen gelişmelerden diğer nesnelerin haberdar edildiği bir davranışsal tasarım desenidir. Yukarıdaki ifadede boş bırakılan yere aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Gözlemci Tasarım Deseni",
+      "B": "Tekil Tasarım Deseni",
+      "C": "Vekil Tasarım Deseni",
+      "D": "Köprü Tasarım Deseni",
+      "E": "Fabrika Tasarım Deseni"
+    },
+    "correctAnswer": "A",
+    "explanation": "“Gözlemci” (Observer) tasarım deseni, bir nesnenin (Subject/Takip Edilen) durumunda bir değişiklik olduğunda, o nesneye abone olan/bağımlı olan diğer nesnelerin (Observers/Gözlemciler) otomatik olarak bilgilendirilmesini (haberdar edilmesini) sağlayan davranışsal bir desendir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7ba896ef4766",
+    "unitNumber": 54,
+    "text": "Yukarıda verilen IGenelIslemler arabiriminin, IDosyaIslem ve IGrafikIslem olarak yeniden yazılmasına karşılık gelen tasarım prensibi aşağıdakilerden hangisinde verilmiştir?",
+    "options": {
+      "A": "Arabirim Ayırma Prensibi (Interface Segregation Principle)",
+      "B": "Liskov İkame Prensibi (Liskov Substitution Principle)",
+      "C": "Açık/Kapalı Prensibi (Open/Close Principle)",
+      "D": "Bağımlılığı Tersine Çevirme Prensibi (Dependency Inversion Principle)",
+      "E": "Tek Sorumluluk Prensibi (Single Responsibility Principle)"
+    },
+    "correctAnswer": "A",
+    "explanation": "SOLID prensiplerinden “I” harfine karşılık gelen “Arabirim Ayırma Prensibi”, büyük ve “şişman” arabirimlerin (IGenelIslemler gibi) bölünmesini savunur. Kodda, bu büyük arabirim, birbiriyle ilgisiz görevleri (dosya işlemleri ve grafik işlemleri) ayırarak iki küçük ve daha spesifik arabirime (IDosyaIslem, IGrafikIslem) bölünmüştür. Bu, tam olarak bu prensibin uygulanmasıdır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d428e63d539c",
+    "unitNumber": 55,
+    "text": "C# dilinde sıfıra bölme işlemi sırasında oluşan hata aşağıdakilerden hangisinde verilmiştir?",
+    "options": {
+      "A": "ApplicationException",
+      "B": "StackOverflowException",
+      "C": "DivideByZeroException",
+      "D": "EntryPointNotFoundException",
+      "E": "EndOfStreamException"
+    },
+    "correctAnswer": "C",
+    "explanation": "Programlama dillerinde, bir sayının sıfıra bölünmeye çalışılması matematiksel bir tanımsızlık oluşturur. C# dilinde bu durum gerçekleştiğinde, sistem System.DivideByZeroException (Sıfıra Bölme Hatası) türünde bir istisna (hata) fırlatır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-454e3975f432",
+    "unitNumber": 56,
+    "text": "Bridge (Köprü) Tasarım Deseninin temel kullanım amacı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Sınıflar arasında doğrudan bir bağlantı kurarak esneklik sağlamayı amaçlar.",
+      "B": "Soyutlama yerine somutlaştırmayı amaçlar.",
+      "C": "Nesnelerin davranışlarını sabit (statik) bir şekilde tutmayı amaçlar.",
+      "D": "Tüm sınıfların bir arada kullanılabilmesini sağlamayı amaçlar.",
+      "E": "İki ayrı sınıf hiyerarşisini birbirinden ayırarak bağımlılıkları azaltmayı amaçlar."
+    },
+    "correctAnswer": "E",
+    "explanation": "Bridge (Köprü) deseni, bir sınıfın “Soyutlama” (Abstraction) kısmını ve “Uygulama” (Implementation) kısmını iki ayrı hiyerarşi olarak ayırır. Bu sayede, bu iki hiyerarşi birbirine sıkı sıkıya bağlı olmadan, bağımsız olarak geliştirilebilir ve genişletilebilir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e0e5d9c88d53",
+    "unitNumber": 57,
+    "text": "Aşağıda verilenlerden hangisi bir Tasarım Deseni kategorisidir?",
+    "options": {
+      "A": "Fabrika (Factory)",
+      "B": "Vekil (Proxy)",
+      "C": "Davraışsal (Behavioral)",
+      "D": "Yapıcı (Builder)",
+      "E": "Soyut Fabrika (Abstract Factory)"
+    },
+    "correctAnswer": "C",
+    "explanation": "Tasarım Desenleri (Design Patterns) üç ana kategoriye ayrılır: 1) Oluşturucu (Creational), 2) Yapısal (Structural) ve 3) Davranışsal (Behavioral). Diğer şıklar bu kategorilerin altındaki spesifik desen isimleridir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b1f07e9145f4",
+    "unitNumber": 59,
+    "text": "C# programalma dili için verilen erişim denetleyicilerinin türetilmiş bir sınıfta erişim ile ilgili aşağıdakilerden hangisi vanıştır?",
+    "options": {
+      "A": "private olan üyeler her yerden erişilir.",
+      "B": "private olan üyeler sadece kendi sınıfından erişilir.",
+      "C": "Özellikler ve metotlar public olan tanımlanabilir.",
+      "D": "protected olan üyeler kendisi ve sadece türetilen sınıflarda erişilir.",
+      "E": "public olan üyeler kendisi ve türetilmiş sınıflarda ve türetilmiş sınıfların public arayüzleriden erişilebilir."
+    },
+    "correctAnswer": "A",
+    "explanation": "Erişim denetleyicilerinden private (özel), bir üyenin (metot veya değişken) sadece tanımlandığı sınıf içerisinden erişilebilir olmasını sağlar. Türetilmiş sınıflar veya dışarıdan herhangi bir kod bu üyeye erişemez. “Her yerden erişilir” ifadesi public için geçerlidir ve private için tamamen yanlıştır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-71c3356cf980",
+    "unitNumber": 60,
+    "text": "Yukarda görseli verilen UML diyagramının ismi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Sınıf Diyagramı",
+      "B": "Kullanım Senaryosu Diyagramı",
+      "C": "Bileşen Diyagramı",
+      "D": "Sıra Diyagramı",
+      "E": "Faaliyet Diyagramı"
+    },
+    "correctAnswer": "B",
+    "explanation": "Görselde, bir “Kullanıcı” (Actor – Çöp Adam simgesi) ile sistemin sunduğu “Ürünleri Listele”, “Ürün Detayı” ve “Ürün Karşılaştır” (Use Case – Elips simgeleri) fonksiyonel eylemleri arasındaki ilişki gösterilmektedir. Bu, UML’de “Kullanım Senaryosu Diyagramı” (Use Case Diagram) olarak adlandırılır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-3467df2ad482",
+    "unitNumber": 61,
+    "text": "Bir yazılım projesinin tasarımında, fonksiyonel ihtiyaçlarının belirlendiği ve kayıt altına alınarak dokümantasyonun yapıldığı diyagramın ismi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Bileşen Diyagramı",
+      "B": "Kullanım Senaryosu Diyagramı",
+      "C": "Dağıtım Diyagramı",
+      "D": "Faaliyet Diyagramı",
+      "E": "Sınıf Diyagramı"
+    },
+    "correctAnswer": "B",
+    "explanation": "UML diyagramlarından “Kullanım Senaryosu Diyagramı” (Use Case Diagram), bir yazılım sisteminin sunması gereken “fonksiyonel ihtiyaçları” aktör (kullanıcı) ve sistem etkileşimi (“kullanım senaryoları”) açısından gösteren diyagramdır. Sistemin “ne yapması gerektiğini” tanımlar.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-11be6d47dc41",
+    "unitNumber": 62,
+    "text": "……… benzer türdeki nesnelerin parça-bütün ilişkisi içinde bir ağaç yapısı ile oluşturmaya ve tek bir arayüzden ulaşılmasına olanak sağlar. Yukarıda tanımı verilen tasarım deseni için boş bırakılan yere aşağıdakilerden hangi ifade gelmelidir?",
+    "options": {
+      "A": "Yapısal (Structural)",
+      "B": "Oluşturucu (Creational)",
+      "C": "Fabrika (Factory)",
+      "D": "Yapıcı (Builder)",
+      "E": "Bileşik (Composite)"
+    },
+    "correctAnswer": "E",
+    "explanation": "“Bileşik” (Composite) tasarım deseni, nesneleri hiyerarşik bir “ağaç yapısı” (tree structure) içinde düzenlemeye yarar. Bu desen sayesinde, hem tekil nesneler (yapraklar) hem de bu nesneleri içeren gruplar (dallar/bileşikler) aynı arayüzü kullanarak (“parça-bütün” ilişkisi) yönetilebilir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-51dc82298be6",
+    "unitNumber": 63,
+    "text": "Arabirimler (Interfaces) ile ilgili aşağıdaki verilen ifadelerden hangisi yanıştır?",
+    "options": {
+      "A": "Arabirim içinde tanımlanan tüm üyelerin erişim seviyesi public'tir.",
+      "B": "Arabirim tanımı yapılırken interface anahtar kelimesi kullanılır.",
+      "C": "Yapılarda (struct) arabirim kullanmak mümkün değildir.",
+      "D": "Bir arabirimi kullanmak için sınıflara (class) ihtiyaç duyarız.",
+      "E": "Bir sınıf (class) birden fazla arabirim kullanabilir."
+    },
+    "correctAnswer": "C",
+    "explanation": "C# dilinde, hem Sınıflar (Class) hem de Yapılar (Struct) arabirimleri (interface) uygulayabilir. Bir yapının (struct) arabirim kullanması mümkündür. Bu nedenle C şıkkındaki ifade yanlıştır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ca1507735579",
+    "unitNumber": 64,
+    "text": "Bir sınıfa (class) ait metotların farklı şekillerde kullanılmasını sağlayan yöntemin ismi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Erişim Denetleyiciler (Access Modifiers)",
+      "B": "Çok Biçimlilik (Polymorphism)",
+      "C": "Arabirim (Interface)",
+      "D": "Yineleyici (Iterator)",
+      "E": "Hata Yakalama (Exception Handling)"
+    },
+    "correctAnswer": "B",
+    "explanation": "“Çok Biçimlilik” (Polimorfizm), Nesneye Yönelik Programlamanın temel direklerinden biridir. Bir metodun (örn: AlanHesapla()) farklı alt sınıflarda (kare, daire) farklı şekillerde uygulanabilmesini (override edilmesi) veya aynı sınıfta farklı parametrelerle (overload edilmesi) kullanılabilmesini ifade eder.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ddc742c64c34",
+    "unitNumber": 65,
+    "text": "Yukarda verilen örnek C# kod bloğunda yer alan “public Okul()” nesneye yönelik programlada hangi kavramı ifade eder?",
+    "options": {
+      "A": "Hata Yakalama (Exception Handling)",
+      "B": "Yıkıcı (Destructor)",
+      "C": "Kalıtım (Inheritance)",
+      "D": "Yapıcı (Constructor)",
+      "E": "Hata Ayıklama (Debug)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Nesneye yönelik programlamada, sınıf (class) ile aynı isme sahip olan ve new anahtar kelimesi ile o sınıftan bir nesne oluşturulduğunda otomatik olarak çalışan özel metoda “Yapıcı Metot” (Constructor) denir. public Okul() ifadesi, Okul sınıfının yapıcı metodudur.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-387948b89ef1",
+    "unitNumber": 66,
+    "text": "C# programlama dilinde aşağıdaki verilen değişken tanımlarından hangisi yanlıştır?",
+    "options": {
+      "A": "uint yas;",
+      "B": "bool isaret;",
+      "C": "string soyad;",
+      "D": "long 0boyut;",
+      "E": "int ad;"
+    },
+    "correctAnswer": "D",
+    "explanation": "Değişken isimleri (identifiers) sayılarla başlayamaz. **long 0boyut** tanımı, değişken adının rakamla başladığı için yanlıştır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e664952fd2ee",
+    "unitNumber": 67,
+    "text": "Aşağıda verilen metot tanımlarından hangisi yanlıştır?",
+    "options": {
+      "A": "int topla(double a, double b)",
+      "B": "void topla(int a, int b)",
+      "C": "int topla (float a, float b)",
+      "D": "int+topla(int a, int b)",
+      "E": "int topla(int a, int b)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Metot tanımlamasında, metot adı içinde **$+$** gibi bir operatör kullanılamaz. Metot adları harf veya alt çizgi ile başlamalıdır. Bu nedenle D şıkkındaki tanımlama yanlıştır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ae3e4c8e2358",
+    "unitNumber": 68,
+    "text": "C# programlama dilinde bir sınıf tanımlamak için aşağıdaki anahtar kelimelerden hangisi kullanılır?",
+    "options": {
+      "A": "object",
+      "B": "class",
+      "C": "using",
+      "D": "interface",
+      "E": "namespace"
+    },
+    "correctAnswer": "B",
+    "explanation": "C# programlama dilinde yeni bir sınıf (class) tanımlamak için **class** anahtar kelimesi kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9cdb10de2d75",
+    "unitNumber": 69,
+    "text": "C# programlama dilinde yer alan “Yapı (Struct) Kavramı” için aşağıda verilen ifadelerden hangisi yanlıştır?",
+    "options": {
+      "A": "Nesne t&uuml;retilebilir.",
+      "B": "Yapıcı (constructor) tanımlanabilir.",
+      "C": "Yıkıcı (destructor) tanımlanabilir.",
+      "D": "Metot tanımlanabilir.",
+      "E": "Değer t&uuml;r&uuml;ndedirler."
+    },
+    "correctAnswer": "C",
+    "explanation": "C# dilinde **Yapılar (Struct)** `class`’lar gibi metot ve yapıcı tanımlayabilir (B, D), ancak **yıkıcı (destructor)** tanımlanamaz. Struct’lar değer türündedirler (E).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-19572abe93c2",
+    "unitNumber": 70,
+    "text": "I – Sınıflar (class) referans türündedirler II – Yapılar (struct) değer türündedirler. III – Sınıf (class) ve yapı (struct) arasında bir fark yoktur. C# programlama dilinde sınıf (class) ve yapı (struct) ile ilgili yukarıda verilen ifadelerden hangisi ya da hangileri doğrudur?",
+    "options": {
+      "A": "I ve II",
+      "B": "Yalnız II",
+      "C": "I ve III",
+      "D": "Yalnız I",
+      "E": "I, II, III"
+    },
+    "correctAnswer": "A",
+    "explanation": "**Sınıflar (I)** bellekte referans tipi, **Yapılar (II)** ise değer tipi olarak tutulur. Bu temel farktan dolayı (III) yanlıştır. Dolayısıyla **I ve II** doğrudur.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5e61c3340253",
+    "unitNumber": 71,
+    "text": "C# programlama dilinde sadece bir satır yorum satırına alınmak istenirse aşağıdakilerden hangisini kullanılır?",
+    "options": {
+      "A": "*/",
+      "B": "\"",
+      "C": "/*",
+      "D": "#",
+      "E": "//"
+    },
+    "correctAnswer": "E",
+    "explanation": "C# programlama dilinde tek bir satırı yorum satırı haline getirmek için // sembolü kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-bd5d66188fa4",
+    "unitNumber": 72,
+    "text": "C# Programlama Dilinde bir sınıftan yeni bir nesne türetmek isteniyorsa hangi anahtar kelime kullanılır?",
+    "options": {
+      "A": "class",
+      "B": "struct",
+      "C": "start",
+      "D": "new",
+      "E": "static"
+    },
+    "correctAnswer": "D",
+    "explanation": "Bir sınıftan bellekte yer ayırarak yeni bir nesne (object) örneği oluşturmak (türetmek) için **new** anahtar kelimesi kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8d7e06f4aceb",
+    "unitNumber": 73,
+    "text": "Console.Write(13+3); Console.Write(“,”); Console.Write(13-2); Console.Write(“,”); Console.Write(13*3); Console.Write(“,”); Console.Write(13/2); Console.Write(“,”); Console.Write(13.0/2.0); Console.Write(“,”); Yukarda verilen kod bloğu çalıştırıldığında üretilen çıktı aşağıdakilerden hangisinde verilmiştir?",
+    "options": {
+      "A": "16, 11, 39, 6.5, 6.5",
+      "B": "16, 11, 133, 6.5, 6.5",
+      "C": "16, 11, 39, 6, 6",
+      "D": "16, 11, 39, 6, 6.5",
+      "E": "16, 15, 39, 6.5, 6.5"
+    },
+    "correctAnswer": "D",
+    "explanation": "1. $13 3$ = **16**. 2. $13-2$ = **11**. 3. $13 times 3$ = **39**. 4. $13/2$ (int bölme) = **6**. 5. $13.0/2.0$ (double bölme) = **6.5**. Çıktı: 16, 11, 39, 6, 6.5",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f96f0fde55a2",
+    "unitNumber": 74,
+    "text": "static int degerArtir(int a) { a += 1; return a; } int a = 11; int b = degerArtir(a); Console.Write(a); Console.Write(“,”); Console.Write(b); Yukarıda bir fonksiyon ve bu fonksiyon çağrısını çalıştıran ifadeler verilmiştir. Kod bloğunun tamamı çalıştırıldığında üretilen çıktı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "13",
+      "B": "11",
+      "C": "10",
+      "D": "12",
+      "E": "14"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6e50d5715dd8",
+    "unitNumber": 75,
+    "text": ".Net Core platformu için kullanılan çapraz platform (cross platform) ifadesi hangi anlama gelmektedir?",
+    "options": {
+      "A": "Kodlar kendi i&ccedil;inde &ccedil;aprazlanır.",
+      "B": "Sadece Windows işletim sisteminde &ccedil;alışır.",
+      "C": "Sadece macOS işletim sisteminde &ccedil;alışır.",
+      "D": "Linux işletim sistemini desteklemez.",
+      "E": "Birden fazla platformu destekler."
+    },
+    "correctAnswer": "E",
+    "explanation": "**Çapraz platform (Cross-platform)** ifadesi, yazılan kodun veya uygulamanın, Windows, Linux, macOS gibi **birden fazla işletim sistemini** desteklemesi anlamına gelir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-844e599c1baf",
+    "unitNumber": 76,
+    "text": "int[,] degisken = new int[3, 2]; Yukarda verilen değişken için aşağıdaki ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Tek boyutlu bir dizidir.",
+      "B": "Çift boyutlu bir dizidir.",
+      "C": "Boyutu dinamik olarak değişebilir.",
+      "D": "Koleksiyon türünde bir değişkendir.",
+      "E": "Ondaklı değerler tutmaktadır."
+    },
+    "correctAnswer": "B",
+    "explanation": "Tanımlama `[,]` içerdiği ve iki boyut (`[3, 2]`) belirtildiği için bu, **Çift boyutlu (çok boyutlu) bir dizidir**. Dizilerin boyutu statiktir ve `int` tamsayı tutar.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6910ad1bf23e",
+    "unitNumber": 77,
+    "text": "C# programlama dilinde verilen bir dizi hazır kütüphane kullanarak dizinin sırası tersine çevirmek istenirse Array sınıfı içerisindeki hangi metot kullanılır?",
+    "options": {
+      "A": "Sort",
+      "B": "Reverse",
+      "C": "IndexOf",
+      "D": "FindAll",
+      "E": "Find"
+    },
+    "correctAnswer": "B",
+    "explanation": "Bir dizinin elemanlarının sırasını tersine çevirmek için `Array` sınıfı içerisindeki **Reverse** metodu kullanılır. Sort ise sıralama yapar.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-44dcfc3cc8dd",
+    "unitNumber": 78,
+    "text": "Aşağıdaki verilenlerden hangisi nesneye yönelik programlamanın sağladığı faydalardan biri değildir?",
+    "options": {
+      "A": "Kendini tekrar etme",
+      "B": "Bilgi saklama",
+      "C": "Kolay hata ayıklama",
+      "D": "Tekrar kullanılabilirlik",
+      "E": "Mod&uuml;lerlik"
+    },
+    "correctAnswer": "A",
+    "explanation": "Nesneye yönelik programlamanın (NYP) amaçlarından biri, kodun **tekrarını önlemektir**. Bilgi saklama (encapsulation), tekrar kullanılabilirlik, kolay hata ayıklama ve modülerlik ise sağladığı faydalardır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5081dbcecb6d",
+    "unitNumber": 79,
+    "text": "static int f(int n) { if (n<=1) return n; return f(n-1)+f(n-2); } int n=9; Yukarda verilen metot, f(9) değeri için çağrıldığında nihai sonuç değeri kaç olur?",
+    "options": {
+      "A": "43",
+      "B": "54",
+      "C": "13",
+      "D": "24",
+      "E": "34"
+    },
+    "correctAnswer": "E",
+    "explanation": "Verilen fonksiyon, n>1 için $f(n) = f(n-1) f(n-2)$ kuralıyla **Fibonacci dizisini** hesaplamaktadır. $f(9)$ değeri, dizinin 9. elemanıdır (dizinin 0. elemanı 0, 1. elemanı 1 kabul edilirse): f(0)=0, f(1)=1 f(2)=1, f(3)=2, f(4)=3, f(5)=5, f(6)=8, f(7)=13, f(8)=21, **f(9)=34**.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f31aa1c1a13f",
+    "unitNumber": 80,
+    "text": ".Net Core geliştirme ortamında “dotnet build” komutu ile ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": ".Net Core'da yardım parametrelerini listeler.",
+      "B": ".Net Core platformu hakkında bilgi verir.",
+      "C": "Yeni bir proje oluştur.",
+      "D": "Mevcut projeyi temizler.",
+      "E": "Mevcut projeyi derler."
+    },
+    "correctAnswer": "E",
+    "explanation": "`dotnet build` komutu, .NET Core projelerinin kaynak kodunu alıp çalıştırılabilir çıktılar (DLL’ler) üretmek için **mevcut projeyi derler**.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-791c5d30f726",
+    "unitNumber": 81,
+    "text": "int a = 17; Console.Write(a); Console.Write(“,”); Console.Write(a++); Console.Write(“,”); Console.Write(–a); Console.Write(“,”); Console.Write(a); Yukarda verilen kod bloğu çalıştırıldığında üretilen çıktı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "17, 17, 16, 17",
+      "B": "17, 18, 17, 17",
+      "C": "17, 17, 17, 17",
+      "D": "17, 18, 19, 18",
+      "E": "17,18,16,17"
+    },
+    "correctAnswer": "C",
+    "explanation": "1. Console.Write(a); -> **17**. 2. Console.Write(a ); -> Post-increment olduğu için önce yazar (17), sonra $a=18$ olur. 3. Console.Write(–a); -> Pre-decrement olduğu için önce $a=17$ olur, sonra yazar (**17**). 4. Console.Write(a); -> Son değeri yazar (**17**). Çıktı: 17, 17, 17, 17",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1b59ae3cf1ec",
+    "unitNumber": 82,
+    "text": "Aşağıdakilerden hangisi nesneye yönelik bir programlama dili değildir?",
+    "options": {
+      "A": "Objective-C",
+      "B": "C++",
+      "C": "C",
+      "D": "Java",
+      "E": "C#"
+    },
+    "correctAnswer": "C",
+    "explanation": "**C** programlama dili yapısal (prosedürel) bir dildir ve nesneye yönelik programlama (NYP) özelliklerini desteklemez. Objective-C, C++, Java ve C# ise popüler NYP dilleridir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1bca6c1e95ad",
+    "unitNumber": 83,
+    "text": "int kontrol = 13; int sonuc = kontrol > 18 & kontrol <= 13 ? kontrol << 2 :0 ; Yukarda verilen işlemler uygulandığında son değeri kaç olur?",
+    "options": {
+      "A": "52",
+      "B": "0",
+      "C": "26",
+      "D": "2",
+      "E": "13"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d85284c56786",
+    "unitNumber": 84,
+    "text": "Aşağıdakilerden hangisi Durum Makinesi Diyagramlarının kullanım amaçlarından biri değildir?",
+    "options": {
+      "A": "Hata durumlarını tanımlamak",
+      "B": "Sistem tasarımını doğrulamak",
+      "C": "Sistemdeki durumları ve geçişleri analiz etmek",
+      "D": "Nesneler arasındaki iletişimi göstermek",
+      "E": "Karmaşık sistemlerin davranışını anlamak"
+    },
+    "correctAnswer": "D",
+    "explanation": "Durum Makinesi Diyagramları, bir nesnenin farklı durumlarını, bu durumlara nasıl geçildiğini ve bu geçişleri tetikleyen olayları gösterir. Nesneler arasındaki iletişimi göstermek için ise daha çok Sıra (Sequence) veya İletişim (Communication) Diyagramları kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-f5336c4c94d1",
+    "unitNumber": 85,
+    "text": "Aşağıdakilerden hangisi bir yazılımın kalitesini oluşturan unsurlardan biri değildir ?",
+    "options": {
+      "A": "Performans",
+      "B": "Güvenilirlik",
+      "C": "Kullanılabilirlik",
+      "D": "Satır sayısı",
+      "E": "Taşınabilirlik"
+    },
+    "correctAnswer": "D",
+    "explanation": "Bir yazılımın kalitesi; performans, güvenilirlik, kullanılabilirlik, taşınabilirlik gibi faktörlerle ölçülür. “Satır sayısı” ise bir yazılımın kalitesini değil, genellikle karmaşıklığını veya büyüklüğünü gösteren bir ölçüt olabilir, bu bir kalite unsuru değildir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-be0e71239d2d",
+    "unitNumber": 86,
+    "text": "Derleyicilere benzer şekilde baştan sona tüm program kodunu makine koduna çevirip sonra çalıştıran JIT yapısı hangisidir?",
+    "options": {
+      "A": "Pre-JIT",
+      "B": "Eco-JIT",
+      "C": "Normal JIT",
+      "D": "General JIT",
+      "E": "Pro-JIT"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-41daa5fb192e",
+    "unitNumber": 87,
+    "text": "Yukarıda verilen kod parçasındaki hata hangisinde doğru verilmiştir?",
+    "options": {
+      "A": "Sınıflar public olarak tanımlanamaz.",
+      "B": "SarjEt() metodu double türden değer döndüremez.",
+      "C": "Kapat metodu int türden değer döndürmelidir.",
+      "D": "Kapat() metodu parametre almalıdır.",
+      "E": "Soyut olmayan bir sınıf içerisinde soyut metot tanımlaması yapılamaz."
+    },
+    "correctAnswer": "E",
+    "explanation": "`abstract` (soyut) bir metot, sadece `abstract` (soyut) bir sınıf içerisinde tanımlanabilir. Verilen kodda `Telefon` sınıfı soyut (`abstract`) olarak tanımlanmadığı için `SarjEt()` soyut metodunu içermesi bir hatadır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-9a8380754193",
+    "unitNumber": 88,
+    "text": "C#’ta “this” anahtar sözcüğü hangi durumlarda kullanılabilir?",
+    "options": {
+      "A": "Tüm sınıf üyeleri içinde",
+      "B": "Yalnızca static metotlar içinde",
+      "C": "Yapıcı metotlar ve özel metotlar içinde",
+      "D": "Sadece ana sınıflarda kullanılabilir, türetilmiş sınıflarda kullanılamaz",
+      "E": "Sadece sınıf içindeki yapıcı metotlar içinde"
+    },
+    "correctAnswer": "A",
+    "explanation": "C#’ta `this` anahtar sözcüğü, sınıfın mevcut örneğine atıfta bulunur ve bir sınıfın herhangi bir üyesi (metot, özellik, yapıcı) içinde kullanılabilir. `static` metotlar içinde kullanılamaz, çünkü `static` metotlar bir sınıfa değil, sınıfın kendisine aittir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-393a26acdfd7",
+    "unitNumber": 90,
+    "text": "Sıra Diyagramı (Sequence Diagram) ve İletişim Diyagramı (Communication Diagramı) hangi diyagram türünün en yaygın kullanılanlarıdır?",
+    "options": {
+      "A": "Sınıf Diyagramları",
+      "B": "Etkileşim Diyagramları",
+      "C": "Aktivite Diyagramları",
+      "D": "Kullanım Diyagramları",
+      "E": "Durum Makinesi Diyagramları"
+    },
+    "correctAnswer": "B",
+    "explanation": "UML’de (Unified Modeling Language) `Sıra Diyagramı` ve `İletişim Diyagramı`, nesneler arasındaki mesaj akışını ve etkileşimleri gösteren “Etkileşim Diyagramları” (Interaction Diagrams) türünün en yaygın kullanılanlarıdır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-6ca8a3f350f2",
+    "unitNumber": 91,
+    "text": "Aşağıdakilerden hangisi Derleme Zamanı (Statik) Çok Biçimliliğe bir örnektir?",
+    "options": {
+      "A": "Mesaj Geçişi",
+      "B": "Sanal Metotlar",
+      "C": "Kapsülleme",
+      "D": "Operatör Aşırı Yükleme",
+      "E": "Kalıtım"
+    },
+    "correctAnswer": "D",
+    "explanation": "Derleme Zamanı (Statik) Çok Biçimlilik (Polimorfizm), derleme zamanında hangi metodun veya operatörün çağrılacağının belirlenmesi anlamına gelir. `Operatör Aşırı Yükleme` (Operator Overloading) buna bir örnektir. Sanal metotlar ise Çalışma Zamanı (Dinamik) Çok Biçimliliğe örnektir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-361e12e3c121",
+    "unitNumber": 92,
+    "text": "Aşağıdaki operatörler arasından hangisi en yüksek önceliğe sahiptir?",
+    "options": {
+      "A": "+",
+      "B": "+=",
+      "C": "%",
+      "D": "!=",
+      "E": "-"
+    },
+    "correctAnswer": "C",
+    "explanation": "C#’ta operatör öncelik sıralamasına göre, modül (%) operatörü, toplama ( ), çıkarma (-), eşit değil (!=) ve atama ( =) operatörlerinden daha yüksek önceliğe sahiptir. Çarpma ve bölme ile aynı öncelik seviyesindedir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-5ac1543913c3",
+    "unitNumber": 93,
+    "text": "Yıkıcı metotlar ne zaman çağırılır?",
+    "options": {
+      "A": "Metot çağırıldığında",
+      "B": "Nesne oluşturulurken",
+      "C": "Nesne yok edilirken",
+      "D": "Nesne özellikleri değiştirildiğinde",
+      "E": "Dizilerle çalışırken"
+    },
+    "correctAnswer": "C",
+    "explanation": "Yıkıcı (Destructor) metotlar, bir nesnenin bellekteki alanı, program sonlandığında veya garbage collector tarafından temizlenirken, yani “nesne yok edilirken” çağrılır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-01828d588eb8",
+    "unitNumber": 95,
+    "text": "Aşağıdakilerden hangisi kalıtımın avantajlarından biri değildir?",
+    "options": {
+      "A": "Sınıf özelliklerinin soyutlanmasının önüne geçer",
+      "B": "Çok biçimlilik sağlar",
+      "C": "Kod tekrarının önüne geçer",
+      "D": "Kodun daha organize bir yapıda olmasını sağlar",
+      "E": "Kodun yeniden kullanılabilirliğini arttırır"
+    },
+    "correctAnswer": "A",
+    "explanation": "Kalıtım (inheritance) prensibi, sınıflar arasında ortak özelliklerin ve metotların paylaşılmasını sağlayarak `soyutlamayı` destekler. “Sınıf özelliklerinin soyutlanmasının önüne geçer” ifadesi bu prensibe aykırıdır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-dc6cb2354bb3",
+    "unitNumber": 96,
+    "text": "Nesneye Yönelik Programlamada veri gizliliği ve güvenliği sağlayarak nesnelerin iç yapısını koruyan yapı hangisidir ?",
+    "options": {
+      "A": "Soyutlama",
+      "B": "Metotlar",
+      "C": "Kalıtım",
+      "D": "Özellikler",
+      "E": "Kapsülleme"
+    },
+    "correctAnswer": "E",
+    "explanation": "Kapsülleme (encapsulation), bir nesnenin verilerini (özelliklerini) ve bu verilere erişimi sağlayan metotlarını tek bir birim altında toplar ve dışarıdan doğrudan erişimi kısıtlayarak veri gizliliği ve güvenliği sağlar.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-32f0b7a27d50",
+    "unitNumber": 97,
+    "text": "C#’ta kod tekrarını önlemeye, kodu daha organize hale getirmeye ve sınıflar arasında hiyerarşi oluşturmaya yardımcı olan Nesneye Yönelik Programlama prensibi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Kapsülleme",
+      "B": "Sarmalama",
+      "C": "Soyutlama",
+      "D": "Çok Biçimlilik",
+      "E": "Kalıtım"
+    },
+    "correctAnswer": "E",
+    "explanation": "Kalıtım (inheritance), bir sınıfın (alt sınıf) başka bir sınıftan (üst sınıf) özelliklerini ve davranışlarını miras almasını sağlayarak “kod tekrarını önler”, “hiyerarşi oluşturur” ve kodu daha organize hale getirir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-c35e6a6196b4",
+    "unitNumber": 98,
+    "text": "C#’ta yukarıdaki satır ile tanımlanan x değişkeni hangi bellek bölgesinde saklanır ?",
+    "options": {
+      "A": "Stack Bellek Bölgesinde",
+      "B": "RAM Olmayan Bölgede",
+      "C": "Heap Bellek Bölgesinde",
+      "D": "Static Bölgede",
+      "E": "Register Bölgesinde"
+    },
+    "correctAnswer": "C",
+    "explanation": "C#’ta, diziler ve nesneler gibi referans tipli veriler “Heap bellek bölgesinde” saklanır. Değer tipleri (int, bool gibi) ise genellikle Stack bellek bölgesinde saklanır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-d23bcd76f62d",
+    "unitNumber": 100,
+    "text": "I – Sınıf (class) içinde tanımlanırlar. II – Yapı (struct) içinde tanımlanırlar. III – Herhangi bir yerde tanımlanabilirler. C# programalama dili için metot tanımları ile ilgili yukarda verilenlerden hangisi doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-37938ec6e54f",
+    "unitNumber": 101,
+    "text": "I – Geliştirme süreçlerini hızlandırır. II – Otomatik kod tamamlama özelliği sunar. III – Entegre Geliştirme Ortamı olmadanda kod geliştirmek mümkündür. Entegre Geliştirme Ortamı ile ilgili verilen ifadelerden hangileri doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-5efa722c4cd3",
+    "unitNumber": 102,
+    "text": "I – Bir sınıf içinde sadece bir kez tanımlanabilir. II – Yıkıcılar (destructor) parametre alabilirler. III – Yıkıcılar (destructor) bir sonuç dönderirler. C# programlama dilinde yıkıcılar (destructor) ile ilgili verilen ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-42265a286ec5",
+    "unitNumber": 103,
+    "text": "Aşağıdakilerden hangisi fonksiyonel bir programlama dilidir?",
+    "options": {
+      "A": "Java",
+      "B": "C#",
+      "C": "Smalltalk",
+      "D": "Simula",
+      "E": "Haskell"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e102d37300ad",
+    "unitNumber": 104,
+    "text": "I – Metotlar sadece bir kez kullanılabilirler. II – Metotlar zorunlu parametreler içerebilir. III – Metotlar varsayılan parametreler içerebilir. C# programlama dilinde metotlar ile ilgili verilen ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "II ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e4a2a3402fcb",
+    "unitNumber": 105,
+    "text": "I – ushort II – long III – int C# dili için yukarda verilenden maddelerden hangisi veya hangileri değer türündeir (value type) ?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-a717a72c3958",
+    "unitNumber": 106,
+    "text": "C# dilinde Kutulama (Boxing) işleminin amacı nedir?",
+    "options": {
+      "A": "Verilen değişkeni kopyalar.",
+      "B": "Verilen nesneyi kopyalar.",
+      "C": "Verilen değişkenin türünü dönderir.",
+      "D": "Verilen değişkenin ismini değiştirir.",
+      "E": "Değer türündeki bir değişkeni referans türüne dönüştürür."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-5c8bef0ebe75",
+    "unitNumber": 107,
+    "text": "Aşağıda verilenden hangisi Nesneye Yönelik Programlamanın sağladığı faydalardan birisi değildir?",
+    "options": {
+      "A": "Modülerlik",
+      "B": "Tekrar Kullanılabilirlik",
+      "C": "Bilgi Saklama",
+      "D": "Kolay Hata Ayıklama",
+      "E": "Zor Kod Geliştirme"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-dd2bf64e02aa",
+    "unitNumber": 108,
+    "text": "I – var sehir; II – var sehir = “İstanbul”; III – int 3yas; Yukarda verilen değişken tanımları ile ilgili hangi ifade veya ifadeler doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-ab57a87a38d5",
+    "unitNumber": 109,
+    "text": "int islemYap(int a) { a+= 1 return a; } …. int b = 10; islemYap(b); Yukardaki verilen fonksiyon çalıştırıldığında b değeri kaç olur?",
+    "options": {
+      "A": "9",
+      "B": "10",
+      "C": "11",
+      "D": "12",
+      "E": "13"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-6dab852c8222",
+    "unitNumber": 110,
+    "text": "int f(int n) { if (n <= 1) return n; return f(n-1) + f(n-2); } Yukardaki verilen fonksiyon çalıştırıldığında f(7) için çağrıldığında dönderdiği nihai değer kaç olur?",
+    "options": {
+      "A": "9",
+      "B": "10",
+      "C": "11",
+      "D": "12",
+      "E": "13"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-83752e2e8ff3",
+    "unitNumber": 113,
+    "text": "protected erişim denetleyicisi için aşağıdaki ifadelerde hangisi doğrudur?",
+    "options": {
+      "A": "Bu erişim denetleyicisine sahip tür ve üyeler diğer sınıflar içerisinde erişilebilirler.",
+      "B": "Bu erişim denetleyicisine sahip tür ve üyeler aynı sınıf veya yapı içerisinde erişilebilirler.",
+      "C": "Bu erişim denetleyicisine sahip tür ve üyeler aynı sınıf veya türetilmiş sınıf içerisinden erişilebilirler.",
+      "D": "Bu erişim denetleyicisine sahip tür ve üyeler aynı derlemede (assembly) erişilebilir.",
+      "E": "Bu erişim denetleyicisine sahip tür ve üyeler aynı derlemede (assembly) veya türetilmiş diğer derlemede (assembly) erişilebilir"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-19061a5f58f6",
+    "unitNumber": 114,
+    "text": "Nesneye Yönelik Programlama ile Fonksiyonel Programlama arasındaki fark aşağıdakilerden hangisinde verilmiştir?",
+    "options": {
+      "A": "Nesneye Yönelik Programlamada fonksiyon tanımlanamaz.",
+      "B": "Fonksiyonel Programlamada verilerle işlem yapılamaz.",
+      "C": "Nesneye Yönelik Programlamada nesler kendilerini ilgilendiren verileri barındırırlar.",
+      "D": "Fonksiyonel Programlamada nesne tanımlanabilir.",
+      "E": "Nesneye Yönelik Programlama ile Fonksiyonel Programlama arasında bir fark yoktur."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-5399cceb8a04",
+    "unitNumber": 115,
+    "text": "Nesneye Yönelik Programlama için aşağıdaki verilen ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "A- Nesneye Yönelik geliştirilen ilk progrmalama dili Java’dır.",
+      "B": "B- C# Nesneye Yönelik bir dil değildir.",
+      "C": "C- Smalltalk birçok Nesneye Yönelik Programlama diline ilham olmuştur.",
+      "D": "D- C Nesneye Yönelik bir programlama dilidir.",
+      "E": "Haskell Nesneye Yönelik bir programlama dilidir."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-038a88b8a9aa",
+    "unitNumber": 116,
+    "text": "I – System bir alan adıdır. II – Console.WriteLine fonskyionu ekrana çıktı üretir. III – import ifadesi alan adlarını kullanabiliriz. C# ile verilen yukardaki ifadelerden hangileri doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-21487edbc204",
+    "unitNumber": 118,
+    "text": "I – Örtülü Dönüşüm (Implicit Cast) işlemini destekler II – Açık Dönüşüm (Explicit Cast) işlemini destekler III – Tür dönüşümünde her zaman veri kaybı yaşanır. C# dili için yukarda verilen tür dönüşüm işlemleri ile ilgili hangi ifade veya ifadeler doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-152eeb5630b4",
+    "unitNumber": 119,
+    "text": ".Net Core ile ilgili verilen komut satırı ile dotnet – -info komutu ile ilgili aşağıdaki ifadelerden hangisi doğrudur.",
+    "options": {
+      "A": "Yeni bir proje oluştur.",
+      "B": "Mevcut projeyi derler.",
+      "C": "Net Core platformu hakkında bilgi verilir.",
+      "D": "Net Core’da yardım parametrelerini listeler.",
+      "E": "Hiçbiri"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-7ce40dd2712e",
+    "unitNumber": 139,
+    "text": "I – Indeks tabanlı erişim sağlar. II – for döngüsüne göre daha yavaştır. III – for döngüsüne göre daha hızlıdır. C# dilinde foreach in yapısı yukarda verilenden maddelerden hangisi veya hangileri doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-a54b4cb3dd04",
+    "unitNumber": 140,
+    "text": "I – ! = II – => III – =< C# dilinde yukarda verilen kullanımlardan hangisi veya hangileri doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-24c1593d3c9b",
+    "unitNumber": 141,
+    "text": "C# programalma dili için verilen erişim denetleyicilerden hangisi yanlıştır?",
+    "options": {
+      "A": "private",
+      "B": "protected",
+      "C": "public",
+      "D": "protected global",
+      "E": "private protected"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-88ff72470bab",
+    "unitNumber": 142,
+    "text": ".Net Core ile ilgili verilen dotnet new console komutu ile ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Yeni bir proje oluştur.",
+      "B": "Mevcut projeyi derler.",
+      "C": "Projeyi çalışrır.",
+      "D": "Net Core’da yardım parametrelerini listeler.",
+      "E": "Hiçbiri"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-758d29ab2dd3",
+    "unitNumber": 143,
+    "text": "Aşağıdakilerden hangisi neneye yönelik bir programlama dilidir?",
+    "options": {
+      "A": "C",
+      "B": "Haskell",
+      "C": "Lisp",
+      "D": "C#",
+      "E": "Bash"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-c5b41691f619",
+    "unitNumber": 144,
+    "text": "int a = 7; Console.WriteLine(++a + a++) ; Yukarda verilen kod bloğu çalıştırıldığında aşağıdaki çıktılardan hangisini üretir?",
+    "options": {
+      "A": "12",
+      "B": "13",
+      "C": "14",
+      "D": "15",
+      "E": "16"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-7497cc1674d6",
+    "unitNumber": 145,
+    "text": "nt a = 10; ++a; Console.WriteLine(a++) ; Yukarda verilen kod bloğu çalıştırıldığında aşağıdaki çıktılardan hangisini üretir?",
+    "options": {
+      "A": "9",
+      "B": "10",
+      "C": "11",
+      "D": "12",
+      "E": "13"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-82cb6e4338ee",
+    "unitNumber": 146,
+    "text": "I – Çapraz Platformdur. II – Birden fazla dili deskteler. III – Standard kütüphaneler barındırır. .Net Core platformu ile ilgili yukarda verilen ifadelerden hangileri doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-d6716eaf29af",
+    "unitNumber": 147,
+    "text": "Verilen bir dizinin her bir elemanı üzerinde tek tek işlem yapmak istersek aşağıdaki verilen ifadelerden hangisini kullanırız?",
+    "options": {
+      "A": "switch",
+      "B": "foreach",
+      "C": "struct",
+      "D": "main",
+      "E": "else"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-56b5ce06023b",
+    "unitNumber": 149,
+    "text": "Aşağıda verilenlerden hangisi Koleksiyon türlerine Denemetir?",
+    "options": {
+      "A": "Int",
+      "B": "String",
+      "C": "Array",
+      "D": "Stack",
+      "E": "Double"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-39df706b110e",
+    "unitNumber": 150,
+    "text": "int[,] Deneme = new int[2, 2]; Yukarda verilen Deneme değişkeni için aşağıdaki ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Deneme değişkeni Koleksiyon türünde bir değişkendir.",
+      "B": "Deneme değişkeni ondalık değerler tutmaktadır.",
+      "C": "Deneme değişkeni tek boyutlu bir dizidir.",
+      "D": "Deneme değişkeni çift boyutlu bir dizidir.",
+      "E": "Deneme değişkeninin boyutu dinamik olarak değişebilir."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-ae9f5600f767",
+    "unitNumber": 151,
+    "text": "I – Microsoft tarafından geliştirilmektedir. II – Nesneye Yöneliktir. III – İlk versiyonu 2002 yılında yayınlanmıştır. Yukarda özellikleri verilen programalam dili hangisidir?",
+    "options": {
+      "A": "C",
+      "B": "Fortran",
+      "C": "Java",
+      "D": "C#",
+      "E": "Python"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-ac04970a15f3",
+    "unitNumber": 153,
+    "text": "C# dili için aşağıdaki verilen ifadelerden hangisi yanlıştır?",
+    "options": {
+      "A": "for bir döngü ifadesidir",
+      "B": "while bir döngü ifadesidir",
+      "C": "++ artırma operatörüdür.",
+      "D": "break ifadesi döngüler içinde kullanılmaz.",
+      "E": "= = ifadesi eşitlik kontrolü için kullanılmaktadır."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-99c81eef5e52",
+    "unitNumber": 154,
+    "text": "I – Bir sınıf içinde birden fazla tanımlanabilir. II – Yapıcılar (constructor) parametre alabilirler. III – Yapıcılar (constructor) bir sonuç dönderirler. C# programlama dilinde yapıcılar (constructor) ile ilgili verilen ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-84db13faf6f0",
+    "unitNumber": 156,
+    "text": "Aşağıda verilenlerden hangisi Koleksiyon türlerine Deneme değildir?",
+    "options": {
+      "A": "Int",
+      "B": "Stack",
+      "C": "List",
+      "D": "Dictionary",
+      "E": "Hashtable"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-1cc08cd4588e",
+    "unitNumber": 157,
+    "text": "C# Programalama Dilinde bir sınıf tanımlamak için aşağıdaki anahtar kelimelerden hangisi kullanılır?",
+    "options": {
+      "A": "function",
+      "B": "class",
+      "C": "namespace",
+      "D": "Main",
+      "E": "interface"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-3c683c1ac12c",
+    "unitNumber": 158,
+    "text": "Array.Reverse metodu hangi işlemi icar eder?",
+    "options": {
+      "A": "Verilen bir diziyi artan sırada sıralar.",
+      "B": "Verilen bir dizi içinde arama gerçekleştirir.",
+      "C": "Verilen bir dizinin elemanlarının dizilimini tersine çevirir.",
+      "D": "Verilen bir diziye ekleme yapar.",
+      "E": "Verilen bir diziyi temizler."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-af1816d9ef63",
+    "unitNumber": 159,
+    "text": "C# dilinde sizeof işleci ile ilgili aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Verilen değişkenin boyutunu byte cinsinde döndürür.",
+      "B": "Verilen değişkenin boyutunu bit cinsinde döndürür.",
+      "C": "Verilen bir değişkenin türünü değiştirir.",
+      "D": "Verilen bir değişkenin türünü dönderir.",
+      "E": "Verilen bir referans türünün kopyasını çıkartır."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-b91483c79ba0",
+    "unitNumber": 160,
+    "text": "I – for II – if – else III – switch C# dilinde yukarda verilen anahtar kelimelerden hangisi döngüler için kullanılır?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-ce0053a7666d",
+    "unitNumber": 162,
+    "text": "Console.WriteLine(Deneme[“34”]); Yukardaki verilen Örnekte komut satırına Deneme değişkeninin değeri yazdırılmaktadır. Deneme değişkenin türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Int32 türündedir",
+      "B": "String değer barındıran bir dizidir.",
+      "C": "İki boyutlu bir dizidir.",
+      "D": "Int32 türünde anahtarı olan bir Dictionary türüdür.",
+      "E": "String türünde anahtarı olan bir Dictionary türüdür."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-95f91d08fc1d",
+    "unitNumber": 165,
+    "text": "int türündeki bir değişkenin boyutu kaç byte’tır?",
+    "options": {
+      "A": "1 byte",
+      "B": "2 byte",
+      "C": "3 byte",
+      "D": "4 byte",
+      "E": "5 byte"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-d2d83c25cd7f",
+    "unitNumber": 166,
+    "text": "int a = 7; ++a; Console.WriteLine(++a) ; Yukarda verilen kod bloğu çalıştırıldığında aşağıdaki çıktılardan hangisini üretir?",
+    "options": {
+      "A": "5",
+      "B": "6",
+      "C": "7",
+      "D": "8",
+      "E": "9"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-21699aa0aca5",
+    "unitNumber": 167,
+    "text": "Verilen bir List değişkenin her bir elemanı üzerinde tek tek işlem yapmak istersek aşağıdaki verilen ifadelerden hangisini kullanırız?",
+    "options": {
+      "A": "switch",
+      "B": "if",
+      "C": "class",
+      "D": "main",
+      "E": "for"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-3ddbb4dba979",
+    "unitNumber": 168,
+    "text": "List ornekListe = new List(); ornekListe ile verilen Koleksiyona tek seferde birden fazla değer eklemek istersek aşağıdaki metotlardan hangisinin kullanırız?",
+    "options": {
+      "A": "Add",
+      "B": "AddAll",
+      "C": "AddRange",
+      "D": "Remove",
+      "E": "RemoveAll"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-67c77230587c",
+    "unitNumber": 169,
+    "text": "I – int a = (int) 3.4; II – long b = (long) 2.4; III – int c = (int) 4.0; C# dili için yukarda verilen tür dönüşüm işlemleri ile ilgili hangi madde yada maddelerde veri kaybı yaşanır?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-260fe9cb965b",
+    "unitNumber": 170,
+    "text": "Dizi ve Koleksiyonlar ile verilen ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Dizilerin boyutu sabittir, Koleksiyonların boyutu dinamik değişir.",
+      "B": "Diziler sadece string türünde veri tutarlar.",
+      "C": "Koleksiyonlar ile Diziler arasında hiç bir fark yoktur.",
+      "D": "Diziler anahtar/değer çifti ile veri tutar.",
+      "E": "Koleksiyonların boutları sabittir, değiştirilemez."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-a3b10a6c6a27",
+    "unitNumber": 171,
+    "text": "C# dilinde Kutudan Çıkartma (Unboxing) işleminin amacı nedir?",
+    "options": {
+      "A": "Verilen değişkeni kopyalar.",
+      "B": "Verilen nesneyi kopyalar.",
+      "C": "Verilen değişkenin türünü dönderir.",
+      "D": "Verilen değişkenin ismini değiştirir.",
+      "E": "Referans türündeki bir değişkeni değer türüne dönüştürür."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-71dde6629d38",
+    "unitNumber": 172,
+    "text": "C# programlama dili için aşağıdaki verilenlerden hangisi doğrudur?",
+    "options": {
+      "A": "Bir sınıf aynı anda birden fazla sınıfı Kalıtım yoluyla miras alabilir.",
+      "B": "private erişim denetleyicisine sahip üyeler her yerden erişeime sahiptir.",
+      "C": "Abstract olarak tanımlanan sınıflardan nesne üretilemez.",
+      "D": "Abstract olarak tanımlanan sınıflardan Kalıtım yoluyla miras alınamaz",
+      "E": "Abstract olarak tanımlanan sınıflarda yapıcı (constructor) tanımlanamaz."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-a6d2c5efe2b1",
+    "unitNumber": 173,
+    "text": "I- A sınıfı temel sınıftır. II- B sınıfı A sınıfından türetilmiştir. III- B sınıfı I arabirimini kullanır. Yukarda Sınıf Diyagramı verilen UML tasarımı ile ilgili verilenlerden hangisi veya hangileri doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I, II, III"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-4bc33dff5b8d",
+    "unitNumber": 175,
+    "text": "Aşağıda verilenlerden hangisi bir Birleşik Modelleme Dili (UML) diyagramı değildir?",
+    "options": {
+      "A": "Sınıf Diyagramı",
+      "B": "Kullanım Senaryosu Diyagramı",
+      "C": "Bileşen Diyagramı",
+      "D": "Faaliyet Diyagramı",
+      "E": "Görsel Tasarım Diyagramı"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-317e136c26a7",
+    "unitNumber": 176,
+    "text": "Aşağıda verilenden hangisi Nesneye Yönelik Programlamanın kavramlarından biri değildir?",
+    "options": {
+      "A": "Kalıtım ile Sınıflar Türetilir",
+      "B": "Abstract Sınıflar İçerir",
+      "C": "Bilgi Saklama",
+      "D": "Kolay Hata Ayıklama",
+      "E": "Zor Kod Geliştirme"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-8516bdba3ee9",
+    "unitNumber": 177,
+    "text": "I- Erişim denetleyicisi private olan üyeler “-“ ile gösterilir. II- Erişim denetleyicisi public olan üyeler “+“ ile gösterilir. III- Erişim denetleyicisi protected olan üyeler “#“ ile gösterilir. Sınıf Diyagramı ile ilgili verilenlerden hangisi veya hangileri doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I, II, III"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-bb0921c930da",
+    "unitNumber": 178,
+    "text": "Geliştirilmesi planlanan bir yazılım projesinde yapılacak işlemlerin ve hangi aktivitelerin gerçekleştirileceğinin tasarlandığı UML diyagramı hangisinde doğru olarak verilmiştir?",
+    "options": {
+      "A": "Sınıf Diyagramı",
+      "B": "Kullanım Senaryosu Diyagramı",
+      "C": "Bileşen Diyagramı",
+      "D": "Faaliyet Diyagramı",
+      "E": "Dağıtım Diyagramı"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-313ee75a00ee",
+    "unitNumber": 179,
+    "text": "Aşağıda verilenlerden hangisi UML’in sağlamış olduğu avantajlardan aşağıda biri değildir?",
+    "options": {
+      "A": "Çok karmaşık bir yapıya sahiptir",
+      "B": "Biçimsel bir dildir.",
+      "C": "Anlaşılabilir bir dildir.",
+      "D": "Ölçeklenebilir bir dildir.",
+      "E": "Tecrübelerden oluşturulmuştur."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-3570c0656984",
+    "unitNumber": 180,
+    "text": "I – Kalıtım yolu ile türetilen sınıflarda yapıcı tanımlanamaz. II – Yıkıcılar (destructor) parametre alabilirler. III – Yıkıcılar (destructor) bir sonuç dönderirler. C# programlama dilinde yıkıcılar (destructor) ile ilgili verilen ifadelerden hangisi veya hangileri yanlıştır?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-36cba658d6ee",
+    "unitNumber": 181,
+    "text": "I – Kalıtım yolu ile sadece bir sınıf türetilebilir. II – Kalıtım yolu ile türetilen sınıf temel sınıfın yapıcısnı çağırabilir. III – Yapıcılar (constructor) bir sonuç dönderirler. C# programlama dilinde sınıflar (class) ile ilgili verilen ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-4fd32c22a2b9",
+    "unitNumber": 182,
+    "text": "I – Sınıflar (class) referans türündedirler II – Yapılar (struct) değer türündedirler. III – Sınıf (class) ve yapı (struct) arasında bir fark yoktur. C# programlama dilinde Kalıtım yoluyla oluşturulan sınıf (class) ve/veya yapılar (struct) ile ilgili verilen ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-1d2d6dec52a6",
+    "unitNumber": 185,
+    "text": "Kalıtım yoluyla türetilmiş bir sınıf, temel sınıfta var olan bir metotu yeniden tanımlamak istersen aşağıdaki anahtar kelimelerde hangisi kullanır?",
+    "options": {
+      "A": "new",
+      "B": "abstract",
+      "C": "void",
+      "D": "internal",
+      "E": "public"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-90b325629779",
+    "unitNumber": 186,
+    "text": "I – Opsiyonel parametreler için varsayılan bir değer olmalıdır. II – Opsiyonel parametreler için varsayılan değere ihtiyaç yoktur. III – Opsiyonel parametreler, zorunlu parametrelerle birlikte kullanılamazlar. C# programlama dilinde opsionel metot parametreleri ile ilgili verilen ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-2bc7bf2e4326",
+    "unitNumber": 188,
+    "text": "int f(int n) { if(n ==0 || n == 1) return 1; return n * f(n-1); } Yukardaki verilen fonksiyon çalıştırıldığında f(4) için çağrıldığında dönderdiği nihai değer kaç olur?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "6",
+      "D": "24",
+      "E": "120"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-4c172d0dfc94",
+    "unitNumber": 189,
+    "text": "I – Metotlar parametre almazlar. II – Metotların dönüş türü void olabilir. III – Metotların parametreleri mutlaka zorunlu olmalıdır. C# programlama dilinde metot imzası ile ile ilgili yukarda verilenlerden hangisi doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-43af636176bf",
+    "unitNumber": 191,
+    "text": "I – Sadece Dinamik Çok Biçimliliği destekler. II – Statik ve Dinamik Çok Biçimliliği destekler. III – Çok Biçimliliği desteklemez. C# programlama dilinde Çok Biçimlilik (Polymorphism) ile ilgili verilen ifadelerden hangisi/ hangileri doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-9500e74ed648",
+    "unitNumber": 192,
+    "text": "Ara Birim tanımlamada kullanılan anahtar kelime aşağıdakilerden hangisinde verilmiştir?",
+    "options": {
+      "A": "new",
+      "B": "struct",
+      "C": "interface",
+      "D": "operator",
+      "E": "delete"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-b43cbcdde763",
+    "unitNumber": 193,
+    "text": "I- Sistem ile kullanıcıların etkileşimlerinin tarif edildiği diyagramlardır. II- Aktörler, kullanım senaryoları ve ilişkilerden oluşmaktadır. III- Sınıfların bir biri ile olan etkileşimi gösterilmektedir. Kullanım Senaryo Diyagramı ile ilgili verilenlerden hangisi veya hangileri doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I, II, III"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-92bad27ae2a2",
+    "unitNumber": 194,
+    "text": "C# Programalma dili Nesneye Yönemlik Programlama ile ilgili aşağıda verilen kavramlardan hangisini desteklemez?",
+    "options": {
+      "A": "Çoklu Kalıtım",
+      "B": "Ara Birim",
+      "C": "Operatörlerin Aşırı Yüklenmesi",
+      "D": "Çok Biçimlilik",
+      "E": "Kapsülleme"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-bb75315886c7",
+    "unitNumber": 195,
+    "text": "Bir yazılım projesinin gerekli tasarımlarının standart bir formatta tanımladığı ve proje ekibi içerisinde bir iletişim aracı olarak da kullanılan modelleme dili aşağıdakilerden hangisinde verilmiştir?",
+    "options": {
+      "A": "XML",
+      "B": "HTML",
+      "C": "UML",
+      "D": "XML2",
+      "E": "HTML5"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-f8ab44bcb37d",
+    "unitNumber": 196,
+    "text": "Bir sistemin fiziksel görünümü belirten UML şeması aşağıdakilerden hangisinde verilmiştir?",
+    "options": {
+      "A": "Sınıf Diyagramı",
+      "B": "Kullanım Senaryosu Diyagramı",
+      "C": "Bileşen Diyagramı",
+      "D": "Faaliyet Diyagramı",
+      "E": "Dağıtım Diyagramı"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-0df375ec3122",
+    "unitNumber": 197,
+    "text": "Birleşik Modelleme Dili yani UML ile, projemizde yer alan veya alacak olan sınıfların (class) kod yerine görsel olarak ifade etmemize olanak sağlayan diyagram hangisidir?",
+    "options": {
+      "A": "Sınıf Diyagramı",
+      "B": "Kullanım Senaryosu Diyagramı",
+      "C": "Bileşen Diyagramı",
+      "D": "Faaliyet Diyagramı",
+      "E": "Dağıtım Diyagramı"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-b01f7025857d",
+    "unitNumber": 198,
+    "text": "I – Kalıtımı destekler II – Kalıtımı destekleme III – Bir sınıf birden fazla Ara Birim kullanabilir. C# programlama dilinde Ara Birim (interface) ile ilgili verilen ifadelerden hangisi/ hangileri doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-b29be362d6cc",
+    "unitNumber": 199,
+    "text": "Yukarda şeması verilen UML diyagramı aşağıdakilerden hangisinde doğru olarak verilmiştir?",
+    "options": {
+      "A": "Sınıf Diyagramı",
+      "B": "Kullanım Senaryosu Diyagramı",
+      "C": "Bileşen Diyagramı",
+      "D": "Faaliyet Diyagramı",
+      "E": "Dağıtım Diyagramı"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-c16de22f54c0",
+    "unitNumber": 200,
+    "text": "Aşağıda verilen operatörlerden hangisi Aşırı Yükleme yapılamaz?",
+    "options": {
+      "A": "+",
+      "B": "-",
+      "C": "!",
+      "D": "&amp;&amp;**",
+      "E": "~"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-5fddac7cc1ee",
+    "unitNumber": 202,
+    "text": "Operatör Aşırı Yüklemesi aşağıdaki verilen hangi ifade ile gerçekleştirilir?",
+    "options": {
+      "A": "operator",
+      "B": "new",
+      "C": "interface",
+      "D": "class",
+      "E": "protected"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-88e558bb2c60",
+    "unitNumber": 203,
+    "text": "I – Ara Birim interface anahtar kelimesi ile tanımlanır. II – Sınıf ve Yapılarında kullanılırlar III – Ara Birimde tanımlı olan metotların varsayılan erişim seviyesi public tir. C# programlama dilinde Ara Birim (interface) ile ilgili verilen ifadelerden hangisi/ hangileri doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-5470dc4cff5e",
+    "unitNumber": 204,
+    "text": "Prototip (Prototype) Tasarım Deseni ile ilgili aşağıda veirlenlerden hangisi doğrudur?",
+    "options": {
+      "A": "Birden fazla nesnenin oluşturulduğu karmaşık başlangıç senaryolarına ait bir ilkedir.",
+      "B": "Bir sınıfa ait sadece bir nesne oluşturmasını sağlar.",
+      "C": "Mevcut bir nesneyi kopyalayarak yeni bir nesne oluşturmak kullanılır.",
+      "D": "Davranışları kontrol etmek için kullanılan bir ilkedir.",
+      "E": "Birden fazla Fabrika Desenine ihtiyaç duyduğumuz durumlarda başvurduğumuz bir Tasarım Desenidir."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-370c5b4808a9",
+    "unitNumber": 205,
+    "text": "Aşağıda verilen Tasarım Desenlerinden hangisi Oluşturucu (Creation) sınıfına ait bir Tasarım Desenidir?",
+    "options": {
+      "A": "Tekil (Singleton)",
+      "B": "Çoğul (Multiple)",
+      "C": "Vekil (Proxy)",
+      "D": "Hata (Error)",
+      "E": "Ziyaretçi (Visitor)"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-6c665e28ac65",
+    "unitNumber": 206,
+    "text": "I- Oluşturucu (Creational) II- Yapısal (Structural) III- Davranışsal (Behavioral) Verilenlerden hangisi yada hangileri Tasarım Desenlerinin ana kategorilerindedir?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I, II, III"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-559756fa031a",
+    "unitNumber": 208,
+    "text": "Nesneye Yönemlik Programlamada, aynı isime sahip fakat farklı işlevi olan metotların tanımlanabilmesine kavramına nedenir?",
+    "options": {
+      "A": "Ara Birim",
+      "B": "Sınıf",
+      "C": "Çok Biçimlilik",
+      "D": "Kapsülleme",
+      "E": "Modülerlik"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-29b1f6f4c312",
+    "unitNumber": 209,
+    "text": "Bir sınıfa ait sadece bir nesne olmasını istiyorsak hangi Tasarım Desenini kullanırız?",
+    "options": {
+      "A": "Ziyaretçi (Visitor)",
+      "B": "Tekil (Singleton)",
+      "C": "Vekil (Proxy)",
+      "D": "Hata (Error)",
+      "E": "Soyut Fabrika (Abstract Factory)"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-3373667b80f5",
+    "unitNumber": 210,
+    "text": "Tasarım Desenleri toplam ana kategoride toplanmıştır?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4",
+      "E": "5"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-573d3f0f82ee",
+    "unitNumber": 212,
+    "text": "Açık/Kapalı Prensibinde bulunan Kapalı ilkesi neyi ifade etmektedir?",
+    "options": {
+      "A": "Bir sınıfın sahip olduğu özelliklerin değişime kapalı olmasıdır",
+      "B": "Temel sınıf bir işlevi yerine getiriyorsa, türetilmiş sınıflarda o işlemleri yerine getirebilmelidir.",
+      "C": "Bir sınıfın yeni davranışlar eklenerek genişletilmesidir",
+      "D": "Bir sınıfın bağımlılığı en aza indirilmelidir",
+      "E": "Bir sınıfın sadece bir sınıfa ait bağımlığı olmalıdır."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-4f1e3a5f9295",
+    "unitNumber": 213,
+    "text": "Genellikle birden fazla Fabrika Desenine ihtiyaç duyduğumuz durumlarda başvurduğumuz Tasarım Deseni aşağıdakilerden hangisinde verilmiştir?",
+    "options": {
+      "A": "Ziyaretçi (Visitor)",
+      "B": "Çoğul (Multiple)",
+      "C": "Vekil (Proxy)",
+      "D": "Hata (Error)",
+      "E": "Soyut Fabrika (Abstract Factory)"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e0c5f533141d",
+    "unitNumber": 214,
+    "text": "Nesneye Yönelik tasarımda bir sınıfın (class) veya yapı (struct) sorumluluklarını sınırlandırarak, birden fazla sorumluluğun tanımlanmasının tasarım sorunlarına sebep olabileceğini belirten ilke aşağıdakilerden hangisinde verilmiştir?",
+    "options": {
+      "A": "Tek Sorumluluk Prensibi",
+      "B": "Açık/Kapalı Prensibi",
+      "C": "Liskov İkame Prensibi",
+      "D": "Arabirim Ayırma Prensibi",
+      "E": "Bağımlığı Tersine Çevirme Prensibi"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-37f8ae7bb9c2",
+    "unitNumber": 215,
+    "text": "I- Prototip (Prototype) II- Davranışsal (Behavioral) III- Tekil (Singleton) Verilenlerden hangisi yada hangileri Oluşturucu (Creational) kategorisine ait Tasarım Desenidir?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I, II, III"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-ffd5e1c3d5cf",
+    "unitNumber": 216,
+    "text": "Nesneye Yönelik tasarımda, Tek Sorumluluk Prensibi (Single Responsibility Principle) ile ortaya konulan ana hedef aşağıdakilerden hangisinde verilmiştir?",
+    "options": {
+      "A": "Nesnelerin birbiri ile olan bağımlığının azaltılması.",
+      "B": "Bir sınıf (class) veya yapının (struct) sadece bir sorumluğu olmasıdır.",
+      "C": "Bir sınıf (class) veya yapının (struct) birden fazla sorumluluğa sahip olmasıdır.",
+      "D": "Bir sınıfın (class) kullandığı arabirim sayısının azaltılmasıdır.",
+      "E": "Bir sınıfın (class) hata yakalama prensibinin kontrol edilmesidir."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-021dcab76fdd",
+    "unitNumber": 217,
+    "text": "Aşağıdakilerden hangisi Nesneye Yönelik Tasarım presinplerinden (SOLID prensipleri) biri değildir?",
+    "options": {
+      "A": "Tek Sorumluluk Prensibi (Single Responsibility Principle)",
+      "B": "Açık/Kapalı Prensibi (Open/Close Principle)",
+      "C": "Liskov İkame Prensibi (Liskov Substitution Principle)",
+      "D": "Arabirim Ayırma Prensibi (Interface Segregation Principle)",
+      "E": "Hata Yakalama Prensibi"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-53815b81660e",
+    "unitNumber": 218,
+    "text": "I – Açık/Kapalı Prensibi II – Bağımlığı Tersine Çevirme Prensibi III – Arabirim Ayırma Prensibi Yüksek seviyedeki modüllerin alt seviyedeki modüllere olan bağımlılığını azaltan prensip veya prensipler hangisinde doğru olarak verilmiştir?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-96c3518e8859",
+    "unitNumber": 219,
+    "text": "Nesneye Yönelik tasarımda, Tek Sorumluluk Prensibi (Single Responsibility Principle) ile ilgili verilen ifadelerden hangisi doğrudur ?",
+    "options": {
+      "A": "Bir sınıfa ait sadece bir metot olmalıdır.",
+      "B": "Bir sınıf sadece ve sadece bir arabirim kullanabilir.",
+      "C": "Bir sınıf sadece yapıcıya sahip olabilir",
+      "D": "Bir sınıfın sadece bir sorumluluğa sahip olmasıdır.",
+      "E": "Bir sınıftan sadece bir nesne türetilebilir."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-31ea5285f99a",
+    "unitNumber": 220,
+    "text": "“Bir nesnenin önceki durumunu kaydetmemize ve geri yüklememize olanak sağlayan davranışsal tasarım desenidir.” Tanımı verilen tasarım deseni aşağıdakilerden hangisinde verilmiştir?",
+    "options": {
+      "A": "Gözlemci",
+      "B": "Hatırlayıcı",
+      "C": "Fabrika",
+      "D": "Cephe",
+      "E": "Vekil"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-f914962d68dc",
+    "unitNumber": 221,
+    "text": "Aşağıda verilenler Tasarım Desenlerinden hangisi Davranışlar tasarım deseni grubuna dâhildir?",
+    "options": {
+      "A": "Komut",
+      "B": "Köprü",
+      "C": "Tekil",
+      "D": "Cephe",
+      "E": "Vekil"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-f801b7d43711",
+    "unitNumber": 222,
+    "text": "Bir koleksiyon türünde ve karmaşık yapıda sahip verilerimiz varsa, biz bu karmaşıklığı gizleyerek tasarım daha basit bir kullanımı sunulan tasarım deseni hangi kategoriye aittir?",
+    "options": {
+      "A": "Yapısal Tasarım Desenleri",
+      "B": "Görsel Tasarım Desenleri",
+      "C": "Davranışlar Tasarım Desenleri",
+      "D": "Metinsel Tasarım Desenleri",
+      "E": "Oluşturucu Tasarım Desenleri"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-8c745f2906ca",
+    "unitNumber": 223,
+    "text": "Nesneler arasındaki karmaşık bağımlılıkları azaltılmasına olanak tanıyan bir davranışsal tasarım desenidir deseni hangisidir?",
+    "options": {
+      "A": "Cephe",
+      "B": "Soyut Fabrika",
+      "C": "Tekil",
+      "D": "Arabulucu",
+      "E": "Yineleyici"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-86bf9ecb6dfc",
+    "unitNumber": 224,
+    "text": "I – Temel sınıf bir işlevi yerine getiriyorsa, türetilmiş sınıflarda o işlemleri yerine getirebilmelidir. II – Bir sınıf sadece bir sınıftan türetilmelidir. III – Bir sınıfın sadece bir sınıfa ait bağımlığı olmalıdır. Liskov İkame Prensibi ilgili verilenlerden hangisi veya hangileri doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-c4a7a5df0ddf",
+    "unitNumber": 225,
+    "text": "Açık/Kapalı Prensibinde bulunan Açık ilkesi neyi ifade etmektedir?",
+    "options": {
+      "A": "Bir sınıfın sadece bir sorumluluğunun olmasıdır.",
+      "B": "Temel sınıf bir işlevi yerine getiriyorsa, türetilmiş sınıflarda o işlemleri yerine getirebilmelidir.",
+      "C": "Bir sınıfın yeni davranışlar eklenerek genişletilmesidir",
+      "D": "Bir sınıfın bağımlılığı en aza indirilmelidir",
+      "E": "Bir sınıfın sadece bir sınıfa ait bağımlığı olmalıdır."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-6efd6268691b",
+    "unitNumber": 226,
+    "text": "I – Tek Sorumluluk Prensibi II – Açık/Kapalı Prensibi III – Bağımlığı Tersine Çevirme Prensibi Yukarıda verilen SOLID tasarım prensiplerinden hangisi veya hangileri doğrudur?",
+    "options": {
+      "A": "a) Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-74ac01542c9c",
+    "unitNumber": 227,
+    "text": "I- Vekil (Proxy) II- Komut (Command) III- Yineleyici (Iterator) Verilenlerden hangisi ya da hangileri Davranışsal Tasarım Desenidir?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "II ve III",
+      "E": "I, II, III"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-930b665c79ad",
+    "unitNumber": 228,
+    "text": "“Gelen bir isteği ve bu istek ile alakalı tüm bilgileri bağımsız bir nesneye dönüştüren davranışsal bir tasarım modelidir. Bu dönüşüm sayesinde, farklı isteklere parametreler halinde yürütülebilmektedir.” Tanımı verilen tasarım deseni aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Fabrika",
+      "B": "Soyut Fabrika",
+      "C": "Tekil",
+      "D": "Yapıcı",
+      "E": "Komut"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-ca691675eb49",
+    "unitNumber": 229,
+    "text": "C# Programlama Dilinde bir fonksiyon sonsuz döngüde kendini çağırırsa hangi hata oluşur?",
+    "options": {
+      "A": "Stack Overflow",
+      "B": "Divition by Zero",
+      "C": "System Runtime Exception",
+      "D": "Arithmetic Overflow",
+      "E": "System Overflow"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-2e4dd2cd80e5",
+    "unitNumber": 230,
+    "text": "C# Programlama Dillinde System.Exception sınıfınun kullanım amacı aşağıdaki seçeneklerin hangisinde verilmiştir?",
+    "options": {
+      "A": "Matematiksel işlemleri gerçekleştirmek için",
+      "B": "Hata ve istisnai durumları yönetmek için.",
+      "C": "Dosya okuma ve yazma işlemleri için.",
+      "D": "Ağ üzerinde veri gönderip almak için",
+      "E": "Html kod üretmek için"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-31facf940a5b",
+    "unitNumber": 231,
+    "text": "Aşağıda verilenler Tasarım Desenlerinden hangisi davranışsal tasarım deseni grubuna dâhil değildir?",
+    "options": {
+      "A": "Cephe",
+      "B": "Hatırlayıcı",
+      "C": "Arabulucu",
+      "D": "Yineleyici",
+      "E": "Fabrika"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-587e7a3d9741",
+    "unitNumber": 232,
+    "text": "Davranışsal (behavıoral) Tasarım Desenleri Algoritmaları ve nesnelerin sorumluluklarını belirlenmesinde rol alan tasarım deseni grubu aşağıdakilerden hangisinde verilmiştir?",
+    "options": {
+      "A": "Yapısal Tasarım Desenleri",
+      "B": "Görsel Tasarım Desenleri",
+      "C": "Davranışlar Tasarım Desenleri",
+      "D": "Metinsel Tasarım Desenleri",
+      "E": "Oluşturucu Tasarım Desenleri"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-7c5be45269e5",
+    "unitNumber": 233,
+    "text": "Aşağıdakilerden hangisi C# programlama dilinde bir hata ayıklama sınıfıdır?",
+    "options": {
+      "A": "System.Exception",
+      "B": "StackExtraflowException",
+      "C": "FileOverflowException",
+      "D": "DivideByOneException",
+      "E": "SystemInconsistentException"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-7b6099e8d143",
+    "unitNumber": 234,
+    "text": "Bir dizi türünde ve karmaşık yapıda sahip verilerimiz varsa, biz bu karmaşıklığı gizleyerek tasarım daha basit bir kullanımı sunulan tasarım deseni hangisidir?",
+    "options": {
+      "A": "Yineleyici",
+      "B": "Soyut Fabrika",
+      "C": "Tekil",
+      "D": "Sinek Sıklet",
+      "E": "Vekil"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-d9b38e45e1ae",
+    "unitNumber": 236,
+    "text": "C# Programlama Dilinde çalışma zamanında oluşacak bir hatayı hangi ifade ile kontrol edebiliriz?",
+    "options": {
+      "A": "foreach",
+      "B": "try – catch",
+      "C": "while",
+      "D": "new",
+      "E": "struct"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-2619e89d10c0",
+    "unitNumber": 237,
+    "text": "Aşağıda verilenler Tasarım Desenlerinden hangisi yapısal tasarım deseni grubuna dâhil değildir?",
+    "options": {
+      "A": "Adaptör",
+      "B": "Köprü",
+      "C": "Fabrika",
+      "D": "Cephe",
+      "E": "Vekil"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-d5bceae3375b",
+    "unitNumber": 238,
+    "text": "Benzer türdeki nesnelerin parça-bütün ilişkisi içinde bir ağaç yapısı ile oluşturmaya ve tek bir arayüzden ulaşılmasına olanak sağlayan tasarım deseni hangisidir?",
+    "options": {
+      "A": "Cephe",
+      "B": "Soyut Fabrika",
+      "C": "Tekil",
+      "D": "Sinek Sıklet",
+      "E": "Bileşik"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-7834b921ef71",
+    "unitNumber": 240,
+    "text": "C# Programlama Dilinde System.Exception sınıfı içinde bulunan StackTrace hangi bilgiyi barındırır?",
+    "options": {
+      "A": "Hata atanmış sayısal değeri",
+      "B": "Hata ile ilgili ekstra yardım linki bulundurur",
+      "C": "Sistemin çalışma zamanını tutar",
+      "D": "Hata ilgili açıklayıcı metin barındırır",
+      "E": "Hata ile ilgili yığın içerisindeki metot çağrılarını barındırır"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-705541c97c85",
+    "unitNumber": 241,
+    "text": "Yukardaki kod çalıştığında ekrana hangi çıktı yazar?",
+    "options": {
+      "A": "10",
+      "B": "0",
+      "C": "Merhaba, Ne Haber",
+      "D": "Overflow exception",
+      "E": "System exception"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-8ff02013c3d6",
+    "unitNumber": 242,
+    "text": "Çok sayıda benzer nesnelere sahip olduğumuz durumlarda, nesnelerin bellek kullanımını azaltmak için başvurduğumuz tasarım deseni hangisidir?",
+    "options": {
+      "A": "Fabrika",
+      "B": "Soyut Fabrika",
+      "C": "Tekil",
+      "D": "Sinek Sıklet",
+      "E": "Vekil"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-c0267056eb4b",
+    "unitNumber": 244,
+    "text": "C# Programlama Dilinde try – catch -finally bloğunun en doğru kullanımını belirten seçenek aşağıdakilerden hangisinde verilmiştir?",
+    "options": {
+      "A": "finally bloğu sadece try bloğunda hata oluduğunda çalışır.",
+      "B": "try bloğu sadece hata oluduğunda çalışır",
+      "C": "catch bloğu hata olsun yada olmasın her durumda çalışır.",
+      "D": "finally bloğu hata olsun yada olmasın her durumda çalışır.",
+      "E": "finally bloğu sadece catch bloğu çalıştığında çalışır."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-a54db5b092cb",
+    "unitNumber": 245,
+    "text": "I – try bloğunun içine tekrar try bloğu yazılamaz. II – finally bloğunu yazmak zorunlu değildir. III – Bir fonksiyonun içinde sadece bir try bloğu yazılabilir. C# programlama dilinde hata ayıklama ile ilgili yukarda verilenlerden hangisi doğrudur?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "I,II,III"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-3f8fc6cf0fa8",
+    "unitNumber": 246,
+    "text": "C# Programlama Dilinde Hata Yakalama (Exception) ile ilgili verilenlerden hangisi doğrudur?",
+    "options": {
+      "A": "Derlenme zamanında oluşur",
+      "B": "JIT derleme zamanında oluşur",
+      "C": "Derleme öncesinde oluşur",
+      "D": "Çalışma zamanında oluşur.",
+      "E": "Program belleğe yüklenirken oluşur."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-f4edd45664ba",
+    "unitNumber": 247,
+    "text": "5Bir sınıftan türetilen nesneye gelen mesajları kontrol ettikten sonra orijinal nesneye iletmek için bir ara katman tasarlanmak isterseniz hangi tasarım deseninin kullanırsınız?",
+    "options": {
+      "A": "Fabrika",
+      "B": "Soyut Fabrika",
+      "C": "Tekil",
+      "D": "Yapıcı",
+      "E": "Vekil"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-b0240dc98b9f",
+    "unitNumber": 248,
+    "text": "Aşağıda verilenler Tasarım Desenlerinden hangisi yapısal tasarım deseni grubuna dâhildir?",
+    "options": {
+      "A": "Adaptör",
+      "B": "Fabrika",
+      "C": "Soyut Fabrika",
+      "D": "Tekil",
+      "E": "Yapıcı"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e791e890acbd",
+    "unitNumber": 249,
+    "text": "“Farklı arabirimlere sahip nesnelerin işbirliği yapmasına izin veren yapısal bir tasarım modelidir.” Tanımı verilen tasarım deseni hangisidir?",
+    "options": {
+      "A": "Cephe",
+      "B": "Adaptör",
+      "C": "Tekil",
+      "D": "Sinek Sıklet",
+      "E": "Bileşik"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-64258732821d",
+    "unitNumber": 250,
+    "text": "Sınıf ve nesnelerin bir araya gelerek nasıl daha büyük tasarımlar oluşturmayı hedefleyen tasarım deseni grubu aşağıdakilerden hangisinde verilmiştir?",
+    "options": {
+      "A": "Yapısal Tasarım Desenleri",
+      "B": "Görsel Tasarım Desenleri",
+      "C": "Davranışlar Tasarım Desenleri",
+      "D": "Metinsel Tasarım Desenleri",
+      "E": "Oluşturucu Tasarım Desenleri"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-ea2f4c398cd4",
+    "unitNumber": 251,
+    "text": "Çok karmaşık sistemleri gizleyerek daha basitleştirilmiş bir erişim sunmak için kullanılan tasarım deseni hangisidir?",
+    "options": {
+      "A": "Cephe",
+      "B": "Soyut Fabrika",
+      "C": "Tekil",
+      "D": "Sinek Sıklet",
+      "E": "Vekil"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  }
+]

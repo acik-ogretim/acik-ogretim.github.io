@@ -1,1 +1,3179 @@
-[]
+[
+  {
+    "id": "s-5487091e8dfe",
+    "unitNumber": 1,
+    "text": "Aşağıdakilerden hangisi siber güvenlik çalışma konuları içerisinde yer almaz?",
+    "options": {
+      "A": "Verinin boyutunun küçültülmesi",
+      "B": "Bilgisayar sistemlerine yapılan saldırılar",
+      "C": "Gönderilmekte olan verilerin izinsiz değiştirilmesi",
+      "D": "Kullanıcıların gizli bilgilerinin çalınması",
+      "E": "Bir ağda bulunan verilerin dinlenmesi"
+    },
+    "correctAnswer": "A",
+    "explanation": "Siber güvenlik; bilgisayar sistemlerinin, ağların ve verilerin yetkisiz erişim, saldırı, veri hırsızlığı veya zarar verme gibi tehditlere karşı korunmasını amaçlayan bir alandır. Bu kapsamda bilgisayar sistemlerine yapılan saldırılar, gönderilen verilerin izinsiz şekilde değiştirilmesi, kullanıcıların gizli bilgilerinin çalınması ve ağ üzerindeki verilerin dinlenmesi gibi konular siber güvenliğin temel çalışma alanları arasında yer almaktadır. Ancak verinin boyutunun küçültülmesi konusu daha çok veri sıkıştırma, depolama ve performans optimizasyonu ile ilgilidir; doğrudan siber güvenlik alanının çalışma konuları arasında değerlendirilmez. Bu nedenle doğru seçenek A şıkkıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-bea3efda71b9",
+    "unitNumber": 2,
+    "text": "I. Bütünlük ilkesi II. Şeffaflık ilkesi III. Kullanılabilirlik ilkesi Yukarıda yer alan öncüllerden hangisi veya hangileri bilgi güvenliğinin temel ilkelerindendir?",
+    "options": {
+      "A": "Yalnız II",
+      "B": "Yalnız I",
+      "C": "I ve II",
+      "D": "II ve III",
+      "E": "I ve III"
+    },
+    "correctAnswer": "E",
+    "explanation": "Bilgi güvenliğinin dünya genelinde kabul görmüş üç temel ayağı (CIA üçlüsü) Gizlilik (Confidentiality), Bütünlük (Integrity) ve Erişilebilirlik/Kullanılabilirlik (Availability) dir. Bütünlük (I), verinin izinsiz değiştirilmemesini sağlar; Kullanılabilirlik (III) ise veriye her ihtiyaç duyulduğunda ulaşılabilmesini garanti eder. “Şeffaflık” ise bir güvenlik ilkesi değil, genellikle yönetimsel bir prensiptir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-990d1f7b4c28",
+    "unitNumber": 3,
+    "text": "I. Siber uzayın güvenli olması II. Siber uzaya giriş engelinin bulunmaması III. Siber uzayın asimetrisi Yukarıdakilerden hangisi veya hangileri güvenlik açığı nedenlerindendir?",
+    "options": {
+      "A": "I ve III",
+      "B": "II ve III",
+      "C": "Yalnız II",
+      "D": "I ve II",
+      "E": "Yalnız III"
+    },
+    "correctAnswer": "B",
+    "explanation": "Güvenlik açıklarının temelinde siber uzayın (internetin) doğası yatar. Giriş engelinin bulunmaması (II), herkesin her yerden ağa dahil olup saldırı yapabilmesine olanak tanır. Asimetri (III) ise, bir saldırganın çok az maliyet ve emekle devasa sistemlere büyük zararlar verebilmesini, savunmanın ise saldırıdan çok daha maliyetli ve zor olmasını ifade eder. “Siber uzayın güvenli olması” (I) bir açık nedeni değil, hedeflenen ancak ulaşılması zor bir idealdir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-15768c0d7385",
+    "unitNumber": 4,
+    "text": "Bir sistemin kullanılabilirliği aşağıda verilen matematiksel ifadelerden hangisiyle hesaplanabilir?",
+    "options": {
+      "A": "(Toplam Kesinti Süresi)/(Toplam Çalışma Süresi - Toplam Kesinti Süresi)",
+      "B": "(Toplam Kesinti Süresi) / (Toplam Çalışma Süresi + Toplam Kesinti Süresi)",
+      "C": "(Toplam Çalışma Süresi) / (Toplam Çalışma Süresi + Toplam Kesinti Süresi)",
+      "D": "(Toplam Çalışma Süresi) / (Toplam Kesinti Süresi)",
+      "E": "(Toplam Çalışma Süresi) / (Toplam Çalışma Süresi - Toplam Kesinti Süresi)"
+    },
+    "correctAnswer": "C",
+    "explanation": "Kullanılabilirlik (Availability), bir sistemin talep edildiğinde ne kadar süre çalışır durumda olduğunu belirten bir orandır. Sistemin asıl “çalışma süresi”nin (uptime), planlanan toplam süreye (çalışma süresi + kesinti süresi) bölünmesiyle hesaplanır. Bu formül, sistemin yüzde kaç oranında aktif olduğunu matematiksel olarak ortaya koyar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c2ea87ccd849",
+    "unitNumber": 5,
+    "text": "“Bilgiye ve bilgiyi barındıran sistemlere zarar verebilecek veya başka bir şekilde tehlikeye atabilecek kasıtlı veya kasıtsız eylemlere …………… denir.” Yukarıdaki verilen boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "koruma",
+      "B": "erişim",
+      "C": "saldırı",
+      "D": "tehdit",
+      "E": "risk"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2dde9cc30d2a",
+    "unitNumber": 6,
+    "text": "“Ping saldırısında saldırgan, hedef ana bilgisayara çok büyük boyutlu veriler gibi büyük miktarda bilgi içeren bir …….. yankı istek paketi gönderir.” Yukarıdaki cümlede yer alan boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "DoS",
+      "B": "MITM",
+      "C": "SMTP",
+      "D": "ICMP",
+      "E": "IPS"
+    },
+    "correctAnswer": "D",
+    "explanation": "Ping saldırılarında saldırgan, hedef sisteme çok büyük boyutlu veya aşırı sayıda veri içeren ICMP (Internet Control Message Protocol) yankı istek paketleri gönderir. Ping işlemleri normalde ağ bağlantısını test etmek amacıyla kullanılırken, kötü niyetli kişiler bu protokolü sistemi yavaşlatmak, kaynaklarını tüketmek veya hizmet veremez hâle getirmek amacıyla kullanabilmektedir. Soruda belirtilen “yankı istek paketi” ifadesi de ICMP protokolünün kullandığı echo request paketlerini tanımlamaktadır. Bu nedenle boş bırakılan yere gelmesi gereken doğru kavram ICMP’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-bf33c1f9ee9c",
+    "unitNumber": 7,
+    "text": "I. Sunucu katmanı II. Saldırı katmanı III. Ağ katmanı Yukarıda yer alan seçeneklerden hangisi veya hangileri siber güvenliğin 7 katmanından biri değildir?",
+    "options": {
+      "A": "I ve II",
+      "B": "Yalnız III",
+      "C": "II ve III",
+      "D": "I ve III",
+      "E": "Yalnız I"
+    },
+    "correctAnswer": "A",
+    "explanation": "Siber güvenlikte derinlemesine savunma (Defense-in-Depth) stratejisi kapsamında genellikle 7 katmanlı bir yapıdan bahsedilir. Bu katmanlar sırasıyla: Veri, Uygulama, Uç Nokta/Cihaz, Ağ, Çevre, İnsan ve Fiziksel katmanlardır. “Sunucu” bir katman değil uç nokta veya çevre bileşeni olarak ele alınır, “Saldırı” ise güvenliğin değil siber eylemin bir parçasıdır. Sadece “Ağ katmanı” siber güvenliğin standart savunma katmanları arasında yer alır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b5f07706e2f1",
+    "unitNumber": 8,
+    "text": "“…………… genellikle kullanıcıların tarayıcı geçmişlerine bakmak ve alışkanlıklarını takip etmek amacıyla kullanıcıların bilgilerini toplar ve bu bilgileri kullanıcının rızası olmadığı hâlde uzaktaki sunuculara gönderir.” Yukarıdaki cümlede yer alan boşluğa gelecek kavram aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Casus yazılım",
+      "B": "Zombi",
+      "C": "Arka kapı",
+      "D": "Tavşan",
+      "E": "Korkuluk"
+    },
+    "correctAnswer": "A",
+    "explanation": "Casus yazılımlar (Spyware), bilgisayar kullanıcısının haberi ve izni olmaksızın kişisel verileri, internet alışkanlıklarını, girilen şifreleri veya tarama geçmişini izleyen ve bu gizli verileri saldırganlara veya üçüncü taraf sunuculara ileten kötü amaçlı yazılımlardır. Amaç genellikle reklam hedefleme veya kimlik hırsızlığıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-37cf9b4fab48",
+    "unitNumber": 9,
+    "text": "“…………….. birkaç farklı zararlı türünün karakteristik özelliklerini bir arada barındırabilen zararlı türleridir.” Yukarıda verilen boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Virüsler",
+      "B": "Truva atları",
+      "C": "Melezler",
+      "D": "Solucanlar",
+      "E": "Zombiler"
+    },
+    "correctAnswer": "C",
+    "explanation": "Modern kötü amaçlı yazılımlar artık sadece tek bir türle sınırlı kalmamaktadır. Hem bir solucan (worm) gibi kendi kendine yayılabilen, hem de bir truva atı (trojan) gibi arka kapı açabilen çok işlevli zararlılara “Melez” (Hybrid/Multipartite) yazılımlar denir. Bu türler farklı karakteristikleri bünyesinde topladığı için tespiti ve temizlenmesi daha zordur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-33ed934fc03e",
+    "unitNumber": 10,
+    "text": "Virüsler çoğunlukla aşağıdaki programlama dillerinden hangisi ile yazılırlar?",
+    "options": {
+      "A": "Phyton",
+      "B": "Visual Basic",
+      "C": "C++",
+      "D": "Assembly",
+      "E": "Java"
+    },
+    "correctAnswer": "D",
+    "explanation": "Assembly, donanıma en yakın ve sistem kaynakları üzerinde en alt seviyede kontrol sağlayan bir dildir. Bu özelliği, virüs geliştiricilerine işletim sisteminin derinliklerine müdahale etme imkanı tanıdığı için sıkça tercih edilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-51dbe702e160",
+    "unitNumber": 11,
+    "text": "I. Politik II. Coğrafi III. Ekonomik Yukarıdakilerden hangisi ya da hangileri bir siber saldırgana ait motivasyon değildir?",
+    "options": {
+      "A": "I ve III",
+      "B": "Yalnız I",
+      "C": "I ve II",
+      "D": "Yalnız II",
+      "E": "II ve III"
+    },
+    "correctAnswer": "D",
+    "explanation": "Siber saldırganlar genellikle finansal kazanç sağlamak (ekonomik motivasyon) veya bir ideolojiyi savunmak, devletler arası üstünlük kurmak (politik motivasyon) gibi nedenlerle saldırı yaparlar. Ancak “coğrafi” konum, bir saldırgan için temel bir “motivasyon” kaynağı değil, sadece fiziksel bir veridir. Saldırganın amacı coğrafyayı değiştirmek veya coğrafi bir kazanç elde etmek değil, dijital varlıklar üzerinden güç veya para kazanmaktır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-dc2863f24687",
+    "unitNumber": 12,
+    "text": "Aşağıdakilerden hangisi bir kimlik doğrulama yöntemi değildir?",
+    "options": {
+      "A": "İki faktörlü kimlik doğrulama",
+      "B": "Tek kullanımlık parola",
+      "C": "Çok faktörlü kimlik doğrulama",
+      "D": "Biyometrik tanımlama",
+      "E": "Geometrik doğrulama"
+    },
+    "correctAnswer": "E",
+    "explanation": "Kimlik doğrulama sistemleri temel olarak; bildiğiniz bir şey (parola), sahip olduğunuz bir şey (SMS kodu, token) veya olduğunuz bir şey (parmak izi, yüz tanıma gibi biyometrik veriler) üzerine kuruludur. İki faktörlü, çok faktörlü, tek kullanımlık şifreler ve biyometrik veriler standart yöntemlerdir. “Geometrik doğrulama” ise siber güvenlik literatüründe kabul görmüş standart bir kimlik doğrulama kategorisi değildir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-556afb5c6a78",
+    "unitNumber": 13,
+    "text": "Aşağıdakilerden hangisi hizmet engelleme (DoS) saldırılarına örnek olarak verilemez?",
+    "options": {
+      "A": "E-posta bombardımanı",
+      "B": "Tampon bellek taşması saldırısı",
+      "C": "Ping saldırısı",
+      "D": "UDP fırtınası",
+      "E": "TCP-SYN saldırısı"
+    },
+    "correctAnswer": "B",
+    "explanation": "E-posta bombardımanı, Ping saldırısı, UDP fırtınası ve SYN saldırıları; hedef sistemi trafikle boğarak hizmet dışı bırakmaya yönelik klasik DoS yöntemleridir. Ancak “Tampon bellek taşması” (Buffer Overflow), yazılımdaki bir açığı kullanarak belleğe kapasitesinden fazla veri yazılması ve bu sayede sistemde yetkisiz kod çalıştırılmasına odaklanan bir sızma/zafiyet sömürme saldırısıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8d03c93263eb",
+    "unitNumber": 14,
+    "text": "ABD Ulusal Standartlar ve Teknoloji Enstitüsü (NIST) güvenlik düzeyleri hakkında verilen aşağıdaki bilgilerden hangisi yanlıştır?",
+    "options": {
+      "A": "2. seviye güvenlik düzeyinde sisteme erişmek için geçerli bir kimlik numarasına sahip olmak gerekir.",
+      "B": "4. seviye güvenlik düzeyinde sistemlere kayıt aşaması denetlenmez.",
+      "C": "1. seviye güvenlik düzeyinde güçlü kriptografik mekanizmalar gerekli değildir.",
+      "D": "1. seviye güvenlik düzeyi en düşük güvenlik seviyesine sahiptir.",
+      "E": "3. seviye güvenlik düzeyinde çok faktörlü kimlik doğrulama yapılır."
+    },
+    "correctAnswer": "B",
+    "explanation": "NIST standartlarına göre güvenlik seviyeleri 1’den (en düşük) 4’e (en yüksek) kadar sıralanır. Seviye yükseldikçe denetim ve kimlik doğrulama kriterleri katılaşır. 4. seviye, en yüksek güvenlik düzeyini temsil eder ve bu seviyede kayıt aşaması dahil tüm süreçlerin en sıkı şekilde denetlenmesi ve çok güçlü kriptografik yöntemlerin kullanılması esastır; “denetlenmez” ifadesi bu seviye için tamamen yanlıştır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0e078bdffdd7",
+    "unitNumber": 15,
+    "text": "“….. bilgi sistemini ve içinde depolanan verileri koruyan faaliyetlerin toplamıdır.” Yukarıda verilen boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Sistem bütünlüğü",
+      "B": "Kullanılabilirlik ilkesi",
+      "C": "Bilgi güvenliği",
+      "D": "Güvenlik açığı",
+      "E": "Gizlilik ilkesi"
+    },
+    "correctAnswer": "C",
+    "explanation": "Bilgi güvenliği; bilginin bir varlık olarak gizliliğinin, bütünlüğünün ve kullanılabilirliğinin korunması için yürütülen tüm süreç ve faaliyetleri kapsayan geniş bir disiplindir. Diğer seçenekler (gizlilik, bütünlük vb.) bilgi güvenliğinin alt ilkeleriyken, “Bilgi Güvenliği” bu faaliyetlerin tamamını tanımlayan çatı kavramdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4032b0b9ebe5",
+    "unitNumber": 16,
+    "text": "Aşağıdakilerden hangisi casus yazılımın sistemde yarattığı etkilerden biri değildir?",
+    "options": {
+      "A": "İnternet bant genişliğinin daralması",
+      "B": "Ekranda sürekli olarak reklamların görünmesi",
+      "C": "Tarayıcı araç çubuğu ve eklentilerinde değişiklikler olması",
+      "D": "Sistem performansının yavaşlaması",
+      "E": "Mavi ekran hatası alma"
+    },
+    "correctAnswer": "E",
+    "explanation": "Casus yazılımlar gizlice veri çalmak ve arka planda çalışmak üzere tasarlandıkları için genellikle interneti yavaşlatırlar (A), sistemi meşgul ederler (D), reklam çıkarırlar (B) veya tarayıcıyı manipüle ederler (C). “Mavi ekran” (BSOD) ise genellikle kritik sistem dosyalarının bozulması veya donanım uyumsuzlukları sonucu sistemin tamamen durmasıdır; casus yazılımlar fark edilmeden çalışmaya devam etmek istedikleri için sistemi genellikle tamamen çökertmeyi hedeflemezler.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ac2a0986cdd1",
+    "unitNumber": 17,
+    "text": "I. Düzenli olarak sızma testlerinin gerçekleştirilmesi II. Açık alanlarda verilen Wi-Fi hizmeti üzerinden banka ve ticaret işlemleri yapmamak III. Sistem veya yazılımın sürekli güncel tutulması Yukarıda yer alan maddelerden hangisi veya hangileri sıfırıncı gün sömürüsünün önüne geçebilmek amaçlı uygulanabilecek önlemlerdendir?",
+    "options": {
+      "A": "II ve III",
+      "B": "I ve III",
+      "C": "Yalnız I",
+      "D": "I ve II",
+      "E": "Yalnız II"
+    },
+    "correctAnswer": "B",
+    "explanation": "Sıfırıncı gün (Zero-day) saldırıları, yazılım üreticisinin henüz bilmediği ve yaması yayınlanmamış açıkları hedefler. Bu riskleri azaltmak için sistemlerin her zaman en güncel sürümde tutulması (III) ve düzenli sızma testleri (I) ile potansiyel zafiyetlerin saldırganlardan önce keşfedilmeye çalışılması gerekir. Wi-Fi güvenliği (II) önemli bir önlem olsa da spesifik olarak “sıfırıncı gün” açıklarının tespiti veya engellenmesi ile doğrudan ilişkili bir teknik savunma değildir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0328c7378217",
+    "unitNumber": 18,
+    "text": "“…………., sunucu üzerinde kayıtlı olan ve istenilen kaynaklara erişmek veya fiziksel erişimi sağlamak için tekrar tekrar kullanılan kodlardır.” Yukarıda boş bırakılan yere gelecek kavram aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Karmaşık şifreler",
+      "B": "Dinamik şifreler",
+      "C": "Tek kullanımlık şifreler",
+      "D": "Basit şifreler",
+      "E": "Statik şifreler"
+    },
+    "correctAnswer": "E",
+    "explanation": "Doğru cevap E) Statik şifrelerdir. Statik şifreler, bir kullanıcı tarafından belirlenen ve sistem üzerinde kayıtlı olarak tutulan, her giriş işleminde tekrar tekrar kullanılan şifrelerdir. Bu tür şifrelerde kullanıcı aynı parola ile sürekli sisteme erişim sağlar. Soruda geçen “sunucu üzerinde kayıtlı olan ve istenilen kaynaklara erişmek veya fiziksel erişimi sağlamak için tekrar tekrar kullanılan kodlar” ifadesi de statik şifrelerin tanımını açıklamaktadır. Dinamik veya tek kullanımlık şifreler ise her kullanımda değişiklik gösterdiği için bu tanıma uymaz. Bu nedenle boş bırakılan yere gelmesi gereken doğru kavram statik şifrelerdir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c94e1c83e02e",
+    "unitNumber": 19,
+    "text": "“…….. kullanılarak gerçekleştirilen kimlik doğrulama verilerin değiştirilmediğinden ve göndericinin alıcının veri almak istediği kişi olduğundan emin olmak için mesajın bir tür kimlik doğrulamasıdır.” cümlesinde yer alan boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Çırpı fonksiyonu",
+      "B": "Telnet",
+      "C": "UDP",
+      "D": "SMTP",
+      "E": "TCP"
+    },
+    "correctAnswer": "A",
+    "explanation": "“Çırpı fonksiyonu” (Hash Function), verinin özgünlüğünü ve bütünlüğünü kontrol etmek için kullanılan bir matematiksel algoritmadır. Bir veri hash işleminden geçtiğinde benzersiz bir özet (parmak izi) oluşur. Eğer veride en ufak bir değişiklik olursa bu özet tamamen değişir. Bu sayede hem verinin değiştirilmediği (bütünlük) hem de kimlik doğrulaması yapılmış olur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-24a23aae1cc3",
+    "unitNumber": 20,
+    "text": "I. Kullanıcıların kimlik bilgilerinin ele geçirilmesi II. Bir web sitesine veya çevrimiçi hizmete erişememe durumu III. Web sitelerinde dosya açılışında büyük gecikmelerin yaşanması durumu Yukarıda yer alan maddelerden hangisi ya da hangileri DoS saldırısına uğrayan bir ağ sistemi için kullanıcıların maruz kalabileceği durumları içermektedir?",
+    "options": {
+      "A": "Yalnız III",
+      "B": "I ve II",
+      "C": "I ve III",
+      "D": "II ve III",
+      "E": "Yalnız I"
+    },
+    "correctAnswer": "D",
+    "explanation": "DoS (Denial of Service – Hizmet Engelleme) saldırılarının temel amacı, bir sistemi veya ağı aşırı trafikle boğarak erişilemez hale getirmektir. Bu nedenle kullanıcılar ilgili hizmete hiç ulaşamazlar (II) veya sistem çok yavaşladığı için dosya açılışlarında büyük gecikmeler yaşarlar (III). Kimlik bilgilerinin ele geçirilmesi (I) ise genellikle oltalama (phishing) veya sızma saldırılarının hedefidir; DoS saldırısı veriyi çalmaya değil, sistemi durdurmaya odaklanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-19e4f213bf62",
+    "unitNumber": 21,
+    "text": "“Bir ağda yer alan ….., bir dizi sunucuya gelen yükü alırlar ve yükün çeşitli faktörlere bağlı olarak sunucular arasında veya sunucular arasında dengelenmesini sağlarlar.” Yukarıdaki cümlede yer alan boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "ana bilgisayar",
+      "B": "ayrıştırıcı",
+      "C": "sunucu",
+      "D": "yük dengeleyici",
+      "E": "güvenlik duvarı"
+    },
+    "correctAnswer": "D",
+    "explanation": "Cümlede tanımı yapılan cihaz Yük Dengeleyici’dir (Load Balancer). Gelen ağ trafiğini veya uygulama taleplerini verimli bir şekilde birden fazla sunucuya dağıtarak performansı artırır ve kesintisiz hizmet sağlar.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-bf1b19c78b00",
+    "unitNumber": 22,
+    "text": "Aşağıdakilerden hangisi adli bilişim sürecinde yer alan adımlardandır?",
+    "options": {
+      "A": "Tespit etme",
+      "B": "Raporlama",
+      "C": "Sorgulama",
+      "D": "Özetleme",
+      "E": "Denetleme"
+    },
+    "correctAnswer": "B",
+    "explanation": "Standart bir adli bilişim süreci; hazırlık, delillerin toplanması, incelenmesi, analiz edilmesi ve son olarak bulguların bir araya getirildiği “Raporlama” adımından oluşur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-df02a81fa2bd",
+    "unitNumber": 23,
+    "text": "DES şifreleme tekniğinde 2.adım işlem tekrarı (raunt) adedi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "56",
+      "B": "48",
+      "C": "16",
+      "D": "64",
+      "E": "32"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-fd5cce006306",
+    "unitNumber": 24,
+    "text": "Aşağıdakilerden hangisi oltalama saldırısının amaçlarından birisi değildir?",
+    "options": {
+      "A": "Kimlik avı yapmak",
+      "B": "Sunucu hizmetini engellemek",
+      "C": "Kullanıcıların ATM pin kodlarını ele geçirmek",
+      "D": "Kullanıcının kredi kartı bilgilerini ele geçirmek",
+      "E": "Kullanıcı parolalarını ele geçirmek"
+    },
+    "correctAnswer": "B",
+    "explanation": "Oltalama (Phishing), kullanıcıları aldatarak hassas verileri çalmayı amaçlar. Sunucu hizmetini engellemek ise genellikle Hizmet Engelleme (DoS) veya Dağıtık Hizmet Engelleme (DDoS) saldırılarının temel amacıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b2f85f10cc5e",
+    "unitNumber": 25,
+    "text": "Bilgi güvenliğinin içerdiği temel ilke sayısı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "2",
+      "D": "1",
+      "E": "5"
+    },
+    "correctAnswer": "A",
+    "explanation": "Bilgi güvenliği evrensel olarak kabul görmüş üç temel ilkeye dayanır. Bu ilkeler “CIA Üçlüsü” olarak bilinir: Gizlilik (Confidentiality), Bütünlük (Integrity) ve Erişilebilirlik (Availability).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-bc125f96c49e",
+    "unitNumber": 26,
+    "text": "Aşağıdakilerden hangisi bir saldırı tespit yaklaşımıdır?",
+    "options": {
+      "A": "Paket karşılaştırma",
+      "B": "Veri çaprazlama",
+      "C": "Başlık sınama",
+      "D": "İçerik denetleme",
+      "E": "Anomali tespiti"
+    },
+    "correctAnswer": "E",
+    "explanation": "Saldırı Tespit Sistemleri (IDS) tarafından kullanılan iki temel yaklaşımdan biri anomali tespitidir. Bu yaklaşım, ağdaki normal davranış profiline uymayan, anormal aktiviteleri tespit ederek olası bir saldırıyı belirlemeye çalışır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e835c8c7d49b",
+    "unitNumber": 27,
+    "text": "Aşağıdakilerden hangisi asimetrik şifreleme yöntemlerinden biridir?",
+    "options": {
+      "A": "AES",
+      "B": "DES",
+      "C": "3DES",
+      "D": "RSA",
+      "E": "RC4"
+    },
+    "correctAnswer": "D",
+    "explanation": "Asimetrik şifrelemede, şifreleme ve deşifreleme için biri genel (public) diğeri özel (private) olmak üzere iki farklı anahtar kullanılır. RSA bu türün en bilinen örneğidir. Diğer seçenekler ise aynı anahtarı kullanan simetrik şifreleme yöntemleridir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-044eb27edc5a",
+    "unitNumber": 28,
+    "text": "DES yönteminde 56 bitlik anahtardan üretilen alt anahtarların bit adedi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "36",
+      "B": "56",
+      "C": "24",
+      "D": "12",
+      "E": "48"
+    },
+    "correctAnswer": "E",
+    "explanation": "DES yönteminde 56 bitlik anahtardan üretilen alt anahtarların bit adedi 48’dir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-811377dc5f87",
+    "unitNumber": 29,
+    "text": "I. Vijener şifreleme II. DES III. AES Yukarıda yer alan şifreleme yöntemlerinden hangisi veya hangileri klasik şifreleme yöntemlerindendir?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "II ve III",
+      "C": "I ve II",
+      "D": "Yalnız II",
+      "E": "I ve III"
+    },
+    "correctAnswer": "A",
+    "explanation": "Vigenère (Vijener) şifrelemesi, elle uygulanabilen bir yöntem olduğu için klasik döneme aittir. DES ve AES ise bilgisayar tabanlı, modern blok şifreleme algoritmalarıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e7f4fe885605",
+    "unitNumber": 30,
+    "text": "Sezar şifreleme yöntemi için kaç farklı anahtar kullanılabilir?",
+    "options": {
+      "A": "Kullanılan alfabedeki harf sayısının iki katı kadar",
+      "B": "Kullanılan alfabedeki harf sayısının bir fazlası kadar",
+      "C": "Kullanılan alfabedeki harf sayısının yarısı kadar",
+      "D": "Kullanılan alfabedeki harf sayısı kadar",
+      "E": "Kullanılan alfabedeki harf sayısının bir eksiği kadar"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-fc17612fc790",
+    "unitNumber": 31,
+    "text": "Aşağıdakilerden hangisi bilgisayar kullanımı ile ilgili etik ilkeleri ihlal etme niteliğindedir?",
+    "options": {
+      "A": "Bedeli ödenmeyen bir yazılımın kullanılmaması",
+      "B": "Bilgisayarın hırsızlık amacıyla kullanılmaması",
+      "C": "Bilgisayar üzerinden yalan bilgi yayılması",
+      "D": "Program yazan birinin, yazdığı programın toplumsal hayata etkisini dikkate alması",
+      "E": "Başka insanların bilgisayar ortamında dosyalarını karıştırmamak"
+    },
+    "correctAnswer": "C",
+    "explanation": "Bilişim etiği, bilgisayar teknolojilerinin kullanımıyla ilgili ahlaki prensipleri inceler. Bilgisayar kullanarak kasten yalan veya yanıltıcı bilgi (dezenformasyon) yaymak, diğer insanlara zarar verme potansiyeli taşıdığı için temel etik ilkelerin açık bir ihlalidir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-9ef454b57888",
+    "unitNumber": 32,
+    "text": "“Bluetooth cihazları, veri aktarımı için….. bir ağ oluşturma ilkesine dayalı biçimde hareket ederler.” Yukarıdaki cümlede yer alan boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "zayıf",
+      "B": "hareketli",
+      "C": "geçici",
+      "D": "sağlam",
+      "E": "kalıcı"
+    },
+    "correctAnswer": "C",
+    "explanation": "Bluetooth, cihazların birbirini bulduğunda anlık ve geçici (ad-hoc) ağlar kurarak iletişim kurması prensibine göre çalışır. Bu ağlara “piconet” adı verilir ve sabit bir altyapı gerektirmezler.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-39596bc31eed",
+    "unitNumber": 34,
+    "text": "Aşağıdakilerden hangisi adli bilişimin alt disiplinlerinden biridir?",
+    "options": {
+      "A": "GPS adli bilişim",
+      "B": "Veritabanı adlı bilişim",
+      "C": "Sunucu adli bilişim",
+      "D": "İstemci adli bilişim",
+      "E": "Basın-yayın adli bilişim"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-2e88e39082cb",
+    "unitNumber": 35,
+    "text": "Pasif saldırılarda, bir bilgisayar korsanı sadece kablosuz iletişimin gelen ve giden trafiğini….. Yukarıda verilen cümlede boş bırakılan yere aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "karıştırır",
+      "B": "parçalar",
+      "C": "değiştirir",
+      "D": "yönlendirir",
+      "E": "dinler"
+    },
+    "correctAnswer": "E",
+    "explanation": "Pasif saldırılar, sisteme veya veri akışına müdahale etmeden, sadece gizlice izleme ve dinleme (eavesdropping) yoluyla bilgi toplamayı amaçlar. Veriyi değiştirmek veya yönlendirmek aktif saldırı türleridir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-830b00b6910b",
+    "unitNumber": 36,
+    "text": "Aşağıdakilerden hangisi Wi-Fi güvenliği için geliştirilmiş bir şifreleme protokoldür?",
+    "options": {
+      "A": "WPS2",
+      "B": "WPA3",
+      "C": "WEP2",
+      "D": "WPS3",
+      "E": "WEP3"
+    },
+    "correctAnswer": "B",
+    "explanation": "WPA3 (Wi-Fi Protected Access 3), kablosuz ağ (Wi-Fi) güvenliği için geliştirilmiş en güncel ve güçlü şifreleme protokolüdür. Diğer seçenekler standartlaşmış veya güncel protokoller değildir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5ac22d4cd505",
+    "unitNumber": 37,
+    "text": "Bir sistemde bir miktar trafiğe izin veren ancak diğer trafiği reddeden cihaz veya hizmete verilen ad aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Ağ",
+      "B": "Güvenlik duvarı",
+      "C": "Anti virüs yazılımı",
+      "D": "Yönlendirici",
+      "E": "Sunucu"
+    },
+    "correctAnswer": "B",
+    "explanation": "Güvenlik duvarı (Firewall), önceden tanımlanmış güvenlik kurallarına göre gelen ve giden ağ trafiğini izleyen ve filtreleyen bir ağ güvenliği cihazıdır. Amacı, güvenli bir iç ağ ile güvenilmeyen bir dış ağ arasında bir bariyer oluşturmaktır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a1888a4b60ca",
+    "unitNumber": 38,
+    "text": "Karşı tarafa ulaşan şifrelenmiş verinin veya metnin deşifre edilmesi (çözülmesi) işlemi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Kriptografi",
+      "B": "Anahtarlama",
+      "C": "Kaba kuvvet saldırısı",
+      "D": "Kriptanaliz",
+      "E": "Düz metin"
+    },
+    "correctAnswer": "D",
+    "explanation": "Kriptanaliz, şifreleme anahtarını veya algoritmanın detaylarını bilmeden şifreli metinleri analiz ederek orijinal metni elde etme bilimi ve sanatıdır. Kısacası şifre kırma işlemidir. Kriptografi ise şifreleme bilimidir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-9899d374bb7f",
+    "unitNumber": 39,
+    "text": "“İnternet üzerinden gerçekleştirilen kimlik doğrulama işlemlerinde geleneksel olarak ……ve …… kullanılır.” Yukarıdaki cümlede yer alan boşluklara sırasıyla aşağıdaki ikililerden hangisi getirilmelidir?",
+    "options": {
+      "A": "Kullanıcı adı / parmak izi",
+      "B": "Kullanıcı adı / biyometrik doğrulama",
+      "C": "Retina okuma / parola",
+      "D": "Parola / parmak izi",
+      "E": "Kullanıcı adı / parola"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-bafdc836d5aa",
+    "unitNumber": 40,
+    "text": "“………., bir sistemdeki tehditleri mümkün kılan ve tehdit unsurlarını bunlardan yararlanmaya teşvik eden boşluklar veya zayıf noktalardır.” Yukarıda verilen boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Karşı önlemler",
+      "B": "Güvenlik açıkları",
+      "C": "Siber tehditler",
+      "D": "Siber saldırılar",
+      "E": "Varlıklar"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-51aa7105c4ec",
+    "unitNumber": 41,
+    "text": "Aşağıdakilerden hangisi bir hizmet engelleme (DoS) saldırısında sunucuda anlamsız trafik oluşturacak istekler arasında yer almaz?",
+    "options": {
+      "A": "Web sayfalarına yönelik botlar tarafından oluşturulan istekler",
+      "B": "Hatalı biçimlendirilmiş IP paketleri",
+      "C": "Büyük miktarda bilgi içeren bir ICMP yankı istek paketi",
+      "D": "SQL komut dosyası",
+      "E": "Eksik TCP bağlantıları"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6aa1024623fd",
+    "unitNumber": 42,
+    "text": "Aşağıda verilen bilgilerden hangisi solucan için doğrudur?",
+    "options": {
+      "A": "Yararlı yazılım gibi davranarak bilgisayara yüklenen zararlı koddur.",
+      "B": "Bilgisayarda virüs tehdidi olduğuna dair uyarı penceresi açan zararlı bir türdür.",
+      "C": "Bilgisayar sistemine yerleştikten sonra aktif hale gelmek için tetiklenmeye ihtiyaç duymaz.",
+      "D": "Birkaç farklı zararlı türünün karakteristik özelliklerini bir arada barındırabilen zararlı türdür.",
+      "E": "Kullanıcıların bilgisi dahilinde olmadan tarayıcı ayarlarını değiştiren bir zararlı türdür."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9790f4699c2f",
+    "unitNumber": 43,
+    "text": "“…… zararlısı, kullanıcı tarafından işletim sistemine gönderilen bir isteğin istenen programa ulaşmasını engeller ve sahte yanıtlarla cevap verir.” Yukarıdaki cümlede yer alan boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Truva atı",
+      "B": "Zombi",
+      "C": "Rootkit",
+      "D": "Reklam yazılımı",
+      "E": "Solucan"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e252f813a964",
+    "unitNumber": 44,
+    "text": "Aşağıdakilerden hangisi siber güvenliğin yedi katmanından biridir?",
+    "options": {
+      "A": "Sunucu katmanı",
+      "B": "Uygulama güvenliği katmanı",
+      "C": "Bilgisayar katmanı",
+      "D": "Yönlendirici katmanı",
+      "E": "Saldırı katmanı"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2c4c82be2bc8",
+    "unitNumber": 45,
+    "text": "Aşağıda yer alan üçlemelerden hangisinde CIA üçlemesi doğru olarak verilmiştir?",
+    "options": {
+      "A": "Gizlilik – Bütünlük – Erişilebilirlik",
+      "B": "Şeffaflık – Bütünlük – Erişilebilirlik",
+      "C": "Gizlilik – Bütünlük – Denetlenebilirlik",
+      "D": "Gizlilik – Güvenlik – Denetlenebilirlik",
+      "E": "Gizlilik – Güvenlik – Erişilebilirlik"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b3539e2de003",
+    "unitNumber": 46,
+    "text": "Symantec Norton firması tarafından 2020 yılında sunulan rapora göre bir saldırı ile karşılaşan kullanıcıların aldığı önlemlerden en yüksek orana sahip olanı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "İnternet’te çözüm aramaları",
+      "B": "Çevrimiçi hesaplarını silmeleri",
+      "C": "Hesap şifrelerini güçlendirmeleri",
+      "D": "Hesabının ele geçirildiğini haber vermeleri",
+      "E": "Arkadaşlarından yardım istemeleri"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-53fbd27d05d9",
+    "unitNumber": 47,
+    "text": "Aşağıdakilerden hangisi ortadaki adam saldırılarının (MITM) türlerinden biri değildir?",
+    "options": {
+      "A": "SQL enjeksiyonu",
+      "B": "Wi-Fi ağının gizlice dinlenmesi",
+      "C": "HTTP sahtekarlığı",
+      "D": "E-posta ele geçirme",
+      "E": "SSL ele geçirme"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e7adb2b6a51d",
+    "unitNumber": 48,
+    "text": "Aşağıdakilerden hangisi bir saldırı türü değildir?",
+    "options": {
+      "A": "DDoS",
+      "B": "Rootkit",
+      "C": "DoS",
+      "D": "MITM",
+      "E": "Kaba Kuvvet"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f50006727a61",
+    "unitNumber": 49,
+    "text": "Aşağıdakilerden hangisi parola güvenliği açısından doğru olmayan bir yaklaşımdır?",
+    "options": {
+      "A": "Aynı parolayı birden fazla hesapta kullanmak",
+      "B": "Karmaşık ve uzun parolalar tercih etmek",
+      "C": "Düz metinden oluşmayan parolalar kullanmak",
+      "D": "Önemli parolaları başkaları ile paylaşmamak",
+      "E": "Kullanılan parolaları sık aralıklarla değiştirmek"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c629b75a0442",
+    "unitNumber": 50,
+    "text": "Aşağıdakilerden hangisi tarayıcı korsanından korunmak için alınabilecek önlemlerden değildir?",
+    "options": {
+      "A": "İstenmeyen eklentileri kaldırmak",
+      "B": "Ücretsiz indirmelerden kaçınmak",
+      "C": "İstenmeyen araç çubuklarını kaldırmak",
+      "D": "Güvenlik duvarı seviyesini en düşüğe ayarlamak",
+      "E": "Güvenli web sitelerini tercih etmek"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-cb698d5108db",
+    "unitNumber": 51,
+    "text": "Bir işletmedeki verilerin yetkisiz bir kullanıcı tarafından izinsiz olarak değiştirilmesi bilgi güvenliğinin hangi ilkesine aykırıdır?",
+    "options": {
+      "A": "Gizlilik ilkesi",
+      "B": "Kontrol ilkesi",
+      "C": "Şeffaflık ilkesi",
+      "D": "Erişilebilirlik ilkesi",
+      "E": "Bütünlük ilkesi"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-73f1188ada3e",
+    "unitNumber": 52,
+    "text": "I. Evrensel Tak ve Çalıştır (uPnP) özelliği devreye alınmalıdır. II. Ağda güvenlik duvarları kullanılmalıdır. III. Kablosuz yönlendirici gizli moda alınmalıdır. Yukarıdakilerden hangisi veya hangileri güvenli bir kablosuz ağ oluşturmak için yapılması gerekenlerden değildir?",
+    "options": {
+      "A": "I ve II",
+      "B": "Yalnız III",
+      "C": "II ve III",
+      "D": "I ve III",
+      "E": "Yalnız I"
+    },
+    "correctAnswer": "E",
+    "explanation": "Evrensel Tak ve Çalıştır (uPnP) özelliği devre dışı bırakılmalıdır, bu özellik devreye alınmamalıdır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-15a6079324d6",
+    "unitNumber": 53,
+    "text": "Aşağıdakilerden hangisi bir sızma testi öncesinde gerçekleştirilir?",
+    "options": {
+      "A": "Güvenlik açıklarının kapatılması",
+      "B": "Hali hazırdaki parolaların güçlendirilmesi",
+      "C": "Ağa normalde kullanılmayan fazladan güvenlik önlemlerinin yerleştirilmesi",
+      "D": "Raporlama",
+      "E": "Sistem yöneticisinin isterlerinin belirlenmesi"
+    },
+    "correctAnswer": "E",
+    "explanation": "Sızma testi öncesinde sistem yöneticisinin isterlerinin belirlenmesi gerçekleştirilir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4378ac24c0cd",
+    "unitNumber": 54,
+    "text": "I. Sızma testini gerçekleştiren kişi ağ hakkında ayrıntılı bilgiye sahiptir II. Sızma testini gerçekleştiren kişi ağ hakkında sınırlı bilgiye sahiptir III. Kurum veya kuruluş içerisinde bulunan kişilerce gerçekleştirilmesinde sakınca yoktur Yukarıda verilen bilgilerden hangisi veya hangileri beyaz kutu sızma testi için doğrudur?",
+    "options": {
+      "A": "Yalnız II",
+      "B": "I ve II",
+      "C": "I ve III",
+      "D": "Yalnız I",
+      "E": "II ve III"
+    },
+    "correctAnswer": "C",
+    "explanation": "Beyaz kutu sızma testi gerçekleştiren kişi ağ hakkında ayrıntılı bilgiye sahiptir ve kurum veya kuruluş içerisinde bulunan kişilerce gerçekleştirilmesinde sakınca yoktur.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-fc295c061f41",
+    "unitNumber": 55,
+    "text": "Kişisel Verilerin Korunması Kanununun (KVKK) temel amacı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Görüntülerin korunması",
+      "B": "Gizli bilgilerin korunması",
+      "C": "Kişilerin korunması",
+      "D": "Ses kayıtlarının korunması",
+      "E": "Ses dosyalarının korunması"
+    },
+    "correctAnswer": "C",
+    "explanation": "Kişisel Verilerin Korunması Kanununun (KVKK) temel amacı kişilerin korunmasıdır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-95afdc186221",
+    "unitNumber": 56,
+    "text": "Aşağıdakilerden hangisi bir saldırı düzeltme tedbiridir?",
+    "options": {
+      "A": "Verileri düzenli olarak yedeklemek",
+      "B": "Şüpheli kimlikleri ve İnternet Protokollerini (IP) engellemek",
+      "C": "E-posta kullanım ilkelerine uymak",
+      "D": "Tüm yazılımları ve araçları güncel tutmak",
+      "E": "Saldırı tespit ve saldırı önleme sistemleri (IDS-IPS) kullanmak"
+    },
+    "correctAnswer": "B",
+    "explanation": "Şüpheli kimlikleri ve İnternet Protokollerini (IP) engellemek, bir saldırı düzeltme tedbiridir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-31b220d5e4c9",
+    "unitNumber": 57,
+    "text": "3DES yönteminde kullanılan ……… farklı anahtar birbiri ile aynı seçilirse, klasik DES yöntemi elde edilir. Yukarıda verilen cümlede boş bırakılan yere aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "5",
+      "D": "4",
+      "E": "6"
+    },
+    "correctAnswer": "B",
+    "explanation": "3DES yönteminde kullanılan 3 farklı anahtar birbiri ile aynı seçilirse, klasik DES yöntemi elde edilir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-2b2622eb0dd4",
+    "unitNumber": 58,
+    "text": "Aşağıdakilerden hangisi klasik şifreleme tekniğidir?",
+    "options": {
+      "A": "Çok alfabeli şifreleme",
+      "B": "3DES",
+      "C": "RC4",
+      "D": "DES",
+      "E": "AES"
+    },
+    "correctAnswer": "A",
+    "explanation": "Çok alfabeli şifreleme, klasik şifreleme tekniklerinden biridir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-774429a4288f",
+    "unitNumber": 59,
+    "text": "Aşağıdakilerden hangisi güvenli bir kablosuz ağ oluşturmak için yapılması gerekenlerden değildir?",
+    "options": {
+      "A": "Evrensel Tak ve Çalıştır (uPnP) özelliğinin devre dışı bırakılması",
+      "B": "Periyodik olarak ağda sahte AP (Access Point - Erişim Noktası) denetimi gerçekleştirilmesi",
+      "C": "SSID (Service Set Identifier – Servis Kümesi Belirleyici)’lerin güvenlik politikasını desteklemek adına mümkün olduğunca uzun bir biçimde oluşturulması",
+      "D": "Yönlendiricilerin SSID (Service Set Identifier – Servis Kümesi Belirleyici) bilgilerini yayınlamaması için kablosuz yönlendiricinin gizli moda alınması",
+      "E": "Wi-Fi Korumalı Kurulum (WPS) özelliğinin devreye alınması"
+    },
+    "correctAnswer": "E",
+    "explanation": "Wi-Fi Korumalı Kurulum (WPS) özelliğinin devreye alınması, güvenli bir kablosuz ağ oluşturmak için yapılmamalıdır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ec076924a261",
+    "unitNumber": 60,
+    "text": "Aşağıdaki seçeneklerden hangisinde kullanıcının izlediği yöntem daha güçlü parola oluşturmasını sağlar?",
+    "options": {
+      "A": "Parola içerisinde anlamlı kelimeler kullanmak",
+      "B": "Düz metinden oluşan bir parola tercih etmek",
+      "C": "Parola içerisinde tekrarlı kelimeler kullanmak",
+      "D": "Parola içerisinde kelimeleri tersten yazmak",
+      "E": "Parola içerisinde özel karakterler kullanmak"
+    },
+    "correctAnswer": "E",
+    "explanation": "Parola içerisinde özel karakterler kullanmak, daha güçlü bir parola oluşturulmasını sağlar.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b760505f437d",
+    "unitNumber": 61,
+    "text": "Aşağıdakilerden hangisi Avrupa Siber Suç Sözleşmesi’ne göre bilgisayar veri ve sistemlerinin gizliliğine ve bütünlüğüne yönelik suçlardan birisi değildir?",
+    "options": {
+      "A": "Verilere müdahale",
+      "B": "Sahtekarlık eylemleri",
+      "C": "Cihazların kötüye kullanımı",
+      "D": "Sistemlere müdahale",
+      "E": "Yasadışı erişim"
+    },
+    "correctAnswer": "B",
+    "explanation": "Sahtekarlık eylemleri, Avrupa Siber Suç Sözleşmesi’ne göre bilgisayar veri ve sistemlerinin gizliliğine ve bütünlüğüne yönelik suçlardan biri değildir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-16a9462f3b0c",
+    "unitNumber": 62,
+    "text": "Aşağıdaki matematiksel ifadelerden hangisi Türk alfabesi esas alındığında “k” anahtarına sahip Sezar şifreleme yönteminde şifreleme işlemini temsil etmektedir?",
+    "options": {
+      "A": "E(k,P) = (kP) mod 29",
+      "B": "E(k,P) = (P+k) mod 29",
+      "C": "E(k,P) = (P-k) mod 28",
+      "D": "E(k,P) = (P+k) mod 28",
+      "E": "E(k,P) = (P-k) mod 29"
+    },
+    "correctAnswer": "B",
+    "explanation": "Türk alfabesi esas alındığında, Sezar şifreleme yönteminde şifreleme işlemi E(k,P) = (P k) mod 29 olarak temsil edilir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-bd720f581809",
+    "unitNumber": 63,
+    "text": "Piconet (çok küçük ağ) aşağıdaki teknolojilerin hangisi kullanılarak oluşturulan bir ağ türüdür?",
+    "options": {
+      "A": "Wi-Fi",
+      "B": "RFID",
+      "C": "Kızılötesi",
+      "D": "Bluetooth",
+      "E": "NFC"
+    },
+    "correctAnswer": "D",
+    "explanation": "Piconet, Bluetooth teknolojisi kullanılarak oluşturulan bir ağ türüdür.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-eb88377fda8b",
+    "unitNumber": 64,
+    "text": "…………., kişiler arasında internet kullanımı sırasında doğan hukuki durumları kapsamaktadır. Yukarıdaki cümlede yer alan boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Saldırı hukuku",
+      "B": "Güvenlik hukuku",
+      "C": "Bilişim etiği",
+      "D": "İnternet hukuku",
+      "E": "Bilgi teknolojisi hukuku"
+    },
+    "correctAnswer": "D",
+    "explanation": "İnternet hukuku, kişiler arasında internet kullanımı sırasında doğan hukuki durumları kapsamaktadır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-0c7338d401fa",
+    "unitNumber": 65,
+    "text": "Mehmet, Ahmet’e bir asimetrik şifreleme yöntemi kullanarak bir mesaj iletmek istemektedir. Bu durumda aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Ahmet, Mehmet’in gönderdiği şifreli mesajı Mehmet’in gizli anahtarı ile çözer.",
+      "B": "Ahmet, Mehmet’in gönderdiği şifreli mesajı kendi açık anahtarı ile çözer.",
+      "C": "Mehmet, şifrelemek istediği mesajı Ahmet’in açık anahtarı ile şifreler.",
+      "D": "Mehmet, şifrelemek istediği mesajı kendi gizli anahtarını kullanarak şifreler.",
+      "E": "Mehmet, şifrelemek istediği mesajı Ahmet’in gizli anahtarını kullanarak şifreler."
+    },
+    "correctAnswer": "C",
+    "explanation": "Asimetrik şifreleme yönteminde mesajı şifrelemek için alıcının açık anahtarı kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5d5f454f391e",
+    "unitNumber": 67,
+    "text": "Aşağıdakilerden hangisi psikolojik sosyal mühendislik saldırısıdır?",
+    "options": {
+      "A": "Sunucuya e-posta bombardımanı yaparak sunucu hizmetini engellemek",
+      "B": "Tampon bellek taşması saldırısı yapmak",
+      "C": "SOL enjeksiyonu ile bir veritabanından değerli veri çalmak",
+      "D": "Gizli bilgileri ele geçirmek amacıyla çöpleri karıştırmak",
+      "E": "Çağrı merkezini arayıp parola sıfırlamak isteyen bir kullanıcı rolüne bürünerek bilgi elde etmek"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-08dccb921b79",
+    "unitNumber": 68,
+    "text": "“Bu saldırı türünde saldırgan, hedef ana bilgisayara çok büyük boyutlu veriler gibi büyük miktarda bilgi içeren bir ICMP yankı istek paketi gönderir.” Yukarıda tanımı verilen saldırı türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Ping saldırısı",
+      "B": "UDP fırtınası",
+      "C": "TCP-SYN saldırısı",
+      "D": "Tampon bellek taşması saldırısı",
+      "E": "E-posta bombardımanı"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-93bd54b68628",
+    "unitNumber": 69,
+    "text": "Aşağıdakilerden hangisi bir hizmet engelleme (Do5) saldırısında sunucuda anlamsız trafik oluşturacak istekler arasında yer almaz?",
+    "options": {
+      "A": "Hatalı biçimlendirilmiş IP paketleri",
+      "B": "Büyük miktarda bilgi içeren bir ICMP yankı istek paketi",
+      "C": "Eksik TCP bağlantıları",
+      "D": "Web sayfalarına yonelik botlar tarafından oluşturulan istekler",
+      "E": "SOL komut dosyası"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ce7f26352129",
+    "unitNumber": 70,
+    "text": "Aşağıdakilerden hangisi siber güvenliğin bileşenlerinden biridir?",
+    "options": {
+      "A": "Verilerin boyutunun küçültülmesi",
+      "B": "Verilerin şifrelenmesi",
+      "C": "Verilerin boyutunun büyütülmesi",
+      "D": "Verilerin benzerliğinin denetlenmesi",
+      "E": "Verilerin farklılığının denetlenmesi"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6fbaac851ba8",
+    "unitNumber": 71,
+    "text": "Aşağıdakilerden hangisi şifreleme ile ilgili bir terim değildir?",
+    "options": {
+      "A": "Gizli anahtar",
+      "B": "Ön metin",
+      "C": "Şifreli metin",
+      "D": "Düz metin",
+      "E": "Şifreleme algoritması"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-eb19a8be1e97",
+    "unitNumber": 72,
+    "text": "Bilgisayar kullanımı ile ilgili etik ilkeler göz önüne alındığında – Bedeli ödenmeyen yazılımlar ——– ve ——– . – cümlesinde boşlukların yerine sırasıyla aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "kullanılamaz / silinemez",
+      "B": "kullanılamaz / kopyalanamaz",
+      "C": "silinemez / kopyalanamaz",
+      "D": "silinemez / değiştirilemez",
+      "E": "kullanılamaz / şifrelenemez"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-92f2f725b6e4",
+    "unitNumber": 73,
+    "text": "——–, bireyi tanımlama ve bireyin iddia ettiği kişiyle aynı olmasını sağlama sürecidir. – Cümlesinde yer alan boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Parola",
+      "B": "Kimlik doğrulama",
+      "C": "Güvenlik",
+      "D": "Biyometrik tanımlama",
+      "E": "Kimlik avı"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-3073993be120",
+    "unitNumber": 74,
+    "text": "——– bir veritabanı sunucusundan değerli verileri çalmaya yönelik bir saldırı türüdür. – Cümlesinde boşluğun yerine aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Ortadaki adam saldırısı",
+      "B": "Trojan saldırısı",
+      "C": "SQL enjeksiyonu",
+      "D": "Hizmet engelleme",
+      "E": "Dağıtılmış hizmet engelleme"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-20e34497a1af",
+    "unitNumber": 75,
+    "text": "Aşağıdakilerden hangisi 5070 numaralı Elektronik İmza Kanunu’nda yer alan bir bilişim suçudur?",
+    "options": {
+      "A": "Elektronik imza taklit etme",
+      "B": "Banka veya kredi kartlarının kötüye kullanılması",
+      "C": "Bilişim sistemine girme",
+      "D": "Teknolojik önlemleri etkisiz kılma",
+      "E": "Elektronik sertifikalarda sahtekarlık"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-502d733f8bf2",
+    "unitNumber": 76,
+    "text": "Aşağıdakilerden hangisi veya hangileri kullanıcı adı ve parola ile kimlik doğrulama yöntemine getirilen ek önlemlerdendir? – I- Biyometrik tanımlama – II – Geometrik tanımlama – III – Tek kullanımlık parola",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "I ve III",
+      "E": "II ve III"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-74aadfde6c79",
+    "unitNumber": 77,
+    "text": "Aşağıdaki şifreleme yöntemlerinden hangisi birbirleriyle kıyaslandığında en güvensiz yöntemdir?",
+    "options": {
+      "A": "Tek alfabeli şifreleme",
+      "B": "Playfair şifreleme",
+      "C": "Vijener şifreleme",
+      "D": "Sezar şifreleme",
+      "E": "DES"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-677f62df7e24",
+    "unitNumber": 78,
+    "text": "Web sitelerinde dosya açılışında büyük gecikmeler yaşayan birisi aşağıdaki saldırılardan hangisine maruz kalmaktadır?",
+    "options": {
+      "A": "DoS",
+      "B": "MITM",
+      "C": "SQL enjeksiyonu",
+      "D": "Oltalama",
+      "E": "İstenmeyen posta saldırısı"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-2e1a8496b801",
+    "unitNumber": 79,
+    "text": "Aşağıdakilerden hangisi adli bilişim bir alt disiplinidir?",
+    "options": {
+      "A": "DNS adli bilişim",
+      "B": "Siber suç adli bilişimi",
+      "C": "Siber saldırı adli bilişimi",
+      "D": "VPN adli bilişim",
+      "E": "GPS adli bilişim"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e603c6a4eaaa",
+    "unitNumber": 80,
+    "text": "Aşağıdakilerden hangisi güçlü bir parola oluşturmak için yapılması gereken bir durumdur?",
+    "options": {
+      "A": "Kısa parolalar tercih etmek",
+      "B": "Parola içerisinde anlamlı kelimeler kullanmak",
+      "C": "Düz metinden oluşan parolalar tercih etmek",
+      "D": "Parola içerisinde kişisel bilgilere yer vermek",
+      "E": "Parolada küçük ve büyük harf kombinasyonları kullanmak"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-87bd6fa1aad7",
+    "unitNumber": 81,
+    "text": "Aşağıdakilerden hangisi Türk alfabesi göz önünde bulundurulduğunda “BULUT” kelimesinin anahtarı 2 olan Sezar şifreleme yöntemi kullanılarak şifrelenmiş halidir?",
+    "options": {
+      "A": "ATKTS",
+      "B": "DZÖZY",
+      "C": "BVMVS",
+      "D": "TULUB",
+      "E": "ÇVNVÜ"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-6b4481d24bb6",
+    "unitNumber": 82,
+    "text": "———, bilgi güvenliğinin tesis edilmesi, e-ticaret, dijital halde var olan bilgilerin ve bilgisayar yazılımlarının dağıtımı konularındaki düzenlemeleri kapsamaktadır. – cümlesinde boşluğun yerine aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Adli bilişim",
+      "B": "Bilgi teknolojisi hukuku",
+      "C": "İnternet hukuku",
+      "D": "Ceza hukuku",
+      "E": "Teknoloji hukuku"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-4ce69b7ec565",
+    "unitNumber": 83,
+    "text": "Aşağıdakilerden hangisi bir siber saldırı türü değildir?",
+    "options": {
+      "A": "Trojan saldırısı",
+      "B": "Hizmet engelleme",
+      "C": "Solucan saldırısı",
+      "D": "Bellek kaybı",
+      "E": "SQL enjeksiyonu"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-768fa09785a3",
+    "unitNumber": 84,
+    "text": "——–, güçlü bir parola oluşturma ve tüm bu parolaları şifrelenmiş biçimde yönetme hizmetlerini sunan bir yazılım uygulamasıdır. – cümlesinde yer alan boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Parola yöneticisi",
+      "B": "Güvenlik yöneticisi",
+      "C": "Kullanıcı adı üreteci",
+      "D": "Saldırı önleyici",
+      "E": "Anti virüs yazılımı"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-391ed8dc072e",
+    "unitNumber": 85,
+    "text": "Aşağıdakilerden hangisi fiziksel sosyal mühendislik saldırısıdır?",
+    "options": {
+      "A": "Gizli bilgileri ele geçirmek amacıyla çöpleri karıştırmak",
+      "B": "SQL enjeksiyonu ile bir veritabanından değerli veri çalmak",
+      "C": "Sahte e-postalar göndererek gizli bilgi çalmak",
+      "D": "Sunucuya e-posta bombardımanı yaparak sunucu hizmetini engellemek",
+      "E": "Tampon bellek taşması saldırısı yapmak"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-339165c1d16d",
+    "unitNumber": 86,
+    "text": "Aşağıda yer alan şifreleme yöntemlerinden hangisi klasik şifreleme yöntemlerinden birisi değildir?",
+    "options": {
+      "A": "Sezar şifreleme",
+      "B": "Playfair şifreleme",
+      "C": "Vijener şifreleme",
+      "D": "Hill şifreleme",
+      "E": "RSA"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-ee0c44dceeb0",
+    "unitNumber": 87,
+    "text": "Aşağıda verilen saldırılardan hangileri yanlış yapılandırma saldırılarına örnek olarak verilebilir? – I- SQL enjeksiyonu – II- Sözlük saldırısı – III- FTP-Write saldırısı",
+    "options": {
+      "A": "Yalnız II",
+      "B": "Yalnız III",
+      "C": "I - II",
+      "D": "I - III",
+      "E": "II - III"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-fcf3300a45a1",
+    "unitNumber": 88,
+    "text": "Bir düz metin, Türk alfabesi göz önünde bulundurularak ve anahtarı 4 olan Sezar şifreleme yöntemi kullanılarak şifrelenmiş ve “OSUZ” kelimesi elde edilmiştir. Aşağıdakilerden hangisi söz konusu şifreli kelimenin deşifrelenmiş halidir?",
+    "options": {
+      "A": "AĞAÇ",
+      "B": "KORU",
+      "C": "ÖDÜN",
+      "D": "KOZA",
+      "E": "EDİM"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-5d98dced4960",
+    "unitNumber": 89,
+    "text": "Aşağıdakilerden hangisi biyometrik şifre türü değildir?",
+    "options": {
+      "A": "Parmak izi",
+      "B": "Retina",
+      "C": "Akıllı kıyafet",
+      "D": "Vücut bölümlerinin şekilleri",
+      "E": "Avuç içi"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e6441a156245",
+    "unitNumber": 90,
+    "text": "Aşağıda verilen durumlardan hangisi veya hangileri 5846 numaralı Fikir ve Sanat Eserleri Kanunu’nda belirtilen bilişim suçlarındandır? – I- Manevi, mali ve bağlantılı haklara tecavüz – II – Kişisel verilerin kaydedilmesi – III – Bilişim sistemine girme",
+    "options": {
+      "A": "I ve II",
+      "B": "I ve III",
+      "C": "Yalnız I",
+      "D": "Yalnız II",
+      "E": "II ve III"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-6994f61bc036",
+    "unitNumber": 91,
+    "text": "Aşağıdakilerden hangisi güçlü bir parola oluşturmak için uzak durulması gereken bir durumdur?",
+    "options": {
+      "A": "Parola içerisinde anlamlı kelime kullanmaktan kaçınmak",
+      "B": "Uzun parola oluşturmak",
+      "C": "Düz metinden oluşan parolalar kullanmak",
+      "D": "Kelimelerin tersten yazılmasıyla oluşturulan parolalar kullanmamak",
+      "E": "Farklı karakter kombinasyonları ile parola oluşturmak"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-2f3cd3ce52a3",
+    "unitNumber": 92,
+    "text": "2020 yılında gerçekleşen siber saldırıların sektörlere göre dağılımı göz önünde bulundurulduğunda, en fazla etkilenen sektör hangisidir?",
+    "options": {
+      "A": "Üretim",
+      "B": "Finans ve sigorta",
+      "C": "Kamu",
+      "D": "Enerji",
+      "E": "Eğitim"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-7702462b0b9a",
+    "unitNumber": 93,
+    "text": "Symantec Norton firması tarafından 2017 yılında yayınlanan rapora göre saldırıya uğrayan bilgisayarların yüzde kaçı parola ele geçirilmesi nedeniyle saldırıya uğramıştır?",
+    "options": {
+      "A": "%34",
+      "B": "%70",
+      "C": "%10",
+      "D": "%22",
+      "E": "%85"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e69360345a11",
+    "unitNumber": 94,
+    "text": "Aşağıdaki saldırı türlerinden hangisi veritabanı sunucusuna yönelik bir saldırıdır?",
+    "options": {
+      "A": "Hizmet engelleme saldırısı",
+      "B": "Ortadaki adam saldırısı",
+      "C": "Sıfırıncı gün sömürüsü",
+      "D": "Solucan saldırısı",
+      "E": "SQL enjeksiyonu"
+    },
+    "correctAnswer": "E",
+    "explanation": "SQL enjeksiyonu, veritabanı sunucularına yönelik yapılan bir saldırı türüdür. Bu saldırıda, zararlı SQL kodları kullanılarak veritabanına izinsiz erişim sağlanır ve veri çalınabilir veya manipüle edilebilir.",
+    "source": "deneme"
+  },
+  {
+    "id": "s-766bc393d4bc",
+    "unitNumber": 95,
+    "text": "——- genellikle kullanıcıların tarayıcı geçmişlerine bakmak ve alışkanlıklarını takip etmek amacıyla kullanıcıların bilgilerini toplar ve bu bilgileri kullanıcının rızası olmadığı halde uzaktaki sunuculara gönderir. – Cümlesinde boşluğun yerine aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Korkuluk",
+      "B": "Tavşan",
+      "C": "Truva atı",
+      "D": "Casus yazılım",
+      "E": "Virüs"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-cbaa806bac94",
+    "unitNumber": 96,
+    "text": "Aşağıda verilenlerden hangisi veya hangileri siber güvenliğin 7 katmanından biri değildir? – I. Koruma katmanı – II. Saldırı katmanı – III. Çevre katmanı",
+    "options": {
+      "A": "I ve II",
+      "B": "I ve III",
+      "C": "II ve III",
+      "D": "Yalnız III",
+      "E": "Yalnız I"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-37ecc75fb19e",
+    "unitNumber": 98,
+    "text": "Aşağıdakilerden hangisi siber uzayın asimetriklik özelliğini açıklar?",
+    "options": {
+      "A": "Kullanıcıların istemeleri halinde tamamen kimliksiz/anonim bir biçimde İnternet ağına bağlanabilmesi",
+      "B": "Ülkelerin, suçluları ülke dışında tutmaya yarayan fiziksel sınırları olmasına karşın, İnternet'in böyle bir sınırının olmaması",
+      "C": "Siber uzayın çok geniş olması",
+      "D": "Siber uzayın güvensiz bir ortam olması",
+      "E": "Suçlunun yaptığı işlem sayısı ve ortaya koyduğu etki arasında doğru orantı bulunmaması"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-af4b537a669f",
+    "unitNumber": 99,
+    "text": "Aşağıdakilerden hangisi orta adam saldırılarından (MITM) korunmak için alınabilecek önlemlerden değildir?",
+    "options": {
+      "A": "Kullanılan yazılımları güvenlik açıklarına karşı sürekli güncel tutmak",
+      "B": "Sağlam şifreleme, kimlik doğrulama protokollerini kullanmak",
+      "C": "Açık alanlarda verilen Wi-Fi hizmeti üzerinden bankacılık ve ticaret işlemleri yapmamak",
+      "D": "Verileri parçalara bölerek göndermek",
+      "E": "Tarayıcıların güvensiz web sayfaları için yaptığı uyarıları dikkate almak"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-c263e25e06bd",
+    "unitNumber": 100,
+    "text": "Aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "SQL enjeksiyonu bir hizmet engelleme saldırısıdır.",
+      "B": "Oltalama saldırısı, SQL enjeksiyon olarak da adlandırılır.",
+      "C": "E-posta bombardımanı, bir tampon bellek taşması saldırısıdır.",
+      "D": "TCP-SYN taşma saldırısı, bir sosyal mühendislik saldırısıdır.",
+      "E": "UDP fırtınası bir hizmet engelleme saldırısıdır"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-7a55e171df9c",
+    "unitNumber": 101,
+    "text": "Güvenlik açığı, bir üründeki, bir saldırganın o ürünün —–, kullanılabilirliğini veya gizliliğini tehlikeye atmasına izin verebilecek bir zayıflıktır. – Cümlesinde boşluğun yerine aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "sağlamlığını",
+      "B": "denetlenebilirliğini",
+      "C": "güvenilirliğini",
+      "D": "şeffaflığını",
+      "E": "bütünlüğünü"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-cc75950bb6de",
+    "unitNumber": 102,
+    "text": "Aşağıdakilerden hangisi ABD Ulusal Standartlar ve Teknoloji Enstitüsü (NIST) tarafından belirlenmiş 4. Seviye güvenlik önlemleri arasında yer almaz?",
+    "options": {
+      "A": "Kimlik bilgilerinin denetlenmesi",
+      "B": "Tek faktörlü kimlik doğrulama",
+      "C": "Biyometrik doğrulama gibi ikincil önlemlerin kullanılması",
+      "D": "Çok faktörlü kimlik doğrulama",
+      "E": "Sistemlere kayıt aşamasının denetlenmesi"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-f5646a9da102",
+    "unitNumber": 103,
+    "text": "——, bir ağ veya bir veri yönetim sistemi için olumsuz sonuçlar doğurma potansiyeli olan güvenlik olayları veya durumlarıdır. – Cümlesinde boşluğun yerine aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Siber varlıklar",
+      "B": "Hizmet kesintileri",
+      "C": "Güvenlik açıkları",
+      "D": "Siber saldırılar",
+      "E": "Siber saldırılar"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-2da37b40511e",
+    "unitNumber": 104,
+    "text": "——– saldırısı, bir sunucu veya ağ kaynağını kullanıcılar için kullanılamaz hale getirmeyi amaçlayan bir saldırı türüdür. – Cümlesinde boşluğun yerine aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Ortadaki adam",
+      "B": "İstenmeyen posta",
+      "C": "Hizmet engelleme (DoS)",
+      "D": "Sıfırıncı gün",
+      "E": "Tampon bellek taşması"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-d0d46359be14",
+    "unitNumber": 105,
+    "text": "Aşağıda verilenlerden hangileri zararlılara örnek olarak verilebilir? – I. Tavşan – II. Solucan – III. Güve",
+    "options": {
+      "A": "Yalnız II",
+      "B": "Yalnız I",
+      "C": "II - III",
+      "D": "I - III",
+      "E": "I - II"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-899fb9ea0866",
+    "unitNumber": 106,
+    "text": "Aşağıdakilerden hangisi bir zararlı türüdür?",
+    "options": {
+      "A": "Ön kapı",
+      "B": "Tavşan",
+      "C": "Sincap",
+      "D": "Kurt",
+      "E": "Tampon bellek"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-5a1a1df98161",
+    "unitNumber": 107,
+    "text": "——- düz bir dildeki belirli bilgilerin, herhangi bir bilgisayar yardımı olmaksızın normal bir okuyucunun anlayamayacağı sabit uzunlukta kısa kodlara dönüştürülmek amacıyla işlendiği bir bilgisayar işlemidir. – cümlesinde yer alan boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Tek kullanımlık şifre oluşturma",
+      "B": "Rastgele fonksiyon",
+      "C": "Retina okuma",
+      "D": "Çırpı fonksiyonu",
+      "E": "Veri tanıma"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-474699a111be",
+    "unitNumber": 108,
+    "text": "Bilgisayarı bir Rootkit tarafından etkilenen bir kullanıcı aşağıdakilerden hangisini yaşamaz?",
+    "options": {
+      "A": "Bilgisayar performansında düşüş",
+      "B": "Tarayıcıda ürün reklamlarının bombardımanına maruz kalma",
+      "C": "Mavi ekran hatası alma",
+      "D": "Anti virüs yazılımlarının düzgün çalışmaması",
+      "E": "Beklenmeyen sistem hataları alma"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-2be77f1ea1ab",
+    "unitNumber": 109,
+    "text": "Aşağıdakilerden hangisi birkaç farklı zararlı türünün karakteristik özelliklerini bir arada barındırabilen zararlı türleridir?",
+    "options": {
+      "A": "Truva atı",
+      "B": "Zombiler",
+      "C": "Melezler",
+      "D": "Virüs",
+      "E": "Solucan"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-179424652167",
+    "unitNumber": 110,
+    "text": "Aşağıda verilen yöntemlerden hangileri oltalama saldırılarına örnek olarak verilebilir? – I- Sahte e-postalar göndermek – II- Sahte SMS göndermek – III- Sunucuya e-posta bombardımanı yapmak",
+    "options": {
+      "A": "Yalnız III",
+      "B": "I - II",
+      "C": "II - III",
+      "D": "I - III",
+      "E": "I ve III"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e8da16310f2a",
+    "unitNumber": 111,
+    "text": "Aşağıdakilerden hangisi bir saldırı önleme tedbiridir?",
+    "options": {
+      "A": "Şirket güvenlik yönergelerine bağlı kalmak",
+      "B": "Kötü niyetli ve şüpheli trafiği engellemek",
+      "C": "Şüpheli kimlikleri ve İnternet Protokollerini (IP) engellemek",
+      "D": "Olağanüstü durum kurtarma mekanizmasını uygulamak",
+      "E": "Gerekli siber güvenlik birimlerine ve emniyete vb. haber vermek"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-06433cc9e7b9",
+    "unitNumber": 112,
+    "text": "Aşağıdakilerden hangisi bilgisayar kullanımı ile ilgili etik ilkeleri ihlal etmez?",
+    "options": {
+      "A": "Bilgisayarın hırsızlık amacıyla kullanılması",
+      "B": "Kişinin, bilgisayarı, diğer insanları dikkate almadan kullanması",
+      "C": "Korsan yazılım kullanılması",
+      "D": "Başkalarının bilgisayar çalışmalarına müdahale etmemek",
+      "E": "Bilgisayarın siber saldırı amacıyla kullanılması"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-6e0a5d420705",
+    "unitNumber": 113,
+    "text": "Aşağıdaki elektronik ortamlardan hangisi veya hangileri adli bilişim çalışmalarında delillerin elde edilebileceği bir kaynak olabilir? – I- Kitaplar – II – Faks makineleri – III – Oyun konsolları",
+    "options": {
+      "A": "Yalnız II",
+      "B": "I ve II",
+      "C": "Yalnız III",
+      "D": "II ve III",
+      "E": "I ve III"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-b27b20db8e32",
+    "unitNumber": 114,
+    "text": "Aşağıdakilerden hangisi saldırı tespit sistemleri (IDS) tarafından anomalinin tespit edilmesi için kullanılan yöntemlerden biridir?",
+    "options": {
+      "A": "SMTP",
+      "B": "TCP",
+      "C": "Markov zinciri",
+      "D": "Adımsal yakınsama",
+      "E": "Token (anahtar) kullanımı"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-6d65b6b99364",
+    "unitNumber": 115,
+    "text": "Aşağıdakilerden hangisi bilişim suçlarını geleneksel suçlardan ayıran niteliklerden biri değildir?",
+    "options": {
+      "A": "Topluma zarar vermesi",
+      "B": "Fiziksel sınır tanımaması",
+      "C": "Coğrafi sınır tanımaması",
+      "D": "Bilişim suçu işlemenin daha kolay ve hızlı olması",
+      "E": "Suçlunun bilgiye erişiminin daha kolay olması"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-bc9c6ee7239f",
+    "unitNumber": 116,
+    "text": "Aşağıdakilerden hangisi Yeni Türk Ceza Kanunu (TCK-5237) Madde 243’te belirtilen bilişim suçudur?",
+    "options": {
+      "A": "Banka veya kredi kartlarının kötüye kullanılması",
+      "B": "Sistemi engelleme, bozma, verileri yok etme veya değiştirme",
+      "C": "Bilişim sistemine girme",
+      "D": "Elektronik sertifikalarda sahtekarlık",
+      "E": "İmza oluşturma verilerinin izinsiz kullanımı"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-ab1dd2283668",
+    "unitNumber": 117,
+    "text": "Aşağıdakilerden hangisi adli bilişim sürecinde yer alan adımlardan birisidir?",
+    "options": {
+      "A": "Delillerin yok edilmesi",
+      "B": "Raporlama",
+      "C": "Delillerin dağıtılması",
+      "D": "Delillerin şifrelenmesi",
+      "E": "Saldırının tekrar tatbik edilmesi"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-a6788d9171f7",
+    "unitNumber": 118,
+    "text": "———– bir bilgisayar ağında, kontrollü bir sisteme erişmek için bir giriş veya çıkış noktasıdır. – cümlesinde yer alan boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Güvenlik duvarı",
+      "B": "Sunucu",
+      "C": "Yönlendirici",
+      "D": "Ana bilgisayar",
+      "E": "Ağ geçidi"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-b548fbbfcab0",
+    "unitNumber": 119,
+    "text": "Aşağıda verilenlerden hangisi veya hangileri saldırı tespit sistemleri (IDS) için doğrudur? – I- Olası bir siber saldırı algılandığında yöneticileri uyarır – II – Ağ trafiğini pasif biçimde takip eder – III – Gerçekleşen olayları kayıt altına almaz",
+    "options": {
+      "A": "Yalnız I",
+      "B": "I ve II",
+      "C": "I ve III",
+      "D": "Yalnız II",
+      "E": "II ve III"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-72aded5e1116",
+    "unitNumber": 120,
+    "text": "Aşağıdakilerden hangisi bir sızma testi türüdür?",
+    "options": {
+      "A": "Gri kutu testi",
+      "B": "Kırmızı kutu testi",
+      "C": "Turuncu kutu testi",
+      "D": "Ağ yayılım testi",
+      "E": "Hayalet testi"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-bc85722cf2b8",
+    "unitNumber": 121,
+    "text": "Aşağıdakilerden hangisi casus yazılımlardan korunmak için alınabilecek önlemlerden değildir?",
+    "options": {
+      "A": "İşletim sistemini güncel tutmak",
+      "B": "Güvenlik duvarı kullanmak",
+      "C": "Bilinmeyen göndericilerden gelen e-postaları ve eklerini açmamak",
+      "D": "Güvenilir kaynaklar dışında ücretsiz yazılım araçlarını indirmemek",
+      "E": "Tarayıcının güvenlik seviyesini düşük seviyeye ayarlamak"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-c2ba0ddc8994",
+    "unitNumber": 122,
+    "text": "Aşağıdakilerden hangisi bilgi güvenliği göz önünde bulundurulduğunda insan kaynaklı bir tehdit değildir?",
+    "options": {
+      "A": "Virüsler",
+      "B": "Verilere izinsiz erişimin gerçekleşmesi",
+      "C": "Verilerin izinsiz olarak değiştirilmesi",
+      "D": "Deprem sonucunda verilerin tahrip olması",
+      "E": "Trojanlar"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-5643683372cf",
+    "unitNumber": 123,
+    "text": "Bir kullanıcının evinde aldığı İnternet hizmetine erişememesi aşağıdaki ilkelerden hangisini ihlal eder?",
+    "options": {
+      "A": "Bütünlük ilkesi",
+      "B": "Kullanılabilirlik ilkesi",
+      "C": "Saydamlık ilkesi",
+      "D": "Gizlilik ilkesi",
+      "E": "Kontrol ilkesi"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-55847e91e989",
+    "unitNumber": 124,
+    "text": "Aşağıda verilen önlemlerden hangileri Rootkitlerden korunmak için uygulanabilir? – I. Ücretsiz yazılımları tercih etmek – II. İşletim sistemindeki güncellemeleri kapatmak – III. Güvenli web sitelerini ziyaret etmek",
+    "options": {
+      "A": "Yalnız III",
+      "B": "I - II",
+      "C": "II - III",
+      "D": "I - III",
+      "E": "II - III"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-34c9da70a106",
+    "unitNumber": 125,
+    "text": "Aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Siber uzayda her zaman bir miktar risk mevcuttur.",
+      "B": "Bilgi güvenliği, bilgi sistemini ve içinde depolanan verileri koruyan faaliyetlerin toplamıdır.",
+      "C": "Gizlilik ilkesi, bilgi güvenliğinin üç ana ilkesinden birisidir.",
+      "D": "Kontrol ilkesi, bilgi güvenliğinin üç ana ilkesinden birisidir.",
+      "E": "Kullanılabilirlik ilkesi, bilgi güvenliğinin üç ana ilkesinden birisidir."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-9141d31ab29d",
+    "unitNumber": 126,
+    "text": "Özellikle DDoS (Dağıtılmış Hizmet Engelleme / Reddi) saldırılarında, hedef sunucuyu işleyemez hale getirmek amacıyla ——– faydalanılır. – Cümlesinde boşluğun yerine aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Casus yazılımlardan",
+      "B": "Rootkitlerden",
+      "C": "Solucanlardan",
+      "D": "Zombilerden",
+      "E": "Korkuluklardan"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-d418e99b0928",
+    "unitNumber": 127,
+    "text": "– Yararlı yazılım gibi davranarak bilgisayara yüklenen zararlı koddur. – şeklinde tanımlanan zararlı türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Truva atı",
+      "B": "Solucan",
+      "C": "Virüs",
+      "D": "Rootkit",
+      "E": "Zombi"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-25dc3d9f7429",
+    "unitNumber": 128,
+    "text": "Aşağıdakilerden hangisi bilgi güvenliğinin üç temel ilkesinden birisidir?",
+    "options": {
+      "A": "Kontrol ilkesi",
+      "B": "Bütünlük ilkesi",
+      "C": "Sağlama ilkesi",
+      "D": "Saydamlık ilkesi",
+      "E": "Güvenlik ilkesi"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-4be371faf9f4",
+    "unitNumber": 129,
+    "text": "Aşağıdakilerden hangisi bütünlük ilkesini ihlal eder?",
+    "options": {
+      "A": "Gizli verilerin ifşa edilmesi",
+      "B": "Kullanıcıların bilgiye erişiminin engellenmesi",
+      "C": "Verilerin yalnızca yetkili kullanıcılar tarafından değiştirilmesi",
+      "D": "Yetkisiz kullanıcı tarafından verinin değiştirilmesi",
+      "E": "Veri gizliliğinin korunması"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-ba5ed324b159",
+    "unitNumber": 130,
+    "text": "Aşağıdakilerden hangisi bir zararlı türü değildir?",
+    "options": {
+      "A": "Virüs",
+      "B": "Truva atı",
+      "C": "Kurt",
+      "D": "Casus yazılım",
+      "E": "Rootkit"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-04f34f90bc53",
+    "unitNumber": 131,
+    "text": "Aşağıdakilerden hangisi kullanılabilirlik ilkesinin ihlaline bir örnek teşkil eder?",
+    "options": {
+      "A": "Bir işletmeye ait gizli bilgilerinin ifşa olması",
+      "B": "Bir işletmeye ait verilerin izinsiz değiştirilmesi",
+      "C": "İzinsiz olarak gizli bilgilere erişim sağlanması",
+      "D": "İzinsiz olarak verilerin tahrip edilmesi",
+      "E": "Cep telefonu hizmetine erişimin engellenmesi"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-d737b6e557fc",
+    "unitNumber": 132,
+    "text": "——– bir ağda yer alan trafiğin erişim denetimini gerçekleştirir, yetkili trafiğe izin vererek geri kalan tüm erişim isteklerini reddeder. – cümlesinde yer alan boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Sunucu",
+      "B": "Güvenlik duvarı",
+      "C": "Zararlı filtresi",
+      "D": "Yönlendirici",
+      "E": "Ana bilgisayar"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-8fcf57fe4161",
+    "unitNumber": 133,
+    "text": "DES algoritmasında kullanılan metin bloğunun uzunluğu kaç bittir?",
+    "options": {
+      "A": "128",
+      "B": "24",
+      "C": "64",
+      "D": "48",
+      "E": "96"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-27a945382bda",
+    "unitNumber": 134,
+    "text": "Pratikte İnternet’e bağlanan her bilgisayar veya cihaz ——- Cümlesinde yer alan boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "risk altındadır.",
+      "B": "güvenlidir.",
+      "C": "arızalıdır.",
+      "D": "korumalıdır.",
+      "E": "birbirinden bağımsızdır."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-59ee442ea208",
+    "unitNumber": 135,
+    "text": "Aşağıdakilerden hangisi asimetrik şifreleme yöntemlerinden birisidir?",
+    "options": {
+      "A": "AES",
+      "B": "3DES",
+      "C": "RC4",
+      "D": "DSA",
+      "E": "DES"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-a89c8d1940e4",
+    "unitNumber": 136,
+    "text": "Aşağıdakilerden hangisi bilgi güvenliği ile ilgili bir terim değildir?",
+    "options": {
+      "A": "Sistem bütünlüğü",
+      "B": "Gizlilik ilkesi",
+      "C": "Veri bütünlüğü",
+      "D": "Kullanılabilirlik ilkesi",
+      "E": "Saydamlık ilkesi"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-e7c399e9647d",
+    "unitNumber": 137,
+    "text": "DES algoritmasında kullanılan anahtarın uzunluğu kaç bittir?",
+    "options": {
+      "A": "64",
+      "B": "56",
+      "C": "32",
+      "D": "128",
+      "E": "168"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-94f1bb748b0a",
+    "unitNumber": 138,
+    "text": "Aşağıda verilenlerden hangisi veya hangileri saldırı önleme tedbiridir? – I- Yedeklenen verileri şifreli ve korumalı tutmak – II – Saldırganların varlığını göz ardı etmek – III – E-posta kullanım ilkelerine uymak",
+    "options": {
+      "A": "I ve II",
+      "B": "I ve III",
+      "C": "II ve III",
+      "D": "Yalnız I",
+      "E": "Yalnız III"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-c07c09b0db50",
+    "unitNumber": 139,
+    "text": "– Bir öznenin veya nesnenin başka bir özne veya nesneyi kullanma, değiştirme veya etkileme yetisi – tanımını aşağıdakilerden hangisi karşılar?",
+    "options": {
+      "A": "Erişim",
+      "B": "Varlık",
+      "C": "Risk",
+      "D": "Tehdit",
+      "E": "Saldırı"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-bdcfe847a76f",
+    "unitNumber": 140,
+    "text": "Aşağıdakilerden hangisi sistem kullanıcılarına verilen bir siber güvenlik eğitiminin konusu olamaz?",
+    "options": {
+      "A": "Parola seçimi ve güvenliği",
+      "B": "Bilinmeyen e-postalarla başa çıkma",
+      "C": "Casus yazılım geliştirme",
+      "D": "Sosyal mühendislik saldırılarını tanıma ve uzak durma",
+      "E": "Sistem ve yazılımları güncel tutma"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-111e9bcb6674",
+    "unitNumber": 141,
+    "text": "Veri veya metinleri şifrelemek ve şifresini çözmek için aynı gizli anahtarın kullanıldığı şifreleme yöntemleri için aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Bu yöntemlere simetrik şifreleme yöntemleri denir.",
+      "B": "RSA şifreleme yöntemi bu yöntemlerden birisidir.",
+      "C": "Bu yöntemlere asimetrik şifreleme yöntemleri denir.",
+      "D": "Bu yöntemlerde açık anahtar kullanılır.",
+      "E": "Bu yöntemlerde iki farklı anahtar kullanılmaktadır."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-cca0d7f1994d",
+    "unitNumber": 142,
+    "text": "———- önceden tanımlanmış etkinlik veya kalıplar için ağ trafiğini izleyen ve olası siber saldırılar algılandığında güvenlik yöneticilerini uyaran ek bir savunma katmanı sağlar. – cümlesinde yer alan boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Saldırı önleme sistemleri (IPS)",
+      "B": "Anti virüs yazılımları",
+      "C": "Ağ sunucusu",
+      "D": "Saldırı tespit sistemleri (IDS)",
+      "E": "Ana bilgisayar"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-c83cf5a409d5",
+    "unitNumber": 143,
+    "text": "Aşağıda verilenlerden hangisi veya hangileri bir sızma testi öncesinde gerçekleştirilir? – I- Sistem yöneticisinin isterlerinin belirlenmesi – II – Ağda yer alan güvenlik açıklarının kapatılması – III – Sisteme ek güvenlik duvarı yerleştirilmesi",
+    "options": {
+      "A": "II ve III",
+      "B": "I ve III",
+      "C": "Yalnız II",
+      "D": "Yalnız I",
+      "E": "I ve II"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-606c129cc6d2",
+    "unitNumber": 144,
+    "text": "——— algoritmaları, yer değiştirme ve permütasyon işlemlerinden ziyade matematiksel fonksiyonlara dayanır. – cümlesinde yer alan boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Simetrik şifreleme",
+      "B": "Blok şifreleme",
+      "C": "Akış şifreleme",
+      "D": "Asimetrik şifreleme",
+      "E": "Klasik şifreleme"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-8e699d44bed3",
+    "unitNumber": 145,
+    "text": "– Bir tehdidin gerçekleşmesine veya bir varlık üzerinde etkisi olmasına izin veren zayıflık – tanımını aşağıdakilerden hangisi karşılar?",
+    "options": {
+      "A": "Saldırı",
+      "B": "Karşı önlem",
+      "C": "Güvenlik açığı",
+      "D": "Tehdit kaynağı",
+      "E": "Sömürü"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-fea8493aed25",
+    "unitNumber": 146,
+    "text": "Aşağıdakilerden hangisi siber güvenliğin 7 katmanından biridir?",
+    "options": {
+      "A": "Saldırı katmanı",
+      "B": "Risk katmanı",
+      "C": "Bilgisayar katmanı",
+      "D": "İnsan katmanı",
+      "E": "Koruma katmanı"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-f263024f921f",
+    "unitNumber": 147,
+    "text": "Aşağıdakilerden hangisi siber güvenliğin bileşenlerinden biri değildir?",
+    "options": {
+      "A": "Yetkili erişime izin verilmesi",
+      "B": "Kötü niyetli izinsiz girişlerin kontrol edilmesi",
+      "C": "Değerli bilgilerin şifrelenmesi",
+      "D": "Verilerin şifresiz olarak aktarılması",
+      "E": "Gizliliğin korunması"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-fcd85e5070f8",
+    "unitNumber": 148,
+    "text": "——– güvenliği kontrolleri, kritik görev varlıklarını siber suçlular, kötü niyetli kişiler ve ihmalkâr kullanıcılar dahil olmak üzere çok çeşitli insan tehditlerinden koruyan kimlik avı simülasyonlarını ve erişim yönetimi kontrollerini içerir. – Cümlesinde boşluğun yerine aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Çevre",
+      "B": "İnsan",
+      "C": "Ağ",
+      "D": "Uygulama",
+      "E": "Veri"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-ca1ee46bb3dc",
+    "unitNumber": 149,
+    "text": "2021 yılı içerisinde ülkemizde gerçekleştirilen siber saldırı sayısı için aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "250 bin ila 400 bin arasındadır",
+      "B": "10 milyonun üzerindedir",
+      "C": "1 milyonun üzerindedir",
+      "D": "10 bin ila 100 bin arasındadır",
+      "E": "500 bin ila 1 milyon arasındadır"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-d7e4cee715da",
+    "unitNumber": 150,
+    "text": "Aşağıdakilerden hangisi eylemsizliğe dayalı bir saldırı türüdür?",
+    "options": {
+      "A": "İsletmedeki gizli verilerin ifşa edilmesi",
+      "B": "İşletmede çalışan bir yetkilinin yanlışlıkla verileri silmesi",
+      "C": "Yetkili kullanıcı tarafından verilerin izinsiz olarak değiştirilmesi",
+      "D": "İşletmede çalışan bir yetkilinin ağ güvenliği ile ilgili bilgisinin eksik olması sonucunda sunucunun hizmet dışı kalması",
+      "E": "Bir kullanıcının parola ve şifrelerinin ele geçirilmesi"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-70e0f865350f",
+    "unitNumber": 151,
+    "text": "– Verilen bir düz metnin bloklar halinde değil de, sürekli olarak şifrelendiği yöntemlere ——— yöntemleri denir. – cümlesinde yer alan boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "modern şifreleme",
+      "B": "asimetrik şifreleme",
+      "C": "simetrik şifreleme",
+      "D": "blok şifreleme",
+      "E": "akış şifreleme"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-f1384e68f0d3",
+    "unitNumber": 152,
+    "text": "Aşağıdakilerden hangisi güvenliği sağlamak amacıyla kullanılabilecek bir protokoldür?",
+    "options": {
+      "A": "DNS",
+      "B": "TCP",
+      "C": "IPSec",
+      "D": "IP",
+      "E": "IPv6"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-0874ff41a347",
+    "unitNumber": 153,
+    "text": "Aşağıdakilerden hangisi modern şifreleme yöntemlerinden birisi değildir?",
+    "options": {
+      "A": "RSA",
+      "B": "DES",
+      "C": "Vijener şifreleme",
+      "D": "RC4",
+      "E": "AES"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-b76766484958",
+    "unitNumber": 154,
+    "text": "Bir ağdan başka bir ağa bağlanma sürecine ne ad verilir?",
+    "options": {
+      "A": "El değiştirme",
+      "B": "Bağlantı değiştirme",
+      "C": "İlişkilendirme",
+      "D": "Yapılandırma",
+      "E": "İlişki değiştirme"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-016552b29c50",
+    "unitNumber": 155,
+    "text": "Bir piconet içerisinde bağımlı cihazların aktif olmaması durumunda, ağa eklenebilecek maksimum cihaz sayısı kaçtır?",
+    "options": {
+      "A": "85",
+      "B": "105",
+      "C": "155",
+      "D": "205",
+      "E": "255"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-45e1d50d881a",
+    "unitNumber": 156,
+    "text": "Açık anahtarlı şifreleme yöntemlerinde, alıcının biri ——– ve diğeri ——–anahtar olmak üzere iki anahtarı vardır. – cümlesinde yer alan boşluklara aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "kısa - uzun",
+      "B": "açık - gizli",
+      "C": "zayıf - güçlü",
+      "D": "kalıcı - geçici",
+      "E": "tek - çift"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-f9ff4d2310f4",
+    "unitNumber": 157,
+    "text": "Aşağıda yer alan protokollerden hangisi ilk olarak kullanılmış Wi-Fi şifreleme protokolüdür?",
+    "options": {
+      "A": "WPA",
+      "B": "WEP",
+      "C": "CSMA",
+      "D": "CDMA",
+      "E": "MAC"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-a9a5cf0294ef",
+    "unitNumber": 158,
+    "text": "Aşağıdakilerden hangisi düşük enerji tüketimi için tasarlanmış Bluetooth teknolojisidir?",
+    "options": {
+      "A": "BLS",
+      "B": "BLE",
+      "C": "Bluesnaff",
+      "D": "Bluefuzz",
+      "E": "BLF"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-59a4b38e6ee4",
+    "unitNumber": 159,
+    "text": "Aşağıda verilen bilgilerden hangisi doğrudur?",
+    "options": {
+      "A": "DES, bir akış şifreleme yöntemidir.",
+      "B": "AES, bir klasik şifreleme yöntemidir.",
+      "C": "3DES, bir blok şifreleme yöntemidir.",
+      "D": "RSA, tek anahtarlı bir şifreleme yöntemidir.",
+      "E": "RC4, bir akış şifreleme yöntemidir."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-25dbf95cc963",
+    "unitNumber": 160,
+    "text": "Aşağıdakilerden hangisi blok şifreleme yöntemlerinden birisidir?",
+    "options": {
+      "A": "RC4",
+      "B": "SEAL",
+      "C": "Sezar şifreleme",
+      "D": "Vijener şifreleme",
+      "E": "DES"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-9b20f8508992",
+    "unitNumber": 161,
+    "text": "Aşağıdakilerden hangisi Türk alfabesi göz önünde bulundurulduğunda “GÜNEŞ” kelimesinin anahtarı 4 olan Sezar şifreleme yöntemi kullanılarak şifrelenmiş halidir?",
+    "options": {
+      "A": "İARHV",
+      "B": "IZPĞÜ",
+      "C": "FUMDS",
+      "D": "MNÖTR",
+      "E": "KCŞİZ"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-bd72f7651115",
+    "unitNumber": 162,
+    "text": "Aşağıdakilerden hangisi kablosuz bir ağda güvenliğin sağlanmasına yardımcı olur?",
+    "options": {
+      "A": "Ağda Wi-Fi kullanmak",
+      "B": "Yönlendirici kullanmak",
+      "C": "Ağda Bluetooth teknolojisini kullanmak",
+      "D": "Güvenlik duvarı kullanmak",
+      "E": "Ağda anahtar cihazı kullanmak"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-884799583226",
+    "unitNumber": 163,
+    "text": "Kablosuz ağlar için aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Bluetooth teknolojisi kullanılan ağlarda güvenliği sağlamak diğer kablosuz ağ teknolojilerinin kullanıldığı ağlara göre daha zordur.",
+      "B": "Kablosuz ağlarda altyapılı ağlarda güvenliğin sağlanması altyapısız ağlardan daha zordur.",
+      "C": "Kablolu veya kablosuz ağlarda güvenliğin sağlanması eşit oranda zordur.",
+      "D": "Kablosuz ağlarda güvenliğin sağlanması kablolu ağlara kıyasla daha zordur.",
+      "E": "WiFi teknolojisi kullanılan ağlarda güvenliği sağlamak diğer kablosuz ağ teknolojilerinin kullanıldığı ağlara göre daha zordur."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-33f36dae71a1",
+    "unitNumber": 164,
+    "text": "Aşağıdakilerden hangisi yaşanırsa bir ağda yer alan cihazlar zarar görebilir?",
+    "options": {
+      "A": "El değiştirme",
+      "B": "Dinleme saldırısı",
+      "C": "Pasif saldırı",
+      "D": "Aktif saldırı",
+      "E": "İlişkilendirme"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-61eecf180659",
+    "unitNumber": 165,
+    "text": "Bir erişim noktası’na (AP) ait SSID bilgisine nasıl erişilir?",
+    "options": {
+      "A": "Yaydığı işaret sinyali (beacon) dinlenerek",
+      "B": "Yaydığı kontrol sinyali dinlenerek",
+      "C": "Erişim noktasından özel izin isteyerek",
+      "D": "Erişim noktasına ait yönlendiriciye bağlayarak",
+      "E": "Erişim noktasına ait anahtara bağlanarak"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-5c17b24017f8",
+    "unitNumber": 166,
+    "text": "Pasif bir saldırıda aşağıdakilerden hangisi gerçekleşebilir?",
+    "options": {
+      "A": "Kullanıcının verileri silinir",
+      "B": "Kullanıcının bilgileri şifrelenir",
+      "C": "Kullanıcının bilgileri değiştirilir",
+      "D": "Kullanıcının bilgileri küçültülür",
+      "E": "Kullanıcının bilgileri kopyalanır"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-01a6b6270f4e",
+    "unitNumber": 167,
+    "text": "Aşağıda yer alan yöntemlerden hangisinde düz metinde yer alan harfler ikişerli halde şifrelenir?",
+    "options": {
+      "A": "Playfair şifreleme",
+      "B": "Sezar şifreleme",
+      "C": "Vijener şifreleme",
+      "D": "Tek alfabeli şifreleme",
+      "E": "Yer değiştirme yöntemi"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-8f67e448821d",
+    "unitNumber": 168,
+    "text": "Aşağıdakilerden hangisi yer değiştirme şifreleme yönteminin özelliklerinden birisidir?",
+    "options": {
+      "A": "Düz metinde yer alan harflerin ikişerli halde şifrelenmesi",
+      "B": "Düz metinde yer alan harflerin sıralamalarının değiştirilmesi",
+      "C": "Düz metinde yer alan harflerin yerine başka harf veya sembollerin kullanılması",
+      "D": "Düz metinde yer alan harflerin bazılarının silinmesi",
+      "E": "Düz metinde yer alan harflere ek yapılması"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-1e973a5737db",
+    "unitNumber": 169,
+    "text": "Türk alfabesi göz önünde bulundurulduğunda Sezar şifreleme yöntemi için kaç farklı anahtar kullanılabilir?",
+    "options": {
+      "A": "28",
+      "B": "29",
+      "C": "30",
+      "D": "27",
+      "E": "42"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-f331c9b5905d",
+    "unitNumber": 170,
+    "text": "Şifreleme algoritmasına girdi olarak verilen orijinal mesaj veya veriye ———- denir. – cümlesinde yer alan boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "şifreli metin",
+      "B": "gizli anahtar",
+      "C": "düz metin",
+      "D": "şifre çözme",
+      "E": "ön metin"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  }
+]

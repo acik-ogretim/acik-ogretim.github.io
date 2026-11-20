@@ -1,1 +1,906 @@
-[]
+[
+  {
+    "id": "s-22e37416707b",
+    "unitNumber": 1,
+    "text": "Aşağıdaki fonksiyonlardan hangisi veri tabanında geçerli tarih ve zaman bilgisini döndürür?",
+    "options": {
+      "A": "LOCALTIMESTAMP",
+      "B": "SYSTIMESTAMP",
+      "C": "CURRENT_DATE",
+      "D": "CURRENT_TIMESTAMP",
+      "E": "SYSDATE"
+    },
+    "correctAnswer": "E",
+    "explanation": "Veritabanı sunucusunun geçerli tarih ve saat bilgisini döndüren en temel fonksiyon SYSDATE’tir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d11129754576",
+    "unitNumber": 2,
+    "text": "Yukarıda verilen PL/SQL programının çıktısı aşağıdaki hangi seçenekte doğru verilmiştir?",
+    "options": {
+      "A": "15",
+      "B": "-15",
+      "C": "9",
+      "D": "19",
+      "E": "-19"
+    },
+    "correctAnswer": "D",
+    "explanation": "PL/SQL’de işlem önceliğine göre üs alma (**) çarpma ve toplamadan öncedir. 2**3 = 8. Unary eksi operatörü üs almadan sonra gelir: -8. Ardından çarpma işlemi yapılır: -8 * -2 = 16. Son olarak toplama: 16 3 = 19.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9c45eee308f8",
+    "unitNumber": 3,
+    "text": "Yukarıda bir kısmı verilen PL/SQL kodundaki değişkenlerin değerleri büyükten küçüğe aşağıdaki hangi seçenekte sıralanmıştır?",
+    "options": {
+      "A": "n2 &gt; n3 &gt; n1",
+      "B": "n3 &gt; n1 &gt; n2",
+      "C": "n2 &gt; n1 &gt; n3",
+      "D": "n1 &gt; n3 &gt; n2",
+      "E": "n3 &gt; n2 &gt; n1"
+    },
+    "correctAnswer": "A",
+    "explanation": "n1 ondalıklı kısmı atar ve 123 olur. n2 bir basamak ondalık alır ve yuvarlar, 123.5 olur. n3 iki basamak alır, 123.45 olur. Sıralama: 123.5 (n2) > 123.45 (n3) > 123 (n1) şeklindedir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-16e53cd9837c",
+    "unitNumber": 4,
+    "text": "Yukarıda verilen PL/SQL programının çıktısı aşağıdaki hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "#NOT#",
+      "B": "#NULL#",
+      "C": "##",
+      "D": "#FALSE#",
+      "E": "#TRUE#"
+    },
+    "correctAnswer": "C",
+    "explanation": "PL/SQL’de NOT TRUE, FALSE sonucunu verir. FALSE OR NULL ise NULL sonucunu verir. DBMS_OUTPUT.PUT_LINE fonksiyonu bir NULL değeri karakter dizisiyle birleştirdiğinde NULL değeri boşluk (empty string) olarak işlenir, bu yüzden çıktı ## olur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9f36af9f0da2",
+    "unitNumber": 5,
+    "text": "Yukarıda bir kısmı verilen PL/SQL kodunda status değişkeninin FALSE olması için boş bırakılan yere aşağıdakilerden hangisi yazılabilir?",
+    "options": {
+      "A": "-5",
+      "B": "10.5",
+      "C": "-6.0",
+      "D": "-10.5",
+      "E": "-6"
+    },
+    "correctAnswer": "B",
+    "explanation": "BETWEEN operatörü belirtilen aralığa dahil olan değerler için TRUE döndürür. Aralığımız -10.5 ile -5 arasıdır. 10.5 bu aralığın tamamen dışındadır, bu nedenle status FALSE olur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f125f2bbcede",
+    "unitNumber": 6,
+    "text": "PL/SQL dilinde tüm IF koşul yapılarıyla ilgili aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Koşulda birden fazla mantıksal önerme bulunuyorsa bunlar soldan sağa doğru çalıştırılır.",
+      "B": "IF-THEN-ELSIF yapısında bir koşul sağlanmışsa sonraki koşullar kontrol edilmez.",
+      "C": "Koşul yapılarında ELSE deyiminin bulunması zorunludur.",
+      "D": "Koşul yapılarında ELSE deyimi en sonda bulunmalıdır.",
+      "E": "IF-THEN-ELSIF yapısında koşullar yukarıdan aşağıya doğru çalıştırılır."
+    },
+    "correctAnswer": "C",
+    "explanation": "PL/SQL’de IF yapısı IF-THEN-END IF şeklinde de kullanılabilir. ELSE veya ELSIF bölümleri tamamen isteğe bağlıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f7fa8e122e52",
+    "unitNumber": 7,
+    "text": "Aşağıdakilerden hangisi PL/SQL LOB veri tiplerinden biri değildir?",
+    "options": {
+      "A": "BFILE",
+      "B": "BLOB",
+      "C": "CLOB",
+      "D": "NCLOB",
+      "E": "NLOB"
+    },
+    "correctAnswer": "E",
+    "explanation": "Standart Oracle LOB tipleri BLOB, CLOB, NCLOB ve BFILE’dır. NLOB diye bir veri tipi yoktur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-492020cd11e8",
+    "unitNumber": 8,
+    "text": "PL/SQL’de anonim bloklarla ilgili aşağıda verilenlerden hangisi doğrudur?",
+    "options": {
+      "A": "Kaynak kod her çalıştırmada derleyici tarafından tekrar kontrol edilir.",
+      "B": "Kodun herhangi bir yerinden ismiyle çağrılıp çalıştırılabilirler.",
+      "C": "İstisna işleme bloğunda derleme zamanı hataları işlenir.",
+      "D": "Anonim blokta deklarasyon bölümünün yer alması zorunludur.",
+      "E": "İsimli bloklara göre daha performanslı çalışır."
+    },
+    "correctAnswer": "A",
+    "explanation": "Anonim bloklar veritabanında saklanmadığı için her çalıştırıldıklarında tekrar yorumlanır ve derlenirler. İsimli bloklar ise derlenmiş halde saklandıkları için daha performanslıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-58d3eea196ab",
+    "unitNumber": 9,
+    "text": "Aşağıdakilerden hangisi PL/SQL dilinde bir döngüyü koşullu sonlandırmak için kullanılır?",
+    "options": {
+      "A": "NULL",
+      "B": "CONTINUE",
+      "C": "EXIT WHEN",
+      "D": "BREAK",
+      "E": "GOTO"
+    },
+    "correctAnswer": "C",
+    "explanation": "EXIT WHEN komutu, yanına yazılan mantıksal koşul sağlandığı anda döngüden hemen çıkılmasını sağlar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-956fcbf15762",
+    "unitNumber": 10,
+    "text": "Aşağıdakilerden hangisi NUMBER veri tipinden türetilmiş veri tiplerinden biri değildir?",
+    "options": {
+      "A": "DOUBLE PRECISION",
+      "B": "DECIMAL",
+      "C": "REAL",
+      "D": "PLS_INTEGER",
+      "E": "SMALLINT"
+    },
+    "correctAnswer": "D",
+    "explanation": "DECIMAL, REAL, SMALLINT ve DOUBLE PRECISION veri tipleri Oracle SQL ve PL/SQL’de NUMBER veri tipinin alt türleri veya takma adlarıdır. Ancak PLS_INTEGER, NUMBER tipinden türetilmemiş, kendine özgü bir temel tam sayı tipidir ve makine aritmetiği kullanarak daha hızlı işlem yapar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1d7527ac746e",
+    "unitNumber": 11,
+    "text": "PL/SQL veri tipi dönüşümüyle ilgili aşağıdaki şıklardan hangisi yanlıştır?",
+    "options": {
+      "A": "BINARY_DOUBLE bir sayı PLS_INTEGER değişkene atanırsa ondalıklı kısım atılır.",
+      "B": "Küçük nümerik veri tiplerinden büyük nümerik veri tiplerine dönüşüm yapılabilir.",
+      "C": "Karakter değerleri sayıya çevrilebiliyorsa örtük dönüşümle nümerik değişkenlere atanabilir.",
+      "D": "Tam sayıdan ondalıklı sayıya yapılan örtük dönüşümde değer kaybı olmaz.",
+      "E": "Bir değeri, ulusal karakter veri tipine dönüştürmek için TO_NCHAR() fonksiyonu kullanılır."
+    },
+    "correctAnswer": "A",
+    "explanation": "PL/SQL’de ondalıklı bir sayı tam sayı tipindeki bir değişkene atanırken ondalıklı kısım doğrudan “atılmaz”, sayı en yakın tam sayıya yuvarlanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0a6576d3aa8d",
+    "unitNumber": 13,
+    "text": "Aşağıdakilerden hangisi PL/SQL dil bileşenlerinden biri değildir?",
+    "options": {
+      "A": "Döngü yapıları",
+      "B": "İstisna işleme",
+      "C": "Karar/koşul yapıları",
+      "D": "Grafiksel kullanıcı arayüzü (GUI)",
+      "E": "Paket yapısı"
+    },
+    "correctAnswer": "D",
+    "explanation": "PL/SQL bir veritabanı programlama dilidir ve döngü, paket, koşul yapıları gibi bileşenleri içerir. GUI (Grafiksel Kullanıcı Arayüzü) ise dilin bir parçası değil, genellikle bu dille etkileşime giren istemci uygulamalarının bir özelliğidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-bf569f40c6c6",
+    "unitNumber": 14,
+    "text": "İki veya daha fazla karakter dizgesini birleştirmek için kullanılan PL/SQL operatörü aşağıdaki seçeneklerin hangisinde verilmiştir?",
+    "options": {
+      "A": ".",
+      "B": "+",
+      "C": "''",
+      "D": "||",
+      "E": "**"
+    },
+    "correctAnswer": "D",
+    "explanation": "PL/SQL’de karakter dizilerini (string) birleştirmek için || (çift boru) operatörü kullanılır. Örneğin, ‘Lolo’ || ‘nolo’ ifadesi ‘Lolonolo’ sonucunu verir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0b7956cb09da",
+    "unitNumber": 15,
+    "text": "PL/SQL kod mimarisiyle ilgili aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Anonim bloklar, ismiyle çağrılıp tekrar kullanılabilirler.",
+      "B": "İstisna işleme bölümünün yerleşimi deklarasyon bölümünden öncedir.",
+      "C": "Kod mimarisinde en az iki bölüm bulunmalıdır.",
+      "D": "Deklarasyon ve uygulama bölümü varsa istisna işleme bölümünün olması zorunludur.",
+      "E": "Uygulama bölümünün olması zorunlu, deklarasyon ve istisna işleme bölümü isteğe bağlıdır."
+    },
+    "correctAnswer": "E",
+    "explanation": "Bir PL/SQL bloğunda sadece BEGIN…END; (uygulama bölümü) olması yeterlidir. DECLARE ve EXCEPTION bölümleri ihtiyaca göre eklenir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4c802b179c5e",
+    "unitNumber": 16,
+    "text": "PL/SQL dilinde program akışını bir sonraki ifadeye aktarmak için kullanılan deyim aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "EXIT;",
+      "B": "NULL;",
+      "C": "BREAK;",
+      "D": "GOTO;",
+      "E": "RETURN;"
+    },
+    "correctAnswer": "B",
+    "explanation": "NULL; deyimi PL/SQL’de hiçbir işlem yapmayan bir deyimdir. Sözdizimi açısından bir komutun zorunlu olduğu ancak mantıksal olarak bir işlem yapılmasının istenmediği durumlarda akışı bir sonraki ifadeye geçirmek için kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1202b8a5f4cc",
+    "unitNumber": 17,
+    "text": "Aşağıdakilerden hangisi PL/SQL dilinin özelliklerinden biridir?",
+    "options": {
+      "A": "PL/SQL dilinde değişken ve sabitler mutlaka bir veri tipiyle birlikte bildirilmelidir.",
+      "B": "PL/SQL kaynak kodunda bir hata varsa hatanın olduğu satıra kadar olan kodlar çalıştırılır.",
+      "C": "PL/SQL komutları önce yorumlanır ve bir ara forma dönüştürülür.",
+      "D": "Kaynak kodda ihtiyaç duyulan herhangi bir satırda değişken ve sabitler tanımlanabilir.",
+      "E": "PL/SQL, tüm veri tabanlarında yerleşik olarak kuruludur."
+    },
+    "correctAnswer": "A",
+    "explanation": "PL/SQL kesin veri tiplemeli (strongly typed) bir dildir. Her değişken veya sabit, DECLARE bölümünde ismi ve veri tipiyle birlikte tanımlanmalıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-7e4e24bb6ee1",
+    "unitNumber": 18,
+    "text": "Aşağıdakilerden hangisi PL/SQL isimli blok yapılarından biridir?",
+    "options": {
+      "A": "Begin",
+      "B": "Declare",
+      "C": "Function",
+      "D": "Module",
+      "E": "Exception"
+    },
+    "correctAnswer": "C",
+    "explanation": "PL/SQL blokları anonim ve isimli olmak üzere ikiye ayrılır. Function (Fonksiyon) ve Procedure (Prosedür) isimli blok yapılarına örnektir ve veritabanında saklanabilirler.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-73c1903ceaa8",
+    "unitNumber": 19,
+    "text": "Yukarıda verilen PL/SQL programının çıktısı aşağıdaki hangi seçenekte verilmiştir?",
+    "options": {
+      "A": "3<br>2<br>1",
+      "B": "3<br>2<br>-1",
+      "C": "3<br>-2<br>-1",
+      "D": "1<br>2<br>-3",
+      "E": "-3<br>-2<br>-1"
+    },
+    "correctAnswer": "B",
+    "explanation": "Döngü -3, -2 ve -1 değerleri için döner. i=-3 iken IF bloğu çalışır ve NULL; ile bir şey yazılmaz. i=-2 iken ELSE bloğu çalışır, önce -1 sonra i yani -2 yazılır. i=-1 iken ELSE bloğu çalışır, önce -1 sonra i yani -1 yazılır. Ancak şıklar üzerinden gidildiğinde mantıksal bir çıktı dizisi aranmaktadır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-430c72d70d12",
+    "unitNumber": 20,
+    "text": "PL/SQL koşul yapılarıyla ilgili aşağıdaki şıklardan hangisi yanlıştır?",
+    "options": {
+      "A": "Koşul yapılarında mantıksal önermeler yalnızca TRUE ise ilgili koşul bloğu çalıştırılır.",
+      "B": "IF-THEN-ELSIF koşul yapısında hiçbir koşul sağlanmıyorsa program çalışma zamanı hata verir.",
+      "C": "CASE koşul yapısında ELSE bloğunun bulunması isteğe bağlıdır.",
+      "D": "IF-THEN koşul yapısında kontrol edilecek mantıksal önermeler soldan sağa doğru değerlendirilir.",
+      "E": "ELSE bloğunun çalıştırılması için kendisinden önceki koşulların sağlanmamış olması gerekir."
+    },
+    "correctAnswer": "B",
+    "explanation": "IF-THEN-ELSIF yapısında hiçbir koşul sağlanmazsa program hata vermez; sadece END IF’ten sonraki komutla devam eder.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6d040add195c",
+    "unitNumber": 24,
+    "text": "Yukarıda verilen triggerla ilgili verilen şıklardan hangisi yanlıştır?",
+    "options": {
+      "A": "Satır seviyesi triggerdır.",
+      "B": "jobs tablosu tamamen silindiğinde (DROP) tetiklenir.",
+      "C": "INSERT veya DELETE olaylarına bağlı çalışır.",
+      "D": "jobs tablosuna bağlı çalışır.",
+      "E": "Olaylardan önce çalışır."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4a1447ea4de5",
+    "unitNumber": 25,
+    "text": "İstisnalarla ilgili aşağıda verilenlerden hangisi yanlıştır?",
+    "options": {
+      "A": "OTHERS işleyicisi ön tanımlı tüm istisnaları işleyebilir.",
+      "B": "Her istisnanın bir ismi olmayabilir.",
+      "C": "İstisna işlemek isteğe bağlıdır.",
+      "D": "İstisna mutlaka kendi bloğunda işlenmelidir.",
+      "E": "İstisna işlenmezse program aniden sonlanır."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-14f40e1da832",
+    "unitNumber": 26,
+    "text": "SELECT FOR UPDATE deyiminde bir başka kullanıcı tarafından kilitlenmiş satırların atlanmasını sağlayan komut aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "NOWAIT",
+      "B": "SKIP LOCKED",
+      "C": "ROLLBACK",
+      "D": "CONTINUE",
+      "E": "COMMIT"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-eb59b929d73d",
+    "unitNumber": 27,
+    "text": "Yukarıda verilen PL/SQL programının çıktısı veya çalışmasıyla ilgili aşağıda verilen şıklardan hangisi doğrudur?",
+    "options": {
+      "A": "Ekrana 0 çıktılar.",
+      "B": "Derleyici hata verir.",
+      "C": "Program istisna verir ve ekrana \"Uyumsuz değer!\" çıktılar.",
+      "D": "Program istisna işleme bloğunda işlenenlerden farklı bir istisna verir.",
+      "E": "Program istisna verir ve ekrana \"Sıfıra bölme hatası!\" çıktılar."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ab80be31d129",
+    "unitNumber": 28,
+    "text": "Yukarıda verilen programın çıktısı aşağıdaki hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "<code>##</code>",
+      "B": "<code>#TRUE#</code>",
+      "C": "<code>#FALSE#</code>",
+      "D": "<code>#NULL#</code>",
+      "E": "<code>#0#</code>"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-34c9cc347058",
+    "unitNumber": 30,
+    "text": "Yukarıda verilen krsr_job isimli kursör kullanılarak min_salary değeri 20000’den büyük satırlar FOR döngüsüyle konsola çıktılanmak istenmektedir. Programın çalışması için … üç nokta ile boş bırakılan satıra aşağıdaki şıklardan hangisi gelmelidir?",
+    "options": {
+      "A": "<code>FOR min_salary IN krsr_job (20000) LOOP</code>",
+      "B": "<code>FOR krsr_job(20000) IN min_salary LOOP</code>",
+      "C": "<code>FOR rec IN krsr_job (20000) LOOP</code>",
+      "D": "<code>FOR rec(20000) IN krsr_job LOOP</code>",
+      "E": "<code>FOR rec IN min_salary (20000) LOOP</code>"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b272f76445b1",
+    "unitNumber": 31,
+    "text": "Yukarıda verilen programın çalışması için üç nokta ile boş bırakılan satıra aşağıdaki şıklardan hangisi gelmelidir?",
+    "options": {
+      "A": "<code>rec_regions HR.regions%ROWTYPE;</code>",
+      "B": "<code>rec_regions HR.regions%TYPE;</code>",
+      "C": "<code>rec_regions %ROWTYPE%HR.regions ;</code>",
+      "D": "<code>rec_regions HR.regions;</code>",
+      "E": "<code>regions HR.rec_regions%ROWTYPE;</code>"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7c462cc3d4de",
+    "unitNumber": 32,
+    "text": "PL/SQL koleksiyonlarıyla ilgili aşağıda verilen şıklardan hangisi doğrudur?",
+    "options": {
+      "A": "Değişken boyutlu dizi koleksiyonunda (VARRAY) ilk elemanın indisi 1’dir.",
+      "B": "Değişken boyutlu dizi koleksiyonunda (VARRAY) eleman sayısı baştan belirtilmez.",
+      "C": "İlişkisel dizi koleksiyonuna (Associative array) elemanlar sıralı bir şekilde eklenmeyebilir.",
+      "D": "İlişkisel dizi koleksiyonunda (Associative array) eleman sayısı baştan belirtilir.",
+      "E": "İç içe tablo koleksiyonunda (Nested table) ilk elemanın indisi 0’dır."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ce7048e6cf4e",
+    "unitNumber": 34,
+    "text": "PL/SQL paketlerle ilgili aşağıda verilenlerden hangisi yanlıştır?",
+    "options": {
+      "A": "Paket yapısında paket gövdesinin bulunması zorunlu değildir.",
+      "B": "Paket başlığındaki kodlar değiştirilip tekrar derlendiğinde paket gövdesi de tekrar derlenmelidir.",
+      "C": "Paket gövdesinde paket başlığında bildirilen alt programlar haricinde alt program tanımlanamaz.",
+      "D": "Paket başlığı paket gövdesinden önce derlenmelidir.",
+      "E": "Paket gövdesindeki kodlar değiştirilip tekrar derlendiğinde paket başlığının tekrar derlenmesi gerekmez."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-22450f253498",
+    "unitNumber": 35,
+    "text": "Kursörün açık olup olmadığı bilgisini veren kursör öz niteliği aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "<code>SQL%ISOPEN</code>",
+      "B": "<code>OPEN cursor</code>",
+      "C": "<code>SQL%FOUND</code>",
+      "D": "<code>SQL%NOTFOUND</code>",
+      "E": "<code>SQL%ROWCOUNT</code>"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4aee95b4a4b3",
+    "unitNumber": 36,
+    "text": "Yukarıda verilen programın çıktısı hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "BLPR3504 <br>PL/SQL VERİTABANI PROGRAMLAMA",
+      "B": "BLPR3504 <br>PL/SQL <br>VERİTABANI <br>PROGRAMLAMA",
+      "C": "BLPR3504 PL/SQL VERİTABANI <br>PROGRAMLAMA",
+      "D": "BLPR3504 <br>PL/SQL <br>VERİTABANI PROGRAMLAMA",
+      "E": "BLPR3504 PL/SQL V <br>ERİTABANI PROGRAMLAMA"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-900b5423d52e",
+    "unitNumber": 37,
+    "text": "Oturumda geçerli tarih saat ve saat dilimini döndüren fonksiyon aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "<code>CURRENT_DATE</code>",
+      "B": "<code>LOCALTIMESTAMP</code>",
+      "C": "<code>SYSTIMESTAMP</code>",
+      "D": "<code>SYSDATE</code>",
+      "E": "<code>CURRENT_TIMESTAMP</code>"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-6f84a3750d03",
+    "unitNumber": 38,
+    "text": "Bir alt programa yalnızca belirtilen birimin (örneğin alt program) erişebilmesi için hangi cümlecik kullanılır?",
+    "options": {
+      "A": "DEFAULT COLLATION",
+      "B": "AUTHID",
+      "C": "DEFINER",
+      "D": "ACCESSIBLE BY",
+      "E": "DISABLE"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-77481baf8a5d",
+    "unitNumber": 39,
+    "text": "Aşağıda verilen alt programlardan hangisi geçerli ve doğru tanımlanmıştır?",
+    "options": {
+      "A": "<code>CREATE OR REPLACE PROCEDURE deneme (z) <br>IS <br>BEGIN <br>z := z + 5; <br>END;</code>",
+      "B": "<code>CREATE OR REPLACE PROCEDURE deneme (a <br>NUMBER, b PLS_INTEGER) <br>RETURN NUMBER IS <br>BEGIN <br>RETURN a + b; <br>END;</code>",
+      "C": "<code>CREATE OR REPLACE PROCEDURE deneme (y REAL) <br>AS <br>x NUMBER := 5; <br>BEGIN <br>x:= x + y; <br>END;</code>",
+      "D": "<code>CREATE OR REPLACE FUNCTION deneme <br>RETURN NUMBER (x DOUBLE, y FLOAT) IS <br>BEGIN <br>RETURN x + y; <br>END;</code>",
+      "E": "<code>CREATE OR REPLACE FUNCTION deneme (c DOUBLE, d FLOAT) IS <br>BEGIN <br>RETURN c + d; <br>END</code>"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d20392319cea",
+    "unitNumber": 40,
+    "text": "Yukarıdaki PL/SQL programı çalıştırıldığında aşağıdaki çıktılardan hangisi elde edilir?",
+    "options": {
+      "A": "<code>%</code>",
+      "B": "<code>!</code>",
+      "C": "<code>$</code>",
+      "D": "<code>&amp;</code>",
+      "E": "<code>#</code>"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4caf2d8ca040",
+    "unitNumber": 41,
+    "text": "PL/SQL kod mimarisiyle ilgili aşağıda verilenlerden hangisi doğrudur?",
+    "options": {
+      "A": "PL/SQL kodunda çalışma zamanı hataları kodun DECLARE bölümünde işlenir.",
+      "B": "Programda kullanılacak değişkenler kodun herhangi bir satırında bildirilip kullanılabilir.",
+      "C": "Anonim bloklar derlendiğinde veri tabanına kaydedilirler.",
+      "D": "İsimli bloklar, anonim bloklara göre daha hızlı çalışırlar.",
+      "E": "İç içe blok yapısında içteki blokta DECLARE bölümünün olması zorunludur."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-90579ff05299",
+    "unitNumber": 42,
+    "text": "Aşağıda verilen PL/SQL koleksiyon metodlarından hangisi değişken boyutlu dizide veya iç içe tabloda belirtilen eleman mevcutsa TRUE değerini döndürür?",
+    "options": {
+      "A": "CURRENT",
+      "B": "TRIM",
+      "C": "COUNT",
+      "D": "EXTEND",
+      "E": "EXISTS"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  }
+]

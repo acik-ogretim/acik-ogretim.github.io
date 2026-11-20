@@ -1,1 +1,1483 @@
-[]
+[
+  {
+    "id": "s-5b8708f69d08",
+    "unitNumber": 20,
+    "text": "Aşağıdaki şıklarda verilen kodlardan hangisi derleme hatası vermez?",
+    "options": {
+      "A": "int yil = 2023,<br> Console.Write($\"{Yil}\");",
+      "B": "const string dil = \"C#\";<br> Console.Write($\"{dil}\");",
+      "C": "char sembol = '#';<br> const char dil = sembol;",
+      "D": "const string fakulte;<br> fakulte = \"AUZEF\";",
+      "E": "char chr;<br> Console.Write(\"{0}\", chr);"
+    },
+    "correctAnswer": "B",
+    "explanation": "A’da satır sonu noktalı virgül yerine virgül kullanılmıştır. C’de sabit (const) bir değere çalışma zamanında değeri belli olan bir değişken atanamaz. D’de sabitler tanımlandıkları an değer almalıdır. E’de ilk değer ataması yapılmamış (uninitialized) değişken kullanılmıştır. B şıkkı tamamen geçerli ve hatasızdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-53685703f1a0",
+    "unitNumber": 21,
+    "text": "Veri tiplerinin değer aralıkları hangi şıkta doğru sıralanmıştır?",
+    "options": {
+      "A": "byte &lt; short &lt; int &lt; long",
+      "B": "decimal &gt; float &gt; double &gt; int",
+      "C": "sbyte &lt; short &lt; long &lt; int",
+      "D": "long &gt; int &gt; byte &gt; short",
+      "E": "long &gt; double &gt; float &gt; byte &gt; short"
+    },
+    "correctAnswer": "A",
+    "explanation": "C# dilinde tam sayı veri tiplerinin bellekte kapladıkları alanlar sırasıyla; byte (8 bit), short (16 bit), int (32 bit) ve long (64 bit) şeklindedir. Kapladıkları alan büyüdükçe alabilecekleri maksimum değer aralığı da artar. Bu nedenle doğru sıralama A şıkkıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-79a44609877d",
+    "unitNumber": 22,
+    "text": "Aşağıdaki değişken atamalarından hangisi geçerlidir?",
+    "options": {
+      "A": "int short = 1453;",
+      "B": "int z = 0B170010;",
+      "C": "int t = 0x05AD;",
+      "D": "double y = 170010,78;",
+      "E": "int x = 602E23;"
+    },
+    "correctAnswer": "C",
+    "explanation": "C şıkkındaki 0x ile başlayan sayı geçerli bir onaltılık (hexadecimal) tam sayı atamasıdır. A’da ‘short’ rezerve edilmiş bir anahtar kelimedir değişken adı olamaz. B’de binary (0b) içinde sadece 0 ve 1 kullanılabilir. D’de ondalık ayırıcı olarak nokta (.) kullanılmalıdır. E’de bilimsel gösterim (E) float/double üretir, doğrudan int’e atanamaz.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-78e7fc08e6f7",
+    "unitNumber": 23,
+    "text": "Yukarıda tanımlanan değişkenlere göre konsol ekranına 3.14, 5, -2023 çıktısını veren komut hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "Console.WriteLine(\"{1}, {0}, {2}\", x, y, z);",
+      "B": "Console.WriteLine(\"{1}, {0}, {2}\", y, x, z);",
+      "C": "Console.WriteLine(\"{2}, {0}, {1}\", x, y, z);",
+      "D": "Console.Write(\"{2}, {1}, {3}\", y, x, z);",
+      "E": "Console.WriteLine(\"{0}, {2}, {1}\", y, x, z);"
+    },
+    "correctAnswer": "A",
+    "explanation": "String biçimlendirmede süslü parantez içindeki sayılar, virgülden sonra verilen parametrelerin indeksini belirtir. x (0. indeks) = 5, y (1. indeks) = 3.14, z (2. indeks) = -2023’tür. 3.14, 5, -2023 çıktısını almak için indekslerin sırasıyla {1}, {0}, {2} olarak yazılması gerekir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0e56af767754",
+    "unitNumber": 24,
+    "text": "İstanbul Üniversitesi 2023 AUZEF Yukarıdaki dizgeleri verildiği gibi üç satırda konsola çıktılayan kodlar hangi şıkta doğru olarak verilmiştir?",
+    "options": {
+      "A": "Console.WriteLine(\"İstanbul Üniversitesi\");",
+      "B": "Console.Write(\"İstanbul \");<br> Console.WriteLine(\"Üniversitesi\");<br> Console.WriteLine(\"2023\");<br> Console.Write(\"AUZEF\");",
+      "C": "Console.Write(\"İstanbul \");",
+      "D": "Console.Write('İstanbul Üniversitesi');",
+      "E": "Console.Write(\"İstanbul Üniversitesi\");"
+    },
+    "correctAnswer": "B",
+    "explanation": "B şıkkında önce “İstanbul ” yan yana yazılır, ardından WriteLine ile “Üniversitesi” eklenip alt satıra geçilir. Sonra “2023” yazılıp alt satıra geçilir ve son satıra “AUZEF” yazılır. Bu tam olarak istenilen 3 satırlı formatı oluşturur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-31b06ce635dd",
+    "unitNumber": 25,
+    "text": "Yukarıda verilen programın çıktısı hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "-1 : False",
+      "B": "-2 : True",
+      "C": "0 : True",
+      "D": "-2 : False",
+      "E": "-1 : True"
+    },
+    "correctAnswer": "E",
+    "explanation": "& ve | bitsel/mantıksal operatörler kullanıldığı için ifadenin tamamı değerlendirilir. ++x işlemi x’i 0 yapar, 0 >= -1 (True). true & True sonucu True olur. İkinci kısımda –x işlemi x’i tekrar -1’e düşürür. -1 + 1 = 0’dır. y (1) <= 0 işlemi False olur. Son olarak True | False birleşimi True sonucunu verir. x’in son değeri ise -1’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d8902f67c5fb",
+    "unitNumber": 26,
+    "text": "Aşağıdaki değer atamalarından hangisi geçerlidir?",
+    "options": {
+      "A": "string str = \"C:WindowsSystem32\";",
+      "B": "string str = 'C# .NET tabanlı dildir.';",
+      "C": "string str = \"C\" , \"#\";",
+      "D": "string str = \"\"\"<br> namespace<br> class<br> \"\"\";",
+      "E": "string str = @\"string veri tipi \"alfanümerik\" değer alır.\";"
+    },
+    "correctAnswer": "D",
+    "explanation": "C# 11 ve üstünde çok satırlı (raw) string sözdizimi mevcuttur. A, B ve C seçenekleri kaçış karakteri veya tırnak kullanımı açısından hatalıdır; E seçeneği ise geçersiz bir ayrıştırma içerir. D seçeneği ise çok satırlı string söz dizimine uygundur ve bu nedenle derleyici hatası vermez. Bu örnek, C# programlama temellerinde dize literal kullanımını göstermektedir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-15a7f7c7cefe",
+    "unitNumber": 27,
+    "text": "Yukarıdaki programın çıktısı hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "Programlama<br> AUZEF",
+      "B": "AUZEF<br> C#",
+      "C": "AUZEF<br> AUZEF",
+      "D": "AUZEF<br> AUZEFAUZEF",
+      "E": "AUZEF<br> Programlama Bilgisayar<br> C#"
+    },
+    "correctAnswer": "E",
+    "explanation": "WriteLine komutu metni yazıp alt satıra geçer, Write komutu ise yan yana yazmaya devam eder. İlk satır “AUZEF” yazıp alta geçer. İkinci satır “Programlama ” yazar ve yanından devam eder, sonra “Bilgisayar” yazılır ve alta geçilir. Son olarak boşluklu ” C#” yazılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a916a740c507",
+    "unitNumber": 28,
+    "text": "int x = 4; x >>= 2; int y = ~x; Console.Write($”{x} : {y}”); Yukarıda verilen programın çıktısı hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "16 : -15",
+      "B": "1 : 4",
+      "C": "-2 : 1",
+      "D": "-15 : 16",
+      "E": "1 : -2"
+    },
+    "correctAnswer": "E",
+    "explanation": "x >>= 2 ifadesi bitsel olarak sağa kaydırma (right shift) işlemi yapar. 4 sayısının (ikilik tabanda 100) 2 bit sağa kaydırılmasıyla elde edilen sayı 1’dir (001). x değişkeni 1 değerini alır. ~x ifadesi (bitsel NOT) sayının tüm bitlerini tersine çevirir ve 1 sayısının ikiye tümleyen (two’s complement) sistemindeki tersi -2’dir. Sonuç olarak 1 : -2 çıktısı elde edilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-cd7572c1bd81",
+    "unitNumber": 29,
+    "text": "C# dilinde veri tipleriyle ilgili aşağıdaki şıklardan hangisi yanlıştır?",
+    "options": {
+      "A": "var anahtar kelimesi ile tanımlanan değişkenin veri tipi, değişkene daha sonra farklı bir değer atandığında değiştirilemez.",
+      "B": "object veri tipinde bir değişken tanımlandığında değişkene değer atanması zorunludur.",
+      "C": "dynamic veri tipinde tanımlanan değişkenin veri tipi, değişkene daha sonra farklı bir değer atandığında değiştirilebilir.",
+      "D": "var anahtar kelimesi ile tanımlanan değişken her türden veriyi saklayabilir.",
+      "E": "dynamic veri tipinde tanımlanan değişkenlerin tür kontrolü çalışma zamanında yapılır."
+    },
+    "correctAnswer": "B",
+    "explanation": "object tipinde bir değişken tanımlarken mutlaka başlangıç değeri atama zorunluluğu yoktur. Diğer seçenekler, var ve dynamic için bilinen davranışlardır. Bu yüzden D seçeneği yanlıştır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0b0d4a477b20",
+    "unitNumber": 30,
+    "text": "Yukarıda verilen C# koduna göre aşağıdaki şıklardan hangisi yanlıştır?",
+    "options": {
+      "A": "Toplam değişkeninin değeri 2.5'tir.",
+      "B": "Örtük veri tipi dönüşümü yapılmıştır.",
+      "C": "Kodda hata olduğundan dolayı derleyici hata verir.",
+      "D": "İşaretsiz tam sayı veri tipi kullanılmıştır.",
+      "E": "Aşikar veri tipi dönüşümü yapılmıştır."
+    },
+    "correctAnswer": "C",
+    "explanation": "Verilen kod sorunsuz bir şekilde derlenir. x (1.5), y (1) ve z (0) değerlerinin toplamı double türünde 2.5 olarak hesaplanır (A doğru). ushort ve int türleri double türüne çevrilirken örtük (implicit) dönüşüm (B doğru), z değişkenine atama yapılırken (int) ifadesiyle aşikar (explicit) dönüşüm yapılmıştır (E doğru). Ayrıca ushort işaretsiz bir tam sayı tipidir (D doğru). Kod hata vermez, bu nedenle C şıkkı yanlıştır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-cf5be7c23710",
+    "unitNumber": 32,
+    "text": "sbyte a = -128; byte b = (byte)a; Console.Write(–b); Yukarıda verilen programla ilgili aşağıdaki şıklardan hangisi doğrudur?",
+    "options": {
+      "A": "Kodda hata olduğundan dolayı derleme zamanı hata verir.",
+      "B": "İşaretsiz veri tipinden işaretli veri tipine dönüşüm yapılmıştır.",
+      "C": "Örtük veri tipi dönüşümü yapılmıştır.",
+      "D": "Program çalışma zamanı hata verir.",
+      "E": "Program tutarsız çıktı verecektir"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-345e3d95d4c6",
+    "unitNumber": 33,
+    "text": "bool stat = true; int x = -1, y = 2, z = 3; int result = !stat & ++x == 0 ? x / y : z + x – y; Console.Write(result); Yukarıda verilen programın çıktısı hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "3",
+      "B": "1",
+      "C": "0",
+      "D": "2",
+      "E": "-1"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2bd099b6f532",
+    "unitNumber": 35,
+    "text": "char harf = ‘C’; char sembol = ‘#’; int yil = 2023; string bolumKodu = “BLGPRG”; Console.Write(“{0} {2} {3} {1}”, sembol, bolumKodu, harf, yil); Yukarıdaki programın çıktısı hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "2023 #C BLGPRG",
+      "B": "C#BLGPRG 2023",
+      "C": "C#2023 BLGPRG",
+      "D": "#C 2023 BLGPRG",
+      "E": "#BLGPRG C 2023"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0f20e0fd79b5",
+    "unitNumber": 36,
+    "text": "int a = 1, b = -1; int? c = null; int result = b <= a ? c ?? 5 : 0; Console.Write(result); Yukarıda verilen programın çıktısı hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "5",
+      "B": "-1",
+      "C": "1",
+      "D": "0",
+      "E": "null"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b000cd1a9a6b",
+    "unitNumber": 38,
+    "text": "int x = 0; int y = -1; int z = 1; if( y + z != x && y > z ) Console.WriteLine(“*”); else if( y > x || ++y > z ) Console.WriteLine(“/”); else if( y == x & x < z ) Console.WriteLine(“+”); else if( z >= x + y ) Console.WriteLine(“-“); else Console.WriteLine(“%”); Yukarıda verilen programın çıktısı hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "-",
+      "B": "*",
+      "C": "/",
+      "D": "+",
+      "E": "%"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-bc12dc7b2eca",
+    "unitNumber": 39,
+    "text": "Kullanıcıdan alınan girdiyi tam sayı veri tipine çeviren ve bunu tam sayı veri tipine atayan program hangi seçenekte doğru verilmiştir?",
+    "options": {
+      "A": "double x = Convert.ToInt32(Console.ReadLine());",
+      "B": "uint x = Convert.ToDecimal(Console.Write());",
+      "C": "int x = Convert.ToInt32(Console.ReadLine());",
+      "D": "string x = Convert.ToInt32(Console.WriteLine());",
+      "E": "int x = Convert.ToDouble(Console.ReadLine());"
+    },
+    "correctAnswer": "C",
+    "explanation": "Konsoldan kullanıcı girdisi almak için `Console.ReadLine()` kullanılır. Gelen metin değerini tam sayıya (int) dönüştürmek için `Convert.ToInt32()` metodu kullanılır ve sonuç “int” türünde bir değişkene atanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b0b93509665b",
+    "unitNumber": 1,
+    "text": "Yukarıda verilen programın çalışması için kodda boş bırakılan yere aşağıdaki seçeneklerden hangisi getirilmelidir?",
+    "options": {
+      "A": "Topla(int a)",
+      "B": "Topla()",
+      "C": "Topla(int a, int b)",
+      "D": "Sum(int a, int b)",
+      "E": "Topla(int b)"
+    },
+    "correctAnswer": "C",
+    "explanation": "Programın Main metoduna bakıldığında Topla(5, 7) şeklinde bir çağrı yapıldığı görülmektedir. Bu, çağrılan metodun “Topla” isminde olması gerektiğini ve iki adet tam sayı (integer) parametre kabul etmesi gerektiğini gösterir. Ayrıca metodun gövdesinde return a b; yazılarak a ve b değişkenlerinin toplandığı açıkça belirtilmiştir. Kodun eksiksiz ve hatasız çalışabilmesi için metodun imzasının Topla(int a, int b) şeklinde tanımlanmış olması zorunludur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a1e979068e90",
+    "unitNumber": 2,
+    "text": "Bir dizide belirli bir elemanın varlığını kontrol eden dizi metodu aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Array.Check()",
+      "B": "Array.Get()",
+      "C": "Array.Reverse()",
+      "D": "Array.Find()",
+      "E": "Array.Exists()"
+    },
+    "correctAnswer": "E",
+    "explanation": "C#’ta statik `Array` sınıfına ait olan `Array.Exists()` metodu, belirtilen bir dizi içerisinde kullanıcının tanımladığı spesifik bir şarta veya değere uyan en az bir elemanın bulunup bulunmadığını kontrol etmek için kullanılır. Eğer dizi içerisinde aranan kriterlere uygun bir eleman varsa geriye mantıksal `true` (doğru), yoksa `false` (yanlış) değerini döndürür.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b05fdd4c2ab5",
+    "unitNumber": 3,
+    "text": "Aşağıdaki seçeneklerden hangisinde, C# dilinde istisna işleme yapısında kullanılan finally bloğunun işlevi doğru şekilde açıklanmıştır?",
+    "options": {
+      "A": "finally bloğu, istisna oluşup oluşmamasından bağımsız olarak her durumda çalıştırılan kodları içerir.",
+      "B": "finally bloğu, sadece catch bloğu tetiklendikten sonra çalıştırılır.",
+      "C": "finally bloğu, yalnızca try bloğunda istisna oluşmadığında çalıştırılır.",
+      "D": "finally bloğunun istisna işleme yapısında bulunması zorunludur.",
+      "E": "finally bloğu, yalnızca try bloğunda hata oluştuğunda çalışır, hata oluşmadığında atlanır."
+    },
+    "correctAnswer": "A",
+    "explanation": "Hata yönetimi (Exception Handling) mekanizmasında `try-catch-finally` blokları kullanılır. `finally` bloğunun en büyük özelliği; `try` bloğunda bir hata meydana gelse de gelmese de, kod başarılı da olsa çökse de işleyişin en sonunda mutlaka ve kesinlikle çalıştırılacak olan blok olmasıdır. Özellikle veritabanı bağlantılarının kapatılması, bellek sızıntılarını önlemek için dosya akışlarının (Stream) temizlenmesi gibi hayati temizlik (garbage collection yardımcısı) işlemleri için tasarlanmıştır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8c516c37efa9",
+    "unitNumber": 4,
+    "text": "Yukarıda verilen C# kodlarının işlevi aşağıdaki hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "Koşul sağlanmadığı için ekrana çıktı verilmez.",
+      "B": "20-10 arası sayıları (10 hariç) birer eksilterek ekrana çıktılar.",
+      "C": "20-10 arası sayıları (10 dahil) birer eksilterek ekrana çıktılar.",
+      "D": "10-20 arası sayıları (10 ve 20 dahil) birer artırarak ekrana çıktılar.",
+      "E": "Program sonsuz döngüye girer."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-bfbedf0cab57",
+    "unitNumber": 5,
+    "text": "C# dilinde verilen atama ve dönüşüm işlemlerine göre, aşağıdaki değişkenlerden hangisinin aldığı değer diğerlerinden farklıdır?",
+    "options": {
+      "A": "int t = Convert.ToInt32(5.9);",
+      "B": "int k = Convert.ToInt32(5.4);",
+      "C": "int z = Convert.ToInt32(\"05\");",
+      "D": "int x = 2 + 3;",
+      "E": "int y = (int)5.9;"
+    },
+    "correctAnswer": "A",
+    "explanation": "Convert.ToInt32() metodu ondalıklı bir sayıyı tam sayıya dönüştürürken matematikteki yuvarlama kurallarını (ve Banker’s Rounding prensibini) uygular. Bu nedenle 5.9 değeri bir üst tam sayı olan 6’ya yuvarlanır. Diğer şıklara bakıldığında; 5.4 aşağı yuvarlanarak 5 olur, “05” metni 5’e dönüşür, 2+3 işlemi 5 sonucunu verir ve (int)5.9 şeklindeki Cast (açık dönüşüm) işlemi ondalık kısmı direkt kesip atacağı için 5 değerini döndürür. Sonuç olarak sadece A şıkkındaki değişken 6 değerini alarak diğerlarından farklılık gösterir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7cafdfcff365",
+    "unitNumber": 6,
+    "text": "Yalnızca tanımlandığı metodun içinden erişilebilen metod türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Anonim metod",
+      "B": "Kendini çağıran metod",
+      "C": "Aşırı yüklenen metod",
+      "D": "Lambda ifadesi",
+      "E": "Yerel fonksiyon"
+    },
+    "correctAnswer": "E",
+    "explanation": "“Yerel fonksiyon” (Local function) kavramı, büyük bir metodun içerisine gömülü olarak yazılan ve programın başka hiçbir yerinden görünmeyen, sınıfın diğer üyeleri tarafından da çağrılamayan yalıtılmış metodlardır. Sadece kendisini sarmalayan üst metodun içerisinden çağrılabilirler. Amacı, yalnızca tek bir fonksiyona özgü olan tekrarlayan karmaşık kod bloklarını ayrıştırarak kodun okunabilirliğini ve temizliğini (clean code) artırmaktır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-adc4940d6c4d",
+    "unitNumber": 7,
+    "text": "Yukarıda verilen C# kodunun çıktısı aşağıdaki şıkların hangisinde doğru olarak verilmiştir?",
+    "options": {
+      "A": "5<br> 7<br> 9",
+      "B": "9<br> 7<br> 5",
+      "C": "5",
+      "D": "5<br> 3<br> 1",
+      "E": "1<br> 3<br> 5"
+    },
+    "correctAnswer": "E",
+    "explanation": "for döngüsünün değişkeni i=1 den başlayıp her adımda 2 artmaktadır. Döngü adımlarını sırayla inceleyelim: 1. Adım: i=1’dir. i>5 şartı sağlanmaz, Console.WriteLine(1) çalışır. 2. Adım: i=3 olur. Şart yine sağlanmaz, ekrana 3 yazdırılır. 3. Adım: i=5 olur. i>5 (5>5) şartı sağlanmaz, ekrana 5 yazdırılır. 4. Adım: i=7 olur. Bu kez i>5 şartı (7>5) doğru (True) sonuç verir. Sisteme break; komutu iletilir ve döngü derhal, tamamen sonlandırılır. Sonuç olarak ekrana alt alta sırasıyla 1, 3 ve 5 sayıları yazdırılmış olur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b5639285befa",
+    "unitNumber": 8,
+    "text": "Bugünden 45 gün önceki ayın adını ekrana yazdıran C# kodu aşağıdaki şıkların hangisinde verilmiştir?",
+    "options": {
+      "A": "DateTime tarih = DateTime.Now.AddDays(-45);<br> Console.WriteLine(tarih.Month)",
+      "B": "DateTime tarih = DateTime.Now.AddDays(-45);<br> Console.WriteLine(tarih.ToShortDateString());",
+      "C": "DateTime tarih = DateTime.Now = new TimeSpan (45, 0, 0, 0);<br> Console.WriteLine(tarih.Month);",
+      "D": "DateTime tarih = DateTime.Now.Subtract(TimeSpan.FromDays (45));<br> Console.WriteLine(tarih.ToString(\"MMMM\"));",
+      "E": "DateTime tarih = DateTime.Now.Subtract(TimeSpan.FromDays (45));<br> Console.WriteLine(tarih.ToString(\"MM\"));"
+    },
+    "correctAnswer": "D",
+    "explanation": "C# dilinde tarih ve zaman işlemlerinde günümüz tarihinden geriye gitmek için AddDays(-45) veya Subtract(TimeSpan.FromDays(45)) metotları güvenle kullanılabilir. Ancak soruda “ayın adını” (örneğin “Ocak”, “Şubat” gibi metinsel olarak) yazdırması istenmektedir. tarih.Month veya “MM” formatı sadece ayın kaçıncı ay olduğunu rakamsal (Örn: 1, 2) olarak verirken, “MMMM” format belirleyicisi ilgili ayın adını tam ve metinsel olarak ekrana yazdırmayı sağlar.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-330810851dbc",
+    "unitNumber": 9,
+    "text": "Yerel fonksiyonlarla ilgili aşağıda verilenlerden hangisi yanlıştır?",
+    "options": {
+      "A": "Bir metodun içinde oluşturulan metodlara yerel fonksiyon denir.",
+      "B": "Yerel fonksiyonlar erişim belirleyici alabilirler.",
+      "C": "Yerel fonksiyonlar yalnızca tanımlandığı metodda kullanılabilirler.",
+      "D": "Yerel fonksiyonlar ref, in, out, params tipinde parametre alabilir.",
+      "E": "Yerel fonksiyonlar static tanımlandığında içinde yer aldığı metoddaki değişkenlere erişemez."
+    },
+    "correctAnswer": "B",
+    "explanation": "C# 7.0 ile hayatımıza giren “Local Functions” (Yerel Fonksiyonlar), adından da anlaşılacağı üzere sadece tanımlandıkları kapsayıcı dış metodun kendi gövdesi içerisinden erişilip çalıştırılabilen kapalı/lokal fonksiyonlardır. Sınıf seviyesinde olmadıkları ve dışarıdan asla çağrılamayacakları için public, private, protected gibi erişim belirleyicilerini (access modifiers) almaları mimari olarak anlamsızdır ve C# sentaks kurallarına göre yasaktır. Bu nedenle B şıkkı yanlıştır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d2e23eea7ed0",
+    "unitNumber": 10,
+    "text": "C# dilinde istisna işleme yapısıyla ilgili aşağıdaki şıklardan hangisi yanlıştır?",
+    "options": {
+      "A": "Finally bloğunun olması zorunlu değildir.",
+      "B": "Birden fazla finally bloğu tanımlanabilir.",
+      "C": "Catch bloğunun olması zorunlu değildir.",
+      "D": "Birden fazla catch bloğu tanımlanabilir.",
+      "E": "Finally veya catch bloklarından biri mutlaka olmalıdır."
+    },
+    "correctAnswer": "B",
+    "explanation": "C# dilinin mimarisinde try bloğu kullanıldığında, fırlatılabilecek farklı türdeki hataları ayrı ayrı ele alabilmek için peş peşe birden fazla (çoklu) catch bloğu yazılmasına izin verilir. Ancak temizlik kodlarının bulunduğu finally bloğu, hiyerarşinin ve işleyişin en sonunda sadece 1 tane bulunmak zorundadır. Birden fazla finally bloğu tanımlanması kesinlikle yanlıştır ve derleme (compile) hatası verir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-3afc563feea7",
+    "unitNumber": 11,
+    "text": "Veriyi anahtar-değer çiftleri biçiminde ve artan düzende sıralı bir şekilde saklayan koleksiyon türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Dictionary",
+      "B": "HashTable",
+      "C": "SortedDictionary",
+      "D": "ArrayList",
+      "E": "Queue"
+    },
+    "correctAnswer": "C",
+    "explanation": "C# dilinde SortedDictionary veri yapısı, verileri “anahtar-değer” (key-value) çiftleri halinde tutan ve koleksiyona eklenen bu verileri anahtarlara (keys) göre otomatik olarak alfabetik veya sayısal olarak artan (ascending) düzende saklayan özel bir yapıdır. Dictionary ve HashTable yapıları da anahtar-değer çifti kullanır ancak verileri belirli bir sırada (sıralı olarak) garanti ederek saklamazlar.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-48fd451aff78",
+    "unitNumber": 12,
+    "text": "Console.Write(“{1} {0} {2}”, 3, 0, -2, 1); Yukarıda verilen C# kodunun çıktısı aşağıdaki hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "1 2 -3",
+      "B": "3 0 -2 1",
+      "C": "0 3 -2 1",
+      "D": "0 3 -2",
+      "E": "3 0 -2"
+    },
+    "correctAnswer": "D",
+    "explanation": "Console.Write metodunda string formatlama kullanılırken, tırnak işaretleri arasındaki süslü parantezlerin {} içine yazılan sayılar, virgülden sonra metoda gönderilen argümanların indeks (sıra) numarasını temsil eder. İndeksleme 0’dan başlar. Buna göre; 0. indeks “3”, 1. indeks “0”, 2. indeks “-2” ve 3. indeks “1” dir. Format “{1} {0} {2}” olarak verildiği için, sırasıyla 1. indeks (0), 0. indeks (3) ve 2. indeks (-2) yan yana getirilir. Sonuç “0 3 -2” şeklinde ekrana yazdırılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8630e6c8a766",
+    "unitNumber": 13,
+    "text": "string dizge = “Merhaba Dünya”; Yukarıda verilen dizge değerini kullanarak konsola “Merhaba C#” çıktısını veren komut satırı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Console.WriteLine(dizge.ToUpper());",
+      "B": "Console.WriteLine(dizge.Remove(0,7));",
+      "C": "Console.WriteLine(dizge.Substring(7));",
+      "D": "Console.WriteLine(dizge.Replace(\"Dünya\", \"C#\"));",
+      "E": "Console.WriteLine(dizge.Insert(0,\"C#\"));"
+    },
+    "correctAnswer": "D",
+    "explanation": "String (metin) manipülasyon işlemlerinde bir metnin içindeki belirli bir kelimeyi veya karakter grubunu başka bir metinle bulup değiştirmek için `Replace` metodu kullanılır. `dizge.Replace(“Dünya”, “C#”)` komutu uygulandığında, sistem orijinal metnin içindeki “Dünya” kelimesini tarar, siler ve yerine tam olarak istenen “C#” kelimesini yazarak “Merhaba C#” sonucunu başarılı bir şekilde oluşturur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-be3e8ee539e2",
+    "unitNumber": 14,
+    "text": "C# dilinde sabitlerle ilgili aşağıda verilenlerden hangisi yanlıştır?",
+    "options": {
+      "A": "Const olarak tanımlanan bir değişkene program çalışırken kullanıcıdan değer atanabilir.",
+      "B": "Sabit tanımlamak için const anahtar kelimesi kullanılır.",
+      "C": "Sabitler, program içinde değişmemesi gereken değerleri tanımlamak için kullanılır.",
+      "D": "Const ile tanımlanan bir değişkenin değeri daha sonra değiştirilemez.",
+      "E": "Const ile sabitler tanımlanırken mutlaka başlangıç değeri verilmelidir."
+    },
+    "correctAnswer": "A",
+    "explanation": "C# programlama dilinde `const` (sabit) anahtar kelimesi ile oluşturulan değişkenler compile-time (derleme zamanı) sabitleridir. Bunun anlamı, bu değişkenin değerinin kodu yazan kişi tarafından kod derlenmeden hemen önce sabit bir değerle (Örn: Pi sayısı gibi) ilk atamasının yapılmış olması zorunluluğudur. Program çalışmaya başladıktan (runtime) sonra kullanıcıdan veri alınarak bir const değişkene dinamik olarak asla değer atanamaz ve program ömrü boyunca içeriği değiştirilemez. Bu nedenle A şıkkındaki ifade tamamen yanlıştır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-585a53b1d471",
+    "unitNumber": 15,
+    "text": "Bir sayının mutlak değerini hesaplamak için C#’ta hangi metot kullanılır?",
+    "options": {
+      "A": "Math.Ceiling()",
+      "B": "Math.Sqrt()",
+      "C": "Math.Floor()",
+      "D": "Math.Round()",
+      "E": "Math.Abs()"
+    },
+    "correctAnswer": "E",
+    "explanation": "Mutlak değer (Absolute value) matematiksel olarak bir sayının sayı doğrusunda sıfıra olan uzaklığıdır ve negatif değerleri pozitife çevirir. C# dilinde bu işlemi Math sınıfı altındaki Math.Abs() metodu gerçekleştirir. Seçeneklerdeki diğer metotlardan Ceiling her zaman yukarı yuvarlar, Floor her zaman aşağı yuvarlar, Round en yakın tam sayıya yuvarlar ve Sqrt sayının karekökünü hesaplamak için kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-65b77229c1d3",
+    "unitNumber": 16,
+    "text": "OverflowException istisnasıyla ilgili aşağıdaki şıklardan hangisi doğrudur?",
+    "options": {
+      "A": "Bellek taşmasından kaynaklanan istisnaları işler.",
+      "B": "Dizilere uygun olmayan türde veri atanmasından kaynaklı istisnaları işler.",
+      "C": "Bir değişkene tanımlandığı veri tipinin kapasitesinin üzerinde değer atanmasından kaynaklanan istisnaları işler.",
+      "D": "Tip dönüşümından kaynaklanan istisnaları işler.",
+      "E": "Dizi sınırlarının dışındaki bir indise erişilmesinden kaynaklı istisnaları işler."
+    },
+    "correctAnswer": "C",
+    "explanation": "C# dilinde OverflowException (Taşma İstisnası), bir veri tipine taşıyabileceğinden (maksimum ve minimum sınırlarından) daha büyük veya daha küçük bir değer aritmetik olarak atanmaya çalışıldığında fırlatılan bir hatadır. Örneğin; 0 ile 255 arasında değer alabilen byte veri tipindeki bir değişkene 300 sayısını atamaya çalışmak bu hataya yol açar.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-64864d2bf235",
+    "unitNumber": 17,
+    "text": "Aşağıdaki konsol çıktılarından hangisi sayısal olarak en küçük değeri verir?",
+    "options": {
+      "A": "Console.WriteLine(5^2);",
+      "B": "Console.WriteLine(5 | 2);",
+      "C": "Console.WriteLine(5 &amp; 2);",
+      "D": "Console.WriteLine(~5);",
+      "E": "Console.WriteLine(~2);"
+    },
+    "correctAnswer": "D",
+    "explanation": "Seçeneklerdeki semboller, sayıları ikilik tabana (binary) çevirip bit düzeyinde (bitwise) mantıksal işlem yapan operatörlerdir. `5 ^ 2` (XOR) sonucu 7’dir. `5 | 2` (OR) sonucu 7’dir. `5 & 2` (AND) sonucu 0’dır. Tilda işareti `~` (Bitwise Complement/NOT) ise sayının bitlerini tamamen tersine çevirir ve 32-bit işaretli tam sayılarda matematiksel kısa yolu `- (n + 1)` şeklindedir. Buna göre `~5` işlemi -6’ya, `~2` işlemi ise -3’e eşittir. Matematiksel olarak içlerinde en küçük değere sahip olan -6 olduğu için doğru cevap `~5` işlemini gerçekleştiren D şıkkıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-741c3a10f6c0",
+    "unitNumber": 18,
+    "text": "int[] sayilar = { 3, 5, 7, 9 }; sayilar[1] = 10; sayilar[3] = sayilar[1] + 2; Yukarıdaki C# kodu çalıştırıldığında sayilar isimli dizinin son hali hangi seçenekte verilmiştir?",
+    "options": {
+      "A": "{ 3, 5, 7, 10 }",
+      "B": "{ 3, 10, 7, 12 }",
+      "C": "{ 3, 10, 7, 10 }",
+      "D": "{ 3, 10, 7, 2 }",
+      "E": "{ 3, 5, 7, 17 }"
+    },
+    "correctAnswer": "B",
+    "explanation": "Dizilerde indeksleme 0’dan başlar. Başlangıçta dizimiz: 0. indeks=3, 1. indeks=5, 2. indeks=7, 3. indeks=9 değerlerine sahiptir. Kod satırlarında sayilar[1] = 10; komutu ile 1. indeksteki ‘5’ değeri ’10’ ile değiştirilir (Yeni dizi: 3, 10, 7, 9). Sonraki sayilar[3] = sayilar[1] 2; komutu ile 1. indeksteki güncel değer olan 10 alınır, 2 eklenerek 12 bulunur ve bu sonuç 3. indeksteki ‘9’ değerének yerine yazılır. Dizinin nihai durumu {3, 10, 7, 12} olur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-2b698b12befc",
+    "unitNumber": 19,
+    "text": "int sonuc = 5; int x = 2, y = 1, z = -1; sonuc = y – z >= x ? -5 : (z >= -y ? 10 : -10); Console.WriteLine(sonuc); Yukarıda verilen C# kodunun konsol çıktısı aşağıdaki şıkların hangisinde doğru olarak verilmiştir?",
+    "options": {
+      "A": "5",
+      "B": "-5",
+      "C": "1",
+      "D": "10",
+      "E": "-10"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-67b5d840a5f4",
+    "unitNumber": 60,
+    "text": "Yukarıdaki kod parçacığında program çıktısı hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "1",
+      "D": "-1",
+      "E": "0"
+    },
+    "correctAnswer": "C",
+    "explanation": "!stat false döndürür, ++x ise x’i 0’a çıkarır (başta -1’di). Ardından koşul (++x == 0) true olacağı için soru işareti (?) sonrası kısım çalışır (x / y). x / y = 0 / 2 tamsayı bölmesi 0’dır, ancak kodda !stat & ++x == 0 ifadesindeki bitwise AND (&) kullanımına dikkat edilmelidir. Sonuçta işlenenler ve öncelik sırası incelendiğinde sonuç 1 olarak elde edilir (burada z + x - y kısmı devreye girebilir). Kod çalıştığında C# operatör önceliği sebebiyle aslında !stat & (++x == 0) ifadesi değerlendirilir, x=0 olur, ancak z + x - y bölümü seçildiğinde 3+0-2=1 döndürür. Böylece ekrana 1 yazdırılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d02a0b97a223",
+    "unitNumber": 62,
+    "text": "Yukarıdaki kod parçasının çıktısı hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "-1",
+      "B": "0",
+      "C": "null",
+      "D": "1",
+      "E": "5"
+    },
+    "correctAnswer": "E",
+    "explanation": "Koşulda b <= a true olduğu için c ?? 5 ifadesi çalışır. Burada c null olduğu için ?? operatörü ile 5 seçilir ve ekrana 5 yazılır. C# null coalescing operatörünün (??) örnek kullanımıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-af9068edbaf0",
+    "unitNumber": 63,
+    "text": "Yukarıdaki kodun çıktısı hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "%",
+      "B": "-",
+      "C": "/",
+      "D": "*",
+      "E": "+"
+    },
+    "correctAnswer": "E",
+    "explanation": "Kod adım adım değerlendirildiğinde birinci if koşulu (y+z != x && y>z) yanlıştır. İkinci else-if (y>x || ++y>z) ifadesinde y>x false ama ++y>z = 0>1 = false. Üçüncü koşulda (y == x & x<z) y artık 0 olduğundan y==x (0==0) doğru ve x bu nedenle Console.WriteLine(\"+\"); satırı çalışır ve “+” çıktısı alınır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c350835c3a99",
+    "unitNumber": 64,
+    "text": "Yukarıdaki kodla ilgili program çıktısı hangi şıkta doğrudur?",
+    "options": {
+      "A": "-3.14 - 3.14",
+      "B": "Program çalışma zamanı hatası verir.",
+      "C": "null - 3.14 - null",
+      "D": "null - 3.14 - 3.14",
+      "E": "Program derleme hatası verir."
+    },
+    "correctAnswer": "E",
+    "explanation": "Değer atanmamış double pi; değişkeni ilk kullanım esnasında yazdırılmaya çalışıldığından C# derleyicisi “kullanılmadan önce atanmalı” şeklinde hata verir. C#’ta yerel değişkenler varsayılan başlangıç değerine sahip olmadıkları için program derlenmez.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-929abeef9dd2",
+    "unitNumber": 65,
+    "text": "Yukarıdaki ifadenin çıktısı hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "True : False",
+      "B": "False : True",
+      "C": "True : True",
+      "D": "False : False",
+      "E": "Null : True"
+    },
+    "correctAnswer": "C",
+    "explanation": "C#’ta false != null ifadesi bool bağlamında true döner. İkinci kısımda (true & false) = false, dolayısıyla false || false = false, !(false) = true, son olarak true ^ false = true (XOR). Dolayısıyla ekrana True : True yazdırır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-fa38a21e4205",
+    "unitNumber": 67,
+    "text": "Yukarida verilen değişkenler kullanılarak 0.1:-1:10 çıktısı alınmak istenmektedir. Aşağıdaki şıklardan hangisi istenen çıktıyı verir?",
+    "options": {
+      "A": "<code>Console.Write($\"{z}:{-x}:{-y}\");</code>",
+      "B": "<code>Console.Write(\"{0}:{1}:{2}\", z, -y, -x);</code>",
+      "C": "<code>Console.Write($\" {0} : {2} : {1}\");</code>",
+      "D": "<code>Console.Write(\"{2}:{0}:{1}\", -y, -x, z);</code>",
+      "E": "<code>Console.Write(\"{1}:{0}:{2}\", x, z, -y);</code>"
+    },
+    "correctAnswer": "A",
+    "explanation": "İstenen çıktı 0.1:-1:10 şeklindedir. Dolayısıyla z=0.1, -x=-1, -y=10 sıralaması gerekir. A şıkkındaki yerleşim tam olarak bu formatı verir ve ekranda “0.1:-1:10” görüntülenir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f7ddc1edad48",
+    "unitNumber": 68,
+    "text": "Yukarıdaki program çıktısı hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "2023 # C BLGPRG",
+      "B": "# C 2023 BLGPRG",
+      "C": "C # 2023 BLGPRG",
+      "D": "C # BLGPRG 2023",
+      "E": "# BLGPRG C 2023"
+    },
+    "correctAnswer": "B",
+    "explanation": "Format parametrelerinde {0} = sembol, {1} = bolumKodu, {2} = harf, {3} = yil sırasıyla yerleştirilmiştir. Dolayısıyla çıktı # C 2023 BLGPRG şeklinde oluşur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-51508a4d713e",
+    "unitNumber": 73,
+    "text": "Yukarıdaki kod parçasının çıktısı hangi şıkta doğrudur?",
+    "options": {
+      "A": "-1 : True",
+      "B": "0 : True",
+      "C": "-2 : True",
+      "D": "-2 : False",
+      "E": "-1 : False"
+    },
+    "correctAnswer": "A",
+    "explanation": "++x öncesi x=-1, ++x x’i 0’a çıkarır. (0 >= -1) doğru, bu kısım true & true => true. Ardından y <= + --x + 1 kısmında --x x’i tekrar -1’e indirir. Dolayısıyla + --x + 1 => + -1 + 1 = 0. y <= 0 => 1 <= 0 false. true | false => true. Son durumda x tekrar -1 olmuş ve result true’dur. Ekranda “-1 : True” görülür.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-646d42f0a405",
+    "unitNumber": 74,
+    "text": "Yukarıdaki programla ilgili hangi ifade doğrudur?",
+    "options": {
+      "A": "Program çalışma zamanı hata verir.",
+      "B": "İşaretsiz veri tipinden işaretli veri tipine dönüşüm yapılmıştır.",
+      "C": "Program tutarsız çıktı verecektir.",
+      "D": "Kodda hata olduğundan dolayı derleme zamanı hata verir.",
+      "E": "Örtük veri tipi dönüşümü yapılmıştır."
+    },
+    "correctAnswer": "C",
+    "explanation": "(byte)a ifadesi, -128 değerini byte aralığına göre (0-255) dönüştürmeye çalışır. Bu “wrap around” etkisi yaratır ve sonuç beklenmeyen bir değerdir (örneğin 128 gibi). Daha sonra --b işlemi ile yine belirsiz bir aralıkta değer çıkabilir. Dolayısıyla tutarsız (öngörülmeyen) bir sonuç oluşur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-edf889debdb4",
+    "unitNumber": 40,
+    "text": "Yukarıdaki C# programında boş bırakılan A, B ve C harflerinin yerine yazılması gerekenler sırasıyla hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "A:ref B:y C:out",
+      "B": "A:out B:y C:ref",
+      "C": "A:in B:y C:out",
+      "D": "A:out B:x C:ref",
+      "E": "A:ref B:x C:out"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b68ed1bc2a2d",
+    "unitNumber": 41,
+    "text": "Yukarıdaki kod satırının çıktısı hangi seçenekte doğru verilmiştir?",
+    "options": {
+      "A": "null",
+      "B": "0",
+      "C": "1",
+      "D": "True",
+      "E": "False"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c5aab08b731b",
+    "unitNumber": 42,
+    "text": "C# dilinde Generic olmayan (Non Generic) koleksiyonlar ile ilgili aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Saklayacağı eleman sayısının tanımlanırken baştan belirtilmesi zorunludur.",
+      "B": "Performans açısından Generic koleksiyonlara göre daha hızlıdırlar.",
+      "C": "Generic olmayan koleksiyonların elemanlara erişmek ve değer atamak için kutulama ve kutudan çıkarma işlemlerinin yapılması gerekir",
+      "D": "System.Collections.Generic alan uzayında tanımlıdırlar.",
+      "E": "Yalnızca aynı türdeki veriyi saklamak için kullanılır."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8178916d0abd",
+    "unitNumber": 43,
+    "text": "Yukarıdaki C# kodunun çıktısı hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "1:-5:-10",
+      "B": "-5:1:0:1",
+      "C": "-5:1:0",
+      "D": "1:0:-5:1",
+      "E": "1:-5:0"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-41f11200456a",
+    "unitNumber": 44,
+    "text": "C# dilinde operatörlerle ilgili aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "İkili operatörlerin çalışma önceliği tekli operatörlere göre daha yüksektir.",
+      "B": "Sondan azaltma operatörü önden artırma operatörüne göre daha önce çalıştırılır.",
+      "C": "&amp;&amp; operatörü, soldaki işlenenin değeri false ise sağdaki işleneni kontrol etmez.",
+      "D": "Çok sayıda değişkene aynı satırda aynı değer atandığında,atama işlemine en sağdaki değişkenden başlanır.",
+      "E": "!= operatörü, sağındaki ve solundaki işlenenlerin değeri eşitse false döner."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ad6efe827127",
+    "unitNumber": 45,
+    "text": "Yukarıdaki C# kodunun işleyişi veya çıktısıyla ilgili verilen şıklardan hangisi doğrudur?",
+    "options": {
+      "A": "Program derleme hatası verir.",
+      "B": "Program istisna vermez ve ekrana 201 yazdırır.",
+      "C": "Program OverflowException istisnasını vererek “Taşma hatası!” çıktısını verir.",
+      "D": "Program IndexOutOfRangeException istisnasını vererek “Geçersiz indis değeri!” çıktısını ekrana yazdırır.",
+      "E": "Program istisna vererek “Bilinmeyen bir hata!” çıktısını ekrana yazdırır."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e61314981204",
+    "unitNumber": 46,
+    "text": "Yukarıda verilen C# koduyla ilgili aşağıdaki şıklardan hangisi doğrudur?",
+    "options": {
+      "A": "Program 10'dan 1'e kadar sayıları ekrana çıktılamaktadır.",
+      "B": "Kod derleme hatası verir.",
+      "C": "Program sorunsuz çalışır ve sonsuz döngüye girer.",
+      "D": "Döngünün başlangıç parametresinin değeri 1'dir.",
+      "E": "Program çalışma zamanı hata verir."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-63789be28835",
+    "unitNumber": 47,
+    "text": "Bir metoda argümanın kopyasının değil kendisinin gönderilmesini sağlayan fakat aynı zamanda bu argüman için kullanılan değişkenin sadece bildiriminin yapılıp değerinin metodun içinden atanmasının gerektiği metod çağırma yöntemi için kullanılan anahtar kelime aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "params",
+      "B": "out",
+      "C": "ref",
+      "D": "in out",
+      "E": "in"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ef8af833dfac",
+    "unitNumber": 48,
+    "text": "Aşağıdaki şıklarda verilen metodlardan hangisi iki tane imzasız/işaretsiz tam sayı veri tipinde parametre alır ve geriye ondalıklı sayı veri tipinde değer döndürür?",
+    "options": {
+      "A": "public void Ortalama(short a, long b) { Console.Write((a + b) / 2); }",
+      "B": "public double Ortalama(ushort a, byte b) { return (a + b) / 2; }",
+      "C": "public float Ortalama(long a, int b) { return (a + b) / 2; }",
+      "D": "public double Ortalama(short a, sbyte b) { return (a + b) / 2; }",
+      "E": "public int Ortalama(double a, float b) { return (int)(a + b) / 2; {"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-39c8b411098d",
+    "unitNumber": 49,
+    "text": "C# dilinde 2 gün, 1 saat, 5 dakika ve 58 saniyelik süreyi saklayan kod satırı hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "Time sure = new Time(2, 1, 5, 58);",
+      "B": "TimeSpan sure = new TimeSpan(2, 1, 5, 58);",
+      "C": "DateTime sure = new DateTime(2, 1, 5, 58);",
+      "D": "Date sure = new Date(2, 1, 5, 58);",
+      "E": "TimeOnly sure = new TimeOnly(2, 1, 5, 58);"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d6a0a53b3f66",
+    "unitNumber": 50,
+    "text": "Yukarıda verilen diller dizisinin ilk üç elemanını seçen kod satırı hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "string[] ilk_uc = diller[^3..];",
+      "B": "string[] ilk_uc = diller[^..3];",
+      "C": "string[] ilk_uc = diller[..^3];",
+      "D": "string[] ilk_uc = diller[..3];",
+      "E": "string[] ilk_uc = diller[1..3];"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e110e33f8e8a",
+    "unitNumber": 52,
+    "text": "C# dilinde döngülerle ilgili aşağıdaki şıklardan hangisi yanlıştır?",
+    "options": {
+      "A": "do while döngüsünde koşul döngünün sonunda kontrol edilir.",
+      "B": "continue anahtar kelimesi, döngünün bir sonraki indis değeriyle çalışmasını sağlar.",
+      "C": "Döngüler koşul sağlandığı müddetçe çalışır.",
+      "D": "Döngünün bütün iterasyonları tamamlanmadan döngüyü sonlandırmak için break anahtar kelimesi kullanılır.",
+      "E": "Döngüler en az bir kere çalışır."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a688e2f2f650",
+    "unitNumber": 54,
+    "text": "Stack (yığın) ile ilgili aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Tekrar eden elemanlardan yalnızca bir tanesi korunur.",
+      "B": "Veriye anahtar bilgisi ile erişim sağlanır.",
+      "C": "Veriyi anahtar-değer formatında saklar.",
+      "D": "Yapıdan eleman silinirken ilk eklenen eleman en önce silinir.",
+      "E": "Yeni eleman yapının en başına eklenir."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ac4f56d2da35",
+    "unitNumber": 55,
+    "text": "InvalidCastException istisnasıyla ilgili aşağıdaki şıklardan hangisi doğrudur?",
+    "options": {
+      "A": "Bir değişkene tanımlandığı veri tipinin kapasitesinin üzerinde değer atanmasından kaynaklanan istisnaları işler.",
+      "B": "Bellek taşmasından kaynaklanan istisnaları işler.",
+      "C": "Dizi sınırlarının dışındaki bir indise erişilmesinden kaynaklı istisnaları işler.",
+      "D": "Tip dönüşümünden kaynaklanan istisnaları işler.",
+      "E": "Dizilere uygun olmayan türde veri atanmasından kaynaklı istisnaları işler"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b66e60f9eaa1",
+    "unitNumber": 56,
+    "text": "Yukarıda verilen C# kodunun çıktısı hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "-1",
+      "B": "-2",
+      "C": "2",
+      "D": "1",
+      "E": "0"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a09bc1678ee1",
+    "unitNumber": 57,
+    "text": "C# dilinde istisna filtrelemek için kullanılması gereken anahtar kelime hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "try",
+      "B": "catch",
+      "C": "throw",
+      "D": "finally",
+      "E": "when"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-122d6b48e56a",
+    "unitNumber": 58,
+    "text": "Aşağıda verilen değer atamalarından hangisi yanlıştır?",
+    "options": {
+      "A": "int deger = 0b100_001;",
+      "B": "sbyte x = -128;",
+      "C": "float? hipotenus = 12f;",
+      "D": "ushort borc = -100;",
+      "E": "char kelime = '-';"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-72f93767cab0",
+    "unitNumber": 59,
+    "text": "Yukarıda verilen C# koduyla ilgili verilen şıklardan hangisi doğrudur?",
+    "options": {
+      "A": "Değişken isminde Türkçe karakter kullanıldığı için derleme hatası verir.",
+      "B": "Program -100200 çıktısını verir.",
+      "C": "Dış blokta tanımlı değişken iç blokta aynı isimde tekrar tanımlandığı için derleme hatası verir.",
+      "D": "Program 200-100 çıktısını verir.",
+      "E": "Değişken isminde alt çizgi karakteri kullanıldığı için derleme hatası verir."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  }
+]

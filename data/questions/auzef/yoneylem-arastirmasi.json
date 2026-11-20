@@ -1,1 +1,3688 @@
-[]
+[
+  {
+    "id": "s-4655522253ec",
+    "unitNumber": 1,
+    "text": "Aşağıdaki ifadelerden hangisi Doğrusal Programlama Gevşetmesini açıklamaktadır?",
+    "options": {
+      "A": "Karar değişkenlerinin negatif olması koşulu eklenerek elde edilen doğrusal programlama problemidir.",
+      "B": "Karar değişkenlerinin tamamını tamsayı olması koşulu eklenerek elde edilen doğrusal programlama problemidir.",
+      "C": "Karar değişkenlerinin tamsayı veya 0-1 ikili formda olması koşulu eklenerek elde edilen doğrusal programlama problemidir.",
+      "D": "Karar değişkenlerinin tamamının 0-1 ikili formda olması koşulu eklenerek elde edilen doğrusal programlama problemidir.",
+      "E": "Karar değişkenleri üzerinde tüm tamsayı veya 0-1 kısıtlarının atılarak, elde edilen doğrusal programlama problemidir."
+    },
+    "correctAnswer": "E",
+    "explanation": "Doğrusal programlama gevşetmesi (LP Relaxation); tamsayılı programlama problemini çözmek için kullanılan bir ara adımdır. Bu işlemde tamsayılı veya 0-1 ikili değer alma zorunluluğu getiren kısıtlar geçici olarak kaldırılır ve problem standart bir sürekli doğrusal program olarak çözülür. Gevşetilmiş problemin çözümü; tamsayılı problemin optimal değerine bir üst sınır (maksimizasyon için) veya alt sınır (minimizasyon için) oluşturur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5fe1c62a9aab",
+    "unitNumber": 2,
+    "text": "Aşağıdakilerden hangisi yukarıda verilen doğrusal programlama modeli grafik gösteriminde gri renkli uygun çözüm alanının sınırlarını temsil etmektedir?",
+    "options": {
+      "A": "AOBC",
+      "B": "AOCB",
+      "C": "YOXB",
+      "D": "OBCA",
+      "E": "OBAC"
+    },
+    "correctAnswer": "B",
+    "explanation": "Grafik incelendiğinde gri renkli uygun çözüm alanı (feasible region) bir çokgen biçimindedir. Bu çokgenin köşe noktaları O (orijin, 0,0), A (Y eksenindeki kesim noktası), B (iki kısıt doğrusunun kesişim noktası) ve C (X eksenindeki kesim noktası) olarak belirlenmiştir. Uygun çözüm alanı bu dört köşe noktasıyla sınırlıdır. Köşe noktalarının doğru sıralanması; A noktasından başlayarak O’ya geçmeden C’ye ve oradan B’ye dönen AOCB yolunu oluşturmaktadır. Bu sıralama gri renkli alanın dört köşesini kapalı bir çokgen olarak doğru biçimde tanımlamaktadır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6087c77be934",
+    "unitNumber": 3,
+    "text": "Risk halinde karar vermede beklenen değer (expected value) kriteri nasıl kullanılır?",
+    "options": {
+      "A": "Beklenen değer kriteri yalnızca iki doğa durumu olan problemlere uygulanır.",
+      "B": "Beklenen değer kriteri; her alternatif için olası sonuçların gerçekleşme olasılıklarıyla ağırlıklı ortalamasını (beklenen değerini) hesaplar ve en yüksek beklenen değere sahip alternatifi seçer.",
+      "C": "Beklenen değer kriteri her zaman optimal kararı garanti eder.",
+      "D": "Beklenen değer kriteri belirsizlik halinde karar vermede kullanılan bir kriterdir.",
+      "E": "Beklenen değer kriterinde olasılıkların toplamının 1 olması gerekmez."
+    },
+    "correctAnswer": "B",
+    "explanation": "Risk halinde karar verme; doğa durumlarının olasılıklarının bilindiği ortamları kapsar. Beklenen değer (EV) kriteri bu ortamdaki en yaygın karar kriteridir. Her alternatif i için beklenen değer: EV(i) = Σ P(j) × Sonuç(i,j) formülüyle hesaplanır; burada P(j) j. doğa durumunun olasılığıdır. Maksimizasyon problemlerinde en yüksek EV’ye sahip alternatif seçilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e327ee18c485",
+    "unitNumber": 4,
+    "text": "Z max 4x₁+3x₂+x₃+2x₄ x₁+2x₂+2x₃+3x₄ ≥ 6 2x₁+3x₂+5x₃+x₄ ≥ 4 3x₁+4x₂+3x₃+5x₄ ≤ 12 4x₁+4x₂+2x₃+4x₄ ≤ 16 Aşağıdakilerden hangisi primal formda verilen Doğrusal Programlama modelinin dualine ait amaç fonksiyonudur?",
+    "options": {
+      "A": "Zmin 6u₁+4u₂+12u₃+16u₄",
+      "B": "Zmin -6u₁-4u₂+12u₃+16u₄",
+      "C": "Zmin 6u₁-4u₂+12u₃+16u₄",
+      "D": "Zmin -6u₁+4u₂+12u₃+16u₄",
+      "E": "Zmin 6u₁+4u₂-12u₃-16u₄"
+    },
+    "correctAnswer": "B",
+    "explanation": "Maksimizasyon primal probleminin dualini almak için standart forma dönüştürme gerekir. Dual amaç fonksiyonu; primal kısıtların sağ taraf katsayılarıyla dual değişkenlerin çarpımından oluşur: sağ taraf sabitleri 6, 4, 12, 16 olduğundan dual amaç fonksiyonu bu katsayıları içerir. İlk iki kısıt ≥ yönlüdür; bu kısıtlar standart forma getirilirken (≤ yönüne çevrilirken) -1 ile çarpılır. Dolayısıyla bu kısıtlara ait dual değişkenler u₁ ve u₂ negatif işaret alır. Son iki kısıt ≤ yönlü olduğundan dual değişkenleri u₃ ve u₄ pozitif kalır. Dual amaç fonksiyonu: Zmin = -6u₁ – 4u₂ 12u₃ 16u₄.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5ba713a768f6",
+    "unitNumber": 5,
+    "text": "Aşağıdaki karar problemlerinin hangisinde her seçime ilişkin tam bir bilgi var olup ortaya çıkacak olan olayın gerçekleşme olasılığı 1’dir?",
+    "options": {
+      "A": "Belirsizlik Halinde Karar Verme",
+      "B": "Belirlilik Halinde Karar Verme",
+      "C": "Sezgisel Karar Verme",
+      "D": "Risk Halinde Karar Verme",
+      "E": "Stratejik Karar Verme"
+    },
+    "correctAnswer": "B",
+    "explanation": "Karar verme problemleri; bilgi durumuna göre üç ana kategoriye ayrılır. Belirlilik halinde karar verme; her karar alternatifinin kesin olarak hangi sonucu vereceğinin önceden bilindiği ve doğa durumunun gerçekleşme olasılığının 1’e (yüzde 100) eşit olduğu ortamları tanımlar. Risk halinde karar verme; doğa durumlarının gerçekleşme olasılıklarının bilindiği (0 ile 1 arasında) durumlarda karar almayı, belirsizlik halinde karar verme ise doğa durumlarına ilişkin hiçbir olasılık bilgisinin bulunmadığı durumları kapsar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-bee66619d91f",
+    "unitNumber": 6,
+    "text": "Aşağıdaki Tamsayılı Programlama çözüm yöntemlerinden hangisinde tamsayı koşulu yokmuş gibi gerçekleştirilen çözümde elde edilen çözümün tamsayı olmaması durumunda, değişkenlerin aldığı değerler en yakın iki (alt ve üst) tamsayıya indirgenir?",
+    "options": {
+      "A": "Grafik Çözüm Yöntemi",
+      "B": "Dal-Sınır Yöntemi",
+      "C": "Sayımlama Yöntemi",
+      "D": "Yuvarlama Yöntemi",
+      "E": "Gevşetme Yöntemi"
+    },
+    "correctAnswer": "D",
+    "explanation": "Yuvarlama yöntemi; tamsayılı programlama problemlerini çözmek için kullanılan sezgisel (heuristic) bir yaklaşımdır. Bu yöntemde önce tamsayı kısıtları göz ardı edilerek LP gevşetmesi çözülür. Elde edilen çözüm tamsayı değilse her değişken için en yakın alt ve üst tamsayı değerleri belirlenir ve bu değerler tek tek veya kombinasyon halinde denenerek en iyi tamsayı çözümü aranır. Dal-sınır yöntemi ise daha sistematik bir yaklaşımla tamsayı olmayan değişkeni yeni kısıtlar ekleyerek iki alt probleme böler ve optimal tamsayı çözümünü garanti eder.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c9a082921172",
+    "unitNumber": 7,
+    "text": "Aşağıdakilerden hangisi karar değişkenlerinin sıfır ya da pozitif olması gerekliliğini ifade eden Doğrusal Programlama varsayımıdır?",
+    "options": {
+      "A": "Orantısallık",
+      "B": "Doğrusallık",
+      "C": "Toplanabilirlik",
+      "D": "Negatif olmama",
+      "E": "Bölünebilirlik"
+    },
+    "correctAnswer": "D",
+    "explanation": "Doğrusal programlamanın temel varsayımları şunlardır: orantısallık (amaç fonksiyonu ve kısıtlardaki katkının karar değişkenleriyle orantılı olması), toplanabilirlik (tüm terimlerin toplamının değerlerin ayrı ayrı katkılarının toplamına eşit olması), bölünebilirlik (karar değişkenlerinin kesirli değerler alabilmesi) ve negatif olmama (karar değişkenlerinin sıfır veya pozitif olması; xᵢ ≥ 0). Negatif olmama kısıtı; fiziksel gerçeklikle uyum sağlar. Üretim miktarı, kaynak kullanımı gibi değişkenlerin negatif olması anlamsızdır. Bu varsayım olmadan optimal çözüm gerçekçi olmayan negatif değerlere ulaşabilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8e5b9e23d82a",
+    "unitNumber": 8,
+    "text": "Aşağıdakilerden hangisi bir dual modelin kısıtlarının katsayılarına eşittir?",
+    "options": {
+      "A": "Primal problemin kısıtlarının katsayılarının oluşturduğu matrisin transpozu",
+      "B": "Primal problemin amaç fonksiyonunun katsayılarının transpozu",
+      "C": "Primal problemin kısıtlarının katsayılarının oluşturduğu matris",
+      "D": "Primal probleminin kısıtlarının sağ taraf sabitlerinin matrisinin transpozu",
+      "E": "Primal probleminin kısıtlarının sağ taraf sabitlerinin matrisi"
+    },
+    "correctAnswer": "A",
+    "explanation": "Dualite dönüşümünde primal ve dual arasındaki matrissel ilişki şöyle özetlenir: Primal kısıt matrisi A (m×n boyutunda) ise dual kısıt matrisinin katsayıları Aᵀ (n×m boyutunda) olur; yani primal problemin kısıt katsayı matrisinin transpozu dual problemin kısıt katsayı matrisini oluşturur. Bunun yanı sıra primal amaç fonksiyonu katsayıları (c vektörü) dual problemin sağ taraf sabitleri olurken primal kısıtların sağ taraf sabitleri (b vektörü) dual problemin amaç fonksiyonu katsayılarına dönüşür.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-fda0efab2ca5",
+    "unitNumber": 9,
+    "text": "Aşağıdakilerden hangisi bir Doğrusal Programlama Modelinde değeri hesaplanacak olan bilinmeyenleri ifade etmektedir?",
+    "options": {
+      "A": "Kısıtlar",
+      "B": "Hedef",
+      "C": "Karar değişkenleri",
+      "D": "Varsayımlar",
+      "E": "Amaç fonksiyonu"
+    },
+    "correctAnswer": "C",
+    "explanation": "Doğrusal programlama modelinin temel bileşenleri şunlardır: karar değişkenleri (modelin bilinmeyenleri; değerleri optimize edilmek suretiyle bulunacak olan değişkenler), amaç fonksiyonu (karar değişkenlerinin doğrusal bir kombinasyonundan oluşan ve maksimize ya da minimize edilmek istenen ifade), kısıtlar (karar değişkenlerinin alabileceği değerleri sınırlandıran eşitlik veya eşitsizlikler) ve negatif olmama koşulları.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4a881917fb33",
+    "unitNumber": 10,
+    "text": "Yöneylem Araştırması incelenen problemi, içinde bulunduğu sistemin bütün unsurlarıyla ve bu unsurlar arasındaki her türlü etkileşimle birlikte incelemeyi esas alır. Yukarıdaki ifade ile yöneylem araştırmasının hangi özelliğini açıklanmaktadır?",
+    "options": {
+      "A": "Bütünleşik yaklaşım",
+      "B": "Disiplinlerarası yaklaşım",
+      "C": "Yönetsel yaklaşım",
+      "D": "Doğrusal yaklaşım",
+      "E": "Bilimsel yöntem"
+    },
+    "correctAnswer": "A",
+    "explanation": "Yöneylem araştırmasının bütünleşik yaklaşım özelliği; bir problemi yalnızca kendi içinde değil içinde bulunduğu sistemin tüm bileşenleri ve bu bileşenler arasındaki karmaşık etkileşimlerle birlikte ele almasını ifade eder. Örneğin bir fabrikadaki üretim planlama problemi yalnızca üretim hattıyla değil tedarik zinciri, depolama kapasitesi, işgücü planlaması ve talep tahminleriyle birlikte değerlendirilir. Bu bütünleşik bakış açısı; lokal optimumlar yerine global optimumlar elde edilmesine katkıda bulunur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ba858b817321",
+    "unitNumber": 11,
+    "text": "Bir fabrikada farklı işlevlere sahip 3 makineye, makineleri farklı verimlilik düzeylerinde kullanabilen 3 işçinin atanması problemine uygun çözümü üretecek olan Tamsayılı Programlama yöntemi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Doğrusal Olmayan Tamsayılı Programlama",
+      "B": "Doğrusal Tamsayılı Programlama",
+      "C": "Sıfır-Bir Tamsayılı Programlama",
+      "D": "Kompleks Tamsayılı Programlama",
+      "E": "Karma Tamsayılı Programlama"
+    },
+    "correctAnswer": "C",
+    "explanation": "Atama problemleri; her işçinin her makineye ya atanıp (1) ya da atanmayacağını (0) ifade eden ikili (binary) karar değişkenleri gerektirdiğinden sıfır-bir tamsayılı programlama bu tür problemlerin doğal çerçevesini oluşturur. x… = 1 eğer i. işçi j. makineye atanıyorsa, x… = 0 aksi halde tanımlanır. Her işçi en fazla bir makineye, her makine en fazla bir işçiye atanmalı kısıtlarıyla birlikte bu model sıfır-bir tamsayılı program haline gelir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-69547e154098",
+    "unitNumber": 12,
+    "text": "Aşağıdakilerden hangisi Yöneylem Araştırmasının bütünleşik yaklaşım özelliğini ifade etmektedir.",
+    "options": {
+      "A": "Yöneylem Araştırması deterministik modeller bütünüdür.",
+      "B": "Yöneylem Araştırması deterministik ve stokastik modelleri bünyesinde barındırır.",
+      "C": "Yöneylem Araştırması, diğer bilim dalları ile ilintili modeller üretir.",
+      "D": "Yöneylem Araştırması, kökeni itibariyle askeri harekat araştırmalarına dayanmaktadır.",
+      "E": "Yöneylem Araştırması, incelenen problemi, içinde bulunduğu sistemin bütün unsurlarıyla ve bu unsurlar arasındaki her türlü etkileşimle birlikte incelemeyi esas alır."
+    },
+    "correctAnswer": "E",
+    "explanation": "Yöneylem araştırmasının bütünleşik yaklaşımı; herhangi bir alt sistemi veya bileşeni izole biçimde değil, tüm sistem içindeki konumuyla ve diğer unsurlarla etkileşimleri çerçevesinde ele almayı gerektirir. Bu özellik; kısa vadeli lokal optimizasyonlar yerine uzun vadeli global optimumu hedefleyen bir bakış açısını yansıtır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4d24e71e5dbe",
+    "unitNumber": 13,
+    "text": "Aşağıdaki dualite ile ilgili verilen ifadelerden hangisi yanlıştır?",
+    "options": {
+      "A": "Primal modelin geçerli bir çözüm bölgesi olması halinde dual model de geçerli bir çözüm bölgesine sahiptir.",
+      "B": "Primal modelin amaç fonksiyonun optimal değeri, dual modelin amaç fonksiyonunun optimal değerine eşittir.",
+      "C": "Grafik çözümün mümkün olmadığı tüm primal modeller duali alınarak grafik yöntem ile çözülebilir.",
+      "D": "Primal problemin duali alınarak elde edilen problemin duali alınırsa, tekrar primal problem elde edilir.",
+      "E": "Dual probleme ait değişkenlerin yorumları ile primal probleme ait ekonomik yorumlar ve açıklamalar yapılabilir."
+    },
+    "correctAnswer": "C",
+    "explanation": "Dualite teoremi; her doğrusal programlama probleminin karşılığında bir dual problem bulunduğunu ve optimal çözümlerinin eşit olduğunu ifade eder. Grafik çözüm yalnızca iki karar değişkenine sahip modellere uygulanabilir. Bir primal modelin 3 veya daha fazla karar değişkeni varsa grafik çözüm mümkün değildir; dualini aldığımızda dual problemin kaç karar değişkeni olacağı primal kısıt sayısına bağlıdır. Örneğin 3 kısıtlı bir primal modelin dualinde 3 karar değişkeni oluşur ve bu da grafik yöntemle çözülemez. Dolayısıyla “grafik çözümün mümkün olmadığı tüm primal modellerin duali grafik yöntemle çözülebilir” ifadesi kesinlikle yanlıştır. Diğer seçenekler dualite teoreminin doğru önermelerini içermektedir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-32179c7ceb47",
+    "unitNumber": 14,
+    "text": "I. Adet II. Kilogram III. Metreküp Yukarıdaki birim üretim miktarını gösteren ölçülerden hangisi ya da hangileri kesinlikle tamsayıdır?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "II ve III",
+      "C": "I ve III",
+      "D": "I ve II",
+      "E": "Yalnız II"
+    },
+    "correctAnswer": "A",
+    "explanation": "Tamsayılı programlama bağlamında üretim miktarlarının tamsayı olup olmadığı; ölçüm biriminin doğasına bağlıdır. Adet; bölünemez fiziksel varlıkları sayar ve tanım gereği kesinlikle tamsayıdır; 2,7 adet araba üretmek fiziksel olarak anlamsızdır. Kilogram; sürekli bir kütle ölçüsüdür ve kesirli değerler alabilir (3,5 kg hammadde). Metreküp de sürekli bir hacim ölçüsüdür ve kesirli değerler mümkündür. Bu nedenle yalnızca adet birimi kesinlikle tamsayı olmayı gerektirirken kilogram ve metreküp birimlerinde kesirli değerler fiziksel olarak mümkündür.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d0af67c08871",
+    "unitNumber": 15,
+    "text": "Aşağıdakilerden hangisi belirsizlik halinde karar vermede kullanılan yaklaşımlardan biri değildir?",
+    "options": {
+      "A": "Kötümserlik kriteri",
+      "B": "Eş olasılık kriteri",
+      "C": "Pişmanlık kriteri",
+      "D": "İyimserlik kriteri",
+      "E": "Sezgisel olasılık kriteri"
+    },
+    "correctAnswer": "E",
+    "explanation": "Belirsizlik halinde karar verme; doğa durumlarının olasılıklarının bilinmediği karar problemlerini kapsayan bir alandır. Bu alanda kullanılan standart kriterler şunlardır: kötümserlik kriteri (maximin; her alternatifin en kötü sonucunu maximize etme), iyimserlik kriteri (maximax; her alternatifin en iyi sonucunu maximize etme), pişmanlık kriteri (minimax regret; Savage kriteri, fırsat maliyetlerini minimize etme), Hurwicz kriteri (iyimserlik katsayısıyla ağırlıklı ortalama) ve eş olasılık kriteri (Laplace kriteri; tüm doğa durumlarına eşit olasılık atama). Sezgisel olasılık kriteri ise bu literatürde tanımlanmış bir kriter değildir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9d9ccbcf5c01",
+    "unitNumber": 16,
+    "text": "Z max x₁+2x₂+3x₃+4x₄ 4x₁+3x₂+4x₃-x₄ ≤ 25 x₁+2x₂+2x₃+3x₄ ≤ 22 2x₁+4x₂+x₃+5x₄ ≤ 32 Aşağıdakilerden hangisi primal formda verilen doğrusal programlama modelinin dual kısıtlarından biri değildir?",
+    "options": {
+      "A": "3u₁+2u₂+4u₃ &ge; 2",
+      "B": "-u₁+3u₂+5u₃ &ge; 4",
+      "C": "4u₁+u₂+2u₃ &ge; 1",
+      "D": "2u₁+4u₂+u₃ &ge; 3",
+      "E": "4u₁+2u₂+u₃ &ge; 3"
+    },
+    "correctAnswer": "D",
+    "explanation": "Maksimizasyon primali için dual kısıtlar primal kısıt matrisinin transpozundan elde edilir. Primal kısıt matrisi sütunları (her x değişkeni için): x₁ katsayıları: (4,1,2) → dual kısıt: 4u₁ u₂ 2u₃≥1. x₂ katsayıları: (3,2,4) → dual kısıt: 3u₁ 2u₂ 4u₃≥2. x₃ katsayıları: (4,2,1) → dual kısıt: 4u₁ 2u₂ u₃≥3. x₄ katsayıları: (-1,3,5) → dual kısıt: -u₁ 3u₂ 5u₃≥4 (B şıkkı). D seçeneğindeki 2u₁ 4u₂ u₃≥3 ise hiçbir karar değişkeninin katsayı sütunuyla eşleşmediğinden, bu modelin dual kısıtlarından biri olamaz.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-df373086ed84",
+    "unitNumber": 17,
+    "text": "Aşağıdaki Belirsizlik Halinde Karar Verme yaklaşımlarından hangisi seçimlerden kaynaklı oluşan fırsat maliyetlerini dikkate alan yaklaşımdır?",
+    "options": {
+      "A": "Pişmanlık Kriteri",
+      "B": "Kötümserlik Kriteri",
+      "C": "İyimserlik Kriteri",
+      "D": "Hurwicz Kriteri",
+      "E": "Eş Olasılık Kriteri"
+    },
+    "correctAnswer": "A",
+    "explanation": "Pişmanlık kriteri (minimax regret kriteri veya Savage kriteri); karar vericinin belirli bir doğa durumunda en iyi alternatifi seçmemiş olmaktan duyacağı pişmanlığı minimize etmeyi hedefler. Fırsat maliyeti (pişmanlık); belirli bir doğa durumunda seçilmemiş en iyi alternatifin getirisi ile seçilen alternatifin getirisi arasındaki farktır. Pişmanlık matrisi oluşturularak her alternatif için maksimum pişmanlık değeri belirlenir ve en küçük maksimum pişmanlık değerine sahip alternatif seçilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-7d642b35c707",
+    "unitNumber": 18,
+    "text": "Aşağıdakilerden hangisi karar vericinin alternatifleri değerlendirme esnasında kullanacağı karar verme bileşenidir?",
+    "options": {
+      "A": "Sonuç",
+      "B": "Doğa durumu",
+      "C": "Hedef",
+      "D": "Kriter",
+      "E": "Amaç"
+    },
+    "correctAnswer": "D",
+    "explanation": "Karar verme sürecinin temel bileşenleri şunlardır: karar alternatifleri (karar vericinin kontrol edebildiği seçenekler), doğa durumları (karar vericinin kontrol edemediği dış etkenler), sonuçlar (belirli bir alternatif ve doğa durumu kombinasyonunda elde edilen çıktılar), amaç (ulaşılmak istenen genel hedef) ve kriter (alternatiflerin değerlendirilmesinde kullanılan ölçüt). Kriter; karar vericinin alternatifleri hangi ölçüt veya ölçütlere göre karşılaştıracağını belirler.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-62280b6345c7",
+    "unitNumber": 19,
+    "text": "Dal-sınır yöntemi tamsayılı programlamada nasıl çalışır?",
+    "options": {
+      "A": "Dal-sınır yöntemi yalnızca sıfır-bir değişkenli problemlerde kullanılabilir.",
+      "B": "Dal-sınır yöntemi; LP gevşetmesini çözer, tamsayı olmayan değişkeni seçer, bu değişken için iki yeni alt-problem (dal) oluşturur ve her dalda yeni LP gevşetmeleri çözerek optimalin üst sınırlarını takip eder; kesilme kriterleri sağlanana kadar devam eder.",
+      "C": "Dal-sınır yöntemi tamsayı çözüm garantisi vermez.",
+      "D": "Dal-sınır yönteminde dallanma işlemi yalnızca bir kez gerçekleştirilir.",
+      "E": "Dal-sınır yöntemi yuvarlama yönteminin bir alt türüdür."
+    },
+    "correctAnswer": "B",
+    "explanation": "Dal-sınır (branch and bound) yöntemi; tamsayılı programlama problemlerini sistematik biçimde çözen ve optimal tamsayı çözümünü garanti eden bir algoritmadır. Algoritmanın işleyişi şöyledir: önce LP gevşetmesi çözülür. Çözümde tamsayı olmayan bir değişken xᵢ = f (f kesirli) bulunursa iki dal oluşturulur: xᵢ ≤ ⌊f⌋ (alt tamsayı) ve xᵢ ≥ ⌈f⌉ (üst tamsayı). Her dal için yeni LP gevşetmesi çözülür ve sınırlar güncellenir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-47492acb0be9",
+    "unitNumber": 20,
+    "text": "Tamsayılı programlamada karma tamsayılı programlama (MIP) nedir ve uygulama alanları nelerdir?",
+    "options": {
+      "A": "Karma tamsayılı programlamada tüm değişkenler tamsayı olmak zorundadır.",
+      "B": "Karma tamsayılı programlama; değişkenlerin bir kısmının tamsayı (veya 0-1 ikili) diğerlerinin ise sürekli olduğu doğrusal programlama modellerini tanımlar. Üretim planlaması, proje seçimi ve çizelgeleme problemlerinde yaygın olarak kullanılır.",
+      "C": "Karma tamsayılı programlama yalnızca iki değişkenli problemlere uygulanabilir.",
+      "D": "Karma tamsayılı programlama ile saf tamsayılı programlama aynı kavramdır.",
+      "E": "Karma tamsayılı programlamada LP gevşetmesi kullanılamaz."
+    },
+    "correctAnswer": "B",
+    "explanation": "Karma tamsayılı programlama (Mixed Integer Programming – MIP); bazı değişkenlerin tamsayı veya ikili olması gereken kesikli kararları (fabrika açma/kapama, yatırım yapma/yapmama), diğer değişkenlerin ise sürekli değerler alabileceği (üretim miktarı, nakliye hacmi) durumları modeller.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a16416f63399",
+    "unitNumber": 21,
+    "text": "Aşağıdakilerden hangisi Yöneylem Araştırması’nın uygulama alanlarından biri değildir?",
+    "options": {
+      "A": "Üretim planlama",
+      "B": "Karar destek ve uzman sistemler",
+      "C": "Benzetim",
+      "D": "Yatırım planlama",
+      "E": "Bulut teknolojisi"
+    },
+    "correctAnswer": "E",
+    "explanation": "Yöneylem araştırması; karmaşık karar problemlerini matematiksel ve bilimsel yöntemlerle çözmeyi amaçlayan disiplinlerarası bir alandır. Uygulama alanları arasında üretim planlama (üretim çizelgeleme, kapasite optimizasyonu), karar destek ve uzman sistemler (yönetim bilgi sistemleri entegrasyonu), benzetim (stokastik sistemlerin modellenmesi) ve yatırım planlama (portföy optimizasyonu, proje seçimi) sayılabilir. Bulut teknolojisi ise bilgisayar mühendisliği ve bilgi teknolojileri altyapısıyla ilgili bir kavramdır; yöneylem araştırmasının klasik uygulama alanları arasında yer almaz.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5ecafd85630a",
+    "unitNumber": 22,
+    "text": "Doğrusal programlamada duyarlılık analizi nasıl yapılır ve gölge fiyat ne anlama gelir?",
+    "options": {
+      "A": "Duyarlılık analizi yalnızca amaç fonksiyonu katsayıları için yapılabilir.",
+      "B": "Gölge fiyat; her zaman sıfırdan büyük bir değerdir.",
+      "C": "Duyarlılık analizi; optimal çözümün model parametrelerindeki değişikliklere ne kadar duyarlı olduğunu araştırır. Gölge fiyat ise bir kısıtın sağ taraf sabitinin bir birim artması halinde optimal amaç fonksiyonu değerindeki değişimi gösterir ve kaynakların ekonomik değerini yansıtır.",
+      "D": "Duyarlılık analizinde her parametre değişikliği için modelin baştan çözülmesi zorunludur.",
+      "E": "Gölge fiyat yalnızca &le; yönlü kısıtlar için hesaplanabilir."
+    },
+    "correctAnswer": "C",
+    "explanation": "Duyarlılık analizi; elde edilen optimal çözümün hangi parametre değişim aralıklarında geçerliliğini koruduğunu araştırır. Gölge fiyat (shadow price veya dual değer); bir kısıtın sağ taraf sabitinin bir birim artması halinde optimal amaç fonksiyonu değerindeki değişimdir. Sıfır gölge fiyatlı kısıtlar gevşek (kullanılmamış kapasitesi olan) kısıtlardır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-bbd18ee42a35",
+    "unitNumber": 23,
+    "text": "Yöneylem araştırmasında benzetim (simülasyon) yöntemi nedir ve hangi tür problemlerde kullanılır?",
+    "options": {
+      "A": "Benzetim yalnızca deterministik sistemlerin analizinde kullanılır.",
+      "B": "Benzetim; analitik çözümün güç ya da imkânsız olduğu karmaşık stokastik sistemlerin bilgisayar ortamında taklit edilmesi yoluyla analiz edilmesi yöntemidir. Kuyruk teorisi, envanter yönetimi ve üretim sistemleri gibi alanlarda yaygın kullanım alanı bulur.",
+      "C": "Benzetim optimal çözüm üretir ve her zaman analitik yöntemlerin yerini alabilir.",
+      "D": "Benzetim yalnızca fiziksel sistemlere uygulanabilir; soyut sistemlerde kullanılamaz.",
+      "E": "Monte Carlo benzetimi yalnızca finans alanında kullanılır."
+    },
+    "correctAnswer": "B",
+    "explanation": "Benzetim (simülasyon); gerçek dünyanın karmaşık ve belirsiz sistemlerini bilgisayar modelleri aracılığıyla taklit ederek davranışlarını analiz etmeyi sağlar. Çok sayıda stokastik (rastsal) değişken içeren, dinamik ve zaman bağımlı süreçleri olan sistemlerin performansını test etmek için en güçlü tekniklerden biridir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-897e45194ab6",
+    "unitNumber": 24,
+    "text": "Aşağıdakilerden hangisi Yöneylem Araştırması’nın kullandığı bilimsel yöntem aşamaları arasında sayılamaz?",
+    "options": {
+      "A": "Modelin kurulması",
+      "B": "Modelin tersine incelenmesi",
+      "C": "Çözümün uygulanması",
+      "D": "Modelden çözüm elde edilmesi",
+      "E": "Problemin tanımlanması"
+    },
+    "correctAnswer": "B",
+    "explanation": "Yöneylem araştırmasının bilimsel yöntem aşamaları şu sırayla ilerler: (1) problemin tanımlanması, (2) modelin kurulması, (3) modelden çözüm elde edilmesi, (4) modelin ve çözümün doğrulanması/geçerlenmesi ve (5) çözümün uygulanması. “Modelin tersine incelenmesi” ise bu aşamalar arasında yer almayan, standart yöneylem araştırması literatüründe tanımlanmamış bir aşamadır. Modelin doğrulanması veya duyarlılık analizinin yapılması gerçek metodolojik adımlar olarak yer alsa da “tersine inceleme” diye ayrı ve tanımlı bir bilimsel yöntem aşaması bulunmamaktadır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a86567793e99",
+    "unitNumber": 25,
+    "text": "Aşağıdakilerden hangisi Laplace Karar Kriterini açıklayan ifadedir?",
+    "options": {
+      "A": "Belirli sayıda olayın gerçekleşme olasılıklarının bilindiği durumda kullanılan karar kriteridir.",
+      "B": "Belirli sayıda olayın gerçekleşme olasılıklarının bilinmediği iyimser ve kötümser bakış açısının bir lambda katsayısı ile ağırlıklandırılarak alternatiflerin değerlendirilmesi gerektiği varsayımına dayanan karar kriteridir.",
+      "C": "Belirli sayıda olayın gerçekleşme olasılıklarının bilinmediği kötümser bakış açısı ile alternatiflerin değerlendirilmesi gerektiği varsayımına dayanan karar kriteridir.",
+      "D": "Belirli sayıda olayın gerçekleşme olasılıklarının bilinmediği iyimser bakış açısı ile alternatiflerin değerlendirilmesi gerektiği varsayımına dayanan karar kriteridir.",
+      "E": "Belirli sayıda olayın gerçekleşme olasılıklarının bilinmediği ancak gerçekleşme olasılıklarının birbirine eşit olduğu varsayımına dayanan karar kriteridir."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4c6db157e6a6",
+    "unitNumber": 26,
+    "text": "Aşağıdakilerden hangisi Markov analizinde geçiş matrisi üzerinde her bir durumdan diğer her bir duruma geçiş doğrudan veya dolaylı olarak yapılabildiğinde kullanılan kavramdır?",
+    "options": {
+      "A": "Denge durumu",
+      "B": "Beklenen değer",
+      "C": "Başlangıç olasılıkları",
+      "D": "Sıfır toplamlı zincir",
+      "E": "Ergodik zincir"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-47b35fc96171",
+    "unitNumber": 27,
+    "text": "Aşağıdakilerden hangisi hedef programlama modelindeki sapmaların önem dereceleri birbirinden farklı olduğunda kullanılan yaklaşımdır?",
+    "options": {
+      "A": "Eşit önemli kabul etme",
+      "B": "Ağırlıklandırma",
+      "C": "Doğrusallık",
+      "D": "Negatif olmama",
+      "E": "Önceliklendirme"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-0edcc2f7769c",
+    "unitNumber": 28,
+    "text": "Aşağıdakilerden hangisi oyunun başından sonuna dek ortaya çıkabilecek bütün durumlar için oyuncuların tercihlerini belirten kararlar bütünüdür?",
+    "options": {
+      "A": "Kazanç",
+      "B": "Strateji",
+      "C": "Ödemeler",
+      "D": "Oyuncu",
+      "E": "Oyun"
+    },
+    "correctAnswer": "B",
+    "explanation": "Oyuncuların oyun boyunca karşılaştıkları her durumda hangi hareketi seçeceklerini belirleyen kurallar bütünü strateji olarak adlandırılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-74f09ce8e659",
+    "unitNumber": 29,
+    "text": "Aşağıdakilerden hangisi verilen bir sistemdeki gelecek durumların mevcut durumlara bağlı olduğu hâllerdeki stokastik süreçlerini modellemede kullanılan yöntemdir?",
+    "options": {
+      "A": "Oyun teorisi",
+      "B": "Karar teorisi",
+      "C": "Markov analizi",
+      "D": "Karar ağaçları",
+      "E": "Analitik Hiyerarşi Prosesi"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b1f10628a1fb",
+    "unitNumber": 30,
+    "text": "Bir işletmenin üretim hattı için tasarlanan Hedef Programlama modelinde kullanılacak depolama alanının 500 m² yi aşmaması istenmektedir. Verilen Hedef Programlama modeli için uygun depolama hedef kısıtı aşağıdakilerden hangisi ile yazılmalıdır?",
+    "options": {
+      "A": "= 500",
+      "B": "&gt; 500",
+      "C": "&lt; 500",
+      "D": "&le; 500",
+      "E": "&ge; 500"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-462b6615d4f4",
+    "unitNumber": 31,
+    "text": "I. Analitik Hiyerarşi ProsesiII. TOPSISIII. Hedef Programlama.Yukarıda verilen yöntemlerden hangisi ya da hangileri Çok Amaçlı Karar Verme yöntemleri arasında sayılabilir?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "II ve III",
+      "C": "Yalnız III",
+      "D": "I ve II",
+      "E": "I, II ve III"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-fe96dd14b450",
+    "unitNumber": 32,
+    "text": "Verilen geçiş matrisine göre iki adım sonraki periyotta B seçeneğinden B seçeneğine geçme olasılığı aşağıdakilerden hangisinde doğru verilmiştir?",
+    "options": {
+      "A": "0,48",
+      "B": "0,61",
+      "C": "0,52",
+      "D": "1,00",
+      "E": "0,39"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-ec9df2a7c633",
+    "unitNumber": 33,
+    "text": "Aşağıdakilerden hangisi bir hedef programlama modelinde istenilen hedefin aşılması ve altında kalınması durumlarını gösteren kavramdır?",
+    "options": {
+      "A": "Hedef",
+      "B": "Sistem kısıtları",
+      "C": "Amaç",
+      "D": "Sapma değişkenleri",
+      "E": "Hedef kısıtları"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c31f56b1217f",
+    "unitNumber": 34,
+    "text": "Aşağıdakilerden hangisi Analitik Hiyerarşi Prosesi yönteminin aksiyomlarından biridir?",
+    "options": {
+      "A": "Doğrusallık",
+      "B": "Bağımlı olma",
+      "C": "Homojenlik",
+      "D": "Subjektiflik",
+      "E": "Eşvaryanslılık"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-604f1130fd02",
+    "unitNumber": 35,
+    "text": "Oyun teorisinde oyunun analizi için bilgi sahibi olunması gereken hususlar bulunmaktadır. Aşağıdakilerden hangisi oyun analizi için gerekli bilgilerden biri değildir?",
+    "options": {
+      "A": "Her bir oyuncunun her bir sonuca ne kadar değer atadığı",
+      "B": "Her bir oyuncunun ne derecede bilgi sahibi olduğu ve ne bildiği",
+      "C": "Oyuncuların kimler olduğu",
+      "D": "Her bir oyuncunun duygu durumu",
+      "E": "Oyuncular için hangi eylemlerin var olduğu"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d30d3d764789",
+    "unitNumber": 36,
+    "text": "Analitik Hiyerarşi Prosesi yönteminde en büyük özdeğer ve bu özdeğere karşılık gelen özvektörün hesaplandığı ve normalize edildiği adım aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Sentezleme",
+      "B": "Karar matrisinin oluşturulması",
+      "C": "Ağırlıkların hesaplanması",
+      "D": "Tutarlılık incelemesi",
+      "E": "Önceliklerin belirlenmesi"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f50a4efd3db0",
+    "unitNumber": 37,
+    "text": "Aşağıda Çok Nitelikli Karar Verme modelleri ile ilgili verilen ifadelerden hangisi yanlıştır?",
+    "options": {
+      "A": "Birden çok karar alternatifi vardır.",
+      "B": "Tek bir amaç vardır.",
+      "C": "Birden çok kriter vardır.",
+      "D": "Amaç fayda maksimizasyonudur.",
+      "E": "Kullanılan yöntemler optimum çözümü garanti eder."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e81b41f9f02f",
+    "unitNumber": 38,
+    "text": "Aşağıdakilerden hangisi Yöneylem Araştırmasında model kurma aşamasında izlenen adımlardan biri değildir?",
+    "options": {
+      "A": "Amaç fonksiyonunun oluşturulması",
+      "B": "Karar değişkenlerinin belirlenmesi",
+      "C": "Başlangıç çözümün belirlenmesi",
+      "D": "Parametrelerin belirlenmesi",
+      "E": "Kısıtların oluşturulması"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-badb51b51be8",
+    "unitNumber": 39,
+    "text": "Aşağıdakilerden hangisi Analitik Hiyerarşi Prosesi modellerinde tutarlılık incelemesinde kullanılan kavramlardan biri değildir?",
+    "options": {
+      "A": "Özdeğer",
+      "B": "Duyarlılık",
+      "C": "Tutarlılık indeksi",
+      "D": "Tutarılık oranı",
+      "E": "Rasgele indeksi"
+    },
+    "correctAnswer": "B",
+    "explanation": "Tutarlılık oranı, tutarlılık indeksi ve rasgele indeksi AHP’de tutarlılık kontrolü için kullanılır. Özdeğer de hesaplamalarda rol oynar. Duyarlılık (sensitivity) analizi ise başka karar problemlerinde kullanılır, AHP tutarlılık analizi kavramı değildir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-6412c61d410f",
+    "unitNumber": 40,
+    "text": "Aşağıdakilerden hangisi oyun sınıflandırmasında kullanılan kavramlardan biri değildir?",
+    "options": {
+      "A": "Beklenen Oyun",
+      "B": "Sıfır Toplamlı Olmayan Oyun",
+      "C": "Sıfır Toplamlı Oyun",
+      "D": "İki Kişilik Oyun",
+      "E": "Sabit Toplamlı Olmayan Oyun"
+    },
+    "correctAnswer": "A",
+    "explanation": "İki kişilik oyun, sıfır toplamlı oyun ve sıfır toplamlı olmayan oyun oyun teorisinde kullanılan sınıflamalardır. Beklenen oyun kavramı literatürde yoktur, beklenen değer kavramı vardır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-7b20d1bddb9e",
+    "unitNumber": 41,
+    "text": "I. GeçerlilikII. ÖlçülebilirlikIII. Kapsayıcılık.Yukarıdakilerden hangisi ya da hangileri kriterlerin karar probleminde etkisinin hesaplanabilmesi için sahip olması gereken özelliklerdendir?",
+    "options": {
+      "A": "I ve II",
+      "B": "Yalnız II",
+      "C": "I ve III",
+      "D": "Yalnız I",
+      "E": "II ve III"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b926f6965299",
+    "unitNumber": 43,
+    "text": "Aşağıdakilerden hangisi karar tipleri ile ilgili olarak kullanılan sınıflandırmalardan biri değildir?",
+    "options": {
+      "A": "Belirlilik ve belirsizlik şartları altında verilen kararlar",
+      "B": "Kişi ve grup kararları",
+      "C": "Alt ve üst kademe kararları",
+      "D": "Gerçek veya simüle kararlar",
+      "E": "Stratejik ve operasyonel kararlar"
+    },
+    "correctAnswer": "D",
+    "explanation": "Gerçek veya simüle kararlar şeklinde bir sınıflandırma bulunmamaktadır. Diğer şıklar karar tipleri için kabul edilen sınıflandırmalardır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2c67a069f91a",
+    "unitNumber": 59,
+    "text": "Aşağıdaki ifadelerden hangisi Saf Sıfır-Bir Tamsayılı Programlama Modelini tanımlamaktadır?",
+    "options": {
+      "A": "Karar probleminde yer alacak karar değişkenlerinin bir ya da bir kaçının sadece 0 ya da 1 değerlerinden oluşması gerektiği durumunda kullanılan modeldir.",
+      "B": "Karar probleminde tanımlanan karar değişkenlerin sadece bir kısmı tamsayılı değerlerden oluşması gerektiği durumda kullanılan modeldir.",
+      "C": "Karar probleminde yer alacak karar değişkenlerinin tamamının 0 ya da 1 değerlerinden oluşması gerektiği durumunda kullanılan modeldir.",
+      "D": "Karar probleminde tanımlanan karar değişkenlerin tamamının tamsayılı değerlerden oluşması gerektiği durumda kullanılan modeldir.",
+      "E": "Karar probleminde tanımlanan karar değişkenlerin bir kısmının tamsayılı bir kısmının ise 0-1 değerlerinden oluşması gerektiği durumda kullanılan modeldir."
+    },
+    "correctAnswer": "C",
+    "explanation": "Saf Sıfır-Bir Tamsayılı Programlama, tüm karar değişkenlerinin yalnızca 0 veya 1 değerini alabileceği özel bir tamsayılı programlama türüdür. Bu, evet/hayır kararları gibi durumlar için kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-f45becab2422",
+    "unitNumber": 60,
+    "text": "Aşağıdakilerden hangisi ülkemizde ilk olarak Yöneylem Araştırması faaliyetlerinin yürütüldüğü kurumdur?",
+    "options": {
+      "A": "Türk Silahlı Kuvvetleri",
+      "B": "TÜBİTAK",
+      "C": "İstanbul Üniversitesi",
+      "D": "Orta Doğu Teknik Üniversitesi",
+      "E": "İstanbul Teknik Üniversitesi"
+    },
+    "correctAnswer": "A",
+    "explanation": "Yöneylem Araştırması uygulamaları Türkiye’de ilk kez Türk Silahlı Kuvvetleri’nde başlamıştır. Daha sonra üniversiteler ve sivil kurumlar bu alanda çalışmalar yapmıştır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-e3737a3e3f56",
+    "unitNumber": 61,
+    "text": "min 2x₁ + x₂ + 6x₃ x₁ + 9x₂ + x₃ ≥ 10 5x₁ + 2x₂ + 2x₃ ≥ 9 3x₁ + 7x₂ – 3x₃ ≥ 7 x₁, x₂, x₃ ≥ 0 Aşağıdakilerden hangisi primalı verilen modelin dual kısıtlarından biri değildir?",
+    "options": {
+      "A": "u₁ + 2u₂ + 3u₃ &le; 6",
+      "B": "9u₁ + 2u₂ + 7u₃ &le; 1",
+      "C": "u₁ + 5u₂ + 3u₃ &le; 2",
+      "D": "2u₁ + 11u₂ + 6u₃ &le; 10",
+      "E": "u₁, u₂, u₃ &ge; 0"
+    },
+    "correctAnswer": "D",
+    "explanation": "Dual modelde primalın kısıt katsayıları ile amaç fonksiyonu katsayıları arasındaki ilişkiye göre kısıtlar belirlenir. 2u₁ + 11u₂ + 6u₃ ≤ 10 ifadesi primal modelin dual kısıtları arasında bulunmaz.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-09afd845dfc2",
+    "unitNumber": 62,
+    "text": "Aşağıdakilerden hangisi amaçlara ulaşmada alternatiflerin değerlendirilmesinde kullanılan karar bileşenleridir?",
+    "options": {
+      "A": "Karar Verici",
+      "B": "Alternatif",
+      "C": "Ağırlıklar",
+      "D": "Kriter",
+      "E": "Amaç"
+    },
+    "correctAnswer": "D",
+    "explanation": "Kriterler, alternatiflerin değerlendirilmesinde kullanılan ölçütlerdir. Amaçlar genel hedefi, alternatifler ise seçilecek seçenekleri belirtir. Karar verici, seçimi yapandır; ağırlıklar ise kriterlerin önem derecesidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-16eac3f85533",
+    "unitNumber": 63,
+    "text": "Aşağıdakilerden hangisi hedef programlama türleri arasında sayılamaz?",
+    "options": {
+      "A": "Tartılı hedef programlama",
+      "B": "Eşit ağırlıklı çok hedefli programlama",
+      "C": "Ağırlıklı çok hedefli programlama",
+      "D": "Öncelikli çok hedefli programlama",
+      "E": "Tek hedefli programlama"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-a166cc923043",
+    "unitNumber": 64,
+    "text": "Aşağıdaki ifadelerden hangisi Markov özelliğini tanımlar?",
+    "options": {
+      "A": "Bir sistemin olası tüm durumlarını içeren durum uzayına sahip olması",
+      "B": "Sonraki durumların belirlenebilmesi için halihazırdaki durum haricinde daha önceki durumların bilinmesine gerek olmaması",
+      "C": "Bir sistemin aynı anda iki durumda olamaması",
+      "D": "Durumlar arası geçiş için geçiş olasılıklarının bulunmaması",
+      "E": "Bir durumdan diğer duruma geçişin sistemin daha önceki durumlarına bağlı olması"
+    },
+    "correctAnswer": "B",
+    "explanation": "Markov özelliği, bir sürecin gelecekteki durumunun yalnızca şu anki duruma bağlı olduğunu ve geçmiş durumlardan bağımsız olduğunu ifade eder.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-814eb2f13dae",
+    "unitNumber": 66,
+    "text": "Aşağıdakilerden hangisi bir hedef programlama modelinde sağ taraf sabitlerinden sapmalara müsaade eden kısıt türüdür?",
+    "options": {
+      "A": "Sistem kısıtları",
+      "B": "Hedef kısıtları",
+      "C": "Doğrusal kısıtlar",
+      "D": "Fonksiyonel kısıtlar",
+      "E": "İşlevsel kısıtlar"
+    },
+    "correctAnswer": "B",
+    "explanation": "Hedef programlamada hedef kısıtlar, belirli hedef değerlere ulaşmaya çalışırken bazı sapmalara izin verilen kısıtlardır. Sistem kısıtları ise kesinlikle sağlanması gereken kısıtlardır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-339c74fd7a6c",
+    "unitNumber": 67,
+    "text": "Hedef programlamada kullanılan kavramlar ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
+    "options": {
+      "A": "Sistem kısıtları doğrusal programlamada kullanılan kısıtlara karşılık gelirler.",
+      "B": "Karar vericinin ulaşmayı istediği veya gerekli gördüğü hedefler, hedef programlama modeline hedef kısıtları olarak aktarılır.",
+      "C": "Sistem kısıtları çok katı olmayıp hedeflenen değerlerden (sağ taraf değerleri) sapmaların açıklanmasıyla ortaya çıkar.",
+      "D": "Sistem kısıtları tam olarak sağlanması gereken ve sapmaya izin verilmeyen kısıtlardır.",
+      "E": "Sistem kısıtları aynı zamanda fonksiyonel kısıt olarak da adlandırılırlar."
+    },
+    "correctAnswer": "C",
+    "explanation": "Hedef programlamada sistem kısıtları tam olarak sağlanması gereken ve sapmaya izin verilmeyen kısıtlardır. Hedef kısıtları ise sapmaya izin verir. Bu nedenle C şıkkı yanlıştır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-b3560b080c46",
+    "unitNumber": 68,
+    "text": "Aşağıdakilerden hangisi karar probleminde incelenen alternatiflerin sonlu sayıda olduğu ve açıkça tanımlandığı kesikli durumlarda kullanılabilecek yöntemlerden birisi değildir?",
+    "options": {
+      "A": "MABAC",
+      "B": "MARCOS",
+      "C": "SEMOPS",
+      "D": "EDAS",
+      "E": "ARAS"
+    },
+    "correctAnswer": "C",
+    "explanation": "MABAC, MARCOS, EDAS ve ARAS çok kriterli karar verme yöntemleridir. SEMOPS, bu yöntemler arasında yer almaz.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-c28b6db20402",
+    "unitNumber": 69,
+    "text": "Analitik Hiyerarşi Prosesi ile incelenen bir karar probleminde oluşturulan karar matrisinin köşegen elemanları aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "1",
+      "B": "1/aji",
+      "C": "aij",
+      "D": "aji",
+      "E": "1/aij"
+    },
+    "correctAnswer": "A",
+    "explanation": "Analitik Hiyerarşi Prosesi’nde (AHP) karar matrisinin köşegen elemanları her zaman 1’dir çünkü bir kriterin kendisine göre önceliği 1 olarak kabul edilir. Diğer terimler, farklı kriterler arasındaki karşılaştırmaları ifade eder.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-17ee24b9e22e",
+    "unitNumber": 70,
+    "text": "Markov analizinde kullanılan aşağıdaki kavramlardan hangisi bir sistemin olası tüm durumlarını içeren kümeyi ifade etmektedir?",
+    "options": {
+      "A": "Ergodik matris",
+      "B": "Başlangıç olasılıkları",
+      "C": "Stokastik süreç",
+      "D": "Durum",
+      "E": "Durum uzayı"
+    },
+    "correctAnswer": "E",
+    "explanation": "Durum uzayı, bir Markov zincirinde sistemin alabileceği tüm olası durumları kapsayan kümedir. Ergodik matris, uzun dönem davranışları; stokastik süreç ise genel bir süreç yapısını ifade eder.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-96019c87d41a",
+    "unitNumber": 71,
+    "text": "Aşağıdakilerden hangisi çok kriterli karar verme süreçlerinde izlenen adımlardan biri değildir?",
+    "options": {
+      "A": "Amaç ya da amaçların belirlenmesi",
+      "B": "Kriterlerin belirlenmesi",
+      "C": "Alternatif ve kriterlerin ikili karşılaştırılması",
+      "D": "Alternatiflerin belirlenmesi",
+      "E": "Genel değerlendirme ve karar verme"
+    },
+    "correctAnswer": "C",
+    "explanation": "Çok kriterli karar verme süreçlerinde alternatiflerin ve kriterlerin ayrı ayrı belirlenmesi gerekir. İkili karşılaştırmalar AHP gibi özel yöntemlerde kullanılır ancak süreç adımı değildir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-a90a81fb1e9d",
+    "unitNumber": 72,
+    "text": "Oyun teorisinde kullanılan aşağıdaki kavramlardan hangisi her oyuncunun rasyonel olarak hareket ettikleri varsayımı altında, oyuncuların oyun bitimi sonucunda ulaştıkları noktayı ifade eder?",
+    "options": {
+      "A": "Strateji",
+      "B": "Ödemeler",
+      "C": "Beklenen değer",
+      "D": "Denge noktası",
+      "E": "Ödemeler matrisi"
+    },
+    "correctAnswer": "D",
+    "explanation": "Denge noktası, özellikle Nash dengesi olarak bilinir, her oyuncunun kendi çıkarına göre hareket ettiği ve hiçbir oyuncunun tek taraflı değişimle durumunu iyileştiremeyeceği noktadır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-e3cb86bfb2e5",
+    "unitNumber": 73,
+    "text": "Aşağıdaki kavramlardan hangisi Analitik Hiyerarşi Prosesi yönteminin temelini oluşturmaktadır?",
+    "options": {
+      "A": "Doğrusallık",
+      "B": "Çok amaçlılık",
+      "C": "Kriterler",
+      "D": "Alternatifler",
+      "E": "İkili karşılaştırmalar"
+    },
+    "correctAnswer": "E",
+    "explanation": "Analitik Hiyerarşi Prosesi (AHP) yöntemi, ikili karşılaştırmalar yaparak kriterler ve alternatifler arasında önceliklendirme yapmaya dayanır. Bu yöntem doğrudan ikili kıyaslamalarla ağırlıklandırma yapar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-208ae36eae46",
+    "unitNumber": 81,
+    "text": "Aşağıdakilerden hangisi tamsayılı programlama (TP) türlerinden biri değildir?",
+    "options": {
+      "A": "Karma TP",
+      "B": "Doğrusal TP",
+      "C": "Karma Sıfır Bir TP",
+      "D": "Saf TP",
+      "E": "Saf Sıfır Bir TP"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-02343fe9a260",
+    "unitNumber": 82,
+    "text": "Aşağıdakilerden hangisi yöneylem araştırmasının ilk kullanıldığı alandır?",
+    "options": {
+      "A": "Hukuk",
+      "B": "Uzay Çalışmaları",
+      "C": "Askeri",
+      "D": "Kalite Kontrol",
+      "E": "Yer Bilimleri"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-f219493be6d7",
+    "unitNumber": 83,
+    "text": "Aşağıdakilerden hangisi kriterlerin karar probleminde etkisinin hesaplanabilmesi için sahip olması gereken özelliktir?",
+    "options": {
+      "A": "Yeterlilik",
+      "B": "Ölçülebilirlik",
+      "C": "Geçerlilik",
+      "D": "Kapsayıcılık",
+      "E": "Doğrusallık"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-1211f6612eeb",
+    "unitNumber": 84,
+    "text": "Aşağıdakilerden hangisi Analitik Hiyerarşi Prosesinde ikili karşılaştırma matrislerinin oluşturulmasından sonra karşılaştırılan her elemanın önceliğinin (göreli öneminin) hesaplanmasına verilen isimdir?",
+    "options": {
+      "A": "Tutarlılık incelemesi",
+      "B": "Gruplama",
+      "C": "Tekilleştirme",
+      "D": "Normalizasyon",
+      "E": "Sentezleme"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-01f7d4b3ef3d",
+    "unitNumber": 85,
+    "text": "Aşağıdakilerden hangisi karar probleminde incelenen alternatiflerin sonlu sayıda olduğu ve açıkça tanımlandığı kesikli durumlarda kullanılabilecek yöntemlerden birisidir?",
+    "options": {
+      "A": "Hedef Programlama",
+      "B": "Step Metodu",
+      "C": "Çok Amaçlı Doğrusal Programlama",
+      "D": "AHP",
+      "E": "SEMOPS"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-7d4d1584d375",
+    "unitNumber": 86,
+    "text": "Aşağıdaki doğrusal programlama varsayımlarından hangisi tamsayılı programlama modelleri ile çelişmektedir?",
+    "options": {
+      "A": "Bölünebilirlik",
+      "B": "Doğrusallık",
+      "C": "Kesinlik",
+      "D": "Sabit amaç fonksiyonu",
+      "E": "Sınır Kaynak"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-1be3e1b7eec7",
+    "unitNumber": 87,
+    "text": "Aşağıdakilerden hangisi bir karar ağaçlarında karar düğümlerini göstermek üzere kullanılan semboldür?",
+    "options": {
+      "A": "Üçgen",
+      "B": "Çember",
+      "C": "Kare",
+      "D": "Elips",
+      "E": "Daire"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-24d7494b9aea",
+    "unitNumber": 88,
+    "text": "Aşağıdaki oyun teorisinde kullanılan kavramlardan hangisi oyuncuların strateji seçimlerinin türlü bileşiminden sonuçlanan kazanç veya kayıpları gösterir?",
+    "options": {
+      "A": "Ödemeler Matrisi",
+      "B": "Beklenen Değer",
+      "C": "Oyunlar",
+      "D": "Tam Strateji",
+      "E": "Ari Strateji"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-1fbf85de1370",
+    "unitNumber": 89,
+    "text": "Aşağıdakilerden hangisi bir Hedef Programlama modelinde istenilen hedefin aşılması durumunu gösteren kavramdır?",
+    "options": {
+      "A": "Sistem kısıtı",
+      "B": "Amaç fonksiyonu",
+      "C": "Pozitif sapma",
+      "D": "Negatif sapma",
+      "E": "Hedef kısıtı"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-efc73cb2c205",
+    "unitNumber": 90,
+    "text": "y = 12+3x Verilen denklem sistemine göre çizilecek doğrunun Y eksenini kestiği nokta aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "3",
+      "B": "0",
+      "C": "4",
+      "D": "12",
+      "E": "1"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-a7aaf75d4a7c",
+    "unitNumber": 91,
+    "text": "Aşağıdaki Belirsizlik Halinde Karar Verme yaklaşımlarından hangisi iyimserlik ve kötümserlik kriterlerinin belirli bir ağırlıklandırma ile bütünleşik kullanılması esasına dayanır?",
+    "options": {
+      "A": "Laplace Kriteri",
+      "B": "Pişmanlık Kriteri",
+      "C": "Bilgi Kriteri",
+      "D": "Hurwicz Kriteri",
+      "E": "Maximin Kriteri"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-30efe7e9a2d5",
+    "unitNumber": 92,
+    "text": "Aşağıdakilerden hangisi Oyun Teorisinde bir oyunun analizi için bilinmesi gereken hususlardan biri değildir?",
+    "options": {
+      "A": "Oyuncuların kimler olduğu",
+      "B": "Oyuncunun duygu durumu",
+      "C": "Oyuncular için hangi eylemlerin mevcut olduğu",
+      "D": "Her oyuncunun her bir sonuca ne kadar değer biçtiği",
+      "E": "Her bir oyuncunun ne bildiği"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-19bc0d41e97e",
+    "unitNumber": 93,
+    "text": "Aşağıdakilerden hangisi primali verilen modelin dual kısıtlarından biri değildir?",
+    "options": {
+      "A": "u₁+5u₂+3u₃,&le;2",
+      "B": "u₁,u₂,u₃&ge;0",
+      "C": "9u₁+2u₂+7u₃&le;1",
+      "D": "u₁+2u₂+3u₃,&le;6",
+      "E": "2u1+1u2+6u3&le;10"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-578fb2ef2b90",
+    "unitNumber": 42,
+    "text": "Aşağıdakilerden hangisi amaçların gerçekleştirilmesi yönünde alternatifler arasından birini seçme işidir?",
+    "options": {
+      "A": "Çözümleme",
+      "B": "Sıralama",
+      "C": "Karar Verme",
+      "D": "Rassal Seçim",
+      "E": "Eleme"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-73e7de4be2a4",
+    "unitNumber": 44,
+    "text": "Bir fabrikada işlerin makinelere dağıtılması probleminin çözümünde kullanılacak en uygun karar modeli aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Doğrusal Programlama",
+      "B": "Hedef Programlama",
+      "C": "Dinamik Programlama",
+      "D": "Tamsayılı Programlama",
+      "E": "Doğrusal Olmayan Programlama"
+    },
+    "correctAnswer": "A",
+    "explanation": "İşlerin makinelere veya kişilerin görevlere atanması gibi problemler, kaynakların en verimli şekilde dağıtılmasını amaçlayan ve özel bir türü olan atama problemleri, genel olarak Doğrusal Programlama modelleri ile çözülür.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-47eb2f2a6076",
+    "unitNumber": 45,
+    "text": "Aşağıdakilerden hangisi karar tiplerine ilişkin yapılan sınıflamalardan biri değildir?",
+    "options": {
+      "A": "Kişi ve grup kararları",
+      "B": "Limitli ve limitsiz kararlar",
+      "C": "Stratejik ve operasyonel kararlar",
+      "D": "Alt ve üst kademe kararları",
+      "E": "Programlanabilen ve programlanamayan kararlar"
+    },
+    "correctAnswer": "B",
+    "explanation": "Yönetim biliminde kullanılan karar tipi sınıflandırmaları arasında kişi/grup, stratejik/operasyonel, alt/üst kademe ve programlanabilen/programlanamayan kararlar yer alır. “Limitli ve limitsiz kararlar” standart bir sınıflandırma türü değildir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e4fc0c32a1f9",
+    "unitNumber": 46,
+    "text": "Aşağıdakilerden hangisi Yöneylem Araştırması’nın ilk olarak kullanıldığı alandır?",
+    "options": {
+      "A": "Uzay çalışmaları",
+      "B": "İşletmecilik",
+      "C": "Askeri faaliyetler",
+      "D": "Beşeri bilimler",
+      "E": "Hukuk"
+    },
+    "correctAnswer": "C",
+    "explanation": "Yöneylem Araştırması, İkinci Dünya Savaşı sırasında kıt kaynakların (asker, mühimmat, teçhizat) en verimli şekilde nasıl kullanılacağı gibi askeri operasyonları planlamak amacıyla ortaya çıkmış ve ilk olarak bu alanda kullanılmıştır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0e94e8ef2928",
+    "unitNumber": 47,
+    "text": "min 2x₁ + x₂ + 6x₃ x₁ + 9x₂ + x₃ ≥ 10 5x₁ + 2x₂ + 2x₃ ≥ 9 3x₁ + 7x₂ + 3x₃ ≥ 7 x₁, x₂, x₃ ≥ 0 Aşağıdakilerden hangisi yukarıda primal formda verilen modelin dual modelinde yer alan kısıtlardan biri değildir?",
+    "options": {
+      "A": "2u₁ + u₂ + 6u₃ &le; 7",
+      "B": "u₁ + 2u₂ + 3u₃ &le; 6",
+      "C": "u₁ + 5u₂ + 3u₃ &le; 2",
+      "D": "9u₁ + 2u₂ + 7u₃ &le; 1",
+      "E": "u₁, u₂, u₃ &ge; 0"
+    },
+    "correctAnswer": "A",
+    "explanation": "Primal model minimizasyon ve tüm kısıtlar “≥” olduğu için, dual model maksimizasyon ve tüm kısıtlar “≤” şeklinde olacaktır. Dual kısıtlar: x₁ için u₁ + 5u₂ + 3u₃ ≤ 2; x₂ için 9u₁ + 2u₂ + 7u₃ ≤ 1; x₃ için u₁ + 2u₂ + 3u₃ ≤ 6. Seçenek A’daki kısıt bu denklemlerden herhangi birine uymamaktadır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5bc1dcf4aa6d",
+    "unitNumber": 48,
+    "text": "min x₁ + x₂ + 6x₃ x₁ + 10x₂ + x₃ ≥ 10 5x₁ + 2x₂ ≥ 3 3x₁ + 7x₂ + 3x₃ ≥ 7 x₁, x₂, x₃ ≥ 0 Yukarıdaki primal formu verilen Doğrusal Programlama Modeli dual formda yazıldığında aşağıdakilerden hangisi dual modelin amaç fonksiyonudur?",
+    "options": {
+      "A": "min 10u₁ + 9u₂ + 7u₃",
+      "B": "maks 10u₁ + 3u₂ + 7u₃",
+      "C": "min 10u₁ + 3u₂ + 7u₃",
+      "D": "maks 10u₁ + 9u₂ + 7u₃",
+      "E": "maks Iu₁ + Iu₂ + 6u₃"
+    },
+    "correctAnswer": "B",
+    "explanation": "Primal modelin amaç fonksiyonu minimizasyon olduğu için, dual modelin amaç fonksiyonu maksimizasyon olacaktır. Dual amaç fonksiyonunun katsayıları, primal modelin kısıtlarının sağ tarafındaki değerlerdir. Dolayısıyla amaç fonksiyonu: maks 10u₁ + 3u₂ + 7u₃ olur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5a8ad395f014",
+    "unitNumber": 49,
+    "text": "Bir fabrikada üretilen 2 farklı ürünün belirli kısıtlar altında optimal üretim miktarlarını belirlemek üzere incelenen karar problemi aşağıdakilerden hangisi olamaz?",
+    "options": {
+      "A": "Tamsayılı Programlama Problemi",
+      "B": "Saf Tamsayılı Programlama Problemi",
+      "C": "Karma Tamsayılı Programlama Problemi",
+      "D": "Doğrusal Programlama Problemi",
+      "E": "Saf Sıfır-Bir Tamsayılı Programlama Problemi"
+    },
+    "correctAnswer": "E",
+    "explanation": "Sıfır-Bir Tamsayılı Programlama, bir faaliyetin yapılıp yapılmayacağı gibi “evet/hayır” (1 veya 0) kararları için kullanılır. Üretim miktarlarını belirleme problemi ise ne kadar üretileceği ile ilgilidir ve bu, Doğrusal veya Tamsayılı Programlama modelleriyle çözülür.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-50a707a051e2",
+    "unitNumber": 50,
+    "text": "Aşağıdakilerden hangisi Yöneylem Araştırmasını matematik, istatistik, mühendislik ve bilgisayar bilimi gibi farklı disiplinler arasında konumlandıran yaklaşımdır?",
+    "options": {
+      "A": "Bütünleşik Yaklaşım",
+      "B": "Disiplinlerarası Yaklaşım",
+      "C": "Kapsayıcı Yaklaşım",
+      "D": "Sistem Yaklaşımı",
+      "E": "Bilimsel Yöntem Yaklaşımı"
+    },
+    "correctAnswer": "B",
+    "explanation": "Yöneylem Araştırması, karmaşık problemleri çözmek için matematik, istatistik, mühendislik gibi birçok farklı bilim dalının yöntem ve tekniklerini bir arada kullandığı için “disiplinlerarası” bir yaklaşımdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-40e0baedc631",
+    "unitNumber": 51,
+    "text": "Z max 2x₁ + 5x₂ x₁ + 3x₂ ≤ 6 2x₁ + 5x₂ ≤ 10 x₁ + x₂ ≥ 2 Aşağıdakilerden hangisi Primal formda verilen Doğrusal Programlama modelinin dualidir?",
+    "options": {
+      "A": "<br>Z min 6u₁ + 10u₂ + 2u₃ <br>u₁ + 2u₂ - u₃ &ge; 2 <br>3u₁ + 5u₂ - u₃ &ge; 5",
+      "B": "<br>Z max 6u₁ + 10u₂ - 2u₃ <br>u₁ + 2u₂ - u₃ &ge; 2 <br>3u₁ + 5u₂ - u₃ &ge; 5",
+      "C": "<br>Z min 6u₁ + 10u₂ + 2u₃ <br>u₁ + 2u₂ - u₃ &le; 2 <br>3u₁ + 5u₂ - u₃ &le; 5",
+      "D": "<br>Z min 6u₁ + 10u₂ - 2u₃ <br>u₁ + 2u₂ - u₃ &ge; 2 <br>3u₁ + 5u₂ - u₃ &ge; 5",
+      "E": "<br>Z max 6u₁ + 10u₂ + 2u₃ <br>u₁ + 2u₂ - u₃ &ge; 2 <br>3u₁ + 5u₂ - u₃ &ge; 5"
+    },
+    "correctAnswer": "D",
+    "explanation": "Primal model maksimizasyon olduğu için dual model minimizasyon olacaktır. Üçüncü kısıt “≥” olduğu için -1 ile çarpılarak “≤” haline getirilir: -x₁ – x₂ ≤ -2. Dual amaç fonksiyonu Zmin = 6u₁ + 10u₂ – 2u₃ olur. Dual kısıtlar ise u₁ + 2u₂ – u₃ ≥ 2 ve 3u₁ + 5u₂ – u₃ ≥ 5 şeklinde oluşturulur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-273ae47b282f",
+    "unitNumber": 52,
+    "text": "Z min 2x₁ + 3x₂ + 2x₃ + 4x₄ + 3x₅ 2x₁ + 4x₂ + 3x₃ + 2x₄ + 4x₅ ≥ 6 3x₁ + 3x₂ + 3x₃ + 2x₄ + 3x₅ ≥ 7 4x₁ + 2x₂ + 2x₃ + 4x₄ + 3x₅ ≥ 8 Aşağıdakilerden hangisi primal formda verilen doğrusal programlama modelinin dualidir?",
+    "options": {
+      "A": "<br>Z max 6u₁ + 7u₂ + 8u₃ <br>2u₁ + 3u₂ + 4u₃ &ge; 2 <br>4u₁ + 3u₂ + 2u₃ &le; 3 <br>3u₁ + 3u₂ + 2u₃ &le; 2 <br>2u₁ + 2u₂ + 4u₃ &le; 4 <br>4u₁ + 3u₂ + 3u₃ &ge; 3",
+      "B": "<br>Z max 6u₁ + 7u₂ + 8u₃ <br>2u₁ + 3u₂ + 4u₃ &ge; 2 <br>4u₁ + 3u₂ + 2u₃ &ge; 3 <br>3u₁ + 3u₂ + 2u₃ &ge; 2 <br>2u₁ + 2u₂ + 4u₃ &ge; 4 <br>4u₁ + 3u₂ + 3u₃ &ge; 3",
+      "C": "<br>Z min 6u₁ + 7u₂ + 8u₃ <br>2u₁ + 3u₂ + 4u₃ &ge; 2 <br>4u₁ + 3u₂ + 2u₃ &ge; 3 <br>3u₁ + 3u₂ + 2u₃ &ge; 2 <br>2u₁ + 2u₂ + 4u₃ &ge; 4 <br>4u₁ + 3u₂ + 3u₃ &ge; 3",
+      "D": "<br>Z max 6u₁ + 7u₂ + 8u₃ <br>2u₁ + 3u₂ + 4u₃ &le; 2 <br>4u₁ + 3u₂ + 2u₃ &le; 3 <br>3u₁ + 3u₂ + 2u₃ &le; 2 <br>2u₁ + 2u₂ + 4u₃ &le; 4 <br>4u₁ + 3u₂ + 3u₃ &le; 3",
+      "E": "<br>Z min 6u₁ + 7u₂ + 8u₃ <br>2u₁ + 3u₂ + 4u₃ &le; 2 <br>4u₁ + 3u₂ + 2u₃ &le; 3 <br>3u₁ + 3u₂ + 2u₃ &le; 2 <br>2u₁ + 2u₂ + 4u₃ &le; 4 <br>4u₁ + 3u₂ + 3u₃ &le; 3"
+    },
+    "correctAnswer": "D",
+    "explanation": "Primal model minimizasyon ve tüm kısıtlar “≥” olduğu için dual model maksimizasyon ve tüm kısıtlar “≤” olur. Dual amaç fonksiyonu Zmax = 6u₁ + 7u₂ + 8u₃ olur. Dual kısıtlar da primalin sütun matrisinin devriği alınarak oluşturulur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1feda9f9c2fb",
+    "unitNumber": 53,
+    "text": "Aşağıdakilerden hangisi Sıfır-Bir Tamsayılı Programlama problemine örnek gösterilemez?",
+    "options": {
+      "A": "Satış miktarlarının belirlenmesi",
+      "B": "Satış bölgelerine kişilerin tayini",
+      "C": "İşlerin kişilere atanması",
+      "D": "Araçların depolarla eşleştirilmesi",
+      "E": "Kişilerin makinelere atanması"
+    },
+    "correctAnswer": "A",
+    "explanation": "Sıfır-Bir (0-1) Tamsayılı Programlama, bir işin yapılıp yapılmaması (1 veya 0), bir kişinin atanıp atanmaması gibi “evet/hayır” kararları için kullanılır. Satış miktarını belirlemek ise sayısal bir değer bulmayı gerektirir ve bu tür bir problemle modellenemez.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f45f7d9e8f0b",
+    "unitNumber": 54,
+    "text": "Aşağıdakilerden hangisi bir karar ağacında gösterilen kavramlardan biri değildir?",
+    "options": {
+      "A": "Doğa Durumu Olasılıkları",
+      "B": "Dallar",
+      "C": "Karar noktaları",
+      "D": "Düğümler",
+      "E": "Ölçütler"
+    },
+    "correctAnswer": "E",
+    "explanation": "Bir karar ağacı, karar noktaları, şans noktaları (doğa durumları), olasılıklar ve dallardan oluşur. “Ölçütler” ise karar verme probleminin genel bir unsurudur, karar ağacı diyagramının spesifik bir bileşeni değildir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-7f2141402378",
+    "unitNumber": 55,
+    "text": "Aşağıdakilerden hangisi bir Doğrusal Programlama Modelinde karar değişkenlerinin tamamının ikili (binary) formda olması koşulunun bulunduğu karar modeline verilen isimdir?",
+    "options": {
+      "A": "Saf Sıfır-Bir Tamsayılı Programlama",
+      "B": "Doğrusal Tamsayılı Programlama",
+      "C": "Karma Sıfır-Bir Tamsayılı Programlama",
+      "D": "Karma Tamsayılı Programlama",
+      "E": "Saf Tamsayılı Programlama"
+    },
+    "correctAnswer": "A",
+    "explanation": "Karar değişkenlerinin tamamının sadece 0 veya 1 değerlerini alabildiği programlama modeline Saf Sıfır-Bir (veya İkili) Tamsayılı Programlama denir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0b63eb845a71",
+    "unitNumber": 56,
+    "text": "Aşağıdakilerden hangisi gerçek hayattan kaynaklanan ve çoğunlukla sınırlı kaynakların paylaştırıldığı deterministik ve olasılıklı problemlerin modellenmesi ve optimal kararın verilmesi ile ilgilenen bilimsel yöntemler bütünüdür?",
+    "options": {
+      "A": "Yöneylem Araştırması",
+      "B": "İktisat",
+      "C": "Nitel Araştırma",
+      "D": "Pazarlama",
+      "E": "Ekonometri"
+    },
+    "correctAnswer": "A",
+    "explanation": "Verilen tanım, karmaşık karar problemlerini modellemek ve en iyi (optimal) çözümü bulmak için bilimsel ve matematiksel yöntemleri kullanan “Yöneylem Araştırması”nın tanımıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a388cac0bdaa",
+    "unitNumber": 57,
+    "text": "Aşağıdakilerden hangisi Doğrusal Programlama modelinde yer alan Zmaks 3×1 + -2×2 amaç fonksiyonun eğimidir?",
+    "options": {
+      "A": "3",
+      "B": "-3/2",
+      "C": "-2/3",
+      "D": "3/2",
+      "E": "2/3"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c9dddff66a9a",
+    "unitNumber": 58,
+    "text": "Aşağıdakilerden hangisi Yöneylem Araştırmasının ülkemizde ilk dönem çalışmalarında kullanılan ismidir?",
+    "options": {
+      "A": "Faaliyet Araştırmaları",
+      "B": "Simülasyon Analizi",
+      "C": "Harekât Araştırması",
+      "D": "Sistem Analizi",
+      "E": "Yönetim Araştırmaları"
+    },
+    "correctAnswer": "C",
+    "explanation": "Yöneylem Araştırması (Operations Research), ilk ortaya çıktığı askeri alandaki kullanımı nedeniyle, Türkiye’deki ilk dönemlerde İngilizce’den doğrudan çevirisi olan “Harekât Araştırması” adıyla anılmıştır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ae8ca5ac6d8b",
+    "unitNumber": 74,
+    "text": "min x1+x2+6x3x1+10×2+x3≥105×1+2×2≥33×1+7×2+3×3≥7×1,x2,x3≥0 Yukarıdaki primal formu verilen Doğrusal Programlama Modeli dual formda yazıldığında aşağıdakilerden hangisi dual modelin amaç fonksiyonudur?",
+    "options": {
+      "A": "maks 1u1+1u2+6u3",
+      "B": "maks 10u1+9u2+7u3",
+      "C": "min 10u1+9u2+7u3",
+      "D": "min 10u1+3u2+7u3",
+      "E": "maks 10u1+3u2+7u3"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-93a7bd6f16e4",
+    "unitNumber": 75,
+    "text": "Aşağıdakilerden hangisi primal bir problemin dualinin alınmasının nedenlerinden biri değildir?",
+    "options": {
+      "A": "İki kısıtlı ve ikiden fazla karar değişkenli birproblemi grafik yöntem ile çözmek için.",
+      "B": "Dejenere modeli çözmek için",
+      "C": "Duyarlılık analizinde kullanabilmek için",
+      "D": "Ekonomik açıdan yorumlar yapabilmek için",
+      "E": "Problemi daha basit hale dönüştürüp kolaylıklaçözmek için"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0bc1fb23fb83",
+    "unitNumber": 77,
+    "text": "Aşağıda dualite ile ilgili verilen ifadelerden hangisi yanlıştır?",
+    "options": {
+      "A": "Primal problemin m tane kısıtı olduğunda dualproblemin de m tane karar değişkeni olacaktır.",
+      "B": "Primal modelin duali yazılırken kısıtların işareti yöndeğiştirmektedir.",
+      "C": "Primal problemin amaç fonksiyonunun katsayıları,dual problemin kısıtlarının sağ taraf sabitlerinioluşturmaktadır.",
+      "D": "Primal problemde n tane karar değişkeniolduğunda, dual problemde den tane karardeğişkeni olacaktır.",
+      "E": "Primal problemin amaç fonksiyonu maksimizasyonformunda ise dual problemin amaç fonksiyonuminimizasyon formunda olur."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d583de84ee38",
+    "unitNumber": 79,
+    "text": "Aşağıdaki karar değişkeni birimlerinden hangisi kesinlikle tamsayıdır?",
+    "options": {
+      "A": "Adet",
+      "B": "Metre Küp",
+      "C": "Kilogram",
+      "D": "Metre",
+      "E": "Ton"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-24e5d01fe167",
+    "unitNumber": 80,
+    "text": "maks 5×1+5×2+2x33x1+6×2+x3≤12×1+2×2+x3≤184×1+4×2≤4×1,x2,x3≥0 Verilen primal formdaki modelin duali aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "min 12u1+18u2+4u33u1+u2+4u3&ge;56u1+2u2+4u3&ge;5u1+u2&ge;2u1,u2,u3&ge;0",
+      "B": "maks 12u1+18u2+4u33u1+u2+4u3&ge;56u1+2u2+4u3&ge;5u1+u2&ge;2u1,u2,u3&ge;0",
+      "C": "maks 12u1+18u2+4u33u1+u2+4u3&ge;56u1+2u2+4u3&ge;5u1+u2&ge;2u1,u2,u3&ge;0",
+      "D": "min 5x1+5x2+2x33x1+6x2+x3&le;12x1+2x2+x3&le;184x1+4x2&le;4x1,x2,x3&ge;0",
+      "E": "min 5u1+5u2+2u33u1+u2+4u3&ge;56u1+2u2+4u3&ge;5u1+u2&ge;2u1,u2,u3&ge;0"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4053d7f93c91",
+    "unitNumber": 94,
+    "text": "“Belirli kısıtların olduğu bir durumda, belirli bir amaca yönelik en uygun çözümün bulunması için geliştirilmiş bilimsel ve sayısal yöntemler dizisidir”. Yukarıda verilen tanım aşağıdakilerden hangisine aittir?",
+    "options": {
+      "A": "Pazarlama",
+      "B": "Model kurma",
+      "C": "Operasyon",
+      "D": "Yöneylem Araştırması",
+      "E": "Atama"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-f08831adb747",
+    "unitNumber": 95,
+    "text": "Yöneylem Araştırması ilk olarak hangi alanda kullanılmaya başlanmıştır?",
+    "options": {
+      "A": "Askeri alan",
+      "B": "Kalite kontrol",
+      "C": "Yer bilimlerinde",
+      "D": "Uzay çalışmaları",
+      "E": "Hukuk"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-ad55aeb37e3f",
+    "unitNumber": 96,
+    "text": "Yöneylem Araştırmasının temelleri “savaş araç ve gereçlerinin limanlarda daha kısa sürede gemilere yüklenmesini ve boşaltılmasını sağlayacak bir yöntemin araştırılması” amacıyla hangi ülkede atılmıştır?",
+    "options": {
+      "A": "Türkiye",
+      "B": "İngiltere",
+      "C": "Almanya",
+      "D": "Fransa",
+      "E": "Hindistan"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-c88bc4cf5334",
+    "unitNumber": 97,
+    "text": "ABD’nin tüm askeri faaliyetlerinin planlanmasına yönelik doğrusal programlama yaklaşımını geliştiren ve Simpleks çözüm yöntemini ortaya koyan bilim adamı kimdir?",
+    "options": {
+      "A": "Henry Gantt",
+      "B": "Frederick Winslow Taylor",
+      "C": "Richard Ernest Bellman",
+      "D": "Robort Dorfman",
+      "E": "George Bernard Dantzig"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-9a0d981b0311",
+    "unitNumber": 98,
+    "text": "…………………….. kelime olarak “en iyiyi elde etme” şeklinde tanımlanabilir. Yukarıda verilen boşluğa aşağıdakilerden hangisine gelir?",
+    "options": {
+      "A": "Araştırma",
+      "B": "Yöneylem",
+      "C": "Optimizasyon",
+      "D": "Amaç",
+      "E": "Problem"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-160aaafe2867",
+    "unitNumber": 99,
+    "text": "Aşağıdakilerden hangisi “yöneylem araştırmasının uygulama alanlarından” biri değildir?",
+    "options": {
+      "A": "Üretim planlama",
+      "B": "Stratejik planlama",
+      "C": "Taşıma problemleri",
+      "D": "Tesis yeri seçimi",
+      "E": "Pazarlama ve satış"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-7151168d040a",
+    "unitNumber": 100,
+    "text": "Aşağıdakilerden hangisi “yöneylem araştırmasının kullandığı bilimsel yöntem aşamalarından” biri değildir?",
+    "options": {
+      "A": "Model kurma",
+      "B": "Modelden çözüm elde etme",
+      "C": "Çözümü test etme",
+      "D": "Deneme yanılma",
+      "E": "Çözümün yorumlanması ve uygulanması"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-0e33265a1375",
+    "unitNumber": 101,
+    "text": "Aşağıdakilerden hangisi Yöneylem araştırması konularından biri değildir?",
+    "options": {
+      "A": "Doğrusal programlama",
+      "B": "Fizibilite etüt çalışması",
+      "C": "Hedef programlama",
+      "D": "Şebeke analizi",
+      "E": "Oyun teorisi"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-bc72aaf08f76",
+    "unitNumber": 102,
+    "text": "Aşağıdakilerden hangisi “matematiksel model oluşturulurken” yapılan işlerden değildir.",
+    "options": {
+      "A": "Tahminleme çalışması",
+      "B": "Karar değişkenlerinin belirlenmesi",
+      "C": "Parametrelerin belirlenmesi",
+      "D": "Amaç fonksiyonunun oluşturulması",
+      "E": "Kısıtlayıcı koşulların oluşturulması"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-4cd6a5ffb23e",
+    "unitNumber": 104,
+    "text": "Bir doğrusal programlama probleminin matematiksel modelinde aşağıdakilerden hangisi bulunmaz?",
+    "options": {
+      "A": "Amaç fonksiyonu",
+      "B": "Kısıtlar",
+      "C": "Negatif olmama koşulu",
+      "D": "Sağ taraf Sabitleri",
+      "E": "Maksimum kar"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-2b7cc158277b",
+    "unitNumber": 105,
+    "text": "Aşağıdakilerden hangisi doğrusal programlamanın varsayımlarından birisi değildir?",
+    "options": {
+      "A": "Değişkenler kantitatif olmalıdır.",
+      "B": "Değişkenler kendi aralarında ilişkili olmalıdır.",
+      "C": "Değişkenler arasında kurulan bağıntılar doğrusal olmalıdır.",
+      "D": "Bağımlı değişkenler negatif veya 0 olabilir.",
+      "E": "Kullanılacak kaynaklar sınırlı olmalıdır."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-b82319d44607",
+    "unitNumber": 106,
+    "text": "Aşağıda bir maksimizasyon doğrusal programlama probleminin grafik çözümü görülmektedir. Z amaç fonksiyonuna ilişkin eş kar doğrusu kesikli çizilmiştir. Bu grafiğe göre optimal çözüm hangi noktadır?",
+    "options": {
+      "A": "O noktası",
+      "B": "A noktası",
+      "C": "B noktası",
+      "D": "C noktası",
+      "E": "B ve C Noktaları"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-c05333788c63",
+    "unitNumber": 107,
+    "text": "7) Birinci kısıta ilişkin doğrunun ( I doğrusu ) eğimi kaçtır?",
+    "options": {
+      "A": "−4/5",
+      "B": "5/4",
+      "C": "−a/b",
+      "D": "4/5",
+      "E": "−7/11"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-e61fad5ed8de",
+    "unitNumber": 108,
+    "text": "Sandalye ve koltuk imalatı yapan bir mobilyacı üretim için tahta ve boya kullanmaktadır. Bir sandalye üretimi için 3 m3 tahta ve 1 kg boya kullanılırken, 1 koltuk için ise 4 m3 tahta ve 1 kg boya gerekmektedir. Çeşitli nedenlerden dolayı mobilyacının sağlayabildiği tahta miktarı günlük 92 m3 ve boya miktarı da 20 kg ile sınırlıdır. Ürettiği sandalyelerin her biri mobilyacıya 300 TL, koltukların her biri ise 400 TL kar bırakmaktadır. Bu bilgiler ışığında mobilyacının amacı mümkün olan en yüksek karı sağlayacak üretim bileşimini seçmektir. Buna göre soruya ait doğrusal programlama modelinin amaç fonksiyonu hangisidir?",
+    "options": {
+      "A": "Z\u001a\u001b = 275X + 300X",
+      "B": "Z\u001a\u001b = 92X + 20X",
+      "C": "Z\u001a\u001b = 300X + 400X",
+      "D": "Z\u001a\u001b = 92X + 300X",
+      "E": "Z\u001a\u001b = 300X + 20X"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-91bb9decf935",
+    "unitNumber": 109,
+    "text": "SUHA işletmesi  ve  markalarında iki tip buzdolabı üretmektedir. Her bir  marka buzdolabının üretimi için a entegre ve Z dijital ekran ve  marka buzdolabı için de Y entegre ve b dijital ekran kullanılmaktadır. Kullanılabilir entegre miktarı 1200 adet ve dijital ekran ise 800 adettir. Üretilecek olan her bir  buzdolabının net karı 500 TL ve her bir  buzdolabının net karı 300 TL’dir. Buna göre kar maksimizasyonu problemine ilişkin doğrusal programlama modeli aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Z\u001a\u001b = 500X + 300X 5X + 2X ≤ 1200 3X + 4X ≤ 800 X ; X ≥ 0",
+      "B": "Z\u001a\u001b = 500X + 300X 5X + 3X ≤ 1200 2X + 4X ≤ 800 X ; X ≥ 0",
+      "C": "Z\u001a\u001b = 1200X + 800X 5X + 3X ≤ 1200 2X + 4X ≤ 800 X ; X ≥ 0",
+      "D": "Z\u001a\u001b = 1200X + 800X 5X + 3X ≤ 1200 2X + 4X ≤ 800 X ; X ≥ 0",
+      "E": "Z\u001a\u001b = 1200X + 800X 5X + 3X ≤ 600 2X + 4X ≤ 400 X ; X ≥ 0"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-44fc9adbc9b1",
+    "unitNumber": 110,
+    "text": "Maksimizasyon problemi için optimallik koşulu ne zaman gerçekleşir?",
+    "options": {
+      "A": "\u0019! ≤ 0 olduğunda",
+      "B": "\u0019! ≥ 0 olduğunda",
+      "C": "\u0019! − \u001e! ≤ 0 olduğunda",
+      "D": "\u0019! − \u001e! ≥ 0 olduğunda",
+      "E": "\u0019! − \u001e! = 0 olduğunda"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-13735d991cb7",
+    "unitNumber": 111,
+    "text": "Küçük eşittir (\b)! ! ≤ .)) biçiminde verilen bir kısıtı eşitlik durumuna getirmek için eklenen değişkene ne ad verilir?",
+    "options": {
+      "A": "Artık değişken",
+      "B": "Aylak değişken",
+      "C": "Yapay değişken",
+      "D": "Eşitlik değişkeni",
+      "E": "Sanal Değişken"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-a8ce227d907b",
+    "unitNumber": 112,
+    "text": "Büyük eşittir biçiminde (\b)! ! ≥ .)) verilen bir kısıtı eşitlik biçimine dönüştürmede bir değişken çıkarılır. Bu değişkene hangi ad verilir?",
+    "options": {
+      "A": "Yapay değişken",
+      "B": "Aylak değişken",
+      "C": "Artık değişken",
+      "D": "Eşitlik değişkeni",
+      "E": "Sanal Değişken"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-b53cee6a4d15",
+    "unitNumber": 113,
+    "text": "Eşitlik biçiminde (\b)! ! = .)) verilen bir kısıtı kanonik formdan standart forma geçirirken simpleks algoritmasını yürütebilmek amacı ile +1 katsayılı bir değişken eklenir. Bu değişkenin adı nedir?",
+    "options": {
+      "A": "Yapay değişken",
+      "B": "Aylak değişken",
+      "C": "Artık değişken",
+      "D": "Eşitlik değişkeni",
+      "E": "Sanal Değişken"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-4d2011824068",
+    "unitNumber": 114,
+    "text": "ZW + b` + Y ≤ bd şeklinde verilen bir kısıtı eşitlik haline getirmek için aşağıdakilerden hangisi yapılmalıdır?",
+    "options": {
+      "A": "Eşitsizliğin sol tarafına yapay değişken (h g ) eklenir.",
+      "B": "Eşitsizliğin sol tarafına dual değişken (I g ) eklenir.",
+      "C": "Eşitsizliğin sol tarafından yapay değişken (h g ) çıkarılır.",
+      "D": "Eşitsizliğin sol tarafından artık değişken (f g ) çıkarılır.",
+      "E": "Eşitsizliğin sol tarafına aylak değişken (gX) eklenir."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-a4f65a2651ca",
+    "unitNumber": 115,
+    "text": "Z\\W + Y\\` + Xa ≥ \\ kısıtı hangisinde doğru değişken eklenerek veya çıkarılarak simpleks algoritmasına uygun eşitlik haline getirilmiştir?",
+    "options": {
+      "A": "30H + 20I + 15 = 60",
+      "B": "30H + 20I + 15 − f = 60",
+      "C": "30H + 20I + 15 − f + h = 60",
+      "D": "30H + 20I + 15 + f = 60",
+      "E": "30H + 20I + 15 + h = 60"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-7ced96acb74e",
+    "unitNumber": 116,
+    "text": "En büyükleme (Maksimizasyon) amaçlı bir doğrusal programlama probleminde temele girecek (çözüme girecek) değişken nasıl belirlenir?",
+    "options": {
+      "A": "\u0019! − \u001e! satırında bulunan negatif elamanlardan mutlak değerce en büyük değerin bulunduğu sütundaki değişken seçilir.",
+      "B": "\u0019! − \u001e! satırında bulunan pozitif değerlerden en büyük değerin bulunduğu sütundaki değişken seçilir.",
+      "C": "\u0019! − \u001e! satırında bulunan pozitif değerlerden en küçük değerin bulunduğu sütundaki değişken seçilir",
+      "D": "\u0019! − \u001e! satırında bulunan negatif olan değerlerden mutlak değerce en küçük değerin bulunduğu sütundaki değişken seçilir.",
+      "E": "Hangi değişkenin seçileceği bilinmez."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-bedeb968989e",
+    "unitNumber": 117,
+    "text": "Aşağıda verilen doğrusal programlama modelinin başlangıç uygun çözümünde bulunan temel (basic) değişken ikilisi hangisinde doğru verilmiştir? cW = b\\X + a\\Y + \\. X + \\. Y X + YY + X. X + \\. Y = b\\ bX + ZY + \\. X + X. Y = XY\\ X, Y, X, Y ≥ \\",
+    "options": {
+      "A": "( , )",
+      "B": "( , ] )",
+      "C": "( , ] )",
+      "D": "( , ] )",
+      "E": "(] , ] )"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-077f7f0d65eb",
+    "unitNumber": 118,
+    "text": "En küçükleme (Minimizasyon) amaçlı bir doğrusal programlama probleminde temele girecek (çözüme girecek) değişken nasıl belirlenir?",
+    "options": {
+      "A": "\u0019! − \u001e! satırında bulunan negatif değerlerden mutlak değerce en büyük değerin bulunduğu sütundaki değişken seçilir.",
+      "B": "\u0019! − \u001e! satırında bulunan pozitif değerlerden en büyük değerin bulunduğu sütundaki değişken seçilir.",
+      "C": "\u0019! − \u001e! satırında bulunan pozitif değerlerden en küçük değerin bulunduğu sütundaki değişken seçilir",
+      "D": "\u0019! − \u001e! satırında bulunan negatif olan değerlerden mutlak değerce en küçük değerin bulunduğu sütundaki değişken seçilir.",
+      "E": "Hangi değişkenin seçileceği bilinmez."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-5574e549e10d",
+    "unitNumber": 119,
+    "text": "Verilen problemin başlangıç tablosunda yer alacak temel değişkenler ve çözüm değerleri aşağıdaki şıklardan hangisinde doğru verilmektedir.",
+    "options": {
+      "A": "= 24 , h = 162",
+      "B": "= 24 , = 18",
+      "C": "] = 240 , ] = −162",
+      "D": "] = 240 , h = 162",
+      "E": "= 20 , ] = 162"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-e859cb276237",
+    "unitNumber": 120,
+    "text": "Verilen problemin amaç fonksiyonunda artık ve yapay değişkenlerin alması gereken katsayılar ⊠, ⨂ ve △ sırasıyla aşağıdaki şıklardan hangisinde doğru verilmektedir.",
+    "options": {
+      "A": "0, 0 ve −e",
+      "B": "0, 0 ve e",
+      "C": "−1, −1 ve e",
+      "D": "1, 1 ve e",
+      "E": "e, −e ve e"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-e0bfd2a0e6d7",
+    "unitNumber": 121,
+    "text": " ile gösterilen optimal c\u0002 değeri aşağıdaki şıklardan hangisinde doğru olarak verilmektedir.",
+    "options": {
+      "A": "834",
+      "B": "810",
+      "C": "42",
+      "D": "24",
+      "E": "18"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-480b6b29baca",
+    "unitNumber": 123,
+    "text": "Verilen primal probleme ait dual modelin çözüm değerleri (gölge fiyatlar) aşağıdaki şıklardan hangisinde doğru olarak verilmektedir.",
+    "options": {
+      "A": "^ = 0 ve ^ = −5",
+      "B": "^ = 10 ve ^ = 5",
+      "C": "^ = 24 ve ^ = 18",
+      "D": "^ = 0 ve ^ = 5",
+      "E": "^ = 5 ve ^ = 0"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-586c3bde2c2b",
+    "unitNumber": 124,
+    "text": "Bir doğrusal programlama probleminin optimal çözümünde, herhangi bir kısıta ilişkin aylak değişken sıfırdan büyük bir değer almış ise, bu kapasite;",
+    "options": {
+      "A": "Tam kullanılmıştır.",
+      "B": "Böyle bir durumla karşılaşılmaz.",
+      "C": "Tam kullanılmamıştır, atıl kapasite bulunmaktadır.",
+      "D": "Başka çözümler aranır.",
+      "E": "Bu çözüm optimal olmaz."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-8cc96a265f42",
+    "unitNumber": 125,
+    "text": "Aşağıda verilen doğrusal programlama modelinin dual probleminde kaç kısıt bulunmaktadır? cW = X\\X + Y\\Y + Z YX + ZY + Z ≤ b\\ X, Y, Z ≥ \\",
+    "options": {
+      "A": "−1",
+      "B": "0",
+      "C": "1",
+      "D": "2",
+      "E": "3"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-646b0cfaa3e9",
+    "unitNumber": 126,
+    "text": "X değişkeninin amaç fonksiyonundaki katsayısı (X = 320) için değişim aralığı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "25,5 ≤ \u001e ≤ 42,5",
+      "B": "48 ≤ \u001e ≤ 80",
+      "C": "\u001e ≤ 48",
+      "D": "\u001e ≥ 80",
+      "E": "\u001e ≤ 0"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-5ed44de6a88d",
+    "unitNumber": 127,
+    "text": "İlk kısıt dX + Y ≤ aX şeklinde değiştirilirse, aşağıdakilerden hangisi gerçekleşir?",
+    "options": {
+      "A": "\u0019 değeri 20,00 birim azalır.",
+      "B": "\u0019 değeri 320 azalır.",
+      "C": "\u0019 değeri değişmez.",
+      "D": "\u0019 değeri 20,00 birim artar.",
+      "E": "\u0019 değeri 320 artar."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-c4a90b60c4b8",
+    "unitNumber": 128,
+    "text": "Bir doğrusal programlama probleminin primali maksimizasyon ise duali ne olur?",
+    "options": {
+      "A": "Maksimizasyon problemi",
+      "B": "Hangi tür problem olacağı bilinmez.",
+      "C": "Minimizasyon problemi",
+      "D": "Problemin optimum çözümüne göre değişir.",
+      "E": "Dual problem primalden bağımsız olarak her zaman maksimizasyon problemi olur."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-e2ce55222547",
+    "unitNumber": 129,
+    "text": "Aşağıda verilen primal maksimizasyon probleminin duali alınırsa kaç kısıt elde edilir? \u0019%&'( = 4 + 10 5 + 4 ≤ 200 + 2 ≤ 50 + ≤ 20 , ≥ 0",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "2",
+      "D": "3",
+      "E": "4"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-2722433c4d50",
+    "unitNumber": 130,
+    "text": "Aşağıda verilen primal maksimizasyon probleminin duali alındığında amaç fonksiyonu hangi şıkta doğru biçimde verilmektedir? \u0019%&'( = 4 + 10 5 + 4 ≤ 200 + 2 ≤ 50 + ≤ 20 , ≥ 0",
+    "options": {
+      "A": "\u0019maks = 4 + 10",
+      "B": "©maks = 4^ + 10^",
+      "C": "\u0019maks = 4^ + 10^",
+      "D": "\u0019maks = 200^ + 50^ + 20^L",
+      "E": "©min = 200^ + 50^ + 20^L"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-261b81aa44b7",
+    "unitNumber": 131,
+    "text": "Bir doğrusal programlama probleminin optimal çözümünde bir kısıta ilişkin gölge fiyatın 5 çıkması, o kısıtın 1 birim arttırılması durumunda karın ne kadar artacağını belirtir?",
+    "options": {
+      "A": "−5",
+      "B": "−1",
+      "C": "0",
+      "D": "5",
+      "E": "10"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-ef56c7b92a90",
+    "unitNumber": 132,
+    "text": "Bir doğrusal programlama primal maksimizasyon probleminin duali alındığında kısıtlar hangi tür eşitsizliğe sahip olur?",
+    "options": {
+      "A": "Küçüktür ( < )",
+      "B": "Küçük eşit ( ≤ )",
+      "C": "Büyüktür ( > )",
+      "D": "Büyük eşit ( ≥ )",
+      "E": "Eşittir ( = )"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-b8b4e9d52733",
+    "unitNumber": 133,
+    "text": "Bir doğrusal programlama primal minimizasyon probleminin duali alındığında kısıtlar hangi tür eşitsizliğe sahip olur?",
+    "options": {
+      "A": "Eşittir ( = )",
+      "B": "Küçüktür ( < )",
+      "C": "Küçük eşit ( ≤ )",
+      "D": "Büyüktür ( > ) d) Büyük eşit ( ≥ )"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-ef5c5ddb82e2",
+    "unitNumber": 134,
+    "text": "Aşağıda verilen primal doğrusal programlama probleminin duali hangi şıkta doğru yazılmıştır? ¸°¹ = YºX + ZºY ºX + YºY ≤ a ZºX + bºY ≤ d ºX; ºY ≥ \\",
+    "options": {
+      "A": "Z\u001a\u001b = 2X + 3X X + 2X ≤ 5 3X + 4X ≤ 8 X ; X ≥ 0",
+      "B": "G\u001a#$ = 2X + 3X X + 2X ≤ 5 3X + 4X ≤ 8 X ; X ≥ 0",
+      "C": "G\u001a#$ = 5X + 8X Y + 2Y ≥ 2 3Y + 4Y ≥ 3 Y ; Y ≥ 0",
+      "D": "G\u001a#$ = 5X + 8X Y + 3Y ≥ 2 2Y + 4Y ≥ 3 Y ; Y ≥ 0",
+      "E": "G\u001a#$ = 5X + 8X Y + 2Y ≥ 2 3Y + 4Y ≥ 3 Y ; Y ≤ 0"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-b049fd168b44",
+    "unitNumber": 135,
+    "text": "Bir çimento şirketi, ürettiği çimentoyu 3 farklı tesisten 3 farklı inşaat bölgesine ürün sevk etmektedir. Her üç tesise ilişkin kapasite verileri ve bu tesislerden istenilen miktarlar ve birim ulaştırma maliyetleri (TL/ton) verilmektedir. Vogel Yaklaşımı kullanılarak atama yapılır ise, ilk olarak hangi hücreye atama yapılır? TESİSLER X Y Z ARZ A 8 5 6 120 B 15 10 12 80 C 3 9 10 80 TALEP 150 70 60 280",
+    "options": {
+      "A": "+ →",
+      "B": "+ → ^",
+      "C": " → ",
+      "D": "→ \u0019",
+      "E": "\u001e → ^"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-60262c3d8bcb",
+    "unitNumber": 136,
+    "text": "Aşağıdaki yöntemlerden hangisi ulaştırma problemlerinde yapılan dağıtımın optimal olup olmadığını test eder?",
+    "options": {
+      "A": "Vogel Atama Metodu",
+      "B": "Russel Atama Metodu",
+      "C": "Kestirme Dağıtım",
+      "D": "Minimum Maliyetli Hücre",
+      "E": "MO-Dİ Yöntemi"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-ae67c31f4137",
+    "unitNumber": 137,
+    "text": "Aşağıdaki yöntemlerden hangisi ulaştırma problemlerinde başlangıç çözümünü bulmak için kullanılmaz?",
+    "options": {
+      "A": "Kuzey-Batı Köşe Yöntemi",
+      "B": "En Düşük Maliyetli Hücreler Yöntemi",
+      "C": "Satır veya Sütun En Küçüğü Yöntemi",
+      "D": "Vogel Yaklaşım Yöntemi",
+      "E": "Satır veya Sütun En Büyüğü Yöntemi"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-52bba7a45ed6",
+    "unitNumber": 138,
+    "text": "Aşağıda verilen ulaştırma tablosunun Minimum Maliyetli Hücre Yöntemi ile atama yapıldığında ilk atama hangi hücreye gerçekleşir? X Y Z T Arzlar A 5 2 10 11 5 B 9 4 1 6 10 C 3 8 7 12 15 Talepler 12 8 4 6",
+    "options": {
+      "A": "+ →",
+      "B": "+ → ^",
+      "C": "\u001e →",
+      "D": "→ \u0019",
+      "E": "\u001e → ^"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-a86265bf7162",
+    "unitNumber": 139,
+    "text": "Ulaştırma probleminin çözümünde Kuzeybatı yöntemi kullanılacaksa atama yapmaya hangi hücreden başlanır?",
+    "options": {
+      "A": "Sol – alt köşeden başlanır",
+      "B": "Sağ – Üst köşeden",
+      "C": "En yüksek maliyete sahip hücreden",
+      "D": "En düşük maliyete sahip hücreden",
+      "E": "Sol – Üst köşeden"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-8b58a4b304c3",
+    "unitNumber": 140,
+    "text": "Vogel Atama Metodunda (VAM) ilk aşama aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "En küçük maliyetli hücreye atama yapılır.",
+      "B": "Verilen problemde fark satırı ve fark sütun sütunu oluşturulur",
+      "C": "En yüksek maliyetli hücreye atama yapılır",
+      "D": "Fark satırında ve sütununda bulunan değerler sıraya dizilir",
+      "E": "Sol üst köşeden başlanarak atama yapılır"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-b2ff1baf4510",
+    "unitNumber": 141,
+    "text": "Aşağıdakilerden hangisi ulaştırma problemlerinde bir atama yöntemi değildir?",
+    "options": {
+      "A": "Vogel Atama Metodu",
+      "B": "Kuzeybatı Köşe Atama Yöntemi",
+      "C": "MO-DI Optimallik Testi",
+      "D": "Russel Atama Yöntemi",
+      "E": "Minimum Maliyetli Hücre Atama Yöntemi"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-c8200d40acee",
+    "unitNumber": 142,
+    "text": "Aşağıdakilerden hangisi ulaştırma problemlerinde optimallik testi için kullanılan bir yöntemdir?",
+    "options": {
+      "A": "Vogel Atama Metodu",
+      "B": "Kuzey - Batı Köşe Atama Yöntemi",
+      "C": "Russel Atama Yöntemi",
+      "D": "Düşük Maliyetli Hücre Atama Yöntemi",
+      "E": "Atlama Taşı Yöntemi (Boş Hücre Çevrimlerinin Çizilmesi)"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-26c5b7e57254",
+    "unitNumber": 143,
+    "text": "Aşağıda bir ulaştırma problemi verilmektedir. Dejenerasyon (bozulma) durumu yaşanmaması için kaç dolu hücre olmalıdır? TESİSLER P1 P2 P3 P4 ARZ D1 8 5 6 6 140 D2 15 10 7 12 80 D3 3 9 8 10 80 TALEP 150 70 20 60 300",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6",
+      "E": "7"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-62da5797b84c",
+    "unitNumber": 144,
+    "text": "Aşağıda bir ulaştırma problemi verilmektedir. Eğer dejenerasyon durumu yaşanmadan 6 hücreye atama yapılmış ise, optimallik testi için kaç adet boş hücre çevrimi çizilir? Pazar Depo P1 P2 P3 P4 ARZ D1 8 3 6 6 100 D2 5 10 7 12 100 D3 4 9 8 10 100 TALEP 150 70 20 60 300",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "6",
+      "D": "7",
+      "E": "8"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-cc1147fd45de",
+    "unitNumber": 145,
+    "text": "Aşağıda verilen transport problemi için Minimum Maliyetli Hücre Yöntemi (Kestirme Dağıtım Yöntemi) kullanılarak atama yapılır ise; hangi hücreye ilk atama yapılır?",
+    "options": {
+      "A": "D1-P1",
+      "B": "D1-P2",
+      "C": "D2-P1",
+      "D": "D1-P3",
+      "E": "D2-P3"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-34eab45bd437",
+    "unitNumber": 146,
+    "text": "Aşağıda yapılan dağıtım planına göre transport maliyeti kaç olur?",
+    "options": {
+      "A": "400",
+      "B": "460",
+      "C": "500",
+      "D": "600",
+      "E": "900"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-ea68e2bc9fa3",
+    "unitNumber": 147,
+    "text": "Aşağıda verilen ulaştırma tablosunun Kuzey Batı Köşesi Yöntemi ile bulunan Olurlu Başlangıç Çözümü’ nün değeri kaçtır? İSTANBUL İZMİR ANTALYA TALEP DENİZLİ 6 8 10 150 BURSA 7 11 11 175 ADANA 4 5 12 275 ARZ 200 100 300 600",
+    "options": {
+      "A": "6355 TL",
+      "B": "11.500 TL",
+      "C": "5875 TL",
+      "D": "5925 TL",
+      "E": "3400 TL"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-dd093765d47d",
+    "unitNumber": 148,
+    "text": "Kuzeybatı Köşe, Vogel, Russel ve Minimum Maliyetli Hücre Atama (Kestirme Dağıtım) yöntemlerinden hangisi kullanılırsa genellikle optimum çözüme daha geç ulaşılır?",
+    "options": {
+      "A": "Vogel Atama Metodu",
+      "B": "Russel Atama Metodu",
+      "C": "Kestirme Dağıtım",
+      "D": "Minimum Maliyetli Hücre",
+      "E": "Kuzey Batı Köşe Yöntemi"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-b45f11646b73",
+    "unitNumber": 149,
+    "text": "Ulaştırma Probleminin çözümüne başlayabilmek için aşağıdaki varsayımlardan hangisi geçersizdir?",
+    "options": {
+      "A": "Her bir üretim merkezi ile her bir tüketim merkezi arasında bir birim malın kaça taşınacağı bilinmeli",
+      "B": "Her bir üretim merkezi ile her bir tüketim merkezindeki toplam miktar tam olarak bilinmeli.",
+      "C": "Modelde kullanılan tüm bilgiler ve probleme konu olan mal ve hizmetler, bütün üretim ve tüketim merkezleri için aynı birim ve homojenlikte tanımlanmış olmalı.",
+      "D": "Modelde kullanılan tüm bilgiler ve probleme konu olan mal ve hizmetler, bütün üretim ve tüketim merkezleri için ayrı birim ve heterojenlikte tanımlanmış olmalı.",
+      "E": "Üretim merkezlerinden dağıtılacak toplam miktar, tüketim merkezlerince istenen toplam miktara eşit olmalı."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-ee5961572120",
+    "unitNumber": 150,
+    "text": "Ø {, Ø { değişkenleri Hedef Programlamada hangi isimle adlandırılır?",
+    "options": {
+      "A": "Sapma değişkenleri a) Karar değişkenleri",
+      "C": "Yapay değişkenleri",
+      "D": "Aylak değişkenleri",
+      "E": "Artık değişkenleri"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-3df3083d5c04",
+    "unitNumber": 151,
+    "text": "Hedef programlamada amaç ……………………… minimize etmektir.",
+    "options": {
+      "A": "Karar değişkenleri",
+      "B": "Sapma değişkenleri",
+      "C": "Yapay değişkenleri",
+      "D": "Aylak değişkenleri",
+      "E": "Artık değişkenleri"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-9f3a79457e67",
+    "unitNumber": 152,
+    "text": "……………………… birden çok amacın modelde yer almasına izin verir.",
+    "options": {
+      "A": "Dinamik programalama",
+      "B": "Hedef programlama",
+      "C": "Doğrusal Programlama",
+      "D": "Çok düzeyli programlama",
+      "E": "Dual programlama"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-f32a4ae22267",
+    "unitNumber": 153,
+    "text": "Aşağıdaki ifadelerden hangisi yanlıştır.",
+    "options": {
+      "A": "“Düşük” tek taraflı hedef, altına düşmek istemediğimiz bir alt sınırı ifade eder.",
+      "B": "Çift taraflı hedef, altında ve üstünde kalmak istemediğimiz sınırları ifade eder.",
+      "C": "Hedef programalamada amaç hedeften sapmaların en küçüklenmesidir.",
+      "D": "Öncelikli hedef programlamada tüm hedefler eşit önceliğe sahiptir."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-0c15a9689468",
+    "unitNumber": 154,
+    "text": "Lineer programlama dışında problemin kendine özgünlüğünden ötürü kullanabileceğimiz başka modeller de mevcuttur. Şayet problem birden çok amacı barındırıyorsa ……………… modeli kullanılabilir.",
+    "options": {
+      "A": "Dinamik programalama",
+      "B": "Hedef programlama",
+      "C": "Simülasyon",
+      "D": "Çok düzeyli programlama",
+      "E": "Dual programlama"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-73bc27923727",
+    "unitNumber": 155,
+    "text": "4 kriterli 3 seçenekli bir seçim probleminde kriterler arasında oluşturulan karşılaştırma matrisinin boyutu aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "3 × 3",
+      "B": "3 × 4",
+      "C": "4 × 3",
+      "D": "4 × 4",
+      "E": "7 × 7"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-ddaddef30bbc",
+    "unitNumber": 156,
+    "text": "4 kriterli 3 seçenekli bir seçim probleminde herbir kriter açısından seçeneklere ilişkin oluşturulan karşılaştırma matrisi hangi boyutta olur?",
+    "options": {
+      "A": "3 × 3",
+      "B": "3 × 4",
+      "C": "4 × 3",
+      "D": "4 × 4",
+      "E": "7 × 7"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-c9d7d28b1775",
+    "unitNumber": 157,
+    "text": "Bir karşılaştırma matrisi normalize etmek için aşağıdakilerden hangisi ilk adım olarak uygulanır?",
+    "options": {
+      "A": "Karşılaştırma matrisinin satır toplamları alınır",
+      "B": "Karşılaştırma matrisinin sütun toplamları alınır",
+      "C": "Karşılaştırma matrisinin bütün elemanları toplanır",
+      "D": "Her bir hücre değeri kendisine bölünür",
+      "E": "Her bir hücre değeri tersi ile çarpılır"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-cdc2e2376a93",
+    "unitNumber": 158,
+    "text": "Normalize edilmiş bir karşılaştırma matrisinin sütun toplamları kaç olmalıdır?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4",
+      "E": "0"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-28b1a949966b",
+    "unitNumber": 159,
+    "text": "Karşılaştırma matrisi normalize edildikten sonra, satır oralamaları alınarak kriterlere ilişkin hangi değerler elde edilir?",
+    "options": {
+      "A": "Seçeneklerin ağırlıkları",
+      "B": "Kriterlerin ağırlıkları",
+      "C": "Seçeneklerin toplamı",
+      "D": "Kriterlerin toplamı",
+      "E": "Tutarlılık oranı"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-c3d7e9c4f6d7",
+    "unitNumber": 160,
+    "text": "AHP de karşılaştırma matrisinin tutarlı olabilmesi için hesaplaplanan \u001eÒ değeri kaçtan küçük olmalıdır?",
+    "options": {
+      "A": "0,01",
+      "B": "0,05",
+      "C": "0,10",
+      "D": "0,15",
+      "E": "0,20"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-43c5b4740cfd",
+    "unitNumber": 161,
+    "text": "A, B, C gibi 3 kritere sahip bir AHP modelinde A ve B nin hesaplanan ağırlıkları sırası ile 0,23 ve 0,41 olarak hesaplanmış ise, C kriterinin ağırlığı ne kadardır?",
+    "options": {
+      "A": "0",
+      "B": "0,23",
+      "C": "0,41",
+      "D": "0,50",
+      "E": "0,36"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-856d7532b138",
+    "unitNumber": 162,
+    "text": "A, B, C gibi 3 seçeneğe sahip bir AHP modelinde A, B ve C alternatiflerine ilişkin ağırlıklar sırasıyla 0,30, 0,10 ve 0,60 ise ilk olarak hangi alternatif tercih edilmelidir?",
+    "options": {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "B ve C",
+      "E": "A ve C"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-876594e7cf64",
+    "unitNumber": 163,
+    "text": "Bir oyunda en az kaç kişi bulunmalıdır?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "4",
+      "E": "5"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-af983dfb9ca9",
+    "unitNumber": 164,
+    "text": "Bir oyuncunun rakiplerinin ne yaptığını dikkate almaksızın kazancını maksimize eden stratejiye ne denir?",
+    "options": {
+      "A": "İşbirliği stratejisi",
+      "B": "Fayda stratejisi",
+      "C": "Kazanç stratejisi",
+      "D": "Oyuncu stratejisi",
+      "E": "Baskın strateji"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-a7398f4ae073",
+    "unitNumber": 165,
+    "text": "Oyun kuramını geliştiren ya da geliştirenler aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "D.W. Carlton ve J.M. Perloff",
+      "B": "J. Von Neuman ve O. Morgenstern",
+      "C": "D. Kreps",
+      "D": "E. Rasmusen",
+      "E": "S. Bierman ve L. Fernandez"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-cad08a96cfaa",
+    "unitNumber": 166,
+    "text": "Kendilerine ait stratejileri bulunan ve birbirlerinin hareketlerinden etkilenen iki ya da daha fazla firmanın rekabetini analiz eden teoriye ne ad verilir?",
+    "options": {
+      "A": "Oyun Teorisi",
+      "B": "Fiyat iteorisi",
+      "C": "Tüketici Teorisi",
+      "D": "Davranış Teorisi",
+      "E": "Üretici Teorisi"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-6bc9985d4e46",
+    "unitNumber": 167,
+    "text": "Bir oyuncunun kazancı diğer oyuncunun kaybıysa, bu tür oyunlara ne ad verilir?",
+    "options": {
+      "A": "1 toplamlı oyun",
+      "B": "0 toplamlı oyun",
+      "C": "1 toplamlı olmayan oyun",
+      "D": "0 toplamlı olmayan oyun",
+      "E": "Toplamı belirsiz oyun"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-7646d4582a27",
+    "unitNumber": 168,
+    "text": "Aşağıda verilen ödemeler matrisine göre oyunun değeri kaçtır?",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5",
+      "E": "6"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-b22372cd35b1",
+    "unitNumber": 169,
+    "text": "Aşağıda verilen ödemeler matrisine göre oyunun değeri kaçtır? K1 K2 S1 2 3 S2 11 8",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "8",
+      "D": "11",
+      "E": "0"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-f6f57b796b8c",
+    "unitNumber": 170,
+    "text": "Satır oyuncusu için optimal strateji nasıl olacaktır?",
+    "options": {
+      "A": "(1;0;0)",
+      "B": "(0;0,22;0,78)",
+      "C": "(0,5;0,1;0,4)",
+      "D": "(0,0,1)",
+      "E": "(0;1;0)"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-05abebac00bd",
+    "unitNumber": 171,
+    "text": "Sütun oyuncusu için optimal strateji nasıl olacaktır?",
+    "options": {
+      "A": "(1;0;0)",
+      "B": "(0,7;0,3;0)",
+      "C": "(0;0,56;0,0,44)",
+      "D": "(0;0;1)",
+      "E": "(0;1;0)"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-2feea7141dc6",
+    "unitNumber": 172,
+    "text": "Oyunda eğer tepe noktası varsa değeri nedir?",
+    "options": {
+      "A": "3",
+      "B": "5,89",
+      "C": "5,59",
+      "D": "-3",
+      "E": "Tepe noktası yoktur."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-228cda7ce285",
+    "unitNumber": 173,
+    "text": "Oyunun oyun değeri varsa nedir?",
+    "options": {
+      "A": "3",
+      "B": "5,59",
+      "C": "5,89",
+      "D": "-3",
+      "E": "Tepe noktası yoktur."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-caccc8032d74",
+    "unitNumber": 174,
+    "text": "Aşağıdaki verilen verilen geçiş matrisine verildiğine göre; A B A 0,6 0,4 B 0,3 0,7 Bir sonraki periyodda A seçeneğinden B seçeneğine geçme olasılığı kaç olur?",
+    "options": {
+      "A": "0,60",
+      "B": "0,40",
+      "C": "0,30",
+      "D": "0,70",
+      "E": "1,00"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-fa0ab798fc07",
+    "unitNumber": 176,
+    "text": "Aşağıdaki verilen verilen geçiş matrisine verildiğine göre; A B A 0,6 0,4 B 0,3 0,7 İki adım sonraki periyodda A seçeneğinden A seçeneğine geçme olasılığı kaç olur?",
+    "options": {
+      "A": "0,48",
+      "B": "0,52",
+      "C": "0,39",
+      "D": "0,61",
+      "E": "1,00"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-a46a793cd323",
+    "unitNumber": 178,
+    "text": "Aşağıdaki verilen geçiş matrisinde verildiğine göre; A B A 0,6 0,4 B 0,3 0,7 Üç adım sonraki periyotta B seçeneğinden A seçeneğine geçme olasılığı kaç olur?",
+    "options": {
+      "A": "0,444",
+      "B": "0,556",
+      "C": "0,417",
+      "D": "0,583",
+      "E": "1,00"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-6030f5b71258",
+    "unitNumber": 180,
+    "text": "Aşağıdaki verilen geçiş matrisinde verildiğine göre; A B A 0,6 0,4 B 0,3 0,7 10 adım sonraki periyotta matris aşağıdakilerden hangisi olur?",
+    "options": {
+      "A": "i0,4 0,6 0,4 0,6j",
+      "B": "x0,44 0,56 0,43 0,57y",
+      "C": "x0,429 0,571 0,429 0,571y",
+      "D": "i0 1 1 0j",
+      "E": "i1 0 0 1j"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-c8172321b227",
+    "unitNumber": 181,
+    "text": "Excel üzerinde = BINOM.INV(n, p, RAND()) işlevi kullanıldığında aşağıdaki dağılımlardan hangisine uygun sayılar elde edilir?",
+    "options": {
+      "A": "Uniform",
+      "B": "Beta",
+      "C": "Gama",
+      "D": "Binom",
+      "E": "Poisson"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-14e69fedae6c",
+    "unitNumber": 182,
+    "text": "Proje planlamada ağ diyagramı çiziminde aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Diyagram sağdan sola doğru ilerlemektedir.",
+      "B": "Faaliyet öncül faaliyetleri tamamlanmadan başlayamaz.",
+      "C": "Faaliyetler arasında çizilen oklar birbirini çaprazlayabilir.",
+      "D": "Her bir faaliyet ayrı ayrı numaralandırılmalıdır.",
+      "E": "Döngülere izin verilmez yani geri dönüşler söz konusu değildir."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-29f3381b28a5",
+    "unitNumber": 183,
+    "text": "Proje planlamada bütün faaliyetlerin belirlendiği, faaliyet sürelerinin ve faaliyet önceliklerinin gösterildiği diyagrama ne denir?",
+    "options": {
+      "A": "Ağ Diyagramı",
+      "B": "Balık Kılçığı Diyagramı",
+      "C": "Histogram",
+      "D": "Pareto Diyagramı",
+      "E": "Kritik Yol Diyagramı"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-3ebf0f631627",
+    "unitNumber": 184,
+    "text": "B faaliyeti, A faaliyetinin bitişi ile başlayabiliyor ise ne tür bir ilişki söz konusudur?",
+    "options": {
+      "A": "Finish to Start (FS)",
+      "B": "Start to Start (SS)",
+      "C": "Start to Finish (SF)",
+      "D": "Finish to Finish (FF)",
+      "E": "Normal Start (NS)"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-2677b531af29",
+    "unitNumber": 185,
+    "text": "Aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Bir faaliyetin başlayabilmesi için bitmesi gereken faaliyetlere A’nın öncül faaliyetleri denir.",
+      "B": "Kritik faaliyetlerin bollukları sıfırdır.",
+      "C": "Ağ diyagramı çiziminde iki farklı yol mevcuttur.",
+      "D": "Kritik faaliyetlerin toplam süresi proje bitiş süresini oluşturur",
+      "E": "Her zaman ağ diyagramındaki tüm faaliyetler kritik faaliyetlerdir."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-41581a9a7068",
+    "unitNumber": 186,
+    "text": "Faaliyetlerin düğümlerle gösterilmesinde -AON- en önemli avantaj hangisidir?",
+    "options": {
+      "A": "Çizimi zordur",
+      "B": "Bolluklar kolay hesaplanır",
+      "C": "Bilgisayar programlarında daha yaygın olarak kullanılır",
+      "D": "Kukla faaliyet oluşturulması gerekmez",
+      "E": "Hiçbir avantaj bulunmaz"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-fa37190715be",
+    "unitNumber": 187,
+    "text": "Şebeke (Ağ) diyagramında oluşan en uzun yola ne ad verilir?",
+    "options": {
+      "A": "Düğüm",
+      "B": "Ok",
+      "C": "Kritik yol",
+      "D": "Öncül faaliyet",
+      "E": "Paralel faaliyet"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-af13247435f3",
+    "unitNumber": 188,
+    "text": "Birden fazla faaliyetle aynı anda başlayan projelerde bu faaliyetlerin öncesinde sıfır süreli bir faaliyet eklenir. Bu faaliyet aşağıdakilerden hangisi ile isimlendirilir?",
+    "options": {
+      "A": "Kritik faaliyet",
+      "B": "Kilometre taşı",
+      "C": "Kritik olay",
+      "D": "Bileşke faaliyet",
+      "E": "Paralel faaliyetler"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-af5d830a4356",
+    "unitNumber": 190,
+    "text": "Kendisinden sonra birden çok faaliyete öncüllük eden faaliyete ne ad verilir?",
+    "options": {
+      "A": "Artçıl faaliyet",
+      "B": "Normal faaliyet",
+      "C": "Kritik faaliyet",
+      "D": "Öncül faaliyet",
+      "E": "Paralel faaliyet"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-38758e610b26",
+    "unitNumber": 191,
+    "text": "Aşağıdakilerden hangisi PERT (Program Evaluation Review Technique)’de, proje faaliyetlerinin sürelerinin belirlenmesinde kullanılan süre tiplerinden biri değildir??",
+    "options": {
+      "A": "İyimser süre",
+      "B": "Olası Süre",
+      "C": "Standart süre",
+      "D": "Kötümser süre",
+      "E": "İyimser, Olası ve Kötümser Süre"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-4e410c5f3f54",
+    "unitNumber": 192,
+    "text": "Kritik Yol ile ilgili olarak hangisi doğrudur?",
+    "options": {
+      "A": "En kısa yoldur",
+      "B": "En uzun yoldur",
+      "C": "Ne uzun ne kısa yoldur",
+      "D": "Bollukları sıfırdan büyük olan faaliyetler içerir",
+      "E": "Kritik olmayan faaliyetler kritik yolu oluşturur"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-5d380a4b9fde",
+    "unitNumber": 193,
+    "text": "Bir faaliyetin en erken başlangıç süresi 10, en geç başlangıç süresi 15 ise bolluğu ne kadar olur?",
+    "options": {
+      "A": "15",
+      "B": "10",
+      "C": "5",
+      "D": "1",
+      "E": "0"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-4f796cd2d73e",
+    "unitNumber": 194,
+    "text": "Bir faaliyetin süresi olasılıklı olup \b = 3, \u0005 = 4 ve . = 11 ise faaliyetin beklenen süresi ne kadardır?",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "6",
+      "D": "7",
+      "E": "7,5"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-3c4dd57a5380",
+    "unitNumber": 195,
+    "text": "Bir faaliyetin süresi olasılıklı olup \b = 3, \u0005 = 4 ve . = 11 ise faaliyetin beklenen varyansı ne kadardır?",
+    "options": {
+      "A": "16/9",
+      "B": "32/9",
+      "C": "64/9",
+      "D": "1",
+      "E": "0"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-37170d205115",
+    "unitNumber": 196,
+    "text": "Olasılıklı faaliyet süreleri olan bir projenin ortalama bitiş süresi \u0013 = 30 gün, ve varyansı \u001e = 16 gün olarak hesaplanmış ise = 34 gün için  standardize değeri kaçtır?",
+    "options": {
+      "A": "2,5",
+      "B": "2",
+      "C": "1,5",
+      "D": "1",
+      "E": "0"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-e3b61726e172",
+    "unitNumber": 197,
+    "text": "Olasılıklı faaliyet süreleri içeren bir projenin ortalama bitiş süresi \u0013 = 30 gün ve standart sapması \u001e = 4 gün ise bu projenin 26 günde daha fazla günde bitme olasılığı yüzde kaçtır?",
+    "options": {
+      "A": "15,87",
+      "B": "34,13",
+      "C": "50",
+      "D": "84,13",
+      "E": "100"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-d7868781ac92",
+    "unitNumber": 198,
+    "text": "Olasılıklı faaliyet süreleri içeren bir projenin ortalama bitiş süresi \u0013 = 30 gün ve standart sapması \u001e = 4 gün ise bu projenin en geç 30 günde bitme olasılığı yüzde kaçtır?",
+    "options": {
+      "A": "26,34",
+      "B": "34,13",
+      "C": "50",
+      "D": "84,13",
+      "E": "100"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-a468b5620b23",
+    "unitNumber": 200,
+    "text": "Aşağıda verilen şebeke (ağ) diyagramında 4 faaliyetin beklenen süreleri verilmiştir. Buna göre kritik yol süresi ne kadardır?",
+    "options": {
+      "A": "5",
+      "B": "6",
+      "C": "8",
+      "D": "9",
+      "E": "10"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-e02ab40d770d",
+    "unitNumber": 201,
+    "text": "Olasılıklı faaliyet süreleri içeren bir projenin ortalama bitiş süresi \u0013 = 30 gün ve standart sapması \u001e = 4 gün ise bu projenin en geç 26 günde bitme olasılığı yüzde kaçtır?",
+    "options": {
+      "A": "34,13",
+      "B": "68,26",
+      "C": "50",
+      "D": "15,87",
+      "E": "100"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  }
+]

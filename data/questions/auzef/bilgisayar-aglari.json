@@ -1,1 +1,2231 @@
-[]
+[
+  {
+    "id": "s-eaeb9b055546",
+    "unitNumber": 1,
+    "text": "Bilgisayarlar kullanılarak kaynak paylaşılmak istenildiğinde aşağıdakilerden hangisinin yapılması zorunludur?",
+    "options": {
+      "A": "Bir bilgisayar ağı oluşturulmalı, bilgisayar ağı içerisinde uygulamanın çalıştırılabilmesi için mutlaka SMTP protokolü kullanılmalıdır.",
+      "B": "Bir bilgisayar ağı oluşturulmalı, bilgisayar ağı içerisinde uygulamanın çalıştırılabilmesi için mutlaka yönlendirici kullanılmalıdır.",
+      "C": "Bir bilgisayar ağı oluşturulmalı, bilgisayar ağı içerisinde fiziksel aktarımın sağlanabilmesi için kablolu veya kablosuz bir aktarım birimi kullanılmalıdır.",
+      "D": "Bir bilgisayar ağı oluşturulmalı, bilgisayar ağı içerisinde uygulamanın çalıştırılabilmesi için mutlaka tekrarlayıcı kullanılmalıdır.",
+      "E": "Bir bilgisayar ağı oluşturulmalı, bilgisayar ağı içerisinde uygulamanın çalıştırılabilmesi için mutlaka tekrarlayıcı ve yönlendirici kullanılmalıdır."
+    },
+    "correctAnswer": "C",
+    "explanation": "Bilgisayarlar arasında kaynak paylaşımı (dosya, yazıcı, internet bağlantısı vb.) yapılabilmesi için öncelikle bir bilgisayar ağı oluşturulmalıdır. Bu ağda fiziksel veri aktarımının gerçekleşebilmesi için kablolu (Ethernet, fiber optik) veya kablosuz (WiFi, Bluetooth) bir iletim ortamı zorunludur; bunlar olmadan veri fiziksel olarak iletilemez. SMTP yalnızca e-posta iletim protokolüdür; her kaynak paylaşım uygulaması için zorunlu değildir. Yönlendirici, küçük bir LAN’da zorunlu değildir; switch yeterli olabilir. Tekrarlayıcı ise yalnızca sinyal mesafe sorunlarında kullanılır, zorunlu bir bileşen değildir. Tek evrensel zorunluluk fiziksel iletim ortamının (kablolu ya da kablosuz) varlığıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1c4b8592afff",
+    "unitNumber": 2,
+    "text": "Aşağıda yer alan cihazlardan hangisi sinyalin yeniden üretilmesini sağlar?",
+    "options": {
+      "A": "Tekrarlayıcı",
+      "B": "Üretici",
+      "C": "Göbek",
+      "D": "Transfer edici",
+      "E": "Aktarıcı"
+    },
+    "correctAnswer": "A",
+    "explanation": "Tekrarlayıcı (Repeater), OSI modelinin 1. katmanında (Fiziksel Katman) çalışan ve iletim sırasında zayıflayan (attenuation) sinyali alarak orijinal gücünde yeniden üreten cihazdır. Uzun mesafeli kablo bağlantılarında belirli aralıklarla yerleştirilen tekrarlayıcılar, sinyal bütünlüğünü korumanın en temel yoludur. Göbek (Hub) da katman-1 cihazıdır; gelen sinyali tüm portlara çoğaltır, ancak temel işlevi sinyal yeniden üretimi değil çoğaltma ve dağıtmadır. Üretici, Transfer edici ve Aktarıcı ise standart ağ terminolojisinde tanımlı cihaz adları değildir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-184f872763df",
+    "unitNumber": 3,
+    "text": "Sinyaller ile ilgili aşağıda yer alan bilgilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Sinyal iletimi esnasında gürültüden kaçınmaya çalışılır.",
+      "B": "Analog olarak kodlamış sinyaller sinüzoidal dalga oluştururlar.",
+      "C": "Analog sinyaller dijitale, dijital sinyaller analoga çevrilebilir.",
+      "D": "Sinyallerin tümü sinüzoidal dalga formundadır.",
+      "E": "Dijital olarak kodlanmış sinyaller kare dalga oluştururlar."
+    },
+    "correctAnswer": "D",
+    "explanation": "Sinyaller iki temel biçimde bulunur: Analog sinyaller sürekli değişen sinüzoidal (sinüs) dalga formundadır. Dijital sinyaller ise yalnızca iki seviyeli (yüksek/düşük, 1/0) kare dalga formundadır. Bu nedenle “tüm sinyaller sinüzoidal dalga formundadır” ifadesi açıkça yanlıştır; dijital sinyaller kare dalgadır. A seçeneği doğrudur: gürültü iletim kalitesini bozar, SNR (Sinyal-Gürültü Oranı) maksimize edilmeye çalışılır. B doğrudur: analog kodlamada sinüzoidal dalga kullanılır. C doğrudur: modem bu dönüşümü gerçekleştiren cihazdır. E doğrudur: dijital sinyaller kare dalga üretir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f4eb06984a7d",
+    "unitNumber": 4,
+    "text": "Verinin taşınması için ışığın taşıyıcı olarak kullanıldığı kablo türü aşağıdaki seçeneklerin hangisinde doğru olarak verilmiştir?",
+    "options": {
+      "A": "Korumasız çift bükümlü kablo",
+      "B": "Fiber optik kablo",
+      "C": "Light optik kablo",
+      "D": "Koaksiyel kablo",
+      "E": "Korumalı çift bükümlü kablo"
+    },
+    "correctAnswer": "B",
+    "explanation": "Fiber optik kablo, veriyi elektrik sinyali yerine ışık darbeleri (lazer veya LED) aracılığıyla taşıyan iletim ortamıdır. Cam veya plastik fiberden oluşan bu kablo türü; son derece yüksek bant genişliği (Tbps düzeyinde), çok düşük sinyal kaybı (uzun mesafelerde), elektromanyetik parazite karşı tam bağışıklık ve yüksek güvenlik gibi üstün özellikler sunar. Koaksiyel kablo metal iletkenli olup bakır kullanır. UTP ve STP çift bükümlü bakır kablolar da elektriksel iletim yapar. “Light optik kablo” ise standart bir terim değildir; muhtemelen fiber optikle karıştırılmak üzere oluşturulmuş yanıltıcı bir seçenektir. Fiber optik kablolar; veri merkezleri, internet omurgaları ve uzun mesafeli iletişim altyapılarında yaygın kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-199f0e0ac552",
+    "unitNumber": 5,
+    "text": "Bilgisayar ağları ile ilgili aşağıda yer alan bilgilerden hangisi doğrudur?",
+    "options": {
+      "A": "Bir bilgisayar ağı farklı coğrafi alanları kaplayabilir; farklı boyutlarda bilgisayar ağları oluşturmak mümkündür. Bilgisayar ağları içerdikleri yönlendirici sayısına göre farklı isimler alırlar.",
+      "B": "Bir bilgisayar ağı farklı coğrafi alanları kaplayabilir; farklı boyutlarda bilgisayar ağları oluşturmak mümkündür. Bilgisayar ağları içerdikleri anahtar sayısına göre farklı isimler alırlar.",
+      "C": "Bir bilgisayar ağı farklı coğrafi alanları kaplayabilir; farklı boyutlarda bilgisayar ağları oluşturmak mümkündür. Bilgisayar ağları ölçeklerine; kapladıkları alanlara göre farklı isimler alırlar.",
+      "D": "Bir bilgisayar ağı farklı coğrafi alanları kaplayabilir; farklı boyutlarda bilgisayar ağları oluşturmak mümkündür. Bilgisayar ağları içerdikleri ağ cihazlarının sayısına göre farklı isimler alırlar.",
+      "E": "Bir bilgisayar ağı farklı coğrafi alanları kaplayabilir; farklı boyutlarda bilgisayar ağları oluşturmak mümkündür. Bilgisayar ağları içerdikleri yönlendirici ve anahtar sayısına göre farklı isimler alırlar."
+    },
+    "correctAnswer": "C",
+    "explanation": "Bilgisayar ağlarının adlandırılması ve sınıflandırılması, içerdikleri cihaz sayısına veya türüne göre değil; kapsadıkları coğrafi alana ve ölçeğe göre yapılır. PAN birkaç metrelik kişisel alan, LAN tek bina veya kat, CAN bir kampüs, MAN bir şehir, WAN ülkeler ve kıtalar arasını kapsar. Ağda kaç yönlendirici veya anahtar bulunduğuna bakılmaksızın bu isimlendirme geçerlidir; belirleyici olan her zaman fiziksel kapsam alanıdır. Bu nedenle yalnızca C seçeneği doğru bilgiyi içermektedir; diğer tüm seçenekler cihaz sayısına odaklanmaktadır ki bu sınıflandırmanın temeli değildir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0a59990b363e",
+    "unitNumber": 6,
+    "text": "Aşağıdakilerden hangisi yakın mesafede kullanılabilecek bir kablosuz teknolojidir?",
+    "options": {
+      "A": "LTE",
+      "B": "Wimax",
+      "C": "CFN",
+      "D": "Uydu teknolojisi",
+      "E": "NFC"
+    },
+    "correctAnswer": "E",
+    "explanation": "NFC (Near Field Communication — Yakın Alan İletişimi), maksimum 20 cm mesafede çalışan çok kısa menzilli bir kablosuz iletişim teknolojisidir. Temassız ödeme (kredi kartı, akıllı telefon), erişim kartları, bilet sistemleri ve cihaz eşleştirme gibi uygulamalarda yaygın olarak kullanılır. LTE (Long Term Evolution / 4G), geniş alan mobil iletişim teknolojisidir; şehir ve ülke ölçeğinde çalışır. WiMAX şehir ölçeğinde kablosuz geniş bant erişim sağlar. Uydu teknolojisi kıtalar arası iletişimde kullanılır. CFN ise tanımlı bir kablosuz teknoloji standardı değildir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ffa5739fde1a",
+    "unitNumber": 7,
+    "text": "Çift bükümlü kablolar kaça ayrılmaktadır?",
+    "options": {
+      "A": "2",
+      "B": "4",
+      "C": "5",
+      "D": "3",
+      "E": "6"
+    },
+    "correctAnswer": "A",
+    "explanation": "Çift bükümlü (twisted pair) kablolar iki ana kategoriye ayrılır: UTP (Unshielded Twisted Pair — Korumasız Çift Bükümlü) ve STP (Shielded Twisted Pair — Korumalı Çift Bükümlü). UTP kablolar metal kılıf içermez; daha ucuz, esnek ve kolay kurulabilirdir; ofis ve ev ağlarında yaygın kullanılır. STP kablolar ise her tel çiftinin veya tüm kablonun etrafını saran metal folyo ya da örgü kılıfa sahiptir; elektromanyetik parazite (EMI) karşı daha iyi koruma sağlar, ancak daha ağır ve pahalıdır. 4, 5 veya 6 gibi seçenekler kabloların kategori sayılarıyla (Cat3, Cat5, Cat6 vb.) karıştırılmasından kaynaklanabilir; ancak temel tür sayısı 2’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7b6a821b5ecb",
+    "unitNumber": 8,
+    "text": "Aşağıdaki seçeneklerden hangisinde MAC adresine dayalı olarak veri iletimi gerçekleştiren iki cihaz türü de doğru olarak verilmiştir?",
+    "options": {
+      "A": "Anahtar, göbek",
+      "B": "Köprü, anahtar",
+      "C": "Köprü, göbek",
+      "D": "Tekrarlayıcı, anahtar",
+      "E": "Tekrarlayıcı, göbek"
+    },
+    "correctAnswer": "B",
+    "explanation": "MAC (Media Access Control) adresi, OSI modelinin 2. katmanında (Veri Bağı Katmanı) kullanılan fiziksel donanım adresidir ve her ağ arayüz kartına üretici tarafından kalıcı olarak atanır. Köprü (Bridge) ve Anahtar (Switch), MAC adres tablolarını okuyarak veri çerçevelerini yalnızca hedef cihaza yönlendiren katman-2 cihazlarıdır. Köprü genellikle iki ağ segmentini birbirinden ayırırken, anahtar çok sayıda portu olan ve her porta bağlı cihazın MAC adresini öğrenip tabloya kaydeden daha gelişmiş bir cihazdır. Göbek (Hub) ise MAC adresi okumaz; gelen veriyi tüm portlara eşit şekilde dağıtan katman-1 cihazıdır. Tekrarlayıcı (Repeater) da katman-1 cihazı olup yalnızca sinyali yeniden üretir ve güçlendirir; MAC adresiyle ilgilenmez.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b7dd3534f821",
+    "unitNumber": 9,
+    "text": "I. Geniş Alan Ağı (WAN) II. Şehirsel Alan Ağı (MAN) III. Kişisel Alan Ağı (PAN) Yukarıdaki ağ türlerinden hangisi/hangileri farklı binalar arasında iletişim kurma amacıyla kullanılabilir?",
+    "options": {
+      "A": "I ve II",
+      "B": "I ve III",
+      "C": "Yalnız II",
+      "D": "Yalnız III",
+      "E": "II ve III"
+    },
+    "correctAnswer": "A",
+    "explanation": "Farklı binalar arasında iletişim kurabilmek için ağın en az bina ölçeğini aşan bir kapsama sahip olması gerekir. WAN (Geniş Alan Ağı) ülkeler ve kıtalar arasında çalışır; elbette binalar arasını da kapsar. MAN (Şehirsel Alan Ağı), bir şehir içindeki farklı konumlardaki binaları birbirine bağlamak için tasarlanmıştır; metro fiber altyapıları ve şehir genelindeki kurumsal ağlar buna örnektir. PAN (Kişisel Alan Ağı) ise maksimum birkaç metre ile sınırlıdır; bireysel cihazlar arasında (telefon, kulaklık, akıllı saat gibi) iletişim sağlar ve binalar arası iletişim için kesinlikle yetersizdir. Bu nedenle WAN ve MAN (I ve II) doğru yanıttır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3d9fac605cb4",
+    "unitNumber": 10,
+    "text": "Bir yerleşke içerisinde laboratuvarlar yer almaktadır. Laboratuvarların her biri için ayrı birer ağ oluşturulmak istenmektedir. Aynı zamanda yerleşke içerisinde tüm kullanıcılara hizmet verecek ve yerleşke içerisinde yer alan laboratuvarları birbirine bağlayacak kapsayıcı bir ağ da kurulacaktır. Yukarıda yer alan senaryo için aşağıdaki seçeneklerin hangisinde en uygun iki ağ türünün ikisi de doğru olarak verilmiştir?",
+    "options": {
+      "A": "CAN, WAN",
+      "B": "WAN, MAN",
+      "C": "PAN, MAN",
+      "D": "CAN, LAN",
+      "E": "PAN, LAN"
+    },
+    "correctAnswer": "D",
+    "explanation": "Bu senaryoda iki katmanlı bir ağ yapısı söz konusudur. Her laboratuvar kendi iç ağına ihtiyaç duyar; bu ağ, tek bir mekânı kapsayan LAN (Local Area Network — Yerel Alan Ağı) olarak tanımlanır. Tüm kampüsü kapsayan ve laboratuvar LAN’larını birbirine bağlayan üst katman ağ ise CAN (Campus Area Network — Yerleşke Alan Ağı) olarak isimlendirilir. WAN ülkeler ve kıtalar arası büyük ölçekli ağlar, MAN bir şehrin tamamı, PAN birkaç metrelik kişisel alan için kullanılır; bunların hiçbiri kampüs içi senaryo için uygun değildir. CAN LAN kombinasyonu hem ölçek hem de işlev açısından bu senaryoya tam uymaktadır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-73c5cdd826f3",
+    "unitNumber": 11,
+    "text": "Aşağıdakilerden hangisi standart ortaya koyan bir kuruluştur?",
+    "options": {
+      "A": "Bluetooth",
+      "B": "INSA",
+      "C": "ANSI",
+      "D": "WiFi",
+      "E": "NIC"
+    },
+    "correctAnswer": "C",
+    "explanation": "ANSI (American National Standards Institute — Amerikan Ulusal Standartlar Enstitüsü), ABD’de gönüllü fikir birliğine dayalı standartları koordine eden ve onaylayan resmi bir kuruluştur. Ağ ve iletişim alanında pek çok standardın geliştirilmesine katkı sağlar. Bluetooth bir kablosuz iletişim teknolojisidir; standartları IEEE 802.15 ile belirlenir. WiFi de bir teknolojidir; standartları IEEE 802.11 serisiyle tanımlanır. NIC (Network Interface Card) bir donanım bileşenidir, standart belirleyen bir kuruluş değildir. INSA ise uluslararası alanda tanınan bir standart kuruluşu değildir. Diğer önemli standart kuruluşları arasında IEEE, ISO, ITU ve IETF sayılabilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-71e3edbd9ef9",
+    "unitNumber": 12,
+    "text": "Aşağıdakilerden hangisi yıldız topolojisinin avantajlarından biridir?",
+    "options": {
+      "A": "Ağda yer alan tüm cihazlara ait veriler ortak yoldan iletilir.",
+      "B": "Ağda aynı anda yalnızca üç cihaz veri gönderip alabilir.",
+      "C": "Ağda yer alan tüm cihazlar birbirlerinin gönderdikleri verileri görebilir.",
+      "D": "Merkez harici bir yerde meydana gelecek arıza ağı etkilemez, ağda iletişim devam eder.",
+      "E": "Ağda aynı anda yalnızca tek bir cihaz veri gönderip alabilir."
+    },
+    "correctAnswer": "D",
+    "explanation": "Yıldız topolojisinin en belirgin avantajı hata izolasyonudur: merkez dışındaki herhangi bir cihazda veya kablosunda meydana gelen arıza yalnızca o cihazı etkiler, ağın geri kalanı sorunsuz çalışmaya devam eder. Bu özellik hata tespitini ve gidermeyi de kolaylaştırır. A seçeneği bus topolojisini, C seçeneği hub tabanlı yapıyı, E seçeneği halka veya bus topolojisini tanımlamaktadır. B seçeneği ise herhangi bir standart topoloji özelliği değildir. Yıldız topolojisinin dezavantajı merkez cihazın (switch/hub) arızalanması halinde tüm ağın çökmesidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0f730dff1d77",
+    "unitNumber": 13,
+    "text": "Bir şehir içerisinde yer alan tüm kişilerin hizmet alabileceği bir ağ oluşturulmak istenmektedir. Şehir içerisinde yer alan belediye binaları içerisine de ayrı birer özel ağ yapısı oluşturulmak istenmektedir. Yukarıda yer alan senaryo içerisinde hangi ağ türleri yer alabilir/almaktadır?",
+    "options": {
+      "A": "MAN, PAN",
+      "B": "MAN, LAN",
+      "C": "MAN, SAN",
+      "D": "TAN, SAN",
+      "E": "MAN, WAN"
+    },
+    "correctAnswer": "B",
+    "explanation": "Bu senaryoda iki katmanlı yapı söz konusudur. Şehrin tamamına hizmet eden büyük ağ MAN (Metropolitan Area Network — Şehirsel Alan Ağı) olarak tanımlanır; bir şehrin tüm bölgelerini kapsayan altyapıyı temsil eder. Her belediye binasının kendi içindeki özel ağı ise LAN (Local Area Network — Yerel Alan Ağı) olarak sınıflandırılır; tek bir bina veya katta çalışan sınırlı kapsamlı ağdır. PAN birkaç metrelik kişisel alan, WAN ülkeler ve kıtalar arası, SAN (Storage Area Network) depolama odaklı özel ağ, TAN ise standart bir ağ türü değildir. MAN LAN kombinasyonu bu senaryo için en doğru ve ölçek uyumlu cevaptır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-97a521f2b54c",
+    "unitNumber": 14,
+    "text": "“Ağda aynı anda yalnızca tek bir kullanıcının iletişim yapabilmesi istenmektedir. Taşınan verilerin komşu cihazlar üzerinden gönderilmesi istenmekte ve yüksek kurulum maliyeti istenmemektedir.” Yukarıdaki senaryo için seçeneklerde yer alan hangi topoloji türü en yüksek faydayı sağlar?",
+    "options": {
+      "A": "Ortak yol topolojisi (bus topology)",
+      "B": "Yıldız topoloji (star topology)",
+      "C": "Halka topoloji (ring topology)",
+      "D": "Ağaç topoloji (tree topology)",
+      "E": "Örgü topoloji (mesh topology)"
+    },
+    "correctAnswer": "C",
+    "explanation": "Halka topolojisi bu senaryonun üç kriterini de en iyi karşılayan yapıdır. Tek kullanıcılı iletişim: Halka topolojisinde token (jeton) mekanizması kullanılır; yalnızca tokena sahip cihaz veri gönderebilir, böylece aynı anda tek kullanıcı iletişim kurar. Komşu cihazlar üzerinden aktarım: Veri halkada bir cihazdan komşu cihaza aktarılarak hedefe ulaşır; doğrudan bağlantı yoktur. Düşük kurulum maliyeti: Halka topolojisi, yıldız veya örgü topolojisine kıyasla çok daha az kablo ve donanım gerektirir. Bus topolojisinde de tek kullanıcı iletişim kurar; ancak veri komşu üzerinden değil, ortak iletim hattı üzerinden tüm cihazlara ulaşır. Örgü topolojisi son derece yüksek maliyetlidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6240290fa5ae",
+    "unitNumber": 15,
+    "text": "Geçityolu (gateway) cihazları hakkında aşağıda yer alan açıklamalardan hangisi doğrudur?",
+    "options": {
+      "A": "Farklı teknolojiye sahip ağları birbirlerine bağlarlar.",
+      "B": "Aynı teknolojiye sahip en fazla dört ağı birbirine bağlarlar.",
+      "C": "Aynı teknolojiye sahip en fazla üç ağı birbirine bağlarlar.",
+      "D": "Aynı teknolojiye sahip en fazla iki ağı birbirine bağlarlar.",
+      "E": "Yalnızca aynı teknolojiye sahip ağları birbirine bağlamak için kullanılırlar."
+    },
+    "correctAnswer": "A",
+    "explanation": "Gateway (geçityolu/ağ geçidi), OSI modelinin tüm katmanlarında çalışabilen ve farklı protokollere, teknolojilere veya mimarilere sahip ağları birbirine bağlayan bir cihazdır. Temel işlevi protokol dönüşümüdür: örneğin bir IPv4 ağını IPv6 ağına bağlamak, bir LAN’ı internet üzerinden WAN’a bağlamak veya farklı iletişim protokollerini kullanan iki sistemi entegre etmek gateway’in tipik kullanım alanlarıdır. “Aynı teknolojiye sahip ağları bağlar” veya “en fazla X ağ bağlar” gibi ifadelerin tamamı yanlıştır; gateway sayı kısıtlaması olmaksızın farklı teknolojileri bir araya getirir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4969e916c728",
+    "unitNumber": 16,
+    "text": "Aşağıda yer alanlardan hangisi bir topoloji türü değildir?",
+    "options": {
+      "A": "Örgü topoloji (mesh topology)",
+      "B": "Halka topoloji (ring topology)",
+      "C": "Yıldız topolojisi (star topology)",
+      "D": "Ortak yol topolojisi (bus topology)",
+      "E": "Genişletilmiş halka topolojisi (extended ring topology)"
+    },
+    "correctAnswer": "E",
+    "explanation": "Standart ağ topolojisi sınıflandırmasında tanımlı olan türler şunlardır: Bus (Ortak Yol), Ring (Halka), Star (Yıldız), Mesh (Örgü) ve Tree (Ağaç) topolojileri. “Genişletilmiş Halka Topolojisi (Extended Ring Topology)” ise bilgisayar ağları literatüründe standart olarak tanımlanmış ve adlandırılmış bir topoloji türü değildir. Bu terim muhtemelen halka veya çift halka (dual ring) topolojisiyle karıştırılmak üzere oluşturulmuş yanıltıcı bir seçenektir. Çift halka topolojisi (FDDI gibi) gerçek olmakla birlikte “genişletilmiş halka” terimi standartta yer almaz.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d121fe5f908d",
+    "unitNumber": 17,
+    "text": "Herhangi bir zaman diliminde başarılı bir biçimde taşınabilen veri miktarına …….. denir. Yukarıda boş bırakılan yere aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "veri başarımı",
+      "B": "taşma oranı",
+      "C": "verim çerçevesi",
+      "D": "taşma çerçevesi",
+      "E": "verim oranı"
+    },
+    "correctAnswer": "E",
+    "explanation": "Verim oranı (throughput), belirli bir süre içinde başarıyla iletilen net veri miktarını ifade eder ve bps, Mbps veya Gbps cinsinden ölçülür. Bant genişliği (bandwidth) teorik maksimum kapasiteyi belirtirken; throughput gerçek kullanım koşullarında elde edilen fiili veriyi yansıtır. Paket kayıpları, ağ yükü (congestion), protokol ek yükü (overhead) ve yeniden iletimler throughput’u bant genişliğinin altına düşürür. Veri başarımı, taşma oranı, verim çerçevesi ve taşma çerçevesi bu sorudaki tanımla örtüşmeyen ya da standart ağ terminolojisinde yer almayan ifadelerdir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-75bc093312a9",
+    "unitNumber": 18,
+    "text": "Ölçeklerine göre bilgisayar ağları düşünüldüğünde aşağıdakilerden hangisi bir ağ türü değildir?",
+    "options": {
+      "A": "Şehirsel Alan Ağı",
+      "B": "Yerel Alan Ağı",
+      "C": "Kişisel Alan Ağı",
+      "D": "Geniş Alan Ağı",
+      "E": "Hücresel Alan Ağı"
+    },
+    "correctAnswer": "E",
+    "explanation": "Bilgisayar ağlarının ölçeğe göre standart sınıflandırması şunlardır: PAN (Personal Area Network — Kişisel Alan Ağı), LAN (Local Area Network — Yerel Alan Ağı), CAN (Campus Area Network — Yerleşke Alan Ağı), MAN (Metropolitan Area Network — Şehirsel Alan Ağı) ve WAN (Wide Area Network — Geniş Alan Ağı). “Hücresel Alan Ağı” bu sınıflandırmada yer almaz. Hücresel ağ (Cellular Network) kavramı; GSM, LTE, 5G gibi mobil telefon iletişim altyapısını tanımlayan bir terimdir ve bilgisayar ağı ölçek sınıflandırması kategorisi değildir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-47e7474dcb48",
+    "unitNumber": 19,
+    "text": "Bir sinyalin bulunduğu ortam boyunca hareket etmesi için gereken minimum süreye …….. denir. Yukarıda boş bırakılan yere aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "yayın penceresi",
+      "B": "yayılım gecikmesi",
+      "C": "yayma penceresi",
+      "D": "yayma yaşam süresi",
+      "E": "yayın gecikmesi"
+    },
+    "correctAnswer": "B",
+    "explanation": "Yayılım gecikmesi (propagation delay), bir sinyalin fiziksel ortamda bir noktadan diğerine ulaşması için geçen süredir. Formül: Yayılım Gecikmesi = Mesafe / Sinyal Hızı. Bakır kabloda sinyal ışık hızının yaklaşık `-70’i hızında ilerlerken, fiber optik kabloda ışık hızına çok daha yakın ilerler. Yayım gecikmesi (transmission delay) ile karıştırılmamalıdır: yayım gecikmesi, veri bloğunun tamamının iletim hattına yerleştirilmesi için geçen süredir ve Veri Boyutu / Bant Genişliği formülüyle hesaplanır. Yayın penceresi, yayma penceresi, yayma yaşam süresi ve yayın gecikmesi bu sorudaki tanımla örtüşmeyen terimlerdir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-207bb146538e",
+    "unitNumber": 20,
+    "text": "Aşağıdaki şıklardan hangisinde protokol ve standart ilişkisi hakkında yapılan açıklama doğrudur?",
+    "options": {
+      "A": "Bir protokolün standart olarak kabul edilebilmesi için en az 10 yıl kullanılmış olması gerekir.",
+      "B": "Bir protokol standart haline gelemez.",
+      "C": "Protokoller ve standartlar farklı kuruluşlar tarafından geliştirilir.",
+      "D": "Standartlar, protokollerden farklı olarak geniş kabul görmüş resmileştirilmişlerdir.",
+      "E": "Bir standardın protokol olarak kabul edilebilmesi için en az 10 yıl kullanılmış olması gerekir."
+    },
+    "correctAnswer": "D",
+    "explanation": "Protokol, iki veya daha fazla cihaz arasındaki iletişimi düzenleyen kural ve prosedürler bütünüdür (TCP/IP, HTTP, FTP gibi). Standart ise resmi bir kuruluş (ANSI, IEEE, ISO vb.) tarafından onaylanmış, geniş çapta kabul görmüş ve yayımlanmış teknik belgedir. Her protokol standart değildir; ancak yaygın kabul gören ve resmi kuruluşlarca onaylanan protokoller standart haline gelebilir. “10 yıl kullanılma” koşulu veya “protokol standart olamaz” ifadeleri tamamen hatalıdır. Protokoller ve standartlar aynı kuruluşlar tarafından da geliştirilebilir; farklı kuruluş şartı yoktur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-15b739ba4bb8",
+    "unitNumber": 21,
+    "text": "Ortam erişim kontrolü (MAC) protokolleri kaça ayrılmaktadır?",
+    "options": {
+      "A": "6",
+      "B": "5",
+      "C": "3",
+      "D": "4",
+      "E": "2"
+    },
+    "correctAnswer": "C",
+    "explanation": "Veri Bağı katmanının alt katmanı olan MAC (Ortam Erişim Kontrolü / Media Access Control) protokolleri; çoklu cihazın aynı kabloya veya ortak hava ortamına çakışma olmadan nasıl erişeceğini düzenler. Bu protokoller ağın yapısına göre: 1) Rastgele Erişim (Random Access – CSMA/CD gibi), 2) Kontrollü Erişim (Controlled Access – Token Passing gibi) ve 3) Kanallama (Channelization – TDMA/FDMA/CDMA gibi) olmak üzere temel olarak “3” ana kategoriye ayrılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-2d963d71e1db",
+    "unitNumber": 22,
+    "text": "TCP/IP referans modeli katman adedi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "8",
+      "B": "2",
+      "C": "7",
+      "D": "5",
+      "E": "6"
+    },
+    "correctAnswer": "D",
+    "explanation": "Orijinal TCP/IP (DoD) modeli 4 katmanlı (Uygulama, Taşıma, İnternet, Ağ Erişimi) olarak tasarlanmış olsa da; günümüz modern ağ mühendisliği eğitiminde ve akademik standartlarda (örneğin Kurose/Ross ağ modellerinde) TCP/IP ile OSI modelinin harmanlanmasıyla; Uygulama, Taşıma, Ağ, Veri Bağı ve Fiziksel olmak üzere “5” katmanlı bir referans (hibrit) TCP/IP modeli standart olarak kabul edilmektedir. (7 katmanlı olan OSI modelidir).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5ca23f8d784f",
+    "unitNumber": 23,
+    "text": "Taşıma katmanı protokollerinden biri olan UDP (User Datagram Protocol) ile ilgili aşağıda verilen ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Bağlantı yönelimli (connection-oriented) bir protokoldür.",
+      "B": "Verilerin hedefe eksiksiz ve sırasıyla ulaşmasını garanti eder.",
+      "C": "Veri kaybı durumunda paketleri otomatik olarak tekrar gönderir.",
+      "D": "TCP'ye göre çok daha karmaşık bir başlık yapısına sahiptir.",
+      "E": "Bağlantısız (connectionless) çalışır ve veri iletiminde güvenilirlik garantisi sunmaz ancak hızlıdır."
+    },
+    "correctAnswer": "E",
+    "explanation": "UDP, TCP’nin aksine veri iletiminden önce bir 3-yollu el sıkışma veya oturum kurmaz (bağlantısızdır). Paketlerin karşı tarafa ulaşıp ulaşmadığını kontrol etmez veya sırasını denetlemez (ACK mekanizması yoktur). Bu nedenle ağ mühendisliğinde “güvenilmez” olarak nitelendirilir ancak bu hata denetim mekanizmalarının olmaması başlık boyutunu küçültür ve onu TCP’den çok daha hızlı ve gecikmesiz (real-time) bir protokol yapar. Özellikle canlı video yayınlarında ve online oyunlarda tercih edilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a83f4aeaea49",
+    "unitNumber": 24,
+    "text": "TCP protokolünde iki cihaz arasında güvenilir bir iletişim oturumu kurulurken gerçekleştirilen 3-Yollu El Sıkışma (3-Way Handshake) sürecinin doğru sıralaması aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "ACK &rarr; SYN &rarr; SYN-ACK",
+      "B": "SYN &rarr; ACK &rarr; FIN",
+      "C": "SYN &rarr; SYN-ACK &rarr; ACK",
+      "D": "FIN &rarr; ACK &rarr; SYN",
+      "E": "SYN-ACK &rarr; SYN &rarr; ACK"
+    },
+    "correctAnswer": "C",
+    "explanation": "TCP’de veri aktarımı öncesinde bağlantı kurulumu 3 ardışık adımda gerçekleşir. Önce istemci sunucuya bağlantı kurmak istediğini belirten ‘SYN’ (Synchronize) paketi gönderir. Sunucu bu talebi aldığını ve kabul ettiğini bildirmek için hem onay hem de kendi senkronizasyon talebi olan ‘SYN-ACK’ (Senkronize-Onay) paketiyle döner. Son olarak istemci, sunucunun paketini aldığını onaylayan ‘ACK’ (Acknowledgment) paketini yollar ve güvenilir iletişim başlar.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-eed733e13dc9",
+    "unitNumber": 25,
+    "text": "Katmanlı mimari yapı içerisinde veri, hangi katmanda veri (data) olarak anılmaktadır?",
+    "options": {
+      "A": "Oturum katmanı",
+      "B": "Veri bağı katmanı",
+      "C": "Taşıma katmanı",
+      "D": "Ağ katmanı",
+      "E": "Fiziksel katman"
+    },
+    "correctAnswer": "A",
+    "explanation": "OSI modelinin üst katmanları (Uygulama, Sunum ve Oturum) veriyi doğrudan “Data/Veri” (veya mesaj) PDU’su (Protokol Veri Birimi) olarak işler. Alt katmanlara inildikçe verinin yapısı ve ismi değişir: Taşıma katmanında segment, ağ katmanında paket, veri bağı katmanında çerçeve (frame) ve fiziksel katmanda ise bit adını alır. Bu nedenle verinin saf “veri” olarak anıldığı katman Oturum katmanıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ac33c2e63fa8",
+    "unitNumber": 26,
+    "text": "Aşağıdakilerden hangisi anahtarlama ile ilgilidir?",
+    "options": {
+      "A": "Verinin işlenme biçimi",
+      "B": "Verinin iletim biçimi",
+      "C": "Verinin alınma biçimi",
+      "D": "Verinin şifrelenme biçimi",
+      "E": "Verinin saklanma biçimi"
+    },
+    "correctAnswer": "B",
+    "explanation": "Bilgisayar ve telekomünikasyon ağlarında “Anahtarlama” (Switching), verinin (veya sesin) kaynak cihazdan hedef cihaza giderken hangi yollardan geçeceğini, ara düğümlerde (switch/router gibi santrallerde) nasıl yönlendirileceğini ve iletişim hatlarının nasıl paylaşılacağını belirleyen “Verinin İletim Biçimi” ile doğrudan ilgili olan temel ve fiziksel bir ağ tasarım konseptidir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c32857ee4343",
+    "unitNumber": 27,
+    "text": "Göbek (hub) cihazları bir bilgisayar ağı içerisinde yer alan bilgisayarlara ….. yol sunarlar. Yukarıdaki cümlede boş bırakılan yere aşağıdakilerden hangisi getirilmelidir?",
+    "options": {
+      "A": "kontrollü",
+      "B": "denetimli",
+      "C": "paylaşımlı",
+      "D": "sağlamalı",
+      "E": "korumalı"
+    },
+    "correctAnswer": "C",
+    "explanation": "Ağ donanımlarından Göbek (Hub) cihazları, OSI modelinin 1. katmanında çalışan cihazlardır. Switch (anahtar) cihazları gibi veriyi sadece hedefe yönlendirmezler. Hub’lar bir porttan gelen veriyi, kime ait olduğuna bakmaksızın cihazdaki tüm portlara çoğaltarak yayınlarlar. Bu nedenle ağdaki tüm bilgisayarlar aynı çarpışma etki alanını (collision domain) kullanır, yani hub’lar bilgisayarlara özel ve bağımsız değil, herkesin trafiğini gördüğü “paylaşımlı” (shared) bir yol sunarlar.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d17ce93ff5e6",
+    "unitNumber": 28,
+    "text": "Aşağıdakilerden hangisi OSI referans modeli uygulama katmanında çalışan protokollerden biridir?",
+    "options": {
+      "A": "IP",
+      "B": "FTP",
+      "C": "UDP",
+      "D": "TCP",
+      "E": "Ethernet"
+    },
+    "correctAnswer": "B",
+    "explanation": "OSI referans modelinin en üstünde yer alan Uygulama katmanı (Application layer), son kullanıcıya (tarayıcılar, mail istemcileri vb.) doğrudan hizmet sunan protokolleri barındırır. Web sayfaları için HTTP, e-postalar için SMTP, alan adı çözümü için DNS ve dosyaları internet üzerinden aktarmak için kullanılan “FTP” (File Transfer Protocol) bu katmanda çalışır. (IP ağ katmanında, TCP ve UDP taşıma katmanındadır).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c303a9910555",
+    "unitNumber": 29,
+    "text": "……….bilgisayar ağlarında etkileşimde bulunmak isteyen cihazların kendi aralarında kullandıkları kurallardır. Yukarıda verilen cümlede boş bırakılan yere aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Modeller",
+      "B": "Protokoller",
+      "C": "Referanslar",
+      "D": "Anlaşmalar",
+      "E": "Uzlaşılar"
+    },
+    "correctAnswer": "B",
+    "explanation": "Farklı dilleri konuşan insanların anlaşabilmesi için ortak bir dile ihtiyaç duyması gibi; farklı işletim sistemlerine (Windows, Mac, Linux) ve farklı donanımlara sahip cihazların ağ üzerinde iletişim kurması, veriyi hata yapmadan aktarabilmesi ve birbirini anlayabilmesi için uymaları gereken evrensel kural dizilerine ve donanımsal standartlar bütününe bilgisayar biliminde “Protokoller” (Protocols) adı verilir (HTTP, TCP, IP gibi).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5314ee2c3213",
+    "unitNumber": 30,
+    "text": "Aşağıdakilerden hangisi IPv4 paket yapısı içerisinde yer alan alanlardan biridir?",
+    "options": {
+      "A": "Time to receive: Alınma süresi",
+      "B": "Time to attach: Bağlanma süresi",
+      "C": "Time to order: Sıralama süresi",
+      "D": "Time to acknowledge: Onaylanma süresi",
+      "E": "Time to live: Yaşam süresi"
+    },
+    "correctAnswer": "E",
+    "explanation": "IPv4 paket başlığında (header), bir veri paketinin ağdaki yönlendirme hataları yüzünden sonsuza kadar dolaşmasını (loop/döngü) engellemek amacıyla bir sayaç alanı bulunur. Her yönlendiricide (router) üzerinden geçerken değeri 1 azaltılan bu sayaç sıfıra ulaştığında paket derhal yok edilir. Ağdaki bu kritik güvenlik sayacına “Time to Live” (TTL – Yaşam Süresi) adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e2cd3b365b32",
+    "unitNumber": 31,
+    "text": "OSI Referans Modeli’nde paketlerin (packet) bir ağdan diğerine yönlendirilmesini (routing) sağlayan ve IP (Internet Protocol) adreslemesinin yapıldığı katman aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Veri Bağı Katmanı",
+      "B": "Ağ Katmanı",
+      "C": "Taşıma Katmanı",
+      "D": "Uygulama Katmanı",
+      "E": "Fiziksel Katman"
+    },
+    "correctAnswer": "B",
+    "explanation": "OSI modelinin 3. katmanı olan Ağ Katmanı (Network Layer), farklı ağlar (örneğin evinizdeki ağ ile YouTube sunucusunun bulunduğu ağ) arasındaki iletişimi sağlar. Cihazlara mantıksal IP adresleri atanması, paketlerin en uygun yol seçilerek (routing işlemi yapılarak) hedef ağa ulaştırılması doğrudan bu katmanın ve router (yönlendirici) cihazlarının asli görevidir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-2c071d470a8b",
+    "unitNumber": 32,
+    "text": "Aşağıdakilerden hangisi TCP ve UDP segment biçimlerinde ortak olarak yer almaktadır?",
+    "options": {
+      "A": "checksum: sağlama",
+      "B": "hop limit: atlama limiti",
+      "C": "receive number: alınan pencere boyutu",
+      "D": "urg data pointer: acil veri işaretçisi",
+      "E": "time to live: yaşam süresi"
+    },
+    "correctAnswer": "A",
+    "explanation": "Taşıma katmanında çalışan TCP (güvenilir) ve UDP (hızlı ama güvenilmez) protokollerinin başlık (header) yapıları birbirinden farklıdır. Ancak, her iki protokolün başlığında da verinin taşıma sırasında bozulup bozulmadığını kontrol etmeye yarayan, veri bütünlüğünü matematiksel bir özetle test eden “Checksum (Sağlama)” alanı zorunlu ve ortak olarak yer almaktadır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-67a1f4502505",
+    "unitNumber": 33,
+    "text": "Aşağıdakilerden hangisi paylaşımlı bir hat kullanımına dayanan anahtarlama türüdür?",
+    "options": {
+      "A": "Örgü anahtarlama",
+      "B": "Sabit anahtarlama",
+      "C": "Devre anahtarlama",
+      "D": "Parça anahtarlama",
+      "E": "Paket anahtarlama"
+    },
+    "correctAnswer": "E",
+    "explanation": "Geleneksel telefon hatlarındaki gibi iletişimin başından sonuna kadar arayan ve aranan arasında özel, tahsis edilmiş ve başkasının giremediği bir yol kullanılıyorsa buna “Devre Anahtarlama” denir. İnternetin temelini oluşturan, verinin küçük parçalara (paketlere) bölündüğü ve her paketin ağdaki ortak, “paylaşımlı” yolları (bant genişliğini) diğer kullanıcılarla birlikte rekabet halinde kullanarak hedefe ulaştığı esnek anahtarlama türüne ise “Paket Anahtarlama” (Packet Switching) denir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4dc8ba41b6f1",
+    "unitNumber": 34,
+    "text": "OSI modelinin en alt katmanı olan ve verilerin 1 ve 0’lar (bitler) halinde elektrik, ışık veya radyo dalgalarına dönüştürülerek kablo veya hava ortamında aktarıldığı katman hangisidir?",
+    "options": {
+      "A": "Taşıma Katmanı",
+      "B": "Fiziksel Katman",
+      "C": "Sunum Katmanı",
+      "D": "Ağ Katmanı",
+      "E": "Oturum Katmanı"
+    },
+    "correctAnswer": "B",
+    "explanation": "Fiziksel Katman (Physical Layer), yedi katmanlı OSI modelinin 1. (en alt) katmanıdır. Doğrudan donanımlarla, kablo tipleriyle, voltaj seviyeleriyle ve sinyal türleriyle ilgilenir. Üst katmanlardan (yazılımdan) gelen bit (0 ve 1) dizilerini alıp, fiziksel taşıma ortamına aktarmak bu katmanın asli görevidir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5f65beb009f6",
+    "unitNumber": 35,
+    "text": "Bir segment içerisinde S bitinin 1 olması ne anlama gelmektedir?",
+    "options": {
+      "A": "İlgili verinin, veri iletimini durdurma amacıyla gönderildiği",
+      "B": "İlgili verinin, veri iletimini başlatma amacıyla gönderildiği",
+      "C": "İlgili verinin, veri alındığına dair onay amacıyla gönderildiği",
+      "D": "İlgili verinin, üç yollu el sıkışma amacıyla gönderildiği",
+      "E": "İlgili verinin, veri parçasının son verisi olduğu"
+    },
+    "correctAnswer": "B",
+    "explanation": "TCP (Transmission Control Protocol) başlığındaki kontrol bayraklarından (flags) biri olan S (SYN – Synchronize) bitinin ‘1’ olarak işaretlenmesi, bir ağ cihazının karşı taraftaki cihaza “seninle yeni bir güvenilir bağlantı (oturum) başlatmak istiyorum” mesajını ilettiği anlamına gelir. Üçlü el sıkışmanın ilk adımı olan “veri iletimini başlatma” (senkronizasyon kurma) talebidir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-3ecfb3fe43b6",
+    "unitNumber": 36,
+    "text": "Aşağıdakilerden hangisi kablolu yerel ağlar içerisinde en çok bilinen ağ teknolojilerini içermektedir?",
+    "options": {
+      "A": "Token Ring (Jetonlu Halka), Ethernet",
+      "B": "MAC, NIC",
+      "C": "Ethernet, IP",
+      "D": "Ethernet, MAC",
+      "E": "Token Ring (Jetonlu Halka), NIC"
+    },
+    "correctAnswer": "A",
+    "explanation": "Yerel Alan Ağlarında (LAN – Local Area Network) tarihsel ve pratik olarak kablolu bağlantı standartlarını belirleyen iki dominant teknoloji bulunmaktadır. These are; günümüzde de evlerde ve ofislerde evrensel standart olarak kullanılan IEEE 802.3 standardı olan “Ethernet” ve geçmişte özellikle IBM tarafından geliştirilip kullanılan IEEE 802.5 standardı “Token Ring” (Jetonlu Halka) teknolojileridir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4a459db66245",
+    "unitNumber": 37,
+    "text": "Aşağıda yer alanlardan hangisi on altılık biçim kullanılarak adres bilgisi tanımlayan protokoldür?",
+    "options": {
+      "A": "IPv3",
+      "B": "IPv7",
+      "C": "IPv4",
+      "D": "IPv5",
+      "E": "IPv6"
+    },
+    "correctAnswer": "E",
+    "explanation": "İnternet protokollerinin eski versiyonu olan IPv4 adresleri 32 bit uzunluğunda olup (192.168.1.1 gibi) ondalık (decimal) sayılarla ifade edilir. Ancak internete bağlanan cihaz sayısının artmasıyla IPv4 adresleri tükenmiş ve yerine geliştirilen güncel protokol olan IPv6 devreye girmiştir. IPv6, 128 bit uzunluğunda devasa bir adres uzayına sahiptir ve “on altılık” (hexadecimal) sayı sistemi (örneğin fe80::1) kullanılarak ifade edilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-99401d9779b6",
+    "unitNumber": 38,
+    "text": "Aşağıdakilerden hangisi veri bağı katmanının görevlerindendir?",
+    "options": {
+      "A": "Verilerin sıkıştırılması",
+      "B": "Verilerin yeniden boyutlandırılması",
+      "C": "Akış kontrolü",
+      "D": "Veri şifreleme",
+      "E": "Şifrelenen verinin şifresinin çözülmesi"
+    },
+    "correctAnswer": "C",
+    "explanation": "OSI modelinin 2. katmanı olan Veri Bağı Katmanı’ның en temel görevleri; ağ katmanından gelen paketleri “çerçevelere” (frame) bölmek, ağ cihazları arasında fiziksel MAC adreslemesini yapmak, hata kontrolü sağlamak ve alıcı cihazın veri bombardımanı altında kalarak boğulmasını engellemek amacıyla gönderici ile alıcı arasındaki veri iletim hızını senkronize eden “Akış Kontrolü”nü (Flow Control) yönetmektir. (Şifreleme ve sıkıştırma işlemleri 6. Sunum Katmanının görevidir).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f061b29cd56f",
+    "unitNumber": 39,
+    "text": "Veri bağı katmanında aşağıdaki adreslerden hangisi tanımlıdır?",
+    "options": {
+      "A": "ATM",
+      "B": "Ethernet",
+      "C": "IPv4",
+      "D": "MAC",
+      "E": "IP"
+    },
+    "correctAnswer": "D",
+    "explanation": "Veri bağı (Data Link) katmanı, yerel ağdaki cihazların fiziksel adreslemesini ve çerçevelerin (frames) doğru cihaza teslim edilmesini sağlar. Bu adresleme işlemi, ağ arabirim kartlarına (NIC) üretici tarafından atanan, 48 bitlik “MAC (Media Access Control)” fiziksel adresleri ile gerçekleştirilir. IP adresleri ise bir üstte yer alan Ağ (Network) katmanının sorumluluğundadır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-59cc9331d20e",
+    "unitNumber": 40,
+    "text": "Aşağıda yer alan topolojilerden hangisi fazla güç tüketimi dezavantajına sahiptir?",
+    "options": {
+      "A": "Ortak yol topolojisi",
+      "B": "Halka topoloji",
+      "C": "Ağaç topoloji",
+      "D": "Örgü topoloji",
+      "E": "Yıldız topoloji"
+    },
+    "correctAnswer": "D",
+    "explanation": "Topoloji, cihazların birbirine nasıl bağlandığının fiziksel şemasıdır. “Örgü” (Mesh) topolojisinde ağdaki her bir cihaz, diğer tüm cihazlara ayrı ayrı ve doğrudan fiziksel bir kablo ile bağlıdır. Bu kadar fazla port, aktif donanım bağlantısı ve devasa kablo altyapısı kullanımı; kurulum maliyetini aşırı artırdığı gibi, tüm bu portların aktif tutulabilmesi için çok “fazla güç tüketimi” ve donanımsal yük gerektirmesi gibi büyük bir dezavantaja sahiptir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-42a211add253",
+    "unitNumber": 41,
+    "text": "Yerel ağlarda (LAN) cihazlarda dinamik olarak IP adresi, alt ağ maskesi ve varsayılan ağ geçidi gibi ağ yapılandırma bilgilerini otomatik olarak dağıtan protokol aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "DNS",
+      "B": "FTP",
+      "C": "SNMP",
+      "D": "DHCP",
+      "E": "SMTP"
+    },
+    "correctAnswer": "D",
+    "explanation": "DHCP (Dynamic Host Configuration Protocol), bir ağa bağlanan cihazlara manuel (elle) IP atama ve ağ geçidi girme zahmetini ortadan kaldıran sistemdir. Cihaz ağa katıldığında arka planda DHCP sunucusuyla konuşur ve IP havuzundan otomatik olarak kiralık, çakışmayan IP adresleri ve diğer hayati ağ parametrelerini anında almasını sağlayan çok kritik bir uygulama katmanı protokolüdür.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-eaa75f7139f3",
+    "unitNumber": 42,
+    "text": "Aşağıdakilerden hangisi HTTP protokolü cevap mesajları içerisinde yer alabilecek durum kodlarından biridir?",
+    "options": {
+      "A": "401 Not Found (Bulunamadı)",
+      "B": "403 Not Found (Bulunamadı)",
+      "C": "404 Not Found (Bulunamadı)",
+      "D": "402 Not Found (Bulunamadı)",
+      "E": "400 Not Found (Bulunamadı)"
+    },
+    "correctAnswer": "C",
+    "explanation": "İnternet tarayıclarında web sayfalarında gezinirken arka planda sunucu ile istemci arasında HTTP protokolü durum kodları (status codes) döner. İstemcinin girmeye çalıştığı bir sayfanın (kaynağın) sunucuda fiziksel olarak mevcut olmadığını, silindiğini veya URL bağlantısının yanlış yazıldığını belirten, internet kültürünün en meşhur HTTP hata (cevap) kodu “404 Not Found” (Bulunamadı) kodudur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a1ba2eaba758",
+    "unitNumber": 43,
+    "text": "OSI referans modelinin hangi katmanlarında güvenilirlik sunulmaktadır?",
+    "options": {
+      "A": "2,4",
+      "B": "2,3",
+      "C": "5,6",
+      "D": "4,5",
+      "E": "1,2"
+    },
+    "correctAnswer": "A",
+    "explanation": "Ağ mimarilerinde “Güvenilirlik” (verinin hatasız, kayıpsız, eksiksiz ve sırasıyla ulaşmasını garanti etme işlemi); iki farklı aşamada donanımsal ve yazılımsal olarak denetlenir. Birincisi, yerel ağda iki cihaz arasında “düğümden düğüme” (node-to-node) hata kontrolü yapan 2. Katman (Veri Bağı Katmanı – Data Link) ile; ikincisi, ağın geneli üzerinden yazılım bazında “uçtan uca” (end-to-end) hata ve sıra onayı (ACK) sunan 4. Katman (Taşıma Katmanı – Transport, özellikle TCP protokolü) tarafından sunulmaktadır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f509d2c73b7f",
+    "unitNumber": 45,
+    "text": "Gürültü ile ilgili aşağıda verilenlerden hangisi doğrudur?",
+    "options": {
+      "A": "Gürültü, yalnızca dijital sinyalin içerisine karışan, iletilmek istenen verinin en az 20ms gecikmesine sebep olan her tür etkidir.",
+      "B": "Gürültü iletilmek istenilen herhangi bir verinin içine karışan, iletilmek istenilen veri içerisinde olması istenmeyen her tür etkidir.",
+      "C": "Gürültü, yalnızca dijital sinyalin içerisine karışan, iletilmek istenen verinin en az 10ms gecikmesine sebep olan her tür etkidir.",
+      "D": "Gürültü iletilmek istenilen herhangi bir verinin içerisine karışan, iletilmek istenilen veri içerisinde olması istenmeyen her tür etkidir.",
+      "E": "Gürültü iletilmek istenilen herhangi bir verinin içine karışan, iletilmek istenen verinin en az 20ms gecikmesine sebep olan her tür etkidir."
+    },
+    "correctAnswer": "D",
+    "explanation": "**Gürültü (noise)**, iletişim sırasında sinyale karışan istenmeyen etkilerdir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-973cc53219da",
+    "unitNumber": 49,
+    "text": "MAC adresine dayalı olarak veri iletimi gerçekleştiren iki cihaz türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Köprü, göbek",
+      "B": "Tekrarlayıcı, anahtar",
+      "C": "Anahtar, göbek",
+      "D": "Tekrarlayıcı, göbek",
+      "E": "Köprü, anahtar"
+    },
+    "correctAnswer": "E",
+    "explanation": "**Anahtar (switch)** ve **köprü (bridge)**, MAC adresi bazlı veri iletimi yapar.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9eade375f71e",
+    "unitNumber": 50,
+    "text": "Aşağıda yer alan şıklardan hangisinde bulunan cihaz yalnızca verinin fiziksel olarak aktarımı ile ilgilenir?",
+    "options": {
+      "A": "Yönlendirici",
+      "B": "Göbek",
+      "C": "Geçityolu",
+      "D": "Anahtar",
+      "E": "Köprü"
+    },
+    "correctAnswer": "B",
+    "explanation": "Göbek (Hub), OSI modelinin 1. katmanında (Fiziksel Katman) çalışan basit bir ağ cihazıdır. Kendisine gelen sinyali güçlendirerek diğer tüm portlara aynen gönderir ve sadece verinin fiziksel aktarımıyla ilgilenir, adresleme veya yönlendirme yapmaz.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-849c549e114c",
+    "unitNumber": 51,
+    "text": "Bir yönlendirici içerisinde aşağıdakilerden hangisi yer alır?",
+    "options": {
+      "A": "Giriş bağlantı noktası",
+      "B": "Göbek",
+      "C": "Fiber optik kablo",
+      "D": "Geçit yolu",
+      "E": "Tekrarlayıcı"
+    },
+    "correctAnswer": "A",
+    "explanation": "Bir yönlendiricinin (router) temel bileşenleri arasında; paketlerin geldiği giriş bağlantı noktaları (input ports), paketlerin gönderildiği çıkış bağlantı noktaları, bir anahtarlama düzeneği ve bir yönlendirme işlemcisi bulunur.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b835a92e7cb4",
+    "unitNumber": 52,
+    "text": "Katmanlı mimari yapı içerisinde veri, aşağıdaki katmanlarım hangisinde çerçeve (frame) olarak anılmaktadır?",
+    "options": {
+      "A": "Sunum katmanı",
+      "B": "Fiziksel katman",
+      "C": "Veri bağı katmanı",
+      "D": "Oturum katmanı",
+      "E": "Taşıma katmanı"
+    },
+    "correctAnswer": "C",
+    "explanation": "OSI katmanlı mimarisinde, veri her katmanda farklı bir isim alır. Verinin, Ağ Katmanından gelen pakete başlık ve kuyruk bilgileri eklenerek oluşturulan haline Veri Bağı Katmanında (Layer 2) “çerçeve” (frame) denir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-dfbc87a6ecd7",
+    "unitNumber": 53,
+    "text": "Aşağıdakilerden hangisi itme prensibi ile çalışan uygulama katmanı protokolüdür?",
+    "options": {
+      "A": "FTP",
+      "B": "Telnet",
+      "C": "HTTP",
+      "D": "SMTP",
+      "E": "DNS"
+    },
+    "correctAnswer": "D",
+    "explanation": "E-posta göndermek için kullanılan SMTP (Simple Mail Transfer Protocol), istemcinin (gönderen bilgisayar) sunucuya doğru veriyi “itmesi” (push) prensibiyle çalışır. HTTP gibi protokoller ise genellikle istemcinin sunucudan veri “çekmesi” (pull) prensibine dayanır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a3bcaf61d942",
+    "unitNumber": 54,
+    "text": "Devre anahtarlamalı ağlarda veri aktarımı gerçekleştirme faz adedi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "2",
+      "B": "4",
+      "C": "3",
+      "D": "5",
+      "E": "1"
+    },
+    "correctAnswer": "C",
+    "explanation": "Devre anahtarlamalı ağlarda veri aktarımı üç temel fazda gerçekleşir: 1. Bağlantı Kurulması, 2. Veri Aktarımı, 3. Bağlantının Sona Erdirilmesi.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-9d90557cf78b",
+    "unitNumber": 55,
+    "text": "Aşağıdakilerden hangisi verinin uçtan uca taşınması için kullanılan protokol ikilisidir?",
+    "options": {
+      "A": "FTP, IP",
+      "B": "SMTP, HTTP",
+      "C": "MAC, SMTP",
+      "D": "SMTP, FTP",
+      "E": "TCP, UDP"
+    },
+    "correctAnswer": "E",
+    "explanation": "İnternet protokol takımında, verinin gönderici uygulamadan alıcı uygulamaya, yani uçtan uca taşınmasını sağlayan iki temel Taşıma Katmanı protokolü TCP (güvenilir) ve UDP’dir (güvenilir olmayan).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-9e98e81ccaa3",
+    "unitNumber": 56,
+    "text": "FTP protokolünün kullanım amacı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Alan adlarına karşılık gelen IP adreslerinin bulunması",
+      "B": "Uçtan uca bağlantı açılması",
+      "C": "Dosya aktarımı",
+      "D": "Web sayfalarının görüntülenmesi",
+      "E": "E-posta aktarımı"
+    },
+    "correctAnswer": "C",
+    "explanation": "FTP (File Transfer Protocol), bir bilgisayar ağında bulunan iki bilgisayar arasında dosya aktarımı yapmak için kullanılan standart bir protokoldür.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b6317ba45999",
+    "unitNumber": 57,
+    "text": "Aşağıda yer alan protokollerden hangisi taşıma katmanında çalışmaktadır?",
+    "options": {
+      "A": "TCP",
+      "B": "SMTP",
+      "C": "ICMP",
+      "D": "IP",
+      "E": "DNS"
+    },
+    "correctAnswer": "A",
+    "explanation": "OSI ve TCP/IP modellerinde, Taşıma Katmanının (Layer 4) temel görevi, uçtan uca güvenilir veya güvenilir olmayan veri iletimini sağlamaktır. Bu katmanda çalışan en temel protokol TCP’dir (Transmission Control Protocol).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-cbc857132e31",
+    "unitNumber": 58,
+    "text": "Ağ topolojisi aşağıdakilerden hangisini ifade eder?",
+    "options": {
+      "A": "Ağ içerisinde bulunan bilgisayarların ve cihazların sayısını",
+      "B": "Ağ içerisinde bulunan bilgisayarların işletim sistemini",
+      "C": "Ağ içerisinde bulunan bilgisayarların ve cihazların bağlanma biçimini",
+      "D": "Ağ içerisinde bulunan cihazların kablo türlerini",
+      "E": "Ağ içerisinde bulunan bilgisayarların ve cihazların konfigürasyonunu"
+    },
+    "correctAnswer": "C",
+    "explanation": "Ağ topolojisi, bir bilgisayar ağını oluşturan cihazların (bilgisayarlar, anahtarlar, yönlendiriciler vb.) fiziksel veya mantıksal olarak birbirlerine nasıl bağlandığını ve yerleştiğini ifade eder (Örn: Yıldız, Halka, Otobüs topolojisi).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5486a48b67df",
+    "unitNumber": 59,
+    "text": "Katmanlı mimari yapısı içerisinde verilerin yanına protokollerin gerektirdiği bilgiler eklenir. Bu bilgilerin adı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Ek (Attachment)",
+      "B": "Yük (payload)",
+      "C": "Veri (Data)",
+      "D": "Başlık (Header)",
+      "E": "Sağlama (Checksum)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Katmanlı mimarilerde, bir üst katmandan gelen veriye, her katmanın kendi protokolü tarafından çalışması için gereken kontrol bilgileri eklenir. Bu eklenen bilgiye “başlık” (header) denir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-14ca2c279b57",
+    "unitNumber": 60,
+    "text": "İnternet altyapısını yansıtan anahtarlama türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Parça anahtarlama",
+      "B": "Sabit anahtarlama",
+      "C": "Örgü anahtarlama",
+      "D": "Paket anahtarlama",
+      "E": "Devre anahtarlama"
+    },
+    "correctAnswer": "D",
+    "explanation": "İnternet, verileri küçük parçalara (paketlere) bölerek ve her bir paketi ağ üzerinde bağımsız olarak hedefe yönlendirerek çalışır. Bu yönteme “paket anahtarlama” denir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-54ceb0c66125",
+    "unitNumber": 61,
+    "text": "Aşağıdakilerden hangisi OSI referans modeli ağ katmanında çalışan protokollerden biridir?",
+    "options": {
+      "A": "TCP",
+      "B": "DNS",
+      "C": "MAC",
+      "D": "ICMP",
+      "E": "FTP"
+    },
+    "correctAnswer": "D",
+    "explanation": "OSI modelinin Ağ Katmanında (Layer 3), ağdaki cihazlar arasında hata mesajları ve operasyonel bilgiler göndermek için kullanılan temel protokollerden biri ICMP’dir (Internet Control Message Protocol). TCP Taşıma, DNS ve FTP Uygulama, MAC ise Veri Bağı katmanında çalışır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a2c2fc044ac9",
+    "unitNumber": 62,
+    "text": "Bir segment içerisinde R bitinin 1 olması ne anlama gelmektedir?",
+    "options": {
+      "A": "İlgili verinin, veri parçasının son verisi olduğu anlamına gelmektedir.",
+      "B": "İlgili verinin, veri alındığına dair onay amacıyla gönderildiği anlamına gelmektedir.",
+      "C": "İlgili verinin, ağda öncelikli olarak taşınması istendiği anlamına gelmektedir.",
+      "D": "İlgili verinin, üç yollu el sıkışma amacıyla gönderildiği anlamına gelmektedir.",
+      "E": "İlgili verinin, mevcut bağlantıyı sonlandırarak yeni bir bağlantı başlatmak amacıyla gönderildiği anlamına gelmektedir."
+    },
+    "correctAnswer": "E",
+    "explanation": "TCP başlığında yer alan R (RST – Reset) bitinin 1 olması, mevcut bağlantıda bir sorun olduğunu ve bu bağlantının derhal sonlandırılması gerektiğini bildirir. Bu, bağlantıyı sıfırlama talebidir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-3a560cd977dc",
+    "unitNumber": 63,
+    "text": "Bir verinin iletilmesinde, taşıma sisteminin performansı aşağıda yer alanlardan hangisine bağlı değildir?",
+    "options": {
+      "A": "Verim oranı",
+      "B": "Veri genişliği",
+      "C": "Bant genişliği",
+      "D": "Yayılım gecikmesi",
+      "E": "Fiziksel aktarım birimi (veri aktarılan sinyalin türü)"
+    },
+    "correctAnswer": "B",
+    "explanation": "Bir ağın performansı; saniyede taşınabilen veri miktarı (bant genişliği), gerçekte taşınan veri miktarı (verim oranı) ve verinin kaynaktan hedefe ulaşma süresi (gecikme) gibi faktörlere bağlıdır. “Veri genişliği” standart bir ağ performansı ölçütü değildir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-92f072a407f6",
+    "unitNumber": 64,
+    "text": "Aşağıdakilerden hangisi İnternet Mühendisliği Görev Grubu’na ait kısaltmadır?",
+    "options": {
+      "A": "IEGG",
+      "B": "EIGF",
+      "C": "IETG",
+      "D": "IENF",
+      "E": "IETF"
+    },
+    "correctAnswer": "E",
+    "explanation": "İnternet standartlarını geliştiren ve belirleyen en önemli kuruluşlardan biri olan İnternet Mühendisliği Görev Grubu’nun uluslararası kısaltması IETF’dir (Internet Engineering Task Force).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-09555211b1a1",
+    "unitNumber": 65,
+    "text": "Acknowledgement number olarak bilinen bilgilendirme (onay) numarası alanı aşağıdakilerden hangisi için kullanılmaktadır?",
+    "options": {
+      "A": "Göndericinin veri içeriğini değiştirmesine onay verildiğini bildirmek için kullanılmaktadır.",
+      "B": "Göndericinin ilettiği verinin alıcı tarafından elde edildiği bilgisinin taşınması için kullanılmaktadır.",
+      "C": "Göndericinin veriyi iletmesini durdurmak için kullanılmaktadır.",
+      "D": "Göndericinin veri iletimini geciktirmesi amacıyla kullanılmaktadır.",
+      "E": "Göndericinin gönderdiği veri sayısının azaltılmasının onaylandığını bildirmek için kullanılmaktadır."
+    },
+    "correctAnswer": "B",
+    "explanation": "TCP gibi güvenilir protokollerde, “Acknowledgement number” (ACK) alanı, alıcının bir veri segmentini başarılı bir şekilde aldığını göndericiye bildirmek ve bir sonraki beklediği segmentin sıra numarasını iletmek için kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-336f35d8c4d9",
+    "unitNumber": 66,
+    "text": "I. Geniş Alan Ağı (WAN) II. Şehirsel Alan Ağı (MAN) III. Yerel Alan Ağı (LAN) IV. Kampüs Alan Ağı (CAN)V. Kişisel Alan Ağı (PAN) Yukarıdaki ağ türlerinin kapsadıkları alanlar büyükten küçüğe sıralandığında sıralama nasıl olmalıdır?",
+    "options": {
+      "A": "I, II, IV, III, V",
+      "B": "I, II, IV, V, III",
+      "C": "II, I, IV, III, V",
+      "D": "I, II, III, IV, V",
+      "E": "II, I, III, IV, V"
+    },
+    "correctAnswer": "A",
+    "explanation": "Kapsadıkları coğrafi alana göre ağ türleri büyükten küçüğe doğru şu şekilde sıralanır: Geniş Alan Ağı (WAN), Şehirsel Alan Ağı (MAN), Kampüs Alan Ağı (CAN), Yerel Alan Ağı (LAN) ve Kişisel Alan Ağı (PAN).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-79ac95baa98c",
+    "unitNumber": 67,
+    "text": "Aşağıdakilerden hangisi ethernet yapısı içerisinde yer alan ortam erişim kontrolü (MAC) protokolüdür?",
+    "options": {
+      "A": "CDMA",
+      "B": "Jetonlu halka (Token ring)",
+      "C": "TDMA",
+      "D": "FDMA",
+      "E": "CSMA/CD"
+    },
+    "correctAnswer": "E",
+    "explanation": "Klasik Ethernet ağlarında, aynı iletişim hattını kullanan cihazların birbirleriyle çakışmadan veri göndermesini sağlayan Ortam Erişim Kontrol (MAC) protokolü CSMA/CD’dir (Carrier Sense Multiple Access with Collision Detection – Taşıyıcı Dinlemeli Çoklu Erişim/Çarpışma Tespiti).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d8d9cc539557",
+    "unitNumber": 68,
+    "text": "Jetonlu Halka (Token Ring) ne tür bir Ortam Erişim Kontrolü (MAC) protokolüdür?",
+    "options": {
+      "A": "Son erişim protokolü",
+      "B": "Sıra beklemeli protokol",
+      "C": "Kanal bölümleme protokolü",
+      "D": "Rastgele erişim protokolü",
+      "E": "İlk erişim protokolü"
+    },
+    "correctAnswer": "B",
+    "explanation": "Jetonlu Halka (Token Ring) ağlarında, ağ üzerinde sürekli dolaşan özel bir sinyal (jeton”) bulunur. Bir cihaz ancak bu jetonu yakaladığında veri gönderme hakkına sahip olur. Bu yöntem",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a9816c450b48",
+    "unitNumber": 69,
+    "text": "Aşağıdakilerden hangisi yönlendiriciler üzerinde çalışan yönlendirme protokollerinden biridir?",
+    "options": {
+      "A": "OSPF",
+      "B": "ARP",
+      "C": "TCP",
+      "D": "SMTP",
+      "E": "Ethernet"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-bfd2d1840ec4",
+    "unitNumber": 70,
+    "text": "Aşağıdakilerden hangisi standartlaştırılmış bir teknolojidir?",
+    "options": {
+      "A": "IP",
+      "B": "Intercat",
+      "C": "SMTP",
+      "D": "TCP",
+      "E": "Bluetooth"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8c860975d1f2",
+    "unitNumber": 71,
+    "text": "Aşağıdakilerden hangisi taşıma sisteminin sınırlarını belirleyen ölçütlerdendir?",
+    "options": {
+      "A": "Yaşam ömrü",
+      "B": "Yayılım gecikmesi",
+      "C": "IP versiyonu",
+      "D": "Bağlantı noktası",
+      "E": "Çarpışma sayısı"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-344ede24c4ca",
+    "unitNumber": 72,
+    "text": "Devre anahtarlamalı ağlarda veri aktarımı kaç fazda gerçekleşir?",
+    "options": {
+      "A": "4",
+      "B": "2",
+      "C": "5",
+      "D": "1",
+      "E": "3"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-416acd7b069e",
+    "unitNumber": 73,
+    "text": "Katmanlı mimari yapı içerisinde veri, hangi katmanda paket olarak anılmaktadır?",
+    "options": {
+      "A": "Sunum katmanı",
+      "B": "Veri bağı katmanı",
+      "C": "Ağ katmanı",
+      "D": "Taşıma katmanı",
+      "E": "Uygulama katmanı"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-62698c659e3a",
+    "unitNumber": 74,
+    "text": "Aşağıdakilerden hangisi bir ortam erişim kontrolü protokolü (MAC protokolü) türüdür?",
+    "options": {
+      "A": "Çarpışma desteği protokolü",
+      "B": "Sıra bölümleme protokolü",
+      "C": "Kanal erişim protokolü",
+      "D": "Rastgele erişim protokolü",
+      "E": "Kanal tespit protokolü"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-16f5bc724965",
+    "unitNumber": 75,
+    "text": "Bir laboratuvar içerisinde veri düşük maliyetle aktarılmak istenmektedir. Cihazların hareket edebilmesi, birkaç metre uzaklığa gidebilmeleri istenmektedir. Verilerin aktarılacağı ortamda gürültüye maruz kalma olasılığı yoktur. Yukarıda verilen senaryoya göre verinin aktarımı için hangi teknolojinin seçilmesi daha uygundur?",
+    "options": {
+      "A": "Ethernet",
+      "B": "UTP",
+      "C": "STP",
+      "D": "Bluetooth",
+      "E": "Uydu teknolojileri"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4d9d10614dfe",
+    "unitNumber": 76,
+    "text": "Aşağıdakilerden hangisi tekrarlayıcı (repeater) cihazlarının görevleri arasında yer alır?",
+    "options": {
+      "A": "İletilmek istenilen sinyalin yeniden üretilmesi",
+      "B": "İletilmek istenen verinin şifrelenmesi",
+      "C": "İletilmek istenen verinin şifresinin çözülmesi",
+      "D": "İletilmek istenen sinyalin içeriğinin denetlenmesi",
+      "E": "İletilmek istenen sinyalin taşıma şeklinin değiştirilmesi"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-65c69fa00b32",
+    "unitNumber": 77,
+    "text": "Aşağıdakilerden hangisi verilerin aktarılması için iki TCP bağlantısı açılmasını gerektiren uygulama katmanı protokolüdür?",
+    "options": {
+      "A": "FTP",
+      "B": "HTTP",
+      "C": "SMTP",
+      "D": "Telnet",
+      "E": "DNS"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e3408dfcfe29",
+    "unitNumber": 78,
+    "text": "Aşağıdakilerden hangisi UDP segment biçimi içerisinde yer alır?",
+    "options": {
+      "A": "Flags: Bayraklar",
+      "B": "Sequence number: Sıra numarası",
+      "C": "Dest port: Hedef bağlantı noktası",
+      "D": "Acknowledgement number: Bilgilendirme (onay) numarası",
+      "E": "Time to live: Yaşam süresi"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-178711407048",
+    "unitNumber": 79,
+    "text": "IPv4 ve IPv6 adreslerine ait bit sayıları sırasıyla aşağıdakilerden hangisinde doğru olarak verilmiştir?",
+    "options": {
+      "A": "32 bit, 64 bit",
+      "B": "32 bit, 128 bit",
+      "C": "64 bit, 32 bit",
+      "D": "128 bit, 256 bit",
+      "E": "32 bit, 256 bit"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-fa8413569c9d",
+    "unitNumber": 80,
+    "text": "OSI referans modelinin 4. katmanı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Veri bağı katmanı",
+      "B": "Sunum katmanı",
+      "C": "Fiziksel katman",
+      "D": "Taşıma katmanı",
+      "E": "Ağ katmanı"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-006ad0195def",
+    "unitNumber": 81,
+    "text": "25 numaralı bağlantı noktasını kullanan uygulama katmanı protokolü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Telnet",
+      "B": "DNS",
+      "C": "FTP",
+      "D": "HTTP",
+      "E": "SMTP"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d9d45e671c8e",
+    "unitNumber": 82,
+    "text": "Fiziksel katmanda aşağıda yer alan cihazlardan hangisi çalışmaktadır?",
+    "options": {
+      "A": "Tekrarlayıcı (Repeater)",
+      "B": "Yönlendirici (Router)",
+      "C": "Köprü (Bridge)",
+      "D": "Anahtar (Switch)",
+      "E": "Denetleyici (Controller)"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ea89ee6f999d",
+    "unitNumber": 83,
+    "text": "Hattın kullanıcıya rezerve edildiği anahtarlama türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Parça anahtarlama",
+      "B": "Paket anahtarlama",
+      "C": "Devre anahtarlama",
+      "D": "Sabit anahtarlama",
+      "E": "Örgü anahtarlama"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2021-2022",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-102f2eecf281",
+    "unitNumber": 85,
+    "text": "Aşağıdakilerden hangisi TCP segment biçimi arasında yer alır?",
+    "options": {
+      "A": "time to live: yaşam süresi",
+      "B": "destination IP address: hedef IP adresi",
+      "C": "hop limit: atlama limiti",
+      "D": "source IP address: Kaynak IP adresi",
+      "E": "receive window : alınan pencere boyut"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2021-2022",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-979309f802eb",
+    "unitNumber": 86,
+    "text": "Veri bağı katmanı sırasıyla hangi katmandan hizmet almakta, hangi katmana hizmet vermektedir?",
+    "options": {
+      "A": "Fiziksel katman - Uygulama katmanı",
+      "B": "Taşıma katmanı - Ağ katmanı",
+      "C": "Oturum katmanı - Sunum katmanı",
+      "D": "Ağ katmanı - Taşıma katmanı",
+      "E": "Uygulama katmanı - Fiziksel katman"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2021-2022",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7f9983fc15a5",
+    "unitNumber": 87,
+    "text": "Heterojen ağlar arasında iletişimin desteklenebilmesi için destek sağlayan katman aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Fiziksel katman",
+      "B": "Uygulama katmanı",
+      "C": "Ağ katmanı",
+      "D": "Veribağı katmanı",
+      "E": "Taşıma katmanı"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2021-2022",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5891419c0a34",
+    "unitNumber": 88,
+    "text": "Hata düzeltme teknikleri OSI referans modelinin hangi katmanında tanımlıdır?",
+    "options": {
+      "A": "5",
+      "B": "2",
+      "C": "3",
+      "D": "6",
+      "E": "4"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2021-2022",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d2489cfc89ec",
+    "unitNumber": 89,
+    "text": "Aşağıdakilerden hangisi durumsuz bir uygulama katmanı protokolüdür?",
+    "options": {
+      "A": "TCP",
+      "B": "ICMP",
+      "C": "IP",
+      "D": "HTTP",
+      "E": "UDP"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2021-2022",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-75ccd4eec7cd",
+    "unitNumber": 91,
+    "text": "Katmanlı mimari yapı içerisinde veri, hangi katmanda çerçeve (frame) olarak anılmaktadır?",
+    "options": {
+      "A": "Fiziksel katman",
+      "B": "Sunum katmanı",
+      "C": "Taşıma katmanı",
+      "D": "Oturum katmanı",
+      "E": "Veri katmanı"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2021-2022",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-61670b687517",
+    "unitNumber": 92,
+    "text": "Aşağıda yer alan protokollerden hangisi akış kontrol mekanizmasına sahiptir?",
+    "options": {
+      "A": "IP",
+      "B": "ICMP",
+      "C": "Ethernet",
+      "D": "TCP",
+      "E": "UDP"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2021-2022",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-49c2582da166",
+    "unitNumber": 93,
+    "text": "İki ağı birbirine bağlamak için aşağıdakilerden hangisi kullanılır?",
+    "options": {
+      "A": "Üretici",
+      "B": "Köprü",
+      "C": "Bağlayıcı",
+      "D": "Tekrarlayıcı",
+      "E": "Yönetici"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2021-2022",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8cae689147f4",
+    "unitNumber": 94,
+    "text": "Aşağıdakilerden hangisi Uluslararası Telekominikasyon Birliği’ne ait kısaltmadır?",
+    "options": {
+      "A": "TUII",
+      "B": "ITU",
+      "C": "TUI",
+      "D": "UTI",
+      "E": "IITU"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2021-2022",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8b9cf1de784d",
+    "unitNumber": 95,
+    "text": "I. PAN II. WAN III. MAN IV. CAN Bir bina içerisinde yer alan ağ türlerinden hangisi veya hangileri kurulabilir?",
+    "options": {
+      "A": "Sadece I",
+      "B": "II ve IV",
+      "C": "I, II ve III",
+      "D": "I, III, IV",
+      "E": "II ve III"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2021-2022",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-63afff3432ff",
+    "unitNumber": 96,
+    "text": "Üç yollu el sıkışma (three way handshake) için aşağıda yer alan açıklamalardan hangisi doğrudur?",
+    "options": {
+      "A": "Kullanımı zaman maliyetini etkilemez.",
+      "B": "Kullanımı zaman maliyetini 10ms düşürür.",
+      "C": "Kullanımı zaman maliyetini yükseltir.",
+      "D": "Kullanımı zaman maliyetini 10ms yükseltir.",
+      "E": "Kullanımı zaman maliyetini düşürür."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2021-2022",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-824055b7b53e",
+    "unitNumber": 97,
+    "text": "Ağda aynı anda yalnızca tek kullanıcının iletişim yapabilmesi istenmektedir. Taşınan verilerin komşu cihazlar üzerinden gönderilmesi istenmekte ve yüksek kurulum maliyeti istenmemektedir. Yukarıdaki senaryo için uygun seçeneklerde yer alan hangi topoloji türü en yüksek faydayı sağlar?",
+    "options": {
+      "A": "Halka Topolojisi (ring topology)",
+      "B": "Örgü Topoloji (mesh topolog)",
+      "C": "Yıldız Topoloji ( star topology)",
+      "D": "Ağaç Topolojisi (Tree topology)",
+      "E": "Ortak yol Topolojisi (hub topology)"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2021-2022",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  }
+]

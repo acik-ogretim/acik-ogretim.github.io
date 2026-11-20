@@ -1,1 +1,1156 @@
-[]
+[
+  {
+    "id": "s-7b9c5961c900",
+    "unitNumber": 1,
+    "text": "Jupyter, ……….. . Yukarıdaki noktalı kısım aşağıdaki ifadelerden hangisi ile tamamlanabilir?",
+    "options": {
+      "A": "açık kaynak kodlu bir uygulama değildir.",
+      "B": "veri görselleştirme ve program kodu yazmaya imkan veren web uygulamasıdır.",
+      "C": "veri analizi uygulamalarında kullanılmaz.",
+      "D": "kullanıcıya sadece text (metin) tabanlı bir ortam sağlar.",
+      "E": "R programla için uygun bir geliştirme ortamı değildir."
+    },
+    "correctAnswer": "B",
+    "explanation": "Jupyter, web tabanlı interaktif bir ortamdır; açık kaynaklıdır, veri analizi için uygundur, R’ı destekler ve metin ötesi (kod, görsel) sağlar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-38f228be5555",
+    "unitNumber": 2,
+    "text": "Yukarıda verilen ve adı “notlistesi olan” ekrandan vize ve final sütunlarını liste olarak görüntüleyecek komut hangi satırda doğru olarak verilmiştir?",
+    "options": {
+      "A": "liste=as(notlistesi[, 2:3])liste",
+      "B": "liste=as.list(notlistesi[, 3:2])liste",
+      "C": "liste=as.list(notlistesi[, 2:3])liste",
+      "D": "liste=as.list(notlistesi[ 2:3, ])liste",
+      "E": "liste=list(notlistesi[, 2:3])liste"
+    },
+    "correctAnswer": "C",
+    "explanation": "[, 2:3] vize ve final sütunlarını seçer, as.list() bunları liste elemanlarına dönüştürür. D seçeneği satır seçer ([2:3, ]); E seçeneği veri çerçevesini tek liste elemanı yapar. B’de sütun sırası ters.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9ca8d7abea1c",
+    "unitNumber": 3,
+    "text": "RStudioprogramıiçinaşağıdaverilenifadelerdenhangisi doğrudur?",
+    "options": {
+      "A": "RStudio ile veri analizi uygulaması yapılamaz.",
+      "B": "Jupyter’in olduğu ortamda RStudio çalıştırılamaz.",
+      "C": "RStudio’nun Anaconda üzerinden ilk olarak çalıştırılabilmesi içn “install” (yüklenmesi) edilmesi gerekir.",
+      "D": "RStudio’yu kurmak için önce Jupyter Notebook kurulması gerekir.",
+      "E": "RStudio anaconda üzerinden çalıştırılamaz."
+    },
+    "correctAnswer": "C",
+    "explanation": "Anaconda Navigator’da RStudio varsayılan yüklü olmayabilir, conda install rstudio ile yüklenir. Diğerleri yanlış: Veri analizi yapılabilir, Jupyter ile birlikte çalışır, Jupyter gerekmez ve Anaconda üzerinden çalıştırılabilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-329e10581730",
+    "unitNumber": 4,
+    "text": "Yukarıdaki ekranda liste nesnesinin elemanlarınıım ortalamasını bulan kod aşağıdaki şıklardan hangisinde doğru olarak verilmiştir?",
+    "options": {
+      "A": "lapply(listem5, ortalama)",
+      "B": "lapply(listem,mean)",
+      "C": "lapply(listem5,ort)",
+      "D": "lapply(listem5,mean)",
+      "E": "lapply(listem5,enbuyuk)"
+    },
+    "correctAnswer": "D",
+    "explanation": "mean fonksiyonu ortalama hesaplamak için kullanılır ve lapply ile liste elemanlarına uygulanarak her bir elemanın ortalaması bulunur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5ec23a011fae",
+    "unitNumber": 5,
+    "text": "Anacondayı görev çubuğundan silmek için yukarıdaki ekran görüntüsü verilen durumlardan hangisi seçilmelidir?",
+    "options": {
+      "A": "Başlangıç’a sabitle.",
+      "B": "Görev çubuğundan kaldır.",
+      "C": "Yönetici olarak çalıştır.",
+      "D": "Dosya konumunu aç.",
+      "E": "Aç."
+    },
+    "correctAnswer": "B",
+    "explanation": "Görev çubuğundan simgeyi silmek için bu seçenek kullanılır. Diğerleri sabitleme, çalıştırma veya konum açma işlevleridir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8ae7cd120c27",
+    "unitNumber": 6,
+    "text": "Değişken için aşağıda verilen ifadelerden hangisi yanlıştır?",
+    "options": {
+      "A": "Verileri etiketlemek için kullanılır.",
+      "B": "Bilgi saklayan kutular olarak düşünülebilir.",
+      "C": "Bellekte yer kaplarlar.",
+      "D": "R'da değişken tanımlamaz.",
+      "E": "R'da değişkene değer atandığı anda oluşturulur."
+    },
+    "correctAnswer": "D",
+    "explanation": "R’da değişkene değer atandığı anda değişken otomatik olarak oluşturulur. Ancak kodda önceden bir değişken tanımlaması yapılmasına gerek yoktur, bu nedenle D şıkkındaki ifade yanlıştır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d3c76f772d36",
+    "unitNumber": 7,
+    "text": "RStudio için verilen ifadelerden hangisi yanlıştır?",
+    "options": {
+      "A": "R kullanıcılarına web tabanlı bir çalışma ortamı sağlar.",
+      "B": "Anaconda içerisinden de çalıştırılabilir.",
+      "C": "Yılda birkaç kez güncellenir.",
+      "D": "<code>http://www.rstudio.com/download</code> adresinden yüklenir.",
+      "E": "R için bütünleşik bir geliştirme ortamı sağlar."
+    },
+    "correctAnswer": "A",
+    "explanation": "RStudio standart olarak masaüstü tabanlı bir IDE’dir; web tabanlı erişim için ayrı bir sunucu sürümü (RStudio Server) gerekir, ancak temel sürüm web tabanlı değildir. Diğer seçenekler doğru: Anaconda ile çalıştırılabilir, düzenli güncellenir, belirtilen adresten indirilir ve entegre geliştirme ortamı sağlar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8f2e8255e86f",
+    "unitNumber": 8,
+    "text": "Yukarıda verilen çerçeveden aşağıdaki çıktıyı elde edecek kod hangi satırda doğru olarak verilmiştir?",
+    "options": {
+      "A": "kazananlar4[\"bolumu\"]",
+      "B": "kazananlar4(\"bolumu\")",
+      "C": "kazananlar4[[\"bolumu\"]]",
+      "D": "kazananlar4[bolumu]",
+      "E": "kazananlar4((\"bolumu\"))"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-84f7bd56d9ea",
+    "unitNumber": 9,
+    "text": "Yukarıdaki ekrandaki liste nesnesinin elemanlarının en büyüğünü bulan kod aşağıdaki hangi şıkta doğru olarak verilmiştir?",
+    "options": {
+      "A": "lapply(listem5,mean)",
+      "B": "lapply(listem5,max)",
+      "C": "lapply(listem5,buyuk)",
+      "D": "lapply(listem5,sum)",
+      "E": "lapply(listem5,enbuyuk)"
+    },
+    "correctAnswer": "B",
+    "explanation": "lapply() fonksiyonu, bir listenin her elemanına belirtilen fonksiyonu uygular. Burada listenin (listem5) her alt elemanındaki en büyük değeri bulmak için max fonksiyonu kullanılır. Diğer seçenekler yanlış çünkü mean ortalama, sum toplam hesaplar; buyuk ve enbuyuk standart R fonksiyonları değildir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9c78a49c946e",
+    "unitNumber": 10,
+    "text": "Yukarıda verilen ekran görüntüsünün çıktısı hangi şıkta doğru olarak verilmiştir?",
+    "options": {
+      "A": "character",
+      "B": "numeric",
+      "C": "double",
+      "D": "logic",
+      "E": "imaginer"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5d6446908c3c",
+    "unitNumber": 11,
+    "text": "Yukarıda verilen ve adı “notlistesi olan” olan ve ekrandan final notunun ortalamasını hesaplayacak komut hangi satırda doğru olarak verilmiştir?",
+    "options": {
+      "A": "notortalama=apply(notlistesi_final[3],2,mean)",
+      "B": "notortalama=apply(final[3],2,mean)",
+      "C": "notortalama=apply(notlistesi[4],2,mean)",
+      "D": "notortalama=(notlistesi[3],2,mean)",
+      "E": "notortalama=apply(notlistesi[3],2,mean)"
+    },
+    "correctAnswer": "E",
+    "explanation": "notlistesi bir veri çerçevesi veya matris varsayılarak, [3] üçüncü sütunu (final notları) seçer. apply(…, 2, mean) sütun bazında ortalama hesaplar. Diğer seçeneklerde ya isim hataları (örneğin notlistesi_final veya final) var ya da sütun indeksi yanlış (örneğin [4]), veya sözdizimi geçersiz (D seçeneği).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0fe49a3dfe9c",
+    "unitNumber": 12,
+    "text": "Aşağıda veri çerçevesi için verilen ifadelerden hangisi yanlıştır?",
+    "options": {
+      "A": "Veri çerçeveleri verileri tablo biçiminde tutar.",
+      "B": "Listenin her elemanının aynı uzunlukta olduğu bir liste türüdür.",
+      "C": "Farklı veri türleri içerecek bir yapıda değildir.",
+      "D": "Çeşitli istatistik hesaplamalarında yaygın olarak kullanılır.",
+      "E": "Veri çerçeveleri sütunda farklı nesne sınıfı saklayabilir."
+    },
+    "correctAnswer": "C",
+    "explanation": "Açıklama: Veri çerçeveleri farklı sütunlarda farklı türler saklayabilir (örneğin numeric, character). Bu ifade yanlıştır. Diğer ifadeler doğru: Tablo biçiminde, eşit uzunluklu liste, istatistik için yaygın, sütunlar farklı sınıflar saklayabilir (ama her sütun homojen).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4bd89227452b",
+    "unitNumber": 13,
+    "text": "Yukarıda verilen vektörü göz önüne alarak aşağıdaki çıktıyı sağlayan komut aşağıdaki hangi şıkta doğru olarak verilmiştir? Çıktı : 101 ‘Ali’ 102 ‘Veli’ 103 ‘Can’ 105 ‘Nalan’ 106 ‘Rabia’ 107 ‘Mehmet Ziya’ 108 ‘Ayşe Serra’ 109 ‘Zehra’",
+    "options": {
+      "A": "<code>numara (ogrenciler)=c(\"101\",\"102\",\"103 \",\"105\",\"106\",\"107\",\"108\", \"109\")</code>",
+      "B": "<code>numara(ogrenciler)=c(101,102,103,105,1 06,107,108,109)</code>",
+      "C": "<code>name(ogrenciler)=c(\"101\",\"102\",\"103\",\" 105\",\"106\",\"107\",\"108\", \"109\")</code>",
+      "D": "<code>names(ogrenciler)=c(\"101\",\"102\",\"103\", \"105\",\"106\",\"107\",\"108\", \"109\")</code>",
+      "E": "<code>names(ogrenciler)=c(101,102,103,105,10 6,107,108,109)</code>"
+    },
+    "correctAnswer": "D",
+    "explanation": "names() ile vektöre isimler atanır ve değerler karakter dizesi olarak belirtilir. E seçeneği de çalışır (sayısal değerler otomatik karakter olur) ancak soru muhtemelen tırnaklı hali bekler. Diğerlerinde fonksiyon adı hatalı (numara, name).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-aac7be067ae7",
+    "unitNumber": 14,
+    "text": "Yukarıda verilen vektörü, listeye dönüştürecek komut aşağıdaki hangi şıkta doğru olarak verilmiştir?",
+    "options": {
+      "A": "as.list(ogrenciler2)",
+      "B": "as.liste(ogrenciler3)",
+      "C": "list(ogrenciler2)",
+      "D": "as.liste(ogrenciler2)",
+      "E": "as.list(ogrenciler3)"
+    },
+    "correctAnswer": "A",
+    "explanation": "as.list() bir vektörü listenin elemanlarına ayırarak dönüştürür. list(ogrenciler2) ise vektörü tek bir liste elemanı yapar. Diğer seçeneklerde isim hataları var (as.liste, yanlış değişken adı)..",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-33eb776308c7",
+    "unitNumber": 15,
+    "text": "Yukarıda verilen vektörün oluşturulduğu göz önüne alındığında, aşağıdaki çıktıyı veren komut hangi şıkta doğru olarak verilmiştir? Çıktı: ‘Ali”, ‘Veli’, ‘Can’,’Zehra’",
+    "options": {
+      "A": "del[-c(4:7)]",
+      "B": "ogrenciler[-c(4,7)]",
+      "C": "ogrenciler[c(4:7)]",
+      "D": "del[c(4:7)]",
+      "E": "ogrenciler[-c(4:7)]"
+    },
+    "correctAnswer": "E",
+    "explanation": "-c(4:7) 4’ten 7’ye kadar elemanları çıkarır, kalanlar (1-3 ve 8) “‘Ali’, ‘Veli’, ‘Can’, ‘Zehra’” olur. C seçeneği tam tersi seçer; diğerlerinde yanlış değişken (del) veya indeks.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-66bb825858bd",
+    "unitNumber": 16,
+    "text": "Yukarıda verilen çerçeveden aşağıdaki çıktıyı sağlayan komut hangi şıkta doğru olarak verilmiştir?",
+    "options": {
+      "A": "attributes()",
+      "B": "show()",
+      "C": "rownames()",
+      "D": "str()",
+      "E": "head()"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-515134f55b44",
+    "unitNumber": 18,
+    "text": "RStudio için aşağıda verilen ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Ücretli olan bir programdır.",
+      "B": "R programlamada artık kullanılmayan bir araçtır.",
+      "C": "R’ı yüklemek için gerekli olan dosyaları kapsar.",
+      "D": "R programlama için bütünleşik geliştirme ortamı sağlar.",
+      "E": "<code>http://cran.r-project.tr/</code> adresinden yüklenebilir."
+    },
+    "correctAnswer": "D",
+    "explanation": "RStudio, R için entegre bir IDE’dir. Diğer seçenekler yanlış: Ücretsizdir, hâlâ kullanılır, R’ı içermez (ayrı yüklenir) ve indirme adresi rstudio.com’dur (cran değil).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1272da62c2bb",
+    "unitNumber": 19,
+    "text": "Anaconda için verilen ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Sadece Windows işletim sisteminde çalışır.",
+      "B": "Veri analizi uygulamalarında kullanıma uygun değildir.",
+      "C": "R programlama dilini desteklemez.",
+      "D": "Ücretli bir yazılımdır.",
+      "E": "R programında gerekli olan paketleri tek bir klasöre yükler."
+    },
+    "correctAnswer": "E",
+    "explanation": "Anaconda ortam yönetimiyle paketleri tek klasöre (environment) yükler. Diğerleri yanlış: Multiplatform, veri analizi için uygun, R’ı destekler, ücretsiz.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-bb593c507d33",
+    "unitNumber": 20,
+    "text": "“Vektördeki her veri elemanının bir numarası vardır” ifadesi için aşağıda verilen şıklardan hangisi doğrudur?",
+    "options": {
+      "A": "Heterojenlik ifadesini açıklamaktadır.",
+      "B": "Vektör elemanlarının uzunluğunu bulma numarasını açıklamaktadır.",
+      "C": "Vektör elemanlarının veri tipini tanımlamaktadır.",
+      "D": "Vektör elemanlarının değişmez olduğunu ifade etmektedir.",
+      "E": "Bu ifade vektörler için indis kavramına karşılık gelmektedir."
+    },
+    "correctAnswer": "E",
+    "explanation": "Vektördeki her veri elemanının bir numarası olması, indis (index) kavramına karşılık gelir ve bu numara ile elemanlara erişim sağlanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8fad51a59828",
+    "unitNumber": 21,
+    "text": "Herhangi bir grafiğe eni ve yüksekliği 5 olacak şekilde ve kırmızı renkte ızgara ekleyen komut satırı hangi şıkta doğru olarak verilmiştir?",
+    "options": {
+      "A": "grid(5,5, col=\"red\")",
+      "B": "plot(5,5, col=\"red\")",
+      "C": "density(5,5, col=\"red\")",
+      "D": "lines (5,5, col=\"red\")",
+      "E": "grid(5,5, col=\"kırmızı\")"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-aa0eeee30ed5",
+    "unitNumber": 22,
+    "text": "Bir öğrenciye “cars” adlı bir veri setinin verildiği varsayılmaktadır. Öğrenci bu veri setinin öz niteliklerini görüntülemek için aşağıdaki hangi komutu kullanmalıdır?",
+    "options": {
+      "A": "str(cars)",
+      "B": "main(cars)",
+      "C": "col(cars)",
+      "D": "data(cars)",
+      "E": "print(cars)"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4254a08aa217",
+    "unitNumber": 23,
+    "text": "final=c(65,50,73,60,30,30,50,50,65) Yukarıda verilen final verisinin medyanı hangi şıkta doğru olarak verilmiştir?",
+    "options": {
+      "A": "65",
+      "B": "50",
+      "C": "60",
+      "D": "30",
+      "E": "52.5"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-690f0429377d",
+    "unitNumber": 24,
+    "text": "Bu matrisin 2. Satırının tüm öğelerini silecek komut hangi şıkta doğru olarak verilmiştir?",
+    "options": {
+      "A": "matrisX[2,]",
+      "B": "matrisX[,2]",
+      "C": "matrisX[2,2]",
+      "D": "matrisX[1,1]",
+      "E": "matrisX[2,1,2,3,4]"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-836a032d2ce4",
+    "unitNumber": 25,
+    "text": "Yukarıda verilen ekran görüntüsünün sonucu hangi şıkta doğru olarak verilmiştir?",
+    "options": {
+      "A": "110",
+      "B": "100",
+      "C": "506",
+      "D": "611",
+      "E": "606"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5323ac3d54f1",
+    "unitNumber": 26,
+    "text": "Yukarıda verilen ekran görüntüsünde “R” simgesine tıklanırsa ne olur?",
+    "options": {
+      "A": "Jupyter'de Linux programı aktif hale getirilir.",
+      "B": "Jupyter'de Python programı aktif hale getirilir.",
+      "C": "Jupyter'de R programı aktif hale getirilir.",
+      "D": "RStudio programı aktif hale getirilir.",
+      "E": "Anaconda aktif hale gelir."
+    },
+    "correctAnswer": "C",
+    "explanation": "Görüntü, Jupyter Notebook arayüzündeki yeni dosya oluşturma menüsüdür. Bu menüde “R” simgesine tıklanması, Jupyter’de **R kernel’inin (çekirdeğinin)** başlatılması ve **R programının aktif hale getirilmesi** anlamına gelir (E).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-24cc88746def",
+    "unitNumber": 27,
+    "text": "R’de kullanılan görüntü işleme paketi/kütüphanesi nerede tutulur?",
+    "options": {
+      "A": "Download-r.com'da",
+      "B": "CRAN",
+      "C": "r.com'da",
+      "D": "Bilgisayarın belleğinde",
+      "E": "Project.org.tr'de"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-af08b8052100",
+    "unitNumber": 28,
+    "text": "Yoğunluk grafiğinin histogram üzerine yazdırılması için hangi komut kullanılır?",
+    "options": {
+      "A": "density()",
+      "B": "par(T)",
+      "C": "hist(new)",
+      "D": "par(new=T)",
+      "E": "par(T=new)"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-6d6e9d3b3a40",
+    "unitNumber": 29,
+    "text": "Aşağıda k-means algoritması için verilen ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Veri noktaları arasındaki uzaklık sinüs ölçütü ile bulunur.",
+      "B": "Küme merkezleri başlangıçta hesaplama ile bulunur.",
+      "C": "Küme sayısı algoritmanın sonunda belli olur.",
+      "D": "Algoritma küme üyelerinin grubu değişmediği zaman sonlanır.",
+      "E": "Küme sayıları algoritmanın her adımında sürekli değişir."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-0be2b90a0674",
+    "unitNumber": 30,
+    "text": "Yukarıda verilen sorunun doğru şıkkını işaretleyiniz.",
+    "options": {
+      "A": "Yanıt değişkeninin tahmin değeridir.",
+      "B": "Y eksenini kesme noktasıdır.",
+      "C": "X eksenini kesme noktasıdır.",
+      "D": "Regresyon katsayısıdır.",
+      "E": "Bağımlı değişkenin katsayısıdır."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8e9f911045bb",
+    "unitNumber": 31,
+    "text": "Yukarıdaki ekranda listede nesnesinin elemanlarının toplamını bulan kod hangi seçenekte doğru olarak verilmiştir?",
+    "options": {
+      "A": "lapply(listem5,mean)",
+      "B": "lapply(listem5,max)",
+      "C": "lapply(listem5,toplam)",
+      "D": "lapply(listem5,min)",
+      "E": "lapply(listem5,sum)"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-74beb5cae67f",
+    "unitNumber": 32,
+    "text": "Aşağıdaki şıklarda verilen fonksiyonlardan hangisi artık değeri hesaplamak için kullanılan fonksiyondur?",
+    "options": {
+      "A": "summary()",
+      "B": "reside()",
+      "C": "head()",
+      "D": "plot()",
+      "E": "Im()"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-67a35ee22717",
+    "unitNumber": 34,
+    "text": "Yukarıda mat adı ile verilen matrisin uzaklık mesafesi (dist(mat)) hesaplanmış ve alt tarafta dist(mat) olarak gösterilmiştir. Bu uzaklık matrisi için şıklarda verilen ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Uzaklık matrisi simetrik olduğu için üst kısmı (sol üst-sağ alt köşegen üzerindeki sayılar) alınmaz.",
+      "B": "Uzaklık matrisinin sütunları, hesaplanmak için ele alınan matrisin sütun sayısına eşittir.",
+      "C": "Uzaklık matrisinin üst tarafı farklı değerler içerir.",
+      "D": "Uzaklık matrisi sinüs ölçeğine göre hesaplanır.",
+      "E": "K-means algoritmasında uzaklık matrisi kullanılmaz."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c8956060b0e3",
+    "unitNumber": 35,
+    "text": "Yukarıda verilen ekran görüntüsündeki grafik için şıklarda verilen ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Bu grafik polinomial regresyon eğrisini temsil etmektedir.",
+      "B": "Bu grafik kesikli veriler için kullanılır.",
+      "C": "Bu grafikteki eğri, Lineer regresyon eğrisidir.",
+      "D": "Bu grafik ile evet veya hayır gibi durumlar analiz edilebilir.",
+      "E": "Bu grafik ile bir firmanın karlı olup olmadığı bulunabilir."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-67a38946bd6c",
+    "unitNumber": 36,
+    "text": "Vektor=c(11,5,13,8,9,6,14,17,10) verilen vektörü göz önüne alarak yukarıda göründüğü gibi çizgi grafiği oluşturacak komut hangi şıkta doğru olarak verilmiştir?",
+    "options": {
+      "A": "plot(vektor, col=\"I\")",
+      "B": "plot(vektor, main=\"I\")",
+      "C": "plot(vektor, type=\"p\")",
+      "D": "plot(vektor, type=\"o\")",
+      "E": "plot(vektor, type=\"l\")"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7e60e21565b0",
+    "unitNumber": 37,
+    "text": "Yukarıda verilen vektör ve bu vektörden elde edilen çıktı görülmektedir. Bu çıktıyı sağlayan kod hangi şıkta doğru olarak verilmiştir?",
+    "options": {
+      "A": "isimler [[3:7]]",
+      "B": "isimler [3,7]",
+      "C": "isimler (3:7)",
+      "D": "isimler ((3:7))",
+      "E": "isimler [3:7]"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-aa7bc75bf6d2",
+    "unitNumber": 38,
+    "text": "Vektör veri yapısı için aşağıda verilen ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Farklı verileri içerebilir.",
+      "B": "Çok boyutludur.",
+      "C": "Homojenlik içerir.",
+      "D": "Oluşturulması zordur.",
+      "E": "İki boyutludur."
+    },
+    "correctAnswer": "C",
+    "explanation": "Vektörler, R’daki temel veri yapısıdır. Bir vektördeki tüm elemanların **aynı veri tipinde** olması zorunludur; bu özelliğe **Homojenlik** denir (C). Bu özellik Listeler (heterojen) ve Data Frameler (heterojen sütunlar) ile aralarındaki temel farktır. Vektörler tek boyutludur (B ve E yanlıştır).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-7669ade43eff",
+    "unitNumber": 39,
+    "text": "https://cloud.r-project.org adresi için aşağıda verilen ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Bütünleşik geliştirme ortamı sağlar.",
+      "B": "R’ı yüklemek için bulunduğunuz konuma en yakın sunucuya yönlendirir.",
+      "C": "Bu site tidyverse’nin kaynaklarını barındıran bir sitedir.",
+      "D": "RStudio’yu kurmak için gerekli olan dosyaları sağlar.",
+      "E": "Bu site artık R dilini destekleme özelliği taşımıyor."
+    },
+    "correctAnswer": "B",
+    "explanation": "**cloud.r-project.org**, CRAN (Comprehensive R Archive Network) web sitesinin bir parçasıdır. Bu site, kullanıcıları R programını indirmek üzere **bulundukları konuma en yakın sunucuya (mirror)** yönlendirir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-77af2f10cfc5",
+    "unitNumber": 40,
+    "text": "Anaconda için aşağıda verilen ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Veri analizi uygulamaları için bütünleşik geliştirme ortamı sağlar.",
+      "B": "Sadece Jupyter Notebook’u destekler.",
+      "C": "RStudio’yu desteklemez.",
+      "D": "Jupyter Notebook’u desteklemez.",
+      "E": "Açık kaynak kodlu bir yazılım değildir."
+    },
+    "correctAnswer": "A",
+    "explanation": "**Anaconda**, Python ve R gibi dilleri, RStudio ve Jupyter Notebook gibi IDE’leri ve yüzlerce paketi bir araya getiren, **veri analizi uygulamaları için bütünleşik bir ortam** sunan bir dağıtım platformudur (A).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0704f56a32b1",
+    "unitNumber": 41,
+    "text": "“Ali”, 34, 2021 verilerini liste olarak oluşturan ve listem adlı bir değişkene atayan komut hangi şıkta doğru olarak verilmiştir?",
+    "options": {
+      "A": "listem &lt;- list(Ali, 34, 2021)",
+      "B": "listem &lt;- list(&quot;Ali&quot;, 34, 2021)",
+      "C": "listem &lt;- list(&quot;Ali&quot;, &quot;34&quot;, &quot;2021&quot;)",
+      "D": "listem=list(\"Ali\", 34, 2021)",
+      "E": "listem &lt;- listem(&quot;Ali&quot;, 34, 2021)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Bu komutun doğru olması için hem `list()` fonksiyonunun kullanılması hem de atama operatörünün (= veya <-) doğru olması gerekir. B ve D şıkları arasında, B şıkkında Ali’nin tırnak içinde olması ve 34/2021’in sayısal olması en uygun veri tipini sağlarken, D şıkkındaki syntax da geçerli bir atamadır. D şıkkındaki syntax ise geçerlidir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c2de0187207f",
+    "unitNumber": 42,
+    "text": "Yukarıda verilen ekran görüntüsünü liste yapısına dönüştüren kod hangi şıkta doğru olarak verilmiştir?",
+    "options": {
+      "A": "yenilistem=vector(vektor1, cerceve1, matris1)",
+      "B": "yenilistem=(vektor1, cerceve1, matris1)",
+      "C": "yenilistem=list(vektor1, cerceve1, matris1)",
+      "D": "yenilistem=liste(vektor1,cerceve1, matris1)",
+      "E": "yenilistem=list(\"vektor1\", \"çerçeve1\", \"matris1\")"
+    },
+    "correctAnswer": "C",
+    "explanation": "R’da birden fazla farklı türdeki (heterojen) veri yapısını (vektör, çerçeve, matris) bir arada tutmak için **list()** fonksiyonu kullanılır. Bu fonksiyonla oluşturulan yapı, bu farklı nesnelerin hepsini saklayabilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c74cdee10122",
+    "unitNumber": 43,
+    "text": "“R için gerekli olan işlevler, veriler ve belgeler topluluğunu kapsar” ifadesi aşağıda verilenlerden hangisi için geçerlidir?",
+    "options": {
+      "A": "Tidyverse",
+      "B": "Jupyter Notebook",
+      "C": "RStudio",
+      "D": "Anaconda",
+      "E": "R"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4708610be24a",
+    "unitNumber": 44,
+    "text": "Yukarıda verilen listenin “Aile” parçasını dilimleyecek komut satırı hangi şıkta doğru olarak verilmiştir?",
+    "options": {
+      "A": "yenilistem2[[Aile]]",
+      "B": "yenilistem2(\"Aile\")",
+      "C": "yenilistem2[[\"Aile\"\"]]\"",
+      "D": "yenilistem2[[\"aile\"\"]]\"",
+      "E": "yenilistem2[\"Aile\"\"]\""
+    },
+    "correctAnswer": "C",
+    "explanation": "R dilinde **Liste** yapısının elemanlarına (parçalarına) isimleriyle erişmek ve elemanın kendisini (içeriğini) almak için **çift köşeli parantez** ([[ ]]) kullanılır. Listeye atanmış parça adları büyük/küçük harf duyarlı olduğu için isim çift tırnak içinde ve doğru yazılmalıdır.”",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-fd3da42eed09",
+    "unitNumber": 45,
+    "text": "ls() fonksiyonu hangi işlem için kullanılır?",
+    "options": {
+      "A": "Karakter tipindeki değişkeni tamsayı tipi değişkene döndürmek için",
+      "B": "Değişkenlere değer atamak için",
+      "C": "Bellekteki değişkenleri boşaltmak için",
+      "D": "Sayısal değişken tanımlamak için",
+      "E": "Bellekte oluşturulan değişkenleri görüntülemek için"
+    },
+    "correctAnswer": "E",
+    "explanation": "**ls()** (list storage) fonksiyonu, R çalışma ortamında (workspace) **bellekte oluşturulan değişkenleri (objeleri) listelemek ve görüntülemek** için kullanılır. Silmek için `rm()` (remove) fonksiyonu (C) kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b44782388d8e",
+    "unitNumber": 46,
+    "text": "Kategorik bir değişken için en uygun R veri türü hangisidir?",
+    "options": {
+      "A": "Karakter",
+      "B": "Faktör",
+      "C": "Tamsayı",
+      "D": "Sayısal",
+      "E": "Matris"
+    },
+    "correctAnswer": "B",
+    "explanation": "R’da **Kategorik değişkenler** (cinsiyet, şehir, hava durumu gibi sınıflı veriler) için en uygun veri türü **Faktör**’dür (Factor). Faktörler, kategorik verilerin hem depolanmasını hem de istatistiksel modellerde doğru şekilde kullanılmasını sağlar. Karakter (A) ve Sayısal (D) türleri veriyi doğru ifade etse de, istatistiksel açıdan Faktör en uygunudur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-bb09460c7193",
+    "unitNumber": 47,
+    "text": "ay<-\"Şubat\"\"yıl=2021olarak değişkenlerden “yıl” adlı değişkeni bellekten silmek için hangi fonksiyon kullanılır?\"",
+    "options": {
+      "A": "rm()",
+      "B": "cut()",
+      "C": "ls()",
+      "D": "print()",
+      "E": "del()"
+    },
+    "correctAnswer": "A",
+    "explanation": "R’da bellekten bir objeyi (değişkeni) **silmek (remove)** için kullanılan temel fonksiyon **rm()**’dur (A) . Bu fonksiyon, silinmek istenen değişken adını alır (örn: `rm(yıl)`). `ls()` (C) listelemek için kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0db29e22b5f7",
+    "unitNumber": 48,
+    "text": "Karar ağaçları için aşağıda verilen ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Karar ağaçları R tarafından desteklenmez.",
+      "B": "Karar ağaçları sadece çok büyük veri setlerinde kullanılabilir.",
+      "C": "Denetimsiz bir öğrenme algoritmasıdır.",
+      "D": "Denetimli bir öğrenme algoritmasıdır.",
+      "E": "Kümeleme algoritması sınıfına girer."
+    },
+    "correctAnswer": "D",
+    "explanation": "**Karar Ağaçları** (Decision Trees), makine öğrenmesinde sınıflandırma ve regresyon için kullanılan, çıktısı önceden bilinen verilerle eğitilen **Denetimli Öğrenme** (Supervised Learning) algoritmalarıdır (D). Kümeleme (E) ise denetimsiz öğrenmedir (C).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ebf723a60fa5",
+    "unitNumber": 49,
+    "text": "Yukarıda verilen ve adı “kazananlar” olan çerçeveden; Aşağıda verilen çıktıyı sağlayan komut hangi satırda doğru olarak verilmiştir? Çıktı: 250 – 470 – 215 – 400",
+    "options": {
+      "A": "kazananlar[[Aday-3]]",
+      "B": "kazananlar[2]",
+      "C": "kazananlar((2))",
+      "D": "kazananlar[[2]]",
+      "E": "kazananlar[[3]]"
+    },
+    "correctAnswer": "D",
+    "explanation": "Verilen çıktı, Data Frame’in **puan** sütununu (2. sütun) temsil etmektedir. R’da bir listeden veya Data Frame’den bir sütunun (vektörün) tamamını almak için o sütunun indisi **çift köşeli parantez** ([[ ]]) ile kullanılır (D). B şıkkı ise alt liste/çerçeve döndürür, vektör değil.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-fa763b1f9fb0",
+    "unitNumber": 50,
+    "text": "Yukarıdaki ekran çıktısını veren komut satırı hangi şıkta doğru olarak verilmiştir?",
+    "options": {
+      "A": "matrisY=matrix(c(10, 20, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125), 4, 3, byrow=TRUE)",
+      "B": "matrisY=(c(10, 20, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125), 4, 3)",
+      "C": "matrisY=matrix(c(10, 20, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125), 3 ,4)",
+      "D": "matrisY=matrix(c(10, 20, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125), 4, 3)",
+      "E": "matrisY=matris(c(10, 20, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125), 4, 3)"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-438dee25481a",
+    "unitNumber": 51,
+    "text": "Yukarıda verilen vektörü göz önüne alarak; isimler[8] kod satırının sonucu hangi şıkta doğru olarak verilmiştir?",
+    "options": {
+      "A": "Veli",
+      "B": "Zehra",
+      "C": "Ayşe Serra, Zehra",
+      "D": "Ali",
+      "E": "Ayşe Serra"
+    },
+    "correctAnswer": "B",
+    "explanation": "R’da indisleme 1’den başlar. Verilen vektör (Ali, Veli, Mehmet, Rabia, Ayşe Serra, Zehra, Hakan, Leyla, Murat) varsayılırsa, 8. indiste Leyla yer alır. Ancak cevap B (Zehra) olarak verilmiştir. **Cevap anahtarına sadık kalınmıştır.**",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-52e491d82f60",
+    "unitNumber": 52,
+    "text": "Yukarıda verilen ve adı kazananlar olan çerçevenin son sütununun ismini Alanı olarak değiştirecek kod hangi şıkta doğru olarak verilmiştir?",
+    "options": {
+      "A": "colnames(kazananlar)[3]=Alanı",
+      "B": "colnames(kazananlar)[3]=\"Alanı\"",
+      "C": "rownames(kazananlar)[4]=\"Alanı\"",
+      "D": "colnames(kazananlar)[4]=\"Alanı\"",
+      "E": "rownames(kazananlar)[3]=\"Alanı\""
+    },
+    "correctAnswer": "B",
+    "explanation": "Sütun (Column) isimlerini değiştirmek için **colnames()** fonksiyonu kullanılır (C ve E yanlıştır). Verilen Data Frame’de 3 sütun vardır (adayno, puanı, bolumu). Son sütun (bolumu) 3. sütundur . R’da isimler string olduğu için tırnak içinde yazılmalıdır (B). A şıkkında Alanı tırnaksızdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  }
+]

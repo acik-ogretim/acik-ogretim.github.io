@@ -1,1 +1,3001 @@
-[]
+[
+  {
+    "id": "s-4a21216ec328",
+    "unitNumber": 1,
+    "text": "metin = “Kırk kırık küp” olarak veriliyor. Buna göre aşağıdaki kod satırı çalıştırıldığında x’in değeri kaç olur? x = len(metin) – metin.find(“k”, 0, len(metin))",
+    "options": {
+      "A": "10",
+      "B": "11",
+      "C": "0",
+      "D": "14",
+      "E": "4"
+    },
+    "correctAnswer": "B",
+    "explanation": "len(metin) 14’tür. find(\"k\") metodu küçük ‘k’ harfini arar. “K” (büyük harf) atlanır, ilk küçük ‘k’ 3. indekstedir. 14 – 3 = 11 olur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8d5e9bf7da50",
+    "unitNumber": 2,
+    "text": "a, b, c = 5.0, True, 20 Yukarıda verilenlere göre aşağıdakilerden hangisinde s bir tam sayıdır (int)?",
+    "options": {
+      "A": "s = a + b",
+      "B": "s = a + c**2",
+      "C": "s = 2.0 * (c &gt;= a)",
+      "D": "s = c // 3 - a",
+      "E": "s = 2 * (c &gt; a)"
+    },
+    "correctAnswer": "E",
+    "explanation": "(c > a) karşılaştırması True (1) döner. Tam sayı olan 2 ile 1 çarpıldığında sonuç yine tam sayı (2) olur. Diğer şıklarda işleme 5.0 veya 2.0 gibi ondalıklı sayılar dahil olduğu için sonuç float (ondalıklı) olur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d3061191baa7",
+    "unitNumber": 3,
+    "text": "Yukarıdaki ekran görüntüsünde yer alan metnin “çoklu yorum satırı”na dönüştürülebilmesi için aşağıdaki seçeneklerden hangisi kullanılabilir?",
+    "options": {
+      "A": "Yalnızca 7. satıra (üç adet tırnak işareti) eklenmelidir.",
+      "B": "8. ve 10. satırlara # (bir adet diyez işareti) eklenmelidir.",
+      "C": "7. ve 11. satırlara # (bir adet diyez işareti) eklenmelidir.",
+      "D": "7. ve 11. satırlara \" (üç adet tırnak işareti) eklenmelidir.\"",
+      "E": "8. satıra # (bir adet diyez işareti) eklenmelidir."
+    },
+    "correctAnswer": "D",
+    "explanation": "Python’da birden fazla satırı kapsayan yorum blokları oluşturmak için metnin başına (7. satır) ve sonuna (11. satır) üç adet çift tırnak \"\"\" işareti konulur.”",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-41617b6bd927",
+    "unitNumber": 4,
+    "text": "Aşağıdakilerden hangisi Python kodlarının üzerine yazıldığı bir dosya (betik/script dosyası) olabilir?",
+    "options": {
+      "A": "vize.exe",
+      "B": "vize.r",
+      "C": "vize.py",
+      "D": "vize.ipython",
+      "E": "vize.python"
+    },
+    "correctAnswer": "C",
+    "explanation": "Python programlarının yazıldığı ve çalıştırılabilir kodları içeren betik dosyaları standart olarak .py uzantısına sahiptir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e4a27e41f5e0",
+    "unitNumber": 5,
+    "text": "A=[3,5,7,9,11] veriliyor. Listenin ilk elemanı olarak 1’in eklenebilmesi için aşağıdaki seçeneklerden hangisi çalıştırılmalıdır?",
+    "options": {
+      "A": "A.insert(0, 1)",
+      "B": "A.insert(1)",
+      "C": "A.append(1)",
+      "D": "A.insert(1,0)",
+      "E": "A.append(1,0)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Python listelerinde insert(indis, eleman) fonksiyonu, belirtilen indis konumuna yeni bir eleman ekler. Listenin ilk sırası 0. indis olduğu için A.insert(0, 1) komutu 1 değerini en başa ekler.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3488b687a6d0",
+    "unitNumber": 6,
+    "text": "Bir yazılım şirketindeki programcı aynı anda iki farklı Python projesinde görev almaktadır; ancak görev aldığı projelerin biri NumPy’ın 1.10 diğeri ise 1.14 versiyonu ile sorunsuz çalışmaktadır. Bu durumda aşağıdakilerden hangisi programcıya en uygun tavsiye olacaktır?",
+    "options": {
+      "A": "NumPy'ın eski versiyonunu gerektiren projenin iptal edilmesi.",
+      "B": "NumPy'ın yeniden yüklenmesi.",
+      "C": "NumPy'ın yeni versiyonunu gerektiren projenin iptal edilmesi.",
+      "D": "Projeler için farklı bütünleşik geliştirme ortamları kullanılması.",
+      "E": "Projeler için farklı sanal ortamların (Virtual Environment) kullanılması."
+    },
+    "correctAnswer": "E",
+    "explanation": "Python’da farklı projeler için farklı paket versiyonlarını birbiriyle çakışmadan kullanmanın en doğru yolu “Virtual Environment” (Sanal Ortam) oluşturmaktır. Bu sayede her proje kendi bağımsız kütüphane havuzuna sahip olur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a12f6f2d17d5",
+    "unitNumber": 7,
+    "text": "Yukarıda verilen kod satırlarına göre aşağıdaki seçeneklerden hangisi gerçekleşir?",
+    "options": {
+      "A": "Kullanıcıdan bir sayı alınmak istenmektedir, ancak input() fonksiyonundan geri dönen değer için veri tipi dönüşümü yapılmadığından ikinci satırdaki kod çalıştırıldığında hata mesajı döndürülür.",
+      "B": "Ekrana 0 yazdırılır.",
+      "C": "x'e \"Lütfen bir sayı giriniz:\" değeri atanır. Bu nedenle de x+5 kod satırı çalışmaz, hata mesajı döndürülür.",
+      "D": "Kullanıcıdan bir sayı alınır ve x değişkenine atanır. Ardından kullanıcının girdiği sayıya 5 eklenerek ekrana yazdırılır.",
+      "E": "Ekrana 5 yazdırılır."
+    },
+    "correctAnswer": "A",
+    "explanation": "input() fonksiyonu kullanıcıdan aldığı veriyi her zaman karakter dizisi (string) olarak saklar. Metinsel bir ifade ile sayısal bir ifade (5) matematiksel olarak toplanamayacağı için hata oluşur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1b5bf38d3a11",
+    "unitNumber": 8,
+    "text": "Yukarıda verilen Python kod bloğu çalıştırıldığında z değişkeninin aldığı değer, aşağıdaki seçeneklerden hangisinde a değişkeninin son değerine eşittir?",
+    "options": {
+      "A": "a = 20, b = 10, a *= b",
+      "B": "a = 1200, b = 30, a %= b",
+      "C": "a = 150, b = 5, a -= b",
+      "D": "a = 100, b = 60, a += b",
+      "E": "a = 40, b = 2, a **= b"
+    },
+    "correctAnswer": "D",
+    "explanation": "İşlem önceliğine göre önce üs alma yapılır: 4**2 = 16. Sonra çarpma: 10 * 16 = 160. Dolayısıyla z=160’tır. D şıkkında a = b işlemi (100 60) 160 sonucunu verir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8c5f9d1817b2",
+    "unitNumber": 9,
+    "text": "sayi = 50 print(sayi % 3) if sayi % 3 != 0 else print(“0”) Yukarıda verilen kod bloğu çalıştırıldığında aşağıda verilen seçeneklerden hangisi döndürülür?",
+    "options": {
+      "A": "16",
+      "B": "50",
+      "C": "0",
+      "D": "2",
+      "E": "3"
+    },
+    "correctAnswer": "D",
+    "explanation": "50 sayısının 3’e bölümünden kalan (mod işlemi) 2’dir. 2 != 0 şartı doğru olduğu için if bloğu çalışır ve ekrana kalan değer olan 2 yazdırılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-73086d9cdc2b",
+    "unitNumber": 10,
+    "text": "Yukarıda verilenlere göre odeme değişkeninin son değeri aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "90",
+      "B": "50",
+      "C": "110",
+      "D": "0",
+      "E": "100"
+    },
+    "correctAnswer": "B",
+    "explanation": "harcama 100 olduğu için 100 >= 50 şartı doğrudur. Bu nedenle if bloğu çalışır ve 100 * 0.50 = 50 hesaplanarak odeme değişkenine atanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-78f5f307d78a",
+    "unitNumber": 11,
+    "text": "I. PyCharm II. Spyder III. IDLE IV. Jupyter Notebook V. Saturn Yukarıdakilerden kaç tanesi Python geliştirme ortamlarındandır?",
+    "options": {
+      "A": "5",
+      "B": "3",
+      "C": "4",
+      "D": "1",
+      "E": "2"
+    },
+    "correctAnswer": "C",
+    "explanation": "PyCharm, Spyder, IDLE ve Jupyter Notebook yaygın olarak kullanılan Python IDE (Bütünleşik Geliştirme Ortamı) ve araçlarıdır. Saturn ise bu grupta yer alan bir standart Python IDE’si değildir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9c6d6b96e27f",
+    "unitNumber": 12,
+    "text": "Yukarıdaki Python kod bloğu çalıştırıldığında aşağıdaki seçeneklerden hangisi döner?",
+    "options": {
+      "A": "Geçer!",
+      "B": "45",
+      "C": "FF",
+      "D": "85",
+      "E": "20"
+    },
+    "correctAnswer": "A",
+    "explanation": "notDegeri değişkeni 85’tir. 85 < 45 şartı yanlış (False) olduğu için else kısmındaki komut çalışır ve ekrana “Geçer!” yazdırılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-fe9033c92a64",
+    "unitNumber": 13,
+    "text": "a1 = [1,2,3] a2 = (1,2,3) a3 = {1,2,3} Yukarıda verilen Python nesnelerinden hangisi ya da hangilerinde 2 elemanı yerine 5 atanabilir?",
+    "options": {
+      "A": "al ve a2",
+      "B": "al, a2 ve a3",
+      "C": "Yalnızca a1",
+      "D": "Yalnızca a3",
+      "E": "a2 ve a3"
+    },
+    "correctAnswer": "C",
+    "explanation": "Python’da sadece listeler (mutable) indis üzerinden eleman güncellemesine izin verir (a1[1]=5). Demetler (a2) ve Kümeler (a3) bu tür bir atama işlemine izin vermez.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-898189314ab1",
+    "unitNumber": 14,
+    "text": "x = (0,1,2,3) veriliyor. Buna göre aşağıdaki kod satırı çalıştırıldığında hangi seçenek döner? x[2] = 5",
+    "options": {
+      "A": "5, 2 ile 3'ün arasına eklenir.",
+      "B": "x'te 1 yerine 5 atanır.",
+      "C": "x'te 2 yerine 5 atanır.",
+      "D": "x, veri yapısı gereği eleman atanması işlemine izin vermez, hata mesajı döndürülür.",
+      "E": "5, 1 ile 2'nin arasında eklenir."
+    },
+    "correctAnswer": "D",
+    "explanation": "Parantez () içinde tanımlanan veri yapıları “Demet” (Tuple) olarak adlandırılır. Demetler değiştirilemez (immutable) oldukları için içindeki bir elemana yeni bir değer atanamaz; bu işlem hata ile sonuçlanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0e8e72f2d517",
+    "unitNumber": 15,
+    "text": "Yukarıdaki Python kod bloğu çalıştırıldığında aşağıdaki seçeneklerden hangisi döndürülür?",
+    "options": {
+      "A": "['2', '4', '6', '8']",
+      "B": "['8', '6', '4', '2']",
+      "C": "['1', '3', '5', '7']",
+      "D": "['1', '2', '3', '4', '5', '6', '7', '8']",
+      "E": "[]"
+    },
+    "correctAnswer": "A",
+    "explanation": "Sözlük (dictionary) veri yapısında values() metodu sadece değerleri (“value”) döndürür. Burada “1”, “3”, “5” anahtar (key); “2”, “4”, “6”, “8” ise değerlerdir. list() fonksiyonu bu değerleri bir listeye çevirir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e512ccb918eb",
+    "unitNumber": 16,
+    "text": "x = [1,3,5,7,9] Python’da yukarıdaki gibi bir x listesi veriliyor. Aşağıdaki seçeneklerin hangisi bu liste elemanlarının tersten yazdırılmasını sağlar?",
+    "options": {
+      "A": "x[:1]",
+      "B": "x[::1]",
+      "C": "x[:1:1]",
+      "D": "x[-1:]",
+      "E": "x[::-1]"
+    },
+    "correctAnswer": "E",
+    "explanation": "Python “Slicing” yönteminde [başlangıç:bitiş:adım_miktarı] formatı kullanılır. Adım miktarının -1 yapılması dizinin en sondan başlayarak geriye doğru taranmasını ve tersten yazılmasını sağlar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-837e765c5a56",
+    "unitNumber": 17,
+    "text": "Windows’ta CMD ekranı üzerinden Python kodlama gerçekleştirebilmek için programcı aşağıdaki komutlardan hangisini yazmalıdır?",
+    "options": {
+      "A": "py-enter",
+      "B": "python",
+      "C": "cd python",
+      "D": "get python",
+      "E": ".. python"
+    },
+    "correctAnswer": "B",
+    "explanation": "Komut isteminde (CMD) yüklü olan Python yorumlayıcısını başlatmak ve etkileşimli kabuğa girmek için kullanılan temel komut python‘dır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-406dd263eef7",
+    "unitNumber": 18,
+    "text": "Aşağıdakilerden hangisi Python’da hatalı bir değişken tanımlamasıdır?",
+    "options": {
+      "A": "zeki = \"zeki\"",
+      "B": "tur_han = 50",
+      "C": "elif = \"elif\"",
+      "D": "ilkim = \"1\"",
+      "E": "ECEM = \"ecem\""
+    },
+    "correctAnswer": "C",
+    "explanation": "Python’da dilin kendisine ait olan anahtar kelimeler (if, elif, else, for, while, vb.) değişken ismi olarak kullanılamaz. elif bir koşul yapısı anahtar kelimesi olduğu için hatalı tanımlamadır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-881bb943f88b",
+    "unitNumber": 19,
+    "text": "Aşağıdakilerden hangisi Python’da koşul ifadeleri ile ilgili bir terim değildir?",
+    "options": {
+      "A": "if",
+      "B": "elif",
+      "C": "match-case",
+      "D": "else",
+      "E": "for"
+    },
+    "correctAnswer": "E",
+    "explanation": "Python’da if, elif, else ve match-case yapıları belirli bir şarta bağlı olarak kodun çalışmasını kontrol eden “koşul ifadeleri”dir. for ise belirli bir döngüyü (tekrarlı işlemi) ifade etmek için kullanılan bir döngü yapısıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-fec7cec258bd",
+    "unitNumber": 20,
+    "text": "Yukarıdaki Python kod bloğunun ilk satırı çalıştırıldığında kullanıcı “sarı” girişi yaparsa, match-case ifadesi çalıştırıldığında aşağıdaki seçeneklerden hangisi elde edilir?",
+    "options": {
+      "A": "Kod bloğu çalışmaz, hata döndürür.",
+      "B": "Sıcak Renk",
+      "C": "Doğal Renk",
+      "D": "Soğuk Renk",
+      "E": "Lütfen geçerli bir renk giriniz."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c04ff6c86af6",
+    "unitNumber": 21,
+    "text": "ogrNotu = 20 notDegeri = 85 print(“FF”) if notDegeri < 45 else print( \"Geçer!\") Yukarıdaki Python kod bloğu çalıştırıldığında aşağıdaki seçeneklerden hangisi döner?",
+    "options": {
+      "A": "Geçer!",
+      "B": "20",
+      "C": "FF",
+      "D": "45",
+      "E": "85"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-29f729673d04",
+    "unitNumber": 22,
+    "text": "Yukarıda verilen konsol ekranıdan Python’a erişim sağlamak için komut satırına aşağıdakilerden hangisi yazılmalıdır?",
+    "options": {
+      "A": "enter",
+      "B": "get python",
+      "C": "python()",
+      "D": "enter(python)",
+      "E": "python"
+    },
+    "correctAnswer": "E",
+    "explanation": "Windows’ta komut istemcisinde Python yorumlayıcısını başlatmak için “python” komutu yazılıp Enter tuşuna basılır. Bu, etkileşimli bir Python oturumu başlatır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-29d473995024",
+    "unitNumber": 23,
+    "text": "Spyder’da yeni bir Python betik dosyası üzerindeki kodların satır satır çalıştırılmasını sağlayan varsayılan klavye kısayolu aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "F5",
+      "B": "F9",
+      "C": "Cltrl+Enter",
+      "D": "Ctrl+Shift+Enter",
+      "E": "F12"
+    },
+    "correctAnswer": "B",
+    "explanation": "Spyder IDE’sinde, düzenleyici penceresinde seçili olan kod satırlarını veya imlecin bulunduğu satırı çalıştırmak için kullanılan varsayılan klavye kısayolu F9’dur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-de330ed5394a",
+    "unitNumber": 25,
+    "text": "Aşağıdaki Python kodlarından hangisi çalıştırıldığında hata vermez ve x değişkenin veri tipi boolean (bool) olur?",
+    "options": {
+      "A": "z, x = True, True, False",
+      "B": "x = 1, -10, 0, 1",
+      "C": "x, y = \"1\", \"2\", \"3\"",
+      "D": "x, y, z = \"True\", \"50\", 850",
+      "E": "x, y = True, \"False\""
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-86234a0ee137",
+    "unitNumber": 26,
+    "text": "Yukarıda verilen kodlar çalıştırıldığında b’nin değeri aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "15",
+      "B": "0",
+      "C": "6",
+      "D": "5",
+      "E": "1"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ae1bbdd691f7",
+    "unitNumber": 27,
+    "text": "tatil = {“deniz”, “gunes”, “kum”} tatil.pop() Yukarıdaki Python kod bloğu çalıştırıldığında aşağıdaki seçeneklerden hangisi gerçekleşir?",
+    "options": {
+      "A": "deniz elemanı kümeden çıkarılır.",
+      "B": "tatil kümesi tamamen kaldırılır.",
+      "C": "kum elemanı kümeden çıkarılır.",
+      "D": "Kümeler için pop() adlı bir fonksiyon tanımlı olmadığından kod bloğu çalıştırıldığında hata mesajı döndürülür.",
+      "E": "gunes elemanı kümeden çıkarılır."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e1aeb85f91d8",
+    "unitNumber": 29,
+    "text": "Yukarıda verilen Python kodları ile ilgili aşağıdaki seçeneklerden hangisi doğrudur?",
+    "options": {
+      "A": "Kod bloğunun hatasız çalışması için if bloğundan sonra mutlaka else bloğu eklenmelidir.",
+      "B": "Kod bloğunun hatasız çalışması için if bloğundan sonra mutlaka elif bloğu eklenmelidir.",
+      "C": "Python kod bloğu hata vermeden çalıştırılır.",
+      "D": "Kod bloğunun hatasız çalışması için 2. satırda = yerine kullanılmalıdır.",
+      "E": "Kod bloğunun hatasız çalışması için 1. satırda = yerine kullanılmalıdır."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7d1cc8029cea",
+    "unitNumber": 30,
+    "text": "Aşağıdakilerden hangisi Python programlama dili hakkında yanlış bir ifadedir?",
+    "options": {
+      "A": "Python dilinde yazılan kodlar, modül ya da paket halinde gruplandırılabilir.",
+      "B": "Python kodlarındaki istisna durumların (exceptions) yakalanması mümkün değildir.",
+      "C": "Python'da kodların satır satır çalıştırılması mümkündür.",
+      "D": "Python yorumlayıcı (interpreter) kullanır.",
+      "E": "Python dili otomatik bellek yönetimi prensibini kullanır."
+    },
+    "correctAnswer": "B",
+    "explanation": "Bu ifade yanlıştır. Python’da try-except blokları kullanarak istisna durumlar (hata veya exception) yakalanabilir ve yönetilebilir. Bu, programın beklenmedik durumlarla karşılaştığında çökmesini engeller.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-cb374f1cd8e7",
+    "unitNumber": 31,
+    "text": "Aşağıdakilerden hangisi Python dilinin nesneye yönelimli programlama yapısına özgü kavramlardan biri değildir?",
+    "options": {
+      "A": "Sınıf",
+      "B": "Değişken",
+      "C": "Kapsülleme",
+      "D": "Çok biçimlilik",
+      "E": "Nesne"
+    },
+    "correctAnswer": "B",
+    "explanation": "Değişken, hemen hemen tüm programlama dillerinde bulunan temel bir kavramdır. Sınıf, nesne, kapsülleme, çok biçimlilik ve kalıtım ise nesneye yönelik programlamaya özgü temel kavramlardır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c7a3d574a4d2",
+    "unitNumber": 32,
+    "text": "Aşağıdaki kod satırlarından hangisi çalıştırıldığında hata dönmez ve bir elemanlı bir demet tanımlanmış olur?",
+    "options": {
+      "A": "a = [1, ]",
+      "B": "a = {1, }",
+      "C": "a = (1, )",
+      "D": "a = (1)",
+      "E": "a = (, 1)"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-83c5328084f2",
+    "unitNumber": 33,
+    "text": "Yukarıda verilen “Bilgisayar” sınıfına göre aşağıdaki seçeneklerin hangisi hata döndürür?",
+    "options": {
+      "A": "<code>bilg.sabitDisk</code>",
+      "B": "<code>bilg.model</code>",
+      "C": "<code>bilg.ABC</code>",
+      "D": "<code>bilg.mark</code>",
+      "E": "<code>bilg.islemci</code>"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c83ee93c10bb",
+    "unitNumber": 34,
+    "text": "Yukarıdaki Python kodları çalıştırıldığında ekrana kaç adet + yazdırılır?",
+    "options": {
+      "A": "1",
+      "B": "4",
+      "C": "5",
+      "D": "2",
+      "E": "0"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-76ca127a4ff3",
+    "unitNumber": 35,
+    "text": "Yukarıdaki Python kodunda … ile verilen boşluğun aşağıdaki seçeneklerin hangisi ile tamamlanması uygun olur?",
+    "options": {
+      "A": "<code>and</code>",
+      "B": "<code>else</code>",
+      "C": "<code>match</code>",
+      "D": "<code>elif</code>",
+      "E": "<code>case</code>"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1fd812bcad60",
+    "unitNumber": 36,
+    "text": "I. Veri bilimi çalışmaları. II. Matematik ve istatistik başta olmak üzere çeşitli bilimsel hesaplamalar. III. Yazılım geliştirme. IV. Oyun geliştirme. Yukarıda belirtilen alanların hangisi ya da hangilerinde Python programlama dili kullanılmaktadır?",
+    "options": {
+      "A": "I, II ve III",
+      "B": "I ve II",
+      "C": "Yalnız I",
+      "D": "Yalnız II",
+      "E": "I, II, III ve IV"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-3ddfc75723e0",
+    "unitNumber": 37,
+    "text": "Yukarıdaki ekran görüntüsünün elde edilebilmesi için aşağıda … ile verilen boşluğa aşağıdaki seçeneklerden hangisi getirilmelidir?",
+    "options": {
+      "A": "<code>for j in range(i, len(A))</code>",
+      "B": "<code>for i in range(0, i)</code>",
+      "C": "<code>for j in range(0, i+1)</code>",
+      "D": "<code>for i in range(0, i+1)</code>",
+      "E": "<code>for j in range(0, i)</code>"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5c7c83b61474",
+    "unitNumber": 38,
+    "text": "Aşağıdaki seçeneklerden hangisi Python’daki hazır (buliltin) fonksiyonlardan biri değildir?",
+    "options": {
+      "A": "max()",
+      "B": "type()",
+      "C": "print()",
+      "D": "getwd()",
+      "E": "sum()"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d68dbfe0df8a",
+    "unitNumber": 39,
+    "text": "Eğer hafta sonu hava güzelse, pikniğe giderim. Yukarıdaki örnek cümledekine benzer bir karar alma durumu Python programlamada aşağıdaki yapılardan hangisi ile temsil edilebilir?",
+    "options": {
+      "A": "Fonksiyonlar",
+      "B": "Sınıflar",
+      "C": "Koşul ifadeleri",
+      "D": "Döngüler",
+      "E": "Paketler"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4681ba89a985",
+    "unitNumber": 40,
+    "text": "Yukarıdaki Python kodları yardımı ile iki küme tanımlanıyor. Bu durumda {0, 1, 7, 8, 9, 11, 99} elde edilmesi için aşağıdaki kod satırlarından hangisi çalıştırılmalıdır?",
+    "options": {
+      "A": "<code>k1 and k2</code>",
+      "B": "<code>k1 | k2</code>",
+      "C": "<code>k1 &amp; k2</code>",
+      "D": "<code>k2 - k1</code>",
+      "E": "<code>k1 - k2</code>"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-bc483ebc1ba7",
+    "unitNumber": 41,
+    "text": "Python’da tek satırlık bir yorum eklemek için aşağıdaki karakterlerden hangisi kullanılır?",
+    "options": {
+      "A": "<code>#</code>",
+      "B": "<code>*</code>",
+      "C": "<code>$</code>",
+      "D": "<code>!</code>",
+      "E": "<code>%</code>"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-342a8c3b2b40",
+    "unitNumber": 42,
+    "text": "Aşağıdaki seçeneklerin hangisinde verilen lambda fonksiyonu doğru bir biçimde tanımlanmıştır?",
+    "options": {
+      "A": "<code>fonk = lambda x: False if x != 2024 else True</code>",
+      "B": "<code>fonk lambda x: False (if x ! 2024) (else True)</code>",
+      "C": "<code>fonk lambda x(False if x != 2024 else True)</code>",
+      "D": "<code>fonk lambda (x: False if x != 2024 else True)</code>",
+      "E": "<code>fonk lambda x: if x != 2024 False else True</code>"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e8d01450e558",
+    "unitNumber": 43,
+    "text": "Python’da NumPy kütüphanesini çağırmak için aşağıdaki seçeneklerden hangisi kullanılabilir?",
+    "options": {
+      "A": "<code>install numpy as np</code>",
+      "B": "<code>return numpy</code>",
+      "C": "<code>import numpy as np</code>",
+      "D": "<code>build numpy as np</code>",
+      "E": "<code>get numpy</code>"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-271aa0659b2a",
+    "unitNumber": 44,
+    "text": "Aşağıda verilen seçeneklerin hangisinde yapılan veri tipi dönüşümü hata mesajı döndürür?",
+    "options": {
+      "A": "<code>float (30)</code>",
+      "B": "<code>int (2.5)</code>",
+      "C": "<code>float (True)</code>",
+      "D": "<code>bool (\"Elif\")</code>",
+      "E": "<code>float(\"Elif\")</code>"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-40aaf1103a17",
+    "unitNumber": 45,
+    "text": "Aşağıda verilen seçeneklerin hangisinde z değişkeninin veri tipi tam sayıdır?",
+    "options": {
+      "A": "<code>z = 121 - 1.8</code>",
+      "B": "<code>z = 97 // 2</code>",
+      "C": "<code>z = 1.1 ** 2</code>",
+      "D": "<code>z = 30 * 1.0</code>",
+      "E": "<code>z = 12 / 7</code>"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b8cc91a72ebe",
+    "unitNumber": 46,
+    "text": "Yukarıda tanımlanan a adlı NumPy dizisi için a.size kodu çalıştırılırsa aşağıdakilerden hangisi elde edilir?",
+    "options": {
+      "A": "(10,1)",
+      "B": "10",
+      "C": "(2,5)",
+      "D": "5",
+      "E": "2"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-6b21f75ac0fe",
+    "unitNumber": 47,
+    "text": "Yukarıda verilen Python kodlarına göre kapsülleme (encapsulation) kullanılarak gizlenen değişken aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "bakiye",
+      "B": "mktr",
+      "C": "hesabim",
+      "D": "bakiye goster",
+      "E": "BankaHesap"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-edc2f2eba3f5",
+    "unitNumber": 48,
+    "text": "Yukarıdaki DataFrame’den Sehir sütununu kaldırmak için aşağıdaki seçeneklerden hangisi kullanılabilir?",
+    "options": {
+      "A": "<code>df.del (\"Sehir\", axis = 1)</code>",
+      "B": "<code>df.remove (\"Sehir\", axis = 1)</code>",
+      "C": "<code>df.drop(\"Sehir\", axis = 0)</code>",
+      "D": "<code>df.del (\"Sehir\", axis = 0)</code>",
+      "E": "<code>df.drop(\"Sehir\", axis = 1)</code>"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a49d9fa8fccb",
+    "unitNumber": 49,
+    "text": "Yukarıda verilen kod satırı çalıştırıldığında l1’in son durumu hangi seçenekte doğru biçimde verilmiştir?",
+    "options": {
+      "A": "[1, 5, 15]",
+      "B": "[1, 15]",
+      "C": "[5, 1, 5, 15, 5]",
+      "D": "[1, 15, 5]",
+      "E": "[1, 5, 15, 5, 5]"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-0a0320bd855b",
+    "unitNumber": 50,
+    "text": "Yukarıda verilen Python kodları ile 5 dışında kalan tüm elemanların toplamı elde edilmek isteniyor. Buna göre ile belirtilen boşluğa aşağıdaki seçeneklerden hangisi getirilmelidir?",
+    "options": {
+      "A": "<code>top</code>",
+      "B": "<code>pass</code>",
+      "C": "<code>break</code>",
+      "D": "<code>say</code>",
+      "E": "<code>continue</code>"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-6ba65a071eb8",
+    "unitNumber": 51,
+    "text": "Aşağıdaki seçeneklerin hangisinde yukarıda verilen “Futbolcu” sınıfının bir örneği doğru biçimde oluşturulmuştur?",
+    "options": {
+      "A": "<code>oyuncum = Futbolcu (7, \"Süleyman\", \"Seba\", 25, \"Sağ Açık\")</code>",
+      "B": "<code>oyuncum = Futbolcu (\"Suleyman\", \"Seba\")</code>",
+      "C": "<code>oyuncum = Futbolcu (25, \"Süleyman\", \"Seba\")</code>",
+      "D": "<code>oyuncum = Futbolcu (\"Suleyman\", \"Seba\", \"Sağ Açık\", 7, 25)</code>",
+      "E": "<code>oyuncum = Futbolcu (\"Süleyman\", \"Seba\", 25, \"Sağ Açık\")</code>"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b6ae6a475537",
+    "unitNumber": 52,
+    "text": "Yukarıda bir mağazanın indirim hesaplamak için kullandığı Python fonksiyonu yer almaktadır. indirim_hesapla(900) fonksiyonuna göre 900TL’lik alış-veriş yapan bir müşterinin ödeme miktarı aşağıdaki seçeneklerin hangisinde verilmiştir?",
+    "options": {
+      "A": "0",
+      "B": "900",
+      "C": "110",
+      "D": "810",
+      "E": "90"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-3574c6abe996",
+    "unitNumber": 53,
+    "text": "Yukarıdaki kod çalıştırıldığında ekrana gelen sonuç aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "16",
+      "B": "6",
+      "C": "8",
+      "D": "9",
+      "E": "12"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-631e918cd501",
+    "unitNumber": 54,
+    "text": "while döngüsünü kullanırken, döngünün ne zaman sonlanacağını dikkatlice düşünmeniz gerekir. Aksi takdirde, döngü sonsuza kadar dönebilir ve bu da bir hata durumuna yol açabilir. Bu sorunu önlemek için, döngünün ne zaman sonlanacağını belirleyen bir …… ifadesi kullanmanız gerekir. Yukarıdaki cümledeki boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "işlem",
+      "B": "algoritma",
+      "C": "for",
+      "D": "deyim",
+      "E": "koşul"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-66d3f7a6a2bb",
+    "unitNumber": 55,
+    "text": "Python programlama dili hangi tür bir dildir?",
+    "options": {
+      "A": "Obje yönelimli",
+      "B": "Yüksek seviyeli",
+      "C": "Düşük seviyeli",
+      "D": "Yapısal",
+      "E": "Fonksiyonel"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9f1708c6af37",
+    "unitNumber": 56,
+    "text": "Mantıksal ‘ve’ fonksiyonu ile aynı olan yerleşik fonksiyon aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "all",
+      "B": "min",
+      "C": "any",
+      "D": "abs",
+      "E": "sum"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d8ce0aa2812f",
+    "unitNumber": 57,
+    "text": "Python’da aşağıdakilerden hangisi bir değişken adlandırma kuralı ihlalidir değildir?",
+    "options": {
+      "A": "%ogrenci",
+      "B": "@ogrenci",
+      "C": "!ogrenci",
+      "D": "#ogrenci",
+      "E": "_ogrenci"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d6724235361d",
+    "unitNumber": 58,
+    "text": "Hangisi Python’ da hatalı ayrılmış bir anahtar sözcüktür?",
+    "options": {
+      "A": "elif",
+      "B": "false",
+      "C": "if",
+      "D": "else",
+      "E": "true9."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1f321cb7a0e0",
+    "unitNumber": 59,
+    "text": "print(“Merhaba\\nDünya!”) Yukarıdaki kod parçasının çıktısı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Merhaba Dünya!",
+      "B": "Merhaba\\nDünya!",
+      "C": "Merhaba Dünya!",
+      "D": "Merhaba",
+      "E": "Dünya!"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-31756d0f5f59",
+    "unitNumber": 60,
+    "text": "Aşağıdaki değişken isimlerinden hangisi Deve (Camel) notasyonunda yazılmıştır?",
+    "options": {
+      "A": "ogrenci_no",
+      "B": "_OgrenciAdi",
+      "C": "ogrenciAdi",
+      "D": "Ogrenci_adi",
+      "E": "OgrenciNumarasi"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c4ea9269ccf0",
+    "unitNumber": 61,
+    "text": "Bir fonksiyona sınırsız sayıda parametre göndermek için kullanılacak operatör aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "æ",
+      "B": "*",
+      "C": "%",
+      "D": "&amp;",
+      "E": "++3"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-41cf93806025",
+    "unitNumber": 62,
+    "text": "Python programlama dilinin adı aşağıdakilerden hangisinden gelmektedir?",
+    "options": {
+      "A": "Bir matematiksel formülden",
+      "B": "Bir müzik parçasından",
+      "C": "Bir bilgisayar bilimcisinin adından",
+      "D": "Bir ingiliz komedi grubu olan Monty Python’dan",
+      "E": "Bir yılan türünden"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-746a1f251e3b",
+    "unitNumber": 63,
+    "text": "Python programlama dilinin ilk sürümü hangi tarihte piyasaya sürülmüştür?",
+    "options": {
+      "A": "1980",
+      "B": "1991",
+      "C": "1995",
+      "D": "1990",
+      "E": "1985"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f95a70330024",
+    "unitNumber": 64,
+    "text": "Bilgisayar programlarının kodlanması için kullanılan ilk ilkel programlama dili, aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Python",
+      "B": "C++",
+      "C": "C#",
+      "D": "Analitik Motor",
+      "E": "C"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6980c7740fa5",
+    "unitNumber": 65,
+    "text": "Atlama deyimleri döngüler içerisinde koşulların sağlanmadığı durumlarda işlemi iptal etmek, işlem yapmamak veya atlamak için kullanılan deyimlerdir. ….. kod akışını bir daha dönmemek üzere blok sonuna aktarır …… bulunduğu noktadan sonraki deyimleri çalıştırmadan ilk başa döndürür. ….. hiçbir işlem yapılmayacak yapılarda kullanılır. Yukarıdaki paragraftaki boşluklara sırasıyla aşağıdakilerden hangileri gelmelidir?",
+    "options": {
+      "A": "pass, continue, break",
+      "B": "break, continue, pass",
+      "C": "for, while, break",
+      "D": "break, pass, continue",
+      "E": "for, break , pass"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3e24028eabb1",
+    "unitNumber": 66,
+    "text": "Yukardaki kod Python 3.9 ile çalıştırıldığında ekrana ne yazar?",
+    "options": {
+      "A": "Çalışmaz hata üretir.",
+      "B": "İşlemci üreticinizi tanıyamadık.",
+      "C": "İşlemci üreticiniz AMD'dir.",
+      "D": "İşlemci üreticiniz ARM'dir.",
+      "E": "İşlemci üreticiniz Intel'dir."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-826a15a23ad0",
+    "unitNumber": 67,
+    "text": "Yukarıdaki kod parçasında, bilet değişkeninin değeri 123457 ise, ekrana hangi çıktı verilir?",
+    "options": {
+      "A": "Kazanmadınız.",
+      "B": "Belirtilen değere göre değişir.",
+      "C": "Hata verir.",
+      "D": "Tebrikler büyük ikramiyeyi kazandınız!",
+      "E": "Amorti kazandınız!"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-29d32a176d4c",
+    "unitNumber": 68,
+    "text": "Bir fonksiyon ifade bloğunu tanımlamak için kullanılan anahtar kelime aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "func",
+      "B": "fonksiyon",
+      "C": "definition",
+      "D": "def",
+      "E": "function"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f3789d38de2e",
+    "unitNumber": 69,
+    "text": "Python’da, bir fonksiyon içinde tanımlanan ve yalnızca o fonksiyon içinde erişilebilir ve kullanılabilen değişkenler …….. olarak adlandırılır. Yukarıdaki cümledeki boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Açık alan değişkenleri",
+      "B": "Kapalı alan değişkenleri",
+      "C": "Genel alan değişkenleri",
+      "D": "Yerleşik alan değişkenleri",
+      "E": "Yerel alan değişkenleri"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0c99991cb216",
+    "unitNumber": 70,
+    "text": "Aşağıdaki şıklardan hangisinde değişken adlandırma için kural doğru değildir?",
+    "options": {
+      "A": "Değişken adları 10 karakterden fazla olabilir.",
+      "B": "Değişken adları anahtar kelimeler olarak kullanılamaz.",
+      "C": "Değişken adları harf, rakam veya alt çizgi içerebilir.",
+      "D": "Değişken adları sayılarla başlayabilir.",
+      "E": "Değişken adları büyük/küçük harfe duyarlıdır."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-02cc3740372d",
+    "unitNumber": 71,
+    "text": "Yukarıdaki kod parçasında, kullanıcı 123456 girer ise, ekrana hangi çıktı verilir?",
+    "options": {
+      "A": "Büyük ikramiyeyi kazandınız! Amorti kazandınız!",
+      "B": "Kazanmadınız.",
+      "C": "Amorti kazandınız!",
+      "D": "Büyük ikramiyeyi kazandınız!",
+      "E": "Büyük ikramiyeyi kazandınız! Kazanmadınız."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-897bb2a192c8",
+    "unitNumber": 72,
+    "text": "Ders notlarına göre bilgisayar programlarının işlevsel olabilmesi için bilgisayarlarda gerekli olan iki unsur nedir?",
+    "options": {
+      "A": "Donanım ve yazılım",
+      "B": "İşletim sistemi ve programlama dili",
+      "C": "Yazılım ve programlama dili",
+      "D": "Donanım, yazılım ve işletim sistemi",
+      "E": "Yazılım ve işletim sistemi"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-065fff89306f",
+    "unitNumber": 74,
+    "text": "Python’da A = [“Python”, “programlama”, “dersini”, “çok”, “seviyorum”] şeklinde tanımlanıyor. Buna göre; A[0 : len(A) : 2] Python kodu aşağıdaki seçeneklerden hangisini döndürür?",
+    "options": {
+      "A": "['Python', 'programlama', 'dersini', 'çok']",
+      "B": "['programlama', 'dersini', 'seviyorum']",
+      "C": "['Python', 'dersini', 'seviyorum']",
+      "D": "['Python', 'programlama', 'dersini', 'çok', 'seviyorum']",
+      "E": "['programlama', 'dersini', 'çok', 'seviyorum']"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-df6419db5e83",
+    "unitNumber": 75,
+    "text": "“veri” adlı bir pandas DataFrame’inin V1 ve V2 adlı iki sütunu bulunmaktadır. Sütun adlarının sırasıyla ad ve soyad olarak değiştirilebilmesi için aşağıdakilerden hangisi kullanılabilir?",
+    "options": {
+      "A": "veri = veri.setname(columns={\"V1\": \"ad\", \"V2\": \"soyad\"})",
+      "B": "veri = veri.load(columns={\"V1\": \"ad\", \"V2\": \"soyad\"})",
+      "C": "veri = veri.usename(columns={\"V1\": \"ad\", \"V2\": \"soyad\"})",
+      "D": "veri = veri.rename(columns={\"V1\": \"ad\", \"V2\": \"soyad\"})",
+      "E": "veri = veri.relevel(columns={\"V1\": \"ad\", \"V2\": \"soyad\"})"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-35484abe15d9",
+    "unitNumber": 76,
+    "text": "Yukarıda verilen Python kod satırları çalıştırıldığında aşağıdaki seçeneklerden hangisi gerçekleşir?",
+    "options": {
+      "A": "1 ile 999 dâhil olmak üzere 1 ile 999 arasındaki tüm sayılar alt alta ekrana yazdırılır.",
+      "B": "0 ile 999 dâhil olmak üzere 0 ile 999 arasındaki tüm sayılar yan yana ekrana yazdırılır.",
+      "C": "0 ile 1000 dâhil olmak üzere 0 ile 1000 arasındaki tüm sayılar yan yana ekrana yazdırılır.",
+      "D": "0 ile 999 dâhil olmak üzere 0 ile 999 arasındaki tüm sayılar alt alta ekrana yazdırılır.",
+      "E": "0 ile 1000 dâhil olmak üzere 0 ile 1000 arasındaki tüm sayılar alt alta ekrana yazdırılır."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d1037a1a25b4",
+    "unitNumber": 77,
+    "text": "Python’da sınıf (class) kavramı ile ilgili verilenlerden hangisi yanlıştır?",
+    "options": {
+      "A": "Bir sınıftan birden fazla örnek türetilebilir.",
+      "B": "Sınıflar, class anahtar kelimesiyle oluşturulur.",
+      "C": "Bir sınıfın özelliklerine dolar ($) sembolü kullanılarak erişilebilir.",
+      "D": "Bir sınıfın özelliklerine nokta (.) operatörü kullanılarak erişilebilir.",
+      "E": "Özellikler (attributes), bir sınıfa ait değişkenlerdir."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-30e3c0298a1c",
+    "unitNumber": 78,
+    "text": "… özelliklerin ve metotların tek bir sınıf içinde paketlenmesini ifade eder. Yukarıdaki tanım, aşağıdaki seçeneklerden hangisindeki kavrama aittir?",
+    "options": {
+      "A": "Örnek",
+      "B": "Kapsülleme (encapsulation)",
+      "C": "Nesneye yönelimli programlama",
+      "D": "Miras alma/kalıtım (inheritence)",
+      "E": "Çok biçimlilik (polymorphism)"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ae43775eba03",
+    "unitNumber": 79,
+    "text": "Yukarıda verilen sorunun doğru şıkkını işaretleyiniz.",
+    "options": {
+      "A": "enumerate",
+      "B": "break",
+      "C": "zip",
+      "D": "numerate",
+      "E": "continue"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-877f302f23a3",
+    "unitNumber": 80,
+    "text": "Yukarıda verilen Python kodlarına göre sonuc değişkeninin veri tipi nedir?",
+    "options": {
+      "A": "liste",
+      "B": "sözlük",
+      "C": "demet",
+      "D": "str",
+      "E": "int"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f9988c4621d9",
+    "unitNumber": 81,
+    "text": "Yukarıda Python kodlarında verilen while döngüsü ile bir “sonsuz döngü” elde edilebilmesi için kaç numaralı kod satırı kaldırılabilir?",
+    "options": {
+      "A": "5",
+      "B": "1",
+      "C": "4",
+      "D": "3",
+      "E": "2"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-85cc02ed20c1",
+    "unitNumber": 82,
+    "text": "Yukarıda verilen Python kod satırları çalıştırıldığında aşağıdakilerden hangisi döndürülür?",
+    "options": {
+      "A": "None",
+      "B": "False",
+      "C": "1000",
+      "D": "True",
+      "E": "400"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ab1baa72b3f0",
+    "unitNumber": 83,
+    "text": "Aşağıdaki seçeneklerden hangisinde Python değişken tanımlama kurallarına uygun bir tanımlama işlemi gerçekleştirilmemiştir?",
+    "options": {
+      "A": "for = 3",
+      "B": "sayi = 3",
+      "C": "myNum = \"3\"",
+      "D": "metin = 90",
+      "E": "kar_43 = 1900"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-121ad62179d5",
+    "unitNumber": 84,
+    "text": "Python’da adSoyad = (“elif”, “kartal”) şeklinde tanımlanıyor. Buna göre; del adSoyad Python kodu ile ilgili aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "adSoyad listesini tamamen siler.",
+      "B": "adSoyad demetinin son elemanını siler.",
+      "C": "adSoyad demetini tamamen siler.",
+      "D": "adSoyad listesinin son elemanını siler.",
+      "E": "adSoyad sözlüğünü tamamen siler."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-265358903af1",
+    "unitNumber": 85,
+    "text": "python -m venv sOrtam Yukarıda verilen kod satırı “Spyder Terminal” ekranında çalıştırılıyor. Buna göre, aşağıdakilerden hangisi gerçekleştirilmek istenmektedir?",
+    "options": {
+      "A": "Python betik (script) dosyası oluşturmak.",
+      "B": "Python sanal ortamı (virtual environment) oluşturmak.",
+      "C": "Python’da venv adlı bir değişken tanımlamak.",
+      "D": "Python’da sOrtam adlı bir değişken tanımlamak.",
+      "E": "Bilgisayardaki Python kurulumunu kaldırmak."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-6fecda7cff9f",
+    "unitNumber": 86,
+    "text": "a = 50 b = 90.50 c = “Beşiktaş” d = “E” e = False biçiminde veriliyor. Buna göre isinstance(…. , float) Python kod satırında … ile belirtilen yere aşağıdaki seçeneklerde verilen değişken adlarından hangisi ya da hangileri getirilirse sonuç True elde edilir?",
+    "options": {
+      "A": "a ve b",
+      "B": "Yalnıca a",
+      "C": "Yalnızca c",
+      "D": "d ve e",
+      "E": "Yalnızca b"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e785ca8b3323",
+    "unitNumber": 87,
+    "text": "ad, soyad, yas, cinsiyet, gelir şeklinde 5 sütundan oluşan “calisan” adlı bir pandas DataFrame’i tanımlanıyor. Eğer tüm çalışanların ad ve soyadları elde edilmek istenirse aşağıdaki seçeneklerden hangisi kullanılabilir?",
+    "options": {
+      "A": "calisan[\"ad\",\"soyad\"]",
+      "B": "calisan[1:2]",
+      "C": "calisan(\"ad\",\"soyad\")",
+      "D": "calisan[1:3]",
+      "E": "calisan[[\"ad\",\"soyad\"]]"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ec16033315ee",
+    "unitNumber": 88,
+    "text": "Aşağıdaki seçeneklerden hangisi Spyder’daki “değişken gezgini” (variable explorer) olarak bilinen pencereyi tarif eder?",
+    "options": {
+      "A": "Yardım konularına erişilen penceredir.",
+      "B": "Değişken, dizi, liste, fonksiyon gibi Python nesnelerinin görülüp yönetildiği penceredir.",
+      "C": "Bilgisayardaki dosya ve klasörlerin görüldüğü penceredir.",
+      "D": "Oluşturulan grafiklerin gösterildiği penceredir.",
+      "E": "Python kodlarının yazıldığı penceredir."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-57950dffb311",
+    "unitNumber": 89,
+    "text": "Yukarıda verilen Python kod satırlarında yer alan pass deyimi hakkında aşağıdaki seçeneklerden hangisi doğrudur?",
+    "options": {
+      "A": "else bloğunda oluşacak hataların göz ardı edilmesini sağlar.",
+      "B": "if bloğunda oluşacak hataların göz ardı edilmesini sağlar.",
+      "C": "secim değişkeninin aldığı değer icecekler listesi içinde bulunmazsa herhangi bir işlemin gerçekleştirilmeyeceğini belirtir.",
+      "D": "secim değişkeninin aldığı değer icecekler listesi içinde bulunursa herhangi bir işlemin gerçekleştirilmemesini sağlar.",
+      "E": "Varsayılan olarak ekrana: Seçim bulunamadı. Yazdırılmasını sağlar."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8d06eb917d4f",
+    "unitNumber": 90,
+    "text": "Yukarıda “a” adlı bir NumPy dizisi tanımlanıyor. Buna göre a.ndim kod satırı çalıştırıldığında aşağıdaki seçeneklerden hangisi elde edilir?",
+    "options": {
+      "A": "5",
+      "B": "int32",
+      "C": "(5,2)",
+      "D": "2",
+      "E": "10"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ab3433a5908c",
+    "unitNumber": 91,
+    "text": "Nesneye yönelimli programlama gerçek dünyadaki … programlama ortamında modellenmesi şeklinde ifade edilebilir. Yukarıda … ile verilen boşluğa aşağıdaki seçeneklerden hangisinin gelmesi en uygundur?",
+    "options": {
+      "A": "insana özgü özelliklerin",
+      "B": "yalnızca cansız nesnelerin",
+      "C": "yalnızca canlı nesnelerin",
+      "D": "soyut kavramların",
+      "E": "canlı ve cansız nesnelerin"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-48dc340c3641",
+    "unitNumber": 92,
+    "text": "Aşağıda verilen seçeneklerden hangisi Python’da kullanıcı tarafından tanımlanan bir fonksiyon (user defined function) oluşturmak için kullanılır?",
+    "options": {
+      "A": "else",
+      "B": "if",
+      "C": "pass",
+      "D": "break",
+      "E": "def"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-261f7d29ae47",
+    "unitNumber": 113,
+    "text": "Aşağıdaki seçeneklerden hangisi demet tanımlamasına örnek değildir?",
+    "options": {
+      "A": "e=(\"Demet\")",
+      "B": "b=(\"Demet\",)",
+      "C": "d=(\"Hakan\",1,3,4)",
+      "D": "c=12,33,44",
+      "E": "a=()"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-018c781429b5",
+    "unitNumber": 114,
+    "text": "match/case koşul ifadesi kaç yılında Python diline entegre edilmiştir?",
+    "options": {
+      "A": "2021",
+      "B": "2010",
+      "C": "2020",
+      "D": "1999",
+      "E": "2022"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7b217c8d1c12",
+    "unitNumber": 115,
+    "text": "İstisna oluşturmak için kullanılan ifade aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "try",
+      "B": "exception",
+      "C": "finally",
+      "D": "raise",
+      "E": "for"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-49127515879d",
+    "unitNumber": 116,
+    "text": "Python paket yükleyicisi içerisinde arama yapmak için kullanılan komut aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "show",
+      "B": "quest",
+      "C": "seek",
+      "D": "search",
+      "E": "find"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b001d79692f1",
+    "unitNumber": 117,
+    "text": "Aşağıdakilerden hangisi ikili gösterim için doğrudur?",
+    "options": {
+      "A": "0x101",
+      "B": "0b1010",
+      "C": "0B1020",
+      "D": "0o101",
+      "E": "101"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-997f9fdda441",
+    "unitNumber": 118,
+    "text": "Aynı türdeki nesneleri tanımlayan bir taslak ….. olarak adlandırılır. Yukarıdaki boşluğa aşağıdaki seçeneklerden hangisi gelmelidir?",
+    "options": {
+      "A": "Liste",
+      "B": "Sınıf",
+      "C": "Metot",
+      "D": "Fonksiyon",
+      "E": "Küme"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-373068c4b0cd",
+    "unitNumber": 119,
+    "text": "Aşağıdakilerden hangisi Nesne Yönelimli Programlamanın temel özelliklerinden biri değildir?",
+    "options": {
+      "A": "Spagetti Programlama",
+      "B": "Sınıflar",
+      "C": "Kapsülleme",
+      "D": "Çok Biçimlilik",
+      "E": "Nesneler"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e67d94bd99a6",
+    "unitNumber": 120,
+    "text": "….., python’ın fikirsel haklarını korumaktadır. Yukarıdaki boşluğa aşağıdaki seçeneklerden hangisi gelmelidir?",
+    "options": {
+      "A": "Charles Babbage",
+      "B": "Guido van Rossum",
+      "C": "Microsoft",
+      "D": "Python Yazılım Vakfı",
+      "E": "Bill Gates"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f911c957843f",
+    "unitNumber": 121,
+    "text": "from random import randint print(randint(10,30)) Yukarıdaki programın üretebileceği çıktı aşağıdakilerden hangisi olabilir?",
+    "options": {
+      "A": "9",
+      "B": "8.5",
+      "C": "31",
+      "D": "12.7",
+      "E": "12"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-822e04c66f85",
+    "unitNumber": 122,
+    "text": "…..x …..60 …..y …..70: print(“Merhaba Dünya”) Yukarıda verilmiş olan Python kodunda, x değişkeni değerinin 60 dan farklı ve y değişkeni değerinin 70 den büyük olması durumunda ekrana Merhaba Dünya yazdırmak için boş bırakılan yerlere sırasıyla aşağıdaki seçeneklerden hangisi eklenmelidir?",
+    "options": {
+      "A": "if , != , not , &gt;",
+      "B": "if , == , and , &gt;",
+      "C": "if , != , and , &gt;",
+      "D": "if , != , or , &gt;",
+      "E": "if , == , or , &gt;"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-66eb149b64dd",
+    "unitNumber": 123,
+    "text": "Tanımlanan nesnenin tipinin belli bir sınıfa ait olup olmadığını kontrol etmek için kullanılan fonksiyon aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "bool()",
+      "B": "int()",
+      "C": "istype()",
+      "D": "type()",
+      "E": "isinstance()"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-07f851cfad06",
+    "unitNumber": 124,
+    "text": "Yukarıda tanımlanmış olan fonksiyonda ekrana Fırtına var yazdırmak için hangi hesaplama yapılmalıdır?",
+    "options": {
+      "A": "hesapla(3,8)",
+      "B": "hesapla(3,4)",
+      "C": "hesapla",
+      "D": "hesapla(6,4)",
+      "E": "hesapla(7,3)"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-38884bed9094",
+    "unitNumber": 125,
+    "text": "Yukarıdaki kodun çıktısı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "[33,44,12]",
+      "B": "[33,12]",
+      "C": "[22,33,44,12]",
+      "D": "[44,22,33,12}",
+      "E": "[33, 12, 33]"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b9c93412765f",
+    "unitNumber": 126,
+    "text": "a = [67,90,22,33,44] print(a[-2]) Yukarıdaki kodun çıktısı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "44",
+      "B": "67",
+      "C": "33",
+      "D": "90",
+      "E": "22"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7a3360deaae0",
+    "unitNumber": 127,
+    "text": "Python Bytecode program dosya uzantısı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": ".c",
+      "B": ".py",
+      "C": ".java",
+      "D": ".byte",
+      "E": ".pyc"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-0f45f17cc6e8",
+    "unitNumber": 128,
+    "text": "Aşağıda bir sınıfa ait bazı üyeler verilmiştir. Bu üyelerden hangisi yarı-gizli(semi-private) üyedir?",
+    "options": {
+      "A": "personel =[]",
+      "B": "_personel =[]",
+      "C": "_ _personel=[]",
+      "D": "*personel =[]",
+      "E": "**personel=[]"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d2478da89853",
+    "unitNumber": 129,
+    "text": "Bir nesnenin uzunluğunu döndüren fonksiyon aşağıdaki seçeneklerden hangisidir?",
+    "options": {
+      "A": "abs()",
+      "B": "print()",
+      "C": "input()",
+      "D": "len()",
+      "E": "length()"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b1054f5669a6",
+    "unitNumber": 130,
+    "text": "Aşağıdakilerden hangisi projeyi modüllere ayırmanın avantajı olarak sayılmamaktadır?",
+    "options": {
+      "A": "Yeniden Kullanılabilirlik",
+      "B": "Basitlik",
+      "C": "Hızlılık",
+      "D": "Sürdürülebilirlik",
+      "E": "Kapsam Belirleme"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-17f9293ceec2",
+    "unitNumber": 131,
+    "text": "Aşağıdaki açıklama hangi dosya modunu göstermektedir? “Dosya ekleme işlemi için açılır. Daha önceden varolan dosyanın en sonundan eklemeye devam eder. Eğer çağrılan dosya bulunamadıysa yeni bir dosya oluşturur.”",
+    "options": {
+      "A": "r+",
+      "B": "w",
+      "C": "a",
+      "D": "w+",
+      "E": "r"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-63c574938b74",
+    "unitNumber": 132,
+    "text": "Aşağıdakilerden hangisi sayısal hesaplamalarda oluşan tüm hatalar için temel bir sınıftır?",
+    "options": {
+      "A": "ArithmeticError",
+      "B": "AssertionError",
+      "C": "ImportError",
+      "D": "KeyError",
+      "E": "StopIteration"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ac53ac2c3012",
+    "unitNumber": 93,
+    "text": "Tanımlandıktan sonra ömrü program çalıştığı sürece geçerli olan değişkenler, ….. olarak adlandırılmaktadır. Yukarıdaki cümlede boş bırakılan yere aşağıdaki seçeneklerden hangisi getirilmelidir?",
+    "options": {
+      "A": "kapalı değişken",
+      "B": "yerleşik değişken",
+      "C": "yerel değişken",
+      "D": "genel değişken",
+      "E": "özel değişken"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f507f6589325",
+    "unitNumber": 94,
+    "text": "Yukarıdaki kod çalıştırıldığında ekranda aşağıdaki seçeneklerden hangisi görülecektir?",
+    "options": {
+      "A": "Elif",
+      "B": "Ahmet",
+      "C": "Ayşe",
+      "D": "Boş ekran gelir.",
+      "E": "Merhaba"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ad6316f756e6",
+    "unitNumber": 95,
+    "text": "Yorumlanarak çalıştırılan diller, derlenmiş dillere nazaran daha …..çalışır. Yukarıdaki cümlede boş bırakılan yere aşağıdaki seçeneklerden hangisi getirilmelidir?",
+    "options": {
+      "A": "optimize",
+      "B": "güvenilir",
+      "C": "yavaş",
+      "D": "hızlı",
+      "E": "etkin"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0f53191feb66",
+    "unitNumber": 96,
+    "text": "Yukarıdaki kod çalıştırıldığında ekranda görülecek ifade aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "0,1,2,3,4",
+      "B": "0,1,2,3,4,",
+      "C": "0,1,2,3,4,5,6,7,8,9,10",
+      "D": "0,1,2,3,4,5",
+      "E": "0,1,2,3,4,5,"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c96616e7c0e8",
+    "unitNumber": 97,
+    "text": "Yukardaki gibi return deyimi barındırmayan bir fonksiyon çalıştığında toplam değişkenin değeri …..şeklindedir. Boşluğa aşağıdaki seçeneklerden hangisi gelmelidir?",
+    "options": {
+      "A": "False",
+      "B": "None",
+      "C": "Null",
+      "D": "12",
+      "E": "True"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-95a2e5eb9016",
+    "unitNumber": 98,
+    "text": "Aşağıdakilerden hangisi Python’ da geçersiz tanımlayıcıdır?",
+    "options": {
+      "A": "Öğrenci1",
+      "B": "ogrenciAdi",
+      "C": "Ogrenci1",
+      "D": "1.Ogrenci",
+      "E": "Ogrenci_Adi"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ab5802e1b94c",
+    "unitNumber": 99,
+    "text": "Python kodlama dilinde kullanıcıdan veri alınması gereken durumlarda kullanılması gereken kod aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "input()",
+      "B": "printf()",
+      "C": "put()",
+      "D": "get()",
+      "E": "print()"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-299d6bf7fe3c",
+    "unitNumber": 100,
+    "text": "Aşağıdaki kodlardan hangisinde örtülü tür dönüştürme yapılmıştır?",
+    "options": {
+      "A": "a = 7, b = 8.8, toplam = a + b",
+      "B": "a = 7, b = 8.8, toplam = float(a) + b",
+      "C": "a = 7, b = 8, toplam = a + b",
+      "D": "a = 7, b = 8, toplam = int(a + b)",
+      "E": "a = 7.7, b = 8.8, toplam = int(a + b)"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-02a952dc6d69",
+    "unitNumber": 101,
+    "text": "Aşağıdaki deyimlerden hangisi koşullu döngüdür?",
+    "options": {
+      "A": "if",
+      "B": "while",
+      "C": "if else",
+      "D": "match / case",
+      "E": "for"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-898d7764571a",
+    "unitNumber": 102,
+    "text": "Python, popüler bir programlama dilidir. 1991 yılında ….. tarafından tasarlanmıştır. Yukarıdaki cümlede boş bırakılan yere aşağıdaki seçeneklerden hangisi getirilmelidir?",
+    "options": {
+      "A": "Dennis Ritchie",
+      "B": "Linus Torvalds",
+      "C": "Charles Babbage",
+      "D": "Bill Gates",
+      "E": "Guido van Rossum"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1ca643f6e099",
+    "unitNumber": 103,
+    "text": "Ondalık sayıyı tam sayıya çeviren fonksiyon aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "float()",
+      "B": "str()",
+      "C": "ord()",
+      "D": "complex()",
+      "E": "int()"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-59f01d1516a0",
+    "unitNumber": 104,
+    "text": "Python kaynak kodlarının dosya uzantısı aşağıdaklerden hangisdir?",
+    "options": {
+      "A": ".exe",
+      "B": ".pyc",
+      "C": ".py",
+      "D": ".ipynp",
+      "E": ".c"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8e44f363a8c4",
+    "unitNumber": 105,
+    "text": "Aşağıdakilerden hangisi satırın devamını sağlayan kaçış karakteridir?",
+    "options": {
+      "A": "#",
+      "B": ",",
+      "C": "-",
+      "D": "?",
+      "E": "\\"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e7ac9f0ee143",
+    "unitNumber": 106,
+    "text": "Python Programlama dili aşağıdaki hangi programlama paradigmasını desteklemez?",
+    "options": {
+      "A": "Yapısal Programlama (Structured Programming)",
+      "B": "Fonksiyonel Programlama (Functional Programming)",
+      "C": "Mantıksal Programlama (Logic Programming)",
+      "D": "Emirli Programlama (Imperative Programming)",
+      "E": "Nesneye Dayalı Programlama (Object-oriented Programming)"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-afae6c4b2c06",
+    "unitNumber": 107,
+    "text": "Aşağıdakilerden hangisi hatalı karmaşık sayı tanımlamasıdır?",
+    "options": {
+      "A": "complex(12,7)",
+      "B": "12+7j",
+      "C": "12+j",
+      "D": "1j",
+      "E": "12+1j"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1ff00014b092",
+    "unitNumber": 108,
+    "text": "Bir fonksiyona sınırsız sayıda parametre gönderilebilmesi için hangi operatör kullanılabilir?",
+    "options": {
+      "A": "*",
+      "B": "&amp;",
+      "C": "+",
+      "D": "%",
+      "E": "/"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a8adc15c981e",
+    "unitNumber": 109,
+    "text": "Bir sayının mutlak değerini döndüren yerleşik fonksiyon asağıdakilerden hangisidir?",
+    "options": {
+      "A": "max()",
+      "B": "abs()",
+      "C": "len()",
+      "D": "min()",
+      "E": "mutlak()"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c6dd41d2b28e",
+    "unitNumber": 110,
+    "text": "Yukarıda kullanıcının girdiği iki sayı birbirine eşitse bu sayının 4’e göre modunu alıp ekrana yazdıran python kodu bulunmaktadır. Programın düzgün çalışması için 1, 2, 3, 4 ve 5. satırlarda bulunan …..ifadesi yerine gelmesi gereken operatör ve ifadeler aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "1. satır int, 2. satır int, 3. satır ==, 4. satır %, 5. satır else:",
+      "B": "1. satır int, 2. satır int, 3. satır !=, 4. satır //, 5. satır elif sayi1 == sayi2:",
+      "C": "1. satır int, 2. satır int, 3. satır =, 4. satır //, 5. satır elif sayi1 != sayi2:",
+      "D": "1. satır int, 2. satır int, 3. satır !=, 4. satır %, 5. satır elif sayi1 == sayi2:",
+      "E": "1. satır int, 2. satır int, 3. satır =, 4. satır %, 5. satır elif sayi1 != sayi2:"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e01cbe441538",
+    "unitNumber": 111,
+    "text": "Yukardaki kod çalıştırıldığında ekranda ne görülecektir?",
+    "options": {
+      "A": "Hata üretir",
+      "B": "19",
+      "C": "None",
+      "D": "\"Hesaplayamadım\"",
+      "E": "14"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b10610e3e64e",
+    "unitNumber": 112,
+    "text": "Yukarıda verilmiş olan kod çalıştırıldıktan sonra, klavyeden sayi1 için 10 , sayi2 için 20 ve islem için – girilirse çıkan sonuç ekranda nasıl görünür?",
+    "options": {
+      "A": "Yanlış işlem girdiniz",
+      "B": "Traceback (most recent call last): File \"....\", line 8, in print(\"{} - {} = {}\".format(sayi1,sayi2,sayi1-sayi2))TypeError: unsupported operand type(s) for -: 'int' and 'str'",
+      "C": "10 * 20 = 200",
+      "D": "10 - 20 = -10",
+      "E": "10 + 20 = -10"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  }
+]

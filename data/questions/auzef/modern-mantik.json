@@ -1,1 +1,4410 @@
-[]
+[
+  {
+    "id": "s-00319cdd0a70",
+    "unitNumber": 1,
+    "text": "Aşağıdakilerden hangisi bir önermenin kıyasta ele alınış tarzlarından biri değildir?",
+    "options": {
+      "A": "Olumlu",
+      "B": "Tüzel",
+      "C": "Tümel",
+      "D": "Olumsuz",
+      "E": "Tikel"
+    },
+    "correctAnswer": "B",
+    "explanation": "Kıyas (tasım) mantığında önermeler niceliklerine göre Tümel-Tikel, niteliklerine göre Olumlu-Olumsuz olabilir. **Tüzel** (hukuki kişilikle ilgili) mantıksal bir önerme türü değildir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-301458d75588",
+    "unitNumber": 2,
+    "text": "Aşağıdakilerden hangisi [(q ↔ ~q) v (p → q)] → q ifadesinin Quine yöntemiyle çözümü sırasındaki aşamalardan biridir?",
+    "options": {
+      "A": "[(D &harr; ~Y) v (Y &rarr; Y)] &rarr; D",
+      "B": "[(Y &harr; D) v (p &rarr; D)] &rarr; Y",
+      "C": "[(Y &harr; D) v (p &rarr; Y)] &rarr; Y",
+      "D": "[(Y &harr; ~q) v (D &rarr; Y)] &rarr; Y",
+      "E": "[(Y &harr; Y) v (D &rarr; q)] &rarr; q"
+    },
+    "correctAnswer": "C",
+    "explanation": "Quine yönteminde değişkenlere sırasıyla Doğru (D) ve Yanlış (Y) değerleri verilir. C şıkkında **q yerine Y (Yanlış)** değeri verildiği görülmektedir: q=Y için (~q=D olur) ve ifade [(Y ↔ D) v (p → Y)] → Y haline gelir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-39aea2af78d5",
+    "unitNumber": 3,
+    "text": "Herhangi bir ifadenin “geçerli olması onun tüm doğruluk durumları için….. değeri alması, “tutarlı” olması ise en az bir doğruluk durumu için …… olması anlamına gelir. Yukarıdaki parçada boş bırakılan yerlere sırasıyla aşağıdakilerden hangisi getirilmelidir?",
+    "options": {
+      "A": "\"yanlış\", \"doğru\"",
+      "B": "\"doğru\", \"yanlış\"",
+      "C": "\"belirsiz\", \"doğru\"",
+      "D": "\"yanlış\", \"belirsiz\"",
+      "E": "\"doğru\", \"doğru\""
+    },
+    "correctAnswer": "E",
+    "explanation": "Bir ifade tüm yorumlamalarda **doğru** ise geçerli; en az bir yorumlamada **doğru** ise tutarlıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f51f44d5ae87",
+    "unitNumber": 4,
+    "text": "Üçüncü hâlin imkânsızlığı ilkesi aşağıdakilerden hangisinde doğru olarak tanımlanmıştır?",
+    "options": {
+      "A": "Herhangi bir önerme ya \"doğru\" ya da \"yanlış\" olabilir; bunlardan başka bir değer alamaz.",
+      "B": "Bir şey ne ise odur.",
+      "C": "Bazı önermeler başka önermelere dönüşebilir.",
+      "D": "Bazı önermeler bazen \"doğru\" bazen \"yanlış\"tır.",
+      "E": "Bir şey sadece kendisidir; kendisi olmayan olamaz."
+    },
+    "correctAnswer": "A",
+    "explanation": "**Üçüncü halin imkansızlığı** ilkesi (Law of Excluded Middle), bir önermenin ya doğru ya da yanlış olacağını, üçüncü bir ihtimalin (belirsiz vb.) olamayacağını ifade eder.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-63dcf7006b93",
+    "unitNumber": 5,
+    "text": "Bir çıkarımın saçmaya indirgeme yöntemi ile denetlenirken daha ilk işlemde “yanlış” olabildiği tespit edilmişse ilgili çıkarım için aşağıdakilerden hangisi kesin olarak söylenebilir?",
+    "options": {
+      "A": "Geçerli",
+      "B": "Tutarsız",
+      "C": "Geçersiz",
+      "D": "Tutarlı",
+      "E": "Eş değer"
+    },
+    "correctAnswer": "C",
+    "explanation": "Bir çıkarımın geçerliliği denetlenirken, öncüllerin doğru ve sonucun yanlış olduğu varsayılır (saçmaya indirgeme). Eğer bu varsayım bir çelişkiye yol açmazsa (yani sonucun yanlış olabildiği bir durum tespit edilirse), çıkarım **Geçersiz** kabul edilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-eccb263f3c8b",
+    "unitNumber": 6,
+    "text": "Lukasiewicz-Tarski notasyonuna göre aşağıdaki ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "\"Veya\", \"K\" harfi ile gösterilir.",
+      "B": "\"Ve\", \"D\" harfi ile gösterilir.",
+      "C": "\"Ancak ve ancak\", \"C\" harfi ile gösterilir.",
+      "D": "\"Değil\", \"N\" harfi ile gösterilir.",
+      "E": "\"İçerme\", \"E\" harfi ile gösterilir."
+    },
+    "correctAnswer": "D",
+    "explanation": "Lukasiewicz (Polonya) notasyonunda “Değil” (Negation) işlemi **N** harfi ile gösterilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-16461ff758c6",
+    "unitNumber": 7,
+    "text": "“Sonuçta mantık bilimi sayesinde yeni yapay diller kullanarak doğru düşüncenin …….. sınırları da genişletilecektir.” Yukarıdaki boşluğu dolduracak en uygun ifade aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "denetlenebilirlik",
+      "B": "sezgisellik",
+      "C": "betimlenebilirlik",
+      "D": "ifade",
+      "E": "iletişim"
+    },
+    "correctAnswer": "A",
+    "explanation": "Mantığın temel amacı, düşüncenin ve çıkarımların formel kurallar çerçevesinde **denetlenebilir** ve test edilebilir olmasını sağlamaktır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d99c62bc68a7",
+    "unitNumber": 8,
+    "text": "Çok değerli mantık kuralları göz önünde bulundurulduğunda aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "\"p veya q\" gibi bir ifadede tarafların ikisi de 0 değerini almışsa sonuç 1 olur.",
+      "B": "\"p ve q\" gibi bir ifadede tarafların ikisi de 1 değerini almışsa sonuç 0 olur.",
+      "C": "\"p ve q\" gibi bir ifadede taraflardan en az birisi 1 değerini almışsa sonuç kesinlikle 1 olur.",
+      "D": "\"p veya q\" gibi bir ifadede tarafların ikisi de 1 değerini almışsa sonuç 1 olur.",
+      "E": "\"p ve q\" gibi bir ifadede tarafların ikisi de 0 değerini almışsa sonuç 1 olur."
+    },
+    "correctAnswer": "D",
+    "explanation": "Tikel evetleme (veya) işleminde, bileşenlerden herhangi biri veya her ikisi doğru (1) ise sonuç doğru (1) olur. Bu nedenle iki tarafın da 1 olduğu durumda sonuç 1’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f423eeb67f40",
+    "unitNumber": 9,
+    "text": "Aşağıdakilerden hangisi [(~q ∧ p) → (q → p)] ifadesinin Quine yöntemiyle çözümü sırasındaki aşamalardan biri değildir?",
+    "options": {
+      "A": "[(~q &and; D) &rarr; (q &rarr; D)]",
+      "B": "D",
+      "C": "(Y &rarr; Y)",
+      "D": "[(~q &and; Y) &rarr; (q &rarr; Y)]",
+      "E": "Y"
+    },
+    "correctAnswer": "E",
+    "explanation": "Bu ifade bir totolojidir (her zaman doğrudur). Quine yöntemiyle p veya q yerine ne verirseniz verin sonuç **Doğru (D)** çıkar. Sonucun **Yanlış (Y)** çıktığı bir aşama veya sonuç olamaz.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0570d179f941",
+    "unitNumber": 10,
+    "text": "“Methods of Logic” adlı eserin yazarı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Russell",
+      "B": "Frege",
+      "C": "Quine",
+      "D": "Leibniz",
+      "E": "Aristoteles"
+    },
+    "correctAnswer": "C",
+    "explanation": "“Methods of Logic” (Mantık Yöntemleri) adlı ünlü eser, modern mantıkçı **Willard Van Orman Quine** tarafından yazılmıştır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2e8900b20da4",
+    "unitNumber": 11,
+    "text": "Doğruluk değerine ilişkin türlü biçimlerdeki belirsizlikleri konu edinen, böylece iki değerli sistemin dışına çıkarak onu genişleten çok değerli mantık sistemlerinin ilk örneği, 1920 yılında ortaya konan üç değerli mantıktır. Yukarıda ifade edilen “üç değerli mantık” sisteminin kurucusu aşağıdaki isimlerden hangisidir?",
+    "options": {
+      "A": "Lukasiewicz",
+      "B": "Russell",
+      "C": "Gödel",
+      "D": "Frege",
+      "E": "Aristoteles"
+    },
+    "correctAnswer": "A",
+    "explanation": "Üç değerli mantık sistemini (doğru, yanlış ve belirsiz) 1920 yılında geliştiren mantıkçı **Jan Lukasiewicz**’tir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e0a987a793d5",
+    "unitNumber": 12,
+    "text": "~[~(p ↔ ~q)] ∧ ~p ifadesinin doğruluk değerleri aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "D, D, D, Y",
+      "B": "D, Y, Y, D",
+      "C": "D, Y, Y, Y",
+      "D": "Y, Y, D, D",
+      "E": "Y, Y, D, Y"
+    },
+    "correctAnswer": "E",
+    "explanation": "İfade sadeleştirildiğinde (p ↔ ~q) ∧ ~p haline gelir. Doğruluk tablosu sonuçları sırasıyla (p=D, q=D: Y), (p=D, q=Y: Y), (p=Y, q=D: D), (p=Y, q=Y: Y) değerlerini alır. (Y, Y, D, Y)",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8ba0166d0f0c",
+    "unitNumber": 13,
+    "text": "Çelişmezlik ilkesi aşağıdaki seçeneklerden hangisinde doğru olarak tanımlanmıştır?",
+    "options": {
+      "A": "Bir şey ya doğrudur ya da yanlıştır.",
+      "B": "Bir şey sadece kendisidir, kendisi olmayan olamaz.",
+      "C": "Bazı şeyler başka şeylere dönüşür.",
+      "D": "Bazı şeyler bazen doğru bazen yanlıştır.",
+      "E": "Bir şey ne ise o'dur."
+    },
+    "correctAnswer": "B",
+    "explanation": "**Çelişmezlik** ilkesi (Law of Non-Contradiction), bir şeyin aynı anda hem kendisi (A) hem de kendisi olmayan (A-olmayan) olamayacağını ifade eder.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-dc92a3fc95d0",
+    "unitNumber": 14,
+    "text": "~p ↔ q ifadesi için aşağıdakilerden hangisi en uygundur?",
+    "options": {
+      "A": "Geçersiz - tutarlı",
+      "B": "Geçerli - tutarsız",
+      "C": "Geçerli - tutarlı",
+      "D": "Tutarsız",
+      "E": "Ne geçerli ne tutarlı"
+    },
+    "correctAnswer": "A",
+    "explanation": "Bu ifadenin doğruluk tablosu yapıldığında sonuç sütununda hem doğru (1) hem de yanlış (0) değerleri çıkar. 0 içerdiği için **Geçersiz**, en az bir 1 içerdiği için **Tutarlı**dır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b7e8f17a0f72",
+    "unitNumber": 15,
+    "text": "Saçmaya İndirgeme Yöntemiyle bir ifadenin yanlışlanabilirliği denetlenmektedir. Buna göre [(~p v p) → q] ifadesinin yanlışlanabilmesi, q önermesi hangi doğruluk değerini aldığında mümkün olur?",
+    "options": {
+      "A": "Geçersiz",
+      "B": "Doğru",
+      "C": "Yanlış",
+      "D": "Ne yanlış ne doğru",
+      "E": "Belirsiz"
+    },
+    "correctAnswer": "C",
+    "explanation": "(~p v p) ifadesi bir totolojidir (her zaman doğru/1). İfadenin [(1) → q] şeklini alması durumunda, sonucun yanlışlanabilmesi (0 olması) için q önermesisin **Yanlış (0)** değerini alması gerekir (1 → 0 = 0).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c9bf2ffffcf4",
+    "unitNumber": 16,
+    "text": "Lukasiewicz – Tarski notasyonunda eklemler hangi tarafa yazılır?",
+    "options": {
+      "A": "İlk önermeden sonra",
+      "B": "İkinci önermeden sonra",
+      "C": "Sağ başa",
+      "D": "Sol başa",
+      "E": "Ortaya"
+    },
+    "correctAnswer": "D",
+    "explanation": "Polonya notasyonunda (Prefix notation) işlem operatörleri (eklemler) değişkenlerin **sol başına** yazılır (Örn: p ve q için Kpq).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b3145280222c",
+    "unitNumber": 17,
+    "text": "Tam normal biçime indirgeme işleminin neticesi, sekiz farklı bileşenin hiçbirini içermiyorsa ilgili önerme için aşağıdakilerden hangisi söylenir?",
+    "options": {
+      "A": "Geçersiz-Tutarlı",
+      "B": "Geçerli-Tutarlı",
+      "C": "Denk-Tutarsız",
+      "D": "Geçerli-Tutarsız",
+      "E": "Geçersiz-Tutarsız"
+    },
+    "correctAnswer": "E",
+    "explanation": "Tam normal biçim (Disjunctive Normal Form) boş küme veriyorsa, bu önerme her durumda yanlış (çelişki) demektir. Her zaman yanlış olan bir önerme hem **Geçersiz** hem de **Tutarsız**dır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-9c0fb721e385",
+    "unitNumber": 18,
+    "text": "I. Geçersizdir. II. Geçerlidir. III. Tutarlıdır. ~(p ↔ ~q) → q ifadesi için yukarıdakilerden hangisi veya hangileri doğrudur?",
+    "options": {
+      "A": "Yalnız III",
+      "B": "I ve III",
+      "C": "Yalnız I",
+      "D": "I ve II",
+      "E": "Yalnız II"
+    },
+    "correctAnswer": "B",
+    "explanation": "İfadenin doğruluk tablosu incelendiğinde sonuç sütununda hem 1’ler hem de 0 bulunur. 0 içerdiği için **Geçersizdir** (I), 1 içerdiği için **Tutarlıdır** (III).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8775011cdde7",
+    "unitNumber": 19,
+    "text": "Aşağıdakilerden hangisi (x ∧ y) ifadesinin üç değerli mantıktaki eş değeridir?",
+    "options": {
+      "A": "min (x,y) + 1",
+      "B": "min (1, 1 - x + y)",
+      "C": "max (x, y)",
+      "D": "min (x, y)",
+      "E": "max (x, y) - 1"
+    },
+    "correctAnswer": "D",
+    "explanation": "Tikel birleşim (ve) işlemi, çok değerli (fuzzy) mantıkta genellikle bileşenlerin minimum doğruluk değerini alır. (x ∧ y) ifadesinin eş değeri **min(x, y)**’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d92a4850e628",
+    "unitNumber": 20,
+    "text": "Mantıksal analiz yaparken “Y → D” şeklinde bir denkleme ulaşıldığında, “ise” bağlacının doğruluk tablosu kuralları gereğince bu ifadenin nihai sonucu ne olur?",
+    "options": {
+      "A": "Yanlış (Y)",
+      "B": "Doğru (D)",
+      "C": "Belirsiz",
+      "D": "Tutarsız",
+      "E": "Kısmi Doğru"
+    },
+    "correctAnswer": "B",
+    "explanation": "Klasik mantıkta “ise” (koşul / →) bağlacı, çok katı bir yapıya sahiptir. Bu bağlaç sadece ve sadece önermenin ilki Doğru (D) ve ikincisi Yanlış (Y) olduğunda (D → Y) “Yanlış” sonucunu verir. Başlangıcın Yanlış (Y) olduğu her koşulda, sonuç ister Doğru ister Yanlış olsun denklem (Y → D veya Y → Y) daima “Doğru (D)” kabul edilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-1c5264166b59",
+    "unitNumber": 21,
+    "text": "Doğruluk değerleri Y, D, Y, D olan bir ifadenin değilinin doğruluk değerleri aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Y, D, D, Y",
+      "B": "D, Y, D, Y",
+      "C": "D, Y, Y, D",
+      "D": "D, Y, Y, Y",
+      "E": "D, Y, D, D"
+    },
+    "correctAnswer": "B",
+    "explanation": "Değilleme işlemi (~) önermelerin doğruluk durumunu tamamen tersine çevirir. Bir ifade “Yanlış (Y)” ise “Doğru (D)” olur; “Doğru (D)” ise “Yanlış (Y)” olur. Sırasıyla Y, D, Y, D değerlerini alan bir ifadenin tümünden değili alındığında yeni sonuçlar sırasıyla D, Y, D, Y olacaktır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8b148488497d",
+    "unitNumber": 22,
+    "text": "Aşağıda verilen eş değerliklerden hangisi doğrudur?",
+    "options": {
+      "A": "NMp=NMNNp",
+      "B": "ANqNp=ANqp",
+      "C": "NCNpq=NCpq",
+      "D": "NMNpq=NMpq",
+      "E": "NMpNp=NNMpNp"
+    },
+    "correctAnswer": "A",
+    "explanation": "Çift olumsuzlama (çifte değilleme) kuralına göre, bir önermenin değilinin değili kendisine eşittir (p = NNp). Bu temel mantık kuralından hareketle, Polonya notasyonunda yazılmış olan NMp ifadesi ile NM(NNp) ifadesi kesinlikle birbirine özdeştir (eşdeğerdir) çünkü araya giren iki “N” harfi birbirini nötrleyerek asıl değeri değiştirmez.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-dcc243868335",
+    "unitNumber": 23,
+    "text": "(p → q) ∧ (q → r) ifadesinin çözümleyici çizelgesinde çatal açma işlemi kaç defa yapılmalıdır?",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "3",
+      "D": "2",
+      "E": "1"
+    },
+    "correctAnswer": "C",
+    "explanation": "Çözümleyici çizelge yönteminde ana bağlaç “ve” (∧) olduğu için, p → q ve q → r ifadeleri önce çatal açılmadan alt alta yazılır. Ardından kurallar gereği “ise” (→) bağlaçları çatal açılarak çözümlenir. 1. satırdaki p → q için bir adet çatal açılır (~p ve q dalları). Daha sonra bu iki dalın her birinin altına, 2. satırdaki q → r önermesi için iki ayrı çatal daha açılır. Toplamda ağaç üzerinde 1 + 2 = 3 defa çatal açma işlemi uygulanmış olur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7228c3d1b57c",
+    "unitNumber": 24,
+    "text": "Aşağıdakilerden hangisi kısmi bakışımsız bağıntıların gösterimidir?",
+    "options": {
+      "A": "&forall;x&forall;yBxy &and; Byx",
+      "B": "&exist;x&forall;yBxy &or; Byx",
+      "C": "&forall;x&forall;yBxy &or; Byx",
+      "D": "&exist;x&exist;yBxy &rarr; Byx",
+      "E": "&exist;x&exist;yBxy &and; Byx"
+    },
+    "correctAnswer": "E",
+    "explanation": "Literatürde “kısmi bakışımlılık” (kısmi simetri), bir bağıntının evrensel (herkes için) geçerli olmasa da en azından “bazı” (tikel) x ve y elemanları arasında karşılıklı (Bxy ve Byx) olarak var olduğunu ifade eder. Bu durum Tikel Niceleyici (∃) kullanılarak ∃x∃y (Bxy ∧ Byx) şeklinde sembolleştirilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-a01f84a890d0",
+    "unitNumber": 25,
+    "text": "Aşağıdaki ifadelerden hangisi “yanlış” değildir?",
+    "options": {
+      "A": "(Y &or; Y)",
+      "B": "D &rarr; (Y &rarr; Y)",
+      "C": "(D &and; Y)",
+      "D": "(D &or; Y) &rarr; Y",
+      "E": "D &rarr; (Y &and; D)"
+    },
+    "correctAnswer": "B",
+    "explanation": "Soru kökünde “yanlış değildir” denilerek, sonucu “Doğru (D)” çıkan ifade sorulmaktadır. Seçenekleri incelediğimizde: A şıkkında Y veya Y = Y’dir. C şıkkında D ve Y = Y’dir. D şıkkında (D veya Y) D’dir; D → Y ise Y sonucunu verir. E şıkkında (Y ve D) Y’dir; D → Y = Y’dir. Ancak B şıkkında parantez içi olan (Y → Y) “Doğru (D)” değerini alır. Dışarıdaki D ile birleştiğinde D → D olur ki bu da D (Doğru) değerini verir. Dolayısıyla yanlış olmayan tek ifade budur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-426d1503e705",
+    "unitNumber": 26,
+    "text": "Modern mantık kurallarına göre De Morgan yasasını kullanarak ~(A ∧ B) ifadesinin tamamen eşdeğer mantıksal açılımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "(~A &and; ~B)",
+      "B": "(~A &or; B)",
+      "C": "(A &or; ~B)",
+      "D": "(~A &or; ~B)",
+      "E": "(A &and; B)"
+    },
+    "correctAnswer": "D",
+    "explanation": "De Morgan kuralı, parantez dışındaki bir değilleme (~) işleminin parantez içine nasıl dağıtılacağını belirler. Bir “ve” (∧) işleminin değilini alırken, içerideki önermelerin her ikisinin de ayrı ayrı değili alınır ve aradaki işaret tam tersi olan “veya” (∨) işaretine dönüştürülür. Sonuç her zaman (~A ∨ ~B) olur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-448c2e11d54e",
+    "unitNumber": 27,
+    "text": "Aşağıdaki eşdeğerliklerden hangisi yanlıştır?",
+    "options": {
+      "A": "(A &harr; B) = (AB &or; A'B')",
+      "B": "~(A &harr; B) = (AB' &or; A'B)",
+      "C": "~(A &or; B) = (A' &and; B)",
+      "D": "~(A &and; B) = (A' &or; B')",
+      "E": "(A &rarr; B) = (A' &or; B)"
+    },
+    "correctAnswer": "C",
+    "explanation": "De Morgan kuralları mantıktaki en katı kurallardan biridir. Bir “veya” (∨) işleminin tümden değili alındığında, işaret tersine dönerek “ve” (∧) olurken, her iki bileşenin de değili alınmalıdır. Yani ~(A ∨ B) ifadesinin doğru eşdeğerliği (A’ ∧ B’) olmalıdır. C şıkkında B’nin değili alınmadığı için ifade mantıksal olarak yanlıştır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5472cb7f7ea1",
+    "unitNumber": 28,
+    "text": "Çözümleyici Çizelge yöntemini kullanırken, (p ∨ q) şeklindeki “veya” bağlacıyla kurulmuş bir ifadeyi çözümlerken ağaç üzerinde kaç adet çatal açılması zorunludur?",
+    "options": {
+      "A": "Hiç çatal açılmaz, alt alta yazılır.",
+      "B": "1 çatal açılır (2 dal oluşur).",
+      "C": "2 çatal açılır (4 dal oluşur).",
+      "D": "3 çatal açılır.",
+      "E": "Sadece sağa doğru tek yönlü dal açılır."
+    },
+    "correctAnswer": "B",
+    "explanation": "Çözümleyici çizelgede (ağaç yönteminde), alternatiflerin ve seçeneklerin bulunduğu durumlarda çatal açılır. “Veya” (∨) işlemi, ya p’nin ya da q’nun geçerli olabileceği ihtimalini taşıdığı için tek bir başlangıç noktasından iki yana ayrılan tek bir çatal (V şeklinde 2 ayrı dal) açılarak çözümlenir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-ffcc13fe0702",
+    "unitNumber": 29,
+    "text": "Aşağıdakilerden hangisi ~p → (q ∨ ~r) ifadesinin Lukasiewicz–Tarski notasyonu ile yazılmış şeklidir?",
+    "options": {
+      "A": "KNpAqNr",
+      "B": "CNpKqNr",
+      "C": "ANpEqNr",
+      "D": "CNpAqNr",
+      "E": "ENpAqNr"
+    },
+    "correctAnswer": "D",
+    "explanation": "Lukasiewicz-Tarski (Polonya) notasyonunda bağlaçlar harflerle ifade edilir ve önermelerin önüne yazılır. “~” (Değil) = N, “∨” (Veya) = A, “→” (İse) = C harfiyle gösterilir. Öncelikle parantez içi olan (q ∨ ~r) çözümlenir: ~r kısmı Nr olur, q ∨ Nr kısmı ise AqNr halini alır. Sol taraftaki ~p ise Np’dir. Aradaki ana bağlaç olan “→” (C) en başa gelir ve her iki tarafı birleştirir: C Np AqNr şeklinde yazılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-dc34235cba7a",
+    "unitNumber": 30,
+    "text": "(~(p ∧ q) ∨ r) ile ((p’ ∨ q’) ∨ r) ifadeleri için aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Belirsiz",
+      "B": "Özdeş değil",
+      "C": "Özdeş",
+      "D": "Tutarlı",
+      "E": "Tutarlı değil"
+    },
+    "correctAnswer": "C",
+    "explanation": "De Morgan kuralı uyarınca, ilk ifadedeki ~(p ∧ q) kısmının değili parantez içine dağıtıldığında işaret yön değiştirir ve (p’ ∨ q’) halini alır. Bunu ifadeye yerleştirdiğimizde (p’ ∨ q’) ∨ r denklemi ortaya çıkar. Her iki taraf birbirinin matematiksel ve mantıksal olarak aynısı olduğu için bu iki ifade birbiriyle tamamen “Özdeş”tir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-146ee99fc4a8",
+    "unitNumber": 31,
+    "text": "~(p ↔ ~q) → q ifadesinin doğruluk değerleri aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Y, Y, D, Y",
+      "B": "D, D, D, Y",
+      "C": "D, D, D, D",
+      "D": "D, Y, Y, D",
+      "E": "Y, D, D, D"
+    },
+    "correctAnswer": "B",
+    "explanation": "Doğruluk tablosunda p ve q’nun 4 farklı durumu incelenir. 1) İkisi de D iken: p ↔ ~q işlemi D ↔ Y olur ve Y değerini alır. Bunun değili D’dir. D → D sonucu D çıkar. 2) p=D, q=Y iken: D ↔ D işlemi D olur. Değili Y’dir. Y → Y işlemi D sonucunu verir. 3) p=Y, q=D iken: Y ↔ Y işlemi D olur. Değili Y’dir. Y → D sonucu D çıkar. 4) İkisi de Y iken: Y ↔ D işlemi Y olur. Değili D’dir. D → Y işlemi ise kural gereği Y (Yanlış) değerini alır. Sırasıyla elde edilen sonuçlar D, D, D, Y’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-9752fad45c93",
+    "unitNumber": 32,
+    "text": "Lukasiewicz’in üç değerli mantığı, doğruluk değeri tespit edilemeyen yani “…..” olan önermelerin mantıksal işlemlere dâhil edilmesini mümkün kılan bir mantık sistemidir. Yukarıdaki ifadede boş bırakılan yere aşağıdaki terimlerden hangisi gelmelidir?",
+    "options": {
+      "A": "belirsiz",
+      "B": "doğru",
+      "C": "kararsız",
+      "D": "yanlış",
+      "E": "rastlantısal"
+    },
+    "correctAnswer": "A",
+    "explanation": "Klasik Aristoteles mantığında her önerme ya “Doğru” ya da “Yanlış” olmak zorundaydı (üçüncü halin imkânsızlığı). Jan Lukasiewicz, gelecekteki olaylar gibi o an için doğru veya yanlış olduğu kesin olarak ispatlanamayan ifadeleri tanımlamak için “belirsiz” (indeterminate) kavramını literatüre kazandırmış ve üç değerli mantığı kurmuştur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-ad26cf9216b5",
+    "unitNumber": 33,
+    "text": "Klasik Aristoteles mantığındaki sınıflandırmalara göre, “Bazı ağaçlar yeşildir.” önermesi yapısal olarak hangi harf koduyla temsil edilen gruba aittir?",
+    "options": {
+      "A": "SaP (Tümel Olumlu)",
+      "B": "SeP (Tümel Olumsuz)",
+      "C": "SoP (Tikel Olumsuz)",
+      "D": "SuP (Belirsiz Önerme)",
+      "E": "SıP (Tikel Olumlu)"
+    },
+    "correctAnswer": "E",
+    "explanation": "“Bazı ağaçlar” ifadesi tüm ağaçları kapsamadığı için bu önerme nicelik olarak Tikel (Parçaya ait) niteliktedir. “Yeşildir” ifadesi bir olumsuzlama eki veya “değildir” barındırmadığı için nitelik olarak Olumludur. Tikel Olumlu (I) önermeler mantıkta “SıP” formülüyle kodlanmaktadır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-5c724805b8b2",
+    "unitNumber": 35,
+    "text": "“p ve q, o halde r” şeklindeki bir önerme zincirinin Lukasiewicz-Tarski (Polonya) notasyonundaki doğru karşılığı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "AKpqr",
+      "B": "CKpqr",
+      "C": "NKpqr",
+      "D": "ECpqr",
+      "E": "CCpqr"
+    },
+    "correctAnswer": "B",
+    "explanation": "Parantez içindeki “p ve q” işlemi (p ∧ q), Polonya notasyonunda K harfi ile birleştirilerek Kpq şeklinde yazılır. Aradaki bağlaç olan “o halde / ise” (→) için C harfi kullanılır ve her şeyin önüne yazılır. Böylece ifade (p ∧ q) → r formatından çıkıp dümdüz CKpqr şeklinde yazılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-ce4ae96a8f16",
+    "unitNumber": 36,
+    "text": "~[ ∀x (Fx→Gx) ↔ ∀y (Hy v Ty) ] ve [ [∀x (Fx ∧ Gx) ~∀y (Hy v Ty)] v [~∀x (Fx ∧ Gx) ∀y (Hy v Ty)] ] ifadeleri için aşağıdakilerden hangis doğrudur?",
+    "options": {
+      "A": "Özdeş değil",
+      "B": "Özdeş",
+      "C": "Tutarlı",
+      "D": "Tutarlı değil",
+      "E": "Belirsiz"
+    },
+    "correctAnswer": "A",
+    "explanation": "İkinci ifade, “ancak ve ancak” (↔) bağlacının değilinin alınmış açılım formatına benzemektedir; ancak dikkat edilirse birinci ifadede ∀x (Fx → Gx) yani “ise” bağlacı varken, ikinci ifadenin ön tarafında ∀x (Fx ∧ Gx) yani “ve” bağlacı kullanılarak önerme tamamen değiştirilmiştir. (Fx → Gx) ile (Fx ∧ Gx) ifadeleri birbirine eşdeğer olmadığı için, bu iki kompleks denklem birbirleriyle “Özdeş değil”dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7aaa1ed0c640",
+    "unitNumber": 37,
+    "text": "Aşağıdakilerden hangisi ∀x∃y∃zFxyz ifadesinin (a, b) evrenindeki açılımı işleminin aşamalarından birisidir?",
+    "options": {
+      "A": "&exist;y&exist;z(Fbyz &and; Fbyz)",
+      "B": "&exist;y&exist;z(Fayz &rarr; Fbyz)",
+      "C": "&exist;y&exist;z(Fayz &or; Fayz)",
+      "D": "&exist;y&exist;z(Fayz &and; Fbyz)",
+      "E": "&exist;y&exist;z(Fayz &or; Fbyz)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Yüklemler mantığında tümel niceleyici (∀) evrendeki tüm elemanlar için geçerliliği simgeler ve açılımı “ve” (∧) bağlacı kullanılarak yapılır. (a, b) evreninde x değişkeni yerine sırasıyla “a” ve “b” elemanları konulup araya ∧ bağlacı yerleştirildiğinde, diğer tikel niceleyiciler korunarak ifade ∃y∃z(Fayz ∧ Fbyz) formuna dönüşür.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-9793f5f6c7d7",
+    "unitNumber": 38,
+    "text": "Baharın gelişinin A, insanların mutlu olmasının ise B ile temsil edilmesi durumunda “Bahar gelir ise insanlar mutlu olur.” önermesi aşağıdakilerden hangisiyle gösterilir?",
+    "options": {
+      "A": "(A &larr; B)",
+      "B": "(A &or; B)",
+      "C": "(A &uarr; B)",
+      "D": "(A &and; B)",
+      "E": "(A &rarr; B)"
+    },
+    "correctAnswer": "E",
+    "explanation": "Günlük dilde kurulan “ise” şart (koşul) cümleleri, sembolik mantıkta sağa doğru yönelmiş tek yönlü ok (→) işareti ile sembolleştirilir. “Bahar gelir ise” (A koşulu gerçekleşirse), “insanlar mutlu olur” (B sonucu ortaya çıkar) ifadesi mantıksal olarak A → B formatında yazılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-be4bed6c21e4",
+    "unitNumber": 39,
+    "text": "İnsan: İ, Ölümlü: Ö ile gösterildiğinde “Bütün insanlar ölümlüdür.” önermesinin sembolik gösterimi aşağıdakilerden hangisi olur?",
+    "options": {
+      "A": "~&forall;x(İx &rarr; Öx)",
+      "B": "&exist;x(İx &rarr; Öx)",
+      "C": "&forall;x(İx &rarr; ~Öx)",
+      "D": "&forall;x(İx &rarr; Öx)",
+      "E": "&exist;x(~İx &rarr; Öx)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Önerme “Bütün” sözcüğü ile başladığı için Tümel Niceleyici (∀) kullanılmalıdır (Bu durumda ∃ içeren tikel şıklar elenir). Mantıksal açılımı “Her x için, eğer x bir insan ise (İx), x ölümlüdür (Öx)” şeklindedir. İse bağlacı kullanılarak ∀x(İx → Öx) biçiminde sembolize edilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-03e82497d594",
+    "unitNumber": 40,
+    "text": "Aşağıdakilerden hangisi klasik mantıkta kullanılan önerme gösterimlerinden biri değildir?",
+    "options": {
+      "A": "SıP",
+      "B": "SeP",
+      "C": "SaP",
+      "D": "SuP",
+      "E": "SoP"
+    },
+    "correctAnswer": "D",
+    "explanation": "Klasik (Aristoteles) mantığında önermeler Latince onaylamak (AffIrmo) ve inkar etmek (nEgO) kelimelerindeki sesli harfler üzerinden şifrelenir. A harfi Tümel Olumlu (SaP), E harfi Tümel Olumsuz (SeP), I harfi Tikel Olumlu (SıP), O harfi Tikel Olumsuz (SoP) için standarttır. Ancak “U” harfiyle kodlanan “SuP” gibi bir önerme sembolü mantık literatüründe kesinlikle yer almaz.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5a41bbdd48d7",
+    "unitNumber": 41,
+    "text": "Aşağıdakilerden hangisi [~( ~q → p) → (q → ~p)] ifadesinin Quine yöntemiyle çözümü sırasındaki aşamalardan biri olamaz?",
+    "options": {
+      "A": "Y &rarr; (q &rarr; Y)",
+      "B": "Y &rarr; Y",
+      "C": "D",
+      "D": "Y &rarr; ~q",
+      "E": "Y"
+    },
+    "correctAnswer": "E",
+    "explanation": "Quine yönteminde p ve q yerine sırasıyla Doğru (D) ve Yanlış (Y) değerleri verilerek denklem sadeleştirilir. p yerine D verildiğinde, ifade ~[~q → D] → (q → Y) halini alır. ~q → D her zaman D’dir, onun değili ise Y olur. Sağ taraf (q → Y) ise ~q ile eşdeğerdir. Bu durumda ana denklem Y → ~q (D şıkkı) ve nihayetinde “Doğru (D)” (C şıkkı) halini alır. Y → (q → Y) denklemi de ara adımlardan (A şıkkı) biridir. Ara adımlara q=D verildiğinde Y → Y (B şıkkı) de elde edilir. Denklemin hiçbir çözümleme dalında nihai sonuç “Y (Yanlış)” çıkmaz, sistem totolojidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-fe97e18317c9",
+    "unitNumber": 42,
+    "text": "Aşağıdakilerden hangisi ~[ (~p → p) → (q → ~p)] ifadesinin Quine yöntemiyle çözümü sırasındaki aşamalardan biri değildir?",
+    "options": {
+      "A": "q",
+      "B": "p",
+      "C": "~( D &rarr; ~q)",
+      "D": "~[ D &rarr; (q &rarr; Y)]",
+      "E": "~[ (Y &rarr; D) &rarr; (q &rarr; Y)]"
+    },
+    "correctAnswer": "B",
+    "explanation": "Quine tablosunda p yerine D değeri verdiğimizde denklem ~[ (~D → D) → (q → ~D)] yani ~[ (Y → D) → (q → Y)] (E şıkkı) halini alır. Y → D kısmı D’ye eşittir, bu yüzden ~[ D → (q → Y)] (D şıkkı) aşamasına geçilir. D → (q → Y) ifadesi q → Y ile aynıdır, bu da ~q demektir. O halde denklem en sade haliyle ~(~q) olur, ki bu da q’ya eşittir (A şıkkı). İşlemlerin hiçbir evresinde sadece “p” sonucuna ulaşılan bir sadeleşme adımı yoktur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b78ac4039ff9",
+    "unitNumber": 56,
+    "text": "Tam yansımalı bağıntının gösterimi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "&exist;x Bxx",
+      "B": "&forall;x Bxx",
+      "C": "~&forall;x Bxx",
+      "D": "&forall;x ~Bxx",
+      "E": "~&exist;x Bxx"
+    },
+    "correctAnswer": "B",
+    "explanation": "Bağıntı mantığında Yansıma (Reflexivity) özelliği, bir evrendeki “her” elemanın kendisiyle bağıntılı olması demektir. Örneğin “Eşitlik” bağıntısında her sayı kendisine eşittir (x=x). Bunu ifade eden formül, Tümel Niceleyici kullanılarak ∀x Bxx (Her x için, x kendisiyle B bağıntısına sahiptir) şeklinde gösterilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-372651ca81ee",
+    "unitNumber": 57,
+    "text": "~p ↔ q ifadesinin doğruluk değerleri aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Y, Y, D, D",
+      "B": "D, Y, Y, Y",
+      "C": "D, D, D, Y",
+      "D": "D, Y, Y, D",
+      "E": "Y, D, D, Y"
+    },
+    "correctAnswer": "E",
+    "explanation": "Doğruluk tablosu yapalım: p: D, D, Y, Y q: D, Y, D, Y ~p (p’nin değili): Y, Y, D, D ~p ↔ q (Ancak ve ancak: İkisi aynıysa D, farklıysa Y): 1. Satır: Y ↔ D = Y 2. Satır: Y ↔ Y = D 3. Satır: D ↔ D = D 4. Satır: D ↔ Y = Y Sonuç sütunu: Y, D, D, Y.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-83ff1e3f354d",
+    "unitNumber": 59,
+    "text": "“Niceleyicinin eş değerliği” kurallarına göre aşağıdaki ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "&exist;xFx = &forall;xFx",
+      "B": "~&exist;xFx = &forall;xFx",
+      "C": "&exist;x~Fx = &forall;x~Fx",
+      "D": "&exist;xFx = &forall;x~Fx",
+      "E": "~&exist;xFx = &forall;x~Fx"
+    },
+    "correctAnswer": "E",
+    "explanation": "Niceleme mantığında, bir tikel niceleyicinin (∃) değillemesi, tümel niceleyicinin (∀) önüne alınarak önermenin içinin değillenmesine eş değerdir. Yani, “Fx olan bir x yoktur” ifadesi, “Bütün x’ler için, Fx değildir” ifadesiyle aynı anlama gelir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d37208a2a019",
+    "unitNumber": 61,
+    "text": "“Bütün insanlar konuşur.” önermesinin niceleme mantığındaki gösterimi, sembolleştirmeye ilişkin uygulama kuralları dikkate alındığında aşağıdakilerden hangisi olmalıdır?",
+    "options": {
+      "A": "&forall;x (İx &rarr; ~Kx)",
+      "B": "&forall;x (İx &rarr; Kx)",
+      "C": "~&forall;x (İx &rarr; Kx)",
+      "D": "~&forall;x (~İx &rarr; ~Kx)",
+      "E": "&forall;x (~İx &rarr; Kx)"
+    },
+    "correctAnswer": "B",
+    "explanation": "Doğal dildeki “Bütün” (Her) sözcüğü Tümel Niceleyici (∀) ile, “İse” (→) eklemiyle birlikte kullanılır. Cümlenin yapısı “Her ne ki insandır, o konuşandır” şeklindedir. Ix: x insandır Kx: x konuşandır Formül: ∀x (Ix → Kx) şeklinde kurulur. (A şıkkı “Hiçbir insan konuşmaz” demektir, E şıkkı “İnsan olmayanlar konuşur” demektir).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1007514e3101",
+    "unitNumber": 63,
+    "text": "∃y(Fy ∧ Gy) ifadesinin (a, b) evrenindeki açılımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "(Fa &or; Ga) &or; (Fb &or; Gb)",
+      "B": "(Fa &or; Gb)",
+      "C": "(Fa &and; Gb)",
+      "D": "(Fa &or; Ga) &and; (Fb &or; Gb)",
+      "E": "(Fa &and; Ga) &or; (Fb &and; Gb)"
+    },
+    "correctAnswer": "E",
+    "explanation": "Niceleyici açılımı kuralları: 1. İfade Tikel (∃) olduğu için ana eklem Veya (v) olacaktır. 2. Parantez içindeki yapı (Fy ∧ Gy) her bir nesne (a ve b) için korunacaktır. a için: (Fa ∧ Ga) b için: (Fb ∧ Gb) Bunları tikel niceleyici kuralı gereği “Veya” ile bağlarız: (Fa ∧ Ga) ∨ (Fb ∧ Gb).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-315a501432e1",
+    "unitNumber": 64,
+    "text": "Aşağıdakilerden hangisi [(q ↔ ~r) v (p → r)] → r ifadesinin Quine yöntemiyle çözümü sırasındaki aşamalardan biridir?",
+    "options": {
+      "A": "[(D &harr; Y) v (D &rarr; Y)] &rarr; Y",
+      "B": "D",
+      "C": "[(q &harr; Y) v (p &rarr; D)] &rarr; Y",
+      "D": "[(q &harr; Y) v (p &rarr; Y)] &rarr; D",
+      "E": "[(q &harr; Y) v (D &rarr; Y)] &rarr; Y"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-234af05a4805",
+    "unitNumber": 65,
+    "text": "∃y Ty ifadesinin (a, b, c) evrenindeki açılımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Ta v Tb ^ Tc",
+      "B": "Ta &rarr; Tb &rarr; Tc",
+      "C": "Ta v Tb v Tc",
+      "D": "Ta ^ Tb v Tc",
+      "E": "Ta ^ Tb ^ Tc"
+    },
+    "correctAnswer": "C",
+    "explanation": "Niceleme mantığında, tikel niceleyici (∃ – Existential Quantifier / “Bazı” veya “En az bir”), belirlenen evrendeki nesneler için Tikel Evetleme (Disjunction / Veya / v) eklemi ile açılır. Çünkü “Bazı y’ler T’dir” demek, “Ta T’dir VEYA Tb T’dir VEYA Tc T’dir” anlamına gelir. Eğer tümel niceleyici (∀ – “Her”) olsaydı, Tümel Evetleme (Conjunction / Ve / ∧) kullanılarak (Ta ∧ Tb ∧ Tc) şeklinde açılırdı.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-3ecbea7fb8f8",
+    "unitNumber": 66,
+    "text": "(p V q) gibi bir ifadede D: Doğru, Y: Yanlış, B: Belirsiz (1/2) değerlerini gösterdiğinde aşağıdakilerden hangisi yanlıştır? (Lukasiewicz 3 Değerli Mantığı)",
+    "options": {
+      "A": "(D V B) = D",
+      "B": "(Y V B) = B",
+      "C": "(B V B) = Y",
+      "D": "(Y V Y) = Y",
+      "E": "(D V D) = D"
+    },
+    "correctAnswer": "C",
+    "explanation": "Jan Lukasiewicz’in 3 Değerli Mantığında (Doğru=1, Belirsiz=1/2, Yanlış=0); Veya (V) eklemi, değerlerden “büyük olanı” (max) alır. A) 1 v 1/2 = 1 (D) -> Doğru B) 0 v 1/2 = 1/2 (B) -> Doğru C) 1/2 v 1/2 = 1/2 (B) olması gerekirken şıkta Y (0) denilmiştir. Bu yanlıştır. D) 0 v 0 = 0 (Y) -> Doğru E) 1 v 1 = 1 (D) -> Doğru",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-dceae41bc6c7",
+    "unitNumber": 67,
+    "text": "Aşağıdakilerden hangisi modal mantığın özellikle yapay zekâ alanında kullanılmasının sebebidir?",
+    "options": {
+      "A": "Modal mantık sistemlerinin güçlü formel diller sayesinde çok daha ayrıntılı, nesnel ve geniş ölçüde ele alınır hale gelmesi",
+      "B": "Modal mantığın diğer mantık sistemleri gibi içeriksiz ve sadece biçimsel bir yapıya sahip olması",
+      "C": "Modal mantık sistemlerinin modaliteler dışında kalan önermelerle ilgilenmiyor olması",
+      "D": "Modal mantık önermelerinin günlük konuşma dilinden kopuk bir yapıya sahip olması",
+      "E": "Aristoteles'in modal mantık çalışmalarının Orta Çağ da yeniden okunması"
+    },
+    "correctAnswer": "A",
+    "explanation": "Modal Mantık; zorunluluk, imkan, inanç, bilgi (epistemik mantık) ve zaman (temporal mantık) gibi kavramları işler. Yapay Zeka (AI), insan düşüncesini ve akıl yürütmesini modellemeye çalışırken sadece “Doğru/Yanlış” yetmez; “İnanıyor”, “Biliyor”, “Mümkün” gibi durumları da kodlaması gerekir. Modal mantık, bu karmaşık durumları güçlü formel dillerle sembolleştirme ve işleme imkanı sağladığı için yapay zeka, veritabanı teorisi ve programlama dillerinde kritik öneme sahiptir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b841213aa391",
+    "unitNumber": 68,
+    "text": "Aşağıdakilerden hangisi “iki değerli mantık” örneklerinden değildir?",
+    "options": {
+      "A": "Odadaki sıcaklığın 20 derece olması veya olmaması",
+      "B": "Arabanın duruyor olması veya durmuyor olması",
+      "C": "Kapının kilitli olması veya olmaması",
+      "D": "Çiçeklerin çok seviliyor olması veya az seviliyor olması",
+      "E": "Işığın açık olması veya olmaması"
+    },
+    "correctAnswer": "D",
+    "explanation": "Klasik (İki Değerli) Mantıkta bir önerme ya Doğru (1) ya da Yanlış (0) değerini alır; üçüncü bir hal yoktur (Üçüncü halin imkansızlığı ilkesi). A, B, C ve E şıkları “Var/Yok”, “Açık/Kapalı” gibi kesin ikili durumları ifade eder. Ancak D şıkkındaki “Çok seviliyor” veya “Az seviliyor” ifadeleri, kesin bir doğru-yanlıştan ziyade bir derece, yoğunluk veya bulanıklık (Fuzzy Logic) belirtir. Bu durum klasik iki değerli mantığın sınırlarını aşan, çok değerli mantığın konusudur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-9456afc84f7f",
+    "unitNumber": 70,
+    "text": "Aşağıdaki eşdeğerliklerden hangisi doğrudur?",
+    "options": {
+      "A": "(A &harr; B) = (A &rarr; B') &and; (B &rarr; A')",
+      "B": "(A &harr; B) = (A' &rarr; B) &and; (B' &rarr; A)",
+      "C": "(A &harr; B) = (A &rarr; B) &and; (B &rarr; A)",
+      "D": "(A &harr; B) = (A'' &rarr; B) &and; (B &rarr; A')",
+      "E": "(A &harr; B) = (A &rarr; B') &and; (B' &rarr; A)"
+    },
+    "correctAnswer": "C",
+    "explanation": "Karşılıklı Koşul (Ancak ve ancak / ↔) ekleminin tanımı gereği; iki önermenin birbirini gerektirmesidir. Yani “A ancak ve ancak B” demek; “A ise B’dir VE B ise A’dır” demektir. Formül: (A ↔ B) ≡ (A → B) ∧ (B → A). C şıkkı bu tanımı doğru vermektedir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-158af8db11f9",
+    "unitNumber": 71,
+    "text": "[ ∃x (Ax→Bx)∀y (Cy v Dy)]→ ∼∀x (Fx→Gx) ve ∼[ ∃x (Ax→Bx) ∀y (Cy v Dy)]→ ∼∀x (Fx→Gx) ifadeleri için aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Özdeş değil",
+      "B": "Geçerli",
+      "C": "Özdeş",
+      "D": "Belirsiz",
+      "E": "Tutarlı"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-43f6a3cf2d36",
+    "unitNumber": 72,
+    "text": "~(p ↔ ~q) ifadesi Lukasiewicz-Tarski (Polonya) notasyonuna göre nasıl yazılmalıdır?",
+    "options": {
+      "A": "NEpq",
+      "B": "EpNq",
+      "C": "NEpNq",
+      "D": "pNq",
+      "E": "NpNq"
+    },
+    "correctAnswer": "C",
+    "explanation": "Lukasiewicz-Tarski notasyonunda (Prefix notation) eklemler başa yazılır. Semboller: ~ (Değil) = N, ↔ (Ancak ve ancak) = E. Adım 1: İçerideki (~q) ifadesi Nq olur. Adım 2: Parantez içi (p ↔ Nq) ifadesi, eklem başa alınarak EpNq olur. Adım 3: En baştaki değil işareti (~) bütün ifadenin başına gelir: NEpNq. Sonuç: NEpNq.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4285dc1af973",
+    "unitNumber": 77,
+    "text": "(q ↔ ∼q)∨(p →q) ifadesinin doğruluk değerleri aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "D, D, D, Y",
+      "B": "D, Y, Y, D",
+      "C": "Y, D, D, D",
+      "D": "D, Y, D, D",
+      "E": "Y, Y, D, Y"
+    },
+    "correctAnswer": "D",
+    "explanation": "Doğruluk tablosu yapıldığında (p,q): (D,D) için sonuç D; (D,Y) için sonuç Y; (Y,D) için sonuç D; (Y,Y) için sonuç D çıkar. Sıralama D, Y, D, D şeklindedir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-dd73cf364523",
+    "unitNumber": 83,
+    "text": "Aşağıdakilerden hangisi [(∼q→ p)↔(r→∼p)] ifadesinin Quine yöntemiyle çözümü sırasındaki aşamalardan biridir?",
+    "options": {
+      "A": "[(&sim;q&rarr; D)&harr;(r&rarr;D)]",
+      "B": "[(&sim;q&rarr; D)&harr;(r&rarr;&sim;Y)]",
+      "C": "[(&sim;q&rarr; Y)&harr;(r&rarr;Y)]",
+      "D": "[(&sim;q&rarr; p)&harr;(D&rarr;&sim;p)]",
+      "E": "[(&sim;q&rarr; Y)&harr;(r&rarr;&sim;D)]"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c8e1e03a70bd",
+    "unitNumber": 84,
+    "text": "Aşağıdakilerden hangisi [ (q ↔ ∼q)∨(p →q)]→q ifadesinin Quine yöntemiyle çözümü sırasındaki aşamalardan biridir?",
+    "options": {
+      "A": "[ (Y &harr; Y)&or;(D &rarr;q)]&rarr;q",
+      "B": "[ (D &harr; Y)&or;(p &rarr;D)]&rarr;Y",
+      "C": "[ (Y &harr; D)&or;(p &rarr;Y)]&rarr;Y",
+      "D": "[ (Y &harr; &sim;q)&or;(D &rarr;Y)]&rarr;Y",
+      "E": "[ (D &harr; &sim;Y)&or;(Y &rarr;Y)]&rarr;D"
+    },
+    "correctAnswer": "C",
+    "explanation": "Quine yönteminde q=Y değeri verildiğinde ifadedeki tüm ‘q’lar ‘Y’, ‘∼q’lar ise ‘D’ olur. Bu durumda [ (Y ↔ ∼Y)∨(p →Y)]→Y ifadesi [ (Y ↔ D)∨(p →Y)]→Y haline gelir. D şıkkı bu aşamayı doğru göstermektedir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-fe6d574c58d7",
+    "unitNumber": 89,
+    "text": "∃zGz ifadesinin (a, b, c) evrenindeki açılımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Ga &and; Gb &or; Gc",
+      "B": "Ga &and; Gb &and; Gc",
+      "C": "Ga &rarr; Gb &rarr; Gc",
+      "D": "Ga &or; Gb &and; Gc",
+      "E": "Ga &or; Gb &or; Gc"
+    },
+    "correctAnswer": "E",
+    "explanation": "Tikel niceleyici (∃), mantıksal olarak “veya” (∨) işlemine karşılık gelir. Dolayısıyla “En az bir z, G’dir” ifadesinin (a, b, c) evrenindeki açılımı “Ga veya Gb veya Gc” şeklinde olur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-34386be2d702",
+    "unitNumber": 91,
+    "text": "“Bütün kediler güzeldir.” önermesinin niceleme mantığındaki gösterimi, sembolleştirmeye ilişkin uygulama kuralları da dikkate alındığında aşağıdakilerden hangisi olmalıdır?",
+    "options": {
+      "A": "&forall;x (&sim;Kx &rarr; Gx)",
+      "B": "&forall;x (Kx &rarr; Gx)",
+      "C": "&sim;&forall;x (&sim;Kx &rarr; &sim;Gx)",
+      "D": "&sim;&forall;x (Kx &rarr; Gx)",
+      "E": "&forall;x (Kx &rarr; &sim;Gx)"
+    },
+    "correctAnswer": "B",
+    "explanation": "Bu önerme, tümel bir iddiadır ve “Her x için, eğer x bir kedi ise, o zaman x güzeldir” şeklinde ifade edilir. Bunun sembolik mantıktaki karşılığı ∀x (Kx → Gx) şeklindedir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-b16ab1f4f926",
+    "unitNumber": 92,
+    "text": "Aşağıdaki eş değerliklerden hangisi doğrudur?",
+    "options": {
+      "A": "&sim;&forall;xFx = &exist;x&sim;Fx",
+      "B": "&forall;xFx = &exist;xFx",
+      "C": "&sim;&sim;&forall;xFx = &exist;xFx",
+      "D": "&sim;&forall;xFx = &exist;x&sim;&sim;Fx",
+      "E": "&forall;xFx = &sim;&exist;xFx"
+    },
+    "correctAnswer": "A",
+    "explanation": "Bu, niceleyicilerin temel eş değerlik kurallarından biridir. “Bütün x’ler Fx’tir ifadesi doğru değildir” demek, mantıksal olarak “En az bir x vardır ki, o x Fx değildir” demekle aynıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4988894e5bd5",
+    "unitNumber": 93,
+    "text": "Aşağıdakilerden hangisi [(p↔ ∼r)∨(p →r)]→[ r∧(∼ p↔q)] ifadesinin Quine yöntemiyle çözümü sırasındaki aşamalardan biridir?",
+    "options": {
+      "A": "[(Y&harr; &sim;r)&or;(D &rarr;r)]&rarr;[ q]",
+      "B": "[(Y&harr; &sim;r)&or;(D &rarr;r)]&rarr;[ r&and;(D&harr;q)]",
+      "C": "[(Y&harr; &sim;r)&or;(Y &rarr;r)]&rarr;[ r&and;(Y&harr;q)]",
+      "D": "[(D&harr; &sim;r)&or;(D &rarr;r)]&rarr;[r&and;(D&harr;q)]",
+      "E": "[(Y&harr; &sim;r)&or;(Y &rarr;r)]&rarr;[ r&and;(D&harr;q)]"
+    },
+    "correctAnswer": "E",
+    "explanation": "Quine yönteminde p=Y (yanlış) değeri atandığında, ifadedeki tüm ‘p’ler ‘Y’ ve ‘∼p’ler ‘D’ (doğru) olur. E şıkkı, bu ilk değer atama adımını doğru bir şekilde göstermektedir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c00aa9824190",
+    "unitNumber": 94,
+    "text": "Aşağıdakilerden hangisi modaliteler kapsamında ele alınmaz?",
+    "options": {
+      "A": "İmkânsız",
+      "B": "Pozitif",
+      "C": "Olumsal",
+      "D": "Mümkün",
+      "E": "Zorunlu"
+    },
+    "correctAnswer": "B",
+    "explanation": "Modal mantık, önermelerin kipliklerini (modalitelerini) inceler. Temel modaliteler Zorunlu, Mümkün, İmkânsız ve Olumsal (zorunlu olmayan ve imkansız olmayan) şeklindedir. “Pozitif” bir mantıksal modalite değildir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-d2d5128395cb",
+    "unitNumber": 308,
+    "text": "Aşağıdaki eş değerliklerden hangisi yanlıştır?",
+    "options": {
+      "A": "&sim;(A &and; B) = (A &or; B')",
+      "B": "&sim;(A &rarr; B) = AB'",
+      "C": "(A &rarr; B) = (A' &or; B)",
+      "D": "(A &harr; B) = (AB &or; A'B')",
+      "E": "&sim;(A &or; B) = (A' &and; B')"
+    },
+    "correctAnswer": "A",
+    "explanation": "De Morgan kuralına göre ∼(A ∧ B) ifadesinin eş değeri (A’ ∨ B’) olmalıdır. Şıkta A’nın değili alınmamıştır, bu nedenle ifade yanlıştır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-93ede92d2bac",
+    "unitNumber": 46,
+    "text": "İki önermenin aynı anda tasdikinin yani birlikte doğrulanmasının zorunlu olduğu durumu ifade eden eklemin gösterimi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "&uarr;",
+      "B": "&sim;",
+      "C": "&and;",
+      "D": "&rarr;",
+      "E": "&or;"
+    },
+    "correctAnswer": "C",
+    "explanation": "“Ve“ eklemi, iki önermenin aynı anda doğru olduğu durumu ifade eder.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8d54defd6435",
+    "unitNumber": 49,
+    "text": "(p ↔ ∼q) ifadesi Lukasiewicz­Tarski notasyonuna göre nasıl yazılmalıdır?",
+    "options": {
+      "A": "EpNq",
+      "B": "ApNq",
+      "C": "CpNq",
+      "D": "CNpq",
+      "E": "NpNq"
+    },
+    "correctAnswer": "A",
+    "explanation": "Lukasiewicz­Tarski notasyonunda (p ↔ ∼q) ifadesi EpNq olarak gösterilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0d644f293a13",
+    "unitNumber": 50,
+    "text": "Aşağıdakilerden hangisi gerçeklendiğinde [(p → q) → q] ifadesi “yanlış“ olur?",
+    "options": {
+      "A": "p = D, q = D",
+      "B": "p = B, q = B",
+      "C": "p= Y, q = Y",
+      "D": "p = D, q = Y",
+      "E": "p = Y, q = D"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-84ba6a17cc56",
+    "unitNumber": 54,
+    "text": "p, q, r gibi üç değişkenli bir ifadenin “tam normal biçime indirgeme yöntemi“ ile geçerli olup olmadığı denetleniyor. Denetleme sonucu “geçersiz“ ise sonuç satırında en fazla kaç “pqr“ sıralı üçlüsü olabilir?",
+    "options": {
+      "A": "7",
+      "B": "0",
+      "C": "8",
+      "D": "1",
+      "E": "5"
+    },
+    "correctAnswer": "A",
+    "explanation": "Geçersizlik durumunda, tüm olasılıklardan bir tanesi hariç diğerleri geçersiz olabilir, bu da maksimum 7 sıralı üçlü demektir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3147fb9022a3",
+    "unitNumber": 74,
+    "text": "Aşağıdakilerden hangisi [(∼r↔ p)→(q→∼r)]∨r ifadesinin Quine Yöntemi ile çözümü sırasındaki aşamalardan biri değildir?",
+    "options": {
+      "A": "(&sim; p&rarr; &sim;q)]&or;D",
+      "B": "[(Y&harr; p)&rarr;(q&rarr;D)]&or;D",
+      "C": "(p&rarr;D)&or;Y",
+      "D": "D",
+      "E": "D&or;Y"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9c51ef4f5b7f",
+    "unitNumber": 76,
+    "text": "Doğruluk değerleri D, Y, Y, D olan bir ifadenin değilinin değilinin doğruluk değerleri aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "D, D, D, Y",
+      "B": "D, Y, Y, D",
+      "C": "D, D, Y, D",
+      "D": "Y, D, D, D",
+      "E": "Y, Y, D, Y"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2da65127765e",
+    "unitNumber": 103,
+    "text": "[∀x (Px →Fx) → ∼∀y (Cy → Dy)] ve [∼∀x (Px →Fx) v ∼∀y (Cy → Dy)] ifadeleri için aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Özdeş değil",
+      "B": "Özdeş",
+      "C": "Tutarsız",
+      "D": "Belirsiz",
+      "E": "Geçerli değil"
+    },
+    "correctAnswer": "B",
+    "explanation": "Her iki ifade mantıksal çözümleme sonucunda aynı doğruluk tablosunu verir. Bu nedenle ifadeler özdeştir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-938f952aed85",
+    "unitNumber": 104,
+    "text": "“Bazı insanlar bütün pastaları yediler.“ önermesinin niceleme mantığındaki gösterimi, sembolleştirmeye ilişkin uygulama kuralları dikkate alındığında aşağıdakilerden hangisi olmalıdır?",
+    "options": {
+      "A": "&exist;x (&sim;İx &and; &forall;y (Py &rarr; &sim;Yxy))",
+      "B": "&exist;x (İx &and; &forall;y (Py &rarr; Yxy))",
+      "C": "&exist;x (&sim;İx &and; &forall;y (Py &rarr; Yxy))",
+      "D": "&forall;x (İx &and; &exist;y (Py &rarr; Yxy))",
+      "E": "&exist;x (İx &rarr; &forall;y (Py &and; Yxy))"
+    },
+    "correctAnswer": "B",
+    "explanation": "‘Bazı insanlar’ varlık nicelemesini (∃x) ifade eder, ‘bütün pastaları yediler’ ise tümel nicelemeyi (∀y) ifade eder. Doğru sembolleştirme bu kurallara uyar.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-2671735c0ff1",
+    "unitNumber": 105,
+    "text": "Lukasiewicz-Tarski Notasyonu, Lukasiewicz ve Tarski’nin mensubu bulundukları mantık okuluna izafeten, ……… ya da ………. notasyonu olarak da adlandırılmaktadır. Yukarıdaki ifadede boş bırakılan yerlere aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Varşova - Polonya",
+      "B": "Paris - Fransa",
+      "C": "Ankara - Türkiye",
+      "D": "Roma - İtalya",
+      "E": "Moskova - Rusya"
+    },
+    "correctAnswer": "A",
+    "explanation": "Lukasiewicz ve Tarski, Varşova Mantık Okulu’nun mensuplarıdır. Bu nedenle, notasyon “Varşova“ ya da “Polonya“ notasyonu olarak bilinir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f86bc4c49e90",
+    "unitNumber": 106,
+    "text": "∃x∼Fx ifadesinin (a, b, c) evrenindeki açılımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "&sim;Fa&or;&sim;Fb&and;&sim;Fc",
+      "B": "&sim;Fa&and;Fb&or;&sim;Fc",
+      "C": "&sim;Fa&or;&sim;Fb&or;&sim;Fc",
+      "D": "&sim;Fa&and;&sim;Fb&and;&sim;Fc",
+      "E": "&sim;Fa &rarr; Fb &rarr; &sim;Fc"
+    },
+    "correctAnswer": "C",
+    "explanation": "Varlık nicelemesi, evrende en az bir öğe için geçerli olan bir durumu ifade eder. Bu nedenle ‘veya’ bağlacı ile ifade edilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-3b5016659630",
+    "unitNumber": 107,
+    "text": "“Ayşe’nin acıkmış olması mümkündür ve yemek yemesi zorunludur.“ ifadesi aşağıdakilerden hangisinde doğru olarak gösterilmiştir?",
+    "options": {
+      "A": "&loz;q&and;∽q",
+      "B": "&loz;p&or;&loz;q",
+      "C": "&loz;p&and;∽□p",
+      "D": "&loz;p&and;□q",
+      "E": "&loz;p&or;□q"
+    },
+    "correctAnswer": "D",
+    "explanation": "Modern mantıkta ◊ sembolü mümkün olmayı, □ sembolü ise zorunluluğu ifade eder. Bu nedenle, ‘Ayşe’nin acıkmış olması mümkündür’ (◊p) ve ‘yemek yemesi zorunludur’ (□q) ifadeleri doğru sembolizasyonu verir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c64abfc86bf2",
+    "unitNumber": 108,
+    "text": "∀x􏰀x önermesinin çelişiği yani ∼∀x􏰀x önermesinin eş değeri aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "&exist;x𝛹x",
+      "B": "&exist;x&sim;x",
+      "C": "&exist;x𝛹xx",
+      "D": "&exist;x&sim;𝛹x",
+      "E": "&forall;xx"
+    },
+    "correctAnswer": "D",
+    "explanation": "Evrensel nicelemenin çelişiği, varlık nicelemesi ile ifade edilir. ‘Bazı öğeler için özellik sağlanmıyorsa’ durumu doğru sembolizasyondur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b2cad8e7c27d",
+    "unitNumber": 109,
+    "text": "“Karpuz şeftali kadar lezzetlidir“ önermesindeki “kadar lezzetli olma“ bağıntısı, tanıma göre, aşağıdaki özelliklerden hangisini bir şeyin kendisiyle de gerçekleştirebileceği bir bağıntı olması sebebiyle taşımaktadır?",
+    "options": {
+      "A": "Yansıma",
+      "B": "Bakışım",
+      "C": "Kısmi yansıma",
+      "D": "Kısmi bakışım",
+      "E": "Geçişlilik"
+    },
+    "correctAnswer": "A",
+    "explanation": "Yansıma bağıntısı, bir nesnenin kendi üzerinde de geçerli olduğu bir bağıntıdır. Örnekte ‘kadar lezzetli olma’ ilişkisi, bir şeyin kendisiyle de gerçeklenebilir. Örneğin, karpuz kendi lezzetiyle aynıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-2ef61446c731",
+    "unitNumber": 111,
+    "text": "∼[∼∀y (Cy v Dy) v ∀x(Cx v Dx)] ve [∀y (Cy v Dy) ∧ ∼∀x(Cx v Dx)] ifadeleri için aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Geçerli değil",
+      "B": "Özdeş",
+      "C": "Özdeş değil",
+      "D": "Belirsiz",
+      "E": "Geçerli"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-427a209b1c1d",
+    "unitNumber": 120,
+    "text": "Aşağıdakilerden hangileri çelişiktir?",
+    "options": {
+      "A": "&exist;x~ Fx ve &exist;x~ Fx",
+      "B": "&exist;x Fx ve &exist;x Fx",
+      "C": "&exist;x ~Fx ve ~&exist;x ~Fx",
+      "D": "~&exist;x Fx ve ~&exist;x Fx",
+      "E": "~&forall;x Fx ve ~&forall;x Fx"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-58a35bfe1c9a",
+    "unitNumber": 125,
+    "text": "Aşağıdakilerden hangisi yalın bir önermedir?",
+    "options": {
+      "A": "Ayşe’nin finalden yüksek not alması muhtemeldir.",
+      "B": "Zaman ve tarihin birbirinden farklı konuları içeren kavramlar olması mümkün değildir.",
+      "C": "Kedi kanatlıdır.",
+      "D": "Yüksekten bırakılan bir cismin düşmesi zorunludur.",
+      "E": "Ahmet’in Tuğba’yı satrançta yenmesi mümkündür."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-3094e0f62497",
+    "unitNumber": 126,
+    "text": "Aşağıdakilerden hangisi [(∼q↔ ∼r)→(q→r)] ifadesinin Quine Yöntemi ile çözümü sırasındaki aşamalardan biridir?",
+    "options": {
+      "A": "&sim;r&rarr;D",
+      "B": "[(D&harr; &sim;r)&rarr;(D&rarr;r)]",
+      "C": "Y",
+      "D": "r&rarr;Y",
+      "E": "q&rarr;Y"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-d7ebdc0b91d0",
+    "unitNumber": 127,
+    "text": "∼[Ax→ ∼∀y (Cy v Dy)] ve [∼Ax∼ ∀y (Cy Dy)] ifadeleri için aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Özdeş değil",
+      "B": "Geçersiz",
+      "C": "Geçerli",
+      "D": "Özdeş",
+      "E": "Belirsiz"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-45d971adefed",
+    "unitNumber": 128,
+    "text": "Çok değerli mantık kuralları göz önünde bulundurulduğunda aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "p &rarr; q = min⁡ [1, (1 - p) + q ]",
+      "B": "p &or; q = max⁡ ( p , q)",
+      "C": "p &and; q = min ⁡( p , q)",
+      "D": "&sim; p = 1 - p",
+      "E": "p &or; q = min ( p )"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-d7a5ba715afd",
+    "unitNumber": 132,
+    "text": "∼[ ∃x (Ax→Bx) → ∀y (Cy v Dy) ] ve [ ∼∃x (Ax→∼Bx)∼∀y (Cy v Dy) ] ifadeleri için aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Özdeş",
+      "B": "Tutarlı",
+      "C": "Geçerli",
+      "D": "Tutarlı değil",
+      "E": "Özdeş değil"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4736e1f044b1",
+    "unitNumber": 73,
+    "text": "A ∼ A I. D Y II. B Y III. Y D D: Doğru, Y: Yanlış, B: Belirsiz değerleri için yukarıdakilerden hangisi veya hangileri yanlıştır?",
+    "options": {
+      "A": "Yalnız II",
+      "B": "Yalnız I",
+      "C": "I ve II",
+      "D": "Yalnız III",
+      "E": "II ve III"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f2b0b93cd9f9",
+    "unitNumber": 75,
+    "text": "Aşağıdakilerden hangisi [ (q↔ ∼r)∨(p →r)]→[ r∧(p↔q)] ifadesinin Quine yöntemiyle çözümü sırasındaki aşamalardan biridir?",
+    "options": {
+      "A": "[ (q&harr; D)&or;(p &rarr;D)]&rarr;[ D&and;( p&harr;q)]",
+      "B": "[ (D&harr; Y)&or;(p &rarr;Y)]&rarr;[ Y&and;( p&harr;D)]",
+      "C": "[ (q&harr; Y)&or;(p &rarr;D)]&rarr;[ Y&and;( p&harr;q)]",
+      "D": "[ (q&harr; Y)&or;(D)]&rarr;[ Y&and;( p&harr;q)]",
+      "E": "[ (q&harr; D)&or;(p &rarr;Y)]&rarr;[ Y&and;( p&harr;q)]"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-be0880342b25",
+    "unitNumber": 78,
+    "text": "Aşağıdakilerden hangisi (q v r) ifadesinin Lukasiewicz–Tarski notasyonu ile yazılmış şeklidir?",
+    "options": {
+      "A": "Lqr",
+      "B": "Nqr",
+      "C": "Eqr",
+      "D": "Aqr",
+      "E": "Kqr"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-aef74df17491",
+    "unitNumber": 79,
+    "text": "Aşağıdakilerden hangisi [ (∼p→ p)∧(q→∼p)]→q ifadesinin Quine yöntemiyle çözümü sırasındaki aşamalardan biri değildir?",
+    "options": {
+      "A": "&sim;q&rarr;q",
+      "B": "Y&rarr;q",
+      "C": "q&rarr;q",
+      "D": "[ (D&rarr;Y)&and;(q&rarr;D)] &rarr;q",
+      "E": "[ (Y&rarr;D)&and;(q&rarr;Y)] &rarr;q"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-55db15a99334",
+    "unitNumber": 80,
+    "text": "p, q, r gibi üç değişkenli, iki farklı ifadenin “tam normal biçime indirgeme yöntemi” ile özdeş olup olmadıkları denetleniyor. Denetleme sonucu “özdeş” ise sonuç satırında kaç “pqr” sıralı üçlüsü olmalıdır?",
+    "options": {
+      "A": "6",
+      "B": "5",
+      "C": "8",
+      "D": "3",
+      "E": "1"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d1a4fbfd41e2",
+    "unitNumber": 81,
+    "text": "p, q, r gibi üç değişkenli, iki farklı ifadenin “tam normal biçime indirgeme yöntemi” ile özdeş olup olmadıkları denetleniyor. Denetleme sonucu “özdeş değil” ise sonuç satırında en fazla kaç “pqr” sıralı üçlüsü olabilir?",
+    "options": {
+      "A": "6",
+      "B": "8",
+      "C": "5",
+      "D": "4",
+      "E": "7"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-24948cc3fb4e",
+    "unitNumber": 82,
+    "text": "Aşağıdakilerden hangisi Lukasiewicz–Tarski notasyonunun sağladığı katkılardandır?",
+    "options": {
+      "A": "Fizik ifadelerini açık kılar.",
+      "B": "Mantık işlemlerinin bilgisayar diline aktarılmasında kolaylık sağlar.",
+      "C": "Özdeşlik ilkesinin göz önünde bulundurulmasını sağlar.",
+      "D": "Kıyas denetlemelerini belirginleştirir.",
+      "E": "Klasik mantık tartışmalarını yeniden gündeme getirir."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4c9d032cb7e1",
+    "unitNumber": 86,
+    "text": "Aşağıdakilerden hangisi [ (q↔ ∼r)∨(p →r)]→r ifadesinin Quine yöntemiyle çözümü sırasındaki aşamalardan biridir?",
+    "options": {
+      "A": "D",
+      "B": "[ (q&harr; Y)&or;(p &rarr;Y)]&rarr;D",
+      "C": "[ (q&harr; Y)&or;(p &rarr;D)]&rarr;Y",
+      "D": "[ (D &harr; Y)&or;(D &rarr;Y)]&rarr;Y",
+      "E": "[ (q &harr; Y)&or;(D &rarr;Y)]&rarr;Y"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-07250631d890",
+    "unitNumber": 88,
+    "text": "Aşağıdakilerden hangisi klasik mantıkta kullanılan önerme gösterimlerinden biridir?",
+    "options": {
+      "A": "SoP",
+      "B": "SiP",
+      "C": "SüP",
+      "D": "SöP",
+      "E": "SuP"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-60aebecd5419",
+    "unitNumber": 112,
+    "text": "(p → q) gibi bir ifadede D: Doğru, Y: Yanlış, B: Belirsiz değerlerini gösterdiğinde aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "(Y &rarr; B) = D",
+      "B": "(B &rarr; D) = Y",
+      "C": "(Y &rarr; D) = D",
+      "D": "(D &rarr; B) = B",
+      "E": "(D &rarr; Y) = Y"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-592d20a9b92c",
+    "unitNumber": 113,
+    "text": "“p” gibi bir önermenin doğruluk değerinin “0” olması durumunda “şp” (şüpheli) önermesinin doğruluk değeri aşağıdakilerden hangisi olabilir?",
+    "options": {
+      "A": "2/3",
+      "B": "1",
+      "C": "3/2",
+      "D": "1/2",
+      "E": "0"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-0310b285e453",
+    "unitNumber": 114,
+    "text": "∃yTy ifadesinin (a, b, c) evrenindeki açılımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Ta &rarr; Tb &rarr; Tc",
+      "B": "Ta &and; Tb &or; Tc",
+      "C": "Ta &or; Tb &and; Tc",
+      "D": "Ta &or; Tb &or; Tc",
+      "E": "Ta &and; Tb &and; Tc"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e4b0431e8e5f",
+    "unitNumber": 115,
+    "text": "Karşıtlık karesi göz önünde bulundurulduğunda “□p” gibi bir ifadenin karşıtının altığı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "&sim;&loz;p",
+      "B": "&loz;p",
+      "C": "&loz;□p",
+      "D": "p",
+      "E": "&sim;□p"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-52b7af698c11",
+    "unitNumber": 118,
+    "text": "“Bazı insanlar naziktir.” önermesinin niceleme mantığındaki gösterimi, sembolleştirmeye ilişkin uygulama kuralları dikkate alındığında aşağıdakilerden hangisi olmalıdır?",
+    "options": {
+      "A": "&exist;x (İx &and; Nx)",
+      "B": "&exist;x (İx &and; &sim;Nx)",
+      "C": "&exist;x (&sim;İx &and; Nx)",
+      "D": "&sim;&exist;x (İx &and; Nx)",
+      "E": "&sim;&exist;x (&sim;İx &and; &sim;Nx)"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c57b80c88bfa",
+    "unitNumber": 119,
+    "text": "Bağıntılar mantığına göre aşağıdaki tanımlardan hangisi doğrudur?",
+    "options": {
+      "A": "Herhangi bir bağıntının yansımalı olması mümkün ama zorunlu değilse bu bağıntı yansımasız bağıntı adını alır.",
+      "B": "Herhangi bir bağıntının yansımasız olması mümkün ama zorunlu değilse bu bağıntı kısmi yansımasız bağıntı adını alır.",
+      "C": "Herhangi bir bağıntının yansımalı olması mümkün ama zorunlu değilse bu bağıntı kısmi yansımasız bağıntı adını alır.",
+      "D": "Herhangi bir bağıntının yansımasız olması mümkün ama zorunlu değilse bu bağıntı yansımasız bağıntı adını alır.",
+      "E": "Herhangi bir bağıntının yansımasız olması zorunlu ama mümkün değilse bu bağıntı kısmi yansımasız bağıntı adını alır."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-27a6ea966628",
+    "unitNumber": 96,
+    "text": "Aşağıdakilerden hangisi [ (q↔ ~r)v(p →r)]→[ r∧( p↔q)] ifadesinin Quine yöntemiyle çözümü sırasındaki aşamalardan biridir?",
+    "options": {
+      "A": "[(q&harr; Y)v(D)]&rarr;[ Y&and;( p&harr;q)]",
+      "B": "[(q&harr; Y)v(p &rarr;D)]&rarr;[ Y&and;( p&harr;q)]",
+      "C": "[(q&harr; D)v(p &rarr;D)]&rarr;[ D&and;( p&harr;q)]",
+      "D": "[(q&harr; D)v(p &rarr;Y)]&rarr;[ Y&and;( p&harr;q)]",
+      "E": "[(D&harr; Y)v(p &rarr;Y)][ Y&and;( p&harr;D)]"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8f1ec4073ea8",
+    "unitNumber": 97,
+    "text": "Doğruluk değerleri D, Y, Y, D olan bir ifadenin değilinin doğruluk değerleri aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Y, D, D, Y",
+      "B": "D, Y, D, D",
+      "C": "D, Y, Y, Y",
+      "D": "D, Y, Y, D",
+      "E": "D, D, D, Y"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-899c366470d8",
+    "unitNumber": 99,
+    "text": "Çok-değerli mantık işlemleri göz önünde bulundurulduğunda aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "(p &rarr; q) = min [1, (1 - p) + q]",
+      "B": "~ p= (1 - p)",
+      "C": "(p v q) = max (p, q)",
+      "D": "(p &harr; q) = 1 -lp -ql",
+      "E": "p Ʌ q = min (q)"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ceeedabeeb19",
+    "unitNumber": 100,
+    "text": "p, q, r gibi üç değişkenli bir ifadenin “tam normal biçime indirgeme yöntemi” ile geçerli olup olmadığı denetleniyor. Denetleme sonucu “geçersiz” ise sonuç satırında kaç “pqr” sıralı üçlüsü olmalıdır?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "8",
+      "D": "5",
+      "E": "0"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9976c736c1ba",
+    "unitNumber": 134,
+    "text": "∼[∀y (Cy → Dy)→ ∼∀y (Cy .Dy)] ve [∀y (Cy → Dy) . ∀y (Cy .Dy)] ifadeleri için aşağıdaki seçeneklerden hangisi doğrudur?",
+    "options": {
+      "A": "Tutarlı",
+      "B": "Belirsiz",
+      "C": "Özdeş değil",
+      "D": "Geçerli değil",
+      "E": "Özdeş"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2021-2022",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ec44502a679f",
+    "unitNumber": 136,
+    "text": "Aşağıdakilerden hangisi [(∼q↔ ∼r)∨(q→r)]→[ q∧(∼ p↔q)] ifadesinin Quine yöntemiyle çözümü sırasındaki aşamalardan biridir?",
+    "options": {
+      "A": "[(&sim;D&harr; &sim;r)&or;(D&rarr;r)]&rarr;[ Y&and;(&sim; p&harr;q)]",
+      "B": "[(&sim;D&harr; &sim;r)&or;(Y&rarr;r)]&rarr;[D&and;(&sim; D&harr;q)]",
+      "C": "[(&sim;Y&harr; &sim;r)&or;(Y&rarr;r)]&rarr;[ Y&and;(&sim; p&harr;Y)]",
+      "D": "[(&sim;Y&harr; &sim;r)&or;(Y&rarr;r)]&rarr;[ D&and;(&sim; p&harr;D)]",
+      "E": "[(&sim;Y&harr; &sim;r)&or;(Y&rarr;r)]&rarr;[ Y&and;(&sim; p&harr;D)]"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2021-2022",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-622db1fb2af7",
+    "unitNumber": 138,
+    "text": "∼[∀x(Cx .Dx)→ ∼∀x (Cx .Dx)] ve [∀x(Cx .Dx) . ∀x (Cx .Dx)] ifadeleri için aşağıdaki seçeneklerden hangisi doğrudur?",
+    "options": {
+      "A": "Özdeş değil",
+      "B": "Geçerli",
+      "C": "Tutarlı",
+      "D": "Geçerli değil",
+      "E": "Özdeş"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2021-2022",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e99c5e5c4d50",
+    "unitNumber": 139,
+    "text": "D: Doğru, Y: Yanlış, B: Belirsiz değerleri için yukarıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "2",
+      "B": "5",
+      "C": "3",
+      "D": "1",
+      "E": "4"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2021-2022",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2021-2022",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ac8ecad4bd8f",
+    "unitNumber": 144,
+    "text": "[∀y (Cy → Dy)→ ∼ ∀y(Cy .Dy)] ve [∼∀y(Cy → Dy) v∼∀y(Cy .Dy)] ifadeleri için hakkında aşağıdaki şıklardan hangisi doğrudur?",
+    "options": {
+      "A": "Hiçbiri",
+      "B": "Geçerli değil",
+      "C": "Özdeş değil",
+      "D": "Özdeş",
+      "E": "Belirsiz"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-959254b741e9",
+    "unitNumber": 146,
+    "text": "“~(p ↔ ∼ q)” ifadesi Lukasiewicz -Tarski notasyonunuyla yazıldığında nasıl bir yeniden yazımla karşılaşılacaktır?",
+    "options": {
+      "A": "NEpNq",
+      "B": "NEpq",
+      "C": "EpNq",
+      "D": "NpNq",
+      "E": "pNq"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-ad83ff34a65a",
+    "unitNumber": 147,
+    "text": "[∀x (Cx .Dx) →∼∀x (Cx. Dx)] ve [∼∀x (Cx. Dx) ∨ ∼∀y (Cy.Dy) ] ifadeleri için hakkında aşağıdaki şıklardan hangisi doğrudur?",
+    "options": {
+      "A": "Hiçbiri",
+      "B": "Geçerli değil",
+      "C": "Özdeş değil",
+      "D": "Özdeş",
+      "E": "Geçerli"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-3fa8cd1a1147",
+    "unitNumber": 148,
+    "text": "Modal mantığın özellikle yapay zeka alanında kullanılmasının sebebi, aşağıdaki şıklardan hangisinde doğru bir biçimde verilmiştir?",
+    "options": {
+      "A": "Modal mantık sistemlerinin güçlü formel diller sayesinde çok daha ayrıntılı, nesnel ve geniş ölçüde ele alınır hale gelmesi",
+      "B": "Aristoteles’in modal mantık çalımalarının Ortaçağ’da yeniden okunması",
+      "C": "Modal mantığın diğer mantık sistemleri gibi içeriksiz ve sadece biçimsel bir yapıya sahip olması",
+      "D": "Modal mantık sistemlerinin modaliteler dışında önermelerle ilgilenmiyor olması",
+      "E": "Modal mantık önermelerinin günlük konuşma dilinden kopuk bir yapıya sahip olması"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-f6e62f4db042",
+    "unitNumber": 157,
+    "text": "Lukaslewicz-Tarski notasyonunun parantezsiz yazma imkan sağlaması aşağıdakilerden hangisine imkan vermektedir?",
+    "options": {
+      "A": "Matematik işlemlerinin bilgisayar diline aktarılmasında kolaylık sağlamaktadır.",
+      "B": "Mantık işlemlerinin bilgisayar diline aktarılmasında kolaylık sağlamaktadır.",
+      "C": "Klasik Mantık tartışmalarını yeniden gündeme getirmiştir.",
+      "D": "Kıyas denetlemesini kolaylaştırmıştır.",
+      "E": "Özdeşlik ilkesini göz önünde bulundurmaktadır."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-b02b714d1232",
+    "unitNumber": 158,
+    "text": "Aşağıdakilerden hangisi “iki değerli mantık” örnekleri dışında bir örnektir?",
+    "options": {
+      "A": "Işığın açık olması veya açık olmaması.",
+      "B": "Arabanın duruyor olması veya durmuyor olması (hareket etmesi).",
+      "C": "Odadaki sıcaklığın 20 derece olmaması veya olmaması.",
+      "D": "Çiçeklerin çok seviliyor olması veya az seviliyor olması.",
+      "E": "Kapının kilitli olması veya olmaması."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-1e3ffdf8fd1e",
+    "unitNumber": 162,
+    "text": "(∀xTx ↔∼∃yHy) [∃z Hz →∼∃y∼Ty)(∼∃y∼Ty →∼∃yHy) ] ifadeleri için hakkında aşağıdaki şıklardan hangisi doğrudur?",
+    "options": {
+      "A": "Hiçbiri",
+      "B": "Geçerli değil",
+      "C": "Özdeş değil",
+      "D": "Özdeş",
+      "E": "Geçerli"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-63bf87b3c399",
+    "unitNumber": 163,
+    "text": "∼∃y (Ay→By) (Ax→Bx) ∀y (Cy v Dy)] ve [∀x (Cx v Dx)∼∀y (Cy v Dy) ] ifadeleri hakkında aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Hiçbiri",
+      "B": "Özdeş değil",
+      "C": "Geçerli",
+      "D": "Belirsiz",
+      "E": "Özdeş"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-c3614d5892e4",
+    "unitNumber": 172,
+    "text": "D: Doğru, Y: Yanlış, B: Belirsiz değerleri için aşağıdakilerden hangisi yanlıştır? — I. D,Y — II. B, Y — III. Y, D",
+    "options": {
+      "A": "I-II",
+      "B": "Yalnız I",
+      "C": "Yalnız II",
+      "D": "II-III",
+      "E": "Yalnız III"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-3eee4987cd10",
+    "unitNumber": 173,
+    "text": "[Ax v∼ ∀y(Cy v Dy)] ve [∼Ax v ∼∀y (Cy v Dy)] ifadeleri için hakkında aşağıdaki şıklardan hangisi doğrudur?",
+    "options": {
+      "A": "Hiçbiri",
+      "B": "Geçerli değil",
+      "C": "Özdeş değil",
+      "D": "Özdeş",
+      "E": "Belirsiz"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "deneme"
+  },
+  {
+    "id": "s-dbf507579425",
+    "unitNumber": 186,
+    "text": "Geleneksel (Klasik) Mantık açısından kategoriler kaç temel türe sahiptir?",
+    "options": {
+      "A": "Bir",
+      "B": "İki",
+      "C": "Üç",
+      "D": "Dört",
+      "E": "Beş"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-d8eaeb3c9ec2",
+    "unitNumber": 187,
+    "text": "Mantık açısından çıkarım kuralları aşağıdakilerden hangisi için kullanılmaktadır?",
+    "options": {
+      "A": "Önermelerin genel geçerliğini sağlamak",
+      "B": "Geçerli akıl yürütmeleri tespit etmek",
+      "C": "Bilgi türlerini ayırt etmek",
+      "D": "Önerme çeşitlerini göstermek",
+      "E": "Doğal dile dönüşü sağlamak"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-c2f01968f5aa",
+    "unitNumber": 188,
+    "text": "Önermenin geleneksel tanımı göz önünde bulundurulduğunda aşağıdakilerden hangisi doğru bir önermedir?",
+    "options": {
+      "A": "Bazı ağaçlar uçar.",
+      "B": "Bütün sürüngenler dört ayaklıdır.",
+      "C": "Balıklar suda yaşar.",
+      "D": "Güneşte yaşayan bazı canlılar oksijen üretir",
+      "E": "Bütün kuşlar otçuldur."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-e116ccf2f957",
+    "unitNumber": 189,
+    "text": "Temel mantık ilkelerinin üçü de doğru kabul edildiğinde, önermelerin aşağıdaki hangi iki değerden birini almasının kaçınılmaz olduğu kabul edilmektedir?",
+    "options": {
+      "A": "Doğru, Yanlış",
+      "B": "Belirli, Belirsiz",
+      "C": "Şüpheli, Mümkün",
+      "D": "Zorunlu, Olası",
+      "E": "Süreli, Süresiz"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-efce59c56c02",
+    "unitNumber": 192,
+    "text": "Üçüncü halin imkansızlığı ilkesi aşağıdaki şıklardan hangisinde doğru olarak tanımlanmıştır?",
+    "options": {
+      "A": "Bazı şeyler bazen doğru bazen yanlıştır.",
+      "B": "Bazı şeyler başka şeylere dönüşür.",
+      "C": "Bir konuşma evreni sadece “a olan” ve “a olmayan”ın birleşiminden ibarettir.",
+      "D": "Bir şey sadece kendisidir, kendisi olmayan olamaz.",
+      "E": "Bir şey ne ise o’dur."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-8a6ec9335461",
+    "unitNumber": 193,
+    "text": "“Kategorik bir önermenin temel unsurları ………. , ………. ve ……….’ tır.” önermesine sırasıyla aşağıdakilerden hangisinin gelmesi gerekir?",
+    "options": {
+      "A": "özne, yüklem, koşaç",
+      "B": "nesne, tümleç, yargı",
+      "C": "yargı, belirtili nesne, tikel",
+      "D": "tümel, mümkün, özne",
+      "E": "tikel, yüklem, belirtisiz nesne"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-acf08ac85a61",
+    "unitNumber": 194,
+    "text": "Kategorik önermelerin gösterileri ile ilgili aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Tümel-olumlu: SaP",
+      "B": "Tümel-olumsuz: SeP",
+      "C": "Tikel-olumlu: SıP",
+      "D": "Tikel-olumsuz: Sop",
+      "E": "Tikel-olumsuz Sup"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-c5f902c908bc",
+    "unitNumber": 195,
+    "text": "Birlikte evetleme ilişkisi içindeki üç önermenin sonucunun doğru olması için, önermelerin almaları gereken doğruluk değerleri aşağıdakilerden hangisinde doğru olarak verilmiştir? I. Önerme II. Önerme III. Önerme",
+    "options": {
+      "A": "Doğru Yanlış Yanlış",
+      "B": "Doğru Doğru Yanlış",
+      "C": "Doğru Doğru Doğru",
+      "D": "Yanlış Yanlış Doğru",
+      "E": "Yanlış Yanlış Yanlış"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-e7b8ae60cc46",
+    "unitNumber": 196,
+    "text": "Doğruluk tablosu yöntemiyle aşağıdakilerden hangisi denetlenebilmektedir? I. Geçerlilik II. Tutarlılık III. Özdeşlik",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "I ve II",
+      "D": "II ve III",
+      "E": "I, II ve III"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-7d800e67273d",
+    "unitNumber": 197,
+    "text": "“Bir çıkarımda öncül adını verdiğimiz önermeler ile sonuç önermesi arasındaki ilişkinin denetlenmesi için öncüller birbirine ….. eklemiyle, sonuç önermesi öncüller kısmına …….. eklemiyle bağlanır.” önermesinde boşluklara sırasıyla aşağıdakilerden hangileri getirilmelidir?",
+    "options": {
+      "A": "ve – veya",
+      "B": "ve – ise",
+      "C": "ise – ancak ve ancak",
+      "D": "veya – veya",
+      "E": "ise – ise"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-9e8772bec754",
+    "unitNumber": 198,
+    "text": "İki öncül ve bir sonuçtan oluşan bir çıkarım doğruluk tablosu yöntemiyle denetlenmektedir. Bu çıkarımın sonuç satırının tamamı “doğru” değerlerinden oluşmuşsa, söz konusu çıkarım için aşağıdakilerden hangisi söylenir?",
+    "options": {
+      "A": "Geçerli",
+      "B": "Geçersiz",
+      "C": "Tutarsız",
+      "D": "Eşdeğer",
+      "E": "Belirsiz"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-95dc2f99e458",
+    "unitNumber": 199,
+    "text": "Üç öncül ve bir sonuçtan oluşan bir çıkarım doğruluk tablosu yöntemiyle denetlenmektedir. Bu çıkarımın sonuç satırı en az bir “yanlış” değeri içeriyorsa, söz konusu çıkarım için aşağıdakilerden hangisi doğrudan söylenebilir?",
+    "options": {
+      "A": "Geçerli",
+      "B": "Geçersiz",
+      "C": "Tutarlı",
+      "D": "Eşdeğer",
+      "E": "Belirsiz"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-2d1a7857b367",
+    "unitNumber": 201,
+    "text": "Beş öncül ve bir sonuçtan oluşan bir çıkarım doğruluk tablosu yöntemiyle denetlenmektedir. Bu çıkarımın sonuç satırının tamamı “yanlış” değeri içeriyorsa, söz konusu çıkarım için aşağıdakilerden hangisi doğrudan söylenebilir?",
+    "options": {
+      "A": "Geçerli",
+      "B": "Negatif",
+      "C": "Tutarlı",
+      "D": "Tutarsız",
+      "E": "Belirsiz"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-0f05f28799ef",
+    "unitNumber": 202,
+    "text": "İki önermenin “ancak ve ancak” eklemiyle bağlanıp doğruluk değerleri incelenmektedir. Ortaya çıkan bileşik önermenin ana eklemi olan bu (ancak ve ancak)’ın doğruluk sütunu bütün satırlarda “doğru” değeri alıyorsa söz konusu önermeler için aşağıdakilerden hangisi doğrudan söylenebilir?",
+    "options": {
+      "A": "Geçerli",
+      "B": "Geçersiz",
+      "C": "Tutarlı",
+      "D": "Tutarsız",
+      "E": "Eşdeğer"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-a82e98e48b50",
+    "unitNumber": 203,
+    "text": "Aşağıdakilerden hangisi aynı anda bir çıkarımın sonucu olamaz?",
+    "options": {
+      "A": "Geçerlilik ve tutarsızlık",
+      "B": "Geçerlilik ve tutarlılık",
+      "C": "Geçersizlik ve tutarlılık",
+      "D": "Tutarsızlık ve geçersizlik"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-e2dab837ac06",
+    "unitNumber": 204,
+    "text": "İki önermenin eşdeğer olup olmadıklarını incelemek için önermeler arasında aşağıdaki hangi eklem konularak işlem yapılmalıdır?",
+    "options": {
+      "A": "ise",
+      "B": "ve",
+      "C": "veya",
+      "D": "ancak ve ancak",
+      "E": "değil"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-3f1b225f29d9",
+    "unitNumber": 205,
+    "text": "İki önerme ve bir sonuçtan oluşan bir çıkarım doğruluk tablosu aracılığıyla denetlenecektir. Bu işlem için önermelerin hangi eklem ile bir araya getirilerek doğruluk değerlerinin incelenmesi gerekir?",
+    "options": {
+      "A": "ise",
+      "B": "ve",
+      "C": "veya",
+      "D": "ancak ve ancak",
+      "E": "değil"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-9673c2a5ae02",
+    "unitNumber": 206,
+    "text": "“Quine yöntemi” olarak bilinen ve Amerikalı filozof Willard Van Orman Quine’nın (1908–2000) geliştirdiği yöntem aşağıdaki kitaplardan hangisinde aktarılmıştır?",
+    "options": {
+      "A": "Methods of Logic",
+      "B": "Methods of Mathematics",
+      "C": "Methods of Physics",
+      "D": "Methods of Arithmetic",
+      "E": "Methods of Transformation"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-a17b5585450f",
+    "unitNumber": 207,
+    "text": "Quine yöntemi hangi denetleme yöntemiyle bir arada iş görmektedir?",
+    "options": {
+      "A": "Saçmaya İndirgeme",
+      "B": "Doğruluk Tablosu",
+      "C": "Tam Normal Biçime İndirgeme",
+      "D": "Lukasiewicz- Tarski Notasyonu",
+      "E": "Çok Değerli Mantık"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-4671577c1843",
+    "unitNumber": 208,
+    "text": "Quine yöntemine göre aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "A  D = A",
+      "B": "D  A = A",
+      "C": "A  Y = Y",
+      "D": "Y  A = Y",
+      "E": "Y  Y = D"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-11865f062eab",
+    "unitNumber": 211,
+    "text": "[(p  q)  r]  [(p  p) (s  t)] ifadesi Quine yöntemi ile denetlenecektir. “Doğru” değeri alacak ilk önerme hangisi olmalıdır?",
+    "options": {
+      "A": "p",
+      "B": "q",
+      "C": "r",
+      "D": "s",
+      "E": "t"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-567ec84f7595",
+    "unitNumber": 215,
+    "text": "“Saçmaya indirgeme yöntemi” hangi mantık ilkesini kendisine zemin olarak kullanır?",
+    "options": {
+      "A": "Çelişmezlik",
+      "B": "Özdeşlik",
+      "C": "Üçüncü Halin Olmazlığı",
+      "D": "Tutarlılık",
+      "E": "Neden-Sonuç Bağlantısı"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-1cbf6bdc3d23",
+    "unitNumber": 216,
+    "text": "Saçmaya indirgeme yöntemi ile denetlenen bir çıkarımın sonuç satırında en az bir “doğru” değeri bulunuyorsa bu ifade için aşağıdakilerden hangisi kesin olarak söylenebilir?",
+    "options": {
+      "A": "Geçerli",
+      "B": "Geçersiz",
+      "C": "Tutarlı",
+      "D": "Tutarsız",
+      "E": "Eşdeğer"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-197123dba0ab",
+    "unitNumber": 217,
+    "text": "Saçmaya indirgeme yöntemi ile denetlenen iki çıkarımının sonuç satırındaki doğruluk değerleri dikkate alınarak aşağıdakilerden hangisi ile ilgili bir değerlendirmede bulunulabilir?",
+    "options": {
+      "A": "Geçerlilik",
+      "B": "Geçersizlik",
+      "C": "Tutarlılık",
+      "D": "Tutarsızlık",
+      "E": "Eşdeğerlik"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-71c04b1ea5ad",
+    "unitNumber": 218,
+    "text": "Saçmaya indirgeme yöntemi ile denetlenen bir çıkarımın sonuç satırının tamamında “yanlış” değeri bulunuyorsa bu ifade için aşağıdakilerden hangisi kesin olarak söylenebilir?",
+    "options": {
+      "A": "Geçerli",
+      "B": "Geçersiz",
+      "C": "Belirsiz",
+      "D": "Tutarlı",
+      "E": "Eşdeğer"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-2e9d8e5ce749",
+    "unitNumber": 220,
+    "text": "Saçmaya indirgeme yöntemi ile denetlenen bir çıkarımın tamamının öncelikle hangi doğruluk değerine sahip olduğu varsayılarak işlem yapılır?",
+    "options": {
+      "A": "Doğru",
+      "B": "Yanlış",
+      "C": "Belirsiz",
+      "D": "Tutarlı",
+      "E": "Geçerli"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-b2ccbeb22054",
+    "unitNumber": 221,
+    "text": "[(p  q)  r] ifadesi saçmaya indirgeme yöntemi ile denetlenecektir. Bu ifadenin tamamının “yanlış” değerini alabilmesi için “(p  q)” ifadesinin hangi doğruluk değerine sahip olması zorunludur?",
+    "options": {
+      "A": "Doğru",
+      "B": "Yanlış",
+      "C": "Belirsiz",
+      "D": "Tutarlı",
+      "E": "Geçerli"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-dc6096a066bb",
+    "unitNumber": 223,
+    "text": "[(q  r)  (p  qı)]  [(p  q)  r] ifadesi saçmaya indirgeme yöntemi ile denetlendiğinde sonuç “geçersiz” olarak belirleniyorsa, aynı ifadenin Quine yöntemi ile elde edilecek sonuç aşağıdakilerden hangisi olacaktır?",
+    "options": {
+      "A": "Doğru",
+      "B": "Yanlış",
+      "C": "Geçersiz",
+      "D": "Tutarlı",
+      "E": "Geçerli"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-00768ca05da2",
+    "unitNumber": 225,
+    "text": "“Tam Normal Biçime İndirgeme yöntemi” ile bütün eklemler tek bir eklem cinsinden yazılabilmektedir. Bu eklem hangisidir?",
+    "options": {
+      "A": "parantez",
+      "B": "veya",
+      "C": "ise",
+      "D": "ancak ve ancak",
+      "E": "değil"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-6aa16de34533",
+    "unitNumber": 226,
+    "text": "“Tam Normal Biçime İndirgeme yöntemi” ile bir ifadenin hangi özellikleri denetlenmektedir?",
+    "options": {
+      "A": "Geçerli ve Tutarlılık",
+      "B": "Eşdeğerlik",
+      "C": "Alternatif İlişki",
+      "D": "Belirsizlik",
+      "E": "Süreksizlik"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-e78d5d687a17",
+    "unitNumber": 227,
+    "text": "De Morgan ve dağıtım kurallarıyla bir takım dönüşümler yapılabilmektedir. Aşağıdaki dönüşüm işlemlerinden hangisi yanlış yapılmıştır?",
+    "options": {
+      "A": "(A ",
+      "B": "= (A  Bı) b. (A  Bı) = (Aı  B)",
+      "C": "𝐴 = 𝐴(𝐵 ∨ 𝐵̅)",
+      "D": "𝐴 = 𝐴𝐵 ∨ 𝐴𝐵̅",
+      "E": "A = AB"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-c73d9c17c1f1",
+    "unitNumber": 228,
+    "text": "“Tam Normal Biçime İndirgeme yöntemi” Boole cebri ile birlikte iş görmektedir. Aşağıdaki Boole cebri işlemlerinden hangisi yanlış verilmiştir?",
+    "options": {
+      "A": "x(y + z) = xy + xz",
+      "B": "x(1 - x) = xxı = 0",
+      "C": "x + 0 = x",
+      "D": "A  B = AB  AıBı",
+      "E": "A  B = Bı  (A  B)"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-354ea615b2d3",
+    "unitNumber": 229,
+    "text": "Aşağıdakilerden hangisi yanlış bir sadeleştirme işlemine örnektir?",
+    "options": {
+      "A": "AA = A",
+      "B": "AAı = Y",
+      "C": "ABCD...Aı = Y",
+      "D": "A  A = A ı",
+      "E": "A  Aı = D"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-bbb14be808a2",
+    "unitNumber": 230,
+    "text": "Aşağıdakilerden hangisi yanlış bir dönüştürme işlemine örnektir?",
+    "options": {
+      "A": "(A ",
+      "B": "= (Aı  B) b. (A  B) = ABı",
+      "C": "(A  B) = (AB  AıBı)",
+      "D": "(A  B) = (ABı  AıB)",
+      "E": "(A  B) = ABı"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-09c8b3319927",
+    "unitNumber": 231,
+    "text": "“p, q ve r” gibi üç değişkenli bir çıkarım “Tam Normal Biçime İndirgeme yöntemi” ile denetleniyor. Denetleme sonucu “geçerli ve tutarlı” ise sonuç satırında kaç farklı sıralı pqr biçimine ulaşılmıştır?",
+    "options": {
+      "A": "2",
+      "B": "4",
+      "C": "8",
+      "D": "10",
+      "E": "12"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-9c1caa1f1332",
+    "unitNumber": 232,
+    "text": "“p, q ve r” gibi üç değişkenli bir çıkarım “Tam Normal Biçime İndirgeme yöntemi” ile denetleniyor. Denetleme sonucu “geçersiz ama tutarlı” ise sonuç satırında en az kaç “doğru” değeri vardır?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "5",
+      "E": "8"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-f73bfc397dac",
+    "unitNumber": 233,
+    "text": "“p, q ve r” gibi üç değişkenli bir çıkarım “Tam Normal Biçime İndirgeme yöntemi” ile denetleniyor. Denetleme sonucu “geçersiz ve tutarsız” ise sonuç satırında en az kaç “doğru” değeri vardır?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "5",
+      "E": "0"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-62bbb69916d9",
+    "unitNumber": 235,
+    "text": "Jan Lukasiewicz ve Alfred Tarski isimli iki Polonyalı mantıkçının geliştirdiği notasyon (yazım tarzı), mantık işlemlerini hangi açıdan kolaylaştırmaktadır?",
+    "options": {
+      "A": "Parantez kullanmadan ifade edebilme olanağı vermektedir.",
+      "B": "Geçerlik denetlemesi yapabilme olanağı vermektedir.",
+      "C": "Tutarlılık denetlemesi yapabilme olanağı vermektedir.",
+      "D": "Eşdeğerlik denetlemesi yapabilme olanağı vermektedir.",
+      "E": "İfadenin değilini denetleme olanağı vermektedir."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-267133fdcc76",
+    "unitNumber": 237,
+    "text": "Lukasiewicz – Tarski notasyonunda eklemler harf cinsinden yazılır. Aşağıda verilen eklem- harf karşılıklarından hangisi yanlıştır?",
+    "options": {
+      "A": "“~” : N",
+      "B": "“” : K",
+      "C": "“” : A",
+      "D": "“” : K",
+      "E": "“” : E"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-20b5c9b39491",
+    "unitNumber": 240,
+    "text": "“[(p  q)  rı]  (p  r) )” ifadesi Lukasiewicz – Tarski notasyonunuyla yazıldığında nasıl bir yeniden yazımla karşılaşılacaktır?",
+    "options": {
+      "A": "CKpqNrNEpr",
+      "B": "KpqNrNEpr",
+      "C": "ACKpqpr",
+      "D": "AKprNEpr",
+      "E": "ACKpqNrNEpr"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-5ad4efb1529c",
+    "unitNumber": 241,
+    "text": "“NEpNq” ifadesi parantezli haline döndürülmek isteniyor. Aşağıdakilerden hangisi bu tür bir işlemin sonucudur?",
+    "options": {
+      "A": "~(p  ~q)",
+      "B": "(p  ~q)",
+      "C": "~(p  q)",
+      "D": "~(p  ~q)",
+      "E": "(p  ~q)"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-6024bf96d0ca",
+    "unitNumber": 242,
+    "text": "Çok değerli mantık açısından önermelerin durumu ile ilgili aşağıdakilerden hangisi söylenebilir?",
+    "options": {
+      "A": "Önermelerin tek bir doğruluk vardır ve değer “doğru” değeridir.",
+      "B": "Önermelerin sadece iki doğruluk değeri olabilir.",
+      "C": "Önermelerin tek bir doğruluk vardır ve değer “yanlış” değeridir.",
+      "D": "Önermeler için ikiden fazla doğruluk değeri söz konusu olabilir.",
+      "E": "“Yarın yağmur yağacak” önermesinin “doğru” değerini mi “yanlış” değerini mi alacağı bugünden tam anlamıyla belirlenmiştir."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-ccb44b262ec4",
+    "unitNumber": 243,
+    "text": "Çok değerli mantıkların bir örneği olan “üç değerli mantık” aşağıdaki mantık ilkelerinden hangisini esnek hale getirmiştir? I. Özdeşlik II. Çelişmezlik III. Üçüncü Halin Olmazlığı",
+    "options": {
+      "A": "Yalnız I",
+      "B": "Yalnız II",
+      "C": "Yalnız III",
+      "D": "I ve II",
+      "E": "II ve III"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-30900d76a398",
+    "unitNumber": 244,
+    "text": "Çok değerli mantıkların bir örneği olan “üç değerli mantık”’a göre üçüncü değer aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Doğru",
+      "B": "Yanlış",
+      "C": "Belirsiz",
+      "D": "Baskın",
+      "E": "Çekinik"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-1ed524e8c0d3",
+    "unitNumber": 245,
+    "text": "Çok değerli mantıkların bir örneği olan “üç değerli mantık”’a göre aşağıdakilerden hangisi “belirsiz”dir?",
+    "options": {
+      "A": "Dünyaya en uzak gezegende mavi gözlü dev ejderhalar yaşar.",
+      "B": "İki kere iki dörttür.",
+      "C": "Türkiye’nin başkenti Ankara’dır.",
+      "D": "Türkiye’nin başkenti Adana’dır.",
+      "E": "Türkiye’nin en büyük gölü Van Gölü’dür."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-b50498964c91",
+    "unitNumber": 246,
+    "text": "Çok değerli mantıkların bir örneği olan “üç değerli mantık”’a göre “belirsizlik”i gösteren doğruluk değeri aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "0/1",
+      "D": "1/1",
+      "E": "1/2"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-89f5158d94dc",
+    "unitNumber": 247,
+    "text": "Çok değerli mantıkların bir örneği olan “üç değerli mantık”’a göre bir eklemin doğruluk değerlerini etkisini hesaplamak için bazı formüller geliştirilmiştir. Aşağıda verilen formüllerden hangisi yanlıştır?",
+    "options": {
+      "A": "xı = (1-x)",
+      "B": "(xy) = min (x,y)",
+      "C": "(xy) = max (x,y)",
+      "D": "(xy) = min (1, 1-x+y)",
+      "E": "(xy) = min [min (1, 1-x+y)]"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-9ca6501dfc60",
+    "unitNumber": 249,
+    "text": "Çok değerli mantıkların bir örneği olan “üç değerli mantık”’a göre bir eklemin doğruluk değerlerini etkisini hesaplamak için bazı formüller geliştirilmiştir. Bu formüllere göre “ y y” gibi bir ifade aşağıdakilerden hangisiyle çözümlenmelidir?",
+    "options": {
+      "A": "(1-y)",
+      "B": "max (y,y)",
+      "C": "min (y,y)",
+      "D": "min (1, 1-y+y)",
+      "E": "min [min (1, 1-y+y), min (1, 1-y+y)]"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-b71cfb1e742e",
+    "unitNumber": 250,
+    "text": "Çok değerli mantıkların bir örneği olan “üç değerli mantık”’a göre bir eklemin doğruluk değerlerini etkisini hesaplamak için bazı formüller geliştirilmiştir. Bu formüllere göre “ (q  r), (pı  q) ∴ (p  q)” gibi bir ifadenin “p:1, q:1 ve r:1” için alacağı doğruluk değeri aşağıdakilerden hangisi olacaktır?",
+    "options": {
+      "A": "1",
+      "B": "0",
+      "C": "1/2",
+      "D": "2",
+      "E": "3/2"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-64d09f59a922",
+    "unitNumber": 251,
+    "text": "Çok değerli mantıkların bir örneği olan “üç değerli mantık”’a göre bir eklemin doğruluk değerlerini etkisini hesaplamak için bazı formüller geliştirilmiştir. Bu formüllere göre “ (q  r), (pı  q) ∴ (p  q)” ifadesinin “p:1, q:1 ve r:1” alacağı doğruluk değerinin “1” olduğu bilindiğine göre bu ifade için aşağıdakilerden hangisi kesinlikle söylenebilir?",
+    "options": {
+      "A": "Geçerli",
+      "B": "Geçersiz",
+      "C": "Tutarlı",
+      "D": "Tutarsız",
+      "E": "Eşdeğer"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-b7f6c28f9aaa",
+    "unitNumber": 252,
+    "text": "Aşağıdaki şıklarda verilenlerden hangisi modaliteler kapsamında ele alınmaz?",
+    "options": {
+      "A": "Zorunlu",
+      "B": "İmkanlı",
+      "C": "Olumsal",
+      "D": "İmkansız",
+      "E": "Pozitif"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-c03fb32f3723",
+    "unitNumber": 253,
+    "text": "“Ayşe’nin acıkmış olması mümkündür ve yemek yemesi zorunludur” gibi bir ifade aşağıdaki şıklardan hangisinde doğru olarak gösterilmiştir? (p: Ayşe’nin acıkmış olmasını; q: Ayşe’nin yemek yemesini temsil etsin.)",
+    "options": {
+      "A": "◊p ∧ ∽ □p",
+      "B": "◊p ∨ □p",
+      "C": "◊p ∧ □p",
+      "D": "◊p ∧ ∽p",
+      "E": "◊p ∨ ◊p"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-18a843fe0fd9",
+    "unitNumber": 254,
+    "text": "“Mp = CNpp” ifadesinin karşılığı aşağıdaki şıklardan hangisinde doğru olarak gösterilmiştir?",
+    "options": {
+      "A": "◊ p = ∼p →p",
+      "B": "◊p = □p→p",
+      "C": "◊p = □p",
+      "D": "◊p = ◊p→p",
+      "E": "◊p→p = ∽p"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-51aa2644a3d4",
+    "unitNumber": 258,
+    "text": "Basit, bileşik ve bağıntı bildiren önermelerle ilgili aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Basit önerme, bir özne ve bir yüklemden meydana gelen önermedir.",
+      "B": "Bileşik önermelerin özelliği birden çok özne veya yüklem ihtiva etmesidir.",
+      "C": "Bağıntı bildiren önermelerin gramatik özellikleri, onları basit önerme gibi yorumlamamıza olanak verecek gibi görünmektedir.",
+      "D": "Bağıntı bildiren önermelerin yüklemi, iki veya daha fazla özne arasında bir bağıntı bildirir.",
+      "E": "Basit önermeler, bileşik ve bağıntı bildiren önermelerin bir araya gelmesiyle oluşur."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-428bd59abc4d",
+    "unitNumber": 259,
+    "text": "Bağıntı bildiren önermelerin, birbirinden farklı yapılara, farklı özelliklere sahip olmasının sebebi nedir?",
+    "options": {
+      "A": "Her bağıntının bir önermede sadece bir kez kullanılabilmesi.",
+      "B": "Bileşik önermelerden oluşmaları.",
+      "C": "Gramatik özelliklerinden dolayı, aynı biçimlere sahip olmaları.",
+      "D": "Farklı bağıntıların, farklı çıkarımların yapılmasına olanak vermesi",
+      "E": "En az iki basit önermenin bir araya gelmesiyle oluşmuş olmaları."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-1e5c2794bf9f",
+    "unitNumber": 260,
+    "text": "Bir önermenin bağıntı açısından taşıdığı özellik aşağıdakilerden hangisi açısından incelenemez?",
+    "options": {
+      "A": "Konuşma Dili",
+      "B": "Sosyopolitik",
+      "C": "Modern Mantık",
+      "D": "Felsefe",
+      "E": "Klasik Mantık"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-a30c1e7f2684",
+    "unitNumber": 261,
+    "text": "Aşağıdakilerden hangisi “yansımalı bağıntılar” arasında gösterilemez?",
+    "options": {
+      "A": "Yansıtılmalı Bağıntılar",
+      "B": "Yansımasız Bağıntılar",
+      "C": "Ne Yansımalı Ne de Yansımasız Bağıntılar",
+      "D": "Kısmi Yansımalı Bağıntılar",
+      "E": "Kısmi Yansımasız Bağıntılar"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-9532c9b5a923",
+    "unitNumber": 262,
+    "text": "Aşağıdakilerden hangisi “bakışımlı bağıntılar” ile ifade edilemez?",
+    "options": {
+      "A": "Bakışımlı Bağıntılar",
+      "B": "Bakışımsız Bağıntılar",
+      "C": "Hem Bakışımlı Hem de Bakışımsız Bağıntılar",
+      "D": "Kısmi Bakışımlı Bağıntılar",
+      "E": "Kısmi Bakışımsız Bağıntılar"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-5bdf189339ab",
+    "unitNumber": 263,
+    "text": "Aşağıdakilerden hangisi “geçişlilik bağıntıları” arasında değildir?",
+    "options": {
+      "A": "Geçişli Bağıntılar",
+      "B": "Geçişsiz Bağıntılar",
+      "C": "Ne Geçişli Ne de Geçişsiz Bağıntılar",
+      "D": "Kısmi Geçişli Bağıntılar",
+      "E": "Kısmi Geçişimsiz Bağıntılar"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-b70da426d038",
+    "unitNumber": 264,
+    "text": "“Mantıkta herhangi bir bağıntı hiçbir şekilde yansıma özelliğini gerçeklemiyorsa ……… olarak adlandırılır.” ifadesinde boş bırakılan yere aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Geçişli Bağıntı",
+      "B": "Geçişsiz Bağıntı",
+      "C": "Yansımasız Bağıntı",
+      "D": "Yansımalı Bağıntı",
+      "E": "Kısmi Yansımalı Bağıntı"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-b446a52a596a",
+    "unitNumber": 265,
+    "text": "“Herhangi bir bağıntının bakışımlı olması, mümkün ama zorunlu değilse bu bağıntı ……… adıyla anılabilir.” ifadesinde boş bırakılan yere aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Kısmi Bakışımlı Bağıntı",
+      "B": "Bakışımsız Bağıntı",
+      "C": "Yansımasız Bağıntı",
+      "D": "Bakışımlı Yansımalı Bağıntı",
+      "E": "Geçişsiz Bağıntı"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-6b246035b49c",
+    "unitNumber": 266,
+    "text": "Geçişli (transitive) bağıntılar, herhangi bir evren içerisinde yer alan en az üç elemanın birbirleriyle oluşturdukları sıralı çiftler arasındaki bir ilişkiyi gösteren bağıntılardır. Aşağıdakilerden hangisi “geçişli bağıntılara” bir örnek olarak gösterilebilir?",
+    "options": {
+      "A": "“2 kere 2, 4’tür.” “3 kere 11 3 3’tür.”",
+      "B": "“Ali ile Merve aynı yerdedir.” “Merve ile Tuğçe aynı yerdedir.”",
+      "C": "“x, y’den büyüktür.” “z, t’den büyüktür.”",
+      "D": "“a, b’den küçüktür.” “c, d’den büyüktür.”",
+      "E": "“x, a’dan büyüktür.” “x, b’den büyüktür.”"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-112c74322ca1",
+    "unitNumber": 267,
+    "text": "Geçişli olduğu düşünülen bir bağıntı, aslında ilgili tüm bireyler için gerçeklenemiyorsa kısmî geçişli (partial transitive) bağıntı elde edilebilir. Aşağıdakilerden hangisi “kısmi geçişli bağıntılara” bir örnek olarak gösterilebilir?",
+    "options": {
+      "A": "“2 kere 2, 4’tür.” “3 kere 11 3 3’tür.”",
+      "B": "“Salih ile Meryem aynı yerdedir.” “Meryem ile Tuğçe aynı yerdedir.”",
+      "C": "“Özlem, Cem’i sever.” “Cem, Merve’yi sever.”",
+      "D": "“a, b’den küçüktür.” “c, d’den büyüktür.”",
+      "E": "“x, a’dan büyüktür.” “x, b’den küçüktür.”"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-1f23df729112",
+    "unitNumber": 268,
+    "text": "“Bütün balıklar uçar.” gibi bir önerme niceleme mantığında nasıl gösterilebilir?",
+    "options": {
+      "A": "∃𝑥(𝐵x ˄ Ux)",
+      "B": "∃𝑥(𝐵x ⟷ Cx)",
+      "C": "∀𝑥(Bx → Uy)",
+      "D": "∃𝑥(𝐵x ⟷ Cx)",
+      "E": "∀𝑥(Bx → Ux)"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-adc0d1519764",
+    "unitNumber": 269,
+    "text": "“Bazı inekler üç ayaklıdır.” gibi bir önerme niceleme mantığında nasıl gösterilir?",
+    "options": {
+      "A": "∃𝑥(İx ⟷ Üx)",
+      "B": "∃𝑥(İx → Üx)",
+      "C": "∀𝑥(İx → Üy)",
+      "D": "∃𝑥(İx ˄ Üx)",
+      "E": "∀𝑥(İx ˄ Üx)"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-de02cf27f2f3",
+    "unitNumber": 270,
+    "text": "“Bazı insanlar çalışkandır” ve “Bütün çalışkanlar yüksek not alır.” gibi iki önerme niceleme mantığında nasıl gösterilebilir?",
+    "options": {
+      "A": "∃𝑥(İx ⟷ Çx) ˄ ∀𝑥(İx ˄ Yx)",
+      "B": "∃𝑥(İx ˄ Çx)˄∀𝑥(Çx → Yx)",
+      "C": "∀𝑥(İx → Yy) → ∃𝑥(Çx → Yx)",
+      "D": "∀𝑥(Yx → Çy)˄ ∃𝑥(İx → Çx)",
+      "E": "∀𝑥(İx ˄ Yx) ˄ ∀𝑥(İx → Çy)"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-20ae8b4ecfa8",
+    "unitNumber": 271,
+    "text": "“Bütün içecekler sıvıdır” ve “Bazı sıvılar akışkandır” gibi iki önerme niceleme mantığında nasıl gösterilir?",
+    "options": {
+      "A": "∀𝑥(İx → Sx) ˄∃𝑥(𝑆x ˄ Ax)",
+      "B": "∀𝑥(Ax → Sy) ˄ ∃𝑥(İx ˄ Sx)",
+      "C": "∀𝑥(İx → Ay) → ∃𝑥(𝐴x → Sx)",
+      "D": "∀𝑥(Ax → Sx)˄ ∃𝑥(İx → Ax)",
+      "E": "∀𝑥(İx ˄ Sx) ˄ ∀𝑥(İx → Ay)"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-f099a13f413a",
+    "unitNumber": 272,
+    "text": "“Tüm kapılar çeliktendir” ve “Bazı çelikler metaldir” gibi iki önerme niceleme mantığında nasıl gösterilebilir?",
+    "options": {
+      "A": "∃𝑥(𝐾x ˄ Mx) ˄ ∀𝑥(Çy → Kx)",
+      "B": "∀𝑥(Mx → Ky) ˄ ∃𝑥(𝐾x ˄ Çx)",
+      "C": "∀𝑥(Kx → Çx) ˄ ∃𝑦(Ç𝑦 ˄ My)",
+      "D": "∀𝑥(Mx → Çx)˄ ∃𝑥(𝐾𝑦 → Mx)",
+      "E": "∀𝑥(Çy ˄ Mx) ˄ ∀𝑥(Kx → My)"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-e22223aba11c",
+    "unitNumber": 273,
+    "text": "“Bazı ağaçlar meyve verir” ile “Bazı meyveler C vitamini içerir” gibi iki önerme niceleme mantığında nasıl gösterilir?",
+    "options": {
+      "A": "∃𝑥(𝐶x ˄ Ax) ˄ ∀𝑥(Mx → Ax)",
+      "B": "∀𝑥(Ax → My) ˄ ∃𝑥(𝐴x ˄ Cx)",
+      "C": "∀𝑥(Ax → My) ˄ ∃𝑥(𝐶x ˄ Ax)",
+      "D": "∃𝑥(Ax ˄ Mx) ˄ ∃y(𝑀𝑦 ˄ Cy)",
+      "E": "∀𝑥(Mx ˄ Ax) ˄ ∀𝑥(Cx → Cy)"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-f7d673a7bc40",
+    "unitNumber": 274,
+    "text": "Aşağıdakilerden hangisi ∃𝑥[𝑀𝑥 ˄ ∃𝑦(𝐷𝑦 ˄ ∼ 𝐾𝑥𝑦)] ifadesine karşılık gelen önerme olabilir?",
+    "options": {
+      "A": "Her matematikçi bazı denklemleri kuramaz.",
+      "B": "Bazı matematikçiler bazı denklemleri kuramaz.",
+      "C": "Hiçbir matematikçi bütün denklemleri kuramaz.",
+      "D": "Her matematikçi her denklemi kurabilir.",
+      "E": "Bazı matematikçiler hiçbir denklem kuramaz."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-65280abed2e2",
+    "unitNumber": 275,
+    "text": "Aşağıdakilerden hangisi ∃𝑥[İ𝑥 ˄ ∀𝑦(𝑆𝑦 → B𝑥𝑦)] ifadesine karşılık gelen önermedir?",
+    "options": {
+      "A": "Her insan bazı sırları bilir.",
+      "B": "Bazı insanlar hiçbir sırrı bilemez.",
+      "C": "Hiçbir insan bütün sırları bilemez.",
+      "D": "Her insan her sırrı bilir.",
+      "E": "Bazı insanlar bütün sırları bilirler."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-be28b72768d0",
+    "unitNumber": 276,
+    "text": "Aşağıdakilerden hangisi ∀𝑥[İ𝑥 → ∀𝑦(𝐾𝑦 →∼ O𝑥𝑦)] ifadesine karşılık gelen önerme olabilir?",
+    "options": {
+      "A": "Her insan bazı kitapları okuyamaz.",
+      "B": "Bazı insanlar hiçbir kitabı okuyamaz.",
+      "C": "Her insan her kitabı okuyamaz.",
+      "D": "Her insan her kitabı okur.",
+      "E": "Bazı insanlar bazı kitapları okuyamaz."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-f017b53482b3",
+    "unitNumber": 277,
+    "text": "Aşağıdakilerden hangisi ∃𝑥[𝑃𝑥 ˄ ∀𝑦(𝐾𝑦 → 𝐹𝑥𝑦)] ifadesine karşılık gelen önerme olabilir?",
+    "options": {
+      "A": "Bazı padişahlar her kaleyi fethedebilir.",
+      "B": "Bazı padişahlar hiçbir kaleyi fethedemez.",
+      "C": "Her padişah her kaleyi fethedemez.",
+      "D": "Her padişah her kaleyi fethedebilir.",
+      "E": "Bazı padişahlar bazı kaleleri fethedilirler."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-b04ece5f9f17",
+    "unitNumber": 278,
+    "text": "“Fx” gibi bir ifadenin açılımının yapılmasının gerekliliği hangi temele dayanmaktadır?",
+    "options": {
+      "A": "Açılım yapmadan da doğruluk değeri üzerinde yorum yapılabilmesi.",
+      "B": "“Fx” ifadesinin “Gx” ifadesiyle eşdeğer olması.",
+      "C": "Bağıntılar mantığının, üç değerli mantığı kapsıyor olması.",
+      "D": "Klasik mantığa ait bir önerme olması.",
+      "E": "Sembolik gösterim olarak birçok olanak sağlamasına karşılık bir doğruluk değerine sahip olmaması."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-32e877692c29",
+    "unitNumber": 279,
+    "text": "“∀x Fx” gibi bir ifade elamanları (a, b)nin oluşturduğu bir evrene göre açıldığında aşağıdaki listelerden hangisine ulaşılacaktır?",
+    "options": {
+      "A": "Fa",
+      "B": "Fb",
+      "C": "Fa ∧ Fb ∧ Fc ∧ Fd",
+      "D": "Fa ∧ Fb",
+      "E": "Fa ∧ Fb ∧ Fc"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-655debb3debc",
+    "unitNumber": 280,
+    "text": "“∃x F x” gibi bir ifade aşağıdaki önermelerden hangisinin sembolleştirilmesiyle elde edilmiş olabilir?",
+    "options": {
+      "A": "Bazı x’ler F’tir.",
+      "B": "Bütün x’ler F’tir.",
+      "C": "Bazı x’ler F olmayandır.",
+      "D": "Bütün x’ler F olmayandır.",
+      "E": "Bazı F olmayanlar x’tir."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-27ab99176e3f",
+    "unitNumber": 281,
+    "text": "“Bu sınıftaki tüm öğrencilerin kitabı vardır.” ifadesi niceleme mantığı dilinde yazıldığında aşağıdakilerden hangisine ulaşılır?",
+    "options": {
+      "A": "∀x x",
+      "B": "∃x Fx",
+      "C": "∀x Fx",
+      "D": "∀x ∨ Fx",
+      "E": "∀x Fx l"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-f27ee5f925de",
+    "unitNumber": 282,
+    "text": "“∀x ∃y ∃z Fxyz” ifadesinin (a, b) evrenine göre açılımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "[(Faab, Fbab) ∨ (Fabb, Fbbb)]",
+      "B": "[(Faaa, Fbaa)] ∨ [(Faab, Fbab) ∨ (Fabb, Fbbb)]",
+      "C": "[(Faaa, Fbaa) ∨ ( Faba, Fbba)] ∨ [ (Fabb, Fbbb)]",
+      "D": "[(Faaa, Fbaa) ∨ ( Faba, Fbba)] ∨ [(Faab, Fbab) ∨ (Fabb, Fbbb)]",
+      "E": "[(Faaa) ∨ ( Faba, Fbba)] ∨ [(Fbab) ∨ (Fabb, Fbbb)]"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-04e141e8ce65",
+    "unitNumber": 283,
+    "text": "“∀x (Fx → Gx)” ifadesinin (a, b, c) evrenindeki açılımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "(Fa → Ga) (Fb → Gb)",
+      "B": "(Fa → Ga) (Fb → Gb) ( Fc → Gc)",
+      "C": "(Fb → Gb) ( Fc → Gc)",
+      "D": "(Fa → Ga)",
+      "E": "( Fc → Gc)"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-522fbfcb45d1",
+    "unitNumber": 284,
+    "text": "“∀x∃yFxy” ifadesinin (a, b, c) evrenindeki açılımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "( Faa ∨ Fab ∨ Fac) ˄ (Fba ∨ Fbb ∨ Fbc)",
+      "B": "( Faa ∨ Fab ∨ Fac) ˄ (Fca ∨ Fcb ∨ Fcc)",
+      "C": "(Fba ∨ Fbb ∨ Fbc) ˄ (Fca ∨ Fcb ∨ Fcc)",
+      "D": "( Faa ∨ Fab ∨ Fac) ˄ (Fba ∨ Fbb ∨ Fbc) ˄ (Fca ∨ Fcb ∨ Fcc)",
+      "E": "(Fab ∨ Fac) ˄ (Fba ∨ Fbc) ˄ (Fca ∨ Fcb)"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-3e6dcc59344a",
+    "unitNumber": 285,
+    "text": "∀x ∃y ( Fxy → Gxy) gibi bir ifadenin (a,b) evrenindeki açılımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "( Faa → Gaa) (Fba → Gba) ∨ ( Fab → Gab)",
+      "B": "( Faa → Gaa) (Fba → Gba) ∨ ( Fbb → Gbb)",
+      "C": "( Faa → Gaa) (Fba → Gba) ∨ ( Fab → Gab) ( Fbb → Gbb)",
+      "D": "( Faa ∨ Fab ∨ Fac) ∨ (Fba ∨ Fbb ∨ Fbc) ∨ (Fca ∨ Fcb ∨ Fcc)",
+      "E": "( Fab → Gab) ( Fbb → Gbb)"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-e0b3a3a7613f",
+    "unitNumber": 286,
+    "text": "∀x ∃y (Fxy ↔ ∀z Gxyz) ifadesinin (a, b) evrenindeki açılımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "[ (Faa ↔ Gaaa Gaab)] ∨ (Fab ↔ Gaba Gabb) (Fbb ↔ Gbba Gbbb)",
+      "B": "( Faa → Gaa) (Fba → Gba) ∨ ( Fbb → Gbb)",
+      "C": "( Faa → Gaa) (Fba → Gba) ∨ ( Fab → Gab) ( Fbb → Gbb)",
+      "D": "( Faa ∨ Fab ∨ Fac) ∨ (Fba ∨ Fbb ∨ Fbc) ∨ (Fca ∨ Fcb ∨ Fcc)",
+      "E": "[ (Faa ↔ Gaaa Gaab) (Fba ↔ Gbaa Gbab) ] ∨ (Fab ↔ Gaba Gabb) (Fbb ↔ Gbba Gbbb)"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-94fa580e9e90",
+    "unitNumber": 287,
+    "text": "Eşdeğerlik kurallarına göre aşağıdakilerden hangisi çelişiktir?",
+    "options": {
+      "A": "∃x Fx ve ~∀x ~ Fx",
+      "B": "∃x ~ Fx ve ∃x ~ Fx",
+      "C": "∀x ~ Fx ve ~∃x Fx",
+      "D": "∀x ~ Fx ve ∃x Fx",
+      "E": "~∃x Fx ve ∀x ~ Fx"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-47699c7ec850",
+    "unitNumber": 288,
+    "text": "[∀𝑥(𝐶𝑥 . 𝐷𝑥) → ∼ ∀𝑥 (𝐶𝑥 . 𝐷𝑥)] 𝑣𝑒 [∼ ∀𝑥(𝐶𝑥 . 𝐷𝑥) v ∼ ∀𝑥 (𝐶𝑥 . 𝐷𝑥)] ifadeleri özdeş midir?",
+    "options": {
+      "A": "Özdeş",
+      "B": "Geçerli değil",
+      "C": "Özdeş değil",
+      "D": "Belirsiz",
+      "E": "Hiçbiri"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-ac6fd4a32400",
+    "unitNumber": 290,
+    "text": "∼ [∀𝑥(𝐶𝑥 v 𝐷𝑥) v ∼ ∀𝑦 (𝐶𝑦 v 𝐷𝑦)] 𝑣𝑒 [∼ ∀𝑥(𝐶𝑥 v 𝐷𝑥) . ∀𝑦 (𝐶𝑦 𝐷𝑦)] ifadeleri özdeş midir?",
+    "options": {
+      "A": "Geçerli",
+      "B": "Geçerli değil",
+      "C": "Özdeş",
+      "D": "Özdeş değil",
+      "E": "Hiçbiri"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-7bd59331235d",
+    "unitNumber": 294,
+    "text": "[∼ ∀𝑥 (𝐹𝑥 → 𝐺𝑥) v ∀𝑦 (𝐻𝑦 v 𝑇𝑦) ] 𝑣𝑒 [ ∀𝑥 (𝐹𝑥 → 𝐺𝑥) → ∀𝑦 (𝐻𝑦 v 𝑇𝑦) ] ifadeleri özdeş midir?",
+    "options": {
+      "A": "Özdeş",
+      "B": "Özdeş değil",
+      "C": "Tutarlı",
+      "D": "Tutarlı değil",
+      "E": "Hiçbiri"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-9aa4ac8fbcef",
+    "unitNumber": 298,
+    "text": "“Klasik mantık” ve “Niceleme mantığı” ile ilgili söylenenlerden hangisi yanlıştır?",
+    "options": {
+      "A": "Niceleme mantığının kullandığı notasyon klasik mantığa göre daha üstündür.",
+      "B": "Klasik mantığa oranla niceleme mantığı, konuşma dilinin daha iyi koşullarda sembolleştirilmesine olanak verir.",
+      "C": "Niceleme mantığında kullanılan notasyondan dolayı, konuşma dilinde aktarılan bütün bilgileri formülleştirme imkanı verir.",
+      "D": "Niceleme mantığında kullanılan “→” eklemiyle tümel bir ifadenin özne ve yüklemi arasındaki ilişki gösterilir.",
+      "E": "Niceleme mantığında kullanılan “˄” eklemiyle varlıksal (tikel) bir ifadenin özne ve yüklemi arasındaki ilişki gösterilir."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-656258ce87f2",
+    "unitNumber": 299,
+    "text": "“Bütün inekler vejeteryandır fakat bazıları solucan yer.” gibi bir önerme niceleme mantığında nasıl gösterilebilir?",
+    "options": {
+      "A": "∀𝑥(İx → Sx) ˄ ∃𝑥(𝑉x → Çx)",
+      "B": "∃𝑥(İx → Sx) ˄ ∃𝑥(𝑉x ˄ Çx)",
+      "C": "∀𝑥(İx → Sx) ˄ ∃𝑥(İx → Vx)",
+      "D": "∀𝑥(İx → Vx) ˄ ∃𝑥(İx ˄ Yx)",
+      "E": "∃𝑥(İx → Vx) ˄ ∃𝑥(İx → Yx)"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-08bf5a27e8f2",
+    "unitNumber": 300,
+    "text": "“Gözlük kullanmayan bazı öğrenciler, bütün camları kırdılar.” gibi bir önerme niceleme mantığında nasıl gösterilebilir?",
+    "options": {
+      "A": "∃𝑥[ ∼ Gx. Öx ˄ ∀𝑦(Cy → Kxy)]",
+      "B": "∃𝑥[ Kx. Öx ˄∀𝑦 (Gx ˄ Zxy)]",
+      "C": "∀𝑦∃𝑥[ ∼ Gy. Öx ˄ (Kx → Cxy)]",
+      "D": "∃𝑥∀𝑦[ ∼ Gx. Öx ˄ (Ky ˄ Cyy)]",
+      "E": "∀𝑦∀𝑦[ Ky. Öx ˄ (Ky ˄ ∼ Gyy)]"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-c8c6badb6cce",
+    "unitNumber": 301,
+    "text": "Aşağıda gösterilen hangi iki gösterim birbirine denktir?",
+    "options": {
+      "A": "∃𝑥∀𝑦[ Gx ˄ (Cy ˄ Kxy)] ≡ ∃𝑥[ Gx ˄ ∀𝑦(Cy → Kxy)]",
+      "B": "∃𝑥∀𝑦[ Kx ˄ (Gx ˄ Zxy)] ≡ ∃𝑥[ Gx ˄ ∀𝑦(Ky → Zxy)]",
+      "C": "∀𝑦∃𝑥[ Gy ˄ (Kx ˄ Cxy)] ≡ ∃𝑥[ Gx ˄ ∀𝑦(Ky → Zxx)]",
+      "D": "∃𝑥∀𝑦[ Gx ˄ (Ky ˄ Cyy)] ≡ ∃𝑥[ Zx ˄ ∀𝑦(Ky → Gyy)]",
+      "E": "∀𝑦∀𝑦[ Ky ˄ (Ky ˄ Gyy)] ≡ ∃𝑥[ Kx ˄ ∀𝑦(Gy → Zxy)]"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-bfcb1a503554",
+    "unitNumber": 303,
+    "text": "\"Her basketçi bazı atışları sayıya çeviremez.\" ifadesi niceleme mantığında nasıl sembolleştirilebilir?",
+    "options": {
+      "A": "∀𝑥[𝐵𝑥 → ∃𝑦(𝐴𝑥 ˄ 𝑆𝑥𝑦)]",
+      "B": "∃𝑦[𝐵𝑥 ˄ ∃𝑦(𝐴𝑦 ˄ ∼ 𝑆𝑥𝑦)]",
+      "C": "∀𝑥[𝐵𝑥 → ∀𝑥(𝐴𝑦 ˄ 𝑆𝑥𝑦)]",
+      "D": "∃𝑦[𝐵𝑥 → ∀𝑥(𝐴𝑦 ˄ ∼ 𝑆𝑥𝑦)]",
+      "E": "∀𝑥[𝐵𝑥 → ∃𝑦(𝐴𝑦 ˄ ∼ 𝑆𝑥𝑦)]"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-b13b9628a820",
+    "unitNumber": 304,
+    "text": "\"Her müzik öğretmeni bazı türkü sözlerini ezbere bilemez.\" ifadesi niceleme mantığında nasıl sembolleştirilebilir?",
+    "options": {
+      "A": "∀𝑥[𝑀𝑥 → ∃𝑦(𝑇𝑥 ˄ 𝐵𝑥𝑥)]",
+      "B": "∃𝑦[𝑇𝑥 ˄ ∃𝑦(𝐵𝑦 ˄ ∼ 𝑀𝑥𝑦)]",
+      "C": "∀𝑥[𝑀𝑥 → ∃𝑦(𝑇𝑦 ˄ ∼ 𝐵𝑥𝑦)]",
+      "D": "∃𝑦[𝑀𝑥 ˄ ∀𝑥(𝐵𝑦 ˄ ∼ 𝑇𝑥𝑦)]",
+      "E": "∀𝑥[𝑇𝑥 → ∀𝑥(𝑀𝑦 → 𝐵𝑥𝑦)]"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-5db8fe4fc105",
+    "unitNumber": 305,
+    "text": "\"Her sanatçı tüm enstrümanları çalamaz.\" ifadesi niceleme mantığında nasıl sembolleştirilebilir?",
+    "options": {
+      "A": "∀𝑥[𝑆𝑥 → ∀𝑦(𝐸𝑦 → ∼ Ç𝑥𝑦)]",
+      "B": "∃𝑦[𝑆𝑥 → ∃𝑦(𝐸𝑦 ˄ ∼ Ç𝑥𝑦)]",
+      "C": "∀𝑥[𝑆𝑥 → ∃𝑦(𝐸𝑦 ˄ Ç𝑥𝑦)]",
+      "D": "∃𝑦[𝑆𝑥 → ∀𝑥(𝐸𝑥 ˄ ∼ Ç𝑥𝑦)]",
+      "E": "∀𝑥[𝑆𝑥 → ∀𝑥(𝐸𝑦 ˄ Ç𝑥𝑦)]"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-7bea6098d9f4",
+    "unitNumber": 306,
+    "text": "\"Bazı kadın örgütleri, bütün erkek örgütlerini bilgilendirdi ve dünya kadınlar gününü ilan etti.\" ifadesi niceleme mantığında nasıl sembolleştirilebilir?",
+    "options": {
+      "A": "∃𝑥[[ Kx. Öx → ∀𝑦(Ex . Öy → Bxy)] ˄ ∃z(Dz → İxz)]",
+      "B": "∃𝑥[[ Kx. Öx ˄ ∀𝑦(Ey . Öy → Bxy)] → [∃z(Dy → İxz)]]",
+      "C": "∃𝑥[[ Kx. Öx → ∀𝑦(Ey . Öy → Bxy)] ˄ [∀z(Dy → İxz)]]",
+      "D": "∃𝑥[Kx. Öx ˄ [[∀𝑦(Ey . Öy → Bxy)] ˄ ∀z(Dz → İxz)]]",
+      "E": "∃𝑥[[ Kx. Öx ˄ ∀𝑦(Ex . Öy → Bxy)] → ∃z(Dz → İxy)]"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-d7c7e3ae8b02",
+    "unitNumber": 307,
+    "text": "Aşağıdakilerden hangisi ∀𝑥[𝐸𝑥 → ∃𝑦(𝑂𝑦 ˄ ∼ 𝐵𝑥𝑦)] ifadesine karşılık gelen önerme olabilir?",
+    "options": {
+      "A": "Her eczacı bazı otları bilemez.",
+      "B": "Bazı eczacılar bazı otları bilir.",
+      "C": "Hiçbir eczacı bütün otları bilemez.",
+      "D": "Her eczacı her otu bilir.",
+      "E": "Bazı eczacılar hiçbir otu bilemez."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  }
+]

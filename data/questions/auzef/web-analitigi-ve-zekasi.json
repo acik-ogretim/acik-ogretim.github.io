@@ -1,1 +1,2256 @@
-[]
+[
+  {
+    "id": "s-dec47a76451c",
+    "unitNumber": 1,
+    "text": "Yukarıda verilen ekran görüntüsüne göre veri setinde kaç adet gözlem kaç adet nitelik vardır?",
+    "options": {
+      "A": "Gözlem sayısı = 100, Nitelik sayısı = 150",
+      "B": "Gözlem sayısı = 15, Nitelik sayısı = 100",
+      "C": "Gözlem sayısı = 1487, Nitelik sayısı = 1262",
+      "D": "Gözlem sayısı = 150, Nitelik sayısı = 100",
+      "E": "Gözlem sayısı = 100, Nitelik sayısı = 15"
+    },
+    "correctAnswer": "E",
+    "explanation": "R dilinde veri çerçevelerinin yapısını gösteren str() fonksiyonunun çıktısında yer alan “obs.” (observations) terimi satır/gözlem sayısını, “variables” terimi ise sütun/nitelik (değişken) sayısını ifade eder. Çıktıdaki “100 obs. of 15 variables”, veri setinin 100 gözlem ve 15 nitelikten oluştuğunu açıkça belirtmektedir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1a4972c25966",
+    "unitNumber": 2,
+    "text": "Data frame (veri çerçevesi) ile ilgili aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Her sütundaki veri aynı veri tipinde olmalı; farklı sütunlarda farklı veri tipleri bulunabilir.",
+      "B": "Tüm hücrelerinde aynı veri tipi olmak zorundadır.",
+      "C": "Yalnızca sayısal veri içerebilir.",
+      "D": "Sütun erişimi için # işareti kullanılır.",
+      "E": "Üç boyutlu veri yapısıdır."
+    },
+    "correctAnswer": "A",
+    "explanation": "R dilinde bir “data.frame”, tablo (Excel benzeri) şeklinde iki boyutlu bir veri yapısıdır. En temel kuralı şudur: Tablodaki her bir sütun aslında kendi içinde bir vektördür, bu nedenle “bir sütunun içindeki tüm elemanlar” aynı veri tipinde (örneğin sadece sayı veya sadece metin) olmak zorundadır. Ancak tabloda “farklı sütunlar farklı veri tiplerini” barındırabilir (Bir sütun yaş(sayısal) iken yanındaki sütun cinsiyet(metinsel) olabilir). Sütun erişimi $ işareti ile yapılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1f0a34f72001",
+    "unitNumber": 3,
+    "text": "Yapay kodlama (dummy-coding) ile ilgili aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Sadece nümerik değişkenlere uygulanır, kategorik veriye uygulanamaz.",
+      "B": "Veri setindeki tekrar eden gözlemleri tespit edilmesini sağlar.",
+      "C": "Kategorik değişkenleri algoritmaların anlayabileceği sayısal değerlere dönüştürür.",
+      "D": "n elemanlı sayısal bir değişkeni [0,1] aralığına indirgemek için kullanılır.",
+      "E": "Multicollinearity probleminin üstesinden gelmek için tercih edilir."
+    },
+    "correctAnswer": "C",
+    "explanation": "Makine öğrenmesi ve istatistiksel modelleme algoritmalarının büyük çoğunluğu matematiksel denklemlerle çalışır ve “Kadın/Erkek” veya “İstanbul/Ankara” gibi metinsel (kategorik) verileri doğrudan işleyemez. “Dummy coding”, bu kategorik değişkenleri ikili (0 ve 1) sayısal kolonlara dönüştürerek algoritmaların modeli hatasız kurmasını sağlayan bir veri ön-işleme tekniğidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f77d6ceac8aa",
+    "unitNumber": 4,
+    "text": "Yukarıda verilen R kod bloğu çalıştırıldığında ekrana hangi çıktı yazdırılır?",
+    "options": {
+      "A": "B<br>D",
+      "B": "A<br>B<br>D",
+      "C": "A<br>C<br>D",
+      "D": "D",
+      "E": "A<br>B"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-762ac791b619",
+    "unitNumber": 5,
+    "text": "Web analitiği sürecine göre aşağıdaki adımlardan hangisi doğru sıralamayı en iyi temsil eder?",
+    "options": {
+      "A": "Soruları yanıtlama &rarr; Veri toplama &rarr; Soru belirleme &rarr; Ön-işleme &rarr; Veri analizi",
+      "B": "Soru belirleme &rarr; Veri toplama &rarr; Veriyi analize uygun hâle getirme (dönüştürme/ön-işleme) &rarr; Veri analizi ve yorumlama &rarr; Soruları yanıtlama",
+      "C": "Veri analizi &rarr; Soru belirleme &rarr; Veri toplama &rarr; Ön-işleme &rarr; Soruları yanıtlama",
+      "D": "Veri toplama &rarr; Veri analizi &rarr; Soru belirleme &rarr; Soruları yanıtlama &rarr; Ön-işleme",
+      "E": "Ön-işleme &rarr; Veri toplama &rarr; Soru belirleme &rarr; Veri analizi &rarr; Soruları yanıtlama"
+    },
+    "correctAnswer": "B",
+    "explanation": "Veri bilimi ve web analitiği projelerinde standart iş akışı mantıksal bir sırayı takip eder. Önce neyi araştıracağınızı (Soru belirleme) saptarsınız. Ardından bu sorulara yanıt verecek verileri toplarsınız. Toplanan ham veriyi hatalardan arındırıp düzenlersiniz (Ön-işleme). Hazır olan veriyi analiz edip yorumlarsınız ve son olarak en baştaki sorularınıza nihai yanıtlar (iş kararları) üretirsiniz.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-021d6573629a",
+    "unitNumber": 6,
+    "text": "a <- c(3, TRUE, \"elif\") Yukarıdaki R kodu çalıştırıldığında aşağıdakilerden hangisi gerçekleşir?",
+    "options": {
+      "A": "a içinde yalnızca nümerik (numeric) değerler kalır.",
+      "B": "a içinde yalnızca mantıksal (logical) değerler oluşur.",
+      "C": "a içindeki tüm elemanlar karakter (character) veri tipine dönüşür.",
+      "D": "a bir matrix yapısına dönüşür.",
+      "E": "mode(a) sonucu numeric döner."
+    },
+    "correctAnswer": "C",
+    "explanation": "R dilinde vektörler (c fonksiyonu) heterojen (farklı) veri tiplerini aynı anda barındıramazlar. Eğer bir vektörün içine sayı, mantıksal değer ve metin (karakter) bir arada yazılırsa, R “Zorlama (Coercion)” kuralını uygular. Veri kaybını en aza indirmek için hiyerarşik olarak en esnek ve en kapsamlı veri tipi olan “character (karakter/metin)” tipini seçer ve vektörün içindeki tüm elemanları metne (yani “3”, “TRUE”, “elif”) dönüştürür.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4b512a25d43e",
+    "unitNumber": 7,
+    "text": "Sunucu log dosyasında yer alabilecek parametrelerden hangisi kullanıcının tarayıcısını tanımlar?",
+    "options": {
+      "A": "URL",
+      "B": "İstek Türü (request type)",
+      "C": "Başarı Oranı (success rate)",
+      "D": "Ziyaret Yolu (visiting path)",
+      "E": "Kullanıcı Aracısı (user agent)"
+    },
+    "correctAnswer": "E",
+    "explanation": "Web sunucularının log (kayıt) dosyalarında, ziyaretçinin teknik özellikleri hakkında çok değerli bilgiler bulunur. Ziyaretçinin siteye erişirken kullandığı web tarayıcısının (Chrome, Firefox, Safari vb.), işletim sisteminin (Windows, iOS, Android) ve cihaz tipinin detaylı dökümü HTTP başlıklarındaki “User Agent” (Kullanıcı Aracısı) dizesi aracılığıyla sunucuya iletilir ve kayıt altına alınır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-88020ce46696",
+    "unitNumber": 8,
+    "text": "vektor <- c(0,1,2,3,4,5) Yukarıda verilen R kod satırına göre vektor[2] ifadesi hangi değeri döndürür?",
+    "options": {
+      "A": "4",
+      "B": "0",
+      "C": "3",
+      "D": "2",
+      "E": "1"
+    },
+    "correctAnswer": "E",
+    "explanation": "Diğer birçok programlama dilinden (örneğin Python, C ) farklı olarak, R dilinde vektör indeksleri (sıra numaraları) 0’dan değil 1’den başlar. Dolayısıyla vektor[1] komutu 0 değerini, vektor[2] komutu ise ikinci sıradaki 1 değerini döndürür.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-71960a54d227",
+    "unitNumber": 9,
+    "text": "“web_data” adlı veri setinde yer alan erişim cihazı (AccessDevice) değişkeninde cihaz kullanım durumları tutulmaktadır. Erişim için en az kullanılan cihaz türünü elde etmek isteyen bir araştırmacı aşağıdaki R kodlarından hangisini kullanmalıdır?",
+    "options": {
+      "A": "summary(which.min(table(web_data$AccessDevice)))",
+      "B": "names(which.min(table(web_data$AccessDevice)))",
+      "C": "summary(which.min(prop.table(web_data$AccessDevice)))",
+      "D": "names(min.which(prop.table(web_data$AccessDevice)))",
+      "E": "names(min.which(table(web_data$AccessDevice)))"
+    },
+    "correctAnswer": "B",
+    "explanation": "Çözüm üç adımda gerçekleşir: Öncelikle table() fonksiyonu ile her cihaz türünün kaç kez kullanıldığı sayılarak bir frekans tablosu oluşturulur. Ardından which.min() fonksiyonu kullanılarak bu frekans tablosundaki en küçük (minimum) değere sahip elemanın indeksi/konumu bulunur. Son olarak, sadece rakamı değil o cihazın adını/türünü görmek istediğimiz için names() fonksiyonu ile o sıradaki etiketi çekeriz.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6f2ff5937362",
+    "unitNumber": 10,
+    "text": "Yukarıda bir bölümüne yer verilen çıktı “web_data” veri seti için aşağıdaki fonksiyonların hangisi ile elde edilmiş olabilir?",
+    "options": {
+      "A": "names(web_data)",
+      "B": "sum(web_data)",
+      "C": "head(web_data)",
+      "D": "str(web_data)",
+      "E": "dim(web_data)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Sorudaki çıktı, bir veri çerçevesinin boyutlarını (gözlem ve değişken sayısı), sütun isimlerini (VisitDate, vs.) ve en önemlisi her bir sütunun veri tipini (Date, Factor, Numeric gibi) özet halinde göstermektedir. R dilinde veri nesnesinin bu iç yapısını (structure) hızlıca incelemek için kullanılan fonksiyon str() fonksiyonudur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-81cebdb35363",
+    "unitNumber": 11,
+    "text": "Bir web analizi çalışmasında kullanıcıların siteye erişim kaynaklarına ait dağılım aşağıdaki gibi elde edilmiştir: •Organik arama (Google vb.): yüzde 41 •Sosyal medya: yüzde 33 •Doğrudan giriş: yüzde 16 •E-posta kampanyaları: yüzde 10 Analiz sonuçları, kullanıcıların büyük çoğunluğunun arama motorları üzerinden siteye ulaştığını göstermektedir. Yukarıdaki bilgilere göre aşağıdaki aksiyonlardan hangisinin yapılması en uygun olur?",
+    "options": {
+      "A": "Arama motoru optimizasyonu (SEO) çalışmalarına öncelik vermek.",
+      "B": "Sosyal medya paylaşımlarını tamamen durdurmak.",
+      "C": "Site içeriklerini azaltarak sayfa sayısını düşürmek.",
+      "D": "E-posta kampanyalarını tamamen kaldırmak.",
+      "E": "Web sitesinin tasarımını yalnızca tablet cihazlara göre değiştirmek"
+    },
+    "correctAnswer": "A",
+    "explanation": "Gelen trafiğin en büyük dilimi (yüzde 41) “Organik arama” kaynaklıdır. Veri bilimi ve dijital pazarlama mantığında, en yüksek dönüşümü ve trafiği getiren kanala yatırım yapmak mantıklıdır. Kullanıcılar siteyi arama motorlarında bularak geliyorsa, sitedeki içerikleri arama motoru algoritmalarına daha uygun hale getirmek, yani SEO (Search Engine Optimization) yatırımlarını güçlendirmek en rasyonel stratejik aksiyon olacaktır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ff3e7f4c74ba",
+    "unitNumber": 12,
+    "text": "NA ifadesi ile ilgili aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Eksik veya bilinmeyen değeri temsil eder ve vektörün boyutu korunur.",
+      "B": "Veri setinden bir gözlemin otomatik olarak silindiğini ifade eder.",
+      "C": "Vektör içinde eleman olarak bulunamaz.",
+      "D": "İşlemlerde her zaman sıfır (0) gibi davranır.",
+      "E": "Yalnızca karakter vektörlerde kullanılır."
+    },
+    "correctAnswer": "A",
+    "explanation": "R programlama dilinde “NA” (Not Available), verideki mantıksal eksikliği veya bilinmeyen (kayıp) bir değeri temsil eden özel bir mantıksal sabittir. Veri setinden satırı otomatik silmez veya sıfır (0) olarak işlem görmez. Vektör veya data.frame içinde yer tutmaya devam eder, bu sayede veri yapısının boyutu ve bütünlüğü korunmuş olur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0534c6634d4c",
+    "unitNumber": 13,
+    "text": "Yukarıda verilen R kodunun amacı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Her ziyaretçi segmenti (UserSegment) için toplam oturum gelirini (Session Revenue) hesaplamak.",
+      "B": "Oturum geliri (SessionRevenue) değişkenini ziyaretçi segmentlerine (UserSegment) göre kategorik değişkene dönüştürmek.",
+      "C": "Ziyaretçi segmentlerine (UserSegment) göre ortalama oturum gelirini (Session Revenue) hesaplamak.",
+      "D": "Ziyaretçi segmentlerine (UserSegment) göre veri setindeki en yüksek oturum geliri (SessionRevenue) değerlerini bulmak.",
+      "E": "Veri setinde ziyaretçi segmentlerine (UserSegment) göre oturum geliri (Session Revenue) değişkenindeki eksik değerleri bulmak ve silmek."
+    },
+    "correctAnswer": "C",
+    "explanation": "R dilinde aggregate() fonksiyonu, verileri belirli gruplara ayırarak bu gruplar üzerinde matematiksel işlemler yapmak için kullanılır. Kodda yer alan SessionRevenue ~ UserSegment ifadesi, gelirin segmentlere göre gruplanacağını, FUN=mean parametresi ise bu grupların ortalamasının (mean) hesaplanacağını belirtir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4ab5f6707fde",
+    "unitNumber": 14,
+    "text": "Web analitiğinde kullanılan metrik (metric) ve boyut (dimension) kavramları arasındaki temel fark aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Metrikler yalnızca sosyal medya için kullanılır; boyutlar yalnızca web siteleri için kullanılır.",
+      "B": "Boyutlar yalnızca yüzde ile ifade edilir; metrikler yalnızca tarih ile ifade edilir.",
+      "C": "Metrikler metinseldir; boyutlar sayısaldır.",
+      "D": "Metrikler yalnızca tekil kullanıcıları; boyutlar yalnızca oturumları temsil eder.",
+      "E": "Metrikler \"Ne kadar?\" sorusuna nicel yanıt verir; boyutlar ölçümleri anlamlı gruplara ayıran niteliklerdir."
+    },
+    "correctAnswer": "E",
+    "explanation": "Google Analytics gibi araçlarda “Metrik”, sayılabilen, toplanabilen ve “Kaç tane?” sorusuna cevap veren nicel değerlerdir (Ör: Ziyaretçi sayısı, hemen çıkma oranı, gelir). “Boyut” ise bu sayıları kategorize eden, kırılımlarını sağlayan niteliksel değişkenlerdir (Ör: Şehir, Tarayıcı tipi, Trafik kaynağı). Boyutlar, metrikleri daha anlamlı analiz gruplarına böler.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ebf4116b41be",
+    "unitNumber": 15,
+    "text": "Aşağıdakilerden hangisi web analitiği kavramını en iyi tanımlar?",
+    "options": {
+      "A": "Sunucu donanımının performansını ölçmeye yönelik sistem geliştirme, izleme ve iyileştirme süreci.",
+      "B": "Web sitesinde kullanılan programlama dillerini karşılaştırma, koda ilişkin gerekli açıklamaları raporlama süreci",
+      "C": "Web sayfalarının grafik tasarım öğelerini iyileştirme ve elde edilen sonuçları raporlama süreci.",
+      "D": "Dijital platformlardaki kullanıcı davranışlarını anlamak, ölçmek ve optimize etmek için veri toplama, analiz etme ve raporlama süreci.",
+      "E": "Sadece \"hit\" sayılarına bakarak web sitesinin başarısını ölçme ve raporlama süreci."
+    },
+    "correctAnswer": "D",
+    "explanation": "Web Analitiği (Web Analytics), bir web sitesinin sadece kaç hit aldığını veya donanım performansını ölçmek değildir. Gerçek tanımı; ziyaretçilerin o siteye nereden geldiklerini, site içinde ne kadar vakit geçirdiklerini, hangi sayfalarda dolaştıklarını, yani genel olarak “dijital platformlardaki kullanıcı davranışlarını ve etkileşimlerini” anlamak amacıyla verilerin toplanması, analiz edilmesi, raporlanması ve site performansının iş hedefleri doğrultusunda “optimize edilmesi” (iyileştirilmesi) sürecidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a57335618fe7",
+    "unitNumber": 16,
+    "text": "R programlama dilinde caret::preProcess() fonksiyonunda veriyi [0,1] aralığına getirmek için method parametresi nasıl verilmelidir?",
+    "options": {
+      "A": "method = c(\"scale\")",
+      "B": "method = c(\"normalize\")",
+      "C": "method = c(\"range\")",
+      "D": "method = c(\"center\")",
+      "E": "method = c(\"standardize\")"
+    },
+    "correctAnswer": "C",
+    "explanation": "Veri madenciliği ve makine öğrenmesinde çok popüler olan caret paketinde (R dili) veri ön işleme (preProcess) işlemleri yapılırken; sayısal bir değişkenin orijinal dağılımını bozmadan “min-max normalizasyonu” yaparak en küçük değeri 0’a ve en büyük değeri 1’e ayarlamak (yani veriyi tamamen [0,1] aralığına sıkıştırmak) için “range” parametresi kullanılır. “center” ve “scale” parametreleri ise Z-skoru standardizasyonu için kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6d9a1ad76aef",
+    "unitNumber": 17,
+    "text": "Yukarıdaki R kod bloğunda amaç, oran sütunundaki NA değerleri sütunun ortalaması ile tamamlamaktır. Üç nokta (…) ile boş bırakılan yere hangisi getirilmelidir?",
+    "options": {
+      "A": "median(df$oran)",
+      "B": "sum(df$oran, na.rm = TRUE)",
+      "C": "median(df$oran, na.rm = TRUE)",
+      "D": "mean(df$oran, na.rm = TRUE)",
+      "E": "mean(df$oran)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Eksik (NA) değerleri ilgili sütunun aritmetik “ortalaması” ile doldurmak istiyoruz. Ortalama hesaplayan fonksiyon mean()’dir (A ve C şıkları medyan/ortanca olduğu için elenir). Ancak bir vektörde NA değerleri varsa, standart mean(df$oran) komutu hata veya yine NA döndürür. Ortalama hesaplanırken bu NA değerlerinin dikkate alınmaması (göz ardı edilmesi) için formüle mutlaka na.rm = TRUE (NA Remove = True) argümanı eklenmelidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8b41e908a6b2",
+    "unitNumber": 18,
+    "text": "Hemen çıkma oranı (bounce rate) ile ilgili aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Ortalama ziyaret süresini hesaplamak için kullanılan temel metriktir.",
+      "B": "Web sitesine hiç ziyaret yapmamış kullanıcıların oranıdır.",
+      "C": "Bir sayfaya girdikten sonra yapılan toplam çıkışların, toplam görüntülenme sayısına oranıdır.",
+      "D": "Bir web sitesine girip başka sayfaları ziyaret etmeden çıkan kullanıcıların yüzdesidir.",
+      "E": "Sadece satın alma tamamlandıktan sonra hesaplanan bir metriktir."
+    },
+    "correctAnswer": "D",
+    "explanation": "Web analitiğinde “Bounce Rate” (Hemen Çıkma Oranı), sitenin tek sayfalık oturumlarının (session) yüzdesidir. Bir kullanıcı arama motorundan veya linkten tıklayarak web sitenizin bir sayfasına girer ve site içindeki hiçbir linke tıklamadan, başka bir sayfayı görüntülemeden (hiçbir etkileşime girmeden) siteyi terk ederse bu bir “hemen çıkma”dır. Bu oranın yüksek olması genellikle açılış sayfasının kullanıcı beklentisini karşılamadığı anlamına gelir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f453f0071bd4",
+    "unitNumber": 19,
+    "text": "kayit <- kayit[… ,] Yukarıdaki kod satırında amaç, kayit veri setindeki tekrarlayan satırları kaldırıp yalnızca benzersiz satırları bırakmaktır. Buna göre üç nokta (…) ile boş bırakılan yere hangisi getirilmelidir?",
+    "options": {
+      "A": "unique(kayit)",
+      "B": "!duplicated(kayit)",
+      "C": "!is.na(kayit)",
+      "D": "duplicated(kayit)",
+      "E": "is.na(kayit)"
+    },
+    "correctAnswer": "B",
+    "explanation": "R dilinde duplicated() fonksiyonu, veri çerçevesindeki (veya vektördeki) elemanların tekrar edip etmediğini kontrol eder ve tekrar edenler için TRUE, ilk kez görülenler için FALSE döndürür. Amacımız tekrar etmeyen, benzersiz (ilk defa karşılaşılan) satırları tutmak olduğu için, bu mantıksal değerin tersini alan “!” (NOT/Değil) operatörünü kullanmalıyız. Böylece !duplicated() komutu, tekrar edenleri (TRUE’yu FALSE yaparak) eler, benzersiz satırları (FALSE’u TRUE yaparak) seçer.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-dc4c7d00561c",
+    "unitNumber": 20,
+    "text": "Sunucu log dosyasında kullanıcının site içinde izlediği bağlantılarla oluşturulan yolu gösteren parametre aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Zaman Damgası (Time Stamp)",
+      "B": "İstek Türü (Request Type)",
+      "C": "Kullanıcı Aracısı (User Agent)",
+      "D": "Geçilen Yol (Traversed Path)",
+      "E": "Ziyaret Yolu (Visiting Path)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Web sunucusu tarafından kaydedilen erişim log dosyaları, her bir HTTP isteğinin ve kullanıcının detaylarını içerir. Bir kullanıcının siteye giriş yaptıktan sonra tıkladığı menüleri, okuduğu içerikleri ve sayfalar arası geçişlerini içeren bütünleşik diziye web analitiği literatüründe “Geçilen Yol” (Traversed Path / Click Path) adı verilir. Bu parametre, kullanıcıların navigasyon davranışlarını ve arayüzdeki sıkışma noktalarını analiz etmek için paha biçilmezdir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-4bc4763f5a42",
+    "unitNumber": 21,
+    "text": "Aşağıda R programlama dilinde k-ortalamalar (k-means) kümeleme algoritmasını uygulamak için yazılmış bir kod satırı verilmiştir. Kodda küme sayısını 5 olarak belirlemek ve algoritmanın farklı başlangıç noktaları ile 20 kez çalıştırılmasını sağlamak amaçlanmıştır. kmeans(data, centers = ____, nstart = ____) Boş bırakılan yerleri sırasıyla doğru şekilde tamamlayan seçenek hangisidir?",
+    "options": {
+      "A": "5, 5",
+      "B": "20, 20",
+      "C": "5, 4",
+      "D": "20, 5",
+      "E": "5, 20"
+    },
+    "correctAnswer": "E",
+    "explanation": "R programlama dilinde k-ortalamalar yöntemi uygulanırken kmeans() fonksiyonu kullanılır. Bu fonksiyonda yer alan centers parametresi, verinin kaç farklı kümeye ayrılacağını belirtmek için kullanılır ve soruda 5 olarak istenmiştir. nstart parametresi ise algoritmanın rastgele merkez noktalarıyla işleme kaç kez baştan başlayacağını belirler ve soruda bu değerin 20 olması hedeflenmiştir. Dolayısıyla doğru sıralama 5 ve 20 olmalıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-16a5c35212b4",
+    "unitNumber": 22,
+    "text": "Sınıflandırma algoritmalarının başarısını ölçerken, modelin doğru tahmin ettiği pozitif ve negatif (True Positive + True Negative) örneklerin tüm örneklere oranını ifade eden temel performans metriği aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Recall (Duyarlılık)",
+      "B": "Precision (Kesinlik)",
+      "C": "F1 Score",
+      "D": "Accuracy (Doğruluk)",
+      "E": "Specificity (Özgüllük)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Makine öğrenmesinde sınıflandırma modelinin performansını özetleyen en temel metrik Doğruluk (Accuracy) değeridir. Bu değer, modelin doğru bir şekilde sınıflandırdığı tüm verilerin (Satın alacak deyip alanlar ile almayacak deyip almayanların toplamı), veri setindeki toplam gözlem sayısına bölünmesiyle elde edilir. Dengeli veri setlerinde modelin genel başarısını okumak için en pratik yöntemdir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-bddd6dff6a4d",
+    "unitNumber": 23,
+    "text": "Veri dengeleme yöntemleri ile ilgili aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Undersampling, azınlık sınıfını rastgele çoğaltır.",
+      "B": "SMOTE, mevcut veri noktalarını birebir kopyalayarak veri dengesi sağlar.",
+      "C": "Undersampling ile sentetik veri oluşturulur.",
+      "D": "SMOTE, mevcut azınlık sınıfı örneklerine benzer sentetik yeni örnekler üretir.",
+      "E": "Oversampling, çoğunluk sınıfından rastgele örnekler silerek denge sağlar."
+    },
+    "correctAnswer": "D",
+    "explanation": "Veri madenciliğinde sınıf dengesizliği problemini çözmek için çeşitli yeniden örnekleme yöntemleri kullanılır. SMOTE yöntemi, sınıf dengesini sağlamak için azınlık sınıfını çoğaltırken mevcut verileri basitçe kopyalamak yerine, komşu veri noktaları arasındaki ilişkiyi kullanarak yepyeni sentetik veriler üretir. Bu sentetik veri üretimi, modelin aşırı öğrenme ihtimalini azaltarak daha başarılı genellemeler yapmasını sağlar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-836c165f4960",
+    "unitNumber": 24,
+    "text": "R programlama dilinde bir karakter veya sayısal serideki eksik, ölçülemeyen veya hatalı (girilmemiş) verileri temsil eden özel sistem değeri aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "NULL",
+      "B": "NaN",
+      "C": "FALSE",
+      "D": "NA (Not Available)",
+      "E": "INF"
+    },
+    "correctAnswer": "D",
+    "explanation": "R dilinde veri analizi yaparken, anketlerde boş bırakılan veya ölçüm cihazının hata verdiği veriler sistemde otomatik olarak “NA” (Not Available – Mevcut Değil) olarak kodlanır. NA, sıfır uzunluklu olan NULL’dan tamamen farklıdır; NA’nın bulunduğu bir sütunda işlem yapmak istediğinizde sistem mantıksal veya sayısal bir hata verebilir. Bu eksik değerleri temizlemek veri ön işleme adımının en önemli parçasıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-34835d99e3b5",
+    "unitNumber": 25,
+    "text": "Web sitesine giriş yapan ziyaretçileri, sitede geçirdikleri süre, tıkladıkları sayfa sayıları veya satın alma davranışları gibi geçmiş hareketlerine göre benzer gruplara ayırarak her gruba özel pazarlama stratejileri geliştirmek için kullanılan gözetimsiz öğrenme (unsupervised learning) yöntemi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Sınıflandırma",
+      "B": "Doğrusal Regresyon",
+      "C": "Kümeleme (Clustering)",
+      "D": "Apriori Algoritması",
+      "E": "Lojistik Regresyon"
+    },
+    "correctAnswer": "C",
+    "explanation": "Ziyaretçilerin henüz hangi sınıfa ait olduğunu bilmediğimiz durumlarda (etiketsiz veri), sadece davranışsal veya demografik benzerliklerine göre algoritmaların onları otomatik olarak alt gruplara ayırması işlemine makine öğrenmesinde “Kümeleme” (Clustering / Segmentasyon) denir. K-ortalamalar (k-means) algoritması bu işlemin e-ticaretteki en yaygın kullanım şeklidir ve kişiselleştirilmiş pazarlamanın temelini oluşturur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-f206c136dff1",
+    "unitNumber": 26,
+    "text": "Aşağıdaki durumlardan hangisi web analitiğinde bir sınıflandırma problemine örnek verilebilir?",
+    "options": {
+      "A": "Bir ziyaretçinin siteyi terk edip etmeyeceğini (hemen çıkma: evet/hayır) tahmin etmek.",
+      "B": "Kullanıcıları davranışlarına göre benzer gruplara/segmentlere ayırmak.",
+      "C": "Günlere göre toplam ziyaretçi sayısını hesaplamak.",
+      "D": "Kullanıcıların sitede geçirdiği ortalama süreyi tahmin etmek.",
+      "E": "Bir sayfanın ortalama yüklenme süresini ölçmek."
+    },
+    "correctAnswer": "A",
+    "explanation": "Makine öğrenmesinde hedef (bağımlı) değişkenin kategorik olduğu ve belirli etiketlerle sonuçlandığı problemlere “sınıflandırma (classification) problemi” adı verilir. Ziyaretçilerin siteyi terk etme durumunun “evet” veya “hayır” gibi iki sınıflı ayrık bir kategori üzerinden tahmin edilmesi tipik bir ikili sınıflandırma örneğidir. Geçirilen ortalama süre gibi sayısal değerleri tahmin etmek regresyon, benzer davranışlara sahip olanları gruplamak ise kümeleme problemidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-3503a39e54ed",
+    "unitNumber": 27,
+    "text": "R programlama dilindeki “NULL” ile ilgili aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Sıfır uzunluklu bir nesne olarak düşünülebilir ve bir veri tipiyle ilişkili değildir.",
+      "B": "Eksik değeri temsil eder ve vektörde bir eleman olarak bulunabilir.",
+      "C": "Vektörün boyutunu her zaman artırır.",
+      "D": "Her veri tipi için farklı NULL biçimleri vardır.",
+      "E": "İşlemlerde kullanıldığında sonuç her zaman NA olur."
+    },
+    "correctAnswer": "A",
+    "explanation": "R programlama dilinde NULL, tamamen boş olan, hiçbir verinin veya değerin bulunmadığını ifade eden, sıfır uzunluğa sahip özel ayrılmış bir nesnedir. Eksik verileri veya bilinmeyen değerleri temsil eden NA (Not Available) ifadesinden farklı çalışır; çünkü NA mantıksal, sayısal veya karakter gibi bir veri tipine sahipken, NULL hiçbir veri tipiyle (class) ilişkili değildir. Programlamada vektörlerden veya listelerden bir elemanı tamamen silmek istediğinizde o elemana NULL atanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-37b6c36513c4",
+    "unitNumber": 28,
+    "text": "Bir haber sitesinde yapılan web analizi sonucunda sayfa türlerine göre ortalama sayfada kalma süreleri aşağıdaki gibi elde edilmiştir: -Ana sayfa: 1 dakika 40 saniye -Gündem haberleri: 2 dakika 10 saniye -Teknoloji haberleri: 2 dakika 25 saniye -Spor haberleri: 55 saniye Analiz sonucuna göre bazı sayfa türlerinde kullanıcıların sayfada kalma süresinin oldukça düşük olduğu görülmektedir. Yukarıdaki bulguya göre aşağıdaki aksiyonlardan hangisinin yapılması en uygun olur?",
+    "options": {
+      "A": "Ana sayfayı tamamen yenilemek.",
+      "B": "Tüm sayfaların tasarımını değiştirmeden aynı şekilde bırakmak.",
+      "C": "Spor haberleri sayfalarının içerik yapısını ve kullanıcı deneyimini inceleyerek kullanıcıların sayfada daha uzun süre kalmasını sağlayacak iyileştirmeler yapmak.",
+      "D": "Sitedeki tüm içerikleri tek bir sayfada toplamak.",
+      "E": "Teknoloji haberleri bölümünü kapatmak."
+    },
+    "correctAnswer": "C",
+    "explanation": "Web analitiği, ziyaretçilerin sitede nasıl davrandıklarını anlamak ve kullanıcı deneyimini veri odaklı kararlarla optimize etmek için kritik metrikler sunar. Ortalama sayfada kalma süresi, bir içeriğin ziyaretçilerin ilgisini ne kadar çektiğinin temel bir göstergesidir. Spor haberleri sayfasındaki 55 saniyelik düşük süre, ziyaretçilerin aradığını bulamadığını veya sayfa tasarımında bir sorun olduğunu gösterdiğinden, buraya odaklanıp spesifik iyileştirmeler yapmak en rasyonel stratejidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-7385dd63d6b5",
+    "unitNumber": 29,
+    "text": "Yukarıdaki R çıktısı k-ortalamalar (k-means) kümeleme algoritması uygulandıktan sonra elde edilmiştir. Bu çıktıda yer alan 17, 12, 9, 14, 17 ve 11 değerleri aşağıdakilerden hangisini temsil etmektedir?",
+    "options": {
+      "A": "Oluşturulan kümelerin etiketlerini.",
+      "B": "Küme merkezlerinin koordinatlarını.",
+      "C": "Veri setindeki aykırı değerleri.",
+      "D": "Veri setindeki gözlem numaralarını.",
+      "E": "Her kümede bulunan gözlem sayısını."
+    },
+    "correctAnswer": "E",
+    "explanation": "R dilinde table() fonksiyonu, kendisine verilen bir vektör veya faktör içindeki her bir eşsiz elemanın (kategorinin) frekansını, yani tekrar sayısını sayarak özet bir çapraz tablo oluşturur. k-means uygulandıktan sonra her veri noktası belirli bir kümeye (1’den 6’ya kadar) atanır. Tablodaki alt satırda yer alan değerler, üst satırdaki ilgili küme numarasına atanan toplam veri noktası (gözlem) sayısını net bir şekilde ifade etmektedir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-735d480e40e1",
+    "unitNumber": 30,
+    "text": "Yukarıdaki R kod bloğu çalıştırıldığında ekrana aşağıdakilerden hangisi yazdırılır?",
+    "options": {
+      "A": "y sayısı 7'ye tam bölünmez.",
+      "B": "y sayısı 7'ye tam bölünür.",
+      "C": "NA",
+      "D": "NULL",
+      "E": "735"
+    },
+    "correctAnswer": "B",
+    "explanation": "R programlama dilinde yüzde yüzde operatörü, modüler aritmetik (bölümünden kalanı bulma) işlemini gerçekleştirir. Sorudaki y yüzde yüzde 7 == 0 şartı, 735 sayısının 7’ye bölündüğünde kalanının sıfır olup olmadığını mantıksal olarak kontrol etmektedir. 735 sayısı 7’ye kalansız (tam) bölündüğü için (sonuç 105 ve kalan 0’dır) mantıksal ifade TRUE (doğru) değerini döndürür ve if bloğunun içindeki “y sayısı 7’ye tam bölünür.” çıktısı ekrana yazdırılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-d02b3a17d1e5",
+    "unitNumber": 31,
+    "text": "Aşağıdaki seçeneklerden hangisi R programlama dilinde Apriori algoritması ile birliktelik kuralları analizi yapmak için kullanılan temel paketlerden biridir?",
+    "options": {
+      "A": "dplyr",
+      "B": "arules",
+      "C": "ggplot2",
+      "D": "tidyr",
+      "E": "stringr"
+    },
+    "correctAnswer": "B",
+    "explanation": "Veri madenciliğinde, özellikle e-ticaret sepet analizi (Market Basket Analysis) gibi birliktelik kuralı uygulamalarında en sık kullanılan algoritma Apriori algoritmasıdır. R programlama dilinde bu spesifik algoritmayı çalıştırmak, sık geçen öge kümelerini bulmak ve kuralları üretmek için özel olarak geliştirilmiş popüler kütüphanenin adı arules paketidir. dplyr ve tidyr paketleri daha çok genel veri manipülasyonu için tercih edilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-d41c1508b4bc",
+    "unitNumber": 32,
+    "text": "Birliktelik kuralları (Association Rules) analizinde, X ürününün sepetlere eklenmesi durumunda Y ürününün de aynı sepette yer alma olasılığını matematiksel olarak ifade eden metrik aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Lift (Kaldıraç)",
+      "B": "Support (Destek)",
+      "C": "Confidence (Güven)",
+      "D": "Silhouette",
+      "E": "Entropy"
+    },
+    "correctAnswer": "C",
+    "explanation": "Birliktelik kuralı madenciliğinde üç temel metrik vardır. Destek (Support) bir ürün grubunun tüm sepetler içindeki bulunma oranını ifade ederken, Güven (Confidence) kuralın tutarlılığını ölçer. Yani X ürününü alan müşterilerin yüzde kaçının aynı alışverişte Y ürününü de aldığını (koşullu olasılık) gösterir. Yüksek güven değeri, çapraz satış kampanyaları oluşturmak için mükemmel bir fırsattır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-17fefc20c4ad",
+    "unitNumber": 33,
+    "text": "Clickstream verisi aşağıdaki kaynakların hangisi ya da hangilerinden elde edilebilir?",
+    "options": {
+      "A": "Sadece form ve anket verilerinden.",
+      "B": "Sadece arama motoru konsollarından.",
+      "C": "Sunucu logları, JavaScript etiketleri, çerezler ve web analitiği araçlarından.",
+      "D": "Sadece tarayıcı önbelleğinden.",
+      "E": "Yalnızca CRM sistemlerinden."
+    },
+    "correctAnswer": "C",
+    "explanation": "Clickstream verisi, bir web sitesi ziyaretçisinin dijital ortamdaki tüm navigasyon haritasını, giriş-çıkış zamanlarını ve tıklama adımlarını kaydeden dijital izlerdir. Bu karmaşık veriler tek bir kaynaktan değil; web sunucusunun arka planda oluşturduğu log dosyalarından, sayfalara yerleştirilen takip amaçlı JavaScript kodlarından, çerezlerden ve Google Analytics gibi profesyonel yazılımların entegrasyonuyla elde edilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-6eafb16dc5cb",
+    "unitNumber": 34,
+    "text": "Aşağıdakilerden hangisi web analitiğinde kullanılan boyutlardan biri değildir?",
+    "options": {
+      "A": "Trafik kaynağı (organik, doğrudan, sosyal medya)",
+      "B": "Ziyaretçilerin geldiği coğrafi bölge",
+      "C": "Hemen çıkma oranı",
+      "D": "Kullanıcının ziyaret ettiği saat dilimi",
+      "E": "Kullanılan cihaz türü"
+    },
+    "correctAnswer": "C",
+    "explanation": "Web analitiği araçlarında (örneğin Google Analytics) raporlar iki ana bileşenden oluşur: Boyutlar (Dimensions) ve Metrikler (Metrics). Boyutlar, veriyi kategorize eden ve tanımlayan nitel (sayısal olmayan) özniteliklerdir; trafik kaynağı, tarayıcı türü, ülke veya cihaz türü birer boyuttur. Ancak “Hemen çıkma oranı” (Bounce Rate) gibi matematiksel hesaplamalara dayanan yüzdelik veya istatistiksel sayımlar, boyut değil “Metrik” sınıfında yer alır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-2543d1e59feb",
+    "unitNumber": 35,
+    "text": "Web analitiğinde, kullanıcının bir web sitesine dışarıdan herhangi bir arama motoru veya reklam bağlantısı kullanmadan, doğrudan tarayıcının adres çubuğuna sitenin URL’sini yazarak veya yer imlerinden tıklayarak gelmesi durumuna ne ad verilir?",
+    "options": {
+      "A": "Organik Trafik",
+      "B": "Referral Trafiği",
+      "C": "Doğrudan (Direct) Trafik",
+      "D": "Ücretli Trafik",
+      "E": "Sosyal Medya Trafiği"
+    },
+    "correctAnswer": "C",
+    "explanation": "Web sitesi trafik kaynakları analiz edilirken ziyaretçilerin nereden geldiği çeşitli boyutlarla (dimension) ölçülür. Kullanıcının aracı bir platform (Google, Facebook vb.) kullanmadan, direkt olarak sitenin ismini (URL) yazarak siteye giriş yapması Doğrudan (Direct) trafik olarak adlandırılır. Bu metrik genellikle marka bilinirliğinin ve sadık müşteri kitlesinin gücünü gösterir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-b69c29057eb0",
+    "unitNumber": 36,
+    "text": "Yukarıda R programlama dilinde bir veri setindeki Satis_Tutari değişkeninin histogramını oluşturmak için gerekli kod verilmiştir. Verilen R kodunda boş bırakılan kısmı doğru şekilde tamamlayan seçenek aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "veri(Satis_Tutari)",
+      "B": "hist(veri$Satis_Tutari)",
+      "C": "Satis_Tutari$veri",
+      "D": "veri[Satis_Tutari]",
+      "E": "veri$Satis_Tutari"
+    },
+    "correctAnswer": "E",
+    "explanation": "R programlama dilinde sürekli bir sayısal değişkenin frekans dağılımını görselleştirmek amacıyla hist() fonksiyonu kullanılır. Bir veri çerçevesi (data frame) içindeki belirli bir sütuna erişmek için nesne adından sonra $ operatörü yazılır. Dolayısıyla veri seti adı (veri) ile sütun adı (Satis_Tutari) arasına bu operatör konularak veri$Satis_Tutari şeklinde hedef veri başarıyla grafiğe yansıtılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-ed2b696ef003",
+    "unitNumber": 37,
+    "text": "Farklı küme sayılarına göre yapılan kümeleme analizleri sonucu elde edilen Silhouette indeksi değerleri aşağıdaki seçeneklerde yer almaktadır. Hangi seçenekte verilen kümeleme performansı diğerlerine göre en kötüdür?",
+    "options": {
+      "A": "0.20",
+      "B": "0.90",
+      "C": "0.70",
+      "D": "0.50",
+      "E": "0.96"
+    },
+    "correctAnswer": "A",
+    "explanation": "Silhouette indeksi, kümeleme algoritmalarının performansını ölçmek ve oluşturulan kümelerin ne kadar iyi ayrıştığını belirlemek için kullanılır. Bu indeks -1 ile +1 arasında değerler alır ve +1’e ne kadar yakınsa veri noktalarının kendi kümelerine o kadar sıkı ve doğru yerleştiğini gösterir. Verilen seçenekler arasında 0’a en yakın olan 0.20 değeri, kümelerin birbirine karıştığını ve örtüştüğünü gösterdiği için analiz performansının en kötü olduğu senaryodur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-b3c1c3d81ed2",
+    "unitNumber": 38,
+    "text": "Aşağıdakilerden hangisi birliktelik kurallarının tipik uygulama alanlarından biri değildir?",
+    "options": {
+      "A": "Katalog veya ürün yerleşimini müşteri davranışlarına göre düzenlemek.",
+      "B": "Ziyaretçileri sayfada kalma süresi ve ziyaret edilen sayfa sayısına göre gruplandırmak.",
+      "C": "Çapraz satış stratejileri geliştirmek.",
+      "D": "Zararına satış stratejilerini belirlemek.",
+      "E": "Alışveriş sepeti analizi yaparak birlikte satın alınan ürünleri belirlemek."
+    },
+    "correctAnswer": "B",
+    "explanation": "Birliktelik kuralları (Association Rules), sistemdeki olayların birlikte gerçekleşme frekanslarını analiz eder; örneğin “ekmek alanların yüzde 80’i süt de alıyor” gibi çapraz satış, katalog yerleşimi ve sepet analizlerinde kullanılır. Ancak ziyaretçilerin sayfada kalma süreleri veya sayfa sayıları gibi özelliklere dayanarak onları segmentlere veya kümeli gruplara ayırmak, birliktelik kurallarının değil, doğrudan doğruya makine öğrenmesindeki “Kümeleme (Clustering)” problemlerinin ana çalışma alanıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-9ead4f7a81cb",
+    "unitNumber": 39,
+    "text": "Bir web sitesinde kullanıcıların ortalama oturum süresi (AvgSessionDuration) ile dönüşüm oranı (ConversionRate) arasındaki ilişkiyi incelemek amacıyla bir saçılım grafiği oluşturulmak istenmektedir. Aşağıdaki R kodunda boş bırakılan yerlere uygun ifadeler getirildiğinde, iki değişken arasındaki ilişkiyi gösteren grafik elde edilecektir. ggplot(veri, aes(x = __________, y = __________)) + geom_point(color = “darkred”, size = 3,alpha = 0.6) + labs(title = “__________”,x = “__________”,y = “__________”) Yukarıda verilenlere göre aşağıdaki seçeneklerden hangisi boşluklara sırasıyla getirilmelidir?",
+    "options": {
+      "A": "1 — 2 — Oturum Süresi ve Dönüşüm Oranı ilişkisi — AvgSessionDuration — ConversionRate",
+      "B": "Dönüşüm Oranı — Ortalama Oturum Süresi — Oturum Süresi ve Dönüşüm Oranı ilişkisi — AvgSessionDuration —ConversionRate",
+      "C": "AvgSessionDuration — ConversionRate — Oturum Süresi ve Dönüşüm Oranı ilişkisi — Dönüşüm Oranı — Ortalama Oturum Süresi",
+      "D": "AvgSessionDuration — ConversionRate — Oturum Süresi ve Dönüşüm Oranı ilişkisi — Ortalama Oturum Süresi — Dönüşüm Oranı",
+      "E": "Ortalama Oturum Süresi — Dönüşüm Oranı — Oturum Süresi ve Dönüşüm Oranı ilişkisi — AvgSessionDuration — ConversionRate"
+    },
+    "correctAnswer": "D",
+    "explanation": "Saçılım grafiğinde X eksenine bağımsız değişken olan AvgSessionDuration, Y eksenine ise ConversionRate yazılır. Grafiğin başlığı “Oturum Süresi ve Dönüşüm Oranı ilişkisi” olmalıdır. X ve Y eksenlerinin açıklamaları da sırasıyla “Ortalama Oturum Süresi” ve “Dönüşüm Oranı” şeklinde verilir. Bu nedenle boşluklara sırasıyla AvgSessionDuration — ConversionRate — Oturum Süresi ve Dönüşüm Oranı ilişkisi — Ortalama Oturum Süresi — Dönüşüm Oranı getirilmelidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-21fb1e2e30a4",
+    "unitNumber": 40,
+    "text": "R programlama dilinde bir veri setindeki nümerik bir değişken için summary() fonksiyonu kullanıldığında bazı istatistiki bilgiler elde edilebilir. Buna göre, summary() fonksiyonu ile elde edilen bu bilgilerden hangisi tek başına aşağıdaki fonksiyonlardan biri kullanılarak doğrudan elde edilemez?",
+    "options": {
+      "A": "mean()",
+      "B": "max()",
+      "C": "min()",
+      "D": "sd()",
+      "E": "median()"
+    },
+    "correctAnswer": "D",
+    "explanation": "R’da summary() fonksiyonu, veri analizine hızlı bir giriş yapmak için değişkenin minimum, birinci çeyreklik, medyan (median), ortalama (mean), üçüncü çeyreklik ve maksimum (max) değerlerini içeren betimsel istatistik özetini verir. Ancak, verilerin ortalamadan ne kadar saptığını gösteren kritik bir ölçü olan standart sapma (standard deviation) değeri summary() çıktısında varsayılan olarak bulunmaz. Bunu hesaplamak için özel olarak sd() fonksiyonunun çağrılması gerekmektedir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-340e5fc8b299",
+    "unitNumber": 41,
+    "text": "Makine öğrenmesi modellerinde kullanılan üçlü ayırma yöntemi (three-way split), veri setinin üç farklı bölüme ayrılmasını içerir: eğitim, doğrulama ve test veri setleri. Buna göre üçlü ayırma yöntemi ile ilgili verilen aşağıdaki ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Doğrulama veri seti modelin nihai performansını raporlamak için kullanılır.",
+      "B": "Doğrulama veri seti modelin nihai performansını ölçmek için kullanılır.",
+      "C": "Test veri seti modelin öğrenmesi için kullanılır.",
+      "D": "Test veri seti modelin hiperparametrelerini ayarlamak için kullanılır.",
+      "E": "Eğitim veri seti modelin öğrenmesi için kullanılır."
+    },
+    "correctAnswer": "E",
+    "explanation": "Makine öğrenmesi projelerinde veri seti, modelin başarısını tarafsız ölçebilmek için üçe bölünür. Eğitim (train) veri seti, algoritmanın matematiksel ağırlıkları güncelleyerek kalıpları öğrendiği ana parçadır. Doğrulama (validation) veri seti, eğitim sırasında modelin hiperparametrelerinin (ayar düğmelerinin) optimize edilmesi için kullanılır. Test veri seti ise, modelin gerçek dünyadaki nihai performansını ölçmek için en sona saklanan ve modelin eğitim sırasında hiç görmediği veri parçasıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-255a942b983b",
+    "unitNumber": 42,
+    "text": "Google Analytics üzerinden aşağıdaki metriklerden hangisi, web sitesine gelen ziyaretlerde “sayfa görüntülenme sayısını” ifade eder?",
+    "options": {
+      "A": "averageSessionDuration",
+      "B": "totalUsers",
+      "C": "eventCount",
+      "D": "sessions",
+      "E": "screenPageViews"
+    },
+    "correctAnswer": "E",
+    "explanation": "screenPageViews metriği Universal-GA’da pageviews, GA-4’te views adıyla geçen toplam sayfa/sayfa-ekran görüntülenme adedidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a17bd39c0cbe",
+    "unitNumber": 43,
+    "text": "veri <- _______(\"sinav.csv\") Yukarıdaki R kodu kullanılarak geçerli çalışma dizininde bulunan sinav.csv dosyası okunup bir Data Frame’e (veri çerçevesine) atamaya çalışılmaktadır. Aşağıdaki hangi fonksiyon bu veri okuma işlemini gerçekleştirir?",
+    "options": {
+      "A": "write.csv()",
+      "B": "read.csv()",
+      "C": "load()",
+      "D": "read.table2()",
+      "E": "source()"
+    },
+    "correctAnswer": "B",
+    "explanation": "read.csv(\"sinav.csv\") virgül ayraçlı dosyayı veri çerçevesi olarak içe aktarır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-050db4fbb0f7",
+    "unitNumber": 44,
+    "text": "Bir data frame’de (veri çerçevesinde) saklanan bir veri setinin ilk birkaç satırını görüntülemek için aşağıda verilen R fonksiyonlarından hangisi kullanılır?",
+    "options": {
+      "A": "tail()",
+      "B": "head()",
+      "C": "glimpse()",
+      "D": "first_row()",
+      "E": "summary()"
+    },
+    "correctAnswer": "B",
+    "explanation": "head(df) varsayılan olarak ilk 6 gözlemi döndürür; tail() sondaki satırları gösterir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4aedd32d4960",
+    "unitNumber": 45,
+    "text": "Yukarıda verilen R kodu çalıştırıldığında aşağıdaki hangi mesajı yazdırılır?",
+    "options": {
+      "A": "0",
+      "B": "Hiçbir şey yazdırılmaz.",
+      "C": "Sıfır",
+      "D": "Negatif",
+      "E": "Pozitif"
+    },
+    "correctAnswer": "C",
+    "explanation": "x = 0 olduğu için koşul x == 0 bloğu tetiklenir ve “Sıfır” çıktısı üretilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ad7a68d2328d",
+    "unitNumber": 46,
+    "text": "veri <- veri[!duplicated(veri), ] Yukarıdaki R kodunun işlevi aşağıdakilerden hangisinde doğru biçimde verilmiştir?",
+    "options": {
+      "A": "Veri setinden tekrarlayan satırları çıkarıp, veri setindeki benzersiz satırları almak.",
+      "B": "Veri setindeki yalnızca tekrarlayan (duplicated) satırları almak.",
+      "C": "Veri setini kalıcı olarak silmek.",
+      "D": "Veri setine yeni bir sütun eklemek.",
+      "E": "Veri setindeki tüm eksik değerleri filtrelemek."
+    },
+    "correctAnswer": "A",
+    "explanation": "duplicated() TRUE dönen indeksleri “!” ile tersleyip filtrelediğimizde eşsiz gözlemler kalır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2a88ea719c7d",
+    "unitNumber": 47,
+    "text": "Bir web-analitiği veri setinde sayfa görüntüleme sayısı, ortalama oturum süresi ve hemen çıkma oranı gibi değişkenler hangi veri tipindedir?",
+    "options": {
+      "A": "Mantıksal",
+      "B": "Metinsel",
+      "C": "Sayısal (Nümerik)",
+      "D": "Kategorik",
+      "E": "Faktör"
+    },
+    "correctAnswer": "C",
+    "explanation": "Bu değişkenler süre, oran veya adet olarak sürekli/soyut nicel (nümerik) ölçülerdir",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0992003c79d4",
+    "unitNumber": 48,
+    "text": "Bir web sunucusunun kullanıcıların web sitesi etkileşimlerine ait ham verileri otomatik olarak kaydettiği dosyalara verilen ad aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Form verileri",
+      "B": "Çerezler (cookies)",
+      "C": "Proxy verisi",
+      "D": "Sosyal medya verileri",
+      "E": "Sunucu logları (server logs)"
+    },
+    "correctAnswer": "E",
+    "explanation": "Apache, Nginx gibi sunucular isteğin IP, zaman damgası, user-agent gibi ham ayrıntılarını access.log dosyalarında tutar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4ce0af2f25c9",
+    "unitNumber": 49,
+    "text": "Web analitiğinde … bir web sitesinin performansını nicel olarak ifade eden ölçümler sunar. Yukarıdaki tanımda … ile verilen boşluğa aşağıdaki kavramlardan hangisi getirilmelidir?",
+    "options": {
+      "A": "boyutlar",
+      "B": "cihaz türleri",
+      "C": "coğrafi konumlar",
+      "D": "trafik kaynakları",
+      "E": "metrikler"
+    },
+    "correctAnswer": "E",
+    "explanation": "Metrikler sayısal ölçü (pageviews, bounce rate vb.); boyutlar (ülke, cihaz) ise bu ölçülerin kırılımıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e65a20bb20f6",
+    "unitNumber": 50,
+    "text": "Aşağıdaki işlemlerden hangisi yapay kodlama (dummy coding) yöntemi ile gerçekleştirilir?",
+    "options": {
+      "A": "Nümerik nitelikleri kategorilere ayırmak.",
+      "B": "Veri setindeki eksik değerleri doldurmak.",
+      "C": "Tekrar eden gözlemleri farklılaştırmak.",
+      "D": "Kategorik bir değişkeni sayısal formatta temsil etmek.",
+      "E": "Nümerik değerleri belirli sayısal aralıklara indirmek, normalize etmek."
+    },
+    "correctAnswer": "D",
+    "explanation": "Dummy coding, kategorik etiketleri 0-1 sütunlara genişleterek regresyon-ML algoritmalarına uygun hâle getirir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-950dd457e359",
+    "unitNumber": 51,
+    "text": "Aşağıdakilerden hangisi Çapraz Endüstri Standard Süreç Modeli’ndeki (CRISP-DM) modelin uygulamaya geçirilmesi (deployment) aşamasının temel amacını en iyi şekilde açıklar?",
+    "options": {
+      "A": "Modelin eğitim (train) ve test olarak ikiye ayrılması.",
+      "B": "Veri setindeki niteliklerin sayılarının azaltılması.",
+      "C": "Veri setindeki eksik değerlere sahip olan örneklerin veri setinden çıkartılması.",
+      "D": "Kurulan modelin, iş süreçlerinde gerçek verilerle kullanılmaya başlanması.",
+      "E": "Model parametrelerinin optimize edilmesi."
+    },
+    "correctAnswer": "D",
+    "explanation": "Deployment adımı, modeli üretim ortamına alıp son-kullanıcı veya sistemlerin gerçek zamanlı kararlarında kullanılmasıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-55d945b41304",
+    "unitNumber": 52,
+    "text": "Web analitiğinde hemen çıkma oranı (bounce rate) aşağıdaki anlamlardan hangisine gelmektedir?",
+    "options": {
+      "A": "Bir sayfayı ziyaret edenlerin, başka hiçbir sayfaya geçmeden siteden ayrılma yüzdesi.",
+      "B": "Ziyaretçinin belirli bir sayfada ortalama kalma süresinin yüzdesi.",
+      "C": "Oturum başına düşen sayfa görüntülenme sayısının artış oranı.",
+      "D": "Yalnızca mobil kullanıcılarda oluşan tıklama hatalarını ölçen oran.",
+      "E": "Ziyaretçilerin siteye giriş saatlerinin yoğunluğu."
+    },
+    "correctAnswer": "A",
+    "explanation": "“Tek-sayfa oturumu / tüm oturumlar” metriği, sayfanın ilk etkileşim sonrası kullanıcı tutma başarısını ölçer.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-24a709ffa1e9",
+    "unitNumber": 53,
+    "text": "R’da bir MS Excel veri dosyasını okumak için aşağıdaki fonksiyonlardan hangisi kullanılabilir?",
+    "options": {
+      "A": "run_excel()",
+      "B": "install_excel()",
+      "C": "read_excel()",
+      "D": "import_excel()",
+      "E": "load_excel()"
+    },
+    "correctAnswer": "C",
+    "explanation": "read_excel() fonksiyonu readxl paketinde yer alır ve .xlsx /.xls dosyalarını doğrudan data-frame’e aktarır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a0675308df56",
+    "unitNumber": 54,
+    "text": "Yukarıdaki R kodu çalıştırıldığında aşağıda verilenlerden hangisi yazdırılır?",
+    "options": {
+      "A": "5",
+      "B": "8",
+      "C": "NA",
+      "D": "3",
+      "E": "x+y"
+    },
+    "correctAnswer": "B",
+    "explanation": "3 + 5 toplandığında z değişkeni 8 olur; print() bu sayıyı konsola yazar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c9192ae66831",
+    "unitNumber": 55,
+    "text": "Aşağıdakilerden hangisi R dili hakkında doğrudur?",
+    "options": {
+      "A": "Platform bağımsızdır, çeşitli işletim sistemlerinde çalışabilir.",
+      "B": "Ticari ve bireysel kullanım için mutlaka ücret ödenmelidir.",
+      "C": "Veri madenciliği, yapay zekâ ve makine öğrenmesi gibi alanlarda kullanılamaz.",
+      "D": "Kapalı kaynak kodludur, topluluk katkısına kapalıdır.",
+      "E": "Yalnızca RStudio geliştirme ortamında çalışabilir."
+    },
+    "correctAnswer": "A",
+    "explanation": "R; Windows, macOS, Linux dâhil pek çok platformda ücretsiz ve açık kaynak olarak çalışır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-00387b3a08ae",
+    "unitNumber": 56,
+    "text": "Aşağıda verilenlerden hangisi web analitiği süreci adımlarından biri değildir?",
+    "options": {
+      "A": "Veritabanını sıralama",
+      "B": "Veri önişleme",
+      "C": "Soru sorma",
+      "D": "Veri analizi",
+      "E": "Veri toplama"
+    },
+    "correctAnswer": "A",
+    "explanation": "Web analitiği akışı genellikle veri toplama → temizleme/ön-işleme → analiz → içgörüleme → optimizasyon döngüsüdür; “veritabanını sıralama” bağımsız bir adım değildir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-63c1fc286fcc",
+    "unitNumber": 57,
+    "text": "Yukarıdaki R kod bloğunda satın alma (purchase) ve sepete ekleme (add_to_cart) olaylarını çekmek için … ile verilen boşluğa aşağıdaki ifadelerden hangisi getirilmelidir?",
+    "options": {
+      "A": "\"eventName=='purchase' AND eventName=='add_to_cart'\"",
+      "B": "\"eventName=='purchase' * eventName=='add_to_cart'\"",
+      "C": "\"eventName=='purchase' != eventName=='add_to_cart'\"",
+      "D": "\"eventName=='purchase' OR eventName=='add_to_cart'\"",
+      "E": "\"eventName=='purchase' == eventName=='add_to_cart'\""
+    },
+    "correctAnswer": "D",
+    "explanation": "OR operatörü iki farklı olayı içeren satırların birlikte filtrelenmesini sağlar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ddba3623d642",
+    "unitNumber": 58,
+    "text": "Web zekâsının temel amacı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Veritabanı yönetimini kolaylaştırmak",
+      "B": "Sadece sosyal medya verilerini incelem",
+      "C": "Geleneksel medya kullanımını artırmak",
+      "D": "Web üzerinden değerli bilgileri ortaya çıkarmak ve analiz etmek",
+      "E": "Sadece büyük veriyi değerlendirmek"
+    },
+    "correctAnswer": "D",
+    "explanation": "Web Intelligence, log’lar, içerik ve kullanıcı davranış verisini madencilik-ML teknikleriyle işleyip içgörü üretmeyi hedefler.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-33fd793e44fc",
+    "unitNumber": 59,
+    "text": "R programlama dilinde veri setindeki eksik değerleri tespit etmek için aşağıdaki fonksiyonlardan hangisi kullanılabilir?",
+    "options": {
+      "A": "duplicated()",
+      "B": "is.na()",
+      "C": "prop.table()",
+      "D": "table()",
+      "E": "unique()"
+    },
+    "correctAnswer": "B",
+    "explanation": "is.na() eleman bazında TRUE/FALSE vektörü döndürerek eksik (NA) değer konumlarını gösterir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-92e6d3dd88f6",
+    "unitNumber": 60,
+    "text": "R programlama dilinin lisans türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "MIT",
+      "B": "BSD",
+      "C": "GPL",
+      "D": "Apache",
+      "E": "Creative Commons"
+    },
+    "correctAnswer": "C",
+    "explanation": "R temel dağıtımı GNU General Public License (GPL v2 or later) ile yayınlanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-79b9880ae793",
+    "unitNumber": 61,
+    "text": "aggregate(Revenue ~ UserType, data = veri , FUN = mean) Yukarıda verilen R kodu ile ilgili aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Revenue sütunu esas alınarak veri seti gruplar ve her gruba ait UserType sütununun ortalama değeri hesaplanır.",
+      "B": "Revenue sütunu esas alınarak veri seti gruplar ve her gruba ait UserType sütununun aranca değeri hesaplanır.",
+      "C": "UserType sütunu esas alınarak veri seti gruplar ve her gruba ait Revenue sütununun en yüksek değeri hesaplanır.",
+      "D": "UserType sütunu esas alınarak veri seti gruplar ve her gruba ait Revenue sütununun ortanca değeri hesaplanır.",
+      "E": "UserType sütunu esas alınarak veri seti gruplar ve her gruba ait Revenue sütununun ortalama değeri hesaplanır."
+    },
+    "correctAnswer": "E",
+    "explanation": "aggregate(y ~ x, FUN = mean) formülü x’e göre gruplar, y’nin ortalamasını döndürür.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8e0d7fd7134e",
+    "unitNumber": 62,
+    "text": "Yukarıda tanımlanan df adlı veri çerçevesinin (data frame) satır sayısını döndüren R kodu aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "cbind(df)",
+      "B": "nrow(df)",
+      "C": "df.nrow()",
+      "D": "ncol(df)",
+      "E": "rbind(df)"
+    },
+    "correctAnswer": "B",
+    "explanation": "R dilinde bir veri çerçevesinin (data frame) veya matrisin satır sayısını öğrenmek için nrow() (number of rows) fonksiyonu kullanılır. ncol() sütun sayısını verirken, cbind ve rbind sırasıyla sütun ve satır bazında birleştirme işlemleri yapar.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-2098b92b4c9c",
+    "unitNumber": 63,
+    "text": "Yukarıda verilen R kod satırı aşağıdaki hangi işlemin gerçekleştirilmesi için kullanılır?",
+    "options": {
+      "A": "Veri setindeki örneklerin 25 gruba ayrıldığı bir kümeleme modeli oluşturulması.",
+      "B": "Veri setindeki eksik değerlerin 5 ile tamamlanması.",
+      "C": "Veri setindeki kategorik değişkenlerin nümerik forma dönüştürülerek sınıflandırma modeli kurulması.",
+      "D": "Veri setindeki örneklerin 5 gruba ayrıldığı bir k-ortalamalar kümeleme modelinin oluşturulması.",
+      "E": "Veri setinin ilk 25 satırı içinden rastgele 5 satırın seçilmesi."
+    },
+    "correctAnswer": "D",
+    "explanation": "R programlama dilinde kmeans() fonksiyonu, k-ortalamalar (k-means) kümeleme algoritmasını uygulamak için kullanılır. Parametrelerden centers = 5, verilerin 5 farklı kümeye (gruba) ayrılacağını belirtir. nstart = 25 ise başlangıç küme merkezlerinin rastgele 25 kez seçileceğini ve algoritmanın en iyi sonucu veren (toplam grup içi varyansı en düşük olan) modeli seçeceğini ifade eder.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-898bf112426f",
+    "unitNumber": 65,
+    "text": "Bir web sitesi, ziyaretçilerin davranışlarına göre “donusum_yapan” ve “donusum_yapmayan” olarak sınıflaştıran bir modeli geliştirmiştir. Model performansını değerlendirmek için yukarıdaki R kod bloğu kullanılmaktadır: Analizde performans metriklerinin hesaplanmasında pozitif sınıfın “donusum_yapan” olarak belirlenmesi istenmektedir. Buna göre, … ile gösterilen boşluğa aşağıdakilerden hangisi yazılmalıdır?",
+    "options": {
+      "A": "negative=\"donusum_yapmayan\"",
+      "B": "positive = \"donusum_yapan\"",
+      "C": "\"positive\" = donusum_yapan",
+      "D": "positive == \"donusum_yapan\"",
+      "E": "\"donusum_yapan\" == positive"
+    },
+    "correctAnswer": "B",
+    "explanation": "R’daki caret paketinin confusionMatrix fonksiyonunda, sensitivity, precision, recall gibi metriklerin hangi sınıf referans alınarak (hangi sınıf “pozitif” olarak kabul edilerek) hesaplanacağını belirtmek için positive argümanı kullanılır. Pozitif sınıfı tanımlamanın doğru sözdizimi positive = “donusum_yapan” şeklindedir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e2e41958b5b8",
+    "unitNumber": 66,
+    "text": "Aşağıdaki seçeneklerde verilen durumlardan hangisinde kümeleme analizi tercih edilebilir?",
+    "options": {
+      "A": "Bağımlı ve bağımsız değişkenler arasındaki ilişkiyi incelemek.",
+      "B": "Regresyon analizi yaparak bir bağımlı değişkeni tahmin etmek.",
+      "C": "Veri setindeki örnekleri benzerliklerine göre gruplamak.",
+      "D": "Danışmanlı öğrenme algoritmalarını eğitmek.",
+      "E": "Etiketlenmiş veriler ile sınıflandırma modeli oluşturmak."
+    },
+    "correctAnswer": "C",
+    "explanation": "Kümeleme (Clustering) analizi, danışmansız (unsupervised) bir makine öğrenmesi tekniğidir. Önceden belirlenmiş hedefler veya etiketler (bağımlı değişkenler) yoktur. Algoritmanın tek amacı; veri seti içindeki örneklerin özelliklerine bakarak birbirine matematiksel olarak benzeyenleri aynı kümeye atmak ve böylece verideki doğal gruplaşmaları/segmentleri (müşteri segmentasyonu gibi) ortaya çıkarmaktır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ffb52f511c12",
+    "unitNumber": 67,
+    "text": "Yukarıda verilen R kod bloğu ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
+    "options": {
+      "A": "print(toplam) satırı kaldırılırsa, fonksiyon hiçbir değer döndürmez.",
+      "B": "sonuc değişkenine fonksiyonun döndürdüğü değer atanır.",
+      "C": "return(toplam) ifadesi fonksiyonun değer döndürmesini sağlar.",
+      "D": "islem kullanıcı tarafından tanımlanmış bir fonksiyondur.",
+      "E": "Fonksiyon çağrıldığında ekrana 10 değeri yazdırılır."
+    },
+    "correctAnswer": "A",
+    "explanation": "R dilinde bir fonksiyonun değer döndürmesini (return value) sağlayan komut `return()` fonksiyonudur. `print()` sadece sonucu konsolda (ekranda) göstermeye yarar. `print(toplam)` satırı silinse bile, kodun sonundaki `return(toplam)` ifadesi sayesinde fonksiyon çalışır ve döndürdüğü 10 değeri arka planda “sonuc” değişkenine atanmaya devam eder. Yani değer döndürme işlemi print’e bağlı değildir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-910e25b42a5c",
+    "unitNumber": 68,
+    "text": "Aşağıdaki hangisi “hemen çıkma oranı”nın (bounce rate) yüksek olmasının her zaman olumsuz bir durum olmadığını gösteren senaryolardan biridir?",
+    "options": {
+      "A": "Ziyaretçilerin aradığı iletişim bilgisine hızlıca ulaştıktan sonra ek etkileşimde bulunmadan siteden ayrılması",
+      "B": "Sunucu hataları nedeniyle ziyaretçilerin siteden hemen çıkmak zorunda kalması.",
+      "C": "Sitedeki satın alma formu uzun ve karmaşık olduğundan yarıda bırakılması.",
+      "D": "Ziyaretçilerin ana sayfayı terk etmesi sonucu kullanıcı etkileşiminin düşük seviyede gerçekleşmesi.",
+      "E": "Ziyaretçilerin sitede üç sayfa gezdikten sonra çıkması."
+    },
+    "correctAnswer": "A",
+    "explanation": "Hemen Çıkma Oranı (Bounce Rate), kullanıcının siteye girip başka hiçbir sayfaya tıklamadan (tek sayfada) siteden ayrılmasıdır. Genellikle yüksek olması istenmez (içeriğin ilgi çekici olmadığını gösterir). Ancak kullanıcı sadece telefon numaranızı, adresinizi veya çalışma saatlerinizi arıyorsa, sayfaya girer girmez bu bilgiyi alıp amacına ulaştığı için hemen çıkar. Bu durum sayfanın görevini başarıyla yerine getirdiğini gösterir ve olumsuz bir tablo çizmez.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b02713b3ec05",
+    "unitNumber": 69,
+    "text": "Yukarıda k- en yakın komşu algoritması ile verilen sınıflandırma modelinin performans değerlendirmesi sonuçlarına göre, modelin doğruluğu nedir?",
+    "options": {
+      "A": "0.96",
+      "B": "0.85",
+      "C": "0.95",
+      "D": "0.30",
+      "E": "0.60"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e2569d99ca79",
+    "unitNumber": 70,
+    "text": "Aşağıdakilerden hangisi bir sınıflandırma modelinin performansını değerlendirirken veri setinin eğitim ve test veri seti olarak ikiye ayrılması için uygun bir oran değildir?",
+    "options": {
+      "A": "yüzde 60 eğitim - yüzde 40 test",
+      "B": "yüzde 90 eğitim - yüzde 10 test",
+      "C": "yüzde 15 eğitim - yüzde 75 test",
+      "D": "yüzde 70 eğitim - yüzde 30 test",
+      "E": "yüzde 80 eğitim - yüzde 20 test"
+    },
+    "correctAnswer": "C",
+    "explanation": "Makine öğrenmesinde bir modeli eğitirken, verinin büyük ve temsiliyet gücü yüksek kısmının (yüzde 60, yüzde 70, yüzde 80 gibi oranlarda) algoritmayı eğitmek için ayrılması; kalan daha küçük kısmının (yüzde 20, yüzde 30 gibi) ise test için ayrılması evrensel bir standarttır. Verinin sadece yüzde 15’ini eğitim için ayırmak, modelin kalıpları öğrenmesi için yetersiz (underfitting) kalmasına neden olacağı için son derece yanlış ve uygunsuz bir ayırma oranıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d9c9982c7f70",
+    "unitNumber": 71,
+    "text": "Sunucu log dosyasında kullanıcının siteye ulaşma yolunu gösteren parametre aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Ziyaret yolu (visiting path)",
+      "B": "Kullanıcı aracısı (user agent)",
+      "C": "Geçilen yol (traversed path)",
+      "D": "Son ziyaret edilen sayfa (page last visited)",
+      "E": "İstek türü (request type)"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-3aa958593e45",
+    "unitNumber": 72,
+    "text": "Aşağıdakilerden hangisi apriori algoritmasının temel ilkesidir?",
+    "options": {
+      "A": "Kaldıraç oranı (lift) l'e eşitse kural en güçlü kuraldır.",
+      "B": "A ve B öğeleri her zaman aynı destek değerine sahiptir.",
+      "C": "Çok elemanlı öğe kümeleri öncelikle tek tek kontrol edilir. sonra diğer küme bulunamaz.",
+      "D": "Bir kuralın güveni düşükse destek değeri otomatik olarak yükselir.",
+      "E": "Bir sık öğe kümesinin boş olmayan tüm alt kümeleri de sık olmak zorundadır."
+    },
+    "correctAnswer": "E",
+    "explanation": "Apriori algoritmasının kalbini oluşturan temel prensip (Apriori Prensibi / Anti-Monotonicity özelliği) şudur: “Eğer bir öğe kümesi (örneğin A, B ve C ürünlerinin birlikte satışı) ‘sık’ (frequent) olarak kabul ediliyorsa, bu kümenin içindeki her bir alt küme de (A ve B’nin satışı veya sadece C’nin satışı) mutlaka ‘sık’ olmak zorundadır.” Bu kural sayesinde algoritma, sık olmayan alt kümeleri tespit ettiğinde onların türevlerini (büyük kümelerini) hesaplamadan doğrudan eleyerek zamandan kazanır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-9772dd03c439",
+    "unitNumber": 73,
+    "text": "Aşağıda verilen seçeneklerden hangisi kümeleme analizi sonucunda elde edilen bir Silhouette indeksi değeri olamaz?",
+    "options": {
+      "A": "1",
+      "B": "0.20",
+      "C": "0.50",
+      "D": "-0.20",
+      "E": "-1.2"
+    },
+    "correctAnswer": "E",
+    "explanation": "Kümeleme analizinin kalitesini ölçmek için kullanılan Silhouette indeksi matematiksel olarak her zaman -1 ile +1 arasında değerler alır (-1 ≤ S ≤ 1). 1’e yakın değerler örneklerin doğru kümelere atandığını, -1’e yakın değerler yanlış kümelere atandığını gösterir. Ancak bu indeksin -1’in altına inmesi (örneğin -1.2 olması) veya 1’in üstüne çıkması mümkün değildir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-73200169fb03",
+    "unitNumber": 74,
+    "text": "Bir kullanıcı oturumunun tipik süresini ölçen web analitiği metriği aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Yeni ziyaret oranı",
+      "B": "Tekil ziyaretler",
+      "C": "Hemen çıkma oranı",
+      "D": "Dönüşüm oranı",
+      "E": "Ortalama ziyaret süresi"
+    },
+    "correctAnswer": "E",
+    "explanation": "Kullanıcıların siteye girdikleri an ile (ilk sayfa görüntüleme) sitedeki son etkileşimleri (son sayfa görüntüleme veya çıkış) arasında geçen zaman dilimine oturum/ziyaret süresi denir. Google Analytics gibi araçlarda tüm oturum sürelerinin toplanıp oturum sayısına bölünmesiyle elde edilen ve genel kullanıcı ilgisini ölçen bu metrik “Ortalama Ziyaret Süresi” (Avg. Session Duration) olarak adlandırılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-37e9bfa33669",
+    "unitNumber": 75,
+    "text": "Bir web analitiği raporunda ziyaretçilerin siteye geldiği trafik kaynaklarının (Organik arama, sosyal medya, doğrudan giriş ve e-posta gibi) toplam ziyaretler içindeki oranları görselleştirilmek istenmektedir. Bu amaç doğrultusunda aşağıdaki görselleştirme tekniklerinden hangisinin kullanılması en uygun olacaktır?",
+    "options": {
+      "A": "Saçılım Grafiği",
+      "B": "Çizgi Grafiği",
+      "C": "Histogram",
+      "D": "Pasta Grafiği",
+      "E": "Isı Haritası"
+    },
+    "correctAnswer": "D",
+    "explanation": "Kategorik verilerin “bütün (toplam) içindeki paylarını” veya “yüzdelik oranlarını” göstermek için veri görselleştirmede en uygun ve geleneksel araç Pasta Grafiğidir (Pie Chart). Çizgi grafiği zaman içindeki değişimi, histogram ise nümerik değişkenlerin dağılımını gösterir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f800ec5ed7d1",
+    "unitNumber": 76,
+    "text": "Bir web sitesine ait veri setinde kullanıcıların oturum gelirlerinin (OturumGeliri) dağılımını incelemek amacıyla histogram grafiği oluşturulmak istenmektedir. Yukarıdaki R kod bloğunda boş bırakılan yerlere uygun ifadeler getirildiğinde, oturum gelirlerinin dağılımını gösteren histogram grafiği elde edilecektir. Yukarıda verilenlere göre aşağıdaki seçeneklerden hangisi boşluklara sırasıyla getirilmelidir?",
+    "options": {
+      "A": "15 — OturumGeliri — Oturum Geliri Histogramı — Oturum Geliri (TL)",
+      "B": "Oturum Geliri Histogramı — OturumGeliri — Oturum Geliri (TL) — 15",
+      "C": "OturumGeliri — Oturum Geliri Histogramı — 15 — Oturum Geliri (TL)",
+      "D": "OturumGeliri — 15 — Oturum Geliri Histogramı — Oturum Geliri (TL)",
+      "E": "Oturum Geliri (TL) — Oturum Geliri Histogramı — OturumGeliri — 15"
+    },
+    "correctAnswer": "C",
+    "explanation": "R’da `hist()` fonksiyonunun parametreleri sırasıyla şunları ifade eder: İlk parametre (veri$…), çizdirilecek sütun/değişkenin adıdır (`OturumGeliri`). İkinci parametre olan `main=`, grafiğin ana başlığıdır (`”Oturum Geliri Histogramı”`). Üçüncü parametre `breaks=`, histogramdaki sütun (çubuk) sayısını belirler (nümerik bir değer olmalıdır, örneğin `15`). Son parametre olan `xlab=`, x (yatay) ekseninin ismidir (`”Oturum Geliri (TL)”`). Bu mantıksal sıralama C şıkkında verilmiştir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-09a7e319271a",
+    "unitNumber": 77,
+    "text": "Bir e-ticaret sitesinde kullanıcı davranışları analiz edilmiş ve aaşağıdaki gibi bir kural elde edilmiştir: ”SEARCH_ VISIT → ADD_ TO_ CART” Yukarıda verilen kural aşağıdakilerden hangisi kullanılarak elde edilmiş olabilir?",
+    "options": {
+      "A": "k-ortalamalar algoritması",
+      "B": "Regresyon analizi",
+      "C": "Korelasyon analizi",
+      "D": "Apriori algoritması",
+      "E": "k-en yakın komşu algoritması"
+    },
+    "correctAnswer": "D",
+    "explanation": "Soruda verilen kalıp, ardışık veya birlikte gerçekleşen olayların ilişkisini gösteren (A olayından sonra B olayı, ondan sonra C olayı gerçekleşir mantığı) bir “birliktelik/dizi kuralı”dır (Association Rule). Veri madenciliğinde müşterilerin sepet analizlerini yapmak, hangi üründen veya davranıştan sonra hangisinin geldiğini (A => B) bulmak için kullanılan en temel algoritma “Apriori” algoritmasıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-41641fd0b70e",
+    "unitNumber": 78,
+    "text": "Yukarıdaki R kodunda yer alan cut() fonksiyonunun kullanım amacı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "\"Düşük\", \"Orta\", \"Yüksek\" ve \"Çok Yüksek\" kategorilerine sahip Pageviews niteliğini nümerik hale getirmek.",
+      "B": "Pageviews niteliğine ait tüm gözlemleri, kategori ayrımı yapılmaksızın bir araya getirmek.",
+      "C": "Pageviews niteliğini \"Düşük\", \"Orta\", \"Yüksek\" ve \"Çok Yüksek\" aralıklarına bölerek kategorik hale getirmek.",
+      "D": "Pageviews niteliğini temel alarak veri setini 0, 1 ve 0.25 oranlarında farklı alt veri çerçevelerine (data frame'lere) bölmek.",
+      "E": "Pageviews niteliği \"Düşük\", \"Orta\", \"Yüksek\" ve \"Çok Yüksek\" kategorilerine ait tüm gözlemleri veri setinden silmek"
+    },
+    "correctAnswer": "C",
+    "explanation": "R dilinde `cut()` fonksiyonunun görevi, sürekli (nümerik) bir değişkeni belirli sınır değerlerinden (breaks) keserek faktör/kategori (kategorik değişken) haline getirmektir. Bu kod, sayısal “Pageviews” verisini çeyreklik dilimlere (quantile) bölüyor ve bu dilimlere `labels=` parametresiyle “Düşük, Orta, Yüksek, Çok Yüksek” şeklinde isimler atayarak kategorize ediyor.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-05331f0f9017",
+    "unitNumber": 79,
+    "text": "Aşağıdakilerden hangisi birliktelik kuralları madenciliği (association rule mining) hakkında doğru bir ifadedir?",
+    "options": {
+      "A": "Birliktelik kuralları yalnızca alışveriş sepeti analizi için geliştirilmiştir ve başka alanlarda uygulanamaz.",
+      "B": "Birliktelik kuralları madenciliğinin temel amacı, verilerdeki rastgele ilişkileri ortadan kaldırmaktır.",
+      "C": "Birliktelik kuralları yalnızca sınıflandırma problemlerinde kullanılır.",
+      "D": "Birliktelik kuralları, sadece sayısal veri ile çalışır; kategorik veri ile analiz yapmak mümkün değildir.",
+      "E": "Birliktelik kuralları madenciliği, sık öğe kümeleri ve güven eşiğini karşılayan kuralların bulunması olmak üzere iki aşamalı bir süreçtir."
+    },
+    "correctAnswer": "E",
+    "explanation": "Birliktelik kuralları madenciliği (örneğin Apriori algoritması), veri tabanında eş zamanlı olarak sıklıkla birlikte gerçekleşen olayları bulur. Bu madencilik her zaman iki temel aşamada gerçekleşir: Birinci adımda belirlenen minimum “destek (support)” eşiğini aşan “sık öğe kümeleri” (frequent itemsets) bulunur; ikinci adımda ise bu sık kümelerden, minimum “güven (confidence)” eşiğini sağlayan güçlü “kurallar” üretilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-78e0209bc31a",
+    "unitNumber": 80,
+    "text": "Bir web sitesi ziyaretçisinin siteyi ilk ziyaret ettiği sayfa aşağıdaki hangi veri türüne örnektir?",
+    "options": {
+      "A": "Zaman serisi",
+      "B": "Mantıksal",
+      "C": "Karmaşık",
+      "D": "Kategorik",
+      "E": "Nümerik"
+    },
+    "correctAnswer": "D",
+    "explanation": "Bir web sitesinde kullanıcının giriş yaptığı ilk sayfa (landing page) genellikle bir URL veya bir sayfa ismidir (Örn: “Anasayfa”, “İletişim”, “/urunler/1”). Bu veriler sayılabilen, toplanıp çıkarılabilen rakamsal/matematiksel değerler (nümerik) değildir; belirli sınıfları veya isimleri ifade eden metinsel verilerdir. Bu tür sınıflandırıcı verilere istatistik ve veri biliminde “Kategorik (Categorical) Veri” adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1262b308906c",
+    "unitNumber": 81,
+    "text": "A -> B şeklinde tanımlanan bir kural için güven değeri aşağıda verilen hangi olasılığı ifade eder?",
+    "options": {
+      "A": "P(A) x P(B)",
+      "B": "P(A|B)",
+      "C": "P(A &cup; B)",
+      "D": "1 - P(A &cap; B)",
+      "E": "P(B|A)"
+    },
+    "correctAnswer": "E",
+    "explanation": "Birliktelik kuralları analizinde A -> B (A ürününü alan B ürününü de alır) kuralı için “Güven” (Confidence) ölçütü; A ögesini içeren işlemlerin yüzde kaçında B ögesinin de bulunduğunu ifade eder. İstatistiksel ve matematiksel olarak bu durum bir “Koşullu Olasılık” ifadesidir ve P(B|A) şeklinde yazılır. Yani A olayının gerçekleştiği bilindiğine (veya gerçekleşmesi koşuluna) göre B olayının da gerçekleşme olasılığını temsil eder.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-917b4a92a86c",
+    "unitNumber": 82,
+    "text": "Farklı küme sayılarına göre yapılan kümeleme analizleri sonucu elde edilen Silhouette indeksi değerleri aşağıdaki seçeneklerde yer almaktadır. Buna göre aşağıdaki hangi seçenekte verilen kümeleme performansı diğerlerine göre en iyisidir?",
+    "options": {
+      "A": "0.28",
+      "B": "0.8",
+      "C": "0.35",
+      "D": "0.50",
+      "E": "0.85"
+    },
+    "correctAnswer": "E",
+    "explanation": "Makine öğrenmesinde kümeleme (clustering) algoritmalarının başarısını ölçmek için kullanılan Silhouette İndeksi, bir verinin kendi kümesine ne kadar benzediğini ve diğer kümelere ne kadar uzak olduğunu ölçer. Bu metrik -1 ile +1 arasında değerler alır. İndeks değerinin +1’e ne kadar yakınsa, veri noktalarının doğru ve homojen kümelere atandığı; yani küme içi benzerliğin maksimum, kümeler arası farklılığın ise belirgin olduğu anlaşılır. Verilen seçenekler arasında 1’e en yakın olan (en yüksek) değer 0.85 olduğundan, en iyi performans bu değere aittir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d7adac855653",
+    "unitNumber": 83,
+    "text": "tahminler <- knn(train = X_egitim, test = X_test, cl = y_egitim, k = 3) Yukarıda k-En Yakın Komşu algoritması kullanılarak yapılan bir sınıflandırma adımı görülmektedir. knn() fonksiyonundaki parametrelerden hangisi eğitim veri setindeki hedef niteliği ifade eder?",
+    "options": {
+      "A": "cl",
+      "B": "tahminler",
+      "C": "k",
+      "D": "train",
+      "E": "test"
+    },
+    "correctAnswer": "A",
+    "explanation": "R programlama dilinde sınıflandırma yapmak için kullanılan knn() (k-Nearest Neighbors) fonksiyonunda yer alan “cl” parametresi “class” kelimesinin kısaltmasıdır ve eğitim veri setindeki gerçek etiketleri (hedef/sınıf niteliğini) belirtmek için kullanılır. “train” parametresi eğitim verilerini, “test” parametresi sınanacak test verilerini, “k” ise komşu sayısını temsil eder. Sınıflandırma modelinin neyi tahmin etmesi gerektiğini öğrenebilmesi için “cl” parametresine (hedef değişkene) ihtiyaç vardır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-0a2c04626500",
+    "unitNumber": 84,
+    "text": "Yukarıda verilen kullanıcı tanımlı R fonksiyonunun görevi aşağıdaki seçeneklerin hangisinde doğru şekilde ifade edilmiştir?",
+    "options": {
+      "A": "Verilen iki sayıyı çarpar ve sonucu döndürür.",
+      "B": "Verilen iki metinsel ifadeyi yan yana yazdırır.",
+      "C": "Verilen ilk sayının ikinci sayıya bölümünden kalanı bulur.",
+      "D": "Verilen ilk sayının, ikinci sayı kadar kuvvetini alır ve sonucu döndürür.",
+      "E": "Mantıksal (logical) iki değeri tersine çevirir."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-380ff1b0bc7e",
+    "unitNumber": 85,
+    "text": "veriSeti adlı bir data frame’de (veri çerçevesinde) eksik değerlerin sütun bazında sayısını hesaplamak için aşağıda verilen R kodlarından hangisi kullanılır?",
+    "options": {
+      "A": "na_summary(veriseti)",
+      "B": "missing_values(veriseti)",
+      "C": "count_na(veriseti)",
+      "D": "sum(is.na(veriseti))",
+      "E": "colSums(is.na(veriseti))"
+    },
+    "correctAnswer": "E",
+    "explanation": "R’da is.na(veriseti) komutu veri seti içerisindeki her bir hücreyi kontrol ederek boş (NA) olanlara TRUE, dolu olanlara FALSE mantıksal değerini atar. Ancak bizim amacımız veri setinin tamamındaki eksik değerleri tek bir sayı olarak bulmak değil (sum komutu bunu yapar), “sütun bazında” yani her bir özniteliğin kendi içindeki boşluk sayısını bulmaktır. Bu işlem, mantıksal değerlerin sütunlar üzerinden toplanmasını sağlayan colSums() fonksiyonunun is.na() ile birlikte colSums(is.na(veriseti)) biçiminde kullanılmasıyla gerçekleştirilir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-16ebb96b7d25",
+    "unitNumber": 86,
+    "text": "Aşağıdaki seçeneklerde verilen R fonksiyonlarından hangisi, k-ortalamalar algoritmasının oluşturduğu kümeleri görselleştirmek için kullanılır?",
+    "options": {
+      "A": "summary(kmeans_model)",
+      "B": "fviz_cluster(kmeans_model, data = veri)",
+      "C": "plot(kmeans_model)",
+      "D": "hist(kmeans_model)",
+      "E": "cor(kmeans_model)"
+    },
+    "correctAnswer": "B",
+    "explanation": "R dilinde factoextra paketi içerisinde yer alan fviz_cluster() fonksiyonu, k-ortalamalar (k-means) ve benzeri kümeleme algoritmalarının ürettiği sonuçları boyut indirgeme teknikleri (genellikle PCA) kullanarak iki boyutlu düzlemde estetik ve anlaşılır bir şekilde görselleştirmek için geliştirilmiş spesifik bir fonksiyondur. Diğer fonksiyonlar genel istatistiksel özetler veya farklı grafik türleri üretir ancak küme sınırlarını ve dağılımını çizmek için fviz_cluster kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-82b9c96d2a4e",
+    "unitNumber": 87,
+    "text": "Yukarıdaki R kod satırı ile oluşturulacak grafik aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Kutu grafiği",
+      "B": "Çizgi grafiği",
+      "C": "Yoğunluk grafiği",
+      "D": "Çubuk grafiği",
+      "E": "Histogram"
+    },
+    "correctAnswer": "A",
+    "explanation": "ggplot2 kütüphanesindeki grafik katmanları (geom’lar) grafiğin türünü belirler. Kod yapısındaki geom_boxplot() fonksiyonu, verilerin çeyrekliklerini, medyanını ve aykırı değerlerini (outlier) görselleştirmeye yarayan Kutu Grafiği (Boxplot veya Kutu-Bıyık Grafiği) oluşturmak için kullanılır. Kodun içerisindeki outlier.color=”pink” gibi argümanlar da bu kutu grafiğindeki aykırı değer noktalarının görsel olarak özelleştirildiğini göstermektedir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-825dc990651e",
+    "unitNumber": 88,
+    "text": "Aşağıdakilerden hangisi R’da veri görselleştirme için kullanılan kütüphanelerden biri değildir?",
+    "options": {
+      "A": "shiny",
+      "B": "ggplot2",
+      "C": "lattice",
+      "D": "dplyr",
+      "E": "plotly"
+    },
+    "correctAnswer": "D",
+    "explanation": "R ekosisteminde ggplot2, lattice ve plotly doğrudan her türlü interaktif veya statik grafiği çizmek (veri görselleştirme) amacıyla kullanılan temel paketlerdir. Shiny ise R tabanlı interaktif görsel web uygulamaları/panolar (dashboard) oluşturmayı sağlayan bir arayüz aracıdır. Ancak “dplyr” paketi, verileri görselleştirmek için değil; verileri manipüle etmek, filtrelemek (filter), seçmek (select), dönüştürmek (mutate) ve özetlemek (summarise) gibi yapısal veri işleme operasyonları için kullanılan çok popüler bir veri manipülasyon kütüphanesidir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-02074a58a065",
+    "unitNumber": 89,
+    "text": "Web zekâsı ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
+    "options": {
+      "A": "Yapay zekâ ve makine öğrenmesi tekniklerini içerir.",
+      "B": "Webden gizli örüntü ve şablonları belirlemek için veri bilimi yöntemlerinden yararlanır.",
+      "C": "Yalnızca sosyal medya ile ilgili veri analizine odaklanır.",
+      "D": "Web tabanlı hizmetlerin optimizasyonunda kullanılır.",
+      "E": "Web üzerindeki verilerden önemli bilgileri çıkarmayı amaçlar."
+    },
+    "correctAnswer": "C",
+    "explanation": "Web Zekası (Web Intelligence), internet ortamındaki devasa, karmaşık yapıdaki verileri yapay zeka, makine öğrenmesi, veri madenciliği ve doğal dil işleme gibi ileri teknolojik yaklaşımlarla işleyip anlamlı bilgi ve örüntüler çıkarmayı hedefler. Sadece sosyal medyaya odaklanan disiplin “Sosyal Medya Analitiği”dir. Web zekası çok daha geniş bir şemsiye olup; web içerik madenciliği, web yapı madenciliği (bağlantı analizleri), arama motoru optimizasyonları ve e-ticaret sitelerindeki kullanıcı navigasyon (clickstream) davranışlarını (web kullanım madenciliği) da içermektedir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7634995a3d2d",
+    "unitNumber": 90,
+    "text": "Yukarıda verilen ekran görüntüsüne göre web trafiği analizinde kullanılacak veri seti için aşağıda verilen ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Veri setinde toplamda 200 adet etiket, 15 adet gözlem bulunur.",
+      "B": "Veri setinde toplamda 200 adet nitelik, 15 adet gözlem bulunur.",
+      "C": "Veri setinde toplamda 200 adet örnek, 15 adet etiket bulunur.",
+      "D": "Veri setinde toplamda 200 adet sütun, 15 adet satır bulunur.",
+      "E": "Veri setinde toplamda 200 adet gözlem, 15 adet nitelik bulunur."
+    },
+    "correctAnswer": "E",
+    "explanation": "R programlama dilinde bir veri setinin (data frame) yapısı incelendiğinde (örneğin str() fonksiyonu ile), ekranda görülen “obs.” (observations) ifadesi satır sayısını yani gözlemleri, “variables” ifadesi ise sütun sayısını yani nitelikleri (değişkenleri) belirtir. Buna göre “200 obs. of 15 variables” ifadesi, veri setinin 200 satırdan (gözlemden) ve 15 sütundan (nitelikten/değişkenden) oluştuğunu kesin olarak ifade eder.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d2ea16fb5c58",
+    "unitNumber": 91,
+    "text": "Yukarıdaki kod bloğunda sınıflandırma performans metriklerinin pozitif sınıf olarak “sadık” kategorisini seçmesi için … ile verilen boşluğa aşağıdaki seçeneklerden hangisi getirilmelidir?",
+    "options": {
+      "A": "positive == \"sadık\"",
+      "B": "positive = \"sadık\"",
+      "C": "kayıp = \"negative\"",
+      "D": "negative = \"kayıp\"",
+      "E": "sadık = \"positive\""
+    },
+    "correctAnswer": "B",
+    "explanation": "caret paketi ile karmaşıklık matrisi (Confusion Matrix) hesaplanırken doğruluk (accuracy), duyarlılık (sensitivity), kesinlik (precision) gibi çok önemli performans metriklerinin doğru bir şekilde hangi sınıfa göre odaklanarak hesaplanacağını sisteme belirtmek gerekir. Sınıflandırmada ilgilenilen “Hedef Sınıfı” atamak için argüman olarak ‘positive’ anahtar kelimesi kullanılır. Sistemin “sadık” sınıfını pozitif vaka olarak baz alması için ilgili parametre alanına atama operatörü (=) kullanılarak “positive = ‘sadık’” tanımlaması yazılmalıdır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7dfe3c60800a",
+    "unitNumber": 92,
+    "text": "Aşağıdaki R kodlarından hangisi, k-ortalamalar algoritması ile bir kümeleme modeli oluşturur?",
+    "options": {
+      "A": "summary(mean(veri$Revenue))",
+      "B": "kmeans(veri, centers = 5, nstart = 25)",
+      "C": "tree(revenue ~ x, data=veri)",
+      "D": "lm(revenue ~ pageviews, data = veri)",
+      "E": "hclust(mean(veri))"
+    },
+    "correctAnswer": "B",
+    "explanation": "R ortamında k-ortalamalar (K-Means) kümeleme algoritmasını verisetine uygulamak için stats paketindeki yerleşik kmeans() fonksiyonu kullanılır. Bu fonksiyona ilgili veri seti, kaç küme (k) oluşturulacağı bilgisini içeren “centers” parametresi ve algoritmanın rastgele başlangıç noktalarından kaç defa tekrar deneyeceğini belirten “nstart” parametresi argüman olarak verilir. lm() regresyon için, tree() karar ağaçları için ve hclust() hiyerarşik kümeleme için kullanılan komutlardır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-bdcf402215cb",
+    "unitNumber": 93,
+    "text": "caret::dummyVars(” ~ Device”, data = veri) Bir araştırmacı R’da yukarıdaki kod satırında verildiği gibi caret paketinden dummyVars() fonksiyonunu çağırmışsa, aşağıdaki seçeneklerde verilenlerden hangisini gerçekleştirecek demektir?",
+    "options": {
+      "A": "aykırı değer tespiti",
+      "B": "veri tamamlama",
+      "C": "veri ayrıklaştırma",
+      "D": "yapay kodlama",
+      "E": "tekrar eden verilerin tespiti"
+    },
+    "correctAnswer": "D",
+    "explanation": "Makine öğrenmesi modelleri algoritmik olarak genellikle metinsel (kategorik) verilerle işlem yapamazlar, tüm girdilerin sayısal (numerik) formata çevrilmesi gerekir. caret paketinde yer alan dummyVars() fonksiyonu, kategorik veya nominal veri sütunlarını (Örneğin Device değişkenindeki ‘Mobil’, ‘Masaüstü’, ‘Tablet’ gibi değerleri) ikili sistemde sadece 0 ve 1’lerden oluşan ayrı sütunlara dönüştürerek modele uygun hale getirir. İstatistik biliminde ve makine öğrenmesinde bu dönüştürme ve yeni kukla değişkenler üretme işlemine Yapay Kodlama (Dummy Coding / One-Hot Encoding) adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ec32391ae3c7",
+    "unitNumber": 94,
+    "text": "Aşağıdaki seçeneklerden hangisi web analitiği kapsamında veri toplamak için kullanılan veri kaynaklarından biri değildir?",
+    "options": {
+      "A": "BIOS ayar dosyaları",
+      "B": "Çerezler",
+      "C": "Sunucu logları",
+      "D": "JavaScript sayfa etiketleri",
+      "E": "Clickstream verisi"
+    },
+    "correctAnswer": "A",
+    "explanation": "Web analitiği; kullanıcıların web sitelerindeki davranışlarını anlamak ve optimize etmek için çeşitli dijital izleri toplar. Bu izler genellikle çerezler (cookies), sunucu logları (server logs), sayfalara eklenen JavaScript etiketleri (page tags) ve tıklama akışı verilerinden (clickstream) elde edilir. Ancak BIOS (Basic Input/Output System) ayar dosyaları, bir bilgisayarın donanımsal başlatma sürecini yöneten donanım seviyesindeki yazılımlar olup, web trafiği veya kullanıcı davranışıyla hiçbir ilgisi bulunmamaktadır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-129e6b5f759f",
+    "unitNumber": 95,
+    "text": "Yukarıdaki R kodu ile bir işlem veri seti (transactions) üzerinde apriori algoritması çalıştırılmaktadır. apriori() fonksiyonundaki aşağıdaki parametrelerden hangisi, bir kuralın taşıması gereken en düşük güven değerini belirlemektedir?",
+    "options": {
+      "A": "supp",
+      "B": "trans",
+      "C": "conf",
+      "D": "minlen",
+      "E": "parameter"
+    },
+    "correctAnswer": "C",
+    "explanation": "Birliktelik kuralı çıkarımı (Association Rule Mining) algoritmalarından biri olan Apriori algoritmasında, kuralların ne kadar güçlü olduğunu belirleyen temel metriklerden biri “Güven” (Confidence) değeridir. R’daki arules paketinde apriori() fonksiyonu çağrılırken, bu güven değeri “conf” parametresi ile ifade edilir. “supp” parametresi destek (support) değerini, “minlen” parametresi ise kuralın içermesi gereken minimum öge sayısını belirler.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8b2c606bb12e",
+    "unitNumber": 96,
+    "text": "alt_kurallar <- kurallar[quality(kurallar )$confidence > 0.70] Yukarıdaki R kod bloğu, apriori algoritması ile oluşturulan kuralların içinden güven değeri yüzde 70’den büyük olanları filtrelemektedir. Aşağıdaki hangi fonksiyon bu filtreleme sonucunda elde edilen kural alt kümesinin ekrana yazdırılmasını sağlar?",
+    "options": {
+      "A": "plot(alt_kurallar)",
+      "B": "summary(alt_kurallar)",
+      "C": "subset(alt_kurallar)",
+      "D": "inspect(alt_kurallar)",
+      "E": "merge(alt_kurallar)"
+    },
+    "correctAnswer": "D",
+    "explanation": "R dilinde birliktelik kurallarını çıkartan ‘arules’ paketinde, apriori() fonksiyonu ile üretilen kuralların (lhs => rhs şeklinde) destek, güven, lift gibi metrikleriyle beraber okunabilir bir liste formatında konsola/ekrana yazdırılması işlemi inspect() fonksiyonu aracılığıyla gerçekleştirilir. summary() fonksiyonu sadece genel istatistiksel özet bilgileri verirken, kuralların kendisini detaylıca incelemek için inspect() kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-096293519761",
+    "unitNumber": 97,
+    "text": "Bir sınıflandırma modelinde “Doğruluk” (accuracy) değeri aşağıdaki seçeneklerin hangisinde doğru biçimde açıklanmıştır?",
+    "options": {
+      "A": "Pozitif olarak tahmin edilen örneklerin ne kadarının gerçekten pozitif olduğunu gösterir.",
+      "B": "Sadece negatif sınıfın doğru tahmin edilme oranını ifade eder.",
+      "C": "Doğru sınıflandırılan örneklerin (TP+TN), tüm tahminlere oranıdır (TP+FP+FN+TN).",
+      "D": "Yanlış sınıflandırılan örneklerin (FP+FN) tüm tahminlere oranıdır (TP+FP+FN+TN).",
+      "E": "Tüm pozitif ve negatif örneklerin toplamını verir."
+    },
+    "correctAnswer": "C",
+    "explanation": "Makine öğrenmesinde sınıflandırma modellerinin performansını değerlendirmek için kullanılan “Doğruluk” (Accuracy) metriği, modelin yaptığı tüm tahminler içerisinden kaç tanesinin (hem pozitif sınıf için hem de negatif sınıf için) doğru olarak tahmin edildiğini gösterir. Matematiksel olarak formülü; Gerçek Pozitiflerin (TP – True Positive) ve Gerçek Negatiflerin (TN – True Negative) toplamının, tahmin edilen tüm veri kümesine (TP + TN + FP + FN) bölünmesi ile hesaplanır. A şıkkı kesinliği (precision), B şıkkı ise özgüllüğü (specificity) ifade etmektedir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-eb142bcab35c",
+    "unitNumber": 98,
+    "text": "a <- 10L b <- 2.50 c <- a + b class(c) Yukarıdaki R kodu çalıştırıldığında c değişkeninin veri tipi (class) aşağıdaki seçeneklerin hangisinde verilmiştir?",
+    "options": {
+      "A": "integer",
+      "B": "factor",
+      "C": "numeric",
+      "D": "character",
+      "E": "logical"
+    },
+    "correctAnswer": "C",
+    "explanation": "R dilinde değişken tiplerinin (type coercion) birbirlerine nasıl dönüştüğünü ölçen bir sorudur. “10L” ifadesindeki ‘L’ harfi, sayının bellekte tam sayı (integer) olarak tutulmasını emreder. “2.50” gibi ondalıklı bir sayı ise doğası gereği ondalık yani “numeric” (veya double) tipindedir. R dili, veri kayıplarını önlemek adına bir tam sayı (integer) ile bir ondalıklı sayıyı (numeric) toplama gibi matematiksel işlemlere soktuğunda, her iki veriyi de en kapsayıcı tür olan ondalıklı formata dönüştürür (implicit coercion). Sonuçta 12.5 değeri oluşur ve bu değerin “class” fonksiyonu ile sınıfı sorgulandığında çıktı olarak “numeric” veri tipi döner.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-cd917fee91fe",
+    "unitNumber": 99,
+    "text": "Bir ziyaretçinin bir web sitesine girdikten sonra başka hiçbir sayfayı ziyaret etmeden çıkması durumunda aşağıda verilen hangi metrik artar?",
+    "options": {
+      "A": "Ortalama oturum süresi",
+      "B": "Sayfa derinliği",
+      "C": "Tıklama oranı",
+      "D": "Hemen çıkma oranı",
+      "E": "Dönüşüm oranı"
+    },
+    "correctAnswer": "D",
+    "explanation": "Web analitiğinde (Google Analytics vb. araçlarda) bir kullanıcının siteye bir giriş (landing) sayfasından ulaşıp, o sayfa haricinde sitenin içerisindeki başka hiçbir linke veya sayfaya tıklamadan (hiçbir etkileşimde bulunmadan) siteyi terk etmesi “Hemen Çıkma” (Bounce) olarak adlandırılır. Bu şekilde gerçekleşen tek sayfalık oturumların, toplam oturum sayısına oranlanmasıyla elde edilen metrik “Hemen Çıkma Oranı”dır (Bounce Rate).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  }
+]

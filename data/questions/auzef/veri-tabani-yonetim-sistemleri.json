@@ -1,1 +1,1023 @@
-[]
+[
+  {
+    "id": "s-538894d12fb2",
+    "unitNumber": 1,
+    "text": "Kredi (KrediNo, Ad, Soyad, KrediMiktari) şeklinde belirtilmiş olan bir tabloda yalnızca KrediMiktari 5000 TL’nin üzerinde olan işlemlerin sorgulatılması için aşağıdaki İşlemlerden hangisi kullanılır?",
+    "options": {
+      "A": "Atma",
+      "B": "Birleşim",
+      "C": "Kesişim",
+      "D": "Kartezyen çarpım",
+      "E": "Seçim"
+    },
+    "correctAnswer": "E",
+    "explanation": "İlişkisel cebirde (Relational Algebra), bir tablodan belirli bir koşulu sağlayan satırları (kayıtları) filtreleyerek alt bir küme oluşturma işlemine “Seçim” (Selection) işlemi denir ve Sigma (σ) sembolü ile gösterilir. “KrediMiktari > 5000” koşulu bir satır filtreleme işlemi olduğu için bu operasyon kesinlikle bir seçim işlemidir. (Atma/İzdüşüm ise sütun seçmek için kullanılır).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-676d3dd8cfe9",
+    "unitNumber": 2,
+    "text": "Normal formlar ile ilgili aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Normalleştirme işlemi temelde veri tekrarını engellemek için yapılır.",
+      "B": "Birinci normal formda hazırlanmış bir tabloda ekleme, silme ve güncelleme sırasında sorunlar olabilir.",
+      "C": "Normal formun derecesi arttıkça bozulma oranı da artmaktadır.",
+      "D": "Boyce-Codd Normal Formu Üçüncü ve Dördüncü Normal Formlar arasında yer alır.",
+      "E": "Birinci normal formdan ikinci normal forma geçişte kısmi bağımlılıkların ortadan kaldırılması gerekmektedir."
+    },
+    "correctAnswer": "C",
+    "explanation": "Normalizasyonun (Normalleştirme) temel amacı veri tekrarlarını (redundancy) önlemek ve buna bağlı oluşan ekleme, silme ve güncelleme anomalilerini (bozulmaları) ortadan kaldırmaktır. Dolayısıyla normal formun derecesi (seviyesi) arttıkça (1NF -> 2NF -> 3NF), veri tabanının mimarisi iyileşir, tablolar daha düzenli hale gelir ve anomali (bozulma) oranı artmaz, tam aksine *azalır* ve sıfıra yaklaşır. Bu sebeple C şıkkı mantıksal olarak yanlıştır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-33b12aef7f79",
+    "unitNumber": 3,
+    "text": "Bir veri tabanı tablosunda bir alanın içerisindeki verilerin VARCHAR(10) olması demek ne anlama gelmektedir?",
+    "options": {
+      "A": "Veriler en az 10(on) karakter uzunluğunda olmalıdır.",
+      "B": "Bu alana en az 10 adet veri girilebilir.",
+      "C": "Veriler kesin 10(on) karakter uzunluğunda olmalıdır.",
+      "D": "Veriler en fazla 10(on) karakter uzunluğunda olmalıdır.",
+      "E": "Bu alana en fazla 10 adet veri girilebilir."
+    },
+    "correctAnswer": "D",
+    "explanation": "VARCHAR (Variable Character) veri türü, içerisine dinamik uzunlukta metinsel (alfanümerik) karakter alan bir formattır. Parantez içerisine yazılan sayı, o alana girilebilecek *maksimum* karakter sınırını (kapasitesini) ifade eder. VARCHAR(10) tanımlı bir hücreye 3 karakterlik (“Ali”) veya 8 karakterlik (“Ayşe Gül”) bir veri girilebilir; diskte sadece girilen boyut kadar yer kaplar. Ancak 11 karakter girilemez. Dolayısıyla bu değer “en fazla 10 karakter uzunluğunda” olabileceği anlamına gelir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-526319594ded",
+    "unitNumber": 4,
+    "text": "Veri tabanlarında tablolar elle ya da sorgu ile oluşturulabilir. Aşağıdakilerden hangisi sorgu ile tablo oluşturmayı sağlayan deyimdir?",
+    "options": {
+      "A": "DROP TABLE",
+      "B": "CREATE TABLE",
+      "C": "DELETE TABLE",
+      "D": "INSERT TABLE",
+      "E": "FILL TABLE"
+    },
+    "correctAnswer": "B",
+    "explanation": "SQL (Yapısal Sorgulama Dili) komutları DDL (Veri Tanımlama) ve DML (Veri İşleme) olarak ayrılır. Veri tabanında yeni bir tablo nesnesi yaratmak için kullanılan standart DDL komutu “CREATE TABLE” deyimidir. DROP TABLE tabloyu tamamen silmek, DELETE ise tablonun içindeki verileri silmek için kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9bfa55db495f",
+    "unitNumber": 5,
+    "text": "Sırasıyla, k,n ve m elemanlı üç tablonun kartezyen çarpımı sonucunda oluşan tablonun eleman sayısı kaç olur?",
+    "options": {
+      "A": "kxm",
+      "B": "Bilinemez",
+      "C": "kxn",
+      "D": "kxmxn",
+      "E": "Yapılacak işleme göre değişir"
+    },
+    "correctAnswer": "D",
+    "explanation": "Veri tabanı cebrinde (ve genel matematikte küme teorisinde) Kartezyen Çarpım, katılan tüm kümelerin (tabloların) elemanlarının (satırlarının) birbirleriyle birebir kombinasyonlarının alınması işlemidir. Eğer birinci tabloda k adet satır, ikinci tabloda n adet satır ve üçüncü tabloda m adet satır varsa; her satır birbiriyle eşleşeceğinden toplam sonuç tablosunun satır (eleman) sayısı basitçe k × n × m formülü ile bulunur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ba46ba5f7817",
+    "unitNumber": 6,
+    "text": "İki veya daha fazla veri tabanı tablosunun tüm olası eşleştirmelerini bir araya getiren cebirsel işlem aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Kesişim",
+      "B": "Birleşim",
+      "C": "Kartezyen Çarpım",
+      "D": "Fark",
+      "E": "Doğal Birleşim"
+    },
+    "correctAnswer": "C",
+    "explanation": "Kartezyen Çarpım (Cartesian Product / Cross Join), iki tablonun aralarında herhangi bir özel eşleştirme koşulu (WHERE/ON) olmaksızın birbirleriyle çarpılmasıdır. Birinci tablodaki her bir satırın, ikinci tablodaki her bir satırla tek tek eşleştirilmesiyle devasa bir kombinasyon havuzu (tüm olası eşleştirmeler) elde edilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-fa293e819a41",
+    "unitNumber": 7,
+    "text": "Veri girişi yapılacak bir tablodaki sütunun değer alıp almaması gerektiğini belirlemek için kullanılan ifade aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Check",
+      "B": "View",
+      "C": "Not Null",
+      "D": "Unique",
+      "E": "Default"
+    },
+    "correctAnswer": "C",
+    "explanation": "Veri tabanı tasarımında, bazı kritik sütunların boş bırakılması sistemsel sorunlara yol açabilir (Örn: Bir personelin adının girilmemesi). Bu durumu önlemek için sütunlara uygulanan kısıtlamaya (constraint) “NOT NULL” (Boş Bırakılamaz) adı verilir. Bu kısıtlama, o alana bir kayıt eklenirken mutlaka bir veri değerinin girilmesini zorunlu kılar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-80d651a28dbc",
+    "unitNumber": 8,
+    "text": "Tabloda depolanan her satırı benzersiz şekilde tanımlayan bir veya daha çok alandan oluşabilen anahtar aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Süper Anahtar",
+      "B": "İkincil Anahtar",
+      "C": "Yedek Anahtar",
+      "D": "Birincil Anahtar",
+      "E": "Yabancı Anahtar"
+    },
+    "correctAnswer": "D",
+    "explanation": "Bir ilişkisel veri tabanı tablosundaki her bir kaydı (satırı) diğerlerinden kesin ve benzersiz (unique) bir biçimde ayırmak için seçilen referans alana “Birincil Anahtar” (Primary Key) denir. Birincil anahtarlar boş (NULL) bırakılamaz ve tablodaki hiçbir iki satırda aynı birincil anahtar değeri bulunamaz (örneğin TC Kimlik No veya Öğrenci No gibi).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f7238b1a6877",
+    "unitNumber": 9,
+    "text": "Bir anahtara bağlı olmayan geçişli bağımlılıklar tablolara dönüştürüldüğü zaman veri tabanlarındaki hangi normal form elde edilmiş olur?",
+    "options": {
+      "A": "5NF",
+      "B": "4NF",
+      "C": "INF",
+      "D": "2NF",
+      "E": "3NF"
+    },
+    "correctAnswer": "E",
+    "explanation": "Veri tabanı normalizasyon süreçlerinde her normal form (NF) belirli bir veri anomalisini çözer. 1NF tekrarlayan grupları engeller, 2NF kısmi bağımlılıkları (partial dependency) ortadan kaldırır. “Üçüncü Normal Form” (3NF) ise anahtar olmayan sütunların (non-key attributes), yine anahtar olmayan başka bir sütuna bağımlı olmasını ifade eden “Geçişli Bağımlılıkları” (Transitive Dependency) ortadan kaldırmayı şart koşar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4c7e7efbc56c",
+    "unitNumber": 10,
+    "text": "Bir veri tabanı tablosundaki bir alandaki tüm verilerin ortak olarak sahip olması gereken özellik aşağıdaki isimlerin hangisi ile ifade edilebilir?",
+    "options": {
+      "A": "Veri adı",
+      "B": "Veri türü",
+      "C": "Veri alanı",
+      "D": "Veri nesnesi",
+      "E": "Veri sayfası"
+    },
+    "correctAnswer": "B",
+    "explanation": "İlişkisel bir veri tabanında bir alan (sütun) oluşturulduğunda, o alana girilecek tüm verilerin (satırların) yapısal formatı önceden belirlenmelidir. Örneğin, “Doğum_Tarihi” sütunundaki tüm veriler tarih (Date) formatında, “Maas” sütunundakiler ise sayısal (Integer/Decimal) formatta olmalıdır. Bu ortak karakteristik zorunluluğa “Veri Türü” (Data Type) denir ve veri bütünlüğünü sağlar.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-963eec26cd4c",
+    "unitNumber": 11,
+    "text": "Veri tabanı tablolarında satır ve sütunların kesiştiği noktaya ne ad verilir?",
+    "options": {
+      "A": "Alan",
+      "B": "Kayıt",
+      "C": "Form",
+      "D": "Hücre",
+      "E": "Sayfa"
+    },
+    "correctAnswer": "D",
+    "explanation": "Tıpkı Excel (elektronik tablo) mantığında olduğu gibi, veri tabanı tablolarında da dikey (sütun/alan) ve yatay (satır/kayıt) eksenlerin birleştiği, içerisine spesifik bir atomik verinin (örneğin Ali isminin veya 25 yaş değerinin) yazıldığı en küçük bilgi taşıyıcı kutucuklara “Hücre” (Cell) adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-895229fbdb0a",
+    "unitNumber": 12,
+    "text": "Ortak sütunlara sahip olan iki veya daha fazla veri tabam tablosu arasında kurulan bağlantı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Görünüm",
+      "B": "İlişki",
+      "C": "Varlık",
+      "D": "Form",
+      "E": "Veri"
+    },
+    "correctAnswer": "B",
+    "explanation": "İlişkisel Veri Tabanı Yönetim Sistemlerinin (RDBMS) temel mantığı, verilerin birbirinden bağımsız parçalar halinde tutulması ve gerektiğinde bu parçaların mantıksal bir bağ ile birleştirilmesidir. Farklı tablolarda bulunan ortak alanlar (Birincil Anahtar – Yabancı Anahtar) aracılığıyla tabloların birbirine bağlanarak anlamlı bir bütün oluşturmasına “İlişki” (Relationship) denir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d6eed50e5214",
+    "unitNumber": 13,
+    "text": "Aşağıdakilerden hangisi bir veri tabam tablosunda yapılan seçim işleminde kullanılabilecek olan bir karşılaştırma işlemi değildir?",
+    "options": {
+      "A": "Eşit değildir",
+      "B": "Küçüktür",
+      "C": "Büyüktür",
+      "D": "Eşittir",
+      "E": "Elemanıdır"
+    },
+    "correctAnswer": "E",
+    "explanation": "Veri tabanı sorgularında (SQL’de WHERE cümleciği veya ilişkisel cebirde Seçim – Sigma operatörü) verileri filtrelemek için mantıksal ve ilişkisel operatörler kullanılır. Eşittir (=), Büyüktür (>), Küçüktür (<) ve Eşit Değildir (, !=) en temel karşılaştırma operatörleridir. Ancak küme teorisine ait olan “Elemanıdır” (∈) sembolü, doğrudan bir ilişkisel cebir karşılaştırma operatörü olarak bu bağlamda standart bir seçim işlemi operatörü değildir (SQL’deki IN operatörü benzer bir işlev görse de teorik temel karşılaştırmalar arasında sayılmaz).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-837cbeb1101b",
+    "unitNumber": 14,
+    "text": "Aşağıdakilerden hangisi “birincil anahtar” alanı için uygun değildir?",
+    "options": {
+      "A": "TC kimlik numarası",
+      "B": "Müşteri numarası",
+      "C": "Otomatik olarak artan bir sayı",
+      "D": "Doğum tarihi",
+      "E": "Memur sicil numarası"
+    },
+    "correctAnswer": "D",
+    "explanation": "Birincil anahtarın (Primary Key) en temel varoluş koşulu “benzersiz” (unique) olmasıdır. Aynı TC kimlik numarasına, müşteri numarasına veya sicil numarasına sahip iki farklı kişi olamaz; otomatik artan sayılar da (Auto Increment) asla tekrarlanmaz. Ancak aynı “Doğum Tarihine” sahip binlerce insan olabilir. Tekrarlanma ihtimali olan bir veri alanı asla birincil anahtar olarak kullanılamaz.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-7228f5422c84",
+    "unitNumber": 15,
+    "text": "Herhangi bir veri tabanı tablosu içerisinde çeşitli tekrarlı veriler mevcutsa bu tablonun hangi normal formda olduğu söylenebilir?",
+    "options": {
+      "A": "1NF",
+      "B": "4NF",
+      "C": "2NF",
+      "D": "3NF",
+      "E": "5NF"
+    },
+    "correctAnswer": "A",
+    "explanation": "Birinci Normal Form (1NF), bir tablodaki her hücrenin yalnızca tek (atomik) bir değer içermesini şart koşar ancak veri tekrarını (redundancy) bütünüyle engelleyemez. Kısmi bağımlılıklar henüz giderilmediği için 1NF aşamasında tablolarda ciddi boyutta tekrarlı veriler (örneğin aynı bölüm adının veya aynı müşteri adresinin defalarca yazılması) mevcuttur. Veri tekrarları, normalizasyon derecesi yükseldikçe (2NF, 3NF vb.) tabloların bölünmesiyle giderilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1b0464ae920a",
+    "unitNumber": 16,
+    "text": "Bir veri tabanının mantıksal yapısını tanımlarken kullanılan kavramlar, işlemler ve kurallar bütününe ne ad verilir?",
+    "options": {
+      "A": "Veri deposu",
+      "B": "Veri ambarı",
+      "C": "Veri tabam",
+      "D": "Veri mimarisi",
+      "E": "Veri modeli"
+    },
+    "correctAnswer": "E",
+    "explanation": "“Veri Modeli” (Data Model), verilerin veri tabanında nasıl yapılandırılacağını, mantıksal olarak nasıl organize edileceğini ve birbirleri ile olan ilişkilerinin, veri kısıtlamalarının (kuralların) ve işleme yöntemlerinin (operasyonların) ne tür bir mimariye oturtulacağını belirleyen kavramsal bir çatı ve araçlar bütünüdür. Hiyerarşik, Ağ (Network) ve İlişkisel veri modelleri bunlara en bilinen örneklerdir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-64bae147f5dc",
+    "unitNumber": 17,
+    "text": "Aşağıdakilerden hangisi bir veri tabanı tablosundaki bir alanın adı olabilir?",
+    "options": {
+      "A": "Veri Tabanı",
+      "B": "Öğretmen",
+      "C": "Rüya",
+      "D": "Meslek",
+      "E": "1306"
+    },
+    "correctAnswer": "D",
+    "explanation": "Veri tabanı tasarımında alan (sütun) isimlendirme kuralları vardır. Alan adlarında boşluk bırakılmaz (A şıkkındaki “Veri Tabam” yanlıştır). Alan adları sadece sayılardan oluşamaz (E şıkkı yanlıştır). Ayrıca alan isimleri, tutulacak verinin “kategorisini/türünü” yansıtmalıdır; spesifik bir değer (Öğretmen veya Rüya gibi) alan adı değil, kaydın (verinin) kendisidir. Bu nedenle bir kişinin yaptığı işi tanımlayan kategori başlığı olarak “Meslek” en uygun alan adıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2fae4df1c96a",
+    "unitNumber": 18,
+    "text": "Bir veri tabanı tablosunda yer alan öğrencilerin öğrenci no, ad, soyad gibi bilgilerinin tutulduğu kısımlara ne ad verilir?",
+    "options": {
+      "A": "Satır",
+      "B": "Alan",
+      "C": "Bilgi",
+      "D": "Kayıt",
+      "E": "Dosya"
+    },
+    "correctAnswer": "B",
+    "explanation": "İlişkisel veri tabanı modelinde tablolar satır (record/tuple) ve sütunlardan (field/attribute) oluşur. “Öğrenci no”, “ad”, “soyad” gibi her bir verinin türünü ve kategorisini belirten dikey yapı taşlarına “Alan” (Field veya Sütun) adı verilir. Satırlar (Kayıt) ise bu alanlara girilen verilerin bütünüyle oluşturduğu yatay bilgi dizileridir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8bc844a57636",
+    "unitNumber": 19,
+    "text": "Bir veri tabanı tablosundaki bir sütuna ait verilerin başka bir tablonun sütunundan getirilmesini sağlayan anahtar aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Birleşik anahtar",
+      "B": "Aday anahtar",
+      "C": "İkincil anahtar",
+      "D": "Birincil anahtar",
+      "E": "Yabancı anahtar"
+    },
+    "correctAnswer": "E",
+    "explanation": "Yabancı Anahtar (Foreign Key), bir tablodaki sütunun (veya sütunların), başka bir tablodaki Birincil Anahtarı (Primary Key) referans almasıdır. Bu anahtar sayesinde veri tekrarları engellenir (örneğin Siparişler tablosunda müşteri adını uzun uzun yazmak yerine sadece Müşteriler tablosundaki ID’sini referans vermek) ve tablolar arası veri bütünlüğü (Referential Integrity) sağlanmış olur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5f1e2adebb49",
+    "unitNumber": 20,
+    "text": "Varlık ilişki modelinde nesne, yer, kişi gibi kavramlar hangi öğe ile temsil edilir?",
+    "options": {
+      "A": "İlişki",
+      "B": "Sütun",
+      "C": "Nitelik",
+      "D": "Satır",
+      "E": "Varlık"
+    },
+    "correctAnswer": "E",
+    "explanation": "Varlık-İlişki Modelinde (ER Model), hakkında bilgi toplanabilen, bağımsız bir varoluşu olan, somut (Kişi, Araba, Şehir) veya soyut (Banka Hesabı, Şirket, Proje) her türlü nesneye veya kavrama “Varlık” (Entity) adı verilir. ER diyagramlarında genellikle dikdörtgenlerle sembolize edilirler. Bu varlıkların özellikleri (adı, rengi, boyu) Nitelik (Attribute), birbirleri ile etkileşimleri ise İlişki (Relationship) ile tanımlanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9524e4fc6f38",
+    "unitNumber": 21,
+    "text": "Aşağıdakilerden hangisi veritabanı hakkında söylenemez?",
+    "options": {
+      "A": "Birbirleriyle ilişkisi olan veriler tutulur.",
+      "B": "Kullanım amacına uygun olarak düzenlenmiş veriler topluluğunun mantıksal ve fiziksel olarak tanımları yapılır.",
+      "C": "Veriler sayısal ortamlarda saklanır ve gerektiğinde tekrar bir erişime olanak sağlar.",
+      "D": "Büyük boyutlarda verileri barındırır.",
+      "E": "Hiçbiri."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-396c520694b3",
+    "unitNumber": 22,
+    "text": "Bir veri tabanı yönetim sistemi yazılımı, karışık ve kapsamlı bir yazılımdır ve aşağıdaki işlerden hangisini gerçekleştirmez?",
+    "options": {
+      "A": "Veri tabanını oluşturmak ve yönetmek.",
+      "B": "Verinin birkaç dosyada güncellemesini sağlamak.",
+      "C": "Veri tabanına erişim yetkisi olan kullanıcılara erişim izni vermek.",
+      "D": "Kullanıcı isteklerine uygun olarak veriye erişimi sağlamak.",
+      "E": "Veri tabanında güncellemeler yapmak."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-8f49329fdf7d",
+    "unitNumber": 23,
+    "text": "Veri Ambarı aşağıdaki ifadelerin hangisiyle ifade edilebilir?",
+    "options": {
+      "A": "Veri tabalarının entegrasyonu.",
+      "B": "Bir veya birden çok tablonun birbiriyle ilişkilendirilmesi.",
+      "C": "İlişkisel veri tabanı.",
+      "D": "OLAP",
+      "E": "OLTP"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-385be5ff643e",
+    "unitNumber": 24,
+    "text": "Hangisi veri tabanı kullanmanın avantajı değildir?",
+    "options": {
+      "A": "Bilgi Saklamak",
+      "B": "Bilgiyi Şifrelemek",
+      "C": "Bilgiyi Analiz Etmek",
+      "D": "Bilgiyi Paylaşmak"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-e1f3748ebc82",
+    "unitNumber": 25,
+    "text": "Ülkeler ile şehirlerarasındaki başkentlik ilişkisi ne tür bir ilişkidir?",
+    "options": {
+      "A": "Bire-Bir ilişki (1: 1)",
+      "B": "Bire-Çok ilişki (l: M)",
+      "C": "Çoğa-Bir ilişki (M: l)",
+      "D": "Çoğa -çok ilişki(N: M)",
+      "E": "Hiçbiri"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-4fa914a7d22b",
+    "unitNumber": 26,
+    "text": "Çok Değerli Özellikler tabloya nasıl dönüştürülür?",
+    "options": {
+      "A": "N-M ilişkiler için uygulana kural bu durumda da aynen uygulanır.",
+      "B": "1-N ilişkiler için uygulana kural bu durumda da aynen uygulanır.",
+      "C": "1-1 ilişkiler için uygulana kural bu durumda da aynen uygulanır.",
+      "D": "İlişkide belirtilen çok değerli özellikler mevcut tabloya yeni alanlar olarak eklenir.",
+      "E": "Çok değerli her bir özellik için yeni bir tablo oluşturulur."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-c9e7b588100a",
+    "unitNumber": 27,
+    "text": "Bir firmada çalışanlar varlık olarak düşünülebilir. Çalışanlardan birisi ayrıldığında direk olarak çocukları da veri tabanından silinir.",
+    "options": {
+      "A": "Güçlü Varlık",
+      "B": "Zayıf Varlık",
+      "C": "Bağımsız Varlık",
+      "D": "Türetilmiş Varlık",
+      "E": "Sanal Varlık"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-47bec7ba2206",
+    "unitNumber": 28,
+    "text": "Bir tablodaki bir sütuna ait verilerin başka bir tablonun sütunundan getirilmesini sağlayan anahtar aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Birincil Anahtar",
+      "B": "Yabancı Anahtar",
+      "C": "Sütunlar",
+      "D": "Unique Kısıtlaması"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-7ce979e23dfd",
+    "unitNumber": 29,
+    "text": "Veri girişlerinin belirtilen kriterlere göre yapılmasını sağlayan kısıtlayıcı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Not Null Kısıtlaması",
+      "B": "Default Kısıtlaması",
+      "C": "Unique Kısıtlaması",
+      "D": "Check Kısıtlaması"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-11ef7a5f98b0",
+    "unitNumber": 30,
+    "text": "Bir veri tabanında mutlaka bulunması gereken nesne hangisidir?",
+    "options": {
+      "A": "Tablo",
+      "B": "Form",
+      "C": "Sorgu",
+      "D": "Rapor"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-e3bc4594be08",
+    "unitNumber": 31,
+    "text": "Tablolar ile ilgili hangisi yanlıştır?",
+    "options": {
+      "A": "Tabloda aynı bilgi tekrar eder.",
+      "B": "Birden fazla tabloda aynı bilgi bulunabilir.",
+      "C": "Her tablonun birincil anahtarı vardır.",
+      "D": "Alan türleri istediğimiz gibi seçilebilir."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-97e9f1d2fb67",
+    "unitNumber": 32,
+    "text": "Aşağıdaki tabloya göre şıkların hangisinde bir işlevsel bağımlılık vardır? Sicil No Proje No Proje Adı Personel Adı Personel Soyadı Unvan Çalışma Saati 1 23 P10 Yunus Asil Yönetici 20 2 17 P20 Mekki Taş Mühendis 30 3 21 P22 Fatma Sarı Mühendis 25",
+    "options": {
+      "A": "Sicil No  Proje No",
+      "B": "Personel Adı  Proje Adı",
+      "C": "Sicil No  Proje Adı",
+      "D": "Proje Adı  Unvan",
+      "E": "Proje No  Proje Adı"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-0c0d613d16be",
+    "unitNumber": 33,
+    "text": "Normalizasyon ile ilgili olarak aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Bir veritabanında verilerin saklanmış olduğu nesneler tablo olarak adlandırılır.",
+      "B": "İlişkisel veri tabanında tablolarda birbirleri ile tamamen aynı olan iki kayıt kullanılabilir",
+      "C": "Tablolarda aynı tipte bilgiyi içerecek alanların bulunması mutlak veri fazlalığı sorunudur.",
+      "D": "Birinci normal formda hazırlanmış bir tabloda ekleme, silme ve güncelleme sırasında sorunlar olabilir.",
+      "E": "Birinci normal formdan ikinci normal forma geçişte kısmi bağımlılıkların ortadan kaldırılması gerekmektedir."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-14865aef847d",
+    "unitNumber": 34,
+    "text": "Normalizasyon ile ilgili olarak aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "1NF’den 2NF’e geçebilmesi için tüm geçişken bağımlılıklar kaldırılmalıdır.",
+      "B": "Tablolarda bir bilginin birden fazla tekrarlanması bellekte fazla yer kaplamaz.",
+      "C": "Normalleştirme, taslak veri tabanı üzerinde birtakım işlemler yapılarak taslağı son haline yaklaştırma yöntemidir.",
+      "D": "Veri tabanı tablolarında bir alana birden fazla veri girişi olabilir.",
+      "E": "Herhangi bir tablonun tekrarlı bilgiler içerdiği duruma 2NF denir."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-5ebb7a74e2ea",
+    "unitNumber": 35,
+    "text": "Aşağıdakilerden hangisi veri tanımlama dili komutlarından değildir?",
+    "options": {
+      "A": "CREATE",
+      "B": "DELETE",
+      "C": "DROP",
+      "D": "ALTER"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-b419a7f7b50e",
+    "unitNumber": 36,
+    "text": "Aşağıdaki komut dizilişinde eksik olan nedir? create table ( sno int primary key, stokadi varchar(20), adet int, fiyat real, sonkultar DateTime )",
+    "options": {
+      "A": "Oluşturulacak veri tabanı adı yok.",
+      "B": "Oluşturulacak tablo adı yok.",
+      "C": "Girilecek değerler yok.",
+      "D": "Ne oluşturulacağı açıklanmamış.",
+      "E": "Veri türleri eksik."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-2d1cbcebd3a0",
+    "unitNumber": 37,
+    "text": "Karakter türü bilgi içinde arama yapmak için yazılmış olan LIKE ‘AH%’ ifadesinin anlamı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Ah nin yüzde kaç olduğunu hesaplar.",
+      "B": "AH ile başlayan tüm isimler.",
+      "C": "AH ile biten tüm isimler.",
+      "D": "Ah ile başlayan tüm isimler.",
+      "E": "Ah ile biten tüm isimler."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-86fad61e7f99",
+    "unitNumber": 38,
+    "text": "SELECT isim, dep, Gelir, Gelir*0.20 as KDV FROM calisanlar;",
+    "options": {
+      "A": "Hatalı bir sorgu yazılmış",
+      "B": "calisanlar tablosunda tüm alanları gösterir",
+      "C": "calisanlar tablosunda Gelirin %20 sini hesaplar",
+      "D": "calisanlar tablosunda Gelirin %20 sini KDV olarak bir sutunda gösterir",
+      "E": "calisanlar tablosunda Gelirin KDV sini hesaplar"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-20b51103b967",
+    "unitNumber": 39,
+    "text": "COUNT fonksiyonu ile ne yapılır?",
+    "options": {
+      "A": "Sayısal ifadeyi yuvarlama hesabını yapar.",
+      "B": "Tablo içinde, belirlenen sütun (alan) içindeki en küçük değeri bulur.",
+      "C": "Sadece, belirtilen sütunun işleme sokulmasını sağlar.",
+      "D": "Tablo içinde, belirlenen sütun (alan) içindeki en büyük değeri bulur.",
+      "E": "Tablo içerisinde herhangi bir sayma işlemi gerçekleştirmek için kullanılır."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-db778e539777",
+    "unitNumber": 40,
+    "text": "HAVING sözcüğünü izleyen ifade içinde, aşağıdakilerden hangisi kullanılmaz",
+    "options": {
+      "A": "SUM",
+      "B": "COUNT (*)",
+      "C": "ROUND",
+      "D": "AVG",
+      "E": "MAX"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-2fefe025495e",
+    "unitNumber": 41,
+    "text": "Program ve veritabanı dosyaları aynı bilgisayar üzerinde bulunan Veritabanı mimarisi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Tek-Katmanlı Veritabanı",
+      "B": "Çok-Katmanlı Veritabanları",
+      "C": "İki-Katmanlı Veritabanı",
+      "D": "Üç-Katmanlı Veritabanı",
+      "E": "İstemci/Sunucu Veritabanı"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-cc0c041046d6",
+    "unitNumber": 42,
+    "text": "İki katmanlı (2-Tier) yazılımlarla ilgili hangisi yanlış bir ifadedir?",
+    "options": {
+      "A": "Diğer adı Client/Server (İstemci /Sunucu olan mimaridir.",
+      "B": "Veritabanı ayrı bir bilgisayar üzerinde yer alır ve uygulamalar ağ üzerinden bu veritabanı ile iletişim kurarlar.",
+      "C": "Uygulama yazılımları her istemciye ayrı ayrı yüklenmekte olup, güncelleme gerektiğinde her istemciye yazılımın yeniden yüklenmesi gerekmektedir.",
+      "D": "İstemciler veri tabanına doğrudan erişmektedir.",
+      "E": "Uygulama yazılımının kullanıcı arayüzü istemcide, uygulama yordamları uygulama sunucusunda ve veriler veritabanı sunucusunda yer alır."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-9a26a4cdf0f0",
+    "unitNumber": 43,
+    "text": "Kavramsal düzeydeki verilerin disk dosyalarında saklandığı seviye hangisidir?",
+    "options": {
+      "A": "İç (Fiziksel) Seviye",
+      "B": "Mantıksal Seviye",
+      "C": "Dış (Görünüm) Seviye",
+      "D": "Hiçbiri",
+      "E": "Hepsi"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-1813cbcefc25",
+    "unitNumber": 44,
+    "text": "Aynı verinin değişik yerlerde birkaç kopyasının bulunması, bir yerde değiştirilen verinin diğer yerde aynı kalması hangisine neden olur.",
+    "options": {
+      "A": "Veri tutarsızlığı",
+      "B": "Veri Tutarlılığı",
+      "C": "Veri Paylaşımı",
+      "D": "Eş zamanlılık",
+      "E": "Veri Bağımsızlığı"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-431894f30b1b",
+    "unitNumber": 45,
+    "text": "Bir tabloda değişiklik yapılan verinin ilişkili olduğu diğer tablo veya tablolarda da aynı işlemin yapılması işlemine ne denir?",
+    "options": {
+      "A": "Veri Tutarlılığı",
+      "B": "Veri Bütünlüğü",
+      "C": "Veri Güvenliği",
+      "D": "Veri Bağımsızlığı"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-db0da11246f7",
+    "unitNumber": 46,
+    "text": "Aşağıdakilerden hangisi bir VTYS değildir?",
+    "options": {
+      "A": "MySQL",
+      "B": "MSSQL",
+      "C": "Oracle",
+      "D": "XML"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-705d60668a1f",
+    "unitNumber": 47,
+    "text": "MySQL Workbench veri tabanı yönetim sisteminde Database menüsünde bulunan “Forward Engineer …” ile aşağıdakilerden hangi işlem gerçekleştirilir?",
+    "options": {
+      "A": "SQL komutlarıyla üzerinde denemeler yapmanızı sağlayan bir sekme açar.",
+      "B": "Çalışma alanınızda bulunan diyagramların veritabanına export (gönderilmesi) edilmesini sağlar",
+      "C": "Sekmesinde belirlediğiniz bağlantılar, bir daha ayar yapmanıza gerek kalmadan kullanılmak için saklanır.",
+      "D": "Veritabanındaki tabloları okuyup SQL kodlarını import (alınması) etmeye yarar ve",
+      "E": "R diyagramını oluşturur. e) Herhangi bir kaynaktan alınan tabloları senkronize eder"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-258c91edc073",
+    "unitNumber": 48,
+    "text": "Numaralı sekmelerde hangisi hatalıdır?",
+    "options": {
+      "A": "1 hatalıdır.",
+      "B": "2 hatalıdır.",
+      "C": "3 hatalıdır.",
+      "D": "Hepsi hatalıdır.",
+      "E": "Hiçbiri hatalı değildir."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-fb62e4e7332d",
+    "unitNumber": 49,
+    "text": "Dreamweaver de bu arayüz niçin kullanılır?",
+    "options": {
+      "A": "Form bağlantısı için.",
+      "B": "MySQL connection ile veritabanı bağlantısı için.",
+      "C": "Veri tabanından kayıt okumak için.",
+      "D": "Veritabanına kayıt girmek için.",
+      "E": "Forma aracılığında bilgi girmek için."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-3f71249b6605",
+    "unitNumber": 50,
+    "text": "Application>Server Behaviors>User Authentication>Log in User Sekmesi ile aşağıdakilerden hangisi gerçekleştirilir?",
+    "options": {
+      "A": "Kullanıcı adı ve şifre korumalı sayfalar oluşturulur.",
+      "B": "Web sitesinde ilk sayfa hazırlanır.",
+      "C": "İsim ve şifre doğrulaması yapılır.",
+      "D": "Oluşturulan formun davranışı girilir.",
+      "E": "Hiçbiri"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-ccfac0fe824c",
+    "unitNumber": 51,
+    "text": "Bindings sekmesindeki Recordset aşağıdaki uygulamalardan hangisi için gereklidir?",
+    "options": {
+      "A": "Form",
+      "B": "Rapor",
+      "C": "Server Behaviour",
+      "D": "Veri Tabanı Bağlantısı",
+      "E": "Şifre ve Simge Doğrulama"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-09904ac1cc2a",
+    "unitNumber": 52,
+    "text": "İnternet üzerinden erişilebilen ve yapılandırılabilen veri tabanı sistemlerine ne denir?",
+    "options": {
+      "A": "Veri Tabanı Yönetim Sistemleri",
+      "B": "Veri Yönetimi",
+      "C": "Web Uygulamaları",
+      "D": "",
+      "E": "Ticaret e) Web Programcılığı"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-bd31f9d0193d",
+    "unitNumber": 53,
+    "text": "Apache nedir?",
+    "options": {
+      "A": "Web Sunucusu",
+      "B": "Uygulama Sunucusu",
+      "C": "Veri Tabanı Sunucusu",
+      "D": "Program Sunucusu",
+      "E": "Local Sunucu"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-3d462ef54725",
+    "unitNumber": 54,
+    "text": "Aşağıdakilerden hangisi MySQL’in en önemli özelliklerinden biri değildir?",
+    "options": {
+      "A": "Ücretsizdir.",
+      "B": "Açık kaynak kodludur. (Open Source).",
+      "C": "Tüm platformlarda (Windows/Linux/Unix) sorunsuzca çalışır.",
+      "D": "Internet Information Server (IIS) sunucu yazılımı ile uyumlu çalışır.",
+      "E": "Özellikle internet ortamında önem kazanan, çok esnek ve güçlü bir kullanıcı erişim kısıtlama/yetkilendirme sistemine sahip."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-394bdd034081",
+    "unitNumber": 55,
+    "text": "Aşağıdakilerden hangisi bir web sunucu yazılımıdır?",
+    "options": {
+      "A": "CuteFTP",
+      "B": "WAMP",
+      "C": "PHP",
+      "D": "HTTP",
+      "E": "ASP"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-bc1665ec820c",
+    "unitNumber": 56,
+    "text": "Aşağıdaki hizmetlerden hangisi PhpMyAdmin yerine getirdiği işlerden biri değildir?",
+    "options": {
+      "A": "MySQL veri tabanının Web ya da yerel ağ üzerinden yönetilmesini sağlar.",
+      "B": "Wamp Serveri çalıştırılmasını sağlar.",
+      "C": "IIS’in durdurulmasını sağlar.",
+      "D": "RecordSet'in oluşturulmasını sağlar.",
+      "E": "PHP ile Veri tabanından Kayıt Okumayı sağlar"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-7ace65d20e4b",
+    "unitNumber": 57,
+    "text": "“Bir ağ üzerindeki istemci ve sunucunun birbiriyle iletişimin kurulmasını sağlayan kuralları tanımlayan metoda………….denir.” Yukarıdaki boşluğa aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Protokol",
+      "B": "Sistem Mimarisi",
+      "C": "Web Tarayıcı",
+      "D": "HTTP",
+      "E": "CuteFTP"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-c29a80c6f61b",
+    "unitNumber": 58,
+    "text": "Aşağıdakilerden hangisi MySQL’dirin en önemli özelliklerindendir?",
+    "options": {
+      "A": "Açık kaynak kodludur. (Open Source)",
+      "B": "Ücretsizdir.",
+      "C": "Tüm platforndmlarda (Wiows/Linux/Unix) sorunsuzca çalışır.",
+      "D": "PC bazlı ortamlarda önem kazanan bir sistemdir."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "unite-sonu"
+  }
+]

@@ -1,1 +1,2142 @@
-[]
+[
+  {
+    "id": "s-1145914fb56d",
+    "unitNumber": 1,
+    "text": "Bağlı liste ile ilgili en doğru tanım aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Düğümlerin hepsinin aynı türden veriler içerdiği sabit veri yapısıdır.",
+      "B": "Düğümlerin bellekte ardışık olmayan adreslerde saklandığı ve her düğümün bir sonrakinin adresini tuttuğu dinamik bir yapıdır.",
+      "C": "Düğümlerin verileri işaretçi olmadan sakladığı bir kuyruktur.",
+      "D": "Düğümlerin bellekte ardışık adreslerde saklandığı sabit boyutlu bir dizidir.",
+      "E": "Düğümlerin bir önceki düğümü gösterdiği çift yönlü listelerin genel adıdır."
+    },
+    "correctAnswer": "B",
+    "explanation": "Bağlı liste (Linked List), dizilerin aksine elemanların bellekte yan yana (ardışık) bulunmak zorunda olmadığı, hafızanın herhangi bir yerinde duran ‘düğümlerin (node)’ birbirlerine işaretçiler (pointer) vasıtasıyla bağlanarak oluşturduğu, boyutu çalışma zamanında büyüyüp küçülebilen dinamik bir veri yapısıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-fb5c9546690b",
+    "unitNumber": 2,
+    "text": "Çift yönlü bağlı listede arama işlemi için doğru ifade aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Ortalama zaman karmaşıklığı O(log n)",
+      "B": "Ortalama zaman karmaşıklığı O(1)",
+      "C": "Ortalama zaman karmaşıklığı O(n)",
+      "D": "En kötü durumda O(n log n)",
+      "E": "En iyi durumda O(n&sup2;)riz"
+    },
+    "correctAnswer": "C",
+    "explanation": "Hem tek yönlü hem de çift yönlü bağlı listelerde, belirli bir değeri (veya indeksi) aramak için listeyi baştan (veya sondan) başlayarak düğüm düğüm (sırayla) gezmek zorundayız. Rastgele erişim (indexleme) yapılamadığı için, arama (search) işleminin ortalama ve en kötü durum (worst-case) zaman karmaşıklığı (time complexity) O(n)’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e798b9aeea57",
+    "unitNumber": 3,
+    "text": "Aşağıdaki alan-tanım eşleşmelerinden hangisi doğrudur?",
+    "options": {
+      "A": "prev: Düğümün veri tipi, next: Düğümün bellek boyutu",
+      "B": "prev: Rastgele bir düğümü işaret eder, next: Null değer tutar",
+      "C": "prev: Önceki düğümün adresi, next: Sonraki düğümün adresi",
+      "D": "prev: Sonraki düğümün adresi, next: Önceki düğümün adresi",
+      "E": "prev: Listenin baş işaretçisi, next: Listenin son işaretçisi"
+    },
+    "correctAnswer": "C",
+    "explanation": "Çift yönlü bağlı listelerde (Doubly Linked List) her düğüm (node) üç parçadan oluşur: Data (Veri), prev (previous / bir ‘önceki’ düğümün hafıza adresi) ve next (bir ‘sonraki’ düğümün hafıza adresi). Dolayısıyla prev önceki düğümü, next ise sonraki düğümü gösterir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d966c361dc81",
+    "unitNumber": 4,
+    "text": "Tek yönlü bağlı listede baştan eleman silme işleminin ilk adımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Baş düğümü geçici bir işaretçiye almak",
+      "B": "Listenin sonuna gitmek",
+      "C": "Tüm listeyi ters çevirmek",
+      "D": "Yeni bir düğüm oluşturmak",
+      "E": "Son düğümün next'ini güncellemek"
+    },
+    "correctAnswer": "A",
+    "explanation": "Baştan eleman silerken (delete from head), direkt olarak ‘head = head->next’ yaparsak, ilk (eski head) düğümün bellek adresi havada kaybolur ve onu bellekten silemeyiz (memory leak oluşur). Bu nedenle güvenli silme işleminin ilk ve en önemli adımı: Silinecek olan baş düğümü, onu belleğe iade edebilmek (delete) için ‘geçici bir işaretçiye (temp pointer)’ kaydetmektir. (Örn: Node* temp = head;)",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-02fdfb625365",
+    "unitNumber": 5,
+    "text": "“Queue” (Kuyruk) veri yapısına yeni bir eleman ekleme işlemine (Enqueue) ve sırası gelen elemanın kuyruktan çıkarılması işlemine (Dequeue) karşılık gelen temel mantık aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "LIFO (Son Giren İlk Çıkar)",
+      "B": "FIFO (İlk Giren İlk Çıkar)",
+      "C": "Doğrudan (Rastgele) Erişim",
+      "D": "İkili Arama (Binary Search)",
+      "E": "Hashing (Karma)"
+    },
+    "correctAnswer": "B",
+    "explanation": "Kuyruk (Queue) yapısı tıpkı günlük hayattaki banka veya market kuyrukları gibidir. Sıraya ilk giren kişi (veri), işi bitip ilk çıkacak olan kişidir. Bu mantığa “FIFO (First-In, First-Out)” denir. Ekleme işlemi arka uçtan (Rear), silme işlemi ön uçtan (Front) yapılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-bc719d442a95",
+    "unitNumber": 6,
+    "text": "Aşağıdaki ifadelerden hangisi dinamik bellek yönetimi bağlamında bellek sızıntısını en iyi açıklar?",
+    "options": {
+      "A": "İşaretçilerin nullptr ile başlatılması",
+      "B": "new ile ayrılan belleğin delete ile serbest bırakılmaması",
+      "C": "delete işleminin iki kez yapılması",
+      "D": "Stack bölgesinde değişkenlerin kullanılması",
+      "E": "RAII deseninin kullanılması"
+    },
+    "correctAnswer": "B",
+    "explanation": "C++ gibi dillerde, heap bölgesinde ‘new’ (veya C’de malloc) anahtar kelimesiyle tahsis edilen (ayrılan) dinamik bellek alanları, kullanımları bittikten sonra programcı tarafından manuel olarak ‘delete’ (veya C’de free) komutuyla sisteme iade edilmelidir. Serbest bırakılmazsa o bellek alanı program kapanana kadar işgal edilmiş olarak kalır. Bu duruma ‘Bellek Sızıntısı (Memory Leak)’ denir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1213f381f457",
+    "unitNumber": 7,
+    "text": "Dairesel bağlı listelerin bir kullanım alanı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "LIFO temelli çağrı yığını",
+      "B": "Dizi tabanlı rastgele erişim gerektiren önbellekler",
+      "C": "Ağaç tabanlı arama algoritmaları",
+      "D": "Round Robin CPU zamanlayıcıları",
+      "E": "Sabit, değişmeyen yapılandırma tabloları"
+    },
+    "correctAnswer": "D",
+    "explanation": "İşletim sistemlerinde CPU zamanlamasında kullanılan ‘Round Robin (Çevresel Sıralama)’ algoritması, işlemcilere eşit zaman dilimi verip sıra sondakine geldiğinde tekrar baştaki işleme dönen (döngüsel) bir yapıya sahiptir. Bu döngüsel mantık tam olarak dairesel bağlı listelerle (circular linked list) modellenir ve uygulanır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-436283503f27",
+    "unitNumber": 8,
+    "text": "Dizilerin önbellek (cache) verimliliğinin görece yüksek olmasının temel nedeni aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Elemanlara işaretçilerle erişilmesi",
+      "B": "Her eleman için meta veri tutulması",
+      "C": "Boyutlarının çalışma zamanında değişebilmesi",
+      "D": "Elemanların bellekte ardışık tutulması",
+      "E": "Eleman türlerinin farklı olabilmesi"
+    },
+    "correctAnswer": "D",
+    "explanation": "Bilgisayar mimarisinde işlemci önbelleği (CPU cache), verileri belleğe sıralı bloklar (cache line) halinde çeker. Dizilerdeki (array) elemanlar hafızada bitişik (ardışık/contiguous) olarak saklandığı için, bir eleman okunduğunda hemen yanındakiler de önbelleğe alınır. Bu duruma ‘Mekansal Yerellik (Spatial Locality)’ denir ve önbellek vurma (cache hit) oranını (verimliliği) çok yükseltir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-56c4cd6a0391",
+    "unitNumber": 9,
+    "text": "Tek yönlü bağlı listede bir düğüm yapısında tipik olarak bulunan alanlar hangileridir?",
+    "options": {
+      "A": "Yalnızca işaretçi alanı",
+      "B": "Yalnızca veri alanı",
+      "C": "Veri, önceki ve sonraki düğümü gösteren işaretçiler",
+      "D": "Veri ve sonraki düğümü gösteren işaretçi",
+      "E": "Veri ve önceki düğümü gösteren işaretçi"
+    },
+    "correctAnswer": "D",
+    "explanation": "Tek yönlü bağlı liste (Singly Linked List) adından da anlaşılacağı gibi sadece tek yönde ilerler. Bu nedenle yapısındaki her bir düğüm (node) sadece iki parçadan (alandan) oluşur: Saklanacak değeri tutan ‘Data (Veri)’ alanı ve zincirdeki bir sonraki düğümün adresini tutan ‘Next (Sonraki düğümü gösteren işaretçi)’ alanı.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a8e667617907",
+    "unitNumber": 10,
+    "text": "Aşağıdaki durumlardan hangisi tersine çevirme algoritmasının sonunda head’in doğru şekilde güncellenmesini açıklar?",
+    "options": {
+      "A": "head başlangıç tail'in prev'ine eşitlenir",
+      "B": "head her adımda tail'e eşitlenir",
+      "C": "head başlangıçta nullptr yapılır",
+      "D": "head her düğümde curr'a eşitlenir",
+      "E": "head döngü bittiğinde son ziyaret edilen geçici işaretçiden türetilir (temp-&gt;prev)"
+    },
+    "correctAnswer": "E",
+    "explanation": "Çift yönlü (veya tek) bağlı listeyi tersine çevirirken (reverse), düğümlerin next ve prev işaretçileri döngü içinde yer değiştirilir. Döngü, listenin sonuna (eski tail’e) ulaşana kadar devam eder. Döngü bittiğinde, elimizde son ziyaret edilen (eski tail olan ama yeni head olacak olan) düğümü tutan geçici bir işaretçi (genelde temp veya onun prev/next’i) kalır. Tersine çevrilmiş yeni listenin başlangıcını (head) belirlemek için ‘head’, bu son geçici işaretçi durumu üzerinden güncellenir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-df83f5a97275",
+    "unitNumber": 11,
+    "text": "Bilgi edinim piramidindeki sıralama aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Veri -&gt; Enformasyon -&gt; Bilgi",
+      "B": "Bilgi -&gt; Enformasyon -&gt; Veri",
+      "C": "Enformasyon -&gt; Veri -&gt; Bilgi",
+      "D": "Bilgi -&gt; Veri -&gt; Enformasyon",
+      "E": "Veri -&gt; Bilgi -&gt; Enformasyon"
+    },
+    "correctAnswer": "A",
+    "explanation": "Veri bilimi ve bilgi yönetiminde meşhur ‘DIKW Piramidi’ kullanılır. Piramidin en altından (en basit olandan) yukarıya (en değerliye) doğru sıralama: Data (Veri) -> Information (Enformasyon/Malumat) -> Knowledge (Bilgi) -> Wisdom (Bilgelik) şeklindedir. Seçeneklerdeki doğru üçlü sıralama Veri -> Enformasyon -> Bilgi’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-076f3eb35a2a",
+    "unitNumber": 12,
+    "text": "Çift yönlü bağlı listenin tek yönlü bağlı listeye göre belirgin avantajı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Daha az bellek kullanması",
+      "B": "Tüm işlemlerde O(1) zaman garantisi vermesi",
+      "C": "Önbellek veriminin daha yüksek olması",
+      "D": "Kod karmaşıklığının daha düşük olması",
+      "E": "Geriye doğru dolaşmaya olanak vermesi"
+    },
+    "correctAnswer": "E",
+    "explanation": "Tek yönlü bağlı listelerde her düğüm sadece kendinden ‘sonraki’ (next) düğümü bilir; bu yüzden sadece ileri (baştan sona) gidilebilir. Çift yönlü bağlı listelerde ise ekstra bir ‘prev (önceki)’ işaretçisi daha vardır. Bu yapı ekstra bellek (dezavantaj) harcasa da, listede sondan başa (veya bulunduğu noktadan geriye) ‘geriye doğru dolaşmaya (reverse traversal)’ olanak sağlaması onun en büyük fonksiyonel avantajıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-162385cf1cee",
+    "unitNumber": 13,
+    "text": "Tek elemanlı bir listede sondan silme işlemi tamamlandığında head’in alması gereken değer aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "nullptr",
+      "B": "head (değişmez)",
+      "C": "head-&gt;prev",
+      "D": "head-&gt;next",
+      "E": "temp-&gt;prev"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d5109cd23380",
+    "unitNumber": 14,
+    "text": "Bağlı listede lineer aramanın ortalama zaman karmaşıklığı hangi seçenekte doğru verilmiştir?",
+    "options": {
+      "A": "O(log n)",
+      "B": "O(n&sup2;)",
+      "C": "O(n log n)",
+      "D": "O(n)",
+      "E": "O(1)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Bağlı listelerde dizilerdeki gibi indeks ile (doğrudan/O(1)) erişim yapılamaz. Aranan bir elemanı (Örneğin X değerini) bulmak için listenin başından (head) başlayarak düğümleri tek tek (sıralı/lineer olarak) kontrol etmek zorundayız. Liste n elemanlıysa, aranan eleman ortalama olarak listenin ortalarında bulunacaktır (n/2). Sabit katsayılar (1/2) O notasyonunda (Big O) atıldığı için, ortalama ve en kötü durum zaman karmaşıklığı ‘O(n)’dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-28bc6742cae4",
+    "unitNumber": 15,
+    "text": "Zaman karmaşıklığı analizinde “Big-O (Büyük-O)” notasyonu neyi ifade etmek için kullanılır?",
+    "options": {
+      "A": "Bir algoritmanın bellekte kapladığı byte miktarını (Space Complexity)",
+      "B": "Bir algoritmanın en iyi durumdaki (Best Case) çalışma hızını",
+      "C": "Bir algoritmanın çalışma süresinin veri boyutu (n) arttıkça en kötü senaryoda (Worst Case) nasıl bir eğilimle artacağını (üst sınırını)",
+      "D": "Düğümler arasındaki ağ (network) mesafesini",
+      "E": "Bir programın derlenme (compiling) süresini"
+    },
+    "correctAnswer": "C",
+    "explanation": "Algoritma analizinde donanımdan (işlemci hızından) bağımsız olarak bir kodun verimliliğini ölçmek için asimptotik notasyonlar kullanılır. Big-O notasyonu (Örn: O(n), O(n²)), veri kümesi sonsuza (n) doğru büyüdüğünde algoritmanın maksimum ne kadar yavaşlayabileceğini (en kötü durumu / worst-case time complexity) matematiksel olarak temsil eder.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ef053a3b534f",
+    "unitNumber": 16,
+    "text": "C++ veya C programlama dilinde bir işaretçinin (pointer) kendi değerini (tuttuğu adresi) değil de, “işaret ettiği adresteki gerçek veriyi (değeri)” elde etmek veya değiştirmek için kullanılan operatör aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "&amp; (Adres Operatörü)",
+      "B": "* (Dereference / İçerik Operatörü)",
+      "C": "++ (Artırma Operatörü)",
+      "D": "-&gt; (Ok Operatörü)",
+      "E": ":: (Kapsam Çözünürlük Operatörü)"
+    },
+    "correctAnswer": "B",
+    "explanation": "İşaretçiler (Pointers) değişkenlerin RAM’deki adreslerini tutar. Örneğin int* ptr = &x; denildiğinde ptr, x’in adresini tutar. Ancak *ptr = 10; denildiğinde (yıldız kullanıldığında), işaretçinin gösterdiği “o adresteki değere/içeriğe” (dereference işlemine) doğrudan ulaşılır ve x’in değeri 10 yapılır. (NOT: Ok operatörü “->” ise pointer’ın gösterdiği bir yapı/struct içindeki ‘alana/üyeye’ erişmek için kullanılır).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c3d854c6c9bf",
+    "unitNumber": 17,
+    "text": "Verilerin LIFO (Last-In, First-Out / Son Giren İlk Çıkar) mantığına göre işlendiği, “Push” (ekleme) ve “Pop” (çıkarma) işlemlerinin sadece tek bir uçtan (Top) yapıldığı veri yapısı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Kuyruk (Queue)",
+      "B": "Çift Yönlü Bağlı Liste (Doubly Linked List)",
+      "C": "Yığın (Stack)",
+      "D": "İkili Arama Ağacı (BST)",
+      "E": "Graf (Graph)"
+    },
+    "correctAnswer": "C",
+    "explanation": "Yığın (Stack), üst üste dizilmiş tabaklar veya kitaplar gibidir. En son koyduğunuz tabağı (veriyi) ilk olarak alırsınız. Bu mantığa “LIFO (Son Giren İlk Çıkar)” denir. İşlev çağrıları (function calls), undo (geri al) mekanizmaları ve parantez eşleştirme algoritmalarında standart olarak kullanılan veri yapısı Yığındır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d6b305235feb",
+    "unitNumber": 18,
+    "text": "Dairesel bağlı liste için en uygun tanım aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Sadece sondan ekleme yapılabilen özel kuyruk yapısı",
+      "B": "Her düğümün hem prev hem next tuttuğu yapı",
+      "C": "Elemanların bellekte ardışık adreslerde tutulduğu dinamik yapı",
+      "D": "Yalnızca tek bir düğümden oluşan sabit yapı",
+      "E": "Son düğümün next işaretçisinin listenin başını (head) gösterdiği döngüsel yapı"
+    },
+    "correctAnswer": "E",
+    "explanation": "Normal bağlı listelerde son düğümün (tail) next işaretçisi ‘null’ değerini gösterir (yani yol orada biter). Ancak Dairesel Bağlı Listelerde (Circular Linked List) bir bitiş noktası yoktur; çünkü son düğümün next işaretçisi ‘null’ yerine, başa dönerek tekrar ilk düğümü (head) işaret eder ve sonsuz bir döngü (halka) oluşturur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9614edca5535",
+    "unitNumber": 19,
+    "text": "Dengeli (Balanced) bir “İkili Arama Ağacı”nda (Binary Search Tree – BST), herhangi bir elemanı aramak (Search) için gereken en kötü durum (worst-case) zaman karmaşıklığı nedir?",
+    "options": {
+      "A": "O(1)",
+      "B": "O(n)",
+      "C": "O(n log n)",
+      "D": "O(log n)",
+      "E": "O(n&sup2;)"
+    },
+    "correctAnswer": "D",
+    "explanation": "İkili Arama Ağacı’nda (BST), her düğümden sola gidildikçe sayılar küçülür, sağa gidildikçe büyür. Ağaç dengeli (AVL veya Red-Black Tree gibi) olduğunda, aranan bir sayı için her adımda ağacın (verinin) yarısı elenir (tıpkı sözlükte kelime aramak gibi). Sürekli ikiye bölme işlemi yapıldığı için arama zaman karmaşıklığı logaritmiktir, yani “O(log n)”dir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7d4ef8c81ab3",
+    "unitNumber": 20,
+    "text": "Aşağıdakilerden hangisi veri (data) için doğru bir tanımdır?",
+    "options": {
+      "A": "Bilgisayar programlarında kullanılan komutlardır.",
+      "B": "Verinin anlamlı bir bağlamda düzenlenmiş halidir.",
+      "C": "Herhangi bir gözlem, ölçüm, olay veya işlem sonucunda elde edilen, ham ve işlenmemiş gerçeklerdir.",
+      "D": "Enformasyonun deneyim ve yorumla eyleme dönüştürülmüş halidir.",
+      "E": "Sadece sayısal değerlerden oluşan bilgilerdir."
+    },
+    "correctAnswer": "C",
+    "explanation": "Bilişim ve veri yapıları terminolojisinde ‘Veri (Data)’, ölçüm, sayım, deney veya gözlem sonucu elde edilen; henüz işlenmemiş, organize edilmemiş ve kendi başına bir anlam ifade etmeyen ham gerçekler, sayılar veya semboller kümesidir. (İşlenmiş haline enformasyon denir).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6d983c84eee8",
+    "unitNumber": 21,
+    "text": "Dairesel bağlı listelerin tipik bir avantajı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Ek işaretçi alanı gerektirmemesi",
+      "B": "Tüm işlemlerde sabit zaman karmaşıklığı",
+      "C": "Önbellek yerelliğinin her zaman yüksek olması",
+      "D": "Rastgele erişimde O(1) zaman garantisi",
+      "E": "Sona gelindiğinde başa otomatik dönüş ile sürekli dolaşım"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1d69eeaa1b07",
+    "unitNumber": 22,
+    "text": "Aşağıdakilerden hangisi çift yönlü bağlı listelerin tipik kullanım alanlarından biridir?",
+    "options": {
+      "A": "Tarayıcı geçmişinde geri-ileri gezinme ve LRU cache uygulamaları",
+      "B": "Donanım seviyesinde SIMD vektör hesaplamaları",
+      "C": "Sabit boyutlu ve değişmeyen sabit tablolar",
+      "D": "Sadece ileri yönlü dolaşım gerektiren tek geçişli sayımlar",
+      "E": "Yalnızca yığın LIFO işlemleri"
+    },
+    "correctAnswer": "A",
+    "explanation": "Çift yönlü bağlı listeler (Doubly Linked List), her düğümde hem bir öncekini (prev) hem de bir sonrakini (next) gösteren işaretçiler barındırır. Bu yapı, iki yönde (ileri ve geri) gezinmeyi çok kolaylaştırır. Web tarayıcılarında ‘İleri/Geri’ (Forward/Backward) butonlarının çalışma mantığı ve LRU (Least Recently Used) cache algoritmaları doğrudan çift yönlü bağlı listeler kullanılarak implemente edilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b3aae0fd01db",
+    "unitNumber": 23,
+    "text": "Tek elemanlı bir listede sondan silme işlemi sonrası head hangi değeri göstermelidir?",
+    "options": {
+      "A": "Rastgele bir adres",
+      "B": "İlk düğümün kendisi",
+      "C": "Sonraki düğümün next'i",
+      "D": "İlk düğümün next'i",
+      "E": "nullptr"
+    },
+    "correctAnswer": "E",
+    "explanation": "Sadece bir elemanı olan bir bağlı listede (head != nullptr ve head->next == nullptr), bu tek düğüm silindiğinde liste tamamen boşalır. Liste boşaldığı için ‘head’ işaretçisi (ve varsa ‘tail’ işaretçisi) artık hiçbir şeyi göstermemeli, yani null (C++’ta ‘nullptr’) değerini almalıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c2d6d20fa6ca",
+    "unitNumber": 24,
+    "text": "C++ dilinde sizeof operatörü ile belirlenen aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Değişkenin adresini",
+      "B": "Veri tipinin bellekte kapladığı alanı",
+      "C": "Değişkenin değerini",
+      "D": "Değişkenin türünü",
+      "E": "Değişkenin kapsamını"
+    },
+    "correctAnswer": "B",
+    "explanation": "C ve C++ dillerinde ‘sizeof()’ operatörü, içine yazılan bir değişkenin (var) veya veri tipinin (int, double, struct vb.) bellekte (RAM’de) kaç ‘byte’ yer kapladığını hesaplamak ve döndürmek için kullanılır. (Örneğin 32-bit sistemlerde sizeof(int) genelde 4 byte döndürür).",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-86f16eb8058b",
+    "unitNumber": 25,
+    "text": "Dinamik olarak oluşturulan bir tamsayı dizisinin bellekten serbest bırakılması için doğru ifade aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "free(ptr);",
+      "B": "delete[] ptr;",
+      "C": "delete ptr;",
+      "D": "clear(ptr);",
+      "E": "dispose(ptr);"
+    },
+    "correctAnswer": "B",
+    "explanation": "C ’ta ‘new int’ ile oluşturulan tek bir değişken ‘delete ptr;’ ile silinir. Ancak ‘new int[10]’ şeklinde dinamik olarak oluşturulan bir dizi bellekten silinirken köşeli parantez kullanılarak ‘delete[] ptr;’ komutu verilmelidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c07fed7ef50f",
+    "unitNumber": 26,
+    "text": "Dairesel bağlı listede son düğümün next işaretçisi tipik olarak nereye işaret eder?",
+    "options": {
+      "A": "Listenin başındaki düğüme (head)",
+      "B": "Listenin sondan bir önceki düğümüne",
+      "C": "Rasgele bir düğüme",
+      "D": "Kendisinin next'ine",
+      "E": "nullptr"
+    },
+    "correctAnswer": "A",
+    "explanation": "Normal bağlı listelerde son düğümün sonu (next) null’ı gösterirken, “Dairesel Bağlı Liste”lerde (Circular Linked List) son düğüm, zinciri koparmamak ve kapalı bir çember/döngü (ring) oluşturmak amacıyla her zaman “Listenin başındaki düğümü (head)” işaret eder.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4efd0affdc24",
+    "unitNumber": 27,
+    "text": "Çok derin ağaçlarda özyineleme yerine iteratif gezinti tercih edilirse, tipik olarak hangi yardımcı yapı kullanılır?",
+    "options": {
+      "A": "Harita (map)",
+      "B": "Küme (set)",
+      "C": "Vektör (vector)",
+      "D": "Yığın (stack)",
+      "E": "Öncelikli kuyruk (priority queue)"
+    },
+    "correctAnswer": "D",
+    "explanation": "Ağaçlarda veya graflarda arama yaparken özyineleme (recursion) kullanıldığında program otomatik olarak sistemin çağrı yığınını (call stack) kullanır. Eğer ağaç çok derinse ”Stack Overflow” hatası alırız. Bunu önlemek için döngü (iterative) kullanılır ve sistemin çağrı yığınını taklit etmek amacıyla manuel olarak oluşturduğumuz ”Yığın (Stack)” veri yapısı kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ff68767ce10b",
+    "unitNumber": 28,
+    "text": "LIFO prensibini en iyi açıklayan ifade aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Rastgele giren rastgele çıkar",
+      "B": "İlk giren en son çıkar",
+      "C": "İlk giren ilk çıkar",
+      "D": "Son giren ilk çıkar",
+      "E": "Ortadan giren önce çıkar"
+    },
+    "correctAnswer": "D",
+    "explanation": "(Bu soru, 8. sorunun farklı bir versiyonudur). LIFO “Last-In, First-Out” kelimelerinin baş harflerinden oluşur. Bir kutuya (yığına) üst üste konulan kitapları düşünün; en son koyduğunuz kitabı her zaman ilk olarak alırsınız. Bu duruma “Son Giren İlk Çıkar” veya “İlk giren en son çıkar” (B ve D mantıken benzer dursa da, LIFO’nun tam ve doğrudan kelime çevirisi “Son Giren İlk Çıkar” (D)’dır).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1290a5eae76f",
+    "unitNumber": 29,
+    "text": "Aşağıdakilerden hangisi bir ağacın temel kavramlarından değildir?",
+    "options": {
+      "A": "Kök (root)",
+      "B": "Yaprak (leaf)",
+      "C": "Ebeveyn (parent)",
+      "D": "Alt ağaç (subtree)",
+      "E": "Döngü (cycle)"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c65ccc368fe9",
+    "unitNumber": 30,
+    "text": "Aşağıdaki algoritmalardan hangisi en iyi durumda O(n) çalışır?",
+    "options": {
+      "A": "Heap Sort",
+      "B": "Bubble Sort (erken çıkış ile)",
+      "C": "Merge Sort",
+      "D": "Selection Sort",
+      "E": "Quick Sort"
+    },
+    "correctAnswer": "B",
+    "explanation": "Sıralama algoritmalarında, eğer dizi zaten tamamen sıralıysa (best case), ”erken çıkış (early exit / swapped flag)” optimizasyonu eklenmiş bir Bubble Sort algoritması, diziyi sadece bir kez tarar (n adım) ve hiçbir değişiklik (swap) yapmadığı için işlemi anında bitirir. Bu nedenle Bubble Sort’un en iyi durum (best case) zaman karmaşıklığı O(n)’dir. Diğer algoritmaların en iyi durumları genellikle O(n log n) veya O(n²)’dir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f5c6d9a118fa",
+    "unitNumber": 31,
+    "text": "İkili arama (binary search) algoritmasının zaman karmaşıklığı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "O(n&sup2;)",
+      "B": "O(n log n)",
+      "C": "O(log n)",
+      "D": "O(1)",
+      "E": "O(n)"
+    },
+    "correctAnswer": "C",
+    "explanation": "İkili arama (binary search), sıralı bir dizide aranan değeri bulmak için diziyi her adımda tam ortadan ikiye böler (sol veya sağ yarıya gider). Sürekli yarıya bölme (n, n/2, n/4…) işlemi yapıldığı için, en kötü senaryoda bile logaritmik bir sürede sonuca ulaşır. Bu nedenle zaman karmaşıklığı ”O(log n)”dir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f2b5cc4bc3a9",
+    "unitNumber": 32,
+    "text": "Baştan silme fonksiyonunda listenin boş olma durumunu güvenli şekilde ele alan koruyucu kontrol aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "if (head == nullptr) delete head;",
+      "B": "if (head-&gt;data == 0) return;",
+      "C": "if (head == nullptr) return;",
+      "D": "if (head-&gt;prev == nullptr) return;",
+      "E": "if (head-&gt;next == nullptr) head = head-&gt;next;"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8de7b09eb3d7",
+    "unitNumber": 33,
+    "text": "Sıralama (sorting) kavramı tanımı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Verilerin şifrelenmesi",
+      "B": "Verilerin sıkıştırılması",
+      "C": "Verilerin silinmesi",
+      "D": "Verilerin rastgele dağıtılması",
+      "E": "Bir veri kümesindeki elemanların belirli bir düzene göre yeniden düzenlenmesi"
+    },
+    "correctAnswer": "E",
+    "explanation": "Bilgisayar bilimlerinde Sıralama (Sorting), bir liste veya dizi içerisindeki dağınık elemanların, belirli bir kurala göre (örneğin sayılarda küçükten büyüğe veya isimlerde alfabetik sıraya göre) ”yeniden düzenlenmesi” işlemine verilen genel tanımdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-498237fd2866",
+    "unitNumber": 34,
+    "text": "Özyinelemeli gezintilerde çağrı yığınının maksimum derinliği aşağıdaki kavramlardan hangisi ile sınırlıdır?",
+    "options": {
+      "A": "Ağacın yüksekliği",
+      "B": "Ağacın genişliği",
+      "C": "Ortalama derinlik",
+      "D": "Düğümlerin derecesi",
+      "E": "Düğümlerin sayısı mod 2"
+    },
+    "correctAnswer": "A",
+    "explanation": "Ağaçlar üzerinde yapılan özyinelemeli (recursive) arama veya gezinti işlemlerinde (DFS gibi), fonksiyon kendi kendini çağırarak kökten (root) en uçtaki yaprağa (leaf) kadar iner. Çağrı yığınına (call stack) atılan maksimum fonksiyon sayısı, ağacın kökten en derindeki yaprağa olan mesafesine eşittir. Bu mesafeye ”Ağacın yüksekliği (Height)” denir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-89ef1623a56b",
+    "unitNumber": 35,
+    "text": "“Bir düğümün kökten olan uzaklığını ifade eden” kavram aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Yapraklık (leafness)",
+      "B": "Derece (degree)",
+      "C": "Yükseklik (height)",
+      "D": "Seviye (level)",
+      "E": "Derinlik (depth)"
+    },
+    "correctAnswer": "E",
+    "explanation": "Ağaç veri yapılarında, bir düğümün kök (root) düğüme olan uzaklığına (yani aralarındaki kenar veya bağlantı sayısına) o düğümün ”Derinliği (Depth)” denir. Kök düğümün derinliği 0’dır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-9873f74419c4",
+    "unitNumber": 36,
+    "text": "Yığın (stack) için en uygun tanım aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Ekleme ve çıkarma işlemleri yalnızca bir uçtan yapılan, LIFO prensibiyle çalışan yapı",
+      "B": "Elemanlara rastgele erişim sağlayan, FIFO prensipli kuyruk yapısı",
+      "C": "Sadece sabit boyutlu olup büyümeyen veri yapısı",
+      "D": "Hem baştan hem sondan ekleme yapılan çift uçlu kuyruk yapısı",
+      "E": "Elemanları bellekte dağınık tutan, işaretçi tabanlı ağaç yapısı"
+    },
+    "correctAnswer": "A",
+    "explanation": "Yığın (Stack), elemanların üst üste dizildiği (tabak yığını gibi) bir veri yapısıdır. Hem eleman ekleme (push) hem de eleman çıkarma (pop) işlemleri yığının sadece tek bir ucundan (en üstünden/Top) yapılır. Bu nedenle yığına ”Son Giren” eleman, her zaman ”İlk Çıkan” eleman olur. Bu mantığa ”LIFO (Last-In, First-Out)” denir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-876e9121e76b",
+    "unitNumber": 37,
+    "text": "Çift yönlü bağlı listede silme sırasında bağlantıların korunması için kritik güncelleme hangisidir?",
+    "options": {
+      "A": "tail-&gt;next = head;",
+      "B": "prev-&gt;prev = next;",
+      "C": "sil-&gt;next = prev;",
+      "D": "prev-&gt;next = next ve next-&gt;prev = prev //(varsa)",
+      "E": "head-&gt;prev = head;"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-df77f95553c2",
+    "unitNumber": 38,
+    "text": "Bağlı listelerin dizilere göre en belirgin avantajı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Rastgele erişimin hızlı olması",
+      "B": "Dinamik boyutlandırma ile çalışma sırasında büyüyüp küçülebilmesi",
+      "C": "Ekstra alan gerektirmemesi",
+      "D": "Önbellek (cache) veriminin yüksek olması",
+      "E": "Sabit boyutlu olmaları"
+    },
+    "correctAnswer": "B",
+    "explanation": "Diziler (arrays) oluşturulduklarında hafızada sabit ve bitişik bir boyut kaplarlar. Bağlı listeler (linked lists) ise elemanları işaretçilerle bağladığı için, programın çalışma zamanında (run-time) ihtiyaca göre kolayca yeni düğüm eklenebilir veya silinebilir. Yani hafızayı ”dinamik boyutlandırma ile büyüyüp küçülerek” esnek kullanmaları bağlı listelerin en büyük avantajıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-3224e4bad5c7",
+    "unitNumber": 39,
+    "text": "Aşağıdakilerden hangisi özyinelemeye elverişli problem sınıflarına örnektir?",
+    "options": {
+      "A": "Her adımda global durum gerektiren ve bölünemeyen süreçler",
+      "B": "Salt bit düzeyinde sabit-şablon optimizasyonları",
+      "C": "Tamamen rastgele erişim gerektiren tek adımlı işlemler",
+      "D": "Yalnızca sabit zamanı aritmetik işlemler",
+      "E": "Böl ve yönet (Merge Sort, Quick Sort) gibi alt problemlere ayrılabilen yapılar"
+    },
+    "correctAnswer": "E",
+    "explanation": "Özyineleme (Recursion), büyük ve karmaşık bir problemin, kendisine benzeyen daha küçük alt problemlere ayrılarak (parçalanarak) çözüldüğü yöntemdir. Bu yaklaşıma “Böl ve Yönet (Divide and Conquer)” denir. Merge Sort, Quick Sort gibi sıralama algoritmaları veya Fibonacci gibi problemler alt parçalara ayrılma özelliklerinden dolayı özyinelemeye mükemmel bir örnektir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8b33de42cad1",
+    "unitNumber": 40,
+    "text": "Dequeue işlemi hakkında doğru ifade aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Sondaki elemanı çıkarır ve döndürür.",
+      "B": "Sondaki elemanı görüntüler.",
+      "C": "Baştaki elemanı görüntüler.",
+      "D": "Baştaki elemanı çıkarır ve döndürür.",
+      "E": "Ortadaki elemanı çıkarır ve döndürür."
+    },
+    "correctAnswer": "D",
+    "explanation": "Kuyruk (Queue) veri yapısında FIFO (İlk Giren İlk Çıkar) kuralı geçerlidir. Yeni bir eleman ekleme işlemine Enqueue denir ve arkadan eklenir. Sırada bekleyen (en baştaki) elemanın işleme alınıp kuyruktan tamamen çıkarılması ve değerinin çağırıcıya döndürülmesi işlemine ise “Dequeue” adı verilir. Yani kuyruğun “Baştaki elemanı çıkarır ve döndürür”.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-13240036fab0",
+    "unitNumber": 41,
+    "text": "Selection Sort ile ilgili aşağıdaki ifadelerden hangisi doğru bir ifadedir?",
+    "options": {
+      "A": "En iyi durumda O(n) çalışır",
+      "B": "Ortalama durumda O(n log n) çalışır",
+      "C": "Genellikle kararlı değildir",
+      "D": "Ekstra bellek kullanır (O(n))",
+      "E": "Her zaman kararlıdır"
+    },
+    "correctAnswer": "C",
+    "explanation": "Selection Sort (Seçmeli Sıralama), dizideki en küçük elemanı bulup sürekli başa atarak çalışan bir algoritmadır. Eşit değere sahip elemanların orijinal (baştaki) sırasını, birbirleriyle yaptıkları uzun mesafeli yer değiştirmeler (swap) nedeniyle bozma ihtimali çok yüksektir. Bu nedenle Selection Sort ”kararlı (stable) bir sıralama algoritması değildir” (Genellikle kararlı değildir/unstable’dır).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f06500ed6eba",
+    "unitNumber": 42,
+    "text": "Özyineleme (recursion) için en uygun tanım aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Fonksiyonların yalnızca döngülerle tekrar ettiği yöntem",
+      "B": "Yalnızca matematiksel fonksiyonlara uygulanabilen teknik",
+      "C": "Sadece iteratif çözüm gerektiren algoritmaların sınıfı",
+      "D": "Bir fonksiyonun kendisini (doğrudan dolaylı) çağırdığı programlama tekniği",
+      "E": "Sadece derleyici içi bir optimizasyon türü"
+    },
+    "correctAnswer": "D",
+    "explanation": "Özyineleme (Recursion), bir metot veya fonksiyonun, belirli bir temel (base) çıkış şartı sağlanana kadar kendi gövdesi içerisinden kendisini tekrar çağırması (doğrudan) veya başka bir fonksiyon aracılığıyla dolaylı yoldan yine kendisini çağırması işlemine verilen genel programlama tekniğinin adıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f052d3866cd0",
+    "unitNumber": 43,
+    "text": "Baştan silme fonksiyonunda aşağıdaki koruyucu kontrolden hangisi yerinde bir uygulamadır?",
+    "options": {
+      "A": "if (head &lt; 0) return;",
+      "B": "if (head-&gt;data == 0) return;",
+      "C": "if (head == nullptr) return;",
+      "D": "if (head == next) return;",
+      "E": "if (head-&gt;next == nullptr) delete head;"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-80e7ffc65b64",
+    "unitNumber": 44,
+    "text": "Aşağıdakilerden hangisi kararlı (stable) bir sıralamadır?",
+    "options": {
+      "A": "Shell Sort",
+      "B": "Merge Sort",
+      "C": "Selection Sort",
+      "D": "Heap Sort",
+      "E": "Quick Sort"
+    },
+    "correctAnswer": "B",
+    "explanation": "Kararlı (stable) sıralama algoritmaları, aynı değere (eşit anahtara) sahip elemanların sıralama öncesindeki bağıl (orijinal) sıralarını sıralama sonrasında da koruyan algoritmalardır. Bubble Sort, Insertion Sort ve “Merge Sort” kararlı algoritmalardır. (Ancak Quick Sort, Heap Sort ve Selection Sort doğaları gereği kararlı değildir).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d215e4804362",
+    "unitNumber": 45,
+    "text": "FIFO prensibi aşağıdakilerden hangisini ifade eder?",
+    "options": {
+      "A": "İlk giren en son çıkar",
+      "B": "Rastgele giren rastgele çıkar",
+      "C": "En küçük öncelikli önce çıkar",
+      "D": "Son giren ilk çıkar",
+      "E": "İlk giren ilk çıkar"
+    },
+    "correctAnswer": "E",
+    "explanation": "FIFO (First-In, First-Out) kavramı, kuyruk (Queue) veri yapısının temel prensibidir. Tıpkı günlük hayattaki banka veya market bilet kuyruğu gibi, sıraya giren ilk eleman (veri), sıradan çıkacak olan ilk eleman olur. Türkçesi ”İlk Giren İlk Çıkar”dır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4b3e8a756ad1",
+    "unitNumber": 46,
+    "text": "Aynı tipteki veri parçalarının bilgisayar belleğinde ardışık olarak tutulmasını, aynı isim altında birden fazla veri saklanmasını sağlayan veri yapısı aşağıdaki seçeneklerin hangisinde verilmiştir?",
+    "options": {
+      "A": "Kuyruk Veri Yapısı.",
+      "B": "Yığın Veri Yapısı.",
+      "C": "Dizi Veri Yapısı.",
+      "D": "Ağaç Veri Yapısı.",
+      "E": "Bağlı Liste Veri Yapısı."
+    },
+    "correctAnswer": "C",
+    "explanation": "Aynı tipteki verilerin bellekte **ardışık** (birbirini takip eden) olarak saklanmasını sağlayan ve bu verilere indis numaralarıyla erişilen yapı **Dizi Veri Yapısı**’dır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5d192f1a26e2",
+    "unitNumber": 47,
+    "text": "Yukarıda verilen fonksiyon çift yönlü bağlı liste üzerinde çalışmaktadır. Fonksiyonun işlevi aşağıdaki seçeneklerden hangisinde verilmiştir?",
+    "options": {
+      "A": "Çift yönlü bağlı listenin başına eleman ekler.",
+      "B": "Çift yönlü bağlı listedeki elemanları sayar.",
+      "C": "Çift yönlü bağlı listenin sonundan eleman siler.",
+      "D": "Çift yönlü bağlı listenin sonuna eleman ekler.",
+      "E": "Çift yönlü bağlı listenin başından eleman siler."
+    },
+    "correctAnswer": "D",
+    "explanation": "Fonksiyon, `while(temp->sonraki != NULL)` döngüsü ile listenin son elemanını bulur (`temp`). Ardından yeni düğümün (`eklenecekDugum`) `onceki` işaretçisini `temp`’e, `temp`’in `sonraki` işaretçisini yeni düğüme bağlar. Bu, **listenin sonuna eleman ekleme** işlemidir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-24b6ad3b7226",
+    "unitNumber": 48,
+    "text": "int A[]={1,5,3,7,9} şeklinde verilen dizininin bellekteki adresi 2000 olduğuna göre bu dizide indisi 4 (dört) olan elemanın adresi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "2012",
+      "B": "2016",
+      "C": "2004",
+      "D": "2000",
+      "E": "2008"
+    },
+    "correctAnswer": "B",
+    "explanation": "C dilinde `int` türü genellikle 4 byte yer kaplar. Diziler 0 indisinden başlar. İndisi 4 olan eleman (A[4]) dizinin 5. elemanıdır. Başlangıç adresi 2000. Adres(A[i]) = Başlangıç_Adresi i * Eleman_Boyutu Adres(A[4]) = 2000 4 * 4 = 2000 16 = 2016.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-93951faf1763",
+    "unitNumber": 49,
+    "text": "Yukarıda verilen fonksiyon tek yönlü bağı liste üzerinde çalışmaktadır. Fonksiyonun işlevi hangi seçenekte doğru olarak verilmiştir?",
+    "options": {
+      "A": "Tek yönlü bağlı listenin başındaki elemanı siler.",
+      "B": "Tek yönlü bağlı listenin sonundaki elemanı siler.",
+      "C": "Tek yönlü bağlı listenin aradaki elemanını siler.",
+      "D": "Tek yönlü bağlı listenin sonuna eleman ekler.",
+      "E": "Tek yönlü bağlı listenin başına eleman ekler."
+    },
+    "correctAnswer": "A",
+    "explanation": "Kod, başlangıç (baslangic) işaretçisini bir sonraki düğüme (Ikinci) taşıyarak (`baslangic = Ikinci;`) ve eski başlangıç düğümünü bellekten silerek (`free (baslangic);`) listenin **başındaki elemanı silme** işlemini gerçekleştirir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-19b1db68ed5d",
+    "unitNumber": 50,
+    "text": "Çift yönlü bağlı listeler için aşağıda verilen ifadelerden hangisi yanlıştır?",
+    "options": {
+      "A": "Çift yönlü bağlı listelerin düğümlerinde onceki (prev) adlı işaretçi de bulunduğu için bu veri yapısı bellekte fazladan yer kaplar.",
+      "B": "Çift yönlü bağlı listelerin ilk düğümünün önceki (prev) işaretçisinin varsayılan değeri NULL 'dır.",
+      "C": "Çift yönlü bağlı listelerin son düğümünün sonraki (next) işaretçisinin varsayılan değeri NULL 'dır.",
+      "D": "Liste üzerinde çift yönlü hareket edilemez.",
+      "E": "Her düğümün onceki (prev) ve sonraki (next) adında iki işaretçisi olduğu için liste işlemleri görece daha yavaştır."
+    },
+    "correctAnswer": "D",
+    "explanation": "Çift yönlü bağlı listelerin temel avantajı, her düğümde hem önceki hem de sonraki düğümün adresinin tutulması sayesinde **liste üzerinde çift yönlü (ileri ve geri) hareket edilebilmesidir**. Bu nedenle D şıkkı yanlıştır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-38b0448dc392",
+    "unitNumber": 51,
+    "text": "“Kuruluşların hedef(ler)ine ulaşmak amacıyla etkili eylemde bulunmak için kullanabilecekleri fikirleri veya anlayışlarıdır.” İfadesi aşağıdaki kavramlardan hangisini açıklar?",
+    "options": {
+      "A": "Veri",
+      "B": "Enformasyon",
+      "C": "Bağlı Liste",
+      "D": "Dizi",
+      "E": "Bilgi"
+    },
+    "correctAnswer": "E",
+    "explanation": "Verilerin işlenmesiyle elde edilen, hedeflere ulaşmak için eylemde bulunmayı sağlayacak anlamlı çıktı, fikir veya anlayış **Bilgi** (Knowledge) olarak tanımlanır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-40fc600dc54f",
+    "unitNumber": 52,
+    "text": "C dilinde “açıklama” yazmak için hangi sembol veya semboller kullanılmaktadır?",
+    "options": {
+      "A": "( )",
+      "B": "",
+      "C": "' '",
+      "D": "\" \"",
+      "E": "/**/"
+    },
+    "correctAnswer": "E",
+    "explanation": "C programlama dilinde çok satırlı açıklamalar `/*` ile başlar ve `*/` ile biter. Tek satırlık açıklamalar ise `//` ile başlar. Şıklarda verilen `/**/` çok satırlı açıklama formatını temsil eder.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f0a6354a790f",
+    "unitNumber": 53,
+    "text": "int D[3][4][4] ; Bir C programında yukarıdaki şeklinde bir dizi tanımlanmıştır. Bu dizinin eleman sayısı en fazla kaç olabilir?",
+    "options": {
+      "A": "52",
+      "B": "24",
+      "C": "48",
+      "D": "20",
+      "E": "16"
+    },
+    "correctAnswer": "C",
+    "explanation": "Üç boyutlu bir dizideki toplam eleman sayısı, boyutların çarpımıdır: 3 x 4 x 4 = 48. Dizinin eleman sayısı en fazla **48** olabilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-971cb2cc1522",
+    "unitNumber": 54,
+    "text": "Yukarıda verilen resmin çift yönlü dairesel bağlı listeyi temsil etmesi için şekil üzerinde soru işareti ile gösterilen yere aşağıda verilenlerden hangisi yazılmalıdır?",
+    "options": {
+      "A": "A97190",
+      "B": "46",
+      "C": "45",
+      "D": "A97350",
+      "E": "A97170"
+    },
+    "correctAnswer": "E",
+    "explanation": "Çift yönlü **dairesel** bağlı listede, ilk düğümün **prev** (önceki) işaretçisi, listenin **son düğümünün adresini** göstermelidir. Şekilde son düğümün adresi **A97170** olduğu için soru işareti olan yere bu adres yazılmalıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a03536e9eab8",
+    "unitNumber": 56,
+    "text": "C programlama dilinde, bağlı listelerin düğümleri için bellekte yer ayırılması işlemi hangi fonksiyon ile gerçekleştirilir?",
+    "options": {
+      "A": "free()",
+      "B": "struct",
+      "C": "return",
+      "D": "malloc()",
+      "E": "main()"
+    },
+    "correctAnswer": "D",
+    "explanation": "C programlama dilinde dinamik bellek yönetimi (çalışma anında bellek tahsisi) için kullanılan temel fonksiyon **malloc()**’tur (memory allocation).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9744d3d27a1e",
+    "unitNumber": 57,
+    "text": "Yukarıdaki fonksiyon, tek yönlü bağlı liste üzerinde aşağıdaki hangi işlemi gerçekleştirilmesi için yazılmıştır?",
+    "options": {
+      "A": "Bağlı listenin sonundan eleman silmek için yazılmıştır.",
+      "B": "Bağlı listede düğümlerin arasına eleman eklemek için yazılmıştır.",
+      "C": "Bağlı listenin başından eleman silmek için yazılmıştır.",
+      "D": "Bağlı listenin başına eleman eklemek için yazılmıştır.",
+      "E": "Bağlı listenin sonuna eleman eklemek için yazılmıştır."
+    },
+    "correctAnswer": "E",
+    "explanation": "Fonksiyon, bir temp işaretçisi kullanarak `while (temp->sonraki != NULL)` koşulu ile listenin sonuna kadar ilerlemekte ve `temp->sonraki = eklenecekDugum;` komutuyla yeni düğümü listenin **sonuna** eklemektedir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e1ce32114ca2",
+    "unitNumber": 58,
+    "text": "Yukarıda verilen fonksiyon çift yönlü bağlı liste üzerinde çalışmaktadır. Fonksiyonun işlevi aşağıdaki seçeneklerin hangisinde verilmiştir?",
+    "options": {
+      "A": "Çift yönlü bağlı listenin başındaki elemanı siler.",
+      "B": "Çift yönlü bağlı listede arama yapılmasını sağlar.",
+      "C": "Çift yönlü bağlı listede ilk düğümün oluşturulmasını sağlar.",
+      "D": "Çift yönlü bağlı listenin sonundaki elemanı siler.",
+      "E": "Çift yönlü bağlı listede kaç eleman olduğunu tespit eder."
+    },
+    "correctAnswer": "A",
+    "explanation": "Kod, ilk düğümün (ilkDugum) sonraki düğümünü (Ikinci) belirler, ilk düğümü bellekten siler (free), listeyi ikinci düğümden başlatır (ilkDugum = Ikinci) ve yeni ilk düğümün önceki işaretçisini NULL yapar (Ikinci->onceki = NULL). Bu işlemler, **listenin başındaki elemanı silme** işlemini gerçekleştirir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-eb16ca1767ca",
+    "unitNumber": 59,
+    "text": "Çift yönlü bağlı listelerde son düğümün sonraki (Next) işaretçisinin varsayılan değeri nedir?",
+    "options": {
+      "A": "Listede yer alan herhangi bir düğümün adresi",
+      "B": "NULL",
+      "C": "Bellekteki başka bir listenin son düğümünün adresi",
+      "D": "Listenin ilk düğümünün adresi",
+      "E": "Son düğümün adresi"
+    },
+    "correctAnswer": "B",
+    "explanation": "Normal (dairesel olmayan) **çift yönlü bağlı listelerde**, listenin son düğümünün **Next** işaretçisi, kendisinden sonra başka bir düğüm olmadığı için **NULL**’dır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c2d6438b86ac",
+    "unitNumber": 60,
+    "text": "Aşağıdakilerden hangisi C programlama dilinde kullanılan “tab” kontrol karakteridir?",
+    "options": {
+      "A": "v",
+      "B": "t",
+      "C": "n",
+      "D": "a",
+      "E": "b"
+    },
+    "correctAnswer": "B",
+    "explanation": "C programlama dilinde, ters eğik çizgi () “escape” (kaçış) karakteridir ve özel kontrol karakterlerini belirtir. Yatay bir “tab” boşluğu bırakmak için kullanılan karakter **t**dir. (n yeni satır, a uyarı sesi, b backspace, v dikey tab anlamına gelir).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c4b6740f8660",
+    "unitNumber": 61,
+    "text": "Kuyruk veri yapısında dolu olan bir kuyruğa, eleman eklenmek istendiğinde aşağıdaki seçeneklerde verilenlerden hangisi hata olarak döner?",
+    "options": {
+      "A": "Stackoverflow",
+      "B": "Herhangi bir hata dönmez.",
+      "C": "Underflow",
+      "D": "Overflow",
+      "E": "BadSector"
+    },
+    "correctAnswer": "D",
+    "explanation": "“Overflow” (Taşma), bir veri yapısının (kuyruk, yığın vb.) kapasitesi doluyken ona yeni bir eleman eklemeye çalışıldığında meydana gelen hata durumudur. “Underflow” (Boşalma) ise boş bir yapıdan eleman çıkarmaya çalışmaktır. “Stackoverflow” yığına özel bir taşma hatasıdır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f3ff720ec52f",
+    "unitNumber": 62,
+    "text": "Levelorder yöntemiyle düğümleri [50, 60, 70, 80, 85, 90, 95] şeklinde yazdırılan ağacın doğru çizilmiş şekli yukarıda verilen şekillerden hangisidir?",
+    "options": {
+      "A": "IV",
+      "B": "V",
+      "C": "II",
+      "D": "III",
+      "E": "I"
+    },
+    "correctAnswer": "C",
+    "explanation": "“Level-order” (Seviye sırasıyla) dolaşma, ağacı en üst seviyeden (kök) başlayarak katman katman, soldan sağa doğru gezer. Verilen dizi: [50, 60, 70, 80, 85, 90, 95] Seviye 0 (Kök): 50 Seviye 1: 60, 70 Seviye 2: 80, 85, 90, 95 Bu yapıya tam olarak uyan ağaç II numaralı görseldir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-eb210cbe959a",
+    "unitNumber": 63,
+    "text": "Çift yönlü bağlı listelerin düğümlerinde kaç adet farklı veri tutulabilir?",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "1",
+      "D": "Herhangi bir sınırlama yoktur.",
+      "E": "4"
+    },
+    "correctAnswer": "D",
+    "explanation": "Çift yönlü bağlı listelerin düğümleri (node), genellikle veri (data), önceki düğümün adresi (prev) ve sonraki düğümün adresi (next) olmak üzere en az 3 parçadan oluşur. Ancak “veri” (data) alanında kaç adet farklı bilgi (isim, yaş, maaş vb.) tutulacağına dair teorik bir sınırlama yoktur. Bu, programcının ihtiyacına göre değişir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-96aac89c7640",
+    "unitNumber": 64,
+    "text": "Tek yönlü bağlı listenin son elemanında, listenin başındaki elemanı gösterecek bir işaretçi bulundurularak oluşturulan veri yapılarına verilen ad aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Çift yönlü dairesel bağlı liste veri yapısı",
+      "B": "Tek boyutlu dizi veri yapısı",
+      "C": "Tek yönlü dairesel bağlı liste veri yapısı",
+      "D": "Çift yönlü bağlı liste veri yapısı",
+      "E": "Tek yönlü bağlı Liste veri yapısı"
+    },
+    "correctAnswer": "C",
+    "explanation": "Tek yönlü bağlı listede son elemanın işaretçisi normalde NULL (boş) gösterir. Eğer bu son elemanın işaretçisi, listenin ilk elemanını (Head) gösterecek şekilde ayarlanırsa, liste “dairesel” bir yapı kazanır. Buna “Tek Yönlü Dairesel Bağlı Liste” (Circular Singly Linked List) denir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e6c4e59cafa4",
+    "unitNumber": 65,
+    "text": "Yığın (Stack) veri yapısı için aşağıda verilenlerden hangisi vanlıştır?",
+    "options": {
+      "A": "Yığında depolanan öğelerden (eleman) yığının tepesine daha yakın olan öğeler yığında daha az süreyle kalan öğeleri temsil eder.",
+      "B": "Yığın veri yapısında yığına eleman ekleme ve çıkarma işlemleri farklı iki noktadan yapılır.",
+      "C": "Yığıma ilk önce yerleştirilen öğe yığının tabanına yerleştirilir.",
+      "D": "Yığında depolanan öğelerden (eleman) yığının tabana daha yakın olan öğeler yığında daha uzun süre kalan öğeleri temsil eder.",
+      "E": "Yığına en son eklenen öğe yığının tepesine yerleştirilir."
+    },
+    "correctAnswer": "B",
+    "explanation": "Yığın (Stack) LIFO (Son Giren İlk Çıkar) prensibine göre çalışır. Hem eleman ekleme (push) hem de eleman çıkarma (pop) işlemleri yığının “tepe” (top) adı verilen aynı tek bir noktasından yapılır. Farklı iki noktadan (ön ve arka) işlem yapısı Kuyruk (Queue) veri yapısına aittir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-82c165cd1c27",
+    "unitNumber": 66,
+    "text": "Eleman ekleme işleminin sondan (rear), eleman çıkarma işleminin baştan (front) yapıldığı doğrusal veri yapısı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Yığım Veri Yapısı",
+      "B": "Dairesel Bağlı Liste Veri Yapısı",
+      "C": "Kuyruk Veri Yapısı",
+      "D": "Çift Yönlü Bağlı Liste Veri Yapısı",
+      "E": "Tek Yönlü Bağlı Liste Veri Yapısı"
+    },
+    "correctAnswer": "C",
+    "explanation": "Bu, “Kuyruk” (Queue) veri yapısının tanımıdır. Kuyruk, FIFO (İlk Giren İlk Çıkar) prensibine göre çalışır. Elemanlar bir uçtan (rear – arka/son) eklenir ve diğer uçtan (front – ön/baş) çıkarılır (Tıpkı bir bilet kuyruğu gibi).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-614b8fb46010",
+    "unitNumber": 67,
+    "text": "Yukarıda verilen programda özyinelemeli (Recursive) fonksiyona ait “Genel Durum (General Case): Özyinelemeli Durum” ifadesi kaçıncı satırda yazılmıştır?",
+    "options": {
+      "A": "2",
+      "B": "9",
+      "C": "3",
+      "D": "5",
+      "E": "6"
+    },
+    "correctAnswer": "E",
+    "explanation": "Özyinelemeli (recursive) fonksiyonlarda iki durum vardır: 1) Temel Durum (Base Case): Fonksiyonun durma koşuludur (Satır 3-4). 2) Genel Durum (Recursive Case): Fonksiyonun kendini tekrar çağırdığı yerdir. Bu kodda genel durum else bloğundaki **return n*faktoriyel(n-1);** satırıdır (6. satır).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8027e291d9ae",
+    "unitNumber": 68,
+    "text": "Yukarıda verilen ve içerisinde özyinelemeli (recursive) fonksiyon bulunan program çalıştırıldığında son değişkeninin değeri kaç olarak hesaplanır?",
+    "options": {
+      "A": "12",
+      "B": "120",
+      "C": "6",
+      "D": "0",
+      "E": "24"
+    },
+    "correctAnswer": "E",
+    "explanation": "Kod, hesap(4) fonksiyonunu çağırmaktadır. Bu fonksiyon return n * hesap(n-1) şeklinde tanımlanmıştır. Bu, faktöriyel hesabıdır. hesap(4) = 4 * hesap(3) hesap(3) = 3 * hesap(2) hesap(2) = 2 * hesap(1) hesap(1) = 1 (dönüş koşulu) Sonuç = 4 * 3 * 2 * 1 = 24.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f3df200e774b",
+    "unitNumber": 69,
+    "text": "Şekildeki Ağaç veri yapısında, (H) düğümünün yolu (path) tam ve doğru olarak aşağıdaki seçeneklerden hangisinde verilmiştir?",
+    "options": {
+      "A": "A, B,E, G, H",
+      "B": "B, E, G, H",
+      "C": "C, A, B, E, &Eta;",
+      "D": "A, B, E, H",
+      "E": "E, G, H"
+    },
+    "correctAnswer": "D",
+    "explanation": "Bir düğümün “yolu” (path), kök düğümden o düğüme kadar ziyaret edilen tüm düğümlerin sırasıyla yazılmasıdır. H düğümüne ulaşmak için Kök (A)’dan başlayıp B’ye, oradan E’ye ve son olarak H’ye gitmek gerekir. Yol: A -> B -> E -> H.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-286b65f462bc",
+    "unitNumber": 70,
+    "text": "Sonlu sayıda düğümleri bulunan, düğümlerini birbirine bağlayan kenarları olan ve döngü içermeyen veri yapısı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Tek Yönlü Bağlı Liste",
+      "B": "Ağaç Veri Yapısı",
+      "C": "Dizi Veri yapısı",
+      "D": "Çift Yönlü Bağlı Liste",
+      "E": "Yığım Veri Yapısı"
+    },
+    "correctAnswer": "B",
+    "explanation": "Bu, “Ağaç” (Tree) veri yapısının tanımıdır. Ağaçlar, hiyerarşik bir yapı gösteren, düğüm (node) ve kenarlardan (edge) oluşan, ancak (bağlı listelerin aksine) “döngü” (cycle) içermeyen veri yapılarıdır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d2a1f72bfcab",
+    "unitNumber": 71,
+    "text": "Elemanları {29,19,89,1,7} olarak verilen dizinin Seçerek Sıralama (Selection Sort) algoritmasıyla artan sırada (küçükten büyüğe) sıralanması isteniyor. Algoritmanın çalışması, ilk önce dizinin aşağıdaki hangi elemanın seçilmesi ve seçilen bu elemanın diger elemanlarla karşılaştırılmasıyla başlar?",
+    "options": {
+      "A": "89",
+      "B": "7",
+      "C": "1",
+      "D": "19",
+      "E": "29"
+    },
+    "correctAnswer": "E",
+    "explanation": "Seçerek Sıralama (Selection Sort) algoritması, ilk adımda dizinin ilk elemanını (indeks 0) geçici olarak en küçük kabul eder. Dizinin ilk elemanı {29} olduğu için, algoritma ilk önce 29’u seçer ve onu dizinin geri kalanıyla (19, 89, 1, 7) karşılaştırarak en küçüğü aramaya başlar.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f7ed293863d3",
+    "unitNumber": 72,
+    "text": "Aşağıda verilen fonksiyonlardan hangisi yığın (stack) veri yapısında yığındaki eleman sayısını öğrenmek için kullanılır?",
+    "options": {
+      "A": "size()",
+      "B": "peek()",
+      "C": "push(int s)",
+      "D": "pop()",
+      "E": "empty()"
+    },
+    "correctAnswer": "A",
+    "explanation": "Yığın (Stack) operasyonları: push() eleman ekler, pop() eleman çıkarır, peek() en üstteki elemana bakar, empty() boş olup olmadığını kontrol eder. Yığının mevcut eleman sayısını döndüren fonksiyon ise “size()” (boyut) fonksiyonudur.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e142f26fdd99",
+    "unitNumber": 73,
+    "text": "int dizi [3][4]; Bir C programında yukarıdaki şekilde bir dizi tanımlanmıştır. Program çalıştırıldığında dizinin dizi[2][3] elemanın ana bellekteki adresi kaç olur? (Hesaplamalarda dizi adresi 1000, dizinin bir elemanının maliyeti 4 Byte olarak alınacaktır.)",
+    "options": {
+      "A": "1044",
+      "B": "1048",
+      "C": "1052",
+      "D": "1036",
+      "E": "1040"
+    },
+    "correctAnswer": "A",
+    "explanation": "İki boyutlu bir dizide (örn: [satır][sütun]) bir elemanın adresi şu formülle bulunur: Adres = Başlangıç_Adresi [ (istenilen_satır * toplam_sütun_sayısı) istenilen_sütun ] * eleman_boyutu. Toplam Sütun Sayısı = 4. Eleman Boyutu = 4 Byte. Başlangıç = 1000. İstenen eleman: dizi[2][3] Adres = 1000 [ (2 * 4) 3 ] * 4 = 1000 44 = 1044.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b58db6ea5a3b",
+    "unitNumber": 74,
+    "text": "A-(B*C) aritmetik ifadesi yukarıda verilen hangi bağıntı ağacıyla temsil edilebilir?",
+    "options": {
+      "A": "III",
+      "B": "V",
+      "C": "IV",
+      "D": "I",
+      "E": "II"
+    },
+    "correctAnswer": "A",
+    "explanation": "A-(B*C) ifadesini temsil eden bağıntı ağacının (Expression Tree) kökü (-) olmalıdır. Sol çocuk (A) ve sağ çocuk (B*C) olmalıdır. (B*C) alt ağacının kökü (*) ve çocukları B ve C olmalıdır. Bu yapıya uyan ağaç III numaralı görseldir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-eb7a3a669fca",
+    "unitNumber": 75,
+    "text": "Elemanları {10,8,6,4} şeklinde verilen dizi, Kabarcık Sıralaması (Bubble Sort) algoritması ile artan sırada (küçükten büyüğe) sıralaıyor. Dizinin sıralanması sırasında, algoritmanın adımları sonrasında (Sırasıyla 1. Adım, 2. Adım ve 3. Adım) oluşacak diziler aşağıdaki seçeneklerin hangisinde doğru olarak verilmiştir?",
+    "options": {
+      "A": "[6,4,8,10][4,6,8,10] [8,6,4,10]",
+      "B": "[4,6,8,10] [8,6,4,10] [6,4,8,10]",
+      "C": "[10,8,6,4] [6,4,8,10][4,6,8,10]",
+      "D": "[8,6,4,10] [6,4,8,10][4,6,8,10]",
+      "E": "[6,4,8,10][4,6,8,10] [10,8,6,4]"
+    },
+    "correctAnswer": "D",
+    "explanation": "Kabarcık Sıralaması’nda her adımda en büyük eleman “kabarcık” gibi sona doğru ilerler. Başlangıç: {10, 8, 6, 4} 1. Adım (10 ile 8, 10 ile 6, 10 ile 4 yer değiştirir): {8, 6, 4, 10} 2. Adım (8 ile 6, 8 ile 4 yer değiştirir): {6, 4, 8, 10} 3. Adım (6 ile 4 yer değiştirir): {4, 6, 8, 10} Sıralı dizi adımları: [8,6,4,10] [6,4,8,10] [4,6,8,10]",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e287519145dc",
+    "unitNumber": 76,
+    "text": "Başlangıçta boş olan bir yığın(stack) üzerinde yukarıda verilen işlemler sıralı olarak gerçekleştirilmiştir. Bu işlemler sonunda yığından çıkarılan veriler aşağıdaki hangi seçenekte doğru olarak sıralanmıştır?",
+    "options": {
+      "A": "22211",
+      "B": "11222",
+      "C": "22112",
+      "D": "21212",
+      "E": "11122"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e051dc12a721",
+    "unitNumber": 77,
+    "text": "Yukarıda verilen dairesel kuyruk üzerinde elemanSil() fonksiyonu bir defa çalıştığında kuyruktaki hangi eleman silinir?",
+    "options": {
+      "A": "75",
+      "B": "65",
+      "C": "80",
+      "D": "70",
+      "E": "Kuyruktan eleman silme işlemi gerçekleşmez."
+    },
+    "correctAnswer": "B",
+    "explanation": "Kuyruk (Queue) FIFO (İlk Giren İlk Çıkar) prensibine göre çalışır. Kuyruktan eleman silme (dequeue) işlemi “front” (ön/baş) noktasından yapılır. Şekilde, 65 elemanı kuyruğa ilk giren eleman olduğu ve front’u işaret ettiği için silinecek ilk elemandır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-55f57fe5b380",
+    "unitNumber": 78,
+    "text": "Dizinin sıralanabilmesi için, yukarıdaki işlemden sonraki adımda alt dizilerin önce ikişerli olarak birleştirilmesi gerekiyor. Bu birleştirme işleminin sonucu aşağıdaki seçeneklerden hangisinde doğru olarak verilmiştir?",
+    "options": {
+      "A": "[8,9] [4,5] [-1,0] [7,10]",
+      "B": "[8,9] [5,4] [0,-1] [10,7]",
+      "C": "[8,9] [4,5] [0,-1] [10,7]",
+      "D": "[9,8] [4,5] [-1,0] [7,10]",
+      "E": "[9,8] [4,5] [0,-1] [7,10]"
+    },
+    "correctAnswer": "A",
+    "explanation": "Birleştirmeli Sıralama (Merge Sort) “böl ve yönet” ilkesiyle çalışır. İkinci adımda, tek elemanlı alt diziler ikişerli olarak birleştirilirken aynı zamanda sıralanırlar. {8} ve {9} -> [8, 9] {5} ve {4} -> [4, 5] {0} ve {-1} -> [-1, 0] {10} ve {7} -> [7, 10] Bu sonucu veren şık A seçeneğidir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c249f23814f5",
+    "unitNumber": 79,
+    "text": "C programlama dilinde klavyeden veri okumak için kullanılan fonksiyon aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "#include",
+      "B": "printf()",
+      "C": "stdio.h",
+      "D": "main()",
+      "E": "scanf()"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-277817fdbe9d",
+    "unitNumber": 80,
+    "text": "int A[20][10][5] şeklinde tanımlanan bir dizinin kaç elemanı vardır?",
+    "options": {
+      "A": "50",
+      "B": "35",
+      "C": "15",
+      "D": "200",
+      "E": "1000"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d51f368581e2",
+    "unitNumber": 81,
+    "text": "int A[4][4] şeklinde bir dizi tanımlanıyor ve A dizisinin bellek adresi 1000 olarak veriliyor. Bu diziye ait A[2][2] elemanının bellek adresi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "1080",
+      "B": "2000",
+      "C": "1040",
+      "D": "1060",
+      "E": "1020"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6fdecc4c1daf",
+    "unitNumber": 82,
+    "text": "int C[]={1,0,3,0,0} şeklinde verilen dizinin bellekteki adresi 1500 olduğuna göre bu dizide indisi 3 (üç) olan elemanın adresi kaçtır?",
+    "options": {
+      "A": "1516",
+      "B": "1512",
+      "C": "1508",
+      "D": "1500",
+      "E": "1504"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-818d598cfa99",
+    "unitNumber": 83,
+    "text": "Çift yönlü bağlı listelerde bir düğümde kaç adet işaretçi vardır?",
+    "options": {
+      "A": "3",
+      "B": "2",
+      "C": "0",
+      "D": "4",
+      "E": "1"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5c0d7ec3cf5a",
+    "unitNumber": 84,
+    "text": "Yukarıdaki programın ekran çıktısı için aşağıdakilerden hangisi söylenebilir?",
+    "options": {
+      "A": "Bu program dizinin bellekte kaplayacağı alanı Byte olarak ekrana yazdırır.",
+      "B": "Bu program dizinin bir elemanının bellekte kaplayacağı alanı Byte olarak ekrana yazdırır.",
+      "C": "Bu program dizinin elemanlarını ekrana yazdırır.",
+      "D": "Bu program dizinin eleman sayısını ekrana yazdırır.",
+      "E": "Bu program ekran için herhangi bir çıktı üretmez."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b80bbffd5b5a",
+    "unitNumber": 85,
+    "text": "Yukarıda verilen fonksiyonun işlevi aşağıdaki seçeneklerin hangisinde doğru olarak verilmiştir?",
+    "options": {
+      "A": "Çift Yönlü bağlı listenin ilk elemanını siler.",
+      "B": "Çift yönlü bağlı listenin son elemanını siler.",
+      "C": "Çift Yönlü bağlı listenin başına eleman ekler.",
+      "D": "Çift yönlü bağlı listenin sonuna eleman ekler.",
+      "E": "Çift yönlü bağlı listende düğümlerin arasına yeni eleman ekler."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-eba2c7c1e694",
+    "unitNumber": 86,
+    "text": "Çift yönlü bağlı bir listede tek bir düğüm varsa bu düğümün işaretçileri için aşağıdakilerden hangisi söylenebilir?",
+    "options": {
+      "A": "Çift Yönlü Bağlı Listede tek bir düğüm varsa, bu düğümde sadece onceki (prev) adlı işaretçi yer alır.",
+      "B": "Çift Yönlü Bağlı Listede tek bir düğüm varsa, bu düğümde herhangi bir işaretçi yer almaz.",
+      "C": "Çift Yönlü Bağlı Listede tek bir düğüm varsa, bu düğümde en az 3 (üç) işaretçi yer alır.",
+      "D": "Çift Yönlü Bağlı Listede tek bir düğüm varsa, bu düğümde sadece sonraki (next) adlı işaretçi yer alır.",
+      "E": "Çift Yönlü Bağlı Listede tek bir düğüm varsa, bu düğümde hem sonraki (next) adlı işaretçi hem de onceki (prev) adlı işaretçi yer alır."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-34b7a1aadf3c",
+    "unitNumber": 87,
+    "text": "Yukarıda verilen goster() fonksiyonunda düğümler arasında traversal (dolaşma) işlemi kaçıncı satırdaki ifade ile gerçekleştirilmektedir?",
+    "options": {
+      "A": "6",
+      "B": "3",
+      "C": "2",
+      "D": "7",
+      "E": "5"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-dce34bd5e9b0",
+    "unitNumber": 88,
+    "text": "Tek yönlü bağlı listenin son elemanında, listenin başındaki elemanı gösterecek bir işaretçi bulundurularak oluşturulan veri yapılarına ne ad verilir?",
+    "options": {
+      "A": "Dizi veri yapısı",
+      "B": "Çift yönlü bağlı listen veri yapısı",
+      "C": "Tek yönlü dairesel bağlı liste veri yapısı",
+      "D": "Çift yönlü dairesel bağlı liste veri yapısı",
+      "E": "Tek yönlü bağlı Liste veri yapısı"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3d8d47ab7ecf",
+    "unitNumber": 90,
+    "text": "Tek yönlü bağlı listenin son elemanın sonraki (next) işaretçisinin listenin ilk düğümünü işaret etmesiyle oluşan veri yapısı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Çift Yönlü Dairesel Bağlı Liste",
+      "B": "Yığın",
+      "C": "Çift Yönlü Bağlı Liste",
+      "D": "Tek Yönlü Dairesel Bağlı Liste",
+      "E": "Dizi"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ca7242fac725",
+    "unitNumber": 91,
+    "text": "Herhangi bir elemanı bulunmayan bağlı listelere ne ad verilir?",
+    "options": {
+      "A": "Tek Yönlü Bağlı Liste",
+      "B": "Tek Yönlü Dairesel Bağlı Liste",
+      "C": "Boş Liste",
+      "D": "Çift Yönlü Dairesel Bağlı Liste",
+      "E": "Çift Yönlü Bağlı Liste"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-848e1efaa6bc",
+    "unitNumber": 92,
+    "text": "Çift yönlü bağlı listelerde ilk düğümün önceki (prev) işaretçisinin varsayılan değeri nedir?",
+    "options": {
+      "A": "Listede yer alan herhangi bir düğümün adresi",
+      "B": "Son düğümün adresi",
+      "C": "NULL",
+      "D": "Bellekteki başka bir listenin ilk düğümünün adresi",
+      "E": "Kendisinden sonra gelen ilk düğümün adresi"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-59f415990cee",
+    "unitNumber": 93,
+    "text": "Aşağıda verilenlerden hangisi “işlendiğinde veya düzenlendiğinde anlamlı çıktı oluşturan, en düşük soyut veya işlenmemiş ham girdiyi” ifade eder?",
+    "options": {
+      "A": "Veri",
+      "B": "Programlama dili komutları",
+      "C": "Operatör",
+      "D": "Enformasyon",
+      "E": "Bilgi"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-edda3211a80a",
+    "unitNumber": 94,
+    "text": "C programlama dilinde kullanılan yeni satır kontrol karakteri aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "\\t",
+      "B": "\\n",
+      "C": "\\b",
+      "D": "\\v",
+      "E": "\\a"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  }
+]

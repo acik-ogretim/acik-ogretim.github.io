@@ -1,1 +1,3986 @@
-[]
+[
+  {
+    "id": "s-afaf40c4a872",
+    "unitNumber": 1,
+    "text": "“–enable-windows-desktop” ifadesi Windows bir işletim sistemi için Flutter projesi yazmayı mümkün kılmaktadır. Bu ifade hangi terminal komutuna parametre olarak yazılır?",
+    "options": {
+      "A": "flutter platform",
+      "B": "flutter create",
+      "C": "flutter doctor",
+      "D": "flutter config",
+      "E": "flutter enable"
+    },
+    "correctAnswer": "D",
+    "explanation": "Flutter’da varsayılan olarak kapalı olan bazı platform desteklerini (örneğin Windows veya web) SDK seviyesinde aktif hale getirmek (yapılandırmak) için konfigurasyon aracı kullanılır. Bu işlem terminalde `flutter config –enable-windows-desktop` yazılarak gerçekleştirilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b31eefe67add",
+    "unitNumber": 2,
+    "text": "Detaylı bir navigasyon işlemi için tanımlanabilecek onGenerateRoute parametresi aşağıdaki bileşenlerden hangisinde vardır?",
+    "options": {
+      "A": "Scaffold",
+      "B": "GestureDetector",
+      "C": "Container",
+      "D": "StatefulWidget",
+      "E": "CupertinoApp"
+    },
+    "correctAnswer": "E",
+    "explanation": "Route (sayfa yönlendirme) ayarları ve `onGenerateRoute` parametresi uygulamanın en dışındaki ana kapsayıcı widget’larda bulunur. Bunlar genellikle MaterialApp veya Apple (iOS) tasarımlı eşdeğeri olan ‘CupertinoApp’ widget’larıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-544a18af6a1a",
+    "unitNumber": 3,
+    "text": "Flutter kod içerisinde projeye dahil edilmiş varlıklara (assets) erişmek için ………. kullanır. Yukarıdaki cümlede boş bırakılan alana aşağıdaki ifadelerden hangisi yazılmalıdır?",
+    "options": {
+      "A": "AssetBundle",
+      "B": "AssetFolder",
+      "C": "AssetString",
+      "D": "AssetMap",
+      "E": "AssetStream"
+    },
+    "correctAnswer": "A",
+    "explanation": "Flutter’da projenin paketine (pubspec.yaml dosyasına) eklenmiş olan resim, font, metin dosyası gibi statik kaynaklara (varlıklara/assets) kod içinden erişmek ve bunları bellek üzerinde okumak için ‘AssetBundle’ (genellikle DefaultAssetBundle.of(context)) sınıfı kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-95900aaf7a00",
+    "unitNumber": 4,
+    "text": "Yukarıdaki kod bloğunun ekran çıktısı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "null",
+      "B": "5",
+      "C": "3",
+      "D": "0",
+      "E": "NaN"
+    },
+    "correctAnswer": "B",
+    "explanation": "Kodun adım adım analizi: 1) islem(int? x) fonksiyonu, içine parametre olarak bir `i` alan ve `x ?? i` (eğer x null ise i’yi, değilse x’i) döndüren bir fonksiyon döndürüyor. 2) `var nullli = islem(null);` yapıldığında `nullli` fonksiyonu, x yerine null alır. Yani `nullli(i)` çağrıldığında `null ?? i` çalışır ve sonuç `i` olur. Dolayısıyla `nullli(3)` sonucu 3’tür. 3) `var nullsiz = islem(5);` yapıldığında `nullsiz` fonksiyonu, x yerine 5 alır. `nullsiz(i)` çağrıldığında `5 ?? i` çalışır ve x null olmadığı için her zaman 5 döndürür. Parametre ne olursa olsun sonuç 5’tir. 4) `print(nullsiz(nullli(3)));` -> İçerideki `nullli(3)` 3 döner. Dışarıdaki `nullsiz(3)` ise x=5 olduğu için 5 döner. Ekrana 5 yazdırılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c16d109aeabc",
+    "unitNumber": 5,
+    "text": "Aşağıdakilerden hangisi 2021 yılında Flutter’ın desteklemediği bir ortam (işletim sistemi) adıdır?",
+    "options": {
+      "A": "Linux",
+      "B": "HarmonyOS",
+      "C": "Android",
+      "D": "iOS",
+      "E": "Windows"
+    },
+    "correctAnswer": "B",
+    "explanation": "2021 yılı itibarıyla Flutter; iOS, Android, Windows, Mac, Linux ve Web platformları için resmi destek veriyordu. Ancak Huawei’nin geliştirdiği ‘HarmonyOS’, o dönemde Flutter tarafından resmi olarak desteklenen platformlar listesinde yer almıyordu.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-bac77b3d3a35",
+    "unitNumber": 6,
+    "text": "StatefulWidget yapısı içinde, değişkenin değerinin değiştiğini Flutter çerçevesine (framework’e) bildirerek build metodunun tekrar çalışmasını (ekranın yeniden çizilmesini) sağlayan fonksiyon aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "initState()",
+      "B": "dispose()",
+      "C": "setState()",
+      "D": "updateWidget()",
+      "E": "render()"
+    },
+    "correctAnswer": "C",
+    "explanation": "StatefulWidget’ta bir sayacın değerini `sayac++` şeklinde artırmak yeterli değildir; bu artışın ekrana yansıması için çerçevenin haberdar edilmesi gerekir. Bu işi yapan, içindeki kodları çalıştırdıktan hemen sonra Widget’ı yeniden çizmeye (build etmeye) zorlayan fonksiyon “setState((){ })” fonksiyonudur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f663b23e826c",
+    "unitNumber": 7,
+    "text": "Container(width: 100, height: 100, color: red) Yukarıdaki kod satırında bir Container’ın genişlik ve yüksekliğinin 100 birim olması belirtilmiştir. Lakin bu Container sayfanın en üst bileşeni ise ekranın tamamını kapladığı görülür. Bunun sebebi nedir?",
+    "options": {
+      "A": "Container'ın color parametresinin tanımlanmış olması",
+      "B": "Container'in padding parametresinin tanımlanmamış olması",
+      "C": "Container içerisinde başka bir widget olmaması, yani child parametresinin verilmemiş olması",
+      "D": "Container'ın üst seviyesindeki kısıtın kendisini buna zorlaması",
+      "E": "Container'in decoration parametresinin tanımlanmamış olması"
+    },
+    "correctAnswer": "D",
+    "explanation": "Flutter’ın düzen (layout) sistemindeki en temel kural şudur: ‘Kısıtlar (constraints) yukarıdan aşağıya iner, boyutlar (sizes) aşağıdan yukarıya çıkar’. Eğer bir Container sayfanın en üstünde (kökünde) ise ve etrafında onu sınırlayacak bir Center, Align veya Scaffold yoksa; işletim sistemi ekranın katı (tight) kısıtlarını doğrudan Container’a iletir ve Container sizin verdiğiniz width/height değerlerini yok sayarak ekranın tamamını kaplamaya (zorlanmaya) mecbur kalır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-dd81e926903c",
+    "unitNumber": 8,
+    "text": "Aşağıdaki ihtiyaçlardan hangisi için arayüz bileşenleri bir Container widgetı içerisine toplanmaz?",
+    "options": {
+      "A": "Arkaplan rengi (color) ayarlamak için",
+      "B": "İçerdiği objeleri yan yana (soldan sağa) sıralamak için",
+      "C": "Kenar özellikleri (border) ayarlamak için",
+      "D": "Dış kenar boşluğu (margin) ayarlamak için",
+      "E": "İç kenar boşluğu (padding) ayarlamak için"
+    },
+    "correctAnswer": "B",
+    "explanation": "Container widget’ı renk (A), kenarlık (C), dış boşluk (D) ve iç boşluk (E) vermek için mükemmel bir kutu (box) modelidir. Ancak Container yalnızca tek bir alt eleman (child) alabilir. Birden fazla objeyi yan yana (soldan sağa) sıralamak için Container değil, ‘Row’ widget’ı kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-0fa8a090fc5e",
+    "unitNumber": 9,
+    "text": "Kendi arayüz bileşimimizi üretmek istediğimizde, arayüz bileşeni sınıfının tanımlamasında, @override ile işaretleyip yazmak zorunda olduğumuz fonksiyon aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "build",
+      "B": "init",
+      "C": "runApp",
+      "D": "create",
+      "E": "main"
+    },
+    "correctAnswer": "A",
+    "explanation": "Flutter’da kendi yazdığımız her bir arayüz bileşeni (StatelessWidget veya StatefulWidget) ekranda ne göstereceğini belirtmek zorundadır. Bu nedenle sınıf içinde, geriye bir Widget döndüren `build` metodunu (fonksiyonunu) `@override` ederek ezmek (yazmak) kesinlikle zorunludur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e4c9a5b46f7f",
+    "unitNumber": 10,
+    "text": "https:\\pub.dev internet adresi aşağıdaki tanımlardan hangisi için hizmet vermektedir?",
+    "options": {
+      "A": "Flutter çerçevesi dokümantasyonunun bulunduğu yer",
+      "B": "Android ve iOS işletim sistemlerinin özelliklerinin anlatıldığı yer",
+      "C": "Flutter dan Dart için açık kaynak kütüphanelerin paylaşıldığı yer",
+      "D": "Flutter dan Dart uygulamalarının çevrimiçi yazılıp çalıştırılabileceği yer",
+      "E": "Dart programlama dilinin dokümantasyonunun bulunduğu yer"
+    },
+    "correctAnswer": "C",
+    "explanation": "pub.dev, Flutter ve Dart geliştiricilerinin projelerine ekleyebilecekleri (pubspec.yaml dosyasına yazdıkları) resmi ve üçüncü parti (açık kaynaklı) eklentilerin, paketlerin (packages) ve kütüphanelerin bulunduğu resmi depo (repository) sitesidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-8901b39327c3",
+    "unitNumber": 11,
+    "text": "Flutter’da, bileşenleri (widget’ları) ekranda yatay veya dikey yönde sıralamak için Row veya Column kullanıldığında, bu bileşenlerin ana eksen (main axis) üzerindeki hizalamasını (örn: ortalamak veya boşlukları eşit dağıtmak) kontrol eden özellik aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "crossAxisAlignment",
+      "B": "mainAxisAlignment",
+      "C": "alignment",
+      "D": "mainAxisSize",
+      "E": "textAlign"
+    },
+    "correctAnswer": "B",
+    "explanation": "Row (yatay) ve Column (dikey) widget’larında hizalama eksenlere göre yapılır. O widget’ın kendi ilerlediği yön “ana eksen (main axis)”, diğer yön ise “çapraz eksen (cross axis)” olarak adlandırılır. Bileşenleri yatay bir Row’da sağa/sola hizalamak veya aralarını açmak için “mainAxisAlignment” parametresi kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-aac4aaaec611",
+    "unitNumber": 12,
+    "text": "Akıllı telefonlarla, önceki dönem klasik cep telefonlarını ayıran belirgin özellik aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Dünya pazarındaki yayılma şekli",
+      "B": "3G şebekesini kullanması",
+      "C": "Destekledikleri donanımsal özellikler",
+      "D": "Sonradan uygulama yükleme imkânı",
+      "E": "Yapay zekâ modülü içermeleri"
+    },
+    "correctAnswer": "D",
+    "explanation": "Eski nesil ‘klasik’ cep telefonlarında donanıma gömülü sabit yazılımlar (hesap makinesi, yılan oyunu vb.) bulunur ve kullanıcı cihaza yeni bir yazılım yükleyemezdi. Akıllı telefonları (Smartphones) akıllı yapan ve bir bilgisayara dönüştüren en belirgin ve devrimsel özellik, üzerlerinde bir İşletim Sistemi (OS) bulunması ve kullanıcıya ‘sonradan (dışarıdan) yeni uygulamalar (App) yükleme’ imkânı sunmasıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-93d7621fbd3a",
+    "unitNumber": 13,
+    "text": "Resim dosyalarının Flutter projesine dahil edilmesi için hangi dosya altında bulunduğu klasör ve/veya dosya adının belirtilmesi gerekir?",
+    "options": {
+      "A": "assets.dart",
+      "B": "assets.yaml",
+      "C": "pubspec.yaml",
+      "D": "main.dart",
+      "E": "launch.json"
+    },
+    "correctAnswer": "C",
+    "explanation": "Flutter projesinde resimler, fontlar veya dışarıdan alınan eklentiler (paketler) projeye dahil edilecekse, bunların yolu (path) ve isimleri projenin ana yapılandırma dosyası olan `pubspec.yaml` dosyası altındaki `assets:` bölümüne tanımlanmak zorundadır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8a51d782d595",
+    "unitNumber": 14,
+    "text": "Dart programlama dilinde, null güvenliği (Null Safety) bağlamında bir değişkenin “kesinlikle null (boş) olamayacağını”, geliştiricinin derleyiciye garanti ettiğini gösteren operatör aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "? (Soru İşareti)",
+      "B": "?? (İki Soru İşareti)",
+      "C": "! (Ünlem İşareti)",
+      "D": "&amp;&amp; (Ve Operatörü)",
+      "E": "=&gt; (Ok Operatörü)"
+    },
+    "correctAnswer": "C",
+    "explanation": "Dart’ta Null Safety özelliğine göre `String? name;` şeklinde tanımlanan bir değişken null olabilir. Eğer geliştirici kodun belirli bir noktasında bu değişkenin kesinlikle bir değer taşıdığından eminse, derleyicinin hata vermesini önlemek için değişkenin sonuna “!” (Bang / Assertion) operatörünü koyarak (örn: `name!`) “Bunun null olmadığını garanti ediyorum” der.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c3af6eea81d6",
+    "unitNumber": 15,
+    "text": "Flutter’da uygulama çalışırken ekranın durumunu (state) değiştiren, kullanıcının etkileşimiyle içeriğin dinamik olarak güncellenmesine olanak tanıyan widget türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "StatelessWidget",
+      "B": "Scaffold",
+      "C": "StatefulWidget",
+      "D": "BuildContext",
+      "E": "MaterialApp"
+    },
+    "correctAnswer": "C",
+    "explanation": "Flutter’da widget’lar iki temel gruba ayrılır. “StatelessWidget”, ekrana bir kere çizilen ve yaşam döngüsü boyunca bir daha değişmeyen (sabit) yapılar için kullanılır. Ancak kullanıcının bir butona basmasıyla ekrandaki sayacın artması veya bir kutunun renginin değişmesi gibi dinamik, durumu (state) değişebilen arayüzler için “StatefulWidget” kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0adc33d95932",
+    "unitNumber": 16,
+    "text": "Aşağıdaki veri türlerinden hangisi Jenerik (Generic) bir türdür?",
+    "options": {
+      "A": "double",
+      "B": "Null",
+      "C": "List",
+      "D": "Boolean",
+      "E": "Object"
+    },
+    "correctAnswer": "C",
+    "explanation": "Dart dilinde Jenerik (Generic) türler, içine farklı tiplerde veriler alabilen ve kullanıldığı yere göre o tipe bürünen (tip güvenliğini sağlayan) koleksiyon sınıflarıdır. `List<T>` ve `Map<K, V>` gibi yapılar, içlerine `<int>`, `<String>` gibi türler alabildikleri için Jenerik tür sınıfına girerler.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3390a799ac61",
+    "unitNumber": 17,
+    "text": "Bir Flutter uygulamasında, tüm ekranın iskeletini (düzenini) oluşturan; üstte bir AppBar (başlık çubuğu), altta bir FloatingActionButton (yüzen buton) veya yan tarafta bir Drawer (açılır menü) gibi yapıları standart bir şekilde barındıran Material widget’ı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "SafeArea",
+      "B": "Container",
+      "C": "ListView",
+      "D": "Scaffold",
+      "E": "Stack"
+    },
+    "correctAnswer": "D",
+    "explanation": "“Scaffold” (İskele) widget’ı, Material Design kurallarına göre bir ekranın (sayfanın) temel beyaz tahtasını ve çatı yapısını oluşturur. Bir uygulamanın üst başlığını (appBar), gövdesini (body), alt menüsünü (bottomNavigationBar) ve kayan butonunu (floatingActionButton) birbirinin üzerine binmeden düzenli bir şekilde konumlandıran ana taşıyıcı bileşendir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a6b70abc23cd",
+    "unitNumber": 18,
+    "text": "Aşağıdakilerden hangisi bellekte verileri anahtar – değer çiftleri şeklinde saklamak için kullanılan veri türünün adıdır?",
+    "options": {
+      "A": "Map",
+      "B": "Cache",
+      "C": "List",
+      "D": "Container",
+      "E": "Set"
+    },
+    "correctAnswer": "A",
+    "explanation": "Dart dilinde ve çoğu programlama dilinde, verileri bir ‘anahtar’ (key) ve bu anahtara karşılık gelen bir ‘değer’ (value) ikilisi halinde tutan (örneğin JSON verileri gibi) veri koleksiyonu yapısına ‘Map’ (veya Sözlük/Dictionary) adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-04865d60f052",
+    "unitNumber": 19,
+    "text": "Flutter projesinin en hızlı güncellemelerini alacağımız kanalı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Master",
+      "B": "Trouble",
+      "C": "Dev",
+      "D": "Stable",
+      "E": "Beta"
+    },
+    "correctAnswer": "A",
+    "explanation": "Flutter SDK güncellemeleri 4 farklı kanaldan (channel) sunulur: Stable, Beta, Dev ve Master. ‘Master’ kanalı, GitHub’daki kod deposunun anlık ucudur (tip). En son yazılan kodlar anında bu kanala düşer, dolayısıyla en hızlı (ancak en kararsız ve riskli) güncellemeleri veren kanal Master’dır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f33219ce14f7",
+    "unitNumber": 20,
+    "text": "Aşağıdakilerden hangisi Flutter Navigator API’ında bulunan temel bileşenlerden biri değildir?",
+    "options": {
+      "A": "Route",
+      "B": "Router",
+      "C": "Navigator",
+      "D": "Page",
+      "E": "Screen"
+    },
+    "correctAnswer": "E",
+    "explanation": "Flutter’da navigasyon sisteminin (Navigator 2.0 dahil) resmi yapı taşları Route (yol), Navigator (yönetici), Page (sayfa ayarları) ve Router (yönlendirici) sınıflarıdır. Ancak ‘Screen’ (ekran) terimi geliştiricilerin kendi aralarında sayfaları isimlendirmek için kullandıkları genel (informal) bir kelimedir; Navigator API’si içinde `Screen` adında temel (built-in) bir sınıf bulunmaz.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-853e56201c67",
+    "unitNumber": 21,
+    "text": "Aşağıdakilerden hangisi Material düzenleyici arayüz bileşenlerinden biridir?",
+    "options": {
+      "A": "Text",
+      "B": "Asset",
+      "C": "Icon",
+      "D": "List Tile",
+      "E": "FlatButton"
+    },
+    "correctAnswer": "D",
+    "explanation": "Flutter’da ListTile, Material Design kurallarına uygun olarak hazırlanmış, genellikle listelerde (ListView) tercih edilen, içinde başlık (title), alt başlık (subtitle), ikon (leading/trailing) gibi öğeleri düzenli bir şekilde barındıran temel bir Material düzenleyici arayüz bileşenidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-be00e10753b3",
+    "unitNumber": 22,
+    "text": "MaterialApp arayüz bileşeninin routes parametresinin aldığı değer türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "List&lt;Widget&gt;",
+      "B": "Map&lt;String, Widget&gt;",
+      "C": "List&lt;WidgetBuilder&gt;",
+      "D": "Map&lt;int, Widget&gt;",
+      "E": "Map&lt;String, WidgetBuilder&gt;"
+    },
+    "correctAnswer": "E",
+    "explanation": "Flutter’da sayfa geçişlerini (navigasyonu) yönetmek için MaterialApp içinde `routes` parametresi kullanılır. Bu parametre, gidilecek sayfanın ismini (String) anahtar olarak, o sayfayı oluşturacak fonksiyonu (WidgetBuilder) da değer olarak alan bir Map bekler. Yani türü `Map<String, WidgetBuilder>`’dır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-84e21d497146",
+    "unitNumber": 23,
+    "text": "Kullanıcının ekrana tıklama etkileşimini yakalayacak bir arayüz bileşeninde GestureDetector kullanılıyorsa, GestureDetector yapıcı fonksiyonunun aşağıdaki parametrelerden hangisinin verilmesi gerekir?",
+    "options": {
+      "A": "onCreate",
+      "B": "build",
+      "C": "onTap",
+      "D": "onStart",
+      "E": "builder"
+    },
+    "correctAnswer": "C",
+    "explanation": "GestureDetector, kendisine sarılı olan (child) widget üzerindeki dokunma, kaydırma gibi kullanıcı hareketlerini yakalayan bir bileşendir. Kullanıcının ‘tıklama/dokunma (tap)’ etkileşimini yakalayıp bir işlem yaptırmak için en çok kullanılan ve tanımlanması gereken olay dinleyici (event listener) parametresi `onTap` (tıklandığında çalışacak fonksiyon) parametresidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f36aa9311108",
+    "unitNumber": 24,
+    "text": "Aşağıdaki operatörlerden hangisi bir listedeki içeriği bir başka listeye kopyalamak için kullanılır?",
+    "options": {
+      "A": "?? (iki soru işareti eşittir)",
+      "B": ".. (iki nokta)",
+      "C": ": (iki nokta üst üste)",
+      "D": "=&gt; (eşittir büyüktür)",
+      "E": "...? (üç nokta soru işareti)"
+    },
+    "correctAnswer": "E",
+    "explanation": "Dart dilinde bir listenin elemanlarını tek tek çıkarıp başka bir listenin içine serpiştirmek (kopyalamak/yaymak) için Spread (yayma) operatörü olan `…` (üç nokta) kullanılır. Eğer kopyalanacak liste null (boş) olma ihtimali taşıyorsa, uygulamanın çökmesini engellemek için null-aware spread operatörü olan `…?` (üç nokta soru işareti) kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-31cbd1a6d862",
+    "unitNumber": 25,
+    "text": "Bir sınıf tanımlaması için yukarıdaki kod bloğu bulunmaktadır. Bu kod bloğunun çağrılma zamanı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Sınıfın bellekte ilk örneği oluşturulurken",
+      "B": "Sınıf için tanımlı olmayan bir fonksiyon çağrılırsa",
+      "C": "Sınıfın bellekten örneğinin silineceği zaman",
+      "D": "Sınıfın bellekte her örneği oluşturulurken",
+      "E": "Sınıf için yapıcı fonksiyonlar çağrıldıktan sonra"
+    },
+    "correctAnswer": "B",
+    "explanation": "Dart dilinde (ve nesne yönelimli programlamada) `noSuchMethod` fonksiyonu, bir sınıfın (objenin) içinde var olmayan (tanımlı olmayan) bir metot veya özellik çağrılmaya çalışıldığında programın çökmesini engellemek veya bu durumu yakalamak (handle etmek) için otomatik olarak tetiklenir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1ffc37abe4c3",
+    "unitNumber": 29,
+    "text": "Flutter’da sayfanın üst kısmındaki başlık (AppBar) bölümünün altında bir liste varsa ve sayfa aşağı kaydırıldığında başlık kısmının gizlenmesi isteniyorsa her iki bileşeni de aşağıdaki hangi widget türünden yapmak gerekir?",
+    "options": {
+      "A": "Platinum",
+      "B": "Gold",
+      "C": "Silver",
+      "D": "Dust",
+      "E": "Bronze"
+    },
+    "correctAnswer": "C",
+    "explanation": "Flutter’da ekran kaydırıldıkça (scroll) AppBar’ın dinamik olarak küçülmesi veya ekrandan kaybolması gibi özel kaydırma efektleri “Sliver” widget ailesi kullanılarak elde edilir. (Not: Bu soru ve seçeneklerde Sliver kelimesi tipografik bir kelime oyunu veya yazım hatası sonucu metal isimleriyle bağdaştırılarak Silver olarak ifade edilmiştir.) Uygulamada CustomScrollView içerisinde SliverAppBar ve SliverList yapıları kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-eb0e419538e4",
+    "unitNumber": 35,
+    "text": "Aşağıdakilerden hangisi Navigator 2.0 API ile gelen bileşenlerden biri değildir?",
+    "options": {
+      "A": "Router",
+      "B": "Scaffold",
+      "C": "RouterDelegate",
+      "D": "RouterInformationParser",
+      "E": "Page"
+    },
+    "correctAnswer": "B",
+    "explanation": "Flutter’ın Navigator 2.0 API’si, özellikle web platformundaki URL değişikliklerini ve derin bağlantıları (deep linking) bildirimsel (declarative) bir yöntemle yönetmek için tasarlanmıştır. This sistemin ana bileşenleri Router, RouterDelegate, RouteInformationParser ve Page sınıflarıdır. Scaffold ise bir navigasyon bileşeni değil, ekranın görsel iskeletini (AppBar, Body, FloatingActionButton vb.) oluşturan temel bir Material Design arayüz widget’ıdır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-cc5cc57f5b0b",
+    "unitNumber": 42,
+    "text": "Bir Flutter uygulamasının çalışma zamanı davranışlarını takip etmek için kullanılan araç setinin adı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Android SDK Manager",
+      "B": "VisualStudioCode",
+      "C": "VirtualDeviceManager",
+      "D": "Development Tools",
+      "E": "DartDev Tools"
+    },
+    "correctAnswer": "E",
+    "explanation": "Flutter’da geliştirilen bir uygulamanın bellek (RAM) tüketimini incelemek, widget ağacının yapısını analiz etmek (Widget Inspector), ağ isteklerini izlemek ve genel performansı çalışma zamanında (runtime) takip edip hata ayıklamak (profiling) için kullanılan resmi tarayıcı tabanlı araç setinin adı Dart DevTools’dur.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e9fa43a9518b",
+    "unitNumber": 44,
+    "text": "Kullanıcı etkileşimi olmayacak kendi arayüz bileşenimizi tasarlamak istiyorsak hangi sınıftan miras almamız uygun çözümdür?",
+    "options": {
+      "A": "Container",
+      "B": "Stateless Widget",
+      "C": "MaterialApp",
+      "D": "Widget",
+      "E": "Scaffold"
+    },
+    "correctAnswer": "B",
+    "explanation": "Durumsuz (Stateless) widgetlar, ekranda bir kez çizildikten sonra kendi iç durumlarını değiştirme yeteneğine sahip değildir. Sadece dışarıdan gelen veriye (parametreye) göre şekillenirler ve kullanıcıyla dinamik bir etkileşime girmezler. Sabit bir logo, bir metin bloğu veya bir ikon tasarlarken en verimli yol Stateless Widget’tan miras almaktır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8f9bda06020a",
+    "unitNumber": 48,
+    "text": "2010-2020 yılları arasındaki istatistiklere göre 2020 civarında akıllı telefon pazarında en fazla kullanılan işletim sistemi hangisidir?",
+    "options": {
+      "A": "iOS",
+      "B": "WindowsPhone",
+      "C": "Android",
+      "D": "SymbianOS",
+      "E": "HarmonyOS"
+    },
+    "correctAnswer": "C",
+    "explanation": "Akıllı telefon pazarının tarihsel gelişiminde Android işletim sistemi, açık kaynak kodlu yapısı ve çok sayıda üretici (Samsung, Huawei, Xiaomi vb.) tarafından tercih edilmesi sayesinde pazar payını hızla artırmıştır. 2020 yılı istatistiklerine göre Android, küresel pazarda yüzde 70’in üzerinde bir payla dünyanın en çok kullanılan mobil işletim sistemi konumundadır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-fe898bca9581",
+    "unitNumber": 70,
+    "text": "Dart programlama dili için aşağıda verilen ifadelerden hangisi yanlıştır?",
+    "options": {
+      "A": "Fonksiyon tanımlamasında fonksiyona bir isim verilmesi zorunlu değildir.",
+      "B": "Fonksiyon tanımlamasında geri dönüş türünün yazılması zorunlu değildir.",
+      "C": "Fonksiyon tanımlamasında return ile geri dönüş yoksa fonksiyon null değer döner.",
+      "D": "Fonksiyon çağrısında normal parametrelere değer girilmesi zorunlu değildir.",
+      "E": "Fonksiyon tanımlamasında parametrelerin türünün belirtilmesi zorunlu değildir."
+    },
+    "correctAnswer": "D",
+    "explanation": "Dart’ta normal (positional) parametrelerin fonksiyon çağrısı sırasında değer alması zorunludur. Değer atanması zorunlu olmayan parametreler named (adlandırılmış) veya optional (isteğe bağlı) parametrelerdir. Bu nedenle ifade yanlıştır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-23585d20dfdc",
+    "unitNumber": 87,
+    "text": "Sqlite ile ilgili olarak aşağıdaki ifadelerden hangisi yanlıştır?",
+    "options": {
+      "A": "DateTime veri türü Sqlite veritabanında tanımlı bir veri türü değildir. Zaman verileri rakam veya String olarak saklanmaktadır.",
+      "B": "İşletim sistemi içerisinde sürekli açık bir sqlite servisi çalışmak zorundadır. Uygulamalar bu servis sayesinde veritabanlarına erişir.",
+      "C": "Sqlite ilişkisel bir veritabanı modeli sunar.",
+      "D": "iOS ve Android işletim sistemlerinde yerel olarak gelmektedir. Akıllı telefon uygulamalarda doğrudan kullanılabilir.",
+      "E": "Bir kolonda farklı satırlarda farklı değer türünde veri saklanabilir."
+    },
+    "correctAnswer": "B",
+    "explanation": "SQLite, sunucusuz (serverless) bir veritabanı motorudur. MySQL veya PostgreSQL gibi arka planda sürekli çalışan bir “servis” veya “daemon” işlemine ihtiyaç duymaz. SQLite kütüphanesi doğrudan uygulamanın içine entegre edilir ve veritabanı, disk üzerinde duran basit bir dosyadan ibarettir. Bu nedenle B şıkkındaki “sürekli açık bir servis çalışmak zorundadır” ifadesi yanlıştır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-b3b02a3c587e",
+    "unitNumber": 91,
+    "text": "Flutter uygulamasının performansı hakkında aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "Ekranda yenilenecek kısımları yönetmek için geniş (daha fazla ekran bölgesini kapsayan) tek bir Stateful Widget kullanımı performansı iyileştirir.",
+      "B": "Arayüz çiziminde alt elemanlar değişmiyor olsa dahi yeniden çizim adımında tüm alt ağaç baştan render edilmek zorundadır. Bu durumu bertaraf edecek bir çözüm yoktur.",
+      "C": "Widget ağacında iç içe yer alan birden fazla Stateless Widget için sadece bir tane build() metodu üzerinden geçtiğimizde ekran hazırlanır. İçteki widgetların build() metotları üzerinden geçilmez.",
+      "D": "Uygulamanın oluşan Android ve iOS paket boyutu cihaza marketten indirilen boyutundan daha büyük olmaktadır.",
+      "E": "Flutter uygulamaları farklı platformlar için tek bir dağıtım paketi üzerinden paylaştırılır."
+    },
+    "correctAnswer": "D",
+    "explanation": "Geliştiricinin oluşturduğu ham paket (özellikle Android App Bundle veya Universal APK), tüm olası cihaz mimarileri (ARM, x86) ve ekran yoğunlukları için kaynakları içerir. Ancak Google Play veya App Store, kullanıcının cihazına uygun olan parçaları ayıklayarak (App Thinning / App Bundle) indirme yapar. Bu nedenle kullanıcının indirdiği boyut, geliştiricinin yüklediği boyuttan daha küçüktür. A şıkkı yanlıştır çünkü küçük widget’lar performansı artırır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-2a2517461f81",
+    "unitNumber": 113,
+    "text": "Bir paketin belli bir sürümünün kullanımı zorunluluğu varsa bunu belirtmek için `pubspec.yaml` dosyasında aşağıdaki başlıklardan hangisi kullanılır?",
+    "options": {
+      "A": "dependency_mandatory",
+      "B": "dependency_overrides",
+      "C": "dependency_must",
+      "D": "dependency_downgrade",
+      "E": "dependency_chosen"
+    },
+    "correctAnswer": "B",
+    "explanation": "`pubspec.yaml` dosyasında, normal bağımlılıklar listesinde çakışma veya uyumsuzluk olduğunda, bir paketin **belirli bir sürümünü kullanma zorunluluğu** veya kısıtlaması için **`dependency_overrides`** (B) başlığı kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a5a6157d1abd",
+    "unitNumber": 118,
+    "text": "GridView düzenleyici arayüz bileşeni için aşağıdaki tanımlardan hangisi uygundur?",
+    "options": {
+      "A": "Kaydırılabilir bir ızgara (tablo) görünümü sağlar.",
+      "B": "İçeriğin üst üste bindirilmesini sağlar.",
+      "C": "Kaydırılabilir bir liste görünümü sağlar.",
+      "D": "İç boşluk(padding), dış boşluk(margin), kenarlık(border), arkaplan rengi(background color) gibi özellikleri atamayı sağlar.",
+      "E": "Önemli noktaları vurgulamak için köşeleri yuvarlatılmış ve gölge efekti olan bir çerçeve sağlar."
+    },
+    "correctAnswer": "A",
+    "explanation": "**`GridView`** widget’ı, çocuk widget’ları (children) düzenli bir **ızgara** (grid) şeklinde (birden fazla sütun/satır) ve **kaydırılabilir** (scrollable) bir görünüm içinde düzenlemek için kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b70e6915bc7a",
+    "unitNumber": 123,
+    "text": "Yukarıdaki kod parçasında “setState” içerisinde “_active” değeri güncellenmiş ve bu değere göre hiyerarşide içteki bir widget arkaplan rengini seçecektir. Hal böyle iken, setState metodu arayüz bileşenlerinin oluşturduğu ağaçta güncellenecek arayüz bileşeninden daha dış seviyede bulunuyorsa, arayüz güncellenmesinde değişen veri içteki arayüz bileşenlerine (widget) aktarılma yöntemi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Hiyerarşide içeride kalan widget'in build fonksiyonuyla",
+      "B": "Stateful Widget'in yapıcı(constructor) fonksiyonuyla",
+      "C": "Scaffold widget'ının child parametresine beslenecek fonksiyonla",
+      "D": "Stateful Widget'in createState fonksiyonuyla",
+      "E": "Hiyerarşide içeride kalan widget'ın yapıcı fonksiyonuyla"
+    },
+    "correctAnswer": "E",
+    "explanation": "Flutter’da veri, widget ağacında tek yönlü olarak, **yukarıdan aşağıya** akar. Dışarıdaki bir **StatefulWidget**’ın **setState()** ile durumu güncellendiğinde, bu yeni veri, ilgili widget’ın (arayüz bileşeninin) **build** metodu içinde, içeride kalan (child) widget’ın **yapıcı (constructor) fonksiyonuna** (E) parametre olarak beslenir. Bu, verinin hiyerarşide alt seviyelere aktarılma şeklidir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b9e4b1b505f3",
+    "unitNumber": 124,
+    "text": "Android işletim sisteminde İnternet erişimine sahip olabilmemiz için yukarıdaki kod parçacığı aşağıdaki dosyalardan hangisine yazılmalıdır?",
+    "options": {
+      "A": "Configuration.xml",
+      "B": "config.ini",
+      "C": "initialize.json",
+      "D": "pubspec.yaml",
+      "E": "AndroidManifest.xml"
+    },
+    "correctAnswer": "E",
+    "explanation": "Bir Android uygulamasının internet, kamera, konum gibi sistem özelliklerini kullanabilmesi için gerekli izinlerin, uygulamanın ana yapılandırma dosyası olan `AndroidManifest.xml` dosyasına “ etiketi ile eklenmesi gerekir.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-9bcb069715d6",
+    "unitNumber": 125,
+    "text": "Dart Programlama dilinde bir sınıf içerisinde yukarıdaki kodun işlevini aşağıdakilerden hangisi doğru ifade etmektedir?",
+    "options": {
+      "A": "right sınıf içinde sadece okunabilir bir tanımlama olarak eklenir.",
+      "B": "right sınıf içinde sadce yazılabilir bir tanımlama olarak eklenir.",
+      "C": "get adında yeni bir değişken tanımlanmaktadır.",
+      "D": "left ve width değerleri güncellenmek istendiğinde bu satır çalıştırılır.",
+      "E": "right adında yeni bir değişken tanımlanmaktadır."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-e55768693304",
+    "unitNumber": 126,
+    "text": "Flutter’da provider kütüphanesindeki uygulama seviyesi durum yönetiminde notifyListeners() fonksiyon çağrısı ne zaman yapılmaktadır?",
+    "options": {
+      "A": "Yeni bir veri modeli ekleneceği zaman",
+      "B": "Veri modelinde bir değişiklik olduğu zaman",
+      "C": "Yeni bir provider tanımlandığı zaman",
+      "D": "Yeni bir consumer tanımlandığı zaman",
+      "E": "Widget ağacında bir değişiklik olduğu zaman"
+    },
+    "correctAnswer": "B",
+    "explanation": "Provider state management yaklaşımında, `ChangeNotifier` sınıfından türetilmiş bir veri modelinin (state) içindeki veriler değiştiğinde, bu değişikliği dinleyen `Consumer` widget’larına haber vermek ve kendilerini yeniden çizmelerini tetiklemek için `notifyListeners()` fonksiyonu çağrılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-86bcf9784929",
+    "unitNumber": 127,
+    "text": "Aşağıdaki ifadelerden hangisi Flutter Çerçevesi (Framework) için yanlış bir bilgidir?",
+    "options": {
+      "A": "Dart programlama dilinde görebileceğiniz her şey bir objedir (object).",
+      "B": "Dart programlama dili güçlü tip tanımlı (strongly typed) bir dildir.",
+      "C": "Dart; global, yerel ve static değişken tanımlamalarına izin vermektedir.",
+      "D": "Dart programlama dilinde bir değişkenin herhangi bir türden veri tutmasını istiyorsak “Object” türünde oluşturulabilir.",
+      "E": "Flutter, Dart’tan bağımsız ayrı bir programlama dilidir."
+    },
+    "correctAnswer": "E",
+    "explanation": "Bu ifade yanlıştır. Flutter, bir programlama dili değil, Google tarafından geliştirilen bir kullanıcı arayüzü (UI) geliştirme kitidir (SDK). Flutter uygulamaları ise Dart programlama dili kullanılarak yazılır.",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1edeb2ad3226",
+    "unitNumber": 128,
+    "text": "Scaffold bileşeni için aşağıdaki ifadelerden hangisi yanlıştır?",
+    "options": {
+      "A": "home adında bir parametresi vardır.",
+      "B": "body adında bir parametresi vardır.",
+      "C": "appBar adında bir parametresi vardır.",
+      "D": "Projenin arayüz bileşeni ağacında olması zorunlu değildir.",
+      "E": "Android’in klasik uygulama ana ekranını oluşturur."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-6c549077e6b5",
+    "unitNumber": 26,
+    "text": "AnimationController( vsync: this,) Yukarıdaki kod parçası Flutter’da bir AnimatedWidget için AnimationController olarak kullanılsın. Buradaki “vsync:this” ifadesi ile aşağıdakilerden hangisi sağlanmaktadır?",
+    "options": {
+      "A": "Animasyonun yenileme hızının telefona eşit olmasını",
+      "B": "Animasyonun dikey eksende hareket etmesini",
+      "C": "Animasyonun alt ve üstteki objelerden etkilenmemesini",
+      "D": "Animasyonun ekran dışında kalan kısmı için sistem kaynağı tüketilmemesini",
+      "E": "Animasyonun yatay eksende hareket etmesini"
+    },
+    "correctAnswer": "D",
+    "explanation": "Animasyon kontrolcülerinde kullanılan vsync: this parametresi, o anki widget’ı bir TickerProvider olarak sisteme tanıtır. Bunun en önemli görevi, widget ekranda görünür olmadığı zamanlarda (örneğin arka plana atıldığında veya kaydırılarak ekran dışına çıktığında) animasyonun arka planda kare üretmesini (Ticker’ı) durdurarak gereksiz CPU, bellek ve pil (sistem kaynağı) tüketiminin önüne geçmektir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b2ede08f5b19",
+    "unitNumber": 27,
+    "text": "setState(() { _active = !_active;}); Yukarıdaki kod parçasında “setState” içerisinde “active” değeri güncellenmiş ve bu değere göre hiyerarşide içteki bir widget arkaplan rengini seçecektir. Hal böyle iken, setState metodu arayüz bileşenlerinin oluşturduğu ağaçta güncellenecek arayüz bileşeninden daha dış seviyede bulunuyorsa, arayüz güncellenmesinde değişen veri içteki arayüz bileşenlerine (widget) aktarılma yöntemi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Hiyerarşide içeride kalan widget'in build fonksiyonuyla",
+      "B": "Stateful Widget'ın yapıcı(constructor) fonksiyonuyla",
+      "C": "Stateful Widget'in createState fonksiyonuyla",
+      "D": "Hiyerarşide içeride kalan widget'ın yapıcı fonksiyonuyla",
+      "E": "Scaffold widget'ının child parametresine beslenecek fonksiyonla"
+    },
+    "correctAnswer": "D",
+    "explanation": "Flutter’da veri akışı her zaman yukarıdan aşağıya (parent to child) doğrudur. Dıştaki (üst) bir widget’ta setState çağrıldığında o widget yeniden çizilir (rebuild). Bu çizim esnasında değişen yeni durum (state), içteki (alt) widget’lara parametre olarak gönderilmelidir. Bu veri aktarımı, içteki alt widget’ın yapıcı fonksiyonu (constructor parametreleri) aracılığıyla sağlanır ve alt widget yeni değerlerle tekrar ekrana basılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d1e8e1077ba8",
+    "unitNumber": 30,
+    "text": "“Lazy Loading” kavramı aşağıdakilerden hangisinde doğru bir karşılıkla ifade edilmiştir?",
+    "options": {
+      "A": "Yüklenen verinin uygulama açılırken çekilmesi ve sonrasında aynı verinin kullanımı",
+      "B": "Yüklenen verinin kullanıcıya özgü bir düzenleme içermeden herkes için aynı şekilde çekilmesi",
+      "C": "Yüklenen verinin sadece ekranda görüntülenecek kısmının çekilmesi",
+      "D": "Yüklenen verinin sıra tabanlı değil rastgele bir sırada çekilmesi",
+      "E": "Yüklenen verinin kullanıcıya özgü düzeltme içererek çekilmesi"
+    },
+    "correctAnswer": "C",
+    "explanation": "“Lazy Loading” (Tembel Yükleme); performansı artırmak için uzun listelerin, görsellerin veya büyük verilerin uygulama açıldığında tek seferde belleğe yüklenmesi yerine, sadece kullanıcının o an ekranda gördüğü (veya görmek üzere kaydırdığı) kısmının dinamik olarak yüklenip çizilmesi prensibidir. Flutter’da ListView.builder ve GridView.builder gibi widget’lar bu mantıkla çalışarak büyük oranda bellek (RAM) tasarrufu sağlar.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-532ec256f231",
+    "unitNumber": 31,
+    "text": "Aşağıdakilerden hangisi Flutter’da dosya sistemindeki farklı klasörlerin yollarını elde etmek için kullanılan paketin adıdır?",
+    "options": {
+      "A": "data_connect",
+      "B": "directory_search",
+      "C": "url_luncher",
+      "D": "file_finder",
+      "E": "path_provider"
+    },
+    "correctAnswer": "E",
+    "explanation": "Mobil cihazlarda güvenlik ve mimari farklılıklardan dolayı uygulamaların dosya kaydedebileceği klasör yolları iOS ve Android işletim sistemlerinde birbirinden tamamen farklıdır. path_provider paketi, işletim sistemlerinin bu karmaşıklığını geliştiriciden gizleyerek, uygulamanın belge (Documents) veya geçici (Temporary) klasör yolları standart metotlarla güvenli bir şekilde elde etmemizi sağlar.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-85ecacd90aeb",
+    "unitNumber": 32,
+    "text": "Aşağıdakilerden hangisi Flutter’da performans ölçümü için baz alınacak metriklerde ana gruplardan birisinin adı değildir?",
+    "options": {
+      "A": "Enerji Tüketimi",
+      "B": "Uygulama Boyutu",
+      "C": "Bellek Kullanımı",
+      "D": "Kullanılabilirlik",
+      "E": "Hız"
+    },
+    "correctAnswer": "D",
+    "explanation": "Flutter veya herhangi bir yazılım geliştirmede uygulamanın teknik performansı ölçülürken RAM tüketimi (Bellek Kullanımı), cihaz bataryasını tüketme oranı (Enerji Tüketimi), uygulamanın diskte kapladığı alan (Uygulama Boyutu) ve ekran kare hızı/render süreleri (Hız) gibi donanımsal metrikler dikkate alınır. Kullanılabilirlik (Usability) ise doğrudan teknik bir performans metriği değil, arayüzün ne kadar kullanıcı dostu olduğunu ifade eden bir UX (Kullanıcı Deneyimi) kavramıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ab68c9f10714",
+    "unitNumber": 33,
+    "text": "Flutter’da kalıcı hafızaya key-value (anahtar-değer) veri çiftleri şeklinde özel bir formatta veri saklamak için kullanılan özel yapının adı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "persistence_pair",
+      "B": "options_file",
+      "C": "xml_data_storage",
+      "D": "pubspec_store",
+      "E": "shared_preferences"
+    },
+    "correctAnswer": "E",
+    "explanation": "shared_preferences, Flutter’da kullanıcı ayarları, oturum bilgileri (token) veya küçük yapılandırma tercihleri gibi verileri cihazın kalıcı hafızasında saklamak için kullanılan resmi ve en yaygın pakettir. Verileri arka planda Android için SharedPreferences, iOS için ise NSUserDefaults altyapılarını kullanarak anahtar-değer (key-value) çiftleri formatında asenkron olarak kaydeder.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-80f9cf3a9304",
+    "unitNumber": 34,
+    "text": "Aşağıdakilerden hangisi bir satırda sağdan sola birden fazla görsel arayüz bileşenini yerleştirmek için kullanılan düzenleyici arayüz bileşenidir?",
+    "options": {
+      "A": "Stack",
+      "B": "Row",
+      "C": "Text",
+      "D": "Column",
+      "E": "Container"
+    },
+    "correctAnswer": "B",
+    "explanation": "Flutter’da birden fazla widget’ı yatay bir eksende (bir satır halinde) yan yana dizmek için Layout (düzen) bileşeni olan Row kullanılır. children parametresi içine aldığı liste elemanlarını varsayılan olarak soldan sağa doğru sıralar. Eğer aynı yerleştirme işlemi dikey eksende (alt alta) istenmiş olsaydı Column bileşeni kullanılacaktı.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-9cc0c6426fb8",
+    "unitNumber": 36,
+    "text": "Flutter pubspec.yaml dosyası içerisinde dependencies: altında belirtilen paket bağımlılıkları için bir paketi …… arayabilir. Aşağıdaki seçeneklerden hangisinin yukarıda verilen boşluğa yazılması uygun değildir?",
+    "options": {
+      "A": "Sıkıştırılmış (Zip) dosyası içerisinde",
+      "B": "Dosya sisteminde",
+      "C": "Pub.dev sayfasında",
+      "D": "Github repolarının alt klasörlerinde",
+      "E": "Github repoları içerisinde"
+    },
+    "correctAnswer": "A",
+    "explanation": "Flutter projelerinde uygulamanın dışa bağımlılıkları ve eklentileri (paketler) pubspec.yaml dosyasında tanımlanır. Bu dosyada belirtilen paketler doğrudan Pub.dev adresinden (varsayılan depo), Git (GitHub repoları ve alt klasörleri) üzerinden veya bilgisayardaki dosya sisteminde bulunan lokal bir dizinden çekilebilir. Ancak Flutter’ın paket yönetim sistemi, doğrudan sıkıştırılmış bir “.zip” dosyası gösterilerek paket yükleme yöntemini standart olarak desteklemez.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-71eadd5ca14a",
+    "unitNumber": 37,
+    "text": "“App State” (Uygulama durumu) Flutter’da veri değişiminin bir durum ile uygulama genelinde takibini sağlayan yaklaşımdır. Aşağıdakilerden hangisi için “App State” yaklaşımını kullanmak gereksiz olacaktır?",
+    "options": {
+      "A": "Bir animasyonlu widgetın animasyonu oynatımında",
+      "B": "Kullanıcı tercihlerinin değişiminde",
+      "C": "Kullanıcı oturum açma işlevinde",
+      "D": "Bir e-ticaret uygulamasında sepet kısmının inşasında",
+      "E": "Bir sosyal ağ uygulamasının bildirim göstermesinde"
+    },
+    "correctAnswer": "A",
+    "explanation": "“App State” (Uygulama Durumu); kullanıcı oturumu, tema tercihleri veya alışveriş sepeti gibi verilerin uygulamanın tamamında (birden fazla ekranda) paylaşıldığı durumlar için gereklidir. Ancak sadece tek bir widget’ın kendi içindeki geçici durumu (örneğin bir butonun basılı olma hali veya basit bir animasyonun oynatılması) “Ephemeral State” (yerel durum) olarak adlandırılır. Böyle basit işlemler için karmaşık bir App State altyapısı kurmak gereksizdir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b096d330b218",
+    "unitNumber": 38,
+    "text": "Flutter’da provider kütüphanesindeki uygulama seviyesi durum yönetiminde kullamlan Consumer widgetının yapıcı fonksiyonunun builder parametresi, parametreleri context(BuildContext), value(Generic Data Type) ve child(Widget) şeklindedir. Yukarıdaki child parametresi aşağıdaki amaçlardan hangisi için kullanılmaktadır?",
+    "options": {
+      "A": "Consumer altında güncellenme işleminin başlayacağı noktayı ifade etmek için",
+      "B": "Widget ağacında güncellenmesi gereken yeri ifade etmek için",
+      "C": "Consumer altında güncellenmesine gerek olmayan ağacı ifade etmek için",
+      "D": "Aynı bileşenden birden fazla varsa hangisinin Consumer widget'ی tarafından yönetildiğini bildirmek için",
+      "E": "Kullanıcı etkileşimlerini yakalayacak widget bileşenlerinin çizilmesi için"
+    },
+    "correctAnswer": "C",
+    "explanation": "Provider kütüphanesinde Consumer widget’ı veri her değiştiğinde kendi builder fonksiyonunu tekrar çalıştırarak arayüzü günceller. Ancak bazen bu builder ağacının içinde hiç değişmeyecek statik, büyük ve karmaşık widget’lar bulunabilir. Performans optimizasyonu amacıyla bu sabit kısımlar dışarıdan child parametresine verilir. Böylece Consumer, veriler değişse bile o child nesnesini yeniden oluşturmaz, sadece bellekteki mevcut halini tekrar kullanır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-7ed0e70e246d",
+    "unitNumber": 39,
+    "text": "Flutter’da içeriği sürekli değişebilen veri tabanı ve web servisleri gibi veri kaynakları için unit test işleminin belli bir anlık görüntü üzerine uygulanabilmesi için kullanılan paketin adı nedir?",
+    "options": {
+      "A": "Filter",
+      "B": "Expresso",
+      "C": "TurkishCoffee",
+      "D": "Cappuccino",
+      "E": "Mockito"
+    },
+    "correctAnswer": "E",
+    "explanation": "Mockito paketi, özellikle birim testleri (unit test) yazılırken canlı veritabanı, API veya web servisi gibi dış kaynaklara olan gerçek bağımlılığı ortadan kaldırmak için kullanılır. Bu paket, gerçek objelerin yerine geçen “sahte” (mock) nesneler üreterek, uygulamanın dış etkenlerden bağımsız, izole edilmiş ve test edilebilir belirli bir veri durumuna (anlık görüntüye) sahip olmasını sağlar.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-48c6691df517",
+    "unitNumber": 40,
+    "text": "Flutter’da kod üreten kütüphaneler kullanılırsa (örneğin json_serializable) her derleme işleminde kod üretiminin ilgili dosyadaki değişiklikleri takip ederek otomatik yapılması için terminale yazılması gereken komut aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "flutter build run json_serializable watch",
+      "B": "flutter pub run json serializable build",
+      "C": "flutter pub run build_runner watch",
+      "D": "flutter pub run build_runner build",
+      "E": "flutter pub run json_serializable watch"
+    },
+    "correctAnswer": "C",
+    "explanation": "json_serializable veya freezed gibi kod üretim (code generation) araçları kullanıldığında .g.dart uzantılı dosyalar üretilir. Kaynak koddaki her değişiklikten sonra manuel olarak build komutu çalıştırmak yerine, geliştirme sürecini hızlandırmak için dosyaları sürekli dinleyen (izleyen) watch komutu kullanılır. This işlemi sağlayan tam terminal komutu flutter pub run build_runner watch şeklindedir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d3f6331b4782",
+    "unitNumber": 41,
+    "text": "String sınıfı için genişletme metotları (Extention methods) yazmak istiyorsak bu methodları yazacağımız kod bloğunu aşağıdakilerden hangisi doğru tanımlamaktadır?",
+    "options": {
+      "A": "extension BenimBlogum with String { .... }",
+      "B": "String extension on BenimBlogum { ....}",
+      "C": "extension String with BenimBlogum { .... }",
+      "D": "extension BenimBlogum on String { ....}",
+      "E": "extension String mixin BenimBlogum { .... }"
+    },
+    "correctAnswer": "D",
+    "explanation": "Dart programlama dilinde halihazırda var olan sınıflara (örneğin String sınıfına) kaynak kodunu değiştirmeden yepyeni özellikler veya metotlar eklemek için Extension (genişletme) özelliği kullanılır. Extension tanımlamanın doğru sözdizimi (syntax) extension GenisletmeAdi on HangiSinif { … } şeklindedir. Dolayısıyla D seçeneğindeki yapı doğrudur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-adae6323345f",
+    "unitNumber": 43,
+    "text": "….. komutu, Flutter, Android Studio ve diğer IDE yazılımlarının kurulumları ile ilgili denetimleri yaparak kurulumların uygunluğu ile ilgili sonuçları gösterir. Yukarıda boş bırakılan yere aşağıdakilerden hangisi gelmelidir?",
+    "options": {
+      "A": "Flutter check",
+      "B": "Flutter doctor",
+      "C": "Flutter screen",
+      "D": "Flutter connection",
+      "E": "Flutter IDE_XML"
+    },
+    "correctAnswer": "B",
+    "explanation": "Flutter SDK kurulumunun ardından, sistemin geliştirme yapmaya hazır olup olmadığını denetleyen komut flutter doctor komutudur. This komut çalıştırıldığında bir teşhis aracı gibi davranır; Android SDK, iOS toolchain (Xcode), IDE’ler (VS Code, Android Studio) ve bağlı cihazlar gibi gereksinimleri tarayarak eksiklikleri ve yapılması gerekenleri terminal ekranında listeler.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-26e7b2b1e89f",
+    "unitNumber": 46,
+    "text": "import ‘package:flutter/material.dart’; Satırı ile Flutter projesine eklenecek Material Kütüphanesindeki bileşenler aşağıdaki hangi aşamada fayda sağlamaktadır?",
+    "options": {
+      "A": "Arayüz bileşenlerinin Android uygulamalarında kullanılana benzer görsel şablona göre hazır bulunması.",
+      "B": "Uygulama geliştirirken Dart kodları içerisine Java, Kotlin kodlarını gömebilmek.",
+      "C": "Uygulama içerisinde kendi özel arayüz bileşeni çözümünün üretilebilmesi.",
+      "D": "Kullanıcı arayüzü etkileşimlerinin dokunmatik ekran üzerinde parmak ile gerçekleşmesi.",
+      "E": "Aynı anda birden fazla arayüz görüntüsünün hazırlanması ve bellekte saklanması."
+    },
+    "correctAnswer": "A",
+    "explanation": "Google tarafından geliştirilen “Material Design”, modern ve kullanıcı dostu arayüzler tasarlamak için bir tasarım dilidir. Flutter’daki material.dart kütüphanesi, bu tasarım diline uygun hazır bileşenler (butonlar, kartlar, listeler, navigasyon çubukları vb.) sunar. Bu kütüphane kullanıldığında, uygulama Android cihazlardaki yerel tasarım standartlarına çok yakın ve profesyonel bir görünüm kazanır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c4dd55d033b1",
+    "unitNumber": 49,
+    "text": "Navigator API’de Navigator.pushNamed() fonksiyonunun hangi parametresi ile açılan sayfaya veri gönderimi yapılabilmektedir?",
+    "options": {
+      "A": "key",
+      "B": "arguments",
+      "C": "home",
+      "D": "title",
+      "E": "parameters"
+    },
+    "correctAnswer": "B",
+    "explanation": "Flutter’da isimlendirilmiş rotalar (named routes) kullanılarak bir sayfadan diğerine geçiş yaparken veri aktarmak istenirse `arguments` parametresi kullanılır. Gönderilen bu argümanlar, hedef sayfa açıldığında ModalRoute üzerinden çekilerek sayfa içerisinde işlenebilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-7cc95e3050af",
+    "unitNumber": 51,
+    "text": "Column widgetı içerisindeki crossAxisAlignment parametresi aşağıdakilerden hangisi için düzenleme sağlar?",
+    "options": {
+      "A": "İçerdiği elemanların dikey taşma yapmaması için",
+      "B": "İçerdiği elemanların yatay taşma yapmaması için",
+      "C": "İçereceği eleman sayısının çalışma zamanı tespiti için",
+      "D": "İçerdiği elemanların dikeyde yerleşimi için",
+      "E": "İçerdiği elemanların yatayda yerleşimi için"
+    },
+    "correctAnswer": "E",
+    "explanation": "“Column” (Sütun) widget’ı için ana eksen (Main Axis) dikey, çapraz eksen (Cross Axis) ise yataydır. Dolayısıyla `crossAxisAlignment`, sütun içindeki çocukların yatayda nasıl hizalanacağını (başta, ortada, sonda veya genişlemiş) belirler. Dikey hizalama için ise `mainAxisAlignment` kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-ad2ec75a2814",
+    "unitNumber": 52,
+    "text": "Bir Flutter projesinde iç içe klasörlerde aynı isimli resim dosyası bulunuyorsa en dış klasördeki resim dosyasının konfigürasyon dosyasında gösterilmesi tamamını projeye dahil edecektir. Flutter diğer resim dosyalarını hangi amaçla projeye dahil etmiştir?",
+    "options": {
+      "A": "Dosyaların parçalı saklanmasından dolayı",
+      "B": "Farklı telefon modellerinde kullanmak",
+      "C": "Farklı işletim sistemlerinde kullanmak",
+      "D": "Farklı temalarda kullanmak",
+      "E": "İnternetten dosya indirmemek"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-418fafc85224",
+    "unitNumber": 54,
+    "text": "‘package:flutter/services.dart’ kütüphanesi üzerinden kullanabileceğimiz rootBundle yapısı kullanılma sebebi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "RAM'de her tür key-value veri çifti oluşturabilmek için.",
+      "B": "Telefonun temel konfigürasyon verilerine erişmek için.",
+      "C": "Widget ağacının en tepedeki elemanına erişmek için.",
+      "D": "Uygulama içerisindeki tüm varlıklara(assets) erişmek için.",
+      "E": "Telefonun kamera, mikrofon gibi donanımlarına erişmek için."
+    },
+    "correctAnswer": "D",
+    "explanation": "`rootBundle`, Flutter projesinin “assets” klasörüne eklenen ve `pubspec.yaml` dosyasında tanımlanan dış dosyalara (JSON, resim, ses vb.) uygulama içinden erişmeyi sağlar. Bu yapı sayesinde uygulama paketinin içine gömülü olan statik verilere okuma işlemi gerçekleştirilebilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-168ee447dd13",
+    "unitNumber": 55,
+    "text": "Dart programlama dilinde bir değişken tanımlamasının alt çizgi(_) ile başlaması ne anlama gelmektedir?",
+    "options": {
+      "A": "Değişkenin sabit olarak tanımlandığını belirtir. Üzerinde değişiklik yapılamaz.",
+      "B": "Değişkenin private olarak tanımlandığını belirtir. Sınıfın dışından erişilemez.",
+      "C": "Değişkenin static olarak tanımlandığını belirtir. Sınıfın tüm örneklerinden erişilebilir.",
+      "D": "Değişkenin object olarak tanımlandığını belirtir. Her türden veriyi saklayabilir.",
+      "E": "Değişkenin public olarak tanımlandığını belirtir. Sınıfın dışından erişilebilir."
+    },
+    "correctAnswer": "B",
+    "explanation": "Dart dilinde Java veya C# gibi dillerdeki `public`, `private` veya `protected` anahtar kelimeleri bulunmaz. Bunun yerine, kapsülleme (encapsulation) isimlendirme kuralıyla sağlanır. Bir tanımlayıcının (değişken, fonksiyon veya sınıf) başına **alt çizgi (_)** konulduğunda, bu tanımlayıcı o kütüphaneye (library) veya sınıfa **özel (private)** hale gelir. Bu sayede, değişken sadece tanımlandığı dosya veya sınıf içerisinden erişilebilir olur, dışarıdan erişime kapatılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-9041ba1e11f2",
+    "unitNumber": 56,
+    "text": "Dart programlama dilinde arkaplanda çalışacak bir iş parçacığı (multi-thread yaklaşımı) için kullanılan bileşenin adı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "process",
+      "B": "isolate",
+      "C": "thread",
+      "D": "background",
+      "E": "channel"
+    },
+    "correctAnswer": "B",
+    "explanation": "Dart dili “Single Thread” (Tek İş Parçacıklı) bir yapıya sahiptir ancak eşzamanlı (concurrent) işlemleri gerçekleştirmek için **”Isolate”** yapısını kullanır. Isolate’ler, geleneksel “Thread”lerden different olarak kendi bellek alanlarına (heap) sahiptirler ve belleği paylaşmazlar. Birbirleriyle sadece mesajlaşma yoluyla iletişim kurarlar. Bu yapı, bellek yönetimini güvenli kılar ve kilitlenme (deadlock) sorunlarını önler. Arka planda ağır bir işlem yapılacağı zaman (örneğin büyük bir JSON ayrıştırma), ana arayüzü dondurmamak için yeni bir `Isolate` oluşturulur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5aa59e6631db",
+    "unitNumber": 57,
+    "text": "Aşağıdaki satırlardan hangisi kalıcı depolama alanında uygulamaların kendine ait klasörüne erişmek için path_provider kütüphanesi aracılığı ile kullanılan kodlamadır?",
+    "options": {
+      "A": "Directory dir = path(\"Data/Data\");",
+      "B": "Directory dir = path(\"AppFolder/Module/Data\");",
+      "C": "Directory dir = await getTemporaryDirectory();",
+      "D": "Directory dir = await getApplicationDocumentsDirectory();",
+      "E": "Directory dir = getCacheDir();"
+    },
+    "correctAnswer": "D",
+    "explanation": "`path_provider` paketi, dosya sistemindeki yaygın konumlara erişim sağlar. Uygulamanın kalıcı (persistent) verilerini saklamak için, kullanıcının silmediği sürece verilerin durduğu dizine erişmek gerekir. Bu dizin **`getApplicationDocumentsDirectory()`** fonksiyonu ile çağrılır. C şıkkındaki `getTemporaryDirectory()` ise geçici (cache) dosyalar içindir ve işletim sistemi tarafından her an silinebilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c6774fef163a",
+    "unitNumber": 58,
+    "text": "pubspec.yaml dosyasındaki gereksinimler (dependencies) kısmında paket yönetiminin en güncel sürümü bulması için versiyon numarası önüne aşağıdaki sembollerden hangisi gelmektedir?",
+    "options": {
+      "A": "?",
+      "B": "^",
+      "C": "*",
+      "D": "+",
+      "E": "%"
+    },
+    "correctAnswer": "B",
+    "explanation": "Dart ve Flutter projelerinde paket yönetimini sağlayan pubspec.yaml dosyasında sürüm numaralarının önünde kullanılan “^” (caret) sembolü, Semantic Versioning (SemVer) kurallarını ifade eder. Bu işaret, belirtilen ana sürümle (major version) uyumlu olan en güncel yama (patch) ve özellik (minor) güncellemelerinin otomatik olarak dahil edilmesini sağlar. Örneğin “^1.2.3” ifadesi, uygulamanın 1.2.3 ile 2.0.0 arasındaki en yeni kararlı sürümü kullanmasına olanak tanır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-2447497094c6",
+    "unitNumber": 59,
+    "text": "MaterialApp arayüz bileşeninin onGenerateRoute parametresi, ________ parametresi olan bir fonksiyon alır. Yükarıdaki cümlede boş bırakılan yere yazılması gereken kelime aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "AssetBundle",
+      "B": "RouteSettings",
+      "C": "rootBundle",
+      "D": "Page",
+      "E": "NavigatorSettings"
+    },
+    "correctAnswer": "B",
+    "explanation": "Flutter’da isimlendirilmiş rotalarla (named routes) navigasyon yapılırken, `onGenerateRoute` özelliği kullanılır. Bu özellik, tetiklenen bir fonksiyon bekler ve bu fonksiyon parametre olarak **`RouteSettings`** nesnesini alır. `RouteSettings` nesnesi, gidilmek istenen sayfanın ismini (`name`) ve varsa gönderilen argümanları (`arguments`) taşır. Geliştirici bu bilgileri kullanarak doğru sayfayı (Route) oluşturur ve döndürür.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-03be3f31a5fd",
+    "unitNumber": 60,
+    "text": "Flutter geliştiricilerinin sunmuş olduğu widgetların tamamının tanıtımı ve anlatımlarına Flutter dokümanındaki aşağıdaki başlıklardan hangisinin altından erişilmektedir?",
+    "options": {
+      "A": "Deployment",
+      "B": "Flutter Widgets",
+      "C": "Widget Catalog",
+      "D": "Testing and Debugging",
+      "E": "Flutter in Action"
+    },
+    "correctAnswer": "C",
+    "explanation": "Flutter’ın resmi web sitesindeki dokümantasyonda, mevcut tüm widget’ların kategorize edilmiş (Material, Cupertino, Layout, Text vb.) görsel bir listesinin ve detaylı açıklamalarının bulunduğu bölüm **”Widget Catalog”** (Widget Kataloğu) başlığı altında yer alır. Bu katalog, geliştiriciler için bir başvuru kılavuzudur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-284e471d13dd",
+    "unitNumber": 61,
+    "text": "Aşağıdakilerden hangisi Flutter’ın durum tabanlı arayüz çizimi yaklaşımının genel tanımlamasıdır?",
+    "options": {
+      "A": "ilustrative",
+      "B": "derivative",
+      "C": "imperative",
+      "D": "declarative",
+      "E": "decorative"
+    },
+    "correctAnswer": "D",
+    "explanation": "Flutter (ve modern UI framework’lerinin çoğu, örn: React, SwiftUI), **”Bildirimsel” (Declarative)** bir UI yaklaşımını benimser. Bu yaklaşımda geliştirici, arayüzün “nasıl” değişeceğini adım adım kodlamaz (Imperative); bunun yerine arayüzün o anki duruma (State) göre “ne olması gerektiğini” bildirir. Formül şöyledir: **UI = f(State)**. Yani durum değiştiğinde arayüz, geliştiricinin yazdığı yapıya göre framework tarafından yeniden çizilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-bfe8a72b151d",
+    "unitNumber": 62,
+    "text": "Flutter’ın arayüz çizimi ile ilgili olarak aşağıdaki yorumlardan hangisi doğrudur?",
+    "options": {
+      "A": "Yeni bir ekranın açılması için ikinci Ekran.show() tarzında bir çağrı yapılabilir.",
+      "B": "Bir butonun içerisinde bir widget oluşturularak bu widget ağacına dinamik olarak eklenebilir.",
+      "C": "Bir verideki değişim arayüzün bağımsız bölgelerinde güncelleme gerektiriyorsa Stateful Widget kullanmak iyi çözümdür.",
+      "D": "Provider paketi bize internette sunulan ücretsiz webservislerinin bilgilerini getirmektedir.",
+      "E": "Uygulama içerisindeki veri değişikliği arayüz güncellemesi gerektiriyorsa bu bir model olarak tanımlanmalı ve değişiklikler takip edilmelidir."
+    },
+    "correctAnswer": "E",
+    "explanation": "Flutter’da reaktif programlama mantığı gereği, arayüz (UI) verinin (State) bir yansımasıdır. Eğer veri değiştiğinde (örneğin sepetteki ürün sayısı arttığında) ekranın bunu göstermesi gerekiyorsa, bu veri bir **Model/State** olarak tanımlanmalı ve bu modeldeki değişiklikler dinlenerek (Listener/Provider/Bloc vb. ile) arayüzün güncellenmesi tetiklenmelidir. C şıkkı da kısmen doğrudur ancak “bağımsız bölgeler” ifadesi daha çok global state management (Provider, Bloc) gerektirir; sadece StatefulWidget yetersiz kalabilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-6e93e37e7cde",
+    "unitNumber": 63,
+    "text": "Plugin (Eklenti) ile Package (Paket) arasındaki farklılık aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Package sadece Dart kodlarından oluşurken Plugin platform kodlaması ile bir köprü oluşturur.",
+      "B": "Package boyutu daha büyüktür. Plugin ise küçük kütüphanelerdir.",
+      "C": "Plugin'de Package'ye göre asset ve diğer bileşenler de bulunabilir.",
+      "D": "Plugin her projeye uyarken package sadece Dart uygulamalarına eklenir.",
+      "E": "Plugin sadece Dart kodlarından oluşurken Package platform kodlaması ile bir köprü oluşturur."
+    },
+    "correctAnswer": "A",
+    "explanation": "Flutter ekosisteminde **Package (Paket)**; genellikle sadece Dart diliyle yazılmış, platformdan bağımsız (örneğin HTTP istekleri, yardımcı fonksiyonlar) kod kütüphaneleridir. **Plugin (Eklenti)** ise; cihazın donanımına (kamera, GPS, bluetooth) veya işletim sistemi özelliklerine erişmek için hem Dart kodu hem de yerel platform kodlarını (Android için Java/Kotlin, iOS için Obj-C/Swift) içeren ve bunlar arasında köprü (MethodChannel) kuran özel paketlerdir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d8177139fbc0",
+    "unitNumber": 64,
+    "text": "Aşağıdakilerden hangisi bir uygulamada yazılan kodların dağıtım sürümünde tersine mühendislikle çözülmesini engellemek adına derleme aşamasında kullanılacak bir etikettir?",
+    "options": {
+      "A": "-obfuscate",
+      "B": "-mix-code",
+      "C": "-clear-code",
+      "D": "-fix",
+      "E": "--refactor"
+    },
+    "correctAnswer": "A",
+    "explanation": "Uygulama yayınlanırken (release mode), kaynak kodların başkaları tarafından okunmasını ve tersine mühendislik (reverse engineering) yapılmasını zorlaştırmak için kod karartma/şaşırtma işlemi yapılır. Flutter’da bu işlem, derleme komutuna **`–obfuscate`** (ve sembol haritasını saklamak için `–split-debug-info`) parametresi eklenerek gerçekleştirilir. Bu işlem, değişken ve fonksiyon isimlerini anlamsız karakterlere dönüştürür.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-d762c202315b",
+    "unitNumber": 65,
+    "text": "Visual Studio Code IDE’si içerisinde aktif Flutter çalıştırma kipi IDE ana ekranı içerisinde nerede görüntülenmektedir?",
+    "options": {
+      "A": "Karşılama (Welcome) ekranında",
+      "B": "Sol üst köşede",
+      "C": "Sağ alt köşede",
+      "D": "Sağ üst köşede",
+      "E": "Sol alt köşede"
+    },
+    "correctAnswer": "C",
+    "explanation": "Visual Studio Code editöründe, o an aktif olan Flutter cihazı (örneğin “Android Emulator” veya “iPhone 14”), kullanılan Flutter SDK sürümü ve hata ayıklama modu gibi bilgiler, pencerenin en altındaki **Durum Çubuğu’nun (Status Bar) sağ alt köşesinde** görüntülenir. Buraya tıklanarak cihaz değiştirilebilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-721358bd03bc",
+    "unitNumber": 66,
+    "text": "Eğer bir animasyon oluşturulurken birden fazla geçiş aralığı belirlemek isteniyorsa; (örneğin bir containerdaki renk geçişlerinin trafik lambasındaki gibi sarı – yeşil – kırmızı arasında homojen olmayacak bir şekilde değişmesi), aşağıdakilerden hangisi kullanılmalıdır?",
+    "options": {
+      "A": "TweenColors",
+      "B": "TweenPairs",
+      "C": "MultipleTween",
+      "D": "Constant Tween",
+      "E": "TweenSequences"
+    },
+    "correctAnswer": "E",
+    "explanation": "Standart bir `Tween`, animasyonu başlangıçtan bitişe tek bir doğrusal düzlemde götürür. Ancak animasyonun birden fazla aşaması varsa (Önce A’dan B’ye, sonra B’den C’ye farklı sürelerde ve ağırlıklarda geçiş gibi), bu ardışık animasyonları tek bir akışta tanımlamak için **`TweenSequence`** sınıfı kullanılır. Bu sınıf, birden fazla `TweenSequenceItem` alarak karmaşık animasyon kurgularını yönetir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5446aefd90d4",
+    "unitNumber": 67,
+    "text": "Yukarıdaki kod parçasında “setState” içerisinde “active” değeri güncellenmiş ve bu değere göre hiyerarşide içteki bir widget arkaplan rengini seçecektir. Hal böyle iken, setState metodu arayüz bileşenlerinin oluşturduğu ağaçta güncellenecek arayüz bileşeninden daha dış seviyede bulunuyorsa, arayüz güncellenmesinde değişen veri içteki arayüz bileşenlerine (widget) aktarılma yöntemi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Hiyerarşide içeride kalan widget'ın yapıcı fonksiyonuyla",
+      "B": "Hiyerarşide içeride kalan widget'in build fonksiyonuyla",
+      "C": "Scaffold widget'ının child parametresine beslenecek fonksiyonla",
+      "D": "StatefulWidget'in createState fonksiyonuyla",
+      "E": "Stateful Widget'ın yapıcı(constructor) fonksiyonuyla"
+    },
+    "correctAnswer": "A",
+    "explanation": "Flutter’da `setState` çağrıldığında, ilgili widget’ın `build` metodu tekrar tetiklenir. Eğer güncellenen veri, hiyerarşide daha içeride (alt seviyede) yer alan bir widget’a lazımsa; bu veri genellikle alt widget’ın **yapıcı fonksiyonuna (constructor)** bir parametre olarak geçilir. Build süreci baştan başladığında, alt widget yeni değerle (örneğin yeni renk) tekrar oluşturulmuş olur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-2dad66834ec4",
+    "unitNumber": 68,
+    "text": "Firebase özelliklerinin kullanıma başlanmasından önce aşağıdaki fonksiyonlardan hangisi çağrılmalıdır?",
+    "options": {
+      "A": "init()",
+      "B": "load()",
+      "C": "connect()",
+      "D": "firebase_core()",
+      "E": "initializeApp()"
+    },
+    "correctAnswer": "E",
+    "explanation": "Flutter uygulamasında Firebase servislerini (Auth, Firestore, Messaging vb.) kullanmadan önce, Firebase çekirdeğinin ve platform ayarlarının başlatılması zorunludur. Bu işlem genellikle uygulamanın `main()` fonksiyonu içinde, `runApp`’ten önce **`await Firebase.initializeApp();`** komutuyla gerçekleştirilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-755bae6c0b97",
+    "unitNumber": 69,
+    "text": "dart:convert kütüphanesinde Json metnini bir objeye çevirmek için kullanılan fonksiyon aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "toJson()",
+      "B": "fromJson()",
+      "C": "jsonEncode()",
+      "D": "serialize()",
+      "E": "jsonDecode()"
+    },
+    "correctAnswer": "E",
+    "explanation": "Dart dilinin yerleşik `dart:convert` kütüphanesinde; bir JSON formatındaki metni (String), Dart içinde kullanılabilir bir nesneye (genellikle `Map` veya `List`) dönüştürmek (ayrıştırmak/parse etmek) için **`jsonDecode()`** fonksiyonu kullanılır. (Tam tersi işlem için yani nesneyi JSON string’e çevirmek için `jsonEncode()` kullanılır).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-25cb43c258f3",
+    "unitNumber": 129,
+    "text": "Flutter’da tüm arayüz bileşenlerinin miras alarak oluşturuldukları kök sınıfın adı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Widget",
+      "B": "Frame",
+      "C": "Field",
+      "D": "Component",
+      "E": "Form"
+    },
+    "correctAnswer": "A",
+    "explanation": "Flutter’da kullanıcı arayüzündeki her şey bir `Widget`’tır. Tüm görsel arayüz bileşenleri `Widget` sınıfından türetilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-83d3277b663c",
+    "unitNumber": 130,
+    "text": "Dart’ta bir sınıf tanımlaması yapılırken mixin kullanarak miras alma yapılacaksa mixin adları hangi anahtar kelimeden sonra sıralanırlar?",
+    "options": {
+      "A": "with",
+      "B": "on",
+      "C": "implements",
+      "D": "extends",
+      "E": "parent"
+    },
+    "correctAnswer": "A",
+    "explanation": "Dart programlama dilinde bir sınıfa mixin eklemek için `with` anahtar kelimesi kullanılır. Örneğin: `class MyClass with MyMixin { … }`.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-050f2b42a2fa",
+    "unitNumber": 131,
+    "text": "Flutter’da bir Future objesinden dönen sonucun ekrana yansıtılması için kullanılan Widget aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "FutureStream",
+      "B": "FutureWidget",
+      "C": "FutureBuilder",
+      "D": "Oracle",
+      "E": "BackToTheFuture"
+    },
+    "correctAnswer": "C",
+    "explanation": "`FutureBuilder` Widget’ı, bir `Future` (asenkron işlem) objesinin durumuna (tamamlanmamış, tamamlanmış ve hata, tamamlanmış ve veri) göre farklı arayüzler göstermek için kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-0ebe6cc6f238",
+    "unitNumber": 132,
+    "text": "Flutter’ın animasyon oluşturmak için hazır sunduğu “AnimatedContainer” gibi widgetların kullanımı ile gerçekleştirilen animasyon türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "AnimatedWidget",
+      "B": "Explicit Animations",
+      "C": "AnimationBuilder",
+      "D": "Hero Animations",
+      "E": "Implicit Animations"
+    },
+    "correctAnswer": "E",
+    "explanation": "`AnimatedContainer` gibi widgetlar, belirli bir özelliğin (örneğin renk, boyut) değişimini otomatik olarak yumuşak bir animasyonla sağlayan ”implicit animations” (örtük animasyonlar) kategorisine girer. Geliştiricinin animasyon kontrolcüsünü manuel olarak yönetmesine gerek kalmaz.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-6be63264b23c",
+    "unitNumber": 133,
+    "text": "flutter_test paketi kullanarak bir widget testi yapılacaktır. Widgetın test ortamında oluşturulması için aşağıdaki hangi sınıf ve fonksiyon çifti kullanılır?",
+    "options": {
+      "A": "Tester - pump",
+      "B": "Finder - findWidget",
+      "C": "Matcher - findOneWidget",
+      "D": "WidgetTester - pumpWidget",
+      "E": "TestWidget - tester"
+    },
+    "correctAnswer": "D",
+    "explanation": "Flutter’da widget testleri yazarken, `WidgetTester` sınıfı ve onun `pumpWidget()` fonksiyonu, test ortamında bir widget’ı oluşturmak ve render etmek (ekrana yansıtmak) için kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f4ceb555b7f0",
+    "unitNumber": 134,
+    "text": "flutter create name1 Yukarıdaki komut çalıştırıldığında aşağıdakilerden hangisini gerçekleştirir?",
+    "options": {
+      "A": "name1 adında bir sınıf oluşturur.",
+      "B": "name1 adında bir proje klasörü oluşturur.",
+      "C": "name1 adında bir dart dosyası oluşturur.",
+      "D": "name1 adında bir kütüphane oluşturur.",
+      "E": "name1 adında bir değişken oluşturur."
+    },
+    "correctAnswer": "B",
+    "explanation": "`flutter create ` komutu, belirtilen adla yeni bir Flutter projesi klasörü ve gerekli temel dosya yapısını (Dart kodları, pubspec.yaml, android/ios klasörleri vb.) oluşturur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-bca98a0f4712",
+    "unitNumber": 135,
+    "text": "Flutter ekibinin kullanım için önerdiği kütüphaneleri sunduğu programın adı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Editors Choice",
+      "B": "Best Practice",
+      "C": "Flutter Favorite",
+      "D": "Flutter Best",
+      "E": "Jet Pack"
+    },
+    "correctAnswer": "C",
+    "explanation": "Flutter ekibi, belirli kalite standartlarını karşılayan ve geniş kullanım için önerilen paketleri ”Flutter Favorite” olarak işaretler.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-264b88316b92",
+    "unitNumber": 136,
+    "text": "AssetImage(‘icons/heart.png’, package: ‘my_icons’) Yukarıdaki kod parçacığının işlevi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Resim dosyalarının uygulama içerisinde erişilebilmesi için bir kütüphane yolu tanımlar.",
+      "B": "heart.png dosyasını my_icons kütüphanesi içerisine yükler.",
+      "C": "Projedeki icons klasörü altındaki heart.png dosyasına erişir ve kod içerisinde my_icons olarak kullanır.",
+      "D": "my_icons adında yeni bir kütüphane oluşturur ve içerisine icons/heart.png dosyasını kopyalar.",
+      "E": "my_icons adındaki kütüphanede icons/heart.png yoluyla belirtilen resim dosyasını RAM’e çeker."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-9957f9d1c3e2",
+    "unitNumber": 137,
+    "text": "Flutter’da sayfalar arası gezintiyi sağlayan mekanizma aşağıdaki isimlerden hangisi ile adlandırılır?",
+    "options": {
+      "A": "Router API",
+      "B": "PathFinder API",
+      "C": "Navigator API",
+      "D": "PageProvider API",
+      "E": "AppState"
+    },
+    "correctAnswer": "C",
+    "explanation": "Flutter’da uygulama içindeki sayfalar (rotalar) arası geçişleri yönetmek için `Navigator` sınıfı ve API’ları kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-b2916a930ea9",
+    "unitNumber": 147,
+    "text": "Flutter’da her uygulama için varsayılan bir SharedPreferences dosyası oluşturulmaktadır. Bu dosyanın bir referansını elde etmek için aşağıdaki kodlamalardan hangisi kullanılır?",
+    "options": {
+      "A": "final prefs = await SharedPreferences.getInstance();",
+      "B": "final prefs = File.SharedPreferences();",
+      "C": "final prefs = new SharedPreferences();",
+      "D": "final prefs = SharedPreferences.defaultInstance();",
+      "E": "final prefs = await SharedPreferences.getValue();"
+    },
+    "correctAnswer": "A",
+    "explanation": "`SharedPreferences` paketi, verileri anahtar-değer (key-value) çiftleri halinde cihazda kalıcı olarak saklamak için kullanılır. Bu yapıya erişmek asenkron bir işlemdir çünkü dosya sisteminden okuma yapılır. Bu nedenle **`SharedPreferences.getInstance()`** metodu `await` anahtar kelimesiyle çağrılarak, hazır olduğunda örneğin (instance) referansı alınır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-fc7d078c67e8",
+    "unitNumber": 71,
+    "text": "Aşağıdakilerden hangisi Flutter çerçevesinin arayüz düzenlemesi için koyduğu kısıtlardan biri değildir?",
+    "options": {
+      "A": "Widget ağacı her 4ms'de bir yenilenmek zorundadır. Eğer yenilenmezse ekranda titreme olacaktır.",
+      "B": "Bir widget ekranda hangi konumda olacağını asla bilemez ve buna karar veremez.",
+      "C": "Bir widget kendi boyutunu ancak üst seviye bileşenin verdiği kısıtlar arasında seçebilir.",
+      "D": "Bir üst seviyedeki widgetın boyutu belirleyebilmesi de onun üstündeki widget'a bağlı olacağından tam widget ağacı işlenmeden arayüzün nasıl olacağı bilinemez.",
+      "E": "Bir widget üst seviyeden daha fazla bir boyutta olmak ister ve üst seviyenin alttaki widgetları nasıl yerleştireceği ile ilgili bilgisi yoksa alttaki elemanın verdiği ölçü değerleri yok sayılır."
+    },
+    "correctAnswer": "A",
+    "explanation": "Flutter, arayüzü saniyede 60 kare (ortalama 16.6ms) hızla çizmeye çalışır. “Her 4ms’de bir yenilenmek” gibi bir zorunluluk yoktur. Bu süre, uygulamanın performansına ve işlem gücüne bağlı olarak değişir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d3105375ba53",
+    "unitNumber": 73,
+    "text": "Flutter’daki arayüz bileşenlerinin (widget) nasıl çalıştıkları ve hangi parametreleri aldıklarını en detaylı şekilde öğrenme biçimi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Dart dokümantasyonundan",
+      "B": "Flutter API dokümantasyonundan",
+      "C": "Android API dokümantasyonundan",
+      "D": "GitHub Örneklerinden",
+      "E": "Flutter Cookbook dokümantasyonundan"
+    },
+    "correctAnswer": "B",
+    "explanation": "Flutter’daki her bir widget’ın (arayüz bileşeninin) nasıl çalıştığı, hangi parametreleri aldığı ve ne gibi özelliklere sahip olduğu gibi en detaylı ve resmi bilgiler, “Flutter API dokümantasyonunda” yer almaktadır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0590d49db72a",
+    "unitNumber": 74,
+    "text": "Satırı ile Flutter projesine eklenecek Material Kütüphanesindeki bileşenler aşağıdaki hangi aşamada fayda sağlamaktadır?",
+    "options": {
+      "A": "Aynı anda birden fazla arayüz görüntüsünün hazırlanması ve bellekte saklanması.",
+      "B": "Uygulama içerisinde kendi özel arayüz bileşeni çözümünün üretibilmesi.",
+      "C": "Kullanıcı arayüzü etkileşimlerinin dokunmatik ekran üzerinde parmak ile gerçekleşmesi.",
+      "D": "Uygulama geliştirirken Dart kodları içerisine Java, Kotlin kodlarını gömebilmek.",
+      "E": "Arayüz bileşenlerinin Android uygulamalarında kullanılana"
+    },
+    "correctAnswer": "E",
+    "explanation": "Verilen kod satırı, Android uygulamalarında kullanılana benzer, materyal tasarım ilkelerine uygun arayüz bileşenleri (widget) sağlayan “Material” kütüphanesini projeye dahil etmeyi amaçlar. Bu, uygulama geliştirme sürecini kolaylaştırır ve platformlar arası tutarlılık sağlar.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3a03437a2ccb",
+    "unitNumber": 75,
+    "text": "Yukarıdaki kod satırı hata vermeden çalışan bir uygulamanın parçası ise yaptığı işlemle ilgili olarak aşağıdaki yorumlardan hangisi doğrudur?",
+    "options": {
+      "A": "names bir Map örneğidir ve verilen liste bu Map objesine 0,1,2 indeksleri ile kaydedilir.",
+      "B": "names bir Object örneğidir ve verine String ifadelerden sonuncusu names'e kaydedilir.",
+      "C": "names bir String örneğidir ve 'Seth' ifadesi names'e kaydedilir.",
+      "D": "names bir Set örneğidir ve verilen liste bu Set objesine çakışmasız kaydedilir.",
+      "E": "names bir List örneğidir ve verilen liste bu List objesinin sonuna eklenir."
+    },
+    "correctAnswer": "E",
+    "explanation": "Verilen kod satırı, names adında bir List değişkeni oluşturur ve bu listeye [‘Lars’, ‘Chris’, ‘Seth’] değerlerini atar. Bu durumda names bir List örneğidir ve verilen liste onun içeriğini oluşturur. Eğer başka bir listeye eklenmesi istenseydi, addAll gibi bir fonksiyon veya … operatörü kullanılırdı.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-588d4882728b",
+    "unitNumber": 76,
+    "text": "Flutter’daki provider kütüphanesi ile sağlanan uygulama seviyesi durum yönetiminde aşağıdaki hangi widget ile sayfadaki belli bir alanın güncellenmesi sağlanır?",
+    "options": {
+      "A": "Consumer",
+      "B": "ChangeNotifier",
+      "C": "Provider",
+      "D": "MultiProvider",
+      "E": "Listener"
+    },
+    "correctAnswer": "A",
+    "explanation": "Provider paketinde, verideki bir değişikliği dinleyip sadece ilgili widget’ı yeniden çizdirmek (rebuild) için Consumer widget’ı kullanılır. Consumer, genel ağacı yeniden çizmek yerine, sarmaladığı (builder içindeki) spesifik alanı güncelleyerek performans artışı sağlar.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c620cdd13625",
+    "unitNumber": 77,
+    "text": "Aşağıdaki bilgilerden hangisi Flutter’da veri saklama işlemleri açısından yanlış bir ifadedir?",
+    "options": {
+      "A": "Flutter'da dosya sistemine erişimde path_provider ile yollar belirlenmelidir.",
+      "B": "Uygulamanın geçici dosyalarını kullanıcı veya işletim sistemi herhangi bir anda silebilir.",
+      "C": "Uygulamanın kendine ait dosyalarını kaydedeceği klasöre getApplicationDocumentsDirectory() ile ulaşılır.",
+      "D": "Android'de uygulamaların kendine ait alanına başka uygulamaların erişme hakkı yoktur.",
+      "E": "Flutter'da dosya sistemine bir dosya kaydedilemez. Bunun yerine sqlite ve shared_preferences kullanılması gerekir."
+    },
+    "correctAnswer": "E",
+    "explanation": "Flutter’da (ve Dart’ta) dosya sistemine erişmek ve dosya kaydetmek/okumak (File I/O) kesinlikle mümkündür. dart:io kütüphanesi ve path_provider paketi kullanılarak cihazın diskine metin, resim veya binary dosyalar kaydedilebilir. Veri saklamak için sadece veritabanı (SQLite) veya Shared Preferences kullanmak zorunlu değildir; dosya sistemi de aktif olarak kullanılır. E şıkkı yanlıştır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-3db615c9fad0",
+    "unitNumber": 78,
+    "text": "http paketindeki http.get() fonksiyonunun dönüş değeri aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Future &lt;http.Request&gt;",
+      "B": "http.Response",
+      "C": "http.Request",
+      "D": "http.State",
+      "E": "Future&lt;http.Response&gt;"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-832a0d457188",
+    "unitNumber": 79,
+    "text": "pubspec.yaml dosyasına yeni bir paket bağımlılığı tanımladığınızda bunun kullanıma hazır olması için terminalde aşağıdaki komutlardan hangisi çalıştırılır?",
+    "options": {
+      "A": "flutter work",
+      "B": "flutter create package",
+      "C": "flutter pub get",
+      "D": "flutter build apk",
+      "E": "flutter run"
+    },
+    "correctAnswer": "C",
+    "explanation": "pubspec.yaml dosyasına yeni bir kütüphane eklendiğinde, bu paketin dosyalarının internetten indirilmesi ve projeye bağlanması gerekir. Bu işlemi yapan komut flutter pub get komutudur. (IDE’ler genellikle dosyayı kaydettiğinizde bunu otomatik yapar).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-76e5855759c4",
+    "unitNumber": 80,
+    "text": "Aşağıdakilerden hangisi sınıfların hangi türden miras aldığını bulmak adına kullanılan tür kontrol operatörüdür?",
+    "options": {
+      "A": "with",
+      "B": "as",
+      "C": "like",
+      "D": "to",
+      "E": "in"
+    },
+    "correctAnswer": "B",
+    "explanation": "Dart programlama dilinde tür kontrolü ve dönüşümü için is ve as operatörleri kullanılır. is operatörü bir nesnenin belirli bir türde olup olmadığını (kontrol) ederken, as operatörü bir nesneyi belirli bir türe dönüştürmek (cast) için kullanılır. Soruda şıklar arasında is bulunmadığı için, türle ilgili işlem yapan ve tür hiyerarşisinde dönüşüm sağlayan as operatörü doğru cevaptır. (with mixin’ler için, in döngüler için kullanılır).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-e04e435fcb5e",
+    "unitNumber": 81,
+    "text": "double get right => left + width; Dart Programlama dilinde bir sınıf içerisinde yukarıdaki kodun işlevini hangisi doğru ifade etmektedir?",
+    "options": {
+      "A": "right sınıf içinde sadece okunabilir bir tanımlama olarak eklenir.",
+      "B": "left ve width degerleri güncellenmek istendiğinde bu satır çalıştırılır.",
+      "C": "get adında yeni bir değişken tanımlamaktadır.",
+      "D": "right adında yeni bir değişken tanımlamaktadır.",
+      "E": "right sınıf içinde sadce yazılabilir bir tanımlama olarak eklenir."
+    },
+    "correctAnswer": "A",
+    "explanation": "Dart dilinde get anahtar kelimesi, bir sınıf özelliği (property) için Getter metodu tanımlar. Bu yapı, right isminde bir özelliğe erişildiğinde (okunduğunda) left width işlemini yapıp sonucu döndürür. Ancak set (setter) metodu tanımlanmadığı için bu özelliğe dışarıdan değer atanamaz. Bu da onu sadece okunabilir (read-only) bir özellik yapar.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-709c5079255d",
+    "unitNumber": 82,
+    "text": "Eğer bir web servisi veya veritabanı verisi ile test işlemi yapılacaksa, taklit veri kaynağı oluşturmak için kullanılan paketin adı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Slave",
+      "B": "Tester",
+      "C": "Copy",
+      "D": "Mockito",
+      "E": "Capuccino"
+    },
+    "correctAnswer": "D",
+    "explanation": "Yazılım testlerinde (özellikle Unit Test), dış bağımlılıkları (API, veritabanı vb.) taklit etmek için “Mock” nesneler kullanılır. Dart ve Flutter ekosisteminde bu iş için en yaygın kullanılan paket mockito paketidir. Bu paket sayesinde sahte sınıflar oluşturulur ve “bu metod çağrıldığında şu cevabı dön” şeklinde senaryolar yazılarak testler izole edilir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-724137ca54ee",
+    "unitNumber": 83,
+    "text": "Aşağıdaki çağrılardan hangisi Navigator API içerisinde isimlendirilmiş bir yolu çağırmak (ekrana getirmek) için kullanılan fonksiyondur?",
+    "options": {
+      "A": "Navigator.popNamed",
+      "B": "Navigator.moveNamed",
+      "C": "Navigator.returnNamed",
+      "D": "Navigator.pushNamed",
+      "E": "Navigator.backNamed"
+    },
+    "correctAnswer": "D",
+    "explanation": "Flutter’da sayfalar arası geçiş (navigasyon) için Navigator sınıfı kullanılır. Eğer rotalar (sayfalar) MaterialApp içinde isimlendirilmişse (örneğin ‘/home’, ‘/profile’ gibi), bu sayfalara gitmek için Navigator.pushNamed fonksiyonu kullanılır. (Geri dönmek için pop kullanılır, ancak isimlendirilmiş rota çağırmak için pushNamed doğrudur).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-444af47a8369",
+    "unitNumber": 84,
+    "text": "AnimatedContainer kullanarak Flutter’da bir animasyon oluşturmak istenirse, bu animasyon aşağıdaki özelliklerden hangisini değiştiremez?",
+    "options": {
+      "A": "Border (Kenarlık)",
+      "B": "Font Size (Font Boyutu)",
+      "C": "Color (Renk)",
+      "D": "Padding (İç Boşluk)",
+      "E": "Margin (Dış Boşluk)"
+    },
+    "correctAnswer": "B",
+    "explanation": "AnimatedContainer, kendi özelliklerini (Container properties) animasyonlu bir şekilde değiştirebilen bir widget’tır. Bu özellikler arasında renk, boyut (width/height), padding, margin, border, border radius, transform gibi değerler bulunur. Ancak Font Size (Yazı Boyutu), Container’ın bir özelliği değildir; Container’ın içindeki (child) Text widget’ının stil özelliğidir. Yazı boyutunu animasyonlu değiştirmek için AnimatedDefaultTextStyle kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-6b722976e1a2",
+    "unitNumber": 85,
+    "text": "Stateful Widget’tan miras alınarak oluşturulacak bir arayüz bileşeni içerisinde setState() fonksiyonun olması gereken yer aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "createState() metodu içerisinde.",
+      "B": "build metodu içerisinde.",
+      "C": "Arayüz güncellenmesinin gerektiği yerdeki kodu sarmalayacak yerde.",
+      "D": "Sınıf içerisinde değil, runApp metodu içerisinde.",
+      "E": "Sınıfın yapıcı fonksiyonunun içerisinde."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-c3a2fedd4ab4",
+    "unitNumber": 86,
+    "text": "Aşağıdakilerden hangisi Flutter çerçevesinde uygulamanın test ve bakım süreci için yanlış bir ifadedir?",
+    "options": {
+      "A": "Uygulamanın dağıtımı profile kipinde derleme ile yapılır.",
+      "B": "Flutter'da unit test senaryoları proje kökündeki test adında bir klasörde oluşturulur.",
+      "C": "Test paketi expect adındaki fonksiyon çağrısı ile test sonucunun başarılı olup olmadığını değerlendirir.",
+      "D": "Uygulama dağıtımı boyutu platforma ve cihaza göre değişiklik gösterebilir.",
+      "E": "Uygulamanın varsayılan derleme kipi debug'dır."
+    },
+    "correctAnswer": "A",
+    "explanation": "Flutter’da 3 derleme modu vardır: Debug, Profile ve Release. 1. Debug: Geliştirme sırasında kullanılır (Hot Reload aktif). 2. Profile: Performans testleri ve analizi için kullanılır. 3. Release: Uygulamanın markete yüklenmesi ve son kullanıcıya dağıtılması için kullanılır (En optimize halidir). Dolayısıyla, uygulamanın dağıtımı “Profile” modunda değil, “Release” modunda yapılır. A şıkkı yanlıştır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-28a21220262b",
+    "unitNumber": 88,
+    "text": "dependencies :url_launcher: ‘> 5.4.0 <6.0.0' pubspec.yaml dosyası içerisinde yukarıdaki gibi bir satır varsa bu paket projeye nasıl dahil olacaktır?",
+    "options": {
+      "A": "url_launcher'a bağımlı olan başka paketlerde bağımlılıklar 6.0.0'a yükseltilecektir.",
+      "B": "url_launcher'a olan bağımlılıklar 5.4.0 ila 6.0.0 arasındaki bir sürümü kullanacaktır.",
+      "C": "url_launcher'ın son sürümü kullanılır.",
+      "D": "url_launcher projeye dahil edilmeyecek sadece sürüm aralığı takip edilecektir.",
+      "E": "url_launcher'ın 5.4.0 ile 6.0.0 arasındaki sürümleri görmezden gelinir."
+    },
+    "correctAnswer": "B",
+    "explanation": "pubspec.yaml dosyasındaki sürüm kısıtlamaları, hangi paket sürümünün indirileceğini belirler. ‘> 5.4.0 <6.0.0′ ifadesi, sürümın 5.4.0’dan büyük VE 6.0.0’dan küçük olması gerektiğini belirtir. Dart paket yöneticisi (Pub), bu aralıktaki en güncel kararlı sürümü bulup projeye dahil eder.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-0f78b7dd1c4c",
+    "unitNumber": 89,
+    "text": "DartDevTools içerisindeki “Performance View” aracı aşağıdaki işlevlerden hangisini yerine getirmek için vardır?",
+    "options": {
+      "A": "Uygulamanın ekran tazelemesi için geçen süreyi ve her bir olayın gerçekleşme süresini gösterir.",
+      "B": "Uygulama içerisindeki varlıkların bir listesini gösterir.",
+      "C": "Uygulamanın ayarlar ekranını gösterir.",
+      "D": "Uygulamanın dağıtım paketlerindeki eksikleri hesaplar ve dağıtıma uygun olması için gerekli bileşenleri listeler.",
+      "E": "Ekrandaki her bir widgetın kapladığı alanı ve yerleşim planını gösterir."
+    },
+    "correctAnswer": "A",
+    "explanation": "Flutter DevTools içerisindeki Performance View, uygulamanın kare hızını (FPS) ve her karenin (frame) oluşturulma süresini görselleştirir. Özellikle UI thread ve Raster thread’in ne kadar meşgul olduğunu göstererek takılmaların (jank) nedenini bulmaya yardımcı olur. Bu araç, uygulamanın akıcılığını test etmek ve performans darboğazlarını tespit etmek için kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-7718bfcb08b3",
+    "unitNumber": 90,
+    "text": "Aşağıdakilerden hangisi Flutter’da uygulama seviyesi durum yönetimi için kullanılan kütüphanenin adıdır?",
+    "options": {
+      "A": "firebase",
+      "B": "material",
+      "C": "provider",
+      "D": "http",
+      "E": "intl"
+    },
+    "correctAnswer": "C",
+    "explanation": "Flutter’da state management (durum yönetimi) için en popüler ve Google tarafından da önerilen kütüphanelerden biri Provider paketidir. Uygulama genelinde veriyi paylaşmak ve yönetmek için kullanılır. (Firebase backend, material tasarım, http ağ istekleri, intl ise çoklu dil desteği içindir).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1fa0db2d2c02",
+    "unitNumber": 92,
+    "text": "Flutter ve Dart içerisinden Firebase özelliklerine erişmek için kullanılan kütüphaneler koleksiyonunun adı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "intl",
+      "B": "Destiny",
+      "C": "Provider",
+      "D": "FireInTheHole",
+      "E": "FlutterFire"
+    },
+    "correctAnswer": "E",
+    "explanation": "Google’ın Firebase servislerini (Auth, Firestore, Storage, Analytics vb.) Flutter uygulamalarında kullanmak için geliştirilen resmi eklenti ve paket setinin genel adı FlutterFire’dır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "uc-ders",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "uc-ders"
+      }
+    ]
+  },
+  {
+    "id": "s-3a5f3e46e104",
+    "unitNumber": 96,
+    "text": "Aşağıdakilerden hangisi Navigator API içerisinde bulunulan sayfadan bir önceki sayfaya dönmeyi sağlayan fonksiyon çağrısıdır?",
+    "options": {
+      "A": "Navigator.move",
+      "B": "Navigator.back",
+      "C": "Navigator.return",
+      "D": "Navigator.pop",
+      "E": "Navigator.push"
+    },
+    "correctAnswer": "D",
+    "explanation": "Flutter’da sayfalar (Route’lar) bir yığın (stack) üzerinde yönetilir. **`Navigator.pop`** fonksiyonu, yığının en üstündeki sayfayı yığından çıkararak (**pop** ederek) kullanıcıyı doğal olarak bir önceki sayfaya döndürür. **`Navigator.push`** (A) ise yeni bir sayfayı yığına ekler (ileriye gitme).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-11906b7c1fa4",
+    "unitNumber": 114,
+    "text": "Yukarıdaki if koşulu aşağıdaki hangi kontrolü gerçekleştirir?",
+    "options": {
+      "A": "Dönen sonucun bir html sayfası olup olmadığını teyit eder.",
+      "B": "Erişilen web servisinin başarılı bir cevap döndüğünü teyit eder.",
+      "C": "Dönen sonucun bir Json dosyası olup olmadığını teyit eder.",
+      "D": "Erişilen web servisinin getirdiği verinin 200'e eşit olup olmadığını kontrol eder.",
+      "E": "Erişilen web servisinin başarısız bir cevap döndüğünü teyit eder."
+    },
+    "correctAnswer": "B",
+    "explanation": "HTTP protokolünde **durum kodları** (status codes) 200 ile 299 aralığında (2xx), isteğin **başarıyla** alınıp işlendiği anlamına gelir (örneğin 200 OK). Bu nedenle koşul, **Erişilen web servisinin başarılı bir cevap döndüğünü teyit eder** (B).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-695fb2ccd5a3",
+    "unitNumber": 115,
+    "text": "Aşağıdakilerden hangisi `flutter_test` paketi içerisindeki Matcher sabitlerinden biri değildir?",
+    "options": {
+      "A": "matchesGoldenFile",
+      "B": "findsNWidgets",
+      "C": "findsWidgets",
+      "D": "findsClass",
+      "E": "findsNothing"
+    },
+    "correctAnswer": "D",
+    "explanation": "Flutter’ın resmi `flutter_test` paketi içerisinde `findsClass` adında bir Matcher sabiti yoktur. Diğerleri geçerli ve yaygın kullanılan Matcher sabitleridir. Flutter’ın resmi flutter_test paketi içerisinde bulunan yaygın ve doğru Matcher sabitleri şunlardır: findsNothing → Hiçbir widget bulmazsa geçer findsWidgets → Bir veya daha fazla widget bulursa geçer findsNWidgets(n) → Tam olarak n tane widget bulursa geçer matchesGoldenFile → Golden file (görsel) testlerinde kullanılır, flutter_test içinde tanımlıdır Ancak findsClass diye bir Matcher flutter_test paketinde yoktur. (Bazı üçüncü taraf paketlerde veya eski örneklerde karıştırılabilir ama resmi flutter_test paketinde böyle bir sabit yoktur.) Doğru cevap: D) findsClass",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-17ec48578252",
+    "unitNumber": 116,
+    "text": "Flutter’da uygulanacak bir animasyonun sürekli tekrar etmesi isteniyorsa oluşturulacak widgetın aşağıdaki sınıflardan hangisinden miras alması uygun olur?",
+    "options": {
+      "A": "AnimatedContainer",
+      "B": "AnimatedAlign",
+      "C": "AnimatedWidget",
+      "D": "Widget Transition",
+      "E": "Animated PhysicalModel"
+    },
+    "correctAnswer": "C",
+    "explanation": "Animasyonların sürekli kontrol edilmesi, tekrarlanması veya manuel olarak yönetilmesi gerekiyorsa, genellikle bir **`AnimationController`** kullanılır. Bu tür bir kontrolcü ile çalışan ve sürekli değişen değerleri dinleyen özel widget’lar oluşturmak için **`AnimatedWidget`** (C) sınıfından miras almak uygundur.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-122e645b64c7",
+    "unitNumber": 117,
+    "text": "Akıllı telefonlarda veritabanlarının saklanması için belirtilen varsayılan klasöre erişmek için aşağıdaki fonksiyonlardan hangisi kullanılır?",
+    "options": {
+      "A": "getSqlDirectory()",
+      "B": "getDatabasesDirectory()",
+      "C": "getDatabasesPath()",
+      "D": "getSqlitePath()",
+      "E": "setDataPath()"
+    },
+    "correctAnswer": "C",
+    "explanation": "Flutter uygulamalarında SQLite veritabanlarının fiziksel olarak depolandığı varsayılan klasörün yolunu (path) elde etmek için genellikle `sqflite` paketi içerisindeki **`getDatabasesPath()`** fonksiyonu kullanılır. Bu fonksiyon, işletim sistemine özgü güvenli bir depolama konumunu döndürür.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-6d29139bb443",
+    "unitNumber": 119,
+    "text": "Flutter’da, provider kütüphanesi kullanılarak bir veri modeli oluşturulacaksa, bu veri modeli aşağıdaki sınıflardan hangisinden miras almalıdır?",
+    "options": {
+      "A": "ChangeNotifier",
+      "B": "Consumer",
+      "C": "Provider",
+      "D": "ChangeNotifier Provider",
+      "E": "DataModel"
+    },
+    "correctAnswer": "A",
+    "explanation": "**`provider`** kütüphanesi ile durum yönetimi (state management) yapılırken, değişimi dinlenecek olan veri modelinin (Model Class) diğer widget’ları uyarabilmesi için Dart’ın **`ChangeNotifier`** (A) sınıfından miras alması gerekir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-49f911936719",
+    "unitNumber": 120,
+    "text": "Ekran tazelenmesinde kullanıcının bir sıçrama görmemesi için ekran tazeleme hızının kaç milisaniyeyi (ms) geçmemesi gerekir?",
+    "options": {
+      "A": "32",
+      "B": "10",
+      "C": "16",
+      "D": "120",
+      "E": "60"
+    },
+    "correctAnswer": "C",
+    "explanation": "Pürüzsüz bir görsel deneyim (60 FPS) için her bir karenin **1000 ms / 60 = 16.67 ms** sürede çizilmesi gerekir. Bu nedenle ekran tazeleme hızının **16 milisaniyeyi** (C) geçmemesi gerekir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1e24286e2e52",
+    "unitNumber": 121,
+    "text": "Hata yakalama için yazılan try-catch-finally kod kümesinde finally bloğu …… için vardır. Yukarıdaki cümlede yer alan boşluğa aşağıdaki seçeneklerden hangisi gelmelidir?",
+    "options": {
+      "A": "hata olsun olmasın try-catch bloğu sonunda çalışacak kodu yazmak",
+      "B": "alt fonksiyon çağrılarında bir hata oluşursa onlara tepki verecek kodu yazmak",
+      "C": "hiç hata oluşmadığında çalıştırılacak kodu yazmak",
+      "D": "catch bloklarında yakalanamamış hataları yakalamak",
+      "E": "hatayı düzeltmek için gereken kodu yazmak"
+    },
+    "correctAnswer": "A",
+    "explanation": "**`finally`** bloğu, istisna (hata) oluşsa da oluşmasa da **kesinlikle çalıştırılması gereken** kodları (örneğin, dosya veya veritabanı bağlantılarını kapatma gibi temizleme işlemlerini) içermek için kullanılır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a65fc6e9380a",
+    "unitNumber": 122,
+    "text": "Aşağıdakilerden hangisi Flutter uygulama boyutunu azaltmak için kullanılacak yöntemlerden biri değildir?",
+    "options": {
+      "A": "Kütüphanelerden yüklenen kaynakların en aza indirilmesi",
+      "B": "Kullanılmayan kaynakların projeden çıkarılması",
+      "C": "PNG ve JPEG dosyalarını sıkıştırarak kullanma",
+      "D": "Dağıtım sürümü üretilirken -split-debug-info etiketinin kullanımı",
+      "E": "Android ve iOS SDK sürümlerinin düşük tutulması"
+    },
+    "correctAnswer": "E",
+    "explanation": "Uygulama boyutunu azaltan yöntemler genellikle kaynak optimizasyonuna odaklanır. **Android ve iOS SDK sürümlerinin düşük tutulması** (E) ise uygulamanın uyumluluk gereksinimleri ile ilgilidir ve genellikle uygulama boyutunu azaltmaz.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-bf46878d5efa",
+    "unitNumber": 138,
+    "text": "flutter_test paketi içerisindeki Finder sınıfı ile arayüzde bir metnin varlığını test edebilmek için aşağıdaki fonksiyon çağrılarından hangisi kullanılır?",
+    "options": {
+      "A": "text.find()",
+      "B": "finder.string()",
+      "C": "string.find()",
+      "D": "widget.find()",
+      "E": "find.text()"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5a97e4fdb63b",
+    "unitNumber": 139,
+    "text": "Json Serializable paketi ile otomatik json dönüştürmesi yapılacak bir veri modeli sınıfı içerisinde @JsonKey() annotation’ı aşağıdaki amaçlardan hangisi için kullanılır?",
+    "options": {
+      "A": "Sayfanın yazı tipi kodlamasından (encoding) kaynaklı çevirme ihtiyacının belirtilmesi",
+      "B": "Bir değişkene json çevriminde ek dönüşüm işlevleri sağlanması",
+      "C": "Aynı ada sahip iki alanın birbirinde ayrılması",
+      "D": "Sınıfın Json serializable tarafından dönüşüm için dikkate alınması",
+      "E": "Dosya sistemine kayıtlı veri ile bellekte kayıtlı verinin eşleştirilmesi"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f69592462032",
+    "unitNumber": 140,
+    "text": "Flutter’da paket bağımlılıkları belirtmek için pubspec.yaml dosyasında kullanılan başlık aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "resources:",
+      "B": "packages:",
+      "C": "requirements:",
+      "D": "dependencies:",
+      "E": "relations:"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-6948f93ef97a",
+    "unitNumber": 141,
+    "text": "Bir sınıf içerisindeki bir değişken, Floor kütüphanesi kullanılarak SQLite’da bir tablodaki PrimaryKey özelliği olan bir alanı (field) temsil ediyorsa, değişkenin içerisinde bulunduğu sınıf aşağıdaki dipnotlardan (annotation) hangisini kullanmaktadır?",
+    "options": {
+      "A": "@table",
+      "B": "@dao",
+      "C": "@entity",
+      "D": "@database",
+      "E": "@sqflite"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-996b1ff3cf2e",
+    "unitNumber": 142,
+    "text": "Aşağıdakilerden hangisi Flutter çerçevesi içerisinde gelen düzenleyici bir arayüz bileşeni adı değildir?",
+    "options": {
+      "A": "Palette",
+      "B": "Container",
+      "C": "ListView",
+      "D": "Center",
+      "E": "Align"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-825879900b8d",
+    "unitNumber": 143,
+    "text": "Navigator API’de ModalRoute.of() metodu ile ……… erişilir. Yukarıdaki cümlede boş bırakılan yere aşağıdakilerden hangisi getirilmelidir?",
+    "options": {
+      "A": "Açılır ekran boyutuna",
+      "B": "Sayfanın theme (şablon) özelliklerine",
+      "C": "Sayfaya gönderilen argümanlara",
+      "D": "Gezinti yapılan uygulamalar listesine",
+      "E": "Cihaz konfigürasyon bilgilerine"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5bcc299e99ad",
+    "unitNumber": 144,
+    "text": "Aşağıdaki komutlardan hangisi bir Flutter uygulamasının Android dağıtımı oluşturmasını sağlar?",
+    "options": {
+      "A": "flutter make apk",
+      "B": "flutter appbundle apk",
+      "C": "flutter build apk",
+      "D": "flutter profile appbundle",
+      "E": "flutter create apk"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f05f2ce47538",
+    "unitNumber": 145,
+    "text": "flutter build apk –analyze-size Komutu kullanıldığında üretilen konsol çıktısı aşağıdaki bilgilerden hangisini vermektedir?",
+    "options": {
+      "A": "Uygulamanın Android platformu ile uyumluluk değerlendirmesi",
+      "B": "Uygulamanın içerdiği kodların uzunluğu",
+      "C": "Uygulamanın performansına etki eden ekranların bilgisini",
+      "D": "Uygulamanın Android platformunda çalışma performansı",
+      "E": "Uygulamanın içerdiği dosyaların bölümlere ayrılmış kapladığı alan özetlerini"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e23b3c26ae6c",
+    "unitNumber": 146,
+    "text": "Aşağıdakilerden hangisi GestureDetector widgeti aracılığı ile kullanıcının çift tıklama işlevini yakalamayı sağlayan parametredir?",
+    "options": {
+      "A": "onLongPress",
+      "B": "onTap",
+      "C": "onTapDown",
+      "D": "onDoubleTap",
+      "E": "onTapCancel"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1fa3ea73a09c",
+    "unitNumber": 148,
+    "text": "Dart’ta bir fonksiyonun asenkron olarak çalışması için aşağıdakilerden hangisinin yapılması gerekir?",
+    "options": {
+      "A": "Fonksiyonun adından sonra async anahtar kelimesinin kullanılması",
+      "B": "Fonksiyonun bir sınıf içerisinde tanımlanmış olması",
+      "C": "Fonksiyonun static olarak tanımlanması",
+      "D": "Fonksiyonun global olarak tanımlanması",
+      "E": "Fonksiyonun içerisinde await anahtar kelimesinin kullanılması"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-34f0c8c0cc81",
+    "unitNumber": 150,
+    "text": "flutter build apk –analyze-size Yukarıdaki komutun terminalde çalıştırılması durumunda hangi sonuç elde edilir?",
+    "options": {
+      "A": "Uygulamanın profile edilmesi için gerekli sürüm bilgileri terminal ekranına yazılır.",
+      "B": "Farklı Android sürümlerinde uygulamanın yükleme dosyasının ne kadar yer kapladığının karşılaştırması terminal ekranına yazılır.",
+      "C": "Android işletim sistemi için oluşturulur ve Release sürümünün dosya boyutları hakkında detay bilgileri terminal ekranına yazılır.",
+      "D": "Flutter için dosya boyutu limitlerinin ne olduğu ve nasıl arttırılacağı bilgisi terminal ekranına yazılır.",
+      "E": "iOS ile Android işletim sistemleri arasında dosya farkı oluşturan kısımlar terminal ekranına yazılır."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-1b30ebb141c7",
+    "unitNumber": 151,
+    "text": "Google’un tasarladığı, material.io İnternet adresinde paylaşılan ve uygulamaların görsellerinin nasıl olması gerektiğini anlattığı konseptin genel adı nedir?",
+    "options": {
+      "A": "Widget Design",
+      "B": "Material Design",
+      "C": "Design Basics",
+      "D": "Material Components",
+      "E": "Material Widgets"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-255280a16aed",
+    "unitNumber": 152,
+    "text": "Aşağıdakilerden hangisi Flutterda animasyon durumlarını ifade eden AnimationStatus enum değerlerinden biri değildir?",
+    "options": {
+      "A": "completed",
+      "B": "follow",
+      "C": "forward",
+      "D": "reverse",
+      "E": "dismissed"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-f10f2256afff",
+    "unitNumber": 153,
+    "text": "Aşağıdakilerden hangisi Flutter’ın uygulamanın performansını incelemek için kullanılan derleme modelidir?",
+    "options": {
+      "A": "Profile",
+      "B": "Release",
+      "C": "Debug",
+      "D": "Perform",
+      "E": "Publish"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-16416c08c123",
+    "unitNumber": 154,
+    "text": "Bir Flutter uygulamasında aşağıdaki testlerden hangisi gerçekleştirilemez?",
+    "options": {
+      "A": "Integration Test: Uygulamanın tamamının bütüncül çalışma testi",
+      "B": "Sandbox Test: Güvenlik ihlali testi",
+      "C": "Unit Test: Fonksiyonların tek tek testi",
+      "D": "Widget Test: Arayüz bileşenlerinin testi",
+      "E": "Unit Test: Taklit veri kaynağı ile değişen veri için test"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-20fc933f0bf0",
+    "unitNumber": 155,
+    "text": "Yukarıda verilen açıklamaya göre cevaplayınız.",
+    "options": {
+      "A": "Consumer",
+      "B": "ChangeNotifier",
+      "C": "Provider",
+      "D": "DataModel",
+      "E": "ChangeNotifierProvider"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-99acc1c28331",
+    "unitNumber": 156,
+    "text": "Aşağıdakilerden hangisi Dart programlama dilinde bir tamsayı dizisi tanımlama örneğidir?",
+    "options": {
+      "A": "int[] list = int[1,2,3];",
+      "B": "var list = (1,2,3);",
+      "C": "var list[] = { 1,2,3};",
+      "D": "var list = [1,2,3];",
+      "E": "int list = int[]{1,2,3};"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-be56e6857207",
+    "unitNumber": 157,
+    "text": "Pubspec.yaml dosyasına yeni bir paket bağımlılığı tanımlandığında bunun kullanıma hazır olması için terminalde hangi komut çalıştırılır?",
+    "options": {
+      "A": "Flutter pub get",
+      "B": "Flutter run",
+      "C": "Flutter work",
+      "D": "Flutter build apk",
+      "E": "Flutter create packag"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-d36e52835189",
+    "unitNumber": 158,
+    "text": "Dart’ta sonuç döndürmeyecek bir asenkron fonksiyonun geri dönüş veri türü hangisi olmalıdır?",
+    "options": {
+      "A": "Future",
+      "B": "Object",
+      "C": "void",
+      "D": "int",
+      "E": "Future"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-4340011fe27c",
+    "unitNumber": 159,
+    "text": "Aşağıdakilerden hangisi bir uygulamanın mobil web (mobile web) yerine çok ortam destekli (cross-platform) bir programlama dili – çerçevesi ile geliştirilmesinin nedenlerinden biridir?",
+    "options": {
+      "A": "Akıllı telefonların donanım özelliklerine erişebilme",
+      "B": "Uygulamanın internete bağlanma gereksinimi olması",
+      "C": "Farklı akıllı telefonlarda çalıştırabilme",
+      "D": "Uygulama geliştirecek yazılımcıyı kolay bulma imkanı",
+      "E": "Yeni çıkacak işletim sistemlerine hızlı adapte edebilme"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-d830f0fa73bb",
+    "unitNumber": 160,
+    "text": "Flutter paket bağımlılıklarında bir paketi ….. arayabilir. Aşağıdakilerden hangisi bu boşluğa yazılamaz?",
+    "options": {
+      "A": "Pub.dev sayfasında",
+      "B": "Github repoları içerisinde",
+      "C": "Dosya sisteminde",
+      "D": "Sıkıştırılmış (Zip) dosyası içerisinde",
+      "E": "Github repolarının alt klasörlerinde"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-3a2b75820c0a",
+    "unitNumber": 161,
+    "text": "flutter: assets: – klasor/ – klasor/altklasor/ Yukarıdaki satırlar hangi dosya içerisinde yer almaktadır?",
+    "options": {
+      "A": "assets.dart",
+      "B": "flutter.yaml",
+      "C": "pubspec.yaml",
+      "D": "main.dart",
+      "E": "launch.json"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-53c6bbff80dc",
+    "unitNumber": 162,
+    "text": "Http paketi kullanılarak http.get() ile bir web hizmetine bağlanıldığında, dönen cevap response adında bir değişkene kaydedildiyse; aşağıdaki if koşulu hangi kontrolü gerçekleştirir? if(response.statusCode == 200)",
+    "options": {
+      "A": "Erişilen web servisinin başarısız bir cevap döndüğünü teyit eder.",
+      "B": "Dönen sonucun bir Json dosyası olup olmadığını teyit eder.",
+      "C": "Dönen sonucun bir html sayfası olup olmadığını teyit eder.",
+      "D": "Erişilen web servisinin getirdiği verinin 200'e eşit olup olmadığını kontrol eder.",
+      "E": "Erişilen web servisinin başarılı bir cevap döndüğünü teyit eder."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-6b2b3cdde674",
+    "unitNumber": 163,
+    "text": "Flutter’da temel veritabanları işlemlerini yerine getirmek için kullanılan kütüphanenin adı nedir?",
+    "options": {
+      "A": "sqflite",
+      "B": "okhttp",
+      "C": "volley",
+      "D": "provider",
+      "E": "intl"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-92c4685b1c3c",
+    "unitNumber": 164,
+    "text": "Google firmasının sunduğu bir hizmet olan Firebase için hangi tanımlama daha uygundur?",
+    "options": {
+      "A": "Android işletim sisteminin Flutter uygulaması ile iletişim kurabilmesi için ara bir katman görevini üstlenir.",
+      "B": "Flutter kodlarının yazılması için bir editördür.",
+      "C": "Google firmasının ürünlerini çevrimiçi sattığı bir markettir.",
+      "D": "Veritabanı, Kimlik Doğrulama, Yapay Zeka gibi hizmetlerin sunulduğu bir servistir.",
+      "E": "Android işletim sisteminin iOS gibi davranmasını sağlayarak Apple Markete bağlantı imkanı sunar."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-864b0dfbe451",
+    "unitNumber": 165,
+    "text": "Flutter’da animasyonlar için varsayılan değişim eğrisi (Curve) hangisidir?",
+    "options": {
+      "A": "Curves.fastOutSlowln",
+      "B": "Curves.slowMiddle",
+      "C": "Curves.linear",
+      "D": "Curves.bounceln",
+      "E": "Curves.ease"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-6a90149f5f14",
+    "unitNumber": 166,
+    "text": "Expanded arayüz bileşeninin hangi parametresi ekran paylaşım oranını belirlemektedir?",
+    "options": {
+      "A": "state",
+      "B": "child",
+      "C": "flex",
+      "D": "children",
+      "E": "key"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-554ac56a6ad8",
+    "unitNumber": 167,
+    "text": "“Navigator API’de Navigator.pop() fonksiyon çağrısı ……” Yukarıdaki boşluğa uygun olan tamamlayıcı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Uygulamanın ilk sayfasını ekrana getirir.",
+      "B": "Uygulama içerisindeki tüm sayfaların bir listesini ekrana getirir.",
+      "C": "Uygulamanın ayarlar sayfasını ekrana getirir.",
+      "D": "Uygulama kullanılırken son kapatılan sayfayı ekrana getirir.",
+      "E": "Uygulama içerisinde yeni açılacak sayfanın adını alarak onu ekrana getirir."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "butunleme",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "butunleme"
+      }
+    ]
+  },
+  {
+    "id": "s-066b45abb6b7",
+    "unitNumber": 93,
+    "text": "Bir Flutter projesinde “lib” klasörü altında bulunan kod dosyasının uzantısı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": ".yaml",
+      "B": ".flutter",
+      "C": ".dart",
+      "D": ".bin",
+      "E": ".json"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8c2bff4c311b",
+    "unitNumber": 94,
+    "text": "Point bir sınıf ise sınıf tanımlaması içerisinde Point(this.x, this.y); gibi bir kod parçacığı hangi işlevi yerine getirmektedir?",
+    "options": {
+      "A": "Abstract (soyut) bir metot tanımlaması yapar.",
+      "B": "Sınıfın üye değişkenlerine ilk değer atayan yapılandırıcı fonksiyon tanımlar.",
+      "C": "Sınıfın \"f(x) = y\" formunda bir fonksiyon gibi kullanılmasını sağlar.",
+      "D": "Sınıfın x ve y adındaki iki örneğini birleştirerek yeni bir Point sınıfı tanımlar.",
+      "E": "Sınıfın bir örneğini üretir."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-63d4f35bcc94",
+    "unitNumber": 95,
+    "text": "Arayüz bileşeni ağacında hiyerarşik olarak aşağıdakilerin hangisinin altında bir başka arayüz bileşeni görülemez?",
+    "options": {
+      "A": "Row",
+      "B": "Scaffold",
+      "C": "Icon",
+      "D": "Column",
+      "E": "Container"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-dbdb91bfa27f",
+    "unitNumber": 97,
+    "text": "Arayüzün yenilenmesi gerekiyorsa hazırlanan arayüz bileşeninin StatefulWidget türünde olması gerekir. StatefulWidget arayüz hiyerarşisinde performans açısından ele alınacak olursa, olması gereken yeri neresidir?",
+    "options": {
+      "A": "Arayüz ağacını oluşturan bileşenlerin en üst seviyesinde kök eleman olarak bulunmalıdır.",
+      "B": "Arayüzde etkileşim sonucu güncellenmesi gereken tüm bileşenleri saracak en alt seviyede olmalıdır.",
+      "C": "Scaffold arayüz bileşeninin hemen altında Container bileşenlerininse üstünde yer almalıdır.",
+      "D": "SetState metodunun içerisinde çağrılacak şekilde yerleştirilmelidir.",
+      "E": "Arayüzü oluşturan bileşenlerden en alt seviyede yaprak eleman olarak bulunmalıdır."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3cb0a54b63b7",
+    "unitNumber": 98,
+    "text": "Aşağıdakilerden hangisi kullanıcı etkileşimi yapabilen interaktif arayüz bileşenlerinden biri değildir?",
+    "options": {
+      "A": "FloatingActionButton",
+      "B": "Switch",
+      "C": "TextField",
+      "D": "Slider",
+      "E": "Container"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-45d15a6a0644",
+    "unitNumber": 99,
+    "text": "Aşağıdaki değişken tanımlamalarından hangisi hem int hem de double türü değer saklayabilir?",
+    "options": {
+      "A": "double x;",
+      "B": "var x = 0;",
+      "C": "int x;",
+      "D": "final double x;",
+      "E": "num x;"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-81b264501775",
+    "unitNumber": 100,
+    "text": "Aşağıdakilerden hangisi ile bir Flutter uygulaması çalıştırılamaz?",
+    "options": {
+      "A": "VSCode içerisinde Run menüsü altında \"Run Without Debugging\" seçilerek",
+      "B": "Terminalden proje klasöründeyken \"flutter create\" komutunu çalıştırarak",
+      "C": "VSCode içerisinde Run menüsü altında \"Start Debugging\" seçilerek",
+      "D": "VSCode içerisinde main.dart dosyası açıkken \"F5\" kısayol tuşuna basılarak",
+      "E": "Terminalden proje klasöründeyken \"flutter run\" komutunu çalıştırarak"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-1b5943829e96",
+    "unitNumber": 101,
+    "text": "class TapboxA extends StatefulWidget{…} şeklinde tanımlanan bir arayüz bileşeni için @override ile yeniden yazılması gereken createState() fonksiyonunun geri dönüş veri türü hangisi olmalıdır?",
+    "options": {
+      "A": "List",
+      "B": "State",
+      "C": "Function",
+      "D": "Widget",
+      "E": "StatefulWidget"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-531795b36914",
+    "unitNumber": 102,
+    "text": "Dart programlama diline getirilen Null-Safety özelliği ne ifade etmektedir?",
+    "options": {
+      "A": "Bir değişkenin atama işleminin sağ tarafında yer almadan önce içerisine bir atama yapılması gerektiğini.",
+      "B": "Aynı isme sahip iki sınıf tanımlaması varsa bunlardan ikincisinin daima null değeri ile sembolize edildiğini.",
+      "C": "Değişken tanımlamasının sadece sınıf içerisinde yapılabileceğini.",
+      "D": "Tüm sınıfların tanımlanmasının Null sınıfından miras alarak yapıldığını.",
+      "E": "Değişkenlerin oluşturulduklarında sadece null değeri alabileceklerini."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-589fc26514ed",
+    "unitNumber": 103,
+    "text": "Flutter’da, “Center” isimli arayüz bileşeninin yapıcı(constructor) fonksiyonunun hangi parametresi Widget? türünde bir değer alır?",
+    "options": {
+      "A": "onTap",
+      "B": "key",
+      "C": "boxDecoration",
+      "D": "child",
+      "E": "children"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-42e6cfa38b1d",
+    "unitNumber": 104,
+    "text": "Flutter’da sayfalar arası gezinti için temel kütüphanelerde gelen hangi arayüz bileşeni bize Navigator API’nın basit bir kullanımını sunmaktadır?",
+    "options": {
+      "A": "SizeArea",
+      "B": "Container",
+      "C": "MaterialApp",
+      "D": "Scaffold",
+      "E": "Material"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-86f63ed1786c",
+    "unitNumber": 105,
+    "text": "DartDevTools içerisinde uygulama arayüzüne yerleşen objelerin nasıl konumlandıklarını gördüğümüz arayüzün adı (başlığı) nedir?",
+    "options": {
+      "A": "Welcome Screen",
+      "B": "Form Viewer",
+      "C": "Gesture Detector",
+      "D": "Layout Editor",
+      "E": "Widget Inspector"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-26032017958f",
+    "unitNumber": 106,
+    "text": "Dart’ta miras alma yolu ile aktarılan fonksiyonların ezilerek baştan tanımlanması gerekiyorsa kullanılan annotation hangisidir?",
+    "options": {
+      "A": "@supress",
+      "B": "@deprecated",
+      "C": "@override",
+      "D": "@renew",
+      "E": "@overload"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d81a7a55e249",
+    "unitNumber": 107,
+    "text": "Aşağıda belirtilen ifadelerden hangisi mobil platformları için geliştirilen işletim sistemlerinin kendi sundukları API üzerinden yazılım geliştirmeyi ifade eden mobil programlama türüdür?",
+    "options": {
+      "A": "Katmanlı (Layered)",
+      "B": "Mobil Web (Mobile Web)",
+      "C": "Çekirdek (Kernel)",
+      "D": "Doğal (Native)",
+      "E": "Cross-Platform (Çok Ortam Destekli)"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2fce645206a9",
+    "unitNumber": 108,
+    "text": "Sabit tanımlama final ve const anahtar kelimeleri ile yapılabilmektedir. Bu hususta aşağıdaki ifadelerin hangisi yanlıştır?",
+    "options": {
+      "A": "Final çalışma zamanı (run time) bir sabit tanımlamak için kullanılır.",
+      "B": "Final değeri ilk sefer atandıktan sonra kod içerisinde değiştirilemez.",
+      "C": "Const derleme zamanı (compile time) bir sabit tanımlamak için kullanılır.",
+      "D": "Const değerinin ilk ataması tanımlandığı satırdan daha sonra yapılabilir.",
+      "E": "Const bir tanımlamaya başka bir const ifadenin işleme sokulmuş hali atanabilir."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5a0dedd7a009",
+    "unitNumber": 109,
+    "text": "flutter doctor komutunun terminalde çalıştırılması sonucu “Connected device (3 available)” ifadesi çıktının son satırında veriliyorsa bu kurulum için ne söylenebilir?",
+    "options": {
+      "A": "Bilgisayarda çalışan üç adet Flutter uygulaması vardır.",
+      "B": "Bilgisayara bağlı üç tane çevre birimi (klavye, fare, monitör) bulunmaktadır.",
+      "C": "Bilgisayarda üç farklı işletim sistemi kuruludur.",
+      "D": "Bilgisayarda üç farklı geliştirme ortamı (IDE) kuruludur.",
+      "E": "Bilgisayarda Flutter projesini çalıştırabileceğimiz üç opsiyon bulunmaktadır."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d2d99e8c9523",
+    "unitNumber": 110,
+    "text": "Dart programlama dilinde extends ile miras alma yoluyla türetilen bir sınıfta ebeveyn sınıfın özelliklerine ve metotlarına erişmek için hangi anahtar kelime kullanılır?",
+    "options": {
+      "A": "super",
+      "B": "elder",
+      "C": "this",
+      "D": "parent",
+      "E": "upper"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-16e352abb18f",
+    "unitNumber": 111,
+    "text": "Günümüzde mobil programlama neden daha çok önem kazanmıştır?",
+    "options": {
+      "A": "İnternet erişiminin yoğun olarak mobil platformlardan sağlanması ve akıllı telefonların dijital asistan görevi görmesinden dolayı",
+      "B": "Masaüstü uygulamalarının web sayfalarına dönüştürülmesinin zahmetli olmasından dolayı",
+      "C": "Farklı yazılım geliştirme alanlarının doyuma ulaşmasından dolayı",
+      "D": "Yazılım geliştiricisinin eğitiminin mobil platformlarda daha kolay olmasından dolayı",
+      "E": "Akıllı telefonlarda çok farklı işletim sistemleri kullanılmasından dolayı"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a4992f20c4b0",
+    "unitNumber": 112,
+    "text": "Aşağıdakilerden hangisi Flutter projesinin hangi paketleri içerdiği gibi ayarlarının yapıldığı dosyanın adıdır?",
+    "options": {
+      "A": "pubspec.yaml",
+      "B": "README.md",
+      "C": "analysis_options.yaml",
+      "D": "main.dart",
+      "E": "launch.json"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  }
+]
