@@ -14,7 +14,8 @@ const iconSprite = `<svg width="0" height="0" style="position:absolute" aria-hid
 const checkSvg = '<svg aria-hidden="true"><use href="#i-check"/></svg>';
 const xSvg = '<svg aria-hidden="true"><use href="#i-x"/></svg>';
 import SohbetCekmece from "../../../components/sohbet/SohbetCekmece.tsx";
-import { getCourses, getQuestions, getUniversities } from "../../../lib/api";
+import { getCourses, getDersIcerik, getQuestions, getUniversities } from "../../../lib/api";
+import { uniteBasligi } from "../../../lib/unite-basligi";
 import { soruSirala } from "../../../lib/soru-sirasi";
 import { canonicalDepartments, coursePath } from "../../../lib/kanonik";
 
@@ -54,6 +55,9 @@ interface Props {
 const { university, department, course, canonicalDept } = Astro.props;
 if (canonicalDept !== department.id) return Astro.redirect(coursePath(university.id, canonicalDept, course.id));
 const questions = await getQuestions(university.id, course.id);
+const icerik = await getDersIcerik(university.id, course.id);
+// Official topic list: in AUZEF and Anadolu the weekly topics are the units of the book
+const uniteAdi = new Map((icerik?.konular ?? []).map((k) => [k.no, uniteBasligi(k.baslik)]));
 
 // Group questions by unit
 // Unit 0 holds exam questions whose unit is not known yet: list it after the numbered units
@@ -95,6 +99,28 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { y
             {course.semester}. Dönem
           </span>
           <span class="text-muted-theme font-mono text-xs">{course.code}</span>
+          {icerik?.guncel === false && (
+            <span
+              class="px-2.5 py-0.5 rounded-full text-xs font-medium border border-amber-500/30 text-amber-600 dark:text-amber-400"
+              title={`Son okutulduğu yıl: ${icerik.son_yil}`}
+            >
+              Güncel müfredatta yok
+            </span>
+          )}
+          {icerik?.url && (
+            <a
+              href={icerik.url}
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gap-1 text-xs text-muted-theme hover:text-primary-theme"
+              title="Üniversitenin resmî ders sayfası (izlence)"
+            >
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+              Resmî ders sayfası
+            </a>
+          )}
         </div>
         <h1 class="text-2xl md:text-4xl font-bold text-theme mb-2 md:mb-4">
           {course.name}
@@ -193,7 +219,7 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { y
           </span>
           {
             units.map((unit) => (
-              <a href={`#unite-${unit}`} class="btn-unit-nav">
+              <a href={`#unite-${unit}`} class="btn-unit-nav" title={uniteAdi.get(unit)?.baslik}>
                 {unit === 0 ? "Diğer" : `Ü ${unit}`}
               </a>
             ))
@@ -219,6 +245,11 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { y
                   class={`text-2xl font-bold text-teal-400 border-b border-teal-500/20 pb-2 mb-8`}
                 >
                   {unit === 0 ? "Ünitesi belirlenmemiş sorular" : `Ünite ${unit}`}
+                  {unit !== 0 && uniteAdi.get(unit) && (
+                    <span class="block text-base md:text-lg font-semibold text-theme mt-1 line-clamp-2">
+                      {uniteAdi.get(unit)!.baslik}
+                    </span>
+                  )}
                 </h2>
 
                 {unitQuestions.map((q, qIdx) => (

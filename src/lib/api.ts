@@ -74,3 +74,30 @@ export async function sorusuOlanDersler(uniId: string, courses: Course[]): Promi
     }
     return sonuc;
 }
+
+
+/** Official course content collected from the university (syllabus link, units/topics, years taught).
+ *  Written by acik-ogretim-mcp `scripts/fetcher/ders_icerik_yaz.py`; absent for courses without a source. */
+export interface DersIcerik {
+    kod: string;
+    url?: string;
+    amac?: string;
+    icerik?: string;
+    kaynaklar?: string;
+    konular?: { no: number; baslik: string }[];
+    ciktilar?: string[];
+    konu_kaynagi?: string | null;
+    yillar?: (string | number)[];
+    son_yil?: string | number;
+    guncel?: boolean;
+}
+
+export async function getDersIcerik(uniId: string, courseId: string): Promise<DersIcerik | null> {
+    try {
+        const filePath = path.join(DATA_DIR, 'ders-icerik', uniId, `${courseId}.json`);
+        return JSON.parse(await fs.readFile(filePath, 'utf-8')) as DersIcerik;
+    } catch {
+        return null;
+    }
+}
+
