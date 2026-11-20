@@ -1242,7 +1242,7 @@
       "E": "Bağlı Liste Veri Yapısı."
     },
     "correctAnswer": "C",
-    "explanation": "Aynı tipteki verilerin bellekte **ardışık** (birbirini takip eden) olarak saklanmasını sağlayan ve bu verilere indis numaralarıyla erişilen yapı **Dizi Veri Yapısı**’dır.",
+    "explanation": "Aynı tipteki verilerin bellekte <strong>ardışık</strong> (birbirini takip eden) olarak saklanmasını sağlayan ve bu verilere indis numaralarıyla erişilen yapı <strong>Dizi Veri Yapısı</strong>’dır.",
     "source": "cikmis-soru",
     "year": "2024-2025",
     "examType": "vize",
@@ -1265,7 +1265,7 @@
       "E": "Çift yönlü bağlı listenin başından eleman siler."
     },
     "correctAnswer": "D",
-    "explanation": "Fonksiyon, `while(temp->sonraki != NULL)` döngüsü ile listenin son elemanını bulur (`temp`). Ardından yeni düğümün (`eklenecekDugum`) `onceki` işaretçisini `temp`’e, `temp`’in `sonraki` işaretçisini yeni düğüme bağlar. Bu, **listenin sonuna eleman ekleme** işlemidir.",
+    "explanation": "Fonksiyon, `while(temp->sonraki != NULL)` döngüsü ile listenin son elemanını bulur (`temp`). Ardından yeni düğümün (`eklenecekDugum`) `onceki` işaretçisini `temp`’e, `temp`’in `sonraki` işaretçisini yeni düğüme bağlar. Bu, <strong>listenin sonuna eleman ekleme</strong> işlemidir.",
     "source": "cikmis-soru",
     "year": "2024-2025",
     "examType": "vize",
@@ -1311,7 +1311,7 @@
       "E": "Tek yönlü bağlı listenin başına eleman ekler."
     },
     "correctAnswer": "A",
-    "explanation": "Kod, başlangıç (baslangic) işaretçisini bir sonraki düğüme (Ikinci) taşıyarak (`baslangic = Ikinci;`) ve eski başlangıç düğümünü bellekten silerek (`free (baslangic);`) listenin **başındaki elemanı silme** işlemini gerçekleştirir.",
+    "explanation": "Kod, başlangıç (baslangic) işaretçisini bir sonraki düğüme (Ikinci) taşıyarak (`baslangic = Ikinci;`) ve eski başlangıç düğümünü bellekten silerek (`free (baslangic);`) listenin <strong>başındaki elemanı silme</strong> işlemini gerçekleştirir.",
     "source": "cikmis-soru",
     "year": "2024-2025",
     "examType": "vize",
@@ -1334,7 +1334,7 @@
       "E": "Her düğümün onceki (prev) ve sonraki (next) adında iki işaretçisi olduğu için liste işlemleri görece daha yavaştır."
     },
     "correctAnswer": "D",
-    "explanation": "Çift yönlü bağlı listelerin temel avantajı, her düğümde hem önceki hem de sonraki düğümün adresinin tutulması sayesinde **liste üzerinde çift yönlü (ileri ve geri) hareket edilebilmesidir**. Bu nedenle D şıkkı yanlıştır.",
+    "explanation": "Çift yönlü bağlı listelerin temel avantajı, her düğümde hem önceki hem de sonraki düğümün adresinin tutulması sayesinde <strong>liste üzerinde çift yönlü (ileri ve geri) hareket edilebilmesidir</strong>. Bu nedenle D şıkkı yanlıştır.",
     "source": "cikmis-soru",
     "year": "2024-2025",
     "examType": "vize",
@@ -1357,7 +1357,7 @@
       "E": "Bilgi"
     },
     "correctAnswer": "E",
-    "explanation": "Verilerin işlenmesiyle elde edilen, hedeflere ulaşmak için eylemde bulunmayı sağlayacak anlamlı çıktı, fikir veya anlayış **Bilgi** (Knowledge) olarak tanımlanır.",
+    "explanation": "Verilerin işlenmesiyle elde edilen, hedeflere ulaşmak için eylemde bulunmayı sağlayacak anlamlı çıktı, fikir veya anlayış <strong>Bilgi</strong> (Knowledge) olarak tanımlanır.",
     "source": "cikmis-soru",
     "year": "2024-2025",
     "examType": "vize",
@@ -1403,7 +1403,7 @@
       "E": "16"
     },
     "correctAnswer": "C",
-    "explanation": "Üç boyutlu bir dizideki toplam eleman sayısı, boyutların çarpımıdır: 3 x 4 x 4 = 48. Dizinin eleman sayısı en fazla **48** olabilir.",
+    "explanation": "Üç boyutlu bir dizideki toplam eleman sayısı, boyutların çarpımıdır: 3 x 4 x 4 = 48. Dizinin eleman sayısı en fazla <strong>48</strong> olabilir.",
     "source": "cikmis-soru",
     "year": "2024-2025",
     "examType": "vize",
@@ -1426,7 +1426,7 @@
       "E": "A97170"
     },
     "correctAnswer": "E",
-    "explanation": "Çift yönlü **dairesel** bağlı listede, ilk düğümün **prev** (önceki) işaretçisi, listenin **son düğümünün adresini** göstermelidir. Şekilde son düğümün adresi **A97170** olduğu için soru işareti olan yere bu adres yazılmalıdır.",
+    "explanation": "Çift yönlü <strong>dairesel</strong> bağlı listede, ilk düğümün <strong>prev</strong> (önceki) işaretçisi, listenin <strong>son düğümünün adresini</strong> göstermelidir. Şekilde son düğümün adresi <strong>A97170</strong> olduğu için soru işareti olan yere bu adres yazılmalıdır.",
     "source": "cikmis-soru",
     "year": "2024-2025",
     "examType": "vize",
@@ -1449,7 +1449,7 @@
       "E": "main()"
     },
     "correctAnswer": "D",
-    "explanation": "C programlama dilinde dinamik bellek yönetimi (çalışma anında bellek tahsisi) için kullanılan temel fonksiyon **malloc()**’tur (memory allocation).",
+    "explanation": "C programlama dilinde dinamik bellek yönetimi (çalışma anında bellek tahsisi) için kullanılan temel fonksiyon <strong>malloc()</strong>’tur (memory allocation).",
     "source": "cikmis-soru",
     "year": "2024-2025",
     "examType": "vize",
@@ -1480,7 +1480,7 @@
       "E": "Bağlı listenin sonuna eleman eklemek için yazılmıştır."
     },
     "correctAnswer": "E",
-    "explanation": "Fonksiyon, bir temp işaretçisi kullanarak `while (temp->sonraki != NULL)` koşulu ile listenin sonuna kadar ilerlemekte ve `temp->sonraki = eklenecekDugum;` komutuyla yeni düğümü listenin **sonuna** eklemektedir.",
+    "explanation": "Fonksiyon, bir temp işaretçisi kullanarak `while (temp->sonraki != NULL)` koşulu ile listenin sonuna kadar ilerlemekte ve `temp->sonraki = eklenecekDugum;` komutuyla yeni düğümü listenin <strong>sonuna</strong> eklemektedir.",
     "source": "cikmis-soru",
     "year": "2024-2025",
     "examType": "vize",
@@ -1503,7 +1503,7 @@
       "E": "Çift yönlü bağlı listede kaç eleman olduğunu tespit eder."
     },
     "correctAnswer": "A",
-    "explanation": "Kod, ilk düğümün (ilkDugum) sonraki düğümünü (Ikinci) belirler, ilk düğümü bellekten siler (free), listeyi ikinci düğümden başlatır (ilkDugum = Ikinci) ve yeni ilk düğümün önceki işaretçisini NULL yapar (Ikinci->onceki = NULL). Bu işlemler, **listenin başındaki elemanı silme** işlemini gerçekleştirir.",
+    "explanation": "Kod, ilk düğümün (ilkDugum) sonraki düğümünü (Ikinci) belirler, ilk düğümü bellekten siler (free), listeyi ikinci düğümden başlatır (ilkDugum = Ikinci) ve yeni ilk düğümün önceki işaretçisini NULL yapar (Ikinci->onceki = NULL). Bu işlemler, <strong>listenin başındaki elemanı silme</strong> işlemini gerçekleştirir.",
     "source": "cikmis-soru",
     "year": "2024-2025",
     "examType": "vize",
@@ -1526,7 +1526,7 @@
       "E": "Son düğümün adresi"
     },
     "correctAnswer": "B",
-    "explanation": "Normal (dairesel olmayan) **çift yönlü bağlı listelerde**, listenin son düğümünün **Next** işaretçisi, kendisinden sonra başka bir düğüm olmadığı için **NULL**’dır.",
+    "explanation": "Normal (dairesel olmayan) <strong>çift yönlü bağlı listelerde</strong>, listenin son düğümünün <strong>Next</strong> işaretçisi, kendisinden sonra başka bir düğüm olmadığı için <strong>NULL</strong>’dır.",
     "source": "cikmis-soru",
     "year": "2024-2025",
     "examType": "vize",
@@ -1549,7 +1549,7 @@
       "E": "b"
     },
     "correctAnswer": "B",
-    "explanation": "C programlama dilinde, ters eğik çizgi () “escape” (kaçış) karakteridir ve özel kontrol karakterlerini belirtir. Yatay bir “tab” boşluğu bırakmak için kullanılan karakter **t**dir. (n yeni satır, a uyarı sesi, b backspace, v dikey tab anlamına gelir).",
+    "explanation": "C programlama dilinde, ters eğik çizgi () “escape” (kaçış) karakteridir ve özel kontrol karakterlerini belirtir. Yatay bir “tab” boşluğu bırakmak için kullanılan karakter <strong>t</strong>dir. (n yeni satır, a uyarı sesi, b backspace, v dikey tab anlamına gelir).",
     "source": "cikmis-soru",
     "year": "2024-2025",
     "examType": "final",

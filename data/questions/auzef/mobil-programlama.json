@@ -1086,7 +1086,7 @@
       "E": "dependency_chosen"
     },
     "correctAnswer": "B",
-    "explanation": "`pubspec.yaml` dosyasında, normal bağımlılıklar listesinde çakışma veya uyumsuzluk olduğunda, bir paketin **belirli bir sürümünü kullanma zorunluluğu** veya kısıtlaması için **`dependency_overrides`** (B) başlığı kullanılır.",
+    "explanation": "`pubspec.yaml` dosyasında, normal bağımlılıklar listesinde çakışma veya uyumsuzluk olduğunda, bir paketin <strong>belirli bir sürümünü kullanma zorunluluğu</strong> veya kısıtlaması için <strong>`dependency_overrides`</strong> (B) başlığı kullanılır.",
     "source": "cikmis-soru",
     "year": "2025-2026",
     "examType": "butunleme",
@@ -1121,7 +1121,7 @@
       "E": "Önemli noktaları vurgulamak için köşeleri yuvarlatılmış ve gölge efekti olan bir çerçeve sağlar."
     },
     "correctAnswer": "A",
-    "explanation": "**`GridView`** widget’ı, çocuk widget’ları (children) düzenli bir **ızgara** (grid) şeklinde (birden fazla sütun/satır) ve **kaydırılabilir** (scrollable) bir görünüm içinde düzenlemek için kullanılır.",
+    "explanation": "<strong>`GridView`</strong> widget’ı, çocuk widget’ları (children) düzenli bir <strong>ızgara</strong> (grid) şeklinde (birden fazla sütun/satır) ve <strong>kaydırılabilir</strong> (scrollable) bir görünüm içinde düzenlemek için kullanılır.",
     "source": "cikmis-soru",
     "year": "2025-2026",
     "examType": "butunleme",
@@ -1168,7 +1168,7 @@
       "E": "Hiyerarşide içeride kalan widget'ın yapıcı fonksiyonuyla"
     },
     "correctAnswer": "E",
-    "explanation": "Flutter’da veri, widget ağacında tek yönlü olarak, **yukarıdan aşağıya** akar. Dışarıdaki bir **StatefulWidget**’ın **setState()** ile durumu güncellendiğinde, bu yeni veri, ilgili widget’ın (arayüz bileşeninin) **build** metodu içinde, içeride kalan (child) widget’ın **yapıcı (constructor) fonksiyonuna** (E) parametre olarak beslenir. Bu, verinin hiyerarşide alt seviyelere aktarılma şeklidir.",
+    "explanation": "Flutter’da veri, widget ağacında tek yönlü olarak, <strong>yukarıdan aşağıya</strong> akar. Dışarıdaki bir <strong>StatefulWidget</strong>’ın <strong>setState()</strong> ile durumu güncellendiğinde, bu yeni veri, ilgili widget’ın (arayüz bileşeninin) <strong>build</strong> metodu içinde, içeride kalan (child) widget’ın <strong>yapıcı (constructor) fonksiyonuna</strong> (E) parametre olarak beslenir. Bu, verinin hiyerarşide alt seviyelere aktarılma şeklidir.",
     "source": "cikmis-soru",
     "year": "2025-2026",
     "examType": "butunleme",
@@ -1903,7 +1903,7 @@
       "E": "Değişkenin public olarak tanımlandığını belirtir. Sınıfın dışından erişilebilir."
     },
     "correctAnswer": "B",
-    "explanation": "Dart dilinde Java veya C# gibi dillerdeki `public`, `private` veya `protected` anahtar kelimeleri bulunmaz. Bunun yerine, kapsülleme (encapsulation) isimlendirme kuralıyla sağlanır. Bir tanımlayıcının (değişken, fonksiyon veya sınıf) başına **alt çizgi (_)** konulduğunda, bu tanımlayıcı o kütüphaneye (library) veya sınıfa **özel (private)** hale gelir. Bu sayede, değişken sadece tanımlandığı dosya veya sınıf içerisinden erişilebilir olur, dışarıdan erişime kapatılır.",
+    "explanation": "Dart dilinde Java veya C# gibi dillerdeki `public`, `private` veya `protected` anahtar kelimeleri bulunmaz. Bunun yerine, kapsülleme (encapsulation) isimlendirme kuralıyla sağlanır. Bir tanımlayıcının (değişken, fonksiyon veya sınıf) başına <strong>alt çizgi (_)</strong> konulduğunda, bu tanımlayıcı o kütüphaneye (library) veya sınıfa <strong>özel (private)</strong> hale gelir. Bu sayede, değişken sadece tanımlandığı dosya veya sınıf içerisinden erişilebilir olur, dışarıdan erişime kapatılır.",
     "source": "cikmis-soru",
     "year": "2026-2027",
     "examType": "vize",
@@ -1938,7 +1938,7 @@
       "E": "channel"
     },
     "correctAnswer": "B",
-    "explanation": "Dart dili “Single Thread” (Tek İş Parçacıklı) bir yapıya sahiptir ancak eşzamanlı (concurrent) işlemleri gerçekleştirmek için **”Isolate”** yapısını kullanır. Isolate’ler, geleneksel “Thread”lerden different olarak kendi bellek alanlarına (heap) sahiptirler ve belleği paylaşmazlar. Birbirleriyle sadece mesajlaşma yoluyla iletişim kurarlar. Bu yapı, bellek yönetimini güvenli kılar ve kilitlenme (deadlock) sorunlarını önler. Arka planda ağır bir işlem yapılacağı zaman (örneğin büyük bir JSON ayrıştırma), ana arayüzü dondurmamak için yeni bir `Isolate` oluşturulur.",
+    "explanation": "Dart dili “Single Thread” (Tek İş Parçacıklı) bir yapıya sahiptir ancak eşzamanlı (concurrent) işlemleri gerçekleştirmek için <strong>”Isolate”</strong> yapısını kullanır. Isolate’ler, geleneksel “Thread”lerden different olarak kendi bellek alanlarına (heap) sahiptirler ve belleği paylaşmazlar. Birbirleriyle sadece mesajlaşma yoluyla iletişim kurarlar. Bu yapı, bellek yönetimini güvenli kılar ve kilitlenme (deadlock) sorunlarını önler. Arka planda ağır bir işlem yapılacağı zaman (örneğin büyük bir JSON ayrıştırma), ana arayüzü dondurmamak için yeni bir `Isolate` oluşturulur.",
     "source": "cikmis-soru",
     "year": "2025-2026",
     "examType": "final",
@@ -1965,7 +1965,7 @@
       "E": "Directory dir = getCacheDir();"
     },
     "correctAnswer": "D",
-    "explanation": "`path_provider` paketi, dosya sistemindeki yaygın konumlara erişim sağlar. Uygulamanın kalıcı (persistent) verilerini saklamak için, kullanıcının silmediği sürece verilerin durduğu dizine erişmek gerekir. Bu dizin **`getApplicationDocumentsDirectory()`** fonksiyonu ile çağrılır. C şıkkındaki `getTemporaryDirectory()` ise geçici (cache) dosyalar içindir ve işletim sistemi tarafından her an silinebilir.",
+    "explanation": "`path_provider` paketi, dosya sistemindeki yaygın konumlara erişim sağlar. Uygulamanın kalıcı (persistent) verilerini saklamak için, kullanıcının silmediği sürece verilerin durduğu dizine erişmek gerekir. Bu dizin <strong>`getApplicationDocumentsDirectory()`</strong> fonksiyonu ile çağrılır. C şıkkındaki `getTemporaryDirectory()` ise geçici (cache) dosyalar içindir ve işletim sistemi tarafından her an silinebilir.",
     "source": "cikmis-soru",
     "year": "2025-2026",
     "examType": "final",
@@ -2031,7 +2031,7 @@
       "E": "NavigatorSettings"
     },
     "correctAnswer": "B",
-    "explanation": "Flutter’da isimlendirilmiş rotalarla (named routes) navigasyon yapılırken, `onGenerateRoute` özelliği kullanılır. Bu özellik, tetiklenen bir fonksiyon bekler ve bu fonksiyon parametre olarak **`RouteSettings`** nesnesini alır. `RouteSettings` nesnesi, gidilmek istenen sayfanın ismini (`name`) ve varsa gönderilen argümanları (`arguments`) taşır. Geliştirici bu bilgileri kullanarak doğru sayfayı (Route) oluşturur ve döndürür.",
+    "explanation": "Flutter’da isimlendirilmiş rotalarla (named routes) navigasyon yapılırken, `onGenerateRoute` özelliği kullanılır. Bu özellik, tetiklenen bir fonksiyon bekler ve bu fonksiyon parametre olarak <strong>`RouteSettings`</strong> nesnesini alır. `RouteSettings` nesnesi, gidilmek istenen sayfanın ismini (`name`) ve varsa gönderilen argümanları (`arguments`) taşır. Geliştirici bu bilgileri kullanarak doğru sayfayı (Route) oluşturur ve döndürür.",
     "source": "cikmis-soru",
     "year": "2025-2026",
     "examType": "final",
@@ -2058,7 +2058,7 @@
       "E": "Flutter in Action"
     },
     "correctAnswer": "C",
-    "explanation": "Flutter’ın resmi web sitesindeki dokümantasyonda, mevcut tüm widget’ların kategorize edilmiş (Material, Cupertino, Layout, Text vb.) görsel bir listesinin ve detaylı açıklamalarının bulunduğu bölüm **”Widget Catalog”** (Widget Kataloğu) başlığı altında yer alır. Bu katalog, geliştiriciler için bir başvuru kılavuzudur.",
+    "explanation": "Flutter’ın resmi web sitesindeki dokümantasyonda, mevcut tüm widget’ların kategorize edilmiş (Material, Cupertino, Layout, Text vb.) görsel bir listesinin ve detaylı açıklamalarının bulunduğu bölüm <strong>”Widget Catalog”</strong> (Widget Kataloğu) başlığı altında yer alır. Bu katalog, geliştiriciler için bir başvuru kılavuzudur.",
     "source": "cikmis-soru",
     "year": "2025-2026",
     "examType": "final",
@@ -2093,7 +2093,7 @@
       "E": "decorative"
     },
     "correctAnswer": "D",
-    "explanation": "Flutter (ve modern UI framework’lerinin çoğu, örn: React, SwiftUI), **”Bildirimsel” (Declarative)** bir UI yaklaşımını benimser. Bu yaklaşımda geliştirici, arayüzün “nasıl” değişeceğini adım adım kodlamaz (Imperative); bunun yerine arayüzün o anki duruma (State) göre “ne olması gerektiğini” bildirir. Formül şöyledir: **UI = f(State)**. Yani durum değiştiğinde arayüz, geliştiricinin yazdığı yapıya göre framework tarafından yeniden çizilir.",
+    "explanation": "Flutter (ve modern UI framework’lerinin çoğu, örn: React, SwiftUI), <strong>”Bildirimsel” (Declarative)</strong> bir UI yaklaşımını benimser. Bu yaklaşımda geliştirici, arayüzün “nasıl” değişeceğini adım adım kodlamaz (Imperative); bunun yerine arayüzün o anki duruma (State) göre “ne olması gerektiğini” bildirir. Formül şöyledir: <strong>UI = f(State)</strong>. Yani durum değiştiğinde arayüz, geliştiricinin yazdığı yapıya göre framework tarafından yeniden çizilir.",
     "source": "cikmis-soru",
     "year": "2025-2026",
     "examType": "final",
@@ -2120,7 +2120,7 @@
       "E": "Uygulama içerisindeki veri değişikliği arayüz güncellemesi gerektiriyorsa bu bir model olarak tanımlanmalı ve değişiklikler takip edilmelidir."
     },
     "correctAnswer": "E",
-    "explanation": "Flutter’da reaktif programlama mantığı gereği, arayüz (UI) verinin (State) bir yansımasıdır. Eğer veri değiştiğinde (örneğin sepetteki ürün sayısı arttığında) ekranın bunu göstermesi gerekiyorsa, bu veri bir **Model/State** olarak tanımlanmalı ve bu modeldeki değişiklikler dinlenerek (Listener/Provider/Bloc vb. ile) arayüzün güncellenmesi tetiklenmelidir. C şıkkı da kısmen doğrudur ancak “bağımsız bölgeler” ifadesi daha çok global state management (Provider, Bloc) gerektirir; sadece StatefulWidget yetersiz kalabilir.",
+    "explanation": "Flutter’da reaktif programlama mantığı gereği, arayüz (UI) verinin (State) bir yansımasıdır. Eğer veri değiştiğinde (örneğin sepetteki ürün sayısı arttığında) ekranın bunu göstermesi gerekiyorsa, bu veri bir <strong>Model/State</strong> olarak tanımlanmalı ve bu modeldeki değişiklikler dinlenerek (Listener/Provider/Bloc vb. ile) arayüzün güncellenmesi tetiklenmelidir. C şıkkı da kısmen doğrudur ancak “bağımsız bölgeler” ifadesi daha çok global state management (Provider, Bloc) gerektirir; sadece StatefulWidget yetersiz kalabilir.",
     "source": "cikmis-soru",
     "year": "2025-2026",
     "examType": "final",
@@ -2147,7 +2147,7 @@
       "E": "Plugin sadece Dart kodlarından oluşurken Package platform kodlaması ile bir köprü oluşturur."
     },
     "correctAnswer": "A",
-    "explanation": "Flutter ekosisteminde **Package (Paket)**; genellikle sadece Dart diliyle yazılmış, platformdan bağımsız (örneğin HTTP istekleri, yardımcı fonksiyonlar) kod kütüphaneleridir. **Plugin (Eklenti)** ise; cihazın donanımına (kamera, GPS, bluetooth) veya işletim sistemi özelliklerine erişmek için hem Dart kodu hem de yerel platform kodlarını (Android için Java/Kotlin, iOS için Obj-C/Swift) içeren ve bunlar arasında köprü (MethodChannel) kuran özel paketlerdir.",
+    "explanation": "Flutter ekosisteminde <strong>Package (Paket)</strong>; genellikle sadece Dart diliyle yazılmış, platformdan bağımsız (örneğin HTTP istekleri, yardımcı fonksiyonlar) kod kütüphaneleridir. <strong>Plugin (Eklenti)</strong> ise; cihazın donanımına (kamera, GPS, bluetooth) veya işletim sistemi özelliklerine erişmek için hem Dart kodu hem de yerel platform kodlarını (Android için Java/Kotlin, iOS için Obj-C/Swift) içeren ve bunlar arasında köprü (MethodChannel) kuran özel paketlerdir.",
     "source": "cikmis-soru",
     "year": "2025-2026",
     "examType": "final",
@@ -2178,7 +2178,7 @@
       "E": "--refactor"
     },
     "correctAnswer": "A",
-    "explanation": "Uygulama yayınlanırken (release mode), kaynak kodların başkaları tarafından okunmasını ve tersine mühendislik (reverse engineering) yapılmasını zorlaştırmak için kod karartma/şaşırtma işlemi yapılır. Flutter’da bu işlem, derleme komutuna **`–obfuscate`** (ve sembol haritasını saklamak için `–split-debug-info`) parametresi eklenerek gerçekleştirilir. Bu işlem, değişken ve fonksiyon isimlerini anlamsız karakterlere dönüştürür.",
+    "explanation": "Uygulama yayınlanırken (release mode), kaynak kodların başkaları tarafından okunmasını ve tersine mühendislik (reverse engineering) yapılmasını zorlaştırmak için kod karartma/şaşırtma işlemi yapılır. Flutter’da bu işlem, derleme komutuna <strong>`–obfuscate`</strong> (ve sembol haritasını saklamak için `–split-debug-info`) parametresi eklenerek gerçekleştirilir. Bu işlem, değişken ve fonksiyon isimlerini anlamsız karakterlere dönüştürür.",
     "source": "cikmis-soru",
     "year": "2025-2026",
     "examType": "final",
@@ -2205,7 +2205,7 @@
       "E": "Sol alt köşede"
     },
     "correctAnswer": "C",
-    "explanation": "Visual Studio Code editöründe, o an aktif olan Flutter cihazı (örneğin “Android Emulator” veya “iPhone 14”), kullanılan Flutter SDK sürümü ve hata ayıklama modu gibi bilgiler, pencerenin en altındaki **Durum Çubuğu’nun (Status Bar) sağ alt köşesinde** görüntülenir. Buraya tıklanarak cihaz değiştirilebilir.",
+    "explanation": "Visual Studio Code editöründe, o an aktif olan Flutter cihazı (örneğin “Android Emulator” veya “iPhone 14”), kullanılan Flutter SDK sürümü ve hata ayıklama modu gibi bilgiler, pencerenin en altındaki <strong>Durum Çubuğu’nun (Status Bar) sağ alt köşesinde</strong> görüntülenir. Buraya tıklanarak cihaz değiştirilebilir.",
     "source": "cikmis-soru",
     "year": "2026-2027",
     "examType": "vize",
@@ -2236,7 +2236,7 @@
       "E": "TweenSequences"
     },
     "correctAnswer": "E",
-    "explanation": "Standart bir `Tween`, animasyonu başlangıçtan bitişe tek bir doğrusal düzlemde götürür. Ancak animasyonun birden fazla aşaması varsa (Önce A’dan B’ye, sonra B’den C’ye farklı sürelerde ve ağırlıklarda geçiş gibi), bu ardışık animasyonları tek bir akışta tanımlamak için **`TweenSequence`** sınıfı kullanılır. Bu sınıf, birden fazla `TweenSequenceItem` alarak karmaşık animasyon kurgularını yönetir.",
+    "explanation": "Standart bir `Tween`, animasyonu başlangıçtan bitişe tek bir doğrusal düzlemde götürür. Ancak animasyonun birden fazla aşaması varsa (Önce A’dan B’ye, sonra B’den C’ye farklı sürelerde ve ağırlıklarda geçiş gibi), bu ardışık animasyonları tek bir akışta tanımlamak için <strong>`TweenSequence`</strong> sınıfı kullanılır. Bu sınıf, birden fazla `TweenSequenceItem` alarak karmaşık animasyon kurgularını yönetir.",
     "source": "cikmis-soru",
     "year": "2025-2026",
     "examType": "final",
@@ -2263,7 +2263,7 @@
       "E": "Stateful Widget'ın yapıcı(constructor) fonksiyonuyla"
     },
     "correctAnswer": "A",
-    "explanation": "Flutter’da `setState` çağrıldığında, ilgili widget’ın `build` metodu tekrar tetiklenir. Eğer güncellenen veri, hiyerarşide daha içeride (alt seviyede) yer alan bir widget’a lazımsa; bu veri genellikle alt widget’ın **yapıcı fonksiyonuna (constructor)** bir parametre olarak geçilir. Build süreci baştan başladığında, alt widget yeni değerle (örneğin yeni renk) tekrar oluşturulmuş olur.",
+    "explanation": "Flutter’da `setState` çağrıldığında, ilgili widget’ın `build` metodu tekrar tetiklenir. Eğer güncellenen veri, hiyerarşide daha içeride (alt seviyede) yer alan bir widget’a lazımsa; bu veri genellikle alt widget’ın <strong>yapıcı fonksiyonuna (constructor)</strong> bir parametre olarak geçilir. Build süreci baştan başladığında, alt widget yeni değerle (örneğin yeni renk) tekrar oluşturulmuş olur.",
     "source": "cikmis-soru",
     "year": "2024-2025",
     "examType": "final",
@@ -2286,7 +2286,7 @@
       "E": "initializeApp()"
     },
     "correctAnswer": "E",
-    "explanation": "Flutter uygulamasında Firebase servislerini (Auth, Firestore, Messaging vb.) kullanmadan önce, Firebase çekirdeğinin ve platform ayarlarının başlatılması zorunludur. Bu işlem genellikle uygulamanın `main()` fonksiyonu içinde, `runApp`’ten önce **`await Firebase.initializeApp();`** komutuyla gerçekleştirilir.",
+    "explanation": "Flutter uygulamasında Firebase servislerini (Auth, Firestore, Messaging vb.) kullanmadan önce, Firebase çekirdeğinin ve platform ayarlarının başlatılması zorunludur. Bu işlem genellikle uygulamanın `main()` fonksiyonu içinde, `runApp`’ten önce <strong>`await Firebase.initializeApp();`</strong> komutuyla gerçekleştirilir.",
     "source": "cikmis-soru",
     "year": "2025-2026",
     "examType": "final",
@@ -2317,7 +2317,7 @@
       "E": "jsonDecode()"
     },
     "correctAnswer": "E",
-    "explanation": "Dart dilinin yerleşik `dart:convert` kütüphanesinde; bir JSON formatındaki metni (String), Dart içinde kullanılabilir bir nesneye (genellikle `Map` veya `List`) dönüştürmek (ayrıştırmak/parse etmek) için **`jsonDecode()`** fonksiyonu kullanılır. (Tam tersi işlem için yani nesneyi JSON string’e çevirmek için `jsonEncode()` kullanılır).",
+    "explanation": "Dart dilinin yerleşik `dart:convert` kütüphanesinde; bir JSON formatındaki metni (String), Dart içinde kullanılabilir bir nesneye (genellikle `Map` veya `List`) dönüştürmek (ayrıştırmak/parse etmek) için <strong>`jsonDecode()`</strong> fonksiyonu kullanılır. (Tam tersi işlem için yani nesneyi JSON string’e çevirmek için `jsonEncode()` kullanılır).",
     "source": "cikmis-soru",
     "year": "2025-2026",
     "examType": "final",
@@ -2607,7 +2607,7 @@
       "E": "final prefs = await SharedPreferences.getValue();"
     },
     "correctAnswer": "A",
-    "explanation": "`SharedPreferences` paketi, verileri anahtar-değer (key-value) çiftleri halinde cihazda kalıcı olarak saklamak için kullanılır. Bu yapıya erişmek asenkron bir işlemdir çünkü dosya sisteminden okuma yapılır. Bu nedenle **`SharedPreferences.getInstance()`** metodu `await` anahtar kelimesiyle çağrılarak, hazır olduğunda örneğin (instance) referansı alınır.",
+    "explanation": "`SharedPreferences` paketi, verileri anahtar-değer (key-value) çiftleri halinde cihazda kalıcı olarak saklamak için kullanılır. Bu yapıya erişmek asenkron bir işlemdir çünkü dosya sisteminden okuma yapılır. Bu nedenle <strong>`SharedPreferences.getInstance()`</strong> metodu `await` anahtar kelimesiyle çağrılarak, hazır olduğunda örneğin (instance) referansı alınır.",
     "source": "cikmis-soru",
     "year": "2025-2026",
     "examType": "final",
@@ -3167,7 +3167,7 @@
       "E": "Navigator.push"
     },
     "correctAnswer": "D",
-    "explanation": "Flutter’da sayfalar (Route’lar) bir yığın (stack) üzerinde yönetilir. **`Navigator.pop`** fonksiyonu, yığının en üstündeki sayfayı yığından çıkararak (**pop** ederek) kullanıcıyı doğal olarak bir önceki sayfaya döndürür. **`Navigator.push`** (A) ise yeni bir sayfayı yığına ekler (ileriye gitme).",
+    "explanation": "Flutter’da sayfalar (Route’lar) bir yığın (stack) üzerinde yönetilir. <strong>`Navigator.pop`</strong> fonksiyonu, yığının en üstündeki sayfayı yığından çıkararak (<strong>pop</strong> ederek) kullanıcıyı doğal olarak bir önceki sayfaya döndürür. <strong>`Navigator.push`</strong> (A) ise yeni bir sayfayı yığına ekler (ileriye gitme).",
     "source": "cikmis-soru",
     "year": "2024-2025",
     "examType": "final",
@@ -3198,7 +3198,7 @@
       "E": "Erişilen web servisinin başarısız bir cevap döndüğünü teyit eder."
     },
     "correctAnswer": "B",
-    "explanation": "HTTP protokolünde **durum kodları** (status codes) 200 ile 299 aralığında (2xx), isteğin **başarıyla** alınıp işlendiği anlamına gelir (örneğin 200 OK). Bu nedenle koşul, **Erişilen web servisinin başarılı bir cevap döndüğünü teyit eder** (B).",
+    "explanation": "HTTP protokolünde <strong>durum kodları</strong> (status codes) 200 ile 299 aralığında (2xx), isteğin <strong>başarıyla</strong> alınıp işlendiği anlamına gelir (örneğin 200 OK). Bu nedenle koşul, <strong>Erişilen web servisinin başarılı bir cevap döndüğünü teyit eder</strong> (B).",
     "source": "cikmis-soru",
     "year": "2023-2024",
     "examType": "final",
@@ -3248,7 +3248,7 @@
       "E": "Animated PhysicalModel"
     },
     "correctAnswer": "C",
-    "explanation": "Animasyonların sürekli kontrol edilmesi, tekrarlanması veya manuel olarak yönetilmesi gerekiyorsa, genellikle bir **`AnimationController`** kullanılır. Bu tür bir kontrolcü ile çalışan ve sürekli değişen değerleri dinleyen özel widget’lar oluşturmak için **`AnimatedWidget`** (C) sınıfından miras almak uygundur.",
+    "explanation": "Animasyonların sürekli kontrol edilmesi, tekrarlanması veya manuel olarak yönetilmesi gerekiyorsa, genellikle bir <strong>`AnimationController`</strong> kullanılır. Bu tür bir kontrolcü ile çalışan ve sürekli değişen değerleri dinleyen özel widget’lar oluşturmak için <strong>`AnimatedWidget`</strong> (C) sınıfından miras almak uygundur.",
     "source": "cikmis-soru",
     "year": "2024-2025",
     "examType": "final",
@@ -3275,7 +3275,7 @@
       "E": "setDataPath()"
     },
     "correctAnswer": "C",
-    "explanation": "Flutter uygulamalarında SQLite veritabanlarının fiziksel olarak depolandığı varsayılan klasörün yolunu (path) elde etmek için genellikle `sqflite` paketi içerisindeki **`getDatabasesPath()`** fonksiyonu kullanılır. Bu fonksiyon, işletim sistemine özgü güvenli bir depolama konumunu döndürür.",
+    "explanation": "Flutter uygulamalarında SQLite veritabanlarının fiziksel olarak depolandığı varsayılan klasörün yolunu (path) elde etmek için genellikle `sqflite` paketi içerisindeki <strong>`getDatabasesPath()`</strong> fonksiyonu kullanılır. Bu fonksiyon, işletim sistemine özgü güvenli bir depolama konumunu döndürür.",
     "source": "cikmis-soru",
     "year": "2024-2025",
     "examType": "final",
@@ -3310,7 +3310,7 @@
       "E": "DataModel"
     },
     "correctAnswer": "A",
-    "explanation": "**`provider`** kütüphanesi ile durum yönetimi (state management) yapılırken, değişimi dinlenecek olan veri modelinin (Model Class) diğer widget’ları uyarabilmesi için Dart’ın **`ChangeNotifier`** (A) sınıfından miras alması gerekir.",
+    "explanation": "<strong>`provider`</strong> kütüphanesi ile durum yönetimi (state management) yapılırken, değişimi dinlenecek olan veri modelinin (Model Class) diğer widget’ları uyarabilmesi için Dart’ın <strong>`ChangeNotifier`</strong> (A) sınıfından miras alması gerekir.",
     "source": "cikmis-soru",
     "year": "2024-2025",
     "examType": "final",
@@ -3337,7 +3337,7 @@
       "E": "60"
     },
     "correctAnswer": "C",
-    "explanation": "Pürüzsüz bir görsel deneyim (60 FPS) için her bir karenin **1000 ms / 60 = 16.67 ms** sürede çizilmesi gerekir. Bu nedenle ekran tazeleme hızının **16 milisaniyeyi** (C) geçmemesi gerekir.",
+    "explanation": "Pürüzsüz bir görsel deneyim (60 FPS) için her bir karenin <strong>1000 ms / 60 = 16.67 ms</strong> sürede çizilmesi gerekir. Bu nedenle ekran tazeleme hızının <strong>16 milisaniyeyi</strong> (C) geçmemesi gerekir.",
     "source": "cikmis-soru",
     "year": "2024-2025",
     "examType": "final",
@@ -3364,7 +3364,7 @@
       "E": "hatayı düzeltmek için gereken kodu yazmak"
     },
     "correctAnswer": "A",
-    "explanation": "**`finally`** bloğu, istisna (hata) oluşsa da oluşmasa da **kesinlikle çalıştırılması gereken** kodları (örneğin, dosya veya veritabanı bağlantılarını kapatma gibi temizleme işlemlerini) içermek için kullanılır.",
+    "explanation": "<strong>`finally`</strong> bloğu, istisna (hata) oluşsa da oluşmasa da <strong>kesinlikle çalıştırılması gereken</strong> kodları (örneğin, dosya veya veritabanı bağlantılarını kapatma gibi temizleme işlemlerini) içermek için kullanılır.",
     "source": "cikmis-soru",
     "year": "2026-2027",
     "examType": "vize",
@@ -3395,7 +3395,7 @@
       "E": "Android ve iOS SDK sürümlerinin düşük tutulması"
     },
     "correctAnswer": "E",
-    "explanation": "Uygulama boyutunu azaltan yöntemler genellikle kaynak optimizasyonuna odaklanır. **Android ve iOS SDK sürümlerinin düşük tutulması** (E) ise uygulamanın uyumluluk gereksinimleri ile ilgilidir ve genellikle uygulama boyutunu azaltmaz.",
+    "explanation": "Uygulama boyutunu azaltan yöntemler genellikle kaynak optimizasyonuna odaklanır. <strong>Android ve iOS SDK sürümlerinin düşük tutulması</strong> (E) ise uygulamanın uyumluluk gereksinimleri ile ilgilidir ve genellikle uygulama boyutunu azaltmaz.",
     "source": "cikmis-soru",
     "year": "2024-2025",
     "examType": "final",
