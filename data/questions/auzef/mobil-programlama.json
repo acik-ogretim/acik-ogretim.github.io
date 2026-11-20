@@ -1038,29 +1038,6 @@
     ]
   },
   {
-    "id": "s-b70e6915bc7a",
-    "unitNumber": 0,
-    "text": "Yukarıdaki kod parçasında “setState” içerisinde “_active” değeri güncellenmiş ve bu değere göre hiyerarşide içteki bir widget arkaplan rengini seçecektir. Hal böyle iken, setState metodu arayüz bileşenlerinin oluşturduğu ağaçta güncellenecek arayüz bileşeninden daha dış seviyede bulunuyorsa, arayüz güncellenmesinde değişen veri içteki arayüz bileşenlerine (widget) aktarılma yöntemi aşağıdakilerden hangisidir?",
-    "options": {
-      "A": "Hiyerarşide içeride kalan widget'in build fonksiyonuyla",
-      "B": "Stateful Widget'in yapıcı(constructor) fonksiyonuyla",
-      "C": "Scaffold widget'ının child parametresine beslenecek fonksiyonla",
-      "D": "Stateful Widget'in createState fonksiyonuyla",
-      "E": "Hiyerarşide içeride kalan widget'ın yapıcı fonksiyonuyla"
-    },
-    "correctAnswer": "E",
-    "explanation": "Flutter’da veri, widget ağacında tek yönlü olarak, <strong>yukarıdan aşağıya</strong> akar. Dışarıdaki bir <strong>StatefulWidget</strong>’ın <strong>setState()</strong> ile durumu güncellendiğinde, bu yeni veri, ilgili widget’ın (arayüz bileşeninin) <strong>build</strong> metodu içinde, içeride kalan (child) widget’ın <strong>yapıcı (constructor) fonksiyonuna</strong> (E) parametre olarak beslenir. Bu, verinin hiyerarşide alt seviyelere aktarılma şeklidir.",
-    "source": "cikmis-soru",
-    "year": "2024-2025",
-    "examType": "uc-ders",
-    "sinavlar": [
-      {
-        "year": "2024-2025",
-        "examType": "uc-ders"
-      }
-    ]
-  },
-  {
     "id": "s-b9e4b1b505f3",
     "unitNumber": 0,
     "text": "Android işletim sisteminde İnternet erişimine sahip olabilmemiz için yukarıdaki kod parçacığı aşağıdaki dosyalardan hangisine yazılmalıdır?",
@@ -1227,6 +1204,11 @@
       {
         "year": "2025-2026",
         "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final",
+        "kitapcik": "Güz"
       }
     ]
   },
@@ -1986,6 +1968,10 @@
       {
         "year": "2025-2026",
         "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "uc-ders"
       }
     ]
   },
@@ -4352,30 +4338,6 @@
       {
         "year": "2024-2025",
         "examType": "vize",
-        "kitapcik": "Güz"
-      }
-    ]
-  },
-  {
-    "id": "s-63b7d69b0056",
-    "unitNumber": 0,
-    "text": "<pre><strong><code>setState(() {<br/>_active = _active;<br/>});<br/></code></strong></pre><br/>Yukarıdaki kod parçasında “setState” içerisinde “_active” değeri güncellenmiş ve bu değere göre hiyerarşide içteki bir widget arkaplan rengini seçecektir.<br />Hal böyle iken, setState metodu arayüz bileşenlerinin oluşturduğu ağaçta güncellenecek arayüz bileşeninden daha dış seviyede bulunuyorsa, arayüz güncellenmesinde değişen veri içteki arayüz bileşenlerine (widget) aktarılma yöntemi aşağıdakilerden hangisidir?",
-    "options": {
-      "A": "Hiyerarşide içeride kalan widget'in build fonksiyonuyla",
-      "B": "Stateful Widget'in yapıcı(constructor) fonksiyonuyla",
-      "C": "Scaffold widget'ının child parametresine beslenecek fonksiyonla",
-      "D": "Stateful Widget'in createState fonksiyonuyla",
-      "E": "Hiyerarşide içeride kalan widget'ın yapıcı fonksiyonuyla"
-    },
-    "correctAnswer": "E",
-    "explanation": "",
-    "source": "cikmis-soru",
-    "year": "2024-2025",
-    "examType": "final",
-    "sinavlar": [
-      {
-        "year": "2024-2025",
-        "examType": "final",
         "kitapcik": "Güz"
       }
     ]
