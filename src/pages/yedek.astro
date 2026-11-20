@@ -12,7 +12,22 @@ import Layout from "../layouts/Layout.astro";
       </h1>
       <div class="space-y-6 text-muted-theme">
         <section class="content-card">
-          <h2 class="text-xl font-bold text-theme mb-3">Çevrim içi eşitle</h2>
+          <h2 class="text-xl font-bold text-theme mb-3">Cihazdan cihaza eşitle</h2>
+          <p class="mb-4">
+            Hesap ya da anahtar gerekmez. İki cihazda bu sayfayı aç, ikisinde de aynı parolayı yazıp "Bağlan"a bas. Cihazlar
+            birbirini bulur ve kayıtlarını doğrudan birbirine gönderir; kayıtlar hiçbir sunucuda durmaz. İki cihaz aynı anda
+            açık olmalı.
+          </p>
+          <div class="grid gap-3 max-w-md">
+            <label class="grid gap-1 text-sm">Eşleşme parolası (en az 8 karakter)
+              <input id="p2p-parola" type="password" autocomplete="off" class="rounded-lg border px-3 min-h-11 bg-transparent" style="border-color: var(--border-color)" />
+            </label>
+            <button id="p2p-dugme" type="button" class="btn-primary min-h-11 px-4 rounded-lg">Bağlan</button>
+            <p id="p2p-durum" role="status" class="text-sm"></p>
+          </div>
+        </section>
+        <section class="content-card">
+          <h2 class="text-xl font-bold text-theme mb-3">Çevrim içi eşitle (GitHub)</h2>
           <p class="mb-4">
             Kayıtların bu tarayıcıda senin parolanla şifrelenir ve kendi GitHub hesabındaki gizli bir gist'e yazılır. Site
             hiçbir kaydını görmez, GitHub da yalnız şifreli metni görür. Her cihazda aynı anahtar ve parolayla "Eşitle"ye bas;
@@ -61,6 +76,26 @@ import Layout from "../layouts/Layout.astro";
 <script>
   import { topla, yukle } from "../lib/yedek";
   import { TOKEN_ANAHTARI, esitle } from "../lib/bulut-esitle";
+  import { p2pBaslat } from "../lib/p2p-esitle";
+
+  const p2pDurum = document.getElementById("p2p-durum")!;
+  let ayril: (() => void) | null = null;
+  document.getElementById("p2p-dugme")?.addEventListener("click", async (e) => {
+    const dugme = e.currentTarget as HTMLButtonElement;
+    if (ayril) {
+      ayril();
+      ayril = null;
+      dugme.textContent = "Bağlan";
+      p2pDurum.textContent = "Bağlantı kapandı.";
+      return;
+    }
+    try {
+      ayril = await p2pBaslat((document.getElementById("p2p-parola") as HTMLInputElement).value, (m) => (p2pDurum.textContent = m));
+      dugme.textContent = "Bağlantıyı kapat";
+    } catch (err) {
+      p2pDurum.textContent = err instanceof Error ? err.message : "Bağlanılamadı.";
+    }
+  });
 
   const tokenGirdi = document.getElementById("esit-token") as HTMLInputElement;
   const parolaGirdi = document.getElementById("esit-parola") as HTMLInputElement;
