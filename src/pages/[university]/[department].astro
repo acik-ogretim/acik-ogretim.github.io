@@ -79,11 +79,21 @@ const groupedCourses = semesters.map((sem) => {
           <p class="text-xl text-muted-theme">
             Dönemlere göre ayrılmış ders listesi.
           </p>
-          {(department.sourceUrl || department.curriculumUrl) && (
+          {department.active === false && (
+            <p class="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 text-sm font-semibold">
+              <Simge ad="CirclePause" size={14} /> Bu programa yeni öğrenci alınmıyor (pasif)
+            </p>
+          )}
+          {(department.programUrl || department.sourceUrl || department.curriculumUrl) && (
             <div class="mt-3 flex flex-wrap gap-2 text-sm">
+              {department.programUrl && (
+                <a href={department.programUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-theme text-muted-theme hover:text-primary-theme hover:border-primary-theme/50">
+                  <Simge ad="ExternalLink" size={14} /> Resmî program sayfası
+                </a>
+              )}
               {department.sourceUrl && (
                 <a href={department.sourceUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-theme text-muted-theme hover:text-primary-theme hover:border-primary-theme/50">
-                  <Simge ad="ExternalLink" size={14} /> Resmî program sayfası
+                  <Simge ad={department.programUrl ? "FileText" : "ExternalLink"} size={14} /> {department.programUrl ? "Bilgi paketi" : "Resmî program sayfası"}
                 </a>
               )}
               {department.curriculumUrl && (

@@ -54,6 +54,7 @@ export const departmentSchema = z.object({
     icon: z.string().default(''),
     sourceUrl: z.string().optional(),
     curriculumUrl: z.string().optional(),
+    programUrl: z.string().optional(),
 });
 
 /**

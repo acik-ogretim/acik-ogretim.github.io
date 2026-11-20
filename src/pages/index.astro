@@ -288,7 +288,7 @@ const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
                   {uni.totalDepartmentCount > 6 ? `Tüm Bölümler (${uni.totalDepartmentCount})` : 'Aktif Bölümler'}
                 </h4>
                 <ul class="space-y-1.5">
-                  {!uni.totalDepartmentCount > 6 && uni.departments.map((dept) => (
+                  {uni.totalDepartmentCount <= 6 && uni.departments.map((dept) => (
                     <li class="flex items-center gap-2 text-sm text-muted-theme" itemprop="department" itemscope itemtype="https://schema.org/EducationalOrganization">
                       <span class="w-1.5 h-1.5 rounded-full bg-primary-theme shrink-0"></span>
                       <span itemprop="name" class="truncate">{dept.name}</span>
@@ -301,7 +301,7 @@ const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
                        <span>Listeyi görüntülemek için tıklayınız...</span>
                     </li>
                   )}
-                  {!uni.totalDepartmentCount > 6 && uni.departments.length === 0 && (
+                  {uni.totalDepartmentCount <= 6 && uni.departments.length === 0 && (
                     <li class="text-xs text-muted-theme italic">Henüz aktif bölüm yok</li>
                   )}
                 </ul>
