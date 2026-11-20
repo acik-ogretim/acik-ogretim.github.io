@@ -283,9 +283,18 @@ function ChatBody({
             </div>
           )}
           {error && (
-            <p role="alert" className="text-sm rounded-lg px-3 py-2" style={{ background: "var(--incorrect-bg)" }}>
-              {friendlyError(error)}
-            </p>
+            <div role="alert" className="flex items-center gap-3 text-sm rounded-lg px-3 py-2" style={{ background: "var(--incorrect-bg)" }}>
+              <span className="flex-1 min-w-0">{friendlyError(error)}</span>
+              <button
+                type="button"
+                onClick={() => void reload()}
+                disabled={isLoading}
+                className="shrink-0 inline-flex items-center gap-1.5 min-h-10 rounded-lg border px-3 font-medium"
+                style={{ borderColor: "var(--border-color)", background: "var(--card-bg)" }}
+              >
+                <RotateCcw className="size-4" aria-hidden /> Yeniden dene
+              </button>
+            </div>
           )}
           <div ref={end} />
         </div>
@@ -773,6 +782,9 @@ function friendlyError(e: Error): string {
   const m = e.message || "";
   if (/401|403|api key|invalid.*key|unauthori/i.test(m)) return "Anahtar kabul edilmedi. Anahtarını kontrol et.";
   if (/429|quota|rate/i.test(m)) return "Sağlayıcının kullanım sınırı doldu. Biraz sonra yeniden dene.";
-  if (/failed to fetch|network/i.test(m)) return "Sağlayıcıya ulaşılamadı. Bağlantını kontrol et.";
+  // Safari reports a dropped fetch as "Load failed", Chrome as "Failed to fetch", Firefox as "NetworkError".
+  if (/failed to fetch|load failed|network|aborted|connection/i.test(m))
+    return "Bağlantı yarıda kesildi. Ekran kilitlendiyse ya da başka uygulamaya geçtiysen yanıt durmuş olabilir; yeniden dene.";
+  if (/5\d\d|overloaded|unavailable|internal/i.test(m)) return "Sağlayıcı şu an yanıt veremiyor. Biraz sonra yeniden dene.";
   return m.replace(/(sk-|AIza)[\w-]+/g, "[anahtar]"); // never echo a key back
 }
