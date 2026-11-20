@@ -92,6 +92,18 @@ export interface DersIcerik {
     guncel?: boolean;
 }
 
+/** Numbered topic tree of the course book (data/konular/<uni>/<course>.json), written by acik-ogretim-mcp konu_esle. */
+export interface KitapKonu { no: string; baslik: string; duzey: number; sayfa: number; alt: KitapKonu[] }
+export interface KitapUnite { unite: number; baslik: string; bolumler: string[]; pdf?: string; konular: KitapKonu[] }
+export async function getKitapKonulari(uniId: string, courseId: string): Promise<KitapUnite[]> {
+    try {
+        const raw = JSON.parse(await fs.readFile(path.join(DATA_DIR, 'konular', uniId, `${courseId}.json`), 'utf-8'));
+        return Array.isArray(raw.uniteler) ? raw.uniteler : [];
+    } catch {
+        return [];
+    }
+}
+
 export async function getDersIcerik(uniId: string, courseId: string): Promise<DersIcerik | null> {
     try {
         const filePath = path.join(DATA_DIR, 'ders-icerik', uniId, `${courseId}.json`);

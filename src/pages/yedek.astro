@@ -1,0 +1,62 @@
+---
+import Simge from "../components/Simge.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Kayıtlarını taşı">
+  <div class="page-header-wrapper">
+    <div class="container-narrow relative">
+      <h1 class="page-title text-theme">
+        <span class="text-4xl"><Simge ad="ArrowLeftRight" /></span>
+        Kayıtlarını taşı
+      </h1>
+      <div class="space-y-6 text-muted-theme">
+        <section class="content-card">
+          <h2 class="text-xl font-bold text-theme mb-3">Bu cihazdan al</h2>
+          <p class="mb-4">
+            Çözdüğün sorular, yanlışların, favori derslerin, ayarların ve sohbet geçmişin tek bir dosyaya kaydedilir. Yapay zekâ
+            anahtarın dosyaya girmez; onu yeni cihazda yeniden gir.
+          </p>
+          <button id="yedek-al" type="button" class="btn-primary min-h-11 px-4 rounded-lg">Yedek dosyasını indir</button>
+        </section>
+        <section class="content-card">
+          <h2 class="text-xl font-bold text-theme mb-3">Öteki cihaza yükle</h2>
+          <p class="mb-4">
+            Dosyayı öteki cihazda seç. Kayıtlar oradakilerle birleşir: iki cihazda çözdüğün sorular, favoriler ve sohbetler
+            birlikte kalır.
+          </p>
+          <label class="btn-primary inline-flex items-center min-h-11 px-4 rounded-lg cursor-pointer">
+            Yedek dosyasını seç
+            <input id="yedek-yukle" type="file" accept="application/json,.json" class="sr-only" />
+          </label>
+          <p id="yedek-durum" role="status" class="mt-3 text-sm"></p>
+        </section>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import { topla, yukle } from "../lib/yedek";
+
+  const durum = document.getElementById("yedek-durum")!;
+  document.getElementById("yedek-al")?.addEventListener("click", () => {
+    const y = topla();
+    const blob = new Blob([JSON.stringify(y)], { type: "application/json" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = `acik-ogretim-kayitlarim-${y.tarih.slice(0, 10)}.json`;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  });
+  document.getElementById("yedek-yukle")?.addEventListener("change", async (e) => {
+    const f = (e.target as HTMLInputElement).files?.[0];
+    if (!f) return;
+    try {
+      const n = yukle(JSON.parse(await f.text()));
+      durum.textContent = `${n} kayıt bu cihaza eklendi.`;
+    } catch (err) {
+      durum.textContent = err instanceof Error ? err.message : "Dosya okunamadı.";
+    }
+  });
+</script>

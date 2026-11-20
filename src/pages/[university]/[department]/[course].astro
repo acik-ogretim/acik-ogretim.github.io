@@ -14,7 +14,7 @@ const iconSprite = `<svg width="0" height="0" style="position:absolute" aria-hid
 const checkSvg = '<svg aria-hidden="true"><use href="#i-check"/></svg>';
 const xSvg = '<svg aria-hidden="true"><use href="#i-x"/></svg>';
 import SohbetCekmece from "../../../components/sohbet/SohbetCekmece.tsx";
-import { getCourses, getDersIcerik, getQuestions, getUniversities } from "../../../lib/api";
+import { getCourses, getDersIcerik, getKitapKonulari, getQuestions, getUniversities, type KitapKonu } from "../../../lib/api";
 import { uniteBasligi } from "../../../lib/unite-basligi";
 import { soruSirala } from "../../../lib/soru-sirasi";
 import { canonicalDepartments, coursePath } from "../../../lib/kanonik";
@@ -58,6 +58,17 @@ const questions = await getQuestions(university.id, course.id);
 const icerik = await getDersIcerik(university.id, course.id);
 // Official topic list: in AUZEF and Anadolu the weekly topics are the units of the book
 const uniteAdi = new Map((icerik?.konular ?? []).map((k) => [k.no, uniteBasligi(k.baslik)]));
+// Book topic tree: unit titles where the official list has none, and the topic shown on each question
+const kitap = await getKitapKonulari(university.id, course.id);
+const konuAdi = new Map<string, string>();
+for (const u of kitap) {
+  if (!uniteAdi.has(u.unite)) uniteAdi.set(u.unite, uniteBasligi(u.baslik));
+  const gez = (k: KitapKonu) => {
+    konuAdi.set(k.no, k.baslik);
+    k.alt.forEach(gez);
+  };
+  u.konular.forEach(gez);
+}
 
 // Group questions by unit
 // Unit 0 holds exam questions whose unit is not known yet: list it after the numbered units
@@ -271,6 +282,11 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { y
                           <span class="normal-case tracking-normal"> · {examLine(q)}</span>
                         )}
                       </h3>
+                      {q.section && konuAdi.has(q.section) && (
+                        <p class="q-konu text-xs text-muted-theme mt-1 line-clamp-2" data-konu={q.section}>
+                          {q.section} {konuAdi.get(q.section)}
+                        </p>
+                      )}
                     </header>
 
                     <div class="prose prose-invert max-w-none">

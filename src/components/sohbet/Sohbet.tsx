@@ -9,8 +9,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 import { createAdapter, loadKey, loadSettings, modelFor, type ChatSettings } from "../../lib/chat/providers";
 import SaglayiciAyarlari, { SETTINGS_EVENT } from "./SaglayiciAyarlari";
-import { QUIZ_TOOL, courseTools, loadCatalog, systemPrompt, type CatalogCourse, type ChatQuestion } from "../../lib/chat/tools";
+import { DOC_TOOL, QUIZ_TOOL, courseTools, loadCatalog, systemPrompt, type CatalogCourse, type ChatQuestion } from "../../lib/chat/tools";
 import SinavKarti from "./SinavKarti";
+import BelgeKarti from "./BelgeKarti";
 import { kaydet, listele, sil, threadId, yeniKimlik, type Konusma } from "../../lib/chat/gecmis";
 
 const TOOL_LABEL: Record<string, string> = {
@@ -22,6 +23,9 @@ const TOOL_LABEL: Record<string, string> = {
   ilerlemem: "Çözüm kaydına bakılıyor",
   unite_ozeti: "Ünite özeti okunuyor",
   mini_sinav: "Sınav hazırlanıyor",
+  konular: "Kitabın konuları okunuyor",
+  konu_anlat: "Konu kaynakları toplanıyor",
+  belge_olustur: "Belge hazırlanıyor",
 };
 
 /** Full-page chat (/sohbet). The course is read from ?ders=. */
@@ -358,8 +362,9 @@ function Message({ message, last, busy, onReload }: { message: UIMessage; last: 
     <article className="flex flex-col gap-2 min-w-0">
       {message.parts.map((p, i) => {
         if (p.type === "tool-call") {
-          const out = (p.output ?? results.get(p.id)) as { ders?: string; sorular?: ChatQuestion[] } | undefined;
+          const out = (p.output ?? results.get(p.id)) as { ders?: string; sorular?: ChatQuestion[]; baslik?: string; icerik?: string } | undefined;
           if (p.name === QUIZ_TOOL && out?.sorular) return <SinavKarti key={p.id} ders={out.ders ?? ""} sorular={out.sorular} />;
+          if (p.name === DOC_TOOL && out?.icerik) return <BelgeKarti key={p.id} baslik={out.baslik ?? "Belge"} icerik={out.icerik} />;
           return <ToolRow key={p.id} name={p.name} input={p.input} done={results.has(p.id) || p.output !== undefined} />;
         }
         if (p.type === "text" && p.content)

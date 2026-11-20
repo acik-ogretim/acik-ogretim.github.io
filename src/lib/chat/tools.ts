@@ -24,7 +24,23 @@ export interface ChatQuestion {
   source: string;
   year?: string | number;
   examType: string;
+  /** Book topic number, e.g. "6.4.2" */
+  konu?: string;
   url: string;
+}
+export interface Konu {
+  no: string;
+  baslik: string;
+  duzey: number;
+  sayfa: number;
+  alt: Konu[];
+}
+export interface UniteKonulari {
+  unite: number;
+  baslik: string;
+  bolumler: string[];
+  pdf?: string;
+  konular: Konu[];
 }
 export interface UnitSummary {
   unite: number;
@@ -36,6 +52,7 @@ interface CourseData {
   course: { id: string; name: string; code: string; university: string; department: string; url: string };
   questions: ChatQuestion[];
   summaries?: UnitSummary[];
+  konular?: UniteKonulari[];
 }
 
 const cache = new Map<string, Promise<unknown>>();
@@ -109,6 +126,20 @@ export function recordAnswer(courseKey: string, q: Pick<ChatQuestion, "unit" | "
     /* storage blocked: the answer is shown but not remembered */
   }
 }
+
+/** Flattens the book topic tree: no -> {baslik, sayfa, unite, pdf, ust (parent titles)} */
+function konuDizini(data: CourseData) {
+  const m = new Map<string, { no: string; baslik: string; sayfa: number; unite: number; pdf?: string; ust: string[] }>();
+  for (const u of data.konular ?? []) {
+    const gez = (k: Konu, ust: string[]) => {
+      m.set(k.no, { no: k.no, baslik: k.baslik, sayfa: k.sayfa, unite: u.unite, pdf: u.pdf, ust });
+      for (const a of k.alt) gez(a, [...ust, `${k.no} ${k.baslik}`]);
+    };
+    for (const k of u.konular) gez(k, [`Ünite ${u.unite}: ${u.baslik}`]);
+  }
+  return m;
+}
+const pdfSayfa = (pdf: string | undefined, sayfa: number) => (pdf ? `${pdf}#page=${sayfa}` : undefined);
 
 const slim = ({ _n, ...q }: ChatQuestion & { _n?: string }) => q;
 const clamp = (n: unknown, lo: number, hi: number, d: number) => {
@@ -241,13 +272,94 @@ export const courseTools = [
       }
       units.set(q.unit, u);
     }
+    const dizin = konuDizini(data);
+    const zayif = new Map<string, number>();
+    for (const q of wrong) if (q.konu) zayif.set(q.konu, (zayif.get(q.konu) ?? 0) + 1);
     return {
       toplamSoru: data.questions.length,
       cozulen: solved,
       yanlis: wrong.length,
+      zayifKonular: [...zayif]
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 12)
+        .map(([no, n]) => {
+          const k = dizin.get(no);
+          return { konu: no, baslik: k?.baslik, unite: k?.unite, yanlisSayisi: n, kitapSayfasi: pdfSayfa(k?.pdf, k?.sayfa ?? 1) };
+        }),
       uniteler: [...units].sort((a, b) => a[0] - b[0]).map(([unite, v]) => ({ unite, ...v })),
-      yanlisSorular: wrong.slice(0, 15).map((q) => ({ id: q.id, unit: q.unit, no: q.no, text: q.text, answer: q.answer, url: q.url })),
+      yanlisSorular: wrong.slice(0, 15).map((q) => ({ id: q.id, unit: q.unit, no: q.no, konu: q.konu, konuBasligi: q.konu ? dizin.get(q.konu)?.baslik : undefined, text: q.text, answer: q.answer, url: q.url })),
     };
+  }),
+
+  toolDefinition({
+    name: "konular",
+    description: "Dersin kitabındaki numaralı konu ağacı: ünite başlıkları, konu ve alt konular (6.4, 6.4.2), sayfaları ve her konudaki soru sayısı. Bir ünitenin içeriğini ya da bir konunun yerini bulmak için kullan.",
+    inputSchema: { type: "object", properties: { ders: courseKey, unite: { type: "number", description: "Yalnız bu ünite (isteğe bağlı)" } }, required: ["ders"] },
+  }).server(async (args) => {
+    const { ders, unite } = args as { ders: string; unite?: number };
+    const data = await loadCourse(ders);
+    if (!data.konular?.length) return { hata: "Bu dersin kitap konu ağacı henüz yok. ders_bilgisi ve unite_ozeti ile devam et." };
+    const sayi = new Map<string, number>();
+    for (const q of data.questions) if (q.konu) sayi.set(q.konu, (sayi.get(q.konu) ?? 0) + 1);
+    const yaz = (k: Konu): unknown => ({ no: k.no, baslik: k.baslik, sayfa: k.sayfa, soru: sayi.get(k.no) || undefined, alt: k.alt.length ? k.alt.map(yaz) : undefined });
+    return data.konular
+      .filter((u) => unite === undefined || u.unite === Number(unite))
+      .map((u) => ({ unite: u.unite, baslik: u.baslik, kitap: u.pdf, konular: u.konular.map(yaz) }));
+  }),
+
+  toolDefinition({
+    name: "konu_anlat",
+    description: "Bir konuyu anlatmak için gereken her şeyi toplar: konunun kitaptaki yeri ve üst başlıkları, alt konuları, ünite özetinden ilgili kısım, o konudan çıkmış sorular ve açıklamaları, kitap sayfası bağlantısı. Öğrenci 'şu konuyu anlat' ya da 'yanlış yaptığım konuyu anlat' deyince kullan; anlatımı bu malzemeye dayandır.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        ders: courseKey,
+        konu: { type: "string", description: 'Konu numarası (ör. "6.4.2"); bilinmiyorsa boş bırak ve sorgu ver' },
+        sorgu: { type: "string", description: "Konu numarası bilinmiyorsa konunun adı ya da kavram" },
+      },
+      required: ["ders"],
+    },
+  }).server(async (args) => {
+    const { ders, konu, sorgu } = args as { ders: string; konu?: string; sorgu?: string };
+    const data = await loadCourse(ders);
+    const dizin = konuDizini(data);
+    let no = konu && dizin.has(String(konu)) ? String(konu) : undefined;
+    if (!no && sorgu) {
+      const fuse = createFuse([...dizin.values()].map((k) => ({ ...k, _n: normalizeTurkish(k.baslik) })), ["_n"], 0.4);
+      no = fuse.search(normalizeTurkish(sorgu), { limit: 1 })[0]?.item.no;
+      if (!no) no = (await searchQuestions(ders, sorgu)).find((q) => q.konu)?.konu;
+    }
+    if (!no) return { hata: "Konu bulunamadı. konular aracıyla numarasını bul.", konuAgaciVar: dizin.size > 0 };
+    const k = dizin.get(no)!;
+    const altlar = [...dizin.values()].filter((x) => x.no.startsWith(no + ".")).map((x) => `${x.no} ${x.baslik}`);
+    const sorular = data.questions.filter((q) => q.konu === no || q.konu?.startsWith(no + "."));
+    const ozet = data.summaries?.find((u) => u.unite === k.unite);
+    return {
+      konu: no,
+      baslik: k.baslik,
+      ustBasliklar: k.ust,
+      altKonular: altlar,
+      kitapSayfasi: pdfSayfa(k.pdf, k.sayfa),
+      uniteOzeti: ozet ? { baslik: ozet.baslik, ozet: ozet.ozet, kavramlar: ozet.kavramlar } : undefined,
+      sorular: sorular.slice(0, 12).map((q) => ({ id: q.id, text: q.text, dogru: q.options[q.answer], aciklama: q.explanation, sinav: q.source === "cikmis-soru" ? `${q.year ?? ""} ${q.examType}`.trim() : undefined, url: q.url })),
+      toplamSoru: sorular.length,
+    };
+  }),
+
+  toolDefinition({
+    name: "belge_olustur",
+    description: "Öğrenci kalıcı bir çalışma belgesi isteyince kullan: konu özeti, çalışma planı, tekrar kartları, kavram tablosu, sınav öncesi not. Belge sohbette indirilebilir ve yazdırılabilir bir kart olarak açılır; içeriği metinde ayrıca tekrar etme, yalnız bir cümleyle tanıt.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        baslik: { type: "string", description: "Belgenin başlığı" },
+        icerik: { type: "string", description: "Belgenin tamamı, Markdown (başlıklar, listeler, tablolar)" },
+      },
+      required: ["baslik", "icerik"],
+    },
+  }).server(async (args) => {
+    const { baslik, icerik } = args as { baslik: string; icerik: string };
+    return { baslik: String(baslik).slice(0, 120), icerik: String(icerik) };
   }),
 
   toolDefinition({
@@ -276,11 +388,15 @@ export const courseTools = [
 ] as const;
 
 export const QUIZ_TOOL = "mini_sinav";
+export const DOC_TOOL = "belge_olustur";
 
 export function systemPrompt(course: CatalogCourse | null): string {
   return [
     "Sen Açık Öğretim Portal'ın ders asistanısın. Açık öğretim öğrencilerine Türkçe, sade ve sıcak bir dille yardım edersin.",
-    "Ders içeriği için araçları kullan: ders belli değilse ders_bul; konu anlatımı için unite_ozeti; soru ve açıklamalar için soru_ara, unite_sorulari, soru_getir; dersin yapısı için ders_bilgisi.",
+    "Ders içeriği için araçları kullan: ders belli değilse ders_bul; dersin kitaptaki konu ağacı için konular; bir konuyu anlatmak için konu_anlat (yoksa unite_ozeti); soru ve açıklamalar için soru_ara, unite_sorulari, soru_getir; dersin yapısı için ders_bilgisi.",
+    "Konu anlatırken konu_anlat'ın verdiği üst başlıklardan başla, kavramları sade dille açıkla, çıkmış sorulardan örnek ver ve sonunda kitap sayfası bağlantısını [Kitapta oku](bağlantı) olarak ekle.",
+    "Öğrenci yanlış yaptığı konuları sorarsa ilerlemem aracının zayifKonular listesini konu numarası ve başlığıyla göster; isterse her birini konu_anlat ile anlat.",
+    "Öğrenci özet, plan, not ya da kart gibi saklayacağı bir belge isterse belge_olustur ile yaz.",
     "Cevaplarını araçların döndürdüğü ünite özetlerine, sorulara, doğru cevaplara ve açıklamalara dayandır. Bulamazsan bunu söyle, uydurma.",
     "Doğru şıkkı söylemekle kalma, nedenini açıklama metninden anlat.",
     "Dayandığın soruları cevabın sonunda bağlantılarıyla göster: [Ünite 3 · Soru 12](url).",

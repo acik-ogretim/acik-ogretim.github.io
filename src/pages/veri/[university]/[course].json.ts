@@ -37,6 +37,7 @@ export const GET: APIRoute = async ({ props }) => {
       year: q.year || undefined,
       sinavlar: q.sinavlar?.length ? q.sinavlar : undefined,
       examType: q.examType,
+      konu: q.section || undefined,
       url: `${base}#question-${q.unitNumber}-${idx}`,
     };
   });
@@ -48,8 +49,16 @@ export const GET: APIRoute = async ({ props }) => {
   } catch {
     summaries = [];
   }
+  // Topic tree of the course book (data/konular/<uni>/<course>.json): numbered headings, page and official PDF link.
+  let konular: unknown[] = [];
+  try {
+    const raw = JSON.parse(await fs.readFile(path.join(process.cwd(), "data", "konular", uni.id, `${course.id}.json`), "utf-8"));
+    konular = Array.isArray(raw.uniteler) ? raw.uniteler : [];
+  } catch {
+    konular = [];
+  }
   return new Response(
-    JSON.stringify({ summaries, course: { id: course.id, name: course.name, code: course.code, university: uni.name, department: dept.name, url: base }, questions: items }),
+    JSON.stringify({ summaries, konular, course: { id: course.id, name: course.name, code: course.code, university: uni.name, department: dept.name, url: base }, questions: items }),
     { headers: { "Content-Type": "application/json" } },
   );
 };
