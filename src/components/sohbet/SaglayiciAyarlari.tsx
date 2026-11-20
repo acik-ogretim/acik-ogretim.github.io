@@ -1,6 +1,6 @@
 // Provider, model and key form shared by the site settings panel and the chat. Saves on change; the
 // "yz-ayarlari" window event tells open chats and the explanation menu to re-read the settings.
-import { Check, Eye, EyeOff, ExternalLink, LoaderCircle, RefreshCw, TriangleAlert } from "lucide-react";
+import { ArrowLeftRight, Check, CircleHelp, Eye, EyeOff, ExternalLink, FileText, LoaderCircle, RefreshCw, ShieldCheck, TriangleAlert } from "lucide-react";
 import { useEffect, useId, useState } from "react";
 import {
   PROVIDERS,
@@ -163,9 +163,30 @@ export default function SaglayiciAyarlari() {
           </a>
         </div>
       </div>
+      <nav aria-label="Yardım ve belgeler" className="grid grid-cols-4 gap-2 border-t pt-3" style={{ borderColor: "var(--border-color)" }}>
+        {BAGLANTILAR.map(({ href, ad, Icon }) => (
+          <a
+            key={href}
+            href={href}
+            title={ad}
+            className="flex min-h-11 flex-col items-center gap-1 rounded-lg px-1 py-1.5 text-center text-[10px] leading-tight hover:opacity-80"
+            style={{ color: "var(--text-color-muted)" }}
+          >
+            <Icon className="size-5 shrink-0" aria-hidden />
+            <span className="line-clamp-2">{ad}</span>
+          </a>
+        ))}
+      </nav>
     </div>
   );
 }
+
+const BAGLANTILAR = [
+  { href: "/yedek", ad: "Kayıtlarını taşı", Icon: ArrowLeftRight },
+  { href: "/rehber#hata-bildir", ad: "Hata bildir, tartış", Icon: CircleHelp },
+  { href: "/kullanim-kosullari", ad: "Kullanım koşulları", Icon: FileText },
+  { href: "/gizlilik", ad: "Gizlilik", Icon: ShieldCheck },
+] as const;
 
 function explain(e: unknown): string {
   const m = e instanceof Error ? e.message : String(e);

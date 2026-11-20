@@ -11,6 +11,20 @@ This file serves as the primary instruction manual for AI agents working on this
 *   **Interactive Quiz:** Custom `QuizPlayer` class (Vanilla JS/TS) for solving tests.
 *   **Accessibility:** Web Speech API integration for TTS (Text-to-Speech).
 *   **Offline-First:** Designed to be lightweight and fast.
+*   **Chat Assistant (BYOK):** React islands + TanStack AI; the user's own provider key stays in the browser.
+*   **Record Sync:** Opt-in transfer of browser records between devices; the site never receives data.
+*   **Discussion & Error Reports:** giscus (GitHub Discussions) and prefilled GitHub issue forms.
+*   **Cookieless Visit Counter:** Cloudflare Web Analytics plus an anonymous unique-visitor Worker.
+
+## 🗺️ Where Things Live
+*   `src/pages/sohbet.astro`, `src/components/sohbet/` (`Sohbet`, `SohbetCekmece`, `SaglayiciAyarlari`, `SinavKarti`, `BelgeKarti`): chat page, "Derse sor" drawer, provider/key form, mini quiz and document cards.
+*   `src/lib/chat/`: `providers.ts` (providers, models, keys), `tools.ts` (chat tools), `gecmis.ts` (history), `enrich.ts` (explanation menu).
+*   `src/pages/yedek.astro` + `src/lib/yedek.ts`, `rs-esitle.ts`, `google-esitle.ts`, `p2p-esitle.ts`, `bulut-esitle.ts`: moving records across devices (never export `*-api-key`).
+*   `src/components/Tartisma.astro`: question/course discussion (giscus) and one-tap error reports.
+*   `src/pages/kullanim-kosullari.astro`, `gizlilik.astro`, `rehber.astro`, `hakkimizda.astro`, `iletisim.astro`: legal and help pages. Update `rehber.astro` and `gizlilik.astro` whenever a user-facing feature changes.
+*   `workers/sayac/` (`worker.js`, `sema.sql`, `kur.py`): visit counter Worker (Cloudflare + D1).
+*   `public/logo.svg`, `public/favicon.svg`: logo and favicon.
+*   The settings drawer is in `src/layouts/Layout.astro`; the provider form inside it is `SaglayiciAyarlari.tsx`, which also holds the links to /yedek, the guide, terms and privacy.
 
 ## 🛠️ Tech Stack & Environment
 *   **Framework:** Astro v5.16.6

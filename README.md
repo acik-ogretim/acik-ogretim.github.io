@@ -10,7 +10,9 @@ Bu proje, öğrencilerin ders kaynaklarına ve geçmiş yıl sorularına kolayca
 
 ## Özellikler
 
-- **Geniş Kapsam:** 3 büyük açık öğretim fakültesinin (Anadolu AÖF, ATA-AÖF, AUZEF) derslerini kapsar.
+- **Geniş Kapsam:** 4 açık ve uzaktan öğretim fakültesinin (Anadolu AÖF, ATA-AÖF, AUZEF, ANKUZEF) derslerini kapsar.
+- **Konu eşleşmesi:** Kitap konu ağacı bulunan derslerde her soru, kitaptaki ünite ve konu başlığıyla (ör. "4.2.2 ...") soru kartında gösterilir; sohbet asistanı da aynı ağaçtan konu anlatır.
+- **Açıklamalar:** Atatürk AÖF sorularında resmî cevap anahtarı kullanılır; zayıf açıklamalar ders kitabındaki konuya dayanılarak yapay zekâ yardımıyla yeniden yazılmıştır.
 - **İnteraktif Test Modülü:** Soruları çözerken anında geri bildirim alabileceğiniz gelişmiş test arayüzü.
   - Doğru/Yanlış analizi
   - Ders asistanı: kendi API anahtarınla (Gemini, OpenAI, Anthropic, OpenRouter) dersin soruları, açıklamaları, ünite özetleri ve ders kitabının konu ağacı üzerinden sohbet; konu anlatımı, zayıf konular, mini sınav, indirilebilir çalışma belgesi, sohbet geçmişi, sesle yazma ve canlı sesli konuşma
@@ -18,16 +20,20 @@ Bu proje, öğrencilerin ders kaynaklarına ve geçmiş yıl sorularına kolayca
   - Sesli okuma desteği (TTS)
   - Koyu Mod / Aydınlık Mod / Sepya Modu seçenekleri
 - **Kişiselleştirme:** Favori derslerinizi kaydedin ve ilerlemenizi takip edin (kayıtlar tarayıcınızda durur).
-- **Kayıtları taşıma (/yedek):** Kendi kişisel deponuz (remoteStorage), Google Drive'ınızdaki gizli uygulama klasörü, şifreli GitHub gist'i, cihazdan cihaza bağlantı (WebRTC) ya da dosya. Hiçbirinde kayıtlar siteye gelmez.
+- **Kayıtları taşıma (/yedek):** Kendi kişisel deponuz (remoteStorage; anahtarlar tanımlıysa Google Drive ve Dropbox seçenekleriyle), Google Drive'ınızdaki gizli uygulama klasörü, şifreli GitHub gist'i, cihazdan cihaza bağlantı (WebRTC, parola ile), yedek dosyası (indir, yükle, "Yakındaki cihaza gönder"). Hiçbirinde kayıtlar siteye gelmez; yapay zekâ anahtarları yedeğe girmez.
+- **Hata bildirme ve tartışma:** Soru kartındaki konuşma simgesi "Soru hatalı", "Açıklama hatalı" ve "Açıklamamı paylaş" seçeneklerini, ders sayfasındaki bayrak simgesi "Ders hatalı/eksik" ve "Bölüm hatalı/eksik" seçeneklerini açar. Bildirim, önceden doldurulmuş bir GitHub issue formuna; tartışma GitHub Discussions'a (giscus) gider.
+- **Mobil:** Alt çubuk açıkken arama düğmesi çubuğun içindedir; iPhone güvenli alanı hesaba katılır.
+- **Yeni kimlik ve sayfalar:** Yeni logo ve favicon (`public/logo.svg`), Kullanım Koşulları, Gizlilik ve Kullanım Rehberi sayfaları.
 - **Hafif ve Hızlı:** [Astro](https://astro.build) ve statik site mimarisi sayesinde ultra hızlı sayfa yüklemeleri.
 
 ## Desteklenen Üniversiteler
 
 | Üniversite | Kısaltma | Durum | Kapsam |
 |---|---|---|---|
-| Anadolu Üniversitesi | **Anadolu AÖF** | Aktif | Tek Bölüm (Görsel İletişim) |
-| Atatürk Üniversitesi | **ATA-AÖF** | Aktif | **Tüm Bölümler** |
-| İstanbul Üniversitesi | **AUZEF** | Aktif | Tek Bölüm (Çocuk Gelişimi) |
+| Anadolu Üniversitesi | **Anadolu AÖF** | Aktif | Bölüm ve ders sayıları ana sayfada güncel gösterilir |
+| Atatürk Üniversitesi | **ATA-AÖF** | Aktif | Bölüm ve ders sayıları ana sayfada güncel gösterilir |
+| İstanbul Üniversitesi | **AUZEF** | Aktif | Bölüm ve ders sayıları ana sayfada güncel gösterilir |
+| Ankara Üniversitesi | **Ankara (ANKUZEF)** | Aktif | Bölüm ve ders sayıları ana sayfada güncel gösterilir |
 
 ## Teknolojiler
 
@@ -39,6 +45,17 @@ Bu proje aşağıdaki modern web teknolojileri kullanılarak geliştirilmiştir:
 - **İkonlar:** [Lucide](https://lucide.dev)
 - **Yapay zekâ:** [TanStack AI](https://tanstack.com/ai) (tarayıcıda, kullanıcının kendi anahtarıyla), [Base UI](https://base-ui.com) çekmece ve iletişim kutuları
 - **Dağıtım:** GitHub Pages
+- **Tartışma:** [giscus](https://giscus.app) (GitHub Discussions)
+- **Ziyaret sayacı:** Cloudflare Web Analytics ve `workers/sayac/` altındaki Cloudflare Worker (D1)
+
+## Mimari Özeti
+
+Site statik üretilir (Astro SSG); sunucu tarafı kod ve veritabanı yoktur. Soru ve ders verisi `data/` altındaki JSON dosyalarından derleme sırasında sayfalara dönüşür. Tarayıcıda çalışan parçalar:
+
+- **Sohbet asistanı** (`src/pages/sohbet.astro`, `src/components/sohbet/`, `src/lib/chat/`): kullanıcının kendi anahtarıyla (BYOK) doğrudan sağlayıcıya bağlanır; araçları `src/lib/chat/tools.ts` içindedir (ders bulma, soru arama, ünite özeti, konu anlatımı, ilerleme, belge oluşturma, mini sınav). Sohbet geçmişi `localStorage`'da tutulur.
+- **Kayıt eşitleme** (`src/pages/yedek.astro`, `src/lib/yedek.ts`, `rs-esitle.ts`, `google-esitle.ts`, `p2p-esitle.ts`, `bulut-esitle.ts`): tarayıcı kayıtlarını kullanıcının kendi deposuyla birleştirir.
+- **Tartışma ve hata bildirimi** (`src/components/Tartisma.astro`): giscus penceresi ve önceden doldurulmuş GitHub issue formu.
+- **Ziyaret sayacı** (`workers/sayac/`): çerezsiz, günlük değişen özet değerle tekil ziyaretçi sayar.
 
 ## Dokümantasyon
 
@@ -79,7 +96,8 @@ Site içeriği (`data/` klasörü) JSON dosyalarından oluşur. İstatistikler v
 
 ## Gizlilik ve Yasal
 
-- **Gizlilik:** Bu proje kullanıcılarından **hiçbir kişisel veri** toplamaz. İlerlemeleriniz sadece kendi cihazınızda (tarayıcı) saklanır.
+- **Gizlilik:** Bu proje kullanıcılarından **hiçbir kişisel veri** toplamaz. İlerlemeleriniz sadece kendi cihazınızda (tarayıcı) saklanır. Ziyaret sayıları çerezsizdir: Cloudflare Web Analytics ve kendi anonim tekil ziyaretçi sayacımız (günlük değişen geri çevrilemez özet değer, yalnız toplam sayılar) kullanılır.
+- **Kullanım koşulları:** [Kullanım Koşulları](https://acik-ogretim.github.io/kullanim-kosullari) sayfasında.
 - **Ders asistanı:** İsteğe bağlıdır ve kendi API anahtarınızla çalışır:
   - Anahtarınız yalnızca tarayıcınızda (`localStorage`) saklanır; sitenin sunucusu yoktur.
   - Mesajlarınız ve ilgili ders içeriği tarayıcınızdan doğrudan seçtiğiniz sağlayıcıya gönderilir ve o sağlayıcının gizlilik politikasına tabidir.

@@ -42,10 +42,12 @@ import Layout from "../layouts/Layout.astro";
                     <p
                         class="text-slate-400 mb-6 font-medium text-lg leading-relaxed"
                     >
-                        Test ekranının sağ alt köşesindeki <strong
-                            class="text-white">Ayarlar Butonuna</strong
-                        > tıklayarak deneyiminizi kişiselleştirebilirsiniz. Değişiklikleriniz
-                        tarayıcınıza otomatik olarak kaydedilir.
+                        Üstteki menüden <strong class="text-white">Ayarlar</strong
+                        >'a ya da ders sayfasındaki alt çubukta bulunan dişli
+                        simgesine dokunarak deneyiminizi kişiselleştirebilirsiniz.
+                        Değişiklikleriniz tarayıcınıza otomatik olarak kaydedilir.
+                        Soru türü (çıkmış sınav soruları ya da alıştırma ve deneme)
+                        ve sınav seçimi de aynı panelde yer alır.
                     </p>
 
                     <div class="grid md:grid-cols-2 gap-6">
@@ -352,8 +354,9 @@ import Layout from "../layouts/Layout.astro";
                                 hızlı erişim için listelenir.
                             </li>
                             <li>
-                                Bu veriler sadece sizin tarayıcınızda (Local
-                                Storage) saklanır, sunucuya gönderilmez.
+                                Bu veriler yalnız tarayıcınızda saklanır, sunucuya
+                                gönderilmez. Başka cihazda da kullanmak için
+                                <a href="#yedek" class="underline text-teal-400">kayıtlarınızı taşıyabilirsiniz</a>.
                             </li>
                         </ul>
                     </div>
@@ -402,7 +405,7 @@ import Layout from "../layouts/Layout.astro";
                 </ul>
             </section>
 
-            <!-- Ders Asistanı Bölümü -->
+            <!-- Sohbet Asistanı Bölümü -->
             <section
                 id="ders-asistani"
                 class="content-card bg-slate-900 border border-slate-700 p-8 rounded-2xl shadow-xl mt-12 scroll-mt-24"
@@ -414,25 +417,28 @@ import Layout from "../layouts/Layout.astro";
                         <Simge ad="MessageCircle" />
                     </div>
                     <h2 class="text-2xl font-bold text-white">
-                        Ders Asistanı
+                        Sohbet asistanı ve sesli mod
                     </h2>
                 </div>
                 <p class="text-slate-400 mb-4 text-lg leading-relaxed">
                     Ders sayfasındaki "Derse sor" düğmesi, o dersin sorularını,
-                    açıklamalarını ve ünite özetlerini kullanarak cevap veren bir
-                    sohbet açar. Kendi API anahtarınla çalışır; anahtarın yalnız
-                    tarayıcında kalır.
+                    açıklamalarını, ünite özetlerini ve kitap konu başlıklarını
+                    kullanarak cevap veren bir sohbet açar. Sohbet kendi yapay
+                    zekâ anahtarınla çalışır; anahtarın yalnız tarayıcında kalır,
+                    site onu görmez.
                 </p>
                 <ul class="list-disc list-inside space-y-2 ml-4 text-slate-400">
                     <li>
-                        <strong class="text-white">Anahtar:</strong> Ayarlarda
-                        Google Gemini, OpenAI, Anthropic ya da OpenRouter seç,
-                        anahtarını gir ve "Anahtarı dene" ile kontrol et.
+                        <strong class="text-white">Anahtar (BYOK):</strong> Ayarlar
+                        panelinde Google Gemini, OpenAI, Anthropic ya da OpenRouter
+                        seç, anahtarını gir ve "Anahtarı dene" ile kontrol et.
+                        Sohbetteki model düğmesinden de aynı ayara ulaşırsın.
                     </li>
                     <li>
                         <strong class="text-white">Konu anlatımı:</strong> "3.
-                        üniteyi anlat" gibi isteklerde ünite özetinden yararlanır,
-                        dayandığı sorulara bağlantı verir.
+                        üniteyi anlat" ya da "4.2.2 konusunu anlat" dersen kitabın
+                        konu ağacından, ünite özetinden ve o konudan çıkmış
+                        sorulardan yararlanır, dayandığı sorulara bağlantı verir.
                     </li>
                     <li>
                         <strong class="text-white">Mini sınav:</strong> "Bana 5
@@ -440,15 +446,174 @@ import Layout from "../layouts/Layout.astro";
                         sınav kartı açar; cevapların ders sayfandaki kayda da işlenir.
                     </li>
                     <li>
-                        <strong class="text-white">Zayıf konular:</strong> "Neye
-                        çalışmalıyım?" dersen yanlış yaptığın sorulara bakıp bir
-                        çalışma planı önerir.
+                        <strong class="text-white">Yanlış yaptığım konular:</strong>
+                        "Neye çalışmalıyım?" dersen yanlış yaptığın sorulara bakıp
+                        zayıf konularını bulur ve bir çalışma planı önerir.
+                        "Yanlışlarımdan mini sınav yap" demen de yeter.
                     </li>
                     <li>
-                        <strong class="text-white">Açıklama menüsü:</strong> Her
-                        açıklamanın yanındaki üç nokta menüsüyle açıklamayı
-                        kısaltabilir, genişletebilir, şıkları tek tek açıklatabilir
-                        ya da soruyu sohbete taşıyabilirsin.
+                        <strong class="text-white">Belge oluşturma:</strong>
+                        "Bu ünitenin özetini belge yap" gibi isteklerde sohbet
+                        bir belge kartı açar. Karttaki düğmelerle belgeyi
+                        kopyalar, Markdown (.md) dosyası olarak indirir ya da
+                        yazdırıp PDF olarak kaydedersin.
+                    </li>
+                    <li>
+                        <strong class="text-white">Sohbet geçmişi:</strong> Her
+                        dersin sohbetleri tarayıcında listelenir. Geçmiş
+                        düğmesinden eski bir sohbeti açabilir, yeni sohbet
+                        başlatabilir ya da bir sohbeti silebilirsin.
+                    </li>
+                    <li>
+                        <strong class="text-white">Açıklama menüsü:</strong> Ayarlar
+                        panelinde "Açıklama menüsü"nü açarsan her açıklamanın
+                        yanında üç nokta menüsü görünür. Açıklamayı kısaltabilir,
+                        genişletebilir, şıkları tek tek açıklatabilir ya da soruyu
+                        sohbete taşıyabilirsin.
+                    </li>
+                </ul>
+
+                <h3 class="font-bold text-lg text-white mt-8 mb-3">
+                    Sesli yazma, canlı konuşma ve seslendirme
+                </h3>
+                <ul class="list-disc list-inside space-y-2 ml-4 text-slate-400">
+                    <li>
+                        <strong class="text-white">Sesli yazma (dikte):</strong>
+                        Mesaj kutusundaki mikrofon düğmesine basıp Türkçe konuş;
+                        söylediklerin kutuya yazılır, göndermeden önce
+                        düzeltebilirsin.
+                    </li>
+                    <li>
+                        <strong class="text-white">Canlı konuşma:</strong>
+                        "Canlı konuş" düğmesi sohbeti sesli bir görüşmeye çevirir:
+                        konuşursun, asistan düşünür ve cevabı sesli okur. Okurken
+                        mikrofon düğmesiyle sözünü kesip yeniden konuşabilir,
+                        çarpı düğmesiyle görüşmeyi bitirebilirsin.
+                    </li>
+                    <li>
+                        <strong class="text-white">Yanıtı seslendirme:</strong>
+                        Her yanıtın altındaki hoparlör düğmesi o yanıtı sesli
+                        okur; yeniden basınca durdurur. Ses ve hız, soru okumadaki
+                        ses ayarlarını kullanır.
+                    </li>
+                </ul>
+                <div
+                    class="mt-4 p-3 bg-slate-800 rounded-xl border border-slate-700 text-xs text-slate-400"
+                >
+                    <span class="text-teal-400 font-bold">Not:</span> Sesli yazma
+                    ve canlı konuşma tarayıcının ses tanıma özelliğini kullanır;
+                    Chrome, Edge ve Safari'de çalışır. Tarayıcın desteklemiyorsa
+                    mikrofon düğmesi görünmez.
+                </div>
+            </section>
+
+            <!-- Kayıtlarını Taşı -->
+            <section
+                id="yedek"
+                class="content-card bg-slate-900 border border-slate-700 p-8 rounded-2xl shadow-xl mt-12 scroll-mt-24"
+            >
+                <div class="flex items-center gap-4 mb-6">
+                    <div
+                        class="icon-box bg-blue-500/20 text-blue-400 p-3 rounded-xl"
+                    >
+                        <Simge ad="RefreshCw" />
+                    </div>
+                    <h2 class="text-2xl font-bold text-white">
+                        Kayıtlarını taşı
+                    </h2>
+                </div>
+                <p class="text-slate-400 mb-4 text-lg leading-relaxed">
+                    Çözdüğün sorular, yanlışların, favori derslerin, ayarların ve
+                    sohbet geçmişin tarayıcında durur. Telefondan bilgisayara
+                    geçerken ya da tarayıcını temizlemeden önce
+                    <a href="/yedek" class="underline text-teal-400">Kayıtlarını taşı</a>
+                    sayfasını kullan. Site hiçbir kaydını almaz; her yolda veri
+                    doğrudan senin seçtiğin yerle tarayıcın arasında akar.
+                </p>
+                <ul class="list-disc list-inside space-y-2 ml-4 text-slate-400">
+                    <li>
+                        <strong class="text-white">Kendi deponuz (remoteStorage):</strong>
+                        Kişisel depo adresini yazarsın (ör. kullanici@5apps.com).
+                        Site açıksa aynı kutudan Google Drive ya da Dropbox da
+                        seçilir. Bağladığın her cihazda kayıtlar kendiliğinden
+                        eşitlenir.
+                    </li>
+                    <li>
+                        <strong class="text-white">Google hesabı:</strong> Kayıtlar
+                        Drive'ında yalnız bu sitenin görebildiği gizli bir
+                        uygulama klasörüne yazılır. Her cihazda aynı hesapla
+                        "Eşitle"ye basarsın.
+                    </li>
+                    <li>
+                        <strong class="text-white">Cihazdan cihaza:</strong> İki
+                        cihazda sayfayı açıp aynı parolayı yazarsın; cihazlar
+                        birbirini bulur ve kayıtları doğrudan birbirine gönderir.
+                        İki cihaz aynı anda açık olmalıdır.
+                    </li>
+                    <li>
+                        <strong class="text-white">GitHub gist (şifreli):</strong>
+                        Kayıtlar tarayıcında parolanla şifrelenir ve kendi
+                        GitHub hesabındaki gizli bir gist'e yazılır. Parolayı
+                        unutursan kayıt açılamaz.
+                    </li>
+                    <li>
+                        <strong class="text-white">Dosya ve yakındaki cihaz:</strong>
+                        "Yedek dosyasını indir" kayıtlarını tek dosyaya kaydeder.
+                        "Yakındaki cihaza gönder" dosyayı AirDrop ya da Quick Share
+                        ile yollar; öteki cihazda dosyayı seçince kayıtlar
+                        oradakilerle birleşir.
+                    </li>
+                </ul>
+                <div
+                    class="mt-4 p-3 bg-slate-800 rounded-xl border border-slate-700 text-xs text-slate-400"
+                >
+                    <span class="text-teal-400 font-bold">İpucu:</span> Yapay
+                    zekâ anahtarın yedeğe girmez. Yeni cihazda anahtarını
+                    yeniden girmen gerekir.
+                </div>
+            </section>
+
+            <!-- Hata Bildir ve Tartış -->
+            <section
+                id="hata-bildir"
+                class="content-card bg-slate-900 border border-slate-700 p-8 rounded-2xl shadow-xl mt-12 scroll-mt-24"
+            >
+                <div class="flex items-center gap-4 mb-6">
+                    <div
+                        class="icon-box bg-orange-500/20 text-orange-400 p-3 rounded-xl"
+                    >
+                        <Simge ad="MessageCircle" />
+                    </div>
+                    <h2 class="text-2xl font-bold text-white">
+                        Hata bildir ve tartış
+                    </h2>
+                </div>
+                <p class="text-slate-400 mb-4 text-lg leading-relaxed">
+                    Yanlış bir soru ya da eksik bir ders gördüysen bildirmek tek
+                    dokunuş. Bildirimler ve tartışmalar GitHub'da herkese açık
+                    durur; yazmak için GitHub hesabıyla giriş yaparsın.
+                </p>
+                <ul class="list-disc list-inside space-y-2 ml-4 text-slate-400">
+                    <li>
+                        <strong class="text-white">Soru kartında:</strong>
+                        Açıklama satırındaki konuşma simgesi bir pencere açar.
+                        "Soru hatalı" ve "Açıklama hatalı" düğmeleri, soruyu ve
+                        sitedeki açıklamayı önceden doldurulmuş bir GitHub formuna
+                        taşır. "Açıklamamı paylaş" kendi açıklama önerini
+                        yazmanı sağlar. Aynı pencerede o sorunun tartışması
+                        (GitHub Discussions, giscus) açılır.
+                    </li>
+                    <li>
+                        <strong class="text-white">Ders sayfasında:</strong>
+                        Sayfanın üstündeki bayrak simgesi "Ders hatalı", "Ders
+                        eksik", "Bölüm hatalı" ve "Bölüm eksik" seçeneklerini
+                        verir. Eksik ünite, sınav yılı ya da ders adını bu yolla
+                        bildirebilirsin.
+                    </li>
+                    <li>
+                        <strong class="text-white">Gizlilik:</strong> Form
+                        sen "gönder"e basmadan hiçbir şey paylaşılmaz. Tartışma
+                        alanı da yalnız pencereyi açtığında yüklenir.
                     </li>
                 </ul>
             </section>
@@ -861,6 +1026,13 @@ import Layout from "../layouts/Layout.astro";
                             Önceki ve Sonraki sorular arasında geçiş yapar.
                         </p>
                     </div>
+                </div>
+                <div
+                    class="mt-6 p-3 bg-slate-800 rounded-xl border border-slate-700 text-xs text-slate-400"
+                >
+                    <span class="text-teal-400 font-bold">Arama:</span> Alt
+                    çubuk açıkken soru arama düğmesi çubuğun içinde durur;
+                    çubuk kapalıyken sağ alttaki yuvarlak düğme aynı işi görür.
                 </div>
             </section>
             <!-- PWA / Kurulum Bölümü -->

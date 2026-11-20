@@ -391,36 +391,36 @@ const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
           <h3 class="font-semibold mb-2 text-theme">İnteraktif Testler</h3>
           <p class="text-muted-theme text-sm">Anında geri bildirimli çalışma modülleri</p>
         </a>
-        <div class="feature-card text-center">
+        <a href="/rehber#ders-asistani" class="feature-card text-center block hover:scale-105 transition-transform duration-300">
           <div class="text-4xl mb-4" role="img" aria-label="Sohbet"><Simge ad="MessageCircle" /></div>
-          <h3 class="font-semibold mb-2 text-theme">Ders Asistanı</h3>
-          <p class="text-muted-theme text-sm">Kendi anahtarınla soru, açıklama ve ünite özetleri üzerinden sohbet</p>
-        </div>
+          <h3 class="font-semibold mb-2 text-theme">Sohbet Asistanı</h3>
+          <p class="text-muted-theme text-sm">Kendi anahtarınla konu anlatımı, mini sınav ve sesli konuşma</p>
+        </a>
         <div class="feature-card text-center">
           <div class="text-4xl mb-4" role="img" aria-label="Belge"><Simge ad="FileText" /></div>
           <h3 class="font-semibold mb-2 text-theme">Çıkmış Sınavlar</h3>
-          <p class="text-muted-theme text-sm">Geçmiş yılların vize ve final soruları</p>
+          <p class="text-muted-theme text-sm">Vize ve final soruları; kitapla eşleşen derslerde konu başlığıyla</p>
         </div>
         <a href="/rehber#kurulum" class="feature-card text-center block hover:scale-105 transition-transform duration-300">
           <div class="text-4xl mb-4" role="img" aria-label="Mobil"><Simge ad="Smartphone" /></div>
           <h3 class="font-semibold mb-2 text-theme">Mobil Uygulama</h3>
-          <p class="text-muted-theme text-sm">PWA desteği ile telefona indirip internetsiz kullanın</p>
+          <p class="text-muted-theme text-sm">Telefona yükleyin; açık, koyu ve sepya tema ile çalışın</p>
         </a>
         <a href="/rehber#sesli-okuma" class="feature-card text-center block hover:scale-105 transition-transform duration-300">
           <div class="text-4xl mb-4" role="img" aria-label="Ses"><Simge ad="AudioLines" /></div>
           <h3 class="font-semibold mb-2 text-theme">Sesli Okuma</h3>
-          <p class="text-muted-theme text-sm">Soruları dinleyerek gözlerinizi yormadan çalışın</p>
+          <p class="text-muted-theme text-sm">Soruları ve asistanın yanıtlarını dinleyerek çalışın</p>
         </a>
-         <div class="feature-card text-center">
-          <div class="text-4xl mb-4" role="img" aria-label="Gece"><Simge ad="Moon" /></div>
-          <h3 class="font-semibold mb-2 text-theme">Koyu Mod</h3>
-          <p class="text-muted-theme text-sm">Göz dostu arayüz ile gece gündüz rahat çalışın</p>
-        </div>
-         <div class="feature-card text-center">
+        <a href="/yedek" class="feature-card text-center block hover:scale-105 transition-transform duration-300">
+          <div class="text-4xl mb-4" role="img" aria-label="Eşitleme"><Simge ad="RefreshCw" /></div>
+          <h3 class="font-semibold mb-2 text-theme">Kayıtlarını Taşı</h3>
+          <p class="text-muted-theme text-sm">İlerlemeni ve sohbetlerini cihazlar arasında kendi depoyla eşitle</p>
+        </a>
+        <a href="/rehber#hata-bildir" class="feature-card text-center block hover:scale-105 transition-transform duration-300">
           <div class="text-4xl mb-4" role="img" aria-label="Topluluk"><Simge ad="Users" /></div>
-          <h3 class="font-semibold mb-2 text-theme">Topluluk</h3>
-          <p class="text-muted-theme text-sm">GitHub üzerinden açık kaynaklı ve şeffaf geliştirme</p>
-        </div>
+          <h3 class="font-semibold mb-2 text-theme">Hata Bildir ve Tartış</h3>
+          <p class="text-muted-theme text-sm">Her soru ve ders için tek dokunuşla bildirim, GitHub'da tartışma</p>
+        </a>
       </div>
     </div>
   </section>
@@ -453,7 +453,7 @@ const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
             </span>
           </summary>
           <div class="text-muted-theme text-sm px-5 pb-5">
-            <strong>Hayır.</strong> Sitedeki tüm sorulara ve testlere üyelik gerektirmeden, doğudan erişebilirsiniz. İlerlemeniz ve favorileriniz tarayıcınızın hafızasında (Local Storage) tutulur.
+            <strong>Hayır.</strong> Sitedeki tüm sorulara ve testlere üyelik gerektirmeden doğrudan erişebilirsiniz. İlerlemeniz ve favorileriniz tarayıcınızda tutulur; başka cihaza taşımak isterseniz <a href="/yedek" class="underline text-primary-theme">Kayıtlarını taşı</a> sayfasındaki yollardan birini seçersiniz. Site kayıtlarınızı hiçbir zaman almaz.
           </div>
         </details>
 
@@ -465,7 +465,31 @@ const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
             </span>
           </summary>
           <div class="text-muted-theme text-sm px-5 pb-5">
-            Sorular, üniversitelerin açık erişime sunduğu geçmiş yıl soruları ve ders materyallerinden derlenmektedir. Topluluk desteğiyle sürekli yeni dersler eklenmektedir.
+            Sorular, üniversitelerin açık erişime sunduğu geçmiş yıl soruları ve ders materyallerinden derlenmektedir. Atatürk AÖF sorularında resmî cevap anahtarı kullanılır; zayıf açıklamalar ders kitabındaki konuya dayanılarak yapay zekâ yardımıyla yeniden yazılmıştır. Bir hata görürseniz soru kartındaki konuşma simgesiyle bildirebilirsiniz.
+          </div>
+        </details>
+
+        <details class="group bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
+          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-slate-100 dark:hover:bg-slate-800/50 text-theme">
+            <span>Sohbet asistanı ücretli mi?</span>
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <div class="text-muted-theme text-sm px-5 pb-5">
+            Site ücretsizdir; asistan ise sizin yapay zekâ anahtarınızla çalışır. Google Gemini, OpenAI, Anthropic ya da OpenRouter anahtarınızı Ayarlar panelinden girersiniz, kullanım ücretini sağlayıcınız belirler. Anahtarınız yalnız tarayıcınızda kalır. Ayrıntılar için <a href="/rehber#ders-asistani" class="underline text-primary-theme">rehbere</a> bakın.
+          </div>
+        </details>
+
+        <details class="group bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
+          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-slate-100 dark:hover:bg-slate-800/50 text-theme">
+            <span>Kayıtlarımı başka cihaza taşıyabilir miyim?</span>
+            <span class="transition group-open:rotate-180">
+              <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+            </span>
+          </summary>
+          <div class="text-muted-theme text-sm px-5 pb-5">
+            Evet. <a href="/yedek" class="underline text-primary-theme">Kayıtlarını taşı</a> sayfasında kendi kişisel deponuz, Google Drive uygulama klasörünüz, şifreli GitHub gist'iniz, cihazdan cihaza bağlantı ya da yedek dosyası seçeneklerini bulursunuz. Hepsi isteğe bağlıdır ve site hiçbir veri almaz.
           </div>
         </details>
 

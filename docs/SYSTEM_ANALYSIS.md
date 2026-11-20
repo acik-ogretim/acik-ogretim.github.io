@@ -14,7 +14,9 @@ Sistem, sunucu tarafı işlem (Server-Side Processing) gerektirmeyen, tamamen is
 *   **Sayfa Boyutu:** İlk yüklemede indirilen veri boyutu (Gzip sıkıştırması ile) < 500KB olmalıdır.
 
 ### 2.2 Güvenlik
-*   **Veri Gizliliği:** Kullanıcı verileri (ilerleme, ayarlar) sadece kullanıcının tarayıcısında (`localStorage`) saklanır. Sunucuya hiçbir kişisel veri gönderilmez.
+*   **Veri Gizliliği:** Kullanıcı verileri (ilerleme, ayarlar, sohbet geçmişi) sadece kullanıcının tarayıcısında (`localStorage`) saklanır. Siteye hiçbir kişisel veri gönderilmez.
+*   **Yapay Zekâ Anahtarı (BYOK):** Anahtar yalnız tarayıcıda durur, yedek dosyasına girmez; sohbet istekleri tarayıcıdan doğrudan kullanıcının seçtiği sağlayıcıya gider.
+*   **Ziyaret Sayacı:** Çerezsizdir; Cloudflare Web Analytics ve günlük değişen özet değerle çalışan anonim sayaç (`workers/sayac/`) yalnız toplu sayı tutar.
 *   **XSS Koruması:** Astro ve React/Preact gibi modern frameworklerin sağladığı otomatik escaping mekanizmaları kullanılır.
 *   **HTTPS:** Tüm bağlantılar SSL/TLS üzerinden şifrelenmelidir (GitHub Pages varsayılan olarak sağlar).
 
@@ -37,8 +39,8 @@ Sistem verileri statik JSON dosyalarından oluşur. Veritabanı yönetim sistemi
 ## 4. Kısıtlamalar ve Riskler
 
 ### 4.1 Kısıtlamalar
-*   **Dinamik İçerik:** Sunucu tarafı olmadığı için kullanıcılar arası etkileşim (yorum yapma, canlı sohbet, sıralama tablosu) doğrudan uygulanamaz. Bu tür özellikler için 3. parti servisler (Firebase, Supabase vb.) gerekebilir.
-*   **Veri Senkronizasyonu:** Kullanıcı verileri tarayıcıda saklandığı için, kullanıcı cihaz değiştirdiğinde ilerlemesi kaybolur (Bulut senkronizasyonu şu an yoktur).
+*   **Dinamik İçerik:** Sunucu tarafı olmadığı için kullanıcılar arası etkileşim 3. parti servislerle çözülür: tartışma ve hata bildirimi GitHub Discussions (giscus) ve GitHub issue formlarıyla yapılır. Sıralama tablosu gibi özellikler hâlâ uygulanamaz. Bu tür özellikler için 3. parti servisler (Firebase, Supabase vb.) gerekebilir.
+*   **Veri Senkronizasyonu:** Kullanıcı verileri tarayıcıda saklandığı için cihaz değişiminde kaybolabilir. Bunu önlemek için `/yedek` sayfası isteğe bağlı eşitleme yolları sunar: remoteStorage, Google Drive uygulama klasörü, Dropbox, cihazdan cihaza (parola ile), şifreli GitHub gist ve dosya. Hiçbirini kullanmayan kullanıcının kayıtları yalnız tek tarayıcıda kalır.
 
 ### 4.2 Riskler
 *   **Telif Hakları:** Ders materyallerinin ve soruların telif hakları üniversitelere aittir. Proje "Adil Kullanım" ve eğitim amaçlı paylaşım prensiplerine dayanır, ancak yasal uyarı gelmesi durumunda içeriklerin kaldırılması gerekebilir.
