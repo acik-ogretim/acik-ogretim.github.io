@@ -572,7 +572,7 @@
   {
     "id": "s-a799dd9d51ab",
     "unitNumber": 0,
-    "text": "Aşağıdaki programdaki hata nereden kaynaklanmaktadır? #include <conio.h> main() { printf(“Ekrana herhangi bir şey yazdiriyorum…”); getch(); }",
+    "text": "Aşağıdaki programdaki hata nereden kaynaklanmaktadır? #include &lt;conio.h> main() { printf(“Ekrana herhangi bir şey yazdiriyorum…”); getch(); }",
     "options": {
       "A": "printf() içerisinde Türkçe karakter kullanılmasından",
       "B": "Kütüphane dosyası eksikliğinden",
@@ -1489,11 +1489,11 @@
     "unitNumber": 0,
     "text": "Matrisin satır sayısı satir_sayisi, sütun sayısı ise sutun_sayisi isminde bir değişkende tutuluyorsa, bu matris için bellekte yer ayırma işlemi ne şekilde yapılabilir?",
     "options": {
-      "A": "while(i<satir_sayisi) { matris[i] = (int*) malloc(sutun_sayisi * sizeof(int)); i++; }",
-      "B": "while(i<sutun_sayisi) { matris[i] = (int*) malloc(sutun_sayisi * sizeof(int)); i++; }",
-      "C": "while(i<satir_sayisi) { matris[i] = (int*) malloc(satir_sayisi * sizeof(int)); i++; }",
-      "D": "while(i<satir_sayisi) { matris[i] = (int*) malloc(sutun_sayisi, sizeof(int)); i++; }",
-      "E": "while(i<sutun_sayisi) { matris[i] = (int*) malloc(satir_sayisi , sizeof(int)); i++; }"
+      "A": "while(i&lt;satir_sayisi) { matris[i] = (int*) malloc(sutun_sayisi * sizeof(int)); i++; }",
+      "B": "while(i&lt;sutun_sayisi) { matris[i] = (int*) malloc(sutun_sayisi * sizeof(int)); i++; }",
+      "C": "while(i&lt;satir_sayisi) { matris[i] = (int*) malloc(satir_sayisi * sizeof(int)); i++; }",
+      "D": "while(i&lt;satir_sayisi) { matris[i] = (int*) malloc(sutun_sayisi, sizeof(int)); i++; }",
+      "E": "while(i&lt;sutun_sayisi) { matris[i] = (int*) malloc(satir_sayisi , sizeof(int)); i++; }"
     },
     "correctAnswer": "A",
     "explanation": "",
@@ -1504,11 +1504,11 @@
     "unitNumber": 0,
     "text": "Matrisin satır sayısı satir_sayisi, sütun sayısı ise sutun_sayisi isminde bir değişkende tutuluyorsa, bu matrisin soruda bahsi geçen rastgele değerlerle doldurulması ne şekilde yapılabilir?",
     "options": {
-      "A": "i = 0; j = 0; while(i<satir_sayisi) { while(j<sutun_sayisi) { matris[i][j]=1+rand()%10; j++; } j = 0; i++; }",
-      "B": "i = 0; j = 0; while(i<sutun_sayisi) { while(j<sutun_sayisi) { matris[i][j]=1+rand()%10; j++; } j = 0; i++; }",
-      "C": "i = 0; j = 0; while(i<satir_sayisi) { while(j<sutun_sayisi) { matris[i]=1+rand()%10; j++; } j = 0; i++; }",
-      "D": "i = 0; j = 0; while(i<satir_sayisi) { while(j<satir_sayisi) { matris[i][j]=1+rand()%10; j++; } j = 0; i++; }",
-      "E": "i = 0; j = 0; while(i<satir_sayisi) { while(j<sutun_sayisi) { matris[j]=1+rand()%10; j++; } j = 0; i++; }"
+      "A": "i = 0; j = 0; while(i&lt;satir_sayisi) { while(j&lt;sutun_sayisi) { matris[i][j]=1+rand()%10; j++; } j = 0; i++; }",
+      "B": "i = 0; j = 0; while(i&lt;sutun_sayisi) { while(j&lt;sutun_sayisi) { matris[i][j]=1+rand()%10; j++; } j = 0; i++; }",
+      "C": "i = 0; j = 0; while(i&lt;satir_sayisi) { while(j&lt;sutun_sayisi) { matris[i]=1+rand()%10; j++; } j = 0; i++; }",
+      "D": "i = 0; j = 0; while(i&lt;satir_sayisi) { while(j&lt;satir_sayisi) { matris[i][j]=1+rand()%10; j++; } j = 0; i++; }",
+      "E": "i = 0; j = 0; while(i&lt;satir_sayisi) { while(j&lt;sutun_sayisi) { matris[j]=1+rand()%10; j++; } j = 0; i++; }"
     },
     "correctAnswer": "A",
     "explanation": "",
@@ -1519,11 +1519,11 @@
     "unitNumber": 0,
     "text": "Bu programda aşağıdaki kütüphane dosyalarının hangisinin eklenmesine gerek yoktur?",
     "options": {
-      "A": "#include <stdio.h>",
-      "B": "#include <stdlib.h>",
-      "C": "#include <conio.h>",
-      "D": "#include <string.h>",
-      "E": "#include <time.h>"
+      "A": "#include &lt;stdio.h>",
+      "B": "#include &lt;stdlib.h>",
+      "C": "#include &lt;conio.h>",
+      "D": "#include &lt;string.h>",
+      "E": "#include &lt;time.h>"
     },
     "correctAnswer": "D",
     "explanation": "",
@@ -1564,11 +1564,11 @@
     "unitNumber": 0,
     "text": "Bütün malların adetlerinin güncellenmesi için aşağıdaki döngülerin hangisi kullanılabilir?",
     "options": {
-      "A": "int i = 1 ; while(i<mal_sayisi) { adedi[i] = yeni_adedi[i]; i++; }",
-      "B": "int i = 0 ; while(i<mal_sayisi+1) { adedi[i] = yeni_adedi[i]; i++; }",
-      "C": "int i = 0 ; while(i<mal_sayisi) { adedi[i] = yeni_adedi[i]; i++; }",
-      "D": "int i = 1 ; while(i<mal_sayisi+1) { adedi[i] = yeni_adedi[i]; i++; }",
-      "E": "int i = 0 ; while(i<mal_sayisi) { adedi[i+1] = yeni_adedi[i+1]; i++; }"
+      "A": "int i = 1 ; while(i&lt;mal_sayisi) { adedi[i] = yeni_adedi[i]; i++; }",
+      "B": "int i = 0 ; while(i&lt;mal_sayisi+1) { adedi[i] = yeni_adedi[i]; i++; }",
+      "C": "int i = 0 ; while(i&lt;mal_sayisi) { adedi[i] = yeni_adedi[i]; i++; }",
+      "D": "int i = 1 ; while(i&lt;mal_sayisi+1) { adedi[i] = yeni_adedi[i]; i++; }",
+      "E": "int i = 0 ; while(i&lt;mal_sayisi) { adedi[i+1] = yeni_adedi[i+1]; i++; }"
     },
     "correctAnswer": "C",
     "explanation": "",
@@ -1577,7 +1577,7 @@
   {
     "id": "s-2604540eb587",
     "unitNumber": 0,
-    "text": "Bu depodaki mallara ait özelliklerin ekranda gösterilebilmesi için aşağıdaki gibi bir döngü kullanılmıştır. Aşağıdakilerden hangisi bu döngüye uygun bir yazım şeklidir? for(i=1; i<mal_sayisi+1; i++) { printf (\"%d %-15s %d %d\\n\", i, malinadi[i], adedi[i], fiyati[i]); }",
+    "text": "Bu depodaki mallara ait özelliklerin ekranda gösterilebilmesi için aşağıdaki gibi bir döngü kullanılmıştır. Aşağıdakilerden hangisi bu döngüye uygun bir yazım şeklidir? for(i=1; i&lt;mal_sayisi+1; i++) { printf (\"%d %-15s %d %d\\n\", i, malinadi[i], adedi[i], fiyati[i]); }",
     "options": {
       "A": "1 civata 50 1",
       "B": "1 civata 50 1",

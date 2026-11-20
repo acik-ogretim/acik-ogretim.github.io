@@ -94,7 +94,18 @@ export function satirSonlari(metin: string): string {
     .replace(/^(?:<br\/>)+|(?:<br\/>)+$/g, "");
 }
 
+const IZINLI_ETIKET = new Set(["br", "b", "strong", "i", "em", "u", "sub", "sup", "img", "table", "tbody", "thead", "tr", "td", "th", "p", "span", "div", "ul", "ol", "li", "code", "pre"]);
+
+/** "0<x<10", "Mod<Medyan" : a bare "<" before a letter is read by the browser as a tag and the rest of
+ *  the text disappears. Escape it unless it opens a known tag. */
+export function kucukturKacir(metin: string): string {
+  // A known tag counts only when its name is followed by a space, "/" or ">" ("cout<<i<<endl" has none).
+  return metin.replace(/<(\/?)([A-Za-zğüşıöçĞÜŞİÖÇ]\w*)(?=(.?))/g, (m, kes: string, ad: string, sonraki: string) =>
+    IZINLI_ETIKET.has(ad.toLowerCase()) && /^[\s/>]$/.test(sonraki) ? m : `&lt;${kes}${ad}`,
+  );
+}
+
 /** Rules applied to question texts (olumsuzuVurgula is kept but not applied by default). */
 export function soruMetniBicimle(metin: string): string {
-  return onculSatirlari(satirSonlari(metin));
+  return onculSatirlari(satirSonlari(kucukturKacir(metin)));
 }

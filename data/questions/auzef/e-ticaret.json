@@ -725,7 +725,7 @@
   {
     "id": "s-8faccc22ddf5",
     "unitNumber": 0,
-    "text": "<DIRECTORY> … </DIRECTORY> etiketi için aşağıdakilerden hangisi doğrudur?",
+    "text": "&lt;DIRECTORY> … &lt;/DIRECTORY> etiketi için aşağıdakilerden hangisi doğrudur?",
     "options": {
       "A": "Bir tanım veya sözlük listesi işaretlemek için kullanılır.",
       "B": "Bir dizin listesi işaretlemek için kullanılır.",
@@ -4606,11 +4606,11 @@
     "unitNumber": 0,
     "text": "http istemcisinin sunucuya gönderdiği istek nasıl bir biçimdedir?",
     "options": {
-      "A": "“<major>.<minor>” biçiminde.",
+      "A": "“&lt;major>.&lt;minor>” biçiminde.",
       "B": "Protokol sürümü ve URI biçiminde.",
       "C": "Bir istek yöntemi, URI ve protokol sürümü biçimindedir.",
-      "D": "“<http>…</http>” biçiminde.",
-      "E": "“<html>…</html>” biçiminde"
+      "D": "“&lt;http>…&lt;/http>” biçiminde.",
+      "E": "“&lt;html>…&lt;/html>” biçiminde"
     },
     "correctAnswer": "C",
     "explanation": "",
@@ -4621,11 +4621,11 @@
     "unitNumber": 0,
     "text": "HTTP, protokolün sürümlerini belirtmek için nasıl bir numaralandırma biçimi kullanır?",
     "options": {
-      "A": "“<major>.<minor>” biçiminde.",
+      "A": "“&lt;major>.&lt;minor>” biçiminde.",
       "B": "Protokol sürümü ve URI biçiminde.",
       "C": "Bir istek yöntemi, URI ve protokol sürümü biçimindedir.",
-      "D": "“<http>…</http>” biçiminde.",
-      "E": "“<html>…</html>” biçiminde"
+      "D": "“&lt;http>…&lt;/http>” biçiminde.",
+      "E": "“&lt;html>…&lt;/html>” biçiminde"
     },
     "correctAnswer": "A",
     "explanation": "",
@@ -4709,7 +4709,7 @@
   {
     "id": "s-33f8213e4e3e",
     "unitNumber": 0,
-    "text": "<TITLE>…</TITLE> etiketi ne işe yarar?",
+    "text": "&lt;TITLE>…&lt;/TITLE> etiketi ne işe yarar?",
     "options": {
       "A": "Birinci seviye bir başlık oluşturur.",
       "B": "İçeriği merkeze, sola, sağa göre hizalar.",
@@ -4739,7 +4739,7 @@
   {
     "id": "s-597ae97d50d3",
     "unitNumber": 0,
-    "text": "<A HREF=\"abc.html\">ABC </A> etiketi ne işe yarar?",
+    "text": "&lt;A HREF=\"abc.html\">ABC &lt;/A> etiketi ne işe yarar?",
     "options": {
       "A": "Birinci seviye ABC yazılı başlık oluşturur.",
       "B": "ABC yazısını merkeze, sola, sağa göre hizalar.",
@@ -4754,7 +4754,7 @@
   {
     "id": "s-85c45ec05544",
     "unitNumber": 0,
-    "text": "<A HREF=\"#Sorular\"> Sorulara git </A> etiketi ne işe yarar?",
+    "text": "&lt;A HREF=\"#Sorular\"> Sorulara git &lt;/A> etiketi ne işe yarar?",
     "options": {
       "A": "Birinci seviye Sorular yazılı başlık oluşturur.",
       "B": "Sorular yazısını merkeze, sola, sağa göre hizalar.",
@@ -5071,11 +5071,11 @@
     "unitNumber": 0,
     "text": "Temel olarak bir web sayfasına müzik eklemenin kaç yolu vardır?",
     "options": {
-      "A": "Bir web sayfasına <bgsound> etiketi veya <embed> etiketi ile müzik eklemenin iki temel yolu vardır.",
-      "B": "Bir web sayfasına <bgsound> etiketi, <embed> etiketi ve <include> etiketi ile müzik eklemenin üç temel yolu vardır.",
-      "C": "Bir web sayfasına <bgsound> etiketi ile müzik eklemenin bir yolu vardır.",
-      "D": "Bir web sayfasına <embed> etiketi ile müzik eklemenin bir yolu vardır.",
-      "E": "Bir web sayfasına <include> etiketi ile müzik eklemenin bir yolu vardır"
+      "A": "Bir web sayfasına &lt;bgsound> etiketi veya &lt;embed> etiketi ile müzik eklemenin iki temel yolu vardır.",
+      "B": "Bir web sayfasına &lt;bgsound> etiketi, &lt;embed> etiketi ve &lt;include> etiketi ile müzik eklemenin üç temel yolu vardır.",
+      "C": "Bir web sayfasına &lt;bgsound> etiketi ile müzik eklemenin bir yolu vardır.",
+      "D": "Bir web sayfasına &lt;embed> etiketi ile müzik eklemenin bir yolu vardır.",
+      "E": "Bir web sayfasına &lt;include> etiketi ile müzik eklemenin bir yolu vardır"
     },
     "correctAnswer": "A",
     "explanation": "",
@@ -6226,11 +6226,11 @@
     "unitNumber": 0,
     "text": "JSF 1.2'de, bir yönetilen bean’ ler nasıl belirtilmekteydi?",
     "options": {
-      "A": "facesconfig.xml dosyasında aşağıdaki gibi <managed-bean> <managed-bean-name>helloWorld</managed-bean-name> <managed-bean-class>com.ilkders.test.HelloWorld</managed-bean-class> <managed-bean-scope>request</managed-bean-scope> </managed-bean>",
-      "B": "facesconfig.xml dosyasında aşağıdaki gibi <bean> <bean-name>helloWorld</bean-name> <bean-class>com.ilkders.test.HelloWorld</bean-class> <bean-scope>request</bean-scope> </bean>",
-      "C": "web.xml dosyasında aşağıdaki gibi <managed-bean> <managed-bean-name> com.ilkders.test.HelloWorld </managed-bean-name> <managed-bean-class> helloWorld </managed-bean-class> <managed-bean-scope>request</managed-bean-scope> </managed-bean>",
-      "D": "facesconfig.xml dosyasında aşağıdaki gibi <managed-bean> <managed-bean-name>helloWorld</managed-bean-name> <managed-bean-class>com.ilkders.test.HelloWorld</managed-bean-class> <managed-bean-scope>response</managed-bean-scope> </managed-bean>",
-      "E": "web.xml dosyasında aşağıdaki gibi <managed-bean> <managed-bean-name>helloWorld</managed-bean-name> <managed-bean-class>com.ilkders.test.HelloWorld</managed-bean-class> <managed-bean-scope>response</managed-bean-scope> </managed-bean>"
+      "A": "facesconfig.xml dosyasında aşağıdaki gibi &lt;managed-bean> &lt;managed-bean-name>helloWorld&lt;/managed-bean-name> &lt;managed-bean-class>com.ilkders.test.HelloWorld&lt;/managed-bean-class> &lt;managed-bean-scope>request&lt;/managed-bean-scope> &lt;/managed-bean>",
+      "B": "facesconfig.xml dosyasında aşağıdaki gibi &lt;bean> &lt;bean-name>helloWorld&lt;/bean-name> &lt;bean-class>com.ilkders.test.HelloWorld&lt;/bean-class> &lt;bean-scope>request&lt;/bean-scope> &lt;/bean>",
+      "C": "web.xml dosyasında aşağıdaki gibi &lt;managed-bean> &lt;managed-bean-name> com.ilkders.test.HelloWorld &lt;/managed-bean-name> &lt;managed-bean-class> helloWorld &lt;/managed-bean-class> &lt;managed-bean-scope>request&lt;/managed-bean-scope> &lt;/managed-bean>",
+      "D": "facesconfig.xml dosyasında aşağıdaki gibi &lt;managed-bean> &lt;managed-bean-name>helloWorld&lt;/managed-bean-name> &lt;managed-bean-class>com.ilkders.test.HelloWorld&lt;/managed-bean-class> &lt;managed-bean-scope>response&lt;/managed-bean-scope> &lt;/managed-bean>",
+      "E": "web.xml dosyasında aşağıdaki gibi &lt;managed-bean> &lt;managed-bean-name>helloWorld&lt;/managed-bean-name> &lt;managed-bean-class>com.ilkders.test.HelloWorld&lt;/managed-bean-class> &lt;managed-bean-scope>response&lt;/managed-bean-scope> &lt;/managed-bean>"
     },
     "correctAnswer": "A",
     "explanation": "",
@@ -6329,7 +6329,7 @@
   {
     "id": "s-bf88b3a070fc",
     "unitNumber": 0,
-    "text": "Aşağıdaki ara yüz sayfasında “Sayfa 1” isimli düğme tıklandığında sayfa1.xhtml’ e gitmek için nasıl bir yönetilen bean’ e ihtiyaç vardır? <h:form> <h:commandButton action=\"#{navigationController.moveToPage1}\" value=\"Sayfa 1\" /> </h:form>",
+    "text": "Aşağıdaki ara yüz sayfasında “Sayfa 1” isimli düğme tıklandığında sayfa1.xhtml’ e gitmek için nasıl bir yönetilen bean’ e ihtiyaç vardır? &lt;h:form> &lt;h:commandButton action=\"#{navigationController.moveToPage1}\" value=\"Sayfa 1\" /> &lt;/h:form>",
     "options": {
       "A": "@ManagedBean(name = \"moveToPage1\", eager = true) @RequestScoped public class NavigationController implements Serializable { public String moveToPage1(){ return \"sayfa1\"; } }",
       "B": "@ManagedBean(name = \"navigationController\", eager = true) @RequestScoped public NavigationController implements Serializable { public String moveToPage1(){ return \"moveTosayfa1\"; } }",

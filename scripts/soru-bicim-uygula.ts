@@ -5,7 +5,7 @@
 // "[5]" from code ("int A[5]") and soft hyphens; see the audit report of 20 Nov 2026.
 import fs from "node:fs";
 import path from "node:path";
-import { onculSatirlari, satirSonlari, secenekHarfleriniSil } from "./utils/soru-bicim.ts";
+import { kucukturKacir, onculSatirlari, satirSonlari, secenekHarfleriniSil } from "./utils/soru-bicim.ts";
 
 const YAZ = process.argv.includes("--yaz");
 const KOK = path.resolve("data/questions");
@@ -39,6 +39,8 @@ for (const uni of unis) {
       if (!String(q.id).startsWith("s-")) continue;
       if (typeof q.text === "string") {
         let t = q.text;
+        const k = kucukturKacir(t);
+        if (k !== t) { ekle("kucuktur-kacis", uni, ad, t, k); t = k; }
         const s = satirSonlari(t);
         if (s !== t) { ekle("satir-sonu", uni, ad, t, s); t = s; }
         const o = onculSatirlari(t);
@@ -47,6 +49,8 @@ for (const uni of unis) {
       }
       if (q.options && typeof q.options === "object" && !Array.isArray(q.options)) {
         let sec = q.options as Record<string, string>;
+        const kc = Object.fromEntries(Object.entries(sec).map(([a, v]) => [a, typeof v === "string" ? kucukturKacir(v) : v]));
+        if (JSON.stringify(kc) !== JSON.stringify(sec)) { ekle("kucuktur-kacis-sik", uni, ad, JSON.stringify(sec), JSON.stringify(kc)); sec = kc; }
         const h = secenekHarfleriniSil(sec);
         if (JSON.stringify(h) !== JSON.stringify(sec)) { ekle("sik-harfi", uni, ad, JSON.stringify(sec), JSON.stringify(h)); sec = h; }
         if (JSON.stringify(sec) !== JSON.stringify(q.options)) { q.options = sec; degisti = true; }

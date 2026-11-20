@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { olumsuzuVurgula, onculSatirlari, secenekHarfleriniSil } from "../utils/soru-bicim";
+import { kucukturKacir, olumsuzuVurgula, onculSatirlari, secenekHarfleriniSil } from "../utils/soru-bicim";
 
 describe("secenekHarfleriniSil", () => {
   it("drops the option's own letter with a parenthesis", () => {
@@ -64,5 +64,19 @@ describe("olumsuzuVurgula", () => {
     expect(olumsuzuVurgula("Stres her zaman hasarın sonucu değildir.")).toBe("Stres her zaman hasarın sonucu değildir.");
     const zaten = "Aşağıdakilerden hangisi <u>değildir</u>?";
     expect(olumsuzuVurgula(zaten)).toBe(zaten);
+  });
+});
+
+describe("kucukturKacir", () => {
+  it("escapes a bare < before a letter", () => {
+    expect(kucukturKacir("0<x<10 aralığında")).toBe("0&lt;x<10 aralığında");
+    expect(kucukturKacir("Mod<Medyan<Aritmetik Ortalama")).toBe("Mod&lt;Medyan&lt;Aritmetik Ortalama");
+  });
+  it("keeps real tags and spaced comparisons", () => {
+    expect(kucukturKacir("I. a<br/>II. b <sub>2</sub> <strong>x</strong>")).toBe("I. a<br/>II. b <sub>2</sub> <strong>x</strong>");
+    expect(kucukturKacir("r < i ise")).toBe("r < i ise");
+  });
+  it("escapes code that looks like a known tag", () => {
+    expect(kucukturKacir("cout<<i<<endl;")).toBe("cout<&lt;i<&lt;endl;");
   });
 });
