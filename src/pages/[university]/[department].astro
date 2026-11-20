@@ -24,7 +24,10 @@ export async function getStaticPaths() {
 const { university, department } = Astro.props;
 const allCourses = await getCourses(university.id, department.id);
 const canonical = await canonicalDepartments();
-const courseHref = (id: string) => `/${university.id}/${canonical.get(`${university.id}/${id}`) ?? department.id}/${id}`;
+const courseHref = (id: string) => {
+  const dept = canonical.get(university.id + "/" + id) ?? department.id;
+  return "/" + university.id + "/" + dept + "/" + id;
+};
 
 // Group by semester and sort each group alphabetically
 const semesters = Array.from({ length: department.duration }, (_, i) => i + 1);

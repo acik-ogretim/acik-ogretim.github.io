@@ -15,7 +15,7 @@ const KURALLAR: Array<[RegExp, SimgeAdi]> = [
   [/psikoloji|davranış|ruh sağlığı|danışman/i, "Brain"],
   [/sosyoloji|toplum|sosyal hizmet|sosyal politika|kültür/i, "Users"],
   [/felsefe|mantık|etik|ahlak/i, "Lightbulb"],
-  [/ilahiyat|kuran|kur'an|hadis|fıkıh|tefsir|din|siyer|kelam|tasavvuf/i, "BookMarked"],
+  [/ilahiyat|kuran|kur'an|hadis|fıkıh|tefsir|din|siyer|kelam|tasavvuf/i, "BookOpen"],
   [/coğrafya|harita|cbs|afet|deprem|iklim|çevre|ekoloji/i, "Earth"],
   [/fotoğraf|kamera|sinema|televizyon|radyo|video|görüntü/i, "Camera"],
   [/tasarım|grafik|sanat|resim|illüstrasyon|tipografi|moda|tekstil/i, "Palette"],
