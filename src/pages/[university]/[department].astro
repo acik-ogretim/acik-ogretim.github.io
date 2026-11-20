@@ -1,4 +1,5 @@
 ---
+import { dereceAdi } from "../../lib/derece";
 import Simge from "../../components/Simge.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getUniversities, getDepartments, getCourses } from "../../lib/api";
@@ -51,7 +52,7 @@ const groupedCourses = semesters.map((sem) => {
 });
 ---
 
-<Layout title={`${department.name} - ${university.shortName}`}>
+<Layout title={`${department.name} (${dereceAdi(department.degree)}) - ${university.shortName}`}>
   <div class="py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Breadcrumbs -->
@@ -75,6 +76,7 @@ const groupedCourses = semesters.map((sem) => {
         <div>
           <h1 class="text-3xl md:text-4xl font-bold text-theme mb-4">
             {department.name}
+            <span class="block mt-2 text-base font-semibold text-muted-theme">{dereceAdi(department.degree)}</span>
           </h1>
           <p class="text-xl text-muted-theme">
             Dönemlere göre ayrılmış ders listesi.

@@ -1,4 +1,5 @@
 ---
+import { dereceAdi } from "../lib/derece";
 import type { SimgeAdi } from "../lib/simge";
 import Simge from "../components/Simge.astro";
 import Layout from "../layouts/Layout.astro";
@@ -107,7 +108,12 @@ activeDepartments.forEach((dept) => {
 Object.values(degreeGroups).forEach((group) => {
   group.departments.sort((a, b) => a.name.localeCompare(b.name, "tr"));
 });
-inactiveDepartments.sort((a, b) => a.name.localeCompare(b.name, "tr"));
+const dereceSirasi = ["lisans", "lisans-tamamlama", "onlisans"];
+inactiveDepartments.sort(
+  (a, b) =>
+    a.name.localeCompare(b.name, "tr") ||
+    dereceSirasi.indexOf(a.degree || "lisans") - dereceSirasi.indexOf(b.degree || "lisans"),
+);
 
 const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
   "anadolu-aof": { icon: "GraduationCap", gradient: "from-blue-600 to-blue-800" },
@@ -258,8 +264,11 @@ const style = uniStyles[university.id] || {
                               ) : (
                                 <span class="text-2xl flex-shrink-0"><Simge ad="FolderOpen" /></span>
                               )}
-                              <span class="text-sm font-medium text-theme group-hover:text-primary-theme line-clamp-2">
-                                {dept.name}
+                              <span class="flex flex-col min-w-0">
+                                <span class="text-sm font-medium text-theme group-hover:text-primary-theme line-clamp-2">
+                                  {dept.name}
+                                </span>
+                                <span class="text-[11px] text-muted-theme">{dereceAdi(dept.degree)}</span>
                               </span>
                             </a>
                           </div>
@@ -306,8 +315,11 @@ const style = uniStyles[university.id] || {
                     ) : (
                       <span class="text-sm opacity-50"><Simge ad="FolderOpen" /></span>
                     )}
-                    <span class="text-xs text-muted-theme group-hover:text-theme line-clamp-1">
-                      {dept.name}
+                    <span class="flex flex-col min-w-0">
+                      <span class="text-xs text-muted-theme group-hover:text-theme line-clamp-2">
+                        {dept.name}
+                      </span>
+                      <span class="text-[11px] font-semibold text-muted-theme">{dereceAdi(dept.degree)}</span>
                     </span>
                   </a>
                 ))}
