@@ -13,13 +13,9 @@
     "correctAnswer": "E",
     "explanation": "İlişkisel cebirde (Relational Algebra), bir tablodan belirli bir koşulu sağlayan satırları (kayıtları) filtreleyerek alt bir küme oluşturma işlemine “Seçim” (Selection) işlemi denir ve Sigma (σ) sembolü ile gösterilir. “KrediMiktari > 5000” koşulu bir satır filtreleme işlemi olduğu için bu operasyon kesinlikle bir seçim işlemidir. (Atma/İzdüşüm ise sütun seçmek için kullanılır).",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2023-2024",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -40,13 +36,9 @@
     "correctAnswer": "C",
     "explanation": "Normalizasyonun (Normalleştirme) temel amacı veri tekrarlarını (redundancy) önlemek ve buna bağlı oluşan ekleme, silme ve güncelleme anomalilerini (bozulmaları) ortadan kaldırmaktır. Dolayısıyla normal formun derecesi (seviyesi) arttıkça (1NF -> 2NF -> 3NF), veri tabanının mimarisi iyileşir, tablolar daha düzenli hale gelir ve anomali (bozulma) oranı artmaz, tam aksine *azalır* ve sıfıra yaklaşır. Bu sebeple C şıkkı mantıksal olarak yanlıştır.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2023-2024",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -67,13 +59,9 @@
     "correctAnswer": "D",
     "explanation": "VARCHAR (Variable Character) veri türü, içerisine dinamik uzunlukta metinsel (alfanümerik) karakter alan bir formattır. Parantez içerisine yazılan sayı, o alana girilebilecek *maksimum* karakter sınırını (kapasitesini) ifade eder. VARCHAR(10) tanımlı bir hücreye 3 karakterlik (“Ali”) veya 8 karakterlik (“Ayşe Gül”) bir veri girilebilir; diskte sadece girilen boyut kadar yer kaplar. Ancak 11 karakter girilemez. Dolayısıyla bu değer “en fazla 10 karakter uzunluğunda” olabileceği anlamına gelir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2023-2024",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -94,13 +82,9 @@
     "correctAnswer": "B",
     "explanation": "SQL (Yapısal Sorgulama Dili) komutları DDL (Veri Tanımlama) ve DML (Veri İşleme) olarak ayrılır. Veri tabanında yeni bir tablo nesnesi yaratmak için kullanılan standart DDL komutu “CREATE TABLE” deyimidir. DROP TABLE tabloyu tamamen silmek, DELETE ise tablonun içindeki verileri silmek için kullanılır.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2023-2024",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -121,13 +105,9 @@
     "correctAnswer": "D",
     "explanation": "Veri tabanı cebrinde (ve genel matematikte küme teorisinde) Kartezyen Çarpım, katılan tüm kümelerin (tabloların) elemanlarının (satırlarının) birbirleriyle birebir kombinasyonlarının alınması işlemidir. Eğer birinci tabloda k adet satır, ikinci tabloda n adet satır ve üçüncü tabloda m adet satır varsa; her satır birbiriyle eşleşeceğinden toplam sonuç tablosunun satır (eleman) sayısı basitçe k × n × m formülü ile bulunur.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2023-2024",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -148,13 +128,9 @@
     "correctAnswer": "C",
     "explanation": "Kartezyen Çarpım (Cartesian Product / Cross Join), iki tablonun aralarında herhangi bir özel eşleştirme koşulu (WHERE/ON) olmaksızın birbirleriyle çarpılmasıdır. Birinci tablodaki her bir satırın, ikinci tablodaki her bir satırla tek tek eşleştirilmesiyle devasa bir kombinasyon havuzu (tüm olası eşleştirmeler) elde edilir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2023-2024",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -175,13 +151,9 @@
     "correctAnswer": "C",
     "explanation": "Veri tabanı tasarımında, bazı kritik sütunların boş bırakılması sistemsel sorunlara yol açabilir (Örn: Bir personelin adının girilmemesi). Bu durumu önlemek için sütunlara uygulanan kısıtlamaya (constraint) “NOT NULL” (Boş Bırakılamaz) adı verilir. Bu kısıtlama, o alana bir kayıt eklenirken mutlaka bir veri değerinin girilmesini zorunlu kılar.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2023-2024",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -202,13 +174,9 @@
     "correctAnswer": "D",
     "explanation": "Bir ilişkisel veri tabanı tablosundaki her bir kaydı (satırı) diğerlerinden kesin ve benzersiz (unique) bir biçimde ayırmak için seçilen referans alana “Birincil Anahtar” (Primary Key) denir. Birincil anahtarlar boş (NULL) bırakılamaz ve tablodaki hiçbir iki satırda aynı birincil anahtar değeri bulunamaz (örneğin TC Kimlik No veya Öğrenci No gibi).",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2023-2024",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -229,13 +197,9 @@
     "correctAnswer": "E",
     "explanation": "Veri tabanı normalizasyon süreçlerinde her normal form (NF) belirli bir veri anomalisini çözer. 1NF tekrarlayan grupları engeller, 2NF kısmi bağımlılıkları (partial dependency) ortadan kaldırır. “Üçüncü Normal Form” (3NF) ise anahtar olmayan sütunların (non-key attributes), yine anahtar olmayan başka bir sütuna bağımlı olmasını ifade eden “Geçişli Bağımlılıkları” (Transitive Dependency) ortadan kaldırmayı şart koşar.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2023-2024",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -256,13 +220,9 @@
     "correctAnswer": "B",
     "explanation": "İlişkisel bir veri tabanında bir alan (sütun) oluşturulduğunda, o alana girilecek tüm verilerin (satırların) yapısal formatı önceden belirlenmelidir. Örneğin, “Doğum_Tarihi” sütunundaki tüm veriler tarih (Date) formatında, “Maas” sütunundakiler ise sayısal (Integer/Decimal) formatta olmalıdır. Bu ortak karakteristik zorunluluğa “Veri Türü” (Data Type) denir ve veri bütünlüğünü sağlar.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2023-2024",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -283,13 +243,9 @@
     "correctAnswer": "D",
     "explanation": "Tıpkı Excel (elektronik tablo) mantığında olduğu gibi, veri tabanı tablolarında da dikey (sütun/alan) ve yatay (satır/kayıt) eksenlerin birleştiği, içerisine spesifik bir atomik verinin (örneğin Ali isminin veya 25 yaş değerinin) yazıldığı en küçük bilgi taşıyıcı kutucuklara “Hücre” (Cell) adı verilir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2023-2024",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -310,13 +266,9 @@
     "correctAnswer": "B",
     "explanation": "İlişkisel Veri Tabanı Yönetim Sistemlerinin (RDBMS) temel mantığı, verilerin birbirinden bağımsız parçalar halinde tutulması ve gerektiğinde bu parçaların mantıksal bir bağ ile birleştirilmesidir. Farklı tablolarda bulunan ortak alanlar (Birincil Anahtar – Yabancı Anahtar) aracılığıyla tabloların birbirine bağlanarak anlamlı bir bütün oluşturmasına “İlişki” (Relationship) denir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2023-2024",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -337,13 +289,9 @@
     "correctAnswer": "E",
     "explanation": "Veri tabanı sorgularında (SQL’de WHERE cümleciği veya ilişkisel cebirde Seçim – Sigma operatörü) verileri filtrelemek için mantıksal ve ilişkisel operatörler kullanılır. Eşittir (=), Büyüktür (>), Küçüktür (<) ve Eşit Değildir (, !=) en temel karşılaştırma operatörleridir. Ancak küme teorisine ait olan “Elemanıdır” (∈) sembolü, doğrudan bir ilişkisel cebir karşılaştırma operatörü olarak bu bağlamda standart bir seçim işlemi operatörü değildir (SQL’deki IN operatörü benzer bir işlev görse de teorik temel karşılaştırmalar arasında sayılmaz).",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2023-2024",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -364,13 +312,9 @@
     "correctAnswer": "D",
     "explanation": "Birincil anahtarın (Primary Key) en temel varoluş koşulu “benzersiz” (unique) olmasıdır. Aynı TC kimlik numarasına, müşteri numarasına veya sicil numarasına sahip iki farklı kişi olamaz; otomatik artan sayılar da (Auto Increment) asla tekrarlanmaz. Ancak aynı “Doğum Tarihine” sahip binlerce insan olabilir. Tekrarlanma ihtimali olan bir veri alanı asla birincil anahtar olarak kullanılamaz.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2023-2024",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -391,13 +335,9 @@
     "correctAnswer": "A",
     "explanation": "Birinci Normal Form (1NF), bir tablodaki her hücrenin yalnızca tek (atomik) bir değer içermesini şart koşar ancak veri tekrarını (redundancy) bütünüyle engelleyemez. Kısmi bağımlılıklar henüz giderilmediği için 1NF aşamasında tablolarda ciddi boyutta tekrarlı veriler (örneğin aynı bölüm adının veya aynı müşteri adresinin defalarca yazılması) mevcuttur. Veri tekrarları, normalizasyon derecesi yükseldikçe (2NF, 3NF vb.) tabloların bölünmesiyle giderilir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2023-2024",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -418,13 +358,9 @@
     "correctAnswer": "E",
     "explanation": "“Veri Modeli” (Data Model), verilerin veri tabanında nasıl yapılandırılacağını, mantıksal olarak nasıl organize edileceğini ve birbirleri ile olan ilişkilerinin, veri kısıtlamalarının (kuralların) ve işleme yöntemlerinin (operasyonların) ne tür bir mimariye oturtulacağını belirleyen kavramsal bir çatı ve araçlar bütünüdür. Hiyerarşik, Ağ (Network) ve İlişkisel veri modelleri bunlara en bilinen örneklerdir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2023-2024",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -445,13 +381,9 @@
     "correctAnswer": "D",
     "explanation": "Veri tabanı tasarımında alan (sütun) isimlendirme kuralları vardır. Alan adlarında boşluk bırakılmaz (A şıkkındaki “Veri Tabam” yanlıştır). Alan adları sadece sayılardan oluşamaz (E şıkkı yanlıştır). Ayrıca alan isimleri, tutulacak verinin “kategorisini/türünü” yansıtmalıdır; spesifik bir değer (Öğretmen veya Rüya gibi) alan adı değil, kaydın (verinin) kendisidir. Bu nedenle bir kişinin yaptığı işi tanımlayan kategori başlığı olarak “Meslek” en uygun alan adıdır.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2023-2024",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -472,13 +404,9 @@
     "correctAnswer": "B",
     "explanation": "İlişkisel veri tabanı modelinde tablolar satır (record/tuple) ve sütunlardan (field/attribute) oluşur. “Öğrenci no”, “ad”, “soyad” gibi her bir verinin türünü ve kategorisini belirten dikey yapı taşlarına “Alan” (Field veya Sütun) adı verilir. Satırlar (Kayıt) ise bu alanlara girilen verilerin bütünüyle oluşturduğu yatay bilgi dizileridir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2023-2024",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -499,13 +427,9 @@
     "correctAnswer": "E",
     "explanation": "Yabancı Anahtar (Foreign Key), bir tablodaki sütunun (veya sütunların), başka bir tablodaki Birincil Anahtarı (Primary Key) referans almasıdır. Bu anahtar sayesinde veri tekrarları engellenir (örneğin Siparişler tablosunda müşteri adını uzun uzun yazmak yerine sadece Müşteriler tablosundaki ID’sini referans vermek) ve tablolar arası veri bütünlüğü (Referential Integrity) sağlanmış olur.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2023-2024",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -526,13 +450,9 @@
     "correctAnswer": "E",
     "explanation": "Varlık-İlişki Modelinde (ER Model), hakkında bilgi toplanabilen, bağımsız bir varoluşu olan, somut (Kişi, Araba, Şehir) veya soyut (Banka Hesabı, Şirket, Proje) her türlü nesneye veya kavrama “Varlık” (Entity) adı verilir. ER diyagramlarında genellikle dikdörtgenlerle sembolize edilirler. Bu varlıkların özellikleri (adı, rengi, boyu) Nitelik (Attribute), birbirleri ile etkileşimleri ise İlişki (Relationship) ile tanımlanır.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2023-2024",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2023-2024",
         "examType": "vize"

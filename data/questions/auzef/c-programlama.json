@@ -13,13 +13,9 @@
     "correctAnswer": "B",
     "explanation": "A’da satır sonu noktalı virgül yerine virgül kullanılmıştır. C’de sabit (const) bir değere çalışma zamanında değeri belli olan bir değişken atanamaz. D’de sabitler tanımlandıkları an değer almalıdır. E’de ilk değer ataması yapılmamış (uninitialized) değişken kullanılmıştır. B şıkkı tamamen geçerli ve hatasızdır.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -44,13 +40,9 @@
     "correctAnswer": "A",
     "explanation": "C# dilinde tam sayı veri tiplerinin bellekte kapladıkları alanlar sırasıyla; byte (8 bit), short (16 bit), int (32 bit) ve long (64 bit) şeklindedir. Kapladıkları alan büyüdükçe alabilecekleri maksimum değer aralığı da artar. Bu nedenle doğru sıralama A şıkkıdır.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -75,13 +67,9 @@
     "correctAnswer": "C",
     "explanation": "C şıkkındaki 0x ile başlayan sayı geçerli bir onaltılık (hexadecimal) tam sayı atamasıdır. A’da ‘short’ rezerve edilmiş bir anahtar kelimedir değişken adı olamaz. B’de binary (0b) içinde sadece 0 ve 1 kullanılabilir. D’de ondalık ayırıcı olarak nokta (.) kullanılmalıdır. E’de bilimsel gösterim (E) float/double üretir, doğrudan int’e atanamaz.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -106,13 +94,9 @@
     "correctAnswer": "A",
     "explanation": "String biçimlendirmede süslü parantez içindeki sayılar, virgülden sonra verilen parametrelerin indeksini belirtir. x (0. indeks) = 5, y (1. indeks) = 3.14, z (2. indeks) = -2023’tür. 3.14, 5, -2023 çıktısını almak için indekslerin sırasıyla {1}, {0}, {2} olarak yazılması gerekir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -133,13 +117,9 @@
     "correctAnswer": "B",
     "explanation": "B şıkkında önce “İstanbul ” yan yana yazılır, ardından WriteLine ile “Üniversitesi” eklenip alt satıra geçilir. Sonra “2023” yazılıp alt satıra geçilir ve son satıra “AUZEF” yazılır. Bu tam olarak istenilen 3 satırlı formatı oluşturur.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -160,13 +140,9 @@
     "correctAnswer": "E",
     "explanation": "& ve | bitsel/mantıksal operatörler kullanıldığı için ifadenin tamamı değerlendirilir. ++x işlemi x’i 0 yapar, 0 >= -1 (True). true & True sonucu True olur. İkinci kısımda –x işlemi x’i tekrar -1’e düşürür. -1 + 1 = 0’dır. y (1) <= 0 işlemi False olur. Son olarak True | False birleşimi True sonucunu verir. x’in son değeri ise -1’dir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -187,13 +163,9 @@
     "correctAnswer": "D",
     "explanation": "C# 11 ve üstünde çok satırlı (raw) string sözdizimi mevcuttur. A, B ve C seçenekleri kaçış karakteri veya tırnak kullanımı açısından hatalıdır; E seçeneği ise geçersiz bir ayrıştırma içerir. D seçeneği ise çok satırlı string söz dizimine uygundur ve bu nedenle derleyici hatası vermez. Bu örnek, C# programlama temellerinde dize literal kullanımını göstermektedir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -218,13 +190,9 @@
     "correctAnswer": "E",
     "explanation": "WriteLine komutu metni yazıp alt satıra geçer, Write komutu ise yan yana yazmaya devam eder. İlk satır “AUZEF” yazıp alta geçer. İkinci satır “Programlama ” yazar ve yanından devam eder, sonra “Bilgisayar” yazılır ve alta geçilir. Son olarak boşluklu ” C#” yazılır.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -245,13 +213,9 @@
     "correctAnswer": "E",
     "explanation": "x >>= 2 ifadesi bitsel olarak sağa kaydırma (right shift) işlemi yapar. 4 sayısının (ikilik tabanda 100) 2 bit sağa kaydırılmasıyla elde edilen sayı 1’dir (001). x değişkeni 1 değerini alır. ~x ifadesi (bitsel NOT) sayının tüm bitlerini tersine çevirir ve 1 sayısının ikiye tümleyen (two’s complement) sistemindeki tersi -2’dir. Sonuç olarak 1 : -2 çıktısı elde edilir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -276,13 +240,9 @@
     "correctAnswer": "B",
     "explanation": "object tipinde bir değişken tanımlarken mutlaka başlangıç değeri atama zorunluluğu yoktur. Diğer seçenekler, var ve dynamic için bilinen davranışlardır. Bu yüzden D seçeneği yanlıştır.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -307,13 +267,9 @@
     "correctAnswer": "C",
     "explanation": "Verilen kod sorunsuz bir şekilde derlenir. x (1.5), y (1) ve z (0) değerlerinin toplamı double türünde 2.5 olarak hesaplanır (A doğru). ushort ve int türleri double türüne çevrilirken örtük (implicit) dönüşüm (B doğru), z değişkenine atama yapılırken (int) ifadesiyle aşikar (explicit) dönüşüm yapılmıştır (E doğru). Ayrıca ushort işaretsiz bir tam sayı tipidir (D doğru). Kod hata vermez, bu nedenle C şıkkı yanlıştır.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -334,13 +290,9 @@
     "correctAnswer": "E",
     "explanation": "",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -365,13 +317,9 @@
     "correctAnswer": "B",
     "explanation": "",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -396,13 +344,9 @@
     "correctAnswer": "D",
     "explanation": "",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -427,13 +371,9 @@
     "correctAnswer": "A",
     "explanation": "",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -458,13 +398,9 @@
     "correctAnswer": "D",
     "explanation": "",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -485,13 +421,9 @@
     "correctAnswer": "C",
     "explanation": "Konsoldan kullanıcı girdisi almak için `Console.ReadLine()` kullanılır. Gelen metin değerini tam sayıya (int) dönüştürmek için `Convert.ToInt32()` metodu kullanılır ve sonuç “int” türünde bir değişkene atanır.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -522,10 +454,6 @@
       {
         "year": "2025-2026",
         "examType": "final"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       }
     ]
   },
@@ -548,10 +476,6 @@
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "final"
-      },
-      {
-        "year": "2024-2025",
         "examType": "final"
       }
     ]
@@ -576,10 +500,6 @@
       {
         "year": "2025-2026",
         "examType": "final"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       }
     ]
   },
@@ -602,10 +522,6 @@
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "final"
-      },
-      {
-        "year": "2024-2025",
         "examType": "final"
       }
     ]
@@ -630,10 +546,6 @@
       {
         "year": "2025-2026",
         "examType": "final"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       }
     ]
   },
@@ -656,10 +568,6 @@
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "final"
-      },
-      {
-        "year": "2024-2025",
         "examType": "final"
       }
     ]
@@ -684,10 +592,6 @@
       {
         "year": "2025-2026",
         "examType": "final"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       }
     ]
   },
@@ -710,10 +614,6 @@
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "final"
-      },
-      {
-        "year": "2024-2025",
         "examType": "final"
       }
     ]
@@ -738,10 +638,6 @@
       {
         "year": "2025-2026",
         "examType": "final"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       }
     ]
   },
@@ -764,10 +660,6 @@
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "final"
-      },
-      {
-        "year": "2024-2025",
         "examType": "final"
       }
     ]
@@ -792,10 +684,6 @@
       {
         "year": "2025-2026",
         "examType": "final"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       }
     ]
   },
@@ -818,10 +706,6 @@
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "final"
-      },
-      {
-        "year": "2024-2025",
         "examType": "final"
       }
     ]
@@ -846,10 +730,6 @@
       {
         "year": "2025-2026",
         "examType": "final"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       }
     ]
   },
@@ -872,10 +752,6 @@
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "final"
-      },
-      {
-        "year": "2024-2025",
         "examType": "final"
       }
     ]
@@ -900,10 +776,6 @@
       {
         "year": "2025-2026",
         "examType": "final"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       }
     ]
   },
@@ -926,10 +798,6 @@
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "final"
-      },
-      {
-        "year": "2024-2025",
         "examType": "final"
       }
     ]
@@ -954,10 +822,6 @@
       {
         "year": "2025-2026",
         "examType": "final"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       }
     ]
   },
@@ -981,10 +845,6 @@
       {
         "year": "2025-2026",
         "examType": "final"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       }
     ]
   },
@@ -1007,10 +867,6 @@
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "final"
-      },
-      {
-        "year": "2024-2025",
         "examType": "final"
       }
     ]

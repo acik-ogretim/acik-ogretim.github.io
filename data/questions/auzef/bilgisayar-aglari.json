@@ -13,13 +13,9 @@
     "correctAnswer": "C",
     "explanation": "Bilgisayarlar arasında kaynak paylaşımı (dosya, yazıcı, internet bağlantısı vb.) yapılabilmesi için öncelikle bir bilgisayar ağı oluşturulmalıdır. Bu ağda fiziksel veri aktarımının gerçekleşebilmesi için kablolu (Ethernet, fiber optik) veya kablosuz (WiFi, Bluetooth) bir iletim ortamı zorunludur; bunlar olmadan veri fiziksel olarak iletilemez. SMTP yalnızca e-posta iletim protokolüdür; her kaynak paylaşım uygulaması için zorunlu değildir. Yönlendirici, küçük bir LAN’da zorunlu değildir; switch yeterli olabilir. Tekrarlayıcı ise yalnızca sinyal mesafe sorunlarında kullanılır, zorunlu bir bileşen değildir. Tek evrensel zorunluluk fiziksel iletim ortamının (kablolu ya da kablosuz) varlığıdır.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -44,13 +40,9 @@
     "correctAnswer": "A",
     "explanation": "Tekrarlayıcı (Repeater), OSI modelinin 1. katmanında (Fiziksel Katman) çalışan ve iletim sırasında zayıflayan (attenuation) sinyali alarak orijinal gücünde yeniden üreten cihazdır. Uzun mesafeli kablo bağlantılarında belirli aralıklarla yerleştirilen tekrarlayıcılar, sinyal bütünlüğünü korumanın en temel yoludur. Göbek (Hub) da katman-1 cihazıdır; gelen sinyali tüm portlara çoğaltır, ancak temel işlevi sinyal yeniden üretimi değil çoğaltma ve dağıtmadır. Üretici, Transfer edici ve Aktarıcı ise standart ağ terminolojisinde tanımlı cihaz adları değildir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -76,23 +68,15 @@
     "explanation": "Sinyaller iki temel biçimde bulunur: Analog sinyaller sürekli değişen sinüzoidal (sinüs) dalga formundadır. Dijital sinyaller ise yalnızca iki seviyeli (yüksek/düşük, 1/0) kare dalga formundadır. Bu nedenle “tüm sinyaller sinüzoidal dalga formundadır” ifadesi açıkça yanlıştır; dijital sinyaller kare dalgadır. A seçeneği doğrudur: gürültü iletim kalitesini bozar, SNR (Sinyal-Gürültü Oranı) maksimize edilmeye çalışılır. B doğrudur: analog kodlamada sinüzoidal dalga kullanılır. C doğrudur: modem bu dönüşümü gerçekleştiren cihazdır. E doğrudur: dijital sinyaller kare dalga üretir.",
     "source": "cikmis-soru",
     "year": "2025-2026",
-    "examType": "vize",
+    "examType": "final",
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "vize"
-      },
-      {
-        "year": "2025-2026",
         "examType": "final"
       },
       {
         "year": "2024-2025",
         "examType": "vize"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       },
       {
         "year": "2023-2024",
@@ -115,23 +99,15 @@
     "explanation": "Fiber optik kablo, veriyi elektrik sinyali yerine ışık darbeleri (lazer veya LED) aracılığıyla taşıyan iletim ortamıdır. Cam veya plastik fiberden oluşan bu kablo türü; son derece yüksek bant genişliği (Tbps düzeyinde), çok düşük sinyal kaybı (uzun mesafelerde), elektromanyetik parazite karşı tam bağışıklık ve yüksek güvenlik gibi üstün özellikler sunar. Koaksiyel kablo metal iletkenli olup bakır kullanır. UTP ve STP çift bükümlü bakır kablolar da elektriksel iletim yapar. “Light optik kablo” ise standart bir terim değildir; muhtemelen fiber optikle karıştırılmak üzere oluşturulmuş yanıltıcı bir seçenektir. Fiber optik kablolar; veri merkezleri, internet omurgaları ve uzun mesafeli iletişim altyapılarında yaygın kullanılır.",
     "source": "cikmis-soru",
     "year": "2025-2026",
-    "examType": "vize",
+    "examType": "final",
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "vize"
-      },
-      {
-        "year": "2025-2026",
         "examType": "final"
       },
       {
         "year": "2024-2025",
         "examType": "vize"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       },
       {
         "year": "2023-2024",
@@ -153,13 +129,9 @@
     "correctAnswer": "C",
     "explanation": "Bilgisayar ağlarının adlandırılması ve sınıflandırılması, içerdikleri cihaz sayısına veya türüne göre değil; kapsadıkları coğrafi alana ve ölçeğe göre yapılır. PAN birkaç metrelik kişisel alan, LAN tek bina veya kat, CAN bir kampüs, MAN bir şehir, WAN ülkeler ve kıtalar arasını kapsar. Ağda kaç yönlendirici veya anahtar bulunduğuna bakılmaksızın bu isimlendirme geçerlidir; belirleyici olan her zaman fiziksel kapsam alanıdır. Bu nedenle yalnızca C seçeneği doğru bilgiyi içermektedir; diğer tüm seçenekler cihaz sayısına odaklanmaktadır ki bu sınıflandırmanın temeli değildir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -184,13 +156,9 @@
     "correctAnswer": "E",
     "explanation": "NFC (Near Field Communication — Yakın Alan İletişimi), maksimum 20 cm mesafede çalışan çok kısa menzilli bir kablosuz iletişim teknolojisidir. Temassız ödeme (kredi kartı, akıllı telefon), erişim kartları, bilet sistemleri ve cihaz eşleştirme gibi uygulamalarda yaygın olarak kullanılır. LTE (Long Term Evolution / 4G), geniş alan mobil iletişim teknolojisidir; şehir ve ülke ölçeğinde çalışır. WiMAX şehir ölçeğinde kablosuz geniş bant erişim sağlar. Uydu teknolojisi kıtalar arası iletişimde kullanılır. CFN ise tanımlı bir kablosuz teknoloji standardı değildir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -211,13 +179,9 @@
     "correctAnswer": "A",
     "explanation": "Çift bükümlü (twisted pair) kablolar iki ana kategoriye ayrılır: UTP (Unshielded Twisted Pair — Korumasız Çift Bükümlü) ve STP (Shielded Twisted Pair — Korumalı Çift Bükümlü). UTP kablolar metal kılıf içermez; daha ucuz, esnek ve kolay kurulabilirdir; ofis ve ev ağlarında yaygın kullanılır. STP kablolar ise her tel çiftinin veya tüm kablonun etrafını saran metal folyo ya da örgü kılıfa sahiptir; elektromanyetik parazite (EMI) karşı daha iyi koruma sağlar, ancak daha ağır ve pahalıdır. 4, 5 veya 6 gibi seçenekler kabloların kategori sayılarıyla (Cat3, Cat5, Cat6 vb.) karıştırılmasından kaynaklanabilir; ancak temel tür sayısı 2’dir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -250,13 +214,9 @@
     "correctAnswer": "B",
     "explanation": "MAC (Media Access Control) adresi, OSI modelinin 2. katmanında (Veri Bağı Katmanı) kullanılan fiziksel donanım adresidir ve her ağ arayüz kartına üretici tarafından kalıcı olarak atanır. Köprü (Bridge) ve Anahtar (Switch), MAC adres tablolarını okuyarak veri çerçevelerini yalnızca hedef cihaza yönlendiren katman-2 cihazlarıdır. Köprü genellikle iki ağ segmentini birbirinden ayırırken, anahtar çok sayıda portu olan ve her porta bağlı cihazın MAC adresini öğrenip tabloya kaydeden daha gelişmiş bir cihazdır. Göbek (Hub) ise MAC adresi okumaz; gelen veriyi tüm portlara eşit şekilde dağıtan katman-1 cihazıdır. Tekrarlayıcı (Repeater) da katman-1 cihazı olup yalnızca sinyali yeniden üretir ve güçlendirir; MAC adresiyle ilgilenmez.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -277,13 +237,9 @@
     "correctAnswer": "A",
     "explanation": "Farklı binalar arasında iletişim kurabilmek için ağın en az bina ölçeğini aşan bir kapsama sahip olması gerekir. WAN (Geniş Alan Ağı) ülkeler ve kıtalar arasında çalışır; elbette binalar arasını da kapsar. MAN (Şehirsel Alan Ağı), bir şehir içindeki farklı konumlardaki binaları birbirine bağlamak için tasarlanmıştır; metro fiber altyapıları ve şehir genelindeki kurumsal ağlar buna örnektir. PAN (Kişisel Alan Ağı) ise maksimum birkaç metre ile sınırlıdır; bireysel cihazlar arasında (telefon, kulaklık, akıllı saat gibi) iletişim sağlar ve binalar arası iletişim için kesinlikle yetersizdir. Bu nedenle WAN ve MAN (I ve II) doğru yanıttır.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -308,13 +264,9 @@
     "correctAnswer": "D",
     "explanation": "Bu senaryoda iki katmanlı bir ağ yapısı söz konusudur. Her laboratuvar kendi iç ağına ihtiyaç duyar; bu ağ, tek bir mekânı kapsayan LAN (Local Area Network — Yerel Alan Ağı) olarak tanımlanır. Tüm kampüsü kapsayan ve laboratuvar LAN’larını birbirine bağlayan üst katman ağ ise CAN (Campus Area Network — Yerleşke Alan Ağı) olarak isimlendirilir. WAN ülkeler ve kıtalar arası büyük ölçekli ağlar, MAN bir şehrin tamamı, PAN birkaç metrelik kişisel alan için kullanılır; bunların hiçbiri kampüs içi senaryo için uygun değildir. CAN LAN kombinasyonu hem ölçek hem de işlev açısından bu senaryoya tam uymaktadır.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -339,13 +291,9 @@
     "correctAnswer": "C",
     "explanation": "ANSI (American National Standards Institute — Amerikan Ulusal Standartlar Enstitüsü), ABD’de gönüllü fikir birliğine dayalı standartları koordine eden ve onaylayan resmi bir kuruluştur. Ağ ve iletişim alanında pek çok standardın geliştirilmesine katkı sağlar. Bluetooth bir kablosuz iletişim teknolojisidir; standartları IEEE 802.15 ile belirlenir. WiFi de bir teknolojidir; standartları IEEE 802.11 serisiyle tanımlanır. NIC (Network Interface Card) bir donanım bileşenidir, standart belirleyen bir kuruluş değildir. INSA ise uluslararası alanda tanınan bir standart kuruluşu değildir. Diğer önemli standart kuruluşları arasında IEEE, ISO, ITU ve IETF sayılabilir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -370,13 +318,9 @@
     "correctAnswer": "D",
     "explanation": "Yıldız topolojisinin en belirgin avantajı hata izolasyonudur: merkez dışındaki herhangi bir cihazda veya kablosunda meydana gelen arıza yalnızca o cihazı etkiler, ağın geri kalanı sorunsuz çalışmaya devam eder. Bu özellik hata tespitini ve gidermeyi de kolaylaştırır. A seçeneği bus topolojisini, C seçeneği hub tabanlı yapıyı, E seçeneği halka veya bus topolojisini tanımlamaktadır. B seçeneği ise herhangi bir standart topoloji özelliği değildir. Yıldız topolojisinin dezavantajı merkez cihazın (switch/hub) arızalanması halinde tüm ağın çökmesidir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -401,13 +345,9 @@
     "correctAnswer": "B",
     "explanation": "Bu senaryoda iki katmanlı yapı söz konusudur. Şehrin tamamına hizmet eden büyük ağ MAN (Metropolitan Area Network — Şehirsel Alan Ağı) olarak tanımlanır; bir şehrin tüm bölgelerini kapsayan altyapıyı temsil eder. Her belediye binasının kendi içindeki özel ağı ise LAN (Local Area Network — Yerel Alan Ağı) olarak sınıflandırılır; tek bir bina veya katta çalışan sınırlı kapsamlı ağdır. PAN birkaç metrelik kişisel alan, WAN ülkeler ve kıtalar arası, SAN (Storage Area Network) depolama odaklı özel ağ, TAN ise standart bir ağ türü değildir. MAN LAN kombinasyonu bu senaryo için en doğru ve ölçek uyumlu cevaptır.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -432,13 +372,9 @@
     "correctAnswer": "C",
     "explanation": "Halka topolojisi bu senaryonun üç kriterini de en iyi karşılayan yapıdır. Tek kullanıcılı iletişim: Halka topolojisinde token (jeton) mekanizması kullanılır; yalnızca tokena sahip cihaz veri gönderebilir, böylece aynı anda tek kullanıcı iletişim kurar. Komşu cihazlar üzerinden aktarım: Veri halkada bir cihazdan komşu cihaza aktarılarak hedefe ulaşır; doğrudan bağlantı yoktur. Düşük kurulum maliyeti: Halka topolojisi, yıldız veya örgü topolojisine kıyasla çok daha az kablo ve donanım gerektirir. Bus topolojisinde de tek kullanıcı iletişim kurar; ancak veri komşu üzerinden değil, ortak iletim hattı üzerinden tüm cihazlara ulaşır. Örgü topolojisi son derece yüksek maliyetlidir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -463,13 +399,9 @@
     "correctAnswer": "A",
     "explanation": "Gateway (geçityolu/ağ geçidi), OSI modelinin tüm katmanlarında çalışabilen ve farklı protokollere, teknolojilere veya mimarilere sahip ağları birbirine bağlayan bir cihazdır. Temel işlevi protokol dönüşümüdür: örneğin bir IPv4 ağını IPv6 ağına bağlamak, bir LAN’ı internet üzerinden WAN’a bağlamak veya farklı iletişim protokollerini kullanan iki sistemi entegre etmek gateway’in tipik kullanım alanlarıdır. “Aynı teknolojiye sahip ağları bağlar” veya “en fazla X ağ bağlar” gibi ifadelerin tamamı yanlıştır; gateway sayı kısıtlaması olmaksızın farklı teknolojileri bir araya getirir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -494,13 +426,9 @@
     "correctAnswer": "E",
     "explanation": "Standart ağ topolojisi sınıflandırmasında tanımlı olan türler şunlardır: Bus (Ortak Yol), Ring (Halka), Star (Yıldız), Mesh (Örgü) ve Tree (Ağaç) topolojileri. “Genişletilmiş Halka Topolojisi (Extended Ring Topology)” ise bilgisayar ağları literatüründe standart olarak tanımlanmış ve adlandırılmış bir topoloji türü değildir. Bu terim muhtemelen halka veya çift halka (dual ring) topolojisiyle karıştırılmak üzere oluşturulmuş yanıltıcı bir seçenektir. Çift halka topolojisi (FDDI gibi) gerçek olmakla birlikte “genişletilmiş halka” terimi standartta yer almaz.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -525,13 +453,9 @@
     "correctAnswer": "E",
     "explanation": "Verim oranı (throughput), belirli bir süre içinde başarıyla iletilen net veri miktarını ifade eder ve bps, Mbps veya Gbps cinsinden ölçülür. Bant genişliği (bandwidth) teorik maksimum kapasiteyi belirtirken; throughput gerçek kullanım koşullarında elde edilen fiili veriyi yansıtır. Paket kayıpları, ağ yükü (congestion), protokol ek yükü (overhead) ve yeniden iletimler throughput’u bant genişliğinin altına düşürür. Veri başarımı, taşma oranı, verim çerçevesi ve taşma çerçevesi bu sorudaki tanımla örtüşmeyen ya da standart ağ terminolojisinde yer almayan ifadelerdir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -556,13 +480,9 @@
     "correctAnswer": "E",
     "explanation": "Bilgisayar ağlarının ölçeğe göre standart sınıflandırması şunlardır: PAN (Personal Area Network — Kişisel Alan Ağı), LAN (Local Area Network — Yerel Alan Ağı), CAN (Campus Area Network — Yerleşke Alan Ağı), MAN (Metropolitan Area Network — Şehirsel Alan Ağı) ve WAN (Wide Area Network — Geniş Alan Ağı). “Hücresel Alan Ağı” bu sınıflandırmada yer almaz. Hücresel ağ (Cellular Network) kavramı; GSM, LTE, 5G gibi mobil telefon iletişim altyapısını tanımlayan bir terimdir ve bilgisayar ağı ölçek sınıflandırması kategorisi değildir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -587,13 +507,9 @@
     "correctAnswer": "B",
     "explanation": "Yayılım gecikmesi (propagation delay), bir sinyalin fiziksel ortamda bir noktadan diğerine ulaşması için geçen süredir. Formül: Yayılım Gecikmesi = Mesafe / Sinyal Hızı. Bakır kabloda sinyal ışık hızının yaklaşık `-70’i hızında ilerlerken, fiber optik kabloda ışık hızına çok daha yakın ilerler. Yayım gecikmesi (transmission delay) ile karıştırılmamalıdır: yayım gecikmesi, veri bloğunun tamamının iletim hattına yerleştirilmesi için geçen süredir ve Veri Boyutu / Bant Genişliği formülüyle hesaplanır. Yayın penceresi, yayma penceresi, yayma yaşam süresi ve yayın gecikmesi bu sorudaki tanımla örtüşmeyen terimlerdir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -618,13 +534,9 @@
     "correctAnswer": "D",
     "explanation": "Protokol, iki veya daha fazla cihaz arasındaki iletişimi düzenleyen kural ve prosedürler bütünüdür (TCP/IP, HTTP, FTP gibi). Standart ise resmi bir kuruluş (ANSI, IEEE, ISO vb.) tarafından onaylanmış, geniş çapta kabul görmüş ve yayımlanmış teknik belgedir. Her protokol standart değildir; ancak yaygın kabul gören ve resmi kuruluşlarca onaylanan protokoller standart haline gelebilir. “10 yıl kullanılma” koşulu veya “protokol standart olamaz” ifadeleri tamamen hatalıdır. Protokoller ve standartlar aynı kuruluşlar tarafından da geliştirilebilir; farklı kuruluş şartı yoktur.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -657,10 +569,6 @@
         "examType": "final"
       },
       {
-        "year": "2024-2025",
-        "examType": "final"
-      },
-      {
         "year": "2023-2024",
         "examType": "final"
       }
@@ -686,10 +594,6 @@
       {
         "year": "2025-2026",
         "examType": "final"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       }
     ]
   },
@@ -712,10 +616,6 @@
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "final"
-      },
-      {
-        "year": "2024-2025",
         "examType": "final"
       }
     ]
@@ -740,10 +640,6 @@
       {
         "year": "2025-2026",
         "examType": "final"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       }
     ]
   },
@@ -766,10 +662,6 @@
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "final"
-      },
-      {
-        "year": "2024-2025",
         "examType": "final"
       }
     ]
@@ -794,10 +686,6 @@
       {
         "year": "2025-2026",
         "examType": "final"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       }
     ]
   },
@@ -820,10 +708,6 @@
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "final"
-      },
-      {
-        "year": "2024-2025",
         "examType": "final"
       }
     ]
@@ -848,10 +732,6 @@
       {
         "year": "2025-2026",
         "examType": "final"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       }
     ]
   },
@@ -874,10 +754,6 @@
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "final"
-      },
-      {
-        "year": "2024-2025",
         "examType": "final"
       }
     ]
@@ -902,10 +778,6 @@
       {
         "year": "2025-2026",
         "examType": "final"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       }
     ]
   },
@@ -928,10 +800,6 @@
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "final"
-      },
-      {
-        "year": "2024-2025",
         "examType": "final"
       }
     ]
@@ -956,10 +824,6 @@
       {
         "year": "2025-2026",
         "examType": "final"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       }
     ]
   },
@@ -982,10 +846,6 @@
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "final"
-      },
-      {
-        "year": "2024-2025",
         "examType": "final"
       },
       {
@@ -1014,10 +874,6 @@
       {
         "year": "2025-2026",
         "examType": "final"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       }
     ]
   },
@@ -1040,10 +896,6 @@
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "final"
-      },
-      {
-        "year": "2024-2025",
         "examType": "final"
       },
       {
@@ -1072,10 +924,6 @@
       {
         "year": "2025-2026",
         "examType": "final"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       }
     ]
   },
@@ -1099,10 +947,6 @@
       {
         "year": "2025-2026",
         "examType": "final"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       }
     ]
   },
@@ -1125,10 +969,6 @@
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "final"
-      },
-      {
-        "year": "2024-2025",
         "examType": "final"
       },
       {
@@ -1161,10 +1001,6 @@
       {
         "year": "2025-2026",
         "examType": "final"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       }
     ]
   },
@@ -1187,10 +1023,6 @@
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "final"
-      },
-      {
-        "year": "2024-2025",
         "examType": "final"
       },
       {
@@ -1219,10 +1051,6 @@
       {
         "year": "2025-2026",
         "examType": "final"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
       }
     ]
   },
@@ -1245,10 +1073,6 @@
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "final"
-      },
-      {
-        "year": "2024-2025",
         "examType": "final"
       },
       {
@@ -1283,10 +1107,6 @@
         "examType": "final"
       },
       {
-        "year": "2024-2025",
-        "examType": "final"
-      },
-      {
         "year": "2022-2023",
         "examType": "final"
       },
@@ -1311,23 +1131,15 @@
     "explanation": "<strong>Gürültü (noise)</strong>, iletişim sırasında sinyale karışan istenmeyen etkilerdir.",
     "source": "cikmis-soru",
     "year": "2024-2025",
-    "examType": "vize",
+    "examType": "final",
     "sinavlar": [
       {
         "year": "2024-2025",
-        "examType": "vize"
-      },
-      {
-        "year": "2024-2025",
         "examType": "final"
       },
       {
         "year": "2023-2024",
         "examType": "vize"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "final"
       }
     ]
   },
@@ -1345,13 +1157,9 @@
     "correctAnswer": "E",
     "explanation": "<strong>Anahtar (switch)</strong> ve <strong>köprü (bridge)</strong>, MAC adresi bazlı veri iletimi yapar.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2023-2024",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2024-2025",
-        "examType": "vize"
-      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -1377,10 +1185,6 @@
     "sinavlar": [
       {
         "year": "2024-2025",
-        "examType": "final"
-      },
-      {
-        "year": "2023-2024",
         "examType": "final"
       }
     ]
@@ -1440,10 +1244,6 @@
       {
         "year": "2024-2025",
         "examType": "final"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "final"
       }
     ]
   },
@@ -1466,10 +1266,6 @@
     "sinavlar": [
       {
         "year": "2024-2025",
-        "examType": "final"
-      },
-      {
-        "year": "2023-2024",
         "examType": "final"
       },
       {
@@ -1502,10 +1298,6 @@
       {
         "year": "2024-2025",
         "examType": "final"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "final"
       }
     ]
   },
@@ -1529,10 +1321,6 @@
       {
         "year": "2024-2025",
         "examType": "final"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "final"
       }
     ]
   },
@@ -1555,10 +1343,6 @@
     "sinavlar": [
       {
         "year": "2024-2025",
-        "examType": "final"
-      },
-      {
-        "year": "2023-2024",
         "examType": "final"
       }
     ]
@@ -1610,10 +1394,6 @@
       {
         "year": "2024-2025",
         "examType": "final"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "final"
       }
     ]
   },
@@ -1636,10 +1416,6 @@
     "sinavlar": [
       {
         "year": "2024-2025",
-        "examType": "final"
-      },
-      {
-        "year": "2023-2024",
         "examType": "final"
       },
       {
@@ -1674,10 +1450,6 @@
         "examType": "final"
       },
       {
-        "year": "2023-2024",
-        "examType": "final"
-      },
-      {
         "year": "2022-2023",
         "examType": "final"
       },
@@ -1707,10 +1479,6 @@
       {
         "year": "2024-2025",
         "examType": "final"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "final"
       }
     ]
   },
@@ -1734,10 +1502,6 @@
       {
         "year": "2024-2025",
         "examType": "final"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "final"
       }
     ]
   },
@@ -1760,10 +1524,6 @@
     "sinavlar": [
       {
         "year": "2024-2025",
-        "examType": "final"
-      },
-      {
-        "year": "2023-2024",
         "examType": "final"
       },
       {
@@ -1796,10 +1556,6 @@
       {
         "year": "2024-2025",
         "examType": "final"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "final"
       }
     ]
   },
@@ -1822,10 +1578,6 @@
     "sinavlar": [
       {
         "year": "2024-2025",
-        "examType": "final"
-      },
-      {
-        "year": "2023-2024",
         "examType": "final"
       }
     ]
@@ -1850,10 +1602,6 @@
       {
         "year": "2024-2025",
         "examType": "final"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "final"
       }
     ]
   },
@@ -1877,10 +1625,6 @@
       {
         "year": "2024-2025",
         "examType": "final"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "final"
       }
     ]
   },
@@ -1903,10 +1647,6 @@
     "sinavlar": [
       {
         "year": "2024-2025",
-        "examType": "final"
-      },
-      {
-        "year": "2023-2024",
         "examType": "final"
       }
     ]
