@@ -43,7 +43,9 @@ export async function enrich(action: EnrichAction, ctx: EnrichContext, signal?: 
     messages: [
       {
         role: "user",
-        content: `Soru: ${ctx.question}\n\nDoğru cevap: ${ctx.answer}\n\nMevcut açıklama: ${ctx.explanation}\n\nİstek: ${INSTRUCTION[action]}`,
+        content: ctx.explanation.trim()
+          ? `Soru: ${ctx.question}\n\nDoğru cevap: ${ctx.answer}\n\nMevcut açıklama: ${ctx.explanation}\n\nİstek: ${INSTRUCTION[action]}`
+          : `Soru: ${ctx.question}\n\nDoğru cevap: ${ctx.answer}\n\nBu sorunun açıklaması yok. İstek: ${action === "regenerate" ? "Bu soru için açıklama yaz: doğru cevabın neden doğru olduğunu ve akılda kalması gereken anahtar kavramı kısa bir paragrafta anlat." : INSTRUCTION[action]}`,
       },
     ],
   });

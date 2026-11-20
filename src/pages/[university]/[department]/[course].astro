@@ -275,7 +275,7 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { y
                         })}
                       </div>
 
-                      {q.explanation && (
+                      {(
                         <div class="explanation-card explanation-box text-muted-theme text-sm leading-relaxed relative group" data-explanation-id={`exp-${unit}-${qIdx}`}>
                           <div class="flex justify-between items-start mb-2">
                             <strong class="text-primary-theme uppercase tracking-wider block">
@@ -295,7 +295,20 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { y
                             </div>
                           </div>
 
-                          <div class="explanation-content" id={`content-${unit}-${qIdx}`} set:html={q.explanation} />
+                          {q.explanation ? (
+                            <div class="explanation-content" id={`content-${unit}-${qIdx}`} set:html={q.explanation} />
+                          ) : (
+                            <div class="explanation-content" id={`content-${unit}-${qIdx}`}>
+                              <p class="italic">Bu soru için henüz açıklama yok.</p>
+                              <button
+                                type="button"
+                                class="ai-enrichment-controls hidden mt-2 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-theme text-xs font-semibold hover:text-primary-theme hover:border-primary-theme/50"
+                                onclick={`window.handleAIAction && window.handleAIAction(this, 'regenerate', '${unit}', '${qIdx}')`}
+                              >
+                                Yapay zekâ ile açıklama oluştur
+                              </button>
+                            </div>
+                          )}
                           <div class="original-content-store hidden" id={`original-${unit}-${qIdx}`} set:html={q.explanation} />
                         </div>
                       )}
