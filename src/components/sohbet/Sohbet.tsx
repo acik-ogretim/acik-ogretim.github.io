@@ -4,13 +4,14 @@ import { Dialog } from "@base-ui/react/dialog";
 import { chat, maxIterations } from "@tanstack/ai";
 import { localStoragePersistence, useChat, type ConnectConnectionAdapter, type UIMessage } from "@tanstack/ai-react";
 import { Markdown } from "@tanstack/markdown/react";
-import { ArrowUp, BookOpen, ChartColumn, Check, Copy, KeyRound, ListChecks, LoaderCircle, RotateCcw, Search, Square, SquarePen, Volume2, X } from "lucide-react";
+import { ArrowUp, AudioLines, BookOpen, ChartColumn, Check, Copy, History, KeyRound, ListChecks, LoaderCircle, Mic, MicOff, RotateCcw, Search, Square, SquarePen, Trash2, Volume2, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 import { createAdapter, loadKey, loadSettings, modelFor, type ChatSettings } from "../../lib/chat/providers";
 import SaglayiciAyarlari, { SETTINGS_EVENT } from "./SaglayiciAyarlari";
 import { QUIZ_TOOL, courseTools, loadCatalog, systemPrompt, type CatalogCourse, type ChatQuestion } from "../../lib/chat/tools";
 import SinavKarti from "./SinavKarti";
+import { kaydet, listele, sil, threadId, yeniKimlik, type Konusma } from "../../lib/chat/gecmis";
 
 const TOOL_LABEL: Record<string, string> = {
   ders_bul: "Ders aranıyor",
@@ -46,9 +47,16 @@ export function ChatPanel({
   const [hasKey, setHasKey] = useState(true);
   const [ready, setReady] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [historyOpen, setHistoryOpen] = useState(false);
+  // "" is the course's first (pre-history) conversation; others get a generated id
+  const [konusma, setKonusma] = useState<string | null>(null);
   useEffect(() => {
     if (keyAsk) setSettingsOpen(true);
   }, [keyAsk]);
+  useEffect(() => {
+    if (!ready) return;
+    setKonusma(listele(courseKey)[0]?.id ?? "");
+  }, [courseKey, ready]);
 
   // Browser-only state is read after mount, so the prerendered HTML stays the same for everyone.
   useEffect(() => {
@@ -111,6 +119,20 @@ export function ChatPanel({
             {course ? `${course.universityShort || course.university} · ${course.department}` : "Bir ders adı yazarak başla"}
           </span>
         </div>
+        <HistoryDialog
+          open={historyOpen}
+          onOpenChange={setHistoryOpen}
+          courseKey={courseKey}
+          current={konusma}
+          onPick={(id) => {
+            setKonusma(id);
+            setHistoryOpen(false);
+          }}
+          onNew={() => {
+            setKonusma(yeniKimlik());
+            setHistoryOpen(false);
+          }}
+        />
         <SettingsDialog open={settingsOpen} onOpenChange={setSettingsOpen} />
         {onClose && (
           <IconButton label="Kapat" onClick={onClose}>
@@ -118,10 +140,12 @@ export function ChatPanel({
           </IconButton>
         )}
       </header>
-      {ready && (
+      {ready && konusma !== null && (
         <ChatBody
-          key={`${courseKey ?? "genel"}`}
+          key={threadId(courseKey, konusma)}
           courseKey={courseKey}
+          konusma={konusma}
+          onNew={() => setKonusma(yeniKimlik())}
           course={course}
           settings={settings}
           hasKey={hasKey}
@@ -135,6 +159,8 @@ export function ChatPanel({
 
 function ChatBody({
   courseKey,
+  konusma,
+  onNew,
   course,
   settings,
   hasKey,
@@ -142,6 +168,8 @@ function ChatBody({
   draft,
 }: {
   courseKey: string | null;
+  konusma: string;
+  onNew: () => void;
   course: CatalogCourse | null;
   settings: ChatSettings;
   hasKey: boolean;
@@ -176,8 +204,8 @@ function ChatBody({
     [],
   );
 
-  const { messages, sendMessage, isLoading, error, stop, clear, reload } = useChat({
-    threadId: `sohbet:${courseKey ?? "genel"}`,
+  const { messages, sendMessage, isLoading, error, stop, reload } = useChat({
+    threadId: threadId(courseKey, konusma),
     connection,
     persistence: localStoragePersistence(),
   });
@@ -187,8 +215,53 @@ function ChatBody({
     end.current?.scrollIntoView({ block: "end" });
   }, [messages]);
 
+  // Live mode: listen, send when the sentence ends, read the answer aloud, listen again.
+  const [canli, setCanli] = useState<"kapali" | "dinliyor" | "dusunuyor" | "konusuyor">("kapali");
+  const [duyulan, setDuyulan] = useState("");
+  const okunan = useRef<string | null>(messages.at(-1)?.id ?? null);
+  const dinle = useCanliDinleme(
+    (t) => setDuyulan(t),
+    (t) => {
+      setDuyulan("");
+      if (t.trim()) {
+        setCanli("dusunuyor");
+        send(t.trim());
+      } else setCanli((d) => (d === "dinliyor" ? "kapali" : d));
+    },
+  );
+  useEffect(() => {
+    if (canli === "kapali" || isLoading) return;
+    const son = messages.at(-1);
+    if (!son || son.role !== "assistant" || son.id === okunan.current) return;
+    okunan.current = son.id;
+    const metin = son.parts.map((p) => (p.type === "text" ? p.content : "")).join("\n\n").trim();
+    if (!metin) return;
+    setCanli("konusuyor");
+    seslendir(metin, () => {
+      setCanli((d) => {
+        if (d === "kapali") return d;
+        dinle.baslat();
+        return "dinliyor";
+      });
+    });
+  }, [isLoading, messages, canli]);
+  const canliAc = () => {
+    if (!hasKey) return onNeedKey();
+    okunan.current = messages.at(-1)?.id ?? null;
+    setCanli("dinliyor");
+    dinle.baslat();
+  };
+  const canliKapat = () => {
+    dinle.durdur();
+    speechSynthesis.cancel();
+    setCanli("kapali");
+    setDuyulan("");
+  };
+  useEffect(() => () => canliKapat(), []);
+
   const send = (text: string) => {
     if (!hasKey) return onNeedKey();
+    kaydet(courseKey, konusma, messages.length ? undefined : text);
     void sendMessage(text);
   };
 
@@ -213,7 +286,25 @@ function ChatBody({
           <div ref={end} />
         </div>
       </main>
-      <Composer running={isLoading} onSend={send} onStop={stop} onClear={messages.length ? clear : undefined} draft={draft} model={modelFor(settings)} onModel={onNeedKey} />
+      {canli !== "kapali" && (
+        <div className="shrink-0 px-3">
+          <div className="mx-auto w-full max-w-2xl flex items-center gap-3 rounded-2xl border px-3 py-2" style={{ borderColor: "var(--primary-color)", background: "var(--card-bg)" }} role="status">
+            <AudioLines className={`size-5 shrink-0 ${canli === "dinliyor" ? "animate-pulse" : ""}`} style={{ color: "var(--primary-color)" }} aria-hidden />
+            <span className="min-w-0 flex-1 text-sm line-clamp-2">
+              {canli === "dinliyor" ? duyulan || "Dinliyorum, konuş" : canli === "dusunuyor" ? "Düşünüyor" : "Cevabı okuyor"}
+            </span>
+            {canli === "konusuyor" && (
+              <IconButton label="Sözünü kes, beni dinle" onClick={() => { speechSynthesis.cancel(); setCanli("dinliyor"); dinle.baslat(); }}>
+                <Mic className="size-5" aria-hidden />
+              </IconButton>
+            )}
+            <IconButton label="Canlı konuşmayı bitir" onClick={canliKapat}>
+              <X className="size-5" aria-hidden />
+            </IconButton>
+          </div>
+        </div>
+      )}
+      <Composer onLive={canli === "kapali" && dinle.destek ? canliAc : undefined} running={isLoading} onSend={send} onStop={stop} onClear={messages.length ? onNew : undefined} draft={draft} model={modelFor(settings)} onModel={onNeedKey} />
     </>
   );
 }
@@ -284,6 +375,28 @@ function Message({ message, last, busy, onReload }: { message: UIMessage; last: 
   );
 }
 
+/** Reads text aloud with the voice and speed the site's reader uses (quiz-settings). */
+function seslendir(text: string, onEnd: () => void) {
+  let voiceURI = "";
+  let rate = 1.2;
+  try {
+    const s = JSON.parse(localStorage.getItem("quiz-settings") ?? "{}");
+    voiceURI = s.voiceURI ?? "";
+    rate = Number(s.playbackRate) || rate;
+  } catch {
+    /* defaults */
+  }
+  const plain = text.replace(/\[([^\]]+)\]\([^)]*\)/g, "$1").replace(/[*_#>`|]/g, "");
+  const u = new SpeechSynthesisUtterance(plain);
+  u.lang = "tr-TR";
+  u.rate = rate;
+  const v = speechSynthesis.getVoices().find((x) => x.voiceURI === voiceURI);
+  if (v) u.voice = v;
+  u.onend = u.onerror = () => onEnd();
+  speechSynthesis.cancel();
+  speechSynthesis.speak(u);
+}
+
 function MessageActions({ text, onReload }: { text: string; onReload?: () => void }) {
   const [copied, setCopied] = useState(false);
   const [speaking, setSpeaking] = useState(false);
@@ -294,25 +407,7 @@ function MessageActions({ text, onReload }: { text: string; onReload?: () => voi
       setSpeaking(false);
       return;
     }
-    // Same voice and speed the site's reader uses (quiz-settings).
-    let voiceURI = "";
-    let rate = 1.2;
-    try {
-      const s = JSON.parse(localStorage.getItem("quiz-settings") ?? "{}");
-      voiceURI = s.voiceURI ?? "";
-      rate = Number(s.playbackRate) || rate;
-    } catch {
-      /* defaults */
-    }
-    const plain = text.replace(/\[([^\]]+)\]\([^)]*\)/g, "$1").replace(/[*_#>`]/g, "");
-    const u = new SpeechSynthesisUtterance(plain);
-    u.lang = "tr-TR";
-    u.rate = rate;
-    const v = speechSynthesis.getVoices().find((x) => x.voiceURI === voiceURI);
-    if (v) u.voice = v;
-    u.onend = u.onerror = () => setSpeaking(false);
-    speechSynthesis.cancel();
-    speechSynthesis.speak(u);
+    seslendir(text, () => setSpeaking(false));
     setSpeaking(true);
   };
   const small = "inline-flex size-9 items-center justify-center rounded-lg hover:opacity-80";
@@ -367,6 +462,7 @@ function Composer({
   onSend,
   onStop,
   onClear,
+  onLive,
   draft,
   model,
   onModel,
@@ -375,12 +471,14 @@ function Composer({
   onSend: (t: string) => void;
   onStop: () => void;
   onClear?: () => void;
+  onLive?: () => void;
   draft?: { text: string; n: number };
   model: string;
   onModel: () => void;
 }) {
   const [text, setText] = useState(draft?.text ?? "");
   const input = useRef<HTMLTextAreaElement>(null);
+  const ses = useDikte((t) => setText(t));
   useEffect(() => {
     if (!draft) return;
     setText(draft.text);
@@ -389,6 +487,7 @@ function Composer({
   const submit = () => {
     const t = text.trim();
     if (!t || running) return;
+    ses.durdur();
     onSend(t);
     setText("");
   };
@@ -428,6 +527,17 @@ function Composer({
               {model}
             </button>
           </div>
+          <div className="flex items-center gap-1">
+          {onLive && !running && (
+            <IconButton label="Canlı konuş" onClick={onLive}>
+              <AudioLines className="size-5" aria-hidden />
+            </IconButton>
+          )}
+          {ses.destek && !running && (
+            <IconButton label={ses.dinliyor ? "Dinlemeyi bitir" : "Sesle yaz"} onClick={() => (ses.dinliyor ? ses.durdur() : ses.baslat(text))}>
+              {ses.dinliyor ? <MicOff className="size-5" style={{ color: "var(--primary-color)" }} aria-hidden /> : <Mic className="size-5" aria-hidden />}
+            </IconButton>
+          )}
           {running ? (
             <IconButton label="Durdur" onClick={onStop} solid>
               <Square className="size-4" aria-hidden />
@@ -437,9 +547,177 @@ function Composer({
               <ArrowUp className="size-5" aria-hidden />
             </IconButton>
           )}
+          </div>
         </div>
       </form>
     </div>
+  );
+}
+
+type Tanima = {
+  lang: string;
+  continuous: boolean;
+  interimResults: boolean;
+  onresult: ((e: { results: ArrayLike<ArrayLike<{ transcript: string }> & { isFinal: boolean }> }) => void) | null;
+  onend: (() => void) | null;
+  onerror: (() => void) | null;
+  start: () => void;
+  stop: () => void;
+};
+
+/** Turkish dictation with the browser's speech recognition (Chrome, Edge, Safari). Text is appended to what was typed. */
+function useDikte(onText: (t: string) => void) {
+  const [destek, setDestek] = useState(false);
+  const [dinliyor, setDinliyor] = useState(false);
+  const tanima = useRef<Tanima | null>(null);
+  useEffect(() => {
+    const w = window as unknown as { SpeechRecognition?: new () => Tanima; webkitSpeechRecognition?: new () => Tanima };
+    setDestek(Boolean(w.SpeechRecognition || w.webkitSpeechRecognition));
+    return () => tanima.current?.stop();
+  }, []);
+  const baslat = (onceki: string) => {
+    const w = window as unknown as { SpeechRecognition?: new () => Tanima; webkitSpeechRecognition?: new () => Tanima };
+    const Sinif = w.SpeechRecognition || w.webkitSpeechRecognition;
+    if (!Sinif) return;
+    const r = new Sinif();
+    r.lang = "tr-TR";
+    r.continuous = true;
+    r.interimResults = true;
+    const bas = onceki.trim() ? onceki.trim() + " " : "";
+    r.onresult = (e) => {
+      let t = "";
+      for (let i = 0; i < e.results.length; i++) t += e.results[i][0].transcript;
+      onText(bas + t.trim());
+    };
+    r.onend = () => setDinliyor(false);
+    r.onerror = () => setDinliyor(false);
+    tanima.current = r;
+    r.start();
+    setDinliyor(true);
+  };
+  const durdur = () => {
+    tanima.current?.stop();
+    setDinliyor(false);
+  };
+  return { destek, dinliyor, baslat, durdur };
+}
+
+/** One spoken turn: interim text while speaking, final text when the sentence ends. */
+function useCanliDinleme(onAra: (t: string) => void, onSon: (t: string) => void) {
+  const tanima = useRef<Tanima | null>(null);
+  const [destek, setDestek] = useState(false);
+  const geri = useRef({ onAra, onSon });
+  geri.current = { onAra, onSon };
+  useEffect(() => {
+    const w = window as unknown as { SpeechRecognition?: new () => Tanima; webkitSpeechRecognition?: new () => Tanima };
+    setDestek(Boolean((w.SpeechRecognition || w.webkitSpeechRecognition) && "speechSynthesis" in window));
+  }, []);
+  const baslat = () => {
+    const w = window as unknown as { SpeechRecognition?: new () => Tanima; webkitSpeechRecognition?: new () => Tanima };
+    const Sinif = w.SpeechRecognition || w.webkitSpeechRecognition;
+    if (!Sinif) return;
+    tanima.current?.stop();
+    const r = new Sinif();
+    r.lang = "tr-TR";
+    r.continuous = false;
+    r.interimResults = true;
+    let son = "";
+    r.onresult = (e) => {
+      let t = "";
+      for (let i = 0; i < e.results.length; i++) t += e.results[i][0].transcript;
+      son = t;
+      geri.current.onAra(t);
+    };
+    r.onend = () => {
+      if (tanima.current === r) geri.current.onSon(son);
+    };
+    r.onerror = () => undefined;
+    tanima.current = r;
+    try {
+      r.start();
+    } catch {
+      /* already started */
+    }
+  };
+  const durdur = () => {
+    const r = tanima.current;
+    tanima.current = null;
+    r?.stop();
+  };
+  return { destek, baslat, durdur };
+}
+
+function HistoryDialog({
+  open,
+  onOpenChange,
+  courseKey,
+  current,
+  onPick,
+  onNew,
+}: {
+  open: boolean;
+  onOpenChange: (o: boolean) => void;
+  courseKey: string | null;
+  current: string | null;
+  onPick: (id: string) => void;
+  onNew: () => void;
+}) {
+  const [liste, setListe] = useState<Konusma[]>([]);
+  useEffect(() => {
+    if (open) setListe(listele(courseKey));
+  }, [open, courseKey]);
+  const tarih = (t: number) => (t ? new Date(t).toLocaleString("tr-TR", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }) : "");
+  return (
+    <Dialog.Root open={open} onOpenChange={onOpenChange}>
+      <Dialog.Trigger aria-label="Sohbet geçmişi" title="Sohbet geçmişi" className="inline-flex size-11 items-center justify-center rounded-full" style={{ color: "var(--text-color-muted)" }}>
+        <History className="size-5" aria-hidden />
+      </Dialog.Trigger>
+      <Dialog.Portal>
+        <Dialog.Backdrop className="fixed inset-0 bg-black/40 z-[200]" />
+        <Dialog.Popup
+          className="fixed z-[201] inset-x-0 bottom-0 max-h-[80dvh] flex flex-col rounded-t-2xl p-4 pb-[max(1rem,env(safe-area-inset-bottom))] md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-[28rem] md:rounded-2xl"
+          style={{ background: "var(--card-bg)", color: "var(--text-color)" }}
+        >
+          <div className="flex items-center justify-between mb-2">
+            <Dialog.Title className="text-base font-semibold">Sohbet geçmişi</Dialog.Title>
+            <Dialog.Close aria-label="Kapat" className="inline-flex size-11 items-center justify-center rounded-full" style={{ color: "var(--text-color-muted)" }}>
+              <X className="size-5" aria-hidden />
+            </Dialog.Close>
+          </div>
+          <button type="button" onClick={onNew} className="flex items-center gap-2 rounded-lg px-3 min-h-11 text-sm font-medium mb-2" style={{ background: "var(--primary-color)", color: "var(--primary-color-text)" }}>
+            <SquarePen className="size-4" aria-hidden /> Yeni sohbet
+          </button>
+          {liste.length === 0 && <p className="text-sm py-3" style={{ color: "var(--text-color-muted)" }}>Henüz kayıtlı sohbet yok.</p>}
+          <ul className="flex flex-col gap-1 overflow-y-auto">
+            {liste.map((k) => (
+              <li key={k.id || "ilk"} className="flex items-center gap-1">
+                <button
+                  type="button"
+                  onClick={() => onPick(k.id)}
+                  aria-current={k.id === current ? "true" : undefined}
+                  className="min-w-0 flex-1 text-left rounded-lg border px-3 py-2 min-h-11"
+                  style={{ borderColor: k.id === current ? "var(--primary-color)" : "var(--border-color)" }}
+                >
+                  <span className="block truncate text-sm">{k.baslik}</span>
+                  {k.guncel > 0 && <span className="block text-xs" style={{ color: "var(--text-color-muted)" }}>{tarih(k.guncel)}</span>}
+                </button>
+                <IconButton
+                  label="Sohbeti sil"
+                  onClick={() => {
+                    sil(courseKey, k.id);
+                    const kalan = listele(courseKey);
+                    setListe(kalan);
+                    if (k.id === current) onPick(kalan[0]?.id ?? "");
+                  }}
+                >
+                  <Trash2 className="size-4" aria-hidden />
+                </IconButton>
+              </li>
+            ))}
+          </ul>
+        </Dialog.Popup>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 }
 
