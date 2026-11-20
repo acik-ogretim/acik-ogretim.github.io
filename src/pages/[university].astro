@@ -56,13 +56,11 @@ const departmentsWithData = allDepartments.filter((dept) =>
   departmentHasQuestions(dept.id),
 );
 
-// Separate active and inactive departments
-const activeDepartments = departmentsWithData.filter((d) => d.active !== false);
-const inactiveDepartments = departmentsWithData.filter(
-  (d) => d.active === false,
-);
+// Passive programs stay in their degree group (many students are still enrolled),
+// listed after the active ones and shown faded.
+const activeDepartments = departmentsWithData;
 
-// Group active departments by degree
+// Group departments by degree
 const degreeGroups: Record<
   string,
   { title: string; icon: SimgeAdi; departments: typeof activeDepartments }
@@ -104,16 +102,14 @@ activeDepartments.forEach((dept) => {
   }
 });
 
-// Sort each group alphabetically
+// Active first, then passive; alphabetical within each
 Object.values(degreeGroups).forEach((group) => {
-  group.departments.sort((a, b) => a.name.localeCompare(b.name, "tr"));
+  group.departments.sort(
+    (a, b) =>
+      Number(a.active === false) - Number(b.active === false) ||
+      a.name.localeCompare(b.name, "tr"),
+  );
 });
-const dereceSirasi = ["lisans", "lisans-tamamlama", "onlisans"];
-inactiveDepartments.sort(
-  (a, b) =>
-    a.name.localeCompare(b.name, "tr") ||
-    dereceSirasi.indexOf(a.degree || "lisans") - dereceSirasi.indexOf(b.degree || "lisans"),
-);
 
 const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
   "anadolu-aof": { icon: "GraduationCap", gradient: "from-blue-600 to-blue-800" },
@@ -237,7 +233,7 @@ const style = uniStyles[university.id] || {
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                       {group.departments.map((dept) => (
                         <div
-                          class="dept-card group"
+                          class:list={["dept-card group", dept.active === false && "opacity-60 hover:opacity-100 transition-opacity"]}
                           data-dept-id={dept.id}
                           data-dept-name={dept.name}
                           data-dept-icon={dept.icon || ""}
@@ -269,7 +265,7 @@ const style = uniStyles[university.id] || {
                                 <span class="text-sm font-medium text-theme group-hover:text-primary-theme line-clamp-1 sm:line-clamp-2 break-words hyphens-auto">
                                   {dept.name}
                                 </span>
-                                <span class="text-[11px] text-muted-theme">{dereceAdi(dept.degree)}</span>
+                                <span class="text-[11px] text-muted-theme">{dereceAdi(dept.degree)}{dept.active === false && " · Pasif (yeni kayıt yok)"}</span>
                               </span>
                             </a>
                           </div>
@@ -288,47 +284,6 @@ const style = uniStyles[university.id] || {
           class="hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-16 pb-8"
         >
         </div>
-
-        <!-- Inactive Departments -->
-        {
-          inactiveDepartments.length > 0 && (
-            <div id="inactiveDepartments" class="mb-8">
-              <h2 class="text-lg font-bold text-muted-theme flex items-center gap-2 mb-4">
-                <span class="opacity-50"><Simge ad="Package" /></span>
-                Pasif Programlar
-                <span class="text-sm font-normal">
-                  ({inactiveDepartments.length})
-                </span>
-              </h2>
-
-              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2">
-                {inactiveDepartments.map((dept) => (
-                  <a
-                    href={`/${university.id}/${dept.id}`}
-                    title={dept.name}
-                    class="group flex items-center gap-2 h-14 sm:h-[4.75rem] px-3 rounded-lg border border-theme/30 bg-card-theme/50 opacity-60 hover:opacity-100 transition-opacity"
-                  >
-                    {dept.icon ? (
-                      <img
-                        src={dept.icon}
-                        alt=""
-                        class="w-6 h-6 object-contain opacity-50"
-                      />
-                    ) : (
-                      <span class="text-sm opacity-50"><Simge ad="FolderOpen" /></span>
-                    )}
-                    <span class="flex flex-col min-w-0">
-                      <span class="text-xs text-muted-theme group-hover:text-theme line-clamp-1 sm:line-clamp-2 break-words hyphens-auto">
-                        {dept.name}
-                      </span>
-                      <span class="text-[11px] font-semibold text-muted-theme">{dereceAdi(dept.degree)}</span>
-                    </span>
-                  </a>
-                ))}
-              </div>
-            </div>
-          )
-        }
 
         {
           departmentsWithData.length === 0 && (
