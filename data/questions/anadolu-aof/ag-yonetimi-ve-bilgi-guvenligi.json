@@ -2209,7 +2209,16 @@
       "D": "Hesaplama Yönetimi",
       "E": "Güvenlik Yönetimi"
     },
-    "explanation": "Hata Yönetimi: Hata yönetimi, ağın arızalarını kaydetmek ve raporlamak ve gerekli aksiyonları almak için geliştirilmiştir."
+    "explanation": "Hata Yönetimi: Hata yönetimi, ağın arızalarını kaydetmek ve raporlamak ve gerekli aksiyonları almak için geliştirilmiştir.",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize"
   },
   {
     "id": "3771626",
@@ -11548,5 +11557,442 @@
       "E": "Saldırgan"
     },
     "explanation": "Sistem güvenliği ile ilgili bilinmesi gereken temel terimler şöyle maddelenebilir.<br/><strong><em>Güvenlik Açığı, Tehdit, Risk, Saldırgan, Saldırı, Karşı Önlem, Sistem Kaynakları, Güvenlik Politikası<br/>Tehdit: </em></strong>Bir güvenlik açığından yararlanabilecek olası bir tehlike, tehdit kavramını ifade eder. Güvenliği ihlal etme potansiyeli olarak da ifade edilir."
+  },
+  {
+    "id": "s-622be2e1a74d",
+    "unitNumber": 0,
+    "text": "Simetrik şifreleme algoritmalarının en önemli avantajı nedir?",
+    "options": {
+      "A": "Güvenli olmaları",
+      "B": "Hızlı şifreleme algoritmaları olmaları",
+      "C": "Anahtar dağıtımı problemi olmaması",
+      "D": "Açık anahtarlı şifreleme algoritmalarından daha karmaşık olmaları",
+      "E": "Bilgi değerini korumaları"
+    },
+    "correctAnswer": "B",
+    "explanation": "Simetrik şifrelemede veriyi şifrelemek ve çözmek için her iki taraf da “aynı” gizli anahtarı kullanır. Asimetrik şifrelemeye (Açık anahtar) göre matematiksel operasyonları çok daha basit ve donanım dostudur. Bu nedenle simetrik algoritmalar (AES gibi) devasa boyutlardaki verileri (örneğin filmler, devasa veritabanları) inanılmaz bir hızda şifreleyebilirler. En büyük dezavantajları ise anahtarın karşı tarafa güvenle nasıl iletileceği sorunudur (Anahtar dağıtım problemi).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5396363b300a",
+    "unitNumber": 4,
+    "text": "Aşağıdakilerden hangisi açık anahtar algoritmaları kullanım amaçlarından biri değildir?",
+    "options": {
+      "A": "Inkâr edilemezlik",
+      "B": "Güvenli veri saklama",
+      "C": "Kimlik doğrulama",
+      "D": "Oturum anahtarı paylaşmak",
+      "E": "Erişim kontrolü"
+    },
+    "correctAnswer": "E",
+    "explanation": "Açık Anahtar (Asimetrik) Algoritmaları (örneğin RSA); verileri şifreleyerek güvenli saklama, dijital imza ile kişinin kimliğini doğrulama, kişinin gönderdiği mesajı inkar etmesini önleme (inkar edilemezlik) ve simetrik şifrelemede kullanılacak ortak oturum anahtarlarını taraflar arasında güvenle paylaşma gibi çok kritik amaçlar için kullanılır. Ancak “Erişim Kontrolü” (Access Control – kullanıcının bir klasöre veya sisteme girip giremeyeceğini belirleyen yetkilendirme mekanizması), doğrudan bir şifreleme algoritmasının değil, işletim sistemlerinin ve ağ güvenlik duvarlarının bir özelliğidir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-13bc865f890a",
+    "unitNumber": 3,
+    "text": "Aşağıdakilerden hangisi modern simetrik blok şifreleme yöntemlerinden biri değildir?",
+    "options": {
+      "A": "DES",
+      "B": "3DES",
+      "C": "AES",
+      "D": "IDEA",
+      "E": "Affine"
+    },
+    "correctAnswer": "E",
+    "explanation": "DES, 3DES, AES ve IDEA algoritmalarının tamamı, veriyi sabit boyutlu bloklara bölerek karmaşık matematiksel ve mantıksal işlemlerle şifreleyen “modern simetrik blok şifreleme” standartlarıdır. Ancak “Affine Şifreleme”, her harfin matematiksel bir doğrusal fonksiyon kullanılarak (ax+b) alfabedeki başka bir harfe dönüştürüldüğü, bilgisayar öncesi döneme ait klasik ve basit bir “yerine koyma” (substitution) şifresidir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3d1f3566ed9b",
+    "unitNumber": 0,
+    "text": "RSA algoritmasında p=11 ve q=17 seçilirse “n” değeri aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "121",
+      "B": "143",
+      "C": "187",
+      "D": "198",
+      "E": "221"
+    },
+    "correctAnswer": "C",
+    "explanation": "Asimetrik bir şifreleme algoritması olan RSA’nın matematiksel temelinde, asal sayıların çarpımının asal çarpanlarına ayrılmasının zorluğu yatar. Algoritmanın ilk adımında rastgele seçilen iki devasa asal sayı (p ve q) birbiriyle çarpılarak sistemin ana modülü olan n değeri elde edilir. Formül n = p times q şeklindedir. Soruya göre p=11 ve q=17 olduğuna göre; 11 times 17 = 187 bulunur.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8e19ff5f1ffe",
+    "unitNumber": 1,
+    "text": "Oluşturulan ilk ağ çeşidi olan ve genellikle ev, okul, laboratuvar, iş binaları gibi sınırlı alanları kapsayan ağ aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "LAN (Local Area Network - Yerel Alan Ağı)",
+      "B": "PAN (Personal Area Network - Kişisel Alan Ağları)",
+      "C": "MAN (Metropolitan Area Network - Şehirsel Alan Ağı)",
+      "D": "WAN (Wide Area Network - Geniş Alan Ağı)",
+      "E": "VPN (Virtual Private Network - Sanal Özel Ağ)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Bilgisayar ağları kapsadıkları coğrafi alana göre sınıflandırılır. Bir oda, ofis, okul binası veya ev gibi fiziksel olarak birbirine çok yakın (genellikle 1-2 km’yi geçmeyen) cihazların birbirine bağlandığı en temel ve en eski ağ yapısına LAN (Yerel Alan Ağı) denir. Şehirleri bağlayan ağlara MAN, ülkeleri ve kıtaları bağlayan devasa ağlara ise WAN adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-7be327663bfe",
+    "unitNumber": 0,
+    "text": "Bir mesajın iletim sırasında yetkisi olmayan kişiler tarafından içeriğinin değiştirilip değiştirilmediğini kontrol eden fonksiyon türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Hibrit şifreleme algoritmaları",
+      "B": "Asimetrik anahtar sifreleme",
+      "C": "Simetrik anahtar şifreleme",
+      "D": "Özet fonksiyonları",
+      "E": "Blok şifreleme algoritmaları"
+    },
+    "correctAnswer": "D",
+    "explanation": "Veri “Bütünlüğü” (Integrity), bir dosyanın veya mesajın ağ üzerinden gönderilirken araya giren saldırganlar tarafından değiştirilmediğinin garantisidir. Bütünlüğü sağlamak için şifreleme değil “Özet Fonksiyonları” (Hash Functions – MD5, SHA vb.) kullanılır. Gönderilen dosyaya ait sabit uzunluklu dijital bir parmak izi (özet) çıkarılır. Dosyada tek bir nokta bile değiştirilse, özet değeri tamamen değişeceği için mesajın kurcalandığı anında tespit edilir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5f3eaa959d84",
+    "unitNumber": 0,
+    "text": "Aşağıdakilerden hangisi ağ yönetiminin temel bileşenlerinden biri değildir?",
+    "options": {
+      "A": "Yönetici Öge (Manager)",
+      "B": "Yönetilen Cihaz (Managed Device)",
+      "C": "Yönetim Bilgi Üssü (MIB)",
+      "D": "Ağ Yönetim Protokolü (SNMP vb.)",
+      "E": "Yönlendirme Protokolü (Routing Protocol)"
+    },
+    "correctAnswer": "E",
+    "explanation": "Modern ağ yönetim mimarisi dört temel bileşenden oluşur: Yönetim yazılımını çalıştıran “Yönetici (Manager)”, ağ cihazlarında çalışan ve veri toplayan “Ajan (Agent / Yönetilen Cihaz)”, bu verilerin hiyerarşik olarak tutulduğu veri tabanı olan “Yönetim Bilgi Üssü (MIB)” ve cihazlar arası iletişimi sağlayan “Yönetim Protokolü (genellikle SNMP)”. Ancak “Yönlendirme Protokolü” (OSPF, BGP gibi), ağ yönetiminin değil, doğrudan verinin hedefe ulaştırılması (yönlendirilmesi) işleminin bir parçasıdır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f562dbe3a0a0",
+    "unitNumber": 1,
+    "text": "TCP ve UDP protokollerinin en sık kullanıldığı katman aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Sunum katmanı",
+      "B": "Ağ katmanı",
+      "C": "Taşıma katmanı",
+      "D": "Veri katmanı",
+      "E": "Oturum katmanı"
+    },
+    "correctAnswer": "C",
+    "explanation": "OSI (Açık Sistemler Bağlantısı) referans modeli 7 katmandan oluşur. Bu modelin 4. katmanı olan “Taşıma Katmanı” (Transport Layer), verinin bir uçtan diğer uca hangi güvenilirlik seviyesinde ve nasıl taşınacağını belirler. Taşıma katmanında görev yapan iki ana protokol vardır: Verinin kayıpsız ve sırasıyla gitmesini garanti eden TCP (Transmission Control Protocol) ve hızın önemli olduğu ancak kayıpların tolere edilebildiği (canlı yayınlar gibi) durumlarda kullanılan UDP (User Datagram Protocol).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6a04509d8b5c",
+    "unitNumber": 4,
+    "text": "Ahmet, ofisindeki bilgisayarları kötü niyetli kişiler tarafından zarara uğratılmasını engellemek için gerekli donanım güvenlik önlemleri almış ve çevresel faktörler ile doğal afetlere karşı korunaklı hale getirmiştir. Yukarıdaki cümlede Ahmet güvenlik sisteminin sağlanması için hangi güvenlik servisinden yararlanmıştır?",
+    "options": {
+      "A": "Denetim",
+      "B": "Erişim kontrolü",
+      "C": "Fiziksel güvenlik",
+      "D": "Kullanılabilirlik",
+      "E": "Gizlilik"
+    },
+    "correctAnswer": "C",
+    "explanation": "Bilgi güvenliği sadece yazılımları, parolaları ve siber saldırıları engellemeyi kapsamaz. Sunucuların bulunduğu odanın kilitli tutulması, cihazların hırsızlığa karşı donanımsal olarak korunması, yangın ve su baskını gibi doğal afetlere veya elektrik kesintilerine karşı alınan tüm mekanik ve mimari tedbirler “Fiziksel Güvenlik” (Physical Security) şemsiyesi altında değerlendirilir. Ahmet’in yaptığı donanımsal ve çevresel koruma önlemleri tam olarak fiziksel güvenliktir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2c74a65826ab",
+    "unitNumber": 1,
+    "text": "Veri iletişiminde günümüzde de kullanılan paket anahtarlama yönteminin ilk örneği aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "UCLA",
+      "B": "ARPANET",
+      "C": "DARPA",
+      "D": "TCP/IP",
+      "E": "PSTN"
+    },
+    "correctAnswer": "B",
+    "explanation": "Günümüzdeki modern İnternet’in atası olarak kabul edilen ARPANET (Gelişmiş Araştırma Projeleri Ajansı Ağı), ABD Savunma Bakanlığı tarafından soğuk savaş döneminde geliştirilmiştir. ARPANET’in en büyük devrimi, veriyi tek bir kesintisiz hat üzerinden göndermek yerine, küçük parçalara (paketlere) bölerek ağ üzerindeki farklı yollardan hedefe ulaştıran “Paket Anahtarlama” (Packet Switching) teknolojisini icat edip kullanan ilk ağ olmasıdır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6b5894aff8bd",
+    "unitNumber": 2,
+    "text": "Aşağıdaki ağ topolojilerinden hangisi, tüm cihazların birbirine bağlı olduğu ve veri iletiminin alternatif yollar üzerinden yapılabildiği bir yapıya sahiptir?",
+    "options": {
+      "A": "Halka",
+      "B": "Yıldız",
+      "C": "Ağaç",
+      "D": "Örgü",
+      "E": "Ortak Yol"
+    },
+    "correctAnswer": "D",
+    "explanation": "Ağ topolojileri cihazların fiziksel veya mantıksal diziliş biçimini ifade eder. “Örgü (Mesh) Topolojisi”, ağdaki her bir cihazın (düğümün) diğer tüm cihazlara ayrı ayrı fiziksel kablolarla bağlandığı en güvenilir ama aynı zamanda en maliyetli yapıdır. Bu yapının en büyük avantajı, kablolardan biri kopsa dahi verinin çok sayıdaki alternatif yollar (bağlantılar) üzerinden hedefine kesintisiz ulaşabilmesidir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-da4ae0a343a8",
+    "unitNumber": 3,
+    "text": "Aşağıdakilerden hangisi Blok şifreleme algoritmalarında kullanılan modlardan biri değildir?",
+    "options": {
+      "A": "Şifre Geribesleme Modu (CFB)",
+      "B": "Çıktı Geribesleme Modu (OFB)",
+      "C": "Açık Anahtar Altyapısı (PKI)",
+      "D": "Elektronik Kod Kitabı (ECB)",
+      "E": "Şifre Blok Zincirleme (CBC)"
+    },
+    "correctAnswer": "C",
+    "explanation": "AES veya DES gibi simetrik blok şifreleme algoritmaları, uzun verileri şifrelerken blokların birbirine nasıl bağlanacağını belirleyen çalışma modlarına (Modes of Operation) ihtiyaç duyar. ECB, CBC, CFB ve OFB bu modların uluslararası standart kısaltmalarıdır. Ancak PKI (Public Key Infrastructure – Açık Anahtar Altyapısı) bir şifreleme çalışma modu değil; dijital sertifikaların oluşturulması, yönetilmesi ve dağıtılmasını sağlayan kapsamlı bir güvenlik ve kimlik doğrulama “sistemidir”.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5a5d8ac740f4",
+    "unitNumber": 4,
+    "text": "Dijital imza ile ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "Dijital imza benzersiz olmalıdır.",
+      "B": "Dijital imzanın, imzalanan metinden bağımsız bir örüntüsü olmalıdır.",
+      "C": "Dijital imzaları üretmek hesaplama açısından karmaşık olmalıdır.",
+      "D": "Göndericiden gelen imzaları tanımak ve doğrulamak zorlayıcı olmalıdır.",
+      "E": "Göndericinin dijital imzasının bir kopyasını oluşturabilmesi önlenmelidir."
+    },
+    "correctAnswer": "A",
+    "explanation": "Dijital imza, elektronik ortamda bir belgenin bütünlüğünü ve gönderenin kimliğini ispatlamak için asimetrik şifreleme ile oluşturulan matematiksel bir veridir. Doğru bir dijital imzanın en temel şartı “benzersiz” (unique) olmasıdır; yani aynı kişi bile olsa, imzalanan her farklı dosya veya metin için üretilen imza yapısı birbirinden farklı ve o belgeye özgü olmalıdır (Bu nedenle B şıkkı yanlıştır). İmzayı doğrulamak (D şıkkı) ise herkes için çok kolay ve hızlı bir işlem olmalıdır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9ed61be89839",
+    "unitNumber": 0,
+    "text": "Ağ üzerinde dosya transferi için kullanılan, dosyanın güvenli ve eksiksiz bir şekilde istemci ve sunucu arasında aktarımını sağlayan protokol aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "SIP",
+      "B": "FTP",
+      "C": "HTTP",
+      "D": "SMTP",
+      "E": "OSI"
+    },
+    "correctAnswer": "B",
+    "explanation": "Bilgisayar ağlarında farklı işlemler için farklı protokoller (kurallar dizisi) kullanılır. SMTP e-posta göndermek için, HTTP web sayfalarını görüntülemek için, SIP ise sesli ve görüntülü görüşmeleri (VoIP) başlatmak için kullanılır. Bir bilgisayardan başka bir bilgisayara veya sunucuya doğrudan büyük boyutlu “dosya yüklemek (upload) veya dosya indirmek (download)” amacıyla özel olarak tasarlanmış standart protokol FTP’dir (File Transfer Protocol – Dosya Aktarım Protokolü).",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a5d450b6421e",
+    "unitNumber": 0,
+    "text": "Fiziksel kablo mesafesinin sınırlarından dolayı veri taşımayı daha uzak mesafelere ulaştırmak için hangi ağ cihazı kullanılır?",
+    "options": {
+      "A": "Tekrarlayıcılar",
+      "B": "Köprüler",
+      "C": "Anahtar Cihazlar",
+      "D": "Yönlendiriciler",
+      "E": "Ethernet"
+    },
+    "correctAnswer": "A",
+    "explanation": "Bakır veya fiber optik kablolardan geçen elektronik/optik sinyaller, belirli bir mesafe ilerledikten sonra zayıflamaya başlar (attenuation). Sinyalin tamamen yok olmasını engellemek, zayıflayan bu sinyali alıp elektriksel olarak güçlendirmek (yeniden oluşturmak) ve çok daha uzak mesafelere aktarmak amacıyla kullanılan donanımlara “Tekrarlayıcı” (Repeater) adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a0323c98e3e0",
+    "unitNumber": 2,
+    "text": "Aşağıdaki ağ cihazlarından hangisi IP adresine bakarak paketin hangi arayüzden gönderileceğine karar verir?",
+    "options": {
+      "A": "Köprü (Bridge)",
+      "B": "Göbek Cihaz (Hub)",
+      "C": "Tekrarlayıcı (Repeater)",
+      "D": "Anahtar Cihaz (Switch)",
+      "E": "Yönlendirici (Router)"
+    },
+    "correctAnswer": "E",
+    "explanation": "Ağ cihazları OSI katmanlarına göre farklılık gösterir. Hub ve Tekrarlayıcı 1. katmanda çalışır ve adreslere bakmadan sinyali kopyalar. Switch ve Köprü 2. katmanda çalışır ve cihazların fiziksel (MAC) adreslerine göre karar verir. Yönlendirici (Router) ise 3. katman (Ağ Katmanı) cihazıdır. Temel görevi, farklı ağları birbirine bağlamak ve gelen veri paketlerinin üzerindeki “Mantıksal Adreslere (IP Adreslerine)” bakarak paketin en kısa ve en doğru yoldan (arayüzden) hedefine ulaşmasını sağlamaktır.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-cdd5dfd264cc",
+    "unitNumber": 3,
+    "text": "Alfabede her bir harfin belirli sayıda karakter ötelenmesi ile şifreleme tablosu elde edilen algoritma aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Data Encryption Standard",
+      "B": "Vigenere Şifreleme",
+      "C": "Affine Şifreleme",
+      "D": "Sezar Şifreleme Algoritması",
+      "E": "Monoalfabetik Şifreleme"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4a7c4de813f0",
+    "unitNumber": 0,
+    "text": "Ağ yönetim merkezinde bulunan, ağ hakkında gerekli bilgileri sağlayan yazılım aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Yönetim Protokolü",
+      "B": "Yönetilen Cihaz",
+      "C": "Yönetim Bilgi Üssü",
+      "D": "Yönetici Öge",
+      "E": "Araç Uygulaması"
+    },
+    "correctAnswer": "D",
+    "explanation": "Ağ yönetim sistemlerinde mimari genellikle İstemci-Sunucu (Client-Server) mantığına dayanır. Ağın genel haritasını çıkaran, arızaları izleyen, cihazlardaki ajanlardan (Agent) gelen verileri toplayıp grafiksel bir arayüzle sistem yöneticisine sunan ana merkezi sunucu yazılımına “Yönetici Öge” (Manager Entity veya NMS – Network Management Station) adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-57888258057d",
+    "unitNumber": 3,
+    "text": "Kullanıcılar arasında güvenli bir iletişim oluşturmak için gerekli algoritmaları ve protokolleri tasarlayan ve geliştiren bilim dalı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Kriptografi",
+      "B": "Kriptoanaliz",
+      "C": "Steganografi",
+      "D": "Tipografi",
+      "E": "Sonografi"
+    },
+    "correctAnswer": "A",
+    "explanation": "Bilgi güvenliğinde verilerin üçüncü şahıslar tarafından okunmasını engellemek amacıyla şifreleme bilimi kullanılır. Şifreleme algoritmalarını, matematiksel protokolleri tasarlayan ve güvenli iletişim yolları geliştiren bu bilim dalına “Kriptografi” (Şifreleme Bilimi) denir. “Kriptoanaliz” ise aksine, bu şifreleri kırma (çözme) bilimidir. “Steganografi” veriyi şifrelemek yerine başka bir dosyanın (örneğin resmin) içine gizleme tekniğidir.",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "vize"
+      }
+    ]
   }
 ]

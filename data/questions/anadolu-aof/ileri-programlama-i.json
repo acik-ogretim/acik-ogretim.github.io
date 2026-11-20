@@ -4072,5 +4072,465 @@
       "E": "Source"
     },
     "explanation": "Hata sınıflarında ortak kullanılan özellikler vardır. Bunlar: HelpLink, InnerException, Source, StackTrace, TargetSite, ToString."
+  },
+  {
+    "id": "s-182bf096c608",
+    "unitNumber": 0,
+    "text": "C# programlama dilinde pozitif sayılar için +1, sıfır için 0, negatif sayılar için -1 döndüren Math sınıfı metodu aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Integer",
+      "B": "Max",
+      "C": "Floor",
+      "D": "Sign",
+      "E": "Min"
+    },
+    "correctAnswer": "D",
+    "explanation": "Matematiksel işlemleri barındıran Math kütüphanesindeki Math.Sign() metodu, kendisine verilen parametrenin işaretini analiz eder. Sayı pozitifse +1, sıfır ise 0, negatif ise -1 döndürerek sayının yönünü programa bildirir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-9f9678946c38",
+    "unitNumber": 0,
+    "text": "Program kodu içerisinde, oluşan bir durumun doğru veya yanlış oluşuna göre yapılacak işlemleri değiştiren yapılara ne ad verilir?",
+    "options": {
+      "A": "Döngü yapıları",
+      "B": "İç içe yapılar",
+      "C": "Alt programlar",
+      "D": "Kontrol yapıları",
+      "E": "Modüler yapılar"
+    },
+    "correctAnswer": "D",
+    "explanation": "Bir programın akışını belirli koşullara (şartlara) bağlayarak, koşulun Doğru (True) veya Yanlış (False) olmasına göre farklı kod bloklarının çalıştırılmasını sağlayan if-else ve switch-case gibi yapılara genel olarak “Kontrol (Karar) Yapıları” adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a2f3c412168b",
+    "unitNumber": 0,
+    "text": "C# programlama dilinde “ref” anahtar kelimesinin işlevi nedir?",
+    "options": {
+      "A": "Birden fazla üst sınıftan kalıtım almak",
+      "B": "Metodun birden fazla değer döndürmesine izin vermek",
+      "C": "Metodun kendi parametresini değiştirmesine izin vermek",
+      "D": "Metodun mühürlenmesini sağlamak",
+      "E": "Bulunduğu sınıfı kapsüle etmek"
+    },
+    "correctAnswer": "C",
+    "explanation": "C# dilinde değer tipli değişkenler normalde metotlara kopyalarıyla (by value) aktarılır. Ancak parametrenin başına ref (referans) anahtar kelimesi eklendiğinde, değişken bellekteki adresiyle gönderilir. Bu sayede metot içinde parametreye yapılan değişiklikler, çağrıldığı yerdeki orijinal değişkeni de kalıcı olarak değiştirir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-03b5100472e7",
+    "unitNumber": 0,
+    "text": "Sözde kod (pseudo code) ile ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
+    "options": {
+      "A": "Sözde kod, algoritmanın yarı programlama ve yarı konuşma dili şeklinde ifade edilir.",
+      "B": "Problemin çözümüne yönelik bir algoritmanın herhangi bir programlama diline dönüştürülmeden önceki ara formudur.",
+      "C": "Sözde kod şeklinde verilen bir algoritmada daha çok veri yapıları gibi detaylar üzerine odaklanılır.",
+      "D": "Kodlama bilmeyen kişilerin de yapılacak işin akışını ve mantığını kavramalarına kolaylık sağlar.",
+      "E": "\"başla, bitir, oku, yaz\" sözde kod komutları arasında sayılabilir."
+    },
+    "correctAnswer": "C",
+    "explanation": "Sözde kodun amacı, programın karmaşık teknik altyapısını gizleyerek sadece mantıksal akışını anlaşılır kılmaktır. Bu nedenle sözde kodlarda veri yapıları, bellek yönetimi veya spesifik dil kütüphaneleri gibi teknik detaylara odaklanılmaz.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8216068d1752",
+    "unitNumber": 4,
+    "text": "IndexOf metodu ile ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "String bir değişkenin sonunun verilen bir char veya string türündeki değere eşit olup olmadığını kontrol eder.",
+      "B": "Bir string değer içinde karakter ya da metin aramak için kullanılmaktadır.",
+      "C": "String bir değişken içinden belirtilen konumdan bir char dizisine kopyalama yapar.",
+      "D": "Verilen string bir değer içerisine, belirtilen başlangıç pozisyonundan itibaren araya yeni metin ilave edilir.",
+      "E": "String bir değişken veya değer içinde karakter ya da string bir ifadeyi aramak için kullanılır."
+    },
+    "correctAnswer": "E",
+    "explanation": "IndexOf() metodu, ana metin (string) içerisinde belirli bir karakterin veya bir kelimenin ilk nerede geçtiğini soldan sağa tarayarak arar ve o değerin indeks numarasını (sırasını) tam sayı olarak döndürür. (E şıkkı, değişken veya değer kullanımını kapsadığı için en geçerli ve doğru tanımdır).",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-cedfe585f9fa",
+    "unitNumber": 0,
+    "text": "I. for II. while III. switch IV. do while Yukarıdakilerden hangileri döngü komutlarındandır?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "I ve II",
+      "C": "II ve IV",
+      "D": "I, II ve III",
+      "E": "I, II ve IV"
+    },
+    "correctAnswer": "E",
+    "explanation": "Programlama dillerinde kod bloklarını belirli koşullar sağlandıkça tekrar tekrar çalıştıran yapılara “döngü” denir. for, while ve do-while C# dilindeki temel döngü komutlarıdır. switch ise döngü değil, bir kontrol (karar/koşul) yapısıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f7f3ee6edbfa",
+    "unitNumber": 0,
+    "text": "“BuBirDegiskendir” ifadesi hangi isimlendirme stili ile yazılmıştır?",
+    "options": {
+      "A": "Pascal Case",
+      "B": "Snake Case",
+      "C": "Kebab Case",
+      "D": "Holo Case",
+      "E": "Camel Case"
+    },
+    "correctAnswer": "A",
+    "explanation": "Birden fazla kelimeden oluşan bir isimlendirmede, değişkeni oluşturan her kelimenin ilk harfinin büyük, diğer harflerinin küçük yazıldığı notasyon stiline “Pascal Case” denir. Eğer ilk kelimenin baş harfi küçük olsaydı (buBirDegiskendir), o zaman Camel Case olarak adlandırılırdı.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8c6277de68f4",
+    "unitNumber": 0,
+    "text": "Array ve ArrayList sınıflarından tanımlanmış dizi elemanlarına bir indeks numarası ile erişilebilinir. Ancak kod yazımında bu her zaman en verimli yöntem olmayabilir. Çünkü hangi nesnenin hangi sırada listeye eklendiğinin bilinmesi gerekir. ……… sınıfı da tam bu eksikliği gidermek üzere tasarlanmıştır. Bu koleksiyon türünde, listeye eklenecek her bir eleman için indeks kullanmak yerine, bir anahtar ve buna karşılık değer ataması yapılmaktadır. Yukarıda boş bırakılan yeri aşağıdakilerden hangisi doğru şekilde tamamlar?",
+    "options": {
+      "A": "Hashtable",
+      "B": "Queue",
+      "C": "Stack",
+      "D": "Dictionary",
+      "E": "Format"
+    },
+    "correctAnswer": "A",
+    "explanation": "Klasik C# koleksiyonlarında indeks numarası yerine “Anahtar – Değer” (Key-Value) çiftleriyle çalışan, böylece aranan veriye eşsiz bir anahtar ismi üzerinden hızlıca ulaşılmasını sağlayan koleksiyon türü Hashtable sınıfıdır.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-7c9aace94697",
+    "unitNumber": 1,
+    "text": "Yazılım geliştirme süreçlerinin hangi aşamasında gereksinim analizi raporu hazırlanır?",
+    "options": {
+      "A": "Kodlama",
+      "B": "Entegrasyon",
+      "C": "Taleplerin Belirlenmesi",
+      "D": "Bakım",
+      "E": "Tasarım"
+    },
+    "correctAnswer": "C",
+    "explanation": "Yazılım geliştirme yaşam döngüsünde (SDLC), müşterinin ne istediğinin, yazılımın hangi problemleri çözeceğinin ve sistemden beklentilerin listelendiği aşama “Taleplerin (Gereksinimlerin) Belirlenmesi” aşamasıdır. Gereksinim analizi raporu bu aşamada oluşturulur.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-54dbf5f98b32",
+    "unitNumber": 0,
+    "text": "I. ilkkarakter II. tc_kimlik_no III. 40lar IV. #sokakAdı Yukarıda verilen değişkenlerden hangisi/hangileri geçerli şekilde isimlendirilmiştir?",
+    "options": {
+      "A": "Yalnız I",
+      "B": "I ve II",
+      "C": "I ve IV",
+      "D": "II ve III",
+      "E": "III ve IV"
+    },
+    "correctAnswer": "B",
+    "explanation": "C# değişken isimlendirme kurallarına göre; değişken isimleri sayıyla başlayamaz (III yanlış), boşluk içeremez (alt tire _ ile bitişik yazılabilir, bu nedenle tc_kimlik_no geçerlidir) ve özel karakterlerle (#, % vb.) başlayamaz (IV yanlış). Geçerli olan isimlendirmeler sadece harfle veya alt tireyle başlayan I ve II numaralı ifadelerdir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b24daa398ff3",
+    "unitNumber": 0,
+    "text": "Motorlu taşıtlar sınıfından türeyen araba ve traktör örneğinden hareketle; ortak özelliklerden motor, arabada daha küçük ve güçsüz iken, traktörde daha büyük ve güçlü olmalıdır. İki aracın da tekerlekleri olması gerekmekte ama arabanın tekerlekleri daha küçük olacaktır. Aynı şekilde araba, daha hızlı olacaktır. Yukarıdaki açıklamalar doğrultusunda “ortak özelliklerin farklı değerler ile tanımlanarak tamamen değişik bir boyut kazanması” nesne yönelimli programlamanın hangi özelliğine işaret etmektedir?",
+    "options": {
+      "A": "Yapısallık",
+      "B": "Miras alma",
+      "C": "Kapsülleme",
+      "D": "Soyutlama",
+      "E": "Çok biçimlilik"
+    },
+    "correctAnswer": "E",
+    "explanation": "Aynı üst sınıftan (Motorlu Taşıt) miras alınan ortak bir davranışın veya özelliğin (Motor, Tekerlek), alt sınıflarda (Araba, Traktör) o sınıfa özgü farklı bir yapıda ezilerek yeniden tanımlanması ve kullanılması prensibine Nesne Yönelimli Programlamada “Çok Biçimlilik” (Polymorphism) adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0548a8fb86ed",
+    "unitNumber": 0,
+    "text": "Bilgisayar programı yazma sürecinin ilk aşaması aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Kod yazmak",
+      "B": "Algoritma oluşturmak",
+      "C": "Kod derlemek",
+      "D": "Test etmek",
+      "E": "İhtiyacı belirlemek"
+    },
+    "correctAnswer": "E",
+    "explanation": "Bir yazılım veya program geliştirme sürecinin (SDLC) en temel ve ilk adımı, problemin tanımlanması ve ihtiyacın belirlenmesidir (Gereksinim analizi). Kullanıcının neye ihtiyacı olduğu netleşmeden tasarım, algoritma oluşturma veya kod yazma aşamalarına geçilemez.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5d36f2c05d18",
+    "unitNumber": 0,
+    "text": "Aşağıdakilerden hangisi web uygulamaları geliştirmek için diğerlerine göre daha uygundur?",
+    "options": {
+      "A": "Fortran",
+      "B": "C",
+      "C": "ASP",
+      "D": "MySQL",
+      "E": "Assembler"
+    },
+    "correctAnswer": "C",
+    "explanation": "Fortran, C ve Assembler daha çok sistem programlama ve matematiksel hesaplamalar için kullanılan dillerdir. MySQL ise bir veritabanıdır. ASP (Active Server Pages), Microsoft tarafından doğrudan dinamik web sayfaları ve sunucu tabanlı web uygulamaları geliştirmek için tasarlanmış web programlama teknolojisidir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-eb89b9be9918",
+    "unitNumber": 1,
+    "text": "1. Başla. 2. Kullanıcıdan 1. ve 2. sayıyı girmesini iste. 3. Toplam = 1. sayı + 2. sayı 4. Toplamı ekrana yazdır. Yukarıdaki dizimin türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Ara kod",
+      "B": "Makine kodu",
+      "C": "Akış diyagramı",
+      "D": "Sözde kod",
+      "E": "IL kod"
+    },
+    "correctAnswer": "D",
+    "explanation": "Algoritmanın, herhangi bir programlama dilinin katı kurallarına bağlı kalmaksızın, günlük konuşma diline yakın ve adım adım yazılı metinler halinde ifade edilmesine “sözde kod” (pseudo code) adı verilir. Şekillerle ifade edilseydi akış diyagramı olurdu.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6d3e2ab4e2f6",
+    "unitNumber": 0,
+    "text": "C# kodları ile ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "C# programının çalışabilmesi herhangi bir çerçevenin kurulu olmasına gerek yoktur.",
+      "B": "IL ara kod formuna öncelikli derlenmektedir.",
+      "C": "Derlenen kodun uzantılı dosyasının adı dll'dir.",
+      "D": "C# kodları, direk makine diline derlenmektedir.",
+      "E": "Derlenen kodun uzantısı txt'dir."
+    },
+    "correctAnswer": "B",
+    "explanation": "C# (ve diğer .NET dilleri) kodları yazıldıktan sonra doğrudan makine diline (0’lara ve 1’lere) çevrilmez. Önce MSIL (Microsoft Intermediate Language) veya kısaca IL adı verilen bir ara koda derlenirler. Bu ara kod, çalışma zamanında (Runtime) CLR (Common Language Runtime) tarafından JIT derleyicisi ile makine diline dönüştürülür.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0d63afee83d1",
+    "unitNumber": 0,
+    "text": "C# programlama dilinde aynı işi farklı bir parametre ile yapan aynı isimde bir metoda daha ihtiyaç duyulduğunda hangi özellik kullanılmalıdır?",
+    "options": {
+      "A": "Inheritance",
+      "B": "Overloading",
+      "C": "Encapsulation",
+      "D": "Mutation",
+      "E": "Exception"
+    },
+    "correctAnswer": "B",
+    "explanation": "Sınıf içerisinde isimleri birebir aynı olan, ancak aldıkları parametre sayıları veya veri tipleri (imzaları) birbirinden farklı olan metotlar yazılması tekniğine “Metot Aşırı Yükleme” (Method Overloading) adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b37c19ea445d",
+    "unitNumber": 0,
+    "text": "Donanıma bağlı olarak çalışmakla birlikte, makine hâkimiyeti oldukça yüksek dillerdir. Makine ve Assembly dili bu seviyede kullanılır. Yukarıda anlatılan dil aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Script dilleri",
+      "B": "Alçak seviyeli diller",
+      "C": "Beta diller",
+      "D": "İstemci taraflı diller",
+      "E": "Yüksek seviyeli diller"
+    },
+    "correctAnswer": "B",
+    "explanation": "İnsan dilinden (İngilizce kelimelerden) tamamen uzak, doğrudan bilgisayarın işlemcisine ve donanımına hitap eden, makine diline (0 ve 1’lere) en yakın programlama dillerine “Alçak Seviyeli Diller” denir. Assembly dili bunun en bilinen örneğidir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3f108fdc4060",
+    "unitNumber": 0,
+    "text": "C# programlama dilinde alabileceği değerler sabitlenmiş olan değişken tipleri hangisidir?",
+    "options": {
+      "A": "Enum",
+      "B": "Virtual",
+      "C": "Integer",
+      "D": "Variable",
+      "E": "Class"
+    },
+    "correctAnswer": "A",
+    "explanation": "Alabileceği değerler önceden belli ve sınırlandırılmış olan, birbirleriyle ilişkili adlandırılmış sabitleri (örneğin aylar, günler, renkler, durum kodları) bir arada tutmak için tanımlanan özel veri türüne numaralandırma, yani Enum (Enumeration) adı verilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-20f4ec0200ab",
+    "unitNumber": 0,
+    "text": "Çay demleme 1. Başla. 2. Mutfağa git. 3. Çaydanlığa su koy. 4. Çaydanlığı ocağa koy. 5. Ocağın altını yak. 6. Su kaynamış mı kontrol et. 7. Evet ise 9. adıma git. 8. Hayır ise 6. adıma git. 9. Çayı demle. 10. 10 dakika demlenmesini bekle. 11. Çayı servis et. 12. Bitir. Yukarıda “Çay Demleme” ile ilgili bir algoritma yer almaktadır. Buna göre ilgili algoritmanın akış diyagramı çizildiğinde hangi basamak akış yönünü belirlemek için yer almaktadır?",
+    "options": {
+      "A": "6. basamak - Su kaynamış mı kontrol et",
+      "B": "7. basamak - Evet ise 9. adıma git",
+      "C": "8. basamak - Hayır ise 6. adıma git",
+      "D": "9. basamak - Çayı demle",
+      "E": "10. basamak - 10 dakika demlenmesini bekle"
+    },
+    "correctAnswer": "A",
+    "explanation": "Algoritmalarda ve akış diyagramlarında karar (koşul) yapıları, sürecin (akışın) hangi yöne gideceğini belirler. 6. adımdaki “Su kaynamış mı kontrol et” ifadesi, “Evet” veya “Hayır” şeklinde farklı kollara ayrılmayı sağlayan temel karar basamağıdır ve akış diyagramında eşkenar dörtgen (baklava dilimi) ile gösterilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a9079eddde82",
+    "unitNumber": 0,
+    "text": "C# programlama dilinde rastgele sayı oluşturma süreçleri için kullanılan sınıf aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Collection",
+      "B": "String",
+      "C": "Integer",
+      "D": "Random",
+      "E": "Math"
+    },
+    "correctAnswer": "D",
+    "explanation": "Program içerisinde rastgele (tesadüfi) sayılar türetmek istendiğinde Random sınıfı kullanılır. Bu sınıftan türetilen bir nesnenin .Next() metodu ile istenilen değer aralığında rastgele sayılar üretilebilir.",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
   }
 ]

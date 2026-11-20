@@ -10,7 +10,17 @@
       "C": "Dinamik kod yazım sürecini desteklemektedir.",
       "D": "Tek bir platformla uyumlu olarak çalışmaktadır.",
       "E": "Düzenli bir görselliğe sahiptir."
-    }
+    },
+    "explanation": "Python, okunabilirliği yüksek, az kodla çok iş yapılabilen (hızlı), dinamik tipli ve genel amaçlı bir programlama dilidir. Ancak Python’un en büyük avantajlarından biri “çapraz platform” (cross-platform) desteğidir. Windows, macOS, Linux gibi birbirinden tamamen farklı işletim sistemlerinde aynı kod hiçbir değişiklik gerektirmeden çalışabilir. Bu nedenle “tek bir platformla uyumlu olarak çalışmaktadır” ifadesi kesinlikle yanlıştır.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "339799",
@@ -244,7 +254,17 @@
       "C": "While",
       "D": "Else",
       "E": "Elif"
-    }
+    },
+    "explanation": "Python’da belirli bir kod bloğunun birden fazla kez tekrarlanması işlemine “döngü” (loop) denir. Belirli bir mantıksal şart (koşul) doğru (True) olduğu sürece, o bloktaki kodlerin tekrar tekrar (sonsuza dek veya koşul bozulana dek) çalıştırılmasını sağlayan döngü yapısı “while” döngüsüdür. if/elif/else ise tekrarlama yapmaz, koşula göre kodu sadece bir kez yönlendirir.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "346960",
@@ -595,7 +615,17 @@
       "C": "return 2",
       "D": "return Topla(2)",
       "E": "return"
-    }
+    },
+    "explanation": "Python fonksiyonlarında “return” ifadesi, işlemin sonucunu fonksiyonun çağrıldığı yere geri göndermek (döndürmek) için kullanılır. x+2 bir değişkene bağlı matematiksel işlemi, x,y birden fazla değişkeni, Topla(2) başka bir fonksiyonun sonucunu döndürür. Ancak “return 2” ifadesi, herhangi bir dış değişkene bağlı olmaksızın, her çalıştırıldığında doğrudan “2” gibi değişmez (sabit) bir sayısal değer döndürür.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "349121",
@@ -673,7 +703,17 @@
       "C": "data",
       "D": "dtype",
       "E": "name"
-    }
+    },
+    "explanation": "Pandas kütüphanesinde tek boyutlu bir veri yapısı olan Series oluştururken kullanılan pd.Series() fonksiyonunun temel parametreleri (argümanları) vardır. İçine konulacak bilgiyi temsil eden ‘data’, satır numaralandırmasını/etiketleri temsil eden ‘index’, veri tipini belirleyen ‘dtype’ ve seriye bir isim veren ‘name’ bu fonksiyonun standart parametreleridir. Ancak ‘true’ (veya True) bir boolean (mantıksal) değerdir, pd.Series() fonksiyonunun beklediği yapısal veya isimlendirilmiş parametrelerden biri değildir.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "346983",
@@ -1063,7 +1103,17 @@
       "C": "__ne__",
       "D": "__perpe__",
       "E": "__sizeof__"
-    }
+    },
+    "explanation": "Python’da boş bir sınıf (Class) yaratıldığında bile, nesne yönelimli sistemin doğası gereği arka planda otomatik olarak “Dunder” (Double Underscore – Magic Methods) adı verilen ve iki alt çizgi ile başlayıp biten standart sihirli metotlar atanır. (Örn: __init__, __sizeof__, __hash__, __ne__ gibi). Fakat Python’un çekirdek yapısında varsayılan olarak atanan “__perpe__” diye bir metot (fonksiyon) bulunmamaktadır.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "349143",
@@ -1128,7 +1178,17 @@
       "C": "Semi-Private",
       "D": "Public",
       "E": "Private"
-    }
+    },
+    "explanation": "Nesne tabanlı programlamada, sınıf içindeki değişken veya metotların dışarıdan erişim izinleri (kapsüllenme) alt çizgilerle (underscore) belirlenir. İki alt çizgi (__degisken) kullanıldığında bu “Private” (Gizli/Sadece o sınıfa ait) anlamına gelir. Değişkenin başına konan tek bir alt çizgi (_degisken) ise Python topluluğunda bir uyarı niteliğindedir; bu değişkenin sadece sınıf içinde ve onu miras alan alt sınıflarda (Protected) kullanılması gerektiğini belirtir ve buna literatürde “Semi-Private” (veya Protected) adı verilir.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "347002",
@@ -1388,7 +1448,17 @@
       "C": "ModuleNotFoundError",
       "D": "MemoryError",
       "E": "NameError"
-    }
+    },
+    "explanation": "Python’da program çalışırken beklenmeyen hatalar “istisna” (exception) olarak adlandırılır. Bir kodda “import x” denilerek çağrılan ‘x’ adında bir kütüphane/modül (örneğin sistemde yüklü olmayan bir modül) bulunamadığında, sistem doğrudan “ModuleNotFoundError” (Modül Bulunamadı Hatası) fırlatır.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "347015",
@@ -1648,7 +1718,17 @@
       "C": "l",
       "D": "d",
       "E": "c"
-    }
+    },
+    "explanation": "Python’da open() fonksiyonu ile dışarıdan bir dosya (örneğin bir metin dosyası) açılırken, o dosyaya hangi yetkiyle erişileceğini belirten “mod” (kipleme) harfleri vardır. İngilizce “read” kelimesinin baş harfi olan “r” modu, dosyayı sadece okuma yetkisiyle (okuma modunda) açmak için kullanılan en temel dosya açma modudur. (Yazmak için ‘w’, eklemek için ‘a’ kullanılır.)",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "350000",
@@ -1778,7 +1858,17 @@
       "C": "Cursor.commit",
       "D": "Sqlite3.connect",
       "E": "Connection.interrup"
-    }
+    },
+    "explanation": "Python’da standart olarak gelen hafif veri tabanı kütüphanesi SQLite ile çalışırken, bir veri tabanı dosyası (.db veya .sqlite uzantılı) yaratmak veya mevcut bir dosyaya bağlanmak için kullanılan birincil komut “sqlite3.connect(‘dosya_adi.db’)” komutudur.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "350808",
@@ -1830,7 +1920,17 @@
       "C": "Bir sorgu kümesinin tek bir kayıt satırını döndürür.",
       "D": "Bir SQLite dosyasına bağlantı kurulmak için kullanılmaktadır.",
       "E": "Veri tabanı üzerindeki sorguların yürütülmesini ve sorgulamaya göre kayıtları döndürmek için kullanılmaktadır."
-    }
+    },
+    "explanation": "“sqlite3.connect(‘veritabani.db’)” metodu, belirtilen isimdeki bir SQLite veri tabanı dosyasına erişim sağlamak, fiziksel bağlantı köprüsü kurmak ve eğer o isimde bir dosya yoksa sıfırdan o dosyayı oluşturmak (bağlantı kurmak) temel işleviyle kullanılır. İmleç oluşturmak için cursor(), komutu işletmek için execute() gibi farklı metotlar mevcuttur.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "350010",
@@ -1856,7 +1956,17 @@
       "C": "Renderer",
       "D": "Scripting",
       "E": "Event"
-    }
+    },
+    "explanation": "Matplotlib mimarisi temelde üç katmandan oluşur. En üstte komutların yazıldığı Scripting katmanı, ortada şekillerin çizildiği Artist katmanı ve en altta çizimleri ekrana basan Backend katmanı bulunur. Başlıklar (Title), eksenler (Axes), çizgiler, noktalar, etiketler ve metinler gibi grafik üzerinde gördüğümüz tüm görsel öğelerin her biri Matplotlib terminolojisinde “Artist” (Sanatçı) sınıfının birer nesnesidir.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "350012",
@@ -2025,7 +2135,17 @@
       "C": "'p' - Beşgen",
       "D": "'H' - Üçgen",
       "E": "'.' - Nokta"
-    }
+    },
+    "explanation": "Python’un veri görselleştirme kütüphanesi Matplotlib’in Pyplot modülünde grafiklerde noktaları işaretlemek (marker) için çeşitli yapıcılar (karakterler) kullanılır. ‘o’ daire, ‘,’ piksel, ‘.’ nokta ve ‘p’ (pentagon) beşgen şekillerini ifade eder. Ancak ‘H’ harfi üçgeni değil, “Hexagon” yani altıgeni ifade eder. Üçgen için yönüne göre ‘^’, ‘v’, ” işaretleri kullanılır.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "350030",
@@ -2077,7 +2197,17 @@
       "C": "box",
       "D": "fiil",
       "E": "grid"
-    }
+    },
+    "explanation": "Matplotlib Pyplot’ta oluşturulan grafiklerin (çizim alanının) etrafını saran dış çerçeve çizgisine eksen kutusu adı verilir. Bu kutuyu ekranda göstermek (açmak) veya gizlemek (kapatmak) istendiğinde plt.box(True) veya plt.box(False) şeklindeki “box” metodu kullanılır. (grid ızgaraları açar, clf tüm figürü temizler).",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "350034",
@@ -2181,7 +2311,17 @@
       "C": "bar",
       "D": "barh",
       "E": "plot"
-    }
+    },
+    "explanation": "Python Matplotlib kütüphanesinde grafik türlerini belirleyen çeşitli metotlar vardır. plot() çizgi grafik, bar() dikey çubuk grafiği, scatter() dağılım/nokta grafiği çizer. Verilerin bir bütünün (dairenin) içerisindeki yüzdelik oranlarını, yani “pasta dilimi” grafiklerini çizmek için kullanılan komut ise İngilizce’de turta/pasta anlamına gelen “pie()” komutudur.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "355786",
@@ -2324,7 +2464,17 @@
       "C": "Numpy.exp()",
       "D": "Numpy.fix()",
       "E": "Numpy.npv()"
-    }
+    },
+    "explanation": "Numpy kütüphanesindeki np.roll() komutu, bir dizideki (array) elemanları, belirlenen eksen üzerinde belirli bir adım (sayı) kadar kaydırmak, yani dizi içindeki değerlerin pozisyonlarını dairesel olarak “yuvarlamak / kaydırmak” için kullanılır (Örneğin son elemanı alıp başa koymak gibi).",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "350752",
@@ -2376,7 +2526,17 @@
       "C": "[5 9]",
       "D": "[6 2]",
       "E": "[6 4]"
-    }
+    },
+    "explanation": "Numpy kütüphanesindeki np.take(a, indices) fonksiyonu, çok boyutlu dizileri sanki düz (tek boyutlu) bir listeymiş gibi (flattened) varsayarak çalışır ve istenilen indeks numaralarındaki (0’dan başlayarak) elemanları çeker. Dizi düzleştirildiğinde elemanlar şu sırayı alır: 0.indeks:5, 1.indeks:6, 2.indeks:2, 3.indeks:7, 4.indeks:1, 5.indeks:4. Kod bizden 1 ve 5 numaralı indeksleri çekmemizi istiyor. 1. indeksteki rakam 6, 5. indeksteki rakam 4’tür. Sonuç: [6, 4].",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "350090",
@@ -2506,7 +2666,17 @@
       "C": "merge",
       "D": "fillna",
       "E": "sort_values"
-    }
+    },
+    "explanation": "Pandas veri yapılarında (DataFrame veya Series) bir sütunun veya nesnenin mevcut veri türünü (örneğin metin/string veri türünü, tamsayı/integer veri türüne) değiştirmek (dönüştürmek) istendiğinde astype() fonksiyonu kullanılır. (Örneğin df[‘Sütun’].astype(int)). merge birleştirme yapar, fillna boşlukları doldurur, sort_values ise sıralar.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "350756",
@@ -2519,7 +2689,17 @@
       "C": "Veri, satır, ses",
       "D": "Veri, sütun, ses",
       "E": "Veri, satır, sütun"
-    }
+    },
+    "explanation": "Veri bilimi kütüphanesi Pandas’taki en önemli veri yapısı olan “DataFrame”, temel olarak Excel veya SQL tablolarına benzeyen iki boyutlu bir yapıya sahiptir. Bu yapı üç ana bileşenden oluşur: İçine koyduğumuz bilgiler yani “Veri” (Data), bu verilerin yatay eksenini belirten “Satırlar” (Index/Rows) ve dikey eksenini belirten, özelliklerin adını taşıyan “Sütunlar” (Columns).",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "350759",
@@ -2597,7 +2777,17 @@
       "C": "Duygu durum analizi",
       "D": "Sosyal medya analitiği",
       "E": "Sesli asistanlar"
-    }
+    },
+    "explanation": "Doğal Dil İşleme (NLP) alanında, metin (yazılı veri) üzerinde çalışan birçok uygulama vardır; yazılı çeviri servisleri, metinleri okuyan sohbet botları (chatbot), atılan tweetlerin olumlu-olumsuz olduğunu ölçen duygu durum veya sosyal medya analitikleri gibi. Ancak “Sesli asistanlar” (Siri, Alexa vb.) temel olarak ses dalgalarını (akustik sinyalleri) alır, “Ses-İşleme” ve “Konuşma Tanıma” (Speech Recognition) teknolojilerini kullanarak bu sinyalleri metne çevirme süreciyle çalışırlar, dolayısıyla saf bir metin işleme değil; akustik/ses işleme uygulamasıdırlar.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "350115",
@@ -2701,6 +2891,16 @@
       "C": "Batch",
       "D": "Checkpoint",
       "E": "Confusion Matrix"
-    }
+    },
+    "explanation": "Makine öğrenmesi ve yapay sinir ağları terminolojisinde, matematiksel modelin veriye daha iyi oturması ve fonksiyon eğrisinin orijinden geçme zorunluluğundan kurtarılması için (kaydırılması için) eklenen, belli bir başlangıç kesişim (intercept) değerini ifade eden terim “Bias”tır (Sapma/Kesişim sabiti). Formüllerde y = wx + b yapısındaki ‘b’ değeridir.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   }
 ]

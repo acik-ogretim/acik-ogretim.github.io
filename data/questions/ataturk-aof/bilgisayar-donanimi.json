@@ -114,7 +114,17 @@
       "C": "Kullanıcı birimi - işlemci - çıktı birimi",
       "D": "Kullanıcı birimi - işletim sistemi - sistem donanımı",
       "E": "Merkezî işlem birimi - işletim sistemi - bellek"
-    }
+    },
+    "explanation": "Modern bilgisayarların temel çalışma mimarisi John von Neumann modeli üzerine inşa edilmiştir. Bu donanımsal döngüde; klavye, fare gibi cihazlarla verinin alındığı “Giriş Birimi”, bu verinin hesaplanıp işlendiği “Merkezi İşlem Birimi” (CPU) ve işlenen sonucun ekrana/yazıcıya gönderildiği “Çıkış Birimi” olmak üzere üç ana bileşen yer alır. İşletim sistemi veya kullanıcı ise bu fiziksel donanım yapısının değil, yazılım ve çevre birimlerinin elemanlarıdır.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "383058",
@@ -192,7 +202,17 @@
       "C": "Bilgisayar boyutları oldukça az yer kaplamaktaydı.",
       "D": "Çok fazla elektrik tüketmekteydiler.",
       "E": "Ucuz ve düşük maliyetli üretime sahiptiler."
-    }
+    },
+    "explanation": "II. Dünya Savaşı döneminde geliştirilen ENIAC gibi birinci nesil tam elektronik bilgisayarlar devasa boyutlara sahipti. Silikon çipler (mikroişlemciler) henüz icat edilmediği için akımı yönlendirmek amacıyla binlerce “vakum tüpü” kullanılarak inşa edilmişlerdi. Bu tüpler çok fazla ısındığı ve sistem devasa büyüklükte olduğu için muazzam düzeyde elektrik tüketiyorlardı (çok fazla elektrik harcıyorlardı). Üstelik son derece pahalı ve kullanması özel uzmanlık isteyen makinelerdi.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "382491",
@@ -491,7 +511,17 @@
       "C": "Şifre",
       "D": "Çalışma değeri",
       "E": "Bellek Tipi"
-    }
+    },
+    "explanation": "BIOS (Basic Input/Output System), anakart üzerinde yer alan ve donanımları kontrol eden temel yazılımdır. BIOS ekranına girildiğinde; sistem saati ve tarihi, bilgisayarın donanımsal açılış şifresi, boot/önyükleme sıralaması (depolama parametreleri), işlemci/RAM saat hızları, frekans ve voltaj çalışma değerleri ayarlanabilir. Ancak “Bellek Tipi” (Sistemin DDR3 mü, DDR4 mü olduğu vb.) donanımsal ve fiziksel bir özelliktir. Anakartın lehimli slot yapısına bağlıdır ve BIOS’tan yazılımsal olarak değiştirilmesi imkansızdır.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "383082",
@@ -517,7 +547,17 @@
       "C": "Depolama yapmak",
       "D": "Kaydırma yapmak",
       "E": "Bellekteki verileri değiştirmek"
-    }
+    },
+    "explanation": "Merkezi İşlem Birimi (CPU), bilgisayarda karar verici ve hesaplayıcı beyin rolünü üstlenir. İki ana bileşeni olan Kontrol Birimi ve ALU (Aritmetik Mantık Birimi) sayesinde; matematikteki hesaplamaları, mantıksal sorgulamaları, bit seviyesindeki kaydırma fonksiyonlarını yapar ve aktif verileri işler. Ancak işlemcinin kalıcı olarak “depolama yapmak” gibi bir işlevi yoktur; bu işlev doğrudan Sabit Disklere (HDD/SSD) ve ROM belleklere aittir.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "382509",
@@ -712,7 +752,17 @@
       "C": "L1 önbellek",
       "D": "Kaydediciler",
       "E": "L2 önbellek"
-    }
+    },
+    "explanation": "Bilgisayar mimarisindeki “Bellek Hiyerarşisi” hıza, maliyete ve kapasiteye göre sıralanır. Hiyerarşinin en üst noktasında, doğrudan Merkezi İşlem Biriminin (CPU) çekirdeği içerisine gömülü olan “Kaydediciler” (Registers) bulunur. Kaydedicilerin kapasiteleri sadece birkaç bayttır ancak işlemcinin o an işlediği kritik verileri tuttukları için erişim hızları saniyenin milyarda biri kadar olup sistemdeki en hızlı donanımlardır. Diğerleri ise sırasıyla aşağı doğru L1-L2 önbellekler ve RAM olarak devam eder.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "382551",
@@ -946,7 +996,17 @@
       "C": "Yırtılmış Sektör (Tear Sector)",
       "D": "Uzay Sektör (Space Sector)",
       "E": "Engel Sektör (Block Sector)"
-    }
+    },
+    "explanation": "Manyetik Sabit Diskler (HDD), verileri motor gücüyle hızla dönen ince plakaların üzerindeki manyetik yüzeylere, “sektör” (sector) adı verilen dairesel dilimlere işleyerek kaydederler. Bilgisayarın sarsılması, okuma-yazma kafasının diski çizmesi veya üretim hataları gibi durumlarda, plaka üzerindeki bu sektörlerin bazıları fiziksel olarak bozulur. Artık üzerine veri yazılamayan ve okunması imkânsız olan bu kalıcı hasarlı alanlara bilgisayar terminolojisinde “Bad Sector” (Ölü Sektör / Bozuk Sektör) adı verilir.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "383169",
@@ -1232,7 +1292,17 @@
       "C": "Full tower",
       "D": "SFF",
       "E": "CPU"
-    }
+    },
+    "explanation": "Masaüstü bilgisayar bileşenlerini bir arada tutan metal ve plastik muhafazalara kasa (case) denir. Kasalar anakart desteklerine ve hacimlerine göre; Full Tower, Midi Tower, Mini Tower ve SFF (Small Form Factor) gibi isimler alır. Günlük dilde insanlar bilgisayarın kendisine veya kasasına yanlışlıkla “CPU” diyebilmektedir; fakat CPU kasanın kendisi değil, kasanın içinde anakartın üzerine takılan “Merkezi İşlem Birimi” isimli yonganın bilimsel adıdır.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "383152",
@@ -1258,7 +1328,17 @@
       "C": "Mavi ışık filtresi",
       "D": "Tepki süresi",
       "E": "Panel türü"
-    }
+    },
+    "explanation": "Monitör teknolojisinde Tepki Süresi (Response Time), genellikle ekrandaki bir pikselin renginin değişmesi (örneğin tamamen siyahtan beyaza geçmesi) için geçen zamanı milisaniye (ms) cinsinden ifade eder. Bu süre ne kadar kısa olursa, görüntüler o kadar hızlı tepki verir ve aksiyon dolu filmlerde ya da oyunlarda hareket eden nesnelerin arkasında oluşan “ghosting” (hayalet görüntü / bulanıklık) efekti önlenmiş olur.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "384235",
@@ -1362,7 +1442,17 @@
       "C": "Mini LED",
       "D": "LCD",
       "E": "Plazma"
-    }
+    },
+    "explanation": "OLED (Organik Işık Yayan Diyot) ekranlar harika siyah renkler ve kontrast sunmalarına rağmen, isimlerinden de anlaşıldığı üzere “organik” maddeler içerdikleri için zamanla piksel yanması (burn-in) veya parlaklık kaybı yaşayabilirler. Ancak yeni nesil görüntü teknolojisi olan Mikro LED’ler, inorganik malzemeler kullanır. Bu inorganik yapı, OLED’in tüm avantajlarını sunarken aynı zamanda ekranın çok daha parlak olmasını ve uzun yıllar boyunca performansını kaybetmeden çalışmasını garantiler.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "384243",
@@ -1401,7 +1491,17 @@
       "C": "ADC",
       "D": "DAC",
       "E": "DSP"
-    }
+    },
+    "explanation": "Bilgisayarlar ikili sayı sistemiyle (0 ve 1’ler), yani tamamen dijital olarak çalışırlar. Ancak hoparlörlerin veya kulaklıkların hava titreşimi yaratarak çalabileceği ses dalgaları sürekli ve analog yapılardır. Ses kartının içinde yer alan ve anakarttan gelen bu dijital sinyalleri, hoparlörün anlayabileceği elektrikli analog ses dalgalarına çeviren birime DAC (Digital to Analog Converter / Dijital-Analog Dönüştürücü) denir.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "384024",
@@ -1570,7 +1670,17 @@
       "C": "Telefon",
       "D": "Bilgisayar",
       "E": "Tablet"
-    }
+    },
+    "explanation": "Tuşlu veri girişi fikri ve günümüzde tüm cihazlarda standart olan harf dizilimleri (QWERTY gibi) bilgisayarlardan çok daha eski bir mekanik geçmişe dayanır. 19. yüzyılda icat edilen mekanik yazı yazma makineleri olan “Daktilo”lar, klavye kullanımının tarihteki ilk örnekleridir. Yazı kollarının sıkışmasını önlemek için geliştirilen klavye düzeni, bilgisayarlar icat edildiğinde doğrudan elektronik donanımlara miras kalmıştır.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "384035",
@@ -1661,7 +1771,17 @@
       "C": "Fare",
       "D": "Kasa",
       "E": "Hoparlör"
-    }
+    },
+    "explanation": "Hoparlörler (Speakers), bilgisayardan, telefondan veya herhangi bir ses kaynağından gelen dijital ya da analog elektronik sinyalleri alıp mekanik titreşimlere çeviren çıkış donanımlarıdır. İçerisindeki manyetik bobinler ve mıknatıslar yardımıyla havayı titreştirerek, insan kulağının algılayabileceği ses dalgalarını oluştururlar. Bu nedenle elektronik sinyali hava titreşimine dönüştüren donanım hoparlördür. Yazıcı, ekran veya fare ise sırasıyla görsel ve mekanik girdi/çıktı birimleridir.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "384261",
@@ -1752,7 +1872,16 @@
       "C": "3D tasarım verisinin yazıcı aktarılması ve okunmasıyla işlem başlar.",
       "D": "En yüksek malzeme mukavemetine bu teknoloji ile ulaşılmaktadır.",
       "E": "Termoplastik malzeme ısıtılarak erimiş plastik olarak basılır."
-    }
+    },
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "384042",
@@ -1791,7 +1920,17 @@
       "C": "Daktilo Yazıcılar",
       "D": "7D Yazıcılar",
       "E": "Nokta Vuruşlu Yazıcılar"
-    }
+    },
+    "explanation": "Donanım teknolojisinde yazıcılar farklı baskı yöntemleri kullanır. Toner tozunu ısıyla kağıda yapıştıran Lazer yazıcılar, kartuşla sıvı mürekkep damlatan Püskürtmeli (Inkjet) yazıcılar, fatura/makbuz basan şeritli Nokta Vuruşlu (Dot Matrix) yazıcılar ve mekanik yapıdaki Daktilolar birer yazıcı donanım sınıfıdır. Fakat “7D Yazıcılar” adında gerçek, ticari veya bilimsel bir yazıcı donanım sınıfı bulunmamaktadır.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "384267",
@@ -1908,7 +2047,17 @@
       "C": "VLAN",
       "D": "Koaksiyel BNC",
       "E": "SFP"
-    }
+    },
+    "explanation": "Ethernet kartlarının (Ağ Arayüz Kartları) üzerinde ağ kablolarını takmak için fiziksel bağlantı noktaları (arayüzleri) bulunur. RJ-45 günümüzdeki standart bakır internet/ağ kabloları içindir. LC ve SFP modülleri fiber optik kabloların bağlandığı portlardır, BNC ise eski tip koaksiyel kablo ağlarında kullanılırdı. Ancak VLAN (Virtual Local Area Network), bir fiziksel kablo soketi veya bağlantı arayüzü değil, ağ anahtarları (switch) üzerinde yazılımsal olarak oluşturulan “Sanal Yerel Ağ” anlamına gelen mantıksal bir ağ protokolüdür.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "384050",
@@ -1999,7 +2148,17 @@
       "C": "NAT",
       "D": "VLAN",
       "E": "MAC"
-    }
+    },
+    "explanation": "Ağ ortamına bağlanan her elektronik cihazın (telefon, bilgisayar vb.) haberleşebilmesi için benzersiz bir IP adresine sahip olması gerekir. Modeme bağlandığınız anda cihazınıza otomatik olarak bir yerel IPv4 adresi, alt ağ maskesi ve ağ geçidi tahsis eden, adres dağıtım işini üstlenen protokole DHCP (Dinamik İstemci Yapılandırma Protokolü) denir. Böylece kullanıcıların ağa bağlanırken IP ayarlarını manuel yapmasına gerek kalmaz.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "384279",
@@ -2168,7 +2327,17 @@
       "C": "En önemli ögeleri; fleuresan lamba, optik düzenek, mikroişlemci ve adım motorudur.",
       "D": "Yapısında veri iletişim arayüzü, besleme katı, dengeleştirici kol, kontrol devresi bulunur.",
       "E": "Gazete, dergi, broşür gibi büyük boyutlu ve hassas, hatasız, kaliteli sonuçlar alınması istenen yayın endüstrisi alanlarında kullanılır."
-    }
+    },
+    "explanation": "Düz yataklı (Flatbed) tarayıcılar, ev ve ofis kullanıcıları için tasarlanmış, genellikle A4 boyutundaki belgeleri cam bir yüzeye (yatağa) yatırıp hareket eden optik bir kafa ile okuma yapan basit donanımlardır. “Yayın endüstrisinde” devasa boyutlu posterleri, profesyonel dergileri veya çok hassas grafikleri sıfır hata ve inanılmaz yüksek çözünürlükle taramak için bu cihazlar yetersiz kalır; bu işler için Tamburlu (Drum) tarayıcılar gibi pahalı endüstriyel donanımlar tercih edilir.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "385316",
@@ -2207,7 +2376,17 @@
       "C": "LiIon, NiCad, NiMh",
       "D": "USB, A/V, DC",
       "E": "JPEG, TIFF, RAW"
-    }
+    },
+    "explanation": "Dijital fotoğraf makineleri ve kameralar, sensörden aldıkları ışık verisini hafıza kartlarına işlerken çeşitli resim/dosya formatları kullanırlar. Dosya boyutunu sıkıştırarak yer tasarrufu sağlayan JPEG, detayları bozmadan kayıp yaşamayan TIFF ve fotoğrafçının renk/ışık ayarlarını bilgisayarda sıfırdan düzenleyebilmesi için sensörden gelen en ham, işlenmemiş veriyi tutan RAW (Ham) formatı dijital kameralara ait dosya kayıt uzantılarıdır.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "387962",
@@ -2272,7 +2451,17 @@
       "C": "Parmak izi okuyucunun kablolu olarak haberleştirilmesi gerekmektedir.",
       "D": "Cihazın doğru bir şekilde yapılandırılmış olmasını gerekmektedir.",
       "E": "Parmak izi okuyucusuna okunacak parmak izinin temiz ve kurumuş olması gerekmektedir."
-    }
+    },
+    "explanation": "Parmak izi okuyucularının başarılı bir kimlik doğrulaması yapabilmesi için parmağın temiz/kuru olması, cihazın sürücülerinin bilgisayara güncel olarak yüklenmesi ve ayarlarının doğru yapılandırılması son derece önemlidir. Fakat parmak izi okuyucusunun illa “kablolu” olarak bağlanması gerektiği düşüncesi teknik olarak yanlıştır. Günümüzde birçok dizüstü bilgisayarda entegre okuyucular yer almakta; akıllı telefonlarda veya kurumsal sistemlerde ise Bluetooth, Wi-Fi gibi kablosuz bağlantı protokolleriyle çalışan cihazlar güvenle kullanılmaktadır.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "384284",
@@ -2376,7 +2565,17 @@
       "C": "Off-line UPS",
       "D": "Xoxide UPS",
       "E": "Lian UPS"
-    }
+    },
+    "explanation": "Kesintisiz güç kaynakları (UPS) sistemin ihtiyaçlarına göre ayrılır. Line-interactive UPS’ler, şebeke elektriği varken hem voltajı bir regülatör vasıtasıyla düzenler (dalgalanmaları önler) hem de içindeki aküyü şarj eder. Elektrik kesildiği an milisaniyeler içinde akü moduna geçerek bilgisayar, modem veya sunucu gibi cihazların aniden kapanmasını engeller. Ev ve küçük ofislerde (ufak yüklerde) kullanıcının bilgisayarını işletim sistemi üzerinden güvenli bir şekilde kapatmasına olanak tanıyan ideal donanımdır.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "384292",
