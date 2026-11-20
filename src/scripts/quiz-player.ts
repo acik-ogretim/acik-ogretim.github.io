@@ -135,6 +135,7 @@ export class QuizPlayer {
       // Removed shuffleQuestions
       filterUnite: 'all',
       filterSource: 'all',
+      filterExam: 'all',
       filterIncorrect: false,
       filterUnanswered: false,
       showAnswers: true,
@@ -254,6 +255,7 @@ export class QuizPlayer {
         explanation,
         unitNumber,
         source: (el.getAttribute('data-source') || 'soru-bankasi') as Source,
+        sinavlar: (el.getAttribute('data-sinav') || '').split(';').filter(Boolean),
         el: el as HTMLElement,
         options
       };
@@ -389,6 +391,11 @@ export class QuizPlayer {
       filtered = filtered.filter(q => q.source !== 'cikmis-soru');
     }
 
+    // Exam filter: questions that appeared in the chosen exam (year + type)
+    if (this.settings.filterExam && this.settings.filterExam !== 'all') {
+      filtered = filtered.filter(q => q.sinavlar.includes(this.settings.filterExam));
+    }
+
     // Incorrect/Unanswered Progress Filters
     if (this.settings.filterIncorrect || this.settings.filterUnanswered) {
       filtered = filtered.filter(q => {
@@ -503,6 +510,33 @@ export class QuizPlayer {
       unitSelect.value = this.settings.filterUnite;
       unitSelect.onchange = (e) => {
         this.settings.filterUnite = (e.target as HTMLSelectElement).value;
+        this.saveSettings();
+        this.applyFilters();
+      };
+    }
+
+    const examSelect = document.getElementById('setting-exam') as HTMLSelectElement;
+    if (examSelect) {
+      const EXAM_LABEL: Record<string, string> = {
+        vize: 'Vize', final: 'Final', butunleme: 'Bütünleme', 'tek-ders': 'Tek Ders',
+        'yaz-okulu': 'Yaz Okulu', 'uc-ders': 'Üç Ders', genel: '',
+      };
+      const counts = new Map<string, number>();
+      this.originalQuestions.forEach(q => q.sinavlar.forEach(s => counts.set(s, (counts.get(s) || 0) + 1)));
+      const exams = [...counts.keys()].sort((a, b) => b.localeCompare(a, 'tr'));
+      examSelect.length = 1;
+      exams.forEach(s => {
+        const [year, type] = s.split(' ');
+        const opt = document.createElement('option');
+        opt.value = s;
+        opt.textContent = `${year || 'Yılı bilinmeyen'} ${EXAM_LABEL[type] ?? type} (${counts.get(s)})`.trim();
+        examSelect.appendChild(opt);
+      });
+      (examSelect.parentElement as HTMLElement).hidden = exams.length === 0;
+      if (!exams.includes(this.settings.filterExam)) this.settings.filterExam = 'all';
+      examSelect.value = this.settings.filterExam;
+      examSelect.onchange = (e) => {
+        this.settings.filterExam = (e.target as HTMLSelectElement).value;
         this.saveSettings();
         this.applyFilters();
       };

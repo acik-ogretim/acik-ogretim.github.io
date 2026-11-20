@@ -106,6 +106,7 @@ const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
   'anadolu-aof': { icon: 'GraduationCap', gradient: 'from-blue-600 to-blue-800' },
   'ataturk-aof': { icon: 'Book', gradient: 'from-red-600 to-red-800' },
   'auzef': { icon: 'BookOpen', gradient: 'from-purple-600 to-purple-800' },
+  'ankuzef': { icon: 'Landmark', gradient: 'from-sky-700 to-sky-900' },
 };
 ---
 
@@ -118,7 +119,7 @@ const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
       "name": "Açık Öğretim Portal",
       "url": "https://acik-ogretim.github.io",
       "logo": "https://acik-ogretim.github.io/favicon.svg",
-      "description": "Anadolu, Atatürk ve İstanbul Üniversitesi açık öğretim öğrencileri için ücretsiz çalışma portalı.",
+      "description": "Anadolu, Atatürk, İstanbul ve Ankara Üniversitesi açık ve uzaktan öğretim öğrencileri için ücretsiz çalışma portalı.",
       "sameAs": [
         "https://github.com/acik-ogretim"
       ]
@@ -162,7 +163,7 @@ const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
       </h1>
 
       <p class="text-base sm:text-lg md:text-xl text-muted-theme max-w-2xl mx-auto mb-10 px-4">
-        Anadolu, Atatürk ve İstanbul Üniversitesi açık öğretim öğrencileri için
+        Anadolu, Atatürk, İstanbul ve Ankara Üniversitesi açık ve uzaktan öğretim öğrencileri için
         <strong class="text-theme"> binlerce soru</strong> ve
         <strong class="text-theme"> interaktif testler</strong>.
       </p>
@@ -263,9 +264,15 @@ const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
               <div class={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${style.gradient}`}></div>
 
               <div class="flex items-start gap-4 mb-4">
-                <div class={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl bg-gradient-to-br ${style.gradient} text-white shrink-0`}>
-                  <Simge ad={style.icon} size={28} />
-                </div>
+                {uni.logo ? (
+                  <div class="w-14 h-14 rounded-xl flex items-center justify-center bg-white border border-theme shrink-0 p-1.5">
+                    <img src={uni.logo} alt={`${uni.name} logosu`} width="48" height="48" loading="lazy" class="w-full h-full object-contain" />
+                  </div>
+                ) : (
+                  <div class={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl bg-gradient-to-br ${style.gradient} text-white shrink-0`}>
+                    <Simge ad={style.icon} size={28} />
+                  </div>
+                )}
                 <div class="flex-1 min-w-0">
                   <h3 class="text-xl font-bold text-theme group-hover:text-primary-theme truncate" itemprop="name">
                     {uni.shortName}

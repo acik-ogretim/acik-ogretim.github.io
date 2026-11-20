@@ -227,6 +227,9 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { y
                     data-unit={unit}
                     data-id={q.id}
                     data-source={q.source}
+                    data-sinav={(q.sinavlar ?? (q.source === "cikmis-soru" && q.year ? [{ year: String(q.year), examType: q.examType ?? "genel" }] : []))
+                      .map((s) => `${s.year} ${s.examType}`)
+                      .join(";")}
                     data-testid="question-card"
                   >
                     <header class="mb-4">

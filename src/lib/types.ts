@@ -41,6 +41,8 @@ export interface PlayerQuestion {
     explanation: string;
     unitNumber: number;
     source: Source;
+    /** Exams the question appeared in, as "2025-2026 vize" */
+    sinavlar: string[];
     el: HTMLElement | null;
     options: { key: OptionKey; text: string }[];
 }
@@ -48,6 +50,8 @@ export interface PlayerQuestion {
 export interface QuizSettings {
     filterUnite: string;
     filterSource: 'all' | 'cikmis-soru' | 'alistirma';
+    /** 'all' or one exam, e.g. "2025-2026 vize" */
+    filterExam: string;
     filterIncorrect: boolean;
     filterUnanswered: boolean;
     showAnswers: boolean;
