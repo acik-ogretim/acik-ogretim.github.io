@@ -2053,17 +2053,31 @@
     }
   },
   {
-    "id": "339187",
+    "id": "354948",
     "unitNumber": 10,
     "text": "<strong>Aşağıdaki sorgulardan hangisi geri dönüşü olmadığı için dikkatli yapılması gereken bir sorgu yapısıdır?</strong>",
     "correctAnswer": "C",
     "options": {
-      "A": "CREATE DATABASE &lt;VERİ_TABANI_ADI&gt;",
-      "B": "USE &lt;VERİ_TABANI_ADI&gt;",
-      "C": "DROP DATABASE &lt;VERİ_TABANI_ADI&gt;",
-      "D": "TRUNCATE DATABASE &lt;VERİ_TABANI_ADI&gt;",
-      "E": "ALTER DATABASE &lt;VERİ_TABANI_ADI&gt;"
-    }
+      "A": "SELECT &lt;alan_adi1&gt;, &lt;alan_adi2&gt; FROM &lt;tablo_adi&gt; WHERE &lt;koşul&gt;&lt;/koşul&gt;&lt;/tablo_adi&gt;&lt;/alan_adi2&gt;&lt;/alan_adi1&gt;",
+      "B": "UPDATE DATABASE SET &lt;alan_adi&gt; = &lt;değer&gt;WHERE &lt;koşul&gt;&lt;/koşul&gt;&lt;/değer&gt;&lt;/alan_adi&gt;",
+      "C": "DELETE FROM &lt;tablo_adi&gt; WHERE &lt;kosul&gt;&lt;/kosul&gt;&lt;/tablo_adi&gt;",
+      "D": "INSERT INTRO &lt;tablo_adi&gt; (&lt;alan_adi1&gt;, &lt;alan_adi2&gt;) VALUES (&lt;değer1&gt;,&lt;değer2&gt;)&lt;/değer2&gt;&lt;/değer1&gt;&lt;/alan_adi2&gt;&lt;/alan_adi1&gt;&lt;/tablo_adi&gt;",
+      "E": "CREATE TABLE &lt;tablo_adi&gt; (&lt;alan_adi&gt;,&lt;alan_türü&gt;)&lt;/alan_türü&gt;&lt;/alan_adi&gt;&lt;/tablo_adi&gt;"
+    },
+    "explanation": "Veri tabanı işlemlerinde “DELETE” komutu, tablodaki satırları (verileri) fiziksel olarak siler. Eğer WHERE şartı unutulur veya yanlış yazılırsa, tablodaki yüzlerce veya binlerce veri saniyeler içinde geri dönüşümsüz olarak silinebilir. Bu yüzden DELETE işlemi veri kaybı riski taşıdığı için çok büyük dikkat gerektirir.",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final"
   },
   {
     "id": "339193",
@@ -2103,33 +2117,6 @@
       "D": "Sorguların gerçekleştirileceği veri tabanının adı",
       "E": "Web sunucusuna bağlantıyı sağlayan port numarası"
     }
-  },
-  {
-    "id": "354948",
-    "unitNumber": 10,
-    "text": "<strong>Aşağıdaki sorgulardan hangisi geri dönüşü olmadığı için dikkatli yapılması gereken bir sorgu yapısıdır?</strong>",
-    "correctAnswer": "C",
-    "options": {
-      "A": "SELECT &lt;alan_adi1&gt;, &lt;alan_adi2&gt; FROM &lt;tablo_adi&gt; WHERE &lt;koşul&gt;&lt;/koşul&gt;&lt;/tablo_adi&gt;&lt;/alan_adi2&gt;&lt;/alan_adi1&gt;",
-      "B": "UPDATE DATABASE SET &lt;alan_adi&gt; = &lt;değer&gt;WHERE &lt;koşul&gt;&lt;/koşul&gt;&lt;/değer&gt;&lt;/alan_adi&gt;",
-      "C": "DELETE FROM &lt;tablo_adi&gt; WHERE &lt;kosul&gt;&lt;/kosul&gt;&lt;/tablo_adi&gt;",
-      "D": "INSERT INTRO &lt;tablo_adi&gt; (&lt;alan_adi1&gt;, &lt;alan_adi2&gt;) VALUES (&lt;değer1&gt;,&lt;değer2&gt;)&lt;/değer2&gt;&lt;/değer1&gt;&lt;/alan_adi2&gt;&lt;/alan_adi1&gt;&lt;/tablo_adi&gt;",
-      "E": "CREATE TABLE &lt;tablo_adi&gt; (&lt;alan_adi&gt;,&lt;alan_türü&gt;)&lt;/alan_türü&gt;&lt;/alan_adi&gt;&lt;/tablo_adi&gt;"
-    },
-    "explanation": "Veri tabanı işlemlerinde “DELETE” komutu, tablodaki satırları (verileri) fiziksel olarak siler. Eğer WHERE şartı unutulur veya yanlış yazılırsa, tablodaki yüzlerce veya binlerce veri saniyeler içinde geri dönüşümsüz olarak silinebilir. Bu yüzden DELETE işlemi veri kaybı riski taşıdığı için çok büyük dikkat gerektirir.",
-    "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "final"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "final"
-      }
-    ],
-    "source": "cikmis-soru",
-    "year": "2025-2026",
-    "examType": "final"
   },
   {
     "id": "357331",
