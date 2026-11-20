@@ -1,0 +1,108 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCourses, getUniversities } from "../lib/api";
+
+// Path -> readable name map, built at build time so the page can label the counter's paths.
+const adlar: Record<string, string> = { "/": "Ana sayfa" };
+for (const uni of await getUniversities()) {
+  adlar[`/${uni.id}/`] = uni.shortName ?? uni.name;
+  for (const dept of uni.departments ?? []) {
+    adlar[`/${uni.id}/${dept.id}/`] = `${uni.shortName ?? uni.name} · ${dept.name}`;
+    for (const c of await getCourses(uni.id, dept.id)) {
+      adlar[`/${uni.id}/${dept.id}/${c.id}/`] = `${c.name} · ${uni.shortName ?? uni.name}`;
+    }
+  }
+}
+---
+
+<Layout title="Ziyaret Sayıları">
+  <div class="container-narrow py-10">
+    <h1 class="page-title text-theme">Ziyaret sayıları</h1>
+    <p class="text-sm text-muted-theme mb-6">
+      Çerez ve kişisel bilgi kullanılmadan sayılır: aynı kişi bir sayfayı gün içinde kaç kez açarsa açsın bir kez sayılır.
+    </p>
+
+    <div class="flex gap-2 mb-6" role="group" aria-label="Zaman aralığı">
+      <button type="button" data-gun="1" class="aralik min-h-11 px-4 rounded-lg border border-theme text-sm font-semibold">Bugün</button>
+      <button type="button" data-gun="7" class="aralik min-h-11 px-4 rounded-lg border border-theme text-sm font-semibold">7 gün</button>
+      <button type="button" data-gun="30" class="aralik min-h-11 px-4 rounded-lg border border-theme text-sm font-semibold">30 gün</button>
+    </div>
+
+    <section class="grid grid-cols-2 gap-3 mb-8">
+      <div class="content-card">
+        <p class="text-xs text-muted-theme">Tekil ziyaretçi (günlük toplam)</p>
+        <p id="ist-tekil" class="text-3xl font-bold text-theme tabular-nums">…</p>
+      </div>
+      <div class="content-card">
+        <p class="text-xs text-muted-theme">Sayfa gösterimi</p>
+        <p id="ist-gosterim" class="text-3xl font-bold text-theme tabular-nums">…</p>
+      </div>
+    </section>
+
+    <h2 class="text-lg font-bold text-theme mb-3">Günlere göre tekil ziyaretçi</h2>
+    <div id="ist-gunluk" class="flex items-end gap-1 h-32 mb-8" aria-label="Günlük tekil ziyaretçi grafiği"></div>
+
+    <h2 class="text-lg font-bold text-theme mb-3">Sayfa ve dersler</h2>
+    <ol id="ist-sayfalar" class="space-y-2"></ol>
+    <p id="ist-durum" class="text-sm text-muted-theme mt-4"></p>
+  </div>
+</Layout>
+
+<script define:vars={{ adlar }}>
+  const API = "https://acik-ogretim-sayac.wildgenie.workers.dev/ozet";
+  const sayi = (n) => new Intl.NumberFormat("tr-TR").format(n || 0);
+
+  async function yukle(gun) {
+    document.querySelectorAll(".aralik").forEach((b) => {
+      const etkin = b.dataset.gun === String(gun);
+      b.classList.toggle("bg-primary-theme", etkin);
+      b.classList.toggle("text-white", etkin);
+      b.setAttribute("aria-pressed", String(etkin));
+    });
+    const durum = document.getElementById("ist-durum");
+    durum.textContent = "Yükleniyor…";
+    try {
+      const v = await (await fetch(`${API}?gun=${gun}`)).json();
+      const gunlukToplam = v.gunluk.reduce((t, g) => t + g.tekil, 0);
+      const gosterim = v.sayfalar.reduce((t, s) => t + (s.gosterim || 0), 0);
+      document.getElementById("ist-tekil").textContent = sayi(gunlukToplam);
+      document.getElementById("ist-gosterim").textContent = sayi(gosterim);
+
+      const enCok = Math.max(1, ...v.gunluk.map((g) => g.tekil));
+      document.getElementById("ist-gunluk").replaceChildren(
+        ...v.gunluk.map((g) => {
+          const d = document.createElement("div");
+          d.className = "flex-1 rounded-t bg-primary-theme/80 min-h-[2px]";
+          d.style.height = `${Math.round((g.tekil / enCok) * 100)}%`;
+          d.title = `${g.gun}: ${g.tekil} kişi`;
+          return d;
+        }),
+      );
+
+      document.getElementById("ist-sayfalar").replaceChildren(
+        ...v.sayfalar.map((s) => {
+          const li = document.createElement("li");
+          li.className = "content-card flex items-center gap-3 py-3";
+          const a = document.createElement("a");
+          a.href = s.yol;
+          a.className = "flex-1 min-w-0 text-sm text-theme hover:text-primary-theme line-clamp-2";
+          a.textContent = adlar[s.yol] || s.yol;
+          const n = document.createElement("span");
+          n.className = "text-sm font-bold tabular-nums text-theme whitespace-nowrap";
+          n.textContent = `${sayi(s.tekil)} kişi`;
+          const g = document.createElement("span");
+          g.className = "text-xs tabular-nums text-muted-theme whitespace-nowrap";
+          g.textContent = `${sayi(s.gosterim)} gösterim`;
+          li.append(a, n, g);
+          return li;
+        }),
+      );
+      durum.textContent = v.sayfalar.length ? `${v.aralik.bas} ile ${v.aralik.bit} arası` : "Bu aralıkta henüz kayıt yok.";
+    } catch {
+      durum.textContent = "Sayılar şu an alınamadı.";
+    }
+  }
+
+  document.querySelectorAll(".aralik").forEach((b) => b.addEventListener("click", () => yukle(Number(b.dataset.gun))));
+  yukle(7);
+</script>
