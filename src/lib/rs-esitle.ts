@@ -3,7 +3,6 @@
 // database; the browser talks to the learner's storage directly with the learner's own authorization.
 
 import type RemoteStorage from "remotestoragejs";
-import { GOOGLE_CLIENT_ID } from "./google-esitle";
 import { topla, yukle } from "./yedek";
 
 const KAPSAM = "acik-ogretim";
@@ -17,8 +16,9 @@ function rsYukle(): Promise<RemoteStorage> {
   ornek ??= import("remotestoragejs").then(({ default: RS }) => {
     const rs = new RS({ cache: false, logging: false });
     rs.access.claim(KAPSAM, "rw");
+    // No googledrive key here: remoteStorage's Drive backend asks for the full `drive` scope, which Google shows as an
+    // unverified app and then refuses. Google Drive goes through google-esitle.ts (drive.appdata) instead.
     const anahtarlar: Record<string, string> = {};
-    if (GOOGLE_CLIENT_ID) anahtarlar.googledrive = GOOGLE_CLIENT_ID;
     if (DROPBOX_KEY) anahtarlar.dropbox = DROPBOX_KEY;
     if (Object.keys(anahtarlar).length) rs.setApiKeys(anahtarlar);
     return rs;
