@@ -126,7 +126,8 @@ export const questionSchema = z.object({
     year: z.union([z.number(), z.string()]).optional().default(''),
     examType: ExamTypeEnum.catch('genel'),
     // Every exam the question appeared in, newest first (year is the academic year: 2024-2025)
-    sinavlar: z.array(z.object({ year: z.string(), examType: ExamTypeEnum.catch('genel') })).default([]),
+    // kitapcik: the booklet within that exam when one exam had several (e.g. "Güz", "İşletme", "2. kitapçık")
+    sinavlar: z.array(z.object({ year: z.string(), examType: ExamTypeEnum.catch('genel'), kitapcik: z.string().optional() })).default([]),
     difficulty: DifficultyEnum.default('orta'),
     topics: z.array(z.string()).default([]),
 });

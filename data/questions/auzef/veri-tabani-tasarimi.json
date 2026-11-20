@@ -169,11 +169,11 @@
       },
       {
         "year": "2024-2025",
-        "examType": "final"
+        "examType": "vize"
       },
       {
         "year": "2024-2025",
-        "examType": "vize"
+        "examType": "final"
       },
       {
         "year": "2023-2024",
@@ -607,15 +607,15 @@
     "explanation": "Üçüncü Normal Form (3NF); “Geçişli Bağımlılıkların” (Transitive Dependency) ve “Hesaplanabilir Alanların” (Calculated Fields) kaldırılmasını şart koşar. Eğer bir sütun (örn: Toplam Fiyat), tablodaki diğer sütunlardan (Birim Fiyat x Adet) işlem yapılarak elde edilebiliyorsa, bu sütun veri tabanında fiziksel olarak saklanmamalıdır. Bu kural 3NF’nin konusudur. Ancak bazı akademik kaynaklar DKNF’nin bu tür kısıtlamaları nihai olarak kapsadığını vurguladığı için cevap anahtarında D olarak işaretlenmiştir.",
     "source": "cikmis-soru",
     "year": "2025-2026",
-    "examType": "butunleme",
+    "examType": "final",
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "butunleme"
+        "examType": "final"
       },
       {
         "year": "2025-2026",
-        "examType": "final"
+        "examType": "butunleme"
       },
       {
         "year": "2024-2025",
@@ -642,15 +642,15 @@
     "explanation": "Bir konferans yönetim sisteminde; Katılımcılar, Salonlar, Oturumlar ve kimin hangi oturuma katıldığı (Katılım) temel tablolardır. Ancak “Ürün” (Product) tablosu, ticari bir satış/stok sistemi (e-ticaret) için gereklidir. Konferans organizasyonunun ana işlevi ürün satmak değil, bilgi paylaşımı ve oturum yönetimidir. Bu nedenle “Ürün” tablosu bağlama en uzak olandır.",
     "source": "cikmis-soru",
     "year": "2025-2026",
-    "examType": "butunleme",
+    "examType": "final",
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "butunleme"
+        "examType": "final"
       },
       {
         "year": "2025-2026",
-        "examType": "final"
+        "examType": "butunleme"
       },
       {
         "year": "2024-2025",
@@ -677,15 +677,15 @@
     "explanation": "Normalizasyon seviyeleri hiyerarşisi şöyledir: 1NF -> 2NF -> 3NF -> BCNF -> 4NF -> 5NF. Alan/Anahtar Normal Form (DKNF), normalizasyon teorisinin ulaşabileceği en üst ve teorik seviyedir. Tüm kısıtlamaların alan (domain) ve anahtar (key) tanımlarıyla sağlanabildiği ideal durumdur ve Beşinci Normal Formdan (5NF) sonra gelir (veya onu da kapsayan nihai formdur).",
     "source": "cikmis-soru",
     "year": "2025-2026",
-    "examType": "butunleme",
+    "examType": "final",
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "butunleme"
+        "examType": "final"
       },
       {
         "year": "2025-2026",
-        "examType": "final"
+        "examType": "butunleme"
       },
       {
         "year": "2024-2025",
@@ -712,15 +712,15 @@
     "explanation": "Fonksiyonel bağımlılıkta (X -> Y), sol taraftaki nitelik (Belirleyen/Determinant), sağ taraftaki veriyi tekil olarak belirleyebilmelidir. Yani sol tarafın “ayırt edici” (unique) olması tercih edilir. – Ad, Soyad, Adres veya Başlık; birden fazla kişide veya kayıtta aynı olabilir (Tekil değildir). – e-Posta adresi ise kişiye özeldir ve benzersizdir (Unique). Bir e-posta adresi bilindiğinde, o kişiye ait diğer bilgilere (Ad, Soyad vb.) kesin olarak ulaşılabilir. Bu nedenle anahtar (key) olmaya en uygun adaydır.",
     "source": "cikmis-soru",
     "year": "2025-2026",
-    "examType": "butunleme",
+    "examType": "final",
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "butunleme"
+        "examType": "final"
       },
       {
         "year": "2025-2026",
-        "examType": "final"
+        "examType": "butunleme"
       },
       {
         "year": "2024-2025",
@@ -755,15 +755,15 @@
     "explanation": "E-ticaret veya stok mantığında; “Bir müşteri birden fazla ürün satın alabilir” ve aynı zamanda “Bir ürün türü birden fazla müşteri tarafından satın alınabilir”. İki tarafta da çoğul ilişki olduğu için bu yapı “Çoğa Çok” (Many-to-Many / M:N) ilişkidir. Veri tabanı tasarımında bu ilişki doğrudan kurulamaz; araya bir “Satış” veya “Sipariş Detay” tablosu (bağlantı tablosu) konularak iki adet “Bire-Çok” ilişkiye dönüştürülür.",
     "source": "cikmis-soru",
     "year": "2025-2026",
-    "examType": "butunleme",
+    "examType": "final",
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "butunleme"
+        "examType": "final"
       },
       {
         "year": "2025-2026",
-        "examType": "final"
+        "examType": "butunleme"
       },
       {
         "year": "2024-2025",
@@ -798,15 +798,15 @@
     "explanation": "Veri kümesi (Dataset), belirli bir yapı içinde (genellikle satır ve sütunlardan oluşan tablolar halinde) organize edilmiş veri topluluğudur. Veri tabanı bu kümeleri yöneten sistemin genel adıyken, veri kümesi bu sistem içindeki veya dışındaki (örn. bir CSV dosyası) somut veri grubunu ifade eder.",
     "source": "cikmis-soru",
     "year": "2025-2026",
-    "examType": "butunleme",
+    "examType": "final",
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "butunleme"
+        "examType": "final"
       },
       {
         "year": "2025-2026",
-        "examType": "final"
+        "examType": "butunleme"
       },
       {
         "year": "2024-2025",
@@ -841,15 +841,15 @@
     "explanation": "Güvenlik gereği kullanıcı şifreleri veri tabanlarında asla açık metin (plain text) olarak saklanmaz. Bunun yerine şifreler, tek yönlü bir fonksiyon olan “Özetleme” (Hashing) algoritmaları (MD5, SHA-256 vb.) ile şifrelenerek saklanır. Kullanıcı giriş yaparken girdiği şifrenin özeti alınır ve veri tabanındaki özetle karşılaştırılır. Bu sayede veri tabanı çalınsa bile şifrelerin aslı ele geçirilemez.",
     "source": "cikmis-soru",
     "year": "2025-2026",
-    "examType": "butunleme",
+    "examType": "final",
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "butunleme"
+        "examType": "final"
       },
       {
         "year": "2025-2026",
-        "examType": "final"
+        "examType": "butunleme"
       },
       {
         "year": "2024-2025",
@@ -1375,15 +1375,15 @@
     "explanation": "Kriptolojide ve veri tabanlarında, herhangi bir uzunluktaki veriyi (girdiyi) matematiksel bir algoritmadan geçirerek sabit uzunlukta (örneğin 128 bit veya 256 bit) bir çıktıya dönüştürme işlemine “Özetleme” (Hashing) denir. Bu işlem sonucunda oluşan değere “Özet Değer” (Hash Value/Digest) adı verilir. Girdi ne kadar büyük olursa olsun, özetin boyutu sabittir.",
     "source": "cikmis-soru",
     "year": "2025-2026",
-    "examType": "butunleme",
+    "examType": "final",
     "sinavlar": [
       {
         "year": "2025-2026",
-        "examType": "butunleme"
+        "examType": "final"
       },
       {
         "year": "2025-2026",
-        "examType": "final"
+        "examType": "butunleme"
       },
       {
         "year": "2024-2025",
@@ -2030,15 +2030,15 @@
     "explanation": "MongoDB, SQLite, Access ve MySQL birer Veri Tabanı Yönetim Sistemidir (DBMS). Java ise bir programlama dilidir.",
     "source": "cikmis-soru",
     "year": "2024-2025",
-    "examType": "final",
+    "examType": "vize",
     "sinavlar": [
       {
         "year": "2024-2025",
-        "examType": "final"
+        "examType": "vize"
       },
       {
         "year": "2024-2025",
-        "examType": "vize"
+        "examType": "final"
       },
       {
         "year": "2023-2024",
@@ -2100,11 +2100,11 @@
       },
       {
         "year": "2023-2024",
-        "examType": "final"
+        "examType": "vize"
       },
       {
         "year": "2023-2024",
-        "examType": "vize"
+        "examType": "final"
       }
     ]
   },

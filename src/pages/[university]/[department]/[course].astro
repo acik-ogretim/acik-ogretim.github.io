@@ -107,10 +107,22 @@ const icindekiler: IcUnite[] = units.map((no) => {
   };
 });
 const EXAM_LABEL: Record<string, string> = { vize: "Vize", final: "Final", butunleme: "Bütünleme", "tek-ders": "Tek Ders", "yaz-okulu": "Yaz Okulu", "uc-ders": "Üç Ders", mezuniyet: "Mezuniyet", genel: "" };
-const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { year: string; examType: string }[] }) =>
-  (q.sinavlar?.length ? q.sinavlar : [{ year: String(q.year ?? ""), examType: q.examType ?? "genel" }])
-    .map((s) => `${s.year} ${EXAM_LABEL[s.examType] ?? ""}`.trim())
-    .join(", ");
+type SinavEtiket = { year: string; examType: string; kitapcik?: string };
+// One exam can have several booklets (term or programme); show the exam once with its booklets
+const examLine = (q: { year?: string | number; examType?: string; sinavlar?: SinavEtiket[] }) => {
+  const liste: SinavEtiket[] = q.sinavlar?.length ? q.sinavlar : [{ year: String(q.year ?? ""), examType: q.examType ?? "genel" }];
+  const gruplar = new Map<string, Set<string>>();
+  for (const s of liste) {
+    const ad = `${s.year} ${EXAM_LABEL[s.examType] ?? ""}`.trim();
+    const k = gruplar.get(ad) ?? new Set<string>();
+    if (s.kitapcik) k.add(s.kitapcik);
+    gruplar.set(ad, k);
+  }
+  return [...gruplar].map(([ad, k]) => (k.size ? `${ad} (${[...k].join(", ")})` : ad)).join(", ");
+};
+const examKeys = (q: { year?: string | number; examType?: string; source?: string; sinavlar?: SinavEtiket[] }) =>
+  [...new Set((q.sinavlar ?? (q.source === "cikmis-soru" && q.year ? [{ year: String(q.year), examType: q.examType ?? "genel" }] : []))
+    .map((s) => `${s.year} ${s.examType}`))].join(";");
 ---
 
 <Layout title={`${course.name} - ${department.name}`}>
@@ -320,9 +332,7 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { y
                     data-unit={unit}
                     data-id={q.id}
                     data-source={q.source}
-                    data-sinav={(q.sinavlar ?? (q.source === "cikmis-soru" && q.year ? [{ year: String(q.year), examType: q.examType ?? "genel" }] : []))
-                      .map((s) => `${s.year} ${s.examType}`)
-                      .join(";")}
+                    data-sinav={examKeys(q)}
                     data-testid="question-card"
                   >
                     <header class="mb-4">
