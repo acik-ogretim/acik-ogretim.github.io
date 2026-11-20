@@ -244,7 +244,7 @@ const style = uniStyles[university.id] || {
                           data-uni-id={university.id}
                           data-testid={`dept-card-${dept.id}`}
                         >
-                          <div class="relative glass p-4 rounded-xl border border-theme bg-card-theme hover:border-primary-theme/50 transition-all">
+                          <div class="relative glass h-24 px-4 flex items-center rounded-xl border border-theme bg-card-theme hover:border-primary-theme/50 transition-all">
                             <button
                               class="favorite-btn absolute top-2 right-2 w-6 h-6 rounded-full hover:bg-yellow-500/20 flex items-center justify-center z-10"
                               title="Favorilere ekle"
@@ -253,7 +253,8 @@ const style = uniStyles[university.id] || {
                             </button>
                             <a
                               href={`/${university.id}/${dept.id}`}
-                              class="flex items-center gap-3"
+                              title={dept.name}
+                              class="flex items-center gap-3 w-full min-w-0 pr-5"
                             >
                               {dept.icon ? (
                                 <img
@@ -304,7 +305,8 @@ const style = uniStyles[university.id] || {
                 {inactiveDepartments.map((dept) => (
                   <a
                     href={`/${university.id}/${dept.id}`}
-                    class="group flex items-center gap-2 p-3 rounded-lg border border-theme/30 bg-card-theme/50 opacity-60 hover:opacity-100 transition-opacity"
+                    title={dept.name}
+                    class="group flex items-center gap-2 h-[4.75rem] px-3 rounded-lg border border-theme/30 bg-card-theme/50 opacity-60 hover:opacity-100 transition-opacity"
                   >
                     {dept.icon ? (
                       <img
