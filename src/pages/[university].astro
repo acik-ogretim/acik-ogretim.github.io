@@ -214,7 +214,7 @@ const style = uniStyles[university.id] || {
           </h2>
           <div
             id="favorites-grid"
-            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3"
           >
           </div>
         </div>
@@ -234,7 +234,7 @@ const style = uniStyles[university.id] || {
                       </span>
                     </h2>
 
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                       {group.departments.map((dept) => (
                         <div
                           class="dept-card group"
@@ -244,7 +244,7 @@ const style = uniStyles[university.id] || {
                           data-uni-id={university.id}
                           data-testid={`dept-card-${dept.id}`}
                         >
-                          <div class="relative glass h-24 px-3 sm:px-4 flex items-center rounded-xl border border-theme bg-card-theme hover:border-primary-theme/50 transition-all">
+                          <div class="relative glass h-16 sm:h-24 px-4 flex items-center rounded-xl border border-theme bg-card-theme hover:border-primary-theme/50 transition-all">
                             <button
                               class="favorite-btn absolute top-2 right-2 w-6 h-6 rounded-full hover:bg-yellow-500/20 flex items-center justify-center z-10"
                               title="Favorilere ekle"
@@ -263,10 +263,10 @@ const style = uniStyles[university.id] || {
                                   class="w-10 h-10 object-contain flex-shrink-0"
                                 />
                               ) : (
-                                <span class="hidden sm:inline-flex text-2xl flex-shrink-0"><Simge ad="FolderOpen" /></span>
+                                <span class="text-2xl flex-shrink-0"><Simge ad="FolderOpen" /></span>
                               )}
                               <span class="flex flex-col min-w-0">
-                                <span class="text-sm font-medium text-theme group-hover:text-primary-theme line-clamp-2 break-words hyphens-auto">
+                                <span class="text-sm font-medium text-theme group-hover:text-primary-theme line-clamp-1 sm:line-clamp-2 break-words hyphens-auto">
                                   {dept.name}
                                 </span>
                                 <span class="text-[11px] text-muted-theme">{dereceAdi(dept.degree)}</span>
@@ -285,7 +285,7 @@ const style = uniStyles[university.id] || {
         <!-- Search Results Container -->
         <div
           id="searchResults"
-          class="hidden grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-16 pb-8"
+          class="hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-16 pb-8"
         >
         </div>
 
@@ -301,12 +301,12 @@ const style = uniStyles[university.id] || {
                 </span>
               </h2>
 
-              <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2">
+              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2">
                 {inactiveDepartments.map((dept) => (
                   <a
                     href={`/${university.id}/${dept.id}`}
                     title={dept.name}
-                    class="group flex items-center gap-2 h-[4.75rem] px-3 rounded-lg border border-theme/30 bg-card-theme/50 opacity-60 hover:opacity-100 transition-opacity"
+                    class="group flex items-center gap-2 h-14 sm:h-[4.75rem] px-3 rounded-lg border border-theme/30 bg-card-theme/50 opacity-60 hover:opacity-100 transition-opacity"
                   >
                     {dept.icon ? (
                       <img
@@ -315,10 +315,10 @@ const style = uniStyles[university.id] || {
                         class="w-6 h-6 object-contain opacity-50"
                       />
                     ) : (
-                      <span class="hidden sm:inline-flex text-sm opacity-50"><Simge ad="FolderOpen" /></span>
+                      <span class="text-sm opacity-50"><Simge ad="FolderOpen" /></span>
                     )}
                     <span class="flex flex-col min-w-0">
-                      <span class="text-xs text-muted-theme group-hover:text-theme line-clamp-2 break-words hyphens-auto">
+                      <span class="text-xs text-muted-theme group-hover:text-theme line-clamp-1 sm:line-clamp-2 break-words hyphens-auto">
                         {dept.name}
                       </span>
                       <span class="text-[11px] font-semibold text-muted-theme">{dereceAdi(dept.degree)}</span>
