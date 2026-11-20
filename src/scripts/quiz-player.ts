@@ -519,7 +519,7 @@ export class QuizPlayer {
     if (examSelect) {
       const EXAM_LABEL: Record<string, string> = {
         vize: 'Vize', final: 'Final', butunleme: 'Bütünleme', 'tek-ders': 'Tek Ders',
-        'yaz-okulu': 'Yaz Okulu', 'uc-ders': 'Üç Ders', genel: '',
+        'yaz-okulu': 'Yaz Okulu', 'uc-ders': 'Üç Ders', mezuniyet: 'Mezuniyet', genel: '',
       };
       const counts = new Map<string, number>();
       this.originalQuestions.forEach(q => q.sinavlar.forEach(s => counts.set(s, (counts.get(s) || 0) + 1)));

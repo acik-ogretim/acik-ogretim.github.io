@@ -60,7 +60,7 @@ const questions = await getQuestions(university.id, course.id);
 const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
   (a, b) => (a === 0 ? 1 : 0) - (b === 0 ? 1 : 0) || a - b,
 );
-const EXAM_LABEL: Record<string, string> = { vize: "Vize", final: "Final", butunleme: "Bütünleme", "tek-ders": "Tek Ders", "yaz-okulu": "Yaz Okulu", "uc-ders": "Üç Ders", genel: "" };
+const EXAM_LABEL: Record<string, string> = { vize: "Vize", final: "Final", butunleme: "Bütünleme", "tek-ders": "Tek Ders", "yaz-okulu": "Yaz Okulu", "uc-ders": "Üç Ders", mezuniyet: "Mezuniyet", genel: "" };
 const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { year: string; examType: string }[] }) =>
   (q.sinavlar?.length ? q.sinavlar : [{ year: String(q.year ?? ""), examType: q.examType ?? "genel" }])
     .map((s) => `${s.year} ${EXAM_LABEL[s.examType] ?? ""}`.trim())

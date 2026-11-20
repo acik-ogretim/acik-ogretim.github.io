@@ -27,6 +27,7 @@ export const ExamTypeEnum = z.enum([
     'tek-ders',
     'yaz-okulu',
     'uc-ders',
+    'mezuniyet',
     'genel'
 ]);
 
