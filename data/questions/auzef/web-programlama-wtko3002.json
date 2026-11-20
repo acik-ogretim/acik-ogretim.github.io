@@ -1,1 +1,1496 @@
-[]
+[
+  {
+    "id": "s-806c04353d45",
+    "unitNumber": 0,
+    "text": "<pre><strong><code>&lt;?php<br/>$a=4;<br/>$b=3;<br/>if ($a != $b) {<br/>echo \"A, B'ye eşit değildir\";<br/>} else {<br/>echo \"A, B'ye eşittir\";<br/>}<br/>?&gt;</code></strong></pre><br/>Yukarıdaki PHP kod bloğunun çıktısı aşağıdaki seçeneklerden hangisidir?",
+    "options": {
+      "A": "a=4 b=3",
+      "B": "A, B'ye eşit değildir",
+      "C": "A, B'ye eşittir",
+      "D": "a=4 b=3",
+      "E": "Hata verir"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-77fb5a6d8a1a",
+    "unitNumber": 0,
+    "text": "<pre><strong><code>&lt;?php<br/>switch ($a) {<br/>case 2:<br/>echo \"Birinci\";<br/>break;<br/>case a:<br/>echo \"İkinci\";<br/>break;<br/>}<br/>?&gt;</code></strong></pre><br/>Yukarıdaki PHP kodunun çıktısı hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "Birinci İkinci",
+      "B": "Çıktı vermez",
+      "C": "Birinci",
+      "D": "Undefined variable $a",
+      "E": "İkinci"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c3cc23f12ae0",
+    "unitNumber": 0,
+    "text": "<pre><strong><code>&lt;?php<br/>$a=20;<br/>echo $a++;<br/>?&gt;</code></strong></pre><br/>Yukarıda verilen PHP kodunun çıktısı hangi seçenekte doğru verilmiştir?",
+    "options": {
+      "A": "21",
+      "B": "35 birds",
+      "C": "35",
+      "D": "20",
+      "E": "45"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-210b5b4511a1",
+    "unitNumber": 0,
+    "text": "PHP’de + operatörü hangi amaçla kullanılmaktadır?",
+    "options": {
+      "A": "Değişkenin değerini bir azaltır.",
+      "B": "Değişkenin değerini sıfırlar.",
+      "C": "Değişkenin değerini bir arttırır.",
+      "D": "Değişkenin değerini iki katına çıkarır.",
+      "E": "Değişkenin türünü değiştirir."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-25cf97e318ea",
+    "unitNumber": 0,
+    "text": "PHP&#8217;de while ve do&#8230;while döngüleri arasındaki temel fark aşağıdaki seçeneklerden hangisinde belirtilmiştir?",
+    "options": {
+      "A": "while sonsuz döngülerde kullanılmaktadır.",
+      "B": "while önce koşulu kontrol etmekteyken, do...while önce istenen işlemi yapıp, sonra koşulu kontrol etmektedir.",
+      "C": "while sadece sabitlerle çalışmaktadır.",
+      "D": "do...while koşul sağlanmazsa çalışmaz.",
+      "E": "do...while if ile birlikte kullanılmaktadır."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-11c365e94f34",
+    "unitNumber": 0,
+    "text": "<pre><strong><code>&lt;?php<br/>$total = \"35 birds\";<br/>$more = 10;<br/>$total = $total + $more;<br/>echo $total;<br/>?&gt;</code></strong></pre><br/>Yukarıda verilen PHP kodunun çıktısı hangi seçenekte doğru verilmiştir?",
+    "options": {
+      "A": "45 birds",
+      "B": "35 birds",
+      "C": "35",
+      "D": "PHP uyarı ile birlikte 45 çıktısını verir.",
+      "E": "45"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-23adfa28a217",
+    "unitNumber": 0,
+    "text": "<pre><strong><code>&lt;?php<br/>$cars = array(\"Audi\", \"Mercedes\", \"Opel\");<br/>echo \"I like \" . $cars[1] . \", \" . $cars[2] . \" and \" . $cars[0] . \".\";<br/>?&gt;</code></strong></pre><br/>Yukarıda verilen PHP kodunun çıktısı hangi seçenekte doğru verilmiştir?",
+    "options": {
+      "A": "I like Mercedes, Opel and Audi.",
+      "B": "I like Opel, Mercedes and Audi.",
+      "C": "I like Mercedes, Opel, Audi.",
+      "D": "I like Audi, Mercedes and Opel.",
+      "E": "I like Opel, Audi and Mercedes."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e6139a3d4aff",
+    "unitNumber": 0,
+    "text": "<pre><strong><code>&lt;?php<br/>$grade='B';<br/>$result=\"\";<br/>switch ($grade) {<br/>case 'A':<br/>$result+=\"4\";<br/>break;<br/>case 'B':<br/>$result+=\"3\";<br/>break;<br/>case 'C':<br/>$result+=\"2\";<br/>break;<br/>default:<br/>$result+=\"1\";<br/>}<br/>echo $result;<br/>?&gt;</code></strong></pre><br/>Yukarıda verilen PHP kodunun çıktısı aşağıdaki seçenekte doğru verilmiştir?",
+    "options": {
+      "A": "0",
+      "B": "4",
+      "C": "1",
+      "D": "3",
+      "E": "2"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c56e15ec2456",
+    "unitNumber": 0,
+    "text": "PHP&#8217;de veri türleriyle ilgili aşağıdaki seçeneklerden hangisi yanlıştır?",
+    "options": {
+      "A": "Integer veri türü, sadece pozitif tam sayılar içermektedir.",
+      "B": "Array veri türü, bir veya birden fazla değeri depolamak için kullanılmaktadır.",
+      "C": "Float veri türü, ondalık sayıları saklamak için kullanılmaktadır.",
+      "D": "Boolean türü \"true\" veya \"false\" olmak üzere iki değerden birini alabilir.",
+      "E": "String veri türü, metin verilerini temsil etmektedir."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5117c71e3095",
+    "unitNumber": 0,
+    "text": "<pre><strong><code>$sayi=\"25\";</code></strong></pre><br/>Yukarıdaki PHP kod satırında verilen $sayi değişkeninin türünü öğrenmek için hangi fonksiyon kullanılmalıdır?",
+    "options": {
+      "A": "gettype($sayi);",
+      "B": "gettype($sayi, null);",
+      "C": "settype($sayi);",
+      "D": "settype($sayi, integer);",
+      "E": "gettype( sayi,object);"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5b633d0ede14",
+    "unitNumber": 0,
+    "text": "<pre><strong><code>&lt;?php<br/>$a=3;<br/>settype($a, \"string\");<br/>echo gettype($a) . \"&lt;br&gt;\";<br/>$b=3.2;<br/>echo gettype($b) . \"&lt;br&gt;\";<br/>$c=\"Hello\";<br/>echo gettype($c) . \"&lt;br&gt;\";<br/>?&gt;</code></strong></pre><br/>Yukarıdaki PHP kod satırlarının çıktısı ekranda gözükme biçimi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "integer double string",
+      "B": "3 3.2 Hello",
+      "C": "string double string",
+      "D": "integer double string",
+      "E": "string double string"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-40dafd3e0510",
+    "unitNumber": 0,
+    "text": "Aşağıdakilerden hangisi PHP’de ekrana Merhaba Dünya yazdırılmasını sağlar?",
+    "options": {
+      "A": "\"Merhaba dünya\"",
+      "B": "echo \"Merhaba Dünya\";",
+      "C": "echo Merhaba Dünya",
+      "D": "Echo",
+      "E": "Response.Write(\"Merhaba Dünya\")"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-75bcd7e73d4b",
+    "unitNumber": 0,
+    "text": "Aşağıdaki seçenekler arasında, PHP&#8217;nin açılımını doğru şekilde belirten ifadeyi işaretleyiniz.",
+    "options": {
+      "A": "Personal Hypertext Processor",
+      "B": "Public Home Page",
+      "C": "Private Home Processor",
+      "D": "Private Hypertext Processor",
+      "E": "Personal Home Page"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-744f5a76b3a9",
+    "unitNumber": 0,
+    "text": "<pre><strong><code>&lt;?php<br/>$user = array(\"East\", \"West\", \"South\", \"North\");<br/>for ($x=0; $x &lt; count($user); $x++) {<br/>if ($user[$x] == \"West\")<br/>continue;<br/>echo $user[$x];<br/>}<br/>?&gt;</code></strong></pre><br/>Yukarıda verilen PHP kodunun çıktısı hangi seçenekte doğru verilmiştir?",
+    "options": {
+      "A": "SouthNorthEast",
+      "B": "NorthEastSouth",
+      "C": "EastSouthNorth",
+      "D": "West",
+      "E": "East West"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-404dbfc7bc7a",
+    "unitNumber": 0,
+    "text": "Aşağıda verilen PHP ile ilgili temel bilgilerden hangisi yanlıştır?",
+    "options": {
+      "A": "PHP sunucu taraflı çalışan bir programlama dilidir.",
+      "B": "PHP HTML etiketleri içerisine gömülür.",
+      "C": "HTML kodları dinamik, PHP ise statik sayfalar sağlar.",
+      "D": "PHP, tırnak kullanmasanız da bir değişkenin sayı olup olmadığını anlar.",
+      "E": "PHP  etiketleri içerisine yazılır."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e81e49577548",
+    "unitNumber": 0,
+    "text": "Aşağıdakilerden hangisi PHP’de ilişkilendirilmiş bir dizi tanımlamak için kullanılmaktadır?",
+    "options": {
+      "A": "$dizi (\"ad\", \"yas\");",
+      "B": "$isimler [\"Ali\", \"Veli\", \"Ayşe\"];",
+      "C": "$yaslar = 10=&gt;25 25,1 1=&gt;301;",
+      "D": "$sayi = 5;",
+      "E": "$bilgiler = [\"ad\" =&gt; \"Ali\", \"yas\" =&gt; 25];"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8144ce5ed9a8",
+    "unitNumber": 0,
+    "text": "Aşağıdaki ifadelerden hangisi PHP&#8217;de bir döngüyü ya da yapıyı kırmak için kullanılmaktadır?",
+    "options": {
+      "A": "break",
+      "B": "default",
+      "C": "continue",
+      "D": "end",
+      "E": "case"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-0de36c90a053",
+    "unitNumber": 0,
+    "text": "Aşağıdakilerden hangisi PHP&#8217;de kullanılan bir veri türü değildir?",
+    "options": {
+      "A": "Array",
+      "B": "Integer",
+      "C": "Character",
+      "D": "Double",
+      "E": "Object"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c744cb163e15",
+    "unitNumber": 0,
+    "text": "<pre><strong><code>$dersler = array(“PHP”, “Java”, “SQL”);</code></strong></pre><br/><code>$dersler</code> dizisinin alfabetik olarak sıralanmasını sağlayan fonksiyon aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "krsort($dersler);",
+      "B": "sort($dersler);",
+      "C": "arsort($dersler);",
+      "D": "rsort($dersler);",
+      "E": "ksort($dersler);"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-90602471e553",
+    "unitNumber": 0,
+    "text": "PHP, hangi yılda ve kim tarafından geliştirilmiştir?",
+    "options": {
+      "A": "1997-Brendan Eich",
+      "B": "1993-Tim Berners-Lee",
+      "C": "2000-Larry Page",
+      "D": "1995-Mark Zuckerberg",
+      "E": "1994-Rasmus Lerdorf"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8bb3148469e3",
+    "unitNumber": 0,
+    "text": "Aşağıdaki adreslerden hangisi lokal sunucuda kayıtlı olan index.php sayfasını tarayıcının adres çubuğundan çağırmak için kullanılır?",
+    "options": {
+      "A": "http://www/index.php",
+      "B": "http://index.php",
+      "C": "http://localhost/index.php",
+      "D": "http://index.php//localhost",
+      "E": "index.php"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-628994a9d0b5",
+    "unitNumber": 0,
+    "text": "<pre><strong><code>&lt;?php<br/>function faktoriyel ($sayi) {<br/>if ($sayi &lt; 2) return 1;<br/>else return ($sayi * faktoriyel($sayi-1));<br/>}<br/>echo faktoriyel(5);<br/>?&gt;</code></strong></pre><br/>Yukarıdaki PHP kodu çalıştırıldığında oluşacak ekran çıktısı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "20",
+      "B": "5",
+      "C": "120",
+      "D": "24",
+      "E": "1"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a712d421f768",
+    "unitNumber": 0,
+    "text": "Session ve cookieler ile ilgili aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Sessionlar, sunucuda depolanır.",
+      "B": "Bir kez yaratılan session değişkeni sonrasında değiştirilemez/güncellenemez.",
+      "C": "Sessionlar genellikle kullanıcı kimlik doğrulama, geçici veri saklama ve kullanıcı etkileşimlerinin takibi için kullanılır.",
+      "D": "Cookielerin son geçerlilik tarihi vardır.",
+      "E": "Cookieler, kullanıcı bilgisayarında depolanır."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-762f023dd8d7",
+    "unitNumber": 0,
+    "text": "PHP&#8217;de bir çerezin süresini belirlemek için setcookie() fonksiyonuna aşağıdaki parametrelerden hangisi eklenmelidir?",
+    "options": {
+      "A": "Çerezin değeri",
+      "B": "Çerezin ismi",
+      "C": "Son kullanma zamanı (zaman damgası)",
+      "D": "Çerezin yolu",
+      "E": "Çerezin güvenlik durumu"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8101047c304a",
+    "unitNumber": 0,
+    "text": "Bir form gönderildiğinde verilerin URL üzerinde görünmemesi için aşağıda verilen yöntemlerden hangisi kullanmalıdır?",
+    "options": {
+      "A": "DELETE",
+      "B": "LINK",
+      "C": "PUT",
+      "D": "POST",
+      "E": "GET"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-9f6801880781",
+    "unitNumber": 0,
+    "text": "<pre><strong>&lt;?php<br/>$ocak = (10 5)*2 (20-5);<br/>$subat = 150/(5*2 (3 2)) 10;<br/>echo $ocak.\"&lt;br /&gt;\".$subat;<br/>?&gt;</strong></pre><br/>Yukarıda verilen PHP kodunun çıktısı hangi seçenekte doğru verilmiştir?",
+    "options": {
+      "A": "45 20",
+      "B": "45 15",
+      "C": "45 30",
+      "D": "45 15",
+      "E": "45 20"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-9e43e3160928",
+    "unitNumber": 0,
+    "text": "Aşağıdakilerden hangisi PHP dilinde kullanılan koşul (karar) ifadelerden biri değildir?",
+    "options": {
+      "A": "while",
+      "B": "elseif",
+      "C": "switch",
+      "D": "else",
+      "E": "if"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ff673726a7a3",
+    "unitNumber": 0,
+    "text": "<pre><strong><code>&lt;?php<br/>$toplam = 0;<br/>for($i=1; $i &lt;= 5; $i++)<br/>$toplam += $i;<br/>echo $toplam;<br/>?&gt;</code></strong></pre><br/>Yukarıdaki PHP kod bloğu çalıştırıldığında aşağıdaki çıktılardan hangisi elde edilir?",
+    "options": {
+      "A": "25",
+      "B": "5",
+      "C": "20",
+      "D": "10",
+      "E": "15"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f34fbb5a17bc",
+    "unitNumber": 0,
+    "text": "Aşağıda foreach döngüsü için verilen ifadelerden hangisi doğrudur?",
+    "options": {
+      "A": "if yapısına alternatif olarak foreach yapısı da kullanılabilir.",
+      "B": "\"as\" anahtar kelimesinin solunda herhangi yeni bir değişken adı yazılabilir.",
+      "C": "for ile yapılan işlemlerin aynısı foreach ile de yapılabilir.",
+      "D": "while ile yapılabilen tüm işlemler foreach ile de yapılabilir.",
+      "E": "Parametre olarak bir dizi alır ve dizi içindeki eleman sayısı kadar dönmektedir."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-7be4338db679",
+    "unitNumber": 0,
+    "text": "Bir çerezin varsayılan geçerlilik süresi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "1 ay",
+      "B": "1 hafta",
+      "C": "8 saat",
+      "D": "Oturum süresince",
+      "E": "1 gün"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-82ec765fe574",
+    "unitNumber": 0,
+    "text": "Bir değişken içinde değer bulunup bulunmadığını sınayan PHP fonksiyonu aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "isempty()",
+      "B": "isset()",
+      "C": "unset()",
+      "D": "strpos()",
+      "E": "strlen()"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-40ad113cd970",
+    "unitNumber": 0,
+    "text": "Formlarda girilecek değerin karakter sayısını elde etmek için hangi PHP fonksiyonu kullanılabilir?",
+    "options": {
+      "A": "strpos()",
+      "B": "strlen()",
+      "C": "isset()",
+      "D": "strops()",
+      "E": "empty()"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-6917643a2805",
+    "unitNumber": 0,
+    "text": "PHP’de bir çerez (cookie) oluşturmak için hangi fonksiyon kullanılır?",
+    "options": {
+      "A": "createcookie()",
+      "B": "makecookie()",
+      "C": "storecookie()",
+      "D": "definecookie()",
+      "E": "setcookie()"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-144d8a874017",
+    "unitNumber": 0,
+    "text": "<pre><strong><code>&lt;?php<br/>for ($i=1; $i&lt;=10; $i++)<br/>if ($i==5) {<br/>echo $i.\".sayıdayız &lt;br/&gt;\";<br/>break;<br/>} else {<br/>echo $i.\"&lt;br/&gt;\";<br/>}<br/>?&gt;</code></strong></pre><br/>Yukarıdaki php kodunun ekran çıktısı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "1 2 3 4 5",
+      "B": "1 2 3 4",
+      "C": "1 2 3 4 5. sayıdayız",
+      "D": "1 2 3 4 5 6 7 8 9",
+      "E": "1 2 3 4 5."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-a5bb4bc9a84a",
+    "unitNumber": 0,
+    "text": "Aşağıdakilerden hangisi form yapılarında en sık kullanılan iki özelliktir?",
+    "options": {
+      "A": "submit-value",
+      "B": "type-text",
+      "C": "name-value",
+      "D": "action-method",
+      "E": "input-submit"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-fd6d7848a703",
+    "unitNumber": 0,
+    "text": "PHP’de yeni bir oturum başlatmak veya mevcut oturumu devam ettirmek için hangi fonksiyon kullanılmaktadır?",
+    "options": {
+      "A": "session_start()",
+      "B": "sessionbegin()",
+      "C": "sessionbaslat()",
+      "D": "session_destroy()",
+      "E": "setsession()"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-059aff4f1298",
+    "unitNumber": 0,
+    "text": "PHP’de bir oturum değişkenine değer atamak için aşağıdaki yapılardan hangisi doğru bir kullanımdır?",
+    "options": {
+      "A": "set_session('username', 'user1');",
+      "B": "$_SESSION['username'] = \"user1\";",
+      "C": "$_SESSION-&gt;username = \"user1\";",
+      "D": "session_set('username', 'user1');",
+      "E": "$SESSION['username'] = \"user1\";"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-fd9862dfbb79",
+    "unitNumber": 0,
+    "text": "Yukarıdaki kod bloğunun çıktısı aşağıdaki seçeneklerden hangisidir?",
+    "options": {
+      "A": "a=4 b=3",
+      "B": "Hata verir",
+      "C": "A, B'ye eşit değildir",
+      "D": "a=4b=3",
+      "E": "A, B'ye eşittir"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-21891d6bacc5",
+    "unitNumber": 0,
+    "text": "<img class=\"alignnone wp-image-213517 size-large\" src=\"https://lolonolo.com/wp-content/uploads/2025/10/web-programlama-soru-16-min-1024x317.png\" alt=\"web programlama soru 16\" width=\"800\" height=\"248\" /><br/>Yukarıda verilen PHP kodunun çıktısı hangi seçenekte doğru verilmiştir?",
+    "options": {
+      "A": "I like Opel, Mercedes and Audi.",
+      "B": "I like Audi, Mercedes and Opel.",
+      "C": "I like Mercedes, Opel and Audi.",
+      "D": "I like Mercedes, Opel, Audi.",
+      "E": "I like Opel, Audi and Mercedes."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-93dc57afdc0b",
+    "unitNumber": 0,
+    "text": "PHP ve HTML ile ilgili aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "PHP script (betik) bir dildir.",
+      "B": "HTML sunucu tarafında çalışarak etkileşimi sağlar.",
+      "C": "HTML ile veritabanı işlemleri gerçekleştirilemez.",
+      "D": "PHP ile veritabanı işlemleri gerçekleştirilebilir.",
+      "E": "HTML bir metin düzenleme dilidir."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-50e5b8ef6e6f",
+    "unitNumber": 0,
+    "text": "<code>$a -= $b;</code>Komutunun anlamı aşağıdkai kod parçalarından hangisine benzerdir?",
+    "options": {
+      "A": "$b = $a - $b;",
+      "B": "$a = $a - $b;",
+      "C": "$a = $b - $b;",
+      "D": "$b = $a + $a;",
+      "E": "$b = $a - $a;"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-41e21eee2c6d",
+    "unitNumber": 0,
+    "text": "do&#8230;while döngüsünün while döngüsünden farkı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "do...while döngüsü sadece koşul sağlanıyorsa çalışır.",
+      "B": "do...while döngüsü koşul false olana kadar çalışır.",
+      "C": "do...while döngüsü koşul true olduğunda hiç çalışmaz.",
+      "D": "do...while döngüsü koşul false olduğunda her zaman çalışmaya devam eder.",
+      "E": "do...while döngüsü her durumda en az bir kez çalışır."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-58062424059d",
+    "unitNumber": 0,
+    "text": "PHP’de bir dizi elemanına erişmek için hangi yapı kullanılmaktadır? Ör.5",
+    "options": {
+      "A": "$dizi['indis']",
+      "B": "$dizi {indis}",
+      "C": "$dizi-&gt;indis",
+      "D": "$dizi[5]",
+      "E": "$dizi(indis)"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2bf8705541e2",
+    "unitNumber": 0,
+    "text": "PHP’de string (metin) birleştirme işlemi için hangi operatör kullanılmaktadır?",
+    "options": {
+      "A": "-",
+      "B": "*",
+      "C": "+",
+      "D": ".",
+      "E": "%"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2d8bb3f301e4",
+    "unitNumber": 0,
+    "text": "PHP ile hazırlanmış web programlarının veya web sayfalarının çalışabilmesi için aşağıdaki yazılımlardan hangisinin bulunması gerekmektedir?",
+    "options": {
+      "A": "Web sunucu ve PHP yorumlayıcı",
+      "B": "Veritabanı ve PHP yorumlayıcı",
+      "C": "Veri tabanı ve web sunucu",
+      "D": "Sadece web sunucu",
+      "E": "Sadece PHP yorumlayıcı"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-d809f9ffb89a",
+    "unitNumber": 0,
+    "text": "<img class=\"alignnone wp-image-213508 size-large\" src=\"https://lolonolo.com/wp-content/uploads/2025/10/web-programlama-2025-ize-soru-7-min-606x1024.png\" alt=\"web programlama 2025 ize soru 7\" width=\"606\" height=\"1024\" /><br/>Yukarıda verilen PHP kodunun çıktısı aşağıdaki seçenekte doğru verilmiştir?",
+    "options": {
+      "A": "3",
+      "B": "0",
+      "C": "2",
+      "D": "1",
+      "E": "4"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-a13b225e958a",
+    "unitNumber": 0,
+    "text": "&lt;h4><img src=\"https://lolonolo.com/wp-content/uploads/2025/10/web-programlama-2024-2025-vize-soru-4-min.png\" alt=\"web programlama 2024-2025 vize soru 4\" width=\"682\" height=\"572\" />&lt;/h4><br/>Yukarıdaki php kod satırlarının çıktısı ekranda gözükme biçimi aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "string  double  string",
+      "B": "integer  double  string",
+      "C": "3  3.2  Hello",
+      "D": "string  double  string",
+      "E": "integer  double string"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-caf90d1f5ac5",
+    "unitNumber": 0,
+    "text": "Bir PHP oturumu (session) varsayılan olarak ne zaman sona ermektedir?",
+    "options": {
+      "A": "18 saat",
+      "B": "24 saat",
+      "C": "Tarayıcı kapatıldığında",
+      "D": "8 saat",
+      "E": "1 saat"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-083e42e4e67a",
+    "unitNumber": 0,
+    "text": "Aşağıdaki adreslerden hangisi web sunucunun kök dizininde kayıtlı olan bilgi.php sayfasını tarayıcının adres çubuğundan çağırmak için kullanılır?",
+    "options": {
+      "A": "www.bilgi.php",
+      "B": "http://www/bilgi.php",
+      "C": "http://localhost/bilgi.php",
+      "D": "http://bilgi.php",
+      "E": "http://localhost"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-ac1ea24caf6e",
+    "unitNumber": 0,
+    "text": "Bir PHP oturumu kapatmak ve tüm oturum verilerini temizlemek için aşağıdaki hangi fonksiyon kullanılmaktadır?",
+    "options": {
+      "A": "session_close()",
+      "B": "session_unset()",
+      "C": "end_session()",
+      "D": "clear_session()",
+      "E": "session_destroy()"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c273a045ef22",
+    "unitNumber": 0,
+    "text": "<pre><strong><code>&lt;?php<br/>$sayi1=10;<br/>$sayi2=7;<br/>$sayi3=15;<br/>switch (true){<br/>case ($sayi1&gt;=$sayi2 &amp;&amp; $sayi1&gt;=$sayi3):<br/>$eb=$sayi1;<br/>break;<br/>case ($sayi2&gt;=$sayi1 &amp;&amp; $sayi2&gt;=$sayi3):<br/>$eb=$sayi2;<br/>break;<br/>default: $eb=$sayi3;<br/>}<br/>echo \"En büyük sayı: $eb\";<br/>?&gt;</code></strong></pre><br/>Yukarıdaki PHP kodunun ekran çıktısı aşağıdakilerden hangisi olmalıdır?",
+    "options": {
+      "A": "En büyük sayı 15",
+      "B": "En büyük sayı: 10",
+      "C": "15",
+      "D": "En büyük sayı: 7",
+      "E": "En büyük sayı: 15"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-125268cf143b",
+    "unitNumber": 0,
+    "text": "Aşağıdakilerden hangisi ekrana Merhaba Dünya yazdırılmasını sağlar?",
+    "options": {
+      "A": "echo Merhaba Dünya",
+      "B": "echo “Merhaba Dünya”;",
+      "C": "“Merhaba dünya”",
+      "D": "Echo &lt;Merhaba Dünya&gt;",
+      "E": "Response.Write(“Merhaba Dünya”)"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-57f102b98af5",
+    "unitNumber": 0,
+    "text": "PHP oturumları (session) aşağıdakilerden hangisinde depolanmaktadır?",
+    "options": {
+      "A": "Harici bir dosyada",
+      "B": "Sunucu tarafında",
+      "C": "Kullanıcı cihazında",
+      "D": "Veritabanında",
+      "E": "Tarayıcıda"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c3df04c3cad3",
+    "unitNumber": 0,
+    "text": "PHP&#8217;de bir &#8220;for&#8221; döngüsünde başlangıç, koşul ve değişim (artış /azalış) hangi sırayla yazılmaktadır ?",
+    "options": {
+      "A": "Başlangıç, koşul, değişim",
+      "B": "Koşul, değişim, başlangıç",
+      "C": "Başlangıç, değişim, koşul",
+      "D": "Değişim, koşul, başlangıç",
+      "E": "Koşul, başlangıç, değişim"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-23f7ba05db8e",
+    "unitNumber": 0,
+    "text": "<pre><strong><code>&lt;?php<br/>for ($i=1; $i &lt;= 5; $i++)<br/>{<br/>if ($i % 2) {<br/>continue; }<br/>echo $i.\" \";<br/>}<br/>?&gt;</code></strong></pre><br/>Yukarıdaki PHP kodu çalıştırıldığında oluşacak ekran çıktısı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "1 2 3",
+      "B": "1 2 3 4 5",
+      "C": "2 4 5",
+      "D": "3 5",
+      "E": "2 4"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-6be73e398b6f",
+    "unitNumber": 0,
+    "text": "FORM yapılarında başvurulan GET ve POST metodları ile ilgili aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "GET metodunda karakter limiti bulunmaktadır.",
+      "B": "Parola veya diğer hassas bilgiler için GET yöntemi tercih edilmelidir.",
+      "C": "GET metodu ile gönderilen bilgiler adres satırında görünür.",
+      "D": "POST metodu güvenliği daha yüksek bir yöntemdir.",
+      "E": "GET metodunda yapılan işlemler tarayıcının geçmişinde görünür."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-bf537112856c",
+    "unitNumber": 0,
+    "text": "Aşağıdaki form elemanlarından hangisi, formda buton oluşturmak için kullanılmaktadır?",
+    "options": {
+      "A": "&lt;input type=\"submit\"&gt;",
+      "B": "&lt;input type=\"text\"&gt;",
+      "C": "&lt;input type=\"file\"&gt;",
+      "D": "&lt;input type=\"email\"&gt;",
+      "E": "&lt;input type=\"password\"&gt;"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-5c66b847c46e",
+    "unitNumber": 0,
+    "text": "Aşağıdakilerden hangisinde PHP&#8217;de fonksiyon tanımlamasına doğru şekilde yer verilmiştir?",
+    "options": {
+      "A": "create myFunction()",
+      "B": "myFunction() define",
+      "C": "define function myFunction()",
+      "D": "function myFunction()",
+      "E": "init myFunction()"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-edc7dda1d136",
+    "unitNumber": 0,
+    "text": "Aşağıdakilerden hangisi fonksiyonda değer döndüren anahtar kelimedir?",
+    "options": {
+      "A": "back",
+      "B": "break",
+      "C": "function",
+      "D": "return",
+      "E": "next"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-fcd27f9e82b0",
+    "unitNumber": 0,
+    "text": "Kullanıcıyı tanımlamak için bir çerez kullanılır. <br />I. Çerez, web uygulamaları tarafından kullanıcının bilgisayarına kaydedilen bir dosyadır. <br />II. Çerezler web uygulamalarının performansını artırmak için kullanılır. <br />III. PHP&#8217;de çerezler oluşturabiliriz ve ayrıca çerezlerden veri alabiliriz. <br />IV. PHP&#8217;de çerezler ile ilgili yukarıda verilen ifadelerden hangileri doğrudur?",
+    "options": {
+      "A": "III ve IV",
+      "B": "I ,II ve III",
+      "C": "II ve III",
+      "D": "I ve II",
+      "E": "I ve III"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-b982058e1cd4",
+    "unitNumber": 0,
+    "text": "<pre><strong><code>&lt;?php<br/>setcookie(\"test_cookie\", \"test\", time()   3600, '/');<br/>?&gt;<br/>&lt;html&gt;&lt;body&gt;<br/>&lt;?php<br/>if(count($_COOKIE) &gt; 0) {<br/>echo \"Cookies are enabled.\";}<br/>else { echo \"Cookies are disabled.\";}<br/>?&gt;</code></strong></pre><br/>Yukarıdaki PHP kodunun ekran görüntüsü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Hata verir.",
+      "B": "test_cookie",
+      "C": "test",
+      "D": "Cookies are disabled",
+      "E": "Cookies are enabled."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-108b18a67647",
+    "unitNumber": 0,
+    "text": "<pre><strong><code>&lt;?php<br/>$toplam=0;<br/>$sayi=0;<br/>while($sayi&lt;5){<br/>$toplam +=$sayi ;<br/>$sayi++;}<br/>echo \"Sayıların Toplamı = \".$toplam;<br/>?&gt;</code></strong></pre><br/>Yukarıdaki PHP kodunun ekran çıktısı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Sayıların Toplamı = $toplam",
+      "B": "Sayıların Toplamı = 5",
+      "C": "Sayıların Toplamı =",
+      "D": "Sayıların Toplamı = 10",
+      "E": "5"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  }
+]
