@@ -35,6 +35,7 @@ export const GET: APIRoute = async ({ props }) => {
       explanation: toPlainText(q.explanation),
       source: q.source,
       year: q.year || undefined,
+      sinavlar: q.sinavlar?.length ? q.sinavlar : undefined,
       examType: q.examType,
       url: `${base}#question-${q.unitNumber}-${idx}`,
     };

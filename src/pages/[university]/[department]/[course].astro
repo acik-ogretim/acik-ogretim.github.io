@@ -51,10 +51,15 @@ const { university, department, course } = Astro.props;
 const questions = await getQuestions(university.id, course.id);
 
 // Group questions by unit
+// Unit 0 holds exam questions whose unit is not known yet: list it after the numbered units
 const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
-  (a, b) => a - b,
+  (a, b) => (a === 0 ? 1 : 0) - (b === 0 ? 1 : 0) || a - b,
 );
-const EXAM_LABEL: Record<string, string> = { vize: "Vize", final: "Final", butunleme: "Bütünleme", "tek-ders": "Tek Ders", genel: "" };
+const EXAM_LABEL: Record<string, string> = { vize: "Vize", final: "Final", butunleme: "Bütünleme", "tek-ders": "Tek Ders", "yaz-okulu": "Yaz Okulu", "uc-ders": "Üç Ders", genel: "" };
+const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { year: string; examType: string }[] }) =>
+  (q.sinavlar?.length ? q.sinavlar : [{ year: String(q.year ?? ""), examType: q.examType ?? "genel" }])
+    .map((s) => `${s.year} ${EXAM_LABEL[s.examType] ?? ""}`.trim())
+    .join(", ");
 ---
 
 <Layout title={`${course.name} - ${department.name}`}>
@@ -184,7 +189,7 @@ const EXAM_LABEL: Record<string, string> = { vize: "Vize", final: "Final", butun
           {
             units.map((unit) => (
               <a href={`#unite-${unit}`} class="btn-unit-nav">
-                Ü {unit}
+                {unit === 0 ? "Diğer" : `Ü ${unit}`}
               </a>
             ))
           }
@@ -208,7 +213,7 @@ const EXAM_LABEL: Record<string, string> = { vize: "Vize", final: "Final", butun
                 <h2
                   class={`text-2xl font-bold text-teal-400 border-b border-teal-500/20 pb-2 mb-8`}
                 >
-                  Ünite {unit}
+                  {unit === 0 ? "Ünitesi belirlenmemiş sorular" : `Ünite ${unit}`}
                 </h2>
 
                 {unitQuestions.map((q, qIdx) => (
@@ -224,7 +229,7 @@ const EXAM_LABEL: Record<string, string> = { vize: "Vize", final: "Final", butun
                       <h3 class="q-label">
                         Soru {qIdx + 1}
                         {q.source === "cikmis-soru" && q.year && (
-                          <span class="normal-case tracking-normal"> · {q.year} {EXAM_LABEL[q.examType] ?? ""}</span>
+                          <span class="normal-case tracking-normal"> · {examLine(q)}</span>
                         )}
                       </h3>
                     </header>

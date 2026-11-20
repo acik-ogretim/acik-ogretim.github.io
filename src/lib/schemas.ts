@@ -16,7 +16,8 @@ export const SourceEnum = z.enum([
     'soru-bankasi',
     'cikmis-soru',
     'deneme',
-    'sorularla-ogrenelim'
+    'sorularla-ogrenelim',
+    'unite-sonu'
 ]);
 
 export const ExamTypeEnum = z.enum([
@@ -24,6 +25,8 @@ export const ExamTypeEnum = z.enum([
     'final',
     'butunleme',
     'tek-ders',
+    'yaz-okulu',
+    'uc-ders',
     'genel'
 ]);
 
@@ -114,7 +117,9 @@ export const questionSchema = z.object({
     aiExplanation: z.string().optional(),
     source: SourceEnum.default('soru-bankasi'),
     year: z.union([z.number(), z.string()]).optional().default(''),
-    examType: ExamTypeEnum.default('genel'),
+    examType: ExamTypeEnum.catch('genel'),
+    // Every exam the question appeared in, newest first (year is the academic year: 2024-2025)
+    sinavlar: z.array(z.object({ year: z.string(), examType: ExamTypeEnum.catch('genel') })).default([]),
     difficulty: DifficultyEnum.default('orta'),
     topics: z.array(z.string()).default([]),
 });
