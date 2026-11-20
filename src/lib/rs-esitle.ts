@@ -12,7 +12,31 @@ const DROPBOX_KEY = (import.meta.env.PUBLIC_DROPBOX_APP_KEY as string | undefine
 
 let ornek: Promise<RemoteStorage> | null = null;
 
+/**
+ * Browsers that connected through the old Google Drive option still hold its key and backend in localStorage
+ * (remoteStorage persists both), so remoteStorage kept re-authorizing with Google on every page and Google answered
+ * redirect_uri_mismatch. Drop that leftover state; Drive sync lives in google-esitle.ts now.
+ */
+function eskiDriveTemizle() {
+  try {
+    const anahtar = "remotestorage:api-keys";
+    const kayitli = JSON.parse(localStorage.getItem(anahtar) ?? "{}") as Record<string, unknown>;
+    if ("googledrive" in kayitli) {
+      delete kayitli.googledrive;
+      localStorage.setItem(anahtar, JSON.stringify(kayitli));
+    }
+    if (localStorage.getItem("remotestorage:backend") === "googledrive") {
+      localStorage.removeItem("remotestorage:backend");
+      localStorage.removeItem("remotestorage:googledrive");
+      localStorage.removeItem(ACIK);
+    }
+  } catch {
+    /* storage unavailable: nothing to clean */
+  }
+}
+
 function rsYukle(): Promise<RemoteStorage> {
+  eskiDriveTemizle();
   ornek ??= import("remotestoragejs").then(({ default: RS }) => {
     const rs = new RS({ cache: false, logging: false });
     rs.access.claim(KAPSAM, "rw");
