@@ -2212,12 +2212,16 @@
     "explanation": "Hata Yönetimi: Hata yönetimi, ağın arızalarını kaydetmek ve raporlamak ve gerekli aksiyonları almak için geliştirilmiştir.",
     "sinavlar": [
       {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
+      {
         "year": "2023-2024",
         "examType": "vize"
       }
     ],
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "vize"
   },
   {
@@ -11572,9 +11576,13 @@
     "correctAnswer": "B",
     "explanation": "Simetrik şifrelemede veriyi şifrelemek ve çözmek için her iki taraf da “aynı” gizli anahtarı kullanır. Asimetrik şifrelemeye (Açık anahtar) göre matematiksel operasyonları çok daha basit ve donanım dostudur. Bu nedenle simetrik algoritmalar (AES gibi) devasa boyutlardaki verileri (örneğin filmler, devasa veritabanları) inanılmaz bir hızda şifreleyebilirler. En büyük dezavantajları ise anahtarın karşı tarafa güvenle nasıl iletileceği sorunudur (Anahtar dağıtım problemi).",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -11595,9 +11603,13 @@
     "correctAnswer": "E",
     "explanation": "Açık Anahtar (Asimetrik) Algoritmaları (örneğin RSA); verileri şifreleyerek güvenli saklama, dijital imza ile kişinin kimliğini doğrulama, kişinin gönderdiği mesajı inkar etmesini önleme (inkar edilemezlik) ve simetrik şifrelemede kullanılacak ortak oturum anahtarlarını taraflar arasında güvenle paylaşma gibi çok kritik amaçlar için kullanılır. Ancak “Erişim Kontrolü” (Access Control – kullanıcının bir klasöre veya sisteme girip giremeyeceğini belirleyen yetkilendirme mekanizması), doğrudan bir şifreleme algoritmasının değil, işletim sistemlerinin ve ağ güvenlik duvarlarının bir özelliğidir.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -11618,9 +11630,13 @@
     "correctAnswer": "E",
     "explanation": "DES, 3DES, AES ve IDEA algoritmalarının tamamı, veriyi sabit boyutlu bloklara bölerek karmaşık matematiksel ve mantıksal işlemlerle şifreleyen “modern simetrik blok şifreleme” standartlarıdır. Ancak “Affine Şifreleme”, her harfin matematiksel bir doğrusal fonksiyon kullanılarak (ax+b) alfabedeki başka bir harfe dönüştürüldüğü, bilgisayar öncesi döneme ait klasik ve basit bir “yerine koyma” (substitution) şifresidir.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -11641,9 +11657,13 @@
     "correctAnswer": "C",
     "explanation": "Asimetrik bir şifreleme algoritması olan RSA’nın matematiksel temelinde, asal sayıların çarpımının asal çarpanlarına ayrılmasının zorluğu yatar. Algoritmanın ilk adımında rastgele seçilen iki devasa asal sayı (p ve q) birbiriyle çarpılarak sistemin ana modülü olan n değeri elde edilir. Formül n = p times q şeklindedir. Soruya göre p=11 ve q=17 olduğuna göre; 11 times 17 = 187 bulunur.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -11664,9 +11684,13 @@
     "correctAnswer": "A",
     "explanation": "Bilgisayar ağları kapsadıkları coğrafi alana göre sınıflandırılır. Bir oda, ofis, okul binası veya ev gibi fiziksel olarak birbirine çok yakın (genellikle 1-2 km’yi geçmeyen) cihazların birbirine bağlandığı en temel ve en eski ağ yapısına LAN (Yerel Alan Ağı) denir. Şehirleri bağlayan ağlara MAN, ülkeleri ve kıtaları bağlayan devasa ağlara ise WAN adı verilir.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -11687,9 +11711,13 @@
     "correctAnswer": "D",
     "explanation": "Veri “Bütünlüğü” (Integrity), bir dosyanın veya mesajın ağ üzerinden gönderilirken araya giren saldırganlar tarafından değiştirilmediğinin garantisidir. Bütünlüğü sağlamak için şifreleme değil “Özet Fonksiyonları” (Hash Functions – MD5, SHA vb.) kullanılır. Gönderilen dosyaya ait sabit uzunluklu dijital bir parmak izi (özet) çıkarılır. Dosyada tek bir nokta bile değiştirilse, özet değeri tamamen değişeceği için mesajın kurcalandığı anında tespit edilir.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -11710,9 +11738,13 @@
     "correctAnswer": "E",
     "explanation": "Modern ağ yönetim mimarisi dört temel bileşenden oluşur: Yönetim yazılımını çalıştıran “Yönetici (Manager)”, ağ cihazlarında çalışan ve veri toplayan “Ajan (Agent / Yönetilen Cihaz)”, bu verilerin hiyerarşik olarak tutulduğu veri tabanı olan “Yönetim Bilgi Üssü (MIB)” ve cihazlar arası iletişimi sağlayan “Yönetim Protokolü (genellikle SNMP)”. Ancak “Yönlendirme Protokolü” (OSPF, BGP gibi), ağ yönetiminin değil, doğrudan verinin hedefe ulaştırılması (yönlendirilmesi) işleminin bir parçasıdır.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -11733,9 +11765,13 @@
     "correctAnswer": "C",
     "explanation": "OSI (Açık Sistemler Bağlantısı) referans modeli 7 katmandan oluşur. Bu modelin 4. katmanı olan “Taşıma Katmanı” (Transport Layer), verinin bir uçtan diğer uca hangi güvenilirlik seviyesinde ve nasıl taşınacağını belirler. Taşıma katmanında görev yapan iki ana protokol vardır: Verinin kayıpsız ve sırasıyla gitmesini garanti eden TCP (Transmission Control Protocol) ve hızın önemli olduğu ancak kayıpların tolere edilebildiği (canlı yayınlar gibi) durumlarda kullanılan UDP (User Datagram Protocol).",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -11756,9 +11792,13 @@
     "correctAnswer": "C",
     "explanation": "Bilgi güvenliği sadece yazılımları, parolaları ve siber saldırıları engellemeyi kapsamaz. Sunucuların bulunduğu odanın kilitli tutulması, cihazların hırsızlığa karşı donanımsal olarak korunması, yangın ve su baskını gibi doğal afetlere veya elektrik kesintilerine karşı alınan tüm mekanik ve mimari tedbirler “Fiziksel Güvenlik” (Physical Security) şemsiyesi altında değerlendirilir. Ahmet’in yaptığı donanımsal ve çevresel koruma önlemleri tam olarak fiziksel güvenliktir.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -11779,9 +11819,13 @@
     "correctAnswer": "B",
     "explanation": "Günümüzdeki modern İnternet’in atası olarak kabul edilen ARPANET (Gelişmiş Araştırma Projeleri Ajansı Ağı), ABD Savunma Bakanlığı tarafından soğuk savaş döneminde geliştirilmiştir. ARPANET’in en büyük devrimi, veriyi tek bir kesintisiz hat üzerinden göndermek yerine, küçük parçalara (paketlere) bölerek ağ üzerindeki farklı yollardan hedefe ulaştıran “Paket Anahtarlama” (Packet Switching) teknolojisini icat edip kullanan ilk ağ olmasıdır.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -11802,9 +11846,13 @@
     "correctAnswer": "D",
     "explanation": "Ağ topolojileri cihazların fiziksel veya mantıksal diziliş biçimini ifade eder. “Örgü (Mesh) Topolojisi”, ağdaki her bir cihazın (düğümün) diğer tüm cihazlara ayrı ayrı fiziksel kablolarla bağlandığı en güvenilir ama aynı zamanda en maliyetli yapıdır. Bu yapının en büyük avantajı, kablolardan biri kopsa dahi verinin çok sayıdaki alternatif yollar (bağlantılar) üzerinden hedefine kesintisiz ulaşabilmesidir.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -11825,9 +11873,13 @@
     "correctAnswer": "C",
     "explanation": "AES veya DES gibi simetrik blok şifreleme algoritmaları, uzun verileri şifrelerken blokların birbirine nasıl bağlanacağını belirleyen çalışma modlarına (Modes of Operation) ihtiyaç duyar. ECB, CBC, CFB ve OFB bu modların uluslararası standart kısaltmalarıdır. Ancak PKI (Public Key Infrastructure – Açık Anahtar Altyapısı) bir şifreleme çalışma modu değil; dijital sertifikaların oluşturulması, yönetilmesi ve dağıtılmasını sağlayan kapsamlı bir güvenlik ve kimlik doğrulama “sistemidir”.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -11848,9 +11900,13 @@
     "correctAnswer": "A",
     "explanation": "Dijital imza, elektronik ortamda bir belgenin bütünlüğünü ve gönderenin kimliğini ispatlamak için asimetrik şifreleme ile oluşturulan matematiksel bir veridir. Doğru bir dijital imzanın en temel şartı “benzersiz” (unique) olmasıdır; yani aynı kişi bile olsa, imzalanan her farklı dosya veya metin için üretilen imza yapısı birbirinden farklı ve o belgeye özgü olmalıdır (Bu nedenle B şıkkı yanlıştır). İmzayı doğrulamak (D şıkkı) ise herkes için çok kolay ve hızlı bir işlem olmalıdır.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -11871,9 +11927,13 @@
     "correctAnswer": "B",
     "explanation": "Bilgisayar ağlarında farklı işlemler için farklı protokoller (kurallar dizisi) kullanılır. SMTP e-posta göndermek için, HTTP web sayfalarını görüntülemek için, SIP ise sesli ve görüntülü görüşmeleri (VoIP) başlatmak için kullanılır. Bir bilgisayardan başka bir bilgisayara veya sunucuya doğrudan büyük boyutlu “dosya yüklemek (upload) veya dosya indirmek (download)” amacıyla özel olarak tasarlanmış standart protokol FTP’dir (File Transfer Protocol – Dosya Aktarım Protokolü).",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -11894,9 +11954,13 @@
     "correctAnswer": "A",
     "explanation": "Bakır veya fiber optik kablolardan geçen elektronik/optik sinyaller, belirli bir mesafe ilerledikten sonra zayıflamaya başlar (attenuation). Sinyalin tamamen yok olmasını engellemek, zayıflayan bu sinyali alıp elektriksel olarak güçlendirmek (yeniden oluşturmak) ve çok daha uzak mesafelere aktarmak amacıyla kullanılan donanımlara “Tekrarlayıcı” (Repeater) adı verilir.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -11917,9 +11981,13 @@
     "correctAnswer": "E",
     "explanation": "Ağ cihazları OSI katmanlarına göre farklılık gösterir. Hub ve Tekrarlayıcı 1. katmanda çalışır ve adreslere bakmadan sinyali kopyalar. Switch ve Köprü 2. katmanda çalışır ve cihazların fiziksel (MAC) adreslerine göre karar verir. Yönlendirici (Router) ise 3. katman (Ağ Katmanı) cihazıdır. Temel görevi, farklı ağları birbirine bağlamak ve gelen veri paketlerinin üzerindeki “Mantıksal Adreslere (IP Adreslerine)” bakarak paketin en kısa ve en doğru yoldan (arayüzden) hedefine ulaşmasını sağlamaktır.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -11940,9 +12008,13 @@
     "correctAnswer": "D",
     "explanation": "",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -11963,9 +12035,13 @@
     "correctAnswer": "D",
     "explanation": "Ağ yönetim sistemlerinde mimari genellikle İstemci-Sunucu (Client-Server) mantığına dayanır. Ağın genel haritasını çıkaran, arızaları izleyen, cihazlardaki ajanlardan (Agent) gelen verileri toplayıp grafiksel bir arayüzle sistem yöneticisine sunan ana merkezi sunucu yazılımına “Yönetici Öge” (Manager Entity veya NMS – Network Management Station) adı verilir.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -11986,13 +12062,1121 @@
     "correctAnswer": "A",
     "explanation": "Bilgi güvenliğinde verilerin üçüncü şahıslar tarafından okunmasını engellemek amacıyla şifreleme bilimi kullanılır. Şifreleme algoritmalarını, matematiksel protokolleri tasarlayan ve güvenli iletişim yolları geliştiren bu bilim dalına “Kriptografi” (Şifreleme Bilimi) denir. “Kriptoanaliz” ise aksine, bu şifreleri kırma (çözme) bilimidir. “Steganografi” veriyi şifrelemek yerine başka bir dosyanın (örneğin resmin) içine gizleme tekniğidir.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
       {
         "year": "2023-2024",
         "examType": "vize"
       }
     ]
+  },
+  {
+    "id": "s-e65a1f02adee",
+    "text": "Wi-Fi için kullanılacak en güvenli kablosuz şifreleme anahtar algoritması aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "WEP",
+      "B": "TCP",
+      "C": "WPA",
+      "D": "FTP",
+      "E": "HTTPS"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "unitNumber": 1,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-345c9ea0d5d8",
+    "text": "Aşağıdakilerden hangisi Veri Bağlantı Katmanının görevlerinden biridir?",
+    "options": {
+      "A": "MAC protokolünü çalıştırmak",
+      "B": "Yönlendirici algoritmalarını yönetmek",
+      "C": "Sıralı veri aktarımı gerçekleştirmek",
+      "D": "IP Adresini atamak",
+      "E": "İnternet tarayıcının güvenliğini arttırmak"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "unitNumber": 1,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-05ff39cba625",
+    "text": "Kullanıcı Veri Bloğu Protokolü (UDP) ile ilgili aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Bağlantı gerektirmez.",
+      "B": "Taşma kontrolü kullanmaz.",
+      "C": "Akış kontrolü kullanır.",
+      "D": "Tek alıcıya gönderimi destekler.",
+      "E": "Çoklu alıcılara gönderimi destekler."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "unitNumber": 1,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-906f5a8ab5a1",
+    "text": "Aşağıdakilerden hangisi dosya aktarım protokolü (FTP) tarafından kullanılan taşıma katmanı protokolüdür?",
+    "options": {
+      "A": "FTP",
+      "B": "UDP",
+      "C": "SIP",
+      "D": "HTTPS",
+      "E": "TCP"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "unitNumber": 1,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-8b8d0021fce3",
+    "text": "Web tarayıcılar tarafından hiper metin transferi için kullanılan protokol aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "SNMP",
+      "B": "SMTP",
+      "C": "UDP",
+      "D": "HTTP",
+      "E": "FTP"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "unitNumber": 1,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-bc0236f602bc",
+    "text": "Aşağıdakilerden hangisi bağlantı ortamlarına göre ağ çeşidi değildir?",
+    "options": {
+      "A": "Ethernet",
+      "B": "FDDI",
+      "C": "ATM",
+      "D": "Andıçlı Halka",
+      "E": "Yıldız"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "unitNumber": 1,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-e64d246cfcb1",
+    "text": "Aşağıdakilerden hangisi bir ağ topolojisi değildir?",
+    "options": {
+      "A": "Yıldız",
+      "B": "Örgü",
+      "C": "Andıçlı Halka",
+      "D": "Halka",
+      "E": "Ağaç"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "unitNumber": 1,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-87880cc7e496",
+    "text": "Aşağıdakilerden hangisi büyüklüklerine göre ağ çeşitlerinden biridir?",
+    "options": {
+      "A": "Halka",
+      "B": "FDDI",
+      "C": "ATM",
+      "D": "Kişisel Alan Ağı",
+      "E": "Yıldız"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "unitNumber": 1,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-44d672433255",
+    "text": "İlk bilgi paylaşım ağının adı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "ARPANET",
+      "B": "DARPA",
+      "C": "UCLA",
+      "D": "ABD",
+      "E": "Stanford"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "unitNumber": 1,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-2630fb45a8d1",
+    "text": "Aşağıdakilerden hangisi ağ kurulumu amaçlarından biridir?",
+    "options": {
+      "A": "Bilgisayarların daha hızlı çalışması",
+      "B": "Bilgisayar kaynaklarının ortak kullanımı",
+      "C": "Bilgisayarların daha sessiz çalışması",
+      "D": "Bilgisayarların daha az enerji sarfiyatı",
+      "E": "Monitör boyutlarının genişlemesi"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "unitNumber": 1,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-2358fea87eba",
+    "text": "SNMP üzerinde güvenlik güncelleştirmeleri aşağıdaki sürümlerden hangisi ile kullanıma sunulmuştur?",
+    "options": {
+      "A": "SNMPv1",
+      "B": "SNMPv2",
+      "C": "SNMPv3",
+      "D": "SNMPv4",
+      "E": "SNMPv5"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "unitNumber": 2,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-da47aaa7304d",
+    "text": "Aşağıdakilerden hangisi veri tanımlama dili, yönetim bilgisinin veri tipleri, nesne modeli ve yazım ve düzenlemedeki kuralları içermektedir?",
+    "options": {
+      "A": "Yönetici Öğe",
+      "B": "Yönetim Bilgi Üssü",
+      "C": "Yönetilen Öğe",
+      "D": "Yönetim Bilgi Yapısı",
+      "E": "SNMP"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "unitNumber": 2,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-e516988200f5",
+    "text": "Ağ hakkında bilgi sağlayarak, gerektiğinde değişiklikleri bildirmeyi kolaylaştıran yazılım aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Yönetici Öğe",
+      "B": "Yönetilen Cihaz",
+      "C": "Yönetim Bilgi Üssü",
+      "D": "Yönetim Protokolü",
+      "E": "Araç Uygulaması"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "unitNumber": 2,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-55cf3b969efa",
+    "text": "Aşağıdakilerden hangisi ağ yönetimi için kullanılan araçlardan biri değildir?",
+    "options": {
+      "A": "İstatistiklerin İzlenmesi",
+      "B": "Yönlendirme Tablolarının İzlenmesi",
+      "C": "Sistem Isısının İzlenmesi",
+      "D": "Yetkisiz Girişlerin İzlenmesi",
+      "E": "Sistemin İzlenmesi"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "unitNumber": 2,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-fde7df1fac19",
+    "text": "MAC adreslerini, içerisinde bulunan bir tabloda saklayarak seçimli gönderim yapan çok kapılı cihaz aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Modem",
+      "B": "Köprü",
+      "C": "Anahtar Cihaz",
+      "D": "Yönlendirici",
+      "E": "Göbek Cihaz"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "unitNumber": 2,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-bb6fb9de1d16",
+    "text": "Aşağıdaki donanımlardan hangisi çok kapılı tekrarlayıcıdır?",
+    "options": {
+      "A": "Modem",
+      "B": "Köprü",
+      "C": "Anahtar Cihaz",
+      "D": "Yönlendirici",
+      "E": "Göbek Cihaz"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "unitNumber": 2,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-049d1c647d33",
+    "text": "Bilgisayarlarda donanım ile kullanıcı arasında arayüz görevi üstlenen yazılım türü aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Uygulama Yazılımları",
+      "B": "Yönetim Bilgi Üssü",
+      "C": "İşletim Sistemleri",
+      "D": "Araç Uygulaması",
+      "E": "Yönetilen Cihaz"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "unitNumber": 2,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-e1b05f461b19",
+    "text": "Aşağıda verilenlerden hangisi simetrik şifreleme algoritmalarının temel öğelerinden biri değildir?",
+    "options": {
+      "A": "Açık metin",
+      "B": "Şifreleme fonksiyonu",
+      "C": "Gizli anahtar",
+      "D": "Çözme fonksiyonu",
+      "E": "Doğrulama fonksiyonu"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "unitNumber": 3,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-b898f9163371",
+    "text": "IDEA algoritmasında kullanılan anahtar uzunluğu kaç bittir?",
+    "options": {
+      "A": "16",
+      "B": "32",
+      "C": "64",
+      "D": "128",
+      "E": "256"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "unitNumber": 3,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-629bf155c5e0",
+    "text": "Toplam üç kişinin çalıştığı bir firma için simetrik şifreleme algoritması kullanılarak güvenli bir iletişim oluşturulmak istenirse kaç adet gizli anahtara gereksinim vardır?",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "5",
+      "D": "10",
+      "E": "20"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "unitNumber": 3,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-bfd1f4ea2180",
+    "text": "DES algoritmasında şifreleme ve şifre çözme için kullanılan anahtar uzunluğu kaç bittir?",
+    "options": {
+      "A": "10",
+      "B": "16",
+      "C": "32",
+      "D": "56",
+      "E": "128"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "unitNumber": 3,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-c7f6805db4ac",
+    "text": "Aşağıdakilerden hangisi bir blok şifreleme modu değildir?",
+    "options": {
+      "A": "ECB",
+      "B": "CBC",
+      "C": "CFB",
+      "D": "OFB",
+      "E": "BCB"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "unitNumber": 3,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-6fdb8266df7c",
+    "text": "AES şifreleme algoritması 128 bit uzunluğunda gizli anahtar kullanılması durumunda kaç tur veya iterasyondan oluşur?",
+    "options": {
+      "A": "8",
+      "B": "10",
+      "C": "12",
+      "D": "14",
+      "E": "16"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "unitNumber": 3,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-6e0dfc00c4c9",
+    "text": "DES algoritması kaç tur veya iterasyondan oluşur?",
+    "options": {
+      "A": "8",
+      "B": "10",
+      "C": "12",
+      "D": "16",
+      "E": "32"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "unitNumber": 3,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-c15ac7e6b48b",
+    "text": "Aşağıda verilen algoritmalarından hangisi bir dizi (stream) şifreleme algoritmasıdır?",
+    "options": {
+      "A": "DES",
+      "B": "AES",
+      "C": "3DES",
+      "D": "RC4",
+      "E": "IDEA"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "unitNumber": 3,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-8607ed86f8c5",
+    "text": "AES şifreleme algoritmasında kullanılabilecek anahtar boyutları aşağıdaki hangi seçenekte doğru verilmiştir?",
+    "options": {
+      "A": "32/48/64",
+      "B": "48/56/64",
+      "C": "64/96/128",
+      "D": "128/192/256",
+      "E": "1024/2048/3072"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "unitNumber": 3,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-c1d48b0553f1",
+    "text": "DES şifreleme algoritmasının kullandığı blok boyutu kaç bittir?",
+    "options": {
+      "A": "32",
+      "B": "48",
+      "C": "64",
+      "D": "128",
+      "E": "256"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "unitNumber": 3,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-affd6954b8ab",
+    "text": "Aşağıdakilerden hangisi bir açık anahtar şifreleme algoritması değildir?",
+    "options": {
+      "A": "DSA",
+      "B": "RSA",
+      "C": "IDEA",
+      "D": "ElGamal",
+      "E": "Diffie-Hellman"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "unitNumber": 4,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-e67e3dfd60b3",
+    "text": "RSA algoritmasında p = 5 ve q = 7 olarak seçilirse, aşağıdakilerden hangisi açık anahtar olarak kullanılabilir?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "3",
+      "D": "7",
+      "E": "9"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "unitNumber": 4,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-4740f3c06eae",
+    "text": "Aşağıdaki güvenlik servislerinden hangisi sadece yetkili kişilerin mesajı okuyabilmesi olarak tanımlanır?",
+    "options": {
+      "A": "Gizlilik",
+      "B": "Mesaj bütünlüğü",
+      "C": "Kimlik doğrulama",
+      "D": "Erişim kontrolü",
+      "E": "Fiziksel güvenlik"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "unitNumber": 4,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-789121f3f7ae",
+    "text": "Özet fonksiyonları bir mesajın özet değerini hesaplarken aşağıdaki hangi anahtarı kullanır?",
+    "options": {
+      "A": "Açık anahtar",
+      "B": "Yabancı anahtar",
+      "C": "Gizli anahtar",
+      "D": "Oturum anahtarı",
+      "E": "Anahtar kullanmaz"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "unitNumber": 4,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-9f6fac255f4a",
+    "text": "Güvenli veri aktarımı için aşağıda verilen algoritmalardan hangisi birbiri ile ilişkili iki anahtar kullanır?",
+    "options": {
+      "A": "DES",
+      "B": "3DES",
+      "C": "AES",
+      "D": "RSA",
+      "E": "IDEA"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "unitNumber": 4,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-01c73d19e299",
+    "text": "Gizli anahtar oluşturmak isteyen iki kullanıcının arasına girerek her ikisi ile kendi arasında anahtar oluşturmak olarak tanımlanan saldırı aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Aradaki adam",
+      "B": "Yeniden gönderme",
+      "C": "Kaba kuvvet",
+      "D": "Sözlük",
+      "E": "Telekulak"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "unitNumber": 5,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-3e5e02ffd6c2",
+    "text": "Aşağıdakilerden hangisi açık anahtar altyapısının işlevlerinden biri değildir?",
+    "options": {
+      "A": "Sertifika yayımlamak",
+      "B": "Parola oluşturmak",
+      "C": "Sertifika iptal etmek",
+      "D": "Anahtar yaşam döngüsünü yönetmek",
+      "E": "Sertifikaların saklanması ve erişime açılması"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "unitNumber": 5,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-be3eed8fee9a",
+    "text": "Can kendine bir parola seçecektir. Parola yedi karakterden oluşacaktır. Karakterler Türkçe alfabede yer alan 29 harf içinden seçilecektir. Bir harf birden fazla kullanılabilir. Büyük ve küçük harf kullanılabilir. Bu şartlara göre Can’ın seçebileceği kaç farklı parola vardır?",
+    "options": {
+      "A": "29",
+      "B": "58",
+      "C": "292",
+      "D": "297",
+      "E": "587"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "unitNumber": 5,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-7b7ab8418cfa",
+    "text": "Aşağıda verilenlerden hangisi PKI altyapısını kullanmaz?",
+    "options": {
+      "A": "SSL",
+      "B": "S/MIME",
+      "C": "Telnet",
+      "D": "VPN",
+      "E": "PGP"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "unitNumber": 5,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-6dbe7004d60b",
+    "text": "Bir firmada 100 çalışan olması ve yeni bir çalışanın işe alınmasından sonra her çalışanın diğer çalışanlarla bir simetrik şifreleme algoritması kullanarak güvenli iletişim kurması durumunda sistemde toplam kaç adet yeni gizli anahtar üretilmesi gerekmektedir?",
+    "options": {
+      "A": "100",
+      "B": "200",
+      "C": "1.000",
+      "D": "2.000",
+      "E": "4.950"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "unitNumber": 5,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-7bea63241a0e",
+    "text": "Aşağıdakilerden hangisi X.509 sertifikası içerisindeki bilgilerden biri değildir?",
+    "options": {
+      "A": "Seri numarası",
+      "B": "Başlangıç süresi",
+      "C": "Bitiş süresi",
+      "D": "Açık anahtar",
+      "E": "Gizli anahtar"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "unitNumber": 5,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-d83e71a838f4",
+    "text": "Güçlü bir parola aşağıda verilen özelliklerden hangisine sahip olmalıdır?",
+    "options": {
+      "A": "Sadece küçük harfler kullanılmalıdır.",
+      "B": "Kullanıcıya ait doğum tarihi gibi kişisel bilgiler içermelidir.",
+      "C": "Belirli zaman aralıklarında yenilenmelidir.",
+      "D": "Sözlükte geçen bir kelime içermelidir.",
+      "E": "Önceden kullanılmış parolalara benzemelidir."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "unitNumber": 5,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-a3c9c5be0fd2",
+    "text": "Aşağıda verilenlerden hangisi davranışsal (aktif) biyometrik özelliklerden biri değildir?",
+    "options": {
+      "A": "Ses",
+      "B": "El",
+      "C": "Yüz",
+      "D": "Tuş vuruşu",
+      "E": "Dudak hareketi"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "unitNumber": 5,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-838f2b32a6ff",
+    "text": "Aşağıda verilenlerden hangisi fizyolojik (pasif) biyometrik özelliklerden biri değildir?",
+    "options": {
+      "A": "Parmak izi",
+      "B": "Damar yapısı",
+      "C": "İris",
+      "D": "El yazısı",
+      "E": "Retina"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "unitNumber": 5,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-202a449267ca",
+    "text": "Aşağıdaki konulardan hangisi kablosuz uygulama protokolünde (WAP) ayrıntıları ile belirlenmemiştir?",
+    "options": {
+      "A": "WWW programlama modeline dayanan bir programlama modeli",
+      "B": "Mobil, kablosuz terminal için uygun küçük tarayıcı",
+      "C": "XML’e bağlı kalan bir biçimlendirme dili (Kablosuz İşaretleme Dili)",
+      "D": "Kablo bağlantılarının nasıl gerçekleştirileceği",
+      "E": "Hafif iletişim protokolü yığını"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "unitNumber": 6,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-40aa78af6ffd",
+    "text": "Aşağıdakilerden hangisi IEEE 802.11i standardının sağladığı temel hizmetlerden değildir?",
+    "options": {
+      "A": "Kimlik doğrulama",
+      "B": "Yeniden bağlanma",
+      "C": "Erişim denetimi",
+      "D": "Mesaj bütünlüğü",
+      "E": "Gizlilik"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "unitNumber": 6,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-280ce56cd3cd",
+    "text": "IEEE 802.11i dayanıklı güvenlik ağının operasyonlarının doğru sıralaması aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Doğrulama – Korumalı Veri Transferi – Keşif – Anahtar Yönetimi – Bağlantı Sonlandırma",
+      "B": "Doğrulama – Anahtar Yönetimi – Keşif – Korumalı Veri Transferi – Bağlantı Sonlandırma",
+      "C": "Keşif – Doğrulama – Anahtar Yönetimi – Korumalı Veri Transferi – Bağlantı Sonlandırma",
+      "D": "Bulgulama – Anahtar Yönetimi – Korumalı Veri Transferi – Doğrulama – Bağlantı Sonlandırma",
+      "E": "Keşif – Anahtar Yönetimi – Korumalı Veri Transferi – Bağlantı Sonlandırma – Doğrulama"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "unitNumber": 6,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-4f9fa0d78e36",
+    "text": "Aşağıdakilerden hangisi SSH’yi oluşturan protokollerden birisidir?",
+    "options": {
+      "A": "Şifre değiştirme",
+      "B": "Kayıt",
+      "C": "IP",
+      "D": "Kullanıcı kimlik doğrulama",
+      "E": "Uyarı"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "unitNumber": 6,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-9245b732d566",
+    "text": "HTTPS’nin bağlantı noktası numarası kaçtır?",
+    "options": {
+      "A": "80",
+      "B": "135",
+      "C": "20",
+      "D": "53",
+      "E": "443"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "unitNumber": 6,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-02ca6952e2e5",
+    "text": "Aşağıdakilerden hangisi SSL’yi oluşturan protokollerden birisi değildir?",
+    "options": {
+      "A": "Dosya Aktarımı Protokolü",
+      "B": "Kayıt Protokolü",
+      "C": "Uyarı Protokolü",
+      "D": "Şifre Değiştirme Protokolü",
+      "E": "El Sıkışma Protokolü"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "unitNumber": 6,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-84017b259837",
+    "text": "Aşağıdakilerden hangisi Web güvenliği tehditlerinin incelendiği gruplardan birisi değildir?",
+    "options": {
+      "A": "Gizliliğe yönelik tehditler",
+      "B": "Web-tabanlı sistemleri kullanan şirketlere yönelik tehditler",
+      "C": "Kimlik doğrulamaya yönelik tehditler",
+      "D": "Bütünlüğe yönelik tehditler",
+      "E": "Hizmet engellemeye yönelik tehditler"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "unitNumber": 6,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-78a6ee0119a9",
+    "text": "Aşağıdakilerden hangisi Web kavramının ortaya çıkardığı ve güvenlik sorunlarına sebep olan durumlardan biri değildir?",
+    "options": {
+      "A": "İletişimin iki yönlü olması",
+      "B": "Web sunucuların kurumların bilgisayar sistemlerine ulaşmak için bir atlama noktası olarak düşünülebilmesi",
+      "C": "Güvenlik konularında eğitilmemiş kullanıcıların Web-tabanlı sistemlerin temel müşterileri olmaları",
+      "D": "Web-tabanlı sistemlerin dünyanın her yanında şirketlerde ve kurumlarda kullanılması",
+      "E": "Arka planda çalışan gelişmiş ve karmaşık yazılımın güvenlik açıklarının fazla olması"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "unitNumber": 6,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-f700d706c522",
+    "text": "PGP ile tam kimlik doğrulaması yapılmış bir e-posta alıcıya ulaştığında ve alıcı tarafta kimlik doğrulama süreci çalışırken aşağıda tanımlanan işlemlerden hangisi bu süreç içerisinde yer almaz?",
+    "options": {
+      "A": "E-postanın özeti çıkartılır.",
+      "B": "Göndericinin gizli anahtarı karşı taraftan alınır.",
+      "C": "E-postada gelen şifrelenmiş özet verisinin şifresi çözülür.",
+      "D": "Göndericinin genel anahtarına ulaşılır.",
+      "E": "Karşılaştırma yapılır."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "unitNumber": 7,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-a6645a81c8c5",
+    "text": "Bir özet fonksiyonu aşağıdaki amaçlardan hangisi için kullanılır?",
+    "options": {
+      "A": "E-postaya sayısal imza yaratmak için kullanılır.",
+      "B": "E-postayı şifrelemek için kullanılır.",
+      "C": "E-postayı doğru alıcıya ulaştırmak için kullanılır.",
+      "D": "E-postanın doğru alıcıya ulaşıp ulaşmadığını kontrol etmek için kullanılır.",
+      "E": "E-postanın spam olmadığını kanıtlamak için kullanılır."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "unitNumber": 7,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-cfbdb34b4537",
+    "text": "Bir özet fonksiyonu programı 8 bitlik özetler üretiyorsa, bu program en fazla kaç değişik veriyi özetleme kabiliyetine sahiptir?",
+    "options": {
+      "A": "4",
+      "B": "8",
+      "C": "16",
+      "D": "256",
+      "E": "1000"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "unitNumber": 7,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-0b42372f3714",
+    "text": "Bilgisayarlarda bulunan sertifikaların kullanım amacı aşağıdakilerden hangisinde açıklanmıştır?",
+    "options": {
+      "A": "Bilgisayarın kime ait olduğunu kanıtlamak için kullanılır.",
+      "B": "İşletim sisteminin çalıntı olup olmadığını anlamak için kullanılır.",
+      "C": "İstenmeyen kullanıcıların e-posta yollamasını engellemek için kullanılır.",
+      "D": "İstenmeyen e-postaları filtrelemek için kullanılır.",
+      "E": "Kullanıcıya atanan anahtarları tutmak için kullanılır."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "unitNumber": 7,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-3622e15e4be5",
+    "text": "ir bilgisayar, 1 bit ile şifrelenmiş mesajı kaba kuvvet yöntemiyle en çok 1 saniyede çözebiliyorsa aynı bilgisayar 4 bit ile şifrelenmiş bir mesajı en çok kaç saniyede çözebilir?",
+    "options": {
+      "A": "2 Saniye",
+      "B": "4 Saniye",
+      "C": "8 Saniye",
+      "D": "16 Saniye",
+      "E": "32 Saniye"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "unitNumber": 7,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-9bcb9aaac0b4",
+    "text": "PGP için aşağıda verilen seçeneklerden hangisi söylenemez?",
+    "options": {
+      "A": "PGP e-posta yollamak için kullanılabilir.",
+      "B": "PGP ile mesaj güvenliği sağlanabilir.",
+      "C": "PGP ile kimlik doğrulama sağlanabilir.",
+      "D": "PGP ile inkâr edilememe sağlanabilir.",
+      "E": "PGP ile mesaj bütünlüğü sağlanabilir."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "unitNumber": 7,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-b6dc0a350633",
+    "text": "SPF TEXT kayıtları nerede tutulur?",
+    "options": {
+      "A": "SMTP sunucusunun bağlı olduğu etki alanı sunucularında tutulur.",
+      "B": "SMTP sunucusunda tutulur.",
+      "C": "SPF sunucusunda tutulur. Bu sunucu SMTP hizmeti de sağlar.",
+      "D": "SMTP hizmeti sağlayan MX sunucusunda tutulur.",
+      "E": "SPF.MX sunucusunda tutulur."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "unitNumber": 7,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-d510d39fdc7f",
+    "text": "SPF kayıtları:<br />\n<code>v=spf1 include:spf-a.outlook.com include:spfb.outlook.com ip4:157.55.9.128/25 include: spf.protection.outlook.com include:spf-a.hotmail.com include:_spf-ssg-b.microsoft.com include:_spf-ssg-c.microsoft.com ~all</code></p>\n<p>Bir MX sorgusu sonrası SPF kayıtları yukarıdaki gibi olan bir etki alanı için FROM kısmında kimse@alo.com şeklinde bir e-posta yollanmaya kalkılırsa sonuç aşağıdakilerden hangisinde en doğru biçimde tanımlanmıştır?",
+    "options": {
+      "A": "E-posta gönderilmez.",
+      "B": "E-posta çöpe atılır.",
+      "C": "E-posta SPAM olarak işaretlenir ve gönderilir.",
+      "D": "E-posta SPAM olarak işaretlenir ve çöpe atılır.",
+      "E": "E-posta Hotmail.com sunucusuna yönlendirilir."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "unitNumber": 7,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-7906d09c87d0",
+    "text": "Günümüzde Türkiye’de SMTP geçişinin engellenmesi için aşağıdaki port numaralarından hangisi kullanıma sokulmuştur?",
+    "options": {
+      "A": "25",
+      "B": "125",
+      "C": "225",
+      "D": "587",
+      "E": "1024"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "unitNumber": 7,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-4106eb927a8e",
+    "text": "E-posta iletişiminin ilk zamanlarında SMTP portu olarak aşağıdakilerden hangisi kullanılmaktaydı?",
+    "options": {
+      "A": "20",
+      "B": "25",
+      "C": "45",
+      "D": "80",
+      "E": "625"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "unitNumber": 7,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-3a03ea48e12e",
+    "text": "Saldırganlar sisteme aşağıdakilerden hangisinden faydalanarak kötü niyetli saldırı düzenlerler?",
+    "options": {
+      "A": "Karşı önlem",
+      "B": "Güvenlik mekanizmaları",
+      "C": "Güvenlik açığı",
+      "D": "Tehdit",
+      "E": "Güvenlik politikası"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "unitNumber": 8,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-6e9c39b7d8a7",
+    "text": "Bir sisteme giriş için sadece nümerik karakterlerden oluşan 4 basamaklı bir PIN numarası kullanılsın. Saldırgan bir program aracılığıyla bütün olası PIN numara kombinasyonlarını deneyerek bu erişim kontrol mekanizmasını kırar. Bu saldırı çeşidinin ismi aşağıdakilerden hangisi ile ifade edilir?",
+    "options": {
+      "A": "Aradaki adam saldırısı",
+      "B": "Kaba kuvvet saldırısı",
+      "C": "Araya girme (snooping)",
+      "D": "Telekulak",
+      "E": "Sahtecilik"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "unitNumber": 8,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-1ce2eeff2788",
+    "text": "ISO 27001 BGYS aşağıdakilerden hangisini kapsamaz?",
+    "options": {
+      "A": "Kuruluşların güvenlik gereksinimlerini belirler.",
+      "B": "Kuruluşlar içinde güvenlik risklerinin yönetilmesini sağlar.",
+      "C": "Kuruluşların yasa ve yönetmeliklere uyumunu sağlar.",
+      "D": "Kuruluşlara öz kaynak sağlar.",
+      "E": "İş ortamında bilgi güvenliğinin uygulanmasını sağlar."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "unitNumber": 8,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-ffeb175058cc",
+    "text": "Bir üniversitenin laboratuvar ortamında herhangi bir öğrencinin başka bir öğrencinin hazırlamış olduğu laboratuvar sonuçlarını kopyalamasını yasaklayan politikası olduğunu varsayalım. Bir öğrenci, bu mekanizmaları kullanmayıp dosyalarını korumasız bırakmış ve başka bir öğrenci de bu dosyalara erişmiştir. Bu koşullar altında aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Bir güvenlik ihlali oluşmamıştır çünkü güvenlik politikası başka bir öğrencinin dosyaları kopyalamasını yasaklamıştır.",
+      "B": "Bir güvenlik ihlali söz konusudur ve güvenlik politikası doğru bir şekilde tanımlanmıştır.",
+      "C": "Güvenlik politikası, laboratuvar sonuçlarını kopyalamasını ve görüntülemesini yasaklayacak şekilde değiştirilmelidir.",
+      "D": "Dersi alan öğrencilerin yapabileceği olası güvenlik ihlallerinin hepsi güvenlik politikasında tanımlanmalıdır.",
+      "E": "Güvenlik politikası, olası tüm ihlalleri tamamen engelleyecek şekilde de tanımlanabilir."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "unitNumber": 8,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-872282380559",
+    "text": "Aşağıdakilerden hangisi bilgi güvenliği yaşam döngüsü içinde yer almaz?",
+    "options": {
+      "A": "Tehditlerin analizi",
+      "B": "Sistem fonksiyonlarının iyileştirilmesi",
+      "C": "Güvenlik mekanizmasının oluşturulması",
+      "D": "Sistemin tasarlanması ve uygulanması",
+      "E": "Sistemin sürekli izlenip kontrol edilmesi"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "unitNumber": 8,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-286b42cc8cbf",
+    "text": "Bilgisayar sistemlerini ve üzerinde saklanan verileri zararlı yazılımlardan korumak için aşağıdakilerden hangisinin yapılması uygun değildir?",
+    "options": {
+      "A": "Bilgisayar çalışma performansı etkilememesi için anti virüs programı kurmamak",
+      "B": "Kimden geldiği bilinmeyen e-postaları açmamak",
+      "C": "İşletim sistemine ait güncellemeleri yapmak",
+      "D": "Anti virüs programlarını güncel tutmak",
+      "E": "Karmaşık düzeyde, tahmin edilmesi zor ve uzun bir parola seçmek"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "unitNumber": 8,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-8308cca57189",
+    "text": "Kendisini bir bilgisayardan diğerine kopyalamak için tasarlanan ve bunu otomatik bir şekilde gerçekleştiren, işlem gücü ya da bant genişliğini tüketerek bilgisayarın çalışma hızını etkileyip çökmesine kadar etkilere yol açabilen yazılımlara verilen ad aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Truva Atları",
+      "B": "Solucanlar",
+      "C": "Casus yazılımları",
+      "D": "Antivirüs",
+      "E": "Yedekleme programı"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "unitNumber": 8,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-c96ce850773e",
+    "text": "Bilişim sistemini zararlı yazılımlardan korumak için aşağıdakilerden hangisi önerilmez?",
+    "options": {
+      "A": "Çok yönlü ve güvenlik duvarı içeren güvenlik programı kullanmak",
+      "B": "İşletim sistemini ve İnternet tarayıcılarını güncel tutmak",
+      "C": "Tüm hesaplar için tek bir şifre oluşturmak",
+      "D": "Önemli verilerin başka bir bellekte yedeklemesini yapmak",
+      "E": "Sisteme yapılan uzaktan erişimi denetlemek ve güçlü bir erişim altyapısı kullanmak"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "unitNumber": 8,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-6730877bf830",
+    "text": "Aşağıdakilerden hangisi virüs bulaşma yöntemlerinden biri olarak değerlendirilmez?",
+    "options": {
+      "A": "USB bellek",
+      "B": "E-posta",
+      "C": "Ağ paylaşımı",
+      "D": "Kaynağı güvenilir program yüklemek",
+      "E": "CD"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "unitNumber": 8,
+    "source": "unite-sonu",
+    "examType": "genel"
+  },
+  {
+    "id": "s-0e549b504fb8",
+    "text": "Araya girme (snooping) tehdidi aşağıda verilen hangi güvenlik kavramı ile engellenir?",
+    "options": {
+      "A": "Bütünlük",
+      "B": "Gizlilik",
+      "C": "Hazır bulunma",
+      "D": "Anti virüs",
+      "E": "Erişilebilirlik"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "unitNumber": 8,
+    "source": "unite-sonu",
+    "examType": "genel"
   }
 ]
