@@ -103,6 +103,10 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
     ></script>
 
     <script>
+      // Google Drive sync of the learner's records runs in the background once they signed in on /yedek
+      if (localStorage.getItem("google-esitleme-acik")) {
+        import("../lib/google-esitle").then((m) => m.otomatikEsitlemeKur());
+      }
       // Register Service Worker for PWA
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {

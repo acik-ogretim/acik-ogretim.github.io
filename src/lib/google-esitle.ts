@@ -36,7 +36,24 @@ function gisYukle(): Promise<Gis> {
   return gisYukleniyor;
 }
 
-let token: string | null = null;
+// The access token lives about an hour; it is kept for this tab session so pages can sync without a new popup.
+const OTURUM = "google-esitleme-oturum";
+let token: string | null = (() => {
+  try {
+    const o = JSON.parse(sessionStorage.getItem(OTURUM) ?? "null") as { t: string; bitis: number } | null;
+    return o && o.bitis > Date.now() + 60_000 ? o.t : null;
+  } catch {
+    return null;
+  }
+})();
+const tokenSakla = (t: string | null) => {
+  try {
+    if (t) sessionStorage.setItem(OTURUM, JSON.stringify({ t, bitis: Date.now() + 55 * 60_000 }));
+    else sessionStorage.removeItem(OTURUM);
+  } catch {
+    /* ignore */
+  }
+};
 
 /** Opens Google's sign-in and consent popup; resolves with an access token for the app-data folder. */
 export async function girisYap(): Promise<string> {
@@ -50,6 +67,12 @@ export async function girisYap(): Promise<string> {
     });
     istemci.requestAccessToken({ prompt: token ? "" : "consent" });
   });
+  tokenSakla(token);
+  try {
+    localStorage.setItem("google-esitleme-acik", "1");
+  } catch {
+    /* ignore */
+  }
   return token;
 }
 
@@ -58,6 +81,12 @@ export async function cikisYap() {
   const gis = await gisYukle();
   gis.accounts.oauth2.revoke(token);
   token = null;
+  tokenSakla(null);
+  try {
+    localStorage.removeItem("google-esitleme-acik");
+  } catch {
+    /* ignore */
+  }
 }
 
 async function drive(yol: string, init: RequestInit = {}) {
@@ -65,6 +94,7 @@ async function drive(yol: string, init: RequestInit = {}) {
   const r = await fetch(`https://www.googleapis.com${yol}`, { ...init, headers: { Authorization: `Bearer ${token}`, ...(init.headers ?? {}) } });
   if (r.status === 401) {
     token = null;
+    tokenSakla(null);
     throw new Error("Google oturumu kapandı, yeniden giriş yap.");
   }
   if (!r.ok) throw new Error(`Google Drive yanıtı: ${r.status}`);
@@ -101,4 +131,18 @@ export async function googleEsitle(): Promise<{ gelen: number }> {
     await drive("/upload/drive/v3/files?uploadType=multipart", { method: "POST", headers: { "Content-Type": `multipart/related; boundary=${sinir}` }, body: cok });
   }
   return { gelen };
+}
+
+/** Background sync while a Google session is open in this tab: on page load and when the page is hidden
+ * (switching apps, closing the tab), so solved questions reach the other devices without pressing a button. */
+export function otomatikEsitlemeKur() {
+  if (!GOOGLE_CLIENT_ID || !token) return;
+  let son = 0;
+  const calis = () => {
+    if (!token || Date.now() - son < 30_000) return;
+    son = Date.now();
+    googleEsitle().catch(() => undefined);
+  };
+  calis();
+  addEventListener("visibilitychange", () => document.visibilityState === "hidden" && calis());
 }
