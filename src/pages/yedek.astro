@@ -54,7 +54,14 @@ import Layout from "../layouts/Layout.astro";
             Çözdüğün sorular, yanlışların, favori derslerin, ayarların ve sohbet geçmişin tek bir dosyaya kaydedilir. Yapay zekâ
             anahtarın dosyaya girmez; onu yeni cihazda yeniden gir.
           </p>
-          <button id="yedek-al" type="button" class="btn-primary min-h-11 px-4 rounded-lg">Yedek dosyasını indir</button>
+          <div class="flex flex-wrap gap-2">
+            <button id="yedek-paylas" type="button" class="btn-primary min-h-11 px-4 rounded-lg hidden">Yakındaki cihaza gönder</button>
+            <button id="yedek-al" type="button" class="btn-primary min-h-11 px-4 rounded-lg">Yedek dosyasını indir</button>
+          </div>
+          <p class="mt-3 text-sm">
+            İnternet gerekmez. "Yakındaki cihaza gönder" paylaşma menüsünü açar: AirDrop (iPhone, Mac) ya da Quick Share
+            (Android, Windows) ile dosyayı öteki cihaza yolla, orada aşağıdan seç.
+          </p>
         </section>
         <section class="content-card">
           <h2 class="text-xl font-bold text-theme mb-3">Öteki cihaza yükle</h2>
@@ -119,6 +126,21 @@ import Layout from "../layouts/Layout.astro";
   });
 
   const durum = document.getElementById("yedek-durum")!;
+  const dosya = () => {
+    const y = topla();
+    return new File([JSON.stringify(y)], `acik-ogretim-kayitlarim-${y.tarih.slice(0, 10)}.json`, { type: "application/json" });
+  };
+  const paylas = document.getElementById("yedek-paylas") as HTMLButtonElement;
+  if (navigator.canShare?.({ files: [new File(["{}"], "deneme.json", { type: "application/json" })] })) {
+    paylas.classList.remove("hidden");
+    paylas.addEventListener("click", async () => {
+      try {
+        await navigator.share({ files: [dosya()], title: "Açık Öğretim kayıtlarım" });
+      } catch {
+        /* the user closed the share sheet */
+      }
+    });
+  }
   document.getElementById("yedek-al")?.addEventListener("click", () => {
     const y = topla();
     const blob = new Blob([JSON.stringify(y)], { type: "application/json" });
