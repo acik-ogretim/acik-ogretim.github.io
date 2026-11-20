@@ -2,7 +2,7 @@
 import { dereceAdi } from "../../lib/derece";
 import Simge from "../../components/Simge.astro";
 import Layout from "../../layouts/Layout.astro";
-import { getUniversities, getDepartments, getCourses } from "../../lib/api";
+import { getUniversities, getDepartments, getCourses, sorusuOlanDersler } from "../../lib/api";
 import { dersSimgesi, KATEGORI_ADI } from "../../lib/ders-simge";
 import { canonicalDepartments } from "../../lib/kanonik";
 
@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 }
 
 const { university, department } = Astro.props;
-const allCourses = await getCourses(university.id, department.id);
+const allCourses = await sorusuOlanDersler(university.id, await getCourses(university.id, department.id));
 const canonical = await canonicalDepartments();
 const courseHref = (id: string) => {
   const dept = canonical.get(university.id + "/" + id) ?? department.id;

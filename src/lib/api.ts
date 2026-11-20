@@ -57,3 +57,20 @@ export async function getQuestions(uniId: string, courseId: string): Promise<Que
         return [];
     }
 }
+
+/** Courses whose question file has at least one question. Empty courses are listed in the coverage
+ *  report (acik-ogretim-mcp docs/soru-kapsami.md) and left out of department lists. */
+export async function sorusuOlanDersler(uniId: string, courses: Course[]): Promise<Course[]> {
+    const sonuc: Course[] = [];
+    for (const c of courses) {
+        const filePath = path.join(DATA_DIR, 'questions', uniId, `${c.id}.json`);
+        try {
+            const st = await fs.stat(filePath);
+            // "[]" with whitespace is a few bytes; a single question is far larger
+            if (st.size > 16) sonuc.push(c);
+        } catch {
+            // no file: no questions
+        }
+    }
+    return sonuc;
+}
