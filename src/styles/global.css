@@ -1209,11 +1209,6 @@ html[data-keyboard] .sohbet-yazi-alani {
         top: calc(3rem + env(safe-area-inset-top));
     }
 
-    /* Player bar: progress, play, back, forward and menu stay; the rest lives in the menu drawer */
-    .player-bar .player-ikincil {
-        display: none !important;
-    }
-
     .player-bar #stats-container > :nth-child(2) {
         display: none;
     }
@@ -1224,8 +1219,214 @@ html[data-keyboard] .sohbet-yazi-alani {
     }
 }
 
+/*
+ * Player bar row (see src/lib/cubuk.ts): fixed-size buttons, measured and trimmed by script.
+ * Narrow phones get 32 px wide by 40 px tall targets so the whole old layout still fits at 320 px.
+ */
+.player-cubuk {
+    gap: 0.125rem;
+    overflow: hidden;
+}
+
+.player-cubuk > *,
+.player-menu {
+    flex-shrink: 0;
+}
+
+[data-cubuk-gizli] {
+    display: none !important;
+}
+
+.player-bar {
+    --cb-w: 1.9rem;
+    --cb-h: 2.5rem;
+}
+
+@media (min-width: 360px) {
+    .player-bar {
+        --cb-w: 2rem;
+    }
+}
+
+@media (min-width: 480px) {
+    .player-bar {
+        --cb-w: 2.25rem;
+    }
+
+    .player-cubuk {
+        gap: 0.25rem;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .player-bar .player-btn-icon,
+    .player-bar .player-action-btn {
+        width: var(--cb-w);
+        min-width: var(--cb-w);
+        height: var(--cb-h);
+        padding: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .player-cubuk {
+        overflow: visible;
+        gap: 0.25rem;
+    }
+
+    .player-btn-etiketli {
+        width: auto;
+        padding: 0 0.5rem;
+        gap: 0.375rem;
+        font-size: 10px;
+        font-weight: 700;
+    }
+}
+
+.player-btn-tehlike {
+    color: #ef4444;
+}
+
+.player-btn-tehlike:hover {
+    color: #f87171;
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+.player-hiz {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    padding: 0 0.5rem;
+    font-size: 10px;
+    font-weight: 900;
+    color: #94a3b8;
+}
+
+.player-hiz:hover {
+    color: #2dd4bf;
+}
+
+.player-menu {
+    border: 1px solid rgba(51, 65, 85, 0.5);
+}
+
 @media (prefers-reduced-motion: reduce) {
     body:has(.mobil-ustcubuk) nav[aria-label='Ünite Navigasyonu'] {
         transition: none;
     }
+}
+
+/* Desktop: the thin course bar takes the place of the site header while it is showing */
+@media (min-width: 768px) {
+    body:has(.mobil-ustcubuk) .layout-header {
+        transition: transform 0.2s ease-out;
+    }
+
+    html[data-ustcubuk] body:has(.mobil-ustcubuk) .layout-header {
+        transform: translateY(-100%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body:has(.mobil-ustcubuk) .layout-header {
+        transition: none;
+    }
+}
+
+/* Settings modal groups and reading size */
+.ayar-baslik {
+    padding: 0 0.25rem;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: #2dd4bf;
+}
+
+.yazi-dugme {
+    min-height: 2.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    background: rgba(30, 41, 59, 0.4);
+    color: #cbd5e1;
+    font-weight: 700;
+}
+
+.yazi-dugme[aria-pressed='true'] {
+    border-color: #14b8a6;
+    color: #2dd4bf;
+}
+
+html[data-yazi='kucuk'] {
+    font-size: 90%;
+}
+
+html[data-yazi='buyuk'] {
+    font-size: 112.5%;
+}
+
+/* Disclaimer strip can be dismissed; theme buttons show the active theme */
+html[data-uyari-kapali] #uyari-seridi {
+    display: none;
+}
+
+.tema-secim {
+    color: var(--text-color-muted);
+    background: var(--button-bg);
+}
+
+.tema-secim[aria-pressed='true'] {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--primary-color-text);
+}
+
+.theme-toggle-btn[aria-pressed='true'] {
+    background-color: var(--button-bg-hover);
+    box-shadow: inset 0 0 0 2px var(--primary-color);
+    color: var(--primary-color);
+}
+
+#global-settings-modal [onclick^='setTheme('][aria-pressed='true'] {
+    box-shadow: 0 0 0 2px #14b8a6;
+}
+
+/* remoteStorage widget on /yedek: stays inside its card and follows the theme */
+#rs-gerec {
+    position: relative;
+    isolation: isolate;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+#rs-gerec .rs-widget {
+    position: relative !important;
+    inset: auto !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100%;
+    box-sizing: border-box;
+    background: var(--button-bg) !important;
+    color: var(--text-color) !important;
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    z-index: auto !important;
+}
+
+#rs-gerec .rs-widget * {
+    color: inherit;
+}
+
+#rs-gerec .rs-widget input {
+    color: var(--text-color) !important;
+    background: var(--card-bg) !important;
+    font-size: 16px;
+}
+
+#rs-gerec .rs-widget button {
+    min-height: 2.75rem;
+}
+
+#rs-gerec .remotestorage-widget-modal-backdrop {
+    z-index: 100 !important;
 }

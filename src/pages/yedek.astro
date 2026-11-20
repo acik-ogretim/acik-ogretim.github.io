@@ -113,9 +113,60 @@ import { GOOGLE_CLIENT_ID } from "../lib/google-esitle";
   import { cikisYap, googleEsitle } from "../lib/google-esitle";
   import { rsGerecKur } from "../lib/rs-esitle";
 
+  // Plain Turkish for sync messages: no raw English errors, no failure text without a real failure.
+  const anlasilir = (m: string): string => {
+    if (/Eşitlendi: 0 kayıt/.test(m)) return "Depoda önceki kayıt yoktu, bu cihazın kayıtları yüklendi.";
+    if (m === "Eşitlenemedi.") {
+      return navigator.onLine
+        ? "Depoya ulaşılamadı. Adresi kontrol edip depoyu yeniden bağla."
+        : "İnternet bağlantısı yok. Bağlanınca yeniden dene.";
+    }
+    if (/failed to fetch|networkerror|network request/i.test(m)) return "Sunucuya ulaşılamadı. Bağlantını kontrol edip yeniden dene.";
+    if (/401|403|unauthori|forbidden|access denied/i.test(m)) return "Erişim izni verilmedi. Depoyu yeniden bağla.";
+    if (/quota|rate|429/i.test(m)) return "Depo şu an yoğun. Biraz sonra yeniden dene.";
+    return m;
+  };
+
   const rsKap = document.getElementById("rs-gerec");
   const rsDurum = document.getElementById("rs-durum");
-  if (rsKap) rsGerecKur(rsKap, (m) => rsDurum && (rsDurum.textContent = m)).catch(() => rsDurum && (rsDurum.textContent = "Depo bağlantısı yüklenemedi."));
+  if (rsKap) {
+    // The widget ships English only: translate its strings as it renders.
+    const SOZLUK: Record<string, string> = {
+      "Connect your storage": "Deponu bağla",
+      "To sync data with your account": "Kayıtlarını kendi hesabınla eşitle",
+      "Connect": "Bağlan",
+      "Disconnect": "Bağlantıyı kes",
+      "Cancel": "Vazgeç",
+      "Sync now": "Şimdi eşitle",
+      "Synchronizing": "Eşitleniyor",
+      "Connecting": "Bağlanıyor",
+      "Connected": "Bağlandı",
+      "Offline": "Çevrim dışı",
+      "Unauthorized": "İzin gerekli",
+      "Sign in": "Giriş yap",
+      "Please enter your user address": "Kullanıcı adresini yaz",
+      "Enter your user address": "Kullanıcı adresini yaz",
+      "Your storage is connected": "Deponun bağlantısı kuruldu",
+    };
+    const cevir = () => {
+      const yurur = document.createTreeWalker(rsKap, NodeFilter.SHOW_TEXT);
+      for (let n = yurur.nextNode(); n; n = yurur.nextNode()) {
+        const t = n.nodeValue?.trim() ?? "";
+        if (SOZLUK[t]) n.nodeValue = SOZLUK[t];
+      }
+      rsKap.querySelectorAll<HTMLInputElement>("input[placeholder]").forEach((i) => {
+        i.placeholder = "kullanici@depo.com";
+      });
+      rsKap.querySelectorAll<HTMLElement>("[title]").forEach((e) => {
+        const t = e.getAttribute("title") ?? "";
+        if (SOZLUK[t]) e.setAttribute("title", SOZLUK[t]);
+      });
+    };
+    new MutationObserver(cevir).observe(rsKap, { childList: true, subtree: true, characterData: true });
+    rsGerecKur(rsKap, (m) => rsDurum && (rsDurum.textContent = anlasilir(m))).catch(
+      () => rsDurum && (rsDurum.textContent = "Depo bağlantısı yüklenemedi. Sayfayı yenile."),
+    );
+  }
 
   const gDurum = document.getElementById("google-durum");
   const gCikis = document.getElementById("google-cikis");
@@ -125,10 +176,13 @@ import { GOOGLE_CLIENT_ID } from "../lib/google-esitle";
     if (gDurum) gDurum.textContent = "Eşitleniyor";
     try {
       const r = await googleEsitle();
-      if (gDurum) gDurum.textContent = `Eşitlendi: Drive'dan ${r.gelen} kayıt birleşti, güncel hâli Drive'a yazıldı.`;
+      if (gDurum) gDurum.textContent =
+          r.gelen === 0
+            ? "Drive'da önceki kayıt yoktu, bu cihazın kayıtları yüklendi."
+            : `Eşitlendi: Drive'dan ${r.gelen} kayıt birleşti, güncel hâli Drive'a yazıldı.`;
       gCikis?.classList.remove("hidden");
     } catch (err) {
-      if (gDurum) gDurum.textContent = err instanceof Error ? err.message : "Eşitlenemedi.";
+      if (gDurum) gDurum.textContent = anlasilir(err instanceof Error ? err.message : "Eşitlenemedi.");
     } finally {
       dugme.disabled = false;
     }
@@ -171,9 +225,12 @@ import { GOOGLE_CLIENT_ID } from "../lib/google-esitle";
     esitDurum.textContent = "Eşitleniyor";
     try {
       const r = await esitle(token, parolaGirdi.value);
-      esitDurum.textContent = `Eşitlendi: ${r.gelen} kayıt birleşti, şifreli kopya güncellendi.`;
+      esitDurum.textContent =
+        r.gelen === 0
+          ? "Depoda önceki kayıt yoktu, bu cihazın kayıtları yüklendi."
+          : `Eşitlendi: ${r.gelen} kayıt birleşti, şifreli kopya güncellendi.`;
     } catch (err) {
-      esitDurum.textContent = err instanceof Error ? err.message : "Eşitlenemedi.";
+      esitDurum.textContent = anlasilir(err instanceof Error ? err.message : "Eşitlenemedi.");
     } finally {
       dugme.disabled = false;
     }

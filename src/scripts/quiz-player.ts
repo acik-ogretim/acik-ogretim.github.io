@@ -436,6 +436,15 @@ export class QuizPlayer {
       const unit = parseInt((el as HTMLElement).dataset.unit || '0');
       (el as HTMLElement).style.display = visibleUnits.has(unit) ? 'block' : 'none';
     });
+    // Unit shortcut chips: hide units the filters leave empty
+    document.querySelectorAll<HTMLElement>('.btn-unit-nav[data-unit]').forEach(el => {
+      el.style.display = visibleUnits.has(parseInt(el.dataset.unit || '0')) ? '' : 'none';
+    });
+    this.updateCountText();
+    // Other widgets (top bar unit selector) listen for the visible units
+    window.dispatchEvent(new CustomEvent('sorular:filtre', {
+      detail: { units: [...visibleUnits].sort((a, b) => a - b), count: this.questions.length, total: this.originalQuestions.length },
+    }));
 
     // Update body classes for view settings
     document.body.classList.toggle('hide-answers', !this.settings.showAnswers);
@@ -998,6 +1007,17 @@ export class QuizPlayer {
     const pct = ((this.currentIndex + 1) / this.questions.length) * 100;
     if (this.ui.progressBar) this.ui.progressBar.style.width = pct + '%';
     this.updateStatusText();
+  }
+
+  /** Course header line: total, or how many questions match the active filters. */
+  updateCountText(): void {
+    const el = document.getElementById('soru-sayisi');
+    if (!el) return;
+    const total = this.originalQuestions.length;
+    const n = this.questions.length;
+    if (n === total) el.textContent = `Toplam ${total} soru bulundu.`;
+    else if (n === 0) el.textContent = `Seçili filtrelere uyan soru yok (toplam ${total} soru). Ayarlardan filtreleri gevşet.`;
+    else el.textContent = `Filtreye uyan ${n} soru gösteriliyor (toplam ${total}).`;
   }
 
   updateStatusText(): void {

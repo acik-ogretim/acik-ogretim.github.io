@@ -18,7 +18,8 @@ import {
 
 export const SETTINGS_EVENT = "yz-ayarlari";
 
-export default function SaglayiciAyarlari() {
+// baglantilar=false when the host (settings modal) lists help links in its own group.
+export default function SaglayiciAyarlari({ baglantilar = true }: { baglantilar?: boolean }) {
   const id = useId();
   const [settings, setSettings] = useState<ChatSettings | null>(null);
   const [key, setKey] = useState("");
@@ -163,20 +164,22 @@ export default function SaglayiciAyarlari() {
           </a>
         </div>
       </div>
+      {baglantilar && (
       <nav aria-label="Yardım ve belgeler" className="grid grid-cols-4 gap-2 border-t pt-3" style={{ borderColor: "var(--border-color)" }}>
-        {BAGLANTILAR.map(({ href, ad, Icon }) => (
-          <a
-            key={href}
-            href={href}
-            title={ad}
-            className="flex min-h-11 flex-col items-center gap-1 rounded-lg px-1 py-1.5 text-center text-[10px] leading-tight hover:opacity-80"
-            style={{ color: "var(--text-color-muted)" }}
-          >
-            <Icon className="size-5 shrink-0" aria-hidden />
-            <span className="line-clamp-2">{ad}</span>
-          </a>
-        ))}
-      </nav>
+          {BAGLANTILAR.map(({ href, ad, Icon }) => (
+            <a
+              key={href}
+              href={href}
+              title={ad}
+              className="flex min-h-11 flex-col items-center gap-1 rounded-lg px-1 py-1.5 text-center text-[10px] leading-tight hover:opacity-80"
+              style={{ color: "var(--text-color-muted)" }}
+            >
+              <Icon className="size-5 shrink-0" aria-hidden />
+              <span className="line-clamp-2">{ad}</span>
+            </a>
+          ))}
+        </nav>
+      )}
     </div>
   );
 }

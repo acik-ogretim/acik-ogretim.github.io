@@ -24,6 +24,12 @@ class Bellek {
 }
 
 describe("yedek", () => {
+  it("alt çubuk düzenini taşır", () => {
+    const d = new Bellek();
+    d.setItem("cubuk-duzeni", '{"v":1,"ids":["geri","ileri"]}');
+    expect(JSON.stringify(topla(d))).toContain("cubuk-duzeni");
+  });
+
   it("API anahtarını dışarıda bırakır", () => {
     const d = new Bellek();
     d.setItem("gemini-api-key", "gizli");

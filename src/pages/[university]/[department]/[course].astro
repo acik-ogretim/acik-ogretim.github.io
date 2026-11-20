@@ -59,7 +59,10 @@ if (canonicalDept !== department.id) return Astro.redirect(coursePath(university
 const questions = await getQuestions(university.id, course.id);
 const icerik = await getDersIcerik(university.id, course.id);
 // Official topic list: in AUZEF and Anadolu the weekly topics are the units of the book
-const uniteAdi = new Map((icerik?.konular ?? []).map((k) => [k.no, uniteBasligi(k.baslik)]));
+// Use it only when it covers every unit that has questions; a shorter list (merged weeks) would shift titles
+const enBuyukUnite = Math.max(0, ...questions.map((q) => q.unitNumber));
+const resmiListe = (icerik?.konular ?? []).length >= enBuyukUnite ? (icerik?.konular ?? []) : [];
+const uniteAdi = new Map(resmiListe.map((k) => [k.no, uniteBasligi(k.baslik)]));
 // Book topic tree: unit titles where the official list has none, and the topic shown on each question
 const kitap = await getKitapKonulari(university.id, course.id);
 const konuAdi = new Map<string, string>();
@@ -154,7 +157,7 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { y
         <h1 class="text-2xl md:text-4xl font-bold text-theme mb-2 md:mb-4">
           {course.name}
         </h1>
-        <p class="text-lg md:text-xl text-muted-theme mb-6">
+        <p id="soru-sayisi" data-toplam={questions.length} class="text-lg md:text-xl text-muted-theme mb-6" aria-live="polite">
           Toplam {questions.length} soru bulundu.
         </p>
 
@@ -248,7 +251,7 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { y
           </span>
           {
             units.map((unit) => (
-              <a href={`#unite-${unit}`} class="btn-unit-nav" title={uniteAdi.get(unit)?.baslik}>
+              <a href={`#unite-${unit}`} class="btn-unit-nav" data-unit={unit} title={uniteAdi.get(unit)?.baslik}>
                 {unit === 0 ? "Diğer" : `Ü ${unit}`}
               </a>
             ))
