@@ -36,6 +36,9 @@ jobs:
         run: npm ci
 
       - name: Build with Astro
+        env:
+          # Public OAuth client id for "Google ile eşitle" (repo variable; empty hides the feature)
+          PUBLIC_GOOGLE_CLIENT_ID: ${{ vars.GOOGLE_CLIENT_ID }}
         run: |
           npm run build -- --site "${{ steps.pages.outputs.origin }}" --base "${{ steps.pages.outputs.base_path }}"
 

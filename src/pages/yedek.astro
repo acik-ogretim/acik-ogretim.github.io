@@ -1,6 +1,7 @@
 ---
 import Simge from "../components/Simge.astro";
 import Layout from "../layouts/Layout.astro";
+import { GOOGLE_CLIENT_ID } from "../lib/google-esitle";
 ---
 
 <Layout title="Kayıtlarını taşı">
@@ -11,6 +12,21 @@ import Layout from "../layouts/Layout.astro";
         Kayıtlarını taşı
       </h1>
       <div class="space-y-6 text-muted-theme">
+        {GOOGLE_CLIENT_ID && (
+          <section class="content-card">
+            <h2 class="text-xl font-bold text-theme mb-3">Google hesabınla eşitle</h2>
+            <p class="mb-4">
+              Google hesabınla gir; kayıtların kendi Google Drive'ında yalnız bu sitenin görebildiği gizli bir klasörde durur.
+              Her cihazda aynı hesapla "Eşitle"ye bas, kayıtlar birleşir. Kayıtların bize gelmez; site yalnız senin Drive'ındaki
+              bu klasöre, senin izninle ve senin tarayıcından erişir.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <button id="google-esitle" type="button" class="btn-primary min-h-11 px-4 rounded-lg">Google ile eşitle</button>
+              <button id="google-cikis" type="button" class="min-h-11 px-4 rounded-lg border hidden" style="border-color: var(--border-color)">Çıkış yap</button>
+            </div>
+            <p id="google-durum" role="status" class="mt-3 text-sm"></p>
+          </section>
+        )}
         <section class="content-card">
           <h2 class="text-xl font-bold text-theme mb-3">Cihazdan cihaza eşitle</h2>
           <p class="mb-4">
@@ -84,6 +100,29 @@ import Layout from "../layouts/Layout.astro";
   import { topla, yukle } from "../lib/yedek";
   import { TOKEN_ANAHTARI, esitle } from "../lib/bulut-esitle";
   import { p2pBaslat } from "../lib/p2p-esitle";
+  import { cikisYap, googleEsitle } from "../lib/google-esitle";
+
+  const gDurum = document.getElementById("google-durum");
+  const gCikis = document.getElementById("google-cikis");
+  document.getElementById("google-esitle")?.addEventListener("click", async (e) => {
+    const dugme = e.currentTarget as HTMLButtonElement;
+    dugme.disabled = true;
+    if (gDurum) gDurum.textContent = "Eşitleniyor";
+    try {
+      const r = await googleEsitle();
+      if (gDurum) gDurum.textContent = `Eşitlendi: Drive'dan ${r.gelen} kayıt birleşti, güncel hâli Drive'a yazıldı.`;
+      gCikis?.classList.remove("hidden");
+    } catch (err) {
+      if (gDurum) gDurum.textContent = err instanceof Error ? err.message : "Eşitlenemedi.";
+    } finally {
+      dugme.disabled = false;
+    }
+  });
+  gCikis?.addEventListener("click", async () => {
+    await cikisYap();
+    gCikis.classList.add("hidden");
+    if (gDurum) gDurum.textContent = "Çıkış yapıldı.";
+  });
 
   const p2pDurum = document.getElementById("p2p-durum")!;
   let ayril: (() => void) | null = null;
