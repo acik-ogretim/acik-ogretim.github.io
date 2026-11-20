@@ -12,6 +12,16 @@ import { GOOGLE_CLIENT_ID } from "../lib/google-esitle";
         Kayıtlarını taşı
       </h1>
       <div class="space-y-6 text-muted-theme">
+        <section class="content-card">
+          <h2 class="text-xl font-bold text-theme mb-3">Kendi depona bağlan</h2>
+          <p class="mb-4">
+            Kayıtların senin seçtiğin kişisel depoda durur ve bağladığın her cihazda kendiliğinden eşitlenir. Aşağıdaki kutuya
+            remoteStorage adresini (ör. kullanici@5apps.com) yaz{GOOGLE_CLIENT_ID ? " ya da Google Drive'ı seç" : ""}. Site
+            kayıtlarını görmez; tarayıcın doğrudan senin deponla konuşur.
+          </p>
+          <div id="rs-gerec" class="min-h-11"></div>
+          <p id="rs-durum" role="status" class="mt-3 text-sm"></p>
+        </section>
         {GOOGLE_CLIENT_ID && (
           <section class="content-card">
             <h2 class="text-xl font-bold text-theme mb-3">Google hesabınla eşitle</h2>
@@ -101,6 +111,11 @@ import { GOOGLE_CLIENT_ID } from "../lib/google-esitle";
   import { TOKEN_ANAHTARI, esitle } from "../lib/bulut-esitle";
   import { p2pBaslat } from "../lib/p2p-esitle";
   import { cikisYap, googleEsitle } from "../lib/google-esitle";
+  import { rsGerecKur } from "../lib/rs-esitle";
+
+  const rsKap = document.getElementById("rs-gerec");
+  const rsDurum = document.getElementById("rs-durum");
+  if (rsKap) rsGerecKur(rsKap, (m) => rsDurum && (rsDurum.textContent = m)).catch(() => rsDurum && (rsDurum.textContent = "Depo bağlantısı yüklenemedi."));
 
   const gDurum = document.getElementById("google-durum");
   const gCikis = document.getElementById("google-cikis");

@@ -107,6 +107,10 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
       if (localStorage.getItem("google-esitleme-acik")) {
         import("../lib/google-esitle").then((m) => m.otomatikEsitlemeKur());
       }
+      // remoteStorage (the learner's own storage) reconnects by itself; sync in the background once it is connected
+      if (localStorage.getItem("rs-esitleme-acik") && location.pathname !== "/yedek") {
+        import("../lib/rs-esitle").then((m) => m.rsOtomatik());
+      }
       // Register Service Worker for PWA
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
