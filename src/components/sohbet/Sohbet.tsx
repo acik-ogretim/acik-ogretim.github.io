@@ -693,7 +693,7 @@ function HistoryDialog({
             <SquarePen className="size-4" aria-hidden /> Yeni sohbet
           </button>
           {liste.length === 0 && <p className="text-sm py-3" style={{ color: "var(--text-color-muted)" }}>Henüz kayıtlı sohbet yok.</p>}
-          <ul className="flex flex-col gap-1 overflow-y-auto">
+          <ul data-base-ui-swipe-ignore="y" className="flex flex-col gap-1 overflow-y-auto overscroll-contain">
             {liste.map((k) => (
               <li key={k.id || "ilk"} className="flex items-center gap-1">
                 <button

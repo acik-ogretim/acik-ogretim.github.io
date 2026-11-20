@@ -51,7 +51,7 @@ export default function BelgeKarti({ baslik, icerik }: { baslik: string; icerik:
           <Printer className="size-4" aria-hidden />
         </button>
       </header>
-      <div ref={govde} className="sohbet-md break-words px-4 py-3 max-h-[60vh] overflow-y-auto">
+      <div ref={govde} data-base-ui-swipe-ignore="y" className="sohbet-md break-words px-4 py-3 max-h-[60vh] overflow-y-auto overscroll-contain">
         <Markdown>{icerik}</Markdown>
       </div>
     </section>
