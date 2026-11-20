@@ -1,0 +1,63 @@
+---
+import Simge from "../components/Simge.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Kullanım Koşulları">
+    <div class="page-header-wrapper">
+        <!-- Background Accents -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div
+                class="absolute -top-40 -right-40 w-96 h-96 bg-primary-theme/10 rounded-full blur-3xl"
+            >
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-theme to-transparent"
+            >
+            </div>
+        </div>
+
+        <div class="container-narrow relative">
+            <h1 class="page-title text-theme">
+                <span class="text-4xl"><Simge ad="FileText" /></span>
+                Kullanım Koşulları
+            </h1>
+
+            <div class="space-y-8 text-muted-theme">
+                <section class="content-card">
+                    <h2 class="text-xl font-bold text-theme mb-4">1. Hizmetin kapsamı</h2>
+                    <p class="">Açık Öğretim Portal, açık öğretim öğrencilerinin çıkmış sorularla çalışmasına, konu tekrarı yapmasına ve sesli dinlemesine yardım eden ücretsiz ve açık kaynaklı bir sitedir. Site herhangi bir üniversitenin resmî hizmeti değildir; sınav, not ve kayıt işlemleri için her zaman kendi üniversitenizin resmî kanallarını esas alın.</p>
+                </section>
+                <section class="content-card">
+                    <h2 class="text-xl font-bold text-theme mb-4">2. İçeriğin doğruluğu</h2>
+                    <p class="">Sorular üniversitelerin yayımladığı sınavlardan derlenir, cevaplar resmî cevap anahtarlarına dayanır. Açıklamaların bir bölümü ders kitabındaki ilgili konuya dayanılarak yapay zekâ yardımıyla yazılmıştır. Özenle hazırlansa da hata bulunabilir; bir yanlış gördüğünüzde soru kartındaki konuşma simgesinden ya da ders başlığındaki bayrak simgesinden bildirin. Sınava hazırlanırken ders kitabınızı birincil kaynak olarak kullanın.</p>
+                </section>
+                <section class="content-card">
+                    <h2 class="text-xl font-bold text-theme mb-4">3. Yapay zekâ özellikleri</h2>
+                    <p class="">Sohbet asistanı, konu anlatımı ve açıklama üretme gibi özellikler sizin girdiğiniz yapay zekâ anahtarıyla ve doğrudan sizin tarayıcınızdan çalışır. Üretilen yanıtlar yardımcı niteliktedir; doğruluğunu ders kitabıyla karşılaştırarak kullanın.</p>
+                </section>
+                <section class="content-card">
+                    <h2 class="text-xl font-bold text-theme mb-4">4. Hesaplar ve eşitleme</h2>
+                    <p class="">Sitede üyelik yoktur. Kayıtlarınızı başka cihaza taşımak için Google Drive, Dropbox, remoteStorage ya da cihazdan cihaza bağlantı gibi kendi seçtiğiniz bir yolu kullanırsınız. Bu bağlantılarda yetkiyi siz verirsiniz ve dilediğiniz zaman ilgili hizmetin hesap ayarlarından geri alabilirsiniz. Verilerinizin nasıl işlendiği Gizlilik Politikası sayfasında anlatılır.</p>
+                </section>
+                <section class="content-card">
+                    <h2 class="text-xl font-bold text-theme mb-4">5. Tartışma ve bildirimler</h2>
+                    <p class="">Tartışma ve hata bildirimleri GitHub üzerinde herkese açık olarak tutulur ve GitHub'ın kullanım koşullarına tabidir. Saygılı bir dil kullanın, başkalarının kişisel bilgilerini ve sınav güvenliğini zedeleyecek içerik paylaşmayın. Bu kurallara uymayan yorumlar kaldırılabilir.</p>
+                </section>
+                <section class="content-card">
+                    <h2 class="text-xl font-bold text-theme mb-4">6. Telif hakkı</h2>
+                    <p class="">Sorular ve ders içerikleri ilgili üniversitelere ve hak sahiplerine aittir. Bir içeriğin kaldırılmasını istiyorsanız <a href="/telif/" class="text-primary-theme hover:underline">Telif Hakkı</a> sayfasındaki yolu izleyin; talepler incelenir ve gerekirse içerik kaldırılır.</p>
+                </section>
+                <section class="content-card">
+                    <h2 class="text-xl font-bold text-theme mb-4">7. Sorumluluk</h2>
+                    <p class="">Site olduğu gibi sunulur. Sınav sonuçları, kaybolan yerel kayıtlar ya da üçüncü taraf hizmetlerdeki kesintiler nedeniyle doğabilecek sonuçlardan site geliştiricileri sorumlu tutulamaz. Önemli kayıtlarınız için Kayıtlarını taşı sayfasından düzenli yedek alın.</p>
+                </section>
+                <section class="content-card">
+                    <h2 class="text-xl font-bold text-theme mb-4">8. Değişiklikler ve iletişim</h2>
+                    <p class="">Bu koşullar gerektiğinde güncellenir; güncel metin her zaman bu sayfadadır. Soru ve önerileriniz için <a href="/iletisim/" class="text-primary-theme hover:underline">İletişim</a> sayfasını kullanabilirsiniz.</p>
+                    <p class="mt-4 text-xs">Son güncelleme: 20 Kasım 2026</p>
+                </section>
+            </div>
+        </div>
+    </div>
+</Layout>
