@@ -141,15 +141,27 @@ function SiraSatiri({ e, i, n, tasi, cikar }: { e: Eylem; i: number; n: number; 
   );
 }
 
-export default function MobilMenu({ dersAdi, uniteler }: { dersAdi: string; uniteler: Unite[] }) {
+export default function MobilMenu({ dersAdi, uniteler: tumUniteler }: { dersAdi: string; uniteler: Unite[] }) {
+  // Units left empty by the question filters are hidden (quiz-player sends "sorular:filtre")
+  const [gorunenler, setGorunenler] = useState<number[] | null>(null);
+  useEffect(() => {
+    const dinle = (e: Event) => setGorunenler((e as CustomEvent<{ units: number[] }>).detail.units);
+    addEventListener("sorular:filtre", dinle);
+    // The player may have filtered before this island hydrated: read the visible unit headers once
+    const ayrac = [...document.querySelectorAll<HTMLElement>(".unit-separator")];
+    if (ayrac.some((el) => el.style.display === "none"))
+      setGorunenler(ayrac.filter((el) => el.style.display !== "none").map((el) => Number(el.dataset.unit)));
+    return () => removeEventListener("sorular:filtre", dinle);
+  }, []);
+  const uniteler = gorunenler ? tumUniteler.filter((u) => gorunenler.includes(u.no)) : tumUniteler;
   const [gorunur, setGorunur] = useState(false);
-  const [aktif, setAktif] = useState<number>(uniteler[0]?.no ?? 0);
+  const [aktif, setAktif] = useState<number>(tumUniteler[0]?.no ?? 0);
   const [acik, setAcik] = useState(false);
   const [gorunum, setGorunum] = useState<Gorunum>("ana");
   const [duzenle, setDuzenle] = useState(false);
   const [cubuk, setCubuk] = useState<string[]>([]);
   const [, temaYenile] = useState(0);
-  const [secili, setSecili] = useState<number>(uniteler[0]?.no ?? 0);
+  const [secili, setSecili] = useState<number>(tumUniteler[0]?.no ?? 0);
   const [sira, setSira] = useState("");
   const [hata, setHata] = useState(false);
   const kap = useRef<HTMLDivElement>(null);
@@ -173,6 +185,8 @@ export default function MobilMenu({ dersAdi, uniteler }: { dersAdi: string; unit
       if (Math.abs(fark) > 8) son = y;
       let simdiki: number | undefined;
       for (const el of document.querySelectorAll<HTMLElement>(".unit-separator")) {
+        // Units hidden by the question filters report top 0; skip them or the last hidden unit wins
+        if (el.offsetParent === null) continue;
         if (el.getBoundingClientRect().top <= 160) simdiki = Number(el.dataset.unit);
       }
       if (simdiki !== undefined) setAktif(simdiki);
