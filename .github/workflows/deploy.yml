@@ -39,6 +39,7 @@ jobs:
         env:
           # Public OAuth client id for "Google ile eşitle" (repo variable; empty hides the feature)
           PUBLIC_GOOGLE_CLIENT_ID: ${{ vars.GOOGLE_CLIENT_ID }}
+          PUBLIC_DROPBOX_APP_KEY: ${{ vars.DROPBOX_APP_KEY }}
         run: |
           npm run build -- --site "${{ steps.pages.outputs.origin }}" --base "${{ steps.pages.outputs.base_path }}"
 

@@ -13,11 +13,12 @@ Bu proje, öğrencilerin ders kaynaklarına ve geçmiş yıl sorularına kolayca
 - **Geniş Kapsam:** 3 büyük açık öğretim fakültesinin (Anadolu AÖF, ATA-AÖF, AUZEF) derslerini kapsar.
 - **İnteraktif Test Modülü:** Soruları çözerken anında geri bildirim alabileceğiniz gelişmiş test arayüzü.
   - Doğru/Yanlış analizi
-  - Ders asistanı: kendi API anahtarınla (Gemini, OpenAI, Anthropic, OpenRouter) dersin soruları, açıklamaları ve ünite özetleri üzerinden sohbet, sohbet içinde mini sınav
+  - Ders asistanı: kendi API anahtarınla (Gemini, OpenAI, Anthropic, OpenRouter) dersin soruları, açıklamaları, ünite özetleri ve ders kitabının konu ağacı üzerinden sohbet; konu anlatımı, zayıf konular, mini sınav, indirilebilir çalışma belgesi, sohbet geçmişi, sesle yazma ve canlı sesli konuşma
   - Açıklama menüsü: açıklamayı kısalt, genişlet, şıkları açıkla, hafıza ipucu
   - Sesli okuma desteği (TTS)
   - Koyu Mod / Aydınlık Mod / Sepya Modu seçenekleri
-- **Kişiselleştirme:** Favori derslerinizi kaydedin ve ilerlemenizi takip edin (Local Storage ile %100 gizlilik).
+- **Kişiselleştirme:** Favori derslerinizi kaydedin ve ilerlemenizi takip edin (kayıtlar tarayıcınızda durur).
+- **Kayıtları taşıma (/yedek):** Kendi kişisel deponuz (remoteStorage), Google Drive'ınızdaki gizli uygulama klasörü, şifreli GitHub gist'i, cihazdan cihaza bağlantı (WebRTC) ya da dosya. Hiçbirinde kayıtlar siteye gelmez.
 - **Hafif ve Hızlı:** [Astro](https://astro.build) ve statik site mimarisi sayesinde ultra hızlı sayfa yüklemeleri.
 
 ## Desteklenen Üniversiteler
@@ -82,7 +83,13 @@ Site içeriği (`data/` klasörü) JSON dosyalarından oluşur. İstatistikler v
 - **Ders asistanı:** İsteğe bağlıdır ve kendi API anahtarınızla çalışır:
   - Anahtarınız yalnızca tarayıcınızda (`localStorage`) saklanır; sitenin sunucusu yoktur.
   - Mesajlarınız ve ilgili ders içeriği tarayıcınızdan doğrudan seçtiğiniz sağlayıcıya gönderilir ve o sağlayıcının gizlilik politikasına tabidir.
+- **Kayıt eşitleme:** İsteğe bağlıdır; kayıtlar kullanıcının kendi deposuna, kendi Google Drive uygulama klasörüne, kendi GitHub hesabına (parolayla şifreli) ya da doğrudan öteki cihazına gider. Site bunları göremez.
 - Detaylar için [Gizlilik Politikası](https://acik-ogretim.github.io/gizlilik).
+
+### Eşitleme için isteğe bağlı ayarlar (depo değişkenleri)
+
+- `GOOGLE_CLIENT_ID`: Google ile eşitleme ve remoteStorage kutusunda Google Drive seçeneği. Google Cloud Console'da Web uygulaması türünde OAuth istemci kimliği; kapsam `drive.appdata`, yetkili kaynak `https://acik-ogretim.github.io`. Boşsa bu seçenek gizlenir.
+- `DROPBOX_APP_KEY`: remoteStorage kutusunda Dropbox seçeneği. Boşsa gizlenir.
 - **Telif Hakkı:** İçerikler eğitim amaçlıdır. Telif hakkı ihlali bildirimleri (DMCA) için GitHub Issues üzerinden bizimle iletişime geçebilirsiniz. Detaylar için [Telif Hakkı Politikası](https://acik-ogretim.github.io/telif).
 
 ## Yerel Geliştirme (Local Development)

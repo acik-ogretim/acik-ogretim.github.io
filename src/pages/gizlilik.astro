@@ -48,7 +48,47 @@ import Layout from "../layouts/Layout.astro";
                         </li>
                         <li>
                             Tarayıcı geçmişinizi temizlediğinizde bu veriler
-                            silinir.
+                            silinir. Silinmesini istemiyorsanız aşağıdaki
+                            yollardan biriyle yedekleyebilirsiniz.
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="content-card">
+                    <h2 class="text-xl font-bold text-theme mb-4">
+                        Kayıtları Cihazlar Arasında Taşıma
+                    </h2>
+                    <p>
+                        <a href="/yedek" class="text-primary-theme hover:underline">Kayıtlarını taşı</a>
+                        sayfasındaki yolların hepsi isteğe bağlıdır. Hiçbirinde kayıtlarınız bize gelmez;
+                        tarayıcınız doğrudan sizin seçtiğiniz yerle konuşur. Taşınan kayıtlar: çözdüğünüz
+                        sorular, yanlışlarınız, favorileriniz, ayarlarınız ve sohbet geçmişiniz. Yapay zekâ
+                        anahtarlarınız hiçbir yolda taşınmaz.
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 ml-4 mt-4">
+                        <li>
+                            <strong>Kendi deponuz (remoteStorage):</strong> Kayıtlar sizin bağladığınız kişisel
+                            depoda tutulur ve o deponun sağlayıcısının koşullarına tabidir. Bağlantıyı depo
+                            kutusundan istediğiniz an kesebilirsiniz.
+                        </li>
+                        <li>
+                            <strong>Google hesabı:</strong> Kayıtlar kendi Google Drive'ınızda, yalnız bu sitenin
+                            görebildiği gizli uygulama klasöründe tutulur. Site Drive'ınızdaki başka hiçbir dosyayı
+                            göremez. Erişimi "Çıkış yap" düğmesiyle ya da Google hesap ayarlarınızdan kaldırabilirsiniz.
+                        </li>
+                        <li>
+                            <strong>GitHub:</strong> Kayıtlar tarayıcınızda sizin parolanızla şifrelenir ve kendi
+                            GitHub hesabınızdaki gizli bir gist'e yazılır. GitHub yalnız şifreli metni görür;
+                            parolanızı unutursanız kayıt açılamaz.
+                        </li>
+                        <li>
+                            <strong>Cihazdan cihaza:</strong> Aynı parolayı giren iki cihaz, herkese açık Nostr
+                            aktarıcıları üzerinden birbirini bulur ve kayıtlarını doğrudan, parolayla şifreli
+                            olarak birbirine gönderir. Aktarıcılar yalnız parolanın özetinden üretilen oda adını görür.
+                        </li>
+                        <li>
+                            <strong>Dosya:</strong> Kayıtlar bir dosyaya yazılır; dosyayı nereye koyacağınıza siz
+                            karar verirsiniz. Bu yol internet gerektirmez.
                         </li>
                     </ul>
                 </section>
@@ -99,9 +139,16 @@ import Layout from "../layouts/Layout.astro";
                                 hizmet şartlarına tabidir.
                             </li>
                             <li>
+                                <strong>Sesle Yazma ve Canlı Konuşma:</strong> Mikrofonla
+                                yazdığınızda konuşmanız tarayıcınızın kendi ses tanıma
+                                hizmetiyle yazıya çevrilir; bazı tarayıcılar bunun için sesi
+                                kendi sunucularına gönderir (Chrome'da Google). Cevapların
+                                sesli okunması cihazınızdaki seslerle yapılır.
+                            </li>
+                            <li>
                                 <strong>İstediğiniz An Silme:</strong> Anahtarınızı
-                                Ayarlar menüsünden silebilir, sohbeti "Yeni sohbet"
-                                düğmesiyle temizleyebilir ya da tarayıcı verilerini
+                                Ayarlar menüsünden silebilir, sohbetleri "Sohbet geçmişi"
+                                penceresinden tek tek silebilir ya da tarayıcı verilerini
                                 silebilirsiniz.
                             </li>
                         </ul>
