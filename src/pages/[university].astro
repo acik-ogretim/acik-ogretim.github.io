@@ -233,7 +233,7 @@ const style = uniStyles[university.id] || {
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                       {group.departments.map((dept) => (
                         <div
-                          class:list={["dept-card group", dept.active === false && "opacity-60 hover:opacity-100 transition-opacity"]}
+                          class="dept-card group"
                           data-dept-id={dept.id}
                           data-dept-name={dept.name}
                           data-dept-icon={dept.icon || ""}
@@ -265,7 +265,7 @@ const style = uniStyles[university.id] || {
                                 <span class="text-sm font-medium text-theme group-hover:text-primary-theme line-clamp-1 sm:line-clamp-2 break-words hyphens-auto">
                                   {dept.name}
                                 </span>
-                                <span class="text-[11px] text-muted-theme">{dereceAdi(dept.degree)}{dept.active === false && " · Pasif (yeni kayıt yok)"}</span>
+                                <span class="text-[11px] text-muted-theme">{dereceAdi(dept.degree)}{dept.active === false && " · Pasif"}</span>
                               </span>
                             </a>
                           </div>
