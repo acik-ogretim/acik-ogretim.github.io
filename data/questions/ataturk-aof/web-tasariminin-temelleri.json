@@ -7528,9 +7528,9 @@
     "options": {
       "A": "content=\"text/html; charset=Turkish\"",
       "B": "content=\"text/html; charset=ISO-TR\"",
-      "C": "content=\"text/html; charset=uƞ-8\"",
+      "C": "content=\"text/html; charset=utf-8\"",
       "D": "content=\"text/html; charset=TR-tr\"",
-      "E": "content=\"text/html; charset=uƞ-TR\""
+      "E": "content=\"text/html; charset=utf-TR\""
     },
     "correctAnswer": "C",
     "explanation": "Türkçe karakterlerin tarayıcılarda sorunsuz görüntülenebilmesi için <head> bölümündeki <meta> etiketinde evrensel karakter kodlaması olan UTF-8 tanımlanmalıdır. Bu nedenle content parametresine 'text/html; charset=utf-8' değeri yazılır.",
@@ -10787,7 +10787,7 @@
       "B": "lang=\"tr\"",
       "C": "!DOCTYPE HTML",
       "D": "meta=”türkçe”",
-      "E": "meta charset=”uƞ 8”"
+      "E": "meta charset=”utf 8”"
     },
     "correctAnswer": "E",
     "source": "cikmis-soru",
