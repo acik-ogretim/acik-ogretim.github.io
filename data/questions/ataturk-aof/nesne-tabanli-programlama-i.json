@@ -592,17 +592,27 @@
     }
   },
   {
-    "id": "324406",
+    "id": "371381",
     "unitNumber": 3,
     "text": "Bir sınıfı deklare etmek, isteğe bağlı olarak bir sınıf değiştiricileri dizisi içerebilir. Aynı değiştiricinin bir sınıf bildiriminde birden çok kez görünmesi için derleme zamanı hatası vardır.<br/><strong>Bu değiştiriciler arasında aşağıdakilerden hangisi <u>sayılamaz</u>?</strong>",
     "correctAnswer": "E",
     "options": {
-      "A": "static",
-      "B": "sealed",
-      "C": "abstract",
-      "D": "public",
-      "E": "external"
-    }
+      "A": "Static",
+      "B": "Sealed",
+      "C": "Abstract",
+      "D": "Public",
+      "E": "External"
+    },
+    "explanation": "C# sınıf tanımlamalarında static, public, abstract ve sealed sıkça kullanılan değiştiricilerdir. Ancak “External” (veya extern) genellikle metot bildirimlerinde (örneğin DllImport ile) kullanılır, standart bir sınıf niteleyicisi olarak bu listede yer almaz.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "vize"
   },
   {
     "id": "324407",
@@ -767,29 +777,6 @@
       "D": "Mühürlüdür.",
       "E": "Örnek oluşturucuları içeremez."
     }
-  },
-  {
-    "id": "371381",
-    "unitNumber": 3,
-    "text": "Bir sınıfı deklare etmek, isteğe bağlı olarak bir sınıf değiştiricileri dizisi içerebilir. Aynı değiştiricinin bir sınıf bildiriminde birden çok kez görünmesi için derleme zamanı hatası vardır.<br/><strong>Bu değiştiriciler arasında aşağıdakilerden hangisi <u>sayılamaz</u>?</strong>",
-    "correctAnswer": "E",
-    "options": {
-      "A": "Static",
-      "B": "Sealed",
-      "C": "Abstract",
-      "D": "Public",
-      "E": "External"
-    },
-    "explanation": "C# sınıf tanımlamalarında static, public, abstract ve sealed sıkça kullanılan değiştiricilerdir. Ancak “External” (veya extern) genellikle metot bildirimlerinde (örneğin DllImport ile) kullanılır, standart bir sınıf niteleyicisi olarak bu listede yer almaz.",
-    "sinavlar": [
-      {
-        "year": "2024-2025",
-        "examType": "vize"
-      }
-    ],
-    "source": "cikmis-soru",
-    "year": "2024-2025",
-    "examType": "vize"
   },
   {
     "id": "396732",
@@ -1782,19 +1769,6 @@
     }
   },
   {
-    "id": "324577",
-    "unitNumber": 7,
-    "text": "<strong>Bir sınıftan kalıtım yoluyla başka bir sınıf türetebilmek için aşağıdaki operatörlerden hangisini kullanmamız gerekir?</strong>",
-    "correctAnswer": "B",
-    "options": {
-      "A": "Noktalı virgül(;)",
-      "B": "İki nokta üst üste (:)",
-      "C": "Virgül (,)",
-      "D": "Nokta (.)",
-      "E": "Çift tırnak (“”)"
-    }
-  },
-  {
     "id": "324579",
     "unitNumber": 7,
     "text": "<strong>Eklediğimiz projeleri kod editöründe tanımlamak için hangi anahtar kelimeyi kullanmamız gerekmektedir?</strong>",
@@ -2157,8 +2131,8 @@
     }
   },
   {
-    "id": "371444",
-    "unitNumber": 8,
+    "id": "324754",
+    "unitNumber": 10,
     "text": "<strong>Aşağıdakilerden hangisi aşırı yüklemeler (overloading) özelliğini açıklayan cümledir?</strong>",
     "correctAnswer": "D",
     "options": {
@@ -2166,8 +2140,18 @@
       "B": "Aynı sınıf içinde aynı isim ve aynı giriş parametreleri ile sonsuz sayıda metot tanımlanabilir.",
       "C": "Aşırı yüklemeler özelliğinin kullanımı her geçen gün yok olmakta ve programın bozulmasına sebep olmaktadır.",
       "D": "Aynı sınıf içinde aynı isimde fakat farklı giriş parametreleri ile tanımlanan metotlar farklı görevleri yapabilmektedir.",
-      "E": "Aşırı yüklemeler sadece metotlarda değil aynı zamanda değişkenlerde de kullanılabilir."
-    }
+      "E": "Aşırı yüklemeler sadece metotlarda değil, aynı zamanda değişkenlerde de kullanılabilir."
+    },
+    "explanation": "Metot overloading, aynı isimli metodun farklı parametre sayıları veya tipleriyle tanımlanarak daha esnek kullanılmasını sağlayan polimorfizm özelliğidir.",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ],
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final"
   },
   {
     "id": "395848",
@@ -2510,29 +2494,6 @@
       "D": "public void outKullanimi (deger out double){deger ++;}",
       "E": "public void outKullanimi (out deger){deger ++;"
     }
-  },
-  {
-    "id": "324754",
-    "unitNumber": 10,
-    "text": "<strong>Aşağıdakilerden hangisi aşırı yüklemeler (overloading) özelliğini açıklayan cümledir?</strong>",
-    "correctAnswer": "D",
-    "options": {
-      "A": "Aşırı yüklenerek nesne tabanlı programın kasılmasını sağlayan özelliktir.",
-      "B": "Aynı sınıf içinde aynı isim ve aynı giriş parametreleri ile sonsuz sayıda metot tanımlanabilir.",
-      "C": "Aşırı yüklemeler özelliğinin kullanımı her geçen gün yok olmakta ve programın bozulmasına sebep olmaktadır.",
-      "D": "Aynı sınıf içinde aynı isimde fakat farklı giriş parametreleri ile tanımlanan metotlar farklı görevleri yapabilmektedir.",
-      "E": "Aşırı yüklemeler sadece metotlarda değil, aynı zamanda değişkenlerde de kullanılabilir."
-    },
-    "explanation": "Metot overloading, aynı isimli metodun farklı parametre sayıları veya tipleriyle tanımlanarak daha esnek kullanılmasını sağlayan polimorfizm özelliğidir.",
-    "sinavlar": [
-      {
-        "year": "2024-2025",
-        "examType": "final"
-      }
-    ],
-    "source": "cikmis-soru",
-    "year": "2024-2025",
-    "examType": "final"
   },
   {
     "id": "324755",
