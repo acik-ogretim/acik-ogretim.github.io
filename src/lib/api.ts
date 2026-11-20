@@ -23,7 +23,9 @@ export async function getUniversities(): Promise<University[]> {
     try {
         const content = await fs.readFile(path.join(DATA_DIR, 'universities.json'), 'utf-8');
         const data = JSON.parse(content);
-        return validateList<University>(data, universitySchema);
+        const list = validateList<University>(data, universitySchema);
+        // Fixture universities (test-*) exist for unit tests only; keep them out of the published site.
+        return import.meta.env?.PROD ? list.filter(u => !u.id.startsWith('test-')) : list;
     } catch (e) {
         console.error('Error loading universities:', e);
         return [];
