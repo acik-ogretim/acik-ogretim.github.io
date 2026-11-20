@@ -43,6 +43,7 @@ export async function getStaticPaths() {
   return paths;
 }
 
+import Tartisma from "../../../components/Tartisma.astro";
 import type { Course, Department, University } from "../../../lib/types";
 
 interface Props {
@@ -87,7 +88,7 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { y
   <div class="py-12">
     <div class="container-reading">
       <!-- Breadcrumbs -->
-      <nav class="flex mb-8 text-sm text-muted-theme">
+      <nav class="flex items-center flex-wrap mb-8 text-sm text-muted-theme">
         <a href="/" class="breadcrumb-link">Ana Sayfa</a>
         <span class="mx-2">/</span>
         <a href={`/${university.id}`} class="breadcrumb-link"
@@ -99,6 +100,16 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { y
         >
         <span class="mx-2">/</span>
         <span class="text-theme font-medium">{course.name}</span>
+        <button
+          type="button"
+          class="ml-auto w-9 h-9 grid place-items-center rounded-lg text-muted-theme hover:text-primary-theme"
+          aria-label="Ders ya da bölümle ilgili hata bildir"
+          title="Ders / bölüm bildir"
+          data-tartisma={`${university.id}/${course.id}`}
+          data-tartisma-etiket={`${course.name} · ${department.name}`}
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><path d="M4 22v-7"></path></svg>
+        </button>
       </nav>
 
       <!-- Article Header -->
@@ -329,6 +340,17 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { y
                               Açıklama:
                             </strong>
 
+                            <button
+                              type="button"
+                              class="ml-auto mr-1 w-9 h-9 grid place-items-center rounded-lg text-slate-400 hover:text-teal-400 hover:bg-slate-200 dark:hover:bg-slate-700"
+                              aria-label="Soruyu tartış ya da hata bildir"
+                              title="Tartış / hata bildir"
+                              data-tartisma={`${university.id}/${course.id}/${q.id}`}
+                              data-tartisma-etiket={`${course.name} · Soru ${qIdx + 1}`}
+                              data-tartisma-icerik={`content-${unit}-${qIdx}`}
+                            >
+                              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            </button>
                             <!-- AI Enrichment Menu (Hidden by default) -->
                             <!-- AI Enrichment Menu Trigger -->
                             <div class="ai-enrichment-controls hidden relative z-10">
@@ -397,6 +419,7 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { y
   </div>
 
   <QuizPlayer />
+  <Tartisma />
   <AISettings />
 
   <!-- Floating Search Button -->
