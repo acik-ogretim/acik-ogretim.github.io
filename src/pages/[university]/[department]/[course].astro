@@ -14,6 +14,7 @@ const iconSprite = `<svg width="0" height="0" style="position:absolute" aria-hid
 const checkSvg = '<svg aria-hidden="true"><use href="#i-check"/></svg>';
 const xSvg = '<svg aria-hidden="true"><use href="#i-x"/></svg>';
 import SohbetCekmece from "../../../components/sohbet/SohbetCekmece.tsx";
+import MobilMenu from "../../../components/MobilMenu.tsx";
 import { getCourses, getDersIcerik, getKitapKonulari, getQuestions, getUniversities, type KitapKonu } from "../../../lib/api";
 import { uniteBasligi } from "../../../lib/unite-basligi";
 import { soruSirala } from "../../../lib/soru-sirasi";
@@ -76,6 +77,12 @@ for (const u of kitap) {
 const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
   (a, b) => (a === 0 ? 1 : 0) - (b === 0 ? 1 : 0) || a - b,
 );
+const mobilUniteler = units.map((no) => ({
+  no,
+  ad: no === 0 ? "Diğer" : `Ünite ${no}`,
+  baslik: uniteAdi.get(no)?.baslik,
+  soru: questions.filter((q) => q.unitNumber === no).length,
+}));
 const EXAM_LABEL: Record<string, string> = { vize: "Vize", final: "Final", butunleme: "Bütünleme", "tek-ders": "Tek Ders", "yaz-okulu": "Yaz Okulu", "uc-ders": "Üç Ders", mezuniyet: "Mezuniyet", genel: "" };
 const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { year: string; examType: string }[] }) =>
   (q.sinavlar?.length ? q.sinavlar : [{ year: String(q.year ?? ""), examType: q.examType ?? "genel" }])
@@ -260,7 +267,7 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { y
             return (
               <div
                 id={`unite-${unit}`}
-                class={`mb-16 scroll-mt-24 ${idx > 0 ? "mt-24" : ""} unit-separator`}
+                class={`mb-16 ${idx > 0 ? "mt-24" : ""} unit-separator`}
                 data-unit={unit}
               >
                 <h2
@@ -419,6 +426,7 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { y
   </div>
 
   <QuizPlayer />
+  <MobilMenu client:idle dersAdi={course.name} uniteler={mobilUniteler} />
   <Tartisma />
   <AISettings />
 
@@ -440,7 +448,7 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { y
   <!-- Search Modal/Panel -->
   <div
     id="searchPanel"
-    class="fixed inset-0 bg-black/0 pointer-events-none z-[60] flex items-end justify-center px-4 pb-24 print:hidden duration-300"
+    class="fixed inset-x-0 top-0 bg-black/0 pointer-events-none z-[60] flex items-end justify-center px-4 print:hidden duration-300"
   >
     <div
       id="searchInner"
@@ -450,10 +458,16 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { y
         <input
           type="text"
           id="questionSearch"
+          inputmode="search"
+          enterkeyhint="search"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
           placeholder="Sorularda ara... (Örn: dom eleman) • Ctrl+K"
           class="flex-1 bg-transparent text-theme text-lg outline-none py-2"
         />
-        <button id="closeSearch" class="p-2 text-muted-theme hover:text-theme">
+        <button id="closeSearch" class="size-11 grid place-items-center text-muted-theme hover:text-theme" aria-label="Aramayı kapat">
           <svg
             class="w-6 h-6"
             fill="none"

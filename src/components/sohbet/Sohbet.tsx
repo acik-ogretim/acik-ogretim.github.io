@@ -497,7 +497,7 @@ function Composer({
     setText("");
   };
   return (
-    <div className="shrink-0 px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-2">
+    <div className="sohbet-yazi-alani shrink-0 px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-2">
       <form
         className="mx-auto w-full max-w-2xl rounded-2xl border shadow-sm"
         style={{ borderColor: "var(--border-color)", background: "var(--card-bg)" }}
@@ -680,7 +680,7 @@ function HistoryDialog({
       <Dialog.Portal>
         <Dialog.Backdrop className="fixed inset-0 bg-black/40 z-[200]" />
         <Dialog.Popup
-          className="fixed z-[201] inset-x-0 bottom-0 max-h-[80dvh] flex flex-col rounded-t-2xl p-4 pb-[max(1rem,env(safe-area-inset-bottom))] md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-[28rem] md:rounded-2xl"
+          className="fixed z-[201] inset-x-0 bottom-[var(--klavye,0px)] max-h-[80dvh] flex flex-col rounded-t-2xl p-4 pb-[max(1rem,env(safe-area-inset-bottom))] md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-[28rem] md:rounded-2xl"
           style={{ background: "var(--card-bg)", color: "var(--text-color)" }}
         >
           <div className="flex items-center justify-between mb-2">
@@ -750,7 +750,7 @@ function SettingsDialog({ open, onOpenChange }: { open: boolean; onOpenChange: (
       <Dialog.Portal>
         <Dialog.Backdrop className="fixed inset-0 bg-black/40 z-[200]" />
         <Dialog.Popup
-          className="fixed z-[201] inset-x-0 bottom-0 rounded-t-2xl p-4 pb-[max(1rem,env(safe-area-inset-bottom))] md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-[28rem] md:rounded-2xl"
+          className="fixed z-[201] inset-x-0 bottom-[var(--klavye,0px)] rounded-t-2xl p-4 pb-[max(1rem,env(safe-area-inset-bottom))] md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-[28rem] md:rounded-2xl"
           style={{ background: "var(--card-bg)", color: "var(--text-color)" }}
         >
           <div className="flex items-center justify-between mb-2">

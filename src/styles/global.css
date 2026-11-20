@@ -1102,3 +1102,130 @@ body {
 /* Ses barı görünürken yüzen arama düğmesi bara taşınır */
 body:has(#quiz-player-bar.visible) #toggleSearch { display: none; }
 body:has(#quiz-player-bar.visible) main { padding-bottom: calc(5rem + env(safe-area-inset-bottom)); }
+
+/*
+ * Mobile support: scroll offsets, touch behaviour, keyboard-aware panels and the compact player bar.
+ * --klavye and data-keyboard come from src/lib/viewport.ts.
+ */
+html {
+    -webkit-text-size-adjust: 100%;
+    /* Sticky header (4rem) plus the sticky unit strip sit above the content on phones */
+    scroll-padding-top: 8rem;
+    scroll-padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+}
+
+@media (min-width: 768px) {
+    html {
+        scroll-padding-top: 5.5rem;
+    }
+}
+
+[data-theme='dark'] {
+    color-scheme: dark;
+}
+
+[data-theme='light'],
+[data-theme='sepia'] {
+    color-scheme: light;
+}
+
+a,
+button,
+[role='button'],
+select,
+summary,
+label {
+    touch-action: manipulation;
+}
+
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+#searchResults,
+#tartisma-alan {
+    overscroll-behavior: contain;
+}
+
+/* iOS zooms into fields below 16px */
+@media (pointer: coarse) {
+
+    input:not([type='checkbox'], [type='radio'], [type='range']),
+    textarea,
+    select {
+        font-size: max(16px, 1rem);
+    }
+}
+
+/* Search panel rides on top of the keyboard (or the player bar) */
+#searchPanel {
+    bottom: var(--klavye, 0px);
+    padding-bottom: calc(6rem + env(safe-area-inset-bottom));
+}
+
+html[data-keyboard] #searchPanel {
+    padding-bottom: 0.75rem;
+}
+
+html[data-keyboard] .player-bar {
+    transform: translateY(100%) !important;
+}
+
+html[data-keyboard] #toggleSearch,
+html[data-keyboard] .mobil-ustcubuk {
+    display: none;
+}
+
+html[data-keyboard] .sohbet-yazi-alani {
+    padding-bottom: 0.75rem;
+}
+
+@media (max-width: 767px) {
+    html[data-keyboard] .tartisma-sayfa {
+        padding-bottom: 1rem !important;
+        max-height: calc(var(--app-height, 100dvh) - 0.75rem);
+    }
+
+    .sohbet-popup {
+        height: calc(var(--app-height, 100dvh) * 0.92);
+    }
+
+    html[data-keyboard] .sohbet-popup {
+        height: var(--app-height, 100dvh);
+    }
+
+    /* Course page: the thin bar replaces the sticky site header; the unit strip follows it */
+    body:has(.mobil-ustcubuk) .layout-header {
+        position: static;
+    }
+
+    body:has(.mobil-ustcubuk) nav[aria-label='Ünite Navigasyonu'] {
+        top: 0;
+        transition: top 0.2s ease-out;
+    }
+
+    html[data-ustcubuk] body:has(.mobil-ustcubuk) nav[aria-label='Ünite Navigasyonu'] {
+        top: calc(3rem + env(safe-area-inset-top));
+    }
+
+    /* Player bar: progress, play, back, forward and menu stay; the rest lives in the menu drawer */
+    .player-bar .player-ikincil {
+        display: none !important;
+    }
+
+    .player-bar #stats-container > :nth-child(2) {
+        display: none;
+    }
+
+    .player-bar #stats-container {
+        margin-right: 0.25rem;
+        padding-right: 0.25rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body:has(.mobil-ustcubuk) nav[aria-label='Ünite Navigasyonu'] {
+        transition: none;
+    }
+}

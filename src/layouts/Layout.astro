@@ -19,11 +19,18 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
       // Theme Initialization
       const savedTheme = localStorage.getItem("theme") || "dark";
       document.documentElement.setAttribute("data-theme", savedTheme);
+      const themeColors = { light: "#f8fafc", dark: "#1e1e1e", sepia: "#fbf0e4" };
+      const paintThemeColor = (t) => {
+        document.querySelectorAll('meta[name="theme-color"]').forEach((m) => m.setAttribute("content", themeColors[t] || themeColors.dark));
+      };
+      paintThemeColor(savedTheme);
+      document.addEventListener("DOMContentLoaded", () => paintThemeColor(document.documentElement.getAttribute("data-theme")));
 
       // Global UI Functions
       window.setTheme = function (theme) {
         document.documentElement.setAttribute("data-theme", theme);
         localStorage.setItem("theme", theme);
+        paintThemeColor(theme);
       };
 
       window.openQuizSettings = function () {
@@ -52,13 +59,20 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
       };
     </script>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#0f172a" />
+    <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1e1e1e" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Açık Öğretim" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
     <meta name="generator" content={Astro.generator} />
     <title>{title} | Açık Öğretim Portal</title>
 
@@ -104,6 +118,8 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
     ></script>
 
     <script>
+      import { startViewport } from "../lib/viewport";
+      startViewport();
       // Google Drive sync of the learner's records runs in the background once they signed in on /yedek
       if (localStorage.getItem("google-esitleme-acik")) {
         import("../lib/google-esitle").then((m) => m.otomatikEsitlemeKur());
@@ -131,7 +147,7 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
     </script>
   </head>
   <body
-    class="min-h-screen font-sans antialiased flex flex-col overflow-x-hidden"
+    class="min-h-screen font-sans antialiased flex flex-col overflow-x-clip"
   >
     <!-- Disclaimer Banner -->
     <div class="disclaimer-banner no-print">
