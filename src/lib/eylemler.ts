@@ -20,6 +20,7 @@ import {
   Square,
   SunMoon,
   Route,
+  ListTree,
   Volume2,
   type IconNode,
 } from "lucide";
@@ -88,6 +89,7 @@ export const EYLEMLER: Eylem[] = [
   { id: "sona-git", etiket: "Sona git", simge: ArrowDown, kisayol: "End", tus: "End", calistir: sonaGit },
   { id: "unite", etiket: "Üniteye git", simge: List, altGorunum: "unite", calistir: () => menuAc("unite") },
   { id: "soru", etiket: "Soruya git", simge: Hash, altGorunum: "soru", calistir: () => menuAc("soru") },
+  { id: "icindekiler", etiket: "İçindekiler", simge: ListTree, kisayol: "I", tus: "i", calistir: () => window.dispatchEvent(new CustomEvent("icindekiler:ac")) },
   { id: "sohbet", etiket: "Sohbet asistanı", simge: MessageCircle, calistir: () => tikla("#sohbet-ac") },
   { id: "yedek", etiket: "Kayıtlarını taşı", simge: RefreshCw, calistir: () => location.assign("/yedek") },
   { id: "hata", etiket: "Hata bildir", simge: Flag, calistir: () => tikla("[data-tartisma]") },

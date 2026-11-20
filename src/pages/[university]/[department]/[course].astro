@@ -15,6 +15,7 @@ const checkSvg = '<svg aria-hidden="true"><use href="#i-check"/></svg>';
 const xSvg = '<svg aria-hidden="true"><use href="#i-x"/></svg>';
 import SohbetCekmece from "../../../components/sohbet/SohbetCekmece.tsx";
 import MobilMenu from "../../../components/MobilMenu.tsx";
+import Icindekiler, { type IcKonu, type IcUnite } from "../../../components/Icindekiler.tsx";
 import { getCourses, getDersIcerik, getKitapKonulari, getQuestions, getUniversities, type KitapKonu } from "../../../lib/api";
 import { uniteBasligi } from "../../../lib/unite-basligi";
 import { soruSirala } from "../../../lib/soru-sirasi";
@@ -86,6 +87,22 @@ const mobilUniteler = units.map((no) => ({
   baslik: uniteAdi.get(no)?.baslik,
   soru: questions.filter((q) => q.unitNumber === no).length,
 }));
+// Table of contents: a topic jumps to the first question tied to it (or any of its sub topics), else to the unit
+const kitapUnite = new Map(kitap.map((u) => [u.unite, u]));
+const icindekiler: IcUnite[] = units.map((no) => {
+  const sirali = soruSirala(questions.filter((q) => q.unitNumber === no));
+  const hedefBul = (kno: string) => {
+    const i = sirali.findIndex((q) => q.section === kno || q.section?.startsWith(`${kno}.`));
+    return i >= 0 ? `question-${no}-${i}` : `unite-${no}`;
+  };
+  const donustur = (k: KitapKonu): IcKonu => ({ no: k.no, baslik: k.baslik, hedef: hedefBul(k.no), alt: k.alt.map(donustur) });
+  return {
+    no,
+    ad: no === 0 ? null : (uniteAdi.get(no)?.baslik ?? null),
+    soru: sirali.length,
+    konular: (kitapUnite.get(no)?.konular ?? []).map(donustur),
+  };
+});
 const EXAM_LABEL: Record<string, string> = { vize: "Vize", final: "Final", butunleme: "Bütünleme", "tek-ders": "Tek Ders", "yaz-okulu": "Yaz Okulu", "uc-ders": "Üç Ders", mezuniyet: "Mezuniyet", genel: "" };
 const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { year: string; examType: string }[] }) =>
   (q.sinavlar?.length ? q.sinavlar : [{ year: String(q.year ?? ""), examType: q.examType ?? "genel" }])
@@ -162,6 +179,15 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { y
         </p>
 
         <div class="flex flex-wrap gap-2">
+        <button
+          type="button"
+          onclick="window.dispatchEvent(new CustomEvent('icindekiler:ac'))"
+          class="btn-primary bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 border-none shadow-none"
+          data-testid="icindekiler-ac"
+        >
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"></path></svg>
+          İçindekiler
+        </button>
         <a
           href={`/${university.id}/${department.id}/${course.id}/materyaller`}
           class="btn-primary"
@@ -429,6 +455,7 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { y
   </div>
 
   <QuizPlayer />
+  <Icindekiler client:idle uniteler={icindekiler} />
   <MobilMenu client:idle dersAdi={course.name} uniteler={mobilUniteler} />
   <Tartisma />
   <AISettings />
