@@ -2,6 +2,7 @@
 import Simge from "../../components/Simge.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getUniversities, getDepartments, getCourses } from "../../lib/api";
+import { dersSimgesi, KATEGORI_ADI } from "../../lib/ders-simge";
 
 export async function getStaticPaths() {
   const universities = await getUniversities();
@@ -24,12 +25,24 @@ const allCourses = await getCourses(university.id, department.id);
 
 // Group by semester and sort each group alphabetically
 const semesters = Array.from({ length: department.duration }, (_, i) => i + 1);
-const groupedCourses = semesters.map((sem) => ({
-  number: sem,
-  courses: allCourses
+// Elective pools (alan içi / alan dışı seçmeli) are listed under their semester in a collapsed block
+// Foreign language options (İngilizce, Almanca, Fransızca ...) form a pool when a semester offers more than one
+const groupedCourses = semesters.map((sem) => {
+  const inSem = allCourses
     .filter((c) => c.semester === sem)
-    .sort((a, b) => a.name.localeCompare(b.name, "tr")),
-}));
+    .sort((a, b) => a.name.localeCompare(b.name, "tr"));
+  const dilSayisi = inSem.filter((c) => c.kategori === "yabanci-dil").length;
+  const EK_KATEGORI = dilSayisi > 1 ? ["yabanci-dil", "secmeli", "alan-disi-secmeli"] : ["secmeli", "alan-disi-secmeli"];
+  return {
+    number: sem,
+    courses: inSem.filter((c) => !EK_KATEGORI.includes(c.kategori ?? "")),
+    pools: EK_KATEGORI.map((k) => ({
+      kategori: k,
+      ad: KATEGORI_ADI[k],
+      courses: inSem.filter((c) => c.kategori === k),
+    })).filter((g) => g.courses.length > 0),
+  };
+});
 ---
 
 <Layout title={`${department.name} - ${university.shortName}`}>
@@ -60,6 +73,20 @@ const groupedCourses = semesters.map((sem) => ({
           <p class="text-xl text-muted-theme">
             Dönemlere göre ayrılmış ders listesi.
           </p>
+          {(department.sourceUrl || department.curriculumUrl) && (
+            <div class="mt-3 flex flex-wrap gap-2 text-sm">
+              {department.sourceUrl && (
+                <a href={department.sourceUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-theme text-muted-theme hover:text-primary-theme hover:border-primary-theme/50">
+                  <Simge ad="ExternalLink" size={14} /> Resmî program sayfası
+                </a>
+              )}
+              {department.curriculumUrl && (
+                <a href={department.curriculumUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-theme text-muted-theme hover:text-primary-theme hover:border-primary-theme/50">
+                  <Simge ad="ListChecks" size={14} /> Resmî müfredat
+                </a>
+              )}
+            </div>
+          )}
         </div>
 
         <div class="relative w-full md:w-80">
@@ -115,7 +142,7 @@ const groupedCourses = semesters.map((sem) => ({
         {
           groupedCourses.map(
             (group) =>
-              group.courses.length > 0 && (
+              (group.courses.length > 0 || group.pools.length > 0) && (
                 <section class="semester-section" data-semester={group.number}>
                   <div class="flex items-center gap-4 mb-8">
                     <h2 class="text-2xl font-bold text-theme">
@@ -151,7 +178,7 @@ const groupedCourses = semesters.map((sem) => ({
                             class="flex items-center gap-3 h-full"
                           >
                             <div class="w-10 h-10 rounded-lg bg-primary-theme/10 flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-primary-theme/20">
-                              <Simge ad="Library" />
+                              <Simge ad={dersSimgesi(course.name)} />
                             </div>
                             <div class="flex-1 min-w-0">
                               <div
@@ -172,6 +199,62 @@ const groupedCourses = semesters.map((sem) => ({
                       </div>
                     ))}
                   </div>
+                  {group.pools.map((pool) => (
+                    <details class="mt-6 group/pool" data-kategori={pool.kategori}>
+                      <summary class="cursor-pointer select-none flex items-center gap-3 text-sm font-semibold text-muted-theme hover:text-primary-theme">
+                        <Simge ad="ChevronRight" size={16} class="transition-transform group-open/pool:rotate-90" />
+                        {pool.ad}
+                        <span class="text-xs font-normal">({pool.courses.length})</span>
+                      </summary>
+                      <div class="mt-4">
+                  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 course-grid">
+                          {pool.courses.map((course) => (
+                            <div
+                              class="course-card-wrapper dept-card group"
+                              data-course-id={course.id}
+                              data-course-name={course.name}
+                              data-course-code={course.code}
+                              data-university-id={university.id}
+                              data-department-id={department.id}
+                              data-testid={`course-card-${course.id}`}
+                            >
+                              <div class="relative glass p-4 rounded-xl border border-theme bg-card-theme hover:border-primary-theme/50 transition-all h-full">
+                                <button
+                                  class="favorite-btn absolute top-2 right-2 w-6 h-6 rounded-full hover:bg-yellow-500/20 flex items-center justify-center z-10"
+                                  title="Favorilere ekle"
+                                >
+                                  <Simge ad="Star" size={12} class="fav-icon" />
+                                </button>
+
+                                <a
+                                  href={`/${university.id}/${department.id}/${course.id}`}
+                                  class="flex items-center gap-3 h-full"
+                                >
+                                  <div class="w-10 h-10 rounded-lg bg-primary-theme/10 flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-primary-theme/20">
+                                    <Simge ad={dersSimgesi(course.name)} />
+                                  </div>
+                                  <div class="flex-1 min-w-0">
+                                    <div
+                                      class="text-[10px] font-mono text-primary-theme opacity-70 mb-0.5 truncate"
+                                      data-code={course.code?.toLowerCase() || ""}
+                                    >
+                                      {course.code}
+                                    </div>
+                                    <h3
+                                      class="text-sm font-medium text-theme group-hover:text-primary-theme line-clamp-2 leading-snug"
+                                      data-name={course.name.toLowerCase()}
+                                    >
+                                      {course.name}
+                                    </h3>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </details>
+                  ))}
                 </section>
               ),
           )

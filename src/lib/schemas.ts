@@ -52,6 +52,8 @@ export const departmentSchema = z.object({
     active: z.boolean().default(true),
     order: z.number().default(0),
     icon: z.string().default(''),
+    sourceUrl: z.string().optional(),
+    curriculumUrl: z.string().optional(),
 });
 
 /**
@@ -83,6 +85,7 @@ export const courseSchema = z.object({
     unitCount: z.number().default(14),
     questionCount: z.number().default(0),
     automationId: z.string().default(''),
+    kategori: z.enum(['zorunlu', 'secmeli', 'alan-disi-secmeli', 'yabanci-dil']).optional(),
     lastUpdated: z.string().optional().default(() => new Date().toISOString()),
 });
 
