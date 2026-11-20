@@ -40,13 +40,9 @@
     "correctAnswer": "D",
     "explanation": "PL/SQL’de işlem önceliğine göre üs alma (<strong>) çarpma ve toplamadan öncedir. 2</strong>3 = 8. Unary eksi operatörü üs almadan sonra gelir: -8. Ardından çarpma işlemi yapılır: -8 * -2 = 16. Son olarak toplama: 16 3 = 19.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -67,13 +63,9 @@
     "correctAnswer": "A",
     "explanation": "n1 ondalıklı kısmı atar ve 123 olur. n2 bir basamak ondalık alır ve yuvarlar, 123.5 olur. n3 iki basamak alır, 123.45 olur. Sıralama: 123.5 (n2) > 123.45 (n3) > 123 (n1) şeklindedir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -94,13 +86,9 @@
     "correctAnswer": "C",
     "explanation": "PL/SQL’de NOT TRUE, FALSE sonucunu verir. FALSE OR NULL ise NULL sonucunu verir. DBMS_OUTPUT.PUT_LINE fonksiyonu bir NULL değeri karakter dizisiyle birleştirdiğinde NULL değeri boşluk (empty string) olarak işlenir, bu yüzden çıktı ## olur.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -120,19 +108,7 @@
     },
     "correctAnswer": "B",
     "explanation": "BETWEEN operatörü belirtilen aralığa dahil olan değerler için TRUE döndürür. Aralığımız -10.5 ile -5 arasıdır. 10.5 bu aralığın tamamen dışındadır, bu nedenle status FALSE olur.",
-    "source": "cikmis-soru",
-    "year": "2025-2026",
-    "examType": "vize",
-    "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
-      {
-        "year": "2024-2025",
-        "examType": "vize"
-      }
-    ]
+    "source": "soru-bankasi"
   },
   {
     "id": "s-f125f2bbcede",
@@ -472,13 +448,9 @@
     "correctAnswer": "B",
     "explanation": "Döngü -3, -2 ve -1 değerleri için döner. i=-3 iken IF bloğu çalışır ve NULL; ile bir şey yazılmaz. i=-2 iken ELSE bloğu çalışır, önce -1 sonra i yani -2 yazılır. i=-1 iken ELSE bloğu çalışır, önce -1 sonra i yani -1 yazılır. Ancak şıklar üzerinden gidildiğinde mantıksal bir çıktı dizisi aranmaktadır.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -640,15 +612,7 @@
     },
     "correctAnswer": "C",
     "explanation": "",
-    "source": "cikmis-soru",
-    "year": "2024-2025",
-    "examType": "final",
-    "sinavlar": [
-      {
-        "year": "2024-2025",
-        "examType": "final"
-      }
-    ]
+    "source": "soru-bankasi"
   },
   {
     "id": "s-b272f76445b1",
@@ -663,15 +627,7 @@
     },
     "correctAnswer": "A",
     "explanation": "",
-    "source": "cikmis-soru",
-    "year": "2024-2025",
-    "examType": "final",
-    "sinavlar": [
-      {
-        "year": "2024-2025",
-        "examType": "final"
-      }
-    ]
+    "source": "soru-bankasi"
   },
   {
     "id": "s-7c462cc3d4de",

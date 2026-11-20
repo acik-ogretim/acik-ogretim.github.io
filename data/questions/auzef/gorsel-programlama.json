@@ -14,12 +14,8 @@
     "explanation": "`Layout` olayı, formun içindeki hiyerarşik yapı değiştiğinde tetiklenir. Örneğin forma çalışma anında yeni bir buton eklendiğinde veya bir kontrolün boyutu formun düzenini (yerleşimini) etkileyecek şekilde değiştiğinde bu olay devreye girer. `Resize` sadece formun dış çerçeve boyutları değiştiğinde çalışır.",
     "source": "cikmis-soru",
     "year": "2025-2026",
-    "examType": "vize",
+    "examType": "final",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2025-2026",
         "examType": "final"
@@ -49,12 +45,8 @@
     "explanation": "TableLayoutPanel, form üzerindeki yerleşimi satır ve sütunlardan oluşan bir ızgara yapısına böler. Bu kontrolün en karakteristik özelliği, her hücrenin sadece tek bir çocuk nesne (kontrol) barındırabilmesidir. Eğer bir hücreye birden fazla öğe eklemek isterseniz, önce o hücreye bir “Panel” yerleştirip diğer öğeleri o panelin içine koymanız gerekir. Bu yapı, formun boyutu değiştiğinde içerideki öğelerin orantılı bir şekilde genişleyip daralmasını sağlar.",
     "source": "cikmis-soru",
     "year": "2025-2026",
-    "examType": "vize",
+    "examType": "final",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2025-2026",
         "examType": "final"
@@ -83,13 +75,9 @@
     "correctAnswer": "D",
     "explanation": "Windows uygulamalarında klavye etkileşimi üç adımlı bir döngüden oluşur. Tuşa basıldığı ilk an `KeyDown` olayı tetiklenir. Tuş basılı kalmaya devam edip bir karakter ürettiğinde (harf veya rakam gibi) `KeyPress` olayı devreye girer. Kullanıcı parmağını tuştan çektiği anda ise son olarak `KeyUp` olayı gerçekleşir. Kontrol mantığı genellikle bu hiyerarşi üzerinden kurulur.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -114,13 +102,9 @@
     "correctAnswer": "B",
     "explanation": "StartPosition özelliği, formun çalışma anında ekranın neresinde belireceğini belirler. `CenterScreen` ekran ortasını, `Manual` tasarım anındaki koordinatları kullanır. `WindowsDefaultLocation` seçeneği ise formun nerede açılacağı kararını tamamen Windows işletim sistemine bırakır; sistem, o anki ekran durumuna göre formu uygun bir konuma yerleştirir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -145,13 +129,9 @@
     "correctAnswer": "B",
     "explanation": "Bu kod satırı üç aşamada sonuç üretir: İlk olarak `comboBox1.SelectedIndex` ile kullanıcının seçtiği elemanın listedeki sıra numarası bulunur. Daha sonra bu numara `Items[]` dizisine gönderilerek o sıradaki nesneye ulaşılır. Son olarak `.ToString()` metodu ile bu nesnenin taşıdığı metin verisi (değer) alınarak “x” değişkenine aktarılır. Yani sonuç olarak kullanıcının listeden seçtiği metin elde edilir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -173,12 +153,8 @@
     "explanation": "ToolStripContainer, formun dört kenarında (üst, alt, sağ, sol) özel yerleşim alanları oluşturan gelişmiş bir kapsayıcıdır. Özellikle kullanıcıya menüleri veya araç çubuklarını sürükleyip istediği kenara yerleştirme imkanı veren uygulamalarda temel iskeleti oluşturur. İçindeki “ContentPanel” ise formun asıl içeriğinin bulunduğu alanı temsil eder.",
     "source": "cikmis-soru",
     "year": "2025-2026",
-    "examType": "vize",
+    "examType": "final",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2025-2026",
         "examType": "final"
@@ -207,13 +183,9 @@
     "correctAnswer": "C",
     "explanation": "StatusStrip, formun en altında yer alan ve kullanıcıya bilgi mesajları veya işlem ilerlemesi gösteren bir “durum çubuğu”dur. Bu çubuğun içine metin (Label), ilerleme çubuğu (ProgressBar) veya küçük butonlar eklenebilir. Ancak doğrudan kullanıcıdan veri girişi almak için tasarlanmış olan TextBox, durum çubuğunun standart bileşenleri arasında yer almaz.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -238,13 +210,9 @@
     "correctAnswer": "A",
     "explanation": "Dosya açma, kaydetme veya renk seçme gibi standart “İletişim Kutuları”nı (Dialog Box) ekrana getirmek için `ShowDialog()` metodu çağrılır. Bu metodun en önemli özelliği, açılan pencere kapatılana kadar ana formun kod akışını bekletmesidir (modal yapı). Bu sayede kullanıcının seçim yapması zorunlu kılınır.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -269,13 +237,9 @@
     "correctAnswer": "A",
     "explanation": "ComboBox, kullanıcıya bir liste sunar ve bu listeden yalnızca tek bir öğenin seçilmesine izin verir. Kapalıyken tek satır yer kaplar, tıklandığında liste aşağı doğru açılır. `ListBox` da tek seçim yaptırabilir ancak liste hep açıktır. `CheckedListBox` ve `CheckBox` birden fazla seçime imkan tanırken, `RadioButton` grup içinde tek seçime zorlar ama liste formatında değildir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -300,13 +264,9 @@
     "correctAnswer": "B",
     "explanation": "Konsol arayüzleri (CLI) tamamen metin tabanlıdır. Burada buton, sürükle-bırak veya gelişmiş fare tıklaması gibi görsel öğeler bulunmaz; etkileşim klavyeden yazılan komutlarla sınırlıdır. Görsel form elemanları ve zengin etkileşim türleri Grafiksel Kullanıcı Arayüzü’nün (GUI) sunduğu temel avantajlardır.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -331,13 +291,9 @@
     "correctAnswer": "D",
     "explanation": "C# ve .NET dünyasında bellek yönetimi (Garbage Collection) olsa da, form gibi ağır nesnelerin kullandığı sistem kaynaklarını (grafik motorları, dosya tutamaçları vb.) derhal sisteme iade etmek için `Dispose()` metodu kullanılır. `Close()` sadece formu kapatırken, `Dispose()` nesneyi tamamen yok ederek kaynak sızıntısını önler.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -362,13 +318,9 @@
     "correctAnswer": "B",
     "explanation": "Görsel programlama yaparken forma eklenecek olan tüm bileşenler (Buton, Yazı Kutusu, Liste vb.) “Araç Kutusu” (Toolbox) panelinde gruplandırılmış şekilde listelenir. Geliştirici bu panelden istediği kontrolü seçerek Tasarımcı Ekranına sürükler. Özellikler penceresi ise seçili olan kontrolün ayarlarını (renk, yazı tipi vb.) yapmak için kullanılır.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -393,13 +345,9 @@
     "correctAnswer": "A",
     "explanation": "Formun `AcceptButton` özelliğine bir buton (örneğin Kaydet butonu) atandığında, kullanıcı klavyeden Enter tuşuna bastığı anda sistem o butona tıklanmış gibi davranır. Bu, özellikle veri giriş formlarında hızı artırmak için kullanılan bir kullanıcı deneyimi (UX) standardıdır. Benzer şekilde ESC tuşu için de `CancelButton` özelliği kullanılır.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -424,13 +372,9 @@
     "correctAnswer": "C",
     "explanation": ".NET WinForms içerisinde yazdırma işleminin kalbi “PrintDocument” bileşenidir. Diğer diyalog pencereleri (yazıcı seçimi, sayfa ayarı veya önizleme) sadece kullanıcıyla etkileşime girmek için kullanılırken, verinin yazıcıya nasıl aktarılacağını, hangi sayfada neyin görüneceğini (PrintPage olayı üzerinden) belirleyen ve yazdırma komutunu asıl yürüten yapı PrintDocument’tir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -456,12 +400,8 @@
     "explanation": "ListBox üzerindeki elemanları yönetmek için `Items` koleksiyonu kullanılır. `Remove()` metodu silinecek elemanın metnini veya nesnesini isterken, `RemoveAt()` metodu doğrudan silinmek istenen elemanın listedeki numarasını (indisini) ister. Verimli ve kesin silme işlemleri için indis tabanlı `RemoveAt()` metodu tercih edilir.",
     "source": "cikmis-soru",
     "year": "2025-2026",
-    "examType": "vize",
+    "examType": "final",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2025-2026",
         "examType": "final"
@@ -490,13 +430,9 @@
     "correctAnswer": "A",
     "explanation": "`ResetText()` metodu, ilgili görsel kontrolün `Text` özelliğini (içeriğini) tasarım anında belirlenmiş olan ilk değerine geri döndürür. `Clear()` metodu metni tamamen silip boş bırakırken, `ResetText()` varsa varsayılan metni geri getirir. `DeselectAll()` ise seçili olan (mavi vurgulu) metin bloğunu serbest bırakır.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -521,13 +457,9 @@
     "correctAnswer": "E",
     "explanation": "WinForms projelerinde tasarım ekranında yapılan tüm işlemler (buton yerleştirme, renk değiştirme vb.) arka planda C# kodlarına dönüştürülür. Bu otomatik üretilen kodların saklandığı özel dosyaya `Designer.cs` denir. Geliştirici ise sadece `Form1.cs` dosyasındaki olay (event) kodlarıyla uğraşır. `.sln` ve `.csproj` dosyaları proje ve çözüm yapılandırma dosyalarıdır.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -552,13 +484,9 @@
     "correctAnswer": "C",
     "explanation": "Windows Forms (WinForms), .NET ekosisteminde masaüstü uygulamaları geliştirmek için kullanılan en köklü teknolojilerden biridir. Visual Studio IDE’si ile tam entegre çalışan WinForms, “WYSIWYG” (Ne görüyorsan onu alırsın) mantığına dayanır. Geliştiriciler, Toolbox (Araç Kutusu) içindeki buton, metin kutusu ve liste gibi görsel öğeleri fare ile sürükleyip form üzerine bırakarak arayüzü saniyeler içinde tasarlayabilirler. Bu durum, kod yazma yükünü azaltarak hızlı prototipleme imkanı sunar.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -583,13 +511,9 @@
     "correctAnswer": "C",
     "explanation": "`partial` anahtar kelimesi C# dilinde bir sınıfın tanımının fiziksel olarak farklı dosyalara bölünmesine izin verir. Görsel programlamada bu çok önemlidir; çünkü Visual Studio tasarımcısının otomatik oluşturduğu kodlar (Form1.Designer.cs) ile yazılımcının yazdığı kodlar (Form1.cs) bu sayede birbirinden ayrılır ama derleme aşamasında tek bir bütün olarak birleşir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2025-2026",
-        "examType": "vize"
-      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -1010,13 +934,9 @@
     "correctAnswer": "D",
     "explanation": "",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2023-2024",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2024-2025",
-        "examType": "vize"
-      },
       {
         "year": "2023-2024",
         "examType": "vize"

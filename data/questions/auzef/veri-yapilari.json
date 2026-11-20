@@ -94,13 +94,9 @@
     "correctAnswer": "A",
     "explanation": "Baştan eleman silerken (delete from head), direkt olarak ‘head = head->next’ yaparsak, ilk (eski head) düğümün bellek adresi havada kaybolur ve onu bellekten silemeyiz (memory leak oluşur). Bu nedenle güvenli silme işleminin ilk ve en önemli adımı: Silinecek olan baş düğümü, onu belleğe iade edebilmek (delete) için ‘geçici bir işaretçiye (temp pointer)’ kaydetmektir. (Örn: Node* temp = head;)",
     "source": "cikmis-soru",
-    "year": "2026-2027",
+    "year": "2025-2026",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2026-2027",
-        "examType": "vize"
-      },
       {
         "year": "2025-2026",
         "examType": "vize"
@@ -1359,10 +1355,6 @@
         "examType": "vize"
       },
       {
-        "year": "2023-2024",
-        "examType": "vize"
-      },
-      {
         "year": "2022-2023",
         "examType": "vize"
       }
@@ -1457,10 +1449,6 @@
       {
         "year": "2024-2025",
         "examType": "final"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "final"
       }
     ]
   },
@@ -1483,10 +1471,6 @@
     "sinavlar": [
       {
         "year": "2024-2025",
-        "examType": "final"
-      },
-      {
-        "year": "2023-2024",
         "examType": "final"
       }
     ]
@@ -1511,10 +1495,6 @@
       {
         "year": "2024-2025",
         "examType": "final"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "final"
       }
     ]
   },
@@ -1537,10 +1517,6 @@
     "sinavlar": [
       {
         "year": "2024-2025",
-        "examType": "final"
-      },
-      {
-        "year": "2023-2024",
         "examType": "final"
       }
     ]
@@ -1565,10 +1541,6 @@
       {
         "year": "2024-2025",
         "examType": "final"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "final"
       }
     ]
   },
@@ -1591,10 +1563,6 @@
     "sinavlar": [
       {
         "year": "2024-2025",
-        "examType": "final"
-      },
-      {
-        "year": "2023-2024",
         "examType": "final"
       }
     ]
@@ -1619,10 +1587,6 @@
       {
         "year": "2024-2025",
         "examType": "final"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "final"
       }
     ]
   },
@@ -1639,15 +1603,7 @@
     },
     "correctAnswer": "E",
     "explanation": "Özyinelemeli (recursive) fonksiyonlarda iki durum vardır: 1) Temel Durum (Base Case): Fonksiyonun durma koşuludur (Satır 3-4). 2) Genel Durum (Recursive Case): Fonksiyonun kendini tekrar çağırdığı yerdir. Bu kodda genel durum else bloğundaki **return n*faktoriyel(n-1);** satırıdır (6. satır).",
-    "source": "cikmis-soru",
-    "year": "2023-2024",
-    "examType": "final",
-    "sinavlar": [
-      {
-        "year": "2023-2024",
-        "examType": "final"
-      }
-    ]
+    "source": "soru-bankasi"
   },
   {
     "id": "s-8027e291d9ae",
@@ -1668,10 +1624,6 @@
     "sinavlar": [
       {
         "year": "2024-2025",
-        "examType": "final"
-      },
-      {
-        "year": "2023-2024",
         "examType": "final"
       }
     ]
@@ -1696,10 +1648,6 @@
       {
         "year": "2024-2025",
         "examType": "final"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "final"
       }
     ]
   },
@@ -1722,10 +1670,6 @@
     "sinavlar": [
       {
         "year": "2024-2025",
-        "examType": "final"
-      },
-      {
-        "year": "2023-2024",
         "examType": "final"
       }
     ]
@@ -1750,10 +1694,6 @@
       {
         "year": "2024-2025",
         "examType": "final"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "final"
       }
     ]
   },
@@ -1776,10 +1716,6 @@
     "sinavlar": [
       {
         "year": "2024-2025",
-        "examType": "final"
-      },
-      {
-        "year": "2023-2024",
         "examType": "final"
       }
     ]
@@ -1804,10 +1740,6 @@
       {
         "year": "2024-2025",
         "examType": "final"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "final"
       }
     ]
   },
@@ -1830,10 +1762,6 @@
     "sinavlar": [
       {
         "year": "2024-2025",
-        "examType": "final"
-      },
-      {
-        "year": "2023-2024",
         "examType": "final"
       }
     ]
@@ -1858,10 +1786,6 @@
       {
         "year": "2024-2025",
         "examType": "final"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "final"
       }
     ]
   },
@@ -1878,19 +1802,7 @@
     },
     "correctAnswer": "C",
     "explanation": "",
-    "source": "cikmis-soru",
-    "year": "2024-2025",
-    "examType": "final",
-    "sinavlar": [
-      {
-        "year": "2024-2025",
-        "examType": "final"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "final"
-      }
-    ]
+    "source": "soru-bankasi"
   },
   {
     "id": "s-e051dc12a721",
@@ -1912,10 +1824,6 @@
       {
         "year": "2024-2025",
         "examType": "final"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "final"
       }
     ]
   },
@@ -1932,15 +1840,7 @@
     },
     "correctAnswer": "A",
     "explanation": "Birleştirmeli Sıralama (Merge Sort) “böl ve yönet” ilkesiyle çalışır. İkinci adımda, tek elemanlı alt diziler ikişerli olarak birleştirilirken aynı zamanda sıralanırlar. {8} ve {9} -> [8, 9] {5} ve {4} -> [4, 5] {0} ve {-1} -> [-1, 0] {10} ve {7} -> [7, 10] Bu sonucu veren şık A seçeneğidir.",
-    "source": "cikmis-soru",
-    "year": "2023-2024",
-    "examType": "final",
-    "sinavlar": [
-      {
-        "year": "2023-2024",
-        "examType": "final"
-      }
-    ]
+    "source": "soru-bankasi"
   },
   {
     "id": "s-c249f23814f5",
@@ -1956,13 +1856,9 @@
     "correctAnswer": "E",
     "explanation": "",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2022-2023",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2023-2024",
-        "examType": "vize"
-      },
       {
         "year": "2022-2023",
         "examType": "vize"
@@ -1983,13 +1879,9 @@
     "correctAnswer": "E",
     "explanation": "",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2022-2023",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2023-2024",
-        "examType": "vize"
-      },
       {
         "year": "2022-2023",
         "examType": "vize"
@@ -2010,13 +1902,9 @@
     "correctAnswer": "C",
     "explanation": "",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2022-2023",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2023-2024",
-        "examType": "vize"
-      },
       {
         "year": "2022-2023",
         "examType": "vize"
@@ -2037,13 +1925,9 @@
     "correctAnswer": "B",
     "explanation": "",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2022-2023",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2023-2024",
-        "examType": "vize"
-      },
       {
         "year": "2022-2023",
         "examType": "vize"
@@ -2064,13 +1948,9 @@
     "correctAnswer": "B",
     "explanation": "",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2022-2023",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2023-2024",
-        "examType": "vize"
-      },
       {
         "year": "2022-2023",
         "examType": "vize"
@@ -2091,13 +1971,9 @@
     "correctAnswer": "D",
     "explanation": "",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2022-2023",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2023-2024",
-        "examType": "vize"
-      },
       {
         "year": "2022-2023",
         "examType": "vize"
@@ -2118,13 +1994,9 @@
     "correctAnswer": "A",
     "explanation": "",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2022-2023",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2023-2024",
-        "examType": "vize"
-      },
       {
         "year": "2022-2023",
         "examType": "vize"
@@ -2145,13 +2017,9 @@
     "correctAnswer": "E",
     "explanation": "",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2022-2023",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2023-2024",
-        "examType": "vize"
-      },
       {
         "year": "2022-2023",
         "examType": "vize"
@@ -2172,13 +2040,9 @@
     "correctAnswer": "D",
     "explanation": "",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2022-2023",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2023-2024",
-        "examType": "vize"
-      },
       {
         "year": "2022-2023",
         "examType": "vize"
@@ -2199,13 +2063,9 @@
     "correctAnswer": "C",
     "explanation": "",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2022-2023",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2023-2024",
-        "examType": "vize"
-      },
       {
         "year": "2022-2023",
         "examType": "vize"
@@ -2226,13 +2086,9 @@
     "correctAnswer": "D",
     "explanation": "",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2022-2023",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2023-2024",
-        "examType": "vize"
-      },
       {
         "year": "2022-2023",
         "examType": "vize"
@@ -2253,13 +2109,9 @@
     "correctAnswer": "C",
     "explanation": "",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2022-2023",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2023-2024",
-        "examType": "vize"
-      },
       {
         "year": "2022-2023",
         "examType": "vize"
@@ -2280,13 +2132,9 @@
     "correctAnswer": "C",
     "explanation": "",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2022-2023",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2023-2024",
-        "examType": "vize"
-      },
       {
         "year": "2022-2023",
         "examType": "vize"
@@ -2307,13 +2155,9 @@
     "correctAnswer": "A",
     "explanation": "",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2022-2023",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2023-2024",
-        "examType": "vize"
-      },
       {
         "year": "2022-2023",
         "examType": "vize"
@@ -2334,13 +2178,9 @@
     "correctAnswer": "B",
     "explanation": "",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2022-2023",
     "examType": "vize",
     "sinavlar": [
-      {
-        "year": "2023-2024",
-        "examType": "vize"
-      },
       {
         "year": "2022-2023",
         "examType": "vize"
@@ -2527,10 +2367,6 @@
     "sinavlar": [
       {
         "year": "2024-2025",
-        "examType": "vize"
-      },
-      {
-        "year": "2022-2023",
         "examType": "vize"
       }
     ]

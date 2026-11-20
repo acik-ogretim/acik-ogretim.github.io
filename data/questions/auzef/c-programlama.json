@@ -19,10 +19,6 @@
       {
         "year": "2024-2025",
         "examType": "vize"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "vize"
       }
     ]
   },
@@ -219,10 +215,6 @@
       {
         "year": "2024-2025",
         "examType": "vize"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "vize"
       }
     ]
   },
@@ -296,10 +288,6 @@
       {
         "year": "2024-2025",
         "examType": "vize"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "vize"
       }
     ]
   },
@@ -322,10 +310,6 @@
     "sinavlar": [
       {
         "year": "2024-2025",
-        "examType": "vize"
-      },
-      {
-        "year": "2023-2024",
         "examType": "vize"
       }
     ]
@@ -377,10 +361,6 @@
       {
         "year": "2024-2025",
         "examType": "vize"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "vize"
       }
     ]
   },
@@ -426,10 +406,6 @@
     "sinavlar": [
       {
         "year": "2024-2025",
-        "examType": "vize"
-      },
-      {
-        "year": "2023-2024",
         "examType": "vize"
       }
     ]
@@ -884,15 +860,7 @@
     },
     "correctAnswer": "C",
     "explanation": "!stat false döndürür, ++x ise x’i 0’a çıkarır (başta -1’di). Ardından koşul (++x == 0) true olacağı için soru işareti (?) sonrası kısım çalışır (x / y). x / y = 0 / 2 tamsayı bölmesi 0’dır, ancak kodda !stat & ++x == 0 ifadesindeki bitwise AND (&) kullanımına dikkat edilmelidir. Sonuçta işlenenler ve öncelik sırası incelendiğinde sonuç 1 olarak elde edilir (burada z + x - y kısmı devreye girebilir). Kod çalıştığında C# operatör önceliği sebebiyle aslında !stat & (++x == 0) ifadesi değerlendirilir, x=0 olur, ancak z + x - y bölümü seçildiğinde 3+0-2=1 döndürür. Böylece ekrana 1 yazdırılır.",
-    "source": "cikmis-soru",
-    "year": "2024-2025",
-    "examType": "vize",
-    "sinavlar": [
-      {
-        "year": "2024-2025",
-        "examType": "vize"
-      }
-    ]
+    "source": "soru-bankasi"
   },
   {
     "id": "s-d02a0b97a223",
@@ -907,15 +875,7 @@
     },
     "correctAnswer": "E",
     "explanation": "Koşulda b <= a true olduğu için c ?? 5 ifadesi çalışır. Burada c null olduğu için ?? operatörü ile 5 seçilir ve ekrana 5 yazılır. C# null coalescing operatörünün (??) örnek kullanımıdır.",
-    "source": "cikmis-soru",
-    "year": "2024-2025",
-    "examType": "vize",
-    "sinavlar": [
-      {
-        "year": "2024-2025",
-        "examType": "vize"
-      }
-    ]
+    "source": "soru-bankasi"
   },
   {
     "id": "s-af9068edbaf0",
@@ -930,19 +890,7 @@
     },
     "correctAnswer": "E",
     "explanation": "Kod adım adım değerlendirildiğinde birinci if koşulu (y+z != x && y>z) yanlıştır. İkinci else-if (y>x || ++y>z) ifadesinde y>x false ama ++y>z = 0>1 = false. Üçüncü koşulda (y == x & x<z) y artık 0 olduğundan y==x (0==0) doğru ve x bu nedenle Console.WriteLine(\"+\"); satırı çalışır ve “+” çıktısı alınır.",
-    "source": "cikmis-soru",
-    "year": "2024-2025",
-    "examType": "vize",
-    "sinavlar": [
-      {
-        "year": "2024-2025",
-        "examType": "vize"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "final"
-      }
-    ]
+    "source": "soru-bankasi"
   },
   {
     "id": "s-c350835c3a99",
@@ -957,15 +905,7 @@
     },
     "correctAnswer": "E",
     "explanation": "Değer atanmamış double pi; değişkeni ilk kullanım esnasında yazdırılmaya çalışıldığından C# derleyicisi “kullanılmadan önce atanmalı” şeklinde hata verir. C#’ta yerel değişkenler varsayılan başlangıç değerine sahip olmadıkları için program derlenmez.",
-    "source": "cikmis-soru",
-    "year": "2024-2025",
-    "examType": "vize",
-    "sinavlar": [
-      {
-        "year": "2024-2025",
-        "examType": "vize"
-      }
-    ]
+    "source": "soru-bankasi"
   },
   {
     "id": "s-929abeef9dd2",
@@ -980,15 +920,7 @@
     },
     "correctAnswer": "C",
     "explanation": "C#’ta false != null ifadesi bool bağlamında true döner. İkinci kısımda (true & false) = false, dolayısıyla false || false = false, !(false) = true, son olarak true ^ false = true (XOR). Dolayısıyla ekrana True : True yazdırır.",
-    "source": "cikmis-soru",
-    "year": "2024-2025",
-    "examType": "vize",
-    "sinavlar": [
-      {
-        "year": "2024-2025",
-        "examType": "vize"
-      }
-    ]
+    "source": "soru-bankasi"
   },
   {
     "id": "s-fa38a21e4205",
@@ -1003,19 +935,7 @@
     },
     "correctAnswer": "A",
     "explanation": "İstenen çıktı 0.1:-1:10 şeklindedir. Dolayısıyla z=0.1, -x=-1, -y=10 sıralaması gerekir. A şıkkındaki yerleşim tam olarak bu formatı verir ve ekranda “0.1:-1:10” görüntülenir.",
-    "source": "cikmis-soru",
-    "year": "2024-2025",
-    "examType": "vize",
-    "sinavlar": [
-      {
-        "year": "2024-2025",
-        "examType": "vize"
-      },
-      {
-        "year": "2023-2024",
-        "examType": "vize"
-      }
-    ]
+    "source": "soru-bankasi"
   },
   {
     "id": "s-f7ddc1edad48",
@@ -1030,15 +950,7 @@
     },
     "correctAnswer": "B",
     "explanation": "Format parametrelerinde {0} = sembol, {1} = bolumKodu, {2} = harf, {3} = yil sırasıyla yerleştirilmiştir. Dolayısıyla çıktı # C 2023 BLGPRG şeklinde oluşur.",
-    "source": "cikmis-soru",
-    "year": "2024-2025",
-    "examType": "vize",
-    "sinavlar": [
-      {
-        "year": "2024-2025",
-        "examType": "vize"
-      }
-    ]
+    "source": "soru-bankasi"
   },
   {
     "id": "s-51508a4d713e",
@@ -1053,15 +965,7 @@
     },
     "correctAnswer": "A",
     "explanation": "++x öncesi x=-1, ++x x’i 0’a çıkarır. (0 >= -1) doğru, bu kısım true & true => true. Ardından y <= + --x + 1 kısmında --x x’i tekrar -1’e indirir. Dolayısıyla + --x + 1 => + -1 + 1 = 0. y <= 0 => 1 <= 0 false. true | false => true. Son durumda x tekrar -1 olmuş ve result true’dur. Ekranda “-1 : True” görülür.",
-    "source": "cikmis-soru",
-    "year": "2024-2025",
-    "examType": "vize",
-    "sinavlar": [
-      {
-        "year": "2024-2025",
-        "examType": "vize"
-      }
-    ]
+    "source": "soru-bankasi"
   },
   {
     "id": "s-646d42f0a405",
@@ -1076,15 +980,7 @@
     },
     "correctAnswer": "C",
     "explanation": "(byte)a ifadesi, -128 değerini byte aralığına göre (0-255) dönüştürmeye çalışır. Bu “wrap around” etkisi yaratır ve sonuç beklenmeyen bir değerdir (örneğin 128 gibi). Daha sonra --b işlemi ile yine belirsiz bir aralıkta değer çıkabilir. Dolayısıyla tutarsız (öngörülmeyen) bir sonuç oluşur.",
-    "source": "cikmis-soru",
-    "year": "2024-2025",
-    "examType": "vize",
-    "sinavlar": [
-      {
-        "year": "2024-2025",
-        "examType": "vize"
-      }
-    ]
+    "source": "soru-bankasi"
   },
   {
     "id": "s-edf889debdb4",
