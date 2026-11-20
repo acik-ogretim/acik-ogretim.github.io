@@ -15,6 +15,7 @@ const checkSvg = '<svg aria-hidden="true"><use href="#i-check"/></svg>';
 const xSvg = '<svg aria-hidden="true"><use href="#i-x"/></svg>';
 import SohbetCekmece from "../../../components/sohbet/SohbetCekmece.tsx";
 import { getCourses, getQuestions, getUniversities } from "../../../lib/api";
+import { soruSirala } from "../../../lib/soru-sirasi";
 import { canonicalDepartments, coursePath } from "../../../lib/kanonik";
 
 export async function getStaticPaths() {
@@ -205,8 +206,8 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: { y
         <h1 class="sr-only">{course.name} - Tüm Sorular</h1>
         {
           units.map((unit, idx) => {
-            const unitQuestions = questions.filter(
-              (q) => q.unitNumber === unit,
+            const unitQuestions = soruSirala(
+              questions.filter((q) => q.unitNumber === unit),
             );
             return (
               <div

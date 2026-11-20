@@ -119,6 +119,8 @@ export const questionSchema = z.object({
     correctAnswer: z.any().transform(v => String(v || '').toUpperCase()).pipe(OptionKeyEnum).catch('' as any),
     explanation: z.string().default(''),
     aiExplanation: z.string().optional(),
+    // Section inside the unit, e.g. "1.2.5"; orders questions within a unit when present
+    section: z.any().transform(v => (v === undefined || v === null ? undefined : String(v))).optional(),
     source: SourceEnum.default('soru-bankasi'),
     year: z.union([z.number(), z.string()]).optional().default(''),
     examType: ExamTypeEnum.catch('genel'),
