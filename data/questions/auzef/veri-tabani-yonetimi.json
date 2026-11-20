@@ -21,6 +21,10 @@
         "examType": "vize"
       },
       {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
         "year": "2023-2024",
         "examType": "final"
       }
@@ -330,6 +334,10 @@
         "examType": "vize"
       },
       {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
         "year": "2023-2024",
         "examType": "final"
       }
@@ -392,6 +400,10 @@
         "examType": "vize"
       },
       {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
         "year": "2023-2024",
         "examType": "final"
       }
@@ -440,6 +452,10 @@
       {
         "year": "2025-2026",
         "examType": "vize"
+      },
+      {
+        "year": "2024-2025",
+        "examType": "final"
       },
       {
         "year": "2023-2024",
@@ -504,6 +520,10 @@
         "examType": "vize"
       },
       {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
         "year": "2023-2024",
         "examType": "final"
       }
@@ -554,9 +574,13 @@
     "correctAnswer": "A",
     "explanation": "Günümüzde veritabanı sistemleri (özellikle Büyük Veri – Big Data mimarileri), devasa sensör verilerini anlık olarak kaydetmek zorundadır. Bir otonom (sürücüsüz) araç; üzerindeki onlarca kamera, LIDAR, radar, GPS ve hız sensörü sayesinde çevresini algılayabilmek için saniyede gigabaytlarca boyutunda devasa bir anlık veri üretir ve toplar. Diğer şıklardaki donanımlar (fırın, soğutucu, fare) ise pasif cihazlardır veya sınırlı telemetri verisi üretirler.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -585,9 +609,13 @@
     "correctAnswer": "A",
     "explanation": "Birbiriyle bağlantılı olan kritik veritabanı operasyonlarının “Ya Hep Ya Hiç” (ACID kuralları) prensibiyle çalışmasına “Transaction” denir. Örneğin para transferinde hesaptan para çıkıp karşıya gitmeden elektrik kesilirse, paranın havada kaybolmaması gerekir. İşlem başarıyla bitene kadar bekletilir (Commit), eğer herhangi bir adımda hata olursa tüm yapılan ara işlemler geri alınarak (Rollback) veritabanının tutarlılığı garanti altına alınır.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -608,9 +636,13 @@
     "correctAnswer": "C",
     "explanation": "Bu SQL prosedürü, dışarıdan kimlik numarası (@calisan_id) ve zam oranı (@artisOrani) olmak üzere iki farklı parametre almaktadır. UPDATE sorgusunun içerisindeki SET satırı incelendiğinde; kişinin maaşına, dışarıdan girilen oranın (artisOrani / 100) yüzdesi kadar ilave yapıldığı matematiksel olarak görülmektedir. WHERE satırı sayesinde de bu işlem tüm tabloya değil, sadece “id’si belirtilen tek bir çalışana” uygulanır.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -631,9 +663,13 @@
     "correctAnswer": "C",
     "explanation": "Full Outer Join; birleştirilen her iki tablodaki tüm satırları sonuç kümesine getirir. Eşleşme olmayan durumlarda ise eksik kalan taraflara NULL değerini atar. İki tablonun birleşimindeki tüm verinin korunması istendiğinde kullanılan en geniş birleştirme türüdür.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -654,9 +690,13 @@
     "correctAnswer": "B",
     "explanation": "İlişkisel veri tabanlarında tek, devasa ve tekrarlarla dolu bir tablo oluşturmak performans ve tutarlılık sorunlarına yol açar. Örneğin bir personel tablosunda aynı departmanın adını her personelin yanına yazmak yerine, departmanlar için ayrı bir tablo oluşturup sadece ID numaralarını bağlamak gerekir. Verileri 1NF, 2NF, 3NF gibi kurallar (formlar) çerçevesinde parçalayarak veri tekrarını engelleyen bu yapısal mimari tasarım sürecine “Normalizasyon” adı verilir.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -677,9 +717,13 @@
     "correctAnswer": "A",
     "explanation": "Sorgu adım adım incelendiğinde; önce “WHERE maas > 50000” komutu ile maaşı 50 binden yüksek olan personeller filtrelenir. Sonra “GROUP BY birim” komutu ile bu filtrelenmiş personeller çalıştıkları departmanlara (birimlere) göre gruplanır. En son “SELECT” kısmında ise her bir birimin adı, o birimdeki (maaşı 50 binden büyük olan) personel sayısı (COUNT) ve bu personellerin maaş ortalaması (AVG) hesaplanarak ekrana yazdırılır.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -700,9 +744,13 @@
     "correctAnswer": "D",
     "explanation": "SQL’de tabloları birleştirirken temel (ana/merkez) olarak kabul edilen tablo genellikle FROM komutundan hemen sonra yazılan “Sol” (Left) tablodur. Bu sol tablodaki “tüm kayıtların” korunarak alınmasını, sağdaki (ikinci) tablodan ise sadece sol tabloyla anahtar eşleşmesi sağlayan (ilgili) kayıtların getirilmesini sağlayan (eşleşmeyen yerlere NULL basan) birleştirme türüne “Sol Taraflı Birleştirme” (LEFT JOIN) denir. (Eğer sağ tablo merkez alınsaydı cevap Right Join olurdu).",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -723,9 +771,13 @@
     "correctAnswer": "D",
     "explanation": "ORM kütüphaneleri, programlama dilleri, SQL komutları ve özel aracı yazılımlar (arayüzler) ilişkisel veritabanlarında (RDBMS) yapısal güncellemeler (UPDATE, INSERT) yapmak için tasarlanmış doğal araçlardır. Microsoft Excel ise bir elektronik tablo (spreadsheet) programıdır; verileri dışa aktararak okuyabilmesine rağmen, doğrudan kompleks bir ilişkisel veritabanı motoru üzerinde güvenli, anlık ve çok kullanıcılı güncelleme (transaction) işlemleri yürütmek için uygun bir araç değildir.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -746,9 +798,13 @@
     "correctAnswer": "D",
     "explanation": "Veritabanı dünyasında MySQL, Oracle veya PostgreSQL gibi sistemler bir “sunucu” (server) olarak arka planda sürekli çalışır ve binlerce isteğe aynı anda cevap verebilir. Ancak “SQLite”, sunucu tabanlı (client-server) bir mimari gerektirmeyen, doğrudan uygulamanın içine gömülen, tüm veritabanını diskinizde tek bir dosya (.sqlite) olarak tutan çok hafif ve yerel bir VTYS’dir. Genellikle mobil uygulamalarda (Android/iOS) ve basit yerel masaüstü yazılımlarında kullanılır.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -769,9 +825,13 @@
     "correctAnswer": "C",
     "explanation": "Veri tabanı sistemlerinde Authentication (Kimlik Doğrulama) ve Authorization (Yetkilendirme) mekanizmalarının varlık sebebi doğrudan “Güvenlik”tir. Hangi kullanıcının veri tabanına giriş yapabileceği, giriş yapan kişinin hangi tabloları okuyabileceği, hangilerine veri yazabileceği veya silebileceği yetkilendirmeler sayesinde belirlenir. Böylece yetkisiz kişilerin veya saldırganların hassas verilere erişmesi, verileri bozması veya silmesi engellenmiş olur.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -796,9 +856,13 @@
     "correctAnswer": "E",
     "explanation": "Bir veritabanı ile etkileşime geçmek için SQL sorguları yazılabilir, yazılımlarda ORM (Object-Relational Mapping) araçları kullanılabilir, Python veya Java gibi dillerle bağlantı sağlanabilir veya DBeaver, DataGrip, SSMS gibi arayüz (GUI) araçları kullanılabilir. Ancak FTP (File Transfer Protocol), sunucular arasında sadece “dosya aktarımı” (upload/download) yapmak için kullanılan bir ağ protokolüdür; ilişkisel bir veri tabanını sorgulamak veya yönetmek için kullanılmaz.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -823,11 +887,19 @@
     "correctAnswer": "E",
     "explanation": "WHERE cümlesindeki mantıksal operatörler incelendiğinde iki ana koşul grubu “OR” (VEYA) ile bağlanmıştır. İlk grup: (yas > 18 AND istihdam = ‘EVET’) yani yaşı 18’den büyük olan “ve” aynı zamanda istihdam edilenler. İkinci grup: (pasaport = ‘GEÇERLİ’) yani geçerli pasaporta sahip olanlar. Bu iki gruptan herhangi birini sağlayan kayıtlar ekrana getirilecektir. Bu mantıksal kurguyu eksiksiz olarak ifade eden seçenek E şıkkıdır.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
       {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
         "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
         "examType": "final"
       }
     ]
@@ -846,9 +918,13 @@
     "correctAnswer": "A",
     "explanation": "Kod incelendiğinde bir “Saklı Yordam” (Stored Procedure) oluşturulduğu görülmektedir. Prosedür, dışarıdan “@departmanAdi” adında bir parametre (girdi) almaktadır. İçerisindeki SQL kodu ise (SELECT * FROM Calisanlar WHERE departman = @departmanAdi) Çalışanlar tablosuna giderek, sadece departman sütunu dışarıdan verilen bu girdi değerine eşit olan satırları seçmektedir. Kısacası; kullanıcının belirttiği departmanda çalışan personelin tüm bilgilerini listeleyerek geri döndürür.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -869,9 +945,13 @@
     "correctAnswer": "A",
     "explanation": "Veri tabanı yönetiminde ve yazılım geliştirmede temel veri manipülasyon işlemlerini ifade eden CRUD, İngilizce kelimelerin baş harflerinden oluşur. Bunlar: Create (Oluştur/Ekle), Read (Oku/Sorgula), Update (Güncelle) ve Delete (Sil) işlemleridir. Verileri “Filtreleme” (Filtering) işlemi genellikle Read (Sorgula/Oku) adımının bir alt parçası olarak (örneğin WHERE komutuyla) uygulanır ancak CRUD akroniminin ana bileşen harflerinden (konseptlerinden) biri değildir.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -896,9 +976,13 @@
     "correctAnswer": "C",
     "explanation": "Veri tabanı ile yazılım (programlama) dilleri birbirinden bağımsız ancak birlikte çalışan teknolojilerdir. Her yazılım veri tabanı kullanmak zorunda değildir (A yanlıştır). Ancak bir yazılım, kalıcı verilere ihtiyaç duyduğunda (örneğin kullanıcı bilgileri, ürün listesi) arka planda bulunan bir veri tabanı sunucusuna bağlanarak verileri okuyabilir (sorgulama), yeni veriler yazabilir veya silebilir. Veri tabanı, geliştirilen programların kalıcı hafızası olarak görev yapar.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -927,9 +1011,13 @@
     "correctAnswer": "E",
     "explanation": "Soruda verilen metin, ilişkisel bir veri tabanından (RDBMS) veri çekmek için yazılmış standart bir sorgu cümlesidir. İngilizce “Structured Query Language” (Yapılandırılmış Sorgu Dili) kelimelerinin kısaltması olan SQL; veri tabanlarındaki verileri yönetmek, sorgulamak (SELECT), eklemek, silmek ve güncellemek için evrensel olarak kullanılan temel dildir. API bir arayüz, VTYS veritabanı yönetim sisteminin kendisi, ORM ise nesne-ilişkisel eşleme aracıdır.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -950,9 +1038,13 @@
     "correctAnswer": "C",
     "explanation": "İlişkisel veri tabanlarında önceden oluşturulmuş bir tablonun mimari yapısını (şemasını) değiştirmek gerektiğinde “ALTER” DDL komutu kullanılır. Örneğin “ALTER TABLE Musteriler ADD Telefon varchar(15)” komutu tabloya yeni bir sütun ekler. Satırların içeriğini değiştiren UPDATE komutu ile karıştırılmamalıdır; UPDATE veriyi günceller, ALTER ise tablonun tasarımını ve sütun iskeletini günceller.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -973,9 +1065,13 @@
     "correctAnswer": "D",
     "explanation": "SQL komutları işlevlerine göre kategorilere ayrılır. SELECT, INSERT, UPDATE ve DELETE komutları tablonun içindeki satırlarla/verilerle oynadığı için DML (Data Manipulation Language – Veri İşleme Dili) kategorisindedir. Ancak doğrudan tablonun, sütunun, indeksin veya veri tabanının kendisini fiziksel olarak “inşa eden” (CREATE), değiştiren (ALTER) veya yapıyı tamamen yok eden (DROP) komutlar, iskeleti belirledikleri için DDL (Veri Tanımlama Dili) kategorisinde yer alırlar.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -996,9 +1092,13 @@
     "correctAnswer": "B",
     "explanation": "Inner Join, birleştirilen iki tablo arasındaki ortak (kesişen) kayıtları getiren en temel birleştirme türüdür. Her iki tabloda da eşleşmeyen satırlar sonuç kümesine dahil edilmez, sadece her iki tabloda da ortak olan anahtara sahip kayıtlar listelenir.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -1023,9 +1123,13 @@
     "correctAnswer": "B",
     "explanation": "İnternet ve web tabanlı uygulamaların (örneğin WordPress siteleri, e-ticaret platformları, forumlar) çok büyük bir kısmı açık kaynak kodlu, hızlı ve güvenilir bir sistem olan MySQL’i kullanmaktadır. SQLite daha çok gömülü ve mobil sistemlerde, Microsoft Access küçük ofis yerel ağlarında, Oracle Database devasa kurumsal ERP sistemlerinde, Redis ise ilişkisel olmayan önbellekleme (caching) mimarilerinde kullanılır.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -1058,9 +1162,13 @@
     "correctAnswer": "B",
     "explanation": "SQL’de bir tablodan veri okurken (SELECT işlemi), sadece belirli sütunları getirmek için o sütunların adları araya virgül konularak yazılır (Örn: SELECT ad, soyad). Ancak tablodaki istisnasız tüm sütunların getirilmesi isteniyorsa, tek tek yazmak yerine evrensel seçici (wildcard) olan Asterisk yani “*” (yıldız) işareti kullanılır (Örn: SELECT * FROM ogrenciler).",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -1085,9 +1193,13 @@
     "correctAnswer": "B",
     "explanation": "CRUD kısaltması yazılım dünyasında kalıcı veritabanı işlemlerinin dört temel fonksiyonunu simgeler. C: Create (Oluştur/Ekle – INSERT), R: Read (Oku/Sorgula – SELECT), U: Update (Güncelle – UPDATE) ve D: Delete (Sil – DELETE). Verileri belirli bir kritere göre “Sıralama” (Sorting / ORDER BY) işlemi, Read (Sorgula) adımının altındaki bir gösterim parametresidir ve ana CRUD bileşeni harflerinden biri değildir.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -1112,9 +1224,13 @@
     "correctAnswer": "D",
     "explanation": "Veri Tabanı Yönetim Sistemi (VTYS) kendi başına fiziksel bir cihaz değil, bir yazılımdır. Ancak bu yazılımın üzerinde koştuğu veritabanı sunucuları (server) donanımsal bilgisayarlardır. Bu sunucuların RAM kapasitesi, işlemci hızı, depolama birimlerinin (SSD/HDD) okuma/yazma hızları ve ağ bant genişliği; veri tabanının saniyede işleyebileceği sorgu sayısını ve yanıt süresini (performansını) doğrudan ve hayati derecede etkiler.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -1135,9 +1251,13 @@
     "correctAnswer": "C",
     "explanation": "Veri tabanı tasarımının en temel kuralı her tablonun bir “Birincil Anahtarı” (Primary Key) olmasıdır. Öğrenciler tablosundaki Öğrenci Numarası veya vatandaşlar tablosundaki T.C. Kimlik Numarası buna örnektir. Bu alan, veritabanındaki her kaydı eşsiz kılar (unique) ve bu sütuna asla aynı değerden iki defa girilemez veya ilgili alan boş (null) bırakılamaz. Yabancı anahtar (Foreign Key) ise tabloları birbirine bağlamak için kullanılır.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "final"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -1158,11 +1278,19 @@
     "correctAnswer": "E",
     "explanation": "UPDATE komutu veri tabanındaki mevcut bir kaydı değiştirmek (güncellemek) için kullanılır. SET kısmında “stok = stok – @miktar” yazılması, mevcut stok değerinden dışarıdan parametre olarak gönderilen @miktar değişkeninin çıkarılacağını (azaltılacağını) gösterir. WHERE koşulunda “id = @urun_id” belirtilmesi ise bu işlemin tüm ürünlere değil, sadece ID’si eşleşen “belirli bir ürüne” uygulanacağını ifade eder. Bu nedenle işlem, belirli bir ürünün stokunu eksiltmektir.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2025-2026",
     "examType": "final",
     "sinavlar": [
       {
+        "year": "2025-2026",
+        "examType": "final"
+      },
+      {
         "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
         "examType": "final"
       }
     ]
@@ -1536,9 +1664,13 @@
     "correctAnswer": "E",
     "explanation": "Bir tablonun birincil anahtarının (primary key), başka bir tabloda o tabloyla ilişki kurmak amacıyla kullanılması durumunda bu anahtara ”ikincil anahtar” veya daha yaygın kullanımıyla ”yabancı anahtar” (foreign key) denir.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
       {
         "year": "2023-2024",
         "examType": "final"
@@ -1582,9 +1714,13 @@
     "correctAnswer": "A",
     "explanation": "Veri tabanı güvenliğinin temel ilkelerinden biri, ”en az ayrıcalık” prensibidir. Bu prensibe göre, her kullanıcıya sadece görevini yapması için gerekli olan minimum yetkilerin verilmesi, yetkisiz erişimleri ve olası zararları önler.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
       {
         "year": "2023-2024",
         "examType": "final"
@@ -1605,9 +1741,13 @@
     "correctAnswer": "E",
     "explanation": "SQL’de standart birleştirme (join) türleri `INNER JOIN`, `LEFT JOIN`, `RIGHT JOIN` ve `FULL OUTER JOIN`’dir. ”Exclusive Join” standart bir SQL komutu olmamakla birlikte, bu mantık genellikle `LEFT JOIN` ve `WHERE … IS NULL` koşulu ile elde edilir.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
       {
         "year": "2023-2024",
         "examType": "final"
@@ -1651,9 +1791,13 @@
     "correctAnswer": "B",
     "explanation": "CRUD yapısı içinde, `DELETE` sorgusu satırları silmeye odaklandığı için bir sütun listesi belirtilmez (örneğin, `DELETE FROM TabloAdi WHERE …`). `SELECT` sorgusunda `*` tüm sütunları seçmek için kullanılır, `INSERT` ve `UPDATE` ise belirli sütunlarla çalışır.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
       {
         "year": "2023-2024",
         "examType": "final"
@@ -1674,9 +1818,13 @@
     "correctAnswer": "C",
     "explanation": "Veri tabanı yönetimi süreci, veri tabanının planlanması, tasarımı, uygulanması, bakımı ve güvenliğini içerir. Bu sürecin başında, veri tabanının amacını, yapısını ve gereksinimlerini belirten sistem tasarımı dokümanı en önemli girdidir.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
       {
         "year": "2023-2024",
         "examType": "final"
@@ -1697,9 +1845,13 @@
     "correctAnswer": "D",
     "explanation": "Veri tabanı tasarımı belirli bir başlangıç ve bitiş noktası olan bir projedir. Ancak veri tabanının sürekli olarak güncellenmesi, yedeklenmesi, performansının izlenmesi ve güvenliğinin sağlanması gibi faaliyetler devamlılık arz eden bir süreçtir.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
       {
         "year": "2023-2024",
         "examType": "final"
@@ -1720,9 +1872,13 @@
     "correctAnswer": "C",
     "explanation": "Çoğu programlama dilinde fonksiyonlar, fonksiyon adını takiben parantezler içinde argümanları alarak çağrılır. Bu örnekte, `rasgeleSayi` fonksiyonu 1 ile 100 arasında bir rastgele sayı üretmek için çağrılır.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
       {
         "year": "2023-2024",
         "examType": "final"
@@ -1743,9 +1899,13 @@
     "correctAnswer": "D",
     "explanation": "Her kategori bazında kitap adedini gösteren sorgu, GROUP BY ifadesiyle kullanılır.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
       {
         "year": "2023-2024",
         "examType": "final"
@@ -1766,9 +1926,13 @@
     "correctAnswer": "C",
     "explanation": "İlişkisel veri tabanları, yerel ağlarda veya tek bir bilgisayarda internet bağlantısı olmadan da çalışabilirler. İnternet, uzaktan erişim veya bulut tabanlı çözümler için gerekebilir ancak temel işlevsellik için zorunlu değildir.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "final",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
       {
         "year": "2023-2024",
         "examType": "final"
@@ -1812,9 +1976,13 @@
     "correctAnswer": "B",
     "explanation": "Sorgu, **Kullanicilar** tablosunda **yaşı 50’den büyük (>)** olan ve **unvanı “Güvenlik Görevlisi”** olan kişileri getirir.",
     "source": "cikmis-soru",
-    "year": "2023-2024",
+    "year": "2024-2025",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "vize"
+      },
       {
         "year": "2023-2024",
         "examType": "vize"
@@ -2099,7 +2267,7 @@
   },
   {
     "id": "s-0a6d158d266c",
-    "unitNumber": 0,
+    "unitNumber": 3,
     "text": "Aşağıdaki bilgilerden hangisi yanlıştır?",
     "options": {
       "A": "Yazılım geliştirme süreçleri bir veri tabanı yönetim aracı olmadan da yürütülebilmektedir.",
@@ -2114,7 +2282,7 @@
   },
   {
     "id": "s-3ef1f887dc35",
-    "unitNumber": 0,
+    "unitNumber": 4,
     "text": "İş çıkışı yapılan kişilerin kayıtlarını veritabanından düşmüş gibi göstermek isteyen bir geliştirici aşağıdaki komutlardan hangisini kullanmalıdır? (1: silindi, 2: silinmedi)",
     "options": {
       "A": "UPDATE calisan SET silDurum = ‘0' WHERE adi = 'Zeynep' AND soyadi = 'Çetin';",
@@ -2129,7 +2297,7 @@
   },
   {
     "id": "s-64297e750861",
-    "unitNumber": 0,
+    "unitNumber": 3,
     "text": "Aşağıdaki kütüphanelerden hangisi sadece ORM için kullanılmaktadır?",
     "options": {
       "A": "sqlalchemy",
@@ -2144,7 +2312,7 @@
   },
   {
     "id": "s-a12475651a9d",
-    "unitNumber": 0,
+    "unitNumber": 2,
     "text": "Aşağıdaki VTYS’ler çalışma prensiplerine göre gruplandırılmak istenirse hangi VTYS grup dışında kalır?",
     "options": {
       "A": "Oracle",
@@ -2159,7 +2327,7 @@
   },
   {
     "id": "s-b90af56371e8",
-    "unitNumber": 0,
+    "unitNumber": 1,
     "text": "Hangisi ilişkisel veri tabanlarını kullanmanın avantajlarından biri değildir?",
     "options": {
       "A": "Büyük veri için uygundur",
@@ -2174,7 +2342,7 @@
   },
   {
     "id": "s-27433acf6c70",
-    "unitNumber": 0,
+    "unitNumber": 4,
     "text": "İş kayıtlarında kayıtlı çalışanların bilgileri için düzenleme yapan bir modül hazırlamak isteyen bir geliştirici aşağıdaki sorgulardan hangisini kullanmalıdır?",
     "options": {
       "A": "UPDATE Calisan DO dogumTarihi = '2022-10-02' WHERE adi = 'Zeynep' AND soyadi = 'Çetin';",
@@ -2189,7 +2357,7 @@
   },
   {
     "id": "s-e94e4adca5db",
-    "unitNumber": 0,
+    "unitNumber": 2,
     "text": "Aşağıdaki VTYS’lerinden hangisi genellikle banka ve kamu kurumları gibi yüksek güvenlik istenilen yerlerde yaygın olarak tercih edilmektedir?",
     "options": {
       "A": "MySQL",
@@ -2204,7 +2372,7 @@
   },
   {
     "id": "s-da555909837f",
-    "unitNumber": 0,
+    "unitNumber": 1,
     "text": "Hangisi ilişkisel veri tabanının geliştirilmesiyle ilgili motivasyonlardan biridir?",
     "options": {
       "A": "Üst seviye bir dil oluşturmak",
@@ -2219,7 +2387,7 @@
   },
   {
     "id": "s-762802186940",
-    "unitNumber": 0,
+    "unitNumber": 2,
     "text": "VTYS tarafından yaygın olarak kullanılan ilişkisel veri modeli ilk olarak kim tarafından kaç yılında önerilmiştir?",
     "options": {
       "A": "Codd 1969",
@@ -2234,7 +2402,7 @@
   },
   {
     "id": "s-b0f017b1150e",
-    "unitNumber": 0,
+    "unitNumber": 3,
     "text": "Aşağıdakilerden hangisi SQL’in açılımıdır?",
     "options": {
       "A": "Structured Query Language",
@@ -2249,7 +2417,7 @@
   },
   {
     "id": "s-4a77c7a46725",
-    "unitNumber": 0,
+    "unitNumber": 1,
     "text": "“Veri tabanı tasarımcılığı …” boşluğunu en uygun ifade ile doldurunuz.",
     "options": {
       "A": "MS Excel üzerinde veri saklarken de gereklidir.",
@@ -2264,7 +2432,7 @@
   },
   {
     "id": "s-cd7ba4b45946",
-    "unitNumber": 0,
+    "unitNumber": 2,
     "text": "Aşağıdaki VTYS’leri için verilen bilgilerden hangisi yanlıştır?",
     "options": {
       "A": "IBM DB2 geliştirme dili olarak Cobol kullanmaktadır.",
@@ -2279,7 +2447,7 @@
   },
   {
     "id": "s-8d5da67c899c",
-    "unitNumber": 0,
+    "unitNumber": 4,
     "text": "10000 TL’in üzerinde maaş çalışanları alanları listelemek isteyen bir geliştirici aşağıdaki komutlardan hangisini kullanmalıdır?",
     "options": {
       "A": "TAKE * FROM calisan WHERE maas &gt; 10000;",
@@ -2293,7 +2461,7 @@
   },
   {
     "id": "s-02032fc6471a",
-    "unitNumber": 0,
+    "unitNumber": 3,
     "text": "SQLite3 kütüphanesi ile geliştirme yapan bir geliştirici, veri tabanı üzerinde yaptığı değişikliklerin kaydedilmesi için aşağıdaki komutlardan hangisini kullanmalıdır?",
     "options": {
       "A": "conn.commit()",
@@ -2308,7 +2476,7 @@
   },
   {
     "id": "s-667f6cbc255c",
-    "unitNumber": 0,
+    "unitNumber": 4,
     "text": "WHERE komutu için kullanılabilecek operatörler aşağıdakilerden hangisinde yanlış verilmiştir?",
     "options": {
       "A": "&lt;",
@@ -2323,7 +2491,7 @@
   },
   {
     "id": "s-0d81088677b6",
-    "unitNumber": 0,
+    "unitNumber": 4,
     "text": "Veri tabanında “calisan” tablosunda yer alan bütün kayıtları SQLAlchemy ile sorgulamak isteyen bir geliştirici aşağıdaki komutlardan hangisini kullanmalıdır? (cursor: veritabanı bağlantı değişkeni)",
     "options": {
       "A": "&gt;&gt;&gt;cursor.take(\"SELECT * FROM calisan\") &gt;&gt;&gt;tables = cursor.fetchall() &gt;&gt;&gt;print(tables)",
@@ -2338,7 +2506,7 @@
   },
   {
     "id": "s-bb8f23a8788f",
-    "unitNumber": 0,
+    "unitNumber": 2,
     "text": "Aşağıdaki VTSY’lerden hangisi siber güvenlik sistemlerinde yüksek hacimli log (günlük) kayıtlarının yönetilmesi amacıyla yaygın olarak tercih edilmektedir?",
     "options": {
       "A": "Oracle",
@@ -2353,7 +2521,7 @@
   },
   {
     "id": "s-652867162f20",
-    "unitNumber": 0,
+    "unitNumber": 1,
     "text": "Büyük veri için en uygun tanım hangisidir?",
     "options": {
       "A": "Yapılandırılmamış veri",
@@ -2368,7 +2536,7 @@
   },
   {
     "id": "s-f579d193bcbf",
-    "unitNumber": 0,
+    "unitNumber": 3,
     "text": "Kaynak tüketimini azaltmak isteyen bir geliştirici Python (ORM) ile geliştirme sürecine devam etmek istemektedir. Python ve geliştirme ortamı için gerekli bileşenleri gruplayan bu geliştirici aşağıdaki bileşenlerden hangisini grup dışarı bırakabilir?",
     "options": {
       "A": "SQLalchemy",
@@ -2383,7 +2551,7 @@
   },
   {
     "id": "s-1e6ca0d3eab3",
-    "unitNumber": 0,
+    "unitNumber": 1,
     "text": "Nesneye yönelik programlama özelinde kullanılabilen veri tabanı yönetim yöntemi hangisidir?",
     "options": {
       "A": "PostgreSQL",
@@ -2398,7 +2566,7 @@
   },
   {
     "id": "s-315f1ce54a94",
-    "unitNumber": 0,
+    "unitNumber": 6,
     "text": "Bir geliştirici görev aldığı fabrika bilgi sisteminde EYT’ye hak kazanan tüm Erkek çalışanları listelemek istemektedir. Geliştiricinin aşağıdaki SQL sorgularından hangisini yazması beklenir?",
     "options": {
       "A": "SELECT * FROM Kullanicilar WHERE (sigortaGiris = '1999-10-08' AND primGun = 5000 AND yas = 43 AND Cinsiyet = 'Erkek')",
@@ -2413,7 +2581,7 @@
   },
   {
     "id": "s-01da108043f9",
-    "unitNumber": 0,
+    "unitNumber": 6,
     "text": "Bir fast food zincirinde görev alan geliştiriciden yönetim raporu için tek seferde yapılan en çok satış tutarı istenmektedir. Geliştiricinin aşağıdaki SQL sorgularından hangisini yazması beklenir?",
     "options": {
       "A": "SELECT MAX(tutar) is \"En Büyük Satış\" FROM Satis WHERE durum = \"Tamamlandı\"",
@@ -2428,7 +2596,7 @@
   },
   {
     "id": "s-2e4bec7002a0",
-    "unitNumber": 0,
+    "unitNumber": 6,
     "text": "Backend (arkayüz) teknolojileri üzerine bir roadmap (yol haritası) oluşturmak isteyen bir geliştirici roadmap’ini bitirdiğinde aşağıdaki teknolojilerden hangisinin dışarıda kalması beklenir?",
     "options": {
       "A": "Temel sunucu işletim sistemleri",
@@ -2443,7 +2611,7 @@
   },
   {
     "id": "s-6d89d7796341",
-    "unitNumber": 0,
+    "unitNumber": 8,
     "text": "Büyümekte olan bir startup şirketinde geliştirici olarak çalışan biri tek sunucu üzerinde kurulu olan sistemi birden fazla sunucu üzerinde eş zamanlı çalışacak şekilde yapılandırmak istemektedir. Aşağıdakilerden hangisi geliştiricinin tercih ettiği ölçeklendirme yöntemidir?",
     "options": {
       "A": "Yatay ölçeklendirme.",
@@ -2458,7 +2626,7 @@
   },
   {
     "id": "s-020e03b6df06",
-    "unitNumber": 0,
+    "unitNumber": 8,
     "text": "Kurumsal bir firmada geliştirici olarak çalışan biri aşağıdaki veritabanı yönetim sistemlerinden hangisini daha fazla kullanmaktadır.",
     "options": {
       "A": "MySQL",
@@ -2473,7 +2641,7 @@
   },
   {
     "id": "s-c426e2dfae34",
-    "unitNumber": 0,
+    "unitNumber": 4,
     "text": "Yeni çalışanların veritabanına kaydedilmesi ile ilgili bir modül üzerinde çalışan bir geliştirici aşağıdaki sorgulardan hangisini kullanmaktadır? (Alınan bilgiler: Ad, Soyad, Cinsiyet, İşe Giriş Tarihi)",
     "options": {
       "A": "INSERT INTO Calisan (id, adi, soyadi, cinsiyet, iseGirisTarihi) VALUES (25, 'Ahmet', 'Yılmaz', 'Erkek', '2022-01-01');",
@@ -2487,7 +2655,7 @@
   },
   {
     "id": "s-9f822e008c11",
-    "unitNumber": 0,
+    "unitNumber": 4,
     "text": "Bir etkinlik için kadın çalışanların listesini almak isteyen bir geliştirici aşağıdaki komutlardan hangisini kullanmalıdır?",
     "options": {
       "A": "SELECT * FROM calisan WHERE cinsiyet = “kadin”;",
@@ -2502,7 +2670,7 @@
   },
   {
     "id": "s-c4fc5e4c8ee1",
-    "unitNumber": 0,
+    "unitNumber": 4,
     "text": "Veri tabanında “calisan” tablosunda yer alan bütün kayıtları SQL ile sorgulamak isteyen bir geliştirici aşağıdaki komutlardan hangisini kullanmalıdır?",
     "options": {
       "A": "SELECT * FROM calisan;",
@@ -2517,7 +2685,7 @@
   },
   {
     "id": "s-8d1e9e82f26f",
-    "unitNumber": 0,
+    "unitNumber": 4,
     "text": "SQLAlchemy ile bir kayıt silmek isteyen bir kullanıcı aşağıdaki hangi komutu kullanmalıdır?",
     "options": {
       "A": "calisan = session.query(calisan).filter(calisan.id==10).first() session.remove(calisan)",
@@ -2532,7 +2700,7 @@
   },
   {
     "id": "s-2f6cb14df6d6",
-    "unitNumber": 0,
+    "unitNumber": 4,
     "text": "İş çıkışı yapılan kişilerin kayıtlarını veritabanından düşmek isteyen bir geliştirici aşağıdaki komutlardan hangisini kullanmalıdır?",
     "options": {
       "A": "DELETE FROM calisan WHERE id = 10;",
@@ -2547,7 +2715,7 @@
   },
   {
     "id": "s-bd79f870fa45",
-    "unitNumber": 0,
+    "unitNumber": 6,
     "text": "Bir fast food zincirinde görev alan geliştiriciden yönetim raporu için iptal edilen siparişlerin sayısı istenmektedir. Geliştiricinin aşağıdaki SQL sorgularından hangisini yazması beklenir?",
     "options": {
       "A": "SELECT * COUNT() as \"İptal Edilen Satış Sayısı\" FROM Satis WHERE durum = \"İptal\"",
@@ -2562,7 +2730,7 @@
   },
   {
     "id": "s-9eb9765c4d92",
-    "unitNumber": 0,
+    "unitNumber": 6,
     "text": "Bir elektronik pazar yerinde görev alan geliştiriciden yönetim raporu için tamamlanan siparişlerin toplam satış tutarı istenmektedir. Geliştiricinin aşağıdaki SQL sorgularından hangisini yazması beklenir?",
     "options": {
       "A": "SELECT SUM(tutar) is \"Toplam Tutar\" FROM Satis WHERE durum = \"Tamamlandı\"",
@@ -2577,7 +2745,7 @@
   },
   {
     "id": "s-c1034d6aef27",
-    "unitNumber": 0,
+    "unitNumber": 8,
     "text": "Aşağıdakilerden hangisi bulut veri tabanı sistemleri özelliklerinden biri değildir?",
     "options": {
       "A": "Stabil erişilebilirlik sağlamaktadır.",
@@ -2592,7 +2760,7 @@
   },
   {
     "id": "s-f93d74307f6c",
-    "unitNumber": 0,
+    "unitNumber": 8,
     "text": "Kaliteli bir veritabanı yöneticiliği için aşağıdakileden hangisi söylenemez?",
     "options": {
       "A": "Veritabanının yedekleri düzenli aralıklar ile alınmalıdır.",
@@ -2607,7 +2775,7 @@
   },
   {
     "id": "s-07cf4a503e00",
-    "unitNumber": 0,
+    "unitNumber": 1,
     "text": "Rowley Bilgelik Hiyerarşisi’ndeki sıralamayı aşağıdan yukarıya doğru belirtiniz.",
     "options": {
       "A": "Veri - Enformasyon - Bilgi - Bilgelik",
@@ -2622,7 +2790,7 @@
   },
   {
     "id": "s-827fcee2e7b6",
-    "unitNumber": 0,
+    "unitNumber": 1,
     "text": "Hangisi ilişkisel veri tabanları ile MS Excel yazılımı arasındaki farklardan biridir?",
     "options": {
       "A": "Kayıtlar elektronik ortamda saklanması",
@@ -2637,7 +2805,7 @@
   },
   {
     "id": "s-9eba0012c589",
-    "unitNumber": 0,
+    "unitNumber": 3,
     "text": "Aşağıdakilerden hangisi SQL ile direkt ilişkili bir bileşen değildir?",
     "options": {
       "A": "Veri tabanı (SQLite)",
@@ -2652,7 +2820,7 @@
   },
   {
     "id": "s-082e8cf1af0c",
-    "unitNumber": 0,
+    "unitNumber": 3,
     "text": "SQLite3 kütüphanesi ile geliştirme yapan bir geliştirici, “myVeri” veri tabanı ile bağlantı sağlamak için aşağıdaki komutlardan hangisini kullanmalıdır?",
     "options": {
       "A": "baglanti = sqlite3.connect(\"myVeri\")",
@@ -2667,7 +2835,7 @@
   },
   {
     "id": "s-84995664d55a",
-    "unitNumber": 0,
+    "unitNumber": 3,
     "text": "Çalıştığı veritabanında boş bir tablo (bosTablo) oluşturmak isteyen bir geliştirici aşağıdaki komutlardan hangisini kullanmalıdır?",
     "options": {
       "A": "CREATE TABLE bosTablo ();",
@@ -2682,7 +2850,7 @@
   },
   {
     "id": "s-b4f4a71ff631",
-    "unitNumber": 0,
+    "unitNumber": 3,
     "text": "SQLite3 kütüphanesi ile geliştirme yapan bir geliştirici, veri tabanı ile bağlantısını sonlandırmak için aşağıdaki komutlardan hangisini kullanmalıdır?",
     "options": {
       "A": "conn.close();",
@@ -2697,7 +2865,7 @@
   },
   {
     "id": "s-232286f44436",
-    "unitNumber": 0,
+    "unitNumber": 1,
     "text": "Hangisi veri tabanı yönetim sistemlerinden biri değildir?",
     "options": {
       "A": "Oracle",
@@ -2712,7 +2880,7 @@
   },
   {
     "id": "s-9815b438d11d",
-    "unitNumber": 0,
+    "unitNumber": 3,
     "text": "Veritabanında yer alan “Kullanicilar” tablosu içinde ki “maas” kolonu değeri 10.000 üzerinde olan satırları çağırmak isteyen bir geliştirici aşağıdaki komutlardan hangisi kullanmalıdır?",
     "options": {
       "A": "SELECT * FROM Kullanicilar",
@@ -2727,7 +2895,7 @@
   },
   {
     "id": "s-897f8bcedb93",
-    "unitNumber": 0,
+    "unitNumber": 1,
     "text": "Hangisi veri tabanını gerçekleştirme yöntemlerinden biridir?",
     "options": {
       "A": "MySQL",
@@ -2742,7 +2910,7 @@
   },
   {
     "id": "s-52052804a99c",
-    "unitNumber": 0,
+    "unitNumber": 8,
     "text": "Veritabanı sistemleri yönetimi için aşağıdakilerden hangisi best practice (en iyi yol) tercihlerinden biri değildir?",
     "options": {
       "A": "Küçük projelerde yazılım ve veritabanının aynı cihaz üzerinde kurulu olması.",
@@ -2757,7 +2925,7 @@
   },
   {
     "id": "s-8ec782cff5f1",
-    "unitNumber": 0,
+    "unitNumber": 8,
     "text": "Veri tabanı yöneticiliği görevinde çalışan bir geliştirici için aşağıda verilen bilgilerden hangisi geçerli değildir?",
     "options": {
       "A": "Veri tabanı yöneticisi proje için en uygun veri tabanı yönetim sistemini seçmektedir.",
@@ -2772,7 +2940,7 @@
   },
   {
     "id": "s-f6c77af4abe5",
-    "unitNumber": 0,
+    "unitNumber": 2,
     "text": "Aşağıdaki VTSY’lerden hangisi tamamıyla açık kaynak, web tabanlı ve basit bir blog sitesi geliştirmek isteyen geliştiricilerce yaygın olarak tercih edilmektedir?",
     "options": {
       "A": "SQLite",
@@ -2787,7 +2955,7 @@
   },
   {
     "id": "s-cb37314416b4",
-    "unitNumber": 0,
+    "unitNumber": 2,
     "text": "Aşağıdaki VTSY’lerden hangisi mobil programlama gibi kaynakların sınırlı olduğu projelerde yaygın olarak kullanılmaktadır?",
     "options": {
       "A": "MySQL",
@@ -2802,7 +2970,7 @@
   },
   {
     "id": "s-c1c0d655396a",
-    "unitNumber": 0,
+    "unitNumber": 6,
     "text": "Bir fast food zincirinde görev alan geliştiriciden yönetim raporu için ortalama maliyet tutarı istenmektedir. Geliştiricinin aşağıdaki SQL sorgularından hangisini yazması beklenir?",
     "options": {
       "A": "SELECT AVG(maliyet) as \"Ortalama Maliyet\" FROM Satis WHERE durum = \"Tamamlandı\"",
@@ -2817,7 +2985,7 @@
   },
   {
     "id": "s-188dfc64717b",
-    "unitNumber": 0,
+    "unitNumber": 8,
     "text": "Veritabanı üzerine uzman bir geliştiricinin ekip arkadaşlarıyla yaptığı proje toplantısında aşağıdaki sorulardan hangisini sorması beklenmez?",
     "options": {
       "A": "Gerçekleştirilen sistem hangi platform(lar)da hizmet sağlayacak?",
@@ -2832,7 +3000,7 @@
   },
   {
     "id": "s-a2f3e1aa51b5",
-    "unitNumber": 0,
+    "unitNumber": 6,
     "text": "İnsan kaynakları şirketinde çalışan bir geliştiriciden dokümhane departmanında çalışanların ortalama yaşı istenmektedir. Geliştiricinin aşağıdaki SQL sorgularından hangisini yazması beklenir?",
     "options": {
       "A": "SELECT AVG(yas) FROM Kullanicilar WHERE isDepartman = 'Dökümhane'",
@@ -2847,7 +3015,7 @@
   },
   {
     "id": "s-db4f7a230faa",
-    "unitNumber": 0,
+    "unitNumber": 2,
     "text": "Aşağıdaki VTYS’ler kaynak türlerine (açık/kapalı) göre gruplandırılmak istenirse hangi VTYS grup dışında kalır?",
     "options": {
       "A": "PosgreSQL",
@@ -2862,7 +3030,7 @@
   },
   {
     "id": "s-c13b2f610fce",
-    "unitNumber": 0,
+    "unitNumber": 6,
     "text": "Frontend (önyüz) teknolojileri üzerine bir roadmap (yol haritası) oluşturmak isteyen bir geliştirici roadmap’ini bitirdiğinde aşağıdaki teknolojilerden hangisinin dışarıda kalması beklenir?",
     "options": {
       "A": "CSS",
@@ -2877,7 +3045,7 @@
   },
   {
     "id": "s-5297bf4ba4b0",
-    "unitNumber": 0,
+    "unitNumber": 2,
     "text": "Aşağıdaki VTSY’leri için verilen bilgilerden hangisi doğrudur?",
     "options": {
       "A": "ElasticSearch sorgulama dili olarak TQL kullanmaktadır.",
@@ -2892,7 +3060,7 @@
   },
   {
     "id": "s-c754ea85dc70",
-    "unitNumber": 0,
+    "unitNumber": 6,
     "text": "Bir geliştirici görev aldığı bilgi sisteminde raporlu çalışanları listelemek istemektedir. Geliştiricinin aşağıdaki SQL sorgularından hangisini yazması beklenir?",
     "options": {
       "A": "SELECT * FROM Kullanicilar WHERE (calisan = 1 AND izin = 1)",
@@ -2907,7 +3075,7 @@
   },
   {
     "id": "s-e5260268639f",
-    "unitNumber": 0,
+    "unitNumber": 8,
     "text": "Bir firmada geliştirici olarak çalışan biri altyapı planlaması üzerine çalışmaktadır. Geliştiricinin planlama sırasında aşağıdaki aksiyonlardan hangisini alması beklenmez?",
     "options": {
       "A": "İhtiyaç duyulan kapasiteyi hesaplaması.",
@@ -2922,7 +3090,7 @@
   },
   {
     "id": "s-aa9404a764e6",
-    "unitNumber": 0,
+    "unitNumber": 6,
     "text": "İnsan kaynakları şirketinde çalışan bir geliştiriciden temizlik departmanında çalışanların sıralı listesi istenmektedir. Geliştiricinin aşağıdaki SQL sorgularından hangisini yazması beklenir?",
     "options": {
       "A": "SELECT * FROM Kullanicilar WHERE isDepartman = 'Temizlik' ORDER BY ad",
@@ -2937,7 +3105,7 @@
   },
   {
     "id": "s-61e3f9fa811e",
-    "unitNumber": 0,
+    "unitNumber": 5,
     "text": "Aşağıdakilerden hangisi SQL sorgu yazımında join (birleştirme) işleminde kullanılan ögelerden biri değildir?",
     "options": {
       "A": "Tablo adı",
@@ -2952,7 +3120,7 @@
   },
   {
     "id": "s-fed97acc93ca",
-    "unitNumber": 0,
+    "unitNumber": 7,
     "text": "T-SQL kontrol yapıları için aşağıdaki ifadelerden hangisi söylenemez?",
     "options": {
       "A": "T-SQL kontrol yapılarını kullanarak program akışını yönetebilir.",
@@ -2967,7 +3135,7 @@
   },
   {
     "id": "s-beaaa7353ecc",
-    "unitNumber": 0,
+    "unitNumber": 7,
     "text": "T-SQL ile “Merhaba, Dünya!” yazmasını isteyen bir fonksiyon yazmak isteyen bir geliştiricinin aşağıdaki sorgulardan hangisini yazması beklenir?",
     "options": {
       "A": "CREATE FUNCTION HelloWorld AS BEGIN PRINT 'Merhaba, Dünya!'; END",
@@ -2982,7 +3150,7 @@
   },
   {
     "id": "s-61dd78851852",
-    "unitNumber": 0,
+    "unitNumber": 5,
     "text": "Bir e-ticaret sitesinde geliştirici olarak çalışan biri “alım yapsın veya yapmasın” tüm kayıtlı kullanıcıları varsa alımları ile listelemek isterse aşağıdaki sorgulardan hangisini kullanması hatalı olur olur?",
     "options": {
       "A": "SELECT Kisi.ad, Kisi.soyad, Satis.tarih, Satis.tutar FROM Kisi INNER JOIN Satis ON Kisi.id= Satis.kisi_id;",
@@ -2997,7 +3165,7 @@
   },
   {
     "id": "s-0cb92ed953ce",
-    "unitNumber": 0,
+    "unitNumber": 5,
     "text": "Bir e-ticaret sitesinde geliştirici olarak çalışan biri kayıtlı kullanıcılardan sadece alım yapanları listelemek isterse aşağıdaki sorgulardan hangisini yazması beklenir?",
     "options": {
       "A": "SELECT Kisi.ad, Kisi.soyad, Satis.tarih, Satis.tutar FROM Kisi INNER JOIN Satis ON Kisi.id= Satis.kisi_id;",
@@ -3012,7 +3180,7 @@
   },
   {
     "id": "s-f435a8ea5ce6",
-    "unitNumber": 0,
+    "unitNumber": 7,
     "text": "T-SQL ile string (katar) ifadelerin uzunluğunu almak isteyen bir geliştirici sistem fonksiyonlardan hangisini kullanmalıdır?",
     "options": {
       "A": "LEN",
@@ -3027,7 +3195,7 @@
   },
   {
     "id": "s-31a003e7fb3a",
-    "unitNumber": 0,
+    "unitNumber": 7,
     "text": "T-SQL’in agregat fonksiyonları için aşağıdakilerden hangisi yanlıştır?",
     "options": {
       "A": "ABS: Mutlak değer alma işlevidir.",
@@ -3042,7 +3210,7 @@
   },
   {
     "id": "s-5ee8c4985aef",
-    "unitNumber": 0,
+    "unitNumber": 7,
     "text": "Fonksiyonlar için aşağıdaki ifadelerden hangisi yanlıştır?",
     "options": {
       "A": "Bir fonksiyon, bir veri tabanına bağlanarak kayıtlarda bazı güncellemeler yapıyor olabilir.",
@@ -3057,7 +3225,7 @@
   },
   {
     "id": "s-653e6c5774a5",
-    "unitNumber": 0,
+    "unitNumber": 5,
     "text": "Bir e-ticaret sitesinde geliştirici olarak çalışan biri kayıtlı kullanıcıları yaptıkları alımlar ile listelemek isterse aşağıdaki sorgulardan hangisini yazması beklenir?",
     "options": {
       "A": "SELECT Kisi.ad, Kisi.soyad, Satis.tarih, Satis.tutar FROM Kisi FULL OUTER JOIN Satis ONLY Kisi.id= Satis.kisi_id;",
@@ -3072,7 +3240,7 @@
   },
   {
     "id": "s-eae61b6131ba",
-    "unitNumber": 0,
+    "unitNumber": 7,
     "text": "T-SQL ile geliştirme yapan bir geliştirici için aşağıdaki ifadelerden hangisi söylenemez?",
     "options": {
       "A": "T-SQL bir programlama dilinin veri manipülasyonu becerilerine sahiptir.",
@@ -3087,7 +3255,7 @@
   },
   {
     "id": "s-fab63605cb07",
-    "unitNumber": 0,
+    "unitNumber": 5,
     "text": "SQL sorgu yazımında join (birleştirme) işlemi için aşağıdaki bilgilerden hangisi yanlıştır?",
     "options": {
       "A": "Eşleşme sağlamayan kayıtların karşılığında ilgili nitelikler NULL değerini almaktadırlar.",
@@ -3102,7 +3270,7 @@
   },
   {
     "id": "s-fd361c4178b1",
-    "unitNumber": 0,
+    "unitNumber": 7,
     "text": "T-SQL ile güncel tarihi almak isteyen bir geliştirici aşağıdaki sistem fonksiyonlardan hangisini kullanmalıdır?",
     "options": {
       "A": "GETDATE",
@@ -3117,7 +3285,7 @@
   },
   {
     "id": "s-461187b65aea",
-    "unitNumber": 0,
+    "unitNumber": 7,
     "text": "Aşağıdakilerden hangisi fonksiyonel yaklaşımın sağladığı avantajlardan bir tanesi değildir?",
     "options": {
       "A": "Geliştiriciye ek özelikler sunması.",
@@ -3132,7 +3300,7 @@
   },
   {
     "id": "s-d3cd8e9697df",
-    "unitNumber": 0,
+    "unitNumber": 7,
     "text": "T-SQL’in matematiksel özellikleri için aşağıdaki ifadelerden hangisi söylenemez?",
     "options": {
       "A": "T-SQL, yalnızca basit (dört işlem) matematiksel işlemleri gerçekleştirebilir.",
@@ -3144,5 +3312,139 @@
     "correctAnswer": "A",
     "explanation": "",
     "source": "deneme"
+  },
+  {
+    "id": "s-e2b8f44ca394",
+    "unitNumber": 5,
+    "text": "<img width=\"1180\" height=\"402\" src=\"https://staging-fe97-lolonolocom.wpcomstaging.com/wp-content/uploads/2024/06/Veri-Tabani-Yonetimi-Unite-4-Soru-5-min.png\" class=\"attachment-full size-full\" alt=\"Veri Tabanı Yönetimi Ünite-4 Soru-5\" decoding=\"async\" loading=\"lazy\" srcset=\"https://staging-fe97-lolonolocom.wpcomstaging.com/wp-content/uploads/2024/06/Veri-Tabani-Yonetimi-Unite-4-Soru-5-min.png 1180w, https://staging-fe97-lolonolocom.wpcomstaging.com/wp-content/uploads/2024/06/Veri-Tabani-Yonetimi-Unite-4-Soru-5-min-300x102.png 300w, https://staging-fe97-lolonolocom.wpcomstaging.com/wp-content/uploads/2024/06/Veri-Tabani-Yonetimi-Unite-4-Soru-5-min-1024x349.png 1024w, https://staging-fe97-lolonolocom.wpcomstaging.com/wp-content/uploads/2024/06/Veri-Tabani-Yonetimi-Unite-4-Soru-5-min-768x262.png 768w\" sizes=\"auto, (max-width: 1180px) 100vw, 1180px\" />Yukarıdaki şekilde verilen join (birleştirme) sorgusu aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Inner join (İç içe birleştirme)",
+      "B": "Right join (Sağ taraflı birleştirme)",
+      "C": "Left join (Sol taraflı birleştirme)",
+      "D": "Full join (Tamamlayıcı birleştirme)",
+      "E": "Hiçbiri"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "unite-sonu"
+  },
+  {
+    "id": "s-98443c15a0b3",
+    "unitNumber": 0,
+    "text": "<pre><code>SELECT<br/>direktorAdi,<br/>COUNT(id) as YonetmenlikSayisi FROM<br/>Filmler<br/>GROUP BY<br/>direktorAdi<br/>ORDER BY<br/>YonetmenlikSayisi DESC;</code></pre><br/>Yukarıda verilen SQL sorgusuna bakarak, bu kodun ne yaptığını en iyi aşağıdaki hangi seçenek açıklar?",
+    "options": {
+      "A": "Her filmin yönetmenini listeler.",
+      "B": "En çok film çeken yönetmeni bulur.",
+      "C": "En az film çeken yönetmeni bulur.",
+      "D": "Her yönetmenin çektiği film sayısını hesaplar ve yönetmenleri alfabetik sırayla listeler.",
+      "E": "Her yönetmenin çektiği film sayısını hesaplar, yönetmen adlarını ve film sayılarını azalan sırayla listeler."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      },
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-4224711754a6",
+    "unitNumber": 3,
+    "text": "Aşağıdakilerden hangisi bir veri tabanıyla etkileşime geçme yöntemlerinden biri değildir?",
+    "options": {
+      "A": "SQL",
+      "B": "Veri tabanı yönetim aracı (DBeaver vb.)",
+      "C": "ORM",
+      "D": "FTP",
+      "E": "Programlama dili (Python vb.)"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-2f554fb2c404",
+    "unitNumber": 0,
+    "text": "<div id=\"td1\"><strong><code>CREATE PROCEDURE ToplamHasilatHesapla @baslangicTarihi date,<br/>@bitisTarihi date<br/>AS<br/>BEGIN<br/>SELECT<br/>urun_id,<br/>SUM(miktar * fiyat) as Hasilat FROM<br/>Satislar<br/>WHERE<br/>satisTarihi BETWEEN @BaslangicTarihi AND @BitisTarihi GROUP BY<br/>urun_id;<br/>END;</code></strong></div><br/>Yukarıda verilen T-SQL komutunun görevi, aşağıdaki hangi şıkta uygun şekilde açıklanmıştır?",
+    "options": {
+      "A": "Her bir ürün için, verilen tarih aralığındaki satışları sorgulayarak hasılatı hesaplar.",
+      "B": "Verilen ürün için satış bilgilerini sorgular.",
+      "C": "Ürünleri tarih aralığına göre sıralar.",
+      "D": "Bir ürün için belirli tarih aralığındaki satışları sorgular.",
+      "E": "Tüm ürünleri ve satış miktarlarını sorgular."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-bf9f1fc53aae",
+    "unitNumber": 0,
+    "text": "<div id=\"td1\"><strong><code>SELECT unvan, MIN(maas), MAX(maas) FROM Calisan<br/>GROUP BY unvan;</code></strong></div><br/>Yukarıda verilen SQL sorgusunun amacı, aşağıdaki hangi şıkta doğru olarak verilmiştir?",
+    "options": {
+      "A": "Farklı unvanlarla çalışan sayısını listeler.",
+      "B": "Farklı unvanlarla çalışanların maaşlarını gruplandırarak listeler.",
+      "C": "Farklı unvanlarla çalışanların toplam maaşını listeler.",
+      "D": "Farklı unvanlarla çalışanların en düşük ve en yüksek maaşlarını listeler.",
+      "E": "Farklı unvanlarla çalışanların ortalama maaşını listeler."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c8a90270b52b",
+    "unitNumber": 0,
+    "text": "SQL hangi VTYS&#8217;nin özelleşmiş ve daha yetenekli hale getirilmiş veri sorgulama dilidir?",
+    "options": {
+      "A": "Orade Database",
+      "B": "MYSQL",
+      "C": "SQL Server",
+      "D": "Redis",
+      "E": "SQLite"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
   }
 ]

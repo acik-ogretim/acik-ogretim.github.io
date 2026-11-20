@@ -259,9 +259,13 @@
     "correctAnswer": "E",
     "explanation": "İşletim sistemlerinde, disk üzerindeki blokların hangilerinin dolu, hangilerinin boş olduğunu (boş alan yönetimini / free-space management) takip etmek için en yaygın kullanılan yöntemlerden biri “Bit Vektörü (Bit Map / Bit Vector)” yöntemidir. Diskteki her blok için 1 bit tahsis edilir (örneğin blok boş ise 0, dolu ise 1 yazılır).",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2026-2027",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      },
       {
         "year": "2025-2026",
         "examType": "vize"
@@ -423,6 +427,10 @@
       {
         "year": "2023-2024",
         "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
       }
     ]
   },
@@ -440,9 +448,13 @@
     "correctAnswer": "E",
     "explanation": "İşletim sistemleri, dinamik bölümlemede bellekteki “Dolu (Tahsis edilmiş)” ve “Boş (Free)” alanların boyutlarını ve başlangıç adreslerini dinamik olarak takip etmek zorundadır. Alanlar sürekli birleşip bölündüğü için, boyutu sürekli değişen bu dinamik takip işlemi en verimli şekilde “Bağlı Liste (Linked List)” veri yapısı kullanılarak (Boş alanlar listesi / Dolu alanlar listesi şeklinde) gerçekleştirilir.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2026-2027",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      },
       {
         "year": "2025-2026",
         "examType": "vize"
@@ -571,9 +583,13 @@
     "correctAnswer": "A",
     "explanation": "Dinamik (Değişken) bölümlemede (Dynamic Partitioning), belleğe gelen prosese tam olarak ihtiyacı kadar alan tahsis edildiği için o bloğun içinde boş yer kalmaz, yani “İç parçalanma” oluşmaz. Ancak zamanla prosesler belleğe girip çıktıkça, bellek içinde kullanılmayan küçük, dağınık ve birleştirilemeyen boşluklar oluşur. Buna “Dış parçalanma (External Fragmentation)” denir ve dinamik bölümlemenin en büyük kronik sorunudur. Dolayısıyla “Dış parçalanma problemi oluşmaz” ifadesi kesinlikle yanlıştır.",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2026-2027",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      },
       {
         "year": "2025-2026",
         "examType": "vize"
@@ -598,9 +614,13 @@
     "correctAnswer": "A",
     "explanation": "Oluşturulan dosya ve klasörler (Word belgeleri, resimler vb.) kalıcı olarak saklanmak zorundadır, bu nedenle ana bellekte (RAM’de) değil, kalıcı depolama birimlerinde (Hard disk, SSD, flash bellek) tutulurlar. Ana bellek (RAM), elektrik kesildiğinde içindeki tüm bilgilerin silindiği “geçici” bir çalışma alanıdır (E şıkkında da belirtildiği gibi).",
     "source": "cikmis-soru",
-    "year": "2025-2026",
+    "year": "2026-2027",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      },
       {
         "year": "2025-2026",
         "examType": "vize"
@@ -855,9 +875,13 @@
     "correctAnswer": "E",
     "explanation": "Dekker ve Peterson algoritmaları yazılımsal çözümlerdir. Monitör ve Semaforlar işletim sistemi veya dil seviyesinde araçlardır. Kesmelerin kapatılması (Disabling Interrupts) ise işlemcinin araya girmesini donanımsal seviyede engelleyen bir yöntemdir.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
-    "examType": "final",
+    "year": "2026-2027",
+    "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -997,9 +1021,13 @@
     "correctAnswer": "B",
     "explanation": "“Diskte boş alan yönetimi”, I/O alt sisteminin değil, Dosya Yönetim Sisteminin (File System Management) görevidir. I/O yönetimi; tamponlama (buffering), önbellekleme (caching) ve sürücü (driver) yönetimiyle ilgilenir.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
-    "examType": "final",
+    "year": "2026-2027",
+    "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      },
       {
         "year": "2024-2025",
         "examType": "final"
@@ -1066,9 +1094,13 @@
     "correctAnswer": "C",
     "explanation": "Disk planlaması (disk okuma/yazma kafasının hareketlerini optimize etmek), işletim sisteminin G/Ç (Giriş/Çıkış) altsisteminin bir görevidir. Bellek yönetimi ise ana belleğin tahsisi, geri alınması ve bellek ile disk arasındaki veri transferi (takas) gibi işlemlerle ilgilenir.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2026-2027",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -1158,9 +1190,13 @@
     "correctAnswer": "C",
     "explanation": "Soruda tanımlanan görevler (diskten proses seçip hazır kuyruğuna koyma), Uzun Vadeli Planlayıcı’nın (İş Planlayıcısı) görevidir. Öncelik temelli planlama algoritması ise Kısa Vadeli Planlayıcı (CPU Planlayıcısı) tarafından hazır kuyruğundaki proseslerden hangisinin CPU’ya atanacağını belirlemek için kullanılır. Dolayısıyla bu algoritma bir CPU planlayıcısıdır, iş planlayıcısı değildir.",
     "source": "cikmis-soru",
-    "year": "2024-2025",
+    "year": "2026-2027",
     "examType": "vize",
     "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      },
       {
         "year": "2024-2025",
         "examType": "vize"
@@ -1191,6 +1227,10 @@
       {
         "year": "2023-2024",
         "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "butunleme"
       }
     ]
   },
@@ -1214,6 +1254,10 @@
       {
         "year": "2023-2024",
         "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "butunleme"
       }
     ]
   },
@@ -1237,6 +1281,10 @@
       {
         "year": "2023-2024",
         "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "butunleme"
       }
     ]
   },
@@ -1260,6 +1308,10 @@
       {
         "year": "2023-2024",
         "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "butunleme"
       }
     ]
   },
@@ -1283,6 +1335,10 @@
       {
         "year": "2023-2024",
         "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "butunleme"
       }
     ]
   },
@@ -1306,6 +1362,10 @@
       {
         "year": "2023-2024",
         "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "butunleme"
       }
     ]
   },
@@ -1329,6 +1389,10 @@
       {
         "year": "2023-2024",
         "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "butunleme"
       }
     ]
   },
@@ -1352,6 +1416,10 @@
       {
         "year": "2023-2024",
         "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "butunleme"
       }
     ]
   },
@@ -1375,6 +1443,10 @@
       {
         "year": "2023-2024",
         "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "butunleme"
       }
     ]
   },
@@ -1398,6 +1470,10 @@
       {
         "year": "2023-2024",
         "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "butunleme"
       }
     ]
   },
@@ -1421,6 +1497,10 @@
       {
         "year": "2023-2024",
         "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "butunleme"
       }
     ]
   },
@@ -1444,6 +1524,10 @@
       {
         "year": "2023-2024",
         "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "butunleme"
       }
     ]
   },
@@ -1467,6 +1551,10 @@
       {
         "year": "2023-2024",
         "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "butunleme"
       }
     ]
   },
@@ -1490,6 +1578,10 @@
       {
         "year": "2023-2024",
         "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "butunleme"
       }
     ]
   },
@@ -1513,6 +1605,10 @@
       {
         "year": "2023-2024",
         "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "butunleme"
       }
     ]
   },
@@ -1536,6 +1632,10 @@
       {
         "year": "2023-2024",
         "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "butunleme"
       }
     ]
   },
@@ -1559,6 +1659,10 @@
       {
         "year": "2023-2024",
         "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "butunleme"
       }
     ]
   },
@@ -1582,6 +1686,10 @@
       {
         "year": "2023-2024",
         "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "butunleme"
       }
     ]
   },
@@ -1605,6 +1713,10 @@
       {
         "year": "2023-2024",
         "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "butunleme"
       }
     ]
   },
@@ -1628,6 +1740,10 @@
       {
         "year": "2023-2024",
         "examType": "uc-ders"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "butunleme"
       }
     ]
   },
@@ -1650,6 +1766,10 @@
     "sinavlar": [
       {
         "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
         "examType": "vize"
       }
     ]
@@ -1674,6 +1794,10 @@
       {
         "year": "2023-2024",
         "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
       }
     ]
   },
@@ -1696,6 +1820,10 @@
     "sinavlar": [
       {
         "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
         "examType": "vize"
       }
     ]
@@ -1720,6 +1848,10 @@
       {
         "year": "2023-2024",
         "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
       }
     ]
   },
@@ -1742,6 +1874,10 @@
     "sinavlar": [
       {
         "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
         "examType": "vize"
       }
     ]
@@ -1766,6 +1902,10 @@
       {
         "year": "2023-2024",
         "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
       }
     ]
   },
@@ -1788,6 +1928,10 @@
     "sinavlar": [
       {
         "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
         "examType": "vize"
       }
     ]
@@ -1812,6 +1956,10 @@
       {
         "year": "2023-2024",
         "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
       }
     ]
   },
@@ -1834,6 +1982,10 @@
     "sinavlar": [
       {
         "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
         "examType": "vize"
       }
     ]
@@ -1858,6 +2010,10 @@
       {
         "year": "2023-2024",
         "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
       }
     ]
   },
@@ -1880,6 +2036,10 @@
     "sinavlar": [
       {
         "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
         "examType": "vize"
       }
     ]
@@ -1904,6 +2064,10 @@
       {
         "year": "2023-2024",
         "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
       }
     ]
   },
@@ -1926,6 +2090,10 @@
     "sinavlar": [
       {
         "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
         "examType": "vize"
       }
     ]
@@ -1950,6 +2118,10 @@
       {
         "year": "2023-2024",
         "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
       }
     ]
   },
@@ -1972,6 +2144,10 @@
     "sinavlar": [
       {
         "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
         "examType": "vize"
       }
     ]
@@ -1996,6 +2172,10 @@
       {
         "year": "2023-2024",
         "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
       }
     ]
   },
@@ -2018,6 +2198,424 @@
     "sinavlar": [
       {
         "year": "2023-2024",
+        "examType": "vize"
+      },
+      {
+        "year": "2022-2023",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-5023868d18a8",
+    "unitNumber": 0,
+    "text": "Lolonolo Ek Soru : Aşağıdakilerden hangisi işletim sisteminin temel görevlerinden biri değildir?",
+    "options": {
+      "A": "Web sitesi tasarlamak",
+      "B": "Proses yönetimi",
+      "C": "Bellek yönetimi",
+      "D": "Dosya yönetimi",
+      "E": "Giriş-çıkış yönetimi"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2026-2027",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-830cbca95fc0",
+    "unitNumber": 0,
+    "text": "Lolonolo Ek Soru : Bilgisayar açıkken verilerin geçici olarak tutulduğu ve kapanınca içeriği silinen bellek hangisidir?",
+    "options": {
+      "A": "RAM",
+      "B": "ROM",
+      "C": "Sabit disk",
+      "D": "USB bellek",
+      "E": "DVD"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2026-2027",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2e1611bf6a55",
+    "unitNumber": 0,
+    "text": "Lolonolo Ek Soru : İşletim sisteminde bir programın çalışmakta olan haline ne ad verilir?",
+    "options": {
+      "A": "Proses",
+      "B": "Dosya",
+      "C": "Sürücü",
+      "D": "Dizin",
+      "E": "Derleyici"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2026-2027",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b2b0c508fb8e",
+    "unitNumber": 0,
+    "text": "Lolonolo Ek Soru : Aşağıdakilerden hangisi bir işletim sistemi örneğidir?",
+    "options": {
+      "A": "Linux",
+      "B": "Google Chrome",
+      "C": "Microsoft Word",
+      "D": "Photoshop",
+      "E": "WhatsApp"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2026-2027",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-4c07e9a6601b",
+    "unitNumber": 0,
+    "text": "Lolonolo Ek Soru : İşletim sisteminin kısaltması aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "OS",
+      "B": "CPU",
+      "C": "RAM",
+      "D": "ROM",
+      "E": "BIOS"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2026-2027",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3f6e471f1890",
+    "unitNumber": 0,
+    "text": "Aşağıdakilerden hangisi birden fazla prosesin ana belleğe yerleştirilmesi için kullanılan tekniklerden biri değildir?",
+    "options": {
+      "A": "Disk bölümleme",
+      "B": "Sabit bölümleme",
+      "C": "Sanal bellek",
+      "D": "Dinamik bölümleme",
+      "E": "Sayfalama"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2026-2027",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-fadea2a6b82b",
+    "unitNumber": 0,
+    "text": "Bilgisayar donanımlarını işletim sistemlerine tanıtabilmek amacıyla aşağıda verilen yazılım araçlarının hangisinden faydalanılmaktadır?",
+    "options": {
+      "A": "Derleyiciler",
+      "B": "Editörler",
+      "C": "İşletim sistemleri",
+      "D": "Yorumlayıcılar",
+      "E": "Sürücüler"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2026-2027",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-7c64dba0adc9",
+    "unitNumber": 0,
+    "text": "Inode tahsis etme yöntemi ile ilgili aşağıda verilen bilgilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Unix temelli işletim sistemlerinde kullanılır.",
+      "B": "Inode ile ana bellek üzerinde dosyalara indeksli yer tahsisi yapılır.",
+      "C": "Inode, dosya sistemleri için geliştirilmiş özel bir disk bloğudur.",
+      "D": "Inode tarafından her dosya indekslenir.",
+      "E": "Inode sayısı kadar bir dosya sisteminde dosya ve dizin oluşturulabilir."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2026-2027",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-931452edd078",
+    "unitNumber": 0,
+    "text": "Yazılımlar ile ilgili olarak aşağıda verilen ifadelerden hangisi yanlıştır?",
+    "options": {
+      "A": "Yazılım olmadan donanım birimleri mekanik işlevlerden ibarettir.",
+      "B": "İşletim sistemleri yazılımı uygulama yazılımlarına bir örnektir.",
+      "C": "Sistem yazılımları, uygulama yazılımları ile bilgisayar donanımı arasındaki bağlantıyı sağlar.",
+      "D": "Uygulama yazılımları bir problemi çözmek için geliştirilen özel yazılımlardır.",
+      "E": "Yazılım, klasik yaklaşımda uygulama yazılımları ve sistem yazılımları olmak üzere 2 ana başlıkta sınıflandırılmaktadır."
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2026-2027",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e01560630ad9",
+    "unitNumber": 0,
+    "text": "Aşağıdaki bilgiler birden fazla prosesin ana belleğe yerleştirilmesi için kullanılan tekniklerden hangisine aittir?<br />• Bellek prosesin büyüklüğüne göre büyüyüp küçülemez.<br />• İç parçalanma ve dış parçalanma problemleri yaşanabilir.<br />• Bellek eşit veya farklı büyüklüklerde bölümlere ayrılabilir.<br />• Proses parçalara ayrılmaz.",
+    "options": {
+      "A": "Dinamik bölümleme",
+      "B": "Sabit bölümleme",
+      "C": "Sanal bellek",
+      "D": "TLB",
+      "E": "Segmentasyon"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2026-2027",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-b6f1ded13b81",
+    "unitNumber": 0,
+    "text": "Çeşitli bölümlerin kullanılmayan alanların toplamı, prosesi yüklemek için yeterli alana sahip olsa bile prosesin yüklenmesi için kullanılamaz. Bu durum &#8230;&#8230; olarak bilinir. Yukarıda verilen cümle aşağıda verilen terimlerden hangisiyle en uygun şekilde tamamlanır?",
+    "options": {
+      "A": "iç parçalanma",
+      "B": "sıkıştırma",
+      "C": "dış parçalanma",
+      "D": "segmente",
+      "E": "bellek bölümü"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2026-2027",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-294bfd760820",
+    "unitNumber": 0,
+    "text": "Dizin yapısıyla ilgili aşağıda verilen bilgilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Birbirlerine benzer ve ilgili dosyalar bir araya gelerek dizinleri oluştururlar.",
+      "B": "Dizin içerisindeki dosyalar listelenir.",
+      "C": "Dizinler üzerinde dosyayı silme, güncelleme işlemleri gerçekleştirilebilir.",
+      "D": "Dizinler, ana bellekte saklanırlar.",
+      "E": "Dizinler her dosya için bir kayda sahiptirler."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2026-2027",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-61a5e62dfeca",
+    "unitNumber": 0,
+    "text": "Uzun dönemli planlayıcılarla ilgili aşağıda verilen bilgilerden hangisi yanlıştır?",
+    "options": {
+      "A": "İş planlayıcısı görevini en uygun şekilde gerçekleştirmezse eğer giriş-çıkış işlemleri uzun süren prosesler, diğer proseslerin çok daha fazla beklemesine neden olabilir.",
+      "B": "İş planlayıcısı olarakta bilinir.",
+      "C": "Temel amacı giriş/çıkış işlemlerine bağlı veya CPU’ya bağlı prosesler arasından en iyi seçimleri yapmaktır.",
+      "D": "Diskten prosesleri seçerler ve ana bellekte yer alan hazır kuyruğunda prosesleri tutarlar.",
+      "E": "CPU planlayıcısı olarak da bilinir."
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2026-2027",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-08b5f3fd70f9",
+    "unitNumber": 0,
+    "text": "Stack bölümü prosesin hangi bölümünü saklar?",
+    "options": {
+      "A": "Başlangıç değeri atanan global ve statik veri değişkenlerini içerir.",
+      "B": "Herhangi bir değer ataması olmamış tüm genel ve statik değişkenleri içerir.",
+      "C": "Bir program tarafından çağrılan bir fonksiyonun ihtiyaç duyabileceği bütün veriler (yerel değişkenler, yerel fonksiyonlar, dönüş adresleri) saklanır.",
+      "D": "Çalışma zamanı sırasında belleğe ihtiyaç duyduğu zaman dinamik bellek sağlamak için kullanılır.",
+      "E": "0 aritmetik değer ile başlatılmış tüm genel ve statik değişkenleri içerir."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2026-2027",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-e7d729725e40",
+    "unitNumber": 0,
+    "text": "Dizin yapılarının uygulanmasında kullanılan doğrusal liste algoritması ile ilgili aşağıda verilen bilgilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Her bir dosya, veri bloğunun adresini ve dizindeki bir sonraki dosyayı gösteren işaretçiler (pointer) içerir.",
+      "B": "Dosya üzerinde gerçekleştirilecek silme, oluşturma, güncelleme gibi işlemlerin hepsi için liste baştan sona tek tek gezinilmek zorundadır.",
+      "C": "Her bir dosya için bir anahtar-değer çifti oluşturulur.",
+      "D": "Bir dizindeki tüm dosyalar bağlı liste olarak tutulurlar.",
+      "E": "Bağlı liste veri yapısının davranışlarını sergiler."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2026-2027",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-2c996c08a30b",
+    "unitNumber": 0,
+    "text": "<pre>1 While (lock!=0);<br/>2 lock=1;<br/>3 //Kritik bölge<br/>4 Exit Section<br/>5 lock=0;</pre><br/>Yukarıda tanımlanan kod parçası aşağıda verilen problemlerden hangisine sahiptir?",
+    "options": {
+      "A": "Karşılıklı dışlama sağlanır.",
+      "B": "İlerleme, sınırlı bekleme koşullarını sağlar.",
+      "C": "Karşılıklı dışlama, ilerleme ve sınırlı bekleme koşullarını sağlamaz.",
+      "D": "Sadece ilerleme koşulunu sağlamaz.",
+      "E": "İlerleme koşulları sağlanır."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2026-2027",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-c7a4afe46791",
+    "unitNumber": 0,
+    "text": "Aşağıdaki seçeneklerden hangisi dizinlerin saklanma yapılarından biri değildir?",
+    "options": {
+      "A": "Yığın yapısındaki dizinler",
+      "B": "Tek seviyeli dizinler",
+      "C": "İki seviyeli dizinler",
+      "D": "Ağaç yapısı şeklinde olan dizinler",
+      "E": "Döngüsel olmayan graf yapısındaki dizinler"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2026-2027",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2026-2027",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-6fffb4d25375",
+    "unitNumber": 0,
+    "text": "En kısa arama süresini dikkate alarak disk planlamasını yapan algoritma hangisidir?",
+    "options": {
+      "A": "A ) SSTF (shortest seek time first ) algoritması",
+      "B": "B ) FCFS algoritması",
+      "C": "C ) LOOK algoritması",
+      "D": "D ) C-LOOK algoritması",
+      "E": "E ) SCAN algoritması"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2022-2023",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2022-2023",
         "examType": "vize"
       }
     ]

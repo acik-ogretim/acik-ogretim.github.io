@@ -902,5 +902,143 @@
         "examType": "final"
       }
     ]
+  },
+  {
+    "id": "s-57b05764e23a",
+    "unitNumber": 0,
+    "text": "<pre><strong><code>ALTER SESSION SET plsql_implicit_conversion_bool = TRUE;<br/>DECLARE<br/>a BOOLEAN := TRUE;<br/>b BOOLEAN := NULL;<br/>durum BOOLEAN;<br/>BEGIN<br/>durum := NOT a OR b;<br/>DBMS_OUTPUT.PUT_LINE('#' || durum || '#');<br/>END;</code></strong></pre><br/>Yukarıda verilen PL/SQL programının çıktısı aşağıdaki hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "#NOT#",
+      "B": "#NULL#",
+      "C": "##",
+      "D": "#FALSE#",
+      "E": "#TRUE#"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-8a29df533a43",
+    "unitNumber": 0,
+    "text": "<pre><strong><code><br/>DECLARE<br/>sonuc NUMBER := -2**3*-2 3;<br/>BEGIN<br/>DBMS_OUTPUT.PUT_LINE(sonuc);<br/>END;</code></strong></pre><br/>Yukarıda verilen PL/SQL programının çıktısı aşağıdaki hangi seçenekte doğru verilmiştir?",
+    "options": {
+      "A": "15",
+      "B": "-15",
+      "C": "9",
+      "D": "19",
+      "E": "-19"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-f1abbd91ad29",
+    "unitNumber": 0,
+    "text": "<pre><strong><code><br/>DECLARE<br/>a NUMBER(2) := -1;<br/>BEGIN DBMS_OUTPUT.PUT_LINE(a);<br/>BEGINa :=1; END;DBMS_OUTPUT.PUT_LINE(a);<br/>DBMS_OUTPUT.PUT_LINE(a); END;<br/></code></strong></pre><br/>Yukarıda verilen PL/SQL programının çıktısı aşağıdaki hangi şıkta doğru verilmiştir?",
+    "options": {
+      "A": "-1-1-1",
+      "B": "1-11",
+      "C": "-11-1",
+      "D": "111",
+      "E": "-111"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-06c0de71331a",
+    "unitNumber": 0,
+    "text": "<pre><strong><code><br/>BEGIN<br/>FOR i IN -3..-1 LOOP<br/>IF i &lt; -2 THEN<br/>NULL;<br/>ELSE<br/>DBMS_OUTPUT.PUT_LINE(-1);<br/>DBMS_OUTPUT.PUT_LINE(i);<br/>END IF;<br/>END LOOP;<br/>END;</code></strong></pre><br/>Yukarıda verilen PL/SQL programının çıktısı aşağıdaki hangi seçenekte verilmiştir?",
+    "options": {
+      "A": "321",
+      "B": "32-1",
+      "C": "3-2-1",
+      "D": "12-3",
+      "E": "-3-2-1"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2025-2026",
+    "examType": "vize",
+    "sinavlar": [
+      {
+        "year": "2025-2026",
+        "examType": "vize"
+      }
+    ]
+  },
+  {
+    "id": "s-3f3ba5594093",
+    "unitNumber": 0,
+    "text": "<pre><code><br/>DECLARE<br/>...<br/>BEGIN<br/>SELECT * INTO rec_regions FROM regions<br/>WHERE region_id = 4;<br/>DBMS_OUTPUT.PUT_LINE('Bölge: ' || rec_<br/>regions.region_name);<br/>END;<br/></code></pre><br/>Yukarıda verilen programın çalışması için üç nokta ile boş bırakılan satıra aşağıdaki şıklardan hangisi gelmelidir?",
+    "options": {
+      "A": "rec_regions HR.regions%ROWTYPE;",
+      "B": "rec_regions HR.regions%TYPE;",
+      "C": "rec_regions %ROWTYPE%HR.regions ;",
+      "D": "rec_regions HR.regions;",
+      "E": "regions HR.rec_regions%ROWTYPE;"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1caea0db78bb",
+    "unitNumber": 0,
+    "text": "<pre><code><br/>DECLARE<br/>CURSOR krsr_job ( p_min_salary NUMBER )<br/>RETURN jobs%ROWTYPE<br/>IS<br/>SELECT *<br/>FROM jobs<br/>WHERE min_salary &gt; p_min_salary;<br/>rec jobs%ROWTYPE;<br/>BEGIN<br/>...<br/>EXIT WHEN krsr_job%NOTFOUND;<br/>DBMS_OUTPUT.PUT_LINE(rec.job_id || ' : ' || rec.job_title);<br/>END LOOP;<br/>CLOSE krsr_job;<br/>END;<br/></code></pre><br/>Yukarıda verilen krsr_job isimli kursör kullanılarak min_salary değeri 20000&#8217;den büyük satırlar FOR döngüsüyle konsola çıktılanmak istenmektedir. Programın çalışması için &#8230; üç nokta ile boş bırakılan satıra aşağıdaki şıklardan hangisi gelmelidir?",
+    "options": {
+      "A": "FOR min_salary IN krsr_job (20000) LOOP",
+      "B": "FOR krsr_job(20000) IN min_salary LOOP",
+      "C": "FOR rec IN krsr_job (20000) LOOP",
+      "D": "FOR rec(20000) IN krsr_job LOOP",
+      "E": "FOR rec IN min_salary (20000) LOOP"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2024-2025",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2024-2025",
+        "examType": "final"
+      }
+    ]
   }
 ]

@@ -1,1 +1,439 @@
-[]
+[
+  {
+    "id": "s-d02c3ae25b45",
+    "unitNumber": 0,
+    "text": "Veri tabanı tablolarında geçişli bağımlılıkların kaldırıldığı normalleşme formu aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "4NF",
+      "B": "1NF",
+      "C": "3NF",
+      "D": "2NF",
+      "E": "BCNF"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-8534a9750a30",
+    "unitNumber": 0,
+    "text": "SELECT Adı, Ücret FROM PERSONEL WHERE Ücret &gt; (SELECT AVG(Ücret) FROM PERSONEL); sorgusu aşağıdakilerden hangisini yapar?",
+    "options": {
+      "A": "Herkesin ücretinin ortalamasını bulur.",
+      "B": "Belli personellerin ücretinin ortalamasını bulur.",
+      "C": "Herkesin ücretinin ortalamasından daha fazla ücret alan personelleri bulur.",
+      "D": "Herkesin ücretinin ortalamasından daha az ücret alan personelleri bulur.",
+      "E": "Belli personellerin ücretinin toplamını bulur."
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-815975cfe48b",
+    "unitNumber": 0,
+    "text": "Bir veri tabanında depolanacak verileri kısıtlayan koşullar aşağıdakilerden hangisi ile ifade edilir?",
+    "options": {
+      "A": "Veri kısıtlamaları",
+      "B": "Alan kısıtlamaları",
+      "C": "Anahtar kısıtlamaları",
+      "D": "Tablo kısıtlamaları",
+      "E": "Bütünlük kısıtlamaları"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-87db2dcf4f76",
+    "unitNumber": 0,
+    "text": "Aşağıdakilerden hangisi Ali isimli bir kullanıcının şifresini 1a2b3c4d5e6f olarak değiştirmek için kullanılan bir sorgudur?",
+    "options": {
+      "A": "CREATE USER Ali IDENTIFIED BY 1a2b3c4d5e6f;",
+      "B": "GRANT USER Ali IDENTIFIED BY 1a2b3c4d5e6f;",
+      "C": "GRANT CREATE USER Ali IDENTIFIED BY 1a2b3c4d5e6f;",
+      "D": "REVOKE USER Ali IDENTIFIED BY 1a2b3c4d5e6f;",
+      "E": "ALTER USER Ali IDENTIFIED BY 1a2b3c4d5e6f;"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-6db30ef82c0f",
+    "unitNumber": 0,
+    "text": "Bir veri tabanının temelini oluşturan ve bilgilerin tutulduğu nesne aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "Form",
+      "B": "Görünüm",
+      "C": "Dizin",
+      "D": "İndeks",
+      "E": "Tablo"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e7e5d5fc6a97",
+    "unitNumber": 0,
+    "text": "Personel arasında görevi MEMUR olanlara %10, ŞEF olanlara %15, MÜDÜR olanlara ise %20 zam yapılması için gerçekleştirilecek olan SQL sorgusu aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "SELECT Adı, Görevi, Ücret DECODE(Görevi, Ücret*1,10, Ücret*1,15, Ücret*1,20) FROM PERSONEL;",
+      "B": "SELECT Adı, Görevi, Ücret DECODE(Görevi, ‘Memur’, ‘Şef’, ‘Müdür’, Ücret*1,10, Ücret*1,15, Ücret*1,20, Ücret) FROM PERSONEL;",
+      "C": "SELECT Adı, Görevi, Ücret DECODE(Görevi, ‘Memur’, Ücret*1,10, ‘Şef’, Ücret*1,15, ‘Müdür’, Ücret*1,20, Ücret) FROM PERSONEL;",
+      "D": "SELECT Adı, Görevi, Ücret DECODE(Memur, Ücret*1,10, Şef, Ücret*1,15, Müdür, Ücret*1,20, Ücret) FROM PERSONEL;",
+      "E": "SELECT Adı, Görevi, Ücret DECODE(‘Memur’, ‘Şef’, ‘Müdür’, Ücret*1,10, Ücret*1,15, Ücret*1,20, Ücret) FROM PERSONEL;"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-610445fcfe81",
+    "unitNumber": 0,
+    "text": "Alanları PersonelNo, Adı, Görevi, Ücret, BölümNo olan bir PERSONEL tablosu ve alanları BölümNo, Bölüm Adı, Konum olan bir BÖLÜM tablosu arasındaki ilişki nasıl kurulur?",
+    "options": {
+      "A": "İki tablodaki en çok veriye sahip olan alan üzerinde işlem yapılarak",
+      "B": "İki tabloda ortak olan BölümNo alanından faydalanılarak",
+      "C": "İki tablodaki herhangi bir alan üzerinde işlem yapılarak",
+      "D": "İki tablodaki en az veriye sahip olan alan üzerinde işlem yapılarak",
+      "E": "İki tablodaki bütün alanlar birleştirilerek"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-f68927cbc812",
+    "unitNumber": 0,
+    "text": "Aşağıdaki SQL sorgularından hangisi yanlış yazılmıştır?",
+    "options": {
+      "A": "SELECT BölümNo, Görevi, SUM(Ücret) AS TOPLAM FROM PERSONEL; GROUP BY BölümNo, Görevi ORDER BY BölümNo;",
+      "B": "SELECT BölümNo, AVG(Ücret) FROM PERSONEL; GROUP BY BölümNo;",
+      "C": "SELECT BölümNo, COUNT(*) FROM PERSONEL;",
+      "D": "SELECT BölümNo, COUNT(*) FROM PERSONEL; GROUP BY BölümNo;",
+      "E": "SELECT AVG(Ücret) FROM PERSONEL GROUP BY BölümNo;"
+    },
+    "correctAnswer": "C",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-76e673dc345c",
+    "unitNumber": 0,
+    "text": "Aşağıdaki veri tabanı yönetim sistemlerinin hangisinde COMMIT ve ROLLBACK işlemlerine ihtiyaç duyulmaz?&lt;",
+    "options": {
+      "A": "Web veri tabanı yönetim sistemleri",
+      "B": "İlişkisel veri tabanı yönetim sistemleri",
+      "C": "Çok kullanıcılı veri tabanı yönetim sistemleri",
+      "D": "Masaüstü veri tabanı yönetim sistemleri",
+      "E": "Tek kullanıcılı veri tabanı yönetim sistemleri"
+    },
+    "correctAnswer": "E",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-c58eb155cbd2",
+    "unitNumber": 0,
+    "text": "Aşağıdakilerden hangisi veri tabanı tablolarını birleştirmek için kullanılan bir birleştirme türü değildir?",
+    "options": {
+      "A": "Eşiti olmayan birleştirme",
+      "B": "Belirsiz birleştirme",
+      "C": "Eşiti olan birleştirme",
+      "D": "Küme operatörünü kullanarak birleştirme",
+      "E": "Dış birleştirme"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-80ac215f9c22",
+    "unitNumber": 0,
+    "text": "UPDATE PERSONEL SET BölümNo=10 WHERE PersonelNo=300 sorgusu aşağıdakilerden hangisini yapar?",
+    "options": {
+      "A": "300 numaralı personelin BölümNo’sunu 10 olarak değiştirir.",
+      "B": "10 ve 300 numaralı personelleri birbiriyle değiştirir.",
+      "C": "300 numaralı tüm personelin PersonelNo’sunu 10 olarak değiştirir.",
+      "D": "300 numaralı bölümün BölümNo’sunu 10 olarak değiştirir.",
+      "E": "300 numaralı personelin PersonelNo’sunu 10 olarak değiştirir."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-e37f03ef289b",
+    "unitNumber": 0,
+    "text": "SELECT Görevi, SUM(Ücret) FROM PERSONEL WHERE Görevi &lt;&gt; ‘PAZARLAMACI’ GROUP BY Görevi HAVING SUM(Ücret)&gt; 5000 ORDER BY SUM(Ücret); <br />Yukarıdaki sorgu aşağıdakilerden hangisini yapar?",
+    "options": {
+      "A": "Pazarlamacı dışında görevi olan personeli görevlerine göre gruplandırır, bölümünün toplam ücreti 5000’den fazla olanlar seçilir.",
+      "B": "Pazarlamacı olan personelin ücretleri toplanır, bölümünün toplam ücreti 5000’den fazla olanlar seçilir, sonuçlar en düşük ücret toplamından büyüğe doğru sıralanır.",
+      "C": "Pazarlamacı dışında görevi olan personeli görevlerine göre gruplandırır, bölümünün toplam ücreti 5000’den fazla olanlar seçilir, sonuçlar en düşük ücret toplamından büyüğe doğru sıralanır.",
+      "D": "Pazarlamacı dışında görevi olan personeli görevlerine göre gruplandırır, ücretleri toplanır, bölümünün toplam ücreti 5000’den fazla olanlar seçilir, sonuçlar en düşük ücret toplamından büyüğe doğru sıralanır.",
+      "E": "Pazarlamacı dışında görevi olan personeli görevlerine göre gruplandırır, sonuçlar en düşük ücret toplamından büyüğe doğru sıralanır."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-6c1514139849",
+    "unitNumber": 0,
+    "text": "Veri tabanındaki bir tablonun bir kaydı ile diğer tablonun bir kaydı eşleştirilirse bu iki tablo arasındaki ilişki nasıl bir ilişki olur?",
+    "options": {
+      "A": "Bire bir ilişki",
+      "B": "Çoka bir ilişki",
+      "C": "Belirsiz ilişki",
+      "D": "Çoka çok ilişki",
+      "E": "Bire çok ilişki"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1049ecbce502",
+    "unitNumber": 0,
+    "text": "SQL’deki TO_CHAR ve TO_NUMBER fonksiyonlarının kullanımı ile ilgili aşağıdakilerden hangisi yanlıştır?",
+    "options": {
+      "A": "Her fonksiyonun kullanılabileceği belli veri türleri vardır.",
+      "B": "Bu fonksiyonların kullanımı sonucunda veri tabanı tablosundaki kaydın değeri değişmez, sadece görüntüleme biçimi değişir.",
+      "C": "Kategori olarak dönüştürme fonksiyonları olarak ifade edilir.",
+      "D": "Bu fonksiyonlar WHERE, ORDER BY vb. deyimlerden farklı deyimler ile beraber kullanılır.",
+      "E": "İhtiyaca göre farklı formatta dönüştürmeler gerçekleştirilebilir."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-1b19d453acf4",
+    "unitNumber": 0,
+    "text": "SELECT Adı, Ücret FROM PERSONEL WHERE Ücret = (SELECT MIN (Ücret) FROM PERSONEL); sorgusunda hangi kısım alt sorgudur?",
+    "options": {
+      "A": "SELECT MIN (Ücret) FROM PERSONEL",
+      "B": "SELECT Adı, Ücret FROM PERSONEL",
+      "C": "MIN (Ücret) FROM PERSONEL",
+      "D": "SELECT Adı, Ücret FROM PERSONEL WHERE Ücret",
+      "E": "FROM PERSONEL WHERE Ücret"
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-aaae00fa56c5",
+    "unitNumber": 0,
+    "text": "İsmi Tablo1, içerdiği alanlar Alan1, Alan2 ve Alan3 olan bir tablodaki bütün verilerin silinmesi için aşağıdaki komutlardan hangisi kullanılmalıdır?",
+    "options": {
+      "A": "Truncate Table Tablo1;",
+      "B": "Truncate Alan1, Alan2, Alan3;",
+      "C": "Truncate Tablo1;",
+      "D": "Truncate Tablo1 (Alan1, Alan2, Alan3);",
+      "E": "Truncate Tablo1 (Table Alan1, Alan2, Alan3);"
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-bdbb58a548fd",
+    "unitNumber": 0,
+    "text": "Alanları Adı, Soyadı ve İşeGirişTarihi şeklinde olan bir Personel tablosundaki personeller arasında o iş yerinde en az sürede çalışandan en çok sürede çalışana doğru bir sıralama işlemi gerçekleştiren SQL sorgusu aşağıdakilerden hangisidir?",
+    "options": {
+      "A": "SELECT * FROM Personel ORDER BY İşeGirişTarihi;",
+      "B": "SELECT * FROM Personel ORDER BY İşeGirişTarihi DESC;",
+      "C": "SELECT * FROM Personel GROUP BY İşeGirişTarihi DESC;",
+      "D": "SELECT * FROM Personel GROUP BY İşeGirişTarihi;",
+      "E": "SELECT * FROM Personel WHERE İşeGirişTarihi;"
+    },
+    "correctAnswer": "B",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-2cc1435da901",
+    "unitNumber": 0,
+    "text": "Tablo ve görünüm oluşturma yetkilerine sahip olan bir YÖNETİCİ rolü oluşturmak ve veri tabanı yönetim sistemindeki Ali ve Ayşe kullanıcılarına bu rol yetkisini vermek için aşağıdaki işlemlerden hangisi gerçekleştirilmez?",
+    "options": {
+      "A": "YÖNETİCİ ismiyle oluşturulan rolün işlemleri başarıyla gerçekleştirip gerçekleştirilemediğine bakılır.",
+      "B": "YÖNETİCİ ismiyle oluşturulan role, tablo oluşturma yetkisi verilir.",
+      "C": "YÖNETİCİ ismiyle oluşturulan role, görünüm oluşturma yetkisi verilir.",
+      "D": "YÖNETİCİ rolüne verilen yetkiler Ali ve Ayşe kullanıcılara verilir.",
+      "E": "YÖNETİCİ isimli rol tanımlanır."
+    },
+    "correctAnswer": "A",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  },
+  {
+    "id": "s-157ef9f05f2b",
+    "unitNumber": 0,
+    "text": "İlişkisel cebir işlemleri ile ilgili aşağıdakilerden hangisi doğrudur?",
+    "options": {
+      "A": "İki veya daha çok tabloda ortak olan alanlar içerisinde belli bir kurala uyan elemanları bulmak için atma + birleşme işlemi birlikte kullanılır.",
+      "B": "İki veya daha çok tabloda ortak olan alanlar içerisinde belli bir kurala uyan elemanları bulmak için seçim + birleşme işlemi birlikte kullanılır.",
+      "C": "İki veya daha çok tabloda ortak olan alanlar içerisinde belli bir kurala uyan elemanları bulmak için atma + kesişme işlemi birlikte kullanılır.",
+      "D": "İki veya daha çok tabloda ortak olan alanlar içerisinde belli bir kurala uyan elemanları bulmak için seçim + kesişme işlemi birlikte kullanılır.",
+      "E": "İki veya daha çok tabloda ortak olan alanlar içerisinde belli bir kurala uyan elemanları bulmak için atma + seçim işlemi birlikte kullanılır."
+    },
+    "correctAnswer": "D",
+    "explanation": "",
+    "source": "cikmis-soru",
+    "year": "2023-2024",
+    "examType": "final",
+    "sinavlar": [
+      {
+        "year": "2023-2024",
+        "examType": "final"
+      }
+    ]
+  }
+]
