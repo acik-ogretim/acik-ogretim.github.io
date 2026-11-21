@@ -41,8 +41,8 @@ def ic(ad, ek=""):
     return f'<svg class="i {ek}" aria-hidden="true"><use href="#i-{ad}"/></svg>'
 
 
-def ekran(icerik, alt, aciklama, koyu=False):
-    tema = ' data-tema="koyu"' if koyu else ""
+def ekran(icerik, alt, aciklama, koyu=False, palet=""):
+    tema = (' data-tema="koyu"' if koyu else "") + (f' data-palet="{palet}"' if palet else "")
     return (f'<figure><div class="ekran"{tema}><div class="durum"><span>9:41</span><span class="ada"></span>'
             f'<span>100%</span></div>{icerik}<div class="ana-cubuk"></div></div><figcaption>{alt}. {aciklama}</figcaption></figure>')
 
@@ -88,7 +88,7 @@ ADIM = lambda n: '<div class="adimlar" style="padding:0;margin:4px 0 16px">' + "
 def sayfa(ad, baslik, ekranlar):
     html = (f'<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" '
             f'content="width=device-width,initial-scale=1,viewport-fit=cover"><title>{baslik}</title>'
-            f'<link rel="stylesheet" href="ortak.css"></head><body>{SPRITE}<div class="sahne">{"".join(ekranlar)}</div></body></html>')
+            f'<link rel="stylesheet" href="ortak.css"></head><body>{SPRITE}<a class="galeri" href="index.html">‹ Tüm ekranlar</a><div class="sahne">{"".join(ekranlar)}</div></body></html>')
     (KOK / f"{ad}.html").write_text(html)
 
 
@@ -275,4 +275,45 @@ k12 = [
           "12c", "Hata ve 404: suçlama yok, aynı ekranda arama ile çıkış", koyu=True),
 ]
 sayfa("12-pwa-durumlar", "PWA durumları", k12)
+# ---------- 13 renk seçenekleri ----------
+SORU = re.findall(r"<figure>.*?</figure>", (KOK / "01-soru-cozme.html").read_text(), re.S)[1]
+SORU = re.sub(r"<figcaption>.*?</figcaption>", "", SORU)
+PALETLER = [("", "Şimdiki: deniz yeşili", "Soğuk gri zemin ve deniz yeşili; güvenli ama sağlık ve finans uygulamalarında çok görülen bir kalıp"),
+            ("murekkep", "A. Mürekkep ve fosforlu kalem", "Lacivert mürekkep, kaldığın yer ve arama eşleşmesi fosforlu sarı; ders çalışırken kitabın altını çizme alışkanlığından"),
+            ("okul", "B. Okulunun rengi", "Nötr zemin, vurgu öğrencinin üniversitesinin rengi (burada AUZEF bordosu); her okulda uygulama kendi kimliğine bürünür"),
+            ("kobalt", "C. Kobalt", "Canlı kobalt mavisi; daha enerjik ve teknolojik, en az özgün olan seçenek"),
+            ("kehribar", "D. Gece ve kehribar", "Koyu öncelikli; kehribar vurgu dinleme ve gece çalışması için, açık tema ikincil")]
+k13 = []
+for kod, ad, ack in PALETLER:
+    k13.append(ekran(ana(), ad, ack, palet=kod))
+    soru = SORU.replace('<div class="ekran"', f'<div class="ekran" data-palet="{kod}"', 1).replace(' data-palet=""', "")
+    k13.append(soru.replace("</div></figure>", f"</div><figcaption>{ad}: soru çözme, cevaplanmış</figcaption></figure>"))
+sayfa("13-renk-secenekleri", "Renk seçenekleri", k13)
+
+# ---------- 14 iOS 26 tarzı cam ----------
+def camla(h):
+    return h.replace('<div class="ekran"', '<div class="ekran cam"', 1)
+ekstra = ilerlemeli("Fiziksel Büyüme ve Motor Gelişim", "40 / 330 soru", 12) + ilerlemeli("Özel Eğitime Giriş", "0 / 260 soru", 0) + ilerlemeli("Çocuk Edebiyatı", "0 / 240 soru", 0)
+ana_uzun = ana().replace("</main>", ekstra + "</main>", 1)
+soru_cam = SORU.replace('<div class="ekran"', '<div class="ekran cam" data-palet="murekkep"', 1).replace("</div></figure>", "</div><figcaption>14b. Soru çözme: üst çubuk ve oynatıcı cam kapsül, soru metni altlarından akar</figcaption></figure>")
+ayar_sayfa = k11[1].replace('<div class="ekran"', '<div class="ekran" data-palet="murekkep"', 1)
+ayar_sayfa = re.sub(r"<figcaption>.*?</figcaption>", "<figcaption>14c. Alt sayfa kenarlardan ayrılır, köşeleri ekran köşesiyle eş merkezli</figcaption>", ayar_sayfa)
+sayfa("14-ios-cam", "iOS 26 tarzı cam deneme", [
+    camla(ekran(ana_uzun, "14a", "Sekme çubuğu yüzen cam kapsül; liste arkasından bulanık akar, seçili sekme hap içinde", palet="murekkep")),
+    soru_cam, camla(ayar_sayfa),
+    camla(ekran(ana_uzun, "14d", "Gece ve kehribar paletinde cam", palet="kehribar")),
+])
+
+# ---------- galeri ----------
+satirlar = "".join(
+    f'<li><a href="{f.name}"><span>{f.name[:2]}</span>{re.search(r"<title>(.*?)</title>", f.read_text()).group(1)}</a></li>'
+    for f in sorted(KOK.glob("[01][0-9]-*.html")))
+(KOK / "index.html").write_text(
+    '<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+    '<title>Açık Öğretim Portal mobil tasarım</title><style>body{font-family:system-ui;background:#F3F5F6;color:#10202A;margin:0;padding:32px 20px}'
+    'main{max-width:640px;margin:auto}h1{font-size:26px;margin:0 0 6px}p{color:#4E5F69;line-height:1.5}ul{list-style:none;padding:0;display:grid;gap:8px}'
+    'a{display:flex;gap:12px;align-items:center;min-height:52px;padding:0 16px;background:#fff;border:1.5px solid #D3DBDF;border-radius:12px;color:#10202A;text-decoration:none;font-weight:600}'
+    'a:hover{border-color:#0A7C76}a span{color:#06605B;font-variant-numeric:tabular-nums;width:24px}</style></head><body><main>'
+    '<h1>Mobil öncelikli tasarım, Kasım 2026</h1><p>01-06 ders sayfası, 07-12 uygulama kabuğu, 13 renk seçenekleri. Her sayfada birden çok ekran yan yana; sol üstteki düğme buraya döner.</p>'
+    f"<ul>{satirlar}</ul></main></body></html>")
 print("ok")

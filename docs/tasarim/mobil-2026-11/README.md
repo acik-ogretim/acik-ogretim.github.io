@@ -17,6 +17,9 @@ Canlı kod değişmedi; yalnız tasarım çıktısı.
   10. `10-ilerleme.html`: genel ölçüler, ders ayrıntısı, boş durum
   11. `11-ayarlar.html`: ayarlar, görünüm, eşitleme, yapay zekâ anahtarı
   12. `12-pwa-durumlar.html`: ana ekrana ekle, güncelleme ve çevrimdışı, 404
+  13. `13-renk-secenekleri.html`: şimdiki deniz yeşili ve dört aday palet (mürekkep ve fosforlu kalem, okul rengi, kobalt, gece ve kehribar)
+  14. `14-ios-cam.html`: iOS 26 tarzı cam deneme (yüzen kapsül sekme çubuğu, cam oynatıcı, kenardan ayrık alt sayfa)
+- `index.html`: tüm maketlerin listesi; her maketin sol üstündeki düğme buraya döner.
 - `uret_uygulama.py`: 07-12 maketlerini üretir (`python3 uret_uygulama.py`).
 - `onizleme/`: her kareden 390x844 PNG ekran görüntüsü (Playwright + Chrome).
 

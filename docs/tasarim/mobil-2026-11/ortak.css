@@ -227,3 +227,34 @@ mark{background:var(--uyari-zemin);color:var(--metin);border-radius:3px;padding:
 .cubuk-yatay .mini i{border-radius:5px}
 .logo{width:72px;height:72px;border-radius:20px;background:var(--vurgu);color:var(--vurgu-ustu);display:grid;place-items:center}
 .logo .i{width:38px;height:38px}
+
+/* ---- galeriye dönüş bağlantısı ---- */
+.galeri{position:sticky;top:12px;left:12px;z-index:100;display:inline-flex;margin-bottom:12px;align-items:center;gap:6px;min-height:44px;padding:0 16px;border-radius:999px;background:#10202A;color:#fff;font:600 14px/1 system-ui;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.galeri:focus-visible{outline:3px solid #4CC9BE;outline-offset:2px}
+
+/* ---- renk seçenekleri (13-renk-secenekleri.html); tüm roller WCAG ile ölçüldü, vurgu/yüzey >= 7:1 ---- */
+.ekran[data-palet=murekkep]{--zemin:#F4F4F2;--yuzey:#FFFFFF;--yuzey-2:#E9E9E5;--cizgi:#D6D6D0;--metin:#1A1C22;--metin-2:#575A63;
+ --vurgu:#2B3A67;--vurgu-metin:#2B3A67;--vurgu-ustu:#FFFFFF;--vurgu-zemin:#E4E7F0;--uyari:#1A1C22;--uyari-zemin:#FFE066}
+.ekran[data-palet=murekkep] mark{background:#FFF1A8}
+.ekran[data-palet=okul]{--zemin:#F3F2F1;--yuzey:#FFFFFF;--yuzey-2:#E8E6E4;--cizgi:#D8D4D1;--metin:#1C1A1A;--metin-2:#5C5655;
+ --vurgu:#8A1C2B;--vurgu-metin:#7A1826;--vurgu-ustu:#FFFFFF;--vurgu-zemin:#F4E4E6}
+.ekran[data-palet=kobalt]{--zemin:#F3F4F8;--yuzey:#FFFFFF;--yuzey-2:#E6E8F0;--cizgi:#D2D6E2;--metin:#12152A;--metin-2:#50556B;
+ --vurgu:#2A44D4;--vurgu-metin:#2239B8;--vurgu-ustu:#FFFFFF;--vurgu-zemin:#E3E7FB}
+.ekran[data-palet=kehribar]{--zemin:#121316;--yuzey:#1B1D22;--yuzey-2:#262931;--cizgi:#33363F;--metin:#ECEDEF;--metin-2:#A3A7B0;
+ --vurgu:#FFB547;--vurgu-metin:#FFB547;--vurgu-ustu:#1A1206;--vurgu-zemin:#3A2C14;
+ --dogru:#5DD28A;--dogru-zemin:#10301F;--yanlis:#FF8F85;--yanlis-zemin:#3A1C1A;--uyari:#F2C14E;--uyari-zemin:#33290F;--golge:0 6px 24px rgba(0,0,0,.5)}
+
+/* ---- iOS 26 tarzı cam deneme (14-ios-cam.html) ----
+   Safari'de çalışan kısım: -webkit-backdrop-filter blur + saturate, yarı saydam yüzey, iç parlama çizgisi, yüzen kapsül.
+   backdrop-filter:url(#svg) ile kırılma yalnız Chromium'da çalışır; bu maket onu kullanmaz, gerçek iPhone'daki görünüm budur. */
+.ekran.cam{--cam:color-mix(in srgb,var(--yuzey) 58%,transparent);--cam-kenar:color-mix(in srgb,#fff 55%,transparent);--cam-golge:0 10px 30px rgba(0,0,0,.18)}
+.ekran.cam[data-palet=kehribar]{--cam:color-mix(in srgb,var(--yuzey) 52%,transparent);--cam-kenar:color-mix(in srgb,#fff 16%,transparent)}
+.ekran.cam .sekmeler,.ekran.cam .bar,.ekran.cam .ust,.ekran.cam .sayfa{background:var(--cam);-webkit-backdrop-filter:blur(22px) saturate(180%);backdrop-filter:blur(22px) saturate(180%);border:1px solid var(--cam-kenar);box-shadow:inset 0 1px 0 var(--cam-kenar),var(--cam-golge)}
+.ekran.cam .sekmeler{left:max(14px,var(--sal));right:max(14px,var(--sar));bottom:calc(var(--sab) + 4px);height:62px;padding:5px;border-radius:31px;gap:2px}
+.ekran.cam .sekmeler a{border-radius:26px;min-height:50px}
+.ekran.cam .sekmeler a.secili{background:color-mix(in srgb,var(--vurgu) 16%,transparent)}
+.ekran.cam .kabuk{padding-bottom:0}
+.ekran.cam .ust{top:calc(var(--sat) + 4px);left:10px;right:10px;height:52px;border-radius:26px}
+.ekran.cam .icerik.altta{inset:var(--sat) 0 0 0;padding-top:72px}
+.ekran.cam .sayfa{left:8px;right:8px;bottom:8px;border-radius:34px;padding-bottom:calc(var(--sab) - 8px)}
+.ekran.cam .perde{background:rgba(5,12,16,.25)}
