@@ -30,19 +30,51 @@ export function anlatimHtml(k: CalismaKonu): string {
     : "";
   return (c.ozet ? `<p class="co-ozet">${esc(c.ozet)}</p>` : "") + liste("Temel noktalar", c.temelNoktalar) + sebep + liste("Örnekler", c.ornekler) + liste("Benzetmeler", c.benzetmeler);
 }
-/** Uzun anlatım satırlarını konuşmacı değişene kadar birleştirip okunur paragraflara çevirir. */
-export type AnlatimParagrafi = { k: string; bas: number; metin: string };
-export function anlatimParagraflari(satirlar: { bas: number; k: string; m: string }[]): AnlatimParagrafi[] {
-  const sonuc: AnlatimParagrafi[] = [];
-  for (const s of satirlar) {
-    const m = s.m.trim();
-    if (!m) continue;
-    const son = sonuc[sonuc.length - 1];
-    if (son && son.k === s.k && son.metin.length < 900) son.metin += ` ${m}`;
-    else sonuc.push({ k: s.k, bas: s.bas, metin: m });
+/** Minimal, escaped Markdown for generated topic explanations: "### " subheadings, "- " and "1. " lists, **bold**, paragraphs. */
+export function mdHtml(md: string): string {
+  const satir = (x: string): string => esc(x).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  const out: string[] = [];
+  let liste: "ul" | "ol" | null = null;
+  let paragraf: string[] = [];
+  const paragrafiKapat = (): void => {
+    if (paragraf.length) out.push(`<p>${paragraf.map(satir).join(" ")}</p>`);
+    paragraf = [];
+  };
+  const listeyiKapat = (): void => {
+    if (liste) out.push(`</${liste}>`);
+    liste = null;
+  };
+  for (const ham of md.split("\n")) {
+    const x = ham.trim();
+    const madde = /^[-*]\s+(.*)$/.exec(x);
+    const sirali = /^\d+[.)]\s+(.*)$/.exec(x);
+    const baslik = /^#{2,4}\s+(.*)$/.exec(x);
+    if (!x) {
+      paragrafiKapat();
+      listeyiKapat();
+    } else if (baslik) {
+      paragrafiKapat();
+      listeyiKapat();
+      out.push(`<h4 class="co-ak-h">${satir(baslik[1])}</h4>`);
+    } else if (madde || sirali) {
+      paragrafiKapat();
+      const tur = madde ? "ul" : "ol";
+      if (liste !== tur) {
+        listeyiKapat();
+        out.push(`<${tur} class="co-ak-liste">`);
+        liste = tur;
+      }
+      out.push(`<li>${satir((madde ?? sirali)![1])}</li>`);
+    } else {
+      listeyiKapat();
+      paragraf.push(x);
+    }
   }
-  return sonuc;
+  paragrafiKapat();
+  listeyiKapat();
+  return out.join("");
 }
+
 export const dusunHtml = (k: CalismaKonu): string =>
   k.calisma?.tartismaSorulari?.length
     ? `<h4 class="co-alt-baslik">Üzerine düşün</h4><ul class="co-noktalar">${k.calisma.tartismaSorulari.map((m) => `<li>${esc(m)}</li>`).join("")}</ul>`

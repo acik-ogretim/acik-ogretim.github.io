@@ -11,6 +11,7 @@ const KonuTemel = z.object({
   html: z.string(),
   metin: z.string(),
   calisma: CalismaSemasi.optional(),
+  anlatim: z.string().optional(), // written topic explanation (Markdown) from scripts/konu-anlatimi-uret.py
 });
 /** Per media id: first line and number of lines where that media covers the topic (derived from medya.konuAraliklari on load). */
 export const KonuSemasi = KonuTemel.extend({ video: z.record(z.string(), z.object({ ilk: z.number(), say: z.number() })) });
@@ -59,7 +60,7 @@ export const medyaAdi = (m: Pick<CalismaMedyasi, "cesit" | "unite">): string => 
 /** Label of a topic chip: "Videoda 12:34", "Uzun anlatımda Ünite 2 · 08:10". */
 export const medyaCipEtiketi = (m: Pick<CalismaMedyasi, "cesit" | "unite" | "tur">, zaman: string): string => {
   const yer = m.tur === "youtube" && m.cesit === "kisa-ozet" ? "Videoda" : CESIT_EKLI[m.cesit];
-  return m.unite ? `${yer} Ünite ${m.unite} · ${zaman}` : `${yer} ${zaman}`;
+  return `${yer} ${zaman}`;
 };
 
 export const AdTurleri = ["kisi", "topluluk", "yer", "olay", "eser", "kurum", "akim"] as const;

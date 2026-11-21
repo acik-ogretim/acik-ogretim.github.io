@@ -261,6 +261,13 @@ function paketle(ders) {
     sayac.set(k.unite, say);
     k.goster = [k.unite, ...say.slice(1, derinlik).map((n) => n || 1)].join(".");
   }
+  // Written topic explanations: data/calisma-odasi/anlatim/<ders>.json ({no: markdown}) from scripts/konu-anlatimi-uret.py.
+  const anlatimYolu = join(kok, "data", "calisma-odasi", "anlatim", `${ders}.json`);
+  if (existsSync(anlatimYolu)) {
+    const anlatimlar = oku(anlatimYolu);
+    for (const k of konuListesi) if (typeof anlatimlar[k.no] === "string") k.anlatim = anlatimlar[k.no];
+    console.log(`[calisma-odasi] ${ders}: ${konuListesi.filter((k) => k.anlatim).length} konuda yazılı konu anlatımı`);
+  }
   if (takma.size) console.log(`[calisma-odasi] ${ders}: ${takma.size} bölünmüş başlık ya da boş konu birleştirildi (${[...takma.keys()].join(", ")})`);
   // Proper names (people, civilizations, places, events, works...): data/calisma-odasi/adlar/<ders>.json from scripts/adlar-uret.py.
   // They become underlined terms like concepts, with tur set so the page can list them apart.

@@ -1456,38 +1456,126 @@ dialog .co-arac[data-alt] {
 }
 .co-ak-anlatim {
   margin-top: 12px;
-}
-.co-ak-notlar .co-ozet:first-of-type {
-  margin-top: 4px;
-}
-.co-ak-anlatim-p {
-  margin: 0 0 12px;
   font-size: 16px;
   line-height: 1.7;
 }
-.co-ak-dinle {
+.co-ak-anlatim p {
+  margin: 0 0 12px;
+}
+.co-ak-anlatim .co-ak-h {
+  margin: 22px 0 8px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.co-ak-anlatim .co-ak-h:first-child {
+  margin-top: 4px;
+}
+.co-ak-liste {
+  margin: 0 0 14px;
+  padding-left: 22px;
+}
+ul.co-ak-liste {
+  list-style: disc;
+}
+ol.co-ak-liste {
+  list-style: decimal;
+}
+.co-ak-liste li {
+  margin: 0 0 8px;
+  padding-left: 2px;
+}
+.co-ak-liste li::marker {
+  color: var(--text-secondary, currentColor);
+  font-weight: 600;
+}
+.co-ak-katlar {
+  display: grid;
+  margin-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+.co-ak-kat {
+  border-bottom: 1px solid var(--border-color);
+}
+.co-ak-kat > summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+.co-ak-kat > summary::-webkit-details-marker {
+  display: none;
+}
+.co-ak-kat > summary svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  transition: transform 160ms ease;
+}
+.co-ak-kat[open] > summary svg {
+  transform: rotate(180deg);
+}
+.co-ak-kat-ic {
+  padding: 2px 0 14px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.co-ak-kat-ic > p {
+  margin: 0 0 10px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .co-ak-kat > summary svg {
+    transition: none;
+  }
+}
+.co-paragraf {
+  padding: 8px 0;
+  font-size: 16px;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+.co-paragraf .co-satir {
+  display: inline;
+  gap: 0;
+  padding: 2px 0;
+  margin: 0;
+  border-radius: 4px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.co-paragraf .co-satir-metin {
+  font-size: inherit;
+  line-height: inherit;
+}
+.co-paragraf .co-satir:hover {
+  background: var(--button-bg);
+}
+.co-paragraf .co-satir[data-simdi] {
+  background: var(--primary-soft);
+}
+.co-dinle {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
   justify-content: center;
-  width: 28px;
-  min-height: 28px;
-  padding: 0;
-  margin-right: 4px;
+  width: 30px;
+  height: 30px;
+  margin-right: 6px;
   border: 1px solid var(--border-color);
   border-radius: 8px;
   background: transparent;
   color: inherit;
-  font-size: 13px;
-  font-weight: 600;
-  vertical-align: 2px;
+  vertical-align: -6px;
   cursor: pointer;
 }
-.co-ak-dinle svg {
-  width: 14px;
-  height: 14px;
+.co-dinle svg {
+  width: 16px;
+  height: 16px;
 }
-.co-ak-dinle:hover,
-.co-ak-dinle:focus-visible {
+.co-dinle:hover,
+.co-dinle:focus-visible {
   border-color: currentColor;
 }
