@@ -110,15 +110,19 @@ Gece çalışan, telefonda soru çözen ve dinleyen yetişkin öğrenci için sa
 
 **Şık** (`.option-item`, `.option-key`): en az 56 px, 16 px köşe, 1 px kenar. Harf rozeti 32 px daire. Durumlar: varsayılan, seçili (`--primary-soft` zemin, `--primary-text` rozet), doğru (`.is-correct`, `.was-revealed`: doğru kenar ve zemin, onay simgesi), yanlış (`.is-wrong`: yanlış kenar ve zemin, çarpı), soluk (cevaptan sonra diğerleri %70). Renk tek başına anlam taşımaz, simge de vardır.
 
-**Açıklama** (`.explanation-card`): iç yüzey zemini, 20 px köşe, yan şerit yok. Başlıkta "Açıklama" ve nötr iki simge düğmesi (seslendir, derse sor); kaynak satırı meta boyutunda. Açıklaması olmayan soruda kart yerine tek satır: "Açıklama yok · Yapay zekâ ile açıkla" (`AIMenu`, anahtar yoksa ayarlara götürür).
+**Açıklama** (`.explanation-card`): iç yüzey zemini, 20 px köşe, yan şerit yok. Başlıkta "Açıklama" ve nötr iki simge düğmesi (seslendir, derse sor). Metinde doğru cevabın adı `--primary-text` renginde ve 600 ağırlıkta öne çıkar; kaynak satırı (ünite ve sayfa) altta meta boyutunda. Açıklaması olmayan soruda kart yerine tek satır: "Açıklama yok · Yapay zekâ ile açıkla" (`AIMenu`, anahtar yoksa ayarlara götürür).
 
 **Ünite şeridi** (`.btn-unit-nav`): yatay kaydırılan çipler, seçili çip `--primary-soft`. Üst çubuk anlık soruyu "Ü 4 · 12 / 40" diye gösterir (`currentIndex`).
+
+**Konu çipi** (`.q-konu`): sınav çipinin yanında, vurgu metni renginde konu numarası ve adı, sağda küçük ok; tek satır, sığmazsa üç nokta. Yalnız konu ağacı olan derste çıkar, dokununca kitaptaki konuya gider.
 
 **Kip seçici**: ders sayfasının başında iki parçalı seçici, Okuma ve Çözme (`btn-toggle-interactive` ile aynı durum).
 
 **Oynatıcı çubuğu** (`#quiz-player-bar`): yüzen kapsül, 60 px, cam yüzey. Oynat ortada nötr ve sabit; iki yanında kullanıcının seçtiği ikişer eylem (`cubuk-duzeni`), sığmayanlar alt sayfa ızgarasında. Mevcut düğme kimlikleri korunur (`btn-prev`, `btn-next`, `btn-read-question`, `btn-read-explanation`, `btn-stop-speech`, `btn-speed`, `btn-toggle-reader`, `btn-open-settings`, `btn-mobil-menu`).
 
 **Alt sayfa**: Base UI `Drawer` (sohbet ve içindekilerle aynı). Kenarlardan 8 px ayrık, 28 px köşe, tutamaç, cam yüzey; perde %25 karartma; `role="dialog"`, odak içeri girer ve kapanınca çağıran düğmeye döner; arka sayfa `inert`.
+
+**Ders üst çubuğu**: yüzen cam kapsül, 52 px, kenarlardan 10 px içeride. Solda geri, ortada ders adı ve altında "Ü 4 · 12 / 40" (ikisi de tek satır, üç nokta), sağda işaret (`aria-pressed`, `isaretli-<ders>` gelince) ve içindekiler simge düğmeleri.
 
 **Sekme çubuğu**: yüzen cam kapsül, 62 px, beş sekme, seçili sekme nötr hap içinde, `aria-current="page"`.
 

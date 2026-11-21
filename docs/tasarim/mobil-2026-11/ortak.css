@@ -371,3 +371,14 @@ mark{background:var(--uyari-zemin);color:var(--metin);border-radius:3px;padding:
 .ekran.yeni mark{padding:0;border-radius:3px;background:var(--vurgu-zemin);color:inherit}
 /* soru kutusuz: kart yüzeyi ve kenar yok, sorular arasında ince ayraç */
 .ekran.yeni .qkart{background:none;border:0;border-radius:0;padding:4px 0 20px;margin:0 0 20px;border-bottom:1px solid var(--cizgi)}
+/* kapsül üst çubuk (20), konu çipi, açıklamada doğru cevap vurgusu */
+.ekran.yeni .ust.kapsul{top:calc(var(--sat) + 4px);left:10px;right:10px;height:52px;border-radius:26px;padding:0 6px;
+  background:color-mix(in srgb,var(--yuzey) 62%,transparent);backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);border:1px solid var(--cizgi)}
+.ekran.yeni .ust.kapsul .ust-b{min-width:0;flex:1}
+.ekran.yeni .ust.kapsul .ust-b .k1{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ekran.yeni .ust.kapsul .dugme.isaretli{color:var(--metin)}
+.ekran.yeni .qkart .ust-sat{flex-wrap:nowrap;overflow:hidden}
+.ekran.yeni .konu-cip{min-width:0;flex:1 1 auto;color:var(--vurgu-metin);text-decoration:none;gap:2px}
+.ekran.yeni .konu-cip .k1{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.ekran.yeni .konu-cip .i{flex:none;width:14px;height:14px}
+.ekran.yeni .vurgu-m{color:var(--vurgu-metin);font-weight:600}

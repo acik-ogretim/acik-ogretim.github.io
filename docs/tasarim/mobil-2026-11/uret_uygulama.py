@@ -14,6 +14,7 @@ YENI = {
     "kitaplik": '<path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>',
     "grafik": '<path d="M3 3v18h18"/><path d="M8 17v-6"/><path d="M13 17V7"/><path d="M18 17v-3"/>',
     "disli": '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/>',
+    "isaret": '<path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/>',
     "yildiz": '<polygon points="12 2 15.1 8.3 22 9.3 17 14.1 18.2 21 12 17.8 5.8 21 7 14.1 2 9.3 8.9 8.3 12 2"/>',
     "bulut": '<path d="M17.5 19H9a7 7 0 1 1 6.7-9h1.8a4.5 4.5 0 1 1 0 9Z"/>',
     "anahtar-i": '<circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/>',
@@ -420,8 +421,9 @@ sayfa("19-tema17-duzeltmeler", "Tema 17 üstünde Stitch ve Nano Banana düzeltm
 ])
 
 # ---------- 20 yapıya uygun ders sayfası ----------
-def qkart(sinav, soru, siklar, durum=None, aciklama=None, konu=None):
-    sat = f'<div class="ust-sat"><span class="chip">{sinav}</span>' + (f'<span class="k1" style="font-size:13px;color:var(--metin-2)">{konu}</span>' if konu else "") + "</div>"
+def qkart(sinav, soru, siklar, durum=None, aciklama=None, konu=None, kaynak="Ünite 4, s. 82"):
+    sat = (f'<div class="ust-sat"><span class="chip">{sinav}</span>'
+           + (f'<a class="chip konu-cip" href="#"><span class="k1">{konu}</span>{SAG}</a>' if konu else "") + "</div>")
     sk = ""
     for h, t in siklar:
         sinif = {"d": "dogru", "y": "yanlis", "s": "soluk"}.get((durum or {}).get(h, ""), "")
@@ -432,12 +434,17 @@ def qkart(sinav, soru, siklar, durum=None, aciklama=None, konu=None):
         ac = f'<div class="ac-yok">{ic("bilgi" if False else "sohbet", "i-s")}<span style="flex:1">Açıklama yok · <b>Yapay zekâ ile açıkla</b></span>{SAG}</div>'
     elif aciklama:
         ac = (f'<div class="aciklama"><div class="aciklama-b">{ic("dosya", "i-s")}<b>Açıklama</b><button class="dugme hafif yuvarlak" aria-label="Seslendir">{ic("ses", "i-s")}</button>'
-              f'<button class="dugme hafif yuvarlak" aria-label="Derse sor">{ic("sohbet", "i-s")}</button></div><p>{aciklama}</p><p class="kaynak">Ünite 4, s. 82</p></div>')
+              f'<button class="dugme hafif yuvarlak" aria-label="Derse sor">{ic("sohbet", "i-s")}</button></div><p>{aciklama}</p><p class="kaynak">{kaynak}</p></div>')
     return f'<div class="qkart"><p class="soru">{soru}</p>{sat if False else ""}{sk}{ac}</div>'.replace('<div class="qkart"><p', f'<div class="qkart">{sat}<p', 1)
 
 SIK1 = [("A", "Toplumsal sözleşme kuramı"), ("B", "Güç (zor) kuramı"), ("C", "Ailecilik kuramı"), ("D", "Teokratik kuram"), ("E", "Organik kuram")]
 SIK2 = [("A", "Mutlak monarşi"), ("B", "Meşruti monarşi"), ("C", "Oligarşi"), ("D", "Teokrasi"), ("E", "Cumhuriyet")]
-UST20 = lambda alt: ust("Devlet Teorisi", alt, sag=("liste", "İçindekiler"))
+def ust_kapsul(baslik, alt, isaretli=False):
+    return (f'<header class="ust kapsul"><button class="dugme" aria-label="Geri">{ic("left")}</button>'
+            f'<div class="ust-b"><b class="k1">{baslik}</b><span class="k1">{alt}</span></div>'
+            f'<button class="dugme{" isaretli" if isaretli else ""}" aria-label="Soruyu işaretle" aria-pressed="{str(isaretli).lower()}">{ic("isaret", "i-fill" if isaretli else "")}</button>'
+            f'<button class="dugme" aria-label="İçindekiler">{ic("liste")}</button></header>')
+UST20 = lambda alt, isaretli=False: ust_kapsul("Devlet Teorisi", alt, isaretli)
 SERIT = '<div class="serit"><span class="chip">Ü 2</span><span class="chip">Ü 3</span><span class="chip secili">Ü 4</span><span class="chip">Ü 5</span><span class="chip">Ü 6</span><span class="chip">Ü 7</span></div>'
 KIP = lambda c: f'<div class="segment" style="margin:0 0 10px"><button class="dugme {"secili" if c == 0 else ""}">Okuma</button><button class="dugme {"secili" if c == 1 else ""}">Çözme</button></div>'
 GIRIS = ('<div class="giris"><h2>Devlet Teorisi</h2><p style="color:var(--metin-2);font-size:14px">Anadolu AÖF · SBY103U · 2017-2025 arası 9 yılın soruları</p>'
@@ -445,12 +452,12 @@ GIRIS = ('<div class="giris"><h2>Devlet Teorisi</h2><p style="color:var(--metin-
 OYN = (f'<nav class="bar" aria-label="Oynatıcı"><div class="ilerle"><i style="width:30%"></i></div><button class="dugme" aria-label="Önceki">{ic("prev")}</button>'
        f'<button class="dugme" aria-label="Soruyu oku">{ic("ses")}</button><button class="dugme oynat" aria-label="Oynat">{ic("play", "i-fill")}</button>'
        f'<button class="dugme" aria-label="Süzgeç">{ic("ayar")}</button><button class="dugme" aria-label="Sonraki">{ic("next")}</button></nav>')
-ACK1 = "Toplumsal sözleşme kuramına göre devlet, doğa durumundan çıkmak isteyen bireylerin özgür iradeleriyle yaptıkları bir sözleşmeyle kurulur."
+ACK1 = "<b class=\"vurgu-m\">Toplumsal sözleşme kuramına</b> göre devlet, doğa durumundan çıkmak isteyen bireylerin özgür iradeleriyle yaptıkları bir sözleşmeyle kurulur."
 k20 = [
     ekran(UST20("Ü 4 · 12 / 40") + '<main class="icerik" style="padding-bottom:0">' + KIP(0) + GIRIS + SERIT
           + qkart("2023 Final", "Devletin ortaya çıkışını açıklayan kuramlardan hangisi, devleti bireylerin sözleşmesinin ürünü olarak görür?", SIK1, {"A": "d", "B": "s", "C": "s", "D": "s", "E": "s"}, ACK1)
           + "</main>" + OYN, "20a", "Ders sayfası, okuma kipi: ders girişi kartı, ünite şeridi, liste hâlinde kutusuz sorular; cevap ve açıklama açık gelir (showAnswers)"),
-    ekran(UST20("Ü 4 · 13 / 40") + '<main class="icerik" style="padding-bottom:0">' + KIP(1) + SERIT
+    ekran(UST20("Ü 4 · 13 / 40", True) + '<main class="icerik" style="padding-bottom:0">' + KIP(1) + SERIT
           + qkart("2022 Vize", "Yönetimin dinî kurallara ve din adamlarına dayandığı devlet biçimi hangisidir?", SIK2, {"A": "y", "B": "s", "C": "s", "D": "d", "E": "s"}, "yok")
           + qkart("2023 Final", "Devletin ortaya çıkışını açıklayan kuramlardan hangisi, devleti bireylerin sözleşmesinin ürünü olarak görür?", SIK1)
           + "</main>" + OYN, "20b", "Çözme kipi: cevaplanan soru sonucu gösterir, sıradaki soru altında bekler; açıklaması olmayan soruda tek satır yapay zekâ önerisi"),
@@ -477,6 +484,13 @@ k20 = [
           + qkart("2023 Final", "Devletin ortaya çıkışını açıklayan kuramlardan hangisi, devleti bireylerin sözleşmesinin ürünü olarak görür?", SIK1, {"A": "d", "B": "y", "C": "s", "D": "s", "E": "s"}, ACK1)
           + "</main>" + OYN, "20f", "Çözme kipi, koyu tema", koyu=True),
 ]
+SIK3 = [("A", "Psikoloji"), ("B", "Sosyoloji"), ("C", "Antropoloji"), ("D", "Ekonomi"), ("E", "Tarih")]
+k20.append(ekran(ust_kapsul("Sosyolojiye Giriş", "Ü 1 · 4 / 36") + '<main class="icerik" style="padding-bottom:0">'
+    + qkart("2024 Vize", "Toplumu bilimsel yöntemlerle inceleyen bilim dalı hangisidir?", SIK3,
+            {"A": "s", "B": "d", "C": "s", "D": "s", "E": "s"},
+            "<b class=\"vurgu-m\">Sosyoloji</b>, toplumu oluşturan ilişkileri, grupları ve kurumları gözlem ve araştırmaya dayanarak inceler.",
+            konu="1.3.1 Sosyolojinin Tanımı ve Kapsamı", kaynak="Ünite 1, s. 3")
+    + "</main>" + OYN, "20g", "Konu ağacı olan ders (ATA-AÖF Sosyolojiye Giriş), aşağı kaydırılmış: sınav çipinin yanında konu bağlantısı kitaptaki konuya gider; açıklamada doğru cevabın adı vurgu metni renginde"))
 sayfa("20-yapiya-uygun", "Yapıya uygun ders sayfası", k20)
 URUN_EK = ["20-yapiya-uygun"]
 
