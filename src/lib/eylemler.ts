@@ -15,6 +15,7 @@ import {
   RefreshCw,
   Search,
   Settings,
+  SlidersHorizontal,
   SkipBack,
   SkipForward,
   Square,
@@ -83,6 +84,7 @@ export const EYLEMLER: Eylem[] = [
   { id: "soruyu-oku", etiket: "Soruyu oku", simge: Mic, yerel: "btn-read-question", calistir: () => tikla("#btn-read-question") },
   { id: "aciklamayi-oku", etiket: "Açıklamayı oku", simge: BookOpen, yerel: "btn-read-explanation", calistir: () => tikla("#btn-read-explanation") },
   { id: "durdur", etiket: "Okumayı durdur", simge: Square, yerel: "btn-stop-speech", calistir: () => tikla("#btn-stop-speech") },
+  { id: "suzgec", etiket: "Süzgeç", simge: SlidersHorizontal, kisayol: "F", tus: "f", calistir: () => window.dispatchEvent(new CustomEvent("suzgec:ac")) },
   { id: "ayarlar", etiket: "Ayarlar", simge: Settings, yerel: "btn-open-settings", calistir: () => sayfa().openQuizSettings?.() },
   { id: "ara", etiket: "Ara", simge: Search, kisayol: "Ctrl K", calistir: () => tikla("#toggleSearch") },
   { id: "basa-don", etiket: "Başa dön", simge: ArrowUp, kisayol: "Home", tus: "Home", calistir: basaDon },
@@ -120,7 +122,7 @@ export const VARSAYILAN_CUBUK: readonly string[] = [
   "aciklamayi-oku",
   "durdur",
   "ileri",
-  "ayarlar",
+  "suzgec",
 ];
 
 export const DEPO_ANAHTARI = "cubuk-duzeni";

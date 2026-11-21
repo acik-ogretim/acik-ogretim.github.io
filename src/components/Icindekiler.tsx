@@ -17,6 +17,7 @@ function KonuSatiri({ k, derinlik, git }: { k: IcKonu; derinlik: number; git: (h
     <li>
       <button
         type="button"
+        id={`ic-konu-${k.no}`}
         onClick={() => git(k.hedef)}
         style={{ paddingLeft: `${0.75 + derinlik * 0.875}rem` }}
         className={`flex min-h-11 w-full items-center gap-2 rounded-lg pr-2 text-left text-sm active:bg-[var(--button-bg-hover)] md:hover:bg-[var(--button-bg-hover)] ${odak}`}
@@ -40,8 +41,18 @@ export default function Icindekiler({ uniteler }: { uniteler: IcUnite[] }) {
   const [acilan, setAcilan] = useState<Set<number>>(new Set());
   const beklenen = useRef<string | null>(null);
 
+  // A topic chip on a question opens the list at that topic: its unit expanded, the row focused.
+  const [hedefKonu, setHedefKonu] = useState<string | null>(null);
   useEffect(() => {
-    const ac = () => setAcik(true);
+    const ac = (e: Event) => {
+      const konu = (e as CustomEvent<{ konu?: string } | null>).detail?.konu ?? null;
+      if (konu) {
+        const unite = Number.parseInt(konu, 10);
+        setAcilan((onceki) => new Set(onceki).add(unite));
+      }
+      setHedefKonu(konu);
+      setAcik(true);
+    };
     addEventListener(ICINDEKILER_OLAYI, ac);
     return () => removeEventListener(ICINDEKILER_OLAYI, ac);
   }, []);
@@ -77,7 +88,7 @@ export default function Icindekiler({ uniteler }: { uniteler: IcUnite[] }) {
           style={{ bottom: "var(--klavye, 0px)" }}
         >
           <Drawer.Popup
-            initialFocus={() => document.getElementById("icindekiler-kapat") ?? true}
+            initialFocus={() => (hedefKonu && document.getElementById(`ic-konu-${hedefKonu}`)) || document.getElementById("icindekiler-kapat") || true}
             className="flex w-full max-w-lg flex-col overflow-hidden rounded-t-2xl border border-b-0 border-theme shadow-2xl outline-none transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] motion-reduce:transition-none
               max-md:[transform:translateY(var(--drawer-swipe-movement-y))] max-md:data-starting-style:[transform:translateY(100%)] max-md:data-ending-style:[transform:translateY(100%)]
               md:h-full md:max-w-[26rem] md:rounded-none md:border-y-0 md:border-r-0 md:border-l md:[transform:none] md:data-starting-style:[transform:translateX(100%)] md:data-ending-style:[transform:translateX(100%)]"

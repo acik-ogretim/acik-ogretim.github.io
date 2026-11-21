@@ -1,4 +1,6 @@
 import type { OptionKey, PlayerQuestion, PlayerUI, QuizSettings, Source } from "../lib/types";
+import { suz } from "../lib/suzgec";
+import { KIP_OLAYI, KONUM_ISTE_OLAYI, SORU_KONUMU_OLAYI, type SoruKonumu } from "../lib/ders-olaylari";
 
 export class QuizPlayer {
   questions: PlayerQuestion[];
@@ -310,6 +312,21 @@ export class QuizPlayer {
 
     this.setupOptionListeners();
     this.setupSettingsListeners();
+    window.addEventListener(KONUM_ISTE_OLAYI, () => {
+      this.updateStatusText();
+      window.dispatchEvent(new CustomEvent<{ cozme: boolean }>(KIP_OLAYI, { detail: { cozme: this.isInteractive } }));
+    });
+    // "Seslendir" button in each explanation header reads that question's explanation
+    document.addEventListener('click', (e) => {
+      const btn = (e.target as Element | null)?.closest('[data-seslendir]');
+      const card = btn?.closest<HTMLElement>('.question-card');
+      if (!card) return;
+      const index = this.questions.findIndex((x) => x.el === card);
+      if (index === -1) return;
+      this.currentIndex = index;
+      this.updateStatusText();
+      this.speakExplanation();
+    });
     this.setupScrollObserver(); // Initialize scroll observer
 
     this.applyFilters();
@@ -364,60 +381,8 @@ export class QuizPlayer {
 
 
   applyFilters(): void {
-    let filtered = [...this.originalQuestions];
-
-    // Unit Filter
-    // Unit Filter
-    if (this.settings.filterUnite !== 'all') {
-      // Logic: Max unit (excluding 0) / 2
-      const validUnits = this.originalQuestions.map(q => q.unitNumber).filter(u => u > 0);
-      const maxUnit = validUnits.length > 0 ? Math.max(...validUnits) : 0;
-      const mid = Math.ceil(maxUnit / 2);
-
-      if (this.settings.filterUnite === 'first_half') {
-        filtered = filtered.filter(q => q.unitNumber <= mid);
-      } else if (this.settings.filterUnite === 'second_half') {
-        filtered = filtered.filter(q => q.unitNumber > mid);
-      } else {
-        const targetUnit = parseInt(this.settings.filterUnite);
-        filtered = filtered.filter(q => q.unitNumber === targetUnit);
-      }
-    }
-
-    // Source filter: real exam questions vs practice (question bank, deneme, sorularla öğrenelim)
-    if (this.settings.filterSource === 'cikmis-soru') {
-      filtered = filtered.filter(q => q.source === 'cikmis-soru');
-    } else if (this.settings.filterSource === 'alistirma') {
-      filtered = filtered.filter(q => q.source !== 'cikmis-soru');
-    }
-
-    // Exam filter: questions that appeared in the chosen exam (year + type)
-    if (this.settings.filterExam && this.settings.filterExam !== 'all') {
-      filtered = filtered.filter(q => q.sinavlar.includes(this.settings.filterExam));
-    }
-
-    // Incorrect/Unanswered Progress Filters
-    if (this.settings.filterIncorrect || this.settings.filterUnanswered) {
-      filtered = filtered.filter(q => {
-        const results = this.progress[q.id];
-        const hasAttempts = results && results.length > 0;
-
-        // Check if ANY of the recorded attempts (last 2) were incorrect
-        const isIncorrect = hasAttempts && results.includes(false);
-        const isUnanswered = !hasAttempts;
-
-        if (this.settings.filterIncorrect && this.settings.filterUnanswered) {
-          return isIncorrect || isUnanswered;
-        } else if (this.settings.filterIncorrect) {
-          return isIncorrect;
-        } else {
-          return isUnanswered;
-        }
-      });
-    }
-
-    // Shuffle logic removed as per user request
-    // if (this.settings.shuffleQuestions) { ... }
+    // Shared with the "Süzgeç" sheet so its preview count always matches the list
+    const filtered = suz(this.originalQuestions, this.settings, this.progress);
 
     this.questions = filtered;
     this.currentIndex = this.questions.length > 0 ? 0 : -1;
@@ -702,6 +667,7 @@ export class QuizPlayer {
 
   toggleInteractive(): void {
     this.isInteractive = !this.isInteractive;
+    window.dispatchEvent(new CustomEvent<{ cozme: boolean }>(KIP_OLAYI, { detail: { cozme: this.isInteractive } }));
 
     if (this.isInteractive) {
       this.corrects = 0;
@@ -989,7 +955,8 @@ export class QuizPlayer {
       // closely matching the manual calc logic but more robust.
       // However, sticking to the manual calc as requested for now, but ensuring observer doesn't fight it.
 
-      const headerOffset = 20; // Reduced slighty for mobile
+      // Clears the floating course bar on phones (scroll-padding-top is set per page in global.css)
+      const headerOffset = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 20;
       const elementPosition = q.el.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -1001,8 +968,9 @@ export class QuizPlayer {
       });
       setTimeout(() => { this.isProgrammaticScroll = false; }, 800);
 
-      document.querySelectorAll('.ring-2').forEach(el => el.classList.remove('ring-2', 'ring-accent'));
-      q.el.classList.add('ring-2', 'ring-accent');
+      // Boxless questions: the current one is tracked by attribute, the floating bar shows its place
+      document.querySelectorAll('[data-etkin]').forEach(el => el.removeAttribute('data-etkin'));
+      q.el.setAttribute('data-etkin', '');
     }
     const pct = ((this.currentIndex + 1) / this.questions.length) * 100;
     if (this.ui.progressBar) this.ui.progressBar.style.width = pct + '%';
@@ -1016,12 +984,22 @@ export class QuizPlayer {
     const total = this.originalQuestions.length;
     const n = this.questions.length;
     if (n === total) el.textContent = `Toplam ${total} soru bulundu.`;
-    else if (n === 0) el.textContent = `Seçili filtrelere uyan soru yok (toplam ${total} soru). Ayarlardan filtreleri gevşet.`;
-    else el.textContent = `Filtreye uyan ${n} soru gösteriliyor (toplam ${total}).`;
+    else if (n === 0) el.textContent = `Süzgeçteki seçime uyan soru yok (toplam ${total} soru). Süzgeçten seçimi gevşet.`;
+    else el.textContent = `Süzgece uyan ${n} soru gösteriliyor (toplam ${total}).`;
   }
 
   updateStatusText(): void {
     if (this.ui.statusText) this.ui.statusText.innerText = `Soru ${this.currentIndex + 1} / ${this.questions.length}`;
+    // The course top bar shows "Ü 4 · 12 / 40": the current question's place inside its (filtered) unit
+    const q = this.questions[this.currentIndex];
+    const detail: SoruKonumu = { unite: null, sira: 0, uniteToplam: 0, index: this.currentIndex, toplam: this.questions.length };
+    if (q) {
+      const ayni = this.questions.filter((x) => x.unitNumber === q.unitNumber);
+      detail.unite = q.unitNumber;
+      detail.sira = ayni.indexOf(q) + 1;
+      detail.uniteToplam = ayni.length;
+    }
+    window.dispatchEvent(new CustomEvent<SoruKonumu>(SORU_KONUMU_OLAYI, { detail }));
   }
 
   updateUIState(): void {

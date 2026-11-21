@@ -19,17 +19,18 @@ import {
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import {
-  ArrowUp,
   ChevronDown,
   ChevronLeft,
   ChevronUp,
   GripVertical,
   Icon,
   LayoutGrid,
+  ListTree,
   Minus,
   Pencil,
   Plus,
 } from "lucide-react";
+import { KONUM_ISTE_OLAYI, SORU_KONUMU_OLAYI, konumMetni, type SoruKonumu } from "../lib/ders-olaylari";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import Tur from "./Tur";
 import {
@@ -38,7 +39,6 @@ import {
   EYLEM_HARITASI,
   MENU_ACMA_OLAYI,
   MENU_EYLEMI,
-  basaDon,
   cubukOku,
   cubukSifirla,
   cubukYaz,
@@ -51,6 +51,7 @@ type Gorunum = "ana" | "unite" | "soru";
 const davranis = (): ScrollBehavior => (matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth");
 const uniteyeGit = (no: number) =>
   document.getElementById(`unite-${no}`)?.scrollIntoView({ block: "start", behavior: davranis() });
+const DAR = "(max-width: 767px)";
 const soruyaGit = (no: number, sira: number) =>
   document.getElementById(`question-${no}-${sira - 1}`)?.scrollIntoView({ block: "start", behavior: davranis() });
 const etiketi = (e: Eylem) => e.etiketi?.() ?? e.etiket;
@@ -141,7 +142,9 @@ function SiraSatiri({ e, i, n, tasi, cikar }: { e: Eylem; i: number; n: number; 
   );
 }
 
-export default function MobilMenu({ dersAdi, uniteler: tumUniteler }: { dersAdi: string; uniteler: Unite[] }) {
+type Props = { dersAdi: string; uniteler: Unite[]; geri: string; geriEtiket: string };
+
+export default function MobilMenu({ dersAdi, uniteler: tumUniteler, geri, geriEtiket }: Props) {
   // Units left empty by the question filters are hidden (quiz-player sends "sorular:filtre")
   const [gorunenler, setGorunenler] = useState<number[] | null>(null);
   useEffect(() => {
@@ -155,6 +158,10 @@ export default function MobilMenu({ dersAdi, uniteler: tumUniteler }: { dersAdi:
   }, []);
   const uniteler = gorunenler ? tumUniteler.filter((u) => gorunenler.includes(u.no)) : tumUniteler;
   const [gorunur, setGorunur] = useState(false);
+  // Phones keep the floating bar on screen; from 768 px it hides while reading down (headroom).
+  // Starts as phone so the server markup is usable before hydration.
+  const [dar, setDar] = useState(true);
+  const [konum, setKonum] = useState("");
   const [aktif, setAktif] = useState<number>(tumUniteler[0]?.no ?? 0);
   const [acik, setAcik] = useState(false);
   const [gorunum, setGorunum] = useState<Gorunum>("ana");
@@ -202,10 +209,28 @@ export default function MobilMenu({ dersAdi, uniteler: tumUniteler }: { dersAdi:
     return () => removeEventListener("scroll", olay);
   }, []);
 
-  // Lets the page shift its sticky unit navigation and site header while the top bar is out.
   useEffect(() => {
-    document.documentElement.toggleAttribute("data-ustcubuk", gorunur);
-  }, [gorunur]);
+    const mq = matchMedia(DAR);
+    const guncelle = () => setDar(mq.matches);
+    guncelle();
+    mq.addEventListener("change", guncelle);
+    return () => mq.removeEventListener("change", guncelle);
+  }, []);
+
+  // "Ü 4 · 12 / 40" follows the player's current question.
+  useEffect(() => {
+    const dinle = (e: Event) => setKonum(konumMetni((e as CustomEvent<SoruKonumu>).detail));
+    addEventListener(SORU_KONUMU_OLAYI, dinle);
+    dispatchEvent(new CustomEvent(KONUM_ISTE_OLAYI));
+    return () => removeEventListener(SORU_KONUMU_OLAYI, dinle);
+  }, []);
+
+  const ustGorunur = dar || gorunur;
+
+  // Desktop: lets the site header slide away while the top bar is out.
+  useEffect(() => {
+    document.documentElement.toggleAttribute("data-ustcubuk", !dar && gorunur);
+  }, [gorunur, dar]);
 
   // The player bar and shortcuts open the drawer through a window event.
   useEffect(() => {
@@ -281,43 +306,33 @@ export default function MobilMenu({ dersAdi, uniteler: tumUniteler }: { dersAdi:
       <Tur />
       <header
         aria-label="Ders çubuğu"
-        inert={!gorunur}
-        data-gorunur={gorunur}
-        className="mobil-ustcubuk fixed inset-x-0 top-0 z-[55] flex h-[calc(3rem+env(safe-area-inset-top))] items-center gap-1 border-b border-theme bg-[color-mix(in_srgb,var(--bg-color)_96%,transparent)] px-2 pt-[env(safe-area-inset-top)] backdrop-blur-md transition-transform duration-200 ease-out motion-reduce:transition-none data-[gorunur=false]:-translate-y-full md:px-6 print:hidden"
+        inert={!ustGorunur}
+        data-gorunur={ustGorunur}
+        className="mobil-ustcubuk fixed inset-x-0 top-[calc(env(safe-area-inset-top)+8px)] z-[55] mx-auto flex h-[52px] w-[calc(100%-2*max(10px,env(safe-area-inset-left)))] max-w-[720px] items-center gap-0.5 rounded-full border border-line bg-glass pl-1 pr-1 shadow-[0_6px_24px_rgba(0,0,0,0.14)] backdrop-blur-[22px] backdrop-saturate-[1.8] transition-transform duration-200 ease-[cubic-bezier(0.2,0,0,1)] motion-reduce:transition-none data-[gorunur=false]:-translate-y-[calc(100%+48px)] data-[gorunur=false]:shadow-none print:hidden"
       >
-        <p className="min-w-0 flex-1 truncate pl-1 text-sm font-semibold text-theme">{dersAdi}</p>
-        <SimgeDugmesi etiket="Sayfanın başına dön" onClick={basaDon}>
-          <ArrowUp className="size-5" aria-hidden />
-        </SimgeDugmesi>
-        {uniteler.length > 0 && (
-          <label className="relative flex h-11 shrink-0 items-center gap-0.5 rounded-lg px-2 text-sm font-medium text-theme active:bg-[var(--button-bg-hover)] md:hover:bg-[var(--button-bg-hover)]">
-            <span className="whitespace-nowrap">{aktifUnite ? (aktifUnite.no === 0 ? "Diğer" : `Ü ${aktifUnite.no}`) : "Ünite"}</span>
-            <ChevronDown className="size-4 text-muted-theme" aria-hidden />
-            <select
-              aria-label="Üniteye git"
-              value={aktif}
-              onChange={(e) => uniteyeGit(Number(e.target.value))}
-              className="absolute inset-0 size-full cursor-pointer opacity-0"
-            >
-              {uniteler.map((u) => (
-                <option key={u.no} value={u.no}>
-                  {etiket(u)}
-                  {u.baslik ? ` · ${u.baslik}` : ""}
-                </option>
-              ))}
-            </select>
-          </label>
-        )}
-        <SimgeDugmesi
-          etiket="Menüyü aç"
-          onClick={() => {
-            setGorunum("ana");
-            setDuzenle(false);
-            setAcik(true);
-          }}
+        <a
+          href={geri}
+          aria-label={`Geri: ${geriEtiket}`}
+          title={geriEtiket}
+          className={`grid size-11 shrink-0 place-items-center rounded-full text-ink active:bg-raised ${odak}`}
         >
-          <LayoutGrid className="size-5" aria-hidden />
-        </SimgeDugmesi>
+          <ChevronLeft className="size-5" aria-hidden />
+        </a>
+        <div className="min-w-0 flex-1 leading-tight">
+          <p className="truncate text-[15px] font-semibold text-ink">{dersAdi}</p>
+          <p className="truncate text-[12px] tabular-nums text-ink-muted" aria-live="off">
+            {konum || (aktifUnite ? etiket(aktifUnite) : "\u00a0")}
+          </p>
+        </div>
+        <button
+          type="button"
+          aria-label="İçindekiler"
+          title="İçindekiler"
+          onClick={() => window.dispatchEvent(new CustomEvent("icindekiler:ac"))}
+          className={`grid size-11 shrink-0 place-items-center rounded-full text-ink active:bg-raised ${odak}`}
+        >
+          <ListTree className="size-5" aria-hidden />
+        </button>
       </header>
 
       <Drawer.Root

@@ -4,16 +4,19 @@ import AISettings from "../../../components/AISettings.astro";
 import AIMenu from "../../../components/AIMenu.astro";
 import Layout from "../../../layouts/Layout.astro";
 import YouTubeVideolari from "../../../components/YouTubeVideolari.astro";
-import { Check, TriangleAlert, X } from "lucide-react";
+import { Check, ChevronRight, MessageCircle, MessageSquare, TriangleAlert, Volume2, X } from "lucide-react";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 // Icons go into one <symbol> sprite per page and every answer option points at it with <use>:
 // an inline SVG per option added megabytes per page and pushed the Pages artifact past 10 GB.
 const inner = (icon: typeof Check) => renderToStaticMarkup(createElement(icon)).replace(/^<svg[^>]*>|<\/svg>$/g, "");
-const iconSprite = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner(Check)}</symbol><symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner(X)}</symbol><symbol id="i-uyari" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner(TriangleAlert)}</symbol><symbol id="i-more" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></symbol></svg>`;
+const iconSprite = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner(Check)}</symbol><symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner(X)}</symbol><symbol id="i-uyari" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner(TriangleAlert)}</symbol><symbol id="i-ileri" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner(ChevronRight)}</symbol><symbol id="i-tartis" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${inner(MessageSquare)}</symbol><symbol id="i-sohbet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${inner(MessageCircle)}</symbol><symbol id="i-ses" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${inner(Volume2)}</symbol><symbol id="i-more" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></symbol></svg>`;
 const checkSvg = '<svg aria-hidden="true"><use href="#i-check"/></svg>';
 const xSvg = '<svg aria-hidden="true"><use href="#i-x"/></svg>';
 import SohbetCekmece from "../../../components/sohbet/SohbetCekmece.tsx";
+import Suzgec from "../../../components/Suzgec.tsx";
+import Simge from "../../../components/Simge.astro";
+import videoVerisi from "../../../data/youtube-videolar.json";
 import MobilMenu from "../../../components/MobilMenu.tsx";
 import Icindekiler, { type IcKonu, type IcUnite } from "../../../components/Icindekiler.tsx";
 import { getCourses, getDersIcerik, getKitapKonulari, getKitapUniteAdlari, getQuestions, getUniversities, type KitapKonu } from "../../../lib/api";
@@ -125,6 +128,14 @@ const KONTROL: Record<string, string> = {
   "sik-farkli": "Bu soru kaynaklarda farklı şıklarla geçiyor.",
   "kaynak-celiskili": "Kaynak bu soruya farklı yerlerde farklı cevap vermiş.",
 };
+// Exam years shown on the course card: from the questions themselves (ders-icerik holds curriculum years)
+const sinavYillari = [...new Set(questions.flatMap((q) =>
+  (q.sinavlar ?? (q.source === "cikmis-soru" && q.year ? [{ year: String(q.year), examType: "" }] : []))
+    .map((s) => Number.parseInt(String(s.year), 10)).filter((y) => y > 1990)))].sort((a, b) => a - b);
+const yilMetni = sinavYillari.length === 0 ? "" : sinavYillari.length === 1
+  ? `${sinavYillari[0]} sınavı`
+  : `${sinavYillari[0]}-${sinavYillari[sinavYillari.length - 1]} · ${sinavYillari.length} yıl`;
+const videoVar = ((videoVerisi.dersler as Record<string, unknown[]>)[`${university.id}/${course.id}`] ?? []).length > 0;
 const examKeys = (q: { year?: string | number; examType?: string; source?: string; sinavlar?: SinavEtiket[] }) =>
   [...new Set((q.sinavlar ?? (q.source === "cikmis-soru" && q.year ? [{ year: String(q.year), examType: q.examType ?? "genel" }] : []))
     .map((s) => `${s.year} ${s.examType}`))].join(";");
@@ -132,169 +143,89 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
 
 <Layout title={`${course.name} - ${department.name}`}>
   <Fragment set:html={iconSprite} />
-  <div class="py-12">
-    <div class="container-reading">
-      <!-- Breadcrumbs -->
-      <nav class="flex items-center flex-wrap mb-8 text-sm text-muted-theme">
+  <div class="ders-sayfa pb-12 pt-4 md:pt-10">
+    <div class="container-reading max-w-[720px]">
+      <!-- Breadcrumbs (phones go back from the floating course bar) -->
+      <nav class="hidden md:flex items-center flex-wrap mb-6 text-sm text-ink-muted" aria-label="Konum">
         <a href="/" class="breadcrumb-link">Ana Sayfa</a>
-        <span class="mx-2">/</span>
-        <a href={`/${university.id}`} class="breadcrumb-link"
-          >{university.shortName}</a
-        >
-        <span class="mx-2">/</span>
-        <a href={`/${university.id}/${department.id}`} class="breadcrumb-link"
-          >{department.name}</a
-        >
-        <span class="mx-2">/</span>
-        <span class="text-theme font-medium">{course.name}</span>
-        <button
-          type="button"
-          class="ml-auto w-9 h-9 grid place-items-center rounded-lg text-muted-theme hover:text-accent-ink"
-          aria-label="Ders ya da bölümle ilgili hata bildir"
-          title="Ders / bölüm bildir"
-          data-tartisma={`${university.id}/${course.id}`}
-          data-tartisma-etiket={`${course.name} · ${department.name}`}
-        >
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><path d="M4 22v-7"></path></svg>
-        </button>
+        <span class="mx-2" aria-hidden="true">/</span>
+        <a href={`/${university.id}`} class="breadcrumb-link">{university.shortName}</a>
+        <span class="mx-2" aria-hidden="true">/</span>
+        <a href={`/${university.id}/${department.id}`} class="breadcrumb-link">{department.name}</a>
+        <span class="mx-2" aria-hidden="true">/</span>
+        <span class="text-ink font-medium">{course.name}</span>
       </nav>
 
-      <!-- Article Header -->
-      <header class="mb-12">
-        <div class="flex flex-wrap items-center gap-3 md:gap-4 mb-4">
-          <span
-            class="px-2.5 py-0.5 bg-accent-soft text-accent-ink rounded-full text-xs font-medium border border-line"
-          >
-            {course.semester}. Dönem
-          </span>
-          <span class="text-muted-theme font-mono text-xs">{course.code}</span>
-          {icerik?.guncel === false && (
-            <span
-              class="px-2.5 py-0.5 rounded-full text-xs font-medium border border-warn/30 text-warn "
-              title={`Son okutulduğu yıl: ${icerik.son_yil}`}
-            >
-              Güncel müfredatta yok
-            </span>
-          )}
-          {icerik?.url && (
-            <a
-              href={icerik.url}
-              target="_blank"
-              rel="noopener"
-              class="inline-flex items-center gap-1 text-xs text-muted-theme hover:text-accent-ink"
-              title="Üniversitenin resmî ders sayfası (izlence)"
-            >
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-              </svg>
-              Resmî ders sayfası
-            </a>
-          )}
-        </div>
-        <h1 class="text-2xl md:text-4xl font-bold text-theme mb-2 md:mb-4">
-          {course.name}
-        </h1>
-        <p id="soru-sayisi" data-toplam={questions.length} class="text-lg md:text-xl text-muted-theme mb-6" aria-live="polite">
+      <!-- Course card: name, code, exam years and the course's resources -->
+      <section class="ders-giris" aria-labelledby="ders-adi">
+        <h1 id="ders-adi" class="font-serif text-[22px] md:text-3xl font-semibold leading-tight text-ink line-clamp-2">{course.name}</h1>
+        <p class="mt-1 text-[13px] text-ink-muted line-clamp-2">
+          {university.shortName} · <span class="font-mono">{course.code}</span> · {course.semester}. dönem
+        </p>
+        <p id="soru-sayisi" data-toplam={questions.length} class="text-[13px] text-ink-muted line-clamp-2" aria-live="polite">
           Toplam {questions.length} soru bulundu.
         </p>
-
-        <div class="flex flex-wrap gap-2">
-        <button
-          type="button"
-          onclick="window.dispatchEvent(new CustomEvent('icindekiler:ac'))"
-          class="btn-secondary"
-          data-testid="icindekiler-ac"
-        >
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"></path></svg>
-          İçindekiler
-        </button>
-        <a
-          href={`/${university.id}/${department.id}/${course.id}/materyaller`}
-          class="btn-secondary"
-        >
-          <svg
-            class="w-5 h-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+        {(yilMetni || icerik?.guncel === false) && (
+          <div class="mt-3 flex gap-2 overflow-x-auto no-scrollbar">
+            {yilMetni && <span class="bilgi-cip">{yilMetni}</span>}
+            {icerik?.guncel === false && (
+              <span class="bilgi-cip bg-warn-soft text-warn" title={`Son okutulduğu yıl: ${icerik.son_yil}`}>Güncel müfredatta yok</span>
+            )}
+          </div>
+        )}
+        <div class="mt-3 flex flex-wrap gap-2 print:hidden">
+          <a href={`/${university.id}/${department.id}/${course.id}/materyaller`} class="eylem-cip">
+            <Simge ad="BookOpen" size={18} />Materyaller
+          </a>
+          {videoVar && (
+            <button type="button" id="video-ac" class="eylem-cip" aria-expanded="false" aria-controls="video-ozet">
+              <Simge ad="Play" size={18} />Video özeti
+            </button>
+          )}
+          <SohbetCekmece client:idle courseKey={`${university.id}/${course.id}`} tetikSinifi="eylem-cip" />
+          <button
+            type="button"
+            class="eylem-cip"
+            aria-label="Dersi tartış ya da hata bildir"
+            data-tartisma={`${university.id}/${course.id}`}
+            data-tartisma-etiket={`${course.name} · ${department.name}`}
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-            ></path>
-          </svg>
-          Ders Materyalleri
-        </a>
-
-        <SohbetCekmece client:idle courseKey={`${university.id}/${course.id}`} />
-
-        <button
-          onclick="window.print()"
-          class="btn-secondary"
-          title="Yazdır / PDF Kaydet"
-        >
-          <svg
-            class="w-5 h-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"
-            ></path>
-          </svg>
-          <span class="hidden sm:inline ml-2">Yazdır</span>
-        </button>
+            <Simge ad="MessageSquare" size={18} />Tartış
+          </button>
+          {icerik?.url && (
+            <a href={icerik.url} target="_blank" rel="noopener" class="eylem-cip" title="Üniversitenin resmî ders sayfası (izlence)">
+              <Simge ad="ExternalLink" size={18} />Resmî sayfa
+            </a>
+          )}
+          <button type="button" onclick="window.print()" class="eylem-cip eylem-genis" title="Yazdır / PDF kaydet">
+            <Simge ad="Printer" size={18} />Yazdır
+          </button>
         </div>
-        <YouTubeVideolari anahtar={`${university.id}/${course.id}`} />
-      </header>
+      </section>
+      {videoVar && (
+        <div id="video-ozet" hidden>
+          <YouTubeVideolari anahtar={`${university.id}/${course.id}`} />
+        </div>
+      )}
 
-      <!-- Search Shortcut Hint -->
-      <div class="mb-6 print:hidden">
-        <button
-          onclick="document.getElementById('toggleSearch')?.click()"
-          class="inline-flex items-center gap-2 px-3 py-2 bg-accent-soft hover:bg-accent/25 border border-line rounded-lg text-sm text-accent-ink group"
-        >
-          <svg
-            class="w-4 h-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-          </svg>
-          <span>Sorularda ara</span>
-          <kbd
-            class="px-2 py-1 bg-card-theme border border-theme rounded text-xs font-mono group-hover:border-primary-theme"
-          >
-            Ctrl+K
-          </kbd>
+      <!-- Reading / solving mode (same state as the player's #btn-toggle-interactive), search and filters -->
+      <div class="kip-satir print:hidden" data-reader-ignore>
+        <div class="kip-secici" role="group" aria-label="Çalışma kipi">
+          <button type="button" data-kip="okuma" aria-pressed="true">Okuma</button>
+          <button type="button" data-kip="cozme" aria-pressed="false">Çözme</button>
+        </div>
+        <button type="button" class="ikon-dugme" aria-label="Sorularda ara (Ctrl+K)" title="Sorularda ara (Ctrl+K)" onclick="document.getElementById('toggleSearch')?.click()">
+          <Simge ad="Search" size={20} />
+        </button>
+        <button type="button" id="suzgec-ac" class="ikon-dugme relative" aria-label="Süzgeç" title="Süzgeç (F)" aria-haspopup="dialog">
+          <Simge ad="SlidersHorizontal" size={20} />
+          <span class="suzgec-nokta" hidden></span>
         </button>
       </div>
 
-      <!-- Navigation (Sticky) -->
-      <nav
-        class="sticky top-[64px] z-30 -mx-4 px-4 py-3 bg-[var(--bg-color)]/95 backdrop-blur-md border-b border-theme mb-12 md:static md:bg-transparent md:border-none md:p-0 print:hidden"
-        aria-label="Ünite Navigasyonu"
-        data-reader-ignore
-      >
-        <div
-          class="flex overflow-x-auto gap-2 no-scrollbar pb-2 md:pb-0 md:flex-wrap"
-        >
-          <span
-            class="shrink-0 flex items-center text-xs font-bold text-muted-theme uppercase tracking-wider md:hidden"
-          >
-            Üniteler:
-          </span>
+      <!-- Unit strip -->
+      <nav class="mb-8 print:hidden" aria-label="Ünite Navigasyonu" data-reader-ignore>
+        <div class="flex overflow-x-auto gap-2 no-scrollbar md:flex-wrap">
           {
             units.map((unit) => (
               <a href={`#unite-${unit}`} class="btn-unit-nav" data-unit={unit} title={uniteAdi.get(unit)?.baslik}>
@@ -319,9 +250,7 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
                 class={`mb-16 ${idx > 0 ? "mt-24" : ""} unit-separator`}
                 data-unit={unit}
               >
-                <h2
-                  class={`text-2xl font-bold text-ink border-b border-line pb-2 mb-8`}
-                >
+                <h2 class="font-serif text-xl md:text-2xl font-semibold text-ink border-b border-line pb-2 mb-6">
                   {unit === 0 ? "Ünitesi belirlenmemiş sorular" : `Ünite ${unit}`}
                   {unit !== 0 && uniteAdi.get(unit) && (
                     <span class="block text-base md:text-lg font-semibold text-theme mt-1 line-clamp-2">
@@ -340,25 +269,34 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
                     data-sinav={examKeys(q)}
                     data-testid="question-card"
                   >
-                    <header class="mb-4">
+                    <header class="q-ust">
                       <h3 class="q-label">
-                        Soru {qIdx + 1}
+                        <span class="q-no">Soru {qIdx + 1}</span>
                         {q.source === "cikmis-soru" && q.year && (
-                          <span class="normal-case tracking-normal"> · {examLine(q)}</span>
+                          <span class="q-cip" title={examLine(q)}>{examLine(q)}</span>
+                        )}
+                        {q.section && konuAdi.has(q.section) && (
+                          <button type="button" class="q-cip q-konu" data-konu={q.section} title={`${q.section} ${konuAdi.get(q.section)}`}>
+                            <span class="truncate">{q.section} {konuAdi.get(q.section)}</span>
+                            <svg aria-hidden="true"><use href="#i-ileri" /></svg>
+                          </button>
                         )}
                         {q.kontrol && (
-                          <span class="q-kontrol normal-case tracking-normal inline-flex items-center gap-1 ml-1 align-middle text-warn " data-kontrol={q.kontrol} title={KONTROL[q.kontrol]}>
-                            <svg class="w-3.5 h-3.5 shrink-0" aria-hidden="true"><use href="#i-uyari" /></svg>
+                          <span class="q-cip q-kontrol bg-warn-soft text-warn" data-kontrol={q.kontrol} title={KONTROL[q.kontrol]}>
+                            <svg aria-hidden="true"><use href="#i-uyari" /></svg>
                             <span>kontrol edin</span>
                             <span class="sr-only">: {KONTROL[q.kontrol]} Soruyu ve cevabı kontrol edin.</span>
                           </span>
                         )}
                       </h3>
-                      {q.section && konuAdi.has(q.section) && (
-                        <p class="q-konu text-xs text-muted-theme mt-1 line-clamp-2" data-konu={q.section}>
-                          {q.section} {konuAdi.get(q.section)}
-                        </p>
-                      )}
+                      <button
+                        type="button"
+                        class="q-ikon print:hidden"
+                        aria-label={`Soru ${qIdx + 1}: tartış ya da hata bildir`}
+                        data-tartisma={`${university.id}/${course.id}/${q.id}`}
+                        data-tartisma-etiket={`${course.name} · Soru ${qIdx + 1}`}
+                        data-tartisma-icerik={`content-${unit}-${qIdx}`}
+                      ><svg aria-hidden="true"><use href="#i-tartis" /></svg></button>
                     </header>
 
                     <div class="prose prose-invert max-w-none">
@@ -394,50 +332,31 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
                         })}
                       </div>
 
-                      {(
-                        <div class="explanation-card explanation-box text-muted-theme text-sm leading-relaxed relative group" data-explanation-id={`exp-${unit}-${qIdx}`}>
-                          <div class="flex justify-between items-start mb-2">
-                            <strong class="text-ink font-semibold block">Açıklama</strong>
-
-                            <button
-                              type="button"
-                              class="ml-auto mr-1 w-9 h-9 grid place-items-center rounded-lg text-ink-muted hover:text-accent-ink hover:bg-raised "
-                              aria-label="Soruyu tartış ya da hata bildir"
-                              title="Tartış / hata bildir"
-                              data-tartisma={`${university.id}/${course.id}/${q.id}`}
-                              data-tartisma-etiket={`${course.name} · Soru ${qIdx + 1}`}
-                              data-tartisma-icerik={`content-${unit}-${qIdx}`}
-                            >
-                              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                            </button>
-                            <!-- AI Enrichment Menu (Hidden by default) -->
-                            <!-- AI Enrichment Menu Trigger -->
+                      {q.explanation ? (
+                        <div class="explanation-card explanation-box text-ink-muted text-sm leading-relaxed relative" data-explanation-id={`exp-${unit}-${qIdx}`}>
+                          <div class="aciklama-ust">
+                            <strong class="flex-1 text-ink font-semibold">Açıklama</strong>
+                            <button type="button" class="q-ikon print:hidden" data-seslendir aria-label="Açıklamayı seslendir"><svg aria-hidden="true"><use href="#i-ses" /></svg></button>
+                            <button type="button" class="q-ikon print:hidden" aria-label="Derse sor" onclick={`window.handleAIAction&&window.handleAIAction(this,'ask','${unit}','${qIdx}')`}><svg aria-hidden="true"><use href="#i-sohbet" /></svg></button>
                             <div class="ai-enrichment-controls hidden relative z-10">
-                              <button
-                                class="btn-ai-menu p-1 rounded-lg hover:bg-raised text-ink-muted hover:text-accent-ink "
-                                title="AI İşlemleri"
-                                onclick={`openGlobalAIMenu(event, '${unit}', '${qIdx}')`}
-                              >
-                                <svg class="w-5 h-5" aria-hidden="true"><use href="#i-more"/></svg>
+                              <button type="button" class="btn-ai-menu q-ikon" aria-label="Yapay zekâ işlemleri" onclick={`openGlobalAIMenu(event, '${unit}', '${qIdx}')`}>
+                                <svg aria-hidden="true"><use href="#i-more" /></svg>
                               </button>
                             </div>
                           </div>
-
-                          {q.explanation ? (
-                            <div class="explanation-content" id={`content-${unit}-${qIdx}`} set:html={q.explanation} />
-                          ) : (
-                            <div class="explanation-content" id={`content-${unit}-${qIdx}`}>
-                              <p class="italic">Bu soru için henüz açıklama yok.</p>
-                              <button
-                                type="button"
-                                class="ai-enrichment-controls hidden mt-2 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-theme text-xs font-semibold hover:text-accent-ink hover:border-line"
-                                onclick={`window.handleAIAction && window.handleAIAction(this, 'regenerate', '${unit}', '${qIdx}')`}
-                              >
-                                Yapay zekâ ile açıklama oluştur
-                              </button>
-                            </div>
-                          )}
+                          <div class="explanation-content" id={`content-${unit}-${qIdx}`} set:html={q.explanation} />
                           <div class="original-content-store hidden" id={`original-${unit}-${qIdx}`} set:html={q.explanation} />
+                        </div>
+                      ) : (
+                        <div class="explanation-card explanation-box aciklama-yok relative" data-explanation-id={`exp-${unit}-${qIdx}`}>
+                          <div class="explanation-content" id={`content-${unit}-${qIdx}`}>
+                            <button type="button" class="aciklama-yok-satir" onclick={`window.handleAIAction&&window.handleAIAction(this,'regenerate','${unit}','${qIdx}')`}>
+                              <svg aria-hidden="true"><use href="#i-sohbet" /></svg>
+                              <span>Açıklama yok · <b>Yapay zekâ ile açıkla</b></span>
+                              <svg aria-hidden="true"><use href="#i-ileri" /></svg>
+                            </button>
+                          </div>
+                          <div class="original-content-store hidden" id={`original-${unit}-${qIdx}`}></div>
                         </div>
                       )}
 
@@ -479,14 +398,16 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
 
   <QuizPlayer />
   <Icindekiler client:idle uniteler={icindekiler} />
-  <MobilMenu client:idle dersAdi={course.name} uniteler={mobilUniteler} />
+  <MobilMenu client:idle dersAdi={course.name} uniteler={mobilUniteler} geri={`/${university.id}/${department.id}`} geriEtiket={department.name} />
+  <Suzgec client:idle ders={`${university.id}-${course.id}`} />
   <Tartisma />
   <AISettings />
 
   <!-- Floating Search Button -->
   <button
     id="toggleSearch"
-    class="fixed bottom-6 right-6 w-14 h-14 bg-primary-theme text-ink rounded-full shadow-2xl flex items-center justify-center z-50 hover:scale-110 active:scale-95 transition-all print:hidden"
+    class="hidden"
+    tabindex="-1"
     aria-label="Soru Ara"
   >
     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -737,6 +658,60 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
       }
       if (e.key === "Escape") closeSearch();
     });
+  </script>
+  <script>
+    import { KIP_OLAYI, KONUM_ISTE_OLAYI, SORU_KONUMU_OLAYI, type SoruKonumu } from "../../../lib/ders-olaylari";
+
+    type Oynatici = { isInteractive: boolean; toggleInteractive: () => void };
+    const oynatici = () => (window as unknown as { quizPlayer?: Oynatici }).quizPlayer;
+
+    // Reading / solving switch mirrors the player's interactive mode both ways
+    const kipDugmeleri = [...document.querySelectorAll<HTMLButtonElement>("[data-kip]")];
+    const kipGoster = (cozme: boolean) =>
+      kipDugmeleri.forEach((b) => b.setAttribute("aria-pressed", String((b.dataset.kip === "cozme") === cozme)));
+    kipDugmeleri.forEach((b) =>
+      b.addEventListener("click", () => {
+        const p = oynatici();
+        if (p && p.isInteractive !== (b.dataset.kip === "cozme")) p.toggleInteractive();
+      }),
+    );
+    addEventListener(KIP_OLAYI, (e) => kipGoster((e as CustomEvent<{ cozme: boolean }>).detail.cozme));
+
+    // Filter sheet, and a dot on its button while some filter hides questions
+    document.getElementById("suzgec-ac")?.addEventListener("click", () => dispatchEvent(new CustomEvent("suzgec:ac")));
+    addEventListener("sorular:filtre", (e) => {
+      const { count, total } = (e as CustomEvent<{ count: number; total: number }>).detail;
+      const nokta = document.querySelector<HTMLElement>(".suzgec-nokta");
+      if (nokta) nokta.hidden = count === total;
+    });
+
+    // Video summaries open in place under the course card
+    const videoDugme = document.getElementById("video-ac");
+    videoDugme?.addEventListener("click", () => {
+      const alan = document.getElementById("video-ozet");
+      if (!alan) return;
+      alan.hidden = !alan.hidden;
+      videoDugme.setAttribute("aria-expanded", String(!alan.hidden));
+    });
+
+    // Topic chip opens the table of contents at that book topic
+    document.addEventListener("click", (e) => {
+      const cip = (e.target as Element | null)?.closest<HTMLElement>(".q-konu[data-konu]");
+      if (cip) dispatchEvent(new CustomEvent("icindekiler:ac", { detail: { konu: cip.dataset.konu } }));
+    });
+
+    // Unit strip marks the unit of the current question
+    let sonUnite: number | null = null;
+    addEventListener(SORU_KONUMU_OLAYI, (e) => {
+      const { unite } = (e as CustomEvent<SoruKonumu>).detail;
+      if (unite === sonUnite) return;
+      sonUnite = unite;
+      document.querySelectorAll<HTMLElement>(".btn-unit-nav[data-unit]").forEach((el) => {
+        if (el.dataset.unit === String(unite)) el.setAttribute("aria-current", "true");
+        else el.removeAttribute("aria-current");
+      });
+    });
+    dispatchEvent(new CustomEvent(KONUM_ISTE_OLAYI));
   </script>
   <AIMenu />
 </Layout>

@@ -17,7 +17,7 @@ function useWide() {
   return wide;
 }
 
-export default function SohbetCekmece({ courseKey }: { courseKey: string }) {
+export default function SohbetCekmece({ courseKey, tetikSinifi = "btn-secondary" }: { courseKey: string; tetikSinifi?: string }) {
   const [open, setOpen] = useState(false);
   const [opened, setOpened] = useState(false); // keep the chat mounted after the first open so a reply keeps streaming
   const wide = useWide();
@@ -53,8 +53,8 @@ export default function SohbetCekmece({ courseKey }: { courseKey: string }) {
       }}
       swipeDirection={wide ? "right" : "down"}
     >
-      <Drawer.Trigger id="sohbet-ac" className="btn-secondary">
-        <MessageCircle className="w-5 h-5" aria-hidden />
+      <Drawer.Trigger id="sohbet-ac" className={tetikSinifi}>
+        <MessageCircle className="size-[18px]" aria-hidden />
         Derse sor
       </Drawer.Trigger>
       <Drawer.Portal keepMounted={opened}>
