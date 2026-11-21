@@ -24,6 +24,7 @@ Canlı kod değişmedi; yalnız tasarım çıktısı.
   16. `16-video-canli-ders.html`: video ve eş zamanlı konu anlatımı, canlı ders, haftalık kurs akışı
   17. `17-onerilen-dil.html`: önerilen dil; sürü panosunun claude teması belirteçleri (koyu #151515 kademeleri, %9 kenar, vurgu yalnız birincil eylemde, varsayılan mavi), serif başlık, cam alt öğeler
   18. `18-renk-oyunu.html`: önerilen dilde dört vurgu (mavi, kehribar, kiremit, nötr); vurgu ekranda tek yerde
+  19. `19-tema17-duzeltmeler.html`: 17'nin teması (`TEMA-17.md`) verilerek Stitch ve Nano Banana'ya yaptırılan düzeltmeler
 - `KARSILASTIRMA.md`: benzer uygulamalarla karşılaştırma ve kör jüri sonucu.
 - `LMS-PLANI.md`: ÖYS ve LMS işlevlerinin portaldaki karşılığı ve sıra önerisi.
 - `index.html`: tüm maketlerin listesi; her maketin sol üstündeki düğme buraya döner.

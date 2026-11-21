@@ -411,6 +411,14 @@ for kod, ad, ack in VURGULAR:
     k18.append(yenile(soru_yeni(ad, "soru çözme"), True, kod))
 sayfa("18-renk-oyunu", "Önerilen dilde vurgu rengi seçenekleri", k18)
 
+# ---------- 19 tema 17 üstünde düzeltmeler ----------
+sayfa("19-tema17-duzeltmeler", "Tema 17 üstünde Stitch ve Nano Banana düzeltmeleri", [
+    resim("alternatifler/nb-10-tema17.jpg", "Nano Banana, koyu: 17'nin ekranları ve tema belirteçleri verildi, yalnız boşluk, hizalama ve hiyerarşi düzeltildi. Renkler ve içerik korundu."),
+    resim("alternatifler/nb-11-tema17-acik.jpg", "Nano Banana, açık: aynı ekranların açık teması; derin mavi tek vurgu, cam alt çubuk ve oynatıcı."),
+    resim("alternatifler/stitch-tema17-1.jpg", "Stitch, Bugün: tema birebir uygulandı; ders satırları ayrı kartlar, sayılar sağda iki satır, ilerleme nötr. Profil simgesi eklemiş, sitede profil yok.", 380),
+    resim("alternatifler/stitch-tema17-2.jpg", "Stitch, soru: soru metni serif ve büyük, şıklar daha yüksek, oynatıcı tek satır kompakt. Üst başlığı İngilizce yazmış, '1 Puan' ve 'Doğruluk oranı %68' uydurma; uygulamada çıkarılır.", 380),
+])
+
 # ---------- galeri ----------
 satirlar = "".join(
     f'<li><a href="{f.name}"><span>{f.name[:2]}</span>{re.search(r"<title>(.*?)</title>", f.read_text()).group(1)}</a></li>'
