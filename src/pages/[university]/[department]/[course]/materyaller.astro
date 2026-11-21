@@ -212,7 +212,7 @@ const getViewerUrl = (item: any) => {
             <nav class="flex mb-8 text-sm text-muted-theme">
                 <a
                     href={`/${university.id}/${department.id}/${course.id}`}
-                    class="hover:text-primary-theme"
+                    class="hover:text-accent-ink"
                 >
                     Derse Dön
                 </a>
@@ -335,7 +335,7 @@ const getViewerUrl = (item: any) => {
                                 </details>
                             ))
                         ) : (
-                            <div class="text-sm text-slate-500 italic p-2">
+                            <div class="text-sm text-ink-muted italic p-2">
                                 Bu ders için materyal bulunamadı.
                             </div>
                         )
@@ -349,10 +349,10 @@ const getViewerUrl = (item: any) => {
                     {
                         defaultMaterial ? (
                             <>
-                                <div class="bg-slate-900 px-4 py-2 border-b border-theme flex justify-between items-center shrink-0">
+                                <div class="bg-page px-4 py-2 border-b border-theme flex justify-between items-center shrink-0">
                                     <span
                                         id="viewer-title"
-                                        class="text-xs font-bold text-teal-400 truncate pr-4"
+                                        class="text-xs font-bold text-accent-ink truncate pr-4"
                                     >
                                         {defaultMaterial.title}
                                     </span>
@@ -360,7 +360,7 @@ const getViewerUrl = (item: any) => {
                                         id="download-link"
                                         href={defaultMaterial.url}
                                         target="_blank"
-                                        class="text-xs text-blue-400 hover:text-blue-300 flex items-center gap-1 shrink-0"
+                                        class="text-xs text-accent-ink flex items-center gap-1 shrink-0"
                                     >
                                         {defaultMaterial.type === "html"
                                             ? "Yeni Sekmede Aç"
@@ -371,16 +371,16 @@ const getViewerUrl = (item: any) => {
                                 <iframe
                                     id="pdf-viewer"
                                     src={getViewerUrl(defaultMaterial)}
-                                    class="w-full h-full border-0 bg-white"
+                                    class="w-full h-full border-0 bg-card"
                                     title="Materyal Önizleme"
                                 />
 
                                 <div
                                     id="loader"
-                                    class="absolute inset-0 bg-slate-900 flex flex-col items-center justify-center z-10 hidden"
+                                    class="absolute inset-0 bg-page flex flex-col items-center justify-center z-10 hidden"
                                 >
-                                    <div class="w-8 h-8 border-2 border-teal-500 border-t-transparent rounded-full animate-spin mb-2" />
-                                    <span class="text-xs text-slate-400">
+                                    <div class="w-8 h-8 border-2 border-accent border-t-transparent rounded-full animate-spin mb-2" />
+                                    <span class="text-xs text-ink-muted">
                                         Yükleniyor...
                                     </span>
                                 </div>

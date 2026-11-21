@@ -222,7 +222,7 @@ export class QuizPlayer {
 
         if (!explanation) {
           const contentSpan = (expDiv.querySelector('span[set\\:html]') || expDiv.querySelector('span')) as HTMLElement;
-          explanation = contentSpan ? contentSpan.innerText : expDiv.innerText.replace('AÇIKLAMA:', '').trim();
+          explanation = contentSpan ? contentSpan.innerText : expDiv.innerText.replace(/^\s*açıklama:?/i, '').trim();
         } else {
           // If explanation was set by AI above, we might want to strip HTML for clean text usage if needed elsewhere,
           // but PlayerQuestion.explanation usually keeps the raw text/html for display?
@@ -675,8 +675,8 @@ export class QuizPlayer {
     document.body.classList.toggle('hide-answers', !this.settings.showAnswers);
     this.saveSettings();
     if (this.ui.btnToggleAnswers) {
-      this.ui.btnToggleAnswers.classList.toggle('text-teal-400', this.settings.showAnswers);
-      this.ui.btnToggleAnswers.classList.toggle('bg-teal-400/10', this.settings.showAnswers);
+      this.ui.btnToggleAnswers.classList.toggle('text-accent-ink', this.settings.showAnswers);
+      this.ui.btnToggleAnswers.classList.toggle('bg-accent-soft', this.settings.showAnswers);
     }
   }
 
@@ -685,8 +685,8 @@ export class QuizPlayer {
     document.body.classList.toggle('hide-explanations', !this.settings.showExplanations);
     this.saveSettings();
     if (this.ui.btnToggleExplanations) {
-      this.ui.btnToggleExplanations.classList.toggle('text-teal-400', this.settings.showExplanations);
-      this.ui.btnToggleExplanations.classList.toggle('bg-teal-400/10', this.settings.showExplanations);
+      this.ui.btnToggleExplanations.classList.toggle('text-accent-ink', this.settings.showExplanations);
+      this.ui.btnToggleExplanations.classList.toggle('bg-accent-soft', this.settings.showExplanations);
     }
   }
 
@@ -695,8 +695,8 @@ export class QuizPlayer {
     document.body.classList.toggle('hide-options', this.settings.hideIncorrectOptions);
     this.saveSettings();
     if (this.ui.btnToggleOptions) {
-      this.ui.btnToggleOptions.classList.toggle('text-teal-400', this.settings.hideIncorrectOptions);
-      this.ui.btnToggleOptions.classList.toggle('bg-teal-400/10', this.settings.hideIncorrectOptions);
+      this.ui.btnToggleOptions.classList.toggle('text-accent-ink', this.settings.hideIncorrectOptions);
+      this.ui.btnToggleOptions.classList.toggle('bg-accent-soft', this.settings.hideIncorrectOptions);
     }
   }
 
@@ -782,7 +782,7 @@ export class QuizPlayer {
 
     const speechControls = document.getElementById('speech-controls');
     if (speechControls) {
-      speechControls.classList.toggle('border-teal-500/30', this.settings.readerMode);
+      speechControls.classList.toggle('border-accent/40', this.settings.readerMode);
     }
   }
 
@@ -1001,8 +1001,8 @@ export class QuizPlayer {
       });
       setTimeout(() => { this.isProgrammaticScroll = false; }, 800);
 
-      document.querySelectorAll('.ring-2').forEach(el => el.classList.remove('ring-2', 'ring-teal-500'));
-      q.el.classList.add('ring-2', 'ring-teal-500');
+      document.querySelectorAll('.ring-2').forEach(el => el.classList.remove('ring-2', 'ring-accent'));
+      q.el.classList.add('ring-2', 'ring-accent');
     }
     const pct = ((this.currentIndex + 1) / this.questions.length) * 100;
     if (this.ui.progressBar) this.ui.progressBar.style.width = pct + '%';
@@ -1029,10 +1029,10 @@ export class QuizPlayer {
     if (this.ui.iconPause) this.ui.iconPause.style.display = this.isPlaying ? 'block' : 'none';
     if (this.ui.playBtn) {
       if (this.isPlaying) {
-        this.ui.playBtn.classList.add('is-playing', 'bg-teal-500/20', 'text-teal-400');
+        this.ui.playBtn.classList.add('is-playing', 'bg-accent-soft', 'text-accent-ink');
         this.ui.playBtn.title = 'Durdur';
       } else {
-        this.ui.playBtn.classList.remove('is-playing', 'bg-teal-500/20', 'text-teal-400');
+        this.ui.playBtn.classList.remove('is-playing', 'bg-accent-soft', 'text-accent-ink');
         this.ui.playBtn.title = 'Başlat';
         // Clear caption if stop/pause (optional, maybe keep last spoken?)
         // If fully stopped (not paused), clear.

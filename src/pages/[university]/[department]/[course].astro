@@ -149,7 +149,7 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
         <span class="text-theme font-medium">{course.name}</span>
         <button
           type="button"
-          class="ml-auto w-9 h-9 grid place-items-center rounded-lg text-muted-theme hover:text-primary-theme"
+          class="ml-auto w-9 h-9 grid place-items-center rounded-lg text-muted-theme hover:text-accent-ink"
           aria-label="Ders ya da bölümle ilgili hata bildir"
           title="Ders / bölüm bildir"
           data-tartisma={`${university.id}/${course.id}`}
@@ -163,14 +163,14 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
       <header class="mb-12">
         <div class="flex flex-wrap items-center gap-3 md:gap-4 mb-4">
           <span
-            class="px-2.5 py-0.5 bg-primary-theme/10 text-primary-theme rounded-full text-xs font-medium border border-primary-theme/20"
+            class="px-2.5 py-0.5 bg-accent-soft text-accent-ink rounded-full text-xs font-medium border border-line"
           >
             {course.semester}. Dönem
           </span>
           <span class="text-muted-theme font-mono text-xs">{course.code}</span>
           {icerik?.guncel === false && (
             <span
-              class="px-2.5 py-0.5 rounded-full text-xs font-medium border border-amber-500/30 text-amber-600 dark:text-amber-400"
+              class="px-2.5 py-0.5 rounded-full text-xs font-medium border border-warn/30 text-warn "
               title={`Son okutulduğu yıl: ${icerik.son_yil}`}
             >
               Güncel müfredatta yok
@@ -181,7 +181,7 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
               href={icerik.url}
               target="_blank"
               rel="noopener"
-              class="inline-flex items-center gap-1 text-xs text-muted-theme hover:text-primary-theme"
+              class="inline-flex items-center gap-1 text-xs text-muted-theme hover:text-accent-ink"
               title="Üniversitenin resmî ders sayfası (izlence)"
             >
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -202,7 +202,7 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
         <button
           type="button"
           onclick="window.dispatchEvent(new CustomEvent('icindekiler:ac'))"
-          class="btn-primary bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 border-none shadow-none"
+          class="btn-secondary"
           data-testid="icindekiler-ac"
         >
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"></path></svg>
@@ -210,7 +210,7 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
         </button>
         <a
           href={`/${university.id}/${department.id}/${course.id}/materyaller`}
-          class="btn-primary"
+          class="btn-secondary"
         >
           <svg
             class="w-5 h-5"
@@ -232,7 +232,7 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
 
         <button
           onclick="window.print()"
-          class="btn-primary bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 border-none shadow-none"
+          class="btn-secondary"
           title="Yazdır / PDF Kaydet"
         >
           <svg
@@ -258,7 +258,7 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
       <div class="mb-6 print:hidden">
         <button
           onclick="document.getElementById('toggleSearch')?.click()"
-          class="inline-flex items-center gap-2 px-3 py-2 bg-primary-theme/10 hover:bg-primary-theme/20 border border-primary-theme/30 rounded-lg text-sm text-primary-theme group"
+          class="inline-flex items-center gap-2 px-3 py-2 bg-accent-soft hover:bg-accent/25 border border-line rounded-lg text-sm text-accent-ink group"
         >
           <svg
             class="w-4 h-4"
@@ -320,7 +320,7 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
                 data-unit={unit}
               >
                 <h2
-                  class={`text-2xl font-bold text-teal-400 border-b border-teal-500/20 pb-2 mb-8`}
+                  class={`text-2xl font-bold text-ink border-b border-line pb-2 mb-8`}
                 >
                   {unit === 0 ? "Ünitesi belirlenmemiş sorular" : `Ünite ${unit}`}
                   {unit !== 0 && uniteAdi.get(unit) && (
@@ -347,7 +347,7 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
                           <span class="normal-case tracking-normal"> · {examLine(q)}</span>
                         )}
                         {q.kontrol && (
-                          <span class="q-kontrol normal-case tracking-normal inline-flex items-center gap-1 ml-1 align-middle text-amber-700 dark:text-amber-400" data-kontrol={q.kontrol} title={KONTROL[q.kontrol]}>
+                          <span class="q-kontrol normal-case tracking-normal inline-flex items-center gap-1 ml-1 align-middle text-warn " data-kontrol={q.kontrol} title={KONTROL[q.kontrol]}>
                             <svg class="w-3.5 h-3.5 shrink-0" aria-hidden="true"><use href="#i-uyari" /></svg>
                             <span>kontrol edin</span>
                             <span class="sr-only">: {KONTROL[q.kontrol]} Soruyu ve cevabı kontrol edin.</span>
@@ -397,13 +397,11 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
                       {(
                         <div class="explanation-card explanation-box text-muted-theme text-sm leading-relaxed relative group" data-explanation-id={`exp-${unit}-${qIdx}`}>
                           <div class="flex justify-between items-start mb-2">
-                            <strong class="text-primary-theme uppercase tracking-wider block">
-                              Açıklama:
-                            </strong>
+                            <strong class="text-ink font-semibold block">Açıklama</strong>
 
                             <button
                               type="button"
-                              class="ml-auto mr-1 w-9 h-9 grid place-items-center rounded-lg text-slate-400 hover:text-teal-400 hover:bg-slate-200 dark:hover:bg-slate-700"
+                              class="ml-auto mr-1 w-9 h-9 grid place-items-center rounded-lg text-ink-muted hover:text-accent-ink hover:bg-raised "
                               aria-label="Soruyu tartış ya da hata bildir"
                               title="Tartış / hata bildir"
                               data-tartisma={`${university.id}/${course.id}/${q.id}`}
@@ -416,7 +414,7 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
                             <!-- AI Enrichment Menu Trigger -->
                             <div class="ai-enrichment-controls hidden relative z-10">
                               <button
-                                class="btn-ai-menu p-1 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-400 hover:text-teal-400 "
+                                class="btn-ai-menu p-1 rounded-lg hover:bg-raised text-ink-muted hover:text-accent-ink "
                                 title="AI İşlemleri"
                                 onclick={`openGlobalAIMenu(event, '${unit}', '${qIdx}')`}
                               >
@@ -432,7 +430,7 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
                               <p class="italic">Bu soru için henüz açıklama yok.</p>
                               <button
                                 type="button"
-                                class="ai-enrichment-controls hidden mt-2 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-theme text-xs font-semibold hover:text-primary-theme hover:border-primary-theme/50"
+                                class="ai-enrichment-controls hidden mt-2 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-theme text-xs font-semibold hover:text-accent-ink hover:border-line"
                                 onclick={`window.handleAIAction && window.handleAIAction(this, 'regenerate', '${unit}', '${qIdx}')`}
                               >
                                 Yapay zekâ ile açıklama oluştur
@@ -445,7 +443,7 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
 
                       <div class="answer-meta-card answer-metadata-box correct-answer-line">
                         <p class="text-muted-theme text-sm leading-relaxed">
-                          <strong class="text-primary-theme uppercase tracking-wider mr-2">
+                          <strong class="text-accent-ink uppercase tracking-wider mr-2">
                             Doğru Cevap:
                           </strong>
                           <span class="font-bold">{q.correctAnswer}</span>
@@ -461,9 +459,9 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
       </article>
 
       <div
-        class="hidden print-footer mt-8 text-center border-t border-gray-300 pt-4 text-xs text-gray-500 break-inside-avoid"
+        class="hidden print-footer mt-8 text-center border-t border-line pt-4 text-xs text-ink-muted break-inside-avoid"
       >
-        <p class="font-medium text-black">
+        <p class="font-medium text-ink">
           Bu çalışma kağıdı <strong>Açık Öğretim Portal</strong> (<a
             href="https://acik-ogretim.github.io">acik-ogretim.github.io</a
           >) üzerinden ücretsiz oluşturulmuştur.
@@ -472,7 +470,7 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
           Daha fazla ders notu, çıkmış sorular ve denemeler için web sitemizi
           ziyaret edin.
         </p>
-        <p class="mt-2 text-[10px] text-gray-400">
+        <p class="mt-2 text-[10px] text-ink-muted">
           © {new Date().getFullYear()} Açık Öğretim Portal. Ticari amaçla satılamaz.
         </p>
       </div>
@@ -488,7 +486,7 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
   <!-- Floating Search Button -->
   <button
     id="toggleSearch"
-    class="fixed bottom-6 right-6 w-14 h-14 bg-primary-theme text-white rounded-full shadow-2xl flex items-center justify-center z-50 hover:scale-110 active:scale-95 transition-all print:hidden"
+    class="fixed bottom-6 right-6 w-14 h-14 bg-primary-theme text-ink rounded-full shadow-2xl flex items-center justify-center z-50 hover:scale-110 active:scale-95 transition-all print:hidden"
     aria-label="Soru Ara"
   >
     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -503,7 +501,7 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
   <!-- Search Modal/Panel -->
   <div
     id="searchPanel"
-    class="fixed inset-x-0 top-0 bg-black/0 pointer-events-none z-[60] flex items-end justify-center px-4 print:hidden duration-300"
+    class="fixed inset-x-0 top-0 bg-transparent pointer-events-none z-[60] flex items-end justify-center px-4 print:hidden duration-300"
   >
     <div
       id="searchInner"
@@ -540,7 +538,7 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
       <div id="searchCounter" class="text-xs text-muted-theme mt-2 font-medium">
       </div>
       <div id="searchResults" class="mt-3 hidden">
-        <div class="text-xs font-semibold text-primary-theme mb-2">
+        <div class="text-xs font-semibold text-accent-ink mb-2">
           Sonuçlar:
         </div>
         <div id="unitResults" class="flex flex-wrap gap-2"></div>
@@ -587,16 +585,16 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
 
     function openSearch() {
       searchPanel?.classList.remove("pointer-events-none");
-      searchPanel?.classList.remove("bg-black/0");
-      searchPanel?.classList.add("bg-black/20");
+      searchPanel?.classList.remove("bg-transparent");
+      searchPanel?.classList.add("bg-scrim");
       searchInner?.classList.remove("translate-y-full", "opacity-0");
       searchInput?.focus();
     }
 
     function closeSearch() {
       searchPanel?.classList.add("pointer-events-none");
-      searchPanel?.classList.add("bg-black/0");
-      searchPanel?.classList.remove("bg-black/20");
+      searchPanel?.classList.add("bg-transparent");
+      searchPanel?.classList.remove("bg-scrim");
       searchInner?.classList.add("translate-y-full", "opacity-0");
       if (searchInput) searchInput.value = "";
       applySearch("");
@@ -690,7 +688,7 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
                 .forEach(([unit, count]) => {
                   const badge = document.createElement("button");
                   badge.className =
-                    "px-2 py-1 bg-primary-theme/20 hover:bg-primary-theme/30 text-primary-theme rounded text-xs font-medium";
+                    "px-2 py-1 bg-accent-soft hover:bg-accent/25 text-accent-ink rounded text-xs font-medium";
                   badge.textContent = `Ünite ${unit} (${count})`;
                   badge.onclick = () => {
                     const unitEl = document.getElementById(`unite-${unit}`);

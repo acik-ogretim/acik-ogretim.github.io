@@ -687,7 +687,7 @@ function HistoryDialog({
         <History className="size-5" aria-hidden />
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Backdrop className="fixed inset-0 bg-black/40 z-[200]" />
+        <Dialog.Backdrop className="fixed inset-0 bg-scrim z-[200]" />
         <Dialog.Popup
           className="fixed z-[201] inset-x-0 bottom-[var(--klavye,0px)] max-h-[80dvh] flex flex-col rounded-t-2xl p-4 pb-[max(1rem,env(safe-area-inset-bottom))] md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-[28rem] md:rounded-2xl"
           style={{ background: "var(--card-bg)", color: "var(--text-color)" }}
@@ -757,7 +757,7 @@ function SettingsDialog({ open, onOpenChange }: { open: boolean; onOpenChange: (
         <KeyRound className="size-5" aria-hidden />
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Backdrop className="fixed inset-0 bg-black/40 z-[200]" />
+        <Dialog.Backdrop className="fixed inset-0 bg-scrim z-[200]" />
         <Dialog.Popup
           className="fixed z-[201] inset-x-0 bottom-[var(--klavye,0px)] rounded-t-2xl p-4 pb-[max(1rem,env(safe-area-inset-bottom))] md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-[28rem] md:rounded-2xl"
           style={{ background: "var(--card-bg)", color: "var(--text-color)" }}

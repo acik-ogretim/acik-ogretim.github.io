@@ -111,15 +111,14 @@ Object.values(degreeGroups).forEach((group) => {
   );
 });
 
-const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
-  "anadolu-aof": { icon: "GraduationCap", gradient: "from-blue-600 to-blue-800" },
-  "ataturk-aof": { icon: "Book", gradient: "from-red-600 to-red-800" },
-  auzef: { icon: "BookOpen", gradient: "from-purple-600 to-purple-800" },
+const uniStyles: Record<string, { icon: SimgeAdi }> = {
+  "anadolu-aof": { icon: "GraduationCap" },
+  "ataturk-aof": { icon: "Book" },
+  auzef: { icon: "BookOpen" },
 };
 
 const style = uniStyles[university.id] || {
   icon: "Library",
-  gradient: "from-slate-600 to-slate-800",
 };
 ---
 
@@ -128,7 +127,7 @@ const style = uniStyles[university.id] || {
     <div class="container-base">
       <!-- Breadcrumbs -->
       <nav class="flex mb-6 text-sm text-muted-theme">
-        <a href="/" class="hover:text-primary-theme">Ana Sayfa</a>
+        <a href="/" class="hover:text-accent-ink">Ana Sayfa</a>
         <span class="mx-2">/</span>
         <span class="text-theme font-medium">{university.shortName}</span>
       </nav>
@@ -137,13 +136,9 @@ const style = uniStyles[university.id] || {
       <div
         class={`glass p-6 rounded-2xl relative overflow-hidden mb-8 border-theme`}
       >
-        <div
-          class={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${style.gradient}`}
-        >
-        </div>
         <div class="flex flex-col md:flex-row gap-6 items-center">
           <div
-            class={`w-20 h-20 rounded-2xl flex items-center justify-center text-4xl bg-gradient-to-br ${style.gradient} shadow-lg text-white overflow-hidden`}
+            class={`w-20 h-20 rounded-2xl flex items-center justify-center text-4xl bg-control border border-line text-ink overflow-hidden`}
           >
             {
               university.logo ? (
@@ -196,7 +191,7 @@ const style = uniStyles[university.id] || {
             type="text"
             id="deptSearch"
             placeholder="Bölüm ara... (Örn: adalet, web tasarım, ilahiyat)"
-            class="block w-full pl-10 pr-3 py-4 border border-theme rounded-2xl bg-card-theme text-theme placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-theme focus:border-transparent transition-all shadow-sm text-lg"
+            class="block w-full pl-10 pr-3 py-4 border border-theme rounded-2xl bg-card-theme text-theme placeholder-ink-muted focus:outline-none focus:ring-2 focus:ring-primary-theme focus:border-transparent transition-all shadow-sm text-lg"
           />
         </div>
 
@@ -240,9 +235,9 @@ const style = uniStyles[university.id] || {
                           data-uni-id={university.id}
                           data-testid={`dept-card-${dept.id}`}
                         >
-                          <div class="relative glass h-16 sm:h-24 px-4 flex items-center rounded-xl border border-theme bg-card-theme hover:border-primary-theme/50 transition-all">
+                          <div class="relative glass h-16 sm:h-24 px-4 flex items-center rounded-xl border border-theme bg-card-theme hover:border-line transition-all">
                             <button
-                              class="favorite-btn absolute top-2 right-2 w-6 h-6 rounded-full hover:bg-yellow-500/20 flex items-center justify-center z-10"
+                              class="favorite-btn absolute top-2 right-2 w-6 h-6 rounded-full hover:bg-warn-soft flex items-center justify-center z-10"
                               title="Favorilere ekle"
                             >
                               <Simge ad="Star" size={14} class="fav-icon" />
@@ -262,7 +257,7 @@ const style = uniStyles[university.id] || {
                                 <span class="text-2xl flex-shrink-0"><Simge ad="FolderOpen" /></span>
                               )}
                               <span class="flex flex-col min-w-0">
-                                <span class="text-sm font-medium text-theme group-hover:text-primary-theme line-clamp-1 sm:line-clamp-2 break-words hyphens-auto">
+                                <span class="text-sm font-medium text-theme group-hover:text-accent-ink line-clamp-1 sm:line-clamp-2 break-words hyphens-auto">
                                   {dept.name}
                                 </span>
                                 <span class="text-[11px] text-muted-theme">{dereceAdi(dept.degree)}{dept.active === false && " · Pasif"}</span>
@@ -339,10 +334,10 @@ const style = uniStyles[university.id] || {
             const icon = card.querySelector(".fav-icon");
             if (deptId && favs.includes(deptId)) {
               icon!.setAttribute("fill", "currentColor");
-              icon!.classList.add("text-yellow-500");
+              icon!.classList.add("text-warn");
             } else {
               icon!.setAttribute("fill", "none");
-              icon!.classList.remove("text-yellow-500");
+              icon!.classList.remove("text-warn");
             }
           });
 

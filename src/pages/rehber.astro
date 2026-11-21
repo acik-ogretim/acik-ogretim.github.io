@@ -8,11 +8,7 @@ import Layout from "../layouts/Layout.astro";
         <!-- Background Accents -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
             <div
-                class="absolute -top-40 -right-40 w-96 h-96 bg-primary-theme/10 rounded-full blur-3xl"
-            >
-            </div>
-            <div
-                class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-theme to-transparent"
+                class="absolute bottom-0 left-0 w-full h-px bg-line"
             >
             </div>
         </div>
@@ -26,23 +22,23 @@ import Layout from "../layouts/Layout.astro";
             <div class="space-y-12">
                 <!-- Sınav Ayarları Bölümü -->
                 <section
-                    class="content-card bg-slate-900 border border-slate-700 p-8 rounded-2xl shadow-xl"
+                    class="content-card bg-page border border-line p-8 rounded-2xl shadow-xl"
                 >
                     <div class="flex items-center gap-4 mb-6">
                         <div
-                            class="icon-box bg-purple-500/20 text-purple-400 p-3 rounded-xl"
+                            class="icon-box bg-accent-soft text-accent-ink p-3 rounded-xl"
                         >
                             <Simge ad="Settings" />
                         </div>
-                        <h2 class="text-2xl font-bold text-white">
+                        <h2 class="text-2xl font-bold text-ink">
                             Sınav ve Arayüz Ayarları
                         </h2>
                     </div>
 
                     <p
-                        class="text-slate-400 mb-6 font-medium text-lg leading-relaxed"
+                        class="text-ink-muted mb-6 font-medium text-lg leading-relaxed"
                     >
-                        Üstteki menüden <strong class="text-white">Ayarlar</strong
+                        Üstteki menüden <strong class="text-ink">Ayarlar</strong
                         >'a ya da ders sayfasındaki alt çubukta bulunan dişli
                         simgesine dokunarak deneyiminizi kişiselleştirebilirsiniz.
                         Değişiklikleriniz tarayıcınıza otomatik olarak kaydedilir.
@@ -53,13 +49,13 @@ import Layout from "../layouts/Layout.astro";
                     <div class="grid md:grid-cols-2 gap-6">
                         <!-- Kart 1: Filtreleme -->
                         <div
-                            class="bg-slate-800 rounded-xl border border-slate-700 p-6"
+                            class="bg-card rounded-xl border border-line p-6"
                         >
                             <h3
-                                class="font-bold text-white mb-6 flex items-center gap-2 border-b border-slate-700 pb-4"
+                                class="font-bold text-ink mb-6 flex items-center gap-2 border-b border-line pb-4"
                             >
                                 <svg
-                                    class="w-5 h-5 text-teal-400"
+                                    class="w-5 h-5 text-accent-ink"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
@@ -75,16 +71,16 @@ import Layout from "../layouts/Layout.astro";
                             <div class="space-y-4">
                                 <!-- Yanlışları Çöz -->
                                 <div
-                                    class="flex items-center justify-between group p-3 rounded-lg bg-slate-900/50 border border-slate-700/50 hover:border-teal-500/30 transition-all"
+                                    class="flex items-center justify-between group p-3 rounded-lg bg-page/50 border border-line hover:border-accent/40 transition-all"
                                 >
                                     <div>
                                         <h4
-                                            class="text-sm font-bold text-white group-hover:text-teal-400"
+                                            class="text-sm font-bold text-ink group-hover:text-accent-ink"
                                         >
                                             Yanlışları Çöz
                                         </h4>
                                         <p
-                                            class="text-[11px] text-slate-400 leading-tight mt-1"
+                                            class="text-[11px] text-ink-muted leading-tight mt-1"
                                         >
                                             Aktif edildiğinde sadece daha önce
                                             yanlış yaptığınız sorular karşınıza
@@ -92,10 +88,10 @@ import Layout from "../layouts/Layout.astro";
                                         </p>
                                     </div>
                                     <div
-                                        class="w-10 h-6 bg-slate-700 rounded-full relative shrink-0"
+                                        class="w-10 h-6 bg-raised rounded-full relative shrink-0"
                                     >
                                         <div
-                                            class="absolute left-1 top-1 w-4 h-4 bg-slate-400 rounded-full shadow-sm"
+                                            class="absolute left-1 top-1 w-4 h-4 bg-ink-muted rounded-full shadow-sm"
                                         >
                                         </div>
                                     </div>
@@ -103,26 +99,26 @@ import Layout from "../layouts/Layout.astro";
 
                                 <!-- Cevaplanmamışları Çöz -->
                                 <div
-                                    class="flex items-center justify-between group p-3 rounded-lg bg-slate-900/50 border border-slate-700/50 hover:border-teal-500/30 transition-all"
+                                    class="flex items-center justify-between group p-3 rounded-lg bg-page/50 border border-line hover:border-accent/40 transition-all"
                                 >
                                     <div>
                                         <h4
-                                            class="text-sm font-bold text-white group-hover:text-teal-400"
+                                            class="text-sm font-bold text-ink group-hover:text-accent-ink"
                                         >
                                             Cevaplanmamışları Çöz
                                         </h4>
                                         <p
-                                            class="text-[11px] text-slate-400 leading-tight mt-1"
+                                            class="text-[11px] text-ink-muted leading-tight mt-1"
                                         >
                                             Hiç çözmediğiniz soruları
                                             önceliklendirir.
                                         </p>
                                     </div>
                                     <div
-                                        class="w-10 h-6 bg-slate-700 rounded-full relative shrink-0"
+                                        class="w-10 h-6 bg-raised rounded-full relative shrink-0"
                                     >
                                         <div
-                                            class="absolute left-1 top-1 w-4 h-4 bg-slate-400 rounded-full shadow-sm"
+                                            class="absolute left-1 top-1 w-4 h-4 bg-ink-muted rounded-full shadow-sm"
                                         >
                                         </div>
                                     </div>
@@ -130,23 +126,23 @@ import Layout from "../layouts/Layout.astro";
 
                                 <!-- Ünite Filtreleme -->
                                 <div
-                                    class="p-3 rounded-lg bg-slate-900/50 border border-slate-700/50 hover:border-teal-500/30 transition-all"
+                                    class="p-3 rounded-lg bg-page/50 border border-line hover:border-accent/40 transition-all"
                                 >
                                     <div class="mb-2">
                                         <h4
-                                            class="text-sm font-bold text-white group-hover:text-teal-400"
+                                            class="text-sm font-bold text-ink group-hover:text-accent-ink"
                                         >
                                             Ünite Filtreleme
                                         </h4>
                                         <p
-                                            class="text-[11px] text-slate-400 leading-tight mt-1"
+                                            class="text-[11px] text-ink-muted leading-tight mt-1"
                                         >
                                             Sadece belirli bir ünitenin
                                             sorularını çözer.
                                         </p>
                                     </div>
                                     <div
-                                        class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-300"
+                                        class="w-full bg-card border border-line rounded-lg px-3 py-2 text-sm text-ink"
                                     >
                                         Tüm Üniteler
                                     </div>
@@ -156,13 +152,13 @@ import Layout from "../layouts/Layout.astro";
 
                         <!-- Kart 2: Görünüm -->
                         <div
-                            class="bg-slate-800 rounded-xl border border-slate-700 p-6"
+                            class="bg-card rounded-xl border border-line p-6"
                         >
                             <h3
-                                class="font-bold text-white mb-6 flex items-center gap-2 border-b border-slate-700 pb-4"
+                                class="font-bold text-ink mb-6 flex items-center gap-2 border-b border-line pb-4"
                             >
                                 <svg
-                                    class="w-5 h-5 text-teal-400"
+                                    class="w-5 h-5 text-accent-ink"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
@@ -183,16 +179,16 @@ import Layout from "../layouts/Layout.astro";
                             <div class="space-y-4">
                                 <!-- Cevapları Göster -->
                                 <div
-                                    class="flex items-center justify-between group p-3 rounded-lg bg-slate-900/50 border border-slate-700/50 hover:border-teal-500/30 transition-all"
+                                    class="flex items-center justify-between group p-3 rounded-lg bg-page/50 border border-line hover:border-accent/40 transition-all"
                                 >
                                     <div>
                                         <h4
-                                            class="text-sm font-bold text-white group-hover:text-teal-400"
+                                            class="text-sm font-bold text-ink group-hover:text-accent-ink"
                                         >
                                             Cevapları Göster
                                         </h4>
                                         <p
-                                            class="text-[11px] text-slate-400 leading-tight mt-1"
+                                            class="text-[11px] text-ink-muted leading-tight mt-1"
                                         >
                                             Aktif edildiğinde, soruyu çözmenize
                                             gerek kalmadan doğru cevabı işaretli
@@ -200,10 +196,10 @@ import Layout from "../layouts/Layout.astro";
                                         </p>
                                     </div>
                                     <div
-                                        class="w-10 h-6 bg-teal-500 rounded-full relative shrink-0"
+                                        class="w-10 h-6 bg-accent rounded-full relative shrink-0"
                                     >
                                         <div
-                                            class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full shadow-sm"
+                                            class="absolute right-1 top-1 w-4 h-4 bg-card rounded-full shadow-sm"
                                         >
                                         </div>
                                     </div>
@@ -211,16 +207,16 @@ import Layout from "../layouts/Layout.astro";
 
                                 <!-- Açıklamaları Göster -->
                                 <div
-                                    class="flex items-center justify-between group p-3 rounded-lg bg-slate-900/50 border border-slate-700/50 hover:border-teal-500/30 transition-all"
+                                    class="flex items-center justify-between group p-3 rounded-lg bg-page/50 border border-line hover:border-accent/40 transition-all"
                                 >
                                     <div>
                                         <h4
-                                            class="text-sm font-bold text-white group-hover:text-teal-400"
+                                            class="text-sm font-bold text-ink group-hover:text-accent-ink"
                                         >
                                             Açıklamaları Göster
                                         </h4>
                                         <p
-                                            class="text-[11px] text-slate-400 leading-tight mt-1"
+                                            class="text-[11px] text-ink-muted leading-tight mt-1"
                                         >
                                             Aktif edildiğinde, cevap vermenize
                                             gerek kalmadan soru açıklamasını
@@ -228,10 +224,10 @@ import Layout from "../layouts/Layout.astro";
                                         </p>
                                     </div>
                                     <div
-                                        class="w-10 h-6 bg-teal-500 rounded-full relative shrink-0"
+                                        class="w-10 h-6 bg-accent rounded-full relative shrink-0"
                                     >
                                         <div
-                                            class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full shadow-sm"
+                                            class="absolute right-1 top-1 w-4 h-4 bg-card rounded-full shadow-sm"
                                         >
                                         </div>
                                     </div>
@@ -239,16 +235,16 @@ import Layout from "../layouts/Layout.astro";
 
                                 <!-- Sadece Doğru Şıkkı Göster -->
                                 <div
-                                    class="flex items-center justify-between group p-3 rounded-lg bg-slate-900/50 border border-slate-700/50 hover:border-teal-500/30 transition-all"
+                                    class="flex items-center justify-between group p-3 rounded-lg bg-page/50 border border-line hover:border-accent/40 transition-all"
                                 >
                                     <div>
                                         <h4
-                                            class="text-sm font-bold text-white group-hover:text-teal-400"
+                                            class="text-sm font-bold text-ink group-hover:text-accent-ink"
                                         >
                                             Sadece Doğru Şıkkı Göster
                                         </h4>
                                         <p
-                                            class="text-[11px] text-slate-400 leading-tight mt-1"
+                                            class="text-[11px] text-ink-muted leading-tight mt-1"
                                         >
                                             Aktif edildiğinde yanlış şıklar
                                             tamamen gizlenir, sadece doğru cevap
@@ -256,10 +252,10 @@ import Layout from "../layouts/Layout.astro";
                                         </p>
                                     </div>
                                     <div
-                                        class="w-10 h-6 bg-slate-700 rounded-full relative shrink-0"
+                                        class="w-10 h-6 bg-raised rounded-full relative shrink-0"
                                     >
                                         <div
-                                            class="absolute left-1 top-1 w-4 h-4 bg-slate-400 rounded-full shadow-sm"
+                                            class="absolute left-1 top-1 w-4 h-4 bg-ink-muted rounded-full shadow-sm"
                                         >
                                         </div>
                                     </div>
@@ -268,16 +264,16 @@ import Layout from "../layouts/Layout.astro";
 
                             <!-- Otomatik İlerle -->
                             <div
-                                class="flex items-center justify-between group p-3 rounded-lg bg-slate-900/50 border border-slate-700/50 hover:border-teal-500/30 transition-all"
+                                class="flex items-center justify-between group p-3 rounded-lg bg-page/50 border border-line hover:border-accent/40 transition-all"
                             >
                                 <div>
                                     <h4
-                                        class="text-sm font-bold text-white group-hover:text-teal-400"
+                                        class="text-sm font-bold text-ink group-hover:text-accent-ink"
                                     >
                                         Otomatik İlerle
                                     </h4>
                                     <p
-                                        class="text-[11px] text-slate-400 leading-tight mt-1"
+                                        class="text-[11px] text-ink-muted leading-tight mt-1"
                                     >
                                         Sesli okuma modunda, okuma bitince
                                         otomatik olarak sonraki soruya
@@ -285,10 +281,10 @@ import Layout from "../layouts/Layout.astro";
                                     </p>
                                 </div>
                                 <div
-                                    class="w-10 h-6 bg-teal-500 rounded-full relative shrink-0"
+                                    class="w-10 h-6 bg-accent rounded-full relative shrink-0"
                                 >
                                     <div
-                                        class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full shadow-sm"
+                                        class="absolute right-1 top-1 w-4 h-4 bg-card rounded-full shadow-sm"
                                     >
                                     </div>
                                 </div>
@@ -300,15 +296,15 @@ import Layout from "../layouts/Layout.astro";
 
             <!-- Özellikler: İnteraktif Mod & Favoriler -->
             <section
-                class="content-card bg-slate-900 border border-slate-700 p-8 rounded-2xl shadow-xl mt-12"
+                class="content-card bg-page border border-line p-8 rounded-2xl shadow-xl mt-12"
             >
                 <div class="flex items-center gap-4 mb-6">
                     <div
-                        class="icon-box bg-teal-500/20 text-teal-400 p-3 rounded-xl"
+                        class="icon-box bg-accent-soft text-accent-ink p-3 rounded-xl"
                     >
                         <Simge ad="Zap" />
                     </div>
-                    <h2 class="text-2xl font-bold text-white">
+                    <h2 class="text-2xl font-bold text-ink">
                         Çalışma Modları
                     </h2>
                 </div>
@@ -316,10 +312,10 @@ import Layout from "../layouts/Layout.astro";
                 <div class="grid md:grid-cols-2 gap-8">
                     <!-- İnteraktif Mod -->
                     <div id="interaktif-cozum" class="scroll-mt-24">
-                        <h3 class="font-bold text-lg text-white mb-2">
+                        <h3 class="font-bold text-lg text-ink mb-2">
                             İnteraktif Çözüm Modu
                         </h3>
-                        <p class="text-sm text-slate-400 mb-3 leading-relaxed">
+                        <p class="text-sm text-ink-muted mb-3 leading-relaxed">
                             Soruları çözerken şıklara tıkladığınızda doğru veya
                             yanlış olduğunu anında görebilirsiniz. Ancak
                             dilerseniz alt bardaki <strong>"Çöz"</strong> butonunu
@@ -327,9 +323,9 @@ import Layout from "../layouts/Layout.astro";
                             edebilirsiniz.
                         </p>
                         <div
-                            class="p-3 bg-slate-800 rounded-xl border border-slate-700 text-xs text-slate-400"
+                            class="p-3 bg-card rounded-xl border border-line text-xs text-ink-muted"
                         >
-                            <span class="text-teal-400 font-bold">İpucu:</span> Bu
+                            <span class="text-accent-ink font-bold">İpucu:</span> Bu
                             mod, sınav simülasyonu yapmak yerine konuyu öğrenerek
                             ilerlemek istediğinizde önerilir.
                         </div>
@@ -337,17 +333,17 @@ import Layout from "../layouts/Layout.astro";
 
                     <!-- Favoriler -->
                     <div id="favoriler" class="scroll-mt-24">
-                        <h3 class="font-bold text-lg text-white mb-2">
+                        <h3 class="font-bold text-lg text-ink mb-2">
                             Favori Dersler
                         </h3>
-                        <p class="text-sm text-slate-400 mb-3 leading-relaxed">
+                        <p class="text-sm text-ink-muted mb-3 leading-relaxed">
                             Sık çalıştığınız dersleri kaybetmemek için, ders
                             sayfasının sağ üst köşesindeki <strong
-                                class="text-white">Yıldız</strong
+                                class="text-ink">Yıldız</strong
                             > ikonuna tıklayarak favorilerinize ekleyebilirsiniz.
                         </p>
                         <ul
-                            class="space-y-1 text-xs text-slate-400 list-disc list-inside"
+                            class="space-y-1 text-xs text-ink-muted list-disc list-inside"
                         >
                             <li>
                                 Favori dersleriniz ana sayfada veya menüde daha
@@ -356,7 +352,7 @@ import Layout from "../layouts/Layout.astro";
                             <li>
                                 Bu veriler yalnız tarayıcınızda saklanır, sunucuya
                                 gönderilmez. Başka cihazda da kullanmak için
-                                <a href="#yedek" class="underline text-teal-400">kayıtlarınızı taşıyabilirsiniz</a>.
+                                <a href="#yedek" class="underline text-accent-ink">kayıtlarınızı taşıyabilirsiniz</a>.
                             </li>
                         </ul>
                     </div>
@@ -366,57 +362,57 @@ import Layout from "../layouts/Layout.astro";
             <!-- Menü ve alt çubuk -->
             <section
                 id="alt-cubuk"
-                class="content-card bg-slate-900 border border-slate-700 p-8 rounded-2xl shadow-xl mt-12 scroll-mt-24"
+                class="content-card bg-page border border-line p-8 rounded-2xl shadow-xl mt-12 scroll-mt-24"
             >
                 <div class="flex items-center gap-4 mb-6">
                     <div
-                        class="icon-box bg-teal-500/20 text-teal-400 p-3 rounded-xl"
+                        class="icon-box bg-accent-soft text-accent-ink p-3 rounded-xl"
                     >
                         <Simge ad="LayoutGrid" />
                     </div>
-                    <h2 class="text-2xl font-bold text-white">
+                    <h2 class="text-2xl font-bold text-ink">
                         Menü ve Alt Çubuk
                     </h2>
                 </div>
-                <p class="text-slate-400 mb-4 text-lg leading-relaxed">
+                <p class="text-ink-muted mb-4 text-lg leading-relaxed">
                     Ders sayfasında alt çubuktaki Menü düğmesi (klavyede
-                    <kbd class="rounded border border-slate-600 px-1.5 text-sm">M</kbd>)
+                    <kbd class="rounded border border-line px-1.5 text-sm">M</kbd>)
                     her işlevi tek yerde toplar: arama, başa dön, üniteye ve
                     soruya git, sohbet asistanı, tema, ayarlar ve kayıtlarını
                     taşıma.
                 </p>
-                <ul class="list-disc list-inside space-y-2 ml-4 text-slate-400">
+                <ul class="list-disc list-inside space-y-2 ml-4 text-ink-muted">
                     <li>
-                        <strong class="text-white">Çubuğu düzenle:</strong> Menüde
+                        <strong class="text-ink">Çubuğu düzenle:</strong> Menüde
                         "Düzenle"ye bas. "−" bir işlevi çubuktan menüye alır, "+"
                         çubuğa ekler. Sırayı tutup sürükleyerek ya da yukarı ve
                         aşağı oklarıyla değiştir. "Bitti" ile kapat.
                     </li>
                     <li>
-                        <strong class="text-white">Varsayılana sıfırla:</strong>
+                        <strong class="text-ink">Varsayılana sıfırla:</strong>
                         Düzenleme ekranının altındaki bağlantı çubuğu ilk hâline
                         döndürür. Düzenin "Kayıtlarını taşı" ile başka cihaza da
                         gelir.
                     </li>
                     <li>
-                        <strong class="text-white">Dar ekran:</strong> Düğmeler
+                        <strong class="text-ink">Dar ekran:</strong> Düğmeler
                         sığmazsa çubuğun sonundakiler menüye iner; hepsi menüde
                         durur.
                     </li>
                     <li>
-                        <strong class="text-white">Klavye kısayolları:</strong>
+                        <strong class="text-ink">Klavye kısayolları:</strong>
                         M menüyü açar, Home sayfanın başına, End sonuna götürür,
                         Ctrl K aramayı açar.
                     </li>
                     <li>
-                        <strong class="text-white">İçindekiler:</strong> Ders
+                        <strong class="text-ink">İçindekiler:</strong> Ders
                         başlığının altındaki "İçindekiler" düğmesi (klavyede
-                        <kbd class="rounded border border-slate-600 px-1.5 text-sm">I</kbd>)
+                        <kbd class="rounded border border-line px-1.5 text-sm">I</kbd>)
                         ünite ve alt konuları listeler; birine dokununca o üniteye
                         ya da konunun ilk sorusuna gidersin.
                     </li>
                     <li>
-                        <strong class="text-white">İpucu turu:</strong> İlk
+                        <strong class="text-ink">İpucu turu:</strong> İlk
                         girişte dört adımlık kısa bir tur görürsün; "Atla" ile
                         geçebilirsin. Menüdeki "Turu yeniden göster" onu yeniden
                         açar.
@@ -427,39 +423,39 @@ import Layout from "../layouts/Layout.astro";
             <!-- Sesli Okuma Bölümü -->
             <section
                 id="sesli-okuma"
-                class="content-card bg-slate-900 border border-slate-700 p-8 rounded-2xl shadow-xl mt-12 scroll-mt-24"
+                class="content-card bg-page border border-line p-8 rounded-2xl shadow-xl mt-12 scroll-mt-24"
             >
                 <div class="flex items-center gap-4 mb-6">
                     <div
-                        class="icon-box bg-green-500/20 text-green-400 p-3 rounded-xl"
+                        class="icon-box bg-ok-soft text-ok p-3 rounded-xl"
                     >
                         <Simge ad="AudioLines" />
                     </div>
-                    <h2 class="text-2xl font-bold text-white">
+                    <h2 class="text-2xl font-bold text-ink">
                         Sesli Okuma (TTS)
                     </h2>
                 </div>
-                <p class="text-slate-400 mb-4 text-lg leading-relaxed">
+                <p class="text-ink-muted mb-4 text-lg leading-relaxed">
                     Soruları okumaktan yorulduğunuzda tarayıcının seslendirmesini
                     kullanabilirsiniz. Alt bardaki "Hoparlör" simgesine
                     tıklamanız yeterlidir.
                 </p>
-                <ul class="list-disc list-inside space-y-2 ml-4 text-slate-400">
+                <ul class="list-disc list-inside space-y-2 ml-4 text-ink-muted">
                     <li>
-                        <strong class="text-white">Soru & Şıklar:</strong> Soruyu
+                        <strong class="text-ink">Soru & Şıklar:</strong> Soruyu
                         ve tüm şıkları sırasıyla okur.
                     </li>
                     <li>
-                        <strong class="text-white">Analiz:</strong> Cevap verdikten
+                        <strong class="text-ink">Analiz:</strong> Cevap verdikten
                         sonra doğru şıkkın açıklamasını okur.
                     </li>
                     <li>
-                        <strong class="text-white">Hız Ayarı:</strong> Varsayılan
+                        <strong class="text-ink">Hız Ayarı:</strong> Varsayılan
                         hız 1.2x'tir (hızlı). Ayarlardan bunu yavaşlatabilir veya
                         hızlandırabilirsiniz.
                     </li>
                     <li>
-                        <strong class="text-white">Ses Seçimi:</strong> Ayarlardaki
+                        <strong class="text-ink">Ses Seçimi:</strong> Ayarlardaki
                         ses listesinde önce Türkçe sesler, altında Türkçeyi de
                         okuyabilen çok dilli sesler yer alır.
                     </li>
@@ -469,64 +465,64 @@ import Layout from "../layouts/Layout.astro";
             <!-- Sohbet Asistanı Bölümü -->
             <section
                 id="ders-asistani"
-                class="content-card bg-slate-900 border border-slate-700 p-8 rounded-2xl shadow-xl mt-12 scroll-mt-24"
+                class="content-card bg-page border border-line p-8 rounded-2xl shadow-xl mt-12 scroll-mt-24"
             >
                 <div class="flex items-center gap-4 mb-6">
                     <div
-                        class="icon-box bg-teal-500/20 text-teal-400 p-3 rounded-xl"
+                        class="icon-box bg-accent-soft text-accent-ink p-3 rounded-xl"
                     >
                         <Simge ad="MessageCircle" />
                     </div>
-                    <h2 class="text-2xl font-bold text-white">
+                    <h2 class="text-2xl font-bold text-ink">
                         Sohbet asistanı ve sesli mod
                     </h2>
                 </div>
-                <p class="text-slate-400 mb-4 text-lg leading-relaxed">
+                <p class="text-ink-muted mb-4 text-lg leading-relaxed">
                     Ders sayfasındaki "Derse sor" düğmesi, o dersin sorularını,
                     açıklamalarını, ünite özetlerini ve kitap konu başlıklarını
                     kullanarak cevap veren bir sohbet açar. Sohbet kendi yapay
                     zekâ anahtarınla çalışır; anahtarın yalnız tarayıcında kalır,
                     site onu görmez.
                 </p>
-                <ul class="list-disc list-inside space-y-2 ml-4 text-slate-400">
+                <ul class="list-disc list-inside space-y-2 ml-4 text-ink-muted">
                     <li>
-                        <strong class="text-white">Anahtar (BYOK):</strong> Ayarlar
+                        <strong class="text-ink">Anahtar (BYOK):</strong> Ayarlar
                         panelinde Google Gemini, OpenAI, Anthropic ya da OpenRouter
                         seç, anahtarını gir ve "Anahtarı dene" ile kontrol et.
                         Sohbetteki model düğmesinden de aynı ayara ulaşırsın.
                     </li>
                     <li>
-                        <strong class="text-white">Konu anlatımı:</strong> "3.
+                        <strong class="text-ink">Konu anlatımı:</strong> "3.
                         üniteyi anlat" ya da "4.2.2 konusunu anlat" dersen kitabın
                         konu ağacından, ünite özetinden ve o konudan çıkmış
                         sorulardan yararlanır, dayandığı sorulara bağlantı verir.
                     </li>
                     <li>
-                        <strong class="text-white">Mini sınav:</strong> "Bana 5
+                        <strong class="text-ink">Mini sınav:</strong> "Bana 5
                         soruluk mini sınav yap" dersen sohbetin içinde çözülen bir
                         sınav kartı açar; cevapların ders sayfandaki kayda da işlenir.
                     </li>
                     <li>
-                        <strong class="text-white">Yanlış yaptığım konular:</strong>
+                        <strong class="text-ink">Yanlış yaptığım konular:</strong>
                         "Neye çalışmalıyım?" dersen yanlış yaptığın sorulara bakıp
                         zayıf konularını bulur ve bir çalışma planı önerir.
                         "Yanlışlarımdan mini sınav yap" demen de yeter.
                     </li>
                     <li>
-                        <strong class="text-white">Belge oluşturma:</strong>
+                        <strong class="text-ink">Belge oluşturma:</strong>
                         "Bu ünitenin özetini belge yap" gibi isteklerde sohbet
                         bir belge kartı açar. Karttaki düğmelerle belgeyi
                         kopyalar, Markdown (.md) dosyası olarak indirir ya da
                         yazdırıp PDF olarak kaydedersin.
                     </li>
                     <li>
-                        <strong class="text-white">Sohbet geçmişi:</strong> Her
+                        <strong class="text-ink">Sohbet geçmişi:</strong> Her
                         dersin sohbetleri tarayıcında listelenir. Geçmiş
                         düğmesinden eski bir sohbeti açabilir, yeni sohbet
                         başlatabilir ya da bir sohbeti silebilirsin.
                     </li>
                     <li>
-                        <strong class="text-white">Açıklama menüsü:</strong> Ayarlar
+                        <strong class="text-ink">Açıklama menüsü:</strong> Ayarlar
                         panelinde "Açıklama menüsü"nü açarsan her açıklamanın
                         yanında üç nokta menüsü görünür. Açıklamayı kısaltabilir,
                         genişletebilir, şıkları tek tek açıklatabilir ya da soruyu
@@ -534,34 +530,34 @@ import Layout from "../layouts/Layout.astro";
                     </li>
                 </ul>
 
-                <h3 class="font-bold text-lg text-white mt-8 mb-3">
+                <h3 class="font-bold text-lg text-ink mt-8 mb-3">
                     Sesli yazma, canlı konuşma ve seslendirme
                 </h3>
-                <ul class="list-disc list-inside space-y-2 ml-4 text-slate-400">
+                <ul class="list-disc list-inside space-y-2 ml-4 text-ink-muted">
                     <li>
-                        <strong class="text-white">Sesli yazma (dikte):</strong>
+                        <strong class="text-ink">Sesli yazma (dikte):</strong>
                         Mesaj kutusundaki mikrofon düğmesine basıp Türkçe konuş;
                         söylediklerin kutuya yazılır, göndermeden önce
                         düzeltebilirsin.
                     </li>
                     <li>
-                        <strong class="text-white">Canlı konuşma:</strong>
+                        <strong class="text-ink">Canlı konuşma:</strong>
                         "Canlı konuş" düğmesi sohbeti sesli bir görüşmeye çevirir:
                         konuşursun, asistan düşünür ve cevabı sesli okur. Okurken
                         mikrofon düğmesiyle sözünü kesip yeniden konuşabilir,
                         çarpı düğmesiyle görüşmeyi bitirebilirsin.
                     </li>
                     <li>
-                        <strong class="text-white">Yanıtı seslendirme:</strong>
+                        <strong class="text-ink">Yanıtı seslendirme:</strong>
                         Her yanıtın altındaki hoparlör düğmesi o yanıtı sesli
                         okur; yeniden basınca durdurur. Ses ve hız, soru okumadaki
                         ses ayarlarını kullanır.
                     </li>
                 </ul>
                 <div
-                    class="mt-4 p-3 bg-slate-800 rounded-xl border border-slate-700 text-xs text-slate-400"
+                    class="mt-4 p-3 bg-card rounded-xl border border-line text-xs text-ink-muted"
                 >
-                    <span class="text-teal-400 font-bold">Not:</span> Sesli yazma
+                    <span class="text-accent-ink font-bold">Not:</span> Sesli yazma
                     ve canlı konuşma tarayıcının ses tanıma özelliğini kullanır;
                     Chrome, Edge ve Safari'de çalışır. Tarayıcın desteklemiyorsa
                     mikrofon düğmesi görünmez.
@@ -571,54 +567,54 @@ import Layout from "../layouts/Layout.astro";
             <!-- Kayıtlarını Taşı -->
             <section
                 id="yedek"
-                class="content-card bg-slate-900 border border-slate-700 p-8 rounded-2xl shadow-xl mt-12 scroll-mt-24"
+                class="content-card bg-page border border-line p-8 rounded-2xl shadow-xl mt-12 scroll-mt-24"
             >
                 <div class="flex items-center gap-4 mb-6">
                     <div
-                        class="icon-box bg-blue-500/20 text-blue-400 p-3 rounded-xl"
+                        class="icon-box bg-accent-soft text-accent-ink p-3 rounded-xl"
                     >
                         <Simge ad="RefreshCw" />
                     </div>
-                    <h2 class="text-2xl font-bold text-white">
+                    <h2 class="text-2xl font-bold text-ink">
                         Kayıtlarını taşı
                     </h2>
                 </div>
-                <p class="text-slate-400 mb-4 text-lg leading-relaxed">
+                <p class="text-ink-muted mb-4 text-lg leading-relaxed">
                     Çözdüğün sorular, yanlışların, favori derslerin, ayarların ve
                     sohbet geçmişin tarayıcında durur. Telefondan bilgisayara
                     geçerken ya da tarayıcını temizlemeden önce
-                    <a href="/yedek" class="underline text-teal-400">Kayıtlarını taşı</a>
+                    <a href="/yedek" class="underline text-accent-ink">Kayıtlarını taşı</a>
                     sayfasını kullan. Site hiçbir kaydını almaz; her yolda veri
                     doğrudan senin seçtiğin yerle tarayıcın arasında akar.
                 </p>
-                <ul class="list-disc list-inside space-y-2 ml-4 text-slate-400">
+                <ul class="list-disc list-inside space-y-2 ml-4 text-ink-muted">
                     <li>
-                        <strong class="text-white">Kendi deponuz (remoteStorage):</strong>
+                        <strong class="text-ink">Kendi deponuz (remoteStorage):</strong>
                         Kişisel depo adresini yazarsın (ör. kullanici@5apps.com).
                         Site açıksa aynı kutudan Google Drive ya da Dropbox da
                         seçilir. Bağladığın her cihazda kayıtlar kendiliğinden
                         eşitlenir.
                     </li>
                     <li>
-                        <strong class="text-white">Google hesabı:</strong> Kayıtlar
+                        <strong class="text-ink">Google hesabı:</strong> Kayıtlar
                         Drive'ında yalnız bu sitenin görebildiği gizli bir
                         uygulama klasörüne yazılır. Her cihazda aynı hesapla
                         "Eşitle"ye basarsın.
                     </li>
                     <li>
-                        <strong class="text-white">Cihazdan cihaza:</strong> İki
+                        <strong class="text-ink">Cihazdan cihaza:</strong> İki
                         cihazda sayfayı açıp aynı parolayı yazarsın; cihazlar
                         birbirini bulur ve kayıtları doğrudan birbirine gönderir.
                         İki cihaz aynı anda açık olmalıdır.
                     </li>
                     <li>
-                        <strong class="text-white">GitHub gist (şifreli):</strong>
+                        <strong class="text-ink">GitHub gist (şifreli):</strong>
                         Kayıtlar tarayıcında parolanla şifrelenir ve kendi
                         GitHub hesabındaki gizli bir gist'e yazılır. Parolayı
                         unutursan kayıt açılamaz.
                     </li>
                     <li>
-                        <strong class="text-white">Dosya ve yakındaki cihaz:</strong>
+                        <strong class="text-ink">Dosya ve yakındaki cihaz:</strong>
                         "Yedek dosyasını indir" kayıtlarını tek dosyaya kaydeder.
                         "Yakındaki cihaza gönder" dosyayı AirDrop ya da Quick Share
                         ile yollar; öteki cihazda dosyayı seçince kayıtlar
@@ -626,9 +622,9 @@ import Layout from "../layouts/Layout.astro";
                     </li>
                 </ul>
                 <div
-                    class="mt-4 p-3 bg-slate-800 rounded-xl border border-slate-700 text-xs text-slate-400"
+                    class="mt-4 p-3 bg-card rounded-xl border border-line text-xs text-ink-muted"
                 >
-                    <span class="text-teal-400 font-bold">İpucu:</span> Yapay
+                    <span class="text-accent-ink font-bold">İpucu:</span> Yapay
                     zekâ anahtarın yedeğe girmez. Yeni cihazda anahtarını
                     yeniden girmen gerekir.
                 </div>
@@ -637,26 +633,26 @@ import Layout from "../layouts/Layout.astro";
             <!-- Hata Bildir ve Tartış -->
             <section
                 id="hata-bildir"
-                class="content-card bg-slate-900 border border-slate-700 p-8 rounded-2xl shadow-xl mt-12 scroll-mt-24"
+                class="content-card bg-page border border-line p-8 rounded-2xl shadow-xl mt-12 scroll-mt-24"
             >
                 <div class="flex items-center gap-4 mb-6">
                     <div
-                        class="icon-box bg-orange-500/20 text-orange-400 p-3 rounded-xl"
+                        class="icon-box bg-warn-soft text-warn p-3 rounded-xl"
                     >
                         <Simge ad="MessageCircle" />
                     </div>
-                    <h2 class="text-2xl font-bold text-white">
+                    <h2 class="text-2xl font-bold text-ink">
                         Hata bildir ve tartış
                     </h2>
                 </div>
-                <p class="text-slate-400 mb-4 text-lg leading-relaxed">
+                <p class="text-ink-muted mb-4 text-lg leading-relaxed">
                     Yanlış bir soru ya da eksik bir ders gördüysen bildirmek tek
                     dokunuş. Bildirimler ve tartışmalar GitHub'da herkese açık
                     durur; yazmak için GitHub hesabıyla giriş yaparsın.
                 </p>
-                <ul class="list-disc list-inside space-y-2 ml-4 text-slate-400">
+                <ul class="list-disc list-inside space-y-2 ml-4 text-ink-muted">
                     <li>
-                        <strong class="text-white">Soru kartında:</strong>
+                        <strong class="text-ink">Soru kartında:</strong>
                         Açıklama satırındaki konuşma simgesi bir pencere açar.
                         "Soru hatalı" ve "Açıklama hatalı" düğmeleri, soruyu ve
                         sitedeki açıklamayı önceden doldurulmuş bir GitHub formuna
@@ -665,14 +661,14 @@ import Layout from "../layouts/Layout.astro";
                         (GitHub Discussions, giscus) açılır.
                     </li>
                     <li>
-                        <strong class="text-white">Ders sayfasında:</strong>
+                        <strong class="text-ink">Ders sayfasında:</strong>
                         Sayfanın üstündeki bayrak simgesi "Ders hatalı", "Ders
                         eksik", "Bölüm hatalı" ve "Bölüm eksik" seçeneklerini
                         verir. Eksik ünite, sınav yılı ya da ders adını bu yolla
                         bildirebilirsin.
                     </li>
                     <li>
-                        <strong class="text-white">Gizlilik:</strong> Form
+                        <strong class="text-ink">Gizlilik:</strong> Form
                         sen "gönder"e basmadan hiçbir şey paylaşılmaz. Tartışma
                         alanı da yalnız pencereyi açtığında yüklenir.
                     </li>
@@ -681,54 +677,54 @@ import Layout from "../layouts/Layout.astro";
 
             <!-- Oyuncu Kontrolleri -->
             <section
-                class="content-card bg-slate-900 border border-slate-700 p-8 rounded-2xl shadow-xl mt-12"
+                class="content-card bg-page border border-line p-8 rounded-2xl shadow-xl mt-12"
             >
                 <div class="flex items-center gap-4 mb-6">
                     <div
-                        class="icon-box bg-red-500/20 text-red-400 p-3 rounded-xl"
+                        class="icon-box bg-bad-soft text-bad p-3 rounded-xl"
                     >
                         <Simge ad="Gamepad2" />
                     </div>
-                    <h2 class="text-2xl font-bold text-white">
+                    <h2 class="text-2xl font-bold text-ink">
                         Oyuncu Kontrolleri
                     </h2>
                 </div>
-                <p class="text-slate-400 mb-6 text-lg leading-relaxed">
+                <p class="text-ink-muted mb-6 text-lg leading-relaxed">
                     Ekranın altında yer alan <strong>Player Bar</strong> üzerindeki
                     butonların işlevleri şöyledir:
                 </p>
 
                 <div
-                    class="mb-8 p-4 bg-slate-800 rounded-xl border border-slate-700 overflow-x-auto"
+                    class="mb-8 p-4 bg-card rounded-xl border border-line overflow-x-auto"
                 >
                     <div
                         class="min-w-[600px] pointer-events-none select-none opacity-90"
                     >
                         <!-- Static Player Bar Replica -->
                         <div
-                            class="flex items-center justify-between gap-4 px-4 h-16 bg-slate-900 rounded-xl border-t border-slate-700 shadow-xl"
+                            class="flex items-center justify-between gap-4 px-4 h-16 bg-page rounded-xl border-t border-line shadow-xl"
                         >
                             <div class="flex items-center gap-2">
                                 <div class="flex flex-col p-1 rounded-lg">
                                     <span
-                                        class="text-xs text-slate-400 font-bold"
+                                        class="text-xs text-ink-muted font-bold"
                                         >Ünite 1 - Giriş</span
                                     >
                                 </div>
                             </div>
                             <div
-                                class="flex items-center gap-3 bg-slate-800/50 border border-slate-700/50 rounded-xl px-3 py-1 shadow-inner"
+                                class="flex items-center gap-3 bg-control border border-line rounded-xl px-3 py-1 shadow-inner"
                             >
                                 <div
-                                    class="flex flex-col items-center border-r border-slate-700 pr-3"
+                                    class="flex flex-col items-center border-r border-line pr-3"
                                 >
                                     <div
-                                        class="text-lg font-black text-white leading-none"
+                                        class="text-lg font-black text-ink leading-none"
                                     >
                                         75%
                                     </div>
                                     <div
-                                        class="text-[9px] text-slate-500 font-bold"
+                                        class="text-[9px] text-ink-muted font-bold"
                                     >
                                         3/4
                                     </div>
@@ -738,11 +734,11 @@ import Layout from "../layouts/Layout.astro";
                                         class="flex items-center justify-between gap-1"
                                     >
                                         <span
-                                            class="text-[9px] font-bold text-slate-500"
+                                            class="text-[9px] font-bold text-ink-muted"
                                             >D:</span
                                         >
                                         <span
-                                            class="text-xs font-black text-green-500"
+                                            class="text-xs font-black text-ok"
                                             >3</span
                                         >
                                     </div>
@@ -750,11 +746,11 @@ import Layout from "../layouts/Layout.astro";
                                         class="flex items-center justify-between gap-1"
                                     >
                                         <span
-                                            class="text-[9px] font-bold text-slate-500"
+                                            class="text-[9px] font-bold text-ink-muted"
                                             >Y:</span
                                         >
                                         <span
-                                            class="text-xs font-black text-red-500"
+                                            class="text-xs font-black text-bad"
                                             >1</span
                                         >
                                     </div>
@@ -762,10 +758,10 @@ import Layout from "../layouts/Layout.astro";
                             </div>
                             <div class="flex items-center gap-2 ml-auto">
                                 <div
-                                    class="flex items-center bg-slate-800/80 p-0.5 rounded-xl border border-slate-700/50 gap-1"
+                                    class="flex items-center bg-card p-0.5 rounded-xl border border-line gap-1"
                                 >
                                     <div
-                                        class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 bg-slate-700/50"
+                                        class="w-8 h-8 flex items-center justify-center rounded-lg text-ink-muted bg-raised"
                                     >
                                         <svg
                                             class="w-5 h-5"
@@ -781,12 +777,12 @@ import Layout from "../layouts/Layout.astro";
                                         >
                                     </div>
                                     <div
-                                        class="flex items-center justify-center h-8 px-3 text-[10px] font-black text-slate-400 border-l border-r border-slate-700/50"
+                                        class="flex items-center justify-center h-8 px-3 text-[10px] font-black text-ink-muted border-l border-r border-line"
                                     >
                                         1.2x
                                     </div>
                                     <div
-                                        class="flex items-center gap-1.5 h-8 px-1.5 pr-3 rounded-lg bg-teal-500 text-slate-900 text-xs font-black"
+                                        class="flex items-center gap-1.5 h-8 px-1.5 pr-3 rounded-lg bg-accent text-on-accent text-xs font-black"
                                     >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -807,7 +803,7 @@ import Layout from "../layouts/Layout.astro";
                                 </div>
                                 <div class="flex items-center gap-1">
                                     <div
-                                        class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-500"
+                                        class="w-8 h-8 flex items-center justify-center rounded-lg text-ink-muted"
                                     >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -827,10 +823,10 @@ import Layout from "../layouts/Layout.astro";
                                         >
                                     </div>
                                     <div
-                                        class="flex items-center bg-slate-800/80 rounded-lg border border-slate-700/50 overflow-hidden opacity-50"
+                                        class="flex items-center bg-card rounded-lg border border-line overflow-hidden opacity-50"
                                     >
                                         <div
-                                            class="h-9 px-3 flex items-center gap-1.5 text-slate-400 border-r border-slate-700/50"
+                                            class="h-9 px-3 flex items-center gap-1.5 text-ink-muted border-r border-line"
                                         >
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -858,7 +854,7 @@ import Layout from "../layouts/Layout.astro";
                                             >
                                         </div>
                                         <div
-                                            class="h-9 px-3 flex items-center gap-1.5 text-slate-400 border-r border-slate-700/50"
+                                            class="h-9 px-3 flex items-center gap-1.5 text-ink-muted border-r border-line"
                                         >
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -877,7 +873,7 @@ import Layout from "../layouts/Layout.astro";
                                         </div>
                                     </div>
                                     <div
-                                        class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400"
+                                        class="w-8 h-8 flex items-center justify-center rounded-lg text-ink-muted"
                                     >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -898,7 +894,7 @@ import Layout from "../layouts/Layout.astro";
                                     </div>
                                 </div>
                                 <div
-                                    class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 border border-slate-700/50"
+                                    class="w-8 h-8 flex items-center justify-center rounded-lg text-ink-muted border border-line"
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -923,11 +919,11 @@ import Layout from "../layouts/Layout.astro";
 
                 <div class="grid md:grid-cols-2 gap-4">
                     <div
-                        class="p-4 bg-slate-800 rounded-lg border border-slate-700 hover:border-teal-500/30"
+                        class="p-4 bg-card rounded-lg border border-line hover:border-accent/40"
                     >
                         <div class="flex items-center gap-3 mb-2">
                             <div
-                                class="w-8 h-8 rounded bg-slate-700 flex items-center justify-center text-slate-400"
+                                class="w-8 h-8 rounded bg-raised flex items-center justify-center text-ink-muted"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -944,20 +940,20 @@ import Layout from "../layouts/Layout.astro";
                                     ></path></svg
                                 >
                             </div>
-                            <h4 class="font-bold text-white">Okuma Modu</h4>
+                            <h4 class="font-bold text-ink">Okuma Modu</h4>
                         </div>
-                        <p class="text-xs text-slate-400">
+                        <p class="text-xs text-ink-muted">
                             Sesli okumayı açıp kapatır. Aktif olduğunda sorular
                             otomatik okunur.
                         </p>
                     </div>
 
                     <div
-                        class="p-4 bg-slate-800 rounded-lg border border-slate-700 hover:border-teal-500/30"
+                        class="p-4 bg-card rounded-lg border border-line hover:border-accent/40"
                     >
                         <div class="flex items-center gap-3 mb-2">
                             <div
-                                class="w-8 h-8 rounded bg-slate-700 flex items-center justify-center text-slate-400"
+                                class="w-8 h-8 rounded bg-raised flex items-center justify-center text-ink-muted"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -973,37 +969,37 @@ import Layout from "../layouts/Layout.astro";
                                     ></polygon></svg
                                 >
                             </div>
-                            <h4 class="font-bold text-white">İnteraktif Mod</h4>
+                            <h4 class="font-bold text-ink">İnteraktif Mod</h4>
                         </div>
-                        <p class="text-xs text-slate-400">
+                        <p class="text-xs text-ink-muted">
                             Şıklara tıkladığınızda anında doğru/yanlış cevabı
                             gösterir.
                         </p>
                     </div>
 
                     <div
-                        class="p-4 bg-slate-800 rounded-lg border border-slate-700 hover:border-teal-500/30"
+                        class="p-4 bg-card rounded-lg border border-line hover:border-accent/40"
                     >
                         <div class="flex items-center gap-3 mb-2">
                             <div
-                                class="w-8 h-8 rounded bg-slate-700 flex items-center justify-center text-slate-400"
+                                class="w-8 h-8 rounded bg-raised flex items-center justify-center text-ink-muted"
                             >
                                 <span class="text-xs font-black">1.2x</span>
                             </div>
-                            <h4 class="font-bold text-white">Hız Kontrolü</h4>
+                            <h4 class="font-bold text-ink">Hız Kontrolü</h4>
                         </div>
-                        <p class="text-xs text-slate-400">
+                        <p class="text-xs text-ink-muted">
                             Okuma hızını ayarlar. Varsayılan 1.2x (Hızlı)
                             seviyesindedir.
                         </p>
                     </div>
 
                     <div
-                        class="p-4 bg-slate-800 rounded-lg border border-slate-700 hover:border-teal-500/30"
+                        class="p-4 bg-card rounded-lg border border-line hover:border-accent/40"
                     >
                         <div class="flex items-center gap-3 mb-2">
                             <div
-                                class="w-8 h-8 rounded bg-slate-700 flex items-center justify-center text-slate-400"
+                                class="w-8 h-8 rounded bg-raised flex items-center justify-center text-ink-muted"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -1020,19 +1016,19 @@ import Layout from "../layouts/Layout.astro";
                                     ></path></svg
                                 >
                             </div>
-                            <h4 class="font-bold text-white">Analiz</h4>
+                            <h4 class="font-bold text-ink">Analiz</h4>
                         </div>
-                        <p class="text-xs text-slate-400">
+                        <p class="text-xs text-ink-muted">
                             Sadece sorunun açıklamasını okutmak için kullanılır.
                         </p>
                     </div>
 
                     <div
-                        class="p-4 bg-slate-800 rounded-lg border border-slate-700 hover:border-teal-500/30"
+                        class="p-4 bg-card rounded-lg border border-line hover:border-accent/40"
                     >
                         <div class="flex items-center gap-3 mb-2">
                             <div
-                                class="w-8 h-8 rounded bg-slate-700 flex items-center justify-center text-slate-400"
+                                class="w-8 h-8 rounded bg-raised flex items-center justify-center text-ink-muted"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -1050,20 +1046,20 @@ import Layout from "../layouts/Layout.astro";
                                     ></circle></svg
                                 >
                             </div>
-                            <h4 class="font-bold text-white">Ayarlar</h4>
+                            <h4 class="font-bold text-ink">Ayarlar</h4>
                         </div>
-                        <p class="text-xs text-slate-400">
+                        <p class="text-xs text-ink-muted">
                             Filtreleme ve görünüm seçeneklerinin olduğu menüyü
                             açar.
                         </p>
                     </div>
 
                     <div
-                        class="p-4 bg-slate-800 rounded-lg border border-slate-700 hover:border-teal-500/30"
+                        class="p-4 bg-card rounded-lg border border-line hover:border-accent/40"
                     >
                         <div class="flex items-center gap-3 mb-2">
                             <div
-                                class="w-8 h-8 rounded bg-slate-700 flex items-center justify-center text-slate-400"
+                                class="w-8 h-8 rounded bg-raised flex items-center justify-center text-ink-muted"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -1081,17 +1077,17 @@ import Layout from "../layouts/Layout.astro";
                                     ></polygon></svg
                                 >
                             </div>
-                            <h4 class="font-bold text-white">Navigasyon</h4>
+                            <h4 class="font-bold text-ink">Navigasyon</h4>
                         </div>
-                        <p class="text-xs text-slate-400">
+                        <p class="text-xs text-ink-muted">
                             Önceki ve Sonraki sorular arasında geçiş yapar.
                         </p>
                     </div>
                 </div>
                 <div
-                    class="mt-6 p-3 bg-slate-800 rounded-xl border border-slate-700 text-xs text-slate-400"
+                    class="mt-6 p-3 bg-card rounded-xl border border-line text-xs text-ink-muted"
                 >
-                    <span class="text-teal-400 font-bold">Arama:</span> Alt
+                    <span class="text-accent-ink font-bold">Arama:</span> Alt
                     çubuk açıkken soru arama düğmesi çubuğun içinde durur;
                     çubuk kapalıyken sağ alttaki yuvarlak düğme aynı işi görür.
                 </div>
@@ -1099,19 +1095,19 @@ import Layout from "../layouts/Layout.astro";
             <!-- PWA / Kurulum Bölümü -->
             <section
                 id="kurulum"
-                class="content-card bg-slate-900 border border-slate-700 p-8 rounded-2xl shadow-xl mt-12 scroll-mt-24"
+                class="content-card bg-page border border-line p-8 rounded-2xl shadow-xl mt-12 scroll-mt-24"
             >
                 <div class="flex items-center gap-4 mb-6">
                     <div
-                        class="icon-box bg-blue-500/20 text-blue-400 p-3 rounded-xl"
+                        class="icon-box bg-accent-soft text-accent-ink p-3 rounded-xl"
                     >
                         <Simge ad="Smartphone" />
                     </div>
-                    <h2 class="text-2xl font-bold text-white">
+                    <h2 class="text-2xl font-bold text-ink">
                         Uygulama Olarak Yükle
                     </h2>
                 </div>
-                <p class="text-slate-400 mb-6 text-lg leading-relaxed">
+                <p class="text-ink-muted mb-6 text-lg leading-relaxed">
                     Bu portal bir <strong>PWA (Progressive Web App)</strong> uygulamasıdır.
                     Telefonunuza veya bilgisayarınıza indirerek bir uygulama gibi
                     kullanabilirsiniz.
@@ -1119,16 +1115,16 @@ import Layout from "../layouts/Layout.astro";
 
                 <div class="flex flex-col gap-4">
                     <div
-                        class="p-4 bg-slate-800 rounded-lg border border-slate-700"
+                        class="p-4 bg-card rounded-lg border border-line"
                     >
-                        <h4 class="font-bold text-white mb-2">Hemen Yükle</h4>
-                        <p class="text-sm text-slate-400 mb-4">
+                        <h4 class="font-bold text-ink mb-2">Hemen Yükle</h4>
+                        <p class="text-sm text-ink-muted mb-4">
                             Tarayıcınız destekliyorsa aşağıdaki butona
                             tıklayarak uygulamayı cihazınıza yükleyebilirsiniz.
                         </p>
                         <button
                             id="guide-install-btn"
-                            class="btn-primary w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white border-none py-3 px-6 rounded-lg font-bold shadow-lg shadow-green-900/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+                            class="btn-primary w-full sm:w-auto bg-ok text-on-accent border-none py-3 px-6 rounded-lg font-bold shadow-lg active:scale-[0.98] transition-all flex items-center justify-center gap-2"
                         >
                             Uygulamayı Yükle
                         </button>
@@ -1136,24 +1132,24 @@ import Layout from "../layouts/Layout.astro";
 
                     <div class="grid sm:grid-cols-2 gap-4">
                         <div
-                            class="p-4 bg-slate-800 rounded-lg border border-slate-700"
+                            class="p-4 bg-card rounded-lg border border-line"
                         >
-                            <h4 class="font-bold text-white mb-2">
+                            <h4 class="font-bold text-ink mb-2">
                                 Android / Chrome
                             </h4>
-                            <p class="text-xs text-slate-400">
+                            <p class="text-xs text-ink-muted">
                                 Sayfa yüklendiğinde beliren "Uygulamayı Yükle"
                                 butonuna tıklayın veya tarayıcı menüsünden "Ana
                                 Ekrana Ekle"yi seçin.
                             </p>
                         </div>
                         <div
-                            class="p-4 bg-slate-800 rounded-lg border border-slate-700"
+                            class="p-4 bg-card rounded-lg border border-line"
                         >
-                            <h4 class="font-bold text-white mb-2">
+                            <h4 class="font-bold text-ink mb-2">
                                 iOS (iPhone/iPad)
                             </h4>
-                            <p class="text-xs text-slate-400">
+                            <p class="text-xs text-ink-muted">
                                 Safari'de "Paylaş" butonuna basın ve açılan
                                 menüden "Ana Ekrana Ekle" seçeneğini seçin.
                             </p>

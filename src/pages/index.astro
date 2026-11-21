@@ -103,11 +103,11 @@ const stats = {
 };
 
 // University icons and colors
-const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
-  'anadolu-aof': { icon: 'GraduationCap', gradient: 'from-blue-600 to-blue-800' },
-  'ataturk-aof': { icon: 'Book', gradient: 'from-red-600 to-red-800' },
-  'auzef': { icon: 'BookOpen', gradient: 'from-purple-600 to-purple-800' },
-  'ankuzef': { icon: 'Landmark', gradient: 'from-sky-700 to-sky-900' },
+const uniStyles: Record<string, { icon: SimgeAdi }> = {
+  'anadolu-aof': { icon: 'GraduationCap' },
+  'ataturk-aof': { icon: 'Book' },
+  'auzef': { icon: 'BookOpen' },
+  'ankuzef': { icon: 'Landmark' },
 };
 ---
 
@@ -146,13 +146,10 @@ const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
   <header class="relative py-20 overflow-hidden" role="banner">
     <!-- Background decoration -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      <div class="absolute -top-40 -right-40 w-96 h-96 bg-primary-theme/10 rounded-full blur-3xl"></div>
-      <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-secondary-theme/10 rounded-full blur-3xl"></div>
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-theme/5 rounded-full blur-3xl"></div>
     </div>
 
     <div class="relative container-base text-center">
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-theme/10 border border-primary-theme/20 text-primary-theme text-xs sm:text-sm mb-6">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-soft border border-line text-accent-ink text-xs sm:text-sm mb-6">
         <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-primary-theme animate-pulse"></span>
         Ücretsiz ve Açık Kaynak
       </div>
@@ -160,7 +157,7 @@ const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
       <h1 class="text-3xl sm:text-5xl md:text-6xl font-bold mb-6 px-2">
         <span class="text-theme">Açık Öğretim</span>
         <br class="hidden sm:block" />
-        <span class="gradient-text"> Çalışma Portalı</span>
+        <span> Çalışma Portalı</span>
       </h1>
 
       <p class="text-base sm:text-lg md:text-xl text-muted-theme max-w-2xl mx-auto mb-10 px-4">
@@ -176,7 +173,7 @@ const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
         <a
           href="/rehber#kurulum"
           id="install-btn"
-          class="btn-secondary w-full sm:w-auto bg-green-600/10 text-green-500 border-green-500/20 hover:bg-green-600/20"
+          class="btn-secondary w-full sm:w-auto bg-ok-soft text-ok border-ok/20"
         >
           Uygulamayı Yükle
         </a>
@@ -220,19 +217,19 @@ const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
     <div class="container-base">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
         <div class="stat-card text-center" itemscope itemtype="https://schema.org/QuantitativeValue">
-          <div class="text-3xl md:text-4xl font-bold text-primary-theme mb-1" itemprop="value">{stats.universities}</div>
+          <div class="text-3xl md:text-4xl font-bold text-ink tabular-nums mb-1" itemprop="value">{stats.universities}</div>
           <div class="text-muted-theme text-sm" itemprop="unitText">Üniversite</div>
         </div>
         <div class="stat-card text-center" itemscope itemtype="https://schema.org/QuantitativeValue">
-          <div class="text-3xl md:text-4xl font-bold text-primary-theme mb-1" itemprop="value">{stats.departments}</div>
+          <div class="text-3xl md:text-4xl font-bold text-ink tabular-nums mb-1" itemprop="value">{stats.departments}</div>
           <div class="text-muted-theme text-sm" itemprop="unitText">Bölüm</div>
         </div>
         <div class="stat-card text-center" itemscope itemtype="https://schema.org/QuantitativeValue">
-          <div class="text-3xl md:text-4xl font-bold text-primary-theme mb-1" itemprop="value">{stats.courses}+</div>
+          <div class="text-3xl md:text-4xl font-bold text-ink tabular-nums mb-1" itemprop="value">{stats.courses}+</div>
           <div class="text-muted-theme text-sm" itemprop="unitText">Ders</div>
         </div>
         <div class="stat-card text-center" itemscope itemtype="https://schema.org/QuantitativeValue">
-          <div class="text-3xl md:text-4xl font-bold text-primary-theme mb-1" itemprop="value">{stats.questions.toLocaleString('tr-TR')}</div>
+          <div class="text-3xl md:text-4xl font-bold text-ink tabular-nums mb-1" itemprop="value">{stats.questions.toLocaleString('tr-TR')}</div>
           <div class="text-muted-theme text-sm" itemprop="unitText">Soru</div>
         </div>
       </div>
@@ -251,7 +248,7 @@ const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
 
       <div class="grid md:grid-cols-3 gap-6">
         {universityData.map((uni) => {
-          const style = uniStyles[uni.id] ?? { icon: 'Library' as const, gradient: 'from-slate-600 to-slate-800' };
+          const style = uniStyles[uni.id] ?? { icon: 'Library' as const };
           return (
             <a
               href={`/${uni.id}`}
@@ -261,21 +258,19 @@ const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
               itemtype="https://schema.org/CollegeOrUniversity"
             >
               <meta itemprop="url" content={`/${uni.id}`} />
-              <!-- Gradient accent -->
-              <div class={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${style.gradient}`}></div>
 
               <div class="flex items-start gap-4 mb-4">
                 {uni.logo ? (
-                  <div class="w-14 h-14 rounded-xl flex items-center justify-center bg-white border border-theme shrink-0 p-1.5">
+                  <div class="w-14 h-14 rounded-xl flex items-center justify-center bg-card border border-theme shrink-0 p-1.5">
                     <img src={uni.logo} alt={`${uni.name} logosu`} width="48" height="48" loading="lazy" class="w-full h-full object-contain" />
                   </div>
                 ) : (
-                  <div class={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl bg-gradient-to-br ${style.gradient} text-white shrink-0`}>
+                  <div class={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl bg-control border border-line text-ink shrink-0`}>
                     <Simge ad={style.icon} size={28} />
                   </div>
                 )}
                 <div class="flex-1 min-w-0">
-                  <h3 class="text-xl font-bold text-theme group-hover:text-primary-theme truncate" itemprop="name">
+                  <h3 class="text-xl font-bold text-theme group-hover:text-accent-ink truncate" itemprop="name">
                     {uni.shortName}
                   </h3>
                   <p class="text-sm text-muted-theme truncate" itemprop="department">{uni.faculty}</p>
@@ -309,10 +304,10 @@ const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
               </div>
 
               <div class="mt-4 pt-4 border-t border-theme flex items-center justify-between">
-                <span class="text-sm text-primary-theme group-hover:text-primary-light">
+                <span class="text-sm text-accent-ink group-hover:text-primary-light">
                   Detayları Gör
                 </span>
-                <svg class="w-4 h-4 text-primary-theme group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 text-accent-ink group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                 </svg>
               </div>
@@ -333,11 +328,11 @@ const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
 
       <div class="grid md:grid-cols-3 gap-8 relative">
          <!-- Connector Line (Desktop) -->
-         <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary-theme/30 to-transparent -z-10"></div>
+         <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-line -z-10"></div>
 
         <!-- Step 1 -->
         <div class="relative flex flex-col items-center text-center group">
-          <div class="w-24 h-24 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center text-4xl mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300 z-10">
+          <div class="w-24 h-24 rounded-2xl bg-card border border-line flex items-center justify-center text-4xl mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300 z-10">
             <Simge ad="Landmark" />
           </div>
           <h3 class="text-xl font-bold text-theme mb-3">1. Üniversiteni Seç</h3>
@@ -348,7 +343,7 @@ const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
 
         <!-- Step 2 -->
         <div class="relative flex flex-col items-center text-center group">
-          <div class="w-24 h-24 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center text-4xl mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300 z-10">
+          <div class="w-24 h-24 rounded-2xl bg-card border border-line flex items-center justify-center text-4xl mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300 z-10">
             <Simge ad="Library" />
           </div>
           <h3 class="text-xl font-bold text-theme mb-3">2. Dersini Bul</h3>
@@ -359,7 +354,7 @@ const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
 
         <!-- Step 3 -->
         <div class="relative flex flex-col items-center text-center group">
-          <div class="w-24 h-24 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center text-4xl mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300 z-10">
+          <div class="w-24 h-24 rounded-2xl bg-card border border-line flex items-center justify-center text-4xl mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300 z-10">
             <Simge ad="Target" />
           </div>
           <h3 class="text-xl font-bold text-theme mb-3">3. Çözmeye Başla</h3>
@@ -434,8 +429,8 @@ const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
       </div>
 
       <div class="space-y-4">
-        <details class="group bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
-          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-slate-100 dark:hover:bg-slate-800/50 text-theme">
+        <details class="group bg-control border border-line rounded-xl overflow-hidden">
+          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-control text-theme">
             <span>Bu portal tamamen ücretsiz mi?</span>
             <span class="transition group-open:rotate-180">
               <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
@@ -446,20 +441,20 @@ const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
           </div>
         </details>
 
-        <details class="group bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
-          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-slate-100 dark:hover:bg-slate-800/50 text-theme">
+        <details class="group bg-control border border-line rounded-xl overflow-hidden">
+          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-control text-theme">
             <span>Üye olmam gerekiyor mu?</span>
             <span class="transition group-open:rotate-180">
               <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
           <div class="text-muted-theme text-sm px-5 pb-5">
-            <strong>Hayır.</strong> Sitedeki tüm sorulara ve testlere üyelik gerektirmeden doğrudan erişebilirsiniz. İlerlemeniz ve favorileriniz tarayıcınızda tutulur; başka cihaza taşımak isterseniz <a href="/yedek" class="underline text-primary-theme">Kayıtlarını taşı</a> sayfasındaki yollardan birini seçersiniz. Site kayıtlarınızı hiçbir zaman almaz.
+            <strong>Hayır.</strong> Sitedeki tüm sorulara ve testlere üyelik gerektirmeden doğrudan erişebilirsiniz. İlerlemeniz ve favorileriniz tarayıcınızda tutulur; başka cihaza taşımak isterseniz <a href="/yedek" class="underline text-accent-ink">Kayıtlarını taşı</a> sayfasındaki yollardan birini seçersiniz. Site kayıtlarınızı hiçbir zaman almaz.
           </div>
         </details>
 
-        <details class="group bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
-          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-slate-100 dark:hover:bg-slate-800/50 text-theme">
+        <details class="group bg-control border border-line rounded-xl overflow-hidden">
+          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-control text-theme">
             <span>Sorular güncel mi?</span>
             <span class="transition group-open:rotate-180">
               <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
@@ -470,32 +465,32 @@ const uniStyles: Record<string, { icon: SimgeAdi; gradient: string }> = {
           </div>
         </details>
 
-        <details class="group bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
-          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-slate-100 dark:hover:bg-slate-800/50 text-theme">
+        <details class="group bg-control border border-line rounded-xl overflow-hidden">
+          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-control text-theme">
             <span>Sohbet asistanı ücretli mi?</span>
             <span class="transition group-open:rotate-180">
               <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
           <div class="text-muted-theme text-sm px-5 pb-5">
-            Site ücretsizdir; asistan ise sizin yapay zekâ anahtarınızla çalışır. Google Gemini, OpenAI, Anthropic ya da OpenRouter anahtarınızı Ayarlar panelinden girersiniz, kullanım ücretini sağlayıcınız belirler. Anahtarınız yalnız tarayıcınızda kalır. Ayrıntılar için <a href="/rehber#ders-asistani" class="underline text-primary-theme">rehbere</a> bakın.
+            Site ücretsizdir; asistan ise sizin yapay zekâ anahtarınızla çalışır. Google Gemini, OpenAI, Anthropic ya da OpenRouter anahtarınızı Ayarlar panelinden girersiniz, kullanım ücretini sağlayıcınız belirler. Anahtarınız yalnız tarayıcınızda kalır. Ayrıntılar için <a href="/rehber#ders-asistani" class="underline text-accent-ink">rehbere</a> bakın.
           </div>
         </details>
 
-        <details class="group bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
-          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-slate-100 dark:hover:bg-slate-800/50 text-theme">
+        <details class="group bg-control border border-line rounded-xl overflow-hidden">
+          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-control text-theme">
             <span>Kayıtlarımı başka cihaza taşıyabilir miyim?</span>
             <span class="transition group-open:rotate-180">
               <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
             </span>
           </summary>
           <div class="text-muted-theme text-sm px-5 pb-5">
-            Evet. <a href="/yedek" class="underline text-primary-theme">Kayıtlarını taşı</a> sayfasında kendi kişisel deponuz, Google Drive uygulama klasörünüz, şifreli GitHub gist'iniz, cihazdan cihaza bağlantı ya da yedek dosyası seçeneklerini bulursunuz. Hepsi isteğe bağlıdır ve site hiçbir veri almaz.
+            Evet. <a href="/yedek" class="underline text-accent-ink">Kayıtlarını taşı</a> sayfasında kendi kişisel deponuz, Google Drive uygulama klasörünüz, şifreli GitHub gist'iniz, cihazdan cihaza bağlantı ya da yedek dosyası seçeneklerini bulursunuz. Hepsi isteğe bağlıdır ve site hiçbir veri almaz.
           </div>
         </details>
 
-         <details class="group bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
-          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-slate-100 dark:hover:bg-slate-800/50 text-theme">
+         <details class="group bg-control border border-line rounded-xl overflow-hidden">
+          <summary class="flex justify-between items-center font-medium cursor-pointer p-5 hover:bg-control text-theme">
             <span>Uygulamayı telefonuma indirebilir miyim?</span>
             <span class="transition group-open:rotate-180">
               <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>

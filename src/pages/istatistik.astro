@@ -56,7 +56,7 @@ for (const uni of await getUniversities()) {
     document.querySelectorAll(".aralik").forEach((b) => {
       const etkin = b.dataset.gun === String(gun);
       b.classList.toggle("bg-primary-theme", etkin);
-      b.classList.toggle("text-white", etkin);
+      b.classList.toggle("text-ink", etkin);
       b.setAttribute("aria-pressed", String(etkin));
     });
     const durum = document.getElementById("ist-durum");
@@ -72,7 +72,7 @@ for (const uni of await getUniversities()) {
       document.getElementById("ist-gunluk").replaceChildren(
         ...v.gunluk.map((g) => {
           const d = document.createElement("div");
-          d.className = "flex-1 rounded-t bg-primary-theme/80 min-h-[2px]";
+          d.className = "flex-1 rounded-t bg-accent-soft min-h-[2px]";
           d.style.height = `${Math.round((g.tekil / enCok) * 100)}%`;
           d.title = `${g.gun}: ${g.tekil} kişi`;
           return d;
@@ -85,7 +85,7 @@ for (const uni of await getUniversities()) {
           li.className = "content-card flex items-center gap-3 py-3";
           const a = document.createElement("a");
           a.href = s.yol;
-          a.className = "flex-1 min-w-0 text-sm text-theme hover:text-primary-theme line-clamp-2";
+          a.className = "flex-1 min-w-0 text-sm text-theme hover:text-accent-ink line-clamp-2";
           a.textContent = adlar[s.yol] || s.yol;
           const n = document.createElement("span");
           n.className = "text-sm font-bold tabular-nums text-theme whitespace-nowrap";

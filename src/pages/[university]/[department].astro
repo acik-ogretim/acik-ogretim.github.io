@@ -57,13 +57,13 @@ const groupedCourses = semesters.map((sem) => {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Breadcrumbs -->
       <nav class="flex mb-8 text-sm text-muted-theme">
-        <a href="/" class="hover:text-primary-theme"
+        <a href="/" class="hover:text-accent-ink"
           >Ana Sayfa</a
         >
         <span class="mx-2">/</span>
         <a
           href={`/${university.id}`}
-          class="hover:text-primary-theme"
+          class="hover:text-accent-ink"
           >{university.shortName}</a
         >
         <span class="mx-2">/</span>
@@ -82,24 +82,24 @@ const groupedCourses = semesters.map((sem) => {
             Dönemlere göre ayrılmış ders listesi.
           </p>
           {department.active === false && (
-            <p class="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 text-sm font-semibold">
+            <p class="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-warn-soft text-warn text-sm font-semibold">
               <Simge ad="CirclePause" size={14} /> Bu programa yeni öğrenci alınmıyor (pasif)
             </p>
           )}
           {(department.programUrl || department.sourceUrl || department.curriculumUrl) && (
             <div class="mt-3 flex flex-wrap gap-2 text-sm">
               {department.programUrl && (
-                <a href={department.programUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-theme text-muted-theme hover:text-primary-theme hover:border-primary-theme/50">
+                <a href={department.programUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-theme text-muted-theme hover:text-accent-ink hover:border-line">
                   <Simge ad="ExternalLink" size={14} /> Resmî program sayfası
                 </a>
               )}
               {department.sourceUrl && (
-                <a href={department.sourceUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-theme text-muted-theme hover:text-primary-theme hover:border-primary-theme/50">
+                <a href={department.sourceUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-theme text-muted-theme hover:text-accent-ink hover:border-line">
                   <Simge ad={department.programUrl ? "FileText" : "ExternalLink"} size={14} /> {department.programUrl ? "Bilgi paketi" : "Resmî program sayfası"}
                 </a>
               )}
               {department.curriculumUrl && (
-                <a href={department.curriculumUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-theme text-muted-theme hover:text-primary-theme hover:border-primary-theme/50">
+                <a href={department.curriculumUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-theme text-muted-theme hover:text-accent-ink hover:border-line">
                   <Simge ad="ListChecks" size={14} /> Resmî müfredat
                 </a>
               )}
@@ -128,7 +128,7 @@ const groupedCourses = semesters.map((sem) => {
             type="text"
             id="courseSearch"
             placeholder="Ders veya kod ara..."
-            class="block w-full pl-10 pr-3 py-3 border border-theme rounded-xl bg-card-theme text-theme placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-theme focus:border-transparent transition-all"
+            class="block w-full pl-10 pr-3 py-3 border border-theme rounded-xl bg-card-theme text-theme placeholder-ink-muted focus:outline-none focus:ring-2 focus:ring-primary-theme focus:border-transparent transition-all"
           />
         </div>
       </div>
@@ -183,9 +183,9 @@ const groupedCourses = semesters.map((sem) => {
                         data-department-id={department.id}
                         data-testid={`course-card-${course.id}`}
                       >
-                        <div class="relative glass p-4 rounded-xl border border-theme bg-card-theme hover:border-primary-theme/50 transition-all h-full">
+                        <div class="relative glass p-4 rounded-xl border border-theme bg-card-theme hover:border-line transition-all h-full">
                           <button
-                            class="favorite-btn absolute top-2 right-2 w-6 h-6 rounded-full hover:bg-yellow-500/20 flex items-center justify-center z-10"
+                            class="favorite-btn absolute top-2 right-2 w-6 h-6 rounded-full hover:bg-warn-soft flex items-center justify-center z-10"
                             title="Favorilere ekle"
                           >
                             <Simge ad="Star" size={12} class="fav-icon" />
@@ -195,18 +195,18 @@ const groupedCourses = semesters.map((sem) => {
                             href={courseHref(course.id)}
                             class="flex items-center gap-3 h-full"
                           >
-                            <div class="w-10 h-10 rounded-lg bg-primary-theme/10 flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-primary-theme/20">
+                            <div class="w-10 h-10 rounded-lg bg-accent-soft flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-accent/25">
                               <Simge ad={dersSimgesi(course.name)} />
                             </div>
                             <div class="flex-1 min-w-0">
                               <div
-                                class="text-[10px] font-mono text-primary-theme opacity-70 mb-0.5 truncate"
+                                class="text-[10px] font-mono text-accent-ink opacity-70 mb-0.5 truncate"
                                 data-code={course.code?.toLowerCase() || ""}
                               >
                                 {course.code}
                               </div>
                               <h3
-                                class="text-sm font-medium text-theme group-hover:text-primary-theme line-clamp-2 leading-snug"
+                                class="text-sm font-medium text-theme group-hover:text-accent-ink line-clamp-2 leading-snug"
                                 data-name={course.name.toLowerCase()}
                               >
                                 {course.name}
@@ -219,7 +219,7 @@ const groupedCourses = semesters.map((sem) => {
                   </div>
                   {group.pools.map((pool) => (
                     <details class="mt-6 group/pool" data-kategori={pool.kategori}>
-                      <summary class="cursor-pointer select-none flex items-center gap-3 text-sm font-semibold text-muted-theme hover:text-primary-theme">
+                      <summary class="cursor-pointer select-none flex items-center gap-3 text-sm font-semibold text-muted-theme hover:text-accent-ink">
                         <Simge ad="ChevronRight" size={16} class="transition-transform group-open/pool:rotate-90" />
                         {pool.ad}
                         <span class="text-xs font-normal">({pool.courses.length})</span>
@@ -236,9 +236,9 @@ const groupedCourses = semesters.map((sem) => {
                               data-department-id={department.id}
                               data-testid={`course-card-${course.id}`}
                             >
-                              <div class="relative glass p-4 rounded-xl border border-theme bg-card-theme hover:border-primary-theme/50 transition-all h-full">
+                              <div class="relative glass p-4 rounded-xl border border-theme bg-card-theme hover:border-line transition-all h-full">
                                 <button
-                                  class="favorite-btn absolute top-2 right-2 w-6 h-6 rounded-full hover:bg-yellow-500/20 flex items-center justify-center z-10"
+                                  class="favorite-btn absolute top-2 right-2 w-6 h-6 rounded-full hover:bg-warn-soft flex items-center justify-center z-10"
                                   title="Favorilere ekle"
                                 >
                                   <Simge ad="Star" size={12} class="fav-icon" />
@@ -248,18 +248,18 @@ const groupedCourses = semesters.map((sem) => {
                                   href={courseHref(course.id)}
                                   class="flex items-center gap-3 h-full"
                                 >
-                                  <div class="w-10 h-10 rounded-lg bg-primary-theme/10 flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-primary-theme/20">
+                                  <div class="w-10 h-10 rounded-lg bg-accent-soft flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-accent/25">
                                     <Simge ad={dersSimgesi(course.name)} />
                                   </div>
                                   <div class="flex-1 min-w-0">
                                     <div
-                                      class="text-[10px] font-mono text-primary-theme opacity-70 mb-0.5 truncate"
+                                      class="text-[10px] font-mono text-accent-ink opacity-70 mb-0.5 truncate"
                                       data-code={course.code?.toLowerCase() || ""}
                                     >
                                       {course.code}
                                     </div>
                                     <h3
-                                      class="text-sm font-medium text-theme group-hover:text-primary-theme line-clamp-2 leading-snug"
+                                      class="text-sm font-medium text-theme group-hover:text-accent-ink line-clamp-2 leading-snug"
                                       data-name={course.name.toLowerCase()}
                                     >
                                       {course.name}
@@ -338,10 +338,10 @@ const groupedCourses = semesters.map((sem) => {
       if (icon) {
         if (isFav) {
           icon.setAttribute("fill", "currentColor");
-          icon.classList.add("text-yellow-500");
+          icon.classList.add("text-warn");
         } else {
           icon.setAttribute("fill", "none");
-          icon.classList.remove("text-yellow-500");
+          icon.classList.remove("text-warn");
         }
       }
     });

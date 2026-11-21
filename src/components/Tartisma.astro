@@ -4,7 +4,7 @@
 // reports and talk stay attached to that question. giscus loads only when the learner opens the sheet.
 ---
 
-<div id="tartisma-arka" class="fixed inset-0 z-[180] bg-black/40 hidden" aria-hidden="true"></div>
+<div id="tartisma-arka" class="fixed inset-0 z-[180] bg-scrim hidden" aria-hidden="true"></div>
 <section
   id="tartisma-sayfa"
   role="dialog"
@@ -20,22 +20,22 @@
       href="https://github.com/acik-ogretim/acik-ogretim.github.io/discussions"
       target="_blank"
       rel="noopener"
-      class="text-xs font-semibold text-primary-theme hover:underline"
+      class="text-xs font-semibold text-accent-ink hover:underline"
     >GitHub'da aç</a>
     <button id="tartisma-kapat" type="button" class="w-11 h-11 grid place-items-center rounded-lg text-muted-theme hover:text-theme" aria-label="Kapat">
       <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
     </button>
   </header>
   <div id="bildir-ders" class="hidden flex-wrap gap-2 px-4 pt-3">
-    <button type="button" data-bildir="ders-hatali" class="min-h-11 px-3 rounded-lg border border-theme text-sm font-semibold hover:border-primary-theme hover:text-primary-theme">Ders hatalı</button>
-    <button type="button" data-bildir="ders-eksik" class="min-h-11 px-3 rounded-lg border border-theme text-sm font-semibold hover:border-primary-theme hover:text-primary-theme">Ders eksik</button>
-    <button type="button" data-bildir="bolum-hatali" class="min-h-11 px-3 rounded-lg border border-theme text-sm font-semibold hover:border-primary-theme hover:text-primary-theme">Bölüm hatalı</button>
-    <button type="button" data-bildir="bolum-eksik" class="min-h-11 px-3 rounded-lg border border-theme text-sm font-semibold hover:border-primary-theme hover:text-primary-theme">Bölüm eksik</button>
+    <button type="button" data-bildir="ders-hatali" class="min-h-11 px-3 rounded-lg border border-theme text-sm font-semibold hover:border-accent hover:text-accent-ink">Ders hatalı</button>
+    <button type="button" data-bildir="ders-eksik" class="min-h-11 px-3 rounded-lg border border-theme text-sm font-semibold hover:border-accent hover:text-accent-ink">Ders eksik</button>
+    <button type="button" data-bildir="bolum-hatali" class="min-h-11 px-3 rounded-lg border border-theme text-sm font-semibold hover:border-accent hover:text-accent-ink">Bölüm hatalı</button>
+    <button type="button" data-bildir="bolum-eksik" class="min-h-11 px-3 rounded-lg border border-theme text-sm font-semibold hover:border-accent hover:text-accent-ink">Bölüm eksik</button>
   </div>
   <div id="bildir-soru" class="flex flex-wrap gap-2 px-4 pt-3">
-    <button type="button" data-bildir="soru" class="min-h-11 px-3 rounded-lg border border-theme text-sm font-semibold hover:border-primary-theme hover:text-primary-theme">Soru hatalı</button>
-    <button type="button" data-bildir="aciklama" class="min-h-11 px-3 rounded-lg border border-theme text-sm font-semibold hover:border-primary-theme hover:text-primary-theme">Açıklama hatalı</button>
-    <button type="button" data-bildir="paylas" class="min-h-11 px-3 rounded-lg border border-theme text-sm font-semibold hover:border-primary-theme hover:text-primary-theme">Açıklamamı paylaş</button>
+    <button type="button" data-bildir="soru" class="min-h-11 px-3 rounded-lg border border-theme text-sm font-semibold hover:border-accent hover:text-accent-ink">Soru hatalı</button>
+    <button type="button" data-bildir="aciklama" class="min-h-11 px-3 rounded-lg border border-theme text-sm font-semibold hover:border-accent hover:text-accent-ink">Açıklama hatalı</button>
+    <button type="button" data-bildir="paylas" class="min-h-11 px-3 rounded-lg border border-theme text-sm font-semibold hover:border-accent hover:text-accent-ink">Açıklamamı paylaş</button>
   </div>
   <p class="px-4 pt-2 text-xs text-muted-theme">Bildirim ve yorum için GitHub hesabıyla giriş gerekir.</p>
   <div id="tartisma-alan" class="flex-1 overflow-y-auto px-4 pt-2 min-h-[12rem]"></div>

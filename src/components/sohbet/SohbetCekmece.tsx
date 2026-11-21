@@ -53,12 +53,12 @@ export default function SohbetCekmece({ courseKey }: { courseKey: string }) {
       }}
       swipeDirection={wide ? "right" : "down"}
     >
-      <Drawer.Trigger id="sohbet-ac" className="btn-primary">
+      <Drawer.Trigger id="sohbet-ac" className="btn-secondary">
         <MessageCircle className="w-5 h-5" aria-hidden />
         Derse sor
       </Drawer.Trigger>
       <Drawer.Portal keepMounted={opened}>
-        <Drawer.Backdrop className="fixed inset-0 z-[150] bg-black opacity-[calc(0.5*(1-var(--drawer-swipe-progress)))] transition-opacity duration-[400ms] data-starting-style:opacity-0 data-ending-style:opacity-0" />
+        <Drawer.Backdrop className="fixed inset-0 z-[150] bg-page opacity-[calc(0.5*(1-var(--drawer-swipe-progress)))] transition-opacity duration-[400ms] data-starting-style:opacity-0 data-ending-style:opacity-0" />
         <Drawer.Viewport className="sohbet-gorunum fixed inset-x-0 top-0 bottom-[var(--klavye,0px)] z-[151] flex items-end justify-center md:bottom-0 md:items-stretch md:justify-end">
           <Drawer.Popup
             className="sohbet-popup flex w-full h-[92dvh] rounded-t-2xl overflow-hidden outline-none shadow-2xl

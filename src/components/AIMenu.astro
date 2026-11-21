@@ -14,24 +14,24 @@ const extra = [
 <div id="global-ai-menu-container" class="relative z-[100]">
     <div
         id="global-ai-menu"
-        class="hidden ai-menu-dropdown fixed z-[100] bg-white dark:bg-slate-900
-           rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700
-           p-2 w-64 md:w-56 overflow-hidden ring-1 ring-black/5"
+        class="hidden ai-menu-dropdown fixed z-[100] bg-card
+           rounded-2xl shadow-2xl border border-line
+           p-2 w-64 md:w-56 overflow-hidden"
         style="display: none;"
     >
         <!-- Header -->
         <div
-            class="px-3 py-2 bg-slate-50/50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-800 -mx-2 -mt-2 mb-2 rounded-t-xl"
+            class="px-3 py-2 bg-control border-b border-line -mx-2 -mt-2 mb-2 rounded-t-xl"
         >
             <div class="flex justify-between items-center">
                 <div>
                     <div
-                        class="text-[10px] font-bold text-slate-400 uppercase tracking-wider"
+                        class="text-[10px] font-bold text-ink-muted uppercase tracking-wider"
                     >
                         AI Asistan
                     </div>
                     <div
-                        class="text-xs font-medium text-slate-700 dark:text-slate-200 mt-0.5"
+                        class="text-xs font-medium text-ink mt-0.5"
                     >
                         İşlem Seçiniz
                     </div>
@@ -39,7 +39,7 @@ const extra = [
                 <!-- Mobile Close Icon -->
                 <button
                     onclick="closeGlobalAIMenu()"
-                    class="md:hidden text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+                    class="md:hidden text-ink-muted "
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -61,10 +61,10 @@ const extra = [
         <div class="space-y-0.5">
             <button
                 onclick="triggerGlobalAction('regenerate')"
-                class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-900/30 hover:text-teal-600 dark:hover:text-teal-400 rounded-lg flex items-center gap-3  group"
+                class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-ink-muted hover:bg-accent-soft hover:text-accent-ink rounded-lg flex items-center gap-3 group"
             >
                 <span
-                    class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-slate-100 dark:bg-slate-800 group-hover:bg-teal-100 dark:group-hover:bg-teal-800 "
+                    class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-control group-hover:bg-accent-soft "
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -87,10 +87,10 @@ const extra = [
             </button>
             <button
                 onclick="triggerGlobalAction('longer')"
-                class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg flex items-center gap-3  group"
+                class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-ink-muted hover:bg-accent-soft hover:text-accent-ink rounded-lg flex items-center gap-3 group"
             >
                 <span
-                    class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-slate-100 dark:bg-slate-800 group-hover:bg-blue-100 dark:group-hover:bg-blue-800 "
+                    class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-control group-hover:bg-accent-soft "
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -114,10 +114,10 @@ const extra = [
             </button>
             <button
                 onclick="triggerGlobalAction('shorter')"
-                class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-amber-50 dark:hover:bg-amber-900/30 hover:text-amber-600 dark:hover:text-amber-400 rounded-lg flex items-center gap-3  group"
+                class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-ink-muted hover:bg-warn-soft hover:text-warn rounded-lg flex items-center gap-3 group"
             >
                 <span
-                    class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-slate-100 dark:bg-slate-800 group-hover:bg-amber-100 dark:group-hover:bg-amber-800 "
+                    class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-control group-hover:bg-warn-soft "
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -138,10 +138,10 @@ const extra = [
             </button>
             <button
                 onclick="triggerGlobalAction('mnemonic')"
-                class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-purple-50 dark:hover:bg-purple-900/30 hover:text-purple-600 dark:hover:text-purple-400 rounded-lg flex items-center gap-3  group"
+                class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-ink-muted hover:bg-accent-soft hover:text-accent-ink rounded-lg flex items-center gap-3 group"
             >
                 <span
-                    class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-slate-100 dark:bg-slate-800 group-hover:bg-purple-100 dark:group-hover:bg-purple-800 "
+                    class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-control group-hover:bg-accent-soft "
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -163,9 +163,9 @@ const extra = [
             {extra.map(({ action, label, Icon }) => (
                 <button
                     onclick={`triggerGlobalAction('${action}')`}
-                    class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-900/30 hover:text-teal-600 dark:hover:text-teal-400 rounded-lg flex items-center gap-3 group"
+                    class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-ink-muted hover:bg-accent-soft hover:text-accent-ink rounded-lg flex items-center gap-3 group"
                 >
-                    <span class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-slate-100 dark:bg-slate-800 group-hover:bg-teal-100 dark:group-hover:bg-teal-800">
+                    <span class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-control group-hover:bg-accent-soft ">
                         <Simge ad={Icon} size={14} />
                     </span>
                     {label}
@@ -173,15 +173,15 @@ const extra = [
             ))}
         </div>
 
-        <div class="h-px bg-slate-200 dark:bg-slate-700 mx-2 my-1.5"></div>
+        <div class="h-px bg-raised mx-2 my-1.5"></div>
 
         <div class="">
             <button
                 onclick="triggerGlobalAction('reset')"
-                class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-rose-50 dark:hover:bg-rose-900/30 hover:text-rose-600 dark:hover:text-rose-400 rounded-lg flex items-center gap-3  group"
+                class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-ink-muted hover:bg-bad-soft hover:text-bad rounded-lg flex items-center gap-3 group"
             >
                 <span
-                    class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-slate-100 dark:bg-slate-800 group-hover:bg-rose-100 dark:group-hover:bg-rose-800 "
+                    class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-control group-hover:bg-bad-soft "
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -206,7 +206,7 @@ const extra = [
     <!-- Mobile Backdrop -->
     <div
         id="global-ai-menu-backdrop"
-        class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-[99] md:hidden transition-opacity"
+        class="hidden fixed inset-0 bg-scrim backdrop-blur-sm z-[99] md:hidden transition-opacity"
         onclick="closeGlobalAIMenu()"
     >
     </div>

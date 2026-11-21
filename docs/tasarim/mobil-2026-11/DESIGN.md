@@ -84,6 +84,10 @@ Gece çalışan, telefonda soru çözen ve dinleyen yetişkin öğrenci için sa
 
 **Kontrast** (WCAG oranı, hesaplandı): açık temada metin 17,8, ikincil metin 7,8, vurgu üstü beyaz yazı 5,9, vurgu metni 7,0, doğru 5,3, yanlış 5,4, uyarı 5,9; koyu temada metin 16,8, ikincil metin kartta 6,9, vurgu üstü yazı 8,1, doğru 8,0, yanlış 6,6, uyarı 8,2. Hepsi 4,5'in üstünde.
 
+**Tailwind sınıfları**: bileşenler renk için yalnız rol sınıflarını kullanır; `global.css` içindeki `@theme inline` bloğu bunları rol değişkenlerine bağlar. Zemin `bg-page`, kart `bg-card`, iç yüzey ve pasif düğme `bg-control`, açılan yüzey `bg-raised`, kenar `border-line` ve `border-line-strong`, metin `text-ink` ve `text-ink-muted`, vurgu `bg-accent` (üstünde `text-on-accent`), vurgu metni `text-accent-ink`, seçili zemin `bg-accent-soft`, öğrenme renkleri `ok`, `bad`, `warn` ve `-soft` eşleri, cam `bg-glass`, perde `bg-scrim`, serif `font-serif`. `slate-800`, `teal-500`, `white` gibi sabit renk sınıfı ve `dark:` öneki kullanılmaz; eski sınıflar `scripts/tema_siniflari.py` ile çevrilir.
+
+**Vurgu seçenekleri**: Ayarlar'da mavi (varsayılan), kehribar, kiremit ve nötr; `html[data-vurgu]` yalnız `--primary-*` rollerini değiştirir, öğrenme renkleri sabit kalır. Her seçeneğin açık ve koyu değeri `global.css` içindedir.
+
 **Üniversite rengi**: `universities.json` içindeki `color` yalnız üniversite rozetinde kullanılır; arayüz vurgusu olmaz.
 
 ## 3. Tipografi

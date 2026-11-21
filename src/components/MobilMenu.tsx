@@ -337,7 +337,7 @@ export default function MobilMenu({ dersAdi, uniteler: tumUniteler }: { dersAdi:
         swipeDirection="down"
       >
         <Drawer.Portal>
-          <Drawer.Backdrop className="fixed inset-0 z-[150] bg-black opacity-[calc(0.5*(1-var(--drawer-swipe-progress)))] transition-opacity duration-300 data-starting-style:opacity-0 data-ending-style:opacity-0 motion-reduce:transition-none" />
+          <Drawer.Backdrop className="fixed inset-0 z-[150] bg-page opacity-[calc(0.5*(1-var(--drawer-swipe-progress)))] transition-opacity duration-300 data-starting-style:opacity-0 data-ending-style:opacity-0 motion-reduce:transition-none" />
           <Drawer.Viewport
             className="fixed inset-x-0 top-0 z-[151] flex items-end justify-center md:items-center md:p-6"
             style={{ bottom: "var(--klavye, 0px)" }}

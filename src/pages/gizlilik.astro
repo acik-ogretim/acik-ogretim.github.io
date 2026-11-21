@@ -8,11 +8,7 @@ import Layout from "../layouts/Layout.astro";
         <!-- Background Accents -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
             <div
-                class="absolute -top-40 -right-40 w-96 h-96 bg-primary-theme/10 rounded-full blur-3xl"
-            >
-            </div>
-            <div
-                class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-theme to-transparent"
+                class="absolute bottom-0 left-0 w-full h-px bg-line"
             >
             </div>
         </div>
@@ -59,7 +55,7 @@ import Layout from "../layouts/Layout.astro";
                         Kayıtları Cihazlar Arasında Taşıma
                     </h2>
                     <p>
-                        <a href="/yedek" class="text-primary-theme hover:underline">Kayıtlarını taşı</a>
+                        <a href="/yedek" class="text-accent-ink hover:underline">Kayıtlarını taşı</a>
                         sayfasındaki yolların hepsi isteğe bağlıdır. Hiçbirinde kayıtlarınız bize gelmez;
                         tarayıcınız doğrudan sizin seçtiğiniz yerle konuşur. Taşınan kayıtlar: çözdüğünüz
                         sorular, yanlışlarınız, favorileriniz, ayarlarınız ve sohbet geçmişiniz. Yapay zekâ
@@ -219,7 +215,7 @@ import Layout from "../layouts/Layout.astro";
                     <a
                         href="https://github.com/acik-ogretim/acik-ogretim.github.io"
                         target="_blank"
-                        class="text-primary-theme hover:underline mt-2 inline-block"
+                        class="text-accent-ink hover:underline mt-2 inline-block"
                     >
                         GitHub Deposunu İncele
                     </a>
@@ -237,7 +233,7 @@ import Layout from "../layouts/Layout.astro";
                         bir şekilde <strong>bu sayfada ilan edilecektir.</strong
                         >
                     </p>
-                    <p class="mt-2 text-sm text-slate-400">
+                    <p class="mt-2 text-sm text-ink-muted">
                         Son Güncelleme: {new Date().toLocaleDateString("tr-TR")}
                     </p>
                 </section>

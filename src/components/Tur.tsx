@@ -101,11 +101,11 @@ export default function Tur() {
             top: kutu.top - 6,
             width: kutu.width + 12,
             height: kutu.height + 12,
-            boxShadow: "0 0 0 9999px rgba(0,0,0,0.6), 0 0 0 2px var(--primary-color)",
+            boxShadow: "0 0 0 9999px var(--scrim), 0 0 0 2px var(--primary-color)",
           }}
         />
       ) : (
-        <div aria-hidden className="fixed inset-0 bg-black/60" />
+        <div aria-hidden className="fixed inset-0 bg-scrim" />
       )}
       <div
         ref={kart}

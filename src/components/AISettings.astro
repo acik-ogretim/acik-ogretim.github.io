@@ -106,7 +106,7 @@
 
         const previous = contentEl.innerHTML;
         contentEl.innerHTML = `
-        <div class="flex items-center gap-2 text-teal-400 py-2" role="status">
+        <div class="flex items-center gap-2 text-accent-ink py-2" role="status">
             <svg class="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
               <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
               <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
@@ -150,7 +150,7 @@
                   ? "Kullanım sınırı doldu. Biraz sonra yeniden dene."
                   : "Açıklama yazılamadı. Yeniden dene.";
             const box = document.createElement("div");
-            box.className = "p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-sm text-red-400";
+            box.className = "p-3 bg-bad-soft border border-bad/20 rounded-lg text-sm text-bad";
             box.textContent = errorMsg;
             contentEl.replaceChildren(box);
         }
