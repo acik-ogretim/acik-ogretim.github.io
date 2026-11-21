@@ -45,6 +45,7 @@ const sekmeler = [
         <h1>{dersAdi}</h1>
         <p>Çalışma odası, 1 ile 7. üniteler</p>
       </div>
+      {paket.medyalar.length ? <button type="button" class="co-ust-ikon" id="co-medya-gizle" aria-pressed="false" aria-label="Videoyu ve sesi kapat, yalnız metni oku"><span class="co-medya-acik"><Simge ad="PanelTopClose" size={20} /></span><span class="co-medya-kapali"><Simge ad="PanelTopOpen" size={20} /></span></button> : null}
       <button type="button" class="co-ust-dugme" id="co-konular-ac" aria-label="Konular"><Simge ad="ListTree" size={22} /><span>Konular</span></button>
     </header>
 

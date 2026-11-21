@@ -1311,6 +1311,8 @@ export function calismaOdasiBaslat(): void {
     if (dugme) dugme.hidden = !(gorunur && elleKaydirdi && simdiKonu && !blokEkranda(simdiKonu));
   }
   function medyaSar(no: string, oynat = false): void {
+    // asking to listen from a topic opens the closed player again
+    if (oynat && document.getElementById("co")?.hasAttribute("data-medyasiz")) document.getElementById("co-medya-gizle")?.click();
     const k = konuHaritasi.get(no)?.k;
     const calarken = oynat || caliyorMu();
     medyaKonuyaUydur(no);
@@ -1925,6 +1927,7 @@ export function calismaOdasiBaslat(): void {
   const kucukAnahtar = "calisma-video-kucuk";
   const kucukUygula = (k: boolean): void => {
     videoKab.toggleAttribute("data-kucuk", k);
+    requestAnimationFrame(() => yukseklik());
     const d = document.getElementById("co-kucult");
     d?.setAttribute("aria-pressed", String(k));
     d?.setAttribute("aria-label", k ? "Videoyu büyüt" : "Videoyu küçült");
@@ -1934,6 +1937,33 @@ export function calismaOdasiBaslat(): void {
   } catch {
     /* storage blocked */
   }
+  // media closed entirely: pause whatever plays and hide the player; remembered per browser
+  const gizliAnahtar = "calisma-medya-gizli";
+  const medyaGizle = (g: boolean): void => {
+    kok.toggleAttribute("data-medyasiz", g);
+    const d = document.getElementById("co-medya-gizle");
+    d?.setAttribute("aria-pressed", String(g));
+    d?.setAttribute("aria-label", g ? "Videoyu ve sesi aç" : "Videoyu ve sesi kapat, yalnız metni oku");
+    if (g) {
+      try {
+        sesEl()?.pause();
+        ytOynatici?.pauseVideo?.();
+      } catch {
+        /* player not ready */
+      }
+    }
+    try {
+      localStorage.setItem(gizliAnahtar, g ? "1" : "0");
+    } catch {
+      /* storage blocked */
+    }
+  };
+  try {
+    if (localStorage.getItem(gizliAnahtar) === "1") medyaGizle(true);
+  } catch {
+    /* storage blocked */
+  }
+  document.getElementById("co-medya-gizle")?.addEventListener("click", () => medyaGizle(!kok.hasAttribute("data-medyasiz")));
   document.getElementById("co-yt-hiz")?.addEventListener("click", () => {
     const simdiki = kayitliHiz();
     const hiz = SES_HIZLARI[(SES_HIZLARI.indexOf(simdiki) + 1) % SES_HIZLARI.length];
@@ -1955,7 +1985,9 @@ export function calismaOdasiBaslat(): void {
   });
   // floor of the real (fractional) height: offsetHeight rounds, and a rounded-up value left a hairline gap under the
   // player on high-density phones where the text behind showed through; the tabs now tuck under the player instead.
-  const yukseklik = (): void => kok.style.setProperty("--co-video-h", `${Math.floor(videoKab.getBoundingClientRect().height)}px`);
+  // a floating small video (phone picture-in-picture) takes no room at the top, so the sticky tabs go to the very top
+  const yukseklik = (): void =>
+    kok.style.setProperty("--co-video-h", `${getComputedStyle(videoKab).position === "fixed" ? 0 : Math.floor(videoKab.getBoundingClientRect().height)}px`);
   new ResizeObserver(yukseklik).observe(videoKab);
   yukseklik();
 

@@ -958,6 +958,40 @@ dialog .co-arac[data-alt] {
   font-size: 14px;
   font-weight: 600;
 }
+/* close the video or audio completely for someone who only wants to read (Zeki, 21 Nov 2026) */
+.co-ust-ikon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-left: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: var(--button-bg);
+  color: var(--text-color);
+  cursor: pointer;
+}
+.co-ust-ikon:hover {
+  background: var(--button-bg-hover);
+}
+.co-ust-ikon + .co-ust-dugme {
+  margin-left: 8px;
+}
+.co-ust-ikon .co-medya-kapali,
+.co[data-medyasiz] .co-ust-ikon .co-medya-acik {
+  display: none;
+}
+.co[data-medyasiz] .co-ust-ikon .co-medya-kapali {
+  display: contents;
+}
+.co[data-medyasiz] .co-video-kab {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .co-ust-ikon {
+    margin-right: max(12px, env(safe-area-inset-right));
+  }
+}
 .co-ust-dugme:hover {
   background: var(--button-bg-hover);
 }
@@ -1657,24 +1691,42 @@ ol.co-ak-liste {
 .co-video-kab:not([data-ortam='youtube']) .co-kucult {
   display: none;
 }
-.co-video-kab[data-ortam='youtube'][data-kucuk] {
-  background: transparent;
-  pointer-events: none;
-}
-.co-video-kab[data-ortam='youtube'][data-kucuk] > * {
-  pointer-events: auto;
-}
-.co-video-kab[data-ortam='youtube'][data-kucuk] .co-video {
-  width: min(46%, 240px);
-  margin: 6px 6px 0 auto;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgb(0 0 0 / 0.3);
-}
 .co-video-kab[data-ortam='youtube'][data-kucuk] .co-video-sec {
   display: none;
 }
-@media (min-width: 900px) {
+/* phone and tablet: the small video floats as a picture-in-picture window at the bottom right; the tabs and text
+   use the whole height */
+@media (max-width: 1023px) {
+  .co-video-kab[data-ortam='youtube'][data-kucuk] {
+    position: fixed;
+    top: auto;
+    right: max(10px, env(safe-area-inset-right));
+    bottom: calc(76px + env(safe-area-inset-bottom));
+    width: min(48vw, 260px);
+    z-index: 40;
+    background: transparent;
+  }
   .co-video-kab[data-ortam='youtube'][data-kucuk] .co-video {
-    width: min(50%, 360px);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 0.4);
+  }
+}
+@media (min-width: 1024px) {
+  .co-video-kab[data-ortam='youtube'][data-kucuk] .co-video {
+    width: min(60%, 380px);
+    margin: 8px 8px 0 auto;
+    border-radius: 10px;
+  }
+}
+
+/* media closed on a wide screen: the reading column takes the whole width instead of leaving an empty left column */
+@media (min-width: 1024px) {
+  .co[data-medyasiz] .co-ana {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 920px;
+    margin-inline: auto;
+  }
+  .co[data-medyasiz] .co-sol {
+    display: none;
   }
 }
