@@ -26,7 +26,7 @@ export async function getStaticPaths() {
 
 const { paket, dersAdi, dersYolu } = Astro.props;
 const veriJson = JSON.stringify(paket).replace(/</g, "\\u003c");
-const simgeler: SimgeAdi[] = ["BookOpen", "CircleHelp", "FileText", "Highlighter", "Trash2", "Check", "X", "ChevronLeft", "ChevronRight", "ArrowRight", "WifiOff", "Play", "Link", "ExternalLink", "ListChecks"];
+const simgeler: SimgeAdi[] = ["BookOpen", "CircleHelp", "FileText", "Highlighter", "Trash2", "Check", "X", "ChevronLeft", "ChevronRight", "ArrowRight", "WifiOff", "Play", "Link", "ExternalLink", "ListChecks", "Star", "Copy", "StickyNote"];
 const sekmeler = [
   { id: "dokum", ad: "Döküm" },
   { id: "su-an", ad: "Şu an" },
@@ -75,7 +75,17 @@ const sekmeler = [
 
     <!-- Kavram baloncuğu -->
     <div class="co-balon" id="co-balon" role="dialog" aria-label="Kavram tanımı" hidden></div>
-    <button type="button" class="co-vurgula" id="co-vurgula" hidden><Simge ad="Highlighter" size={16} /><span>Vurgula</span></button>
+    <div class="co-arac" id="co-arac" role="toolbar" aria-label="Seçili metin" hidden>
+      <div class="co-arac-dugmeler">
+        <button type="button" data-arac="vurgula" aria-keyshortcuts="Alt+V" title="Alt+V"><Simge ad="Highlighter" size={18} /><span>Vurgula</span></button>
+        <button type="button" data-arac="not" aria-keyshortcuts="Alt+N" title="Alt+N"><Simge ad="StickyNote" size={18} /><span>Not ekle</span></button>
+        <button type="button" data-arac="kopyala" aria-keyshortcuts="Alt+K" title="Alt+K"><Simge ad="Copy" size={18} /><span>Kopyala</span></button>
+      </div>
+      <form class="co-arac-not" id="co-arac-not" hidden>
+        <input type="text" id="co-arac-girdi" maxlength="500" autocomplete="off" aria-label="Not" placeholder="Notunu yaz" />
+        <button type="submit">Kaydet</button>
+      </form>
+    </div>
 
     <!-- Konu anlatımı -->
     <dialog id="co-konu-katman" class="katman-yuzey co-katman" data-yer="sag" aria-labelledby="co-konu-ad" closedby="any">

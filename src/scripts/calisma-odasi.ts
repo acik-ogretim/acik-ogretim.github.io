@@ -5,6 +5,7 @@ import { kavramMotoru } from "../lib/calisma-odasi/kavram";
 import { PaketSemasi, TUR_ADI, saatYaz, satirBul, type CalismaKonu, type CalismaPaketi, type CalismaSatiri, type CalismaVideosu } from "../lib/calisma-odasi/sema";
 import { cevaplarOku, cevaplarYaz } from "../lib/calisma-durumu";
 import { demirBul, demirle, vurgulariOku, vurgulariYaz, type Vurgu } from "../lib/calisma-odasi/vurgu";
+import { yildizKimligi, yildizlariOku, yildizlariYaz, type Yildiz } from "../lib/calisma-odasi/yildiz";
 
 type YTOynatici = {
   getCurrentTime: () => number;
@@ -76,6 +77,7 @@ export function calismaOdasiBaslat(): void {
   };
 
   let vurgular: Vurgu[] = vurgulariOku(ders);
+  let yildizlar: Yildiz[] = yildizlariOku(uni, ders);
   let simdiSatir = -1;
   let simdiKonu: string | null = null;
   let secKonu: string | null = null; // elle seçilen konu (videoda olmayan konular ya da videosuz ders)
@@ -139,6 +141,7 @@ export function calismaOdasiBaslat(): void {
       const m = document.createElement("mark");
       m.className = "co-vurgu";
       m.dataset.vid = v.id;
+      if (v.not) m.title = v.not;
       r.surroundContents(m);
     }
     return true;
@@ -238,7 +241,7 @@ export function calismaOdasiBaslat(): void {
     p.innerHTML =
       `<div class="co-su-ust"><span class="co-etiket">${etiket}</span>${don}</div>` +
       `<span class="co-no">${esc(k.no)}</span><h2>${esc(k.baslik)}</h2>` +
-      `<div class="co-su-metin">` +
+      `<div class="co-su-metin" data-vurgu-kok data-hedef="o${esc(k.no)}">` +
       (ozet ? `<p class="co-ozet">${esc(ozet)}</p>` : "") +
       `${noktalar}${kav}${kitap}</div>` +
       `<div class="co-eylemler">` +
@@ -249,7 +252,10 @@ export function calismaOdasiBaslat(): void {
       `</div>`;
     // Dökümdekiyle aynı kavram bileşeni: altı çizili terimler, tanım balonu, "Konuya git"
     const metin = p.querySelector<HTMLElement>(".co-su-metin");
-    if (metin) kavramSar(metin, true);
+    if (metin) {
+      kavramSar(metin, true);
+      vurgulariUygula(metin);
+    }
   }
 
   // ---------- İçindekiler ----------
@@ -281,22 +287,38 @@ export function calismaOdasiBaslat(): void {
     const p = document.getElementById("co-p-vurgular");
     if (!p) return;
     const sayac = document.querySelector<HTMLElement>('[data-sayac="vurgular"]');
+    const toplam = vurgular.length + yildizlar.length;
     if (sayac) {
-      sayac.hidden = vurgular.length === 0;
-      sayac.textContent = String(vurgular.length);
+      sayac.hidden = toplam === 0;
+      sayac.textContent = String(toplam);
     }
-    if (!vurgular.length) {
-      p.innerHTML = `<p class="co-bos">Henüz vurgu yok. Dökümde ya da konu metninde bir yeri seç ve Vurgula düğmesine dokun.</p>`;
+    if (!toplam) {
+      p.innerHTML = `<p class="co-bos">Henüz vurgu ya da yıldızlı kavram yok. Dökümde, konu metninde ya da Şu an panelinde bir yeri seç ve Vurgula düğmesine dokun; bir kavrama dokunup yıldız koyabilirsin.</p>`;
       return;
     }
-    p.innerHTML = [...vurgular]
-      .sort((a, b) => b.zaman - a.zaman)
-      .map((v) => {
-        const k = v.konu ? konuHaritasi.get(v.konu)?.k : null;
-        const yer = satirCoz(v.hedef) ? `Döküm${v.sn !== null ? `, ${saatYaz(v.sn)}` : ""}` : `Konu metni`;
-        return `<div class="co-vurgu-kart" data-vid="${esc(v.id)}"><blockquote>${esc(v.exact)}</blockquote><span class="co-vurgu-meta">${yer}${k ? ` · ${esc(k.no)} ${esc(k.baslik)}` : ""}</span><div class="co-vurgu-eylem"><button type="button" class="co-dugme" data-vurgu-git="${esc(v.id)}">${ikon("ArrowRight")}Git</button><button type="button" class="co-dugme" data-vurgu-sil="${esc(v.id)}">${ikon("Trash2")}Sil</button></div></div>`;
-      })
-      .join("");
+    const yildizHtml = yildizlar.length
+      ? `<h3 class="co-alt-baslik" id="co-yildizli">Yıldızlı kavramlar</h3>` +
+        [...yildizlar]
+          .sort((a, b) => b.zaman - a.zaman)
+          .map((y) => {
+            const kv = paket.kavramlar.find((x) => x.terim === y.terim && x.konu === y.konu);
+            const k = konuHaritasi.get(y.konu)?.k;
+            return `<div class="co-vurgu-kart" data-yildiz-kart="${esc(yildizKimligi(y))}"><strong>${esc(y.terim)}</strong>${kv ? `<p class="co-ozet">${esc(kv.tanim)}</p>` : ""}<span class="co-vurgu-meta">${k ? `${esc(k.no)} ${esc(k.baslik)}` : esc(y.konu)}</span><div class="co-vurgu-eylem"><button type="button" class="co-dugme" data-konu-ac="${esc(y.konu)}">${ikon("ArrowRight")}Konuya git</button><button type="button" class="co-dugme" data-yildiz-kaldir="${esc(yildizKimligi(y))}">${ikon("Star")}Yıldızı kaldır</button></div></div>`;
+          })
+          .join("")
+      : "";
+    const vurguHtml = vurgular.length
+      ? (yildizlar.length ? `<h3 class="co-alt-baslik">Vurgularım</h3>` : "") +
+        [...vurgular]
+          .sort((a, b) => b.zaman - a.zaman)
+          .map((v) => {
+            const k = v.konu ? konuHaritasi.get(v.konu)?.k : null;
+            const yer = satirCoz(v.hedef) ? `Döküm${v.sn !== null ? `, ${saatYaz(v.sn)}` : ""}` : v.hedef.startsWith("o") ? "Konu özeti" : `Konu metni`;
+            return `<div class="co-vurgu-kart" data-vid="${esc(v.id)}"><blockquote>${esc(v.exact)}</blockquote>${v.not ? `<p class="co-vurgu-not">${esc(v.not)}</p>` : ""}<span class="co-vurgu-meta">${yer}${k ? ` · ${esc(k.no)} ${esc(k.baslik)}` : ""}</span><div class="co-vurgu-eylem"><button type="button" class="co-dugme" data-vurgu-git="${esc(v.id)}">${ikon("ArrowRight")}Git</button><button type="button" class="co-dugme" data-vurgu-sil="${esc(v.id)}">${ikon("Trash2")}Sil</button></div></div>`;
+          })
+          .join("")
+      : "";
+    p.innerHTML = yildizHtml + vurguHtml;
   }
 
   // ---------- Sekmeler ----------
@@ -620,7 +642,7 @@ export function calismaOdasiBaslat(): void {
   }
 
   // ---------- Katman yardımcıları ----------
-  function yerlestir(el: HTMLElement, hedef: DOMRect, genislik: number): void {
+  function yerlestir(el: HTMLElement, hedef: DOMRect, genislik: number, yukari = false): void {
     const katman = document.querySelector<HTMLDialogElement>("dialog[open]");
     const ebeveyn: HTMLElement = katman ?? kok!;
     if (el.parentElement !== ebeveyn) ebeveyn.append(el);
@@ -630,8 +652,9 @@ export function calismaOdasiBaslat(): void {
     el.style.position = katman ? "absolute" : "fixed";
     const vw = innerWidth;
     const sol = Math.min(Math.max(8, hedef.left), vw - genislik - 8);
-    let ust = hedef.bottom + 8;
     const yuk = el.offsetHeight;
+    let ust = yukari ? hedef.top - yuk - 8 : hedef.bottom + 8;
+    if (yukari && ust < 8) ust = hedef.bottom + 8;
     if (ust + yuk > innerHeight - 8) ust = Math.max(8, hedef.top - yuk - 8);
     el.style.left = `${sol - sol0}px`;
     el.style.top = `${ust - ust0}px`;
@@ -647,7 +670,8 @@ export function calismaOdasiBaslat(): void {
     const k = paket.kavramlar[Number(b.dataset.k)];
     if (!k) return;
     const konu = konuHaritasi.get(k.konu)?.k;
-    balon.innerHTML = `<strong>${esc(k.terim)}</strong><p>${esc(k.tanim)}</p><button type="button" data-konu-ac="${esc(k.konu)}" data-balon-kapat>${ikon("ArrowRight")}Konuya git${konu ? `: ${esc(konu.no)}` : ""}</button>`;
+    const yildizli = yildizlar.some((y) => yildizKimligi(y) === yildizKimligi(k));
+    balon.innerHTML = `<div class="co-balon-ust"><strong>${esc(k.terim)}</strong><button type="button" class="co-yildiz" data-yildiz="${esc(b.dataset.k ?? "")}" aria-pressed="${yildizli}" aria-label="${yildizli ? "Yıldızı kaldır" : "Yıldızla"}" title="${yildizli ? "Yıldızı kaldır" : "Yıldızla"}">${ikon("Star")}</button></div><p>${esc(k.tanim)}</p><button type="button" data-konu-ac="${esc(k.konu)}" data-balon-kapat>${ikon("ArrowRight")}Konuya git${konu ? `: ${esc(konu.no)}` : ""}</button>`;
     balon.hidden = false;
     yerlestir(balon, b.getBoundingClientRect(), Math.min(320, innerWidth - 24));
   }
@@ -736,15 +760,28 @@ export function calismaOdasiBaslat(): void {
       (soru.dayanak ? `<p class="co-dayanak"><b>Kitaptaki dayanak</b>${esc(soru.dayanak.replace(/\s*\[\d+\]/g, ""))}</p>` : "");
   }
 
-  // ---------- Vurgula düğmesi ----------
-  const vurgulaDugme = $<HTMLButtonElement>("co-vurgula");
+  // ---------- Seçim araç çubuğu: Vurgula, Not ekle, Kopyala ----------
+  // Masaüstünde seçimin üstünde balon, dokunmatik ekranda alt kenarda sabit çubuk (yerel seçim menüsüyle çakışmaz).
+  // Klavye: Alt+V vurgula, Alt+N not ekle, Alt+K kopyala, Esc kapat.
+  const vurgulaDugme = $("co-arac");
+  const notForm = $<HTMLFormElement>("co-arac-not");
+  const notGirdi = $<HTMLInputElement>("co-arac-girdi");
   let bekleyen: { koku: HTMLElement; bas: number; son: number } | null = null;
   let secimZamani = 0;
+  let notAcik = false;
+  const dokunmatik = (): boolean => matchMedia("(pointer: coarse)").matches;
+  function aracGizle(): void {
+    notAcik = false;
+    notForm.hidden = true;
+    notGirdi.value = "";
+    katmanSifirla(vurgulaDugme);
+  }
   function secimiKontrol(): void {
+    if (notAcik) return; // not yazarken seçim girdiye odaklanınca kaybolur; çubuk açık kalır
     const sel = getSelection();
     if (!sel || sel.isCollapsed || !sel.rangeCount) {
       bekleyen = null;
-      katmanSifirla(vurgulaDugme);
+      aracGizle();
       return;
     }
     const r = sel.getRangeAt(0);
@@ -752,7 +789,7 @@ export function calismaOdasiBaslat(): void {
     const koku = baslangic?.closest<HTMLElement>("[data-vurgu-kok]");
     if (!koku || !kok!.contains(koku)) {
       bekleyen = null;
-      katmanSifirla(vurgulaDugme);
+      aracGizle();
       return;
     }
     const once = document.createRange();
@@ -767,22 +804,45 @@ export function calismaOdasiBaslat(): void {
     while (son > bas && /\s/.test(tam[son - 1])) son--;
     if (son - bas < 2) {
       bekleyen = null;
-      katmanSifirla(vurgulaDugme);
+      aracGizle();
       return;
     }
     bekleyen = { koku, bas, son };
     const rects = r.getClientRects();
     const hedef = rects.length ? rects[rects.length - 1] : r.getBoundingClientRect();
-    yerlestir(vurgulaDugme, hedef, 120);
+    const alt = dokunmatik();
+    vurgulaDugme.toggleAttribute("data-alt", alt);
+    if (alt) {
+      const katman = document.querySelector<HTMLDialogElement>("dialog[open]");
+      const ebeveyn: HTMLElement = katman ?? kok!;
+      if (vurgulaDugme.parentElement !== ebeveyn) ebeveyn.append(vurgulaDugme);
+      vurgulaDugme.hidden = false;
+      for (const o of ["left", "top", "position"] as const) vurgulaDugme.style[o] = "";
+    } else {
+      vurgulaDugme.hidden = false;
+      yerlestir(vurgulaDugme, hedef, vurgulaDugme.offsetWidth || 300, true);
+    }
   }
   document.addEventListener("selectionchange", () => {
     clearTimeout(secimZamani);
     secimZamani = window.setTimeout(secimiKontrol, 180);
   });
-  const basma = (e: Event): void => e.preventDefault();
-  vurgulaDugme.addEventListener("mousedown", basma);
-  vurgulaDugme.addEventListener("pointerdown", basma);
-  vurgulaDugme.addEventListener("click", () => {
+  addEventListener(
+    "scroll",
+    () => {
+      if (vurgulaDugme.hidden || vurgulaDugme.hasAttribute("data-alt")) return;
+      clearTimeout(secimZamani);
+      secimZamani = window.setTimeout(secimiKontrol, 80);
+    },
+    { passive: true, capture: true },
+  );
+  vurgulaDugme.addEventListener("mousedown", (e) => {
+    if (!(e.target as HTMLElement).closest("input")) e.preventDefault(); // seçimi koru
+  });
+  vurgulaDugme.addEventListener("pointerdown", (e) => {
+    if (!(e.target as HTMLElement).closest("input")) e.preventDefault();
+  });
+  function vurguOlustur(not?: string): void {
     if (!bekleyen) return;
     const { koku, bas, son: bitis } = bekleyen;
     const tam = koku.textContent ?? "";
@@ -796,14 +856,69 @@ export function calismaOdasiBaslat(): void {
       ...demirle(tam, bas, bitis),
       sn: satirNo >= 0 ? (satirlar[satirNo]?.bas ?? null) : null,
       zaman: Date.now(),
+      ...(not ? { not: not.slice(0, 500) } : {}),
     };
     vurgular = [...vurgular, v];
     vurgulariYaz(ders, vurgular);
     getSelection()?.removeAllRanges();
     bekleyen = null;
-    katmanSifirla(vurgulaDugme);
+    aracGizle();
     vurguUygula(koku, v);
     vurguListesiCiz();
+  }
+  function metniKopyala(): void {
+    const metin = getSelection()?.toString() ?? "";
+    if (!metin) return;
+    const bitir = (): void => {
+      const d = vurgulaDugme.querySelector<HTMLElement>('[data-arac="kopyala"] span');
+      if (d) {
+        d.textContent = "Kopyalandı";
+        setTimeout(() => {
+          d.textContent = "Kopyala";
+          getSelection()?.removeAllRanges();
+          bekleyen = null;
+          aracGizle();
+        }, 900);
+      }
+    };
+    const yedekKopya = (): void => {
+      document.execCommand?.("copy");
+      bitir();
+    };
+    if (navigator.clipboard?.writeText) navigator.clipboard.writeText(metin).then(bitir, yedekKopya);
+    else yedekKopya();
+  }
+  function notAc(): void {
+    if (!bekleyen) return;
+    notAcik = true;
+    notForm.hidden = false;
+    notGirdi.focus({ preventScroll: true });
+  }
+  function aracEylemi(ad: string): void {
+    if (ad === "vurgula") vurguOlustur();
+    else if (ad === "not") notAc();
+    else if (ad === "kopyala") metniKopyala();
+  }
+  notForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const metin = notGirdi.value.trim();
+    notAcik = false;
+    vurguOlustur(metin || undefined);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (vurgulaDugme.hidden) return;
+    if (e.key === "Escape") {
+      getSelection()?.removeAllRanges();
+      bekleyen = null;
+      aracGizle();
+      return;
+    }
+    if (!e.altKey || e.ctrlKey || e.metaKey || !bekleyen) return;
+    const ad = { KeyV: "vurgula", KeyN: "not", KeyK: "kopyala" }[e.code];
+    if (ad) {
+      e.preventDefault();
+      aracEylemi(ad);
+    }
   });
 
   // ---------- Olaylar ----------
@@ -870,6 +985,27 @@ export function calismaOdasiBaslat(): void {
       if (!genis()) scrollTo({ top: 0, behavior: azaltilmis() ? "auto" : "smooth" });
       return;
     }
+    const ar = t.closest<HTMLElement>("[data-arac]");
+    if (ar) return aracEylemi(ar.dataset.arac ?? "");
+    const yb = t.closest<HTMLElement>("[data-yildiz]");
+    if (yb) {
+      const kv = paket.kavramlar[Number(yb.dataset.yildiz)];
+      if (!kv) return;
+      const kim = yildizKimligi(kv);
+      const var0 = yildizlar.some((y) => yildizKimligi(y) === kim);
+      yildizlar = var0 ? yildizlar.filter((y) => yildizKimligi(y) !== kim) : [...yildizlar, { terim: kv.terim, konu: kv.konu, zaman: Date.now() }];
+      yildizlariYaz(uni, ders, yildizlar);
+      yb.setAttribute("aria-pressed", String(!var0));
+      yb.setAttribute("aria-label", var0 ? "Yıldızla" : "Yıldızı kaldır");
+      yb.title = var0 ? "Yıldızla" : "Yıldızı kaldır";
+      return vurguListesiCiz();
+    }
+    const yk = t.closest<HTMLElement>("[data-yildiz-kaldir]");
+    if (yk) {
+      yildizlar = yildizlar.filter((y) => yildizKimligi(y) !== yk.dataset.yildizKaldir);
+      yildizlariYaz(uni, ders, yildizlar);
+      return vurguListesiCiz();
+    }
     const sv = t.closest<HTMLElement>("[data-video-sec]");
     if (sv) return videoDegistir(sv.dataset.videoSec ?? "");
     const sg = t.closest<HTMLElement>("[data-soru-git]");
@@ -925,7 +1061,7 @@ export function calismaOdasiBaslat(): void {
   $("co-konu-dene").addEventListener("click", () => acikKonu && testAc(acikKonu));
   konuKatman.addEventListener("close", () => {
     katmanSifirla(balon);
-    katmanSifirla(vurgulaDugme);
+    aracGizle();
   });
   addEventListener("wheel", () => (otoDurak = Date.now() + 6000), { passive: true });
   addEventListener("touchmove", () => (otoDurak = Date.now() + 6000), { passive: true });
@@ -943,6 +1079,12 @@ export function calismaOdasiBaslat(): void {
         satiriGoster(i, true);
         document.querySelector(`mark[data-vid="${CSS.escape(id)}"]`)?.scrollIntoView({ block: "nearest" });
       });
+    } else if (v.hedef.startsWith("o")) {
+      secKonu = v.hedef.slice(1);
+      suAnCiz();
+      isaretleKonu();
+      sekmeGoster("su-an");
+      requestAnimationFrame(() => document.querySelector(`#co-su-an mark[data-vid="${CSS.escape(id)}"]`)?.scrollIntoView({ block: "center", behavior: azaltilmis() ? "auto" : "smooth" }));
     } else {
       konuAc(v.hedef.slice(1));
       requestAnimationFrame(() => document.querySelector(`#co-konu-govde mark[data-vid="${CSS.escape(id)}"]`)?.scrollIntoView({ block: "center", behavior: azaltilmis() ? "auto" : "smooth" }));
@@ -963,6 +1105,8 @@ export function calismaOdasiBaslat(): void {
   sekmeUygula();
   videoKur();
   sorulariOnceden();
+  const ilkSekme = new URLSearchParams(location.search).get("sekme");
+  if (ilkSekme && (SEKMELER as readonly string[]).includes(ilkSekme)) sekmeGoster(ilkSekme as Sekme);
   // Test ve ileri kullanım için: dışarıdan zaman vermek
   (window as unknown as { coZaman?: (sn: number) => void }).coZaman = guncelle;
 }

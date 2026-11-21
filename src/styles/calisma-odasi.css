@@ -148,8 +148,8 @@ body:has(.co) footer {
   background: var(--text-color);
 }
 .co-sayac {
-  margin-left: 6px;
-  font-size: 12px;
+  margin-left: 3px;
+  font-size: 11px;
   font-variant-numeric: tabular-nums;
   color: var(--text-color-muted);
 }
@@ -264,7 +264,7 @@ mark.co-vurgu {
   border-radius: 2px;
 }
 .co-balon,
-.co-vurgula {
+.co-arac {
   z-index: 400;
   border: 1px solid var(--border-color-hover);
   background: var(--card-bg);
@@ -280,7 +280,7 @@ mark.co-vurgu {
   line-height: 1.5;
 }
 .co-balon[hidden],
-.co-vurgula[hidden] {
+.co-arac[hidden] {
   display: none;
 }
 .co-balon strong {
@@ -291,17 +291,6 @@ mark.co-vurgu {
 .co-balon p {
   margin: 0 0 10px;
   color: var(--text-color);
-}
-.co-vurgula {
-  position: fixed;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  min-height: 44px;
-  padding: 0 16px;
-  border-radius: 999px;
-  font-size: 15px;
-  font-weight: 600;
 }
 .co-dugme,
 .co-balon button {
@@ -847,4 +836,93 @@ dialog.co-katman {
   font-size: 13px;
   font-weight: 600;
   color: var(--text-color-muted);
+}
+
+/* ---- Seçim araç çubuğu ve yıldız ---- */
+.co-arac {
+  position: fixed;
+  display: grid;
+  gap: 8px;
+  max-width: calc(100vw - 16px);
+  padding: 6px;
+  border-radius: 999px;
+}
+.co-arac-dugmeler {
+  display: flex;
+  gap: 2px;
+}
+.co-arac button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: var(--text-color);
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.co-arac button:hover,
+.co-arac button:focus-visible {
+  background: var(--button-bg-hover);
+}
+.co-arac-not {
+  display: flex;
+  gap: 6px;
+  padding: 0 4px 2px;
+}
+.co-arac-not[hidden] {
+  display: none;
+}
+.co-arac-not input {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--border-color-hover);
+  border-radius: 999px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  font-size: 16px;
+}
+.co-arac:has(.co-arac-not:not([hidden])) {
+  border-radius: 24px;
+}
+.co-arac[data-alt] {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: calc(84px + env(safe-area-inset-bottom));
+  max-width: none;
+}
+dialog .co-arac[data-alt] {
+  position: absolute;
+  bottom: calc(12px + env(safe-area-inset-bottom));
+}
+.co-arac[data-alt] .co-arac-dugmeler {
+  justify-content: space-around;
+}
+.co-balon-ust {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+.co-balon .co-yildiz {
+  flex: 0 0 auto;
+  min-height: 40px;
+  min-width: 40px;
+  padding: 0;
+  border-radius: 999px;
+}
+.co-balon .co-yildiz[aria-pressed='true'] svg {
+  fill: currentColor;
+}
+.co-vurgu-not {
+  margin: 6px 0 0;
+  font-size: 15px;
+  line-height: 1.5;
 }

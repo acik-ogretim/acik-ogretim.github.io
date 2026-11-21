@@ -12,6 +12,7 @@ export const VurguSemasi = z.object({
   suffix: z.string(),
   sn: z.number().nullable(), // video second of the line, for jumping back
   zaman: z.number(),
+  not: z.string().max(500).optional(), // "Not ekle" ile yazılan kısa not
 });
 export type Vurgu = z.infer<typeof VurguSemasi>;
 

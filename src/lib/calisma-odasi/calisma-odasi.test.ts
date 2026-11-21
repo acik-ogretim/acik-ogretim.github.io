@@ -1,3 +1,4 @@
+import { yildizAnahtari, yildizAyristir, yildizlariBirlestir } from "./yildiz";
 import { describe, expect, it } from "vitest";
 import { kavramMotoru } from "./kavram";
 import { satirBul } from "./sema";
@@ -46,5 +47,19 @@ describe("vurgu", () => {
     const v = (id: string, z: number) => ({ id, hedef: "s1", konu: null, exact: "x", prefix: "", suffix: "", sn: null, zaman: z });
     const b = JSON.parse(vurgulariBirlestir(JSON.stringify([v("a", 1)]), JSON.stringify([v("a", 2), v("b", 1)])));
     expect(b).toHaveLength(2);
+  });
+});
+
+describe("yıldızlı kavramlar", () => {
+  const y = (terim: string, konu: string, zaman: number) => ({ terim, konu, zaman });
+  it("parses valid items only and keys by anahtar", () => {
+    expect(yildizAnahtari("ataturk-aof", "psikoloji")).toBe("yildizli-kavramlar-ataturk-aof-psikoloji");
+    expect(yildizAyristir(JSON.stringify([y("Hukuk", "1.1", 1), { terim: "x" }, "z"]))).toHaveLength(1);
+    expect(yildizAyristir("bozuk")).toEqual([]);
+  });
+  it("merges by concept, later wins", () => {
+    const b = JSON.parse(yildizlariBirlestir(JSON.stringify([y("Hukuk", "1.1", 1)]), JSON.stringify([y("Hukuk", "1.1", 5), y("Devlet", "2.1", 2)])));
+    expect(b).toHaveLength(2);
+    expect(b.find((x: { terim: string }) => x.terim === "Hukuk").zaman).toBe(5);
   });
 });
