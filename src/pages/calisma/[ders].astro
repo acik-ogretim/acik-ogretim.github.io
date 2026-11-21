@@ -1,0 +1,132 @@
+---
+// Çalışma odası (prototip): kendi vize özet videomuz, zaman kodlu döküm, konu anlatımı, mini testler ve vurgular.
+// Veri: src/data/calisma-odasi/<ders>.json (scripts/calisma-odasi-paketle.mjs). Davranış: src/scripts/calisma-odasi.ts.
+// Docs: docs/konu-anlatimi.md "Çalışma odası prototipi".
+import Layout from "../../layouts/Layout.astro";
+import Simge from "../../components/Simge.astro";
+import { getCourses, getUniversities } from "../../lib/api";
+import { canonicalDepartments, coursePath } from "../../lib/kanonik";
+import { PaketSemasi } from "../../lib/calisma-odasi/sema";
+import type { SimgeAdi } from "../../lib/simge";
+import "../../styles/calisma-odasi.css";
+
+export async function getStaticPaths() {
+  const UNI = "ataturk-aof";
+  const DERSLER = [
+    "hukukun-temel-kavramlari",
+    "sosyolojiye-giris",
+    "psikoloji",
+    "istatistige-giris",
+    "turk-kulturu-ve-medeniyeti-tarihi",
+    "temel-bilgi-teknolojileri-i",
+  ];
+  const paketler = import.meta.glob("../../data/calisma-odasi/*.json", { eager: true, import: "default" });
+  const kanonik = await canonicalDepartments();
+  const tumu = await getUniversities();
+  let uni = tumu[0];
+  for (const u of tumu) if (u.id === "ataturk-aof") uni = u;
+  const yollar = [];
+  for (const ders of DERSLER) {
+    const ham = paketler[`../../data/calisma-odasi/${ders}.json`];
+    if (!ham) continue;
+    const paket = PaketSemasi.parse(ham);
+    const bolum = kanonik.get(`${UNI}/${ders}`) ?? uni?.departments?.[0]?.id ?? "";
+    let ad = ders;
+    if (bolum) for (const c of await getCourses(UNI, bolum)) if (c.id === ders) ad = c.name;
+    yollar.push({ params: { ders }, props: { paket, dersAdi: ad, dersYolu: bolum ? coursePath(UNI, bolum, ders) : "/" } });
+  }
+  return yollar;
+}
+
+const { paket, dersAdi, dersYolu } = Astro.props;
+const veriJson = JSON.stringify(paket).replace(/</g, "\\u003c");
+const simgeler: SimgeAdi[] = ["BookOpen", "CircleHelp", "FileText", "Highlighter", "Trash2", "Check", "X", "ChevronLeft", "ChevronRight", "ArrowRight", "WifiOff", "Play", "Link"];
+const sekmeler = [
+  { id: "dokum", ad: "Döküm" },
+  { id: "su-an", ad: "Şu an" },
+  { id: "icindekiler", ad: "İçindekiler" },
+  { id: "vurgular", ad: "Vurgularım" },
+];
+---
+
+<Layout noindex sekmeler={false} title={`${dersAdi} çalışma odası`} description={`${dersAdi} vize özet videosu, zaman kodlu döküm ve konu anlatımı.`}>
+  <div class="co" id="co" data-ders={paket.ders} data-ders-yolu={dersYolu}>
+    <header class="co-ust">
+      <a href={dersYolu} class="co-geri" aria-label="Ders sayfasına dön"><Simge ad="ChevronLeft" size={22} /></a>
+      <div class="co-baslik">
+        <h1>{dersAdi}</h1>
+        <p>Çalışma odası, 1 ile 7. üniteler</p>
+      </div>
+    </header>
+
+    <div class="co-ana">
+      <div class="co-sol">
+        <div class="co-video-kab" id="co-video-kab">
+          <div class="co-video">
+            {paket.video ? <div id="co-oynatici"></div> : <p class="co-video-yok">Bu ders için video yok.</p>}
+          </div>
+          <p class="co-bildirim" id="co-bildirim" role="status" hidden>
+            <Simge ad="WifiOff" size={16} /><span>Video için internet gerekir. Döküm, konular, testler ve vurgular çalışır.</span>
+          </p>
+        </div>
+        <section class="co-panel co-su-an" data-panel="su-an" id="co-su-an" aria-label="Şu an"></section>
+      </div>
+
+      <div class="co-sag">
+        <div class="co-sekmeler" role="tablist" aria-label="Bölümler" id="co-sekmeler">
+          {sekmeler.map((s) => (
+            <button type="button" role="tab" id={`co-sekme-${s.id}`} data-sekme={s.id} aria-controls={`co-p-${s.id}`} aria-selected="false">{s.ad}<span class="co-sayac" data-sayac={s.id} hidden></span></button>
+          ))}
+        </div>
+        <section class="co-panel" data-panel="dokum" id="co-p-dokum" role="tabpanel" aria-labelledby="co-sekme-dokum"><ol class="co-dokum" id="co-dokum"></ol></section>
+        <section class="co-panel" data-panel="icindekiler" id="co-p-icindekiler" role="tabpanel" aria-labelledby="co-sekme-icindekiler"></section>
+        <section class="co-panel" data-panel="vurgular" id="co-p-vurgular" role="tabpanel" aria-labelledby="co-sekme-vurgular"></section>
+      </div>
+    </div>
+
+    <!-- Kavram baloncuğu -->
+    <div class="co-balon" id="co-balon" role="dialog" aria-label="Kavram tanımı" hidden></div>
+    <button type="button" class="co-vurgula" id="co-vurgula" hidden><Simge ad="Highlighter" size={16} /><span>Vurgula</span></button>
+
+    <!-- Konu anlatımı -->
+    <dialog id="co-konu-katman" class="katman-yuzey co-katman" data-yer="sag" aria-labelledby="co-konu-ad" closedby="any">
+      <div class="katman-tutamac" aria-hidden="true"></div>
+      <header class="katman-baslik">
+        <div class="katman-baslik-metin">
+          <h2 id="co-konu-ad" class="katman-ad"></h2>
+          <p id="co-konu-bilgi" class="katman-bilgi"></p>
+        </div>
+        <button type="button" class="katman-kapat" data-kapat aria-label="Kapat"><Simge ad="X" size={20} /></button>
+      </header>
+      <div class="katman-govde co-konu-govde" id="co-konu-govde" tabindex="-1"></div>
+      <footer class="katman-alt">
+        <button type="button" class="katman-dugme" id="co-onceki" aria-label="Önceki konu"><Simge ad="ChevronLeft" size={20} /></button>
+        <button type="button" class="katman-dugme katman-dugme-birincil" id="co-konu-dene">Kendini dene</button>
+        <button type="button" class="katman-dugme" id="co-sonraki" aria-label="Sonraki konu"><Simge ad="ChevronRight" size={20} /></button>
+      </footer>
+    </dialog>
+
+    <!-- Kendini dene -->
+    <dialog id="co-test-katman" class="katman-yuzey co-katman" data-yer="sag" aria-labelledby="co-test-ad" closedby="any">
+      <div class="katman-tutamac" aria-hidden="true"></div>
+      <header class="katman-baslik">
+        <div class="katman-baslik-metin">
+          <h2 id="co-test-ad" class="katman-ad">Kendini dene</h2>
+          <p id="co-test-bilgi" class="katman-bilgi"></p>
+        </div>
+        <button type="button" class="katman-kapat" data-kapat aria-label="Kapat"><Simge ad="X" size={20} /></button>
+      </header>
+      <div class="katman-govde" id="co-test-govde" tabindex="-1"></div>
+    </dialog>
+
+    <div hidden id="co-simgeler">
+      {simgeler.map((ad) => <span data-simge={ad}><Simge ad={ad} size={18} /></span>)}
+    </div>
+    <script is:inline type="application/json" id="co-veri" set:html={veriJson} />
+  </div>
+</Layout>
+
+<script>
+  import { calismaOdasiBaslat } from "../../scripts/calisma-odasi";
+  calismaOdasiBaslat();
+</script>

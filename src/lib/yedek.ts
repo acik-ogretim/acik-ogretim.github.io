@@ -1,6 +1,7 @@
 // Moves a learner's browser records between devices without a server: everything the site keeps in localStorage
 // (solved questions, wrong answers, favorites, settings, chat history) goes into one JSON file; importing it on another
 // device merges it into what is already there. API keys and device-only sync state are never exported.
+import { VURGU_ONEKI, vurgulariBirlestir } from "./calisma-odasi/vurgu";
 import { KALDIGIN_YER_ANAHTARI, cevaplariBirlestir, yerleriBirlestir } from "./calisma-durumu";
 
 export type Yedek = { surum: 1; tarih: string; kayitlar: Record<string, string> };
@@ -56,6 +57,7 @@ export function birlestir(k: string, yerel: string | null, gelen: string): strin
   // Study state (calisma-durumu.ts): the later position per course and the later answer per question win
   if (k === KALDIGIN_YER_ANAHTARI) return yerleriBirlestir(yerel, gelen);
   if (k.startsWith("cevaplar-")) return cevaplariBirlestir(yerel, gelen);
+  if (k.startsWith(VURGU_ONEKI)) return vurgulariBirlestir(yerel, gelen); // Çalışma odası vurguları
   if (k === "soru-siralama") return JSON.stringify({ ...json(yerel, {}), ...json(gelen, {}) });
   if (k.startsWith("quiz-ai-explanations-")) return JSON.stringify({ ...json(gelen, {}), ...json(yerel, {}) });
   return gelen;
