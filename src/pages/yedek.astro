@@ -32,9 +32,9 @@ import { GOOGLE_CLIENT_ID } from "../lib/google-esitle";
             </p>
             <div class="flex flex-wrap gap-2">
               <button id="google-esitle" type="button" class="btn-primary min-h-11 px-4 rounded-lg">Google ile eşitle</button>
-              <button id="google-cikis" type="button" class="min-h-11 px-4 rounded-lg border hidden" style="border-color: var(--border-color)">Çıkış yap</button>
+              <button id="google-cikis" type="button" class="btn-secondary min-h-11 px-4 rounded-lg hidden">Çıkış yap</button>
             </div>
-            <p id="google-durum" role="status" class="mt-3 text-sm"></p>
+            <p id="google-durum" role="status" class="mt-3 text-sm text-ink-muted data-[durum=hata]:text-bad data-[durum=tamam]:text-ok"></p>
           </section>
         )}
         <section class="content-card">
@@ -110,7 +110,7 @@ import { GOOGLE_CLIENT_ID } from "../lib/google-esitle";
   import { topla, yukle } from "../lib/yedek";
   import { TOKEN_ANAHTARI, esitle } from "../lib/bulut-esitle";
   import { p2pBaslat } from "../lib/p2p-esitle";
-  import { cikisYap, googleEsitle } from "../lib/google-esitle";
+  import { cikisYap, googleDurumu, googleEsitle } from "../lib/google-esitle";
   import { rsGerecKur } from "../lib/rs-esitle";
 
   // Plain Turkish for sync messages: no raw English errors, no failure text without a real failure.
@@ -170,27 +170,56 @@ import { GOOGLE_CLIENT_ID } from "../lib/google-esitle";
 
   const gDurum = document.getElementById("google-durum");
   const gCikis = document.getElementById("google-cikis");
-  document.getElementById("google-esitle")?.addEventListener("click", async (e) => {
-    const dugme = e.currentTarget as HTMLButtonElement;
-    dugme.disabled = true;
-    if (gDurum) gDurum.textContent = "Eşitleniyor";
+  const gDugme = document.getElementById("google-esitle") as HTMLButtonElement | null;
+  let gMesgul = false;
+  const saat = (t: number) => new Date(t).toLocaleString("tr-TR", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" });
+  const gYaz = (metin: string, durum: "" | "hata" | "tamam" = "") => {
+    if (!gDurum) return;
+    gDurum.textContent = metin;
+    if (durum) gDurum.dataset.durum = durum;
+    else delete gDurum.dataset.durum;
+  };
+  // The section always shows where things stand: connected, connected on this device but signed out in this tab, or off
+  const gGoster = () => {
+    if (!gDugme || gMesgul) return;
+    const d = googleDurumu();
+    gCikis?.classList.toggle("hidden", !d.acik && !d.bagli);
+    gDugme.textContent = d.bagli ? "Şimdi eşitle" : d.acik ? "Yeniden giriş yap ve eşitle" : "Google ile eşitle";
+    if (d.bagli) gYaz(d.son ? `Google'a bağlı. Son eşitleme: ${saat(d.son)}.` : "Google'a bağlı.");
+    else if (d.acik) gYaz(`Google oturumu bu sekmede kapalı.${d.son ? ` Son eşitleme: ${saat(d.son)}.` : ""}`);
+    else gYaz("");
+  };
+  addEventListener("google-esitleme:durum", gGoster);
+  gGoster();
+  gDugme?.addEventListener("click", async () => {
+    gMesgul = true;
+    gDugme.disabled = true;
+    gDugme.setAttribute("aria-busy", "true");
+    gYaz("Eşitleniyor…");
     try {
       const r = await googleEsitle();
-      if (gDurum) gDurum.textContent =
-          r.gelen === 0
-            ? "Drive'da önceki kayıt yoktu, bu cihazın kayıtları yüklendi."
-            : `Eşitlendi: Drive'dan ${r.gelen} kayıt birleşti, güncel hâli Drive'a yazıldı.`;
-      gCikis?.classList.remove("hidden");
+      gMesgul = false;
+      gGoster();
+      gYaz(
+        r.gelen === 0
+          ? "Drive'da önceki kayıt yoktu, bu cihazın kayıtları yüklendi."
+          : `Eşitlendi: Drive'dan ${r.gelen} kayıt birleşti, güncel hâli Drive'a yazıldı.`,
+        "tamam",
+      );
     } catch (err) {
-      if (gDurum) gDurum.textContent = anlasilir(err instanceof Error ? err.message : "Eşitlenemedi.");
+      gMesgul = false;
+      gGoster();
+      // google-esitle already writes plain Turkish messages; anlasilir() is worded for remoteStorage
+      gYaz(err instanceof Error ? err.message : "Eşitlenemedi. Biraz sonra yeniden dene.", "hata");
     } finally {
-      dugme.disabled = false;
+      gMesgul = false;
+      gDugme.disabled = false;
+      gDugme.removeAttribute("aria-busy");
     }
   });
   gCikis?.addEventListener("click", async () => {
     await cikisYap();
-    gCikis.classList.add("hidden");
-    if (gDurum) gDurum.textContent = "Çıkış yapıldı.";
+    gYaz("Çıkış yapıldı. Kayıtların bu cihazda ve Drive'ında duruyor.", "tamam");
   });
 
   const p2pDurum = document.getElementById("p2p-durum")!;
