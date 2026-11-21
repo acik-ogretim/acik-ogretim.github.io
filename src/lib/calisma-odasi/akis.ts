@@ -30,6 +30,19 @@ export function anlatimHtml(k: CalismaKonu): string {
     : "";
   return (c.ozet ? `<p class="co-ozet">${esc(c.ozet)}</p>` : "") + liste("Temel noktalar", c.temelNoktalar) + sebep + liste("Örnekler", c.ornekler) + liste("Benzetmeler", c.benzetmeler);
 }
+/** Uzun anlatım satırlarını konuşmacı değişene kadar birleştirip okunur paragraflara çevirir. */
+export type AnlatimParagrafi = { k: string; bas: number; metin: string };
+export function anlatimParagraflari(satirlar: { bas: number; k: string; m: string }[]): AnlatimParagrafi[] {
+  const sonuc: AnlatimParagrafi[] = [];
+  for (const s of satirlar) {
+    const m = s.m.trim();
+    if (!m) continue;
+    const son = sonuc[sonuc.length - 1];
+    if (son && son.k === s.k && son.metin.length < 900) son.metin += ` ${m}`;
+    else sonuc.push({ k: s.k, bas: s.bas, metin: m });
+  }
+  return sonuc;
+}
 export const dusunHtml = (k: CalismaKonu): string =>
   k.calisma?.tartismaSorulari?.length
     ? `<h4 class="co-alt-baslik">Üzerine düşün</h4><ul class="co-noktalar">${k.calisma.tartismaSorulari.map((m) => `<li>${esc(m)}</li>`).join("")}</ul>`
@@ -118,7 +131,7 @@ export function uniteBaskiHtml(unite: number, baslik: string, konular: CalismaKo
       const sor = sorular.get(k.no) ?? [];
       const kitap = k.calisma ? "" : k.metin.split("\n").filter((x) => x.trim()).slice(0, 6).map((x) => `<p>${esc(x)}</p>`).join("");
       return (
-        `<section class="co-baski-konu"><h2><span>${esc(k.no)}</span> ${esc(k.baslik)}</h2>` +
+        `<section class="co-baski-konu"><h2><span>${esc(k.goster ?? k.no)}</span> ${esc(k.baslik)}</h2>` +
         anlatimHtml(k) +
         kitap +
         (kav.length ? `<h4 class="co-alt-baslik">Kavramlar</h4><dl class="co-tanimlar">${kav.map((v) => `<div><dt>${esc(v.terim)}</dt><dd>${esc(v.tanim)}</dd></div>`).join("")}</dl>` : "") +

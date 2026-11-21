@@ -1454,3 +1454,35 @@ dialog .co-arac[data-alt] {
   width: 20px;
   height: 20px;
 }
+.co-ak-anlatim {
+  margin-top: 4px;
+}
+.co-ak-anlatim-p {
+  margin: 0 0 12px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.co-ak-dinle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 28px;
+  padding: 0 8px;
+  margin-right: 4px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  vertical-align: 2px;
+  cursor: pointer;
+}
+.co-ak-dinle svg {
+  width: 14px;
+  height: 14px;
+}
+.co-ak-dinle:hover,
+.co-ak-dinle:focus-visible {
+  border-color: currentColor;
+}

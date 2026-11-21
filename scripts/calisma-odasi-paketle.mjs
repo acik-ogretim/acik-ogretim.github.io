@@ -230,6 +230,38 @@ function paketle(ders) {
       videolar.push({ kod: x.id, ortam: "ses", tur: x.cesit ?? "uzun-anlatim", baslik: x.baslik, yt: x.kaynak, url: x.kaynak, sure: x.sure ?? null, unite: x.unite, kapak: x.kapak, satirlar });
     }
   }
+  // Book headings split over two lines become two topics ("1.2 ... VE" + "1.3 ANLAMAK"); empty "Özet (devamı)" topics carry nothing.
+  // Merge the heading into the next topic and drop the empty ones. Ids stay as they are (questions, transcripts and records
+  // are keyed by them); only the printed number (goster) is renumbered so the list has no gaps.
+  const bosluk = (s) => (s ?? "").replace(/\s+/g, " ").trim();
+  const takma = new Map();
+  for (let i = 0; i < konuListesi.length; i++) {
+    const a = konuListesi[i];
+    const b = konuListesi[i + 1];
+    const govde = bosluk(a.metin);
+    if (a.calisma) continue;
+    if (b && b.unite === a.unite && govde && govde === bosluk(`${a.baslik} ${b.baslik}`)) {
+      b.baslik = govde;
+      takma.set(a.no, b.no);
+    } else if (!govde && /^özet \(devamı\)$/i.test(bosluk(a.baslik))) {
+      takma.set(a.no, konuListesi[i - 1]?.no ?? a.no);
+    }
+  }
+  for (let i = konuListesi.length - 1; i >= 0; i--) if (takma.has(konuListesi[i].no)) konuListesi.splice(i, 1);
+  for (const v of kavramlar.values()) if (takma.has(v.konu)) v.konu = takma.get(v.konu);
+  for (const v of videolar) for (const s of v.satirlar) if (s.konu && takma.has(s.konu)) s.konu = takma.get(s.konu);
+  const sayac = new Map();
+  for (const k of konuListesi) {
+    k.baslik = k.baslik.replace(/^\d+\.\d+(?:\.\d+)*\.?\s+(?=\S)/, "");
+    const derinlik = k.no.split(".").length;
+    const say = sayac.get(k.unite) ?? [];
+    say.length = Math.max(say.length, derinlik);
+    say[derinlik - 1] = (say[derinlik - 1] ?? 0) + 1;
+    for (let d = derinlik; d < say.length; d++) say[d] = 0;
+    sayac.set(k.unite, say);
+    k.goster = [k.unite, ...say.slice(1, derinlik).map((n) => n || 1)].join(".");
+  }
+  if (takma.size) console.log(`[calisma-odasi] ${ders}: ${takma.size} bölünmüş başlık ya da boş konu birleştirildi (${[...takma.keys()].join(", ")})`);
   const medyalar = videolar.map((v) => {
     const konuAraliklari = {};
     for (const k of konuListesi) {

@@ -4,6 +4,7 @@ import { CalismaSemasi } from "../konu/calisma";
 
 const KonuTemel = z.object({
   no: z.string(),
+  goster: z.string().optional(), // printed number; no stays the key
   baslik: z.string(),
   unite: z.number(),
   sayfa: z.number(),

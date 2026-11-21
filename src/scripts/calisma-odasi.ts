@@ -5,7 +5,7 @@ import { kavramMotoru } from "../lib/calisma-odasi/kavram";
 import { PaketSemasi, medyaAdi, medyaCipEtiketi, saatYaz, satirBul, type CalismaKonu, type CalismaPaketi, type CalismaMedyasi, type CalismaSatiri, type CalismaVideosu } from "../lib/calisma-odasi/sema";
 import { cevaplarOku, cevaplarYaz } from "../lib/calisma-durumu";
 import { demirBul, demirle, vurgulariOku, vurgulariYaz, type Vurgu } from "../lib/calisma-odasi/vurgu";
-import { anlatimHtml, aramaYap, dusunHtml, kitaptaParagraf, konuDurumu, sorulariKonuyaDagit, uniteBaskiHtml, zayifKonular, type AkisSoru } from "../lib/calisma-odasi/akis";
+import { anlatimHtml, anlatimParagraflari, aramaYap, dusunHtml, kitaptaParagraf, konuDurumu, sorulariKonuyaDagit, uniteBaskiHtml, zayifKonular, type AkisSoru } from "../lib/calisma-odasi/akis";
 import { yildizKimligi, yildizlariOku, yildizlariYaz, type Yildiz } from "../lib/calisma-odasi/yildiz";
 
 type YTOynatici = {
@@ -251,7 +251,7 @@ export function calismaOdasiBaslat(): void {
     const don = video && !calan ? `<button type="button" class="co-dugme" data-videoya-don>${ikon("Play")}Videoya dön</button>` : "";
     p.innerHTML =
       `<div class="co-su-ust"><span class="co-etiket">${etiket}</span>${don}</div>` +
-      `<span class="co-no">${esc(k.no)}</span><h2>${esc(k.baslik)}</h2>` +
+      `<span class="co-no">${esc(k.goster ?? k.no)}</span><h2>${esc(k.baslik)}</h2>` +
       `<div class="co-su-metin" data-vurgu-kok data-hedef="o${esc(k.no)}">` +
       (ozet ? `<p class="co-ozet">${esc(ozet)}</p>` : "") +
       `${noktalar}${kav}${ekler}${kitap}</div>` +
@@ -281,7 +281,7 @@ export function calismaOdasiBaslat(): void {
             if (!k) return "";
             const kv = video ? k.video[video.id] : undefined;
             const v = kv ? satirlar[kv.ilk] : null;
-            return `<div class="co-konu-bolum"><button type="button" class="co-konu-satir" data-git-konu="${esc(no)}"${v ? " data-videoda" : ""}><span class="co-no">${esc(no)}</span><span class="co-konu-adi">${esc(k.baslik)}</span>${video ? `<span class="co-video-durum">${v ? `Videoda ${saatYaz(v.bas)}` : "Videoda yok"}</span>` : ""}</button><button type="button" class="co-konu-yan" data-konu-ac="${esc(no)}" aria-label="${esc(k.baslik)} konu anlatımı">${ikon("BookOpen")}</button></div>`;
+            return `<div class="co-konu-bolum"><button type="button" class="co-konu-satir" data-git-konu="${esc(no)}"${v ? " data-videoda" : ""}><span class="co-no">${esc(k.goster ?? no)}</span><span class="co-konu-adi">${esc(k.baslik)}</span>${video ? `<span class="co-video-durum">${v ? `Videoda ${saatYaz(v.bas)}` : "Videoda yok"}</span>` : ""}</button><button type="button" class="co-konu-yan" data-konu-ac="${esc(no)}" aria-label="${esc(k.baslik)} konu anlatımı">${ikon("BookOpen")}</button></div>`;
           })
           .join("");
         return `<h3 class="co-unite">Ünite ${u.no}${u.baslik ? `: ${esc(u.baslik)}` : ""}</h3>${konuSatirlari}`;
@@ -317,7 +317,7 @@ export function calismaOdasiBaslat(): void {
           .map((y) => {
             const kv = paket.kavramlar.find((x) => x.terim === y.terim && x.konu === y.konu);
             const k = konuHaritasi.get(y.konu)?.k;
-            return `<div class="co-vurgu-kart" data-yildiz-kart="${esc(yildizKimligi(y))}"><strong>${esc(y.terim)}</strong>${kv ? `<p class="co-ozet">${esc(kv.tanim)}</p>` : ""}<span class="co-vurgu-meta">${k ? `${esc(k.no)} ${esc(k.baslik)}` : esc(y.konu)}</span><div class="co-vurgu-eylem"><button type="button" class="co-dugme" data-git-konu="${esc(y.konu)}">${ikon("ArrowRight")}Konuya git</button><button type="button" class="co-dugme" data-yildiz-kaldir="${esc(yildizKimligi(y))}">${ikon("Star")}Yıldızı kaldır</button></div></div>`;
+            return `<div class="co-vurgu-kart" data-yildiz-kart="${esc(yildizKimligi(y))}"><strong>${esc(y.terim)}</strong>${kv ? `<p class="co-ozet">${esc(kv.tanim)}</p>` : ""}<span class="co-vurgu-meta">${k ? `${esc(k.goster ?? k.no)} ${esc(k.baslik)}` : esc(y.konu)}</span><div class="co-vurgu-eylem"><button type="button" class="co-dugme" data-git-konu="${esc(y.konu)}">${ikon("ArrowRight")}Konuya git</button><button type="button" class="co-dugme" data-yildiz-kaldir="${esc(yildizKimligi(y))}">${ikon("Star")}Yıldızı kaldır</button></div></div>`;
           })
           .join("")
       : "";
@@ -328,7 +328,7 @@ export function calismaOdasiBaslat(): void {
           .map((v) => {
             const k = v.konu ? konuHaritasi.get(v.konu)?.k : null;
             const yer = satirCoz(v.hedef) ? `Döküm${v.sn !== null ? `, ${saatYaz(v.sn)}` : ""}` : v.hedef.startsWith("o") ? "Konu özeti" : `Konu metni`;
-            return `<div class="co-vurgu-kart" data-vid="${esc(v.id)}"><blockquote>${esc(v.exact)}</blockquote>${v.not ? `<p class="co-vurgu-not">${esc(v.not)}</p>` : ""}<span class="co-vurgu-meta">${yer}${k ? ` · ${esc(k.no)} ${esc(k.baslik)}` : ""}</span><div class="co-vurgu-eylem"><button type="button" class="co-dugme" data-vurgu-git="${esc(v.id)}">${ikon("ArrowRight")}Git</button><button type="button" class="co-dugme" data-vurgu-sil="${esc(v.id)}">${ikon("Trash2")}Sil</button></div></div>`;
+            return `<div class="co-vurgu-kart" data-vid="${esc(v.id)}"><blockquote>${esc(v.exact)}</blockquote>${v.not ? `<p class="co-vurgu-not">${esc(v.not)}</p>` : ""}<span class="co-vurgu-meta">${yer}${k ? ` · ${esc(k.goster ?? k.no)} ${esc(k.baslik)}` : ""}</span><div class="co-vurgu-eylem"><button type="button" class="co-dugme" data-vurgu-git="${esc(v.id)}">${ikon("ArrowRight")}Git</button><button type="button" class="co-dugme" data-vurgu-sil="${esc(v.id)}">${ikon("Trash2")}Sil</button></div></div>`;
           })
           .join("")
       : "";
@@ -833,7 +833,7 @@ export function calismaOdasiBaslat(): void {
       `<p class="co-sonuc" ${c.dogru ? "data-dogru" : "data-yanlis"}>${c.dogru ? "Doğru" : `Yanlış. Doğru cevap: ${esc(q.answer)}`}</p>` +
       (q.explanation ? `<p class="co-dayanak"><b>Açıklama</b>${esc(q.explanation)}</p>` : "") +
       (dayanak ? `<details class="co-ak-kitap"><summary>${ikon("ChevronDown")}Kitapta bu paragraf</summary><p class="co-dayanak">${esc(dayanak)}</p></details>` : "") +
-      (konu ? `<button type="button" class="co-dugme" data-git-konu="${esc(konu.no)}">${ikon("ArrowRight")}Konuya git: ${esc(konu.no)} ${esc(konu.baslik)}</button>` : "");
+      (konu ? `<button type="button" class="co-dugme" data-git-konu="${esc(konu.no)}">${ikon("ArrowRight")}Konuya git: ${esc(konu.goster ?? konu.no)} ${esc(konu.baslik)}</button>` : "");
   }
   function sinavCevapla(id: string, secim: string, kart: HTMLElement | null): void {
     const q = [...soruOnbellek.values()].flat().find((x) => x.id === id);
@@ -987,7 +987,7 @@ export function calismaOdasiBaslat(): void {
         return satir ? `<button type="button" class="co-cip" data-ak-medya="${esc(v.id)}" data-no="${esc(no)}">${ikon(v.tur === "ses" ? "Headphones" : "Play")}${esc(medyaCipEtiketi(v, saatYaz(satir.bas)))}</button>` : "";
       })
       .join("");
-    return `<article class="co-ak-blok" id="ak-${esc(no)}" data-ak-konu="${esc(no)}" aria-labelledby="ak-b-${esc(no)}"><header class="co-ak-baslik"><button type="button" class="co-ak-ad" id="ak-b-${esc(no)}" data-ak-sar="${esc(no)}"><span class="co-no">${esc(no)}</span><span>${esc(k.baslik)}</span></button>${cipler ? `<div class="co-ak-cipler">${cipler}</div>` : ""}</header><div class="co-ak-govde" data-ak-govde></div></article>`;
+    return `<article class="co-ak-blok" id="ak-${esc(no)}" data-ak-konu="${esc(no)}" aria-labelledby="ak-b-${esc(no)}"><header class="co-ak-baslik"><button type="button" class="co-ak-ad" id="ak-b-${esc(no)}" data-ak-sar="${esc(no)}"><span class="co-no">${esc(k.goster ?? no)}</span><span>${esc(k.baslik)}</span></button>${cipler ? `<div class="co-ak-cipler">${cipler}</div>` : ""}</header><div class="co-ak-govde" data-ak-govde></div></article>`;
   }
   function akisBlokDoldur(el: HTMLElement): void {
     if (el.dataset.dolu) return;
@@ -997,9 +997,24 @@ export function calismaOdasiBaslat(): void {
     const govde = el.querySelector<HTMLElement>("[data-ak-govde]");
     if (!k || !govde) return;
     const c = k.calisma;
+    const uzunlar = videolar.filter((v) => v.cesit === "uzun-anlatim" && k.video[v.id]);
+    const anlatim = uzunlar
+      .map((v) => {
+        const kv = k.video[v.id];
+        const paragraflar = anlatimParagraflari(v.satirlar.slice(kv.ilk, kv.ilk + kv.say));
+        return paragraflar
+          .map(
+            (p) =>
+              `<p class="co-ak-anlatim-p"><button type="button" class="co-ak-dinle" data-ak-satir="${esc(v.id)}" data-sn="${p.bas}" aria-label="${esc(p.k)} anlatımını ${esc(saatYaz(p.bas))} noktasından dinle">${ikon("Headphones")}<span>${esc(p.k)}</span></button> ${esc(p.metin)}</p>`,
+          )
+          .join("");
+      })
+      .join("");
+    const anlatimBolumu = anlatim ? `<h4 class="co-alt-baslik">Konu anlatımı</h4><div class="co-ak-anlatim">${anlatim}</div>` : "";
+    const ozetBolumu = anlatimHtml(k);
     const kitapParcalari = k.metin.split("\n").filter((x) => x.trim());
     const kitap = kitapParcalari.length
-      ? `<details class="co-ak-kitap"${c ? "" : " open"}><summary>${ikon("ChevronDown")}Kitaptan oku</summary>${kitapParcalari.map((x) => `<p>${esc(x)}</p>`).join("")}</details>`
+      ? `<details class="co-ak-kitap"${anlatim || c ? "" : " open"}><summary>${ikon("ChevronDown")}Kitaptan oku</summary>${kitapParcalari.map((x) => `<p>${esc(x)}</p>`).join("")}</details>`
       : "";
     const kav = (kavramKonuya.get(no) ?? [])
       .map((i) => {
@@ -1008,7 +1023,7 @@ export function calismaOdasiBaslat(): void {
       })
       .join("");
     govde.innerHTML =
-      `<div class="co-ak-metin" data-vurgu-kok data-hedef="o${esc(no)}">${anlatimHtml(k)}${kitap}</div>` +
+      `<div class="co-ak-metin" data-vurgu-kok data-hedef="o${esc(no)}">${anlatimBolumu}${ozetBolumu ? `${anlatim ? `<h4 class="co-alt-baslik">Özet</h4>` : ""}${ozetBolumu}` : ""}${kitap}</div>` +
       (kav ? `<h4 class="co-alt-baslik">Kavramlar</h4><dl class="co-tanimlar co-ak-kavramlar">${kav}</dl>` : "") +
       `<div class="co-ak-sorular" data-ak-sorular></div>` +
       dusunHtml(k) +
@@ -1082,7 +1097,7 @@ export function calismaOdasiBaslat(): void {
             .map((d) => {
               const k = konuHaritasi.get(d.no)?.k;
               const not = d.yanlis ? `${d.yanlis} yanlış, ${d.toplam} soru` : `${d.toplam} soru, hiç çözülmedi`;
-              return `<button type="button" class="co-ak-zayif" data-ak-git="${esc(d.no)}"><span class="co-no">${esc(d.no)}</span><span class="co-ak-zayif-ad">${esc(k?.baslik ?? "")}</span><span class="co-ak-zayif-not">${not}</span></button>`;
+              return `<button type="button" class="co-ak-zayif" data-ak-git="${esc(d.no)}"><span class="co-no">${esc(k?.goster ?? d.no)}</span><span class="co-ak-zayif-ad">${esc(k?.baslik ?? "")}</span><span class="co-ak-zayif-not">${not}</span></button>`;
             })
             .join("")
         : `<p class="co-bos">Yanlış yaptığın ya da henüz çözmediğin konu kalmadı.</p>`;
@@ -1260,8 +1275,8 @@ export function calismaOdasiBaslat(): void {
     const konu = konuHaritasi.get(k.konu)?.k;
     const yildizli = yildizlar.some((y) => yildizKimligi(y) === yildizKimligi(k));
     const digerler = [...new Set(paket.kavramlar.filter((x) => tr(x.terim) === tr(k.terim) && x.konu !== k.konu).map((x) => x.konu))].filter((n) => konuHaritasi.has(n)).slice(0, 4);
-    const digerKonular = digerler.length ? `<p class="co-balon-diger">Başka konularda da geçiyor: ${digerler.map((n) => `<button type="button" class="co-balon-konu" data-git-konu="${esc(n)}" data-balon-kapat>${esc(n)}</button>`).join(" ")}</p>` : "";
-    balon.innerHTML = `<div class="co-balon-ust"><strong>${esc(k.terim)}</strong><button type="button" class="co-yildiz" data-yildiz="${esc(b.dataset.k ?? "")}" aria-pressed="${yildizli}" aria-label="${yildizli ? "Yıldızı kaldır" : "Yıldızla"}" title="${yildizli ? "Yıldızı kaldır" : "Yıldızla"}">${ikon("Star")}</button></div><p>${esc(k.tanim)}</p>${digerKonular}<button type="button" data-git-konu="${esc(k.konu)}" data-balon-kapat>${ikon("ArrowRight")}Konuya git${konu ? `: ${esc(konu.no)}` : ""}</button>`;
+    const digerKonular = digerler.length ? `<p class="co-balon-diger">Başka konularda da geçiyor: ${digerler.map((n) => `<button type="button" class="co-balon-konu" data-git-konu="${esc(n)}" data-balon-kapat>${esc(konuHaritasi.get(n)?.k.goster ?? n)}</button>`).join(" ")}</p>` : "";
+    balon.innerHTML = `<div class="co-balon-ust"><strong>${esc(k.terim)}</strong><button type="button" class="co-yildiz" data-yildiz="${esc(b.dataset.k ?? "")}" aria-pressed="${yildizli}" aria-label="${yildizli ? "Yıldızı kaldır" : "Yıldızla"}" title="${yildizli ? "Yıldızı kaldır" : "Yıldızla"}">${ikon("Star")}</button></div><p>${esc(k.tanim)}</p>${digerKonular}<button type="button" data-git-konu="${esc(k.konu)}" data-balon-kapat>${ikon("ArrowRight")}Konuya git${konu ? `: ${esc(konu.goster ?? konu.no)}` : ""}</button>`;
     balon.hidden = false;
     yerlestir(balon, b.getBoundingClientRect(), Math.min(320, innerWidth - 24));
   }
@@ -1273,7 +1288,7 @@ export function calismaOdasiBaslat(): void {
     if (!kayit) return;
     const k: CalismaKonu = kayit.k;
     acikKonu = no;
-    $("co-konu-ad").textContent = `${k.no} ${k.baslik}`;
+    $("co-konu-ad").textContent = `${k.goster ?? k.no} ${k.baslik}`;
     $("co-konu-bilgi").textContent = `Ünite ${k.unite} · Kitap s. ${k.sayfa}`;
     const govde = $("co-konu-govde");
     govde.innerHTML = `<article class="co-konu-metin" lang="tr" data-vurgu-kok data-hedef="k${esc(k.no)}">${k.html || `<p>${esc(k.metin)}</p>`}</article>`;
@@ -1309,7 +1324,7 @@ export function calismaOdasiBaslat(): void {
     const k = konuHaritasi.get(no)?.k;
     const sorular = k?.calisma?.miniTest ?? [];
     if (!k || !sorular.length) return;
-    $("co-test-bilgi").textContent = `${k.no} ${k.baslik}`;
+    $("co-test-bilgi").textContent = `${k.goster ?? k.no} ${k.baslik}`;
     $("co-test-govde").innerHTML =
       `<div class="co-sorular">` +
       sorular
@@ -1540,6 +1555,22 @@ export function calismaOdasiBaslat(): void {
         el.playbackRate = SES_HIZLARI[sira];
         sesDugme.textContent = `${SES_HIZLARI[sira]}×`;
       }
+      return;
+    }
+    const akSatir = t.closest<HTMLElement>("[data-ak-satir]");
+    if (akSatir) {
+      const kodS = akSatir.dataset.akSatir ?? "";
+      const sn = Number(akSatir.dataset.sn ?? "0");
+      if (video?.id !== kodS) videoDegistir(kodS);
+      elleKaydirdi = false;
+      try {
+        oynatici?.seekTo(sn, true);
+        oynatici?.playVideo?.();
+      } catch {
+        /* player not ready */
+      }
+      otoDurak = 0;
+      guncelle(sn);
       return;
     }
     const akMedya = t.closest<HTMLElement>("[data-ak-medya]");
