@@ -22,6 +22,7 @@ import Icindekiler, { type IcKonu, type IcUnite } from "../../../components/Icin
 import { getCourses, getDersIcerik, getKitapKonulari, getKitapUniteAdlari, getQuestions, getUniversities, type KitapKonu } from "../../../lib/api";
 import { uniteBasligi } from "../../../lib/unite-basligi";
 import { soruSirala } from "../../../lib/soru-sirasi";
+import { kitapSirala } from "../../../lib/soru-siralama";
 import { canonicalDepartments, courseDepartments, coursePath } from "../../../lib/kanonik";
 
 export async function getStaticPaths() {
@@ -99,7 +100,7 @@ const mobilUniteler = units.map((no) => ({
 // Table of contents: a topic jumps to the first question tied to it (or any of its sub topics), else to the unit
 const kitapUnite = new Map(kitap.map((u) => [u.unite, u]));
 const icindekiler: IcUnite[] = units.map((no) => {
-  const sirali = soruSirala(questions.filter((q) => q.unitNumber === no));
+  const sirali = kitapSirala(questions.filter((q) => q.unitNumber === no));
   const hedefBul = (kno: string) => {
     const i = sirali.findIndex((q) => q.section === kno || q.section?.startsWith(`${kno}.`));
     return i >= 0 ? `question-${no}-${i}` : `unite-${no}`;
@@ -264,9 +265,12 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
         <h1 class="sr-only">{course.name} - Tüm Sorular</h1>
         {
           units.map((unit, idx) => {
-            const unitQuestions = soruSirala(
-              questions.filter((q) => q.unitNumber === unit),
-            );
+            // Book order (topic number, then file order); "Sırala" moves the cards on the client.
+            // data-eski is the place in the older order ("most asked first"): records written with the
+            // old DOM ids (question-<unit>-<index>) are moved to the question's data id with it.
+            const uniteSorulari = questions.filter((q) => q.unitNumber === unit);
+            const unitQuestions = kitapSirala(uniteSorulari);
+            const eskiSira = new Map(soruSirala(uniteSorulari).map((q, i) => [q, i]));
             return (
               <div
                 id={`unite-${unit}`}
@@ -288,6 +292,7 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
                     id={`question-${unit}-${qIdx}`}
                     data-unit={unit}
                     data-id={q.id}
+                    data-eski={eskiSira.get(q) !== qIdx ? eskiSira.get(q) : undefined}
                     data-source={q.source}
                     data-sinav={examKeys(q)}
                     data-testid="question-card"

@@ -28,6 +28,8 @@ for (const u of universiteler)
 </Layout>
 
 <script>
+  import { devamBaglantisi, kaldiginYerOku, sonCalisilanlar, yerMetni, type Yer } from "../lib/calisma-durumu";
+
   type FavoriDers = { id: string; name?: string; code?: string; uniId: string; deptId: string };
   type Bolum = { uni: string; ad: string };
 
@@ -86,7 +88,11 @@ for (const u of universiteler)
     return b;
   };
 
+  // Every course keeps its own "kaldığın yer" (kaldigin-yer); a row with one opens at that question
+  let yerler: Record<string, Yer> = {};
+
   function dersSatiri(f: FavoriDers) {
+    const yer = yerler[`${f.uniId}/${f.id}`];
     const kayit = ilerleme(f.uniId, f.id);
     const sonuclar = Object.values(kayit).filter((r) => Array.isArray(r) && r.length > 0);
     const cozulen = sonuclar.length;
@@ -94,11 +100,12 @@ for (const u of universiteler)
     const oran = cozulen ? Math.round((dogru / cozulen) * 100) : 0;
 
     const satir = el(duzenle ? "div" : "a", "liste-satir");
-    if (!duzenle) (satir as HTMLAnchorElement).href = `/${f.uniId}/${f.deptId}/${f.id}`;
+    if (!duzenle) (satir as HTMLAnchorElement).href = yer ? devamBaglantisi(yer) : `/${f.uniId}/${f.deptId}/${f.id}`;
     const govde = el("div", "liste-satir-govde");
     govde.append(el("div", "liste-baslik", f.name || f.id));
     const meta = [uniKisa[f.uniId] ?? f.uniId, cozulen ? `${cozulen} soru çözüldü` : "Henüz çözüm yok"].join(" · ");
     govde.append(el("div", "liste-meta", meta));
+    if (yer && !duzenle) govde.append(el("div", "liste-meta", `Kaldığın yer: ${yerMetni(yer)}`));
     if (cozulen && !duzenle) {
       const serit = el("div", "serit");
       serit.setAttribute("role", "progressbar");
@@ -145,7 +152,19 @@ for (const u of universiteler)
     return satir;
   }
 
+  /** Courses studied here but not starred: listed after the starred ones so their place is not lost. */
+  function sonCalisilanSatiri(ders: string, yer: Yer) {
+    const satir = el("a", "liste-satir") as HTMLAnchorElement;
+    satir.href = devamBaglantisi(yer);
+    const govde = el("div", "liste-satir-govde");
+    govde.append(el("div", "liste-baslik", yer.ad));
+    govde.append(el("div", "liste-meta", [uniKisa[ders.split("/")[0]] ?? ders.split("/")[0], `Kaldığın yer: ${yerMetni(yer)}`].join(" · ")));
+    satir.append(govde);
+    return satir;
+  }
+
   function ciz() {
+    yerler = kaldiginYerOku().dersler;
     const dersler = oku<FavoriDers>("favorite-courses").filter((f) => f && f.id && f.uniId && f.deptId);
     const bolumIdleri = oku<string>("favorite-departments").filter((x) => typeof x === "string");
     const n = gorunum === "ders" ? dersler.length : bolumIdleri.length;
@@ -159,6 +178,13 @@ for (const u of universiteler)
       if (!dersler.length)
         liste.append(bos("Henüz ders eklemedin", "Bölüm sayfasında dersin yanındaki yıldıza dokun; ders burada ilerlemesiyle görünür."));
       dersler.forEach((f) => liste.append(dersSatiri(f)));
+      const yildizli = new Set(dersler.map((f) => `${f.uniId}/${f.id}`));
+      const digerleri = sonCalisilanlar({ surum: 2, dersler: yerler }).filter(([d]) => !yildizli.has(d));
+      if (digerleri.length && !duzenle) {
+        const b = el("h2", "ayar-baslik mt-6 mb-1", "Son çalıştıkların");
+        liste.append(b);
+        digerleri.slice(0, 10).forEach(([d, y]) => liste.append(sonCalisilanSatiri(d, y)));
+      }
     } else {
       if (!bolumIdleri.length)
         liste.append(bos("Henüz bölüm eklemedin", "Üniversite sayfasında bölümün yanındaki yıldıza dokun."));

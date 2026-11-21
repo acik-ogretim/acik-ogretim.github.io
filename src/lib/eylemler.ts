@@ -4,6 +4,10 @@ import {
   ArrowDown,
   ArrowUp,
   BookOpen,
+  Eraser,
+  Eye,
+  ListRestart,
+  MapPinOff,
   Flag,
   Gauge,
   Hash,
@@ -59,11 +63,26 @@ export type Eylem = {
 /** Fired whenever a state or value above may have changed (the player and the theme switch send it). */
 export const EYLEM_DURUM_OLAYI = OYNATICI_DURUM_OLAYI;
 
+type Calisma = {
+  goster: () => void;
+  cevapVar: (el?: HTMLElement | null) => boolean;
+  uniteCevapSayisi: () => number;
+  uniteyiTemizle: () => void;
+  dersiTemizle: () => void;
+  yerVar: () => boolean;
+  yeriSifirla: () => void;
+};
+type Oynatici = { durum?: () => OynaticiDurum; calisma?: Calisma; questions?: { el: HTMLElement | null }[]; currentIndex?: number };
+const oyuncu = (): Oynatici | null =>
+  typeof window === "undefined" ? null : ((window as unknown as { quizPlayer?: Oynatici }).quizPlayer ?? null);
+
 /** The quiz player is the single source of the bar and menu states. */
-const oynatici = (): OynaticiDurum | null => {
-  if (typeof window === "undefined") return null;
-  const p = (window as unknown as { quizPlayer?: { durum?: () => OynaticiDurum } }).quizPlayer;
-  return p?.durum?.() ?? null;
+const oynatici = (): OynaticiDurum | null => oyuncu()?.durum?.() ?? null;
+/** Stored study state of the course page (src/scripts/calisma-baglanti.ts). */
+const calisma = (): Calisma | null => oyuncu()?.calisma ?? null;
+const simdikiKart = () => {
+  const p = oyuncu();
+  return p?.questions?.[p.currentIndex ?? -1]?.el ?? null;
 };
 
 export const MENU_ACMA_OLAYI = "mobil-menu:ac";
@@ -104,6 +123,8 @@ export const EYLEMLER: Eylem[] = [
   { id: "soruyu-oku", etiket: "Soruyu oku", simge: Mic, yerel: "btn-read-question", calisiyor: () => oynatici()?.okunan === "soru", calistir: () => tikla("#btn-read-question") },
   { id: "aciklamayi-oku", etiket: "Açıklamayı oku", simge: BookOpen, yerel: "btn-read-explanation", calisiyor: () => oynatici()?.okunan === "aciklama", calistir: () => tikla("#btn-read-explanation") },
   { id: "durdur", etiket: "Okumayı durdur", simge: Square, yerel: "btn-stop-speech", pasif: () => !oynatici()?.okunan, calistir: () => tikla("#btn-stop-speech") },
+  // Solving mode: reveal without choosing (counted apart from right and wrong)
+  { id: "cevabi-goster", etiket: "Cevabı göster", simge: Eye, pasif: () => !oynatici()?.cozme || !!calisma()?.cevapVar(simdikiKart()), calistir: () => calisma()?.goster() },
   { id: "suzgec", etiket: "Süzgeç", simge: SlidersHorizontal, kisayol: "F", tus: "f", calistir: () => window.dispatchEvent(new CustomEvent("suzgec:ac")) },
   { id: "ayarlar", etiket: "Ayarlar", simge: Settings, yerel: "btn-open-settings", calistir: () => sayfa().openQuizSettings?.() },
   { id: "ara", etiket: "Ara", simge: Search, kisayol: "Ctrl K", calistir: () => tikla("#toggleSearch") },
@@ -113,6 +134,10 @@ export const EYLEMLER: Eylem[] = [
   { id: "soru", etiket: "Soruya git", simge: Hash, altGorunum: "soru", calistir: () => menuAc("soru") },
   { id: "icindekiler", etiket: "İçindekiler", simge: ListTree, kisayol: "I", tus: "i", calistir: () => window.dispatchEvent(new CustomEvent("icindekiler:ac")) },
   { id: "sohbet", etiket: "Sohbet asistanı", simge: MessageCircle, calistir: () => tikla("#sohbet-ac") },
+  // Clearing: runs at once and offers "Geri al" for a few seconds (calisma-baglanti.ts)
+  { id: "uniteyi-temizle", etiket: "Bu ünitedeki cevapları temizle", simge: Eraser, pasif: () => !calisma()?.uniteCevapSayisi(), calistir: () => calisma()?.uniteyiTemizle() },
+  { id: "dersi-temizle", etiket: "Bu dersteki cevapları temizle", simge: ListRestart, pasif: () => !calisma()?.cevapVar(), calistir: () => calisma()?.dersiTemizle() },
+  { id: "yeri-sifirla", etiket: "Kaldığın yeri sıfırla", simge: MapPinOff, pasif: () => !calisma()?.yerVar(), calistir: () => calisma()?.yeriSifirla() },
   { id: "yedek", etiket: "Kayıtlarını taşı", simge: RefreshCw, calistir: () => location.assign("/yedek") },
   { id: "hata", etiket: "Hata bildir", simge: Flag, calistir: () => tikla("[data-tartisma]") },
   { id: "tur", etiket: "Turu yeniden göster", simge: Route, calistir: () => window.dispatchEvent(new CustomEvent("tur:baslat")) },

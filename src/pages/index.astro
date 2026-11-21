@@ -142,7 +142,7 @@ const uniStyles: Record<string, { icon: SimgeAdi }> = {
     }
   </script>
 
-  <!-- "Bugün": shown only to a returning learner with a recorded last position (son-calisma) -->
+  <!-- "Bugün": shown only to a returning learner with a recorded position (kaldigin-yer, latest course) -->
   <section id="bugun" class="sekme-sayfa" aria-labelledby="bugun-baslik" hidden>
     <h1 id="bugun-baslik" class="text-[36px] leading-none font-semibold text-ink mb-4">Bugün</h1>
     <div class="kaldigin-yer">
@@ -213,22 +213,23 @@ const uniStyles: Record<string, { icon: SimgeAdi }> = {
   </header>
 
   <script>
-    import { SON_CALISMA_ANAHTARI, sonCalismaMetni, sonCalismaOku } from "../lib/son-calisma";
+    import { devamBaglantisi, kaldiginYerOku, sonCalisilanlar, yerMetni } from "../lib/calisma-durumu";
     import { ilerlemeOzeti, olc } from "../lib/ilerleme";
 
     type FavoriDers = { id: string; name?: string; uniId: string; deptId: string };
-    const son = sonCalismaOku(localStorage.getItem(SON_CALISMA_ANAHTARI));
+    // Every course keeps its own position; the card shows the one studied last (Derslerim lists the rest)
+    const son = sonCalisilanlar(kaldiginYerOku())[0]?.[1] ?? null;
     if (son) {
       const metin = (id: string, t: string) => {
         const e = document.getElementById(id);
         if (e) e.textContent = t;
       };
       metin("ky-ad", son.ad);
-      metin("ky-konum", sonCalismaMetni(son));
+      metin("ky-konum", yerMetni(son));
       const oran = son.uniteToplam ? Math.round((son.sira / son.uniteToplam) * 100) : 0;
       (document.getElementById("ky-serit") as HTMLElement).style.width = `${oran}%`;
       document.querySelector("#bugun [role=progressbar]")?.setAttribute("aria-valuenow", String(oran));
-      (document.getElementById("ky-devam") as HTMLAnchorElement).href = `${son.yol}#${son.hedef}`;
+      (document.getElementById("ky-devam") as HTMLAnchorElement).href = devamBaglantisi(son);
 
       // Totals come only from quiz-progress-<course> records
       const kayitlar: { ders: string; veri: Record<string, unknown> }[] = [];
@@ -255,6 +256,7 @@ const uniStyles: Record<string, { icon: SimgeAdi }> = {
       }
       if (favoriler.length) {
         const liste = document.getElementById("bugun-liste") as HTMLElement;
+        const yerler = kaldiginYerOku().dersler;
         for (const f of favoriler.slice(0, 5)) {
           let veri: Record<string, unknown> = {};
           try {
@@ -265,7 +267,9 @@ const uniStyles: Record<string, { icon: SimgeAdi }> = {
           const o = olc(veri);
           const a = document.createElement("a");
           a.className = "liste-satir";
-          a.href = `/${f.uniId}/${f.deptId}/${f.id}`;
+          // A course with a recorded position opens at it
+          const yer = yerler[`${f.uniId}/${f.id}`];
+          a.href = yer ? devamBaglantisi(yer) : `/${f.uniId}/${f.deptId}/${f.id}`;
           const govde = document.createElement("span");
           govde.className = "liste-satir-govde";
           const b = document.createElement("span");

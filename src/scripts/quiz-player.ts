@@ -1,7 +1,8 @@
 import type { OptionKey, PlayerQuestion, PlayerUI, QuizSettings, Source } from "../lib/types";
 import { suz } from "../lib/suzgec";
 import { KIP_OLAYI, KONUM_ISTE_OLAYI, OYNATICI_DURUM_OLAYI, SORU_KONUMU_OLAYI, hizMetni, type OynaticiDurum, type SoruKonumu } from "../lib/ders-olaylari";
-import { SON_CALISMA_ANAHTARI, type SonCalisma } from "../lib/son-calisma";
+import { CalismaBaglantisi } from "./calisma-baglanti";
+import { depoOku, depoYaz } from "../lib/calisma-durumu";
 
 // Player bar icons for the solve-mode button (Lucide play and pause, filled look through currentColor)
 const PLAY_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5v15l13-7.5z"></path></svg>';
@@ -29,6 +30,8 @@ export class QuizPlayer {
   currentSessionId: number = 0;
   speechTimeout: any = null;
   silentAudio: HTMLAudioElement;
+  /** Stored answers, position and order (src/scripts/calisma-baglanti.ts). */
+  calisma!: CalismaBaglantisi;
 
   constructor() {
     this.questions = [];
@@ -138,7 +141,7 @@ export class QuizPlayer {
   }
 
   loadSettings(): QuizSettings {
-    const saved = localStorage.getItem('quiz-settings');
+    const saved = depoOku('quiz-settings');
     const defaultSettings: QuizSettings = {
       // Removed shuffleQuestions
       filterUnite: 'all',
@@ -154,28 +157,43 @@ export class QuizPlayer {
       voiceURI: '',
       autoAdvance: true
     };
-    const loaded = saved ? { ...defaultSettings, ...JSON.parse(saved) } : defaultSettings;
+    let loaded = defaultSettings;
+    try {
+      if (saved) loaded = { ...defaultSettings, ...JSON.parse(saved) };
+    } catch {
+      // Broken settings record: defaults
+    }
 
     return loaded;
   }
 
   saveSettings(): void {
-    localStorage.setItem('quiz-settings', JSON.stringify(this.settings));
+    depoYaz('quiz-settings', JSON.stringify(this.settings));
   }
 
   loadProgress(): Record<string, boolean[]> {
-    const saved = localStorage.getItem(`quiz-progress-${this.courseSlug}`);
-    return saved ? JSON.parse(saved) : {};
+    try {
+      const saved = JSON.parse(depoOku(`quiz-progress-${this.courseSlug}`) ?? '{}') as unknown;
+      return saved && typeof saved === 'object' && !Array.isArray(saved) ? (saved as Record<string, boolean[]>) : {};
+    } catch {
+      return {};
+    }
   }
 
   saveProgress(): void {
-    localStorage.setItem(`quiz-progress-${this.courseSlug}`, JSON.stringify(this.progress));
+    // Full or blocked storage: solving goes on for this visit
+    depoYaz(`quiz-progress-${this.courseSlug}`, JSON.stringify(this.progress));
   }
 
   init(): void {
     // Load AI explanations override store
     const aiStoreKey = `quiz-ai-explanations-${this.courseSlug}`;
-    const aiStore = JSON.parse(localStorage.getItem(aiStoreKey) || '{}');
+    let aiStore: Record<string, string> = {};
+    try {
+      aiStore = JSON.parse(depoOku(aiStoreKey) || '{}');
+    } catch {
+      aiStore = {};
+    }
 
     // Select using class instead of ID valid pattern dependency
     const questionEls = document.querySelectorAll('.question-card');
@@ -272,6 +290,8 @@ export class QuizPlayer {
     });
 
     this.questions = [...this.originalQuestions];
+    // Persistent question keys, stored answers and order; moves records written with DOM ids
+    this.calisma = new CalismaBaglantisi(this);
 
     // Bind UI Events
     if (this.ui.speedBtn) {
@@ -334,7 +354,8 @@ export class QuizPlayer {
 
     this.applyFilters();
     this.show();
-    window.setTimeout(() => { this.konumKaydedilir = true; }, 2500);
+    // Draws stored answers, restores mode and position on reload or a resume link
+    this.calisma.baslat();
   }
 
   isProgrammaticScroll: boolean = false;
@@ -348,8 +369,7 @@ export class QuizPlayer {
       if (visibleEntry) {
         // Use data-id (DB ID) to match what we stored in this.questions, fallback to DOM ID
         const targetEl = visibleEntry.target as HTMLElement;
-        const qId = targetEl.dataset.id || targetEl.id;
-        const index = this.questions.findIndex(q => q.id === qId);
+        const index = this.questions.findIndex(q => q.el === targetEl);
         if (index !== -1 && index !== this.currentIndex && !this.isPlaying && !this.synth.speaking) {
           this.currentIndex = index;
           this.updateStatusText();
@@ -385,6 +405,8 @@ export class QuizPlayer {
 
 
   applyFilters(): void {
+    // Chosen order first ("Sırala"), so the filtered list follows it
+    this.calisma?.sirala();
     // Shared with the "Süzgeç" sheet so its preview count always matches the list
     const filtered = suz(this.originalQuestions, this.settings, this.progress);
 
@@ -608,9 +630,11 @@ export class QuizPlayer {
   }
 
   public syncSettings(): void {
-    const saved = localStorage.getItem('quiz-settings');
-    if (saved) {
-      this.settings = { ...this.settings, ...JSON.parse(saved) };
+    try {
+      const saved = depoOku('quiz-settings');
+      if (saved) this.settings = { ...this.settings, ...JSON.parse(saved) };
+    } catch {
+      // Broken settings record: keep the current ones
     }
 
     // Update UI based on new settings
@@ -676,11 +700,6 @@ export class QuizPlayer {
     window.dispatchEvent(new CustomEvent<{ cozme: boolean }>(KIP_OLAYI, { detail: { cozme: this.isInteractive } }));
 
     if (this.isInteractive) {
-      this.corrects = 0;
-      this.wrongs = 0;
-      this.answeredQuestions.clear();
-      this.updateStats();
-
       document.body.classList.add('hide-answers');
       document.body.classList.add('hide-explanations');
       // Interactive mode requires seeing all options to make a choice
@@ -703,10 +722,12 @@ export class QuizPlayer {
         this.ui.statsContainer.classList.add('flex');
       }
 
+      // Answers given earlier stay (cleared only from the menu); solving goes on at the current question
+      this.calisma.gorunumuUygula();
       if (this.questions.length > 0) {
-        this.currentIndex = 0;
+        if (this.currentIndex < 0) this.currentIndex = 0;
         this.scrollToCurrent();
-        this.updateStats(); // Ensure stats reflect question 1
+        this.updateStats();
       }
     } else {
       document.body.classList.remove('is-interactive-mode', 'hide-answers', 'hide-explanations');
@@ -729,12 +750,12 @@ export class QuizPlayer {
         this.ui.statsContainer.classList.remove('flex');
       }
 
-      document.querySelectorAll('.is-correct, .is-wrong, .was-revealed, .reveal').forEach(el => {
-        el.classList.remove('is-correct', 'is-wrong', 'was-revealed', 'reveal');
-      });
+      // Stored answers stay drawn in reading mode too: the same view comes back after a reload
+      this.calisma.gorunumuUygula();
 
       this.pause();
     }
+    this.calisma.kipDegisti();
     this.durumYay();
   }
 
@@ -792,13 +813,15 @@ export class QuizPlayer {
     const item = e.currentTarget as HTMLElement;
     const questionEl = item.closest('[id^="question-"]') as HTMLElement;
 
-    if (!questionEl || this.answeredQuestions.has(questionEl.id)) return;
+    // Persistent key (data id): the DOM id changes with the order, the key never does
+    const anahtar = questionEl ? this.calisma.anahtar(questionEl) : '';
+    if (!questionEl || this.answeredQuestions.has(anahtar)) return;
 
     const isCorrect = item.classList.contains('correct-option');
-    this.answeredQuestions.add(questionEl.id);
+    this.answeredQuestions.add(anahtar);
 
     // Sync current index to the clicked question
-    const qIndex = this.questions.findIndex(q => q.id === questionEl.id);
+    const qIndex = this.questions.findIndex(q => q.el === questionEl);
     if (qIndex !== -1) {
       this.currentIndex = qIndex;
       // Also ensure UI is updated to reflect this as the 'active' question if needed
@@ -806,12 +829,12 @@ export class QuizPlayer {
     }
 
     // Track progress
-    if (!this.progress[questionEl.id]) this.progress[questionEl.id] = [];
-    this.progress[questionEl.id].push(isCorrect);
+    if (!this.progress[anahtar]) this.progress[anahtar] = [];
+    this.progress[anahtar].push(isCorrect);
 
     // Keep only last 2 results to manage memory and support "recent" logic
-    if (this.progress[questionEl.id].length > 2) {
-      this.progress[questionEl.id] = this.progress[questionEl.id].slice(-2);
+    if (this.progress[anahtar].length > 2) {
+      this.progress[anahtar] = this.progress[anahtar].slice(-2);
     }
 
     this.saveProgress();
@@ -835,10 +858,11 @@ export class QuizPlayer {
     const correctItem = questionEl.querySelector('.correct-option') as HTMLElement;
     if (correctItem) correctItem.classList.add('was-revealed');
 
+    // Stored answer; the counter is computed from the stored answers of the course
+    this.calisma.cevapKaydet(questionEl, item.dataset.key, isCorrect);
+
     if (isCorrect) {
       item.classList.add('is-correct');
-      this.corrects++;
-      this.updateStats();
 
       if (this.settings.readerMode) {
         const utter = this.createUtterance("Doğru!");
@@ -855,8 +879,6 @@ export class QuizPlayer {
       }
     } else {
       item.classList.add('is-wrong');
-      this.wrongs++;
-      this.updateStats();
 
       // Use the clicked question for feedback text, now guaranteed by index sync
       const q = this.questions[this.currentIndex];
@@ -1012,26 +1034,8 @@ export class QuizPlayer {
       detail.uniteToplam = ayni.length;
     }
     window.dispatchEvent(new CustomEvent<SoruKonumu>(SORU_KONUMU_OLAYI, { detail }));
-    if (this.konumKaydedilir && q?.el && detail.unite !== null) this.sonCalismaYaz(q.el.id, detail);
-  }
-
-  /** Set once the page has settled, so merely opening a course does not count as "kaldığın yer". */
-  konumKaydedilir = false;
-  sonCalismaZamanlayici = 0;
-
-  /** Debounced: written once scrolling settles on a question. */
-  sonCalismaYaz(hedef: string, k: SoruKonumu): void {
-    window.clearTimeout(this.sonCalismaZamanlayici);
-    this.sonCalismaZamanlayici = window.setTimeout(() => {
-      const ad = document.getElementById('ders-adi')?.textContent?.trim();
-      if (!ad || k.unite === null) return;
-      const kayit: SonCalisma = { yol: location.pathname, ad, hedef, unite: k.unite, sira: k.sira, uniteToplam: k.uniteToplam, zaman: Date.now() };
-      try {
-        localStorage.setItem(SON_CALISMA_ANAHTARI, JSON.stringify(kayit));
-      } catch {
-        // Storage full or blocked: the home page simply shows no "kaldığın yer" card.
-      }
-    }, 800);
+    // "Kaldığın yer": recorded per course once the learner has interacted (calisma-baglanti.ts)
+    this.calisma?.konumDegisti(q, detail);
   }
 
   updateUIState(): void {
@@ -1438,6 +1442,8 @@ export class QuizPlayer {
 
       const correctItem = q.el.querySelector('.correct-option') as HTMLElement;
       if (correctItem) correctItem.classList.add('was-revealed');
+      // In solving mode this reveals the answer: kept like "Cevabı göster"
+      if (this.isInteractive) this.calisma.goster(q.el);
     }
 
     this.startNewSpeechSession();

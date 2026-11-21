@@ -16,6 +16,8 @@ import {
   type SuzgecAyar,
   type SuzulecekSoru,
 } from "../lib/suzgec";
+import { SIRALAMALAR, SIRALAMA_ADI, SIRALAMA_ANAHTARI, VARSAYILAN_SIRALAMA, siralamaOku, siralamaYaz, type Siralama } from "../lib/soru-siralama";
+import { dersAnahtari, depoOku, depoYaz } from "../lib/calisma-durumu";
 
 export const SUZGEC_ACMA_OLAYI = "suzgec:ac";
 
@@ -24,7 +26,8 @@ type Oynatici = { syncSettings?: () => void };
 /** Every question card on the page, read from its data attributes. */
 function kartlariOku(): SuzulecekSoru[] {
   return [...document.querySelectorAll<HTMLElement>(".question-card")].map((el) => ({
-    id: el.dataset.id ?? el.id,
+    // Persistent key set by the player (data id, "id#2" for a repeated id): progress is keyed by it
+    id: el.dataset.anahtar ?? el.dataset.id ?? el.id,
     unitNumber: Number.parseInt(el.dataset.unit ?? "0", 10),
     source: el.dataset.source ?? "soru-bankasi",
     sinavlar: (el.dataset.sinav ?? "").split(";").filter(Boolean),
@@ -33,7 +36,7 @@ function kartlariOku(): SuzulecekSoru[] {
 
 function ilerlemeOku(ders: string): Ilerleme {
   try {
-    const veri = JSON.parse(localStorage.getItem(`quiz-progress-${ders}`) ?? "{}") as unknown;
+    const veri = JSON.parse(depoOku(`quiz-progress-${ders}`) ?? "{}") as unknown;
     return veri && typeof veri === "object" ? (veri as Ilerleme) : {};
   } catch {
     return {};
@@ -62,17 +65,20 @@ export default function Suzgec({ ders }: { ders: string }) {
   const [taslak, setTaslak] = useState<SuzgecAyar>(VARSAYILAN_SUZGEC);
   const [sorular, setSorular] = useState<SuzulecekSoru[]>([]);
   const [ilerleme, setIlerleme] = useState<Ilerleme>({});
+  const [sira, setSira] = useState<Siralama>(VARSAYILAN_SIRALAMA);
+  const dersYolu = typeof location === "undefined" ? null : dersAnahtari(location.pathname);
 
   useEffect(() => {
     const ac = () => {
       setSorular(kartlariOku());
       setIlerleme(ilerlemeOku(ders));
-      setTaslak(suzgecOku(localStorage.getItem("quiz-settings")));
+      setTaslak(suzgecOku(depoOku("quiz-settings")));
+      if (dersYolu) setSira(siralamaOku(depoOku(SIRALAMA_ANAHTARI), dersYolu));
       setAcik(true);
     };
     addEventListener(SUZGEC_ACMA_OLAYI, ac);
     return () => removeEventListener(SUZGEC_ACMA_OLAYI, ac);
-  }, [ders]);
+  }, [ders, dersYolu]);
 
   const uniteler = useMemo(() => [...new Set(sorular.map((q) => q.unitNumber))].filter((u) => u > 0).sort((a, b) => a - b), [sorular]);
   const { orta, son } = yariNoktasi(uniteler);
@@ -89,7 +95,8 @@ export default function Suzgec({ ders }: { ders: string }) {
 
   const degistir = (yama: Partial<SuzgecAyar>) => setTaslak((t) => ({ ...t, ...yama }));
   const uygula = () => {
-    localStorage.setItem("quiz-settings", suzgecYaz(localStorage.getItem("quiz-settings"), taslak));
+    depoYaz("quiz-settings", suzgecYaz(depoOku("quiz-settings"), taslak));
+    if (dersYolu) depoYaz(SIRALAMA_ANAHTARI, siralamaYaz(depoOku(SIRALAMA_ANAHTARI), dersYolu, sira));
     (window as unknown as { quizPlayer?: Oynatici }).quizPlayer?.syncSettings?.();
     setAcik(false);
   };
@@ -113,6 +120,13 @@ export default function Suzgec({ ders }: { ders: string }) {
               </button>
             </div>
             <div id="suzgec-govde" tabIndex={-1} data-base-ui-swipe-ignore="y" className="katman-govde">
+              <Grup baslik="Sırala">
+                {SIRALAMALAR.filter((x) => cikmisVar || (x !== "cikma" && x !== "yeni" && x !== "eski")).map((x) => (
+                  <Cip key={x} secili={sira === x} onClick={() => setSira(x)}>
+                    {SIRALAMA_ADI[x]}
+                  </Cip>
+                ))}
+              </Grup>
               <Grup baslik="Soru türü">
                 <Cip secili={taslak.filterIncorrect} onClick={() => degistir({ filterIncorrect: !taslak.filterIncorrect })}>
                   Yanlışlarım · {yanlisSayisi}
@@ -170,7 +184,14 @@ export default function Suzgec({ ders }: { ders: string }) {
               )}
             </div>
             <div className="katman-alt">
-              <button type="button" onClick={() => setTaslak({ ...VARSAYILAN_SUZGEC })} className="katman-dugme">
+              <button
+                type="button"
+                onClick={() => {
+                  setTaslak({ ...VARSAYILAN_SUZGEC });
+                  setSira(VARSAYILAN_SIRALAMA);
+                }}
+                className="katman-dugme"
+              >
                 Sıfırla
               </button>
               <button type="button" onClick={uygula} className="katman-dugme katman-dugme-birincil">
