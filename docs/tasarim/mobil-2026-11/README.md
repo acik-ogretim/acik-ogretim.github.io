@@ -20,8 +20,9 @@ Canlı kod değişmedi; yalnız tasarım çıktısı.
   12. `12-pwa-durumlar.html`: ana ekrana ekle, güncelleme ve çevrimdışı, 404
   13. `13-renk-secenekleri.html`: şimdiki deniz yeşili ve dört aday palet (mürekkep ve fosforlu kalem, okul rengi, kobalt, gece ve kehribar)
   14. `14-ios-cam.html`: iOS 26 tarzı cam deneme (yüzen kapsül sekme çubuğu, cam oynatıcı, kenardan ayrık alt sayfa)
-  15. `15-alternatifler.html`: Nano Banana (9 yön), Stitch (2 ekran) ve sürü dili denemeleri; görseller `alternatifler/` altında
+  15. `15-alternatifler.html`: kör jüri (3 Nano Banana, 1 Stitch), Nano Banana (9 yön), Stitch (2 ekran) ve sürü dili denemeleri; görseller `alternatifler/` altında
   16. `16-video-canli-ders.html`: video ve eş zamanlı konu anlatımı, canlı ders, haftalık kurs akışı
+- `KARSILASTIRMA.md`: benzer uygulamalarla karşılaştırma ve kör jüri sonucu.
 - `LMS-PLANI.md`: ÖYS ve LMS işlevlerinin portaldaki karşılığı ve sıra önerisi.
 - `index.html`: tüm maketlerin listesi; her maketin sol üstündeki düğme buraya döner.
 - `uret_uygulama.py`: 07-12 maketlerini üretir (`python3 uret_uygulama.py`).

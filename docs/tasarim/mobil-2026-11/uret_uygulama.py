@@ -309,6 +309,10 @@ sayfa("14-ios-cam", "iOS 26 tarzı cam deneme", [
 def resim(yol, alt, gen=880):
     return f'<figure style="max-width:{gen}px"><img src="{yol}" alt="" style="width:100%;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.2)"><figcaption style="max-width:{gen}px">{alt}</figcaption></figure>'
 k15 = [
+    resim("alternatifler/kor-stitch.jpg", "Kör jüri, Stitch: koyu VS Code dili, eşaralıklı etiketler; canlı ders paneli altında zamanlı not akışı, vize geri sayımı, kulaklıkla dinleme kipi. GNO, öğretim üyesi, kullanıcı sayısı ve 'GPT-4o' modelin uydurmasıdır.", 360),
+    resim("alternatifler/kor-1.jpg", "Kör jüri 1. Yalnız Zeki'nin sözleri verildi, kural ve şablon yok: koyu VS Code havası, video ve döküm, seri sayacı."),
+    resim("alternatifler/kor-2.jpg", "Kör jüri 2. Canlı ders ve eş zamanlı döküm yan yana, yapay zekâ asistanı ayrı ekran."),
+    resim("alternatifler/kor-3.jpg", "Kör jüri 3. Ders seçmede dönem çipleri, ders satırında Sınav, Özet, Sesli kısayolları. Üç kör jüri de bağımsız olarak koyu temaya ve 'e-Devlet ile giriş' ekranına gitti; sitede hesap olmadığı için giriş, kayıt getirme olarak kalır (7e)."),
     resim("alternatifler/nb-8-gece-yeni.jpg", "Nano Banana 8. Gece ve kehribar, yeni nesil: yüzen cam sekme çubuğu, oynat düğmesinin çevresinde halka ilerleme, büyük tipografi."),
     resim("alternatifler/nb-7-yz-sohbet.jpg", "Nano Banana 7. Yapay zekâ öncelikli: ana sayfa bir yazma alanı ve öneri çipleri, açıklama sohbet yanıtı gibi akar, sesli mod kehribar küre ve canlı altyazı. Sohbet ve sesli mod sitede zaten var; bu yön onları ana kapı yapar."),
     resim("alternatifler/nb-9-gunduz.jpg", "Nano Banana 9. Aynı dilin açık teması: sıcak beyaz yüzey, koyulaştırılmış kehribar, cam alt çubuk."),
