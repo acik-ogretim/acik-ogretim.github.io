@@ -142,8 +142,39 @@ const uniStyles: Record<string, { icon: SimgeAdi }> = {
     }
   </script>
 
+  <!-- "Bugün": shown only to a returning learner with a recorded last position (son-calisma) -->
+  <section id="bugun" class="sekme-sayfa" aria-labelledby="bugun-baslik" hidden>
+    <h1 id="bugun-baslik" class="font-serif text-[36px] leading-none font-semibold text-ink mb-4">Bugün</h1>
+    <div class="kaldigin-yer">
+      <div class="min-w-0 flex-1">
+        <span class="bilgi-cip">Kaldığın yer</span>
+        <p id="ky-ad" class="mt-2 font-serif text-[20px] leading-tight font-semibold text-ink line-clamp-2"></p>
+        <p id="ky-konum" class="mt-1 text-[13px] text-ink-muted truncate"></p>
+        <div class="serit mt-3" role="progressbar" aria-label="Ünite içindeki yerin" aria-valuemin="0" aria-valuemax="100"><span id="ky-serit"></span></div>
+      </div>
+      <a id="ky-devam" href="/" class="devam-dugme" aria-label="Kaldığın yerden devam et">
+        <Simge ad="Play" size={24} />
+      </a>
+    </div>
+    <a id="bugun-tekrar" href="/ilerleme" class="liste-satir" hidden>
+      <span class="grid size-10 shrink-0 place-items-center rounded-xl bg-control text-ink-muted"><Simge ad="RotateCcw" size={20} /></span>
+      <span class="liste-satir-govde">
+        <span id="bugun-tekrar-ad" class="liste-baslik"></span>
+        <span class="liste-meta block">Son iki denemede yanlış yaptıkların</span>
+      </span>
+      <Simge ad="ChevronRight" size={18} class="shrink-0 text-ink-muted" />
+    </a>
+    <div id="bugun-dersler" hidden>
+      <div class="mt-6 mb-1 flex items-center">
+        <h3 class="ayar-baslik flex-1">Derslerim</h3>
+        <a href="/derslerim" class="metin-dugme text-[13px]">Tümü</a>
+      </div>
+      <div id="bugun-liste"></div>
+    </div>
+  </section>
+
   <!-- Hero Section -->
-  <header class="relative py-20 overflow-hidden" role="banner">
+  <header id="tanitim" class="relative py-20 overflow-hidden" role="banner">
     <!-- Background decoration -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
     </div>
@@ -180,6 +211,86 @@ const uniStyles: Record<string, { icon: SimgeAdi }> = {
       </div>
     </div>
   </header>
+
+  <script>
+    import { SON_CALISMA_ANAHTARI, sonCalismaMetni, sonCalismaOku } from "../lib/son-calisma";
+    import { ilerlemeOzeti, olc } from "../lib/ilerleme";
+
+    type FavoriDers = { id: string; name?: string; uniId: string; deptId: string };
+    const son = sonCalismaOku(localStorage.getItem(SON_CALISMA_ANAHTARI));
+    if (son) {
+      const metin = (id: string, t: string) => {
+        const e = document.getElementById(id);
+        if (e) e.textContent = t;
+      };
+      metin("ky-ad", son.ad);
+      metin("ky-konum", sonCalismaMetni(son));
+      const oran = son.uniteToplam ? Math.round((son.sira / son.uniteToplam) * 100) : 0;
+      (document.getElementById("ky-serit") as HTMLElement).style.width = `${oran}%`;
+      document.querySelector("#bugun [role=progressbar]")?.setAttribute("aria-valuenow", String(oran));
+      (document.getElementById("ky-devam") as HTMLAnchorElement).href = `${son.yol}#${son.hedef}`;
+
+      // Totals come only from quiz-progress-<course> records
+      const kayitlar: { ders: string; veri: Record<string, unknown> }[] = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (!k?.startsWith("quiz-progress-")) continue;
+        try {
+          kayitlar.push({ ders: k.slice(14), veri: JSON.parse(localStorage.getItem(k) ?? "{}") });
+        } catch {
+          // Broken record: skipped.
+        }
+      }
+      const { toplam } = ilerlemeOzeti(kayitlar);
+      if (toplam.tekrar > 0) {
+        metin("bugun-tekrar-ad", `Tekrar gereken ${toplam.tekrar.toLocaleString("tr-TR")} soru`);
+        (document.getElementById("bugun-tekrar") as HTMLElement).hidden = false;
+      }
+
+      let favoriler: FavoriDers[] = [];
+      try {
+        favoriler = (JSON.parse(localStorage.getItem("favorite-courses") ?? "[]") as FavoriDers[]).filter((f) => f?.id && f.uniId && f.deptId);
+      } catch {
+        favoriler = [];
+      }
+      if (favoriler.length) {
+        const liste = document.getElementById("bugun-liste") as HTMLElement;
+        for (const f of favoriler.slice(0, 5)) {
+          let veri: Record<string, unknown> = {};
+          try {
+            veri = JSON.parse(localStorage.getItem(`quiz-progress-${f.uniId}-${f.id}`) ?? "{}");
+          } catch {
+            veri = {};
+          }
+          const o = olc(veri);
+          const a = document.createElement("a");
+          a.className = "liste-satir";
+          a.href = `/${f.uniId}/${f.deptId}/${f.id}`;
+          const govde = document.createElement("span");
+          govde.className = "liste-satir-govde";
+          const b = document.createElement("span");
+          b.className = "liste-baslik";
+          b.textContent = f.name || f.id;
+          const m = document.createElement("span");
+          m.className = "liste-meta block";
+          m.textContent = o.cozulen ? `${o.cozulen} soru çözüldü` : "Henüz çözüm yok";
+          govde.append(b, m);
+          a.append(govde);
+          if (o.cozulen) {
+            const y = document.createElement("span");
+            y.className = "liste-yuzde";
+            y.textContent = `%${o.oran}`;
+            y.title = "Son denemede doğru";
+            a.append(y);
+          }
+          liste.append(a);
+        }
+        (document.getElementById("bugun-dersler") as HTMLElement).hidden = false;
+      }
+      (document.getElementById("bugun") as HTMLElement).hidden = false;
+      (document.getElementById("tanitim") as HTMLElement).hidden = true;
+    }
+  </script>
 
   <script>
     // PWA Install Prompt Logic

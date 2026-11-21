@@ -1,6 +1,7 @@
 import type { OptionKey, PlayerQuestion, PlayerUI, QuizSettings, Source } from "../lib/types";
 import { suz } from "../lib/suzgec";
 import { KIP_OLAYI, KONUM_ISTE_OLAYI, SORU_KONUMU_OLAYI, type SoruKonumu } from "../lib/ders-olaylari";
+import { SON_CALISMA_ANAHTARI, type SonCalisma } from "../lib/son-calisma";
 
 export class QuizPlayer {
   questions: PlayerQuestion[];
@@ -331,6 +332,7 @@ export class QuizPlayer {
 
     this.applyFilters();
     this.show();
+    window.setTimeout(() => { this.konumKaydedilir = true; }, 2500);
   }
 
   isProgrammaticScroll: boolean = false;
@@ -1000,6 +1002,26 @@ export class QuizPlayer {
       detail.uniteToplam = ayni.length;
     }
     window.dispatchEvent(new CustomEvent<SoruKonumu>(SORU_KONUMU_OLAYI, { detail }));
+    if (this.konumKaydedilir && q?.el && detail.unite !== null) this.sonCalismaYaz(q.el.id, detail);
+  }
+
+  /** Set once the page has settled, so merely opening a course does not count as "kaldığın yer". */
+  konumKaydedilir = false;
+  sonCalismaZamanlayici = 0;
+
+  /** Debounced: written once scrolling settles on a question. */
+  sonCalismaYaz(hedef: string, k: SoruKonumu): void {
+    window.clearTimeout(this.sonCalismaZamanlayici);
+    this.sonCalismaZamanlayici = window.setTimeout(() => {
+      const ad = document.getElementById('ders-adi')?.textContent?.trim();
+      if (!ad || k.unite === null) return;
+      const kayit: SonCalisma = { yol: location.pathname, ad, hedef, unite: k.unite, sira: k.sira, uniteToplam: k.uniteToplam, zaman: Date.now() };
+      try {
+        localStorage.setItem(SON_CALISMA_ANAHTARI, JSON.stringify(kayit));
+      } catch {
+        // Storage full or blocked: the home page simply shows no "kaldığın yer" card.
+      }
+    }, 800);
   }
 
   updateUIState(): void {

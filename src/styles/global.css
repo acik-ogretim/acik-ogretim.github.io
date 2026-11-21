@@ -1621,3 +1621,8 @@ label.ayar-satir > .ayar-ad:first-child { flex: 1; min-width: 0; }
 .ara-kutu input::-webkit-search-cancel-button { display: none; }
 .ara-kutu input:focus-visible { outline: none; }
 .ara-kutu:has(input:focus-visible) { outline: 3px solid var(--primary-color); outline-offset: 2px; }
+.kaldigin-yer { display: flex; align-items: center; gap: 14px; padding: 18px; margin-bottom: 8px; border: 1px solid var(--border-color); border-radius: 28px; background: var(--card-bg); }
+.devam-dugme { display: grid; place-items: center; width: 56px; height: 56px; flex-shrink: 0; border-radius: 999px; background: var(--primary-color); color: var(--primary-color-text); transition: transform .12s cubic-bezier(.2,0,0,1); }
+.devam-dugme:active { transform: scale(.96); }
+.devam-dugme svg { margin-left: 3px; }
+@media (prefers-reduced-motion: reduce) { .devam-dugme { transition: none; } .devam-dugme:active { transform: none; } }
