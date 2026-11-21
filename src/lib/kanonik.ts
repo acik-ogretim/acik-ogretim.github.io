@@ -31,3 +31,25 @@ export async function canonicalDepartments(): Promise<Map<string, string>> {
 export function coursePath(uniId: string, deptId: string, courseId: string): string {
   return `/${uniId}/${deptId}/${courseId}`;
 }
+
+export type DersBolumu = { id: string; ad: string };
+
+let bolumCache: Map<string, DersBolumu[]> | null = null;
+
+/** Key `${uniId}/${courseId}` -> every department that lists the course, in catalog order. */
+export async function courseDepartments(): Promise<Map<string, DersBolumu[]>> {
+  if (bolumCache) return bolumCache;
+  const map = new Map<string, DersBolumu[]>();
+  for (const uni of await getUniversities()) {
+    for (const dept of uni.departments || []) {
+      for (const course of await getCourses(uni.id, dept.id)) {
+        const key = `${uni.id}/${course.id}`;
+        const liste = map.get(key) ?? [];
+        if (!liste.some((b) => b.id === dept.id)) liste.push({ id: dept.id, ad: dept.name });
+        map.set(key, liste);
+      }
+    }
+  }
+  bolumCache = map;
+  return map;
+}

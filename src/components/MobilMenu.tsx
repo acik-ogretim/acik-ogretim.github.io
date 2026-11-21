@@ -18,6 +18,7 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import { geriBolumu, type DersBolumu } from "../lib/ders-bolumu";
 import {
   ChevronDown,
   ChevronLeft,
@@ -142,9 +143,16 @@ function SiraSatiri({ e, i, n, tasi, cikar }: { e: Eylem; i: number; n: number; 
   );
 }
 
-type Props = { dersAdi: string; uniteler: Unite[]; geri: string; geriEtiket: string };
+type Props = { dersAdi: string; uniteler: Unite[]; uni: string; ders: string; bolumler: DersBolumu[]; bolum: DersBolumu };
 
-export default function MobilMenu({ dersAdi, uniteler: tumUniteler, geri, geriEtiket }: Props) {
+export default function MobilMenu({ dersAdi, uniteler: tumUniteler, uni, ders, bolumler, bolum }: Props) {
+  // Shared course: go back to the department the learner came from, not the page's canonical one
+  const [geriBolum, setGeriBolum] = useState(bolum);
+  useEffect(() => {
+    if (bolumler.length > 1) setGeriBolum(geriBolumu(uni, ders, bolumler, bolum, location.search));
+  }, [uni, ders, bolumler, bolum]);
+  const geri = `/${uni}/${geriBolum.id}`;
+  const geriEtiket = geriBolum.ad;
   // Units left empty by the question filters are hidden (quiz-player sends "sorular:filtre")
   const [gorunenler, setGorunenler] = useState<number[] | null>(null);
   useEffect(() => {

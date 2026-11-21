@@ -22,11 +22,12 @@ import Icindekiler, { type IcKonu, type IcUnite } from "../../../components/Icin
 import { getCourses, getDersIcerik, getKitapKonulari, getKitapUniteAdlari, getQuestions, getUniversities, type KitapKonu } from "../../../lib/api";
 import { uniteBasligi } from "../../../lib/unite-basligi";
 import { soruSirala } from "../../../lib/soru-sirasi";
-import { canonicalDepartments, coursePath } from "../../../lib/kanonik";
+import { canonicalDepartments, courseDepartments, coursePath } from "../../../lib/kanonik";
 
 export async function getStaticPaths() {
   const universities = await getUniversities();
   const canonical = await canonicalDepartments();
+  const dersBolumleri = await courseDepartments();
   const paths = [];
 
   for (const uni of universities) {
@@ -40,7 +41,7 @@ export async function getStaticPaths() {
             department: dept.id,
             course: course.id,
           },
-          props: { university: uni, department: dept, course, canonicalDept: canonical.get(`${uni.id}/${course.id}`) ?? dept.id },
+          props: { university: uni, department: dept, course, canonicalDept: canonical.get(`${uni.id}/${course.id}`) ?? dept.id, bolumler: dersBolumleri.get(`${uni.id}/${course.id}`) ?? [{ id: dept.id, ad: dept.name }] },
         });
       }
     }
@@ -56,10 +57,12 @@ interface Props {
   department: Department;
   course: Course;
   canonicalDept: string;
+  bolumler: { id: string; ad: string }[];
 }
 
-const { university, department, course, canonicalDept } = Astro.props;
-if (canonicalDept !== department.id) return Astro.redirect(coursePath(university.id, canonicalDept, course.id));
+const { university, department, course, canonicalDept, bolumler } = Astro.props;
+// Shared course: send the learner to the single page but keep the department they came from
+if (canonicalDept !== department.id) return Astro.redirect(`${coursePath(university.id, canonicalDept, course.id)}?bolum=${department.id}`);
 const questions = await getQuestions(university.id, course.id);
 const icerik = await getDersIcerik(university.id, course.id);
 // Official topic list: in AUZEF and Anadolu the weekly topics are the units of the book
@@ -151,7 +154,7 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
         <span class="mx-2" aria-hidden="true">/</span>
         <a href={`/${university.id}`} class="breadcrumb-link">{university.shortName}</a>
         <span class="mx-2" aria-hidden="true">/</span>
-        <a href={`/${university.id}/${department.id}`} class="breadcrumb-link">{department.name}</a>
+        <a href={`/${university.id}/${department.id}`} class="breadcrumb-link" data-geri-bolum>{department.name}</a>
         <span class="mx-2" aria-hidden="true">/</span>
         <span class="text-ink font-medium">{course.name}</span>
       </nav>
@@ -398,7 +401,10 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
 
   <QuizPlayer />
   <Icindekiler client:idle uniteler={icindekiler} />
-  <MobilMenu client:idle dersAdi={course.name} uniteler={mobilUniteler} geri={`/${university.id}/${department.id}`} geriEtiket={department.name} />
+  <MobilMenu client:idle dersAdi={course.name} uniteler={mobilUniteler} uni={university.id} ders={course.id} bolumler={bolumler} bolum={{ id: department.id, ad: department.name }} />
+  {bolumler.length > 1 && (
+    <script type="application/json" id="ders-bolumleri" set:html={JSON.stringify({ uni: university.id, ders: course.id, bolumler, bolum: { id: department.id, ad: department.name } })} />
+  )}
   <Suzgec client:idle ders={`${university.id}-${course.id}`} />
   <Tartisma />
   <AISettings />
@@ -470,6 +476,18 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
 
 
   <script>
+    import { geriBolumu } from "../../../lib/ders-bolumu";
+    {
+      const veri = document.getElementById("ders-bolumleri")?.textContent;
+      if (veri) {
+        const { uni, ders, bolumler, bolum } = JSON.parse(veri);
+        const b = geriBolumu(uni, ders, bolumler, bolum, location.search);
+        for (const a of document.querySelectorAll<HTMLAnchorElement>("a[data-geri-bolum]")) {
+          a.href = `/${uni}/${b.id}`;
+          a.textContent = b.ad;
+        }
+      }
+    }
     import { createFuse, normalizeTurkish } from "../../../lib/search";
 
     declare global {
