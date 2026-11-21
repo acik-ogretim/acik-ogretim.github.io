@@ -136,8 +136,22 @@ async function arkaPlandaIndir(h: DersHedefi, bg: BgYonetici): Promise<DersMeta 
       icons: [{ src: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" }],
     }));
   kayit.addEventListener("progress", () => ilerlemeYay({ kimlik, alinan: Math.min(kayit.downloaded, h.boyut), toplam: h.boyut, arkaPlan: true }));
-  return (await bitis) ? metaOku(h.uni, h.ders) : null;
+  // Some browsers accept a Background Fetch but never start it (no permission, no download UI).
+  // If nothing arrives within the grace period, cancel it so the caller downloads in the page instead.
+  const takildi = new Promise<never>((_, reddet) => {
+    const t = setTimeout(() => {
+      if (kayit.downloaded > 0) return;
+      void kayit.abort?.();
+      reddet(new Error("arka-plan-baslamadi"));
+    }, ARKA_PLAN_BEKLEME_MS);
+    void bitis.finally(() => clearTimeout(t));
+  });
+  return (await Promise.race([bitis, takildi])) ? metaOku(h.uni, h.ders) : null;
 }
+
+/** Background Fetch only pays off for big packages; small ones finish faster in the page. */
+const ARKA_PLAN_ESIGI = 20 * 1024 * 1024;
+const ARKA_PLAN_BEKLEME_MS = 10_000;
 
 /**
  * Downloads a course (or resumes / updates it). Uses Background Fetch where the browser has it, so the
@@ -151,7 +165,7 @@ export function indir(uni: string, ders: string, ad?: string): Promise<DersMeta 
     const h = await hedefBul(uni, ders, ad);
     if (!h) throw new Error("Bu ders şu an indirilemiyor. Bağlantını denetleyip yeniden dene.");
     ilerlemeYay({ kimlik, alinan: 0, toplam: h.boyut, arkaPlan: false });
-    const bg = await arkaPlanYoneticisi().catch(() => null);
+    const bg = h.boyut >= ARKA_PLAN_ESIGI ? await arkaPlanYoneticisi().catch(() => null) : null;
     if (bg) {
       try {
         const m = await arkaPlandaIndir(h, bg);
