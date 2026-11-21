@@ -85,3 +85,13 @@ Stitch projesindeki "Devlet Teorisi · Spatial Glass UI" ekranı (780 x 1768) in
 **Alınacaklar**: üst çubuğun tek yüzen cam kapsül olması (geri, ders adı ve "Ünite 4 · Soru 12 / 40", sağda eylemler); üst çubukta işaret düğmesi (`isaretli-<ders>` anahtarı gelince; simge düğme, yazısız); sınav çipinin yanında konu bağlantısı çipi ("4.2.2 …" ve sağa ok, iki satırı aşarsa üç nokta; yalnız konu ağacı olan derste); şık harf rozetinin doğru ve yanlışta dolu renge geçmesi; açıklama başlığında seslendir düğmesi; oynatıcıda o an çalan şeyin adı ("Sesli çözüm" gibi).
 
 **Alınmayacaklar ve nedeni**: neon parlama ve turkuaz, nane yeşili gradyan zemin (tema 17 nötr zemin ve tek mavi vurgu kullanır); sorunun kutu içinde ve "SORU METNİ" üst etiketiyle verilmesi (soru kutusuz, etiketsiz); doğru ve yanlış şıklardaki dış ışıma (yalnız kenar ve zemin tonu); "1 Puan · %68 Başarı" çipi (kayıtta yalnız kişinin kendi cevap geçmişi var, herkesin başarı oranı ve soru puanı yok); oynatıcıdaki "01:24 / 04:30" süresi (seslendirme tarayıcıda anlık üretilir, toplam süre bilinmez); dev "Sonraki Soruya Geç" düğmesi (ders sayfası liste, cevaptan sonra liste kendisi kayar); oynatıcı ile alt düğmenin üst üste binip açıklama metnini örtmesi (tek sabit alt öğe kuralı); soru metninin sans yazıyla verilmesi (soru serif); renkli ilerleme çubuğu (ilerleme nötr); "Derse Sor" düğmesinin yazılı hap olması (simge düğme, adı `aria-label` ile).
+
+## Stitch "Mat Koyu Tema" değerlendirmesi (21 Kasım 2026)
+
+Aynı ekranın mat koyu sürümü. Parlama azalmış, zemin tonu tema 17'ye yaklaşmış, doğru ve yanlış zeminleri yumuşamış; yön doğru.
+
+**Kırık yerleşim**: dar kolonda metin taşıyor ve üst üste biniyor. "Devlet Teorisi" iki satıra kırılıp "Ünite 4 · Soru 12 / 40" satırının üstüne biniyor, "Derse Sor" ve "100 %" kırılıyor, "SORU METNİ" etiketi soru metninin üstüne biniyor, "Sonraki Soruya Geç" düğmeden taşıyor, "Kaynak: Ünite 4, s. 82" bölünüyor, "1 Puan" çipi ekrandan kesiliyor, kısa şıklar gereksiz yere iki satıra iniyor. Uygulamada başlık ve meta tek satır ve üç nokta, düğme etiketi kırılmaz, çip satırı yatay kaydırılır.
+
+**Alınacaklar**: açıklamada doğru cevabın adını metin içinde vurgu metni rengiyle öne çıkarma; açıklama başlığında seslendir düğmesi; kaynak satırının açıklamanın altında meta boyutunda durması.
+
+**Alınmayacaklar**: kutulu ve etiketli soru; "Sınav İpucu" kutusu (yan şerit ve kehribar zemin, ayrıca veride sınav ipucu alanı yok; yapay zekâ açıklaması içinde düz paragraf olarak gelebilir); "Çıkmış Soru Eşleşmesi" etiketi (anlamı belirsiz); "1 Puan" çipi, "01:24 / 04:30" süresi ve "Sonraki Soruya Geç" düğmesi (önceki değerlendirmedeki nedenler); soru metninin sans yazısı.
