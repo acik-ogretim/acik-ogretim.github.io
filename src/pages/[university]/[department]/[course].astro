@@ -141,7 +141,7 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
     .map((s) => `${s.year} ${s.examType}`))].join(";");
 ---
 
-<Layout title={`${course.name} - ${department.name}`}>
+<Layout title={`${course.name} - ${department.name}`} sekmeler={false}>
   <Fragment set:html={iconSprite} />
   <div class="ders-sayfa pb-12 pt-4 md:pt-10">
     <div class="container-reading max-w-[720px]">

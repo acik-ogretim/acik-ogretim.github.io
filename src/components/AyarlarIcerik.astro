@@ -1,0 +1,191 @@
+---
+// General preferences, grouped as rows (DESIGN.md §5 Ayarlar). Rendered inside the settings dialog
+// on every page and inline on /ayarlar; the ids are bound by the script at the end of Layout.astro
+// and by the quiz player. Course-bound filters live in the course page's "Süzgeç" sheet.
+import Simge from "./Simge.astro";
+import SaglayiciAyarlari from "./sohbet/SaglayiciAyarlari.tsx";
+import type { SimgeAdi } from "../lib/simge";
+
+interface Props {
+  /** /ayarlar page: also lists the universities (the phone header has no room for them). */
+  sayfa?: boolean;
+}
+const { sayfa = false } = Astro.props;
+
+const UNIVERSITELER = [
+  { yol: "/anadolu-aof", ad: "Anadolu AÖF" },
+  { yol: "/ataturk-aof", ad: "Atatürk AÖF" },
+  { yol: "/auzef", ad: "AUZEF" },
+  { yol: "/ankuzef", ad: "Ankara AÖF" },
+];
+const YARDIM: { yol: string; ad: string; simge: SimgeAdi }[] = [
+  { yol: "/rehber", ad: "Kullanım rehberi", simge: "CircleHelp" },
+  { yol: "/rehber#hata-bildir", ad: "Hata bildir", simge: "Flag" },
+  { yol: "/gizlilik", ad: "Gizlilik", simge: "ShieldCheck" },
+  { yol: "/kullanim-kosullari", ad: "Kullanım koşulları", simge: "FileText" },
+  ...(sayfa
+    ? ([
+        { yol: "/telif", ad: "Telif hakkı", simge: "Copyright" },
+        { yol: "/hakkimizda", ad: "Hakkımızda", simge: "Info" },
+        { yol: "/iletisim", ad: "İletişim", simge: "Mail" },
+        { yol: "/istatistik", ad: "Ziyaret sayıları", simge: "ChartNoAxesColumn" },
+      ] as const)
+    : []),
+];
+---
+
+<div class="ayar-gruplar">
+  <section aria-labelledby="ayar-g-gorunum">
+    <h2 id="ayar-g-gorunum" class="ayar-baslik">Görünüm</h2>
+    <div class="ayar-kart">
+      <div class="ayar-satir ayar-satir-dikey">
+        <span class="ayar-ad">Tema</span>
+        <div class="grid grid-cols-3 gap-2" role="group" aria-label="Tema">
+          <button type="button" onclick="setTheme('light')" class="tema-dugme" aria-label="Açık tema">
+            <span class="tema-ornek" data-ornek="light" aria-hidden="true"><i></i><b></b></span>
+            <span>Açık</span>
+          </button>
+          <button type="button" onclick="setTheme('dark')" class="tema-dugme" aria-label="Koyu tema">
+            <span class="tema-ornek" data-ornek="dark" aria-hidden="true"><i></i><b></b></span>
+            <span>Koyu</span>
+          </button>
+          <button type="button" onclick="setTheme('sepia')" class="tema-dugme" aria-label="Sepya tema">
+            <span class="tema-ornek" data-ornek="sepia" aria-hidden="true"><i></i><b></b></span>
+            <span>Sepya</span>
+          </button>
+        </div>
+      </div>
+      <div class="ayar-satir">
+        <span class="ayar-ad">Vurgu rengi</span>
+        <div class="flex gap-1.5" role="group" aria-label="Vurgu rengi">
+          <button type="button" data-vurgu-sec="mavi" onclick="setVurgu('mavi')" class="vurgu-dugme" aria-label="Vurgu rengi: Mavi" title="Mavi"><span data-vurgu-ornek="mavi"></span></button>
+          <button type="button" data-vurgu-sec="kehribar" onclick="setVurgu('kehribar')" class="vurgu-dugme" aria-label="Vurgu rengi: Kehribar" title="Kehribar"><span data-vurgu-ornek="kehribar"></span></button>
+          <button type="button" data-vurgu-sec="kiremit" onclick="setVurgu('kiremit')" class="vurgu-dugme" aria-label="Vurgu rengi: Kiremit" title="Kiremit"><span data-vurgu-ornek="kiremit"></span></button>
+          <button type="button" data-vurgu-sec="notr" onclick="setVurgu('notr')" class="vurgu-dugme" aria-label="Vurgu rengi: Nötr" title="Nötr"><span data-vurgu-ornek="notr"></span></button>
+        </div>
+      </div>
+      <div class="ayar-satir ayar-satir-dikey">
+        <span class="ayar-ad">Yazı boyutu</span>
+        <div class="grid grid-cols-3 gap-2" role="group" aria-label="Yazı boyutu">
+          <button type="button" data-yazi="kucuk" onclick="setFontSize('kucuk')" class="yazi-dugme text-xs">Küçük</button>
+          <button type="button" data-yazi="normal" onclick="setFontSize('normal')" class="yazi-dugme text-sm">Normal</button>
+          <button type="button" data-yazi="buyuk" onclick="setFontSize('buyuk')" class="yazi-dugme text-base">Büyük</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="ayar-g-ses">
+    <h2 id="ayar-g-ses" class="ayar-baslik">Sesli okuma</h2>
+    <div class="ayar-kart">
+      <label class="ayar-satir" for="setting-voice">
+        <span class="ayar-ad">Ses</span>
+        <select id="setting-voice" class="ayar-secim">
+          <option value="">Varsayılan</option>
+        </select>
+      </label>
+      <label class="ayar-satir" for="setting-playback-rate">
+        <span class="ayar-ad">Okuma hızı</span>
+        <select id="setting-playback-rate" class="ayar-secim">
+          <option value="0.8">0,8×</option>
+          <option value="1.0">1,0×</option>
+          <option value="1.2" selected>1,2×</option>
+          <option value="1.5">1,5×</option>
+          <option value="2.0">2,0×</option>
+          <option value="2.5">2,5×</option>
+        </select>
+      </label>
+      <label class="ayar-satir">
+        <span class="min-w-0 flex-1">
+          <span class="ayar-ad block">Otomatik ilerle</span>
+          <span class="ayar-not">Okuma ya da cevap bitince sonraki soruya geç</span>
+        </span>
+        <input type="checkbox" id="setting-auto-advance" class="toggle-input-small" />
+      </label>
+      <button type="button" id="btn-test-voice-settings" class="ayar-satir ayar-eylem">
+        <Simge ad="Volume2" size={20} />
+        <span class="ayar-ad flex-1 text-left">Sesi dene</span>
+      </button>
+    </div>
+  </section>
+
+  <section aria-labelledby="ayar-g-soru">
+    <h2 id="ayar-g-soru" class="ayar-baslik">Soru çözme</h2>
+    <div class="ayar-kart">
+      <label class="ayar-satir">
+        <span class="ayar-ad flex-1">Cevapları göster</span>
+        <input type="checkbox" id="setting-show-answers" class="toggle-input-small" checked />
+      </label>
+      <label class="ayar-satir">
+        <span class="ayar-ad flex-1">Açıklamaları göster</span>
+        <input type="checkbox" id="setting-show-explanations" class="toggle-input-small" checked />
+      </label>
+      <label class="ayar-satir">
+        <span class="ayar-ad flex-1">Yalnız doğru şıkkı göster</span>
+        <input type="checkbox" id="setting-hide-incorrect-options" class="toggle-input-small" />
+      </label>
+    </div>
+  </section>
+
+  <section aria-labelledby="ayar-g-yz">
+    <h2 id="ayar-g-yz" class="ayar-baslik">Yapay zekâ</h2>
+    <div class="ayar-kart">
+      <label class="ayar-satir">
+        <span class="min-w-0 flex-1">
+          <span class="ayar-ad block">Açıklama menüsü</span>
+          <span class="ayar-not">Açıklamayı kısalt, uzat, örnekle</span>
+        </span>
+        <input type="checkbox" id="ai-enrichment-toggle" class="toggle-input-small" />
+      </label>
+      <div class="ayar-satir ayar-satir-dikey yz-ayarlar">
+        <SaglayiciAyarlari client:idle baglantilar={false} />
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="ayar-g-kayit">
+    <h2 id="ayar-g-kayit" class="ayar-baslik">Kayıtlar</h2>
+    <div class="ayar-kart">
+      <a href="/yedek" class="ayar-satir ayar-eylem">
+        <Simge ad="RefreshCw" size={20} />
+        <span class="min-w-0 flex-1">
+          <span class="ayar-ad block">Kayıtlarını taşı</span>
+          <span class="ayar-not">Çözümler ve favoriler başka cihaza</span>
+        </span>
+        <Simge ad="ChevronRight" size={18} class="text-ink-muted" />
+      </a>
+    </div>
+  </section>
+
+  {
+    sayfa && (
+      <section aria-labelledby="ayar-g-uni">
+        <h2 id="ayar-g-uni" class="ayar-baslik">Üniversiteler</h2>
+        <div class="ayar-kart">
+          {UNIVERSITELER.map((u) => (
+            <a href={u.yol} class="ayar-satir ayar-eylem">
+              <Simge ad="GraduationCap" size={20} />
+              <span class="ayar-ad min-w-0 flex-1 truncate">{u.ad}</span>
+              <Simge ad="ChevronRight" size={18} class="text-ink-muted" />
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <section aria-labelledby="ayar-g-yardim">
+    <h2 id="ayar-g-yardim" class="ayar-baslik">Yardım</h2>
+    <div class="ayar-kart">
+      {
+        YARDIM.map((y) => (
+          <a href={y.yol} class="ayar-satir ayar-eylem">
+            <Simge ad={y.simge} size={20} />
+            <span class="ayar-ad min-w-0 flex-1 truncate">{y.ad}</span>
+            <Simge ad="ChevronRight" size={18} class="text-ink-muted" />
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</div>

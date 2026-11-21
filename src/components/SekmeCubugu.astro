@@ -1,0 +1,31 @@
+---
+// Phone tab bar (below 600 px): a floating glass capsule with the five main destinations.
+// The course page leaves it out; there the player bar is the only fixed bottom element.
+import Simge from "./Simge.astro";
+import type { SimgeAdi } from "../lib/simge";
+
+const SEKMELER: { yol: string; ad: string; simge: SimgeAdi; eslesir: (p: string) => boolean }[] = [
+  { yol: "/", ad: "Ana sayfa", simge: "House", eslesir: (p) => p === "/" },
+  { yol: "/derslerim", ad: "Derslerim", simge: "BookOpen", eslesir: (p) => p.startsWith("/derslerim") },
+  { yol: "/ara", ad: "Ara", simge: "Search", eslesir: (p) => p.startsWith("/ara") },
+  { yol: "/ilerleme", ad: "İlerleme", simge: "ChartNoAxesColumn", eslesir: (p) => p.startsWith("/ilerleme") },
+  { yol: "/ayarlar", ad: "Ayarlar", simge: "Settings", eslesir: (p) => p.startsWith("/ayarlar") },
+];
+const yol = Astro.url.pathname.replace(/\/+$/, "") || "/";
+---
+
+<nav class="sekme-cubugu no-print" aria-label="Ana gezinme">
+  {
+    SEKMELER.map((s) => {
+      const secili = s.eslesir(yol);
+      return (
+        <a href={s.yol} class="sekme" aria-current={secili ? "page" : undefined}>
+          <span class="sekme-hap">
+            <Simge ad={s.simge} size={22} />
+          </span>
+          <span class="sekme-ad">{s.ad}</span>
+        </a>
+      );
+    })
+  }
+</nav>

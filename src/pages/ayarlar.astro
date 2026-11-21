@@ -1,0 +1,12 @@
+---
+// Settings tab: the same grouped preferences as the settings dialog, as a page (phone tab bar target).
+import Layout from "../layouts/Layout.astro";
+import AyarlarIcerik from "../components/AyarlarIcerik.astro";
+---
+
+<Layout title="Ayarlar" description="Tema, yazı boyutu, sesli okuma, soru çözme ve yapay zekâ ayarları" ayarSayfasi>
+  <div class="sekme-sayfa">
+    <h1 class="sekme-baslik">Ayarlar</h1>
+    <AyarlarIcerik sayfa />
+  </div>
+</Layout>

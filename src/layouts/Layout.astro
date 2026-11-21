@@ -1,14 +1,19 @@
 ---
 import "../styles/global.css";
 import "../styles/print.css";
-import SaglayiciAyarlari from "../components/sohbet/SaglayiciAyarlari.tsx";
+import AyarlarIcerik from "../components/AyarlarIcerik.astro";
+import SekmeCubugu from "../components/SekmeCubugu.astro";
 
 interface Props {
   title: string;
   description?: string;
+  /** Phone tab bar; the course page turns it off (its player bar is the only fixed bottom element). */
+  sekmeler?: boolean;
+  /** /ayarlar renders the settings inline, so the settings dialog is left out (ids stay unique). */
+  ayarSayfasi?: boolean;
 }
 
-const { title, description = "Açık öğretim fakülteleri için çalışma portalı" } =
+const { title, description = "Açık öğretim fakülteleri için çalışma portalı", sekmeler = true, ayarSayfasi = false } =
   Astro.props;
 ---
 
@@ -388,6 +393,7 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
     </section>
 
     <!-- Global Settings Modal -->
+    {!ayarSayfasi && (
     <div id="global-settings-modal" class="modal-overlay">
       <div class="modal-backdrop" onclick="closeGlobalSettings()"></div>
 
@@ -398,7 +404,7 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
         <div
           class="flex items-center justify-between p-3.5 border-b border-line bg-page/50"
         >
-          <h3 class="text-sm font-bold text-ink flex items-center gap-2">
+          <h3 id="ayar-pencere-baslik" class="text-sm font-bold text-ink flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -446,273 +452,8 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
           </div>
         </div>
 
-        <div class="modal-body-compact space-y-5">
-          <section class="space-y-2.5" aria-label="Görünüm">
-            <h4 class="ayar-baslik">Görünüm</h4>
-          <div class="grid grid-cols-3 gap-2">
-            <button type="button" onclick="setTheme('light')" class="tema-dugme" aria-label="Aydınlık tema">
-              <span class="tema-ornek" data-ornek="light" aria-hidden="true"><i></i><b></b></span>
-              <span>Aydınlık</span>
-            </button>
-            <button type="button" onclick="setTheme('dark')" class="tema-dugme" aria-label="Koyu tema">
-              <span class="tema-ornek" data-ornek="dark" aria-hidden="true"><i></i><b></b></span>
-              <span>Koyu</span>
-            </button>
-            <button type="button" onclick="setTheme('sepia')" class="tema-dugme" aria-label="Sepya tema">
-              <span class="tema-ornek" data-ornek="sepia" aria-hidden="true"><i></i><b></b></span>
-              <span>Sepya</span>
-            </button>
-          </div>
-            <div class="space-y-1.5">
-              <span class="text-[11px] font-bold text-ink-muted px-1">Vurgu rengi</span>
-              <div class="flex gap-2" role="group" aria-label="Vurgu rengi">
-            <button type="button" data-vurgu-sec="mavi" onclick="setVurgu('mavi')" class="vurgu-dugme" aria-label="Vurgu rengi: Mavi" title="Mavi"><span data-vurgu-ornek="mavi"></span></button>
-            <button type="button" data-vurgu-sec="kehribar" onclick="setVurgu('kehribar')" class="vurgu-dugme" aria-label="Vurgu rengi: Kehribar" title="Kehribar"><span data-vurgu-ornek="kehribar"></span></button>
-            <button type="button" data-vurgu-sec="kiremit" onclick="setVurgu('kiremit')" class="vurgu-dugme" aria-label="Vurgu rengi: Kiremit" title="Kiremit"><span data-vurgu-ornek="kiremit"></span></button>
-            <button type="button" data-vurgu-sec="notr" onclick="setVurgu('notr')" class="vurgu-dugme" aria-label="Vurgu rengi: Nötr" title="Nötr"><span data-vurgu-ornek="notr"></span></button>
-              </div>
-            </div>
-
-            <div class="space-y-1.5">
-              <span class="text-[11px] font-bold text-ink-muted px-1">Yazı boyutu</span>
-              <div class="grid grid-cols-3 gap-2" role="group" aria-label="Yazı boyutu">
-                <button type="button" data-yazi="kucuk" onclick="setFontSize('kucuk')" class="yazi-dugme text-xs">Küçük</button>
-                <button type="button" data-yazi="normal" onclick="setFontSize('normal')" class="yazi-dugme text-sm">Normal</button>
-                <button type="button" data-yazi="buyuk" onclick="setFontSize('buyuk')" class="yazi-dugme text-base">Büyük</button>
-              </div>
-            </div>
-          </section>
-
-          <section class="space-y-2.5" aria-label="Sorular">
-            <h4 class="ayar-baslik">Sorular</h4>
-            <div class="grid grid-cols-1 gap-1.5">
-              <label
-                class="flex items-center justify-between p-2.5 bg-control border border-line rounded-xl hover:bg-raised transition-all cursor-pointer group"
-              >
-                <div class="flex flex-col">
-                  <span
-                    class="text-xs font-bold text-ink group-hover:text-accent-ink "
-                    >Yanlışları çöz</span
-                  >
-                  <span class="text-[11px] text-ink-muted"
-                    >Hatalı cevaplanan soruları getir</span
-                  >
-                </div>
-                <input
-                  type="checkbox"
-                  id="setting-incorrect"
-                  class="toggle-input-small"
-                />
-              </label>
-              <label
-                class="flex items-center justify-between p-2.5 bg-control border border-line rounded-xl hover:bg-raised transition-all cursor-pointer group"
-              >
-                <div class="flex flex-col">
-                  <span
-                    class="text-xs font-bold text-ink group-hover:text-accent-ink"
-                    >Cevaplanmamışları çöz</span
-                  >
-                  <span class="text-[11px] text-ink-muted"
-                    >Henüz görmediğin soruları getir</span
-                  >
-                </div>
-                <input
-                  type="checkbox"
-                  id="setting-unanswered"
-                  class="toggle-input-small"
-                />
-              </label>
-            </div>
-            <div class="space-y-1.5 mt-1.5">
-              <label
-                for="setting-source"
-                class="text-[11px] font-bold text-ink-muted px-1"
-                >Soru türü</label
-              >
-              <select
-                id="setting-source"
-                class="w-full bg-card border border-line rounded-lg p-2 text-xs text-ink outline-none focus:border-accent transition-all"
-              >
-                <option value="all">Tüm Sorular</option>
-                <option value="cikmis-soru">Çıkmış Sınav Soruları</option>
-                <option value="alistirma">Alıştırma ve Deneme</option>
-              </select>
-            </div>
-            <div class="space-y-1.5 mt-1.5">
-              <label
-                for="setting-exam"
-                class="text-[11px] font-bold text-ink-muted px-1"
-                >Sınav</label
-              >
-              <select
-                id="setting-exam"
-                class="w-full bg-card border border-line rounded-lg p-2 text-xs text-ink outline-none focus:border-accent transition-all"
-              >
-                <option value="all">Tüm Sınavlar</option>
-              </select>
-            </div>
-            <div class="space-y-1.5 mt-1.5">
-              <label class="text-[11px] font-bold text-ink-muted px-1"
-                >Ünite filtreleme</label
-              >
-              <select
-                id="setting-unit"
-                class="w-full bg-card border border-line rounded-lg p-2 text-xs text-ink outline-none focus:border-accent transition-all"
-              >
-                <option value="all">Tüm Üniteler</option>
-                <option value="first_half">İlk Yarı</option>
-                <option value="second_half">İkinci Yarı</option>
-              </select>
-            </div>
-            <div class="mt-1.5">
-            <div
-              class="bg-control border border-line rounded-xl divide-y divide-line overflow-hidden"
-            >
-              <label
-                class="flex items-center justify-between p-2 hover:bg-control cursor-pointer group"
-              >
-                <span
-                  class="text-xs font-medium text-ink-muted group-hover:text-ink"
-                  >Cevapları göster</span
-                >
-                <input
-                  type="checkbox"
-                  id="setting-show-answers"
-                  class="toggle-input-small"
-                  checked
-                />
-              </label>
-              <label
-                class="flex items-center justify-between p-2 hover:bg-control cursor-pointer group"
-              >
-                <span
-                  class="text-xs font-medium text-ink-muted group-hover:text-ink"
-                  >Açıklamaları göster</span
-                >
-                <input
-                  type="checkbox"
-                  id="setting-show-explanations"
-                  class="toggle-input-small"
-                  checked
-                />
-              </label>
-              <label
-                class="flex items-center justify-between p-2 hover:bg-control cursor-pointer group"
-              >
-                <span
-                  class="text-xs font-medium text-ink-muted group-hover:text-ink"
-                  >Yalnız doğru şık</span
-                >
-                <input
-                  type="checkbox"
-                  id="setting-hide-incorrect-options"
-                  class="toggle-input-small"
-                />
-              </label>
-              <label
-                class="flex items-center justify-between p-2 hover:bg-control cursor-pointer group"
-              >
-                <div class="flex flex-col">
-                  <span
-                    class="text-xs font-medium text-ink-muted group-hover:text-ink"
-                    >Otomatik ilerle</span
-                  >
-                  <span class="text-[11px] text-ink-muted"
-                    >Okuma bitince sonraki soruya geç</span
-                  >
-                </div>
-                <input
-                  type="checkbox"
-                  id="setting-auto-advance"
-                  class="toggle-input-small"
-                />
-              </label>
-            </div>
-            </div>
-          </section>
-
-          <section class="space-y-2.5" aria-label="Ses">
-            <h4 class="ayar-baslik">Ses</h4>
-            <div class="grid grid-cols-2 gap-2 mt-1.5">
-              <div class="space-y-1">
-                <label
-                  class="text-[11px] font-bold text-ink-muted px-1"
-                  >Ses modeli</label
-                >
-                <select
-                  id="setting-voice"
-                  class="w-full bg-card border border-line rounded-lg p-2 text-xs text-ink outline-none focus:border-accent transition-all"
-                >
-                  <option value="">Varsayılan</option>
-                </select>
-              </div>
-              <div class="space-y-1">
-                <label
-                  class="text-[11px] font-bold text-ink-muted px-1"
-                  >Okuma hızı</label
-                >
-                <select
-                  id="setting-playback-rate"
-                  class="w-full bg-card border border-line rounded-lg p-2 text-xs text-ink outline-none focus:border-accent transition-all"
-                >
-                  <option value="0.8">0.8x - Yavaş</option>
-                  <option value="1.0">1.0x - Normal</option>
-                  <option value="1.2" selected>1.2x - Hızlı</option>
-                  <option value="1.5">1.5x - Çok Hızlı</option>
-                  <option value="2.0">2.0x - Maksimum</option>
-                  <option value="2.5">2.5x - Ultra Hızlı</option>
-                </select>
-              </div>
-            </div>
-            <button
-              id="btn-test-voice-settings"
-              class="w-full py-1.5 bg-accent-soft hover:bg-accent/25 text-accent-ink text-[11px] font-semibold rounded-lg border border-accent/40 transition-all"
-            >
-              Ses ayarlarını dene
-            </button>
-          </section>
-
-          <section class="space-y-2.5" aria-label="Yapay zekâ">
-            <h4 class="ayar-baslik">Yapay zekâ</h4>
-            <div
-              class="bg-accent-soft border border-accent/40 rounded-xl p-3 space-y-3"
-            >
-              <label
-                class="flex items-center justify-between cursor-pointer group"
-              >
-                <div class="flex flex-col">
-                  <span
-                    class="text-xs font-medium text-accent-ink group-hover:text-ink"
-                    >Açıklama menüsü</span
-                  >
-                </div>
-                <input
-                  type="checkbox"
-                  id="ai-enrichment-toggle"
-                  class="toggle-input-small"
-                />
-              </label>
-
-              <div class="yz-ayarlar">
-                <SaglayiciAyarlari client:idle baglantilar={false} />
-              </div>
-            </div>
-          </section>
-
-          <section class="space-y-2.5" aria-label="Kayıtlar ve hesap">
-            <h4 class="ayar-baslik">Kayıtlar ve hesap</h4>
-            <a href="/yedek" class="flex min-h-11 items-center gap-2.5 rounded-xl border border-line bg-control px-3 text-xs font-bold text-ink hover:text-accent-ink"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 4 7l4 4"></path><path d="M4 7h16"></path><path d="m16 21 4-4-4-4"></path><path d="M20 17H4"></path></svg>Kayıtlarını taşı</a>
-          </section>
-
-          <section class="space-y-2.5" aria-label="Yardım">
-            <h4 class="ayar-baslik">Yardım</h4>
-            <div class="grid grid-cols-2 gap-1.5">
-              <a href="/rehber" class="flex min-h-11 items-center gap-2.5 rounded-xl border border-line bg-control px-3 text-xs font-bold text-ink hover:text-accent-ink"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg>Rehber</a>
-              <a href="/rehber#hata-bildir" class="flex min-h-11 items-center gap-2.5 rounded-xl border border-line bg-control px-3 text-xs font-bold text-ink hover:text-accent-ink"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>Hata bildir</a>
-              <a href="/gizlilik" class="flex min-h-11 items-center gap-2.5 rounded-xl border border-line bg-control px-3 text-xs font-bold text-ink hover:text-accent-ink"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>Gizlilik</a>
-              <a href="/kullanim-kosullari" class="flex min-h-11 items-center gap-2.5 rounded-xl border border-line bg-control px-3 text-xs font-bold text-ink hover:text-accent-ink"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path></svg>Koşullar</a>
-            </div>
-          </section>
+        <div class="modal-body-compact">
+          <AyarlarIcerik />
         </div>
 
         <!-- Footer Actions -->
@@ -734,6 +475,7 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
         </div>
       </div>
     </div>
+    )}
 
     <!-- Footer -->
     <footer class="border-t border-theme bg-theme">
@@ -822,6 +564,7 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
         </div>
       </div>
     </footer>
+    {sekmeler && <SekmeCubugu />}
 
     <script is:inline>
       document.getElementById("uyari-kapat")?.addEventListener("click", () => {
@@ -853,6 +596,7 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
           filterIncorrect: false,
           filterUnanswered: false,
           voiceURI: "",
+          autoAdvance: true,
         };
 
         function loadStoredSettings() {
@@ -954,6 +698,7 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
             "setting-hide-incorrect-options",
             "hideIncorrectOptions",
           );
+          bindCheckbox("setting-auto-advance", "autoAdvance");
 
           // Filter Settings
           bindCheckbox("setting-incorrect", "filterIncorrect");

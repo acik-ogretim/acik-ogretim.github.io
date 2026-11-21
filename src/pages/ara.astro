@@ -1,0 +1,168 @@
+---
+// "Ara" tab: searches the course and department catalog (UYUM.md §6). Question search stays inside
+// each course page; the course catalog (/veri/dersler.json) is fetched on first use.
+import Layout from "../layouts/Layout.astro";
+import Simge from "../components/Simge.astro";
+import { getUniversities } from "../lib/api";
+
+const universiteler = await getUniversities();
+const bolumler = universiteler.flatMap((u) =>
+  (u.departments ?? []).map((d) => ({ ad: d.name, uni: u.shortName, url: `/${u.id}/${d.id}`, pasif: d.active === false })),
+);
+---
+
+<Layout title="Ara" description="Ders ve bölüm ara: dört açık öğretim fakültesinin kataloğu">
+  <div class="sekme-sayfa" id="ara" data-bolumler={JSON.stringify(bolumler)}>
+    <h1 class="sekme-baslik">Ara</h1>
+    <div class="ara-kutu">
+      <Simge ad="Search" size={20} class="text-ink-muted shrink-0" />
+      <label for="ara-girdi" class="sr-only">Ders ya da bölüm adı</label>
+      <input
+        id="ara-girdi"
+        type="search"
+        inputmode="search"
+        enterkeyhint="search"
+        autocomplete="off"
+        autocapitalize="off"
+        spellcheck="false"
+        placeholder="Ders ya da bölüm adı, ders kodu"
+        class="min-w-0 flex-1 bg-transparent text-ink outline-none"
+      />
+      <button type="button" id="ara-temizle" class="q-ikon" aria-label="Aramayı temizle" hidden>
+        <Simge ad="X" size={20} />
+      </button>
+    </div>
+    <div class="ikili-secici mt-3" role="group" aria-label="Sonuç türü" id="ara-tur" hidden>
+      <button type="button" data-tur="ders" aria-pressed="true">Dersler</button>
+      <button type="button" data-tur="bolum" aria-pressed="false">Bölümler</button>
+    </div>
+    <p id="ara-durum" class="mt-3 text-[13px] text-ink-muted" aria-live="polite">Dört üniversitenin ders ve bölüm kataloğunda arar.</p>
+    <div id="ara-sonuc"></div>
+    <p class="mt-4 text-[13px] text-ink-muted">Soru araması ders sayfasında, dersin içinde yapılır.</p>
+  </div>
+</Layout>
+
+<script>
+  import { normalizeTurkish } from "../lib/search";
+
+  type Ders = { key: string; name: string; code: string; semester: number; universityShort: string; department: string; url: string };
+  type Bolum = { ad: string; uni: string; url: string; pasif: boolean };
+  type Satir = { baslik: string; meta: string; url: string; n: string };
+
+  const kok = document.getElementById("ara") as HTMLElement;
+  const girdi = document.getElementById("ara-girdi") as HTMLInputElement;
+  const temizle = document.getElementById("ara-temizle") as HTMLButtonElement;
+  const durum = document.getElementById("ara-durum") as HTMLElement;
+  const sonucAlani = document.getElementById("ara-sonuc") as HTMLElement;
+  const turSecici = document.getElementById("ara-tur") as HTMLElement;
+  const bolumler: Satir[] = (JSON.parse(kok.dataset.bolumler ?? "[]") as Bolum[]).map((b) => ({
+    baslik: b.ad,
+    meta: b.pasif ? `${b.uni} · Pasif program` : b.uni,
+    url: b.url,
+    n: normalizeTurkish(b.ad),
+  }));
+  let dersler: Satir[] | null = null;
+  let yukleniyor: Promise<void> | null = null;
+  let tur: "ders" | "bolum" = "ders";
+  const SINIR = 60;
+
+  const katalog = () =>
+    (yukleniyor ??= fetch("/veri/dersler.json")
+      .then((r) => r.json() as Promise<Ders[]>)
+      .then((liste) => {
+        const gorulen = new Set<string>();
+        dersler = [];
+        for (const d of liste) {
+          if (gorulen.has(d.key)) continue;
+          gorulen.add(d.key);
+          dersler.push({
+            baslik: d.name,
+            meta: [d.universityShort, d.department, d.semester ? `${d.semester}. dönem` : ""].filter(Boolean).join(" · "),
+            url: d.url,
+            n: normalizeTurkish(`${d.name} ${d.code}`),
+          });
+        }
+      })
+      .catch(() => {
+        yukleniyor = null;
+        durum.textContent = "Ders kataloğu yüklenemedi. Bağlantını kontrol edip yeniden dene.";
+      }));
+
+  /** Substring match on normalized text; titles that start with the query come first. */
+  const bul = (liste: Satir[], q: string) => {
+    const parcalar = q.split(" ").filter(Boolean);
+    const eslesen = liste.filter((s) => parcalar.every((p) => s.n.includes(p)));
+    return eslesen.sort((a, b) => Number(b.n.startsWith(q)) - Number(a.n.startsWith(q)) || a.baslik.localeCompare(b.baslik, "tr"));
+  };
+
+  function satir(s: Satir) {
+    const a = document.createElement("a");
+    a.className = "liste-satir";
+    a.href = s.url;
+    const govde = document.createElement("div");
+    govde.className = "liste-satir-govde";
+    const b = document.createElement("div");
+    b.className = "liste-baslik";
+    b.textContent = s.baslik;
+    const m = document.createElement("div");
+    m.className = "liste-meta";
+    m.textContent = s.meta;
+    govde.append(b, m);
+    a.append(govde);
+    a.insertAdjacentHTML(
+      "beforeend",
+      '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-ink-muted" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>',
+    );
+    return a;
+  }
+
+  async function ara() {
+    const q = normalizeTurkish(girdi.value);
+    temizle.hidden = girdi.value.length === 0;
+    if (q.length < 2) {
+      turSecici.hidden = true;
+      sonucAlani.replaceChildren();
+      durum.textContent = "Dört üniversitenin ders ve bölüm kataloğunda arar.";
+      return;
+    }
+    if (!dersler) {
+      durum.textContent = "Ders kataloğu yükleniyor";
+      await katalog();
+      if (!dersler) return;
+      if (normalizeTurkish(girdi.value) !== q) return;
+    }
+    const d = bul(dersler, q);
+    const b = bul(bolumler, q);
+    turSecici.hidden = false;
+    const [dd, bd] = turSecici.querySelectorAll<HTMLButtonElement>("button");
+    dd.textContent = `Dersler · ${d.length}`;
+    bd.textContent = `Bölümler · ${b.length}`;
+    const liste = tur === "ders" ? d : b;
+    durum.textContent = liste.length === 0 ? "Sonuç yok. Daha kısa bir kelime dene." : liste.length > SINIR ? `İlk ${SINIR} sonuç gösteriliyor; aramayı daralt.` : "";
+    sonucAlani.replaceChildren(...liste.slice(0, SINIR).map(satir));
+  }
+
+  let zamanlayici = 0;
+  girdi.addEventListener("input", () => {
+    clearTimeout(zamanlayici);
+    zamanlayici = window.setTimeout(ara, 120);
+  });
+  girdi.addEventListener("focus", () => void katalog(), { once: true });
+  temizle.addEventListener("click", () => {
+    girdi.value = "";
+    void ara();
+    girdi.focus();
+  });
+  turSecici.querySelectorAll<HTMLButtonElement>("button").forEach((btn) =>
+    btn.addEventListener("click", () => {
+      tur = btn.dataset.tur === "bolum" ? "bolum" : "ders";
+      turSecici.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === btn)));
+      void ara();
+    }),
+  );
+  const ilk = new URLSearchParams(location.search).get("q");
+  if (ilk) {
+    girdi.value = ilk;
+    void ara();
+  }
+</script>

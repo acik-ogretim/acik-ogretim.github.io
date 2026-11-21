@@ -1,0 +1,122 @@
+---
+// "İlerleme" tab: totals and per-course rates computed only from this device's quiz-progress-<course>
+// records (last two results per question, no dates). Streaks, daily charts and time spent need a day
+// stamp the records do not have yet (UYUM.md §8), so they are not drawn.
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="İlerleme" description="Bu cihazdaki ve eşitlenen çözüm kayıtlarından ilerleme">
+  <div class="sekme-sayfa">
+    <h1 class="sekme-baslik">İlerleme</h1>
+    <p class="sekme-alt">Bu cihazdaki ve eşitlenen kayıtlar</p>
+    <div id="ozet" class="olcu-izgara" hidden>
+      <div class="olcu"><span class="olcu-sayi" data-olcu="cozulen">0</span><span class="olcu-ad">çözülen soru</span></div>
+      <div class="olcu"><span class="olcu-sayi" data-olcu="oran">%0</span><span class="olcu-ad">son denemede doğru</span></div>
+      <div class="olcu"><span class="olcu-sayi" data-olcu="iki">0</span><span class="olcu-ad">üst üste iki kez doğru</span></div>
+      <div class="olcu"><span class="olcu-sayi" data-olcu="tekrar">0</span><span class="olcu-ad">tekrar gereken</span></div>
+    </div>
+    <h2 id="ders-baslik" class="ayar-baslik mt-6 mb-1" hidden>Derslere göre son denemede doğru</h2>
+    <div id="dersler" aria-live="polite"></div>
+    <div id="bos" class="bos-durum" hidden>
+      <strong>Henüz çözüm yok</strong>
+      <span>Bir derste Çözme kipine geçip soru cevapladığında ilerlemen burada görünür.</span>
+      <br /><a href="/derslerim" class="eylem-cip mt-4">Derslerime git</a>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import { ilerlemeOzeti, type DersOzeti } from "../lib/ilerleme";
+
+  type Katalog = { key: string; name: string; universityShort: string; url: string }[];
+  type FavoriDers = { id: string; name?: string; uniId: string; deptId: string };
+
+  const kayitlar: { ders: string; veri: Record<string, boolean[]> }[] = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (!k?.startsWith("quiz-progress-")) continue;
+    try {
+      kayitlar.push({ ders: k.slice("quiz-progress-".length), veri: JSON.parse(localStorage.getItem(k) ?? "{}") });
+    } catch {
+      // A broken record is skipped; the course page rewrites it on the next answer.
+    }
+  }
+  const { toplam, dersler } = ilerlemeOzeti(kayitlar);
+
+  const goster = (secici: string, metin: string) => {
+    const e = document.querySelector(`[data-olcu="${secici}"]`);
+    if (e) e.textContent = metin;
+  };
+
+  if (toplam.cozulen === 0) {
+    (document.getElementById("bos") as HTMLElement).hidden = false;
+  } else {
+    (document.getElementById("ozet") as HTMLElement).hidden = false;
+    (document.getElementById("ders-baslik") as HTMLElement).hidden = false;
+    const sayi = (n: number) => n.toLocaleString("tr-TR");
+    goster("cozulen", sayi(toplam.cozulen));
+    goster("oran", `%${toplam.oran}`);
+    goster("iki", sayi(toplam.ikiKez));
+    goster("tekrar", sayi(toplam.tekrar));
+    adlariBulVeCiz(dersler);
+  }
+
+  async function adlariBulVeCiz(liste: DersOzeti[]) {
+    // Names: starred courses first (no download), then the course catalog for the rest
+    const ad = new Map<string, { ad: string; meta: string; url: string }>();
+    try {
+      for (const f of JSON.parse(localStorage.getItem("favorite-courses") ?? "[]") as FavoriDers[])
+        if (f?.uniId && f.id) ad.set(`${f.uniId}-${f.id}`, { ad: f.name || f.id, meta: "", url: `/${f.uniId}/${f.deptId}/${f.id}` });
+    } catch {
+      // Unreadable favorites: the catalog below fills the names.
+    }
+    ciz(liste, ad);
+    if (liste.every((d) => ad.has(d.ders))) return;
+    try {
+      const katalog = (await (await fetch("/veri/dersler.json")).json()) as Katalog;
+      for (const c of katalog) {
+        const k = c.key.replace("/", "-");
+        if (!ad.has(k) || !ad.get(k)?.meta) ad.set(k, { ad: c.name, meta: c.universityShort, url: ad.get(k)?.url ?? c.url });
+      }
+      ciz(liste, ad);
+    } catch {
+      // Offline: rows keep the course id as their name.
+    }
+  }
+
+  function ciz(liste: DersOzeti[], ad: Map<string, { ad: string; meta: string; url: string }>) {
+    const kap = document.getElementById("dersler") as HTMLElement;
+    kap.replaceChildren(
+      ...liste.map((d) => {
+        const bilgi = ad.get(d.ders);
+        const satir = document.createElement(bilgi ? "a" : "div");
+        satir.className = "liste-satir";
+        if (bilgi) (satir as HTMLAnchorElement).href = bilgi.url;
+        const govde = document.createElement("div");
+        govde.className = "liste-satir-govde";
+        const baslik = document.createElement("div");
+        baslik.className = "liste-baslik";
+        baslik.textContent = bilgi?.ad ?? d.ders;
+        const meta = document.createElement("div");
+        meta.className = "liste-meta";
+        meta.textContent = [bilgi?.meta, `${d.cozulen} çözüldü`, d.tekrar ? `${d.tekrar} tekrar` : ""].filter(Boolean).join(" · ");
+        const serit = document.createElement("div");
+        serit.className = "serit";
+        serit.setAttribute("role", "progressbar");
+        serit.setAttribute("aria-label", "Son denemede doğru oranı");
+        serit.setAttribute("aria-valuenow", String(d.oran));
+        serit.setAttribute("aria-valuemin", "0");
+        serit.setAttribute("aria-valuemax", "100");
+        const dolu = document.createElement("span");
+        dolu.style.width = `${d.oran}%`;
+        serit.append(dolu);
+        govde.append(baslik, meta, serit);
+        const yuzde = document.createElement("span");
+        yuzde.className = "liste-yuzde";
+        yuzde.textContent = `%${d.oran}`;
+        satir.append(govde, yuzde);
+        return satir;
+      }),
+    );
+  }
+</script>

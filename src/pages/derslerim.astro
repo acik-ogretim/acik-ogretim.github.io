@@ -1,0 +1,182 @@
+---
+// "Derslerim" tab: the learner's starred courses and departments (favorite-courses, favorite-departments)
+// with progress from this device's quiz-progress-<course> records. Nothing is drawn that is not recorded.
+import Layout from "../layouts/Layout.astro";
+import { getUniversities } from "../lib/api";
+
+const universiteler = await getUniversities();
+const uniKisa = Object.fromEntries(universiteler.map((u) => [u.id, u.shortName]));
+// favorite-departments stores bare department ids: map each to its university and name
+const bolumler: Record<string, { uni: string; ad: string }[]> = {};
+for (const u of universiteler)
+  for (const d of u.departments ?? []) (bolumler[d.id] ??= []).push({ uni: u.id, ad: d.name });
+---
+
+<Layout title="Derslerim" description="Yıldızladığın dersler ve bölümler, bu cihazdaki çözüm ilerlemesiyle">
+  <div class="sekme-sayfa" id="derslerim" data-uni={JSON.stringify(uniKisa)} data-bolum={JSON.stringify(bolumler)}>
+    <div class="flex items-center gap-2">
+      <h1 class="sekme-baslik min-w-0 flex-1">Derslerim</h1>
+      <button type="button" id="duzenle" class="metin-dugme -mt-3" aria-pressed="false" hidden>Düzenle</button>
+    </div>
+    <div class="ikili-secici" role="group" aria-label="Liste">
+      <button type="button" data-liste="ders" aria-pressed="true">Dersler</button>
+      <button type="button" data-liste="bolum" aria-pressed="false">Bölümler</button>
+    </div>
+    <div id="liste" aria-live="polite"></div>
+    <p id="not" class="mt-4 text-[13px] text-ink-muted" hidden>Çıkardığın dersin çözümleri silinmez; dersi yeniden yıldızlarsan kaldığın yerden sürer.</p>
+  </div>
+</Layout>
+
+<script>
+  type FavoriDers = { id: string; name?: string; code?: string; uniId: string; deptId: string };
+  type Bolum = { uni: string; ad: string };
+
+  const kok = document.getElementById("derslerim") as HTMLElement;
+  const uniKisa = JSON.parse(kok.dataset.uni ?? "{}") as Record<string, string>;
+  const bolumHaritasi = JSON.parse(kok.dataset.bolum ?? "{}") as Record<string, Bolum[]>;
+  const liste = document.getElementById("liste") as HTMLElement;
+  const duzenleDugme = document.getElementById("duzenle") as HTMLButtonElement;
+  const not = document.getElementById("not") as HTMLElement;
+
+  let gorunum: "ders" | "bolum" = "ders";
+  let duzenle = false;
+
+  const oku = <T,>(anahtar: string): T[] => {
+    try {
+      const v = JSON.parse(localStorage.getItem(anahtar) ?? "[]") as unknown;
+      return Array.isArray(v) ? (v as T[]) : [];
+    } catch {
+      return [];
+    }
+  };
+  const ilerleme = (uni: string, ders: string): Record<string, boolean[]> => {
+    try {
+      return JSON.parse(localStorage.getItem(`quiz-progress-${uni}-${ders}`) ?? "{}") as Record<string, boolean[]>;
+    } catch {
+      return {};
+    }
+  };
+
+  const el = <K extends keyof HTMLElementTagNameMap>(etiket: K, sinif = "", metin = "") => {
+    const e = document.createElement(etiket);
+    if (sinif) e.className = sinif;
+    if (metin) e.textContent = metin;
+    return e;
+  };
+
+  const bos = (baslik: string, aciklama: string) => {
+    const k = el("div", "bos-durum");
+    k.append(el("strong", "", baslik), el("span", "", aciklama));
+    const a = el("a", "eylem-cip mt-4", "Üniversiteleri gör") as HTMLAnchorElement;
+    a.href = "/#universities";
+    k.append(el("br"), a);
+    return k;
+  };
+
+  const cikar = (etiket: string, sil: () => void) => {
+    const b = el("button", "q-ikon text-bad") as HTMLButtonElement;
+    b.type = "button";
+    b.setAttribute("aria-label", `${etiket} listeden çıkar`);
+    b.innerHTML =
+      '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg>';
+    b.addEventListener("click", () => {
+      sil();
+      ciz();
+    });
+    return b;
+  };
+
+  function dersSatiri(f: FavoriDers) {
+    const kayit = ilerleme(f.uniId, f.id);
+    const sonuclar = Object.values(kayit).filter((r) => Array.isArray(r) && r.length > 0);
+    const cozulen = sonuclar.length;
+    const dogru = sonuclar.filter((r) => r[r.length - 1] === true).length;
+    const oran = cozulen ? Math.round((dogru / cozulen) * 100) : 0;
+
+    const satir = el(duzenle ? "div" : "a", "liste-satir");
+    if (!duzenle) (satir as HTMLAnchorElement).href = `/${f.uniId}/${f.deptId}/${f.id}`;
+    const govde = el("div", "liste-satir-govde");
+    govde.append(el("div", "liste-baslik", f.name || f.id));
+    const meta = [uniKisa[f.uniId] ?? f.uniId, cozulen ? `${cozulen} soru çözüldü` : "Henüz çözüm yok"].join(" · ");
+    govde.append(el("div", "liste-meta", meta));
+    if (cozulen && !duzenle) {
+      const serit = el("div", "serit");
+      serit.setAttribute("role", "progressbar");
+      serit.setAttribute("aria-label", "Son denemede doğru oranı");
+      serit.setAttribute("aria-valuenow", String(oran));
+      serit.setAttribute("aria-valuemin", "0");
+      serit.setAttribute("aria-valuemax", "100");
+      const dolu = el("span");
+      dolu.style.width = `${oran}%`;
+      serit.append(dolu);
+      govde.append(serit);
+    }
+    satir.append(govde);
+    if (duzenle) {
+      satir.append(
+        cikar(f.name || f.id, () => {
+          const kalan = oku<FavoriDers>("favorite-courses").filter((x) => !(x.id === f.id && x.deptId === f.deptId));
+          localStorage.setItem("favorite-courses", JSON.stringify(kalan));
+        }),
+      );
+    } else if (cozulen) {
+      const y = el("span", "liste-yuzde", `%${oran}`);
+      y.title = "Son denemede doğru";
+      satir.append(y);
+    }
+    return satir;
+  }
+
+  function bolumSatiri(id: string) {
+    const eslesen = bolumHaritasi[id] ?? [];
+    const b = eslesen[0];
+    const satir = el(duzenle || !b ? "div" : "a", "liste-satir");
+    if (!duzenle && b) (satir as HTMLAnchorElement).href = `/${b.uni}/${id}`;
+    const govde = el("div", "liste-satir-govde");
+    govde.append(el("div", "liste-baslik", b?.ad ?? id));
+    govde.append(el("div", "liste-meta", eslesen.map((x) => uniKisa[x.uni] ?? x.uni).join(", ") || "Bölüm bulunamadı"));
+    satir.append(govde);
+    if (duzenle)
+      satir.append(
+        cikar(b?.ad ?? id, () => {
+          localStorage.setItem("favorite-departments", JSON.stringify(oku<string>("favorite-departments").filter((x) => x !== id)));
+        }),
+      );
+    return satir;
+  }
+
+  function ciz() {
+    const dersler = oku<FavoriDers>("favorite-courses").filter((f) => f && f.id && f.uniId && f.deptId);
+    const bolumIdleri = oku<string>("favorite-departments").filter((x) => typeof x === "string");
+    const n = gorunum === "ders" ? dersler.length : bolumIdleri.length;
+    duzenleDugme.hidden = n === 0;
+    if (n === 0) duzenle = false;
+    duzenleDugme.textContent = duzenle ? "Bitti" : "Düzenle";
+    duzenleDugme.setAttribute("aria-pressed", String(duzenle));
+    not.hidden = !(duzenle && gorunum === "ders");
+    liste.replaceChildren();
+    if (gorunum === "ders") {
+      if (!dersler.length)
+        liste.append(bos("Henüz ders eklemedin", "Bölüm sayfasında dersin yanındaki yıldıza dokun; ders burada ilerlemesiyle görünür."));
+      dersler.forEach((f) => liste.append(dersSatiri(f)));
+    } else {
+      if (!bolumIdleri.length)
+        liste.append(bos("Henüz bölüm eklemedin", "Üniversite sayfasında bölümün yanındaki yıldıza dokun."));
+      bolumIdleri.forEach((id) => liste.append(bolumSatiri(id)));
+    }
+  }
+
+  document.querySelectorAll<HTMLButtonElement>("[data-liste]").forEach((b) =>
+    b.addEventListener("click", () => {
+      gorunum = b.dataset.liste === "bolum" ? "bolum" : "ders";
+      duzenle = false;
+      document.querySelectorAll("[data-liste]").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      ciz();
+    }),
+  );
+  duzenleDugme.addEventListener("click", () => {
+    duzenle = !duzenle;
+    ciz();
+  });
+  ciz();
+</script>
