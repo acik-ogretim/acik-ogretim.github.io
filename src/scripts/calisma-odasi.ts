@@ -296,9 +296,11 @@ export function calismaOdasiBaslat(): void {
           .map((no) => {
             const k = konuHaritasi.get(no)?.k;
             if (!k) return "";
-            const kv = video ? k.video[video.id] : undefined;
-            const v = kv ? satirlar[kv.ilk] : null;
-            return `<div class="co-konu-bolum"><button type="button" class="co-konu-satir" data-git-konu="${esc(no)}"${v ? " data-videoda" : ""}><span class="co-no">${esc(k.goster ?? no)}</span><span class="co-konu-adi">${esc(k.baslik)}</span>${video ? `<span class="co-video-durum">${v ? `Videoda ${saatYaz(v.bas)}` : "Videoda yok"}</span>` : ""}</button><button type="button" class="co-konu-yan" data-konu-ac="${esc(no)}" aria-label="${esc(k.baslik)} konu anlatımı">${ikon("BookOpen")}</button></div>`;
+            const m = dizidekiMedya(no);
+            const kv = m ? k.video[m.id] : undefined;
+            const v = m && kv ? m.satirlar[kv.ilk] : null;
+            const yer = video?.tur === "ses" ? "Anlatımda" : "Videoda";
+            return `<div class="co-konu-bolum"><button type="button" class="co-konu-satir" data-git-konu="${esc(no)}"${v ? " data-videoda" : ""}><span class="co-no">${esc(k.goster ?? no)}</span><span class="co-konu-adi">${esc(k.baslik)}</span>${video ? `<span class="co-video-durum">${v ? `${yer} ${m !== video && m?.unite ? `${m.unite}. ünite · ` : ""}${saatYaz(v.bas)}` : `${yer} yok`}</span>` : ""}</button><button type="button" class="co-konu-yan" data-konu-ac="${esc(no)}" aria-label="${esc(k.baslik)} konu anlatımı">${ikon("BookOpen")}</button></div>`;
           })
           .join("");
         return `<h3 class="co-unite">Ünite ${u.no}${u.baslik ? `: ${esc(u.baslik)}` : ""}</h3>${konuSatirlari}`;
@@ -427,6 +429,7 @@ export function calismaOdasiBaslat(): void {
     if (!k) return;
     katmanSifirla(balon);
     document.querySelectorAll<HTMLDialogElement>("dialog[open]").forEach((d) => d.close());
+    const calarken = caliyorMu();
     medyaKonuyaUydur(no);
     const kv = video ? k.video[video.id] : undefined;
     const satir = kv ? satirlar[kv.ilk] : undefined;
@@ -435,7 +438,9 @@ export function calismaOdasiBaslat(): void {
       if (oynatici) {
         try {
           oynatici.seekTo(satir.bas, true);
-          oynatici.pauseVideo?.();
+          // Jumping while listening keeps playing from the new place; a paused player stays paused there.
+          if (calarken) oynatici.playVideo();
+          else oynatici.pauseVideo?.();
         } catch {
           /* player not ready */
         }
@@ -549,9 +554,11 @@ export function calismaOdasiBaslat(): void {
     if (!kap || sesOynatici) return;
     kap.innerHTML =
       `<audio preload="metadata" playsinline></audio>` +
-      `<div class="co-ses-ust"><div class="co-ses-kapak" id="co-ses-kapak" aria-hidden="true">${ikon("Headphones")}</div><div class="co-ses-bilgi"><strong id="co-ses-baslik"></strong><span id="co-ses-zaman" class="co-ses-zaman">0:00 / 0:00</span></div></div>` +
-      `<div class="co-dalga" id="co-dalga" role="slider" tabindex="0" aria-label="Ses konumu" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0"><div class="co-dalga-cubuklar" id="co-dalga-bos"></div><div class="co-dalga-cubuklar co-dalga-dolu" id="co-dalga-dolu"></div></div>` +
-      `<div class="co-ses-kontrol"><button type="button" class="co-ses-dugme" data-ses="geri" aria-label="15 saniye geri">${ikon("RotateCcw")}<span>15</span></button><button type="button" class="co-ses-oynat" data-ses="oynat" aria-label="Oynat">${ikon("Play")}</button><button type="button" class="co-ses-dugme" data-ses="ileri" aria-label="15 saniye ileri">${ikon("RotateCw")}<span>15</span></button><button type="button" class="co-ses-hiz" data-ses="hiz" aria-label="Oynatma hızı">1×</button></div>`;
+      // One compact row so the text below keeps the screen: play, title + time over the waveform, then -15 / +15 / speed.
+      `<div class="co-ses-satir"><button type="button" class="co-ses-oynat" data-ses="oynat" aria-label="Oynat">${ikon("Play")}</button>` +
+      `<div class="co-ses-orta"><div class="co-ses-bilgi"><strong id="co-ses-baslik"></strong><span id="co-ses-zaman" class="co-ses-zaman">0:00 / 0:00</span></div>` +
+      `<div class="co-dalga" id="co-dalga" role="slider" tabindex="0" aria-label="Ses konumu" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0"><div class="co-dalga-cubuklar" id="co-dalga-bos"></div><div class="co-dalga-cubuklar co-dalga-dolu" id="co-dalga-dolu"></div></div></div>` +
+      `<div class="co-ses-kontrol"><button type="button" class="co-ses-dugme" data-ses="geri" aria-label="15 saniye geri" title="15 saniye geri">${ikon("RotateCcw")}</button><button type="button" class="co-ses-dugme" data-ses="ileri" aria-label="15 saniye ileri" title="15 saniye ileri">${ikon("RotateCw")}</button><button type="button" class="co-ses-hiz" data-ses="hiz" aria-label="Oynatma hızı">1×</button></div></div>`;
     const el = sesEl()!;
     let bekleyen: number | null = null;
     el.addEventListener("loadedmetadata", () => {
@@ -650,8 +657,6 @@ export function calismaOdasiBaslat(): void {
     if (!el || !sesOynatici) return;
     if (el.getAttribute("src") !== m.kaynak) sesOynatici.loadVideoById?.(m.kaynak);
     $("co-ses-baslik").textContent = `${medyaAdi(m)}`;
-    const kapak = $("co-ses-kapak");
-    kapak.innerHTML = m.kapak ? `<img src="${esc(m.kapak)}" alt="" loading="lazy">` : ikon("Headphones");
     const bars = dalgaCubuklari(m).map((x) => `<i style="height:${Math.round(x * 100)}%"></i>`).join("");
     $("co-dalga-bos").innerHTML = bars;
     $("co-dalga-dolu").innerHTML = bars;
@@ -769,6 +774,22 @@ export function calismaOdasiBaslat(): void {
   }
   // Açılan konuya göre medya: geçerli medyada varsa kalır; yoksa en uygun medyaya geçer ve tek satırla söyler
   const CESIT_SIRASI: string[] = ["uzun-anlatim", "kisa-ozet", "soru-cozum", "diger"];
+  // A series split by unit (uzun anlatım ünite 1..7) behaves as one piece: a topic is "in" the series when any part covers it.
+  const diziKodu = (v: CalismaMedyasi): string => (v.unite ? `${v.tur}:${v.cesit}` : v.id);
+  function dizidekiMedya(no: string, m: CalismaMedyasi | null = video): CalismaMedyasi | undefined {
+    if (!m) return undefined;
+    if (m.konuAraliklari[no]) return m;
+    const kod = diziKodu(m);
+    return videolar.find((v) => diziKodu(v) === kod && v.konuAraliklari[no]);
+  }
+  function caliyorMu(): boolean {
+    try {
+      if (video?.tur === "ses") return !(sesEl()?.paused ?? true);
+      return (oynatici as YTOynatici | null)?.getPlayerState?.() === 1;
+    } catch {
+      return false;
+    }
+  }
   function medyaKonuyaUydur(no: string): boolean {
     const adaylar = videolar.filter((v) => v.konuAraliklari[no]);
     document.getElementById("co")?.classList.toggle("co-videosuz", adaylar.length === 0);
@@ -779,15 +800,17 @@ export function calismaOdasiBaslat(): void {
         } catch {
           /* player not ready */
         }
-        medyaBilgisi("Bu konu hiçbir videoda ya da seste geçmiyor; kitap metni gösteriliyor.");
+        medyaBilgisi("");
       }
       return false;
     }
     if (!videolar.length) return false;
-    const oncekiAd = video ? medyaAdi(video) : "";
     const tercih = tercihMedya ? adaylar.find((v) => v.id === tercihMedya) : undefined;
     let hedef: CalismaMedyasi | undefined;
-    if (video && adaylar.includes(video)) {
+    const ayniDizi = dizidekiMedya(no);
+    if (ayniDizi) {
+      hedef = ayniDizi;
+    } else if (video && adaylar.includes(video)) {
       // kendiliğinden geçilmişse ve elle seçilen medya bu konuyu da kapsıyorsa ona dön
       hedef = otoMedya && tercih && tercih !== video ? tercih : video;
     } else {
@@ -797,9 +820,9 @@ export function calismaOdasiBaslat(): void {
         adaylar[0];
     }
     if (hedef && hedef !== video) {
-      videoDegistir(hedef.id, true);
-      medyaBilgisi(`Bu konu ${oncekiAd ? `${oncekiAd.toLocaleLowerCase("tr")} içinde yok; ` : ""}${medyaAdi(hedef).toLocaleLowerCase("tr")} açıldı.`);
-    } else medyaBilgisi("");
+      videoDegistir(hedef.id, !ayniDizi);
+    }
+    medyaBilgisi("");
     return true;
   }
 
@@ -1225,13 +1248,15 @@ export function calismaOdasiBaslat(): void {
   }
   function medyaSar(no: string): void {
     const k = konuHaritasi.get(no)?.k;
+    const calarken = caliyorMu();
     medyaKonuyaUydur(no);
     const kv = k && video ? k.video[video.id] : undefined;
     const satir = kv ? satirlar[kv.ilk] : undefined;
     if (!satir) return;
     try {
       oynatici?.seekTo(satir.bas, true);
-      oynatici?.pauseVideo?.();
+      if (calarken) oynatici?.playVideo();
+      else oynatici?.pauseVideo?.();
     } catch {
       /* player not ready */
     }
