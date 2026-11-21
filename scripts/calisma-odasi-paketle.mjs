@@ -285,7 +285,7 @@ function paketle(ders) {
     let adSayisi = 0;
     const adKaydi = oku(adlarYolu);
     // book text first, then names the written explanations add (first source that names a person wins)
-    for (const liste of [...Object.values(adKaydi.uniteler ?? {}), ...Object.values(adKaydi.anlatimUniteler ?? {})]) {
+    for (const liste of [...Object.values(adKaydi.uniteler ?? {}), ...Object.values(adKaydi.anlatimUniteler ?? {}), ...Object.values(adKaydi.ekUniteler ?? {})]) {
       for (const x of liste) {
         const terim = (x.terim ?? "").trim();
         const anahtar = tr(terim);

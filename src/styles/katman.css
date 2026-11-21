@@ -317,6 +317,11 @@
     scrollbar-width: thin;
     outline: none;
   }
+  /* children keep their height: a flex child with overflow: hidden (the .katman-liste card) otherwise shrinks to the
+     sheet and clips its rows, so the body never scrolls (Zeki, 21 Nov 2026: "scrollar çalışmıyor") */
+  .katman-govde > * {
+    flex-shrink: 0;
+  }
   .katman-govde:last-child {
     padding-bottom: max(16px, env(safe-area-inset-bottom));
   }
