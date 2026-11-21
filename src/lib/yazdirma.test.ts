@@ -8,6 +8,6 @@ describe("yazdirma", () => {
   });
   it("writes the short count", () => {
     expect(soruSayisiMetni(511, 511)).toBe("511 soru");
-    expect(soruSayisiMetni(170, 511)).toBe("170 / 511 soru");
+    expect(soruSayisiMetni(170, 511)).toBe("170 soru");
   });
 });

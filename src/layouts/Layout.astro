@@ -236,7 +236,6 @@ const { title, description = VARSAYILAN_ACIKLAMA, sekmeler = true, ayarSayfasi =
         <div class="hidden md:flex items-center gap-3 xl:gap-5 whitespace-nowrap">
           <!-- Same destinations as the phone tab bar; labels from 1280 px, icons with titles below; university links from 1024 px -->
           <div class="flex items-center gap-1 lg:border-r lg:border-line lg:pr-3 xl:pr-4" aria-label="Kısayollar">
-            <a href="/calisma/" class="nav-link inline-flex items-center gap-1.5 rounded-full px-2 py-2" title="Ders anlatımı"><Simge ad="MonitorPlay" size={18} /><span class="hidden xl:inline">Ders anlatımı</span></a>
             <a href="/derslerim" class="nav-link inline-flex items-center gap-1.5 rounded-full px-2 py-2" title="Derslerim"><Simge ad="BookOpen" size={18} /><span class="hidden xl:inline">Derslerim</span></a>
             <a href="/ara" class="nav-link inline-flex items-center gap-1.5 rounded-full px-2 py-2" title="Ara (Ctrl+K)"><Simge ad="Search" size={18} /></a>
             <a href="/ilerleme" class="nav-link inline-flex items-center gap-1.5 rounded-full px-2 py-2" title="İlerleme"><Simge ad="ChartNoAxesColumn" size={18} /></a>
@@ -278,7 +277,6 @@ const { title, description = VARSAYILAN_ACIKLAMA, sekmeler = true, ayarSayfasi =
       <!-- Menu below 1024 px (narrower than 600 px the tab bar covers the shortcuts): a native popover, light dismiss and Esc for free -->
       <div id="mobileMenu" popover class="katman-acilir lg:hidden">
         <nav class="katman-liste" aria-label="Kısayollar">
-          <a href="/calisma/" class="katman-satir"><Simge ad="MonitorPlay" size={20} class="size-5 shrink-0" /><span class="katman-satir-ad">Ders anlatımı</span></a>
           <a href="/derslerim" class="katman-satir"><Simge ad="BookOpen" size={20} class="size-5 shrink-0" /><span class="katman-satir-ad">Derslerim</span></a>
           <a href="/ara" class="katman-satir"><Simge ad="Search" size={20} class="size-5 shrink-0" /><span class="katman-satir-ad">Ara</span></a>
           <a href="/ilerleme" class="katman-satir"><Simge ad="ChartNoAxesColumn" size={20} class="size-5 shrink-0" /><span class="katman-satir-ad">İlerleme</span></a>

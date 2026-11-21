@@ -522,9 +522,13 @@
     html body .soru-kunye summary svg,
     html body .original-content-store,
     html body .print\:hidden,
+    html body #cevrimdisi-bilgi,
     html body astro-island {
         display: none !important;
     }
+
+    /* No screen spacing above the title: the page header already sits in the top margin */
+    html body .ders-sayfa { padding-top: 0 !important; margin-top: 0 !important; }
 
     /* Course title block */
     html body .ders-giris {

@@ -39,9 +39,10 @@ export function gorunenKartlar(kok: ParentNode = document): HTMLElement[] {
   return [...kok.querySelectorAll<HTMLElement>(".question-card")].filter((k) => k.style.display !== "none");
 }
 
-/** "511 soru" or, with a filter, "170 / 511 soru". */
-export function soruSayisiMetni(gorunen: number, toplam: number): string {
-  return gorunen === toplam ? `${toplam} soru` : `${gorunen} / ${toplam} soru`;
+/** The count of questions on the printed pages. "288 / 487 soru" read as nothing on paper (Zeki, 21 Nov 2026), so a
+ * filtered print just says how many it holds. */
+export function soruSayisiMetni(gorunen: number, _toplam: number): string {
+  return `${gorunen} soru`;
 }
 
 /** One entry per unit: question number (same order as the CSS counter) and the correct key. */
