@@ -229,7 +229,7 @@ mark{background:var(--uyari-zemin);color:var(--metin);border-radius:3px;padding:
 .logo .i{width:38px;height:38px}
 
 /* ---- galeriye dönüş bağlantısı ---- */
-.galeri{position:sticky;top:12px;left:12px;z-index:100;display:inline-flex;margin-bottom:12px;align-items:center;gap:6px;min-height:44px;padding:0 16px;border-radius:999px;background:#10202A;color:#fff;font:600 14px/1 system-ui;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.galeri{position:relative;display:inline-flex;margin-bottom:12px;align-items:center;gap:6px;min-height:44px;padding:0 16px;border-radius:999px;background:#10202A;color:#fff;font:600 14px/1 system-ui;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25)}
 .galeri:focus-visible{outline:3px solid #4CC9BE;outline-offset:2px}
 
 /* ---- renk seçenekleri (13-renk-secenekleri.html); tüm roller WCAG ile ölçüldü, vurgu/yüzey >= 7:1 ---- */
@@ -337,3 +337,23 @@ mark{background:var(--uyari-zemin);color:var(--metin);border-radius:3px;padding:
 .ekran.yeni .sik.yanlis,.ekran.yeni .sik.dogru{border-width:1px}
 .ekran.yeni .i{stroke-width:1.7}
 .ekran.yeni .baslik-buyuk,.ekran.yeni .kahraman b{font-family:ui-serif,"Iowan Old Style","Source Serif 4",Georgia,serif;font-weight:600;letter-spacing:-.01em}
+
+/* ---- 17 sadeleştirme (21 Kasım, Zeki: "bazı şeyler çok göze batıyor") ----
+   Vurgu ekranda tek yerde: ana sayfada devam düğmesi, soruda "Sonraki soru". İlerleme çubukları, sekme, oynatıcı ve simgeler nötr.
+   Halka kaldırıldı; ilerleme kartın içinde ince çubuk. Kiremit vurgu yanlış rengiyle neredeyse aynı parlaklıkta (1,05:1), varsayılan mavi. */
+.ekran.yeni .mini i,.ekran.yeni .bar .ilerle i{background:var(--metin-2)}
+.ekran.yeni .sekmeler a.secili{color:var(--metin)}
+.ekran.yeni.cam .sekmeler a.secili{background:color-mix(in srgb,var(--metin) 10%,transparent)}
+.ekran.yeni .bar .oynat{background:var(--yuzey-2);color:var(--metin)}
+.ekran.yeni .halka::before,.ekran.yeni .bar .oynat::before{content:none}
+.ekran.yeni .ilerleme{display:none}
+.ekran.yeni .ikili .y b{color:var(--metin)}
+.ekran.yeni .ikili .y b::after{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--yanlis);margin-left:8px;vertical-align:middle}
+.ekran.yeni .aciklama-b .i,.ekran.yeni .konu-link{color:var(--metin-2)}
+.ekran.yeni .sik.yanlis{background:var(--yanlis-zemin)}
+.ekran.yeni[data-tema=koyu]{--vurgu:#7AB0F2;--vurgu-metin:#7AB0F2;--vurgu-ustu:#151515;--vurgu-zemin:#1C2633}
+.ekran.yeni[data-tema=koyu][data-vurgu=kehribar]{--vurgu:#E3B75A;--vurgu-metin:#E3B75A;--vurgu-zemin:#2A2416}
+.ekran.yeni[data-tema=koyu][data-vurgu=kiremit]{--vurgu:#E08A68;--vurgu-metin:#E08A68;--vurgu-zemin:#2C221D}
+.ekran.yeni[data-tema=koyu][data-vurgu=notr]{--vurgu:#2C2C2A;--vurgu-metin:#F5F5F5;--vurgu-ustu:#F5F5F5;--vurgu-zemin:#262625}
+.ekran.yeni[data-tema=koyu][data-vurgu=notr] .dugme.dolu,.ekran.yeni[data-tema=koyu][data-vurgu=notr] .halka{box-shadow:inset 0 0 0 1px hsla(0,0%,100%,.14)}
+.ekran.yeni:not([data-tema=koyu]){--vurgu:#2563B8;--vurgu-metin:#1F56A3;--vurgu-ustu:#FFFFFF;--vurgu-zemin:#E4EDF8}
