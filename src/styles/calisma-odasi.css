@@ -1694,28 +1694,38 @@ ol.co-ak-liste {
 .co-video-kab[data-ortam='youtube'][data-kucuk] .co-video-sec {
   display: none;
 }
-/* phone and tablet: the small video floats as a picture-in-picture window at the bottom right; the tabs and text
-   use the whole height */
-@media (max-width: 1023px) {
-  .co-video-kab[data-ortam='youtube'][data-kucuk] {
-    position: fixed;
-    top: auto;
-    right: max(10px, env(safe-area-inset-right));
-    bottom: calc(76px + env(safe-area-inset-bottom));
-    width: min(48vw, 260px);
-    z-index: 40;
-    background: transparent;
-  }
-  .co-video-kab[data-ortam='youtube'][data-kucuk] .co-video {
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgb(0 0 0 / 0.4);
-  }
+/* the small video floats as a picture-in-picture window at the bottom right on every screen; the tabs and text use the
+   whole page (on a wide screen the empty left column folds away, Zeki 21 Nov 2026) */
+.co-video-kab[data-ortam='youtube'][data-kucuk] {
+  position: fixed;
+  top: auto;
+  right: max(10px, env(safe-area-inset-right));
+  bottom: calc(76px + env(safe-area-inset-bottom));
+  width: min(48vw, 260px);
+  z-index: 40;
+  background: transparent;
+}
+.co-video-kab[data-ortam='youtube'][data-kucuk] .co-video {
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.4);
 }
 @media (min-width: 1024px) {
-  .co-video-kab[data-ortam='youtube'][data-kucuk] .co-video {
-    width: min(60%, 380px);
-    margin: 8px 8px 0 auto;
-    border-radius: 10px;
+  .co-video-kab[data-ortam='youtube'][data-kucuk] {
+    right: 24px;
+    bottom: 24px;
+    width: 380px;
+  }
+  .co:has(.co-video-kab[data-ortam='youtube'][data-kucuk]) .co-ana {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 920px;
+    margin-inline: auto;
+  }
+  .co:has(.co-video-kab[data-ortam='youtube'][data-kucuk]) .co-sol {
+    border-right: 0;
+    overflow: visible;
+  }
+  .co:has(.co-video-kab[data-ortam='youtube'][data-kucuk]) .co-su-an {
+    display: none;
   }
 }
 
