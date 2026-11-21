@@ -228,6 +228,13 @@ export function calismaOdasiBaslat(): void {
     const sorular = paket.sorular[String(k.unite)]?.length ?? 0;
     const noktalar = c?.temelNoktalar?.length ? `<h3 class="co-alt-baslik">Temel noktalar</h3><ul class="co-noktalar">${c.temelNoktalar.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : "";
     const kav = c?.kavramlar?.length ? `<h3 class="co-alt-baslik">Kavramlar</h3><dl class="co-tanimlar">${c.kavramlar.map((x) => `<div><dt>${esc(x.terim)}</dt><dd>${esc(x.tanim)}</dd></div>`).join("")}</dl>` : "";
+    // Serbest uzunlukta listeler (0..n): boş olan bölüm hiç görünmez
+    const maddeler = (baslik: string, liste: string[] | undefined): string =>
+      liste?.length ? `<h3 class="co-alt-baslik">${baslik}</h3><ul class="co-noktalar">${liste.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : "";
+    const sebepSonuc = c?.sebepSonuclar?.length
+      ? `<h3 class="co-alt-baslik">Sebep ve sonuç</h3><ul class="co-noktalar">${c.sebepSonuclar.map((x) => `<li><b>Sebep:</b> ${esc(x.sebep)} <b>Sonuç:</b> ${esc(x.sonuc)}</li>`).join("")}</ul>`
+      : "";
+    const ekler = sebepSonuc + maddeler("Örnekler", c?.ornekler) + maddeler("Benzetmeler", c?.benzetmeler) + maddeler("Üzerine düşün", c?.tartismaSorulari);
     // Çalışma malzemesi olmayan konuda kitabın kendi metni gösterilir
     const kitap = !c
       ? `<h3 class="co-alt-baslik">Kitaptan</h3>${k.metin
@@ -243,7 +250,7 @@ export function calismaOdasiBaslat(): void {
       `<span class="co-no">${esc(k.no)}</span><h2>${esc(k.baslik)}</h2>` +
       `<div class="co-su-metin" data-vurgu-kok data-hedef="o${esc(k.no)}">` +
       (ozet ? `<p class="co-ozet">${esc(ozet)}</p>` : "") +
-      `${noktalar}${kav}${kitap}</div>` +
+      `${noktalar}${kav}${ekler}${kitap}</div>` +
       `<div class="co-eylemler">` +
       `<button type="button" class="co-dugme co-dugme-birincil" data-konu-ac="${esc(k.no)}">${ikon("BookOpen")}Konu anlatımı</button>` +
       (c?.miniTest?.length ? `<button type="button" class="co-dugme" data-dene="${esc(k.no)}">${ikon("CircleHelp")}Kendini dene</button>` : "") +
