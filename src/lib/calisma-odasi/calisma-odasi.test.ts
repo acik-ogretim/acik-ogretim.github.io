@@ -63,3 +63,36 @@ describe("yıldızlı kavramlar", () => {
     expect(b.find((x: { terim: string }) => x.terim === "Hukuk").zaman).toBe(5);
   });
 });
+
+import { aramaYap, kitaptaParagraf, konuDurumu, sorulariKonuyaDagit, zayifKonular, uniteBaskiHtml, type AkisSoru } from "./akis";
+
+describe("konu konu akışı", () => {
+  const soru = (id: string, konu: string, text = "Soru metni burada yer alır"): AkisSoru => ({ id, no: 1, text, options: { A: "bir", B: "iki" }, answer: "A", explanation: "açıklama", konu });
+  it("soruları tam konuya ve alt bölümde üst konuya dağıtır", () => {
+    const h = sorulariKonuyaDagit([soru("a", "1.1"), soru("b", "1.3.9"), soru("c", "9.9")], ["1.1", "1.3"]);
+    expect(h.get("1.1")?.map((q) => q.id)).toEqual(["a"]);
+    expect(h.get("1.3")?.map((q) => q.id)).toEqual(["b"]);
+  });
+  it("zayıf konular: yanlışı olan ya da hiç çözülmeyen", () => {
+    const qs = [soru("a", "1.1"), soru("b", "1.2"), soru("c", "1.3")];
+    const cev = { a: { secim: "A", dogru: true }, b: { secim: "B", dogru: false } };
+    const d = ["1.1", "1.2", "1.3"].map((n) => konuDurumu(n, qs.filter((q) => q.konu === n), cev));
+    expect(zayifKonular(d).map((x) => x.no)).toEqual(["1.2", "1.3"]);
+  });
+  it("arama konu, kavram ve soru döndürür", () => {
+    const konular = [{ no: "1.1", baslik: "Toplum nedir", unite: 1, sayfa: 1, html: "", metin: "", video: {} }];
+    const r = aramaYap(konular, [{ terim: "Toplumsal yapı", tanim: "x", konu: "1.1", kaynak: "kitap" }], [soru("a", "1.1", "Toplum kavramı nedir")], "toplum");
+    expect(r.map((x) => x.tur)).toEqual(["konu", "kavram", "soru"]);
+    expect(aramaYap(konular, [], [], "t")).toEqual([]);
+  });
+  it("kitaptan dayanak paragrafını bulur", () => {
+    const metin = "Kısa satır.\nSosyal izolasyon primatlar üzerinde ağır zararlar gösterir ve yavrulara kötü davranış doğurur.\nBaşka bir konuya ait uzun paragraf burada yer alıyor ve alakasız şeyler anlatıyor.";
+    const p = kitaptaParagraf(metin, { text: "Sosyal izolasyon primatlar üzerinde hangi zararları gösterir", options: { A: "ağır zararlar" }, answer: "A" });
+    expect(p).toContain("izolasyon");
+  });
+  it("yazdırma çıktısı cevap anahtarını sona koyar", () => {
+    const k = { no: "1.1", baslik: "Giriş", unite: 1, sayfa: 1, html: "", metin: "kitap metni", video: {} };
+    const html = uniteBaskiHtml(1, "Ünite", [k], [], new Map([["1.1", [soru("a", "1.1")]]]));
+    expect(html.indexOf("Cevap anahtarı")).toBeGreaterThan(html.indexOf("Çıkmış sorular"));
+  });
+});

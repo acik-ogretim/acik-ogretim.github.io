@@ -26,8 +26,9 @@ export async function getStaticPaths() {
 
 const { paket, dersAdi, dersYolu } = Astro.props;
 const veriJson = JSON.stringify(paket).replace(/</g, "\\u003c");
-const simgeler: SimgeAdi[] = ["BookOpen", "CircleHelp", "FileText", "Highlighter", "Trash2", "Check", "X", "ChevronLeft", "ChevronRight", "ArrowRight", "WifiOff", "Play", "Link", "ExternalLink", "ListChecks", "Star", "Copy", "StickyNote"];
+const simgeler: SimgeAdi[] = ["BookOpen", "CircleHelp", "FileText", "Highlighter", "Trash2", "Check", "X", "ChevronLeft", "ChevronRight", "ArrowRight", "WifiOff", "Play", "Link", "ExternalLink", "ListChecks", "Star", "Copy", "StickyNote", "Search", "Printer", "ArrowDown", "ChevronDown"];
 const sekmeler = [
+  { id: "akis", ad: "Konu konu" },
   { id: "dokum", ad: "Döküm" },
   { id: "su-an", ad: "Şu an" },
   { id: "icindekiler", ad: "Konular" },
@@ -67,6 +68,7 @@ const sekmeler = [
             <button type="button" role="tab" id={`co-sekme-${s.id}`} data-sekme={s.id} aria-controls={`co-p-${s.id}`} aria-selected="false">{s.ad}<span class="co-sayac" data-sayac={s.id} hidden></span></button>
           ))}
         </div>
+        <section class="co-panel" data-panel="akis" id="co-p-akis" role="tabpanel" aria-labelledby="co-sekme-akis"></section>
         <section class="co-panel" data-panel="dokum" id="co-p-dokum" role="tabpanel" aria-labelledby="co-sekme-dokum"><ol class="co-dokum" id="co-dokum"></ol></section>
         <section class="co-panel" data-panel="icindekiler" id="co-p-icindekiler" role="tabpanel" aria-labelledby="co-sekme-icindekiler"></section>
         <section class="co-panel" data-panel="sinav" id="co-p-sinav" role="tabpanel" aria-labelledby="co-sekme-sinav"></section>
