@@ -1017,7 +1017,16 @@ export function calismaOdasiBaslat(): void {
     const kitap = kitapParcalari.length
       ? `<details class="co-ak-kitap"${anlatim ? "" : " open"}><summary>${ikon("ChevronDown")}Kitaptan oku</summary>${kitapParcalari.map((x) => `<p>${esc(x)}</p>`).join("")}</details>`
       : "";
+    // Proper names: every one the topic's book text or narration mentions, not only those first seen here.
+    const anlatimMetni = uzunlar.map((v) => v.satirlar.slice(k.video[v.id].ilk, k.video[v.id].ilk + k.video[v.id].say).map((x) => x.m).join(" ")).join(" ");
+    const adSirasi = [...new Set(motor.eslestir(`${k.metin} ${anlatimMetni}`).map((m) => m.kavram))].filter((i) => paket.kavramlar[i]?.tur);
+    const tanimSatiri = (i: number): string => {
+      const v = paket.kavramlar[i];
+      return `<div><dt><button type="button" class="co-kavram" data-k="${i}"${yildizliMi(i) ? " data-yildizli" : ""}>${esc(v.terim)}</button></dt><dd>${esc(v.tanim)}</dd></div>`;
+    };
+    const adlar = adSirasi.map(tanimSatiri).join("");
     const kav = (kavramKonuya.get(no) ?? [])
+      .filter((i) => !paket.kavramlar[i]?.tur)
       .map((i) => {
         const v = paket.kavramlar[i];
         return `<div><dt><button type="button" class="co-kavram" data-k="${i}"${yildizliMi(i) ? " data-yildizli" : ""}>${esc(v.terim)}</button></dt><dd>${esc(v.tanim)}</dd></div>`;
@@ -1026,6 +1035,7 @@ export function calismaOdasiBaslat(): void {
     govde.innerHTML =
       `<div class="co-ak-metin" data-vurgu-kok data-hedef="o${esc(no)}">${anlatimBolumu}${kitap}${ozetBolumu}</div>` +
       (kav ? `<h4 class="co-alt-baslik">Kavramlar</h4><dl class="co-tanimlar co-ak-kavramlar">${kav}</dl>` : "") +
+      (adlar ? `<h4 class="co-alt-baslik">Kişiler ve adlar</h4><dl class="co-tanimlar co-ak-kavramlar">${adlar}</dl>` : "") +
       `<div class="co-ak-sorular" data-ak-sorular></div>` +
       dusunHtml(k) +
       `<footer class="co-ak-alt"><p class="co-ak-durum" data-ak-durum></p><div class="co-ak-eylem">` +

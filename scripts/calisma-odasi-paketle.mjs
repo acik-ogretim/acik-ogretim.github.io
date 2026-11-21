@@ -262,6 +262,28 @@ function paketle(ders) {
     k.goster = [k.unite, ...say.slice(1, derinlik).map((n) => n || 1)].join(".");
   }
   if (takma.size) console.log(`[calisma-odasi] ${ders}: ${takma.size} bölünmüş başlık ya da boş konu birleştirildi (${[...takma.keys()].join(", ")})`);
+  // Proper names (people, civilizations, places, events, works...): data/calisma-odasi/adlar/<ders>.json from scripts/adlar-uret.py.
+  // They become underlined terms like concepts, with tur set so the page can list them apart.
+  const adlarYolu = join(kok, "data", "calisma-odasi", "adlar", `${ders}.json`);
+  if (existsSync(adlarYolu)) {
+    const konuVar = new Set(konuListesi.map((k) => k.no));
+    let adSayisi = 0;
+    for (const liste of Object.values(oku(adlarYolu).uniteler ?? {})) {
+      for (const x of liste) {
+        const terim = (x.terim ?? "").trim();
+        const anahtar = tr(terim);
+        if (terim.length < 3 || !x.tanim) continue;
+        const konular = (x.konular ?? []).map((n) => takma.get(n) ?? n).filter((n) => konuVar.has(n));
+        if (!konular.length) continue;
+        const onceki = kavramlar.get(anahtar);
+        if (onceki?.tur) continue; // first unit that names it wins
+        const baslik = [x.ad && x.ad !== terim ? x.ad : null, x.yasam ? `(${x.yasam})` : null].filter(Boolean).join(" ");
+        kavramlar.set(anahtar, { terim, tanim: baslik ? `${baslik}. ${x.tanim}` : x.tanim, konu: konular[0], kaynak: "ad", tur: x.tur ?? "kisi" });
+        adSayisi++;
+      }
+    }
+    console.log(`[calisma-odasi] ${ders}: ${adSayisi} özel ad (kişi, topluluk, yer, olay...)`);
+  }
   const medyalar = videolar.map((v) => {
     const konuAraliklari = {};
     for (const k of konuListesi) {

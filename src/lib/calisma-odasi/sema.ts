@@ -62,7 +62,14 @@ export const medyaCipEtiketi = (m: Pick<CalismaMedyasi, "cesit" | "unite" | "tur
   return m.unite ? `${yer} Ünite ${m.unite} · ${zaman}` : `${yer} ${zaman}`;
 };
 
-export const KavramSemasi = z.object({ terim: z.string(), tanim: z.string(), konu: z.string(), kaynak: z.enum(["etkinlik", "kitap"]) });
+export const AdTurleri = ["kisi", "topluluk", "yer", "olay", "eser", "kurum", "akim"] as const;
+export const KavramSemasi = z.object({
+  terim: z.string(),
+  tanim: z.string(),
+  konu: z.string(),
+  kaynak: z.enum(["etkinlik", "kitap", "ad"]),
+  tur: z.enum(AdTurleri).optional(), // set for proper names; plain concepts have none
+});
 export type CalismaKavrami = z.infer<typeof KavramSemasi>;
 
 const PaketTemel = z.object({
