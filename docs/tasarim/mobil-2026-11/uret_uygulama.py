@@ -309,6 +309,12 @@ sayfa("14-ios-cam", "iOS 26 tarzı cam deneme", [
 def resim(yol, alt, gen=880):
     return f'<figure style="max-width:{gen}px"><img src="{yol}" alt="" style="width:100%;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.2)"><figcaption style="max-width:{gen}px">{alt}</figcaption></figure>'
 k15 = [
+    resim("alternatifler/stitch-v1.jpg", "Stitch varyant 1, Bugün, modüler: kendi Bugün ve soru ekranlarından siyah beyaz yönde yeniden yorum. Saf siyah zemin ve keskin beyaz düğmeler sert duruyor; 17 numaradaki sürü tonları bu yüzden seçildi.", 300),
+    resim("alternatifler/stitch-v2.jpg", "Stitch varyant 2, Soru, uzamsal alt sayfa: kendi Bugün ve soru ekranlarından siyah beyaz yönde yeniden yorum. Saf siyah zemin ve keskin beyaz düğmeler sert duruyor; 17 numaradaki sürü tonları bu yüzden seçildi.", 300),
+    resim("alternatifler/stitch-v3.jpg", "Stitch varyant 3, Soru, kod ve terminal: kendi Bugün ve soru ekranlarından siyah beyaz yönde yeniden yorum. Saf siyah zemin ve keskin beyaz düğmeler sert duruyor; 17 numaradaki sürü tonları bu yüzden seçildi.", 300),
+    resim("alternatifler/stitch-v4.jpg", "Stitch varyant 4, Bugün, editoryal: kendi Bugün ve soru ekranlarından siyah beyaz yönde yeniden yorum. Saf siyah zemin ve keskin beyaz düğmeler sert duruyor; 17 numaradaki sürü tonları bu yüzden seçildi.", 300),
+    resim("alternatifler/stitch-v5.jpg", "Stitch varyant 5, Soru, iOS pro sade: kendi Bugün ve soru ekranlarından siyah beyaz yönde yeniden yorum. Saf siyah zemin ve keskin beyaz düğmeler sert duruyor; 17 numaradaki sürü tonları bu yüzden seçildi.", 300),
+    resim("alternatifler/stitch-v6.jpg", "Stitch varyant 6, Bugün, uzamsal odak: kendi Bugün ve soru ekranlarından siyah beyaz yönde yeniden yorum. Saf siyah zemin ve keskin beyaz düğmeler sert duruyor; 17 numaradaki sürü tonları bu yüzden seçildi.", 300),
     resim("alternatifler/kor-stitch.jpg", "Kör jüri, Stitch: koyu VS Code dili, eşaralıklı etiketler; canlı ders paneli altında zamanlı not akışı, vize geri sayımı, kulaklıkla dinleme kipi. GNO, öğretim üyesi, kullanıcı sayısı ve 'GPT-4o' modelin uydurmasıdır.", 360),
     resim("alternatifler/kor-1.jpg", "Kör jüri 1. Yalnız Zeki'nin sözleri verildi, kural ve şablon yok: koyu VS Code havası, video ve döküm, seri sayacı."),
     resim("alternatifler/kor-2.jpg", "Kör jüri 2. Canlı ders ve eş zamanlı döküm yan yana, yapay zekâ asistanı ayrı ekran."),
@@ -364,6 +370,35 @@ k16 = [
           + "</main>", "16c", "Kurs akışı: haftalık modül, sıra ve tamamlanma; LMS'deki ders yapısının telefondaki hâli", palet="murekkep"),
 ]
 sayfa("16-video-canli-ders", "Video, canlı ders ve kurs akışı", k16)
+
+# ---------- 17 önerilen dil ----------
+def ana_yeni():
+    ders = [("Erken Çocukluk Eğitimine Giriş", "312 / 420 soru", 74), ("Anne Çocuk Sağlığı", "96 / 380 soru", 25),
+            ("Oyun ve Oyun Materyalleri", "0 / 210 soru", 0), ("Fiziksel Büyüme ve Motor Gelişim", "40 / 330 soru", 12)]
+    return ('<main class="icerik kabuk" style="inset:var(--sat) 0 0 0;padding-top:14px">'
+            f'<div style="display:flex;align-items:flex-start;gap:8px"><div style="flex:1"><h1 class="baslik-buyuk">Bugün</h1>'
+            '<p style="color:var(--metin-2);font-size:14px;margin-top:6px">AUZEF · Çocuk Gelişimi · 3. dönem</p></div>'
+            f'<button class="dugme hafif yuvarlak" aria-label="Derse sor">{ic("sohbet")}</button></div>'
+            '<div class="kahraman" style="margin-top:18px"><div class="t"><small>Kaldığın yer</small><b class="k2">Erken Çocukluk Eğitimine Giriş</b><span>Ünite 4 · Soru 12 / 40</span></div>'
+            f'<button class="halka" style="--i:30%" aria-label="Devam et">{ic("play", "i-fill")}</button></div>'
+            '<div class="ikili"><div class="y"><b>19</b><span>tekrar gereken soru</span></div><div><b>%71</b><span>son denemede doğru</span></div></div>'
+            '<p class="alt-baslik">Derslerim</p>' + "".join(ilerlemeli(a, b, c) for a, b, c in ders) + "</main>" + sekmeler("Ana sayfa"))
+
+def yenile(h, koyu):
+    h = h.replace('<div class="ekran"', '<div class="ekran yeni cam"' + (' data-tema="koyu"' if koyu else ""), 1)
+    return h.replace(' data-tema="koyu" data-tema="koyu"', ' data-tema="koyu"')
+
+oynatici = re.findall(r"<figure>.*?</figure>", (KOK / "02-oynatici.html").read_text(), re.S)[1]
+oynatici = re.sub(r"<figcaption>.*?</figcaption>", "<figcaption>17c. Oynatıcı alt sayfası: kenardan ayrık cam, eş merkezli köşeler</figcaption>", oynatici)
+soru_yeni = lambda alt, ack: re.sub(r"<figcaption>.*?</figcaption>", "", SORU).replace("</div></figure>", f"</div><figcaption>{alt}. {ack}</figcaption></figure>")
+k17 = [
+    yenile(ekran(ana_yeni(), "17a", "Ana sayfa, koyu: sürü panosunun koyu kademeleri (#151515), %9 beyaz kenar, kiremit birincil, serif başlık, oynat düğmesinde ünite ilerlemesi halkası, yüzen cam sekme çubuğu"), True),
+    yenile(soru_yeni("17b", "Soru çözme, koyu: keskin beyaz yok, doğru ve yanlış yumuşatılmış tonlarda, oynatıcıda soru ilerlemesi halkası"), True),
+    yenile(oynatici, True),
+    yenile(ekran(ana_yeni(), "17d", "Aynı dil açık temada: panonun açık kâğıt yüzeyleri"), False),
+    yenile(soru_yeni("17e", "Soru çözme, açık"), False),
+]
+sayfa("17-onerilen-dil", "Önerilen dil: sürü panosu tonları ve yeni nesil", k17)
 
 # ---------- galeri ----------
 satirlar = "".join(

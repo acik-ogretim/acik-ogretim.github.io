@@ -297,3 +297,43 @@ mark{background:var(--uyari-zemin);color:var(--metin);border-radius:3px;padding:
 .ekran .dugme:focus-visible{outline-color:var(--odak)}
 .ekran[data-palet=yesil]{--zemin:#F3F5F6;--yuzey:#FFFFFF;--yuzey-2:#E7ECEE;--cizgi:#D3DBDF;--metin:#10202A;--metin-2:#4E5F69;
  --vurgu:#0A7C76;--vurgu-metin:#06605B;--vurgu-ustu:#FFFFFF;--vurgu-zemin:#DCF0EE}
+
+/* ---- önerilen dil (17-yeni-dil.html): siyah beyaz taban + yeni nesil koyu ----
+   Koyu varsayılan, vurgu yok (birincil = metin rengi), büyük tipografi, eş merkezli köşeler, cam alt öğeler, halka ilerleme. */
+.ekran.yeni{--zemin:#F4F4F3;--yuzey:#FFFFFF;--yuzey-2:#EAEAE8;--cizgi:#DEDEDB;--metin:#111112;--metin-2:#5E5E63;
+ --vurgu:#111112;--vurgu-metin:#111112;--vurgu-ustu:#FFFFFF;--vurgu-zemin:#E6E6E3;--r-m:16px;--r-l:28px}
+.ekran.yeni[data-tema=koyu]{--zemin:#0C0C0D;--yuzey:#161618;--yuzey-2:#212124;--cizgi:#2C2C30;--metin:#F3F3F2;--metin-2:#9B9BA1;
+ --vurgu:#F3F3F2;--vurgu-metin:#F3F3F2;--vurgu-ustu:#0C0C0D;--vurgu-zemin:#26262A;
+ --dogru:#5BD38C;--dogru-zemin:#0F2A1B;--yanlis:#FF8A80;--yanlis-zemin:#33191A;--uyari:#F2C14E;--uyari-zemin:#2E2610}
+.ekran.yeni .baslik-buyuk{font:800 36px/1.05 system-ui;letter-spacing:-.025em}
+.ekran.yeni .alt-baslik{font:600 13px/1 system-ui;color:var(--metin-2);letter-spacing:0;margin:22px 0 6px}
+.ekran.yeni .sik{border-radius:var(--r-m);border-width:1px}
+.ekran.yeni .aciklama{border-radius:20px;border-width:1px}
+.ekran.yeni .kart{border-radius:24px;border-width:1px}
+.ekran.yeni .dugme.dolu{border-radius:999px}
+.yeni .halka{position:relative;flex:none;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:var(--vurgu);color:var(--vurgu-ustu)}
+.yeni .halka::before,.ekran.yeni .bar .oynat::before{content:"";position:absolute;inset:-5px;border-radius:50%;background:conic-gradient(var(--vurgu) var(--i,30%),var(--cizgi) 0);-webkit-mask:radial-gradient(closest-side,transparent calc(100% - 4px),#000 calc(100% - 3px));mask:radial-gradient(closest-side,transparent calc(100% - 4px),#000 calc(100% - 3px))}
+.ekran.yeni .bar .oynat{position:relative}
+.yeni .kahraman{background:var(--yuzey);border:1px solid var(--cizgi);border-radius:28px;padding:18px 18px 18px 20px;display:flex;align-items:center;gap:14px}
+.yeni .kahraman .t{flex:1;min-width:0}
+.yeni .kahraman small{display:block;font:600 12px/1 system-ui;color:var(--metin-2);margin-bottom:8px}
+.yeni .kahraman b{display:block;font:700 22px/1.2 system-ui;letter-spacing:-.01em}
+.yeni .kahraman span{display:block;font-size:14px;color:var(--metin-2);margin-top:6px}
+.yeni .ikili{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.yeni .ikili div{background:var(--yuzey);border:1px solid var(--cizgi);border-radius:22px;padding:14px 16px}
+.yeni .ikili b{display:block;font:800 28px/1 system-ui;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.yeni .ikili span{display:block;font-size:13px;color:var(--metin-2);margin-top:6px}
+.yeni .ikili .y b{color:var(--yanlis)}
+
+/* ---- önerilen dil, sürü panosu sürümü (17): panonun claude teması belirteçleri (apps/dashboard/themes/claude/cds.css) ----
+   Keskin beyaz yok: koyu zemin #151515 kademeleri, kenarlar %9 beyaz, birincil eylem kiremit, metin #F5F5F5. */
+.ekran.yeni{--zemin:#FCFCFB;--yuzey:#FFFFFF;--yuzey-2:#F7F7F5;--cizgi:hsla(0,0%,8%,.10);--metin:#151515;--metin-2:#525252;
+ --vurgu:#B4532F;--vurgu-metin:#A84E2C;--vurgu-ustu:#FFFFFF;--vurgu-zemin:#F6E6DE;--uyari-zemin:#F3EAD2;--golge:0 4px 16px rgba(20,20,20,.08)}
+.ekran.yeni[data-tema=koyu]{--zemin:#151515;--yuzey:#1A1A19;--yuzey-2:#20201F;--cizgi:hsla(0,0%,100%,.09);--metin:#F5F5F5;--metin-2:#A3A3A3;
+ --vurgu:#C4613E;--vurgu-metin:#E08A68;--vurgu-ustu:#FFFFFF;--vurgu-zemin:#2C221D;
+ --dogru:#7BC79A;--dogru-zemin:#18241C;--yanlis:#E58C82;--yanlis-zemin:#2A1C1A;--uyari:#E3B75A;--uyari-zemin:#2A2416;--golge:0 6px 24px rgba(0,0,0,.45)}
+.ekran.yeni.cam{--cam-kenar:hsla(0,0%,100%,.09)}
+.ekran.yeni:not([data-tema=koyu]).cam{--cam-kenar:hsla(0,0%,8%,.08)}
+.ekran.yeni .sik.yanlis,.ekran.yeni .sik.dogru{border-width:1px}
+.ekran.yeni .i{stroke-width:1.7}
+.ekran.yeni .baslik-buyuk,.ekran.yeni .kahraman b{font-family:ui-serif,"Iowan Old Style","Source Serif 4",Georgia,serif;font-weight:600;letter-spacing:-.01em}

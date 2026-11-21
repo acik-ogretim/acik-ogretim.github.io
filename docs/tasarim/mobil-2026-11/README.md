@@ -22,6 +22,7 @@ Canlı kod değişmedi; yalnız tasarım çıktısı.
   14. `14-ios-cam.html`: iOS 26 tarzı cam deneme (yüzen kapsül sekme çubuğu, cam oynatıcı, kenardan ayrık alt sayfa)
   15. `15-alternatifler.html`: kör jüri (3 Nano Banana, 1 Stitch), Nano Banana (9 yön), Stitch (2 ekran) ve sürü dili denemeleri; görseller `alternatifler/` altında
   16. `16-video-canli-ders.html`: video ve eş zamanlı konu anlatımı, canlı ders, haftalık kurs akışı
+  17. `17-onerilen-dil.html`: önerilen dil; sürü panosunun claude teması belirteçleri (koyu #151515 kademeleri, %9 kenar, kiremit birincil), serif başlık, halka ilerleme, cam alt öğeler
 - `KARSILASTIRMA.md`: benzer uygulamalarla karşılaştırma ve kör jüri sonucu.
 - `LMS-PLANI.md`: ÖYS ve LMS işlevlerinin portaldaki karşılığı ve sıra önerisi.
 - `index.html`: tüm maketlerin listesi; her maketin sol üstündeki düğme buraya döner.
