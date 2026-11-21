@@ -2,7 +2,7 @@
 // Veri: sayfadaki #co-veri (src/data/calisma-odasi/<ders>.json). Saf mantık: src/lib/calisma-odasi/.
 import { katmanAc, katmanlariBagla } from "../lib/katman";
 import { kavramMotoru } from "../lib/calisma-odasi/kavram";
-import { PaketSemasi, TUR_ADI, saatYaz, satirBul, type CalismaKonu, type CalismaPaketi, type CalismaSatiri, type CalismaVideosu } from "../lib/calisma-odasi/sema";
+import { PaketSemasi, medyaAdi, medyaCipEtiketi, saatYaz, satirBul, type CalismaKonu, type CalismaPaketi, type CalismaMedyasi, type CalismaSatiri, type CalismaVideosu } from "../lib/calisma-odasi/sema";
 import { cevaplarOku, cevaplarYaz } from "../lib/calisma-durumu";
 import { demirBul, demirle, vurgulariOku, vurgulariYaz, type Vurgu } from "../lib/calisma-odasi/vurgu";
 import { anlatimHtml, aramaYap, dusunHtml, kitaptaParagraf, konuDurumu, sorulariKonuyaDagit, uniteBaskiHtml, zayifKonular, type AkisSoru } from "../lib/calisma-odasi/akis";
@@ -49,7 +49,7 @@ export function calismaOdasiBaslat(): void {
   const $ = <T extends HTMLElement>(id: string): T => document.getElementById(id) as T;
   const ikon = (ad: string): string => document.querySelector(`#co-simgeler [data-simge="${ad}"]`)?.innerHTML ?? "";
 
-  const videolar = paket.videolar;
+  const videolar = paket.medyalar;
   const uni = kok.dataset.uni ?? paket.uni;
   const dersKodu = `${uni}/${ders}`; // ders sayfasıyla aynı cevap kaydı: cevaplar-<uni>-<ders>
   const videoAnahtari = `calisma-video-${ders}`;
@@ -61,7 +61,7 @@ export function calismaOdasiBaslat(): void {
       /* storage unavailable */
     }
   }
-  let vi = Math.max(0, videolar.findIndex((v) => v.kod === istenen));
+  let vi = Math.max(0, videolar.findIndex((v) => v.id === istenen));
   let video: CalismaVideosu | null = videolar[vi] ?? null;
   let satirlar: CalismaSatiri[] = video?.satirlar ?? [];
   // Konusuz satırlar önceki konuyu sürdürür
@@ -72,10 +72,10 @@ export function calismaOdasiBaslat(): void {
   }
   etkinHesapla();
   // Vurgu hedefi: ilk video "s<i>" (eski kayıtlarla uyumlu), diğerleri "s<kod>:<i>"
-  const satirHedefi = (i: number): string => (vi === 0 || !video ? `s${i}` : `s${video.kod}:${i}`);
+  const satirHedefi = (i: number): string => (vi === 0 || !video ? `s${i}` : `s${video.id}:${i}`);
   const satirCoz = (h: string): { kod: string; i: number } | null => {
     const m = /^s(?:([^:]+):)?(\d+)$/.exec(h);
-    return m ? { kod: m[1] ?? videolar[0]?.kod ?? "", i: Number(m[2]) } : null;
+    return m ? { kod: m[1] ?? videolar[0]?.id ?? "", i: Number(m[2]) } : null;
   };
 
   let vurgular: Vurgu[] = vurgulariOku(ders);
@@ -88,7 +88,7 @@ export function calismaOdasiBaslat(): void {
   let aktif: Sekme = akisVar ? "akis" : satirlar.length ? "dokum" : "su-an"; // konu konu akışı birincil görünümdür
   let sonSag: Sekme = akisVar ? "akis" : satirlar.length ? "dokum" : "icindekiler";
   let otoDurak = 0;
-  let oynatici: YTOynatici | null = null;
+  let oynatici: YTOynatici | null = null; // geçerli medyanın oynatıcısı (YouTube ya da ses)
   let acikKonu: string | null = null;
   const gorunenKonu = (): string | null => secKonu ?? simdiKonu;
 
@@ -279,7 +279,7 @@ export function calismaOdasiBaslat(): void {
           .map((no) => {
             const k = konuHaritasi.get(no)?.k;
             if (!k) return "";
-            const kv = video ? k.video[video.kod] : undefined;
+            const kv = video ? k.video[video.id] : undefined;
             const v = kv ? satirlar[kv.ilk] : null;
             return `<div class="co-konu-bolum"><button type="button" class="co-konu-satir" data-git-konu="${esc(no)}"${v ? " data-videoda" : ""}><span class="co-no">${esc(no)}</span><span class="co-konu-adi">${esc(k.baslik)}</span>${video ? `<span class="co-video-durum">${v ? `Videoda ${saatYaz(v.bas)}` : "Videoda yok"}</span>` : ""}</button><button type="button" class="co-konu-yan" data-konu-ac="${esc(no)}" aria-label="${esc(k.baslik)} konu anlatımı">${ikon("BookOpen")}</button></div>`;
           })
@@ -293,6 +293,7 @@ export function calismaOdasiBaslat(): void {
     if (aktif === "sinav" && sinavIzle) void sinavCiz(); // konu değişti: Sınav sekmesi de değişir
     document.querySelectorAll<HTMLElement>(".co-konu-satir").forEach((b) => b.toggleAttribute("data-simdi", b.dataset.gitKonu === gorunenKonu()));
     document.querySelectorAll<HTMLElement>(".co-ak-blok").forEach((b) => b.toggleAttribute("data-simdi", b.dataset.akKonu === gorunenKonu()));
+    videoSecCiz();
   }
 
   // ---------- Vurgularım ----------
@@ -409,7 +410,8 @@ export function calismaOdasiBaslat(): void {
     if (!k) return;
     katmanSifirla(balon);
     document.querySelectorAll<HTMLDialogElement>("dialog[open]").forEach((d) => d.close());
-    const kv = video ? k.video[video.kod] : undefined;
+    medyaKonuyaUydur(no);
+    const kv = video ? k.video[video.id] : undefined;
     const satir = kv ? satirlar[kv.ilk] : undefined;
     if (kv && satir) {
       secKonu = null;
@@ -451,21 +453,35 @@ export function calismaOdasiBaslat(): void {
     }
   });
 
-  // ---------- Video ----------
+  // ---------- Medya: YouTube videosu ve ses, konuya göre seçici ----------
   function bildirim(goster: boolean): void {
     $("co-bildirim").hidden = !goster;
   }
+  const cesitAnahtari = `calisma-cesit-${ders}`;
+  let tercihCesit: string | null = null; // kullanıcının en son elle seçtiği medya çeşidi
+  let tercihMedya: string | null = istenen; // kullanıcının en son elle seçtiği medya
+  try {
+    tercihCesit = localStorage.getItem(cesitAnahtari);
+  } catch {
+    /* storage unavailable */
+  }
+  let otoMedya = false; // medya konuya göre kendiliğinden değişti
+  let ytOynatici: YTOynatici | null = null;
+  let sesOynatici: YTOynatici | null = null;
   let sonOynaticiSn = 0;
-  function videoKur(): void {
-    if (!video || !document.getElementById("co-oynatici")) return;
+  const sesEl = (): HTMLAudioElement | null => document.querySelector<HTMLAudioElement>("#co-ses audio");
+
+  function ytKur(): void {
+    if (ytOynatici || !video || video.tur !== "youtube" || !document.getElementById("co-oynatici")) return;
     if (navigator.onLine === false) bildirim(true);
     const olustur = (): void => {
-      if (!window.YT?.Player || oynatici) return;
-      oynatici = new window.YT.Player("co-oynatici", {
-        videoId: video?.yt ?? "",
+      if (!window.YT?.Player || ytOynatici) return;
+      ytOynatici = new window.YT.Player("co-oynatici", {
+        videoId: video?.tur === "youtube" ? video.kaynak : "",
         playerVars: { playsinline: 1, rel: 0, modestbranding: 1 },
         events: { onReady: () => bildirim(false), onError: () => bildirim(true) },
       });
+      if (video?.tur === "youtube") oynatici = ytOynatici;
     };
     if (window.YT?.Player) olustur();
     else {
@@ -474,20 +490,168 @@ export function calismaOdasiBaslat(): void {
         onceki?.();
         olustur();
       };
-      const s = document.createElement("script");
-      s.src = "https://www.youtube.com/iframe_api";
-      s.async = true;
-      s.onerror = () => bildirim(true);
-      document.head.append(s);
+      const sc = document.createElement("script");
+      sc.src = "https://www.youtube.com/iframe_api";
+      sc.async = true;
+      sc.onerror = () => bildirim(true);
+      document.head.append(sc);
       setTimeout(() => {
-        if (!oynatici) bildirim(true);
+        if (!ytOynatici) bildirim(true);
       }, 8000);
     }
+  }
+
+  // Ses: HTML audio, kapak, dalga biçimli ilerleme çubuğu; YouTube oynatıcısıyla aynı küçük arayüz
+  const SES_HIZLARI = [1, 1.25, 1.5, 1.75, 2, 0.85];
+  function dalgaCubuklari(m: CalismaMedyasi): number[] {
+    const N = 120;
+    if (m.dalga?.length) return m.dalga;
+    const sure = m.sure ?? m.satirlar[m.satirlar.length - 1]?.bit ?? 1;
+    const kutu = new Array<number>(N).fill(0);
+    for (const s of m.satirlar) {
+      const sn = Math.max(0.5, s.bit - s.bas);
+      const yog = s.m.length / sn;
+      const a = Math.floor((s.bas / sure) * N);
+      const z = Math.min(N - 1, Math.floor((s.bit / sure) * N));
+      for (let i = a; i <= z; i++) kutu[i] = Math.max(kutu[i], yog);
+    }
+    const en = Math.max(...kutu, 1);
+    return kutu.map((x) => Math.max(0.12, x / en));
+  }
+  function sesKur(): void {
+    const kap = document.getElementById("co-ses");
+    if (!kap || sesOynatici) return;
+    kap.innerHTML =
+      `<audio preload="metadata" playsinline></audio>` +
+      `<div class="co-ses-ust"><div class="co-ses-kapak" id="co-ses-kapak" aria-hidden="true">${ikon("Headphones")}</div><div class="co-ses-bilgi"><strong id="co-ses-baslik"></strong><span id="co-ses-zaman" class="co-ses-zaman">0:00 / 0:00</span></div></div>` +
+      `<div class="co-dalga" id="co-dalga" role="slider" tabindex="0" aria-label="Ses konumu" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0"><div class="co-dalga-cubuklar" id="co-dalga-bos"></div><div class="co-dalga-cubuklar co-dalga-dolu" id="co-dalga-dolu"></div></div>` +
+      `<div class="co-ses-kontrol"><button type="button" class="co-ses-dugme" data-ses="geri" aria-label="15 saniye geri">${ikon("RotateCcw")}<span>15</span></button><button type="button" class="co-ses-oynat" data-ses="oynat" aria-label="Oynat">${ikon("Play")}</button><button type="button" class="co-ses-dugme" data-ses="ileri" aria-label="15 saniye ileri">${ikon("RotateCw")}<span>15</span></button><button type="button" class="co-ses-hiz" data-ses="hiz" aria-label="Oynatma hızı">1×</button></div>`;
+    const el = sesEl()!;
+    let bekleyen: number | null = null;
+    el.addEventListener("loadedmetadata", () => {
+      if (bekleyen !== null) {
+        el.currentTime = bekleyen;
+        bekleyen = null;
+      }
+      sesZamaniYaz();
+    });
+    for (const ad of ["timeupdate", "play", "pause", "ended", "seeked"]) el.addEventListener(ad, sesZamaniYaz);
+    el.addEventListener("error", () => bildirim(true));
+    el.addEventListener("loadeddata", () => bildirim(false));
+    sesOynatici = {
+      getCurrentTime: () => bekleyen ?? el.currentTime,
+      seekTo: (sn) => {
+        if (el.readyState >= 1) el.currentTime = sn;
+        else bekleyen = sn;
+        sesZamaniYaz();
+      },
+      playVideo: () => void el.play().catch(() => undefined),
+      pauseVideo: () => el.pause(),
+      loadVideoById: (kaynak) => {
+        bekleyen = null;
+        el.src = kaynak;
+        el.load();
+      },
+    };
+    const dalga = $("co-dalga");
+    const konumdan = (e: PointerEvent): void => {
+      const r = dalga.getBoundingClientRect();
+      const sure = video?.sure ?? el.duration;
+      if (!Number.isFinite(sure) || sure <= 0) return;
+      const oran = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
+      sesOynatici?.seekTo(oran * sure, true);
+      guncelle(oran * sure);
+    };
+    let surukle = false;
+    dalga.addEventListener("pointerdown", (e) => {
+      surukle = true;
+      dalga.setPointerCapture(e.pointerId);
+      konumdan(e);
+    });
+    dalga.addEventListener("pointermove", (e) => surukle && konumdan(e));
+    dalga.addEventListener("pointerup", () => (surukle = false));
+    dalga.addEventListener("keydown", (e) => {
+      const adim = { ArrowLeft: -5, ArrowRight: 5, PageDown: -30, PageUp: 30 }[e.key];
+      if (adim === undefined && e.key !== "Home" && e.key !== "End") return;
+      e.preventDefault();
+      const sure = video?.sure ?? el.duration ?? 0;
+      const hedef = e.key === "Home" ? 0 : e.key === "End" ? sure : Math.min(sure, Math.max(0, el.currentTime + (adim ?? 0)));
+      sesOynatici?.seekTo(hedef, true);
+      guncelle(hedef);
+    });
+  }
+  function sesZamaniYaz(): void {
+    const el = sesEl();
+    if (!el || video?.tur !== "ses") return;
+    const sure = video.sure ?? (Number.isFinite(el.duration) ? el.duration : 0);
+    const t = sesOynatici?.getCurrentTime() ?? el.currentTime;
+    $("co-ses-zaman").textContent = `${saatYaz(t)} / ${saatYaz(sure)}`;
+    const oran = sure ? Math.min(1, t / sure) : 0;
+    $("co-dalga-dolu").style.clipPath = `inset(0 ${(100 - oran * 100).toFixed(2)}% 0 0)`;
+    const d = $("co-dalga");
+    d.setAttribute("aria-valuemax", String(Math.round(sure)));
+    d.setAttribute("aria-valuenow", String(Math.round(t)));
+    d.setAttribute("aria-valuetext", `${saatYaz(t)} / ${saatYaz(sure)}`);
+    const oyn = document.querySelector<HTMLElement>('[data-ses="oynat"]');
+    if (oyn) {
+      const calar = !el.paused;
+      oyn.innerHTML = ikon(calar ? "Pause" : "Play");
+      oyn.setAttribute("aria-label", calar ? "Duraklat" : "Oynat");
+    }
+  }
+  function sesAc(m: CalismaMedyasi): void {
+    sesKur();
+    const el = sesEl();
+    if (!el || !sesOynatici) return;
+    if (el.getAttribute("src") !== m.kaynak) sesOynatici.loadVideoById?.(m.kaynak);
+    $("co-ses-baslik").textContent = `${medyaAdi(m)}`;
+    const kapak = $("co-ses-kapak");
+    kapak.innerHTML = m.kapak ? `<img src="${esc(m.kapak)}" alt="" loading="lazy">` : ikon("Headphones");
+    const bars = dalgaCubuklari(m).map((x) => `<i style="height:${Math.round(x * 100)}%"></i>`).join("");
+    $("co-dalga-bos").innerHTML = bars;
+    $("co-dalga-dolu").innerHTML = bars;
+    sesZamaniYaz();
+  }
+  function medyaGoster(m: CalismaMedyasi | null): void {
+    const yt = m?.tur === "youtube";
+    document.getElementById("co-oynatici-kap")?.toggleAttribute("hidden", !yt);
+    document.getElementById("co-ses")?.toggleAttribute("hidden", m?.tur !== "ses");
+    $("co-video-kab").dataset.ortam = m?.tur ?? "";
+  }
+  function medyaAktifEt(m: CalismaMedyasi): void {
+    medyaGoster(m);
+    if (m.tur === "youtube") {
+      try {
+        sesEl()?.pause();
+      } catch {
+        /* audio not ready */
+      }
+      if (ytOynatici) {
+        oynatici = ytOynatici;
+        const y = ytOynatici as YTOynatici & { cueVideoById?: (id: string) => void };
+        try {
+          (y.cueVideoById ?? y.loadVideoById)?.call(y, m.kaynak);
+        } catch {
+          /* player not ready */
+        }
+      } else ytKur();
+    } else {
+      try {
+        ytOynatici?.pauseVideo?.();
+      } catch {
+        /* player not ready */
+      }
+      sesAc(m);
+      oynatici = sesOynatici;
+    }
+  }
+  function videoKur(): void {
+    if (video) medyaAktifEt(video);
     setInterval(() => {
       if (!oynatici || document.hidden || !video) return;
       try {
         const sn = oynatici.getCurrentTime();
-        // Zaman değişmedikçe (video henüz başlamadı) elle seçilen konu bozulmaz
+        // Zaman değişmedikçe (medya henüz başlamadı) elle seçilen konu bozulmaz
         if (Number.isFinite(sn) && sn !== sonOynaticiSn) {
           sonOynaticiSn = sn;
           guncelle(sn);
@@ -500,16 +664,25 @@ export function calismaOdasiBaslat(): void {
     addEventListener("offline", () => bildirim(true));
   }
 
+  // Seçici yalnız açık konunun geçtiği medyaları gösterir
   function videoSecCiz(): void {
     const kab = $("co-video-sec");
-    kab.hidden = videolar.length < 2;
-    if (videolar.length < 2) return;
-    kab.innerHTML = videolar
-      .map((v) => `<button type="button" data-video-sec="${esc(v.kod)}" aria-pressed="${v.kod === video?.kod}" title="${esc(v.baslik)}">${esc(TUR_ADI[v.tur])}</button>`)
+    const konu = gorunenKonu();
+    const liste = konu ? videolar.filter((v) => v.konuAraliklari[konu]) : videolar;
+    kab.hidden = videolar.length < 2 || !liste.length;
+    if (kab.hidden) return;
+    kab.innerHTML = liste
+      .map((v) => `<button type="button" data-video-sec="${esc(v.id)}" aria-pressed="${v.id === video?.id}" title="${esc(v.baslik)}">${ikon(v.tur === "ses" ? "Headphones" : "Play")}${esc(medyaAdi(v))}</button>`)
       .join("");
   }
-  function videoDegistir(kod: string): void {
-    const yeni = videolar.findIndex((v) => v.kod === kod);
+  function medyaBilgisi(metin: string): void {
+    const el = document.getElementById("co-medya-bilgi");
+    if (!el) return;
+    el.textContent = metin;
+    el.hidden = !metin;
+  }
+  function videoDegistir(kod: string, oto = false): void {
+    const yeni = videolar.findIndex((v) => v.id === kod);
     if (yeni < 0 || yeni === vi) return;
     vi = yeni;
     video = videolar[vi];
@@ -518,20 +691,61 @@ export function calismaOdasiBaslat(): void {
     simdiSatir = -1;
     simdiKonu = null;
     secKonu = null;
-    try {
-      localStorage.setItem(videoAnahtari, video.kod);
-    } catch {
-      /* storage unavailable */
+    otoMedya = oto;
+    if (!oto) {
+      tercihMedya = video.id;
+      tercihCesit = video.cesit;
+      try {
+        localStorage.setItem(videoAnahtari, video.id);
+        localStorage.setItem(cesitAnahtari, video.cesit);
+      } catch {
+        /* storage unavailable */
+      }
     }
     const url = new URL(location.href);
-    url.searchParams.set("video", video.kod);
+    url.searchParams.set("video", video.id);
     history.replaceState(null, "", url);
-    if (oynatici?.loadVideoById) oynatici.loadVideoById(video.yt);
+    medyaAktifEt(video);
     videoSecCiz();
     dokumCiz();
     icindekilerCiz();
     suAnCiz();
     if (aktif === "dokum") scrollTo({ top: 0, behavior: "auto" });
+  }
+  // Açılan konuya göre medya: geçerli medyada varsa kalır; yoksa en uygun medyaya geçer ve tek satırla söyler
+  const CESIT_SIRASI: string[] = ["uzun-anlatim", "kisa-ozet", "soru-cozum", "diger"];
+  function medyaKonuyaUydur(no: string): boolean {
+    const adaylar = videolar.filter((v) => v.konuAraliklari[no]);
+    document.getElementById("co")?.classList.toggle("co-videosuz", adaylar.length === 0);
+    if (!adaylar.length) {
+      if (videolar.length) {
+        try {
+          oynatici?.pauseVideo?.();
+        } catch {
+          /* player not ready */
+        }
+        medyaBilgisi("Bu konu hiçbir videoda ya da seste geçmiyor; kitap metni gösteriliyor.");
+      }
+      return false;
+    }
+    if (!videolar.length) return false;
+    const oncekiAd = video ? medyaAdi(video) : "";
+    const tercih = tercihMedya ? adaylar.find((v) => v.id === tercihMedya) : undefined;
+    let hedef: CalismaMedyasi | undefined;
+    if (video && adaylar.includes(video)) {
+      // kendiliğinden geçilmişse ve elle seçilen medya bu konuyu da kapsıyorsa ona dön
+      hedef = otoMedya && tercih && tercih !== video ? tercih : video;
+    } else {
+      hedef =
+        (tercihCesit ? adaylar.find((v) => v.cesit === tercihCesit) : undefined) ??
+        CESIT_SIRASI.map((c) => adaylar.find((v) => v.cesit === c)).find(Boolean) ??
+        adaylar[0];
+    }
+    if (hedef && hedef !== video) {
+      videoDegistir(hedef.id, true);
+      medyaBilgisi(`Bu konu ${oncekiAd ? `${oncekiAd.toLocaleLowerCase("tr")} içinde yok; ` : ""}${medyaAdi(hedef).toLocaleLowerCase("tr")} açıldı.`);
+    } else medyaBilgisi("");
+    return true;
   }
 
   // ---------- Sınav ----------
@@ -762,16 +976,15 @@ export function calismaOdasiBaslat(): void {
     const v = paket.kavramlar[i];
     return !!v && yildizlar.some((y) => yildizKimligi(y) === yildizKimligi(v));
   };
-  const medyaEtiketi = (v: CalismaVideosu, bas: number): string => `${v.tur === "kisa-ozet" ? "Videoda" : TUR_ADI[v.tur]} ${saatYaz(bas)}`;
 
   function akisBlokIskeleti(no: string): string {
     const k = konuHaritasi.get(no)?.k;
     if (!k) return "";
     const cipler = videolar
       .map((v) => {
-        const kv = k.video[v.kod];
+        const kv = k.video[v.id];
         const satir = kv ? v.satirlar[kv.ilk] : null;
-        return satir ? `<button type="button" class="co-cip" data-ak-medya="${esc(v.kod)}" data-no="${esc(no)}">${ikon("Play")}${esc(medyaEtiketi(v, satir.bas))}</button>` : "";
+        return satir ? `<button type="button" class="co-cip" data-ak-medya="${esc(v.id)}" data-no="${esc(no)}">${ikon(v.tur === "ses" ? "Headphones" : "Play")}${esc(medyaCipEtiketi(v, saatYaz(satir.bas)))}</button>` : "";
       })
       .join("");
     return `<article class="co-ak-blok" id="ak-${esc(no)}" data-ak-konu="${esc(no)}" aria-labelledby="ak-b-${esc(no)}"><header class="co-ak-baslik"><button type="button" class="co-ak-ad" id="ak-b-${esc(no)}" data-ak-sar="${esc(no)}"><span class="co-no">${esc(no)}</span><span>${esc(k.baslik)}</span></button>${cipler ? `<div class="co-ak-cipler">${cipler}</div>` : ""}</header><div class="co-ak-govde" data-ak-govde></div></article>`;
@@ -946,7 +1159,8 @@ export function calismaOdasiBaslat(): void {
   }
   function medyaSar(no: string): void {
     const k = konuHaritasi.get(no)?.k;
-    const kv = k && video ? k.video[video.kod] : undefined;
+    medyaKonuyaUydur(no);
+    const kv = k && video ? k.video[video.id] : undefined;
     const satir = kv ? satirlar[kv.ilk] : undefined;
     if (!satir) return;
     try {
@@ -1224,7 +1438,7 @@ export function calismaOdasiBaslat(): void {
     const tam = koku.textContent ?? "";
     const hedef = koku.dataset.hedef ?? "";
     const cozulen = satirCoz(hedef);
-    const satirNo = cozulen && cozulen.kod === (video?.kod ?? "") ? cozulen.i : -1;
+    const satirNo = cozulen && cozulen.kod === (video?.id ?? "") ? cozulen.i : -1;
     const v: Vurgu = {
       id: `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 7)}`,
       hedef,
@@ -1310,10 +1524,28 @@ export function calismaOdasiBaslat(): void {
       }
       return;
     }
+    const sesDugme = t.closest<HTMLElement>("[data-ses]");
+    if (sesDugme) {
+      const el = sesEl();
+      if (!el) return;
+      const ad = sesDugme.dataset.ses;
+      if (ad === "oynat") return void (el.paused ? el.play().catch(() => undefined) : el.pause());
+      if (ad === "geri" || ad === "ileri") {
+        const hedef = Math.max(0, el.currentTime + (ad === "geri" ? -15 : 15));
+        el.currentTime = hedef;
+        return guncelle(hedef);
+      }
+      if (ad === "hiz") {
+        const sira = (SES_HIZLARI.indexOf(el.playbackRate) + 1) % SES_HIZLARI.length;
+        el.playbackRate = SES_HIZLARI[sira];
+        sesDugme.textContent = `${SES_HIZLARI[sira]}×`;
+      }
+      return;
+    }
     const akMedya = t.closest<HTMLElement>("[data-ak-medya]");
     if (akMedya) {
       const kodM = akMedya.dataset.akMedya ?? "";
-      if (video?.kod !== kodM) videoDegistir(kodM);
+      if (video?.id !== kodM) videoDegistir(kodM);
       elleKaydirdi = false;
       return medyaSar(akMedya.dataset.no ?? "");
     }
@@ -1491,7 +1723,7 @@ export function calismaOdasiBaslat(): void {
     if (!v) return;
     const c = satirCoz(v.hedef);
     if (c) {
-      if (video?.kod !== c.kod) videoDegistir(c.kod);
+      if (video?.id !== c.kod) videoDegistir(c.kod);
       sekmeGoster("dokum");
       const i = c.i;
       requestAnimationFrame(() => {

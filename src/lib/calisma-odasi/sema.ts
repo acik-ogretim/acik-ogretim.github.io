@@ -2,7 +2,7 @@
 import { z } from "zod";
 import { CalismaSemasi } from "../konu/calisma";
 
-export const KonuSemasi = z.object({
+const KonuTemel = z.object({
   no: z.string(),
   baslik: z.string(),
   unite: z.number(),
@@ -10,9 +10,9 @@ export const KonuSemasi = z.object({
   html: z.string(),
   metin: z.string(),
   calisma: CalismaSemasi.optional(),
-  /** Per video code: first line and number of lines where the video covers this topic. */
-  video: z.record(z.string(), z.object({ ilk: z.number(), say: z.number() })),
 });
+/** Per media id: first line and number of lines where that media covers the topic (derived from medya.konuAraliklari on load). */
+export const KonuSemasi = KonuTemel.extend({ video: z.record(z.string(), z.object({ ilk: z.number(), say: z.number() })) });
 export type CalismaKonu = z.infer<typeof KonuSemasi>;
 
 export const SatirSemasi = z.object({
@@ -29,33 +29,75 @@ export const SatirSemasi = z.object({
 });
 export type CalismaSatiri = z.infer<typeof SatirSemasi>;
 
-export const VideoTurleri = ["kisa-ozet", "uzun-ozet", "soru-cozum", "diger"] as const;
-export const TUR_ADI: Record<(typeof VideoTurleri)[number], string> = { "kisa-ozet": "Kısa özet", "uzun-ozet": "Uzun özet", "soru-cozum": "Soru çözümü", diger: "Video" };
-export const VideoSemasi = z.object({
-  kod: z.string(),
-  tur: z.enum(VideoTurleri),
+// Media kinds follow src/lib/ders-paketi/sema.ts (tur: youtube | ses, cesit: kisa-ozet | uzun-anlatim | soru-cozum | diger).
+export const MedyaCesitleri = ["kisa-ozet", "uzun-anlatim", "soru-cozum", "diger"] as const;
+export type MedyaCesidi = (typeof MedyaCesitleri)[number];
+export const CESIT_ADI: Record<MedyaCesidi, string> = { "kisa-ozet": "Kısa özet", "uzun-anlatim": "Uzun anlatım", "soru-cozum": "Soru çözümü", diger: "Medya" };
+export const CESIT_EKLI: Record<MedyaCesidi, string> = { "kisa-ozet": "Kısa özette", "uzun-anlatim": "Uzun anlatımda", "soru-cozum": "Soru çözümünde", diger: "Medyada" };
+const AralikSemasi = z.record(z.string(), z.object({ ilk: z.number(), say: z.number() }));
+export const MedyaSemasi = z.object({
+  id: z.string(),
+  tur: z.enum(["youtube", "ses"]),
+  cesit: z.enum(MedyaCesitleri),
   baslik: z.string(),
-  yt: z.string(),
-  url: z.string(),
+  /** YouTube video id, or the absolute https URL of the audio file. */
+  kaynak: z.string(),
   sure: z.number().nullable(),
+  unite: z.number().optional(),
+  kapak: z.string().optional(),
+  /** Peaks 0..1 for the audio waveform (optional). */
+  dalga: z.array(z.number()).optional(),
   satirlar: z.array(SatirSemasi),
+  konuAraliklari: AralikSemasi,
 });
-export type CalismaVideosu = z.infer<typeof VideoSemasi>;
+export type CalismaMedyasi = z.infer<typeof MedyaSemasi>;
+export type CalismaVideosu = CalismaMedyasi;
+
+/** Label of a media item in the selector: "Uzun anlatım · Ünite 3". */
+export const medyaAdi = (m: Pick<CalismaMedyasi, "cesit" | "unite">): string => `${CESIT_ADI[m.cesit]}${m.unite ? ` · Ünite ${m.unite}` : ""}`;
+/** Label of a topic chip: "Videoda 12:34", "Uzun anlatımda Ünite 2 · 08:10". */
+export const medyaCipEtiketi = (m: Pick<CalismaMedyasi, "cesit" | "unite" | "tur">, zaman: string): string => {
+  const yer = m.tur === "youtube" && m.cesit === "kisa-ozet" ? "Videoda" : CESIT_EKLI[m.cesit];
+  return m.unite ? `${yer} Ünite ${m.unite} · ${zaman}` : `${yer} ${zaman}`;
+};
 
 export const KavramSemasi = z.object({ terim: z.string(), tanim: z.string(), konu: z.string(), kaynak: z.enum(["etkinlik", "kitap"]) });
 export type CalismaKavrami = z.infer<typeof KavramSemasi>;
 
-export const PaketSemasi = z.object({
+const PaketTemel = z.object({
   ders: z.string(),
   uni: z.string(),
   uretim: z.string(),
-  videolar: z.array(VideoSemasi),
+  medyalar: z.array(MedyaSemasi),
   uniteler: z.array(z.object({ no: z.number(), baslik: z.string(), konular: z.array(z.string()) })),
-  konular: z.array(KonuSemasi),
+  konular: z.array(KonuTemel),
   kavramlar: z.array(KavramSemasi),
   sorular: z.record(z.string(), z.array(z.string())),
 });
-export type CalismaPaketi = z.infer<typeof PaketSemasi>;
+
+/** Bundles written before the media schema carry `videolar` (+ per-topic `video`): convert them on load. */
+function eskiyiCevir(ham: unknown): unknown {
+  const p = ham as { videolar?: Record<string, unknown>[]; medyalar?: unknown; konular?: { no: string; video?: Record<string, { ilk: number; say: number }> }[] };
+  if (!p || typeof p !== "object" || p.medyalar || !Array.isArray(p.videolar)) return ham;
+  const medyalar = p.videolar.map((v) => {
+    const kod = String(v.kod);
+    const aralik: Record<string, { ilk: number; say: number }> = {};
+    for (const k of p.konular ?? []) if (k.video?.[kod]) aralik[k.no] = k.video[kod];
+    return { id: kod, tur: "youtube", cesit: v.tur === "uzun-ozet" ? "uzun-anlatim" : v.tur, baslik: v.baslik, kaynak: v.yt, sure: v.sure ?? null, satirlar: v.satirlar, konuAraliklari: aralik };
+  });
+  const { videolar: _eski, ...kalan } = p as Record<string, unknown>;
+  void _eski;
+  return { ...kalan, medyalar };
+}
+
+export const PaketSemasi = z.preprocess(eskiyiCevir, PaketTemel).transform((p) => ({
+  ...p,
+  konular: p.konular.map((k) => ({
+    ...k,
+    video: Object.fromEntries(p.medyalar.flatMap((m) => (m.konuAraliklari[k.no] ? [[m.id, m.konuAraliklari[k.no]] as const] : []))),
+  })),
+}));
+export type CalismaPaketi = z.output<typeof PaketSemasi>;
 
 /** Index of the line playing at second `sn` (last line whose start is <= sn); -1 before the first. */
 export function satirBul(satirlar: { bas: number }[], sn: number): number {

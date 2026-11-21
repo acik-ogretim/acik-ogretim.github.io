@@ -26,7 +26,7 @@ export async function getStaticPaths() {
 
 const { paket, dersAdi, dersYolu } = Astro.props;
 const veriJson = JSON.stringify(paket).replace(/</g, "\\u003c");
-const simgeler: SimgeAdi[] = ["BookOpen", "CircleHelp", "FileText", "Highlighter", "Trash2", "Check", "X", "ChevronLeft", "ChevronRight", "ArrowRight", "WifiOff", "Play", "Link", "ExternalLink", "ListChecks", "Star", "Copy", "StickyNote", "Search", "Printer", "ArrowDown", "ChevronDown"];
+const simgeler: SimgeAdi[] = ["BookOpen", "CircleHelp", "FileText", "Highlighter", "Trash2", "Check", "X", "ChevronLeft", "ChevronRight", "ArrowRight", "WifiOff", "Play", "Link", "ExternalLink", "ListChecks", "Star", "Copy", "StickyNote", "Search", "Printer", "ArrowDown", "ChevronDown", "Headphones", "Pause", "RotateCcw", "RotateCw"];
 const sekmeler = [
   { id: "akis", ad: "Konu konu" },
   { id: "dokum", ad: "Döküm" },
@@ -38,7 +38,7 @@ const sekmeler = [
 ---
 
 <Layout noindex sekmeler={false} title={`${dersAdi} çalışma odası`} description={`${dersAdi} vize özet videosu, zaman kodlu döküm ve konu anlatımı.`}>
-  <div class={`co${paket.videolar.length ? "" : " co-videosuz"}`} id="co" data-ders={paket.ders} data-uni={paket.uni} data-ders-yolu={dersYolu}>
+  <div class={`co${paket.medyalar.length ? "" : " co-videosuz"}`} id="co" data-ders={paket.ders} data-uni={paket.uni} data-ders-yolu={dersYolu}>
     <header class="co-ust">
       <a href={dersYolu} class="co-geri" aria-label="Ders sayfasına dön"><Simge ad="ChevronLeft" size={22} /></a>
       <div class="co-baslik">
@@ -51,9 +51,10 @@ const sekmeler = [
     <div class="co-ana">
       <div class="co-sol">
         <div class="co-video-kab" id="co-video-kab">
-          <div class="co-video-sec" id="co-video-sec" role="group" aria-label="Video seç" hidden></div>
+          <div class="co-video-sec" id="co-video-sec" role="group" aria-label="Video ya da ses seç" hidden></div>
+          <p class="co-medya-bilgi" id="co-medya-bilgi" role="status" hidden></p>
           <div class="co-video">
-            {paket.videolar.length ? <div id="co-oynatici"></div> : <p class="co-video-yok">Bu ders için video yok.</p>}
+            {paket.medyalar.length ? <><div id="co-oynatici-kap"><div id="co-oynatici"></div></div><div class="co-ses" id="co-ses" hidden></div></> : <p class="co-video-yok">Bu ders için video yok.</p>}
           </div>
           <p class="co-bildirim" id="co-bildirim" role="status" hidden>
             <Simge ad="WifiOff" size={16} /><span>Video için internet gerekir. Döküm, konular, testler ve vurgular çalışır.</span>

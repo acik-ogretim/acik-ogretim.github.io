@@ -6,7 +6,7 @@
 // Ortam: KITAP_DIZINI (varsayılan ../ders-kitaplari), DOKUM_DIZINI (varsayılan ../auzeff-tui/data/ata-aof/yayin/dokum).
 // Node 22.18 ve üstü gerekir (TypeScript modüllerini doğrudan çalıştırır).
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync, statSync } from "node:fs";
-import { join, resolve } from "node:path";
+import { basename, join, resolve } from "node:path";
 import { konuyaEsle as hizalaKonu } from "./lib/konu-esle.mjs";
 
 const kok = resolve(import.meta.dirname, "..");
@@ -18,8 +18,8 @@ const UNI = "ataturk-aof";
 const videoKaydi = JSON.parse(readFileSync(join(kok, "src", "data", "youtube-videolar.json"), "utf8")).dersler ?? {};
 const videolu = Object.keys(videoKaydi).filter((k) => k.startsWith(`${UNI}/`)).map((k) => k.split("/")[1]);
 const DERSLER = [...new Set(videolu)];
-const TUR_ADLARI = { "kisa-ozet": "Kısa özet", "uzun-ozet": "Uzun özet", "soru-cozum": "Soru çözümü", diger: "Video" };
-const turBul = (baslik, ad = "") => (/soru/i.test(baslik + ad) ? "soru-cozum" : /uzun/i.test(baslik + ad) ? "uzun-ozet" : /özet|ozet|vize|kisa/i.test(baslik + ad) ? "kisa-ozet" : "diger");
+const TUR_ADLARI = { "kisa-ozet": "Kısa özet", "uzun-anlatim": "Uzun anlatım", "soru-cozum": "Soru çözümü", diger: "Video" };
+const turBul = (baslik, ad = "") => (/soru/i.test(baslik + ad) ? "soru-cozum" : /uzun/i.test(baslik + ad) ? "uzun-anlatim" : /özet|ozet|vize|kisa/i.test(baslik + ad) ? "kisa-ozet" : "diger");
 const SON_UNITE = 7;
 
 const parcala = await import("../src/lib/konu/parcala.ts");
@@ -216,21 +216,44 @@ function paketle(ders) {
     hizalaKonu(v.satirlar, konuListesi, { onbellekYolu: join(kok, "data", "calisma-odasi", "etiket", `${ders}-${v.kod}.json`) });
     if (v.tur === "soru-cozum") soruyaBagla(v.satirlar, soruVektorleri);
   }
-  const ilkVideo = videolar[0] ?? null;
-
-  // Videonun kapsadığı konular
-  for (const k of konuListesi) {
-    k.video = {};
-    for (const v of videolar) {
-      const ilgili = v.satirlar.filter((s) => s.konu === k.no && !s.y);
-      if (ilgili.length) k.video[v.kod] = { ilk: ilgili[0].i, say: ilgili.length };
+  // Sesler: medya ajanının sözleşmesi (data/calisma-odasi-medya/<ders>.json, dökümler <ders>/ klasöründe)
+  const medyaKok = join(kok, "data", "calisma-odasi-medya");
+  const sozlesme = join(medyaKok, `${ders}.json`);
+  if (existsSync(sozlesme)) {
+    for (const x of oku(sozlesme).medyalar ?? []) {
+      if (x.tur !== "ses" || !x.kaynak) continue;
+      const dokumYolu = join(medyaKok, ders, basename(x.dokum ?? ""));
+      const d = x.dokum && existsSync(dokumYolu) ? oku(dokumYolu) : null;
+      const satirlar = (d?.satirlar ?? []).map((b, i) => ({ i, bas: b.bas, bit: b.bit, k: b.konusmaci ?? "", m: b.metin, konu: b.konu ?? null, g: b.guven ?? 0 }));
+      // Konu etiketi yoksa ünitenin konularına sıralı hizalama (Gemini ve önbellek kullanılmaz)
+      if (satirlar.some((s) => !s.konu)) hizalaKonu(satirlar, x.unite ? konuListesi.filter((k) => k.unite === x.unite) : konuListesi, {});
+      videolar.push({ kod: x.id, ortam: "ses", tur: x.cesit ?? "uzun-anlatim", baslik: x.baslik, yt: x.kaynak, url: x.kaynak, sure: x.sure ?? null, unite: x.unite, kapak: x.kapak, satirlar });
     }
   }
+  const medyalar = videolar.map((v) => {
+    const konuAraliklari = {};
+    for (const k of konuListesi) {
+      const ilgili = v.satirlar.filter((s) => s.konu === k.no && !s.y);
+      if (ilgili.length) konuAraliklari[k.no] = { ilk: ilgili[0].i, say: ilgili.length };
+    }
+    return {
+      id: v.kod,
+      tur: v.ortam ?? "youtube",
+      cesit: v.tur,
+      baslik: v.baslik,
+      kaynak: v.yt,
+      sure: v.sure,
+      ...(v.unite ? { unite: v.unite } : {}),
+      ...(v.kapak ? { kapak: v.kapak } : {}),
+      satirlar: v.satirlar,
+      konuAraliklari,
+    };
+  });
   const veri = {
     ders,
     uni: UNI,
     uretim: new Date().toISOString().slice(0, 10),
-    videolar: videolar.map((v) => ({ kod: v.kod, tur: v.tur, baslik: v.baslik, yt: v.yt, url: v.url, sure: v.sure, satirlar: v.satirlar })),
+    medyalar,
     uniteler: uniteler.map((u) => ({ no: u.unite, baslik: u.baslik, konular: konuListesi.filter((k) => k.unite === u.unite).map((k) => k.no) })),
     konular: konuListesi.map(({ kitapKavramlari, ...k }) => {
       void kitapKavramlari;
@@ -250,7 +273,7 @@ function paketle(ders) {
   const satirSayisi = videolar.reduce((t, v) => t + v.satirlar.length, 0);
   const calismali = veri.konular.filter((k) => k.calisma).length;
   console.log(
-    `[calisma-odasi] ${ders}: ${veri.konular.length} konu (${calismali} çalışma malzemeli, ${etkinlikDosya} etkinlik dosyası), ${videolar.length} video, ${satirSayisi} satır, ${veri.kavramlar.length} kavram, ${kb} KB`,
+    `[calisma-odasi] ${ders}: ${veri.konular.length} konu (${calismali} çalışma malzemeli, ${etkinlikDosya} etkinlik dosyası), ${videolar.length} medya, ${satirSayisi} satır, ${veri.kavramlar.length} kavram, ${kb} KB`,
   );
 }
 

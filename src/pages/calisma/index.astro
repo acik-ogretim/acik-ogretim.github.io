@@ -5,7 +5,7 @@ import Simge from "../../components/Simge.astro";
 import { getCourses, getUniversities } from "../../lib/api";
 import { canonicalDepartments } from "../../lib/kanonik";
 
-const paketler = import.meta.glob<{ ders: string; uni: string; konular: unknown[]; video?: unknown; videolar?: unknown[] }>("../../data/calisma-odasi/*.json", { eager: true, import: "default" });
+const paketler = import.meta.glob<{ ders: string; uni: string; konular: unknown[]; video?: unknown; videolar?: unknown[]; medyalar?: unknown[] }>("../../data/calisma-odasi/*.json", { eager: true, import: "default" });
 const kanonik = await canonicalDepartments();
 const universiteler = await getUniversities();
 const kartlar: { ders: string; ad: string; uni: string; video: number; konu: number }[] = [];
@@ -14,7 +14,7 @@ for (const p of Object.values(paketler)) {
   const bolum = kanonik.get(`${p.uni}/${p.ders}`);
   let ad = p.ders;
   if (bolum) for (const c of await getCourses(p.uni, bolum)) if (c.id === p.ders) ad = c.name;
-  kartlar.push({ ders: p.ders, ad, uni: uni?.name ?? p.uni, video: p.videolar ? p.videolar.length : p.video ? 1 : 0, konu: p.konular.length });
+  kartlar.push({ ders: p.ders, ad, uni: uni?.name ?? p.uni, video: p.medyalar ? p.medyalar.length : p.videolar ? p.videolar.length : p.video ? 1 : 0, konu: p.konular.length });
 }
 kartlar.sort((a, b) => a.ad.localeCompare(b.ad, "tr"));
 ---
