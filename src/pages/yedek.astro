@@ -35,6 +35,32 @@ import { GOOGLE_CLIENT_ID } from "../lib/google-esitle";
               <button id="google-cikis" type="button" class="btn-secondary min-h-11 px-4 rounded-lg hidden">Çıkış yap</button>
             </div>
             <p id="google-durum" role="status" class="mt-3 text-sm text-ink-muted data-[durum=hata]:text-bad data-[durum=tamam]:text-ok"></p>
+            <details class="google-uyari mt-4 rounded-2xl border border-line bg-control">
+              <summary class="flex min-h-11 cursor-pointer items-center gap-2 px-4 text-sm font-semibold text-ink">
+                Google "uygulama doğrulanmadı" uyarısı gösterirse
+              </summary>
+              <div class="px-4 pb-4 text-sm text-ink-muted">
+                <p class="mb-3">
+                  Site Google'ın doğrulama sürecinde olduğu için bu ekran çıkıyor. Site yalnız Drive'ındaki, kendi kayıtlarını
+                  tuttuğu gizli klasöre erişir; dosyalarını, e-postalarını ya da kişilerini göremez. Doğrulama bitince uyarı kalkar.
+                </p>
+                <ol class="grid gap-4">
+                  <li>
+                    <p class="mb-2 text-ink"><strong>1.</strong> Sol alttaki <strong>Advanced</strong> (Gelişmiş) bağlantısına dokun.</p>
+                    <img src="/rehber/google/1-gelismis.webp" width="560" height="577" loading="lazy" decoding="async" class="w-full max-w-[320px] rounded-xl border border-line" alt="Google hasn't verified this app ekranı; sol altta Advanced bağlantısı, sağda Back to safety düğmesi." />
+                  </li>
+                  <li>
+                    <p class="mb-2 text-ink"><strong>2.</strong> Açılan kısmın en altındaki <strong>Go to acik-ogretim.github.io (unsafe)</strong> bağlantısına dokun.</p>
+                    <img src="/rehber/google/2-siteye-git.webp" width="560" height="761" loading="lazy" decoding="async" class="w-full max-w-[320px] rounded-xl border border-line" alt="Advanced açıldıktan sonraki ekran; en altta Go to acik-ogretim.github.io (unsafe) bağlantısı." />
+                  </li>
+                  <li>
+                    <p class="mb-2 text-ink"><strong>3.</strong> "Make sure you trust acik-ogretim.github.io" ekranında <strong>Continue</strong> (Devam) düğmesine dokun. Eşitleme kendiliğinden başlar.</p>
+                    <img src="/rehber/google/3-devam.webp" width="560" height="950" loading="lazy" decoding="async" class="w-full max-w-[320px] rounded-xl border border-line" alt="Make sure you trust acik-ogretim.github.io ekranı; altta Cancel ve Continue düğmeleri." />
+                  </li>
+                </ol>
+                <p class="mt-3">İzni istediğin zaman Google Hesabı ayarlarından ya da bu sayfadaki <strong>Çıkış yap</strong> ile geri alabilirsin.</p>
+              </div>
+            </details>
           </section>
         )}
         <section class="content-card">
