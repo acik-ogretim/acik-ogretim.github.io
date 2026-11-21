@@ -1184,6 +1184,34 @@ import Layout from "../layouts/Layout.astro";
                     çubuk kapalıyken sağ alttaki yuvarlak düğme aynı işi görür.
                 </div>
             </section>
+            <!-- Çevrimdışı -->
+            <section
+                id="cevrimdisi"
+                class="content-card bg-page border border-line p-8 rounded-2xl shadow-xl mt-12 scroll-mt-24"
+            >
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="icon-box bg-accent-soft text-accent-ink p-3 rounded-xl">
+                        <Simge ad="WifiOff" />
+                    </div>
+                    <h2 class="text-2xl font-bold text-ink">İnternet olmadan çalış</h2>
+                </div>
+                <p class="text-ink-muted mb-4 text-lg leading-relaxed">
+                    Siteyi bir kez açtığında ana sayfa, üniversite ve bölüm listeleri, Derslerim, Ara, İlerleme ve
+                    Ayarlar cihazına kaydedilir; bağlantı gidince de açılır. Bir dersi çalışmak için o dersin
+                    sayfasında <strong>Çevrimdışı için indir</strong> düğmesine dokun. Ders, soruları, görselleri ve sohbetin
+                    okuduğu verisiyle iner; ilerleme yüzdesi ve boyutu görünür. İndirme yarıda kalırsa bir sonraki
+                    dokunuşta kaldığı yerden sürer.
+                </p>
+                <ul class="list-disc list-inside space-y-2 ml-4 text-ink-muted">
+                    <li><strong>Derslerim</strong>'de <strong>Yıldızlı dersleri çevrimdışı tut</strong> açıksa yıldızladığın dersler bağlantı varken kendiliğinden iner ve güncel kalır.</li>
+                    <li><a href="/cevrimdisi/" class="underline text-accent-ink">Çevrimdışı</a> sayfası indirdiğin dersleri, boyutlarını ve indirme tarihlerini listeler. Buradan tek tek ya da hepsini silebilir, kullanılan alanı görebilir ve tarayıcıdan kalıcı depolama izni isteyebilirsin.</li>
+                    <li>Sitede bir dersin soruları değişince satırda ve dersin sayfasında <strong>Güncelleme var</strong> yazar; <strong>Güncelle</strong> ile tek dokunuşta yenilenir.</li>
+                    <li>Sitenin yeni sürümü gelince üstte <strong>Yeni sürüm hazır</strong> çıkar. Sayfa sen <strong>Yenile</strong> düğmesine dokunana kadar değişmez.</li>
+                    <li>Çevrimdışıyken üst çubukta küçük bir bağlantı yok simgesi görünür; cihazında olmayan sayfaların bağlantıları soluklaşır. Sohbet ve Google eşitlemesi bağlantı gelince sürer; cevapların ve kaldığın yer çevrimdışında da kaydedilir.</li>
+                    <li><strong>iPhone ve iPad</strong>: Safari, ana ekrana eklenmemiş sitelerin kaydettiği dosyaları yedi gün açılmazsa silebilir. Siteyi Paylaş menüsünden <strong>Ana Ekrana Ekle</strong> ile ekle ve oradan aç; ana ekrandaki uygulamanın verisi bu kurala girmez.</li>
+                </ul>
+            </section>
+
             <!-- PWA / Kurulum Bölümü -->
             <section
                 id="kurulum"
