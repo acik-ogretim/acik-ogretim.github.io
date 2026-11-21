@@ -158,7 +158,7 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
 
       <!-- Course card: name, code, exam years and the course's resources -->
       <section class="ders-giris" aria-labelledby="ders-adi">
-        <h1 id="ders-adi" class="font-serif text-[22px] md:text-3xl font-semibold leading-tight text-ink line-clamp-2">{course.name}</h1>
+        <h1 id="ders-adi" class="text-[22px] md:text-3xl font-semibold leading-tight text-ink line-clamp-2">{course.name}</h1>
         <p class="mt-1 text-[13px] text-ink-muted line-clamp-2">
           {university.shortName} · <span class="font-mono">{course.code}</span> · {course.semester}. dönem
         </p>
@@ -250,7 +250,7 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
                 class={`mb-16 ${idx > 0 ? "mt-24" : ""} unit-separator`}
                 data-unit={unit}
               >
-                <h2 class="font-serif text-xl md:text-2xl font-semibold text-ink border-b border-line pb-2 mb-6">
+                <h2 class="text-xl md:text-2xl font-semibold text-ink border-b border-line pb-2 mb-6">
                   {unit === 0 ? "Ünitesi belirlenmemiş sorular" : `Ünite ${unit}`}
                   {unit !== 0 && uniteAdi.get(unit) && (
                     <span class="block text-base md:text-lg font-semibold text-theme mt-1 line-clamp-2">

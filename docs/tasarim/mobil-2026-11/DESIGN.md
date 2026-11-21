@@ -1,7 +1,7 @@
 ---
 name: Açık Öğretim Portal
 version: 2 (21 Kasım 2026)
-summary: Sürü panosunun sakin tonları üstünde mobil öncelikli çalışma uygulaması; koyu ve açık eş değer, tek vurgu, uzun okuma için serif başlık.
+summary: Sürü panosunun sakin tonları üstünde mobil öncelikli çalışma uygulaması; koyu ve açık eş değer, tek vurgu, her yerde okunaklı sistem yazısı.
 themes: [light, dark, sepia]
 colors:
   light:
@@ -44,7 +44,6 @@ colors:
     warning-bg: '#2A2416'
   sepia: mevcut değerler korunur (global.css [data-theme='sepia']); eksik dört rol aşağıdaki kuralla türetilir
 typography:
-  display: { family: 'ui-serif, "Iowan Old Style", "Source Serif 4", Georgia, serif', weight: 600 }
   sans: { family: 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' }
   mono: { family: 'ui-monospace, "SF Mono", Menlo, monospace' }
   scale:
@@ -84,7 +83,7 @@ Gece çalışan, telefonda soru çözen ve dinleyen yetişkin öğrenci için sa
 
 **Kontrast** (WCAG oranı, hesaplandı): açık temada metin 17,8, ikincil metin 7,8, vurgu üstü beyaz yazı 5,9, vurgu metni 7,0, doğru 5,3, yanlış 5,4, uyarı 5,9; koyu temada metin 16,8, ikincil metin kartta 6,9, vurgu üstü yazı 8,1, doğru 8,0, yanlış 6,6, uyarı 8,2. Hepsi 4,5'in üstünde.
 
-**Tailwind sınıfları**: bileşenler renk için yalnız rol sınıflarını kullanır; `global.css` içindeki `@theme inline` bloğu bunları rol değişkenlerine bağlar. Zemin `bg-page`, kart `bg-card`, iç yüzey ve pasif düğme `bg-control`, açılan yüzey `bg-raised`, kenar `border-line` ve `border-line-strong`, metin `text-ink` ve `text-ink-muted`, vurgu `bg-accent` (üstünde `text-on-accent`), vurgu metni `text-accent-ink`, seçili zemin `bg-accent-soft`, öğrenme renkleri `ok`, `bad`, `warn` ve `-soft` eşleri, cam `bg-glass`, perde `bg-scrim`, serif `font-serif`. `slate-800`, `teal-500`, `white` gibi sabit renk sınıfı ve `dark:` öneki kullanılmaz; eski sınıflar `scripts/tema_siniflari.py` ile çevrilir.
+**Tailwind sınıfları**: bileşenler renk için yalnız rol sınıflarını kullanır; `global.css` içindeki `@theme inline` bloğu bunları rol değişkenlerine bağlar. Zemin `bg-page`, kart `bg-card`, iç yüzey ve pasif düğme `bg-control`, açılan yüzey `bg-raised`, kenar `border-line` ve `border-line-strong`, metin `text-ink` ve `text-ink-muted`, vurgu `bg-accent` (üstünde `text-on-accent`), vurgu metni `text-accent-ink`, seçili zemin `bg-accent-soft`, öğrenme renkleri `ok`, `bad`, `warn` ve `-soft` eşleri, cam `bg-glass`, perde `bg-scrim`. `slate-800`, `teal-500`, `white` gibi sabit renk sınıfı ve `dark:` öneki kullanılmaz; eski sınıflar `scripts/tema_siniflari.py` ile çevrilir.
 
 **Vurgu seçenekleri**: Ayarlar'da mavi (varsayılan), kehribar, kiremit ve nötr; `html[data-vurgu]` yalnız `--primary-*` rollerini değiştirir, öğrenme renkleri sabit kalır. Her seçeneğin açık ve koyu değeri `global.css` içindedir.
 
@@ -92,9 +91,9 @@ Gece çalışan, telefonda soru çözen ve dinleyen yetişkin öğrenci için sa
 
 ## 3. Tipografi
 
-**Aileler**: başlık ve soru metni serif (`display`), arayüz sistem yazı tipi (`sans`), sayılar ve kod eşaralıklı ya da `tabular-nums`. Ek yazı tipi indirilmez; sistem yazı tiplerinde Türkçe glifler (ÇĞİÖŞÜ çğıöşü, I İ ı i) tamdır.
+**Aileler**: başlık, soru metni ve arayüz aynı sistem yazı tipinde (`sans`); okunabilirlik önceliklidir, serif kullanılmaz. Sayılar ve kod eşaralıklı ya da `tabular-nums`. Ek yazı tipi indirilmez; sistem yazı tiplerinde Türkçe glifler (ÇĞİÖŞÜ çğıöşü, I İ ı i) tamdır.
 
-**Ölçek**: büyük başlık 36, ekran başlığı 22 serif, çubuk başlığı 17 sans 700, soru 18/1,55 serif, okuma gövdesi 18/1,7, gövde 16/1,5, meta 13. Kullanıcının yazı boyutu ayarı (`yazi-boyutu`) kökte ölçek çarpanı olarak uygulanır.
+**Ölçek**: büyük başlık 36, ekran başlığı 22 sans 600, çubuk başlığı 17 sans 700, soru 17/1,6 sans 500, okuma gövdesi 18/1,7, gövde 16/1,5, meta 13. Kullanıcının yazı boyutu ayarı (`yazi-boyutu`) kökte ölçek çarpanı olarak uygulanır.
 
 **Satır sınırı**: başlık, meta ve liste satırı en çok 2 satır, sonra üç nokta. Soru, şık, açıklama ve okuma metni kesilmez, 60 karakter ölçüyle sarılır.
 
@@ -110,7 +109,7 @@ Gece çalışan, telefonda soru çözen ve dinleyen yetişkin öğrenci için sa
 
 ## 5. Bileşenler
 
-**Soru** (`.question-card`): kutusuz. Kart yüzeyi, kenar ve köşe yok; soru doğrudan zeminde durur. Sorular arasında 1 px `--border-color` ayraç ve 20 px boşluk. Üstte `.q-label` (sınav çipi, kaynak), varsa konu bağlantısı (`.q-konu`, yalnız konu ağacı olan derste), soru metni (`.question-text`, serif 18), şıklar, açıklama. Dokunulan öğeler (şıklar) kenarlı kalır; soru metni ve etiketleri kutuya girmez. Listede tekrarlanır; tek soru ekranı yoktur.
+**Soru** (`.question-card`): kutusuz. Kart yüzeyi, kenar ve köşe yok; soru doğrudan zeminde durur. Sorular arasında 1 px `--border-color` ayraç ve 20 px boşluk. Üstte `.q-label` (sınav çipi, kaynak), varsa konu bağlantısı (`.q-konu`, yalnız konu ağacı olan derste), soru metni (`.question-text`, sans 17, 500), şıklar, açıklama. Dokunulan öğeler (şıklar) kenarlı kalır; soru metni ve etiketleri kutuya girmez. Listede tekrarlanır; tek soru ekranı yoktur.
 
 **Şık** (`.option-item`, `.option-key`): en az 56 px, 16 px köşe, 1 px kenar. Harf rozeti 32 px daire. Durumlar: varsayılan, seçili (`--primary-soft` zemin, `--primary-text` rozet), doğru (`.is-correct`, `.was-revealed`: doğru kenar ve zemin, onay simgesi), yanlış (`.is-wrong`: yanlış kenar ve zemin, çarpı), soluk (cevaptan sonra diğerleri %70). Renk tek başına anlam taşımaz, simge de vardır.
 
@@ -132,7 +131,7 @@ Gece çalışan, telefonda soru çözen ve dinleyen yetişkin öğrenci için sa
 
 **Liste satırı**: en az 60 px, başlık 2 satır, altında 6 px nötr ilerleme şeridi, sağda tabular yüzde.
 
-**Kahraman kart** (Bugün, kaldığın yer): 28 px köşe, serif ders adı, ünite ve soru satırı, ince nötr ilerleme, sağda tek vurgulu yuvarlak devam düğmesi.
+**Kahraman kart** (Bugün, kaldığın yer): 28 px köşe, kalın ders adı, ünite ve soru satırı, ince nötr ilerleme, sağda tek vurgulu yuvarlak devam düğmesi.
 
 **Süzgeç alt sayfası** (ders bağlamlı): soru türü (yanlışlar, cevaplanmamışlar), kaynak, sınav, ünite; `quiz-settings` alanlarını kullanır.
 
@@ -152,7 +151,7 @@ Rutin geçişler 300 ms altında, eğri `cubic-bezier(.2,0,0,1)`. Basma `scale(.
 
 ## 9. İlkeler ve sınırlar
 
-**Koru**: kutusuz soru, tek vurgu, nötr ilerleme, serif soru metni, yüzen cam alt öğeler, eş merkezli köşeler, öğrenme renklerinin vurgudan bağımsızlığı, veride olmayan alanın çizilmemesi.
+**Koru**: kutusuz soru, tek vurgu, nötr ilerleme, okunaklı sans soru metni, yüzen cam alt öğeler, eş merkezli köşeler, öğrenme renklerinin vurgudan bağımsızlığı, veride olmayan alanın çizilmemesi.
 
 **Kaçın**: yan şerit, gradyan, gölgeli kart yığını, mor ve turkuaz, saf siyah ve keskin beyaz, her yüzeyde vurgu, sahte veri (seri, haftalık grafik, sınav geri sayımı veri gelmeden), sabit Tailwind renk sınıfı (`text-slate-*`, `bg-teal-*` gibi), temadan bağımsız sabit koyu yüzey.
 

@@ -423,7 +423,6 @@
     --color-warn-soft: var(--warning-bg);
     --color-glass: var(--glass);
     --color-scrim: var(--scrim);
-    --font-serif: ui-serif, "Iowan Old Style", "Source Serif 4", Georgia, serif;
 }
 
 body {
@@ -1445,7 +1444,7 @@ html[data-uyari-kapali] #uyari-seridi {
 }
 
 
-/* ---- Tema 17 bileşenleri (DESIGN.md §5). Ders sayfası: kutusuz soru, yumuşak durumlar, serif metin ---- */
+/* ---- Tema 17 bileşenleri (DESIGN.md §5). Ders sayfası: kutusuz soru, yumuşak durumlar, okunaklı sans metin ---- */
 .question-card {
     background: none;
     backdrop-filter: none;
@@ -1457,7 +1456,7 @@ html[data-uyari-kapali] #uyari-seridi {
 }
 .question-card:last-child { border-bottom: 0; }
 .q-label { font-family: inherit; text-transform: none; letter-spacing: 0; font-size: 0.8125rem; font-weight: 600; }
-.question-text { font-family: var(--font-serif); font-weight: 400; font-size: 1.125rem; line-height: 1.55; }
+.question-text { font-weight: 500; font-size: 1.0625rem; line-height: 1.6; }
 .option-item { border-width: 1px; border-radius: 1rem; min-height: 3.5rem; align-items: center; background-color: var(--card-bg); }
 .option-key { border-radius: 999px; border-width: 1px; background-color: var(--button-bg); }
 .option-item:hover { border-color: var(--border-color-hover); }
@@ -1597,7 +1596,7 @@ label.ayar-satir > .ayar-ad:first-child { flex: 1; min-width: 0; }
 
 /* ---- Sekme sayfaları (Derslerim, Ara, İlerleme, Ayarlar) ---- */
 .sekme-sayfa { width: 100%; max-width: 680px; margin: 0 auto; padding: 20px 16px 32px; }
-.sekme-baslik { font-family: var(--font-serif); font-size: 28px; line-height: 1.1; font-weight: 600; color: var(--text-color); margin-bottom: 16px; }
+.sekme-baslik { font-size: 28px; line-height: 1.1; font-weight: 600; color: var(--text-color); margin-bottom: 16px; }
 .sekme-alt { margin-top: -10px; margin-bottom: 16px; font-size: 13px; color: var(--text-color-muted); }
 .liste-satir { display: flex; align-items: center; gap: 12px; min-height: 64px; padding: 10px 2px; border-bottom: 1px solid var(--border-color); color: var(--text-color); }
 .liste-satir-govde { min-width: 0; flex: 1; }
