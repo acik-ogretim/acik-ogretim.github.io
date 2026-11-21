@@ -160,6 +160,8 @@ const KONTROL: Record<string, string> = {
 const sinavYillari = [...new Set(questions.flatMap((q) =>
   (q.sinavlar ?? (q.source === "cikmis-soru" && q.year ? [{ year: String(q.year), examType: "" }] : []))
     .map((s) => Number.parseInt(String(s.year), 10)).filter((y) => y > 1990)))].sort((a, b) => a - b);
+// Çalışma odası paketi olan derslerde "Ders anlatımı" düğmesi (paket: scripts/calisma-odasi-paketle.mjs)
+const calismaOdasiVar = Object.keys(import.meta.glob("../../../data/calisma-odasi/*.json")).some((k) => k.endsWith(`/${course.id}.json`));
 const yilMetni = sinavYillari.length === 0 ? "" : sinavYillari.length === 1
   ? `${sinavYillari[0]} sınavı`
   : `${sinavYillari[0]}-${sinavYillari[sinavYillari.length - 1]} · ${sinavYillari.length} yıl`;
@@ -249,6 +251,11 @@ const dersJsonLd = graf(
           <a href={`/${university.id}/${department.id}/${course.id}/materyaller`} class="eylem-cip">
             <Simge ad="BookOpen" size={18} />Materyaller
           </a>
+          {calismaOdasiVar && (
+            <a href={`/calisma/${course.id}/`} class="eylem-cip" data-ders-anlatimi>
+              <Simge ad="Play" size={18} />Ders anlatımı
+            </a>
+          )}
           {videoVar && (
             <button type="button" id="video-ac" class="eylem-cip" aria-expanded="false" aria-controls="video-ozet">
               <Simge ad="Play" size={18} />Video özeti
