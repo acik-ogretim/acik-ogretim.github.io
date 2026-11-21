@@ -128,6 +128,10 @@ export const questionSchema = z.object({
     // Every exam the question appeared in, newest first (year is the academic year: 2024-2025)
     // kitapcik: the booklet within that exam when one exam had several (e.g. "Güz", "İşletme", "2. kitapçık")
     sinavlar: z.array(z.object({ year: z.string(), examType: ExamTypeEnum.catch('genel'), kitapcik: z.string().optional() })).default([]),
+    // Kaynaklar bu soruda çelişiyor: öğrenciye "soruyu ve cevabı kontrol edin" işareti gösterilir
+    // cevap-celiskisi: şıklar aynı, kaynaklar farklı şıkkı doğru diyor; sik-farkli: şıklar kısmen farklı;
+    // kaynak-celiskili: aynı kaynak soruya farklı yerlerde farklı cevap vermiş
+    kontrol: z.enum(['cevap-celiskisi', 'sik-farkli', 'kaynak-celiskili']).optional().catch(undefined),
     difficulty: DifficultyEnum.default('orta'),
     topics: z.array(z.string()).default([]),
 });

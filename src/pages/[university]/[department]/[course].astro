@@ -4,13 +4,13 @@ import AISettings from "../../../components/AISettings.astro";
 import AIMenu from "../../../components/AIMenu.astro";
 import Layout from "../../../layouts/Layout.astro";
 import YouTubeVideolari from "../../../components/YouTubeVideolari.astro";
-import { Check, X } from "lucide-react";
+import { Check, TriangleAlert, X } from "lucide-react";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 // Icons go into one <symbol> sprite per page and every answer option points at it with <use>:
 // an inline SVG per option added megabytes per page and pushed the Pages artifact past 10 GB.
 const inner = (icon: typeof Check) => renderToStaticMarkup(createElement(icon)).replace(/^<svg[^>]*>|<\/svg>$/g, "");
-const iconSprite = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner(Check)}</symbol><symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner(X)}</symbol><symbol id="i-more" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></symbol></svg>`;
+const iconSprite = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner(Check)}</symbol><symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner(X)}</symbol><symbol id="i-uyari" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner(TriangleAlert)}</symbol><symbol id="i-more" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></symbol></svg>`;
 const checkSvg = '<svg aria-hidden="true"><use href="#i-check"/></svg>';
 const xSvg = '<svg aria-hidden="true"><use href="#i-x"/></svg>';
 import SohbetCekmece from "../../../components/sohbet/SohbetCekmece.tsx";
@@ -119,6 +119,11 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: Sin
     gruplar.set(ad, k);
   }
   return [...gruplar].map(([ad, k]) => (k.size ? `${ad} (${[...k].join(", ")})` : ad)).join(", ");
+};
+const KONTROL: Record<string, string> = {
+  "cevap-celiskisi": "Kaynaklar bu soruda farklı şıkkı doğru gösteriyor.",
+  "sik-farkli": "Bu soru kaynaklarda farklı şıklarla geçiyor.",
+  "kaynak-celiskili": "Kaynak bu soruya farklı yerlerde farklı cevap vermiş.",
 };
 const examKeys = (q: { year?: string | number; examType?: string; source?: string; sinavlar?: SinavEtiket[] }) =>
   [...new Set((q.sinavlar ?? (q.source === "cikmis-soru" && q.year ? [{ year: String(q.year), examType: q.examType ?? "genel" }] : []))
@@ -340,6 +345,13 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
                         Soru {qIdx + 1}
                         {q.source === "cikmis-soru" && q.year && (
                           <span class="normal-case tracking-normal"> · {examLine(q)}</span>
+                        )}
+                        {q.kontrol && (
+                          <span class="q-kontrol normal-case tracking-normal inline-flex items-center gap-1 ml-1 align-middle text-amber-700 dark:text-amber-400" data-kontrol={q.kontrol} title={KONTROL[q.kontrol]}>
+                            <svg class="w-3.5 h-3.5 shrink-0" aria-hidden="true"><use href="#i-uyari" /></svg>
+                            <span>kontrol edin</span>
+                            <span class="sr-only">: {KONTROL[q.kontrol]} Soruyu ve cevabı kontrol edin.</span>
+                          </span>
                         )}
                       </h3>
                       {q.section && konuAdi.has(q.section) && (
