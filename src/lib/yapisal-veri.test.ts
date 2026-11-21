@@ -7,7 +7,7 @@ describe("JSON-LD üreticileri", () => {
   it("ana sayfa grafı geçerli; arama /ara/?q= adresine gider", () => {
     const g = graf(organizasyon(SITE), webSitesi(SITE));
     expect(yapisalVeriDenetle(g)).toEqual([]);
-    const site = g["@graph"][1] as { potentialAction: { target: { urlTemplate: string } } };
+    const site = g["@graph"][1] as unknown as { potentialAction: { target: { urlTemplate: string } } };
     expect(site.potentialAction.target.urlTemplate).toBe(`${SITE}/ara/?q={search_term_string}`);
   });
 
@@ -32,7 +32,7 @@ describe("JSON-LD üreticileri", () => {
       }),
     );
     expect(yapisalVeriDenetle(g)).toEqual([]);
-    const kaynak = g["@graph"][1] as { learningResourceType: string[]; about: { "@type": string } };
+    const kaynak = g["@graph"][1] as unknown as { learningResourceType: string[]; about: { "@type": string } };
     expect(kaynak.learningResourceType).toEqual(["Çıkmış sınav soruları", "Alıştırma soruları"]);
     expect(kaynak.about["@type"]).toBe("Course");
   });
