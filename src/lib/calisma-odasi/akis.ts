@@ -1,5 +1,6 @@
 // "Konu konu" akışı için saf mantık: anlatım HTML'i, kitaptan dayanak paragrafı, zayıf konular, arama, yazdırma.
 // DOM bağlama: src/scripts/calisma-odasi.ts. Testler: calisma-odasi.test.ts.
+import { Marked } from "marked";
 import type { CalismaKavrami, CalismaKonu } from "./sema";
 
 export type AkisSoru = {
@@ -30,50 +31,30 @@ export function anlatimHtml(k: CalismaKonu): string {
     : "";
   return (c.ozet ? `<p class="co-ozet">${esc(c.ozet)}</p>` : "") + liste("Temel noktalar", c.temelNoktalar) + sebep + liste("Örnekler", c.ornekler) + liste("Benzetmeler", c.benzetmeler);
 }
-/** Minimal, escaped Markdown for generated topic explanations: "### " subheadings, "- " and "1. " lists, **bold**, paragraphs. */
-export function mdHtml(md: string): string {
-  const satir = (x: string): string => esc(x).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
-  const out: string[] = [];
-  let liste: "ul" | "ol" | null = null;
-  let paragraf: string[] = [];
-  const paragrafiKapat = (): void => {
-    if (paragraf.length) out.push(`<p>${paragraf.map(satir).join(" ")}</p>`);
-    paragraf = [];
-  };
-  const listeyiKapat = (): void => {
-    if (liste) out.push(`</${liste}>`);
-    liste = null;
-  };
-  for (const ham of md.split("\n")) {
-    const x = ham.trim();
-    const madde = /^[-*]\s+(.*)$/.exec(x);
-    const sirali = /^\d+[.)]\s+(.*)$/.exec(x);
-    const baslik = /^#{2,4}\s+(.*)$/.exec(x);
-    if (!x) {
-      paragrafiKapat();
-      listeyiKapat();
-    } else if (baslik) {
-      paragrafiKapat();
-      listeyiKapat();
-      out.push(`<h4 class="co-ak-h">${satir(baslik[1])}</h4>`);
-    } else if (madde || sirali) {
-      paragrafiKapat();
-      const tur = madde ? "ul" : "ol";
-      if (liste !== tur) {
-        listeyiKapat();
-        out.push(`<${tur} class="co-ak-liste">`);
-        liste = tur;
-      }
-      out.push(`<li>${satir((madde ?? sirali)![1])}</li>`);
-    } else {
-      listeyiKapat();
-      paragraf.push(x);
-    }
-  }
-  paragrafiKapat();
-  listeyiKapat();
-  return out.join("");
-}
+/** Generated topic explanations (Markdown) to HTML with marked. Raw HTML, links and images in the source are shown as
+ * text, so generated content cannot inject markup; headings become the block's subheadings. */
+const anlatimMarked = new Marked({
+  gfm: true,
+  renderer: {
+    html({ text }) {
+      return esc(text);
+    },
+    heading({ tokens }) {
+      return `<h4 class="co-ak-h">${this.parser.parseInline(tokens)}</h4>`;
+    },
+    list(token) {
+      const etiket = token.ordered ? "ol" : "ul";
+      return `<${etiket} class="co-ak-liste">${token.items.map((x) => this.listitem(x)).join("")}</${etiket}>`;
+    },
+    link({ tokens }) {
+      return this.parser.parseInline(tokens);
+    },
+    image({ text }) {
+      return esc(text);
+    },
+  },
+});
+export const mdHtml = (md: string): string => anlatimMarked.parse(md, { async: false });
 
 export const dusunHtml = (k: CalismaKonu): string =>
   k.calisma?.tartismaSorulari?.length

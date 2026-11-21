@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import { kavramMotoru } from "./kavram";
 import { satirBul } from "./sema";
 import { demirBul, demirle, vurgulariBirlestir, vurgulariOku } from "./vurgu";
+import { mdHtml } from "./akis";
 
 describe("satirBul", () => {
   const s = [{ bas: 0 }, { bas: 10 }, { bas: 25 }];
@@ -94,5 +95,20 @@ describe("konu konu akışı", () => {
     const k = { no: "1.1", baslik: "Giriş", unite: 1, sayfa: 1, html: "", metin: "kitap metni", video: {} };
     const html = uniteBaskiHtml(1, "Ünite", [k], [], new Map([["1.1", [soru("a", "1.1")]]]));
     expect(html.indexOf("Cevap anahtarı")).toBeGreaterThan(html.indexOf("Çıkmış sorular"));
+  });
+});
+
+describe("mdHtml", () => {
+  it("renders italic, bold, headings and lists without leaving Markdown marks", () => {
+    const html = mdHtml("### Alt başlık\n\n**Bouglé**'nın *Qu’est-ce que la sociologie?* eseri\n\n1. **Bir**: açıklama\n2. İki");
+    expect(html).toContain('<h4 class="co-ak-h">Alt başlık</h4>');
+    expect(html).toContain("<em>Qu’est-ce que la sociologie?</em>");
+    expect(html).toContain('<ol class="co-ak-liste">');
+    expect(html).not.toMatch(/\*|###/);
+  });
+  it("shows raw HTML and links from generated text as plain text", () => {
+    const html = mdHtml('<script>alert(1)</script> [bağlantı](https://ornek.test) <b onclick="x">kalın</b>');
+    expect(html).not.toMatch(/<script|<a |<b /);
+    expect(html).toContain("bağlantı");
   });
 });
