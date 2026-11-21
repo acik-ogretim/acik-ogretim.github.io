@@ -3,7 +3,7 @@ import Simge from "../components/Simge.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Kullanım Rehberi">
+<Layout title="Kullanım Rehberi" description="Açık Öğretim Portal kullanım rehberi: ders bulma, soru çözme, sesli okuma, süzgeç, kaldığın yerden devam, sohbet asistanı ve kayıtları cihazlar arasında taşıma.">
     <div class="page-header-wrapper">
         <!-- Background Accents -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
@@ -679,6 +679,56 @@ import Layout from "../layouts/Layout.astro";
                         alanı da yalnız pencereyi açtığında yüklenir.
                     </li>
                 </ul>
+            </section>
+
+            <!-- Yapay zekâ ajanlarıyla kullanım (WebMCP, deneysel) -->
+            <section
+                id="yapay-zeka-ajanlari"
+                class="content-card bg-page border border-line p-8 rounded-2xl shadow-xl mt-12 scroll-mt-24"
+            >
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="icon-box bg-accent-soft text-accent-ink p-3 rounded-xl">
+                        <Simge ad="Bot" />
+                    </div>
+                    <h2 class="text-2xl font-bold text-ink">
+                        Yapay zekâ ajanlarıyla kullanım
+                    </h2>
+                </div>
+                <p class="text-ink-muted mb-4 text-lg leading-relaxed">
+                    Tarayıcındaki yapay zekâ ajanına "Genel Psikoloji dersini aç,
+                    3. ünitedeki yanlışlarımı göster" diyebilirsin. Tarayıcı
+                    WebMCP destekliyorsa site ajana kendi araçlarını sunar; ajan
+                    ekrandaki düğmeleri tahmin etmek yerine bu araçları kullanır.
+                    Bu özellik deneyseldir: şimdilik Chrome'un deneme sürümlerinde
+                    çalışır, destek olmayan tarayıcıda hiçbir şey yüklenmez.
+                </p>
+                <ul class="list-disc list-inside space-y-2 ml-4 text-ink-muted">
+                    <li>
+                        <strong class="text-ink">Ders bulma:</strong> ders adı,
+                        kodu ya da bölümle arar ve dersi açar. Her üniversitenin
+                        dersi kendi sayfasında kalır.
+                    </li>
+                    <li>
+                        <strong class="text-ink">Ders sayfasında:</strong> üniteye
+                        ya da soruya gider, Süzgeç'i değiştirir (ünite, çıkmış soru,
+                        sınav, yanlışlarım), sesli okuma ve çözme kipi gibi menü
+                        eylemlerini çalıştırır.
+                    </li>
+                    <li>
+                        <strong class="text-ink">Kaldığın yer:</strong> bu cihazda
+                        kayıtlı son soruna döner.
+                    </li>
+                    <li>
+                        <strong class="text-ink">Gizlilik:</strong> araçlar yalnız
+                        tarayıcında çalışır, siteye veri göndermez ve cevaplarını
+                        silemez. Ayrıntı <a href="/gizlilik#yapay-zeka" class="text-accent-ink underline">gizlilik sayfasında</a>.
+                    </li>
+                </ul>
+                <p class="text-ink-muted mt-4">
+                    Yapay zekâ arama motorları için de her dersin kısa bir Markdown
+                    özeti vardır (ders sayfası adresinin sonuna <code>ozet.md</code>);
+                    sitenin genel tanıtımı <a href="/llms.txt" class="text-accent-ink underline">llms.txt</a> dosyasındadır.
+                </p>
             </section>
 
             <!-- Oyuncu Kontrolleri -->

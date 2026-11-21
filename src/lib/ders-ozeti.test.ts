@@ -64,6 +64,6 @@ describe("ders özeti", () => {
     expect(m.match(/   - Doğru cevap:/g)).toHaveLength(ORNEK_SORU_SAYISI);
     expect(m).toContain("Açıklama: Çünkü iki.");
     expect(m).toContain("## Atıf");
-    expect(m).not.toMatch(/[–—]/);
+    expect(m).not.toMatch(/[\u2013\u2014]/);
   });
 });

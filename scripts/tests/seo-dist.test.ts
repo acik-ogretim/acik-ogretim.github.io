@@ -117,6 +117,6 @@ describe.skipIf(!KOK)("derlenmiş site: arama ve ajan meta verisi", () => {
       expect(md.startsWith("# "), f).toBe(true);
       expect((md.match(/^ {3}- Doğru cevap:/gm) ?? []).length, f).toBeLessThanOrEqual(3);
     }
-    for (const f of ["robots.txt", "llms.txt", "llms-full.txt"]) expect(oku(path.join(KOK, f)), f).not.toMatch(/[–—]/);
+    for (const f of ["robots.txt", "llms.txt", "llms-full.txt"]) expect(oku(path.join(KOK, f)), f).not.toMatch(/[\u2013\u2014]/);
   });
 });

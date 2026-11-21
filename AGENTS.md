@@ -26,6 +26,13 @@ This file serves as the primary instruction manual for AI agents working on this
 *   `workers/sayac/` (`worker.js`, `sema.sql`, `kur.py`): visit counter Worker (Cloudflare + D1).
 *   `public/logo.svg`, `public/favicon.svg`: logo and favicon.
 *   The settings drawer is in `src/layouts/Layout.astro`; the provider form inside it is `SaglayiciAyarlari.tsx`, which also holds the links to /yedek, the guide, terms and privacy.
+*   Search and agent readiness (details, sources and decisions: [docs/yz-ve-ajan-hazirligi.md](docs/yz-ve-ajan-hazirligi.md)):
+    *   `src/components/SeoHead.astro` (rendered by `Layout.astro`; pass `description`, `noindex`, `jsonLd`, `markdown` to Layout): canonical, description, Open Graph, Twitter, JSON-LD, `llms.txt` link, and the WebMCP loader. Helpers in `src/lib/seo.ts`.
+    *   `src/lib/yapisal-veri.ts`: JSON-LD builders (Organization, WebSite, BreadcrumbList, LearningResource) and the Zod validator. Do not add FAQPage, HowTo, Quiz or top-level Course: Google has no eligible rich result for this Turkish site, and the validator fails on them.
+    *   `src/lib/site-haritasi.ts`: indexable catalog (canonical courses with questions) shared by `src/pages/sitemap-index.xml.ts`, `sitemap-sayfalar.xml.ts`, `sitemap-[university].xml.ts` (one sitemap per university), `robots.txt.ts` (`src/lib/robots.ts`), `llms.txt.ts` and `llms-full.txt.ts` (`src/lib/llms.ts`). `@astrojs/sitemap` is not used.
+    *   `src/pages/[university]/[department]/[course]/ozet.md.ts` + `src/lib/ders-ozeti.ts`: per-course Markdown summary (units, topics, counts, three sample questions). Never publish a course's full question set in one machine-readable file.
+    *   `src/lib/ajan-araclari.ts` (tool definitions, Zod v4 schemas, JSON Schema via `z.toJSONSchema`) + `src/lib/webmcp.ts` (registration on `document.modelContext`, fallback `navigator.modelContext`): experimental WebMCP tools that wrap `eylemler.ts`, `suzgec.ts` and `calisma-durumu.ts`. Loaded only when the browser has a model context. Clearing actions stay closed to agents.
+    *   Preview build for checking heads without the full 2 GB build: `ONIZLEME_BOLUMLERI="uni/dept,..." npx astro build --outDir dist-seo`, then `SEO_DIST=dist-seo npx vitest run scripts/tests/seo-dist.test.ts`; delete `dist-seo` afterwards. `public/google0d22887dbe37facb.html` is the Search Console verification file: keep it.
 
 ## 🛠️ Tech Stack & Environment
 *   **Framework:** Astro v5.16.6
