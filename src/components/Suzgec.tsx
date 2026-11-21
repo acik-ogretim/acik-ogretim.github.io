@@ -111,7 +111,7 @@ export default function Suzgec({ ders }: { ders: string }) {
           style={{ bottom: "var(--klavye, 0px)" }}
         >
           <Drawer.Popup
-            initialFocus={() => document.getElementById("suzgec-kapat") ?? true}
+            initialFocus={() => document.getElementById("suzgec-govde") ?? true}
             className="flex w-full max-w-lg flex-col overflow-hidden rounded-[28px] border border-line bg-glass text-ink shadow-2xl outline-none backdrop-blur-[22px] transition-transform duration-300 ease-[cubic-bezier(0.2,0,0,1)] motion-reduce:transition-none
               max-md:[transform:translateY(var(--drawer-swipe-movement-y))] max-md:data-starting-style:[transform:translateY(110%)] max-md:data-ending-style:[transform:translateY(110%)]
               md:h-full md:max-w-[420px] md:[transform:none] md:data-starting-style:[transform:translateX(110%)] md:data-ending-style:[transform:translateX(110%)]"
@@ -135,7 +135,7 @@ export default function Suzgec({ ders }: { ders: string }) {
                 <X className="size-5" aria-hidden />
               </button>
             </div>
-            <div data-base-ui-swipe-ignore="y" className="flex min-h-0 flex-1 flex-col gap-5 overflow-y-auto overscroll-contain px-4 pb-4 pt-3">
+            <div id="suzgec-govde" tabIndex={-1} data-base-ui-swipe-ignore="y" className="flex min-h-0 flex-1 flex-col gap-5 overflow-y-auto overscroll-contain px-4 pb-4 pt-3 outline-none">
               <Grup baslik="Soru türü">
                 <Cip secili={taslak.filterIncorrect} onClick={() => degistir({ filterIncorrect: !taslak.filterIncorrect })}>
                   Yanlışlarım · {yanlisSayisi}
