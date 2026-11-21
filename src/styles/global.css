@@ -624,10 +624,13 @@ body {
 }
 
 /* Base state for hidden answers */
+/* Hidden answer: look exactly like the other options (same surface as .option-item), so nothing gives it away */
 .hide-answers .correct-option:not(.is-correct):not(.is-wrong):not(.was-revealed) {
-    background-color: var(--button-bg) !important;
+    background-color: var(--card-bg) !important;
     border-color: var(--border-color) !important;
     color: var(--text-color) !important;
+    /* No fade from green when the mode switches to solving: the answer would flash for 150 ms */
+    transition: none !important;
 }
 
 .hide-answers .correct-option:not(.is-correct):not(.is-wrong):not(.was-revealed) .option-key {
