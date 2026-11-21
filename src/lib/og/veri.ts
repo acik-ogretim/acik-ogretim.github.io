@@ -7,7 +7,7 @@ import { katalog } from "../site-haritasi";
 import { courseDepartments } from "../kanonik";
 import { dereceAdi } from "../derece";
 import { cogunluklaAciklamali, dersSayilari, sayilariBirlestir, sinavTuruAdlari, yilAraligiMetni, type DersSayilari, type SoruKaydi } from "../ders-sayilari";
-import type { OgKarti } from "./cizim";
+import type { OgKarti, OgKutu } from "./cizim";
 
 const sayi = new Intl.NumberFormat("tr-TR", { useGrouping: "always" });
 export const bin = (n: number) => sayi.format(n);
@@ -64,24 +64,27 @@ export function dersGercegi(uniId: string, dersId: string): Promise<DersSayilari
 
 const toplam = async (uniId: string, dersIdleri: string[]) => sayilariBirlestir(await Promise.all(dersIdleri.map((d) => dersGercegi(uniId, d))));
 
+/** Detail tile: a bold figure with its label. */
+const kutu = (n: number, etiket: string): OgKutu[] => (n > 0 ? [{ baslik: bin(n), etiket }] : []);
+
 /**
- * Card facts shared by every level: the big number is the past-exam question count (practice questions
- * when a course has none), then the exam-year line, then a row of totals. Zero or missing values are left out.
+ * Card facts shared by every level: the big number is the past-exam question count (practice questions when a
+ * course has none), then the exam-year lines, and tiles for the side panel. Zero or missing values are left out.
  */
-export function olgular(d: DersSayilari, ek: string[] = [], dersDuzeyi = false): Pick<OgKarti, "buyuk" | "satirlar" | "ozet"> {
+export function olgular(d: DersSayilari, ek: OgKutu[] = [], dersDuzeyi = false): Pick<OgKarti, "buyuk" | "yil" | "kutular" | "ozet"> {
   const buyuk = d.cikmis > 0 ? { sayi: bin(d.cikmis), etiket: "çıkmış soru" } : d.soru > 0 ? { sayi: bin(d.soru), etiket: "alıştırma sorusu" } : undefined;
-  const yil = yilAraligiMetni(d);
-  const yilSatiri = yil ? (d.yillar.length > 1 ? `${yil} · ${d.yillar.length} yıl` : yil) : "";
+  const yilMetni = yilAraligiMetni(d);
+  const yil = !yilMetni ? [] : d.yillar.length > 1 ? [`${d.ilkYil} ile ${d.sonYil}`, `arası sınavlar · ${d.yillar.length} yıl`] : [yilMetni];
   const turler = dersDuzeyi ? sinavTuruAdlari(d) : [];
-  const toplamlar = [
-    ...(turler.length > 0 && turler.length <= 4 ? [turler.join(", ")] : []),
-    ...(d.cikmis > 0 && d.alistirma > 0 ? [`${bin(d.soru)} soru`] : []),
+  const kutular: OgKutu[] = [
+    ...(turler.length > 0 && turler.length <= 4 ? [{ baslik: turler.join(", "), etiket: "sınav türleri", kucuk: true }] : []),
+    ...(d.cikmis > 0 && d.alistirma > 0 ? kutu(d.soru, "soru") : []),
     ...ek,
-    ...(dersDuzeyi && d.unite > 0 ? [`${bin(d.unite)} ünite`] : []),
-    ...(dersDuzeyi && cogunluklaAciklamali(d) ? ["açıklamalı"] : []),
+    ...(dersDuzeyi ? kutu(d.unite, "ünite") : []),
+    ...(dersDuzeyi && cogunluklaAciklamali(d) ? [{ baslik: "Açıklamalı", etiket: "çözümler", kucuk: true }] : []),
   ];
-  const ozet = [buyuk ? `${buyuk.sayi} ${buyuk.etiket}` : "", yil].filter(Boolean).join(", ");
-  return { buyuk, satirlar: [yilSatiri, toplamlar.join(" · ")].filter(Boolean), ozet: ozet || undefined };
+  const ozet = [buyuk ? `${buyuk.sayi} ${buyuk.etiket}` : "", yilMetni].filter(Boolean).join(", ");
+  return { buyuk, yil, kutular, ozet: ozet || undefined };
 }
 
 let indeks: Promise<Map<string, OgKaydi>> | null = null;
@@ -108,14 +111,14 @@ async function indeksKur(): Promise<Map<string, OgKaydi>> {
       const t = sayilariBirlestir(await Promise.all(kat.map(uniToplami)));
       return {
         baslik: "Çıkmış sorular ve açıklamalı çözümler",
-        baglam: kat.map((k) => k.uni.shortName).join(" · "),
-        ...olgular(t, [`${bin(kat.length)} üniversite`, `${bin(dersSayisi)} ders`]),
+        sol: { liste: kat.map((k) => k.uni.shortName) },
+        ...olgular(t, [...kutu(kat.length, "üniversite"), ...kutu(dersSayisi, "ders")]),
       };
     },
   });
 
   for (const [slug, s] of Object.entries(STATIK_KARTLAR)) {
-    ekle({ dosya: `sayfa/${slug}`, sayfa: `/${slug}/`, alt: `${s.baslik}: Açık Öğretim Portal`, kart: async () => ({ baslik: s.baslik, baglam: s.baglam }) });
+    ekle({ dosya: `sayfa/${slug}`, sayfa: `/${slug}/`, alt: `${s.baslik}: Açık Öğretim Portal`, kart: async () => ({ baslik: s.baslik, sol: { ana: s.baglam } }) });
   }
 
   for (const k of kat) {
@@ -126,10 +129,8 @@ async function indeksKur(): Promise<Map<string, OgKaydi>> {
       alt: `${uni.name}: ${k.bolumler.length} bölüm, ${k.dersler.length} ders`,
       kart: async () => ({
         baslik: uni.name,
-        etiket: uni.shortName,
-        renk: uni.color,
-        baglam: uni.faculty,
-        ...olgular(await uniToplami(k), [`${bin(k.bolumler.length)} bölüm`, `${bin(k.dersler.length)} ders`]),
+        sol: { etiket: uni.shortName, renk: uni.color, ana: uni.faculty },
+        ...olgular(await uniToplami(k), [...kutu(k.bolumler.length, "bölüm"), ...kutu(k.dersler.length, "ders")]),
       }),
     });
     for (const b of k.bolumler) {
@@ -140,21 +141,19 @@ async function indeksKur(): Promise<Map<string, OgKaydi>> {
         alt: `${b.bolum.name} (${derece}), ${uni.shortName}: ${b.dersSayisi} ders`,
         kart: async () => ({
           baslik: b.bolum.name,
-          etiket: uni.shortName,
-          renk: uni.color,
-          baglam: derece,
-          ...olgular(await toplam(uni.id, k.dersler.filter((d) => d.bolum.id === b.bolum.id).map((d) => d.ders.id)), [`${bin(b.dersSayisi)} ders`, ...(b.bolum.duration > 0 ? [`${b.bolum.duration} dönem`] : [])]),
+          sol: { etiket: uni.shortName, renk: uni.color, ana: uni.name, alt: derece },
+          ...olgular(await toplam(uni.id, k.dersler.filter((d) => d.bolum.id === b.bolum.id).map((d) => d.ders.id)), [...kutu(b.dersSayisi, "ders"), ...kutu(b.bolum.duration, "dönem")]),
         }),
       });
     }
     for (const d of k.dersler) {
       const bolumler = ortak.get(`${uni.id}/${d.ders.id}`) ?? [];
-      const baglam = bolumler.length > 1 ? `Ortak ders · ${bolumler.length} bölüm` : d.bolum.name;
+      const sol = bolumler.length > 1 ? { ana: "Ortak ders", alt: `${bolumler.length} bölümde okutulur` } : { ana: d.bolum.name, alt: dereceAdi(d.bolum.degree) };
       ekle({
         dosya: `${uni.id}/${d.bolum.id}/${d.ders.id}`,
         sayfa: d.yol,
         alt: `${d.ders.name} dersi: ${uni.shortName}${bolumler.length > 1 ? "" : `, ${d.bolum.name}`}`,
-        kart: async () => ({ baslik: d.ders.name, etiket: uni.shortName, renk: uni.color, baglam, ...olgular(await dersGercegi(uni.id, d.ders.id), [], true) }),
+        kart: async () => ({ baslik: d.ders.name, sol: { etiket: uni.shortName, renk: uni.color, ...sol }, ...olgular(await dersGercegi(uni.id, d.ders.id), [], true) }),
       });
     }
   }

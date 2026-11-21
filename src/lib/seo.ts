@@ -9,6 +9,9 @@ export const PAYLASIM_GORSELI = { yol: "/og-logo-512.png", genislik: 512, yuksek
 /** Per-page share image drawn at build time (src/lib/og, endpoint src/pages/og). */
 export const PAYLASIM_KARTI = { genislik: 1200, yukseklik: 630, tur: "image/png" } as const;
 export const paylasimKartiYolu = (dosya: string) => `/og/${dosya}.png`;
+/** Square (800x800) second og:image, designed for square previews such as WhatsApp's. */
+export const PAYLASIM_KARESI = { genislik: 800, yukseklik: 800, tur: "image/png" } as const;
+export const paylasimKaresiYolu = (dosya: string) => `/og/kare/${dosya}.png`;
 export const DEPO_ADRESI = "https://github.com/acik-ogretim";
 
 /** Site origin without a trailing slash; the CI passes the Pages origin through `--site`. */

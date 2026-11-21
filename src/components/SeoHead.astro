@@ -1,7 +1,7 @@
 ---
 // Search, share and agent metadata for every page (Layout.astro renders it inside <head>).
 // docs/yz-ve-ajan-hazirligi.md explains each tag and the sources behind it.
-import { PAYLASIM_GORSELI, PAYLASIM_KARTI, SITE_ADI, jsonLdMetni, kanonikYol, kisalt, mutlakUrl, paylasimKartiYolu } from "../lib/seo";
+import { PAYLASIM_GORSELI, PAYLASIM_KARESI, PAYLASIM_KARTI, SITE_ADI, jsonLdMetni, kanonikYol, kisalt, mutlakUrl, paylasimKaresiYolu, paylasimKartiYolu } from "../lib/seo";
 import { ogAlt, ogIndeksi } from "../lib/og/veri";
 import type { JsonLdGraf } from "../lib/yapisal-veri";
 
@@ -24,6 +24,7 @@ const metin = kisalt(aciklama, 160);
 // Page-specific share card (1200x630) when the page has one; the square logo stays the fallback.
 const kart = (await ogIndeksi()).get(kanonikYol(Astro.url.pathname));
 const gorsel = mutlakUrl(site, kart ? paylasimKartiYolu(kart.dosya) : PAYLASIM_GORSELI.yol);
+const kare = kart ? mutlakUrl(site, paylasimKaresiYolu(kart.dosya)) : undefined;
 const boyut = kart ? PAYLASIM_KARTI : PAYLASIM_GORSELI;
 const gorselAlt = kart ? await ogAlt(kart) : `${SITE_ADI} logosu`;
 ---
@@ -42,6 +43,11 @@ const gorselAlt = kart ? await ogAlt(kart) : `${SITE_ADI} logosu`;
 <meta property="og:image:height" content={String(boyut.yukseklik)} />
 {kart && <meta property="og:image:type" content={PAYLASIM_KARTI.tur} />}
 <meta property="og:image:alt" content={gorselAlt} />
+{kare && <meta property="og:image" content={kare} />}
+{kare && <meta property="og:image:width" content={String(PAYLASIM_KARESI.genislik)} />}
+{kare && <meta property="og:image:height" content={String(PAYLASIM_KARESI.yukseklik)} />}
+{kare && <meta property="og:image:type" content={PAYLASIM_KARESI.tur} />}
+{kare && <meta property="og:image:alt" content={gorselAlt} />}
 <meta name="twitter:card" content={kart ? "summary_large_image" : "summary"} />
 <meta name="twitter:title" content={baslik} />
 <meta name="twitter:description" content={metin} />

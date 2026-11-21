@@ -145,6 +145,20 @@ describe.skipIf(!KOK)("derlenmiş site: arama ve ajan meta verisi", () => {
         expect(b.bayt, `${ad} görsel boyutu`).toBeLessThan(150 * 1024);
         expect(html, ad).toContain('property="og:image:type" content="image/png"');
         expect(html, ad).toContain('name="twitter:card" content="summary_large_image"');
+        // second og:image: the native square (800x800), after the wide card; twitter keeps the wide one
+        const resimler = [...html.matchAll(/<meta property="og:image" content="([^"]+)"/g)].map((m) => m[1]);
+        expect(resimler, `${ad} iki og:image`).toHaveLength(2);
+        expect(resimler[0], ad).toBe(gorsel);
+        expect(resimler[1], `${ad} kare görsel yolu`).toContain("/og/kare/");
+        const kareDosya = urldenDosya(resimler[1]);
+        expect(fs.existsSync(kareDosya), `${ad}: ${resimler[1]} dosyası yok`).toBe(true);
+        const kb = pngBoyutu(kareDosya);
+        expect({ g: kb.genislik, y: kb.yukseklik }, `${ad} kare gerçek boyut`).toEqual({ g: 800, y: 800 });
+        expect(kb.bayt, `${ad} kare boyutu`).toBeLessThan(150 * 1024);
+        expect([...html.matchAll(/<meta property="og:image:width" content="(\d+)"/g)].map((m) => m[1]), ad).toEqual(["1200", "800"]);
+        expect([...html.matchAll(/<meta property="og:image:height" content="(\d+)"/g)].map((m) => m[1]), ad).toEqual(["630", "800"]);
+        expect([...html.matchAll(/<meta property="og:image:type" content="([^"]+)"/g)].map((m) => m[1]), ad).toEqual(["image/png", "image/png"]);
+        expect(html.match(/<meta property="og:image:alt"/g), `${ad} iki alt`).toHaveLength(2);
         kartli++;
       } else {
         expect({ g, y }, `${ad} yedek logo`).toEqual({ g: 512, y: 512 });
