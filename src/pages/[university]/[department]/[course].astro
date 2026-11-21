@@ -819,7 +819,7 @@ const dersJsonLd = graf(
 
     // Topic chip opens the topic drawer (its table of contents button opens the contents list)
     document.addEventListener("click", (e) => {
-      const cip = (e.target as Element | null)?.closest<HTMLElement>(".q-konu[data-konu]");
+      const cip = (e.target as Element | null)?.closest<HTMLElement>(".q-konu[data-konu], .q-onizle[data-konu]");
       if (cip) dispatchEvent(new CustomEvent("konu:ac", { detail: { konu: cip.dataset.konu } }));
     });
 

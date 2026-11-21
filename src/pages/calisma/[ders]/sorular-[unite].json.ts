@@ -2,8 +2,10 @@
 // (src/scripts/calisma-odasi.ts). Soru kimlikleri ders sayfasındaki veri kimlikleridir; cevaplar aynı kayda yazılır.
 import type { APIRoute, GetStaticPaths } from "astro";
 import { getQuestions } from "../../../lib/api";
+import { examLine, kunyeOzeti } from "../../../lib/soru-karti";
 import { toPlainText } from "../../../../scripts/utils/clean-html";
 
+type Alan = Parameters<typeof examLine>[0];
 const SON_UNITE = 7;
 
 export const getStaticPaths = (async () => {
@@ -24,8 +26,8 @@ export const getStaticPaths = (async () => {
             options: Object.fromEntries(q.options.map((o) => [o.key, toPlainText(o.text)])),
             answer: q.correctAnswer,
             explanation: toPlainText(q.explanation),
-            year: q.year || undefined,
-            examType: q.examType,
+            sinav: kunyeOzeti(q as unknown as Alan), // ders sayfasının künye biçimi: "2025-2026 Bütünleme +5"
+            sinavlar: examLine(q as unknown as Alan) || undefined,
             konu: q.section || undefined,
           })),
         },
