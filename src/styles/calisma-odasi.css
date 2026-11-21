@@ -1605,3 +1605,76 @@ ol.co-ak-liste {
   border-radius: 12px;
   background: var(--button-bg);
 }
+
+/* Shrink the video to a small corner window so the reading text gets the room (Zeki, 21 Nov 2026). The container stops
+   being a full-width band: the text scrolls under the left side, only the small video stays on top. */
+.co-kucult {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 999px;
+  background: rgb(15 23 42 / 0.72);
+  color: #fff;
+  cursor: pointer;
+}
+.co-yt-hiz {
+  position: absolute;
+  top: 8px;
+  right: 52px;
+  z-index: 2;
+  min-width: 44px;
+  height: 36px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 999px;
+  background: rgb(15 23 42 / 0.72);
+  color: #fff;
+  font: 600 14px/1 var(--font-sans, system-ui);
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+.co-video-kab:not([data-ortam='youtube']) .co-yt-hiz {
+  display: none;
+}
+.co-yt-hiz:focus-visible,
+.co-kucult:focus-visible {
+  outline: 2px solid var(--primary-color, #f0a533);
+  outline-offset: 2px;
+}
+.co-kucult .co-kucult-buyuk,
+.co-video-kab[data-kucuk] .co-kucult .co-kucult-kucuk {
+  display: none;
+}
+.co-video-kab[data-kucuk] .co-kucult .co-kucult-buyuk {
+  display: contents;
+}
+.co-video-kab:not([data-ortam='youtube']) .co-kucult {
+  display: none;
+}
+.co-video-kab[data-ortam='youtube'][data-kucuk] {
+  background: transparent;
+  pointer-events: none;
+}
+.co-video-kab[data-ortam='youtube'][data-kucuk] > * {
+  pointer-events: auto;
+}
+.co-video-kab[data-ortam='youtube'][data-kucuk] .co-video {
+  width: min(46%, 240px);
+  margin: 6px 6px 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgb(0 0 0 / 0.3);
+}
+.co-video-kab[data-ortam='youtube'][data-kucuk] .co-video-sec {
+  display: none;
+}
+@media (min-width: 900px) {
+  .co-video-kab[data-ortam='youtube'][data-kucuk] .co-video {
+    width: min(50%, 360px);
+  }
+}

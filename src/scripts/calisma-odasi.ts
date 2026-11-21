@@ -15,6 +15,8 @@ type YTOynatici = {
   loadVideoById?: (id: string) => void;
   pauseVideo?: () => void;
   getPlayerState?: () => number;
+  setPlaybackRate?: (hiz: number) => void;
+  getPlaybackRate?: () => number;
 };
 type YTAyar = { videoId: string; playerVars?: Record<string, number | string>; events?: { onReady?: () => void; onError?: () => void } };
 type YTGlobal = { Player: new (el: string | HTMLElement, ayar: YTAyar) => YTOynatici };
@@ -501,7 +503,13 @@ export function calismaOdasiBaslat(): void {
       ytOynatici = new window.YT.Player("co-oynatici", {
         videoId: video?.tur === "youtube" ? video.kaynak : "",
         playerVars: { playsinline: 1, rel: 0, modestbranding: 1 },
-        events: { onReady: () => bildirim(false), onError: () => bildirim(true) },
+        events: {
+          onReady: () => {
+            bildirim(false);
+            ytHizUygula(kayitliHiz());
+          },
+          onError: () => bildirim(true),
+        },
       });
       if (video?.tur === "youtube") oynatici = ytOynatici;
     };
@@ -526,6 +534,19 @@ export function calismaOdasiBaslat(): void {
   // Ses: HTML audio, kapak, dalga biçimli ilerleme çubuğu; YouTube oynatıcısıyla aynı küçük arayüz
   const SES_HIZLARI = [1, 1.25, 1.5, 1.75, 2, 0.85];
   const HIZ_ANAHTARI = "calisma-ses-hizi";
+  // video speed without opening YouTube's settings: one chip on the player, same remembered speed as the audio
+  function ytHizUygula(hiz: number): void {
+    try {
+      ytOynatici?.setPlaybackRate?.(hiz);
+    } catch {
+      /* player not ready */
+    }
+    const d = document.getElementById("co-yt-hiz");
+    if (d) {
+      d.textContent = `${hiz}×`;
+      d.setAttribute("aria-label", `Oynatma hızı ${hiz}, değiştir`);
+    }
+  }
   const kayitliHiz = (): number => {
     try {
       const h = Number(localStorage.getItem(HIZ_ANAHTARI));
@@ -1900,6 +1921,38 @@ export function calismaOdasiBaslat(): void {
 
   // Yapışık video yüksekliği sekmelerin yapışma konumunu belirler
   const videoKab = $("co-video-kab");
+  // small video: remembered per browser; only the YouTube player shrinks (audio already has a one-row player)
+  const kucukAnahtar = "calisma-video-kucuk";
+  const kucukUygula = (k: boolean): void => {
+    videoKab.toggleAttribute("data-kucuk", k);
+    const d = document.getElementById("co-kucult");
+    d?.setAttribute("aria-pressed", String(k));
+    d?.setAttribute("aria-label", k ? "Videoyu büyüt" : "Videoyu küçült");
+  };
+  try {
+    kucukUygula(localStorage.getItem(kucukAnahtar) === "1");
+  } catch {
+    /* storage blocked */
+  }
+  document.getElementById("co-yt-hiz")?.addEventListener("click", () => {
+    const simdiki = kayitliHiz();
+    const hiz = SES_HIZLARI[(SES_HIZLARI.indexOf(simdiki) + 1) % SES_HIZLARI.length];
+    try {
+      localStorage.setItem(HIZ_ANAHTARI, String(hiz));
+    } catch {
+      /* storage blocked */
+    }
+    ytHizUygula(hiz);
+  });
+  document.getElementById("co-kucult")?.addEventListener("click", () => {
+    const k = !videoKab.hasAttribute("data-kucuk");
+    kucukUygula(k);
+    try {
+      localStorage.setItem(kucukAnahtar, k ? "1" : "0");
+    } catch {
+      /* storage blocked */
+    }
+  });
   // floor of the real (fractional) height: offsetHeight rounds, and a rounded-up value left a hairline gap under the
   // player on high-density phones where the text behind showed through; the tabs now tuck under the player instead.
   const yukseklik = (): void => kok.style.setProperty("--co-video-h", `${Math.floor(videoKab.getBoundingClientRect().height)}px`);
