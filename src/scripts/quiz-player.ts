@@ -612,21 +612,27 @@ export class QuizPlayer {
     console.log('[QuizPlayer] populateVoices: Found voices:', voices.length);
     if (voices.length === 0) return;
 
-    // Filter only Turkish voices or keep all if none found
+    // Same list as the layout's settings panel: Turkish voices, then multilingual ones (Edge "...Multilingual" voices
+    // read Turkish too). This used to rebuild the select with Turkish voices only and wiped the multilingual group.
     const trVoices = voices.filter(v => v.lang.toLowerCase().replace('_', '-').includes('tr-tr'));
-
-    // Clear and refill
+    const multiVoices = voices.filter(v => /multilingual/i.test(v.name) && !trVoices.includes(v));
     voiceSelect.innerHTML = '<option value="">Varsayılan Ses</option>';
-
-    const voicesToShow = trVoices.length > 0 ? trVoices : voices;
-
-    voicesToShow.forEach(voice => {
-      const opt = document.createElement('option');
-      opt.value = voice.voiceURI;
-      opt.text = `${voice.name} (${voice.lang})`;
-      if (voice.voiceURI === this.settings.voiceURI) opt.selected = true;
-      voiceSelect.add(opt);
-    });
+    const addGroup = (label: string, list: SpeechSynthesisVoice[]) => {
+      if (!list.length) return;
+      const group = document.createElement('optgroup');
+      group.label = label;
+      for (const voice of list) {
+        const opt = document.createElement('option');
+        opt.value = voice.voiceURI;
+        opt.text = `${voice.name} (${voice.lang})`;
+        if (voice.voiceURI === this.settings.voiceURI) opt.selected = true;
+        group.appendChild(opt);
+      }
+      voiceSelect.appendChild(group);
+    };
+    addGroup('Türkçe', trVoices);
+    addGroup('Çok dilli', multiVoices);
+    if (!trVoices.length && !multiVoices.length) addGroup('Tüm sesler', voices);
   }
 
   public syncSettings(): void {

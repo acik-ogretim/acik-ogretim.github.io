@@ -97,7 +97,16 @@ export function calismaOdasiBaslat(): void {
 
   // ---------- Kavram bağlantıları ----------
   function kavramSar(koku: HTMLElement, ilkTek: boolean): void {
-    const goruldu = new Set<number>();
+    // once per paragraph or list item, in every view: a name met again three paragraphs later is underlined again
+    // (Zeki, 21 Nov 2026: Max Weber looked untagged because only its first occurrence in the topic was)
+    void ilkTek;
+    const paragraflar = new WeakMap<Element, Set<number>>();
+    const gorulduKumesi = (d: Text): Set<number> => {
+      const p = d.parentElement?.closest("p, li, dd, td, blockquote") ?? koku;
+      let k = paragraflar.get(p);
+      if (!k) paragraflar.set(p, (k = new Set<number>()));
+      return k;
+    };
     const dugumler: Text[] = [];
     const yurume = document.createTreeWalker(koku, NodeFilter.SHOW_TEXT);
     for (let n = yurume.nextNode(); n; n = yurume.nextNode()) {
@@ -105,8 +114,8 @@ export function calismaOdasiBaslat(): void {
     }
     for (const d of dugumler) {
       let eslesmeler = motor.eslestir(d.data);
-      if (!ilkTek) eslesmeler = eslesmeler.filter((m) => !goruldu.has(m.kavram) && (goruldu.add(m.kavram), true)); // once per line
-      if (ilkTek) eslesmeler = eslesmeler.filter((m) => !goruldu.has(m.kavram) && (goruldu.add(m.kavram), true));
+      const goruldu = gorulduKumesi(d);
+      eslesmeler = eslesmeler.filter((m) => !goruldu.has(m.kavram) && (goruldu.add(m.kavram), true));
       if (!eslesmeler.length) continue;
       const parca = document.createDocumentFragment();
       let imlec = 0;
