@@ -220,14 +220,40 @@ function paketle(ders) {
   const medyaKok = join(kok, "data", "calisma-odasi-medya");
   const sozlesme = join(medyaKok, `${ders}.json`);
   if (existsSync(sozlesme)) {
-    for (const x of oku(sozlesme).medyalar ?? []) {
+    const kayitlarM = oku(sozlesme).medyalar ?? [];
+    // A YouTube entry with "parcalar" is one video made by joining those audio parts end to end (the long narration
+    // video, Zeki 21 Nov 2026: "ses yerine video ekle"); it replaces them and takes their transcripts, shifted by the
+    // running sum of the part lengths.
+    const videoParcasi = new Set(kayitlarM.filter((x) => x.tur === "youtube").flatMap((x) => x.parcalar ?? []));
+    const sesSatirlari = new Map();
+    for (const x of kayitlarM) {
       if (x.tur !== "ses" || !x.kaynak) continue;
       const dokumYolu = join(medyaKok, ders, basename(x.dokum ?? ""));
       const d = x.dokum && existsSync(dokumYolu) ? oku(dokumYolu) : null;
       const satirlar = (d?.satirlar ?? []).map((b, i) => ({ i, bas: b.bas, bit: b.bit, k: b.konusmaci ?? "", m: b.metin, konu: b.konu ?? null, g: b.guven ?? 0 }));
       // Konu etiketi yoksa ünitenin konularına sıralı hizalama (Gemini ve önbellek kullanılmaz)
       if (satirlar.some((s) => !s.konu)) hizalaKonu(satirlar, x.unite ? konuListesi.filter((k) => k.unite === x.unite) : konuListesi, {});
+      sesSatirlari.set(x.id, { sure: x.sure ?? 0, satirlar });
+      if (videoParcasi.has(x.id)) continue;
       videolar.push({ kod: x.id, ortam: "ses", tur: x.cesit ?? "uzun-anlatim", baslik: x.baslik, yt: x.kaynak, url: x.kaynak, sure: x.sure ?? null, unite: x.unite, kapak: x.kapak, satirlar });
+    }
+    for (const x of kayitlarM) {
+      if (x.tur !== "youtube" || !x.kaynak) continue;
+      const satirlar = [];
+      let kayma = 0;
+      for (const id of x.parcalar ?? []) {
+        const p = sesSatirlari.get(id);
+        if (!p) continue;
+        for (const s of p.satirlar) satirlar.push({ ...s, i: satirlar.length, bas: s.bas + kayma, bit: s.bit + kayma });
+        kayma += p.sure;
+      }
+      // the same video may also be listed in youtube-videolar.json (course page); keep one entry
+      const onceki = videolar.findIndex((v) => v.yt === x.kaynak);
+      if (onceki >= 0) {
+        kullanilan.delete(videolar[onceki].kod);
+        videolar.splice(onceki, 1);
+      }
+      videolar.push({ kod: x.id, tur: x.cesit ?? "uzun-anlatim", baslik: x.baslik, yt: x.kaynak, url: `https://youtu.be/${x.kaynak}`, sure: x.sure ?? kayma, satirlar });
     }
   }
   // Book headings split over two lines become two topics ("1.2 ... VE" + "1.3 ANLAMAK"); empty "Özet (devamı)" topics carry nothing.
