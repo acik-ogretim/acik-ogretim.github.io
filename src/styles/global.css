@@ -1536,3 +1536,11 @@ label.ayar-satir > .ayar-ad:first-child { flex: 1; min-width: 0; }
 .menu-kutu-deger { font-size: 11px; line-height: 1.1; font-weight: 600; color: var(--text-color-muted); font-variant-numeric: tabular-nums; }
 .menu-kutu:is([aria-pressed='true'], [data-calisiyor]) .menu-kutu-deger { color: inherit; }
 @media (prefers-reduced-motion: reduce) { .menu-kutu { transition: none; } .menu-kutu:active { transform: none; } }
+
+/* Player counter on phones: two small stacked lines ("12/196" over "%80") instead of a wide pill, so the bar keeps room
+   for its buttons (Zeki, 21 Nov 2026). Correct and wrong counts stay in the menu and from 768 px. */
+@media (max-width: 767px) {
+  .oynatici-sayac { flex-direction: column; justify-content: center; align-items: flex-start; gap: 1px; height: 36px; min-width: 0; padding: 0 4px 0 8px; margin-right: 0; background: transparent; font-size: 12px; line-height: 1.1; }
+  .oynatici-sayac .oynatici-ayrac { display: none; }
+  .oynatici-sayac > span:nth-child(3) { font-size: 11px; font-weight: 500; color: var(--text-color-muted); }
+}
