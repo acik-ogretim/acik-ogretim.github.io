@@ -12,7 +12,7 @@ for (const u of universiteler)
   for (const d of u.departments ?? []) (bolumler[d.id] ??= []).push({ uni: u.id, ad: d.name });
 ---
 
-<Layout title="Derslerim" description="Yıldızladığın dersler ve bölümler, bu cihazdaki çözüm ilerlemesiyle">
+<Layout noindex title="Derslerim" description="Yıldızladığın dersler ve bölümler, bu cihazdaki çözüm ilerlemesiyle">
   <div class="sekme-sayfa" id="derslerim" data-uni={JSON.stringify(uniKisa)} data-bolum={JSON.stringify(bolumler)}>
     <div class="flex items-center gap-2">
       <h1 class="sekme-baslik min-w-0 flex-1">Derslerim</h1>

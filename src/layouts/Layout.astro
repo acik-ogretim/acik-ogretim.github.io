@@ -3,6 +3,9 @@ import "../styles/global.css";
 import "../styles/print.css";
 import AyarlarIcerik from "../components/AyarlarIcerik.astro";
 import SekmeCubugu from "../components/SekmeCubugu.astro";
+import SeoHead from "../components/SeoHead.astro";
+import { VARSAYILAN_ACIKLAMA } from "../lib/seo";
+import type { JsonLdGraf } from "../lib/yapisal-veri";
 
 interface Props {
   title: string;
@@ -11,9 +14,13 @@ interface Props {
   sekmeler?: boolean;
   /** /ayarlar renders the settings inline, so the settings dialog is left out (ids stay unique). */
   ayarSayfasi?: boolean;
+  /** Search and agent metadata (SeoHead.astro). */
+  noindex?: boolean;
+  jsonLd?: JsonLdGraf;
+  markdown?: string;
 }
 
-const { title, description = "Açık öğretim fakülteleri için çalışma portalı", sekmeler = true, ayarSayfasi = false } =
+const { title, description = VARSAYILAN_ACIKLAMA, sekmeler = true, ayarSayfasi = false, noindex = false, jsonLd, markdown } =
   Astro.props;
 ---
 
@@ -98,7 +105,8 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content" />
-    <meta name="description" content={description} />
+    <SeoHead baslik={`${title} | Açık Öğretim Portal`} aciklama={description} noindex={noindex} jsonLd={jsonLd} markdown={markdown} />
+    <slot name="head" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

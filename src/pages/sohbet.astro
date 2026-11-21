@@ -2,6 +2,7 @@
 // Course chat. Static page: prerendered at build, the chat hydrates in the browser and calls the provider with the user's own key.
 import "../styles/global.css";
 import SohbetApp from "../components/sohbet/Sohbet.tsx";
+import SeoHead from "../components/SeoHead.astro";
 ---
 
 <!doctype html>
@@ -10,7 +11,7 @@ import SohbetApp from "../components/sohbet/Sohbet.tsx";
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Ders asistanı | Açık Öğretim Portal</title>
-    <meta name="description" content="Derslerinin soruları ve açıklamalarıyla çalışan sohbet asistanı. Kendi anahtarınla çalışır." />
+    <SeoHead baslik="Ders asistanı | Açık Öğretim Portal" aciklama="Derslerinin soruları ve açıklamalarıyla çalışan sohbet asistanı. Kendi anahtarınla çalışır." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <script is:inline>
       try {

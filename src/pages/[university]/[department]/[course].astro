@@ -24,6 +24,9 @@ import { uniteBasligi } from "../../../lib/unite-basligi";
 import { soruSirala } from "../../../lib/soru-sirasi";
 import { kitapSirala } from "../../../lib/soru-siralama";
 import { canonicalDepartments, courseDepartments, coursePath } from "../../../lib/kanonik";
+import { dereceAdi } from "../../../lib/derece";
+import { dersAciklamasi } from "../../../lib/seo";
+import { dersKaynagi, graf, kirintiListesi } from "../../../lib/yapisal-veri";
 
 export async function getStaticPaths() {
   const universities = await getUniversities();
@@ -163,9 +166,53 @@ const videoVar = ((videoVerisi.dersler as Record<string, unknown[]>)[`${universi
 const examKeys = (q: { year?: string | number; examType?: string; source?: string; sinavlar?: SinavEtiket[] }) =>
   [...new Set((q.sinavlar ?? (q.source === "cikmis-soru" && q.year ? [{ year: String(q.year), examType: q.examType ?? "genel" }] : []))
     .map((s) => `${s.year} ${s.examType}`))].join(";");
+// Search and agent metadata: description from the real counts, breadcrumb, learning resource, Markdown summary
+const cikmisSayisi = questions.filter((q) => q.source === "cikmis-soru").length;
+const dersYolu = `/${university.id}/${department.id}/${course.id}/`;
+const sayfaAciklamasi = dersAciklamasi({
+  dersAdi: course.name,
+  kod: course.code,
+  universite: university.shortName,
+  bolum: department.name,
+  soru: questions.length,
+  cikmis: cikmisSayisi,
+  yillar: sinavYillari,
+});
+const dersJsonLd = graf(
+  kirintiListesi(Astro.site, [
+    { ad: "Ana Sayfa", yol: "/" },
+    { ad: university.shortName, yol: `/${university.id}/` },
+    { ad: department.name, yol: `/${university.id}/${department.id}/` },
+    { ad: course.name, yol: dersYolu },
+  ]),
+  ...(questions.length > 0
+    ? [
+        dersKaynagi(Astro.site, {
+          yol: dersYolu,
+          dersAdi: course.name,
+          kod: course.code,
+          aciklama: sayfaAciklamasi,
+          dersAciklamasi: icerik?.amac,
+          universite: university.name,
+          universiteAdresi: university.website,
+          derece: dereceAdi(department.degree),
+          cikmis: cikmisSayisi,
+          alistirma: questions.length - cikmisSayisi,
+          uniteler: units.filter((no) => no > 0).map((no) => uniteAdi.get(no)?.baslik ?? `Ünite ${no}`),
+        }),
+      ]
+    : []),
+);
 ---
 
-<Layout title={`${course.name} - ${department.name}`} sekmeler={false}>
+<Layout
+  title={`${course.name} - ${department.name}`}
+  description={sayfaAciklamasi}
+  noindex={questions.length === 0}
+  jsonLd={dersJsonLd}
+  markdown={questions.length > 0 ? `${dersYolu}ozet.md` : undefined}
+  sekmeler={false}
+>
   <Fragment set:html={iconSprite} />
   <div class="ders-sayfa pb-12 pt-4 md:pt-10">
     <div class="container-reading max-w-[720px]">

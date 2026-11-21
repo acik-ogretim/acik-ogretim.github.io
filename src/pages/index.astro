@@ -2,6 +2,7 @@
 import type { SimgeAdi } from "../lib/simge";
 import Simge from "../components/Simge.astro";
 import Layout from '../layouts/Layout.astro';
+import { graf, organizasyon, webSitesi } from '../lib/yapisal-veri';
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -111,37 +112,7 @@ const uniStyles: Record<string, { icon: SimgeAdi }> = {
 };
 ---
 
-<Layout title="Ana Sayfa">
-  <!-- EducationalOrganization Schema -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "EducationalOrganization",
-      "name": "Açık Öğretim Portal",
-      "url": "https://acik-ogretim.github.io",
-      "logo": "https://acik-ogretim.github.io/favicon.svg",
-      "description": "Anadolu, Atatürk, İstanbul ve Ankara Üniversitesi açık ve uzaktan öğretim öğrencileri için ücretsiz çalışma portalı.",
-      "sameAs": [
-        "https://github.com/acik-ogretim"
-      ]
-    }
-  </script>
-
-  <!-- WebSite Schema -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Açık Öğretim Portal",
-      "url": "https://acik-ogretim.github.io",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://acik-ogretim.github.io/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-  </script>
-
+<Layout title="Ana Sayfa" jsonLd={graf(organizasyon(Astro.site), webSitesi(Astro.site))}>
   <!-- "Bugün": shown only to a returning learner with a recorded position (kaldigin-yer, latest course) -->
   <section id="bugun" class="sekme-sayfa" aria-labelledby="bugun-baslik" hidden>
     <h1 id="bugun-baslik" class="text-[36px] leading-none font-semibold text-ink mb-4">Bugün</h1>

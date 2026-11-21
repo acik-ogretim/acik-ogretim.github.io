@@ -1,0 +1,54 @@
+---
+// Search, share and agent metadata for every page (Layout.astro renders it inside <head>).
+// docs/yz-ve-ajan-hazirligi.md explains each tag and the sources behind it.
+import { PAYLASIM_GORSELI, SITE_ADI, jsonLdMetni, kanonikYol, kisalt, mutlakUrl } from "../lib/seo";
+import type { JsonLdGraf } from "../lib/yapisal-veri";
+
+interface Props {
+  /** Full document title (already carries the site name). */
+  baslik: string;
+  aciklama: string;
+  /** Personal or utility pages (search results, records, settings) stay out of the index. */
+  noindex?: boolean;
+  jsonLd?: JsonLdGraf;
+  /** Markdown version of the page for agents (llms.txt convention: rel="alternate" type="text/markdown"). */
+  markdown?: string;
+  ogTuru?: "website" | "article";
+}
+
+const { baslik, aciklama, noindex = false, jsonLd, markdown, ogTuru = "website" } = Astro.props;
+const site = Astro.site;
+const kanonik = mutlakUrl(site, kanonikYol(Astro.url.pathname));
+const metin = kisalt(aciklama, 160);
+const gorsel = mutlakUrl(site, PAYLASIM_GORSELI.yol);
+---
+
+<meta name="description" content={metin} />
+<link rel="canonical" href={kanonik} />
+{noindex && <meta name="robots" content="noindex, follow" />}
+<meta property="og:site_name" content={SITE_ADI} />
+<meta property="og:locale" content="tr_TR" />
+<meta property="og:type" content={ogTuru} />
+<meta property="og:title" content={baslik} />
+<meta property="og:description" content={metin} />
+<meta property="og:url" content={kanonik} />
+<meta property="og:image" content={gorsel} />
+<meta property="og:image:width" content={String(PAYLASIM_GORSELI.genislik)} />
+<meta property="og:image:height" content={String(PAYLASIM_GORSELI.yukseklik)} />
+<meta property="og:image:alt" content={`${SITE_ADI} logosu`} />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content={baslik} />
+<meta name="twitter:description" content={metin} />
+<meta name="twitter:image" content={gorsel} />
+<link rel="describedby" href="/llms.txt" type="text/plain" />
+{markdown && <link rel="alternate" type="text/markdown" href={markdown} title="Ders özeti (Markdown)" />}
+<link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+{jsonLd && <script type="application/ld+json" set:html={jsonLdMetni(jsonLd)} />}
+
+<script>
+  // WebMCP (experimental): agent tools load only in browsers that expose a model context, so every
+  // other visitor downloads nothing extra. Older Chrome builds used navigator.modelContext.
+  if ("modelContext" in document || "modelContext" in navigator) {
+    import("../lib/webmcp").then((m) => m.araclariKaydet()).catch(() => {});
+  }
+</script>

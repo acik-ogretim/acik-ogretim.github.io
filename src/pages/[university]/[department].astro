@@ -2,6 +2,7 @@
 import { dereceAdi } from "../../lib/derece";
 import Simge from "../../components/Simge.astro";
 import Layout from "../../layouts/Layout.astro";
+import { graf, kirintiListesi } from "../../lib/yapisal-veri";
 import { getUniversities, getDepartments, getCourses, sorusuOlanDersler } from "../../lib/api";
 import { dersSimgesi, KATEGORI_ADI } from "../../lib/ders-simge";
 import { canonicalDepartments } from "../../lib/kanonik";
@@ -52,7 +53,18 @@ const groupedCourses = semesters.map((sem) => {
 });
 ---
 
-<Layout title={`${department.name} (${dereceAdi(department.degree)}) - ${university.shortName}`}>
+<Layout
+  title={`${department.name} (${dereceAdi(department.degree)}) - ${university.shortName}`}
+  description={`${university.name} ${department.name} (${dereceAdi(department.degree)}) programının ${allCourses.length} dersi için dönem dönem çıkmış sorular, alıştırmalar ve açıklamalı çözümler. Ücretsiz çalışma portalı.`}
+  noindex={allCourses.length === 0}
+  jsonLd={graf(
+    kirintiListesi(Astro.site, [
+      { ad: "Ana Sayfa", yol: "/" },
+      { ad: university.shortName, yol: `/${university.id}/` },
+      { ad: department.name, yol: `/${university.id}/${department.id}/` },
+    ]),
+  )}
+>
   <div class="py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Breadcrumbs -->

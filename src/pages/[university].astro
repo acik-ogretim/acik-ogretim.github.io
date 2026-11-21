@@ -3,6 +3,7 @@ import { dereceAdi } from "../lib/derece";
 import type { SimgeAdi } from "../lib/simge";
 import Simge from "../components/Simge.astro";
 import Layout from "../layouts/Layout.astro";
+import { graf, kirintiListesi } from "../lib/yapisal-veri";
 import { getDepartments, getUniversities, getCourses } from "../lib/api";
 import type { University, Course } from "../lib/types";
 import fs from "node:fs";
@@ -122,7 +123,11 @@ const style = uniStyles[university.id] || {
 };
 ---
 
-<Layout title={university.name}>
+<Layout
+  title={university.name}
+  description={`${university.name} ${university.faculty ?? ""} öğrencileri için ${departmentsWithData.length} programın çıkmış soruları, ünite ünite alıştırmaları ve açıklamalı çözümleri. Ücretsiz ve üyeliksiz.`.replace(/\s+/g, " ")}
+  jsonLd={graf(kirintiListesi(Astro.site, [{ ad: "Ana Sayfa", yol: "/" }, { ad: university.shortName, yol: `/${university.id}/` }]))}
+>
   <div class="py-8">
     <div class="container-base">
       <!-- Breadcrumbs -->
