@@ -24,7 +24,7 @@
 
 /* Links to the study room (only courses that have one) */
 .unite-anlatim, .q-anlatim, .konu-anlatim { color: var(--primary-text); font-size: 14px; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
-.unite-anlatim { margin-inline-start: 12px; vertical-align: middle; }
+.unite-anlatim { display: inline-flex; align-items: center; min-height: 44px; margin-inline-start: 12px; vertical-align: middle; }
 .q-anlatim { display: inline-block; margin-inline-start: 12px; }
 .konu-anlatim { display: inline-flex; align-items: center; min-height: 44px; margin-bottom: 8px; }
 @media print { .unite-anlatim, .q-anlatim, .konu-anlatim, .soru-yukleniyor { display: none !important; } }
