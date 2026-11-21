@@ -26,7 +26,7 @@ export async function getStaticPaths() {
 
 const { paket, dersAdi, dersYolu } = Astro.props;
 const veriJson = JSON.stringify(paket).replace(/</g, "\\u003c");
-const simgeler: SimgeAdi[] = ["BookOpen", "CircleHelp", "FileText", "Highlighter", "Trash2", "Check", "X", "ChevronLeft", "ChevronRight", "ArrowRight", "WifiOff", "Play", "Link", "ExternalLink", "ListChecks", "Star", "Copy", "StickyNote", "Search", "Printer", "ArrowDown", "ChevronDown", "Headphones", "Pause", "RotateCcw", "RotateCw"];
+const simgeler: SimgeAdi[] = ["BookOpen", "CircleHelp", "FileText", "Highlighter", "Trash2", "Check", "X", "ChevronLeft", "ChevronRight", "ArrowRight", "WifiOff", "Play", "Link", "ExternalLink", "ListChecks", "Star", "Copy", "StickyNote", "Search", "Printer", "ArrowDown", "ChevronDown", "Headphones", "Pause", "RotateCcw", "RotateCw", "AudioLines", "Square"];
 const sekmeler = [
   { id: "akis", ad: "Konu konu" },
   { id: "dokum", ad: "Döküm" },

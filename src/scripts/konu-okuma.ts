@@ -78,6 +78,8 @@ export class KonuOkuma {
   constructor(
     private kaydirma: HTMLElement,
     private durum: (calisiyor: boolean) => void,
+    /** pixels covered at the top by sticky bars when the page itself scrolls (study room on a phone) */
+    private ustPay: () => number = () => 0,
   ) {}
 
   yukle(kok: HTMLElement): void {
@@ -157,17 +159,18 @@ export class KonuOkuma {
 
   private vurguSil(): void {
     if ("highlights" in CSS) CSS.highlights.delete("konu-okunan");
-    this.kaydirma.querySelector(".konu-okunan-blok")?.classList.remove("konu-okunan-blok");
+    document.querySelector(".konu-okunan-blok")?.classList.remove("konu-okunan-blok");
   }
 
   private gorunur(r: DOMRect): void {
-    const k = this.kaydirma.getBoundingClientRect();
+    const sayfa = this.kaydirma === document.scrollingElement;
+    const k = sayfa ? new DOMRect(0, this.ustPay(), innerWidth, innerHeight - this.ustPay()) : this.kaydirma.getBoundingClientRect();
     const pay = 40;
     let fark = 0;
     if (r.top < k.top + pay) fark = r.top - (k.top + pay);
     else if (r.bottom > k.bottom - pay) fark = r.bottom - (k.bottom - pay);
     if (fark === 0) return;
     const sakin = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    this.kaydirma.scrollBy({ top: fark + (fark > 0 ? k.height / 4 : -k.height / 4), behavior: sakin ? "auto" : "smooth" });
+    (sayfa ? window : this.kaydirma).scrollBy({ top: fark + (fark > 0 ? k.height / 4 : -k.height / 4), behavior: sakin ? "auto" : "smooth" });
   }
 }

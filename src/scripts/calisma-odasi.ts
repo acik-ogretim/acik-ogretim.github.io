@@ -7,6 +7,7 @@ import { cevaplarOku, cevaplarYaz } from "../lib/calisma-durumu";
 import { demirBul, demirle, vurgulariOku, vurgulariYaz, type Vurgu } from "../lib/calisma-odasi/vurgu";
 import { anlatimHtml, aramaYap, mdHtml, dusunHtml, kitaptaParagraf, konuDurumu, sorulariKonuyaDagit, uniteBaskiHtml, zayifKonular, type AkisSoru } from "../lib/calisma-odasi/akis";
 import { yildizKimligi, yildizlariOku, yildizlariYaz, type Yildiz } from "../lib/calisma-odasi/yildiz";
+import { KonuOkuma, sesDestekli } from "./konu-okuma";
 
 type YTOynatici = {
   getCurrentTime: () => number;
@@ -491,6 +492,8 @@ export function calismaOdasiBaslat(): void {
   }
   let otoMedya = false; // medya konuya göre kendiliğinden değişti
   let ytOynatici: YTOynatici | null = null;
+  let okuma: KonuOkuma | null = null;
+  let okuyan = "";
   let sesOynatici: YTOynatici | null = null;
   let sonOynaticiSn = 0;
   const sesEl = (): HTMLAudioElement | null => document.querySelector<HTMLAudioElement>("#co-ses audio");
@@ -1113,7 +1116,7 @@ export function calismaOdasiBaslat(): void {
         const satir = kv ? v.satirlar[kv.ilk] : null;
         return satir ? `<button type="button" class="co-cip" data-ak-medya="${esc(v.id)}" data-no="${esc(no)}">${ikon(v.tur === "ses" ? "Headphones" : "Play")}${esc(medyaCipEtiketi(v, saatYaz(satir.bas)))}</button>` : "";
       })
-      .join("");
+      .join("") + (k.anlatim && sesDestekli() ? `<button type="button" class="co-cip" data-ak-oku="${esc(no)}" aria-pressed="false">${ikon("AudioLines")}<span>Sesli oku</span></button>` : "");
     return `<article class="co-ak-blok" id="ak-${esc(no)}" data-ak-konu="${esc(no)}" aria-labelledby="ak-b-${esc(no)}"><header class="co-ak-baslik"><button type="button" class="co-ak-ad" id="ak-b-${esc(no)}" data-ak-sar="${esc(no)}"><span class="co-no">${esc(k.goster ?? no)}</span><span>${esc(k.baslik)}</span></button>${cipler ? `<div class="co-ak-cipler">${cipler}</div>` : ""}</header><div class="co-ak-govde" data-ak-govde></div></article>`;
   }
   function akisBlokDoldur(el: HTMLElement): void {
@@ -1703,6 +1706,37 @@ export function calismaOdasiBaslat(): void {
           /* storage unavailable */
         }
       }
+      return;
+    }
+    const akOku = t.closest<HTMLElement>("[data-ak-oku]");
+    if (akOku) {
+      // read the written topic explanation aloud (browser speech, Turkish voice), sentence by sentence with highlight
+      const no = akOku.dataset.akOku ?? "";
+      const govde = document.querySelector<HTMLElement>(`#ak-${CSS.escape(no)} .co-ak-anlatim`);
+      if (!govde) return;
+      if (okuyan === no && okuma?.calisiyor) {
+        okuma.dur();
+        return;
+      }
+      try {
+        sesEl()?.pause();
+        ytOynatici?.pauseVideo?.();
+      } catch {
+        /* player not ready */
+      }
+      const kaydirma = getComputedStyle($("co-p-akis")).overflowY === "auto" ? $("co-p-akis") : (document.scrollingElement as HTMLElement);
+      okuma?.dur(true);
+      okuma = new KonuOkuma(kaydirma, (calisiyor) => {
+        document.querySelectorAll<HTMLElement>("[data-ak-oku]").forEach((d) => {
+          const bu = d.dataset.akOku === okuyan && calisiyor;
+          d.setAttribute("aria-pressed", String(bu));
+          const yazi = d.querySelector("span");
+          if (yazi) yazi.textContent = bu ? "Durdur" : "Sesli oku";
+        });
+      }, () => $("co-video-kab").offsetHeight + $("co-sekmeler").offsetHeight);
+      okuyan = no;
+      okuma.yukle(govde);
+      okuma.baslat();
       return;
     }
     const akMedya = t.closest<HTMLElement>("[data-ak-medya]");

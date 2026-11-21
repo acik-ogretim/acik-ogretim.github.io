@@ -1730,3 +1730,17 @@ ol.co-ak-liste {
     display: none;
   }
 }
+
+/* sentence being read aloud in the topic explanation (same look as the topic drawer) */
+::highlight(konu-okunan) {
+  background-color: var(--primary-soft);
+  color: var(--text-color);
+}
+.co-ak-anlatim .konu-okunan-blok {
+  background: var(--primary-soft);
+  border-radius: 6px;
+}
+.co-cip[data-ak-oku][aria-pressed='true'] {
+  border-color: var(--primary-color);
+  color: var(--primary-text, var(--text-color));
+}
