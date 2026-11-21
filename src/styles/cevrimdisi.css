@@ -1,0 +1,95 @@
+/* Offline support (src/lib/cevrimdisi/kayit.ts): offline icon, dimmed links, "Yeni sürüm hazır" band and the
+   download control of the course card. Role variables only (DESIGN.md §2). */
+
+.cevrimdisi-simge {
+  display: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-right: auto;
+  margin-left: 4px;
+  color: var(--text-color-muted);
+}
+html[data-cevrimdisi] .cevrimdisi-simge {
+  display: grid;
+}
+
+/* A page that will not open offline: still a link (it opens when the connection comes back), but quieter. */
+html[data-cevrimdisi] a[data-cevrimdisi-yok] {
+  opacity: 0.5;
+}
+html[data-cevrimdisi] a[data-cevrimdisi-yok]:focus-visible {
+  opacity: 1;
+}
+
+.surum-bandi {
+  position: fixed;
+  z-index: 95;
+  top: calc(env(safe-area-inset-top) + 8px);
+  left: 50%;
+  translate: -50% 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: min(calc(100% - 2 * max(10px, env(safe-area-inset-left))), 480px);
+  min-height: 52px;
+  padding: 4px 4px 4px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  font-size: 15px;
+  box-shadow: 0 6px 24px rgb(0 0 0 / 0.14);
+}
+.surum-bandi-dugme {
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: var(--primary-color);
+  color: var(--primary-color-text);
+  font-weight: 600;
+}
+.surum-bandi-dugme:disabled {
+  opacity: 0.6;
+}
+.surum-bandi-kapat {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  color: var(--text-color-muted);
+}
+.surum-bandi-kapat:hover {
+  background: var(--button-bg);
+}
+
+/* Download chip on the course card: the label changes with the state, a thin neutral bar shows progress. */
+.indir-serit {
+  height: 4px;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: var(--button-bg);
+  overflow: hidden;
+}
+.indir-serit > span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--text-color-muted);
+  transition: width 200ms cubic-bezier(0.2, 0, 0, 1);
+}
+.indir-serit[data-belirsiz] > span {
+  width: 30%;
+}
+@media (prefers-reduced-motion: reduce) {
+  .indir-serit > span {
+    transition: none;
+  }
+}
+/* The chip and its icons set their own display; keep the hidden attribute in charge. */
+#cevrimdisi-indir[hidden],
+#cevrimdisi-indir [data-simge][hidden],
+.indir-serit[hidden] {
+  display: none;
+}

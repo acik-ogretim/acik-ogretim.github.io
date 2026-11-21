@@ -22,6 +22,15 @@ for (const u of universiteler)
       <button type="button" data-liste="ders" aria-pressed="true">Dersler</button>
       <button type="button" data-liste="bolum" aria-pressed="false">Bölümler</button>
     </div>
+    <div class="ayar-kart mb-4" id="cevrimdisi-kart" hidden>
+      <label class="ayar-satir">
+        <span class="min-w-0 flex-1">
+          <span class="ayar-ad block">Yıldızlı dersleri çevrimdışı tut</span>
+          <span class="ayar-not" id="cevrimdisi-yildizli-not">Bağlantı varken iner, güncellenir; internetsiz de açılır</span>
+        </span>
+        <input type="checkbox" id="cevrimdisi-yildizli" class="toggle-input-small" />
+      </label>
+    </div>
     <div id="liste" aria-live="polite"></div>
     <p id="not" class="mt-4 text-[13px] text-ink-muted" hidden>Çıkardığın dersin çözümleri silinmez; dersi yeniden yıldızlarsan kaldığın yerden sürer.</p>
   </div>
@@ -90,6 +99,8 @@ for (const u of universiteler)
 
   // Every course keeps its own "kaldığın yer" (kaldigin-yer); a row with one opens at that question
   let yerler: Record<string, Yer> = {};
+  /** Starred courses downloaded for offline use ("uni/ders"), filled below once the course cache is read. */
+  let cihazdakiler = new Set<string>();
 
   function dersSatiri(f: FavoriDers) {
     const yer = yerler[`${f.uniId}/${f.id}`];
@@ -103,7 +114,10 @@ for (const u of universiteler)
     if (!duzenle) (satir as HTMLAnchorElement).href = yer ? devamBaglantisi(yer) : `/${f.uniId}/${f.deptId}/${f.id}`;
     const govde = el("div", "liste-satir-govde");
     govde.append(el("div", "liste-baslik", f.name || f.id));
-    const meta = [uniKisa[f.uniId] ?? f.uniId, cozulen ? `${cozulen} soru çözüldü` : "Henüz çözüm yok"].join(" · ");
+    const cihazda = cihazdakiler.has(`${f.uniId}/${f.id}`);
+    // Offline the row says whether the course opens (DESIGN.md PWA states: "Bu cihazda hazır" / "Bağlantı gelince açılır")
+    const cevrimdisiNot = cihazda ? "Bu cihazda hazır" : !navigator.onLine ? "Bağlantı gelince açılır" : null;
+    const meta = [uniKisa[f.uniId] ?? f.uniId, cozulen ? `${cozulen} soru çözüldü` : "Henüz çözüm yok", cevrimdisiNot].filter(Boolean).join(" · ");
     govde.append(el("div", "liste-meta", meta));
     if (yer && !duzenle) govde.append(el("div", "liste-meta", `Kaldığın yer: ${yerMetni(yer)}`));
     if (cozulen && !duzenle) {
@@ -205,4 +219,44 @@ for (const u of universiteler)
     ciz();
   });
   ciz();
+
+  // Offline: which starred courses are stored on this device, and the "keep starred courses offline" switch
+  import { CEVRIMDISI_OLAYI, YILDIZLI_ANAHTARI, destekVar, listele, yildizlilariTut } from "../lib/cevrimdisi/istemci";
+  import { bildir } from "../lib/bildirim";
+  const cihazdakileriOku = async () => {
+    cihazdakiler = new Set((await listele()).map((m) => `${m.uni}/${m.ders}`));
+    ciz();
+  };
+  if (destekVar()) {
+    const kart = document.getElementById("cevrimdisi-kart") as HTMLElement;
+    const kutu = document.getElementById("cevrimdisi-yildizli") as HTMLInputElement;
+    const yNot = document.getElementById("cevrimdisi-yildizli-not") as HTMLElement;
+    kart.hidden = false;
+    kutu.checked = localStorage.getItem(YILDIZLI_ANAHTARI) === "1";
+    const tut = async () => {
+      if (!navigator.onLine) {
+        yNot.textContent = "Açık: bağlantı gelince yıldızlı dersler iner";
+        return;
+      }
+      yNot.textContent = "Yıldızlı dersler iniyor";
+      const sayi = await yildizlilariTut().catch(() => 0);
+      yNot.textContent = sayi ? `${sayi} ders indirildi; bağlantı varken güncel kalır` : "Yıldızlı derslerin hepsi bu cihazda";
+    };
+    kutu.addEventListener("change", () => {
+      localStorage.setItem(YILDIZLI_ANAHTARI, kutu.checked ? "1" : "0");
+      if (kutu.checked) void tut();
+      else {
+        yNot.textContent = "Kapalı. İndirilenler kalır; Çevrimdışı sayfasından silebilirsin";
+        bildir({ metin: "Yeni yıldızladığın dersler artık kendiliğinden inmeyecek." });
+      }
+    });
+    window.addEventListener(CEVRIMDISI_OLAYI, () => void cihazdakileriOku());
+    addEventListener("online", () => {
+      ciz();
+      if (kutu.checked) void tut();
+    });
+    addEventListener("offline", () => ciz());
+    void cihazdakileriOku();
+    if (kutu.checked && navigator.onLine) void tut();
+  }
 </script>

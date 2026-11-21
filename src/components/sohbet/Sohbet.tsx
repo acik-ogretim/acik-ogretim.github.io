@@ -266,7 +266,19 @@ function ChatBody({
   };
   useEffect(() => () => canliKapat(), []);
 
+  // The chat needs the provider over the network: offline it explains that instead of failing.
+  const [cevrimici, setCevrimici] = useState(() => typeof navigator === "undefined" || navigator.onLine);
+  useEffect(() => {
+    const guncelle = () => setCevrimici(navigator.onLine);
+    addEventListener("online", guncelle);
+    addEventListener("offline", guncelle);
+    return () => {
+      removeEventListener("online", guncelle);
+      removeEventListener("offline", guncelle);
+    };
+  }, []);
   const send = (text: string) => {
+    if (!navigator.onLine) return setCevrimici(false);
     if (!hasKey) return onNeedKey();
     kaydet(courseKey, konusma, messages.length ? undefined : text);
     void sendMessage(text);
@@ -285,7 +297,12 @@ function ChatBody({
               <LoaderCircle className="size-4 animate-spin" aria-hidden /> Düşünüyor
             </div>
           )}
-          {error && (
+          {!cevrimici && (
+            <div role="status" data-testid="sohbet-cevrimdisi" className="rounded-lg px-3 py-2 text-sm" style={{ background: "var(--button-bg)" }}>
+              Sohbet internet ister. Sorular ve okuma çevrimdışı da çalışır; bağlanınca sorunu gönderebilirsin.
+            </div>
+          )}
+          {error && cevrimici && (
             <div role="alert" className="flex items-center gap-3 text-sm rounded-lg px-3 py-2" style={{ background: "var(--incorrect-bg)" }}>
               <span className="flex-1 min-w-0">{friendlyError(error)}</span>
               <button
@@ -504,6 +521,11 @@ function Composer({
   const submit = () => {
     const t = text.trim();
     if (!t || running) return;
+    // Offline: keep the text in the box; the notice above the list says why nothing was sent.
+    if (typeof navigator !== "undefined" && !navigator.onLine) {
+      onSend(t);
+      return;
+    }
     ses.durdur();
     onSend(t);
     setText("");

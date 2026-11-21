@@ -1,69 +1,49 @@
 ---
+// Shown by the service worker for a page that is neither in the app shell nor downloaded while there is no
+// connection. The address bar keeps the page the learner asked for; this page lists what does open offline.
 import Simge from "../components/Simge.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout noindex title="Çevrimdışı">
-    <div
-        class="min-h-[60vh] flex flex-col items-center justify-center text-center px-4"
-    >
-        <div
-            class="w-24 h-24 bg-card rounded-full flex items-center justify-center text-5xl mb-6 animate-pulse"
-        >
-            <Simge ad="WifiOff" />
-        </div>
-
-        <h1 class="text-3xl md:text-5xl font-bold text-theme mb-4">
-            Bağlantı Yok
-        </h1>
-
-        <p class="text-muted-theme text-lg max-w-md mb-8">
-            Şu anda internet bağlantınız yok gibi görünüyor. Daha önce
-            girdiğiniz sayfalara geri dönebilir veya bağlantınız geldiğinde
-            tekrar deneyebilirsiniz.
-        </p>
-
-        <div class="flex gap-4">
-            <a href="/" class="btn-primary"> Ana Sayfaya Dön </a>
-            <button onclick="window.location.reload()" class="btn-secondary">
-                Yeniden Dene
-            </button>
-        </div>
-
-        <div
-            id="status-msg"
-            class="mt-8 text-sm text-ink-muted animate-pulse hidden"
-        >
-            Bağlantı bekleniyor...
-        </div>
+  <div class="sekme-sayfa">
+    <div class="flex flex-col items-center text-center pt-6 pb-2">
+      <div class="w-16 h-16 bg-card rounded-full grid place-items-center text-ink-muted mb-4">
+        <Simge ad="WifiOff" size={30} />
+      </div>
+      <h1 class="text-[22px] font-semibold text-ink">Bu sayfa bağlantı gelince açılır</h1>
+      <p class="mt-2 max-w-md text-[15px] text-ink-muted" id="offline-aciklama">
+        Şu an internet yok ve bu sayfa cihazında kayıtlı değil. Ana sayfa, üniversite ve bölüm listeleri ile indirdiğin dersler açılır.
+      </p>
+      <div class="mt-5 flex flex-wrap justify-center gap-2">
+        <a href="/" class="eylem-cip">Ana sayfa</a>
+        <a href="/cevrimdisi/" class="eylem-cip">İndirilen dersler</a>
+        <button type="button" class="eylem-cip" id="offline-yeniden">Yeniden dene</button>
+      </div>
+      <p id="offline-durum" class="mt-4 text-[13px] text-ink-muted" aria-live="polite"></p>
     </div>
 
-    <script>
-        const statusMsg = document.getElementById("status-msg");
-        if (statusMsg) {
-            statusMsg.classList.remove("hidden");
-        }
-
-        // 1. Listen for standard 'online' event
-        window.addEventListener("online", () => {
-            if (statusMsg)
-                statusMsg.textContent = "Bağlantı kuruldu! Yönlendiriliyor...";
-            setTimeout(() => window.location.reload(), 1000);
-        });
-
-        // 2. Poll for connection (double check)
-        setInterval(async () => {
-            if (navigator.onLine) {
-                try {
-                    // Try to fetch a tiny resource (favicon) to verify actual internet access
-                    const res = await fetch("/favicon.svg", { method: "HEAD" });
-                    if (res.ok) {
-                        window.location.reload();
-                    }
-                } catch (e) {
-                    // Still offline
-                }
-            }
-        }, 5000);
-    </script>
+    <h2 class="ayar-baslik mt-6">Cihazındaki dersler</h2>
+    <div id="offline-liste"></div>
+  </div>
 </Layout>
+
+<script>
+  import { indirilenListesi } from "../lib/cevrimdisi/liste";
+  import { destekVar } from "../lib/cevrimdisi/istemci";
+
+  const durum = document.getElementById("offline-durum") as HTMLElement;
+  if (destekVar()) {
+    void indirilenListesi(document.getElementById("offline-liste") as HTMLElement, {
+      yonetim: false,
+      bos: "Bağlantı gelince bir dersin sayfasında \"Çevrimdışı için indir\" düğmesine dokun; o ders sonra internetsiz de açılır.",
+    }).ciz();
+  }
+  // Served in place of the page that was asked for: reloading tries that page again.
+  const dene = () => location.reload();
+  document.getElementById("offline-yeniden")?.addEventListener("click", dene);
+  addEventListener("online", () => {
+    durum.textContent = "Bağlantı geldi, sayfa açılıyor";
+    setTimeout(dene, 800);
+  });
+</script>

@@ -27,6 +27,7 @@ import {
   Route,
   ListTree,
   Volume2,
+  Download,
   type IconNode,
 } from "lucide";
 import { OYNATICI_DURUM_OLAYI, hizMetni, type OynaticiDurum } from "./ders-olaylari";
@@ -135,6 +136,17 @@ export const EYLEMLER: Eylem[] = [
   { id: "uniteyi-temizle", etiket: "Üniteyi temizle", simge: Eraser, pasif: () => !calisma()?.cevapVar(), calistir: () => calisma()?.uniteyiTemizle() },
   { id: "dersi-temizle", etiket: "Dersi temizle", simge: ListRestart, pasif: () => !calisma()?.cevapVar(), calistir: () => calisma()?.dersiTemizle() },
   { id: "yeri-sifirla", etiket: "Kaldığın yeri sıfırla", simge: MapPinOff, pasif: () => !calisma()?.yerVar(), calistir: () => calisma()?.yeriSifirla() },
+  // Offline download of this course: clicks the chip on the course card (src/lib/cevrimdisi/ders-dugmesi.ts), whose text is the label
+  {
+    id: "cevrimdisi",
+    etiket: "Çevrimdışı için indir",
+    simge: Download,
+    // Guarded like temaOku: the menu renders on the server too.
+    etiketi: () =>
+      (typeof document === "undefined" ? null : document.querySelector("#cevrimdisi-indir [data-etiket]")?.textContent?.trim()) || "Çevrimdışı için indir",
+    calisiyor: () => typeof document !== "undefined" && document.getElementById("cevrimdisi-indir")?.dataset.durum === "iniyor",
+    calistir: () => tikla("#cevrimdisi-indir"),
+  },
   { id: "yedek", etiket: "Kayıtlarını taşı", simge: RefreshCw, calistir: () => location.assign("/yedek") },
   { id: "hata", etiket: "Hata bildir", simge: Flag, calistir: () => tikla("[data-tartisma]") },
   { id: "tur", etiket: "Turu yeniden göster", simge: Route, calistir: () => window.dispatchEvent(new CustomEvent("tur:baslat")) },

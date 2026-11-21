@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import "../styles/print.css";
+import "../styles/cevrimdisi.css";
 import AyarlarIcerik from "../components/AyarlarIcerik.astro";
 import SekmeCubugu from "../components/SekmeCubugu.astro";
 import SeoHead from "../components/SeoHead.astro";
@@ -176,22 +177,8 @@ const { title, description = VARSAYILAN_ACIKLAMA, sekmeler = true, ayarSayfasi =
       if (localStorage.getItem("rs-esitleme-acik") && location.pathname !== "/yedek") {
         import("../lib/rs-esitle").then((m) => m.rsOtomatik());
       }
-      // Register Service Worker for PWA
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker.register("/sw.js").then(
-            (registration) => {
-              console.log(
-                "ServiceWorker registration successful:",
-                registration.scope,
-              );
-            },
-            (err) => {
-              console.log("ServiceWorker registration failed:", err);
-            },
-          );
-        });
-      }
+      // Offline support (docs/cevrimdisi.md): the worker is built with the site, so the dev server registers none
+      import("../lib/cevrimdisi/kayit").then((m) => m.cevrimdisiBaslat({ kaydet: import.meta.env.PROD })).catch(() => undefined);
     </script>
   </head>
   <body
@@ -224,6 +211,9 @@ const { title, description = VARSAYILAN_ACIKLAMA, sekmeler = true, ayarSayfasi =
             AÖF Portal
           </span>
         </a>
+        <span class="cevrimdisi-simge" role="img" aria-label="Çevrimdışı" title="Çevrimdışısın: indirdiğin dersler açılır">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h.01"></path><path d="M8.5 16.429a5 5 0 0 1 7 0"></path><path d="M5 12.859a10 10 0 0 1 5.17-2.69"></path><path d="M19 12.859a10 10 0 0 0-2.007-1.523"></path><path d="M2 8.82a15 15 0 0 1 4.177-2.643"></path><path d="M22 8.82a15 15 0 0 0-11.288-3.764"></path><path d="m2 2 20 20"></path></svg>
+        </span>
 
         <div class="hidden md:flex items-center gap-6">
           <a href="/anadolu-aof" class="nav-link">Anadolu AÖF</a>

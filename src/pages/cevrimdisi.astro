@@ -1,0 +1,219 @@
+---
+// Offline management: downloaded courses (update, delete), storage use, persistent storage, the iPhone
+// "Ana ekrana ekle" advice, department pages kept for offline browsing and the app version.
+// Logic: src/lib/cevrimdisi/ (docs/cevrimdisi.md).
+import Layout from "../layouts/Layout.astro";
+import Simge from "../components/Simge.astro";
+---
+
+<Layout noindex title="Çevrimdışı" description="İndirdiğin dersler, kullanılan alan ve güncellemeler">
+  <div class="sekme-sayfa" id="cevrimdisi-yonetim">
+    <h1 class="sekme-baslik">Çevrimdışı</h1>
+    <p class="-mt-2 mb-6 text-[15px] text-ink-muted">
+      İndirdiğin dersler internet olmadan açılır. Cevapların ve kaldığın yer zaten bu cihazda saklanır; burada bir dersi silmek onlara dokunmaz.
+    </p>
+
+    <div class="ayar-gruplar">
+      <section aria-labelledby="cd-dersler">
+        <div class="flex items-center gap-2">
+          <h2 id="cd-dersler" class="ayar-baslik min-w-0 flex-1">İndirilen dersler</h2>
+          <button type="button" id="cd-denetle" class="metin-dugme">Güncellemeleri denetle</button>
+        </div>
+        <div id="cd-liste" aria-live="polite"></div>
+        <button type="button" id="cd-hepsini-sil" class="metin-dugme mt-2 text-bad" hidden>Tümünü sil</button>
+      </section>
+
+      <section aria-labelledby="cd-alan">
+        <h2 id="cd-alan" class="ayar-baslik">Alan</h2>
+        <div class="ayar-kart">
+          <div class="ayar-satir ayar-satir-dikey">
+            <span class="ayar-ad" id="cd-alan-metin">Hesaplanıyor</span>
+            <div class="serit mt-2 w-full" role="progressbar" aria-label="Kullanılan alan" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="cd-alan-serit"><span></span></div>
+          </div>
+          <div class="ayar-satir">
+            <span class="min-w-0 flex-1">
+              <span class="ayar-ad block">Kalıcı depolama</span>
+              <span class="ayar-not" id="cd-kalici-not">Tarayıcı yer daralınca bu sitenin verisini silmesin</span>
+            </span>
+            <button type="button" id="cd-kalici" class="eylem-cip shrink-0">İzin iste</button>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="cd-ios" id="cd-ios-bolum" hidden>
+        <h2 id="cd-ios" class="ayar-baslik">iPhone ve iPad</h2>
+        <div class="ayar-kart">
+          <div class="ayar-satir ayar-satir-dikey">
+            <span class="ayar-ad">Ana ekrana ekle</span>
+            <span class="ayar-not">
+              Safari, ana ekrana eklenmemiş sitelerin indirdiği dosyaları yedi gün açılmazsa silebilir. Ana ekrandaki uygulama kendi sayacını tutar ve dosyalarını korur.
+            </span>
+            <ol class="mt-3 grid gap-2 text-[15px] text-ink">
+              <li class="flex items-center gap-3"><span class="adim-no">1</span>Paylaş düğmesine dokun</li>
+              <li class="flex items-center gap-3"><span class="adim-no">2</span>Ana Ekrana Ekle'yi seç</li>
+              <li class="flex items-center gap-3"><span class="adim-no">3</span>Ekle'ye dokun, sonra siteyi ana ekrandan aç</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="cd-bolumler">
+        <h2 id="cd-bolumler" class="ayar-baslik">Gezinme</h2>
+        <div class="ayar-kart">
+          <label class="ayar-satir">
+            <span class="min-w-0 flex-1">
+              <span class="ayar-ad block">Bölüm sayfalarını cihazda tut</span>
+              <span class="ayar-not" id="cd-bolum-not">Üniversite ve bölüm listeleri internetsiz de açılır</span>
+            </span>
+            <input type="checkbox" id="cd-bolum-ac" class="toggle-input-small" checked />
+          </label>
+        </div>
+      </section>
+
+      <section aria-labelledby="cd-surum">
+        <h2 id="cd-surum" class="ayar-baslik">Uygulama</h2>
+        <div class="ayar-kart">
+          <div class="ayar-satir">
+            <Simge ad="Info" size={20} />
+            <span class="min-w-0 flex-1">
+              <span class="ayar-ad block" id="cd-surum-metin">Sürüm bilgisi bekleniyor</span>
+              <span class="ayar-not" id="cd-surum-not">Yeni sürüm gelince üstte "Yenile" çıkar</span>
+            </span>
+            <button type="button" id="cd-surum-denetle" class="eylem-cip shrink-0">Denetle</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style is:global>
+  .adim-no {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    border-radius: 999px;
+    background: var(--button-bg);
+    color: var(--text-color);
+    font-size: 13px;
+    font-weight: 600;
+  }
+</style>
+
+<script>
+  import { bildir } from "../lib/bildirim";
+  import { ONBELLEK, boyutMetni } from "../lib/cevrimdisi/anahtar";
+  import { alan, destekVar, guncellemeler, hepsiniSil, kaliciIste, surumleriUnut } from "../lib/cevrimdisi/istemci";
+  import { indirilenListesi } from "../lib/cevrimdisi/liste";
+
+  const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
+  const liste = indirilenListesi($("cd-liste"), {
+    yonetim: true,
+    bos: "Bir dersin sayfasında \"Çevrimdışı için indir\" düğmesine dokun ya da Derslerim'de yıldızlı dersleri çevrimdışı tut.",
+  });
+  const hepsiniSilDugme = $<HTMLButtonElement>("cd-hepsini-sil");
+
+  async function listeyiCiz() {
+    const dersler = await liste.ciz();
+    hepsiniSilDugme.hidden = dersler.length < 2;
+    await alaniCiz();
+  }
+
+  async function alaniCiz() {
+    const a = await alan();
+    const metin = $("cd-alan-metin");
+    const serit = $("cd-alan-serit");
+    if (!a.kota) {
+      metin.textContent = a.kullanilan ? `${boyutMetni(a.kullanilan)} kullanılıyor` : "Tarayıcı alan bilgisini vermiyor";
+      return;
+    }
+    const oran = Math.min(100, Math.round((a.kullanilan / a.kota) * 100));
+    metin.textContent = `${boyutMetni(a.kullanilan)} kullanılıyor · ${boyutMetni(Math.max(0, a.kota - a.kullanilan))} boş`;
+    serit.setAttribute("aria-valuenow", String(oran));
+    (serit.firstElementChild as HTMLElement).style.width = `${Math.max(1, oran)}%`;
+    const kalici = $<HTMLButtonElement>("cd-kalici");
+    const not = $("cd-kalici-not");
+    if (a.kalici) {
+      kalici.hidden = true;
+      not.textContent = "Açık: tarayıcı yer daralsa da bu sitenin verisini silmez";
+    } else if (a.kalici === null) {
+      kalici.hidden = true;
+      not.textContent = "Bu tarayıcı kalıcı depolamayı desteklemiyor";
+    }
+  }
+
+  if (!destekVar()) {
+    $("cd-liste").textContent = "Bu tarayıcı çevrimdışı kaydı desteklemiyor.";
+  } else {
+    void listeyiCiz();
+    window.addEventListener("cevrimdisi:degisti", () => void alaniCiz());
+  }
+
+  $("cd-denetle").addEventListener("click", async () => {
+    if (!navigator.onLine) return bildir({ metin: "Güncellemeleri görmek için bağlantı gerekiyor." });
+    surumleriUnut();
+    const g = await guncellemeler();
+    await listeyiCiz();
+    bildir({ metin: g.size ? `${g.size} derste güncelleme var.` : "Bütün dersler güncel." });
+  });
+
+  hepsiniSilDugme.addEventListener("click", async () => {
+    if (!confirm("İndirilen bütün dersler bu cihazdan silinsin mi? Cevapların ve kaldığın yer silinmez.")) return;
+    await hepsiniSil();
+    bildir({ metin: "İndirilen dersler silindi." });
+  });
+
+  $("cd-kalici").addEventListener("click", async () => {
+    const ok = await kaliciIste();
+    await alaniCiz();
+    if (!ok) bildir({ metin: "Tarayıcı izni şimdilik vermedi. Siteyi sık açtıkça ya da ana ekrana ekleyince genelde verir." });
+  });
+
+  // iPhone and iPad (iPadOS reports a Mac with touch): advice only when the site is not on the home screen yet.
+  const ios = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  const anaEkranda = matchMedia("(display-mode: standalone)").matches || (navigator as Navigator & { standalone?: boolean }).standalone === true;
+  $("cd-ios-bolum").hidden = !(ios && !anaEkranda);
+
+  // Department pages kept for offline browsing
+  const bolumAc = $<HTMLInputElement>("cd-bolum-ac");
+  bolumAc.checked = localStorage.getItem("cevrimdisi-bolumler") !== "kapali";
+  const bolumNotu = async (kalan?: number, toplam?: number) => {
+    const sayi = (await (await caches.open(ONBELLEK.bolum)).keys()).length;
+    const not = $("cd-bolum-not");
+    if (!bolumAc.checked) not.textContent = "Kapalı: bölüm sayfaları yalnız açtıkların kalır";
+    else if (toplam) not.textContent = kalan ? `${toplam - kalan} / ${toplam} bölüm sayfası cihazda, kalanlar bağlantı varken iner` : `${toplam} bölüm sayfasının hepsi cihazda`;
+    else not.textContent = `${sayi} bölüm sayfası cihazda`;
+  };
+  bolumAc.addEventListener("change", async () => {
+    localStorage.setItem("cevrimdisi-bolumler", bolumAc.checked ? "acik" : "kapali");
+    if (!bolumAc.checked) await caches.delete(ONBELLEK.bolum);
+    else navigator.serviceWorker?.controller?.postMessage({ tur: "isit", adet: 25 });
+    await bolumNotu();
+    await alaniCiz();
+  });
+  window.addEventListener("cevrimdisi:isinma", (e) => {
+    const d = (e as CustomEvent<{ kalan: number; toplam: number }>).detail;
+    void bolumNotu(d.kalan, d.toplam);
+  });
+  if (destekVar()) void bolumNotu();
+
+  // App version (service worker)
+  const surumMetni = $("cd-surum-metin");
+  navigator.serviceWorker?.addEventListener("message", (e) => {
+    const m = e.data as { tur?: string; surum?: string; bolum?: number } | null;
+    if (m?.tur === "surum") {
+      surumMetni.textContent = `Sürüm ${m.surum}`;
+      if (m.bolum) void bolumNotu();
+    }
+  });
+  navigator.serviceWorker?.ready.then((k) => k.active?.postMessage({ tur: "surum" }));
+  if (!navigator.serviceWorker?.controller) surumMetni.textContent = "Çevrimdışı çalışma bu sayfa yenilenince başlar";
+  $("cd-surum-denetle").addEventListener("click", async () => {
+    if (!navigator.onLine) return bildir({ metin: "Sürümü denetlemek için bağlantı gerekiyor." });
+    const k = await navigator.serviceWorker?.getRegistration();
+    await k?.update().catch(() => undefined);
+    bildir({ metin: k?.waiting || k?.installing ? "Yeni sürüm iniyor; hazır olunca üstte Yenile çıkar." : "En son sürümü kullanıyorsun." });
+  });
+</script>

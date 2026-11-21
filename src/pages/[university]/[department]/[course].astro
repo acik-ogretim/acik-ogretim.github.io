@@ -253,6 +253,20 @@ const dersJsonLd = graf(
               <Simge ad="Play" size={18} />Video özeti
             </button>
           )}
+          <button
+            type="button"
+            id="cevrimdisi-indir"
+            class="eylem-cip"
+            data-uni={university.id}
+            data-ders={course.id}
+            data-ad={course.name}
+            hidden
+          >
+            <span data-simge="indir" class="inline-flex"><Simge ad="Download" size={18} /></span>
+            <span data-simge="hazir" class="inline-flex" hidden><Simge ad="CircleCheck" size={18} /></span>
+            <span data-simge="guncelleme" class="inline-flex" hidden><Simge ad="RefreshCw" size={18} /></span>
+            <span data-etiket>Çevrimdışı için indir</span>
+          </button>
           <SohbetCekmece client:idle courseKey={`${university.id}/${course.id}`} tetikSinifi="eylem-cip" />
           <button
             type="button"
@@ -272,6 +286,8 @@ const dersJsonLd = graf(
             <Simge ad="Printer" size={18} />Yazdır
           </button>
         </div>
+        <div id="cevrimdisi-serit" class="indir-serit" role="progressbar" aria-label="İndirme" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" hidden><span></span></div>
+        <p id="cevrimdisi-bilgi" class="mt-2 text-[13px] text-ink-muted line-clamp-2" aria-live="polite" hidden></p>
       </section>
       {videoVar && (
         <div id="video-ozet" hidden>
@@ -561,6 +577,11 @@ const dersJsonLd = graf(
   </dialog>
 
 
+
+  <script>
+    import { dersDugmesiniBagla } from "../../../lib/cevrimdisi/ders-dugmesi";
+    dersDugmesiniBagla();
+  </script>
 
   <script>
     import { geriBolumu } from "../../../lib/ders-bolumu";

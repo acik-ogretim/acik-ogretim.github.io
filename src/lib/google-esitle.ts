@@ -230,10 +230,12 @@ export function otomatikEsitlemeKur() {
   if (!GOOGLE_CLIENT_ID || !gecerliToken()) return;
   let son = 0;
   const calis = () => {
-    if (!gecerliToken() || Date.now() - son < 30_000) return;
+    // Offline the records keep being written locally; the next run after "online" carries them.
+    if (!navigator.onLine || !gecerliToken() || Date.now() - son < 30_000) return;
     son = Date.now();
     googleEsitle(false).catch(() => undefined);
   };
   calis();
   addEventListener("visibilitychange", () => document.visibilityState === "hidden" && calis());
+  addEventListener("online", calis);
 }

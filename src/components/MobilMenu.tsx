@@ -27,6 +27,7 @@ import {
   Icon,
   LayoutGrid,
   ListTree,
+  WifiOff,
   Minus,
   Pencil,
   Plus,
@@ -347,6 +348,10 @@ export default function MobilMenu({ dersAdi, uniteler: tumUniteler, uni, ders, b
             {konum || (aktifUnite ? etiket(aktifUnite) : "\u00a0")}
           </p>
         </div>
+        {/* Shown by html[data-cevrimdisi] (src/styles/cevrimdisi.css) */}
+        <span className="cevrimdisi-simge !m-0 !w-9" role="img" aria-label="Çevrimdışı" title="Çevrimdışısın: indirdiğin dersler açılır">
+          <WifiOff className="size-[18px]" aria-hidden />
+        </span>
         <button
           type="button"
           aria-label="İçindekiler"
