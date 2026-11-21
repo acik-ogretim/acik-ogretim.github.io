@@ -76,11 +76,28 @@ const { title, description = VARSAYILAN_ACIKLAMA, sekmeler = true, ayarSayfasi =
         markTheme(theme);
       };
       // Marks the active theme on every theme button (aria-pressed drives the filled look).
-      const markTheme = (theme) =>
+      const TEMA_SIRASI = ["light", "dark", "sepia"];
+      const TEMA_ADI = { light: "Aydınlık", dark: "Koyu", sepia: "Sepya" };
+      const markTheme = (theme) => {
         document.querySelectorAll("[onclick^='setTheme(']").forEach((b) => {
           const m = /setTheme\('(\w+)'\)/.exec(b.getAttribute("onclick") || "");
           if (m) b.setAttribute("aria-pressed", String(m[1] === theme));
         });
+        // Single header button: shows the current theme's icon, click moves to the next one
+        document.querySelectorAll("[data-tema-dongu]").forEach((b) => {
+          const t = TEMA_SIRASI.includes(theme) ? theme : "dark";
+          const sonraki = TEMA_SIRASI[(TEMA_SIRASI.indexOf(t) + 1) % TEMA_SIRASI.length];
+          b.setAttribute("data-tema-dongu", t);
+          const etiket = "Tema: " + TEMA_ADI[t] + ". " + TEMA_ADI[sonraki] + " temaya geç";
+          b.setAttribute("aria-label", etiket);
+          b.setAttribute("title", etiket);
+        });
+      };
+      window.cycleTheme = function () {
+        const simdiki = document.documentElement.getAttribute("data-theme") || "dark";
+        const i = TEMA_SIRASI.indexOf(simdiki);
+        window.setTheme(TEMA_SIRASI[(i + 1) % TEMA_SIRASI.length]);
+      };
       document.addEventListener("DOMContentLoaded", () => markTheme(document.documentElement.getAttribute("data-theme")));
 
       // Settings window: a native <dialog> (src/styles/katman.css); showModal gives focus, Esc and inert page
@@ -219,96 +236,26 @@ const { title, description = VARSAYILAN_ACIKLAMA, sekmeler = true, ayarSayfasi =
         <div class="hidden md:flex items-center gap-3 xl:gap-5 whitespace-nowrap">
           <!-- Same destinations as the phone tab bar; labels from 1280 px, icons with titles below; university links from 1024 px -->
           <div class="flex items-center gap-1 lg:border-r lg:border-line lg:pr-3 xl:pr-4" aria-label="Kısayollar">
+            <a href="/calisma/" class="nav-link inline-flex items-center gap-1.5 rounded-full px-2 py-2" title="Ders anlatımı"><Simge ad="MonitorPlay" size={18} /><span class="hidden xl:inline">Ders anlatımı</span></a>
             <a href="/derslerim" class="nav-link inline-flex items-center gap-1.5 rounded-full px-2 py-2" title="Derslerim"><Simge ad="BookOpen" size={18} /><span class="hidden xl:inline">Derslerim</span></a>
-            <a href="/ara" class="nav-link inline-flex items-center gap-1.5 rounded-full px-2 py-2" title="Ara (Ctrl+K)"><Simge ad="Search" size={18} /><span class="hidden xl:inline">Ara</span></a>
-            <a href="/ilerleme" class="nav-link inline-flex items-center gap-1.5 rounded-full px-2 py-2" title="İlerleme"><Simge ad="ChartNoAxesColumn" size={18} /><span class="hidden xl:inline">İlerleme</span></a>
-            <a href="/cevrimdisi" class="nav-link inline-flex items-center gap-1.5 rounded-full px-2 py-2" title="Çevrimdışı dersler"><Simge ad="CloudDownload" size={18} /><span class="hidden xl:inline">Çevrimdışı</span></a>
+            <a href="/ara" class="nav-link inline-flex items-center gap-1.5 rounded-full px-2 py-2" title="Ara (Ctrl+K)"><Simge ad="Search" size={18} /></a>
+            <a href="/ilerleme" class="nav-link inline-flex items-center gap-1.5 rounded-full px-2 py-2" title="İlerleme"><Simge ad="ChartNoAxesColumn" size={18} /></a>
+            <a href="/cevrimdisi" class="nav-link inline-flex items-center gap-1.5 rounded-full px-2 py-2" title="Çevrimdışı dersler"><Simge ad="CloudDownload" size={18} /></a>
           </div>
           <a href="/anadolu-aof" class="nav-link hidden lg:inline">Anadolu AÖF</a>
           <a href="/ataturk-aof" class="nav-link hidden lg:inline">ATA-AÖF</a>
           <a href="/auzef" class="nav-link hidden lg:inline">AUZEF</a>
           <a href="/ankuzef" class="nav-link hidden lg:inline">Ankara AÖF</a>
 
-          <!-- Theme Toggles -->
-          <div
-            class="flex items-center gap-2 border-l border-line pl-4 ml-2"
-          >
-            <button
-              onclick="setTheme('light')"
-              class="theme-toggle-btn hover:text-warn"
-              title="Aydınlık Mod"
-              data-testid="theme-toggle-light"
-            >
-              <svg
-                class="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                ></path></svg
-              >
+          <!-- Theme (one button that cycles light, dark, sepia) and settings -->
+          <div class="flex items-center gap-1 border-l border-line pl-3 xl:pl-4">
+            <button type="button" onclick="cycleTheme()" data-tema-dongu="dark" class="theme-toggle-btn tema-dongu" aria-label="Temayı değiştir" title="Temayı değiştir" data-testid="theme-toggle">
+              <Simge ad="Sun" size={20} class="tema-ikon tema-ikon-light" />
+              <Simge ad="Moon" size={20} class="tema-ikon tema-ikon-dark" />
+              <Simge ad="BookOpenText" size={20} class="tema-ikon tema-ikon-sepia" />
             </button>
-            <button
-              onclick="setTheme('dark')"
-              class="theme-toggle-btn hover:text-accent-ink"
-              title="Koyu Mod"
-              data-testid="theme-toggle-dark"
-            >
-              <svg
-                class="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                ></path></svg
-              >
-            </button>
-            <button
-              onclick="setTheme('sepia')"
-              class="theme-toggle-btn hover:text-warn"
-              title="Sepya Mod"
-            >
-              <svg
-                class="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                ></path></svg
-              >
-            </button>
-            <button
-              onclick="openQuizSettings()"
-              class="theme-toggle-btn hover:text-accent-ink"
-              title="Sınav Ayarları"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="12" cy="12" r="3"></circle>
-                <path
-                  d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
-                ></path>
-              </svg>
+            <button type="button" onclick="openQuizSettings()" class="theme-toggle-btn" aria-label="Ayarlar" title="Ayarlar">
+              <Simge ad="Settings" size={20} />
             </button>
           </div>
         </div>
@@ -331,6 +278,7 @@ const { title, description = VARSAYILAN_ACIKLAMA, sekmeler = true, ayarSayfasi =
       <!-- Menu below 1024 px (narrower than 600 px the tab bar covers the shortcuts): a native popover, light dismiss and Esc for free -->
       <div id="mobileMenu" popover class="katman-acilir lg:hidden">
         <nav class="katman-liste" aria-label="Kısayollar">
+          <a href="/calisma/" class="katman-satir"><Simge ad="MonitorPlay" size={20} class="size-5 shrink-0" /><span class="katman-satir-ad">Ders anlatımı</span></a>
           <a href="/derslerim" class="katman-satir"><Simge ad="BookOpen" size={20} class="size-5 shrink-0" /><span class="katman-satir-ad">Derslerim</span></a>
           <a href="/ara" class="katman-satir"><Simge ad="Search" size={20} class="size-5 shrink-0" /><span class="katman-satir-ad">Ara</span></a>
           <a href="/ilerleme" class="katman-satir"><Simge ad="ChartNoAxesColumn" size={20} class="size-5 shrink-0" /><span class="katman-satir-ad">İlerleme</span></a>
@@ -346,7 +294,7 @@ const { title, description = VARSAYILAN_ACIKLAMA, sekmeler = true, ayarSayfasi =
           <button type="button" onclick="setTheme('light')" data-tema="light" class="tema-secim"><svg xmlns="http://www.w3.org/2000/svg" class="size-6" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg><span>Aydınlık</span></button>
           <button type="button" onclick="setTheme('dark')" data-tema="dark" class="tema-secim"><svg xmlns="http://www.w3.org/2000/svg" class="size-6" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><span>Koyu</span></button>
           <button type="button" onclick="setTheme('sepia')" data-tema="sepia" class="tema-secim"><svg xmlns="http://www.w3.org/2000/svg" class="size-6" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg><span>Sepya</span></button>
-          <button type="button" onclick="openQuizSettings()" class="tema-secim"><svg xmlns="http://www.w3.org/2000/svg" class="size-6" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg><span>Ayarlar</span></button>
+          <button type="button" onclick="openQuizSettings()" class="tema-secim"><Simge ad="Settings" size={24} class="size-6" /><span>Ayarlar</span></button>
         </div>
       </div>
     </header>
@@ -722,5 +670,12 @@ const { title, description = VARSAYILAN_ACIKLAMA, sekmeler = true, ayarSayfasi =
         } catch (e) {}
       })();
     </script>
+    <style is:global>
+      /* Header theme button: only the current theme's icon is shown */
+      .tema-dongu .tema-ikon { display: none; }
+      .tema-dongu[data-tema-dongu="light"] .tema-ikon-light,
+      .tema-dongu[data-tema-dongu="dark"] .tema-ikon-dark,
+      .tema-dongu[data-tema-dongu="sepia"] .tema-ikon-sepia { display: block; }
+    </style>
   </body>
 </html>
