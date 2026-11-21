@@ -494,6 +494,16 @@ k20.append(ekran(ust_kapsul("Sosyolojiye Giriş", "Ü 1 · 4 / 36") + '<main cla
 sayfa("20-yapiya-uygun", "Yapıya uygun ders sayfası", k20)
 URUN_EK = ["20-yapiya-uygun"]
 
+# ---------- 21 Stitch tema 17 seçkisi ----------
+k21 = [
+    resim("alternatifler/stitch-t17-soru.jpg", "Soru çözme: Stitch'teki \"Soru Çözümü (Rafine)\" ekranı seçildi (serif soru, sakin yüzeyler, yan şeritsiz açıklama) ve iki turda tema 17 kurallarıyla düzenlendi: kutusuz soru, kapsül üst çubuk, işaret ve içindekiler simgeleri, konu çipi, açıklamada doğru cevap vurgusu, uydurma başarı oranı ve dev sonraki düğmesi kalktı, yazısız oynatıcı, altta sıradaki soru", 300),
+    resim("alternatifler/stitch-t17-bugun.jpg", "Bugün: tek serif başlık, kaldığın yer kartı ve tek mavi devam düğmesi, kişinin kendi yanlışlarından tekrar satırı, nötr ilerlemeli ders listesi, beş sekmeli cam çubuk; avatar kaldırıldı", 300),
+    resim("alternatifler/stitch-t17-derslerim.jpg", "Derslerim: tek başlık ve düzenle simgesi, nötr iki parçalı seçici, üniversite kısaltmalı meta, favori yıldızı, çizgili Ders ekle satırı", 300),
+    resim("alternatifler/stitch-t17-ayarlar.jpg", "Ayarlar: normal harfli grup başlıkları, kart içinde gruplu satırlar, vurgu rengi seçimi, anahtarlar mavi; avatar, alt bilgi ve uydurma sürüm numarası kaldırıldı", 300),
+    resim("alternatifler/stitch-t17-suzgec.jpg", "Süzgeç alt sayfası: karartılmış ders sayfası üstünde cam alt sayfa, mavi zeminli seçili çipler, nötr Sıfırla ve tek mavi Uygula", 300),
+]
+sayfa("21-stitch-tema17", "Stitch tema 17 seçkisi", k21)
+
 # ---------- tema 17'yi ürün ekranlarına uygula ----------
 URUN = ["01-soru-cozme", "02-oynatici", "03-arama", "04-sohbet", "05-unite-konu-yanlislar", "06-ozet-okuma",
         "07-karsilama-giris", "08-ana-sayfa", "09-derslerim-favoriler", "10-ilerleme", "11-ayarlar", "12-pwa-durumlar", "16-video-canli-ders"] + URUN_EK
@@ -513,7 +523,7 @@ BOLUMLER = [
     ("Keşif ve Derslerim", "/[üniversite], /[bölüm] ve favori dersler.",
      [("09-derslerim-favoriler", "Derslerim, favoriler, ders ekleme", "var")]),
     ("Ders sayfası", "/[ders]: uzun liste, okuma ve çözme kipi, ünite şeridi; özet ve video yalnız verisi olan derste.",
-     [("20-yapiya-uygun", "Yapıya uygun ders sayfası (UYUM.md)", "var"), ("01-soru-cozme", "Soru çözme", "var"), ("02-oynatici", "Oynatıcı", "var"), ("03-arama", "Arama", "var"),
+     [("20-yapiya-uygun", "Yapıya uygun ders sayfası (UYUM.md)", "var"), ("21-stitch-tema17", "Stitch tema 17 seçkisi: soru, Bugün, Derslerim, Ayarlar, Süzgeç", "var"), ("01-soru-cozme", "Soru çözme", "var"), ("02-oynatici", "Oynatıcı", "var"), ("03-arama", "Arama", "var"),
       ("04-sohbet", "Derse sor", "var"), ("05-unite-konu-yanlislar", "Ünite, konu, yanlışlarım", "var"),
       ("06-ozet-okuma", "Özet okuma", "var"), ("16-video-canli-ders", "Video ve döküm, canlı ders, kurs akışı", "veri gerekir")]),
     ("İlerleme, ayarlar, sistem", "Kayıtlardan hesaplanan ölçüler; tek ayar sekmesi; PWA durumları.",

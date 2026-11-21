@@ -95,3 +95,11 @@ Aynı ekranın mat koyu sürümü. Parlama azalmış, zemin tonu tema 17'ye yakl
 **Alınacaklar**: açıklamada doğru cevabın adını metin içinde vurgu metni rengiyle öne çıkarma; açıklama başlığında seslendir düğmesi; kaynak satırının açıklamanın altında meta boyutunda durması.
 
 **Alınmayacaklar**: kutulu ve etiketli soru; "Sınav İpucu" kutusu (yan şerit ve kehribar zemin, ayrıca veride sınav ipucu alanı yok; yapay zekâ açıklaması içinde düz paragraf olarak gelebilir); "Çıkmış Soru Eşleşmesi" etiketi (anlamı belirsiz); "1 Puan" çipi, "01:24 / 04:30" süresi ve "Sonraki Soruya Geç" düğmesi (önceki değerlendirmedeki nedenler); soru metninin sans yazısı.
+
+## Stitch tema 17 seçkisi (21 Kasım 2026)
+
+Stitch projesindeki 23 tasarım tek pafta hâlinde karşılaştırıldı. Arayüz ve kullanım açısından en uygun bulunan "Devlet Teorisi · Soru Çözümü (Rafine)" oldu: serif soru metni, sakin koyu yüzeyler, yumuşak mavi vurgu, yan şeritsiz açıklama ve küçük alt oynatıcı tema 17'ye en yakın başlangıçtı. Parlamalı, neon ve oyunlaştırılmış seçenekler (Spatial Glass, Gamified Arcade, Neo-Brutalist, Cyber Terminal) elendi.
+
+Seçilen ekran iki turda tema 17 kurallarıyla düzenletildi; aynı kurallarla Bugün, Derslerim, Ayarlar ve Süzgeç ekranları üretildi. Her istemde ortak kural bloğu kullanıldı: renk değerleri, gölge ve parlama yok, kutusuz soru, yazısız simge düğmeler, tek satır ve üç nokta, avatar yok, uydurma veri yok. İlk turda çıkan hatalar (oynatıcıda bozuk "VOLUME_" yazısı, avatarlar, yinelenen başlıklar, zil simgesi, BÜYÜK HARF grup başlıkları, uydurma sürüm numarası, dört sekmeli çubuk, masaüstü tuvali) ikinci turda düzeltildi. Sonuçlar `alternatifler/stitch-t17-*.jpg` ve `21-stitch-tema17.html` içinde.
+
+**Uygulamaya taşınacaklar**: Ayarlar grup düzeni ve satır sırası; Derslerim satır anatomisi (ad, üniversite kısaltmalı meta, nötr şerit, yıldız); Süzgeç alt sayfasının çip grupları; Bugün ekranının kaldığın yer kartı ve tekrar satırı.
