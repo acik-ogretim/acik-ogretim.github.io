@@ -1,0 +1,43 @@
+---
+// Ders anlatımı dizini: çalışma odası olan dersler (src/data/calisma-odasi/<ders>.json), kart olarak.
+import Layout from "../../layouts/Layout.astro";
+import Simge from "../../components/Simge.astro";
+import { getCourses, getUniversities } from "../../lib/api";
+import { canonicalDepartments } from "../../lib/kanonik";
+
+const paketler = import.meta.glob<{ ders: string; uni: string; konular: unknown[]; video?: unknown; videolar?: unknown[] }>("../../data/calisma-odasi/*.json", { eager: true, import: "default" });
+const kanonik = await canonicalDepartments();
+const universiteler = await getUniversities();
+const kartlar: { ders: string; ad: string; uni: string; video: number; konu: number }[] = [];
+for (const p of Object.values(paketler)) {
+  const uni = universiteler.find((u) => u.id === p.uni);
+  const bolum = kanonik.get(`${p.uni}/${p.ders}`);
+  let ad = p.ders;
+  if (bolum) for (const c of await getCourses(p.uni, bolum)) if (c.id === p.ders) ad = c.name;
+  kartlar.push({ ders: p.ders, ad, uni: uni?.name ?? p.uni, video: p.videolar ? p.videolar.length : p.video ? 1 : 0, konu: p.konular.length });
+}
+kartlar.sort((a, b) => a.ad.localeCompare(b.ad, "tr"));
+---
+
+<Layout noindex title="Ders anlatımı" description="Vize özet videosu, zaman kodlu döküm ve konu anlatımıyla çalışma odaları.">
+  <div class="sekme-sayfa">
+    <h1 class="sekme-baslik">Ders anlatımı</h1>
+    <p class="-mt-2 mb-6 text-[15px] text-ink-muted">Video, döküm ve konu anlatımı yan yana. Bir ders seç, çalışma odasını aç.</p>
+    <ul class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3" style="list-style:none;padding:0;margin:0">
+      {
+        kartlar.map((k) => (
+          <li>
+            <a href={`/calisma/${k.ders}/`} class="flex h-full flex-col gap-1 rounded-2xl border border-line bg-card p-4 no-underline transition-colors hover:bg-control">
+              <span class="line-clamp-2 text-[17px] font-bold leading-snug text-ink">{k.ad}</span>
+              <span class="line-clamp-1 text-[13px] text-ink-muted">{k.uni}</span>
+              <span class="mt-2 flex items-center gap-3 text-[13px] font-semibold text-accent-ink">
+                <span class="inline-flex items-center gap-1"><Simge ad="Play" size={14} />{k.video ? `${k.video} video` : "Video yok"}</span>
+                <span class="inline-flex items-center gap-1"><Simge ad="BookOpen" size={14} />{k.konu} konu</span>
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Layout>
