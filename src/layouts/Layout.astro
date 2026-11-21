@@ -4,6 +4,7 @@ import "../styles/print.css";
 import "../styles/cevrimdisi.css";
 import AyarlarIcerik from "../components/AyarlarIcerik.astro";
 import SekmeCubugu from "../components/SekmeCubugu.astro";
+import Simge from "../components/Simge.astro";
 import SeoHead from "../components/SeoHead.astro";
 import { VARSAYILAN_ACIKLAMA } from "../lib/seo";
 import type { JsonLdGraf } from "../lib/yapisal-veri";
@@ -215,11 +216,18 @@ const { title, description = VARSAYILAN_ACIKLAMA, sekmeler = true, ayarSayfasi =
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h.01"></path><path d="M8.5 16.429a5 5 0 0 1 7 0"></path><path d="M5 12.859a10 10 0 0 1 5.17-2.69"></path><path d="M19 12.859a10 10 0 0 0-2.007-1.523"></path><path d="M2 8.82a15 15 0 0 1 4.177-2.643"></path><path d="M22 8.82a15 15 0 0 0-11.288-3.764"></path><path d="m2 2 20 20"></path></svg>
         </span>
 
-        <div class="hidden md:flex items-center gap-6">
-          <a href="/anadolu-aof" class="nav-link">Anadolu AÖF</a>
-          <a href="/ataturk-aof" class="nav-link">ATA-AÖF</a>
-          <a href="/auzef" class="nav-link">AUZEF</a>
-          <a href="/ankuzef" class="nav-link">Ankara AÖF</a>
+        <div class="hidden md:flex items-center gap-3 xl:gap-5 whitespace-nowrap">
+          <!-- Same destinations as the phone tab bar; labels from 1280 px, icons with titles below; university links from 1024 px -->
+          <div class="flex items-center gap-1 lg:border-r lg:border-line lg:pr-3 xl:pr-4" aria-label="Kısayollar">
+            <a href="/derslerim" class="nav-link inline-flex items-center gap-1.5 rounded-full px-2 py-2" title="Derslerim"><Simge ad="BookOpen" size={18} /><span class="hidden xl:inline">Derslerim</span></a>
+            <a href="/ara" class="nav-link inline-flex items-center gap-1.5 rounded-full px-2 py-2" title="Ara (Ctrl+K)"><Simge ad="Search" size={18} /><span class="hidden xl:inline">Ara</span></a>
+            <a href="/ilerleme" class="nav-link inline-flex items-center gap-1.5 rounded-full px-2 py-2" title="İlerleme"><Simge ad="ChartNoAxesColumn" size={18} /><span class="hidden xl:inline">İlerleme</span></a>
+            <a href="/cevrimdisi" class="nav-link inline-flex items-center gap-1.5 rounded-full px-2 py-2" title="Çevrimdışı dersler"><Simge ad="CloudDownload" size={18} /><span class="hidden xl:inline">Çevrimdışı</span></a>
+          </div>
+          <a href="/anadolu-aof" class="nav-link hidden lg:inline">Anadolu AÖF</a>
+          <a href="/ataturk-aof" class="nav-link hidden lg:inline">ATA-AÖF</a>
+          <a href="/auzef" class="nav-link hidden lg:inline">AUZEF</a>
+          <a href="/ankuzef" class="nav-link hidden lg:inline">Ankara AÖF</a>
 
           <!-- Theme Toggles -->
           <div
@@ -310,7 +318,7 @@ const { title, description = VARSAYILAN_ACIKLAMA, sekmeler = true, ayarSayfasi =
           id="mobileMenuBtn"
           type="button"
           popovertarget="mobileMenu"
-          class="md:hidden grid size-11 place-items-center rounded-full text-ink-muted hover:bg-raised"
+          class="lg:hidden grid size-11 place-items-center rounded-full text-ink-muted hover:bg-raised"
           aria-label="Menü"
         >
           <svg class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true">
@@ -320,8 +328,14 @@ const { title, description = VARSAYILAN_ACIKLAMA, sekmeler = true, ayarSayfasi =
         </button>
       </nav>
 
-      <!-- Phone menu (600 to 767 px; narrower screens use the tab bar): a native popover, light dismiss and Esc for free -->
-      <div id="mobileMenu" popover class="katman-acilir md:hidden">
+      <!-- Menu below 1024 px (narrower than 600 px the tab bar covers the shortcuts): a native popover, light dismiss and Esc for free -->
+      <div id="mobileMenu" popover class="katman-acilir lg:hidden">
+        <nav class="katman-liste" aria-label="Kısayollar">
+          <a href="/derslerim" class="katman-satir"><Simge ad="BookOpen" size={20} class="size-5 shrink-0" /><span class="katman-satir-ad">Derslerim</span></a>
+          <a href="/ara" class="katman-satir"><Simge ad="Search" size={20} class="size-5 shrink-0" /><span class="katman-satir-ad">Ara</span></a>
+          <a href="/ilerleme" class="katman-satir"><Simge ad="ChartNoAxesColumn" size={20} class="size-5 shrink-0" /><span class="katman-satir-ad">İlerleme</span></a>
+          <a href="/cevrimdisi" class="katman-satir"><Simge ad="CloudDownload" size={20} class="size-5 shrink-0" /><span class="katman-satir-ad">Çevrimdışı dersler</span></a>
+        </nav>
         <nav class="katman-liste" aria-label="Üniversiteler">
           <a href="/anadolu-aof" class="katman-satir"><svg xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg><span class="katman-satir-ad">Anadolu AÖF</span></a>
           <a href="/ataturk-aof" class="katman-satir"><svg xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg><span class="katman-satir-ad">ATA-AÖF</span></a>
