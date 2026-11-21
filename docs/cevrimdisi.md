@@ -19,7 +19,7 @@ Site bir kez açıldıktan sonra internet olmadan da gezilir; indirilen dersler 
 Workbox (`@vite-pwa/astro` ya da `workbox-build injectManifest`) da değerlendirildi. Şu nedenlerle kendi çalışanımız seçildi:
 
 - **Derleme boyutu**: tam derleme yaklaşık 2 GB ve binlerce ders sayfası içerir. Workbox `globPatterns` ile `dist/` altını tarar; ders sayfalarını dışarıda bırakan desenler yazmak, kendi listemizi yazmaktan daha kırılgandır. Kendi listemiz sayfayı adıyla seçer.
-- **Ders indirme modeli**: bir dersin sayfası, `/veri` dosyası, materyal sayfası, görselleri ve betiklerinin geçişli bağımlılıkları tek bir "paket" olarak indirilir, silinir ve sürümlenir. Workbox'ın yönlendirme stratejileri bunu taşımaz; paket mantığını yine kendimiz yazmamız gerekirdi.
+- **Ders indirme modeli**: bir dersin sayfası, `/veri` dosyası, ders paketi (soru ünite dosyaları), materyal sayfası, görselleri ve betiklerinin geçişli bağımlılıkları tek bir "paket" olarak indirilir, silinir ve sürümlenir. Workbox'ın yönlendirme stratejileri bunu taşımaz; paket mantığını yine kendimiz yazmamız gerekirdi.
 - **Bağımlılık ve disk**: Workbox derleme araçları onlarca megabayt bağımlılık getirir. esbuild zaten Astro ile kurulu.
 - **Tip güvenliği**: çalışan, sayfa ve derleme aynı saf modülü (`src/lib/cevrimdisi/anahtar.ts`) ve aynı Zod şemalarını (`sema.ts`) kullanır. Anahtar biçimi, önbellek adı ve manifest yapısı tek yerde tanımlıdır. Çalışan kendi `tsconfig` dosyasıyla WebWorker tipleriyle denetlenir: `npx tsc -p src/sw`.
 
@@ -45,7 +45,7 @@ Workbox belgelerinden alınan ders: `injectManifest` desenleri bütün varlık t
 | `ao-kabuk-<sürüm>` | Ana sayfa, üniversite sayfaları, Derslerim, İlerleme, Ara, Ayarlar, Kayıtları taşı, rehber, gizlilik, kullanım koşulları, telif, hakkımızda, iletişim, offline, çevrimdışı; `manifest.json`, simgeler, üniversite logoları, `/veri/dersler.json` | Her çalışan sürümünde yeni ad; eskisi `activate` sırasında silinir. Revizyonu aynı olan dosya eski kabuktan kopyalanır, yeniden indirilmez. |
 | `ao-varlik` | `/_astro/*` (JS, CSS) | Ad içerik karması olduğu için tek önbellek. `activate` ve her indirme sonrası budanır: yeni kabukta ya da bir indirilmiş dersin kaydında geçmeyen dosya silinir. |
 | `ao-bolum-v1` | Bölüm sayfaları | Arka planda, düşük öncelikle (`priority: "low"`), öğrencinin üniversitesi önce, mesaj başına 25 sayfa. Revizyonu değişen ya da sitede kalmayan sayfa `activate` sırasında silinir. Ayarı: `cevrimdisi-bolumler` (`/cevrimdisi/`). Tasarruf modunda (`saveData`) çalışmaz. |
-| `ao-ders-v1` | İndirilen dersler: sayfa, materyal sayfası, `/veri/<uni>/<ders>.json`, `/_img/*` ve ders başına bir kayıt (`/__cevrimdisi__/<uni>/<ders>.json`) | Kayıt sürümü `v: 1`. |
+| `ao-ders-v1` | İndirilen dersler: sayfa, materyal sayfası, `/veri/<uni>/<ders>.json`, ders paketi (`/ders/<uni>/<ders>/index.json` ve dizinin `dosyalar` listesindeki `unite/<n>.json` dosyaları; sorular sayfaya bunlardan çizilir), `/_img/*` (sayfanın ve ünite dosyalarının adını verdiği görseller) ve ders başına bir kayıt (`/__cevrimdisi__/<uni>/<ders>.json`) | Kayıt sürümü `v: 1`. |
 | `ao-sayfa-v1` | Gezilen sayfaların kopyası | Son 3 ders sayfası, diğer sayfalardan son 60. İndirilen ders buraya yazılmaz; silinen dersin ziyaret kopyası da silinir. |
 | `ao-dis-v1` | Google Fonts, KaTeX, çalışma anında görülen görseller | Bayat ama hızlı (stale while revalidate); görseller 300 kayıtla sınırlı. |
 
@@ -61,14 +61,14 @@ Kullanıcı verisi (cevaplar, kaldığın yer, favoriler, ayarlar) `localStorage
 ## Ders indirme
 
 1. Sayfa `/cevrimdisi-surum.json` (kabuk sürümü, üniversite başına karma) ve `/cevrimdisi-surum/<uni>.json` (ders başına `[kanonik yol, içerik karması, bayt]`) dosyalarını okur. Her üniversitenin manifesti ayrıdır; öğrenci yalnız indirdiği derslerin üniversitesini indirir.
-2. Background Fetch varsa (Chromium) sayfa, materyal ve veri dosyası tarayıcının arka plan indirmesine verilir; sayfa kapansa da sürer, bitince çalışan görselleri ve betikleri tamamlar. Yoksa ya da başarısız olursa indirme sayfada yürür. `cevrimdisi-on-plan=1` sayfa içi indirmeyi zorlar (testler bunu kullanır).
+2. Background Fetch varsa (Chromium) sayfa, materyal, veri dosyası ve paket dizini (`index.json`) tarayıcının arka plan indirmesine verilir; sayfa kapansa da sürer; bitince çalışan ünite dosyalarını, görselleri ve betikleri tamamlar. Yoksa ya da başarısız olursa indirme sayfada yürür. `cevrimdisi-on-plan=1` sayfa içi indirmeyi zorlar (testler bunu kullanır).
 3. Kayıt önce "yarım" olarak yazılır ve her dosyadan sonra güncellenir. Kesilen indirme bir sonraki dokunuşta ya da bakımda kaldığı yerden sürer: aynı karmada saklı dosyalar yeniden indirilmez.
 4. İlerleme, çözülmüş gövde baytının manifestteki toplam boyuta oranıdır. Background Fetch yalnız sıkıştırılmış baytı bildirdiği için o yolda yüzde yerine inen miktar yazılır.
 5. Görseller içerik karmasıyla adlandırıldığı için dersler arasında paylaşılır; bir ders silinince başka dersin kullandığı görsel kalır.
 
 ## Sürüm ve güncelleme
 
-**Ders içeriği**: karma, ders sayfasının `/_astro/` adları ve Astro'nun `data-astro-cid` öznitelikleri çıkarılmış hâlinden, veri ve materyal dosyasından ve görsel adlarından hesaplanır. Yalnız betik değişen bir derleme dersleri "güncel değil" göstermez. Karma farklıysa ders kartında ve `/cevrimdisi/` satırında "Güncelleme var" yazar; "Güncelle" dersi yeniden indirir. Karma aynı ama kabuk sürümü farklıysa (betik adları değişti) bakım dersi sessizce yeniler.
+**Ders içeriği**: karma, ders sayfasının `/_astro/` adları ve Astro'nun `data-astro-cid` öznitelikleri çıkarılmış hâlinden, veri ve materyal dosyasından ve görsel adlarından hesaplanır (ders paketinin bütün dosyaları ve adlarını verdiği görseller dahil). Yalnız betik değişen bir derleme dersleri "güncel değil" göstermez. Karma farklıysa ders kartında ve `/cevrimdisi/` satırında "Güncelleme var" yazar; "Güncelle" dersi yeniden indirir. Karma aynı ama kabuk sürümü farklıysa (betik adları değişti) bakım dersi sessizce yeniler.
 
 **Uygulama**: çalışan `updateViaCache: "none"` ile kaydedilir, uzun açık sekmeler 20 dakikadan sonra öne gelince güncelleme arar. Yeni çalışan kurulup bekleyince üstte "Yeni sürüm hazır" bandı çıkar. `skipWaiting` yalnız "Yenile" dokunuşuyla gelen `atla` mesajıyla çalışır; sayfa ancak o zaman yenilenir. İlk kurulum sayfayı sessizce denetimine alır (`clients.claim`).
 

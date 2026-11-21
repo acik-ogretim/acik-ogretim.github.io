@@ -6,6 +6,7 @@ import {
   dersDosyalari,
   dersYolu,
   metaYolu,
+  paketDosyaYolu,
   parcaBagimliliklari,
   sayfaVarliklari,
   sayfadanDersAdi,
@@ -147,8 +148,31 @@ export async function dersIndir(h: DersHedefi, s: IndirmeSecenek = {}): Promise<
     }
   }
 
-  // 3. Question images: content addressed, so any stored copy (from this or another course) is reused.
-  const { astro, img } = sayfaVarliklari(html);
+  // 3. Question files of the course package: the index names the unit files; the page draws its cards from them.
+  const paketYollari: string[] = [];
+  const indeksYolu = dosya.paket;
+  let indeks: Response | undefined;
+  if (devam.has(indeksYolu) && (await c.match(indeksYolu))) indeks = await c.match(indeksYolu);
+  else {
+    indeks = await getir(indeksYolu, s, say);
+    await kaydet(indeksYolu, indeks.clone());
+  }
+  const dosyaListesi = ((await indeks?.json()) as { dosyalar?: { yol?: string }[] } | undefined)?.dosyalar ?? [];
+  const resimMetni: string[] = [html];
+  for (const d of dosyaListesi) {
+    if (typeof d.yol !== "string") continue;
+    const yol = paketDosyaYolu(h.uni, h.ders, d.yol);
+    paketYollari.push(yol);
+    let r = devam.has(yol) ? await c.match(yol) : undefined;
+    if (!r) {
+      r = await getir(yol, s, say);
+      await kaydet(yol, r.clone());
+    }
+    resimMetni.push(await r.text());
+  }
+
+  // 4. Question images: content addressed, so any stored copy (from this or another course) is reused.
+  const { astro, img } = sayfaVarliklari(resimMetni.join("\n"));
   for (const yol of img) {
     const var_ = await c.match(yol);
     if (var_) {
@@ -158,7 +182,7 @@ export async function dersIndir(h: DersHedefi, s: IndirmeSecenek = {}): Promise<
     await kaydet(yol, await getir(yol, s, say));
   }
 
-  // 4. Scripts and styles, with their imports: usually already in the shell cache.
+  // 5. Scripts and styles, with their imports: usually already in the shell cache.
   meta.varliklar = await varliklariTopla(astro, s);
   meta.durum = "tamam";
   meta.tarih = new Date().toISOString();

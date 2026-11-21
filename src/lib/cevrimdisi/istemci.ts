@@ -131,7 +131,7 @@ async function arkaPlandaIndir(h: DersHedefi, bg: BgYonetici): Promise<DersMeta 
   const bitis = arkaPlanBekle(h.uni, h.ders);
   const kayit =
     (await bg.get(id)) ??
-    (await bg.fetch(id, [d.sayfa, d.veri, d.materyal], {
+    (await bg.fetch(id, [d.sayfa, d.veri, d.materyal, d.paket], {
       title: `${h.ad ?? h.ders} indiriliyor`,
       icons: [{ src: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" }],
     }));

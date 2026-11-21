@@ -44,6 +44,8 @@ Site artık her sayfada kanonik adres, açıklama, Open Graph ve Twitter etiketl
 
 **Soruların tamamı tek dosyada yayımlanmaz.** Sınav sorularının hakları üniversitelere aittir (`/telif`). Bir dersin bütün sorularını tek makine okunur dosyada vermek toplu kopyalamayı kolaylaştırır ve derleme çıktısını büyütür; site daha önce 2 GB sınırına dayandı (`src/lib/kanonik.ts`). Bu yüzden `ozet.md` yalnız üç örnek soru ve bağlantı verir, `llms-full.txt` yalnız ders listesi taşır. Tarayıcı içi sohbetin okuduğu `/veri/<uni>/<ders>.json` dosyaları sitede kalır ama robots.txt ile taramaya kapatılmıştır.
 
+**Soru metinleri ders sayfasının HTML'inde değildir (21 Kasım 2026).** Ders sayfası yalnız iskeleti (başlık, ünite başlıkları, künye, sayaçlar) taşır; kartlar tarayıcıda `/ders/<uni>/<ders>/unite/<n>.json` ünite dosyalarından çizilir. Karar: arama motoru önceliği yok (Zeki, 21 Kasım 2026); sayfa HTML'i 2,7 MB'tan 192 KB'a indi. Etkisi: arama motorları ve JavaScript çalıştırmayan ajanlar kart metnini sayfadan görmez; `ozet.md` (üç örnek soru), `llms.txt`, `llms-full.txt`, başlık, açıklama ve JSON-LD değişmeden kalır. Ünite dosyaları robots.txt ile kapatılmamıştır (sayfayı çizen tarayıcının okuması gerekir).
+
 **Üniversite verisi ayrı.** Site haritası üniversite başına ayrı dosyadır; `llms-full.txt` ve `ders_ara` aracı her dersi kendi üniversitesinin kimliğiyle verir. Aynı adlı dersler farklı üniversitelerde ayrı kayıttır.
 
 ## Ajan araçları (WebMCP, deneysel)

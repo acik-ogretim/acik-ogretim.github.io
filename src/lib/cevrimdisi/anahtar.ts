@@ -97,10 +97,13 @@ export function bolumYolu(yol: string, uniler?: ReadonlySet<string>): { uni: str
 export const dersKimligi = (uni: string, ders: string): string => `${uni}/${ders}`;
 
 /** Files a downloaded course keeps next to its page (paths are canonical, with the trailing slash). */
-export function dersDosyalari(yol: string, uni: string, ders: string): { sayfa: string; materyal: string; veri: string } {
+export function dersDosyalari(yol: string, uni: string, ders: string): { sayfa: string; materyal: string; veri: string; paket: string } {
   const sayfa = yolNormalle(yol);
-  return { sayfa, materyal: `${sayfa}materyaller/`, veri: `/veri/${uni}/${ders}.json` };
+  return { sayfa, materyal: `${sayfa}materyaller/`, veri: `/veri/${uni}/${ders}.json`, paket: `/ders/${uni}/${ders}/index.json` };
 }
+
+/** A unit file of the course package, named in the package index ("unite/3.json"). */
+export const paketDosyaYolu = (uni: string, ders: string, yol: string): string => `/ders/${uni}/${ders}/${yol.replace(/^\/+/, "")}`;
 
 /**
  * Same-origin build files a page refers to: /_astro/* (scripts, styles, island components) and /_img/*
@@ -109,7 +112,7 @@ export function dersDosyalari(yol: string, uni: string, ders: string): { sayfa: 
 export function sayfaVarliklari(html: string): { astro: string[]; img: string[] } {
   const astro = new Set<string>();
   const img = new Set<string>();
-  for (const m of html.matchAll(/["'(=\s](\/_(astro|img)\/[^"'()\s?#<>]+)/g)) {
+  for (const m of html.matchAll(/["'(=\s](\/_(astro|img)\/[^"'()\s?#<>\\]+)/g)) {
     const yol = m[1] as string;
     (m[2] === "astro" ? astro : img).add(yol);
   }

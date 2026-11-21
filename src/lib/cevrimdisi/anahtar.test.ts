@@ -6,6 +6,7 @@ import {
   dersDosyalari,
   dersYolu,
   icerikIcinNormalle,
+  paketDosyaYolu,
   parcaBagimliliklari,
   sayfaVarliklari,
   sayfadanDersAdi,
@@ -58,7 +59,16 @@ describe("dersDosyalari", () => {
       sayfa: "/auzef/b/anatomi/",
       materyal: "/auzef/b/anatomi/materyaller/",
       veri: "/veri/auzef/anatomi.json",
+      paket: "/ders/auzef/anatomi/index.json",
     });
+  });
+
+  it("names a unit file of the course package", () => {
+    expect(paketDosyaYolu("auzef", "anatomi", "unite/3.json")).toBe("/ders/auzef/anatomi/unite/3.json");
+  });
+
+  it("finds images inside JSON text without the escape backslash", () => {
+    expect(sayfaVarliklari('{"t":"<img src=\\"/_img/a1.png\\">"}').img).toEqual(["/_img/a1.png"]);
   });
 });
 

@@ -122,7 +122,16 @@ export async function cevrimdisiUret(kok: string, log: Pick<AstroIntegrationLogg
           h.update(icerikIcinNormalle(icerik));
           boyut += Buffer.byteLength(icerik);
         }
-        for (const img of sayfaVarliklari(html).img) {
+        // Question files of the course package (the page draws its cards from them) and the images they name
+        const paketDizin = path.join(kok, "ders", u.id, ders.name);
+        const paketMetni: string[] = [html];
+        for (const ek of (await dosyalar(paketDizin)).sort()) {
+          const icerik = await readFile(ek, "utf8");
+          h.update(icerik);
+          boyut += Buffer.byteLength(icerik);
+          paketMetni.push(icerik);
+        }
+        for (const img of sayfaVarliklari(paketMetni.join("\n")).img) {
           h.update(img); // names are content hashes
           const p = path.join(kok, img);
           if (existsSync(p)) boyut += (await stat(p)).size;

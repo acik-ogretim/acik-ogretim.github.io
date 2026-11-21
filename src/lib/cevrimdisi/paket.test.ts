@@ -40,6 +40,9 @@ beforeEach(() => {
   ag.set("/auzef/b/anatomi/", SAYFA());
   ag.set("/veri/auzef/anatomi.json", '{"questions":[]}');
   ag.set("/auzef/b/anatomi/materyaller/", "<p>materyal</p>");
+  ag.set("/ders/auzef/anatomi/index.json", JSON.stringify({ v: 1, dosyalar: [{ yol: "unite/1.json", boyut: 10 }] }));
+  ag.set("/ders/auzef/anatomi/unite/1.json", '{"sorular":[{"text":"<img src=\\"/_img/unite.png\\">"}]}');
+  ag.set("/_img/unite.png", "PNG2");
   ag.set("/_img/ortak.png", "PNG");
   ag.set("/_astro/giris.A.js", 'import"./ortak.B.js";');
   ag.set("/_astro/ortak.B.js", "export const x=1;");
@@ -76,7 +79,15 @@ describe("dersIndir", () => {
     const m = await dersIndir(hedef(), { ilerleme: (i) => ilerleme.push(i.alinan) });
     expect(m.durum).toBe("tamam");
     expect(m.ad).toBe("Anatomi");
-    expect(m.dosyalar.sort()).toEqual(["/_img/ortak.png", "/auzef/b/anatomi/", "/auzef/b/anatomi/materyaller/", "/veri/auzef/anatomi.json"]);
+    expect(m.dosyalar.sort()).toEqual([
+      "/_img/ortak.png",
+      "/_img/unite.png",
+      "/auzef/b/anatomi/",
+      "/auzef/b/anatomi/materyaller/",
+      "/ders/auzef/anatomi/index.json",
+      "/ders/auzef/anatomi/unite/1.json",
+      "/veri/auzef/anatomi.json",
+    ]);
     expect(m.varliklar.sort()).toEqual(["/_astro/giris.A.js", "/_astro/ortak.B.js"]);
     expect(await depolar.get(ONBELLEK.varlik)?.match("/_astro/ortak.B.js")).toBeTruthy();
     expect(ilerleme.at(-1)).toBe(100);
@@ -120,6 +131,7 @@ describe("dersSil", () => {
     await dersIndir(hedef());
     ag.set("/auzef/b/fizyoloji/", SAYFA().replace("Anatomi", "Fizyoloji"));
     ag.set("/veri/auzef/fizyoloji.json", "{}");
+    ag.set("/ders/auzef/fizyoloji/index.json", '{"dosyalar":[]}');
     await dersIndir(hedef({ ders: "fizyoloji", yol: "/auzef/b/fizyoloji/" }));
     await dersSil("auzef", "anatomi");
     const c = depolar.get(ONBELLEK.ders);
