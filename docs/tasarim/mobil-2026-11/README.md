@@ -2,6 +2,7 @@
 
 Canlı kod değişmedi; yalnız tasarım çıktısı.
 
+- Varsayılan palet 21 Kasım'da siyah beyaza geçti (birincil eylem siyah, koyuda beyaz; renk yalnız doğru, yanlış, uyarı için). `DESIGN.md` §3'teki deniz yeşili değerleri `data-palet="yesil"` olarak duruyor.
 - `DESIGN.md`: renk, yazı, boşluk belirteçleri, bileşen sözleşmeleri, oynatıcı yeniden tasarım kararı, güvenli alan kuralı, tablet notları, uygulama notları.
 - `ortak.css`: maketlerin ortak belirteçleri ve bileşenleri (açık ve koyu tema, `data-tema="koyu"`).
 - Maketler (her dosyada birden çok durum yan yana; tarayıcıda açın):
@@ -19,6 +20,9 @@ Canlı kod değişmedi; yalnız tasarım çıktısı.
   12. `12-pwa-durumlar.html`: ana ekrana ekle, güncelleme ve çevrimdışı, 404
   13. `13-renk-secenekleri.html`: şimdiki deniz yeşili ve dört aday palet (mürekkep ve fosforlu kalem, okul rengi, kobalt, gece ve kehribar)
   14. `14-ios-cam.html`: iOS 26 tarzı cam deneme (yüzen kapsül sekme çubuğu, cam oynatıcı, kenardan ayrık alt sayfa)
+  15. `15-alternatifler.html`: Nano Banana (9 yön), Stitch (2 ekran) ve sürü dili denemeleri; görseller `alternatifler/` altında
+  16. `16-video-canli-ders.html`: video ve eş zamanlı konu anlatımı, canlı ders, haftalık kurs akışı
+- `LMS-PLANI.md`: ÖYS ve LMS işlevlerinin portaldaki karşılığı ve sıra önerisi.
 - `index.html`: tüm maketlerin listesi; her maketin sol üstündeki düğme buraya döner.
 - `uret_uygulama.py`: 07-12 maketlerini üretir (`python3 uret_uygulama.py`).
 - `onizleme/`: her kareden 390x844 PNG ekran görüntüsü (Playwright + Chrome).

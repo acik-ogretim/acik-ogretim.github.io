@@ -278,7 +278,8 @@ sayfa("12-pwa-durumlar", "PWA durumları", k12)
 # ---------- 13 renk seçenekleri ----------
 SORU = re.findall(r"<figure>.*?</figure>", (KOK / "01-soru-cozme.html").read_text(), re.S)[1]
 SORU = re.sub(r"<figcaption>.*?</figcaption>", "", SORU)
-PALETLER = [("", "Şimdiki: deniz yeşili", "Soğuk gri zemin ve deniz yeşili; güvenli ama sağlık ve finans uygulamalarında çok görülen bir kalıp"),
+PALETLER = [("", "Şimdiki: siyah beyaz", "Birincil eylem siyah, renk yalnız doğru, yanlış ve uyarı için; VS Code açık temasındaki gibi sade"),
+            ("yesil", "Eski: deniz yeşili", "Önceki varsayılan; kalıp gibi durduğu için bırakıldı"),
             ("murekkep", "A. Mürekkep ve fosforlu kalem", "Lacivert mürekkep, kaldığın yer ve arama eşleşmesi fosforlu sarı; ders çalışırken kitabın altını çizme alışkanlığından"),
             ("okul", "B. Okulunun rengi", "Nötr zemin, vurgu öğrencinin üniversitesinin rengi (burada AUZEF bordosu); her okulda uygulama kendi kimliğine bürünür"),
             ("kobalt", "C. Kobalt", "Canlı kobalt mavisi; daha enerjik ve teknolojik, en az özgün olan seçenek"),
@@ -303,6 +304,62 @@ sayfa("14-ios-cam", "iOS 26 tarzı cam deneme", [
     soru_cam, camla(ayar_sayfa),
     camla(ekran(ana_uzun, "14d", "Gece ve kehribar paletinde cam", palet="kehribar")),
 ])
+
+# ---------- 15 alternatifler: Nano Banana, Stitch, sürü dili ----------
+def resim(yol, alt, gen=880):
+    return f'<figure style="max-width:{gen}px"><img src="{yol}" alt="" style="width:100%;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.2)"><figcaption style="max-width:{gen}px">{alt}</figcaption></figure>'
+k15 = [
+    resim("alternatifler/nb-8-gece-yeni.jpg", "Nano Banana 8. Gece ve kehribar, yeni nesil: yüzen cam sekme çubuğu, oynat düğmesinin çevresinde halka ilerleme, büyük tipografi."),
+    resim("alternatifler/nb-7-yz-sohbet.jpg", "Nano Banana 7. Yapay zekâ öncelikli: ana sayfa bir yazma alanı ve öneri çipleri, açıklama sohbet yanıtı gibi akar, sesli mod kehribar küre ve canlı altyazı. Sohbet ve sesli mod sitede zaten var; bu yön onları ana kapı yapar."),
+    resim("alternatifler/nb-9-gunduz.jpg", "Nano Banana 9. Aynı dilin açık teması: sıcak beyaz yüzey, koyulaştırılmış kehribar, cam alt çubuk."),
+    resim("alternatifler/nb-4-ios-murekkep.jpg", "Nano Banana 4. Yerel iOS 26 hissi, mürekkep laciverti: büyük başlık, gruplu ayar satırları, cam oynatıcı; açık oynatıcı alt sayfası 15 sn geri ve ileri ile. Resimde doğru şık yanlışlıkla A işaretli, açıklamadaki yan şerit eski maketten kopyalandı; ikisi de uygulamada düzeltilir."),
+    resim("alternatifler/nb-5-ios-gece.jpg", "Nano Banana 5. iOS 26 koyu tema, kehribar vurgu, dinleme odaklı: oynatıcı alt sayfası arkadaki soruyu bulanıklaştırır. Doğru şık B doğru işaretli."),
+    resim("alternatifler/nb-6-kagit-cam.jpg", "Nano Banana 6. Kâğıt ve cam: serif soru metni, ince çizgili ders listesi, cam yalnız alt çubukta. Doğru şık yanlışlıkla A işaretli."),
+    resim("alternatifler/nb-1-murekkep.jpg", "Nano Banana 1. Mürekkep ve fosforlu kalem: serif başlıklar, ince çizgiler, gölgesiz düz yüzey, vurgu fosforlu sarı. Sorular ve son 7 gün grafiği modelin uydurmasıdır."),
+    resim("alternatifler/nb-2-gece.jpg", "Nano Banana 2. Gece ve kehribar, sesli dinleme önde: oynatıcı ana öğe, dalga biçimi, 15 sn geri ve ileri. Haftalık grafik için tarihli kayıt gerekir (DESIGN.md §11)."),
+    resim("alternatifler/nb-3-cam.jpg", "Nano Banana 3. iOS 26 cam: renkli bulanık içerik üstünde cam kartlar. Kişi fotoğrafı ve ders adları uydurmadır; sitede hesap ve profil yok."),
+    resim("alternatifler/stitch-1-bugun.jpg", "Stitch, Bugün: sınav kâğıdı dili, sıfır köşe, kiremit vurgu, eşaralıklı etiketler. Vize geri sayımı ve ders kodları uydurmadır; sınav takvimi verisi eklenirse geri sayım gerçek olur.", 360),
+    resim("alternatifler/stitch-2-soru.jpg", "Stitch, soru çözme: obsidyen ve kehribar koyu tema, doğru şık yeşil, alt oynatıcı tek satır kapsül.", 360),
+    ekran(ana(), "15a", "Sürü dili, ana sayfa: panonun sıcak kâğıt zemini, kiremit vurgu, 8 px köşe, ince simge, serif başlık", palet="suru"),
+    SORU.replace('<div class="ekran"', '<div class="ekran" data-palet="suru"', 1).replace("</div></figure>", "</div><figcaption>15b. Sürü dili, soru çözme: aynı bileşenler, yalnız belirteçler değişti</figcaption></figure>"),
+    ekran(k10[0].split('<div class="ekran">',1)[1].rsplit('<div class="ana-cubuk">',1)[0].split('</div>',1)[1] if False else "", "", "") if False else "",
+]
+k15 = [x for x in k15 if x]
+sayfa("15-alternatifler", "Alternatif tasarımlar", k15)
+
+# ---------- 16 video, eş zamanlı konu anlatımı, canlı ders, kurs akışı ----------
+VIDEO = lambda yazi, sure, yuzde, canli=False: (f'<div class="video"><div class="cerceve"></div><span class="yazi">{yazi}</span>'
+    + (f'<span class="chip canli-chip" style="position:absolute;top:10px;left:10px">CANLI</span>' if canli else "")
+    + f'<div class="alt">{ic("pause", "i-s i-fill")}<div class="mini"><i style="width:{yuzde}%"></i></div><span class="say">{sure}</span></div></div>')
+dokum = [("02:10", "Oyun, çocuğun kendiliğinden seçtiği ve sürecin kendisinden keyif aldığı etkinliktir."),
+         ("02:24", "Bu yüzden oyun, gelişim alanlarının hepsini aynı anda destekler: bedensel, bilişsel, dil ve sosyal-duygusal."),
+         ("02:41", "Piaget oyunu üç evrede inceler: alıştırma oyunu, sembolik oyun ve kurallı oyun."),
+         ("02:58", "Sembolik oyun iki yaş civarında başlar; çocuk bir nesneyi başka bir şeymiş gibi kullanır.")]
+k16 = [
+    ekran(ust("Oyun ve Oyun Materyalleri", "Ünite 2 · Konu anlatımı") + '<main class="icerik">'
+          + VIDEO("Piaget oyunu üç evrede inceler", "02:41 / 18:20", 15)
+          + '<div class="segment" style="grid-template-columns:1fr 1fr 1fr;margin-top:12px"><button class="dugme secili">Anlatım</button><button class="dugme">Özet</button><button class="dugme">Sorular · 12</button></div>'
+          + '<div class="dokum">' + "".join(f'<p class="{"simdi" if i == 2 else ""}"><span class="zm">{z}</span><span>{t}</span></p>' for i, (z, t) in enumerate(dokum)) + "</div></main>",
+          "16a", "Video ve eş zamanlı anlatım: konuşulan cümle fosforla işaretlenir, zamana dokununca video oraya atlar; metin kitap ünitesinden ya da podcast senaryosundan gelir", palet="murekkep"),
+    ekran(ust("Canlı ders: Ünite 4 tekrarı", "Çocuk Gelişimi · 20.00", sag=("sohbet", "Sohbet")) + '<main class="icerik">'
+          + VIDEO("Erken çocukluk dönemi değerlendirme", "38 dk", 62, canli=True)
+          + '<div class="kart" style="margin-top:12px"><span class="chip u" style="margin-bottom:8px">Hızlı soru · 45 sn</span><b class="k2">Sembolik oyun en erken hangi yaşta görülür?</b>'
+          + '<div style="display:grid;gap:8px;margin-top:10px">' + "".join(f'<div class="cubuk-yatay"><span class="ad" style="width:120px">{a}</span><div class="mini"><i style="width:{y}%"></i></div><span class="yuzde say">%{y}</span></div>' for a, y in [("A) 6 ay", 8), ("B) 2 yaş", 71), ("C) 5 yaş", 21)]) + "</div></div>"
+          + '<p class="alt-baslik">Sorular · en çok oy alan üstte</p>'
+          + satir("Kurallı oyun ile oyun kuralı arasında fark var mı?", "▲ 14 · cevaplandı", "") + satir("Vizede kaç soru bu üniteden çıkar?", "▲ 9", "")
+          + "</main>", "16b", "Canlı ders: yayın, anlık soru ve oylanan sorular; yayın YouTube Live gömmesiyle, sorular giscus ya da gerçek zamanlı kanalla (LMS-PLANI.md)", palet="murekkep"),
+    ekran(ust("Hafta 4", "Oyun ve Oyun Materyalleri · Ünite 4") + '<main class="icerik">'
+          + '<div class="mini" style="margin:0 0 12px"><i style="width:60%"></i></div>'
+          + "".join(f'<div class="oge"><span class="simge-kare" style="{st}">{ic(s, "i-s")}</span><span class="t"><b class="k2">{a}</b><span>{b}</span></span>{r}</div>' for s, a, b, r, st in [
+              ("play", "Konu anlatımı videosu", "18 dk · izlendi", ic("check", "i-s"), "background:var(--dogru-zemin);color:var(--dogru)"),
+              ("kitap-ac", "Ünite 4 ders kitabı", "PDF · 24 sayfa", ic("check", "i-s"), "background:var(--dogru-zemin);color:var(--dogru)"),
+              ("ses", "Ünite özeti podcast", "12 dk · yarıda kaldı", '<span class="chip v">Sürdür</span>', ""),
+              ("hedef", "Ünite sonu deneme", "10 soru", SAG, ""),
+              ("canli", "Canlı tekrar dersi", "Perşembe 20.00", '<span class="chip">Takvime ekle</span>', ""),
+              ("dosya", "Ödev: oyun materyali tasarla", "Teslim 28 Kasım", SAG, "")])
+          + "</main>", "16c", "Kurs akışı: haftalık modül, sıra ve tamamlanma; LMS'deki ders yapısının telefondaki hâli", palet="murekkep"),
+]
+sayfa("16-video-canli-ders", "Video, canlı ders ve kurs akışı", k16)
 
 # ---------- galeri ----------
 satirlar = "".join(

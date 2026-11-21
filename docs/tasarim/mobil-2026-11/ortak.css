@@ -258,3 +258,42 @@ mark{background:var(--uyari-zemin);color:var(--metin);border-radius:3px;padding:
 .ekran.cam .icerik.altta{inset:var(--sat) 0 0 0;padding-top:72px}
 .ekran.cam .sayfa{left:8px;right:8px;bottom:8px;border-radius:34px;padding-bottom:calc(var(--sab) - 8px)}
 .ekran.cam .perde{background:rgba(5,12,16,.25)}
+
+/* ---- yan şerit kaldırıldı (21 Kasım, Zeki: "yan tarafı tek renk çizgi hoşuma gitmedi") ----
+   Öne çıkan kart artık tüm kenarı ve zemin tonuyla ayrılır; açıklama kutusu düz çerçeve, başlık simgesi vurgu renginde. */
+.kart.vurgulu{box-shadow:none;border-color:var(--vurgu);background:color-mix(in srgb,var(--vurgu-zemin) 55%,var(--yuzey))}
+.aciklama{border-left:1.5px solid var(--cizgi)}
+.aciklama-b .i{color:var(--vurgu-metin)}
+
+/* ---- sürü dili paleti: panonun Claude uygulaması referansı (sıcak kâğıt, kiremit, 8 px köşe, ince simge) ----
+   Panodaki #C6613F beyazda 4,05:1; metin ve dolu düğme için 4,98:1 veren #B4532F kullanılır. */
+.ekran[data-palet=suru]{--zemin:#FAF9F5;--yuzey:#FFFFFF;--yuzey-2:#F0EEE6;--cizgi:#E3DFD3;--metin:#1F1E1D;--metin-2:#66635C;
+ --vurgu:#B4532F;--vurgu-metin:#A84E2C;--vurgu-ustu:#FFFFFF;--vurgu-zemin:#F6E6DE;--uyari-zemin:#F3EAD2;
+ --r-m:8px;--r-l:14px;--r-bar:16px;--golge:0 4px 14px rgba(31,30,29,.10)}
+.ekran[data-palet=suru] .i{stroke-width:1.6}
+.ekran[data-palet=suru] .baslik-buyuk,.ekran[data-palet=suru] .soru,.ekran[data-palet=suru] .okuma h2{font-family:ui-serif,"Iowan Old Style","Source Serif 4",Georgia,serif;font-weight:600}
+
+/* ---- video ve eş zamanlı konu anlatımı (16) ---- */
+.video{position:relative;aspect-ratio:16/9;background:#0c1114;border-radius:var(--r-m);overflow:hidden;display:grid;place-items:center;color:#fff}
+.video .cerceve{position:absolute;inset:0;background:radial-gradient(120% 90% at 30% 20%,#33424a 0,#0c1114 70%)}
+.video .alt{position:absolute;left:0;right:0;bottom:0;padding:8px 10px;display:flex;align-items:center;gap:8px;font:600 12px system-ui;background:linear-gradient(transparent,rgba(0,0,0,.65))}
+.video .alt .mini{flex:1;margin:0;height:4px;background:rgba(255,255,255,.3)}
+.video .alt .mini i{background:#fff}
+.video .yazi{position:relative;max-width:80%;text-align:center;font:600 15px/1.35 system-ui;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+.dokum p{display:flex;gap:10px;padding:8px 0;font-size:16px;line-height:1.6;color:var(--metin-2)}
+.dokum p .zm{flex:none;width:42px;font:600 12px/1.9 system-ui;color:var(--vurgu-metin);font-variant-numeric:tabular-nums}
+.dokum p.simdi{color:var(--metin)}
+.dokum p.simdi span:last-child{background:var(--uyari-zemin);border-radius:4px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.canli-chip{background:#C62828;color:#fff}
+.oge{display:flex;align-items:center;gap:12px;min-height:60px;padding:8px 0;border-bottom:1px solid var(--cizgi)}
+.oge .t{flex:1;min-width:0}.oge .t b{display:block;font-size:15px;line-height:1.3}.oge .t span{display:block;font-size:13px;color:var(--metin-2)}
+
+/* ---- varsayılan palet: siyah beyaz (21 Kasım, Zeki: "yeşil düğme sıkıcı, klasik siyah beyaz, VS Code temaları gibi") ----
+   Birincil eylem açıkta siyah, koyuda beyaz. Renk yalnız anlam taşır: doğru yeşil, yanlış kırmızı, uyarı sarı, odak halkası mavi. */
+.ekran{--zemin:#F7F7F7;--yuzey:#FFFFFF;--yuzey-2:#EEEEEE;--cizgi:#E0E0E0;--metin:#141414;--metin-2:#5C5C5C;
+ --vurgu:#141414;--vurgu-metin:#141414;--vurgu-ustu:#FFFFFF;--vurgu-zemin:#EBEBEB;--odak:#005FB8}
+.ekran[data-tema=koyu]{--zemin:#181818;--yuzey:#1F1F1F;--yuzey-2:#2A2A2A;--cizgi:#333333;--metin:#E6E6E6;--metin-2:#A0A0A0;
+ --vurgu:#F2F2F2;--vurgu-metin:#F2F2F2;--vurgu-ustu:#141414;--vurgu-zemin:#2E2E2E;--odak:#4DAAFC}
+.ekran .dugme:focus-visible{outline-color:var(--odak)}
+.ekran[data-palet=yesil]{--zemin:#F3F5F6;--yuzey:#FFFFFF;--yuzey-2:#E7ECEE;--cizgi:#D3DBDF;--metin:#10202A;--metin-2:#4E5F69;
+ --vurgu:#0A7C76;--vurgu-metin:#06605B;--vurgu-ustu:#FFFFFF;--vurgu-zemin:#DCF0EE}
