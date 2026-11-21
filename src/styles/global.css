@@ -1013,13 +1013,12 @@ body {
 
 /* Course page: shared classes instead of utility strings repeated on every question and option
    (they were half of each course page's bytes). */
-.q-label{font-family: var(--font-mono,ui-monospace,monospace);font-size: 10px;line-height: 1.5;color: var(--text-color-muted);text-transform: uppercase;letter-spacing:.1em}
 .question-text{font-size: 1rem;color: var(--text-color);margin-bottom: 1.5rem;line-height: 1.625;font-weight:500}
 .option-item{padding: 1rem;border-radius: .75rem;border: 2px solid var(--border-color);display: flex;align-items: flex-start;gap: .75rem;transition:all .15s cubic-bezier(.4,0,.2,1)}
 .option-key{flex-shrink: 0;width: 2rem;height: 2rem;display: flex;align-items: center;justify-content: center;border-radius: .5rem;border: 2px solid var(--border-color);font-size: .875rem;line-height: 1.25rem;font-weight:700}
 .option-text{flex: 1 1 0%;padding-top: .125rem;line-height:1.625}
 .option-marker svg{width: 1rem;height:1rem}
-@media (min-width:48rem){.q-label{font-size: .75rem;line-height:1rem}.question-text{font-size: 1.125rem;margin-bottom:2rem}}
+@media (min-width:48rem){.question-text{font-size: 1.125rem;margin-bottom:2rem}}
 
 /* Ses barı görünürken yüzen arama düğmesi bara taşınır */
 body:has(#quiz-player-bar.visible) #toggleSearch { display: none; }
@@ -1329,7 +1328,6 @@ html[data-uyari-kapali] #uyari-seridi {
     margin-bottom: 1.75rem;
 }
 .question-card:last-child { border-bottom: 0; }
-.q-label { font-family: inherit; text-transform: none; letter-spacing: 0; font-size: 0.8125rem; font-weight: 600; }
 .question-text { font-weight: 500; font-size: 1.0625rem; line-height: 1.6; }
 .option-item { border-width: 1px; border-radius: 1rem; min-height: 3.5rem; align-items: center; background-color: var(--card-bg); }
 .option-key { border-radius: 999px; border-width: 1px; background-color: var(--button-bg); }
@@ -1409,16 +1407,37 @@ html[data-uyari-kapali] #uyari-seridi {
 .suzgec-nokta { position: absolute; top: 11px; right: 11px; width: 8px; height: 8px; border-radius: 999px; background: var(--primary-color); }
 .btn-unit-nav { min-height: 44px; min-width: 3.25rem; padding: 0 14px; border: 0; border-radius: 999px; background: var(--button-bg); color: var(--text-color); font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; }
 .btn-unit-nav[aria-current] { background: var(--primary-soft); color: var(--primary-text); }
-.q-ust { display: flex; align-items: center; gap: 4px; margin-bottom: 8px; }
-.q-label { min-width: 0; flex: 1; display: flex; align-items: center; gap: 6px; min-height: 44px; margin: 0; overflow-x: auto; scrollbar-width: none; white-space: nowrap; }
-.q-label::-webkit-scrollbar { display: none; }
-.q-no { flex-shrink: 0; color: var(--text-color-muted); }
-.q-cip { position: relative; display: inline-block; flex-shrink: 1; min-width: 3.5rem; max-width: 16rem; height: 28px; line-height: 28px; padding: 0 10px; border-radius: 999px; background: var(--button-bg); color: var(--text-color); font-size: 13px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; }
-.q-konu, .q-kontrol { display: inline-flex; align-items: center; gap: 4px; }
-.q-konu { flex-shrink: .35; min-width: 6rem; max-width: 20rem; color: var(--primary-text); }
-.q-kontrol { flex-shrink: 0; }
-.q-konu::after { content: ''; position: absolute; inset: -8px 0; }
-.q-konu svg, .q-kontrol svg { width: 14px; height: 14px; flex-shrink: 0; }
+/* Question record (DESIGN.md §5 "Soru künyesi"): one muted line, tap to open the full record; native <details>, no script */
+.q-ust { display: flex; align-items: flex-start; gap: 4px; margin-bottom: 8px; }
+/* The record runs under the discuss button column so the open card gets the full width */
+.soru-kunye { flex: 1; min-width: 0; margin-inline-end: -48px; }
+.q-ust > .q-ikon { position: relative; z-index: 1; }
+.soru-kunye > summary { display: flex; align-items: center; gap: 6px; min-height: 44px; padding-inline-end: 48px; list-style: none; cursor: pointer; border-radius: 12px; }
+.soru-kunye > summary::-webkit-details-marker { display: none; }
+.soru-kunye-ozet { flex: 1; min-width: 0; margin: 0; font-size: 13px; font-weight: 500; line-height: 1.3; color: var(--text-color-muted); font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.soru-kunye-ozet .q-no { color: var(--text-color); font-weight: 600; }
+.soru-kunye-parca::before { content: "·"; margin: 0 6px; color: var(--text-color-muted); }
+.soru-kunye-ok { width: 16px; height: 16px; flex-shrink: 0; color: var(--text-color-muted); transform: rotate(90deg); transition: transform .2s cubic-bezier(.2,0,0,1); }
+.soru-kunye[open] .soru-kunye-ok { transform: rotate(-90deg); }
+.soru-kunye-ayrinti { margin: 4px 0 8px; border: 1px solid var(--border-color); border-radius: 16px; background: var(--card-bg); overflow: hidden; }
+.soru-kunye-satir { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); column-gap: 12px; padding: 10px 14px; font-size: 14px; line-height: 1.45; }
+.soru-kunye-satir + .soru-kunye-satir { border-top: 1px solid var(--border-color); }
+.soru-kunye-satir dt { font-size: 13px; font-weight: 600; color: var(--text-color-muted); }
+.soru-kunye-satir dd { margin: 0; min-width: 0; color: var(--text-color); overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+.soru-kunye-satir a { color: var(--primary-text); text-decoration: underline; text-underline-offset: 2px; }
+.soru-kunye .q-konu { position: relative; display: inline-flex; align-items: flex-start; gap: 4px; text-align: start; color: var(--primary-text); font-weight: 500; }
+.soru-kunye .q-konu::after { content: ''; position: absolute; inset: -10px -4px; }
+.soru-kunye .q-konu svg { width: 14px; height: 14px; flex-shrink: 0; margin-top: 3px; }
+@supports (interpolate-size: allow-keywords) {
+    .soru-kunye { interpolate-size: allow-keywords; }
+    .soru-kunye::details-content { block-size: 0; overflow: clip; transition: block-size .25s cubic-bezier(.2,0,0,1), content-visibility .25s allow-discrete; }
+    .soru-kunye[open]::details-content { block-size: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .soru-kunye-ok { transition: none; }
+    .soru-kunye::details-content { transition: none; }
+}
+@media print { .soru-kunye-ok { display: none; } }
 .q-ikon { display: grid; place-items: center; width: 44px; height: 44px; flex-shrink: 0; border-radius: 999px; color: var(--text-color-muted); transition: background-color .2s, transform .12s; }
 .q-ikon:hover { background: var(--button-bg-hover); color: var(--text-color); }
 .q-ikon svg { width: 20px; height: 20px; }
@@ -1505,10 +1524,6 @@ label.ayar-satir > .ayar-ad:first-child { flex: 1; min-width: 0; }
 @media (prefers-reduced-motion: reduce) { .devam-dugme { transition: none; } .devam-dugme:active { transform: none; } }
 /* Sheet bodies take focus on open (tabindex -1) so no control shows a ring before the learner acts */
 .katman-govde:focus-visible, .katman-yuzey:focus-visible { outline: none; }
-/* Soru üst satırı sarılır: uzun sınav listesi ve konu çipi kendi satırına geçer, "202..." gibi kesilmez */
-.q-label { flex-wrap: wrap; row-gap: 6px; overflow: visible; white-space: normal; padding: 6px 0; }
-.q-label .q-cip { max-width: calc(100% - 4.5rem); }
-.q-label .q-konu { max-width: 100%; flex-shrink: 1; }
 
 /* ---- Menu tiles (MobilMenu.tsx): state from aria-pressed / data-calisiyor / :disabled, value on a second line ---- */
 .menu-kutu { position: relative; display: flex; min-width: 0; min-height: 5rem; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 8px 4px; border: 1px solid var(--border-color); border-radius: 16px; background: var(--button-bg); color: var(--text-color); transition: background-color .2s cubic-bezier(.2,0,0,1), transform .12s cubic-bezier(.2,0,0,1); }

@@ -126,6 +126,26 @@ const examLine = (q: { year?: string | number; examType?: string; sinavlar?: Sin
   }
   return [...gruplar].map(([ad, k]) => (k.size ? `${ad} (${[...k].join(", ")})` : ad)).join(", ");
 };
+// Question record ("soru künyesi", DESIGN.md §5): exam groups newest first, a one-line summary and the full topic path
+const sinavGruplari = (q: { year?: string | number; examType?: string; sinavlar?: SinavEtiket[]; source?: string }) => {
+  if (q.source !== "cikmis-soru" || !(q.sinavlar?.length || q.year)) return [] as string[];
+  return examLine(q).split(", ").filter(Boolean).sort((a, b) => b.localeCompare(a, "tr"));
+};
+const kunyeOzeti = (q: Parameters<typeof sinavGruplari>[0]) => {
+  const g = sinavGruplari(q);
+  if (g.length === 0) return q.source === "cikmis-soru" ? "Çıkmış soru" : "Alıştırma";
+  return g.length > 1 ? `${g[0].replace(/ \(.*\)$/, "")} +${g.length - 1}` : g[0].replace(/ \(.*\)$/, "");
+};
+const konuYolu = (bolum: string) => {
+  const parcalar = bolum.split(".");
+  const yol: string[] = [];
+  for (let i = 2; i <= parcalar.length; i++) {
+    const no = parcalar.slice(0, i).join(".");
+    const ad = konuAdi.get(no);
+    if (ad) yol.push(`${no} ${ad}`);
+  }
+  return yol;
+};
 const KONTROL: Record<string, string> = {
   "cevap-celiskisi": "Kaynaklar bu soruda farklı şıkkı doğru gösteriyor.",
   "sik-farkli": "Bu soru kaynaklarda farklı şıklarla geçiyor.",
@@ -273,25 +293,52 @@ const examKeys = (q: { year?: string | number; examType?: string; source?: strin
                     data-testid="question-card"
                   >
                     <header class="q-ust">
-                      <h3 class="q-label">
-                        <span class="q-no">Soru {qIdx + 1}</span>
-                        {q.source === "cikmis-soru" && q.year && (
-                          <span class="q-cip" title={examLine(q)}>{examLine(q)}</span>
-                        )}
-                        {q.section && konuAdi.has(q.section) && (
-                          <button type="button" class="q-cip q-konu" data-konu={q.section} title={`${q.section} ${konuAdi.get(q.section)}`}>
-                            <span class="truncate">{q.section} {konuAdi.get(q.section)}</span>
-                            <svg aria-hidden="true"><use href="#i-ileri" /></svg>
-                          </button>
-                        )}
-                        {q.kontrol && (
-                          <span class="q-cip q-kontrol bg-warn-soft text-warn" data-kontrol={q.kontrol} title={KONTROL[q.kontrol]}>
-                            <svg aria-hidden="true"><use href="#i-uyari" /></svg>
-                            <span>kontrol edin</span>
-                            <span class="sr-only">: {KONTROL[q.kontrol]} Soruyu ve cevabı kontrol edin.</span>
-                          </span>
-                        )}
-                      </h3>
+                      <details class="soru-kunye">
+                        <summary>
+                          <h3 class="soru-kunye-ozet">
+                            <span class="q-no">Soru {qIdx + 1}</span>
+                            <span class="soru-kunye-parca">{kunyeOzeti(q)}</span>
+                            {q.section && konuAdi.has(q.section) && (
+                              <span class="soru-kunye-parca">{q.section} {konuAdi.get(q.section)}</span>
+                            )}
+                            {q.kontrol && <span class="soru-kunye-parca text-warn">kontrol edin</span>}
+                          </h3>
+                          <svg class="soru-kunye-ok" aria-hidden="true"><use href="#i-ileri" /></svg>
+                        </summary>
+                        <dl class="soru-kunye-ayrinti">
+                          {sinavGruplari(q).length > 0 && (
+                            <div class="soru-kunye-satir">
+                              <dt>{sinavGruplari(q).length > 1 ? `${sinavGruplari(q).length} sınavda çıktı` : "Sınav"}</dt>
+                              <dd>{sinavGruplari(q).join(" · ")}</dd>
+                            </div>
+                          )}
+                          {q.section && konuAdi.has(q.section) && (
+                            <div class="soru-kunye-satir">
+                              <dt>Konu</dt>
+                              <dd>
+                                <button type="button" class="q-konu" data-konu={q.section}>
+                                  <span>{konuYolu(q.section).join(" › ")}</span>
+                                  <svg aria-hidden="true"><use href="#i-ileri" /></svg>
+                                </button>
+                              </dd>
+                            </div>
+                          )}
+                          <div class="soru-kunye-satir">
+                            <dt>Kaynak</dt>
+                            <dd>
+                              {q.source === "cikmis-soru" ? "Çıkmış soru" : "Alıştırma ve deneme"}
+                              {" · "}
+                              <a href={`#unite-${unit}`}>{unit === 0 ? "Ünitesi belirlenmemiş" : `Ünite ${unit}${uniteAdi.get(unit) ? ` ${uniteAdi.get(unit)!.baslik}` : ""}`}</a>
+                            </dd>
+                          </div>
+                          {q.kontrol && (
+                            <div class="soru-kunye-satir" data-kontrol={q.kontrol}>
+                              <dt class="text-warn">Kontrol edin</dt>
+                              <dd>{KONTROL[q.kontrol]} Soruyu ve cevabı kontrol edin.</dd>
+                            </div>
+                          )}
+                        </dl>
+                      </details>
                       <button
                         type="button"
                         class="q-ikon print:hidden"
