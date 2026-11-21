@@ -11,6 +11,7 @@ import type {
     GroupedMaterials,
 } from "../../../../lib/types";
 import anadoluMaterialsData from "../../../../data/anadolu-materials.json";
+import kitapUniteAdlari from "../../../../data/kitap-unite-adlari.json";
 
 export async function getStaticPaths() {
     const universities = await getUniversities();
@@ -79,12 +80,14 @@ if (isAtaAof) {
         type: "pdf",
     });
 
-    // 2. Units
+    // 2. Units (resmî OYS adresi; ünite adı ders kitabından)
+    // @ts-ignore
+    const uniteAdi: Record<string, string> = (kitapUniteAdlari as any)[university.id]?.[course.id] ?? {};
     const count = course.unitCount || 14;
     for (let i = 1; i <= count; i++) {
         materials.push({
             id: `unit-${i}`,
-            title: `Ünite ${i}`,
+            title: uniteAdi[String(i)] ? `Ünite ${i}: ${uniteAdi[String(i)]}` : `Ünite ${i}`,
             url: `https://oys.ataaof.edu.tr/file/${automationId}-${i}.pdf`,
             type: "pdf",
         });
