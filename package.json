@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/konu-parcala.mjs && astro build",
+    "konu": "node scripts/konu-parcala.mjs",
     "postbuild": "node scripts/extract-inline-images.mjs dist",
     "preview": "astro preview",
     "astro": "astro",
@@ -42,6 +43,7 @@
     "htmlparser2": "^10.1.0",
     "lucide": "^1.72.0",
     "lucide-react": "^1.72.0",
+    "marked": "^18.2.1",
     "node-html-parser": "^7.0.2",
     "piscina": "^5.1.4",
     "react": "^19.2.3",
@@ -57,9 +59,11 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.57.0",
+    "@resvg/resvg-js": "^2.6.2",
     "@types/he": "^1.2.3",
     "@types/turndown": "^5.0.6",
     "@vitest/ui": "^4.0.16",
+    "satori": "^0.63.2",
     "sharp": "^0.34.5",
     "vitest": "^4.0.16"
   },

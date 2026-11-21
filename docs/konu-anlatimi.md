@@ -39,4 +39,11 @@ Eksik: Atatürk AÖF'te 163.652 sorunun yalnız 2.550'sinde `section` var; geri 
 6. Ayrıntılı anlatım: yapay zekâ menüsündeki "Daha ayrıntılı anlat" konu metnini bağlam olarak alır.
 7. Video eşzamanı: `youtube-videolar.json` ve AUZEF ders videoları için zaman kodlu konu eşlemesi; video oynarken ilgili konu çekmecede ilerler. Zaman kodu verisi gelmeden başlanmaz.
 
+8. Wiki gibi çalışma (Zeki, 21 Kasım 2026): konular birbirine bağlı bir bilgi ağı olur.
+   - Her konunun kalıcı adresi var (`/<uni>/<bolum>/<ders>/konu/<no>/`); kavram ve kişi adları başka konulara bağlantı olur.
+   - Her konu sayfasında "Bu konuya bağlananlar" (geri bağlantılar), aynı kavramın geçtiği diğer dersler ve bu konudan çıkmış sorular listelenir.
+   - Kavram çizgesi: bir dersin konuları ve kavramları düğüm, bağlantılar kenar; ders sayfasında ve konu çekmecesinde yerel çizge (seçili konu ve komşuları), ayrı bir sayfada dersin tamamı. Çizim istemci tarafında, yalnız açılınca yüklenen bir kütüphaneyle (Cytoscape.js ya da benzeri; seçimden önce paket boyutu ölçülür).
+   - Veri: derleme betiği her konu dosyasına `kavramlar` ve `baglantilar` alanlarını yazar, ders başına `cizge.json` üretir. Kavram çıkarma ilk turda kitaptaki koyu terimler, başlıklar ve sözlük bölümlerinden; ikinci turda Gemini ile kavram ve ilişki çıkarma (sonuç depoya yazılır, her derlemede yeniden üretilmez).
+   - Paylaşımlı dersler (birden çok bölümde okutulan) aynı konu düğümünü paylaşır.
+
 Diğer üniversiteler (AUZEF, Anadolu, Ankara) MDX'leri üretildikçe aynı hatta girer.
