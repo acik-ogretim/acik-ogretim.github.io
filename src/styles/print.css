@@ -468,3 +468,287 @@
         text-decoration: underline !important;
     }
 }
+/*
+ * Print design v2 (exam booklet layout). Loaded after the rules above and scoped with
+ * `html body` so it wins over component styles. Light tokens are forced so the dark theme
+ * never reaches paper. Layout logic:
+ *  - question numbers hang in a fixed left gutter, question text and options share one edge
+ *  - option keys are "A)" in a fixed width, wrapped option lines align with the first line
+ *  - two columns with a hairline rule; unit headings span both columns
+ *  - explanation is a small block with a left rule; the answer is one short line
+ */
+@media print {
+    @page {
+        size: A4;
+        margin: 16mm 13mm 16mm 13mm;
+    }
+
+    :root,
+    :root[data-theme],
+    [data-theme='dark'],
+    [data-theme='sepia'] {
+        --bg-color: #ffffff;
+        --card-bg: #ffffff;
+        --button-bg: #ffffff;
+        --border-color: #d4d4d4;
+        --text-color: #111111;
+        --text-color-muted: #555555;
+        --primary-color: #1f4f96;
+        --primary-text: #1f4f96;
+        color-scheme: light;
+    }
+
+    html,
+    html body {
+        background: #ffffff !important;
+        color: #111111 !important;
+        font-size: 9.5pt !important;
+        line-height: 1.35 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* Respect the on-screen filter: print exactly the questions that are shown */
+    html body [id^='question-'][style*='display: none'] {
+        display: none !important;
+    }
+
+    /* Things that only make sense on a screen */
+    html body nav[aria-label="Konum"],
+    html body .katman-bilgi,
+    html body .eylem-cip,
+    html body #video-ozet,
+    html body .q-ikon,
+    html body .soru-kunye summary svg,
+    html body .original-content-store,
+    html body .print\:hidden,
+    html body astro-island {
+        display: none !important;
+    }
+
+    /* Course title block */
+    html body .ders-giris {
+        background: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        margin: 0 0 4mm 0 !important;
+        column-span: all;
+    }
+    html body .ders-giris h1 {
+        font-size: 17pt !important;
+        line-height: 1.15 !important;
+        text-align: left !important;
+        margin: 0 0 1.5mm 0 !important;
+        -webkit-line-clamp: unset !important;
+        display: block !important;
+    }
+    html body .ders-giris p {
+        font-size: 9pt !important;
+        color: #444 !important;
+        margin: 0 !important;
+        display: inline !important;
+    }
+    html body .ders-giris p + p::before { content: " · "; }
+    html body .ders-giris .bilgi-cip {
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        font-size: 9pt !important;
+        font-weight: 600 !important;
+        color: #444 !important;
+        line-height: inherit !important;
+        vertical-align: baseline !important;
+        display: inline !important;
+        height: auto !important;
+    }
+    html body .ders-giris > div { display: inline !important; margin: 0 !important; padding: 0 !important; vertical-align: baseline !important; }
+    html body .ders-giris > div .bilgi-cip::before { content: " · "; font-weight: 400; }
+
+    /* Two-column body with a hairline rule */
+    html body article {
+        column-count: 2 !important;
+        column-gap: 9mm !important;
+        column-rule: 0.4pt solid #bdbdbd !important;
+        column-fill: auto !important;
+    }
+
+    /* Unit heading spans both columns */
+    html body .unit-separator {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    html body .unit-separator > h2 {
+        column-span: all;
+        font-size: 8pt !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.12em !important;
+        text-transform: uppercase !important;
+        color: #555 !important;
+        border: none !important;
+        border-top: 1.2pt solid #111 !important;
+        padding: 2.5mm 0 0 0 !important;
+        margin: 5mm 0 3.5mm 0 !important;
+        break-after: avoid !important;
+        break-inside: avoid !important;
+    }
+    html body .unit-separator:first-of-type > h2 { margin-top: 0 !important; }
+    html body .unit-separator > h2 > span {
+        display: block !important;
+        font-size: 12.5pt !important;
+        letter-spacing: 0 !important;
+        text-transform: none !important;
+        color: #111 !important;
+        margin-top: 0.8mm !important;
+        -webkit-line-clamp: unset !important;
+    }
+
+    /* Question: number hangs in the left gutter */
+    html body [id^='question-'] {
+        padding: 0 0 0 7mm !important;
+        margin: 0 0 4.2mm 0 !important;
+        break-inside: avoid !important;
+    }
+    html body [id^='question-'] .prose { max-width: none !important; }
+    html body [id^='question-'] .question-text {
+        font-size: 9.5pt !important;
+        line-height: 1.35 !important;
+        margin: 0 0 1.6mm 0 !important;
+    }
+    html body [id^='question-'] .question-text,
+    html body [id^='question-'] .question-text strong {
+        font-weight: 600 !important;
+        color: #111 !important;
+    }
+    html body [id^='question-'] .question-text::before {
+        content: counter(print-question-counter) "." !important;
+        display: inline-block !important;
+        width: 5.5mm !important;
+        margin: 0 1.5mm 0 -7mm !important;
+        text-align: right !important;
+        font-weight: 800 !important;
+        font-size: 9.5pt !important;
+    }
+
+    /* Options: fixed key column, hanging indent for wrapped lines */
+    html body .option-item,
+    html body .option-item.correct-option,
+    html body.hide-answers .option-item.correct-option {
+        display: grid !important;
+        grid-template-columns: 5.5mm 1fr !important;
+        align-items: baseline !important;
+        gap: 0 !important;
+        min-height: 0 !important;
+        height: auto !important;
+        padding: 0 !important;
+        margin: 0 0 0.6mm 0 !important;
+        border: none !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+    }
+    html body .space-y-3 > * + * { margin-top: 0 !important; }
+    html body [id^='question-'] .space-y-3 { margin: 0 0 1.4mm 0 !important; }
+    html body .option-item .option-key,
+    html body.hide-answers .correct-option:not(.is-correct):not(.is-wrong):not(.was-revealed) .option-key {
+        width: auto !important;
+        height: auto !important;
+        min-width: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        color: #111 !important;
+        font-size: 9pt !important;
+        font-weight: 700 !important;
+        line-height: 1.35 !important;
+        letter-spacing: 0 !important;
+        display: inline !important;
+    }
+    html body .option-key::after {
+        content: ")" !important;
+        display: inline !important;
+        width: auto !important;
+    }
+    html body .option-item .option-text {
+        font-size: 9pt !important;
+        line-height: 1.35 !important;
+        padding: 0 !important;
+        color: #111 !important;
+        font-weight: 400 !important;
+    }
+
+    /* Explanation: small block with a left rule */
+    html body .explanation-box,
+    html body .explanation-card {
+        border: none !important;
+        border-left: 1pt solid #9a9a9a !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        padding: 0 0 0 2.5mm !important;
+        margin: 1.2mm 0 0 0 !important;
+        font-size: 8.3pt !important;
+        line-height: 1.32 !important;
+        color: #333 !important;
+    }
+    html body .explanation-box .aciklama-ust {
+        display: block !important;
+        min-height: 0 !important;
+        height: auto !important;
+        margin: 0 0 0.4mm 0 !important;
+        padding: 0 !important;
+        line-height: 1.2 !important;
+    }
+    html body .explanation-box .explanation-content { margin: 0 !important; padding: 0 !important; }
+    html body .explanation-box .aciklama-ust strong {
+        font-size: 7pt !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.1em !important;
+        text-transform: uppercase !important;
+        color: #666 !important;
+    }
+    html body .explanation-box .explanation-content,
+    html body .explanation-box .explanation-content * {
+        font-size: 8.3pt !important;
+        color: #333 !important;
+    }
+
+    /* Answer: one short line */
+    html body .answer-meta-card,
+    html body .answer-metadata-box {
+        margin: 1mm 0 0 2.5mm !important;
+        padding: 0 !important;
+        border: none !important;
+        background: transparent !important;
+    }
+    html body .answer-meta-card p { font-size: 8.3pt !important; margin: 0 !important; color: #111 !important; }
+    html body .answer-meta-card strong {
+        font-size: 7pt !important;
+        letter-spacing: 0.1em !important;
+        color: #666 !important;
+        margin-right: 1mm !important;
+    }
+    html body .answer-meta-card .font-bold { font-size: 9pt !important; font-weight: 800 !important; }
+
+    /* Topic heading where the topic changes (data-konu-basi is set on beforeprint) */
+    html body [id^='question-'][data-konu-basi]::before {
+        content: attr(data-konu-ad);
+        display: block;
+        margin: 0.6mm 0 1.8mm -7mm;
+        padding: 0 0 0.8mm 0;
+        border-bottom: 0.4pt solid #cfcfcf;
+        font-size: 7.3pt;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        color: #555;
+        break-after: avoid;
+    }
+
+    /* Every option key looks the same, the correct one included (higher specificity than the older rules) */
+    html body .option-item.option-item .option-key.option-key,
+    html body .option-item.option-item .option-text.option-text {
+        color: #111 !important;
+        background: transparent !important;
+    }
+    html body .option-item.option-item .option-key.option-key { font-weight: 700 !important; }
+    html body .option-item.option-item .option-text.option-text { font-weight: 400 !important; }
+}

@@ -28,6 +28,7 @@ import {
   ListTree,
   Volume2,
   Download,
+  Printer,
   type IconNode,
 } from "lucide";
 import { OYNATICI_DURUM_OLAYI, hizMetni, type OynaticiDurum } from "./ders-olaylari";
@@ -147,6 +148,7 @@ export const EYLEMLER: Eylem[] = [
     calisiyor: () => typeof document !== "undefined" && document.getElementById("cevrimdisi-indir")?.dataset.durum === "iniyor",
     calistir: () => tikla("#cevrimdisi-indir"),
   },
+  { id: "yazdir", etiket: "Yazdır / PDF", simge: Printer, kisayol: "P", tus: "p", calistir: () => window.print() },
   { id: "yedek", etiket: "Kayıtlarını taşı", simge: RefreshCw, calistir: () => location.assign("/yedek") },
   { id: "hata", etiket: "Hata bildir", simge: Flag, calistir: () => tikla("[data-tartisma]") },
   { id: "tur", etiket: "Turu yeniden göster", simge: Route, calistir: () => window.dispatchEvent(new CustomEvent("tur:baslat")) },

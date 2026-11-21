@@ -255,6 +255,9 @@ const dersJsonLd = graf(
             <a href={`/calisma/${course.id}/`} class="eylem-cip" data-ders-anlatimi>
               <Simge ad="Play" size={18} />Ders anlatımı
             </a>
+            <a href={`/calisma/${course.id}/?sekme=vurgular`} class="eylem-cip" data-yildizli data-yildiz-anahtar={`yildizli-kavramlar-${university.id}-${course.id}`} hidden>
+              <Simge ad="Star" size={18} /><span>Yıldızlı kavramlar</span>
+            </a>
           )}
           {videoVar && (
             <button type="button" id="video-ac" class="eylem-cip" aria-expanded="false" aria-controls="video-ozet">
@@ -290,7 +293,7 @@ const dersJsonLd = graf(
               <Simge ad="ExternalLink" size={18} />Resmî sayfa
             </a>
           )}
-          <button type="button" onclick="window.print()" class="eylem-cip eylem-genis" title="Yazdır / PDF kaydet">
+          <button type="button" onclick="window.print()" class="eylem-cip" title="Yazdır / PDF kaydet (P)">
             <Simge ad="Printer" size={18} />Yazdır
           </button>
         </div>
@@ -834,6 +837,26 @@ const dersJsonLd = graf(
   <AIMenu />
 </Layout>
 
+
+<script>
+  // Print: mark the first visible question of each topic so print.css can show the topic name above it.
+  const konuBasliklariniIsaretle = () => {
+    let onceki = "";
+    document.querySelectorAll<HTMLElement>(".question-card[data-konu]").forEach((kart) => {
+      kart.removeAttribute("data-konu-basi");
+      if (kart.style.display === "none") return;
+      const konu = kart.dataset.konu ?? "";
+      if (konu && konu !== onceki) {
+        const ad = kart.querySelector(".q-konu span")?.textContent?.trim() ?? konu;
+        kart.setAttribute("data-konu-basi", "");
+        kart.setAttribute("data-konu-ad", ad.toLocaleUpperCase("tr-TR"));
+      }
+      onceki = konu;
+    });
+  };
+  window.addEventListener("beforeprint", konuBasliklariniIsaretle);
+</script>
+
 {
   /* Inject print styles directly to avoid CSS Variable scope issues in @page context */
 }
@@ -841,42 +864,53 @@ const dersJsonLd = graf(
   set:html={`
   @media print {
     @page {
-      margin-top: 2cm;
-      margin-bottom: 2cm;
-
       @top-left {
-        content: "${university.shortName} - ${department.name} / ${course.semester}. Dönem";
-        font-size: 8pt;
-        color: #888;
-        font-family: monospace;
-        margin-top: 4mm;
+        content: "${university.shortName} · ${department.name} · ${course.semester}. dönem";
+        font-size: 7.5pt;
+        color: #777;
+        vertical-align: bottom;
+        padding-bottom: 3mm;
       }
       @top-right {
         content: "${course.name}";
-        font-size: 8pt;
+        font-size: 7.5pt;
         font-weight: bold;
-        color: #000;
-        margin-top: 4mm;
+        color: #111;
+        vertical-align: bottom;
+        padding-bottom: 3mm;
       }
       @bottom-left {
         content: "acik-ogretim.github.io";
-        font-size: 8pt;
-        color: #aaa;
-        margin-bottom: 4mm;
+        font-size: 7.5pt;
+        color: #888;
+        vertical-align: top;
+        padding-top: 3mm;
       }
       @bottom-right {
-        content: "© ${new Date().getFullYear()}";
-        font-size: 8pt;
-        color: #aaa;
-        margin-bottom: 4mm;
-      }
-      @bottom-center {
-        content: counter(page);
-        font-size: 10pt;
-        font-weight: bold;
-        margin-bottom: 4mm;
+        content: "Sayfa " counter(page) " / " counter(pages);
+        font-size: 7.5pt;
+        color: #555;
+        vertical-align: top;
+        padding-top: 3mm;
       }
     }
   }
 `}
 ></style>
+
+<script>
+  // Çalışma odasında yıldızlanan kavramlar varsa ders sayfasında kısayol gösterilir (yildizli-kavramlar-<uni>-<ders>).
+  const yildizBaglantisi = document.querySelector<HTMLAnchorElement>("[data-yildizli]");
+  if (yildizBaglantisi) {
+    try {
+      const liste: unknown = JSON.parse(localStorage.getItem(yildizBaglantisi.dataset.yildizAnahtar ?? "") ?? "[]");
+      if (Array.isArray(liste) && liste.length) {
+        const ad = yildizBaglantisi.querySelector("span");
+        if (ad) ad.textContent = `Yıldızlı kavramlar, ${liste.length}`;
+        yildizBaglantisi.hidden = false;
+      }
+    } catch {
+      /* unreadable record: link stays hidden */
+    }
+  }
+</script>
