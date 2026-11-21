@@ -102,7 +102,8 @@ export type PaketSorusu = z.infer<typeof PaketSorusuSemasi>;
 
 export const UniteSorulariSemasi = z.object({
   v: z.literal(PAKET_SURUMU),
-  unite: z.number().int().positive(),
+  /** 0 holds the questions whose unit is not known yet (listed after the numbered units). */
+  unite: z.number().int().nonnegative(),
   sorular: z.array(PaketSorusuSemasi),
 });
 export type UniteSorulari = z.infer<typeof UniteSorulariSemasi>;

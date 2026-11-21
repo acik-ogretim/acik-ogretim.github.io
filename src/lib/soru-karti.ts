@@ -1,5 +1,5 @@
 // Question card markup (pure functions). The course page draws its cards in the browser from
-// /veri/<uni>/<ders>/unite-<n>.json (src/scripts/soru-yukleyici.ts) with these functions, and the unit tests
+// /ders/<uni>/<ders>/unite/<n>.json (src/scripts/soru-yukleyici.ts) with these functions, and the unit tests
 // run them in Node. Class names, ids and data attributes are what the player, filters, discussion, topic drawer
 // and print styles (src/styles/print.css) rely on: change them together.
 import type { SoruKaydi } from "./unite-verisi";

@@ -1,7 +1,10 @@
 import type { Question } from "./types";
 
+/** The fields the order reads: card data from the course package works as well as a full Question. */
+export type SiralanirSoru = Pick<Question, "source" | "section"> & { sinavlar?: readonly unknown[] };
+
 // How many exams a question appeared in (0 for practice questions).
-export function cikmaSayisi(q: Question): number {
+export function cikmaSayisi(q: SiralanirSoru): number {
   if (q.source !== "cikmis-soru") return 0;
   return Math.max(q.sinavlar?.length ?? 0, 1);
 }
@@ -25,7 +28,7 @@ function bolumKarsilastir(a: string | undefined, b: string | undefined): number 
 // Order within a unit: most frequently asked exam questions first, then the other exam
 // questions, then practice questions; within the same rank, by section (1.2.5) and
 // otherwise by the original file order (sorting is stable).
-export function soruSirala(sorular: Question[]): Question[] {
+export function soruSirala<T extends SiralanirSoru>(sorular: readonly T[]): T[] {
   return [...sorular].sort(
     (a, b) =>
       cikmaSayisi(b) - cikmaSayisi(a) ||

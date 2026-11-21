@@ -38,3 +38,14 @@ export type OynaticiDurum = {
 /** Speech rate as Turkish writes it: "1,2×", "1×". */
 export const hizMetni = (hiz: number): string =>
   `${hiz.toLocaleString("tr-TR", { maximumFractionDigits: 1 })}×`;
+
+/** Fired once the course page has drawn its question cards from the unit files (src/scripts/soru-yukleyici.ts). */
+export const SORULAR_HAZIR_OLAYI = "sorular:hazir";
+
+/** True when the page has no question area to wait for, or its cards are in the DOM. */
+export const sorularHazirMi = (): boolean =>
+  typeof document === "undefined" || !document.querySelector("[data-soru-alani]") || document.documentElement.dataset.sorularHazir === "1";
+
+/** Resolves when the cards are in the DOM (print and the player wait for it). */
+export const sorularHazirSozu = (): Promise<void> =>
+  sorularHazirMi() ? Promise.resolve() : new Promise((coz) => addEventListener(SORULAR_HAZIR_OLAYI, () => coz(), { once: true }));

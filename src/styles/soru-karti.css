@@ -1,0 +1,31 @@
+/* Question card pieces that used to be inline markup on every card: icons as CSS masks (a card had five SVG elements),
+   and the small links added around the topic. Imported by src/pages/[university]/[department]/[course].astro. */
+:root{--m-tartis:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z'%3E%3C/path%3E%3C/svg%3E");--m-ses:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z'%3E%3C/path%3E%3Cpath d='M16 9a5 5 0 0 1 0 6'%3E%3C/path%3E%3Cpath d='M19.364 18.364a9 9 0 0 0 0-12.728'%3E%3C/path%3E%3C/svg%3E");--m-sohbet:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719'%3E%3C/path%3E%3C/svg%3E");--m-more:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='1'/%3E%3Ccircle cx='19' cy='12' r='1'/%3E%3Ccircle cx='5' cy='12' r='1'/%3E%3C/svg%3E");--m-ileri:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'%3E%3C/path%3E%3C/svg%3E")}
+.q-ikon[data-ikon]::before,
+.soru-kunye-ok::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: currentColor;
+  -webkit-mask: var(--m) center / contain no-repeat;
+  mask: var(--m) center / contain no-repeat;
+}
+.q-ikon[data-ikon="tartis"] { --m: var(--m-tartis); }
+.q-ikon[data-ikon="ses"] { --m: var(--m-ses); }
+.q-ikon[data-ikon="sohbet"] { --m: var(--m-sohbet); }
+.q-ikon[data-ikon="more"] { --m: var(--m-more); }
+.soru-kunye-ok { --m: var(--m-ileri); display: block; }
+.soru-kunye-ok::before { width: 16px; height: 16px; }
+
+/* Cards are drawn after load */
+.soru-yukleniyor { margin: 0; padding: 24px 0; font-size: 14px; color: var(--text-color-muted); }
+.soru-yukleme-hata { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 16px 0; font-size: 14px; color: var(--text-color-muted); }
+
+/* Links to the study room (only courses that have one) */
+.unite-anlatim, .q-anlatim, .konu-anlatim { color: var(--primary-text); font-size: 14px; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.unite-anlatim { margin-inline-start: 12px; vertical-align: middle; }
+.q-anlatim { display: inline-block; margin-inline-start: 12px; }
+.konu-anlatim { display: inline-flex; align-items: center; min-height: 44px; margin-bottom: 8px; }
+@media print { .unite-anlatim, .q-anlatim, .konu-anlatim, .soru-yukleniyor { display: none !important; } }
+.q-onizle { background: none; border: 0; padding: 0; cursor: pointer; font-family: inherit; }
