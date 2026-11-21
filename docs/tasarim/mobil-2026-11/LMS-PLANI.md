@@ -12,6 +12,18 @@ Zeki (21 Kasım 2026): portal, açık öğretim ÖYS'lerinin, Anadolum eKampüs'
 
 **ATA AÖF ÖYS uygulaması** (App Store tanıtımı): ders kitapları, deneme soruları, çıkmış sorular, ders videoları, duyurular; sınav giriş belgesi ÖBS, ÖYS ve mobil uygulamada.
 
+**ATA AÖF ÖYS'nin yeni ünite sayfası** (Zeki'nin ekran görüntüsü ve sayfanın kendisi, 21 Kasım 2026, Hukukun Temel Kavramları 1. ünite): her ünite bir kart; ünite numarası, başlık, bölüm sayısı, "Devam ediyor" durumu, yazar, yüzde ilerleme halkası, açılır içerik ızgarası. Her etkinlik kutusunda tamamlandı işareti. Etkinlikler beş grupta:
+
+- Genel: İçerik (metin), Özet.
+- Multimedya: Özet video (yapay zekâ), Video (stüdyo), Podcast.
+- Alıştırma ve uygulama: Temel noktalar, Kavram sözlüğü, Hafıza kartları (kavram ön yüz, tanım arka yüz; ünite başına 6 kart; boşluk tuşu çevirir, oklar gezdirir; tek kart ve tümü görünümü), Metaforlar, Sebep-sonuç, Günlük hayat örnekleri.
+- Değerlendirme: Çöz ve öğren, Doğru/yanlış, Boşluk doldurma, Eşleştirme, Kısa cevap.
+- Yansıtıcı etkinlikler: Tartışma soruları, Eleştirel düşünme, Vaka analizi, Artılar ve eksiler.
+
+Her etkinlikte 1-5 yıldız puanlama ve içerik geri bildirimi. Ders sayfasında "Kaldığım yerden devam et" ve ders başına deneme sınavı. Menüde: Derslerim, Deneme sınavları, Geçmiş sınav soruları, Soru itirazlarım, Sonuç itirazlarım, İçerik geri bildirimi, Erişilebilirlik (UserWay), gece görünümü, bildirim ayarları (web push), duyurular. Sayfa ayrıca bir sınav arenası betiği yüklüyor (`examarena`); işlevi ayrıca incelenecek.
+
+**Portalda karşılığı (plan)**: aynı 18 etkinlik türü, ders kitabı MDX'inden konu konu üretilir (Gemini, kitap metnine dayalı; ÖYS içeriği kopyalanmaz, kendi içeriğimizi üretiriz). Farkımız: ünite başına 6 kart yerine her konunun kavramlarından kart ve aralıklı tekrar; her etkinlik konu sayfasına ve o konudan çıkmış sorulara bağlı; yanlış yapılan sorunun konusundan ilgili kartlar ve sebep-sonuç etkinliği önerilir; ilerleme halkası etkinlik açmakla değil gerçek sonuçla (doğru oranı, tekrar zamanı) dolar; puan ve geri bildirim tek dokunuşla hata bildirimine bağlanır. Üretim hattı: ders-kitaplari deposunda `etkinlik/unite-NN.json` (tür başına dizi), portal derlemesinde konu dosyalarına bağlanır. İlk deneme: Zeki'nin okuduğu Sosyoloji 1. dönem dersleri (Hukukun Temel Kavramları dahil).
+
 **Portalın karşılığı ve fark yaratacağı yerler**
 
 **Ders kitabı**: kitap MDX'i konu konu çekmecede ve kalıcı konu sayfasında açılır, sorudan tek dokunuşla konusuna gidilir ([docs/konu-anlatimi.md](../../konu-anlatimi.md)). eKampüs'te kitap ayrı bir dosyadır; bizde soru, konu, özet ve video birbirine bağlı.
