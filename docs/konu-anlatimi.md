@@ -86,3 +86,12 @@ Diğer üniversiteler (AUZEF, Anadolu, Ankara) MDX'leri üretildikçe aynı hatt
 
 **Sınama**: Playwright ile 390x844 ve 1280x800 (ya da 1440x900); YouTube API'si sahte oynatıcıyla değiştirilebilir, zaman `window.coZaman(sn)` ya da sahte oynatıcının `getCurrentTime` değeriyle sürülür.
 
+
+## Medya (uzun anlatım sesleri, 21 Kasım 2026)
+
+Ses dosyaları site deposuna girmez; `https://medya.zeki.website/ata-aof/<ders>/uzun/unite-NN.mp3` adresinden gelir (nginx, CORS yalnız bu site, Range 206, bir yıllık önbellek, `audio/mpeg`; ayrıntı auzeff-tui `AGENTS.md`). Medya listesi ve dökümler ders paketi şemasına (`src/lib/ders-paketi/sema.ts`: `MedyaSemasi`, `MedyaDokumuSemasi`) uyar ve okunacağı yer:
+
+- `data/calisma-odasi-medya/<ders>.json`: `{ v: 1, uni, ders, medyalar: [Medya] }`. Her ünite için bir kayıt: `id` (`uzun-unite-01`), `tur: "ses"`, `cesit: "uzun-anlatim"`, `baslik` ("Uzun anlatım · Ünite N"), `kaynak` (ses adresi), `sure` (saniye), `unite`, `dokum` (`medya/<id>.json`).
+- `data/calisma-odasi-medya/<ders>/<id>.json`: `MedyaDokumu` (`{ v: 1, medya, satirlar: [{ bas, bit, konusmaci, metin, konu, guven }] }`). Satır, senaryodaki bir konuşma sırasıdır (Can, Ayşe). `konu` null ve `guven` 0 gelir: konu ataması paketleyicinin işidir (TF-IDF); zamanlar sesin kendi parça sürelerinden hesaplanmıştır, parça içi konuşma süreleri metin uzunluğuna orantılıdır (birkaç saniye sapabilir).
+
+Hazır olanlar: `sosyolojiye-giris` ünite 1-7 (toplam yaklaşık 4,2 saat, 64 kbps mono). Hukukun Temel Kavramları sesleri de sunucuda (`hukukun-temel-kavramlari`, ünite 1-7); zamanlı dökümü Gemini yazısı ile hizalanıyor, tamamlanınca aynı biçimde eklenecek.
