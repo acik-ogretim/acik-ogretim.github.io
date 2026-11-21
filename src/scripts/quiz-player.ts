@@ -1,7 +1,7 @@
 import type { OptionKey, PlayerQuestion, PlayerUI, QuizSettings, Source } from "../lib/types";
 import { suz } from "../lib/suzgec";
 import { KIP_OLAYI, KONUM_ISTE_OLAYI, OYNATICI_DURUM_OLAYI, SORU_KONUMU_OLAYI, hizMetni, type OynaticiDurum, type SoruKonumu } from "../lib/ders-olaylari";
-import { CalismaBaglantisi } from "./calisma-baglanti";
+import { CalismaBaglantisi, kartiOdakla, okunanSoru } from "./calisma-baglanti";
 import { depoOku, depoYaz } from "../lib/calisma-durumu";
 
 // Player bar icons for the solve-mode button (Lucide play and pause, filled look through currentColor)
@@ -365,11 +365,9 @@ export class QuizPlayer {
       // If we are scrolling programmatically, do not update active index locally
       if (this.isProgrammaticScroll) return;
 
-      const visibleEntry = entries.find(entry => entry.isIntersecting);
-      if (visibleEntry) {
-        // Use data-id (DB ID) to match what we stored in this.questions, fallback to DOM ID
-        const targetEl = visibleEntry.target as HTMLElement;
-        const index = this.questions.findIndex(q => q.el === targetEl);
+      if (entries.some(entry => entry.isIntersecting)) {
+        // The card on the reading line, not the first entry of the batch (calisma-baglanti.ts okunanSoru)
+        const index = okunanSoru(this.questions);
         if (index !== -1 && index !== this.currentIndex && !this.isPlaying && !this.synth.speaking) {
           this.currentIndex = index;
           this.updateStatusText();
@@ -984,22 +982,14 @@ export class QuizPlayer {
     if (this.currentIndex < 0 || this.currentIndex >= this.questions.length) return;
     const q = this.questions[this.currentIndex];
     if (q && q.el) {
-      // Calculate offset to account for sticky headers (approx 100px)
-      // We use scroll-margin-top on the element itself for cleaner behavior with scrollIntoView if supported,
-      // closely matching the manual calc logic but more robust.
-      // However, sticking to the manual calc as requested for now, but ensuring observer doesn't fight it.
-
-      // Clears the floating course bar on phones (scroll-padding-top is set per page in global.css)
-      const headerOffset = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 20;
-      const elementPosition = q.el.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      // Temporarily simple disable observer updates to prevent jumping during scroll
+      // scrollIntoView honours scroll-padding (floating course bar) and, on phones, the one-question
+      // scroll snap (global.css "Mobile question flow"): the card lands exactly in place.
+      const azHareket = matchMedia('(prefers-reduced-motion: reduce)').matches;
       this.isProgrammaticScroll = true;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+      q.el.scrollIntoView({ block: 'start', behavior: azHareket ? 'auto' : 'smooth' });
+      // Focus follows the card when it was inside the list (keyboard reading), not when a bar button is in use
+      const odak = document.activeElement;
+      if (!odak || odak === document.body || odak.closest('.question-card')) kartiOdakla(q.el);
       setTimeout(() => { this.isProgrammaticScroll = false; }, 800);
 
       // Boxless questions: the current one is tracked by attribute, the floating bar shows its place

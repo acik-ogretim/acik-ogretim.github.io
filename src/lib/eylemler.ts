@@ -66,13 +66,12 @@ export const EYLEM_DURUM_OLAYI = OYNATICI_DURUM_OLAYI;
 type Calisma = {
   goster: () => void;
   cevapVar: (el?: HTMLElement | null) => boolean;
-  uniteCevapSayisi: () => number;
   uniteyiTemizle: () => void;
   dersiTemizle: () => void;
   yerVar: () => boolean;
   yeriSifirla: () => void;
 };
-type Oynatici = { durum?: () => OynaticiDurum; calisma?: Calisma; questions?: { el: HTMLElement | null }[]; currentIndex?: number };
+type Oynatici = { durum?: () => OynaticiDurum; calisma?: Calisma };
 const oyuncu = (): Oynatici | null =>
   typeof window === "undefined" ? null : ((window as unknown as { quizPlayer?: Oynatici }).quizPlayer ?? null);
 
@@ -80,10 +79,7 @@ const oyuncu = (): Oynatici | null =>
 const oynatici = (): OynaticiDurum | null => oyuncu()?.durum?.() ?? null;
 /** Stored study state of the course page (src/scripts/calisma-baglanti.ts). */
 const calisma = (): Calisma | null => oyuncu()?.calisma ?? null;
-const simdikiKart = () => {
-  const p = oyuncu();
-  return p?.questions?.[p.currentIndex ?? -1]?.el ?? null;
-};
+
 
 export const MENU_ACMA_OLAYI = "mobil-menu:ac";
 
@@ -124,7 +120,7 @@ export const EYLEMLER: Eylem[] = [
   { id: "aciklamayi-oku", etiket: "Açıklamayı oku", simge: BookOpen, yerel: "btn-read-explanation", calisiyor: () => oynatici()?.okunan === "aciklama", calistir: () => tikla("#btn-read-explanation") },
   { id: "durdur", etiket: "Okumayı durdur", simge: Square, yerel: "btn-stop-speech", pasif: () => !oynatici()?.okunan, calistir: () => tikla("#btn-stop-speech") },
   // Solving mode: reveal without choosing (counted apart from right and wrong)
-  { id: "cevabi-goster", etiket: "Cevabı göster", simge: Eye, pasif: () => !oynatici()?.cozme || !!calisma()?.cevapVar(simdikiKart()), calistir: () => calisma()?.goster() },
+  { id: "cevabi-goster", etiket: "Cevabı göster", simge: Eye, pasif: () => !oynatici()?.cozme, calistir: () => calisma()?.goster() },
   { id: "suzgec", etiket: "Süzgeç", simge: SlidersHorizontal, kisayol: "F", tus: "f", calistir: () => window.dispatchEvent(new CustomEvent("suzgec:ac")) },
   { id: "ayarlar", etiket: "Ayarlar", simge: Settings, yerel: "btn-open-settings", calistir: () => sayfa().openQuizSettings?.() },
   { id: "ara", etiket: "Ara", simge: Search, kisayol: "Ctrl K", calistir: () => tikla("#toggleSearch") },
@@ -135,7 +131,7 @@ export const EYLEMLER: Eylem[] = [
   { id: "icindekiler", etiket: "İçindekiler", simge: ListTree, kisayol: "I", tus: "i", calistir: () => window.dispatchEvent(new CustomEvent("icindekiler:ac")) },
   { id: "sohbet", etiket: "Sohbet asistanı", simge: MessageCircle, calistir: () => tikla("#sohbet-ac") },
   // Clearing: runs at once and offers "Geri al" for a few seconds (calisma-baglanti.ts)
-  { id: "uniteyi-temizle", etiket: "Bu ünitedeki cevapları temizle", simge: Eraser, pasif: () => !calisma()?.uniteCevapSayisi(), calistir: () => calisma()?.uniteyiTemizle() },
+  { id: "uniteyi-temizle", etiket: "Bu ünitedeki cevapları temizle", simge: Eraser, pasif: () => !calisma()?.cevapVar(), calistir: () => calisma()?.uniteyiTemizle() },
   { id: "dersi-temizle", etiket: "Bu dersteki cevapları temizle", simge: ListRestart, pasif: () => !calisma()?.cevapVar(), calistir: () => calisma()?.dersiTemizle() },
   { id: "yeri-sifirla", etiket: "Kaldığın yeri sıfırla", simge: MapPinOff, pasif: () => !calisma()?.yerVar(), calistir: () => calisma()?.yeriSifirla() },
   { id: "yedek", etiket: "Kayıtlarını taşı", simge: RefreshCw, calistir: () => location.assign("/yedek") },

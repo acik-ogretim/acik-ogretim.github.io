@@ -1537,6 +1537,14 @@ label.ayar-satir > .ayar-ad:first-child { flex: 1; min-width: 0; }
 .menu-kutu:is([aria-pressed='true'], [data-calisiyor]) .menu-kutu-deger { color: inherit; }
 @media (prefers-reduced-motion: reduce) { .menu-kutu { transition: none; } .menu-kutu:active { transform: none; } }
 
+/* ---- Çalışma durumu: gizli cevap (DESIGN.md "Çalışma durumu") ----
+ * While answers are hidden every option reacts the same way: no colour transition (the answer would fade
+ * from green, or the others would still be fading from hover while it jumps) and the same hover border.
+ * Neither timing nor hover gives the answer away. */
+.hide-answers .option-item,
+.hide-answers .option-item .option-key { transition: none !important; }
+.hide-answers .correct-option:not(.is-correct):not(.is-wrong):not(.was-revealed):hover { border-color: var(--border-color-hover) !important; }
+
 /* Player counter on phones: two small stacked lines ("12/196" over "%80") instead of a wide pill, so the bar keeps room
    for its buttons (Zeki, 21 Nov 2026). Correct and wrong counts stay in the menu and from 768 px. */
 @media (max-width: 767px) {

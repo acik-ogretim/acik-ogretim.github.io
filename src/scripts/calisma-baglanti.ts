@@ -35,6 +35,7 @@ export interface CalismaOyuncusu {
   currentIndex: number;
   isInteractive: boolean;
   isProgrammaticScroll: boolean;
+  isPlaying: boolean;
   corrects: number;
   wrongs: number;
   answeredQuestions: Set<string>;
@@ -50,6 +51,45 @@ export interface CalismaOyuncusu {
 }
 
 type Siralanan = SiralanacakSoru & { q: PlayerQuestion };
+
+/**
+ * Moves focus to a question card without scrolling (keyboard reading, next and previous). The card is
+ * focusable only while it holds focus: a static tabindex made every tap on an option focus its card, and
+ * the phone scroll snap then pulled the page back to that card whenever the layout changed (a sheet
+ * locking scroll), so the learner lost the question they had scrolled to.
+ */
+export function kartiOdakla(el: HTMLElement): void {
+  if (!el.hasAttribute("tabindex")) {
+    el.setAttribute("tabindex", "-1");
+    el.addEventListener("blur", () => el.removeAttribute("tabindex"), { once: true });
+  }
+  el.focus({ preventScroll: true });
+}
+
+/**
+ * The question the learner is reading: the visible card that crosses the reading line, a quarter of the
+ * way down the area below the floating top bar. With the phone scroll snap a unit's first card sits lower
+ * (scroll-margin for the unit title) and the previous card's tail is still on screen; "first card that
+ * intersects" then picked the previous question and "kaldığın yer" saved the wrong one. Cards are in
+ * drawn order, so a binary search reads only a few rectangles even in a 2000 question course.
+ */
+export function okunanSoru(sorular: readonly PlayerQuestion[]): number {
+  const ust = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+  const cizgi = ust + (innerHeight - ust) * 0.25;
+  let lo = 0;
+  let hi = sorular.length - 1;
+  let aday = -1;
+  while (lo <= hi) {
+    const orta = (lo + hi) >> 1;
+    const r = sorular[orta].el?.getBoundingClientRect();
+    if (!r) return -1;
+    if (r.top <= cizgi) {
+      aday = orta;
+      lo = orta + 1;
+    } else hi = orta - 1;
+  }
+  return aday;
+}
 
 const SECENEK = new Set(["A", "B", "C", "D", "E"]);
 const ETKILESIM = ["pointerdown", "touchstart", "wheel", "keydown"] as const;
@@ -189,8 +229,13 @@ export class CalismaBaglantisi {
   uniteyiTemizle(): void {
     const u = this.simdikiUnite();
     if (u === null) return;
+    const ad = u === 0 ? "Diğer sorular" : `Ünite ${u}`;
+    if (this.uniteCevapSayisi() === 0) {
+      bildir({ metin: `${ad} bölümünde temizlenecek cevap yok.`, sure: 4000 });
+      return;
+    }
     const anahtarlar = new Set(this.p.originalQuestions.filter((q) => q.unitNumber === u).map((q) => q.id));
-    this.temizle(anahtarlar, u === 0 ? "Diğer sorular temizlendi" : `Ünite ${u} temizlendi`);
+    this.temizle(anahtarlar, `${ad} temizlendi`);
   }
 
   dersiTemizle(): void {
@@ -287,9 +332,59 @@ export class CalismaBaglantisi {
     kaldiginYerYaz(this.ders, yer);
   }
 
+  /**
+   * When scrolling stops, the question on the reading line becomes the current one. The player's
+   * IntersectionObserver drops events while it scrolls by itself (isProgrammaticScroll); a flick right
+   * after "Çöz" or an answer then left the old question current, and that one was saved as "kaldığın yer".
+   */
+  private kaydirmaBitinceDenetle(): void {
+    let bekleyen = 0;
+    const denetle = () => {
+      window.clearTimeout(bekleyen);
+      if (this.p.isProgrammaticScroll) {
+        bekleyen = window.setTimeout(denetle, 400);
+        return;
+      }
+      if (this.p.isPlaying) return;
+      const i = okunanSoru(this.p.questions);
+      if (i >= 0 && i !== this.p.currentIndex) {
+        this.p.currentIndex = i;
+        this.p.updateStatusText();
+        this.p.updateStats();
+      }
+      // Focus left in a card the learner scrolled away from (a tapped option focuses its card) pulls the
+      // page back: the phone scroll snap re-snaps to the focused card on any layout change, e.g. when a
+      // sheet locks scrolling. Focus follows the card on screen instead.
+      const odak = document.activeElement;
+      const kart = this.p.questions[this.p.currentIndex]?.el;
+      if (kart && odak instanceof HTMLElement && odak.closest(".question-card") && !kart.contains(odak)) {
+        kartiOdakla(kart);
+      }
+    };
+    // A touch or wheel scroll starts: focus held by a tapped card would make the snap pull back to it
+    const birak = () => {
+      const odak = document.activeElement;
+      if (odak instanceof HTMLElement && odak.closest(".question-card")) odak.blur();
+    };
+    addEventListener("touchstart", birak, { passive: true });
+    addEventListener("wheel", birak, { passive: true });
+    if ("onscrollend" in window) addEventListener("scrollend", denetle, { passive: true });
+    else {
+      let t = 0;
+      addEventListener("scroll", () => {
+        window.clearTimeout(t);
+        t = window.setTimeout(denetle, 200);
+      }, { passive: true });
+    }
+  }
+
   /** Start: draw the answers, restore the mode and the position when asked, then wait for the learner. */
   baslat(): void {
+    // The position is restored here (exact question); the browser's own scroll restoration on reload
+    // would land on a pixel offset of a page that is still settling
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
     this.gorunumuUygula();
+    this.kaydirmaBitinceDenetle();
     const ac = () => {
       this.kayitAcik = true;
       for (const t of ETKILESIM) removeEventListener(t, ac, true);
@@ -370,6 +465,7 @@ export class CalismaBaglantisi {
       if (bitti) return;
       bitti = true;
       gozlemci.disconnect();
+      removeEventListener("scroll", kaydirma);
       for (const t of ETKILESIM) removeEventListener(t, bitir, true);
       window.setTimeout(() => {
         this.p.isProgrammaticScroll = false;
@@ -378,10 +474,18 @@ export class CalismaBaglantisi {
       this.p.updateStatusText();
       this.p.updateStats();
     };
-    const gozlemci = new ResizeObserver(() => {
+    // Layout shifts above the card and scrolls nobody asked for (late scroll restoration) put it back
+    const duzelt = () => {
       if (!bitti && Math.abs(ust() - hedefUst) > 2) yerlestir();
-    });
+    };
+    const gozlemci = new ResizeObserver(duzelt);
     gozlemci.observe(document.body);
+    // Scroll events count only right after landing: a scrollbar drag later is the learner's own
+    const bas = performance.now();
+    const kaydirma = () => {
+      if (performance.now() - bas < 1500) duzelt();
+    };
+    addEventListener("scroll", kaydirma, { passive: true });
     for (const t of ETKILESIM) addEventListener(t, bitir, { capture: true, passive: true });
     window.setTimeout(bitir, 4000);
     this.p.updateStatusText();
