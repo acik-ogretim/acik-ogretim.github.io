@@ -1717,8 +1717,6 @@ ol.co-ak-liste {
   }
   .co:has(.co-video-kab[data-ortam='youtube'][data-kucuk]) .co-ana {
     grid-template-columns: minmax(0, 1fr);
-    max-width: 920px;
-    margin-inline: auto;
   }
   .co:has(.co-video-kab[data-ortam='youtube'][data-kucuk]) .co-sol {
     border-right: 0;
@@ -1733,8 +1731,6 @@ ol.co-ak-liste {
 @media (min-width: 1024px) {
   .co[data-medyasiz] .co-ana {
     grid-template-columns: minmax(0, 1fr);
-    max-width: 920px;
-    margin-inline: auto;
   }
   .co[data-medyasiz] .co-sol {
     display: none;
@@ -1753,4 +1749,27 @@ ol.co-ak-liste {
 .co-cip[data-ak-oku][aria-pressed='true'] {
   border-color: var(--primary-color);
   color: var(--primary-text, var(--text-color));
+}
+
+/* reading alone (media closed or video shrunk) on a wide screen: the scroll area keeps the full width so its scrollbar
+   sits at the window edge, the text column is centred inside it at a readable measure */
+@media (min-width: 1024px) {
+  .co[data-medyasiz] .co-sekmeler,
+  .co:has(.co-video-kab[data-ortam='youtube'][data-kucuk]) .co-sekmeler,
+  .co[data-medyasiz] .co-panel,
+  .co:has(.co-video-kab[data-ortam='youtube'][data-kucuk]) .co-panel {
+    padding-inline: max(24px, calc((100% - 860px) / 2));
+  }
+}
+/* nothing plays while the media is closed, so there is no "now" to return to */
+.co[data-medyasiz] .co-ak-simdi {
+  display: none !important;
+}
+/* header icon: the focus ring hugs the round button instead of floating around it */
+.co-ust-ikon:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 0;
+}
+.co-ust-ikon:focus:not(:focus-visible) {
+  outline: none;
 }
