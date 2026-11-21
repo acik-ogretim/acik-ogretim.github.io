@@ -77,3 +77,11 @@ Tasarım uygulanmadan önce kod ve veri tek tek okundu. Amaç uygulama sırasın
 5. **Kayıt ekleri**: `kurulum`, `isaretli-<ders>`, gün damgası, `yedek.ts`.
 6. **İlerleme ve Ara**: kayıtlardan ölçüler, katalog araması.
 7. **Veri gelince**: konu düzeyi, özet okuyucu, video ve döküm.
+
+## Stitch "Spatial Glass UI" değerlendirmesi (21 Kasım 2026)
+
+Stitch projesindeki "Devlet Teorisi · Spatial Glass UI" ekranı (780 x 1768) incelendi. Zeki'nin notu: renkler ve parlaklık abartılı, bazı öğeler istediği gibi değil.
+
+**Alınacaklar**: üst çubuğun tek yüzen cam kapsül olması (geri, ders adı ve "Ünite 4 · Soru 12 / 40", sağda eylemler); üst çubukta işaret düğmesi (`isaretli-<ders>` anahtarı gelince; simge düğme, yazısız); sınav çipinin yanında konu bağlantısı çipi ("4.2.2 …" ve sağa ok, iki satırı aşarsa üç nokta; yalnız konu ağacı olan derste); şık harf rozetinin doğru ve yanlışta dolu renge geçmesi; açıklama başlığında seslendir düğmesi; oynatıcıda o an çalan şeyin adı ("Sesli çözüm" gibi).
+
+**Alınmayacaklar ve nedeni**: neon parlama ve turkuaz, nane yeşili gradyan zemin (tema 17 nötr zemin ve tek mavi vurgu kullanır); sorunun kutu içinde ve "SORU METNİ" üst etiketiyle verilmesi (soru kutusuz, etiketsiz); doğru ve yanlış şıklardaki dış ışıma (yalnız kenar ve zemin tonu); "1 Puan · %68 Başarı" çipi (kayıtta yalnız kişinin kendi cevap geçmişi var, herkesin başarı oranı ve soru puanı yok); oynatıcıdaki "01:24 / 04:30" süresi (seslendirme tarayıcıda anlık üretilir, toplam süre bilinmez); dev "Sonraki Soruya Geç" düğmesi (ders sayfası liste, cevaptan sonra liste kendisi kayar); oynatıcı ile alt düğmenin üst üste binip açıklama metnini örtmesi (tek sabit alt öğe kuralı); soru metninin sans yazıyla verilmesi (soru serif); renkli ilerleme çubuğu (ilerleme nötr); "Derse Sor" düğmesinin yazılı hap olması (simge düğme, adı `aria-label` ile).
