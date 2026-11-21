@@ -1,7 +1,8 @@
 ---
 // Search, share and agent metadata for every page (Layout.astro renders it inside <head>).
 // docs/yz-ve-ajan-hazirligi.md explains each tag and the sources behind it.
-import { PAYLASIM_GORSELI, SITE_ADI, jsonLdMetni, kanonikYol, kisalt, mutlakUrl } from "../lib/seo";
+import { PAYLASIM_GORSELI, PAYLASIM_KARTI, SITE_ADI, jsonLdMetni, kanonikYol, kisalt, mutlakUrl, paylasimKartiYolu } from "../lib/seo";
+import { ogAlt, ogIndeksi } from "../lib/og/veri";
 import type { JsonLdGraf } from "../lib/yapisal-veri";
 
 interface Props {
@@ -20,7 +21,11 @@ const { baslik, aciklama, noindex = false, jsonLd, markdown, ogTuru = "website" 
 const site = Astro.site;
 const kanonik = mutlakUrl(site, kanonikYol(Astro.url.pathname));
 const metin = kisalt(aciklama, 160);
-const gorsel = mutlakUrl(site, PAYLASIM_GORSELI.yol);
+// Page-specific share card (1200x630) when the page has one; the square logo stays the fallback.
+const kart = (await ogIndeksi()).get(kanonikYol(Astro.url.pathname));
+const gorsel = mutlakUrl(site, kart ? paylasimKartiYolu(kart.dosya) : PAYLASIM_GORSELI.yol);
+const boyut = kart ? PAYLASIM_KARTI : PAYLASIM_GORSELI;
+const gorselAlt = kart ? await ogAlt(kart) : `${SITE_ADI} logosu`;
 ---
 
 <meta name="description" content={metin} />
@@ -33,13 +38,15 @@ const gorsel = mutlakUrl(site, PAYLASIM_GORSELI.yol);
 <meta property="og:description" content={metin} />
 <meta property="og:url" content={kanonik} />
 <meta property="og:image" content={gorsel} />
-<meta property="og:image:width" content={String(PAYLASIM_GORSELI.genislik)} />
-<meta property="og:image:height" content={String(PAYLASIM_GORSELI.yukseklik)} />
-<meta property="og:image:alt" content={`${SITE_ADI} logosu`} />
-<meta name="twitter:card" content="summary" />
+<meta property="og:image:width" content={String(boyut.genislik)} />
+<meta property="og:image:height" content={String(boyut.yukseklik)} />
+{kart && <meta property="og:image:type" content={PAYLASIM_KARTI.tur} />}
+<meta property="og:image:alt" content={gorselAlt} />
+<meta name="twitter:card" content={kart ? "summary_large_image" : "summary"} />
 <meta name="twitter:title" content={baslik} />
 <meta name="twitter:description" content={metin} />
 <meta name="twitter:image" content={gorsel} />
+<meta name="twitter:image:alt" content={gorselAlt} />
 <link rel="describedby" href="/llms.txt" type="text/plain" />
 {markdown && <link rel="alternate" type="text/markdown" href={markdown} title="Ders özeti (Markdown)" />}
 <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />

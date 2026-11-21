@@ -90,10 +90,26 @@ rm -rf dist-seo
 
 Site haritası dizini: `https://acik-ogretim.github.io/sitemap-index.xml`. Search Console'da mülk seçilir, **Dizin oluşturma > Site haritaları** açılır, "Yeni site haritası ekle" alanına `sitemap-index.xml` yazılıp **Gönder** düğmesine basılır. Dizin içindeki üniversite haritalarını Google kendisi okur. Doğrulama dosyası `public/google0d22887dbe37facb.html` yerinde kalmalıdır.
 
+## Paylaşım görselleri
+
+Ana sayfa, üniversite, bölüm, her kanonik ders ve statik sayfalar (ara, rehber, sohbet, derslerim, hakkımızda vb.) derleme sırasında kendi 1200x630 görselini üretir: `/og/<sayfa>.png`. WhatsApp, Telegram, X, LinkedIn, Slack ve Discord bağlantı önizlemesinde küçük logo yerine bu kart görünür. Görseli olmayan sayfa (ör. sorusu olmayan bölüm) 512 piksellik kare logoya ve `summary` kartına döner.
+
+**Yapı**: `src/pages/og/[...yol].png.ts` (statik uç nokta, yol listesi `ogIndeksi()` ile gelir), `src/lib/og/veri.ts` (hangi sayfada ne yazar, alt metin), `src/lib/og/cizim.ts` (satori ile yerleşim, resvg ile PNG, sharp ile palet PNG), `src/lib/ders-sayilari.ts` (saf sayım yardımcıları, testli). `SeoHead.astro` görsel yolunu `Astro.url.pathname` üzerinden bulur; `Layout.astro` ya da ders sayfası bir şey geçirmez.
+
+**Kartın içeriği**: büyük olgu çıkmış soru sayısıdır ("1.240 çıkmış soru"; hiç yoksa "439 alıştırma sorusu"), altında sınav yılı aralığı ("2016-2017 ile 2024-2025 arası sınavlar · 9 yıl", tek yıl varsa "2024-2025 sınavı"), en altta toplamlar (sınav türleri en çok dört ise, toplam soru, ünite, soruların en az yüzde 80'i açıklamalıysa "açıklamalı"). Bölüm, üniversite ve ana sayfa kartları aynı olguları ders toplamlarından alır. Değeri sıfır ya da bilinmeyen satır yazılmaz. Sayılar `tr-TR` biçimindedir. Ders sayfasının meta açıklaması da aynı biçimi kullanır (`dersAciklamasi`), `og:image:alt` aynı sayıları söyler.
+
+**Yazı tipi**: Inter (SIL OFL 1.1), Latin ve Latin Genişletilmiş-A kümesine indirgenmiş dört dosya `scripts/og/fonts/` altında, lisansı `OFL.txt`. Türkçe harflerin hepsi (ÇĞİÖŞÜ çğıöşü, I ve İ) bu kümede vardır.
+
+**Biçim seçimi** (142 kart, aynı çizimden): palet PNG ortalama 12,8 KB (en çok 18,3 KB), JPEG q82 aşamalı 44,7 KB (en çok 60,7 KB), WebP q80 22,5 KB (en çok 33,2 KB). Palet PNG en küçüğü ve yazıda en keskin olanıdır; LinkedIn'in resmî listesi JPG, PNG ve GIF olduğu için WebP seçilmedi.
+
+**Önbellek**: kart içeriğinin özeti (`OG_SURUM` ile birlikte) `.cache/og/` altında dosya adı olur (git dışı). Aynı içerik yeniden çizilmez. CI `actions/cache` ile bu klasörü saklar (`deploy.yml`); tasarım ya da yazı tipi değişince anahtar değişir.
+
+**Yeniden üretme**: tasarım `src/lib/og/cizim.ts` içindedir; değiştirince `OG_SURUM` değerini artırın. Hızlı bakış için `node --experimental-strip-types scripts/og/olc.mts /tmp/og-olc` örnek kartları ve üç biçimin boyutunu yazar. Gerçek veriyle bakmak için önizleme derlemesi (yukarıdaki komut) sonrasında `dist-seo/og/` açılır; `seo-dist.test.ts` her kartın var olduğunu, 1200x630 olduğunu ve meta etiketleriyle uyuştuğunu denetler.
+
+**Bilinen sınır**: kart sola hizalıdır; bazı uygulamalar (küçük önizleme) ortadan kare kırpar, o zaman satırların soluyla sağı kesilir. Kırpmaya dayanıklı sürüm gerekirse ortalanmış, dar sütunlu ikinci bir yerleşim eklenebilir.
+
 ## Kalanlar
 
 **Origin trial jetonu**: araçların bayraksız Chrome'da da görünmesi istenirse origin trial'a kayıt olunup jeton `<meta http-equiv="origin-trial">` olarak eklenir; deneme Chrome 156'da biter.
-
-**Paylaşım görseli**: şimdilik 512 piksellik kare logo kullanılır (`summary` kartı). Ders başına 1200x630 görsel istenirse derlemede üretilebilir; eklemeden önce dosya sayısını ve dist boyutunu ölçün.
 
 **Ünite adı kuralı**: ders sayfası ve `ozet.md` ünite başlığını aynı önceliklerle seçer, ama kod iki yerdedir. Ders sayfası sadeleştirilirken bu seçim tek bir yardımcıya taşınabilir.

@@ -35,6 +35,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Cache share images
+        uses: actions/cache@v4
+        with:
+          path: .cache/og
+          key: og-${{ hashFiles('src/lib/og/**', 'scripts/og/fonts/**', 'public/logo.svg') }}-${{ github.run_id }}
+          restore-keys: |
+            og-${{ hashFiles('src/lib/og/**', 'scripts/og/fonts/**', 'public/logo.svg') }}-
+
       - name: Build with Astro
         env:
           # Public OAuth client id for "Google ile eşitle" (repo variable; empty hides the feature)

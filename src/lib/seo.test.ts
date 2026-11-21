@@ -34,6 +34,10 @@ describe("kisalt ve dersAciklamasi", () => {
     expect(a).toContain("230 çıkmış soru");
     expect(a.length).toBeLessThanOrEqual(160);
   });
+  it("binlik sayıları Türkçe ayraçla yazar", () => {
+    const a = dersAciklamasi({ dersAdi: "Ders", universite: "AUZEF", bolum: "Bölüm", soru: 2430, cikmis: 1240, yillar: [2016, 2024] });
+    expect(a).toContain("2.430 soru (1.240 çıkmış soru");
+  });
   it("çıkmış soru yoksa sınav yılı yazmaz", () => {
     const a = dersAciklamasi({ dersAdi: "Ders", universite: "AUZEF", bolum: "Bölüm", soru: 20, cikmis: 0, yillar: [] });
     expect(a).not.toContain("çıkmış");

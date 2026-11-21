@@ -24,6 +24,12 @@ const urldenDosya = (u: string) => {
   return path.join(KOK, yol.endsWith("/") ? `${yol}index.html` : yol);
 };
 const ozellik = (html: string, re: RegExp) => re.exec(html)?.[1];
+/** PNG header: width and height from the IHDR chunk. */
+function pngBoyutu(yol: string) {
+  const b = fs.readFileSync(yol);
+  expect(b.subarray(1, 4).toString("latin1"), `${yol} PNG imzası`).toBe("PNG");
+  return { genislik: b.readUInt32BE(16), yukseklik: b.readUInt32BE(20), bayt: b.length };
+}
 const yonlendirmeMi = (html: string) => /<meta http-equiv="refresh"/i.test(html);
 
 describe.skipIf(!KOK)("derlenmiş site: arama ve ajan meta verisi", () => {
@@ -118,5 +124,52 @@ describe.skipIf(!KOK)("derlenmiş site: arama ve ajan meta verisi", () => {
       expect((md.match(/^ {3}- Doğru cevap:/gm) ?? []).length, f).toBeLessThanOrEqual(3);
     }
     for (const f of ["robots.txt", "llms.txt", "llms-full.txt"]) expect(oku(path.join(KOK, f)), f).not.toMatch(/[\u2013\u2014]/);
+  });
+  it("paylaşım görseli: sayfaya özel 1200x630 PNG var, meta etiketleri boyutla uyuşur; yoksa kare logo", () => {
+    let kartli = 0;
+    for (const f of htmller) {
+      const html = oku(f);
+      if (yonlendirmeMi(html)) continue;
+      const ad = path.relative(KOK, f);
+      const gorsel = ozellik(html, /<meta property="og:image" content="([^"]+)"/)!;
+      const g = Number(ozellik(html, /<meta property="og:image:width" content="(\d+)"/));
+      const y = Number(ozellik(html, /<meta property="og:image:height" content="(\d+)"/));
+      expect(ozellik(html, /<meta name="twitter:image" content="([^"]+)"/), `${ad} twitter:image`).toBe(gorsel);
+      expect(ozellik(html, /<meta property="og:image:alt" content="([^"]+)"/)?.length ?? 0, `${ad} og:image:alt`).toBeGreaterThan(5);
+      if (gorsel.includes("/og/")) {
+        const dosya = urldenDosya(gorsel);
+        expect(fs.existsSync(dosya), `${ad}: ${gorsel} dosyası yok`).toBe(true);
+        const b = pngBoyutu(dosya);
+        expect({ g: b.genislik, y: b.yukseklik }, `${ad} gerçek boyut`).toEqual({ g: 1200, y: 630 });
+        expect({ g, y }, `${ad} meta boyutu`).toEqual({ g: 1200, y: 630 });
+        expect(b.bayt, `${ad} görsel boyutu`).toBeLessThan(150 * 1024);
+        expect(html, ad).toContain('property="og:image:type" content="image/png"');
+        expect(html, ad).toContain('name="twitter:card" content="summary_large_image"');
+        kartli++;
+      } else {
+        expect({ g, y }, `${ad} yedek logo`).toEqual({ g: 512, y: 512 });
+        expect(html, ad).toContain('name="twitter:card" content="summary"');
+      }
+    }
+    expect(kartli).toBeGreaterThan(5);
+  });
+
+  it("site haritasındaki ana sayfa, üniversite, bölüm ve ders sayfalarının hepsinin kendi paylaşım görseli var", () => {
+    const dizin = oku(path.join(KOK, "sitemap-index.xml"));
+    for (const h of [...dizin.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1])) {
+      for (const u of [...oku(urldenDosya(h)).matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].replace(/&amp;/g, "&"))) {
+        const html = oku(urldenDosya(u));
+        const gorsel = ozellik(html, /<meta property="og:image" content="([^"]+)"/)!;
+        expect(gorsel, `${u} sayfaya özel görsel`).toContain("/og/");
+        const alt = ozellik(html, /<meta property="og:image:alt" content="([^"]*)"/)!;
+        const sayfa = new URL(u).pathname.split("/").filter(Boolean);
+        if (sayfa.length === 3) {
+          // course page: the alt text carries the same past-exam count as the meta description
+          const cikmis = /([\d.]+) çıkmış soru/.exec(ozellik(html, /<meta name="description" content="([^"]*)"/) ?? "")?.[1];
+          // the description is cut at 160 characters, so a long course name may drop the count: compare only when present
+          if (cikmis) expect(alt, `${u} alt ile açıklama aynı sayıyı söylemeli`).toContain(`${cikmis} çıkmış soru`);
+        }
+      }
+    }
   });
 });
