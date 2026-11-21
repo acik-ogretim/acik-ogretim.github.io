@@ -926,3 +926,26 @@ dialog .co-arac[data-alt] {
   font-size: 15px;
   line-height: 1.5;
 }
+
+.co-ust-dugme {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 max(12px, env(safe-area-inset-right)) 0 auto;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: var(--button-bg);
+  color: var(--text-color);
+  font-size: 14px;
+  font-weight: 600;
+}
+.co-ust-dugme:hover {
+  background: var(--button-bg-hover);
+}
+@media (min-width: 1024px) {
+  .co-ust-dugme {
+    display: none; /* Konular sekmesi sağ sütunda zaten görünür */
+  }
+}

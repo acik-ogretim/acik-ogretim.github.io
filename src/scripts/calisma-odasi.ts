@@ -393,6 +393,7 @@ export function calismaOdasiBaslat(): void {
   function bildirim(goster: boolean): void {
     $("co-bildirim").hidden = !goster;
   }
+  let sonOynaticiSn = 0;
   function videoKur(): void {
     if (!video || !document.getElementById("co-oynatici")) return;
     if (navigator.onLine === false) bildirim(true);
@@ -424,7 +425,11 @@ export function calismaOdasiBaslat(): void {
       if (!oynatici || document.hidden || !video) return;
       try {
         const sn = oynatici.getCurrentTime();
-        if (Number.isFinite(sn)) guncelle(sn);
+        // Zaman değişmedikçe (video henüz başlamadı) elle seçilen konu bozulmaz
+        if (Number.isFinite(sn) && sn !== sonOynaticiSn) {
+          sonOynaticiSn = sn;
+          guncelle(sn);
+        }
       } catch {
         /* not ready */
       }
@@ -1105,6 +1110,14 @@ export function calismaOdasiBaslat(): void {
   sekmeUygula();
   videoKur();
   sorulariOnceden();
+  // Üst çubuktaki Konular: ünite > konu ağacı tek dokunuşla (sekme ya da masaüstünde sağ sütun)
+  $("co-konular-ac").addEventListener("click", () => {
+    sekmeGoster("icindekiler");
+    if (!genis()) scrollTo({ top: 0, behavior: azaltilmis() ? "auto" : "smooth" });
+    document.getElementById("co-p-icindekiler")?.scrollIntoView({ block: "start" });
+  });
+  const istenenKonu = new URLSearchParams(location.search).get("konu");
+  if (istenenKonu) document.querySelector<HTMLElement>(`[data-git-konu="${CSS.escape(istenenKonu)}"]`)?.click(); // ders sayfasındaki "Videoda izle"
   const ilkSekme = new URLSearchParams(location.search).get("sekme");
   if (ilkSekme && (SEKMELER as readonly string[]).includes(ilkSekme)) sekmeGoster(ilkSekme as Sekme);
   // Test ve ileri kullanım için: dışarıdan zaman vermek

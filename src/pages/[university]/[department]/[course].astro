@@ -252,6 +252,9 @@ const dersJsonLd = graf(
             <Simge ad="BookOpen" size={18} />Materyaller
           </a>
           {calismaOdasiVar && (
+          <button type="button" class="eylem-cip" id="konular-ac" aria-haspopup="dialog">
+            <Simge ad="ListTree" size={18} />Konular
+          </button>
             <a href={`/calisma/${course.id}/`} class="eylem-cip" data-ders-anlatimi>
               <Simge ad="Play" size={18} />Ders anlatımı
             </a>
@@ -527,7 +530,7 @@ const dersJsonLd = graf(
   </div>
 
   <QuizPlayer />
-  <Icindekiler client:idle uniteler={icindekiler} />
+  <Icindekiler client:idle uniteler={icindekiler} calismaYolu={calismaOdasiVar ? `/calisma/${course.id}/` : undefined} videoVar={!!videoVar} />
   <KonuCekmece uni={university.id} ders={course.id} />
   <MobilMenu client:idle dersAdi={course.name} uniteler={mobilUniteler} uni={university.id} ders={course.id} bolumler={bolumler} bolum={{ id: department.id, ad: department.name }} />
   {bolumler.length > 1 && (
@@ -895,6 +898,11 @@ const dersJsonLd = graf(
       }
     }
   }
+
+<script>
+  // "Konular" düğmesi: ünite > konu ağacı; bir konuya dokununca konu anlatımı çekmecesi açılır (konu:ac)
+  document.getElementById("konular-ac")?.addEventListener("click", () => window.dispatchEvent(new CustomEvent("icindekiler:ac", { detail: { mod: "anlatim" } })));
+</script>
 `}
 ></style>
 
