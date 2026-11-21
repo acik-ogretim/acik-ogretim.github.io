@@ -1,0 +1,467 @@
+---
+// Topic drawer: the textbook text of one topic, opened from the topic chip on a question card.
+// Native <dialog> on the shared layer contract (src/styles/katman.css): bottom sheet on phones, right
+// panel from 768 px. Content is fetched lazily from /konu/<uni>/<course>/<no>.json (scripts/konu-parcala.mjs);
+// behaviour lives in src/scripts/konu-cekmece.ts (open event "konu:ac" with detail { konu: "1.1" }).
+import Simge from "./Simge.astro";
+
+interface Props {
+  uni: string;
+  ders: string;
+}
+const { uni, ders } = Astro.props;
+---
+
+<dialog
+  id="konu-cekmece"
+  class="katman-yuzey konu-cekmece"
+  data-yer="sag"
+  data-uni={uni}
+  data-ders={ders}
+  aria-labelledby="konu-baslik"
+  closedby="any"
+>
+  <div class="katman-tutamac" aria-hidden="true"></div>
+  <header class="katman-baslik">
+    <div class="katman-baslik-metin">
+      <h2 id="konu-baslik" class="katman-ad">Konu anlatımı</h2>
+      <p id="konu-bilgi" class="katman-bilgi"></p>
+    </div>
+    <button id="konu-oku" type="button" class="katman-kapat" aria-label="Konuyu sesli oku" aria-pressed="false" hidden>
+      <span data-simge="oku"><Simge ad="Volume2" size={20} /></span>
+      <span data-simge="durdur" hidden><Simge ad="Pause" size={20} /></span>
+    </button>
+    <button id="konu-icindekiler" type="button" class="katman-kapat" aria-label="İçindekiler">
+      <Simge ad="List" size={20} />
+    </button>
+    <button id="konu-kapat" type="button" class="katman-kapat" aria-label="Kapat">
+      <Simge ad="X" size={20} />
+    </button>
+  </header>
+  <div id="konu-govde" class="katman-govde konu-govde" tabindex="-1" autofocus>
+    <div id="konu-yukleniyor" class="konu-iskelet" role="status" aria-live="polite" hidden>
+      <span class="konu-iskelet-satir"></span>
+      <span class="konu-iskelet-satir"></span>
+      <span class="konu-iskelet-satir"></span>
+      <span class="konu-iskelet-satir kisa"></span>
+      <span class="sr-only">Konu yükleniyor</span>
+    </div>
+    <div id="konu-yok" class="konu-yok" hidden>
+      <p class="konu-yok-baslik">Bu konunun metni henüz hazır değil</p>
+      <p class="konu-yok-not">Kitaptaki yerini içindekilerden açabilirsin.</p>
+      <button id="konu-yok-icindekiler" type="button" class="katman-dugme katman-dugme-birincil">İçindekileri aç</button>
+    </div>
+    <!-- Study strip (Özet · Temel noktalar · Kavramlar): built by konu-calisma.ts only when the topic has `calisma` -->
+    <div id="konu-serit" class="konu-serit" hidden>
+      <div id="konu-serit-panel" class="konu-serit-panel" hidden></div>
+    </div>
+    <article id="konu-metin" class="konu-metin" lang="tr" hidden></article>
+    <div id="konu-calisma-son" class="konu-calisma-son" hidden></div>
+    <!-- Linked topics (wiki links): filled by konu-cekmece.ts from baglantilar, hidden while empty -->
+    <section id="konu-baglantilar" class="katman-grup" aria-labelledby="konu-baglantilar-ad" hidden>
+      <h3 id="konu-baglantilar-ad" class="katman-grup-ad">Bağlantılar</h3>
+      <div id="konu-baglantilar-liste" class="katman-liste"></div>
+    </section>
+  </div>
+  <footer class="katman-alt konu-alt">
+    <button id="konu-onceki" type="button" class="katman-dugme konu-gezin" aria-label="Önceki konu" disabled>
+      <Simge ad="ChevronLeft" size={20} />
+    </button>
+    <button id="konu-sorular" type="button" class="katman-dugme katman-dugme-birincil" hidden>Bu konudan sorular</button>
+    <button id="konu-sonraki" type="button" class="katman-dugme konu-gezin" aria-label="Sonraki konu" disabled>
+      <Simge ad="ChevronRight" size={20} />
+    </button>
+  </footer>
+</dialog>
+
+<style is:global>
+  dialog.konu-cekmece {
+    /* Opaque reading surface: no glass, text must never sit on a see-through layer */
+    background-color: var(--card-bg);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  @media (min-width: 768px) {
+    dialog.konu-cekmece[data-yer='sag'] {
+      width: min(520px, calc(100% - 16px));
+      max-width: none;
+    }
+  }
+  .konu-cekmece [hidden] {
+    display: none !important;
+  }
+  .konu-cekmece .katman-baslik {
+    align-items: center;
+  }
+  .konu-cekmece .katman-baslik-metin {
+    padding-block: 4px;
+  }
+  .konu-cekmece .katman-kapat[aria-pressed='true'] {
+    background: var(--primary-soft);
+    color: var(--primary-text);
+  }
+  .konu-cekmece .konu-govde {
+    gap: 20px;
+    padding: 8px 20px 20px;
+    scroll-behavior: auto;
+  }
+
+  /* Footer: previous and next are icon buttons, the middle one carries the action */
+  .konu-alt .konu-gezin {
+    flex: 0 0 52px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+  }
+  .konu-alt .konu-gezin:disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  .konu-alt .katman-dugme-birincil {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Loading and missing states */
+  .konu-iskelet {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 12px;
+  }
+  .konu-iskelet-satir {
+    height: 14px;
+    border-radius: 8px;
+    background: var(--button-bg-hover);
+  }
+  .konu-iskelet-satir.kisa {
+    width: 60%;
+  }
+  .konu-yok {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding-top: 12px;
+  }
+  .konu-yok-baslik {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .konu-yok-not {
+    margin: 0 0 8px;
+    color: var(--text-color-muted);
+  }
+  .konu-yok .katman-dugme {
+    flex: none;
+    padding-inline: 24px;
+  }
+
+  /* Study strip and the material after the text */
+  .konu-serit {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .konu-serit-ciplar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-inline: -20px;
+    padding-inline: 20px;
+    scrollbar-width: none;
+  }
+  .konu-serit-ciplar .katman-cip {
+    flex-shrink: 0;
+  }
+  .konu-serit-panel {
+    padding: 14px 16px;
+    border-radius: 16px;
+    background: var(--button-bg);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .konu-serit-panel > :last-child {
+    margin-bottom: 0;
+  }
+  .konu-serit-panel p,
+  .konu-serit-panel ul,
+  .konu-serit-panel dl {
+    margin: 0;
+  }
+  .konu-serit-panel ul {
+    padding-inline-start: 1.3em;
+  }
+  .konu-serit-panel li + li {
+    margin-top: 0.3em;
+  }
+  .konu-kavramlar dt {
+    font-weight: 700;
+  }
+  .konu-kavramlar dd {
+    margin: 0 0 0.7em;
+    color: var(--text-color-muted);
+  }
+  .konu-kavramlar dd:last-child {
+    margin-bottom: 0;
+  }
+  .konu-calisma-son {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .konu-bolum-metin {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .konu-sebep {
+    align-items: flex-start;
+    font-size: 15px;
+  }
+  .konu-sebep > span:first-child,
+  .konu-sebep > span:last-child {
+    flex: 1;
+    min-width: 0;
+  }
+  .konu-sebep-ok {
+    color: var(--text-color-muted);
+  }
+  .konu-test {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .konu-soru {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .konu-soru-metin {
+    margin: 0 0 2px;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .konu-soru-no {
+    color: var(--text-color-muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .konu-secenek {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 52px;
+    padding: 8px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    font-size: 15px;
+    line-height: 1.4;
+    text-align: start;
+  }
+  .konu-secenek:hover:not(:disabled) {
+    background: var(--button-bg);
+  }
+  .konu-secenek:disabled {
+    opacity: 0.75;
+  }
+  .konu-secenek-harf {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    background: var(--button-bg-hover);
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .konu-secenek.dogru {
+    opacity: 1;
+    border-color: var(--correct-border);
+    background: var(--correct-bg);
+  }
+  .konu-secenek.yanlis {
+    opacity: 1;
+    border-color: var(--incorrect-border);
+    background: var(--incorrect-bg);
+  }
+  .konu-secenek.dogru .konu-secenek-harf::before {
+    content: '✓';
+  }
+  .konu-secenek.yanlis .konu-secenek-harf::before {
+    content: '✕';
+  }
+  .konu-secenek.dogru .konu-secenek-harf,
+  .konu-secenek.yanlis .konu-secenek-harf {
+    font-size: 0;
+  }
+  .konu-secenek.dogru .konu-secenek-harf::before,
+  .konu-secenek.yanlis .konu-secenek-harf::before {
+    font-size: 15px;
+  }
+  .konu-geri {
+    margin: 0;
+    padding: 10px 14px;
+    border-radius: 14px;
+    background: var(--button-bg);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .konu-geri[data-durum='dogru'] strong {
+    color: var(--correct-border);
+  }
+  .konu-geri[data-durum='yanlis'] strong {
+    color: var(--incorrect-border);
+  }
+  .konu-bosluk {
+    display: flex;
+    gap: 8px;
+  }
+  .konu-bosluk .katman-dugme {
+    flex: none;
+    padding-inline: 20px;
+  }
+  .konu-girdi {
+    flex: 1;
+    min-width: 0;
+    min-height: 48px;
+    padding: 0 14px;
+    border: 1px solid var(--border-color-hover);
+    border-radius: 999px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    font-size: 16px;
+  }
+  .konu-test-ozet {
+    margin: 0;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .konu-alt {
+    justify-content: space-between;
+  }
+
+  /* Reading text (DESIGN.md: body-reading 18/1.7) */
+  .konu-metin {
+    font-size: 18px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+  .konu-metin > :first-child {
+    margin-top: 0;
+  }
+  .konu-metin p,
+  .konu-metin ul,
+  .konu-metin ol {
+    margin: 0 0 1em;
+  }
+  .konu-metin ul,
+  .konu-metin ol {
+    padding-inline-start: 1.4em;
+  }
+  .konu-metin li {
+    margin-bottom: 0.35em;
+  }
+  .konu-metin h3,
+  .konu-metin h4,
+  .konu-metin h5,
+  .konu-metin h6 {
+    margin: 1.4em 0 0.5em;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+  .konu-metin h4 {
+    font-size: 18px;
+  }
+  .konu-metin h5,
+  .konu-metin h6 {
+    font-size: 17px;
+  }
+  .konu-metin strong {
+    font-weight: 700;
+  }
+  .konu-sayfa {
+    margin: 1.2em 0 0.6em !important;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--text-color-muted);
+    text-align: end;
+  }
+  .konu-alinti {
+    margin: 0 0 1.2em;
+    padding: 14px 16px;
+    border-radius: 16px;
+    background: var(--button-bg);
+    color: var(--text-color-muted);
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.55;
+  }
+  .konu-kutu {
+    margin: 0 0 1.2em;
+    padding: 14px 16px 4px;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    background: var(--button-bg);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .konu-kutu-ad {
+    margin: 0 0 0.5em !important;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary-text);
+  }
+  .konu-tablo {
+    margin: 0 0 1em;
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+  }
+  .konu-tablo table {
+    border-collapse: collapse;
+    min-width: 100%;
+    font-size: 15px;
+    line-height: 1.45;
+  }
+  .konu-tablo th,
+  .konu-tablo td {
+    padding: 8px 12px;
+    text-align: start;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .konu-tablo th {
+    background: var(--button-bg);
+    font-weight: 600;
+  }
+  .konu-tablo tr:last-child td {
+    border-bottom: 0;
+  }
+
+  /* Sentence being read: CSS Custom Highlight where supported, the whole block otherwise */
+  ::highlight(konu-okunan) {
+    background-color: var(--primary-soft);
+    color: var(--text-color);
+  }
+  .konu-metin .konu-okunan-blok {
+    background: var(--primary-soft);
+    border-radius: 6px;
+  }
+</style>
+
+<script>
+  import { konuCekmeceBagla } from "../scripts/konu-cekmece";
+  konuCekmeceBagla();
+</script>

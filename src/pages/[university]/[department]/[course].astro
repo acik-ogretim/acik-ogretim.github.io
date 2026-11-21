@@ -18,6 +18,7 @@ import Suzgec from "../../../components/Suzgec.tsx";
 import Simge from "../../../components/Simge.astro";
 import videoVerisi from "../../../data/youtube-videolar.json";
 import MobilMenu from "../../../components/MobilMenu.tsx";
+import KonuCekmece from "../../../components/KonuCekmece.astro";
 import Icindekiler, { type IcKonu, type IcUnite } from "../../../components/Icindekiler.tsx";
 import { getCourses, getDersIcerik, getKitapKonulari, getKitapUniteAdlari, getQuestions, getUniversities, type KitapKonu } from "../../../lib/api";
 import { uniteBasligi } from "../../../lib/unite-basligi";
@@ -355,6 +356,7 @@ const dersJsonLd = graf(
                     id={`question-${unit}-${qIdx}`}
                     data-unit={unit}
                     data-id={q.id}
+                    data-konu={q.section || undefined}
                     data-eski={eskiSira.get(q) !== qIdx ? eskiSira.get(q) : undefined}
                     data-source={q.source}
                     data-sinav={examKeys(q)}
@@ -516,6 +518,7 @@ const dersJsonLd = graf(
 
   <QuizPlayer />
   <Icindekiler client:idle uniteler={icindekiler} />
+  <KonuCekmece uni={university.id} ders={course.id} />
   <MobilMenu client:idle dersAdi={course.name} uniteler={mobilUniteler} uni={university.id} ders={course.id} bolumler={bolumler} bolum={{ id: department.id, ad: department.name }} />
   {bolumler.length > 1 && (
     <script type="application/json" id="ders-bolumleri" set:html={JSON.stringify({ uni: university.id, ders: course.id, bolumler, bolum: { id: department.id, ad: department.name } })} />
@@ -802,10 +805,10 @@ const dersJsonLd = graf(
       videoDugme.setAttribute("aria-expanded", String(!alan.hidden));
     });
 
-    // Topic chip opens the table of contents at that book topic
+    // Topic chip opens the topic drawer (its table of contents button opens the contents list)
     document.addEventListener("click", (e) => {
       const cip = (e.target as Element | null)?.closest<HTMLElement>(".q-konu[data-konu]");
-      if (cip) dispatchEvent(new CustomEvent("icindekiler:ac", { detail: { konu: cip.dataset.konu } }));
+      if (cip) dispatchEvent(new CustomEvent("konu:ac", { detail: { konu: cip.dataset.konu } }));
     });
 
     // Unit strip marks the unit of the current question

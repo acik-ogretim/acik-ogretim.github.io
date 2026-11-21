@@ -8,7 +8,8 @@ import { join, resolve } from "node:path";
 
 const kok = resolve(import.meta.dirname, "..");
 const kitapKok = resolve(kok, process.env.KITAP_DIZINI ?? "../ders-kitaplari");
-const cikti = join(kok, "public", "konu");
+const cikti = process.env.KONU_CIKTI ? resolve(kok, process.env.KONU_CIKTI) : join(kok, "public", "konu");
+const soruKontrolu = process.env.KONU_SORU_KONTROLU !== "0"; // 0: fixtures without a question file
 const sadece = process.env.KONU_DERSLERI ? new Set(process.env.KONU_DERSLERI.split(",").map((s) => s.trim())) : null;
 
 if (!existsSync(kitapKok)) {
@@ -24,6 +25,7 @@ try {
   process.exit(0);
 }
 
+const calismaCoz = (await import("../src/lib/konu/calisma.ts")).calismaCoz;
 const yaz = (yol, veri) => {
   mkdirSync(join(yol, ".."), { recursive: true });
   writeFileSync(yol, JSON.stringify(veri));
@@ -35,11 +37,11 @@ let konuSayisi = 0;
 for (const uni of readdirSync(kitapKok, { withFileTypes: true })) {
   if (!uni.isDirectory() || uni.name.startsWith(".")) continue;
   const soruDizini = join(kok, "data", "questions", uni.name);
-  if (!existsSync(soruDizini)) continue;
+  if (soruKontrolu && !existsSync(soruDizini)) continue;
   for (const ders of readdirSync(join(kitapKok, uni.name), { withFileTypes: true })) {
     if (!ders.isDirectory()) continue;
     if (sadece && !sadece.has(ders.name)) continue;
-    if (!existsSync(join(soruDizini, `${ders.name}.json`))) continue;
+    if (soruKontrolu && !existsSync(join(soruDizini, `${ders.name}.json`))) continue;
     const kitap = join(kitapKok, uni.name, ders.name, "kitap");
     if (!existsSync(kitap)) continue;
     const uniteler = readdirSync(kitap)
@@ -48,6 +50,18 @@ for (const uni of readdirSync(kitapKok, { withFileTypes: true })) {
       .filter((u) => u.konular.length > 0);
     if (uniteler.length === 0) continue;
     const { konular, indeks, cizge } = parcala.dersiParcala(uniteler, uni.name, ders.name);
+    // Optional study material (kitap/etkinlik/unite-NN.json); absent or invalid files are skipped silently
+    for (const u of uniteler) {
+      const dosya = join(kitap, "etkinlik", `unite-${String(u.unite).padStart(2, "0")}.json`);
+      if (!existsSync(dosya)) continue;
+      let calisma;
+      try {
+        calisma = calismaCoz(JSON.parse(readFileSync(dosya, "utf8")));
+      } catch {
+        continue;
+      }
+      for (const k of konular) if (k.unite === u.unite && calisma.has(k.no)) k.calisma = calisma.get(k.no);
+    }
     const hedef = join(cikti, uni.name, ders.name);
     for (const k of konular) yaz(join(hedef, `${k.no}.json`), k);
     yaz(join(hedef, "index.json"), indeks);

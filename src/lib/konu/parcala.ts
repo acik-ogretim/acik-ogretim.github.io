@@ -3,6 +3,7 @@
 // Pure functions only; scripts/konu-parcala.mjs does the file work. Plain type syntax so Node can run it
 // directly (type stripping) and Vitest can import it.
 import { Marked } from "marked";
+import type { Calisma } from "./calisma";
 
 export type KonuRef = { no: string; baslik: string };
 
@@ -16,6 +17,7 @@ export type KonuDosyasi = {
   metin: string;
   kavramlar: string[];
   baglantilar: string[]; // ids of linked topics (prev, next and topics sharing a concept)
+  calisma?: Calisma; // study material from kitap/etkinlik (merged by scripts/konu-parcala.mjs when present)
   onceki: KonuRef | null;
   sonraki: KonuRef | null;
 };
