@@ -1269,12 +1269,25 @@ export function calismaOdasiBaslat(): void {
       }
     });
   }
+  // Is a topic's block on screen (between the sticky player/tabs and the bottom edge)?
+  function blokEkranda(no: string | null): boolean {
+    const el = no ? document.getElementById(`ak-${no}`) : null;
+    if (!el) return false;
+    const r = el.getBoundingClientRect();
+    const ust = genis() ? (kok?.querySelector<HTMLElement>(".co-sag")?.getBoundingClientRect().top ?? 0) : $("co-video-kab").offsetHeight + $("co-sekmeler").offsetHeight;
+    return r.bottom > ust + 40 && r.top < innerHeight - 40;
+  }
+  let izlenenKonu: string | null = null;
   function akisIzle(): void {
     if (!akisVar) return;
     const gorunur = akisGorunurMu();
+    // Scrolling inside the topic being read is still following: when the narration moves on, the page moves with it.
+    if (elleKaydirdi && simdiKonu !== izlenenKonu && blokEkranda(izlenenKonu)) elleKaydirdi = false;
+    izlenenKonu = simdiKonu;
     if (gorunur && simdiKonu && !elleKaydirdi) akisKaydir(simdiKonu);
     const dugme = document.getElementById("co-ak-simdi");
-    if (dugme) dugme.hidden = !(gorunur && elleKaydirdi && simdiKonu);
+    // "Şu ana dön" only when the playing topic is really off screen, not after a small scroll within it
+    if (dugme) dugme.hidden = !(gorunur && elleKaydirdi && simdiKonu && !blokEkranda(simdiKonu));
   }
   function medyaSar(no: string, oynat = false): void {
     const k = konuHaritasi.get(no)?.k;
@@ -1851,6 +1864,7 @@ export function calismaOdasiBaslat(): void {
   };
   addEventListener("wheel", kullaniciKaydirdi, { passive: true });
   addEventListener("touchmove", kullaniciKaydirdi, { passive: true });
+  addEventListener("scroll", () => elleKaydirdi && akisIzle(), { passive: true });
   kok.querySelector(".co-sag")?.addEventListener("wheel", kullaniciKaydirdi, { passive: true });
   matchMedia("(min-width: 1024px)").addEventListener("change", sekmeUygula);
 

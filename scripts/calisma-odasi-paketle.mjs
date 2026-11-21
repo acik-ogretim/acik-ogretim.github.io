@@ -283,7 +283,9 @@ function paketle(ders) {
   if (existsSync(adlarYolu)) {
     const konuVar = new Set(konuListesi.map((k) => k.no));
     let adSayisi = 0;
-    for (const liste of Object.values(oku(adlarYolu).uniteler ?? {})) {
+    const adKaydi = oku(adlarYolu);
+    // book text first, then names the written explanations add (first source that names a person wins)
+    for (const liste of [...Object.values(adKaydi.uniteler ?? {}), ...Object.values(adKaydi.anlatimUniteler ?? {})]) {
       for (const x of liste) {
         const terim = (x.terim ?? "").trim();
         const anahtar = tr(terim);
@@ -293,7 +295,14 @@ function paketle(ders) {
         const onceki = kavramlar.get(anahtar);
         if (onceki?.tur) continue; // first unit that names it wins
         const baslik = [x.ad && x.ad !== terim ? x.ad : null, x.yasam ? `(${x.yasam})` : null].filter(Boolean).join(" ");
-        kavramlar.set(anahtar, { terim, tanim: baslik ? `${baslik}. ${x.tanim}` : x.tanim, konu: konular[0], kaynak: "ad", tur: x.tur ?? "kisi" });
+        // other ways the text writes the same name: full name, initial + surname ("M. Weber")
+        const digerYazim = new Set();
+        const tam = (x.ad ?? "").trim();
+        if (tam && tr(tam) !== anahtar) digerYazim.add(tam);
+        const kelimeler = tam.split(/\s+/).filter(Boolean);
+        if ((x.tur ?? "kisi") === "kisi" && kelimeler.length >= 2) digerYazim.add(`${kelimeler[0][0]}. ${kelimeler.slice(1).join(" ")}`);
+        for (const t of digerYazim) if (kavramlar.has(tr(t)) && !kavramlar.get(tr(t)).tur) kavramlar.delete(tr(t));
+        kavramlar.set(anahtar, { terim, tanim: baslik ? `${baslik}. ${x.tanim}` : x.tanim, konu: konular[0], kaynak: "ad", tur: x.tur ?? "kisi", ...(digerYazim.size ? { takma: [...digerYazim] } : {}) });
         adSayisi++;
       }
     }

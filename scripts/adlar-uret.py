@@ -31,8 +31,8 @@ Yalnız geçerli bir JSON dizisi döndür, başka metin yazma.
 """
 
 
-def uret(ders: str, unite: int, konular: list[dict]) -> list[dict]:
-    parcalar = [f"### {k['no']} {k['baslik']}\n{k['metin']}" for k in konular if k["unite"] == unite and k.get("metin")]
+def uret(ders: str, unite: int, konular: list[dict], alan: str = "metin") -> list[dict]:
+    parcalar = [f"### {k['no']} {k['baslik']}\n{k[alan]}" for k in konular if k["unite"] == unite and k.get(alan)]
     istem = ISTEM.format(unite=unite, metin="\n\n".join(parcalar))
     sonuc = subprocess.run(
         ["gapi", "generate", "--stdin", "--stream=false", "--model", "gemini-3.8-flash"],
@@ -62,18 +62,21 @@ def main() -> None:
         sys.exit(__doc__)
     ders = sys.argv[1]
     secili = [int(a) for a in sys.argv[2:] if a.isdigit()]
+    # --anlatim scans the written topic explanations too (they name people the book text only cites in passing)
+    alan, anahtar = ("anlatim", "anlatimUniteler") if "--anlatim" in sys.argv else ("metin", "uniteler")
     paket = json.loads((KOK / "src" / "data" / "calisma-odasi" / f"{ders}.json").read_text())
     yol = KOK / "data" / "calisma-odasi" / "adlar" / f"{ders}.json"
     yol.parent.mkdir(parents=True, exist_ok=True)
     kayit = json.loads(yol.read_text()) if yol.exists() else {"ders": ders, "uniteler": {}}
+    kayit.setdefault(anahtar, {})
     uniteler = secili or sorted({k["unite"] for k in paket["konular"]})
-    eksik = [u for u in uniteler if secili or str(u) not in kayit["uniteler"]]
+    eksik = [u for u in uniteler if secili or str(u) not in kayit[anahtar]]
     with ThreadPoolExecutor(max_workers=7) as havuz:
-        islerin = {u: havuz.submit(uret, ders, u, paket["konular"]) for u in eksik}
+        islerin = {u: havuz.submit(uret, ders, u, paket["konular"], alan) for u in eksik}
         for u, is_ in islerin.items():
             try:
-                kayit["uniteler"][str(u)] = is_.result()
-                print(f"ünite {u}: {len(kayit['uniteler'][str(u)])} kişi")
+                kayit[anahtar][str(u)] = is_.result()
+                print(f"ünite {u}: {len(kayit[anahtar][str(u)])} ad")
             except Exception as hata:  # one failed unit must not lose the others
                 print(hata, file=sys.stderr)
     yol.write_text(json.dumps(kayit, ensure_ascii=False, indent=1) + "\n")

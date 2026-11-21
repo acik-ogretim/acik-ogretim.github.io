@@ -71,6 +71,7 @@ export const KavramSemasi = z.object({
   konu: z.string(),
   kaynak: z.enum(["etkinlik", "kitap", "ad"]),
   tur: z.enum(AdTurleri).optional(), // set for proper names; plain concepts have none
+  takma: z.array(z.string()).optional(), // other spellings of the same name (full name, "M. Weber"), matched like the term
 });
 export type CalismaKavrami = z.infer<typeof KavramSemasi>;
 

@@ -19,13 +19,15 @@ function kalip(terim: string): string {
 export type KavramMotoru = { eslestir: (metin: string) => KavramEslesme[] };
 
 export function kavramMotoru(kavramlar: CalismaKavrami[]): KavramMotoru {
+  // Every spelling of a concept or name (term plus aliases such as the full name) is matched; longest first, so
+  // "Pierre Bourdieu" is underlined as a whole instead of only "Bourdieu".
   const uygun = kavramlar
-    .map((k, kavram) => ({ k, kavram }))
-    .filter(({ k }) => k.terim.trim().length >= 4)
-    .sort((a, b) => b.k.terim.length - a.k.terim.length);
+    .flatMap((k, kavram) => [k.terim, ...(k.takma ?? [])].map((terim) => ({ terim: terim.trim(), kavram })))
+    .filter(({ terim }) => terim.length >= 4)
+    .sort((a, b) => b.terim.length - a.terim.length);
   if (!uygun.length) return { eslestir: () => [] };
-  const tek = uygun.map(({ k, kavram }) => ({ kavram, re: new RegExp(`^${kalip(k.terim)}$`, "u") }));
-  const birlesik = new RegExp(`(?<![\\p{L}\\p{N}])(?:${uygun.map(({ k }) => kalip(k.terim)).join("|")})`, "gu");
+  const tek = uygun.map(({ terim, kavram }) => ({ kavram, re: new RegExp(`^${kalip(terim)}$`, "u") }));
+  const birlesik = new RegExp(`(?<![\\p{L}\\p{N}])(?:${uygun.map(({ terim }) => kalip(terim)).join("|")})`, "gu");
   return {
     eslestir(metin) {
       const sonuc: KavramEslesme[] = [];
