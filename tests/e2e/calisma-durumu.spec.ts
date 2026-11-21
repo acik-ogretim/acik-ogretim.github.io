@@ -243,7 +243,7 @@ test.describe('Çalışma durumu', () => {
     await page.locator('a.liste-satir', { hasText: 'Senaryo Dersi' }).filter({ hasNotText: 'İkinci' }).click();
     await bekle(page);
     const bildirim = page.getByTestId('bildirim');
-    await expect(bildirim).toContainText('Kaldığın soru süzgeç yüzünden gizli.');
+    await expect(bildirim).toContainText('Kaldığın soru süzgeçte gizli.');
     await expect(kart(page, 'sen-7')).toBeHidden();
     await ekran(page, info, '4-uyari');
     await bildirim.getByRole('button', { name: 'Süzgeci kaldır' }).click();
@@ -262,7 +262,7 @@ test.describe('Çalışma durumu', () => {
     await soruyaGel(page, 'sen-5');
     expect(await sayac(page)).toEqual({ dogru: '2', yanlis: '1', yuzde: '67' });
 
-    await menudenCalistir(page, 'Bu ünitedeki cevapları temizle');
+    await menudenCalistir(page, 'Üniteyi temizle');
     const bildirim = page.getByTestId('bildirim');
     await expect(bildirim).toContainText('Ünite 1 temizlendi: 2 cevap silindi.');
     expect(await isaretler(kart(page, 'sen-2'))).toEqual([]);
@@ -276,7 +276,7 @@ test.describe('Çalışma durumu', () => {
     expect(await isaretler(kart(page, 'sen-5'))).toEqual(['A:is-wrong', 'E:was-revealed']);
     expect(await sayac(page)).toEqual({ dogru: '2', yanlis: '1', yuzde: '67' });
 
-    await menudenCalistir(page, 'Bu dersteki cevapları temizle');
+    await menudenCalistir(page, 'Dersi temizle');
     await expect(bildirim).toContainText('Ders temizlendi: 3 cevap silindi.');
     for (const k of ['sen-2', 'sen-5', 'sen-6']) expect(await isaretler(kart(page, k))).toEqual([]);
     expect(await sayac(page)).toEqual({ dogru: '0', yanlis: '0', yuzde: '0' });

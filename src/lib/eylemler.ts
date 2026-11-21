@@ -130,9 +130,10 @@ export const EYLEMLER: Eylem[] = [
   { id: "soru", etiket: "Soruya git", simge: Hash, altGorunum: "soru", calistir: () => menuAc("soru") },
   { id: "icindekiler", etiket: "İçindekiler", simge: ListTree, kisayol: "I", tus: "i", calistir: () => window.dispatchEvent(new CustomEvent("icindekiler:ac")) },
   { id: "sohbet", etiket: "Sohbet asistanı", simge: MessageCircle, calistir: () => tikla("#sohbet-ac") },
-  // Clearing: runs at once and offers "Geri al" for a few seconds (calisma-baglanti.ts)
-  { id: "uniteyi-temizle", etiket: "Bu ünitedeki cevapları temizle", simge: Eraser, pasif: () => !calisma()?.cevapVar(), calistir: () => calisma()?.uniteyiTemizle() },
-  { id: "dersi-temizle", etiket: "Bu dersteki cevapları temizle", simge: ListRestart, pasif: () => !calisma()?.cevapVar(), calistir: () => calisma()?.dersiTemizle() },
+  // Clearing the answers of the current unit or the whole course: runs at once and offers "Geri al" for a few
+  // seconds (calisma-baglanti.ts). Short labels: a menu tile shows two lines.
+  { id: "uniteyi-temizle", etiket: "Üniteyi temizle", simge: Eraser, pasif: () => !calisma()?.cevapVar(), calistir: () => calisma()?.uniteyiTemizle() },
+  { id: "dersi-temizle", etiket: "Dersi temizle", simge: ListRestart, pasif: () => !calisma()?.cevapVar(), calistir: () => calisma()?.dersiTemizle() },
   { id: "yeri-sifirla", etiket: "Kaldığın yeri sıfırla", simge: MapPinOff, pasif: () => !calisma()?.yerVar(), calistir: () => calisma()?.yeriSifirla() },
   { id: "yedek", etiket: "Kayıtlarını taşı", simge: RefreshCw, calistir: () => location.assign("/yedek") },
   { id: "hata", etiket: "Hata bildir", simge: Flag, calistir: () => tikla("[data-tartisma]") },

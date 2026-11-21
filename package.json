@@ -10,7 +10,8 @@
     "astro": "astro",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:e2e:calisma": "playwright test tests/e2e/calisma-durumu.spec.ts"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",

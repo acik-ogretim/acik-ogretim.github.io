@@ -158,3 +158,32 @@ Rutin geçişler 300 ms altında, eğri `cubic-bezier(.2,0,0,1)`. Basma `scale(.
 **Erişilebilirlik**: dokunma hedefi en az 44 px; odak halkası 3 px `--primary-color`, 2 px boşluk; ilerleme `role="progressbar"`; açık kapalı düğmeler `aria-pressed`; alt sayfa açan düğme `aria-expanded`.
 
 **Sınama**: her değişiklikte 375, 390, 430 ve 768 px'te, açık, koyu ve sepya temada Playwright ekran görüntüsü.
+
+## 10. Çalışma durumu
+
+Ders sayfasında öğrencinin bıraktığı her şey bu cihazda, ders başına tutulur ve sayfaya dönünce aynı görünüm geri gelir. Kod: `src/lib/calisma-durumu.ts` (kayıtlar, Zod şemaları), `src/lib/soru-siralama.ts` (sıralama, saf fonksiyonlar), `src/scripts/calisma-baglanti.ts` (oynatıcıya bağlantı). Senaryo testleri: `tests/e2e/calisma-durumu.spec.ts`.
+
+**Kalıcı soru anahtarı**: kayıtlar kartın DOM kimliğine (`question-<ünite>-<sıra>`) değil, sorunun veri kimliğine bağlanır (`data-id`; aynı kimlik bir derste iki kez geçerse `kimlik#2`). Sıralama, süzgeç ya da yeni eklenen sorular kaydı başka bir soruya kaydırmaz. Eski DOM kimliğiyle yazılmış `quiz-progress-*` ve `son-calisma` kayıtları sayfa açılınca `data-eski` özniteliği üzerinden yeni anahtara taşınır.
+
+**Anahtarlar**:
+- `kaldigin-yer` (sürüm 2): `{ surum: 2, dersler: { "<uni>/<ders>": { yol, bolum?, ad, soru, unite, sira, uniteToplam, kip, zaman } } }`. Ana sayfa en son çalışılan dersi, Derslerim her dersin yerini gösterir. Devam bağlantısı `/<uni>/<bolum>/<ders>?bolum=<gelinen>#kaldigin-yer`. Sürüm 1 (`son-calisma`, tek ders) ilk okumada taşınır ve silinir.
+- `cevaplar-<uni>-<ders>` (sürüm 1): `{ surum: 1, cevaplar: { "<soru>": { secim: "A".."E" | null, dogru, zaman } } }`. `secim: null` cevabın seçilmeden açıldığını gösterir (Cevabı göster ya da Çözme kipinde Açıklamayı oku). Sayaç ve yüzde bu kayıttan hesaplanır.
+- `quiz-progress-<uni>-<ders>`: her sorunun son iki sonucu (Yanlışlarım süzgeci, İlerleme sekmesi). Temizleme bu geçmişi silmez; öğrenci cevaplarını silip yanlışlarını yeniden çalışabilir.
+- `soru-siralama`: `{ "<uni>/<ders>": "cikma" | "yeni" | "eski" | "yanlis" | "cozulmemis" }`; kitap sırası varsayılandır ve yazılmaz.
+- /yedek ve bütün eşitleme yolları bu anahtarları taşır; birleştirmede ders başına daha yeni konum, soru başına daha yeni cevap kazanır. `*-api-key` ve cihaza özel `google-esitleme-*` taşınmaz.
+
+**Kayıt ne zaman yazılır**: sayfayı açmak kaldığın yeri değiştirmez. Konum, öğrenci sayfaya ilk kez dokunduktan, kaydırdıktan ya da bir tuşa bastıktan sonra, kaydırma oturunca yazılır; kip değişimi hemen yazılır. Güncel soru, üst kapsülün altındaki alanın dörtte birindeki okuma çizgisinden geçen karttır.
+
+**Geri getirme**: `#kaldigin-yer` ile gelinince ya da sayfa yenilenince kip (Okuma, Çözme) ve soru geri gelir; kart üst kapsülün altına yerleşir ve sayfa oturana kadar (geç yüklenen görseller, adalar) yaklaşık dört saniye yerinde tutulur. Öğrenci dokunursa tutma biter. Tarayıcının kendi kaydırma geri yüklemesi kapalıdır (`history.scrollRestoration = "manual"`). Sesli okuma kaldığı sorudan başlar. Hedef soru süzgeçle gizliyse "Kaldığın soru süzgeçte gizli." bildirimi ve **Süzgeci kaldır** eylemi çıkar.
+
+**Odak ve kaydırma yakalama**: kart yalnız programla odaklanırken `tabindex="-1"` alır ve odağı bırakınca kaldırır. Şıkka dokunmak karta odak vermez; dokunma ya da tekerlekle kaydırma başlayınca karttaki odak bırakılır, kaydırma bitince odak ekrandaki karta geçer. Telefondaki kaydırma yakalama, düzen değişince (alt sayfa kaydırmayı kilitlediğinde) odaklı karta geri döndüğü için bu kural sayfanın geri sıçramasını önler.
+
+**Sıfırlama**: menüde **Üniteyi temizle** (güncel sorunun ünitesi), **Dersi temizle** ve **Kaldığın yeri sıfırla**. Eylem hemen uygulanır, kartlar ve sayaç anında güncellenir; altta sekiz saniye "Geri al" bildirimi kalır ve silineni olduğu gibi geri yazar. Onay penceresi yerine geri al seçildi: iş akışını kesmez ve yanlış dokunuşu da düzeltir. Sitede yer imi özelliği olmadığı için "İşaretleri temizle" eylemi yok.
+
+**Sıralama**: Süzgeç sayfasının başındaki **Sırala** grubu: Kitap sırası (varsayılan; konu numarası parça parça sayısal karşılaştırılır: 1.2 < 1.7 < 1.7.4 < 1.10, konusuz soru sonda), En çok sorulan (kaç ayrı sınavda çıktığı), En yeni sınav, En eski sınav (sınavsız sorular sonda), Yanlışlarım önce, Çözmediklerim önce. Eşitlikte kitap sırası korunur. Çıkmış sorusu olmayan derste sınava dayalı seçenekler gizlenir. Seçim ders başına kalıcıdır.
+
+**Sıralama ve üniteler**: sıralama her zaman ünite içinde uygulanır; ünite başlıkları ve ünite sırası değişmez, "Tüm üniteler" görünümü yoktur. Böylece üst kapsüldeki "Ü 4 · 12 / 40", ünite şeridi ve İçindekiler tutarlı kalır. Kartlar yeniden çizilmez, ünite kabının içinde taşınır; DOM sırası görsel sırayla aynı olduğu için klavye ve ekran okuyucu sırası da doğru kalır. Soru numarası ("Soru 3") soruya aittir, sıralamayla değişmez. Ölçüm (371 soruluk ders, masaüstü Chromium): kartları taşımak 37 ms, ardından yeniden yerleşim yaklaşık 290 ms; yalnız Uygula'ya basınca bir kez.
+
+**Depolama kapalı ya da dolu**: bütün okuma ve yazmalar hata fırlatmadan geçer; sayfa o ziyaret için bellekteki durumla çalışır.
+
+**Gizli cevap**: Çözme kipinde cevabı gizlenmiş şık öteki şıklarla aynı zemini, kenarı, harf zeminini ve hover tepkisini taşır; şıklarda renk geçişi kapalıdır. Kip geçişi boyunca kare kare aynı kalır (senaryo 7).

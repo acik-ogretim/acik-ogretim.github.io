@@ -426,7 +426,7 @@ export class CalismaBaglantisi {
     const i = this.p.questions.indexOf(hedef);
     if (i < 0) {
       bildir({
-        metin: "Kaldığın soru süzgeç yüzünden gizli.",
+        metin: "Kaldığın soru süzgeçte gizli.",
         sure: 12000,
         eylem: {
           etiket: "Süzgeci kaldır",

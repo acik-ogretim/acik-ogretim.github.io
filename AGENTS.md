@@ -50,6 +50,8 @@ This file serves as the primary instruction manual for AI agents working on this
 
 ## 🧪 Testing Instructions
 *   **Unit Tests:** Located in `src/lib/*.test.ts`. Run `npm test` to execute.
+*   **E2E (Playwright):** `npm run test:e2e` runs every spec; `npm run test:e2e:calisma` runs the study state scenarios (`tests/e2e/calisma-durumu.spec.ts`: resume position, stored answers, clearing with undo, Sırala, mode switch, shared course back link, backup and mocked Google sync, scroll jump) on a 390x844 phone and a 1280x800 desktop project. The config starts `astro dev` itself or reuses a running one. Another session may own port 4321: use `E2E_PORT=4331 npm run test:e2e:calisma`. When the bundled Chromium of this Playwright version is missing, point `PW_CHROMIUM_PATH` at a local one (here `/opt/pw-browsers/chromium_headless_shell`). Screenshots go to `E2E_EKRAN` (default `$TMPDIR/acik-ogretim-e2e`), traces to `E2E_CIKTI`; open the screenshots and look at them, a green run is not enough. Scenario data: `test-uni/course-senaryo` and `course-senaryo-2`, written by `python3 tests/e2e/fikstur.py`. The dev server reloads when other sessions edit files; rerun a single failure (`-g "5\. "`) before treating it as real.
+*   **Study state:** `src/lib/calisma-durumu.ts` (per course `kaldigin-yer`, `cevaplar-<uni>-<ders>`, Zod), `src/lib/soru-siralama.ts` (order, pure), `src/scripts/calisma-baglanti.ts` (player glue). Records use the question's data id, never the card DOM id. Rules: docs/tasarim/mobil-2026-11/DESIGN.md §10.
 *   **Manual Testing:** Always verify UI changes in mobile view (Responsive Design).
 *   **Linting:** Ensure no ESLint errors before committing.
 
