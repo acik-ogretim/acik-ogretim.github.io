@@ -340,7 +340,7 @@
     --incorrect-bg: #FBE5E2;
     --warning: #7F5200;
     --warning-bg: #FAEECE;
-    --glass: color-mix(in srgb, var(--card-bg) 72%, transparent);
+    --glass: color-mix(in srgb, var(--card-bg) 86%, transparent);
     --scrim: rgba(20, 20, 20, 0.32);
 }
 
@@ -364,7 +364,7 @@
     --incorrect-bg: #2A1C1A;
     --warning: #E3B75A;
     --warning-bg: #2A2416;
-    --glass: color-mix(in srgb, var(--card-bg) 62%, transparent);
+    --glass: color-mix(in srgb, var(--card-bg) 82%, transparent);
     --scrim: rgba(0, 0, 0, 0.45);
 }
 
@@ -388,7 +388,7 @@
     --incorrect-bg: #f5e0d8;
     --warning: #7F5200;
     --warning-bg: #F3E6C8;
-    --glass: color-mix(in srgb, var(--card-bg) 72%, transparent);
+    --glass: color-mix(in srgb, var(--card-bg) 86%, transparent);
     --scrim: rgba(67, 52, 34, 0.32);
 }
 
@@ -1627,3 +1627,7 @@ label.ayar-satir > .ayar-ad:first-child { flex: 1; min-width: 0; }
 .devam-dugme svg { margin-left: 3px; }
 @media (prefers-reduced-motion: reduce) { .devam-dugme { transition: none; } .devam-dugme:active { transform: none; } }
 #suzgec-govde:focus-visible { outline: none; }
+/* Soru üst satırı sarılır: uzun sınav listesi ve konu çipi kendi satırına geçer, "202..." gibi kesilmez */
+.q-label { flex-wrap: wrap; row-gap: 6px; overflow: visible; white-space: normal; padding: 6px 0; }
+.q-label .q-cip { max-width: calc(100% - 4.5rem); }
+.q-label .q-konu { max-width: 100%; flex-shrink: 1; }
