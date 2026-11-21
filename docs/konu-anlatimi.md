@@ -53,4 +53,9 @@ Eksik: Atatürk AÖF'te 163.652 sorunun yalnız 2.550'sinde `section` var; geri 
    - Bağlantılar: yanlış yapılan sorunun konusundan o konunun kartları ve mini testi önerilir; ilerleme konu başına mini test sonucu ve kart tekrarıyla hesaplanır.
    - İlk deneme: Atatürk AÖF Sosyoloji 1. dönem dersleri, önce Hukukun Temel Kavramları 1. ünite; çıktı elle okunup kalite ölçütü yazıldıktan sonra bütün derslere yayılır.
 
+10. Video ile metin bir arada (Zeki, 21 Kasım 2026): kendi videolarımız kendi zamanlamamızla oynar; video izlerken o an anlatılan konunun özeti, tam konu anlatımı, geçen kavramların wiki açıklaması açılır; sorudan konuya ve videonun o konuyu anlattığı ana gidilir. Videoların dökümü, özel bağlantı noktaları (konu başlangıçları, kavramın ilk geçtiği an), terimler ve öncüller (bir konuyu anlamak için önce bilinmesi gereken konular ve kavramlar, çizgede `onkosul` kenarı) veri olarak tutulur. Döküm kaynağı: auzeff-tui seslendirme parçalarının gerçek süreleri (`scripts/video_dokum.py`, çıktı `data/ata-aof/yayin/dokum/`).
+11. Kullanıcı vurgusu: metinde (konu, döküm) seçip vurgulama; tarayıcıda saklanır, yedek ve eşitlemeye girer, "Vurgularım" listesinden konuya dönülür.
+12. Çevrimdışı: konu dosyaları, döküm ve çalışma malzemesi ders indirmesine girer; video bağlantı ister, onun dışında her şey çevrimdışı çalışır.
+13. İlk gösterim (21 Kasım 2026, Zeki'nin 22 Kasım vize sınavları için): `/calisma/<ders>/` çalışma odası, Atatürk AÖF Sosyoloji 1. dönem altı ders, 1-7. üniteler.
+
 Diğer üniversiteler (AUZEF, Anadolu, Ankara) MDX'leri üretildikçe aynı hatta girer.
