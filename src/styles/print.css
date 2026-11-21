@@ -623,9 +623,9 @@
     html body [id^='question-'] .question-text::before {
         content: counter(print-question-counter) "." !important;
         display: inline-block !important;
-        width: 5.5mm !important;
-        margin: 0 1.5mm 0 -7mm !important;
-        text-align: right !important;
+        width: 7mm !important;
+        margin: 0 0 0 -7mm !important;
+        text-align: left !important;
         font-weight: 800 !important;
         font-size: 9.5pt !important;
     }
@@ -635,7 +635,7 @@
     html body .option-item.correct-option,
     html body.hide-answers .option-item.correct-option {
         display: grid !important;
-        grid-template-columns: 5.5mm 1fr !important;
+        grid-template-columns: 6.5mm 1fr !important;
         align-items: baseline !important;
         gap: 0 !important;
         min-height: 0 !important;
@@ -662,7 +662,10 @@
         font-weight: 700 !important;
         line-height: 1.35 !important;
         letter-spacing: 0 !important;
-        display: inline !important;
+        display: block !important;
+        text-align: left !important;
+        padding-right: 0 !important;
+        white-space: nowrap !important;
     }
     html body .option-key::after {
         content: ")" !important;
@@ -751,4 +754,63 @@
     }
     html body .option-item.option-item .option-key.option-key { font-weight: 700 !important; }
     html body .option-item.option-item .option-text.option-text { font-weight: 400 !important; }
+
+    /* Short count in the title block: "511 soru" or "170 / 511 soru" (set on beforeprint) */
+    html body #soru-sayisi[data-baski] { font-size: 0 !important; }
+    html body #soru-sayisi[data-baski]::before { content: none !important; }
+    html body #soru-sayisi[data-baski]::after { content: " · " attr(data-baski); font-size: 9pt; }
+
+    /* Only real question cards take part in numbering */
+    html body [id^='question-']:not(.question-card) { counter-increment: none !important; display: none !important; }
+
+    /* Print settings (src/lib/yazdirma.ts writes data-baski-* on <html>) */
+    html[data-baski-aciklama="yok"] body .explanation-box { display: none !important; }
+    html[data-baski-cevap="yok"] body .answer-meta-card,
+    html[data-baski-cevap="sonda"] body .answer-meta-card { display: none !important; }
+    html[data-baski-konu="yok"] body [id^='question-'][data-konu-basi]::before { content: none !important; display: none !important; }
+    html[data-baski-sutun="1"] body article { column-count: 1 !important; column-rule: none !important; }
+    html[data-baski-yazi="kucuk"] body { font-size: 8.5pt !important; }
+    html[data-baski-yazi="kucuk"] body [id^='question-'] .question-text,
+    html[data-baski-yazi="kucuk"] body .option-item .option-text,
+    html[data-baski-yazi="kucuk"] body .option-item .option-key { font-size: 8.3pt !important; }
+    html[data-baski-yazi="buyuk"] body [id^='question-'] .question-text,
+    html[data-baski-yazi="buyuk"] body [id^='question-'] .question-text::before { font-size: 11pt !important; }
+    html[data-baski-yazi="buyuk"] body .option-item .option-text,
+    html[data-baski-yazi="buyuk"] body .option-item .option-key { font-size: 10.5pt !important; }
+    html[data-baski-yazi="buyuk"] body .explanation-box .explanation-content,
+    html[data-baski-yazi="buyuk"] body .explanation-box .explanation-content * { font-size: 9.5pt !important; }
+
+    /* Answer key at the end */
+    html body .baski-cevap-anahtari {
+        break-before: page;
+        margin: 0 !important;
+        font-size: 9pt !important;
+    }
+    html body .baski-cevap-anahtari h2 {
+        font-size: 13pt !important;
+        border: none !important;
+        border-bottom: 1.2pt solid #111 !important;
+        padding: 0 0 2mm 0 !important;
+        margin: 0 0 4mm 0 !important;
+    }
+    html body .baski-anahtar-unite { break-inside: avoid; margin: 0 0 3.5mm 0; }
+    html body .baski-anahtar-unite strong {
+        display: block;
+        font-size: 7.5pt;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #555 !important;
+        margin-bottom: 1mm;
+    }
+    html body .baski-anahtar-unite p {
+        font-family: ui-monospace, "SF Mono", Menlo, monospace;
+        font-size: 9pt !important;
+        line-height: 1.7 !important;
+        word-spacing: 0.6em;
+        margin: 0 !important;
+    }
+}
+
+@media screen {
+    .baski-cevap-anahtari { display: none; }
 }

@@ -2,6 +2,7 @@
 import QuizPlayer from "../../../components/QuizPlayer.astro";
 import AISettings from "../../../components/AISettings.astro";
 import AIMenu from "../../../components/AIMenu.astro";
+import YazdirmaAyarlari from "../../../components/YazdirmaAyarlari.astro";
 import Layout from "../../../layouts/Layout.astro";
 import YouTubeVideolari from "../../../components/YouTubeVideolari.astro";
 import { Check, ChevronRight, MessageCircle, MessageSquare, TriangleAlert, Volume2, X } from "lucide-react";
@@ -296,7 +297,7 @@ const dersJsonLd = graf(
               <Simge ad="ExternalLink" size={18} />Resmî sayfa
             </a>
           )}
-          <button type="button" onclick="window.print()" class="eylem-cip" title="Yazdır / PDF kaydet (P)">
+          <button type="button" onclick="window.yazdirmaAyarlariAc ? window.yazdirmaAyarlariAc() : window.print()" class="eylem-cip" title="Yazdır / PDF kaydet (P)">
             <Simge ad="Printer" size={18} />Yazdır
           </button>
         </div>
@@ -450,9 +451,7 @@ const dersJsonLd = graf(
                               data-key={opt.key}
                               data-testid={`option-${opt.key}`}
                             >
-                              <span class="option-key">
-                                {opt.key}
-                              </span>
+                              <span class="option-key">{opt.key}</span>
                               <div
                                 class="option-text"
                                 set:html={opt.text}
@@ -838,27 +837,9 @@ const dersJsonLd = graf(
     dispatchEvent(new CustomEvent(KONUM_ISTE_OLAYI));
   </script>
   <AIMenu />
+  <YazdirmaAyarlari />
 </Layout>
 
-
-<script>
-  // Print: mark the first visible question of each topic so print.css can show the topic name above it.
-  const konuBasliklariniIsaretle = () => {
-    let onceki = "";
-    document.querySelectorAll<HTMLElement>(".question-card[data-konu]").forEach((kart) => {
-      kart.removeAttribute("data-konu-basi");
-      if (kart.style.display === "none") return;
-      const konu = kart.dataset.konu ?? "";
-      if (konu && konu !== onceki) {
-        const ad = kart.querySelector(".q-konu span")?.textContent?.trim() ?? konu;
-        kart.setAttribute("data-konu-basi", "");
-        kart.setAttribute("data-konu-ad", ad.toLocaleUpperCase("tr-TR"));
-      }
-      onceki = konu;
-    });
-  };
-  window.addEventListener("beforeprint", konuBasliklariniIsaretle);
-</script>
 
 {
   /* Inject print styles directly to avoid CSS Variable scope issues in @page context */

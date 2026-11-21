@@ -89,7 +89,7 @@ const TEMALAR = ["dark", "light", "sepia"] as const;
 const TEMA_AD: Record<string, string> = { dark: "Koyu", light: "Açık", sepia: "Sepya" };
 
 const sayfa = () =>
-  window as unknown as { setTheme?: (t: string) => void; openQuizSettings?: () => void };
+  window as unknown as { setTheme?: (t: string) => void; openQuizSettings?: () => void; yazdirmaAyarlariAc?: () => void };
 const davranis = (): ScrollBehavior =>
   matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
 const tikla = (secici: string) => document.querySelector<HTMLElement>(secici)?.click();
@@ -148,7 +148,7 @@ export const EYLEMLER: Eylem[] = [
     calisiyor: () => typeof document !== "undefined" && document.getElementById("cevrimdisi-indir")?.dataset.durum === "iniyor",
     calistir: () => tikla("#cevrimdisi-indir"),
   },
-  { id: "yazdir", etiket: "Yazdır / PDF", simge: Printer, kisayol: "P", tus: "p", calistir: () => window.print() },
+  { id: "yazdir", etiket: "Yazdır / PDF", simge: Printer, kisayol: "P", tus: "p", calistir: () => (sayfa().yazdirmaAyarlariAc ? sayfa().yazdirmaAyarlariAc?.() : window.print()) },
   { id: "yedek", etiket: "Kayıtlarını taşı", simge: RefreshCw, calistir: () => location.assign("/yedek") },
   { id: "hata", etiket: "Hata bildir", simge: Flag, calistir: () => tikla("[data-tartisma]") },
   { id: "tur", etiket: "Turu yeniden göster", simge: Route, calistir: () => window.dispatchEvent(new CustomEvent("tur:baslat")) },
