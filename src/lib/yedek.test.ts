@@ -47,4 +47,25 @@ describe("yedek", () => {
     expect(yukle(topla(a as unknown as Storage), b as unknown as Storage)).toBe(1);
     expect(b.getItem("theme")).toBe("dark");
   });
+  it("cihaza özel Google eşitleme durumunu dışarıda bırakır", () => {
+    const d = new Bellek();
+    d.setItem("google-esitleme-acik", "1");
+    d.setItem("google-esitleme-son", "123");
+    d.setItem("cevaplar-auzef-anatomi", "{}");
+    expect(Object.keys(topla(d as unknown as Storage).kayitlar)).toEqual(["cevaplar-auzef-anatomi"]);
+    const b = new Bellek();
+    yukle({ surum: 1, tarih: "", kayitlar: { "google-esitleme-acik": "1", theme: "dark" } }, b as unknown as Storage);
+    expect(b.getItem("google-esitleme-acik")).toBeNull();
+  });
+  it("kaldığın yeri ve cevapları birleştirirken yeni olanı tutar", () => {
+    const y = (sira: number, zaman: number) => ({ yol: "/u/b/d", ad: "D", soru: "q", unite: 1, sira, uniteToplam: 9, kip: "okuma", zaman });
+    const yerel = JSON.stringify({ surum: 2, dersler: { "u/d": y(2, 5) } });
+    const gelen = JSON.stringify({ surum: 2, dersler: { "u/d": y(7, 9), "u/e": y(1, 1) } });
+    const m = JSON.parse(birlestir("kaldigin-yer", yerel, gelen));
+    expect(m.dersler["u/d"].sira).toBe(7);
+    expect(Object.keys(m.dersler)).toEqual(["u/d", "u/e"]);
+    const c = (secim: string, zaman: number) => JSON.stringify({ surum: 1, cevaplar: { q: { secim, dogru: secim === "A", zaman } } });
+    expect(JSON.parse(birlestir("cevaplar-u-d", c("A", 9), c("B", 3))).cevaplar.q.secim).toBe("A");
+    expect(JSON.parse(birlestir("soru-siralama", '{"u/d":"cikma"}', '{"u/e":"yeni"}'))).toEqual({ "u/d": "cikma", "u/e": "yeni" });
+  });
 });
