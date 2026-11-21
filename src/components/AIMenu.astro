@@ -1,325 +1,75 @@
 ---
+// AI actions for one explanation (DESIGN.md §5 "Ortak katman sözleşmesi"): a native <dialog> that is a
+// bottom sheet on phones; from 768 px it sits under its button where CSS anchor positioning exists,
+// otherwise it opens as a small centered window. Mounted once per page; buttons call
+// openGlobalAIMenu(event, unit, qIdx) and the chosen action goes to window.handleAIAction (AISettings).
 import Simge from "./Simge.astro";
 import type { SimgeAdi } from "../lib/simge";
-const extra = [
-  { action: "options", label: "Şıkları Açıkla", Icon: "ListChecks" as SimgeAdi },
-  { action: "example", label: "Örnekle Anlat", Icon: "Lightbulb" as SimgeAdi },
-  { action: "ask", label: "Sohbette Sor", Icon: "MessageCircle" as SimgeAdi },
+
+const EYLEMLER: { action: string; label: string; Icon: SimgeAdi }[] = [
+  { action: "regenerate", label: "Tekrar oluştur", Icon: "RefreshCw" },
+  { action: "longer", label: "Daha ayrıntılı anlat", Icon: "FileText" },
+  { action: "shorter", label: "Özetle", Icon: "Shrink" },
+  { action: "mnemonic", label: "Hafıza ipucu", Icon: "Brain" },
+  { action: "options", label: "Şıkları açıkla", Icon: "ListChecks" },
+  { action: "example", label: "Örnekle anlat", Icon: "Lightbulb" },
+  { action: "ask", label: "Sohbette sor", Icon: "MessageCircle" },
 ];
-// Global AI Menu Component
-// This component should be mounted ONCE per page.
-// It is triggered by buttons with onclick="openGlobalAIMenu(event, unit, qIdx)"
 ---
 
-<div id="global-ai-menu-container" class="relative z-[100]">
-    <div
-        id="global-ai-menu"
-        class="hidden ai-menu-dropdown fixed z-[100] bg-card
-           rounded-2xl shadow-2xl border border-line
-           p-2 w-64 md:w-56 overflow-hidden"
-        style="display: none;"
-    >
-        <!-- Header -->
-        <div
-            class="px-3 py-2 bg-control border-b border-line -mx-2 -mt-2 mb-2 rounded-t-xl"
-        >
-            <div class="flex justify-between items-center">
-                <div>
-                    <div
-                        class="text-[10px] font-bold text-ink-muted uppercase tracking-wider"
-                    >
-                        AI Asistan
-                    </div>
-                    <div
-                        class="text-xs font-medium text-ink mt-0.5"
-                    >
-                        İşlem Seçiniz
-                    </div>
-                </div>
-                <!-- Mobile Close Icon -->
-                <button
-                    onclick="closeGlobalAIMenu()"
-                    class="md:hidden text-ink-muted "
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="w-5 h-5"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        ><path d="M18 6 6 18"></path><path d="m6 6 12 12"
-                        ></path></svg
-                    >
-                </button>
-            </div>
-        </div>
-
-        <!-- Actions -->
-        <div class="space-y-0.5">
-            <button
-                onclick="triggerGlobalAction('regenerate')"
-                class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-ink-muted hover:bg-accent-soft hover:text-accent-ink rounded-lg flex items-center gap-3 group"
-            >
-                <span
-                    class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-control group-hover:bg-accent-soft "
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        ><path
-                            d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"
-                        ></path><path d="M21 3v5h-5"></path><path
-                            d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"
-                        ></path><path d="M8 16H3v5"></path></svg
-                    >
-                </span>
-                Tekrar Oluştur
-            </button>
-            <button
-                onclick="triggerGlobalAction('longer')"
-                class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-ink-muted hover:bg-accent-soft hover:text-accent-ink rounded-lg flex items-center gap-3 group"
-            >
-                <span
-                    class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-control group-hover:bg-accent-soft "
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        ><path
-                            d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
-                        ></path><polyline points="14 2 14 8 20 8"
-                        ></polyline><line x1="16" y1="13" x2="8" y2="13"
-                        ></line><line x1="16" y1="17" x2="8" y2="17"
-                        ></line><polyline points="10 9 9 9 8 9"></polyline></svg
-                    >
-                </span>
-                Daha Detaylı Anlat
-            </button>
-            <button
-                onclick="triggerGlobalAction('shorter')"
-                class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-ink-muted hover:bg-warn-soft hover:text-warn rounded-lg flex items-center gap-3 group"
-            >
-                <span
-                    class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-control group-hover:bg-warn-soft "
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        ><path
-                            d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"
-                        ></path></svg
-                    >
-                </span>
-                Özetle / Kısalt
-            </button>
-            <button
-                onclick="triggerGlobalAction('mnemonic')"
-                class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-ink-muted hover:bg-accent-soft hover:text-accent-ink rounded-lg flex items-center gap-3 group"
-            >
-                <span
-                    class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-control group-hover:bg-accent-soft "
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        ><path
-                            d="M12 4.5a2.5 2.5 0 0 0-4.96-.46 2.5 2.5 0 0 0-1.98 3 2.5 2.5 0 0 0-1.32 3 2.5 2.5 0 0 0 0 2 2.5 2.5 0 0 0 1.32 3 2.5 2.5 0 0 0 1.98 3 2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 0-13.08Z"
-                        ></path></svg
-                    >
-                </span>
-                Hafıza İpucu
-            </button>
-            {extra.map(({ action, label, Icon }) => (
-                <button
-                    onclick={`triggerGlobalAction('${action}')`}
-                    class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-ink-muted hover:bg-accent-soft hover:text-accent-ink rounded-lg flex items-center gap-3 group"
-                >
-                    <span class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-control group-hover:bg-accent-soft ">
-                        <Simge ad={Icon} size={14} />
-                    </span>
-                    {label}
-                </button>
-            ))}
-        </div>
-
-        <div class="h-px bg-raised mx-2 my-1.5"></div>
-
-        <div class="">
-            <button
-                onclick="triggerGlobalAction('reset')"
-                class="w-full text-left px-3 py-2.5 md:py-2 text-sm md:text-xs font-medium text-ink-muted hover:bg-bad-soft hover:text-bad rounded-lg flex items-center gap-3 group"
-            >
-                <span
-                    class="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center rounded-md bg-control group-hover:bg-bad-soft "
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        ><path
-                            d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"
-                        ></path><path d="M3 3v5h5"></path></svg
-                    >
-                </span>
-                Orijinale Dön
-            </button>
-        </div>
+<dialog id="global-ai-menu" class="katman-yuzey" data-yer="orta" data-capa aria-labelledby="yz-menu-baslik" closedby="any">
+  <div class="katman-tutamac" aria-hidden="true"></div>
+  <header class="katman-baslik">
+    <div class="katman-baslik-metin">
+      <h2 id="yz-menu-baslik" class="katman-ad">Yapay zekâ ile</h2>
+      <p class="katman-bilgi">Açıklamayı yeniden yazdır</p>
     </div>
-
-    <!-- Mobile Backdrop -->
-    <div
-        id="global-ai-menu-backdrop"
-        class="hidden fixed inset-0 bg-scrim backdrop-blur-sm z-[99] md:hidden transition-opacity"
-        onclick="closeGlobalAIMenu()"
-    >
+    <button type="button" class="katman-kapat" aria-label="Kapat" onclick="closeGlobalAIMenu()">
+      <Simge ad="X" size={20} />
+    </button>
+  </header>
+  <div class="katman-govde" tabindex="-1" autofocus>
+    <div class="katman-liste" role="group" aria-label="Açıklama işlemleri">
+      {EYLEMLER.map(({ action, label, Icon }) => (
+        <button type="button" class="katman-satir" onclick={`triggerGlobalAction('${action}')`}>
+          <Simge ad={Icon} size={20} />
+          <span class="katman-satir-ad">{label}</span>
+        </button>
+      ))}
     </div>
-</div>
+    <div class="katman-liste">
+      <button type="button" class="katman-satir" onclick="triggerGlobalAction('reset')">
+        <Simge ad="RotateCcw" size={20} />
+        <span class="katman-satir-ad">Özgün metne dön</span>
+      </button>
+    </div>
+  </div>
+</dialog>
 
 <script is:inline>
-    window.activeAIContext = { unit: null, qIdx: null, triggerBtn: null };
+  window.activeAIContext = { unit: null, qIdx: null, triggerBtn: null };
 
-    window.openGlobalAIMenu = function (event, unit, qIdx) {
-        event.stopPropagation();
-        const btn = event.currentTarget;
-        window.activeAIContext = { unit, qIdx, triggerBtn: btn };
+  window.openGlobalAIMenu = function (event, unit, qIdx) {
+    event.stopPropagation();
+    const btn = event.currentTarget;
+    const menu = document.getElementById("global-ai-menu");
+    if (!menu) return;
+    // Anchor for wide screens (katman.css, @supports anchor positioning); only one button holds the name.
+    if (window.activeAIContext.triggerBtn) window.activeAIContext.triggerBtn.removeAttribute("data-katman-capa");
+    btn.setAttribute("data-katman-capa", "");
+    window.activeAIContext = { unit, qIdx, triggerBtn: btn };
+    if (!menu.open) menu.showModal();
+  };
 
-        const menu = document.getElementById("global-ai-menu");
-        const backdrop = document.getElementById("global-ai-menu-backdrop");
+  window.closeGlobalAIMenu = function () {
+    const menu = document.getElementById("global-ai-menu");
+    if (menu && menu.open) menu.close();
+  };
 
-        if (!menu) return;
-
-        // Show elements
-        menu.classList.remove("hidden");
-        menu.style.display = "block";
-
-        // Responsive positioning
-        if (window.innerWidth < 768) {
-            // Mobile: Bottom Sheet
-            backdrop.classList.remove("hidden");
-            menu.style.top = "auto";
-            menu.style.bottom = "0";
-            menu.style.left = "0";
-            menu.style.right = "0";
-            menu.style.width = "100%";
-            menu.style.borderRadius = "16px 16px 0 0";
-            menu.style.transform = "none";
-
-            // Add animation
-            menu.classList.add("animate-in", "slide-in-from-bottom");
-        } else {
-            // Desktop: Popover
-            backdrop.classList.add("hidden");
-            const rect = btn.getBoundingClientRect();
-            const scrollTop =
-                window.pageYOffset || document.documentElement.scrollTop;
-
-            // Reset styles for desktop
-            menu.style.bottom = "auto";
-            menu.style.right = "auto";
-            menu.style.width = "14rem"; // 56 * 0.25rem = 14rem
-            menu.style.borderRadius = "0.75rem";
-
-            // Calculate position (Top-Right aligned to button or Bottom-Right)
-            // Default: Open upwards (bottom of menu at top of button)
-            const menuHeight = 320; // Approx height
-
-            // If enough space above, open upwards
-            if (rect.top > menuHeight) {
-                menu.style.top = rect.top + scrollTop - menuHeight + 20 + "px"; // A bit overlapping or just above
-                // Safer: use bottom positioning relative to viewport if using fixed?
-                // If fixed, use clientRect directly.
-                menu.style.top = "auto";
-                menu.style.bottom = window.innerHeight - rect.top + 8 + "px";
-            } else {
-                // Open downwards
-                menu.style.bottom = "auto";
-                menu.style.top = rect.bottom + 8 + "px";
-            }
-
-            // Horizontal alignment: right align with button
-            const rightSpace = window.innerWidth - rect.right;
-            menu.style.left = "auto";
-            menu.style.right = rightSpace + "px";
-        }
-    };
-
-    window.closeGlobalAIMenu = function () {
-        const menu = document.getElementById("global-ai-menu");
-        const backdrop = document.getElementById("global-ai-menu-backdrop");
-        if (menu) {
-            menu.classList.add("hidden");
-            menu.style.display = "none";
-        }
-        if (backdrop) backdrop.classList.add("hidden");
-        window.activeAIContext = { unit: null, qIdx: null, triggerBtn: null };
-    };
-
-    window.triggerGlobalAction = function (action) {
-        if (!window.activeAIContext.unit) return;
-
-        const { unit, qIdx, triggerBtn } = window.activeAIContext;
-
-        // Call the main handler (defined in AISettings)
-        if (window.handleAIAction) {
-            window.handleAIAction(triggerBtn, action, unit, qIdx);
-        }
-
-        closeGlobalAIMenu();
-    };
-
-    // Close on resize to prevent positioning glitches
-    window.addEventListener("resize", () => {
-        // Only close if visible
-        const menu = document.getElementById("global-ai-menu");
-        if (menu && !menu.classList.contains("hidden")) {
-            closeGlobalAIMenu();
-        }
-    });
-
-    // Close on outside click (Desktop)
-    document.addEventListener("click", (e) => {
-        const menu = document.getElementById("global-ai-menu");
-        if (menu && !menu.classList.contains("hidden")) {
-            if (!menu.contains(e.target) && !e.target.closest(".btn-ai-menu")) {
-                closeGlobalAIMenu();
-            }
-        }
-    });
+  window.triggerGlobalAction = function (action) {
+    const { unit, qIdx, triggerBtn } = window.activeAIContext;
+    if (!unit) return;
+    window.closeGlobalAIMenu();
+    if (window.handleAIAction) window.handleAIAction(triggerBtn, action, unit, qIdx);
+  };
 </script>

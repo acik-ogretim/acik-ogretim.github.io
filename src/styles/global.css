@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./katman.css";
 @source not "../../data";
 @source not "../../docs";
 @source not "../../dist";
@@ -745,66 +746,6 @@ body {
     display: block;
 }
 
-/* Modal Components */
-.modal-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-}
-
-.modal-overlay.flex {
-    display: flex;
-}
-
-.modal-backdrop {
-    position: absolute;
-    inset: 0;
-    background-color: var(--scrim);
-    backdrop-filter: blur(4px);
-}
-
-.modal-content {
-    position: relative;
-    width: 100%;
-    max-width: 32rem;
-    background-color: var(--card-bg);
-    border-radius: 1.5rem;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
-}
-
-.modal-header {
-    padding: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.modal-body {
-    padding: 1.5rem;
-    max-height: 70vh;
-    overflow-y: auto;
-}
-
-.modal-body::-webkit-scrollbar {
-    width: 6px;
-}
-
-.modal-body::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.modal-body::-webkit-scrollbar-thumb {
-    background-color: var(--border-color-hover);
-    border-radius: 20px;
-}
-
 /* Toggle Switch Component */
 .toggle-option {
     display: flex;
@@ -854,34 +795,6 @@ body {
 
 .toggle-input:checked+.toggle-track .toggle-knob {
     transform: translateX(1.5rem);
-}
-
-/* Compact Modal Variants */
-.modal-content-compact {
-    position: relative;
-    width: 100%;
-    max-width: 25rem;
-    background-color: var(--bg-color);
-    border-radius: 1rem;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-}
-
-.modal-body-compact {
-    padding: 1rem;
-    /* Reclaimed padding */
-    max-height: 80vh;
-    overflow-y: auto;
-}
-
-.modal-body-compact select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 0.5rem center;
-    background-size: 0.75rem;
-    padding-right: 1.75rem !important;
-    appearance: none;
 }
 
 .toggle-input-small {
@@ -1012,18 +925,6 @@ body {
 
 .player-action-btn:hover {
     background-color: color-mix(in srgb, var(--primary-color) 88%, var(--text-color));
-    box-shadow: none;
-}
-
-.player-action-btn.is-stopping {
-    background-color: var(--incorrect-border);
-    color: var(--primary-color-text);
-    box-shadow: none;
-}
-
-.player-action-btn.is-stopping:hover {
-    background-color: var(--incorrect-border);
-    /* red-400 */
     box-shadow: none;
 }
 
@@ -1179,16 +1080,6 @@ button {
     }
 }
 
-/* Search panel rides on top of the keyboard (or the player bar) */
-#searchPanel {
-    bottom: var(--klavye, 0px);
-    padding-bottom: calc(6rem + env(safe-area-inset-bottom));
-}
-
-html[data-keyboard] #searchPanel {
-    padding-bottom: 0.75rem;
-}
-
 html[data-keyboard] .player-bar {
     transform: translateY(100%) !important;
 }
@@ -1203,11 +1094,6 @@ html[data-keyboard] .sohbet-yazi-alani {
 }
 
 @media (max-width: 767px) {
-    html[data-keyboard] .tartisma-sayfa {
-        padding-bottom: 1rem !important;
-        max-height: calc(var(--app-height, 100dvh) - 0.75rem);
-    }
-
     .sohbet-popup {
         height: calc(var(--app-height, 100dvh) * 0.92);
     }
@@ -1229,14 +1115,6 @@ html[data-keyboard] .sohbet-yazi-alani {
         scroll-padding-top: calc(env(safe-area-inset-top) + 76px);
     }
 
-    .player-bar #stats-container > :nth-child(2) {
-        display: none;
-    }
-
-    .player-bar #stats-container {
-        margin-right: 0.25rem;
-        padding-right: 0.25rem;
-    }
 }
 
 /*
@@ -1304,15 +1182,6 @@ html[data-keyboard] .sohbet-yazi-alani {
     }
 }
 
-.player-btn-tehlike {
-    color: var(--incorrect-border);
-}
-
-.player-btn-tehlike:hover {
-    color: var(--incorrect-border);
-    background-color: var(--incorrect-bg);
-}
-
 .player-hiz {
     display: flex;
     align-items: center;
@@ -1350,14 +1219,7 @@ html[data-keyboard] .sohbet-yazi-alani {
     }
 }
 
-/* Settings modal groups and reading size */
-.ayar-baslik {
-    padding: 0 0.25rem;
-    font-size: 0.8125rem;
-    font-weight: 700;
-    color: var(--primary-text);
-}
-
+/* Reading size */
 .yazi-dugme {
     min-height: 2.5rem;
     border-radius: 0.75rem;
@@ -1369,6 +1231,7 @@ html[data-keyboard] .sohbet-yazi-alani {
 
 .yazi-dugme[aria-pressed='true'] {
     border-color: var(--primary-color);
+    background: var(--primary-soft);
     color: var(--primary-text);
 }
 
@@ -1386,24 +1249,32 @@ html[data-uyari-kapali] #uyari-seridi {
 }
 
 .tema-secim {
+    display: flex;
+    min-width: 0;
+    min-height: 3.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 6px 4px;
+    font-size: 12px;
+    font-weight: 600;
     color: var(--text-color-muted);
     background: var(--button-bg);
 }
 
 .tema-secim[aria-pressed='true'] {
-    background: var(--primary-color);
+    background: var(--primary-soft);
     border-color: var(--primary-color);
-    color: var(--primary-color-text);
+    color: var(--text-color);
 }
 
 .theme-toggle-btn[aria-pressed='true'] {
     background-color: var(--button-bg-hover);
     box-shadow: inset 0 0 0 2px var(--primary-color);
     color: var(--primary-color);
-}
-
-#global-settings-modal [onclick^='setTheme('][aria-pressed='true'] {
-    box-shadow: 0 0 0 2px var(--primary-color);
 }
 
 /* remoteStorage widget on /yedek: stays inside its card and follows the theme */
@@ -1484,12 +1355,23 @@ html[data-uyari-kapali] #uyari-seridi {
 }
 .player-bar.visible { transform: translateY(0); }
 .player-btn-icon { border-radius: 999px; }
-.player-btn-icon.active { background-color: var(--primary-soft); color: var(--primary-text); border-color: transparent; }
+/* Toggles on the bar are neutral when on; the accent belongs to the one play/pause button (DESIGN.md §5) */
+.player-btn-icon.active { background-color: var(--button-bg-hover); color: var(--text-color); border-color: transparent; }
+.player-action-btn { border-radius: 999px; }
+.player-action-btn svg { display: block; }
+.player-action-btn[aria-pressed='true'] { background-color: var(--primary-color); color: var(--primary-color-text); }
+.oynatici-sayac { flex-shrink: 0; align-items: center; gap: 4px; height: 36px; padding: 0 10px; margin-right: 4px; border-radius: 999px; background: var(--button-bg); color: var(--text-color); font-size: 13px; font-weight: 600; line-height: 1; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.oynatici-ayrac { color: var(--text-color-muted); }
+.oynatici-dy { display: none; gap: 2px; margin-left: 4px; }
+@media (min-width: 768px) { .oynatici-dy { display: inline-flex; } }
+.oynatici-ilerleme { position: absolute; inset: auto 22px 0; height: 2px; overflow: hidden; border-radius: 999px; pointer-events: none; }
+.oynatici-ilerleme > div { width: var(--ilerleme, 0%); height: 100%; background: var(--text-color-muted); opacity: .5; transition: width .3s cubic-bezier(.2,0,0,1); }
+@media (prefers-reduced-motion: reduce) { .oynatici-ilerleme > div { transition: none; } }
 :focus-visible { outline: 3px solid var(--primary-color); outline-offset: 2px; }
 
 /* Ayarlar: tema önizlemesi (gerçek tema renklerini gösterir) ve vurgu seçimi */
 .tema-dugme { display:flex; flex-direction:column; align-items:center; gap:.375rem; padding:.625rem .25rem; border-radius:1rem; border:1px solid var(--border-color); background:var(--button-bg); color:var(--text-color-muted); font-size:.75rem; font-weight:600; }
-.tema-dugme[aria-pressed='true'] { border-color: var(--primary-color); color: var(--text-color); }
+.tema-dugme[aria-pressed='true'] { border-color: var(--primary-color); background: var(--primary-soft); color: var(--text-color); }
 .tema-ornek { position:relative; width:2.25rem; height:1.5rem; border-radius:.5rem; overflow:hidden; border:1px solid rgba(128,128,128,.35); }
 .tema-ornek i { position:absolute; inset:0; }
 .tema-ornek b { position:absolute; left:.3rem; right:.3rem; bottom:.3rem; height:.35rem; border-radius:999px; }
@@ -1505,7 +1387,6 @@ html[data-uyari-kapali] #uyari-seridi {
 .toggle-input-small, .toggle-track { background: var(--border-color-hover); }
 .toggle-input-small::after, .toggle-knob { background: #FFFFFF; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12); }
 .toggle-input-small:checked, .toggle-input:checked + .toggle-track { background: var(--primary-color); }
-.ayar-baslik { color: var(--text-color-muted); }
 
 /* ---- Ders sayfası yapısı (DESIGN.md §5, UYUM.md §3, §4, §9) ---- */
 .ders-giris { border: 1px solid var(--border-color); background: var(--card-bg); border-radius: 24px; padding: 16px; margin-bottom: 16px; }
@@ -1584,18 +1465,11 @@ html[data-uyari-kapali] #uyari-seridi {
 /* ---- Ayarlar: gruplu satırlar (pencere ve /ayarlar sayfası) ---- */
 .ayar-gruplar { display: flex; flex-direction: column; gap: 20px; }
 .ayar-gruplar > section { display: flex; flex-direction: column; gap: 8px; }
-.ayar-kart { border: 1px solid var(--border-color); border-radius: 16px; background: var(--card-bg); overflow: hidden; }
-.ayar-satir { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 56px; padding: 8px 14px; color: var(--text-color); }
-.ayar-satir + .ayar-satir { border-top: 1px solid var(--border-color); }
 .ayar-satir-dikey { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px 14px; }
 .ayar-ad { font-size: 15px; font-weight: 500; }
-.ayar-not { display: block; font-size: 12px; color: var(--text-color-muted); line-height: 1.3; }
 .ayar-eylem { text-align: left; }
-.ayar-eylem:hover { background: var(--button-bg); }
-.ayar-eylem > svg:first-child { color: var(--text-color-muted); flex-shrink: 0; }
 .ayar-secim { margin-left: auto; max-width: 55%; min-height: 40px; padding: 0 10px; border-radius: 10px; border: 1px solid var(--border-color); background: var(--button-bg); color: var(--text-color); font-size: 14px; text-overflow: ellipsis; }
 label.ayar-satir > .ayar-ad:first-child { flex: 1; min-width: 0; }
-.modal-body-compact .ayar-kart { background: var(--card-bg); }
 
 /* ---- Sekme sayfaları (Derslerim, Ara, İlerleme, Ayarlar) ---- */
 .sekme-sayfa { width: 100%; max-width: 680px; margin: 0 auto; padding: 20px 16px 32px; }
@@ -1628,7 +1502,8 @@ label.ayar-satir > .ayar-ad:first-child { flex: 1; min-width: 0; }
 .devam-dugme:active { transform: scale(.96); }
 .devam-dugme svg { margin-left: 3px; }
 @media (prefers-reduced-motion: reduce) { .devam-dugme { transition: none; } .devam-dugme:active { transform: none; } }
-#suzgec-govde:focus-visible { outline: none; }
+/* Sheet bodies take focus on open (tabindex -1) so no control shows a ring before the learner acts */
+.katman-govde:focus-visible, .katman-yuzey:focus-visible { outline: none; }
 /* Soru üst satırı sarılır: uzun sınav listesi ve konu çipi kendi satırına geçer, "202..." gibi kesilmez */
 .q-label { flex-wrap: wrap; row-gap: 6px; overflow: visible; white-space: normal; padding: 6px 0; }
 .q-label .q-cip { max-width: calc(100% - 4.5rem); }

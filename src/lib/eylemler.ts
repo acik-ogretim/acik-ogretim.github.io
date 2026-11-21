@@ -183,7 +183,7 @@ export function kisayollariBagla(): () => void {
     if (e.defaultPrevented || e.ctrlKey || e.metaKey || e.altKey) return;
     if (yaziAlani(e.target)) return;
     // Another modal (settings, chat) is open: leave the keys to it.
-    if (document.querySelector("[role='dialog'][aria-modal='true'], [data-base-ui-inert]")) return;
+    if (document.querySelector("dialog[open], [role='dialog'][aria-modal='true'], [data-base-ui-inert]")) return;
     const tus = e.key.length === 1 ? e.key.toLowerCase() : e.key;
     if (tus === MENU_EYLEMI.tus) {
       e.preventDefault();

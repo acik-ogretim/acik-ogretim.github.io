@@ -105,7 +105,10 @@ export function ChatPanel({
         }, 700);
       }}
     >
-      <header className="flex items-center gap-2 px-4 h-14 border-b shrink-0" style={{ borderColor: "var(--border-color)" }}>
+      {onClose && <div className="katman-tutamac" aria-hidden />}
+      <header
+        className={onClose ? "katman-baslik items-center border-b border-line pb-2" : "flex items-center gap-2 px-4 h-14 border-b border-line shrink-0"}
+      >
         {!onClose && (
           <a href="/" aria-label="Ana sayfa" className="shrink-0">
             <img src="/favicon.svg" alt="" width={28} height={28} />
@@ -117,9 +120,9 @@ export function ChatPanel({
               {course.name}
             </a>
           ) : (
-            <span className="block truncate text-sm font-semibold" title={course?.name}>{course ? course.name : "Ders asistanı"}</span>
+            <span className={onClose ? "katman-ad" : "block truncate text-sm font-semibold"} title={course?.name}>{course ? course.name : "Ders asistanı"}</span>
           )}
-          <span className="block truncate text-xs" style={{ color: "var(--text-color-muted)" }}>
+          <span className={onClose ? "katman-bilgi" : "block truncate text-xs text-ink-muted"}>
             {course ? `${course.universityShort || course.university} · ${course.department}` : "Bir ders adı yazarak başla"}
           </span>
         </div>
@@ -139,9 +142,9 @@ export function ChatPanel({
         />
         <SettingsDialog open={settingsOpen} onOpenChange={setSettingsOpen} />
         {onClose && (
-          <IconButton label="Kapat" onClick={onClose}>
-            <X className="size-5" aria-hidden />
-          </IconButton>
+          <button type="button" aria-label="Kapat" onClick={onClose} className="katman-kapat">
+            <X aria-hidden />
+          </button>
         )}
       </header>
       {ready && konusma !== null && (
@@ -687,33 +690,35 @@ function HistoryDialog({
         <History className="size-5" aria-hidden />
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Backdrop className="fixed inset-0 bg-scrim z-[200]" />
-        <Dialog.Popup
-          className="fixed z-[201] inset-x-0 bottom-[var(--klavye,0px)] max-h-[80dvh] flex flex-col rounded-t-2xl p-4 pb-[max(1rem,env(safe-area-inset-bottom))] md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-[28rem] md:rounded-2xl"
-          style={{ background: "var(--card-bg)", color: "var(--text-color)" }}
-        >
-          <div className="flex items-center justify-between mb-2">
-            <Dialog.Title className="text-base font-semibold">Sohbet geçmişi</Dialog.Title>
-            <Dialog.Close aria-label="Kapat" className="inline-flex size-11 items-center justify-center rounded-full" style={{ color: "var(--text-color-muted)" }}>
-              <X className="size-5" aria-hidden />
+        <Dialog.Backdrop className="katman-perde z-[200]" />
+        <Dialog.Viewport className="katman-konum z-[201]" data-yer="orta">
+        <Dialog.Popup className="katman-yuzey">
+          <div className="katman-baslik">
+            <div className="katman-baslik-metin">
+              <Dialog.Title className="katman-ad">Sohbet geçmişi</Dialog.Title>
+              <Dialog.Description className="katman-bilgi">Bu cihazda saklanır</Dialog.Description>
+            </div>
+            <Dialog.Close aria-label="Kapat" className="katman-kapat">
+              <X aria-hidden />
             </Dialog.Close>
           </div>
-          <button type="button" onClick={onNew} className="flex items-center gap-2 rounded-lg px-3 min-h-11 text-sm font-medium mb-2" style={{ background: "var(--primary-color)", color: "var(--primary-color-text)" }}>
+          <div className="katman-govde">
+          <button type="button" onClick={onNew} className="katman-dugme katman-dugme-birincil inline-flex flex-none items-center justify-center gap-2">
             <SquarePen className="size-4" aria-hidden /> Yeni sohbet
           </button>
-          {liste.length === 0 && <p className="text-sm py-3" style={{ color: "var(--text-color-muted)" }}>Henüz kayıtlı sohbet yok.</p>}
-          <ul data-base-ui-swipe-ignore="y" className="flex flex-col gap-1 overflow-y-auto overscroll-contain">
+          {liste.length === 0 && <p className="text-sm text-ink-muted">Henüz kayıtlı sohbet yok.</p>}
+          {liste.length > 0 && (
+          <ul className="katman-liste">
             {liste.map((k) => (
-              <li key={k.id || "ilk"} className="flex items-center gap-1">
+              <li key={k.id || "ilk"} className="katman-satir py-0 pe-1">
                 <button
                   type="button"
                   onClick={() => onPick(k.id)}
                   aria-current={k.id === current ? "true" : undefined}
-                  className="min-w-0 flex-1 text-left rounded-lg border px-3 py-2 min-h-11"
-                  style={{ borderColor: k.id === current ? "var(--primary-color)" : "var(--border-color)" }}
+                  className="min-w-0 flex-1 py-2 text-start"
                 >
-                  <span className="block truncate text-sm">{k.baslik}</span>
-                  {k.guncel > 0 && <span className="block text-xs" style={{ color: "var(--text-color-muted)" }}>{tarih(k.guncel)}</span>}
+                  <span className="block truncate">{k.baslik}</span>
+                  {k.guncel > 0 && <span className="katman-satir-not">{tarih(k.guncel)}{k.id === current ? " · açık" : ""}</span>}
                 </button>
                 <IconButton
                   label="Sohbeti sil"
@@ -729,7 +734,10 @@ function HistoryDialog({
               </li>
             ))}
           </ul>
+          )}
+          </div>
         </Dialog.Popup>
+        </Dialog.Viewport>
       </Dialog.Portal>
     </Dialog.Root>
   );
@@ -757,22 +765,26 @@ function SettingsDialog({ open, onOpenChange }: { open: boolean; onOpenChange: (
         <KeyRound className="size-5" aria-hidden />
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Backdrop className="fixed inset-0 bg-scrim z-[200]" />
-        <Dialog.Popup
-          className="fixed z-[201] inset-x-0 bottom-[var(--klavye,0px)] rounded-t-2xl p-4 pb-[max(1rem,env(safe-area-inset-bottom))] md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-[28rem] md:rounded-2xl"
-          style={{ background: "var(--card-bg)", color: "var(--text-color)" }}
-        >
-          <div className="flex items-center justify-between mb-2">
-            <Dialog.Title className="text-base font-semibold">Model ve anahtar</Dialog.Title>
-            <Dialog.Close aria-label="Kapat" className="inline-flex size-11 items-center justify-center rounded-full" style={{ color: "var(--text-color-muted)" }}>
-              <X className="size-5" aria-hidden />
+        <Dialog.Backdrop className="katman-perde z-[200]" />
+        <Dialog.Viewport className="katman-konum z-[201]" data-yer="orta">
+        <Dialog.Popup className="katman-yuzey">
+          <div className="katman-baslik">
+            <div className="katman-baslik-metin">
+              <Dialog.Title className="katman-ad">Model ve anahtar</Dialog.Title>
+              <Dialog.Description className="katman-bilgi">Anahtar yalnız bu tarayıcıda kalır</Dialog.Description>
+            </div>
+            <Dialog.Close aria-label="Kapat" className="katman-kapat">
+              <X aria-hidden />
             </Dialog.Close>
           </div>
-          <SaglayiciAyarlari />
-          <Dialog.Close className="mt-4 w-full rounded-lg min-h-11 font-medium" style={{ background: "var(--primary-color)", color: "var(--primary-color-text)" }}>
-            Tamam
-          </Dialog.Close>
+          <div className="katman-govde">
+            <SaglayiciAyarlari />
+          </div>
+          <div className="katman-alt">
+            <Dialog.Close className="katman-dugme katman-dugme-birincil">Tamam</Dialog.Close>
+          </div>
         </Dialog.Popup>
+        </Dialog.Viewport>
       </Dialog.Portal>
     </Dialog.Root>
   );

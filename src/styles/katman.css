@@ -1,0 +1,595 @@
+/*
+ * Ortak katman sözleşmesi (DESIGN.md §5 "Ortak katman sözleşmesi").
+ * Every overlay (bottom sheet, centered window, right drawer, menu) wears these classes, whether it is a
+ * native <dialog> opened with showModal() or a Base UI Drawer/Dialog. CSS owns the look, the motion and the
+ * scroll lock; script only opens and closes.
+ *
+ *   .katman-perde      scrim (Base UI Backdrop; native dialogs use ::backdrop)
+ *   .katman-konum      Base UI Viewport: places the surface (data-yer="orta" | "sag" from 768 px)
+ *   .katman-yuzey      the surface: phone bottom sheet 8 px off the edges, 28 px corners, glass
+ *   .katman-tutamac    grab handle (phones)
+ *   .katman-baslik     title row: .katman-ad (17/600), optional .katman-bilgi line, .katman-kapat icon button
+ *   .katman-govde      the one scrolling area
+ *   .katman-alt        bottom actions: neutral .katman-dugme + one .katman-dugme-birincil
+ *   .katman-liste      grouped rows card, rows are .katman-satir (same family as .ayar-satir)
+ *   .katman-cip        choice chip (aria-pressed)
+ */
+@layer components {
+  :root {
+    --katman-egri: cubic-bezier(0.2, 0, 0, 1);
+    --katman-ac: 300ms;
+    --katman-kapan: 150ms;
+    --katman-pay: 8px;
+    --katman-cam: color-mix(in srgb, var(--card-bg) 94%, transparent);
+  }
+
+  /* Native dialogs lock the page; Base UI locks it on its own. */
+  html:has(dialog.katman-yuzey[open]) {
+    overflow: hidden;
+  }
+
+  /* ---- Scrim ---- */
+  .katman-perde {
+    position: fixed;
+    inset: 0;
+    z-index: 150;
+    background: var(--scrim);
+    opacity: calc(1 - var(--drawer-swipe-progress, 0));
+    transition: opacity var(--katman-ac) var(--katman-egri);
+  }
+  .katman-perde[data-starting-style],
+  .katman-perde[data-ending-style] {
+    opacity: 0;
+  }
+  .katman-perde[data-ending-style] {
+    transition-duration: var(--katman-kapan);
+  }
+
+  /* ---- Placement (Base UI Viewport) ---- */
+  .katman-konum {
+    position: fixed;
+    inset: 0 0 var(--klavye, 0px);
+    z-index: 151;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: calc(env(safe-area-inset-top) + var(--katman-pay)) max(var(--katman-pay), env(safe-area-inset-right))
+      var(--katman-pay) max(var(--katman-pay), env(safe-area-inset-left));
+  }
+
+  /* ---- Surface ---- */
+  .katman-yuzey {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 32rem;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: 28px;
+    background-color: var(--katman-cam);
+    -webkit-backdrop-filter: blur(22px) saturate(180%);
+    backdrop-filter: blur(22px) saturate(180%);
+    color: var(--text-color);
+    box-shadow: 0 12px 40px rgb(0 0 0 / 0.22);
+    outline: none;
+    font-size: 15px;
+    line-height: 1.45;
+    transform: translateY(var(--drawer-swipe-movement-y, 0px));
+    transition:
+      transform var(--katman-ac) var(--katman-egri),
+      opacity var(--katman-ac) var(--katman-egri);
+  }
+  .katman-yuzey[data-starting-style],
+  .katman-yuzey[data-ending-style] {
+    transform: translateY(calc(100% + 2 * var(--katman-pay)));
+  }
+  .katman-yuzey[data-ending-style] {
+    transition-duration: var(--katman-kapan);
+  }
+  .katman-yuzey[data-swiping] {
+    transition: none;
+  }
+
+  /* Native <dialog>: the dialog itself is the surface, ::backdrop is the scrim. */
+  dialog.katman-yuzey {
+    position: fixed;
+    inset: auto max(var(--katman-pay), env(safe-area-inset-right)) calc(var(--katman-pay) + var(--klavye, 0px))
+      max(var(--katman-pay), env(safe-area-inset-left));
+    width: auto;
+    margin-inline: auto;
+    max-height: calc(var(--app-height, 100dvh) - var(--klavye, 0px) - env(safe-area-inset-top) - 3 * var(--katman-pay));
+    transition:
+      transform var(--katman-ac) var(--katman-egri),
+      opacity var(--katman-ac) var(--katman-egri),
+      display var(--katman-ac) allow-discrete,
+      overlay var(--katman-ac) allow-discrete;
+  }
+  dialog.katman-yuzey:not([open]) {
+    display: none;
+    transform: translateY(calc(100% + 2 * var(--katman-pay)));
+    transition-duration: var(--katman-kapan);
+  }
+  @starting-style {
+    dialog.katman-yuzey[open] {
+      transform: translateY(calc(100% + 2 * var(--katman-pay)));
+    }
+  }
+  dialog.katman-yuzey[data-surukle] {
+    transform: translateY(var(--surukle, 0px));
+    transition: none;
+  }
+  dialog.katman-yuzey::backdrop {
+    background: var(--scrim, rgb(0 0 0 / 0.35));
+    opacity: 1;
+    transition:
+      opacity var(--katman-ac) var(--katman-egri),
+      display var(--katman-ac) allow-discrete,
+      overlay var(--katman-ac) allow-discrete;
+  }
+  dialog.katman-yuzey:not([open])::backdrop {
+    opacity: 0;
+    transition-duration: var(--katman-kapan);
+  }
+  @starting-style {
+    dialog.katman-yuzey[open]::backdrop {
+      opacity: 0;
+    }
+  }
+
+  /* From 768 px: centered window (orta) or right drawer (sag). */
+  @media (min-width: 768px) {
+    .katman-konum[data-yer='orta'] {
+      align-items: center;
+      padding: 24px;
+    }
+    .katman-konum[data-yer='sag'] {
+      align-items: stretch;
+      justify-content: flex-end;
+    }
+    [data-yer='orta'] > .katman-yuzey,
+    .katman-yuzey[data-yer='orta'] {
+      max-width: 36rem;
+      transform: none;
+    }
+    [data-yer='orta'] > .katman-yuzey[data-starting-style],
+    [data-yer='orta'] > .katman-yuzey[data-ending-style],
+    dialog.katman-yuzey[data-yer='orta']:not([open]) {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    [data-yer='sag'] > .katman-yuzey,
+    .katman-yuzey[data-yer='sag'] {
+      max-width: 420px;
+      height: 100%;
+      transform: translateX(var(--drawer-swipe-movement-x, 0px));
+    }
+    [data-yer='sag'] > .katman-yuzey[data-starting-style],
+    [data-yer='sag'] > .katman-yuzey[data-ending-style],
+    dialog.katman-yuzey[data-yer='sag']:not([open]) {
+      transform: translateX(calc(100% + 2 * var(--katman-pay)));
+    }
+    dialog.katman-yuzey[data-yer='orta'] {
+      inset: 0;
+      margin: auto;
+      width: calc(100% - 48px);
+      height: fit-content;
+      max-height: calc(100dvh - 48px);
+    }
+    dialog.katman-yuzey[data-yer='sag'] {
+      inset: var(--katman-pay) var(--katman-pay) var(--katman-pay) auto;
+      width: min(420px, calc(100% - 2 * var(--katman-pay)));
+      height: auto;
+      max-height: none;
+    }
+    @starting-style {
+      dialog.katman-yuzey[data-yer='orta'][open] {
+        opacity: 0;
+        transform: scale(0.96);
+      }
+      dialog.katman-yuzey[data-yer='sag'][open] {
+        transform: translateX(calc(100% + 2 * var(--katman-pay)));
+      }
+    }
+    .katman-tutamac {
+      display: none;
+    }
+  }
+
+  /* Anchored menu window (dialog[data-capa]): from 768 px it opens under the button that carries
+     [data-katman-capa]; without anchor positioning it stays the centered window above. */
+  @supports (position-anchor: --a) {
+    @media (min-width: 768px) {
+      [data-katman-capa] {
+        anchor-name: --katman-capa;
+      }
+      dialog.katman-yuzey[data-capa] {
+        position-anchor: --katman-capa;
+        inset: auto;
+        top: calc(anchor(bottom) + 6px);
+        right: anchor(right);
+        width: 18rem;
+        height: auto;
+        max-height: calc(100dvh - 2rem);
+        margin: 0;
+        border-radius: 20px;
+        transform-origin: top right;
+        position-try-fallbacks: flip-block;
+      }
+      dialog.katman-yuzey[data-capa]::backdrop {
+        background: transparent;
+      }
+    }
+  }
+
+  /* ---- Anatomy ---- */
+  .katman-tutamac {
+    flex-shrink: 0;
+    width: 36px;
+    height: 5px;
+    margin: 8px auto 0;
+    border-radius: 999px;
+    background: var(--border-color-hover);
+    touch-action: none;
+  }
+  .katman-baslik {
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 6px 8px 4px 20px;
+    touch-action: none;
+  }
+  .katman-baslik-metin {
+    flex: 1;
+    min-width: 0;
+    padding-block: 11px 2px;
+  }
+  .katman-ad {
+    display: block;
+    margin: 0;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .katman-bilgi {
+    display: block;
+    margin: 2px 0 0;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.35;
+    color: var(--text-color-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .katman-kapat {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 999px;
+    color: var(--text-color-muted);
+    transition:
+      background-color 0.2s var(--katman-egri),
+      transform 0.12s var(--katman-egri);
+  }
+  .katman-kapat:hover {
+    background: var(--button-bg-hover);
+    color: var(--text-color);
+  }
+  .katman-kapat:active {
+    transform: scale(0.96);
+  }
+  .katman-kapat svg {
+    width: 20px;
+    height: 20px;
+  }
+  .katman-metin-dugme {
+    flex-shrink: 0;
+    min-height: 44px;
+    padding: 0 12px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--primary-text);
+  }
+  .katman-metin-dugme:hover {
+    background: var(--button-bg-hover);
+  }
+  .katman-govde {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 8px 16px 16px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    outline: none;
+  }
+  .katman-govde:last-child {
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+  }
+  .katman-alt {
+    flex-shrink: 0;
+    display: flex;
+    gap: 8px;
+    padding: 12px 16px max(12px, env(safe-area-inset-bottom));
+    border-top: 1px solid var(--border-color);
+  }
+  .katman-dugme {
+    flex: 1;
+    min-width: 0;
+    min-height: 48px;
+    padding: 0 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition:
+      background-color 0.2s var(--katman-egri),
+      transform 0.12s var(--katman-egri);
+  }
+  .katman-dugme:hover {
+    background: var(--button-bg-hover);
+  }
+  .katman-dugme:active {
+    transform: scale(0.96);
+  }
+  .katman-dugme-birincil {
+    flex: 1.6;
+    border-color: transparent;
+    background: var(--primary-color);
+    color: var(--primary-color-text);
+  }
+  .katman-dugme-birincil:hover {
+    background: color-mix(in srgb, var(--primary-color) 90%, var(--text-color));
+  }
+
+  /* Group label inside a sheet (same as the settings group labels) */
+  .katman-grup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .katman-grup-ad,
+  .ayar-baslik {
+    margin: 0;
+    padding: 0 4px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--text-color-muted);
+  }
+
+  /* Rows: settings rows and sheet lists are one family */
+  .katman-liste,
+  .ayar-kart {
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    background: var(--card-bg);
+    overflow: hidden;
+  }
+  .katman-satir,
+  .ayar-satir {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 52px;
+    padding: 8px 14px;
+    color: var(--text-color);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.35;
+    text-align: start;
+  }
+  :is(.katman-satir, .ayar-satir) + :is(.katman-satir, .ayar-satir) {
+    border-top: 1px solid var(--border-color);
+  }
+  .katman-satir > svg:first-child,
+  .ayar-eylem > svg:first-child {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: var(--text-color-muted);
+  }
+  button.katman-satir:hover,
+  a.katman-satir:hover,
+  .ayar-eylem:hover {
+    background: var(--button-bg);
+  }
+  .katman-satir[aria-current] {
+    background: var(--primary-soft);
+  }
+  .katman-satir-ad {
+    flex: 1;
+    min-width: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .katman-satir-not,
+  .ayar-not {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-color-muted);
+    line-height: 1.3;
+  }
+  .katman-satir-sag {
+    flex-shrink: 0;
+    font-size: 13px;
+    color: var(--text-color-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Choice chip */
+  .katman-cip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    max-width: 100%;
+    min-height: 44px;
+    padding: 0 16px;
+    border-radius: 999px;
+    background: var(--button-bg);
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s var(--katman-egri);
+  }
+  .katman-cip > span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .katman-cip:hover {
+    background: var(--button-bg-hover);
+  }
+  .katman-cip[aria-pressed='true'] {
+    background: var(--primary-soft);
+    color: var(--primary-text);
+  }
+  .katman-ciplar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* ---- Dropdown (native popover): small menus anchored to their button ---- */
+  .katman-acilir {
+    position: fixed;
+    inset: auto;
+    top: calc(env(safe-area-inset-top) + 4rem);
+    right: max(var(--katman-pay), env(safe-area-inset-right));
+    width: min(20rem, calc(100vw - 2 * var(--katman-pay)));
+    max-height: calc(100dvh - 5rem);
+    margin: 0;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    background-color: var(--katman-cam);
+    -webkit-backdrop-filter: blur(22px) saturate(180%);
+    backdrop-filter: blur(22px) saturate(180%);
+    color: var(--text-color);
+    box-shadow: 0 12px 40px rgb(0 0 0 / 0.22);
+    transform-origin: top right;
+    transition:
+      opacity 200ms var(--katman-egri),
+      transform 200ms var(--katman-egri),
+      display 200ms allow-discrete,
+      overlay 200ms allow-discrete;
+  }
+  .katman-acilir:not(:popover-open) {
+    display: none;
+    opacity: 0;
+    transform: scale(0.96);
+    transition-duration: var(--katman-kapan);
+  }
+  @starting-style {
+    .katman-acilir:popover-open {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+  }
+  @supports (position-anchor: --a) {
+    #mobileMenuBtn {
+      anchor-name: --site-menu;
+    }
+    #mobileMenu {
+      position-anchor: --site-menu;
+      top: calc(anchor(bottom) + 6px);
+      right: calc(anchor(right) - 4px);
+    }
+  }
+  .menu-kapat-ikon,
+  html:has(#mobileMenu:popover-open) .menu-ac-ikon {
+    display: none;
+  }
+  html:has(#mobileMenu:popover-open) .menu-kapat-ikon {
+    display: inline;
+  }
+
+  /* Table of contents rows (Icindekiler.tsx) */
+  .ic-unite + .ic-unite {
+    border-top: 1px solid var(--border-color);
+  }
+  .ic-ac {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    flex-shrink: 0;
+    color: var(--text-color-muted);
+  }
+  .ic-ac svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s var(--katman-egri);
+  }
+  .ic-ac[aria-expanded='true'] svg {
+    transform: rotate(90deg);
+  }
+  .ic-konular {
+    padding: 4px;
+    border-top: 1px solid var(--border-color);
+  }
+  .ic-konu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 44px;
+    padding: 4px 8px 4px calc(12px + var(--derinlik, 0) * 14px);
+    border-radius: 10px;
+    font-size: 14px;
+    text-align: start;
+  }
+  .ic-konu:hover {
+    background: var(--button-bg);
+  }
+  .ic-konu-no {
+    flex-shrink: 0;
+    font-size: 12px;
+    color: var(--text-color-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .katman-perde,
+    .katman-yuzey,
+    dialog.katman-yuzey,
+    dialog.katman-yuzey::backdrop,
+    .katman-acilir,
+    .katman-kapat,
+    .katman-dugme,
+    .katman-cip,
+    .ic-ac svg {
+      transition: none;
+    }
+    .katman-kapat:active,
+    .katman-dugme:active {
+      transform: none;
+    }
+  }
+}

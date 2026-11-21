@@ -88,7 +88,6 @@ export default function Tur() {
   if (adim === null) return null;
   const a = ADIMLAR[adim];
   const son = adim === ADIMLAR.length - 1;
-  const dugme = "h-11 rounded-lg px-4 text-sm font-semibold active:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary-color)]";
 
   return (
     <div className="fixed inset-0 z-[200]" role="presentation">
@@ -111,37 +110,31 @@ export default function Tur() {
         ref={kart}
         role="dialog"
         aria-label={`İpucu turu, adım ${adim + 1} / ${ADIMLAR.length}`}
-        className="fixed left-1/2 w-[min(22rem,calc(100vw-1.5rem))] -translate-x-1/2 rounded-2xl border border-theme p-4 shadow-2xl"
-        style={{
-          bottom: "calc(5rem + env(safe-area-inset-bottom) + var(--klavye, 0px))",
-          background: "var(--card-bg)",
-          color: "var(--text-color)",
-        }}
+        className="katman-yuzey fixed left-1/2 z-[1] w-[min(22rem,calc(100vw-1.5rem))] -translate-x-1/2"
+        // CSS-degiskeni: sits above the player bar and the on-screen keyboard
+        style={{ bottom: "calc(5rem + env(safe-area-inset-bottom) + var(--klavye, 0px))" }}
       >
-        <p className="text-xs text-muted-theme">
-          {adim + 1} / {ADIMLAR.length}
-        </p>
-        <h2 className="mt-1 line-clamp-1 text-base font-semibold">{a.baslik}</h2>
-        <p className="mt-1 line-clamp-2 text-sm text-muted-theme">{a.metin}</p>
-        <div className="mt-3 flex items-center justify-between gap-2">
-          <button type="button" onClick={bitir} className={`${dugme} text-muted-theme`}>
+        <div className="katman-baslik pe-5">
+          <div className="katman-baslik-metin">
+            <h2 className="katman-ad">{a.baslik}</h2>
+            <p className="katman-bilgi tabular-nums">
+              Adım {adim + 1} / {ADIMLAR.length}
+            </p>
+          </div>
+        </div>
+        <p className="line-clamp-3 px-5 text-[15px] text-ink-muted">{a.metin}</p>
+        <div className="katman-alt mt-3 border-t-0 pb-4">
+          <button type="button" onClick={bitir} className="katman-dugme flex-none border-transparent bg-transparent text-ink-muted">
             Atla
           </button>
-          <div className="flex gap-2">
-            {adim > 0 && (
-              <button type="button" onClick={() => setAdim(adim - 1)} className={`${dugme} border border-theme`}>
-                Geri
-              </button>
-            )}
-            <button
-              type="button"
-              data-ilk=""
-              onClick={() => (son ? bitir() : setAdim(adim + 1))}
-              className={`${dugme} bg-[var(--primary-color)] text-[var(--primary-color-text)]`}
-            >
-              {son ? "Bitti" : "İleri"}
+          {adim > 0 && (
+            <button type="button" onClick={() => setAdim(adim - 1)} className="katman-dugme">
+              Geri
             </button>
-          </div>
+          )}
+          <button type="button" data-ilk="" onClick={() => (son ? bitir() : setAdim(adim + 1))} className="katman-dugme katman-dugme-birincil">
+            {son ? "Bitti" : "İleri"}
+          </button>
         </div>
       </div>
     </div>

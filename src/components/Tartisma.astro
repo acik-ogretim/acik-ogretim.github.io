@@ -4,42 +4,39 @@
 // reports and talk stay attached to that question. giscus loads only when the learner opens the sheet.
 ---
 
-<div id="tartisma-arka" class="fixed inset-0 z-[180] bg-scrim hidden" aria-hidden="true"></div>
-<section
-  id="tartisma-sayfa"
-  role="dialog"
-  aria-modal="true"
-  aria-labelledby="tartisma-baslik"
-  class="tartisma-sayfa fixed z-[181] inset-x-0 bottom-[var(--klavye,0px)] max-h-[85dvh] hidden flex-col rounded-t-2xl bg-card-theme border-t border-theme shadow-2xl md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-[40rem] md:rounded-2xl md:border"
-  style="padding-bottom: max(1rem, env(safe-area-inset-bottom));"
->
-  <header class="flex items-center gap-2 px-4 pt-3 pb-2 border-b border-theme">
-    <h2 id="tartisma-baslik" class="flex-1 text-sm font-bold text-theme line-clamp-2">Soruyu tartış</h2>
-    <a
-      id="tartisma-github"
-      href="https://github.com/acik-ogretim/acik-ogretim.github.io/discussions"
-      target="_blank"
-      rel="noopener"
-      class="text-xs font-semibold text-accent-ink hover:underline"
-    >GitHub'da aç</a>
-    <button id="tartisma-kapat" type="button" class="w-11 h-11 grid place-items-center rounded-lg text-muted-theme hover:text-theme" aria-label="Kapat">
-      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+<dialog id="tartisma-sayfa" class="katman-yuzey tartisma-sayfa" data-yer="orta" aria-labelledby="tartisma-baslik" closedby="any">
+  <div class="katman-tutamac" aria-hidden="true"></div>
+  <header class="katman-baslik">
+    <div class="katman-baslik-metin">
+      <h2 id="tartisma-baslik" class="katman-ad">Soruyu tartış</h2>
+      <p class="katman-bilgi">Bildirim ve yorum için GitHub hesabıyla giriş gerekir</p>
+    </div>
+    <button id="tartisma-kapat" type="button" class="katman-kapat" aria-label="Kapat">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
     </button>
   </header>
-  <div id="bildir-ders" class="hidden flex-wrap gap-2 px-4 pt-3">
-    <button type="button" data-bildir="ders-hatali" class="min-h-11 px-3 rounded-lg border border-theme text-sm font-semibold hover:border-accent hover:text-accent-ink">Ders hatalı</button>
-    <button type="button" data-bildir="ders-eksik" class="min-h-11 px-3 rounded-lg border border-theme text-sm font-semibold hover:border-accent hover:text-accent-ink">Ders eksik</button>
-    <button type="button" data-bildir="bolum-hatali" class="min-h-11 px-3 rounded-lg border border-theme text-sm font-semibold hover:border-accent hover:text-accent-ink">Bölüm hatalı</button>
-    <button type="button" data-bildir="bolum-eksik" class="min-h-11 px-3 rounded-lg border border-theme text-sm font-semibold hover:border-accent hover:text-accent-ink">Bölüm eksik</button>
+  <div class="katman-govde" tabindex="-1" autofocus>
+    <section class="katman-grup" aria-labelledby="bildir-baslik">
+      <h3 id="bildir-baslik" class="katman-grup-ad">Hata bildir</h3>
+      <div id="bildir-ders" class="katman-ciplar" hidden>
+        <button type="button" data-bildir="ders-hatali" class="katman-cip">Ders hatalı</button>
+        <button type="button" data-bildir="ders-eksik" class="katman-cip">Ders eksik</button>
+        <button type="button" data-bildir="bolum-hatali" class="katman-cip">Bölüm hatalı</button>
+        <button type="button" data-bildir="bolum-eksik" class="katman-cip">Bölüm eksik</button>
+      </div>
+      <div id="bildir-soru" class="katman-ciplar">
+        <button type="button" data-bildir="soru" class="katman-cip">Soru hatalı</button>
+        <button type="button" data-bildir="aciklama" class="katman-cip">Açıklama hatalı</button>
+        <button type="button" data-bildir="paylas" class="katman-cip">Açıklamamı paylaş</button>
+      </div>
+    </section>
+    <section class="katman-grup" aria-labelledby="tartis-baslik">
+      <h3 id="tartis-baslik" class="katman-grup-ad">Yorumlar</h3>
+      <div id="tartisma-alan" class="min-h-48"></div>
+      <a id="tartisma-github" href="https://github.com/acik-ogretim/acik-ogretim.github.io/discussions" target="_blank" rel="noopener" class="metin-dugme self-start inline-flex items-center">GitHub'da aç</a>
+    </section>
   </div>
-  <div id="bildir-soru" class="flex flex-wrap gap-2 px-4 pt-3">
-    <button type="button" data-bildir="soru" class="min-h-11 px-3 rounded-lg border border-theme text-sm font-semibold hover:border-accent hover:text-accent-ink">Soru hatalı</button>
-    <button type="button" data-bildir="aciklama" class="min-h-11 px-3 rounded-lg border border-theme text-sm font-semibold hover:border-accent hover:text-accent-ink">Açıklama hatalı</button>
-    <button type="button" data-bildir="paylas" class="min-h-11 px-3 rounded-lg border border-theme text-sm font-semibold hover:border-accent hover:text-accent-ink">Açıklamamı paylaş</button>
-  </div>
-  <p class="px-4 pt-2 text-xs text-muted-theme">Bildirim ve yorum için GitHub hesabıyla giriş gerekir.</p>
-  <div id="tartisma-alan" class="flex-1 overflow-y-auto px-4 pt-2 min-h-[12rem]"></div>
-</section>
+</dialog>
 
 <script>
   const GISCUS = {
@@ -49,21 +46,20 @@
     categoryId: "DIC_kwDOQzwIoc4C0tAm",
   } as const;
 
-  const arka = document.getElementById("tartisma-arka");
   const sayfa = document.getElementById("tartisma-sayfa");
   const alan = document.getElementById("tartisma-alan");
   const baslik = document.getElementById("tartisma-baslik");
 
+  // giscus has light and dark; sepia reads best on light
   function tema(): string {
-    return document.documentElement.classList.contains("dark") ? "dark" : "light";
+    return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
   }
 
   function kapat(): void {
-    arka?.classList.add("hidden");
-    sayfa?.classList.add("hidden");
-    sayfa?.classList.remove("flex");
-    if (alan) alan.replaceChildren();
+    if (sayfa instanceof HTMLDialogElement && sayfa.open) sayfa.close();
   }
+  // Every way of closing (button, Esc, scrim) ends here: drop the giscus frame
+  sayfa?.addEventListener("close", () => alan?.replaceChildren());
 
   let aktif = { terim: "", etiket: "", icerik: "" };
 
@@ -108,11 +104,11 @@
   function ac(terim: string, etiket: string, icerik = ""): void {
     aktif = { terim, etiket, icerik };
     const ders = !icerik;
-    document.getElementById("bildir-ders")?.classList.toggle("hidden", !ders);
-    document.getElementById("bildir-ders")?.classList.toggle("flex", ders);
-    document.getElementById("bildir-soru")?.classList.toggle("hidden", ders);
-    document.getElementById("bildir-soru")?.classList.toggle("flex", !ders);
-    if (!sayfa || !alan || !arka) return;
+    const dersKip = document.getElementById("bildir-ders");
+    const soruKip = document.getElementById("bildir-soru");
+    if (dersKip) dersKip.hidden = !ders;
+    if (soruKip) soruKip.hidden = ders;
+    if (!(sayfa instanceof HTMLDialogElement) || !alan) return;
     if (baslik) baslik.textContent = etiket;
     alan.replaceChildren();
     const s = document.createElement("script");
@@ -136,10 +132,7 @@
     };
     for (const [k, v] of Object.entries(veri)) s.setAttribute(`data-${k}`, v);
     alan.appendChild(s);
-    arka.classList.remove("hidden");
-    sayfa.classList.remove("hidden");
-    sayfa.classList.add("flex");
-    document.getElementById("tartisma-kapat")?.focus();
+    if (!sayfa.open) sayfa.showModal();
   }
 
   document.addEventListener("click", (e) => {
@@ -148,9 +141,5 @@
     e.preventDefault();
     ac(hedef.dataset.tartisma ?? "", hedef.dataset.tartismaEtiket ?? "Soruyu tartış", hedef.dataset.tartismaIcerik ?? "");
   });
-  arka?.addEventListener("click", kapat);
   document.getElementById("tartisma-kapat")?.addEventListener("click", kapat);
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && sayfa && !sayfa.classList.contains("hidden")) kapat();
-  });
 </script>

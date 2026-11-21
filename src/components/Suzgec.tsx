@@ -20,7 +20,6 @@ import {
 export const SUZGEC_ACMA_OLAYI = "suzgec:ac";
 
 type Oynatici = { syncSettings?: () => void };
-const odak = "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary-color)]";
 
 /** Every question card on the page, read from its data attributes. */
 function kartlariOku(): SuzulecekSoru[] {
@@ -43,24 +42,17 @@ function ilerlemeOku(ders: string): Ilerleme {
 
 function Cip({ secili, onClick, children }: { secili: boolean; onClick: () => void; children: ReactNode }) {
   return (
-    <button
-      type="button"
-      aria-pressed={secili}
-      onClick={onClick}
-      className={`inline-flex min-h-11 max-w-full items-center rounded-full px-4 text-sm font-semibold transition-colors duration-200 motion-reduce:transition-none ${odak} ${
-        secili ? "bg-accent-soft text-accent-ink" : "bg-control text-ink"
-      }`}
-    >
-      <span className="truncate">{children}</span>
+    <button type="button" aria-pressed={secili} onClick={onClick} className="katman-cip">
+      <span>{children}</span>
     </button>
   );
 }
 
 function Grup({ baslik, children }: { baslik: string; children: ReactNode }) {
   return (
-    <section aria-label={baslik} className="flex flex-col gap-2">
-      <h3 className="px-0.5 text-[13px] font-semibold text-ink-muted">{baslik}</h3>
-      <div className="flex flex-wrap gap-2">{children}</div>
+    <section aria-label={baslik} className="katman-grup">
+      <h3 className="katman-grup-ad">{baslik}</h3>
+      <div className="katman-ciplar">{children}</div>
     </section>
   );
 }
@@ -105,37 +97,22 @@ export default function Suzgec({ ders }: { ders: string }) {
   return (
     <Drawer.Root open={acik} onOpenChange={setAcik} swipeDirection="down">
       <Drawer.Portal>
-        <Drawer.Backdrop className="fixed inset-0 z-[150] bg-scrim opacity-[calc(1-var(--drawer-swipe-progress))] transition-opacity duration-300 data-starting-style:opacity-0 data-ending-style:opacity-0 motion-reduce:transition-none" />
-        <Drawer.Viewport
-          className="fixed inset-x-0 top-0 z-[151] flex items-end justify-center px-2 pb-2 md:items-stretch md:justify-end md:p-2"
-          style={{ bottom: "var(--klavye, 0px)" }}
-        >
-          <Drawer.Popup
-            initialFocus={() => document.getElementById("suzgec-govde") ?? true}
-            className="flex w-full max-w-lg flex-col overflow-hidden rounded-[28px] border border-line bg-glass text-ink shadow-2xl outline-none backdrop-blur-[22px] transition-transform duration-300 ease-[cubic-bezier(0.2,0,0,1)] motion-reduce:transition-none
-              max-md:[transform:translateY(var(--drawer-swipe-movement-y))] max-md:data-starting-style:[transform:translateY(110%)] max-md:data-ending-style:[transform:translateY(110%)]
-              md:h-full md:max-w-[420px] md:[transform:none] md:data-starting-style:[transform:translateX(110%)] md:data-ending-style:[transform:translateX(110%)]"
-            style={{ maxHeight: "calc(var(--app-height, 100dvh) - 1rem)", WebkitBackdropFilter: "blur(22px) saturate(180%)" }}
-          >
-            <div className="mx-auto mt-2 h-1 w-10 shrink-0 rounded-full bg-[var(--border-color-hover)] md:hidden" aria-hidden />
-            <div className="flex shrink-0 items-start gap-2 px-4 pt-2 md:pt-4">
-              <div className="min-w-0 flex-1 pt-1.5">
-                <Drawer.Title className="truncate text-[17px] font-bold">Süzgeç</Drawer.Title>
-                <Drawer.Description className="truncate text-[13px] text-ink-muted" aria-live="polite">
+        <Drawer.Backdrop className="katman-perde" />
+        <Drawer.Viewport className="katman-konum" data-yer="sag">
+          <Drawer.Popup initialFocus={() => document.getElementById("suzgec-govde") ?? true} className="katman-yuzey">
+            <div className="katman-tutamac" aria-hidden />
+            <div className="katman-baslik">
+              <div className="katman-baslik-metin">
+                <Drawer.Title className="katman-ad">Süzgeç</Drawer.Title>
+                <Drawer.Description className="katman-bilgi" aria-live="polite">
                   Seçime uyan soru: <span className="tabular-nums">{onizleme}</span> / <span className="tabular-nums">{sorular.length}</span>
                 </Drawer.Description>
               </div>
-              <button
-                id="suzgec-kapat"
-                type="button"
-                aria-label="Kapat"
-                onClick={() => setAcik(false)}
-                className={`grid size-11 shrink-0 place-items-center rounded-full text-ink-muted active:bg-raised ${odak}`}
-              >
-                <X className="size-5" aria-hidden />
+              <button id="suzgec-kapat" type="button" aria-label="Kapat" onClick={() => setAcik(false)} className="katman-kapat">
+                <X aria-hidden />
               </button>
             </div>
-            <div id="suzgec-govde" tabIndex={-1} data-base-ui-swipe-ignore="y" className="flex min-h-0 flex-1 flex-col gap-5 overflow-y-auto overscroll-contain px-4 pb-4 pt-3 outline-none">
+            <div id="suzgec-govde" tabIndex={-1} data-base-ui-swipe-ignore="y" className="katman-govde">
               <Grup baslik="Soru türü">
                 <Cip secili={taslak.filterIncorrect} onClick={() => degistir({ filterIncorrect: !taslak.filterIncorrect })}>
                   Yanlışlarım · {yanlisSayisi}
@@ -192,19 +169,11 @@ export default function Suzgec({ ders }: { ders: string }) {
                 </Grup>
               )}
             </div>
-            <div className="flex shrink-0 gap-2 border-t border-line px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
-              <button
-                type="button"
-                onClick={() => setTaslak({ ...VARSAYILAN_SUZGEC })}
-                className={`h-12 flex-1 rounded-full border border-line bg-card text-[15px] font-semibold text-ink active:scale-[0.96] motion-reduce:transform-none ${odak}`}
-              >
+            <div className="katman-alt">
+              <button type="button" onClick={() => setTaslak({ ...VARSAYILAN_SUZGEC })} className="katman-dugme">
                 Sıfırla
               </button>
-              <button
-                type="button"
-                onClick={uygula}
-                className={`h-12 flex-[1.6] rounded-full bg-accent text-[15px] font-semibold text-on-accent active:scale-[0.96] motion-reduce:transform-none ${odak}`}
-              >
+              <button type="button" onClick={uygula} className="katman-dugme katman-dugme-birincil">
                 Uygula
               </button>
             </div>

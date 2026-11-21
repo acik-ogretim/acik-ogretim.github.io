@@ -58,17 +58,9 @@ export default function SohbetCekmece({ courseKey, tetikSinifi = "btn-secondary"
         Derse sor
       </Drawer.Trigger>
       <Drawer.Portal keepMounted={opened}>
-        <Drawer.Backdrop className="fixed inset-0 z-[150] bg-page opacity-[calc(0.5*(1-var(--drawer-swipe-progress)))] transition-opacity duration-[400ms] data-starting-style:opacity-0 data-ending-style:opacity-0" />
-        <Drawer.Viewport className="sohbet-gorunum fixed inset-x-0 top-0 bottom-[var(--klavye,0px)] z-[151] flex items-end justify-center md:bottom-0 md:items-stretch md:justify-end">
-          <Drawer.Popup
-            className="sohbet-popup flex w-full h-[92dvh] rounded-t-2xl overflow-hidden outline-none shadow-2xl
-              [transform:translateY(var(--drawer-swipe-movement-y))] transition-transform duration-[400ms] ease-[cubic-bezier(0.32,0.72,0,1)]
-              data-starting-style:[transform:translateY(100%)] data-ending-style:[transform:translateY(100%)]
-              md:h-full md:w-[28rem] md:rounded-none md:rounded-l-2xl
-              md:[transform:translateX(var(--drawer-swipe-movement-x))]
-              md:data-starting-style:[transform:translateX(100%)] md:data-ending-style:[transform:translateX(100%)]"
-            style={{ background: "var(--bg-color)", color: "var(--text-color)" }}
-          >
+        <Drawer.Backdrop className="katman-perde" />
+        <Drawer.Viewport className="katman-konum sohbet-gorunum" data-yer="sag">
+          <Drawer.Popup className="katman-yuzey sohbet-popup">
             <Drawer.Title className="sr-only">Ders asistanı</Drawer.Title>
             <Drawer.Content className="flex-1 min-w-0 min-h-0">
               {opened && (

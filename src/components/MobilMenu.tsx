@@ -30,6 +30,7 @@ import {
   Minus,
   Pencil,
   Plus,
+  X,
 } from "lucide-react";
 import { KONUM_ISTE_OLAYI, SORU_KONUMU_OLAYI, konumMetni, type SoruKonumu } from "../lib/ders-olaylari";
 import { useEffect, useRef, useState, type ReactNode } from "react";
@@ -66,7 +67,7 @@ function SimgeDugmesi({ etiket, onClick, children }: { etiket: string; onClick: 
       aria-label={etiket}
       title={etiket}
       onClick={onClick}
-      className={`size-11 shrink-0 grid place-items-center rounded-lg text-muted-theme active:bg-[var(--button-bg-hover)] ${odak}`}
+      className="katman-kapat"
     >
       {children}
     </button>
@@ -91,17 +92,17 @@ function Kutu({ e, onClick, ilk, rozet }: KutuProps) {
       type="button"
       onClick={onClick}
       {...(ilk ? { "data-ilk": "" } : {})}
-      className={`relative flex min-h-20 min-w-0 flex-col items-center justify-center gap-1.5 rounded-xl border border-theme bg-[var(--button-bg)] px-1 py-2 text-theme transition-transform active:scale-[0.97] motion-reduce:transition-none ${odak}`}
+      className={`relative flex min-h-20 min-w-0 flex-col items-center justify-center gap-1.5 rounded-2xl border border-line bg-control px-1 py-2 text-ink transition-transform hover:bg-raised active:scale-[0.96] motion-reduce:transition-none ${odak}`}
     >
       <Simge e={e} className="size-6" />
       <span className="flex max-w-full items-center justify-center gap-1">
-        <span className="line-clamp-2 text-center text-[11px] font-medium leading-tight sm:text-xs">{e.etiket}</span>
+        <span className="line-clamp-2 text-center text-[12px] font-medium leading-tight">{e.etiket}</span>
         {e.kisayol && (
-          <kbd className="hidden shrink-0 rounded border border-theme px-1 font-sans text-[10px] text-muted-theme md:inline">{e.kisayol}</kbd>
+          <kbd className="hidden shrink-0 rounded border border-line px-1 font-sans text-[10px] text-ink-muted md:inline">{e.kisayol}</kbd>
         )}
       </span>
       {rozet === "ekle" && (
-        <span className="absolute -right-1 -top-1 grid size-5 place-items-center rounded-full bg-[var(--primary-color)] text-[var(--primary-color-text)]" aria-hidden>
+        <span className="absolute -right-1 -top-1 grid size-5 place-items-center rounded-full bg-accent text-on-accent" aria-hidden>
           <Plus className="size-3.5" />
         </span>
       )}
@@ -111,12 +112,12 @@ function Kutu({ e, onClick, ilk, rozet }: KutuProps) {
 
 function SiraSatiri({ e, i, n, tasi, cikar }: { e: Eylem; i: number; n: number; tasi: (yon: -1 | 1) => void; cikar: () => void }) {
   const { attributes, listeners, setNodeRef, setActivatorNodeRef, transform, transition, isDragging } = useSortable({ id: e.id });
-  const dugme = `grid size-9 shrink-0 place-items-center rounded-lg text-muted-theme active:bg-[var(--button-bg-hover)] disabled:opacity-30 ${odak}`;
+  const dugme = `grid size-10 shrink-0 place-items-center rounded-full text-ink-muted hover:bg-raised disabled:opacity-30 ${odak}`;
   return (
     <li
       ref={setNodeRef}
       style={{ transform: CSS.Transform.toString(transform), transition }}
-      className={`flex min-h-12 items-center gap-0.5 rounded-xl border border-theme bg-[var(--button-bg)] pr-1 ${isDragging ? "relative z-10 shadow-lg" : ""}`}
+      className={`flex min-h-[52px] items-center gap-0.5 rounded-2xl border border-line bg-card pr-1 ${isDragging ? "relative z-10 shadow-lg" : ""}`}
     >
       <button
         ref={setActivatorNodeRef}
@@ -124,7 +125,7 @@ function SiraSatiri({ e, i, n, tasi, cikar }: { e: Eylem; i: number; n: number; 
         aria-label={`${e.etiket} sırasını sürükle`}
         {...attributes}
         {...listeners}
-        className={`grid size-10 shrink-0 cursor-grab touch-none place-items-center text-muted-theme ${odak}`}
+        className={`grid size-11 shrink-0 cursor-grab touch-none place-items-center text-ink-muted ${odak}`}
       >
         <GripVertical className="size-5" aria-hidden />
       </button>
@@ -136,7 +137,7 @@ function SiraSatiri({ e, i, n, tasi, cikar }: { e: Eylem; i: number; n: number; 
       <button type="button" aria-label={`${e.etiket} aşağı taşı`} disabled={i === n - 1} onClick={() => tasi(1)} className={dugme}>
         <ChevronDown className="size-5" aria-hidden />
       </button>
-      <button type="button" aria-label={`${e.etiket} çubuktan çıkar`} onClick={cikar} className={`${dugme} text-[var(--incorrect-border)]`}>
+      <button type="button" aria-label={`${e.etiket} çubuktan çıkar`} onClick={cikar} className={`${dugme} text-bad`}>
         <Minus className="size-5" aria-hidden />
       </button>
     </li>
@@ -307,7 +308,6 @@ export default function MobilMenu({ dersAdi, uniteler: tumUniteler, uni, ders, b
   };
 
   const baslik = duzenle ? "Menüyü düzenle" : gorunum === "unite" ? "Üniteye git" : gorunum === "soru" ? "Soruya git" : "Tüm menü";
-  const sagMetin = "h-11 shrink-0 rounded-lg px-3 text-sm font-semibold text-[var(--primary-color)] active:bg-[var(--button-bg-hover)]";
 
   return (
     <>
@@ -360,47 +360,41 @@ export default function MobilMenu({ dersAdi, uniteler: tumUniteler, uni, ders, b
         swipeDirection="down"
       >
         <Drawer.Portal>
-          <Drawer.Backdrop className="fixed inset-0 z-[150] bg-page opacity-[calc(0.5*(1-var(--drawer-swipe-progress)))] transition-opacity duration-300 data-starting-style:opacity-0 data-ending-style:opacity-0 motion-reduce:transition-none" />
-          <Drawer.Viewport
-            className="fixed inset-x-0 top-0 z-[151] flex items-end justify-center md:items-center md:p-6"
-            style={{ bottom: "var(--klavye, 0px)" }}
-          >
+          <Drawer.Backdrop className="katman-perde" />
+          <Drawer.Viewport className="katman-konum" data-yer="orta">
             <Drawer.Popup
               initialFocus={() => kap.current?.querySelector<HTMLElement>("[data-ilk]") ?? true}
-              className="w-full max-w-lg overflow-hidden rounded-t-2xl border border-b-0 border-theme shadow-2xl outline-none
-                [transform:translateY(var(--drawer-swipe-movement-y))] transition-[transform,opacity] duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]
-                data-starting-style:[transform:translateY(100%)] data-ending-style:[transform:translateY(100%)] motion-reduce:transition-none
-                md:max-w-2xl md:rounded-2xl md:border md:[transform:none] md:data-starting-style:[transform:scale(0.96)] md:data-ending-style:[transform:scale(0.96)] md:data-starting-style:opacity-0 md:data-ending-style:opacity-0"
-              style={{ background: "var(--card-bg)", color: "var(--text-color)" }}
+              className="katman-yuzey md:max-w-2xl"
             >
-              <div
-                ref={kap}
-                className="flex flex-col overflow-y-auto overscroll-contain px-3 pb-[max(1rem,env(safe-area-inset-bottom))] pt-2 md:px-5 md:pb-5"
-                style={{ maxHeight: "calc(var(--app-height, 100dvh) - 1.5rem)" }}
-              >
-                <div className="mx-auto mb-1 h-1 w-10 shrink-0 rounded-full bg-[var(--border-color-hover)] md:hidden" aria-hidden />
-                <div className="mb-2 flex min-h-11 items-center gap-1">
-                  {gorunum !== "ana" && !duzenle && (
-                    <SimgeDugmesi etiket="Geri" onClick={() => setGorunum("ana")}>
-                      <ChevronLeft className="size-5" aria-hidden />
-                    </SimgeDugmesi>
-                  )}
-                  <Drawer.Title className={`min-w-0 flex-1 truncate text-base font-semibold ${gorunum === "ana" ? "pl-1" : ""}`}>
-                    {baslik}
-                  </Drawer.Title>
-                  {gorunum === "ana" && !duzenle && (
-                    <button type="button" onClick={() => setDuzenle(true)} className={`${sagMetin} flex items-center gap-1.5 ${odak}`}>
-                      <Pencil className="size-4" aria-hidden />
-                      Düzenle
-                    </button>
-                  )}
-                  {duzenle && (
-                    <button type="button" data-ilk="" onClick={() => setDuzenle(false)} className={`${sagMetin} ${odak}`}>
-                      Bitti
-                    </button>
-                  )}
+              <div className="katman-tutamac" aria-hidden />
+              <div className="katman-baslik">
+                {gorunum !== "ana" && !duzenle && (
+                  <SimgeDugmesi etiket="Geri" onClick={() => setGorunum("ana")}>
+                    <ChevronLeft aria-hidden />
+                  </SimgeDugmesi>
+                )}
+                <div className="katman-baslik-metin">
+                  <Drawer.Title className="katman-ad">{baslik}</Drawer.Title>
+                  {duzenle && <Drawer.Description className="katman-bilgi">Alt çubukta görünecekleri seç ve sırala</Drawer.Description>}
                 </div>
-
+                {gorunum === "ana" && !duzenle && (
+                  <button type="button" onClick={() => setDuzenle(true)} className="katman-metin-dugme flex items-center gap-1.5">
+                    <Pencil className="size-4" aria-hidden />
+                    Düzenle
+                  </button>
+                )}
+                {duzenle && (
+                  <button type="button" data-ilk="" onClick={() => setDuzenle(false)} className="katman-metin-dugme">
+                    Bitti
+                  </button>
+                )}
+                {!duzenle && (
+                  <Drawer.Close aria-label="Kapat" className="katman-kapat">
+                    <X aria-hidden />
+                  </Drawer.Close>
+                )}
+              </div>
+              <div ref={kap} className="katman-govde">
                 {gorunum === "ana" && !duzenle && (
                   <div className="grid grid-cols-4 gap-2 md:grid-cols-5">
                     {EYLEMLER.map((e, i) => (
@@ -412,7 +406,7 @@ export default function MobilMenu({ dersAdi, uniteler: tumUniteler, uni, ders, b
                 {gorunum === "ana" && duzenle && (
                   <div data-base-ui-swipe-ignore="y" className="flex flex-col gap-4">
                     <section aria-label="Alt çubukta" className="flex flex-col gap-1.5">
-                      <h3 className="px-1 text-xs font-semibold uppercase tracking-wide text-muted-theme">Alt çubukta</h3>
+                      <h3 className="katman-grup-ad">Alt çubukta</h3>
                       <DndContext sensors={sensorler} collisionDetection={closestCenter} onDragEnd={surukleBitti}>
                         <SortableContext items={cubuk} strategy={verticalListSortingStrategy}>
                           <ul className="flex flex-col gap-1.5">
@@ -429,13 +423,13 @@ export default function MobilMenu({ dersAdi, uniteler: tumUniteler, uni, ders, b
                           </ul>
                         </SortableContext>
                       </DndContext>
-                      <div className="flex min-h-12 items-center gap-2 rounded-xl border border-dashed border-theme px-3 text-muted-theme">
+                      <div className="flex min-h-[52px] items-center gap-2 rounded-2xl border border-dashed border-line px-3 text-ink-muted">
                         <LayoutGrid className="size-5 shrink-0" aria-hidden />
                         <span className="text-sm font-medium">{MENU_EYLEMI.etiket}</span>
                       </div>
                     </section>
                     <section aria-label="Menüde" className="flex flex-col gap-1.5">
-                      <h3 className="px-1 text-xs font-semibold uppercase tracking-wide text-muted-theme">Menüde</h3>
+                      <h3 className="katman-grup-ad">Menüde</h3>
                       {menudekiler.length > 0 && (
                         <div className="grid grid-cols-4 gap-2 md:grid-cols-5">
                           {menudekiler.map((e) => (
@@ -447,7 +441,7 @@ export default function MobilMenu({ dersAdi, uniteler: tumUniteler, uni, ders, b
                     <button
                       type="button"
                       onClick={cubukSifirla}
-                      className={`mx-auto h-11 rounded-lg px-3 text-sm font-medium text-muted-theme underline underline-offset-4 active:bg-[var(--button-bg-hover)] ${odak}`}
+                      className="katman-metin-dugme mx-auto text-ink-muted"
                     >
                       Varsayılana sıfırla
                     </button>
@@ -455,22 +449,21 @@ export default function MobilMenu({ dersAdi, uniteler: tumUniteler, uni, ders, b
                 )}
 
                 {gorunum === "unite" && (
-                  <ul data-base-ui-swipe-ignore="y" className="flex max-h-[60dvh] flex-col gap-1.5 overflow-y-auto overscroll-contain">
+                  <ul data-base-ui-swipe-ignore="y" className="katman-liste">
                     {uniteler.map((u, i) => (
-                      <li key={u.no}>
+                      <li key={u.no} className="contents">
                         <button
                           type="button"
                           {...(i === 0 ? { "data-ilk": "" } : {})}
+                          aria-current={u.no === aktif ? "true" : undefined}
                           onClick={() => calistir(() => uniteyeGit(u.no))}
-                          className={`flex min-h-12 w-full items-center gap-3 rounded-xl border px-3 py-2 text-left active:bg-[var(--button-bg-hover)] ${odak} ${
-                            u.no === aktif ? "border-[var(--primary-color)] bg-[color-mix(in_srgb,var(--primary-color)_10%,transparent)]" : "border-theme bg-[var(--button-bg)]"
-                          }`}
+                          className="katman-satir"
                         >
                           <span className="min-w-0 flex-1">
-                            <span className="block text-sm font-semibold">{etiket(u)}</span>
-                            {u.baslik && <span className="line-clamp-2 text-xs text-muted-theme">{u.baslik}</span>}
+                            <span className="block font-semibold">{etiket(u)}</span>
+                            {u.baslik && <span className="katman-satir-not line-clamp-2">{u.baslik}</span>}
                           </span>
-                          <span className="shrink-0 text-xs text-muted-theme">{u.soru} soru</span>
+                          <span className="katman-satir-sag">{u.soru} soru</span>
                         </button>
                       </li>
                     ))}
@@ -485,7 +478,7 @@ export default function MobilMenu({ dersAdi, uniteler: tumUniteler, uni, ders, b
                       gonder();
                     }}
                   >
-                    <label className="flex flex-col gap-1 text-sm font-medium">
+                    <label className="flex flex-col gap-1.5 text-[13px] font-semibold text-ink-muted">
                       Ünite
                       <select
                         value={secili}
@@ -493,7 +486,7 @@ export default function MobilMenu({ dersAdi, uniteler: tumUniteler, uni, ders, b
                           setSecili(Number(e.target.value));
                           setHata(false);
                         }}
-                        className="h-12 rounded-xl border border-theme bg-[var(--button-bg)] px-3 text-base"
+                        className="h-12 rounded-2xl border border-line bg-control px-3 text-base text-ink"
                       >
                         {uniteler.map((u) => (
                           <option key={u.no} value={u.no}>
@@ -502,7 +495,7 @@ export default function MobilMenu({ dersAdi, uniteler: tumUniteler, uni, ders, b
                         ))}
                       </select>
                     </label>
-                    <label className="flex flex-col gap-1 text-sm font-medium">
+                    <label className="flex flex-col gap-1.5 text-[13px] font-semibold text-ink-muted">
                       Soru numarası
                       <input
                         data-ilk=""
@@ -520,17 +513,17 @@ export default function MobilMenu({ dersAdi, uniteler: tumUniteler, uni, ders, b
                         placeholder={seciliUnite ? `1 - ${seciliUnite.soru}` : ""}
                         aria-invalid={hata}
                         aria-describedby={hata ? "mobil-soru-hata" : undefined}
-                        className="h-12 rounded-xl border border-theme bg-[var(--button-bg)] px-3 text-base"
+                        className="h-12 rounded-2xl border border-line bg-control px-3 text-base text-ink"
                       />
                     </label>
                     {hata && (
-                      <p id="mobil-soru-hata" role="alert" className="text-sm text-[var(--incorrect-border)]">
+                      <p id="mobil-soru-hata" role="alert" className="text-sm text-bad">
                         1 ile {seciliUnite?.soru ?? 0} arasında bir sayı gir.
                       </p>
                     )}
                     <button
                       type="submit"
-                      className={`h-12 rounded-xl bg-[var(--primary-color)] text-base font-semibold text-[var(--primary-color-text)] active:opacity-90 ${odak}`}
+                      className="katman-dugme katman-dugme-birincil"
                     >
                       Soruya git
                     </button>

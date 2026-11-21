@@ -3,6 +3,10 @@ import { suz } from "../lib/suzgec";
 import { KIP_OLAYI, KONUM_ISTE_OLAYI, SORU_KONUMU_OLAYI, type SoruKonumu } from "../lib/ders-olaylari";
 import { SON_CALISMA_ANAHTARI, type SonCalisma } from "../lib/son-calisma";
 
+// Player bar icons for the solve-mode button (Lucide play and pause, filled look through currentColor)
+const PLAY_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5v15l13-7.5z"></path></svg>';
+const PAUSE_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4.5" width="4" height="15" rx="1"></rect><rect x="14" y="4.5" width="4" height="15" rx="1"></rect></svg>';
+
 export class QuizPlayer {
   questions: PlayerQuestion[];
   currentIndex: number;
@@ -283,10 +287,7 @@ export class QuizPlayer {
     if (this.ui.btnToggleInteractive) this.ui.btnToggleInteractive.onclick = () => this.toggleInteractive();
     if (this.ui.btnOpenSettings) this.ui.btnOpenSettings.onclick = () => this.toggleSettings();
     if (this.ui.settingsDrawer) {
-      this.ui.settingsDrawer.onclick = (e) => {
-        if (e.target === this.ui.settingsDrawer) this.toggleSettings();
-      };
-      // Match ID in Layout.astro
+      // Scrim taps are handled by src/lib/katman.ts (native <dialog>); Match ID in Layout.astro
       const applyBtn = document.getElementById('btn-apply-filters') || document.getElementById('btn-apply-settings');
       if (applyBtn) applyBtn.onclick = () => this.toggleSettings();
 
@@ -621,7 +622,7 @@ export class QuizPlayer {
   }
 
   toggleSettings(): void {
-    if ((window as any).closeGlobalSettings && this.ui.settingsDrawer && (this.ui.settingsDrawer.style.display === 'flex' || this.ui.settingsDrawer.classList.contains('flex'))) {
+    if ((window as any).closeGlobalSettings && this.ui.settingsDrawer instanceof HTMLDialogElement && this.ui.settingsDrawer.open) {
       (window as any).closeGlobalSettings();
     } else if ((window as any).openQuizSettings) {
       (window as any).openQuizSettings();
@@ -686,10 +687,12 @@ export class QuizPlayer {
       if (this.ui.btnToggleInteractive) {
         const btnText = this.ui.btnToggleInteractive.querySelector('.btn-text');
         const btnIcon = this.ui.btnToggleInteractive.querySelector('.btn-icon');
-        if (btnText) btnText.innerHTML = 'Durdur';
-        if (btnIcon) btnIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12"></rect></svg>`;
-
-        this.ui.btnToggleInteractive.classList.add('is-stopping');
+        // Playing: the same accent button shows pause (the separate stop-speech button keeps the square)
+        if (btnText) btnText.textContent = 'Bitir';
+        if (btnIcon) btnIcon.innerHTML = PAUSE_SVG;
+        this.ui.btnToggleInteractive.setAttribute('aria-pressed', 'true');
+        this.ui.btnToggleInteractive.setAttribute('aria-label', 'Çözme kipini bitir');
+        this.ui.btnToggleInteractive.title = 'Çözme kipini bitir';
       }
 
       if (this.ui.statsContainer) {
@@ -711,10 +714,11 @@ export class QuizPlayer {
       if (this.ui.btnToggleInteractive) {
         const btnText = this.ui.btnToggleInteractive.querySelector('.btn-text');
         const btnIcon = this.ui.btnToggleInteractive.querySelector('.btn-icon');
-        if (btnText) btnText.innerHTML = 'Çöz';
-        if (btnIcon) btnIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>`;
-
-        this.ui.btnToggleInteractive.classList.remove('is-stopping');
+        if (btnText) btnText.textContent = 'Çöz';
+        if (btnIcon) btnIcon.innerHTML = PLAY_SVG;
+        this.ui.btnToggleInteractive.setAttribute('aria-pressed', 'false');
+        this.ui.btnToggleInteractive.setAttribute('aria-label', 'Çözme kipini başlat');
+        this.ui.btnToggleInteractive.title = 'Çözme kipini başlat';
       }
 
       if (this.ui.statsContainer) {
@@ -746,6 +750,7 @@ export class QuizPlayer {
   updateReaderUI(): void {
     if (this.ui.btnToggleReader) {
       this.ui.btnToggleReader.classList.toggle('active', this.settings.readerMode);
+      this.ui.btnToggleReader.setAttribute('aria-pressed', String(this.settings.readerMode));
     }
 
     const speechControls = document.getElementById('speech-controls');
@@ -975,7 +980,7 @@ export class QuizPlayer {
       q.el.setAttribute('data-etkin', '');
     }
     const pct = ((this.currentIndex + 1) / this.questions.length) * 100;
-    if (this.ui.progressBar) this.ui.progressBar.style.width = pct + '%';
+    if (this.ui.progressBar) this.ui.progressBar.style.setProperty('--ilerleme', pct + '%'); // CSS-degiskeni: position in the list
     this.updateStatusText();
   }
 

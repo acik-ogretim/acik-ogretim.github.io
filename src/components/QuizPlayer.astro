@@ -29,50 +29,12 @@
             </div>
         </div>
 
-        <!-- Center Part: Statistics (Redesigned) -->
-        <div
-            id="stats-container"
-            class="hidden shrink-0 items-center gap-1 sm:gap-2 mr-1 sm:mr-4 border-r border-line pr-1 sm:pr-4"
-        >
-            <div
-                class="flex flex-col items-center justify-center bg-card rounded-lg px-2 sm:px-3 py-1 border border-line"
-            >
-                <div
-                    class="text-[10px] sm:text-lg font-black text-ink leading-none"
-                >
-                    <span id="success-rate">0</span>%
-                </div>
-                <div
-                    id="question-count"
-                    class="text-[8px] sm:text-[9px] text-ink-muted font-bold"
-                >
-                    0/0
-                </div>
-            </div>
-            <div class="flex flex-col gap-0.5 min-w-[1.5rem] sm:min-w-[3rem]">
-                <div class="flex items-center justify-between gap-1">
-                    <span
-                        class="hidden sm:inline text-[8px] sm:text-[9px] font-bold text-ink-muted"
-                        >D:</span
-                    >
-                    <span
-                        id="correct-count"
-                        class="text-[9px] sm:text-xs font-black text-ok"
-                        >0</span
-                    >
-                </div>
-                <div class="flex items-center justify-between gap-1">
-                    <span
-                        class="hidden sm:inline text-[8px] sm:text-[9px] font-bold text-ink-muted"
-                        >Y:</span
-                    >
-                    <span
-                        id="wrong-count"
-                        class="text-[9px] sm:text-xs font-black text-bad"
-                        >0</span
-                    >
-                </div>
-            </div>
+        <!-- Solve-mode counter: one calm pill, question position and success rate (D/Y from 768 px) -->
+        <div id="stats-container" class="oynatici-sayac hidden" role="status" aria-label="Çözme durumu">
+            <span id="question-count">0/0</span>
+            <span class="oynatici-ayrac" aria-hidden="true">·</span>
+            <span>%<span id="success-rate">0</span></span>
+            <span class="oynatici-dy"><span class="sr-only">Doğru</span><b id="correct-count" class="text-ok">0</b><span aria-hidden="true">/</span><span class="sr-only">Yanlış</span><b id="wrong-count" class="text-bad">0</b></span>
         </div>
 
         <!--
@@ -80,30 +42,24 @@
             (src/lib/eylemler.ts). Buttons keep their ids because QuizPlayer binds them by id.
         -->
         <div id="player-cubuk" class="player-cubuk flex min-w-0 flex-1 items-center justify-end">
-            <button id="btn-toggle-reader" type="button" class="player-btn-icon" title="Sesli okuma modu" aria-label="Sesli okuma modu"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></button>
+            <button id="btn-toggle-reader" type="button" class="player-btn-icon" title="Sesli okuma modu" aria-label="Sesli okuma modu" aria-pressed="false"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg></button>
             <button id="btn-speed" type="button" class="player-hiz" title="Okuma hızı" aria-label="Okuma hızı">1.2x</button>
-            <button id="btn-toggle-interactive" type="button" class="player-action-btn" title="İnteraktif çözüm modu">
-                <span class="btn-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg></span>
+            <button id="btn-toggle-interactive" type="button" class="player-action-btn" title="Çözme kipini başlat" aria-label="Çözme kipini başlat" aria-pressed="false">
+                <span class="btn-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5v15l13-7.5z"></path></svg></span>
                 <span class="btn-text hidden md:inline">Çöz</span>
             </button>
             <button id="btn-prev" type="button" class="player-btn-icon" title="Önceki soru" aria-label="Önceki soru"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 19 2 12 11 5 11 19"></polygon><polygon points="22 19 13 12 22 5 22 19"></polygon></svg></button>
             <button id="btn-read-question" type="button" class="player-btn-icon player-btn-etiketli" title="Soruyu oku" aria-label="Soruyu oku"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v1a7 7 0 0 1-14 0v-1"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg><span class="hidden md:inline">Soru</span></button>
             <button id="btn-read-explanation" type="button" class="player-btn-icon player-btn-etiketli" title="Açıklamayı oku" aria-label="Açıklamayı oku"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg><span class="hidden md:inline">Analiz</span></button>
-            <button id="btn-stop-speech" type="button" class="player-btn-icon player-btn-tehlike" title="Okumayı durdur" aria-label="Okumayı durdur"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12"></rect></svg></button>
+            <button id="btn-stop-speech" type="button" class="player-btn-icon" title="Okumayı durdur" aria-label="Okumayı durdur"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12"></rect></svg></button>
             <button id="btn-next" type="button" class="player-btn-icon" title="Sonraki soru" aria-label="Sonraki soru"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 19 22 12 13 5 13 19"></polygon><polygon points="2 19 11 12 2 5 2 19"></polygon></svg></button>
             <button id="btn-open-settings" type="button" class="player-btn-icon" title="Ayarlar" aria-label="Ayarlar"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" ></path><circle cx="12" cy="12" r="3"></circle></svg></button>
         </div>
         <button id="btn-mobil-menu" type="button" class="player-btn-icon player-menu" aria-label="Menüyü aç" title="Menü (M)"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"></rect><rect width="7" height="7" x="14" y="3" rx="1"></rect><rect width="7" height="7" x="14" y="14" rx="1"></rect><rect width="7" height="7" x="3" y="14" rx="1"></rect></svg></button>
     </div>
 
-    <!-- Thin Progress Bar Top -->
-    <div class="absolute top-0 left-0 right-0 h-[2px] bg-card">
-        <div
-            id="player-progress"
-            class="h-full bg-accent transition-all duration-300 w-0"
-        >
-        </div>
-    </div>
+    <!-- Thin progress line inside the capsule (neutral, DESIGN.md §2) -->
+    <div class="oynatici-ilerleme" aria-hidden="true"><div id="player-progress"></div></div>
 </header>
 
 <style>

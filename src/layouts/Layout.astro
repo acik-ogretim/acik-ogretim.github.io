@@ -74,18 +74,15 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
         });
       document.addEventListener("DOMContentLoaded", () => markTheme(document.documentElement.getAttribute("data-theme")));
 
+      // Settings window: a native <dialog> (src/styles/katman.css); showModal gives focus, Esc and inert page
       window.openQuizSettings = function () {
         const modal = document.getElementById("global-settings-modal");
-        if (modal) {
-          modal.classList.add("flex");
-        }
+        if (modal && !modal.open) modal.showModal();
       };
 
       window.closeGlobalSettings = function () {
         const modal = document.getElementById("global-settings-modal");
-        if (modal) {
-          modal.classList.remove("flex");
-        }
+        if (modal && modal.open) modal.close();
       };
 
       window.resetGlobalSettings = function () {
@@ -160,7 +157,9 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
 
     <script>
       import { startViewport } from "../lib/viewport";
+      import { katmanlariBagla } from "../lib/katman";
       startViewport();
+      katmanlariBagla();
       // Google Drive sync of the learner's records runs in the background once they signed in on /yedek
       if (localStorage.getItem("google-esitleme-acik")) {
         import("../lib/google-esitle").then((m) => m.otomatikEsitlemeKur());
@@ -308,52 +307,34 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
           </div>
         </div>
 
-        <!-- Mobile menu button -->
+        <!-- Mobile menu button: opens the popover below (no script; icon follows :popover-open in katman.css) -->
         <button
           id="mobileMenuBtn"
-          class="md:hidden p-2 rounded-lg hover:bg-button-hover-theme text-muted-theme"
-          aria-label="Menu"
+          type="button"
+          popovertarget="mobileMenu"
+          class="md:hidden grid size-11 place-items-center rounded-full text-ink-muted hover:bg-raised"
+          aria-label="Menü"
         >
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              id="menuIcon"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"></path>
-            <path
-              id="closeIcon"
-              class="hidden"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"></path>
+          <svg class="size-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true">
+            <path class="menu-ac-ikon" d="M4 6h16M4 12h16M4 18h16"></path>
+            <path class="menu-kapat-ikon" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
       </nav>
 
-      <!-- Mobile navigation overlay -->
-      <div
-        id="mobileMenu"
-        class="hidden md:hidden border-t border-theme px-4 py-4 space-y-1 shadow-xl"
-        style="background: var(--bg-color)"
-      >
-        <a href="/anadolu-aof" class="mobile-menu-link flex min-h-11 items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>Anadolu AÖF</a>
-        <a href="/ataturk-aof" class="mobile-menu-link flex min-h-11 items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>ATA-AÖF</a>
-        <a href="/auzef" class="mobile-menu-link flex min-h-11 items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>AUZEF</a>
-        <a href="/ankuzef" class="mobile-menu-link flex min-h-11 items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>Ankara AÖF</a>
-
-        <!-- Mobile Theme Toggles -->
-        <div class="grid grid-cols-4 gap-2 pt-4 mt-3 border-t border-theme">
-          <button type="button" onclick="setTheme('light')" data-tema="light" class="tema-secim flex min-h-[3.25rem] min-w-0 flex-col items-center justify-center gap-1 rounded-xl border border-theme px-1 py-1.5 text-xs font-medium"><svg xmlns="http://www.w3.org/2000/svg" class="size-6" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg><span>Aydınlık</span></button>
-          <button type="button" onclick="setTheme('dark')" data-tema="dark" class="tema-secim flex min-h-[3.25rem] min-w-0 flex-col items-center justify-center gap-1 rounded-xl border border-theme px-1 py-1.5 text-xs font-medium"><svg xmlns="http://www.w3.org/2000/svg" class="size-6" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><span>Koyu</span></button>
-          <button type="button" onclick="setTheme('sepia')" data-tema="sepia" class="tema-secim flex min-h-[3.25rem] min-w-0 flex-col items-center justify-center gap-1 rounded-xl border border-theme px-1 py-1.5 text-xs font-medium"><svg xmlns="http://www.w3.org/2000/svg" class="size-6" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg><span>Sepya</span></button>
-          <button type="button" onclick="openQuizSettings()" class="tema-secim flex min-h-[3.25rem] min-w-0 flex-col items-center justify-center gap-1 rounded-xl border border-theme px-1 py-1.5 text-xs font-medium"><svg xmlns="http://www.w3.org/2000/svg" class="size-6" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg><span>Ayarlar</span></button>
+      <!-- Phone menu (600 to 767 px; narrower screens use the tab bar): a native popover, light dismiss and Esc for free -->
+      <div id="mobileMenu" popover class="katman-acilir md:hidden">
+        <nav class="katman-liste" aria-label="Üniversiteler">
+          <a href="/anadolu-aof" class="katman-satir"><svg xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg><span class="katman-satir-ad">Anadolu AÖF</span></a>
+          <a href="/ataturk-aof" class="katman-satir"><svg xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg><span class="katman-satir-ad">ATA-AÖF</span></a>
+          <a href="/auzef" class="katman-satir"><svg xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg><span class="katman-satir-ad">AUZEF</span></a>
+          <a href="/ankuzef" class="katman-satir"><svg xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg><span class="katman-satir-ad">Ankara AÖF</span></a>
+        </nav>
+        <div class="grid grid-cols-4 gap-2" role="group" aria-label="Tema ve ayarlar">
+          <button type="button" onclick="setTheme('light')" data-tema="light" class="tema-secim"><svg xmlns="http://www.w3.org/2000/svg" class="size-6" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg><span>Aydınlık</span></button>
+          <button type="button" onclick="setTheme('dark')" data-tema="dark" class="tema-secim"><svg xmlns="http://www.w3.org/2000/svg" class="size-6" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><span>Koyu</span></button>
+          <button type="button" onclick="setTheme('sepia')" data-tema="sepia" class="tema-secim"><svg xmlns="http://www.w3.org/2000/svg" class="size-6" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg><span>Sepya</span></button>
+          <button type="button" onclick="openQuizSettings()" class="tema-secim"><svg xmlns="http://www.w3.org/2000/svg" class="size-6" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg><span>Ayarlar</span></button>
         </div>
       </div>
     </header>
@@ -392,89 +373,27 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
       </div>
     </section>
 
-    <!-- Global Settings Modal -->
+    <!-- Settings window: shared overlay contract (DESIGN.md §5), bottom sheet on phones, centered from 768 px -->
     {!ayarSayfasi && (
-    <div id="global-settings-modal" class="modal-overlay">
-      <div class="modal-backdrop" onclick="closeGlobalSettings()"></div>
-
-      <div
-        class="modal-content-compact animate-in fade-in zoom-in duration-200"
-      >
-        <!-- Compact Header -->
-        <div
-          class="flex items-center justify-between p-3.5 border-b border-line bg-page/50"
-        >
-          <h3 id="ayar-pencere-baslik" class="text-sm font-bold text-ink flex items-center gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="text-accent-ink"
-            >
-              <path
-                d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"
-              ></path>
-              <circle cx="12" cy="12" r="3"></circle>
-            </svg>
-            Ayarlar
-          </h3>
-          <div class="flex items-center gap-1.5">
-            <a
-              href="/rehber"
-              target="_blank"
-              class="p-1 px-2 text-xs font-bold text-ink-muted hover:text-accent-ink bg-card rounded-md"
-              title="Kullanım Rehberi">Yardım</a
-            >
-            <button
-              id="btn-close-settings"
-              onclick="closeGlobalSettings()"
-              class="p-1.5 rounded-lg hover:bg-card text-ink-muted hover:text-ink"
-              aria-label="Kapat"
-            >
-              <svg
-                class="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2.5"
-                  d="M6 18L18 6M6 6l12 12"></path></svg
-              >
-            </button>
-          </div>
+    <dialog id="global-settings-modal" class="katman-yuzey" data-yer="orta" aria-labelledby="ayar-pencere-baslik" closedby="any">
+      <div class="katman-tutamac" aria-hidden="true"></div>
+      <header class="katman-baslik">
+        <div class="katman-baslik-metin">
+          <h2 id="ayar-pencere-baslik" class="katman-ad">Ayarlar</h2>
+          <p class="katman-bilgi">Bu cihazda saklanır</p>
         </div>
-
-        <div class="modal-body-compact">
-          <AyarlarIcerik />
-        </div>
-
-        <!-- Footer Actions -->
-        <div class="p-3 bg-page border-t border-line flex gap-2">
-          <button
-            id="btn-reset-settings"
-            onclick="resetGlobalSettings()"
-            class="flex-1 py-3 px-3 bg-card hover:bg-bad-soft text-ink-muted hover:text-bad border border-line rounded-xl text-xs font-semibold transition-all"
-          >
-            Sıfırla
-          </button>
-          <button
-            id="btn-apply-filters"
-            onclick="closeGlobalSettings()"
-            class="flex-[1.5] py-3 px-3 bg-accent hover:bg-accent/90 text-on-accent rounded-xl text-xs font-semibold transition-all shadow-lg active:scale-95"
-          >
-            Tamam
-          </button>
-        </div>
+        <button id="btn-close-settings" type="button" class="katman-kapat" aria-label="Kapat" onclick="closeGlobalSettings()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+        </button>
+      </header>
+      <div class="katman-govde" tabindex="-1" autofocus>
+        <AyarlarIcerik />
       </div>
-    </div>
+      <footer class="katman-alt">
+        <button id="btn-reset-settings" type="button" class="katman-dugme" onclick="resetGlobalSettings()">Sıfırla</button>
+        <button id="btn-apply-filters" type="button" class="katman-dugme katman-dugme-birincil" onclick="closeGlobalSettings()">Tamam</button>
+      </footer>
+    </dialog>
     )}
 
     <!-- Footer -->
@@ -571,19 +490,6 @@ const { title, description = "Açık öğretim fakülteleri için çalışma por
         try { localStorage.setItem("uyari-kapali", "1"); } catch (e) {}
         document.documentElement.setAttribute("data-uyari-kapali", "");
       });
-      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-      const menu = document.getElementById("mobileMenu");
-      const menuIcon = document.getElementById("menuIcon");
-      const closeIcon = document.getElementById("closeIcon");
-
-      if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener("click", () => {
-          const isHidden = menu?.classList.toggle("hidden");
-          menuIcon?.classList.toggle("hidden", !isHidden);
-          closeIcon?.classList.toggle("hidden", isHidden);
-        });
-      }
-
       // Global Settings Persistance (Lightweight version of QuizPlayer logic)
       (function initGlobalSettings() {
         const defaultSettings = {
