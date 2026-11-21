@@ -1,5 +1,7 @@
 # Mobil öncelikli arayüz tasarım önerisi (Kasım 2026)
 
+**Güncel plan: `PLAN.md`** (maketlerin rota, bileşen ve veri eşlemesi, uygulama sırası). 01-12 ve 16 tema 17 ile üretilir; 13-15, 18, 19 denemelerdir.
+
 Canlı kod değişmedi; yalnız tasarım çıktısı.
 
 - Varsayılan palet 21 Kasım'da siyah beyaza geçti (birincil eylem siyah, koyuda beyaz; renk yalnız doğru, yanlış, uyarı için). `DESIGN.md` §3'teki deniz yeşili değerleri `data-palet="yesil"` olarak duruyor.

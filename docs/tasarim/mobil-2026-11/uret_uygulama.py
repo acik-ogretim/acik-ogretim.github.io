@@ -419,16 +419,53 @@ sayfa("19-tema17-duzeltmeler", "Tema 17 üstünde Stitch ve Nano Banana düzeltm
     resim("alternatifler/stitch-tema17-2.jpg", "Stitch, soru: soru metni serif ve büyük, şıklar daha yüksek, oynatıcı tek satır kompakt. Üst başlığı İngilizce yazmış, '1 Puan' ve 'Doğruluk oranı %68' uydurma; uygulamada çıkarılır.", 380),
 ])
 
-# ---------- galeri ----------
-satirlar = "".join(
-    f'<li><a href="{f.name}"><span>{f.name[:2]}</span>{re.search(r"<title>(.*?)</title>", f.read_text()).group(1)}</a></li>'
-    for f in sorted(KOK.glob("[01][0-9]-*.html")))
+# ---------- tema 17'yi ürün ekranlarına uygula ----------
+URUN = ["01-soru-cozme", "02-oynatici", "03-arama", "04-sohbet", "05-unite-konu-yanlislar", "06-ozet-okuma",
+        "07-karsilama-giris", "08-ana-sayfa", "09-derslerim-favoriler", "10-ilerleme", "11-ayarlar", "12-pwa-durumlar", "16-video-canli-ders"]
+for ad in URUN:
+    f = KOK / f"{ad}.html"; t = f.read_text()
+    t = re.sub(r'<div class="ekran"(?! yeni)', '<div class="ekran yeni"', t)
+    t = re.sub(r'<div class="ekran cam"', '<div class="ekran yeni cam"', t)
+    t = t.replace(' data-palet="murekkep"', "")
+    f.write_text(t)
+
+# ---------- galeri: plan yapısında ----------
+BOLUMLER = [
+    ("Tasarım dili", "Tema 17: sürü panosunun tonları, koyu ve açık eş değer, vurgu yalnız birincil eylemde, belirteçler temel ve öğrenme diye iki katman.",
+     [("17-onerilen-dil", "Önerilen dil", "var"), ("18-renk-oyunu", "Vurgu seçenekleri", "karar")]),
+    ("Kabuk ve giriş", "Beş sekme; ders sayfası tam ekran. Sitede hesap yok, giriş kayıt getirmedir.",
+     [("07-karsilama-giris", "Karşılama, okul seçimi, kayıt getirme", "yeni"), ("08-ana-sayfa", "Bugün", "yeni")]),
+    ("Keşif ve Derslerim", "/[üniversite], /[bölüm] ve favori dersler.",
+     [("09-derslerim-favoriler", "Derslerim, favoriler, ders ekleme", "var")]),
+    ("Ders sayfası", "/[ders]: soru çözme, oynatıcı, arama, derse sor, ünite ve konu, özet, video.",
+     [("01-soru-cozme", "Soru çözme", "var"), ("02-oynatici", "Oynatıcı", "var"), ("03-arama", "Arama", "var"),
+      ("04-sohbet", "Derse sor", "var"), ("05-unite-konu-yanlislar", "Ünite, konu, yanlışlarım", "var"),
+      ("06-ozet-okuma", "Özet okuma", "var"), ("16-video-canli-ders", "Video ve döküm, canlı ders, kurs akışı", "veri gerekir")]),
+    ("İlerleme, ayarlar, sistem", "Kayıtlardan hesaplanan ölçüler; tek ayar sekmesi; PWA durumları.",
+     [("10-ilerleme", "İlerleme", "yeni"), ("11-ayarlar", "Ayarlar", "var"), ("12-pwa-durumlar", "Ana ekrana ekle, çevrimdışı, 404", "yeni")]),
+    ("Denemeler (arşiv)", "Karar sürecinde üretilen renk, cam, kör jüri, Stitch ve Nano Banana denemeleri.",
+     [("13-renk-secenekleri", "İlk renk seçenekleri", "arşiv"), ("14-ios-cam", "iOS cam denemesi", "arşiv"),
+      ("15-alternatifler", "Alternatifler ve kör jüri", "arşiv"), ("19-tema17-duzeltmeler", "Tema 17 üstünde düzeltmeler", "arşiv")]),
+]
+RENK = {"var": "#1C6E3F", "yeni": "#1F56A3", "veri gerekir": "#8A5A00", "karar": "#5C5C5C", "arşiv": "#8A8A8A"}
+govde = ""
+for baslik, ack, ogeler in BOLUMLER:
+    govde += f"<section><h2>{baslik}</h2><p>{ack}</p><ul>"
+    for ad, et, durum in ogeler:
+        govde += f'<li><a href="{ad}.html"><span class="no">{ad[:2]}</span><span class="ad">{et}</span><span class="dz" style="color:{RENK[durum]}">{durum}</span></a></li>'
+    govde += "</ul></section>"
 (KOK / "index.html").write_text(
     '<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-    '<title>Açık Öğretim Portal mobil tasarım</title><style>body{font-family:system-ui;background:#F3F5F6;color:#10202A;margin:0;padding:32px 20px}'
-    'main{max-width:640px;margin:auto}h1{font-size:26px;margin:0 0 6px}p{color:#4E5F69;line-height:1.5}ul{list-style:none;padding:0;display:grid;gap:8px}'
-    'a{display:flex;gap:12px;align-items:center;min-height:52px;padding:0 16px;background:#fff;border:1.5px solid #D3DBDF;border-radius:12px;color:#10202A;text-decoration:none;font-weight:600}'
-    'a:hover{border-color:#0A7C76}a span{color:#06605B;font-variant-numeric:tabular-nums;width:24px}</style></head><body><main>'
-    '<h1>Mobil öncelikli tasarım, Kasım 2026</h1><p>01-06 ders sayfası, 07-12 uygulama kabuğu, 13 renk seçenekleri. Her sayfada birden çok ekran yan yana; sol üstteki düğme buraya döner.</p>'
-    f"<ul>{satirlar}</ul></main></body></html>")
+    '<title>Açık Öğretim Portal mobil tasarım</title><style>'
+    'body{font-family:system-ui;background:#FCFCFB;color:#151515;margin:0;padding:32px 20px}main{max-width:680px;margin:auto}'
+    'h1{font:600 30px/1.15 ui-serif,Georgia,serif;margin:0 0 8px}h2{font:600 20px/1.2 ui-serif,Georgia,serif;margin:28px 0 4px}'
+    'p{color:#525252;line-height:1.5;margin:0 0 10px}ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}'
+    'a{display:flex;gap:12px;align-items:center;min-height:52px;padding:0 16px;background:#fff;border:1px solid hsla(0,0%,8%,.1);border-radius:16px;color:#151515;text-decoration:none;font-weight:600}'
+    'a:hover{border-color:#2563B8}.no{color:#525252;font-variant-numeric:tabular-nums;width:24px}.ad{flex:1}.dz{font-size:13px;font-weight:600}'
+    '.lejant{font-size:13px;color:#525252;margin-top:6px}</style></head><body><main>'
+    '<h1>Mobil öncelikli tasarım, Kasım 2026</h1>'
+    '<p>Maketler sitenin rotalarına ve kayıtlarına göre gruplandı; tümü tema 17 ile üretildi. Plan ve veri eşlemesi PLAN.md içinde.</p>'
+    '<p class="lejant"><b style="color:#1C6E3F">var</b>: kod ve veri hazır, yeni dile giydirilir · <b style="color:#1F56A3">yeni</b>: veri var, ekran yeni · '
+    '<b style="color:#8A5A00">veri gerekir</b>: önce kayıt ya da veri dosyası eklenir</p>'
+    + govde + "</main></body></html>")
 print("ok")
