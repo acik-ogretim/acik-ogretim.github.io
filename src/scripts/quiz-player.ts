@@ -1,6 +1,6 @@
 import type { OptionKey, PlayerQuestion, PlayerUI, QuizSettings, Source } from "../lib/types";
 import { suz } from "../lib/suzgec";
-import { KIP_OLAYI, KONUM_ISTE_OLAYI, SORU_KONUMU_OLAYI, type SoruKonumu } from "../lib/ders-olaylari";
+import { KIP_OLAYI, KONUM_ISTE_OLAYI, OYNATICI_DURUM_OLAYI, SORU_KONUMU_OLAYI, hizMetni, type OynaticiDurum, type SoruKonumu } from "../lib/ders-olaylari";
 import { SON_CALISMA_ANAHTARI, type SonCalisma } from "../lib/son-calisma";
 
 // Player bar icons for the solve-mode button (Lucide play and pause, filled look through currentColor)
@@ -25,6 +25,7 @@ export class QuizPlayer {
   courseSlug: string;
   speechQueue: string[] = [];
   isSpeakingQueue: boolean = false;
+  okunan: 'soru' | 'aciklama' | null = null;
   currentSessionId: number = 0;
   speechTimeout: any = null;
   silentAudio: HTMLAudioElement;
@@ -274,7 +275,7 @@ export class QuizPlayer {
 
     // Bind UI Events
     if (this.ui.speedBtn) {
-      this.ui.speedBtn.innerText = this.rate + 'x';
+      this.ui.speedBtn.innerText = hizMetni(this.rate);
       this.ui.speedBtn.onclick = () => this.toggleSpeed();
     }
     if (this.ui.playBtn) this.ui.playBtn.onclick = () => this.togglePlay();
@@ -552,8 +553,9 @@ export class QuizPlayer {
         const val = parseFloat((e.target as HTMLSelectElement).value);
         this.settings.playbackRate = val;
         this.rate = val;
-        if (this.ui.speedBtn) this.ui.speedBtn.innerText = val + 'x';
+        if (this.ui.speedBtn) this.ui.speedBtn.innerText = hizMetni(val);
         this.saveSettings();
+        this.durumYay();
       };
     }
   }
@@ -567,7 +569,7 @@ export class QuizPlayer {
 
     this.rate = rates[(currentIdx + 1) % rates.length];
 
-    if (this.ui.speedBtn) this.ui.speedBtn.innerText = this.rate + 'x';
+    if (this.ui.speedBtn) this.ui.speedBtn.innerText = hizMetni(this.rate);
     this.settings.playbackRate = this.rate;
 
     const rateSelect = document.getElementById('setting-playback-rate') as HTMLSelectElement;
@@ -577,6 +579,7 @@ export class QuizPlayer {
     }
 
     this.saveSettings();
+    this.durumYay();
   }
 
   populateVoices(): void {
@@ -732,6 +735,7 @@ export class QuizPlayer {
 
       this.pause();
     }
+    this.durumYay();
   }
 
   toggleReader(): void {
@@ -752,6 +756,7 @@ export class QuizPlayer {
       this.ui.btnToggleReader.classList.toggle('active', this.settings.readerMode);
       this.ui.btnToggleReader.setAttribute('aria-pressed', String(this.settings.readerMode));
     }
+    this.durumYay();
 
     const speechControls = document.getElementById('speech-controls');
     if (speechControls) {
@@ -1044,6 +1049,22 @@ export class QuizPlayer {
         if (!this.isPlaying && this.ui.captionText) this.ui.captionText.innerText = '';
       }
     }
+    if (!this.isPlaying) this.okunan = null;
+    this.durumYay();
+  }
+
+  /** What the bar and the menu show (single source for src/lib/eylemler.ts). */
+  durum(): OynaticiDurum {
+    return {
+      okuma: !!this.settings.readerMode,
+      cozme: this.isInteractive,
+      hiz: this.rate || this.settings.playbackRate,
+      okunan: this.isPlaying ? this.okunan : null,
+    };
+  }
+
+  durumYay(): void {
+    window.dispatchEvent(new CustomEvent<OynaticiDurum>(OYNATICI_DURUM_OLAYI, { detail: this.durum() }));
   }
 
   cleanText(text: string | null | undefined): string {
@@ -1315,6 +1336,7 @@ export class QuizPlayer {
   }
 
   speakCurrent(): void {
+    this.okunan = 'soru';
     if (this.currentIndex < 0 || this.currentIndex >= this.questions.length) {
       return;
     }
@@ -1392,6 +1414,7 @@ export class QuizPlayer {
   }
 
   speakExplanation(): void {
+    this.okunan = 'aciklama';
     if (this.currentIndex < 0 || this.currentIndex >= this.questions.length) return;
     const q = this.questions[this.currentIndex];
     const latestExp = this.getLatestExplanation(q);

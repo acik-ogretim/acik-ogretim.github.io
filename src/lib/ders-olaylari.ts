@@ -20,3 +20,21 @@ export type SoruKonumu = {
 /** "Ü 4 · 12 / 40" ("Diğer" for unit 0). */
 export const konumMetni = (k: SoruKonumu): string =>
   k.unite === null ? "" : `${k.unite === 0 ? "Diğer" : `Ü ${k.unite}`} · ${k.sira} / ${k.uniteToplam}`;
+
+/** Fired by the quiz player whenever something the bar and the menu show changes; detail is OynaticiDurum. */
+export const OYNATICI_DURUM_OLAYI = "oynatici:durum";
+
+export type OynaticiDurum = {
+  /** Reader mode (read aloud while moving through the list). */
+  okuma: boolean;
+  /** Solving mode. */
+  cozme: boolean;
+  /** Speech rate. */
+  hiz: number;
+  /** What is being read right now, null when nothing is playing. */
+  okunan: "soru" | "aciklama" | null;
+};
+
+/** Speech rate as Turkish writes it: "1,2×", "1×". */
+export const hizMetni = (hiz: number): string =>
+  `${hiz.toLocaleString("tr-TR", { maximumFractionDigits: 1 })}×`;

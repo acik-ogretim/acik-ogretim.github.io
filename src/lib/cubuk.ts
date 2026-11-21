@@ -3,6 +3,7 @@
 import { createElement } from "lucide";
 import {
   CUBUK_OLAYI,
+  EYLEM_DURUM_OLAYI,
   EYLEM_HARITASI,
   cubukOku,
   kisayollariBagla,
@@ -74,6 +75,21 @@ export function cubuguBaslat(): void {
     });
   };
 
+  // States and values come from the action registry, same as the menu tiles.
+  const durumlariYaz = () => {
+    for (const [id, d] of dugmeler) {
+      const e = EYLEM_HARITASI.get(id);
+      if (!e) continue;
+      const acik = e.durum?.();
+      if (acik !== undefined) d.setAttribute("aria-pressed", String(acik));
+      d.toggleAttribute("data-calisiyor", !!e.calisiyor?.());
+      if (e.pasif && d instanceof HTMLButtonElement) d.disabled = e.pasif();
+      const deger = e.deger?.();
+      if (deger && id === "hiz") d.textContent = deger;
+    }
+  };
+  window.addEventListener(EYLEM_DURUM_OLAYI, durumlariYaz);
+
   const planla = () => {
     if (bekliyor) return;
     bekliyor = true;
@@ -91,5 +107,6 @@ export function cubuguBaslat(): void {
     window.dispatchEvent(new CustomEvent("mobil-menu:ac", { detail: { gorunum: "ana" } }));
   });
   kisayollariBagla();
+  durumlariYaz();
   planla();
 }

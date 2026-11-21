@@ -38,6 +38,7 @@ import Tur from "./Tur";
 import {
   CUBUK_OLAYI,
   EYLEMLER,
+  EYLEM_DURUM_OLAYI,
   EYLEM_HARITASI,
   MENU_ACMA_OLAYI,
   MENU_EYLEMI,
@@ -79,20 +80,26 @@ function Simge({ e, className }: { e: { simge: Eylem["simge"] }; className: stri
 }
 
 type KutuProps = {
-  e: Pick<Eylem, "simge" | "kisayol"> & { etiket: string };
+  e: Pick<Eylem, "simge" | "kisayol" | "durum" | "deger" | "calisiyor" | "pasif"> & { etiket: string };
   onClick: () => void;
   ilk?: boolean;
   rozet?: "ekle";
 };
 
-// One grid tile. Shortcut hints show next to the label on desktop only.
+// One grid tile. State and value come from the action registry (same source as the player bar);
+// the look follows aria-pressed, data-calisiyor and :disabled in global.css (.menu-kutu).
 function Kutu({ e, onClick, ilk, rozet }: KutuProps) {
+  const acik = e.durum?.();
+  const deger = e.deger?.();
   return (
     <button
       type="button"
       onClick={onClick}
       {...(ilk ? { "data-ilk": "" } : {})}
-      className={`relative flex min-h-20 min-w-0 flex-col items-center justify-center gap-1.5 rounded-2xl border border-line bg-control px-1 py-2 text-ink transition-transform hover:bg-raised active:scale-[0.96] motion-reduce:transition-none ${odak}`}
+      aria-pressed={acik === undefined ? undefined : acik}
+      data-calisiyor={e.calisiyor?.() ? "" : undefined}
+      disabled={rozet ? undefined : e.pasif?.()}
+      className={`menu-kutu ${odak}`}
     >
       <Simge e={e} className="size-6" />
       <span className="flex max-w-full items-center justify-center gap-1">
@@ -101,6 +108,7 @@ function Kutu({ e, onClick, ilk, rozet }: KutuProps) {
           <kbd className="hidden shrink-0 rounded border border-line px-1 font-sans text-[10px] text-ink-muted md:inline">{e.kisayol}</kbd>
         )}
       </span>
+      {deger && <span className="menu-kutu-deger">{deger}</span>}
       {rozet === "ekle" && (
         <span className="absolute -right-1 -top-1 grid size-5 place-items-center rounded-full bg-accent text-on-accent" aria-hidden>
           <Plus className="size-3.5" />
@@ -259,6 +267,13 @@ export default function MobilMenu({ dersAdi, uniteler: tumUniteler, uni, ders, b
     const degisti = (olay: Event) => setCubuk((olay as CustomEvent<string[]>).detail);
     addEventListener(CUBUK_OLAYI, degisti);
     return () => removeEventListener(CUBUK_OLAYI, degisti);
+  }, []);
+
+  // Player and theme changes redraw the tiles (state and value live in the action registry).
+  useEffect(() => {
+    const yenile = () => temaYenile((n) => n + 1);
+    addEventListener(EYLEM_DURUM_OLAYI, yenile);
+    return () => removeEventListener(EYLEM_DURUM_OLAYI, yenile);
   }, []);
 
   useEffect(() => {

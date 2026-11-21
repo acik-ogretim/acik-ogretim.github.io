@@ -25,6 +25,7 @@ import {
   Volume2,
   type IconNode,
 } from "lucide";
+import { OYNATICI_DURUM_OLAYI, hizMetni, type OynaticiDurum } from "./ders-olaylari";
 
 export type Eylem = {
   id: string;
@@ -42,9 +43,27 @@ export type Eylem = {
   altGorunum?: "unite" | "soru";
   /** Menu stays open after the tap (the theme cycles in place). */
   acikKalir?: boolean;
-  /** Dynamic label (theme name). */
+  /** Dynamic label. */
   etiketi?: () => string;
+  /** On/off actions: current state, drawn as aria-pressed on the bar and in the menu. */
+  durum?: () => boolean;
+  /** Current value shown on a second line (speed, theme). */
+  deger?: () => string;
+  /** Work in progress (speech): drawn as active while true. */
+  calisiyor?: () => boolean;
+  /** Nothing to act on right now (stop while nothing plays): drawn disabled. */
+  pasif?: () => boolean;
   calistir: () => void;
+};
+
+/** Fired whenever a state or value above may have changed (the player and the theme switch send it). */
+export const EYLEM_DURUM_OLAYI = OYNATICI_DURUM_OLAYI;
+
+/** The quiz player is the single source of the bar and menu states. */
+const oynatici = (): OynaticiDurum | null => {
+  if (typeof window === "undefined") return null;
+  const p = (window as unknown as { quizPlayer?: { durum?: () => OynaticiDurum } }).quizPlayer;
+  return p?.durum?.() ?? null;
 };
 
 export const MENU_ACMA_OLAYI = "mobil-menu:ac";
@@ -72,18 +91,19 @@ export const temaDegistir = () => {
   const simdiki = temaOku() as (typeof TEMALAR)[number];
   const yeni = TEMALAR[(TEMALAR.indexOf(simdiki) + 1) % TEMALAR.length];
   sayfa().setTheme?.(yeni);
+  window.dispatchEvent(new CustomEvent(EYLEM_DURUM_OLAYI));
 };
 
 /** Every action, in the order the menu lists them. The menu button itself is fixed and not part of this list. */
 export const EYLEMLER: Eylem[] = [
-  { id: "seslendir", etiket: "Sesli okuma modu", simge: Volume2, yerel: "btn-toggle-reader", calistir: () => tikla("#btn-toggle-reader") },
-  { id: "hiz", etiket: "Okuma hızı", simge: Gauge, yerel: "btn-speed", genisBar: true, acikKalir: true, calistir: () => tikla("#btn-speed") },
-  { id: "coz", etiket: "İnteraktif çözüm", simge: Play, yerel: "btn-toggle-interactive", calistir: () => tikla("#btn-toggle-interactive") },
+  { id: "seslendir", etiket: "Sesli okuma modu", simge: Volume2, yerel: "btn-toggle-reader", durum: () => !!oynatici()?.okuma, calistir: () => tikla("#btn-toggle-reader") },
+  { id: "hiz", etiket: "Okuma hızı", simge: Gauge, yerel: "btn-speed", genisBar: true, acikKalir: true, deger: () => hizMetni(oynatici()?.hiz ?? 1.2), calistir: () => tikla("#btn-speed") },
+  { id: "coz", etiket: "Çözme kipi", simge: Play, yerel: "btn-toggle-interactive", durum: () => !!oynatici()?.cozme, calistir: () => tikla("#btn-toggle-interactive") },
   { id: "geri", etiket: "Önceki soru", simge: SkipBack, yerel: "btn-prev", calistir: () => tikla("#btn-prev") },
   { id: "ileri", etiket: "Sonraki soru", simge: SkipForward, yerel: "btn-next", calistir: () => tikla("#btn-next") },
-  { id: "soruyu-oku", etiket: "Soruyu oku", simge: Mic, yerel: "btn-read-question", calistir: () => tikla("#btn-read-question") },
-  { id: "aciklamayi-oku", etiket: "Açıklamayı oku", simge: BookOpen, yerel: "btn-read-explanation", calistir: () => tikla("#btn-read-explanation") },
-  { id: "durdur", etiket: "Okumayı durdur", simge: Square, yerel: "btn-stop-speech", calistir: () => tikla("#btn-stop-speech") },
+  { id: "soruyu-oku", etiket: "Soruyu oku", simge: Mic, yerel: "btn-read-question", calisiyor: () => oynatici()?.okunan === "soru", calistir: () => tikla("#btn-read-question") },
+  { id: "aciklamayi-oku", etiket: "Açıklamayı oku", simge: BookOpen, yerel: "btn-read-explanation", calisiyor: () => oynatici()?.okunan === "aciklama", calistir: () => tikla("#btn-read-explanation") },
+  { id: "durdur", etiket: "Okumayı durdur", simge: Square, yerel: "btn-stop-speech", pasif: () => !oynatici()?.okunan, calistir: () => tikla("#btn-stop-speech") },
   { id: "suzgec", etiket: "Süzgeç", simge: SlidersHorizontal, kisayol: "F", tus: "f", calistir: () => window.dispatchEvent(new CustomEvent("suzgec:ac")) },
   { id: "ayarlar", etiket: "Ayarlar", simge: Settings, yerel: "btn-open-settings", calistir: () => sayfa().openQuizSettings?.() },
   { id: "ara", etiket: "Ara", simge: Search, kisayol: "Ctrl K", calistir: () => tikla("#toggleSearch") },
@@ -101,7 +121,7 @@ export const EYLEMLER: Eylem[] = [
     etiket: "Tema",
     simge: SunMoon,
     acikKalir: true,
-    etiketi: () => `Tema: ${TEMA_AD[temaOku()] ?? temaOku()}`,
+    deger: () => TEMA_AD[temaOku()] ?? temaOku(),
     calistir: temaDegistir,
   },
 ];

@@ -1355,8 +1355,9 @@ html[data-uyari-kapali] #uyari-seridi {
 }
 .player-bar.visible { transform: translateY(0); }
 .player-btn-icon { border-radius: 999px; }
-/* Toggles on the bar are neutral when on; the accent belongs to the one play/pause button (DESIGN.md §5) */
-.player-btn-icon.active { background-color: var(--button-bg-hover); color: var(--text-color); border-color: transparent; }
+/* Bar and menu share one state language (src/lib/eylemler.ts durum/calisiyor/pasif): on = soft accent, off = neutral */
+.player-btn-icon:is(.active, [aria-pressed='true'], [data-calisiyor]) { background-color: var(--primary-soft); color: var(--primary-text); border-color: transparent; }
+.player-btn-icon:disabled { opacity: .35; }
 .player-action-btn { border-radius: 999px; }
 .player-action-btn svg { display: block; }
 .player-action-btn[aria-pressed='true'] { background-color: var(--primary-color); color: var(--primary-color-text); }
@@ -1508,3 +1509,15 @@ label.ayar-satir > .ayar-ad:first-child { flex: 1; min-width: 0; }
 .q-label { flex-wrap: wrap; row-gap: 6px; overflow: visible; white-space: normal; padding: 6px 0; }
 .q-label .q-cip { max-width: calc(100% - 4.5rem); }
 .q-label .q-konu { max-width: 100%; flex-shrink: 1; }
+
+/* ---- Menu tiles (MobilMenu.tsx): state from aria-pressed / data-calisiyor / :disabled, value on a second line ---- */
+.menu-kutu { position: relative; display: flex; min-width: 0; min-height: 5rem; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 8px 4px; border: 1px solid var(--border-color); border-radius: 16px; background: var(--button-bg); color: var(--text-color); transition: background-color .2s cubic-bezier(.2,0,0,1), transform .12s cubic-bezier(.2,0,0,1); }
+.menu-kutu:hover { background: var(--button-bg-hover); }
+.menu-kutu:active { transform: scale(.96); }
+.menu-kutu:is([aria-pressed='true'], [data-calisiyor]) { border-color: transparent; background: var(--primary-soft); color: var(--primary-text); }
+.menu-kutu[aria-pressed='true']::after { content: ''; position: absolute; top: 8px; right: 8px; width: 8px; height: 8px; border-radius: 999px; background: var(--primary-color); }
+.menu-kutu:disabled { opacity: .4; }
+.menu-kutu:disabled:active { transform: none; }
+.menu-kutu-deger { font-size: 11px; line-height: 1.1; font-weight: 600; color: var(--text-color-muted); font-variant-numeric: tabular-nums; }
+.menu-kutu:is([aria-pressed='true'], [data-calisiyor]) .menu-kutu-deger { color: inherit; }
+@media (prefers-reduced-motion: reduce) { .menu-kutu { transition: none; } .menu-kutu:active { transform: none; } }
