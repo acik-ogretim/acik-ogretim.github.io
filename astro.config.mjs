@@ -5,7 +5,6 @@ import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 
-import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,5 +17,7 @@ export default defineConfig({
       include: ['@tanstack/ai-gemini', '@tanstack/ai-openai', '@tanstack/ai-anthropic', '@tanstack/ai-openrouter', '@tanstack/ai-openrouter/model-meta']
     }
   },
-  integrations: [mdx(), react(), sitemap()]
+  // Sitemaps, robots.txt and llms.txt are endpoints in src/pages (src/lib/site-haritasi.ts): one sitemap per
+  // university, canonical course pages only.
+  integrations: [mdx(), react()]
 });

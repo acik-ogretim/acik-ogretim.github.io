@@ -20,13 +20,27 @@ function validateList<T>(data: any, schema: z.ZodTypeAny): T[] {
     }).filter((item): item is T => item !== null);
 }
 
+/**
+ * Preview builds only: ONIZLEME_BOLUMLERI="auzef/cocuk-gelisimi,anadolu-aof/adalet" keeps just those
+ * departments, so page heads, sitemaps and llms.txt can be checked locally without the full (2 GB) build.
+ * Unset in CI, so the published site always has every department.
+ */
+export function onizlemeSuz(list: University[], secim = typeof process === 'undefined' ? undefined : process.env.ONIZLEME_BOLUMLERI): University[] {
+    if (!secim) return list;
+    const istenen = new Set(secim.split(',').map(s => s.trim()).filter(Boolean));
+    return list
+        .map(u => ({ ...u, departments: (u.departments || []).filter(d => istenen.has(`${u.id}/${d.id}`)) }))
+        .filter(u => u.departments.length > 0);
+}
+
 export async function getUniversities(): Promise<University[]> {
     try {
         const content = await fs.readFile(path.join(DATA_DIR, 'universities.json'), 'utf-8');
         const data = JSON.parse(content);
         const list = validateList<University>(data, universitySchema);
         // Fixture universities (test-*) exist for unit tests only; keep them out of the published site.
-        return import.meta.env?.PROD ? list.filter(u => !u.id.startsWith('test-')) : list;
+        const yayin = import.meta.env?.PROD ? list.filter(u => !u.id.startsWith('test-')) : list;
+        return onizlemeSuz(yayin);
     } catch (e) {
         console.error('Error loading universities:', e);
         return [];
