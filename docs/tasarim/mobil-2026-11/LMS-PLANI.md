@@ -2,6 +2,44 @@
 
 Açık öğretim fakültelerinin ÖYS ve LMS sistemlerinde öğrencinin kullandığı işlevler, portalın kurgusuyla (statik site, hesap yok, kayıt tarayıcıda, isteğe bağlı eşitleme) karşılaştırıldı. Her işlevin yanında üç şeyden biri yazar: **hazır** (bugünkü veriyle yapılır), **küçük altyapı** (statik veriye ya da mevcut Cloudflare Worker'a bir ek ister), **büyük altyapı** (gerçek zamanlı sunucu ya da kimlik ister). Ekran maketi: `16-video-canli-ders.html`.
 
+## 0. Hedef: eKampüs ve ÖYS'nin her işlevi, daha iyisiyle
+
+Zeki (21 Kasım 2026): portal, açık öğretim ÖYS'lerinin, Anadolum eKampüs'ün ve çevrimiçi eğitim platformlarının öğrenciye sunduğu bütün işlevleri taşımalı; Anadolu Üniversitesindeki hocalara "sizin ÖYS'nizden daha iyisini yaptık" diye gösterilebilecek düzeyde olmalı. Aşağıdaki liste resmî kaynaklarda sayılan işlevlerden çıkarıldı; her yeni özellik bu listeye bakılarak planlanır.
+
+**eKampüs'ün bileşenleri** (Anadolu AÖF kılavuzu): öğrenme yönetim sistemi, öğrenen analitikleri, canlı ders platformu, mobil uygulama.
+
+**eKampüs malzemeleri** (kılavuz, 2020-2021 program kataloğu, e-bülten): ders kitabı (PDF, EPUB, HTML5, MOBI), sesli kitap (DAISY, MP3; insan sesi ve sentez), ünite özeti ve sesli özet, sorularla öğrenelim, ünite alıştırmaları, çevrimiçi deneme sınavı, çıkmış sınav soruları, konu anlatım videoları, etkileşimli video, yakın plan, kilit soru, ders tanıtımı, mikroanimasyon, infografik, canlı ders (e-Seminer) ve kayıtları, sınav öncesi soru-cevap dersi, altyazılı video, AnaBilgi kavram sözlüğü (850 kitaptan 200 bin kavram), soru küpü, dene-öğren etkinlikleri, tartışma forumu.
+
+**ATA AÖF ÖYS uygulaması** (App Store tanıtımı): ders kitapları, deneme soruları, çıkmış sorular, ders videoları, duyurular; sınav giriş belgesi ÖBS, ÖYS ve mobil uygulamada.
+
+**Portalın karşılığı ve fark yaratacağı yerler**
+
+**Ders kitabı**: kitap MDX'i konu konu çekmecede ve kalıcı konu sayfasında açılır, sorudan tek dokunuşla konusuna gidilir ([docs/konu-anlatimi.md](../../konu-anlatimi.md)). eKampüs'te kitap ayrı bir dosyadır; bizde soru, konu, özet ve video birbirine bağlı.
+
+**Sesli kitap ve sesli özet**: her konu ve özet cümle vurgulamalı sesli okunur, hız ayarlıdır; auzeff-tui podcast ve video hattı ünite podcast'i üretir.
+
+**Kavram sözlüğü (AnaBilgi karşılığı)**: wiki yapısı; her kavram tıklanabilir, geçtiği konular, dersler ve sorular listelenir, kavram çizgesiyle gezilir.
+
+**Alıştırma, deneme, çıkmış soru**: var; çıkmış sorular sorulma sıklığıyla sıralanır, yanlışlar ve işaretliler kalır, zamanlı sınav kipi ve aralıklı tekrar plandadır (aşağıda 4. bölüm). eKampüs'te çıkmış sorular derse ve döneme göre ayrık; bizde soru konuya ve kitap sayfasına bağlı.
+
+**Video, etkileşimli video, altyazı**: 1. bölüm; videoyla eşzamanlı konu metni, metinden videoya atlama, döküm aynı zamanda altyazı.
+
+**Canlı ders ve soru-cevap**: 3. bölüm.
+
+**Öğrenen analitikleri**: kişinin kendi ilerlemesi, zayıf konuları, konu bazında başarı; veri cihazda kalır, isteğe bağlı eşitlenir (eKampüs'ten farklı olarak kurum veriyi görmez).
+
+**Mobil uygulama**: kurulabilir web uygulaması, çevrimdışı ders indirme, ana ekran.
+
+**Forum**: soru ve ders başına tartışma ve tek dokunuşla hata bildirimi.
+
+**Duyurular ve sınav takvimi**: 5. bölüm ve `.ics`.
+
+**Yalnız bizde**: kendi anahtarıyla yapay zekâ sohbeti (derse sor, yanlış yaptığı konuları göster, konu anlat, sesli konuşma), açıklamayı zenginleştirme menüsü, hesap gerektirmeyen kullanım, üniversiteler arası tek arayüz.
+
+Kapsam dışı: not, ödev teslimi, sınav giriş belgesi, kayıt işlemleri (fakültenin resmî sistemleri; portal oraya bağlantı verir).
+
+Kaynaklar: Anadolu AÖF kılavuzu https://www.anadolu.edu.tr/uploads/anadolu/files/aof_kilavuz/65a121eee17f7.pdf · Anadolu Üniversitesi 2020-2021 program kataloğu https://anadolu.edu.tr/uploads/anadolu/ckfinder/web/files/anadolu-universitesi-2020-2021-ogretim-yili-program-katalogu.pdf · Açıköğretim e-bülten 71 https://anadolu.edu.tr/uploads/anadolu/ckfinder/aof/files/AOebulten71.pdf · e-bülten 47-II https://anadolu.edu.tr/uploads/anadolu/ckfinder/aof/files/AOebulten47-II.pdf · ATA AOF OYS uygulaması https://apps.apple.com/us/app/id6472282436
+
 ## 1. Video ve eş zamanlı konu anlatımı (16a)
 
 **Video**: ders başına YouTube kanalımızdaki ünite videoları `src/data/youtube-videolar.json` içinde duruyor ve bu dosyayı auzeff-tui hattı yazıyor. Bugün yalnız bağlantı olarak listeleniyor; sayfa içinde YouTube IFrame Player API ile oynatılırsa zaman bilgisi sayfaya akar. **Hazır.**
