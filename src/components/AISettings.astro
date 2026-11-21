@@ -4,6 +4,8 @@
 ---
 
 <script>
+    import { ozgunHtml, ozgunMetni, sakla } from "../lib/ozgun-aciklama";
+    import { SORULAR_HAZIR_OLAYI, sorularHazirMi } from "../lib/ders-olaylari";
 
     // Declare global window extensions
     declare global {
@@ -60,19 +62,17 @@
         // Element Selection using legacy IDs for now as they are generated in HTML
         // Ideally we should refactor HTML IDs too, but this bridges the logic.
         const contentId = `content-${unit}-${qIdx}`;
-        const originalId = `original-${unit}-${qIdx}`;
         const contentEl = document.getElementById(contentId);
-        const originalEl = document.getElementById(originalId);
         const menuId = `menu-${unit}-${qIdx}`;
 
         // Close menu
         document.getElementById(menuId)?.classList.add("hidden");
 
-        if (!contentEl || !originalEl) return;
+        if (!contentEl) return;
 
         if (action === "reset") {
             // Restore original HTML
-            contentEl.innerHTML = originalEl.innerHTML;
+            contentEl.innerHTML = ozgunHtml(contentEl);
 
             // Remove from storage object
             const slug =
@@ -105,6 +105,7 @@
         if (!isEnrichAction(action)) return;
 
         const previous = contentEl.innerHTML;
+        sakla(contentEl);
         contentEl.innerHTML = `
         <div class="flex items-center gap-2 text-accent-ink py-2" role="status">
             <svg class="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
@@ -119,7 +120,7 @@
             const text = await enrich(action, {
                 question: (card.querySelector(".question-text") as HTMLElement)?.innerText || "",
                 answer: (card.querySelector(".answer-meta-card") as HTMLElement)?.innerText || "",
-                explanation: originalEl.innerText,
+                explanation: ozgunMetni(contentEl),
             });
             contentEl.innerHTML = text;
 
@@ -189,13 +190,32 @@
             const savedContent = store[qId];
 
             if (savedContent) {
+                sakla(contentEl);
                 contentEl.innerHTML = savedContent;
             }
         });
     }
 
-    // Run restore on load
-    window.addEventListener("DOMContentLoaded", restoreAIExplanations);
-    // Also run immediately in case DOMContentLoaded fired
-    restoreAIExplanations();
+    // Buttons on the cards carry data-ai instead of an inline handler (the cards are drawn after load).
+    // Listening on the question area, not the document, keeps the old stopPropagation behaviour of the menu button.
+    function baglaDugmeler(alan: Element) {
+        alan.addEventListener("click", (e) => {
+            const dugme = (e.target as Element | null)?.closest<HTMLElement>("[data-ai]");
+            const icerik = dugme?.closest(".question-card")?.querySelector(".explanation-content");
+            const m = /^content-(\d+)-(\d+)$/.exec(icerik?.id ?? "");
+            if (!dugme || !m) return;
+            const [, unit, qIdx] = m as unknown as [string, string, string];
+            if (dugme.dataset.ai === "menu") {
+                (window as unknown as { openGlobalAIMenu?: (e: Event, u: string, q: string, b: HTMLElement) => void }).openGlobalAIMenu?.(e, unit, qIdx, dugme);
+            } else {
+                void window.handleAIAction(dugme, dugme.dataset.ai ?? "", unit, qIdx);
+            }
+        });
+    }
+    const soruAlani = document.querySelector("[data-soru-alani]");
+    if (soruAlani) baglaDugmeler(soruAlani);
+
+    // Saved AI explanations are put back once the cards are on the page
+    if (sorularHazirMi()) restoreAIExplanations();
+    else window.addEventListener(SORULAR_HAZIR_OLAYI, restoreAIExplanations, { once: true });
 </script>

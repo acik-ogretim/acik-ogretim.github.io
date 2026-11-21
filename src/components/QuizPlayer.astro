@@ -83,6 +83,7 @@
 <script>
     import { QuizPlayer } from "../scripts/quiz-player.ts";
     import { cubuguBaslat } from "../lib/cubuk";
+    import { SORULAR_HAZIR_OLAYI, sorularHazirMi } from "../lib/ders-olaylari";
 
     if (typeof window !== "undefined") {
         const init = () => {
@@ -121,10 +122,15 @@
             }
         };
 
+        // The cards are drawn from the unit files after load: the player starts once they are in the page
+        const baslat = () => {
+            if (sorularHazirMi()) init();
+            else addEventListener(SORULAR_HAZIR_OLAYI, init, { once: true });
+        };
         if (document.readyState === "loading") {
-            document.addEventListener("DOMContentLoaded", init);
+            document.addEventListener("DOMContentLoaded", baslat);
         } else {
-            init();
+            baslat();
         }
     }
 </script>

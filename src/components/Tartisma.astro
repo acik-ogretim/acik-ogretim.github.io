@@ -135,7 +135,18 @@
     if (!sayfa.open) sayfa.showModal();
   }
 
+  // Question cards carry only data-q-tartis: the discussion key, title and explanation id come from the card and the page
   document.addEventListener("click", (e) => {
+    const soruDugmesi = (e.target as Element | null)?.closest<HTMLElement>("[data-q-tartis]");
+    if (soruDugmesi) {
+      const kart = soruDugmesi.closest<HTMLElement>(".question-card");
+      const alan = document.querySelector<HTMLElement>("[data-soru-alani]");
+      if (!kart || !alan) return;
+      e.preventDefault();
+      const no = kart.querySelector(".q-no")?.textContent?.trim() ?? "Soru";
+      ac(`${alan.dataset.uni}/${alan.dataset.ders}/${kart.dataset.id}`, `${alan.dataset.dersAd} · ${no}`, kart.querySelector(".explanation-content")?.id ?? "");
+      return;
+    }
     const hedef = (e.target as Element | null)?.closest<HTMLElement>("[data-tartisma]");
     if (!hedef) return;
     e.preventDefault();

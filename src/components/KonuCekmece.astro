@@ -8,8 +8,10 @@ import Simge from "./Simge.astro";
 interface Props {
   uni: string;
   ders: string;
+  /** /calisma/<ders>/ when the course has a study room: the drawer shows a link to the same topic there. */
+  calismaYolu?: string;
 }
-const { uni, ders } = Astro.props;
+const { uni, ders, calismaYolu } = Astro.props;
 ---
 
 <dialog
@@ -18,6 +20,7 @@ const { uni, ders } = Astro.props;
   data-yer="sag"
   data-uni={uni}
   data-ders={ders}
+  data-calisma-yolu={calismaYolu}
   aria-labelledby="konu-baslik"
   closedby="any"
 >
@@ -39,6 +42,7 @@ const { uni, ders } = Astro.props;
     </button>
   </header>
   <div id="konu-govde" class="katman-govde konu-govde" tabindex="-1" autofocus>
+    {calismaYolu && <a id="konu-anlatim" class="konu-anlatim print:hidden" href={calismaYolu} hidden>Anlatımda aç</a>}
     <div id="konu-yukleniyor" class="konu-iskelet" role="status" aria-live="polite" hidden>
       <span class="konu-iskelet-satir"></span>
       <span class="konu-iskelet-satir"></span>

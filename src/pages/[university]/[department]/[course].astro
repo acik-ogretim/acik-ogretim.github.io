@@ -4,6 +4,7 @@ import AISettings from "../../../components/AISettings.astro";
 import AIMenu from "../../../components/AIMenu.astro";
 import YazdirmaAyarlari from "../../../components/YazdirmaAyarlari.astro";
 import Layout from "../../../layouts/Layout.astro";
+import "../../../styles/soru-karti.css";
 import YouTubeVideolari from "../../../components/YouTubeVideolari.astro";
 import { Check, ChevronRight, MessageCircle, MessageSquare, TriangleAlert, Volume2, X } from "lucide-react";
 import { createElement } from "react";
@@ -12,8 +13,6 @@ import { renderToStaticMarkup } from "react-dom/server";
 // an inline SVG per option added megabytes per page and pushed the Pages artifact past 10 GB.
 const inner = (icon: typeof Check) => renderToStaticMarkup(createElement(icon)).replace(/^<svg[^>]*>|<\/svg>$/g, "");
 const iconSprite = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner(Check)}</symbol><symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner(X)}</symbol><symbol id="i-uyari" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner(TriangleAlert)}</symbol><symbol id="i-ileri" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${inner(ChevronRight)}</symbol><symbol id="i-tartis" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${inner(MessageSquare)}</symbol><symbol id="i-sohbet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${inner(MessageCircle)}</symbol><symbol id="i-ses" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${inner(Volume2)}</symbol><symbol id="i-more" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></symbol></svg>`;
-const checkSvg = '<svg aria-hidden="true"><use href="#i-check"/></svg>';
-const xSvg = '<svg aria-hidden="true"><use href="#i-x"/></svg>';
 import SohbetCekmece from "../../../components/sohbet/SohbetCekmece.tsx";
 import Suzgec from "../../../components/Suzgec.tsx";
 import Simge from "../../../components/Simge.astro";
@@ -21,9 +20,8 @@ import videoVerisi from "../../../data/youtube-videolar.json";
 import MobilMenu from "../../../components/MobilMenu.tsx";
 import KonuCekmece from "../../../components/KonuCekmece.astro";
 import Icindekiler, { type IcKonu, type IcUnite } from "../../../components/Icindekiler.tsx";
-import { getCourses, getDersIcerik, getKitapKonulari, getKitapUniteAdlari, getQuestions, getUniversities, type KitapKonu } from "../../../lib/api";
-import { uniteBasligi } from "../../../lib/unite-basligi";
-import { soruSirala } from "../../../lib/soru-sirasi";
+import { getCourses, getUniversities, type KitapKonu } from "../../../lib/api";
+import { dersBaglami } from "../../../lib/ders-baglami";
 import { kitapSirala } from "../../../lib/soru-siralama";
 import { canonicalDepartments, courseDepartments, coursePath } from "../../../lib/kanonik";
 import { dereceAdi } from "../../../lib/derece";
@@ -69,33 +67,10 @@ interface Props {
 const { university, department, course, canonicalDept, bolumler } = Astro.props;
 // Shared course: send the learner to the single page but keep the department they came from
 if (canonicalDept !== department.id) return Astro.redirect(`${coursePath(university.id, canonicalDept, course.id)}?bolum=${department.id}`);
-const questions = await getQuestions(university.id, course.id);
-const icerik = await getDersIcerik(university.id, course.id);
-// Official topic list: in AUZEF and Anadolu the weekly topics are the units of the book
-// Use it only when it covers every unit that has questions; a shorter list (merged weeks) would shift titles
-const enBuyukUnite = Math.max(0, ...questions.map((q) => q.unitNumber));
-const resmiListe = (icerik?.konular ?? []).length >= enBuyukUnite ? (icerik?.konular ?? []) : [];
-const uniteAdi = new Map(resmiListe.map((k) => [k.no, uniteBasligi(k.baslik)]));
-// The book's own unit list wins over the weekly plan (weekly plans have exam weeks and differ from the book)
-const kitapUniteleri = await getKitapUniteAdlari(university.id, course.code);
-kitapUniteleri.forEach((baslik, i) => uniteAdi.set(i + 1, uniteBasligi(baslik)));
-// Book topic tree: unit titles where the official list has none, and the topic shown on each question
-const kitap = await getKitapKonulari(university.id, course.id);
-const konuAdi = new Map<string, string>();
-for (const u of kitap) {
-  if (!uniteAdi.has(u.unite)) uniteAdi.set(u.unite, uniteBasligi(u.baslik));
-  const gez = (k: KitapKonu) => {
-    konuAdi.set(k.no, k.baslik);
-    k.alt.forEach(gez);
-  };
-  u.konular.forEach(gez);
-}
+// Questions, unit titles and topic names are shared with the unit files (src/lib/ders-baglami.ts)
+const baglam = await dersBaglami(university.id, course);
+const { questions, icerik, uniteAdi, konuAdi, kitap, units } = baglam;
 
-// Group questions by unit
-// Unit 0 holds exam questions whose unit is not known yet: list it after the numbered units
-const units = [...new Set(questions.map((q) => q.unitNumber))].sort(
-  (a, b) => (a === 0 ? 1 : 0) - (b === 0 ? 1 : 0) || a - b,
-);
 const mobilUniteler = units.map((no) => ({
   no,
   ad: no === 0 ? "Diğer" : `Ünite ${no}`,
@@ -118,45 +93,6 @@ const icindekiler: IcUnite[] = units.map((no) => {
     konular: (kitapUnite.get(no)?.konular ?? []).map(donustur),
   };
 });
-const EXAM_LABEL: Record<string, string> = { vize: "Vize", final: "Final", butunleme: "Bütünleme", "tek-ders": "Tek Ders", "yaz-okulu": "Yaz Okulu", "uc-ders": "Üç Ders", mezuniyet: "Mezuniyet", genel: "" };
-type SinavEtiket = { year: string; examType: string; kitapcik?: string };
-// One exam can have several booklets (term or programme); show the exam once with its booklets
-const examLine = (q: { year?: string | number; examType?: string; sinavlar?: SinavEtiket[] }) => {
-  const liste: SinavEtiket[] = q.sinavlar?.length ? q.sinavlar : [{ year: String(q.year ?? ""), examType: q.examType ?? "genel" }];
-  const gruplar = new Map<string, Set<string>>();
-  for (const s of liste) {
-    const ad = `${s.year} ${EXAM_LABEL[s.examType] ?? ""}`.trim();
-    const k = gruplar.get(ad) ?? new Set<string>();
-    if (s.kitapcik) k.add(s.kitapcik);
-    gruplar.set(ad, k);
-  }
-  return [...gruplar].map(([ad, k]) => (k.size ? `${ad} (${[...k].join(", ")})` : ad)).join(", ");
-};
-// Question record ("soru künyesi", DESIGN.md §5): exam groups newest first, a one-line summary and the full topic path
-const sinavGruplari = (q: { year?: string | number; examType?: string; sinavlar?: SinavEtiket[]; source?: string }) => {
-  if (q.source !== "cikmis-soru" || !(q.sinavlar?.length || q.year)) return [] as string[];
-  return examLine(q).split(", ").filter(Boolean).sort((a, b) => b.localeCompare(a, "tr"));
-};
-const kunyeOzeti = (q: Parameters<typeof sinavGruplari>[0]) => {
-  const g = sinavGruplari(q);
-  if (g.length === 0) return q.source === "cikmis-soru" ? "Çıkmış soru" : "Alıştırma";
-  return g.length > 1 ? `${g[0].replace(/ \(.*\)$/, "")} +${g.length - 1}` : g[0].replace(/ \(.*\)$/, "");
-};
-const konuYolu = (bolum: string) => {
-  const parcalar = bolum.split(".");
-  const yol: string[] = [];
-  for (let i = 2; i <= parcalar.length; i++) {
-    const no = parcalar.slice(0, i).join(".");
-    const ad = konuAdi.get(no);
-    if (ad) yol.push(`${no} ${ad}`);
-  }
-  return yol;
-};
-const KONTROL: Record<string, string> = {
-  "cevap-celiskisi": "Kaynaklar bu soruda farklı şıkkı doğru gösteriyor.",
-  "sik-farkli": "Bu soru kaynaklarda farklı şıklarla geçiyor.",
-  "kaynak-celiskili": "Kaynak bu soruya farklı yerlerde farklı cevap vermiş.",
-};
 // Exam years shown on the course card: from the questions themselves (ders-icerik holds curriculum years)
 const sinavYillari = [...new Set(questions.flatMap((q) =>
   (q.sinavlar ?? (q.source === "cikmis-soru" && q.year ? [{ year: String(q.year), examType: "" }] : []))
@@ -167,9 +103,6 @@ const yilMetni = sinavYillari.length === 0 ? "" : sinavYillari.length === 1
   ? `${sinavYillari[0]} sınavı`
   : `${sinavYillari[0]}-${sinavYillari[sinavYillari.length - 1]} · ${sinavYillari.length} yıl`;
 const videoVar = ((videoVerisi.dersler as Record<string, unknown[]>)[`${university.id}/${course.id}`] ?? []).length > 0;
-const examKeys = (q: { year?: string | number; examType?: string; source?: string; sinavlar?: SinavEtiket[] }) =>
-  [...new Set((q.sinavlar ?? (q.source === "cikmis-soru" && q.year ? [{ year: String(q.year), examType: q.examType ?? "genel" }] : []))
-    .map((s) => `${s.year} ${s.examType}`))].join(";");
 // Search and agent metadata: description from the real counts, breadcrumb, learning resource, Markdown summary
 const cikmisSayisi = questions.filter((q) => q.source === "cikmis-soru").length;
 const dersYolu = `/${university.id}/${department.id}/${course.id}/`;
@@ -339,16 +272,21 @@ const dersJsonLd = graf(
       </nav>
 
       <!-- Sections (Units) -->
-      <article class="max-w-none">
+      <!-- Skeleton only: the cards of each unit are drawn from /ders/<uni>/<ders>/unite/<n>.json (src/scripts/soru-yukleyici.ts) -->
+      <article
+        class="max-w-none"
+        data-soru-alani
+        data-uni={university.id}
+        data-ders={course.id}
+        data-ders-ad={course.name}
+        data-uniteler={units.join(",")}
+        data-calisma-yolu={calismaOdasiVar ? `/calisma/${course.id}/` : undefined}
+      >
         <h1 class="sr-only">{course.name} - Tüm Sorular</h1>
         {
           units.map((unit, idx) => {
-            // Book order (topic number, then file order); "Sırala" moves the cards on the client.
-            // data-eski is the place in the older order ("most asked first"): records written with the
-            // old DOM ids (question-<unit>-<index>) are moved to the question's data id with it.
-            const uniteSorulari = questions.filter((q) => q.unitNumber === unit);
-            const unitQuestions = kitapSirala(uniteSorulari);
-            const eskiSira = new Map(soruSirala(uniteSorulari).map((q, i) => [q, i]));
+            // The unit's first topic: the "Anlatım" link opens the study room there (only courses that have one)
+            const ilkKonu = kitapUnite.get(unit)?.konular[0]?.no;
             return (
               <div
                 id={`unite-${unit}`}
@@ -357,152 +295,16 @@ const dersJsonLd = graf(
               >
                 <h2 class="text-xl md:text-2xl font-semibold text-ink border-b border-line pb-2 mb-6">
                   {unit === 0 ? "Ünitesi belirlenmemiş sorular" : `Ünite ${unit}`}
+                  {calismaOdasiVar && ilkKonu && (
+                    <a href={`/calisma/${course.id}/?konu=${encodeURIComponent(ilkKonu)}`} class="unite-anlatim print:hidden">Anlatım</a>
+                  )}
                   {unit !== 0 && uniteAdi.get(unit) && (
                     <span class="block text-base md:text-lg font-semibold text-theme mt-1 line-clamp-2">
                       {uniteAdi.get(unit)!.baslik}
                     </span>
                   )}
                 </h2>
-
-                {unitQuestions.map((q, qIdx) => (
-                  <div
-                    class="question-card"
-                    id={`question-${unit}-${qIdx}`}
-                    data-unit={unit}
-                    data-id={q.id}
-                    data-konu={q.section || undefined}
-                    data-eski={eskiSira.get(q) !== qIdx ? eskiSira.get(q) : undefined}
-                    data-source={q.source}
-                    data-sinav={examKeys(q)}
-                    data-testid="question-card"
-                  >
-                    <header class="q-ust">
-                      <details class="soru-kunye">
-                        <summary>
-                          <h3 class="soru-kunye-ozet">
-                            <span class="q-no">Soru {qIdx + 1}</span>
-                            <span class="soru-kunye-parca">{kunyeOzeti(q)}</span>
-                            {q.section && konuAdi.has(q.section) && (
-                              <span class="soru-kunye-parca">{q.section} {konuAdi.get(q.section)}</span>
-                            )}
-                            {q.kontrol && <span class="soru-kunye-parca text-warn">kontrol edin</span>}
-                          </h3>
-                          <svg class="soru-kunye-ok" aria-hidden="true"><use href="#i-ileri" /></svg>
-                        </summary>
-                        <dl class="soru-kunye-ayrinti">
-                          {sinavGruplari(q).length > 0 && (
-                            <div class="soru-kunye-satir">
-                              <dt>{sinavGruplari(q).length > 1 ? `${sinavGruplari(q).length} sınavda çıktı` : "Sınav"}</dt>
-                              <dd>{sinavGruplari(q).join(" · ")}</dd>
-                            </div>
-                          )}
-                          {q.section && konuAdi.has(q.section) && (
-                            <div class="soru-kunye-satir">
-                              <dt>Konu</dt>
-                              <dd>
-                                <button type="button" class="q-konu" data-konu={q.section}>
-                                  <span>{konuYolu(q.section).join(" › ")}</span>
-                                  <svg aria-hidden="true"><use href="#i-ileri" /></svg>
-                                </button>
-                              </dd>
-                            </div>
-                          )}
-                          <div class="soru-kunye-satir">
-                            <dt>Kaynak</dt>
-                            <dd>
-                              {q.source === "cikmis-soru" ? "Çıkmış soru" : "Alıştırma ve deneme"}
-                              {" · "}
-                              <a href={`#unite-${unit}`}>{unit === 0 ? "Ünitesi belirlenmemiş" : `Ünite ${unit}${uniteAdi.get(unit) ? ` ${uniteAdi.get(unit)!.baslik}` : ""}`}</a>
-                            </dd>
-                          </div>
-                          {q.kontrol && (
-                            <div class="soru-kunye-satir" data-kontrol={q.kontrol}>
-                              <dt class="text-warn">Kontrol edin</dt>
-                              <dd>{KONTROL[q.kontrol]} Soruyu ve cevabı kontrol edin.</dd>
-                            </div>
-                          )}
-                        </dl>
-                      </details>
-                      <button
-                        type="button"
-                        class="q-ikon print:hidden"
-                        aria-label={`Soru ${qIdx + 1}: tartış ya da hata bildir`}
-                        data-tartisma={`${university.id}/${course.id}/${q.id}`}
-                        data-tartisma-etiket={`${course.name} · Soru ${qIdx + 1}`}
-                        data-tartisma-icerik={`content-${unit}-${qIdx}`}
-                      ><svg aria-hidden="true"><use href="#i-tartis" /></svg></button>
-                    </header>
-
-                    <div class="prose prose-invert max-w-none">
-                      <div
-                        class="question-text"
-                        set:html={q.text}
-                      />
-
-                      <h4 class="sr-only">Seçenekler</h4>
-                      <div class="space-y-3 mb-6">
-                        {q.options.map((opt) => {
-                          const isCorrect = opt.key === q.correctAnswer;
-                          return (
-                            <div
-                              class={`option-item ${
-                                isCorrect ? "correct-option" : ""
-                              }`}
-                              data-key={opt.key}
-                              data-testid={`option-${opt.key}`}
-                            >
-                              <span class="option-key">{opt.key}</span>
-                              <div
-                                class="option-text"
-                                set:html={opt.text}
-                              />
-                              <div class="option-marker hidden">
-                                <Fragment set:html={isCorrect ? checkSvg : xSvg} />
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </div>
-
-                      {q.explanation ? (
-                        <div class="explanation-card explanation-box text-ink-muted text-sm leading-relaxed relative" data-explanation-id={`exp-${unit}-${qIdx}`}>
-                          <div class="aciklama-ust">
-                            <strong class="flex-1 text-ink font-semibold">Açıklama</strong>
-                            <button type="button" class="q-ikon print:hidden" data-seslendir aria-label="Açıklamayı seslendir"><svg aria-hidden="true"><use href="#i-ses" /></svg></button>
-                            <button type="button" class="q-ikon print:hidden" aria-label="Derse sor" onclick={`window.handleAIAction&&window.handleAIAction(this,'ask','${unit}','${qIdx}')`}><svg aria-hidden="true"><use href="#i-sohbet" /></svg></button>
-                            <div class="ai-enrichment-controls hidden relative z-10">
-                              <button type="button" class="btn-ai-menu q-ikon" aria-label="Yapay zekâ işlemleri" onclick={`openGlobalAIMenu(event, '${unit}', '${qIdx}')`}>
-                                <svg aria-hidden="true"><use href="#i-more" /></svg>
-                              </button>
-                            </div>
-                          </div>
-                          <div class="explanation-content" id={`content-${unit}-${qIdx}`} set:html={q.explanation} />
-                          <div class="original-content-store hidden" id={`original-${unit}-${qIdx}`} set:html={q.explanation} />
-                        </div>
-                      ) : (
-                        <div class="explanation-card explanation-box aciklama-yok relative" data-explanation-id={`exp-${unit}-${qIdx}`}>
-                          <div class="explanation-content" id={`content-${unit}-${qIdx}`}>
-                            <button type="button" class="aciklama-yok-satir" onclick={`window.handleAIAction&&window.handleAIAction(this,'regenerate','${unit}','${qIdx}')`}>
-                              <svg aria-hidden="true"><use href="#i-sohbet" /></svg>
-                              <span>Açıklama yok · <b>Yapay zekâ ile açıkla</b></span>
-                              <svg aria-hidden="true"><use href="#i-ileri" /></svg>
-                            </button>
-                          </div>
-                          <div class="original-content-store hidden" id={`original-${unit}-${qIdx}`}></div>
-                        </div>
-                      )}
-
-                      <div class="answer-meta-card answer-metadata-box correct-answer-line">
-                        <p class="text-muted-theme text-sm leading-relaxed">
-                          <strong class="text-accent-ink uppercase tracking-wider mr-2">
-                            Doğru Cevap:
-                          </strong>
-                          <span class="font-bold">{q.correctAnswer}</span>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                <p class="soru-yukleniyor" data-yukleniyor role="status">Sorular yükleniyor</p>
               </div>
             );
           })
@@ -530,7 +332,7 @@ const dersJsonLd = graf(
 
   <QuizPlayer />
   <Icindekiler client:idle uniteler={icindekiler} calismaYolu={calismaOdasiVar ? `/calisma/${course.id}/` : undefined} videoVar={!!videoVar} />
-  <KonuCekmece uni={university.id} ders={course.id} />
+  <KonuCekmece uni={university.id} ders={course.id} calismaYolu={calismaOdasiVar ? `/calisma/${course.id}/` : undefined} />
   <MobilMenu client:idle dersAdi={course.name} uniteler={mobilUniteler} uni={university.id} ders={course.id} bolumler={bolumler} bolum={{ id: department.id, ad: department.name }} />
   {bolumler.length > 1 && (
     <script type="application/json" id="ders-bolumleri" set:html={JSON.stringify({ uni: university.id, ders: course.id, bolumler, bolum: { id: department.id, ad: department.name } })} />
@@ -612,6 +414,8 @@ const dersJsonLd = graf(
       }
     }
     import { createFuse, normalizeTurkish } from "../../../lib/search";
+    import { SORULAR_HAZIR_OLAYI, sorularHazirMi } from "../../../lib/ders-olaylari";
+    import "../../../scripts/soru-yukleyici";
 
     declare global {
       interface Window {
@@ -626,23 +430,19 @@ const dersJsonLd = graf(
     ) as HTMLInputElement;
     const closeBtn = document.getElementById("closeSearch");
     const counter = document.getElementById("searchCounter");
-    const questionCards = Array.from(
-      document.querySelectorAll(".question-card"),
-    );
     const unitSections = document.querySelectorAll(".unit-separator");
 
-    // Prepare Fuse Index for Questions
-    const searchData = questionCards.map((card, index) => {
-      const text = (card as HTMLElement).innerText;
-      return {
-        text: text,
-        normalizedText: normalizeTurkish(text),
-        id: index,
-        element: card as HTMLElement,
-      };
-    });
-
-    const fuse = createFuse(searchData, ["text", "normalizedText"], 0.4);
+    // Cards are drawn from the unit files after load (SORULAR_HAZIR_OLAYI): the index is built then
+    let questionCards: Element[] = [];
+    let fuse: ReturnType<typeof createFuse<{ text: string; normalizedText: string; id: number; element: HTMLElement }>> | null = null;
+    function indeksle() {
+      questionCards = Array.from(document.querySelectorAll(".question-card"));
+      const searchData = questionCards.map((card, index) => {
+        const text = (card as HTMLElement).innerText;
+        return { text, normalizedText: normalizeTurkish(text), id: index, element: card as HTMLElement };
+      });
+      fuse = createFuse(searchData, ["text", "normalizedText"], 0.4);
+    }
 
     function openSearch() {
       if (searchPanel instanceof HTMLDialogElement && !searchPanel.open) searchPanel.showModal();
@@ -705,7 +505,7 @@ const dersJsonLd = graf(
             if (unit) unitMatches.set(unit, (unitMatches.get(unit) || 0) + 1);
           });
         } else {
-          const results = fuse.search(q);
+          const results = fuse ? fuse.search(q) : [];
           const foundIndices = new Set(results.map((r) => r.item.id));
 
           questionCards.forEach((card, index) => {
@@ -771,8 +571,14 @@ const dersJsonLd = graf(
       applySearch((e.target as HTMLInputElement).value),
     );
 
-    // Initial help text
+    // Initial help text; the card index follows once the questions are on the page
     applySearch("");
+    const indeksleVeGoster = () => {
+      indeksle();
+      applySearch(searchInput?.value ?? "");
+    };
+    if (sorularHazirMi()) indeksleVeGoster();
+    else addEventListener(SORULAR_HAZIR_OLAYI, indeksleVeGoster, { once: true });
 
     // Shortcut: Ctrl/Cmd + K (like command palette)
     window.addEventListener("keydown", (e) => {

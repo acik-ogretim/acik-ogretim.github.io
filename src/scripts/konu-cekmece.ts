@@ -132,6 +132,12 @@ export function konuCekmeceBagla(): void {
   async function ac(no: string): Promise<void> {
     okuma.dur(true);
     simdiki = no;
+    // Study room of the same topic (only courses that have one)
+    const anlatim = document.getElementById("konu-anlatim") as HTMLAnchorElement | null;
+    if (anlatim && dlg.dataset.calismaYolu) {
+      anlatim.href = `${dlg.dataset.calismaYolu}?konu=${encodeURIComponent(no)}`;
+      anlatim.hidden = false;
+    }
     const sira = ++istek;
     baslik.textContent = `Konu ${no}`;
     bilgi.textContent = "";

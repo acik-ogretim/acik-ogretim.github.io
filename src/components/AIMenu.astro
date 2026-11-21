@@ -49,9 +49,10 @@ const EYLEMLER: { action: string; label: string; Icon: SimgeAdi }[] = [
 <script is:inline>
   window.activeAIContext = { unit: null, qIdx: null, triggerBtn: null };
 
-  window.openGlobalAIMenu = function (event, unit, qIdx) {
+  window.openGlobalAIMenu = function (event, unit, qIdx, tetikleyen) {
     event.stopPropagation();
-    const btn = event.currentTarget;
+    // Cards call it from a delegated listener (currentTarget is then the question area): the button comes as 4th argument
+    const btn = tetikleyen || event.currentTarget;
     const menu = document.getElementById("global-ai-menu");
     if (!menu) return;
     // Anchor for wide screens (katman.css, @supports anchor positioning); only one button holds the name.

@@ -2,6 +2,8 @@
 // Settings live in localStorage ("yazdirma-ayarlari"); they are applied as data-baski-* attributes
 // on <html> in beforeprint and read by src/styles/print.css.
 import { z } from "zod";
+import { depodanBul } from "./soru-deposu";
+import { konuYolu } from "./soru-karti";
 
 export const YazdirmaAyarlariSemasi = z.object({
   cevap: z.enum(["alt", "sonda", "yok"]).catch("alt"),
@@ -80,7 +82,8 @@ export function baskiyaHazirla(a: YazdirmaAyarlari): void {
   for (const kart of kartlar) {
     const konu = kart.dataset.konu ?? "";
     if (konu && konu !== onceki) {
-      const ad = kart.querySelector(".q-konu span")?.textContent?.trim() ?? konu;
+      const kayit = depodanBul(kart.id);
+      const ad = (kayit ? konuYolu(konu, kayit.baglam.konular).join(" › ") : "") || konu;
       kart.setAttribute("data-konu-basi", "");
       kart.setAttribute("data-konu-ad", ad.toLocaleUpperCase("tr-TR"));
     }

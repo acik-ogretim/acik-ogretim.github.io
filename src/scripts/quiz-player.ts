@@ -3,6 +3,7 @@ import { suz } from "../lib/suzgec";
 import { KIP_OLAYI, KONUM_ISTE_OLAYI, OYNATICI_DURUM_OLAYI, SORU_KONUMU_OLAYI, hizMetni, type OynaticiDurum, type SoruKonumu } from "../lib/ders-olaylari";
 import { CalismaBaglantisi, kartiOdakla, okunanSoru } from "./calisma-baglanti";
 import { depoOku, depoYaz } from "../lib/calisma-durumu";
+import { sakla } from "../lib/ozgun-aciklama";
 
 // Player bar icons for the solve-mode button (Lucide play and pause, filled look through currentColor)
 const PLAY_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5v15l13-7.5z"></path></svg>';
@@ -241,6 +242,7 @@ export class QuizPlayer {
           const contentEl = el.querySelector('.explanation-content');
 
           if (contentEl) {
+            sakla(contentEl);
             contentEl.innerHTML = savedAI;
           }
           explanation = savedAI; // Use AI content for player state (TTS)
