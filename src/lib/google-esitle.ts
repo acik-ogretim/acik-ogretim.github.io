@@ -18,6 +18,7 @@ type Gis = {
         scope: string;
         callback: (r: { access_token?: string; expires_in?: number; error?: string }) => void;
         error_callback?: (e: { type?: string }) => void;
+        include_granted_scopes?: boolean;
       }) => TokenClient;
       revoke: (token: string, done?: () => void) => void;
     };
@@ -107,6 +108,10 @@ export async function girisYap(): Promise<string> {
     const istemci = gis.accounts.oauth2.initTokenClient({
       client_id: GOOGLE_CLIENT_ID,
       scope: KAPSAM,
+      // GIS defaults to true and re-requests every scope the account ever granted this client. Browsers that once used
+      // the old remoteStorage Drive option had granted the full `drive` scope, so Google showed "hasn't verified this app /
+      // sensitive info" although the project only registers drive.appdata (non-sensitive, no verification needed).
+      include_granted_scopes: false,
       callback: (r) => {
         clearTimeout(sure);
         if (r.access_token) ok({ t: r.access_token, saniye: r.expires_in ?? 3600 });
