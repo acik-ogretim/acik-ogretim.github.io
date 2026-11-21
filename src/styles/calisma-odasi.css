@@ -1455,6 +1455,9 @@ dialog .co-arac[data-alt] {
   height: 20px;
 }
 .co-ak-anlatim {
+  margin-top: 12px;
+}
+.co-ak-notlar .co-ozet:first-of-type {
   margin-top: 4px;
 }
 .co-ak-anlatim-p {
@@ -1466,8 +1469,10 @@ dialog .co-arac[data-alt] {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  justify-content: center;
+  width: 28px;
   min-height: 28px;
-  padding: 0 8px;
+  padding: 0;
   margin-right: 4px;
   border: 1px solid var(--border-color);
   border-radius: 8px;

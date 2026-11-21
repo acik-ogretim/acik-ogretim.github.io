@@ -1005,16 +1005,17 @@ export function calismaOdasiBaslat(): void {
         return paragraflar
           .map(
             (p) =>
-              `<p class="co-ak-anlatim-p"><button type="button" class="co-ak-dinle" data-ak-satir="${esc(v.id)}" data-sn="${p.bas}" aria-label="${esc(p.k)} anlatımını ${esc(saatYaz(p.bas))} noktasından dinle">${ikon("Headphones")}<span>${esc(p.k)}</span></button> ${esc(p.metin)}</p>`,
+              `<p class="co-ak-anlatim-p"><button type="button" class="co-ak-dinle" data-ak-satir="${esc(v.id)}" data-sn="${p.bas}" aria-label="Bu paragrafı ${esc(saatYaz(p.bas))} noktasından dinle" title="Buradan dinle">${ikon("Headphones")}</button> ${esc(p.metin)}</p>`,
           )
           .join("");
       })
       .join("");
-    const anlatimBolumu = anlatim ? `<h4 class="co-alt-baslik">Konu anlatımı</h4><div class="co-ak-anlatim">${anlatim}</div>` : "";
-    const ozetBolumu = anlatimHtml(k);
+    const anlatimBolumu = anlatim ? `<div class="co-ak-anlatim">${anlatim}</div>` : "";
+    const notlar = anlatimHtml(k);
+    const ozetBolumu = notlar ? `<details class="co-ak-kitap co-ak-notlar"><summary>${ikon("ChevronDown")}Özet ve çalışma notları</summary>${notlar}</details>` : "";
     const kitapParcalari = k.metin.split("\n").filter((x) => x.trim());
     const kitap = kitapParcalari.length
-      ? `<details class="co-ak-kitap"${anlatim || c ? "" : " open"}><summary>${ikon("ChevronDown")}Kitaptan oku</summary>${kitapParcalari.map((x) => `<p>${esc(x)}</p>`).join("")}</details>`
+      ? `<details class="co-ak-kitap"${anlatim ? "" : " open"}><summary>${ikon("ChevronDown")}Kitaptan oku</summary>${kitapParcalari.map((x) => `<p>${esc(x)}</p>`).join("")}</details>`
       : "";
     const kav = (kavramKonuya.get(no) ?? [])
       .map((i) => {
@@ -1023,7 +1024,7 @@ export function calismaOdasiBaslat(): void {
       })
       .join("");
     govde.innerHTML =
-      `<div class="co-ak-metin" data-vurgu-kok data-hedef="o${esc(no)}">${anlatimBolumu}${ozetBolumu ? `${anlatim ? `<h4 class="co-alt-baslik">Özet</h4>` : ""}${ozetBolumu}` : ""}${kitap}</div>` +
+      `<div class="co-ak-metin" data-vurgu-kok data-hedef="o${esc(no)}">${anlatimBolumu}${kitap}${ozetBolumu}</div>` +
       (kav ? `<h4 class="co-alt-baslik">Kavramlar</h4><dl class="co-tanimlar co-ak-kavramlar">${kav}</dl>` : "") +
       `<div class="co-ak-sorular" data-ak-sorular></div>` +
       dusunHtml(k) +
