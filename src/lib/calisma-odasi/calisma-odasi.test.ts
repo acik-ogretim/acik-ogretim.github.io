@@ -24,8 +24,13 @@ describe("kavramMotoru", () => {
     expect(e.map((x) => metin.slice(x.bas, x.son))).toEqual(["HUKUK KURALLARININ", "DEVLET"]);
   });
   it("ignores partial words", () => {
-    expect(m.eslestir("Kamu devletçilik")).toHaveLength(1);
+    expect(m.eslestir("Kamu devletçilik")).toHaveLength(0);
     expect(m.eslestir("ödevlet")).toHaveLength(0);
+  });
+  it("matches one-word terms only as whole words", () => {
+    const k = kavramMotoru([{ terim: "Hukuk", tanim: "x", konu: "1.1", kaynak: "etkinlik" }]);
+    expect(k.eslestir("Hukukun Temel Kavramları, hukuki işlem")).toHaveLength(0);
+    expect(k.eslestir("Hukuk ve hukuklar")).toHaveLength(2);
   });
 });
 

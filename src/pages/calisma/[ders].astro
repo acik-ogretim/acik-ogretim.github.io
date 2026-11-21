@@ -4,53 +4,40 @@
 // Docs: docs/konu-anlatimi.md "Çalışma odası prototipi".
 import Layout from "../../layouts/Layout.astro";
 import Simge from "../../components/Simge.astro";
-import { getCourses, getUniversities } from "../../lib/api";
+import { getCourses } from "../../lib/api";
 import { canonicalDepartments, coursePath } from "../../lib/kanonik";
 import { PaketSemasi } from "../../lib/calisma-odasi/sema";
 import type { SimgeAdi } from "../../lib/simge";
 import "../../styles/calisma-odasi.css";
 
 export async function getStaticPaths() {
-  const UNI = "ataturk-aof";
-  const DERSLER = [
-    "hukukun-temel-kavramlari",
-    "sosyolojiye-giris",
-    "psikoloji",
-    "istatistige-giris",
-    "turk-kulturu-ve-medeniyeti-tarihi",
-    "temel-bilgi-teknolojileri-i",
-  ];
   const paketler = import.meta.glob("../../data/calisma-odasi/*.json", { eager: true, import: "default" });
   const kanonik = await canonicalDepartments();
-  const tumu = await getUniversities();
-  let uni = tumu[0];
-  for (const u of tumu) if (u.id === "ataturk-aof") uni = u;
   const yollar = [];
-  for (const ders of DERSLER) {
-    const ham = paketler[`../../data/calisma-odasi/${ders}.json`];
-    if (!ham) continue;
+  for (const ham of Object.values(paketler)) {
     const paket = PaketSemasi.parse(ham);
-    const bolum = kanonik.get(`${UNI}/${ders}`) ?? uni?.departments?.[0]?.id ?? "";
-    let ad = ders;
-    if (bolum) for (const c of await getCourses(UNI, bolum)) if (c.id === ders) ad = c.name;
-    yollar.push({ params: { ders }, props: { paket, dersAdi: ad, dersYolu: bolum ? coursePath(UNI, bolum, ders) : "/" } });
+    const bolum = kanonik.get(`${paket.uni}/${paket.ders}`) ?? "";
+    let ad = paket.ders;
+    if (bolum) for (const c of await getCourses(paket.uni, bolum)) if (c.id === paket.ders) ad = c.name;
+    yollar.push({ params: { ders: paket.ders }, props: { paket, dersAdi: ad, dersYolu: bolum ? coursePath(paket.uni, bolum, paket.ders) : "/" } });
   }
   return yollar;
 }
 
 const { paket, dersAdi, dersYolu } = Astro.props;
 const veriJson = JSON.stringify(paket).replace(/</g, "\\u003c");
-const simgeler: SimgeAdi[] = ["BookOpen", "CircleHelp", "FileText", "Highlighter", "Trash2", "Check", "X", "ChevronLeft", "ChevronRight", "ArrowRight", "WifiOff", "Play", "Link"];
+const simgeler: SimgeAdi[] = ["BookOpen", "CircleHelp", "FileText", "Highlighter", "Trash2", "Check", "X", "ChevronLeft", "ChevronRight", "ArrowRight", "WifiOff", "Play", "Link", "ExternalLink", "ListChecks"];
 const sekmeler = [
   { id: "dokum", ad: "Döküm" },
   { id: "su-an", ad: "Şu an" },
-  { id: "icindekiler", ad: "İçindekiler" },
-  { id: "vurgular", ad: "Vurgularım" },
+  { id: "icindekiler", ad: "Konular" },
+  { id: "sinav", ad: "Sınav" },
+  { id: "vurgular", ad: "Vurgular" },
 ];
 ---
 
 <Layout noindex sekmeler={false} title={`${dersAdi} çalışma odası`} description={`${dersAdi} vize özet videosu, zaman kodlu döküm ve konu anlatımı.`}>
-  <div class="co" id="co" data-ders={paket.ders} data-ders-yolu={dersYolu}>
+  <div class={`co${paket.videolar.length ? "" : " co-videosuz"}`} id="co" data-ders={paket.ders} data-uni={paket.uni} data-ders-yolu={dersYolu}>
     <header class="co-ust">
       <a href={dersYolu} class="co-geri" aria-label="Ders sayfasına dön"><Simge ad="ChevronLeft" size={22} /></a>
       <div class="co-baslik">
@@ -62,8 +49,9 @@ const sekmeler = [
     <div class="co-ana">
       <div class="co-sol">
         <div class="co-video-kab" id="co-video-kab">
+          <div class="co-video-sec" id="co-video-sec" role="group" aria-label="Video seç" hidden></div>
           <div class="co-video">
-            {paket.video ? <div id="co-oynatici"></div> : <p class="co-video-yok">Bu ders için video yok.</p>}
+            {paket.videolar.length ? <div id="co-oynatici"></div> : <p class="co-video-yok">Bu ders için video yok.</p>}
           </div>
           <p class="co-bildirim" id="co-bildirim" role="status" hidden>
             <Simge ad="WifiOff" size={16} /><span>Video için internet gerekir. Döküm, konular, testler ve vurgular çalışır.</span>
@@ -80,6 +68,7 @@ const sekmeler = [
         </div>
         <section class="co-panel" data-panel="dokum" id="co-p-dokum" role="tabpanel" aria-labelledby="co-sekme-dokum"><ol class="co-dokum" id="co-dokum"></ol></section>
         <section class="co-panel" data-panel="icindekiler" id="co-p-icindekiler" role="tabpanel" aria-labelledby="co-sekme-icindekiler"></section>
+        <section class="co-panel" data-panel="sinav" id="co-p-sinav" role="tabpanel" aria-labelledby="co-sekme-sinav"></section>
         <section class="co-panel" data-panel="vurgular" id="co-p-vurgular" role="tabpanel" aria-labelledby="co-sekme-vurgular"></section>
       </div>
     </div>

@@ -5,25 +5,22 @@
 //   node scripts/calisma-odasi-paketle.mjs [ders ...]
 // Ortam: KITAP_DIZINI (varsayılan ../ders-kitaplari), DOKUM_DIZINI (varsayılan ../auzeff-tui/data/ata-aof/yayin/dokum).
 // Node 22.18 ve üstü gerekir (TypeScript modüllerini doğrudan çalıştırır).
-import { existsSync, mkdirSync, readFileSync, writeFileSync, statSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync, statSync } from "node:fs";
 import { join, resolve } from "node:path";
+import { konuyaEsle as hizalaKonu } from "./lib/konu-esle.mjs";
 
 const kok = resolve(import.meta.dirname, "..");
 const kitapKok = resolve(kok, process.env.KITAP_DIZINI ?? "../ders-kitaplari");
 const dokumKok = resolve(kok, process.env.DOKUM_DIZINI ?? "../auzeff-tui/data/ata-aof/yayin/dokum");
-const cikti = join(kok, "src", "data", "calisma-odasi");
+const cikti = process.env.CALISMA_CIKTI ? resolve(kok, process.env.CALISMA_CIKTI) : join(kok, "src", "data", "calisma-odasi");
 const UNI = "ataturk-aof";
-const DERSLER = [
-  "hukukun-temel-kavramlari",
-  "sosyolojiye-giris",
-  "psikoloji",
-  "istatistige-giris",
-  "turk-kulturu-ve-medeniyeti-tarihi",
-  "temel-bilgi-teknolojileri-i",
-];
+// Vize dersleri: kendi YouTube videosu olan Atatürk AÖF dersleri (src/data/youtube-videolar.json) ve döküm dosyası olanlar.
+const videoKaydi = JSON.parse(readFileSync(join(kok, "src", "data", "youtube-videolar.json"), "utf8")).dersler ?? {};
+const videolu = Object.keys(videoKaydi).filter((k) => k.startsWith(`${UNI}/`)).map((k) => k.split("/")[1]);
+const DERSLER = [...new Set(videolu)];
+const TUR_ADLARI = { "kisa-ozet": "Kısa özet", "uzun-ozet": "Uzun özet", "soru-cozum": "Soru çözümü", diger: "Video" };
+const turBul = (baslik, ad = "") => (/soru/i.test(baslik + ad) ? "soru-cozum" : /uzun/i.test(baslik + ad) ? "uzun-ozet" : /özet|ozet|vize|kisa/i.test(baslik + ad) ? "kisa-ozet" : "diger");
 const SON_UNITE = 7;
-const ESIK = Number(process.env.CALISMA_ESIK ?? 0.17); // altındaki satır konusuz kalır
-const GECIS_CEZASI = Number(process.env.CALISMA_GECIS ?? 0.06); // konu değiştirmenin bedeli (titremeyi önler)
 
 const parcala = await import("../src/lib/konu/parcala.ts");
 const { calismaCoz } = await import("../src/lib/konu/calisma.ts");
@@ -67,13 +64,59 @@ function cumleBul(metin, terim) {
   return null;
 }
 
+
+// ---- Soru çözüm videoları: döküm satırını çıkmış soruyla eşleştirir ----
+const htmlMetin = (h) => String(h ?? "").replace(/<[^>]+>/g, " ").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
+function soruHazirla(yol) {
+  if (!existsSync(yol)) return [];
+  return JSON.parse(readFileSync(yol, "utf8"))
+    .filter((q) => q.unitNumber >= 1 && q.unitNumber <= SON_UNITE)
+    .map((q) => ({ q, metin: htmlMetin(q.text) + " " + Object.values(q.options ?? {}).map(htmlMetin).join(" ") }));
+}
+function soruyaBagla(satirlar, sorular) {
+  if (!sorular.length || !satirlar.length) return;
+  const df = new Map();
+  const vek = sorular.map((s) => {
+    const v = vektor([[s.metin, 1]]);
+    for (const j of v.keys()) df.set(j, (df.get(j) ?? 0) + 1);
+    return v;
+  });
+  const N = sorular.length;
+  const norm = (v) => {
+    const o = new Map();
+    let t = 0;
+    for (const [j, w] of v) {
+      const x = Math.log(1 + w) * Math.log((N + 1) / ((df.get(j) ?? 0) + 0.5));
+      if (x > 0) (o.set(j, x), (t += x * x));
+    }
+    t = Math.sqrt(t) || 1;
+    for (const [j, x] of o) o.set(j, x / t);
+    return o;
+  };
+  const sv = vek.map(norm);
+  for (const s of satirlar) {
+    const lv = norm(vektor([[s.m, 1]]));
+    let en = 0;
+    let enI = -1;
+    sv.forEach((d, i) => {
+      let c = 0;
+      for (const [j, x] of lv) c += x * (d.get(j) ?? 0);
+      if (c > en) ((en = c), (enI = i));
+    });
+    if (enI >= 0 && en >= 0.3) {
+      const q = sorular[enI].q;
+      s.q = String(q.id);
+      s.u = q.unitNumber;
+    }
+  }
+}
+
 function oku(yol) {
   return JSON.parse(readFileSync(yol, "utf8"));
 }
 
 function paketle(ders) {
   const kitap = join(kitapKok, UNI, ders, "kitap");
-  const dokumYolu = join(dokumKok, `${ders}-kisa-vize.json`);
   if (!existsSync(kitap)) return console.warn(`[calisma-odasi] ${ders}: kitap yok, atlandı`);
   const uniteler = [];
   for (let n = 1; n <= SON_UNITE; n++) {
@@ -139,127 +182,75 @@ function paketle(ders) {
     }
   }
 
-  // Dökümü konuya eşle
-  const dokum = existsSync(dokumYolu) ? oku(dokumYolu) : null;
-  const satirlar = (dokum?.bolumler ?? []).map((b, i) => ({ i, bas: b.bas, bit: b.bit, k: b.konusmaci, m: b.metin, konu: null, g: 0 }));
-  if (satirlar.length) {
-    const df = new Map();
-    const belgeler = konuListesi.map((k) => {
-      const c = k.calisma;
-      const v = vektor([
-        [k.baslik, 4],
-        [k.metin, 1],
-        [k.kitapKavramlari.join(" "), 3],
-        [(c?.kavramlar ?? []).map((x) => x.terim).join(" "), 4],
-        [(c?.kavramlar ?? []).map((x) => x.tanim).join(" "), 1.5],
-        [(c?.temelNoktalar ?? []).join(" "), 2.5],
-        [c?.ozet ?? "", 2.5],
-      ]);
-      for (const j of v.keys()) df.set(j, (df.get(j) ?? 0) + 1);
-      return v;
-    });
-    const N = belgeler.length;
-    const idf = (j) => Math.log((N + 1) / ((df.get(j) ?? 0) + 0.5));
-    const tfidf = (v) => {
-      const o = new Map();
-      let norm = 0;
-      for (const [j, w] of v) {
-        const x = Math.log(1 + w) * idf(j);
-        if (x <= 0) continue;
-        o.set(j, x);
-        norm += x * x;
-      }
-      norm = Math.sqrt(norm) || 1;
-      for (const [j, x] of o) o.set(j, x / norm);
-      return o;
-    };
-    const belgeVek = belgeler.map(tfidf);
-    const kosinus = (a, b) => {
-      let s = 0;
-      const [kucuk, buyuk] = a.size < b.size ? [a, b] : [b, a];
-      for (const [j, x] of kucuk) {
-        const y = buyuk.get(j);
-        if (y) s += x * y;
-      }
-      return s;
-    };
-    const pencere = (i) =>
-      vektor([
-        [satirlar[i].m, 1],
-        [satirlar[i - 1]?.m ?? "", 0.5],
-        [satirlar[i + 1]?.m ?? "", 0.5],
-      ]);
-    const e = satirlar.map((_, i) => {
-      const v = tfidf(pencere(i));
-      return belgeVek.map((d) => kosinus(v, d));
-    });
-    // Dinamik programlama: durumlar = konular + boş; geçiş bedeli titremeyi önler
-    const T = konuListesi.length;
-    const BOS = T;
-    const puan = (l, t) => (t === BOS ? ESIK : e[l][t]);
-    let onceki = Array.from({ length: T + 1 }, (_, t) => puan(0, t));
-    const geri = [];
-    for (let l = 1; l < satirlar.length; l++) {
-      let enIyi = -Infinity;
-      let enIyiT = 0;
-      onceki.forEach((p, t) => {
-        if (p > enIyi) ((enIyi = p), (enIyiT = t));
-      });
-      const yeni = new Array(T + 1);
-      const ref = new Array(T + 1);
-      for (let t = 0; t <= T; t++) {
-        const kal = onceki[t];
-        const gec = enIyi - GECIS_CEZASI;
-        if (kal >= gec) ((yeni[t] = kal + puan(l, t)), (ref[t] = t));
-        else ((yeni[t] = gec + puan(l, t)), (ref[t] = enIyiT));
-      }
-      geri.push(ref);
-      onceki = yeni;
-    }
-    let t = onceki.indexOf(Math.max(...onceki));
-    const yol = new Array(satirlar.length);
-    for (let l = satirlar.length - 1; l >= 0; l--) {
-      yol[l] = t;
-      if (l > 0) t = geri[l - 1][t];
-    }
-    satirlar.forEach((s, l) => {
-      if (yol[l] === BOS) return;
-      s.konu = konuListesi[yol[l]].no;
-      s.g = Math.round(e[l][yol[l]] * 100) / 100;
-      if (s.g < ESIK) s.konu = null;
-    });
+  // Videolar: youtube-videolar.json kaydı + varsa döküm dosyaları (<ders>-<ad>.json; kisa-vize kısa özettir)
+  const videolar = [];
+  const kayitlar = videoKaydi[`${UNI}/${ders}`] ?? [];
+  const dokumAdlari = existsSync(dokumKok) ? readdirSync(dokumKok).filter((f) => f.startsWith(`${ders}-`) && f.endsWith(".json")) : [];
+  const idAl = (url) => /(?:youtu\.be\/|v=)([\w-]{11})/.exec(url ?? "")?.[1] ?? null;
+  const kullanilan = new Set();
+  for (const k of kayitlar) {
+    const yt = idAl(k.url);
+    if (yt) videolar.push({ yt, url: k.url, baslik: k.baslik, tur: turBul(k.baslik), sure: null, dokum: null });
   }
+  for (const f of dokumAdlari) {
+    const d = oku(join(dokumKok, f));
+    const yt = idAl(d.video);
+    let v = videolar.find((x) => x.yt === yt);
+    if (!v) {
+      const ad = f.slice(ders.length + 1, -5);
+      const tur = ad === "kisa-vize" ? "kisa-ozet" : turBul("", ad);
+      v = { yt, url: d.video, baslik: d.title ?? TUR_ADLARI[tur], tur, sure: null, dokum: null };
+      if (yt) videolar.push(v);
+      else continue;
+    }
+    v.dokum = d;
+    v.sure = d.sure ?? null;
+  }
+  const soruVektorleri = soruHazirla(soruDosyasi);
+  for (const v of videolar) {
+    let kod = v.tur;
+    for (let n = 2; kullanilan.has(kod); n++) kod = `${v.tur}-${n}`;
+    kullanilan.add(kod);
+    v.kod = kod;
+    v.satirlar = (v.dokum?.bolumler ?? []).map((b, i) => ({ i, bas: b.bas, bit: b.bit, k: b.konusmaci, m: b.metin, konu: null, g: 0 }));
+    hizalaKonu(v.satirlar, konuListesi, { onbellekYolu: join(kok, "data", "calisma-odasi", "etiket", `${ders}-${v.kod}.json`) });
+    if (v.tur === "soru-cozum") soruyaBagla(v.satirlar, soruVektorleri);
+  }
+  const ilkVideo = videolar[0] ?? null;
 
   // Videonun kapsadığı konular
   for (const k of konuListesi) {
-    const ilgili = satirlar.filter((s) => s.konu === k.no);
-    k.video = ilgili.length ? { ilk: ilgili[0].i, say: ilgili.length } : null;
+    k.video = {};
+    for (const v of videolar) {
+      const ilgili = v.satirlar.filter((s) => s.konu === k.no && !s.y);
+      if (ilgili.length) k.video[v.kod] = { ilk: ilgili[0].i, say: ilgili.length };
+    }
   }
-
-  const videoUrl = dokum?.video ?? null;
-  const videoId = videoUrl ? (/(?:youtu\.be\/|v=)([\w-]{11})/.exec(videoUrl)?.[1] ?? null) : null;
   const veri = {
     ders,
     uni: UNI,
     uretim: new Date().toISOString().slice(0, 10),
-    video: videoId ? { id: videoId, url: videoUrl, sure: dokum.sure } : null,
+    videolar: videolar.map((v) => ({ kod: v.kod, tur: v.tur, baslik: v.baslik, yt: v.yt, url: v.url, sure: v.sure, satirlar: v.satirlar })),
     uniteler: uniteler.map((u) => ({ no: u.unite, baslik: u.baslik, konular: konuListesi.filter((k) => k.unite === u.unite).map((k) => k.no) })),
     konular: konuListesi.map(({ kitapKavramlari, ...k }) => {
       void kitapKavramlari;
       return k;
     }),
-    satirlar,
     kavramlar: [...kavramlar.values()],
     sorular,
   };
+  if (!veri.konular.length) {
+    console.log(`[calisma-odasi] ${ders}: konu anlatımı yok, paket yazılmadı`);
+    return;
+  }
   mkdirSync(cikti, { recursive: true });
   const yol = join(cikti, `${ders}.json`);
   writeFileSync(yol, JSON.stringify(veri));
   const kb = Math.round(statSync(yol).size / 1024);
-  const eslesen = satirlar.filter((s) => s.konu).length;
+  const satirSayisi = videolar.reduce((t, v) => t + v.satirlar.length, 0);
   const calismali = veri.konular.filter((k) => k.calisma).length;
   console.log(
-    `[calisma-odasi] ${ders}: ${veri.konular.length} konu (${calismali} çalışma malzemeli, ${etkinlikDosya} etkinlik dosyası), ${satirlar.length} satır (${eslesen} eşleşti), ${veri.kavramlar.length} kavram, ${kb} KB`,
+    `[calisma-odasi] ${ders}: ${veri.konular.length} konu (${calismali} çalışma malzemeli, ${etkinlikDosya} etkinlik dosyası), ${videolar.length} video, ${satirSayisi} satır, ${veri.kavramlar.length} kavram, ${kb} KB`,
   );
 }
 

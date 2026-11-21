@@ -10,7 +10,10 @@ const kacis = (s: string): string => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 function kalip(terim: string): string {
   const kelimeler = tr(terim).split(/\s+/).filter(Boolean);
-  return kelimeler.map((w) => kacis(w.length > 5 ? w.slice(0, w.length - 2) : w)).join("\\s+") + "\\p{L}{0,8}";
+  // One-word terms match the whole word (plus a plural suffix): "hukuk" must not underline "hukukun" or "hukuki".
+  // Phrases tolerate Turkish suffixes on their last word ("hukuk kuralının" finds "hukuk kuralı").
+  if (kelimeler.length === 1) return `${kacis(kelimeler[0])}(?:lar|ler)?(?![\\p{L}\\p{N}])`;
+  return kelimeler.map((w, i) => kacis(i === kelimeler.length - 1 && w.length > 5 ? w.slice(0, w.length - 2) : w)).join("\\s+") + "\\p{L}{0,8}(?![\\p{L}\\p{N}])";
 }
 
 export type KavramMotoru = { eslestir: (metin: string) => KavramEslesme[] };

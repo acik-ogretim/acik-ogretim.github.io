@@ -2,13 +2,15 @@
 // Veri: sayfadaki #co-veri (src/data/calisma-odasi/<ders>.json). Saf mantık: src/lib/calisma-odasi/.
 import { katmanAc, katmanlariBagla } from "../lib/katman";
 import { kavramMotoru } from "../lib/calisma-odasi/kavram";
-import { PaketSemasi, saatYaz, satirBul, type CalismaKonu, type CalismaPaketi } from "../lib/calisma-odasi/sema";
+import { PaketSemasi, TUR_ADI, saatYaz, satirBul, type CalismaKonu, type CalismaPaketi, type CalismaSatiri, type CalismaVideosu } from "../lib/calisma-odasi/sema";
+import { cevaplarOku, cevaplarYaz } from "../lib/calisma-durumu";
 import { demirBul, demirle, vurgulariOku, vurgulariYaz, type Vurgu } from "../lib/calisma-odasi/vurgu";
 
 type YTOynatici = {
   getCurrentTime: () => number;
   seekTo: (sn: number, ileri: boolean) => void;
   playVideo: () => void;
+  loadVideoById?: (id: string) => void;
   getPlayerState?: () => number;
 };
 type YTAyar = { videoId: string; playerVars?: Record<string, number | string>; events?: { onReady?: () => void; onError?: () => void } };
@@ -20,11 +22,14 @@ declare global {
   }
 }
 
-const SEKMELER = ["dokum", "su-an", "icindekiler", "vurgular"] as const;
+const SEKMELER = ["dokum", "su-an", "icindekiler", "sinav", "vurgular"] as const;
 type Sekme = (typeof SEKMELER)[number];
 
 const esc = (s: string): string => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const tr = (s: string): string => s.toLocaleLowerCase("tr");
+type Soru = { id: string; no: number; text: string; options: Record<string, string>; answer: string; explanation: string; year?: number; examType: string; konu?: string };
+const SORU_ONBELLEGI = "calisma-sorular"; // own cache name: the service worker keeps names without its prefix
+const KANAL_ADRESI = "https://quiz.zeki.website/duzenle";
 const azaltilmis = (): boolean => matchMedia("(prefers-reduced-motion: reduce)").matches;
 const genis = (): boolean => matchMedia("(min-width: 1024px)").matches;
 
@@ -41,22 +46,45 @@ export function calismaOdasiBaslat(): void {
   const $ = <T extends HTMLElement>(id: string): T => document.getElementById(id) as T;
   const ikon = (ad: string): string => document.querySelector(`#co-simgeler [data-simge="${ad}"]`)?.innerHTML ?? "";
 
-  // Konusuz satırlar önceki konuyu sürdürür
-  const etkinKonu: (string | null)[] = [];
-  let son: string | null = null;
-  for (const s of paket.satirlar) {
-    if (s.konu) son = s.konu;
-    etkinKonu.push(son);
+  const videolar = paket.videolar;
+  const uni = kok.dataset.uni ?? paket.uni;
+  const dersKodu = `${uni}/${ders}`; // ders sayfasıyla aynı cevap kaydı: cevaplar-<uni>-<ders>
+  const videoAnahtari = `calisma-video-${ders}`;
+  let istenen: string | null = new URLSearchParams(location.search).get("video");
+  if (!istenen) {
+    try {
+      istenen = localStorage.getItem(videoAnahtari);
+    } catch {
+      /* storage unavailable */
+    }
   }
+  let vi = Math.max(0, videolar.findIndex((v) => v.kod === istenen));
+  let video: CalismaVideosu | null = videolar[vi] ?? null;
+  let satirlar: CalismaSatiri[] = video?.satirlar ?? [];
+  // Konusuz satırlar önceki konuyu sürdürür
+  let etkinKonu: (string | null)[] = [];
+  function etkinHesapla(): void {
+    let son: string | null = null;
+    etkinKonu = satirlar.map((s) => (s.konu ? (son = s.konu) : son));
+  }
+  etkinHesapla();
+  // Vurgu hedefi: ilk video "s<i>" (eski kayıtlarla uyumlu), diğerleri "s<kod>:<i>"
+  const satirHedefi = (i: number): string => (vi === 0 || !video ? `s${i}` : `s${video.kod}:${i}`);
+  const satirCoz = (h: string): { kod: string; i: number } | null => {
+    const m = /^s(?:([^:]+):)?(\d+)$/.exec(h);
+    return m ? { kod: m[1] ?? videolar[0]?.kod ?? "", i: Number(m[2]) } : null;
+  };
 
   let vurgular: Vurgu[] = vurgulariOku(ders);
   let simdiSatir = -1;
   let simdiKonu: string | null = null;
-  let aktif: Sekme = "dokum";
-  let sonSag: Sekme = "dokum";
+  let secKonu: string | null = null; // elle seçilen konu (videoda olmayan konular ya da videosuz ders)
+  let aktif: Sekme = satirlar.length ? "dokum" : "su-an"; // dökümsüz derste konu özeti ile başla
+  let sonSag: Sekme = satirlar.length ? "dokum" : "icindekiler";
   let otoDurak = 0;
   let oynatici: YTOynatici | null = null;
   let acikKonu: string | null = null;
+  const gorunenKonu = (): string | null => secKonu ?? simdiKonu;
 
   // ---------- Kavram bağlantıları ----------
   function kavramSar(koku: HTMLElement, ilkTek: boolean): void {
@@ -64,7 +92,7 @@ export function calismaOdasiBaslat(): void {
     const dugumler: Text[] = [];
     const yurume = document.createTreeWalker(koku, NodeFilter.SHOW_TEXT);
     for (let n = yurume.nextNode(); n; n = yurume.nextNode()) {
-      if (!(n.parentElement?.closest(".co-kavram, h3, h4, h5, mark.co-vurgu"))) dugumler.push(n as Text);
+      if (!(n.parentElement?.closest(".co-kavram, h3, h4, h5, dt, mark.co-vurgu"))) dugumler.push(n as Text);
     }
     for (const d of dugumler) {
       let eslesmeler = motor.eslestir(d.data);
@@ -130,16 +158,21 @@ export function calismaOdasiBaslat(): void {
   // ---------- Döküm ----------
   function dokumCiz(): void {
     const liste = $("co-dokum");
+    if (!satirlar.length) {
+      liste.innerHTML = `<li class="co-bos">${video ? "Bu video için döküm yok." : "Bu ders için video ve döküm yok. Konular sekmesinden konu anlatımına geç."}</li>`;
+      return;
+    }
     let onceki: string | null = null;
     const parcalar: string[] = [];
-    for (const s of paket.satirlar) {
+    for (const s of satirlar) {
       if (s.konu && s.konu !== onceki) {
         const k = konuHaritasi.get(s.konu)?.k;
         if (k) parcalar.push(`<li class="co-grup"><button type="button" data-konu-ac="${esc(k.no)}"><span>${esc(k.no)}</span><span>${esc(k.baslik)}</span></button></li>`);
         onceki = s.konu;
       }
+      const soruBag = s.q ? `<button type="button" class="co-soru-bag" data-soru-git="${esc(s.q)}" data-unite="${s.u ?? ""}">${ikon("ListChecks")}Soruya git</button>` : "";
       parcalar.push(
-        `<li class="co-satir" id="co-s-${s.i}" data-i="${s.i}" tabindex="0"><span class="co-zaman">${saatYaz(s.bas)}</span><div class="co-satir-ic"><span class="co-konusmaci">${esc(s.k)}</span><p class="co-satir-metin" data-vurgu-kok data-hedef="s${s.i}">${esc(s.m)}</p></div></li>`,
+        `<li class="co-satir" id="co-s-${s.i}" data-i="${s.i}" tabindex="0"><span class="co-zaman">${saatYaz(s.bas)}</span><div class="co-satir-ic"><span class="co-konusmaci">${esc(s.k)}</span><p class="co-satir-metin" data-vurgu-kok data-hedef="${satirHedefi(s.i)}">${esc(s.m)}</p>${soruBag}</div></li>`,
       );
     }
     liste.innerHTML = parcalar.join("");
@@ -150,27 +183,73 @@ export function calismaOdasiBaslat(): void {
   }
 
   // ---------- Şu an ----------
+  const sonKonuAnahtari = `calisma-konu-${ders}`;
+  function varsayilanKonu(): { no: string; kaldigin: boolean } | null {
+    let kayitli: string | null = null;
+    try {
+      kayitli = localStorage.getItem(sonKonuAnahtari);
+    } catch {
+      /* storage unavailable */
+    }
+    if (kayitli && konuHaritasi.has(kayitli)) return { no: kayitli, kaldigin: true };
+    const ilk = paket.konular[0]?.no;
+    return ilk ? { no: ilk, kaldigin: false } : null;
+  }
   function suAnCiz(): void {
     const p = $("co-su-an");
-    const kayit = simdiKonu ? konuHaritasi.get(simdiKonu) : null;
+    const secili = secKonu !== null;
+    const calan = !secili && simdiKonu !== null;
+    const varsayilan = !secili && !calan ? varsayilanKonu() : null;
+    const gk = secKonu ?? simdiKonu ?? varsayilan?.no ?? null;
+    const kayit = gk ? konuHaritasi.get(gk) : null;
+    // Telefondaki sekme adı da duruma göre değişir
+    const sekmeDugme = document.querySelector<HTMLElement>('#co-sekmeler [data-sekme="su-an"]');
+    if (sekmeDugme?.firstChild) sekmeDugme.firstChild.textContent = calan || !kayit ? "Şu an" : "Konu";
     if (!kayit) {
-      p.innerHTML = `<h2>Şu an</h2><p class="co-bos">Videoyu başlat ya da dökümde bir satıra dokun; konunun özeti burada belirir.</p>`;
+      p.setAttribute("aria-label", "Şu an");
+      p.innerHTML = `<h2>Şu an</h2><p class="co-bos">Konular sekmesinden bir konu seç; özeti ve temel noktaları burada belirir.</p>`;
       return;
     }
     const k = kayit.k;
+    p.setAttribute("aria-label", calan ? "Şu an" : k.baslik);
+    if (secili) {
+      try {
+        localStorage.setItem(sonKonuAnahtari, k.no);
+      } catch {
+        /* storage unavailable */
+      }
+    }
+    const etiket = calan ? "Şu an" : secili ? "Seçtiğin konu" : varsayilan?.kaldigin ? "Kaldığın konu" : "İlk konu";
     const c = k.calisma;
-    const ozet = c?.ozet ?? k.metin.split("\n").slice(0, 2).join(" ").slice(0, 320);
+    const ozet = c?.ozet ?? "";
     const sorular = paket.sorular[String(k.unite)]?.length ?? 0;
     const noktalar = c?.temelNoktalar?.length ? `<h3 class="co-alt-baslik">Temel noktalar</h3><ul class="co-noktalar">${c.temelNoktalar.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : "";
     const kav = c?.kavramlar?.length ? `<h3 class="co-alt-baslik">Kavramlar</h3><dl class="co-tanimlar">${c.kavramlar.map((x) => `<div><dt>${esc(x.terim)}</dt><dd>${esc(x.tanim)}</dd></div>`).join("")}</dl>` : "";
+    // Çalışma malzemesi olmayan konuda kitabın kendi metni gösterilir
+    const kitap = !c
+      ? `<h3 class="co-alt-baslik">Kitaptan</h3>${k.metin
+          .split("\n")
+          .filter((x) => x.trim())
+          .reduce<string[]>((acc, x) => (acc.join("").length < 1400 ? [...acc, x] : acc), [])
+          .map((x) => `<p class="co-ozet">${esc(x)}</p>`)
+          .join("")}`
+      : "";
+    const don = video && !calan ? `<button type="button" class="co-dugme" data-videoya-don>${ikon("Play")}Videoya dön</button>` : "";
     p.innerHTML =
+      `<div class="co-su-ust"><span class="co-etiket">${etiket}</span>${don}</div>` +
       `<span class="co-no">${esc(k.no)}</span><h2>${esc(k.baslik)}</h2>` +
-      `<p class="co-ozet">${esc(ozet)}</p>${noktalar}${kav}` +
+      `<div class="co-su-metin">` +
+      (ozet ? `<p class="co-ozet">${esc(ozet)}</p>` : "") +
+      `${noktalar}${kav}${kitap}</div>` +
       `<div class="co-eylemler">` +
       `<button type="button" class="co-dugme co-dugme-birincil" data-konu-ac="${esc(k.no)}">${ikon("BookOpen")}Konu anlatımı</button>` +
       (c?.miniTest?.length ? `<button type="button" class="co-dugme" data-dene="${esc(k.no)}">${ikon("CircleHelp")}Kendini dene</button>` : "") +
-      `<a class="co-dugme" href="${esc(dersYolu)}">${ikon("FileText")}Çıkmış sorular${sorular ? `, ${sorular}` : ""}</a>` +
-      `</div><p class="co-bos">Çıkmış sorular ders sayfasında ünite ünite durur (Ünite ${k.unite}).</p>`;
+      (sorular ? `<button type="button" class="co-dugme" data-sinav-konu="${esc(k.no)}">${ikon("ListChecks")}Sınav soruları</button>` : "") +
+      `<a class="co-dugme" href="${esc(dersYolu)}">${ikon("FileText")}Ders sayfası</a>` +
+      `</div>`;
+    // Dökümdekiyle aynı kavram bileşeni: altı çizili terimler, tanım balonu, "Konuya git"
+    const metin = p.querySelector<HTMLElement>(".co-su-metin");
+    if (metin) kavramSar(metin, true);
   }
 
   // ---------- İçindekiler ----------
@@ -179,21 +258,22 @@ export function calismaOdasiBaslat(): void {
     if (!p) return;
     p.innerHTML = paket.uniteler
       .map((u) => {
-        const satirlar = u.konular
+        const konuSatirlari = u.konular
           .map((no) => {
             const k = konuHaritasi.get(no)?.k;
             if (!k) return "";
-            const v = k.video ? paket.satirlar[k.video.ilk] : null;
-            return `<div class="co-konu-bolum"><button type="button" class="co-konu-satir" data-git-konu="${esc(no)}"${v ? " data-videoda" : ""}><span class="co-no">${esc(no)}</span><span class="co-konu-adi">${esc(k.baslik)}</span><span class="co-video-durum">${v ? `Videoda ${saatYaz(v.bas)}` : "Videoda yok"}</span></button><button type="button" class="co-konu-yan" data-konu-ac="${esc(no)}" aria-label="${esc(k.baslik)} konu anlatımı">${ikon("BookOpen")}</button></div>`;
+            const kv = video ? k.video[video.kod] : undefined;
+            const v = kv ? satirlar[kv.ilk] : null;
+            return `<div class="co-konu-bolum"><button type="button" class="co-konu-satir" data-git-konu="${esc(no)}"${v ? " data-videoda" : ""}><span class="co-no">${esc(no)}</span><span class="co-konu-adi">${esc(k.baslik)}</span>${video ? `<span class="co-video-durum">${v ? `Videoda ${saatYaz(v.bas)}` : "Videoda yok"}</span>` : ""}</button><button type="button" class="co-konu-yan" data-konu-ac="${esc(no)}" aria-label="${esc(k.baslik)} konu anlatımı">${ikon("BookOpen")}</button></div>`;
           })
           .join("");
-        return `<h3 class="co-unite">Ünite ${u.no}${u.baslik ? `: ${esc(u.baslik)}` : ""}</h3>${satirlar}`;
+        return `<h3 class="co-unite">Ünite ${u.no}${u.baslik ? `: ${esc(u.baslik)}` : ""}</h3>${konuSatirlari}`;
       })
       .join("");
     isaretleKonu();
   }
   function isaretleKonu(): void {
-    document.querySelectorAll<HTMLElement>(".co-konu-satir").forEach((b) => b.toggleAttribute("data-simdi", b.dataset.gitKonu === simdiKonu));
+    document.querySelectorAll<HTMLElement>(".co-konu-satir").forEach((b) => b.toggleAttribute("data-simdi", b.dataset.gitKonu === gorunenKonu()));
   }
 
   // ---------- Vurgularım ----------
@@ -213,7 +293,7 @@ export function calismaOdasiBaslat(): void {
       .sort((a, b) => b.zaman - a.zaman)
       .map((v) => {
         const k = v.konu ? konuHaritasi.get(v.konu)?.k : null;
-        const yer = v.hedef.startsWith("s") ? `Döküm${v.sn !== null ? `, ${saatYaz(v.sn)}` : ""}` : `Konu metni`;
+        const yer = satirCoz(v.hedef) ? `Döküm${v.sn !== null ? `, ${saatYaz(v.sn)}` : ""}` : `Konu metni`;
         return `<div class="co-vurgu-kart" data-vid="${esc(v.id)}"><blockquote>${esc(v.exact)}</blockquote><span class="co-vurgu-meta">${yer}${k ? ` · ${esc(k.no)} ${esc(k.baslik)}` : ""}</span><div class="co-vurgu-eylem"><button type="button" class="co-dugme" data-vurgu-git="${esc(v.id)}">${ikon("ArrowRight")}Git</button><button type="button" class="co-dugme" data-vurgu-sil="${esc(v.id)}">${ikon("Trash2")}Sil</button></div></div>`;
       })
       .join("");
@@ -235,6 +315,7 @@ export function calismaOdasiBaslat(): void {
     aktif = ad;
     if (ad !== "su-an") sonSag = ad;
     sekmeUygula();
+    if (ad === "sinav" && (!sinavElle || !document.querySelector("#co-p-sinav .co-cip"))) void sinavCiz();
     if (ad === "dokum" && simdiSatir >= 0) satiriGoster(simdiSatir, true);
     else if (!genis()) scrollTo({ top: 0, behavior: "auto" }); // other panels start at their top
   }
@@ -258,7 +339,7 @@ export function calismaOdasiBaslat(): void {
     }
   }
   function guncelle(sn: number): void {
-    const i = satirBul(paket.satirlar, sn);
+    const i = satirBul(satirlar, sn);
     if (i === simdiSatir) return;
     document.getElementById(`co-s-${simdiSatir}`)?.removeAttribute("data-simdi");
     simdiSatir = i;
@@ -267,8 +348,10 @@ export function calismaOdasiBaslat(): void {
     const k = i >= 0 ? etkinKonu[i] : null;
     if (k !== simdiKonu) {
       simdiKonu = k;
+      secKonu = null; // video yeni konuya geçti: elle seçim biter
       suAnCiz();
       isaretleKonu();
+      if (aktif === "sinav") void sinavCiz();
     }
   }
   function git(sn: number): void {
@@ -289,13 +372,12 @@ export function calismaOdasiBaslat(): void {
     $("co-bildirim").hidden = !goster;
   }
   function videoKur(): void {
-    if (!paket.video || !document.getElementById("co-oynatici")) return;
-    const id = paket.video.id;
+    if (!video || !document.getElementById("co-oynatici")) return;
     if (navigator.onLine === false) bildirim(true);
     const olustur = (): void => {
       if (!window.YT?.Player || oynatici) return;
       oynatici = new window.YT.Player("co-oynatici", {
-        videoId: id,
+        videoId: video?.yt ?? "",
         playerVars: { playsinline: 1, rel: 0, modestbranding: 1 },
         events: { onReady: () => bildirim(false), onError: () => bildirim(true) },
       });
@@ -317,7 +399,7 @@ export function calismaOdasiBaslat(): void {
       }, 8000);
     }
     setInterval(() => {
-      if (!oynatici || document.hidden) return;
+      if (!oynatici || document.hidden || !video) return;
       try {
         const sn = oynatici.getCurrentTime();
         if (Number.isFinite(sn)) guncelle(sn);
@@ -327,6 +409,214 @@ export function calismaOdasiBaslat(): void {
     }, 300);
     addEventListener("online", () => bildirim(false));
     addEventListener("offline", () => bildirim(true));
+  }
+
+  function videoSecCiz(): void {
+    const kab = $("co-video-sec");
+    kab.hidden = videolar.length < 2;
+    if (videolar.length < 2) return;
+    kab.innerHTML = videolar
+      .map((v) => `<button type="button" data-video-sec="${esc(v.kod)}" aria-pressed="${v.kod === video?.kod}" title="${esc(v.baslik)}">${esc(TUR_ADI[v.tur])}</button>`)
+      .join("");
+  }
+  function videoDegistir(kod: string): void {
+    const yeni = videolar.findIndex((v) => v.kod === kod);
+    if (yeni < 0 || yeni === vi) return;
+    vi = yeni;
+    video = videolar[vi];
+    satirlar = video.satirlar;
+    etkinHesapla();
+    simdiSatir = -1;
+    simdiKonu = null;
+    secKonu = null;
+    try {
+      localStorage.setItem(videoAnahtari, video.kod);
+    } catch {
+      /* storage unavailable */
+    }
+    const url = new URL(location.href);
+    url.searchParams.set("video", video.kod);
+    history.replaceState(null, "", url);
+    if (oynatici?.loadVideoById) oynatici.loadVideoById(video.yt);
+    videoSecCiz();
+    dokumCiz();
+    icindekilerCiz();
+    suAnCiz();
+    if (aktif === "dokum") scrollTo({ top: 0, behavior: "auto" });
+  }
+
+  // ---------- Sınav ----------
+  const soruOnbellek = new Map<number, Soru[]>();
+  const soruIstegi = new Map<number, Promise<Soru[] | null>>();
+  let sinavUnite: number | null = null;
+  let sinavKonu: string | null = null;
+  let sinavKapsam: "konu" | "unite" = "unite";
+  let sinavElle = false;
+  let sinavSayac = 0;
+  const soruAdresi = (u: number): string => `/calisma/${ders}/sorular-${u}.json`;
+  async function soruYukle(u: number): Promise<Soru[] | null> {
+    const var0 = soruOnbellek.get(u);
+    if (var0) return var0;
+    const bekleyen = soruIstegi.get(u);
+    if (bekleyen) return bekleyen;
+    const istek = (async (): Promise<Soru[] | null> => {
+      const depo = "caches" in window ? await caches.open(SORU_ONBELLEGI).catch(() => null) : null;
+      let liste: unknown = null;
+      try {
+        const r = await fetch(soruAdresi(u));
+        if (r.ok) {
+          if (depo) await depo.put(soruAdresi(u), r.clone()).catch(() => undefined);
+          liste = await r.json();
+        }
+      } catch {
+        const r = await depo?.match(soruAdresi(u));
+        if (r) liste = await r.json().catch(() => null);
+      }
+      if (!Array.isArray(liste)) return null;
+      soruOnbellek.set(u, liste as Soru[]);
+      return liste as Soru[];
+    })();
+    soruIstegi.set(u, istek);
+    const sonuc = await istek;
+    if (!sonuc) soruIstegi.delete(u);
+    return sonuc;
+  }
+  const konuyaUyar = (q: Soru, no: string): boolean => !!q.konu && (q.konu === no || q.konu.startsWith(`${no}.`));
+  function enYakinKonu(bolum: string | undefined): CalismaKonu | null {
+    let b = bolum ?? "";
+    while (b) {
+      const k = konuHaritasi.get(b)?.k;
+      if (k) return k;
+      b = b.includes(".") ? b.slice(0, b.lastIndexOf(".")) : "";
+    }
+    return null;
+  }
+  function sinavKartDurumu(kart: HTMLElement, q: Soru, c: { secim: string | null; dogru: boolean }): void {
+    kart.dataset.cevaplandi = "1";
+    kart.querySelectorAll<HTMLButtonElement>(".co-sq-sec").forEach((b) => {
+      b.disabled = true;
+      b.querySelector("svg")?.remove();
+      if (b.dataset.sqSec === q.answer) {
+        b.dataset.dogru = "";
+        b.insertAdjacentHTML("beforeend", ikon("Check"));
+      } else if (b.dataset.sqSec === c.secim) {
+        b.dataset.yanlis = "";
+        b.insertAdjacentHTML("beforeend", ikon("X"));
+      }
+    });
+    const konu = enYakinKonu(q.konu);
+    kart.querySelector<HTMLElement>(".co-cikti")!.innerHTML =
+      `<p class="co-sonuc" ${c.dogru ? "data-dogru" : "data-yanlis"}>${c.dogru ? "Doğru" : `Yanlış. Doğru cevap: ${esc(q.answer)}`}</p>` +
+      (q.explanation ? `<p class="co-dayanak"><b>Açıklama</b>${esc(q.explanation)}</p>` : "") +
+      (konu ? `<button type="button" class="co-dugme" data-konu-ac="${esc(konu.no)}">${ikon("BookOpen")}Kitapta oku: ${esc(konu.no)} ${esc(konu.baslik)}</button>` : "");
+  }
+  function sinavCevapla(id: string, secim: string): void {
+    const q = [...soruOnbellek.values()].flat().find((x) => x.id === id);
+    const kart = document.querySelector<HTMLElement>(`.co-sq[data-sq="${CSS.escape(id)}"]`);
+    if (!q || !kart || kart.dataset.cevaplandi || !/^[A-E]$/.test(secim)) return;
+    const c = { secim: secim as "A" | "B" | "C" | "D" | "E", dogru: secim === q.answer, zaman: Date.now() };
+    cevaplarYaz(dersKodu, { ...cevaplarOku(dersKodu), [id]: c });
+    sinavKartDurumu(kart, q, c);
+    sinavOzetiniYaz();
+  }
+  function sinavOzetiniYaz(): void {
+    const el = document.getElementById("co-sq-ozet");
+    if (!el) return;
+    const idler = [...document.querySelectorAll<HTMLElement>(".co-sq")].map((k) => k.dataset.sq ?? "");
+    const kayit = cevaplarOku(dersKodu);
+    const verilen = idler.filter((i) => kayit[i]);
+    const dogru = verilen.filter((i) => kayit[i].dogru).length;
+    el.textContent = `${verilen.length} / ${idler.length} soru çözüldü${verilen.length ? `, ${dogru} doğru` : ""}`;
+  }
+  async function sinavCiz(hedefSoru?: string): Promise<void> {
+    const p = document.getElementById("co-p-sinav");
+    if (!p) return;
+    const sira = ++sinavSayac;
+    if (!sinavElle) {
+      const ref = gorunenKonu() ?? acikKonu;
+      const k = ref ? konuHaritasi.get(ref)?.k : null;
+      if (k) {
+        sinavUnite = k.unite;
+        sinavKonu = k.no;
+      } else if (sinavUnite === null) sinavUnite = paket.uniteler[0]?.no ?? 1;
+    }
+    const unite = sinavUnite ?? 1;
+    const uniteChip = paket.uniteler
+      .map((u) => `<button type="button" class="co-cip" data-sinav-unite="${u.no}" aria-pressed="${u.no === unite}">${u.no}</button>`)
+      .join("");
+    const ustHtml = `<h2>Çıkmış sorular</h2><div class="co-cipler" role="group" aria-label="Ünite">${uniteChip}</div>`;
+    p.innerHTML = `${ustHtml}<p class="co-bos">Sorular yükleniyor.</p>`;
+    const liste = await soruYukle(unite);
+    if (sira !== sinavSayac) return;
+    if (!liste) {
+      p.innerHTML = `${ustHtml}<p class="co-bos">Bu ünitenin soruları açılamadı. Bağlantı gelince bir kez açman yeter; sonra çevrimdışı da çalışır.</p><div class="co-eylemler"><a class="co-dugme" href="${esc(dersYolu)}">${ikon("FileText")}Ders sayfasında çöz</a></div>`;
+      return;
+    }
+    const konuSorulari = sinavKonu ? liste.filter((q) => konuyaUyar(q, sinavKonu!)) : [];
+    if (!konuSorulari.length && sinavKapsam === "konu") sinavKapsam = "unite";
+    if (konuSorulari.length && !sinavElle) sinavKapsam = "konu";
+    const goster = sinavKapsam === "konu" && konuSorulari.length ? konuSorulari : liste;
+    const kayit = cevaplarOku(dersKodu);
+    const konuBilgi = sinavKonu ? konuHaritasi.get(sinavKonu)?.k : null;
+    const kapsamHtml = konuSorulari.length
+      ? `<div class="co-cipler" role="group" aria-label="Kapsam"><button type="button" class="co-cip" data-sinav-kapsam="konu" aria-pressed="${goster === konuSorulari}">Bu konu, ${konuSorulari.length}${konuBilgi ? ` (${esc(konuBilgi.no)})` : ""}</button><button type="button" class="co-cip" data-sinav-kapsam="unite" aria-pressed="${goster !== konuSorulari}">Ünite ${unite}, ${liste.length}</button></div>`
+      : "";
+    const kartlar = goster
+      .map((q, i) => {
+        const secenekler = Object.entries(q.options)
+          .map(([k, t]) => `<button type="button" class="co-secenek co-sq-sec" data-sq-id="${esc(q.id)}" data-sq-sec="${esc(k)}"><span><b>${esc(k)}</b> ${esc(t)}</span></button>`)
+          .join("");
+        const meta = [q.year, q.examType].filter(Boolean).join(" ");
+        return `<article class="co-sq" data-sq="${esc(q.id)}"><div class="co-sq-ust"><span class="co-no">${i + 1}</span>${meta ? `<span class="co-sq-meta">${esc(meta)}</span>` : ""}</div><p class="co-soru-metin">${esc(q.text)}</p><div class="co-sq-secenekler">${secenekler}</div><div class="co-cikti" aria-live="polite"></div></article>`;
+      })
+      .join("");
+    const ids = liste.map((q) => encodeURIComponent(q.id)).join(",");
+    const canli = `${KANAL_ADRESI}?kaynak=acik-ogretim&ders=${encodeURIComponent(`${uni}/${ders}`)}&unite=${unite}&sorular=${ids}`;
+    p.innerHTML =
+      `${ustHtml}${kapsamHtml}<p class="co-sq-ozet" id="co-sq-ozet"></p><div class="co-sq-liste">${kartlar || `<p class="co-bos">Bu ünite için çıkmış soru yok.</p>`}</div>` +
+      `<div class="co-eylemler"><a class="co-dugme co-dugme-birincil" href="${esc(canli)}" target="_blank" rel="noopener">${ikon("ExternalLink")}Canlı quiz olarak aç</a><a class="co-dugme" href="${esc(dersYolu)}">${ikon("FileText")}Ders sayfasında çöz</a></div>`;
+    for (const q of goster) {
+      const c = kayit[q.id];
+      const kart = p.querySelector<HTMLElement>(`.co-sq[data-sq="${CSS.escape(q.id)}"]`);
+      if (c && kart) sinavKartDurumu(kart, q, c);
+    }
+    sinavOzetiniYaz();
+    if (hedefSoru) {
+      const kart = p.querySelector<HTMLElement>(`.co-sq[data-sq="${CSS.escape(hedefSoru)}"]`);
+      if (kart) {
+        kart.dataset.vurgula = "";
+        kart.scrollIntoView({ block: "center", behavior: azaltilmis() ? "auto" : "smooth" });
+        setTimeout(() => kart.removeAttribute("data-vurgula"), 2400);
+      }
+    }
+  }
+  function sinavKonuAc(no: string): void {
+    const k = konuHaritasi.get(no)?.k;
+    if (!k) return;
+    sinavElle = true;
+    sinavUnite = k.unite;
+    sinavKonu = k.no;
+    sinavKapsam = "konu";
+    sekmeGoster("sinav");
+    void sinavCiz();
+  }
+  async function sinavSoruyaGit(id: string, unite: number): Promise<void> {
+    if (!Number.isFinite(unite) || unite < 1) return;
+    sinavElle = true;
+    sinavUnite = unite;
+    sinavKonu = null;
+    sinavKapsam = "unite";
+    sekmeGoster("sinav");
+    await sinavCiz(id);
+  }
+  function sorulariOnceden(): void {
+    const sira = paket.uniteler.map((u) => u.no);
+    const bos = (f: () => void): void => void ("requestIdleCallback" in window ? window.requestIdleCallback(f) : setTimeout(f, 2500));
+    bos(() => {
+      void (async () => {
+        for (const u of sira) await soruYukle(u);
+      })();
+    });
   }
 
   // ---------- Katman yardımcıları ----------
@@ -497,13 +787,14 @@ export function calismaOdasiBaslat(): void {
     const { koku, bas, son: bitis } = bekleyen;
     const tam = koku.textContent ?? "";
     const hedef = koku.dataset.hedef ?? "";
-    const satirNo = hedef.startsWith("s") ? Number(hedef.slice(1)) : -1;
+    const cozulen = satirCoz(hedef);
+    const satirNo = cozulen && cozulen.kod === (video?.kod ?? "") ? cozulen.i : -1;
     const v: Vurgu = {
       id: `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 7)}`,
       hedef,
-      konu: satirNo >= 0 ? (paket.satirlar[satirNo]?.konu ?? etkinKonu[satirNo] ?? null) : hedef.slice(1),
+      konu: satirNo >= 0 ? (satirlar[satirNo]?.konu ?? etkinKonu[satirNo] ?? null) : hedef.slice(1),
       ...demirle(tam, bas, bitis),
-      sn: satirNo >= 0 ? (paket.satirlar[satirNo]?.bas ?? null) : null,
+      sn: satirNo >= 0 ? (satirlar[satirNo]?.bas ?? null) : null,
       zaman: Date.now(),
     };
     vurgular = [...vurgular, v];
@@ -540,13 +831,19 @@ export function calismaOdasiBaslat(): void {
     const gitKonu = t.closest<HTMLElement>("[data-git-konu]");
     if (gitKonu) {
       const k = konuHaritasi.get(gitKonu.dataset.gitKonu ?? "")?.k;
-      if (k?.video) {
-        git(paket.satirlar[k.video.ilk].bas);
-        if (!genis()) {
-          sekmeGoster("su-an");
-          scrollTo({ top: 0, behavior: azaltilmis() ? "auto" : "smooth" });
-        }
-      } else if (k) konuAc(k.no);
+      const kv = k && video ? k.video[video.kod] : undefined;
+      if (k && kv) {
+        secKonu = null;
+        git(satirlar[kv.ilk].bas);
+      } else if (k) {
+        secKonu = k.no; // videoda yok ya da videosuz ders: konunun özeti Şu an panelinde açılır
+        suAnCiz();
+        isaretleKonu();
+      }
+      if (k && !genis()) {
+        sekmeGoster("su-an");
+        scrollTo({ top: 0, behavior: azaltilmis() ? "auto" : "smooth" });
+      }
       return;
     }
     const vg = t.closest<HTMLElement>("[data-vurgu-git]");
@@ -561,6 +858,40 @@ export function calismaOdasiBaslat(): void {
     }
     const kapat = t.closest<HTMLElement>("[data-kapat]");
     if (kapat) return void kapat.closest("dialog")?.close();
+    if (t.closest("[data-videoya-don]")) {
+      secKonu = null;
+      suAnCiz();
+      isaretleKonu();
+      try {
+        oynatici?.playVideo();
+      } catch {
+        /* player not ready */
+      }
+      if (!genis()) scrollTo({ top: 0, behavior: azaltilmis() ? "auto" : "smooth" });
+      return;
+    }
+    const sv = t.closest<HTMLElement>("[data-video-sec]");
+    if (sv) return videoDegistir(sv.dataset.videoSec ?? "");
+    const sg = t.closest<HTMLElement>("[data-soru-git]");
+    if (sg) return void sinavSoruyaGit(sg.dataset.soruGit ?? "", Number(sg.dataset.unite));
+    const sk = t.closest<HTMLElement>("[data-sinav-konu]");
+    if (sk) return sinavKonuAc(sk.dataset.sinavKonu ?? "");
+    const su = t.closest<HTMLElement>("[data-sinav-unite]");
+    if (su) {
+      sinavElle = true;
+      sinavUnite = Number(su.dataset.sinavUnite);
+      sinavKonu = null;
+      sinavKapsam = "unite";
+      return void sinavCiz();
+    }
+    const sc = t.closest<HTMLElement>("[data-sinav-kapsam]");
+    if (sc) {
+      sinavElle = true;
+      sinavKapsam = sc.dataset.sinavKapsam === "konu" ? "konu" : "unite";
+      return void sinavCiz();
+    }
+    const sq = t.closest<HTMLElement>(".co-sq-sec");
+    if (sq) return sinavCevapla(sq.dataset.sqId ?? "", sq.dataset.sqSec ?? "");
     const secenek = t.closest<HTMLElement>(".co-secenek");
     if (secenek) return cevapla(secenek.closest<HTMLElement>(".co-soru")!, secenek.dataset.deger ?? "");
     const kontrol = t.closest<HTMLElement>("[data-kontrol]");
@@ -571,14 +902,14 @@ export function calismaOdasiBaslat(): void {
     const satir = t.closest<HTMLElement>(".co-satir");
     if (satir && !getSelection()?.toString()) {
       katmanSifirla(balon);
-      git(paket.satirlar[Number(satir.dataset.i)].bas);
+      git(satirlar[Number(satir.dataset.i)].bas);
     }
   });
   kok.addEventListener("keydown", (e) => {
     const t = e.target as HTMLElement;
     if ((e.key === "Enter" || e.key === " ") && t.classList.contains("co-satir")) {
       e.preventDefault();
-      git(paket.satirlar[Number(t.dataset.i)].bas);
+      git(satirlar[Number(t.dataset.i)].bas);
     }
     if (e.key === "Enter" && t.matches(".co-bosluk input")) t.closest(".co-soru")?.querySelector<HTMLElement>("[data-kontrol]")?.click();
   });
@@ -603,9 +934,11 @@ export function calismaOdasiBaslat(): void {
   function vurguyaGit(id: string): void {
     const v = vurgular.find((x) => x.id === id);
     if (!v) return;
-    if (v.hedef.startsWith("s")) {
+    const c = satirCoz(v.hedef);
+    if (c) {
+      if (video?.kod !== c.kod) videoDegistir(c.kod);
       sekmeGoster("dokum");
-      const i = Number(v.hedef.slice(1));
+      const i = c.i;
       requestAnimationFrame(() => {
         satiriGoster(i, true);
         document.querySelector(`mark[data-vid="${CSS.escape(id)}"]`)?.scrollIntoView({ block: "nearest" });
@@ -622,12 +955,14 @@ export function calismaOdasiBaslat(): void {
   new ResizeObserver(yukseklik).observe(videoKab);
   yukseklik();
 
+  videoSecCiz();
   dokumCiz();
   icindekilerCiz();
   vurguListesiCiz();
   suAnCiz();
   sekmeUygula();
   videoKur();
+  sorulariOnceden();
   // Test ve ileri kullanım için: dışarıdan zaman vermek
   (window as unknown as { coZaman?: (sn: number) => void }).coZaman = guncelle;
 }
