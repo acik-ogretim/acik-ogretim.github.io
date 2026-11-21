@@ -449,11 +449,11 @@ ACK1 = "Toplumsal sözleşme kuramına göre devlet, doğa durumundan çıkmak i
 k20 = [
     ekran(UST20("Ü 4 · 12 / 40") + '<main class="icerik" style="padding-bottom:0">' + KIP(0) + GIRIS + SERIT
           + qkart("2023 Final", "Devletin ortaya çıkışını açıklayan kuramlardan hangisi, devleti bireylerin sözleşmesinin ürünü olarak görür?", SIK1, {"A": "d", "B": "s", "C": "s", "D": "s", "E": "s"}, ACK1)
-          + "</main>" + OYN, "20a", "Ders sayfası, okuma kipi: ders girişi kartı, ünite şeridi, liste hâlinde soru kartları; cevap ve açıklama açık gelir (showAnswers)"),
+          + "</main>" + OYN, "20a", "Ders sayfası, okuma kipi: ders girişi kartı, ünite şeridi, liste hâlinde kutusuz sorular; cevap ve açıklama açık gelir (showAnswers)"),
     ekran(UST20("Ü 4 · 13 / 40") + '<main class="icerik" style="padding-bottom:0">' + KIP(1) + SERIT
           + qkart("2022 Vize", "Yönetimin dinî kurallara ve din adamlarına dayandığı devlet biçimi hangisidir?", SIK2, {"A": "y", "B": "s", "C": "s", "D": "d", "E": "s"}, "yok")
           + qkart("2023 Final", "Devletin ortaya çıkışını açıklayan kuramlardan hangisi, devleti bireylerin sözleşmesinin ürünü olarak görür?", SIK1)
-          + "</main>" + OYN, "20b", "Çözme kipi: cevaplanan kart sonucu gösterir, sıradaki soru altında bekler; açıklaması olmayan soruda tek satır yapay zekâ önerisi"),
+          + "</main>" + OYN, "20b", "Çözme kipi: cevaplanan soru sonucu gösterir, sıradaki soru altında bekler; açıklaması olmayan soruda tek satır yapay zekâ önerisi"),
     ekran(UST20("Ü 4 · 12 / 40") + '<div class="perde"></div><div class="sayfa" role="dialog" aria-label="İçindekiler" style="max-height:78%"><div class="tutamac"></div>'
           + f'<div class="sayfa-b"><div class="t"><b>İçindekiler</b><span>8 ünite · 312 soru</span></div><button class="dugme" aria-label="Kapat">{ic("x")}</button></div>'
           + "".join(ilerlemeli(f"Ünite {n}: {a}", f"{q} soru", y) for n, a, q, y in [(2, "Devletin unsurları", 40, 88), (3, "Devlet ve egemenlik", 38, 71), (4, "Devletin kuruluşu, kuramlar ve sona ermesi", 42, 52), (5, "Devlet biçimleri", 39, 0)])

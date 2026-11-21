@@ -22,7 +22,7 @@ Tasarım uygulanmadan önce kod ve veri tek tek okundu. Amaç uygulama sırasın
 
 **Açık**: 01 maketi tek soru ekranı, "Soru 12 / 40" sayacı ve "Sonraki soru" düğmesi çiziyor; bu yapı kodda yok ve SEO için tek sayfada liste gerekli.
 
-**Karar**: tasarım listeye uyar. Soru kartı listede tekrarlanan bileşendir; üst çubuk anlık soruyu (`currentIndex`) "Ü 4 · 12 / 40" olarak gösterir; ünite şeridi kalır. "Sonraki soru" düğmesi kalkar, etkileşimli kipte cevaptan sonra liste kendiliğinden bir sonraki karta kayar (mevcut otomatik ilerle ayarı). Okuma ve Çözme kipi ders sayfasının üstünde iki parçalı seçicidir. Maket: 20a, 20b.
+**Karar**: tasarım listeye uyar. Soru listede tekrarlanan kutusuz bileşendir (kart yüzeyi ve kenar yok, sorular ince ayraçla ayrılır); üst çubuk anlık soruyu (`currentIndex`) "Ü 4 · 12 / 40" olarak gösterir; ünite şeridi kalır. "Sonraki soru" düğmesi kalkar, etkileşimli kipte cevaptan sonra liste kendiliğinden bir sonraki soruya kayar (mevcut otomatik ilerle ayarı). Okuma ve Çözme kipi ders sayfasının üstünde iki parçalı seçicidir. Maket: 20a, 20b.
 
 ## 4. Veri kapsamı
 

@@ -106,7 +106,7 @@ Gece çalışan, telefonda soru çözen ve dinleyen yetişkin öğrenci için sa
 
 ## 5. Bileşenler
 
-**Soru kartı** (`.question-card`): kart yüzeyi, 24 px köşe, 1 px kenar, iç boşluk 16 (telefon) ve 24. Üstte `.q-label` (sınav çipi, kaynak), varsa konu bağlantısı (`.q-konu`, yalnız konu ağacı olan derste), soru metni (`.question-text`, serif 18), şıklar, açıklama. Listede tekrarlanır; tek soru ekranı yoktur.
+**Soru** (`.question-card`): kutusuz. Kart yüzeyi, kenar ve köşe yok; soru doğrudan zeminde durur. Sorular arasında 1 px `--border-color` ayraç ve 20 px boşluk. Üstte `.q-label` (sınav çipi, kaynak), varsa konu bağlantısı (`.q-konu`, yalnız konu ağacı olan derste), soru metni (`.question-text`, serif 18), şıklar, açıklama. Dokunulan öğeler (şıklar) kenarlı kalır; soru metni ve etiketleri kutuya girmez. Listede tekrarlanır; tek soru ekranı yoktur.
 
 **Şık** (`.option-item`, `.option-key`): en az 56 px, 16 px köşe, 1 px kenar. Harf rozeti 32 px daire. Durumlar: varsayılan, seçili (`--primary-soft` zemin, `--primary-text` rozet), doğru (`.is-correct`, `.was-revealed`: doğru kenar ve zemin, onay simgesi), yanlış (`.is-wrong`: yanlış kenar ve zemin, çarpı), soluk (cevaptan sonra diğerleri %70). Renk tek başına anlam taşımaz, simge de vardır.
 
@@ -144,7 +144,7 @@ Rutin geçişler 300 ms altında, eğri `cubic-bezier(.2,0,0,1)`. Basma `scale(.
 
 ## 9. İlkeler ve sınırlar
 
-**Koru**: tek vurgu, nötr ilerleme, serif soru metni, yüzen cam alt öğeler, eş merkezli köşeler, öğrenme renklerinin vurgudan bağımsızlığı, veride olmayan alanın çizilmemesi.
+**Koru**: kutusuz soru, tek vurgu, nötr ilerleme, serif soru metni, yüzen cam alt öğeler, eş merkezli köşeler, öğrenme renklerinin vurgudan bağımsızlığı, veride olmayan alanın çizilmemesi.
 
 **Kaçın**: yan şerit, gradyan, gölgeli kart yığını, mor ve turkuaz, saf siyah ve keskin beyaz, her yüzeyde vurgu, sahte veri (seri, haftalık grafik, sınav geri sayımı veri gelmeden), sabit Tailwind renk sınıfı (`text-slate-*`, `bg-teal-*` gibi), temadan bağımsız sabit koyu yüzey.
 
