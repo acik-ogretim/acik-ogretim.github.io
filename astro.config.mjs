@@ -4,6 +4,7 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
+import cevrimdisi from './src/integrations/cevrimdisi.ts';
 
 
 // https://astro.build/config
@@ -19,5 +20,5 @@ export default defineConfig({
   },
   // Sitemaps, robots.txt and llms.txt are endpoints in src/pages (src/lib/site-haritasi.ts): one sitemap per
   // university, canonical course pages only.
-  integrations: [mdx(), react()]
+  integrations: [mdx(), react(), cevrimdisi()]
 });
