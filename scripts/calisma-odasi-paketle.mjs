@@ -259,7 +259,7 @@ function paketle(ders) {
     say[derinlik - 1] = (say[derinlik - 1] ?? 0) + 1;
     for (let d = derinlik; d < say.length; d++) say[d] = 0;
     sayac.set(k.unite, say);
-    k.goster = [k.unite, ...say.slice(1, derinlik).map((n) => n || 1)].join(".");
+    k.goster = [k.unite, ...Array.from(say.slice(1, derinlik), (n) => n || 1)].join("."); // Array.from fills holes left by skipped levels
   }
   // Written topic explanations: data/calisma-odasi/anlatim/<ders>.json ({no: markdown}) from scripts/konu-anlatimi-uret.py.
   const anlatimYolu = join(kok, "data", "calisma-odasi", "anlatim", `${ders}.json`);
@@ -267,6 +267,14 @@ function paketle(ders) {
     const anlatimlar = oku(anlatimYolu);
     for (const k of konuListesi) if (typeof anlatimlar[k.no] === "string") k.anlatim = anlatimlar[k.no];
     console.log(`[calisma-odasi] ${ders}: ${konuListesi.filter((k) => k.anlatim).length} konuda yazılı konu anlatımı`);
+  }
+  // Topic drawings: data/calisma-odasi/gorsel/<ders>.json ({no: url}) written with the image files by auzeff-tui's
+  // scripts/konu-gorseli-aktar.py into public/calisma/<ders>/gorsel/.
+  const gorselYolu = join(kok, "data", "calisma-odasi", "gorsel", `${ders}.json`);
+  if (existsSync(gorselYolu)) {
+    const gorseller = oku(gorselYolu);
+    for (const k of konuListesi) if (typeof gorseller[k.no] === "string") k.gorsel = gorseller[k.no];
+    console.log(`[calisma-odasi] ${ders}: ${konuListesi.filter((k) => k.gorsel).length} konuda görsel`);
   }
   if (takma.size) console.log(`[calisma-odasi] ${ders}: ${takma.size} bölünmüş başlık ya da boş konu birleştirildi (${[...takma.keys()].join(", ")})`);
   // Proper names (people, civilizations, places, events, works...): data/calisma-odasi/adlar/<ders>.json from scripts/adlar-uret.py.

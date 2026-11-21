@@ -695,12 +695,40 @@ export function calismaOdasiBaslat(): void {
       oynatici = sesOynatici;
     }
   }
+  // Where listening stopped: media id and second, written while it plays, put back (paused) on the next visit.
+  const konumAnahtari = `calisma-konum-${ders}`;
+  let geriYukle: { id: string; t: number } | null = null;
+  try {
+    const k = JSON.parse(localStorage.getItem(konumAnahtari) ?? "null") as { id?: string; t?: number } | null;
+    const parametre = new URLSearchParams(location.search);
+    if (k?.id && typeof k.t === "number" && k.t > 5 && !parametre.has("konu") && (!parametre.get("video") || parametre.get("video") === k.id) && videolar.some((v) => v.id === k.id)) geriYukle = { id: k.id, t: k.t };
+  } catch {
+    /* storage unavailable */
+  }
+  let sonKayit = 0;
   function videoKur(): void {
+    if (geriYukle && geriYukle.id !== video?.id) videoDegistir(geriYukle.id);
     if (video) medyaAktifEt(video);
     setInterval(() => {
       if (!oynatici || document.hidden || !video) return;
       try {
+        if (geriYukle) {
+          const { t } = geriYukle;
+          geriYukle = null;
+          oynatici.seekTo(t, true);
+          elleKaydirdi = false;
+          guncelle(t);
+          return;
+        }
         const sn = oynatici.getCurrentTime();
+        if (Number.isFinite(sn) && sn > 5 && Date.now() - sonKayit > 3000 && caliyorMu()) {
+          sonKayit = Date.now();
+          try {
+            localStorage.setItem(konumAnahtari, JSON.stringify({ id: video.id, t: Math.round(sn) }));
+          } catch {
+            /* storage unavailable */
+          }
+        }
         // Zaman değişmedikçe (medya henüz başlamadı) elle seçilen konu bozulmaz
         if (Number.isFinite(sn) && sn !== sonOynaticiSn) {
           sonOynaticiSn = sn;
@@ -1090,7 +1118,9 @@ export function calismaOdasiBaslat(): void {
       return `<div><dt><button type="button" class="co-kavram" data-k="${i}"${yildizliMi(i) ? " data-yildizli" : ""}>${esc(v.terim)}</button></dt><dd>${esc(v.tanim)}</dd></div>`;
     };
     const kavSira = (kavramKonuya.get(no) ?? []).filter((i) => !paket.kavramlar[i]?.tur);
+    const gorselHtml = k.gorsel ? `<figure class="co-ak-gorsel"><img src="${esc(k.gorsel)}" alt="${esc(k.baslik)} konusunun çizimi" width="1376" height="768" loading="lazy" decoding="async"></figure>` : "";
     govde.innerHTML =
+      gorselHtml +
       `<div class="co-ak-metin" data-vurgu-kok data-hedef="o${esc(no)}">${govdeHtml}</div>` +
       `<div class="co-ak-katlar">` +
       kapali(`Kavramlar (${kavSira.length})`, kavSira.length ? `<dl class="co-tanimlar co-ak-kavramlar">${kavSira.map(tanimSatiri).join("")}</dl>` : "") +
@@ -1246,9 +1276,9 @@ export function calismaOdasiBaslat(): void {
     const dugme = document.getElementById("co-ak-simdi");
     if (dugme) dugme.hidden = !(gorunur && elleKaydirdi && simdiKonu);
   }
-  function medyaSar(no: string): void {
+  function medyaSar(no: string, oynat = false): void {
     const k = konuHaritasi.get(no)?.k;
-    const calarken = caliyorMu();
+    const calarken = oynat || caliyorMu();
     medyaKonuyaUydur(no);
     const kv = k && video ? k.video[video.id] : undefined;
     const satir = kv ? satirlar[kv.ilk] : undefined;
@@ -1644,7 +1674,7 @@ export function calismaOdasiBaslat(): void {
       const kodM = akMedya.dataset.akMedya ?? "";
       if (video?.id !== kodM) videoDegistir(kodM);
       elleKaydirdi = false;
-      return medyaSar(akMedya.dataset.no ?? "");
+      return medyaSar(akMedya.dataset.no ?? "", true); // a listen/watch chip means "play from here"
     }
     const akSar = t.closest<HTMLElement>("[data-ak-sar]");
     if (akSar) {
@@ -1655,7 +1685,10 @@ export function calismaOdasiBaslat(): void {
     if (akSon) {
       const sira = konuHaritasi.get(akSon.dataset.akSonraki ?? "")?.i ?? -1;
       const sonraki = paket.konular[sira + 1];
-      if (sonraki) {
+      if (sonraki && dizidekiMedya(sonraki.no)) {
+        // the narration moves with the reader: next topic means the player jumps there too (playing stays playing)
+        konuyaGit(sonraki.no);
+      } else if (sonraki) {
         elleKaydirdi = true;
         akisKaydir(sonraki.no);
         akisIzle();
@@ -1853,7 +1886,9 @@ export function calismaOdasiBaslat(): void {
 
   // Yapışık video yüksekliği sekmelerin yapışma konumunu belirler
   const videoKab = $("co-video-kab");
-  const yukseklik = (): void => kok.style.setProperty("--co-video-h", `${videoKab.offsetHeight}px`);
+  // floor of the real (fractional) height: offsetHeight rounds, and a rounded-up value left a hairline gap under the
+  // player on high-density phones where the text behind showed through; the tabs now tuck under the player instead.
+  const yukseklik = (): void => kok.style.setProperty("--co-video-h", `${Math.floor(videoKab.getBoundingClientRect().height)}px`);
   new ResizeObserver(yukseklik).observe(videoKab);
   yukseklik();
 

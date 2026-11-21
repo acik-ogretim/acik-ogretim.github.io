@@ -1366,7 +1366,8 @@ dialog .co-arac[data-alt] {
 .co-ses-satir {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  min-width: 0;
 }
 .co-ses-orta {
   display: grid;
@@ -1396,6 +1397,8 @@ dialog .co-arac[data-alt] {
 }
 .co-dalga {
   position: relative;
+  overflow: hidden;
+  min-width: 0;
   height: 24px;
   border-radius: 6px;
   cursor: pointer;
@@ -1414,7 +1417,7 @@ dialog .co-arac[data-alt] {
 }
 .co-dalga-cubuklar i {
   flex: 1 1 0;
-  min-width: 1px;
+  min-width: 0;
   border-radius: 2px;
   background: var(--border-color-hover);
 }
@@ -1590,4 +1593,15 @@ ol.co-ak-liste {
 .co-dinle:hover,
 .co-dinle:focus-visible {
   border-color: currentColor;
+}
+.co-ak-gorsel {
+  margin: 12px 0 4px;
+}
+.co-ak-gorsel img {
+  display: block;
+  width: 100%;
+  max-width: 68ch;
+  height: auto;
+  border-radius: 12px;
+  background: var(--button-bg);
 }

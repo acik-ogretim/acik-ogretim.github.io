@@ -12,6 +12,7 @@ const KonuTemel = z.object({
   metin: z.string(),
   calisma: CalismaSemasi.optional(),
   anlatim: z.string().optional(), // written topic explanation (Markdown) from scripts/konu-anlatimi-uret.py
+  gorsel: z.string().optional(), // topic drawing URL (public/calisma/<ders>/gorsel/), shown above the explanation
 });
 /** Per media id: first line and number of lines where that media covers the topic (derived from medya.konuAraliklari on load). */
 export const KonuSemasi = KonuTemel.extend({ video: z.record(z.string(), z.object({ ilk: z.number(), say: z.number() })) });
