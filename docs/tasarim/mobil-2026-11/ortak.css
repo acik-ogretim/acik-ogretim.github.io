@@ -357,3 +357,15 @@ mark{background:var(--uyari-zemin);color:var(--metin);border-radius:3px;padding:
 .ekran.yeni[data-tema=koyu][data-vurgu=notr]{--vurgu:#2C2C2A;--vurgu-metin:#F5F5F5;--vurgu-ustu:#F5F5F5;--vurgu-zemin:#262625}
 .ekran.yeni[data-tema=koyu][data-vurgu=notr] .dugme.dolu,.ekran.yeni[data-tema=koyu][data-vurgu=notr] .halka{box-shadow:inset 0 0 0 1px hsla(0,0%,100%,.14)}
 .ekran.yeni:not([data-tema=koyu]){--vurgu:#2563B8;--vurgu-metin:#1F56A3;--vurgu-ustu:#FFFFFF;--vurgu-zemin:#E4EDF8}
+
+/* ---- yapıya uygun ders sayfası (20): liste kartı, kip seçici, ünite şeridi, açıklamasız soru ---- */
+.ekran.yeni .qkart{background:var(--yuzey);border:1px solid var(--cizgi);border-radius:24px;padding:16px;margin-bottom:12px}
+.ekran.yeni .qkart .ust-sat{display:flex;gap:6px;align-items:center;margin-bottom:10px;flex-wrap:wrap}
+.ekran.yeni .qkart .soru{font-family:ui-serif,"Iowan Old Style","Source Serif 4",Georgia,serif;font-size:18px;margin:4px 0 12px}
+.ekran.yeni .ac-yok{display:flex;align-items:center;gap:10px;min-height:48px;padding:0 12px;border-radius:16px;background:var(--yuzey-2);color:var(--metin-2);font-size:14px}
+.ekran.yeni .ac-yok b{color:var(--metin);font-weight:600}
+.ekran.yeni .serit{display:flex;gap:8px;overflow:hidden;padding:2px 0 10px}
+.ekran.yeni .serit .chip.secili{background:var(--vurgu-zemin);color:var(--vurgu-metin)}
+.ekran.yeni .giris{background:var(--yuzey);border:1px solid var(--cizgi);border-radius:24px;padding:16px;margin-bottom:12px}
+.ekran.yeni .giris h2{font:600 22px/1.2 ui-serif,Georgia,serif;margin:0 0 4px}
+.ekran.yeni mark{padding:0;border-radius:3px;background:var(--vurgu-zemin);color:inherit}

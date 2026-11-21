@@ -419,9 +419,70 @@ sayfa("19-tema17-duzeltmeler", "Tema 17 üstünde Stitch ve Nano Banana düzeltm
     resim("alternatifler/stitch-tema17-2.jpg", "Stitch, soru: soru metni serif ve büyük, şıklar daha yüksek, oynatıcı tek satır kompakt. Üst başlığı İngilizce yazmış, '1 Puan' ve 'Doğruluk oranı %68' uydurma; uygulamada çıkarılır.", 380),
 ])
 
+# ---------- 20 yapıya uygun ders sayfası ----------
+def qkart(sinav, soru, siklar, durum=None, aciklama=None, konu=None):
+    sat = f'<div class="ust-sat"><span class="chip">{sinav}</span>' + (f'<span class="k1" style="font-size:13px;color:var(--metin-2)">{konu}</span>' if konu else "") + "</div>"
+    sk = ""
+    for h, t in siklar:
+        sinif = {"d": "dogru", "y": "yanlis", "s": "soluk"}.get((durum or {}).get(h, ""), "")
+        isaret = ic("check", "i-s") if sinif == "dogru" else ic("x", "i-s") if sinif == "yanlis" else ""
+        sk += f'<div class="sik {sinif}"><span class="h">{h}</span><span class="m">{t}</span><span class="d">{isaret}</span></div>'
+    ac = ""
+    if aciklama == "yok":
+        ac = f'<div class="ac-yok">{ic("bilgi" if False else "sohbet", "i-s")}<span style="flex:1">Açıklama yok · <b>Yapay zekâ ile açıkla</b></span>{SAG}</div>'
+    elif aciklama:
+        ac = (f'<div class="aciklama"><div class="aciklama-b">{ic("dosya", "i-s")}<b>Açıklama</b><button class="dugme hafif yuvarlak" aria-label="Seslendir">{ic("ses", "i-s")}</button>'
+              f'<button class="dugme hafif yuvarlak" aria-label="Derse sor">{ic("sohbet", "i-s")}</button></div><p>{aciklama}</p><p class="kaynak">Ünite 4, s. 82</p></div>')
+    return f'<div class="qkart"><p class="soru">{soru}</p>{sat if False else ""}{sk}{ac}</div>'.replace('<div class="qkart"><p', f'<div class="qkart">{sat}<p', 1)
+
+SIK1 = [("A", "Toplumsal sözleşme kuramı"), ("B", "Güç (zor) kuramı"), ("C", "Ailecilik kuramı"), ("D", "Teokratik kuram"), ("E", "Organik kuram")]
+SIK2 = [("A", "Mutlak monarşi"), ("B", "Meşruti monarşi"), ("C", "Oligarşi"), ("D", "Teokrasi"), ("E", "Cumhuriyet")]
+UST20 = lambda alt: ust("Devlet Teorisi", alt, sag=("liste", "İçindekiler"))
+SERIT = '<div class="serit"><span class="chip">Ü 2</span><span class="chip">Ü 3</span><span class="chip secili">Ü 4</span><span class="chip">Ü 5</span><span class="chip">Ü 6</span><span class="chip">Ü 7</span></div>'
+KIP = lambda c: f'<div class="segment" style="margin:0 0 10px"><button class="dugme {"secili" if c == 0 else ""}">Okuma</button><button class="dugme {"secili" if c == 1 else ""}">Çözme</button></div>'
+GIRIS = ('<div class="giris"><h2>Devlet Teorisi</h2><p style="color:var(--metin-2);font-size:14px">Anadolu AÖF · SBY103U · 2017-2025 arası 9 yılın soruları</p>'
+         f'<div class="yatay" style="margin-top:10px;flex-wrap:wrap"><span class="chip">{ic("kitap-ac", "i-s")} Materyaller</span><span class="chip">{ic("play", "i-s")} Video özeti</span><span class="chip">{ic("sohbet", "i-s")} Tartış</span></div></div>')
+OYN = (f'<nav class="bar" aria-label="Oynatıcı"><div class="ilerle"><i style="width:30%"></i></div><button class="dugme" aria-label="Önceki">{ic("prev")}</button>'
+       f'<button class="dugme" aria-label="Soruyu oku">{ic("ses")}</button><button class="dugme oynat" aria-label="Oynat">{ic("play", "i-fill")}</button>'
+       f'<button class="dugme" aria-label="Süzgeç">{ic("ayar")}</button><button class="dugme" aria-label="Sonraki">{ic("next")}</button></nav>')
+ACK1 = "Toplumsal sözleşme kuramına göre devlet, doğa durumundan çıkmak isteyen bireylerin özgür iradeleriyle yaptıkları bir sözleşmeyle kurulur."
+k20 = [
+    ekran(UST20("Ü 4 · 12 / 40") + '<main class="icerik" style="padding-bottom:0">' + KIP(0) + GIRIS + SERIT
+          + qkart("2023 Final", "Devletin ortaya çıkışını açıklayan kuramlardan hangisi, devleti bireylerin sözleşmesinin ürünü olarak görür?", SIK1, {"A": "d", "B": "s", "C": "s", "D": "s", "E": "s"}, ACK1)
+          + "</main>" + OYN, "20a", "Ders sayfası, okuma kipi: ders girişi kartı, ünite şeridi, liste hâlinde soru kartları; cevap ve açıklama açık gelir (showAnswers)"),
+    ekran(UST20("Ü 4 · 13 / 40") + '<main class="icerik" style="padding-bottom:0">' + KIP(1) + SERIT
+          + qkart("2022 Vize", "Yönetimin dinî kurallara ve din adamlarına dayandığı devlet biçimi hangisidir?", SIK2, {"A": "y", "B": "s", "C": "s", "D": "d", "E": "s"}, "yok")
+          + qkart("2023 Final", "Devletin ortaya çıkışını açıklayan kuramlardan hangisi, devleti bireylerin sözleşmesinin ürünü olarak görür?", SIK1)
+          + "</main>" + OYN, "20b", "Çözme kipi: cevaplanan kart sonucu gösterir, sıradaki soru altında bekler; açıklaması olmayan soruda tek satır yapay zekâ önerisi"),
+    ekran(UST20("Ü 4 · 12 / 40") + '<div class="perde"></div><div class="sayfa" role="dialog" aria-label="İçindekiler" style="max-height:78%"><div class="tutamac"></div>'
+          + f'<div class="sayfa-b"><div class="t"><b>İçindekiler</b><span>8 ünite · 312 soru</span></div><button class="dugme" aria-label="Kapat">{ic("x")}</button></div>'
+          + "".join(ilerlemeli(f"Ünite {n}: {a}", f"{q} soru", y) for n, a, q, y in [(2, "Devletin unsurları", 40, 88), (3, "Devlet ve egemenlik", 38, 71), (4, "Devletin kuruluşu, kuramlar ve sona ermesi", 42, 52), (5, "Devlet biçimleri", 39, 0)])
+          + '<p class="kaynak" style="margin-top:10px">Bu derste kitap konu ağacı yok; konu düzeyi yalnız konu ağacı olan derslerde açılır.</p></div>',
+          "20c", "İçindekiler: her derste ünite düzeyi; konu satırları yalnız konu verisi olan derste (6 ders) eklenir"),
+    ekran(UST20("Ü 4 · 12 / 40") + '<div class="perde"></div><div class="sayfa" role="dialog" aria-label="Süzgeç"><div class="tutamac"></div>'
+          + f'<div class="sayfa-b"><div class="t"><b>Süzgeç</b><span>Bu derste 312 sorudan 41\'i gösteriliyor</span></div><button class="dugme" aria-label="Kapat">{ic("x")}</button></div>'
+          + '<p class="alt-baslik" style="margin-top:4px">Soru türü</p><div class="yatay"><span class="chip secili v">Yanlışlarım · 19</span><span class="chip">Cevaplanmamış · 22</span></div>'
+          + '<p class="alt-baslik">Sınav</p><div class="yatay" style="flex-wrap:wrap"><span class="chip">Tümü</span><span class="chip v">Final</span><span class="chip">Vize</span><span class="chip">Bütünleme</span></div>'
+          + '<p class="alt-baslik">Kaynak</p><div class="yatay"><span class="chip v">Çıkmış sorular</span><span class="chip">Ünite sonu</span><span class="chip">Deneme</span></div>'
+          + '<p class="alt-baslik">Ünite</p><div class="yatay"><span class="chip">Tümü</span><span class="chip v">Ü 4</span><span class="chip">Ü 5</span></div>'
+          + '<div style="display:flex;gap:8px;margin-top:16px"><button class="dugme cizgili" style="flex:1">Sıfırla</button><button class="dugme dolu" style="flex:2">Uygula</button></div></div>',
+          "20d", "Süzgeç alt sayfası: ayar penceresindeki ders bağlamlı süzgeçler (soru türü, sınav, kaynak, ünite) ders sayfasına taşınır; quiz-settings anahtarları aynı"),
+    ekran(ust("Ara", sol=None) + '<main class="icerik kabuk">'
+          + f'<div class="alan" style="border-color:var(--cizgi)">{ic("search", "i-s")}<span class="girdi">devlet</span><button class="dugme" aria-label="Temizle">{ic("x", "i-s")}</button></div>'
+          + '<div class="yatay" style="margin:12px 0 4px"><span class="chip v">Dersler · 7</span><span class="chip">Bölümler · 1</span></div>'
+          + "".join(satir(f"<mark>Devlet</mark>{a}", b, SAG) for a, b in [(" Teorisi", "Anadolu AÖF · Siyaset Bilimi · 1. dönem"), (" Teorisi", "ATA-AÖF · Kamu Yönetimi · 1. dönem"), (" ve Toplum", "AUZEF · Sosyoloji · 3. dönem"), ("lerarası İlişkiler", "AUZEF · Uluslararası İlişkiler · 2. dönem")])
+          + '<p class="kaynak" style="margin-top:12px">Soru araması ders sayfasında, dersin içinde yapılır.</p></main>' + sekmeler("Ara"),
+          "20e", "Ara sekmesi: 10.988 derslik katalogda ders ve bölüm araması; soru araması ders içinde kalır"),
+    ekran(UST20("Ü 4 · 13 / 40") + '<main class="icerik" style="padding-bottom:0">' + KIP(1) + SERIT
+          + qkart("2023 Final", "Devletin ortaya çıkışını açıklayan kuramlardan hangisi, devleti bireylerin sözleşmesinin ürünü olarak görür?", SIK1, {"A": "d", "B": "y", "C": "s", "D": "s", "E": "s"}, ACK1)
+          + "</main>" + OYN, "20f", "Çözme kipi, koyu tema", koyu=True),
+]
+sayfa("20-yapiya-uygun", "Yapıya uygun ders sayfası", k20)
+URUN_EK = ["20-yapiya-uygun"]
+
 # ---------- tema 17'yi ürün ekranlarına uygula ----------
 URUN = ["01-soru-cozme", "02-oynatici", "03-arama", "04-sohbet", "05-unite-konu-yanlislar", "06-ozet-okuma",
-        "07-karsilama-giris", "08-ana-sayfa", "09-derslerim-favoriler", "10-ilerleme", "11-ayarlar", "12-pwa-durumlar", "16-video-canli-ders"]
+        "07-karsilama-giris", "08-ana-sayfa", "09-derslerim-favoriler", "10-ilerleme", "11-ayarlar", "12-pwa-durumlar", "16-video-canli-ders"] + URUN_EK
 for ad in URUN:
     f = KOK / f"{ad}.html"; t = f.read_text()
     t = re.sub(r'<div class="ekran"(?! yeni)', '<div class="ekran yeni"', t)
@@ -437,8 +498,8 @@ BOLUMLER = [
      [("07-karsilama-giris", "Karşılama, okul seçimi, kayıt getirme", "yeni"), ("08-ana-sayfa", "Bugün", "yeni")]),
     ("Keşif ve Derslerim", "/[üniversite], /[bölüm] ve favori dersler.",
      [("09-derslerim-favoriler", "Derslerim, favoriler, ders ekleme", "var")]),
-    ("Ders sayfası", "/[ders]: soru çözme, oynatıcı, arama, derse sor, ünite ve konu, özet, video.",
-     [("01-soru-cozme", "Soru çözme", "var"), ("02-oynatici", "Oynatıcı", "var"), ("03-arama", "Arama", "var"),
+    ("Ders sayfası", "/[ders]: uzun liste, okuma ve çözme kipi, ünite şeridi; özet ve video yalnız verisi olan derste.",
+     [("20-yapiya-uygun", "Yapıya uygun ders sayfası (UYUM.md)", "var"), ("01-soru-cozme", "Soru çözme", "var"), ("02-oynatici", "Oynatıcı", "var"), ("03-arama", "Arama", "var"),
       ("04-sohbet", "Derse sor", "var"), ("05-unite-konu-yanlislar", "Ünite, konu, yanlışlarım", "var"),
       ("06-ozet-okuma", "Özet okuma", "var"), ("16-video-canli-ders", "Video ve döküm, canlı ders, kurs akışı", "veri gerekir")]),
     ("İlerleme, ayarlar, sistem", "Kayıtlardan hesaplanan ölçüler; tek ayar sekmesi; PWA durumları.",

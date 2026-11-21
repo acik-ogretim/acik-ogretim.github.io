@@ -1,11 +1,12 @@
 # Mobil öncelikli arayüz tasarım önerisi (Kasım 2026)
 
-**Güncel plan: `PLAN.md`** (maketlerin rota, bileşen ve veri eşlemesi, uygulama sırası). 01-12 ve 16 tema 17 ile üretilir; 13-15, 18, 19 denemelerdir.
+**Uygulamadan önce okunacak üç belge:** `UYUM.md` (tasarımın koda oturması için açıklar ve kararlar; çelişkide bu geçerli), `DESIGN.md` (sürüm 2: tema 17 belirteçleri `global.css` rol değişkenlerine bağlı, bileşen sözleşmeleri), `PLAN.md` (maketlerin rota ve veri eşlemesi). Ders sayfası için esas maket `20-yapiya-uygun.html`. 01-12, 16 ve 20 tema 17 ile üretilir; 13-15, 18, 19 denemelerdir.
 
 Canlı kod değişmedi; yalnız tasarım çıktısı.
 
-- Varsayılan palet 21 Kasım'da siyah beyaza geçti (birincil eylem siyah, koyuda beyaz; renk yalnız doğru, yanlış, uyarı için). `DESIGN.md` §3'teki deniz yeşili değerleri `data-palet="yesil"` olarak duruyor.
-- `DESIGN.md`: renk, yazı, boşluk belirteçleri, bileşen sözleşmeleri, oynatıcı yeniden tasarım kararı, güvenli alan kuralı, tablet notları, uygulama notları.
+- Varsayılan dil tema 17: sürü panosu tonları, tek mavi vurgu (koyuda #7AB0F2, açıkta #2563B8), nötr ilerleme. Eski deniz yeşili maket paleti `data-palet="yesil"` olarak duruyor.
+- `DESIGN.md`: dokuz bölümlük görsel sözleşme (atmosfer, yüzey ve renk, tipografi, yerleşim, bileşenler, derinlik, simge, hareket, ilkeler); açık, koyu ve sepya değerleri ve kontrast oranları.
+- `UYUM.md`: mevcut koda uyum analizi (tema altyapısı, liste tabanlı ders sayfası, veri düşüş durumları, ayar bölünmesi, katalog araması) ve uygulama sırası.
 - `ortak.css`: maketlerin ortak belirteçleri ve bileşenleri (açık ve koyu tema, `data-tema="koyu"`).
 - Maketler (her dosyada birden çok durum yan yana; tarayıcıda açın):
   1. `01-soru-cozme.html`: cevaplanmamış, cevaplanmış, koyu tema çalarken

@@ -1,164 +1,153 @@
-# Açık Öğretim Portal: mobil öncelikli arayüz tasarımı (Kasım 2026)
+---
+name: Açık Öğretim Portal
+version: 2 (21 Kasım 2026)
+summary: Sürü panosunun sakin tonları üstünde mobil öncelikli çalışma uygulaması; koyu ve açık eş değer, tek vurgu, uzun okuma için serif başlık.
+themes: [light, dark, sepia]
+colors:
+  light:
+    bg-color: '#FCFCFB'
+    card-bg: '#FFFFFF'
+    button-bg: '#F7F7F5'
+    button-bg-hover: '#EFEFEC'
+    border-color: 'rgba(20,20,20,0.10)'
+    border-color-hover: 'rgba(20,20,20,0.20)'
+    text-color: '#151515'
+    text-color-muted: '#525252'
+    primary-color: '#2563B8'
+    primary-color-text: '#FFFFFF'
+    primary-text: '#1F56A3'
+    primary-soft: '#E4EDF8'
+    correct-border: '#17703D'
+    correct-bg: '#E0F2E6'
+    incorrect-border: '#AE2F27'
+    incorrect-bg: '#FBE5E2'
+    warning: '#7F5200'
+    warning-bg: '#FAEECE'
+  dark:
+    bg-color: '#151515'
+    card-bg: '#1A1A19'
+    button-bg: '#20201F'
+    button-bg-hover: '#2C2C2A'
+    border-color: 'rgba(255,255,255,0.09)'
+    border-color-hover: 'rgba(255,255,255,0.18)'
+    text-color: '#F5F5F5'
+    text-color-muted: '#A3A3A3'
+    primary-color: '#7AB0F2'
+    primary-color-text: '#151515'
+    primary-text: '#7AB0F2'
+    primary-soft: '#1C2633'
+    correct-border: '#7BC79A'
+    correct-bg: '#18241C'
+    incorrect-border: '#E58C82'
+    incorrect-bg: '#2A1C1A'
+    warning: '#E3B75A'
+    warning-bg: '#2A2416'
+  sepia: mevcut değerler korunur (global.css [data-theme='sepia']); eksik dört rol aşağıdaki kuralla türetilir
+typography:
+  display: { family: 'ui-serif, "Iowan Old Style", "Source Serif 4", Georgia, serif', weight: 600 }
+  sans: { family: 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' }
+  mono: { family: 'ui-monospace, "SF Mono", Menlo, monospace' }
+  scale:
+    title-xl: 36px / 1.05 / display
+    title-l: 22px / 1.2 / display
+    title-m: 17px / 1.25 / sans 700
+    question: 18px / 1.55 / display 400
+    body-reading: 18px / 1.7 / sans 400
+    body: 16px / 1.5 / sans 400
+    meta: 13px / 1.3 / sans 600
+rounded: { chip: 999px, row: 16px, card: 24px, hero: 28px, sheet: 28px, small: 8px }
+spacing: [4, 8, 12, 16, 20, 24, 32]
+touch-target: 44px
+---
 
-Hedef: iPhone 375 ile 430 px, sonra tablet. Bu belge canlı kodu değiştirmez; uygulama için sözleşmedir. Maketler `01-…06-*.html` dosyalarındadır, belirteçler `ortak.css` içinde çalışır durumdadır.
+# DESIGN.md: Açık Öğretim Portal
 
-## 1. Çözülen şikâyetler
+Bu belge sitenin görsel sözleşmesidir. Değerler `src/styles/global.css` içindeki `[data-theme]` rol değişkenlerine birebir yazılır; bileşenler hiçbir zaman ham renk kullanmaz. Koda uyum kararları ve açıklar `UYUM.md` içindedir, ekran envanteri `PLAN.md` içindedir. Canlı örnek: `17-onerilen-dil.html`, `18-renk-oyunu.html`. Bu sürüm Kasım 2026'daki ilk sözleşmenin yerini alır (deniz yeşili ve slate değerleri git geçmişinde).
 
-**Alttaki oynatıcı rahat kullanılmıyor.** Dokuz düğmelik tek şerit, beş düğmelik tek satıra iner (önceki, oynat, sonraki, ara, aç). Kalan altı işlev (soruyu oku, açıklamayı oku, mikrofon, konu, durdur, hız, otomatik ilerle, ayarlar) yukarı kayan alt sayfaya (sheet) taşınır. Her düğme en az 44 px, ana düğme 52 px.
+## 1. Atmosfer ve yön
 
-**Köşelerdeki düğmeler yuvarlak ekran köşesinde kırpılıyor.** Çubuk artık ekran kenarına yapışmaz: yüzen bir hap şeklindedir, kenarlardan `max(12px, env(safe-area-inset-left/right))` içeridedir. Hiçbir düğme köşeye konmaz; en dış düğmenin merkezi kenardan en az 30 px içeridedir. Çubuk köşe yarıçapı 30 px, iPhone ekran köşesiyle uyumlu.
+Gece çalışan, telefonda soru çözen ve dinleyen yetişkin öğrenci için sakin bir çalışma masası. Yön, sürü panosunun Claude teması tonlarından gelir: koyu temada #151515 kademeleri, açıkta sıcak kâğıt beyazı. Ekranda tek bir vurgu vardır ve yalnız birincil eylemde görünür; geri kalan her şey nötrdür. Yoğunluk orta: listeler sık, okuma alanları geniş. Hareket sakin, süs yok.
 
-**Yüzen arama düğmesi çubuğun altında kalıyordu.** Ayrı yüzen arama düğmesi kaldırılır. Arama çubuğun içinde bir simgedir; tek sabit alt öğe vardır, bu yüzden çakışma yapısal olarak olanaksızdır. Ders sayfasında oynatıcı yoksa (liste ekranları) alt eylem düğmesi aynı alt boşluk kuralını kullanır.
+Üç ayar: sapma düşük (tanıdık iOS kalıpları), hareket düşük, yoğunluk orta.
 
-## 2. Güvenli alan ve alt boşluk kuralı
+## 2. Yüzey ve renk
 
-Tüm sabit alt öğeler aynı formülü kullanır (maket cihaz benzetimi: `--sab` 34 px, `--sat` 47 px):
+**Yüzey kademeleri**: zemin `--bg-color`, kart `--card-bg`, iç yüzey ve pasif düğme `--button-bg`, üstte açılan yüzey `--button-bg-hover`. Derinlik gölgeyle değil, ton farkı ve ince kenarla kurulur.
 
-```css
---sat: env(safe-area-inset-top);
---sab: env(safe-area-inset-bottom);
---sal: env(safe-area-inset-left);
---sar: env(safe-area-inset-right);
-.bar        { left: max(12px, var(--sal)); right: max(12px, var(--sar));
-              bottom: calc(var(--sab) + 6px); height: 60px; }
-.sayfa      { padding-bottom: calc(var(--sab) + 12px); }
-main.kapsam { padding-bottom: calc(var(--sab) + 6px + 60px + 20px); } /* çubuk + nefes payı */
-```
+**Metin**: `--text-color` ve `--text-color-muted`. Saf siyah ve saf beyaz kullanılmaz.
 
-Gereksinimler: `<meta name="viewport" content="..., viewport-fit=cover">`; klavye açılınca alt sayfa `visualViewport` yüksekliğine uyar ve arama alanı klavyenin hemen üstünde kalır. Mevcut `body:has(#quiz-player-bar.visible) main { padding-bottom }` kuralı bu formülle değişir.
+**Vurgu**: `--primary-color` yalnız ekrandaki tek birincil eylemde (devam, sonraki, uygula) ve odak halkasında. Zemin üstünde bağlantı ya da seçili metin gerektiğinde `--primary-text`, seçili çip zemininde `--primary-soft`. İlerleme çubukları, seçili sekme, simgeler ve oynatıcı nötrdür (`--text-color-muted`, `--text-color`).
 
-## 3. Belirteçler
+**Öğrenme renkleri**: `--correct-*`, `--incorrect-*`, `--warning*`. Vurgudan bağımsızdır; vurgu değişince değişmez. Vurgu hiçbir zaman yanlış rengine yakın seçilmez (kiremit turuncusu bu yüzden elendi: yanlış rengiyle parlaklık oranı 1,05).
 
-**Renk (açık tema)**
+**Sepya**: mevcut değerler kalır. Eksik roller şöyle türetilir: `--primary-text` = `--primary-color`, `--primary-soft` = `color-mix(in srgb, var(--primary-color) 14%, var(--card-bg))`, `--warning` = #7F5200, `--warning-bg` = #F3E6C8.
 
-| Rol | Değer | Not |
-| --- | --- | --- |
-| zemin | `#F3F5F6` | soğuk kâğıt; krem/kil kalıbından kaçınmak için |
-| yüzey | `#FFFFFF` | kart, sayfa, çubuk |
-| yüzey-2 | `#E7ECEE` | pasif düğme, şerit boşluğu |
-| çizgi | `#D3DBDF` | sınır |
-| metin | `#10202A` | zeminde yaklaşık 15:1 |
-| metin-2 | `#4E5F69` | meta, yaklaşık 6:1 |
-| vurgu | `#0A7C76` | tek vurgu, beyaz üstünde yaklaşık 5,2:1 |
-| vurgu-metin | `#06605B` | vurgu zemini üstündeki ve bağlantı metni (açık temada vurgu-zemin üstünde 4,5:1 için) |
-| vurgu-zemin | `#DCF0EE` | seçili, çip |
-| doğru / zemin | `#17703D` / `#E0F2E6` | yalnız doğru cevap ve başarı |
-| yanlış / zemin | `#AE2F27` / `#FBE5E2` | yalnız yanlış cevap |
-| uyarı / zemin | `#7F5200` / `#FAEECE` | bağlam çipi, "Hatırla" kutusu, arama vurgusu |
+**Kontrast** (WCAG oranı, hesaplandı): açık temada metin 17,8, ikincil metin 7,8, vurgu üstü beyaz yazı 5,9, vurgu metni 7,0, doğru 5,3, yanlış 5,4, uyarı 5,9; koyu temada metin 16,8, ikincil metin kartta 6,9, vurgu üstü yazı 8,1, doğru 8,0, yanlış 6,6, uyarı 8,2. Hepsi 4,5'in üstünde.
 
-**Renk (koyu tema)**: zemin `#0D1418`, yüzey `#162026`, yüzey-2 `#1F2C33`, çizgi `#2C3C45`, metin `#E8EEF1`, metin-2 `#9DB1BB`, vurgu `#4CC9BE` (üstündeki metin `#05201E`), doğru `#5DD28A`, yanlış `#FF8F85`, uyarı `#F2C14E`. Koyu tema açık temanın tersi değil, ayrı bir yüzey kademesidir. Saf siyah ve saf beyaz yok.
+**Üniversite rengi**: `universities.json` içindeki `color` yalnız üniversite rozetinde kullanılır; arayüz vurgusu olmaz.
 
-Mevcut indigo (`#4f46e5`) ve kahverengi "sepya" temaları bu önerinin dışında bırakılmıştır: indigo mor ailesine yakın, sepya üçüncü bir tema olarak kalabilir ama aynı rol adlarıyla yeniden eşlenir (aşağıdaki "Uygulama notları"). Gradyan, gölgeli kart yığını ve mor vurgu kullanılmaz; gölge yalnız yüzen öğelerde (çubuk, alt sayfa).
+## 3. Tipografi
 
-**Yazı**: sistem yazı tipi yığını (`system-ui`: SF Pro iPhone'da, Roboto Android'de). Ek yazı tipi indirmeye gerek yok; Türkçe glifler (ÇĞİÖŞÜ çğıöşü, I/İ/ı/i) sistem yazı tiplerinde tamdır.
+**Aileler**: başlık ve soru metni serif (`display`), arayüz sistem yazı tipi (`sans`), sayılar ve kod eşaralıklı ya da `tabular-nums`. Ek yazı tipi indirilmez; sistem yazı tiplerinde Türkçe glifler (ÇĞİÖŞÜ çğıöşü, I İ ı i) tamdır.
 
-| Rol | Boyut / satır | Ağırlık |
-| --- | --- | --- |
-| soru metni | 18 / 1,55 | 400, en çok 60ch |
-| şık, açıklama, okuma gövdesi | 16 / 1,4 ve 1,6; özet ve konu okuması 18 / 1,7 | 400 |
-| başlık (ekran) | 17 / 1,2; okuma başlığı 22 / 1,3 | 700 |
-| meta, çip | 13 / 1 | 600 |
-| sayılar (yüzde, süre, sayaç) | aynı | `font-variant-numeric: tabular-nums` |
+**Ölçek**: büyük başlık 36, ekran başlığı 22 serif, çubuk başlığı 17 sans 700, soru 18/1,55 serif, okuma gövdesi 18/1,7, gövde 16/1,5, meta 13. Kullanıcının yazı boyutu ayarı (`yazi-boyutu`) kökte ölçek çarpanı olarak uygulanır.
 
-**Boşluk (4 tabanlı)**: 4, 8, 12, 16, 20, 24. Sayfa kenar boşluğu 16, şıklar arası 10, grup içi 8, gruplar arası 16 ila 24. Köşeler: şık/kart 12, çip ve düğme hapı 999, alt sayfa üst köşe 20, çubuk 30, küçük öğe 8.
+**Satır sınırı**: başlık, meta ve liste satırı en çok 2 satır, sonra üç nokta. Soru, şık, açıklama ve okuma metni kesilmez, 60 karakter ölçüyle sarılır.
 
-**Dokunma**: tüm etkileşimli öğeler `min-height: 44px; min-width: 44px`. Şık kartı 56 px, ana eylem 52 ila 56 px, oynat 52, genişletilmiş oynat 68.
+## 4. Yerleşim ve boşluk
 
-**Hareket** (rutin 300 ms altı; `prefers-reduced-motion` ve Motion `reducedMotion="user"` ile kapanır): basma `scale(.96)` 120 ms; renk geçişi 200 ms `cubic-bezier(.2,0,0,1)`; alt sayfa 300 ms aynı eğri, aşağı çekme ile kapanır, kapanış 150 ms; ipucu çipi 150 ms girer, 1,6 sn sonra çıkar. Çubukta ve ders akışında giriş animasyonu yok.
+**Ölçek**: 4 tabanlı (4, 8, 12, 16, 20, 24, 32). Kenar boşluğu 16, şıklar arası 10, grup içi 8, gruplar arası 16 ila 24.
 
-## 4. Metin kuralı
+**Telefon**: tek sütun. Ders sayfası dışındaki sayfalarda alt sekme çubuğu (Ana sayfa, Derslerim, Ara, İlerleme, Ayarlar); ders sayfasında tek sabit alt öğe oynatıcı çubuğudur.
 
-Başlık, meta, liste satırı ve sonuç özeti en çok 2 satır, sonra üç nokta (`-webkit-line-clamp: 2`); üst çubuk başlığı ve alt sayfa başlığı 1 satır. **Tek istisna**: soru metni, şık metni, açıklama ve okuma gövdesi kesilmez, çünkü kesilmiş şıkla soru çözülemez. Bunun yerine 60ch ölçü ve serbest kaydırma kullanılır. Sürekli bilgi metni yoktur: simge düğmelerin adı `aria-label` ile verilir, ilk kullanımda ve basılı tutunca kısa ipucu çipi görünür (maket 2b).
+**Güvenli alan**: bütün sabit alt öğeler `bottom: calc(env(safe-area-inset-bottom) + 6px)`, kenarlardan `max(12px, env(safe-area-inset-left/right))` içeride. İçerik alt boşluğu çubuk yüksekliği artı 20 px. Klavye açıkken `--klavye` (`viewport.ts`) alt sayfaları yukarı iter, oynatıcı gizlenir.
 
-## 5. Oynatıcı yeniden tasarım kararı
+**Tablet ve masaüstü (600 px ve üstü)**: okuma alanı en çok 680 px ortada; sekme çubuğu sol rayda; alt sayfalar sağdan 420 px çekmece; ders sayfasında ünite ve konu listesi solda, sorular sağda.
 
-**Karar: iki katman.** Kapalı hâlde yüzen tek satırlık çubuk, açık hâlde alt sayfa. Yukarı çekme, çubuğun sağındaki "aç" düğmesi veya çubuğa dokunma sayfayı açar; aşağı çekme ya da "küçült" düğmesi kapatır.
+## 5. Bileşenler
 
-**Kapalı çubuk (60 px)**: önceki, **seslendir/oynat** (yuvarlak, vurgu dolgu, 52 px), sonraki, ara, aç. Üst kenarda 3 px soru ilerleme çizgisi (bilgi metni yerine). Çalarken oynat simgesi duraklata döner (300 ms çapraz geçiş). Önceki/sonraki yalnız çalarken değil, her zaman soru gezintisidir.
+**Soru kartı** (`.question-card`): kart yüzeyi, 24 px köşe, 1 px kenar, iç boşluk 16 (telefon) ve 24. Üstte `.q-label` (sınav çipi, kaynak), varsa konu bağlantısı (`.q-konu`, yalnız konu ağacı olan derste), soru metni (`.question-text`, serif 18), şıklar, açıklama. Listede tekrarlanır; tek soru ekranı yoktur.
 
-**Alt sayfa**: tutamaç; başlık satırı (tek satır "Soru 12 okunuyor", altında konu adı, ikisi de tek satır) ve küçült düğmesi; iki parçalı ilerleme (Soru, Açıklama) ve süre; taşıma satırı (önceki, 68 px oynat/duraklat, sonraki); 4x2 simge ızgarası, her hücre 56 px yükseklik:
+**Şık** (`.option-item`, `.option-key`): en az 56 px, 16 px köşe, 1 px kenar. Harf rozeti 32 px daire. Durumlar: varsayılan, seçili (`--primary-soft` zemin, `--primary-text` rozet), doğru (`.is-correct`, `.was-revealed`: doğru kenar ve zemin, onay simgesi), yanlış (`.is-wrong`: yanlış kenar ve zemin, çarpı), soluk (cevaptan sonra diğerleri %70). Renk tek başına anlam taşımaz, simge de vardır.
 
-1. Soruyu oku (açık/kapalı)
-2. Açıklamayı oku
-3. Sesle cevapla (mikrofon)
-4. Konuyu aç (kitap)
-5. Durdur
-6. Okuma hızı (`1,2×`, her dokunuşta bir sonraki hız; tek metinli hücre)
-7. Otomatik ilerle (açık/kapalı)
-8. Ayarlar
+**Açıklama** (`.explanation-card`): iç yüzey zemini, 20 px köşe, yan şerit yok. Başlıkta "Açıklama" ve nötr iki simge düğmesi (seslendir, derse sor); kaynak satırı meta boyutunda. Açıklaması olmayan soruda kart yerine tek satır: "Açıklama yok · Yapay zekâ ile açıkla" (`AIMenu`, anahtar yoksa ayarlara götürür).
 
-Açık/kapalı durumlar `aria-pressed` ve vurgu çerçevesiyle gösterilir. Ayarlar mevcut genel ayar çekmecesini açar.
+**Ünite şeridi** (`.btn-unit-nav`): yatay kaydırılan çipler, seçili çip `--primary-soft`. Üst çubuk anlık soruyu "Ü 4 · 12 / 40" diye gösterir (`currentIndex`).
 
-**Eski kontrol eşlemesi**: seslendir → çubuk oynat; oynat → çubuk oynat; önceki/sonraki → çubuk; mikrofon, kitap/konu, durdur, ayarlar → sayfa ızgarası; arama → çubuk simgesi; ayarlar → sayfa.
+**Kip seçici**: ders sayfasının başında iki parçalı seçici, Okuma ve Çözme (`btn-toggle-interactive` ile aynı durum).
 
-**Gerekçe**: dokuz düğmenin tek satıra sığması için hepsi 32 px altına inmek zorundaydı; bu hem dokunma hedefini hem köşe kırpılmasını bozuyordu. Sık kullanılanlar (gezinme, oynat, ara) baş parmak bölgesinde ve tek satırda kalır; seyrek kullanılanlar bir dokunuş uzaklıkta, daha büyük hedeflerle.
+**Oynatıcı çubuğu** (`#quiz-player-bar`): yüzen kapsül, 60 px, cam yüzey. Oynat ortada nötr ve sabit; iki yanında kullanıcının seçtiği ikişer eylem (`cubuk-duzeni`), sığmayanlar alt sayfa ızgarasında. Mevcut düğme kimlikleri korunur (`btn-prev`, `btn-next`, `btn-read-question`, `btn-read-explanation`, `btn-stop-speech`, `btn-speed`, `btn-toggle-reader`, `btn-open-settings`, `btn-mobil-menu`).
 
-## 6. Bileşen sözleşmeleri
+**Alt sayfa**: Base UI `Drawer` (sohbet ve içindekilerle aynı). Kenarlardan 8 px ayrık, 28 px köşe, tutamaç, cam yüzey; perde %25 karartma; `role="dialog"`, odak içeri girer ve kapanınca çağıran düğmeye döner; arka sayfa `inert`.
 
-**Üst çubuk**: 56 px, sol geri, orta iki satır (ders adı 17/700, alt satır ünite ve sayaç 13), sağ "Derse sor" simgesi. Altında 3 px ilerleme çizgisi.
+**Sekme çubuğu**: yüzen cam kapsül, 62 px, beş sekme, seçili sekme nötr hap içinde, `aria-current="page"`.
 
-**Meta**: yıl/sınav çipi; altında konu bağlantısı (numara + başlık, en çok 2 satır, vurgu rengi, sağda ok). Bağlantı konu anlatımını açar.
+**Liste satırı**: en az 60 px, başlık 2 satır, altında 6 px nötr ilerleme şeridi, sağda tabular yüzde.
 
-**Şık kartı**: harf rozeti (32 px daire), metin, sağda durum simgesi. Durumlar: varsayılan, seçili, doğru (yeşil çerçeve + onay), yanlış (kırmızı çerçeve + çarpı), soluk (diğerleri cevaptan sonra %70). Renk tek başına anlam taşımaz, simge de vardır.
+**Kahraman kart** (Bugün, kaldığın yer): 28 px köşe, serif ders adı, ünite ve soru satırı, ince nötr ilerleme, sağda tek vurgulu yuvarlak devam düğmesi.
 
-**Açıklama kutusu**: başlıkta simge, "Açıklama" etiketi, sağda iki simge düğmesi (seslendir, derse sor); sol kenarda 4 px vurgu şeridi; gövde 16/1,6; kaynak satırı (ünite ve sayfa); en altta tam genişlik "Sonraki soru" (cevaplandıktan sonra tek birincil eylem).
+**Süzgeç alt sayfası** (ders bağlamlı): soru türü (yanlışlar, cevaplanmamışlar), kaynak, sınav, ünite; `quiz-settings` alanlarını kullanır.
 
-**Alt sayfa (sheet)**: yüzey rengi, üstte 20 px köşe, tutamaç, perde `rgba(5,12,16,.5)`; `role="dialog"`, odak sayfaya girer, kapanınca çağıran düğmeye döner. Yükseklik: oynatıcı içeriğe göre, arama ve sohbet %88 ila %90.
+**Ayarlar**: gruplu satırlar (görünüm, sesli okuma, soru çözme, kayıtlar, yapay zekâ, yardım). Ayar penceresi temayı izler; sabit koyu yüzey kullanılmaz.
 
-**Arama paneli**: alt sayfa. Üstte başlık ve kapat; süzgeç çipleri (Sorular, Konular, Ünite özetleri, Yanlışlarım); sonuç sayısı ve ünite çipleri; sonuç listesi; **arama alanı en altta** (baş parmak bölgesi, klavyenin hemen üstü). Sonuç satırı: sınav ve konu çipi, en çok 2 satır özet, eşleşme `mark` ile. Boşken son aramalar.
+## 6. Derinlik ve kenar
 
-**Sohbet çekmecesi**: alt sayfa. Başlıkta geçmiş, yeni sohbet, kapat. Mesajlar altta toplanır; bağlam çipi ("Soru 12 bağlamı", kaldırılabilir), hızlı öneri çipleri tek satır yatay; yazı alanı hapı (içinde sesli yazma) ve yanında canlı mod düğmesi; gönder düğmesi yazı varken canlı mod düğmesinin yerine geçer. Geçmiş ikinci katmandır: satır başlığı 2 satır, tarih ve ders; geçmişte arama altta. Canlı mod: tek odak daire, altyazı en çok 2 satır, mikrofon sessiz, bitir (kırmızı, büyük), ses ayarı.
+Gölge yalnız yüzen öğelerde (sekme çubuğu, oynatıcı, alt sayfa) ve yumuşak. Kartlar ve satırlar 1 px yarı saydam kenarla ayrılır (açıkta %10 siyah, koyuda %9 beyaz). Cam yüzey: `color-mix(in srgb, var(--card-bg) 58%, transparent)`, `backdrop-filter: blur(22px) saturate(180%)` (Safari için `-webkit-` önekli). SVG kırılma süzgeci kullanılmaz; Safari onu göstermez.
 
-**Liste satırı**: min 60 px, başlık en çok 2 satır, altında 6 px ilerleme şeridi, sağda tabular yüzde. Ünite satırı açılır liste (ok yönü durumu söyler). Segment: Konular | Yanlışlarım (sayı).
+## 7. Simge ve medya
 
-**Yanlışlarım**: yanlış sayısına göre sıralı konu satırı (kırmızı şerit, "5 yanlış"); süzgeç çipleri; altta tek birincil düğme "19 yanlışı çöz".
+Lucide simgeleri, 1,7 çizgi kalınlığı, `currentColor`. Simge düğmelerin adı `aria-label` ile verilir, sürekli açıklama metni yoktur; ilk kullanımda ve basılı tutunca kısa ipucu çipi görünür. Video 16:9, köşe kart yarıçapıyla aynı. Kişi fotoğrafı ve avatar yok.
 
-**Konu anlatımı**: okuma ölçüsü 60ch, 18/1,7; "Hatırla" kutusu uyarı rengi; aynı çubuk konuyu seslendirir.
+## 8. Hareket
 
-**Özet adım adım**: üstte bölüm segmentleri (8 parça, geçilenler dolu), kapat ve bölüm listesi; bir bölüm bir ekran. Altta baş parmak bölgesinde: önceki (yuvarlak), **Sonraki bölüm** (geniş, birincil), seslendir (yuvarlak). Son bölümden sonra tamamlama ekranı: tek birincil eylem (üniteyi çöz) ve ikincil çerçeveli düğme.
+Rutin geçişler 300 ms altında, eğri `cubic-bezier(.2,0,0,1)`. Basma `scale(.96)` 120 ms, renk 200 ms, alt sayfa açılış 300 ms kapanış 150 ms, ipucu çipi 150 ms girer ve 1,6 sn sonra çıkar. Listede ve çubuklarda giriş animasyonu yok. `prefers-reduced-motion` ve Motion `reducedMotion="user"` hepsini kapatır.
 
-## 7. Erişilebilirlik
+## 9. İlkeler ve sınırlar
 
-Tüm simge düğmelerde `aria-label`; çubuk `nav` + `aria-label="Oynatıcı"`; ilerleme `role="progressbar"`; açık/kapalı düğmeler `aria-pressed`; "aç" düğmesi `aria-expanded`. Odak halkası 3 px vurgu, 2 px boşlukla. Kontrast (WCAG formülüyle hesaplandı): açık temada metin/zemin 15,2, metin-2/zemin 6,1, vurgu/yüzey 5,1, doğru/zemin 5,3, yanlış/zemin 5,4, uyarı/zemin 5,9; koyu temada en düşük çift 6,4 (metin-2/yüzey-2). vurgu/vurgu-zemin çifti 4,3 çıktığı için o zeminde `vurgu-metin` kullanılır. Kaydırılabilir alt sayfa içeriği klavye ve ekran okuyucuyla ulaşılabilir kalır; alt sayfa açıkken arka sayfa `inert`.
+**Koru**: tek vurgu, nötr ilerleme, serif soru metni, yüzen cam alt öğeler, eş merkezli köşeler, öğrenme renklerinin vurgudan bağımsızlığı, veride olmayan alanın çizilmemesi.
 
-## 8. Tablet (600 px ve üstü)
+**Kaçın**: yan şerit, gradyan, gölgeli kart yığını, mor ve turkuaz, saf siyah ve keskin beyaz, her yüzeyde vurgu, sahte veri (seri, haftalık grafik, sınav geri sayımı veri gelmeden), sabit Tailwind renk sınıfı (`text-slate-*`, `bg-teal-*` gibi), temadan bağımsız sabit koyu yüzey.
 
-Maketlerde yalnız telefon çözülmüştür; tablet kuralları: tek sütun okuma alanı en çok 680 px ortalı; oynatıcı çubuğu 420 px genişliğe sınırlanır ve ortalanır; alt sayfalar (oynatıcı, arama, sohbet) alttan değil sağ kenardan 420 px genişliğinde çekmece olur (mevcut `SohbetCekmece` zaten `swipeDirection` ile 768 px üstünde sağdan açılır); ünite listesi ve konu anlatımı yan yana iki bölme (320 px liste + okuma) olur. Bu davranışlar maketle sınanmadı.
+**Erişilebilirlik**: dokunma hedefi en az 44 px; odak halkası 3 px `--primary-color`, 2 px boşluk; ilerleme `role="progressbar"`; açık kapalı düğmeler `aria-pressed`; alt sayfa açan düğme `aria-expanded`.
 
-## 9. Uygulama notları
-
-- `QuizPlayer.astro` içindeki `.player-bar` yeniden yazılır: tek satır beş düğme, ikinci katman `Drawer` (Base UI, sohbet çekmecesinde olduğu gibi). Mevcut `btn-*` kimlikleri korunursa betik bağlantıları bozulmaz.
-- `#toggleSearch` yüzen düğmesi ve `body:has(#quiz-player-bar.visible) #toggleSearch { display:none }` kuralı kaldırılır; arama çubuktaki simgeden açılır.
-- `global.css` rol adları (`--bg-color`, `--card-bg`, `--primary-color`, `--correct-*`, `--incorrect-*`) korunur; yalnız değerler bu belgedeki tablolarla değişir. Sepya teması aynı rol adlarına eşlenir.
-- Doğrulama: Playwright ile 375x812, 390x844, 430x932 ve 768x1024; `env(safe-area-inset-*)` Chrome'da DevTools cihaz benzetimiyle sınanır (maketlerdeki 47/34 px değerleri iPhone 14/15 yaklaşığıdır, gerçek cihazda sınanmadı).
-
-## 10. Uygulama kabuğu (PWA, maket 07-12)
-
-Ders sayfası dışındaki her ekran bir uygulama kabuğunun içindedir. Kabuk, telefonda alt sekme çubuğu ve büyük başlıklı üst alandan oluşur; ders sayfası (01-06) tam ekran görev ekranıdır, orada sekme çubuğu gizlenir ve tek sabit alt öğe oynatıcı çubuğudur (§1 kuralı korunur).
-
-**Sekme çubuğu**: beş sekme, her biri en az 52 px yüksek: Ana sayfa, Derslerim, Ara, İlerleme, Ayarlar. Yükseklik `58px + env(safe-area-inset-bottom)`; içerik alt boşluğu `.kabuk` sınıfıyla aynı formülden gelir. Seçili sekme vurgu-metin rengi ve kalın çizgiyle, `aria-current="page"` ile belirtilir. Ara sekmesi 03 maketindeki arama alt sayfasını tam ekran açar. Tablette (600 px ve üstü) sekme çubuğu sol kenarda 80 px dikey raya dönüşür.
-
-**Ekranlar**
-
-- **07 Karşılama ve kurulum**: tek vaat cümlesi, "Okulunu seç" birincil, "Kayıtlarım başka cihazda" ikincil. Kurulum üç adımdır (üniversite, bölüm, dönem dersleri) ve atlanabilir; sonuç `favorite-courses` kaydına yazılır. Sitede hesap olmadığı için "giriş" ekranı kayıt getirme ekranıdır (7e): Google Drive, remoteStorage, GitHub (şifreli gist), yakındaki cihaz (parola) ve yedek dosyası, yani `google-esitle`, `rs-esitle`, `bulut-esitle`, `p2p-esitle` ve `yedek` modüllerinin birebir karşılığı.
-- **08 Ana sayfa (Bugün)**: kaldığın yer kartı tek birincil eylemdir; altında "tekrar gereken" satırı ve Derslerim ilerlemesi. İlk günde boş istatistik yerine ilk soruya götüren kart (8b).
-- **09 Derslerim ve Favoriler**: tek sekmede iki bölüm. Derslerim listesi sürükle-bırak ile sıralanır (`@dnd-kit`, alt çubuk düzenleyicisiyle aynı paket); dersi çıkarmak çözümleri silmez. Favoriler: bölümler ve işaretli sorular. Ders ekleme ekranı dönem çiplerini ve satır başına tek eylemi kullanır.
-- **10 İlerleme**: dört ölçü kutusu (çözülen, son denemede doğru, üst üste iki kez doğru, tekrar gereken), ders ve ünite kırılımı, en çok yanlış yapılan konudan çözmeye geçiş. Boş durum ilk eyleme yönlendirir.
-- **11 Ayarlar**: gruplar mevcut ayarlarla aynıdır (tema ve yazı boyutu, ses ve hız, `quiz-settings` anahtarları, eşitleme, yapay zekâ anahtarı); görünüm alt sayfasında seçim örnek metinde anında görünür; eşitleme ekranı `/yedek` sayfasının uygulama içi hâlidir; yapay zekâ anahtarının cihazdan çıkmadığı ekranda yazar.
-- **12 PWA durumları**: iOS için üç adımlı "Ana ekrana ekle" alt sayfası (iOS kurulum istemi sunmaz; Android'de mevcut `beforeinstallprompt` akışı kullanılır), "Yeni sürüm hazır" bandı, çevrimdışı bandı ve satır bazında "bu cihazda hazır" bilgisi, suçlamayan 404 ekranı ve aynı ekranda arama.
-
-## 11. Mevcut sistemle uyum ve eksikler (21 Kasım 2026 denetimi)
-
-**Doğrudan karşılığı olanlar**: eşitleme yolları, favori bölüm ve ders kayıtları (`favorite-departments`, `favorite-courses`), çözüm kaydı (`quiz-progress-<ders>`: soru başına son iki sonuç), `quiz-settings` alanları (hız, otomatik ilerle, cevap ve açıklama gösterimi, yanlış şıkları gizle, süzgeçler), tema ve yazı boyutu, yapay zekâ sağlayıcı formu, ilk ziyaret turu, ders verisindeki dönem alanı (`semester`).
-
-**Maket 02 ile canlı çubuk arasındaki fark**: canlı sitede alt çubuk kullanıcının seçtiği eylemlerden çizilir (`cubuk-duzeni`, `cubuk.ts`) ve menüden düzenlenir. 02'deki sabit beş düğme bunu korumak için şöyle uygulanır: oynat ortada sabit, iki yanında kullanıcının seçtiği ikişer eylem, sığmayanlar alt sayfa ızgarasına düşer; düzenleme modu menüde kalır.
-
-**Yeni kayıt isteyenler** (uygulamadan önce `yedek.ts` birleştirme kuralına da eklenir):
-
-- İşaretli sorular (9c): `isaretli-<ders>` anahtarı, soru kimliği listesi; `favorite-` gibi birleşim kümesiyle birleştirilir.
-- Tarihli ilerleme: bugünkü kayıt yalnız son iki sonucu tutar, zaman bilgisi yoktur. Bu yüzden 10 numaralı maketlerde seri, günlük grafik ve çalışma süresi yoktur. Eklenmesi istenirse sonuçların yanına gün damgası yazılır (`[sonuç, gün]`), eski kayıtlar damgasız okunur.
-- Kurulum seçimi (07): seçilen üniversite, bölüm ve dönem için `kurulum` anahtarı; ana sayfanın alt satırı buradan gelir.
-- Güncelleme bandı (12b): `sw.js` önbellek adı sabit (`acik-ogretim-cache-v1`); her yayında sürümlenmeli ve `updatefound` dinlenmelidir, yoksa bant hiç görünmez.
-- "Bu cihazda hazır" bilgisi (12b): servis çalışanı açılan sayfaları önbelleğe alır; satırdaki bilgi önbellekte ders sayfasının bulunup bulunmadığına bakarak yazılır. Dersi önceden indirme düğmesi istenirse servis çalışanına mesajla önbelleğe alma eklenir.
-
-**Bulunan hata ve düzeltme**: ana sayfa test üniversitesini ("Test AÖF") canlıda listeliyordu, çünkü `index.astro` veriyi `getUniversities` süzgecinden geçirmeden okuyordu; süzgeç aynı kuralla ana sayfaya eklendi.
+**Sınama**: her değişiklikte 375, 390, 430 ve 768 px'te, açık, koyu ve sepya temada Playwright ekran görüntüsü.

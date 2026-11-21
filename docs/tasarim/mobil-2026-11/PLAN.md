@@ -1,5 +1,7 @@
 # Mobil öncelikli tasarım planı (Kasım 2026, ikinci plan)
 
+**Önce `UYUM.md` okunur**: koda uyum açıkları ve kararları oradadır, çelişkide o geçerlidir. Görsel sözleşme `DESIGN.md` (sürüm 2).
+
 Bu plan maketleri sitenin gerçek yapısına bağlar: her ekran bir rotaya ya da bileşene, her alan bir veri anahtarına karşılık gelir. Tasarım dili tema 17'dir (`TEMA-17.md`, `17-onerilen-dil.html`); 01-12 ve 16 numaralı maketler bu temayla yeniden üretildi. 13, 14, 15, 18 ve 19 karar sürecindeki denemelerdir.
 
 Durum etiketleri: **var** (kod ve veri var, yalnız yeni dile giydirilir), **yeni** (veri var, ekran yok), **veri gerekir** (önce kayıt ya da veri dosyası eklenir).
@@ -61,4 +63,4 @@ Her adım sonunda 375, 390, 430 ve 768 px'te Playwright ekran görüntüsü alı
 
 ## 4. Kaynak belgeler
 
-`DESIGN.md` (ilk sözleşme, §10-11 sistem uyumu), `TEMA-17.md`, `LMS-PLANI.md`, `KARSILASTIRMA.md`.
+`DESIGN.md` (sürüm 2), `UYUM.md`, `TEMA-17.md`, `LMS-PLANI.md`, `KARSILASTIRMA.md`.
