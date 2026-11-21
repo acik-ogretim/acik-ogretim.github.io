@@ -199,12 +199,12 @@ export function sonCiz(c: Calisma | undefined, hedef: HTMLElement): void {
     b.append(el("p", "konu-bolum-metin", metin));
     ogeler.push(b);
   };
-  if (c.ornek) duz("Örnek", c.ornek);
-  if (c.benzetme) duz("Benzetme", c.benzetme);
-  if (c.sebepSonuc?.length) {
+  for (const o of c.ornekler ?? []) duz("Örnek", o);
+  for (const b of c.benzetmeler ?? []) duz("Benzetme", b);
+  if (c.sebepSonuclar?.length) {
     const b = bolum("Sebep ve sonuç");
     const liste = el("div", "katman-liste");
-    for (const s of c.sebepSonuc) {
+    for (const s of c.sebepSonuclar) {
       const satir = el("div", "katman-satir konu-sebep");
       satir.append(el("span", undefined, s.sebep), el("span", "konu-sebep-ok", "→"), el("span", undefined, s.sonuc));
       liste.append(satir);
@@ -212,7 +212,7 @@ export function sonCiz(c: Calisma | undefined, hedef: HTMLElement): void {
     b.append(liste);
     ogeler.push(b);
   }
-  if (c.tartisma) duz("Üzerine düşün", c.tartisma);
+  for (const t of c.tartismaSorulari ?? []) duz("Üzerine düşün", t);
   if (c.miniTest?.length) ogeler.push(miniTestCiz(c.miniTest));
   if (ogeler.length === 0) return;
   hedef.append(...ogeler);

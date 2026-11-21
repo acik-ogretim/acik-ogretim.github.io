@@ -19,6 +19,18 @@ describe("calismaCoz", () => {
   it("accepts the wrapped form and k- prefixed keys", () => {
     expect(calismaCoz({ konular: { "k-2.1": { ozet: "Kısa özet." } } }).get("2.1")?.ozet).toBe("Kısa özet.");
   });
+  it("turns legacy single fields into lists and keeps free-length lists as they are", () => {
+    const m = calismaCoz({
+      "1.1": { ozet: "Ö.", sebepSonuc: [{ sebep: "a", sonuc: "b" }], ornek: "Bir örnek.", benzetme: "", tartisma: "Soru?" },
+      "1.2": { ornekler: ["Bir", "İki", "Üç"], benzetmeler: [], tartismaSorulari: ["A?", "B?"] },
+    });
+    expect(m.get("1.1")?.ornekler).toEqual(["Bir örnek."]);
+    expect(m.get("1.1")?.sebepSonuclar).toHaveLength(1);
+    expect(m.get("1.1")?.benzetmeler).toBeUndefined();
+    expect(m.get("1.1")?.tartismaSorulari).toEqual(["Soru?"]);
+    expect(m.get("1.2")?.ornekler).toHaveLength(3);
+    expect(m.get("1.2")?.tartismaSorulari).toHaveLength(2);
+  });
   it("skips invalid and empty records without throwing", () => {
     const m = calismaCoz({ "1.1": { miniTest: [{ tur: "bilinmeyen" }] }, "1.2": {}, "1.3": { ozet: "  " }, "1.4": 5 });
     expect(m.size).toBe(0);
