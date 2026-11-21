@@ -131,3 +131,34 @@ Maketlerde yalnız telefon çözülmüştür; tablet kuralları: tek sütun okum
 - `#toggleSearch` yüzen düğmesi ve `body:has(#quiz-player-bar.visible) #toggleSearch { display:none }` kuralı kaldırılır; arama çubuktaki simgeden açılır.
 - `global.css` rol adları (`--bg-color`, `--card-bg`, `--primary-color`, `--correct-*`, `--incorrect-*`) korunur; yalnız değerler bu belgedeki tablolarla değişir. Sepya teması aynı rol adlarına eşlenir.
 - Doğrulama: Playwright ile 375x812, 390x844, 430x932 ve 768x1024; `env(safe-area-inset-*)` Chrome'da DevTools cihaz benzetimiyle sınanır (maketlerdeki 47/34 px değerleri iPhone 14/15 yaklaşığıdır, gerçek cihazda sınanmadı).
+
+## 10. Uygulama kabuğu (PWA, maket 07-12)
+
+Ders sayfası dışındaki her ekran bir uygulama kabuğunun içindedir. Kabuk, telefonda alt sekme çubuğu ve büyük başlıklı üst alandan oluşur; ders sayfası (01-06) tam ekran görev ekranıdır, orada sekme çubuğu gizlenir ve tek sabit alt öğe oynatıcı çubuğudur (§1 kuralı korunur).
+
+**Sekme çubuğu**: beş sekme, her biri en az 52 px yüksek: Ana sayfa, Derslerim, Ara, İlerleme, Ayarlar. Yükseklik `58px + env(safe-area-inset-bottom)`; içerik alt boşluğu `.kabuk` sınıfıyla aynı formülden gelir. Seçili sekme vurgu-metin rengi ve kalın çizgiyle, `aria-current="page"` ile belirtilir. Ara sekmesi 03 maketindeki arama alt sayfasını tam ekran açar. Tablette (600 px ve üstü) sekme çubuğu sol kenarda 80 px dikey raya dönüşür.
+
+**Ekranlar**
+
+- **07 Karşılama ve kurulum**: tek vaat cümlesi, "Okulunu seç" birincil, "Kayıtlarım başka cihazda" ikincil. Kurulum üç adımdır (üniversite, bölüm, dönem dersleri) ve atlanabilir; sonuç `favorite-courses` kaydına yazılır. Sitede hesap olmadığı için "giriş" ekranı kayıt getirme ekranıdır (7e): Google Drive, remoteStorage, GitHub (şifreli gist), yakındaki cihaz (parola) ve yedek dosyası, yani `google-esitle`, `rs-esitle`, `bulut-esitle`, `p2p-esitle` ve `yedek` modüllerinin birebir karşılığı.
+- **08 Ana sayfa (Bugün)**: kaldığın yer kartı tek birincil eylemdir; altında "tekrar gereken" satırı ve Derslerim ilerlemesi. İlk günde boş istatistik yerine ilk soruya götüren kart (8b).
+- **09 Derslerim ve Favoriler**: tek sekmede iki bölüm. Derslerim listesi sürükle-bırak ile sıralanır (`@dnd-kit`, alt çubuk düzenleyicisiyle aynı paket); dersi çıkarmak çözümleri silmez. Favoriler: bölümler ve işaretli sorular. Ders ekleme ekranı dönem çiplerini ve satır başına tek eylemi kullanır.
+- **10 İlerleme**: dört ölçü kutusu (çözülen, son denemede doğru, üst üste iki kez doğru, tekrar gereken), ders ve ünite kırılımı, en çok yanlış yapılan konudan çözmeye geçiş. Boş durum ilk eyleme yönlendirir.
+- **11 Ayarlar**: gruplar mevcut ayarlarla aynıdır (tema ve yazı boyutu, ses ve hız, `quiz-settings` anahtarları, eşitleme, yapay zekâ anahtarı); görünüm alt sayfasında seçim örnek metinde anında görünür; eşitleme ekranı `/yedek` sayfasının uygulama içi hâlidir; yapay zekâ anahtarının cihazdan çıkmadığı ekranda yazar.
+- **12 PWA durumları**: iOS için üç adımlı "Ana ekrana ekle" alt sayfası (iOS kurulum istemi sunmaz; Android'de mevcut `beforeinstallprompt` akışı kullanılır), "Yeni sürüm hazır" bandı, çevrimdışı bandı ve satır bazında "bu cihazda hazır" bilgisi, suçlamayan 404 ekranı ve aynı ekranda arama.
+
+## 11. Mevcut sistemle uyum ve eksikler (21 Kasım 2026 denetimi)
+
+**Doğrudan karşılığı olanlar**: eşitleme yolları, favori bölüm ve ders kayıtları (`favorite-departments`, `favorite-courses`), çözüm kaydı (`quiz-progress-<ders>`: soru başına son iki sonuç), `quiz-settings` alanları (hız, otomatik ilerle, cevap ve açıklama gösterimi, yanlış şıkları gizle, süzgeçler), tema ve yazı boyutu, yapay zekâ sağlayıcı formu, ilk ziyaret turu, ders verisindeki dönem alanı (`semester`).
+
+**Maket 02 ile canlı çubuk arasındaki fark**: canlı sitede alt çubuk kullanıcının seçtiği eylemlerden çizilir (`cubuk-duzeni`, `cubuk.ts`) ve menüden düzenlenir. 02'deki sabit beş düğme bunu korumak için şöyle uygulanır: oynat ortada sabit, iki yanında kullanıcının seçtiği ikişer eylem, sığmayanlar alt sayfa ızgarasına düşer; düzenleme modu menüde kalır.
+
+**Yeni kayıt isteyenler** (uygulamadan önce `yedek.ts` birleştirme kuralına da eklenir):
+
+- İşaretli sorular (9c): `isaretli-<ders>` anahtarı, soru kimliği listesi; `favorite-` gibi birleşim kümesiyle birleştirilir.
+- Tarihli ilerleme: bugünkü kayıt yalnız son iki sonucu tutar, zaman bilgisi yoktur. Bu yüzden 10 numaralı maketlerde seri, günlük grafik ve çalışma süresi yoktur. Eklenmesi istenirse sonuçların yanına gün damgası yazılır (`[sonuç, gün]`), eski kayıtlar damgasız okunur.
+- Kurulum seçimi (07): seçilen üniversite, bölüm ve dönem için `kurulum` anahtarı; ana sayfanın alt satırı buradan gelir.
+- Güncelleme bandı (12b): `sw.js` önbellek adı sabit (`acik-ogretim-cache-v1`); her yayında sürümlenmeli ve `updatefound` dinlenmelidir, yoksa bant hiç görünmez.
+- "Bu cihazda hazır" bilgisi (12b): servis çalışanı açılan sayfaları önbelleğe alır; satırdaki bilgi önbellekte ders sayfasının bulunup bulunmadığına bakarak yazılır. Dersi önceden indirme düğmesi istenirse servis çalışanına mesajla önbelleğe alma eklenir.
+
+**Bulunan hata ve düzeltme**: ana sayfa test üniversitesini ("Test AÖF") canlıda listeliyordu, çünkü `index.astro` veriyi `getUniversities` süzgecinden geçirmeden okuyordu; süzgeç aynı kuralla ana sayfaya eklendi.

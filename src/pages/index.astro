@@ -13,7 +13,8 @@ const DATA_DIR = path.resolve(process.cwd(), 'data');
 let allUniversitiesData: University[] = [];
 try {
   const content = await fs.readFile(path.join(DATA_DIR, 'universities.json'), 'utf-8');
-  allUniversitiesData = JSON.parse(content);
+  // Fixture universities (test-*) are for unit tests only, same rule as getUniversities().
+  allUniversitiesData = (JSON.parse(content) as University[]).filter((u) => !u.id.startsWith('test-'));
 } catch (e) {
   console.error('Failed to load universities.json', e);
 }

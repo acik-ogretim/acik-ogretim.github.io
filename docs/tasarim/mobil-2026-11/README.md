@@ -11,6 +11,13 @@ Canlı kod değişmedi; yalnız tasarım çıktısı.
   4. `04-sohbet.html`: sohbet, geçmiş, canlı mod
   5. `05-unite-konu-yanlislar.html`: ünite/konu listesi, yanlışlarım, konu anlatımı
   6. `06-ozet-okuma.html`: adım adım özet, tamamlama, koyu
+  7. `07-karsilama-giris.html`: karşılama, üç adımlı kurulum, kayıt getirme (giriş)
+  8. `08-ana-sayfa.html`: Bugün ekranı, ilk gün, koyu
+  9. `09-derslerim-favoriler.html`: Derslerim, düzenleme, favoriler, ders ekleme
+  10. `10-ilerleme.html`: genel ölçüler, ders ayrıntısı, boş durum
+  11. `11-ayarlar.html`: ayarlar, görünüm, eşitleme, yapay zekâ anahtarı
+  12. `12-pwa-durumlar.html`: ana ekrana ekle, güncelleme ve çevrimdışı, 404
+- `uret_uygulama.py`: 07-12 maketlerini üretir (`python3 uret_uygulama.py`).
 - `onizleme/`: her kareden 390x844 PNG ekran görüntüsü (Playwright + Chrome).
 
 ## Araçlar
