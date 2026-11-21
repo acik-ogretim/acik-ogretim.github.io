@@ -17,6 +17,8 @@ import Layout from "../layouts/Layout.astro";
     </div>
     <h2 id="ders-baslik" class="ayar-baslik mt-6 mb-1" hidden>Derslere göre son denemede doğru</h2>
     <div id="dersler" aria-live="polite"></div>
+    <h2 id="yildiz-baslik" class="ayar-baslik mt-6 mb-1" hidden>Yıldızlı kavramlar</h2>
+    <div id="yildizlar"></div>
     <div id="bos" class="bos-durum" hidden>
       <strong>Henüz çözüm yok</strong>
       <span>Bir derste Çözme kipine geçip soru cevapladığında ilerlemen burada görünür.</span>
@@ -48,9 +50,54 @@ import Layout from "../layouts/Layout.astro";
     if (e) e.textContent = metin;
   };
 
-  if (toplam.cozulen === 0) {
+  // Çalışma odasında yıldızlanan kavramlar: yildizli-kavramlar-ataturk-aof-<ders>
+  const yildizli: { ders: string; sayi: number }[] = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    const onek = "yildizli-kavramlar-ataturk-aof-";
+    if (!k?.startsWith(onek)) continue;
+    try {
+      const l: unknown = JSON.parse(localStorage.getItem(k) ?? "[]");
+      if (Array.isArray(l) && l.length) yildizli.push({ ders: k.slice(onek.length), sayi: l.length });
+    } catch {
+      // Broken record: skipped.
+    }
+  }
+  if (yildizli.length) {
+    (document.getElementById("yildiz-baslik") as HTMLElement).hidden = false;
+    const kap = document.getElementById("yildizlar") as HTMLElement;
+    for (const y of yildizli.sort((a, b) => b.sayi - a.sayi)) {
+      const a = document.createElement("a");
+      a.className = "liste-satir";
+      a.href = `/calisma/${y.ders}/?sekme=vurgular`;
+      const g = document.createElement("div");
+      g.className = "liste-satir-govde";
+      const b = document.createElement("div");
+      b.className = "liste-baslik";
+      b.textContent = y.ders.replace(/-/g, " ");
+      const m = document.createElement("div");
+      m.className = "liste-meta";
+      m.textContent = `${y.sayi} yıldızlı kavram`;
+      g.append(b, m);
+      a.append(g);
+      kap.append(a);
+    }
+    fetch("/veri/dersler.json")
+      .then((r) => r.json())
+      .then((katalog: { key: string; name: string }[]) => {
+        const ad = new Map(katalog.map((c) => [c.key.replace("/", "-"), c.name]));
+        kap.querySelectorAll<HTMLAnchorElement>("a").forEach((a, i) => {
+          const n = ad.get(`ataturk-aof-${yildizli[i]?.ders}`);
+          const b = a.querySelector(".liste-baslik");
+          if (n && b) b.textContent = n;
+        });
+      })
+      .catch(() => undefined);
+  }
+
+  if (toplam.cozulen === 0 && !yildizli.length) {
     (document.getElementById("bos") as HTMLElement).hidden = false;
-  } else {
+  } else if (toplam.cozulen > 0) {
     (document.getElementById("ozet") as HTMLElement).hidden = false;
     (document.getElementById("ders-baslik") as HTMLElement).hidden = false;
     const sayi = (n: number) => n.toLocaleString("tr-TR");
