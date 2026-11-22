@@ -145,7 +145,8 @@ materials.forEach((m) => {
 
     // Anadolu categories from JSON
     if (isAnadolu) {
-        if (m.title.startsWith("Ünite")) category = "Üniteler";
+        if (m.id.toString().startsWith("ext-acik-ogretim")) category = "Açık Öğretim Portal"; // kendi hazırladığımız kitap ve özetler
+        else if (m.title.startsWith("Ünite")) category = "Üniteler";
         else if (m.title.includes("Canlı Ders"))
             category = "Canlı Ders Kayıtları";
         else if (m.title.includes("Çıkmış Sınav")) category = "Çıkmış Sorular";
