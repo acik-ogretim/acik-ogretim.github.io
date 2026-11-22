@@ -13,7 +13,8 @@ const kok = resolve(import.meta.dirname, "..");
 const kitapKok = resolve(kok, process.env.KITAP_DIZINI ?? "../ders-kitaplari");
 const dokumKok = resolve(kok, process.env.DOKUM_DIZINI ?? "../auzeff-tui/data/ata-aof/yayin/dokum");
 const cikti = process.env.CALISMA_CIKTI ? resolve(kok, process.env.CALISMA_CIKTI) : join(kok, "src", "data", "calisma-odasi");
-const UNI = "ataturk-aof";
+// Üniversite: varsayılan ATA AÖF; başka üniversite için CALISMA_UNI=anadolu-aof node scripts/calisma-odasi-paketle.mjs <ders>
+const UNI = process.env.CALISMA_UNI ?? "ataturk-aof";
 // Vize dersleri: kendi YouTube videosu olan Atatürk AÖF dersleri (src/data/youtube-videolar.json) ve döküm dosyası olanlar.
 const videoKaydi = JSON.parse(readFileSync(join(kok, "src", "data", "youtube-videolar.json"), "utf8")).dersler ?? {};
 const videolu = Object.keys(videoKaydi).filter((k) => k.startsWith(`${UNI}/`)).map((k) => k.split("/")[1]);
@@ -371,7 +372,8 @@ function paketle(ders) {
     return;
   }
   mkdirSync(cikti, { recursive: true });
-  const yol = join(cikti, `${ders}.json`);
+  // aynı ders kimliği başka üniversitelerde de var: ATA dışındaki paketler üniversite önekli adlanır
+  const yol = join(cikti, UNI === "ataturk-aof" ? `${ders}.json` : `${UNI}--${ders}.json`);
   writeFileSync(yol, JSON.stringify(veri));
   const kb = Math.round(statSync(yol).size / 1024);
   const satirSayisi = videolar.reduce((t, v) => t + v.satirlar.length, 0);

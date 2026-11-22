@@ -137,6 +137,17 @@ export async function getKitapUniteAdlari(uniId: string, courseCode: string | un
     return kitapUniteOnbellek.get(uniId)?.[courseCode] ?? [];
 }
 
+/** Dersin toplam ünite sayısı: kitap ünite dosyasındaki uniteSayisi (kitabı tam bilinmeyen dersler, ör. GİT411U 8) ya da ünite listesinin uzunluğu. */
+export async function getToplamUnite(uniId: string, courseCode: string | undefined): Promise<number> {
+    if (!courseCode) return 0;
+    try {
+        const d = JSON.parse(await fs.readFile(path.join(DATA_DIR, 'kitap-uniteleri', `${uniId}.json`), 'utf-8'));
+        return d.uniteSayisi?.[courseCode] ?? d.dersler?.[courseCode]?.length ?? 0;
+    } catch {
+        return 0;
+    }
+}
+
 export async function getDersIcerik(uniId: string, courseId: string): Promise<DersIcerik | null> {
     try {
         const filePath = path.join(DATA_DIR, 'ders-icerik', uniId, `${courseId}.json`);

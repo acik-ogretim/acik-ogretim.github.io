@@ -31,16 +31,18 @@ export const yanlisVar = (ilerleme: Ilerleme, id: string): boolean => (ilerleme[
 export const cevaplanmamis = (ilerleme: Ilerleme, id: string): boolean => (ilerleme[id] ?? []).length === 0;
 
 /** Middle unit used by the "first half" and "second half" choices (unit 0 is left out). */
-export function yariNoktasi(uniteler: number[]): { orta: number; son: number } {
+/** toplam: dersin bilinen ünite sayısı (Anadolu kitap ünite listesi). Sorusu olmayan üniteler de yarıya sayılır:
+ *  8 üniteli derste yalnız 1-4'ün sorusu varken yarılar 1-4 ve 5-8 olur. */
+export function yariNoktasi(uniteler: number[], toplam = 0): { orta: number; son: number } {
   const gecerli = uniteler.filter((u) => u > 0);
-  const son = gecerli.length > 0 ? Math.max(...gecerli) : 0;
+  const son = Math.max(gecerli.length > 0 ? Math.max(...gecerli) : 0, toplam);
   return { orta: Math.ceil(son / 2), son };
 }
 
-export function suz<T extends SuzulecekSoru>(sorular: T[], a: SuzgecAyar, ilerleme: Ilerleme): T[] {
+export function suz<T extends SuzulecekSoru>(sorular: T[], a: SuzgecAyar, ilerleme: Ilerleme, toplam = 0): T[] {
   let sonuc = sorular;
   if (a.filterUnite !== "all") {
-    const { orta } = yariNoktasi(sorular.map((q) => q.unitNumber));
+    const { orta } = yariNoktasi(sorular.map((q) => q.unitNumber), toplam);
     if (a.filterUnite === "first_half") sonuc = sonuc.filter((q) => q.unitNumber <= orta);
     else if (a.filterUnite === "second_half") sonuc = sonuc.filter((q) => q.unitNumber > orta);
     else {
@@ -106,4 +108,10 @@ const SINAV_ADI: Record<string, string> = {
 export function sinavEtiketi(anahtar: string): string {
   const [yil, tur] = anahtar.split(" ");
   return `${yil || "Yılı bilinmeyen"} ${SINAV_ADI[tur ?? ""] ?? tur ?? ""}`.trim();
+}
+
+/** Ders sayfasındaki data-toplam-unite özniteliği (yoksa 0). */
+export function toplamUniteOku(): number {
+  if (typeof document === "undefined") return 0;
+  return Number(document.querySelector<HTMLElement>("[data-toplam-unite]")?.dataset.toplamUnite) || 0;
 }

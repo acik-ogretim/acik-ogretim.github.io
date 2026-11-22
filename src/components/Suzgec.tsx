@@ -12,6 +12,7 @@ import {
   suzgecYaz,
   yanlisVar,
   yariNoktasi,
+  toplamUniteOku,
   type Ilerleme,
   type SuzgecAyar,
   type SuzulecekSoru,
@@ -81,7 +82,8 @@ export default function Suzgec({ ders }: { ders: string }) {
   }, [ders, dersYolu]);
 
   const uniteler = useMemo(() => [...new Set(sorular.map((q) => q.unitNumber))].filter((u) => u > 0).sort((a, b) => a - b), [sorular]);
-  const { orta, son } = yariNoktasi(uniteler);
+  const toplam = toplamUniteOku();
+  const { orta, son } = yariNoktasi(uniteler, toplam);
   const sinavlar = useMemo(() => {
     const sayac = new Map<string, number>();
     for (const q of sorular) for (const s of q.sinavlar) sayac.set(s, (sayac.get(s) ?? 0) + 1);
@@ -91,7 +93,7 @@ export default function Suzgec({ ders }: { ders: string }) {
   const alistirmaVar = sorular.some((q) => q.source !== "cikmis-soru");
   const yanlisSayisi = sorular.filter((q) => yanlisVar(ilerleme, q.id)).length;
   const bosSayisi = sorular.filter((q) => cevaplanmamis(ilerleme, q.id)).length;
-  const onizleme = suz(sorular, taslak, ilerleme).length;
+  const onizleme = suz(sorular, taslak, ilerleme, toplam).length;
 
   const degistir = (yama: Partial<SuzgecAyar>) => setTaslak((t) => ({ ...t, ...yama }));
   const uygula = () => {

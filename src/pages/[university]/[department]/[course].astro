@@ -20,7 +20,7 @@ import videoVerisi from "../../../data/youtube-videolar.json";
 import MobilMenu from "../../../components/MobilMenu.tsx";
 import KonuCekmece from "../../../components/KonuCekmece.astro";
 import Icindekiler, { type IcKonu, type IcUnite } from "../../../components/Icindekiler.tsx";
-import { getCourses, getUniversities, type KitapKonu } from "../../../lib/api";
+import { getCourses, getToplamUnite, getUniversities, type KitapKonu } from "../../../lib/api";
 import { dersBaglami } from "../../../lib/ders-baglami";
 import { kitapSirala } from "../../../lib/soru-siralama";
 import { canonicalDepartments, courseDepartments, coursePath } from "../../../lib/kanonik";
@@ -70,6 +70,7 @@ if (canonicalDept !== department.id) return Astro.redirect(`${coursePath(univers
 // Questions, unit titles and topic names are shared with the unit files (src/lib/ders-baglami.ts)
 const baglam = await dersBaglami(university.id, course);
 const { questions, icerik, uniteAdi, konuAdi, kitap, units } = baglam;
+const toplamUnite = await getToplamUnite(university.id, course.code); // süzgecin yarıları dersin gerçek ünite sayısına göre
 
 const mobilUniteler = units.map((no) => ({
   no,
@@ -281,6 +282,7 @@ const dersJsonLd = graf(
         data-ders={course.id}
         data-ders-ad={course.name}
         data-uniteler={units.join(",")}
+        data-toplam-unite={toplamUnite || undefined}
         data-calisma-yolu={calismaOdasiVar ? `${coursePath(university.id, department.id, course.id)}/calisma/` : undefined}
       >
         <h1 class="sr-only">{course.name} - Tüm Sorular</h1>

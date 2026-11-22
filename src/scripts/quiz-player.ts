@@ -1,5 +1,5 @@
 import type { OptionKey, PlayerQuestion, PlayerUI, QuizSettings, Source } from "../lib/types";
-import { suz } from "../lib/suzgec";
+import { suz, toplamUniteOku } from "../lib/suzgec";
 import { KIP_OLAYI, KONUM_ISTE_OLAYI, OYNATICI_DURUM_OLAYI, SORU_KONUMU_OLAYI, hizMetni, type OynaticiDurum, type SoruKonumu } from "../lib/ders-olaylari";
 import { CalismaBaglantisi, kartiOdakla, okunanSoru } from "./calisma-baglanti";
 import { depoOku, depoYaz } from "../lib/calisma-durumu";
@@ -408,7 +408,7 @@ export class QuizPlayer {
     // Chosen order first ("Sırala"), so the filtered list follows it
     this.calisma?.sirala();
     // Shared with the "Süzgeç" sheet so its preview count always matches the list
-    const filtered = suz(this.originalQuestions, this.settings, this.progress);
+    const filtered = suz(this.originalQuestions, this.settings, this.progress, toplamUniteOku());
 
     this.questions = filtered;
     this.currentIndex = this.questions.length > 0 ? 0 : -1;
