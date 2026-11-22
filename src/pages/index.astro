@@ -281,6 +281,17 @@ const uniStyles: Record<string, { icon: SimgeAdi }> = {
     });
 
     installBtn?.addEventListener('click', (e) => {
+      // Web Install API (Chrome 150+): navigator.install() opens the browser's own install dialog for this site's manifest
+      // (manifest id "/"). It must run inside the click handler to keep the user gesture (Zeki, 23 Nov 2026).
+      const nav = navigator as Navigator & { install?: () => Promise<void> };
+      if (typeof nav.install === 'function') {
+        e.preventDefault();
+        nav.install().catch((err: unknown) => {
+          // AbortError is the user's own cancel; anything else falls back to the guide page
+          if ((err as { name?: string })?.name !== 'AbortError') location.assign('/rehber#kurulum');
+        });
+        return;
+      }
       // If we have a prompt available, prevent navigation and show prompt
       if (deferredPrompt) {
         e.preventDefault();

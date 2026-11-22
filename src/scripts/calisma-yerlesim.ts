@@ -48,7 +48,7 @@ export function calismaYerlesimBaslat(): void {
     if (!dokum) return;
     // A minimised (floating) video frees the left column, so the transcript goes back to its tab; left under a
     // floating player it overlapped the topic flow (Zeki, 23 Nov 2026 01:59 screenshot).
-    if (mq.matches && !videoKab?.hasAttribute("data-kucuk")) {
+    if (mq.matches && !videoKab?.hasAttribute("data-kucuk") && !videoKab?.hasAttribute("data-pip")) {
       if (dokum.parentElement !== sol) videoKab?.after(dokum);
       kok.setAttribute("data-dokum-solda", "");
       // the transcript is visible under the video, so a selected "Döküm" tab falls back to the topic flow
@@ -99,7 +99,7 @@ export function calismaYerlesimBaslat(): void {
   });
 
   yerlestir();
-  if (videoKab) new MutationObserver(yerlestir).observe(videoKab, { attributes: true, attributeFilter: ["data-kucuk"] });
+  if (videoKab) new MutationObserver(yerlestir).observe(videoKab, { attributes: true, attributeFilter: ["data-kucuk", "data-pip"] });
   mq.addEventListener("change", () => {
     yerlestir();
     if (!mq.matches) ana.style.removeProperty("grid-template-columns");

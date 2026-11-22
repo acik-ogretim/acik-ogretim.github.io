@@ -1849,3 +1849,49 @@ ol.co-ak-liste {
     transition: none;
   }
 }
+
+/* Video in its own always-on-top window (Document Picture-in-Picture, Zeki 23 Nov 2026): the button sits after the speed
+   button; while the window is open the page keeps only a one-line note with a way back. */
+.co-pip-ac {
+  position: absolute;
+  top: 8px;
+  left: 104px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 999px;
+  background: rgb(15 23 42 / 0.72);
+  color: #fff;
+  cursor: pointer;
+}
+.co-pip-ac[hidden],
+.co-video-kab:not([data-ortam='youtube']) .co-pip-ac {
+  display: none;
+}
+.co-pip-ac:focus-visible {
+  outline: 2px solid var(--primary-color, #f0a533);
+  outline-offset: 2px;
+}
+.co-pip-yer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  font-size: 15px;
+}
+.co-pip-yer[hidden] {
+  display: none;
+}
+.co-pip-geri {
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}

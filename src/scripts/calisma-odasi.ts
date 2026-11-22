@@ -8,12 +8,14 @@ import { demirBul, demirle, vurgulariOku, vurgulariYaz, type Vurgu } from "../li
 import { anlatimHtml, aramaYap, mdHtml, dusunHtml, kitaptaParagraf, konuDurumu, sorulariKonuyaDagit, uniteBaskiHtml, zayifKonular, type AkisSoru } from "../lib/calisma-odasi/akis";
 import { yildizKimligi, yildizlariOku, yildizlariYaz, type Yildiz } from "../lib/calisma-odasi/yildiz";
 import { KonuOkuma, sesDestekli } from "./konu-okuma";
+import { pipAcKapat, pipDestekli } from "./calisma-pip";
 
 type YTOynatici = {
   getCurrentTime: () => number;
   seekTo: (sn: number, ileri: boolean) => void;
   playVideo: () => void;
-  loadVideoById?: (id: string) => void;
+  loadVideoById?: (id: string, bas?: number) => void;
+  cueVideoById?: (id: string, bas?: number) => void;
   pauseVideo?: () => void;
   getPlayerState?: () => number;
   setPlaybackRate?: (hiz: number) => void;
@@ -2055,4 +2057,79 @@ export function calismaOdasiBaslat(): void {
   if (ilkSekme && (SEKMELER as readonly string[]).includes(ilkSekme)) sekmeGoster(ilkSekme as Sekme);
   // Test ve ileri kullanım için: dışarıdan zaman vermek
   (window as unknown as { coZaman?: (sn: number) => void }).coZaman = guncelle;
+
+  // Document Picture-in-Picture: the YouTube player moves to an always-on-top window, the page keeps the text (Zeki, 23 Nov 2026)
+  const pipDugme = document.getElementById("co-pip-ac");
+  const oynaticiKap = document.getElementById("co-oynatici-kap");
+  const oynaticiYuva = oynaticiKap?.parentElement;
+  if (pipDugme && oynaticiKap && oynaticiYuva && pipDestekli()) {
+    pipDugme.hidden = false;
+    const pipYer = document.createElement("div");
+    pipYer.className = "co-pip-yer";
+    pipYer.hidden = true;
+    pipYer.innerHTML = '<span>Video ayrı pencerede oynuyor.</span><button type="button" class="co-pip-geri">Sayfaya geri al</button>';
+    oynaticiYuva.prepend(pipYer);
+    const ac = (): void =>
+      void pipAcKapat({
+        kap: oynaticiKap,
+        yuva: oynaticiYuva,
+        konum: () => {
+          try {
+            return { sn: ytOynatici?.getCurrentTime() ?? 0, caliyor: caliyorMu() };
+          } catch {
+            return { sn: 0, caliyor: false };
+          }
+        },
+        surdur: (sn, cal) => {
+          const id = video?.tur === "youtube" ? video.kaynak : "";
+          if (!ytOynatici || !id) return;
+          try {
+            if (cal) ytOynatici.loadVideoById?.(id, sn);
+            else ytOynatici.cueVideoById?.(id, sn);
+            ytHizUygula(kayitliHiz());
+          } catch {
+            /* player not ready */
+          }
+        },
+        degisti: (acik) => {
+          videoKab.toggleAttribute("data-pip", acik);
+          pipYer.hidden = !acik;
+          pipDugme.setAttribute("aria-pressed", String(acik));
+          requestAnimationFrame(() => yukseklik());
+        },
+      }).catch(() => {
+        /* window refused (no user gesture or blocked) */
+      });
+    pipDugme.addEventListener("click", ac);
+    pipYer.querySelector("button")?.addEventListener("click", ac);
+  }
+
+  // WebMCP: study room tools for browser agents; loaded only when the browser has a model context
+  if ("modelContext" in document) {
+    import("./calisma-ajan")
+      .then((m) =>
+        m.calismaAraclariniKaydet({
+          ders: paket.ders,
+          konular: () => paket.konular.map((k) => ({ no: k.no, baslik: k.baslik, unite: k.unite })),
+          konuyaGit: (no) => {
+            if (!konuHaritasi.has(no)) return false;
+            konuyaGit(no);
+            return true;
+          },
+          zamanaGit: git,
+          suAn: () => {
+            let sn = 0;
+            try {
+              sn = oynatici?.getCurrentTime() ?? 0;
+            } catch {
+              /* player not ready */
+            }
+            const i = satirBul(satirlar, sn);
+            return { sn, konu: i >= 0 ? (etkinKonu[i] ?? null) : null, satir: i >= 0 ? (satirlar[i]?.m ?? null) : null };
+          },
+          dokum: () => satirlar.map((x, i) => ({ bas: x.bas, m: x.m, konu: x.konu ?? etkinKonu[i] ?? null })),
+        }),
+      )
+      .catch(() => {});
+  }
 }
