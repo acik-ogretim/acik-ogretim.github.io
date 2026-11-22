@@ -27,7 +27,9 @@ const parcala = await import("../src/lib/konu/parcala.ts");
 const { calismaCoz } = await import("../src/lib/konu/calisma.ts");
 
 const tr = (s) => s.toLocaleLowerCase("tr");
-const KUTU_ADLARI = new Set(["not", "örnek", "dikkat", "tanım", "özet", "uyarı", "ipucu", "hatırlatma", "bilgi", "soru", "etkinlik"]);
+const KUTU_ADLARI = new Set(["not", "örnek", "dikkat", "tanım", "özet", "uyarı", "ipucu", "hatırlatma", "bilgi", "soru", "etkinlik", "ek bilgi", "senin projen", "yanıt ölçütü", "hangi sorun?", "hangi tercih?", "tasarım problemi", "tasarım süreci"]);
+// kutu başlığı olarak koyu yazılan etiketler ("Ek bilgi: ...", "Senin projen") kavram sayılmaz (Zeki, 22 Kasım 2026, GİT411U ekran görüntüsü)
+const ETIKET_ONEKI = /^(ek bilgi|senin projen|yanıt ölçütü)\b/i;
 
 // ---- Türkçe kaba gövdeleme: ilk 5 harf (ek farklarını yok sayar) ----
 function jetonlar(metin) {
@@ -177,7 +179,7 @@ function paketle(ders) {
   for (const k of konuListesi) {
     for (const t of k.kitapKavramlari) {
       const kelime = t.split(/\s+/).length;
-      if (t.length < 4 || t.length > 60 || kelime > 6 || KUTU_ADLARI.has(tr(t))) continue;
+      if (t.length < 4 || t.length > 60 || kelime > 6 || KUTU_ADLARI.has(tr(t)) || ETIKET_ONEKI.test(t)) continue;
       const c = cumleBul(k.metin, t);
       if (c) ekle(t, c, k.no, "kitap");
     }
