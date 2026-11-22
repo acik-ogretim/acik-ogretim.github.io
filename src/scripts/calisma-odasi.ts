@@ -1054,7 +1054,7 @@ export function calismaOdasiBaslat(): void {
       .map((q, i) => soruKartiHtml(q, i + 1))
       .join("");
     const ids = liste.map((q) => encodeURIComponent(q.id)).join(",");
-    const canli = `${KANAL_ADRESI}?kaynak=acik-ogretim&ders=${encodeURIComponent(`${uni}/${ders}`)}&unite=${unite}&sorular=${ids}`;
+    const canli = `${KANAL_ADRESI}?kaynak=acik-ogretim&uni=${encodeURIComponent(uni)}&ders=${encodeURIComponent(ders)}&unite=${unite}&sorular=${ids}`;
     p.innerHTML =
       `${ustHtml}${kapsamHtml}<p class="co-sq-ozet" id="co-sq-ozet"></p><div class="co-sq-liste">${kartlar || `<p class="co-bos">Bu ünite için çıkmış soru yok.</p>`}</div>` +
       `<div class="co-eylemler"><a class="co-dugme co-dugme-birincil" href="${esc(canli)}" target="_blank" rel="noopener">${ikon("ExternalLink")}Canlı quiz olarak aç</a><a class="co-dugme" href="${esc(dersYolu)}">${ikon("FileText")}Ders sayfasında çöz</a></div>`;
