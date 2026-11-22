@@ -1645,7 +1645,7 @@ ol.co-ak-liste {
 .co-kucult {
   position: absolute;
   top: 8px;
-  right: 8px;
+  left: 8px;
   z-index: 2;
   display: grid;
   place-items: center;
@@ -1657,10 +1657,12 @@ ol.co-ak-liste {
   color: #fff;
   cursor: pointer;
 }
+/* Our two buttons sit top-left: on the right they covered YouTube's own volume, captions and settings gear, so the
+   settings menu could not be opened in the large view (Zeki, 22 Nov 2026 screenshot). */
 .co-yt-hiz {
   position: absolute;
   top: 8px;
-  right: 52px;
+  left: 52px;
   z-index: 2;
   min-width: 44px;
   height: 36px;
