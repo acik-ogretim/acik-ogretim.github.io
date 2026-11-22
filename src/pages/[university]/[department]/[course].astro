@@ -98,7 +98,8 @@ const sinavYillari = [...new Set(questions.flatMap((q) =>
   (q.sinavlar ?? (q.source === "cikmis-soru" && q.year ? [{ year: String(q.year), examType: "" }] : []))
     .map((s) => Number.parseInt(String(s.year), 10)).filter((y) => y > 1990)))].sort((a, b) => a - b);
 // Çalışma odası paketi olan derslerde "Ders anlatımı" düğmesi (paket: scripts/calisma-odasi-paketle.mjs)
-const calismaOdasiVar = Object.keys(import.meta.glob("../../../data/calisma-odasi/*.json")).some((k) => k.endsWith(`/${course.id}.json`));
+// Oda paketi ders kimliğiyle adlanır ama aynı kimlik başka üniversitelerde de var: paketin üniversitesi de eşleşmeli
+const calismaOdasiVar = Object.values(import.meta.glob<{ uni: string; ders: string }>("../../../data/calisma-odasi/*.json", { eager: true, import: "default" })).some((p) => p.ders === course.id && p.uni === university.id);
 const yilMetni = sinavYillari.length === 0 ? "" : sinavYillari.length === 1
   ? `${sinavYillari[0]} sınavı`
   : `${sinavYillari[0]}-${sinavYillari[sinavYillari.length - 1]} · ${sinavYillari.length} yıl`;
@@ -189,10 +190,10 @@ const dersJsonLd = graf(
           <button type="button" class="eylem-cip" id="konular-ac" aria-haspopup="dialog">
             <Simge ad="ListTree" size={18} />Konular
           </button>
-            <a href={`/calisma/${course.id}/`} class="eylem-cip" data-ders-anlatimi>
+            <a href={`${coursePath(university.id, department.id, course.id)}/calisma/`} class="eylem-cip" data-ders-anlatimi>
               <Simge ad="Play" size={18} />Ders anlatımı
             </a>
-            <a href={`/calisma/${course.id}/?sekme=vurgular`} class="eylem-cip" data-yildizli data-yildiz-anahtar={`yildizli-kavramlar-${university.id}-${course.id}`} hidden>
+            <a href={`${coursePath(university.id, department.id, course.id)}/calisma/?sekme=vurgular`} class="eylem-cip" data-yildizli data-yildiz-anahtar={`yildizli-kavramlar-${university.id}-${course.id}`} hidden>
               <Simge ad="Star" size={18} /><span>Yıldızlı kavramlar</span>
             </a>
           )}
@@ -280,7 +281,7 @@ const dersJsonLd = graf(
         data-ders={course.id}
         data-ders-ad={course.name}
         data-uniteler={units.join(",")}
-        data-calisma-yolu={calismaOdasiVar ? `/calisma/${course.id}/` : undefined}
+        data-calisma-yolu={calismaOdasiVar ? `${coursePath(university.id, department.id, course.id)}/calisma/` : undefined}
       >
         <h1 class="sr-only">{course.name} - Tüm Sorular</h1>
         {
@@ -296,7 +297,7 @@ const dersJsonLd = graf(
                 <h2 class="text-xl md:text-2xl font-semibold text-ink border-b border-line pb-2 mb-6">
                   {unit === 0 ? "Ünitesi belirlenmemiş sorular" : `Ünite ${unit}`}
                   {calismaOdasiVar && ilkKonu && (
-                    <a href={`/calisma/${course.id}/?konu=${encodeURIComponent(ilkKonu)}`} class="unite-anlatim print:hidden">Anlatım</a>
+                    <a href={`${coursePath(university.id, department.id, course.id)}/calisma/?konu=${encodeURIComponent(ilkKonu)}`} class="unite-anlatim print:hidden">Anlatım</a>
                   )}
                   {unit !== 0 && uniteAdi.get(unit) && (
                     <span class="block text-base md:text-lg font-semibold text-theme mt-1 line-clamp-2">
@@ -331,8 +332,8 @@ const dersJsonLd = graf(
   </div>
 
   <QuizPlayer />
-  <Icindekiler client:idle uniteler={icindekiler} calismaYolu={calismaOdasiVar ? `/calisma/${course.id}/` : undefined} videoVar={!!videoVar} />
-  <KonuCekmece uni={university.id} ders={course.id} calismaYolu={calismaOdasiVar ? `/calisma/${course.id}/` : undefined} />
+  <Icindekiler client:idle uniteler={icindekiler} calismaYolu={calismaOdasiVar ? `${coursePath(university.id, department.id, course.id)}/calisma/` : undefined} videoVar={!!videoVar} />
+  <KonuCekmece uni={university.id} ders={course.id} calismaYolu={calismaOdasiVar ? `${coursePath(university.id, department.id, course.id)}/calisma/` : undefined} />
   <MobilMenu client:idle dersAdi={course.name} uniteler={mobilUniteler} uni={university.id} ders={course.id} bolumler={bolumler} bolum={{ id: department.id, ad: department.name }} />
   {bolumler.length > 1 && (
     <script type="application/json" id="ders-bolumleri" set:html={JSON.stringify({ uni: university.id, ders: course.id, bolumler, bolum: { id: department.id, ad: department.name } })} />

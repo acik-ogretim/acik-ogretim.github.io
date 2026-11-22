@@ -1,15 +1,16 @@
+// /calisma-veri/<üniversite>/<ders>/sorular-<ünite>.json (aynı ders kimliği başka üniversitelerde de var).
 // Çıkmış sorular, ünite başına küçük bir dosya: çalışma odasının "Sınav" sekmesi yalnız açık üniteyi tembel yükler
 // (src/scripts/calisma-odasi.ts). Soru kimlikleri ders sayfasındaki veri kimlikleridir; cevaplar aynı kayda yazılır.
 import type { APIRoute, GetStaticPaths } from "astro";
-import { getQuestions } from "../../../lib/api";
-import { examLine, kunyeOzeti } from "../../../lib/soru-karti";
-import { toPlainText } from "../../../../scripts/utils/clean-html";
+import { getQuestions } from "../../../../lib/api";
+import { examLine, kunyeOzeti } from "../../../../lib/soru-karti";
+import { toPlainText } from "../../../../../scripts/utils/clean-html";
 
 type Alan = Parameters<typeof examLine>[0];
 const SON_UNITE = 7;
 
 export const getStaticPaths = (async () => {
-  const paketler = import.meta.glob<{ ders: string; uni: string }>("../../../data/calisma-odasi/*.json", { eager: true, import: "default" });
+  const paketler = import.meta.glob<{ ders: string; uni: string }>("../../../../data/calisma-odasi/*.json", { eager: true, import: "default" });
   const yollar = [];
   for (const p of Object.values(paketler)) {
     const sorular = await getQuestions(p.uni, p.ders);
@@ -17,7 +18,7 @@ export const getStaticPaths = (async () => {
       const liste = sorular.filter((q) => q.unitNumber === unite);
       if (!liste.length) continue;
       yollar.push({
-        params: { ders: p.ders, unite: String(unite) },
+        params: { uni: p.uni, ders: p.ders, unite: String(unite) },
         props: {
           sorular: liste.map((q, i) => ({
             id: q.id,

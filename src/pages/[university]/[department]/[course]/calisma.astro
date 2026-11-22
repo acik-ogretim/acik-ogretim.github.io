@@ -1,0 +1,154 @@
+---
+// Çalışma odası: /<üniversite>/<bölüm>/<ders>/calisma/. Aynı ders kimliği başka üniversitelerde ve bölümlerde de geçtiği için
+// oda dersin kendi sayfasının altındadır; ortak derslerde ders sayfası gibi asıl (kanonik) bölümde tek sayfa üretilir.
+// Veri: src/data/calisma-odasi/<ders>.json (scripts/calisma-odasi-paketle.mjs; paketteki uni alanı üniversiteyi belirler).
+// Davranış: src/scripts/calisma-odasi.ts. Eski /calisma/<ders>/ adresleri src/pages/calisma/[ders].astro ile buraya yönlenir.
+import Layout from "../../../../layouts/Layout.astro";
+import Simge from "../../../../components/Simge.astro";
+import { getCourses, getUniversities } from "../../../../lib/api";
+import { canonicalDepartments, courseDepartments, coursePath } from "../../../../lib/kanonik";
+import { PaketSemasi } from "../../../../lib/calisma-odasi/sema";
+import type { SimgeAdi } from "../../../../lib/simge";
+import "../../../../styles/calisma-odasi.css";
+
+export async function getStaticPaths() {
+  const paketler = import.meta.glob("../../../../data/calisma-odasi/*.json", { eager: true, import: "default" });
+  const kanonik = await canonicalDepartments();
+  const dersBolumleri = await courseDepartments();
+  const universiteler = await getUniversities();
+  const yollar = [];
+  for (const ham of Object.values(paketler)) {
+    const paket = PaketSemasi.parse(ham);
+    const bolum = kanonik.get(`${paket.uni}/${paket.ders}`);
+    if (!bolum) continue; // ders katalogda yoksa oda üretilmez: üniversitesi ve bölümü belirsiz bir sayfa yayımlanmaz
+    const uni = universiteler.find((u) => u.id === paket.uni);
+    const ders = (await getCourses(paket.uni, bolum)).find((c) => c.id === paket.ders);
+    const bolumler = dersBolumleri.get(`${paket.uni}/${paket.ders}`) ?? [];
+    yollar.push({
+      params: { university: paket.uni, department: bolum, course: paket.ders },
+      props: {
+        paket,
+        dersAdi: ders?.name ?? paket.ders,
+        dersKodu: ders?.code ?? "",
+        uniAdi: uni?.name ?? paket.uni,
+        bolumAdi: (uni?.departments ?? []).find((d) => d.id === bolum)?.name ?? bolum,
+        bolumSayisi: bolumler.length,
+        dersYolu: coursePath(paket.uni, bolum, paket.ders),
+      },
+    });
+  }
+  return yollar;
+}
+
+const { dersKodu, uniAdi, bolumAdi, bolumSayisi } = Astro.props;
+const { paket, dersAdi, dersYolu } = Astro.props;
+const veriJson = JSON.stringify(paket).replace(/</g, "\\u003c");
+const simgeler: SimgeAdi[] = ["BookOpen", "CircleHelp", "FileText", "Highlighter", "Trash2", "Check", "X", "ChevronLeft", "ChevronRight", "ArrowRight", "WifiOff", "Play", "Link", "ExternalLink", "ListChecks", "Star", "Copy", "StickyNote", "Search", "Printer", "ArrowDown", "ChevronDown", "Headphones", "Pause", "RotateCcw", "RotateCw", "AudioLines", "Square"];
+const sekmeler = [
+  { id: "akis", ad: "Konu konu" },
+  { id: "dokum", ad: "Döküm" },
+  { id: "su-an", ad: "Şu an" },
+  { id: "icindekiler", ad: "Konular" },
+  { id: "sinav", ad: "Sınav" },
+  { id: "vurgular", ad: "Vurgular" },
+];
+---
+
+<Layout noindex sekmeler={false} title={`${dersAdi} (${dersKodu}) çalışma odası · ${uniAdi}`} description={`${uniAdi} ${bolumAdi} ${dersAdi} (${dersKodu}) dersi için özet video, zaman kodlu döküm ve konu anlatımı.`}>
+  <div class={`co${paket.medyalar.length ? "" : " co-videosuz"}`} id="co" data-ders={paket.ders} data-uni={paket.uni} data-ders-yolu={dersYolu}>
+    <header class="co-ust">
+      <a href={dersYolu} class="co-geri" aria-label="Ders sayfasına dön"><Simge ad="ChevronLeft" size={22} /></a>
+      <div class="co-baslik">
+        <h1>{dersAdi}</h1>
+        <p class="co-kimlik">{uniAdi} · {bolumSayisi > 1 ? `${bolumAdi} ve ${bolumSayisi - 1} bölümde daha ortak ders` : bolumAdi}{dersKodu ? ` · ${dersKodu}` : ""}</p>
+        <p>Çalışma odası</p>
+      </div>
+      {paket.medyalar.length ? <button type="button" class="co-ust-ikon" id="co-medya-gizle" aria-pressed="false" aria-label="Videoyu ve sesi kapat, yalnız metni oku"><span class="co-medya-acik"><Simge ad="PanelTopClose" size={20} /></span><span class="co-medya-kapali"><Simge ad="PanelTopOpen" size={20} /></span></button> : null}
+      <button type="button" class="co-ust-dugme" id="co-konular-ac" aria-label="Konular"><Simge ad="ListTree" size={22} /><span>Konular</span></button>
+    </header>
+
+    <div class="co-ana">
+      <div class="co-sol">
+        <div class="co-video-kab" id="co-video-kab">
+          <div class="co-video-sec" id="co-video-sec" role="group" aria-label="Video ya da ses seç" hidden></div>
+          <p class="co-medya-bilgi" id="co-medya-bilgi" role="status" hidden></p>
+          <div class="co-video">
+            {paket.medyalar.length ? <><div id="co-oynatici-kap"><div id="co-oynatici"></div><button type="button" class="co-yt-hiz" id="co-yt-hiz" aria-label="Oynatma hızı 1, değiştir">1×</button><button type="button" class="co-kucult" id="co-kucult" aria-pressed="false" aria-label="Videoyu küçült"><span class="co-kucult-kucuk"><Simge ad="Minimize2" size={18} /></span><span class="co-kucult-buyuk"><Simge ad="Maximize2" size={18} /></span></button></div><div class="co-ses" id="co-ses" hidden></div></> : <p class="co-video-yok">Bu ders için video yok.</p>}
+          </div>
+          <p class="co-bildirim" id="co-bildirim" role="status" hidden>
+            <Simge ad="WifiOff" size={16} /><span>Video için internet gerekir. Döküm, konular, testler ve vurgular çalışır.</span>
+          </p>
+        </div>
+        <section class="co-panel co-su-an" data-panel="su-an" id="co-su-an" aria-label="Şu an"></section>
+      </div>
+
+      <div class="co-sag">
+        <div class="co-sekmeler" role="tablist" aria-label="Bölümler" id="co-sekmeler">
+          {sekmeler.map((s) => (
+            <button type="button" role="tab" id={`co-sekme-${s.id}`} data-sekme={s.id} aria-controls={`co-p-${s.id}`} aria-selected="false">{s.ad}<span class="co-sayac" data-sayac={s.id} hidden></span></button>
+          ))}
+        </div>
+        <section class="co-panel" data-panel="akis" id="co-p-akis" role="tabpanel" aria-labelledby="co-sekme-akis"></section>
+        <section class="co-panel" data-panel="dokum" id="co-p-dokum" role="tabpanel" aria-labelledby="co-sekme-dokum"><ol class="co-dokum" id="co-dokum"></ol></section>
+        <section class="co-panel" data-panel="icindekiler" id="co-p-icindekiler" role="tabpanel" aria-labelledby="co-sekme-icindekiler"></section>
+        <section class="co-panel" data-panel="sinav" id="co-p-sinav" role="tabpanel" aria-labelledby="co-sekme-sinav"></section>
+        <section class="co-panel" data-panel="vurgular" id="co-p-vurgular" role="tabpanel" aria-labelledby="co-sekme-vurgular"></section>
+      </div>
+    </div>
+
+    <!-- Kavram baloncuğu -->
+    <div class="co-balon" id="co-balon" role="dialog" aria-label="Kavram tanımı" hidden></div>
+    <div class="co-arac" id="co-arac" role="toolbar" aria-label="Seçili metin" hidden>
+      <div class="co-arac-dugmeler">
+        <button type="button" data-arac="vurgula" aria-keyshortcuts="Alt+V" title="Alt+V"><Simge ad="Highlighter" size={18} /><span>Vurgula</span></button>
+        <button type="button" data-arac="not" aria-keyshortcuts="Alt+N" title="Alt+N"><Simge ad="StickyNote" size={18} /><span>Not ekle</span></button>
+        <button type="button" data-arac="kopyala" aria-keyshortcuts="Alt+K" title="Alt+K"><Simge ad="Copy" size={18} /><span>Kopyala</span></button>
+      </div>
+      <form class="co-arac-not" id="co-arac-not" hidden>
+        <input type="text" id="co-arac-girdi" maxlength="500" autocomplete="off" aria-label="Not" placeholder="Notunu yaz" />
+        <button type="submit">Kaydet</button>
+      </form>
+    </div>
+
+    <!-- Konu anlatımı -->
+    <dialog id="co-konu-katman" class="katman-yuzey co-katman" data-yer="sag" aria-labelledby="co-konu-ad" closedby="any">
+      <div class="katman-tutamac" aria-hidden="true"></div>
+      <header class="katman-baslik">
+        <div class="katman-baslik-metin">
+          <h2 id="co-konu-ad" class="katman-ad"></h2>
+          <p id="co-konu-bilgi" class="katman-bilgi"></p>
+        </div>
+        <button type="button" class="katman-kapat" data-kapat aria-label="Kapat"><Simge ad="X" size={20} /></button>
+      </header>
+      <div class="katman-govde co-konu-govde" id="co-konu-govde" tabindex="-1"></div>
+      <footer class="katman-alt">
+        <button type="button" class="katman-dugme" id="co-onceki" aria-label="Önceki konu"><Simge ad="ChevronLeft" size={20} /></button>
+        <button type="button" class="katman-dugme katman-dugme-birincil" id="co-konu-dene">Kendini dene</button>
+        <button type="button" class="katman-dugme" id="co-sonraki" aria-label="Sonraki konu"><Simge ad="ChevronRight" size={20} /></button>
+      </footer>
+    </dialog>
+
+    <!-- Kendini dene -->
+    <dialog id="co-test-katman" class="katman-yuzey co-katman" data-yer="sag" aria-labelledby="co-test-ad" closedby="any">
+      <div class="katman-tutamac" aria-hidden="true"></div>
+      <header class="katman-baslik">
+        <div class="katman-baslik-metin">
+          <h2 id="co-test-ad" class="katman-ad">Kendini dene</h2>
+          <p id="co-test-bilgi" class="katman-bilgi"></p>
+        </div>
+        <button type="button" class="katman-kapat" data-kapat aria-label="Kapat"><Simge ad="X" size={20} /></button>
+      </header>
+      <div class="katman-govde" id="co-test-govde" tabindex="-1"></div>
+    </dialog>
+
+    <div hidden id="co-simgeler">
+      {simgeler.map((ad) => <span data-simge={ad}><Simge ad={ad} size={18} /></span>)}
+    </div>
+    <script is:inline type="application/json" id="co-veri" set:html={veriJson} />
+  </div>
+</Layout>
+
+<script>
+  import { calismaOdasiBaslat } from "../../scripts/calisma-odasi";
+  calismaOdasiBaslat();
+</script>

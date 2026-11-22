@@ -908,7 +908,7 @@ export function calismaOdasiBaslat(): void {
     }
   };
   let sinavSayac = 0;
-  const soruAdresi = (u: number): string => `/calisma/${ders}/sorular-${u}.json`;
+  const soruAdresi = (u: number): string => `/calisma-veri/${uni}/${ders}/sorular-${u}.json`;
   async function soruYukle(u: number): Promise<Soru[] | null> {
     const var0 = soruOnbellek.get(u);
     if (var0) return var0;
