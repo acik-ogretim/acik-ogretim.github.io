@@ -65,13 +65,109 @@ export function birlestir(k: string, yerel: string | null, gelen: string): strin
   return gelen;
 }
 
-export function yukle(y: Yedek, depo: Storage = localStorage): number {
+/**
+ * Three-way merge of one JSON value against the last synced state (`taban`): a side equal to the base did not
+ * change, so the other side wins, deletions included. Only when both sides changed does the key's own merge rule
+ * (`birlestir`) run, and for plain objects and arrays it runs per entry so an entry removed on one device stays
+ * removed. Without this, every sync re-added what another device had deleted (Zeki, 23 Nov 2026).
+ */
+function ucYollu(k: string, taban: string | null, yerel: string | null, gelen: string | null): string | null {
+  if (yerel === gelen) return yerel;
+  if (yerel === taban) return gelen; // only the other device changed (or deleted) it
+  if (gelen === taban) return yerel; // only this device changed (or deleted) it
+  if (yerel === null || gelen === null) return yerel ?? gelen; // edited on one side, deleted on the other: keep the edit
+  const [t, a, b] = [json<unknown>(taban, null), json<unknown>(yerel, null), json<unknown>(gelen, null)];
+  if (Array.isArray(a) && Array.isArray(b)) {
+    const ta = new Set((Array.isArray(t) ? t : []).map((x) => JSON.stringify(x)));
+    const [sa, sb] = [new Set(a.map((x) => JSON.stringify(x))), new Set(b.map((x) => JSON.stringify(x)))];
+    const silinen = new Set([...ta].filter((x) => !sa.has(x) || !sb.has(x)));
+    return JSON.stringify([...new Set([...sa, ...sb])].filter((x) => !silinen.has(x)).map((x) => JSON.parse(x)));
+  }
+  const nesne = (x: unknown): x is Record<string, unknown> => !!x && typeof x === "object" && !Array.isArray(x);
+  if (nesne(a) && nesne(b)) {
+    const tn = nesne(t) ? t : {};
+    const sonuc: Record<string, unknown> = {};
+    for (const alt of new Set([...Object.keys(a), ...Object.keys(b), ...Object.keys(tn)])) {
+      const s = (o: Record<string, unknown>) => (alt in o ? JSON.stringify(o[alt]) : null);
+      const v = ucYollu(`${k}#alt`, s(tn), s(a), s(b));
+      if (v === null) continue;
+      // both sides changed this entry: the key's own rule decides on the single-entry objects
+      const parca = s(a) !== null && s(b) !== null && s(a) !== s(b) && s(a) !== s(tn) && s(b) !== s(tn)
+        ? json<Record<string, unknown>>(birlestir(k, JSON.stringify({ [alt]: a[alt] }), JSON.stringify({ [alt]: b[alt] })), {})[alt]
+        : JSON.parse(v);
+      if (parca !== undefined) sonuc[alt] = parca;
+    }
+    return JSON.stringify(sonuc);
+  }
+  return birlestir(k, yerel, gelen);
+}
+
+/**
+ * Merges a backup into this device. With `taban` (the state this device last uploaded to the same place), the merge
+ * is three-way and deletions survive; without it (a file picked by hand, first sync) records are only added.
+ */
+export function yukle(y: Yedek, depo: Storage = localStorage, taban?: Yedek | null): number {
   if (!y || y.surum !== 1 || typeof y.kayitlar !== "object") throw new Error("Bu dosya bir yedek değil.");
   let n = 0;
+  if (taban?.kayitlar) {
+    const anahtarlar = new Set([...Object.keys(y.kayitlar), ...Object.keys(taban.kayitlar), ...Object.keys(topla(depo).kayitlar)]);
+    for (const k of anahtarlar) {
+      if (ANAHTAR_DISI.test(k)) continue;
+      const yerel = depo.getItem(k);
+      const gelen = typeof y.kayitlar[k] === "string" ? y.kayitlar[k] : null;
+      const v = ucYollu(k, taban.kayitlar[k] ?? null, yerel, gelen);
+      if (v === yerel) continue;
+      if (v === null) depo.removeItem(k);
+      else depo.setItem(k, v);
+      n++;
+    }
+    return n;
+  }
   for (const [k, v] of Object.entries(y.kayitlar)) {
     if (ANAHTAR_DISI.test(k) || typeof v !== "string") continue;
     depo.setItem(k, birlestir(k, depo.getItem(k), v));
     n++;
   }
   return n;
+}
+
+// ---- Last synced state per destination, kept outside localStorage (it is as large as the records) ----
+
+const TABAN_DB = "acik-ogretim-esitleme";
+
+function tabanDb(): Promise<IDBDatabase> {
+  return new Promise((ok, hata) => {
+    const r = indexedDB.open(TABAN_DB, 1);
+    r.onupgradeneeded = () => r.result.createObjectStore("taban");
+    r.onsuccess = () => ok(r.result);
+    r.onerror = () => hata(r.error);
+  });
+}
+
+/** The snapshot last uploaded to `hedef` ("google", "rs", "bulut", "p2p:<eş>"); null when never synced or unavailable. */
+export async function tabanOku(hedef: string): Promise<Yedek | null> {
+  try {
+    const db = await tabanDb();
+    return await new Promise((ok) => {
+      const r = db.transaction("taban").objectStore("taban").get(hedef);
+      r.onsuccess = () => ok((r.result as Yedek | undefined) ?? null);
+      r.onerror = () => ok(null);
+    });
+  } catch {
+    return null;
+  }
+}
+
+export async function tabanYaz(hedef: string, y: Yedek): Promise<void> {
+  try {
+    const db = await tabanDb();
+    await new Promise<void>((ok) => {
+      const tx = db.transaction("taban", "readwrite");
+      tx.objectStore("taban").put(y, hedef);
+      tx.oncomplete = () => ok();
+      tx.onerror = () => ok();
+    });
+  } catch {
+    // no IndexedDB (private mode): syncs stay additive
+  }
 }

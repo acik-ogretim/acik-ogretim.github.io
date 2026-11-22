@@ -69,3 +69,46 @@ describe("yedek", () => {
     expect(JSON.parse(birlestir("soru-siralama", '{"u/d":"cikma"}', '{"u/e":"yeni"}'))).toEqual({ "u/d": "cikma", "u/e": "yeni" });
   });
 });
+
+describe("üç yollu eşitleme (silinen geri gelmez)", () => {
+  const yedek = (kayitlar: Record<string, string>) => ({ surum: 1 as const, tarih: "", kayitlar });
+  const depo = (kayitlar: Record<string, string>) => {
+    const d = new Bellek();
+    for (const [k, v] of Object.entries(kayitlar)) d.setItem(k, v);
+    return d as unknown as Storage;
+  };
+
+  it("bu cihazda silinen anahtar, uzak kopya değişmediyse geri gelmez", () => {
+    const taban = yedek({ "favorite-x": '["a"]', "soru-siralama": '{"x":1}' });
+    const d = depo({ "soru-siralama": '{"x":1}' }); // favorite-x deleted here
+    yukle(taban, d, taban);
+    expect(d.getItem("favorite-x")).toBeNull();
+  });
+
+  it("öteki cihazda silinen anahtar burada da silinir", () => {
+    const taban = yedek({ "favorite-x": '["a"]' });
+    const d = depo({ "favorite-x": '["a"]' });
+    yukle(yedek({}), d, taban);
+    expect(d.getItem("favorite-x")).toBeNull();
+  });
+
+  it("listeden silinen öğe, öteki cihaz başka öğe eklese de geri gelmez", () => {
+    const taban = yedek({ "favorite-x": '["a","b"]' });
+    const d = depo({ "favorite-x": '["a"]' }); // b removed here
+    yukle(yedek({ "favorite-x": '["a","b","c"]' }), d, taban); // c added there
+    expect(JSON.parse(d.getItem("favorite-x") ?? "[]")).toEqual(["a", "c"]);
+  });
+
+  it("nesnede silinen kayıt geri gelmez, öteki cihazın yenisi eklenir", () => {
+    const taban = yedek({ "cevaplar-u-d": '{"s1":{"zaman":1},"s2":{"zaman":1}}' });
+    const d = depo({ "cevaplar-u-d": '{"s1":{"zaman":1}}' }); // s2 cleared here
+    yukle(yedek({ "cevaplar-u-d": '{"s1":{"zaman":1},"s2":{"zaman":1},"s3":{"zaman":5}}' }), d, taban);
+    expect(Object.keys(JSON.parse(d.getItem("cevaplar-u-d") ?? "{}")).sort()).toEqual(["s1", "s3"]);
+  });
+
+  it("taban yoksa eski davranış: yalnız ekler", () => {
+    const d = depo({});
+    yukle(yedek({ "favorite-x": '["a"]' }), d);
+    expect(d.getItem("favorite-x")).toBe('["a"]');
+  });
+});

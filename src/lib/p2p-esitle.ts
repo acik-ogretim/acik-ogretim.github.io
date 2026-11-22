@@ -3,7 +3,7 @@
 // The relays only see a hash of the passphrase; the connection offers and the backup are encrypted with it.
 
 import { coz, sifrele } from "./bulut-esitle";
-import { topla, yukle } from "./yedek";
+import { tabanOku, tabanYaz, topla, yukle } from "./yedek";
 
 async function odaKimligi(parola: string): Promise<string> {
   const h = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(`acik-ogretim-esitleme:${parola}`));
@@ -19,7 +19,8 @@ export async function p2pBaslat(parola: string, durum: (metin: string) => void):
   const kanal = room.makeAction<string>("kayitlar");
   kanal.onMessage(async (veri) => {
     try {
-      const n = yukle(await coz(JSON.parse(veri), parola));
+      const n = yukle(await coz(JSON.parse(veri), parola), localStorage, await tabanOku("p2p"));
+      await tabanYaz("p2p", topla());
       durum(`Öteki cihazdan ${n} kayıt geldi ve birleşti.`);
     } catch (e) {
       durum(e instanceof Error ? e.message : "Gelen kayıt okunamadı.");

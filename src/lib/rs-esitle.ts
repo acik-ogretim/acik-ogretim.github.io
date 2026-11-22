@@ -3,7 +3,7 @@
 // database; the browser talks to the learner's storage directly with the learner's own authorization.
 
 import type RemoteStorage from "remotestoragejs";
-import { topla, yukle } from "./yedek";
+import { tabanOku, tabanYaz, topla, yukle } from "./yedek";
 
 const KAPSAM = "acik-ogretim";
 const DOSYA = "kayitlar.json";
@@ -58,9 +58,11 @@ export async function rsEsitle(): Promise<{ gelen: number }> {
   const f = (await istemci.getFile(DOSYA, false)) as { data?: string | ArrayBuffer } | undefined;
   if (f?.data) {
     const metin = typeof f.data === "string" ? f.data : new TextDecoder().decode(f.data);
-    gelen = yukle(JSON.parse(metin));
+    gelen = yukle(JSON.parse(metin), localStorage, await tabanOku("rs"));
   }
-  await istemci.storeFile("application/json", DOSYA, JSON.stringify(topla()));
+  const anlik = topla();
+  await istemci.storeFile("application/json", DOSYA, JSON.stringify(anlik));
+  await tabanYaz("rs", anlik);
   return { gelen };
 }
 

@@ -2,7 +2,7 @@
 // this site can see (scope drive.appdata, non-sensitive). The site has no database or server: the browser talks to
 // Google directly with the learner's own access token, and the site's owners never see the records.
 
-import { topla, yukle } from "./yedek";
+import { tabanOku, tabanYaz, topla, yukle } from "./yedek";
 
 /** OAuth client id of the site (public value, not a secret). Empty: Google sync is hidden. */
 export const GOOGLE_CLIENT_ID = (import.meta.env.PUBLIC_GOOGLE_CLIENT_ID as string | undefined) ?? "";
@@ -200,8 +200,9 @@ export function googleEsitle(etkilesimli = true): Promise<{ gelen: number }> {
 async function esitle(e: boolean): Promise<{ gelen: number }> {
   let gelen = 0;
   const id = await dosyaBul(e);
-  if (id) gelen = yukle(await (await drive(`/drive/v3/files/${id}?alt=media`, {}, e)).json());
-  const govde = JSON.stringify(topla());
+  if (id) gelen = yukle(await (await drive(`/drive/v3/files/${id}?alt=media`, {}, e)).json(), localStorage, await tabanOku("google"));
+  const anlik = topla();
+  const govde = JSON.stringify(anlik);
   if (id) {
     await drive(`/upload/drive/v3/files/${id}?uploadType=media`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: govde }, e);
   } else {
@@ -221,6 +222,7 @@ async function esitle(e: boolean): Promise<{ gelen: number }> {
   }
   yerel.yaz(SON, String(Date.now()));
   duyur();
+  await tabanYaz("google", anlik);
   return { gelen };
 }
 

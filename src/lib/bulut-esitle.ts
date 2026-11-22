@@ -2,7 +2,7 @@
 // passphrase (PBKDF2 -> AES-GCM) and stored in a secret gist on the learner's own GitHub account, written with their
 // own token. Neither the site nor GitHub can read it; only someone with the passphrase can.
 
-import { topla, yukle, type Yedek } from "./yedek";
+import { tabanOku, tabanYaz, topla, yukle, type Yedek } from "./yedek";
 
 const API = "https://api.github.com";
 const DOSYA = "acik-ogretim-kayitlarim.sifreli.json";
@@ -76,14 +76,16 @@ export async function esitle(token: string, parola: string): Promise<{ gelen: nu
     const g = (await gh(token, `/gists/${id}`)) as { files: Record<string, { content?: string; raw_url?: string; truncated?: boolean }> };
     const f = g.files[DOSYA];
     const icerik = f?.truncated && f.raw_url ? await (await fetch(f.raw_url)).text() : f?.content;
-    if (icerik) gelen = yukle(await coz(JSON.parse(icerik) as Sifreli, parola));
+    if (icerik) gelen = yukle(await coz(JSON.parse(icerik) as Sifreli, parola), localStorage, await tabanOku("bulut"));
   }
-  const yeni = await sifrele(topla(), parola);
+  const anlik = topla();
+  const yeni = await sifrele(anlik, parola);
   const govde = JSON.stringify({ description: ACIKLAMA, files: { [DOSYA]: { content: JSON.stringify(yeni) } } });
   if (id) await gh(token, `/gists/${id}`, { method: "PATCH", body: govde });
   else {
     const g = (await gh(token, "/gists", { method: "POST", body: JSON.stringify({ ...JSON.parse(govde), public: false }) })) as { id: string };
     localStorage.setItem(GIST_ANAHTARI, g.id);
   }
+  await tabanYaz("bulut", anlik);
   return { gelen, tarih: yeni.tarih };
 }
