@@ -1,5 +1,5 @@
 // Çalışma odası paketi (docs/konu-anlatimi.md, "Çalışma odası prototipi").
-// Ders kitabı (üniteler 1-7), kendi vize özet videomuzun zaman kodlu dökümü, konu başına çalışma malzemesi
+// Ders kitabı (ATA üniteler 1-7, öteki üniversiteler bütün kitap), kendi vize özet videomuzun zaman kodlu dökümü, konu başına çalışma malzemesi
 // (kitap/etkinlik) ve çıkmış soru kimliklerini tek dosyada toplar: src/data/calisma-odasi/<ders>.json.
 // CI bağımlılığı değildir: dosyalar commit'lenir, sayfa yalnız bunları okur. Yeniden üretmek için:
 //   node scripts/calisma-odasi-paketle.mjs [ders ...]
@@ -24,7 +24,9 @@ const videolu = Object.keys(videoKaydi).filter((k) => k.startsWith(`${UNI}/`)).m
 const DERSLER = [...new Set(videolu)];
 const TUR_ADLARI = { "kisa-ozet": "Kısa özet", "uzun-anlatim": "Uzun anlatım", "soru-cozum": "Soru çözümü", diger: "Video" };
 const turBul = (baslik, ad = "") => (/soru/i.test(baslik + ad) ? "soru-cozum" : /uzun/i.test(baslik + ad) ? "uzun-anlatim" : /özet|ozet|vize|kisa/i.test(baslik + ad) ? "kisa-ozet" : "diger");
-const SON_UNITE = 7;
+// Last unit packed. ATA study rooms keep the vize range (1-7) they were built with; other universities pack the whole
+// book: Zeki (22 Nov 2026): "8 ünitelik dersin 7 ünitesi hazırlanmışsa çöpe atılır". Override with CALISMA_SON_UNITE.
+const SON_UNITE = Number(process.env.CALISMA_SON_UNITE ?? (UNI === "ataturk-aof" ? 7 : 99));
 
 const parcala = await import("../src/lib/konu/parcala.ts");
 const { calismaCoz } = await import("../src/lib/konu/calisma.ts");
