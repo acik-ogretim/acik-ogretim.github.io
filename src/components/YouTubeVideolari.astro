@@ -1,25 +1,48 @@
 ---
 // Course video summaries on our YouTube channel, linked both ways with the video descriptions
-// (Zeki, 19 Nov 2026: grow channel subscribers from the site). Data: src/data/youtube-videolar.json,
-// written by auzeff-tui scripts/site_youtube_json.py.
+// (Zeki, 19 Nov 2026: grow channel subscribers from the site; 22 Nov 2026: show the chapter timings too).
+// Data: src/data/youtube-videolar.json, written by auzeff-tui scripts/site_youtube_json.py.
 import veri from "../data/youtube-videolar.json";
 
+interface Bolum { sn: number; baslik: string }
+interface Video { baslik: string; url: string; liste?: string | null; bolumler?: Bolum[] }
 interface Props { anahtar: string }
 const { anahtar } = Astro.props;
-const videolar = (veri.dersler as Record<string, { baslik: string; url: string; liste?: string | null }[]>)[anahtar] ?? [];
+const videolar = (veri.dersler as Record<string, Video[]>)[anahtar] ?? [];
 const kimlik = (url: string) => url.split("/").pop() ?? "";
+const zaman = (sn: number) => {
+  const s = sn % 60, d = Math.floor(sn / 60) % 60, sa = Math.floor(sn / 3600);
+  const iki = (n: number) => String(n).padStart(2, "0");
+  return sa ? `${sa}:${iki(d)}:${iki(s)}` : `${iki(d)}:${iki(s)}`;
+};
 ---
 {videolar.length > 0 && (
   <section class="mt-6 rounded-3xl border border-line bg-card p-4" aria-labelledby="video-ozet-baslik">
     <h2 id="video-ozet-baslik" class="text-base font-semibold text-theme mb-3">Bu dersin video özeti</h2>
     <ul class="grid gap-3 sm:grid-cols-2">
       {videolar.map((v) => (
-        <li>
+        <li class="min-w-0">
           <a href={v.url} target="_blank" rel="noopener" class="flex gap-3 items-center group">
             <img src={`https://i.ytimg.com/vi/${kimlik(v.url)}/mqdefault.jpg`} alt="" width="160" height="90"
               loading="lazy" class="rounded-md w-32 h-18 object-cover shrink-0" />
             <span class="text-sm text-theme group-hover:underline line-clamp-2">{v.baslik}</span>
           </a>
+          {v.bolumler && v.bolumler.length > 1 && (
+            <details class="mt-2">
+              <summary class="text-sm text-muted-theme cursor-pointer">Bölümler ({v.bolumler.length})</summary>
+              <ol class="mt-2 grid gap-1">
+                {v.bolumler.map((b) => (
+                  <li>
+                    <a href={`${v.url}?t=${b.sn}`} target="_blank" rel="noopener"
+                      class="flex gap-2 text-sm text-theme hover:underline">
+                      <span class="tabular-nums text-muted-theme shrink-0">{zaman(b.sn)}</span>
+                      <span class="line-clamp-2">{b.baslik}</span>
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </details>
+          )}
         </li>
       ))}
     </ul>
