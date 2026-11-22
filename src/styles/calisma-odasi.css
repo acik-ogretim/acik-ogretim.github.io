@@ -1775,3 +1775,77 @@ ol.co-ak-liste {
 .co-ust-ikon:focus:not(:focus-visible) {
   outline: none;
 }
+
+/* Wide-screen split (Zeki, 22 Nov 2026): a draggable divider between video and reading column (split-grid writes the
+   inline grid-template-columns), the transcript under the video, and no empty left column when the course has no media.
+   States that hide the left column use !important because the dragged ratio is an inline style. */
+.co-ayirici {
+  display: none;
+}
+@media (max-width: 1023.98px) {
+  .co-ana {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+@media (min-width: 1024px) {
+  .co-ana {
+    grid-template-columns: minmax(380px, 5fr) 9px minmax(0, 6fr);
+  }
+  .co-ayirici {
+    display: block;
+    position: relative;
+    cursor: col-resize;
+    touch-action: none;
+    background: transparent;
+  }
+  .co-ayirici::after {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    left: 4px;
+    width: 1px;
+    background: var(--border-color);
+    transition: background-color 120ms ease, width 120ms ease, left 120ms ease;
+  }
+  .co-ayirici:hover::after,
+  .co-ayirici:focus-visible::after {
+    left: 3px;
+    width: 3px;
+    background: var(--primary-color);
+  }
+  .co-ayirici:focus-visible {
+    outline: none;
+  }
+  .co-sol {
+    border-right: 0;
+  }
+  .co.co-videosuz .co-ana,
+  .co[data-medyasiz] .co-ana,
+  .co:has(.co-video-kab[data-ortam='youtube'][data-kucuk]) .co-ana {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .co.co-videosuz .co-sol,
+  .co.co-videosuz .co-ayirici,
+  .co[data-medyasiz] .co-ayirici,
+  .co:has(.co-video-kab[data-ortam='youtube'][data-kucuk]) .co-ayirici {
+    display: none;
+  }
+  /* transcript under the video: the video stays on top while the transcript scrolls below it */
+  .co[data-dokum-solda] .co-sol > .co-video-kab {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: var(--bg-color);
+  }
+  .co[data-dokum-solda] .co-sekmeler [data-sekme='dokum'] {
+    display: none;
+  }
+  .co[data-dokum-solda] .co-sol > #co-p-dokum {
+    display: block;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .co-ayirici::after {
+    transition: none;
+  }
+}

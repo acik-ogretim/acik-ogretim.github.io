@@ -82,6 +82,8 @@ const sekmeler = [
         <section class="co-panel co-su-an" data-panel="su-an" id="co-su-an" aria-label="Şu an"></section>
       </div>
 
+      {paket.medyalar.length ? <div class="co-ayirici" role="separator" aria-orientation="vertical" aria-label="Bölmeleri boyutlandır" aria-valuemin="25" aria-valuemax="75" tabindex="0" title="Sürükle; çift tıkla sıfırla"></div> : null}
+
       <div class="co-sag">
         <div class="co-sekmeler" role="tablist" aria-label="Bölümler" id="co-sekmeler">
           {sekmeler.map((s) => (
@@ -150,5 +152,7 @@ const sekmeler = [
 
 <script>
   import { calismaOdasiBaslat } from "../../../../scripts/calisma-odasi";
+  import { calismaYerlesimBaslat } from "../../../../scripts/calisma-yerlesim";
   calismaOdasiBaslat();
+  calismaYerlesimBaslat();
 </script>

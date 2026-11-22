@@ -16,6 +16,9 @@ const cikti = process.env.CALISMA_CIKTI ? resolve(kok, process.env.CALISMA_CIKTI
 // Üniversite: varsayılan ATA AÖF; başka üniversite için CALISMA_UNI=anadolu-aof node scripts/calisma-odasi-paketle.mjs <ders>
 const UNI = process.env.CALISMA_UNI ?? "ataturk-aof";
 // Vize dersleri: kendi YouTube videosu olan Atatürk AÖF dersleri (src/data/youtube-videolar.json) ve döküm dosyası olanlar.
+// Per-course extra data (anlatim, gorsel, adlar) is named like the package: "<ders>" for ATA AÖF, "<uni>--<ders>" for
+// the other universities, so an ATA file with the same course id is never read for another university.
+const ekVeriYolu = (tur, ders) => join(kok, "data", "calisma-odasi", tur, `${UNI === "ataturk-aof" ? ders : `${UNI}--${ders}`}.json`);
 const videoKaydi = JSON.parse(readFileSync(join(kok, "src", "data", "youtube-videolar.json"), "utf8")).dersler ?? {};
 const videolu = Object.keys(videoKaydi).filter((k) => k.startsWith(`${UNI}/`)).map((k) => k.split("/")[1]);
 const DERSLER = [...new Set(videolu)];
@@ -291,7 +294,7 @@ function paketle(ders) {
     k.goster = [k.unite, ...Array.from(say.slice(1, derinlik), (n) => n || 1)].join("."); // Array.from fills holes left by skipped levels
   }
   // Written topic explanations: data/calisma-odasi/anlatim/<ders>.json ({no: markdown}) from scripts/konu-anlatimi-uret.py.
-  const anlatimYolu = join(kok, "data", "calisma-odasi", "anlatim", `${ders}.json`);
+  const anlatimYolu = ekVeriYolu("anlatim", ders);
   if (existsSync(anlatimYolu)) {
     const anlatimlar = oku(anlatimYolu);
     for (const k of konuListesi) if (typeof anlatimlar[k.no] === "string") k.anlatim = anlatimlar[k.no];
@@ -299,7 +302,7 @@ function paketle(ders) {
   }
   // Topic drawings: data/calisma-odasi/gorsel/<ders>.json ({no: url}) written with the image files by auzeff-tui's
   // scripts/konu-gorseli-aktar.py into public/calisma/<ders>/gorsel/.
-  const gorselYolu = join(kok, "data", "calisma-odasi", "gorsel", `${ders}.json`);
+  const gorselYolu = ekVeriYolu("gorsel", ders);
   if (existsSync(gorselYolu)) {
     const gorseller = oku(gorselYolu);
     for (const k of konuListesi) if (typeof gorseller[k.no] === "string") k.gorsel = gorseller[k.no];
@@ -308,7 +311,7 @@ function paketle(ders) {
   if (takma.size) console.log(`[calisma-odasi] ${ders}: ${takma.size} bölünmüş başlık ya da boş konu birleştirildi (${[...takma.keys()].join(", ")})`);
   // Proper names (people, civilizations, places, events, works...): data/calisma-odasi/adlar/<ders>.json from scripts/adlar-uret.py.
   // They become underlined terms like concepts, with tur set so the page can list them apart.
-  const adlarYolu = join(kok, "data", "calisma-odasi", "adlar", `${ders}.json`);
+  const adlarYolu = ekVeriYolu("adlar", ders);
   if (existsSync(adlarYolu)) {
     const konuVar = new Set(konuListesi.map((k) => k.no));
     let adSayisi = 0;

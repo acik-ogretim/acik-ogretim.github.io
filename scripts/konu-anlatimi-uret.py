@@ -15,6 +15,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 KOK = Path(__file__).resolve().parent.parent
+MODEL = "gemini-4-hydrogen"
 ATLA = re.compile(r"^(değerlendirme soruları|yararlanılan kaynaklar|yararlanılan ve önerilen kaynaklar|kaynakça|özet|özet \(devamı\))$", re.I)
 
 ISTEM = """Sen bir üniversite dersinin konu anlatımını yazan deneyimli bir öğretim elemanısın. Ders: {ders}. Konu: {no} {baslik}.
@@ -51,7 +52,7 @@ def dokum_metni(paket: dict, no: str) -> str:
 def uret(paket: dict, k: dict) -> str:
     istem = ISTEM.format(ders=paket["ders"], no=k.get("goster") or k["no"], baslik=k["baslik"], kitap=k.get("metin") or "(yok)", kitap_sozcuk=len((k.get("metin") or "").split()), dokum=dokum_metni(paket, k["no"]) or "(yok)")
     for deneme in range(3):
-        r = subprocess.run(["gapi", "generate", "--stdin", "--model", "gemini-3.8-flash"], input=istem, capture_output=True, text=True, timeout=600)
+        r = subprocess.run(["gapi", "generate", "--stdin", "--model", MODEL], input=istem, capture_output=True, text=True, timeout=600)
         metin = re.sub(r"^```(?:markdown)?\s*|\s*```$", "", r.stdout.strip())
         # The CLI's non-streamed output wraps the text in interaction metadata; never store that.
         if r.returncode == 0 and len(metin) > 80 and not re.search(r"^(steps:|signature:|model_output|service_tier:)", metin, re.M):
@@ -64,7 +65,10 @@ def main() -> None:
     ap.add_argument("ders")
     ap.add_argument("--konu", nargs="*", default=[])
     ap.add_argument("--paralel", type=int, default=12)
+    ap.add_argument("--model", default="gemini-4-hydrogen", help="Gemini model (Flash class by default)")
     a = ap.parse_args()
+    global MODEL
+    MODEL = a.model
     paket = json.loads((KOK / "src" / "data" / "calisma-odasi" / f"{a.ders}.json").read_text())
     yol = KOK / "data" / "calisma-odasi" / "anlatim" / f"{a.ders}.json"
     yol.parent.mkdir(parents=True, exist_ok=True)
