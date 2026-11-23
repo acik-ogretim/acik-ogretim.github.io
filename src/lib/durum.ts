@@ -1,7 +1,7 @@
 export const metricLabels = {
   book: "Kitap ayıklandı",
   summary: "Özet",
-  workbook: "Çalışma kitabı",
+  workbook: "Çalışma etkinliği",
   text: "Uzun anlatım metni",
   audio: "Uzun anlatım sesi",
   transcript: "Uzun anlatım dökümü",
