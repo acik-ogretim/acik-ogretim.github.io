@@ -1851,7 +1851,10 @@ ol.co-ak-liste {
 }
 
 /* Video in its own always-on-top window (Document Picture-in-Picture, Zeki 23 Nov 2026): the button sits after the speed
-   button; while the window is open the page keeps only a one-line note with a way back. */
+   button; while the window is open the page player hides and a one-line note offers the way back. */
+.co-video-kab[data-pip] #co-oynatici-kap {
+  display: none;
+}
 .co-pip-ac {
   position: absolute;
   top: 8px;

@@ -14,8 +14,7 @@ type YTOynatici = {
   getCurrentTime: () => number;
   seekTo: (sn: number, ileri: boolean) => void;
   playVideo: () => void;
-  loadVideoById?: (id: string, bas?: number) => void;
-  cueVideoById?: (id: string, bas?: number) => void;
+  loadVideoById?: (id: string) => void;
   pauseVideo?: () => void;
   getPlayerState?: () => number;
   setPlaybackRate?: (hiz: number) => void;
@@ -2061,40 +2060,47 @@ export function calismaOdasiBaslat(): void {
   // Document Picture-in-Picture: the YouTube player moves to an always-on-top window, the page keeps the text (Zeki, 23 Nov 2026)
   const pipDugme = document.getElementById("co-pip-ac");
   const oynaticiKap = document.getElementById("co-oynatici-kap");
-  const oynaticiYuva = oynaticiKap?.parentElement;
-  if (pipDugme && oynaticiKap && oynaticiYuva && pipDestekli()) {
+  if (pipDugme && oynaticiKap && pipDestekli()) {
     pipDugme.hidden = false;
     const pipYer = document.createElement("div");
     pipYer.className = "co-pip-yer";
     pipYer.hidden = true;
     pipYer.innerHTML = '<span>Video ayrı pencerede oynuyor.</span><button type="button" class="co-pip-geri">Sayfaya geri al</button>';
-    oynaticiYuva.prepend(pipYer);
+    oynaticiKap.before(pipYer);
     const ac = (): void =>
       void pipAcKapat({
-        kap: oynaticiKap,
-        yuva: oynaticiYuva,
-        konum: () => {
+        genislik: oynaticiKap.getBoundingClientRect().width,
+        durum: () => {
+          if (video?.tur !== "youtube" || !ytOynatici) return null;
           try {
-            return { sn: ytOynatici?.getCurrentTime() ?? 0, caliyor: caliyorMu() };
+            return { id: video.kaynak, sn: ytOynatici.getCurrentTime(), caliyor: caliyorMu(), hiz: kayitliHiz() };
           } catch {
-            return { sn: 0, caliyor: false };
+            return { id: video.kaynak, sn: 0, caliyor: false, hiz: 1 };
           }
         },
-        surdur: (sn, cal) => {
-          const id = video?.tur === "youtube" ? video.kaynak : "";
-          if (!ytOynatici || !id) return;
+        acildi: (vekil) => {
           try {
-            if (cal) ytOynatici.loadVideoById?.(id, sn);
-            else ytOynatici.cueVideoById?.(id, sn);
-            ytHizUygula(kayitliHiz());
+            ytOynatici?.pauseVideo?.();
           } catch {
             /* player not ready */
           }
+          oynatici = vekil; // transcript, topic jumps and agent tools now follow the window's player
+          videoKab.setAttribute("data-pip", "");
+          pipYer.hidden = false;
+          pipDugme.setAttribute("aria-pressed", "true");
+          requestAnimationFrame(() => yukseklik());
         },
-        degisti: (acik) => {
-          videoKab.toggleAttribute("data-pip", acik);
-          pipYer.hidden = !acik;
-          pipDugme.setAttribute("aria-pressed", String(acik));
+        kapandi: (sn, cal) => {
+          oynatici = ytOynatici;
+          videoKab.removeAttribute("data-pip");
+          pipYer.hidden = true;
+          pipDugme.setAttribute("aria-pressed", "false");
+          try {
+            ytOynatici?.seekTo(sn, true);
+            if (cal) ytOynatici?.playVideo();
+          } catch {
+            /* player not ready */
+          }
           requestAnimationFrame(() => yukseklik());
         },
       }).catch(() => {
