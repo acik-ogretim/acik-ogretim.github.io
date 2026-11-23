@@ -40,12 +40,33 @@ const KANAL_ADRESI = "https://quiz.zeki.website/duzenle";
 const azaltilmis = (): boolean => matchMedia("(prefers-reduced-motion: reduce)").matches;
 const genis = (): boolean => matchMedia("(min-width: 1024px)").matches;
 
-export function calismaOdasiBaslat(): void {
+/** Reads the study room data: a separate JSON file (data-src) since 23 Nov 2026, inline JSON for older pages. */
+async function paketiOku(veriEl: HTMLElement): Promise<CalismaPaketi> {
+  const adres = veriEl.dataset.src;
+  const ham: unknown = adres ? await fetch(adres).then((r) => {
+    if (!r.ok) throw new Error(`Çalışma verisi yüklenemedi (${r.status})`);
+    return r.json();
+  }) : JSON.parse(veriEl.textContent ?? "{}");
+  return PaketSemasi.parse(ham);
+}
+
+export async function calismaOdasiBaslat(): Promise<void> {
   const kok = document.getElementById("co");
   const veriEl = document.getElementById("co-veri");
   if (!kok || !veriEl) return;
+  let paket: CalismaPaketi;
+  try {
+    paket = await paketiOku(veriEl);
+  } catch {
+    kok.setAttribute("data-veri-hatasi", "");
+    const not = document.createElement("p");
+    not.className = "co-veri-hatasi";
+    not.setAttribute("role", "alert");
+    not.textContent = "Çalışma odasının verisi yüklenemedi. Bağlantını denetleyip sayfayı yenile.";
+    kok.prepend(not);
+    return;
+  }
   katmanlariBagla();
-  const paket: CalismaPaketi = PaketSemasi.parse(JSON.parse(veriEl.textContent ?? "{}"));
   const ders = paket.ders;
   const dersYolu = kok.dataset.dersYolu ?? "/";
   const motor = kavramMotoru(paket.kavramlar);

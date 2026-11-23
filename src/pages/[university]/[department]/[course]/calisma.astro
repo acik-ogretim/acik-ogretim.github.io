@@ -42,7 +42,7 @@ export async function getStaticPaths() {
 
 const { dersKodu, uniAdi, bolumAdi, bolumSayisi } = Astro.props;
 const { paket, dersAdi, dersYolu } = Astro.props;
-const veriJson = JSON.stringify(paket).replace(/</g, "\\u003c");
+const veriAdresi = `/calisma-veri/${paket.uni}/${paket.ders}/paket.json`;
 const simgeler: SimgeAdi[] = ["BookOpen", "CircleHelp", "FileText", "Highlighter", "Trash2", "Check", "X", "ChevronLeft", "ChevronRight", "ArrowRight", "WifiOff", "Play", "Link", "ExternalLink", "ListChecks", "Star", "Copy", "StickyNote", "Search", "Printer", "ArrowDown", "ChevronDown", "Headphones", "Pause", "RotateCcw", "RotateCw", "AudioLines", "Square"];
 const sekmeler = [
   { id: "akis", ad: "Konu konu" },
@@ -146,13 +146,14 @@ const sekmeler = [
     <div hidden id="co-simgeler">
       {simgeler.map((ad) => <span data-simge={ad}><Simge ad={ad} size={18} /></span>)}
     </div>
-    <script is:inline type="application/json" id="co-veri" set:html={veriJson} />
+    <script is:inline type="application/json" id="co-veri" data-src={veriAdresi}></script>
+    <link rel="preload" href={veriAdresi} as="fetch" type="application/json" crossorigin="anonymous" />
   </div>
 </Layout>
 
 <script>
   import { calismaOdasiBaslat } from "../../../../scripts/calisma-odasi";
   import { calismaYerlesimBaslat } from "../../../../scripts/calisma-yerlesim";
-  calismaOdasiBaslat();
-  calismaYerlesimBaslat();
+  // the data arrives as its own JSON file now; the layout waits for it so the panes measure real content
+  void calismaOdasiBaslat().finally(() => calismaYerlesimBaslat());
 </script>
