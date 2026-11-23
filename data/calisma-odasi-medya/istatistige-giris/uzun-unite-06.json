@@ -1,0 +1,574 @@
+{
+ "v": 1,
+ "medya": "uzun-unite-06",
+ "satirlar": [
+  {
+   "bas": 0.0,
+   "bit": 9.87,
+   "konusmaci": "Can",
+   "metin": "Az önce serideki tüm birimleri hesaba katan parametrik ölçüleri inceledik; peki Ayşe, verileri özetlerken her zaman serideki bütün rakamları kullanmak zorunda mıyız?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 9.87,
+   "bit": 22.9,
+   "konusmaci": "Ayşe",
+   "metin": "Hiç zorunda değiliz Can. Parametrik merkezî eğilim ölçüleri serideki tüm verilerden elde edilir. Parametrik olmayan merkezî eğilim ölçüleri ise serideki tüm verilerden değil, bazı verilerden elde edilen ortalamalardır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 22.9,
+   "bit": 25.95,
+   "konusmaci": "Can",
+   "metin": "Peki tüm verileri kullanmamak bize ne kazandırıyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 25.95,
+   "bit": 46.46,
+   "konusmaci": "Ayşe",
+   "metin": "Bu tür ortalamalar serideki tek bir rakamın değişiminden ve aşırı uçlardan direkt etkilenmezler. Örneğin aritmetik ortalama, kareli ortalama ve harmonik ortalama gibi parametrik ölçüler veri setindeki aşırı uçlardan ve tek bir rakamın değişiminden doğrudan etkilenir. Ama parametrik olmayan merkezî eğilim ölçüleri bunlardan direkt etkilenmez.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 46.46,
+   "bit": 52.32,
+   "konusmaci": "Can",
+   "metin": "Harika bir özellikmiş. Peki parametrik olmayan merkezî eğilim ölçüleri kaç grupta sınıflandırılır?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 52.32,
+   "bit": 58.6,
+   "konusmaci": "Ayşe",
+   "metin": "Parametrik olmayan merkezî eğilim ölçüleri üç grupta sınıflandırılır. Bunlar Mod, Medyan ve Kantillerdir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 58.6,
+   "bit": 61.7,
+   "konusmaci": "Can",
+   "metin": "Kantillerin de kendi içinde bir ayrımı var değil mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 61.7,
+   "bit": 74.56,
+   "konusmaci": "Ayşe",
+   "metin": "Evet, kantiller de kendi aralarında üç grupta incelenirler. Bunlar Kartiller, Desiller ve Pörsentillerdir. Dikkat edersen aritmetik ortalama, kareli ortalama veya harmonik ortalama bu grupların hiçbirinde yer almaz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 74.56,
+   "bit": 79.48,
+   "konusmaci": "Can",
+   "metin": "Mod kelimesi bana günlük hayatta kullandığımız moda kelimesini çağrıştırıyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 79.48,
+   "bit": 98.21,
+   "konusmaci": "Ayşe",
+   "metin": "Çok haklısın, zaten herkesin çok iyi bildiği moda kelimesi moddan türetilmiş bir kelimedir. En yaygın kullanılan, en çok beğenilen, en yaygın gözlenen anlamına gelir. İstatistikte mod, incelenen bir seride en fazla tekrar eden ya da başka bir ifadeyle frekansı en yüksek olan gözlem değeridir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 98.21,
+   "bit": 100.25,
+   "konusmaci": "Can",
+   "metin": "Modun başka bir adı daha var mı?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 100.25,
+   "bit": 114.82,
+   "konusmaci": "Ayşe",
+   "metin": "Evet, grafiksel olarak gösterildiğinde grafiğin tepe noktasında olduğundan tepe değer olarak da ifade edilebilir. Dikkat et, veriler küçükten büyüğe sıralandığında tam orta noktaya karşılık gelen değer mod değildir, o medyandır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 114.82,
+   "bit": 117.83,
+   "konusmaci": "Can",
+   "metin": "Peki her seride mutlaka tek bir mod mu bulunur?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 117.83,
+   "bit": 132.21,
+   "konusmaci": "Ayşe",
+   "metin": "Hayır. Bir seride birden fazla mod olabileceği gibi seride hiç mod bulunmayabilir. Eğer bir seride verilerin hepsi birbirinden farklı ise bu seride mod yoktur. Bu tür serilerde modun merkezî eğilim ölçüsü olarak değeri olmaz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 132.21,
+   "bit": 135.85,
+   "konusmaci": "Can",
+   "metin": "Basit ve sınıflandırılmış serilerde modu nasıl buluyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 135.85,
+   "bit": 173.37,
+   "konusmaci": "Ayşe",
+   "metin": "Basit seride en çok tekrar eden değere bakıyoruz. Örneğin çalışma saatleri dört, dört, dört, altı, altı, altı, altı ve on tane sekiz ile dört tane on şeklinde verilmişse, en çok tekrar eden değer sekiz olduğu için mod sekizdir. Ya da on beş balığın yaşlarında bir yaşı yedi kez tekrar edip diğerleri daha az tekrar ediyorsa mod birdir. Karışık verilen bir seride de yine en çok tekrar eden sayıyı sayıp buluruz. Sınıflandırılmış seride ise doğrudan frekansı en yüksek olan gözlem değerine bakarız. Mesela yaş dağılımında yirmi bir yaşın frekansı seksen ile en yüksekse, mod yirmi birdir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 173.37,
+   "bit": 179.95,
+   "konusmaci": "Can",
+   "metin": "Gruplandırılmış serilerde işler biraz değişiyor sanırım, çünkü ortada tek bir değer değil sınıflar var.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 179.95,
+   "bit": 211.59,
+   "konusmaci": "Ayşe",
+   "metin": "Aynen öyle. Gruplandırılmış seride içerisinde en fazla değer bulunduran sınıf, mod sınıfıdır. Yani mod sınıfı, içerisinde modu bulunduran sınıftır. Mod sınıfını belirledikten sonra formül kullanırız. Formülde dört bileşen var: Mod sınıfının alt sınırı, delta bir dediğimiz mod sınıfının frekansı ile mod sınıfından bir önceki sınıfın frekansı arasındaki fark, delta iki dediğimiz mod sınıfının frekansı ile bir sonraki grubun frekansı arasındaki fark ve son olarak mod sınıfının sınıf büyüklüğü.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 211.59,
+   "bit": 216.19,
+   "konusmaci": "Can",
+   "metin": "Formülde bu değerleri nasıl işleme sokuyoruz? Bir örnekle anlatır mısın?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 216.19,
+   "bit": 258.24,
+   "konusmaci": "Ayşe",
+   "metin": "Tabii. Mod sınıfının alt sınırına bir kesir ekliyoruz. Kesrin payında delta bir, paydasında ise delta bir ile delta ikinin toplamı yer alıyor ve bu kesri sınıf büyüklüğü ile çarpıyoruz. Örneğin birden üçe frekans yirmi, üçten beşe yirmi beş, beşten yediye on, yediden dokuza beş olsun. En yüksek frekans yirmi beş olduğu için mod sınıfı üç ile beş aralığıdır. Alt sınır üç, sınıf büyüklüğü beş eksi üçten ikidir. Delta bir, yirmi beş eksi yirmiden beştir. Delta iki, yirmi beş eksi ondan on beştir. Beşi, beş artı on beşe yani yirmiye bölüp sınıf büyüklüğü olan ikiyle çarparız, sıfır tam onda beş çıkar. Alt sınır üçe eklediğimizde mod üç tam onda beş olur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 258.24,
+   "bit": 262.46,
+   "konusmaci": "Can",
+   "metin": "Harika, çok net anlaşıldı. Bir örnek daha yapalım mı, tam otursun?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 262.46,
+   "bit": 299.59,
+   "konusmaci": "Ayşe",
+   "metin": "Yapalım. Montaj süreleri bir ile dört saat arası üç, dört ile yedi arası yedi, yedi ile on arası dört, on ile on üç arası altı olsun. En yüksek frekans yedi olduğu için mod sınıfı dört ile yedi aralığıdır. Alt sınır dört, sınıf büyüklüğü yedi eksi dörtten üçtür. Bir önceki frekansla fark yani delta bir, yedi eksi üçten dörttür. Bir sonraki frekansla fark yani delta iki, yedi eksi dörtten üçtür. Dördü, dört artı üçe yani yediye bölüp sınıf büyüklüğü üçle çarparız, on iki bölü yediden bir tam yüzde yetmiş bir gelir. Alt sınır dörde ekleyince mod beş tam yüzde yetmiş bir çıkar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 299.59,
+   "bit": 303.23,
+   "konusmaci": "Can",
+   "metin": "Peki formül kullanmadan grafikle de modu bulabilir miyiz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 303.23,
+   "bit": 321.96,
+   "konusmaci": "Ayşe",
+   "metin": "Evet, mod grafik ile de tespit edilebilir. Verilmiş olan grubun histogramı üzerindeki frekans ekseni en büyük olan kutucuğun üst köşe noktaları ile komşu kutucuklara değdiği en üst noktaları çapraz bir şekilde birleştiririz. Oluşan kesişim noktasının yatay eksendeki karşılığı serinin modudur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 321.96,
+   "bit": 324.11,
+   "konusmaci": "Can",
+   "metin": "Gelelim medyana. Medyan ne demektir?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 324.11,
+   "bit": 339.8,
+   "konusmaci": "Ayşe",
+   "metin": "Veriler büyükten küçüğe veya küçükten büyüğe doğru sıralandığında serinin tam ortasına karşılık gelen değere medyan ya da ortanca denir. Medyan seriyi iki eş parçaya böler. Medyanı bulabilmek için serideki değerler öncelikle mutlaka büyüklük sırasına konmalıdır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 339.8,
+   "bit": 344.83,
+   "konusmaci": "Can",
+   "metin": "Karışık verilmiş bir basit seride sıralama yapmayı unutursak yanlış buluruz o zaman.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 344.83,
+   "bit": 371.04,
+   "konusmaci": "Ayşe",
+   "metin": "Kesinlikle! Örneğin on üç, on dört, on iki, on, dokuz, yedi, altı, beş, dört, üç, bir gibi karışık bir seri verildiğinde önce küçükten büyüğe bir, üç, dört, beş, altı, yedi, dokuz, on, on iki, on üç, on dört diye dizeriz. Büyüklük sırasına göre sıralanmış basit bir seride veri sayısı olan ne tek sayı ise medyan, ne artı bir bölü ikinci değerdir. Bu örnekte on bir veri var; on bir artı bir bölü ikiden altıncı değer olan yedi medyandır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 371.04,
+   "bit": 374.28,
+   "konusmaci": "Can",
+   "metin": "Peki basit serideki veri sayısı çift ise ne yapıyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 374.28,
+   "bit": 394.81,
+   "konusmaci": "Ayşe",
+   "metin": "Örnek hacmi olan ne çift ise medyan, ne bölü ikinci değer ile ne bölü iki artı birinci değerin aritmetik ortalamasıdır. Örneğin küçükten büyüğe sıralanmış on altı verilik bir seride on altı bölü ikiden sekizinci değer on beş, dokuzuncu değer on altı ise; on beş ile on altının aritmetik ortalamasını alırız ve medyan on beş tam onda beş çıkar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 394.81,
+   "bit": 397.86,
+   "konusmaci": "Can",
+   "metin": "Sınıflandırılmış serilerde medyanı nasıl buluyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 397.86,
+   "bit": 412.23,
+   "konusmaci": "Ayşe",
+   "metin": "Sınıflandırılmış seriden medyan bulunabilmesi için öncelikle den az kümülatif frekans değerlerinin bulunması gerekir. Medyanı gösteren ne bölü ikinci değeri ilk kez içerisinde bulunduran kümülatif frekansa sahip olan değer medyan değeridir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 412.23,
+   "bit": 414.32,
+   "konusmaci": "Can",
+   "metin": "Buna da somut bir örnek verelim mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 414.32,
+   "bit": 443.53,
+   "konusmaci": "Ayşe",
+   "metin": "Tabii. Diyelim ki paket ağırlıkları yirmi beş, yirmi altı, yirmi yedi ve yirmi sekiz kilo; frekansları ise sırasıyla beş, sekiz, on beş ve altı. Den az kümülatif frekansları topladığımızda beş, on üç, yirmi sekiz ve otuz dört olur. Toplam frekans otuz dörttür. Otuz dört bölü ikiden on yedinci değeri ararız. On yedinci değeri ilk kez içerisinde bulunduran kümülatif frekans yirmi sekizdir. Yirmi sekizin karşısındaki kilo değeri olan yirmi yedi, bu serinin ortanca yani medyan değeridir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 443.53,
+   "bit": 446.94,
+   "konusmaci": "Can",
+   "metin": "Peki gruplandırılmış serilerde medyan nasıl hesaplanıyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 446.94,
+   "bit": 478.85,
+   "konusmaci": "Ayşe",
+   "metin": "Gruplandırılmış seriden de medyanın bulunabilmesi için öncelikle den az kümülatif frekans değerlerinin bulunması gerekir. Kümülatif frekans serisinde ne bölü ikinci değeri ilk kez içerisinde bulunduran sınıf medyan sınıfıdır. Medyan sınıfını bulduktan sonra formüle geçeriz: Medyan sınıfının alt sınırına bir kesir ekleriz. Kesrin payında toplam frekansın yarısı eksi medyan sınıfından bir önceki sınıfın kümülatif frekansı yer alır. Paydada medyan sınıfının frekansı vardır ve bu kesri medyan sınıfının sınıf büyüklüğü ile çarparız.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 478.85,
+   "bit": 487.17,
+   "konusmaci": "Can",
+   "metin": "Hemen bir gruplandırılmış seri örneğiyle pekiştirelim. Mesela sınıflar birbirini takip etmiyorsa, yani kesikli ise alt sınırı nasıl alırız?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 487.17,
+   "bit": 542.24,
+   "konusmaci": "Ayşe",
+   "metin": "Çok güzel bir nokta! Önce sürekli bir örnek yapalım: Bir ile üç arası yirmi, üç ile beş arası yirmi beş, beş ile yedi arası on, yedi ile dokuz arası beş frekans olsun. Toplam frekans altmıştır, yarısı otuzdur. Kümülatif frekanslar yirmi, kırk beş, elli beş, altmış diye gider. Otuzuncu değeri ilk kez içeren kırk beşlik kümülatif frekans yani üç ile beş sınıfı medyan sınıfıdır. Alt sınır üç, önceki kümülatif frekans yirmi, sınıf frekansı yirmi beş, sınıf büyüklüğü ikidir. Otuzdan yirmiyi çıkarır on buluruz, yirmi beşe bölüp ikiyle çarparız sıfır tam onda sekiz eder, alt sınır üçe ekleyince medyan üç tam onda sekiz çıkar. Ama gruplar altı ile sekiz, dokuz ile on bir, on iki ile on dört gibi kesikli verilmişse ve medyan sınıfı on iki ile on dört ise, bir önceki üst sınır on bir ile on ikinin ortası olan on bir tam onda beşi alt sınır, on dört tam onda beşi de üst sınır olarak alırız; sınıf büyüklüğü de üç olur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 542.24,
+   "bit": 546.66,
+   "konusmaci": "Can",
+   "metin": "Medyan seriyi iki eşit parçaya bölüyordu. Peki kantiller ne işe yarıyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 546.66,
+   "bit": 558.02,
+   "konusmaci": "Ayşe",
+   "metin": "Kantiller bir seriyi dört, on ve yüz eşit parçaya ayırarak bu serideki değerlerin dörtte, onda ve yüzde ne kadarının belirli bir değere göre yerini saptamak için kullanılan değerlerdir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 558.02,
+   "bit": 565.08,
+   "konusmaci": "Can",
+   "metin": "Yani dört parçaya ayıranlar kartiller, on parçaya ayıranlar desiller, yüz parçaya ayıranlar da pörsentiller oluyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 565.08,
+   "bit": 581.24,
+   "konusmaci": "Ayşe",
+   "metin": "Tam olarak öyle. Tıpkı medyanda olduğu gibi kantilleri hesaplamak için de serinin büyüklük sırasına dizilmiş olması şarttır. Sınıflandırılmış ve gruplandırılmış serilerde kantilleri gösteren değerler her zaman den az kümülatif frekans değerleri içerisinde aranır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 581.24,
+   "bit": 586.64,
+   "konusmaci": "Can",
+   "metin": "Kartillerle başlayalım. Bir seriyi dört eşit parçaya bölmek için kaç tane bölen gerekir?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 586.64,
+   "bit": 602.67,
+   "konusmaci": "Ayşe",
+   "metin": "Büyüklük sırasına dizilmiş bir serinin dört eşit parçaya bölünmesi sonucu üç kartil bulunur. Küçükten büyüğe doğru sıralanan seriyi dört parçaya bölebilmek için üç bölen gerekir. Birinci kartil ku bir, ikinci kartil ku iki ve üçüncü kartil ku üç ile gösterilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 602.67,
+   "bit": 606.11,
+   "konusmaci": "Can",
+   "metin": "Peki her bir kartil aralığı serinin yüzde kaçını kapsar?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 606.11,
+   "bit": 623.55,
+   "konusmaci": "Ayşe",
+   "metin": "Her bir kartil aralığı serideki rakamların yaklaşık yüzde yirmi beşini kapsar. Dolayısıyla bir seride en küçük yüzde yirmi beşlik dilime düşen en büyük değer birinci kartildir. Ayrıca çok önemli bir eşitlik var: Bir serinin ikinci kartili yani ku iki, aynı zamanda serinin medyanıdır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 623.55,
+   "bit": 626.68,
+   "konusmaci": "Can",
+   "metin": "Basit serilerde kartillerin yerini nasıl buluyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 626.68,
+   "bit": 651.3,
+   "konusmaci": "Ayşe",
+   "metin": "Önce seriyi küçükten büyüğe sıralıyoruz. Veri sayısı büyük ne olmak üzere; birinci kartil ne artı bir bölü dördüncü değerdir. İkinci kartil iki çarpı ne artı bir bölü dördüncü değerdir. Üçüncü kartil ise üç çarpı ne artı bir bölü dördüncü değerdir. Örneğin küçükten büyüğe sıralanmış on beş terimli bir basit seride, on beş artı bir bölü dörtten dördüncü sıradaki eleman birinci kartil değerini verir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 651.3,
+   "bit": 656.09,
+   "konusmaci": "Can",
+   "metin": "Sınıflandırılmış ve gruplandırılmış serilerde bu artı bir eklentisi ne oluyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 656.09,
+   "bit": 677.16,
+   "konusmaci": "Ayşe",
+   "metin": "Sınıflandırılmış ve gruplandırılmış serilerde çok sayıda değer yer aldığı için formüllerdeki artı bir eklentisi yok sayılabilir. Böylece birinci kartil ne bölü dördüncü değer, ikinci kartil iki ne bölü dördüncü değer ve üçüncü kartil üç ne bölü dördüncü değer olur. Den az kümülatif frekans sütununda bu sıraları ilk kez içeren sınıfı buluruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 677.16,
+   "bit": 682.13,
+   "konusmaci": "Can",
+   "metin": "Gruplandırılmış seride kartil sınıfını bulduktan sonra hangi formülü uyguluyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 682.13,
+   "bit": 708.6,
+   "konusmaci": "Ayşe",
+   "metin": "Medyan formülüne çok benzer düzenlenmiş formüllerden yararlanıyoruz. Örneğin birinci kartil için; birinci kartil sınıfının alt sınırına, ne bölü dörtten bir önceki sınıfın kümülatif frekansını çıkarıp birinci kartil sınıfının frekansına böldüğümüz ve sınıf büyüklüğüyle çarptığımız değeri ekliyoruz. Üçüncü kartilde ise sadece ne bölü dört yerine üç ne bölü dört kullanıp üçüncü kartil sınıfının değerleriyle aynı işlemi yapıyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 708.6,
+   "bit": 713.94,
+   "konusmaci": "Can",
+   "metin": "Sırada seriyi on eşit parçaya bölen desiller var. On parça için kaç bölen kullanıyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 713.94,
+   "bit": 730.09,
+   "konusmaci": "Ayşe",
+   "metin": "Büyüklük sırasına dizilmiş bir serinin on eşit parçaya bölünmesi için dokuz bölen gerekir. En küçük desil birinci desil, en büyük desil dokuzuncu desildir. Birinci desil de bir, ikinci desil de iki şeklinde devam ederek dokuzuncu desil de dokuza kadar gösterilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 730.09,
+   "bit": 735.19,
+   "konusmaci": "Can",
+   "metin": "Her bir desil aralığı verilerin ne kadarını kapsıyor ve medyana denk gelen hangisi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 735.19,
+   "bit": 750.29,
+   "konusmaci": "Ayşe",
+   "metin": "Her bir desil aralığı serideki rakamların yaklaşık yüzde onunu kapsar. Beşinci desil aynı zamanda serinin medyanıdır. Bazen beşinci desilin mod olduğu söylenerek yanıltma yapılır, buna çok dikkat etmek gerekir; beşinci desil mod değil, medyandır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 750.29,
+   "bit": 758.46,
+   "konusmaci": "Can",
+   "metin": "Peki dilim yorumlarını nasıl yapmalıyız? Mesela en küçük yüzde on veya en yüksek yüzde yirmilik dilim sorulursa hangi desile bakarız?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 758.46,
+   "bit": 779.82,
+   "konusmaci": "Ayşe",
+   "metin": "Çok güzel soru. En küçük yüzde onu oluşturan değerlerin en büyüğü birinci desildir. En büyük yüzde onu oluşturan değerlerin en küçüğü dokuzuncu desildir. Eğer bize en yüksek puanlı yüzde yirmilik dilime girenlerin alabileceği en düşük puan sorulursa, aşağıdan yüzde seksenlik kısmı geride bırakan noktayı yani sekizinci desili hesaplamamız gerekir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 779.82,
+   "bit": 782.77,
+   "konusmaci": "Can",
+   "metin": "Bunu bir hesaplama örneğiyle gösterebilir misin?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 782.77,
+   "bit": 821.21,
+   "konusmaci": "Ayşe",
+   "metin": "Hemen yapalım. Basit serilerde birinci desil ne artı bir bölü onuncu değer, dokuzuncu desil dokuz çarpı ne artı bir bölü onuncu değerdir. Sınıflandırılmış ve gruplandırılmış serilerde ise çok sayıda değer yer aldığı için artı bir eklentisi yok sayılır. Diyelim ki elli şirketin puan dağılımında sıfır ile beş arası on sekiz, beş ile on arası on iki, on ile on beş arası yirmi şirket var. En yüksek yüzde yirmilik dilimin en düşük puanı yani sekizinci desil sorulsun. Önce sekiz çarpı elli bölü ondan kırkıncı değeri ararız. Kümülatif frekanslar on sekiz, otuz ve ellidir. Kırkıncı değer, on ile on beş sınıfının içerisindedir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 821.21,
+   "bit": 824.65,
+   "konusmaci": "Can",
+   "metin": "Sınıfı bulduk, şimdi formülde yerine koyuyoruz değil mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 824.65,
+   "bit": 850.37,
+   "konusmaci": "Ayşe",
+   "metin": "Evet! Desil sınıfının alt sınırı ondur. Bir önceki sınıfın kümülatif frekansı on sekiz artı on ikiden otuzdur. Desil sınıfının frekansı yirmidir ve sınıf büyüklüğü on eksi beşten beştir. Kırktan otuzu çıkarır on buluruz, sınıf frekansı yirmiye böleriz sıfır tam onda beş olur, sınıf büyüklüğü beş ile çarparız iki tam onda beş gelir. Alt sınır olan ona eklediğimizde sekizinci desili on iki tam onda beş olarak buluruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 850.37,
+   "bit": 855.41,
+   "konusmaci": "Can",
+   "metin": "Son olarak seriyi en ince dilimlere yani yüz eşit parçaya ayıran pörsentiller var.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 855.41,
+   "bit": 875.49,
+   "konusmaci": "Ayşe",
+   "metin": "Evet Can. Büyüklük sırasına dizilmiş bir serinin yüz eşit parçaya bölünmesi için doksan dokuz bölen gerekir. En küçük pörsentil birinci pörsentil, en büyük pörsentil doksan dokuzuncu pörsentildir. Birinci pörsentil pe bir, ikinci pörsentil pe iki şeklinde devam ederek doksan dokuzuncu pörsentil pe doksan dokuz ile gösterilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 875.49,
+   "bit": 880.95,
+   "konusmaci": "Can",
+   "metin": "Pörsentil aralıklarının kapsadığı oran nedir ve diğer ölçülerle ortak noktası hangisidir?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 880.95,
+   "bit": 898.88,
+   "konusmaci": "Ayşe",
+   "metin": "Her bir pörsentil aralığı serideki rakamların yaklaşık yüzde birini kapsar. Ellinci pörsentil aynı zamanda serinin medyanıdır. Şimdi hepsini birleştirirsek harika bir bağlantı ortaya çıkıyor: Bir serinin medyanı, ikinci kartili, beşinci desili ve ellinci pörsentili birbirine tamamen eşittir!",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 898.88,
+   "bit": 904.1,
+   "konusmaci": "Can",
+   "metin": "Pörsentillerin hesaplanması da kartil ve desillerle aynı mantıkta ilerliyor değil mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 904.1,
+   "bit": 926.45,
+   "konusmaci": "Ayşe",
+   "metin": "Birebir aynı. Basit serilerde birinci pörsentil ne artı bir bölü yüzüncü değer, doksan dokuzuncu pörsentil doksan dokuz çarpı ne artı bir bölü yüzüncü değerdir. Sınıflandırılmış ve gruplandırılmış serilerde çok sayıda değer yer aldığı için artı bir eklentisi yine yok sayılır ve pörsentilleri gösteren değerler den az kümülatif frekans değerleri içerisinde aranır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 926.45,
+   "bit": 932.53,
+   "konusmaci": "Can",
+   "metin": "Gruplandırılmış seride ilk sınıfa düşen bir pörsentil çıkarsa önceki kümülatif frekansı kaç alırız?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 932.53,
+   "bit": 973.48,
+   "konusmaci": "Ayşe",
+   "metin": "Sıfır alırız! Örneğin yüz öğrencilik bir kursta yaş grupları altı ile sekiz arası beş kişiyle başlıyorsa ve beşinci pörsentili arıyorsak; beş çarpı yüz bölü yüzden beşinci değere bakarız. İlk sınıfın kümülatif frekansı zaten beştir, yani beşinci pörsentil altı ile sekiz sınıfındadır. Alt sınır altı, önceki sınıf olmadığı için önceki kümülatif frekans sıfır, sınıf frekansı beş, sınıf büyüklüğü ikidir. Beş eksi sıfırı beşe bölüp ikiyle çarparız iki eder, alt sınır altıya ekleyince beşinci pörsentil sekiz çıkar. Bu değer en küçük yüzde beşi oluşturan değerlerin en büyüğüdür. Doksan beşinci pörsentil ise en büyük yüzde beşi oluşturan değerlerin en küçüğünü verir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 973.48,
+   "bit": 980.36,
+   "konusmaci": "Can",
+   "metin": "Böylece moddan pörsentillere kadar parametrik olmayan merkezî eğilim ölçülerinin bütün detayları netleşmiş oldu.",
+   "konu": null,
+   "guven": 0
+  }
+ ]
+}

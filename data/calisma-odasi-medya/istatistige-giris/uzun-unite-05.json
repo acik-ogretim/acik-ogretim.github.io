@@ -1,0 +1,958 @@
+{
+ "v": 1,
+ "medya": "uzun-unite-05",
+ "satirlar": [
+  {
+   "bas": 0.0,
+   "bit": 9.21,
+   "konusmaci": "Can",
+   "metin": "Seriler ve grafiklerle verileri düzenleyip görselleştirdikten sonra, şimdi de verileri tek bir değerle özetleyen merkezî eğilim ölçülerine geçelim Ayşe.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 9.21,
+   "bit": 16.19,
+   "konusmaci": "Ayşe",
+   "metin": "Geçelim Can. Merkezî eğilim ölçüleri, istatistiğin özetleme görevini en ileri seviyede gören istatistik ölçülerdir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 16.19,
+   "bit": 18.91,
+   "konusmaci": "Can",
+   "metin": "Nasıl bu kadar ileri seviyede özetliyor peki?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 18.91,
+   "bit": 30.31,
+   "konusmaci": "Ayşe",
+   "metin": "Şöyle düşün, bin birimlik bir seri mesela seksen sınıf yahut on beş grup hâlinde özetlenebildiği gibi, serinin ortalaması alınmak suretiyle bu bin sayı bir tek birimle temsil edilebiliyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 30.31,
+   "bit": 33.89,
+   "konusmaci": "Can",
+   "metin": "Çok net. Peki bütün merkezî eğilim ölçüleri aynı yapıda mı?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 33.89,
+   "bit": 46.32,
+   "konusmaci": "Ayşe",
+   "metin": "Hayır, merkezî eğilim ölçüleri başlıca iki gruba ayrılır. Birincisi serinin bütün birimlerine tabi olan merkezî eğilim ölçüleri, ikincisi ise serinin bütün birimlerine tabi olmayan merkezî eğilim ölçüleri.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 46.32,
+   "bit": 49.71,
+   "konusmaci": "Can",
+   "metin": "Serinin bütün birimlerine tabi olanlara ne ad veriyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 49.71,
+   "bit": 64.02,
+   "konusmaci": "Ayşe",
+   "metin": "Serinin bütün birimlerine tabi olan merkezî eğilim ölçülerine parametrik merkezî eğilim ölçüleri denir. Yani serideki bütün birimlerden etkilenen merkezî eğilim ölçüleridir bunlar. Hesaplanmasında serideki bütün birimler dikkate alınır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 64.02,
+   "bit": 66.81,
+   "konusmaci": "Can",
+   "metin": "Kaç tane parametrik merkezî eğilim ölçüsü var?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 66.81,
+   "bit": 86.15,
+   "konusmaci": "Ayşe",
+   "metin": "Bu gruptaki merkezî eğilim ölçüleri dört tanedir. Bunlar aritmetik ortalama, geometrik ortalama, harmonik ortalama ve kareli ortalamadır. Sembolleriyle söylersek üzerine çizgi çizilen iks ile gösterilen aritmetik ortalama, ge harfiyle geometrik ortalama, he harfiyle harmonik ortalama ve ke harfiyle kareli ortalamadır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 86.15,
+   "bit": 92.69,
+   "konusmaci": "Can",
+   "metin": "Hepsi serideki bütün birimlere tabi olduğuna göre tek bir sayının değişmesi bile sonucu değiştirir değil mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 92.69,
+   "bit": 105.79,
+   "konusmaci": "Ayşe",
+   "metin": "Kesinlikle. Bu gruptaki merkezî eğilim ölçüleri serideki tek bir rakamın değişmesinden doğrudan doğruya etkilenirler. Bu sebeple parametrik merkezî eğilim ölçülerinin tamamı serideki aşırı uçların etkisinde kalırlar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 105.79,
+   "bit": 109.91,
+   "konusmaci": "Can",
+   "metin": "Peki her gruplandırılmış seride bu dört ölçüyü hesaplayabilir miyiz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 109.91,
+   "bit": 121.07,
+   "konusmaci": "Ayşe",
+   "metin": "Hayır, çok önemli bir kural var. Sınıf uçları belli olmayan gruplandırılmış serilerde sınıf değerleri hesaplanamayacağı için parametrik merkezî eğilim ölçülerinin hiçbiri hesaplanamaz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 121.07,
+   "bit": 127.43,
+   "konusmaci": "Can",
+   "metin": "Peki ya diğer grup? Serinin bütün birimlerine tabi olmayan merkezî eğilim ölçüleri kaç tane ve hangileri?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 127.43,
+   "bit": 141.5,
+   "konusmaci": "Ayşe",
+   "metin": "İkinci grupta incelenen merkezî eğilim ölçüleri dört tanedir. Medyan, mod, kartiller ve ortalama kartil değerleri bu gruba giren merkezî eğilim ölçülerindendir. Pörsentiller ve desiller gibi ölçüler de parametrik olmayan taraftadır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 141.5,
+   "bit": 144.71,
+   "konusmaci": "Can",
+   "metin": "Bunların parametrik ölçülerden temel farkı ne oluyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 144.71,
+   "bit": 163.2,
+   "konusmaci": "Ayşe",
+   "metin": "Serinin bütün birimlerine tabi olmayan bu ölçüler, serideki her bir değerden ve aşırı uçlardan direkt olarak etkilenmeyebilir. Ayrıca dikkat etmeliyiz ki aritmetik ortalama ya da kareli ortalama kesinlikle parametrik olmayan merkezî eğilim ölçüleri arasında yer almaz; onlar tamamen parametrik ölçülerdir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 163.2,
+   "bit": 169.03,
+   "konusmaci": "Can",
+   "metin": "Parametrik ölçülerin en bilineni olan aritmetik ortalamayı tam olarak nasıl tanımlıyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 169.03,
+   "bit": 188.94,
+   "konusmaci": "Ayşe",
+   "metin": "Aritmetik ortalama, bu grupta yer alan ortalamalar içinde en basit ve en yaygın olarak kullanılan ortalamadır. Serideki tüm değerlerin toplamının toplam eleman sayısına bölünmesi ile hesaplanır. Serideki bütün rakamlardan etkilenen ve istatistiki uygulamalarda en çok kullanılan merkezî eğilim ölçüsüdür.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 188.94,
+   "bit": 193.86,
+   "konusmaci": "Can",
+   "metin": "Sembolü nasıldı? Bir de değişkenlik ölçüleriyle karıştıranlar oluyor bazen.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 193.86,
+   "bit": 209.05,
+   "konusmaci": "Ayşe",
+   "metin": "Varyans, standart sapma, ortalama sapma ya da değişim katsayısı gibi bir değişkenlik ölçüsü değildir; doğrudan bir merkezî eğilim ölçüsüdür. Ortalama, seride değişkeni ifade eden harfin yani iksin üzerine çizgi çizilerek gösterilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 209.05,
+   "bit": 212.2,
+   "konusmaci": "Can",
+   "metin": "Basit serilerde hesaplaması çok pratik değil mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 212.2,
+   "bit": 233.35,
+   "konusmaci": "Ayşe",
+   "metin": "Evet, basit bir seride aritmetik ortalama, serideki birimlerin toplamının birim sayısına bölünmesiyle elde edilir. Mesela on, on iki, on sekiz ve yirmi sayılarından oluşan basit seride önce değerleri toplarız, altmış yapar. Sonra bu toplamı değer sayısı olan dörde böleriz ve aritmetik ortalamayı on beş olarak elde ederiz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 233.35,
+   "bit": 240.95,
+   "konusmaci": "Can",
+   "metin": "Başka basit seri örnekleri de çözelim. Dört, yedi, üç ve sekiz şeklinde verilen serinin aritmetik ortalaması kaçtır?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 240.95,
+   "bit": 254.05,
+   "konusmaci": "Ayşe",
+   "metin": "Toplamları yirmi ikidir, dörde böldüğümüzde beş tam onda beş çıkar. Dört, on, on bir, on iki ve on üç şeklinde verilen beş elemanlı basit seride ise toplam ellidir, beşe bölününce ortalama on bulunur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 254.05,
+   "bit": 269.45,
+   "konusmaci": "Can",
+   "metin": "Peki bir kibrit fabrikasının ürettiği kibritlerden rastgele seçilen on paketin içindeki çöpler sayılmış ve sırasıyla otuz dokuz, kırk üç, otuz beş, kırk altı, kırk yedi, otuz sekiz, kırk bir, kırk, kırk beş ve otuz altı bulunmuş olsun.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 269.45,
+   "bit": 278.42,
+   "konusmaci": "Ayşe",
+   "metin": "On paketteki çöplerin hepsini topladığımızda dört yüz on elde ederiz. On pakete böldüğümüzde çöplerin aritmetik ortalaması kırk bir olur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 278.42,
+   "bit": 293.49,
+   "konusmaci": "Can",
+   "metin": "Bir de şöyle güzel bir örnek var. Sosyal etkinlik için bir araya gelen on kişinin yaşları elli, elli beş, kırk altı, kırk, otuz beş, altmış, altmış beş, kırk beş, elli ve elli beş olsun. Bu yaşların aritmetik ortalaması kaç çıkar?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 293.49,
+   "bit": 304.62,
+   "konusmaci": "Ayşe",
+   "metin": "Bu on kişinin yaşlarını tek tek topladığımızda beş yüz bir yapıyor. Kişi sayısı olan ona böldüğümüzde yaşların aritmetik ortalamasını elli tam onda bir olarak hesaplarız.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 304.62,
+   "bit": 313.33,
+   "konusmaci": "Can",
+   "metin": "Hatta bu on kişilik grupta üçüncü kişinin yaşını, mesela kırk altıyı değiştirip tekrar aritmetik ortalama hesaplarsak ne gözlemleriz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 313.33,
+   "bit": 332.79,
+   "konusmaci": "Ayşe",
+   "metin": "Diyelim ki üçüncü kişinin yaşını kırk altı yerine elli altı yaptık; toplam beş yüz on bire, aritmetik ortalama da elli bir tam onda bire çıkar. Her seferinde sadece bir kişinin yaşını değiştirip tekrar aritmetik ortalama hesapladığımızda ortalamanın her defasında doğrudan değiştiğini gözlemleriz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 332.79,
+   "bit": 339.93,
+   "konusmaci": "Can",
+   "metin": "Çok açıklayıcı oldu. Peki sınıflandırılmış ve gruplandırılmış serilerde aritmetik ortalamayı nasıl buluyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 339.93,
+   "bit": 360.56,
+   "konusmaci": "Ayşe",
+   "metin": "Frekans ve sınıflı serilerde aritmetik ortalama, serinin toplam değerinin toplam frekansa yani birim sayısına bölünmesi ile bulunur. Sınıflandırılmış seride önce her bir iks i değişken değerini, kendi tekrarlanma sayısını ifade eden ef i frekans değeri ile çarparız, bu çarpımları toplar ve toplam frekansa böleriz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 360.56,
+   "bit": 369.86,
+   "konusmaci": "Can",
+   "metin": "Hemen bir sınıflandırılmış seri hesaplayalım. Değişken değerleri dört, beş, yedi, dokuz; frekansları ise sırasıyla bir, iki, dört ve üç olsun.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 369.86,
+   "bit": 389.06,
+   "konusmaci": "Ayşe",
+   "metin": "Çarpalım: dört kere bir dört, beş kere iki on, yedi kere dört yirmi sekiz, dokuz kere üç yirmi yedi. Çarpım değerleri toplamı altmış dokuzdur. Toplam değer sayısı yani toplam frekans ise ondur. Altmış dokuzu ona böldüğümüzde serinin aritmetik ortalaması altı tam onda dokuz olarak elde edilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 389.06,
+   "bit": 402.88,
+   "konusmaci": "Can",
+   "metin": "İki sınıflandırılmış seri örneği daha yapalım. İlkinde değerler beş, yedi, sekiz, on ve frekanslar dört, iki, üç, altı olsun; ikincisinde değerler iki, üç, dört, beş ve frekanslar yirmi, on beş, altı, iki olsun.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 402.88,
+   "bit": 424.43,
+   "konusmaci": "Ayşe",
+   "metin": "İlkinde çarpımlar yirmi, on dört, yirmi dört ve altmıştan toplam yüz on sekiz yapar; toplam frekans on beşe bölününce aritmetik ortalama yedi tam yüzde seksen yedi bulunur. İkincisinde ise çarpımlar kırk, kırk beş, yirmi dört ve ondan yüz on dokuz eder; toplam frekans kırk üçe bölününce ortalama iki tam yüzde yetmiş yedi çıkar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 424.43,
+   "bit": 430.45,
+   "konusmaci": "Can",
+   "metin": "Bazen frekans yerine tartı dediğimiz ağırlıklar veriliyor. Tartılı aritmetik ortalama nedir?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 430.45,
+   "bit": 445.26,
+   "konusmaci": "Ayşe",
+   "metin": "İks değerlerine ait tartılar varsa frekanslar yerine tartılar kullanılarak tartılı aritmetik ortalama hesaplanır. Tartılar te harfi ile gösterilir ve sınıflandırılmış ya da gruplandırılmış serideki frekanslar gibi işlem görür.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 445.26,
+   "bit": 448.86,
+   "konusmaci": "Can",
+   "metin": "Ders notları ve kredi saatleri buna tam örnek değil mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 448.86,
+   "bit": 486.66,
+   "konusmaci": "Ayşe",
+   "metin": "Evet, derslerin haftalık kredi saatleri onların tartılarıdır. Matematik notu seksen beş kredi saati üç, Genel İktisat notu seksen dokuz kredi saati üç, Temel Hukuk notu elli beş kredi saati iki, Muhasebe notu altmış kredi saati bir ve Yönetim notu altmış kredi saati bir olsun. Her ders notunu kendi tartısıyla çarptığımızda sırasıyla iki yüz elli beş, iki yüz altmış yedi, yüz on, altmış ve altmış buluruz. Çarpım değerleri toplamı yedi yüz elli ikidir. Toplam tartı miktarı olan ona böldüğümüzde öğrencinin ağırlıklı not ortalaması yetmiş beş tam onda iki olarak elde edilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 486.66,
+   "bit": 493.08,
+   "konusmaci": "Can",
+   "metin": "Gruplandırılmış serilerde tek bir değer yerine sınıf aralıkları var. Orada ilk adımımız ne olmalı?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 493.08,
+   "bit": 514.23,
+   "konusmaci": "Ayşe",
+   "metin": "Gruplandırılmış seriden herhangi bir parametrik merkezî eğilim ölçüsü elde edilebilmesi için gruplandırılmış serideki sınıf sınırları veya sınıf uçlarından sınıf değerleri elde edilir. Sınıf değeri, gruplandırılmış serilerde sınıf sınırları veya sınıf uçlarından elde edilen sınıf orta noktalarıdır ve iks i ile gösterilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 514.23,
+   "bit": 522.23,
+   "konusmaci": "Can",
+   "metin": "Gruplar iki ile dört, beş ile yedi, sekiz ile on, on bir ile on üç; frekanslar da sırasıyla iki, on üç, dört ve bir olsun.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 522.23,
+   "bit": 554.06,
+   "konusmaci": "Ayşe",
+   "metin": "Birinci sınıfın sınıf değeri iki ile dört aralığının tam ortası yani üçtür. İkinci sınıfın sınıf değeri altı, üçüncü sınıfınki dokuz, dördüncü sınıfınki on ikidir. Bundan sonrası sınıflandırılmış seriye benzer; her sınıf değerini kendi sınıf frekansı ile çarparız. Üç kere iki altı, altı kere on üç yetmiş sekiz, dokuz kere dört otuz altı ve on iki kere bir on iki. Çarpımlar toplamı yüz otuz ikidir. Toplam frekans olan yirmiye böldüğümüzde aritmetik ortalama altı tam onda altı çıkar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 554.06,
+   "bit": 564.74,
+   "konusmaci": "Can",
+   "metin": "İki gruplandırılmış seri daha çözelim mi? Mesela bir ile üç, üç ile beş, beş ile yedi, yedi ile dokuz gruplarının frekansları yirmi beş, yirmi, on ve beş verilsin.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 564.74,
+   "bit": 595.72,
+   "konusmaci": "Ayşe",
+   "metin": "Sınıf değerlerimiz iki, dört, altı ve sekizdir. Frekanslarla çarpınca elli, seksen, altmış ve kırktan toplam iki yüz otuz gelir. Toplam frekans altmışa böldüğümüzde ortalama üç tam yüzde seksen üç bulunur. Üç ile beş, beş ile yedi, yedi ile dokuz ve dokuz ile on bir gruplarının frekansları dört, altı, üç ve beş olduğunda ise sınıf değerleri dört, altı, sekiz ve ondur. Çarpımlar toplamı yüz yirmi altıyı toplam frekans on sekize bölersek aritmetik ortalama tam yedi olur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 595.72,
+   "bit": 602.42,
+   "konusmaci": "Can",
+   "metin": "Aritmetik ortalamanın çok önemli matematiksel özellikleri de var. Toplam kaç özelliği bulunuyor Ayşe?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 602.42,
+   "bit": 615.77,
+   "konusmaci": "Ayşe",
+   "metin": "Aritmetik ortalamanın yedi özelliği var Can. İlkinden söz edelim: Aritmetik ortalama, aritmetik dizi şeklinde artış veya azalış gösteren serileri en iyi temsil eden parametrik merkezî eğilim ölçüsüdür.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 615.77,
+   "bit": 618.09,
+   "konusmaci": "Can",
+   "metin": "Aritmetik dizi ne demek tam olarak?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 618.09,
+   "bit": 644.25,
+   "konusmaci": "Ayşe",
+   "metin": "Basit bir sayıya belirli bir sayının katlarının ilave edilmesiyle elde edilen diziye aritmetik dizi denir. Mesela beş sayısına sabit bir sayı olan üç sayısının sürekli olarak ilave edilmesiyle beş, sekiz, on bir, on dört, on yedi, yirmi, yirmi üç, otuz altı şeklinde uzayan seri elde edilir. Aritmetik ortalama, aritmetik diziye benzeyen serileri de en iyi temsil eden merkezî eğilim ölçüsüdür.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 644.25,
+   "bit": 647.17,
+   "konusmaci": "Can",
+   "metin": "İkinci özellik sapmalarla ilgiliydi sanırım.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 647.17,
+   "bit": 670.8,
+   "konusmaci": "Ayşe",
+   "metin": "Evet, ikinci özellik şudur: Serideki birimlerin aritmetik ortalamadan sapmalarının toplamı sıfırdır. On, on iki, on sekiz ve yirmi basit serisinin aritmetik ortalaması on beşti. Her değerden on beşi çıkardığımızda farklar eksi beş, eksi üç, artı üç ve artı beş çıkar. Bazı farklar negatif, bazı farklar pozitif işaretlidir ve toplandığında tam sıfır çıkar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 670.8,
+   "bit": 676.11,
+   "konusmaci": "Can",
+   "metin": "Peki bu sapmaların karelerini alırsak ne oluyor, üçüncü özellik onu mu söylüyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 676.11,
+   "bit": 707.98,
+   "konusmaci": "Ayşe",
+   "metin": "Aynen öyle. Üçüncü özellik: Serideki birimlerin aritmetik ortalamadan sapmalarının kareleri toplamı minimumdur. Az önceki farkların karelerini toplarsak yirmi beş, dokuz, dokuz ve yirmi beşten altmış sekiz buluruz. Eşitlikteki ortalama olan on beş yerine on dört gibi bir başka değer koyduğumuzda farklar eksi dört, eksi iki, artı dört ve artı altı olur; kareleri toplamı da on altı, dört, on altı ve otuz altıdan yetmiş iki çıkar. Yani altmış sekiz değeri yetmiş ikiden küçüktür.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 707.98,
+   "bit": 712.16,
+   "konusmaci": "Can",
+   "metin": "Dördüncü özellik problem çözerken çok işimize yarıyor değil mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 712.16,
+   "bit": 728.89,
+   "konusmaci": "Ayşe",
+   "metin": "Çok işe yarıyor. Dördüncü özellik: Bir serinin aritmetik ortalaması serinin toplam frekansı ile çarpılırsa serideki rakamların toplamı elde edilir. Basit seride eleman sayısı olan dört ile ortalama on beşi çarpınca serinin toplamı olan altmışı buluruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 728.89,
+   "bit": 742.69,
+   "konusmaci": "Can",
+   "metin": "Bunu hemen iki örnekle uygulayalım. Dört çalışanın maaşlarının aritmetik ortalaması bin beş yüz para birimi olsun. Ahmet bin iki yüz elli, Zeynep bin altı yüz, Elif bin yedi yüz alıyorsa Ali'nin maaşı kaçtır?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 742.69,
+   "bit": 758.43,
+   "konusmaci": "Ayşe",
+   "metin": "Dört çalışan ile ortalama bin beş yüzü çarpınca maaşlar toplamı altı bin para birimi yapar. Üç çalışanın maaşları toplamı dört bin beş yüz elli olduğuna göre altı binden çıkardığımızda Ali'nin maaşı bin dört yüz elli para birimi bulunur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 758.43,
+   "bit": 772.63,
+   "konusmaci": "Can",
+   "metin": "Diğer örnek: Matematik dersini alan yirmi öğrencinin sınav puanlarının aritmetik ortalaması elli beştir. Sınav puanı on olan iki öğrenci dersi bırakırsa kalan on sekiz öğrencinin yeni aritmetik ortalaması kaç olur?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 772.63,
+   "bit": 791.62,
+   "konusmaci": "Ayşe",
+   "metin": "Yirmi ile elli beşi çarptığımızda yirmi öğrencinin puanları toplamı bin yüzdür. Puanı on olan iki öğrenci ayrılınca toplamdan yirmi çıkarırız ve kalan on sekiz öğrencinin puanları toplamı bin seksen olur. Bin sekseni on sekize böldüğümüzde yeni aritmetik ortalama altmış olarak bulunur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 791.62,
+   "bit": 796.73,
+   "konusmaci": "Can",
+   "metin": "Harika. Beşinci özellik iki ya da daha fazla serinin toplanmasıyla mı ilgili?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 796.73,
+   "bit": 828.66,
+   "konusmaci": "Ayşe",
+   "metin": "Evet, beşinci özellik: Bir serideki rakamlar iki veya daha fazla serinin aynı hizadaki rakamlarının toplamına eşitse, bu serinin aritmetik ortalaması diğer serilerin aritmetik ortalamaları toplamına eşittir. Mesela on, on iki, on sekiz, yirmi değerlerinden oluşan iks serisinin ortalaması on beştir; bir, iki, dört, beş değerlerinden oluşan a serisinin ortalaması üçtür. Aynı hizadaki değerlerin toplamıyla oluşan be serisinin aritmetik ortalaması da on beş artı üçten on sekizdir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 828.66,
+   "bit": 835.96,
+   "konusmaci": "Can",
+   "metin": "Altıncı ve yedinci özellikler de serideki her rakamla sabit bir sayıyı çarpmak veya toplamak üzerine değil mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 835.96,
+   "bit": 859.8,
+   "konusmaci": "Ayşe",
+   "metin": "Doğru. Altıncı özellik: Bir serideki rakamların her birinin sabit bir sayı ile çarpılması hâlinde bulunacak serinin ortalaması, önceki serinin ortalamasının söz konusu sabit sayı ile çarpımına eşittir. Ortalaması on beş olan iks serisindeki değerler iki ile çarpılıp yirmi, yirmi dört, otuz altı, kırk yapılırsa yeni ortalama da iki çarpı on beşten otuz olur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 859.8,
+   "bit": 861.59,
+   "konusmaci": "Can",
+   "metin": "Yedinci özellik nedir peki?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 861.59,
+   "bit": 885.88,
+   "konusmaci": "Ayşe",
+   "metin": "Yedinci özellik: Serideki rakamlara belirli bir sabit sayının eklenmesi hâlinde bulunacak ortalama, önceki ortalamanın söz konusu sabit sayı ile toplamına eşittir; sabit sayı çıkarıldığında da aynı şekilde eksilir. Ortalaması on beş olan serideki her değere iki eklenerek on iki, on dört, yirmi, yirmi iki elde edilirse yeni ortalama iki artı on beşten on yedi olur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 885.88,
+   "bit": 897.57,
+   "konusmaci": "Can",
+   "metin": "Şunu da netleştirelim; aritmetik ortalama bir seri için hesaplanabilecek en küçük ortalama ya da diğer ortalamalara göre her zaman daha yüksek değere sahip olan ortalama mıdır?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 897.57,
+   "bit": 905.8,
+   "konusmaci": "Ayşe",
+   "metin": "İkisi de kesinlikle yanlıştır Can. Aritmetik ortalama ne en küçük ortalamadır ne de diğer ortalamaların tamamından büyüktür.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 905.8,
+   "bit": 911.26,
+   "konusmaci": "Can",
+   "metin": "Geometrik ortalamaya bakalım biraz da. Ge harfiyle gösteriyoruz, nasıl tanımlanıyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 911.26,
+   "bit": 923.48,
+   "konusmaci": "Ayşe",
+   "metin": "Geometrik ortalama da aritmetik ortalama gibi serinin bütün birimlerine tabi bir ortalama çeşididir. Serideki en tane birimin çarpımının eninci dereceden kökü alınmak suretiyle hesaplanır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 923.48,
+   "bit": 928.62,
+   "konusmaci": "Can",
+   "metin": "Seride sıfır ya da negatif bir sayı varsa çarpım ve kök alma nasıl etkileniyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 928.62,
+   "bit": 942.79,
+   "konusmaci": "Ayşe",
+   "metin": "Seride sıfır veya negatif değer varsa geometrik ortalama hesaplanamaz. Temsil gücüne gelirsek; geometrik ortalama, geometrik dizi şeklinde artış gösteren serileri en iyi temsil eden parametrik merkezî eğilim ölçüsüdür.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 942.79,
+   "bit": 945.06,
+   "konusmaci": "Can",
+   "metin": "Geometrik dizi nasıl oluşuyor peki?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 945.06,
+   "bit": 964.18,
+   "konusmaci": "Ayşe",
+   "metin": "Geometrik dizi, bir sayının katlanarak değerler alması durumunda oluşan seridir. Mesela iki değeri katlanarak değerler alırsa iki, dört, sekiz, on altı, otuz iki şeklinde giden seri elde edilir. İşte bir sayının katlanarak değerler almasıyla oluşan seriyi en iyi geometrik ortalama temsil eder.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 964.18,
+   "bit": 969.57,
+   "konusmaci": "Can",
+   "metin": "Başka hangi durumlarda aritmetik ortalama yerine geometrik ortalamaya başvuruyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 969.57,
+   "bit": 990.31,
+   "konusmaci": "Ayşe",
+   "metin": "Gözlem sonuçları arasındaki oransal yani nispi farkların mutlak farklardan önemli olduğu durumlarda geometrik ortalamaya başvurulur. Diğer bir ifade ile gözlem sonuçlarının her biri bir önceki gözlem sonucuna bağlı olarak değişiyorsa ve bu değişmenin hızı saptanmak istenirse geometrik ortalama sağlıklı sonuçlar verir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 990.31,
+   "bit": 995.25,
+   "konusmaci": "Can",
+   "metin": "Seride çok sayıda rakam olduğunda hepsini birbiriyle çarpmak zor olmuyor mu?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 995.25,
+   "bit": 1014.69,
+   "konusmaci": "Ayşe",
+   "metin": "Kök formülü çok sayıda rakam varsa pek elverişli değildir, bu yüzden eşitliğin iki tarafının logaritması alınır. Basit serilerde rakamların logaritmaları toplanıp birim sayısı olan ene bölünerek logaritma ge elde edilir. Sonra her iki tarafın anti logaritması alınarak geometrik ortalama hesaplanır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1014.69,
+   "bit": 1018.91,
+   "konusmaci": "Can",
+   "metin": "On, on iki, on sekiz ve yirmi basit serisinde hesaplayalım hemen.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1018.91,
+   "bit": 1053.36,
+   "konusmaci": "Ayşe",
+   "metin": "Onun logaritması bir, on ikininki bir tam on binde yedi yüz doksan iki, on sekizinki bir tam on binde iki bin beş yüz elli üç, yirmininki bir tam binde üç yüz birdir. Bu dört logaritmanın toplamı dört tam on binde altı bin üç yüz elli beş eder. Dörde böldüğümüzde logaritma ge bir tam on binde bin beş yüz seksen dokuz çıkar. Anti logaritmasını aldığımızda geometrik ortalama on dört tam yüzde kırk iki olur. Aynı serinin aritmetik ortalaması on beşti; görüldüğü gibi aynı seride geometrik ortalama aritmetik ortalamadan küçüktür.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1053.36,
+   "bit": 1062.59,
+   "konusmaci": "Can",
+   "metin": "İki basit seri örneği daha konuşalım. Dört ülkenin işsizlik oranları yüzde olarak beş, sekiz, on iki ve yirmi ise geometrik ortalaması kaçtır?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1062.59,
+   "bit": 1100.69,
+   "konusmaci": "Ayşe",
+   "metin": "Dördünü çarptığımızda dokuz bin altı yüz yapar, dördüncü dereceden kökünü aldığımızda geometrik ortalama dokuz tam binde sekiz yüz doksan sekiz, iki ondalıkla dokuz tam yüzde seksen dokuz bulunur. Bir işletmede çalışan beş işçinin çocuk sayıları iki, bir, üç, dört ve iki olduğunda ise; on tabanında logaritmaları toplamı bir tam on binde altı bin sekiz yüz on ikidir. Gözlem sayısı beşe böldüğümüzde logaritma ge değeri sıfır tam on binde üç bin üç yüz altmış dört yani virgülden sonra iki haneyle sıfır tam yüzde otuz dört çıkar; anti logaritması da yaklaşık iki tam yüzde on yedidir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1100.69,
+   "bit": 1105.95,
+   "konusmaci": "Can",
+   "metin": "Sınıflandırılmış ve gruplandırılmış serilerde logaritma işlemini nasıl yapıyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1105.95,
+   "bit": 1145.87,
+   "konusmaci": "Ayşe",
+   "metin": "Sınıflandırılmış seride önce her bir iks i değişkeninin logaritması alınır, sonra tekrarlanma sayısını ifade eden ef i frekans değerleriyle çarpılır. Bu çarpımların toplamı toplam frekansa bölünerek logaritma ge bulunur ve anti logaritması alınır. Dört, beş, yedi, dokuz değerleri ve bir, iki, dört, üç frekanslı serimizde çarpımlar toplamı sekiz tam on binde iki bin dört yüz otuz birdir; toplam frekans ona bölününce logaritma ge sıfır tam on binde sekiz bin iki yüz kırk üç, anti logaritması yani geometrik ortalama altı tam yüzde altmış yedi çıkar. Yine aritmetik ortalama olan altı tam onda dokuzdan küçüktür.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1145.87,
+   "bit": 1152.04,
+   "konusmaci": "Can",
+   "metin": "Gruplandırılmış seride de önce sınıf değerlerini bulup onların logaritmasını alıyoruz değil mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1152.04,
+   "bit": 1180.45,
+   "konusmaci": "Ayşe",
+   "metin": "Evet, önce sınıf sınırları veya uçlarından sınıf değerleri elde edilir, her sınıf değerinin logaritması alınıp kendi sınıf frekansıyla çarpılır. İki ile dörtten on bir ile on üçe uzanan gruplandırılmış seride bu çarpımlar toplamı on beş tam on binde dokuz bin altı yüz altmış sekizdir; toplam frekans yirmiye bölününce logaritma ge sıfır tam on binde yedi bin dokuz yüz seksen üç ve geometrik ortalama altı tam yüzde yirmi sekiz bulunur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1180.45,
+   "bit": 1202.1,
+   "konusmaci": "Can",
+   "metin": "Bir gruplandırılmış seri daha çözelim: Gruplar bir ile üç, dört ile altı, yedi ile dokuz, on ile on iki; frekansları bir, on, beş, iki; sınıf değerleri iki, beş, sekiz, on bir ve logaritmaları da sıfır tam binde üç yüz bir, sıfır tam binde altı yüz doksan sekiz, sıfır tam binde dokuz yüz üç ve bir tam binde kırk bir verilmiş olsun.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1202.1,
+   "bit": 1222.12,
+   "konusmaci": "Ayşe",
+   "metin": "Her frekansı kendi logaritma değeriyle çarparak topladığımızda on üç tam binde sekiz yüz yetmiş sekiz buluruz. Toplam frekansımız bir, on, beş ve ikinin toplamından on sekizdir. On üç tam binde sekiz yüz yetmiş sekizi on sekize böldüğümüzde logaritma ge değeri sıfır tam yüzde yetmiş yedi olarak elde edilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1222.12,
+   "bit": 1226.62,
+   "konusmaci": "Can",
+   "metin": "Harmonik ortalama da he harfiyle gösteriliyor. Tanımı tam olarak nasıl?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1226.62,
+   "bit": 1232.82,
+   "konusmaci": "Ayşe",
+   "metin": "Harmonik ortalama, serideki birimlerin çarpmaya göre terslerinin aritmetik ortalamasının tersidir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1232.82,
+   "bit": 1236.18,
+   "konusmaci": "Can",
+   "metin": "Peki harmonik ortalama hangi durumlarda kullanılamaz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1236.18,
+   "bit": 1261.95,
+   "konusmaci": "Ayşe",
+   "metin": "Seride sıfır veya negatif birim bulunması hâlinde harmonik ortalama kullanılmaz. Seride ondalıklı değer olması ya da uçuk değerlerin olması hesaplanmasına engel değildir; hatta parametrik bir ölçü olduğu için veri setindeki aşırı uçlardan doğrudan etkilenir. Ama bir, iki, üç, dört, beş, altı gibi tamamı pozitif olan serilerde kullanılırken içinde sıfır ya da negatif sayı geçen hiçbir seride kullanılamaz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1261.95,
+   "bit": 1265.43,
+   "konusmaci": "Can",
+   "metin": "Basit serilerde nasıl hesaplıyoruz harmonik ortalamayı?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1265.43,
+   "bit": 1296.53,
+   "konusmaci": "Ayşe",
+   "metin": "Basit serilerde birim sayısı olan en değerinin, bir bölü iks i değerlerinin toplamına bölünmesiyle hesaplanır. On, on iki, on sekiz ve yirmi basit serimizde önce bir bölü iks i değerlerini buluruz: sıfır tam onda bir, sıfır tam on binde sekiz yüz otuz üç, sıfır tam on binde beş yüz elli altı ve sıfır tam yüzde beş. Bunların toplamı sıfır tam on binde iki bin sekiz yüz seksen dokuzdur. Birim sayısı dördü bu toplama böldüğümüzde harmonik ortalama yaklaşık on üç tam yüzde seksen beş çıkar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1296.53,
+   "bit": 1306.47,
+   "konusmaci": "Can",
+   "metin": "Aritmetik ortalama on beş, geometrik ortalama on dört tam yüzde kırk iki çıkmıştı; harmonik ortalama on üç tam yüzde seksen beş ile ikisinden de küçük çıktı!",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1306.47,
+   "bit": 1331.67,
+   "konusmaci": "Ayşe",
+   "metin": "Çok önemli bir noktayı yakaladın Can. Harmonik ortalama, parametrik merkezî eğilim ölçülerinin en küçüğü olarak elde edilir. Herhangi bir seri için hesaplanabilecek en küçük ortalama harmonik ortalamadır; geometrik ortalama ya da aritmetik ortalama en küçük değildir. Bu üçü arasında harmonik ortalama küçüktür geometrik ortalama, o da küçüktür aritmetik ortalama şeklinde büyüklük ilişkisi vardır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1331.67,
+   "bit": 1337.24,
+   "konusmaci": "Can",
+   "metin": "Sınıflandırılmış ve gruplandırılmış serilerde harmonik ortalama formülü nasıl değişiyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1337.24,
+   "bit": 1354.66,
+   "konusmaci": "Ayşe",
+   "metin": "Sınıflandırılmış ve gruplandırılmış serilerde toplam frekansın, frekansların sınıf değerlerine oranlarının yani ef i bölü iks i değerlerinin toplamına bölünmesiyle hesaplanır. Gruplandırılmış seride yine ilk iş sınıf sınırları veya uçlarından sınıf değerlerini elde etmektir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1354.66,
+   "bit": 1366.37,
+   "konusmaci": "Can",
+   "metin": "Sınıflandırılmış serilerde hemen örnek yapalım. Dört, beş, yedi, dokuz serimiz ile değerleri iki, beş, sekiz ve frekansları beş, dört, dört olan serinin harmonik ortalamaları kaç çıkar?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1366.37,
+   "bit": 1402.15,
+   "konusmaci": "Ayşe",
+   "metin": "Dört, beş, yedi, dokuz değerleri ve bir, iki, dört, üç frekanslı seride ef i bölü iks i oranlarının toplamı bir tam on binde beş bin beş yüz kırk yedidir; toplam frekans onu buna bölünce yaklaşık altı tam yüzde kırk üç çıkar. Değerleri iki, beş, sekiz ve frekansları beş, dört, dört olan seride ise oranlar beş bölü ikiden iki tam onda beş, dört bölü beşten sıfır tam onda sekiz ve dört bölü sekizden sıfır tam onda beştir; toplarsak üç tam onda sekiz yapar. Toplam frekansı üç tam onda sekize oranladığımızda harmonik ortalama üç tam yüzde kırk iki olarak bulunur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1402.15,
+   "bit": 1416.78,
+   "konusmaci": "Can",
+   "metin": "Bir de üretim hızıyla ilgili şu örneğe bakalım: Bir fabrikada üretilen ilk bin üründe her bir ürün üç dakikada üretilirken, ikinci bin üründe her bir ürün beş dakikada üretilmektedir. Ürün üretme hızının harmonik ortalaması kaçtır?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1416.78,
+   "bit": 1449.52,
+   "konusmaci": "Ayşe",
+   "metin": "Burada toplam ürün sayımız yani toplam frekansımız iki bindir. Paydada ise bin bölü üç ile bin bölü beşin toplamı vardır. Payda eşitlediğimizde iki bini, sekiz bin bölü on beşe böleriz ve ürün üretme hızının harmonik ortalamasını üç tam yüzde yetmiş beş olarak buluruz. Gruplandırılmış serimiz olan iki ile dörtten on bir ile on üçe uzanan seride de toplam frekans yirmiyi, ef i bölü iks i toplamı olan üç tam on binde üç bin altı yüz on bire bölerek harmonik ortalamayı yaklaşık beş tam yüzde doksan beş elde ederiz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1449.52,
+   "bit": 1456.93,
+   "konusmaci": "Can",
+   "metin": "Son parametrik merkezî eğilim ölçümüz de ke harfiyle gösterilen kareli ortalama. Kareli ortalamayı nasıl tanımlıyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1456.93,
+   "bit": 1479.36,
+   "konusmaci": "Ayşe",
+   "metin": "Kareli ortalama, serideki birimlerin karelerinin aritmetik ortalamasının kareköküdür. Burada şuna dikkat edelim; eğer doğrudan birimlerin değil de gözlem değerlerinin aritmetik ortalamadan farklarının kareli ortalaması sorulursa o standart sapmayı ifade eder. Kareli ortalama ise doğrudan serideki birimlerin karelerinin aritmetik ortalamasının kareköküdür.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1479.36,
+   "bit": 1482.69,
+   "konusmaci": "Can",
+   "metin": "Basit serilerde kareli ortalamayı nasıl hesaplıyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1482.69,
+   "bit": 1496.88,
+   "konusmaci": "Ayşe",
+   "metin": "Basit serilerde önce serideki değerlerin kareleri hesaplanır, sonra bu kareli değerlerin toplamı elde edilir. Bu toplam serideki değer sayısı olan ene bölündüğünde elde edilen değerin karekökü alınarak kareli ortalama bulunur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1496.88,
+   "bit": 1500.52,
+   "konusmaci": "Can",
+   "metin": "On, on iki, on sekiz ve yirmi basit serimizde kaç çıkıyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1500.52,
+   "bit": 1520.25,
+   "konusmaci": "Ayşe",
+   "metin": "Değerlerin kareleri sırasıyla yüz, yüz kırk dört, üç yüz yirmi dört ve dört yüzdür. Kareli değerlerin toplamı dokuz yüz altmış sekiz eder. Değer sayısı olan dörde böldüğümüzde iki yüz kırk iki çıkar; iki yüz kırk ikinin karekökünü aldığımızda kareli ortalama yaklaşık on beş tam yüzde elli altı olarak elde edilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1520.25,
+   "bit": 1524.77,
+   "konusmaci": "Can",
+   "metin": "Sınıflandırılmış ve gruplandırılmış serilerde hesaplama nasıl ilerliyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1524.77,
+   "bit": 1552.91,
+   "konusmaci": "Ayşe",
+   "metin": "Sınıflandırılmış serilerde önce iks i değerlerinin karesi hesaplanarak ef i frekans değerleri ile çarpılır. Bu çarpımlar toplanıp toplam frekansa bölünür ve karekökü alınır. Dört, beş, yedi, dokuz değerleri ve bir, iki, dört, üç frekanslı serimizde karelerin frekanslarla çarpımı on altı, elli, yüz doksan altı ve iki yüz kırk üçten toplam beş yüz beş yapar. Ona bölünce elli tam onda beş, karekökünü alınca da yaklaşık yedi tam yüzde on bir çıkar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1552.91,
+   "bit": 1560.13,
+   "konusmaci": "Can",
+   "metin": "Gruplandırılmış serilerde de önce sınıf orta noktalarını yani sınıf değerlerini bulup karelerini alıyoruz değil mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1560.13,
+   "bit": 1586.01,
+   "konusmaci": "Ayşe",
+   "metin": "Evet, her sınıf değerinin karesi bulunur ve kendi sınıf frekansıyla çarpılır. İki ile dörtten on bir ile on üçe uzanan gruplandırılmış seride sınıf değerleri üç, altı, dokuz, on iki; kareleri dokuz, otuz altı, seksen bir ve yüz kırk dörttür. Frekanslarla çarpımları toplamı dokuz yüz elli dört eder; toplam frekans yirmiye bölününce kırk yedi tam onda yedi ve karekökü yaklaşık altı tam yüzde doksan bir bulunur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1586.01,
+   "bit": 1596.44,
+   "konusmaci": "Can",
+   "metin": "Bir gruplandırılmış seri örneği daha çözelim. Gruplar bir ile üç, üç ile beş, beş ile yedi ve frekanslar sırasıyla beş, altı, dört verilirse kareli ortalama kaç olur?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1596.44,
+   "bit": 1623.64,
+   "konusmaci": "Ayşe",
+   "metin": "Her bir grubun sınıf değeri sırasıyla iki, dört ve altıdır. Karelerini alırsak dört, on altı ve otuz altı olur. Şimdi frekanslarıyla çarpalım: beş kere dört yirmi, altı kere on altı doksan altı, dört kere otuz altı yüz kırk dört. Topladığımızda iki yüz altmış elde ederiz. Toplam frekansımız beş, altı ve dördün toplamından on beştir. İki yüz altmışı on beşe bölüp karekökünü aldığımızda kareli ortalama dört tam yüzde on altı çıkar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1623.64,
+   "bit": 1631.17,
+   "konusmaci": "Can",
+   "metin": "Peki dört parametrik merkezî eğilim ölçüsünün tamamını bir arada düşündüğümüzde aralarındaki büyüklük ilişkisi nasıldır?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1631.17,
+   "bit": 1660.45,
+   "konusmaci": "Ayşe",
+   "metin": "Kareli ortalama parametrik merkezî eğilim ölçülerinin en büyüğü olarak elde edilir, harmonik ortalama ise en küçüğüdür. Parametrik merkezî eğilim ölçüleri arasında küçükten büyüğe doğru; harmonik ortalama küçüktür geometrik ortalama, o küçüktür aritmetik ortalama, o da küçüktür kareli ortalama şeklinde büyüklük ilişkisi vardır. Mesela basit serimizde sırasıyla on üç tam yüzde seksen beş, on dört tam yüzde kırk iki, on beş ve on beş tam yüzde elli altı bulmuştuk.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1660.45,
+   "bit": 1668.36,
+   "konusmaci": "Can",
+   "metin": "Bu büyüklük ilişkisiyle birlikte parametrik merkezî eğilim ölçülerinin bütün kavramlarını ve hesaplamalarını tamamlamış olduk.",
+   "konu": null,
+   "guven": 0
+  }
+ ]
+}

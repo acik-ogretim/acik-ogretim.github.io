@@ -1,0 +1,990 @@
+{
+ "v": 1,
+ "medya": "uzun-unite-04",
+ "satirlar": [
+  {
+   "bas": 0.0,
+   "bit": 9.3,
+   "konusmaci": "Can",
+   "metin": "İstatistikte verileri topladık, seriler hâlinde düzenledik ve tablolar yaptık; şimdi iş görselleştirmeye gelince bambaşka bir boyut açılıyor, değil mi Ayşe?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 9.3,
+   "bit": 14.79,
+   "konusmaci": "Ayşe",
+   "metin": "Kesinlikle öyle Can. Grafikleri tam anlamıyla kavradığımızda beş temel yeterlik kazanıyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 14.79,
+   "bit": 16.1,
+   "konusmaci": "Can",
+   "metin": "Nedir bu beş yeterlik?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 16.1,
+   "bit": 31.96,
+   "konusmaci": "Ayşe",
+   "metin": "Birincisi, grafik kavramını ifade edebilmek. İkincisi, gözlem değerlerini görselleştirebilmek. Üçüncüsü, grafik çizebilmek. Dördüncüsü, gözlem değerleri için uygun grafik türünü belirleyebilmek. Beşincisi ise grafik yorumlama hakkında detaylı bilgi sahibi olabilmek.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 31.96,
+   "bit": 36.91,
+   "konusmaci": "Can",
+   "metin": "Peki gözlem değerlerini görselleştirirken karşımıza kaç farklı grafik türü çıkıyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 36.91,
+   "bit": 50.99,
+   "konusmaci": "Ayşe",
+   "metin": "Yedi temel grafik türümüz var. Bunlar histogram, frekans poligonu, kümülatif frekans grafikleri, sütun grafiği, daire grafiği, Pareto grafiği ve serpilme diyagramı. Her birinin kullanıldığı veri tipi ve çizim mantığı birbirinden farklı.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 50.99,
+   "bit": 56.23,
+   "konusmaci": "Can",
+   "metin": "Elimizde frekans dağılım tabloları varken neden bir de grafik çizmeye ihtiyaç duyuyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 56.23,
+   "bit": 71.5,
+   "konusmaci": "Ayşe",
+   "metin": "Çünkü istatistiğin uğraş alanlarından biri özetleme ve görselleştirmedir. Frekans dağılımlarını tablo şeklinde sunmak bir özetleme şekli ama tablolar her zaman kolay anlaşılır olmayabiliyor. Gözlem değerlerinin görselleştirilmesinde grafikler kullanılıyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 71.5,
+   "bit": 74.06,
+   "konusmaci": "Can",
+   "metin": "Peki grafiği tam olarak nasıl tanımlıyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 74.06,
+   "bit": 85.57,
+   "konusmaci": "Ayşe",
+   "metin": "Grafik, gözlem değerlerinin matematiksel ve bilimsel temellere sahip şekiller hâlinde ifade edilmesidir. Rastgele çizilmiş resimler değil yani; arkasında matematiksel ve bilimsel bir temel var.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 85.57,
+   "bit": 89.51,
+   "konusmaci": "Can",
+   "metin": "Rakamlarla uğraşmayı sevmeyen biri için büyük kolaylık olsa gerek.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 89.51,
+   "bit": 108.17,
+   "konusmaci": "Ayşe",
+   "metin": "Hem de nasıl. Grafikler gözlem değerlerinin daha kolay anlaşılmasını sağlıyor. Temsil ettikleri olayların bileşimini ve değişmelerindeki ana eğilimi tüm canlılığı ile ilk bakışta ortaya koyuyorlar. Rakamlarla uğraşmak istemeyen veya rakamlardan anlam çıkarmakta zorluk çekenler için grafikler çok yardımcı oluyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 108.17,
+   "bit": 111.33,
+   "konusmaci": "Can",
+   "metin": "Grafik olmadan yalnız rakamlara baksak ne kaybederiz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 111.33,
+   "bit": 133.93,
+   "konusmaci": "Ayşe",
+   "metin": "Grafik verilmeksizin yalnız rakamlar hâlindeki sonuçları inceleyen bir şahıs, olayın genel eğiliminden çok ayrıntısına takılır ve olayın genel özelliklerini kavrayamaz. Mesela yıllar itibarıyla bir ülkenin nüfusunun incelendiği bir araştırmada iyi çizilmiş bir grafiğe baktığında nüfusun yıllar itibarıyla artıp artmadığını veya nasıl değiştiğini ilk bakışta kolaylıkla anlarsın.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 133.93,
+   "bit": 138.11,
+   "konusmaci": "Can",
+   "metin": "Histogramla devam edelim. Hangi tür serilerde kullanıyoruz histogramı?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 138.11,
+   "bit": 154.87,
+   "konusmaci": "Ayşe",
+   "metin": "Histogram, gruplandırılmış seriler için oluşturulan bir dikdörtgenler dizisidir. Yani sürekli sayısal veriler, gruplandırılmış nicel veriler için kullanıyoruz. Aynı zamanda her aralığın frekansı ile orantılı yüksekliklere sahip dikdörtgenlerin gösterildiği bir yoğunluk grafiğidir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 154.87,
+   "bit": 158.03,
+   "konusmaci": "Can",
+   "metin": "Eksenlerde neler yer alıyor? Burası sık karıştırılır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 158.03,
+   "bit": 167.27,
+   "konusmaci": "Ayşe",
+   "metin": "Histogram çizilirken yatay eksende değişkenin aldığı değerler, yani gruplandırılmış serinin sınıf sınırları yer alır. Dikey eksende ise frekanslar bulunur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 167.27,
+   "bit": 171.09,
+   "konusmaci": "Can",
+   "metin": "Peki bu dikdörtgenlerin tabanı ve yüksekliği neyi temsil ediyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 171.09,
+   "bit": 185.76,
+   "konusmaci": "Ayşe",
+   "metin": "Çok kritik bir nokta. Dikdörtgenlerin tabanları sınıf sayısını değil, gruplandırılmış serideki her bir sınıfın sınıf büyüklüğünü gösterir. Yükseklikleri ise sınıf frekansını gösterir. Ayrıca histogram, frekans poligonunun çiziminde de kullanılır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 185.76,
+   "bit": 190.76,
+   "konusmaci": "Can",
+   "metin": "Çizimini nasıl yapıyoruz ve dikdörtgenleri dizerken özel bir büyüklük sırası var mı?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 190.76,
+   "bit": 223.03,
+   "konusmaci": "Ayşe",
+   "metin": "Hayır, histogramda dikdörtgenler büyüklük sırasına göre yerleştirilmez; yatay eksendeki sınıf sınırlarının kendi sayısal sırasına göre birbirine bitişik olarak dizilir. Sınıf aralıkları ve frekans değerleri eksenlerde belirlendikten sonra, sınıf sınırlarının alt ve üst sınırlarından frekans değerlerine kadar birer dikme çizilir. Gruplandırılmış serilerde sınıfların frekanslarının sınıf sınırları içerisinde düzgün dağıldığı kabul edildiğinden, çizilen dikmeler yatay eksene paralel bir çizgi ile birleştirilerek dikdörtgenler elde edilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 223.03,
+   "bit": 231.97,
+   "konusmaci": "Can",
+   "metin": "Diyelim ki önümüzde hazır çizilmiş bir histogram var ve bizden dağılımın gözlem sayısını, yani küçük ne değerini bulmamız isteniyor. Nasıl hesaplarız?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 231.97,
+   "bit": 256.36,
+   "konusmaci": "Ayşe",
+   "metin": "Her bir dikdörtgenin yüksekliği o sınıfın frekansını veriyor ya, bütün dikdörtgenlerin yüksekliklerine karşılık gelen frekans değerlerini tek tek okuyup topladığımızda dağılımın toplam gözlem sayısını buluruz. Mesela notları gösteren altı dikdörtgenli bir histogramda dikdörtgenlerin frekansları iki, dört, sekiz, altı, beş ve iki ise bunları toplarız ve gözlem sayısını yirmi yedi olarak kolayca elde ederiz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 256.36,
+   "bit": 260.83,
+   "konusmaci": "Can",
+   "metin": "Bunu somut bir öğrenci ağırlıkları dağılımı üzerinden canlandıralım mı?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 260.83,
+   "bit": 283.86,
+   "konusmaci": "Ayşe",
+   "metin": "Hemen yapalım. Bir sınıftaki yüz öğrencinin ağırlıklarına göre dağılımını düşünelim. Beş tane sınıf aralığımız var. Kırk ile elli kilo arasında on öğrenci, elli ile altmış kilo arasında on altı öğrenci, altmış ile yetmiş kilo arasında otuz sekiz öğrenci, yetmiş ile seksen kilo arasında yirmi iki öğrenci ve seksen ile doksan kilo arasında on dört öğrenci bulunuyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 283.86,
+   "bit": 292.29,
+   "konusmaci": "Can",
+   "metin": "Yatay eksene kırk, elli, altmış, yetmiş, seksen ve doksan ağırlık sınırlarını koyduk. Dikey eksene de öğrenci sayılarını yerleştirdik.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 292.29,
+   "bit": 308.9,
+   "konusmaci": "Ayşe",
+   "metin": "Aynen öyle. Alt ve üst sınırlardan ilgili frekanslara dikmeleri çıkıp birleştirdiğimizde beş bitişik dikdörtgen ortaya çıkıyor. Grafiğe baktığımızda en yüksek dikdörtgen otuz sekiz öğrenciyle en fazla öğrencinin olduğu altmış ile yetmiş sınıf aralığını gösteriyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 308.9,
+   "bit": 315.44,
+   "konusmaci": "Can",
+   "metin": "En kısa dikdörtgen de on öğrenciyle en az öğrencinin olduğu kırk ile elli sınıf aralığını temsil ediyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 315.44,
+   "bit": 325.7,
+   "konusmaci": "Ayşe",
+   "metin": "İşte görselleştirmenin gücü bu. Öğrencilerin en fazla altmış ile yetmiş kilo aralığında, en az ise kırk ile elli kilo aralığında oldukları tek bakışta anlaşılıyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 325.7,
+   "bit": 332.94,
+   "konusmaci": "Can",
+   "metin": "Histogramı çizdikten sonra onun üzerinden kolayca elde edebileceğimiz bir grafik çeşidi daha var: frekans poligonu.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 332.94,
+   "bit": 347.54,
+   "konusmaci": "Ayşe",
+   "metin": "Evet, ikisi çok yakından ilişkili. Frekans poligonu, histogramdaki sınıf sınırlarının orta noktalarını apsis, sınıf frekanslarını ise ordinat kabul eden noktaların doğru parçaları ile birleştirilmesiyle elde edilen grafik çeşididir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 347.54,
+   "bit": 349.74,
+   "konusmaci": "Can",
+   "metin": "Daha kısaca nasıl tarif edebiliriz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 349.74,
+   "bit": 370.0,
+   "konusmaci": "Ayşe",
+   "metin": "Kısacası, histogramı oluşturan dikdörtgenlerin üst kenarlarının orta noktalarının çizgiyle birleştirilmesi suretiyle elde edilen grafiğe frekans poligonu denir. Alt kenarlarla veya sütun grafiğiyle karıştırmamak gerekir; mutlaka frekans histogramını oluşturan dikdörtgenlerin üst kenarlarının orta noktaları birleştirilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 370.0,
+   "bit": 374.91,
+   "konusmaci": "Can",
+   "metin": "Peki sınıf sınırlarını olabildiğince daraltırsak bu doğru parçalarına ne olur?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 374.91,
+   "bit": 384.03,
+   "konusmaci": "Ayşe",
+   "metin": "Frekans poligonu, sınıf sınırlarının mümkün olduğunca küçültülmesi durumunda bir eğriye dönüşür. Söz konusu bu eğriye frekans eğrisi adı verilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 384.03,
+   "bit": 388.12,
+   "konusmaci": "Can",
+   "metin": "Poligonun uçları havada mı kalıyor, yoksa yatay eksene iniyor mu?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 388.12,
+   "bit": 409.58,
+   "konusmaci": "Ayşe",
+   "metin": "Yatay eksene iner. Frekans poligonunun yatay eksen üzerindeki başlangıç noktası ilk sınıftan bir önceki farazi sınıfın orta noktası iken, bitiş noktası ise son sınıftan bir sonraki farazi sınıfın orta noktasıdır. Bu sayede çok önemli bir özellik ortaya çıkar: Histogramların kapladığı alan ile poligonun altında kalan alan birbirine eşittir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 409.58,
+   "bit": 416.18,
+   "konusmaci": "Can",
+   "metin": "Peki elimizdeki seri kesikli gruplandırılmış bir seriyse histogram ve frekans poligonunu nasıl çiziyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 416.18,
+   "bit": 443.68,
+   "konusmaci": "Ayşe",
+   "metin": "İktisadi ve İdari Bilimler Fakültesinde okuyan yüz öğrencinin istatistik dersinden aldığı notları düşünelim. Not grupları yirmi ile yirmi dokuz, otuz ile otuz dokuz, kırk ile kırk dokuz, elli ile elli dokuz, altmış ile altmış dokuz, yetmiş ile yetmiş dokuz, seksen ile seksen dokuz ve doksan ile doksan dokuz olmak üzere sekiz grup hâlinde verilmiş. Öğrenci sayıları da bir, altı, on bir, on iki, on sekiz, on altı, yirmi iki ve on dört.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 443.68,
+   "bit": 454.25,
+   "konusmaci": "Can",
+   "metin": "Yirmi ile yirmi dokuz biterken diğer sınıf otuzdan başlıyor, yani kesikli gruplandırılmış seri. Önce gerçek sınıf sınırlarını ve sınıf değerlerini bulmalıyız, değil mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 454.25,
+   "bit": 488.29,
+   "konusmaci": "Ayşe",
+   "metin": "Harikasın Can. Kesikli gruplandırılmış seri olduğu için öncelikle serinin alt sınır, üst sınır ve sınıf değerlerini hesaplıyoruz. Yirmi ile yirmi dokuz grubunun alt sınırı on dokuz buçuk, üst sınırı yirmi dokuz buçuk, sınıf değeri ise yirmi dört buçuk oluyor. Otuz ile otuz dokuz grubunun alt sınırı yirmi dokuz buçuk, üst sınırı otuz dokuz buçuk, sınıf değeri otuz dört buçuk. Bu şekilde doksan ile doksan dokuz grubuna kadar gidiyoruz; onun da alt sınırı seksen dokuz buçuk, üst sınırı doksan dokuz buçuk ve sınıf değeri doksan dört buçuk.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 488.29,
+   "bit": 502.01,
+   "konusmaci": "Can",
+   "metin": "Sonra bu sınıf sınırlarıyla histogramı çizip dikdörtgenlerin üst kenar orta noktalarını, yani yirmi dört buçuk, otuz dört buçuk gibi sınıf değerlerini birleştirerek frekans poligonunu aynı grafik üzerinde gösteriyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 502.01,
+   "bit": 512.52,
+   "konusmaci": "Ayşe",
+   "metin": "Tam olarak öyle. Poligonun uçlarını da ilk sınıftan önceki ve son sınıftan sonraki farazi sınıfların orta noktalarından yatay eksene birleştirerek çizimi tamamlıyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 512.52,
+   "bit": 517.12,
+   "konusmaci": "Can",
+   "metin": "Birikimli, yani kümülatif frekans grafiklerinin de özel bir adı var sanırım.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 517.12,
+   "bit": 534.99,
+   "konusmaci": "Ayşe",
+   "metin": "Evet, kümülatif frekans poligonlarına ojiv eğrileri de denir. Koordinat sistemi üzerinde hem den az kümülatif frekans dağılımlarının hem de den çok kümülatif frekans dağılımlarının grafikleri çizilebilir. İşte bu grafiklerin oluşturduğu kümülatif frekans poligonlarına ojiv eğrileri adı verilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 534.99,
+   "bit": 538.62,
+   "konusmaci": "Can",
+   "metin": "Peki eksenlerde neler bulunuyor ve hangi seriler için uygun?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 538.62,
+   "bit": 566.85,
+   "konusmaci": "Ayşe",
+   "metin": "Sürekli gruplandırılmış serilerin gösterimi için uygundur. Grafiklerin çiziminde yatay eksende değişken değerleri, yani gruplandırılmış serinin sınıf sınırları işaretlenir. Dikey eksende ise kümülatif frekans veya nispi frekans değerleri yer alır. Yatay eksende sınıf sınırları bulunduğu için kümülatif frekans grafikleri birbirine bitişik olmayan ayrık dikdörtgenler dizisinden oluşmaz; bitişik yapıdadır ve kesişen noktaların çizgilerle birleştirilmesiyle çizilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 566.85,
+   "bit": 573.03,
+   "konusmaci": "Can",
+   "metin": "Den az ve den çok grafiklerini çizerken yatay eksende hangi sınıf sınırını kullandığımız değişiyor mu?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 573.03,
+   "bit": 604.22,
+   "konusmaci": "Ayşe",
+   "metin": "Evet, burası çok önemli bir ayrım. Gruplandırılmış serilerin den az kümülatif frekans dağılımı için üst sınıf sınırları apsis, frekans değerleri ordinat olacak şekilde düzlemdeki noktalar belirlenir ve çizgilerle birleştirilir. Den çok kümülatif frekans dağılımlarına ait grafiklerin çiziminde ise alt sınıf sınırları kullanılır; alt sınıf sınırları apsis, frekans değerleri ordinat olacak şekilde noktalar çizgilerle birleştirilir ve son sınıfın üst sınırında grafik yatay eksene değecek şekilde son nokta konulur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 604.22,
+   "bit": 611.67,
+   "konusmaci": "Can",
+   "metin": "Peki den az ve den çok kümülatif frekans dağılımlarını aynı grafik üzerinde gösterirsek kesiştikleri nokta bize neyi verir?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 611.67,
+   "bit": 617.85,
+   "konusmaci": "Ayşe",
+   "metin": "Grafikteki iki kümülatif frekans eğrisinin kesiştiği noktadaki iks değeri medyan değerini vermektedir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 617.85,
+   "bit": 625.3,
+   "konusmaci": "Can",
+   "metin": "Az önceki yüz öğrencinin istatistik notları üzerinden den az ve den çok kümülatif frekans grafiklerini nasıl oluşturuyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 625.3,
+   "bit": 645.04,
+   "konusmaci": "Ayşe",
+   "metin": "Önce not gruplarımızın frekanslarını toplayarak den az kümülatif frekans değerlerini elde ediyoruz: Bir, yedi, on sekiz, otuz, kırk sekiz, altmış dört, seksen altı ve yüz. Üst sınıf sınırlarına karşılık bu değerleri işaretleyip birleştirdiğimizde yukarı doğru yükselen den az kümülatif frekans dağılımı grafiği ortaya çıkıyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 645.04,
+   "bit": 651.89,
+   "konusmaci": "Can",
+   "metin": "Den çok kümülatif frekansta ise toplam yüz öğrenciden başlayıp sınıf frekanslarını eksilterek iniyoruz, değil mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 651.89,
+   "bit": 669.15,
+   "konusmaci": "Ayşe",
+   "metin": "Aynen öyle. Yüz, doksan dokuz, doksan üç, seksen iki, yetmiş, elli iki, otuz altı ve on dört değerlerini buluyoruz. Alt sınıf sınırlarından başlayıp son sınıfın üst sınırı olan doksan dokuz buçukta yatay eksene değdirerek aşağı doğru inen den çok kümülatif frekans grafiğini çiziyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 669.15,
+   "bit": 673.93,
+   "konusmaci": "Can",
+   "metin": "Bir de iki ojiv eğrisinin aynı grafikte buluştuğu pil fabrikası uygulaması var.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 673.93,
+   "bit": 695.01,
+   "konusmaci": "Ayşe",
+   "metin": "Evet, bir pil fabrikasında üretilen piller arasından tesadüfi olarak seçilen dört yüz pilin dayanma süreleri tespit ediliyor. Üç yüz ile üç yüz doksan dokuzdan başlayıp bin yüz ile bin yüz doksan dokuza kadar dokuz kesikli sınıf var. Pil sayıları on dört, kırk altı, elli sekiz, yetmiş altı, altmış sekiz, altmış iki, kırk sekiz, yirmi iki ve altı.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 695.01,
+   "bit": 707.55,
+   "konusmaci": "Can",
+   "metin": "Kesikli seri olduğu için yine önce iki yüz doksan dokuz buçuktan bin yüz doksan dokuz buçuğa kadar sınıf sınırlarını ve üç yüz kırk dokuz buçuktan bin yüz kırk dokuz buçuğa kadar sınıf değerlerini buluyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 707.55,
+   "bit": 728.2,
+   "konusmaci": "Ayşe",
+   "metin": "Ardından on dörtten dört yüze çıkan den az kümülatif frekansları ve dört yüzden altıya inen den çok kümülatif frekansları elde ediyoruz. Sınıf değerlerine karşılık gelen bu noktaları koordinat sisteminde işaretleyip birleştirdiğimizde aynı grafik üzerinde kesişen ojiv eğrileri oluşuyor ve kesişim noktasındaki iks değeri medyanı gösteriyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 728.2,
+   "bit": 736.35,
+   "konusmaci": "Can",
+   "metin": "Buraya kadar hep sayısal serilerden konuştuk. Peki elimizdeki veriler sayısal değilse, yani nitel veriyse nasıl görselleştireceğiz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 736.35,
+   "bit": 772.57,
+   "konusmaci": "Ayşe",
+   "metin": "Önce nitel, başka bir ifadeyle kategorik veya kalitatif veriyi tanımlayalım. Nitel veriler, değişkenin vasfı ile ilgili sayısal olmayan, birimlere ait sıfatları ya da durumları tespit eden verilerdir. Özellikle sosyal bilimlerde araştırma konuları gereği çok sık kullanılır. Örneğin öğrencilerin cinsiyetleri, katılımcıların medeni durumu, eğitim durumu, konuşma dili, mevsim, televizyon markası, otomobil veya koltuk rengi ve bitki türü nitel veridir. Buna karşılık ağırlık, boy, yaş, uzunluk, sıcaklık, masa yüksekliği veya başarı puanları sayısal olduğu için nitel veri değildir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 772.57,
+   "bit": 776.61,
+   "konusmaci": "Can",
+   "metin": "Nitel verilerin grafiklerle sunumuna hangi örnekleri verebiliriz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 776.61,
+   "bit": 798.76,
+   "konusmaci": "Ayşe",
+   "metin": "Dört temel örnek verebiliriz: Birincisi ülkelerin nüfus dağılımı, ikincisi televizyon kanallarının izlenme oranları yani ana yayın kuşağı izlenme oranları, üçüncüsü siyasi partilerin seçimlerde aldıkları oy oranları ve dördüncüsü meslek gruplarına göre dağılım. Bu tip kategorik verilerin sunumunda kullandığımız grafik çeşitlerinden biri sütun grafiğidir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 798.76,
+   "bit": 802.56,
+   "konusmaci": "Can",
+   "metin": "Sütun grafiğini nasıl oluşturuyoruz ve histogramdan farkı ne?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 802.56,
+   "bit": 826.2,
+   "konusmaci": "Ayşe",
+   "metin": "Sütun grafiği, yatay eksende kategorilerin, dikey eksende ise bu kategorilerin frekanslarının gösterilmesiyle elde edilir. Yani nicel verilerin değil, nitel ve kategorik verilerin sunumu için uygundur. Çizilen sütunların yükseklikleri frekanslara göre değişir ama sütunların genişlikleri birbirine eşittir. Genişlikleri birbirinden farklıdır denirse bu ifade kesinlikle yanlıştır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 826.2,
+   "bit": 829.62,
+   "konusmaci": "Can",
+   "metin": "Peki sütunlar birbirine bitişik mi çiziliyor, ayrık mı?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 829.62,
+   "bit": 841.51,
+   "konusmaci": "Ayşe",
+   "metin": "Uygulamada sütunlar birbirinden ayrık olarak çizilir; bununla birlikte genel özellik olarak sütun grafiğinde çizilen sütunlar birbirine bitişik olabileceği gibi birbirinden ayrık da olabilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 841.51,
+   "bit": 845.93,
+   "konusmaci": "Can",
+   "metin": "Meslek gruplarına göre dağılımı bir örnekle sütun grafiğine dökelim mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 845.93,
+   "bit": 857.87,
+   "konusmaci": "Ayşe",
+   "metin": "Tabii. Bir ilde yaşayan yüz şahsın meslekleri tespit edilmiş. Beş kategorimiz var: Memur yirmi beş kişi, işçi otuz üç kişi, serbest meslek sekiz kişi, esnaf yirmi dokuz kişi ve işsiz beş kişi.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 857.87,
+   "bit": 868.45,
+   "konusmaci": "Can",
+   "metin": "Yatay eksene memur, işçi, serbest meslek, esnaf ve işsiz meslek gruplarını koyuyoruz. Dikey eksende de frekansları gösterip eşit genişlikte ayrık sütunlarımızı çiziyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 868.45,
+   "bit": 881.95,
+   "konusmaci": "Ayşe",
+   "metin": "Grafik incelendiğinde ilk bakışta en fazla sayıda kişinin otuz üç kişiyle işçi olduğu, ikinci sırada yirmi dokuz kişiyle esnafların yer aldığı ve en az sayıda kişinin ise beş kişiyle işsiz olduğu rahatlıkla görülüyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 881.95,
+   "bit": 888.92,
+   "konusmaci": "Can",
+   "metin": "Kategorik verilerin sunumunda sütun grafiği gibi kullandığımız bir diğer grafik türü de daire grafiği, değil mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 888.92,
+   "bit": 913.75,
+   "konusmaci": "Ayşe",
+   "metin": "Evet Can. Kategorik verilerin sunumunda hem daire grafiği hem de sütun grafiği kullanılır; serpilme diyagramı ve histogram ise nicel veriler içindir. Daire grafiği; nominal ölçekle elde edilmiş veriler, kategorik veriler veya az sayıda sınıfa ayrılabilen veriler için kullanılabilecek bir grafik türüdür. Şekil itibarıyla dilimlenmiş pastaya benzediği için bu grafiğe pasta grafiği de denilmektedir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 913.75,
+   "bit": 919.72,
+   "konusmaci": "Can",
+   "metin": "Daire grafiğinde çizilen açılar birbirine eşit mi oluyor, yoksa daire payını nasıl hesaplıyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 919.72,
+   "bit": 947.16,
+   "konusmaci": "Ayşe",
+   "metin": "Açılar birbirine eşit değildir; her sınıf veya kategori sahip olduğu frekansla orantılı büyüklükteki dilimlerle gösterilir. Daire grafiğinin çizilmesi ve daire payının hesabı için öncelikle nispi frekans değerleri elde edilir. Toplam veri sayısı dairenin iç açıları toplamı olan üç yüz altmış derecelik açıya karşılık gelir. Nispi frekanslar üç yüz altmış ile çarpılarak her bir kategorinin üç yüz altmış dereceden alacağı pay tespit edilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 947.16,
+   "bit": 960.17,
+   "konusmaci": "Can",
+   "metin": "Hemen pratik bir açı hesabı yapalım. Yüz trafik kazasının otuz beşinde birincil sebep alkollü araç kullanmaksa ya da yüz kişinin otuzu ulaşım aracı olarak metroyu tercih ediyorsa dilim açıları kaç derece olur?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 960.17,
+   "bit": 988.73,
+   "konusmaci": "Ayşe",
+   "metin": "Yüz kazada otuz beş ise nispi frekans otuz beş bölü yüzdür; bunu üç yüz altmış ile çarptığımızda alkollü araç kullanma kategorisinin açısal değerini yüz yirmi altı derece buluruz. Yüz kişide otuz kişi metroyu tercih ediyorsa otuz bölü yüz çarpı üç yüz altmıştan metro diliminin açısı yüz sekiz derece çıkar. Dilimleri yerleştirirken de genellikle saatin on ikiyi gösterdiği noktadan başlanarak saatin dönüş istikametine göre belirlenen açılar kadar ilerlenir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 988.73,
+   "bit": 994.58,
+   "konusmaci": "Can",
+   "metin": "Peki sınıf veya kategori sayısı arttıkça daire grafiğinin çizimi ve anlaşılması kolaylaşır mı?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 994.58,
+   "bit": 1010.88,
+   "konusmaci": "Ayşe",
+   "metin": "Tam tersine, sınıf veya kategori sayısı arttıkça daire grafiğinin çizimi ve anlaşılması zorlaşır. Grafik karmaşıklaştıkça görsel anlaşılırlık amacından uzaklaşır. Bu nedenle daire grafiği az sayıda sınıfa veya kategoriye ayrılabilen veriler için kullanılmalıdır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1010.88,
+   "bit": 1017.15,
+   "konusmaci": "Can",
+   "metin": "Bir ülkedeki çalışanların çalışma kategorilerine göre dağılımını daire grafiğine nasıl aktarıyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1017.15,
+   "bit": 1045.48,
+   "konusmaci": "Ayşe",
+   "metin": "Toplam on dokuz milyon yedi yüz seksen dört bin doksan bir çalışanın beş kategoride dağılımı veriliyor. Ücretliler altı milyon iki yüz seksen üç bin üç yüz elli beş; yevmiyeli veya mevsimlik işçiler bir milyon üç yüz kırk yedi bin yedi yüz yirmi sekiz; işverenler bir milyon yüz on sekiz bin dokuz yüz elli; kendi hesabına çalışanlar dört milyon dokuz yüz beş bin otuz yedi ve ücretsiz aile işçileri altı milyon yüz yirmi dokuz bin yirmi bir kişi.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1045.48,
+   "bit": 1053.91,
+   "konusmaci": "Can",
+   "metin": "İlk olarak her kategorinin çalışan sayısını toplama bölerek nispi frekans değerlerini buluyoruz, sonra da üç yüz altmışla çarpıyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1053.91,
+   "bit": 1083.82,
+   "konusmaci": "Ayşe",
+   "metin": "Kesinlikle. Saat on iki noktasından saat yönünde dilimleri yerleştirdiğimizde en fazla payı yüzde otuz bir tam yüzde yetmiş altı ve yüz on dört tam binde üç yüz otuz altı derecelik açıyla ücretliler alıyor. Onu yüzde otuz tam yüzde doksan sekiz ile ücretsiz aile işçileri ve yüzde yirmi dört tam yüzde yetmiş dokuz ile kendi hesabına çalışanlar takip ediyor. En az payı ise yüzde beş tam yüzde altmış altı ve yirmi tam binde üç yüz yetmiş altı dereceyle işverenler alıyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1083.82,
+   "bit": 1090.91,
+   "konusmaci": "Can",
+   "metin": "Kalite kontrol, hata ve maliyet analizlerinde sıkça başvurulan bir de Pareto grafiği var. Nereden geliyor bu ad?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1090.91,
+   "bit": 1108.78,
+   "konusmaci": "Ayşe",
+   "metin": "İlk kez bin sekiz yüz kırk sekiz ile bin dokuz yüz yirmi üç yılları arasında yaşamış İtalyan ekonomist Pareto tarafından gelir dağılımları ile ilgili çalışmalarda tespit edilmiş ve onun adıyla anılıyor. Pareto grafiği, hata ve maliyet analizleri için kullanılan basit bir yöntemdir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1108.78,
+   "bit": 1114.42,
+   "konusmaci": "Can",
+   "metin": "Hangi olayların meydana gelme frekanslarını göstermek için Pareto grafiğini kullanıyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1114.42,
+   "bit": 1135.52,
+   "konusmaci": "Ayşe",
+   "metin": "Yedi temel olay örneği sayabiliriz: Birincisi bozuk ürünler, ikincisi tamirler, üçüncüsü arızalar, dördüncüsü talepler, beşincisi noksanlıklar, altıncısı kazalar, yedincisi ise mali kayıplar ve bunların sebepleri. Pareto grafiği bu gibi olayların görsel olarak meydana gelme frekanslarını gösteren bir tür frekans dağılım grafiğidir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1135.52,
+   "bit": 1139.77,
+   "konusmaci": "Can",
+   "metin": "Bir sorunu çözerken neden özellikle Pareto grafiği tercih ediliyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1139.77,
+   "bit": 1162.39,
+   "konusmaci": "Ayşe",
+   "metin": "Çünkü Pareto grafiği bir sorunu oluşturan nedenleri önem sırasına göre sıralayarak, önemlileri önemsizlerden ayırt etmeye ve dikkatleri önemli nedenler üzerinde toplamaya imkân verir. Grafikte en önemli problemler sol tarafta yer alırken, önemsiz olanlar sağ tarafta yer alır ve soldan sağa doğru gidildikçe küçülen sütunlara sahip veri sınıfları sıralanır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1162.39,
+   "bit": 1167.65,
+   "konusmaci": "Can",
+   "metin": "Peki görünüm ve özellik bakımından sütun grafiğine mi yoksa histograma mı benziyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1167.65,
+   "bit": 1188.43,
+   "konusmaci": "Ayşe",
+   "metin": "Buraya çok dikkat edelim: Pareto grafiği bitişik dikdörtgen yapısı nedeniyle bazı özellikleri bakımından sütun grafiğine değil, histograma benzemektedir. Histogramdan şu özelliği ile ayırt edilir: Pareto grafiğinde yatay eksen kategorik verileri gösterirken, histogramda yatay eksen numerik yani sayısal verileri göstermektedir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1188.43,
+   "bit": 1194.52,
+   "konusmaci": "Can",
+   "metin": "Çok önemsiz durumlar olduğunda veya dikey eksende neler gösterildiğinde nasıl bir yol izleniyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1194.52,
+   "bit": 1232.6,
+   "konusmaci": "Ayşe",
+   "metin": "Bazen Diğerleri adı altında çok önemsiz durumlar bir sınıf altında toplanıp birleştirilebilir ve Diğerleri kategorisi kullanıldığında bu sınıf en sağda yer alır. Maliyet, frekanslar veya yüzde gibi değerler dikey eksende gösterilir. Bazı durumlarda soldan sağa doğru eklenen veri sınıflarının toplamını gösteren kümülatif eğri de grafikte yer alır. Örneğin A, B, C, D ve E hata türlerinin yer aldığı örnek bir Pareto grafiğinde en soldaki en yüksek sütun en fazla A türü hatanın yapıldığını, onu B türü hatanın takip ettiğini, en sağdaki sütun ise en az E türü hatanın yapıldığını kolaylıkla gösterir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1232.6,
+   "bit": 1241.71,
+   "konusmaci": "Can",
+   "metin": "Bilimin en temel amaçlarından biri de değişkenler arasındaki ilişkileri incelemek. İki değişken arasındaki ilişkiyi hangi grafik türüyle inceliyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1241.71,
+   "bit": 1257.86,
+   "konusmaci": "Ayşe",
+   "metin": "Değişkenler arasındaki ilişkilerin grafik aracılığı ile incelenmesinde serpilme diyagramından yararlanılmaktadır. Serpilme diyagramlarında yatay eksende genellikle neden durumunda olan iks değişkeni ve dikey eksende de sonuç durumunda olan ye değişkeni kullanılır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1257.86,
+   "bit": 1261.47,
+   "konusmaci": "Can",
+   "metin": "Neden ve sonuç durumundaki bu değişkenlere ne ad veriyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1261.47,
+   "bit": 1276.82,
+   "konusmaci": "Ayşe",
+   "metin": "Neden durumunda olan iks değişkenine bağımsız değişken ve sonuç durumunda olan ye değişkenine de bağımlı değişken adı verilmektedir. Bu iki değişkene ait sıralı ikili çiftleri olan iks ve ye değerleri kartezyen koordinat sistemi üzerine yerleştirilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1276.82,
+   "bit": 1282.02,
+   "konusmaci": "Can",
+   "metin": "Serpilme diyagramı ile hangi ikili değişkenler arasındaki ilişkileri inceleyebiliriz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1282.02,
+   "bit": 1307.34,
+   "konusmaci": "Ayşe",
+   "metin": "Altı temel ikili değişken örneğimiz var: Birincisi boy ile kilo, ikincisi fiyat ile talep, üçüncüsü arz ile talep, dördüncüsü gelir ile tasarruf, beşincisi gelir ile harcama ve altıncısı çalışma süresi ile başarı notu. Mesela öğrencilerin günlük ortalama ders çalışma süreleri ile sınav puanları arasında bir ilişki olup olmadığı incelenmek isteniyorsa verilerin serpilme diyagramı ile görselleştirilmesi uygundur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1307.34,
+   "bit": 1313.09,
+   "konusmaci": "Can",
+   "metin": "Koordinat sistemindeki noktalara bakarak ilişkinin yönünü ve derecesini nasıl tahmin ediyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1313.09,
+   "bit": 1339.03,
+   "konusmaci": "Ayşe",
+   "metin": "En dışta kalan noktalar birleştirilerek bir şekil elde edilir. Şeklin doğrultusuna bakılarak ilişkinin yönü saptanır, şeklin durumuna göre ise ilişkinin derecesi göz kararıyla tahmin edilir. Şayet şekil oldukça dar bir elipse benziyorsa ilişkinin kuvvetli olduğu ifade edilir. Elips sol alttan sağ üste yükseliyorsa pozitif ve kuvvetli bir ilişkiyi, sol üstten sağ alta iniyorsa ters yönlü kuvvetli bir ilişkiyi işaret eder.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1339.03,
+   "bit": 1343.61,
+   "konusmaci": "Can",
+   "metin": "Peki elips genişledikçe ya da şekil daireye benzediğinde ne anlama geliyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1343.61,
+   "bit": 1358.17,
+   "konusmaci": "Ayşe",
+   "metin": "Elips genişledikçe ilişkinin derecesi zayıflar. Değişkenler arasında ilişki bulunmadığında ise noktaların oluşturduğu şekil bir daireye benzer. Yani şekil daireye benziyorsa iks ve ye değişkenleri arasında ilişki olmadığına karar verilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1358.17,
+   "bit": 1365.27,
+   "konusmaci": "Can",
+   "metin": "Yedi grafik türünün hepsini tanıdık. Şimdi uygulamada karşımıza çıkan üç temel çalışma görevi üzerinde düşünelim mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1365.27,
+   "bit": 1383.61,
+   "konusmaci": "Ayşe",
+   "metin": "Çok iyi olur Can. Üzerinde durmamız gereken üç temel uygulama noktası var: Birincisi, hangi veri için hangi grafik türünün daha uygun olacağını tartışmak. İkincisi, grafik türleri için birer örnek vermek. Üçüncüsü ise seçim ve referandum sonuçlarının hangi grafik türü ile gösterileceğini belirlemek.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1383.61,
+   "bit": 1390.59,
+   "konusmaci": "Can",
+   "metin": "Önce veri türüne göre uygun grafiği ve örneklerini eşleştirelim. Sayısal ve nitel verilerde nasıl ayrım yapıyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1390.59,
+   "bit": 1416.46,
+   "konusmaci": "Ayşe",
+   "metin": "Gruplandırılmış sürekli sayısal verilerde öğrenci ağırlıkları örneğindeki gibi histogramı, istatistik notları örneğindeki gibi frekans poligonunu ve pil dayanma süreleri örneğindeki gibi ojiv eğrilerini kullanıyoruz. Üretimdeki bozuk ürün ve arıza sebeplerini önem sırasına dizmek için Pareto grafiğini; boy ile kilo ya da çalışma süresi ile başarı notu arasındaki ilişkiyi incelemek için de serpilme diyagramını seçiyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1416.46,
+   "bit": 1422.58,
+   "konusmaci": "Can",
+   "metin": "Peki seçim ve referandum sonuçları gibi nitel, kategorik verileri hangi grafik türüyle gösteriyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1422.58,
+   "bit": 1442.15,
+   "konusmaci": "Ayşe",
+   "metin": "Meslek grupları, çalışma kategorileri, seçimlerde siyasi partilerin oy oranları ve referandum sonuçları kategorik veriler olduğu için sütun grafiği ve daire grafiği ile gösterilir. Özellikle referandumda evet ve hayır gibi az sayıda kategori bulunduğundan daire yani pasta grafiği ile sütun grafiği en uygun seçimlerdir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1442.15,
+   "bit": 1446.8,
+   "konusmaci": "Can",
+   "metin": "Bütün bu grafik türlerinin en temel özelliklerini bir arada toparlayalım mı?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1446.8,
+   "bit": 1469.8,
+   "konusmaci": "Ayşe",
+   "metin": "Tabii. Grafik, gözlem değerlerinin matematiksel ve bilimsel temellere sahip şekiller hâlinde ifade edilmesiydi ve olayların ana eğilimini ilk bakışta görmemizi sağlıyordu. Gruplandırılmış seriler için oluşturulan histogramda yatay eksende sınıf sınırları, dikey eksende frekanslar yer aldı; dikdörtgenlerin tabanları sınıf büyüklüğünü, yükseklikleri sınıf frekansını gösterdi.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1469.8,
+   "bit": 1485.03,
+   "konusmaci": "Can",
+   "metin": "Histogram dikdörtgenlerinin üst kenar orta noktalarını doğru parçalarıyla birleştirince frekans poligonunu elde ettik; sınıf sınırları çok küçültüldüğünde frekans eğrisine dönüştü ve poligonun altındaki alan histogramların kapladığı alana eşit oldu.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1485.03,
+   "bit": 1500.99,
+   "konusmaci": "Ayşe",
+   "metin": "Den az ve den çok kümülatif frekans poligonlarına ojiv eğrileri dedik. Den az grafiğinde üst sınıf sınırlarını, den çok grafiğinde alt sınıf sınırlarını kullandık ve iki kümülatif frekans eğrisinin kesiştiği noktadaki iks değerinin medyanı verdiğini vurguladık.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1500.99,
+   "bit": 1513.53,
+   "konusmaci": "Can",
+   "metin": "Kategorik verilerin sunumunda ise eşit genişlikli, bitişik veya ayrık çizilebilen sütun grafiğini ve nispi frekansların üç yüz altmış dereceyle çarpıldığı, az sayıda sınıfa uygun daire grafiğini kullandık.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1513.53,
+   "bit": 1530.96,
+   "konusmaci": "Ayşe",
+   "metin": "Ayrıca İtalyan ekonomist Pareto tarafından bulunan, hata ve maliyet analizlerinde sorun nedenlerini soldan sağa küçülen sütunlarla sıralayan Pareto grafiğini ve bağımsız iks ile bağımlı ye değişkenleri arasındaki ilişkiyi incelediğimiz serpilme diyagramını tüm yönleriyle netleştirdik.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1530.96,
+   "bit": 1538.69,
+   "konusmaci": "Can",
+   "metin": "Son olarak Ayşe, grafiklerle ilgili en sık karıştırılan on kritik noktayı da netleştirelim mi? Nerelerde yanılgıya düşülebiliyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1538.69,
+   "bit": 1558.0,
+   "konusmaci": "Ayşe",
+   "metin": "En sık karıştırılan on noktayı tek tek hatırlatalım. Birincisi, gruplandırılmış serilerin kümülatif frekans dağılımlarına ait grafiklerin çiziminde yatay eksende frekanslar değil, sınıf sınırları işaretlenir. İkincisi, gruplandırılmış seriler için oluşturulan dikdörtgenler dizisinin adı sütun grafiği değil, histogramdır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1558.0,
+   "bit": 1572.57,
+   "konusmaci": "Can",
+   "metin": "Üçüncüsü, histogramda dikdörtgenlerin büyüklük sırasına göre yerleştirildiği iddiası yanlıştır; büyüklük sırasına göre dizilen Pareto grafiğidir. Ayrıca histogramda dikdörtgenin taban genişliği sınıf sayısını değil, sınıf büyüklüğünü gösterir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1572.57,
+   "bit": 1589.89,
+   "konusmaci": "Ayşe",
+   "metin": "Çok doğru. Dördüncüsü, histogramı oluşturan dikdörtgenlerin üst kenarlarının orta noktalarını birleştirmek suretiyle elde edilen grafik frekans poligonudur. Beşincisi, kümülatif frekans poligonlarına ojiv eğrileri denir ve bunlar birbirine bitişik olmayan dikdörtgenler dizisinden oluşmaz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1589.89,
+   "bit": 1607.28,
+   "konusmaci": "Can",
+   "metin": "Altıncısı, bir histogramda toplam gözlem sayısı bulunurken yatay eksendeki değerler değil, dikey eksendeki sınıf frekansları toplanır. Yedincisi ve sekizincisi ise veri tipi ayrımıdır: Kategorik veriler için daire grafiği ve sütun grafiği, sürekli sayısal veriler için histogram kullanılır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1607.28,
+   "bit": 1627.85,
+   "konusmaci": "Ayşe",
+   "metin": "Dokuzuncusu, bozuk ürünler, tamirler ve arızalar gibi olayların meydana gelme frekanslarını gösteren grafik Pareto grafiğidir. Onuncusu ise sütun grafiğinde çizilen sütunların genişliklerinin birbirinden farklı olduğu iddiasıdır ki bu yanlıştır; sütun genişlikleri birbirine eşittir, daire grafiğinde ise dilim açıları birbirine eşit değildir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1627.85,
+   "bit": 1634.56,
+   "konusmaci": "Can",
+   "metin": "Böylece tüm grafikleri ve dikkat edilmesi gereken ayrımları eksiksiz ve çok berrak bir şekilde tamamlamış olduk.",
+   "konu": null,
+   "guven": 0
+  }
+ ]
+}

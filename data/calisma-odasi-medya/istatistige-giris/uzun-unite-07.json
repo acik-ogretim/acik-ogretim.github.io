@@ -1,0 +1,902 @@
+{
+ "v": 1,
+ "medya": "uzun-unite-07",
+ "satirlar": [
+  {
+   "bas": 0.0,
+   "bit": 10.93,
+   "konusmaci": "Can",
+   "metin": "Hem parametrik hem de parametrik olmayan merkezî eğilim ölçülerini tamamladık; fakat istatistiksel serilerde sadece ortalamaya bakmak bazen bizi yanıltabiliyor, değil mi Ayşe?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 10.93,
+   "bit": 16.37,
+   "konusmaci": "Ayşe",
+   "metin": "Kesinlikle öyle Can. İşte bu yüzden parametrik değişkenlik ölçülerinden yararlanıyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 16.37,
+   "bit": 21.18,
+   "konusmaci": "Can",
+   "metin": "Parametrik değişkenlik ölçüleri dediğimizde karşımıza kaç temel ölçü çıkıyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 21.18,
+   "bit": 30.3,
+   "konusmaci": "Ayşe",
+   "metin": "Dört temel parametrik değişkenlik ölçüsü var. Birincisi ortalama sapma, ikincisi varyans, üçüncüsü standart sapma ve dördüncüsü değişim katsayısı.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 30.3,
+   "bit": 46.68,
+   "konusmaci": "Can",
+   "metin": "Şu ayrım da çok önemli: Aritmetik ortalama bir merkezî eğilim ölçüsüdür, bir değişkenlik ölçüsü değildir. Değişim aralığı ise parametrik olmayan bir değişim ölçüsüdür; yani ortalama sapma, varyans, standart sapma ve değişim katsayısı dörtlüsü arasında yer almaz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 46.68,
+   "bit": 55.49,
+   "konusmaci": "Ayşe",
+   "metin": "Aynen öyle. Üstelik bu dört parametrik değişkenlik ölçüsü hesaplanırken merkezî eğilim ölçüsü olarak her zaman aritmetik ortalama kullanılır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 55.49,
+   "bit": 61.61,
+   "konusmaci": "Can",
+   "metin": "Ayşe, parametrik değişkenlik ölçülerinin mantığını kurarken beş temel boyut öne çıkıyor, değil mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 61.61,
+   "bit": 69.61,
+   "konusmaci": "Ayşe",
+   "metin": "Evet Can, beş temel boyut var. Birincisi değişkenlik kavramını açıklayabilmek, ikincisi ise serilerdeki değişkenliği ölçebilmek.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 69.61,
+   "bit": 74.36,
+   "konusmaci": "Can",
+   "metin": "Üçüncü ve dördüncü boyutlar sapmaların hesaplanma biçimiyle doğrudan ilgili.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 74.36,
+   "bit": 92.91,
+   "konusmaci": "Ayşe",
+   "metin": "Doğru. Üçüncüsü aritmetik ortalamadan mutlak sapmaları ölçen değişkenlik ölçüsünü açıklayabilmek. Dördüncüsü aritmetik ortalamadan kareleri sapmaları ölçen değişkenlik ölçülerini açıklayabilmek. Beşincisi de serilerden elde edilebilecek parametrik değişkenlik ölçüleri hakkında bilgi sahibi olmak.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 92.91,
+   "bit": 101.91,
+   "konusmaci": "Can",
+   "metin": "Aritmetik ortalamadan mutlak sapmaları ölçen değişkenlik ölçüsü ortalama sapma iken, kareli sapmaları ölçenler varyans ve standart sapma oluyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 101.91,
+   "bit": 110.16,
+   "konusmaci": "Can",
+   "metin": "Merkezî eğilim ölçüleri istatistiksel serilerin incelenmesi ve karşılaştırılmasında neden tek başına her zaman yeterli olmuyor Ayşe?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 110.16,
+   "bit": 124.47,
+   "konusmaci": "Ayşe",
+   "metin": "Çünkü istatistiksel serilerin ortalamaları birbirine eşit olsa bile dağılımları birbirinden çok farklı olabilir. Birimlerin merkezî eğilim etrafındaki dağılma durumunu ortaya koymak amacıyla değişkenlik ölçülerinden yararlanılır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 124.47,
+   "bit": 137.15,
+   "konusmaci": "Can",
+   "metin": "İki farklı basit seriyle somutlaştıralım. İlk serimiz ilk seri olan iks serisi olsun; değerleri altı, yedi, sekiz, dokuz ve on. Toplamları kırk eder, beş gözleme bölünce aritmetik ortalaması sekiz çıkar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 137.15,
+   "bit": 154.08,
+   "konusmaci": "Ayşe",
+   "metin": "İkinci serimiz de ye serisi olsun; değerleri bir, iki, dört, on dört ve on dokuz. Bunların da toplamı kırk, beşe bölünce aritmetik ortalaması yine sekiz çıkar. Sadece ortalamalara bakılsa iki serinin birbirine benzer veya aynı gözlem değerlerine sahip olduğu sanılabilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 154.08,
+   "bit": 171.27,
+   "konusmaci": "Can",
+   "metin": "Oysa yapılar bambaşka. İks serisinde gözlemler birbirine yakın değerler alıyor ve birbirine benziyor; yani iks serisi homojen seri yapısına sahip. Ye serisinde ise gözlemler birbirlerinden uzak değerler alıyor ve birbirine benzemiyor; yani ye serisi heterojen seri yapısında.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 171.27,
+   "bit": 192.82,
+   "konusmaci": "Ayşe",
+   "metin": "İstatistiksel bir seriyi oluşturan gözlem değerlerinin değer itibarıyla birbirlerinden ya da herhangi bir ortalamadan uzaklıkları esas alınarak hesaplanan ölçülere değişkenlik ölçüleri denir. Değişkenlik ölçüleri, gözlem değerlerinin ortalama etrafında ne kadar sık dağıldıklarını ve serilerin homojen mi yoksa heterojen mi olduklarını belirtir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 192.82,
+   "bit": 198.64,
+   "konusmaci": "Can",
+   "metin": "Tek bir seri için değişkenlik ölçüsü hesapladığımızda bu sonuç tek başına bir anlam taşır mı?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 198.64,
+   "bit": 214.82,
+   "konusmaci": "Ayşe",
+   "metin": "Hayır Can, değişkenlik ölçüleri tek bir seri için hesaplandığında tek başlarına bir anlam ifade etmezler. Ancak birbirleri ile karşılaştırıldıklarında hangi seride birimlerin ortalama etrafında daha sık, hangisinde daha seyrek biçimde dağıldığını belirtirler.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 214.82,
+   "bit": 220.69,
+   "konusmaci": "Can",
+   "metin": "Peki karşılaştırma yaptığımızda değişkenlik ölçüsü küçük olan seri nasıl bir dağılım sergiler?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 220.69,
+   "bit": 235.56,
+   "konusmaci": "Ayşe",
+   "metin": "Değişkenlik ölçüsü küçük olan seriler, değişkenlik ölçüsü büyük olan serilere göre ortalama etrafında daha sık bir dağılım gösterirler ve karşılaştırma yapılan diğer serilere göre daha homojendirler. Daha heterojendir denirse yanlış olur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 235.56,
+   "bit": 240.5,
+   "konusmaci": "Can",
+   "metin": "Homojenlik aritmetik ortalamanın seriyi temsil gücünü de yükseltiyor, değil mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 240.5,
+   "bit": 252.0,
+   "konusmaci": "Ayşe",
+   "metin": "Kesinlikle. Gözlem değerleri aritmetik ortalama etrafında daha sık dağılan, yani homojen olan serilerde aritmetik ortalama seriyi daha iyi temsil eder; temsil etme gücü daha yüksektir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 252.0,
+   "bit": 259.87,
+   "konusmaci": "Can",
+   "metin": "Peki bu ölçülere neden parametrik diyoruz? Anakütledeki bütün birimler kullanılarak hesaplanan ölçülere parametre adı verilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 259.87,
+   "bit": 286.8,
+   "konusmaci": "Ayşe",
+   "metin": "Evet, hesaplanırken serideki ve anakütledeki bütün birimlerin kullanıldığı değişkenlik ölçülerine de parametrik değişkenlik ölçüleri adı verilmiştir. Hesaplanırken serideki bütün birimler kullanılmaz şeklindeki bir ifade kesinlikle yanlıştır. Ayrıca standart sapma ve varyans gibi ölçüler örnekleme teorisi veya hipotez testi gibi tahlilî yani indaktif istatistiğin değil, tasvirî yani deskriptif istatistiğin konuları arasındadır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 286.8,
+   "bit": 289.6,
+   "konusmaci": "Can",
+   "metin": "Ortalama sapma tam olarak neyi ölçüyor Ayşe?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 289.6,
+   "bit": 299.89,
+   "konusmaci": "Ayşe",
+   "metin": "Ortalama sapma, değişkenliğin ölçülmesinde serideki gözlem değerlerinin aritmetik ortalamadan ne kadar uzak olduklarını belirlemeye çalışan değişkenlik ölçüsüdür.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 299.89,
+   "bit": 307.89,
+   "konusmaci": "Can",
+   "metin": "Bu uzaklığı belirlemek için gözlem değerlerinin aritmetik ortalamadan farklarının toplamını alsak karşımıza bir engel çıkıyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 307.89,
+   "bit": 322.95,
+   "konusmaci": "Ayşe",
+   "metin": "Evet, çünkü bir serideki rakamların aritmetik ortalamasından farklarının toplamı her zaman sıfır değerine eşittir. Ortalamadan küçük gözlem değerleri negatif, büyük olan gözlem değerleri ise pozitif sonuç verdiği için toplam sıfır çıkar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 322.95,
+   "bit": 325.43,
+   "konusmaci": "Can",
+   "metin": "Bu sıfır çıkma sorununu nasıl aşıyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 325.43,
+   "bit": 340.43,
+   "konusmaci": "Ayşe",
+   "metin": "Söz konusu farkların mutlak değerlerini alarak çözüyoruz. Gözlem değerlerinin aritmetik ortalamadan farklarının mutlak değerleri alınıp toplandığında bir seride yer alan değerlerin aritmetik ortalamadan toplam sapma miktarı elde edilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 340.43,
+   "bit": 345.06,
+   "konusmaci": "Can",
+   "metin": "Hesaplama formüllerini kaç farklı istatistiksel seri türünde uyguluyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 345.06,
+   "bit": 361.08,
+   "konusmaci": "Ayşe",
+   "metin": "Üç istatistiksel seri türü var: Basit seriler, sınıflandırılmış seriler ve gruplandırılmış seriler. Basit serilerde ortalama sapma değeri, aritmetik ortalamadan mutlak sapmalar toplamının gözlem sayısına yani küçük ne değerine bölünmesiyle elde edilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 361.08,
+   "bit": 370.92,
+   "konusmaci": "Can",
+   "metin": "Hemen bir basit seri hesaplayalım: Gözlem değerleri yedi, sekiz, on, on bir ve on dört olsun. Toplam elli, beş gözleme bölünce aritmetik ortalama on çıkar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 370.92,
+   "bit": 383.76,
+   "konusmaci": "Ayşe",
+   "metin": "Ondan farklar eksi üç, eksi iki, sıfır, bir ve dörttür. Mutlak değerleri üç, iki, sıfır, bir ve dört olur; topladığımızda on eder. Gözlem sayısı olan beşe böldüğümüzde ortalama sapma iki olarak bulunur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 383.76,
+   "bit": 407.46,
+   "konusmaci": "Can",
+   "metin": "Başka basit seri örneklerine de bakalım. İki, dört ve altı değerlerinden oluşan basit seride ortalama dörttür. Mutlak farklar iki, sıfır ve ikiden toplam dört yapar; üçe bölünce ortalama sapma bir tam yüzde otuz üç çıkar. Sekiz değere sahip basit bir seride mutlak sapmaların toplamı yetmiş iki olarak verilmişse, yetmiş ikiyi sekize bölerek ortalama sapmayı dokuz buluruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 407.46,
+   "bit": 430.46,
+   "konusmaci": "Ayşe",
+   "metin": "Ters işlem de çok önemli. Beş değere sahip basit seride ortalama sapma sekiz tam yüzde yirmi beş ise, beşle çarparak mutlak sapmaların toplamını kırk bir tam yüzde yirmi beş buluruz. Altı değerden oluşan basit bir seride ortalama sapma üç tam yüzde altmış yedi olarak hesaplanmışsa, altıyla çarparak mutlak değerler toplamını yirmi iki tam yüzde iki elde ederiz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 430.46,
+   "bit": 435.67,
+   "konusmaci": "Can",
+   "metin": "Peki sınıflandırılmış ve gruplandırılmış serilerde ortalama sapma nasıl bulunuyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 435.67,
+   "bit": 450.66,
+   "konusmaci": "Ayşe",
+   "metin": "Sınıflandırılmış serilerde ilk olarak aritmetik ortalama hesaplanır. Gözlem değerlerinin aritmetik ortalamadan farklarının mutlak değerleri elde edilip karşılarındaki frekans değerleri ile çarpılarak toplanır ve toplam frekansa bölünür.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 450.66,
+   "bit": 491.71,
+   "konusmaci": "Can",
+   "metin": "Örneğin gözlem değerleri on, yirmi, otuz, kırk, elli, altmış ve frekansları dört, altı, dokuz, on, sekiz, sekiz olan sınıflandırılmış seride toplam frekans kırk beş ve aritmetik ortalama otuz sekizdir. Mutlak farklar frekanslarla çarpılıp toplandığında beş yüz seksen dört gelir; kırk beşe bölünce ortalama sapma on iki tam yüzde doksan sekiz olur. Bir başka sınıflandırılmış seride değerler beş, yedi, dokuz, on bir; frekanslar beş, altı, üç, altı ve aritmetik ortalama sekiz ise, mutlak farkların frekanslarla çarpımı on beş artı altı artı üç artı on sekizden kırk iki eder; toplam frekans yirmiye bölünce ortalama sapma iki tam yüzde on çıkar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 491.71,
+   "bit": 525.07,
+   "konusmaci": "Ayşe",
+   "metin": "Gruplandırılmış serilerde ise ilk önce sınıf sınırları kullanılarak sınıf değerleri yani orta noktalar elde edilir; sonraki işlemler sınıflandırılmış seriyle aynıdır. Mesela bir ile üç, üç ile beş, beş ile yedi ve yedi ile dokuz gruplarında sınıf değerleri iki, dört, altı ve sekizdir. Frekanslar bir, iki, dört ve üç iken toplam frekans on, aritmetik ortalama beş tam onda sekiz ve frekans çarpımlı mutlak farklar toplamı on dört tam onda sekizdir; ona bölündüğünde ortalama sapma bir tam yüzde kırk sekiz olarak hesaplanır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 525.07,
+   "bit": 532.88,
+   "konusmaci": "Can",
+   "metin": "Ortalama sapmanın matematik işlemlere elverişli olmama dezavantajını hangi değişkenlik ölçüsüyle ortadan kaldırıyoruz Ayşe?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 532.88,
+   "bit": 543.68,
+   "konusmaci": "Ayşe",
+   "metin": "Varyans ile ortadan kaldırıyoruz Can. Gözlem değerlerinin aritmetik ortalamadan farklarının toplamının sıfır çıkmaması için mutlak değer yerine farkların kareleri alınır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 543.68,
+   "bit": 548.51,
+   "konusmaci": "Can",
+   "metin": "Farkların kareleri alınıp toplandığında elde edilen toplama ne ad veriliyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 548.51,
+   "bit": 559.38,
+   "konusmaci": "Ayşe",
+   "metin": "Seride bulunan gözlem değerlerinin aritmetik ortalamadan farklarının kareleri alınarak toplanırsa fark kare toplamı, diğer ifadeyle en küçük fark kare toplamı elde edilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 559.38,
+   "bit": 563.95,
+   "konusmaci": "Can",
+   "metin": "Basit serilerde varyansı bulmak için fark kare toplamını neye bölüyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 563.95,
+   "bit": 583.52,
+   "konusmaci": "Ayşe",
+   "metin": "Serbestlik derecesine bölüyoruz. Serbestlik derecesi toplam gözlem sayısının bir eksiğidir, yani küçük ne eksi birdir. Örnek değerleri kullanılarak hesaplanan varyans değeri küçük se kare ile ifade edilirken, anakütledeki tüm değerler kullanılarak hesaplanan varyans değeri küçük sigma kare ile ifade edilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 583.52,
+   "bit": 593.68,
+   "konusmaci": "Can",
+   "metin": "Basit serilerde varyans hesabını örneklerle inceleyelim. Gözlem değerleri yirmi, yirmi iki, yirmi sekiz ve otuz olan basit serinin varyansı kaçtır?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 593.68,
+   "bit": 613.31,
+   "konusmaci": "Ayşe",
+   "metin": "Dört gözlemin aritmetik ortalaması yirmi beştir. Yirmi beşten farklar eksi beş, eksi üç, üç ve beş; kareleri yirmi beş, dokuz, dokuz ve yirmi beşten toplam altmış sekiz eder. Serbestlik derecesi olan dört eksi bir yani üçe bölündüğünde varyans yirmi iki tam yüzde altmış yedi bulunur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 613.31,
+   "bit": 633.98,
+   "konusmaci": "Can",
+   "metin": "Üç, beş, altı, on ve on bir şeklinde verilen beş gözlemli basit seride ise aritmetik ortalama yedidir. Yediden farkların kareleri on altı, dört, bir, dokuz ve on altıdan kırk altı yapar. Serbestlik derecesi beş eksi birden dörttür; kırk altıyı dörde böldüğümüzde varyans on bir tam yüzde elli çıkar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 633.98,
+   "bit": 671.45,
+   "konusmaci": "Ayşe",
+   "metin": "Yedi, on bir, on üç ve on yedi değerlerinden oluşan dört gözlemli basit seriye de dikkat edelim: Aritmetik ortalaması on ikidir. On ikiden farklar eksi beş, eksi bir, bir ve beş olup kareleri toplamı elli ikidir. Serbestlik derecesi olan dört eksi bir yani üçe bölündüğünde varyans on yedi tam yüzde otuz üç olarak hesaplanır. Şayet bir yerde gözlem sayısı olan dörde bölünmüş hâliyle on üç değeriyle karşılaşılırsa elli iki bölü dörtten geldiği de aklımızda bulunsun, ancak basit seride esas formül her zaman serbestlik derecesine bölmektir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 671.45,
+   "bit": 691.15,
+   "konusmaci": "Can",
+   "metin": "Çok yerinde bir uyarı. Bir de fark kare toplamının doğrudan verildiği durum var: Beş değere sahip basit seride aritmetik ortalamadan sapmaların kareleri toplamı on bir tam yüzde on dört olarak bulunmuşsa, beş eksi bir yani dörde bölerek varyansı iki tam yüzde yetmiş dokuz elde ederiz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 691.15,
+   "bit": 711.05,
+   "konusmaci": "Ayşe",
+   "metin": "Sınıflandırılmış ve gruplandırılmış serilerde ise varyans hesaplanırken paydada serbestlik derecesi değil, doğrudan toplam frekans yer alır. Gözlem veya sınıf değerlerinin aritmetik ortalamadan farklarının kareleri karşılarındaki frekanslarla çarpılıp toplanır ve toplam frekansa bölünür.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 711.05,
+   "bit": 727.92,
+   "konusmaci": "Can",
+   "metin": "Alternatif ikinci formülü de var: Frekanslarla gözlem değerlerinin karelerinin çarpımı toplamının toplam frekansa bölümünden, frekanslarla gözlem değerlerinin çarpımı toplamının toplam frekansa bölümünün karesi çıkarılır; sonuç birebir aynıdır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 727.92,
+   "bit": 753.98,
+   "konusmaci": "Ayşe",
+   "metin": "Örneğin paket ağırlıkları bir, iki, dört, beş ve paket adetleri üç, dört, iki, bir olan sınıflandırılmış seride toplam frekans ondur. Ortalamadan farkların kareleri dört, bir, bir ve dörttür. Frekanslarıyla çarparsak üç kere dört on iki, dört kere bir dört, iki kere bir iki, bir kere dört dört; toplam yirmi iki eder. Toplam frekans ona bölünce varyans iki tam onda iki çıkar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 753.98,
+   "bit": 792.76,
+   "konusmaci": "Can",
+   "metin": "Gözlemleri bir, üç, beş, yedi ve frekansları üç, beş, sekiz, iki olan sınıflandırılmış seride de ortalama dört, frekans çarpımlı fark kareleri toplamı elli sekiz ve toplam frekans on sekizdir; elli sekiz bölü on sekizden varyans üç tam yüzde yirmi iki bulunur. Gruplandırılmış seride ise bir ile üç, üç ile beş, beş ile yedi, yedi ile dokuz grupları ve iki, üç, beş, yedi frekansları verildiğinde önce sınıf değerleri iki, dört, altı, sekiz elde edilir; ortalama altı, pay yetmiş iki ve toplam frekans on yedi olduğundan varyans dört tam yüzde yirmi dört çıkar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 792.76,
+   "bit": 801.24,
+   "konusmaci": "Can",
+   "metin": "Gelelim istatistiki uygulamalarda en çok kullanılan değişkenlik ölçüsü olan standart sapmaya. Standart sapma nasıl tanımlanır Ayşe?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 801.24,
+   "bit": 818.46,
+   "konusmaci": "Ayşe",
+   "metin": "Serideki gözlem değerlerinin aritmetik ortalamadan farklarının kareli ortalamasına standart sapma denilir. Standart sapma, serideki gözlem değerlerinin aritmetik ortalamadan sapmalarını, bir başka ifade ile ortalamadan uzaklıklarını ifade eden değişkenlik ölçüsüdür.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 818.46,
+   "bit": 827.07,
+   "konusmaci": "Can",
+   "metin": "Aritmetik ortalamadan farkların kareli ortalaması tanımı doğrudan standart sapmaya aittir. Varyansla arasındaki bağ da çok pratiktir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 827.07,
+   "bit": 858.14,
+   "konusmaci": "Ayşe",
+   "metin": "Evet, standart sapma değeri varyans değerinin kareköküne eşittir. Bir serinin varyans değeri biliniyorsa karekökü alınarak standart sapma elde edilir; standart sapma değeri biliniyorsa karesi alınarak varyans elde edilir. Örneğin beş değerli basit bir seride standart sapma üç olarak bulunmuşsa varyansı doğrudan üçün karesinden dokuzdur. Varyansı on altı tam yüzde yirmi dört olan bir serinin standart sapması ise on altı tam yüzde yirmi dördün karekökünden dört tam yüzde üçtür.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 858.14,
+   "bit": 860.99,
+   "konusmaci": "Can",
+   "metin": "Sembolleri ve ölçü birimi özelliği nasıldır?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 860.99,
+   "bit": 877.69,
+   "konusmaci": "Ayşe",
+   "metin": "Uygulamada genellikle örnek standart sapması küçük se, anakütle standart sapması ise küçük sigma ile gösterilir. Standart sapma ölçüm biriminden bağımsız değildir; gözlem değerleri santimetre ile ifade edilmişse standart sapma da santimetre ile ifade edilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 877.69,
+   "bit": 880.93,
+   "konusmaci": "Can",
+   "metin": "Değerinin büyüklüğü veya küçüklüğü bize ne söyler?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 880.93,
+   "bit": 901.83,
+   "konusmaci": "Ayşe",
+   "metin": "Standart sapma değeri küçük olduğunda gözlem değerlerinin aritmetik ortalamaya daha yakın olduklarını, büyük olduğunda ise uzak olduklarını ifade eder. İks serisinin standart sapması bir tam yüzde yetmiş dokuz, ye serisinin standart sapması iki tam yüzde altı ise ye serisindeki değişkenlik iks serisine göre daha fazladır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 901.83,
+   "bit": 913.42,
+   "konusmaci": "Can",
+   "metin": "Basit serilerde standart sapma hesaplanırken fark kare toplamını serbestlik derecesi olan küçük ne eksi bire bölüp karekökünü alıyoruz. İlk örneğimiz iki, dört, sekiz ve on olsun.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 913.42,
+   "bit": 929.15,
+   "konusmaci": "Ayşe",
+   "metin": "Dört gözlemin aritmetik ortalaması altıdır. Altıdan farkların kareleri on altı, dört, dört ve on altıdan kırk eder. Kırkı dört eksi bir yani üçe bölünce on üç tam yüzde otuz üç, karekökünü alınca standart sapma üç tam yüzde altmış beş bulunur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 929.15,
+   "bit": 952.78,
+   "konusmaci": "Can",
+   "metin": "Üç, dört, dört ve beş şeklinde verilen dört gözlemli basit serinin standart sapmasını da adım adım bulalım: Toplam on altı, dörde bölünce aritmetik ortalama dörttür. Dörtten farklar eksi bir, sıfır, sıfır ve bir; kareleri toplamı ikidir. Serbestlik derecesi dört eksi birden üçtür. İki bölü üçün karekökü alındığında standart sapma sıfır tam yüzde seksen bir çıkar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 952.78,
+   "bit": 969.61,
+   "konusmaci": "Ayşe",
+   "metin": "Peki en küçük fark kare toplamı kırk iki olan on beş gözlemli bir serinin standart sapması kaçtır? Kırk ikiyi serbestlik derecesi olan on beş eksi bir yani on dörde böleriz, üç çıkar; üçün karekökünden standart sapma bir tam yüzde yetmiş üç olarak elde edilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 969.61,
+   "bit": 978.09,
+   "konusmaci": "Can",
+   "metin": "Sınıflandırılmış ve gruplandırılmış serilerde standart sapma hesabı da varyans formüllerinin karekökü alınarak yapılıyor, değil mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 978.09,
+   "bit": 1013.69,
+   "konusmaci": "Ayşe",
+   "metin": "Evet Can. İki, dört, altı, sekiz değerleri ve üç, beş, sekiz, iki frekanslarına sahip sınıflandırılmış seride ortalama beş, frekanslı fark kare toplamı elli sekiz ve toplam frekans on sekizdir. Elli sekizi on sekize bölünce üç tam yüzde yirmi iki, karekökünü alınca standart sapma bir tam yüzde yetmiş dokuz bulunur. Gruplandırılmış seride de bir ile üç, üç ile beş, beş ile yedi, yedi ile dokuz grupları ve iki, üç, beş, yedi frekansları için varyansı yetmiş iki bölü on yediden dört tam yüzde yirmi dört bulmuştuk; karekökü iki tam yüzde altı eder.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1013.69,
+   "bit": 1036.48,
+   "konusmaci": "Can",
+   "metin": "Bir gruplandırılmış seri daha hesaplayalım: Yirmi personelin performans puanları sıfır ile dört grubunda beş kişi, dört ile sekiz grubunda beş kişi ve sekiz ile on iki grubunda on kişi olsun. Önce sınıf değerlerini bulalım: İki, altı ve on. Frekanslarla çarpıp toplarsak on artı otuz artı yüzden yüz kırk; yirmiye bölünce aritmetik ortalama yedi çıkar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1036.48,
+   "bit": 1060.56,
+   "konusmaci": "Ayşe",
+   "metin": "Yediden farkların karelerini alıp frekanslarla çarpalım: İki eksi yedinin karesi yirmi beş, beşle çarpınca yüz yirmi beş. Altı eksi yedinin karesi bir, beşle çarpınca beş. On eksi yedinin karesi dokuz, onla çarpınca doksan. Toplam iki yüz yirmi eder; toplam personel yirmiye bölünce varyans on bir, on birin karekökünü alınca da standart sapma üç tam yüzde otuz iki çıkar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1060.56,
+   "bit": 1070.53,
+   "konusmaci": "Can",
+   "metin": "Gerek standart sapma gerekse ortalama sapma ve varyans ölçü biriminden bağımsız değiller. Bu bağımlılık karşılaştırmalarda nasıl bir yanılgıya yol açıyor Ayşe?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1070.53,
+   "bit": 1083.13,
+   "konusmaci": "Ayşe",
+   "metin": "Aynı seri kilogram yerine gram ile ifade edildiğinde değişik standart sapma değerleri elde edilir; farklı ölçü birimleriyle ifade edilmiş iki ayrı serinin karşılaştırılması da yanıltıcı sonuçlar verir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1083.13,
+   "bit": 1102.5,
+   "konusmaci": "Can",
+   "metin": "Mesela iks serisi üç, beş, yedi ve dokuz kilogram olsun; aritmetik ortalaması altı, standart sapması iki tam binde beş yüz seksen ikidir. Ye serisi ise aynı ağırlıkların gram karşılığı olan üç bin, beş bin, yedi bin ve dokuz bin gram olsun; ortalaması altı bin, standart sapması iki bin beş yüz seksen ikidir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1102.5,
+   "bit": 1118.04,
+   "konusmaci": "Ayşe",
+   "metin": "Sadece standart sapmalara bakılsa ye serisinin değişkenliğinin daha fazla olduğu söylenir; oysa gerçekte her iki serinin değişkenliği aynıdır. İşte diğer değişkenlik ölçülerinin bu dezavantajını gidermek amacıyla değişim katsayısı geliştirilmiştir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1118.04,
+   "bit": 1120.49,
+   "konusmaci": "Can",
+   "metin": "Değişim katsayısı bunu nasıl başarıyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1120.49,
+   "bit": 1134.03,
+   "konusmaci": "Ayşe",
+   "metin": "Değişim katsayısı hesaplanırken mutlak dağılma yerine nispi dağılma esas alınır. Standart sapma aritmetik ortalamanın yüzdesi olarak ifade edilir ve yüzde olarak ifade edildiğinden dolayı ölçü biriminden bağımsızdır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1134.03,
+   "bit": 1136.54,
+   "konusmaci": "Can",
+   "metin": "Değişim katsayısının formülü nedir Ayşe?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1136.54,
+   "bit": 1157.98,
+   "konusmaci": "Ayşe",
+   "metin": "Standart sapma aritmetik ortalamaya bölünür ve yüz ile çarpılır. Az önceki kilogram ve gram örneğinde iki tam binde beş yüz seksen ikiyi altıya bölüp yüzle çarptığımızda da, iki bin beş yüz seksen ikiyi altı bine bölüp yüzle çarptığımızda da değişim katsayısı yüzde kırk üç tam yüzde üç çıkar; iki serinin değişkenliğinin aynı olduğu görülür.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1157.98,
+   "bit": 1185.31,
+   "konusmaci": "Can",
+   "metin": "Sayısal örneklerle pekiştirelim. Aritmetik ortalaması sekiz ve standart sapması üç tam yüzde dokuz olan seride üç tam yüzde dokuzu sekize bölüp yüzle çarpınca değişim katsayısı yüzde otuz sekiz tam onda altı bulunur. Aritmetik ortalama beş tam yüzde yirmi beş ve standart sapma iki tam yüzde on yedi olduğunda ise iki tam yüzde on yediyi beş tam yüzde yirmi beşe bölüp yüzle çarparız; değişim katsayısı kırk bir tam yüzde otuz üç çıkar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1185.31,
+   "bit": 1204.93,
+   "konusmaci": "Ayşe",
+   "metin": "Sınıflandırılmış bir seride de gözlemler yirmi, kırk, altmış, seksen ve frekanslar üç, beş, sekiz, iki olduğunda önce aritmetik ortalama elli ve standart sapma on yedi tam yüzde doksan beş hesaplanır; on yedi tam yüzde doksan beş bölü elli çarpı yüzden değişim katsayısı yüzde otuz beş tam onda dokuz elde edilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1204.93,
+   "bit": 1229.13,
+   "konusmaci": "Can",
+   "metin": "Tersinden bir hesaplama da yapalım: Aritmetik ortalaması yedi tam onda altı olarak hesaplanan bir serinin değişim katsayısı elli iki tam onda beş ise bu serinin varyansı kaçtır? Elli iki tam onda beş ile yedi tam onda altıyı çarpıp yüze bölünce standart sapma üç tam yüzde doksan dokuz çıkar. Üç tam yüzde doksan dokuzun karesini aldığımızda varyans on beş tam yüzde doksan iki bulunur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1229.13,
+   "bit": 1258.97,
+   "konusmaci": "Ayşe",
+   "metin": "İki seriyi karşılaştırırken de kural çok net: İkisinin de aritmetik ortalaması yirmi dört iken iks serisinin standart sapması üç tam yüzde otuz iki, ye serisinin standart sapması bir tam yüzde yirmi sekiz olsun. İks serisinin değişim katsayısı yüzde on üç tam yüzde seksen üç, ye serisininki yüzde beş tam yüzde otuz üç çıkar. İks serisinin değişim katsayısı daha büyük olduğu için iks serisinin değişkenliğinin ye serisinin değişkenliğinden daha fazla olduğuna karar verilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1258.97,
+   "bit": 1266.24,
+   "konusmaci": "Can",
+   "metin": "Değişkenlik ölçülerini pratikte değerlendirirken iki temel uygulama sorusu üzerinde durmak gerekiyor, değil mi Ayşe?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1266.24,
+   "bit": 1276.9,
+   "konusmaci": "Ayşe",
+   "metin": "Evet Can, iki temel nokta var. Birincisi, seriler arasında değişkenlik karşılaştırmaları yapmada başvurulabilecek en iyi değişkenlik ölçüsü hangisidir sorusunu tartışmak.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1276.9,
+   "bit": 1289.25,
+   "konusmaci": "Can",
+   "metin": "Ölçü birimleri farklı olduğunda veya ortalamalar değiştiğinde nispi dağılmayı esas alan ve ölçü biriminden bağımsız olan değişim katsayısı karşılaştırmalarda yanılgıyı önleyen en güçlü ölçü oluyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1289.25,
+   "bit": 1299.84,
+   "konusmaci": "Ayşe",
+   "metin": "Kesinlikle. İkinci nokta ise birer örnek yardımıyla basit, sınıflandırılmış ve gruplandırılmış serilerden elde edilebilecek parametrik değişkenlik ölçülerini hesaplamak.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1299.84,
+   "bit": 1307.96,
+   "konusmaci": "Can",
+   "metin": "Ayşe, parametrik değişkenlik ölçülerinin bütün kuramsal çerçevesini on beş temel ilkede toplayabiliriz. İlk beş ilkeden başlayalım.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1307.96,
+   "bit": 1329.78,
+   "konusmaci": "Ayşe",
+   "metin": "Birincisi; merkezî eğilim ölçülerinin tek başına yetersiz kalması nedeniyle merkezî eğilim etrafındaki dağılma durumunu ortaya koymak amacıyla değişkenlik ölçülerinden yararlanılır. İkincisi; gözlemlerin birbirine benzeyip benzemediklerini, yani serilerin homojen mi yoksa heterojen mi olduklarını tespit etmek amacıyla değişkenlik ölçüleri kullanılır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1329.78,
+   "bit": 1354.82,
+   "konusmaci": "Can",
+   "metin": "Üçüncüsü; gözlem değerlerinin birbirlerinden ya da herhangi bir ortalamadan uzaklıkları esas alınarak hesaplanan ölçülere değişkenlik ölçüleri denir ve bunlar ortalama etrafındaki dağılma sıklığını belirtirler. Dördüncüsü; değişkenlik ölçüleri tek bir seri için tek başına anlam ifade etmez, karşılaştırmada ölçüsü küçük olan seriler daha homojendir ve ortalamanın seriyi temsil etme gücü daha yüksektir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1354.82,
+   "bit": 1375.96,
+   "konusmaci": "Ayşe",
+   "metin": "Beşincisi; anakütledeki bütün birimler kullanılarak hesaplanan ölçülere parametre dendiği için tüm birimleri kullanan bu ölçülere parametrik değişkenlik ölçüleri adı verilmiştir. Altıncısı; ortalama sapma, serideki gözlem değerlerinin aritmetik ortalamadan ne kadar uzak olduklarını belirlemek için ortalamadan farkların toplamını esas alır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1375.96,
+   "bit": 1397.78,
+   "konusmaci": "Can",
+   "metin": "Yedincisi; bir serideki rakamların aritmetik ortalamadan farklarının toplamı her zaman sıfır olduğundan bu sorun farkların mutlak değerleri alınarak çözülür. Sekizincisi; ortalama sapmada mutlak değerlerin ortalaması bulunurken, farkların toplamının sıfır çıkmaması için gözlem değerlerinin aritmetik ortalamadan farklarının kareleri de hesaplanabilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1397.78,
+   "bit": 1420.9,
+   "konusmaci": "Ayşe",
+   "metin": "Dokuzuncusu; gözlem değerlerinin aritmetik ortalamadan farklarının kareleri toplanarak en küçük fark kare toplamı elde edilir ve toplam gözlem sayısının bir eksiği olan serbestlik derecesine bölünerek varyans hesaplanır. Onuncusu; örnek değerleriyle hesaplanan varyans küçük se kare ile, anakütledeki tüm değerlerle hesaplanan varyans ise küçük sigma kare ile ifade edilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1420.9,
+   "bit": 1442.1,
+   "konusmaci": "Can",
+   "metin": "On birincisi; gözlem değerlerinin aritmetik ortalamadan farklarının kareli ortalamasına standart sapma denir ve ortalamadan uzaklıkları ifade eder. On ikincisi; varyans değerinin karekökü alındığında elde edilen standart sapma istatistiki uygulamalarda en çok kullanılan ölçüdür, örnek için küçük se, anakütle için küçük sigma ile gösterilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1442.1,
+   "bit": 1479.72,
+   "konusmaci": "Ayşe",
+   "metin": "On üçüncüsü; standart sapma varyansın kareköküne eşit olduğundan varyans biliniyorsa karekökü alınarak standart sapma, standart sapma biliniyorsa karesi alınarak varyans elde edilir. On dördüncüsü; standart sapma ve diğer değişkenlik ölçüleri ölçü biriminden bağımsız olmadıklarından farklı ölçü birimleriyle ifade edilen serilerin karşılaştırılması yanıltıcı sonuçlar verir, bu nedenle değişim katsayısı geliştirilmiştir. On beşincisi ise; değişim katsayısında mutlak dağılma yerine nispi dağılma esas alınır, standart sapma aritmetik ortalamanın yüzdesi olarak ifade edilir ve ölçü biriminden bağımsızdır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1479.72,
+   "bit": 1497.55,
+   "konusmaci": "Can",
+   "metin": "Şimdi on temel problem üzerinden tüm hesaplamaları pekiştirelim Ayşe. Birincisi: Harmonik ortalama, aritmetik ortalama, geometrik ortalama, kareli ortalama ve medyan şeklinde beş merkezî eğilim ölçüsü içinden parametrik değişkenlik ölçüleri hesaplanırken hangisi kullanılır?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1497.55,
+   "bit": 1513.83,
+   "konusmaci": "Ayşe",
+   "metin": "Aritmetik ortalama kullanılır. İkincisi: Beş değere sahip basit seride ortalama sapma sekiz tam yüzde yirmi beş olarak bulunmuşsa aritmetik ortalamadan mutlak sapmaların toplamı, beş çarpı sekiz tam yüzde yirmi beşten kırk bir tam yüzde yirmi beştir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1513.83,
+   "bit": 1528.93,
+   "konusmaci": "Can",
+   "metin": "Üçüncüsü: Beş değere sahip basit seride aritmetik ortalamadan farklarının kareleri toplamı on bir tam yüzde on dört ise varyansı, on bir tam yüzde on dördün dört serbestlik derecesine bölünmesiyle iki tam yüzde yetmiş dokuz bulunur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1528.93,
+   "bit": 1542.92,
+   "konusmaci": "Ayşe",
+   "metin": "Dördüncüsü: Aynı beş değerli basit seride farkların kareleri toplamı on bir tam yüzde on dört iken standart sapması, varyans olan iki tam yüzde yetmiş dokuzun karekökü alınarak bir tam yüzde altmış yedi elde edilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1542.92,
+   "bit": 1562.77,
+   "konusmaci": "Can",
+   "metin": "Beşincisi: Bir seride aritmetik ortalama on beş tam onda dört ve varyans beş tam onda üç olarak elde edilmişse değişim katsayısı için önce beş tam onda üçün karekökünden standart sapma yaklaşık iki tam yüzde otuz bulunur; on beş tam onda dörde bölünüp yüzle çarpılınca on dört tam yüzde doksan dört çıkar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1562.77,
+   "bit": 1575.59,
+   "konusmaci": "Ayşe",
+   "metin": "Altıncısı: Bir seride aritmetik ortalama beş tam onda dört ve standart sapma bir tam onda üç ise değişim katsayısı, bir tam onda üç bölü beş tam onda dört çarpı yüzden yirmi dört tam yüzde yedidir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1575.59,
+   "bit": 1590.69,
+   "konusmaci": "Can",
+   "metin": "Yedincisi: Bir basit seride beş, altı, sekiz, dokuz ve on iki değerleri yer alıyorsa toplamları kırk ve ortalaması sekizdir. Sekizden mutlak farklar üç, iki, sıfır, bir ve dörtten toplam on yapar; beşe bölünce ortalama sapma ikidir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1590.69,
+   "bit": 1604.43,
+   "konusmaci": "Ayşe",
+   "metin": "Sekizincisi: Beş değerden oluşan basit bir seride aritmetik ortalamadan mutlak farklar toplamı dört tam yüzde yirmi dört ise ortalama sapma, dört tam yüzde yirmi dört bölü beşten sıfır tam yüzde seksen beş olur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1604.43,
+   "bit": 1621.93,
+   "konusmaci": "Can",
+   "metin": "Dokuzuncusu: Bir basit seride iki, üç, beş, yedi ve sekiz değerleri yer alıyorsa toplam yirmi beş, ortalama beştir. Beşten farkların kareleri dokuz, dört, sıfır, dört ve dokuzdan yirmi altı eder; serbestlik derecesi olan dörde bölünce varyans altı tam onda beş bulunur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1621.93,
+   "bit": 1639.12,
+   "konusmaci": "Ayşe",
+   "metin": "Ve onuncusu: Bir sınıfta okuyan altı öğrencinin not ortalaması seksen üç ve fark kare toplamı üç yüz on sekiz tam onda dört ise varyans değeri, üç yüz on sekiz tam onda dördün altı eksi bir yani beşe bölünmesiyle altmış üç tam yüzde altmış sekiz olarak hesaplanır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1639.12,
+   "bit": 1647.06,
+   "konusmaci": "Can",
+   "metin": "Parametrik değişkenlik ölçüleri konusundaki temel istatistik literatüründe beş başvuru kaynağı öne çıkıyor, değil mi Ayşe?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1647.06,
+   "bit": 1672.51,
+   "konusmaci": "Ayşe",
+   "metin": "Evet Can, beş kaynak bulunuyor. Birincisi; Alaaddin Başar ve Erkan Oktay'ın iki bin on sekiz tarihli, Erzurum Kültür ve Eğitim Vakfı Yayınları on ikinci baskısı olan Uygulamalı İstatistik Bir Kısa Teorik Bilgiler ve Çözülmüş Problemler adlı eseri. İkincisi; Kenan Gürtan'ın bin dokuz yüz seksen iki tarihli, İstanbul Üniversitesi Yayınları'ndan çıkan İstatistik ve Araştırma Metodları eseri.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1672.51,
+   "bit": 1693.59,
+   "konusmaci": "Can",
+   "metin": "Üçüncüsü; Ö. Serper soyadlı müellifin iki bin on dört tarihli, İstanbul Filiz Kitabevi yedinci baskısı Uygulamalı İstatistik Bir eseri. Dördüncüsü; Wayne W. Daniel ve James C. Terrell'in bin dokuz yüz doksan beş tarihli, Boston Houghton Mifflin Company yedinci baskısı Business Statistics For Management and Economics eseri.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1693.59,
+   "bit": 1702.9,
+   "konusmaci": "Ayşe",
+   "metin": "Beşincisi de İ. H. Armutlulu imzalı, iki bin on sekiz tarihli, İstanbul Alfa Yayınları üçüncü baskısı İşletmelerde Uygulamalı İstatistik eseri.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1702.9,
+   "bit": 1717.87,
+   "konusmaci": "Can",
+   "metin": "Böylece temel kavramlardan başlayıp veriler, seriler, grafikler, merkezî eğilim ve değişkenlik ölçülerine uzanan istatistik yolculuğumuzun tamamını noktalamış olduk. Çok verimli bir sohbet oldu Ayşe, ağzına sağlık. Görüşmek üzere!",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1717.87,
+   "bit": 1720.28,
+   "konusmaci": "Ayşe",
+   "metin": "Ben teşekkür ederim Can, hoşça kalın!",
+   "konu": null,
+   "guven": 0
+  }
+ ]
+}
