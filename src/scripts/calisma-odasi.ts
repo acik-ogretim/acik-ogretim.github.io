@@ -413,8 +413,9 @@ export async function calismaOdasiBaslat(): Promise<void> {
   function satiriGoster(i: number, zorla = false): void {
     const el = document.getElementById(`co-s-${i}`);
     if (!el) return;
-    if (!zorla && (Date.now() < otoDurak || aktif !== "dokum")) return;
-    if (!zorla && aktif !== "dokum" && !genis()) return;
+    // The transcript is on screen when its tab is open, or on wide screens when it is the right-column panel.
+    const dokumGorunur = aktif === "dokum" || (genis() && sonSag === "dokum");
+    if (!zorla && (Date.now() < otoDurak || !dokumGorunur)) return;
     const davranis: ScrollBehavior = azaltilmis() ? "auto" : "smooth";
     const r = el.getBoundingClientRect();
     if (!genis()) {
@@ -429,7 +430,11 @@ export async function calismaOdasiBaslat(): Promise<void> {
   }
   function guncelle(sn: number): void {
     const i = satirBul(satirlar, sn);
-    if (i === simdiSatir) return;
+    if (i === simdiSatir) {
+      // Same line: once the manual-scroll pause ends, bring the playing line back into view without waiting for the next line.
+      if (i >= 0) satiriGoster(i);
+      return;
+    }
     document.getElementById(`co-s-${simdiSatir}`)?.removeAttribute("data-simdi");
     simdiSatir = i;
     document.getElementById(`co-s-${i}`)?.setAttribute("data-simdi", "");
