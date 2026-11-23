@@ -12,7 +12,7 @@
     <meta name="robots" content="noindex" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>Video</title>
-    <style>
+    <style is:global>
       html,
       body {
         margin: 0;
@@ -27,10 +27,27 @@
         border: 0;
         display: block;
       }
+      #ses-ac {
+        position: fixed;
+        left: 12px;
+        bottom: 12px;
+        min-height: 40px;
+        padding: 0 16px;
+        border: 0;
+        border-radius: 999px;
+        background: rgb(15 23 42 / 0.85);
+        color: #fff;
+        font: 600 15px/1 system-ui, sans-serif;
+        cursor: pointer;
+      }
+      #ses-ac[hidden] {
+        display: none;
+      }
     </style>
   </head>
   <body>
     <div id="oynatici"></div>
+    <button type="button" id="ses-ac" hidden>Sesi aç</button>
     <script>
       type Oynatici = {
         getCurrentTime: () => number;
@@ -39,6 +56,8 @@
         pauseVideo: () => void;
         getPlayerState: () => number;
         setPlaybackRate: (hiz: number) => void;
+        mute: () => void;
+        unMute: () => void;
       };
       type YTGlobal = {
         Player: new (el: string, ayar: Record<string, unknown>) => Oynatici;
@@ -55,21 +74,42 @@
       const hiz = Number(p.get("hiz")) || 1;
       w.onYouTubeIframeAPIReady = () => {
         if (!w.YT || !/^[\w-]{6,20}$/.test(v)) return;
+        const sesAc = document.getElementById("ses-ac") as HTMLButtonElement;
+        // Sound autoplay is blocked in a fresh window, so a playing video continues muted (always allowed) and the
+        // window offers one tap to turn the sound back on; the video never stops or jumps back (Zeki, 23 Nov 2026).
         const o: Oynatici = new w.YT.Player("oynatici", {
           videoId: v,
-          playerVars: { start: t, autoplay: cal ? 1 : 0, playsinline: 1, rel: 0, modestbranding: 1, origin: location.origin },
+          width: "100%",
+          height: "100%",
+          playerVars: { start: t, autoplay: cal ? 1 : 0, mute: cal ? 1 : 0, playsinline: 1, rel: 0, modestbranding: 1, origin: location.origin },
           events: {
             onReady: () => {
               w.pipOynatici = o;
               try {
                 o.setPlaybackRate(hiz);
                 o.seekTo(t, true);
-                if (cal) o.playVideo();
+                if (cal) {
+                  o.mute();
+                  o.playVideo();
+                  o.unMute();
+                  setTimeout(() => {
+                    if (o.getPlayerState() !== 1) {
+                      o.mute();
+                      o.playVideo();
+                      sesAc.hidden = false;
+                    }
+                  }, 700);
+                }
               } catch {
                 /* player not ready */
               }
             },
           },
+        });
+        sesAc.addEventListener("click", () => {
+          o.unMute();
+          o.playVideo();
+          sesAc.hidden = true;
         });
       };
       const sc = document.createElement("script");
