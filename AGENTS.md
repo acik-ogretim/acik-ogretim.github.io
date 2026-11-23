@@ -75,3 +75,12 @@ This file serves as the primary instruction manual for AI agents working on this
 *   **Context Awareness:** Always check `docs/` before creating new features.
 *   **Proactivity:** If you see a bug or improvement opportunity, fix it (or propose it).
 *   **Language:** Communicate in **Turkish** with the user, but write code/comments in **English**.
+
+## Medya nerede durur (Zeki, 23 Kasım 2026)
+
+"bizim script ve kod depolarımıza hep video ses resimler ekleniyor. bunlar ayrı depolarda ve uygun şekilde kategorize edilmiş olması lazım", "direkt site vb. kullanıyorsa ancak o zaman kalmalı", "tekrardan aynı şekilde üretilebilir şeyler gdrive'a adım adım taşınmalı".
+
+- Bu depoya yalnız uygulamanın ya da sitenin doğrudan kullandığı medya girer; izinli yollar kökteki `.medya-izinli` dosyasında.
+- Yeniden üretilebilen medya (render edilmiş video, parçalardan birleşen ses, pafta, ekran görüntüsü, resmî kaynaktan yeniden inen PDF) Drive'da durur: "Açık Öğretim ve Podcast İçerikleri/<kurum>/<ders>/". Git'e onu üreten komut ve Drive kimliği yazılır.
+- Geri üretilemeyen medya (ücretli çizim, TTS parçası) kategorize medya deposuna gider: ders görselleri `WildGenie/ders-gorsel` (`<kurum>/<ders>/{sahne,kitaplik,kapak,pafta}`), ders sesleri `WildGenie/ders-ses` (`<kurum>/<ders>/{kisa,uzun,unite-NN}`).
+- Commit öncesi kapı: `sh scripts/medya-kapisi.sh` (sürü deposundaki betiğin kopyası). Ayrıntı ve taşıma sırası: suru `docs/ops/medya-depolari.md`, kart C-527f3fc2. Taşıma bitene kadar var olan dosyalar yerinde kalır; geçmişten ayıklama yalnız Zeki onayıyla.
