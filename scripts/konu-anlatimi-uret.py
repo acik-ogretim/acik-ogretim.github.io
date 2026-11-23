@@ -40,7 +40,7 @@ SESLİ ANLATIM DÖKÜMÜ:
 
 def dokum_metni(paket: dict, no: str) -> str:
     parcalar = []
-    for m in paket["medyalar"]:
+    for m in paket.get("medyalar", []):  # packages built before the media contract have none
         if m.get("cesit") != "uzun-anlatim":
             continue
         a = m.get("konuAraliklari", {}).get(no)

@@ -26,7 +26,8 @@ for (const ders of dersler) {
   const uretilebilir = (k) => !ATLA_RE.test(tr(k.baslik)) && k.metin.length >= MIN_METIN;
   const r = { ders, konuSayisi: p.konular.length, uygunKonu: p.konular.filter(uygun).length, videolar: [] };
 
-  for (const v of p.videolar) {
+  // medyalar: current packages (calisma-odasi-paketle.mjs); videolar: packages built before the media contract
+  for (const v of p.medyalar ?? p.videolar ?? []) {
     const s = v.satirlar;
     const kapsanan = new Set(s.map((x) => x.konu));
     let gecis = 0;
@@ -44,7 +45,7 @@ for (const ders of dersler) {
         siraBozuk.push({ satir: i, kimden: s[i - 1].konu, kime: s[i].konu, tekrarKipi: !!s[i].t });
       }
     }
-    const hakemYol = join(kok, "data", "calisma-odasi", "hakem", `${ders}-${v.kod}.json`);
+    const hakemYol = join(kok, "data", "calisma-odasi", "hakem", `${ders}-${v.id ?? v.kod}.json`);
     let hakem = null;
     if (existsSync(hakemYol) && s.length) {
       const h = JSON.parse(readFileSync(hakemYol, "utf8")).etiket;
@@ -62,7 +63,7 @@ for (const ders of dersler) {
     }
     const uygunNolar = p.konular.filter(uygun).map((k) => k.no);
     r.videolar.push({
-      kod: v.kod,
+      kod: v.id ?? v.kod,
       satir: s.length,
       konusuz: s.filter((x) => !x.konu).length,
       konusuzBagli: s.filter((x) => x.y).length, // eşik altı, en yakın konuya bağlı
