@@ -1,0 +1,1230 @@
+{
+ "v": 1,
+ "medya": "uzun-unite-07",
+ "satirlar": [
+  {
+   "bas": 0.0,
+   "bit": 10.64,
+   "konusmaci": "Can",
+   "metin": "Basamaklı Stil Şablonlarının temellerinin ardından şimdi Basamaklı Stil Sayfaları dünyasının en keyifli, en hareketli taraflarına, yani ileri düzey tekniklere geçiyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 10.64,
+   "bit": 21.84,
+   "konusmaci": "Ayşe",
+   "metin": "Kesinlikle Can, çünkü artık yalnızca doğru çalışan bir web sitesi kimseye yetmiyor; kullanıcılar hem estetik hem esnek hem de cihazlara uyumlu ve etkileşimli tasarımlar bekliyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 21.84,
+   "bit": 34.49,
+   "konusmaci": "Can",
+   "metin": "Tam olarak öyle. Eskiden sayfa düzeni kurarken float, inline-block ya da position gibi geleneksel yöntemlerle saatlerce uğraşırdık ama karmaşık düzenlerde o beklenen esnekliği bir türlü yakalayamazdık.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 34.49,
+   "bit": 49.53,
+   "konusmaci": "Ayşe",
+   "metin": "İşte modern Basamaklı Stil Sayfaları burada devreye giriyor. Küçük ölçekli ve esnek düzenleri kurmak için Flexbox yani Esnek Kutu Düzeni sistemini, daha karmaşık sayfa tasarımlarını yönetmek için de Grid yani Izgara sistemini kullanıyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 49.53,
+   "bit": 66.46,
+   "konusmaci": "Can",
+   "metin": "Üstelik işimiz yalnızca masaüstü ekranlarla da bitmiyor. Telefon, tablet, bilgisayar derken her ekranda aynı sitenin kusursuz görünmesi için responsive yani duyarlı tasarım ilkelerini, media queries yani medya sorgularını ve mobil öncelikli yaklaşımı devreye sokuyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 66.46,
+   "bit": 83.27,
+   "konusmaci": "Ayşe",
+   "metin": "Hatta modern fonksiyonlar olan min, max ve clamp ile tasarımları çok daha esnek hale getiriyoruz. Üzerine bir de transition, transform ve et işareti keyframes ile geçiş efektleri ve animasyonlar eklediğimizde, kullanıcıyı yönlendiren canlı bir deneyim ortaya çıkıyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 83.27,
+   "bit": 91.01,
+   "konusmaci": "Can",
+   "metin": "O zaman bu güçlü araçların ilk halkası olan Flexbox sisteminin mutfağına, yani kapsayıcı ve öğe mantığına hemen girelim mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 91.01,
+   "bit": 104.22,
+   "konusmaci": "Ayşe",
+   "metin": "Girelim tabii. Flexbox yani Flexible Box Layout, öğeleri tek boyutlu bir eksen üzerinde esnek biçimde düzenlemeye, hizalamaya ve boşlukları paylaştırmaya yarayan modern Basamaklı Stil Sayfaları düzen modülüdür.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 104.22,
+   "bit": 116.94,
+   "konusmaci": "Can",
+   "metin": "Ve en güzel avantajlarından biri de günümüzde hemen hemen tüm modern tarayıcılar tarafından desteklenmesi. Öğeleri kolayca boyutlandırıp hizaladığı için duyarlı tasarım sürecini inanılmaz hızlandırıyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 116.94,
+   "bit": 128.46,
+   "konusmaci": "Ayşe",
+   "metin": "Bu sistemi kullanabilmek için önce iki temel kavramı, yani Flex Container ve Flex Item mantığını çözmemiz gerekiyor. Bunu bir hediye kutusu ve içindeki çikolatalar gibi düşünebiliriz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 128.46,
+   "bit": 140.35,
+   "konusmaci": "Can",
+   "metin": "Harika benzetme. Flex Container, display iki nokta üst üste flex özelliği verilerek içerisindeki alt öğeleri esnek kutu modeline göre yöneten kapsayıcı öğedir; yani bizim hediye kutumuzdur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 140.35,
+   "bit": 159.48,
+   "konusmaci": "Ayşe",
+   "metin": "Flex Item ise o Flex Container içerisinde yer alan ve esnek kutu kurallarına göre boyutlandırılıp hizalanan her bir alt öğedir; yani kutunun içindeki çikolatalar. Biz nokta container sınıfına display iki nokta üst üste flex yazdığımız anda, içindeki tüm alt öğeler otomatik olarak flex item haline gelir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 159.48,
+   "bit": 172.83,
+   "konusmaci": "Can",
+   "metin": "Bir de temel Flexbox özellikleri ve görevleri var ki bunlar toplam beş özellikten oluşuyor. İlki az önce söylediğimiz display iki nokta üst üste flex; bir öğeyi Flex Container yani esnek kapsayıcı haline getirir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 172.83,
+   "bit": 180.19,
+   "konusmaci": "Ayşe",
+   "metin": "İkincisi flex-direction; öğelerin sıralanma yönünü belirler. Üçüncüsü justify-content; öğeleri yatay eksende hizalar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 180.19,
+   "bit": 192.4,
+   "konusmaci": "Can",
+   "metin": "Dördüncüsü align-items; öğeleri dikey eksende hizalar. Beşinci ve son özelliğimiz ise flex; öğelerin esneklik oranını belirler, örneğin flex iki nokta üst üste bir yazdığımızda öğeyi eşit yayar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 192.4,
+   "bit": 212.73,
+   "konusmaci": "Ayşe",
+   "metin": "Burada küçük ama çok önemli bir ayrım ekleyelim. Mesela align-items, align-self, align-content ve flex doğrudan Flexbox kapsamındaki özelliklerdir ama border özelliği Flexbox'a ait değildir; o, Kutu Modeli'nde kenarlık vermek için kullanılır. Peki bu yatay ve dikey hizalamaları yaparken Flexbox hangi eksenleri baz alıyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 212.73,
+   "bit": 222.8,
+   "konusmaci": "Can",
+   "metin": "İşte Flexbox'ı diğer yöntemlerden ayıran en kritik fark tam olarak bu eksen mantığı Ayşe. Flexbox öğeleri iki eksen üzerinde hizalıyor: Main Axis ve Cross Axis.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 222.8,
+   "bit": 232.93,
+   "konusmaci": "Ayşe",
+   "metin": "Main Axis yani Ana Eksen, Flexbox'ta öğelerin sıralandığı ve yerleştirildiği temel eksendir. Hiçbir ayara dokunmazsak varsayılan olarak soldan sağa doğru uzanır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 232.93,
+   "bit": 246.4,
+   "konusmaci": "Can",
+   "metin": "Cross Axis yani Yan Eksen ya da diğer adıyla çapraz eksen ise Flexbox'ta ana eksene doksan derece dik doğrultuda olan yardımcı eksendir. Ana eksen soldan sağa yatay giderken, yan eksen yukarıdan aşağıya dikey iner.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 246.4,
+   "bit": 260.56,
+   "konusmaci": "Ayşe",
+   "metin": "Bunu bir sinema salonundaki koltuk sırası gibi hayal edebiliriz. Koltukların yan yana dizildiği o uzun sıra bizim Main Axis yani ana eksenimiz, sahneden arkaya doğru onu dik kesen koridor ise Cross Axis yani yan eksenimizdir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 260.56,
+   "bit": 272.08,
+   "konusmaci": "Can",
+   "metin": "Bu iki ekseni kafamızda netleştirdiğimiz an, hangi özellikle nereyi hizalayacağımızı çocuk oyuncağı gibi çözüyoruz. O zaman bu eksenleri yöneten temel özelliklerin detaylarına inelim.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 272.08,
+   "bit": 287.91,
+   "konusmaci": "Ayşe",
+   "metin": "İlk konuşacağımız özellik flex-direction. Tanım olarak flex-direction, container içerisindeki öğelerin ana eksende hangi yönde sıralanacağını belirleyen Basamaklı Stil Sayfaları özelliğidir. Yani esnek öğelerin yerleştirildiği yönü doğrudan o seçer.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 287.91,
+   "bit": 301.07,
+   "konusmaci": "Can",
+   "metin": "Ve flex-direction özelliğinin aldığı değerler ile anlamları dört tanedir. Birincisi row; öğeleri soldan sağa sıralar ve bu aynı zamanda varsayılan değerdir. İkincisi row-reverse; öğeleri sağdan sola sıralar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 301.07,
+   "bit": 314.17,
+   "konusmaci": "Ayşe",
+   "metin": "Üçüncüsü column; öğeleri yukarıdan aşağı sıralar. Dördüncüsü ise column-reverse; öğeleri aşağıdan yukarı sıralar. Tren vagonlarını yan yana mı yoksa üst üste mi dizeceğimize bu dört değerle karar veriyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 314.17,
+   "bit": 332.1,
+   "konusmaci": "Can",
+   "metin": "Yönü belirledikten sonra sıra ana eksendeki hizalamaya geliyor, yani justify-content özelliğine. Justify-content, Flexbox öğelerinin ana eksen yani main axis üzerinde nasıl hizalanacağını ve aralarındaki boşluğun nasıl dağıtılacağını belirleyen Basamaklı Stil Sayfaları özelliğidir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 332.1,
+   "bit": 348.57,
+   "konusmaci": "Ayşe",
+   "metin": "Justify-content özelliğinin aldığı temel değerler beş tanedir. Birinci değerimiz flex-start; öğeleri başa hizalar yani sola dayar ve soldan sağa hizalar, bu varsayılan değerdir. İkinci değerimiz flex-end; öğeleri sona yani sağa dayalı bitiş noktasına hizalar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 348.57,
+   "bit": 360.02,
+   "konusmaci": "Can",
+   "metin": "Üçüncü değerimiz center; öğeleri ana eksende tam ortalar. Aman dikkat, bazen şaşırtmak için center değerine öğeleri sola hizalar derler, sakın düşmeyelim; center her zaman ortalar!",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 360.02,
+   "bit": 374.96,
+   "konusmaci": "Ayşe",
+   "metin": "Çok iyi hatırlattın. Dördüncü değerimiz space-between; ilk öğe sola, son öğe sağa dayalı olacak şekilde öğeler arası eşit boşluk bırakır. Beşinci değerimiz ise space-around; kenarlar ve aralar eşit boşluk olacak biçimde boşluk dağıtır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 374.96,
+   "bit": 389.2,
+   "konusmaci": "Can",
+   "metin": "Gelelim yan eksene, yani align-items özelliğine. Align-items, Flexbox öğelerinin yan eksen yani cross axis üzerinde nasıl hizalanacağını belirleyen Basamaklı Stil Sayfaları özelliğidir. Aldığı temel değerler de dört tanedir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 389.2,
+   "bit": 401.35,
+   "konusmaci": "Ayşe",
+   "metin": "Birincisi flex-start; öğeleri üste hizalar. İkincisi flex-end; öğeleri alta hizalar. Üçüncüsü center; öğeleri dikeyde ortalar. Dördüncüsü ise stretch; öğelerin yüksekliğini kapsayıcıya yayar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 401.35,
+   "bit": 410.69,
+   "konusmaci": "Can",
+   "metin": "Peki Ayşe, kapsayıcı içindeki öğeler tek bir satıra sığmazsa ve biz bunları esnek kutu düzeninde birden çok satıra yaymak istersek ne kullanıyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 410.69,
+   "bit": 429.13,
+   "konusmaci": "Ayşe",
+   "metin": "İşte o zaman flex-wrap özelliğini kullanıyoruz Can! Öğeler tek satıra sığmadığında alt satırlara kayarak birden çok satıra yayılmasını flex-wrap sağlar. Hatta flex-direction ve flex-wrap özelliklerini tek seferde, tek satırda tanımlamak istersek de flex-flow kısaltma özelliğini kullanırız.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 429.13,
+   "bit": 447.51,
+   "konusmaci": "Can",
+   "metin": "Ve öğeler birden çok satıra yayıldığında, o çok satırlı yapılarda satırları çapraz eksende yani dikeyde hizalamak için align-content özelliğini devreye sokarız; o da tıpkı space-around gibi değerler alarak satırlar arası boşluğu düzenler. Şimdi bunları basit bir menü düzeninde görelim mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 447.51,
+   "bit": 457.56,
+   "konusmaci": "Ayşe",
+   "metin": "Görelim tabii. Elimizde container sınıfına sahip bir div ve içinde Ana Sayfa, Hakkımızda, İletişim ve Portfolyo yazan dört tane menü öğesi olduğunu düşünelim.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 457.56,
+   "bit": 475.61,
+   "konusmaci": "Can",
+   "metin": "Biz bu kapsayıcıya display iki nokta üst üste flex, altmış piksel yükseklik ve align-items iki nokta üst üste center verdiğimizde öğeler dikeyde tam ortalanıyor. Üzerine flex-direction iki nokta üst üste row ve justify-content iki nokta üst üste space-between eklediğimizde ne oluyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 475.61,
+   "bit": 485.09,
+   "konusmaci": "Ayşe",
+   "metin": "Öğeler soldan sağa doğru Ana Sayfa, Hakkımızda, İletişim ve Portfolyo sırasıyla diziliyor ve aralarında eşit boşluklar bırakılarak yatayda yayılıyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 485.09,
+   "bit": 503.91,
+   "konusmaci": "Can",
+   "metin": "Ama biz kodu flex-direction iki nokta üst üste row-reverse ve justify-content iki nokta üst üste center olarak değiştirirsek, tablo bir anda tersine dönüyor! Öğeler sondan başlayarak başa doğru, yani Portfolyo, İletişim, Hakkımızda, Ana Sayfa şeklinde sıralanıyor ve ekranın ortasında toplanıyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 503.91,
+   "bit": 519.36,
+   "konusmaci": "Ayşe",
+   "metin": "Üstelik Hiper Metin İşaretleme Dili koduna tek bir harf bile dokunmadan bunu yaptık. Peki öğelerin yalnızca hizasını değil de kapsayıcı içindeki büyüme ve küçülme boyutlarını esnek şekilde yönetmek istersek hangi ileri tekniklere başvuruyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 519.36,
+   "bit": 532.9,
+   "konusmaci": "Can",
+   "metin": "İleri Flexbox tekniklerinde öğelerin genişliğini ve yüksekliğini esnek biçimde yöneten üç temel özellik var. Flexbox esneklik özellikleri dediğimiz bu grupta üç özellik bulunuyor: flex-grow, flex-shrink ve flex-basis.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 532.9,
+   "bit": 546.82,
+   "konusmaci": "Ayşe",
+   "metin": "İlki olan flex-grow, öğenin boşluğu büyüterek paylaşma oranıdır. Yani bir flex öğesinin, kapsayıcıda kalan boşluğu diğer öğelere kıyasla ne oranda büyüterek kaplayacağını belirleyen özelliktir ve varsayılan değeri sıfırdır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 546.82,
+   "bit": 568.22,
+   "konusmaci": "Can",
+   "metin": "Varsayılan değer sıfır olduğunda boşluk paylaşılmaz, herkes kendi boyutunda kalır. Ama biz bir öğenin diğerlerinden daha fazla yer kaplamasını istersek veya boşluğu eşit paylaşmalarını istersek flex-grow değerine bir ve üzeri değerler veririz. Mesela hepsine flex-grow iki nokta üst üste bir verirsek kalan pastayı kardeş payı eşit bölüşürler.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 568.22,
+   "bit": 581.08,
+   "konusmaci": "Ayşe",
+   "metin": "İkincisi olan flex-shrink ise ekran daraldığında öğenin küçülme oranıdır. Yani kapsayıcı daraldığında bir flex öğesinin diğerlerine kıyasla küçülme oranını belirleyen özelliktir ve varsayılan değeri birdir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 581.08,
+   "bit": 596.56,
+   "konusmaci": "Can",
+   "metin": "Bak burası çok önemli, flex-grow varsayılan olarak sıfırken, flex-shrink varsayılan olarak birdir. Yani öğeler doğuştan daralmaya izin verir. Eğer bir öğenin ekran küçülse bile asla daralmamasını istiyorsak, onun flex-shrink değerini sıfır yaparız.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 596.56,
+   "bit": 608.79,
+   "konusmaci": "Ayşe",
+   "metin": "Üçüncüsü ise flex-basis; öğenin başlangıç boyutudur. Tanım olarak flex-basis, bir flex öğesinin boşluk dağıtılmadan önceki temel başlangıç boyutunu belirleyen Basamaklı Stil Sayfaları özelliğidir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 608.79,
+   "bit": 633.81,
+   "konusmaci": "Can",
+   "metin": "Piksel, yüzde veya otomatik değer alabilir. Eğer auto değerini alırsa içerik genişliğine göre boyutlanır, ama flex-basis iki nokta üst üste iki yüz piksel dersek boşluk dağıtılmadan önce iki yüz piksellik sabit bir başlangıç boyutu alır. Burada center, stretch, baseline veya auto gibi kavramların birer özellik değeri olduğunu, flex-basis'in ise doğrudan bir Flexbox özelliği olduğunu da unutmayalım.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 633.81,
+   "bit": 644.3,
+   "konusmaci": "Ayşe",
+   "metin": "Boyutları harika yönettik Can. Peki ya row-reverse gibi tüm sırayı ters çevirmek yerine, tek tek her öğenin kaçıncı sırada görüneceğine ayrı ayrı karar vermek istersek?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 644.3,
+   "bit": 655.78,
+   "konusmaci": "Can",
+   "metin": "İşte o zaman sahneye order özelliği çıkıyor! Order, Hiper Metin İşaretleme Dili kaynak kodunu değiştirmeden flex ve grid öğelerinin ekrandaki görsel sıralamasını değiştiren özelliktir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 655.78,
+   "bit": 668.7,
+   "konusmaci": "Ayşe",
+   "metin": "Yani order özelliğinin temel işlevi, esnek kapsayıcı içindeki öğelerin görsel olarak kaçıncı sırada görünmesi gerektiğini belirlemektir. Ve tüm esnek öğeler için order özelliğinin varsayılan değeri sıfırdır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 668.7,
+   "bit": 678.0,
+   "konusmaci": "Can",
+   "metin": "Sıralama mantığı da çok basit: küçükten büyüğe doğru! Öğelerin aldıkları order değerlerine göre, daha yüksek değer alan öğe daha sonra yerleştirilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 678.0,
+   "bit": 698.15,
+   "konusmaci": "Ayşe",
+   "metin": "Bunu bir banka sırası fişi gibi düşünebiliriz. Herkesin elinde varsayılan olarak sıfır numaralı fiş var. Biz ilk çocuğa yani first-child öğesine order iki nokta üst üste iki, son çocuğa yani last-child öğesine order iki nokta üst üste bir verirsek, bir numara iki numaradan küçük olduğu için son öğe ilk öğenin önüne geçer.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 698.15,
+   "bit": 707.64,
+   "konusmaci": "Can",
+   "metin": "Şimdi bu öğrendiğimiz esneklik özelliklerini ve order numarasını iki güzel örnek uygulamada, esnek kart düzeninde ve navigasyon menüsünde birleştirelim.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 707.64,
+   "bit": 723.9,
+   "konusmaci": "Ayşe",
+   "metin": "İlk örneğimiz esnek kart düzeni. Sayfamızda üç tane ürün kartı var. Kapsayıcıya display iki nokta üst üste flex, justify-content iki nokta üst üste space-between, align-items iki nokta üst üste stretch ve gap iki nokta üst üste on beş piksel veriyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 723.9,
+   "bit": 747.71,
+   "konusmaci": "Can",
+   "metin": "Buradaki gap özelliği, Flexbox ve Grid sistemlerinde öğelerin aralarındaki satır ve sütun boşluğunu belirleyen Basamaklı Stil Sayfaları özelliğidir. Kartların kendisine de flex-basis iki nokta üst üste yüz elli piksel başlangıç genişliği ve flex-grow iki nokta üst üste bir verdiğimizde, üç kart da aralarında on beşer piksel boşlukla ekran genişliğini eşit paylaşıyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 747.71,
+   "bit": 766.88,
+   "konusmaci": "Ayşe",
+   "metin": "İkinci örneğimiz ise çok daha heyecanlı bir navigasyon menüsü uygulaması. Bu arada web arayüzlerinde site içi gezinme için yatay menü, dikey menü, dikey açılır menü ve sekmeli yani tab menü yaygın olarak kullanılır ama çapraz menü diye bir menü türü yoktur, bunu da aklımızın bir köşesine yazalım.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 766.88,
+   "bit": 788.04,
+   "konusmaci": "Can",
+   "metin": "Kesinlikle, çapraz menü kulağa bile tuhaf geliyor. Bizim navigasyon menümüzde Hiper Metin İşaretleme Dili sırasına göre Ana Sayfa, Hakkında, Hizmetler ve İletişim olmak üzere dört öğemiz var. Menüye gap iki nokta üst üste yirmi piksel, öğelere de flex-grow bir ve flex-shrink bir veriyoruz ki ekran daraldığında küçülebilsinler.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 788.04,
+   "bit": 798.24,
+   "konusmaci": "Ayşe",
+   "metin": "Sonra order ile sihir yapıyoruz! İletişim öğesine order bir, Ana Sayfa öğesine order iki, Hakkında öğesine order üç ve Hizmetler öğesine order dört veriyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 798.24,
+   "bit": 815.47,
+   "konusmaci": "Can",
+   "metin": "Order küçükten büyüğe doğru sıraladığı için, Hiper Metin İşaretleme Dili kodunda en sonda duran İletişim öğesi order bir sayesinde ekranda en başa, birinci sıraya yerleşiyor! Ardından iki numarayla Ana Sayfa, üç numarayla Hakkında ve dört numarayla Hizmetler geliyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 815.47,
+   "bit": 829.98,
+   "konusmaci": "Ayşe",
+   "metin": "Tek bir satır ya da tek bir sütun üzerinde harikalar yarattık. Peki Can, ya bir elektronik ticaret galerisinde veya karmaşık bir haber portalında hem satırları hem sütunları aynı anda, iki boyutlu olarak yönetmemiz gerekirse?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 829.98,
+   "bit": 839.02,
+   "konusmaci": "Can",
+   "metin": "İşte orada Flexbox tek boyutlu kaldığı için bayrağı iki boyutlu mizanpajların kralı olan Basamaklı Stil Sayfaları Grid sistemine devrediyor!",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 839.02,
+   "bit": 863.73,
+   "konusmaci": "Ayşe",
+   "metin": "Basamaklı Stil Sayfaları Grid sistemi, web sayfalarında hem satırları hem de sütunları aynı anda kontrol eden iki boyutlu gelişmiş mizanpaj ve sayfa iskeleti sistemidir. Örneğin bir elektronik ticaret sitesinde ürün kartlarını dört sütun ve üç satır şeklinde hizalamak ya da bir haber portalında manşeti geniş bir alana yayıp yanına küçük haber kutuları dizmek Grid ile çok kolaydır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 863.73,
+   "bit": 882.19,
+   "konusmaci": "Can",
+   "metin": "En çok merak edilen konu bu ikisinin farkıdır. Grid ve Flexbox karşılaştırma ölçütleri beş tanedir. Birinci ölçütümüz Düzen Tipi: Basamaklı Stil Sayfaları Grid satır ve sütun olmak üzere iki boyutludur, Flexbox ise ya satır ya da sütun olmak üzere tek boyutlu düzenler için en uygundur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 882.19,
+   "bit": 895.03,
+   "konusmaci": "Ayşe",
+   "metin": "İkinci ölçütümüz Kullanım Amacı: Basamaklı Stil Sayfaları Grid karmaşık layout'lar ve sayfa iskeleti kurmak için kullanılırken, Flexbox içerik hizalama ve küçük bileşen düzenlemeleri için kullanılır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 895.03,
+   "bit": 916.58,
+   "konusmaci": "Can",
+   "metin": "Üçüncü ölçütümüz Yerleşim Kontrolü: Basamaklı Stil Sayfaları Grid satır ve sütunları aynı anda kontrol eder, Flexbox ise sadece bir eksende kontrol sağlar. Dördüncü ölçütümüz Öğe Konumlandırma: Basamaklı Stil Sayfaları Grid belirli hücreye doğrudan yerleştirme yapabilirken, Flexbox sıralı yerleşim yapar ve sıraya göre konumlandırır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 916.58,
+   "bit": 927.36,
+   "konusmaci": "Ayşe",
+   "metin": "Beşinci ve son ölçütümüz ise Responsive Tasarım: Basamaklı Stil Sayfaları Grid alanları kolayca yeniden düzenleyebilir, Flexbox ise içerik akışına göre esnek davranır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 927.36,
+   "bit": 948.39,
+   "konusmaci": "Can",
+   "metin": "Peki ne zaman hangisini tercih edeceğiz? Basamaklı Stil Sayfaları Grid sisteminin tercih edildiği üç temel durum vardır: Birincisi dashboard, galeri, haber portalı gibi karmaşık sayfa düzenleri. İkincisi satır ve sütunların birlikte kontrol edilmesi gereken durumlar. Üçüncüsü ise belirli alanlara içerik yerleştirme ihtiyacı.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 948.39,
+   "bit": 971.88,
+   "konusmaci": "Ayşe",
+   "metin": "Buna karşılık Flexbox sisteminin tercih edildiği durumlar da üç tanedir: Birincisi navigasyon menüsü, buton grupları, kart listeleri gibi tek eksenli düzenler. İkincisi içeriklerin dinamik olarak hizalanması gereken durumlar. Üçüncüsü de küçük bileşenlerin responsive davranışları. Şimdi bu güçlü Grid sisteminin bileşenlerine ve şablon tanımlamalarına bakalım mı?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 971.88,
+   "bit": 984.99,
+   "konusmaci": "Can",
+   "metin": "Bakalım tabii. Bir Hiper Metin İşaretleme Dili elemanını grid konteyneri yapmak için ona display iki nokta üst üste grid özelliğini vermemiz yeterli. Basamaklı Stil Sayfaları Grid'in üç ana bileşeni vardır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 984.99,
+   "bit": 1000.38,
+   "konusmaci": "Ayşe",
+   "metin": "Birinci bileşen Grid Container; yani display iki nokta üst üste grid tanımlanan kapsayıcıdır. İkinci bileşen Grid Items; yani container içindeki öğelerdir. Üçüncü bileşen ise Satırlar ve sütunlar; yani Grid düzenini oluşturan yapı taşlarıdır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1000.38,
+   "bit": 1016.42,
+   "konusmaci": "Can",
+   "metin": "Dikkat edersen sadece display iki nokta üst üste grid yazdığımızda ekranda henüz görsel bir değişiklik olmaz ama kapsayıcı artık ızgara kurallarını uygulamaya hazır hale gelir. Görsel yapıyı kurmak için satır ve sütun şablonlarını tanımlamamız gerekir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1016.42,
+   "bit": 1034.04,
+   "konusmaci": "Ayşe",
+   "metin": "İşte burada çok önemli iki özellik karşımıza çıkıyor: Grid sisteminde sütunları tanımlamak, yani sütunların genişliğini ve sayısını belirlemek için grid-template-columns özelliği kullanılır. Satırların yüksekliğini ve sayısını belirlemek için ise grid-template-rows kullanılır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1034.04,
+   "bit": 1053.51,
+   "konusmaci": "Can",
+   "metin": "Örneğin üç sütun ve iki satırdan oluşan bir ızgara kurmak istiyoruz ve her hücre yüz elli piksele yüz piksel olsun diyoruz. O zaman grid-template-columns iki nokta üst üste yüz elli piksel boşluk yüz elli piksel boşluk yüz elli piksel yazarız; böylece her biri yüz elli piksel genişliğinde üç sütun oluşur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1053.51,
+   "bit": 1069.42,
+   "konusmaci": "Ayşe",
+   "metin": "Altına da grid-template-rows iki nokta üst üste yüz piksel boşluk yüz piksel yazdığımızda, her biri yüz piksel yüksekliğinde iki satırımız hazır olur. Ama Can, hep böyle sabit piksel değerleri verirsek farklı ekran boyutlarında sıkıntı yaşamaz mıyız?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1069.42,
+   "bit": 1087.8,
+   "konusmaci": "Can",
+   "metin": "Yaşarız tabii, işte o yüzden Grid sisteminde sabit piksel yerine esnek birim olan fr yani Fraction kullanılır! Türkçe karşılığıyla kesir ya da esnek pay demektir. Tanım olarak fr, Basamaklı Stil Sayfaları Grid sisteminde kullanılabilir serbest alanın bir payını temsil eden esnek birimdir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1087.8,
+   "bit": 1105.49,
+   "konusmaci": "Ayşe",
+   "metin": "Yani bir fr dediğimizde kullanılabilir alanın bir parçasını kastetmiş oluyoruz. Biz grid-template-columns iki nokta üst üste bir fr boşluk bir fr boşluk bir fr yazdığımızda, kapsayıcının genişliği ne olursa olsun mevcut alanı her zaman üç eşit parçaya yani sütuna bölmüş oluruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1105.49,
+   "bit": 1121.33,
+   "konusmaci": "Can",
+   "metin": "Üstelik oranları değiştirmek de elimizde. Eğer bir fr boşluk iki fr boşluk bir fr yazarsak, toplam alanı dört paya böler; birinci ve üçüncü sütun birer pay alırken, ortadaki ikinci sütun iki pay alarak diğerlerinin tam iki katı genişliğe sahip olur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1121.33,
+   "bit": 1145.0,
+   "konusmaci": "Ayşe",
+   "metin": "Sütunları böldük, peki hücrelerin birbirine yapışmaması için aradaki boşlukları nasıl ayarlıyoruz? Burada iki yöntemimiz var. İlki gap özelliği; tek bir ölçüyle hem satır hem sütun boşluğunu eşit ayarlar. Örneğin gap iki nokta üst üste on beş piksel dediğimizde tüm hücreler arasında yatayda ve dikeyde on beş piksel boşluk bırakır, margin kullanmaktan çok daha pratiktir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1145.0,
+   "bit": 1166.76,
+   "konusmaci": "Can",
+   "metin": "İkinci yöntem ise sütun ve satır boşluklarını ayrı ayrı ayarlamaktır. Çok sütunlu bir öğede veya Grid yapısında sadece sütunlar arasındaki boşluğu belirtmek için column-gap özelliğini, sadece satırlar arasındaki boşluğu ayarlamak için ise row-gap özelliğini kullanırız. Peki bu hücrelerin içine öğeleri kendi istediğimiz gibi nasıl yayacağız?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1166.76,
+   "bit": 1184.59,
+   "konusmaci": "Ayşe",
+   "metin": "Öğelerin nereye ve ne kadar alan kaplayacağını belirlemek için önce Grid Çizgileri mantığını bilmemiz gerekiyor Can. Çok basit bir kuralı var: Sütun veya satır sayısının bir fazlası kadar çizgi vardır. Örneğin üç sütunlu bir grid yapısında tam dört adet dikey çizgi bulunur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1184.59,
+   "bit": 1208.28,
+   "konusmaci": "Can",
+   "metin": "Birinci çizgi en sol kenar, ikinci çizgi birinci ve ikinci sütunun arası, üçüncü çizgi ikinci ve üçüncü sütunun arası, dördüncü çizgi de en sağ kenardır. Biz bir öğenin hangi dikey çizgiden başlayıp hangisinde biteceğini grid-column-start ve grid-column-end ile, hangi yatay çizgiden başlayıp hangisinde biteceğini de grid-row-start ve grid-row-end ile belirleriz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1208.28,
+   "bit": 1230.66,
+   "konusmaci": "Ayşe",
+   "metin": "Mesela birinci öğenin birinci sütun çizgisinden başlayıp üçüncü sütun çizgisine kadar uzanmasını, yani iki sütun kaplamasını istiyorsak grid-column-start iki nokta üst üste bir ve grid-column-end iki nokta üst üste üç yazarız. Veya bunu kısaltıp araya eğik çizgi koyarak grid-column iki nokta üst üste bir eğik çizgi üç şeklinde de yazabiliriz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1230.66,
+   "bit": 1246.21,
+   "konusmaci": "Can",
+   "metin": "Çizgi saymak istemiyorsak çok daha pratik bir anahtar kelimemiz var: span! Tanım olarak span, Basamaklı Stil Sayfaları Grid çizgileriyle yerleşim yaparken bir öğenin kaç satır veya kaç sütunluk yer kaplayacağını belirten anahtar kelimedir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1246.21,
+   "bit": 1264.76,
+   "konusmaci": "Ayşe",
+   "metin": "Örneğin bir öğeyi iki sütun boyunca genişletmek için doğru yazım grid-column iki nokta üst üste span iki veya başlangıç çizgisini de belirterek grid-column iki nokta üst üste bir eğik çizgi span iki şeklindedir. Buradaki span iki ifadesi doğrudan iki sütunluk yer kapla anlamına gelir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1264.76,
+   "bit": 1280.31,
+   "konusmaci": "Can",
+   "metin": "Bir de karmaşık düzenlerde işimizi hızlandıran repeat fonksiyonu var. Tanım olarak repeat, Grid sisteminde tekrar eden satır veya sütun boyutlandırma tanımlarını pratik ve kısa yoldan yazmaya yarayan Basamaklı Stil Sayfaları fonksiyonudur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1280.31,
+   "bit": 1294.3,
+   "konusmaci": "Ayşe",
+   "metin": "Mesela tek tek bir fr boşluk bir fr boşluk bir fr yazmak yerine, grid-template-columns iki nokta üst üste repeat üç virgül bir fr yazarız. Bu kod ne anlama gelir? Üç sütun oluşturur ve her biri eşit genişlikte olur!",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1294.3,
+   "bit": 1311.61,
+   "konusmaci": "Can",
+   "metin": "Hatta repeat auto-fit virgül minmax yüz elli piksel virgül bir fr yazarsak, sütunlar minimum yüz elli piksel olur ve yer kaldıkça esneyerek genişler. Çizgiler ve sayılar harika ama sayfa iskeletini bir resim çizer gibi metinlerle kurmanın bir yolu daha var değil mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1311.61,
+   "bit": 1323.46,
+   "konusmaci": "Ayşe",
+   "metin": "Evet, Grid'in en sezgisel ve en güçlü özelliği olan isimlendirilmiş alanlar! Bu yöntem sayfa düzenini metin tabanlı bir şablon çizerek oluşturmamızı sağlıyor ve iki adımda çalışıyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1323.46,
+   "bit": 1347.79,
+   "konusmaci": "Can",
+   "metin": "İlk adımda öğelere isim veriyoruz ve bunun için grid-area özelliğini kullanıyoruz. Tanım olarak grid-area, bir grid öğesine grid-template-areas şablonunda kullanılmak üzere özel bir ad atayan Basamaklı Stil Sayfaları özelliğidir. Örneğin header etiketine grid-area iki nokta üst üste header, nav etiketine nav, main etiketine main ve footer etiketine footer adını veriyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1347.79,
+   "bit": 1367.71,
+   "konusmaci": "Ayşe",
+   "metin": "İkinci adımda ise kapsayıcı içinde şablonu çiziyoruz ve bunun için grid-template-areas özelliğini kullanıyoruz. Tanım olarak grid-template-areas, önceden isimlendirilmiş grid alanlarını metin tabanlı bir şablon üzerinde birleştirerek sayfa düzenini görsel bir taslak gibi kurmayı sağlayan Grid özelliğidir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1367.71,
+   "bit": 1387.55,
+   "konusmaci": "Can",
+   "metin": "Örneğin iki sütunlu ve üç satırlı bir sayfa iskeletinde grid-template-areas özelliğinin karşısına alt alta üç satır halinde tırnak içinde şunları yazıyoruz: Birinci satıra tırnak içinde header boşluk header, ikinci satıra tırnak içinde nav boşluk main, üçüncü satıra da tırnak içinde footer boşluk footer.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1387.55,
+   "bit": 1402.13,
+   "konusmaci": "Ayşe",
+   "metin": "Koda baktığın anda sayfanın görsel taslağını görüyorsun! İlk satırın iki sütununu da boydan boya header kaplıyor, ortadaki satırın sol sütununa nav, sağ sütununa main yerleşiyor, en alt satırı da boydan boya footer kaplıyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1402.13,
+   "bit": 1416.12,
+   "konusmaci": "Can",
+   "metin": "Sayfa iskeletimizi hem Flexbox hem de Grid ile kusursuz kurduk. Peki bu kurduğumuz iskeletin dev bir televizyon ekranından küçücük bir cep telefonu ekranına kadar her yerde bozulmadan görünmesini nasıl sağlayacağız?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1416.12,
+   "bit": 1430.61,
+   "konusmaci": "Ayşe",
+   "metin": "Tabii ki Responsive Tasarım yani Türkçe adıyla Duyarlı Tasarım ile! Tanım olarak Responsive Tasarım, bir web sitesinin görüntülendiği cihazın ekran boyutuna ve donanım özelliklerine otomatik olarak uyum sağlaması prensibidir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1430.61,
+   "bit": 1454.36,
+   "konusmaci": "Can",
+   "metin": "Başka bir deyişle, tek bir site, tek bir Hiper Metin İşaretleme Dili kod tabanı ve içerik ile her ekran boyutuna göre ideal görüntüleme deneyimini sağlayan tasarımlara duyarlı web tasarımı diyoruz. Tek Hiper Metin İşaretleme Dili kodu ile tüm ekranlara tasarım yapıldığı için oluşturulması ve devamlılığını sağlamak diğer yapılara göre çok daha az emekle yapılabiliyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1454.36,
+   "bit": 1475.15,
+   "konusmaci": "Ayşe",
+   "metin": "Bu arada bazen duyarlı tasarımla uyarlanabilir yani adaptive tasarım karıştırılır; uyarlanabilir tasarımda farklı ekranlar için önceden belirlenmiş düzenler kullanılır ve web site bileşenlerini kontrol etmek için JavaScript kodları kullanılabilir. Oysa duyarlı tasarımda tek kod tabanı ekranla birlikte akıcı biçimde esner.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1475.15,
+   "bit": 1492.6,
+   "konusmaci": "Can",
+   "metin": "Ve Responsive tasarımın dört temel faydası vardır: Birincisi kullanıcı deneyimini iyileştirir. İkincisi tüm cihazlarda tutarlı bir görünüm sağlar. Üçüncüsü ayrı bir mobil siteye gerek kalmaz. Dördüncüsü ise arama motoru optimizasyonu açısından Google tarafından önerilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1492.6,
+   "bit": 1511.98,
+   "konusmaci": "Ayşe",
+   "metin": "Ancak responsive tasarıma başlamadan önce Hiper Metin İşaretleme Dili dosyamızın head etiketleri arasına mutlaka eklememiz gereken hayati bir satır var: Viewport Meta Etiketi! Önce viewport nedir onu söyleyelim: Kullanıcının tarayıcısında girdiği web sayfasının kapladığı görünür alana viewport denir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1511.98,
+   "bit": 1532.71,
+   "konusmaci": "Can",
+   "metin": "Viewport Meta Etiketi ise tarayıcıya sayfa genişliğini cihazın fiziksel genişliği olarak ayarlamasını ve başlangıç zoom yani yakınlaştırma seviyesini sabitlemesini bildiren Hiper Metin İşaretleme Dili başlık etiketidir. Yani web tarayıcıya ekranı hangi genişlikte görüntüleyeceğini bildiren ifade meta viewport etiketidir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1532.71,
+   "bit": 1551.31,
+   "konusmaci": "Ayşe",
+   "metin": "Kodun içinde name eşittir viewport dedikten sonra content kısmına iki kritik ayar yazarız: İlki width eşittir device-width; bu tarayıcıya sayfa genişliğini cihazın kendi ekran genişliği yapmasını söyler ve mobil cihazların siteyi küçültülmüş bir masaüstü sitesi gibi göstermesini engeller.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1551.31,
+   "bit": 1567.47,
+   "konusmaci": "Can",
+   "metin": "İkincisi ise initial-scale eşittir bir nokta sıfır; bu da sayfa ilk yüklendiğinde herhangi bir yakınlaştırma yapılmamasını sağlar. Bu etiketi koymazsak yazacağımız hiçbir medya sorgusu mobilde doğru çalışmaz. Peki bu medya sorgularını nasıl yazıyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1567.47,
+   "bit": 1586.34,
+   "konusmaci": "Ayşe",
+   "metin": "Media Query yani Medya Sorgusu, ekran genişliği veya ortam türü gibi belirli koşullar karşılandığında özel Basamaklı Stil Sayfaları kurallarını devreye sokan kural yapısıdır. Örneğin bir resim galerisine veya sayfa düzenine responsive özelliği kazandırmak için doğrudan Media Query kullanırız.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1586.34,
+   "bit": 1600.37,
+   "konusmaci": "Can",
+   "metin": "Temel söz dizimi et işareti media boşluk medya-türü boşluk and boşluk koşul şeklindedir. Media Queries söz dizimi dört bileşenden oluşur. Birinci bileşenimiz et işareti media; bir medya sorgusu başlattığımızı belirtir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1600.37,
+   "bit": 1620.13,
+   "konusmaci": "Ayşe",
+   "metin": "İkinci bileşenimiz medya-türü; ekranlar için screen, yazdırma için print veya tümü için all kullanılır. Ayrıca standartlarda televizyon için tv, projeksiyon için projection ve teletip cihazları için tty gibi medya tipleri de vardır ama dikkat edelim, Bootstrap bir medya tipi değil bir tasarım çerçevesidir!",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1620.13,
+   "bit": 1635.0,
+   "konusmaci": "Can",
+   "metin": "Harika bir detay! Üçüncü bileşenimiz and; birden fazla koşulu birleştirmek için kullanılır ve isteğe bağlıdır. Dördüncü bileşenimiz ise koşul ifadesi; ekran genişliği ile ilgili max-width veya min-width koşulları burada belirtilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1635.0,
+   "bit": 1649.62,
+   "konusmaci": "Ayşe",
+   "metin": "Bu iki koşulu ayırmak çok kolaydır: max-width, ekran genişliği en fazla belirlenen piksel ise, yani o değerin altında ise çalışır. min-width ise ekran genişliği en az belirlenen piksel ise, yani o değer ve üzerinde ise çalışır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1649.62,
+   "bit": 1686.12,
+   "konusmaci": "Can",
+   "metin": "Örneğin varsayılan body arka plan rengimiz lightblue yani açık mavi olsun. Biz et işareti media screen and max-width iki nokta üst üste altı yüz piksel yazıp içine background-color iki nokta üst üste lightcoral yazarsak, ekran genişliği altı yüz pikselin altına düştüğü anda arka plan rengi değişir. Veya ekran genişliğinin iki yüz elli piksel altında olması halinde arka plan rengini sarı yapmak istersek, et işareti media only screen and max-width iki nokta üst üste iki yüz elli piksel süslü parantez içinde body background-color iki nokta üst üste yellow yazarız.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1686.12,
+   "bit": 1699.64,
+   "konusmaci": "Ayşe",
+   "metin": "Kod yazarken width kelimesindeki d harfini unutmayıp max-width şeklinde doğru yazmaya da dikkat ediyoruz. Peki Can, biz tasarıma önce büyük masaüstü ekranlardan mı başlamalıyız yoksa küçük mobil ekranlardan mı?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1699.64,
+   "bit": 1710.38,
+   "konusmaci": "Can",
+   "metin": "Masaüstünden başlayıp mobile doğru küçültmeye Desktop-First denir ama günümüzün modern standardı ve en iyi pratiği kesinlikle Mobile-First yani Önce Mobil yaklaşımıdır!",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1710.38,
+   "bit": 1730.45,
+   "konusmaci": "Ayşe",
+   "metin": "Tanım olarak Mobile-First yani mobil öncelikli tasarım, tasarım ve kodlamaya önce en küçük mobil ekran stilleriyle başlanıp, ekran genişledikçe min-width medya sorgularıyla yeni özelliklerin eklendiği modern geliştirme yaklaşımıdır. Yani kısaca önce mobil cihazlar için Basamaklı Stil Sayfaları yazmayı ifade eder.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1730.45,
+   "bit": 1746.76,
+   "konusmaci": "Can",
+   "metin": "Peki neden herkes bu yöntemi tercih ediyor? Mobile-First yaklaşımının benimsenme nedenleri dört tanedir. Birinci neden Performans: Daha yavaş internet bağlantısına sahip mobil cihazlarda temel stilleri önce yükleyerek sitenin daha hızlı açılmasını sağlar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1746.76,
+   "bit": 1763.7,
+   "konusmaci": "Ayşe",
+   "metin": "İkinci neden Odaklanma: Önce küçük ekran için tasarım yapmak, bizi en önemli içerik ve işlevlere odaklanmaya zorlar. Üçüncü neden Daha Temiz Kod: Var olan kuralları ezmek yani override etmek yerine ekran büyüdükçe yeni kurallar ekleyerek daha az kod yazmayı sağlar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1763.7,
+   "bit": 1779.74,
+   "konusmaci": "Can",
+   "metin": "Dördüncü neden ise min-width kullanımı: Varsayılan stiller mobil içindir, ekran büyüdükçe yeni stiller ekle mantığını uygular. Örneğin ana içerik ve yan menüden oluşan bir sayfada, varsayılan mobil stilinde yüzde yüz genişlikle kutular alt alta durur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1779.74,
+   "bit": 1799.43,
+   "konusmaci": "Ayşe",
+   "metin": "Sonra et işareti media screen and min-width iki nokta üst üste yedi yüz altmış sekiz piksel yazarız. Ekran yedi yüz altmış sekiz piksele, yani tablet boyutuna ulaştığı anda kapsayıcıya display iki nokta üst üste flex veririz; ana içerik flex üç, yan menü flex bir değerini alarak yan yana iki sütuna dönüşür!",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1799.43,
+   "bit": 1819.06,
+   "konusmaci": "Can",
+   "metin": "Tam tersi Desktop-First bir Grid örneğinde ise varsayılan olarak repeat dört virgül bir fr ile bilgisayarda dört sütun kurarız; ardından max-width yedi yüz altmış sekiz pikselde repeat iki virgül bir fr ile tableti iki sütuna, max-width dört yüz seksen pikselde ise bir fr ile telefonu tek sütuna düşürürüz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1819.06,
+   "bit": 1850.45,
+   "konusmaci": "Ayşe",
+   "metin": "Hatta yaptığımız bu duyarlı tasarımların mobil uyumluluğunu test etmek için Google Mobile-Friendly Test yani search nokta google nokta com eğik çizgi test eğik çizgi mobile-friendly, responsivedesignchecker nokta com, ami nokta responsivedesign nokta is ve responsivetesttool nokta com gibi gerçek test sitelerini kullanırız; ama google nokta com eğik çizgi userfriendly diye bir test sitesi yoktur, bunu da karıştırmayalım. Şimdi bu duyarlı sayfalara biraz hareket ve can katmaya ne dersin?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1850.45,
+   "bit": 1866.88,
+   "konusmaci": "Can",
+   "metin": "Harika olur! Web sitelerine JavaScript'e veya ağır Grafik Değişim Biçimi gibi medya dosyalarına hiç ihtiyaç duymadan, yalnızca Hiper Metin İşaretleme Dili ve Basamaklı Stil Sayfaları ile hareket katmak için iki temel yöntemimiz var: transition ve animation.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1866.88,
+   "bit": 1888.87,
+   "konusmaci": "Ayşe",
+   "metin": "İlk yöntemimiz olan Transition yani Geçiş Efekti, bir Basamaklı Stil Sayfaları özelliğinin değerinin belirli bir süre içerisinde yumuşak bir biçimde bir durumdan diğerine dönüşmesini sağlayan mekanizmadır. Özellikle fare ile üzerine gelme yani hover gibi küçük etkileşimlerde kullanılan geçiş efektleri doğrudan transition özelliği ile yapılır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1888.87,
+   "bit": 1908.3,
+   "konusmaci": "Can",
+   "metin": "Bir transition tanımlarken hangi özelliğin değişeceğini, ne kadar sürede değişeceğini ve geçiş efektinin hız eğrisini belirtmemiz gerekir. Bunları tek satırda transition iki nokta üst üste özellik boşluk süre boşluk kolaylaştırma-geçiş şeklinde yazabileceğimiz gibi ayrı özellikler halinde de tanımlarız.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1908.3,
+   "bit": 1925.82,
+   "konusmaci": "Ayşe",
+   "metin": "Ayrı tanımladığımızda dört temel geçiş özelliğimiz vardır: Birincisi hangi özelliğin etkileneceğini seçen transition-property. İkincisi geçişin ne kadar süreceğini belirten transition-duration. Üçüncüsü geçişin başlamadan önceki bekleme süresini belirleyen transition-delay.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1925.82,
+   "bit": 1947.3,
+   "konusmaci": "Can",
+   "metin": "Dördüncüsü ise geçiş işleminin hız eğrisini belirlemek için kullanılan transition-timing-function özelliğidir! Bakın ismine çok dikkat edin, transition-timed-function veya directional diye bir geçiş özelliği yoktur; doğru adı transition-timing-function'dır ve ease, linear, ease-in, ease-out, ease-in-out gibi hız eğrisi değerleri alır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1947.3,
+   "bit": 1967.69,
+   "konusmaci": "Ayşe",
+   "metin": "Somut bir örnek verelim: Yeşil bir butonumuz var ve üzerine transition iki nokta üst üste background-color boşluk sıfır nokta beş saniye boşluk ease yazdık. Fareyle butonun üzerine geldiğimizde yani hover durumunda arka plan rengi aniden küt diye değişmez, yarım saniye içinde yumuşacık bir geçişle koyu yeşile dönüşür.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1967.69,
+   "bit": 1978.88,
+   "konusmaci": "Can",
+   "metin": "Peki Ayşe, sadece başlangıç ve bitiş arasında değil de, birden fazla ara adımı olan ve kendi kendine döngüye giren tam kontrollü bir animasyon yapmak istersek ne kullanıyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1978.88,
+   "bit": 2000.74,
+   "konusmaci": "Ayşe",
+   "metin": "O zaman devreye et işareti keyframes giriyor Can! Tanım olarak et işareti keyframes, bir Basamaklı Stil Sayfaları animasyonunun başlangıç, bitiş ve yüzde ile ifade edilen ara adımlardaki görsel durumlarını tanımlayan kuraldır. Yani animasyon sırasında çeşitli noktalarda animasyon özellikleri için değerleri doğrudan et işareti keyframes belirtir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2000.74,
+   "bit": 2026.0,
+   "konusmaci": "Can",
+   "metin": "Keyframe ile animasyon yapımı iki adımdan oluşuyor. Birinci adımda et işareti keyframes kuralı ile animasyon senaryosunu tanımlıyoruz. Örneğin slideInFromLeft adında bir içeriden süzülme senaryosu yazarken, başlangıç yani yüzde sıfır veya from adımında öğeyi transform iki nokta üst üste translateX eksi yüzde yüz ile ekranın sol dışına taşıyıp opacity iki nokta üst üste sıfır ile görünmez yapıyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2026.0,
+   "bit": 2041.36,
+   "konusmaci": "Ayşe",
+   "metin": "Sonunda yani yüzde yüz veya to adımında ise transform iki nokta üst üste translateX sıfır ile öğeyi orijinal konumuna getirip opacity iki nokta üst üste bir ile tamamen görünür yapıyoruz. İkinci adımda ise bu senaryoyu bir elemente uyguluyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2041.36,
+   "bit": 2055.66,
+   "konusmaci": "Can",
+   "metin": "İşte bu uygulamayı yaparken kullandığımız, tek satırda veya ayrı tanımlanan Animation özellikleri beş tanedir. Birincisi animation-name; hangi et işareti keyframes senaryosunun kullanılacağını belirtir, örneğin slideInFromLeft.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2055.66,
+   "bit": 2067.06,
+   "konusmaci": "Ayşe",
+   "metin": "İkincisi animation-duration; animasyonun ne kadar süreceğini belirtir, örneğin sıfır nokta sekiz saniye. Üçüncüsü animation-timing-function; hız eğrisini belirler, örneğin ease-out.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2067.06,
+   "bit": 2082.05,
+   "konusmaci": "Can",
+   "metin": "Dördüncüsü animation-iteration-count; animasyonun kaç kez tekrarlanacağını sayı ile veya sonsuz döngü için infinite anahtar kelimesiyle belirtir. Ayrıca animasyonun yönünü ayarlamak için animation-direction gibi özellikler de eklenebilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2082.05,
+   "bit": 2104.1,
+   "konusmaci": "Ayşe",
+   "metin": "Beşinci ve çok kritik özelliğimiz ise animation-fill-mode! Tanım olarak animation-fill-mode, animasyonun bitiminde veya başlamadan önce öğenin hangi stil durumunda kalacağını belirleyen özelliktir. Örneğin forwards değerini verdiğimizde animasyon bittiği anda öğe başlangıçtaki görünmez haline geri dönmez, animasyonun bittiği son karede sabit kalır!",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2104.1,
+   "bit": 2122.37,
+   "konusmaci": "Can",
+   "metin": "Tüm bu beş özelliği tek satırda animation iki nokta üst üste slideInFromLeft boşluk sıfır nokta sekiz saniye boşluk ease-out boşluk bir boşluk forwards şeklinde de yazabiliyoruz. Peki animasyon yaparken tarayıcıyı yormamak ve yüksek performans almak için hangi özelliklere dikkat etmeliyiz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2122.37,
+   "bit": 2143.66,
+   "konusmaci": "Ayşe",
+   "metin": "Önce çok yaygın bir yanlış algıyı düzeltelim: Basamaklı Stil Sayfaları animasyonları fazladan komut dosyaları yani JavaScript veya ağır Grafik Değişim Biçimi medyaları gerektirmez; her şey Hiper Metin İşaretleme Dili ve Basamaklı Stil Sayfaları ile yapıldığı için sayfaları yavaşlatmaz, aksine sayfaya yük getirmeden dinamik içerik sunar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2143.66,
+   "bit": 2165.83,
+   "konusmaci": "Can",
+   "metin": "Ama yine de doğru özellikleri seçmek şart. Animasyon yaparken kaçınılması ve tercih edilmesi gereken Basamaklı Stil Sayfaları özellikleri iki gruba ayrılır. Birinci grup kaçınılması gerekenler: width, height, margin, left ve top özellikleri! Çünkü bunlar tarayıcının sayfa düzenini yani layout'u yeniden hesaplamasına neden olur ve performansı düşürür.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2165.83,
+   "bit": 2191.91,
+   "konusmaci": "Ayşe",
+   "metin": "İkinci grup ise öncelik verilmesi gerekenler: transform ve opacity özellikleri! Bu iki özellik tarayıcı tarafından çok daha verimli işlenir ve takılmayan akıcı animasyonlar sağlar. Tanım olarak transform; öğeleri döndürme yani rotate, ölçekleme yani scale, eğme veya kaydırma yani translateX ve translateY işlemlerine tabi tutarak yüksek performanslı görsel efektler oluşturan Basamaklı Stil Sayfaları özelliğidir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2191.91,
+   "bit": 2225.35,
+   "konusmaci": "Can",
+   "metin": "Burada iki boyutlu dönüştürme kavramını da açalım: X ve Y eksenli iki boyutlu bir uzayda Hiper Metin İşaretleme Dili elementlerinin yerini değiştirmek, döndürmek, ölçeklendirmek ve çarpıtmak için kullanılan genel yapıya iki boyutlu Transform denir. İçindeki fonksiyonların her birinin özel bir görevi vardır: translate öğenin yerini değiştirip kaydırır; örneğin bir ürün kartının üzerine fareyle gelindiğinde transform iki nokta üst üste translateY eksi on piksel ve box-shadow kullanarak kartın hafifçe yukarı kalkmasını sağlarız.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2225.35,
+   "bit": 2256.97,
+   "konusmaci": "Ayşe",
+   "metin": "Rotate fonksiyonu bir nesneyi saat yönünde veya saat yönünün tersine döndürmek için kullanılır. Scale, scaleX ve scaleY nesneyi büyütüp küçülterek ölçeklendirir; dikkat edelim grow diye bir dönüştürme yöntemi yoktur, büyütme işi scale ile yapılır! Skew, skewX ve skewY ise bir nesnenin X ve Y eksenindeki eğimini artırıp azaltmak yani çarpıtmak için kullanılır; ayrıca tüm bunları birleştiren matrix yöntemi ve üç boyutlu dönüştürmelerde derinlik algısı veren perspective dönüştürme özelliği de vardır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2256.97,
+   "bit": 2270.64,
+   "konusmaci": "Can",
+   "metin": "Son olarak Transition ve Animation karşılaştırma ölçütleri üç tanedir: Birinci ölçüt Başlangıç; Transition kullanıcının hover veya click gibi etkileşimiyle başlar, Animation ise sayfa yüklenince otomatik başlayabilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2270.64,
+   "bit": 2292.12,
+   "konusmaci": "Ayşe",
+   "metin": "İkinci ölçüt Hareket Türü; Transition sadece başlangıç ve bitiş arasında geçiş yapar, Animation ise birden fazla aşama tanımlayabilir. Üçüncü ölçüt Tekrarlama; Transition tekrar etmez, Animation ise infinite ile sınırsız tekrar edebilir. Şimdi tüm bu öğrendiklerimizi genel uygulamamız olan kişisel portfolyo kartlarında bir araya getirelim!",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2292.12,
+   "bit": 2302.5,
+   "konusmaci": "Can",
+   "metin": "Kişisel portfolyo sayfası uygulamamızda şimdiye kadar konuştuğumuz tüm teknikler aynı sahnede buluşuyor Ayşe. Önce sayfanın üst kısmındaki header bölümünü kuruyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2302.5,
+   "bit": 2332.65,
+   "konusmaci": "Ayşe",
+   "metin": "Header kısmında başlığı sola, navigasyon menüsünü sağa yaslamak ve dikeyde ortalamak için Flexbox kullanıyoruz: display iki nokta üst üste flex, justify-content iki nokta üst üste space-between ve align-items iki nokta üst üste center. Menünün içindeki linklerin arasına gap iki nokta üst üste yirmi piksel koyup, fareyle üzerine gelindiğinde renginin sıfır nokta üç saniyede yumuşakça sarıya dönmesi için transition iki nokta üst üste color sıfır nokta üç saniye ease ekliyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2332.65,
+   "bit": 2353.66,
+   "konusmaci": "Can",
+   "metin": "Alt kısımdaki proje kartlarının yerleşiminde ise iki boyutlu kontrol için Basamaklı Stil Sayfaları Grid sistemine geçiyoruz! Ana kapsayıcıya display iki nokta üst üste grid, grid-template-columns iki nokta üst üste repeat üç virgül bir fr ve gap iki nokta üst üste yirmi piksel vererek üç eşit sütunlu bir kart galerisi oluşturuyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2353.66,
+   "bit": 2370.15,
+   "konusmaci": "Ayşe",
+   "metin": "Her bir kartın üzerine fareyle gelindiğinde hafifçe büyümesi için kartlara transition iki nokta üst üste transform sıfır nokta beş saniye ease tanımlıyoruz ve hover durumunda transform iki nokta üst üste scale bir nokta sıfır beş ile kartı yüzde beş büyütüyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2370.15,
+   "bit": 2392.37,
+   "konusmaci": "Can",
+   "metin": "Kartların içindeki Daha Fazla butonlarına ise sayfa açılır açılmaz dikkat çeksin diye et işareti keyframes ile pulse yani kalp atışı animasyonu yazıyoruz! Yüzde sıfırda scale bir, yüzde ellide scale bir nokta bir, yüzde yüzde tekrar scale bir oluyor ve butona animation iki nokta üst üste pulse iki saniye infinite vererek sonsuz döngüde çalıştırıyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2392.37,
+   "bit": 2412.0,
+   "konusmaci": "Ayşe",
+   "metin": "En sonda da et işareti media max-width iki nokta üst üste yedi yüz altmış sekiz piksel ile responsive dokunuşu yapıyoruz: Ekran yedi yüz altmış sekiz pikselin altına indiğinde Grid sütunlarını bir fr ile tek sütuna düşürüyoruz, Flexbox menümüzü de flex-direction iki nokta üst üste column ile alt alta diziyoruz!",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2412.0,
+   "bit": 2422.32,
+   "konusmaci": "Can",
+   "metin": "Baştan sona modern bir web sayfası ortaya çıktı. O zaman bilgilerimiz tazeyken hemen birbirimize hızlı sorular sorup bilginin en kritik noktalarını pekiştirelim mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2422.32,
+   "bit": 2431.52,
+   "konusmaci": "Ayşe",
+   "metin": "Harika fikir Can, ilk soru benden sana: Flexbox hangi düzenler için en uygundur ve öğeleri birden çok satıra yaymak için hangi özellik kullanılır?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2431.52,
+   "bit": 2459.39,
+   "konusmaci": "Can",
+   "metin": "Flexbox öğeleri tek bir eksen boyunca hizaladığı için tek boyutlu düzenler için en uygundur. Öğeler tek satıra sığmadığında birden çok satıra yaymak için ise flex-wrap özelliği kullanılır; hatta flex-direction ile flex-wrap'i tek seferde tanımlamak için de flex-flow kullanılır. Peki Ayşe, Flexbox'ta Hiper Metin İşaretleme Dili koduna dokunmadan öğelerin görsel sırasını değiştirmek için hangi özellik kullanılır ve varsayılan değeri kaçtır?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2459.39,
+   "bit": 2479.82,
+   "konusmaci": "Ayşe",
+   "metin": "Esnek kapsayıcı içindeki öğelerin kaçıncı sırada görünmesi gerektiğini belirleyen özellik order özelliğidir ve varsayılan değeri sıfırdır; küçükten büyüğe doğru sıralama yapar. Sıra bende: Basamaklı Stil Sayfaları Grid sisteminde sütunları tanımlamak için hangi özellik kullanılır ve repeat üç virgül bir fr ne anlama gelir?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2479.82,
+   "bit": 2502.76,
+   "konusmaci": "Can",
+   "metin": "Grid sisteminde sütunların sayısını ve genişliğini tanımlamak için grid-template-columns kullanılır. Karşısına repeat üç virgül bir fr yazdığımızda, esnek kesir birimi olan fr'yi kullanarak her biri eşit genişlikte üç sütun oluşturur. Peki bir öğeyi iki sütun boyunca genişletmek için doğru yazım nedir ve sadece sütunlar arasındaki boşluğu hangi özellik belirtir?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2502.76,
+   "bit": 2527.35,
+   "konusmaci": "Ayşe",
+   "metin": "Öğeyi iki sütun boyunca genişletmek için span anahtar kelimesiyle grid-column iki nokta üst üste span iki yazılır. Çok sütunlu bir düzende veya Grid'de sadece sütunlar arasındaki boşluğu ise column-gap özelliği belirtir. Şimdi bana şunu söyle: Mobil öncelikli tasarım yani Mobile-First hangi yaklaşımı ifade eder ve tarayıcıya ekranı hangi genişlikte görüntüleyeceğini bildiren ifade nedir?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2527.35,
+   "bit": 2556.35,
+   "konusmaci": "Can",
+   "metin": "Mobile-First, önce en küçük ekranlı mobil cihazlar için Basamaklı Stil Sayfaları yazıp ekran büyüdükçe min-width medya sorgularıyla tasarımı genişletmeyi ifade eder. Kullanıcının tarayıcısında web sayfasının kapladığı alana viewport denir ve tarayıcıya ekranı hangi genişlikte görüntüleyeceğini bildiren ifade meta viewport etiketidir. Peki küçük etkileşimlerde kullanılan geçiş efektleri hangi özellikle yapılır ve geçişin hız eğrisini hangi özellik belirler?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2556.35,
+   "bit": 2577.22,
+   "konusmaci": "Ayşe",
+   "metin": "Küçük etkileşimlerdeki yumuşak geçiş efektleri transition özelliği ile yapılır, hız eğrisini ise transition-timing-function belirler. Son sorum Can: Animasyon sırasında çeşitli noktalarda özellik değerlerini hangi kural belirtir ve X ile Y ekseninde yer değiştirme, döndürme, ölçeklendirme ve çarpıtma işlemlerinin genel adı nedir?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2577.22,
+   "bit": 2595.06,
+   "konusmaci": "Can",
+   "metin": "Animasyonun yüzdelik ara adımlarındaki değerleri et işareti keyframes kuralı belirtir. X ve Y eksenli uzayda öğeleri kaydırma yani translate, döndürme yani rotate, ölçeklendirme yani scale ve eğimini değiştirip çarpıtma yani skew işlemlerinin genel adı ise iki boyutlu Transform'dur!",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2595.06,
+   "bit": 2615.74,
+   "konusmaci": "Ayşe",
+   "metin": "Gerçekten çok keyifli ve dopdolu bir süreç oldu Can. Flexbox'tan Basamaklı Stil Sayfaları Grid sistemine, Responsive tasarımdan Transition ve Keyframe animasyonlarına kadar modern web tasarımının tüm ileri tekniklerini de tamamlayarak konularımızın sonuna geldik. Dinleyen tüm arkadaşlarımıza çalışmalarında başarılar diliyorum.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 2615.74,
+   "bit": 2629.92,
+   "konusmaci": "Can",
+   "metin": "Aynen öyle Ayşe. Kendi tasarımlarınızda tüm bu esnek düzenleri ve hareketli efektleri keyifle kullanmanız dileğiyle ben de hepinize başarılar diliyorum. Bir sonraki podcast yayınımızda görüşmek üzere, kendinize çok iyi bakın.",
+   "konu": null,
+   "guven": 0
+  }
+ ]
+}

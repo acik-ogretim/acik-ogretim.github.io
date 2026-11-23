@@ -1,0 +1,750 @@
+{
+ "v": 1,
+ "medya": "uzun-unite-05",
+ "satirlar": [
+  {
+   "bas": 0.0,
+   "bit": 19.92,
+   "konusmaci": "Can",
+   "metin": "Temel etiketleri ve medya kullanımını öğrendikten sonra şimdi bir web sitesine girdiğimizde gördüğümüz renklerin ve resimlerin arkasındaki sayfa içi yapılandırma iskeletini derinleştirelim Ayşe. Çünkü bir sitenin yalnızca görsel açıdan değil, yapısal olarak da doğru tasarlanması kullanıcı deneyimini doğrudan etkiliyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 19.92,
+   "bit": 37.59,
+   "konusmaci": "Ayşe",
+   "metin": "Çok haklısın Can. Tıpkı bir binanın dış cephesi kadar kolonlarının ve oda planının sağlam olması gerektiği gibi. Web sayfalarının düzenli, erişilebilir ve anlamlı bir yapıda oluşturulması da HyperText Markup Language, yani zengin metin işaretleme dili kullanılarak gerçekleştiriliyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 37.59,
+   "bit": 52.03,
+   "konusmaci": "Can",
+   "metin": "Evet, kısaca H T M L dediğimiz bu işaretleme dili web tarayıcıları tarafından yorumlanabiliyor ve sayfanın içeriğinin tanımlandığı, yapılandırıldığı temel aracımız oluyor. Bu yapılandırmayı yaparken üç ana ayak kullanıyoruz aslında.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 52.03,
+   "bit": 71.27,
+   "konusmaci": "Ayşe",
+   "metin": "Tam olarak öyle. Kullanıcıdan bilgi almak için formlar, verileri düzenli sunmak için tablolar ve sayfayı mantıksal bölümlere ayırmak için semantik etiketler kullanıyoruz. Üstelik tüm bunları yaparken erişilebilirlik ilkelerini de işin içine katıyoruz ki web sayfamız herkes tarafından rahatça kullanılabilsin.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 71.27,
+   "bit": 86.95,
+   "konusmaci": "Can",
+   "metin": "Harika bir çerçeve oldu. Web sayfaları sadece durup baktığımız durağan vitrinler değil, kullanıcılarla karşılıklı etkileşim kurulan dinamik içerik alanları da barındırıyor. İşte bu etkileşimi sağlayan ilk büyük yapı taşı olan formlarla devam edelim mi?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 86.95,
+   "bit": 106.99,
+   "konusmaci": "Ayşe",
+   "metin": "Başlayalım tabii. Form dediğimiz yapı, kullanıcıdan veri toplanmasını sağlayan, iletişim, kayıt, giriş ekranları, anketler ve başvuru gibi etkileşimli alanların oluşturulduğu H T M L yapılarıdır. Bir web sitesinde ziyaretçiden bilgi alıp sunucuya göndermek istiyorsak bu işlemi mutlaka form etiketini kullanarak yapıyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 106.99,
+   "bit": 124.42,
+   "konusmaci": "Can",
+   "metin": "Kesinlikle, form elemanını tanımlamak için açılış ve kapanış form etiketlerini kullanıyoruz; yani span, div, table ya da progress gibi etiketler sunucuya veri gönderme işi yapmıyor. Peki kullanıcı formu doldurdu ve gönderdi, bu verilerin nereye ve nasıl gideceğini kim denetliyor?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 124.42,
+   "bit": 141.66,
+   "konusmaci": "Ayşe",
+   "metin": "İşte orada form etiketinin iki kritik özniteliği devreye giriyor: action ve method. Action özniteliği, kullanıcıdan alınan form verilerinin gönderileceği hedef sunucu adresini belirtiyor; mesela verileri kayit nokta p h p ya da islem nokta p h p gibi bir dosyaya yönlendiriyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 141.66,
+   "bit": 156.16,
+   "konusmaci": "Can",
+   "metin": "Bunu bir mektubun üzerindeki varış adresi gibi düşünebiliriz; hedef adres action ile belirleniyor. Method özniteliği ise bu verilerin sunucuya hangi yöntemle gönderileceğini belirtiyor ve alabileceği iki temel değer var: get ve post.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 156.16,
+   "bit": 172.35,
+   "konusmaci": "Ayşe",
+   "metin": "Çok güzel bir benzetme! Get ve post yöntemlerini ayırmak da çok kolay. Get yöntemi verileri doğrudan adres çubuğu, yani tekdüzen kaynak bulucu üzerinden gönderiyor; bu yüzden güvenli olmayan ama hızlı bir yöntem ve genellikle arama formlarında tercih ediliyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 172.35,
+   "bit": 189.71,
+   "konusmaci": "Can",
+   "metin": "Kartpostal göndermek gibi, üstünde yazanı herkes görür! Post yöntemi ise verileri hiper metin transfer protokolü isteğinin gövdesinde gizleyerek gönderiyor. Kapalı zarf gibi daha güvenli olduğu için kullanıcı girişlerinde ve şifre gönderimlerinde yaygın olarak post kullanılıyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 189.71,
+   "bit": 206.08,
+   "konusmaci": "Ayşe",
+   "metin": "Burada küçük bir tuzağa dikkat çekelim; bazen method parametresinin alabileceği değerler sorulduğunda araya action, call, islem nokta p h p ya da session, global, raw, json gibi kavramlar karıştırılır. Oysa method özniteliği yalnızca get ve post değerlerini alır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 206.08,
+   "bit": 220.58,
+   "konusmaci": "Can",
+   "metin": "Çok kritik bir nokta. Bir de bu form yapısının içerisine farklı veri türlerine uygun olarak yerleştirilebilen beş temel öğemiz var. Bunlardan biri, tek satırlık metin, şifre, tarih ve sayı gibi girişler için kullanılan input etiketi.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 220.58,
+   "bit": 233.59,
+   "konusmaci": "Ayşe",
+   "metin": "Diğeri, çok satırlı metin girişi için kullanılan textarea etiketi. Ayrıca açılır liste oluşturan select ve option etiketleri ile buton tanımlamak için kullanılan button etiketi de bu yapının içinde yer alıyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 233.59,
+   "bit": 246.04,
+   "konusmaci": "Can",
+   "metin": "Ve son olarak beşinci öğemiz de form elemanlarına açıklama ekleyerek erişilebilirlik sağlayan label etiketi. Şimdi bu beş temel öğeyi, yani giriş alanlarını ve düğmeleri biraz daha yakından tanıyalım.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 246.04,
+   "bit": 263.74,
+   "konusmaci": "Ayşe",
+   "metin": "Bir formun temel amacı kullanıcıdan veri almak olduğu için, kullandığımız yapı taşlarını giriş alanları ve düğmeler olarak iki grupta topluyoruz. Giriş alanlarında en sık kullandığımız öğe input etiketi ve bu etiket, sahip olduğu type niteliğine göre bambaşka işlevlere bürünüyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 263.74,
+   "bit": 277.84,
+   "konusmaci": "Can",
+   "metin": "Evet, sık kullanılan tam dokuz tane input türümüz var. İlki text; tek satırlık metin girişi sağlıyor, örneğin kullanıcıdan adını alırken kullanıyoruz. Diğeri password; şifre girişi sağlıyor ve yazılan karakterleri gizliyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 277.84,
+   "bit": 292.32,
+   "konusmaci": "Ayşe",
+   "metin": "Bunun yanında elektronik posta doğrulaması olan bir giriş alanı sunan email ve kullanıcının yalnızca sayı girmesini sağlayıp harf yazılmasına izin vermeyen number türü var. Takvim üzerinden tarih seçimi yaptıran türümüz ise date.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 292.32,
+   "bit": 312.61,
+   "konusmaci": "Can",
+   "metin": "Çoklu ve tekli seçim yaptıran checkbox ile radio türleri de birbirleriyle çok sık karıştırılır, bunları netleştirelim. Checkbox, yani çoklu seçenek ya da onay kutusu; kare şeklinde görüntülenir ve ziyaretçinin birbiriyle alakalı bir grup öğe arasından en az bir ya da birden fazla seçeneği aynı anda seçebilmesini sağlar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 312.61,
+   "bit": 335.06,
+   "konusmaci": "Ayşe",
+   "metin": "Hobilerinizi seçin dediğimizde hem yüzmeyi hem kitap okumayı işaretleyebilmemiz gibi! Radio ise gruplar için tekli seçenek düğmesidir; daire şeklinde görüntülenir ve aynı gruptaki seçeneklerden yalnızca tek birinin seçilmesine izin verir. Eğer bir yerde radio kare, checkbox daire şeklinde görüntülenir denirse bu açıklama tam tersi olduğu için yanlıştır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 335.06,
+   "bit": 350.48,
+   "konusmaci": "Can",
+   "metin": "Çok net bir ayrım oldu. Geriye kalan iki input türümüzden file, bilgisayardan dosya seçtirmek için kullanılan dosya yükleme seçicisidir. Dokuzuncu ve son türümüz olan hidden ise kullanıcıya görünmeyen ama arka planda veri taşıyan gizli alandır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 350.48,
+   "bit": 373.24,
+   "konusmaci": "Ayşe",
+   "metin": "Input dışındaki diğer giriş alanlarını da unutmayalım. Tek satır yerine iletişim formlarında, şikayet bölümlerinde veya kullanıcı yorumlarında uzun metin girişi gerektiğinde textarea etiketini kullanıyoruz. Kullanıcıya önceden tanımlanmış sınırlı seçenekler sunup hatasız tercih almak istediğimizde ise select ve option etiketleriyle açılır listeler kuruyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 373.24,
+   "bit": 394.29,
+   "konusmaci": "Can",
+   "metin": "Ayrıca her giriş alanını bir label etiketiyle açıklayıp label etiketinin for niteliği ile giriş alanına bağlamak hem kullanıcı deneyimi hem de ekran okuyucular için çok önemli. Peki bir form elementini kullanıcı etkileşimine tamamen kapatmak ve sunucuya hiçbir şekilde veri göndermemesini sağlamak istersek hangi özelliği kullanırız?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 394.29,
+   "bit": 415.54,
+   "konusmaci": "Ayşe",
+   "metin": "İşte orada disabled özelliğini kullanıyoruz! Disabled, bir giriş alanını veya düğmeyi tamamen devre dışı bırakır, odaklanmayı engeller ve form gönderildiğinde o elemanın verisini sunucuya hiç iletmez. Bunu readonly ile karıştırmamak lazım; readonly sadece metni değiştirmeyi engeller ama etkileşimi kapatmaz ve veriyi sunucuya gönderir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 415.54,
+   "bit": 428.24,
+   "konusmaci": "Can",
+   "metin": "Harika bir detay. Gelelim diğer grubumuz olan düğmelere, yani butonlara. Formlarda işlem başlatmak için sık kullanılan üç buton türümüz var ve bunların mutlaka form etiketi içinde yer alması gerekiyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 428.24,
+   "bit": 446.64,
+   "konusmaci": "Ayşe",
+   "metin": "Bunlardan input type eşittir submit, formu sunucuya gönderir. Input type eşittir reset ise formdaki tüm alanları temizleyip varsayılan haline döndürür. Üçüncü buton türümüz olan button etiketine de JavaScript gibi teknolojilerle birleştirilerek etkileşimli veya özel işlevler tanımlanabilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 446.64,
+   "bit": 467.67,
+   "konusmaci": "Can",
+   "metin": "Giriş alanlarını ve butonları yerleştirdik ama kullanıcının elektronik posta alanına normal bir kelime yazmasını ya da sayı alanına harf girmesini nasıl önleyeceğiz? Bir formun doğru çalışabilmesi için kullanıcıdan alınan verilerin belirli kurallara uygunluğunu sağlamak amacıyla yapılan kontrol işlemine form doğrulama, yani form validation diyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 467.67,
+   "bit": 481.55,
+   "konusmaci": "Ayşe",
+   "metin": "Evet, üstelik H T M L beş ile birlikte ek bir yazılıma gerek kalmadan tarayıcı bu kontrolleri doğrudan yapabiliyor. Form doğrulama işlemi iki farklı düzeyde gerçekleştiriliyor: istemci taraflı doğrulama ve sunucu taraflı doğrulama.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 481.55,
+   "bit": 495.37,
+   "konusmaci": "Can",
+   "metin": "İstemci taraflı doğrulama, yani client side validation, doğrudan kullanıcının tarayıcısı tarafından yapılıyor. Kullanıcı formu gönder tuşuna bastığında eksik veya hatalı alanlar anında tarayıcı tarafından kullanıcıya bildiriliyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 495.37,
+   "bit": 513.39,
+   "konusmaci": "Ayşe",
+   "metin": "Sunucu taraflı doğrulama, yani server side validation ise form verileri sunucuya gönderildikten sonra kontrol edilen düzeydir. İstemci tarafı kullanıcı deneyimini kolaylaştırsa da kötü niyetli veri girişlerini engellemek ve güvenlik sağlamak açısından sunucu taraflı doğrulama mutlaka uygulanmalıdır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 513.39,
+   "bit": 528.77,
+   "konusmaci": "Can",
+   "metin": "Peki istemci tarafında doğrudan form elemanlarına eklediğimiz H T M L doğrulama özellikleri neler? Burada tam altı tane doğrulama özelliğimiz var. En çok karşımıza çıkanı required; bir form alanının boş bırakılmasını engeller, doldurulmasını zorunlu kılar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 528.77,
+   "bit": 542.77,
+   "konusmaci": "Ayşe",
+   "metin": "Diğer bir özelliğimiz pattern; düzenli ifadeler, yani regular expressions kullanarak özel bir giriş formatı belirler. Sayısal girişlerde girilebilecek minimum ve maksimum değerleri tanımlamak için de min ve max özelliğini kullanırız.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 542.77,
+   "bit": 558.69,
+   "konusmaci": "Can",
+   "metin": "Karakter sınırları için de iki özelliğimiz bulunuyor: maxlength alana girilebilecek en fazla karakter sayısını belirlerken, minlength girilebilecek en az karakter sayısını belirler. Örneğin şifre en az altı karakter olsun dediğimizde minlength eşittir altı yazarız.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 558.69,
+   "bit": 581.34,
+   "konusmaci": "Ayşe",
+   "metin": "Altıncı doğrulama özelliğimiz ise placeholder; kutunun içinde silik şekilde duran ve kullanıcıya örnek girdi formatını gösteren yardımcı bir ipucu metni ekler. Bir de tersinden düşünelim Can; eğer geliştirici olarak tarayıcının varsayılan doğrulama davranışını devre dışı bırakmak ve kendi özel doğrulama sürecimizi yönetmek istersek form elementine hangi özelliği eklemeliyiz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 581.34,
+   "bit": 595.52,
+   "konusmaci": "Can",
+   "metin": "Çok güzel bir nokta! Form doğrulama işlemini yönetmek ve tarayıcı doğrulamasını kapatmak için doğrudan form etiketine novalidate özniteliğini ekliyoruz. Şimdi bu öğrendiğimiz elemanların gerçek hayatta nasıl bir araya geldiğine bakalım.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 595.52,
+   "bit": 615.11,
+   "konusmaci": "Ayşe",
+   "metin": "Farklı kullanım senaryolarına göre üç temel form örneğimiz var: iletişim formu, üyelik formu ve dosya yükleme formu. En yaygın olanı iletişim formlarıdır; burada kullanıcıdan ad için text, elektronik posta için email ve mesaj için çok satırlı textarea alanlarıyla üç temel bilgi alınır ve gönder düğmesiyle sunucuya aktarılır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 615.11,
+   "bit": 634.57,
+   "konusmaci": "Can",
+   "metin": "Üyelik formları ise siteye yeni kullanıcı eklemek için kullanılır ve farklı giriş türlerini bir arada barındırır. Ad ve kullanıcı adı için metin kutusu, şifre için parola alanı, cinsiyet seçimi gibi tekli tercihler için radyo butonu ve sözleşme onayı ya da ilgi alanları için onay kutusu, yani checkbox bir arada kullanılır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 634.57,
+   "bit": 654.64,
+   "konusmaci": "Ayşe",
+   "metin": "Dosya yükleme formlarında ise çok özel bir kural var. Kullanıcının bilgisayarından bir özgeçmiş veya fotoğraf seçebilmesi için input type eşittir file kullanıyoruz ama o dosya verisinin sunucuya gerçekten aktarılabilmesi için form etiketine mutlaka enctype eşittir multipart eğik çizgi form tire data özniteliğini eklememiz gerekiyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 654.64,
+   "bit": 670.08,
+   "konusmaci": "Can",
+   "metin": "Kesinlikle, enctype özniteliği olmadan dosya sunucuya paketlenip gidemiyor. Böylece kullanıcıdan verileri topladık; peki elimizdeki mevcut verileri kullanıcıya düzenli, karşılaştırılabilir bir biçimde nasıl sunacağız? İşte orada da tablolar sahneye çıkıyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 670.08,
+   "bit": 691.59,
+   "konusmaci": "Ayşe",
+   "metin": "Tablo; satır ve sütunlardan oluşan, içeriklerin düzenli ve karşılaştırılabilir bir biçimde sunulmasını sağlayan H T M L yapısıdır. Fiyat listeleri, ders programları, zaman çizelgeleri ve istatistiksel veriler için harikadır ama tabloları sadece sayfa tasarımı veya görsellik için değil, gerçekten anlamlı veri sunumu için kullanmalıyız.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 691.59,
+   "bit": 706.37,
+   "konusmaci": "Can",
+   "metin": "Çok doğru. Bir tabloyu oluşturan dört temel etiketimiz var. Ana kapsayıcımız olan table etiketi tablonun başlangıcını ve sonunu belirtir. Onun içindeki t r, yani table row etiketi ise tabloya yeni bir satır eklemek için kullanılır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 706.37,
+   "bit": 722.82,
+   "konusmaci": "Ayşe",
+   "metin": "Bazen tabloya yeni satır eklemek için n l ya da row gibi uydurma etiketler söylenir ama doğrusu her zaman t r etiketidir. Diğer temel etiketimiz t h, yani table header; tablo başlık hücresini tanımlar ve içindeki metin genellikle kalın yazılır ve ortalanır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 722.82,
+   "bit": 741.32,
+   "konusmaci": "Can",
+   "metin": "Dördüncü temel etiketimiz ise t d, yani table data; satırların içindeki veri hücrelerini, yani aslında tablodaki sütunları oluşturmak için kullanılır. Dolayısıyla en basit hâliyle bir tablo hangi elementlerden meydana gelir diye düşündüğümüzde cevabımız üçlü bir settir: table, t r ve t d.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 741.32,
+   "bit": 758.54,
+   "konusmaci": "Ayşe",
+   "metin": "Peki tabloyu daha düzenli, erişilebilir ve arama motorları için anlamlı kılmak istersek? O zaman tabloyu üç mantıksal bölüme ayıran etiketleri kullanıyoruz. Bunlardan thead tablo başlıklarını kapsarken, tbody tablo gövdesini, yani asıl verilerin bulunduğu kısmı kapsar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 758.54,
+   "bit": 771.27,
+   "konusmaci": "Can",
+   "metin": "Diğer bölüm etiketi olan tfoot ise tablo alt bilgisini, genellikle toplam veya özet bilgileri kapsar. Yani tabloları başlık ve gövde bölümlerine ayırmak için thead ve tbody etiketlerini kullanıyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 771.27,
+   "bit": 789.07,
+   "konusmaci": "Ayşe",
+   "metin": "Bir de klasik tablo biçimlendirmede çok sık sorulan tablo ve hücre parametrelerimiz var, onları da hiç atlamadan netleştirelim. Örneğin tablonun dış çerçeve kalınlığı table etiketine eklenen border parametresiyle belirlenir; line, format veya kalınlık diye bir parametre yoktur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 789.07,
+   "bit": 809.74,
+   "konusmaci": "Can",
+   "metin": "Hücre boşluklarında ise iki kardeş parametre var: cellpadding hücre içi marj değerini, yani hücre kenarıyla içindeki yazı arasındaki boşluğu belirlerken; cellspacing hücreler arası marj değerini belirler. Tablonun veya t d veri hücresinin genişliğini ayarlamak için width, yüksekliği için ise height parametresi kullanılır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 809.74,
+   "bit": 831.44,
+   "konusmaci": "Ayşe",
+   "metin": "Burada align parametresine çok dikkat edelim! Align tablonun piksel cinsinden genişliğini değil, yatay hizalamasını belirler. Hücre içinde düşey, yani dikey hizalama yapan parametre ise valign parametresidir ve alabileceği üç geçerli değer vardır: üst için top, orta için middle ve alt için bottom. ColTop diye bir değer kesinlikle yoktur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 831.44,
+   "bit": 852.94,
+   "konusmaci": "Can",
+   "metin": "Renk ve çizgi parametrelerini de tamamlayalım. Tablonun veya hücrenin arka plan rengini değiştirmek için bgcolor, arka planına resim yerleştirmek için ise background parametresi kullanılır. Tablodaki dış kenarlıkların hangi kenarlarda görüneceğini veya bazı dış kenarlıkların istenmediği durumları frame bağımsız değişkeni kontrol eder.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 852.94,
+   "bit": 871.44,
+   "konusmaci": "Ayşe",
+   "metin": "İç çizgileri ise rules bağımsız değişkeni yönetir! Rules değişkeninde yalnızca sütunlar arasındaki dikey çizgiler çizilmek istendiğinde cols değeri tercih edilir; yatay çizgiler için rows, tüm iç çizgiler için all, tablonun iç çizgilerini tamamen kaldırmak için ise none değeri kullanılır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 871.44,
+   "bit": 890.82,
+   "konusmaci": "Can",
+   "metin": "Tablonun satır ve sütunlarını kurduk ama bazen tek bir başlığın alttaki iki sütunu birden kapsamasını ya da bir ders adının alt alta iki satır boyunca uzamasını isteriz. İşte bir hücrenin birden fazla sütun veya satırı kaplaması gerektiğinde hücre birleştirme öznitelikleri olan colspan ve rowspan devreye giriyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 890.82,
+   "bit": 904.4,
+   "konusmaci": "Ayşe",
+   "metin": "Öğrenciler bazen bu ikisini karıştırabiliyor ama ayırmanın çok pratik bir yolu var. Colspan, İngilizce sütun anlamına gelen column kelimesinden gelir; bir hücrenin yatayda yan yana birden fazla sütunu kaplamasını sağlar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 904.4,
+   "bit": 922.49,
+   "konusmaci": "Can",
+   "metin": "Rowspan ise satır anlamına gelen row kelimesinden gelir; bir hücrenin dikeyde, yani aynı sütun içindeki alt alta birden fazla satırı kaplamasını ve birleştirmesini sağlar. Yani yan yana hücreleri birleştirmek için colspan, aynı sütundaki dikey hücreleri birleştirmek için rowspan kullanıyoruz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 922.49,
+   "bit": 943.54,
+   "konusmaci": "Ayşe",
+   "metin": "Bu noktada t d elementinin yeni sürümdeki desteğinden de bahsedelim. Hücre birleştirme için kullandığımız colspan ve rowspan ile erişilebilirlik için kullanılan headers parametresi H T M L beş tarafından desteklenmeye devam ediyor; ancak eski karakter hizalama kaydırması parametresi olan charoff artık H T M L beş tarafından desteklenmiyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 943.54,
+   "bit": 954.78,
+   "konusmaci": "Can",
+   "metin": "Çok önemli bir bilgi. Peki bu birleştirmeleri günlük bir tablo kullanım örneğinde nasıl görüyoruz? Örneğin dört sütunlu bir ders programı tablosu düşünelim: Ders, Sınıf, Gün ve Saat.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 954.78,
+   "bit": 975.03,
+   "konusmaci": "Ayşe",
+   "metin": "Başlık kısmında, yani thead içinde ilk satırda Ders ve Sınıf başlıklarına rowspan eşittir iki veririz ki dikeyde iki satır kaplasınlar. Yanlarındaki Haftalık Program başlığına ise colspan eşittir iki veririz, böylece hemen altındaki ikinci satırda yer alan Gün ve Saat sütunlarını yatayda tek bir çatı altında birleştirmiş olur.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 975.03,
+   "bit": 997.74,
+   "konusmaci": "Can",
+   "metin": "En alttaki tfoot bölümünde yer alan açıklama hücresine de colspan eşittir dört verdiğimizde, o tek hücre tablonun dört sütununu birden boydan boya kaplar. Yine de bir uyarı yapalım; hücre birleştirme karmaşık raporları düzenli gösterse de tabloyu aşırı karmaşıklaştırmak ekran okuyucular için erişilebilirlik sorunlarına yol açabilir, bu yüzden dikkatli kullanmalıyız.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 997.74,
+   "bit": 1020.77,
+   "konusmaci": "Ayşe",
+   "metin": "Tablolarda bile anlamlı yapıdan ve ekran okuyuculardan bahsettik. İşte bu mantık bizi doğrudan semantik H T M L beş etiketlerine götürüyor. Semantik H T M L etiketleri, web sayfasının bölümlerini yalnızca görsel değil mantıksal açıdan da düzenleyerek, içeriğin hem kullanıcılar hem de tarayıcılar tarafından anlamlı biçimde algılanmasını sağlayan H T M L beş etiketleridir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1020.77,
+   "bit": 1037.38,
+   "konusmaci": "Can",
+   "metin": "Eskiden her yeri anlamsız kutularla bölerken, şimdi her bölümün ne iş yaptığını adıyla söylüyoruz. Sayfa iskeleti oluşturmak için kullandığımız tam yedi tane temel semantik etiketimiz var. Bunlardan header etiketi, sayfanın veya bir bölümün üst başlık kısmını tanımlar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1037.38,
+   "bit": 1050.22,
+   "konusmaci": "Ayşe",
+   "metin": "Gezinme bağlantılarını içeren etiketimiz nav etiketidir; sayfa içindeki navigasyon menü bağlantılarını barındırır. Bir web sayfasının temel, benzersiz ana içeriğini belirtmek için ise main etiketi kullanılır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1050.22,
+   "bit": 1069.91,
+   "konusmaci": "Can",
+   "metin": "Sayfa içinde aynı konuyla ilgili içerikleri bir arada toplayıp mantıksal alt bölümler oluşturan etiketimiz section etiketidir. Bir de çok sık sorulan article etiketi var! Bir makale, blog yazısı veya haber gibi tek başına anlam bütünlüğüne sahip bağımsız bir içerik parçasını tanımlamak için article etiketi kullanılır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1069.91,
+   "bit": 1088.8,
+   "konusmaci": "Ayşe",
+   "metin": "Bir blog sitesi tasarladığımızı düşünelim; o sitedeki blog yazısı bölümü için en uygun etiket kesinlikle article etiketidir. Peki o blog sayfasında yazının sağ kısmına anahtar kelimeler, yazı kategorisi, yazar adı, reklamlar veya ek bağlantılar gibi yan içerikler eklemek istersek hangi etiketi kullanırız?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1088.8,
+   "bit": 1108.8,
+   "konusmaci": "Can",
+   "metin": "O zaman aside etiketini kullanırız! Aside, ana içerikle dolaylı ilişkili olan kenar çubuğu ve yan içerikleri tanımlar. Yedinci ve son semantik etiketimiz ise footer; bir sitede tüm sayfalarda ortak bulunan telif hakkı bilgisi, iletişim ve hızlı erişim linki gibi alanların yer aldığı sayfa veya bölüm alt bilgisini tanımlar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1108.8,
+   "bit": 1125.07,
+   "konusmaci": "Ayşe",
+   "metin": "Bu yedi semantik etiketi kullanarak sayfa iskeletini kurduğumuzda sadece kodun okunabilirliğini artırmıyoruz; aynı zamanda iki dev alanda büyük avantaj sağlıyoruz: arama motoru optimizasyonu, yani Search Engine Optimization, kısaca S E O ve erişilebilirlik.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1125.07,
+   "bit": 1142.6,
+   "konusmaci": "Can",
+   "metin": "S E O dediğimiz arama motoru optimizasyonu süreci, web sitelerinin arama motorları tarafından daha doğru analiz edilmesini ve arama sonuçlarında üst sıralarda yer almasını amaçlar. Arama motoru botları sayfayı tararken görsel tasarıma bakmaz, doğrudan H T M L yapısını inceler.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1142.6,
+   "bit": 1156.4,
+   "konusmaci": "Ayşe",
+   "metin": "Evet, biz header ile önemli başlıkları, nav ile sitenin navigasyon yapısını ve article ile bağımsız makaleleri işaretlediğimizde arama motoru hangi bölümün ne olduğunu şıp diye anlıyor ve sitemizi üst sıralara taşıyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1156.4,
+   "bit": 1176.79,
+   "konusmaci": "Can",
+   "metin": "Diğer boyut olan erişilebilirlikte ise görme veya farklı engelleri olan bireylerin kullandığı ekran okuyucu gibi yardımcı teknolojiler devreye giriyor. Örneğin ekran okuyucu kullanan bir birey, sayfadaki uzun menüleri her seferinde dinlemek yerine doğrudan main etiketiyle işaretlenmiş ana içeriğe tek tuşla atlayabiliyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1176.79,
+   "bit": 1192.8,
+   "konusmaci": "Ayşe",
+   "metin": "Ya da iletişim ve yasal açıklamalar için doğrudan footer alanına, menüler için nav alanına geçebiliyor; formlarda da label etiketi sayesinde hangi kutunun ne işe yaradığını duyabiliyor. Gel şimdi bu erişilebilirlik kavramını tüm boyutlarıyla ele alalım.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1192.8,
+   "bit": 1216.73,
+   "konusmaci": "Can",
+   "metin": "Erişilebilirlik, yani İngilizce adıyla accessibility; farklı engel durumlarına sahip bireyler dahil olmak üzere web sitelerinin herkes tarafından eşit fırsatlarla kullanılabilir olması anlamına geliyor. Üstelik bu sadece görme, işitme, bedensel veya bilişsel engelli bireyleri değil; yaşlıları, farklı cihaz kullananları ve düşük internet hızına sahip kullanıcıları da kapsıyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1216.73,
+   "bit": 1233.63,
+   "konusmaci": "Ayşe",
+   "metin": "Görme engelliler ekran okuyucularla, işitme engelliler altyazılarla, hareket kısıtlılığı olanlar ise alternatif giriş yöntemleriyle web sitelerinden faydalanıyor. Peki bir web sayfası erişilebilir olduğunda kullanıcılar neler yapabilir? Burada dört temel kazanım var.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1233.63,
+   "bit": 1253.26,
+   "konusmaci": "Can",
+   "metin": "Kullanıcılar içeriğe rahatlıkla ulaşabilir ve bunun yanında formları ve menüleri kolaylıkla kullanabilir. Ayrıca görsellerin ve multimedya öğelerinin açıklamalarını alabilir; ekran okuyucular, braille ekranlar ve sesli komut sistemleri gibi yardımcı teknolojiler aracılığıyla içerikten eksiksiz faydalanabilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1253.26,
+   "bit": 1271.17,
+   "konusmaci": "Ayşe",
+   "metin": "Bunun yanı sıra erişilebilirliğin neden önemli olduğunu da beş ana noktada topluyoruz. İlki Toplumsal Katılım ve Eşitlik; internet eğitimden sağlığa, alışverişten iletişime kadar vazgeçilmez olduğu için erişilebilir siteler kimsenin dışlanmamasını ve herkesin eşit katılımını sağlar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1271.17,
+   "bit": 1286.94,
+   "konusmaci": "Can",
+   "metin": "Diğeri Yasal ve Etik Bir Sorumluluk olması. Uluslararası düzeyde Dünya Çapında Ağ Konsorsiyumu, yani W üç C tarafından geliştirilen Web İçeriği Erişilebilirlik Yönergeleri, kısaca W C A G standartları doğrudan erişilebilirlik kavramıyla ilişkilidir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1286.94,
+   "bit": 1302.7,
+   "konusmaci": "Ayşe",
+   "metin": "Ayrıca Amerika Birleşik Devletleri'nde Americans with Disabilities Act, yani A D A yasası, Avrupa'da E N üç yüz bir beş yüz kırk dokuz standartları ve Türkiye'de kamu siteleri için önerilen erişilebilirlik yönergeleri bu yasal çerçeveyi oluşturuyor.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1302.7,
+   "bit": 1325.17,
+   "konusmaci": "Can",
+   "metin": "Aynı zamanda erişilebilirlik Kullanıcı Deneyimini İyileştirir; örneğin açık renk ve kontrast kullanımı yaşlıların okumasını kolaylaştırırken, basit menü yapıları mobil cihaz kullanıcılarına hız kazandırır. Bununla birlikte Arama Motoru Optimizasyonuna Katkı Sağlar; çünkü erişilebilir ve semantik yapılar arama motorları tarafından çok daha iyi anlaşılır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1325.17,
+   "bit": 1339.92,
+   "konusmaci": "Ayşe",
+   "metin": "Beşinci ve son olarak da Kapsayıcı ve Profesyonel İmaj Yaratır; erişilebilir bir site kullanıcıya değer verildiğini gösterir ve kurum ya da marka imajını güçlendirir. Şimdi bu ilkeleri kod yazarken nasıl hayata geçirdiğimize bakalım.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1339.92,
+   "bit": 1357.99,
+   "konusmaci": "Can",
+   "metin": "H T M L içinde erişilebilirliği doğrudan destekleyen altı temel özelliğimiz var. İlki alternatif metin, yani alt özniteliği. Görsellerin içine eklediğimiz alt özniteliği, görsel yüklenemese bile veya görme engelli bir birey ekran okuyucu kullansa bile görselin içeriğini sesli olarak açıklar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1357.99,
+   "bit": 1372.09,
+   "konusmaci": "Ayşe",
+   "metin": "Diğeri etiketleme, yani label etiketi. Form giriş alanlarını label etiketinin for niteliğiyle ilişkilendirdiğimizde, ekran okuyucu kullanıcıya o kutuya elektronik posta mı yoksa şifre mi girmesi gerektiğini sesli olarak aktarır.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1372.09,
+   "bit": 1394.73,
+   "konusmaci": "Can",
+   "metin": "Bunun yanında h birden h altıya kadar olan başlık hiyerarşisi de çok önemlidir; başlık etiketlerini yalnızca görsel büyüklük için değil, içerik düzenini mantıksal bir sırayla belirtmek için kullanmalıyız. Tablolarda da tablo başlıkları, yani t h etiketi ve ilişkilendirme kullanılır; böylece ekran okuyucu her veri hücresini okurken hangi başlığa ait olduğunu bilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1394.73,
+   "bit": 1418.12,
+   "konusmaci": "Ayşe",
+   "metin": "Bir diğer özelliğimiz A R I A, yani Accessible Rich Internet Applications öznitelikleri. Dinamik içeriklerin ve arayüz öğelerinin ekran okuyucular tarafından anlaşılabilmesi ve öğelerin rollerinin açıkça bildirilmesi için kullanılan öznitelik setidir. Örneğin bir div etiketine role eşittir navigation yazdığımızda ekran okuyucuya buranın bir gezinme menüsü olduğunu bildiririz.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1418.12,
+   "bit": 1436.43,
+   "konusmaci": "Can",
+   "metin": "Altıncı özelliğimiz de daha önce konuştuğumuz required, pattern, min, max ve maxlength gibi form doğrulama özellikleri; bunlar kullanıcıya doğru girdi sağlamasında rehberlik eder. Peki tüm bunları birleştirip erişilebilir bir form örneği tasarladığımızda hangi dört başlıca özelliği kullanıyoruz?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1436.43,
+   "bit": 1453.01,
+   "konusmaci": "Ayşe",
+   "metin": "Erişilebilir form örneğindeki dört başlıca özellikten en önemlisi fieldset ve legend etiket ikilisidir! Fieldset formu mantıksal bir çerçeve içine alarak gruplar, legend ise bu çerçevenin başlığını koyarak ekran okuyucular için formun ne amaçla kullanıldığını açıklar.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1453.01,
+   "bit": 1471.08,
+   "konusmaci": "Can",
+   "metin": "Ayrıca her giriş alanı bir label etiketi ile ilişkilendirilir ve yanlış veya eksik bilgi girişini engellemek için required ile minlength gibi kısıtlamalar kullanılır. Son olarak da tarayıcı tarafından otomatik gösterilen anlamlı hata mesajları sayesinde kullanıcı doğru şekilde yönlendirilir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1471.08,
+   "bit": 1491.34,
+   "konusmaci": "Ayşe",
+   "metin": "Can, sayfa yapılandırma başlıklarını tamamladığımıza göre şimdi birbirimize hızlı sorular sorarak hafızamızı tazeleyelim mi? İlk sorum geliyor: Bir formda kullanıcıdan alınan verilerin gönderileceği hedef adresi belirleyen öznitelik hangisidir ve gönderim yöntemini belirleyen method özniteliği hangi değerleri alabilir?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1491.34,
+   "bit": 1514.58,
+   "konusmaci": "Can",
+   "metin": "Hedef sunucu adresini belirleyen öznitelik action özniteliğidir. Verilerin nasıl gönderileceğini belirten method özniteliği ise yalnızca get ve post değerlerini alır. Peki Ayşe, bir formda kullanıcının sunulan seçenekler arasından bir veya birden fazla seçeneği işaretleyebilmesini sağlayan onay kutusu hangisidir ve sadece sayı girilmesini sağlayan giriş türü nedir?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1514.58,
+   "bit": 1541.17,
+   "konusmaci": "Ayşe",
+   "metin": "Birden fazla veya en az bir seçime izin veren kare onay kutusu checkbox kontrolüdür; daire şeklindeki radio ise sadece tek seçime izin verir. Yalnızca sayı girilmesini sağlayan giriş türü de input type eşittir number seçeneğidir. Sıra bende: Bir form alanının boş bırakılmamasını sağlayan öznitelik ile bir form elemanını kullanıcı etkileşimine tamamen kapatıp sunucuya veri göndermesini engelleyen özellik hangileridir?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1541.17,
+   "bit": 1564.91,
+   "konusmaci": "Can",
+   "metin": "Alanın boş bırakılmamasını sağlayan zorunluluk özniteliği required; form elementini etkileşime tamamen kapatıp sunucuya veri göndermesini engelleyen özellik ise disabled özelliğidir. Ayrıca form etiketinde doğrulama davranışını yönetmek için novalidate kullanılır. Peki en basit hâliyle bir tablo hangi üç elementten oluşur, tabloya satır ve sütun ekleyen etiketler nelerdir?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1564.91,
+   "bit": 1593.97,
+   "konusmaci": "Ayşe",
+   "metin": "En basit tablo table, t r ve t d elementlerinden meydana gelir. Tabloya yeni bir satır eklemek için t r etiketi, satır içinde sütun yani veri hücresi oluşturmak için t d etiketi, başlık hücresi içinse t h etiketi kullanılır. Tabloyu başlık ve gövde bölümlerine ayırmak için de thead ve tbody etiketlerini kullanırız. Peki Can, tablolarda yatayda yan yana hücreleri birleştiren öznitelik ile dikeyde aynı sütundaki hücreleri birleştiren öznitelik hangileridir?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1593.97,
+   "bit": 1616.13,
+   "konusmaci": "Can",
+   "metin": "Yatayda birden fazla sütunu birleştirmek için colspan, dikeyde aynı sütundaki satırları birleştirmek için rowspan kullanılır. Ayrıca t d etiketinde colspan, rowspan ve headers H T M L beş tarafından desteklenirken charoff desteklenmez. Peki tablo biçimlendirmede çerçeve kalınlığını, hücre genişliğini ve düşey hizalamayı hangi parametreler belirler?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1616.13,
+   "bit": 1654.44,
+   "konusmaci": "Ayşe",
+   "metin": "Çerçeve kalınlığını border, tablo veya hücre genişliğini width belirler; align ise genişliği değil yatay hizalamayı ayarlar. Hücre içi düşey hizalamayı valign parametresi yapar ve top, middle, bottom değerlerini alır. Arka plan rengini bgcolor, arka plan resmini background, dış kenarlıkları frame, iç çizgileri ise rules kontrol eder; rules içinde yalnız dikey çizgiler için cols, iç çizgileri kaldırmak için none kullanılır. Son sorumu soruyorum: Sayfanın ana içeriğini, bağımsız bir blog yazısını, sağ taraftaki yan bilgileri ve en alttaki telif hakkı bölümünü belirten semantik etiketler hangileridir?",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1654.44,
+   "bit": 1686.28,
+   "konusmaci": "Can",
+   "metin": "Sayfanın ana içeriğini main, blog yazısı veya makale gibi bağımsız içerikleri article, sağ kısımdaki kategori ve yazar adı gibi yan içerikleri aside, tüm sayfalarda ortak bulunan telif hakkı ve hızlı erişim linklerinin yer aldığı alt bölümü ise footer etiketi belirtir. Gezinme menüsü için nav, görsellerin alternatif metni için alt, formları mantıksal çerçeveye alıp açıklamak için fieldset ve legend ikilisi kullanılır; tüm bu erişilebilirlik kuralları da W C A G standartlarıyla doğrudan ilişkilidir.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1686.28,
+   "bit": 1695.91,
+   "konusmaci": "Ayşe",
+   "metin": "Harika bir özet oldu Can! Formlardan tablolara, semantik etiketlerden erişilebilirliğe kadar sayfa yapılandırmasının her detayını eksiksizce toparladık.",
+   "konu": null,
+   "guven": 0
+  },
+  {
+   "bas": 1695.91,
+   "bit": 1705.72,
+   "konusmaci": "Can",
+   "metin": "Böylece zengin metin işaretleme dili ile kurduğumuz sayfa iskeletini tüm yönleriyle tamamladık ve bu iskeleti görsel olarak biçimlendirme aşamasına geldik.",
+   "konu": null,
+   "guven": 0
+  }
+ ]
+}
