@@ -3,13 +3,19 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import type { APIRoute, GetStaticPaths } from "astro";
 import { getCourses, getQuestions, getUniversities } from "../../../lib/api";
+import { canonicalDepartments } from "../../../lib/kanonik";
 import { toPlainText } from "../../../../scripts/utils/clean-html";
 
 export const getStaticPaths = (async () => {
+  // One file per uni/course, under the canonical department (the course page's own address). The URL has no
+  // department, so emitting it once per listing department rendered shared courses up to 62 times: 10991 routes
+  // for 4475 files, 194 s of a 458 s build (23 Nov 2026).
+  const kanonik = await canonicalDepartments();
   const paths = [];
   for (const uni of await getUniversities()) {
     for (const dept of uni.departments || []) {
       for (const course of await getCourses(uni.id, dept.id)) {
+        if ((kanonik.get(`${uni.id}/${course.id}`) ?? dept.id) !== dept.id) continue;
         paths.push({ params: { university: uni.id, course: course.id }, props: { uni, dept, course } });
       }
     }
