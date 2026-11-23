@@ -42,6 +42,7 @@ const KABUK_DOSYALARI = [
   "/apple-touch-icon.png",
   "/android-chrome-192x192.png",
   "/logo.svg",
+  "/simge.svg",
   "/veri/dersler.json",
 ] as const;
 
