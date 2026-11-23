@@ -443,7 +443,8 @@ const { title, description = VARSAYILAN_ACIKLAMA, sekmeler = true, ayarSayfasi =
     </footer>
     {sekmeler && <SekmeCubugu />}
 
-    <script is:inline>
+    <!-- Bundled (not inline): 8 KB of settings code shared by every page is cached once as a module (23 Nov 2026). -->
+    <script>
       document.getElementById("uyari-kapat")?.addEventListener("click", () => {
         try { localStorage.setItem("uyari-kapali", "1"); } catch (e) {}
         document.documentElement.setAttribute("data-uyari-kapali", "");
