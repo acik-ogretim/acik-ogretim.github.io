@@ -1,0 +1,7 @@
+---
+import Layout from '../layouts/Layout.astro';
+import DurumTablosu from '../components/DurumTablosu';
+---
+<Layout title="İçerik Durumu | Açık Öğretim" description="Üniversite ve bölüm bazında kitap, özet, çalışma kitabı, anlatım, ses, video ve çıkmış soru durumu.">
+  <section class="durum-page" aria-label="İçerik durumu"><h1>İçerik durumu</h1><p>Dersin malzemelerini karşılaştır, eksikleri bul.</p><DurumTablosu client:load /><noscript>İçerik tablosu için JavaScript'i açın. <a href="/durum.json">Durum verisini indirin.</a></noscript></section>
+</Layout>

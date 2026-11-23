@@ -6,6 +6,7 @@ import YazdirmaAyarlari from "../../../components/YazdirmaAyarlari.astro";
 import Layout from "../../../layouts/Layout.astro";
 import "../../../styles/soru-karti.css";
 import YouTubeVideolari from "../../../components/YouTubeVideolari.astro";
+import MedyaBaglantilari from "../../../components/MedyaBaglantilari.astro";
 import { Check, ChevronRight, MessageCircle, MessageSquare, TriangleAlert, Volume2, X } from "lucide-react";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -244,6 +245,7 @@ const dersJsonLd = graf(
           <YouTubeVideolari anahtar={`${university.id}/${course.id}`} />
         </div>
       )}
+      <MedyaBaglantilari uni={university.id} ders={course.id} />
 
       <!-- Reading / solving mode (same state as the player's #btn-toggle-interactive), search and filters -->
       <div class="kip-satir print:hidden" data-reader-ignore>

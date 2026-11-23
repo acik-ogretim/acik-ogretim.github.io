@@ -1,0 +1,12 @@
+---
+import { z } from 'zod';
+interface Props { uni: string; ders: string }
+const { uni, ders } = Astro.props;
+const key = uni === 'ataturk-aof' ? ders : `${uni}--${ders}`;
+const contracts = import.meta.glob('../../data/calisma-odasi-medya/*.json', { eager: true, import: 'default' });
+const asset = z.object({ kaynak: z.string().url().refine(url => url.startsWith('https://medya.zeki.website/')), baslik: z.string(), tur: z.enum(['ses', 'video']) });
+const medium = z.union([asset, z.object({ kaynak: z.string().regex(/^[\w-]{11}$/), baslik: z.string(), tur: z.literal('youtube') }).transform(m => ({ ...m, kaynak: `https://youtu.be/${m.kaynak}`, tur: 'video' as const }))]);
+const parsed = z.object({ medyalar: z.array(z.unknown()).default([]), dosyalar: z.array(asset).default([]) }).safeParse(contracts[`../../data/calisma-odasi-medya/${key}.json`]);
+const links = parsed.success ? [...parsed.data.dosyalar, ...parsed.data.medyalar.flatMap(m => { const r = medium.safeParse(m); return r.success ? [r.data] : []; })] : [];
+---
+{links.length > 0 && <details class="mt-6 rounded-3xl border border-line bg-card p-4"><summary class="cursor-pointer font-semibold">Ders sesleri ve videoları ({links.length})</summary><ul class="mt-4 grid gap-3 sm:grid-cols-2">{links.map(m => <li><a href={m.kaynak} target="_blank" rel="noopener" class="text-accent-ink hover:underline">{m.tur === 'ses' ? 'Ses' : 'Video'} · {m.baslik}</a></li>)}</ul></details>}

@@ -747,7 +747,7 @@ describe('Clean HTML Implementation (High Performance)', () => {
 
         it('should transform Turkish <ol type=\"I\"> lists to use <br/> separators for social work items', () => {
              const input = "<ol type=\"I\"><li>Boşanma</li><li>Ebeveyn haklarının sona erdirilmesi</li><li>Çocuk ve eş istismarının sonuçları</li><li>Çocuk ve yetişkin adalet hizmetleri</li></ol>Yukarıdakilerden hangileri adli sosyal hizmet kapsamındadır?";
-             const output = cleanHtml(input, { university: 'anadolu', flattenLists: true });
+             const output = cleanHtml(input, { university: 'anadolu' });
 
              expect(output).toContain("I. Boşanma<br/>II. Ebeveyn");
              expect(output).toContain("IV. Çocuk ve yetişkin adalet hizmetleri<br/>Yukarıdakilerden"); // Separator after list

@@ -17,6 +17,7 @@ This file serves as the primary instruction manual for AI agents working on this
 *   **Cookieless Visit Counter:** Cloudflare Web Analytics plus an anonymous unique-visitor Worker.
 
 ## 🗺️ Where Things Live
+*   `src/pages/durum.astro`, `src/components/DurumTablosu.tsx`, `scripts/durum-uret.mjs`: university/course inventory from source files, published as `public/durum.json`. Regenerate with `npm run durum:uret` after content changes. Published media connections: `scripts/medya-bagla.mjs` (YouTube), `scripts/auzef-bagla.mjs` (existing AUZEF outputs). Sources, counting rules and checks: `docs/icerik-durumu.md`. E2E: `npm run test:e2e:durum` against a built site.
 *   `src/pages/sohbet.astro`, `src/components/sohbet/` (`Sohbet`, `SohbetCekmece`, `SaglayiciAyarlari`, `SinavKarti`, `BelgeKarti`): chat page, "Derse sor" drawer, provider/key form, mini quiz and document cards.
 *   `src/lib/chat/`: `providers.ts` (providers, models, keys), `tools.ts` (chat tools), `gecmis.ts` (history), `enrich.ts` (explanation menu).
 *   `src/pages/yedek.astro` + `src/lib/yedek.ts`, `rs-esitle.ts`, `google-esitle.ts`, `p2p-esitle.ts`, `bulut-esitle.ts`: moving records across devices (never export `*-api-key`).

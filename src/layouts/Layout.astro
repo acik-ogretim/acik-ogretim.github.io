@@ -239,6 +239,7 @@ const { title, description = VARSAYILAN_ACIKLAMA, sekmeler = true, ayarSayfasi =
             <a href="/derslerim" class="nav-link inline-flex items-center gap-1.5 rounded-full px-2 py-2" title="Derslerim"><Simge ad="BookOpen" size={18} /><span class="hidden xl:inline">Derslerim</span></a>
             <a href="/ara" class="nav-link inline-flex items-center gap-1.5 rounded-full px-2 py-2" title="Ara (Ctrl+K)"><Simge ad="Search" size={18} /></a>
             <a href="/ilerleme" class="nav-link inline-flex items-center gap-1.5 rounded-full px-2 py-2" title="İlerleme"><Simge ad="ChartNoAxesColumn" size={18} /></a>
+            <a href="/durum/" class="nav-link inline-flex items-center gap-1.5 rounded-full px-2 py-2" title="Durum"><Simge ad="ListTree" size={18} /><span class="hidden xl:inline">Durum</span></a>
             <a href="/cevrimdisi" class="nav-link inline-flex items-center gap-1.5 rounded-full px-2 py-2" title="Çevrimdışı dersler"><Simge ad="CloudDownload" size={18} /></a>
           </div>
           <a href="/anadolu-aof" class="nav-link hidden lg:inline">Anadolu AÖF</a>
@@ -280,6 +281,7 @@ const { title, description = VARSAYILAN_ACIKLAMA, sekmeler = true, ayarSayfasi =
           <a href="/derslerim" class="katman-satir"><Simge ad="BookOpen" size={20} class="size-5 shrink-0" /><span class="katman-satir-ad">Derslerim</span></a>
           <a href="/ara" class="katman-satir"><Simge ad="Search" size={20} class="size-5 shrink-0" /><span class="katman-satir-ad">Ara</span></a>
           <a href="/ilerleme" class="katman-satir"><Simge ad="ChartNoAxesColumn" size={20} class="size-5 shrink-0" /><span class="katman-satir-ad">İlerleme</span></a>
+          <a href="/durum/" class="katman-satir"><Simge ad="ListTree" size={20} class="size-5 shrink-0" /><span class="katman-satir-ad">Durum</span></a>
           <a href="/cevrimdisi" class="katman-satir"><Simge ad="CloudDownload" size={20} class="size-5 shrink-0" /><span class="katman-satir-ad">Çevrimdışı dersler</span></a>
         </nav>
         <nav class="katman-liste" aria-label="Üniversiteler">
@@ -452,6 +454,7 @@ const { title, description = VARSAYILAN_ACIKLAMA, sekmeler = true, ayarSayfasi =
       // Global Settings Persistance (Lightweight version of QuizPlayer logic)
       (function initGlobalSettings() {
         const defaultSettings = {
+          shuffleQuestions: false,
           playbackRate: 1.2,
           showAnswers: true,
           showExplanations: true,
@@ -471,7 +474,7 @@ const { title, description = VARSAYILAN_ACIKLAMA, sekmeler = true, ayarSayfasi =
             : defaultSettings;
         }
 
-        function saveStoredSettings(newSettings) {
+        function saveStoredSettings(newSettings: Partial<typeof defaultSettings>) {
           const current = loadStoredSettings(); // merge to avoid overwriting unhandled keys
           const merged = { ...current, ...newSettings };
           localStorage.setItem("quiz-settings", JSON.stringify(merged));
@@ -483,11 +486,11 @@ const { title, description = VARSAYILAN_ACIKLAMA, sekmeler = true, ayarSayfasi =
         // AI Settings Logic (Migrated from AISettings.astro)
         const aiToggle = document.getElementById("ai-enrichment-toggle");
 
-        if (aiToggle) {
+        if (aiToggle instanceof HTMLInputElement) {
           aiToggle.checked =
             localStorage.getItem("ai-enrichment-enabled") === "true";
-          aiToggle.addEventListener("change", (e) => {
-            const checked = e.target.checked;
+          aiToggle.addEventListener("change", () => {
+            const checked = aiToggle.checked;
             localStorage.setItem("ai-enrichment-enabled", String(checked));
             // Trigger UI update globally if needed
             document
@@ -509,7 +512,7 @@ const { title, description = VARSAYILAN_ACIKLAMA, sekmeler = true, ayarSayfasi =
 
         function populateDefaultUnits() {
           const unitSelect = document.getElementById("setting-unit");
-          if (unitSelect && unitSelect.options.length <= 3) {
+          if (unitSelect instanceof HTMLSelectElement && unitSelect.options.length <= 3) {
             // If only 'all', 'first_half', 'second_half' exist, add 1-14
             for (let i = 1; i <= 14; i++) {
               const opt = document.createElement("option");
@@ -520,30 +523,30 @@ const { title, description = VARSAYILAN_ACIKLAMA, sekmeler = true, ayarSayfasi =
           }
         }
 
-        const bindCheckbox = (id, key) => {
+        const bindCheckbox = (id: string, key: keyof typeof defaultSettings) => {
           const el = document.getElementById(id);
-          if (el) {
-            el.checked = settings[key];
-            el.addEventListener("change", (e) => {
-              saveStoredSettings({ [key]: e.target.checked });
+          if (el instanceof HTMLInputElement) {
+            el.checked = Boolean(settings[key]);
+            el.addEventListener("change", () => {
+              saveStoredSettings({ [key]: el.checked });
             });
           }
         };
 
-        const bindSelect = (id, key) => {
+        const bindSelect = (id: string, key: keyof typeof defaultSettings) => {
           const el = document.getElementById(id);
-          if (el) {
+          if (el instanceof HTMLSelectElement || el instanceof HTMLInputElement) {
             // Special case for rate which is number
             if (key === "playbackRate") {
               el.value = settings[key].toFixed(1);
-              el.addEventListener("change", (e) => {
-                const val = parseFloat(e.target.value);
+              el.addEventListener("change", () => {
+                const val = parseFloat(el.value);
                 saveStoredSettings({ [key]: val });
               });
             } else {
               el.value = settings[key] || "";
-              el.addEventListener("change", (e) => {
-                saveStoredSettings({ [key]: e.target.value });
+              el.addEventListener("change", () => {
+                saveStoredSettings({ [key]: el.value });
               });
             }
           }
@@ -622,7 +625,7 @@ const { title, description = VARSAYILAN_ACIKLAMA, sekmeler = true, ayarSayfasi =
               const multiVoices = voices.filter(
                 (v) => /multilingual/i.test(v.name) && !trVoices.includes(v),
               );
-              const addGroup = (label, list) => {
+              const addGroup = (label: string, list: SpeechSynthesisVoice[]) => {
                 if (list.length === 0) return;
                 const group = document.createElement("optgroup");
                 group.label = label;

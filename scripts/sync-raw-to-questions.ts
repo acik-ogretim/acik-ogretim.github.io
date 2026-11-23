@@ -84,7 +84,7 @@ function cleanText(text: string, options: { encode?: boolean, markdown?: boolean
     // 7. Fallback: If cleaning resulted in empty string but input had content, use full escape
     if (result === "" && text.trim() !== "") {
         // Fallback to fully escaped version of the repaired text
-        const fallback = he.escape(he.decode(repairText(text, { stripLoneBr: false })));
+        const fallback = he.escape(he.decode(repairText(text)));
         return fallback.replace(/&#x27;/g, "'").replace(/&quot;/g, '"').trim();
     }
 

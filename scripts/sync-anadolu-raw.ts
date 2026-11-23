@@ -2,8 +2,7 @@ import fs from 'fs';
 
 import path from 'path';
 import { Worker, isMainThread, parentPort, workerData } from 'worker_threads';
-import { cleanHtmlFast as cleanHtml } from './utils/clean-html-fast.ts';
-import { areTextsSimilar, isGarbage, toPlainText } from './utils/text-repair.ts';
+import { cleanHtml, areTextsSimilar, isGarbage, toPlainText } from './utils/clean-html.ts';
 
 // Configurations
 const NUM_WORKERS = 4; // Stable count
@@ -101,7 +100,7 @@ function mapRawToApp(raw: RawAnadoluQuestion, isTechnical: boolean = false): App
 
     if (rawTitle && rawExpl) {
         const cTitle = cleanHtml(rawTitle, { isTechnical, university: 'anadolu' });
-        const cExpl = cleanHtml(rawExpl, { isTechnical, isExplanation: true, disableChoiceCleanup: true, university: 'anadolu', stripWrappingStrong: false });
+        const cExpl = cleanHtml(rawExpl, { isTechnical, isExplanation: true, disableChoiceCleanup: true, university: 'anadolu' });
         const tNorm = toPlainText(rawTitle);
         const eNorm = toPlainText(rawExpl);
 
@@ -113,15 +112,15 @@ function mapRawToApp(raw: RawAnadoluQuestion, isTechnical: boolean = false): App
     } else if (rawTitle) {
         combinedExpl = cleanHtml(rawTitle, { isTechnical, isExplanation: true, disableChoiceCleanup: true, university: 'anadolu' });
     } else if (rawExpl) {
-        combinedExpl = cleanHtml(rawExpl, { isTechnical, isExplanation: true, disableChoiceCleanup: true, university: 'anadolu', stripWrappingStrong: false });
+        combinedExpl = cleanHtml(rawExpl, { isTechnical, isExplanation: true, disableChoiceCleanup: true, university: 'anadolu' });
     }
 
     // Populate options
-    if (raw.A !== undefined) q.options['A'] = cleanHtml(raw.A || "", { isTechnical, university: 'anadolu', stripAllBr: true });
-    if (raw.B !== undefined) q.options['B'] = cleanHtml(raw.B || "", { isTechnical, university: 'anadolu', stripAllBr: true });
-    if (raw.C !== undefined) q.options['C'] = cleanHtml(raw.C || "", { isTechnical, university: 'anadolu', stripAllBr: true });
-    if (raw.D !== undefined) q.options['D'] = cleanHtml(raw.D || "", { isTechnical, university: 'anadolu', stripAllBr: true });
-    if (raw.E !== undefined) q.options['E'] = cleanHtml(raw.E || "", { isTechnical, university: 'anadolu', stripAllBr: true });
+    if (raw.A !== undefined) q.options['A'] = cleanHtml(raw.A || "", { isTechnical, university: 'anadolu', stripLoneBr: true });
+    if (raw.B !== undefined) q.options['B'] = cleanHtml(raw.B || "", { isTechnical, university: 'anadolu', stripLoneBr: true });
+    if (raw.C !== undefined) q.options['C'] = cleanHtml(raw.C || "", { isTechnical, university: 'anadolu', stripLoneBr: true });
+    if (raw.D !== undefined) q.options['D'] = cleanHtml(raw.D || "", { isTechnical, university: 'anadolu', stripLoneBr: true });
+    if (raw.E !== undefined) q.options['E'] = cleanHtml(raw.E || "", { isTechnical, university: 'anadolu', stripLoneBr: true });
 
     if (combinedExpl && combinedExpl.trim() !== "") {
         // FIRST: Check if explanation has an image or table BEFORE cleaning
@@ -218,7 +217,7 @@ function mapExamToApp(raw: ExamInput, isTechnical: boolean = false): AppQuestion
     if (oldRaw.options && Array.isArray(oldRaw.options)) {
         oldRaw.options.forEach((opt, idx) => {
             const key = ["A", "B", "C", "D", "E"][idx];
-            if (key) q.options[key] = cleanHtml(opt, { isTechnical, university: 'anadolu', stripAllBr: true });
+            if (key) q.options[key] = cleanHtml(opt, { isTechnical, university: 'anadolu', stripLoneBr: true });
         });
     }
 

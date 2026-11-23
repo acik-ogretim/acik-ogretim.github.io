@@ -16,7 +16,9 @@
     "test:ui": "vitest --ui",
     "test:e2e": "playwright test",
     "test:e2e:calisma": "playwright test tests/e2e/calisma-durumu.spec.ts",
-    "test:e2e:cevrimdisi": "playwright test -c playwright.cevrimdisi.config.ts"
+    "test:e2e:cevrimdisi": "playwright test -c playwright.cevrimdisi.config.ts",
+    "durum:uret": "node scripts/durum-uret.mjs",
+    "test:e2e:durum": "playwright test -c playwright.durum.config.ts"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",
@@ -34,6 +36,7 @@
     "@tanstack/ai-openrouter": "^1.1.2",
     "@tanstack/ai-react": "^1.0.2",
     "@tanstack/markdown": "^1.2.0",
+    "@tanstack/react-table": "^8.21.3",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "astro": "^5.16.6",

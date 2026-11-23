@@ -121,7 +121,7 @@ export function cleanHtml(html: string, options: { university?: string; isExplan
     }
 
     const cl = repairText(preHtml, { isTechnical: options.isTechnical });
-    const $ = cheerio.load(cl, { decodeEntities: false });
+    const $ = cheerio.load(cl);
     const root = $('body');
 
     root.find('head, script, style, link, meta, input, button, textarea').remove();

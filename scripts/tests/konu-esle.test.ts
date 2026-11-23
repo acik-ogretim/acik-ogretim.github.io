@@ -1,5 +1,4 @@
 import { describe, expect, it } from "vitest";
-// @ts-expect-error plain ESM module without types
 import { konuyaEsle } from "../lib/konu-esle.mjs";
 
 const konu = (no: string, unite: number, baslik: string, metin: string) => ({ no, unite, baslik, metin: metin.repeat(6), kitapKavramlari: [] as string[] });
@@ -9,7 +8,7 @@ const konular = [
   konu("2.1", 2, "Kalıtım", "Kalıtım genler aracılığıyla aktarılır; Mendel bezelye çaprazlamalarını inceledi. "),
   konu("2.2", 2, "Değerlendirme Soruları", "Aşağıdakilerden hangisi doğrudur sorusu cevap anahtarı seçenek. "),
 ];
-const satir = (m: string, i: number) => ({ i, bas: i * 10, bit: i * 10 + 10, k: "Can", m, konu: null as string | null, g: 0 });
+const satir = (m: string, i: number): { i: number; bas: number; bit: number; k: string; m: string; konu: string | null; g: number; y?: number } => ({ i, bas: i * 10, bit: i * 10 + 10, k: "Can", m, konu: null, g: 0 });
 
 describe("konuyaEsle", () => {
   it("assigns every line, follows book order and attaches the closing line to the last real topic", () => {

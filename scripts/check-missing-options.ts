@@ -57,7 +57,7 @@ function checkDirectory(dir: string, sourceName: string) {
             }
 
         } catch (e) {
-            console.error(`Error processing ${file}:`, e.message);
+            console.error(`Error processing ${file}:`, e instanceof Error ? e.message : String(e));
         }
     }
 

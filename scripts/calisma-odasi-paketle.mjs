@@ -202,6 +202,7 @@ function paketle(ders) {
   }
   for (const f of dokumAdlari) {
     const d = oku(join(dokumKok, f));
+    if (d.ders !== `${UNI}/${ders}`) continue;
     const yt = idAl(d.video);
     let v = videolar.find((x) => x.yt === yt);
     if (!v) {
@@ -226,7 +227,7 @@ function paketle(ders) {
   }
   // Sesler: medya ajanının sözleşmesi (data/calisma-odasi-medya/<ders>.json, dökümler <ders>/ klasöründe)
   const medyaKok = join(kok, "data", "calisma-odasi-medya");
-  const sozlesme = join(medyaKok, `${ders}.json`);
+  const sozlesme = join(medyaKok, `${UNI === "ataturk-aof" ? ders : `${UNI}--${ders}`}.json`);
   if (existsSync(sozlesme)) {
     const kayitlarM = oku(sozlesme).medyalar ?? [];
     // A YouTube entry with "parcalar" is one video made by joining those audio parts end to end (the long narration
@@ -257,6 +258,7 @@ function paketle(ders) {
       }
       // the same video may also be listed in youtube-videolar.json (course page); keep one entry
       const onceki = videolar.findIndex((v) => v.yt === x.kaynak);
+      if (onceki >= 0 && !satirlar.length) continue;
       if (onceki >= 0) {
         kullanilan.delete(videolar[onceki].kod);
         videolar.splice(onceki, 1);

@@ -420,6 +420,7 @@ export default function MobilMenu({ dersAdi, uniteler: tumUniteler, uni, ders, b
                     {EYLEMLER.map((e, i) => (
                       <Kutu key={e.id} ilk={i === 0} e={{ ...e, etiket: etiketi(e) }} onClick={() => dokun(e)} />
                     ))}
+                    <a href="/durum/" className={`menu-kutu ${odak}`}><ListTree aria-hidden /><span>Durum</span></a>
                   </div>
                 )}
 
