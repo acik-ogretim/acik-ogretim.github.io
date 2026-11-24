@@ -122,68 +122,7 @@ function mapRawToApp(raw: RawAnadoluQuestion, isTechnical: boolean = false): App
     if (raw.D !== undefined) q.options['D'] = cleanHtml(raw.D || "", { isTechnical, university: 'anadolu', stripLoneBr: true });
     if (raw.E !== undefined) q.options['E'] = cleanHtml(raw.E || "", { isTechnical, university: 'anadolu', stripLoneBr: true });
 
-    if (combinedExpl && combinedExpl.trim() !== "") {
-        // FIRST: Check if explanation has an image or table BEFORE cleaning
-        const hasImage = combinedExpl.includes('<img');
-        const hasTable = combinedExpl.includes('<table');
-
-        let finalExpl = cleanHtml(combinedExpl.trim(), { isTechnical, university: 'anadolu', isExplanation: true, disableChoiceCleanup: true });
-
-        if (hasImage || hasTable) {
-            // Do nothing - preserve explanation exactly as-is
-        } else if (raw.CorrectAnswer && q.options[raw.CorrectAnswer]) {
-            const optPlain = toPlainText(q.options[raw.CorrectAnswer] || "").trim().toLowerCase();
-
-            // 1. Line-based Surgical Trimming (Only standalone lines)
-            let lines = finalExpl.split(/<br\s*\/?>/i);
-            let changed = false;
-
-            if (lines.length > 0) {
-                // Check first line
-                const first = lines[0];
-                const firstPlain = toPlainText(first).trim().toLowerCase();
-                if (isGarbage(first) || (optPlain && areTextsSimilar(firstPlain, optPlain))) {
-                    lines.shift();
-                    changed = true;
-                }
-            }
-
-            if (lines.length > 0) {
-                // Check last line
-                const last = lines[lines.length - 1];
-                const lastPlain = toPlainText(last).trim().toLowerCase();
-
-                if (isGarbage(last) || (optPlain && areTextsSimilar(lastPlain, optPlain))) {
-                    lines.pop();
-                    changed = true;
-                }
-            }
-
-            if (changed) {
-                const joined = lines.join('<br/>').trim();
-                const joinedPlain = toPlainText(joined).trim();
-                if (joinedPlain.length < 15) {
-                    finalExpl = ""; // It was all garbage
-                } else {
-                    finalExpl = joined;
-                }
-            }
-
-            // 2. Conservative Full Clear Check
-            if (finalExpl !== "") {
-                // Original logic for non-image explanations
-                const plain = toPlainText(finalExpl).trim().toLowerCase();
-                const charDiff = Math.abs(plain.length - optPlain.length);
-                const lenRatio = Math.min(plain.length, optPlain.length) / (Math.max(plain.length, optPlain.length) || 1);
-
-                if (plain.length < 2 || isGarbage(finalExpl) || (optPlain && areTextsSimilar(plain, optPlain) && (lenRatio > 0.8 || charDiff < 20))) {
-                    finalExpl = "";
-                }
-            }
-        }
-
-        q.explanation = finalExpl.trim() === "" ? "" : finalExpl.trim();
-    }
+    q.explanation = cleanHtml(combinedExpl, { isTechnical, university: 'anadolu', isExplanation: true, disableChoiceCleanup: true });
 
     return q;
 }
@@ -221,26 +160,7 @@ function mapExamToApp(raw: ExamInput, isTechnical: boolean = false): AppQuestion
         });
     }
 
-    if (oldRaw.explanation) {
-        let e = cleanHtml(oldRaw.explanation, { isTechnical, university: 'anadolu', isExplanation: true, disableChoiceCleanup: true });
-        const correctOptKey = q.correctAnswer;
-        const optPlain = q.options[correctOptKey] ? toPlainText(q.options[correctOptKey]).trim().toLowerCase() : "";
-
-        const hasImage = e.includes('<img');
-        const plain = toPlainText(e).trim().toLowerCase();
-
-        if (!hasImage) {
-            const charDiff = plain.length - optPlain.length;
-            const lenRatio = optPlain.length / (plain.length || 1);
-
-            if (plain.length < 2 || isGarbage(e) || (optPlain && areTextsSimilar(plain, optPlain) && (lenRatio > 0.8 || charDiff < 25))) {
-                e = "";
-            }
-        }
-        q.explanation = e.trim() === "" ? "" : e.trim();
-    } else {
-        q.explanation = "";
-    }
+    q.explanation = cleanHtml(oldRaw.explanation || "", { isTechnical, university: 'anadolu', isExplanation: true, disableChoiceCleanup: true });
 
     return q;
 }
