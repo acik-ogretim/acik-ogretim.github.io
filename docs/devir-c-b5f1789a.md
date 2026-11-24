@@ -2,6 +2,23 @@
 
 24 Kasım 2026. Kart: C-b5f1789a. Denetleyen oturum: c0898ac5-be6c-4694-8e42-1300efef1811.
 
+## Devralma ve düzeltme, ikinci tur
+
+Kullanıcının sahipsiz dosyaları devralma yetkisiyle aşağıdaki tabloda listelenen değişiklikler bu oturum tarafından devralındı. Özgün yazar kimliği doğrulanmadı; teslim sorumluluğu artık bu oturumdadır. Önceki denetimin bulguları tarihsel kayıt olarak aşağıda korunuyor.
+
+- HTML temizleyicide uçlardaki gereksiz satır sonlarını kaldıran adım geri eklendi. Önceki yedi hata düzeldi.
+- Anadolu aktarımında doğru şıkka benziyor diye açıklama metnini boşaltan budama kaldırıldı. Alıştırma ve çıkmış soru yolları ayrı örneklerle sınandı.
+- 3B tasarımda boşaltılmış 35 açıklama geri alındı. Yalnız başlığa indirgenmiş Fresnel açıklamasına da önceki metni eklendi. 120 sorunun kimlikleri ve doğru cevapları aynı; seçenek metinleri HTML, boşluk ve Unicode normalleştirmesi sonrasında aynı. Her eski açıklama parçasının son veride bulunduğu karşılaştırıldı. İki açıklamadaki tekrar azaltımı korundu.
+- Metin üreticinin bütün çıktı klasörünü silen döngüsü kaldırıldı. Diğer derslerin çıktısını koruması, sayısal kimlik sıralaması ve temiz satır sonları regresyon testiyle doğrulandı. Ünite başına toplam 54 çıktı üretildi; ilk listede bulunmayan İleri Tipografi ünite sıfır çıktısı da korundu.
+- AUZEF'in 54 dersinde yalnız sayısal otomasyon kimliği değişiyor. Kimliklerin dış sistemdeki güncelliği teyit bekliyor. Dört dönem dosyasındaki toplam 191 soruda kimlik tekilliği, metin, seçenek ve doğru cevap bağlantısı doğrulandı. Bunlar dönem altındaki aktarım verileridir; site yalnız doğrudan kurum klasöründeki ders dosyalarını okur. Bu görevde siteye eklenmediler.
+- Sıfır baytlık TanStack işaretçisi diskte korundu ve oluşturulan işaretçi deseni Git dışında tutuldu.
+
+Doğrulama: `vitest run` 38 başarılı ve 3 atlanan dosyada 324 başarılı, 13 atlanan test verdi. `astro check` 258 dosyada 0 hata, 0 uyarı, 33 öneri verdi. `git diff --check HEAD` ve `sh scripts/medya-kapisi.sh` çıkış 0. Tam site derlemesi ve tarayıcı denetimi çalıştırılmadı; arayüz kodu değişmedi.
+
+İki eksenli incelemede standartlar açısından yeni `any`, kapı gevşetme, toplu silme veya kullanıcı kaydı değişikliği bulunmadı. Şartname açısından mevcut dosyalar devralındı ve korundu; teslimin son kapısı commit ve push sonrasında temiz durum, boş upstream farkı ve sıfır çakışmanın yeniden ölçülmesidir.
+
+## İlk turun tarihsel kaydı
+
 ## Doğrulanmış durum
 
 Denetimin başında 63 dosya bekliyordu: 53 dosya indekste, 5 izlenen dosya değiştirilmiş, 5 dosya izlenmiyordu. Uyarıdaki 61 sayısı güncel sayımla örtüşmedi. `git fetch origin` sonrasında `git rev-list --left-right --count HEAD...origin/main` çıktısı `0 0` idi. Başlangıç commit'i `9d1bea8c`. `git log @{u}..HEAD` ve `git ls-files --unmerged` boştu.
