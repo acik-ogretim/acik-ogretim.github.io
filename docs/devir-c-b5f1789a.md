@@ -1,5 +1,31 @@
 # Bekleyen değişikliklerin denetimi
 
+## Yeniden doğrulama, 25 Kasım 2026
+
+Denetleyen oturum: cdd31514-5fb1-4da0-a066-b3366c213df4. Bu turda uygulama, aktarım kodu veya ders içeriği değiştirilmedi.
+
+**DOĞRULANMIŞ:** Başlangıçta `git status --porcelain=v1` boştu. `git fetch origin` sonrasında `HEAD...origin/main` farkı `0 0`, son commit `c1c5c84a` idi. `git log @{u}..HEAD` ve `git ls-files --unmerged` boştu. Önceki teslimin iki commit'i yerelde mevcut ve uzak main üzerindedir. Yeniden çalıştırılan `./node_modules/.bin/vitest run`: 38 başarılı, 3 atlanan dosya; 324 başarılı, 13 atlanan test; çıkış 0. `./node_modules/.bin/astro check`: 258 dosya; 0 hata, 0 uyarı, 33 öneri; çıkış 0. Günlükler `/tmp/portal-c-b5f1789a-{vitest,check}-20261125.log`. `git diff --check HEAD` ve `sh scripts/medya-kapisi.sh`: çıkış 0.
+
+**Veri kontrolü:** Önceki denetim commit'iyle kimlik üzerinden karşılaştırmada 3B tasarımın 120 soru kimliği ve doğru cevabı aynı; dolu bir açıklama boşaltılmamış. Dört AUZEF dönem dosyasında 191 kaydın kimlik tekilliği, dolu soru metni ve doğru cevap seçeneği doğrulandı. Altı kaynak dersin 5233 sorusu, ders ve ünite başına sayımla 54 metin çıktısıyla eşleşti. Bu kontrol akademik doğruluğun veya AUZEF dış sistem güncelliğinin teyidi değildir.
+
+**Sahiplik:** Kartın önceki incelemesi, teslim sorumluluğunu devralmayı özgün yazar teyidi için yeterli bulmamış. Bu iki kavram ayrı tutuldu. Özgün yazar halen teyit bekliyor; önceki teslim sorumlusu c0898ac5-be6c-4694-8e42-1300efef1811. `inbox.send` ile ilgili Anadolu kartına C-10422dc2 (mesaj 8d13d8f9-0e78-4c33-9b1c-74e0588533f2) ve koordinatöre (mesaj 3564e832-bba0-4772-8673-2d67c39273bb) özgün yazar teyidi soruldu. İki mesaj da gelen kutusuna kaydedildi; `deliveredTo` boş olduğundan aktif yazara ulaştığı veya yanıtlandığı iddia edilmiyor.
+
+**Maliyet:** Önceki oturumun `stream.list` kaydı 2 tur, 12.946.494 girdi, 43.213 çıktı, toplam 12.989.707 jeton ve 39,487677 USD gösteriyor. `events.before` ile okunan iki `RUN_FINISHED` olayı bunu doğruluyor: sıra 334, 3.128.252 girdi ve 12.479 çıktı; sıra 748, 9.818.242 girdi ve 30.734 çıktı. Önbellek girdi sayıları sırasıyla 3.024.384 ve 9.652.224, toplam 12.676.608. Dolayısıyla 12,9 milyon sayısı üretilen metnin uzunluğu değil, iki turun birikimli kullanım ölçümüdür. Tekrar işlenen bağlam hacmi girdinin çoğunu oluşturuyor. Sürü'nün USD hesabı sağlayıcı faturasıyla karşılaştırılmadı; kesin fatura veya tek tek araç çağrılarının maliyeti olarak sunulmuyor.
+
+**İki eksenli inceleme:** Standartlar ekseninde incelenen kod farkında yeni kesin ihlal bulunmadı; açıklama koruma ve başka ders çıktılarını koruma davranışı mevcut regresyon testleriyle sınandı. Şartname ekseninde teknik git kapıları geçti. Önceki ret gerekçesindeki yazarlara soru gönderme adımı yapıldı; özgün yazarlık yanıtı açık kaldığından nihai sahiplik kabulü incelemeciye bırakılıyor. Ek Gemini çağrısı yapılmadı; bu tur mevcut teslimin doğrulamasıdır. İstenen akademik araştırma atölyesi adıyla bir kök `SKILL.md` bulunamadı; akademik değerlendirme sonucu üretilmedi. Diğer istenen dört beceri ve tamamlanma doğrulama becerisi okundu. Arayüz veya beceri veri dosyası değişmediği için bu alanlarda yeni üretim yapılmadı.
+
+**BAKILACAK:** Gelen kutularındaki özgün yazar yanıtı ve incelemecinin sahiplik kararı. **TÜRETİLECEK OLGULAR:** Yanıt gelirse dosya grupları ile yazar eşlemesi. **TAHMİNLER:** Kapsam benzerliğinden özgün yazarlık çıkarılmadı; maliyetin çağrı bazında dağılımı tahmin edilmedi.
+
+BİTEN: Git, test, tip, medya ve veri sayımı kapıları yeniden ölçüldü; maliyet olaylardan açıklandı.
+
+YARIM: Özgün yazarlık teyit yanıtı bekleniyor.
+
+KARARLAR: İçerik korunuyor; yalnız denetim notu güncelleniyor. Teslim sorumluluğu yazarlık kanıtı sayılmıyor.
+
+ÇIKMAZLAR: Teknik kapıda engel yok; sahiplik kabulü dış yanıta bağlı.
+
+SIRADAKİ: İncelemeci maliyet açıklamasını ve bekleyen sahiplik teyidini değerlendirmeli.
+
 24 Kasım 2026. Kart: C-b5f1789a. Denetleyen oturum: c0898ac5-be6c-4694-8e42-1300efef1811.
 
 ## Devralma ve düzeltme, ikinci tur
