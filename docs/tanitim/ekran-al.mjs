@@ -68,6 +68,8 @@ const KARELER = [
   { ad: "calisma-kavram", yol: DERS + "/calisma/", hazirla: async (p) => { await bekle(p, 3000); const kv = p.locator(".co-kavram:visible").first(); await kv.scrollIntoViewIfNeeded(); await kv.click(); await bekle(p, 800); } },
   { ad: "sohbet-asistani", yol: "/sohbet/" },
   { ad: "arama", yol: "/ara/?q=" + encodeURIComponent("tasarım"), hazirla: async (p) => { await bekle(p, 3000); } },
+  { ad: "derslerim", yol: "/derslerim/", tohum: ornekKayitlar, hazirla: async (p) => { await bekle(p, 1500); } },
+  { ad: "ilerleme", yol: "/ilerleme/", tohum: ornekKayitlar, hazirla: async (p) => { await bekle(p, 2000); } },
   { ad: "kayit-tasima", yol: "/yedek/" },
   { ad: "cevrimdisi", yol: "/cevrimdisi/" },
   { ad: "ayarlar-sayfasi", yol: "/ayarlar/" },

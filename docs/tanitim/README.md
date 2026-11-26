@@ -41,8 +41,9 @@ Ana sayfadaki canlı sayaç (10.991 ders, 920.685 soru) derleme anına göre bu 
 
 ![Sepya tema](ekranlar/yan-yana/tema-sepya.jpg)
 
-**İlerleme ve Derslerim**: Çözülen soru, doğru oranı, tekrar gereken sayısı ve kaldığın yer.
+**İlerleme ve Derslerim**: Çözülen soru, doğru oranı, tekrar gereken sayısı ve kaldığın yer (örnek kayıtlarla alınmış görüntü).
 
+![İlerleme](ekranlar/yan-yana/ilerleme.jpg)
 
 **Tüm menü**: Ders işlevlerinin tek menüde toplandığı, alt çubuğu kullanıcının kurduğu düzenlenebilir menü.
 

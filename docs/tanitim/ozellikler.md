@@ -8,7 +8,7 @@ Canlı adres: https://acik-ogretim.github.io/ · Bu liste depodaki sayfa, bileş
 
 **2. Site geneli arama**: Ders ve bölüm adlarında arar, sonuçları "Dersler" ve "Bölümler" sekmelerinde listeler; Ctrl K ile açılır. Soru metni araması ders sayfasının içindedir. Sayfa: `/ara/`. Kod: `src/pages/ara.astro`, `src/lib/search.ts`. Görüntü: `arama`.
 
-**3. Derslerim**: Yıldızlanan ders ve bölümler, ders başına çözülen soru sayısı, doğru oranı çubuğu ve "kaldığın yer". Kayıtlar tarayıcıda durur. Sayfa: `/derslerim/`. Kod: `src/pages/derslerim.astro`, `src/lib/calisma-durumu.ts`.
+**3. Derslerim**: Yıldızlanan ders ve bölümler, ders başına çözülen soru sayısı, doğru oranı çubuğu ve "kaldığın yer". Kayıtlar tarayıcıda durur. Sayfa: `/derslerim/`. Kod: `src/pages/derslerim.astro`, `src/lib/calisma-durumu.ts`. Görüntü: `derslerim` (örnek kayıtlarla alındı).
 
 ## Soru bankası ve çözme
 
@@ -50,7 +50,7 @@ Canlı adres: https://acik-ogretim.github.io/ · Bu liste depodaki sayfa, bileş
 
 **19. Ayarlar ve temalar**: Açık, Koyu, Sepya tema; dört vurgu rengi; yazı boyutu; ses ve hız; cevap ve açıklama gizleme, otomatik ilerleme. Sayfa: `/ayarlar/` ve ders içi pencere. Kod: `src/pages/ayarlar.astro`, `src/components/AyarlarIcerik.astro`, `src/layouts/Layout.astro`. Görüntü: `ayarlar-penceresi`, `ayarlar-sayfasi`, `tema-aydinlik`, `tema-sepya`.
 
-**20. İlerleme**: Çözülen soru, son denemede doğru oranı, üst üste iki kez doğru ve tekrar gereken sayıları; ders başına çubuk; yıldızlı kavramlar. Kayıtlar yalnız bu cihazdan hesaplanır. Sayfa: `/ilerleme/`. Kod: `src/pages/ilerleme.astro`, `src/lib/ilerleme.ts`.
+**20. İlerleme**: Çözülen soru, son denemede doğru oranı, üst üste iki kez doğru ve tekrar gereken sayıları; ders başına çubuk; yıldızlı kavramlar. Kayıtlar yalnız bu cihazdan hesaplanır. Sayfa: `/ilerleme/`. Kod: `src/pages/ilerleme.astro`, `src/lib/ilerleme.ts`. Görüntü: `ilerleme` (örnek kayıtlarla alındı).
 
 **21. Kayıtları taşıma ve eşitleme**: Kendi remoteStorage deposu, Google Drive'daki gizli uygulama klasörü, şifreli GitHub gist'i, cihazdan cihaza bağlantı (parola ile), yedek dosyası indirme ve yükleme. Kayıtlar siteye gelmez; yapay zekâ anahtarları yedeğe girmez. Sayfa: `/yedek/`. Kod: `src/pages/yedek.astro`, `src/lib/yedek.ts`, `google-esitle.ts`, `rs-esitle.ts`, `p2p-esitle.ts`, `bulut-esitle.ts`. Görüntü: `kayit-tasima`.
 
