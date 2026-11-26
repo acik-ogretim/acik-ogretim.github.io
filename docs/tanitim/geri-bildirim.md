@@ -66,7 +66,6 @@ Canlı site: https://acik-ogretim.github.io/
 
 ## 7. İlerleme
 
-![İlerleme, telefon ve bilgisayar](ekranlar/yan-yana/ilerleme.jpg)
 
 **Görsel hiyerarşi**: Üstteki dört büyük rakam (çözülen soru, doğru oranı, üst üste iki doğru, tekrar gereken) öğrenciye motivasyon veriyor mu, yoksa sayılar fazla mı kuru?
 
