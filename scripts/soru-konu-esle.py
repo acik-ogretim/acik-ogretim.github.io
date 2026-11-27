@@ -82,6 +82,7 @@ def main() -> None:
     ap.add_argument("ders")
     ap.add_argument("--paralel", type=int, default=6)
     ap.add_argument("--hepsi", action="store_true", help="also relink questions that already have a section")
+    ap.add_argument("--tum-kitap", action="store_true", help="search across all units for unlinked questions and fix wrong unitNumber")
     ap.add_argument("--kuru", action="store_true", help="print the plan, write nothing")
     a = ap.parse_args()
 
@@ -94,7 +95,8 @@ def main() -> None:
     hedef = [q for q in sorular if a.hepsi or not q.get("section") or not q.get("unitNumber")]
     gruplar: dict = {}
     for q in hedef:
-        gruplar.setdefault(q.get("unitNumber") or 0, []).append(q)
+        u_key = 0 if a.tum_kitap else (q.get("unitNumber") or 0)
+        gruplar.setdefault(u_key, []).append(q)
     isler = [(u, g[i : i + PARTI]) for u, g in sorted(gruplar.items()) for i in range(0, len(g), PARTI)]
     print(f"{a.ders}: {len(hedef)}/{len(sorular)} soru, {len(isler)} çağrı", flush=True)
     if a.kuru:
@@ -120,10 +122,10 @@ def main() -> None:
                 if float(y.get("guven") or 0) < 0.6:
                     sayac["dusuk"] += 1
                     continue
-                if q.get("unitNumber") and konu_var[no] != q["unitNumber"]:
+                if not a.tum_kitap and q.get("unitNumber") and konu_var[no] != q["unitNumber"]:
                     sayac["gecersiz"] += 1
                     continue
-                if not q.get("unitNumber"):
+                if not q.get("unitNumber") or (a.tum_kitap and q.get("unitNumber") != konu_var[no]):
                     q["unitNumber"] = konu_var[no]
                     sayac["unite"] += 1
                 q["section"] = no
