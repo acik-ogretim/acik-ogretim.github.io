@@ -28,6 +28,7 @@ import { canonicalDepartments, courseDepartments, coursePath } from "../../../li
 import { dereceAdi } from "../../../lib/derece";
 import { dersAciklamasi } from "../../../lib/seo";
 import { dersKaynagi, graf, kirintiListesi } from "../../../lib/yapisal-veri";
+import { mdHtml } from "../../../lib/calisma-odasi/akis";
 
 export async function getStaticPaths() {
   const universities = await getUniversities();
@@ -101,7 +102,9 @@ const sinavYillari = [...new Set(questions.flatMap((q) =>
     .map((s) => Number.parseInt(String(s.year), 10)).filter((y) => y > 1990)))].sort((a, b) => a - b);
 // Çalışma odası paketi olan derslerde "Ders anlatımı" düğmesi (paket: scripts/calisma-odasi-paketle.mjs)
 // Oda paketi ders kimliğiyle adlanır ama aynı kimlik başka üniversitelerde de var: paketin üniversitesi de eşleşmeli
-const calismaOdasiVar = Object.values(import.meta.glob<{ uni: string; ders: string }>("../../../data/calisma-odasi/*.json", { eager: true, import: "default" })).some((p) => p.ders === course.id && p.uni === university.id);
+const calismaOdasiPaketi = Object.values(import.meta.glob<{ uni: string; ders: string; dersBilgisi?: string }>("../../../data/calisma-odasi/*.json", { eager: true, import: "default" })).find((p) => p.ders === course.id && p.uni === university.id);
+const calismaOdasiVar = Boolean(calismaOdasiPaketi);
+const dersBilgisiHtml = calismaOdasiPaketi?.dersBilgisi ? mdHtml(calismaOdasiPaketi.dersBilgisi.replace(/^#\s+[^\n]+\n+/, "")) : null;
 const yilMetni = sinavYillari.length === 0 ? "" : sinavYillari.length === 1
   ? `${sinavYillari[0]} sınavı`
   : `${sinavYillari[0]}-${sinavYillari[sinavYillari.length - 1]} · ${sinavYillari.length} yıl`;
@@ -246,6 +249,12 @@ const dersJsonLd = graf(
         </div>
       )}
       <MedyaBaglantilari uni={university.id} ders={course.id} />
+      {dersBilgisiHtml && (
+        <details class="mt-6 rounded-3xl border border-line bg-card p-4" id="ders-bilgilendirmesi">
+          <summary class="cursor-pointer font-semibold">Ders bilgilendirmesi</summary>
+          <div class="mt-3 text-sm leading-relaxed space-y-2" set:html={dersBilgisiHtml} />
+        </details>
+      )}
 
       <!-- Reading / solving mode (same state as the player's #btn-toggle-interactive), search and filters -->
       <div class="kip-satir print:hidden" data-reader-ignore>

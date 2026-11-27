@@ -79,6 +79,7 @@ const PaketTemel = z.object({
   ders: z.string(),
   uni: z.string(),
   uretim: z.string(),
+  dersBilgisi: z.string().optional(),
   medyalar: z.array(MedyaSemasi),
   uniteler: z.array(z.object({ no: z.number(), baslik: z.string(), konular: z.array(z.string()) })),
   konular: z.array(KonuTemel),

@@ -1,7 +1,7 @@
 import { yildizAnahtari, yildizAyristir, yildizlariBirlestir } from "./yildiz";
 import { describe, expect, it } from "vitest";
 import { kavramMotoru } from "./kavram";
-import { satirBul } from "./sema";
+import { PaketSemasi, satirBul } from "./sema";
 import { demirBul, demirle, vurgulariBirlestir, vurgulariOku } from "./vurgu";
 import { mdHtml } from "./akis";
 
@@ -110,5 +110,19 @@ describe("mdHtml", () => {
     const html = mdHtml('<script>alert(1)</script> [bağlantı](https://ornek.test) <b onclick="x">kalın</b>');
     expect(html).not.toMatch(/<script|<a |<b /);
     expect(html).toContain("bağlantı");
+  });
+  it("preserves optional dersBilgisi in PaketSemasi", () => {
+    const p = PaketSemasi.parse({
+      ders: "tasarim-uygulamasi-i",
+      uni: "anadolu-aof",
+      uretim: "2026-11-27",
+      dersBilgisi: "## Vize\n\n10 soru e-Portfolyo üzerinden.",
+      medyalar: [],
+      uniteler: [{ no: 5, baslik: "Kurum Kimliği Araçları", konular: ["5.1"] }],
+      konular: [{ no: "5.1", baslik: "Kuramdan Uygulamaya", unite: 5, sayfa: 126, html: "", metin: "metin" }],
+      kavramlar: [],
+      sorular: { "5": ["git411u-u5-01"] },
+    });
+    expect(p.dersBilgisi).toContain("e-Portfolyo");
   });
 });

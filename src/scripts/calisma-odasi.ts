@@ -321,10 +321,16 @@ export async function calismaOdasiBaslat(): Promise<void> {
   }
 
   // ---------- İçindekiler ----------
+  const dersBilgisiKutusu = (): string =>
+    paket.dersBilgisi
+      ? `<details class="co-ak-zayifkab co-ders-bilgisi"><summary>Ders bilgilendirmesi</summary><div class="co-ak-anlatim co-ders-bilgisi-ic">${mdHtml(paket.dersBilgisi.replace(/^#\s+[^\n]+\n+/, ""))}</div></details>`
+      : "";
   function icindekilerCiz(): void {
     const p = document.getElementById("co-p-icindekiler");
     if (!p) return;
-    p.innerHTML = paket.uniteler
+    p.innerHTML =
+      dersBilgisiKutusu() +
+      paket.uniteler
       .map((u) => {
         const konuSatirlari = u.konular
           .map((no) => {
@@ -1295,6 +1301,7 @@ export async function calismaOdasiBaslat(): Promise<void> {
       .join("");
     p.innerHTML =
       `<div class="co-ak-ust"><div class="co-ak-ara"><label class="co-ak-ara-etiket" for="co-ak-ara">${ikon("Search")}<span class="co-gizli">Konu, kavram ya da soru ara</span></label><input type="search" id="co-ak-ara" placeholder="Konu, kavram ya da soru ara" autocomplete="off" enterkeyhint="search"></div><div class="co-ak-sonuc" id="co-ak-sonuc" aria-live="polite"></div>` +
+      dersBilgisiKutusu() +
       `<div class="co-ak-ilerleme" id="co-ak-ilerleme" role="group" aria-label="Ünite ilerlemesi"></div>` +
       `<details class="co-ak-zayifkab"><summary id="co-ak-zayif-baslik">Zayıf konularım</summary><div class="co-ak-zayif-liste" id="co-ak-zayif-liste"><p class="co-bos">Sorular yükleniyor.</p></div></details></div>` +
       `<div id="co-ak-liste">${uniteler}</div>` +

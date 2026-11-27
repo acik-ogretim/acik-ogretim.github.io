@@ -363,10 +363,13 @@ function paketle(ders) {
       konuAraliklari,
     };
   });
+  const dersBilgisiYolu = join(kitapKok, UNI, ders, "canli", "ders-bilgisi.md");
+  const dersBilgisi = existsSync(dersBilgisiYolu) ? readFileSync(dersBilgisiYolu, "utf8").trim() : "";
   const veri = {
     ders,
     uni: UNI,
     uretim: new Date().toISOString().slice(0, 10),
+    ...(dersBilgisi ? { dersBilgisi } : {}),
     medyalar,
     uniteler: uniteler.map((u) => ({ no: u.unite, baslik: u.baslik, konular: konuListesi.filter((k) => k.unite === u.unite).map((k) => k.no) })),
     konular: konuListesi.map(({ kitapKavramlari, ...k }) => {
