@@ -110,23 +110,8 @@ if (isAtaAof) {
         }
     });
 
-    // 2. Algorithmic HTML Books (Fallback)
-    if (course.code) {
-        const code = course.code.toUpperCase();
-        const count = course.unitCount || 8;
-        for (let i = 1; i <= count; i++) {
-            const url = `https://ets.anadolu.edu.tr/storage/nfs/html_books/${code}_INTERACTIVE/${code}-U${i}/`;
-            // Only add if NOT already present (from JSON import)
-            if (!materials.some((m) => m.url.includes(url))) {
-                materials.push({
-                    id: `unit-${i}`,
-                    title: `Ünite ${i} (İnteraktif)`,
-                    url: url,
-                    type: "html",
-                });
-            }
-        }
-    }
+    // Guessed html_books links (code + unit number) were dropped: the eKampüs lists now carry every real
+    // interactive book, and guessed paths 404 for most courses (27 Nov 2026).
 }
 
 // --- Smart Grouping Logic ---
