@@ -7,14 +7,16 @@ import { examLine, kunyeOzeti } from "../../../../lib/soru-karti";
 import { toPlainText } from "../../../../../scripts/utils/clean-html";
 
 type Alan = Parameters<typeof examLine>[0];
-const SON_UNITE = 7;
 
 export const getStaticPaths = (async () => {
-  const paketler = import.meta.glob<{ ders: string; uni: string }>("../../../../data/calisma-odasi/*.json", { eager: true, import: "default" });
+  const paketler = import.meta.glob<{ ders: string; uni: string; uniteler?: { no: number }[] }>("../../../../data/calisma-odasi/*.json", { eager: true, import: "default" });
   const yollar = [];
   for (const p of Object.values(paketler)) {
     const sorular = await getQuestions(p.uni, p.ders);
-    for (let unite = 1; unite <= SON_UNITE; unite++) {
+    // The book decides the unit count: Anadolu books run from 4 to 12 units, so a fixed 7 dropped unit 8 and later
+    // questions from the Sınav tab (27 Nov 2026).
+    const sonUnite = Math.max(0, ...(p.uniteler ?? []).map((u) => u.no));
+    for (let unite = 1; unite <= sonUnite; unite++) {
       const liste = sorular.filter((q) => q.unitNumber === unite);
       if (!liste.length) continue;
       yollar.push({
