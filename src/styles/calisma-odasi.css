@@ -1874,9 +1874,9 @@ ol.co-ak-liste {
 .co-video-kab:not([data-ortam='youtube']) .co-pip-ac {
   display: none;
 }
-/* While the video plays, the speed, shrink and window buttons fade out like YouTube's own controls; they return on
-   mouse hover (the iframe still gives its container :hover), on keyboard focus, and whenever the video pauses, which is
-   also how a touch screen brings them back: tap the video to pause (Zeki, 27 Nov 2026). */
+/* While the video plays, the speed, shrink and window buttons fade out like YouTube's own controls; they return for a
+   moment when the mouse comes near the video (data-goster, set by the script), on keyboard focus, and whenever the video
+   pauses, which is also how a touch screen brings them back: tap the video to pause (Zeki, 27 Nov 2026). */
 .co-kucult,
 .co-yt-hiz,
 .co-pip-ac {
@@ -1892,11 +1892,9 @@ ol.co-ak-liste {
   opacity: 1;
   pointer-events: auto;
 }
-@media (hover: hover) {
-  .co-video-kab[data-oynuyor]:hover :is(.co-kucult, .co-yt-hiz, .co-pip-ac) {
-    opacity: 1;
-    pointer-events: auto;
-  }
+.co-video-kab[data-oynuyor][data-goster] :is(.co-kucult, .co-yt-hiz, .co-pip-ac) {
+  opacity: 1;
+  pointer-events: auto;
 }
 .co-pip-ac:focus-visible {
   outline: 2px solid var(--primary-color, #f0a533);

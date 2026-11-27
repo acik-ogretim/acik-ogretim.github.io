@@ -552,6 +552,7 @@ export async function calismaOdasiBaslat(): Promise<void> {
           // hover, keyboard focus or pause (Zeki, 27 Nov 2026: they stayed on the picture all the time).
           onStateChange: (e) => {
             document.getElementById("co-video-kab")?.toggleAttribute("data-oynuyor", e.data === 1 || e.data === 3);
+            dugmeleriGoster();
           },
         },
       });
@@ -1995,6 +1996,32 @@ export async function calismaOdasiBaslat(): Promise<void> {
       requestAnimationFrame(() => document.querySelector(`#co-konu-govde mark[data-vid="${CSS.escape(id)}"]`)?.scrollIntoView({ block: "center", behavior: azaltilmis() ? "auto" : "smooth" }));
     }
   }
+
+  // Corner buttons over a playing video: the YouTube frame swallows every mouse event and never gives its container
+  // :hover (tested in Chrome, 27 Nov 2026), so they are shown for a moment when the pointer comes within reach of the
+  // video, rests on a button, enters the frame (window blur) or the play state changes.
+  let dugmeSure = 0;
+  function dugmeleriGoster(): void {
+    const kab = document.getElementById("co-video-kab");
+    if (!kab) return;
+    kab.setAttribute("data-goster", "");
+    clearTimeout(dugmeSure);
+    dugmeSure = window.setTimeout(() => kab.removeAttribute("data-goster"), 2500);
+  }
+  document.addEventListener(
+    "pointermove",
+    (e) => {
+      if (e.pointerType !== "mouse") return;
+      const r = document.getElementById("co-oynatici-kap")?.getBoundingClientRect();
+      if (!r || !r.width) return;
+      const pay = 24;
+      if (e.clientX >= r.left - pay && e.clientX <= r.right + pay && e.clientY >= r.top - pay && e.clientY <= r.bottom + pay) dugmeleriGoster();
+    },
+    { passive: true },
+  );
+  window.addEventListener("blur", () => {
+    if (document.activeElement?.closest("#co-oynatici-kap")) dugmeleriGoster();
+  });
 
   // Yapışık video yüksekliği sekmelerin yapışma konumunu belirler
   const videoKab = $("co-video-kab");
