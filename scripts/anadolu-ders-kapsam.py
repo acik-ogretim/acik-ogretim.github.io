@@ -33,9 +33,11 @@ def kitap_klasorleri(kitaplar: Path) -> set[str]:
     return {satir.split("/", 1)[1] for satir in cikti.split() if "/" in satir}
 
 
-def dersleri_topla(kategori: str | None) -> dict[str, dict]:
+def dersleri_topla(kategori: str | None, bolum: str | None = None) -> dict[str, dict]:
     dersler: dict[str, dict] = {}
     for dosya in sorted((KOK / "data/courses" / UNI).glob("*.json")):
+        if bolum and dosya.stem != bolum:
+            continue
         for d in json.loads(dosya.read_text()):
             kod = (d.get("code") or "").strip()
             if not kod or kod.upper().startswith("ORT"):
@@ -72,6 +74,7 @@ def main() -> None:
     p = argparse.ArgumentParser()
     p.add_argument("--ilk", type=int, default=30)
     p.add_argument("--kategori")
+    p.add_argument("--bolum", help="yalnız bu bölümün dersleri (data/courses dosya adı)")
     p.add_argument("--kitaplar", default=str(KOK.parent / "ders-kitaplari"))
     p.add_argument("--yaz")
     p.add_argument("--json", action="store_true")
@@ -79,7 +82,7 @@ def main() -> None:
 
     uniteler = json.loads((KOK / "data/kitap-uniteleri" / f"{UNI}.json").read_text())["dersler"]
     kitaplar = kitap_klasorleri(Path(a.kitaplar))
-    dersler = sorted(dersleri_topla(a.kategori).values(), key=lambda d: (-len(d["bolumler"]), d["kod"]))
+    dersler = sorted(dersleri_topla(a.kategori, a.bolum).values(), key=lambda d: (-len(d["bolumler"]), d["kod"]))
     satirlar = []
     for d in dersler[: a.ilk]:
         satirlar.append({"kod": d["kod"], "ad": d["ad"], "slug": d["slug"], "bolum": len(d["bolumler"]),
