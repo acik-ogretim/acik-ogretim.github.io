@@ -20,7 +20,7 @@ type YTOynatici = {
   setPlaybackRate?: (hiz: number) => void;
   getPlaybackRate?: () => number;
 };
-type YTAyar = { videoId: string; playerVars?: Record<string, number | string>; events?: { onReady?: () => void; onError?: () => void } };
+type YTAyar = { videoId: string; playerVars?: Record<string, number | string>; events?: { onReady?: () => void; onError?: () => void; onStateChange?: (e: { data: number }) => void } };
 type YTGlobal = { Player: new (el: string | HTMLElement, ayar: YTAyar) => YTOynatici };
 declare global {
   interface Window {
@@ -548,6 +548,11 @@ export async function calismaOdasiBaslat(): Promise<void> {
             ytHizUygula(kayitliHiz());
           },
           onError: () => bildirim(true),
+          // Playing (1) or buffering (3): our corner buttons fade out like YouTube's own controls and come back on
+          // hover, keyboard focus or pause (Zeki, 27 Nov 2026: they stayed on the picture all the time).
+          onStateChange: (e) => {
+            document.getElementById("co-video-kab")?.toggleAttribute("data-oynuyor", e.data === 1 || e.data === 3);
+          },
         },
       });
       if (video?.tur === "youtube") oynatici = ytOynatici;
